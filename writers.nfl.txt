@@ -1,0 +1,188 @@
+# NFL beat writers, merged seed list
+#
+# Sources: unabated.com (2025) and fiddlespicks.substack.com (2024).
+# 111 handles, all 32 teams. Still leads, not facts: validate before use.
+#
+#   python3 scripts/validate_writers.py --file writers.nfl.txt --check-bluesky
+#
+# Lines marked PRIORITY are writers the 2025 list specifically credits with
+# practice reports, player availability, or being first to news. Poll these
+# first when using a metered API, since they carry most of the value.
+#
+# Confirmed beat change between the two lists: VicTafur moved LV -> SF.
+# One verified move in 38 overlapping handles is a useful staleness rate.
+
+# ARI
+azbobbymac, ARI
+BoBrack, ARI
+Cardschatter, ARI
+CraigAZSports, ARI
+JohnnyVenerable, ARI
+
+# ATL
+DOrlandoAJC, ATL
+marcraimondi, ATL
+tori_mcelhaney, ATL
+ZachKleinWSB, ATL
+
+# BAL
+jeffzrebiec, BAL    # PRIORITY
+jamisonhensley, BAL
+jonas_shaffer, BAL
+
+# BUF
+JoeBuscaglia, BUF    # PRIORITY
+JaySkurski, BUF
+MattParrino, BUF
+salmaiorana, BUF
+SalSports, BUF
+
+# CAR
+josephperson, CAR    # PRIORITY
+daringantt, CAR
+Sheena_Marie3, CAR
+
+# CHI
+kfishbain, CHI    # PRIORITY
+adamjahns, CHI
+BradBiggs, CHI
+danwiederer, CHI
+
+# CIN
+Ben_Baby, CIN    # PRIORITY
+pauldehnerjr, CIN    # PRIORITY
+KelseyLConway, CIN
+
+# CLE
+AkronJackson, CLE
+MaryKayCabot, CLE
+
+# DAL
+toddarcher, DAL    # PRIORITY
+CalvinWatkins, DAL
+ClarenceHillJr, DAL
+DavidMooreDMN, DAL
+Kyle_Youmans, DAL
+TimCowlishaw, DAL
+
+# DEN
+mikeklis, DEN    # PRIORITY
+TroyRenck, DEN    # PRIORITY
+christomasson, DEN
+MaseDenver, DEN
+
+# DET
+davebirkett, DET    # PRIORITY
+Justin_Rogers, DET    # PRIORITY
+colton_pouncy, DET
+ttwentyman, DET
+
+# GB
+RobDemovsky, GB    # PRIORITY
+TomSilverstein, GB    # PRIORITY
+AndyHermanNFL, GB
+mattschneidman, GB
+
+# HOU
+AaronWilson_NFL, HOU
+JohnHCrumpler, HOU
+jonmalexander, HOU
+
+# IND
+HolderStephen, IND    # PRIORITY
+gmbremer, IND
+mchappell51, IND
+
+# JAX
+_John_Shipley, JAX
+Demetrius82, JAX
+HaysCarlyon, JAX
+
+# KC
+adamteicher, KC    # PRIORITY
+mattderrick, KC    # PRIORITY
+ByNateTaylor, KC
+EdEastonJr, KC
+jessenewell, KC
+
+# LAC
+danielrpopper, LAC    # PRIORITY
+krisrhim1, LAC
+
+# LAR
+JourdanRodrigue, LAR    # PRIORITY
+LATimesklein, LAR
+
+# LV
+tashanreed, LV    # PRIORITY
+pgutierrezespn, LV
+VinnyBonsignore, LV
+
+# MIA
+DavidFurones_, MIA    # PRIORITY
+schadjoe, MIA
+
+# MIN
+alec_lewis, MIN
+ArifHasanNFL, MIN
+bengoessling, MIN
+LindseyMNSports, MIN
+
+# NE
+MikeReiss, NE    # PRIORITY
+ezlazar, NE
+PhilAPerry, NE
+
+# NO
+MikeTriplett, NO    # PRIORITY
+ByLukeJohnson, NO
+Kat_Terrell, NO
+nick_underhill, NO
+
+# NYG
+DDuggan21, NYG    # PRIORITY
+JordanRaanan, NYG
+NYPost_Schwartz, NYG
+rydunleavy, NYG
+
+# NYJ
+RichCimini, NYJ    # PRIORITY
+BrianCoz, NYJ
+
+# PHI
+Jeff_McLane, PHI    # PRIORITY
+ZBerm, PHI    # PRIORITY
+BKubena, PHI
+EliotShorrParks, PHI
+JimmyKempski, PHI
+
+# PIT
+MarkKaboly, PIT    # PRIORITY
+Alex_Kozora, PIT
+dlolley_pgh, PIT
+
+# SEA
+bcondotta, SEA    # PRIORITY
+gbellseattle, SEA    # PRIORITY
+
+# SF
+LombardiHimself, SF    # PRIORITY
+VicTafur, SF    # PRIORITY
+CamInman, SF
+Eric_Branch, SF
+grantcohn, SF
+
+# TB
+gregauman, TB    # PRIORITY
+NFLSTROUD, TB    # PRIORITY
+PewterReport, TB
+
+# TEN
+jwyattsports, TEN    # PRIORITY
+nicksuss, TEN
+TDavenport_NFL, TEN
+terrymc13, TEN
+
+# WAS
+BenStandig, WAS    # PRIORITY
+john_keim, WAS    # PRIORITY

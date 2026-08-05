@@ -1,0 +1,18 @@
+# The site is one self-contained HTML file, so there is nothing to build here.
+# The GitHub Action produces site/ and publishes it.
+[build]
+  publish = "site"
+  command = "echo 'built by GitHub Actions'"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# The feed is rebuilt on a schedule, so let it go stale for a minute at most.
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=60, must-revalidate"

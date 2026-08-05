@@ -1,0 +1,9 @@
+# One beat writer per line: Name, TEAM
+# Build this list during the same research pass that fills the -local slots
+# in sources/nfl.yaml. The audit turns it into config automatically.
+#
+#   python scripts/bluesky_audit.py --names writers.txt --sport nfl --emit
+#
+# Zack Rosenblatt, NYJ
+# Jeff Howe, NE
+# Rob Demovsky, GB

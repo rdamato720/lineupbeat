@@ -1,0 +1,61 @@
+name: refresh beat feed
+
+on:
+  schedule:
+    # Weekday practice reports land midday, inactives land Sunday late morning.
+    # Tighten this once you know when your feeds actually publish.
+    - cron: "*/20 12-23 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # seen_items is what stops you re-paying the model for an article you
+      # already processed. Losing this cache costs real money, so it is keyed
+      # to restore from the most recent run rather than rebuilt.
+      - uses: actions/cache@v4
+        with:
+          path: beatwire.db
+          key: beatwire-db-${{ github.run_id }}
+          restore-keys: beatwire-db-
+
+      - name: Gates
+        run: |
+          python scripts/test_resolve.py
+          python -m beatwire.cli doctor --sport nfl
+
+      - name: Run pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python -m beatwire.cli run    --sport nfl
+          python -m beatwire.cli export --sports nfl \
+                 --out site/data/feed.json --site site/index.html
+
+      # Publishes even if preflight warns, but records the verdict in the log
+      # so a slow degradation shows up in run history instead of silently.
+      - name: Preflight
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m beatwire.cli preflight --sport nfl
+
+      - name: Deploy
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: npx --yes netlify-cli@latest deploy --dir=site --prod

@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+beatwire.db
+feed.html
+site/index.html
+site/data/
+
+# generated
+adp_curve.json
+*.db-journal
+.DS_Store
+
+# local scratch
+scripts/_*.py
+audit/
