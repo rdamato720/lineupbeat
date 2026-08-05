@@ -52,7 +52,47 @@ SITE = ROOT / "site"
 # means redirects and lost link equity. A second sport slots in beside the
 # first instead of forcing a migration of it.
 SPORT = "nfl"
+TEMPLATE = ROOT / "site" / "template.html"
 
+
+def site_chrome():
+    """Take the stylesheet, header and footer from the app template.
+
+    These pages were using a small stylesheet of their own, which meant a
+    reader arriving from search got something that did not look like the
+    site. Reading the template at build time means one design: change the
+    header on the homepage and every player page follows, with no second
+    copy to keep in sync.
+    """
+    import re
+    if not TEMPLATE.exists():
+        return "", "", ""
+    src = TEMPLATE.read_text()
+    css = re.search(r"<style>(.*?)</style>", src, re.S)
+    foot = re.search(r"<footer.*?</footer>", src, re.S)
+    # The app header carries a search box and a JS-populated nav. A static
+    # page gets the same bar and typography without the machinery.
+    header = (
+        '<header class="topbar">\n'
+        '  <div class="wrap tbrow">\n'
+        '    <a class="logo" href="/">Lineup<em>Beat</em></a>\n'
+        '  </div>\n'
+        '</header>'
+    )
+    return (css.group(1) if css else ""), header, (foot.group(0) if foot else "")
+
+
+APP_CSS, APP_HEADER, APP_FOOTER = site_chrome()
+
+TEAM_C2 = {
+    "ARI":"#FFB612","ATL":"#A5ACAF","BAL":"#9E7C0C","BUF":"#C60C30","CAR":"#BFC0BF",
+    "CHI":"#C83803","CIN":"#000000","CLE":"#FF3C00","DAL":"#869397","DEN":"#FB4F14",
+    "DET":"#B0B7BC","GB":"#FFB612","HOU":"#A71930","IND":"#A2AAAD","JAX":"#D7A22A",
+    "KC":"#FFB81C","LV":"#A5ACAF","LAC":"#FFC20E","LAR":"#FFA300","MIA":"#FC4C02",
+    "MIN":"#FFC62F","NE":"#C60C30","NO":"#D3BC8D","NYG":"#A71930","NYJ":"#FFFFFF",
+    "PHI":"#A5ACAF","PIT":"#FFB612","SF":"#B3995D","SEA":"#69BE28","TB":"#FF7900",
+    "TEN":"#4B92DB","WAS":"#FFB612",
+}
 TEAM_COLORS = {
     "ARI":"#97233F","ATL":"#A71930","BAL":"#241773","BUF":"#00338D","CAR":"#0085CA",
     "CHI":"#0B162A","CIN":"#FB4F14","CLE":"#FF3C00","DAL":"#003594","DEN":"#FB4F14",
@@ -89,6 +129,21 @@ def esc(s) -> str:
     return html.escape(str(s or ""), quote=True)
 
 
+def ago(iso):
+    """Relative time. A wire reads by recency, so "3h ago" carries more than a
+    date does; the full date stays underneath for anyone who wants it."""
+    try:
+        d = (datetime.now(timezone.utc)
+             - datetime.fromisoformat(iso)).total_seconds()
+    except (TypeError, ValueError):
+        return ""
+    if d < 3600:
+        return f"{max(1, int(d // 60))}m ago"
+    if d < 86400:
+        return f"{int(d // 3600)}h ago"
+    return f"{int(d // 86400)}d ago"
+
+
 def when(iso: str) -> str:
     try:
         return datetime.fromisoformat(iso).strftime("%B %-d, %Y")
@@ -96,58 +151,85 @@ def when(iso: str) -> str:
         return ""
 
 
-CSS = """<style>
-:root{
-  color-scheme:dark;
-  --ink:#E8E6E1; --quiet:#8A8F85; --rule:#23261F;
-  --bg:#0A0C08; --panel:#0F1310; --signal:#C6F24E;
-  --accent:__ACCENT__;
-}
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);margin:0;
-  font:16px/1.65 Georgia,"Times New Roman",serif}
-.wrap{max-width:46rem;margin-inline:auto;padding:1.5rem 1.25rem 4rem}
-a{color:var(--signal);text-decoration:none}
-a:hover{text-decoration:underline}
-.top{padding:.9rem 0;border-bottom:1px solid var(--rule);margin-bottom:2rem}
-.brand{font:600 1.05rem/1 system-ui,sans-serif;letter-spacing:.02em;
-  text-transform:uppercase;color:var(--ink)}
-.brand em{font-style:normal;color:var(--signal)}
-.hero{display:flex;gap:1.15rem;align-items:center;padding:1.25rem;
-  border-radius:10px;background:var(--panel);
-  border-left:4px solid var(--accent)}
-.shot{width:84px;height:84px;border-radius:50%;object-fit:cover;
-  background:#1B2024;flex:none}
-h1{font-size:2rem;line-height:1.1;margin:0 0 .3rem;letter-spacing:-.015em}
-.who{color:var(--quiet);font:.9rem/1.4 system-ui,sans-serif;margin:0}
+PAGE_CSS = """
+/* Additions only. The app stylesheet does the heavy lifting; these are the
+   few things a player page needs that the wire does not. */
+.ppage{padding-top:1rem;padding-bottom:3rem}
+/* Breadcrumb, replacing a lone nav pill that read as decoration. Says where
+   you are, gives Google a hierarchy to render in the result, and earns its
+   line in a way one tab did not. */
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;
+  margin:0 0 1.1rem;font:.68rem/1 var(--agate,system-ui),sans-serif;
+  letter-spacing:.08em;text-transform:uppercase}
+.crumbs a{color:var(--quiet);text-decoration:none}
+.crumbs a:hover{color:var(--signal)}
+.crumbs span{color:var(--rule)}
+.crumbs b{color:var(--ink);font-weight:600}
+/* The header links are anchors here, not the app's buttons, so they pick up
+   the default underline. Match the app's chrome instead. */
+.topbar .logo,.topbar .vbtn{text-decoration:none}
+.topbar .logo:hover,.topbar .vbtn:hover{text-decoration:none;
+  color:var(--signal)}
+/* `.hero` is the app masthead -- background, yard lines, big padding. The
+   player hero is its own class so none of that bleeds in. */
+/* Team wash, same construction as a featured card on the wire: a primary
+   gradient with a secondary radial in the corner. The second colour is what
+   keeps a Raiders or Bears hero from reading as plain grey -- primaries in
+   this league are often near-black and the identity lives in the accent. */
+.phero{position:relative;overflow:hidden;isolation:isolate;
+  display:flex;gap:1.35rem;align-items:center;padding:1.6rem 1.5rem;
+  border-radius:12px;border:1px solid rgba(255,255,255,.09)}
+.phero::before{content:"";position:absolute;inset:0;z-index:-2;opacity:.92;
+  background:
+    radial-gradient(90% 70% at 94% 6%, __C2__ 0%, transparent 58%),
+    linear-gradient(152deg, __ACCENT__ 0%, __ACCENT__ 24%, #0B0D0F 88%)}
+.phero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg, transparent 40%, rgba(8,10,7,.72) 100%)}
+.shot{width:104px;height:104px;border-radius:50%;object-fit:cover;
+  background:rgba(0,0,0,.35);flex:none;
+  border:2px solid rgba(255,255,255,.14)}
+.ppage h1{font-family:var(--agate,system-ui);text-transform:uppercase;
+  font-size:2.1rem;line-height:.98;margin:0 0 .45rem;letter-spacing:.01em;
+  font-weight:600}
+/* inline-flex on the text, not the row: a flex container with a wrapping
+   label left the team mark stranded on its own line at phone width. */
+.who{color:rgba(255,255,255,.82);font:.78rem/1.45 var(--agate,system-ui),sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;margin:0}
+.who .tlogo{vertical-align:-3px;margin-right:.4rem}
+.tlogo{width:18px;height:18px;object-fit:contain;flex:none}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 0}
-.chip{font:.72rem/1 system-ui,sans-serif;letter-spacing:.04em;
+.chip{font:.72rem/1 var(--agate,system-ui),sans-serif;letter-spacing:.06em;
   text-transform:uppercase;color:var(--quiet);border:1px solid var(--rule);
-  border-radius:999px;padding:.4rem .7rem}
+  border-radius:999px;padding:.42rem .7rem}
 .chip b{color:var(--ink);font-weight:600}
-h2{font:.75rem/1 system-ui,sans-serif;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--quiet);margin:2.25rem 0 .5rem}
-article{border-top:1px solid var(--rule);padding:1.1rem 0}
-.claim{margin:0 0 .45rem;font-size:1.02rem}
-.meta{color:var(--quiet);font:.8rem/1.4 system-ui,sans-serif;margin:0}
+.ppage h2{font:.72rem/1 var(--agate,system-ui),sans-serif;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--quiet);margin:2.25rem 0 .6rem}
+.ppage article{background:var(--panel);border-radius:8px;
+  padding:.9rem 1.1rem 1rem;margin-bottom:.55rem;
+  border-left:3px solid __ACCENT__}
+.rtop{display:flex;align-items:center;justify-content:space-between;
+  gap:.6rem;margin-bottom:.5rem}
+.rcat{font:.58rem/1 var(--agate,system-ui),sans-serif;letter-spacing:.09em;
+  text-transform:uppercase;font-weight:600;color:__C2__}
+.rago{font:.62rem/1 var(--data,ui-monospace),monospace;color:var(--quiet)}
+.claim{margin:0 0 .5rem;font-size:1rem;line-height:1.55}
+.meta{color:var(--quiet);font:.7rem/1.4 var(--agate,system-ui),sans-serif;
+  letter-spacing:.05em;text-transform:uppercase;margin:0}
 .meta a{color:var(--quiet);text-decoration:underline}
 .meta a:hover{color:var(--signal)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));
   gap:.5rem}
-.grid a{display:block;padding:.7rem .85rem;border:1px solid var(--rule);
-  border-radius:8px;color:var(--ink)}
-.grid a:hover{border-color:var(--signal);text-decoration:none}
+.grid a{display:block;padding:.75rem .9rem;border:1px solid var(--rule);
+  border-radius:8px;color:var(--ink);text-decoration:none}
+.grid a:hover{border-color:var(--signal)}
 .grid span{display:block;color:var(--quiet);
-  font:.75rem/1.3 system-ui,sans-serif;margin-top:.15rem}
-footer{margin-top:3rem;padding-top:1.25rem;border-top:1px solid var(--rule);
-  color:var(--quiet);font:.82rem/1.6 system-ui,sans-serif}
-footer a{color:var(--quiet);text-decoration:underline}
+  font:.72rem/1.3 var(--agate,system-ui),sans-serif;margin-top:.2rem}
 @media(max-width:34rem){
-  .hero{flex-direction:column;text-align:center}
-  h1{font-size:1.6rem}
+  .phero{flex-direction:column;text-align:center}
+  .ppage h1{font-size:1.55rem}
   .chips{justify-content:center}
 }
-</style>"""
+"""
 
 PAGE = """<!doctype html>
 <html lang="en">
@@ -168,26 +250,32 @@ PAGE = """<!doctype html>
 __CSS__
 </head>
 <body>
-<div class="wrap">
-  <div class="top"><a class="brand" href="/">Lineup<em>Beat</em></a></div>
+__HEADER__
+<div class="wrap ppage">
 {body}
-  <footer>
-  <p>Every claim is paraphrased in our own words and linked back to the
-  reporter who filed it. We never reproduce their copy.</p>
-  <p><a href="/">LineupBeat</a> &mdash; local beat reporting from every NFL
-     market, matched to players.</p>
-  </footer>
-</div>
+__FOOTER__
 </body>
 </html>
 """
 
 
-def _render(page, accent):
-    """CSS lives outside .format() because a stylesheet is full of braces and
-    every one of them has to be doubled otherwise -- which is unreadable and
-    breaks the moment somebody edits the CSS without knowing why."""
-    return page.replace("__CSS__", CSS.replace("__ACCENT__", accent))
+def _render(page, accent, c2="#C6F24E"):
+    """Swap in the real stylesheet, header and footer.
+
+    CSS lives outside .format() because a stylesheet is full of braces and
+    every one would have to be doubled otherwise -- unreadable, and it breaks
+    the moment somebody edits the CSS without knowing why.
+    """
+    # Both halves are raw CSS, so the tags belong here rather than in either
+    # constant -- otherwise the stylesheet prints as text at the top of the
+    # page, which is exactly what happened.
+    css = ("<style>" + (APP_CSS or "")
+           + PAGE_CSS.replace("__ACCENT__", accent).replace("__C2__", c2)
+           + "</style>")
+    return (page
+            .replace("__CSS__", css)
+            .replace("__HEADER__", APP_HEADER)
+            .replace("__FOOTER__", APP_FOOTER))
 
 
 def player_page(p, nuggets, base):
@@ -195,6 +283,7 @@ def player_page(p, nuggets, base):
     pos, meta = p["pos"], p.get("meta") or {}
     url = f"{base}/{SPORT}/{slug(name)}/"
     accent = TEAM_COLORS.get(team, "#C6F24E")
+    c2 = TEAM_C2.get(team, "#C6F24E")
     shot = (f"https://sleepercdn.com/content/nfl/players/thumb/"
             f"{p['id'].replace('nfl-','')}.jpg")
 
@@ -233,20 +322,52 @@ def player_page(p, nuggets, base):
             extra = f" and {len(attrs)-1} other" + ("s" if len(attrs) > 2 else "")
         cite = (f'<a href="{esc(link)}" rel="nofollow noopener">{esc(credit)}</a>'
                 if link else esc(credit))
-        arts.append(f'  <article>\n    <p class="claim">{esc(n["claim"])}</p>\n'
-                    f'    <p class="meta">{esc(when(n["published_at"]))} &middot; '
-                    f'{cite}{esc(extra)}</p>\n  </article>')
+        cat = (n.get("category") or "").replace("_", " ")
+        arts.append(
+            f'  <article>\n'
+            f'    <div class="rtop"><span class="rcat">{esc(cat)}</span>'
+            f'<span class="rago">{esc(ago(n["published_at"]))}</span></div>\n'
+            f'    <p class="claim">{esc(n["claim"])}</p>\n'
+            f'    <p class="meta">{esc(when(n["published_at"]))} &middot; '
+            f'{cite}{esc(extra)}</p>\n  </article>')
 
     ld = {"@context": "https://schema.org", "@type": "Person", "name": name,
           "url": url, "image": shot, "jobTitle": who}
+    # Google renders breadcrumbs in the result itself, which is worth more
+    # than the nav pill this replaced: it shows the page's place in the site
+    # instead of a bare URL, and it improves click-through.
+    crumb_ld = {"@context": "https://schema.org", "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "LineupBeat",
+                     "item": base + "/"}]}
+    if team:
+        crumb_ld["itemListElement"].append(
+            {"@type": "ListItem", "position": 2,
+             "name": TEAM_NAMES.get(team, team),
+             "item": f"{base}/{SPORT}/team/{slug(team)}/"})
+    crumb_ld["itemListElement"].append(
+        {"@type": "ListItem",
+         "position": len(crumb_ld["itemListElement"]) + 1,
+         "name": name, "item": url})
     if team:
         ld["memberOf"] = {"@type": "SportsTeam",
                           "name": TEAM_NAMES.get(team, team)}
 
-    body = (f'  <div class="hero">\n    <img class="shot" src="{esc(shot)}" '
+    crumb = (
+        f'  <nav class="crumbs" aria-label="Breadcrumb">'
+        f'<a href="/">LineupBeat</a>'
+        + (f'<span>/</span><a href="/{SPORT}/team/{slug(team)}/">'
+           f'{esc(TEAM_NAMES.get(team, team))}</a>' if team else "")
+        + f'<span>/</span><b>{esc(name)}</b></nav>\n')
+
+    body = (crumb + f'  <div class="phero">\n    <img class="shot" src="{esc(shot)}" '
             f'alt="{esc(name)}" loading="lazy" width="84" height="84">\n'
             f'    <div>\n      <h1>{esc(name)}</h1>\n'
-            f'      <p class="who">{esc(who)}</p>\n    </div>\n  </div>\n'
+            f'      <p class="who">'
+            + (f'<img class="tlogo" src="https://a.espncdn.com/i/teamlogos/'
+               f'nfl/500/{team.lower()}.png" alt="" loading="lazy" '
+               f'width="18" height="18">' if team else "")
+            + f'{esc(who)}</p>\n    </div>\n  </div>\n'
             + (f'  <div class="chips">{"".join(chips)}</div>\n' if chips else "")
             + f'  <h2>{len(nuggets)} beat report'
               f'{"s" if len(nuggets) != 1 else ""}, newest first</h2>\n'
@@ -260,21 +381,34 @@ def player_page(p, nuggets, base):
         description=esc((nuggets[0]["claim"] or "")[:150]),
         canonical=esc(url), og_type="profile",
         og_image=f'<meta property="og:image" content="{esc(shot)}">',
-        structured=f'<script type="application/ld+json">{json.dumps(ld)}</script>',
-        body=body), accent)
+        structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
+                    f'<script type="application/ld+json">'
+                    f'{json.dumps(crumb_ld)}</script>'),
+        body=body), accent, c2)
 
 
 def team_page(team, players, count, base):
     full = TEAM_NAMES.get(team, team)
     url = f"{base}/{SPORT}/team/{slug(team)}/"
     accent = TEAM_COLORS.get(team, "#C6F24E")
+    c2 = TEAM_C2.get(team, "#C6F24E")
     logo = f"https://a.espncdn.com/i/teamlogos/nfl/500/{team.lower()}.png"
     cards = "\n".join(
         f'    <a href="/{SPORT}/{slug(n)}/">{esc(n)}<span>{c} report'
         f'{"s" if c != 1 else ""}</span></a>' for n, c in players)
     ld = {"@context": "https://schema.org", "@type": "SportsTeam",
           "name": full, "url": url, "logo": logo}
-    body = (f'  <div class="hero">\n    <img class="shot" src="{esc(logo)}" '
+    crumb = (f'  <nav class="crumbs" aria-label="Breadcrumb">'
+             f'<a href="/">LineupBeat</a><span>/</span>'
+             f'<b>{esc(full)}</b></nav>\n')
+    crumb_ld = {"@context": "https://schema.org", "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "LineupBeat",
+                     "item": base + "/"},
+                    {"@type": "ListItem", "position": 2, "name": full,
+                     "item": url}]}
+
+    body = (crumb + f'  <div class="phero">\n    <img class="shot" src="{esc(logo)}" '
             f'alt="{esc(full)}" loading="lazy" width="84" height="84" '
             f'style="border-radius:0;object-fit:contain">\n'
             f'    <div>\n      <h1>{esc(full)}</h1>\n'
@@ -288,8 +422,10 @@ def team_page(team, players, count, base):
                         f"players and updated through the day."),
         canonical=esc(url), og_type="website",
         og_image=f'<meta property="og:image" content="{esc(logo)}">',
-        structured=f'<script type="application/ld+json">{json.dumps(ld)}</script>',
-        body=body), accent)
+        structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
+                    f'<script type="application/ld+json">'
+                    f'{json.dumps(crumb_ld)}</script>'),
+        body=body), accent, c2)
 
 
 def main():

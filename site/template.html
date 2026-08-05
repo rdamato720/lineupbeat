@@ -974,6 +974,36 @@ footer p{margin:.25rem 0; font-size:.82rem; max-width:34ch}
      be one. Widening it would only create a second overlapping hit area. */
   .tile h4 a, .big h3 a{display:inline}
 }
+
+/* ---- footer -------------------------------------------------------------
+   Was four columns of prose and two outbound links. Now it carries all 32
+   team pages, which means every page on the site links to every team page:
+   the strongest internal linking we can do, and it costs a reader nothing
+   because it sits where footers sit. */
+footer .fbrand{padding-bottom:1.4rem; border-bottom:1px solid var(--rule)}
+footer .flogo{font-family:var(--agate); font-weight:600; font-size:1.05rem;
+  letter-spacing:.02em; text-transform:uppercase; color:var(--ink)}
+footer .flogo em{font-style:normal; color:var(--signal)}
+footer .ftag{margin:.45rem 0 0; max-width:52ch; font-size:.86rem}
+footer .fteams{padding:1.4rem 0; border-bottom:1px solid var(--rule)}
+footer .fgrid{display:grid; gap:.15rem .9rem; margin-top:.7rem;
+  grid-template-columns:repeat(auto-fill, minmax(6.5rem, 1fr))}
+footer .fgrid a{border-bottom:0; color:var(--quiet); font-size:.82rem;
+  padding:.2rem 0}
+footer .fgrid a:hover{color:var(--signal)}
+footer .frow{padding-top:1.4rem}
+footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
+  margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--rule);
+  font-family:var(--agate); font-size:.68rem; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--quiet)}
+@media (max-width:640px){
+  footer .fgrid{grid-template-columns:repeat(auto-fill, minmax(5.5rem,1fr));
+    gap:0 .9rem}
+  /* 44px, same as everything else a thumb has to hit. Thirty-two links in a
+     grid is precisely where undersized targets get frustrating. */
+  footer .fgrid a{min-height:44px; display:flex; align-items:center;
+    padding:0}
+}
 </style>
 </head>
 <body>
@@ -1052,27 +1082,74 @@ footer p{margin:.25rem 0; font-size:.82rem; max-width:34ch}
 </div>
 
 <footer>
-  <div class="wrap frow">
-    <div class="fcol">
-      <h3>LineupBeat</h3>
-      <p>Local beat reporting from every NFL market, matched to players and
-         ranked by whether it changes a lineup.</p>
+  <div class="wrap">
+    <div class="fbrand">
+      <span class="flogo">Lineup<em>Beat</em></span>
+      <p class="ftag">Local beat reporting from every NFL market, matched to
+         players and ranked by whether it changes a lineup.</p>
     </div>
-    <div class="fcol">
-      <h3>Attribution</h3>
-      <p>Every claim is paraphrased in our own words and linked back to the
-         reporter who filed it. We never reproduce their copy.</p>
+
+    <div class="fteams">
+      <h3>Every team on the beat</h3>
+      <div class="fgrid">
+      <a href="/nfl/team/ari/">Cardinals</a>
+      <a href="/nfl/team/atl/">Falcons</a>
+      <a href="/nfl/team/bal/">Ravens</a>
+      <a href="/nfl/team/buf/">Bills</a>
+      <a href="/nfl/team/car/">Panthers</a>
+      <a href="/nfl/team/chi/">Bears</a>
+      <a href="/nfl/team/cin/">Bengals</a>
+      <a href="/nfl/team/cle/">Browns</a>
+      <a href="/nfl/team/dal/">Cowboys</a>
+      <a href="/nfl/team/den/">Broncos</a>
+      <a href="/nfl/team/det/">Lions</a>
+      <a href="/nfl/team/gb/">Packers</a>
+      <a href="/nfl/team/hou/">Texans</a>
+      <a href="/nfl/team/ind/">Colts</a>
+      <a href="/nfl/team/jax/">Jaguars</a>
+      <a href="/nfl/team/kc/">Chiefs</a>
+      <a href="/nfl/team/lv/">Raiders</a>
+      <a href="/nfl/team/lac/">Chargers</a>
+      <a href="/nfl/team/lar/">Rams</a>
+      <a href="/nfl/team/mia/">Dolphins</a>
+      <a href="/nfl/team/min/">Vikings</a>
+      <a href="/nfl/team/ne/">Patriots</a>
+      <a href="/nfl/team/no/">Saints</a>
+      <a href="/nfl/team/nyg/">Giants</a>
+      <a href="/nfl/team/nyj/">Jets</a>
+      <a href="/nfl/team/phi/">Eagles</a>
+      <a href="/nfl/team/pit/">Steelers</a>
+      <a href="/nfl/team/sf/">49ers</a>
+      <a href="/nfl/team/sea/">Seahawks</a>
+      <a href="/nfl/team/tb/">Buccaneers</a>
+      <a href="/nfl/team/ten/">Titans</a>
+      <a href="/nfl/team/was/">Commanders</a>
+      </div>
     </div>
-    <div class="fcol">
-      <h3>Data</h3>
-      <p>Average draft position from
-         <a href="https://fantasyfootballcalculator.com/adp" rel="noopener">Fantasy
-         Football Calculator</a>. Rosters and depth charts from Sleeper.</p>
+
+    <div class="frow">
+      <div class="fcol">
+        <h3>Attribution</h3>
+        <p>Every claim is paraphrased in our own words and linked back to the
+           reporter who filed it. We never reproduce their copy.</p>
+      </div>
+      <div class="fcol">
+        <h3>Data</h3>
+        <p>Average draft position from
+           <a href="https://fantasyfootballcalculator.com/adp" rel="noopener">Fantasy
+           Football Calculator</a>. Rosters and depth charts from Sleeper,
+           play-by-play from nflverse.</p>
+      </div>
+      <div class="fcol">
+        <h3>What we do not guess</h3>
+        <p>A mention we cannot match to a player is shown unlinked and marked
+           unmatched, rather than attached to the closest name.</p>
+      </div>
     </div>
-    <div class="fcol">
-      <h3>What we do not guess</h3>
-      <p>A mention we cannot match to a player is shown unlinked and marked
-         unmatched, rather than attached to the closest name.</p>
+
+    <div class="fbase">
+      <span>&copy; 2026 LineupBeat</span>
+      <span>Updated through the day, every day of the season.</span>
     </div>
   </div>
 </footer>
