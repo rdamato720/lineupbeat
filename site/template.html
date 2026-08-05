@@ -1066,6 +1066,9 @@ const BEAT_WEIGHT = 1.01;
 // back on is one line.
 const HIDDEN_SECTIONS = new Set(["medical", "projections"]);
 
+// How long a clip stays on the wire under the "last 24 hours" filter.
+const VIDEO_WINDOW_H = 48;
+
 // Position groups. The grid is overwhelming mostly because a majority of beat
 // reporting is about linemen and defensive backs, which matters to almost
 // nobody reading a fantasy wire. Offense/defense halves it; skill positions
@@ -1848,7 +1851,12 @@ function renderFeed(){
   const sport = state.sport;
 
   let rows = nuggets().filter(n => {
-    if(state.todayOnly && hoursOld(n) > 24) return false;
+    // Video keeps a longer window. A clip from Sunday is still worth
+    // watching on Tuesday -- it does not decay the way a practice report
+    // does -- and the section was disappearing entirely because clips are a
+    // small minority of items and rarely two of them land inside a day.
+    const window = videosOf(n).length ? VIDEO_WINDOW_H : 24;
+    if(state.todayOnly && hoursOld(n) > window) return false;
     if(state.team && n.team !== state.team) return false;
     if(state.pos){
       const pl = PLAYERS.get(n.player_id);
