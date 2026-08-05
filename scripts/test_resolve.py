@@ -24,7 +24,10 @@ CASES = [
     # --- team scoping: the same surname on different teams -----------------
     ("nfl", "Allen",   "NYJ", None, "Braelon Allen"),
     ("nfl", "Allen",   "BUF", None, "Josh Allen"),
-    ("nfl", "Allen",   "JAX", None, "Josh Allen"),
+    # He plays as Josh Hines-Allen now. The resolver was right and the
+    # expectation was stale, which is what a fixture does when a real
+    # person changes his name.
+    ("nfl", "Allen",   "JAX", None, "Josh Hines-Allen"),
     ("nfl", "Allen",   None,  None, None),   # league-wide: genuinely ambiguous
 
     # --- aliases: punctuation, accents, suffixes ---------------------------

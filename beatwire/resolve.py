@@ -204,8 +204,27 @@ class Resolver:
         top_score, top = scored[0]
 
         # Genuine ambiguity: two players score within a hair of each other and
-        # the team hint did not break the tie. Refuse rather than guess.
+        # the team hint did not break the tie.
         if len(scored) > 1 and (top_score - scored[1][0]) < 0.08:
+            # Before refusing, try prominence. Buffalo has Josh Allen and Kyle
+            # Allen, both quarterbacks, so neither team nor position separates
+            # them -- but a writer typing "Allen" in a Bills story means the
+            # starter, and every reader knows it. Refusing there is not
+            # caution, it is dropping the most newsworthy player on the roster.
+            #
+            # Only fires when the gap in standing is large. Two players of
+            # similar prominence stay ambiguous, which is the right answer:
+            # this exists to separate a franchise quarterback from his backup,
+            # not to guess between two starters.
+            tied = [p for s, p in scored if (top_score - s) < 0.08]
+            ranked = [p for p in tied if getattr(p, "rank", 0) and p.rank < 900]
+            if len(ranked) == 1:
+                return ranked[0], min(1.0, top_score) * 0.92
+
+            starters = [p for p in tied if getattr(p, "depth_order", 0) == 1]
+            if len(starters) == 1:
+                return starters[0], min(1.0, top_score) * 0.90
+
             return None, min(1.0, top_score) * 0.5
 
         return top, min(1.0, top_score)
