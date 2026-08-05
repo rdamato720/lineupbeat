@@ -290,7 +290,18 @@ header.stuck /* ---- search: the front door ---- */
    sidebar looked glued to the rule above them. */
 .cols{display:grid; grid-template-columns:1fr 15rem; gap:1.6rem; align-items:start;
   padding-top:1.1rem; padding-bottom:1rem}
-@media (max-width:820px){ .cols{grid-template-columns:1fr} aside{order:-1} }
+@media (max-width:820px){
+  .cols{grid-template-columns:1fr}
+  /* Moving Now goes BELOW the feed on a phone.
+     It was ordered first, so a thumb scrolled through a secondary panel
+     before reaching the reports the page exists to show. Sticky positioning
+     also does nothing in a single column, so it is dropped here.
+
+     Scoped to .cols > aside: there are two asides on this page and an
+     unscoped rule reordered the hero's live panel instead, which is a
+     different element with a different job. */
+  .cols > aside{order:1; position:static; margin-top:.5rem}
+}
 
 /* ---- moving now ---- */
 aside{position:sticky; top:5.5rem}
@@ -686,6 +697,9 @@ aside{position:sticky; top:5.5rem}
   font-size:.55rem; font-weight:600; color:var(--standing)}
 .tile .tago{margin-left:auto; font-family:var(--data); font-size:.58rem;
   color:var(--quiet)}
+.tile h4 a, .big h3 a, .lcard h4 a, .vwho a{color:inherit;
+  text-decoration:none}
+.tile h4 a:hover, .big h3 a:hover, .lcard h4 a:hover{color:var(--signal)}
 .tile h4{margin:auto 0 .18rem; font-family:var(--agate); text-transform:uppercase;
   letter-spacing:.03em; font-weight:600; font-size:1.02rem; line-height:1.05;
   max-width:11ch}
@@ -938,6 +952,28 @@ footer p{margin:.25rem 0; font-size:.82rem; max-width:34ch}
 
 @media (max-width:520px){ .stamp{display:none} .when{margin-left:0; width:100%} }
 @media (prefers-reduced-motion:reduce){ *{animation:none !important; transition:none !important} }
+
+/* ---- touch targets ------------------------------------------------------
+   Apple and Google both want 44x44 minimum, and Google's mobile usability
+   report flags anything smaller. The team strip was 28x26, the filter chips
+   26px tall and the section tabs 29px: fine with a mouse, fiddly with a
+   thumb, and a ranking signal either way.
+
+   Desktop is untouched. These only apply on a phone, where the extra height
+   costs nothing because the strip already scrolls. */
+@media (max-width:700px){
+  .tbtn{min-height:44px; padding-inline:.7rem; display:inline-flex;
+    align-items:center}
+  .chipbtn{min-height:44px; padding-block:0; display:inline-flex;
+    align-items:center}
+  .vbtn{min-height:44px; display:inline-flex; align-items:center}
+  .logo{min-height:44px; display:inline-flex; align-items:center}
+  .ptab{min-height:44px; display:inline-flex; align-items:center}
+  .more{min-height:48px}
+  /* The whole tile is the tap target, so the name inside it does not need to
+     be one. Widening it would only create a second overlapping hit area. */
+  .tile h4 a, .big h3 a{display:inline}
+}
 </style>
 </head>
 <body>
@@ -1379,7 +1415,7 @@ function bigNode(n, sport, small = false){
       ${rookieHTML(n.player_id)}
       ${media.length ? `<span class="lbl">&#9654; ${fmtDur(media[0].duration_ms) || "video"}</span>` : ""}
     </div>
-    <h3>${esc(n.player_name)}</h3>
+    <h3>${playerLink(n.player_id, n.player_name)}</h3>
     <p>${esc(n.claim)}</p>
     <div class="foot">
       <span>${esc(who)}</span>
@@ -1387,7 +1423,13 @@ function bigNode(n, sport, small = false){
       ${n._extra ? `<b>+${n._extra} more update${n._extra > 1 ? "s" : ""}</b>` : ""}
       <span>${ago(n.published_at)}</span>
     </div>`;
-  el.onclick = () => { if(n.resolved) openPlayer(n.player_id); };
+  if(n.resolved){
+    el.style.cursor = "pointer";
+    el.onclick = (e) => {
+      if(e.target.closest("a")) return;      // let real links do their job
+      openPlayer(n.player_id);
+    };
+  }
   return el;
 }
 
@@ -1524,7 +1566,7 @@ function tileNode(n, sport){
       ${projHTML(n.player_id)}
       <span class="tago">${ago(n.published_at)}</span>
     </div>
-    <h4>${esc(n.player_name)}</h4>
+    <h4>${playerLink(n.player_id, n.player_name)}</h4>
     <p>${esc(n.claim)}</p>
     <div class="tfoot">
       <span>${esc(who)}</span>
@@ -1649,12 +1691,65 @@ function nuggetNode(n, sport, opts = {}){
 }
 
 /* ---------- views ---------- */
+// Real URLs for player pages.
+//
+// Every card was a div with an onclick, so the homepage linked to nothing a
+// crawler could follow and 677 static pages sat in the sitemap with no
+// internal links pointing at them. Internal linking is a major ranking
+// signal and we were passing none of it.
+//
+// The anchor carries the real href, so a crawler sees /player/breece-hall/
+// and a reader can copy the address. The click is intercepted below, so a
+// human still gets the instant in-page view and never leaves.
+//
+// The slug must match scripts/build_pages.py character for character or the
+// links point at pages that do not exist.
+function slugName(name){
+  return String(name || "")
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/[\s_]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+function playerHref(id){
+  // Sport-first, matching scripts/build_pages.py: /nfl/aj-brown/.
+  // If these two ever disagree the site links to pages that do not exist,
+  // so the shape lives in one comment in each file and nowhere else.
+  const p = PLAYERS.get(id);
+  if(!p || !p.name) return "#";
+  const sport = p.sport || state.sport || "nfl";
+  return `/${sport}/${slugName(p.name)}/`;
+}
+function playerLink(id, label, cls){
+  if(!id) return esc(label);
+  return `<a class="${cls || ""}" href="${playerHref(id)}" `
+       + `data-player="${esc(id)}">${esc(label)}</a>`;
+}
+
 function openPlayer(id){
+  // One place decides where a player lives, and it is a URL.
+  //
+  // Every card, search hit, live row and table row used to call this and get
+  // an in-page view swap. They all still call it; it navigates now. Keeping
+  // the single entry point means the site/app distinction is one function
+  // rather than eleven call sites.
+  const href = playerHref(id);
+  if(href && href !== "#"){ location.href = href; return; }
+  // No page for him -- unrostered, or no reports. Fall back to the in-page
+  // view rather than sending someone to a 404.
   state.player = id;
   writeHash();
   render();
   window.scrollTo({top:0, behavior:"instant"});
 }
+// No click interception. A link navigates.
+//
+// This was briefly an app that swallowed navigation and rendered a player
+// view in place. It is a site: every player has a page, clicking goes there,
+// the address bar tells the truth and the back button behaves. That costs a
+// page load and buys an architecture that search engines, shared links and
+// browser history all already understand.
+
 function openFeed(){
   state.player = null;
   writeHash();
@@ -1814,7 +1909,7 @@ function leagueCard(n){
       ${n.team ? logoHTML(n.team, "") : ""}
       <span class="lago">${ago(n.published_at)}</span>
     </div>
-    <h4>${esc(n.player_name)}</h4>
+    <h4>${playerLink(n.player_id, n.player_name)}</h4>
     <p>${esc(n.claim)}</p>
     <div class="lfoot">
       <span>${esc(src.source_name || "")}</span>
@@ -2094,7 +2189,7 @@ function renderFeed(){
           ${m.duration_ms ? `<span class="dur">${fmtDur(m.duration_ms)}</span>` : ""}
         </div>
         <div class="vbody">
-          <span class="vwho">${esc(n.player_name)}</span>
+          <span class="vwho">${playerLink(n.player_id, n.player_name)}</span>
           <p class="vclaim">${esc(n.claim)}</p>
           <span class="vteam">${logoHTML(n.team, "")}${esc(n.team)} ·
             ${ago(n.published_at)}</span>
