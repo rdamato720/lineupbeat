@@ -2,14 +2,24 @@ name: refresh beat feed
 
 on:
   schedule:
-    # Weekday practice reports land midday, inactives land Sunday late morning.
-    # Tighten this once you know when your feeds actually publish.
-    - cron: "*/20 12-23 * * *"
+    # Every 20 minutes, 11:00-04:00 UTC -- that is 7am to midnight Eastern.
+    #
+    # The old window was 12-23 UTC, which stopped at 7pm Eastern and left the
+    # wire frozen overnight. Evening practice reports and late transactions
+    # were arriving to nobody.
+    - cron: "*/20 11-23 * * *"
+    - cron: "*/20 0-4 * * *"
   workflow_dispatch:
 
 concurrency:
   group: refresh
-  cancel-in-progress: false
+  # Cancel a run that is still going when the next one is due.
+  #
+  # The cache only saves when a job finishes, so an overlapping run restores
+  # a database from before the run ahead of it did any work -- it sees the
+  # same articles as unseen and pays to extract them all over again. Better
+  # to abandon the older run: the newer one covers the same feeds anyway.
+  cancel-in-progress: true
 
 jobs:
   refresh:
@@ -41,12 +51,9 @@ jobs:
       - name: Run pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # Without this the 88 X beat writers are skipped and the run still
-          # exits zero, so the wire quietly becomes an RSS aggregator.
-          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
         run: |
           python -m beatwire.cli run    --sport nfl
-          python -m beatwire.cli export --sports nfl --limit 4000 \
+          python -m beatwire.cli export --sports nfl \
                  --out site/data/feed.json --site site/index.html
           # Crawlable pages. The app is one hash-routed URL with no words in
           # the markup; these give search engines a real address per player

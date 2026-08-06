@@ -13,6 +13,11 @@ from .extract import extract
 from .registry import Registry
 from .resolve import Resolver
 from .store import Store
+import concurrent.futures as cf
+
+# Small enough to stay well inside the rate limit, large enough
+# that a run finishes before the next one is due to start.
+EXTRACT_WORKERS = 8
 
 
 @dataclass
@@ -69,18 +74,47 @@ def run(
                              x_daily_cap=x_daily_cap)
         report.items_fetched += len(items)
 
+        fresh = []
         for item in items:
             if store.is_seen(item.id):
                 continue
             report.items_new += 1
             store.mark_seen(item.id, source.id, item.url, item)
-
             if item.kind == "podcast" and not item.transcript:
                 item = ingest.transcribe(item, backend="none")
+            fresh.append(item)
 
-            nuggets = extract(
-                item, source, reg.profile, resolver, client=client, stub=stub
-            )
+        # Extract concurrently.
+        #
+        # One model call per item, run one after another, made a full pass
+        # take forty minutes. The schedule fires every twenty, so runs
+        # overlapped -- and because the cache only saves when a job finishes,
+        # each overlapping run restored a database from before the one ahead
+        # of it had done any work, saw the same articles as unseen, and paid
+        # to extract them again.
+        #
+        # The calls are independent and spend their time waiting on the
+        # network, so a small pool collapses the wall clock without touching
+        # the rate limit. Everything that writes to SQLite still happens on
+        # this thread, one item at a time, because the connection is not
+        # shared safely across threads.
+        results = []
+        if fresh:
+            def work(it):
+                return it, extract(it, source, reg.profile, resolver,
+                                   client=client, stub=stub)
+            if stub or len(fresh) == 1:
+                results = [work(it) for it in fresh]
+            else:
+                with cf.ThreadPoolExecutor(max_workers=EXTRACT_WORKERS) as pool:
+                    futures = [pool.submit(work, it) for it in fresh]
+                    for f in cf.as_completed(futures):
+                        try:
+                            results.append(f.result())
+                        except Exception as exc:
+                            print(f"  ! extract failed: {str(exc)[:70]}")
+
+        for _item, nuggets in results:
             if nuggets:
                 report.items_passed_prefilter += 1
             for n in nuggets:
