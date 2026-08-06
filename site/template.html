@@ -637,7 +637,11 @@ aside{position:sticky; top:5.5rem}
    Eighty items as a single column of cards would be a mile of scroll; as a
    grid it is roughly the same height as the row list was, and every item
    carries its team's colour instead of a uniform hairline. */
-.tiles{display:grid; grid-template-columns:repeat(4, 1fr); gap:.6rem;
+/* Three across, not four.
+   At four the column was about fifteen characters wide, which meant a name
+   like Jacory Croskey-Merritt wrapped to three lines and the claim beneath
+   it to five. Denser is not more readable, and a wire is read at a glance. */
+.tiles{display:grid; grid-template-columns:repeat(3, 1fr); gap:.7rem;
   margin-bottom:.5rem}
 .more{display:block; width:100%; margin:1.1rem 0 .4rem; padding:.75rem; border-radius:999px;
   background:transparent; border:1px solid var(--rule); color:var(--ink);
@@ -645,8 +649,7 @@ aside{position:sticky; top:5.5rem}
   font-size:.72rem; font-weight:600; cursor:pointer; border-radius:2px}
 .more:hover{border-color:var(--signal); color:var(--signal)}
 .more span{color:var(--quiet); letter-spacing:.06em}
-@media (max-width:1100px){ .tiles{grid-template-columns:repeat(3, 1fr)} }
-@media (max-width:820px){ .tiles{grid-template-columns:repeat(2, 1fr)} }
+@media (max-width:1100px){ .tiles{grid-template-columns:repeat(2, 1fr)} }
 @media (max-width:520px){ .tiles{grid-template-columns:1fr} }
 
 /* Quiet by default. Full team gradients read fine on three big cards and turn
@@ -656,7 +659,7 @@ aside{position:sticky; top:5.5rem}
 .tile{position:relative; overflow:hidden; isolation:isolate; cursor:pointer;
   background:#101315; border:1px solid rgba(255,255,255,.07);
   border-left:3px solid var(--c1); border-radius:8px;
-  min-height:10rem; padding:.7rem .75rem;
+  min-height:11rem; padding:.85rem .9rem;
   display:flex; flex-direction:column;
   transition:background .12s, border-color .12s}
 .tile::before{content:""; position:absolute; inset:0; z-index:-2; opacity:.15;
@@ -704,10 +707,10 @@ aside{position:sticky; top:5.5rem}
 .tile h4 a, .big h3 a, .lcard h4 a, .vwho a{color:inherit;
   text-decoration:none}
 .tile h4 a:hover, .big h3 a:hover, .lcard h4 a:hover{color:var(--signal)}
-.tile h4{margin:auto 0 .18rem; font-family:var(--agate); text-transform:uppercase;
-  letter-spacing:.03em; font-weight:600; font-size:1.02rem; line-height:1.05;
-  max-width:11ch}
-.tile p{margin:0 0 .35rem; font-size:.82rem; line-height:1.36; max-width:24ch;
+.tile h4{margin:auto 0 .28rem; font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.02em; font-weight:600; font-size:1.25rem; line-height:1.06;
+  max-width:16ch}
+.tile p{margin:0 0 .4rem; font-size:.87rem; line-height:1.45; max-width:34ch;
   color:#C9D0CC;
   overflow:hidden; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical}
 .tile .tfoot{font-family:var(--agate); text-transform:uppercase; letter-spacing:.06em;
@@ -1020,6 +1023,47 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   text-transform:uppercase; color:var(--signal); margin-bottom:.2rem}
 .how dd{margin:0; font-size:.9rem; line-height:1.55; color:var(--quiet)}
 @media (max-width:900px){ .how{margin-top:1.2rem} .how dd{font-size:.86rem} }
+
+/* ---- follow --------------------------------------------------------------
+   Small, quiet until pressed. A wire is only worth checking daily once it is
+   about your players, and there was no way to tell it who those were. */
+/* Top right of the card, not in the metadata row.
+   That row already carries a team logo, a category, a depth slot, an ADP, a
+   projection, a rookie flag and a video duration. An eighth item was never
+   going to fit, and a follow control does not belong in a list of facts
+   about the player anyway -- it is an action. */
+.follow{position:absolute; top:.6rem; right:.6rem; z-index:3;
+  font-family:var(--agate); font-size:.58rem; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--quiet);
+  background:rgba(10,12,8,.72); backdrop-filter:blur(4px);
+  border:1px solid var(--rule); border-radius:999px; padding:.3rem .5rem;
+  cursor:pointer; white-space:nowrap; line-height:1}
+.follow:hover{color:var(--ink); border-color:var(--quiet)}
+.follow.on{color:#0A0C08; background:var(--signal); border-color:var(--signal)}
+.follow .lbl-icon{display:none}
+.tile, .big, .lcard{position:relative}
+/* A tile already puts the timestamp top right, so the follow button sits
+   below it rather than on top of it. */
+.tile .follow{top:auto; bottom:.6rem; right:.6rem}
+/* On a phone the tile is narrow enough that a word would crowd the header,
+   so it becomes a plus and a check. */
+@media (max-width:700px){
+  .follow{min-width:34px; min-height:34px; padding:0; display:grid;
+    place-items:center; font-size:.8rem}
+  .follow .lbl-full{display:none}
+  .follow .lbl-icon{display:block}
+}
+
+/* ---- my roster ---------------------------------------------------------- */
+.roschips{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1rem}
+.roschip{display:inline-flex; align-items:center; gap:.4rem;
+  font-family:var(--agate); font-size:.7rem; letter-spacing:.05em;
+  text-transform:uppercase; color:var(--ink); background:var(--panel);
+  border:1px solid var(--rule); border-radius:999px; padding:.35rem .5rem .35rem .7rem}
+.roschip button{background:none; border:0; color:var(--quiet); cursor:pointer;
+  font-size:1rem; line-height:1; padding:0 .1rem}
+.roschip button:hover{color:var(--alert, #ff6b6b)}
+@media (max-width:700px){ .roschip{padding:.5rem .6rem .5rem .8rem} }
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -1056,6 +1100,17 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     </div>
   </div>
 </header>
+
+<!-- My Roster gets its own header. Filtering the wire and calling it a
+     different section left the two views identical, so nothing told you
+     which one you were looking at. -->
+<section class="medhero" id="roshero" hidden>
+  <div class="wrap">
+    <h2 class="thesis"><em>My Roster.</em></h2>
+    <p class="lede" id="rossub"></p>
+    <div class="roschips" id="roschips"></div>
+  </div>
+</section>
 
 <section class="hero" id="hero">
   <div class="wrap herogrid">
@@ -1118,7 +1173,8 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     <div class="controls" id="controls">
       <button class="chipbtn" id="t-today" aria-pressed="true">Last 24 hours</button>
       <span class="posgrp" id="posgrp"></span>
-      <button class="chipbtn" id="t-roster" aria-pressed="false">My roster</button>
+      <!-- The roster filter was here as a chip. It is a nav section now, and
+           two controls for one thing is worse than either. -->
       <span class="spacer"></span>
       <span class="count agate" id="count"></span>
     </div>
@@ -1278,7 +1334,28 @@ function teamColor(code, i = 0){
 // about not handing someone eighty cards at once.
 const PAGE = 24;
 
-const state = { view:"wire", sport:null, player:null, team:null, pos:"skill", roster:new Set(),
+// A roster survives a closed tab.
+//
+// It used to live only in the URL, which meant it existed for exactly as long
+// as somebody kept the link. Anyone who came back through a bookmark or a
+// search result started empty, which is a strange thing to ask of a feature
+// called My Roster.
+//
+// The URL still carries it, so a roster stays shareable. Local storage is the
+// copy that persists.
+const ROSTER_KEY = "lineupbeat.roster.v1";
+function loadRoster(){
+  try {
+    const raw = localStorage.getItem(ROSTER_KEY);
+    return new Set(raw ? JSON.parse(raw) : []);
+  } catch(e){ return new Set(); }
+}
+function saveRoster(){
+  try { localStorage.setItem(ROSTER_KEY, JSON.stringify([...state.roster])); }
+  catch(e){ /* private browsing; the URL still holds it for this session */ }
+}
+
+const state = { view:"wire", sport:null, player:null, team:null, pos:"skill", roster:loadRoster(),
                 rosterOnly:false, todayOnly:true, beatOnly:false, shown:PAGE };
 
 const DATA = /*__DATA__*/ {"generated_at":new Date().toISOString(),"sports":{},"players":[]};
@@ -1379,7 +1456,12 @@ function readHash(){
   if(p.get("t")) state.team = p.get("t");
   if(p.get("v") && !HIDDEN_SECTIONS.has(p.get("v"))) state.view = p.get("v");
   if(p.has("g")) state.pos = p.get("g") || null;   // ?g= means all positions
-  if(p.get("r")) state.roster = new Set(p.get("r").split(",").filter(Boolean));
+  // A roster in the URL beats stored state: somebody following a shared link
+  // should see that roster, not their own.
+  if(p.get("r")){
+    state.roster = new Set(p.get("r").split(",").filter(Boolean));
+    saveRoster();
+  }
   if(p.has("all")) state.todayOnly = false;
 }
 function writeHash(){
@@ -1538,6 +1620,7 @@ function bigNode(n, sport, small = false){
     ${src ? `<img class="shot" loading="lazy" alt="" src="${src}"
         data-fallback="${espnURL(p && p.espn)}" data-initials=""
         onerror="faceFail(this)">` : ""}
+    ${followHTML(n.player_id)}
     <div class="kick">
       ${logoHTML(n.team, "")}
       <span class="lbl">${esc(catLabel(n.category))}</span>
@@ -1558,7 +1641,8 @@ function bigNode(n, sport, small = false){
   if(n.resolved){
     el.style.cursor = "pointer";
     el.onclick = (e) => {
-      if(e.target.closest("a")) return;      // let real links do their job
+      // Let real links and any control inside the card do their job.
+      if(fromControl(e)) return;
       openPlayer(n.player_id);
     };
   }
@@ -1690,6 +1774,7 @@ function tileNode(n, sport){
   el.innerHTML = `
     ${src ? `<img class="shot" loading="lazy" alt="" src="${src}"
         data-fallback="${espnURL(p && p.espn)}" onerror="faceFail(this)">` : ""}
+    ${followHTML(n.player_id)}
     <div class="tkick">
       ${logoHTML(n.team, "")}
       <span class="tcat">${esc(catLabel(n.category))}</span>
@@ -1708,7 +1793,8 @@ function tileNode(n, sport){
       ${expiring ? `<span class="warn">stale ${Math.round(d.hours)}h</span>` : ""}
     </div>`;
 
-  const go = () => {
+  const go = (e) => {
+    if(fromControl(e)) return;
     if(media.length) window.open(media[0].tweet_url, "_blank", "noopener");
     else if(n.resolved) openPlayer(n.player_id);
     else if(n.attributions[0]) window.open(n.attributions[0].url, "_blank", "noopener");
@@ -1762,7 +1848,7 @@ function rowNode(n, sport){
     }
   };
   el.addEventListener("click", e => {
-    if(e.target.closest("a")) return;         // let attributions through
+    if(e.target.closest("a, button")) return;  // links and controls first
     open();
   });
   const who = el.querySelector(".rwho");
@@ -1881,6 +1967,23 @@ function openPlayer(id){
 // the address bar tells the truth and the back button behaves. That costs a
 // page load and buys an architecture that search engines, shared links and
 // browser history all already understand.
+
+// Capture phase, deliberately.
+//
+// The whole card is clickable and navigates to the player page. A listener on
+// the document bubbles, which means it runs AFTER the card's own handler --
+// so following a player also navigated away from the page, and the roster
+// appeared to do nothing because you never saw the result.
+//
+// Capture runs before anything else on the way down, so the follow button can
+// take the click and keep it.
+document.addEventListener("click", (e) => {
+  const b = e.target.closest && e.target.closest("button[data-follow]");
+  if(!b) return;
+  e.preventDefault();
+  e.stopPropagation();
+  toggleFollow(b.dataset.follow);
+}, true);
 
 function openFeed(){
   state.player = null;
@@ -2047,7 +2150,8 @@ function leagueCard(n){
       <span>${esc(src.source_name || "")}</span>
       ${reporters > 1 ? `<b>${reporters} reporters</b>` : ""}
     </div>`;
-  el.onclick = () => {
+  el.onclick = (e) => {
+    if(fromControl(e)) return;
     if(n.resolved) openPlayer(n.player_id);
     else if(src.url) window.open(src.url, "_blank", "noopener");
   };
@@ -2065,7 +2169,8 @@ function medRow(n){
       <p class="medclaim">${esc(n.claim)}</p>
       <span class="medmeta">${esc(src.source_name || "")} · ${ago(n.published_at)}</span>
     </div>`;
-  row.onclick = () => {
+  row.onclick = (e) => {
+    if(fromControl(e)) return;
     if(n.resolved) openPlayer(n.player_id);
     else if(src.url) window.open(src.url, "_blank", "noopener");
   };
@@ -2089,7 +2194,8 @@ function renderFeed(){
       const pl = PLAYERS.get(n.player_id);
       if(!pl || !POS_GROUPS[state.pos].includes(pl.pos)) return false;
     }
-    if(state.rosterOnly && !state.roster.has(n.player_id)) return false;
+    if((state.rosterOnly || state.view === "roster")
+       && !state.roster.has(n.player_id)) return false;
     if(decay(n, sport).frac <= 0) return false;
     return true;
   });
@@ -2123,7 +2229,7 @@ function renderFeed(){
   if(!rows.length){
     feed.innerHTML = `<div class="empty">
       <span class="agate">Nothing in this window</span>
-      <p>${state.rosterOnly && !state.roster.size
+      <p>${(state.rosterOnly || state.view === "roster") && !state.roster.size
           ? "Search for a player above to follow them."
           : "Turn off a filter to see more, or check back after practice reports land."}</p>
     </div>`;
@@ -2377,6 +2483,38 @@ function projPlayers(){
   return DATA.players.filter(p => p.sport === state.sport && p.proj);
 }
 
+// A card is clickable, and so are the controls inside it. Every card handler
+// has to yield to a link or a button, and there are eight of them -- doing
+// that check by hand at each site is how one gets missed, which is how the
+// follow button navigated to the player page instead of following him.
+function fromControl(e){
+  return !!(e && e.target && e.target.closest
+            && e.target.closest("a, button, input, select"));
+}
+
+function isFollowed(pid){ return state.roster.has(pid); }
+
+function toggleFollow(pid){
+  if(state.roster.has(pid)) state.roster.delete(pid);
+  else state.roster.add(pid);
+  saveRoster();
+  writeHash();
+  render();
+}
+
+// The button lives on every card and every player header. A wire is only
+// worth checking daily once it is about your players, and there was no way
+// to tell it who those were.
+function followHTML(pid){
+  if(!pid) return "";
+  const on = isFollowed(pid);
+  return `<button class="follow${on ? " on" : ""}" data-follow="${esc(pid)}"
+    aria-pressed="${on}" title="${on ? "Following" : "Follow this player"}">
+    <span class="lbl-full">${on ? "Following" : "+ Follow"}</span>
+    <span class="lbl-icon" aria-hidden="true">${on ? "\u2713" : "+"}</span>
+    </button>`;
+}
+
 function projHTML(pid){
   // Nothing leaks out of a hidden section.
   //
@@ -2508,12 +2646,35 @@ function medicalNuggets(){
     .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 }
 
+function renderRosterHead(){
+  const sub = document.getElementById("rossub");
+  const chips = document.getElementById("roschips");
+  const n = state.roster.size;
+  if(!n){
+    sub.textContent = "Nobody yet. Follow a player from any card and his "
+      + "reports collect here.";
+    chips.innerHTML = "";
+    return;
+  }
+  const today = nuggets().filter(x => state.roster.has(x.player_id)).length;
+  sub.textContent = `${n} player${n === 1 ? "" : "s"}, `
+    + `${today} report${today === 1 ? "" : "s"} in this window.`;
+  // Who is on it, and a way off it, without hunting for their card.
+  chips.innerHTML = [...state.roster].map(pid => {
+    const p = PLAYERS.get(pid);
+    if(!p) return "";
+    return `<span class="roschip">${esc(p.name)}
+      <button data-follow="${esc(pid)}" title="Remove">&times;</button></span>`;
+  }).join("");
+}
+
 function renderViews(){
   const el = document.getElementById("views");
   const medCount = medicalNuggets().length;
   el.innerHTML = "";
   const projCount = HIDDEN_SECTIONS.has("projections") ? "" : projPlayers().length;
   [["The Wire", "wire", ""],
+   ["My Roster", "roster", state.roster.size || ""],
    ["Projections", "projections", projCount],
    ["The Medical Tent", "medical", medCount]]
     .forEach(([label, key, count]) => {
@@ -2619,7 +2780,7 @@ function liveRow(n, entering){
       <p class="liveclaim">${esc(n.claim)}</p>
       <span class="livemeta">${esc(src.source_name || "")} · ${ago(n.published_at)}</span>
     </div>`;
-  row.onclick = () => { if(n.resolved) openPlayer(n.player_id); };
+  row.onclick = (e) => { if(!fromControl(e) && n.resolved) openPlayer(n.player_id); };
   return row;
 }
 
@@ -2701,13 +2862,23 @@ function render(){
   // belong to the wire, not to Breece Hall.
   const med = state.view === "medical" && !state.player;
   const proj = state.view === "projections" && !state.player;
-  document.getElementById("hero").hidden = med || proj || !!state.player;
+  const ros = state.view === "roster" && !state.player;
+  document.getElementById("hero").hidden = med || proj || ros || !!state.player;
+  const rh = document.getElementById("roshero");
+  if(rh){
+    rh.hidden = !ros;
+    if(ros) renderRosterHead();
+  }
   document.getElementById("medhero").hidden = !med;
   renderTeams();
   renderPos();
   renderViews();
   renderLive();
   renderFacts();
+  // Moving Now is league-wide, which reads as noise beside a page that is
+  // explicitly about your players.
+  const aside = document.querySelector(".cols > aside");
+  if(aside) aside.hidden = (state.view === "roster" && !state.player);
   renderTrending();
   if(state.player) renderPlayer();
   else if(state.view === "medical") renderMedical();
@@ -2757,8 +2928,7 @@ function toggle(id, key){
 
   document.getElementById("q").addEventListener("input", e => renderHits(e.target.value));
 
-  ["t-today","t-roster"].forEach((id,i) =>
-    toggle(id, ["todayOnly","rosterOnly"][i]));
+  toggle("t-today", "todayOnly");
 
   render();
 })();
