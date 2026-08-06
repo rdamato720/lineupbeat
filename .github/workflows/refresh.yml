@@ -58,11 +58,27 @@ jobs:
       - name: Run pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # Without this the 88 X beat writers are skipped and the run
-          # still exits zero, so the wire quietly becomes RSS only.
           TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
         run: |
+          # Rosters first, once a day.
+          #
+          # The wire always knows before the roster does -- that is the point
+          # of reading beat writers -- so a player who signs today is
+          # unresolvable until Sleeper catches up. Stefon Diggs signed with
+          # Washington and five reports about him carried no position, so the
+          # skill filter dropped him and his video never showed, on the one
+          # day anybody wanted it.
+          if [ "$(date -u +%H)" -lt 12 ]; then
+            python scripts/import_rosters.py nfl || true
+            python scripts/import_adp.py || true
+            python scripts/import_depth.py --season 2026 || true
+          fi
+
           python -m beatwire.cli run    --sport nfl
+
+          # Everything still unmatched gets another try against the roster as
+          # it stands now. No model call, so this is free.
+          python scripts/reresolve.py --sport nfl || true
           python -m beatwire.cli export --sports nfl --limit 4000 \
                  --out site/data/feed.json --site site/index.html
           # Crawlable pages. The app is one hash-routed URL with no words in
