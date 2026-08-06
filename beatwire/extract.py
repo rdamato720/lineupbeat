@@ -26,6 +26,11 @@ from .resolve import Resolver, normalize, surname
 
 MODEL = os.environ.get("BEATWIRE_MODEL", "claude-haiku-4-5")
 
+# A clip stays attached only if the post it came from is about fewer than
+# this many players. Three is the line between "here is a player doing
+# something" and "here is everything that happened at practice today".
+MEDIA_MAX_PLAYERS = 3
+
 SYSTEM = """You extract structured player notes from local beat reporting.
 
 Rules:
@@ -79,10 +84,20 @@ Rules:
   Do not try to expand or correct it. Resolution happens downstream.
 
 Actionability rubric:
-  3 = changes a lineup or roster decision today
+  3 = changes a lineup or roster decision, OR settles something about a
+      player's season: a trade, a signing, an extension, a release, a job
+      won or lost, a season-ending injury, a suspension.
   2 = changes an expectation for this week
   1 = useful background, no decision attached
   0 = noise
+
+  The first tier used to read "changes a lineup or roster decision TODAY",
+  which sounds right and is not. Jonathan Taylor signing a two-year,
+  forty-four-million-dollar extension does not change who anybody starts on
+  Sunday, so it scored a 2 and sank beneath a wall of practice reports. That
+  is among the most consequential things that can happen to a running back.
+  The test is whether a reader needs to know, not whether it moves a lineup
+  this week.
 
 Return ONLY a JSON array. No prose, no markdown fences."""
 
@@ -197,6 +212,12 @@ def extract(
             raise ValueError("Pass an Anthropic client or use stub=True")
         rows = _call_model(prompt, client)
 
+    # How many distinct players does this item talk about? Counted before the
+    # loop because it is a property of the source, not of any one nugget.
+    _players = {(r.get("player") or "").strip().lower()
+                for r in rows if (r.get("player") or "").strip()}
+    _clip_fits = len(_players) < MEDIA_MAX_PLAYERS
+
     nuggets = []
     for row in rows:
         if not isinstance(row, dict) or not row.get("player"):
@@ -243,7 +264,19 @@ def extract(
                 mention=mention,
                 event=event,
                 weight=source.effective_weight,
-                media=getattr(item, "media", []) or [],
+                # Media only when the clip plausibly shows THIS claim.
+                #
+                # A beat writer's practice roundup is one post covering a
+                # dozen players with a single clip attached. Every nugget
+                # extracted from it inherited that clip, so a card about a
+                # tight end's route running played footage of warmups, and so
+                # did the nine cards next to it.
+                #
+                # A post about one or two players with a clip is very likely
+                # a clip of them. A post about six is a summary of the day.
+                # The rule fails safe: at worst we show fewer clips, and a
+                # missing video is better than a misleading one.
+                media=(getattr(item, "media", []) or []) if _clip_fits else [],
             )
         )
     return nuggets
