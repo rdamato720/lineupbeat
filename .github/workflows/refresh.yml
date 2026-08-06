@@ -2,13 +2,20 @@ name: refresh beat feed
 
 on:
   schedule:
-    # Every 20 minutes, 11:00-04:00 UTC -- that is 7am to midnight Eastern.
+    # Every 20 minutes, 10:00 UTC through 08:00 UTC the next day.
     #
-    # The old window was 12-23 UTC, which stopped at 7pm Eastern and left the
-    # wire frozen overnight. Evening practice reports and late transactions
-    # were arriving to nobody.
-    - cron: "*/20 11-23 * * *"
-    - cron: "*/20 0-4 * * *"
+    # That is 6am Eastern to 4am Eastern, which is 3am to 1am Pacific. The
+    # window has to run on Pacific time at the far end: a west coast team
+    # practices in the afternoon there, so Seahawks and 49ers reports land at
+    # 6-9pm Pacific, and a Sunday night game finishes around 8:30pm Pacific.
+    #
+    # Stopping at midnight Eastern cut all of that off -- it is only 9pm on
+    # the coast where three of the day's reports are still being filed.
+    #
+    # The two-hour gap, 4-6am Eastern, is the one stretch where nobody in
+    # either time zone is filing anything.
+    - cron: "*/20 10-23 * * *"
+    - cron: "*/20 0-8 * * *"
   workflow_dispatch:
 
 concurrency:
