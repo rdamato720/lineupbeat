@@ -369,14 +369,14 @@ aside{position:sticky; top:5.5rem}
 .big .kick img{width:1.4rem; height:1.4rem; object-fit:contain}
 .big .kick .lbl{font-family:var(--agate); text-transform:uppercase;
   letter-spacing:.09em; font-size:.62rem; font-weight:600; color:var(--c2)}
-.big h3{margin:auto 0 .25rem; font-family:var(--agate); text-transform:uppercase;
+.big h3{margin:0 0 .25rem; font-family:var(--agate); text-transform:uppercase;
   letter-spacing:.03em; font-weight:600; line-height:1; font-size:1.55rem;
   max-width:9ch}
 .big.sm h3{font-size:1.15rem}
 .big p{margin:0 0 .45rem; font-size:.92rem; line-height:1.35; max-width:26ch;
   text-shadow:0 1px 8px rgba(0,0,0,.7)}
 .big.sm p{font-size:.84rem; max-width:22ch}
-.big .foot{font-family:var(--agate); text-transform:uppercase; letter-spacing:.06em;
+.big .foot{margin-top:auto; padding-right:5.5rem; font-family:var(--agate); text-transform:uppercase; letter-spacing:.06em;
   font-size:.63rem; color:var(--quiet); display:flex; gap:.5rem; flex-wrap:wrap}
 .big .foot b{color:var(--c2); font-weight:600}
 
@@ -659,7 +659,10 @@ aside{position:sticky; top:5.5rem}
 .tile{position:relative; overflow:hidden; isolation:isolate; cursor:pointer;
   background:#101315; border:1px solid rgba(255,255,255,.07);
   border-left:3px solid var(--c1); border-radius:8px;
-  min-height:11rem; padding:.85rem .9rem;
+  /* Extra room at the foot for the follow button, which sits bottom right.
+     Without it the source credit wrapped underneath and the button covered
+     "+1 more report". */
+  min-height:12.5rem; padding:.85rem .9rem 2.6rem;
   display:flex; flex-direction:column;
   transition:background .12s, border-color .12s}
 .tile::before{content:""; position:absolute; inset:0; z-index:-2; opacity:.15;
@@ -707,14 +710,21 @@ aside{position:sticky; top:5.5rem}
 .tile h4 a, .big h3 a, .lcard h4 a, .vwho a{color:inherit;
   text-decoration:none}
 .tile h4 a:hover, .big h3 a:hover, .lcard h4 a:hover{color:var(--signal)}
-.tile h4{margin:auto 0 .28rem; font-family:var(--agate); text-transform:uppercase;
+/* Content flows from the top; the footer is what gets pushed down.
+   The name used to carry `margin:auto 0`, which pushed it to the bottom of
+   whatever space was left -- fine when every claim was the same length, and
+   visibly wrong once the tiles got taller: names started 39, 57 and 77
+   pixels down in the same row. */
+.tile h4{margin:0 0 .28rem; font-family:var(--agate); text-transform:uppercase;
   letter-spacing:.02em; font-weight:600; font-size:1.25rem; line-height:1.06;
   max-width:16ch}
 .tile p{margin:0 0 .4rem; font-size:.87rem; line-height:1.45; max-width:34ch;
   color:#C9D0CC;
   overflow:hidden; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical}
-.tile .tfoot{font-family:var(--agate); text-transform:uppercase; letter-spacing:.06em;
-  font-size:.58rem; color:var(--quiet); display:flex; gap:.45rem; flex-wrap:wrap}
+.tile .tfoot{margin-top:auto; font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.06em;
+  font-size:.58rem; color:var(--quiet); display:flex; gap:.45rem; flex-wrap:wrap;
+  padding-right:5.5rem}
 .tile .tfoot b{color:var(--signal); font-weight:600}
 .tile .tfoot .warn{color:var(--alert)}
 
