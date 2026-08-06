@@ -1,0 +1,125 @@
+<!doctype html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Beatwire audit</title>
+<style>
+:root{--bg:#ECEEF0;--card:#fff;--ink:#14181C;--rule:#CFD5DA;--quiet:#6B757D;--sig:#A82015;--ok:#1B6B3A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 ui-sans-serif,system-ui,sans-serif;
+     display:flex;flex-direction:column;min-height:100vh}
+header{padding:.8rem 1rem;border-bottom:1px solid var(--rule);display:flex;gap:1rem;align-items:baseline;
+       font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+.bar{flex:1;height:4px;background:var(--rule);border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--sig);width:0;transition:width .2s}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:1.5rem 1rem}
+.card{background:var(--card);border:1px solid var(--rule);max-width:38rem;width:100%;padding:1.4rem}
+.who{font-size:1.5rem;font-weight:700;margin:0 0 .1rem}
+.meta{color:var(--quiet);font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:1rem}
+.claim{font-size:1.15rem;margin:0 0 1.2rem}
+.src a{color:var(--sig)}
+.unres{display:inline-block;border:1px dashed var(--rule);color:var(--quiet);
+       font-size:.7rem;padding:.1rem .35rem;text-transform:uppercase;letter-spacing:.07em}
+footer{border-top:1px solid var(--rule);padding:.7rem 1rem;display:flex;gap:.5rem;flex-wrap:wrap;
+       justify-content:center;background:var(--card)}
+kbd{background:var(--bg);border:1px solid var(--rule);border-bottom-width:2px;border-radius:3px;
+    padding:.1rem .35rem;font:inherit;font-size:.78rem}
+.k{font-size:.8rem;color:var(--quiet)}
+#done{display:none;padding:2rem;max-width:40rem;margin:0 auto}
+#done h2{margin-top:0}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.9rem}
+td,th{text-align:left;padding:.35rem .5rem;border-bottom:1px solid var(--rule)}
+.big{font-size:2rem;font-weight:700}
+.good{color:var(--ok)} .bad{color:var(--sig)}
+textarea{width:100%;height:9rem;font-family:ui-monospace,monospace;font-size:.75rem}
+</style>
+
+<header>
+  <span id="pos">0 / 0</span>
+  <span class="bar"><i id="prog"></i></span>
+  <span id="acc"></span>
+</header>
+
+<main id="main"><div class="card" id="card"></div></main>
+<div id="done"></div>
+
+<footer>
+  <span class="k"><kbd>1</kbd> correct</span>
+  <span class="k"><kbd>2</kbd> wrong player</span>
+  <span class="k"><kbd>3</kbd> wrong category</span>
+  <span class="k"><kbd>4</kbd> not real news</span>
+  <span class="k"><kbd>space</kbd> skip</span>
+  <span class="k"><kbd>u</kbd> undo</span>
+</footer>
+
+<script>
+const ITEMS = [{"id": 916, "dedupe_key": "nfl:nfl-5580:usage:2026-08-02", "sport": "nfl", "player_id": "nfl-5580", "player_name": "Frankie Luvu", "mention": "Frankie Luvu", "team": "WAS", "category": "usage", "claim": "Returning to natural inside linebacker position after being asked to play out of position for most of 2025.", "actionability": 2, "confidence": 1.0, "published_at": "2026-08-02T08:14:21+00:00", "tags": ["role_change", "position_return"], "attributions": [{"source_id": "nfl-was-sbn", "source_name": "Commanders community beat", "outlet": "SB Nation", "url": "https://www.hogshaven.com/washington-commanders-discussion/428039/do-styles-chenal-luvu-hold-the-key-to-washingtons-success-in-2026", "published_at": "2026-08-02T08:14:21+00:00"}], "corroborations": 1, "resolved": true}, {"id": 324, "dedupe_key": "nfl:nfl-5610:usage:2026-07-29", "sport": "nfl", "player_id": "nfl-5610", "player_name": "Evan Brown", "mention": "Evan Brown", "team": "HOU", "category": "usage", "claim": "Competing for left guard or center role against Jake Andrews and rookies Keylan Rutledge and Febechi Nwaiwu.", "actionability": 2, "confidence": 1.0, "published_at": "2026-07-29T19:00:00+00:00", "tags": ["position competition", "training camp"], "attributions": [{"source_id": "nfl-hou-sbn", "source_name": "Texans community beat", "outlet": "SB Nation", "url": "https://www.battleredblog.com/houston-texans-depth-chart/76748/texans-training-camp-top-4-positions-to-watch", "published_at": "2026-07-29T19:00:00+00:00"}], "corroborations": 1, "resolved": true}, {"id": 749, "dedupe_key": "nfl:nfl-12508:performance:2026-08-01", "sport": "nfl", "player_id": "nfl-12508", "player_name": "Jaxson Dart", "mention": "Jaxson Dart", "team": "NYG", "category": "performance", "claim": "Had mixed practice with long completion to Fields, touch pass touchdown to Johnson, and two interceptions to Adebo.", "actionability": 1, "confidence": 1.0, "published_at": "2026-08-02T00:46:07+00:00", "tags": ["camp_performance"], "attributions": [{"source_id": "nfl-nyg-sbn", "source_name": "Giants community beat", "outlet": "SB Nation", "url": "https://www.bigblueview.com/new-york-giants-training-camp/166497/training-camp-practice-no-4-discussion-news-updates-highlights", "published_at": "2026-08-02T00:46:07+00:00"}], "corroborations": 1, "resolved": true}, {"id": 64, "dedupe_key": "nfl:nfl-13457:usage:2026-08-03", "sport": "nfl", "player_id": "nfl-13457", "player_name": "Gabe Jacas", "mention": "Gabe Jacas", "team": "NE", "category": "usage", "claim": "Returned from absence but remains limited practice participant; will rotate into DL rotation.", "actionability": 2, "confidence": 1.0, "published_at": "2026-08-03T16:38:12+00:00", "tags": ["injury_return", "reps"], "attributions": [{"source_id": "nfl-ne-sbn", "source_name": "Patriots community beat", "outlet": "SB Nation", "url": "https://www.patspulpit.com/new-england-patriots-training-camp/132364/2026-training-camp-competitions-updated-august-3", "published_at": "2026-08-03T16:38:12+00:00"}], "corroborations": 1, "resolved": true}, {"id": 984, "dedupe_key": "nfl:nfl-12732:performance:2026-08-02", "sport": "nfl", "player_id": "nfl-12732", "player_name": "Dominic Lovett", "mention": "Dominic Lovett", "team": "DET", "category": "performance", "claim": "Won two one-on-one reps with an incredible back-shoulder catch and beating corner off release.", "actionability": 1, "confidence": 1.0, "published_at": "2026-08-03T00:44:41+00:00", "tags": ["camp_observation"], "attributions": [{"source_id": "nfl-det-sbn", "source_name": "Lions community beat", "outlet": "SB Nation", "url": "https://www.prideofdetroit.com/detroit-lions-analysis/168209/lions-training-camp-day-4-observations-defense-clamps-in-red-zone", "published_at": "2026-08-03T00:44:41+00:00"}], "corroborations": 1, "resolved": true}, {"id": 959, "dedupe_key": "nfl:nfl-11788:usage:2026-08-03", "sport": "nfl", "player_id": "nfl-11788", "player_name": "Christian Mahogany", "mention": "Christian Mahogany", "team": "DET", "category": "usage", "claim": "Still working his way back up to speed with the second team.", "actionability": 2, "confidence": 1.0, "published_at": "2026-08-03T16:15:00+00:00", "tags": ["practice_participation"], "attributions": [{"source_id": "nfl-det-sbn", "source_name": "Lions community beat", "outlet": "SB Nation", "url": "https://www.prideofdetroit.com/detroit-lions-training-camp/168235/9-standouts-day-4-detroit-lions-training-camp", "published_at": "2026-08-03T16:15:00+00:00"}], "corroborations": 1, "resolved": true}, {"id": 1060, "dedupe_key": "nfl:nfl-13445:usage:2026-08-02", "sport": "nfl", "player_id": "nfl-13445", "player_name": "Caleb Banks", "mention": "Caleb Banks", "team": "MIN", "category": "usage", "claim": "Received first and second-team reps daily while being built up gradually after missing OTA and minicamp periods.", "actionability": 2, "confidence": 1.0, "published_at": "2026-08-02T23:13:28+00:00", "tags": ["training_camp", "practice_participation"], "attributions": [{"source_id": "nfl-min-sbn", "source_name": "Vikings community beat", "outlet": "SB Nation", "url": "https://www.dailynorseman.com/minnesota-vikings-discussion-chat-message-board/97862/minnesota-vikings-news-and-links-paralyis-by-analysis", "published_at": "2026-08-02T23:13:28+00:00"}], "corroborations": 1, "resolved": true}, {"id": 980, "dedupe_key": "nfl:nfl-11746:injury:2026-08-02", "sport": "nfl", "player_id": "nfl-11746", "player_name": "Giovanni Manu", "mention": "Giovanni Manu", "team": "DET", "category": "injury", "claim": "Out of practice, limiting offensive line depth during Day 4 drills.", "actionability": 2, "confidence": 1.0, "published_at": "2026-08-03T00:44:41+00:00", "tags": ["unavailable"], "attributions": [{"source_id": "nfl-det-sbn", "source_name": "Lions community beat", "outlet": "SB Nation", "url": "https://www.prideofdetroit.com/detroit-lions-analysis/168209/lions-training-camp-day-4-observations-defense-clamps-in-red-zone", "published_at": "2026-08-03T00:44:41+00:00"}], "corroborations": 1, "resolved": true}, {"id": 76, "dedupe_key": "nfl:nfl-12726:performance:2026-08-02", "sport": "nfl", "player_id": "nfl-12726", "player_name": "Kobee Minor", "mention": "Kobee Minor", "team": "NE", "category": "performance", "claim": "Saw elevated snaps and recorded pass breakup during Saturday practice.", "actionability": 1, "confidence": 1.0, "published_at": "2026-08-02T14:00:00+00:00", "tags": ["training_camp"], "attributions": [{"source_id": "nfl-ne-sbn", "source_name": "Patriots community beat", "outlet": "SB Nation", "url": "https://www.patspulpit.com/new-england-patriots-opinion/132243/sunday-patriots-notes-eli-raridon-impressing-early-in-training-camp", "published_at": "2026-08-02T14:00:00+00:00"}], "corroborations": 1, "resolved": true}, {"id": 1291, "dedupe_key": "nfl:nfl-12602:injury:2026-08-01", "sport": "nfl", "player_id": "nfl-12602", "player_name": "Mykel Williams", "mention": "Mykel Williams", "team": "SF", "category": "injury", "claim": "Pass rusher is on the physically unable to perform list.", "actionability": 2, "confidence": 1.0, "published_at": "2026-08-02T00:49:35+00:00", "tags": ["camp", "PUP"], "attributions": [{"source_id": "nfl-sf-sbn", "source_name": "49ers community beat", "outlet": "SB Nation", "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/160887/49ers-wr-dezhaun-stribling-sits-out-saturdays-practice-with-hamstring-tightness", "published_at": "2026-08-02T00:49:35+00:00"}], "corroborations": 1, "resolved": true}, {"id": 275, "dedupe_key": "nfl:nfl-7600:performance:2026-08-02", "sport": "nfl", "player_id": "nfl-7600", "player_name": "Pat Freiermuth", "mention": "Pat Freiermuth", "team": "PIT", "category": "performance", "claim": "Tight end caught a 25-yard touchdown pass from Rodgers in the end zone on Saturday.", "actionability": 1, "confidence": 1.0, "published_at": "2026-08-02T23:00:00+00:00", "tags": ["training_camp", "observed_rep"], "attributions": [{"source_id": "nfl-pit-sbn", "source_name": "Steelers community beat", "outlet": "SB Nation", "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-training-camp/172902/the-steelers-couldnt-have-asked-for-a-better-start-to-training-camp-drew-allar-will-howard-aaron-rodgers", "published_at": "2026-08-02T23:00:00+00:00"}], "corroborations": 1, "resolved": true}, {"id": 429, "dedupe_key": "nfl:nfl-5947:performance:2026-07-29", "sport": "nfl", "player_id": "nfl-5947", "player_name": "Jakobi Meyers", "mention": "Jakobi Meyers", "team": "JAX", "category": "performance", "claim": "Dropped a wide-open pass over the middle during Day 1 practice drills.", "actionability": 1, "confidence": 1.0, "published_at": "2026-07-29T22:13:02+00:00", "tags": ["training_camp", "drop"], "attributions": [{"source_id": "nfl-jax-sbn", "source_name": "Jaguars community beat", "outlet": "SB Nation", "url": "https://www.bigcatcountry.com/nfl-training-camp/86921/jags-travis-hunter-returns-to-practice-field", "published_at": "2026-07-29T22:13:02+00:00"}], "corroborations": 1, "resolved": true}, {"id": 558, "dedupe_key": "nfl:nfl-13791:injury:2026-08-01", "sport": "nfl", "player_id": "nfl-13791", "player_name": "Wesley Bissainthe", "mention": "Wesley Bissainthe", "team": "KC", "category": "injury", "claim": "Rookie LB not on field Saturday; missed most of offseason program with undisclosed injury.", "actionability": 1, "confidence": 1.0, "published_at": "2026-08-01T21:30:00+00:00", "tags": ["training_camp", "undrafted_free_agent"], "attributions": [{"source_id": "nfl-kc-sbn", "source_name": "Chiefs community beat", "outlet": "SB Nation", "url": "https://www.arrowheadpride.com/kansas-city-chiefs-injuries/206732/chiefs-rookie-wr-cyrus-allen-leaves-saturdays-practice-with-an-injury", "published_at": "2026-08-01T21:30:00+00:00"}], "corroborations": 1, "resolved": true}, {"id": 479, "dedupe_key": "nfl:nfl-11563:performance:2026-08-03", "sport": "nfl", "player_id": "nfl-11563", "player_name": "Bo Nix", "mention": "Bo Nix", "team": "DEN", "category": "performance", "claim": "Demonstrated comfort and command during opening day of training camp with multiple deep shots attempted.", "actionability": 1, "confidence": 1.0, "published_at": "2026-08-03T17:30:00+00:00", "tags": ["camp_observation"], "attributions": [{"source_id": "nfl-den-sbn", "source_name": "Broncos community beat", "outlet": "SB Nation", "url": "https://www.milehighreport.com/denver-broncos-news/180185/fans-believe-running-backs-super-important-to-broncos-success-this-season", "published_at": "2026-08-03T17:30:00+00:00"}], "corroborations": 1, "resolved": true}, {"id": 691, "dedupe_key": "nfl:nfl-8381:performance:2026-08-02", "sport": "nfl", "player_id": "nfl-8381", "player_name": "Cobie Durant", "mention": "Cobie Durant", "team": "DAL", "category": "performance", "claim": "Performing well in early camp sessions.", "actionability": 1, "confidence": 1.0, "published_at": "2026-08-02T22:30:00+00:00", "tags": ["camp_report"], "attributions": [{"source_id": "nfl-dal-sbn", "source_name": "Cowboys community beat", "outlet": "SB Nation", "url": "https://www.bloggingtheboys.com/dallas-cowboys-preseason/211815/training-camp-phil-mafah-tyler-guyton", "published_at": "2026-08-02T22:30:00+00:00"}], "corroborations": 1, "resolved": true}, {"id": 663, "dedupe_key": "nfl:nfl-11593:usage:2026-08-03", "sport": "nfl", "player_id": "nfl-11593", "player_name": "Brevyn Spann-Ford", "mention": "Brevyn Spann-Ford", "team": "DAL", "category": "usage", "claim": "Reserve tight end received extra reps with starting offense due to Ferguson's absence.", "actionability": 2, "confidence": 1.0, "published_at": "2026-08-03T16:00:00+00:00", "tags": ["camp_reps", "opportunity"], "attributions": [{"source_id": "nfl-dal-sbn", "source_name": "Cowboys community beat", "outlet": "SB Nation", "url": "https://www.bloggingtheboys.com/dallas-cowboys-news/211954/trading-jordyn-brooks-rumor-defense-improvement", "published_at": "2026-08-03T16:00:00+00:00"}], "corroborations": 1, "resolved": true}, {"id": 680, "dedupe_key": "nfl:nfl-6711:injury:2026-08-02", "sport": "nfl", "player_id": "nfl-6711", "player_name": "Jalen Thompson", "mention": "Jalen Thompson", "team": "DAL", "category": "injury", "claim": "Safety absent from Saturday practice, creating opportunity for depth rotation.", "actionability": 2, "confidence": 1.0, "published_at": "2026-08-03T00:00:00+00:00", "tags": ["dnp"], "attributions": [{"source_id": "nfl-dal-sbn", "source_name": "Cowboys community beat", "outlet": "SB Nation", "url": "https://www.bloggingtheboys.com/dallas-cowboys-preseason/211859/training-camp-caleb-downs-george-pickens", "published_at": "2026-08-03T00:00:00+00:00"}], "corroborations": 1, "resolved": true}, {"id": 814, "dedupe_key": "nfl:nfl-13294:performance:2026-08-01", "sport": "nfl", "player_id": "nfl-13294", "player_name": "Makai Lemon", "mention": "Makai Lemon", "team": "PHI", "category": "performance", "claim": "Quiet start to camp with inconsistent route timing and drop issues, though excelled fielding punts.", "actionability": 1, "confidence": 1.0, "published_at": "2026-08-02T03:45:14+00:00", "tags": ["camp_performance"], "attributions": [{"source_id": "nfl-phi-sbn", "source_name": "Eagles community beat", "outlet": "SB Nation", "url": "https://www.bleedinggreennation.com/philadelphia-eagles-preseason/178404/eagles-training-camp-practice-notes-jalyx-hunt-and-jalen-carter-help-defense-win-the-day", "published_at": "2026-08-02T03:45:14+00:00"}], "corroborations": 1, "resolved": true}, {"id": 143, "dedupe_key": "nfl:nfl-1373:performance:2026-07-30", "sport": "nfl", "player_id": "nfl-1373", "player_name": "Geno Smith", "mention": "Geno Smith", "team": "NYJ", "category": "performance", "claim": "Completed 3 of 4 passes in 11-on-11 and 3 of 4 in 7-on-7 drills.", "actionability": 1, "confidence": 1.0, "published_at": "2026-07-30T20:53:52+00:00", "tags": ["camp"], "attributions": [{"source_id": "nfl-nyj-sbn", "source_name": "Jets community beat", "outlet": "SB Nation", "url": "https://www.ganggreennation.com/new-york-jets-training-camp/95237/david-bailey-stars-on-day-two-of-jets-training-camp", "published_at": "2026-07-30T20:53:52+00:00"}], "corroborations": 1, "resolved": true}, {"id": 870, "dedupe_key": "nfl:nfl-6292:injury:2026-08-02", "sport": "nfl", "player_id": "nfl-6292", "player_name": "Nick Allegretti", "mention": "Nick Allegretti", "team": "WAS", "category": "injury", "claim": "Center Nick Allegretti sidelined with calf strain during training camp.", "actionability": 3, "confidence": 1.0, "published_at": "2026-08-03T04:58:08+00:00", "tags": ["injury_designation"], "attributions": [{"source_id": "nfl-was-sbn", "source_name": "Commanders community beat", "outlet": "SB Nation", "url": "https://www.hogshaven.com/washington-commanders-free-agency/428218/washington-commanders-sign-center-trey-hill", "published_at": "2026-08-03T04:58:08+00:00"}], "corroborations": 1, "resolved": true}, {"id": 849, "dedupe_key": "nfl:nfl-7402:performance:2026-08-03", "sport": "nfl", "player_id": "nfl-7402", "player_name": "Julian Good-Jones", "mention": "Julian Good-Jones", "team": "WAS", "category": "performance", "claim": "Guard had strong day in one-on-one drills against defensive linemen in pads.", "actionability": 1, "confidence": 1.0, "published_at": "2026-08-03T16:30:00+00:00", "tags": ["training_camp"], "attributions": [{"source_id": "nfl-was-sbn", "source_name": "Commanders community beat", "outlet": "SB Nation", "url": "https://www.hogshaven.com/washington-commanders-training-camp/428255/washington-commanders-news-sights-sounds-from-training-camp-day-4", "published_at": "2026-08-03T16:30:00+00:00"}], "corroborations": 1, "resolved": true}, {"id": 101, "dedupe_key": "nfl:nfl-5054:injury:2026-08-01", "sport": "nfl", "player_id": "nfl-5054", "player_name": "Carlton Davis", "mention": "Carlton Davis III", "team": "NE", "category": "injury", "claim": "Cornerback sidelined with injury status.", "actionability": 2, "confidence": 1.0, "published_at": "2026-08-01T18:00:00+00:00", "tags": ["injured"], "attributions": [{"source_id": "nfl-ne-sbn", "source_name": "Patriots community beat", "outlet": "SB Nation", "url": "https://www.patspulpit.com/new-england-patriots-training-camp/132278/day-7-practice-preview-schedule-players-to-watch", "published_at": "2026-08-01T18:00:00+00:00"}], "corroborations": 1, "resolved": true}, {"id": 807, "dedupe_key": "nfl:nfl-13561:injury:2026-08-01", "sport": "nfl", "player_id": "nfl-13561", "player_name": "Cole Wisniewski", "mention": "Cole Wisniewski", "team": "PHI", "category": "injury", "claim": "Did not practice with hamstring injury.", "actionability": 2, "confidence": 1.0, "published_at": "2026-08-02T03:45:14+00:00", "tags": ["DNP", "hamstring"], "attributions": [{"source_id": "nfl-phi-sbn", "source_name": "Eagles community beat", "outlet": "SB Nation", "url": "https://www.bleedinggreennation.com/philadelphia-eagles-preseason/178404/eagles-training-camp-practice-notes-jalyx-hunt-and-jalen-carter-help-defense-win-the-day", "published_at": "2026-08-02T03:45:14+00:00"}], "corroborations": 1, "resolved": true}, {"id": 211, "dedupe_key": "nfl:nfl-13364:performance:2026-08-02", "sport": "nfl", "player_id": "nfl-13364", "player_name": "Cashius Howell", "mention": "Cashius Howell", "team": "CIN", "category": "performance", "claim": "Howell demonstrated intensity and edge during pass rush drills at training camp.", "actionability": 1, "confidence": 1.0, "published_at": "2026-08-02T15:39:00+00:00", "tags": ["training_camp"], "attributions": [{"source_id": "nfl-cin-sbn", "source_name": "Bengals community beat", "outlet": "SB Nation", "url": "https://www.cincyjungle.com/cincinnati-bengals-news/195277/bengals-news-8-2-maxx-crosby-worth-2-first-round-picks-for-cincinnati", "published_at": "2026-08-02T15:39:00+00:00"}], "corroborations": 1, "resolved": true}, {"id": 522, "dedupe_key": "nfl:nfl-12863:context:2026-08-03", "sport": "nfl", "player_id": "nfl-12863", "player_name": "Andrew Armstrong", "mention": "Andrew Armstrong", "team": "KC", "category": "context", "claim": "Special teams coordinator expressed enthusiasm about Armstrong's potential as a coverage player.", "actionability": 1, "confidence": 1.0, "published_at": "2026-08-03T17:30:00+00:00", "tags": ["camp_observation"], "attributions": [{"source_id": "nfl-kc-sbn", "source_name": "Chiefs community beat", "outlet": "SB Nation", "url": "https://www.arrowheadpride.com/kansas-city-chiefs-roster/206803/chiefs-pads-training-camp-find-out-guys", "published_at": "2026-08-03T17:30:00+00:00"}], "corroborations": 1, "resolved": true}];
+let i = 0; const marks = [];
+
+function render(){
+  if(i >= ITEMS.length) return finish();
+  const n = ITEMS[i];
+  document.getElementById("pos").textContent = (i+1) + " / " + ITEMS.length;
+  document.getElementById("prog").style.width = (i/ITEMS.length*100) + "%";
+  const graded = marks.filter(m=>m!=="skip");
+  const right = marks.filter(m=>m==="correct").length;
+  document.getElementById("acc").textContent =
+    graded.length ? Math.round(right/graded.length*100) + "% clean" : "";
+
+  const src = n.attributions.map(a =>
+    `<a href="${a.url}" target="_blank" rel="noopener">${a.source_name}</a>`).join(" · ");
+  document.getElementById("card").innerHTML = `
+    <p class="who">${n.player_name} ${n.resolved ? "" : '<span class="unres">unmatched</span>'}</p>
+    <p class="meta">${n.team} &middot; ${n.category.replace("_"," ")} &middot;
+       tier ${n.actionability} &middot; conf ${n.confidence}</p>
+    <p class="claim">${n.claim}</p>
+    <p class="src">${src}</p>`;
+}
+
+function mark(v){ if(i >= ITEMS.length) return; marks[i] = v; i++; render(); }
+
+function finish(){
+  document.getElementById("main").style.display = "none";
+  document.querySelector("footer").style.display = "none";
+  document.getElementById("prog").style.width = "100%";
+
+  const graded = marks.filter(m=>m && m!=="skip");
+  const c = k => marks.filter(m=>m===k).length;
+  const resolutionErrors = c("wrong_player");
+  const resAcc = graded.length ? (graded.length-resolutionErrors)/graded.length*100 : 0;
+  const clean  = graded.length ? c("correct")/graded.length*100 : 0;
+
+  const rows = [
+    ["Correct", c("correct")],
+    ["Wrong player", c("wrong_player")],
+    ["Wrong category or tier", c("wrong_category")],
+    ["Not real news", c("not_news")],
+    ["Skipped", c("skip")],
+  ].map(([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join("");
+
+  const payload = ITEMS.map((n,idx) => ({
+    dedupe_key:n.dedupe_key, player:n.player_name, team:n.team,
+    category:n.category, resolved:n.resolved, verdict:marks[idx]||"skip"
+  }));
+
+  const d = document.getElementById("done");
+  d.style.display = "block";
+  d.innerHTML = `
+    <h2>Audit complete</h2>
+    <p class="big ${resAcc>=97?"good":"bad"}">${resAcc.toFixed(1)}% resolution accuracy</p>
+    <p>${resAcc>=97
+        ? "Above the bar. Ship it."
+        : "Below 97%. Fix aliases and the prompt before anything else."}</p>
+    <p class="big">${clean.toFixed(1)}% fully clean</p>
+    <table>${rows}</table>
+    <p>Save this as <code>audit/results.json</code>, then run
+       <code>python scripts/audit.py --score audit/results.json</code></p>
+    <textarea readonly>${JSON.stringify(payload,null,1)}</textarea>`;
+}
+
+addEventListener("keydown", e => {
+  const k = {"1":"correct","2":"wrong_player","3":"wrong_category","4":"not_news"}[e.key];
+  if(k) return mark(k);
+  if(e.key === " "){ e.preventDefault(); return mark("skip"); }
+  if(e.key === "u" && i > 0){ i--; marks.length = i; render(); }
+});
+render();
+</script>

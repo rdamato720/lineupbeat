@@ -246,7 +246,10 @@ PAGE = """<!doctype html>
 <meta property="og:url" content="{canonical}">
 {og_image}
 <meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A0C08'/%3E%3Cpath d='M7 8v16h6' stroke='%23E8E6E1' stroke-width='3.5' fill='none' stroke-linecap='square'/%3E%3Crect x='17' y='8' width='3.5' height='16' fill='%23C6F24E'/%3E%3Crect x='23' y='8' width='3.5' height='16' fill='%23C6F24E'/%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0A0C08">
 {structured}
 __CSS__
@@ -404,7 +407,8 @@ def player_page(p, nuggets, base):
         title=esc(f"{name} news, beat reports and updates | LineupBeat"),
         description=esc(page_description(name, who, nuggets)),
         canonical=esc(url), og_type="profile",
-        og_image=f'<meta property="og:image" content="{esc(shot)}">',
+        og_image=(f'<meta property="og:image" content="{esc(shot)}">'
+                  f'<meta name="twitter:image" content="{esc(shot)}">'),
         structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
                     f'<script type="application/ld+json">'
                     f'{json.dumps(crumb_ld)}</script>'),
