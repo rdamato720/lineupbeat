@@ -5,17 +5,21 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#08090B">
-<title>LineupBeat — what the beat reported today</title>
-<meta name="description" content="Local NFL beat reporting from every team, matched to players and ranked by whether it changes a lineup. Updated through the day.">
+<title>NFL Beat Reporting and Fantasy Football News | LineupBeat</title>
+<meta name="description" content="Every NFL beat writer in all 32 local markets, matched to players and ranked by whether it changes your fantasy lineup. Updated all day.">
 <link rel="canonical" href="https://lineupbeat.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LineupBeat">
-<meta property="og:title" content="LineupBeat — what the beat reported today">
-<meta property="og:description" content="Local NFL beat reporting from every team, matched to players and ranked by whether it changes a lineup.">
+<meta property="og:title" content="NFL Beat Reporting and Fantasy Football News | LineupBeat">
+<meta property="og:description" content="Every NFL beat writer in all 32 local markets, matched to players and ranked by whether it changes your fantasy lineup. Updated all day.">
 <meta property="og:url" content="https://lineupbeat.com/">
+<meta property="og:image" content="https://lineupbeat.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lineupbeat.com/og.png">
 <meta name="twitter:title" content="LineupBeat">
-<meta name="twitter:description" content="Local NFL beat reporting from every team, matched to players and ranked by whether it changes a lineup.">
+<meta name="twitter:description" content="Every NFL beat writer in all 32 local markets, matched to players and ranked by whether it changes your fantasy lineup. Updated all day.">
 <meta name="theme-color" content="#0A0C08">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1004,7 +1008,30 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   footer .fgrid a{min-height:44px; display:flex; align-items:center;
     padding:0}
 }
+
+/* ---- what this is -------------------------------------------------------
+   Sits under the thesis for the reader who arrived from a search and has
+   never heard of us. Three claims, each one checkable on the page itself,
+   which is the only kind worth making. */
+.how{display:grid; grid-template-columns:repeat(3, 1fr); gap:1.6rem;
+  margin:2.2rem 0 0; padding-top:1.6rem; border-top:1px solid var(--rule)}
+@media (max-width:820px){ .how{grid-template-columns:1fr; gap:1.1rem} }
+.how dt{font-family:var(--agate); font-size:.72rem; letter-spacing:.07em;
+  text-transform:uppercase; color:var(--signal); margin-bottom:.2rem}
+.how dd{margin:0; font-size:.9rem; line-height:1.55; color:var(--quiet)}
+@media (max-width:900px){ .how{margin-top:1.2rem} .how dd{font-size:.86rem} }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"WebSite","@id":"https://lineupbeat.com/#website",
+  "url":"https://lineupbeat.com/","name":"LineupBeat",
+  "description":"NFL beat reporting from all 32 local markets, matched to players.",
+  "publisher":{"@id":"https://lineupbeat.com/#org"}},
+ {"@type":"Organization","@id":"https://lineupbeat.com/#org",
+  "name":"LineupBeat","url":"https://lineupbeat.com/",
+  "logo":"https://lineupbeat.com/og.png"}]}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A0C08'/%3E%3Cpath d='M7 8v16h6' stroke='%23E8E6E1' stroke-width='3.5' fill='none' stroke-linecap='square'/%3E%3Crect x='17' y='8' width='3.5' height='16' fill='%23C6F24E'/%3E%3Crect x='23' y='8' width='3.5' height='16' fill='%23C6F24E'/%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -1030,14 +1057,15 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 <section class="hero" id="hero">
   <div class="wrap herogrid">
     <div class="heroleft">
-      <h1 class="thesis">What the beat reported today, <em>matched to your players</em>.</h1>
-      <p class="lede">Every NFL beat writer, every local market, read and sorted by
-         whether it changes your lineup. Injuries, first-team reps and depth chart
-         moves, with the reporter who filed it one click away.</p>
+      <h1 class="thesis">Everything that influences your fantasy football lineup, <em>before you set it</em>.</h1>
+      <p class="lede">Right now that means every NFL beat writer in every local
+         market, read and ranked by consequence. Injuries, first-team reps and
+         depth chart moves, with the reporter who filed it one click away.</p>
       <div class="cta">
         <button class="btn" id="cta">Follow your players</button>
       </div>
       <div class="facts agate" id="facts"></div>
+
     </div>
 
     <aside class="livebox" aria-label="Latest reports">
@@ -1046,12 +1074,36 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
         <span class="liveago agate" id="liveago"></span></div>
       <div id="livelist"></div>
     </aside>
+    </div>
+
+    <!-- What this is, for somebody who has never been here.
+         Full width under the hero rather than stacked in the left column,
+         where it left the live panel floating against three inches of
+         nothing. Three claims, each checkable on the page itself. -->
+    <div class="wrap">
+      <dl class="how">
+        <div>
+          <dt>Every market, not the national feed</dt>
+          <dd>The writers who stand at practice in all 32 cities, read in
+              full. Local reporting breaks first and travels slowest.</dd>
+        </div>
+        <div>
+          <dt>Matched to a player, ranked by consequence</dt>
+          <dd>Every report is tied to the player it concerns and sorted by
+              whether it changes a lineup, not by when it was posted.</dd>
+        </div>
+        <div>
+          <dt>Always credited, never reproduced</dt>
+          <dd>Claims are paraphrased in our own words and linked back to the
+              reporter who filed them. Read the original in one click.</dd>
+        </div>
+      </dl>
   </div>
 </section>
 
 <section class="hero medhero" id="medhero" hidden>
   <div class="wrap">
-    <h1 class="thesis"><em>The Medical Tent.</em></h1>
+    <h2 class="thesis"><em>The Medical Tent.</em></h2>
     <p class="medlede">What the injuries actually mean, read by a former NFL team
        physician. Interpretation, not reporting.</p>
     <div class="facts agate" id="medfacts"></div>
@@ -1856,7 +1908,7 @@ function renderPlayer(){
     <div class="phead">
       ${faceHTML(state.player, p && p.espn, pname, "xl")}
       <div>
-        <h1>${esc(pname)}</h1>
+        <h2>${esc(pname)}</h2>
         <div class="sub">
           ${logoHTML(pteam)}
           ${esc(pteam)} ${esc(p ? (p.pos||"") : "")}
@@ -2323,6 +2375,12 @@ function projPlayers(){
 }
 
 function projHTML(pid){
+  // Nothing leaks out of a hidden section.
+  //
+  // Hiding the projections tab left the PROJ badges on cards and on player
+  // pages, which is worse than showing the tab: a number appears with no way
+  // to see where it came from.
+  if(HIDDEN_SECTIONS.has("projections")) return "";
   const p = PLAYERS.get(pid);
   if(!p || !p.proj) return "";
   return `<span class="proj">PROJ <b>${Math.round(fmtPts(p.proj))}</b></span>`;

@@ -244,7 +244,9 @@ PAGE = """<!doctype html>
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
 <meta property="og:url" content="{canonical}">
+{og_image}
 <meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A0C08'/%3E%3Cpath d='M7 8v16h6' stroke='%23E8E6E1' stroke-width='3.5' fill='none' stroke-linecap='square'/%3E%3Crect x='17' y='8' width='3.5' height='16' fill='%23C6F24E'/%3E%3Crect x='23' y='8' width='3.5' height='16' fill='%23C6F24E'/%3E%3C/svg%3E">
 <meta name="theme-color" content="#0A0C08">
 {structured}
 __CSS__
@@ -276,6 +278,22 @@ def _render(page, accent, c2="#C6F24E"):
             .replace("__CSS__", css)
             .replace("__HEADER__", APP_HEADER)
             .replace("__FOOTER__", APP_FOOTER))
+
+
+def page_description(name, who, nuggets):
+    """A description that reads as a sentence in a search result.
+
+    The newest claim alone came out at 61 characters -- "Brown was limited
+    with what the team called general soreness" -- which reads as a fragment
+    torn out of context and tells a searcher nothing about what the page is.
+    Google also tends to write its own when the tag is too thin.
+    """
+    n = len(nuggets)
+    lead = (nuggets[0]["claim"] or "").rstrip(".")
+    tail = (f"{n} beat reports on {name}, newest first, each linked to the "
+            f"reporter who filed it.")
+    body = f"{who}. {lead}. {tail}"
+    return body[:158].rsplit(" ", 1)[0] if len(body) > 160 else body
 
 
 def player_page(p, nuggets, base):
@@ -333,6 +351,12 @@ def player_page(p, nuggets, base):
 
     ld = {"@context": "https://schema.org", "@type": "Person", "name": name,
           "url": url, "image": shot, "jobTitle": who}
+    # A page that changes daily should say when it last changed. Google reads
+    # it for freshness; without it a wire looks like a static profile.
+    if nuggets:
+        ld["subjectOf"] = {"@type": "CollectionPage",
+                           "name": f"{name} beat reports", "url": url,
+                           "dateModified": nuggets[0]["published_at"][:19]}
     # Google renders breadcrumbs in the result itself, which is worth more
     # than the nav pill this replaced: it shows the page's place in the site
     # instead of a bare URL, and it improves click-through.
@@ -378,7 +402,7 @@ def player_page(p, nuggets, base):
 
     return _render(PAGE.format(
         title=esc(f"{name} news, beat reports and updates | LineupBeat"),
-        description=esc((nuggets[0]["claim"] or "")[:150]),
+        description=esc(page_description(name, who, nuggets)),
         canonical=esc(url), og_type="profile",
         og_image=f'<meta property="og:image" content="{esc(shot)}">',
         structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
@@ -519,9 +543,12 @@ def main():
                        f"<priority>{prio}</priority></url>")
     sitemap.append("</urlset>")
 
+    # Do NOT disallow /data/. The site loads feed.json from there, and
+    # blocking it does not stop indexing -- it stops Google rendering the
+    # page, so the crawler sees an empty shell where a reader sees the wire.
     robots = (f"User-agent: *\n"
               f"Allow: /\n"
-              f"Disallow: /data/\n\n"
+              f"\n"
               f"Sitemap: {base}/sitemap.xml\n")
 
     if not args.dry_run:
