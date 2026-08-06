@@ -58,9 +58,12 @@ jobs:
       - name: Run pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Without this the 88 X beat writers are skipped and the run
+          # still exits zero, so the wire quietly becomes RSS only.
+          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
         run: |
           python -m beatwire.cli run    --sport nfl
-          python -m beatwire.cli export --sports nfl \
+          python -m beatwire.cli export --sports nfl --limit 4000 \
                  --out site/data/feed.json --site site/index.html
           # Crawlable pages. The app is one hash-routed URL with no words in
           # the markup; these give search engines a real address per player
