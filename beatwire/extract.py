@@ -62,6 +62,20 @@ Rules:
   alarming reading, which is the single most damaging mistake available here.
   "Banged up", "limited", "held out as a precaution" and "not in team drills"
   are status notes, not diagnoses. Write them as what they are.
+- A passing mention of ANY past event is a REFERENCE, not a REPORT. This
+  applies to transactions as much as injuries, and the failure is the same
+  shape: an article about Emeka Egbuka adjusting to camp mentioned that Mike
+  Evans "spent 12 seasons in Tampa Bay before beginning a new chapter with
+  the 49ers", and that became a card reading "Traded to the San Francisco
+  49ers", filed as news from twenty hours ago. He signed there in March, and
+  the sentence was background in a story about somebody else.
+  Ask: is the writer REPORTING this, or REFERRING to it? A verb in the past
+  perfect, a subordinate clause, or a mention used to explain something else
+  is a reference. Extract nothing from it.
+- Get the transaction TYPE right. Signed, traded, released and claimed are
+  different events with different consequences, and "joined the 49ers" does
+  not tell you which. If the source does not say, use the vaguer event
+  rather than guessing at a trade.
 - A parenthetical or passing mention of an injury is a REFERENCE, not a
   REPORT. "Tucker Kraft (ACL) and Luke Musgrave (neck) are banged up and out
   of team drills" says two players are limited, and names the conditions they
