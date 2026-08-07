@@ -26,8 +26,15 @@ from .store import Store
 def _client(stub: bool):
     if stub:
         return None
+    # A local model needs no client. The check was running before extraction
+    # got far enough to notice BEATWIRE_LOCAL was set, so the whole pipeline
+    # refused to start on a machine that was never going to call the API.
+    from . import local_model
+    if local_model.enabled():
+        return None
     if not os.environ.get("ANTHROPIC_API_KEY"):
-        sys.exit("Set ANTHROPIC_API_KEY, or pass --stub to run without the model.")
+        sys.exit("Set ANTHROPIC_API_KEY, set BEATWIRE_LOCAL to point at an "
+                 "ollama host, or pass --stub.")
     import anthropic
     return anthropic.Anthropic()
 
