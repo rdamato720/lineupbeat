@@ -1077,6 +1077,7 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   font-size:1rem; line-height:1; padding:0 .1rem}
 .roschip button:hover{color:var(--alert, #ff6b6b)}
 @media (max-width:700px){ .roschip{padding:.5rem .6rem .5rem .8rem} }
+.chipbtn:disabled{opacity:.3;cursor:default}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -1315,10 +1316,12 @@ const VIDEO_WINDOW_H = 48;
 // reporting is about linemen and defensive backs, which matters to almost
 // nobody reading a fantasy wire. Offense/defense halves it; skill positions
 // cut it by roughly three quarters and leave the part people came for.
+// Now that only skill positions are extracted, "offense" and "defense" were
+// filters over an empty set. A reader setting a lineup wants one position at
+// a time: he is choosing between two backs, not browsing.
 const POS_GROUPS = {
-  skill:   ["QB","RB","FB","WR","TE","K"],
-  offense: ["QB","RB","FB","WR","TE","C","G","OG","OL","OT","T"],
-  defense: ["CB","DB","DE","DL","DT","LB","ILB","OLB","NT","S","SS","FS"],
+  skill: ["QB","RB","FB","WR","TE"],
+  QB: ["QB"], RB: ["RB","FB"], WR: ["WR"], TE: ["TE"],
 };
 
 // Team colours. This is the thing that makes a sports page read as a sports
@@ -2725,15 +2728,34 @@ function renderViews(){
 function renderPos(){
   const el = document.getElementById("posgrp");
   el.innerHTML = "";
-  // Offense still included linemen, which was never the useful cut.
-  [["Skill players", "skill"], ["Everyone", null]].forEach(([label, key]) => {
-    const b = document.createElement("button");
-    b.className = "chipbtn";
-    b.textContent = label;
-    b.setAttribute("aria-pressed", state.pos === key);
-    b.onclick = () => { state.pos = key; state.shown = PAGE; writeHash(); render(); };
-    el.appendChild(b);
-  });
+
+  // Count only to disable a chip with nothing behind it. The number itself
+  // was shown and read as ambiguous -- players, or reports, or something
+  // else -- so the chip greys out instead and says nothing.
+  const n = new Map();
+  for(const x of nuggets()){
+    if(state.todayOnly && hoursOld(x) > 24) continue;
+    if(state.team && x.team !== state.team) continue;
+    const p = PLAYERS.get(x.player_id);
+    if(!p) continue;
+    for(const k of ["QB","RB","WR","TE"]){
+      if(POS_GROUPS[k].includes(p.pos)) n.set(k, (n.get(k) || 0) + 1);
+    }
+  }
+
+  [["All", "skill"], ["QB", "QB"], ["RB", "RB"], ["WR", "WR"], ["TE", "TE"]]
+    .forEach(([label, key]) => {
+      const b = document.createElement("button");
+      b.className = "chipbtn";
+      const c = key === "skill" ? 1 : (n.get(key) || 0);
+      b.textContent = label;
+      b.setAttribute("aria-pressed", state.pos === key);
+      if(key !== "skill" && !c) b.disabled = true;
+      b.onclick = () => {
+        state.pos = key; state.shown = PAGE; writeHash(); render();
+      };
+      el.appendChild(b);
+    });
 }
 
 function renderTeams(){
