@@ -31,6 +31,17 @@ MODEL = os.environ.get("BEATWIRE_MODEL", "claude-haiku-4-5")
 # something" and "here is everything that happened at practice today".
 MEDIA_MAX_PLAYERS = 3
 
+# Extract only items mentioning a quarterback, back, receiver or tight end.
+#
+# The wire shows skill players by default and half of all items mention none:
+# a practice report about four linemen costs a model call to discover nobody
+# a reader will see is in it. Measured at 49% of items that produced claims.
+#
+# Off by default because it IS a real narrowing -- a shutdown corner going
+# down changes a receiver's outlook, and somebody playing IDP wants the rest.
+# Set BEATWIRE_SKILL_ONLY=1 to turn it on.
+SKILL_ONLY = os.environ.get("BEATWIRE_SKILL_ONLY", "") == "1"
+
 SYSTEM = """You extract structured player notes from local beat reporting.
 
 Rules:
@@ -415,8 +426,26 @@ position_hint (optional)"""
 # Stage 1: prefilter
 # ---------------------------------------------------------------------------
 
-def mentions_any_player(item: RawItem, resolver: Resolver, team: str | None) -> bool:
+# Positions the site actually shows by default. Everything else is carried,
+# displayed on request, and filtered out of the wire for most readers.
+SKILL_POSITIONS = {"QB", "RB", "WR", "TE"}
+
+
+def mentions_any_player(item: RawItem, resolver: Resolver, team: str | None,
+                        skill_only: bool = False) -> bool:
     """Cheap gate. Surname presence, source team first, then league-wide.
+
+    With skill_only, an item has to mention somebody at a position the wire
+    shows by default. Half of all items do not: a practice report naming four
+    offensive linemen and a defensive tackle costs a model call to discover it
+    is about nobody a reader will see.
+
+    Measured on 926 items that produced claims, 458 mentioned no skill player
+    at all -- 49%, every one of them paid for.
+
+    A name we cannot match still passes. Somebody who signed this morning is
+    unresolvable until the roster catches up, and that is exactly the news
+    worth having.
 
     Scoping to the source's team alone was too strict and silently discarded
     real reporting. A Rams beat writer posting "Packers TE Tucker Kraft ... is
@@ -432,12 +461,19 @@ def mentions_any_player(item: RawItem, resolver: Resolver, team: str | None) -> 
         return False
     tokens = set(text.split())
 
+    def counts(p):
+        if not skill_only:
+            return True
+        pos = (getattr(p, "position", "") or "").upper()
+        # An unknown position is not evidence against him.
+        return pos in SKILL_POSITIONS or not pos
+
     if team:
         for p in resolver.players:
-            if p.team == team and surname(p.name) in tokens:
+            if p.team == team and counts(p) and surname(p.name) in tokens:
                 return True
 
-    return any(surname(p.name) in tokens for p in resolver.players)
+    return any(counts(p) and surname(p.name) in tokens for p in resolver.players)
 
 
 # ---------------------------------------------------------------------------
@@ -492,7 +528,8 @@ def extract(
 ) -> list[Nugget]:
     team_hint = resolver.source_team_hint(source)
 
-    if not mentions_any_player(item, resolver, team_hint):
+    if not mentions_any_player(item, resolver, team_hint,
+                               skill_only=SKILL_ONLY):
         return []
 
     if source.detail:

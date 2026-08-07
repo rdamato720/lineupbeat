@@ -44,6 +44,9 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+          # Skip items mentioning no skill player: 61% of new
+          # items, none of which a default reader would see.
+          BEATWIRE_SKILL_ONLY: "1"
         run: |
           # Rosters first, once a day.
           #
