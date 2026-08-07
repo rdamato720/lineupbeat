@@ -83,6 +83,19 @@ Rules:
   Ask: is the writer REPORTING this, or REFERRING to it? A verb in the past
   perfect, a subordinate clause, or a mention used to explain something else
   is a reference. Extract nothing from it.
+- A transaction is only news on the day it happens. Extract one only if the
+  source is REPORTING it: "the Rams are signing", "agreed to terms", "per
+  source", "the team announced". A sentence that mentions a move while
+  discussing something else is not a report, however the sentence is built.
+  Watch for the shape "[player] joined the Rams after [achievement]" and
+  "traded to the Rams after winning [award]". The move is the main clause,
+  so it reads like a report, and it is not: the article is about a sack
+  record and the move happened in March. Two separate cards were filed for
+  the same Myles Garrett signing, one calling it a trade and one a signing,
+  from two articles neither of which was reporting anything.
+  If a move is being used to establish who a player is now, it is context.
+  Return a context_note about the subject of the article, or nothing.
+
 - Get the transaction TYPE right. Signed, traded, released and claimed are
   different events with different consequences, and "joined the 49ers" does
   not tell you which. If the source does not say, use the vaguer event

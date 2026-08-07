@@ -67,6 +67,20 @@ jobs:
           # Everything still unmatched gets another try against the roster as
           # it stands now. No model call, so this is free.
           python scripts/reresolve.py --sport nfl || true
+
+          # Drop stored claims about players the wire does not show.
+          #
+          # The skill filter stops new extraction; it does nothing about the
+          # backlog. This clears it, and errs everywhere toward keeping: an
+          # unmatched player stays, an unknown position stays, a claim whose
+          # source also names a receiver stays, and nothing under three days
+          # old is touched at all -- because a man who signed this morning
+          # is unresolvable until the roster catches up.
+          #
+          # Once a day is enough. It only ever has three days of backlog.
+          if [ "$(date -u +%H)" -lt 12 ]; then
+            python scripts/prune_positions.py --apply || true
+          fi
           python -m beatwire.cli export --sports nfl --limit 4000 \
                  --out site/data/feed.json --site site/index.html
           # Crawlable pages. The app is one hash-routed URL with no words in
