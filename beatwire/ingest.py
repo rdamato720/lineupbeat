@@ -549,7 +549,8 @@ ADAPTERS = {
 
 
 def fetch(source: Source, offline: bool = False, store=None,
-          x_daily_cap: float = 5.0) -> list[RawItem]:
+          x_daily_cap: float = 5.0,
+          tapi_daily_cap: float = 12.0) -> list[RawItem]:
     if offline:
         return fetch_fixture(source)
     try:
@@ -559,7 +560,8 @@ def fetch(source: Source, offline: bool = False, store=None,
             return fetch_threads(source, store=store)
         if source.kind == "twitterapi":
             from .tapi import fetch as _tapi_fetch
-            return _tapi_fetch(source, store=store)
+            return _tapi_fetch(source, store=store,
+                               daily_cap=tapi_daily_cap)
         adapter = ADAPTERS.get(source.kind)
         if adapter is None:
             raise ValueError(f"No adapter for source kind '{source.kind}'")

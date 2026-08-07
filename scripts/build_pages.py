@@ -607,13 +607,20 @@ def durability_page(conn, base):
     """
     import subprocess
     import json as _json
-    subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / "durability.py"),
-         "--max-adp", "300", "--top", "40", "--json", "/tmp/dur.json"],
-        capture_output=True, text=True, timeout=300)
     f = Path("/tmp/dur.json")
+    if f.exists():
+        f.unlink()          # never build from a previous run's file
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "durability.py"),
+         "--max-adp", "300", "--top", "40", "--json", str(f)],
+        capture_output=True, text=True, timeout=300)
     if not f.exists():
-        print("  durability: no data, skipped")
+        # Say WHY. This was swallowing the error and printing "no data",
+        # which told nobody anything: in CI the page skipped for a week and
+        # the log gave no clue whether it was a missing table, an empty ADP
+        # column or a crash.
+        why = (r.stderr or r.stdout or "").strip().splitlines()
+        print(f"  durability skipped: {why[-1] if why else 'no output'}")
         return None
     d = _json.loads(f.read_text())
     board = d.get("board") or []

@@ -50,6 +50,7 @@ def run(
     stub: bool = False,
     offline: bool = False,
     x_daily_cap: float = 5.0,
+    tapi_daily_cap: float = 12.0,
     only: str | None = None,
 ) -> RunReport:
     reg = Registry(sport)
@@ -71,7 +72,8 @@ def run(
     for source in sources:
         report.sources_polled += 1
         items = ingest.fetch(source, offline=offline, store=store,
-                             x_daily_cap=x_daily_cap)
+                             x_daily_cap=x_daily_cap,
+                             tapi_daily_cap=tapi_daily_cap)
         report.items_fetched += len(items)
 
         fresh = []

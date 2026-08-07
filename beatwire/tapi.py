@@ -155,7 +155,18 @@ def parse_timeline(payload: dict, source: Source, handle: str) -> list[RawItem]:
 
 
 def fetch(source: Source, store=None, key: str | None = None,
-          daily_cap: float = 2.0) -> list[RawItem]:
+          daily_cap: float = 12.0) -> list[RawItem]:
+    """Read one writer's timeline.
+
+    The cap was two dollars, which was right for eighty-nine handles. At a
+    hundred and seventy-four it bought under four runs: the wire went silent
+    before ten in the morning and the site sat two hours stale for the rest
+    of the day, with the log full of refusals nobody was reading.
+
+    Twelve covers twenty runs across every handle. It is a ceiling, not a
+    budget -- a normal day spends well under it, and it exists to stop a
+    loop costing hundreds overnight.
+    """
     key = key or os.environ.get("TWITTERAPI_IO_KEY")
     if not key:
         raise ValueError("TWITTERAPI_IO_KEY not set")

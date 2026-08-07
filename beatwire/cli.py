@@ -37,7 +37,8 @@ def cmd_run(args):
     client = _client(args.stub)
     report = run_pipeline(
         args.sport, store, client=client, stub=args.stub, offline=args.offline,
-        x_daily_cap=args.x_daily_cap, only=args.only,
+        x_daily_cap=args.x_daily_cap,
+        tapi_daily_cap=args.tapi_daily_cap, only=args.only,
     )
     print(report)
     print(f"  totals: {store.stats()}")
@@ -466,6 +467,11 @@ def main():
     r.add_argument("--sport", required=True)
     r.add_argument("--stub", action="store_true", help="skip the model, use keyword extractor")
     r.add_argument("--offline", action="store_true", help="read fixtures/ instead of the network")
+    r.add_argument("--tapi-daily-cap", type=float, default=12.0,
+                   help="ceiling on twitterapi spend for the day. 174 handles "
+                        "across twenty runs costs about ten dollars; two was "
+                        "sized for half as many and ran out before ten in "
+                        "the morning.")
     r.add_argument("--x-daily-cap", type=float, default=5.0,
                    help="hard local ceiling on X spend per day")
     r.add_argument("--only", help="poll only sources whose id or handle "
