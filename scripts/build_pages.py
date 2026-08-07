@@ -456,6 +456,196 @@ def team_page(team, players, count, base):
         body=body), accent, c2)
 
 
+def durability_page(conn, base):
+    """The whole draft board, with what each player has actually played.
+
+    Two curated lists were less useful than the board itself. A reader is
+    about to make a pick; he wants the durability of the man in front of him,
+    not a table of the ten worst. So: everybody with an ADP, in draft order,
+    with the record beside the price.
+    """
+    import subprocess
+    import json as _json
+    subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "durability.py"),
+         "--max-adp", "300", "--top", "40", "--json", "/tmp/dur.json"],
+        capture_output=True, text=True, timeout=300)
+    f = Path("/tmp/dur.json")
+    if not f.exists():
+        print("  durability: no data, skipped")
+        return None
+    d = _json.loads(f.read_text())
+    board = d.get("board") or []
+    if not board:
+        return None
+
+    def name_of(k):
+        return " ".join(w.capitalize() for w in k.split())
+
+    def bar(missed):
+        kept = max(1, min(17, round(17 - missed)))
+        gone = 17 - kept
+        return ('<span class="bar">'
+                f'<i class="on" style="flex:{kept}"></i>'
+                + (f'<i class="off" style="flex:{gone}"></i>' if gone else "")
+                + '</span>')
+
+    def dbar(missed):
+        """One bar, filled by the share of a season he typically gives.
+
+        Per-season blocks were tried and were noise: seven small shapes a
+        row, and a reader scanning a hundred players cannot compare them.
+        One bar per man compares down the column at a glance, which is the
+        only comparison that matters here.
+        """
+        pct = max(0, min(100, round((17 - missed) / 17 * 100)))
+        cls = "hi" if missed >= 3 else "mid" if missed >= 1 else "lo"
+        return (f'<span class="dbar" title="{17 - missed:.1f} of 17">'
+                f'<i class="{cls}" style="width:{pct}%"></i></span>')
+
+    rows = []
+    for r in board:
+        risk = ("high" if r["missed_avg"] >= 3 else
+                "some" if r["missed_avg"] >= 1 else "low")
+        # Suspensions get a column rather than a note trailing the season
+        # list. A week missed to a suspension is a week missed, and somebody
+        # drafting wants it in the same shape as everything else -- not as
+        # an aside he has to read to notice.
+        named = [w for w in (r.get("why") or []) if w]
+        susp = r.get("noninj", 0) if named else 0
+        g = "&ndash;".join(str(x) for x in r["seasons"])
+        rows.append(
+            f'<tr class="r-{risk}">'
+            f'<td class="n dim">{r["adp"]:.1f}</td>'
+            f'<td class="nm">{esc(name_of(r["name"]))}</td>'
+            f'<td class="dim">{esc(r["pos"])}</td>'
+            f'<td class="n gpy">{r["missed_avg"]:.1f}</td>'
+            f'<td class="bw">{dbar(r["missed_avg"])}</td>'
+            f'<td class="n">{r.get("ir", 0) or ""}</td>'
+            f'<td class="n">{r.get("inactive", 0) or ""}</td>'
+            f'<td class="n sus">{susp or ""}</td>'
+            f'<td class="w">{g}</td></tr>')
+
+    clean = sum(1 for r in board if r["missed_avg"] < 1)
+    top36 = [r for r in board if r["adp"] <= 36]
+    top_clean = sum(1 for r in top36 if r["missed_avg"] < 1)
+    import statistics as _st
+    med = _st.median(r["missed_avg"] for r in board) if board else 0
+
+    body = (
+        '  <nav class="crumbs" aria-label="Breadcrumb">'
+        '<a href="/">LineupBeat</a><span>/</span><b>Durability and Availability</b></nav>\n'
+        '  <h1 class="dh1">Who actually plays.</h1>\n'
+        '  <p class="dlede">Every projection you can buy assumes seventeen '
+        'games. Almost nobody plays seventeen games. Here is the whole draft '
+        'board, in order, with what each man has actually been on the field '
+        'for.</p>\n'
+        '  <div class="dstat">\n'
+        f'    <div><b>{med:.1f}</b><span>games missed a year, median</span></div>\n'
+        f'    <div><b>{clean}<span class="of">/{len(board)}</span></b>'
+        '<span>average under one missed</span></div>\n'
+        + (f'    <div><b>{top_clean}<span class="of">/{len(top36)}</span></b>'
+           '<span>clean, first three rounds</span></div>\n' if top36 else '')
+        + '  </div>\n'
+        '  <table class="dtab">\n'
+        '    <thead><tr><th>ADP</th><th>Player</th><th>Pos</th>'
+        '<th class="ar">Missed/yr</th><th>Season kept</th><th class="ar">On IR</th>'
+        '<th class="ar">Scratch</th><th class="ar">Susp</th><th>Games by season</th>'
+        '</tr></thead>\n'
+        f'    <tbody>{"".join(rows)}</tbody>\n'
+        '  </table>\n'
+        '  <h2>How this is counted</h2>\n'
+        '  <p class="dnote">We read every injury report and every roster '
+        'transaction the league has published since 2018. A missing box score '
+        'row says a player did not play; it does not say why, and the '
+        'difference is the whole point. These numbers come from the weekly '
+        'roster, which records whether a man was active, on injured reserve, '
+        'inactive, or not on the team at all.</p>\n'
+        '  <p class="dnote">Weeks on the covid list and the 2020 opt-out are '
+        'given back: a positive test is not a fact about a body, and it '
+        'should not follow somebody through his record for the rest of his '
+        'career. Suspensions are named and kept out of the injury count. A '
+        'season spent on a practice squad is excluded rather than counted as '
+        'seventeen missed games.</p>\n'
+        '  <p class="dnote">Nothing here is projected. These are transactions '
+        'that were filed.</p>\n')
+
+    css = """
+.ppage{max-width:56rem}
+.dh1{font-family:var(--agate);text-transform:uppercase;font-size:2.6rem;
+  line-height:.95;margin:0 0 .8rem;letter-spacing:-.01em}
+.dlede{color:var(--quiet);font-size:1.02rem;line-height:1.6;max-width:42rem;
+  margin:0 0 1.4rem}
+.dstat{display:flex;gap:2.4rem;flex-wrap:wrap;margin:0 0 2.4rem;
+  padding:1.1rem 0;border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule)}
+.dstat .of{font-size:.9rem;color:var(--quiet);opacity:.6}
+.dstat b{display:block;font-family:var(--agate);font-size:1.9rem;
+  line-height:1;color:var(--signal);font-weight:600}
+.dstat span{font-family:var(--agate);font-size:.6rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--quiet)}
+.dtab{width:100%;border-collapse:collapse}
+.dtab th{font-family:var(--agate);text-transform:uppercase;font-size:.58rem;
+  letter-spacing:.1em;color:var(--quiet);text-align:left;font-weight:600;
+  padding:0 .6rem .6rem;border-bottom:1px solid var(--rule)}
+.dtab th.ar{text-align:right}
+/* One bar a player, filled by the share of a season he gives. */
+.bw{width:6rem}
+.dbar{display:block;height:.42rem;border-radius:2px;
+  background:rgba(255,255,255,.07);overflow:hidden}
+.dbar i{display:block;height:100%;border-radius:2px}
+.dbar .lo{background:var(--signal);opacity:.85}
+.dbar .mid{background:var(--signal);opacity:.45}
+.dbar .hi{background:var(--alert,#ff6b6b);opacity:.7}
+.dtab .w{color:var(--quiet);font-size:.8rem;
+  font-family:var(--data,ui-monospace),monospace}
+.dtab .sus{color:var(--signal);opacity:.75}
+.dtab td{padding:.62rem .6rem;border-bottom:1px solid rgba(255,255,255,.04);
+  vertical-align:middle}
+.dtab .nm{font-family:var(--agate);text-transform:uppercase;font-weight:600;
+  font-size:.92rem;letter-spacing:.01em}
+.dtab .pos{color:var(--quiet);font-size:.62rem;letter-spacing:.08em;
+  margin-left:.5rem;font-weight:400}
+.dtab .why{display:block;font-family:var(--agate);font-size:.56rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--signal);
+  opacity:.65;margin-top:.15rem}
+.dtab .dim{color:var(--quiet)}
+.dtab .n{text-align:right;font-family:var(--data,ui-monospace),monospace;
+  font-size:.78rem}
+/* Not .big: that is the app featured card, and it carries a
+   min-height that made every row 233px tall. */
+.dtab .gpy{font-size:1.02rem;color:var(--ink)}
+.dtab tr:hover td{background:rgba(255,255,255,.03)}
+.r-high .gpy{color:var(--alert,#ff6b6b)}
+.r-low .gpy{color:var(--signal)}
+.dnote{color:var(--quiet);font-size:.86rem;line-height:1.65;max-width:42rem;
+  margin:0 0 .9rem}
+@media(max-width:700px){
+  .dh1{font-size:1.9rem}
+  .dtab .nm{font-size:.82rem}
+  .bw{width:3.5rem}
+  .dstat{gap:1.4rem}
+  .dstat b{font-size:1.5rem}
+}
+"""
+    ld = {"@context": "https://schema.org", "@type": "Dataset",
+          "name": "NFL durability and availability by draft position",
+          "description": "Games missed per season for every drafted player, "
+                         "from published roster transactions.",
+          "url": f"{base}/nfl/durability/"}
+    return _render(PAGE.format(
+        title="NFL Durability and Availability by Draft Position",
+        description=("Games missed per season for every drafted player, from "
+                     "published roster transactions. Injuries separated from "
+                     "suspensions and covid. Nothing projected."),
+        canonical=f"{base}/nfl/durability/",
+        og_type="article",
+        og_image=f'<meta property="og:image" content="{base}/og.png">',
+        structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
+                    f'<style>{css}</style>'),
+        body=body), "#C6F24E", "#C6F24E")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--db", default="beatwire.db")
@@ -557,6 +747,20 @@ def main():
 
     if not args.dry_run:
         (SITE / "sitemap.xml").write_text("\n".join(sitemap))
+        # The durability page. Built last because it shells out to the
+        # projection scripts and takes a moment.
+        try:
+            html = durability_page(conn, base)
+            if html:
+                d = SITE / args.sport / "durability"
+                d.mkdir(parents=True, exist_ok=True)
+                (d / "index.html").write_text(html)
+                urls.append((f"{base}/{args.sport}/durability/", now,
+                             "weekly", "0.9"))
+                print(f"  durability page written")
+        except Exception as exc:
+            print(f"  durability page skipped: {str(exc)[:70]}")
+
         (SITE / "robots.txt").write_text(robots)
 
     print(f"  player pages   {written}")
