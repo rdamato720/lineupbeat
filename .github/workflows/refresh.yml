@@ -57,18 +57,16 @@ jobs:
           # skill filter dropped him and his video never showed, on the one
           # day anybody wanted it.
           if [ "$(date -u +%H)" -lt 12 ]; then
-            # The durability page needs eight seasons of stats, weekly
-            # roster status and injury reports. They almost never change --
-            # a finished season is finished -- so this is a no-op most days
-            # and the page silently skips without them.
-            python scripts/import_stats.py --seasons 2018,2019,2020,2021,2022,2023,2024,2025 || true
-            python scripts/import_status.py || true
-            python scripts/import_injuries.py --season 2026 || true
-
             python scripts/import_rosters.py nfl || true
             python scripts/import_adp.py || true
             python scripts/import_depth.py --season 2026 || true
           fi
+
+
+          # Historical tables for the durability page. A no-op once
+          # they exist; they were in the once-a-day block, so an
+          # afternoon run had no weekly_stats and the page skipped.
+          python scripts/ensure_tables.py || true
 
           python -m beatwire.cli run    --sport nfl
 

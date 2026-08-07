@@ -175,6 +175,8 @@ def main():
 
         got = set()
         for o in out:
+            if not isinstance(o, dict):
+                continue
             mention = (o.get("mention") or "").strip()
             if not mention:
                 continue
