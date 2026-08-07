@@ -48,13 +48,16 @@ import urllib.request
 
 from .models import EVENTS
 
-HOST = os.environ.get("BEATWIRE_LOCAL", "").rstrip("/")
+# .strip() before .rstrip("/"), because setx refuses a truly empty value and
+# a single space is truthy: the backend stayed enabled with no host and every
+# extraction failed with "unknown url type: '/api/generate'".
+HOST = os.environ.get("BEATWIRE_LOCAL", "").strip().rstrip("/")
 MODEL = os.environ.get("BEATWIRE_LOCAL_MODEL", "qwen2.5:14b")
 TIMEOUT = int(os.environ.get("BEATWIRE_LOCAL_TIMEOUT", "180"))
 
 
 def enabled() -> bool:
-    return bool(HOST)
+    return HOST.startswith("http://") or HOST.startswith("https://")
 
 
 SYSTEM = """You read one social post from an NFL beat reporter and report
