@@ -357,9 +357,19 @@ class Store:
             # must stay available alongside the roster view.
             sql += f" AND player_id IN ({','.join('?' * len(player_ids))})"
             params.extend(player_ids)
-        # Tier first, then source trust, then recency. Weight is the tiebreak
-        # inside a tier, not a way to promote weak news from a good source.
-        sql += " ORDER BY actionability DESC, weight DESC, published_at DESC LIMIT ?"
+        # Recent first, then tier, then source trust.
+        #
+        # Tier-first ranking is right for deciding what to READ first, and
+        # wrong for deciding what to KEEP when the limit binds: a practice
+        # note filed twenty minutes ago was losing to a contract report from
+        # Tuesday, so the newest thing on a wire that promises recency was
+        # two hours old on the live site while the database had it fresh.
+        #
+        # Anything from the last day is kept regardless of tier. Below that
+        # cutoff the old ranking applies, because among things that are all
+        # stale, consequence is the right tiebreak.
+        sql += (" ORDER BY (published_at > datetime('now','-1 day')) DESC,"
+                " actionability DESC, weight DESC, published_at DESC LIMIT ?")
         params.append(limit)
 
         out = []
