@@ -534,12 +534,15 @@ def durability_page(conn, base):
 
     body = (
         '  <nav class="crumbs" aria-label="Breadcrumb">'
-        '<a href="/">LineupBeat</a><span>/</span><b>Durability and Availability</b></nav>\n'
+        '<a href="/">LineupBeat</a><span>/</span><b>Durability</b></nav>\n'
         '  <h1 class="dh1">Who actually plays.</h1>\n'
-        '  <p class="dlede">Every projection you can buy assumes seventeen '
-        'games. Almost nobody plays seventeen games. Here is the whole draft '
-        'board, in order, with what each man has actually been on the field '
-        'for.</p>\n'
+        '  <p class="dlede">We looked at every injury report and roster '
+        'transaction since 2018 to work out how durable each player has '
+        'actually been. Here is the latest ADP with durability and '
+        'availability alongside it, to help you make the calls that matter '
+        'on draft day. Injured reserve, healthy scratches and suspensions '
+        'are counted separately, because they are different facts about a '
+        'player.</p>\n'
         '  <div class="dstat">\n'
         f'    <div><b>{med:.1f}</b><span>games missed a year, median</span></div>\n'
         f'    <div><b>{clean}<span class="of">/{len(board)}</span></b>'
@@ -629,12 +632,12 @@ def durability_page(conn, base):
 }
 """
     ld = {"@context": "https://schema.org", "@type": "Dataset",
-          "name": "NFL durability and availability by draft position",
+          "name": "NFL durability by draft position",
           "description": "Games missed per season for every drafted player, "
                          "from published roster transactions.",
           "url": f"{base}/nfl/durability/"}
     return _render(PAGE.format(
-        title="NFL Durability and Availability by Draft Position",
+        title="Who Actually Plays: NFL Durability by Draft Position",
         description=("Games missed per season for every drafted player, from "
                      "published roster transactions. Injuries separated from "
                      "suspensions and covid. Nothing projected."),
@@ -750,7 +753,9 @@ def main():
         # The durability page. Built last because it shells out to the
         # projection scripts and takes a moment.
         try:
-            html = durability_page(conn, base)
+            # Not shipping yet.
+            html = None if not os.environ.get("BEATWIRE_DURABILITY") \
+                else durability_page(conn, base)
             if html:
                 d = SITE / args.sport / "durability"
                 d.mkdir(parents=True, exist_ok=True)
