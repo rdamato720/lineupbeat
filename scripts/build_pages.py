@@ -72,13 +72,31 @@ def site_chrome():
     foot = re.search(r"<footer.*?</footer>", src, re.S)
     # The app header carries a search box and a JS-populated nav. A static
     # page gets the same bar and typography without the machinery.
+    # The same bar as the homepage. The nav there is built by the app's
+    # JavaScript and the search box needs its index, neither of which exists
+    # on a static page -- so the nav is a real link and the search filters
+    # the table in front of you, which on a two-hundred-row board is more
+    # use than a site-wide lookup anyway.
     header = (
         '<header class="topbar">\n'
         '  <div class="wrap tbrow">\n'
         '    <a class="logo" href="/">Lineup<em>Beat</em></a>\n'
+        '    <nav class="views">'
+        '<a class="vbtn" href="/">The Wire</a>'
+        # My Roster is an in-app view, so from a static page it can only be a
+        # link into the app that opens it. The hash is what the wire reads on
+        # load, so the section is showing by the time anybody sees the page.
+        '<a class="vbtn" href="/#v=roster">My Roster</a>'
+        f'<a class="vbtn" href="/{SPORT}/data/">Fantasy Data</a>'
+        '</nav>\n'
+        '    <div class="finder">\n'
+        '      <input id="pfind" type="search" placeholder="Find a player"\n'
+        '             autocomplete="off" aria-label="Find a player">\n'
+        '    </div>\n'
         '  </div>\n'
         '</header>'
     )
+
     return (css.group(1) if css else ""), header, (foot.group(0) if foot else "")
 
 
@@ -162,6 +180,15 @@ PAGE_CSS = """
   margin:0 0 1.1rem;font:.68rem/1 var(--agate,system-ui),sans-serif;
   letter-spacing:.08em;text-transform:uppercase}
 .crumbs a{color:var(--quiet);text-decoration:none}
+/* A breadcrumb link at eleven pixels is not tappable. The text stays small
+   because it is a breadcrumb; the target does not. */
+@media(max-width:760px){
+  .crumbs{gap:.2rem}
+  .crumbs a{display:inline-flex;align-items:center;min-height:44px;
+    padding:0 .3rem}
+  .crumbs b{display:inline-flex;align-items:center;min-height:44px}
+  .finder input{min-height:44px}
+}
 .crumbs a:hover{color:var(--signal)}
 .crumbs span{color:var(--rule)}
 .crumbs b{color:var(--ink);font-weight:600}
@@ -399,7 +426,12 @@ def player_page(p, nuggets, base):
             + f'  <h2>{len(nuggets)} beat report'
               f'{"s" if len(nuggets) != 1 else ""}, newest first</h2>\n'
             + "\n".join(arts)
-            + (f'\n  <p style="margin-top:2rem"><a href="/{SPORT}/team/{slug(team)}/">'
+            # A link back to the board. 1,298 player pages each pointing at
+            # it is what tells a crawler the board matters, and a reader on
+            # a player page is exactly who wants to know what he has missed.
+            + (f'\n  <p style="margin-top:2rem"><a href="/{SPORT}/durability/">'
+               f'How many games {esc(name)} has actually played</a></p>')
+            + (f'\n  <p style="margin-top:.6rem"><a href="/{SPORT}/team/{slug(team)}/">'
                f'More {esc(TEAM_NAMES.get(team, team))} reports</a></p>'
                if team else ""))
 
@@ -456,6 +488,115 @@ def team_page(team, players, count, base):
         body=body), accent, c2)
 
 
+# Filter the table as you type. Two hundred rows is too many to scan for one
+# player, and this page is read while somebody is on the clock.
+FIND_JS = """
+document.addEventListener('DOMContentLoaded', function () {
+  var q = document.getElementById('pfind');
+  if (!q) return;
+  var rows = [].slice.call(document.querySelectorAll('.dtab tbody tr'));
+  q.addEventListener('input', function () {
+    var v = q.value.trim().toLowerCase();
+    rows.forEach(function (r) {
+      r.classList.toggle('hide', v && r.textContent.toLowerCase().indexOf(v) < 0);
+    });
+  });
+});
+"""
+
+
+def data_hub_page(base):
+    """The index for everything derived from the data rather than the wire.
+
+    One entry today. That is the honest shape of it: a hub with a single
+    card is better than a nav label that lies about what is behind it, and
+    it is the page that gets a second card without any rewiring when the
+    projections come out from behind their flag.
+    """
+    cards = [
+        {
+            "href": f"/{SPORT}/durability/",
+            "kicker": "Every drafted player",
+            "title": "Durability and availability",
+            "blurb": "How many games each player has actually given, from "
+                     "every injury report and roster transaction since 2018, "
+                     "set against live ADP. Injured reserve, healthy "
+                     "scratches and suspensions counted separately.",
+            "meta": "Updated daily",
+        },
+    ]
+    items = []
+    for c in cards:
+        items.append(
+            f'<a class="hubcard" href="{c["href"]}">'
+            f'<span class="hk">{esc(c["kicker"])}</span>'
+            f'<h2>{esc(c["title"])}</h2>'
+            f'<p>{esc(c["blurb"])}</p>'
+            f'<span class="hm">{esc(c["meta"])}</span></a>')
+
+    body = (
+        '  <nav class="crumbs" aria-label="Breadcrumb">'
+        '<a href="/">LineupBeat</a><span>/</span><b>Fantasy data</b></nav>\n'
+        '  <h1 class="dh1">Fantasy data</h1>\n'
+        '  <p class="dlede">What the record says, separate from what the beat '
+        'is saying today. Everything here is built from published data and '
+        'refreshed on its own schedule.</p>\n'
+        f'  <div class="hubgrid">{"".join(items)}</div>\n')
+
+    css = """
+.ppage{max-width:56rem}
+.dh1{font-family:var(--agate);text-transform:uppercase;font-size:2.6rem;
+  line-height:.95;margin:0 0 .8rem;letter-spacing:-.01em}
+.dlede{color:var(--quiet);font-size:1.02rem;line-height:1.6;max-width:42rem;
+  margin:0 0 2.2rem}
+.hubgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.hubcard{display:block;background:var(--panel);border:1px solid var(--rule);
+  border-top:2px solid var(--signal);border-radius:0 0 10px 10px;
+  padding:1.2rem 1.15rem 1.3rem;text-decoration:none;color:inherit;
+  transition:border-color .12s, background .12s}
+.hubcard:hover{background:rgba(255,255,255,.03);border-color:var(--quiet);
+  border-top-color:var(--signal)}
+.hubcard .hk{font-family:var(--agate);font-size:.58rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--signal);display:block;
+  margin-bottom:.5rem}
+/* The app styles h2 on these pages as a small grey kicker, which is right
+   for a section label and wrong for a card title. Fifth class collision
+   after .hero, .big, .how and .dmgrid. */
+.hubcard h2{font-family:var(--agate)!important;text-transform:uppercase;
+  font-size:1.15rem!important;letter-spacing:.01em;margin:0 0 .5rem!important;
+  color:var(--ink)!important;font-weight:600}
+.hubcard p{margin:0 0 .9rem;color:var(--quiet);font-size:.86rem;
+  line-height:1.55}
+.hubcard .hm{font-family:var(--data,ui-monospace),monospace;font-size:.66rem;
+  color:var(--quiet);opacity:.7}
+@media(max-width:640px){.hubgrid{grid-template-columns:1fr}
+  .dh1{font-size:1.9rem}}
+"""
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "CollectionPage",
+         "name": "NFL fantasy data",
+         "description": "Durability, availability and draft data for the NFL, "
+                        "built from published records.",
+         "url": f"{base}/{SPORT}/data/"},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "LineupBeat",
+             "item": base + "/"},
+            {"@type": "ListItem", "position": 2, "name": "Fantasy data",
+             "item": f"{base}/{SPORT}/data/"}]}]}
+
+    return _render(PAGE.format(
+        title="NFL Fantasy Data: Durability, Availability and ADP",
+        description=("Durability and availability for every drafted NFL "
+                     "player, built from injury reports and roster "
+                     "transactions since 2018. Free, and updated daily."),
+        canonical=f"{base}/{SPORT}/data/",
+        og_type="website",
+        og_image=f'<meta property="og:image" content="{base}/og.png">',
+        structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
+                    f'<style>{css}</style>'),
+        body=body), "#C6F24E", "#C6F24E")
+
+
 def durability_page(conn, base):
     """The whole draft board, with what each player has actually played.
 
@@ -478,6 +619,47 @@ def durability_page(conn, base):
     board = d.get("board") or []
     if not board:
         return None
+
+    # When the ADP was drawn, and from how many drafts. A number without a
+    # date is a number a reader has to trust; with one he can judge it.
+    adp_note = ""
+    mp = ROOT / "rosters" / "adp_meta.json"
+    if mp.exists():
+        try:
+            mm = json.loads(mp.read_text())
+            if mm.get("end"):
+                def short(s):
+                    y, m_, d_ = s.split("-")
+                    return f"{int(m_)}/{int(d_)}"
+                # Format matters: a reader scanning a table wants 7/31 - 8/7,
+                # not "31 July to 7 August", and wants to know the league
+                # shape because an ADP from a ten-team league is a different
+                # number.
+                shape = ""
+                if mm.get("teams"):
+                    shape = f" &middot; {mm['teams']} teams, 15 rounds"
+                adp_note = (
+                    f'<p class="adpwhen">ADP from '
+                    f'<b>{mm.get("drafts", 0):,}</b> drafts, '
+                    f'{short(mm["start"])} &ndash; {short(mm["end"])}'
+                    f'{shape} &middot; updated daily</p>')
+        except Exception:
+            pass
+
+    # Every name links to that player's page: 200 links into the deep pages
+    # that need them, and a reader who wants the reporting behind a number is
+    # one click away.
+    have_page = set()
+    d_ = SITE / SPORT
+    if d_.exists():
+        for x in d_.iterdir():
+            if x.is_dir() and (x / "index.html").exists():
+                have_page.add(x.name)
+
+    def plink(display):
+        s = slug(display)
+        return (f'<a href="/{SPORT}/{s}/">{esc(display)}</a>'
+                if s in have_page else esc(display))
 
     def name_of(k):
         return " ".join(w.capitalize() for w in k.split())
@@ -505,6 +687,21 @@ def durability_page(conn, base):
 
     rows = []
     for r in board:
+        # A player with no NFL seasons behind him gets a row that says so.
+        # Hiding him would leave a reader wondering where he went; the honest
+        # answer is that there is nothing to report yet.
+        if r["missed_avg"] is None:
+            rows.append(
+                f'<tr class="r-none">'
+                f'<td class="adp dim">{r["adp"]:.1f}</td>'
+                f'<td class="nm">{plink(name_of(r["name"]))}</td>'
+                f'<td class="dim">{esc(r["pos"])}</td>'
+                # Sits under Missed/yr, where a reader is already looking
+                # for the number. Spanning from ADP left it floating in the
+                # middle of nowhere.
+                f'<td class="norec" colspan="5">No injury history</td>'
+                f'</tr>')
+            continue
         risk = ("high" if r["missed_avg"] >= 3 else
                 "some" if r["missed_avg"] >= 1 else "low")
         # Suspensions get a column rather than a note trailing the season
@@ -516,8 +713,8 @@ def durability_page(conn, base):
         g = "&ndash;".join(str(x) for x in r["seasons"])
         rows.append(
             f'<tr class="r-{risk}">'
-            f'<td class="n dim">{r["adp"]:.1f}</td>'
-            f'<td class="nm">{esc(name_of(r["name"]))}</td>'
+            f'<td class="adp dim">{r["adp"]:.1f}</td>'
+            f'<td class="nm">{plink(name_of(r["name"]))}</td>'
             f'<td class="dim">{esc(r["pos"])}</td>'
             f'<td class="n gpy">{r["missed_avg"]:.1f}</td>'
             f'<td class="bw">{dbar(r["missed_avg"])}</td>'
@@ -526,16 +723,19 @@ def durability_page(conn, base):
             f'<td class="n sus">{susp or ""}</td>'
             f'<td class="w">{g}</td></tr>')
 
-    clean = sum(1 for r in board if r["missed_avg"] < 1)
-    top36 = [r for r in board if r["adp"] <= 36]
+    rated = [r for r in board if r["missed_avg"] is not None]
+    clean = sum(1 for r in rated if r["missed_avg"] < 1)
+    top36 = [r for r in rated if r["adp"] <= 36]
     top_clean = sum(1 for r in top36 if r["missed_avg"] < 1)
     import statistics as _st
-    med = _st.median(r["missed_avg"] for r in board) if board else 0
+    med = _st.median(r["missed_avg"] for r in rated) if rated else 0
 
     body = (
         '  <nav class="crumbs" aria-label="Breadcrumb">'
-        '<a href="/">LineupBeat</a><span>/</span><b>Durability</b></nav>\n'
-        '  <h1 class="dh1">Who actually plays.</h1>\n'
+        '<a href="/">LineupBeat</a><span>/</span>'
+        f'<a href="/{SPORT}/data/">Fantasy data</a><span>/</span>'
+        '<b>Durability</b></nav>\n'
+        '  <h1 class="dh1">Who actually plays</h1>\n'
         '  <p class="dlede">We looked at every injury report and roster '
         'transaction since 2018 to work out how durable each player has '
         'actually been. Here is the latest ADP with durability and '
@@ -543,35 +743,53 @@ def durability_page(conn, base):
         'on draft day. Injured reserve, healthy scratches and suspensions '
         'are counted separately, because they are different facts about a '
         'player.</p>\n'
-        '  <div class="dstat">\n'
-        f'    <div><b>{med:.1f}</b><span>games missed a year, median</span></div>\n'
-        f'    <div><b>{clean}<span class="of">/{len(board)}</span></b>'
-        '<span>average under one missed</span></div>\n'
-        + (f'    <div><b>{top_clean}<span class="of">/{len(top36)}</span></b>'
-           '<span>clean, first three rounds</span></div>\n' if top36 else '')
-        + '  </div>\n'
+
+        f'  {adp_note}\n'
+        '  <section class="dmethod">\n'
+        '    <h2>How this is counted</h2>\n'
+        '    <div class="dmgrid">\n'
+        '      <div><b>Every report since 2018</b>'
+        '<p>Injury reports and roster transactions, as the league published '
+        'them. A missing box score row says a player did not play. It does '
+        'not say why, and the difference is the whole point.</p></div>\n'
+        '      <div><b>Covid does not count</b>'
+        '<p>Weeks on the covid list and the 2020 opt-out are given back. A '
+        'positive test is not a fact about a player, and it should not '
+        'follow anybody through a career.</p></div>\n'
+        '      <div><b>Suspensions are named</b>'
+        '<p>Kept out of the injury count and shown in a column of their own. '
+        'A season spent on a practice squad is excluded rather than counted '
+        'as seventeen missed games.</p></div>\n'
+        '      <div><b>Nothing is projected</b>'
+        '<p>Every number here is a transaction that was filed. No model, no '
+        'estimate, no opinion about who will hold up.</p></div>\n'
+        '    </div>\n'
+        '  </section>\n'
+        '  <h2 class="dsub">What each column means</h2>\n'
+        '  <dl class="dkey">\n'
+        '    <div><dt>Missed/yr</dt><dd>Games below seventeen, averaged over '
+        'the seasons he was on a roster</dd></div>\n'
+        '    <div><dt>Availability</dt><dd>The share of a season he typically '
+        'gives; a full bar is a player who is always available</dd></div>\n'
+        '    <div><dt>On IR</dt><dd>Weeks on injured reserve</dd></div>\n'
+        '    <div><dt>Inactive</dt><dd>On the roster, not dressed for the '
+        'game</dd></div>\n'
+        '    <div><dt>Susp</dt><dd>Weeks missed to a suspension, not counted '
+        'as an injury</dd></div>\n'
+        '    <div><dt>Games by season</dt><dd>Played each year, oldest '
+        'first</dd></div>\n'
+        '  </dl>\n'
+        '  <h2 class="dsub" id="board">Every drafted player, in ADP order</h2>\n'
         '  <table class="dtab">\n'
-        '    <thead><tr><th>ADP</th><th>Player</th><th>Pos</th>'
-        '<th class="ar">Missed/yr</th><th>Season kept</th><th class="ar">On IR</th>'
-        '<th class="ar">Scratch</th><th class="ar">Susp</th><th>Games by season</th>'
+        '    <thead><tr><th class="adp">ADP</th><th>Player</th><th>Pos</th>'
+        '<th class="ar">Missed/yr</th><th>Availability</th><th class="ar">On IR</th>'
+        '<th class="ar">Inactive</th><th class="ar">Susp</th><th>Games by season</th>'
         '</tr></thead>\n'
         f'    <tbody>{"".join(rows)}</tbody>\n'
         '  </table>\n'
-        '  <h2>How this is counted</h2>\n'
-        '  <p class="dnote">We read every injury report and every roster '
-        'transaction the league has published since 2018. A missing box score '
-        'row says a player did not play; it does not say why, and the '
-        'difference is the whole point. These numbers come from the weekly '
-        'roster, which records whether a man was active, on injured reserve, '
-        'inactive, or not on the team at all.</p>\n'
-        '  <p class="dnote">Weeks on the covid list and the 2020 opt-out are '
-        'given back: a positive test is not a fact about a body, and it '
-        'should not follow somebody through his record for the rest of his '
-        'career. Suspensions are named and kept out of the injury count. A '
-        'season spent on a practice squad is excluded rather than counted as '
-        'seventeen missed games.</p>\n'
-        '  <p class="dnote">Nothing here is projected. These are transactions '
-        'that were filed.</p>\n')
+
+        '')
+
 
     css = """
 .ppage{max-width:56rem}
@@ -607,22 +825,155 @@ def durability_page(conn, base):
   vertical-align:middle}
 .dtab .nm{font-family:var(--agate);text-transform:uppercase;font-weight:600;
   font-size:.92rem;letter-spacing:.01em}
+/* A table of two hundred underlined names is unreadable. The link is there,
+   it just does not announce itself until the cursor is on it. */
+.dtab .nm a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.dtab .nm a:hover{color:var(--signal);border-bottom-color:currentColor}
 .dtab .pos{color:var(--quiet);font-size:.62rem;letter-spacing:.08em;
   margin-left:.5rem;font-weight:400}
 .dtab .why{display:block;font-family:var(--agate);font-size:.56rem;
   letter-spacing:.08em;text-transform:uppercase;color:var(--signal);
   opacity:.65;margin-top:.15rem}
 .dtab .dim{color:var(--quiet)}
+/* ADP is a draft slot, not a measurement. Right-aligned it sat in a row of
+   numbers that all mean "how much football did he miss", and read as one
+   more of them. */
+.dtab .adp{text-align:left;font-family:var(--data,ui-monospace),monospace;
+  font-size:.78rem;width:3.6rem}
 .dtab .n{text-align:right;font-family:var(--data,ui-monospace),monospace;
   font-size:.78rem}
 /* Not .big: that is the app featured card, and it carries a
    min-height that made every row 233px tall. */
 .dtab .gpy{font-size:1.02rem;color:var(--ink)}
 .dtab tr:hover td{background:rgba(255,255,255,.03)}
+.dtab .norec{color:var(--quiet);opacity:.55;font-size:.78rem;
+  font-family:var(--agate);letter-spacing:.05em;text-transform:uppercase;
+  text-align:right;padding-right:1.2rem}
 .r-high .gpy{color:var(--alert,#ff6b6b)}
 .r-low .gpy{color:var(--signal)}
-.dnote{color:var(--quiet);font-size:.86rem;line-height:1.65;max-width:42rem;
-  margin:0 0 .9rem}
+.dsub{font-family:var(--agate);text-transform:uppercase;font-size:.68rem;
+  letter-spacing:.1em;color:var(--quiet);font-weight:600;margin:0 0 .8rem}
+.dkey{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem 1.6rem;
+  margin:0 0 1.8rem;padding:1.2rem 0;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.dkey dt{font-family:var(--agate);font-size:.62rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink);font-weight:600}
+.dkey dd{margin:.2rem 0 0;color:var(--quiet);font-size:.78rem;line-height:1.5}
+@media(max-width:820px){.dkey{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.dkey{grid-template-columns:1fr}}
+.adpwhen{font-family:var(--agate);font-size:.66rem;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--quiet);margin:0 0 1.8rem}
+.adpwhen b{color:var(--signal);font-weight:600}
+.dmethod{margin:0 0 2rem}
+.dmethod h2{margin:0 0 1.1rem}
+.dmgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+/* Flat panels with a lime rule, not gradients.
+   The gradient version borrowed blue, amber and violet from the team card
+   palette, where a colour means a team. Here it meant nothing, and it pulled
+   the eye toward a methodology note when the table is the thing worth
+   looking at. */
+.dmgrid div{background:var(--panel);border:1px solid var(--rule);
+  border-top:2px solid var(--signal);border-radius:0 0 8px 8px;
+  padding:1rem .95rem 1.1rem}
+.dmgrid b{display:block;font-family:var(--agate);font-size:.66rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--signal);
+  margin-bottom:.45rem}
+.dmgrid p{margin:0;color:var(--quiet);font-size:.8rem;line-height:1.55}
+@media(max-width:900px){.dmgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.dmgrid{grid-template-columns:1fr}}
+.dtab{width:100%;border-collapse:collapse}
+.dtab th{font-family:var(--agate);text-transform:uppercase;font-size:.58rem;
+  letter-spacing:.1em;color:var(--quiet);text-align:left;font-weight:600;
+  padding:0 .6rem .6rem;border-bottom:1px solid var(--rule)}
+.dtab th.ar{text-align:right}
+/* One bar a player, filled by the share of a season he gives. */
+.bw{width:6rem}
+.dbar{display:block;height:.42rem;border-radius:2px;
+  background:rgba(255,255,255,.07);overflow:hidden}
+.dbar i{display:block;height:100%;border-radius:2px}
+.dbar .lo{background:var(--signal);opacity:.85}
+.dbar .mid{background:var(--signal);opacity:.45}
+.dbar .hi{background:var(--alert,#ff6b6b);opacity:.7}
+.dtab .w{color:var(--quiet);font-size:.8rem;
+  font-family:var(--data,ui-monospace),monospace}
+.dtab .sus{color:var(--signal);opacity:.75}
+.dtab td{padding:.62rem .6rem;border-bottom:1px solid rgba(255,255,255,.04);
+  vertical-align:middle}
+.dtab .nm{font-family:var(--agate);text-transform:uppercase;font-weight:600;
+  font-size:.92rem;letter-spacing:.01em}
+/* A table of two hundred underlined names is unreadable. The link is there,
+   it just does not announce itself until the cursor is on it. */
+.dtab .nm a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.dtab .nm a:hover{color:var(--signal);border-bottom-color:currentColor}
+.dtab .pos{color:var(--quiet);font-size:.62rem;letter-spacing:.08em;
+  margin-left:.5rem;font-weight:400}
+.dtab .why{display:block;font-family:var(--agate);font-size:.56rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--signal);
+  opacity:.65;margin-top:.15rem}
+.dtab .dim{color:var(--quiet)}
+/* ADP is a draft slot, not a measurement. Right-aligned it sat in a row of
+   numbers that all mean "how much football did he miss", and read as one
+   more of them. */
+.dtab .adp{text-align:left;font-family:var(--data,ui-monospace),monospace;
+  font-size:.78rem;width:3.6rem}
+.dtab .n{text-align:right;font-family:var(--data,ui-monospace),monospace;
+  font-size:.78rem}
+/* Not .big: that is the app featured card, and it carries a
+   min-height that made every row 233px tall. */
+.dtab .gpy{font-size:1.02rem;color:var(--ink)}
+.dtab tr:hover td{background:rgba(255,255,255,.03)}
+.dtab .norec{color:var(--quiet);opacity:.55;font-size:.78rem;
+  font-family:var(--agate);letter-spacing:.05em;text-transform:uppercase;
+  text-align:right;padding-right:1.2rem}
+.r-high .gpy{color:var(--alert,#ff6b6b)}
+.r-low .gpy{color:var(--signal)}
+.dsub{font-family:var(--agate);text-transform:uppercase;font-size:.68rem;
+  letter-spacing:.1em;color:var(--quiet);font-weight:600;margin:0 0 .8rem}
+.dkey{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem 1.6rem;
+  margin:0 0 1.8rem;padding:1.2rem 0;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.dkey dt{font-family:var(--agate);font-size:.62rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink);font-weight:600}
+.dkey dd{margin:.2rem 0 0;color:var(--quiet);font-size:.78rem;line-height:1.5}
+@media(max-width:820px){.dkey{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.dkey{grid-template-columns:1fr}}
+.adpwhen{font-family:var(--agate);font-size:.66rem;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--quiet);margin:0 0 1.8rem}
+.adpwhen b{color:var(--signal);font-weight:600}
+.dmethod{margin:0 0 2.6rem}
+.dmethod h2{margin:0 0 1.1rem}
+.dmgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+/* Same construction as a player card: a colour gradient with a second
+   colour thrown in from one corner, and a dark wash over the lower half so
+   the type stays readable. Four cards, four colours, so the page reads as
+   part of the site rather than a spreadsheet somebody left out. */
+.dmgrid div{position:relative;overflow:hidden;isolation:isolate;
+  border-radius:12px;padding:1.1rem 1rem 1.2rem;
+  border:1px solid rgba(255,255,255,.09);min-height:11rem}
+.dmgrid div::before{content:"";position:absolute;inset:0;z-index:-2;
+  opacity:.9}
+.dmgrid div::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,transparent 30%,rgba(8,10,7,.82) 100%)}
+.dmgrid .c1::before{background:
+  radial-gradient(88% 70% at 92% 6%, #C6F24E 0%, transparent 58%),
+  linear-gradient(155deg,#1B4D3E 0%,#123028 42%,#0B0D0F 92%)}
+.dmgrid .c2::before{background:
+  radial-gradient(88% 70% at 92% 6%, #7FB2FF 0%, transparent 58%),
+  linear-gradient(155deg,#123A5E 0%,#0E2740 42%,#0B0D0F 92%)}
+.dmgrid .c3::before{background:
+  radial-gradient(88% 70% at 92% 6%, #FFB86B 0%, transparent 58%),
+  linear-gradient(155deg,#5A3312 0%,#3A210C 42%,#0B0D0F 92%)}
+.dmgrid .c4::before{background:
+  radial-gradient(88% 70% at 92% 6%, #D9A7FF 0%, transparent 58%),
+  linear-gradient(155deg,#3E2357 0%,#2A1739 42%,#0B0D0F 92%)}
+
+
+@media(max-width:900px){.dmgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.dmgrid{grid-template-columns:1fr}
+  .dmgrid div{min-height:0}}
+.dtab tr.hide{display:none}
+@media(max-width:860px){.dmgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.dmgrid{grid-template-columns:1fr;gap:1rem}}
 @media(max-width:700px){
   .dh1{font-size:1.9rem}
   .dtab .nm{font-size:.82rem}
@@ -631,21 +982,118 @@ def durability_page(conn, base):
   .dstat b{font-size:1.5rem}
 }
 """
-    ld = {"@context": "https://schema.org", "@type": "Dataset",
-          "name": "NFL durability by draft position",
-          "description": "Games missed per season for every drafted player, "
-                         "from published roster transactions.",
-          "url": f"{base}/nfl/durability/"}
+    # Four schemas, each doing a different job.
+    #
+    # Dataset says this page IS the data rather than writing about it, which
+    # is what it competes on. The version this replaces named nothing
+    # measured, no span and no publisher -- everything that makes a dataset
+    # findable.
+    #
+    # FAQPage is the one worth having. The methodology notes are already
+    # question-shaped, and a page that answers "do covid absences count" can
+    # take the rich result for it. Every answer below appears on the page,
+    # which is the rule Google actually enforces.
+    #
+    # BreadcrumbList makes the listing read as a path rather than a bare URL,
+    # which lifts click-through on a deep page.
+    from datetime import date as _date
+    ld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {"@type": "Dataset",
+             "@id": f"{base}/{SPORT}/durability/#dataset",
+             "name": "NFL player durability and availability by draft "
+                     "position, 2026",
+             "description":
+                 "Games missed per season for every drafted NFL player, "
+                 "compiled from official injury reports and weekly roster "
+                 "transactions published since 2018, set against average "
+                 "draft position. Injured reserve, healthy scratches and "
+                 "suspensions are counted separately. Covid list weeks and "
+                 "the 2020 opt-out are excluded.",
+             "url": f"{base}/{SPORT}/durability/",
+             "keywords": ["NFL", "injury history", "durability",
+                          "games missed", "average draft position",
+                          "fantasy football", "injured reserve"],
+             "temporalCoverage": "2018/2026",
+             "dateModified": _date.today().isoformat(),
+             "isAccessibleForFree": True,
+             "variableMeasured": [
+                 {"@type": "PropertyValue", "name": "Average draft position",
+                  "description": "Where the player is being drafted, from a "
+                                 "rolling week of real drafts."},
+                 {"@type": "PropertyValue", "name": "Games missed per year",
+                  "description": "Games below seventeen, averaged across the "
+                                 "seasons he was on a roster."},
+                 {"@type": "PropertyValue", "name": "Weeks on injured reserve"},
+                 {"@type": "PropertyValue", "name": "Weeks inactive",
+                  "description": "On the roster but not dressed."},
+                 {"@type": "PropertyValue", "name": "Weeks suspended"}],
+             "creator": {"@id": f"{base}/#org"},
+             "publisher": {"@id": f"{base}/#org"}},
+            {"@type": "Organization", "@id": f"{base}/#org",
+             "name": "LineupBeat", "url": base + "/",
+             "logo": f"{base}/og.png"},
+            {"@type": "BreadcrumbList", "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "LineupBeat",
+                 "item": base + "/"},
+                {"@type": "ListItem", "position": 2, "name": "Fantasy data",
+                 "item": f"{base}/{SPORT}/data/"},
+                {"@type": "ListItem", "position": 3,
+                 "name": "Durability and availability",
+                 "item": f"{base}/{SPORT}/durability/"}]},
+            {"@type": "FAQPage", "mainEntity": [
+                {"@type": "Question",
+                 "name": "How is NFL player durability measured here?",
+                 "acceptedAnswer": {"@type": "Answer", "text":
+                     "From injury reports and roster transactions the league "
+                     "has published since 2018. A missing box score row says "
+                     "a player did not play; the weekly roster says why, "
+                     "recording whether he was active, on injured reserve, "
+                     "inactive, or not on the team at all."}},
+                {"@type": "Question",
+                 "name": "Do covid absences count against a player?",
+                 "acceptedAnswer": {"@type": "Answer", "text":
+                     "No. Weeks on the covid list and the 2020 opt-out are "
+                     "given back. A positive test is not a fact about a "
+                     "player and should not follow anybody through a career."}},
+                {"@type": "Question",
+                 "name": "Are suspensions counted as injuries?",
+                 "acceptedAnswer": {"@type": "Answer", "text":
+                     "No. Suspensions are shown in a column of their own and "
+                     "kept out of the injury count. A season spent on a "
+                     "practice squad is excluded rather than counted as "
+                     "seventeen missed games."}},
+                {"@type": "Question",
+                 "name": "Are these numbers projections?",
+                 "acceptedAnswer": {"@type": "Answer", "text":
+                     "No. Every number is a transaction that was filed. There "
+                     "is no model, no estimate and no opinion about who will "
+                     "hold up."}},
+                {"@type": "Question",
+                 "name": "How current is the average draft position?",
+                 "acceptedAnswer": {"@type": "Answer", "text":
+                     "It is drawn from a rolling week of real drafts and "
+                     "refreshed daily, so it reflects where players are going "
+                     "now rather than earlier in the offseason."}}]}]}
     return _render(PAGE.format(
-        title="Who Actually Plays: NFL Durability by Draft Position",
-        description=("Games missed per season for every drafted player, from "
-                     "published roster transactions. Injuries separated from "
-                     "suspensions and covid. Nothing projected."),
+        # "Who Actually Plays" is a headline, not a query. Nobody types it.
+        # People search for injury history, games missed, durability, and
+        # they search it against a draft board -- so the title leads with
+        # those words and the year, and the brand goes last where it will
+        # survive truncation.
+        title="NFL Injury History and Durability by ADP, 2026 | LineupBeat",
+        # 155 characters, leads with the answer, names the span, and gives a
+        # reason to click that a competitor cannot copy.
+        description=("How many games every drafted NFL player has actually "
+                     "missed, from eight seasons of injury reports and roster "
+                     "moves. Set against live ADP. Updated daily."),
         canonical=f"{base}/nfl/durability/",
         og_type="article",
         og_image=f'<meta property="og:image" content="{base}/og.png">',
         structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
-                    f'<style>{css}</style>'),
+                    f'<style>{css}</style>'
+                    f'<script>{FIND_JS}</script>'),
         body=body), "#C6F24E", "#C6F24E")
 
 
@@ -749,23 +1197,45 @@ def main():
               f"Sitemap: {base}/sitemap.xml\n")
 
     if not args.dry_run:
-        (SITE / "sitemap.xml").write_text("\n".join(sitemap))
-        # The durability page. Built last because it shells out to the
-        # projection scripts and takes a moment.
+        # The durability page goes FIRST, because the sitemap is built from
+        # `urls` and appending to it after the file is written puts the page
+        # nowhere. It shipped unlisted, which for a page whose whole point is
+        # being found is the one mistake that matters.
+        #
+        # It also shells out to the projection scripts, so it is the slow one.
+        # The hub first: it is cheap, and the durability page's breadcrumb
+        # points at it.
         try:
-            # Not shipping yet.
-            html = None if not os.environ.get("BEATWIRE_DURABILITY") \
-                else durability_page(conn, base)
+            hub = data_hub_page(base)
+            hd = SITE / args.sport / "data"
+            hd.mkdir(parents=True, exist_ok=True)
+            (hd / "index.html").write_text(hub)
+            sitemap.insert(len(sitemap) - 1,
+                           f"  <url><loc>{base}/{args.sport}/data/</loc>"
+                           f"<lastmod>{now}</lastmod>"
+                           f"<changefreq>weekly</changefreq>"
+                           f"<priority>0.8</priority></url>")
+            print(f"  data hub written")
+        except Exception as exc:
+            print(f"  data hub skipped: {str(exc)[:70]}")
+
+        try:
+            html = durability_page(conn, base)
             if html:
                 d = SITE / args.sport / "durability"
                 d.mkdir(parents=True, exist_ok=True)
                 (d / "index.html").write_text(html)
-                urls.append((f"{base}/{args.sport}/durability/", now,
-                             "weekly", "0.9"))
+                sitemap.insert(
+                    len(sitemap) - 1,
+                    f"  <url><loc>{base}/{args.sport}/durability/</loc>"
+                    f"<lastmod>{now}</lastmod>"
+                    f"<changefreq>daily</changefreq>"
+                    f"<priority>0.9</priority></url>")
                 print(f"  durability page written")
         except Exception as exc:
             print(f"  durability page skipped: {str(exc)[:70]}")
 
+        (SITE / "sitemap.xml").write_text("\n".join(sitemap))
         (SITE / "robots.txt").write_text(robots)
 
     print(f"  player pages   {written}")

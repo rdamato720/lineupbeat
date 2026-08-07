@@ -2707,10 +2707,25 @@ function renderViews(){
   const projCount = HIDDEN_SECTIONS.has("projections") ? "" : projPlayers().length;
   [["The Wire", "wire", ""],
    ["My Roster", "roster", state.roster.size || ""],
+   // A real page, not a section of the app: the durability board is built
+   // at deploy time and lives at its own URL.
+   ["Fantasy Data", "@/nfl/data/", ""],
    ["Projections", "projections", projCount],
    ["The Medical Tent", "medical", medCount]]
     .forEach(([label, key, count]) => {
       if(HIDDEN_SECTIONS.has(key)) return;
+      // A key beginning with @ is a real URL rather than an in-app view, so
+      // it renders as a link: middle-click opens a tab, the browser shows
+      // the destination, and a crawler can follow it. A button does none of
+      // that.
+      if(typeof key === "string" && key.startsWith("@")){
+        const a = document.createElement("a");
+        a.className = "vbtn";
+        a.href = key.slice(1);
+        a.textContent = label;
+        el.appendChild(a);
+        return;
+      }
       // Always rendered, even at zero. A section that vanishes when quiet
       // teaches people it might not be there, and they stop looking.
       const b = document.createElement("button");

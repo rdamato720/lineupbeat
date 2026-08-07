@@ -27,6 +27,10 @@ import csv
 import json
 import sys
 import urllib.request
+
+# The window these drafts cover, filled in by fetch() and written beside the
+# roster so a page can say how current the numbers are.
+META: dict = {}
 from datetime import datetime
 from pathlib import Path
 
@@ -41,12 +45,24 @@ FORMATS = ["standard", "ppr", "half-ppr", "2qb", "dynasty", "rookie"]
 
 
 def fetch(fmt: str, teams: int, year: int) -> list[dict]:
+    """Returns the players, and records the window the drafts came from.
+
+    Fantasy Football Calculator publishes the date range it aggregated --
+    a rolling week, roughly five thousand drafts. That is worth showing a
+    reader: it says the numbers reflect drafts happening now rather than
+    mocks from June, which is the only thing that makes an ADP useful in
+    August.
+    """
     url = f"{API}/{fmt}?teams={teams}&year={year}"
     req = urllib.request.Request(
         url, headers={"User-Agent": "lineupbeat/1.0 (fantasy news aggregator)"})
     with urllib.request.urlopen(req, timeout=30) as r:
         data = json.loads(r.read().decode())
     players = data.get("players") or []
+    m = data.get("meta") or {}
+    META.update({"start": m.get("start_date"), "end": m.get("end_date"),
+                 "drafts": m.get("total_drafts"), "type": m.get("type"),
+                 "teams": m.get("teams")})
     print(f"  {url}\n  -> {len(players)} players, "
           f"{data.get('meta', {}).get('total_drafts', '?')} drafts")
     return players
@@ -132,6 +148,15 @@ def main():
         w.writerows(existing)
     print(f"\n  wrote {path} ({hits} players carry an ADP)")
     print("  next: python3 -m beatwire.cli export --sports nfl --limit 4000")
+    write_meta()
+
+def write_meta():
+    import json as _json
+    p = ROOT / "rosters" / "adp_meta.json"
+    if META.get("end"):
+        p.write_text(_json.dumps(META, indent=1))
+        print(f"  drafts from {META['start']} to {META['end']} "
+              f"({META.get('drafts', '?')} of them)")
 
 
 if __name__ == "__main__":

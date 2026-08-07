@@ -73,14 +73,16 @@ NON_INJURY_RESERVE = {
     "R62": "opted out, 2020",
     "R59": "covid list",
     "R30": "suspended",
+    # Rashee Rice, 2025 weeks 1-6, and Ja'Marr Chase's single game.
+    "R40": "suspended",
     "R27": "away from the team",
-    "R40": "reserve, reason not published",
-    "R33": "reserve, reason not published",
-    "R47": "reserve, reason not published",
-    "R49": "reserve, reason not published",
-    "R34": "reserve, reason not published",
-    "R42": "reserve, reason not published",
-    "R36": "reserve, reason not published",
+    
+    "R33": "",
+    "R47": "",
+    "R49": "",
+    "R34": "",
+    "R42": "",
+    "R36": "",
 }
 
 
@@ -237,8 +239,9 @@ def main():
                 if on_team < 8:
                     continue          # not really his season
             usable.append((s, g))
-        if len(usable) < 2:
-            continue
+        # No minimum. A rookie with no record is more useful shown than
+        # hidden: somebody drafting him wants to know THAT is why there is no
+        # number, not wonder where he went. The row says so instead.
         seen = [g for _, g in usable]
 
         # Absences, split by reason.
@@ -262,9 +265,10 @@ def main():
             "name": k, "pos": pos, "team": team_of.get(k, ""),
             "adp": a,
             "seasons": seen,
+            "seasons_of_record": len(usable),
             "missed_total": sum(missed),
-            "missed_avg": statistics.mean(missed),
-            "worst": max(missed),
+            "missed_avg": statistics.mean(missed) if missed else None,
+            "worst": max(missed) if missed else 0,
             "clean": sum(1 for x in missed if x <= 1),
             "of": len(seen),
             "ir": ir, "inactive": inactive,
@@ -283,7 +287,8 @@ def main():
         # roster names are keyed; recover something readable
         return " ".join(w.capitalize() for w in k.split())
 
-    risky = sorted(out, key=lambda x: (-x["missed_avg"], x["adp"]))[:args.top]
+    risky = sorted([r for r in out if r["missed_avg"] is not None],
+                   key=lambda x: (-x["missed_avg"], x["adp"]))[:args.top]
     print(f"\n  DRAFTED EARLY, MISSES TIME\n")
     print(f"  {'PLAYER':<22}{'POS':<4}{'ADP':>6}{'MISSED/YR':>10}"
           f"{'ON IR':>7}{'SCRATCH':>9}  WHAT")
@@ -297,7 +302,7 @@ def main():
 
     print(f"\n  Weeks on the covid list, and the 2020 opt-out, are given back:")
     print(f"  a positive test is not a fact about a body, and it should not")
-    print(f"  follow somebody through his record for the rest of his career.")
+    print(f"  follow a player through the record for the rest of a career.")
     print(f"\n  Weeks on reserve for a reason that is not an injury -- a")
     print(f"  suspension, time away from the team -- are named in brackets")
     print(f"  and kept out of the IR count. Calvin Ridley's 2022 was a")
@@ -316,7 +321,8 @@ def main():
     # Four seasons minimum, because three clean years from a player who
     # entered the league in 2023 says less than seven from one who did not.
     iron = sorted([r for r in out
-                   if r["missed_avg"] <= 0.7 and r["of"] >= 4 and r["adp"] >= 40],
+                   if r["missed_avg"] is not None and r["missed_avg"] <= 0.7
+                   and r["of"] >= 4 and r["adp"] >= 40],
                   key=lambda x: -x["adp"])[:12]
     if iron:
         print(f"\n\n  AVAILABLE EVERY WEEK, DRAFTED LATE\n")
@@ -329,7 +335,7 @@ def main():
         print(f"\n  Durability is the cheapest thing on a draft board,")
         print(f"  because no board shows it.")
 
-    early = [r for r in out if r["adp"] <= 36]
+    early = [r for r in out if r["adp"] <= 36 and r["missed_avg"] is not None]
     if len(early) >= 8:
         print(f"\n\n  FIRST THREE ROUNDS ({len(early)} players)")
         print(f"    games missed a year, median  "
