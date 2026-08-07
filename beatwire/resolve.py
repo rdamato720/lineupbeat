@@ -80,6 +80,56 @@ class Resolver:
             return False
         return player.position in self.position_groups.get(hint, [hint])
 
+    # Names that are the same person written two ways.
+    #
+    # A prefix test gets most of them -- Josh/Joshua, Cam/Cameron -- but not
+    # the ones where the spelling diverges: Mike is not a prefix of Michael,
+    # the fourth letter differs, and the same is true of Nick/Nicholas. Those
+    # have to be written down.
+    NICKNAMES = {
+        "mike": "michael", "nick": "nicholas", "nic": "nicholas",
+        "bo": "beau", "rob": "robert", "bob": "robert", "bobby": "robert",
+        "bill": "william", "billy": "william", "will": "william",
+        "dick": "richard", "rick": "richard", "ricky": "richard",
+        "jim": "james", "jimmy": "james", "jamie": "james",
+        "tony": "anthony", "chris": "christopher", "matt": "matthew",
+        "dan": "daniel", "danny": "daniel", "dave": "david",
+        "steve": "steven", "greg": "gregory", "jeff": "jeffrey",
+        "ken": "kenneth", "kenny": "kenneth", "ted": "theodore",
+        "tom": "thomas", "tommy": "thomas", "ben": "benjamin",
+        "sam": "samuel", "alex": "alexander", "zach": "zachary",
+        "zac": "zachary", "gabe": "gabriel", "nate": "nathaniel",
+        "andy": "andrew", "drew": "andrew", "pat": "patrick",
+        "eddie": "edward", "ed": "edward", "charlie": "charles",
+        "chuck": "charles", "frank": "franklin", "jake": "jacob",
+        "joe": "joseph", "joey": "joseph", "tim": "timothy",
+        "ty": "tyler", "deebo": "tyshun",
+    }
+
+    def _first_ok(self, m_first: str, p_first: str) -> bool:
+        """Could these be the same person's first name?
+
+        The surname gate had no counterpart, so a contradicting first name
+        scored purely on string overlap: "Harrison Bryant" matched Pat Bryant
+        at 0.66, exactly what a bare "Bryant" scores. A first name that
+        disagrees was being treated as no first name at all.
+
+        It is the opposite. "Bryant" is ambiguous and 0.66 is fair. "Harrison
+        Bryant" is specific, and what it specifies is that this is not Pat --
+        so a claim about a newly signed tight end went onto another player's
+        page.
+        """
+        if not m_first or not p_first or m_first == p_first:
+            return True
+        a = self.NICKNAMES.get(m_first, m_first)
+        b = self.NICKNAMES.get(p_first, p_first)
+        if a == b:
+            return True
+        if a[:1] != b[:1]:
+            return False                     # Harrison is not Pat
+        return (a.startswith(b) or b.startswith(a)
+                or fuzz.ratio(a, b) >= 78)   # Chris/Coby stays out
+
     def _score(
         self,
         mention: str,
@@ -109,6 +159,30 @@ class Resolver:
             sn_forms = [surname(player.name)] + [surname(a) for a in player.aliases]
             if max(fuzz.ratio(m_sn, s) for s in sn_forms) < SURNAME_GATE:
                 return 0.0
+
+            # First-name gate.
+            #
+            # There was a surname gate and nothing for the other half, so a
+            # contradicting first name scored purely on string overlap:
+            # "Harrison Bryant" matched Pat Bryant at 0.66, exactly what a
+            # bare "Bryant" scores. A first name that disagrees was being
+            # treated as no first name at all.
+            #
+            # It is the opposite. "Bryant" is ambiguous and 0.66 is fair.
+            # "Harrison Bryant" is specific, and what it specifies is that
+            # this is not Pat -- so a claim about a newly signed tight end
+            # went onto another player's page.
+            #
+            # Allowed through: a matching initial plus either a prefix
+            # relationship or real similarity. Mike/Michael and Josh/Joshua
+            # are prefixes; Bo/Beau is close enough; Harrison/Pat and
+            # Chris/Coby are not.
+            m_first = m.split()[0] if " " in m else ""
+            if m_first and not any(
+                    self._first_ok(m_first, f.split()[0] if " " in f else "")
+                    for f in forms):
+                return 0.0
+
             best = max(fuzz.token_sort_ratio(m, f) for f in forms) / 100.0
 
         if team_hint and player.team == team_hint:

@@ -61,6 +61,7 @@ CASES = [
     ("nfl", "",             "NYJ", None, None),
     ("nfl", "the offense",  "NYJ", None, None),
     ("nfl", "Zzzzz",        "NYJ", None, None),
+("nfl", "Harrison Bryant", "SEA", None, None),
 ]
 
 

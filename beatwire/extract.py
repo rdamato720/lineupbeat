@@ -20,6 +20,7 @@ import os
 import re
 from datetime import datetime
 
+from . import local_model
 from .models import CATEGORIES, EVENTS, Nugget, RawItem, Source
 from .registry import SportProfile
 from .resolve import Resolver, normalize, surname
@@ -83,6 +84,21 @@ Rules:
   Ask: is the writer REPORTING this, or REFERRING to it? A verb in the past
   perfect, a subordinate clause, or a mention used to explain something else
   is a reference. Extract nothing from it.
+- A confirmation is not a revelation, and the claim has to say which.
+  When a source says formally, officially, announced, confirmed, made it
+  official, passed his physical, or signed his contract, the news is that a
+  known thing has COMPLETED. It is not the thing itself.
+  Washington announcing on Friday that Stefon Diggs had passed his physical
+  and signed became a card reading "Signed a one-year contract worth up to
+  $12 million", which reads as the deal breaking. It broke on Wednesday. A
+  reader seeing that card on Friday believes he is first to something two
+  days old.
+  Write what actually happened today: "Passed his physical and signed;
+  Washington announced it Friday." Same for a player officially placed on
+  injured reserve after a week of reports, or activated from the PUP list.
+  The completion is the news, and it usually scores lower than the original
+  report did.
+
 - A transaction is only news on the day it happens. Extract one only if the
   source is REPORTING it: "the Rams are signing", "agreed to terms", "per
   source", "the team announced". A sentence that mentions a move while
@@ -253,6 +269,30 @@ RIGHT:
 WHY: A transaction roundup is several reports in one post, and each gets its
 own nugget with the RIGHT verb. Claimed, waived and signed are different
 events with different consequences, and the post says which for each.
+
+---
+SOURCE: "Washington Commanders formally announce Stefon Diggs signing. The
+veteran receiver passed his physical and then signed his one-year contract.
+Washington formally announced the acquisition on Friday morning. This
+formally secures Diggs' services following a Wednesday pact that will pay up
+to $12 million for the 2026 season."
+
+WRONG:
+  {"player": "Stefon Diggs", "event": "signed",
+   "claim": "Signed a one-year contract worth up to $12 million.",
+   "actionability": 3}
+
+RIGHT:
+  [{"player": "Stefon Diggs", "category": "transaction", "event": "signed",
+    "horizon": "season",
+    "claim": "Passed his physical and signed; Washington announced it Friday.",
+    "actionability": 2, "tags": ["contract"]}]
+
+WHY: The deal broke on Wednesday. Friday's news is that it completed --
+physical passed, contract signed, announcement made. The wrong version reads
+as the signing breaking, so a reader on Friday thinks he is first to
+something two days old. Note the terms are dropped: they were Wednesday's
+news, not today's, and repeating them is what makes the card look new.
 
 ---
 SOURCE: "Reacted in real time to the Stefon Diggs news with @LoganPaulsenNFL.
@@ -564,6 +604,13 @@ def extract(
 
     if stub:
         rows = _stub_extract(item, resolver, team_hint)
+    elif local_model.enabled():
+        # A local model quotes the span that names somebody rather than
+        # naming him, because one small enough to run on ten gigabytes
+        # invents a first name when it does not have one. The resolver does
+        # the identifying from here exactly as it does for the API path --
+        # every row below is a mention, and always was.
+        rows = local_model.extract_rows(item.text[:6000])
     else:
         if client is None:
             raise ValueError("Pass an Anthropic client or use stub=True")
