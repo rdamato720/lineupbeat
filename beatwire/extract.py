@@ -113,6 +113,283 @@ Actionability rubric:
   The test is whether a reader needs to know, not whether it moves a lineup
   this week.
 
+WORKED EXAMPLES
+
+Every one of these is a real post and the output it should have produced.
+Most are here because the wire got them wrong first, and the wrong version
+is shown so the failure is recognisable rather than abstract.
+
+---
+SOURCE: "Kraft opens camp on PUP. Kraft begins training camp on the PUP list
+as he continues rehab from last season's knee injury."
+
+WRONG:
+  {"player": "Tucker Kraft", "event": "injury_reported",
+   "claim": "Recovering from a torn ACL suffered last season.",
+   "actionability": 3}
+
+RIGHT:
+  [{"player": "Tucker Kraft", "category": "injury", "event": "pup_list",
+    "horizon": "day",
+    "claim": "Opens training camp on the PUP list, still rehabbing a knee.",
+    "actionability": 2, "tags": ["knee"]}]
+
+WHY: The source says knee. It does not say torn, does not say ACL, does not
+say season-ending. Resolving a vague injury toward the more serious reading
+is the single most damaging thing an extractor can do, because a reader acts
+on it. "Last season's knee injury" is also a reference to a past event, not
+a report of a new one.
+
+---
+SOURCE: "The Tampa Bay Buccaneers have entered unfamiliar territory without
+Mike Evans in training camp. Evans spent 12 seasons in Tampa Bay before
+beginning a new chapter with the San Francisco 49ers this offseason.
+Egbuka said it is a little weird not having him around."
+
+WRONG:
+  {"player": "Mike Evans", "event": "traded",
+   "claim": "Traded to the San Francisco 49ers after 12 seasons with Tampa Bay."}
+
+RIGHT:
+  [{"player": "Emeka Egbuka", "category": "context", "event": "context_note",
+    "horizon": "season",
+    "claim": "Says the receiver room feels different in camp without Evans.",
+    "actionability": 1, "tags": []}]
+
+WHY: The article is about Egbuka. Evans moving is background, phrased in the
+past ("spent 12 seasons before beginning"), and it happened months ago -- but
+the article is from today, so extracting it files old news as breaking. It
+also was not a trade. "Beginning a new chapter with" does not say signed,
+traded, released or claimed, and guessing produces a specific false claim.
+
+---
+SOURCE: "Source: The Colts and RB Jonathan Taylor have agreed to a two-year,
+$44 million extension with $39 million guaranteed, the largest ever for a
+running back at signing."
+
+RIGHT:
+  [{"player": "Jonathan Taylor", "category": "transaction",
+    "event": "restructure", "horizon": "season",
+    "claim": "Agreed to a two-year extension worth $44 million, $39 million
+              guaranteed.",
+    "actionability": 3, "tags": ["contract"]}]
+
+WHY: Actionability 3. This does not change who anybody starts on Sunday, and
+an earlier rubric that asked whether a claim changed a lineup TODAY scored it
+2 -- so it sank beneath a wall of practice reports. It settles a player's
+role for two years. The test is whether a reader needs to know.
+
+---
+SOURCE: "Bijan Robinson was limited in practice Wednesday with what the team
+called general soreness. He is expected to play Sunday."
+
+RIGHT:
+  [{"player": "Bijan Robinson", "category": "injury",
+    "event": "practice_limited", "horizon": "day",
+    "claim": "Limited Wednesday with general soreness, expected to play.",
+    "actionability": 2, "tags": ["soreness"]}]
+
+WHY: One nugget, not two. The limitation and the expectation are one claim
+about one week. And "expected to play" keeps the source's hedge -- dropping
+it turns a probability into a fact.
+
+---
+SOURCE: "With Kyren Williams sidelined, Blake Corum took the majority of
+first-team reps and looked comfortable in pass protection."
+
+RIGHT:
+  [{"player": "Blake Corum", "category": "usage", "event": "first_team_reps",
+    "horizon": "day",
+    "claim": "Took most of the first-team work with Williams out.",
+    "actionability": 3, "tags": []},
+   {"player": "Kyren Williams", "category": "injury",
+    "event": "practice_absent", "horizon": "day",
+    "claim": "Sidelined for the session.", "actionability": 3, "tags": []}]
+
+WHY: Two players, two nuggets. Williams being out is a claim in its own
+right, not context for somebody else's. Note "took the majority of
+first-team reps and looked comfortable in pass protection" is the writer's
+phrasing -- the claim rewrites it rather than lifting it.
+
+---
+SOURCE: "Patriots transactions: Claimed on waivers WR Tejhaun Palmer from
+Cardinals. Waived TE Jeremiah Franklin. Signed DL Marcus Harris."
+
+RIGHT:
+  [{"player": "Tejhaun Palmer", "category": "transaction", "event": "claimed",
+    "horizon": "season", "claim": "Claimed off waivers from Arizona.",
+    "actionability": 3, "tags": []},
+   {"player": "Jeremiah Franklin", "category": "transaction",
+    "event": "waived", "horizon": "season", "claim": "Waived by New England.",
+    "actionability": 3, "tags": []},
+   {"player": "Marcus Harris", "category": "transaction", "event": "signed",
+    "horizon": "season", "claim": "Signed by New England.",
+    "actionability": 3, "tags": []}]
+
+WHY: A transaction roundup is several reports in one post, and each gets its
+own nugget with the RIGHT verb. Claimed, waived and signed are different
+events with different consequences, and the post says which for each.
+
+---
+SOURCE: "Reacted in real time to the Stefon Diggs news with @LoganPaulsenNFL.
+What this signing means for the WR room. Listen now on @team980."
+
+RIGHT:
+  []
+
+WHY: A show promo is not reporting. It refers to news without carrying it: no
+terms, no role, no detail a reader could act on. Return an empty list rather
+than manufacturing a claim from the fact that somebody discussed something.
+
+---
+SOURCE: "Practice notes: Borregales was perfect on all seven of his field
+goal attempts including a long from 54 yards."
+
+RIGHT:
+  [{"player": "Andy Borregales", "category": "performance",
+    "event": "performance_note", "horizon": "day",
+    "claim": "Made all seven attempts in practice, longest from 54.",
+    "actionability": 1, "tags": []}]
+
+WHY: A detailed description is where paraphrasing is hardest, because the
+facts arrive in an order that is difficult to restate. Compress rather than
+follow the sentence: "made all seven, longest from 54" carries everything
+without walking the same path as the writer.
+
+---
+SOURCE: "Gardner-Johnson is dealing with a calf strain. Separately, Buffalo's
+receivers coach spoke about the new wideouts."
+
+RIGHT:
+  [{"player": "C.J. Gardner-Johnson", "category": "injury",
+    "event": "injury_reported", "horizon": "day",
+    "claim": "Dealing with a calf strain.", "actionability": 2,
+    "tags": ["calf"]}]
+
+WHY: Only the first sentence is about a player. A coach speaking generally
+about a position group is not a claim about anybody, and inventing one to
+have something to return is how a wire fills with noise.
+
+---
+SOURCE: "Jayden Daniels did not participate. Terry McLaurin was limited.
+Brian Robinson was a full participant."
+
+RIGHT:
+  [{"player": "Jayden Daniels", "category": "injury",
+    "event": "practice_absent", "horizon": "day",
+    "claim": "Did not participate.", "actionability": 3, "tags": []},
+   {"player": "Terry McLaurin", "category": "injury",
+    "event": "practice_limited", "horizon": "day",
+    "claim": "Limited in practice.", "actionability": 2, "tags": []},
+   {"player": "Brian Robinson", "category": "injury",
+    "event": "practice_full", "horizon": "day",
+    "claim": "Full participant.", "actionability": 1, "tags": []}]
+
+WHY: Three players, three nuggets, and three different actionability scores.
+Not practising at all is a lineup decision; being limited changes an
+expectation; a full participant is background confirming nothing is wrong.
+
+---
+SOURCE: "Chase Brown, who is on a contract year, is poised to earn the big
+bucks if he can continue to improve as a receiver."
+
+RIGHT:
+  [{"player": "Chase Brown", "category": "context", "event": "context_note",
+    "horizon": "season",
+    "claim": "In a contract year and looking to improve as a receiver.",
+    "actionability": 1, "tags": []}]
+
+WHY: "Poised to" and "if he can" are the writer speculating. The claim keeps
+what is factual -- the contract year, the stated aim -- and drops the
+prediction. An extractor that hardens speculation into fact is inventing.
+
+---
+SOURCE: "Sources: Seahawks are signing RB TJ Harden, formerly of the Browns,
+to a one-year deal, per his agent."
+
+RIGHT:
+  [{"player": "TJ Harden", "category": "transaction", "event": "signed",
+    "horizon": "season",
+    "claim": "Signing a one-year deal with Seattle.", "actionability": 3,
+    "tags": ["contract"]}]
+
+WHY: "Formerly of the Browns" is a reference to where he was, not a report
+that he left -- so no second nugget about Cleveland. And "are signing" is
+present tense reporting a current move, unlike "spent 12 seasons before
+beginning a new chapter", which is not.
+
+---
+SOURCE: A clip captioned "Every rep from today's team period" showing
+Mahomes, Kelce, Rice, Pacheco and Worthy in sequence.
+
+RIGHT:
+  []  -- or claims with NO media attached
+
+WHY: A roundup clip belongs to no single player. Attaching it to each name
+mentioned put the same video on five cards, and a reader clicking Kelce's
+card to watch Kelce got a montage. If a post is about three or more players,
+the video is about practice, not about a person.
+
+---
+SOURCE: "Achane has looked explosive, but the offensive line remains a
+question and the schedule is brutal early."
+
+RIGHT:
+  [{"player": "De'Von Achane", "category": "performance",
+    "event": "performance_note", "horizon": "season",
+    "claim": "Has looked explosive in camp.", "actionability": 2,
+    "tags": []}]
+
+WHY: One nugget about one player. The line and the schedule are opinions
+about a team, not claims about Achane, and folding them in would make the
+claim say something the writer did not say about him. Horizon is season:
+looking explosive in camp is a statement about the year, not about Wednesday.
+
+---
+SOURCE: "Rodgers, who turns 42 in December, took every first-team snap."
+
+RIGHT:
+  [{"player": "Aaron Rodgers", "category": "usage",
+    "event": "first_team_reps", "horizon": "day",
+    "claim": "Took every first-team snap.", "actionability": 3, "tags": []}]
+
+WHY: His age is a parenthetical the writer added for colour. It is true, it
+is not news, and it was not reported today. A claim built from it -- "is 41
+years old" -- would be a fact with no source event behind it.
+
+---
+SOURCE: "Hall was limited in team drills again after tweaking something in
+his hamstring on Monday."
+
+RIGHT:
+  [{"player": "Breece Hall", "category": "injury",
+    "event": "practice_limited", "horizon": "day",
+    "claim": "Limited again, still managing a hamstring from Monday.",
+    "actionability": 3, "tags": ["hamstring"]}]
+
+WHY: "Again" and "on Monday" mean this is ongoing, not new. Same injury,
+continuing -- so the claim says so rather than reporting a fresh hamstring
+injury each day it is mentioned. Distinguishing a new injury from ongoing
+recovery keeps a wire from multiplying one problem into five.
+
+---
+SOURCE: "Malik Willis will start Sunday with Tua out. Willis has been taking
+the majority of first-team reps this week."
+
+RIGHT:
+  [{"player": "Malik Willis", "category": "depth_chart",
+    "event": "starter_named", "horizon": "day",
+    "claim": "Will start Sunday with Tagovailoa out.", "actionability": 3,
+    "tags": []},
+   {"player": "Tua Tagovailoa", "category": "injury", "event": "ruled_out",
+    "horizon": "day", "claim": "Ruled out for Sunday.", "actionability": 3,
+    "tags": []}]
+
+WHY: Both men are the subject of a claim, and both score 3 -- one is starting
+who was not, the other is not playing who was. Horizon is day for both: this
+is about Sunday, not about the season. A quarterback change that lasts is a
+different claim, and the source would have to say so.
+
 Return ONLY a JSON array. No prose, no markdown fences."""
 
 USER_TMPL = """{profile}
@@ -175,10 +452,26 @@ def _strip_fences(s: str) -> str:
 
 
 def _call_model(prompt: str, client) -> list[dict]:
+    # Cache the system prompt.
+    #
+    # It is identical on every call and it is most of the input: the rules,
+    # the event vocabulary, the severity and reference guidance run to a few
+    # thousand tokens, against a few hundred for the article itself. We were
+    # paying to send all of it thirteen hundred times a day.
+    #
+    # A week of billing came to $59.61, of which $40.36 -- sixty-eight
+    # percent -- was uncached input, with no cache reads at all.
+    #
+    # The marker goes on the system block only. The article text is different
+    # every time and there is nothing to reuse there.
     resp = client.messages.create(
         model=MODEL,
         max_tokens=2000,
-        system=SYSTEM,
+        system=[{
+            "type": "text",
+            "text": SYSTEM,
+            "cache_control": {"type": "ephemeral"},
+        }],
         messages=[{"role": "user", "content": prompt}],
     )
     text = "".join(b.text for b in resp.content if b.type == "text")
