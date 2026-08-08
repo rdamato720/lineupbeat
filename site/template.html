@@ -2245,10 +2245,20 @@ function renderFeed(){
     return true;
   };
 
+  // Newest first.
+  //
+  // This ranked by consequence, so a contract report from yesterday sat
+  // above a practice note filed twenty minutes ago. That is a defensible
+  // reading order and it is the wrong one for a wire: somebody who checked
+  // an hour ago has to hunt for what changed since, and the thing he came
+  // for is buried under something he has already read.
+  //
+  // Rank still decides ties, and the filters are there for anybody who
+  // wants to sort it differently.
   rows.sort((a,b) =>
+    new Date(b.published_at) - new Date(a.published_at) ||
     b.actionability - a.actionability ||
-    (b.weight || 1) - (a.weight || 1) ||
-    new Date(b.published_at) - new Date(a.published_at));
+    (b.weight || 1) - (a.weight || 1));
 
   const total = rows.length;
   document.getElementById("count").textContent =
