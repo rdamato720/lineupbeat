@@ -456,14 +456,16 @@ different claim, and the source would have to say so.
 
 Return ONLY a JSON array. No prose, no markdown fences."""
 
-USER_TMPL = """{profile}
+# What never changes between calls. Sent as a second cached system block, so
+# it is bought once every five minutes rather than once per article.
+FIXED_TMPL = """{profile}
 
 Valid categories: {categories}
 
 Valid events (choose exactly one per nugget):
-{events}
+{events}"""
 
-Source: {source_name} ({outlet}), covering {teams}
+USER_TMPL = """Source: {source_name} ({outlet}), covering {teams}
 Published: {published}
 
 --- ITEM ---
@@ -540,7 +542,7 @@ def _strip_fences(s: str) -> str:
     return s
 
 
-def _call_model(prompt: str, client) -> list[dict]:
+def _call_model(prompt: str, client, fixed: str = "") -> list[dict]:
     # Cache the system prompt.
     #
     # It is identical on every call and it is most of the input: the rules,
@@ -556,11 +558,21 @@ def _call_model(prompt: str, client) -> list[dict]:
     resp = client.messages.create(
         model=MODEL,
         max_tokens=2000,
-        system=[{
-            "type": "text",
-            "text": SYSTEM,
-            "cache_control": {"type": "ephemeral"},
-        }],
+        # Two blocks, one breakpoint at the end of the second.
+        #
+        # The rules were cached and the vocabulary was not: the event list,
+        # the categories and the sport profile sat in the user message, after
+        # the breakpoint, so 316 identical tokens were bought at full price
+        # on every call. At seventeen hundred calls an hour that is half a
+        # million tokens a day paying ten times what they should.
+        #
+        # An X post is forty to eighty tokens. Everything else about a call
+        # is the same as the last one.
+        system=[
+            {"type": "text", "text": SYSTEM},
+            {"type": "text", "text": fixed,
+             "cache_control": {"type": "ephemeral"}},
+        ],
         messages=[{"role": "user", "content": prompt}],
     )
     text = "".join(b.text for b in resp.content if b.type == "text")
@@ -591,10 +603,14 @@ def extract(
     else:
         prompt_extra = ""
 
-    prompt = USER_TMPL.format(
+    # Identical on every call, so it is cached with the rules.
+    fixed = FIXED_TMPL.format(
         profile=profile.prompt_block(),
         categories=", ".join(CATEGORIES),
         events=", ".join(EVENTS),
+    )
+    # Everything that differs: which reporter, when, and the text itself.
+    prompt = USER_TMPL.format(
         source_name=source.name,
         outlet=source.outlet,
         teams=", ".join(source.teams) or "league-wide",
@@ -614,7 +630,7 @@ def extract(
     else:
         if client is None:
             raise ValueError("Pass an Anthropic client or use stub=True")
-        rows = _call_model(prompt, client)
+        rows = _call_model(prompt, client, fixed)
 
     # How many distinct players does this item talk about? Counted before the
     # loop because it is a property of the source, not of any one nugget.
