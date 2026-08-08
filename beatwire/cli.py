@@ -273,14 +273,33 @@ def cmd_preflight(args):
     if not st["nuggets"]:
         fail.append("no nuggets in the database")
     else:
-        rate = st["unresolved"] / st["nuggets"] * 100
-        if rate > 8:
-            fail.append(f"{rate:.1f}% of nuggets unresolved. Run "
-                        f"`unresolved --sport {args.sport}` and fix aliases")
-        elif rate > 3:
-            warn.append(f"{rate:.1f}% unresolved, worth a look")
+        # Measured over the last week, not all time.
+        #
+        # The lifetime rate is a ratchet: unresolvable mentions accumulate
+        # and never leave, so it only climbs. It crossed eight percent and
+        # then blocked every run, and the wire stopped for a reason that was
+        # not a fault.
+        #
+        # And an unresolved nugget is not a broken one. It publishes,
+        # unlinked, saying honestly that we do not know who this is. That is
+        # worth watching, and it is not worth stopping the news for -- so it
+        # warns loudly and only fails when the resolver is clearly broken
+        # rather than merely refusing things it should refuse.
+        base = st.get("recent_nuggets") or 0
+        if base < 50:
+            ok.append("too few recent nuggets to judge resolution")
         else:
-            ok.append(f"unresolved rate {rate:.1f}%")
+            rate = st["recent_unresolved"] / base * 100
+            if rate > 25:
+                fail.append(f"{rate:.1f}% of the last week unresolved, which "
+                            f"means the resolver or the roster is broken. Run "
+                            f"`unresolved --sport {args.sport}`")
+            elif rate > 10:
+                warn.append(f"{rate:.1f}% of the last week unresolved. Run "
+                            f"`unresolved --sport {args.sport}` and add "
+                            f"aliases; the wire still publishes them unlinked")
+            else:
+                ok.append(f"unresolved rate {rate:.1f}% over the last week")
 
         x_today = store.spend_today("x")
         if x_today:

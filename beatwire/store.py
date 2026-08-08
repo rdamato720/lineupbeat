@@ -383,13 +383,33 @@ class Store:
             out.append(d)
         return out
 
-    def stats(self) -> dict:
+    def stats(self, recent_days: int = 7) -> dict:
+        """Totals, plus a resolution rate measured over recent nuggets only.
+
+        The rate used to be lifetime, which made it a ratchet: mentions that
+        can never resolve -- "Marv", "Browns DL", coaches, a footballer who
+        shares a surname -- accumulate forever, so the percentage only ever
+        climbs. It crossed the eight percent gate and then blocked every run
+        permanently, and the wire stopped.
+
+        A recent window answers the question that was meant to be asked: is
+        the resolver working NOW. An old unresolvable mention is a fact about
+        May, not a reason to stop today.
+        """
         n = self.conn.execute("SELECT COUNT(*) c FROM nuggets").fetchone()["c"]
         i = self.conn.execute("SELECT COUNT(*) c FROM seen_items").fetchone()["c"]
         u = self.conn.execute(
             "SELECT COUNT(*) c FROM nuggets WHERE player_id IS NULL"
         ).fetchone()["c"]
-        return {"nuggets": n, "items_seen": i, "unresolved": u}
+        rn = self.conn.execute(
+            "SELECT COUNT(*) c FROM nuggets WHERE published_at > "
+            "datetime('now', ?)", (f"-{recent_days} days",)).fetchone()["c"]
+        ru = self.conn.execute(
+            "SELECT COUNT(*) c FROM nuggets WHERE player_id IS NULL "
+            "AND published_at > datetime('now', ?)",
+            (f"-{recent_days} days",)).fetchone()["c"]
+        return {"nuggets": n, "items_seen": i, "unresolved": u,
+                "recent_nuggets": rn, "recent_unresolved": ru}
 
     def unresolved_mentions(self, sport: str, limit: int = 40) -> list[tuple]:
         """The roster-health queue. Frequent unresolved mentions are usually
