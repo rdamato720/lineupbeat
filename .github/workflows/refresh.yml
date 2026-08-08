@@ -26,10 +26,21 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      # seen_items is what stops you re-paying the model for an article you
-      # already processed. Losing this cache costs real money, so it is keyed
-      # to restore from the most recent run rather than rebuilt.
-      - uses: actions/cache@v4
+      # seen_items and the cursors are what stop us re-paying the model for
+      # something already processed. Losing them costs real money.
+      #
+      # actions/cache only saves when the job SUCCEEDS. Runs were failing --
+      # a spend cap, a preflight gate, a cancellation -- so the cache never
+      # updated, every run restored an older database, and every run saw
+      # three thousand items as new. Two consecutive runs an hour apart both
+      # reported 2,970 new items, which no set of beat writers produces.
+      # The restored cache was 38MB against a real database of 118MB.
+      #
+      # So: restore and save are split, and the save runs whatever happened.
+      # A run that fails halfway has still fetched things, and throwing that
+      # away is what made the next run expensive.
+      - uses: actions/cache/restore@v4
+        id: dbcache
         with:
           path: beatwire.db
           key: beatwire-db-${{ github.run_id }}
@@ -107,3 +118,10 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: npx --yes netlify-cli@latest deploy --dir=site --prod
+
+      # Always. Even if a step above failed.
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: beatwire.db
+          key: beatwire-db-${{ github.run_id }}
