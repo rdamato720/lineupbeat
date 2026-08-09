@@ -17,7 +17,7 @@ import concurrent.futures as cf
 
 # Small enough to stay well inside the rate limit, large enough
 # that a run finishes before the next one is due to start.
-EXTRACT_WORKERS = 8
+EXTRACT_WORKERS = 2
 
 
 @dataclass
