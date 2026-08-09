@@ -30,6 +30,10 @@ from .ingest import SpendCapExceeded, stitch_threads
 from .models import RawItem, Source
 
 BASE = "https://api.twitterapi.io"
+# Nothing older than this is worth reading, and on a fresh database
+# it is the difference between a few days and several years.
+MAX_AGE_DAYS = 4
+
 COST_PER_TWEET = 0.00015
 
 
@@ -182,25 +186,48 @@ def fetch(source: Source, store=None, key: str | None = None,
 
     handle = source.handle.lstrip("@")
     params = {"userName": handle}
-    cursor = store.get_cursor(source.id)
-    if cursor:
-        params["cursor"] = cursor
+
+    # No cursor. Deliberately.
+    #
+    # `last_tweets` is newest-first and its next_cursor means "the page
+    # BEFORE this one". Storing that and sending it back next run resumed
+    # the poll one page deeper into the past, every hour, forever. The
+    # oldest post this collected was from February 2018, and the model was
+    # paid to read all of it -- roughly 2,500 items a run against a real
+    # publishing rate near a thousand a day across every source combined.
+    #
+    # Page one is what has been posted since the last poll, plus overlap.
+    # The overlap is free: seen_items drops it before extraction, which is
+    # what "where I got to" actually means here. A pagination cursor was
+    # never the right thing to persist.
 
     payload = _get("/twitter/user/last_tweets", params, key)
     raw = tweets_from(payload)
 
-    # Bill on what actually came back, so an empty incremental poll is free.
-    # That is the whole point of keeping the cursor.
+    # Bill on what came back. Page one always returns something, so this is
+    # a real cost per poll now rather than free-when-empty -- but it is one
+    # page, not an unbounded walk.
     if raw:
         store.record_spend("twitterapi", source.id, len(raw),
                            len(raw) * COST_PER_TWEET)
 
     items = parse_timeline(payload, source, handle)
 
-    nxt = payload.get("next_cursor") or payload.get("nextCursor")
-    if not nxt and raw:
-        nxt = str(raw[0].get("id") or raw[0].get("id_str") or "")
-    if nxt:
-        store.set_cursor(source.id, str(nxt))
+    # And a floor on age, so a first run against an empty database picks up
+    # a few days rather than whatever the page happens to reach back to.
+    if MAX_AGE_DAYS:
+        from datetime import datetime, timedelta, timezone
+        floor = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
+        kept = []
+        for it in items:
+            when = getattr(it, "published_at", None)
+            if when is None:
+                kept.append(it)
+                continue
+            if when.tzinfo is None:
+                when = when.replace(tzinfo=timezone.utc)
+            if when >= floor:
+                kept.append(it)
+        items = kept
 
     return items
