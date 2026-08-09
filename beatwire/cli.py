@@ -92,25 +92,72 @@ def cmd_export(args):
     import sqlite3 as _sq
     proj = {}
     try:
+        # The published snapshot, not a staging table.
+        #
+        # This read `projections`, which is now `projection_staging`: mutable,
+        # overwritten by every import, and never validated. The site was
+        # therefore showing whatever was last loaded rather than what was
+        # published, or nothing at all once the table was renamed.
+        #
+        # published_snapshot names the run; run_projections holds its rows;
+        # points are computed from the raw line rather than stored, so there
+        # is nowhere for a stale number to disagree with the stat line.
+        live = store.conn.execute(
+            "SELECT run_id, season FROM published_snapshot "
+            "ORDER BY season DESC LIMIT 1").fetchone()
+        if not live:
+            raise _sq.OperationalError("nothing published")
         cur = store.conn.execute("""
-            SELECT sleeper_id, player, position, team, ppr, half, standard,
-                   adjusted, exp_games, floor, ceiling, rank_pos, rec, recyd,
-                   ruyd, news_adj, trace, season
-            FROM projections WHERE sleeper_id IS NOT NULL AND sleeper_id != ''
-            ORDER BY season DESC""")
-        for r in cur:
-            key = f"nfl-{r['sleeper_id']}"
+            SELECT r.player_id, r.player, r.position, r.team,
+                   r.pass_att, r.completions, r.pass_yds, r.pass_td, r.ints,
+                   r.targets, r.rec, r.rec_yds, r.rec_td,
+                   r.rush_att, r.rush_yds, r.rush_td, r.fumbles,
+                   r.season
+            FROM run_projections r
+            WHERE r.run_id = ?
+              AND (r.is_residual IS NULL OR r.is_residual = 0)
+              AND r.team NOT IN ('FA','FA/UNK','UNK','')
+            """, (live["run_id"],))
+        def _pts(row, fmt):
+            g = lambda k: float(row[k] or 0)
+            v = (g("pass_yds") / 25 + g("pass_td") * 4 - g("ints") * 2
+                 + (g("rush_yds") + g("rec_yds")) / 10
+                 + (g("rush_td") + g("rec_td")) * 6 - g("fumbles") * 2)
+            if fmt == "ppr":
+                v += g("rec")
+            elif fmt == "half":
+                v += g("rec") * 0.5
+            return round(v, 1)
+
+        rows = [dict(r) for r in cur]
+        # Rank within position, on full precision, for PPR.
+        by_pos = {}
+        for r in rows:
+            r["_ppr"] = _pts(r, "ppr")
+            by_pos.setdefault(r["position"], []).append(r)
+        for pos, group in by_pos.items():
+            group.sort(key=lambda x: (-x["_ppr"], str(x["player_id"])))
+            for i, r in enumerate(group, 1):
+                r["_rank"] = i
+
+        for r in rows:
+            # player_id is already the roster id the wire keys on, so the
+            # projection lands on the same player the news does without a
+            # second identifier to keep in sync.
+            key = r["player_id"]
             if key in proj:
-                continue          # newest season wins
+                continue
             proj[key] = {
-                "ppr": r["ppr"], "half": r["half"], "std": r["standard"],
-                "healthy": r["ppr"], "adjusted": r["adjusted"],
-                "games": r["exp_games"],
-                "floor": r["floor"], "ceil": r["ceiling"],
-                "rank": r["rank_pos"], "rec": r["rec"], "recyd": r["recyd"],
-                "ruyd": r["ruyd"], "adj": r["news_adj"],
-                "trace": json.loads(r["trace"]) if r["trace"] else [],
-                "season": r["season"] + 0,
+                "ppr": r["_ppr"], "half": _pts(r, "half"),
+                "std": _pts(r, "standard"),
+                "healthy": r["_ppr"], "adjusted": None, "games": None,
+                "floor": None, "ceil": None,
+                "rank": r["_rank"],
+                "rec": round(float(r["rec"] or 0), 1),
+                "recyd": round(float(r["rec_yds"] or 0)),
+                "ruyd": round(float(r["rush_yds"] or 0)),
+                "adj": None, "trace": [],
+                "season": (r["season"] or live["season"]) + 0,
             }
     except _sq.OperationalError:
         pass

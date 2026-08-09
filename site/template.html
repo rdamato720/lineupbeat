@@ -2321,16 +2321,35 @@ function renderFeed(){
     return false;
   });
 
-  // Featured picks on name recognition, not just recency. Sleeper's
-  // search_rank is a fantasy relevance ordering -- Christian McCaffrey is 5,
-  // a backup tight end is in the hundreds -- so a Kittle injury leads over a
-  // fourth-stringer's, which is what a reader would expect.
+  // Featured is the top of a wire, so it has to be fresh.
+  //
+  // It sorted on name recognition alone, with no age limit, so a Kyle Pitts
+  // extension from June sat at the top of a section headed "news today" and
+  // everything on it was fifteen hours old.
+  //
+  // Now: nothing older than four hours unless nothing else qualifies, and
+  // within that the national insiders lead. They break things first and
+  // everyone else corroborates them minutes later, which is exactly the
+  // ordering a reader wants at the top.
+  const FEATURED_HOURS = 4;
   const featured = [];
   const usedTeams = new Set();
   if(rows.length > 6){
-    const notable = rows
-      .map((n, i) => ({n, i, rank: (PLAYERS.get(n.player_id) || {}).rank || 9999}))
-      .filter(x => x.n.resolved && x.n.actionability >= 3)
+    const score = n => {
+      const rank = (PLAYERS.get(n.player_id) || {}).rank || 9999;
+      // A national insider on a well-known player leads. Weight is 1.6 for
+      // the four who break news, 1 for everybody else.
+      return rank / (n.weight || 1);
+    };
+    let pool = rows.filter(n =>
+      n.resolved && n.actionability >= 3 && hoursOld(n) <= FEATURED_HOURS);
+    // Widen only if a quiet morning leaves nothing to show.
+    if(pool.length < 3){
+      pool = rows.filter(n => n.resolved && n.actionability >= 3
+                              && hoursOld(n) <= 12);
+    }
+    const notable = pool
+      .map((n, i) => ({n, i, rank: score(n)}))
       .sort((a, b) => a.rank - b.rank
         || new Date(b.n.published_at) - new Date(a.n.published_at));
 
@@ -2416,7 +2435,7 @@ function renderFeed(){
     sec.className = "sec";
     sec.innerHTML = `<div class="shead">
       <h2>Leading the wire</h2>
-      <p class="sub">The biggest names with news today.</p></div>`;
+      <p class="sub">The biggest names, in the last few hours.</p></div>`;
     featured.forEach(n => {
       for(const m of videosOf(n)) shownClips.add(m.tweet_url);
       featuredGrid.appendChild(bigNode(n, sport, false));

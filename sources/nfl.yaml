@@ -843,6 +843,7 @@ sources:
   teams:
   - BAL
 - id: nfl-natl-tapi-rapsheet
+  weight: 1.6
   kind: twitterapi
   handle: RapSheet
   name: RapSheet
@@ -851,6 +852,7 @@ sources:
   tags:
   - national
 - id: nfl-natl-tapi-adamschefter
+  weight: 1.6
   kind: twitterapi
   handle: AdamSchefter
   name: AdamSchefter
@@ -859,6 +861,7 @@ sources:
   tags:
   - national
 - id: nfl-natl-tapi-tompelissero
+  weight: 1.6
   kind: twitterapi
   handle: TomPelissero
   name: TomPelissero
