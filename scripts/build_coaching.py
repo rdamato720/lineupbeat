@@ -149,7 +149,11 @@ PAGE_CSS = """
 .team.s-target{border-left-color:#B9DE7E}
 .team.s-selective{border-left-color:var(--standing)}
 .team.s-caution{border-left-color:#FF6B4A}
-.tmhead{display:flex; align-items:baseline; gap:.6rem; flex-wrap:wrap}
+.tmhead{display:flex; align-items:center; gap:.55rem; flex-wrap:wrap}
+/* The mark, so a reader finds his team by shape rather than by reading
+   thirty-two names. Hidden on failure rather than showing a broken image:
+   an alt box in a card header is worse than no logo at all. */
+.tmlogo{width:1.6rem; height:1.6rem; object-fit:contain; flex:none}
 .tmname{font-family:var(--agate); text-transform:uppercase; letter-spacing:.04em;
   font-size:1rem; font-weight:600; margin:0}
 .tmsig{font-family:var(--agate); text-transform:uppercase; font-size:.64rem;
@@ -270,6 +274,9 @@ def team_card(r):
       data-target="{esc(",".join(targets))}"
       data-caution="{esc(",".join(cautions))}">
   <div class="tmhead">
+    <img class="tmlogo" loading="lazy" alt=""
+         src="https://a.espncdn.com/i/teamlogos/nfl/500/{r["team"].lower()}.png"
+         onerror="this.style.display='none'">
     <h2 class="tmname">{esc(name)}</h2>
     <span class="tmsig {sc}">{esc(r["coaching_draft_signal"])}</span>
     {'<span class="tmnew">New caller</span>' if new else ''}

@@ -232,6 +232,42 @@ PAGE_CSS = """
   letter-spacing:.08em;text-transform:uppercase;margin:0}
 .who .tlogo{vertical-align:-3px;margin-right:.4rem}
 .tlogo{width:18px;height:18px;object-fit:contain;flex:none}
+/* ---- projection ----
+   A panel, not a chip. The number is why a lot of people open the page, and
+   a season total needs the line under it to be worth anything. */
+.proj{background:var(--card); border:1px solid var(--rule); border-radius:10px;
+  padding:.9rem 1rem; margin:1.4rem 0 0}
+.pjhead{display:flex; align-items:baseline; gap:.6rem}
+.pjhead h2{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.72rem; color:var(--quiet); margin:0;
+  border:0; padding:0}
+/* The rank in the accent, not the team colour.
+   __ACCENT__ is whatever the club wears, and a navy pill on a near-black
+   panel is invisible -- Chicago's RB18 could not be read at all. Team
+   colour belongs on the header banner, where there is a gradient behind
+   it to sit against. */
+.pjrank{font-family:var(--data); font-size:.72rem; color:var(--signal);
+  border:1px solid var(--signal); border-radius:4px; padding:.05rem .4rem;
+  font-weight:600; letter-spacing:.02em}
+.pjfmts{display:flex; gap:1.4rem; flex-wrap:wrap; margin:.6rem 0 0}
+.pjf span{display:block; font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.06em; font-size:.62rem; color:var(--quiet)}
+/* The numbers in the accent, because they are what the panel is for.
+   The team colour was reserved for the first format only, which made PPR
+   look like the real one and the other two like footnotes. They are three
+   readings of the same projection. */
+.pjf b{font-family:var(--data); font-size:1.35rem; color:var(--signal);
+  font-weight:600; line-height:1.15}
+.pjline{display:flex; gap:1.1rem; flex-wrap:wrap; margin:.9rem 0 0;
+  padding-top:.8rem; border-top:1px solid var(--rule)}
+.pjs span{display:block; font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.05em; font-size:.58rem; color:var(--quiet)}
+.pjs b{font-family:var(--data); font-size:.86rem; color:var(--signal);
+  font-weight:600}
+.pjnote{margin:.8rem 0 0; font-size:.76rem; color:var(--quiet)}
+.pjnote a{color:var(--quiet); text-decoration:underline}
+.pjnote a:hover{color:__ACCENT__}
+
 .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 0}
 .chip{font:.72rem/1 var(--agate,system-ui),sans-serif;letter-spacing:.06em;
   text-transform:uppercase;color:var(--quiet);border:1px solid var(--rule);
@@ -262,7 +298,43 @@ PAGE_CSS = """
 @media(max-width:34rem){
   .phero{flex-direction:column;text-align:center}
   .ppage h1{font-size:1.55rem}
-  .chips{justify-content:center}
+  /* ---- projection ----
+   A panel, not a chip. The number is why a lot of people open the page, and
+   a season total needs the line under it to be worth anything. */
+.proj{background:var(--card); border:1px solid var(--rule); border-radius:10px;
+  padding:.9rem 1rem; margin:1.4rem 0 0}
+.pjhead{display:flex; align-items:baseline; gap:.6rem}
+.pjhead h2{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.72rem; color:var(--quiet); margin:0;
+  border:0; padding:0}
+/* The rank in the accent, not the team colour.
+   __ACCENT__ is whatever the club wears, and a navy pill on a near-black
+   panel is invisible -- Chicago's RB18 could not be read at all. Team
+   colour belongs on the header banner, where there is a gradient behind
+   it to sit against. */
+.pjrank{font-family:var(--data); font-size:.72rem; color:var(--signal);
+  border:1px solid var(--signal); border-radius:4px; padding:.05rem .4rem;
+  font-weight:600; letter-spacing:.02em}
+.pjfmts{display:flex; gap:1.4rem; flex-wrap:wrap; margin:.6rem 0 0}
+.pjf span{display:block; font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.06em; font-size:.62rem; color:var(--quiet)}
+/* The numbers in the accent, because they are what the panel is for.
+   The team colour was reserved for the first format only, which made PPR
+   look like the real one and the other two like footnotes. They are three
+   readings of the same projection. */
+.pjf b{font-family:var(--data); font-size:1.35rem; color:var(--signal);
+  font-weight:600; line-height:1.15}
+.pjline{display:flex; gap:1.1rem; flex-wrap:wrap; margin:.9rem 0 0;
+  padding-top:.8rem; border-top:1px solid var(--rule)}
+.pjs span{display:block; font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.05em; font-size:.58rem; color:var(--quiet)}
+.pjs b{font-family:var(--data); font-size:.86rem; color:var(--signal);
+  font-weight:600}
+.pjnote{margin:.8rem 0 0; font-size:.76rem; color:var(--quiet)}
+.pjnote a{color:var(--quiet); text-decoration:underline}
+.pjnote a:hover{color:__ACCENT__}
+
+.chips{justify-content:center}
 }
 """
 
@@ -376,8 +448,76 @@ def load_projections():
             key = r.get("id") or slug(r["n"])
             out[key] = {"ppr": r["p"], "half": r.get("h"),
                         "std": r.get("s"), "rank": r.get("r"),
-                        "pos": pos}
+                        "pos": pos,
+                        # The stat line behind the number. A season total on
+                        # its own is a claim; the line under it is the
+                        # reasoning, and it is the difference between a
+                        # figure to trust and one to take on faith.
+                        "line": {k: r.get(k) for k in
+                                 ("targets", "rec", "recyd", "rectd",
+                                  "ruatt", "ruyd", "rutd", "patt", "cmp",
+                                  "payd", "patd", "int", "fl")}}
     return out
+
+
+# Which stats to show, and what to call them, per position.
+STAT_LABELS = {
+    "QB": [("patt", "Att"), ("cmp", "Cmp"), ("payd", "Pass yds"),
+           ("patd", "Pass TD"), ("int", "INT"), ("ruatt", "Car"),
+           ("ruyd", "Rush yds"), ("rutd", "Rush TD")],
+    "RB": [("ruatt", "Car"), ("ruyd", "Rush yds"), ("rutd", "Rush TD"),
+           ("targets", "Tgt"), ("rec", "Rec"), ("recyd", "Rec yds"),
+           ("rectd", "Rec TD")],
+    "WR": [("targets", "Tgt"), ("rec", "Rec"), ("recyd", "Rec yds"),
+           ("rectd", "Rec TD"), ("ruatt", "Car"), ("ruyd", "Rush yds")],
+    "TE": [("targets", "Tgt"), ("rec", "Rec"), ("recyd", "Rec yds"),
+           ("rectd", "Rec TD")],
+}
+WHOLE = {"payd", "recyd", "ruyd", "patt", "ruatt", "targets"}
+
+
+def projection_block(name, pos):
+    """The projection, with the line it came from.
+
+    A number on its own asks to be believed. The line under it can be
+    checked against what somebody already thinks about the player, which is
+    the whole reason to show it rather than a bare total.
+    """
+    pr = PROJECTIONS.get(slug(name))
+    if not pr:
+        return ""
+    # The sheet's own tab, not the roster's position.
+    #
+    # The roster had Josh Allen as LB, so the rank read "LB1" and the stat
+    # line came back empty because there is no LB row in the label map. The
+    # board put him on the QB sheet; that is the position the projection is
+    # actually for.
+    pos = (pr.get("pos") or pos or "").upper()
+    line = pr.get("line") or {}
+    cells = []
+    for key, label in STAT_LABELS.get(pos, []):
+        v = line.get(key)
+        if v is None:
+            continue
+        shown = f"{round(v):,}" if key in WHOLE else f"{v:.1f}"
+        cells.append(f'<div class="pjs"><span>{esc(label)}</span>'
+                     f'<b>{shown}</b></div>')
+
+    fmts = "".join(
+        f'<div class="pjf"><span>{lab}</span><b>{pr[k]:.1f}</b></div>'
+        for k, lab in (("ppr", "PPR"), ("half", "Half"), ("std", "Standard"))
+        if pr.get(k) is not None)
+
+    return (
+        f'\n  <section class="proj">\n'
+        f'    <div class="pjhead">\n'
+        f'      <h2>2026 projection</h2>\n'
+        f'      <span class="pjrank">{esc(pos)}{pr.get("rank") or ""}'
+        f'</span>\n'
+        f'    </div>\n'
+        f'    <div class="pjfmts">{fmts}</div>\n'
+        + (f'    <div class="pjline">{"".join(cells)}</div>\n' if cells else "")
+        + f'  </section>\n')
 
 
 def player_page(p, nuggets, base):
@@ -410,17 +550,12 @@ def player_page(p, nuggets, base):
         chips.append(f'<span class="chip">Status '
                      f'<b>{esc(meta["injury_status"])}</b></span>')
 
-    # The projection, first, because it is the number somebody came for.
+    # No projection chips.
     #
-    # Only where the board has one. A page for a long snapper should not
-    # carry an empty PPR chip explaining that nobody projected him.
-    pr = PROJECTIONS.get(slug(name))
-    if pr:
-        chips.insert(0, f'<span class="chip">PPR <b>{pr["ppr"]:.1f}</b>'
-                        f'</span>')
-        if pr.get("rank"):
-            chips.insert(1, f'<span class="chip">{esc(pos or "")}'
-                            f'<b>{pr["rank"]}</b></span>')
+    # There is a projection panel below with the same number and the stat
+    # line behind it. A chip saying PPR 361.1 four inches above a panel
+    # saying PPR 361.1 is not emphasis, it is the page disagreeing with
+    # itself about where the number lives.
 
     arts = []
     for n in nuggets:
@@ -489,6 +624,7 @@ def player_page(p, nuggets, base):
                f'width="18" height="18">' if team else "")
             + f'{esc(who)}</p>\n    </div>\n  </div>\n'
             + (f'  <div class="chips">{"".join(chips)}</div>\n' if chips else "")
+            + projection_block(name, pos)
             + (f'  <h2>{len(nuggets)} beat report'
                f'{"s" if len(nuggets) != 1 else ""}, newest first</h2>\n'
                if nuggets else

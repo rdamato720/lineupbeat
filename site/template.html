@@ -2580,16 +2580,13 @@ function followHTML(pid){
 }
 
 function projHTML(pid){
-  // The badge shows again, because the number now has somewhere to go.
+  // No projection on a wire tile.
   //
-  // It was suppressed while the projections tab was hidden, on the grounds
-  // that a number with no way to see where it came from is worse than no
-  // number. There is a projections page now, so the badge links to it and
-  // the objection is answered rather than worked around.
-  const p = PLAYERS.get(pid);
-  if(!p || !p.proj) return "";
-  return `<a class="proj" href="/nfl/projections/"
-             title="Full projections">PROJ <b>${Math.round(fmtPts(p.proj))}</b></a>`;
+  // The tile answers "what happened to this player", and a season total
+  // sitting beside a practice note is a different kind of claim competing
+  // for the same glance. The number belongs on the player page, where
+  // there is room to show the stat line it came from, and on the board.
+  return "";
 }
 
 let projPos = "RB";
