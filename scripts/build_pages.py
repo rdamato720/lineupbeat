@@ -55,7 +55,7 @@ SPORT = "nfl"
 TEMPLATE = ROOT / "site" / "template.html"
 
 
-def site_chrome():
+def site_chrome(section=None):
     """Take the stylesheet, header and footer from the app template.
 
     These pages were using a small stylesheet of their own, which meant a
@@ -87,7 +87,9 @@ def site_chrome():
         # link into the app that opens it. The hash is what the wire reads on
         # load, so the section is showing by the time anybody sees the page.
         '<a class="vbtn" href="/#v=roster">My Roster</a>'
-        f'<a class="vbtn" href="/{SPORT}/data/">Fantasy Data</a>'
+        f'<a class="vbtn" href="/{SPORT}/data/"'
+        + (' aria-current="page"' if section == "data" else "")
+        + '>Fantasy Data</a>'
         '</nav>\n'
         '    <div class="finder">\n'
         '      <input id="pfind" type="search" placeholder="Find a player"\n'
@@ -101,6 +103,11 @@ def site_chrome():
 
 
 APP_CSS, APP_HEADER, APP_FOOTER = site_chrome()
+# The same bar with Fantasy Data marked, for the pages that live under it.
+# A player page is wire content and gets the plain one; the hub and the
+# boards get the marker, so the highlight means where you are rather than
+# which script built the page.
+_, DATA_HEADER, _ = site_chrome("data")
 
 TEAM_C2 = {
     "ARI":"#FFB612","ATL":"#A5ACAF","BAL":"#9E7C0C","BUF":"#C60C30","CAR":"#BFC0BF",
@@ -195,6 +202,7 @@ PAGE_CSS = """
 /* The header links are anchors here, not the app's buttons, so they pick up
    the default underline. Match the app's chrome instead. */
 .topbar .logo,.topbar .vbtn{text-decoration:none}
+.vbtn[aria-current="page"]{color:#0A0C08; background:var(--signal); border-color:var(--signal)}
 .topbar .logo:hover,.topbar .vbtn:hover{text-decoration:none;
   color:var(--signal)}
 /* `.hero` is the app masthead -- background, yard lines, big padding. The
@@ -291,7 +299,7 @@ __FOOTER__
 """
 
 
-def _render(page, accent, c2="#C6F24E"):
+def _render(page, accent, c2="#C6F24E", section=None):
     """Swap in the real stylesheet, header and footer.
 
     CSS lives outside .format() because a stylesheet is full of braces and
@@ -306,7 +314,8 @@ def _render(page, accent, c2="#C6F24E"):
            + "</style>")
     return (page
             .replace("__CSS__", css)
-            .replace("__HEADER__", APP_HEADER)
+            .replace("__HEADER__",
+                     DATA_HEADER if section == "data" else APP_HEADER)
             .replace("__FOOTER__", APP_FOOTER))
 
 
@@ -578,6 +587,16 @@ def data_hub_page(base):
             "meta": "Updated through the preseason",
         },
         {
+            "href": f"/{SPORT}/strength-of-schedule/",
+            "kicker": "Every team, week by week",
+            "title": "Strength of schedule",
+            "blurb": "Which teams have the easiest run left, by opponent "
+                     "record and by the fantasy points each opponent "
+                     "actually allows to backs, receivers and tight ends. "
+                     "Reweights itself as the season is played.",
+            "meta": "Updated weekly in season",
+        },
+        {
             "href": f"/{SPORT}/durability/",
             "kicker": "Every drafted player",
             "title": "Durability and availability",
@@ -657,7 +676,7 @@ def data_hub_page(base):
         og_image=f'<meta property="og:image" content="{base}/og.png">',
         structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
                     f'<style>{css}</style>'),
-        body=body), "#C6F24E", "#C6F24E")
+        body=body), "#C6F24E", "#C6F24E", section="data")
 
 
 def durability_page(conn, base):
@@ -1164,7 +1183,7 @@ def durability_page(conn, base):
         structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
                     f'<style>{css}</style>'
                     f'<script>{FIND_JS}</script>'),
-        body=body), "#C6F24E", "#C6F24E")
+        body=body), "#C6F24E", "#C6F24E", section="data")
 
 
 def main():

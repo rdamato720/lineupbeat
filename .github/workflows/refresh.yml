@@ -1,6 +1,21 @@
 name: refresh beat feed
 
 on:
+  schedule:
+    # Every 20 minutes, 10:00 UTC through 08:00 UTC the next day.
+    #
+    # That is 6am Eastern to 4am Eastern, which is 3am to 1am Pacific. The
+    # window has to run on Pacific time at the far end: a west coast team
+    # practices in the afternoon there, so Seahawks and 49ers reports land at
+    # 6-9pm Pacific, and a Sunday night game finishes around 8:30pm Pacific.
+    #
+    # Stopping at midnight Eastern cut all of that off -- it is only 9pm on
+    # the coast where three of the day's reports are still being filed.
+    #
+    # The two-hour gap, 4-6am Eastern, is the one stretch where nobody in
+    # either time zone is filing anything.
+    - cron: "*/20 10-23 * * *"
+    - cron: "*/20 0-8 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -26,21 +41,10 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      # seen_items and the cursors are what stop us re-paying the model for
-      # something already processed. Losing them costs real money.
-      #
-      # actions/cache only saves when the job SUCCEEDS. Runs were failing --
-      # a spend cap, a preflight gate, a cancellation -- so the cache never
-      # updated, every run restored an older database, and every run saw
-      # three thousand items as new. Two consecutive runs an hour apart both
-      # reported 2,970 new items, which no set of beat writers produces.
-      # The restored cache was 38MB against a real database of 118MB.
-      #
-      # So: restore and save are split, and the save runs whatever happened.
-      # A run that fails halfway has still fetched things, and throwing that
-      # away is what made the next run expensive.
-      - uses: actions/cache/restore@v4
-        id: dbcache
+      # seen_items is what stops you re-paying the model for an article you
+      # already processed. Losing this cache costs real money, so it is keyed
+      # to restore from the most recent run rather than rebuilt.
+      - uses: actions/cache@v4
         with:
           path: beatwire.db
           key: beatwire-db-${{ github.run_id }}
@@ -54,10 +58,6 @@ jobs:
       - name: Run pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
-          # Skip items mentioning no skill player: 61% of new
-          # items, none of which a default reader would see.
-          BEATWIRE_SKILL_ONLY: "1"
         run: |
           # Rosters first, once a day.
           #
@@ -71,38 +71,26 @@ jobs:
             python scripts/import_rosters.py nfl || true
             python scripts/import_adp.py || true
             python scripts/import_depth.py --season 2026 || true
+            # Scores fill in as games are played, so the same fetch keeps
+            # strength of schedule current without any other trigger.
+            python scripts/import_schedule.py --seasons 2025 2026 || true
           fi
-
-
-          # Historical tables for the durability page. A no-op once
-          # they exist; they were in the once-a-day block, so an
-          # afternoon run had no weekly_stats and the page skipped.
-          python scripts/ensure_tables.py || true
 
           python -m beatwire.cli run    --sport nfl
 
           # Everything still unmatched gets another try against the roster as
           # it stands now. No model call, so this is free.
           python scripts/reresolve.py --sport nfl || true
-
-          # Drop stored claims about players the wire does not show.
-          #
-          # The skill filter stops new extraction; it does nothing about the
-          # backlog. This clears it, and errs everywhere toward keeping: an
-          # unmatched player stays, an unknown position stays, a claim whose
-          # source also names a receiver stays, and nothing under three days
-          # old is touched at all -- because a man who signed this morning
-          # is unresolvable until the roster catches up.
-          #
-          # Once a day is enough. It only ever has three days of backlog.
-          if [ "$(date -u +%H)" -lt 12 ]; then
-            python scripts/prune_positions.py --apply || true
-          fi
-          python -m beatwire.cli export --sports nfl --limit 4000 \
+          python -m beatwire.cli export --sports nfl \
                  --out site/data/feed.json --site site/index.html
           # Crawlable pages. The app is one hash-routed URL with no words in
           # the markup; these give search engines a real address per player
           # with the reporting already in the HTML.
+          # Strength of schedule, recomputed from whatever has been played.
+          # Before build_pages, because the hub links to it.
+          python scripts/schedule_strength.py --season 2026 --quiet || true
+          python scripts/build_sos.py || true
+
           python scripts/build_pages.py --base https://lineupbeat.com
 
       # Publishes even if preflight warns, but records the verdict in the log
@@ -118,10 +106,3 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: npx --yes netlify-cli@latest deploy --dir=site --prod
-
-      # Always. Even if a step above failed.
-      - uses: actions/cache/save@v4
-        if: always()
-        with:
-          path: beatwire.db
-          key: beatwire-db-${{ github.run_id }}

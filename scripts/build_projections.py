@@ -230,6 +230,16 @@ def roster_links(conn):
 
 
 PAGE_CSS = """
+/* The nav, identical on every page.
+   These are anchors on a static page and buttons in the app, so the browser
+   underlined them here and not there -- the same bar looking different
+   depending which page you were on. And the accent pill marks where you
+   are, which is what the app does and what these pages were not doing. */
+.topbar .logo,.topbar .vbtn{text-decoration:none}
+.topbar .vbtn:hover{text-decoration:none; color:var(--ink)}
+.vbtn[aria-current="page"]{color:#0A0C08; background:var(--signal);
+  border-color:var(--signal)}
+
 /* ---- projections ----
    A board, not a dashboard. One table, three formats, four positions, and a
    search box; everything else people came here to read is a number in a
@@ -536,11 +546,7 @@ def site_chrome():
         '<header class="topbar">\n'
         '  <div class="wrap tbrow">\n'
         '    <a class="logo" href="/">Lineup<em>Beat</em></a>\n'
-        '    <nav class="views">'
-        '<a class="vbtn" href="/">The Wire</a>'
-        '<a class="vbtn" href="/#v=roster">My Roster</a>'
-        f'<a class="vbtn" href="/{SPORT}/data/">Fantasy Data</a>'
-        '</nav>\n'
+        '    <nav class="views"><a class="vbtn" href="/">The Wire</a><a class="vbtn" href="/#v=roster">My Roster</a><a class="vbtn" href="/nfl/data/" aria-current="page">Fantasy Data</a></nav>\n'
         '  </div>\n'
         '</header>'
     )

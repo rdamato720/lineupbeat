@@ -261,7 +261,12 @@ header.stuck /* ---- search: the front door ---- */
   font-size:.74rem; font-weight:600; padding:.4rem .8rem; background:none;
   border:1px solid transparent; border-radius:999px; color:var(--quiet);
   cursor:pointer; white-space:nowrap}
-.vbtn:hover{color:var(--ink)}
+/* Anchors in a bar of buttons.
+   Fantasy Data is a real link and the others are in-app views, so the
+   browser underlined exactly one item and the bar looked broken on the
+   homepage and nowhere else. */
+.vbtn{text-decoration:none}
+.vbtn:hover{color:var(--ink); text-decoration:none}
 .vbtn[aria-current=true]{color:#0A0C08; background:var(--signal); border-color:var(--signal)}
 .vbtn.medical[aria-current=true]{background:var(--alert); border-color:var(--alert); color:#fff}
 .vbtn[aria-current=true] .n{color:inherit; opacity:.7}
