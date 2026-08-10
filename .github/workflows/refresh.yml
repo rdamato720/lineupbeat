@@ -58,6 +58,10 @@ jobs:
       - name: Run pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Every X source failed silently without this. The run
+          # completed, reported zero items, and looked like a quiet
+          # day rather than a missing credential.
+          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
         run: |
           # Rosters first, once a day.
           #
@@ -106,6 +110,10 @@ jobs:
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Every X source failed silently without this. The run
+          # completed, reported zero items, and looked like a quiet
+          # day rather than a missing credential.
+          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
         run: python -m beatwire.cli preflight --sport nfl
 
       - name: Deploy
