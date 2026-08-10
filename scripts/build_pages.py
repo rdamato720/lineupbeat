@@ -587,6 +587,16 @@ def data_hub_page(base):
             "meta": "Updated through the preseason",
         },
         {
+            "href": f"/{SPORT}/coaching/",
+            "kicker": "All 32 offences",
+            "title": "Offensive coaching",
+            "blurb": "Who actually calls each offence, which seventeen teams "
+                     "changed callers, and which positions that favours. A "
+                     "tiebreaker between players at comparable ADP, not a "
+                     "reason to reach.",
+            "meta": "Verified August 9",
+        },
+        {
             "href": f"/{SPORT}/strength-of-schedule/",
             "kicker": "Every team, week by week",
             "title": "Strength of schedule",
