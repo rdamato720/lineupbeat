@@ -192,6 +192,229 @@ def read_sheet(path: Path):
     return out
 
 
+# ---------------------------------------------------------------- analysis
+#
+# Prose generated from the board rather than written once and left to rot.
+#
+# A projections page is a table with a caption, and a table is close to
+# invisible to a search engine: it holds the numbers and none of the
+# questions somebody typed to find them. What ranks is the paragraph
+# explaining where the cliff falls and how deep the position is -- and that
+# paragraph has to change when the numbers do, or it becomes a lie by the
+# second update.
+
+def tiers(rows, fmt="ppr"):
+    """Where the position naturally breaks.
+
+    The largest point gaps inside the top forty. Not a fixed cutoff: a
+    year where the top two backs are miles clear looks different from one
+    where twelve are level, and a page that says "tier one is the top five"
+    every season is describing a convention rather than the board.
+    """
+    pts = sorted((r[fmt] for r in rows if r.get(fmt) is not None), reverse=True)
+    if len(pts) < 12:
+        return []
+    top = pts[:min(40, len(pts))]
+    gaps = [(top[i] - top[i + 1], i + 1) for i in range(len(top) - 1)]
+    gaps.sort(reverse=True)
+    # A break only counts if it is well clear of the ordinary step between
+    # neighbours; otherwise every position "breaks" everywhere.
+    typical = sorted(g for g, _ in gaps)[len(gaps) // 2]
+    out = [(rank, round(gap, 1)) for gap, rank in gaps[:4]
+           if gap > max(typical * 2.5, 4)]
+    return sorted(out)
+
+
+def depth_note(pos, rows, fmt="ppr"):
+    """How far the useful players run, in the language of a starting spot."""
+    starters = {"QB": 12, "RB": 24, "WR": 36, "TE": 12}[pos]
+    pts = sorted((r[fmt] for r in rows if r.get(fmt) is not None), reverse=True)
+    if len(pts) <= starters:
+        return None
+    last = pts[starters - 1]
+    # How many are within a tenth of the last starter: the size of the
+    # group a manager is really choosing between late.
+    close = sum(1 for p in pts[starters:] if p >= last * 0.9)
+    return starters, round(last, 1), close
+
+
+def position_prose(pos, rows, season, fmt="ppr"):
+    """Two or three sentences about the shape of the position."""
+    name = {"QB": "quarterback", "RB": "running back",
+            "WR": "wide receiver", "TE": "tight end"}[pos]
+    plural = {"QB": "quarterbacks", "RB": "running backs",
+              "WR": "wide receivers", "TE": "tight ends"}[pos]
+    ranked = sorted([r for r in rows if r.get(fmt) is not None],
+                    key=lambda x: -x[fmt])
+    if not ranked:
+        return ""
+
+    out = []
+    top = ranked[0]
+    out.append(
+        f"{top['name']} leads our {season} {name} projections at "
+        f"{top[fmt]:.1f} PPR points.")
+
+    br = tiers(rows, fmt)
+    if br:
+        rank, gap = br[0]
+        after = ranked[rank]["name"] if rank < len(ranked) else ""
+        if rank <= 3:
+            out.append(
+                f"The board separates early: {gap:.0f} points divide "
+                f"{pos}{rank} from {pos}{rank + 1}, so the first "
+                f"{'two' if rank == 2 else 'few'} {plural} sit in a tier of "
+                f"their own before {after} begins the next group.")
+        else:
+            out.append(
+                f"The clearest break comes after {pos}{rank}, where "
+                f"{gap:.0f} points separate that group from {after} and the "
+                f"tier below.")
+        if len(br) > 1:
+            later = ", ".join(f"{pos}{r}" for r, _g in br[1:3])
+            out.append(f"Smaller steps follow after {later}.")
+
+    d = depth_note(pos, rows, fmt)
+    if d:
+        starters, last, close = d
+        if close >= 8:
+            out.append(
+                f"Depth is the story below that: {pos}{starters} projects "
+                f"{last:.1f}, and {close} more {plural} land within ten "
+                f"percent of him, so the difference between a late starter "
+                f"and a waiver add is small.")
+        else:
+            out.append(
+                f"It thins quickly after {pos}{starters} at {last:.1f} "
+                f"points, with only {close} {plural} projected within ten "
+                f"percent of that line.")
+    return " ".join(out)
+
+
+POS_FULL = {"QB": "quarterback", "RB": "running back",
+            "WR": "wide receiver", "TE": "tight end"}
+POS_PLURAL = {"QB": "Quarterback", "RB": "Running Back",
+              "WR": "Wide Receiver", "TE": "Tight End"}
+
+POS_FAQ = {
+    "QB": [
+        ("How many quarterbacks should I draft?",
+         "Most single-quarterback leagues need one, and many managers take "
+         "a second late as insurance or a matchup play. Because the "
+         "position is deep, waiting is a defensible strategy: the gap "
+         "between QB6 and QB12 is usually far smaller than the gap between "
+         "RB6 and RB12."),
+        ("Do quarterback projections change between PPR and standard?",
+         "Barely. Quarterbacks rarely catch passes, so their totals are "
+         "close to identical in all three formats. The scoring toggle "
+         "matters far more at running back, receiver and tight end."),
+        ("What makes a quarterback projection move most?",
+         "Rushing volume. Passing yards and touchdowns are relatively "
+         "predictable across a season; a quarterback who runs adds points "
+         "no pocket passer can match, which is why the top of the position "
+         "is dominated by mobile starters."),
+    ],
+    "RB": [
+        ("How many running backs should I draft?",
+         "Most lineups start two plus a flex, so four to six is typical. "
+         "The position carries the highest injury rate, and a backup who "
+         "inherits a starting role is the most valuable thing on a waiver "
+         "wire, which is why managers draft depth here they would not at "
+         "other positions."),
+        ("Why do running back rankings change so much between PPR and "
+         "standard?",
+         "Because receiving work is worth a point a catch in PPR and "
+         "nothing in standard. A back with 70 receptions gains 70 points "
+         "in PPR, which can move him ten or more spots. Switch the scoring "
+         "toggle and the board reorders to match."),
+        ("What is a workhorse back?",
+         "One who handles both early-down carries and passing-down work "
+         "rather than splitting a backfield. Those players carry the "
+         "highest projections because volume is the single most reliable "
+         "input to a running back's season."),
+    ],
+    "WR": [
+        ("How many wide receivers should I draft?",
+         "Most lineups start two or three plus a flex, so five to seven is "
+         "common. Receiver is the deepest position, which means the cost "
+         "of waiting is lower than at running back and the late rounds "
+         "still return usable starters."),
+        ("Do wide receiver projections favour PPR?",
+         "Strongly. A receiver with 100 catches gains 100 points in PPR "
+         "and none in standard, so possession receivers rise sharply in "
+         "full point formats while big-play receivers hold their value "
+         "better in standard."),
+        ("What drives a wide receiver projection most?",
+         "Targets. Catch rate and yards per reception vary year to year, "
+         "but a receiver who commands a large share of his team's throws "
+         "has a floor that efficiency alone cannot provide."),
+    ],
+    "TE": [
+        ("Should I draft a tight end early?",
+         "It depends entirely on the shape of the position in a given "
+         "year. When the top one or two are clear of the field by a wide "
+         "margin, the advantage is real; when the tier is flat, waiting "
+         "costs almost nothing. The gaps on this page show which of those "
+         "years it is."),
+        ("How many tight ends should I draft?",
+         "One in most formats, two if you take a late flyer rather than an "
+         "early starter. The position is shallow, so the difference "
+         "between TE12 and TE20 is often small enough that streaming "
+         "works."),
+        ("Why are tight end projections lower than other positions?",
+         "Tight ends block as well as run routes, so they see fewer "
+         "targets than receivers on the same offence. A top tight end is "
+         "valuable relative to his position, not relative to a top "
+         "receiver."),
+    ],
+}
+
+
+def position_page(pos, board, links, css, header, footer, season, stats_json):
+    """A page per position, because that is what people search.
+
+    "Fantasy football projections" is a term owned by four national sites.
+    "Fantasy football RB projections 2026" is a question with real volume
+    and far less competition, and it is a page this board can answer better
+    than they can because the stat line is on it.
+    """
+    rows = sorted(board.get(pos, []), key=lambda r: r["rank"])
+    if not rows:
+        return None
+
+    full = POS_FULL[pos]
+    label = POS_PLURAL[pos]
+    prose = position_prose(pos, rows, season)
+    cols = stats_json.get(pos, [])
+
+    body_rows = []
+    for r in rows:
+        pid = links.get(key(r["name"]))
+        nm = (f'<a href="/{SPORT}/{pid}/">{esc(r["name"])}</a>' if pid
+              else esc(r["name"]))
+        cells = "".join(
+            f'<td class="stat">'
+            + ("" if r.get(k) is None else
+               (f"{round(r[k]):,}" if k in ("payd", "recyd", "ruyd", "patt",
+                                            "ruatt", "targets")
+                else f"{r[k]:.1f}"))
+            + "</td>" for k, _lab in cols)
+        alt = "".join(
+            f'<td class="alt dim">'
+            + ("" if r.get(k) is None else f"{r[k]:.1f}") + "</td>"
+            for k in ("half", "std"))
+        main = "" if r.get("ppr") is None else f'{r["ppr"]:.1f}'
+        body_rows.append(
+            f'<tr><td class="l rk">{r["rank"]}</td>'
+            f'<td class="l nm">{nm}</td>'
+            f'<td class="l tm">{esc(r["team"])}</td>'
+            + cells + f'<td class="pt">{main}</td>' + alt + "</tr>")
+
+    heads = "".join(f'<th class="stat">{esc(lab)}</th>' for _k, lab in cols)
+    return rows, prose, "\n".join(body_rows), heads
+
+
+
 def check(board):
     """Say what is odd about the file before publishing it.
 
@@ -278,6 +501,28 @@ PAGE_CSS = """
 .pbctl{display:flex; gap:1rem; flex-wrap:wrap; align-items:center;
        margin:1.1rem 0 .5rem}
 .pbtabs{display:flex; gap:.3rem; flex-wrap:wrap}
+/* Links, not four paragraphs.
+   The analysis of how deep each position is lives on that position's own
+   page, where it is the reason the page ranks. Repeating all four here put
+   a wall of prose between the headline and the board, and said the same
+   thing twice. */
+.boardnotes{display:flex; gap:.4rem; flex-wrap:wrap; align-items:center;
+  margin:1.1rem 0 .2rem}
+.boardnotes .posnav b{font-family:var(--data); color:var(--ink);
+  font-weight:600; margin-left:.25rem}
+.boardnotes .posnav:hover b{color:var(--signal)}
+.pbsublab{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.66rem; color:var(--quiet);
+  margin-right:.3rem}
+.posnav{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.04em; font-size:.74rem; color:var(--quiet);
+  border:1px solid var(--rule); border-radius:999px; padding:.3rem .7rem;
+  text-decoration:none}
+.posnav:hover{color:var(--signal); border-color:var(--signal)}
+@media (max-width:760px){
+  .boardnotes .posnav{min-height:44px; display:inline-flex;
+    align-items:center}
+}
 .pbtab{font-family:var(--agate); text-transform:uppercase;
        background:transparent; border:1px solid var(--rule); color:var(--quiet);
        font:inherit; font-size:.8rem; padding:.34rem .8rem; border-radius:999px;
@@ -426,6 +671,13 @@ def build_html(board, links, css, header, footer, season, source_name, notes):
         Ranked within position.
         <span class="pbdate">Updated {built:%-m/%-d}</span></p>
     </div>
+  </div>
+
+  <div class="boardnotes">
+    <span class="pbsublab">By position</span>
+    {"".join(f'<a class="posnav" href="/{SPORT}/projections/{p.lower()}/">'
+             f'{POS_PLURAL[p]}s <b>{len(board[p])}</b></a>'
+             for p in POSITIONS if board.get(p))}
   </div>
 
   <div class="pbctl">
@@ -682,6 +934,166 @@ def link_from_hub():
     return False
 
 
+
+def write_position_pages(board, links, css, header, footer, season,
+                         stats_json, built):
+    """One page per position, each targeting its own query."""
+    written = []
+    for pos in POSITIONS:
+        got = position_page(pos, board, links, css, header, footer, season,
+                            stats_json)
+        if not got:
+            continue
+        rows, prose, body_rows, heads = got
+        full = POS_FULL[pos]
+        label = POS_PLURAL[pos]
+        n = len(rows)
+        others = [x for x in POSITIONS if x != pos and board.get(x)]
+
+        faq = POS_FAQ[pos] + [
+            (f"How many {full}s are projected here?",
+             f"All {n} {full}s with a meaningful projected role for "
+             f"{season}, ranked by PPR points with the stat line behind "
+             f"each total."),
+            ("How often is this updated?",
+             f"Whenever the underlying projections are revised, which is "
+             f"typically every few days through the preseason and after "
+             f"significant news. This page was last updated "
+             f"{built:%B %-d, %Y}."),
+        ]
+
+        title = (f"{season} Fantasy Football {label} Projections | "
+                 f"LineupBeat")
+        desc = (f"{season} fantasy football {full} projections for {n} "
+                f"players. PPR, half PPR and standard points with the "
+                f"projected stat line behind every number, ranked by "
+                f"position.")
+
+        schema = {"@type": "Dataset",
+                  "name": f"{season} fantasy football {full} projections",
+                  "description": desc,
+                  "url": f"{seo.SITE_URL}/{SPORT}/projections/{pos.lower()}/",
+                  "dateModified": built.strftime("%Y-%m-%d"),
+                  "creator": {"@type": "Organization", "name": "LineupBeat"}}
+        crumbs = seo.breadcrumbs([
+            ("LineupBeat", "/"), ("Fantasy data", f"/{SPORT}/data/"),
+            ("Projections", f"/{SPORT}/projections/"),
+            (label, f"/{SPORT}/projections/{pos.lower()}/")])
+        itemlist = seo.itemlist_schema(
+            f"{season} {full} projections, top 50 by PPR points",
+            f"{seo.SITE_URL}/{SPORT}/projections/{pos.lower()}/",
+            [(r["rank"], r["name"],
+              f"/{SPORT}/{links[key(r['name'])]}/"
+              if links.get(key(r["name"])) else None)
+             for r in rows[:50]])
+
+        siblings = "".join(
+            f'<a class="posnav" href="/{SPORT}/projections/{o.lower()}/">'
+            f'{POS_PLURAL[o]}s</a>' for o in others)
+
+        body = f"""<main class="pbwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">LineupBeat</a><span>/</span>
+    <a href="/{SPORT}/data/">Fantasy data</a><span>/</span>
+    <a href="/{SPORT}/projections/">Projections</a><span>/</span>
+    <b>{esc(label)}</b></nav>
+
+  <div class="pbhead">
+    <div>
+      <h1>{season} Fantasy Football {esc(label)} Projections</h1>
+      <p class="pbsub">Full-season projections for {n} {esc(full)}s, in
+        PPR, half PPR and standard scoring, with the stat line behind every
+        total.
+        <span class="pbdate">Updated {built:%-m/%-d}</span></p>
+    </div>
+  </div>
+
+  <p class="posprose">{esc(prose)}</p>
+
+  <div class="posnavrow">
+    <span class="pbsublab">Other positions</span>{siblings}
+    <a class="posnav" href="/{SPORT}/projections/">All positions</a>
+  </div>
+
+  <table class="pbtbl">
+    <thead><tr>
+      <th class="l rk">#</th>
+      <th class="l">Player</th>
+      <th class="l tm">Team</th>
+      {heads}
+      <th class="pt">PPR</th>
+      <th class="alt">Half</th>
+      <th class="alt">Standard</th>
+    </tr></thead>
+    <tbody>
+{body_rows}
+    </tbody>
+  </table>
+
+  <p class="pbnote">
+    Full-season totals, not per game. Ranks are within position. A
+    {esc(full)}'s rank differs between scoring formats, which is why all
+    three are shown.
+  </p>
+{seo.faq_html(faq)}{seo.related_html('projections')}
+</main>"""
+
+        page = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{esc(title)}</title>
+<meta name="description" content="{esc(desc)}">
+<link rel="canonical"
+      href="{seo.SITE_URL}/{SPORT}/projections/{pos.lower()}/">
+<meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(desc)}">
+<meta property="og:url"
+      content="{seo.SITE_URL}/{SPORT}/projections/{pos.lower()}/">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{seo.graph(
+    schema, crumbs, seo.faq_schema(faq), seo.ORGANISATION, itemlist)}</script>
+<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{POS_CSS}</style>
+</head>
+<body>
+{header}
+{body}
+{footer}
+{seo.ANALYTICS}
+</body>
+</html>"""
+
+        out = SITE / SPORT / "projections" / pos.lower() / "index.html"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(page)
+        written.append((pos, n, len(page)))
+        add_to_sitemap(
+            f"{seo.SITE_URL}/{SPORT}/projections/{pos.lower()}/")
+    return written
+
+
+POS_CSS = """
+/* The paragraph that does the ranking work. A table has the numbers and
+   none of the questions somebody typed to find them. */
+.posprose{font-size:.95rem; line-height:1.65; color:var(--ink);
+  max-width:74ch; margin:1.2rem 0 0}
+.posnavrow{display:flex; gap:.4rem; flex-wrap:wrap; align-items:center;
+  margin:1.3rem 0 .3rem}
+.pbsublab{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.66rem; color:var(--quiet);
+  margin-right:.3rem}
+.posnav{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.04em; font-size:.74rem; color:var(--quiet);
+  border:1px solid var(--rule); border-radius:999px; padding:.3rem .7rem;
+  text-decoration:none}
+.posnav:hover{color:var(--signal); border-color:var(--signal)}
+@media (max-width:760px){
+  .posnav{min-height:44px; display:inline-flex; align-items:center}
+}
+"""
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("workbook")
@@ -729,6 +1141,40 @@ def main():
 
     if add_to_sitemap(f"https://lineupbeat.com/{SPORT}/projections/"):
         print(f"  added to sitemap.xml")
+
+    # A page per position.
+    #
+    # "Fantasy football projections" belongs to four national sites.
+    # "Fantasy football RB projections 2026" is a real query with far less
+    # competition, and it is one this board answers better than they do
+    # because the stat line is on the page.
+    STATS = {
+        "QB": [("patt", "ATT"), ("cmp", "CMP"), ("payd", "PASS YDS"),
+               ("patd", "PASS TD"), ("int", "INT"),
+               ("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD")],
+        "RB": [("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD"),
+               ("targets", "TGT"), ("rec", "REC"), ("recyd", "REC YDS"),
+               ("rectd", "REC TD")],
+        "WR": [("targets", "TGT"), ("rec", "REC"), ("recyd", "REC YDS"),
+               ("rectd", "REC TD"), ("ruatt", "CAR"), ("ruyd", "RUSH YDS"),
+               ("rutd", "RUSH TD")],
+        "TE": [("targets", "TGT"), ("rec", "REC"), ("recyd", "REC YDS"),
+               ("rectd", "REC TD")],
+    }
+    stats_json = {
+        pos: [(k, lab) for k, lab in STATS.get(pos, [])
+              if any(r.get(k) is not None for r in rows)]
+        for pos, rows in board.items()}
+
+    from datetime import datetime as _d
+    built = eastern_now()
+    made = write_position_pages(board, links, css, header, footer,
+                                args.season, stats_json, built)
+    if made:
+        print(f"\n  position pages:")
+        for pos, n, size in made:
+            print(f"    /{SPORT}/projections/{pos.lower()}/  "
+                  f"{n} players, {size:,} bytes")
     if link_from_hub():
         print(f"  linked from the Fantasy Data hub")
 

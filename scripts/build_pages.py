@@ -290,6 +290,9 @@ PAGE_CSS = """
   letter-spacing:.05em; font-size:.58rem; color:var(--quiet)}
 .pjs b{font-family:var(--data); font-size:.86rem; color:var(--signal);
   font-weight:600}
+.pjmore{margin:.8rem 0 0; font-size:.76rem; color:var(--quiet)}
+.pjmore a{color:var(--quiet); text-decoration:underline}
+.pjmore a:hover{color:__ACCENT__}
 .pjnote{margin:.8rem 0 0; font-size:.76rem; color:var(--quiet)}
 .pjnote a{color:var(--quiet); text-decoration:underline}
 .pjnote a:hover{color:__ACCENT__}
@@ -356,6 +359,9 @@ PAGE_CSS = """
   letter-spacing:.05em; font-size:.58rem; color:var(--quiet)}
 .pjs b{font-family:var(--data); font-size:.86rem; color:var(--signal);
   font-weight:600}
+.pjmore{margin:.8rem 0 0; font-size:.76rem; color:var(--quiet)}
+.pjmore a{color:var(--quiet); text-decoration:underline}
+.pjmore a:hover{color:__ACCENT__}
 .pjnote{margin:.8rem 0 0; font-size:.76rem; color:var(--quiet)}
 .pjnote a{color:var(--quiet); text-decoration:underline}
 .pjnote a:hover{color:__ACCENT__}
@@ -543,6 +549,17 @@ def projection_block(name, pos):
         f'    </div>\n'
         f'    <div class="pjfmts">{fmts}</div>\n'
         + (f'    <div class="pjline">{"".join(cells)}</div>\n' if cells else "")
+        # A link into the board, from every page that has a projection.
+        #
+        # Seven hundred pages pointing at one is the strongest internal
+        # signal the site has, and it was going unused. The positional page
+        # rather than the index, because that is the one competing for a
+        # winnable query.
+        + (f'    <p class="pjmore">'
+           f'<a href="/{SPORT}/projections/{pos.lower()}/">'
+           f'All {esc(pos)} projections</a> &middot; '
+           f'<a href="/{SPORT}/draft-value/">draft value against ADP</a>'
+           f'</p>\n' if pos else "")
         + f'  </section>\n')
 
 
