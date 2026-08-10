@@ -91,6 +91,13 @@ jobs:
           python scripts/schedule_strength.py --season 2026 --quiet || true
           python scripts/build_sos.py || true
 
+          # Projections, from the committed workbook. site/nfl is gitignored
+          # and rebuilt here, so a page built locally never reaches Netlify:
+          # if this step does not run, the projections page does not exist in
+          # production however many times it is built on a laptop.
+          python scripts/build_projections.py \
+                 data/projections.xlsx || true
+
           python scripts/build_pages.py --base https://lineupbeat.com
 
       # Publishes even if preflight warns, but records the verdict in the log
