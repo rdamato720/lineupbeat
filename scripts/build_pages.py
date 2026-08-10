@@ -1015,6 +1015,7 @@ def durability_page(conn, base):
         'first</dd></div>\n'
         '  </dl>\n'
         '  <h2 class="dsub" id="board">Every drafted player, in ADP order</h2>\n'
+        '  <div class="dtabwrap">\n'
         '  <table class="dtab">\n'
         '    <thead><tr><th class="adp">ADP</th><th>Player</th><th>Pos</th>'
         '<th class="ar">Missed/yr</th><th>Availability</th><th class="ar">On IR</th>'
@@ -1022,6 +1023,7 @@ def durability_page(conn, base):
         '</tr></thead>\n'
         f'    <tbody>{"".join(rows)}</tbody>\n'
         '  </table>\n'
+        '  </div>\n'
 
         '')
 
@@ -1040,6 +1042,8 @@ def durability_page(conn, base):
   line-height:1;color:var(--signal);font-weight:600}
 .dstat span{font-family:var(--agate);font-size:.6rem;letter-spacing:.09em;
   text-transform:uppercase;color:var(--quiet)}
+.dtab{min-width:38rem}
+}
 .dtab{width:100%;border-collapse:collapse}
 .dtab th{font-family:var(--agate);text-transform:uppercase;font-size:.58rem;
   letter-spacing:.1em;color:var(--quiet);text-align:left;font-weight:600;
@@ -1116,6 +1120,21 @@ def durability_page(conn, base):
 .dmgrid p{margin:0;color:var(--quiet);font-size:.8rem;line-height:1.55}
 @media(max-width:900px){.dmgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:540px){.dmgrid{grid-template-columns:1fr}}
+/* Nine columns of real data will not fit a phone at any font size, so the
+   table scrolls sideways inside its own box rather than off the page. The
+   shadow on the right edge is the only thing telling a reader there is
+   more; without it people simply do not know to swipe. */
+@media (max-width:760px){
+  .dtabwrap{overflow-x:auto; -webkit-overflow-scrolling:touch;
+    background:linear-gradient(90deg, var(--paper) 30%, transparent),
+      linear-gradient(90deg, transparent, var(--paper) 70%) 100% 0,
+      radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.5), transparent),
+      radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.5), transparent)
+      100% 0;
+    background-repeat:no-repeat; background-size:36px 100%,36px 100%,
+      14px 100%,14px 100%; background-attachment:local,local,scroll,scroll}
+  .dtab{min-width:38rem}
+}
 .dtab{width:100%;border-collapse:collapse}
 .dtab th{font-family:var(--agate);text-transform:uppercase;font-size:.58rem;
   letter-spacing:.1em;color:var(--quiet);text-align:left;font-weight:600;

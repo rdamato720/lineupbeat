@@ -148,7 +148,27 @@ PAGE_CSS = """
   letter-spacing:.02em}
 .ssfoot{color:var(--quiet); font-size:.78rem; margin:1.6rem 0 0;
   max-width:74ch; line-height:1.55}
-@media (max-width:720px){ .ssopp{display:none} }
+/* On a phone the fixed column widths add up to 464px in a 390px viewport,
+   so the last column ran off the edge with no way to reach it. Seven
+   columns of short numbers do fit; they just cannot each be four rem wide.
+   The table is also scrollable as a fallback, because a 320px phone still
+   exists. */
+
+/* Touch targets on a phone.
+   These pills are ~30px tall, which is fine for a cursor and small for a
+   thumb -- the platform guidance is 44. Padding rather than height, so the
+   text stays where it is and only the box a finger can hit grows. */
+@media (max-width:760px){
+  .sstab{min-height:44px; display:inline-flex; align-items:center;
+    padding-top:.5rem; padding-bottom:.5rem}
+}
+@media (max-width:720px){
+  .ssopp{display:none}
+  .sstbl{table-layout:auto; font-size:.8rem}
+  .sstbl col{width:auto !important}
+  .sstbl th,.sstbl td{padding:.4rem .3rem}
+  .sswrap{padding-left:.6rem; padding-right:.6rem}
+}
 """
 
 
@@ -216,7 +236,7 @@ def build_html(data, css, header, footer):
     <div class="sscard">
       <span class="sck">QB RB WR TE</span>
       <p>PPR points those teams give up per game, to
-         <b>every player at that position combined</b>, not to one man.
+         <b>every player at that position combined</b>, not to one player.
          <b>High is easy.</b></p>
     </div>
     <div class="sscard">

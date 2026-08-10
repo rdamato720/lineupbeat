@@ -175,6 +175,15 @@ PAGE_CSS = """
 .cocount{font-family:var(--agate); text-transform:uppercase;
   letter-spacing:.06em; font-size:.68rem; color:var(--quiet);
   margin:0 0 .8rem}
+
+/* Touch targets on a phone.
+   These pills are ~30px tall, which is fine for a cursor and small for a
+   thumb -- the platform guidance is 44. Padding rather than height, so the
+   text stays where it is and only the box a finger can hit grows. */
+@media (max-width:760px){
+  .cotab{min-height:44px; display:inline-flex; align-items:center;
+    padding-top:.5rem; padding-bottom:.5rem}
+}
 .coempty{color:var(--quiet); padding:1.2rem 0; font-size:.86rem}
 .comethod{margin:2.6rem 0 0; border-top:1px solid var(--rule);
   padding-top:1.4rem}

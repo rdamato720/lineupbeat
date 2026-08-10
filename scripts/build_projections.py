@@ -271,6 +271,13 @@ PAGE_CSS = """
 .pbsearch input{background:var(--card); border:1px solid var(--rule);
        color:var(--ink); font:inherit; font-size:.82rem; padding:.36rem .7rem;
        border-radius:6px; min-width:190px}
+/* 16px on a phone, because anything smaller makes iOS zoom the page on
+   focus and the reader has to pinch back out to see the table he was
+   filtering. */
+@media (max-width:760px){
+  .pbsearch{width:100%}
+  .pbsearch input{width:100%; font-size:16px; min-height:44px}
+}
 .pbtbl{width:100%; border-collapse:collapse; font-size:.9rem;
        font-variant-numeric:tabular-nums}
 .pbtbl .pt,.pbtbl .alt,.pbtbl .rk,.pbtbl .stat{font-family:var(--data)}
@@ -297,6 +304,15 @@ PAGE_CSS = """
 .pbnote{color:var(--quiet); font-size:.78rem; margin:1.2rem 0 0;
        max-width:72ch; line-height:1.55}
 .pbempty{color:var(--quiet); padding:1.4rem .55rem; font-size:.86rem}
+
+/* Touch targets on a phone.
+   These pills are ~30px tall, which is fine for a cursor and small for a
+   thumb -- the platform guidance is 44. Padding rather than height, so the
+   text stays where it is and only the box a finger can hit grows. */
+@media (max-width:760px){
+  .pbtab{min-height:44px; display:inline-flex; align-items:center;
+    padding-top:.5rem; padding-bottom:.5rem}
+}
 @media (max-width:640px){
   .pbtbl .alt{display:none}
   .pbtbl .stat{display:none}
