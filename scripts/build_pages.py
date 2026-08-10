@@ -723,6 +723,16 @@ def data_hub_page(base):
             "meta": "Updated through the preseason",
         },
         {
+            "href": f"/{SPORT}/draft-value/",
+            "kicker": "Every drafted player",
+            "title": "ADP & draft value",
+            "blurb": "Where the market is drafting every player compared "
+                     "with our projections. See who we rank higher than "
+                     "their price, who is going too early, and where the "
+                     "biggest gaps are at each position.",
+            "meta": "Updated daily",
+        },
+        {
             "href": f"/{SPORT}/coaching/",
             "kicker": "All 32 offences",
             "title": "Offensive coaching",

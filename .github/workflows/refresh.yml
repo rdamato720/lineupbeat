@@ -103,6 +103,11 @@ jobs:
           # laptop -- site/nfl is gitignored and rebuilt here.
           python scripts/build_coaching.py || true
 
+          # Draft value. After the ADP import above, because it reads the
+          # same canonical number the durability board does -- one figure
+          # read twice rather than two that happen to agree today.
+          python scripts/build_draft_value.py || true
+
           python scripts/build_pages.py --base https://lineupbeat.com
 
       # Publishes even if preflight warns, but records the verdict in the log
