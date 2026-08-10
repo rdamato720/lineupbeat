@@ -128,7 +128,8 @@ APP_FOOTER = APP_FOOTER + (
     "<script type='module' "
     "src='https://static.cloudflareinsights.com/beacon.min.js' "
     "data-cf-beacon='{\"token\": \"351a7f1ca5a14571859dcf22cb395b89\"}'"
-    "></script><!-- End Cloudflare Web Analytics -->")
+    "></script><!-- End Cloudflare Web Analytics -->"
+    "\n<!-- Reddit Pixel -->\n<script>\n!function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?\np.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};\np.callQueue=[];var t=d.createElement(\"script\");t.src=\"https://www.redditstatic.com/ads/pixel.js\";\nt.async=!0;var s=d.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(t,s)}}(window,document);\nrdt('init','a2_jhraddsbuel0');\nrdt('track','PageVisit');\n</script>\n<!-- End Reddit Pixel -->")
 # The same bar with Fantasy Data marked, for the pages that live under it.
 # A player page is wire content and gets the plain one; the hub and the
 # boards get the marker, so the highlight means where you are rather than

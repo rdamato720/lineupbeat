@@ -46,6 +46,26 @@ ANALYTICS = (
     "data-cf-beacon='{\"token\": \"351a7f1ca5a14571859dcf22cb395b89\"}'"
     "></script>"
     "<!-- End Cloudflare Web Analytics -->")
+
+# Reddit conversion pixel.
+#
+# This only reports on traffic from paid Reddit campaigns; it does nothing
+# for organic visits. It is a third-party script that sets a cookie, unlike
+# the Cloudflare beacon above, so it is the one piece of tracking here that
+# would need a consent banner for EU and UK visitors.
+REDDIT_PIXEL = """<!-- Reddit Pixel -->
+<script>
+!function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?
+p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};
+p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js";
+t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);
+rdt('init','a2_jhraddsbuel0');
+rdt('track','PageVisit');
+</script>
+<!-- End Reddit Pixel -->"""
+
+# Both, for pages that want everything.
+TRACKING = ANALYTICS + "\n" + REDDIT_PIXEL
 SPORT = "nfl"
 
 

@@ -598,7 +598,7 @@ def main():
 {header}
 {body}
 {footer}
-{seo.ANALYTICS}
+{seo.TRACKING}
 </body>
 </html>"""
 
