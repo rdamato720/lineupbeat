@@ -33,6 +33,19 @@ import html
 import json
 
 SITE_URL = "https://lineupbeat.com"
+
+# Cloudflare Web Analytics.
+#
+# Defined once so the four page builders and the homepage cannot drift into
+# measuring different things. It sets no cookies and needs no consent
+# banner, which is the reason for choosing it over the obvious alternative.
+ANALYTICS = (
+    "<!-- Cloudflare Web Analytics -->"
+    "<script type='module' "
+    "src='https://static.cloudflareinsights.com/beacon.min.js' "
+    "data-cf-beacon='{\"token\": \"351a7f1ca5a14571859dcf22cb395b89\"}'"
+    "></script>"
+    "<!-- End Cloudflare Web Analytics -->")
 SPORT = "nfl"
 
 

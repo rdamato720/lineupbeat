@@ -726,6 +726,7 @@ def main():
 {header}
 {body}
 {footer}
+{seo.ANALYTICS}
 </body>
 </html>"""
 

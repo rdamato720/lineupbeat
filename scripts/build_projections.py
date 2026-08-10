@@ -618,6 +618,7 @@ draw();
 {header}
 {body}
 {footer}
+{seo.ANALYTICS}
 </body>
 </html>"""
 

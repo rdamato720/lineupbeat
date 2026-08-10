@@ -117,6 +117,18 @@ def site_chrome(section=None):
 
 
 APP_CSS, APP_HEADER, APP_FOOTER = site_chrome()
+
+# Analytics on every page this builder writes.
+#
+# Appended to the shared footer rather than to each template: there are
+# several page shells here, and patching one meant player pages, the hub
+# and durability silently went unmeasured.
+APP_FOOTER = APP_FOOTER + (
+    "\n<!-- Cloudflare Web Analytics -->"
+    "<script type='module' "
+    "src='https://static.cloudflareinsights.com/beacon.min.js' "
+    "data-cf-beacon='{\"token\": \"351a7f1ca5a14571859dcf22cb395b89\"}'"
+    "></script><!-- End Cloudflare Web Analytics -->")
 # The same bar with Fantasy Data marked, for the pages that live under it.
 # A player page is wire content and gets the plain one; the hub and the
 # boards get the marker, so the highlight means where you are rather than
