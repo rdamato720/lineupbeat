@@ -665,12 +665,10 @@ def main():
 
     season = data["season"]
     total = len(data["rows"])
-    title = (f"{season} NFL Strength of Schedule for Fantasy Football | "
-             f"LineupBeat")
-    desc = (f"Remaining strength of schedule for all {total} NFL teams, by "
-            f"opponent record and by fantasy points allowed to "
-            f"quarterbacks, backs, receivers and tight ends. Updates as "
-            f"games are played.")
+    title = f"{season} NFL Fantasy Strength of Schedule | LineupBeat"
+    desc = (f"Remaining fantasy strength of schedule for all {total} NFL "
+            f"teams, by position and scoring format. Updates as games are "
+            f"played.")
 
     schema = {
         "@context": "https://schema.org", "@type": "Dataset",

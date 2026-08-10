@@ -823,7 +823,7 @@ draw();
         ],
     }
 
-    title = f"{season} Fantasy Football Projections, PPR and Standard | LineupBeat"
+    title = f"{season} Fantasy Football Projections | LineupBeat"
     desc = (f"Full-season fantasy projections for {total} NFL players. "
             f"PPR, half PPR and standard scoring, ranked by position. "
             f"Updated {built:%B %-d, %Y}.")
@@ -964,10 +964,11 @@ def write_position_pages(board, links, css, header, footer, season,
 
         title = (f"{season} Fantasy Football {label} Projections | "
                  f"LineupBeat")
+        # Under 158 characters or Google truncates it, and the truncated
+        # half is the half nobody wrote.
         desc = (f"{season} fantasy football {full} projections for {n} "
                 f"players. PPR, half PPR and standard points with the "
-                f"projected stat line behind every number, ranked by "
-                f"position.")
+                f"projected stat line behind every total.")
 
         schema = {"@type": "Dataset",
                   "name": f"{season} fantasy football {full} projections",

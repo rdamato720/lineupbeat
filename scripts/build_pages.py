@@ -720,8 +720,14 @@ def team_page(team, players, count, base):
             f'  <div class="grid">\n{cards}\n  </div>')
     return _render(PAGE.format(
         title=esc(f"{full} beat reports and player news | LineupBeat"),
-        description=esc(f"Local beat reporting on the {full}, matched to "
-                        f"players and updated through the day."),
+        # Was 90 characters, which leaves half the snippet empty. Naming
+        # what a reader actually gets is both longer and more useful.
+        # Was 90 characters, which leaves half a search snippet empty.
+        # Naming what a reader gets is both longer and more useful, and it
+        # has to stay under 158 or the end is cut off anyway.
+        description=esc(f"Local beat reporting on the {full}. Injuries, "
+                        f"first-team reps and depth chart moves matched to "
+                        f"the players affected, newest first."),
         canonical=esc(url), og_type="website",
         og_image=f'<meta property="og:image" content="{esc(logo)}">',
         structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
@@ -1513,7 +1519,44 @@ def main():
         urls.append((f"{base}/{args.sport}/team/{slug(team)}/", now, "daily", "0.7"))
         teams_written += 1
 
+    # Every data page, listed here rather than appended by each builder.
+    #
+    # This script rewrites the sitemap from scratch and runs last, so
+    # anything the other builders inserted was silently wiped: eight pages
+    # including all four position boards were live and unlisted. One place
+    # owns the file, and it is the one that writes it.
+    for path, freq, prio in (
+            (f"/{args.sport}/data/", "weekly", "0.8"),
+            (f"/{args.sport}/projections/", "daily", "0.9"),
+            (f"/{args.sport}/projections/qb/", "daily", "0.8"),
+            (f"/{args.sport}/projections/rb/", "daily", "0.8"),
+            (f"/{args.sport}/projections/wr/", "daily", "0.8"),
+            (f"/{args.sport}/projections/te/", "daily", "0.8"),
+            (f"/{args.sport}/draft-value/", "daily", "0.9"),
+            (f"/{args.sport}/strength-of-schedule/", "weekly", "0.8"),
+            (f"/{args.sport}/coaching/", "monthly", "0.7"),
+            (f"/{args.sport}/durability/", "weekly", "0.8")):
+        if (SITE / path.lstrip("/") / "index.html").exists():
+            urls.append((f"{base}{path}", now, freq, prio))
+
     urls.insert(0, (f"{base}/", now, "hourly", "1.0"))
+
+
+
+    # One entry per URL.
+    #
+    # The hub and durability sections used to insert into the finished
+    # sitemap as well, after this list had been turned into XML, so both
+    # appeared twice. The list above is the only place URLs are declared; a
+    # duplicate is not an error a crawler reports, it is one it quietly
+    # discounts.
+    seen, deduped = set(), []
+    for u in urls:
+        if u[0] in seen:
+            continue
+        seen.add(u[0])
+        deduped.append(u)
+    urls = deduped
 
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -1545,11 +1588,6 @@ def main():
             hd = SITE / args.sport / "data"
             hd.mkdir(parents=True, exist_ok=True)
             (hd / "index.html").write_text(hub)
-            sitemap.insert(len(sitemap) - 1,
-                           f"  <url><loc>{base}/{args.sport}/data/</loc>"
-                           f"<lastmod>{now}</lastmod>"
-                           f"<changefreq>weekly</changefreq>"
-                           f"<priority>0.8</priority></url>")
             print(f"  data hub written")
         except Exception as exc:
             print(f"  data hub skipped: {str(exc)[:70]}")
@@ -1560,12 +1598,6 @@ def main():
                 d = SITE / args.sport / "durability"
                 d.mkdir(parents=True, exist_ok=True)
                 (d / "index.html").write_text(html)
-                sitemap.insert(
-                    len(sitemap) - 1,
-                    f"  <url><loc>{base}/{args.sport}/durability/</loc>"
-                    f"<lastmod>{now}</lastmod>"
-                    f"<changefreq>daily</changefreq>"
-                    f"<priority>0.9</priority></url>")
                 print(f"  durability page written")
         except Exception as exc:
             print(f"  durability page skipped: {str(exc)[:70]}")
