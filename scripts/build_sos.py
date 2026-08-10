@@ -27,6 +27,10 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import seo
+import seo_faqs
+
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 SPORT = "nfl"
@@ -289,6 +293,7 @@ def build_html(data, css, header, footer):
     easiest. Only games not yet played are counted, so the table shrinks as
     the season goes and empties once it ends. Built {built:%B %-d, %Y}.
   </p>
+{seo.faq_html(seo_faqs.SOS)}{seo.related_html('strength-of-schedule')}
 </main>
 
 <script>
@@ -467,6 +472,16 @@ def main():
         ],
     }
 
+    # One graph rather than loose blocks: these are facets of one page,
+    # and saying so lets a crawler connect the dataset to the site that
+    # publishes it and to the questions it answers.
+    ldjson = seo.graph(
+        {k: v for k, v in schema.items() if k != "@context"},
+        {k: v for k, v in crumbs.items() if k != "@context"},
+        seo.faq_schema(seo_faqs.SOS),
+        seo.ORGANISATION,
+        globals().get("_itemlist"))
+
     page = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -481,9 +496,8 @@ def main():
 <meta property="og:url"
       content="https://lineupbeat.com/{SPORT}/strength-of-schedule/">
 <meta property="og:type" content="website">
-<script type="application/ld+json">{json.dumps(schema)}</script>
-<script type="application/ld+json">{json.dumps(crumbs)}</script>
-<style>{css}{PAGE_CSS}</style>
+<script type="application/ld+json">{ldjson}</script>
+<style>{css}{PAGE_CSS}{seo.RELATED_CSS}</style>
 </head>
 <body>
 {header}

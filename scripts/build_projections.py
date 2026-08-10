@@ -45,6 +45,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 warnings.filterwarnings("ignore")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import seo
+import seo_faqs
+
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 SPORT = "nfl"
@@ -410,6 +414,7 @@ def build_html(board, links, css, header, footer, season, source_name, notes):
     you have selected, so a back who catches nothing rises in standard and
     falls in PPR. Last updated {built:%B %-d, %Y}.
   </p>
+{seo.faq_html(seo_faqs.PROJECTIONS)}{seo.related_html('projections')}
 </main>
 
 <script>
@@ -526,6 +531,29 @@ draw();
             f"PPR, half PPR and standard scoring, ranked by position. "
             f"Updated {built:%B %-d, %Y}.")
 
+    # The board as a declared ranking, not just a table of numbers. Capped
+    # at fifty because a 614-item list is noise, and the top of a ranking
+    # is the part anybody searches for.
+    _flat = sorted([r for rows in board.values() for r in rows if r.get("ppr")],
+                   key=lambda x: -x["ppr"])[:50]
+    itemlist = seo.itemlist_schema(
+        f"{season} fantasy football projections, top 50 by PPR points",
+        f"https://lineupbeat.com/{SPORT}/projections/",
+        [(i, r["name"],
+          f"/{SPORT}/{links[key(r['name'])]}/" if links.get(key(r["name"]))
+          else None)
+         for i, r in enumerate(_flat, 1)])
+
+    # One graph rather than loose blocks: these are facets of one page, and
+    # saying so lets a crawler connect the dataset to the site that
+    # publishes it and to the questions it answers.
+    ldjson = seo.graph(
+        {k: v for k, v in schema.items() if k != "@context"},
+        {k: v for k, v in crumbs.items() if k != "@context"},
+        seo.faq_schema(seo_faqs.PROJECTIONS),
+        seo.ORGANISATION,
+        itemlist)
+
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -538,9 +566,8 @@ draw();
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="https://lineupbeat.com/{SPORT}/projections/">
 <meta property="og:type" content="website">
-<script type="application/ld+json">{json.dumps(schema)}</script>
-<script type="application/ld+json">{json.dumps(crumbs)}</script>
-<style>{css}{PAGE_CSS}</style>
+<script type="application/ld+json">{ldjson}</script>
+<style>{css}{PAGE_CSS}{seo.RELATED_CSS}</style>
 </head>
 <body>
 {header}

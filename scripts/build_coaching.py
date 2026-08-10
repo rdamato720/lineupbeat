@@ -46,6 +46,10 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import seo
+import seo_faqs
+
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 SPORT = "nfl"
@@ -399,6 +403,7 @@ def build_html(rows, css, header, footer, verified):
       team changes its primary caller, this page is updated and the review
       date moves with it.</p>
   </section>
+{seo.faq_html(seo_faqs.COACHING)}{seo.related_html('coaching')}
 </main>
 
 <script>
@@ -550,6 +555,16 @@ def main():
             {"@type": "ListItem", "position": 3, "name": "Coaching",
              "item": f"https://lineupbeat.com/{SPORT}/coaching/"}]}
 
+    # One graph rather than loose blocks: these are facets of one page,
+    # and saying so lets a crawler connect the dataset to the site that
+    # publishes it and to the questions it answers.
+    ldjson = seo.graph(
+        {k: v for k, v in schema.items() if k != "@context"},
+        {k: v for k, v in crumbs.items() if k != "@context"},
+        seo.faq_schema(seo_faqs.COACHING),
+        seo.ORGANISATION,
+        globals().get("_itemlist"))
+
     page = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -562,9 +577,8 @@ def main():
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="https://lineupbeat.com/{SPORT}/coaching/">
 <meta property="og:type" content="website">
-<script type="application/ld+json">{json.dumps(schema)}</script>
-<script type="application/ld+json">{json.dumps(crumbs)}</script>
-<style>{css}{PAGE_CSS}</style>
+<script type="application/ld+json">{ldjson}</script>
+<style>{css}{PAGE_CSS}{seo.RELATED_CSS}</style>
 </head>
 <body>
 {header}
