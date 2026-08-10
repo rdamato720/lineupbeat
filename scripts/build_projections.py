@@ -60,6 +60,18 @@ def key(n):
     return " ".join(re.sub(r"\b(jr|sr|ii|iii|iv|v)\b", "", n).split())
 
 
+def slug(s: str) -> str:
+    """The same slug build_pages.py uses for player page directories.
+
+    The projections page was linking to /nfl/{player_id}/, which is the
+    roster id -- /nfl/nfl-4984/. The pages are at /nfl/aamaris-brown/. Every
+    one of those 610 links was a 404, and nothing checks a link that a build
+    script writes.
+    """
+    s = re.sub(r"[^\w\s-]", "", (s or "").lower())
+    return re.sub(r"[\s_]+", "-", s).strip("-")
+
+
 def read_sheet(path: Path):
     """Every position sheet, as rows. Six columns, named or positional."""
     import openpyxl
@@ -199,19 +211,21 @@ def check(board):
 def roster_links(conn):
     """player name -> wire page slug, where the wire knows the player."""
     links = {}
-    if not conn:
-        return links
-    try:
-        for r in conn.execute(
-                "SELECT DISTINCT player, player_id, team FROM run_projections"):
-            links[key(r["player"])] = r["player_id"]
-    except sqlite3.OperationalError:
-        pass
-    # The roster file is the wire's own list, and it carries slugs.
+    # Only names the wire actually built a page for. Checking the directory
+    # rather than the roster means a link is never written to a page that
+    # does not exist, however the slug is derived.
+    pages = SITE / SPORT
+    if pages.exists():
+        have = {d.name for d in pages.iterdir() if d.is_dir()}
+    else:
+        have = set()
     rp = ROOT / "rosters" / f"{SPORT}.csv"
     if rp.exists():
         for r in csv.DictReader(rp.open()):
-            links.setdefault(key(r.get("name", "")), r.get("id"))
+            name = r.get("name", "")
+            s = slug(name)
+            if s in have:
+                links[key(name)] = s
     return links
 
 
@@ -226,6 +240,13 @@ PAGE_CSS = """
 .pbhead h1{font-size:1.7rem; margin:0; letter-spacing:-.01em;
         font-family:var(--text)}
 .pbsub{color:var(--quiet); font-size:.84rem; margin:.35rem 0 0; max-width:64ch}
+/* Up here rather than only in the footnote. A projection page that does not
+   say when it was made is asking to be trusted on nothing, and the answer
+   should not be at the bottom of a 614-row table. */
+.pbdate{display:inline-block; margin-left:.5rem; font-family:var(--agate);
+  text-transform:uppercase; letter-spacing:.06em; font-size:.7rem;
+  color:var(--signal); border:1px solid var(--rule); border-radius:999px;
+  padding:.1rem .5rem; vertical-align:.05em}
 .pbctl{display:flex; gap:1rem; flex-wrap:wrap; align-items:center;
        margin:1.1rem 0 .5rem}
 .pbtabs{display:flex; gap:.3rem; flex-wrap:wrap}
@@ -329,7 +350,8 @@ def build_html(board, links, css, header, footer, season, source_name, notes):
       <h1>{season} Fantasy Football Projections</h1>
       <p class="pbsub">Full-season point projections for
         {total} players, in PPR, half PPR and standard scoring.
-        Ranked within position.</p>
+        Ranked within position.
+        <span class="pbdate">Updated {built:%-m/%-d}</span></p>
     </div>
   </div>
 
@@ -360,7 +382,7 @@ def build_html(board, links, css, header, footer, season, source_name, notes):
     Projections are full-season totals, not per-game. Points come straight
     from the source file. Ranks are within position for the scoring format
     you have selected, so a back who catches nothing rises in standard and
-    falls in PPR. Updated {built:%B %-d, %Y}.
+    falls in PPR. Last updated {built:%B %-d, %Y}.
   </p>
 </main>
 

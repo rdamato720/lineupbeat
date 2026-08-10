@@ -319,11 +319,56 @@ def page_description(name, who, nuggets):
     Google also tends to write its own when the tag is too thin.
     """
     n = len(nuggets)
+    if not n:
+        # A projected player with nothing filed yet. Describe what the page
+        # actually holds rather than promising reports it does not have.
+        pr = PROJECTIONS.get(slug(name))
+        if pr:
+            return (f"{who}. Projected for {pr['ppr']:.1f} PPR points this "
+                    f"season, {pr['pos']}{pr['rank']}. Beat reports appear "
+                    f"here as they are filed.")[:158]
+        return f"{who}. Beat reports appear here as they are filed."
     lead = (nuggets[0]["claim"] or "").rstrip(".")
     tail = (f"{n} beat reports on {name}, newest first, each linked to the "
             f"reporter who filed it.")
     body = f"{who}. {lead}. {tail}"
     return body[:158].rsplit(" ", 1)[0] if len(body) > 160 else body
+
+
+# Loaded once, from the built projections page, so a player page and the
+# board can never quote different numbers. Reading the spreadsheet again
+# would be a second source of truth.
+PROJECTIONS = {}
+
+
+def load_projections():
+    """Whatever the projections page was built from, by slug."""
+    f = SITE / SPORT / "projections" / "index.html"
+    if not f.exists():
+        return {}
+    m = re.search(r"const PB = (\{.*?\});", f.read_text(), re.S)
+    if not m:
+        return {}
+    try:
+        board = json.loads(m.group(1))
+    except ValueError:
+        return {}
+    out = {}
+    for pos, rows in board.items():
+        for r in rows:
+            if r.get("p") is None:
+                continue
+            # The board already resolved this player to a page, so use the
+            # slug it landed on rather than deriving one again. Re-slugging
+            # the display name gives "luther-burden-iii" for a page that
+            # lives at "luther-burden": the suffix is in the projection
+            # sheet and not in the roster, and two derivations of the same
+            # thing will always eventually disagree.
+            key = r.get("id") or slug(r["n"])
+            out[key] = {"ppr": r["p"], "half": r.get("h"),
+                        "std": r.get("s"), "rank": r.get("r"),
+                        "pos": pos}
+    return out
 
 
 def player_page(p, nuggets, base):
@@ -355,6 +400,18 @@ def player_page(p, nuggets, base):
     if str(meta.get("injury_status") or "").strip():
         chips.append(f'<span class="chip">Status '
                      f'<b>{esc(meta["injury_status"])}</b></span>')
+
+    # The projection, first, because it is the number somebody came for.
+    #
+    # Only where the board has one. A page for a long snapper should not
+    # carry an empty PPR chip explaining that nobody projected him.
+    pr = PROJECTIONS.get(slug(name))
+    if pr:
+        chips.insert(0, f'<span class="chip">PPR <b>{pr["ppr"]:.1f}</b>'
+                        f'</span>')
+        if pr.get("rank"):
+            chips.insert(1, f'<span class="chip">{esc(pos or "")}'
+                            f'<b>{pr["rank"]}</b></span>')
 
     arts = []
     for n in nuggets:
@@ -423,17 +480,14 @@ def player_page(p, nuggets, base):
                f'width="18" height="18">' if team else "")
             + f'{esc(who)}</p>\n    </div>\n  </div>\n'
             + (f'  <div class="chips">{"".join(chips)}</div>\n' if chips else "")
-            + f'  <h2>{len(nuggets)} beat report'
-              f'{"s" if len(nuggets) != 1 else ""}, newest first</h2>\n'
-            + "\n".join(arts)
-            # A link back to the board. 1,298 player pages each pointing at
-            # it is what tells a crawler the board matters, and a reader on
-            # a player page is exactly who wants to know what he has missed.
-            + (f'\n  <p style="margin-top:2rem"><a href="/{SPORT}/durability/">'
-               f'How many games {esc(name)} has actually played</a></p>')
-            + (f'\n  <p style="margin-top:.6rem"><a href="/{SPORT}/team/{slug(team)}/">'
-               f'More {esc(TEAM_NAMES.get(team, team))} reports</a></p>'
-               if team else ""))
+            + (f'  <h2>{len(nuggets)} beat report'
+               f'{"s" if len(nuggets) != 1 else ""}, newest first</h2>\n'
+               if nuggets else
+               '  <h2>No beat reports yet</h2>\n'
+               '  <p class="dlede">Nothing has been filed about this player '
+               'since the wire started watching. The projection above is '
+               'what the board has him down for.</p>\n')
+            + "\n".join(arts))
 
     return _render(PAGE.format(
         title=esc(f"{name} news, beat reports and updates | LineupBeat"),
@@ -508,12 +562,21 @@ document.addEventListener('DOMContentLoaded', function () {
 def data_hub_page(base):
     """The index for everything derived from the data rather than the wire.
 
-    One entry today. That is the honest shape of it: a hub with a single
-    card is better than a nav label that lies about what is behind it, and
-    it is the page that gets a second card without any rewiring when the
-    projections come out from behind their flag.
+    Two entries now. Projections had briefly become its own nav item, which
+    put two data pages at different levels of the site for no reason a
+    reader could see -- one behind Fantasy Data and one beside it.
     """
     cards = [
+        {
+            "href": f"/{SPORT}/projections/",
+            "kicker": "Every relevant player",
+            "title": "Yearly projections",
+            "blurb": "Full-season point projections in PPR, half PPR and "
+                     "standard scoring, with the stat line behind each "
+                     "number. Ranked within position, and the board "
+                     "reorders when you change the scoring.",
+            "meta": "Updated through the preseason",
+        },
         {
             "href": f"/{SPORT}/durability/",
             "kicker": "Every drafted player",
@@ -1152,9 +1215,33 @@ def main():
                      "meta": roster.get(pid, {})}
                for pid, v in by_player.items()}
 
+    global PROJECTIONS
+    PROJECTIONS = load_projections()
+    if PROJECTIONS:
+        print(f"  {len(PROJECTIONS)} projections available for player pages")
+
     base = args.base.rstrip("/")
     written, urls = 0, []
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    # A projected player gets a page even with no beat reports yet.
+    #
+    # The rule was "no reports, no page", which is right when the page would
+    # be a name and nothing else. A projection is not nothing: it is a stat
+    # line, a positional rank and three scoring formats, which is more than
+    # some pages carry with two reports on them. And a board that links to
+    # 614 players while 153 of them have nowhere to go is a board with
+    # broken promises in it.
+    for pid, r in roster.items():
+        if pid in by_player:
+            continue
+        s = slug(r.get("name", ""))
+        if s and s in PROJECTIONS:
+            by_player[pid] = []
+            players[pid] = {"id": pid, "name": r.get("name", ""),
+                            "team": (r.get("team") or "").upper(),
+                            "pos": (r.get("position") or "").upper(),
+                            "meta": r}
 
     for pid, ns in by_player.items():
         p = players.get(pid)
@@ -1165,8 +1252,12 @@ def main():
         if not args.dry_run:
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(player_page(p, ns, base))
+        # A page with no reports still changes when the board does, so it
+        # gets today's date and a lower priority rather than being left out.
         urls.append((f"{base}/{args.sport}/{slug(p['name'])}/",
-                     ns[0]["published_at"][:10], "daily", "0.8"))
+                     ns[0]["published_at"][:10] if ns else now,
+                     "daily" if ns else "weekly",
+                     "0.8" if ns else "0.5"))
         written += 1
 
     by_team = defaultdict(list)

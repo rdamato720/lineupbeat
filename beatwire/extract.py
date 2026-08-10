@@ -38,10 +38,18 @@ MEDIA_MAX_PLAYERS = 3
 # a practice report about four linemen costs a model call to discover nobody
 # a reader will see is in it. Measured at 49% of items that produced claims.
 #
-# Off by default because it IS a real narrowing -- a shutdown corner going
-# down changes a receiver's outlook, and somebody playing IDP wants the rest.
-# Set BEATWIRE_SKILL_ONLY=1 to turn it on.
-SKILL_ONLY = os.environ.get("BEATWIRE_SKILL_ONLY", "") == "1"
+# On by default. It IS a real narrowing -- a shutdown corner going down
+# changes a receiver's outlook, and somebody playing IDP wants the rest --
+# but this is a fantasy wire and reading defensive line reports means paying
+# to learn things it will never show.
+#
+# Set BEATWIRE_SKILL_ONLY=0 to read everything again.
+SKILL_ONLY = os.environ.get("BEATWIRE_SKILL_ONLY", "1") != "0"
+
+# The positions the wire publishes. A nugget about anybody else is dropped
+# after extraction, because an item mentioning a receiver will also mention
+# whoever lined up across from him.
+PUBLISHED_POSITIONS = {"QB", "RB", "FB", "WR", "TE"}
 
 SYSTEM = """You extract structured player notes from local beat reporting.
 
@@ -699,6 +707,30 @@ def extract(
                 media=(getattr(item, "media", []) or []) if _clip_fits else [],
             )
         )
+    if SKILL_ONLY:
+        # Filter the output, not just the input.
+        #
+        # The item gate asks "does this mention anybody we cover"; a post
+        # about a practice mentions a dozen people. Without this the model's
+        # answer about every one of them reached the wire.
+        #
+        # An unresolved nugget is kept: we do not know the position, and
+        # dropping it would silently lose a new signing whose name has not
+        # reached the roster yet.
+        kept = []
+        for n in nuggets:
+            if not n.player_id:
+                kept.append(n)
+                continue
+            pos = (resolver.position_of(n.player_id)
+                   if hasattr(resolver, "position_of") else None)
+            if pos is None:
+                p = next((x for x in resolver.players
+                          if x.id == n.player_id), None)
+                pos = getattr(p, "position", None)
+            if pos is None or str(pos).upper() in PUBLISHED_POSITIONS:
+                kept.append(n)
+        nuggets = kept
     return nuggets
 
 
