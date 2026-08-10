@@ -55,6 +55,17 @@ jobs:
           python scripts/test_resolve.py
           python -m beatwire.cli doctor --sport nfl
 
+      - name: Roster check
+        run: |
+          python3 -c "
+          import csv, collections
+          r = list(csv.DictReader(open('rosters/nfl.csv')))
+          pos = collections.Counter((x.get('position') or '').upper() for x in r)
+          print('  rows:', len(r))
+          print('  positions:', dict(pos.most_common(8)))
+          print('  blank position:', pos.get('', 0))
+          "
+
       - name: Run pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
