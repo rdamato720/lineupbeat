@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#08090B">
-<title>NFL Beat Reporting and Fantasy Football News | LineupBeat</title>
-<meta name="description" content="Local NFL beat reporting from all 32 markets, matched to the quarterbacks, backs, receivers and tight ends you start. Newest first, updated all day.">
+<title>Fantasy Football News, Projections &amp; Data | LineupBeat</title>
+<meta name="description" content="Local NFL beat reports, fantasy football projections, ADP values, injury history, coaching changes and strength of schedule for every team and player.">
 <link rel="canonical" href="https://lineupbeat.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LineupBeat">
-<meta property="og:title" content="NFL Beat Reporting and Fantasy Football News | LineupBeat">
-<meta property="og:description" content="Local NFL beat reporting from all 32 markets, matched to the quarterbacks, backs, receivers and tight ends you start. Newest first, updated all day.">
+<meta property="og:title" content="Fantasy Football News, Projections &amp; Data | LineupBeat">
+<meta property="og:description" content="Local NFL beat reports, fantasy football projections, ADP values, injury history, coaching changes and strength of schedule for every team and player.">
 <meta property="og:url" content="https://lineupbeat.com/">
 <meta property="og:image" content="https://lineupbeat.com/og.png">
 <meta property="og:image:width" content="1200">
@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://lineupbeat.com/og.png">
 <meta name="twitter:title" content="LineupBeat">
-<meta name="twitter:description" content="Local NFL beat reporting from all 32 markets, matched to the quarterbacks, backs, receivers and tight ends you start. Newest first, updated all day.">
+<meta name="twitter:description" content="Local NFL beat reports, fantasy football projections, ADP values, injury history, coaching changes and strength of schedule for every team and player.">
 <meta name="theme-color" content="#0A0C08">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,6 +102,35 @@ a{color:inherit}
 /* The second paragraph sits closer to the first than a default margin
    allows: two sentences, one idea. */
 .lede2{margin-top:.7rem}
+
+/* ---- fantasy data on the homepage ----
+   Five boards a visitor would otherwise only find behind a nav label. */
+.fdata{margin:2.2rem auto 0}
+.fdhead{display:flex; align-items:baseline; gap:.7rem; flex-wrap:wrap;
+  margin-bottom:.9rem}
+.fdhead h2{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.9rem; margin:0; color:var(--ink)}
+.fdhead .sub{margin:0; color:var(--quiet); font-size:.84rem}
+.fdgrid{display:grid; grid-template-columns:repeat(5, 1fr); gap:.7rem}
+@media (max-width:1000px){ .fdgrid{grid-template-columns:repeat(3, 1fr)} }
+@media (max-width:700px){ .fdgrid{grid-template-columns:repeat(2, 1fr)} }
+@media (max-width:480px){ .fdgrid{grid-template-columns:1fr} }
+.fdcard{display:block; background:var(--card); border:1px solid var(--rule);
+  border-radius:10px; padding:.85rem .9rem; text-decoration:none}
+.fdcard:hover{border-color:var(--signal)}
+.fdcard h3{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.05em; font-size:.74rem; color:var(--ink); margin:0}
+.fdcard:hover h3{color:var(--signal)}
+.fdcard p{margin:.35rem 0 0; font-size:.79rem; line-height:1.45;
+  color:var(--quiet)}
+.cta{display:flex; align-items:center; gap:.6rem; flex-wrap:wrap;
+  margin:1.1rem 0}
+/* The second CTA is a link, not a button, because it goes somewhere. A
+   ghost treatment says "also this" rather than competing with the primary
+   action. */
+.btn.ghost{background:transparent; color:var(--ink);
+  border:1px solid var(--rule); text-decoration:none}
+.btn.ghost:hover{border-color:var(--signal); color:var(--signal)}
 .lede{color:var(--quiet); font-size:1rem; line-height:1.55; max-width:46ch;
   margin:.2rem 0 1.1rem}
 .btn{min-height:44px; font-family:var(--agate); text-transform:uppercase; letter-spacing:.1em;
@@ -1137,14 +1166,16 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 <section class="hero" id="hero">
   <div class="wrap herogrid">
     <div class="heroleft">
-      <h1 class="thesis">Everything you need to make <em>smarter fantasy football decisions</em>.</h1>
-      <p class="lede">Follow the news that actually matters to your lineup.
-         We track trusted local reporters across all 32 NFL teams for
-         injuries, first-team reps, depth-chart changes and role
-         updates.</p>
+      <h1 class="thesis">Everything that influences your fantasy football lineup, <em>before you set it</em>.</h1>
+      <p class="lede">Local beat reporting from all 32 NFL markets, matched
+         to the players it affects.</p>
       <p class="lede lede2">You&rsquo;ll also get fantasy data informed by
          the latest player news and deep analysis of each player&rsquo;s
          role, performance and opportunity.</p>
+      <div class="cta">
+        <button class="btn" id="cta">Follow your players</button>
+        <a class="btn ghost" href="/nfl/data/">Explore fantasy data</a>
+      </div>
       <div class="facts agate" id="facts"></div>
 
     </div>
@@ -1182,13 +1213,45 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   </div>
 </header>
 
+<!-- Fantasy data, on the homepage rather than only behind navigation.
+     Five proprietary boards that a visitor would otherwise have to go
+     looking for, each linked directly. -->
+<section class="wrap fdata" id="fdata">
+  <div class="fdhead">
+    <h2>Fantasy data</h2>
+    <p class="sub">The numbers behind the decision.</p>
+  </div>
+  <div class="fdgrid">
+    <a class="fdcard" href="/nfl/projections/">
+      <h3>Yearly projections</h3>
+      <p>Full season PPR, half PPR and standard projections, with the stat
+         line behind every player.</p></a>
+    <a class="fdcard" href="/nfl/draft-value/">
+      <h3>ADP &amp; draft value</h3>
+      <p>Where LineupBeat's projections disagree with the current fantasy
+         draft market.</p></a>
+    <a class="fdcard" href="/nfl/durability/">
+      <h3>Durability &amp; availability</h3>
+      <p>Games played, injured reserve, inactive weeks and availability
+         history for every drafted player.</p></a>
+    <a class="fdcard" href="/nfl/strength-of-schedule/">
+      <h3>Strength of schedule</h3>
+      <p>Fantasy matchup difficulty by position, schedule window and
+         scoring format.</p></a>
+    <a class="fdcard" href="/nfl/coaching/">
+      <h3>Offensive coaching</h3>
+      <p>Who calls every offence and which positions gain or lose from 2026
+         coaching changes.</p></a>
+  </div>
+</section>
+
 <div class="wrap cols">
   <main id="feed"></main>
   <aside>
     <div class="panel">
       <h2 id="mn-title">Moving now</h2>
       <p class="sub" id="mn-sub">Most reported in the last 24 hours.</p>
-      <div id="trending"></div>
+      <div id="trending"><!--__MOVINGNOW__--></div>
     </div>
   </aside>
 </div>
@@ -1197,8 +1260,9 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   <div class="wrap">
     <div class="fbrand">
       <span class="flogo">Lineup<em>Beat</em></span>
-      <p class="ftag">Local beat reporting from every NFL market, matched to
-         players and shown newest first.</p>
+      <p class="ftag">The information that changes a fantasy decision:
+         local beat reporting from every NFL market, independent
+         projections, draft value, durability, schedule and coaching.</p>
     </div>
 
     <div class="fteams">
@@ -3018,6 +3082,15 @@ function toggle(id, key){
 
   document.getElementById("stamp").textContent = "Updated " + ago(DATA.generated_at);
   document.getElementById("home").onclick = openFeed;
+  // Scrolls to the search rather than navigating: the roster is built by
+  // following players, and the finder is where that starts.
+  const _cta = document.getElementById("cta");
+  if(_cta) _cta.onclick = () => {
+    const q = document.getElementById("q");
+    q.focus();
+    q.scrollIntoView({block: "center", behavior: "smooth"});
+  };
+
   document.getElementById("q").addEventListener("input", e => renderHits(e.target.value));
 
   toggle("t-today", "todayOnly");

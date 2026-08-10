@@ -110,6 +110,10 @@ PAGE_CSS = """
 /* The playoff window gets a border in the accent colour even unpressed.
    It is the one people came for, and three identical pills say the three
    windows matter equally. They do not. */
+/* Opponent record is NFL context, not the product. Positional difficulty
+   is what decides a lineup, so the record button reads as the secondary
+   thing it is. */
+.ssdim{opacity:.7; font-size:.72rem}
 .sspo{border-color:var(--signal) !important; color:var(--ink) !important}
 .sspo[aria-pressed="true"]{color:#0b0f0a !important}
 .sspohint{margin:.5rem 0 0; font-size:.8rem; color:var(--quiet);
@@ -164,6 +168,32 @@ PAGE_CSS = """
 .h1{color:#FF6B4A} .h2{color:#E09478}
 .ssopp{color:var(--quiet); font-family:var(--data); font-size:.72rem;
   letter-spacing:.02em}
+.ssbye,.ssgm{font-family:var(--data); font-size:.6rem; color:var(--quiet);
+  margin-left:.4rem; font-weight:400; letter-spacing:0;
+  text-transform:none}
+.ssbye{color:var(--alert); opacity:.75}
+.sstbl tbody tr.tr{cursor:pointer}
+/* ---- expanded schedule ---- */
+.ssx td{background:var(--card); border-bottom:1px solid var(--rule)}
+.ssxin{padding:.6rem .3rem .9rem; text-align:left}
+.ssxh{font-family:var(--agate); text-transform:uppercase; letter-spacing:.06em;
+  font-size:.66rem; color:var(--quiet); margin:0 0 .6rem}
+.ssxgrid{display:flex; gap:.5rem; flex-wrap:wrap}
+.ssw{background:var(--paper); border:1px solid var(--rule); border-radius:6px;
+  padding:.35rem .55rem; min-width:5.6rem}
+.ssw.bye{opacity:.55}
+.sswk{display:block; font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.05em; font-size:.56rem; color:var(--quiet)}
+.ssw b{font-family:var(--data); font-size:.82rem; color:var(--ink)}
+.sswd{display:block; font-size:.62rem; color:var(--quiet); margin-top:.1rem}
+.ssmeth{margin:2.4rem 0 0; border-top:1px solid var(--rule);
+  padding-top:1.3rem}
+.ssmh{font-family:var(--agate); text-transform:uppercase; letter-spacing:.07em;
+  font-size:.78rem; color:var(--quiet); margin:0 0 .6rem}
+.ssmeth p{font-size:.86rem; line-height:1.6; color:var(--ink); max-width:74ch;
+  margin:0 0 .7rem}
+.ssmeth p b{color:var(--signal); font-weight:600}
+.ssmeth p:last-child{color:var(--quiet); font-size:.82rem}
 .ssfoot{color:var(--quiet); font-size:.78rem; margin:1.6rem 0 0;
   max-width:74ch; line-height:1.55}
 /* On a phone the fixed column widths add up to 464px in a 390px viewport,
@@ -217,16 +247,32 @@ def build_html(data, css, header, footer):
     prev = data["prev_season"]
 
     if played == 0:
+        basis_long = (
+            f"Nothing has been played in {season} yet, so the positional "
+            f"ratings use {prev} defensive performance. As {season} games "
+            f"are played, current-season results progressively replace the "
+            f"prior year rather than being switched over at once: early in "
+            f"the season the ratings combine both, and by later in the "
+            f"season they are primarily {season}.")
         basis_h = f"Using {prev} data"
         basis_b = (f"Nothing has been played yet. It reweights itself as "
                    f"{season} games happen.")
         badge = f"{prev} data"
     elif blend < 0.99:
+        basis_long = (
+            f"{played} week{'s' if played != 1 else ''} of {season} have "
+            f"been played, so the positional ratings combine current-season "
+            f"results with {prev} performance. The current season takes "
+            f"over progressively as more of it exists, rather than being "
+            f"switched on at once, because four games tell you something "
+            f"about a defence and not very much.")
         basis_h = f"{blend:.0%} this season"
         basis_b = (f"{played} weeks played, so {1-blend:.0%} is still "
                    f"{prev}. The current season takes over as it goes.")
         badge = f"Week {played}"
     else:
+        basis_long = (f"The {season} regular season is complete, so every "
+                      f"positional rating uses {season} results.")
         basis_h = f"All {season}"
         basis_b = "The regular season is complete."
         badge = f"{season} final"
@@ -269,9 +315,16 @@ def build_html(data, css, header, footer):
             f'{" ssel" if p == "RB" else ""}">'
             + ("—" if r.get(p) is None else f'{r[p]:.1f}') + "</td>"
             for p in POSITIONS)
+        # Same markup the client produces, including the class the click
+        # handler binds to. A static row that renders correctly and does
+        # not respond to a click looks broken rather than unloaded.
+        _bye = (f'<span class="ssbye">Bye '
+                f'{", ".join(str(w) for w in r["byes"])}</span>'
+                if r.get("byes") else "")
         _out.append(
-            f'<tr><td class="l ssrk">{i}</td>'
-            f'<td class="l sstm">{esc(r["team"])}</td>'
+            f'<tr class="tr" data-team="{esc(r["team"])}">'
+            f'<td class="l ssrk">{i}</td>'
+            f'<td class="l sstm">{esc(r["team"])}{_bye}</td>'
             f'<td class="ssv {_shade(_rk["wp"].get(r["team"]))}">{wp}</td>'
             + cells + "</tr>")
     static = "\n".join(_out)
@@ -317,15 +370,24 @@ def build_html(data, css, header, footer):
     <button class="sstab sspo" data-w="playoffs" aria-pressed="false">
       Fantasy playoffs &middot; 15-17</button>
   </div>
-  <p class="sspohint">Most leagues decide their title in weeks 15 to 17.
-     A team with an easy September and a brutal December wins you nothing,
-     so that is the window worth drafting around.</p>
+  <p class="sspohint">A favourable early schedule matters, but weeks 15
+     through 17 often decide fantasy championships. Use the playoff view to
+     find teams with favourable late-season matchups.</p>
 
-  <div class="ssctl" role="group" aria-label="Sort by">
-    <button class="sstab" data-p="RECORD" aria-pressed="false">Opp record</button>
+  <p class="sswhen">Difficulty for</p>
+  <div class="ssctl" role="group" aria-label="Position">
     {''.join(f'<button class="sstab" data-p="{p}" '
              f'aria-pressed="{"true" if p == "RB" else "false"}">{p}</button>'
              for p in POSITIONS)}
+    <button class="sstab ssdim" data-p="RECORD" aria-pressed="false">
+      Opponent record</button>
+  </div>
+
+  <p class="sswhen">Scoring</p>
+  <div class="ssctl" role="group" aria-label="Scoring">
+    <button class="sstab" data-s="ppr" aria-pressed="true">PPR</button>
+    <button class="sstab" data-s="half" aria-pressed="false">Half PPR</button>
+    <button class="sstab" data-s="std" aria-pressed="false">Standard</button>
   </div>
 
   <table class="sstbl">
@@ -345,12 +407,22 @@ def build_html(data, css, header, footer):
     </tbody>
   </table>
 
+  <section class="ssmeth">
+    <h2 class="ssmh">How this is measured</h2>
+    <p>Fantasy strength of schedule measures how favourable each team's
+       remaining opponents are for quarterbacks, running backs, wide
+       receivers and tight ends. <b>Lower difficulty means the upcoming
+       defences have historically allowed more fantasy production to that
+       position.</b></p>
+    <p>{basis_long}</p>
+  </section>
+
   <p class="ssfoot">
     A backfield splitting carries two ways still puts both backs into its
     opponents' number, so this measures how good a matchup a defence is,
     not what any one player would score against it. Ranks run from 1, the
     easiest. Only games not yet played are counted, so the table shrinks as
-    the season goes and empties once it ends. Built {built:%B %-d, %Y}.
+    the season goes and empties once it ends. Updated {built:%B %-d, %Y}.
   </p>
 {seo.faq_html(seo_faqs.SOS)}{seo.related_html('strength-of-schedule')}
 </main>
@@ -358,7 +430,8 @@ def build_html(data, css, header, footer):
 <script>
 const SOS = {js_rows};
 const SEASON = {season};
-let weeks = "all", pos = "RB";
+const LABEL = {{ppr: "PPR", half: "Half PPR", std: "Standard"}};
+let weeks = "all", pos = "RB", fmt = "ppr";
 
 function windowed(r){{
   // A team's remaining games inside the selected weeks.
@@ -374,10 +447,24 @@ function windowed(r){{
   return r.sched;
 }}
 
+function inWindow(w){{
+  if(weeks === "playoffs") return w >= 15 && w <= 17;
+  if(weeks === "next4"){{
+    const first = Math.min(...SOS.flatMap(x => x.sched.map(g => g.w)));
+    return w >= first && w < first + 4;
+  }}
+  return true;
+}}
+
 function avg(games, key){{
   const v = games.map(g => g[key]).filter(x => x !== null && x !== undefined);
   return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null;
 }}
+
+// Which key a position uses under the selected scoring rule. A defence
+// that gives up catches looks very different in PPR and standard, so the
+// whole board has to move when the format does.
+function pkey(p){{ return p === "wp" ? "wp" : p + "_" + fmt; }}
 
 function shade(rank, total){{
   if(!rank) return "";
@@ -394,8 +481,10 @@ function rows(){{
     const g = windowed(r);
     if(!g.length) continue;
     const row = {{team: r.team, games: g.length,
-                 home: g.filter(x => x.h).length, wp: avg(g, "wp")}};
-    for(const p of ["QB","RB","WR","TE"]) row[p] = avg(g, p);
+                 home: g.filter(x => x.h).length, wp: avg(g, "wp"),
+                 byes: (r.byes || []).filter(w => inWindow(w)),
+                 sched: g}};
+    for(const p of ["QB","RB","WR","TE"]) row[p] = avg(g, pkey(p));
     out.push(row);
   }}
   return out;
@@ -438,9 +527,15 @@ function draw(){{
   document.getElementById("sstbody").innerHTML = sorted.map((r, i) => {{
     const c = k => shade(ranks[k].get(r.team), n);
     const em = k => k === key ? " ssel" : "";
-    return `<tr>
+    // A three-game four-week stretch is not a four-game one, so the bye is
+    // on the row rather than hidden inside an average.
+    const bye = r.byes && r.byes.length
+      ? `<span class="ssbye">Bye ${{r.byes.join(", ")}}</span>` : "";
+    const gm = weeks === "all" ? ""
+      : `<span class="ssgm">${{r.games}}g</span>`;
+    return `<tr class="tr" data-team="${{r.team}}">
       <td class="l ssrk">${{i + 1}}</td>
-      <td class="l sstm">${{r.team}}</td>
+      <td class="l sstm">${{r.team}}${{gm}}${{bye}}</td>
       <td class="ssv ${{c("wp")}}${{em("wp")}}">${{cell(r.wp, 3)}}</td>
       <td class="ssv ${{c("QB")}}${{em("QB")}}">${{cell(r.QB, 1)}}</td>
       <td class="ssv ${{c("RB")}}${{em("RB")}}">${{cell(r.RB, 1)}}</td>
@@ -448,7 +543,76 @@ function draw(){{
       <td class="ssv ${{c("TE")}}${{em("TE")}}">${{cell(r.TE, 1)}}</td>
     </tr>`;
   }}).join("");
+
+  document.querySelectorAll("tr.tr").forEach(tr =>
+    tr.addEventListener("click", () => expand(tr, sorted.find(
+      x => x.team === tr.dataset.team))));
 }}
+
+// The schedule behind the ranking.
+//
+// The table gives a team an average and a rank; this says which weeks
+// produced it. A reader deciding whether to start somebody in week 3 is
+// not helped by a season average, and "every team, week by week" should
+// mean something.
+const LABELS = [[0.16, "Very favourable", "e1"], [0.33, "Favourable", "e2"],
+                [0.67, "Average", ""], [0.84, "Tough", "h2"],
+                [1.01, "Very tough", "h1"]];
+
+function difficulty(v, pos){{
+  // Ranked against every other defence in the league on the same measure,
+  // so "favourable" means favourable relative to what else is out there
+  // rather than to an arbitrary number.
+  const all = SOS.flatMap(r => r.sched.map(g => g[pkey(pos)]))
+                 .filter(x => x !== null && x !== undefined)
+                 .sort((a, b) => b - a);
+  if(!all.length || v === null || v === undefined) return ["", ""];
+  const idx = all.findIndex(x => x <= v);
+  const pct = (idx < 0 ? all.length : idx) / all.length;
+  for(const [lim, label, cls] of LABELS)
+    if(pct <= lim) return [label, cls];
+  return ["Average", ""];
+}}
+
+function expand(tr, r){{
+  const next = tr.nextElementSibling;
+  if(next && next.classList.contains("ssx")){{ next.remove(); return; }}
+  document.querySelectorAll(".ssx").forEach(x => x.remove());
+  if(!r) return;
+
+  const isRec = pos === "RECORD";
+  const cells = r.sched.map(g => {{
+    const v = isRec ? g.wp : g[pkey(pos)];
+    const [label, cls] = isRec
+      ? [g.wp === null ? "" : (g.wp < 0.45 ? "Favourable"
+          : g.wp > 0.55 ? "Tough" : "Average"),
+         g.wp === null ? "" : (g.wp < 0.45 ? "e2" : g.wp > 0.55 ? "h2" : "")]
+      : difficulty(v, pos);
+    return `<div class="ssw">
+      <span class="sswk">Wk ${{g.w}}</span>
+      <b>${{g.h ? "" : "@"}}${{g.o}}</b>
+      <span class="sswd ${{cls}}">${{label}}</span></div>`;
+  }});
+  (r.byes || []).forEach(w => cells.push(
+    `<div class="ssw bye"><span class="sswk">Wk ${{w}}</span>
+      <b>Bye</b><span class="sswd"></span></div>`));
+
+  const row = document.createElement("tr");
+  row.className = "ssx";
+  const what = isRec ? "opponent record" : pos + ", " + LABEL[fmt];
+  row.innerHTML = `<td colspan="7"><div class="ssxin">
+    <p class="ssxh">${{r.team}} &middot; ${{what}}</p>
+    <div class="ssxgrid">${{cells.join("")}}</div></div></td>`;
+  tr.after(row);
+}}
+
+document.querySelectorAll("[data-s]").forEach(b =>
+  b.addEventListener("click", () => {{
+    fmt = b.dataset.s;
+    document.querySelectorAll("[data-s]").forEach(x =>
+      x.setAttribute("aria-pressed", x === b ? "true" : "false"));
+    draw();
+  }}));
 
 document.querySelectorAll("[data-w]").forEach(b =>
   b.addEventListener("click", () => {{

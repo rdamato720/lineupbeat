@@ -91,11 +91,24 @@ def win_pct(rec):
     return out
 
 
-def points_allowed(conn, season):
+# Half PPR is derivable rather than stored: PPR is standard plus one point
+# per catch, so half is exactly the midpoint. No third column needed.
+FORMATS = {
+    "ppr": "COALESCE(fantasy_points_ppr, 0)",
+    "half": "(COALESCE(fantasy_points,0) + COALESCE(fantasy_points_ppr,0)) / 2.0",
+    "std": "COALESCE(fantasy_points, 0)",
+}
+
+
+def points_allowed(conn, season, fmt="ppr"):
     """Fantasy points per game allowed by each defence, by position.
 
     Points scored BY players AGAINST a team, per game that team played.
     Only the regular season, and only positions the wire covers.
+
+    Computed per scoring format, because a defence that gives up catches
+    looks very different in PPR and standard -- and a page that showed one
+    number for all three would be wrong for two of them.
     """
     # Which team each team faced, per week.
     opp = {}
@@ -111,9 +124,9 @@ def points_allowed(conn, season):
             played[a] += 1
 
     allowed = defaultdict(lambda: defaultdict(float))
+    expr = FORMATS.get(fmt, FORMATS["ppr"])
     for r in conn.execute(
-            """SELECT season, week, team, position,
-                      COALESCE(fantasy_points_ppr, 0) pts
+            f"""SELECT season, week, team, position, {expr} pts
                FROM weekly_stats
                WHERE season=? AND season_type='REG'
                  AND position IN ('QB','RB','WR','TE')""", (season,)):
@@ -155,8 +168,8 @@ def build(conn, season, from_week, to_week):
     prev_rec = team_records(conn, prev)
     cur_wp, prev_wp = win_pct(cur_rec), win_pct(prev_rec)
 
-    cur_pa = points_allowed(conn, season)
-    prev_pa = points_allowed(conn, prev)
+    cur_pa = {f: points_allowed(conn, season, f) for f in FORMATS}
+    prev_pa = {f: points_allowed(conn, prev, f) for f in FORMATS}
 
     games_played = conn.execute(
         """SELECT COUNT(*) FROM games WHERE season=? AND game_type='REG'
@@ -179,9 +192,9 @@ def build(conn, season, from_week, to_week):
             return a
         return w * a + (1 - w) * b
 
-    def opp_allowed(t, pos):
-        a = (cur_pa.get(t) or {}).get(pos)
-        b = (prev_pa.get(t) or {}).get(pos)
+    def opp_allowed(t, pos, fmt="ppr"):
+        a = (cur_pa[fmt].get(t) or {}).get(pos)
+        b = (prev_pa[fmt].get(t) or {}).get(pos)
         if a is None and b is None:
             return None
         if a is None:
@@ -211,20 +224,37 @@ def build(conn, season, from_week, to_week):
                      "h": 1 if g["home"] else 0,
                      "wp": opp_strength(g["opp"])}
             for pos in POSITIONS:
-                entry[pos] = opp_allowed(g["opp"], pos)
+                for f in FORMATS:
+                    entry[f"{pos}_{f}"] = opp_allowed(g["opp"], pos, f)
+                # The default format keeps its plain key, so nothing that
+                # already reads entry["RB"] has to change.
+                entry[pos] = entry[f"{pos}_ppr"]
             games_out.append(entry)
 
         wps = [x["wp"] for x in games_out if x["wp"] is not None]
+        # Which weeks in the window this team is not playing. A three-game
+        # four-week stretch is not the same as a four-game one, and a table
+        # that shows only an average hides the difference.
+        weeks_here = {g["week"] for g in window}
+        span = range(from_week, to_week + 1)
+        played_all = {g["week"] for g in games}
+        byes = [w for w in span
+                if w not in weeks_here and w not in played_all]
+
         row = {
             "team": t,
+            "byes": byes,
             "games": len(window),
             "opp_win_pct": sum(wps) / len(wps) if wps else None,
             "sched": games_out,
             "home": sum(1 for g in window if g["home"]),
         }
         for pos in POSITIONS:
-            vals = [x[pos] for x in games_out if x[pos] is not None]
-            row[pos] = sum(vals) / len(vals) if vals else None
+            for f in FORMATS:
+                k = f"{pos}_{f}"
+                vals = [x[k] for x in games_out if x[k] is not None]
+                row[k] = sum(vals) / len(vals) if vals else None
+            row[pos] = row[f"{pos}_ppr"]
         rows.append(row)
 
     # Rank each column. 1 is the easiest schedule -- the softest opponents

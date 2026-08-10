@@ -214,6 +214,54 @@ def cmd_export(args):
     total = sum(len(s["nuggets"]) for s in bundle["sports"].values())
     print(f"wrote {out} ({total} nuggets, {len(bundle['players'])} players)")
 
+    # Moving Now, written into the HTML.
+    #
+    # The panel is the clearest demonstration of what the site does -- a
+    # player, what changed, who reported it -- and a crawler saw an empty
+    # div. If something is worth putting on the homepage it is worth being
+    # in the source; JavaScript re-renders it on load either way.
+    def _moving_now_html(bundle, sport="nfl", limit=8):
+        import html as _h
+        from datetime import datetime as _dt, timezone as _tz
+        s = (bundle.get("sports") or {}).get(sport) or {}
+        nug = s.get("nuggets") or []
+        by = {}
+        for n in nug:
+            pid = n.get("player_id")
+            if not pid or not n.get("resolved"):
+                continue
+            cur = by.setdefault(pid, {"n": 0, "top": None,
+                                      "name": n.get("player_name"),
+                                      "team": n.get("team")})
+            cur["n"] += 1
+            # Newest item is the reason line, matching what the client does.
+            if (not cur["top"] or (n.get("published_at") or "")
+                    > (cur["top"].get("published_at") or "")):
+                cur["top"] = n
+        # Two or more reports today: a developing story rather than the
+        # newest thing, which is what the wire beneath it already answers.
+        rows = [v for v in by.values() if v["n"] >= 2 and v["top"]]
+        rows.sort(key=lambda x: x["top"].get("published_at") or "",
+                  reverse=True)
+        out = []
+        for r in rows[:limit]:
+            top = r["top"]
+            attrs = top.get("attributions") or []
+            who = attrs[0].get("source_name", "") if attrs else ""
+            when = top.get("published_at") or ""
+            out.append(
+                '<button class="trend">'
+                '<span class="trow">'
+                f'<span class="tname">{_h.escape(r["name"] or "")}</span>'
+                f'<span class="twhy">{_h.escape(top.get("claim") or "")}</span>'
+                '<span class="tmeta">'
+                f'{_h.escape(r["team"] or "")} &middot; '
+                f'{_h.escape(who)} &middot; '
+                f'{r["n"]} reports'
+                f'<time datetime="{_h.escape(when)}"></time>'
+                '</span></span></button>')
+        return "\n".join(out) or ""
+
     # Render the static site by inlining the bundle into the template. One
     # self-contained file: no server, no CORS, no loading state to design for.
     tpl = Path(args.template)
@@ -221,13 +269,12 @@ def cmd_export(args):
         site = Path(args.site)
         site.parent.mkdir(parents=True, exist_ok=True)
         payload = json.dumps(bundle).replace("</", "<\\/")  # keep it out of </script>
-        site.write_text(
-            tpl.read_text().replace(
-                '/*__DATA__*/ {"generated_at":new Date().toISOString(),'
-                '"sports":{},"players":[]}',
-                payload,
-            )
-        )
+        html_out = tpl.read_text().replace(
+            '/*__DATA__*/ {"generated_at":new Date().toISOString(),'
+            '"sports":{},"players":[]}',
+            payload,
+        ).replace("<!--__MOVINGNOW__-->", _moving_now_html(bundle))
+        site.write_text(html_out)
         print(f"wrote {site}")
 
 
