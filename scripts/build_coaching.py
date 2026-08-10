@@ -43,7 +43,7 @@ import html
 import json
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -51,6 +51,20 @@ import seo
 import seo_faqs
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+def eastern_now():
+    """The date a reader in the league's own time zone would call today.
+
+    UTC rolls over at 8pm Eastern, so a page built in the evening was
+    stamped tomorrow and looked a day ahead of the data it was showing.
+    """
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.now(ZoneInfo("America/New_York"))
+    except Exception:
+        return eastern_now() - timedelta(hours=4)
+
 SITE = ROOT / "site"
 SPORT = "nfl"
 
@@ -301,7 +315,7 @@ def team_card(r):
 
 
 def build_html(rows, css, header, footer, verified):
-    built = datetime.now(timezone.utc)
+    built = eastern_now()
     new_callers = [r for r in rows
                    if (r["new_play_caller"] or "").strip().lower() == "yes"]
 
@@ -473,7 +487,7 @@ def add_to_sitemap(url):
     text = sm.read_text()
     if url in text:
         return False
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = eastern_now().strftime("%Y-%m-%d")
     entry = (f"  <url><loc>{url}</loc><lastmod>{today}</lastmod>"
              f"<changefreq>monthly</changefreq><priority>0.7</priority></url>\n")
     sm.write_text(text.replace("</urlset>", entry + "</urlset>"))

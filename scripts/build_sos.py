@@ -24,7 +24,7 @@ import html
 import json
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -32,6 +32,20 @@ import seo
 import seo_faqs
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+def eastern_now():
+    """The date a reader in the league's own time zone would call today.
+
+    UTC rolls over at 8pm Eastern, so a page built in the evening was
+    stamped tomorrow and looked a day ahead of the data it was showing.
+    """
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.now(ZoneInfo("America/New_York"))
+    except Exception:
+        return eastern_now() - timedelta(hours=4)
+
 SITE = ROOT / "site"
 SPORT = "nfl"
 POSITIONS = ["QB", "RB", "WR", "TE"]
@@ -195,7 +209,7 @@ def site_chrome():
 
 
 def build_html(data, css, header, footer):
-    built = datetime.now(timezone.utc)
+    built = eastern_now()
     rows = data["rows"]
     season = data["season"]
     played = data["weeks_played"]
@@ -218,6 +232,49 @@ def build_html(data, css, header, footer):
         badge = f"{season} final"
 
     js_rows = json.dumps(rows, separators=(",", ":"))
+
+    # The default view, in the HTML: rest of season, sorted by RB.
+    #
+    # A crawler with no JavaScript read a page about all 32 schedules that
+    # listed none of them.
+    def _rank(key, easiest_high):
+        vals = [(r.get(key), r["team"]) for r in rows if r.get(key) is not None]
+        vals.sort(key=lambda x: -x[0] if easiest_high else x[0])
+        return {tm: i + 1 for i, (_v, tm) in enumerate(vals)}
+    _rk = {"wp": _rank("opp_win_pct", False)}
+    for _p in POSITIONS:
+        _rk[_p] = _rank(_p, True)
+    _n = len(rows)
+
+    def _shade(rank):
+        if not rank:
+            return ""
+        if rank <= _n * 0.16:
+            return "e1"
+        if rank <= _n * 0.33:
+            return "e2"
+        if rank > _n * 0.84:
+            return "h1"
+        if rank > _n * 0.67:
+            return "h2"
+        return ""
+
+    _srt = sorted([r for r in rows if r.get("RB") is not None],
+                  key=lambda x: -x["RB"])
+    _out = []
+    for i, r in enumerate(_srt, 1):
+        wp = "—" if r.get("opp_win_pct") is None else f'{r["opp_win_pct"]:.3f}'
+        cells = "".join(
+            f'<td class="ssv {_shade(_rk[p].get(r["team"]))}'
+            f'{" ssel" if p == "RB" else ""}">'
+            + ("—" if r.get(p) is None else f'{r[p]:.1f}') + "</td>"
+            for p in POSITIONS)
+        _out.append(
+            f'<tr><td class="l ssrk">{i}</td>'
+            f'<td class="l sstm">{esc(r["team"])}</td>'
+            f'<td class="ssv {_shade(_rk["wp"].get(r["team"]))}">{wp}</td>'
+            + cells + "</tr>")
+    static = "\n".join(_out)
 
     body = f"""<main class="sswrap">
   <nav class="crumbs" aria-label="Breadcrumb">
@@ -283,7 +340,9 @@ def build_html(data, css, header, footer):
       <th>Opp win %</th>
       <th>QB</th><th>RB</th><th>WR</th><th>TE</th>
     </tr></thead>
-    <tbody id="sstbody"></tbody>
+    <tbody id="sstbody">
+{static}
+    </tbody>
   </table>
 
   <p class="ssfoot">
@@ -417,7 +476,7 @@ def add_to_sitemap(url):
     text = sm.read_text()
     if url in text:
         return False
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = eastern_now().strftime("%Y-%m-%d")
     entry = (f"  <url><loc>{url}</loc><lastmod>{today}</lastmod>"
              f"<changefreq>weekly</changefreq><priority>0.8</priority></url>\n")
     sm.write_text(text.replace("</urlset>", entry + "</urlset>"))

@@ -40,10 +40,24 @@ import re
 import sqlite3
 import sys
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+def eastern_now():
+    """The date a reader in the league's own time zone would call today.
+
+    UTC rolls over at 8pm Eastern, so a page built in the evening was
+    stamped tomorrow and looked a day ahead of the data it was showing.
+    """
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.now(ZoneInfo("America/New_York"))
+    except Exception:
+        return eastern_now() - timedelta(hours=4)
+
 SITE = ROOT / "site"
 
 # Sport lives in the URL: /nfl/aj-brown/, /nfl/team/nyj/.
@@ -158,7 +172,7 @@ def ago(iso):
     """Relative time. A wire reads by recency, so "3h ago" carries more than a
     date does; the full date stays underneath for anyone who wants it."""
     try:
-        d = (datetime.now(timezone.utc)
+        d = (eastern_now()
              - datetime.fromisoformat(iso)).total_seconds()
     except (TypeError, ValueError):
         return ""
@@ -1416,7 +1430,7 @@ def main():
 
     base = args.base.rstrip("/")
     written, urls = 0, []
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    now = eastern_now().strftime("%Y-%m-%d")
 
     # A projected player gets a page even with no beat reports yet.
     #

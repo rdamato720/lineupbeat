@@ -43,7 +43,7 @@ import json
 import re
 import sys
 import warnings
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 warnings.filterwarnings("ignore")
@@ -52,6 +52,22 @@ import seo
 import seo_faqs
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+def eastern_now():
+    """The date a reader in the league's own time zone would call today.
+
+    UTC rolls over at 8pm Eastern, so a page built at 9pm on the 9th was
+    stamped the 10th and looked a day ahead of the ADP it was showing.
+    Football runs on Eastern; so should the date on the page.
+    """
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.now(ZoneInfo("America/New_York"))
+    except Exception:
+        # No tz database. Approximate rather than fall back to UTC, which
+        # is the failure this exists to avoid.
+        return datetime.now(timezone.utc) - timedelta(hours=4)
 SITE = ROOT / "site"
 SPORT = "nfl"
 POSITIONS = ["QB", "RB", "WR", "TE"]
@@ -152,6 +168,32 @@ def read_projections(path: Path):
     return out
 
 
+# Which scoring formats have a compatible ADP dataset.
+#
+# The roster carries one ADP column and it is PPR, so comparing a standard
+# projection against it would put standard ranks on one side and PPR market
+# prices on the other -- a comparison that looks fine and means nothing.
+#
+# Adding "adp_half" or "adp_std" columns to the roster is all that is
+# needed to switch the other two on; the page reads this map rather than
+# assuming.
+ADP_COLUMNS = {"ppr": "adp", "half": "adp_half", "std": "adp_std"}
+FORMAT_LABEL = {"ppr": "PPR", "half": "Half PPR", "std": "Standard"}
+
+
+def available_formats(sample_row):
+    """Formats where we hold ADP for that same scoring rule."""
+    out = []
+    for fmt, col in ADP_COLUMNS.items():
+        v = (sample_row.get(col) or "").strip()
+        try:
+            if float(v) > 0:
+                out.append(fmt)
+        except (TypeError, ValueError):
+            continue
+    return out or ["ppr"]
+
+
 def read_adp():
     """The canonical ADP, the same file the durability board reads.
 
@@ -163,7 +205,10 @@ def read_adp():
     if not rp.exists():
         sys.exit(f"  no {rp}")
     adp, meta = {}, {}
+    formats = ["ppr"]
     for r in csv.DictReader(rp.open()):
+        if formats == ["ppr"]:
+            formats = available_formats(r)
         v = (r.get("adp") or "").strip()
         try:
             v = float(v)
@@ -181,7 +226,7 @@ def read_adp():
             meta = json.loads(mp.read_text())
         except ValueError:
             meta = {}
-    return adp, meta
+    return adp, meta, formats
 
 
 def build_board(proj, adp, fmt):
@@ -300,7 +345,12 @@ PAGE_CSS = """
   padding:.1rem .5rem; vertical-align:.05em}
 .dvcards{display:grid; grid-template-columns:repeat(3, 1fr); gap:.7rem;
   margin:1.2rem 0 0}
+/* Four terms, because ADP and Market were reading as the same thing: one
+   is a pick number and the other is a rank derived from it. */
+.dv4{grid-template-columns:repeat(4, 1fr)}
+@media (max-width:900px){ .dv4{grid-template-columns:repeat(2, 1fr)} }
 @media (max-width:820px){ .dvcards{grid-template-columns:1fr} }
+@media (max-width:560px){ .dv4{grid-template-columns:1fr} }
 .dvcard{background:var(--card); border:1px solid var(--rule);
   border-radius:8px; padding:.75rem .9rem}
 .dvcard p{margin:.3rem 0 0; font-size:.84rem; line-height:1.45;
@@ -363,6 +413,24 @@ PAGE_CSS = """
 .dvxwhy{font-size:.86rem; line-height:1.55; color:var(--ink); max-width:74ch;
   margin:0}
 .dvempty{color:var(--quiet); padding:1.4rem .5rem; font-size:.86rem}
+.dvonly{font-size:.82rem; line-height:1.55; color:var(--quiet);
+  margin:.7rem 0 0; max-width:74ch}
+.dvonly b{color:var(--ink)}
+.dvonly a{color:var(--quiet); text-decoration:underline}
+.dvonly a:hover{color:var(--signal)}
+/* Definitions below the table, not above it.
+   Four cards, a scoring note and two methodology paragraphs stood between
+   the headline and the data. Somebody arriving here wants the board; the
+   explanation is for when a number surprises him. */
+.dvterms{display:grid; grid-template-columns:repeat(2, 1fr); gap:.6rem 1.4rem;
+  margin:0 0 1.4rem; max-width:74ch}
+@media (max-width:640px){ .dvterms{grid-template-columns:1fr} }
+.dvterms dt{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.06em; font-size:.68rem; color:var(--ink)}
+.dvterms dd{margin:.1rem 0 0; font-size:.82rem; line-height:1.5;
+  color:var(--quiet)}
+.dvterms dd b{color:var(--signal)}
+.dvfoot p b{color:var(--ink)}
 .dvcount{font-family:var(--agate); text-transform:uppercase;
   letter-spacing:.06em; font-size:.68rem; color:var(--quiet); margin:1rem 0 0}
 .dvfoot{color:var(--quiet); font-size:.78rem; margin:2rem 0 0; max-width:74ch;
@@ -404,8 +472,48 @@ def site_chrome():
     return (css.group(1) if css else ""), header, (foot.group(0) if foot else "")
 
 
-def build_html(boards, meta, css, header, footer):
-    built = datetime.now(timezone.utc)
+def static_rows(rows):
+    """The default view, written into the HTML.
+
+    A crawler that does not run JavaScript saw an empty tbody and the
+    "no player matches that" line, which is the opposite of what the page
+    is for: the whole point is 600 rows of proprietary comparison and none
+    of it was in the source.
+    So the ADP-ascending view is rendered at build time. JavaScript still
+    owns filtering, search, sorting and the expanded rows -- it replaces
+    this table rather than creating it.
+    """
+    DASH = "\u2014"
+    out = []
+    for r in rows:
+        gap = r["gap"]
+        gcls = "" if gap is None else ("g-up" if gap > 0
+                                       else "g-dn" if gap < 0 else "")
+        gtxt = DASH if gap is None else (f"+{gap}" if gap > 0 else str(gap))
+        sig = r["signal"] or "No ADP"
+        scls = (("v-" + sig.lower().replace(" ", "-")) if r["signal"]
+                else "v-none")
+        name = (f'<a href="/{SPORT}/{r["slug"]}/">{esc(r["name"])}</a>'
+                if r.get("slug") else esc(r["name"]))
+        adp = DASH if r["adp"] is None else f'{r["adp"]:.1f}'
+        mkt = DASH if r["mkt_rank"] is None else f'{r["pos"]}{r["mkt_rank"]}'
+        out.append(
+            "<tr class=\"r\">"
+            f'<td class="l dvadp">{adp}</td>'
+            f'<td class="l dvnm">{name}</td>'
+            f'<td class="l dvpos">{esc(r["pos"])}</td>'
+            f'<td class="l dvteam dvpos">{esc(r["team"])}</td>'
+            f'<td class="dvrk">{esc(mkt)}</td>'
+            f'<td class="dvrk">{esc(r["pos"])}{r["lb_rank"]}</td>'
+            f'<td class="dvgap {gcls}">{gtxt}</td>'
+            f'<td class="dvpts">{r["pts"]:.1f}</td>'
+            f'<td class="l"><span class="sig {scls}">{esc(sig)}</span></td>'
+            "</tr>")
+    return "\n".join(out)
+
+
+def build_html(boards, meta, css, header, footer, formats):
+    built = eastern_now()
 
     # One payload, three formats. The gap has to be recomputed per format
     # and doing it here rather than in the browser keeps the arithmetic in
@@ -424,6 +532,35 @@ def build_html(boards, meta, css, header, footer):
                                                  x["adp"] or 0, x["name"]))
         ]
 
+    # The default view, in the HTML. ADP ascending, PPR, no filter -- the
+    # same thing draw() produces on load, so the page does not flicker into
+    # a different table when the script runs.
+    static = static_rows(sorted(
+        boards["ppr"],
+        key=lambda x: (x["adp"] is None, x["adp"] or 0, x["name"])))
+
+    # Only formats where both sides use the same scoring rule.
+    #
+    # Offering a Standard button against a PPR ADP would compare standard
+    # ranks to PPR market prices: a comparison that renders cleanly and
+    # means nothing. Where only one format is available the row says so
+    # rather than quietly disappearing.
+    if len(formats) > 1:
+        scoring_row = (
+            '<div class="dvrow"><span class="dvlab">Scoring</span>'
+            + "".join(
+                f'<button class="dvtab" data-fmt="{f}" '
+                f'aria-pressed="{"true" if f == formats[0] else "false"}">'
+                f'{FORMAT_LABEL[f]}</button>' for f in formats)
+            + "</div>")
+    else:
+        scoring_row = (
+            f'<p class="dvonly"><b>{FORMAT_LABEL[formats[0]]} scoring.</b> '
+            f'Our ADP sample is {FORMAT_LABEL[formats[0]]}, and a ranking is '
+            f'only comparable to a market price drawn under the same rules. '
+            f'All three formats are on the '
+            f'<a href="/{SPORT}/projections/">projections page</a>.</p>')
+
     n = len([x for x in boards["ppr"] if x["adp"] is not None])
     when = ""
     if meta.get("end"):
@@ -431,9 +568,19 @@ def build_html(boards, meta, css, header, footer):
             y, m_, d_ = s.split("-")
             return f"{int(m_)}/{int(d_)}"
         shape = f", {meta['teams']} teams" if meta.get("teams") else ""
-        when = (f'<p class="dvwhen">ADP from <b>{meta.get("drafts", 0):,}</b> '
-                f'drafts, {short(meta["start"])} &ndash; {short(meta["end"])}'
-                f'{shape} &middot; PPR scoring &middot; updated daily</p>')
+        # Two dates, because they are two different facts. "ADP through" is
+        # how current the market data is; "updated" is when this page was
+        # last built. Showing one number for both invites the reader to
+        # assume the market moved when only the build did.
+        def longform(s):
+            y, m_, d_ = (int(x) for x in s.split("-"))
+            return datetime(y, m_, d_).strftime("%B %-d, %Y")
+        # The end date once, not twice. "ADP through August 7" and
+        # "7/31 - 8/7" were saying the same thing in the same sentence.
+        when = (f'<p class="dvwhen">'
+                f'<b>ADP through {longform(meta["end"])}</b> '
+                f'&middot; {meta.get("drafts", 0):,} drafts since '
+                f'{short(meta["start"])}{shape} &middot; PPR</p>')
 
     body = f"""<main class="dvwrap">
   <nav class="crumbs" aria-label="Breadcrumb">
@@ -443,24 +590,9 @@ def build_html(boards, meta, css, header, footer):
 
   <div class="dvhead">
     <h1>2026 Fantasy Football ADP &amp; Draft Value</h1>
-    <p class="dvsub">Where the market is drafting every fantasy relevant
-      player compared with LineupBeat's projections. Find players we rank
-      higher than their draft cost, players being taken too early, and
-      where the biggest gaps are at each position.
-      <span class="dvdate">Updated {built:%-m/%-d}</span></p>
+    <p class="dvsub">Where the market is drafting every player compared
+      with our projections, and where the biggest gaps are.</p>
     {when}
-  </div>
-
-  <div class="dvcards">
-    <div class="dvcard"><span class="dvk">ADP</span>
-      <p><b>The market.</b> Where a player is actually being taken, as a
-         rank among others at his position.</p></div>
-    <div class="dvcard"><span class="dvk">LineupBeat</span>
-      <p><b>Our projection.</b> Where the board ranks him at that position
-         in this scoring format.</p></div>
-    <div class="dvcard"><span class="dvk">Value gap</span>
-      <p><b>The difference.</b> Positive means we are higher on him than
-         the market is.</p></div>
   </div>
 
   <div class="dvrow">
@@ -468,13 +600,9 @@ def build_html(boards, meta, css, header, footer):
     <button class="dvtab" data-pos="ALL" aria-pressed="true">All</button>
     {''.join(f'<button class="dvtab" data-pos="{p}" aria-pressed="false">{p}</button>'
              for p in POSITIONS)}
-  </div>
-
-  <div class="dvrow">
-    <span class="dvlab">Scoring</span>
-    <button class="dvtab" data-fmt="ppr" aria-pressed="true">PPR</button>
-    <button class="dvtab" data-fmt="half" aria-pressed="false">Half</button>
-    <button class="dvtab" data-fmt="std" aria-pressed="false">Standard</button>
+    <span class="dvsearch"><input id="dvq" type="search"
+      placeholder="Find a player" autocomplete="off"
+      aria-label="Find a player"></span>
   </div>
 
   <div class="dvrow">
@@ -492,9 +620,6 @@ def build_html(boards, meta, css, header, footer):
     <button class="dvtab" data-sort="gapdn" aria-pressed="false">Most overpriced</button>
     <button class="dvtab" data-sort="lb" aria-pressed="false">LineupBeat rank</button>
     <button class="dvtab" data-sort="pts" aria-pressed="false">Projected points</button>
-    <span class="dvsearch"><input id="dvq" type="search"
-      placeholder="Find a player" autocomplete="off"
-      aria-label="Find a player"></span>
   </div>
 
   <p class="dvcount" id="dvcount"></p>
@@ -511,23 +636,43 @@ def build_html(boards, meta, css, header, footer):
       <th class="dvpts">Pts</th>
       <th class="l">Draft value</th>
     </tr></thead>
-    <tbody id="dvbody"></tbody>
+    <tbody id="dvbody">
+{static}
+    </tbody>
   </table>
-  <p class="dvempty" id="dvempty" hidden>No player matches that.</p>
+  <p class="dvempty" id="dvempty" hidden>No player matches that filter.</p>
 
   <section class="dvfoot">
+    <h2>What the columns mean</h2>
+    <dl class="dvterms">
+      <div><dt>ADP</dt><dd>Average overall draft pick. One number for the
+        whole draft, like 72.4.</dd></div>
+      <div><dt>Market</dt><dd>That ADP as a rank within the position. If
+        72.4 is the seventh quarterback taken, Market is QB7.</dd></div>
+      <div><dt>LineupBeat</dt><dd>Our projected rank at that position, like
+        QB4.</dd></div>
+      <div><dt>Gap</dt><dd>Market minus LineupBeat. QB7 against QB4 is
+        <b>+3</b>: we rank him three spots higher than the market prices
+        him.</dd></div>
+    </dl>
+
     <h2>How draft value works</h2>
     <p>Draft Value compares where the market is selecting a player at his
-       position with where LineupBeat's full season projection ranks him.
-       If the market is drafting someone as RB18 and we project him as
-       RB11, his value gap is +7: we believe his projected production is
-       stronger than his current draft price suggests. A negative gap means
-       the opposite.</p>
-    <p>It is not an instruction to draft or avoid anyone at any cost. It is
-       a way to see where our projections differ from the market, and ADP
-       changes every day, so value changes with it. Durability, coaching
-       and strength of schedule are deliberately not part of this
-       calculation; each has its own page.</p>
+       position with where LineupBeat's full season projection ranks him. A
+       positive gap means LineupBeat ranks the player higher than the
+       market. A negative gap means the market is paying a premium relative
+       to our projection.</p>
+    <p>Draft Value is not an instruction to draft or avoid a player at any
+       cost. It identifies differences between LineupBeat's projections and
+       current market prices. ADP changes, so player value can change with
+       it.</p>
+    <p><b>{FORMAT_LABEL[formats[0]]} scoring only.</b> Our ADP sample is
+       {FORMAT_LABEL[formats[0]]}, and a ranking is only comparable to a
+       market price drawn under the same rules. All three formats are on
+       the <a href="/{SPORT}/projections/">projections page</a>.</p>
+    <p>Durability, coaching and strength of schedule are deliberately not
+       part of this calculation. Each has its own page, and folding them in
+       would make this number impossible to check.</p>
   </section>
 {seo.faq_html(seo_faqs.DRAFT_VALUE)}{seo.related_html('draft-value')}
 </main>
@@ -694,11 +839,15 @@ def main():
     if not wb.exists():
         sys.exit(f"  no {args.projections}")
     proj = read_projections(wb)
-    adp, meta = read_adp()
+    adp, meta, adp_formats = read_adp()
     if not proj:
         sys.exit("  no projections read")
 
     boards = {f: build_board(proj, adp, f) for f in ("ppr", "half", "std")}
+    formats = adp_formats
+    if len(formats) == 1:
+        print(f"  ADP is {FORMAT_LABEL[formats[0]]} only, so the page offers "
+              f"that format alone")
 
     drafted = [r for r in boards["ppr"] if r["adp"] is not None]
     print(f"\n  {len(proj)} projected players, {len(drafted)} with an ADP")
@@ -719,7 +868,7 @@ def main():
         print("  " + "  ".join(f"{c.get(s, 0)} {s}" for s in SIGNALS))
 
     css, header, footer = site_chrome()
-    body, built = build_html(boards, meta, css, header, footer)
+    body, built = build_html(boards, meta, css, header, footer, formats)
 
     title = ("2026 Fantasy Football ADP & Draft Values | LineupBeat")
     desc = ("Compare 2026 fantasy football ADP with LineupBeat projections. "

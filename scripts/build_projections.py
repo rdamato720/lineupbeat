@@ -41,7 +41,7 @@ import re
 import sqlite3
 import sys
 import warnings
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 warnings.filterwarnings("ignore")
@@ -50,6 +50,20 @@ import seo
 import seo_faqs
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+def eastern_now():
+    """The date a reader in the league's own time zone would call today.
+
+    UTC rolls over at 8pm Eastern, so a page built in the evening was
+    stamped tomorrow and looked a day ahead of the data it was showing.
+    """
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.now(ZoneInfo("America/New_York"))
+    except Exception:
+        return eastern_now() - timedelta(hours=4)
+
 SITE = ROOT / "site"
 SPORT = "nfl"
 POSITIONS = ["QB", "RB", "WR", "TE"]
@@ -328,7 +342,7 @@ PAGE_CSS = """
 
 def build_html(board, links, css, header, footer, season, source_name, notes):
     total = sum(len(v) for v in board.values())
-    built = datetime.now(timezone.utc)
+    built = eastern_now()
 
     rows_json = {}
     for pos, rows in board.items():
@@ -369,6 +383,35 @@ def build_html(board, links, css, header, footer, season, source_name, notes):
     counts = "  ".join(f"{p} {len(board.get(p, []))}" for p in POSITIONS
                        if board.get(p))
 
+    # The default view, in the HTML.
+    #
+    # An empty tbody means a crawler reads a page about 614 players that
+    # contains none of them. QB, PPR, rank order -- the same thing draw()
+    # produces on load, so there is no flicker when the script runs.
+    _first = next((p for p in POSITIONS if board.get(p)), None)
+    _cols = stats_json.get(_first, [])
+    _static = []
+    for r in sorted(board.get(_first, []), key=lambda x: x["rank"]):
+        pid = links.get(key(r["name"]))
+        nm = (f'<a href="/{SPORT}/{pid}/">{esc(r["name"])}</a>' if pid
+              else esc(r["name"]))
+        cells = "".join(
+            f'<td class="stat">'
+            f'{"" if r.get(k) is None else (f"{round(r[k]):,}" if k in ("payd","recyd","ruyd","patt","ruatt","targets") else f"{r[k]:.1f}")}'
+            f'</td>' for k, _lab in _cols)
+        alt = "".join(f'<td class="alt dim">'
+                      f'{"" if r.get(k) is None else f"{r[k]:.1f}"}</td>'
+                      for k in ("half", "std"))
+        main = "" if r.get("ppr") is None else f'{r["ppr"]:.1f}'
+        _static.append(
+            f'<tr><td class="l rk">{r["rank"]}</td>'
+            f'<td class="l nm">{nm}</td>'
+            f'<td class="l tm">{esc(r["team"])}</td>'
+            + cells
+            + f'<td class="pt">{main}</td>'
+            + alt + '</tr>')
+    static = "\n".join(_static)
+
     body = f"""<main class="pbwrap">
   <nav class="crumbs" aria-label="Breadcrumb">
     <a href="/">LineupBeat</a><span>/</span>
@@ -404,7 +447,9 @@ def build_html(board, links, css, header, footer, season, source_name, notes):
 
   <table class="pbtbl">
     <thead><tr id="pbhead"></tr></thead>
-    <tbody id="pbbody"></tbody>
+    <tbody id="pbbody">
+{static}
+    </tbody>
   </table>
   <p class="pbempty" id="pbempty" hidden>No player by that name.</p>
 
@@ -604,7 +649,7 @@ def add_to_sitemap(url):
     text = sm.read_text()
     if url in text:
         return False
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = eastern_now().strftime("%Y-%m-%d")
     entry = (f"  <url><loc>{url}</loc><lastmod>{today}</lastmod>"
              f"<changefreq>weekly</changefreq>"
              f"<priority>0.8</priority></url>\n")
