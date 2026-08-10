@@ -64,8 +64,93 @@ rdt('track','PageVisit');
 </script>
 <!-- End Reddit Pixel -->"""
 
-# Both, for pages that want everything.
-TRACKING = ANALYTICS + "\n" + REDDIT_PIXEL
+
+# ---------------------------------------------------------------- tracking
+#
+# Reddit conversion events beyond the base pixel.
+#
+# Three things this has to survive. Ad blockers, which stop the pixel script
+# entirely, so every call is guarded rather than assuming rdt exists.
+# Repetition, because somebody comparing formats clicks a filter twenty
+# times and twenty identical events tell you nothing the first one did not.
+# And the fact that these fire on real user actions, so a thrown error would
+# break the page it was measuring.
+TRACKING_JS = """
+<script>
+(function(){
+  var sent = {};
+  // One of each per page. A filter used once is the signal; used twenty
+  // times it is the same signal, more expensively.
+  window.lbTrack = function(name, meta){
+    try {
+      if (sent[name]) return;
+      sent[name] = 1;
+      if (typeof rdt !== "function") return;   // blocked, or not loaded yet
+      rdt("track", name, meta || {});
+    } catch (e) { /* never break a page to measure it */ }
+  };
+
+  // How many pages this visit has seen. sessionStorage rather than a
+  // cookie: it dies with the tab, which is the right lifetime for "did
+  // they look at a second thing".
+  try {
+    var n = (parseInt(sessionStorage.getItem("lb_pv") || "0", 10) || 0) + 1;
+    sessionStorage.setItem("lb_pv", String(n));
+    if (n >= 2) window.lbTrack("second_page_view", {pages: n});
+  } catch (e) {}
+
+  // Search, debounced. A keystroke is not a search; a pause is.
+  var timer;
+  document.addEventListener("input", function(e){
+    var el = e.target;
+    if (!el || el.type !== "search") return;
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      if ((el.value || "").trim().length >= 2) window.lbTrack("Search");
+    }, 900);
+  }, true);
+
+  // Filters, sorting and row expansion, from the attributes the pages
+  // already use. Catching them here rather than in five builders means a
+  // new control is measured the day it ships.
+  document.addEventListener("click", function(e){
+    var b = e.target && e.target.closest &&
+            e.target.closest("button, [role=button]");
+    if (!b) return;
+    var d = b.dataset || {};
+    if ("sort" in d) return window.lbTrack("sort_use", {sort: d.sort});
+    if ("pos" in d || "val" in d || "fmt" in d || "p" in d || "s" in d ||
+        "w" in d || "f" in d)
+      return window.lbTrack("filter_use");
+    if (b.classList.contains("follow") || /follow/i.test(b.textContent || ""))
+      return window.lbTrack("follow_player");
+  }, true);
+
+  // An expanded row: the point somebody stops scanning and starts reading.
+  document.addEventListener("click", function(e){
+    var tr = e.target && e.target.closest && e.target.closest("tr.r, tr.tr");
+    if (tr) window.lbTrack("player_expand");
+  }, true);
+})();
+</script>"""
+
+
+# ViewContent, for the draft board specifically.
+#
+# Reaching the board is a different act from landing on the site, and an
+# event that fires on every page is not an event.
+VIEW_CONTENT = """
+<script>
+(function(){
+  try {
+    if (typeof rdt === "function")
+      rdt("track", "ViewContent", {content_name: "draft_value"});
+  } catch (e) {}
+})();
+</script>"""
+
+# Everything, for pages that want it.
+TRACKING = ANALYTICS + "\n" + REDDIT_PIXEL + TRACKING_JS
 SPORT = "nfl"
 
 

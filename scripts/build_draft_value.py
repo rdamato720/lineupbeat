@@ -930,7 +930,7 @@ def main():
 {header}
 {body}
 {footer}
-{seo.TRACKING}
+{seo.TRACKING}{seo.VIEW_CONTENT}
 </body>
 </html>"""
 

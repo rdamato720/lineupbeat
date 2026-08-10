@@ -3115,5 +3115,63 @@ rdt('init','a2_jhraddsbuel0');
 rdt('track','PageVisit');
 </script>
 <!-- End Reddit Pixel -->
+
+<script>
+(function(){
+  var sent = {};
+  // One of each per page. A filter used once is the signal; used twenty
+  // times it is the same signal, more expensively.
+  window.lbTrack = function(name, meta){
+    try {
+      if (sent[name]) return;
+      sent[name] = 1;
+      if (typeof rdt !== "function") return;   // blocked, or not loaded yet
+      rdt("track", name, meta || {});
+    } catch (e) { /* never break a page to measure it */ }
+  };
+
+  // How many pages this visit has seen. sessionStorage rather than a
+  // cookie: it dies with the tab, which is the right lifetime for "did
+  // they look at a second thing".
+  try {
+    var n = (parseInt(sessionStorage.getItem("lb_pv") || "0", 10) || 0) + 1;
+    sessionStorage.setItem("lb_pv", String(n));
+    if (n >= 2) window.lbTrack("second_page_view", {pages: n});
+  } catch (e) {}
+
+  // Search, debounced. A keystroke is not a search; a pause is.
+  var timer;
+  document.addEventListener("input", function(e){
+    var el = e.target;
+    if (!el || el.type !== "search") return;
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      if ((el.value || "").trim().length >= 2) window.lbTrack("Search");
+    }, 900);
+  }, true);
+
+  // Filters, sorting and row expansion, from the attributes the pages
+  // already use. Catching them here rather than in five builders means a
+  // new control is measured the day it ships.
+  document.addEventListener("click", function(e){
+    var b = e.target && e.target.closest &&
+            e.target.closest("button, [role=button]");
+    if (!b) return;
+    var d = b.dataset || {};
+    if ("sort" in d) return window.lbTrack("sort_use", {sort: d.sort});
+    if ("pos" in d || "val" in d || "fmt" in d || "p" in d || "s" in d ||
+        "w" in d || "f" in d)
+      return window.lbTrack("filter_use");
+    if (b.classList.contains("follow") || /follow/i.test(b.textContent || ""))
+      return window.lbTrack("follow_player");
+  }, true);
+
+  // An expanded row: the point somebody stops scanning and starts reading.
+  document.addEventListener("click", function(e){
+    var tr = e.target && e.target.closest && e.target.closest("tr.r, tr.tr");
+    if (tr) window.lbTrack("player_expand");
+  }, true);
+})();
+</script>
 </body>
 </html>
