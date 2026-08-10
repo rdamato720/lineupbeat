@@ -199,6 +199,15 @@ ORGANISATION = {
     "description": ("Local NFL beat reporting matched to fantasy relevant "
                     "players, with projections, ADP, coaching and schedule "
                     "data."),
+    # A contact point in the schema as well as the footer. Search engines
+    # weigh being able to identify who is behind a site, and a data site
+    # that cannot be written to is harder to trust.
+    "email": "hello@lineupbeat.com",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@lineupbeat.com",
+        "contactType": "customer support",
+    },
 }
 
 
