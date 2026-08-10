@@ -22,6 +22,21 @@ from .registry import Registry
 from .resolve import Resolver
 from .store import Store
 
+ROOT = Path(__file__).resolve().parent.parent
+
+
+def _pslug(s):
+    """Name to slug, suffixes removed.
+
+    The projection sheet and the roster disagree about suffixes -- "Luther
+    Burden III" against "Luther Burden" -- so both sides are normalised the
+    same way rather than hoping they match.
+    """
+    import re as _re
+    s = _re.sub(r"[^\w\s-]", "", (s or "").lower())
+    s = _re.sub(r"\b(jr|sr|ii|iii|iv|v)\b", "", s)
+    return _re.sub(r"[\s_]+", "-", s).strip("-")
+
 
 def _client(stub: bool):
     if stub:
@@ -87,80 +102,82 @@ def cmd_export(args):
     draft_season = (in_draft_season() if getattr(args, "adp", "auto") == "auto"
                     else args.adp == "on")
 
-    # Projections, if scripts/project3.py --publish has been run. Joined on
-    # Sleeper id so a projection lands on the same player the news does.
-    import sqlite3 as _sq
+    # Projections, from the same workbook the projections page is built
+    # from.
+    #
+    # This read published_snapshot -> run_projections, which is the engine's
+    # output and exists only where the engine has been run. CI has neither
+    # table, so the wire's player cards carried no projection in production
+    # while the standalone board showed all 614 -- two sources for one
+    # number, and only one of them deployed.
+    #
+    # The workbook is committed, so both now read it and cannot disagree.
     proj = {}
+    _wb = ROOT / "data" / "projections.xlsx"
     try:
-        # The published snapshot, not a staging table.
-        #
-        # This read `projections`, which is now `projection_staging`: mutable,
-        # overwritten by every import, and never validated. The site was
-        # therefore showing whatever was last loaded rather than what was
-        # published, or nothing at all once the table was renamed.
-        #
-        # published_snapshot names the run; run_projections holds its rows;
-        # points are computed from the raw line rather than stored, so there
-        # is nowhere for a stale number to disagree with the stat line.
-        live = store.conn.execute(
-            "SELECT run_id, season FROM published_snapshot "
-            "ORDER BY season DESC LIMIT 1").fetchone()
-        if not live:
-            raise _sq.OperationalError("nothing published")
-        cur = store.conn.execute("""
-            SELECT r.player_id, r.player, r.position, r.team,
-                   r.pass_att, r.completions, r.pass_yds, r.pass_td, r.ints,
-                   r.targets, r.rec, r.rec_yds, r.rec_td,
-                   r.rush_att, r.rush_yds, r.rush_td, r.fumbles,
-                   r.season
-            FROM run_projections r
-            WHERE r.run_id = ?
-              AND (r.is_residual IS NULL OR r.is_residual = 0)
-              AND r.team NOT IN ('FA','FA/UNK','UNK','')
-            """, (live["run_id"],))
-        def _pts(row, fmt):
-            g = lambda k: float(row[k] or 0)
-            v = (g("pass_yds") / 25 + g("pass_td") * 4 - g("ints") * 2
-                 + (g("rush_yds") + g("rec_yds")) / 10
-                 + (g("rush_td") + g("rec_td")) * 6 - g("fumbles") * 2)
-            if fmt == "ppr":
-                v += g("rec")
-            elif fmt == "half":
-                v += g("rec") * 0.5
-            return round(v, 1)
+        if _wb.exists():
+            import openpyxl, re as _re
+            _slug = _pslug
 
-        rows = [dict(r) for r in cur]
-        # Rank within position, on full precision, for PPR.
-        by_pos = {}
-        for r in rows:
-            r["_ppr"] = _pts(r, "ppr")
-            by_pos.setdefault(r["position"], []).append(r)
-        for pos, group in by_pos.items():
-            group.sort(key=lambda x: (-x["_ppr"], str(x["player_id"])))
-            for i, r in enumerate(group, 1):
-                r["_rank"] = i
+            # Keyed by name slug, because the registry is built per sport
+            # further down and this runs before it. The roster id is
+            # attached at the point the players are written out.
+            book = openpyxl.load_workbook(_wb, data_only=True)
+            for sheet in book.sheetnames:
+                pos = sheet.split()[0].upper()
+                if pos not in ("QB", "RB", "WR", "TE"):
+                    continue
+                ws = book[sheet]
+                head = [str(c.value or "").strip().lower() for c in ws[1]]
+                def col(*names):
+                    for n in names:
+                        if n in head:
+                            return head.index(n)
+                    return None
+                ci = {"player": col("player", "name"),
+                      "rank": col("rank"),
+                      "ppr": col("ppr", "ppr points"),
+                      "half": col("half ppr", "half"),
+                      "std": col("non-ppr", "standard", "std"),
+                      "rec": col("receptions", "rec"),
+                      "recyd": col("rec yds", "receiving yards"),
+                      "ruyd": col("rush yds", "rushing yards")}
+                for row in ws.iter_rows(min_row=2, values_only=True):
+                    if ci["player"] is None or ci["player"] >= len(row):
+                        continue
+                    nm = row[ci["player"]]
+                    if not nm:
+                        continue
+                    key = _slug(str(nm))
+                    if key in proj:
+                        continue
+                    def val(k, cast=float):
+                        i = ci.get(k)
+                        if i is None or i >= len(row) or row[i] is None:
+                            return None
+                        try:
+                            return cast(row[i])
+                        except (TypeError, ValueError):
+                            return None
+                    ppr = val("ppr")
+                    if ppr is None:
+                        continue
+                    proj[key] = {
+                        "ppr": round(ppr, 1),
+                        "half": round(val("half") or ppr, 1),
+                        "std": round(val("std") or ppr, 1),
+                        "healthy": round(ppr, 1),
+                        "adjusted": None, "games": None,
+                        "floor": None, "ceil": None,
+                        "rank": val("rank", int),
+                        "rec": round(val("rec") or 0, 1),
+                        "recyd": round(val("recyd") or 0),
+                        "ruyd": round(val("ruyd") or 0),
+                        "adj": None, "trace": [], "season": 2026,
+                    }
+    except Exception as exc:
+        print(f"  projections unavailable: {exc}")
 
-        for r in rows:
-            # player_id is already the roster id the wire keys on, so the
-            # projection lands on the same player the news does without a
-            # second identifier to keep in sync.
-            key = r["player_id"]
-            if key in proj:
-                continue
-            proj[key] = {
-                "ppr": r["_ppr"], "half": _pts(r, "half"),
-                "std": _pts(r, "standard"),
-                "healthy": r["_ppr"], "adjusted": None, "games": None,
-                "floor": None, "ceil": None,
-                "rank": r["_rank"],
-                "rec": round(float(r["rec"] or 0), 1),
-                "recyd": round(float(r["rec_yds"] or 0)),
-                "ruyd": round(float(r["rush_yds"] or 0)),
-                "adj": None, "trace": [],
-                "season": (r["season"] or live["season"]) + 0,
-            }
-    except _sq.OperationalError:
-        pass
     if proj:
         print(f"  {len(proj)} projections attached")
     if not draft_season:
@@ -179,7 +196,12 @@ def cmd_export(args):
              "status": p.injury_status, "exp": p.years_exp,
              # Zeroed outside draft season so the site never has to decide.
              "adp": p.adp if draft_season else 0.0,
-             **({"proj": proj[p.id]} if p.id in proj else {})}
+             # Matched on the name, since the workbook has no roster id.
+             # Suffixes differ between the sheet and the roster -- the board
+             # says Luther Burden III and the roster says Luther Burden --
+             # so the slug is stripped of them on both sides.
+             **({"proj": proj[_pslug(p.name)]}
+                if _pslug(p.name) in proj else {})}
             for p in reg.players
         )
 
