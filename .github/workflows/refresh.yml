@@ -5,6 +5,11 @@ on:
   # workflow_dispatch. Both running meant two runs where
   # one was intended, and twice the API spend.
   workflow_dispatch:
+    inputs:
+      skip_fetch:
+        description: "Skip the wire fetch and only rebuild pages"
+        type: boolean
+        default: false
 
 concurrency:
   group: refresh
@@ -69,7 +74,14 @@ jobs:
             python scripts/import_schedule.py --seasons 2025 2026 || true
           fi
 
-          python -m beatwire.cli run    --sport nfl
+          # The fetch is the only part that costs money, so a manual run
+          # testing a page change can skip it and rebuild from whatever the
+          # database already holds.
+          if [ "${{ inputs.skip_fetch }}" = "true" ]; then
+            echo "  skip_fetch: not fetching, rebuilding pages only"
+          else
+            python -m beatwire.cli run    --sport nfl
+          fi
 
           # Everything still unmatched gets another try against the roster as
           # it stands now. No model call, so this is free.
@@ -82,6 +94,13 @@ jobs:
           # Strength of schedule, recomputed from whatever has been played.
           # Before build_pages, because the hub links to it.
           python scripts/schedule_strength.py --season 2026 --quiet || true
+          # Player pages first: the boards link to
+          # /nfl/<slug>/ and only do so where that directory
+          # exists. Running this last is why the live board
+          # shipped 614 plain names while a laptop linked
+          # 603 -- a laptop had the directories already.
+          python scripts/build_pages.py --base https://lineupbeat.com
+
           python scripts/build_sos.py || true
 
           # Projections, from the committed workbook. site/nfl is gitignored
@@ -105,7 +124,10 @@ jobs:
           # read twice rather than two that happen to agree today.
           python scripts/build_draft_value.py || true
 
+          # Again, so the projection chips read the board that
+          # was just rebuilt.
           python scripts/build_pages.py --base https://lineupbeat.com
+
 
       # Publishes even if preflight warns, but records the verdict in the log
       # so a slow degradation shows up in run history instead of silently.
