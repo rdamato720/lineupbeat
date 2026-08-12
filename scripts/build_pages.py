@@ -225,7 +225,10 @@ PAGE_CSS = """
   .crumbs a{display:inline-flex;align-items:center;min-height:44px;
     padding:0 .3rem}
   .crumbs b{display:inline-flex;align-items:center;min-height:44px}
-  .finder input{min-height:44px}
+  @media (max-width:760px){
+  .finder input{min-height:44px; font-size:16px}
+}
+.finder input{min-height:44px}
 }
 .crumbs a:hover{color:var(--signal)}
 .crumbs span{color:var(--rule)}
@@ -298,6 +301,12 @@ PAGE_CSS = """
 .pjmore{margin:.8rem 0 0; font-size:.76rem; color:var(--quiet)}
 .pjmore a{color:var(--quiet); text-decoration:underline}
 .pjmore a:hover{color:__ACCENT__}
+/* Inline links in prose need a thumb-sized hit area without opening up the
+   paragraph: the box grows and a negative margin pulls the line back. */
+@media (max-width:760px){
+  .pjmore a, .meta a{display:inline-block; min-height:44px;
+    line-height:44px; margin-top:-11px; margin-bottom:-11px}
+}
 .pjnote{margin:.8rem 0 0; font-size:.76rem; color:var(--quiet)}
 .pjnote a{color:var(--quiet); text-decoration:underline}
 .pjnote a:hover{color:__ACCENT__}
@@ -367,6 +376,12 @@ PAGE_CSS = """
 .pjmore{margin:.8rem 0 0; font-size:.76rem; color:var(--quiet)}
 .pjmore a{color:var(--quiet); text-decoration:underline}
 .pjmore a:hover{color:__ACCENT__}
+/* Inline links in prose need a thumb-sized hit area without opening up the
+   paragraph: the box grows and a negative margin pulls the line back. */
+@media (max-width:760px){
+  .pjmore a, .meta a{display:inline-block; min-height:44px;
+    line-height:44px; margin-top:-11px; margin-bottom:-11px}
+}
 .pjnote{margin:.8rem 0 0; font-size:.76rem; color:var(--quiet)}
 .pjnote a{color:var(--quiet); text-decoration:underline}
 .pjnote a:hover{color:__ACCENT__}
@@ -1424,6 +1439,26 @@ def durability_page(conn, base):
 
 
 ABOUT_CSS = """
+/* Inline links in prose, on a phone.
+   A link inside a sentence should not be 44px tall -- that would break the
+   line. What it needs is a bigger hit area than its text box, which extra
+   vertical padding gives without moving anything, since the line box is
+   already taller than the glyphs. */
+@media (max-width:760px){
+  .abwrap p a, .abcard h3 a, .pjmore a, .dvonly a, .bltrust a,
+  .abwho dd a, .dvfoot p a, .dvfoot a, .pjmore > a, .meta a,
+  .ssmeth p a, .cofoot a, .faq p a{
+    display:inline-block;
+    min-height:44px;
+    line-height:44px;
+    /* The box grows, the text stays put: a negative margin pulls the line
+       back to where it was so the paragraph does not open up. */
+    margin-top:-11px;
+    margin-bottom:-11px;
+    vertical-align:baseline;
+  }
+}
+
 .abwrap{max-width:1080px; margin:0 auto; padding:0 1rem 4rem}
 .abhead h1{font-size:1.7rem; margin:1.6rem 0 0; letter-spacing:-.01em;
   font-family:var(--text)}

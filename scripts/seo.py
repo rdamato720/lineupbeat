@@ -43,7 +43,7 @@ SITE_URL = "https://lineupbeat.com"
 # fact-checked badge because there is no fact-checking process -- inventing
 # either would be the one kind of claim this site is built not to make.
 # When a review step exists, add REVIEWER and the line appears.
-AUTHOR = "Ralph Damato"
+AUTHOR = "Ralph D\u2019Amato"
 AUTHOR_ROLE = "Built and maintains LineupBeat"
 REVIEWER = None          # set when somebody actually reviews it
 METHOD = "LineupBeat projection engine, version 1"
@@ -308,6 +308,26 @@ def byline_html(updated, data_through=None, method=None):
 
 
 BYLINE_CSS = """
+/* Inline links in prose, on a phone.
+   A link inside a sentence should not be 44px tall -- that would break the
+   line. What it needs is a bigger hit area than its text box, which extra
+   vertical padding gives without moving anything, since the line box is
+   already taller than the glyphs. */
+@media (max-width:760px){
+  .abwrap p a, .abcard h3 a, .pjmore a, .dvonly a, .bltrust a,
+  .abwho dd a, .dvfoot p a, .dvfoot a, .pjmore > a, .meta a,
+  .ssmeth p a, .cofoot a, .faq p a{
+    display:inline-block;
+    min-height:44px;
+    line-height:44px;
+    /* The box grows, the text stays put: a negative margin pulls the line
+       back to where it was so the paragraph does not open up. */
+    margin-top:-11px;
+    margin-bottom:-11px;
+    vertical-align:baseline;
+  }
+}
+
 /* ---- byline ----
    Small, factual, above the data. It is not a masthead; it is the four
    things somebody needs to decide whether to believe the numbers under

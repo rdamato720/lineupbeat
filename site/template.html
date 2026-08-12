@@ -81,6 +81,12 @@ a{color:inherit}
 .tbrow .views{border-top:0; flex:0 0 auto}
 .tbrow .finder{flex:1; min-width:0; padding:0; max-width:26rem; margin-left:auto}
 .tbrow .finder input{padding:.42rem .7rem; font-size:.92rem}
+/* 16px on a phone, or iOS zooms the page on focus and the reader has to
+   pinch back out to see what he was searching. */
+@media (max-width:760px){
+  .finder input{min-height:44px; font-size:16px}
+  .trend{min-height:44px}
+}
 .tbrow .hits{top:2.2rem}
 .tbrow .stamp{flex:0 0 auto; margin-left:0}
 @media (max-width:900px){
