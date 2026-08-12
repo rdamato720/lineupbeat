@@ -61,28 +61,31 @@ def _post(path: str, body: dict, key: str, timeout: int = 25) -> dict:
 
 
 def extract_media(tw: dict) -> list[dict]:
-    """Video and photo, if the payload carries them.
+    """Video and photo from Sorsa's entities list.
 
-    Written defensively because Sorsa's docs say fields can be added at any
-    time, and a media key that does not exist yet should mean no media
-    rather than a traceback in the middle of a run.
+    Sorsa flattens what twitterapi nests: a list of {type, link, preview}
+    rather than extendedEntities.media with media_url_https. Same
+    information, different names, and reading it with the old names
+    returned nothing at all -- the video section simply stopped updating
+    and said so only by going stale.
+
+    As before, the thumbnail and the permalink, never the mp4. Re-hosting a
+    beat writer's clip is the fastest way to earn a takedown.
     """
     out = []
-    media = (tw.get("media") or tw.get("extended_entities", {}).get("media")
-             or [])
-    if not isinstance(media, list):
-        return out
-    for m in media:
-        if not isinstance(m, dict):
+    for e in (tw.get("entities") or []):
+        if not isinstance(e, dict):
             continue
-        kind = m.get("type")
+        kind = (e.get("type") or "").lower()
         if kind not in ("video", "animated_gif", "photo"):
             continue
+        thumb = e.get("preview") or e.get("link") or ""
+        if not thumb:
+            continue
         out.append({
-            "kind": "video" if kind != "photo" else "photo",
-            "thumb": m.get("preview_image_url") or m.get("media_url_https")
-            or m.get("url") or "",
-            "duration": m.get("duration_millis"),
+            "kind": "photo" if kind == "photo" else "video",
+            "thumb": thumb,
+            "duration": e.get("duration_millis"),
         })
     return out
 

@@ -1251,7 +1251,7 @@ sources:
   - BAL
 - id: nfl-cin-tapi-conway
   kind: twitterapi
-  handle: KelseyKConway
+  handle: KelseyLConway
   name: Kelsey Conway
   outlet: Cincinnati Enquirer
   teams:
@@ -1438,20 +1438,6 @@ sources:
   outlet: Fort Worth Star-Telegram
   teams:
   - DAL
-- id: nfl-dal-tapi-slater
-  kind: twitterapi
-  handle: JaneSlaterNFL
-  name: Jane Slater
-  outlet: NFL Network
-  teams:
-  - DAL
-- id: nfl-nyg-tapi-duggan
-  kind: twitterapi
-  handle: DDugganNY
-  name: Dan Duggan
-  outlet: The Athletic
-  teams:
-  - NYG
 - id: nfl-nyg-tapi-raanan
   kind: twitterapi
   handle: JordanRaanan
@@ -1468,7 +1454,7 @@ sources:
   - NYG
 - id: nfl-nyg-tapi-dunleavy
   kind: twitterapi
-  handle: ryandunleavy
+  handle: rydunleavy
   name: Ryan Dunleavy
   outlet: NY Post
   teams:
@@ -1487,13 +1473,6 @@ sources:
   outlet: PHLY Sports
   teams:
   - PHI
-- id: nfl-was-tapi-standig
-  kind: twitterapi
-  handle: ByBenStandig
-  name: Ben Standig
-  outlet: The Athletic
-  teams:
-  - WAS
 - id: nfl-was-tapi-jhabvala
   kind: twitterapi
   handle: NickiJhabvala
@@ -1594,7 +1573,7 @@ sources:
   - ATL
 - id: nfl-atl-tapi-raimondi
   kind: twitterapi
-  handle: Marc_Raimondi
+  handle: marcraimondi
   name: Marc Raimondi
   outlet: ESPN
   teams:
@@ -1629,7 +1608,7 @@ sources:
   - CAR
 - id: nfl-no-tapi-terrell
   kind: twitterapi
-  handle: ByKatherineTerrell
+  handle: Kat_Terrell
   name: Katherine Terrell
   outlet: ESPN
   teams:
