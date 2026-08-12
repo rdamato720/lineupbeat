@@ -595,6 +595,7 @@ def build_html(boards, meta, css, header, footer, formats):
     {when}
   </div>
 
+{seo.byline_html(built, data_through=(longform(meta["end"]) if meta.get("end") else None))}
   <div class="dvrow">
     <span class="dvlab">Position</span>
     <button class="dvtab" data-pos="ALL" aria-pressed="true">All</button>
@@ -879,7 +880,8 @@ def main():
               "description": desc,
               "url": f"https://lineupbeat.com/{SPORT}/draft-value/",
               "dateModified": built.strftime("%Y-%m-%d"),
-              "creator": {"@type": "Organization", "name": "LineupBeat"}}
+              "creator": {"@type": "Organization", "name": "LineupBeat"},
+              **seo.dataset_extras(temporal="2026")}
     crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList",
               "itemListElement": [
                   {"@type": "ListItem", "position": 1, "name": "LineupBeat",
@@ -924,7 +926,7 @@ def main():
 <meta property="og:url" content="https://lineupbeat.com/{SPORT}/draft-value/">
 <meta property="og:type" content="website">
 <script type="application/ld+json">{ldjson}</script>
-<style>{css}{PAGE_CSS}{seo.RELATED_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}

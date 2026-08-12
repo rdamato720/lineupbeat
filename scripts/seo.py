@@ -34,6 +34,20 @@ import json
 
 SITE_URL = "https://lineupbeat.com"
 
+# ---------------------------------------------------------------- byline
+#
+# Who made this, how, and when.
+#
+# Every field here is a fact somebody could check. There is no "reviewed
+# by" line because nobody reviews the board before it publishes, and no
+# fact-checked badge because there is no fact-checking process -- inventing
+# either would be the one kind of claim this site is built not to make.
+# When a review step exists, add REVIEWER and the line appears.
+AUTHOR = "Ralph Damato"
+AUTHOR_ROLE = "Built and maintains LineupBeat"
+REVIEWER = None          # set when somebody actually reviews it
+METHOD = "LineupBeat projection engine, version 1"
+
 # Cloudflare Web Analytics.
 #
 # Defined once so the four page builders and the homepage cannot drift into
@@ -267,6 +281,78 @@ def faq_schema(pairs):
     }
 
 
+def byline_html(updated, data_through=None, method=None):
+    """The block a reader looks at to decide whether to believe a number.
+
+    A named person, a stated method, and two dates that mean different
+    things: when the underlying data ends, and when the page was last
+    rebuilt. Publishing one date for both invites the reader to assume the
+    market moved when only the build did.
+    """
+    rows = [f'<div><dt>Projections by</dt>'
+            f'<dd><span itemprop="author">{esc(AUTHOR)}</span></dd></div>']
+    if REVIEWER:
+        rows.append(f'<div><dt>Reviewed by</dt><dd>{esc(REVIEWER)}</dd></div>')
+    rows.append(f'<div><dt>Method</dt>'
+                f'<dd>{esc(method or METHOD)}</dd></div>')
+    if data_through:
+        rows.append(f'<div><dt>Data through</dt>'
+                    f'<dd>{esc(data_through)}</dd></div>')
+    rows.append(f'<div><dt>Last updated</dt>'
+                f'<dd><time datetime="{updated:%Y-%m-%d}">'
+                f'{updated:%B %-d, %Y}</time></dd></div>')
+    return (f'\n  <dl class="byline">\n    {"".join(rows)}\n'
+            f'    <div class="bltrust">'
+            f'<a href="/about/">Why trust LineupBeat</a></div>\n'
+            f'  </dl>\n')
+
+
+BYLINE_CSS = """
+/* ---- byline ----
+   Small, factual, above the data. It is not a masthead; it is the four
+   things somebody needs to decide whether to believe the numbers under
+   it. */
+.byline{display:flex; gap:1.4rem; flex-wrap:wrap; align-items:baseline;
+  margin:1rem 0 0; padding:.7rem 0; border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule)}
+.byline div{display:flex; gap:.35rem; align-items:baseline}
+.byline dt{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.06em; font-size:.62rem; color:var(--quiet)}
+.byline dd{margin:0; font-size:.8rem; color:var(--ink)}
+.bltrust{margin-left:auto}
+.bltrust a{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.06em; font-size:.66rem; color:var(--signal);
+  text-decoration:none; border-bottom:1px solid var(--rule)}
+.bltrust a:hover{border-color:var(--signal)}
+@media (max-width:700px){
+  .byline{gap:.5rem 1.1rem}
+  .bltrust{margin-left:0; width:100%; margin-top:.3rem}
+}
+"""
+
+
+def dataset_extras(temporal=None, spatial="United States"):
+    """The fields that make a Dataset citable rather than merely present.
+
+    A model deciding whether to attribute a number wants to know who
+    published it, when, under what terms, and whether it may be reused.
+    Leaving those blank does not make the answer safer -- it makes the
+    citation less likely, because an unattributed number is easier to
+    restate than to credit.
+    """
+    out = {
+        "publisher": {"@id": f"{SITE_URL}/#org"},
+        "isAccessibleForFree": True,
+        "creditText": "LineupBeat",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "spatialCoverage": spatial,
+        "inLanguage": "en-US",
+    }
+    if temporal:
+        out["temporalCoverage"] = temporal
+    return out
+
+
 def itemlist_schema(name, url, items):
     """A ranking, declared as one.
 
@@ -308,9 +394,19 @@ ORGANISATION = {
     # weigh being able to identify who is behind a site, and a data site
     # that cannot be written to is harder to trust.
     "email": "hello@lineupbeat.com",
+    # Who to name when a number from this site is quoted.
+    "alternateName": "LineupBeat Fantasy Football",
+    "knowsAbout": ["fantasy football", "NFL", "fantasy football projections",
+                   "average draft position", "NFL injuries",
+                   "NFL strength of schedule"],
     "contactPoint": {
         "@type": "ContactPoint",
         "email": "hello@lineupbeat.com",
+    # Who to name when a number from this site is quoted.
+    "alternateName": "LineupBeat Fantasy Football",
+    "knowsAbout": ["fantasy football", "NFL", "fantasy football projections",
+                   "average draft position", "NFL injuries",
+                   "NFL strength of schedule"],
         "contactType": "customer support",
     },
 }

@@ -338,6 +338,7 @@ def build_html(rows, css, header, footer, verified):
       <span class="codate">Reviewed {esc(verified)}</span></p>
   </div>
 
+{seo.byline_html(built, method="Staff and play-caller research, reviewed by hand")}
   <div class="cocards">
     <div class="cocard">
       <span class="cok">The play caller</span>
@@ -558,6 +559,7 @@ def main():
         "url": f"https://lineupbeat.com/{SPORT}/coaching/",
         "dateModified": built.strftime("%Y-%m-%d"),
         "creator": {"@type": "Organization", "name": "LineupBeat"},
+        **seo.dataset_extras(temporal="2026"),
     }
     crumbs = {
         "@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -592,7 +594,7 @@ def main():
 <meta property="og:url" content="https://lineupbeat.com/{SPORT}/coaching/">
 <meta property="og:type" content="website">
 <script type="application/ld+json">{ldjson}</script>
-<style>{css}{PAGE_CSS}{seo.RELATED_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}

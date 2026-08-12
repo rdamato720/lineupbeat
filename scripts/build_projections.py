@@ -673,6 +673,7 @@ def build_html(board, links, css, header, footer, season, source_name, notes):
     </div>
   </div>
 
+{seo.byline_html(built)}
   <div class="boardnotes">
     <span class="pbsublab">By position</span>
     {"".join(f'<a class="posnav" href="/{SPORT}/projections/{p.lower()}/">'
@@ -808,6 +809,7 @@ draw();
         "url": f"https://lineupbeat.com/{SPORT}/projections/",
         "dateModified": built.strftime("%Y-%m-%d"),
         "creator": {"@type": "Organization", "name": "LineupBeat"},
+        **seo.dataset_extras(temporal=str(season)),
         "variableMeasured": ["PPR points", "Half PPR points",
                              "Standard points", "Positional rank"],
     }
@@ -864,7 +866,7 @@ draw();
 <meta property="og:url" content="https://lineupbeat.com/{SPORT}/projections/">
 <meta property="og:type" content="website">
 <script type="application/ld+json">{ldjson}</script>
-<style>{css}{PAGE_CSS}{seo.RELATED_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}
@@ -975,7 +977,8 @@ def write_position_pages(board, links, css, header, footer, season,
                   "description": desc,
                   "url": f"{seo.SITE_URL}/{SPORT}/projections/{pos.lower()}/",
                   "dateModified": built.strftime("%Y-%m-%d"),
-                  "creator": {"@type": "Organization", "name": "LineupBeat"}}
+                  "creator": {"@type": "Organization", "name": "LineupBeat"},
+                  **seo.dataset_extras(temporal=str(season))}
         crumbs = seo.breadcrumbs([
             ("LineupBeat", "/"), ("Fantasy data", f"/{SPORT}/data/"),
             ("Projections", f"/{SPORT}/projections/"),
@@ -1055,7 +1058,7 @@ def write_position_pages(board, links, css, header, footer, season,
 <meta property="og:type" content="website">
 <script type="application/ld+json">{seo.graph(
     schema, crumbs, seo.faq_schema(faq), seo.ORGANISATION, itemlist)}</script>
-<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{POS_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.BYLINE_CSS}{POS_CSS}</style>
 </head>
 <body>
 {header}

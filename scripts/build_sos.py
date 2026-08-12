@@ -342,6 +342,7 @@ def build_html(data, css, header, footer):
       <span class="ssdate">{esc(badge)}</span></p>
   </div>
 
+{seo.byline_html(built, method="Opponent record and fantasy points allowed, by position")}
   <div class="sscards">
     <div class="sscard">
       <span class="sck">Opp win %</span>
@@ -677,6 +678,7 @@ def main():
         "url": f"https://lineupbeat.com/{SPORT}/strength-of-schedule/",
         "dateModified": built.strftime("%Y-%m-%d"),
         "creator": {"@type": "Organization", "name": "LineupBeat"},
+        **seo.dataset_extras(temporal=str(season)),
         "variableMeasured": ["Opponent win percentage",
                              "Fantasy points allowed per game by position"],
     }
@@ -718,7 +720,7 @@ def main():
       content="https://lineupbeat.com/{SPORT}/strength-of-schedule/">
 <meta property="og:type" content="website">
 <script type="application/ld+json">{ldjson}</script>
-<style>{css}{PAGE_CSS}{seo.RELATED_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}

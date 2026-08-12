@@ -43,6 +43,9 @@ from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import seo
+
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -1316,6 +1319,13 @@ def durability_page(conn, base):
         "@context": "https://schema.org",
         "@graph": [
             {"@type": "Dataset",
+            "publisher": {"@id": "https://lineupbeat.com/#org"},
+            "isAccessibleForFree": True,
+            "creditText": "LineupBeat",
+            "license": "https://creativecommons.org/licenses/by/4.0/",
+            "spatialCoverage": "United States",
+            "temporalCoverage": "2018/2026",
+            "inLanguage": "en-US",
              "@id": f"{base}/{SPORT}/durability/#dataset",
              "name": "NFL player durability and availability by draft "
                      "position, 2026",
@@ -1410,6 +1420,169 @@ def durability_page(conn, base):
                     f'<style>{css}</style>'
                     f'<script>{FIND_JS}</script>'),
         body=body), "#C6F24E", "#C6F24E", section="data")
+
+
+
+ABOUT_CSS = """
+.abwrap{max-width:1080px; margin:0 auto; padding:0 1rem 4rem}
+.abhead h1{font-size:1.7rem; margin:1.6rem 0 0; letter-spacing:-.01em;
+  font-family:var(--text)}
+.ablede{font-size:1rem; line-height:1.65; color:var(--ink); max-width:70ch;
+  margin:.8rem 0 0}
+.abwrap h2{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.8rem; color:var(--quiet);
+  margin:2.2rem 0 .6rem}
+.abwrap p{font-size:.92rem; line-height:1.7; color:var(--quiet);
+  max-width:70ch; margin:0 0 .9rem}
+.abwrap p b{color:var(--ink)}
+.abwrap p a{color:var(--quiet); text-decoration:underline}
+.abwrap p a:hover{color:var(--signal)}
+.abgrid{display:grid; grid-template-columns:repeat(2, 1fr); gap:.7rem;
+  margin:.4rem 0 0}
+@media (max-width:760px){ .abgrid{grid-template-columns:1fr} }
+.abcard{background:var(--card); border:1px solid var(--rule);
+  border-radius:8px; padding:.85rem 1rem}
+.abcard h3{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.05em; font-size:.7rem; color:var(--signal); margin:0}
+.abcard p{margin:.35rem 0 0; font-size:.84rem; line-height:1.55}
+.abwho{display:flex; gap:1rem; align-items:baseline; flex-wrap:wrap;
+  background:var(--card); border:1px solid var(--rule); border-radius:8px;
+  padding:.9rem 1rem; margin:.4rem 0 0}
+.abwho dt{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.06em; font-size:.62rem; color:var(--quiet)}
+.abwho dd{margin:0 1.4rem 0 .3rem; font-size:.86rem; color:var(--ink)}
+"""
+
+
+def about_page(base, built):
+    """Who is behind this, and how to check it.
+
+    The single page that most affects whether a search engine treats a site
+    as trustworthy, and the one thing LineupBeat did not have. Everything
+    on it is either verifiable on the site itself or a plain statement of
+    process -- no reviewer who does not review, no badge for a check nobody
+    runs.
+    """
+    body = f"""<main class="abwrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">LineupBeat</a><span>/</span><b>About</b></nav>
+
+  <div class="abhead">
+    <h1>Why trust LineupBeat</h1>
+    <p class="ablede">Every number here can be checked, and most of them
+      link to the working behind them. This page says who makes them, how,
+      and what happens when one is wrong.</p>
+  </div>
+
+  <h2>Who makes it</h2>
+  <dl class="abwho">
+    <div><dt>Built and maintained by</dt><dd>{esc(seo.AUTHOR)}</dd></div>
+    <div><dt>Contact</dt>
+      <dd><a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a></dd></div>
+  </dl>
+  <p style="margin-top:.9rem">LineupBeat is independent. It is not owned by
+    a media company, it takes no payment for coverage or placement, and no
+    projection has ever been altered because somebody asked.</p>
+
+  <h2>Where the information comes from</h2>
+  <div class="abgrid">
+    <div class="abcard"><h3>Beat reporting</h3>
+      <p>Local reporters in all 32 NFL markets. Every claim is paraphrased
+         in our own words and linked back to whoever filed it. We never
+         reproduce their copy, and the reporter is named on every
+         item.</p></div>
+    <div class="abcard"><h3>Projections</h3>
+      <p>Built by hand from projected stat lines, then converted to points
+         using standard scoring. The stat line is shown under every total,
+         so the number can be checked rather than trusted.</p></div>
+    <div class="abcard"><h3>Market data</h3>
+      <p>Average draft position from
+         <a href="https://fantasyfootballcalculator.com/adp">Fantasy
+         Football Calculator</a>, with the sample size and date range shown
+         on the page.</p></div>
+    <div class="abcard"><h3>Statistics</h3>
+      <p>Rosters and depth charts from Sleeper. Play-by-play, schedules and
+         historical stats from nflverse, back to 2018.</p></div>
+  </div>
+
+  <h2>What we do not do</h2>
+  <p><b>We do not guess at a name.</b> A mention we cannot match to a
+    player with confidence is shown unlinked and marked unmatched, rather
+    than attached to whoever is closest. A wrong match is worse than an
+    admitted gap.</p>
+  <p><b>We do not double count.</b> Coaching, durability, schedule and
+    projections are separate pages answering separate questions. If a
+    coaching change already moved a projection, it is not applied a second
+    time on the draft value page.</p>
+  <p><b>We do not use promotional language.</b> No must-draft, no
+    can't-miss, no league-winner. A player is priced favourably or he is
+    not, and the number says which.</p>
+  <p><b>We do not claim more than we do.</b> There is no fact-checking
+    department and no review board, so this page does not display a badge
+    for either. When a review step exists, it will be named here with the
+    person who does it.</p>
+
+  <h2>When we get it wrong</h2>
+  <p>Projections are forecasts and some of them will be wrong; that is what
+    a forecast is. What should not be wrong is a fact: a player's team, a
+    reporter's name, a game already played, an ADP that disagrees with its
+    own source.</p>
+  <p>If you find one, write to
+    <a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a>. Factual
+    errors are corrected at the next build, which is usually within the
+    hour. A projection you disagree with is not an error, but tell us
+    anyway &mdash; the disagreements are the interesting part.</p>
+
+  <h2>How current it is</h2>
+  <p>The wire updates through the day. Rosters and average draft position
+    refresh daily. Projections change when the underlying board is revised,
+    and every data page shows its own update date in
+    <b>Eastern time</b>, because that is the time zone the league runs
+    on.</p>
+
+  <h2>Reading the data</h2>
+  <div class="abgrid">
+    <div class="abcard"><h3><a href="/{SPORT}/projections/">Projections</a></h3>
+      <p>Full-season points in three scoring formats, with the stat line
+         behind every total.</p></div>
+    <div class="abcard"><h3><a href="/{SPORT}/draft-value/">ADP &amp; draft value</a></h3>
+      <p>Where the market drafts a player against where our board ranks
+         him, as a gap you can check.</p></div>
+    <div class="abcard"><h3><a href="/{SPORT}/durability/">Durability</a></h3>
+      <p>Games actually played since 2018. Historical fact, no
+         projection.</p></div>
+    <div class="abcard"><h3><a href="/{SPORT}/strength-of-schedule/">Strength of schedule</a></h3>
+      <p>Opponent record and fantasy points allowed by position, with the
+         week-by-week schedule behind each rating.</p></div>
+    <div class="abcard"><h3><a href="/{SPORT}/coaching/">Offensive coaching</a></h3>
+      <p>Who calls each offence and which positions that favours. A
+         tiebreaker, not a ranking.</p></div>
+    <div class="abcard"><h3><a href="/{SPORT}/data/">All fantasy data</a></h3>
+      <p>Every board in one place.</p></div>
+  </div>
+</main>"""
+
+    title = "Why Trust LineupBeat | Methodology and Sources"
+    desc = ("Who builds LineupBeat, where the beat reporting, projections, "
+            "ADP and statistics come from, and how factual errors are "
+            "corrected.")
+    schema = {
+        "@type": "AboutPage",
+        "name": title,
+        "description": desc,
+        "url": f"{base}/about/",
+        "dateModified": built.strftime("%Y-%m-%d"),
+        "publisher": {"@id": f"{base}/#org"},
+        "mainEntity": {
+            "@type": "Person",
+            "name": seo.AUTHOR,
+            "description": seo.AUTHOR_ROLE,
+            "email": "hello@lineupbeat.com",
+            "worksFor": {"@id": f"{base}/#org"},
+        },
+    }
+    crumbs = seo.breadcrumbs([("LineupBeat", "/"), ("About", "/about/")])
+    return body, title, desc, seo.graph(schema, crumbs, seo.ORGANISATION)
 
 
 def main():
@@ -1571,10 +1744,45 @@ def main():
     # Do NOT disallow /data/. The site loads feed.json from there, and
     # blocking it does not stop indexing -- it stops Google rendering the
     # page, so the crawler sees an empty shell where a reader sees the wire.
-    robots = (f"User-agent: *\n"
-              f"Allow: /\n"
-              f"\n"
-              f"Sitemap: {base}/sitemap.xml\n")
+    # Named AI crawlers, allowed explicitly.
+    #
+    # "User-agent: *" already permits them, but these agents are checked by
+    # name and many sites block them, so being silent is ambiguous where
+    # being explicit is not. The bet: a projection cited in an answer is
+    # worth more than the pageview it replaces, because the citation is the
+    # thing a competitor cannot copy.
+    #
+    # Note the split. OAI-SearchBot and ChatGPT-User serve answers and can
+    # cite the site; GPTBot collects training data and returns nothing. All
+    # three are allowed here, but they are listed separately so that
+    # changing one's mind about training is a one-line edit.
+    ai_agents = [
+        ("OAI-SearchBot", "ChatGPT search, can cite us"),
+        ("ChatGPT-User", "fetches a page when somebody asks about it"),
+        ("GPTBot", "OpenAI training data"),
+        ("Google-Extended", "Gemini and AI Overviews"),
+        ("PerplexityBot", "Perplexity search"),
+        ("Perplexity-User", "Perplexity, user-initiated fetch"),
+        ("ClaudeBot", "Anthropic"),
+        ("Claude-SearchBot", "Claude search"),
+        ("anthropic-ai", "Anthropic, legacy agent name"),
+        ("Applebot-Extended", "Apple Intelligence"),
+        ("CCBot", "Common Crawl, which many models are built from"),
+        ("Amazonbot", "Amazon"),
+        ("Bytespider", "ByteDance"),
+        ("meta-externalagent", "Meta"),
+        ("cohere-ai", "Cohere"),
+        ("Diffbot", "Diffbot"),
+        ("Timpibot", "Timpi"),
+        ("Omgilibot", "Webz.io"),
+    ]
+    robots = "User-agent: *\nAllow: /\n\n"
+    robots += ("# Answer engines and AI crawlers, allowed by name.\n"
+               "# Our data is meant to be checkable, which means being "
+               "readable.\n\n")
+    for agent, why in ai_agents:
+        robots += f"# {why}\nUser-agent: {agent}\nAllow: /\n\n"
+    robots += f"Sitemap: {base}/sitemap.xml\n"
 
     if not args.dry_run:
         # The durability page goes FIRST, because the sitemap is built from
@@ -1593,6 +1801,26 @@ def main():
             print(f"  data hub written")
         except Exception as exc:
             print(f"  data hub skipped: {str(exc)[:70]}")
+
+        # Who is behind this. The page a search engine looks for and the
+        # one the site did not have.
+        try:
+            body, title, desc, ld = about_page(base, eastern_now())
+            page = PAGE.format(
+                title=esc(title), description=esc(desc),
+                canonical=esc(f"{base}/about/"), og_type="website",
+                og_image="",
+                structured=(f'<script type="application/ld+json">{ld}</script>'
+                            f'<style>{ABOUT_CSS}</style>'),
+                body=body)
+            a = SITE / "about"
+            a.mkdir(parents=True, exist_ok=True)
+            (a / "index.html").write_text(
+                _render(page, "#C6F24E", "#C6F24E"))
+            urls.append((f"{base}/about/", now, "monthly", "0.6"))
+            print(f"  about page written")
+        except Exception as exc:
+            print(f"  about page skipped: {str(exc)[:80]}")
 
         try:
             html = durability_page(conn, base)
