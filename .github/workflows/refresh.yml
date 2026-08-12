@@ -1,35 +1,9 @@
 name: refresh beat feed
 
 on:
-  schedule:
-    # Every 20 minutes, 10:00 UTC through 08:00 UTC the next day.
-    #
-    # That is 6am Eastern to 4am Eastern, which is 3am to 1am Pacific. The
-    # window has to run on Pacific time at the far end: a west coast team
-    # practices in the afternoon there, so Seahawks and 49ers reports land at
-    # 6-9pm Pacific, and a Sunday night game finishes around 8:30pm Pacific.
-    #
-    # Stopping at midnight Eastern cut all of that off -- it is only 9pm on
-    # the coast where three of the day's reports are still being filed.
-    #
-    # The two-hour gap, 4-6am Eastern, is the one stretch where nobody in
-    # either time zone is filing anything.
-    #
-    # Every two hours, not every twenty minutes.
-    #
-    # Three runs an hour across 174 sources is 66 runs a day, and a beat
-    # writer's twenty most recent posts reach back three days -- so nothing
-    # was ever at risk of being missed between them. It was ten times the
-    # cost for a freshness difference nobody setting a lineup could notice.
-    #
-    # Twelve runs a day is 62,640 requests a month, inside the flat plan.
-    # Going back to hourly means either the next plan up or reading each
-    # team through one X List, which is 32 requests a run instead of 174.
-    # Off: cron-job.org triggers this instead. GitHub's own
-    # scheduler running alongside it meant two runs where one
-    # was intended, and twice the API spend for the same wire.
-    # - cron: "0 10,12,14,16,18,20,22 * * *"
-    # - cron: "0 0,2,4,6,8 * * *"
+  # No GitHub schedule: cron-job.org triggers this via
+  # workflow_dispatch. Both running meant two runs where
+  # one was intended, and twice the API spend.
   workflow_dispatch:
 
 concurrency:
