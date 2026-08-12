@@ -2819,7 +2819,10 @@ function renderViews(){
    // its own nav item, which put two data pages at different levels of the
    // site for no reason a reader could see.
    ["Fantasy Data", "@/nfl/data/", ""],
-   ["The Medical Tent", "medical", medCount]]
+   ["The Medical Tent", "medical", medCount],
+   // Last, because it is the item somebody reaches for after the product
+   // rather than instead of it.
+   ["Who We Are", "@/about/", ""]]
     .forEach(([label, key, count]) => {
       if(HIDDEN_SECTIONS.has(key)) return;
       // A key beginning with @ is a real URL rather than an in-app view, so

@@ -107,6 +107,9 @@ def site_chrome(section=None):
         f'<a class="vbtn" href="/{SPORT}/data/"'
         + (' aria-current="page"' if section == "data" else "")
         + '>Fantasy Data</a>'
+        + '<a class="vbtn" href="/about/"'
+        + (' aria-current="page"' if section == "about" else "")
+        + '>Who We Are</a>'
         '</nav>\n'
         '    <div class="finder">\n'
         '      <input id="pfind" type="search" placeholder="Find a player"\n'
@@ -139,6 +142,7 @@ APP_FOOTER = APP_FOOTER + (
 # boards get the marker, so the highlight means where you are rather than
 # which script built the page.
 _, DATA_HEADER, _ = site_chrome("data")
+_, ABOUT_HEADER, _ = site_chrome("about")
 
 TEAM_C2 = {
     "ARI":"#FFB612","ATL":"#A5ACAF","BAL":"#9E7C0C","BUF":"#C60C30","CAR":"#BFC0BF",
@@ -439,7 +443,8 @@ def _render(page, accent, c2="#C6F24E", section=None):
     return (page
             .replace("__CSS__", css)
             .replace("__HEADER__",
-                     DATA_HEADER if section == "data" else APP_HEADER)
+                     {"data": DATA_HEADER,
+                      "about": ABOUT_HEADER}.get(section, APP_HEADER))
             .replace("__FOOTER__", APP_FOOTER))
 
 
@@ -1503,77 +1508,77 @@ def about_page(base, built):
     <a href="/">LineupBeat</a><span>/</span><b>About</b></nav>
 
   <div class="abhead">
-    <h1>Why trust LineupBeat</h1>
-    <p class="ablede">Every number here can be checked, and most of them
-      link to the working behind them. This page says who makes them, how,
-      and what happens when one is wrong.</p>
+    <h1>About LineupBeat</h1>
   </div>
 
-  <h2>Who makes it</h2>
-  <dl class="abwho">
-    <div><dt>Built and maintained by</dt><dd>{esc(seo.AUTHOR)}</dd></div>
-    <div><dt>Contact</dt>
-      <dd><a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a></dd></div>
-  </dl>
-  <p style="margin-top:.9rem">LineupBeat is independent. It is not owned by
-    a media company, it takes no payment for coverage or placement, and no
-    projection has ever been altered because somebody asked.</p>
+  <h2>Why we built it</h2>
+  <p>We&rsquo;ve been playing fantasy football for more than 20 years, and
+    we built LineupBeat to bring the information we use to make fantasy
+    decisions into one place.</p>
+  <p>Fantasy football is an information game, and some of the most useful
+    information comes from the beat reporters covering each team every
+    day.</p>
+  <p>They see who is getting first team reps, who is limited at practice,
+    who is moving up the depth chart, and whose role may be changing. The
+    problem is that this reporting is spread across 32 NFL markets and
+    hundreds of sources.</p>
+  <p>LineupBeat brings it together.</p>
+  <p>We follow an average of four beat reporters for every NFL team, match
+    their reporting to the players it affects, and always credit the
+    original source.</p>
+  <p>We pair that reporting with fantasy data to help you make better
+    decisions.</p>
+  <p>After more than 20 years of playing fantasy football, we know nobody
+    has all the answers.</p>
+  <p>Our goal is simple: put more of the right information in one place,
+    before you make your next fantasy decision.</p>
 
-  <h2>Where the information comes from</h2>
+  <h2>How LineupBeat works</h2>
+  <p>LineupBeat is independent. We do not accept payment for coverage,
+    placement, rankings, or projections.</p>
+
   <div class="abgrid">
     <div class="abcard"><h3>Beat reporting</h3>
-      <p>Local reporters in all 32 NFL markets. Every claim is paraphrased
-         in our own words and linked back to whoever filed it. We never
-         reproduce their copy, and the reporter is named on every
-         item.</p></div>
-    <div class="abcard"><h3>Projections</h3>
-      <p>Built by hand from projected stat lines, then converted to points
-         using standard scoring. The stat line is shown under every total,
-         so the number can be checked rather than trusted.</p></div>
-    <div class="abcard"><h3>Market data</h3>
-      <p>Average draft position from
+      <p>We follow local reporters across all 32 NFL markets. Every report
+         is paraphrased in our own words, matched to the player it affects,
+         and credited and linked to the original reporter. We do not
+         reproduce reporters&rsquo; work.</p></div>
+    <div class="abcard"><h3>Fantasy data</h3>
+      <p>We build our own fantasy projections from projected player stat
+         lines, so you can see the numbers behind every fantasy point
+         total. We also use market, roster, schedule, and historical data
+         from established sources, including
          <a href="https://fantasyfootballcalculator.com/adp">Fantasy
-         Football Calculator</a>, with the sample size and date range shown
-         on the page.</p></div>
-    <div class="abcard"><h3>Statistics</h3>
-      <p>Rosters and depth charts from Sleeper. Play-by-play, schedules and
-         historical stats from nflverse, back to 2018.</p></div>
+         Football Calculator</a>, Sleeper, and nflverse.</p></div>
   </div>
 
-  <h2>What we do not do</h2>
-  <p><b>We do not guess at a name.</b> A mention we cannot match to a
-    player with confidence is shown unlinked and marked unmatched, rather
-    than attached to whoever is closest. A wrong match is worse than an
-    admitted gap.</p>
-  <p><b>We do not double count.</b> Coaching, durability, schedule and
-    projections are separate pages answering separate questions. If a
-    coaching change already moved a projection, it is not applied a second
-    time on the draft value page.</p>
-  <p><b>We do not use promotional language.</b> No must-draft, no
-    can't-miss, no league-winner. A player is priced favourably or he is
-    not, and the number says which.</p>
-  <p><b>We do not claim more than we do.</b> There is no fact-checking
-    department and no review board, so this page does not display a badge
-    for either. When a review step exists, it will be named here with the
-    person who does it.</p>
+  <h2>How we handle the data</h2>
+  <p>We would rather show uncertainty than pretend to know something we do
+    not.</p>
+  <p>If we cannot confidently match a report to a player, we mark it as
+    unmatched instead of guessing.</p>
+  <p>We also try not to count the same information twice. Coaching,
+    durability, schedule, projections, and draft value answer different
+    questions and are kept separate.</p>
+  <p>Our projections are estimates, not guarantees. When new information is
+    strong enough to change an assumption, we update them. When it is not,
+    we do not move a player just because of a headline.</p>
 
-  <h2>When we get it wrong</h2>
-  <p>Projections are forecasts and some of them will be wrong; that is what
-    a forecast is. What should not be wrong is a fact: a player's team, a
-    reporter's name, a game already played, an ADP that disagrees with its
-    own source.</p>
-  <p>If you find one, write to
-    <a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a>. Factual
-    errors are corrected at the next build, which is usually within the
-    hour. A projection you disagree with is not an error, but tell us
-    anyway &mdash; the disagreements are the interesting part.</p>
+  <h2>When we get something wrong</h2>
+  <p>Forecasts will be wrong. Facts should not be.</p>
+  <p>If you find an incorrect team, reporter, statistic, source, or other
+    factual error, email
+    <a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a> and we
+    will correct it.</p>
+  <p>Disagreeing with a projection is different, and we welcome that too.
+    Those disagreements are part of what makes fantasy football
+    interesting.</p>
 
-  <h2>How current it is</h2>
-  <p>The wire updates through the day. Rosters and average draft position
-    refresh daily. Projections change when the underlying board is revised,
-    and every data page shows its own update date in
-    <b>Eastern time</b>, because that is the time zone the league runs
-    on.</p>
+  <h2>How current is the data?</h2>
+  <p>The Wire updates throughout the day.</p>
+  <p>Rosters and ADP refresh daily. Projections are updated when the
+    underlying assumptions change.</p>
+  <p>Every data page shows when it was last updated.</p>
 
   <h2>Reading the data</h2>
   <div class="abgrid">
@@ -1597,10 +1602,10 @@ def about_page(base, built):
   </div>
 </main>"""
 
-    title = "Why Trust LineupBeat | Methodology and Sources"
-    desc = ("Who builds LineupBeat, where the beat reporting, projections, "
-            "ADP and statistics come from, and how factual errors are "
-            "corrected.")
+    title = "About LineupBeat | How It Works and Where the Data Comes From"
+    desc = ("Why we built LineupBeat, how we follow beat reporters in all "
+            "32 NFL markets, where our projections and data come from, and "
+            "how we correct factual errors.")
     schema = {
         "@type": "AboutPage",
         "name": title,
@@ -1851,7 +1856,7 @@ def main():
             a = SITE / "about"
             a.mkdir(parents=True, exist_ok=True)
             (a / "index.html").write_text(
-                _render(page, "#C6F24E", "#C6F24E"))
+                _render(page, "#C6F24E", "#C6F24E", section="about"))
             urls.append((f"{base}/about/", now, "monthly", "0.6"))
             print(f"  about page written")
         except Exception as exc:

@@ -43,7 +43,7 @@ SITE_URL = "https://lineupbeat.com"
 # fact-checked badge because there is no fact-checking process -- inventing
 # either would be the one kind of claim this site is built not to make.
 # When a review step exists, add REVIEWER and the line appears.
-AUTHOR = "Ralph D\u2019Amato"
+AUTHOR = "Ralph Damato"
 AUTHOR_ROLE = "Built and maintains LineupBeat"
 REVIEWER = None          # set when somebody actually reviews it
 METHOD = "LineupBeat projection engine, version 1"

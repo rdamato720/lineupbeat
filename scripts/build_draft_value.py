@@ -466,6 +466,7 @@ def site_chrome():
         '<a class="vbtn" href="/#v=roster">My Roster</a>'
         f'<a class="vbtn" href="/{SPORT}/data/" aria-current="page">'
         'Fantasy Data</a>'
+        '<a class="vbtn" href="/about/">Who We Are</a>'
         '</nav>\n'
         '  </div>\n'
         '</header>')
