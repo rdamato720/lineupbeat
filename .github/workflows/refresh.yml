@@ -104,6 +104,17 @@ jobs:
           # Strength of schedule, recomputed from whatever has been played.
           # Before build_pages, because the hub links to it.
           python scripts/schedule_strength.py --season 2026 --quiet || true
+          # Player pages first: the boards link to /nfl/<slug>/
+          # and will only do so where that directory exists.
+
+          # Player pages first: the boards link to
+          # /nfl/<slug>/ and only do so where that
+          # directory already exists. Running this last
+          # meant the live board shipped 614 plain names
+          # while a laptop linked 603, because a laptop
+          # had the directories from a previous run.
+          python scripts/build_pages.py --base https://lineupbeat.com
+
           python scripts/build_sos.py || true
 
           # Projections, from the committed workbook. site/nfl is gitignored
@@ -128,7 +139,13 @@ jobs:
           # read twice rather than two that happen to agree today.
           python scripts/build_draft_value.py || true
 
+          # Again, so the projection chips on player pages
+          # read the board that was just rebuilt.
           python scripts/build_pages.py --base https://lineupbeat.com
+
+          # Again, so the projection chips on player pages read the board
+          # that was just rebuilt.
+
 
       # Publishes even if preflight warns, but records the verdict in the log
       # so a slow degradation shows up in run history instead of silently.
