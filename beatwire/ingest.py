@@ -559,6 +559,18 @@ def fetch(source: Source, offline: bool = False, store=None,
         if source.kind == "threads":
             return fetch_threads(source, store=store)
         if source.kind == "twitterapi":
+            # Which provider reads X.
+            #
+            # twitterapi charges per tweet returned, so the bill moves with
+            # how much other people post. Sorsa charges per request, which
+            # for a fixed 174 sources is a number you can predict. The
+            # source registry does not care which is running, so this is an
+            # environment variable rather than 174 edits -- and switching
+            # back if coverage disappoints is the same one variable.
+            if os.environ.get("BEATWIRE_X_PROVIDER", "").lower() == "sorsa":
+                from .sorsa import fetch as _sorsa_fetch
+                return _sorsa_fetch(source, store=store,
+                                    daily_cap=tapi_daily_cap)
             from .tapi import fetch as _tapi_fetch
             return _tapi_fetch(source, store=store,
                                daily_cap=tapi_daily_cap)

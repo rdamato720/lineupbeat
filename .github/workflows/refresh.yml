@@ -14,8 +14,19 @@ on:
     #
     # The two-hour gap, 4-6am Eastern, is the one stretch where nobody in
     # either time zone is filing anything.
-    - cron: "*/20 10-23 * * *"
-    - cron: "*/20 0-8 * * *"
+    #
+    # Every two hours, not every twenty minutes.
+    #
+    # Three runs an hour across 174 sources is 66 runs a day, and a beat
+    # writer's twenty most recent posts reach back three days -- so nothing
+    # was ever at risk of being missed between them. It was ten times the
+    # cost for a freshness difference nobody setting a lineup could notice.
+    #
+    # Twelve runs a day is 62,640 requests a month, inside the flat plan.
+    # Going back to hourly means either the next plan up or reading each
+    # team through one X List, which is 32 requests a run instead of 174.
+    - cron: "0 10,12,14,16,18,20,22 * * *"
+    - cron: "0 0,2,4,6,8 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -55,24 +66,9 @@ jobs:
           python scripts/test_resolve.py
           python -m beatwire.cli doctor --sport nfl
 
-      - name: Roster check
-        run: |
-          python3 -c "
-          import csv, collections
-          r = list(csv.DictReader(open('rosters/nfl.csv')))
-          pos = collections.Counter((x.get('position') or '').upper() for x in r)
-          print('  rows:', len(r))
-          print('  positions:', dict(pos.most_common(8)))
-          print('  blank position:', pos.get('', 0))
-          "
-
       - name: Run pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # Without this every X source fails silently: the run
-          # completes, reports zero items, and looks like a quiet day
-          # rather than a missing credential.
-          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
         run: |
           # Rosters first, once a day.
           #
@@ -104,17 +100,6 @@ jobs:
           # Strength of schedule, recomputed from whatever has been played.
           # Before build_pages, because the hub links to it.
           python scripts/schedule_strength.py --season 2026 --quiet || true
-          # Player pages first: the boards link to /nfl/<slug>/
-          # and will only do so where that directory exists.
-
-          # Player pages first: the boards link to
-          # /nfl/<slug>/ and only do so where that
-          # directory already exists. Running this last
-          # meant the live board shipped 614 plain names
-          # while a laptop linked 603, because a laptop
-          # had the directories from a previous run.
-          python scripts/build_pages.py --base https://lineupbeat.com
-
           python scripts/build_sos.py || true
 
           # Projections, from the committed workbook. site/nfl is gitignored
@@ -129,9 +114,8 @@ jobs:
           # laptop -- site/nfl is gitignored and rebuilt here.
           python scripts/build_coaching.py || true
 
-          # What changed in the projections, from the
-          # workbook's Weekly Update tab. Skips itself
-          # when the tab is absent.
+          # What changed in the projections, from the workbook's own
+          # Weekly Update tab. Skips itself when the tab is absent.
           python scripts/build_changes.py || true
 
           # Draft value. After the ADP import above, because it reads the
@@ -139,13 +123,7 @@ jobs:
           # read twice rather than two that happen to agree today.
           python scripts/build_draft_value.py || true
 
-          # Again, so the projection chips on player pages
-          # read the board that was just rebuilt.
           python scripts/build_pages.py --base https://lineupbeat.com
-
-          # Again, so the projection chips on player pages read the board
-          # that was just rebuilt.
-
 
       # Publishes even if preflight warns, but records the verdict in the log
       # so a slow degradation shows up in run history instead of silently.
@@ -153,10 +131,6 @@ jobs:
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # Without this every X source fails silently: the run
-          # completes, reports zero items, and looks like a quiet day
-          # rather than a missing credential.
-          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
         run: python -m beatwire.cli preflight --sport nfl
 
       - name: Deploy
