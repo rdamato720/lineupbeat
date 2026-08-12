@@ -69,6 +69,11 @@ jobs:
       - name: Run pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Which provider reads X. Unset means twitterapi, so
+          # removing this variable is the whole rollback.
+          BEATWIRE_X_PROVIDER: ${{ vars.BEATWIRE_X_PROVIDER }}
+          SORSA_API_KEY: ${{ secrets.SORSA_API_KEY }}
+          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
         run: |
           # Rosters first, once a day.
           #
@@ -131,6 +136,11 @@ jobs:
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Which provider reads X. Unset means twitterapi, so
+          # removing this variable is the whole rollback.
+          BEATWIRE_X_PROVIDER: ${{ vars.BEATWIRE_X_PROVIDER }}
+          SORSA_API_KEY: ${{ secrets.SORSA_API_KEY }}
+          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
         run: python -m beatwire.cli preflight --sport nfl
 
       - name: Deploy
