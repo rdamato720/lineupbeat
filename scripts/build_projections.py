@@ -628,6 +628,14 @@ def build_html(board, links, css, header, footer, season, source_name, notes):
     counts = "  ".join(f"{p} {len(board.get(p, []))}" for p in POSITIONS
                        if board.get(p))
 
+    # Only where the page exists. A link to a changelog that was never
+    # built is worse than no link.
+    changes_link = (
+        f'<a class="posnav" href="/{SPORT}/projections/changes/">'
+        f'What changed</a>'
+        if (SITE / SPORT / "projections" / "changes" / "index.html").exists()
+        else "")
+
     # The default view, in the HTML.
     #
     # An empty tbody means a crawler reads a page about 614 players that
@@ -679,6 +687,7 @@ def build_html(board, links, css, header, footer, season, source_name, notes):
     {"".join(f'<a class="posnav" href="/{SPORT}/projections/{p.lower()}/">'
              f'{POS_PLURAL[p]}s <b>{len(board[p])}</b></a>'
              for p in POSITIONS if board.get(p))}
+    {changes_link}
   </div>
 
   <div class="pbctl">

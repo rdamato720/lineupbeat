@@ -118,6 +118,11 @@ jobs:
           # laptop -- site/nfl is gitignored and rebuilt here.
           python scripts/build_coaching.py || true
 
+          # What changed in the projections, from the
+          # workbook's Weekly Update tab. Skips itself
+          # when the tab is absent.
+          python scripts/build_changes.py || true
+
           # Draft value. After the ADP import above, because it reads the
           # same canonical number the durability board does -- one figure
           # read twice rather than two that happen to agree today.

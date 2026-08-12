@@ -797,6 +797,15 @@ def data_hub_page(base):
             "meta": "Updated through the preseason",
         },
         {
+            "href": f"/{SPORT}/projections/changes/",
+            "kicker": "Every change, with the reason",
+            "title": "What changed",
+            "blurb": "Every projection we moved this week, what moved it, "
+                     "and what we looked at and left alone. Grouped by the "
+                     "decision, with a source for each.",
+            "meta": "Updated weekly",
+        },
+        {
             "href": f"/{SPORT}/draft-value/",
             "kicker": "Every drafted player",
             "title": "ADP & draft value",
