@@ -99,6 +99,14 @@ jobs:
           # exists. Running this last is why the live board
           # shipped 614 plain names while a laptop linked
           # 603 -- a laptop had the directories already.
+          # The board first, so the page builder knows which
+          # 614 players need a page. Without it the first
+          # pass only covers players with reports, the board
+          # links to whoever happens to exist, and the pages
+          # created afterwards arrive too late to be linked.
+          python scripts/build_projections.py \
+                 data/projections.xlsx || true
+
           python scripts/build_pages.py --base https://lineupbeat.com
 
           python scripts/build_sos.py || true
