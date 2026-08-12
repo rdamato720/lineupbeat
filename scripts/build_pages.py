@@ -107,6 +107,7 @@ def site_chrome(section=None):
         f'<a class="vbtn" href="/{SPORT}/data/"'
         + (' aria-current="page"' if section == "data" else "")
         + '>Fantasy Data</a>'
+        + seo.teams_menu(SPORT)
         + '<a class="vbtn" href="/about/"'
         + (' aria-current="page"' if section == "about" else "")
         + '>Who We Are</a>'
@@ -129,7 +130,8 @@ APP_CSS, APP_HEADER, APP_FOOTER = site_chrome()
 # Appended to the shared footer rather than to each template: there are
 # several page shells here, and patching one meant player pages, the hub
 # and durability silently went unmeasured.
-APP_FOOTER = APP_FOOTER + (
+APP_CSS = (APP_CSS or "") + seo.TEAMS_CSS
+APP_FOOTER = APP_FOOTER + seo.TEAMS_JS + (
     "\n<!-- Cloudflare Web Analytics -->"
     "<script type='module' "
     "src='https://static.cloudflareinsights.com/beacon.min.js' "

@@ -875,13 +875,13 @@ draw();
 <meta property="og:url" content="https://lineupbeat.com/{SPORT}/projections/">
 <meta property="og:type" content="website">
 <script type="application/ld+json">{ldjson}</script>
-<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.BYLINE_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}
 {body}
 {footer}
-{seo.TRACKING}
+{seo.TEAMS_JS}{seo.TRACKING}
 </body>
 </html>"""
 
@@ -898,7 +898,9 @@ def site_chrome():
         '<header class="topbar">\n'
         '  <div class="wrap tbrow">\n'
         '    <a class="logo" href="/">Lineup<em>Beat</em></a>\n'
-        '    <nav class="views"><a class="vbtn" href="/">The Wire</a><a class="vbtn" href="/#v=roster">My Roster</a><a class="vbtn" href="/nfl/data/" aria-current="page">Fantasy Data</a><a class="vbtn" href="/about/">Who We Are</a></nav>\n'
+        '    <nav class="views"><a class="vbtn" href="/">The Wire</a><a class="vbtn" href="/#v=roster">My Roster</a><a class="vbtn" href="/nfl/data/" aria-current="page">Fantasy Data</a>'
+        + seo.teams_menu()
+        + '<a class="vbtn" href="/about/">Who We Are</a></nav>\n'
         '  </div>\n'
         '</header>'
     )
@@ -1067,13 +1069,13 @@ def write_position_pages(board, links, css, header, footer, season,
 <meta property="og:type" content="website">
 <script type="application/ld+json">{seo.graph(
     schema, crumbs, seo.faq_schema(faq), seo.ORGANISATION, itemlist)}</script>
-<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.BYLINE_CSS}{POS_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}{POS_CSS}</style>
 </head>
 <body>
 {header}
 {body}
 {footer}
-{seo.TRACKING}
+{seo.TEAMS_JS}{seo.TRACKING}
 </body>
 </html>"""
 

@@ -238,7 +238,8 @@ def site_chrome():
         '<a class="vbtn" href="/#v=roster">My Roster</a>'
         f'<a class="vbtn" href="/{SPORT}/data/" aria-current="page">'
         'Fantasy Data</a>'
-        '<a class="vbtn" href="/about/">Who We Are</a>'
+        + seo.teams_menu()
+        + '<a class="vbtn" href="/about/">Who We Are</a>'
         '</nav>\n'
         '  </div>\n'
         '</header>')
@@ -595,13 +596,13 @@ def main():
 <meta property="og:url" content="https://lineupbeat.com/{SPORT}/coaching/">
 <meta property="og:type" content="website">
 <script type="application/ld+json">{ldjson}</script>
-<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.BYLINE_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}
 {body}
 {footer}
-{seo.TRACKING}
+{seo.TEAMS_JS}{seo.TRACKING}
 </body>
 </html>"""
 

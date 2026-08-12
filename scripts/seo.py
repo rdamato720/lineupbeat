@@ -34,6 +34,122 @@ import json
 
 SITE_URL = "https://lineupbeat.com"
 
+# The league, by division.
+#
+# Four columns of eight is how every football site lays this out, and it is
+# how a fan looks for his team: he knows the division before he scans the
+# names. Alphabetical would be tidier and slower to use.
+DIVISIONS = [
+    ("AFC East", [("BUF", "Bills"), ("MIA", "Dolphins"),
+                  ("NE", "Patriots"), ("NYJ", "Jets")]),
+    ("AFC North", [("BAL", "Ravens"), ("CIN", "Bengals"),
+                   ("CLE", "Browns"), ("PIT", "Steelers")]),
+    ("AFC South", [("HOU", "Texans"), ("IND", "Colts"),
+                   ("JAX", "Jaguars"), ("TEN", "Titans")]),
+    ("AFC West", [("DEN", "Broncos"), ("KC", "Chiefs"),
+                  ("LV", "Raiders"), ("LAC", "Chargers")]),
+    ("NFC East", [("DAL", "Cowboys"), ("NYG", "Giants"),
+                  ("PHI", "Eagles"), ("WAS", "Commanders")]),
+    ("NFC North", [("CHI", "Bears"), ("DET", "Lions"),
+                   ("GB", "Packers"), ("MIN", "Vikings")]),
+    ("NFC South", [("ATL", "Falcons"), ("CAR", "Panthers"),
+                   ("NO", "Saints"), ("TB", "Buccaneers")]),
+    ("NFC West", [("ARI", "Cardinals"), ("LAR", "Rams"),
+                  ("SF", "49ers"), ("SEA", "Seahawks")]),
+]
+
+
+def teams_menu(sport="nfl"):
+    """The teams dropdown, in the nav on every page.
+
+    The old strip filtered the wire and only worked on the homepage: on a
+    projections page it highlighted a team and did nothing, which is worse
+    than not being there. This navigates to the team page, so it means the
+    same thing everywhere.
+    """
+    cols = []
+    for div, teams in DIVISIONS:
+        links = "".join(
+            f'<a href="/{sport}/team/{code.lower()}/">'
+            f'<img src="https://a.espncdn.com/i/teamlogos/nfl/500/'
+            f'{code.lower()}.png" alt="" loading="lazy" '
+            f'onerror="this.style.visibility=&quot;hidden&quot;">'
+            f'<span>{name}</span></a>'
+            for code, name in teams)
+        cols.append(f'<div class="tmcol"><h3>{div}</h3>{links}</div>')
+    return (
+        '<div class="tmwrap">'
+        '<button class="vbtn tmbtn" aria-expanded="false" '
+        'aria-controls="tmmenu">Teams<span class="tmcar">&#9662;</span>'
+        '</button>'
+        f'<div class="tmmenu" id="tmmenu" hidden>{"".join(cols)}</div>'
+        '</div>')
+
+
+TEAMS_CSS = """
+/* ---- teams menu ----
+   A panel of all 32, by division, because that is how somebody looks for
+   his team. Opens on click rather than hover: hover menus are a coin flip
+   on a laptop trackpad and do not exist on a phone at all. */
+.tmwrap{position:relative}
+.tmbtn{display:inline-flex; align-items:center; gap:.3rem}
+.tmcar{font-size:.6em; opacity:.7; transition:transform .15s}
+.tmbtn[aria-expanded="true"] .tmcar{transform:rotate(180deg)}
+/* Anchored to the button's left edge but pulled back so it cannot run off
+   the screen: at 44rem wide, a menu opening from a nav item two-thirds
+   across the page hangs half of AFC West into nothing. */
+.tmmenu{position:absolute; top:calc(100% + .5rem); left:auto; right:0;
+  z-index:60;
+  background:var(--paper); border:1px solid var(--rule); border-radius:10px;
+  padding:1rem 1.1rem; display:grid; grid-template-columns:repeat(4, 1fr);
+  gap:1rem 1.6rem; box-shadow:0 18px 50px rgba(0,0,0,.55); min-width:44rem;
+  max-width:min(44rem, calc(100vw - 2rem))}
+.tmmenu[hidden]{display:none}
+.tmcol h3{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.64rem; color:var(--quiet);
+  margin:0 0 .45rem; padding-bottom:.35rem;
+  border-bottom:1px solid var(--rule)}
+.tmcol a{display:flex; align-items:center; gap:.45rem; padding:.28rem 0;
+  text-decoration:none; color:var(--ink); font-size:.86rem}
+.tmcol a:hover{color:var(--signal)}
+.tmcol img{width:1.15rem; height:1.15rem; object-fit:contain; flex:none}
+
+@media (max-width:900px){
+  .tmmenu{position:fixed; left:0; right:0; top:auto; min-width:0;
+    border-radius:0; border-left:0; border-right:0;
+    grid-template-columns:repeat(2, 1fr); gap:.8rem 1rem;
+    max-height:70vh; overflow-y:auto}
+  .tmcol a{min-height:44px}
+}
+"""
+
+TEAMS_JS = """
+<script>
+// Click to open, escape or an outside click to close.
+//
+// Hover menus are a coin flip on a trackpad and do not exist on a phone,
+// so this is the same interaction everywhere.
+(function(){
+  var btn = document.querySelector('.tmbtn');
+  var menu = document.getElementById('tmmenu');
+  if (!btn || !menu) return;
+  function set(open){
+    menu.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    set(menu.hidden);
+  });
+  document.addEventListener('click', function(e){
+    if (!menu.hidden && !menu.contains(e.target)) set(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') set(false);
+  });
+})();
+</script>"""
+
 # ---------------------------------------------------------------- byline
 #
 # Who made this, how, and when.

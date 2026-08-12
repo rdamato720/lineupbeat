@@ -25,8 +25,11 @@ on:
     # Twelve runs a day is 62,640 requests a month, inside the flat plan.
     # Going back to hourly means either the next plan up or reading each
     # team through one X List, which is 32 requests a run instead of 174.
-    - cron: "0 10,12,14,16,18,20,22 * * *"
-    - cron: "0 0,2,4,6,8 * * *"
+    # Off: cron-job.org triggers this instead. GitHub's own
+    # scheduler running alongside it meant two runs where one
+    # was intended, and twice the API spend for the same wire.
+    # - cron: "0 10,12,14,16,18,20,22 * * *"
+    # - cron: "0 0,2,4,6,8 * * *"
   workflow_dispatch:
 
 concurrency:

@@ -231,7 +231,9 @@ def site_chrome():
         '<header class="topbar">\n'
         '  <div class="wrap tbrow">\n'
         '    <a class="logo" href="/">Lineup<em>Beat</em></a>\n'
-        '    <nav class="views"><a class="vbtn" href="/">The Wire</a><a class="vbtn" href="/#v=roster">My Roster</a><a class="vbtn" href="/nfl/data/" aria-current="page">Fantasy Data</a><a class="vbtn" href="/about/">Who We Are</a></nav>\n'
+        '    <nav class="views"><a class="vbtn" href="/">The Wire</a><a class="vbtn" href="/#v=roster">My Roster</a><a class="vbtn" href="/nfl/data/" aria-current="page">Fantasy Data</a>'
+        + seo.teams_menu()
+        + '<a class="vbtn" href="/about/">Who We Are</a></nav>\n'
         '  </div>\n'
         '</header>'
     )
@@ -720,13 +722,13 @@ def main():
       content="https://lineupbeat.com/{SPORT}/strength-of-schedule/">
 <meta property="og:type" content="website">
 <script type="application/ld+json">{ldjson}</script>
-<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.BYLINE_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}
 {body}
 {footer}
-{seo.TRACKING}
+{seo.TEAMS_JS}{seo.TRACKING}
 </body>
 </html>"""
 

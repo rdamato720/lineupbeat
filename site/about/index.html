@@ -1165,6 +1165,73 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 @media (max-width:700px){ .roschip{padding:.5rem .6rem .5rem .8rem} }
 .chipbtn:disabled{opacity:.3;cursor:default}
 
+/* ---- teams menu ----
+   A panel of all 32, by division, because that is how somebody looks for
+   his team. Opens on click rather than hover: hover menus are a coin flip
+   on a laptop trackpad and do not exist on a phone at all. */
+.tmwrap{position:relative}
+.tmbtn{display:inline-flex; align-items:center; gap:.3rem}
+.tmcar{font-size:.6em; opacity:.7; transition:transform .15s}
+.tmbtn[aria-expanded="true"] .tmcar{transform:rotate(180deg)}
+.tmmenu{position:absolute; top:calc(100% + .5rem); left:auto; right:0;
+  z-index:60;
+  background:var(--paper); border:1px solid var(--rule); border-radius:10px;
+  padding:1rem 1.1rem; display:grid; grid-template-columns:repeat(4, 1fr);
+  gap:1rem 1.6rem; box-shadow:0 18px 50px rgba(0,0,0,.55); min-width:44rem;
+  max-width:min(44rem, calc(100vw - 2rem))}
+.tmmenu[hidden]{display:none}
+.tmcol h3{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.64rem; color:var(--quiet);
+  margin:0 0 .45rem; padding-bottom:.35rem;
+  border-bottom:1px solid var(--rule)}
+.tmcol a{display:flex; align-items:center; gap:.45rem; padding:.28rem 0;
+  text-decoration:none; color:var(--ink); font-size:.86rem}
+.tmcol a:hover{color:var(--signal)}
+.tmcol img{width:1.15rem; height:1.15rem; object-fit:contain; flex:none}
+
+@media (max-width:900px){
+  .tmmenu{position:fixed; left:0; right:0; top:auto; min-width:0;
+    border-radius:0; border-left:0; border-right:0;
+    grid-template-columns:repeat(2, 1fr); gap:.8rem 1rem;
+    max-height:70vh; overflow-y:auto}
+  .tmcol a{min-height:44px}
+}
+
+/* ---- teams menu ----
+   A panel of all 32, by division, because that is how somebody looks for
+   his team. Opens on click rather than hover: hover menus are a coin flip
+   on a laptop trackpad and do not exist on a phone at all. */
+.tmwrap{position:relative}
+.tmbtn{display:inline-flex; align-items:center; gap:.3rem}
+.tmcar{font-size:.6em; opacity:.7; transition:transform .15s}
+.tmbtn[aria-expanded="true"] .tmcar{transform:rotate(180deg)}
+/* Anchored to the button's left edge but pulled back so it cannot run off
+   the screen: at 44rem wide, a menu opening from a nav item two-thirds
+   across the page hangs half of AFC West into nothing. */
+.tmmenu{position:absolute; top:calc(100% + .5rem); left:auto; right:0;
+  z-index:60;
+  background:var(--paper); border:1px solid var(--rule); border-radius:10px;
+  padding:1rem 1.1rem; display:grid; grid-template-columns:repeat(4, 1fr);
+  gap:1rem 1.6rem; box-shadow:0 18px 50px rgba(0,0,0,.55); min-width:44rem;
+  max-width:min(44rem, calc(100vw - 2rem))}
+.tmmenu[hidden]{display:none}
+.tmcol h3{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.64rem; color:var(--quiet);
+  margin:0 0 .45rem; padding-bottom:.35rem;
+  border-bottom:1px solid var(--rule)}
+.tmcol a{display:flex; align-items:center; gap:.45rem; padding:.28rem 0;
+  text-decoration:none; color:var(--ink); font-size:.86rem}
+.tmcol a:hover{color:var(--signal)}
+.tmcol img{width:1.15rem; height:1.15rem; object-fit:contain; flex:none}
+
+@media (max-width:900px){
+  .tmmenu{position:fixed; left:0; right:0; top:auto; min-width:0;
+    border-radius:0; border-left:0; border-right:0;
+    grid-template-columns:repeat(2, 1fr); gap:.8rem 1rem;
+    max-height:70vh; overflow-y:auto}
+  .tmcol a{min-height:44px}
+}
+
 /* Additions only. The app stylesheet does the heavy lifting; these are the
    few things a player page needs that the wire does not. */
 .ppage{padding-top:1rem;padding-bottom:3rem}
@@ -1351,7 +1418,7 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 <header class="topbar">
   <div class="wrap tbrow">
     <a class="logo" href="/">Lineup<em>Beat</em></a>
-    <nav class="views"><a class="vbtn" href="/">The Wire</a><a class="vbtn" href="/#v=roster">My Roster</a><a class="vbtn" href="/nfl/data/">Fantasy Data</a><a class="vbtn" href="/about/" aria-current="page">Who We Are</a></nav>
+    <nav class="views"><a class="vbtn" href="/">The Wire</a><a class="vbtn" href="/#v=roster">My Roster</a><a class="vbtn" href="/nfl/data/">Fantasy Data</a><div class="tmwrap"><button class="vbtn tmbtn" aria-expanded="false" aria-controls="tmmenu">Teams<span class="tmcar">&#9662;</span></button><div class="tmmenu" id="tmmenu" hidden><div class="tmcol"><h3>AFC East</h3><a href="/nfl/team/buf/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bills</span></a><a href="/nfl/team/mia/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Dolphins</span></a><a href="/nfl/team/ne/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Patriots</span></a><a href="/nfl/team/nyj/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Jets</span></a></div><div class="tmcol"><h3>AFC North</h3><a href="/nfl/team/bal/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Ravens</span></a><a href="/nfl/team/cin/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bengals</span></a><a href="/nfl/team/cle/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Browns</span></a><a href="/nfl/team/pit/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Steelers</span></a></div><div class="tmcol"><h3>AFC South</h3><a href="/nfl/team/hou/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Texans</span></a><a href="/nfl/team/ind/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Colts</span></a><a href="/nfl/team/jax/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Jaguars</span></a><a href="/nfl/team/ten/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Titans</span></a></div><div class="tmcol"><h3>AFC West</h3><a href="/nfl/team/den/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Broncos</span></a><a href="/nfl/team/kc/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Chiefs</span></a><a href="/nfl/team/lv/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Raiders</span></a><a href="/nfl/team/lac/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Chargers</span></a></div><div class="tmcol"><h3>NFC East</h3><a href="/nfl/team/dal/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Cowboys</span></a><a href="/nfl/team/nyg/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Giants</span></a><a href="/nfl/team/phi/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Eagles</span></a><a href="/nfl/team/was/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/was.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Commanders</span></a></div><div class="tmcol"><h3>NFC North</h3><a href="/nfl/team/chi/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bears</span></a><a href="/nfl/team/det/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Lions</span></a><a href="/nfl/team/gb/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Packers</span></a><a href="/nfl/team/min/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/min.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Vikings</span></a></div><div class="tmcol"><h3>NFC South</h3><a href="/nfl/team/atl/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Falcons</span></a><a href="/nfl/team/car/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/car.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Panthers</span></a><a href="/nfl/team/no/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Saints</span></a><a href="/nfl/team/tb/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Buccaneers</span></a></div><div class="tmcol"><h3>NFC West</h3><a href="/nfl/team/ari/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Cardinals</span></a><a href="/nfl/team/lar/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Rams</span></a><a href="/nfl/team/sf/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>49ers</span></a><a href="/nfl/team/sea/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Seahawks</span></a></div></div></div><a class="vbtn" href="/about/" aria-current="page">Who We Are</a></nav>
     <div class="finder">
       <input id="pfind" type="search" placeholder="Find a player"
              autocomplete="off" aria-label="Find a player">
@@ -1536,6 +1603,31 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     </div>
   </div>
 </footer>
+<script>
+// Click to open, escape or an outside click to close.
+//
+// Hover menus are a coin flip on a trackpad and do not exist on a phone,
+// so this is the same interaction everywhere.
+(function(){
+  var btn = document.querySelector('.tmbtn');
+  var menu = document.getElementById('tmmenu');
+  if (!btn || !menu) return;
+  function set(open){
+    menu.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    set(menu.hidden);
+  });
+  document.addEventListener('click', function(e){
+    if (!menu.hidden && !menu.contains(e.target)) set(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') set(false);
+  });
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "351a7f1ca5a14571859dcf22cb395b89"}'></script><!-- End Cloudflare Web Analytics -->
 <script>
 (function(){

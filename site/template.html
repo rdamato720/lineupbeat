@@ -79,7 +79,13 @@ a{color:inherit}
 .tbrow{display:flex; align-items:center; gap:1.1rem; padding:.6rem 1rem}
 .tbrow .logo{flex:0 0 auto}
 .tbrow .views{border-top:0; flex:0 0 auto}
-.tbrow .finder{flex:1; min-width:0; padding:0; max-width:26rem; margin-left:auto}
+/* position:relative, or the dropdown escapes.
+   The base .finder sets it; this override dropped it, so #hits fell back
+   to the nearest positioned ancestor and spanned the whole viewport. It
+   showed as a full-width bar under the header the moment the dropdown had
+   anything in it. */
+.tbrow .finder{position:relative; flex:1; min-width:0; padding:0;
+  max-width:26rem; margin-left:auto}
 .tbrow .finder input{padding:.42rem .7rem; font-size:.92rem}
 /* 16px on a phone, or iOS zooms the page on focus and the reader has to
    pinch back out to see what he was searching. */
@@ -274,11 +280,19 @@ header.stuck /* ---- search: the front door ---- */
 .finder input::placeholder{color:var(--quiet)}
 .finder input:focus{outline:2px solid var(--signal); outline-offset:-1px}
 .hits{
-  position:absolute; z-index:30; left:0; right:0; top:2.6rem; margin:0; padding:0;
+  /* Wide enough to read. In the header the input shrinks with the window,
+     and a hundred-pixel dropdown cannot hold a player name, let alone a
+     sentence explaining why there are no results. */
+  position:absolute; z-index:30; left:auto; right:0; top:2.6rem;
+  min-width:min(22rem, calc(100vw - 2rem)); margin:0; padding:0;
   list-style:none; background:var(--card); border:1px solid var(--rule);
   max-height:16rem; overflow:auto; box-shadow:0 6px 20px rgba(0,0,0,.09);
 }
 .hits:empty{display:none}
+/* The dropdown saying something rather than nothing: one letter and no
+   match both used to return silence, which reads as broken. */
+.hitnote{padding:.6rem .8rem; color:var(--quiet); font-size:.84rem;
+  font-family:var(--text); line-height:1.4}
 .hits button{
   all:unset; display:flex; gap:.55rem; align-items:baseline; width:100%;
   padding:.42rem .7rem; cursor:pointer; font-family:var(--text); font-size:.92rem;
@@ -621,16 +635,10 @@ aside{position:sticky; top:5.5rem}
 /* Team strip lives in the header now, so it is reachable from anywhere on the
    page rather than only from the top. The fade on the right edge is the only
    honest way to say "this scrolls" without adding arrows nobody clicks. */
-.teamrow{border-top:1px solid var(--rule); position:relative}
 .teamrow::after{content:""; position:absolute; right:0; top:0; bottom:0; width:3rem;
   pointer-events:none; background:linear-gradient(to right, transparent, rgba(8,9,11,.96))}
-.teamwrap{display:flex; align-items:center; gap:.7rem; padding:.2rem 1rem}
-.teamlab{flex:0 0 auto; color:var(--quiet); font-size:.56rem; line-height:1.25;
-  letter-spacing:.08em; border-right:1px solid var(--rule); padding-right:.7rem}
 @media (max-width:700px){ .teamlab{display:none} }
 
-.teams{display:flex; gap:.1rem; overflow-x:auto; padding:.35rem 0;
-  scrollbar-width:none; flex:1; min-width:0; scroll-behavior:smooth}
 .teams::-webkit-scrollbar{display:none}
 .tbtn{all:unset; flex:0 0 auto; cursor:pointer; padding:.3rem .34rem;
   border-bottom:2px solid transparent; opacity:.55; transition:opacity .12s;
@@ -1121,6 +1129,38 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 .roschip button:hover{color:var(--alert, #ff6b6b)}
 @media (max-width:700px){ .roschip{padding:.5rem .6rem .5rem .8rem} }
 .chipbtn:disabled{opacity:.3;cursor:default}
+
+/* ---- teams menu ----
+   A panel of all 32, by division, because that is how somebody looks for
+   his team. Opens on click rather than hover: hover menus are a coin flip
+   on a laptop trackpad and do not exist on a phone at all. */
+.tmwrap{position:relative}
+.tmbtn{display:inline-flex; align-items:center; gap:.3rem}
+.tmcar{font-size:.6em; opacity:.7; transition:transform .15s}
+.tmbtn[aria-expanded="true"] .tmcar{transform:rotate(180deg)}
+.tmmenu{position:absolute; top:calc(100% + .5rem); left:auto; right:0;
+  z-index:60;
+  background:var(--paper); border:1px solid var(--rule); border-radius:10px;
+  padding:1rem 1.1rem; display:grid; grid-template-columns:repeat(4, 1fr);
+  gap:1rem 1.6rem; box-shadow:0 18px 50px rgba(0,0,0,.55); min-width:44rem;
+  max-width:min(44rem, calc(100vw - 2rem))}
+.tmmenu[hidden]{display:none}
+.tmcol h3{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.64rem; color:var(--quiet);
+  margin:0 0 .45rem; padding-bottom:.35rem;
+  border-bottom:1px solid var(--rule)}
+.tmcol a{display:flex; align-items:center; gap:.45rem; padding:.28rem 0;
+  text-decoration:none; color:var(--ink); font-size:.86rem}
+.tmcol a:hover{color:var(--signal)}
+.tmcol img{width:1.15rem; height:1.15rem; object-fit:contain; flex:none}
+
+@media (max-width:900px){
+  .tmmenu{position:fixed; left:0; right:0; top:auto; min-width:0;
+    border-radius:0; border-left:0; border-right:0;
+    grid-template-columns:repeat(2, 1fr); gap:.8rem 1rem;
+    max-height:70vh; overflow-y:auto}
+  .tmcol a{min-height:44px}
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -1149,12 +1189,6 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
       <ul class="hits" id="hits"></ul>
     </div>
     <span class="stamp agate" id="stamp"></span>
-  </div>
-  <div class="teamrow">
-    <div class="wrap teamwrap">
-      <span class="teamlab agate">Reports<br>last 24h</span>
-      <nav class="teams" id="teams" aria-label="Filter by team"></nav>
-    </div>
   </div>
 </header>
 
@@ -1664,14 +1698,37 @@ let PLAYERS = new Map();      // id -> player, for headshots without a scan
 function renderHits(term){
   const el = document.getElementById("hits");
   el.innerHTML = "";
-  if(term.trim().length < 2) return;
-  const t = term.trim().toLowerCase();
-  DATA.players
+  const raw = term.trim();
+
+  // Say why nothing is happening.
+  //
+  // One character used to return silently, which looks identical to a
+  // search that is broken. Three thousand players means a single letter
+  // matches hundreds anyway, so the threshold is real -- it just has to
+  // announce itself rather than leave somebody typing into a void.
+  if(raw.length && raw.length < 2){
+    el.innerHTML = '<li class="hitnote">Keep typing, at least two ' +
+                   'letters</li>';
+    return;
+  }
+  if(!raw.length) return;
+  const t = raw.toLowerCase();
+  const found = DATA.players
     .filter(p => p.sport === state.sport)
     .filter(p => p.name.toLowerCase().includes(t) || p.team.toLowerCase() === t)
     .map(p => ({...p, n: COUNTS.get(p.id) || 0}))
     .sort((a,b) => b.n - a.n || a.name.localeCompare(b.name))
-    .slice(0, 10)
+    .slice(0, 10);
+
+  // A name that matches nobody is worth saying too. Silence reads as a
+  // broken search rather than an answer.
+  if(!found.length){
+    el.innerHTML = '<li class="hitnote">No player matches ' +
+                   `\u201c${esc(raw)}\u201d</li>`;
+    return;
+  }
+
+  found
     .forEach(p => {
       const li = document.createElement("li");
       const b = document.createElement("button");
@@ -2227,7 +2284,6 @@ function renderMedical(){
   feed.innerHTML = "";
   shownClips.clear();
   document.getElementById("controls").style.display = "none";
-  document.getElementById("teams").style.display = "none";
 
   let rows = medicalNuggets();
   if(state.team) rows = rows.filter(n => n.team === state.team);
@@ -2299,7 +2355,6 @@ function medRow(n){
 }
 
 function renderFeed(){
-  document.getElementById("teams").style.display = "";
   document.getElementById("controls").style.display = "";
   const sport = state.sport;
 
@@ -2694,7 +2749,6 @@ function renderProjections(){
   feed.innerHTML = "";
   shownClips.clear();
   document.getElementById("controls").style.display = "none";
-  document.getElementById("teams").style.display = "none";
 
   let rows = projPlayers();
   if(projPos !== "ALL") rows = rows.filter(p => p.pos === projPos);
@@ -2884,43 +2938,11 @@ function renderPos(){
     });
 }
 
-function renderTeams(){
-  const el = document.getElementById("teams");
-  const counts = new Map();
-  for(const n of nuggets()){
-    if(!n.team || hoursOld(n) > 24) continue;
-    counts.set(n.team, (counts.get(n.team) || 0) + 1);
-  }
-  const teams = [...new Set(DATA.players
-    .filter(p => p.sport === state.sport).map(p => p.team))].sort();
+// The team strip is gone: it filtered the wire, and only on this
+// page. The nav menu navigates to a team page instead, which means
+// the same thing everywhere. state.team survives because ?t= still
+// filters, which is what a team page link relies on.
 
-  el.innerHTML = "";
-  const all = document.createElement("button");
-  all.className = "tbtn";
-  all.setAttribute("aria-pressed", !state.team);
-  all.title = "Every team";
-  all.innerHTML = `<span class="code">ALL</span>`;
-  all.onclick = () => { state.team = null; state.shown = PAGE; writeHash(); render(); };
-  el.appendChild(all);
-
-  teams.forEach(code => {
-    const b = document.createElement("button");
-    b.className = "tbtn";
-    const n = counts.get(code) || 0;
-    b.title = n ? `${code} — ${n} report${n === 1 ? "" : "s"} in the last 24 hours`
-                : `${code} — nothing filed in the last 24 hours`;
-    b.setAttribute("aria-pressed", state.team === code);
-    b.innerHTML = `${logoHTML(code, "")}<span class="code">${esc(code)}</span>`
-      + (n ? `<span class="badge">${n}</span>` : "");
-    b.onclick = () => {
-      state.team = state.team === code ? null : code;
-      state.player = null;
-      state.shown = PAGE;
-      writeHash(); render();
-    };
-    el.appendChild(b);
-  });
-}
 
 // Kept for when a second sport lands; skipped while there is only one, since
 // a tab you cannot switch is furniture.
@@ -3047,7 +3069,6 @@ function render(){
     if(ros) renderRosterHead();
   }
   document.getElementById("medhero").hidden = !med;
-  renderTeams();
   renderPos();
   renderViews();
   renderLive();
@@ -3180,6 +3201,48 @@ rdt('track','PageVisit');
     var tr = e.target && e.target.closest && e.target.closest("tr.r, tr.tr");
     if (tr) window.lbTrack("player_expand");
   }, true);
+})();
+</script>
+<template id="tmsrc"><div class="tmwrap"><button class="vbtn tmbtn" aria-expanded="false" aria-controls="tmmenu">Teams<span class="tmcar">&#9662;</span></button><div class="tmmenu" id="tmmenu" hidden><div class="tmcol"><h3>AFC East</h3><a href="/nfl/team/buf/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bills</span></a><a href="/nfl/team/mia/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Dolphins</span></a><a href="/nfl/team/ne/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Patriots</span></a><a href="/nfl/team/nyj/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Jets</span></a></div><div class="tmcol"><h3>AFC North</h3><a href="/nfl/team/bal/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Ravens</span></a><a href="/nfl/team/cin/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bengals</span></a><a href="/nfl/team/cle/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Browns</span></a><a href="/nfl/team/pit/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Steelers</span></a></div><div class="tmcol"><h3>AFC South</h3><a href="/nfl/team/hou/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Texans</span></a><a href="/nfl/team/ind/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Colts</span></a><a href="/nfl/team/jax/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Jaguars</span></a><a href="/nfl/team/ten/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Titans</span></a></div><div class="tmcol"><h3>AFC West</h3><a href="/nfl/team/den/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Broncos</span></a><a href="/nfl/team/kc/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Chiefs</span></a><a href="/nfl/team/lv/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Raiders</span></a><a href="/nfl/team/lac/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Chargers</span></a></div><div class="tmcol"><h3>NFC East</h3><a href="/nfl/team/dal/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Cowboys</span></a><a href="/nfl/team/nyg/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Giants</span></a><a href="/nfl/team/phi/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Eagles</span></a><a href="/nfl/team/was/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/was.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Commanders</span></a></div><div class="tmcol"><h3>NFC North</h3><a href="/nfl/team/chi/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bears</span></a><a href="/nfl/team/det/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Lions</span></a><a href="/nfl/team/gb/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Packers</span></a><a href="/nfl/team/min/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/min.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Vikings</span></a></div><div class="tmcol"><h3>NFC South</h3><a href="/nfl/team/atl/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Falcons</span></a><a href="/nfl/team/car/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/car.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Panthers</span></a><a href="/nfl/team/no/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Saints</span></a><a href="/nfl/team/tb/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Buccaneers</span></a></div><div class="tmcol"><h3>NFC West</h3><a href="/nfl/team/ari/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Cardinals</span></a><a href="/nfl/team/lar/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Rams</span></a><a href="/nfl/team/sf/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>49ers</span></a><a href="/nfl/team/sea/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Seahawks</span></a></div></div></div></template>
+<script>
+// The app builds its nav from an array, so the menu is
+// injected after that runs rather than living in the
+// markup. Same component, one definition.
+(function(){
+  var nav = document.querySelector(".views");
+  var src = document.getElementById("tmsrc");
+  if (!nav || !src) return;
+  var who = [...nav.children].find(function(x){
+    return /who we are/i.test(x.textContent); });
+  var node = src.content.cloneNode(true);
+  if (who) nav.insertBefore(node, who);
+  else nav.appendChild(node);
+})();
+</script>
+
+<script>
+// Click to open, escape or an outside click to close.
+//
+// Hover menus are a coin flip on a trackpad and do not exist on a phone,
+// so this is the same interaction everywhere.
+(function(){
+  var btn = document.querySelector('.tmbtn');
+  var menu = document.getElementById('tmmenu');
+  if (!btn || !menu) return;
+  function set(open){
+    menu.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    set(menu.hidden);
+  });
+  document.addEventListener('click', function(e){
+    if (!menu.hidden && !menu.contains(e.target)) set(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') set(false);
+  });
 })();
 </script>
 </body>
