@@ -605,6 +605,7 @@ sources:
   teams:
   - CIN
 - id: nfl-dal-tapi-toddarcher
+  enabled: false
   kind: twitterapi
   handle: toddarcher
   name: toddarcher
@@ -612,6 +613,7 @@ sources:
   teams:
   - DAL
 - id: nfl-den-tapi-mikeklis
+  enabled: false
   kind: twitterapi
   handle: mikeklis
   name: mikeklis
@@ -619,6 +621,7 @@ sources:
   teams:
   - DEN
 - id: nfl-den-tapi-troyrenck
+  enabled: false
   kind: twitterapi
   handle: TroyRenck
   name: TroyRenck
@@ -626,6 +629,7 @@ sources:
   teams:
   - DEN
 - id: nfl-det-tapi-davebirkett
+  enabled: false
   kind: twitterapi
   handle: davebirkett
   name: davebirkett
@@ -675,6 +679,7 @@ sources:
   teams:
   - LAR
 - id: nfl-lv-tapi-tashanreed
+  enabled: false
   kind: twitterapi
   handle: tashanreed
   name: tashanreed
@@ -738,6 +743,7 @@ sources:
   teams:
   - SEA
 - id: nfl-sea-tapi-gbellseattle
+  enabled: false
   kind: twitterapi
   handle: gbellseattle
   name: gbellseattle
@@ -752,6 +758,7 @@ sources:
   teams:
   - SF
 - id: nfl-sf-tapi-victafur
+  enabled: false
   kind: twitterapi
   handle: VicTafur
   name: VicTafur
@@ -808,6 +815,7 @@ sources:
   teams:
   - NYG
 - id: nfl-ari-tapi-theomackie
+  enabled: false
   kind: twitterapi
   handle: theo_mackie
   name: Theo Mackie
@@ -836,6 +844,7 @@ sources:
   teams:
   - BAL
 - id: nfl-bal-tapi-jonasshaffer
+  enabled: false
   kind: twitterapi
   handle: jonas_shaffer
   name: Jonas Shaffer
@@ -861,6 +870,7 @@ sources:
   tags:
   - national
 - id: nfl-natl-tapi-tompelissero
+  enabled: false
   weight: 1.6
   kind: twitterapi
   handle: TomPelissero
@@ -877,6 +887,7 @@ sources:
   teams:
   - BUF
 - id: nfl-buf-tapi-salmaiorana
+  enabled: false
   kind: twitterapi
   handle: salmaiorana
   name: salmaiorana
@@ -940,6 +951,7 @@ sources:
   teams:
   - CLE
 - id: nfl-dal-tapi-jonmachota
+  enabled: false
   kind: twitterapi
   handle: jonmachota
   name: jonmachota
@@ -1031,6 +1043,7 @@ sources:
   teams:
   - KC
 - id: nfl-kc-tapi-pgsween
+  enabled: false
   kind: twitterapi
   handle: pgsween
   name: pgsween
@@ -1066,6 +1079,7 @@ sources:
   teams:
   - LAR
 - id: nfl-mia-tapi-omarkelly
+  enabled: false
   kind: twitterapi
   handle: OmarKelly
   name: OmarKelly
@@ -1094,6 +1108,7 @@ sources:
   teams:
   - MIN
 - id: nfl-ne-tapi-ezlazar
+  enabled: false
   kind: twitterapi
   handle: ezlazar
   name: ezlazar
@@ -1108,6 +1123,7 @@ sources:
   teams:
   - NE
 - id: nfl-no-tapi-nickunderhill
+  enabled: false
   kind: twitterapi
   handle: nick_underhill
   name: nick_underhill
@@ -1143,6 +1159,7 @@ sources:
   teams:
   - SF
 - id: nfl-sf-tapi-mattbarrows
+  enabled: false
   kind: twitterapi
   handle: mattbarrows
   name: mattbarrows
@@ -1164,6 +1181,7 @@ sources:
   teams:
   - TEN
 - id: nfl-natl-tapi-profootballdoc
+  enabled: false
   kind: twitterapi
   handle: ProFootballDoc
   name: David Chao MD
@@ -1173,6 +1191,7 @@ sources:
   - medical
   detail: true
 - id: nfl-buf-tapi-capaccio
+  enabled: false
   kind: twitterapi
   handle: SalSports
   name: Sal Capaccio
@@ -1180,6 +1199,7 @@ sources:
   teams:
   - BUF
 - id: nfl-buf-tapi-getzenberg
+  enabled: false
   kind: twitterapi
   handle: agetzenberg
   name: Alaina Getzenberg
@@ -1194,6 +1214,7 @@ sources:
   teams:
   - MIA
 - id: nfl-mia-tapi-wolfe
+  enabled: false
   kind: twitterapi
   handle: CameronWolfe
   name: Cameron Wolfe
@@ -1201,6 +1222,7 @@ sources:
   teams:
   - MIA
 - id: nfl-mia-tapi-wingfield
+  enabled: false
   kind: twitterapi
   handle: WingfieldNFL
   name: Travis Wingfield
@@ -1208,6 +1230,7 @@ sources:
   teams:
   - MIA
 - id: nfl-mia-tapi-jackson
+  enabled: false
   kind: twitterapi
   handle: flasportsbuzz
   name: Barry Jackson
@@ -1215,6 +1238,7 @@ sources:
   teams:
   - MIA
 - id: nfl-ne-tapi-daniels
+  enabled: false
   kind: twitterapi
   handle: MarkDanielsPJ
   name: Mark Daniels
@@ -1243,6 +1267,7 @@ sources:
   teams:
   - NYJ
 - id: nfl-bal-tapi-mink
+  enabled: false
   kind: twitterapi
   handle: ryanmink
   name: Ryan Mink
@@ -1257,6 +1282,7 @@ sources:
   teams:
   - CIN
 - id: nfl-cin-tapi-goldsmith
+  enabled: false
   kind: twitterapi
   handle: bygoldsmith
   name: Charlie Goldsmith
@@ -1264,6 +1290,7 @@ sources:
   teams:
   - CIN
 - id: nfl-cin-tapi-rapien
+  enabled: false
   kind: twitterapi
   handle: JamesRapien
   name: James Rapien
@@ -1271,6 +1298,7 @@ sources:
   teams:
   - CIN
 - id: nfl-cle-tapi-grossi
+  enabled: false
   kind: twitterapi
   handle: TonyGrossi
   name: Tony Grossi
@@ -1278,6 +1306,7 @@ sources:
   teams:
   - CLE
 - id: nfl-cle-tapi-petrak
+  enabled: false
   kind: twitterapi
   handle: ScottPetrak
   name: Scott Petrak
@@ -1299,6 +1328,7 @@ sources:
   teams:
   - PIT
 - id: nfl-pit-tapi-kozora
+  enabled: false
   kind: twitterapi
   handle: Alex_Kozora
   name: Alex Kozora
@@ -1313,6 +1343,7 @@ sources:
   teams:
   - PIT
 - id: nfl-pit-tapi-batko
+  enabled: false
   kind: twitterapi
   handle: BrianBatko
   name: Brian Batko
@@ -1327,6 +1358,7 @@ sources:
   teams:
   - HOU
 - id: nfl-hou-tapi-crumpler
+  enabled: false
   kind: twitterapi
   handle: JohnHCrumpler
   name: John Crumpler
@@ -1334,6 +1366,7 @@ sources:
   teams:
   - HOU
 - id: nfl-hou-tapi-thompson
+  enabled: false
   kind: twitterapi
   handle: OfficialColeTo
   name: Cole Thompson
@@ -1348,6 +1381,7 @@ sources:
   teams:
   - IND
 - id: nfl-ind-tapi-bremer
+  enabled: false
   kind: twitterapi
   handle: GMbremer
   name: George Bremer
@@ -1355,6 +1389,7 @@ sources:
   teams:
   - IND
 - id: nfl-jax-tapi-obrien
+  enabled: false
   kind: twitterapi
   handle: MiaOBrienTV
   name: Mia O'Brien
@@ -1376,6 +1411,7 @@ sources:
   teams:
   - TEN
 - id: nfl-ten-tapi-rexrode
+  enabled: false
   kind: twitterapi
   handle: joerexrode
   name: Joe Rexrode
@@ -1383,6 +1419,7 @@ sources:
   teams:
   - TEN
 - id: nfl-den-tapi-stevens
+  enabled: false
   kind: twitterapi
   handle: ZacStevensDNVR
   name: Zac Stevens
@@ -1397,6 +1434,7 @@ sources:
   teams:
   - DEN
 - id: nfl-kc-tapi-teope
+  enabled: false
   kind: twitterapi
   handle: HerbieTeope
   name: Herbie Teope
@@ -1404,6 +1442,7 @@ sources:
   teams:
   - KC
 - id: nfl-lv-tapi-gutierrez
+  enabled: false
   kind: twitterapi
   handle: PGutierrezESPN
   name: Paul Gutierrez
@@ -1411,6 +1450,7 @@ sources:
   teams:
   - LV
 - id: nfl-lv-tapi-gossen
+  enabled: false
   kind: twitterapi
   handle: rachel_gossen
   name: Rachel Gossen
@@ -1418,6 +1458,7 @@ sources:
   teams:
   - LV
 - id: nfl-lac-tapi-miller
+  enabled: false
   kind: twitterapi
   handle: JeffMillerLAT
   name: Jeff Miller
@@ -1453,6 +1494,7 @@ sources:
   teams:
   - NYG
 - id: nfl-nyg-tapi-dunleavy
+  enabled: false
   kind: twitterapi
   handle: rydunleavy
   name: Ryan Dunleavy
@@ -1467,6 +1509,7 @@ sources:
   teams:
   - PHI
 - id: nfl-phi-tapi-wulf
+  enabled: false
   kind: twitterapi
   handle: Bo_Wulf
   name: Bo Wulf
@@ -1481,6 +1524,7 @@ sources:
   teams:
   - WAS
 - id: nfl-was-tapi-staff
+  enabled: false
   kind: twitterapi
   handle: the_commander_c
   name: Commander Country Staff
@@ -1488,6 +1532,7 @@ sources:
   teams:
   - WAS
 - id: nfl-chi-tapi-jahns
+  enabled: false
   kind: twitterapi
   handle: adamjahns
   name: Adam Jahns
@@ -1495,6 +1540,7 @@ sources:
   teams:
   - CHI
 - id: nfl-chi-tapi-finley
+  enabled: false
   kind: twitterapi
   handle: patrickfinley
   name: Patrick Finley
@@ -1502,6 +1548,7 @@ sources:
   teams:
   - CHI
 - id: nfl-det-tapi-pouncy
+  enabled: false
   kind: twitterapi
   handle: colton_pouncy
   name: Colton Pouncy
@@ -1516,6 +1563,7 @@ sources:
   teams:
   - DET
 - id: nfl-det-tapi-meinke
+  enabled: false
   kind: twitterapi
   handle: kmeinke
   name: Kyle Meinke
@@ -1537,6 +1585,7 @@ sources:
   teams:
   - GB
 - id: nfl-gb-tapi-herman
+  enabled: false
   kind: twitterapi
   handle: AndyHermanNFL
   name: Andy Herman
@@ -1558,6 +1607,7 @@ sources:
   teams:
   - MIN
 - id: nfl-min-tapi-insider
+  enabled: false
   kind: twitterapi
   handle: Purple_Insider
   name: Purple Insider
@@ -1565,6 +1615,7 @@ sources:
   teams:
   - MIN
 - id: nfl-atl-tapi-ledbetter
+  enabled: false
   kind: twitterapi
   handle: DOrlandoAJC
   name: D. Orlando Ledbetter
@@ -1579,6 +1630,7 @@ sources:
   teams:
   - ATL
 - id: nfl-atl-tapi-subhan
+  enabled: false
   kind: twitterapi
   handle: amnasubhan
   name: Amna Subhan
@@ -1586,6 +1638,7 @@ sources:
   teams:
   - ATL
 - id: nfl-car-tapi-gantt
+  enabled: false
   kind: twitterapi
   handle: daringantt
   name: Darin Gantt
@@ -1593,6 +1646,7 @@ sources:
   teams:
   - CAR
 - id: nfl-car-tapi-newton
+  enabled: false
   kind: twitterapi
   handle: ESPN_Panthers
   name: David Newton
@@ -1600,6 +1654,7 @@ sources:
   teams:
   - CAR
 - id: nfl-car-tapi-quick
+  enabled: false
   kind: twitterapi
   handle: Sheena_Marie3
   name: Sheena Quick
@@ -1635,6 +1690,7 @@ sources:
   teams:
   - TB
 - id: nfl-tb-tapi-ledyard
+  enabled: false
   kind: twitterapi
   handle: LedyardNFLDraft
   name: Jon Ledyard
@@ -1663,6 +1719,7 @@ sources:
   teams:
   - ARI
 - id: nfl-ari-tapi-weinfuss
+  enabled: false
   kind: twitterapi
   handle: joshweinfuss
   name: Josh Weinfuss
@@ -1670,6 +1727,7 @@ sources:
   teams:
   - ARI
 - id: nfl-ari-tapi-maramara
+  enabled: false
   kind: twitterapi
   handle: azbobbymac
   name: Robert Maramara
@@ -1684,6 +1742,7 @@ sources:
   teams:
   - ARI
 - id: nfl-lar-tapi-jackson
+  enabled: false
   kind: twitterapi
   handle: TheStuJackson
   name: Stu Jackson
@@ -1698,6 +1757,7 @@ sources:
   teams:
   - LAR
 - id: nfl-lar-tapi-klein
+  enabled: false
   kind: twitterapi
   handle: LATimesRams
   name: Gary Klein
@@ -1712,6 +1772,7 @@ sources:
   teams:
   - LAR
 - id: nfl-sf-tapi-wagoner
+  enabled: false
   kind: twitterapi
   handle: nickwagoner
   name: Nick Wagoner
@@ -1726,6 +1787,7 @@ sources:
   teams:
   - SF
 - id: nfl-sea-tapi-dugar
+  enabled: false
   kind: twitterapi
   handle: fugahee21
   name: Michael-Shawn Dugar
