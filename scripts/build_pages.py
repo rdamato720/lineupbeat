@@ -167,6 +167,10 @@ TEAM_COLORS = {
 POS_NAMES = {"QB":"Quarterback","RB":"Running back","WR":"Wide receiver",
              "TE":"Tight end","FB":"Fullback","K":"Kicker"}
 
+# The same set the wire publishes for. A page exists to hold reports, and
+# no report about a guard will ever pass the nugget filter.
+PUBLISHED_POSITIONS = {"QB", "RB", "FB", "WR", "TE"}
+
 TEAM_NAMES = {
     "ARI":"Arizona Cardinals","ATL":"Atlanta Falcons","BAL":"Baltimore Ravens",
     "BUF":"Buffalo Bills","CAR":"Carolina Panthers","CHI":"Chicago Bears",
@@ -1721,10 +1725,26 @@ def main():
                             "pos": (r.get("position") or "").upper(),
                             "meta": r}
 
+    # Skill positions only.
+    #
+    # The wire already refuses to publish a nugget about a punter, so a
+    # punter's page is guaranteed to hold nothing the site is for. Nine
+    # hundred and forty-one directories were guards, corners and kickers,
+    # and Google crawled them, found a fantasy football site full of
+    # offensive linemen, and declined to index a hundred and ninety-one.
+    #
+    # An empty page for a skill player is a page waiting for news. An empty
+    # page for a long snapper is waiting for nothing.
+    skipped_pos = 0
+    kept_slugs = set()
     for pid, ns in by_player.items():
         p = players.get(pid)
         if not p or not p["name"]:
             continue
+        if (p.get("pos") or "").upper() not in PUBLISHED_POSITIONS:
+            skipped_pos += 1
+            continue
+        kept_slugs.add(slug(p["name"]))
         ns = ns[:args.max_reports]
         path = SITE / args.sport / slug(p["name"]) / "index.html"
         if not args.dry_run:
@@ -1895,7 +1915,40 @@ def main():
         (SITE / "sitemap.xml").write_text("\n".join(sitemap))
         (SITE / "robots.txt").write_text(robots)
 
+    # Directories from earlier runs, removed.
+    #
+    # Nothing deleted a page when a player stopped qualifying, so every
+    # roster change and every filter change left its pages behind: 1,739
+    # directories for 720 players. They stayed in the deploy, stayed
+    # crawlable, and were most of what Google saw.
+    #
+    # Only ever the player directory for this sport, and only when a real
+    # build just ran -- a dry run or a failed pipeline must not empty the
+    # site.
+    removed = 0
+    # Fifty is a floor, not a target: it means a real build ran. A pipeline
+    # that failed and produced three pages must never be allowed to delete
+    # seven hundred.
+    if not args.dry_run and written > 50:
+        import shutil
+        protected = {"team", "data", "projections", "draft-value",
+                     "durability", "coaching", "strength-of-schedule",
+                     "offensive-line-rb-performance"}
+        for d in (SITE / args.sport).glob("*"):
+            if not d.is_dir() or d.name in protected:
+                continue
+            if d.name in kept_slugs:
+                continue
+            shutil.rmtree(d)
+            removed += 1
+
     print(f"  player pages   {written}")
+    if removed:
+        print(f"  {removed} stale director{'y' if removed == 1 else 'ies'} "
+              f"removed")
+    if skipped_pos:
+        print(f"  {skipped_pos} non-skill players got no page "
+              f"(linemen, defence, specialists)")
     print(f"  team pages     {teams_written}")
     print(f"  sitemap URLs   {len(urls)}")
     if args.dry_run:
