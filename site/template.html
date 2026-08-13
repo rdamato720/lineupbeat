@@ -2439,9 +2439,19 @@ function renderFeed(){
 
   // League news: national insiders, pulled out before featured so the biggest
   // story of the day is not competing with a camp observation for the lead.
+  // Who filed it, not what it is about.
+  //
+  // The "national" tag means league-wide news, so a Cleveland writer
+  // reporting a trade earned it too: forty-six sources were feeding a
+  // section headed "the national beat". The section promises four
+  // reporters, so it asks for those four by name.
+  const NATIONAL = /^nfl-natl-/;
+  const fromNational = n =>
+    (n.attributions || []).some(a => NATIONAL.test(a.source_id || ""));
+
   const league = [];
   rows = rows.filter(n => {
-    if(!(n.tags || []).includes("national")) return true;
+    if(!fromNational(n)) return true;
     if(n.resolved && league.length < 3 && claim(n)){ league.push(n); return false; }
     return true;          // unmatched: stays in the wire, marked as such
   });
@@ -2474,6 +2484,18 @@ function renderFeed(){
   // within that the national insiders lead. They break things first and
   // everyone else corroborates them minutes later, which is exactly the
   // ordering a reader wants at the top.
+  // Video claims BEFORE featured, not after.
+  //
+  // Claiming afterwards meant featured took the players it wanted and the
+  // clips of those same players were then rejected as already claimed --
+  // fourteen players had video and none of it rendered. A clip is the
+  // scarcer thing: a beat writer files fifty text reports for every video,
+  // and any player who loses his slot here still appears as a tile.
+  const clips = clipsPending
+    .sort((a, b) => new Date(b.n.published_at) - new Date(a.n.published_at))
+    .filter(({n}) => claim(n))
+    .slice(0, 8);
+
   const FEATURED_HOURS = 4;
   const featured = [];
   const usedTeams = new Set();
@@ -2505,13 +2527,7 @@ function renderFeed(){
     take.sort((a, b) => b.i - a.i).forEach(x => rows.splice(x.i, 1));
     take.sort((a, b) => a.rank - b.rank).forEach(x => featured.push(x.n));
   }
-  // Video claims after featured, from the whole pool, capped at eight.
-  // Clips newest first, like everything else. They were arriving in
-  // whatever order the pool happened to hold them.
-  const clips = clipsPending
-    .filter(({n}) => claim(n))
-    .sort((a, b) => new Date(b.n.published_at) - new Date(a.n.published_at))
-    .slice(0, 8);
+
 
 
   // The injury table and the video module both went here. Both showed items
