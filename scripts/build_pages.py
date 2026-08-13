@@ -46,6 +46,23 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import seo
 
+
+def trim(s, limit):
+    """Cut at a word boundary, never mid-name.
+
+    A title cut to the character lands on "Christian McCaffr", which looks
+    like a bug. Dropping the last whole word costs a little meaning and
+    keeps the name intact, and the name is what somebody searched for.
+    """
+    s = (s or "").strip()
+    if len(s) <= limit:
+        return s
+    cut = s[:limit].rstrip()
+    if " " in cut:
+        cut = cut[:cut.rindex(" ")]
+    return cut.rstrip(" ,.|-")
+
+
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -709,8 +726,8 @@ def player_page(p, nuggets, base):
             + "\n".join(arts))
 
     return _render(PAGE.format(
-        title=esc(f"{name} news, beat reports and updates | LineupBeat"),
-        description=esc(page_description(name, who, nuggets)),
+        title=trim(esc(f"{name} news, beat reports and updates | LineupBeat"), 60),
+        description=trim(esc(page_description(name, who, nuggets)), 155),
         canonical=esc(url), og_type="profile",
         og_image=(f'<meta property="og:image" content="{esc(shot)}">'
                   f'<meta name="twitter:image" content="{esc(shot)}">'),
@@ -750,7 +767,7 @@ def team_page(team, players, count, base):
             f'  <h2>Players in the news</h2>\n'
             f'  <div class="grid">\n{cards}\n  </div>')
     return _render(PAGE.format(
-        title=esc(f"{full} beat reports and player news | LineupBeat"),
+        title=trim(esc(f"{full} beat reports and player news | LineupBeat"), 60),
         # Was 90 characters, which leaves half the snippet empty. Naming
         # what a reader actually gets is both longer and more useful.
         # Was 90 characters, which leaves half a search snippet empty.
@@ -1790,7 +1807,10 @@ def main():
             (f"/{args.sport}/draft-value/", "daily", "0.9"),
             (f"/{args.sport}/strength-of-schedule/", "weekly", "0.8"),
             (f"/{args.sport}/coaching/", "monthly", "0.7"),
-            (f"/{args.sport}/durability/", "weekly", "0.8")):
+            (f"/{args.sport}/durability/", "weekly", "0.8"),
+            (f"/{args.sport}/projections/changes/", "weekly", "0.7"),
+            (f"/{args.sport}/offensive-line-rb-performance/", "weekly", "0.7"),
+            ("/about/", "monthly", "0.6")):
         if (SITE / path.lstrip("/") / "index.html").exists():
             urls.append((f"{base}{path}", now, freq, prio))
 

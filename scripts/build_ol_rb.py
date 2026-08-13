@@ -1026,10 +1026,11 @@ def main():
     qualified = [r for r in rows if r["carries"] >= MIN_CARRIES]
     title = (f"{args.season} NFL Offensive Line & RB Performance | "
              f"LineupBeat")
-    desc = (f"How well each NFL team blocked designed runs in "
-            f"{args.season} and how much its backs produced beyond "
-            f"expectation. Rush yards over expected, stuff rate and "
-            f"explosive rate for {len(qualified)} runners.")
+    # Under 158 or Google cuts it, and the cut half is the half that says
+    # what the page is for.
+    desc = (f"How well each NFL team blocked the run in {args.season} and "
+            f"how its backs performed against expectation. Rush yards over "
+            f"expected and blocking rank for {len(qualified)} runners.")
 
     schema = {
         "@type": "Dataset",
