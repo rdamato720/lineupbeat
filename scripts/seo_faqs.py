@@ -57,7 +57,7 @@ DRAFT_VALUE = [
 
 COACHING = [
     ("Who calls the plays for each NFL team in 2026?",
-     "The primary play caller is listed for all 32 offences, and it is "
+     "The primary play caller is listed for all 32 offenses, and it is "
      "often not the offensive coordinator. Buffalo's coordinator is Pete "
      "Carmichael Jr. while Joe Brady calls the plays; Chicago's is Press "
      "Taylor while Ben Johnson calls them."),
@@ -67,7 +67,7 @@ COACHING = [
      "and comparable projection, not a reason to reach."),
     ("Which teams have a new offensive play caller in 2026?",
      "Seventeen, counted as a different primary caller from whoever "
-     "finished the 2025 season calling that offence. That is a different "
+     "finished the 2025 season calling that offense. That is a different "
      "number from how many teams hired a coordinator, and it is the one "
      "that matters."),
     ("What does No New Coaching Edge mean?",
@@ -77,7 +77,7 @@ COACHING = [
      "and all contain excellent picks."),
     ("What does Selective Target mean?",
      "The coaching change looks favourable to specific positions rather "
-     "than the whole offence. Detroit is a tight end signal, which is not a "
+     "than the whole offense. Detroit is a tight end signal, which is not a "
      "reason to move a Lions receiver."),
 ]
 
@@ -89,7 +89,7 @@ SOS = [
      "whether it is hard to score against."),
     ("Which is more useful, opponent record or points allowed?",
      "Points allowed by position, for fantasy purposes. A team can have a "
-     "strong defence and a losing record, which reads as an easy matchup "
+     "strong defense and a losing record, which reads as an easy matchup "
      "by record while being a hard one to throw on. The two genuinely "
      "diverge."),
     ("Why do the fantasy playoff weeks matter most?",
@@ -104,6 +104,6 @@ SOS = [
     ("Does points allowed mean what one player will score?",
      "No. It is every player at that position combined, per game. A "
      "backfield splitting carries two ways puts both backs into its "
-     "opponents' number, so it measures how good a matchup a defence is "
+     "opponents' number, so it measures how good a matchup a defense is "
      "rather than what any one player would score."),
 ]

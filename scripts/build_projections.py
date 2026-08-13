@@ -363,7 +363,7 @@ POS_FAQ = {
          "works."),
         ("Why are tight end projections lower than other positions?",
          "Tight ends block as well as run routes, so they see fewer "
-         "targets than receivers on the same offence. A top tight end is "
+         "targets than receivers on the same offense. A top tight end is "
          "valuable relative to his position, not relative to a top "
          "receiver."),
     ],

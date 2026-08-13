@@ -267,7 +267,7 @@ def build_html(data, css, header, footer):
             f"results with {prev} performance. The current season takes "
             f"over progressively as more of it exists, rather than being "
             f"switched on at once, because four games tell you something "
-            f"about a defence and not very much.")
+            f"about a defense and not very much.")
         basis_h = f"{blend:.0%} this season"
         basis_b = (f"{played} weeks played, so {1-blend:.0%} is still "
                    f"{prev}. The current season takes over as it goes.")
@@ -415,14 +415,14 @@ def build_html(data, css, header, footer):
     <p>Fantasy strength of schedule measures how favourable each team's
        remaining opponents are for quarterbacks, running backs, wide
        receivers and tight ends. <b>Lower difficulty means the upcoming
-       defences have historically allowed more fantasy production to that
+       defenses have historically allowed more fantasy production to that
        position.</b></p>
     <p>{basis_long}</p>
   </section>
 
   <p class="ssfoot">
     A backfield splitting carries two ways still puts both backs into its
-    opponents' number, so this measures how good a matchup a defence is,
+    opponents' number, so this measures how good a matchup a defense is,
     not what any one player would score against it. Ranks run from 1, the
     easiest. Only games not yet played are counted, so the table shrinks as
     the season goes and empties once it ends. Updated {built:%B %-d, %Y}.
@@ -464,7 +464,7 @@ function avg(games, key){{
   return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null;
 }}
 
-// Which key a position uses under the selected scoring rule. A defence
+// Which key a position uses under the selected scoring rule. A defense
 // that gives up catches looks very different in PPR and standard, so the
 // whole board has to move when the format does.
 function pkey(p){{ return p === "wp" ? "wp" : p + "_" + fmt; }}
@@ -520,7 +520,7 @@ function draw(){{
 
   // Sorted by whichever column is selected. Opponent record sorts ascending
   // -- a weak schedule is a low win percentage -- and every position sorts
-  // descending, because a defence that gives up points is a good matchup.
+  // descending, because a defense that gives up points is a good matchup.
   const key = pos === "RECORD" ? "wp" : pos;
   const asc = pos === "RECORD";
   const sorted = list.filter(r => r[key] !== null)
@@ -563,7 +563,7 @@ const LABELS = [[0.16, "Very favourable", "e1"], [0.33, "Favourable", "e2"],
                 [1.01, "Very tough", "h1"]];
 
 function difficulty(v, pos){{
-  // Ranked against every other defence in the league on the same measure,
+  // Ranked against every other defense in the league on the same measure,
   // so "favourable" means favourable relative to what else is out there
   // rather than to an arbitrary number.
   const all = SOS.flatMap(r => r.sched.map(g => g[pkey(pos)]))

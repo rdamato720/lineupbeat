@@ -819,10 +819,10 @@ def data_hub_page(base):
         },
         {
             "href": f"/{SPORT}/coaching/",
-            "kicker": "All 32 offences",
+            "kicker": "All 32 offenses",
             "title": "Offensive coaching",
-            "blurb": "Who actually calls each offence, which seventeen teams "
-                     "changed callers, and which positions that favours. A "
+            "blurb": "Who actually calls each offense, which seventeen teams "
+                     "changed callers, and which positions that favors. A "
                      "tiebreaker between players at comparable ADP, not a "
                      "reason to reach.",
             "meta": "Verified August 9",
@@ -836,6 +836,15 @@ def data_hub_page(base):
                      "actually allows to backs, receivers and tight ends. "
                      "Reweights itself as the season is played.",
             "meta": "Updated weekly in season",
+        },
+        {
+            "href": f"/{SPORT}/offensive-line-rb-performance/",
+            "kicker": "Blocking and the runner",
+            "title": "OL & RB performance",
+            "blurb": "How well each team blocked designed runs, and how "
+                     "much its backs created beyond what that blocking "
+                     "predicted. Historical performance, not a projection.",
+            "meta": "2025 season",
         },
         {
             "href": f"/{SPORT}/durability/",
@@ -1606,7 +1615,7 @@ def about_page(base, built):
       <p>Opponent record and fantasy points allowed by position, with the
          week-by-week schedule behind each rating.</p></div>
     <div class="abcard"><h3><a href="/{SPORT}/coaching/">Offensive coaching</a></h3>
-      <p>Who calls each offence and which positions that favours. A
+      <p>Who calls each offense and which positions that favors. A
          tiebreaker, not a ranking.</p></div>
     <div class="abcard"><h3><a href="/{SPORT}/data/">All fantasy data</a></h3>
       <p>Every board in one place.</p></div>

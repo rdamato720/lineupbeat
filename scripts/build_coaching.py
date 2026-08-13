@@ -81,7 +81,7 @@ SIGNAL_MEANING = {
               "ADP, favour these players over similarly projected "
               "alternatives.",
     "Selective Target": "The change looks favourable to specific positions "
-                        "rather than the whole offence. Only the positions "
+                        "rather than the whole offense. Only the positions "
                         "listed.",
     "No New Coaching Edge": "No meaningful new 2026 coaching reason to move "
                             "players either way. It does not mean avoid the "
@@ -126,7 +126,7 @@ PAGE_CSS = """
   border-color:var(--signal)}
 
 /* ---- coaching ----
-   A card per team, because the useful unit is one offence: who calls it,
+   A card per team, because the useful unit is one offense: who calls it,
    whether that changed, and what it means. A table of scores would publish
    the internal numbers and bury the reasoning. */
 .cowrap{max-width:1080px; margin:0 auto; padding:0 1rem 4rem}
@@ -271,7 +271,7 @@ def team_card(r):
     # Who calls it, said once and clearly. When the caller is also the head
     # coach or the coordinator, repeating the name three times reads as an
     # error rather than as a fact about the staff.
-    lines = [f'<b>{esc(caller)}</b> calls the offence']
+    lines = [f'<b>{esc(caller)}</b> calls the offense']
     if caller != hc:
         lines.append(f'{esc(hc)} is head coach')
     if oc and oc != caller:
@@ -334,7 +334,7 @@ def build_html(rows, css, header, footer, verified):
 
   <div class="cohead">
     <h1>2026 Offensive Coaching</h1>
-    <p class="cosub">Who actually calls each offence, whether that changed,
+    <p class="cosub">Who actually calls each offense, whether that changed,
       and what it means when you are choosing between players at a similar
       price.
       <span class="codate">Reviewed {esc(verified)}</span></p>
@@ -351,7 +351,7 @@ def build_html(rows, css, header, footer, verified):
     <div class="cocard">
       <span class="cok">{len(new_callers)} new callers</span>
       <p>Teams whose primary caller is different from whoever finished 2025
-         calling that offence. <b>That is the change that matters.</b></p>
+         calling that offense. <b>That is the change that matters.</b></p>
     </div>
     <div class="cocard">
       <span class="cok">A tiebreaker</span>
@@ -380,7 +380,7 @@ def build_html(rows, css, header, footer, verified):
 
     <p class="colede">Coaching is a tiebreaker, not the foundation of a
       fantasy ranking. A <b>Target</b> or <b>Strong Target</b> designation
-      means we prefer players from that offence at comparable projection
+      means we prefer players from that offense at comparable projection
       and ADP. It does not mean reaching significantly ahead of market
       value.</p>
 
@@ -393,7 +393,7 @@ def build_html(rows, css, header, footer, verified):
             alternatives.</dd></div>
       <div><dt>Selective Target</dt>
         <dd>Favourable to <b>specific positions only</b>, not the whole
-            offence. Detroit is a tight end signal; it is not a reason to
+            offense. Detroit is a tight end signal; it is not a reason to
             move a Lions receiver.</dd></div>
       <div><dt>No New Coaching Edge</dt>
         <dd>There is no new 2026 coaching change giving an additional
@@ -433,7 +433,7 @@ function apply(){{
     if(filter === "new") ok = el.dataset.new === "yes";
     if(filter === "target"){{
       // At least one position with a positive score. A Selective Target
-      // team qualifies for the position it favours and not for the rest.
+      // team qualifies for the position it favors and not for the rest.
       ok = ["qb","rb","wr","te"].some(p =>
         parseInt(el.dataset[p] || "0", 10) > 0);
     }}
@@ -447,7 +447,7 @@ function apply(){{
   document.getElementById("coempty").hidden = shown > 0;
   const n = document.getElementById("cocount");
   if(n) n.textContent = posFilter
-    ? `${{shown}} team${{shown === 1 ? "" : "s"}} where coaching favours `
+    ? `${{shown}} team${{shown === 1 ? "" : "s"}} where coaching favors `
       + `${{posFilter}}`
     : `${{shown}} of 32`;
 }}
@@ -550,7 +550,7 @@ def main():
     newc = sum(1 for r in rows
                if (r["new_play_caller"] or "").strip().lower() == "yes")
     title = "2026 NFL Offensive Coaching and Fantasy Impact | LineupBeat"
-    desc = (f"Who calls plays for all 32 NFL offences in 2026, which "
+    desc = (f"Who calls plays for all 32 NFL offenses in 2026, which "
             f"{newc} teams changed callers, and what it means for drafting "
             f"quarterbacks, backs, receivers and tight ends.")
 

@@ -18,7 +18,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0A0C08">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"AboutPage","name":"About LineupBeat | How It Works and Where the Data Comes From","description":"Why we built LineupBeat, how we follow beat reporters in all 32 NFL markets, where our projections and data come from, and how we correct factual errors.","url":"https://lineupbeat.com/about/","dateModified":"2026-08-12","publisher":{"@id":"https://lineupbeat.com/#org"},"mainEntity":{"@type":"Person","name":"Ralph Damato","description":"Built and maintains LineupBeat","email":"hello@lineupbeat.com","worksFor":{"@id":"https://lineupbeat.com/#org"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"LineupBeat","item":"https://lineupbeat.com/"},{"@type":"ListItem","position":2,"name":"About","item":"https://lineupbeat.com/about/"}]},{"@type":"Organization","@id":"https://lineupbeat.com/#org","name":"LineupBeat","url":"https://lineupbeat.com/","description":"Local NFL beat reporting matched to fantasy relevant players, with projections, ADP, coaching and schedule data.","email":"hello@lineupbeat.com","alternateName":"LineupBeat Fantasy Football","knowsAbout":["fantasy football","NFL","fantasy football projections","average draft position","NFL injuries","NFL strength of schedule"],"contactPoint":{"@type":"ContactPoint","email":"hello@lineupbeat.com","alternateName":"LineupBeat Fantasy Football","knowsAbout":["fantasy football","NFL","fantasy football projections","average draft position","NFL injuries","NFL strength of schedule"],"contactType":"customer support"}}]}</script><style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"AboutPage","name":"About LineupBeat | How It Works and Where the Data Comes From","description":"Why we built LineupBeat, how we follow beat reporters in all 32 NFL markets, where our projections and data come from, and how we correct factual errors.","url":"https://lineupbeat.com/about/","dateModified":"2026-08-13","publisher":{"@id":"https://lineupbeat.com/#org"},"mainEntity":{"@type":"Person","name":"Ralph Damato","description":"Built and maintains LineupBeat","email":"hello@lineupbeat.com","worksFor":{"@id":"https://lineupbeat.com/#org"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"LineupBeat","item":"https://lineupbeat.com/"},{"@type":"ListItem","position":2,"name":"About","item":"https://lineupbeat.com/about/"}]},{"@type":"Organization","@id":"https://lineupbeat.com/#org","name":"LineupBeat","url":"https://lineupbeat.com/","description":"Local NFL beat reporting matched to fantasy relevant players, with projections, ADP, coaching and schedule data.","email":"hello@lineupbeat.com","alternateName":"LineupBeat Fantasy Football","knowsAbout":["fantasy football","NFL","fantasy football projections","average draft position","NFL injuries","NFL strength of schedule"],"contactPoint":{"@type":"ContactPoint","email":"hello@lineupbeat.com","alternateName":"LineupBeat Fantasy Football","knowsAbout":["fantasy football","NFL","fantasy football projections","average draft position","NFL injuries","NFL strength of schedule"],"contactType":"customer support"}}]}</script><style>
 /* Inline links in prose, on a phone.
    A link inside a sentence should not be 44px tall -- that would break the
    line. What it needs is a bigger hit area than its text box, which extra
@@ -122,7 +122,13 @@ a{color:inherit}
 .tbrow{display:flex; align-items:center; gap:1.1rem; padding:.6rem 1rem}
 .tbrow .logo{flex:0 0 auto}
 .tbrow .views{border-top:0; flex:0 0 auto}
-.tbrow .finder{flex:1; min-width:0; padding:0; max-width:26rem; margin-left:auto}
+/* position:relative, or the dropdown escapes.
+   The base .finder sets it; this override dropped it, so #hits fell back
+   to the nearest positioned ancestor and spanned the whole viewport. It
+   showed as a full-width bar under the header the moment the dropdown had
+   anything in it. */
+.tbrow .finder{position:relative; flex:1; min-width:0; padding:0;
+  max-width:26rem; margin-left:auto}
 .tbrow .finder input{padding:.42rem .7rem; font-size:.92rem}
 /* 16px on a phone, or iOS zooms the page on focus and the reader has to
    pinch back out to see what he was searching. */
@@ -317,11 +323,19 @@ header.stuck /* ---- search: the front door ---- */
 .finder input::placeholder{color:var(--quiet)}
 .finder input:focus{outline:2px solid var(--signal); outline-offset:-1px}
 .hits{
-  position:absolute; z-index:30; left:0; right:0; top:2.6rem; margin:0; padding:0;
+  /* Wide enough to read. In the header the input shrinks with the window,
+     and a hundred-pixel dropdown cannot hold a player name, let alone a
+     sentence explaining why there are no results. */
+  position:absolute; z-index:30; left:auto; right:0; top:2.6rem;
+  min-width:min(22rem, calc(100vw - 2rem)); margin:0; padding:0;
   list-style:none; background:var(--card); border:1px solid var(--rule);
   max-height:16rem; overflow:auto; box-shadow:0 6px 20px rgba(0,0,0,.09);
 }
 .hits:empty{display:none}
+/* The dropdown saying something rather than nothing: one letter and no
+   match both used to return silence, which reads as broken. */
+.hitnote{padding:.6rem .8rem; color:var(--quiet); font-size:.84rem;
+  font-family:var(--text); line-height:1.4}
 .hits button{
   all:unset; display:flex; gap:.55rem; align-items:baseline; width:100%;
   padding:.42rem .7rem; cursor:pointer; font-family:var(--text); font-size:.92rem;
@@ -664,16 +678,10 @@ aside{position:sticky; top:5.5rem}
 /* Team strip lives in the header now, so it is reachable from anywhere on the
    page rather than only from the top. The fade on the right edge is the only
    honest way to say "this scrolls" without adding arrows nobody clicks. */
-.teamrow{border-top:1px solid var(--rule); position:relative}
 .teamrow::after{content:""; position:absolute; right:0; top:0; bottom:0; width:3rem;
   pointer-events:none; background:linear-gradient(to right, transparent, rgba(8,9,11,.96))}
-.teamwrap{display:flex; align-items:center; gap:.7rem; padding:.2rem 1rem}
-.teamlab{flex:0 0 auto; color:var(--quiet); font-size:.56rem; line-height:1.25;
-  letter-spacing:.08em; border-right:1px solid var(--rule); padding-right:.7rem}
 @media (max-width:700px){ .teamlab{display:none} }
 
-.teams{display:flex; gap:.1rem; overflow-x:auto; padding:.35rem 0;
-  scrollbar-width:none; flex:1; min-width:0; scroll-behavior:smooth}
 .teams::-webkit-scrollbar{display:none}
 .tbtn{all:unset; flex:0 0 auto; cursor:pointer; padding:.3rem .34rem;
   border-bottom:2px solid transparent; opacity:.55; transition:opacity .12s;
@@ -1518,7 +1526,7 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
       <p>Opponent record and fantasy points allowed by position, with the
          week-by-week schedule behind each rating.</p></div>
     <div class="abcard"><h3><a href="/nfl/coaching/">Offensive coaching</a></h3>
-      <p>Who calls each offence and which positions that favours. A
+      <p>Who calls each offense and which positions that favors. A
          tiebreaker, not a ranking.</p></div>
     <div class="abcard"><h3><a href="/nfl/data/">All fantasy data</a></h3>
       <p>Every board in one place.</p></div>
@@ -1592,8 +1600,7 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
       <div class="fcol">
         <h3>Contact</h3>
         <p>Corrections, questions, or a projection you think is wrong:
-           <a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a>.
-           A site that asks to be checked should be reachable.</p>
+           <a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a>.</p>
       </div>
     </div>
 
