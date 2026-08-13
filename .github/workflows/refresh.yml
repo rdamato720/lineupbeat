@@ -72,8 +72,6 @@ jobs:
             # Scores fill in as games are played, so the same fetch keeps
             # strength of schedule current without any other trigger.
             python scripts/import_schedule.py --seasons 2025 2026 || true
-            python scripts/import_rushing.py --seasons 2025 \
-                   --rbwr data/rbwr_2025.csv || true
           fi
 
           # The fetch is the only part that costs money, so a manual run
@@ -124,6 +122,8 @@ jobs:
           # cheap and keeps the page in the deploy rather than only on a
           # laptop -- site/nfl is gitignored and rebuilt here.
           python scripts/build_coaching.py || true
+          python scripts/import_rushing.py --seasons 2025 \
+                 --rbwr data/rbwr_2025.csv || true
           python scripts/build_ol_rb.py --season 2025 || true
 
           # What changed in the projections, from the workbook's own
