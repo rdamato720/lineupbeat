@@ -466,13 +466,8 @@ def rankings_html(ol):
     return f"""
   <section class="olrank">
     <h2>2025 Run Blocking Rankings</h2>
-    <p class="olsub">All 32 teams by ESPN Run Block Win Rate. Highest win
-      rate ranks first.</p>
-    <div class="olctl">
-      <span class="ollab">Sort</span>
-      <button class="oltab" data-rsort="rank" aria-pressed="true">Rank</button>
-      <button class="oltab" data-rsort="rbwr" aria-pressed="false">RBWR</button>
-    </div>
+    <p class="olsub">All 32 teams by Run Block Win Rate. Highest win rate
+      ranks first.</p>
     <div class="oltblwrap">
     <table class="oltbl olranktbl">
       <thead><tr>
@@ -480,8 +475,8 @@ def rankings_html(ol):
 win rate. Highest win rate ranks first.">Rank</th>
         <th class="l">Team</th>
         <th class="l"></th>
-        <th title="ESPN Analytics Run Block Win Rate: the percentage of run
-blocking assignments won.">RBWR</th>
+        <th title="Run Block Win Rate: the percentage of run blocking
+assignments won.">RBWR</th>
         <th class="l">Tier</th>
       </tr></thead>
       <tbody id="olrankbody">{body}</tbody>
@@ -489,9 +484,9 @@ blocking assignments won.">RBWR</th>
     </div>
     <button class="olmore" id="olmore" aria-expanded="false">
       View all 32 teams</button>
-    <p class="olrounding">ESPN displays RBWR rounded to whole percentages.
-      Rankings shown are ESPN&rsquo;s published rankings, so teams with the
-      same displayed percentage can have different ranks.</p>
+    <p class="olrounding">RBWR is published rounded to whole percentages,
+      and the rankings are as published, so teams showing the same
+      percentage can have different ranks.</p>
   </section>
 """
 
@@ -605,10 +600,10 @@ OL_FAQ = [
      "runner gained more than expected, negative RYOE means he gained "
      "fewer."),
     ("What is run block win rate?",
-     "Run Block Win Rate, or RBWR, is an ESPN Analytics metric that "
-     "measures how often blockers win their assignments on running plays. "
-     "ESPN builds its blocking win rate metrics using NFL Next Gen Stats "
-     "player tracking data."),
+     "Run Block Win Rate, or RBWR, measures how often a team's blockers "
+     "win their assignments on running plays. It is built from NFL Next "
+     "Gen Stats player tracking data. The source is credited at the foot "
+     "of this page."),
     ("Does a strong line mean a running back will produce?",
      "No. Blocking is only part of the rushing environment. The runner, "
      "scheme, defensive alignment, quarterback threat, game situation and "
@@ -655,8 +650,8 @@ def build_html(rows, ol, season, built, links, has_rbwr, available=None):
         '<th class="olrk" title="Team ranking from 1 to 32 based on run '
         'block win rate. Highest win rate ranks first.">Run block '
         'rank</th>'
-        '<th title="ESPN Analytics Run Block Win Rate: the percentage of '
-        'run blocking assignments won.">RBWR</th>')
+        '<th title="Run Block Win Rate: the percentage of run blocking '
+        'assignments won.">RBWR</th>')
 
     sort_row = ("" if not has_rbwr else
         '<span class="ollab">Sort</span>'
@@ -676,7 +671,7 @@ def build_html(rows, ol, season, built, links, has_rbwr, available=None):
     ol_note = (
         '<div class="olcard"><span class="olk">Blocking</span>'
         '<p>Run Block Win Rate measures <b>how often a team\u2019s '
-        'blockers win on running plays</b>, from ESPN Analytics.</p>'
+        'blockers win on running plays</b>.</p>'
         '</div>'
         if has_rbwr else
         '<div class="olcard"><span class="olk">Blocking</span>'
@@ -703,7 +698,7 @@ def build_html(rows, ol, season, built, links, has_rbwr, available=None):
         if has_rbwr else
         "Running back metrics from NFL Next Gen Stats via nflverse. "
         "Play-by-play derived metrics from nflverse and nflfastR. Run Block "
-        "Win Rate will be added from ESPN Analytics.")
+        "Win Rate will be added.")
 
     # The rankings table and cards exist only with blocking data, same as
     # the columns: a ranking of nothing is not a ranking.
@@ -898,34 +893,12 @@ if(more){{
   }});
 }}
 
-// The rankings table sorts on its own: it answers a different question
-// from the player table and should not move when that one is filtered.
-const rankBody = document.getElementById("olrankbody");
-if(rankBody){{
-  const rankRows = [...rankBody.querySelectorAll("tr")];
-  document.querySelectorAll("[data-rsort]").forEach(b =>
-    b.addEventListener("click", () => {{
-      const key = b.dataset.rsort;
-      document.querySelectorAll("[data-rsort]").forEach(x =>
-        x.setAttribute("aria-pressed", x === b ? "true" : "false"));
-      rankRows.sort((x, y) => {{
-        const a = parseFloat(x.dataset[key]), c = parseFloat(y.dataset[key]);
-        if(isNaN(a) && isNaN(c)) return 0;
-        if(isNaN(a)) return 1;
-        if(isNaN(c)) return -1;
-        // Rank ascends, win rate descends: both put the best line first.
-        return key === "rank" ? a - c : c - a;
-      }});
-      // Sorting a collapsed table would reorder rows nobody can see and
-      // leave the visible five looking wrong, so expanding is part of it.
-      rankRows.forEach(tr => {{ tr.hidden = false;
-                               rankBody.appendChild(tr); }});
-      if(more){{
-        more.setAttribute("aria-expanded", "true");
-        more.textContent = "Show top and bottom 5";
-      }}
-    }}));
-}}
+// No sort control on the rankings table.
+//
+// ESPN's ranks follow run block win rate exactly, so sorting by either
+// produced an identical order: the button worked perfectly and appeared
+// broken, which is worse than not offering it. The table is a ranking
+// already, and the expander covers the middle.
 
 // The two player cards follow the carries filter, because "most above
 // expected" means among the players currently being shown. Reading them
