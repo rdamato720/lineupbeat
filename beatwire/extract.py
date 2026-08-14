@@ -116,6 +116,28 @@ Rules:
   The completion is the news, and it usually scores lower than the original
   report did.
 
+- An emoji is not a sentence, and shorthand is not a report.
+  Beat writers file compressed summaries: a scoreline, then bare names in a
+  list, then abbreviations, with an emoji standing in for the verb. Mike
+  Reiss posts a preseason recap that runs "NE 13, IND 13  Starters sit
+  [emoji] forced TOs  C Brown, G Rupcich  [emoji] Britt, Jam, Baringer",
+  where each symbol labels the list after it.
+  An ambulance next to two names became "Carted off during the game" -
+  filed under his name, about a player who was not in that game. The text
+  never says carted, never says when, never says how. The symbol says
+  something happened; it does not say what.
+  If the source is a list of names under a symbol, you cannot write what
+  happened to them, because the source has not said. Return nothing.
+  Do not name the mechanism, the severity, or the moment. A reader seeing
+  "Carted off during the game" believes a reporter watched it happen.
+
+- If you cannot point at the words that support your claim, there is no
+  claim. Every specific in a nugget - the body part, the mechanism, the
+  timing, the severity - has to come from the text, not from what usually
+  follows. "Left the field" is not "carted off". "Did not return" is not
+  "injured his knee". The most damaging thing available here is a sentence
+  that reads like reporting and was never reported.
+
 - A transaction is only news on the day it happens. Extract one only if the
   source is REPORTING it: "the Rams are signing", "agreed to terms", "per
   source", "the team announced". A sentence that mentions a move while
