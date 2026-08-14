@@ -1161,6 +1161,70 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     max-height:70vh; overflow-y:auto}
   .tmcol a{min-height:44px}
 }
+
+
+
+/* ---- the weekly beat ----
+   Bottom right, after five seconds, gone for good once dismissed. */
+aside.wbslide{position:fixed !important; right:1.1rem; bottom:1.1rem;
+  top:auto; left:auto; z-index:90; width:22rem;
+  max-width:calc(100vw - 2rem); height:auto !important; margin:0;
+  background:
+    radial-gradient(120% 100% at 100% 0%, rgba(198,245,60,.10), transparent 55%),
+    linear-gradient(155deg, #171C20 0%, #0E1214 100%);
+  border:1px solid var(--rule); border-radius:14px;
+  padding:1.15rem 1.25rem 1.2rem;
+  box-shadow:0 24px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(198,245,60,.06);
+  transform:translateY(calc(100% + 3rem)) scale(.98); opacity:0;
+  transition:transform .34s cubic-bezier(.2,.9,.25,1), opacity .34s ease}
+aside.wbslide.on{transform:none; opacity:1}
+aside.wbslide[hidden]{display:none !important}
+/* A lime hairline along the top edge, picking up the wordmark. */
+aside.wbslide::before{content:""; position:absolute; left:1.25rem;
+  right:1.25rem; top:0; height:2px; border-radius:2px;
+  background:linear-gradient(90deg, var(--signal), rgba(198,245,60,0))}
+.wblogo{font-family:var(--agate); font-weight:600; text-transform:uppercase;
+  letter-spacing:.16em; font-size:.66rem; color:var(--quiet); display:block}
+.wblogo em{font-style:normal; color:var(--signal)}
+aside.wbslide h2{font-family:var(--text); font-size:1.12rem; color:var(--ink);
+  margin:.5rem 1.2rem .35rem 0; letter-spacing:-.015em; line-height:1.2}
+aside.wbslide p{margin:0 0 .5rem; font-size:.83rem; line-height:1.5;
+  color:var(--quiet); font-family:var(--text)}
+.wblist{list-style:none; margin:0 0 .85rem; padding:0}
+.wblist li{position:relative; padding-left:1rem; font-size:.8rem;
+  line-height:1.75; color:var(--ink); font-family:var(--text)}
+.wblist li::before{content:""; position:absolute; left:0; top:.65em;
+  width:5px; height:5px; border-radius:50%; background:var(--signal);
+  opacity:.85}
+.wbfine{margin:.6rem 0 0 !important; font-size:.65rem !important;
+  color:var(--quiet) !important; opacity:.65;
+  font-family:var(--agate) !important; letter-spacing:.05em;
+  text-transform:uppercase}
+.wbclose{position:absolute; top:.5rem; right:.6rem; background:none;
+  border:0; color:var(--quiet); font-size:1.3rem; line-height:1;
+  cursor:pointer; padding:.15rem .35rem; border-radius:5px}
+.wbclose:hover{color:var(--ink); background:rgba(255,255,255,.05)}
+.wbform{display:flex; gap:.45rem; flex-wrap:wrap}
+.wbform input{flex:1 1 10rem; min-width:0; background:rgba(0,0,0,.35);
+  border:1px solid var(--rule); border-radius:7px; color:var(--ink);
+  font:inherit; font-size:.88rem; padding:.55rem .75rem}
+.wbform input::placeholder{color:var(--quiet); opacity:.6}
+.wbform input:focus{outline:none; border-color:var(--signal);
+  box-shadow:0 0 0 3px rgba(198,245,60,.12)}
+.wbform button[type=submit]{background:var(--signal); color:#0b0f0a;
+  border:0; border-radius:7px; font-family:var(--agate);
+  text-transform:uppercase; letter-spacing:.06em; font-weight:600;
+  font-size:.78rem; padding:.55rem 1rem; cursor:pointer;
+  transition:filter .15s}
+.wbform button[type=submit]:hover{filter:brightness(1.1)}
+.vh{position:absolute; width:1px; height:1px; overflow:hidden;
+  clip:rect(0 0 0 0)}
+@media (max-width:600px){
+  aside.wbslide{right:.6rem; left:.6rem; bottom:.6rem; width:auto}
+  .wbform input{font-size:16px; min-height:44px; flex:1 1 100%}
+  .wbform button[type=submit]{min-height:44px; flex:1 1 100%}
+  .wbclose{min-width:44px; min-height:44px}
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -1295,6 +1359,67 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     </div>
   </aside>
 </div>
+
+
+
+
+
+
+
+<aside class="wbslide" id="wbslide" hidden aria-live="polite">
+  <button class="wbclose" id="wbclose" aria-label="Dismiss">&times;</button>
+  <span class="wblogo">Lineup<em>Beat</em></span>
+  <h2>The Weekly Beat Newsletter</h2>
+  <p>One email a week with everything that moved:</p>
+  <ul class="wblist">
+    <li>Updated projections and who moved</li>
+    <li>Adds, drops and waiver targets</li>
+    <li>Injury news from all 32 beats</li>
+    <li>Snap counts, roles and depth chart changes</li>
+  </ul>
+  <form class="wbform" method="post" target="_blank"
+        action="https://buttondown.com/api/emails/embed-subscribe/lineupbeat">
+    <label class="vh" for="bd-email">Your email</label>
+    <input type="email" name="email" id="bd-email" required
+           placeholder="you@example.com" autocomplete="email">
+    <button type="submit">Subscribe free</button>
+  </form>
+  <p class="wbfine">Free. No spam. Unsubscribe anytime.</p>
+</aside>
+
+<script>
+(function(){
+  var el = document.getElementById("wbslide");
+  if(!el) return;
+  var KEY = "wb-dismissed";
+  try { if(localStorage.getItem(KEY)) return; } catch(e) {}
+  // Onto the body: a fixed panel inside a transformed parent is no longer
+  // fixed, and stretches to whatever contains it instead.
+  document.body.appendChild(el);
+  var shown = false;
+  function show(){
+    if(shown) return; shown = true;
+    el.hidden = false;
+    requestAnimationFrame(function(){ el.classList.add("on"); });
+  }
+  function dismiss(){
+    el.classList.remove("on");
+    setTimeout(function(){ el.hidden = true; }, 300);
+    try { localStorage.setItem(KEY, "1"); } catch(e) {}
+  }
+  document.getElementById("wbclose").addEventListener("click", dismiss);
+  el.querySelector("form").addEventListener("submit", function(){
+    setTimeout(dismiss, 400);
+  });
+  addEventListener("keydown", function(e){
+    if(e.key === "Escape" && !el.hidden) dismiss();
+  });
+  // Five seconds, not zero: long enough that the reader has seen the page
+  // and short enough that nearly everyone still gets it. A panel that
+  // arrives before the content is the reason people leave.
+  setTimeout(show, 5000);
+})();
+</script>
 
 <footer>
   <div class="wrap">
