@@ -185,6 +185,22 @@ class Resolver:
 
             best = max(fuzz.token_sort_ratio(m, f) for f in forms) / 100.0
 
+            # A single initial is not a first name.
+            #
+            # "C" is a prefix of Chase, so the prefix rule above let it
+            # through, and "C Brown" in a Patriots-Colts summary resolved
+            # to Chase Brown of Cincinnati at high confidence. But "C" is
+            # equally a prefix of Cam, Cedric and Chris: an initial says
+            # which letter, not which player.
+            #
+            # It scores as a bare surname instead. Every Brown starts
+            # level and the team hint decides, which is exactly what
+            # happens when a writer types "Brown" alone -- because an
+            # initial carries no more information than that about who was
+            # meant.
+            if len(m_first) == 1:
+                best = min(best, 0.72)
+
         if team_hint and player.team == team_hint:
             best += 0.25
         elif team_hint:

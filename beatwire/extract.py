@@ -25,6 +25,15 @@ from .models import CATEGORIES, EVENTS, Nugget, RawItem, Source
 from .registry import SportProfile
 from .resolve import Resolver, normalize, surname
 
+# What the resolver has to reach before a claim is attached to a player.
+#
+# A bare surname scores 0.72 alone and 0.97 with a matching team hint, so
+# this admits "Brown" from a Bengals writer and refuses it from a stranger.
+# "C Brown" in a Patriots summary scores 0.66 and is refused, which is the
+# case that put a fabricated injury on a Cincinnati back's page.
+RESOLVE_MIN = 0.85
+
+
 MODEL = os.environ.get("BEATWIRE_MODEL", "claude-haiku-4-5")
 
 # A clip stays attached only if the post it came from is about fewer than
@@ -654,6 +663,20 @@ def extract(
         player, conf = resolver.resolve(
             mention, team_hint, row.get("position_hint")
         )
+        # A guess is not a match.
+        #
+        # The resolver returns its best candidate with a confidence, and
+        # the confidence was being recorded and then ignored: "C Brown" in
+        # a Patriots-Colts summary scored 0.66 against a Cincinnati back
+        # and still went onto his page.
+        #
+        # Below the bar the mention is kept as written and left unresolved,
+        # which the pipeline already handles -- it shows in the team feed
+        # unlinked and counts toward the unresolved metric. An honest "we
+        # could not match this" is worth more than a confident wrong name,
+        # because the wrong name is indistinguishable from a real report.
+        if player and conf < RESOLVE_MIN:
+            player = None
         # Unresolved is published, not discarded. It shows in the team feed
         # unlinked, stays out of roster filtering, and the count of these is a
         # health metric: a spike means a stale roster or a new alias.
