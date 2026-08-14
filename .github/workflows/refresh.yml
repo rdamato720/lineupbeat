@@ -80,7 +80,19 @@ jobs:
           if [ "${{ inputs.skip_fetch }}" = "true" ]; then
             echo "  skip_fetch: not fetching, rebuilding pages only"
           else
-            python -m beatwire.cli run    --sport nfl
+            # A wrong claim, removed before anything is published.
+          #
+          # Reiss files preseason summaries where an ambulance emoji marks
+          # the injured, and the extraction read the pictogram as "Carted
+          # off during the game" -- a specific claim his text never makes,
+          # published under his name. Deleting it here rather than by hand
+          # because the database lives in the cache, not the repo.
+          #
+          # Remove this step once the extraction no longer produces it.
+          python scripts/purge.py --claim "Carted off during the game." \
+                 --yes || true
+
+          python -m beatwire.cli run    --sport nfl
           fi
 
           # Everything still unmatched gets another try against the roster as
