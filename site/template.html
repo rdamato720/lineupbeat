@@ -605,7 +605,10 @@ aside{position:sticky; top:5.5rem}
 .vgrid{display:grid; grid-template-columns:repeat(4, 1fr); gap:.6rem}
 @media (max-width:1100px){ .vgrid{grid-template-columns:repeat(3, 1fr)} }
 @media (max-width:820px){ .vgrid{grid-template-columns:repeat(2, 1fr)} }
-@media (max-width:520px){ .vgrid{grid-template-columns:1fr} }
+/* Two columns all the way down. A single column of eight cards is most
+   of a screen each; two halves the scroll and the thumbnails are still
+   legible at 170px. */
+@media (max-width:520px){ .vgrid{gap:.5rem} }
 .vcard .vteam{display:flex; align-items:center; gap:.3rem; font-family:var(--data);
   font-size:.58rem; color:var(--quiet); margin-top:.2rem}
 .vcard .vteam img{width:.95rem; height:.95rem; object-fit:contain}
