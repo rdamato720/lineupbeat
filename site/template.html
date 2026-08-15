@@ -1217,6 +1217,22 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   .vclaim{display:-webkit-box; -webkit-line-clamp:3;
     -webkit-box-orient:vertical; overflow:hidden}
 }
+
+/* ---- fantasy data on a phone ---- */
+.fdmini{display:none}
+@media (max-width:760px){
+  .fdgrid{display:none}
+  .fdmini{display:block; background:var(--card); border:1px solid var(--rule);
+    border-radius:10px; padding:.85rem 1rem; text-decoration:none}
+  .fdmini:hover{border-color:var(--signal)}
+  .fdminilist{display:block; font-size:.82rem; line-height:1.6;
+    color:var(--quiet); font-family:var(--text)}
+  .fdminibtn{display:inline-flex; align-items:center; min-height:44px;
+    margin-top:.5rem; font-family:var(--agate); text-transform:uppercase;
+    letter-spacing:.06em; font-size:.78rem; font-weight:600;
+    color:var(--signal)}
+  .fdminibtn::after{content:" \2192"; margin-left:.35rem}
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -1339,6 +1355,17 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
       <p>Who calls every offense and which positions gain or lose from 2026
          coaching changes.</p></a>
   </div>
+  <!-- The same five, for a phone.
+       Five cards with two lines of description each is a full screen
+       before a reader can tap anything, and the titles are close to
+       self-explanatory: somebody either wants projections or does not.
+       The names stay visible so the range is still discoverable, and the
+       explanations live on the hub page where there is room. -->
+  <a class="fdmini" href="/nfl/data/">
+    <span class="fdminilist">Projections &middot; Draft value &middot;
+      Durability &middot; Schedule &middot; Coaching &middot; OL &amp; RB</span>
+    <span class="fdminibtn">Explore fantasy data</span>
+  </a>
 </section>
 
 <div class="wrap cols">
