@@ -172,7 +172,13 @@ jobs:
         # Cloudflare Pages rather than Netlify. Netlify moved to credit
         # billing and ten deploys a day exhausted them, most shipping a
         # rebuilt page where nothing had changed. Pages allows 500 builds a
-        # month and unlimited bandwidth free. The project is created on the
-        # first deploy if it does not exist.
-        run: npx --yes wrangler@latest pages deploy site
-             --project-name=lineupbeat --branch=main --commit-dirty=true
+        # month and unlimited bandwidth free.
+        # Create first, deploy second. Wrangler no longer creates a
+        # Pages project on deploy -- it errors and suggests Workers -- and
+        # creating one that exists is a harmless failure, so this is a
+        # no-op on every run after the first.
+        run: |
+          npx --yes wrangler@latest pages project create lineupbeat \
+              --production-branch=main || true
+          npx --yes wrangler@latest pages deploy site \
+              --project-name=lineupbeat --branch=main --commit-dirty=true
