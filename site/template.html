@@ -1161,6 +1161,49 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     max-height:70vh; overflow-y:auto}
   .tmcol a{min-height:44px}
 }
+
+/* ---- the hero on a phone ----
+   A reader arriving from search wants the reports. On a laptop the hero
+   and the wire panel sit side by side and cost nothing, but stacked on a
+   phone they are a full screen of positioning copy before a single piece
+   of news.
+
+   The panel goes because the same three reports appear as tiles below it,
+   so it is a duplicate rather than a loss. The second paragraph and the
+   stats go because they are the pitch, and the pitch can wait until
+   somebody has seen what the site does. */
+@media (max-width:760px){
+  .livebox{display:none}
+  .lede2{display:none}
+  .facts{display:none}
+  .hero{padding-bottom:.4rem}
+  .thesis{font-size:1.55rem; line-height:1.18}
+  .lede{margin-bottom:.9rem}
+  /* One button, not two. "Explore fantasy data" is a second decision
+     asked before the first has been offered, and the nav already has it. */
+  .cta .ghost{display:none}
+  .cta .btn{width:100%; min-height:44px}
+}
+
+/* ---- video on a phone ----
+   Eight full-width cards stacked is most of a screen each and a long way
+   past anything else on the page. Sideways they cost one screen total,
+   and a reader who does not want video swipes past nothing instead of
+   scrolling through eight. */
+@media (max-width:760px){
+  .vgrid{display:flex; gap:.6rem; overflow-x:auto;
+    scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+    padding-bottom:.4rem;
+    /* Bleed to the screen edges so the next card peeks in and the row
+       reads as scrollable without a hint telling somebody so. */
+    margin-left:-1rem; margin-right:-1rem;
+    padding-left:1rem; padding-right:1rem}
+  .vgrid::-webkit-scrollbar{height:5px}
+  .vgrid::-webkit-scrollbar-thumb{background:var(--rule); border-radius:3px}
+  .vcard{flex:0 0 15rem; scroll-snap-align:start}
+  .vclaim{display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
+    overflow:hidden}
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
