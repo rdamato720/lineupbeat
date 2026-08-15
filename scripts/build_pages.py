@@ -1767,7 +1767,7 @@ def main():
         path = SITE / args.sport / slug(p["name"]) / "index.html"
         if not args.dry_run:
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(player_page(p, ns, base))
+            path.write_text(seo.check_page(player_page(p, ns, base), str(path)))
         # A page with no reports still changes when the board does, so it
         # gets today's date and a lower priority rather than being left out.
         urls.append((f"{base}/{args.sport}/{slug(p['name'])}/",
@@ -1788,7 +1788,8 @@ def main():
         path = SITE / args.sport / "team" / slug(team) / "index.html"
         if not args.dry_run:
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(team_page(team, plist, total, base))
+            path.write_text(seo.check_page(
+                team_page(team, plist, total, base), str(path)))
         urls.append((f"{base}/{args.sport}/team/{slug(team)}/", now, "daily", "0.7"))
         teams_written += 1
 
@@ -1898,7 +1899,7 @@ def main():
             hub = data_hub_page(base)
             hd = SITE / args.sport / "data"
             hd.mkdir(parents=True, exist_ok=True)
-            (hd / "index.html").write_text(hub)
+            (hd / "index.html").write_text(seo.check_page(hub, "hub"))
             print(f"  data hub written")
         except Exception as exc:
             print(f"  data hub skipped: {str(exc)[:70]}")

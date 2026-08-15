@@ -84,6 +84,25 @@ def cmd_feed(args):
         print(render.to_terminal(rows))
 
 
+def _check_page(html, where):
+    """Refuse to write a document a browser cannot parse."""
+    bad = []
+    if html.count("<style") != html.count("</style>"):
+        bad.append(f"{html.count('<style')} <style> vs "
+                   f"{html.count('</style>')} </style>")
+    if "<body" not in html:
+        bad.append("no <body>")
+    if "</html>" not in html:
+        bad.append("no </html>")
+    if html.count("<script") != html.count("</script>"):
+        bad.append(f"{html.count('<script')} <script> vs "
+                   f"{html.count('</script>')} </script>")
+    if bad:
+        raise SystemExit(f"\n  REFUSING TO WRITE {where}:\n"
+                         + "".join(f"    {x}\n" for x in bad)
+                         + "  Nothing written.\n")
+
+
 def cmd_export(args):
     """Write the data bundle the static site reads.
 
@@ -274,6 +293,11 @@ def cmd_export(args):
             '"sports":{},"players":[]}',
             payload,
         ).replace("<!--__MOVINGNOW__-->", _moving_now_html(bundle))
+        # The homepage that shipped empty had a 200, 1.2MB and a valid
+        # sitemap: the only signal was looking at it. An unclosed style
+        # tag swallows the entire body, so these assertions are cheap and
+        # would all have fired.
+        _check_page(html_out, str(site))
         site.write_text(html_out)
         print(f"wrote {site}")
 

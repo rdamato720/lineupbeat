@@ -735,7 +735,7 @@ def main():
     out = (Path(args.out) if args.out
            else SITE / SPORT / "strength-of-schedule" / "index.html")
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page)
+    out.write_text(seo.check_page(page, str(out)))
     print(f"\n  wrote {out.relative_to(ROOT)}  ({len(page):,} bytes)")
     print(f"  {total} teams, "
           + (f"{data['weeks_played']} weeks played"

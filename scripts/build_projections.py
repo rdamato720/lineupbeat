@@ -1081,7 +1081,7 @@ def write_position_pages(board, links, css, header, footer, season,
 
         out = SITE / SPORT / "projections" / pos.lower() / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(page)
+        out.write_text(seo.check_page(page, str(out)))
         written.append((pos, n, len(page)))
         add_to_sitemap(
             f"{seo.SITE_URL}/{SPORT}/projections/{pos.lower()}/")
@@ -1151,7 +1151,7 @@ def main():
 
     out = Path(args.out) if args.out else SITE / SPORT / "projections" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page)
+    out.write_text(seo.check_page(page, str(out)))
     print(f"  wrote {out.relative_to(ROOT)}  ({len(page):,} bytes)")
 
     if add_to_sitemap(f"https://lineupbeat.com/{SPORT}/projections/"):

@@ -941,7 +941,7 @@ def main():
     out = (Path(args.out) if args.out
            else SITE / SPORT / "draft-value" / "index.html")
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page)
+    out.write_text(seo.check_page(page, str(out)))
     print(f"\n  wrote {out.relative_to(ROOT)}  ({len(page):,} bytes)")
     if add_to_sitemap(f"https://lineupbeat.com/{SPORT}/draft-value/"):
         print(f"  added to sitemap.xml")

@@ -34,6 +34,41 @@ import json
 
 SITE_URL = "https://lineupbeat.com"
 
+
+def check_page(html, where=""):
+    """Refuse to write a document a browser cannot parse.
+
+    Three hundred lines vanished from the template during an edit,
+    including </style> and the whole body. Everything after the unclosed
+    style tag became stylesheet, so every page on the site rendered
+    nothing -- and nothing complained. The response was 200, the file was
+    1.2MB, the sitemap was valid, there was no console error, and the only
+    way to notice was to look at the site.
+
+    These are the cheapest possible assertions and they would all have
+    fired. A build that stops is a bad afternoon; a build that ships an
+    empty document is a bad week nobody notices.
+    """
+    problems = []
+    if html.count("<style") != html.count("</style>"):
+        problems.append(f"{html.count('<style')} <style> against "
+                        f"{html.count('</style>')} </style>")
+    if "<body" not in html:
+        problems.append("no <body>")
+    if "</html>" not in html:
+        problems.append("no </html>")
+    if html.count("<script") != html.count("</script>"):
+        problems.append(f"{html.count('<script')} <script> against "
+                        f"{html.count('</script>')} </script>")
+    if len(html) < 2000:
+        problems.append(f"only {len(html)} bytes")
+    if problems:
+        raise SystemExit(
+            f"\n  REFUSING TO WRITE {where or 'page'}:\n"
+            + "".join(f"    {x}\n" for x in problems)
+            + "  Nothing written. The previous build is still in place.\n")
+    return html
+
 # The league, by division.
 #
 # Four columns of eight is how every football site lays this out, and it is

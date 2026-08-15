@@ -538,7 +538,7 @@ def main():
     out = (Path(args.out) if args.out
            else SITE / SPORT / "projections" / "changes" / "index.html")
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page)
+    out.write_text(seo.check_page(page, str(out)))
 
     import collections
     dec = collections.Counter(r["decision"] for r in rows)

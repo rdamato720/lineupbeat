@@ -1078,7 +1078,7 @@ def main():
     out = (Path(args.out) if args.out
            else SITE / SPORT / "offensive-line-rb-performance" / "index.html")
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page)
+    out.write_text(seo.check_page(page, str(out)))
 
     # Who did not resolve, named rather than counted.
     #
