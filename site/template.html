@@ -1208,6 +1208,10 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   .vcard{flex:0 0 14rem !important; width:14rem; scroll-snap-align:start}
   /* The heading and its line sat side by side and the line ran off the
      screen. Stacked, both fit. */
+  /* main and the section grew to fit the row -- 1859px inside a 430px
+     wrapper -- so the row never overflowed and the page scrolled instead.
+     A grid item will not shrink below its contents unless told. */
+  main, .sec{min-width:0; max-width:100%}
   .shead{flex-wrap:wrap}
   .shead .sub{flex:1 1 100%; margin:.15rem 0 0}
   .vclaim{display:-webkit-box; -webkit-line-clamp:3;
