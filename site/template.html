@@ -1188,6 +1188,31 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   .cta .btn{width:100%; min-height:44px}
 }
 
+
+/* ---- video swipes, on a phone ----
+   One row, dragged sideways. Eight cards stacked is most of a screen each
+   and the longest thing on the page; in a row they cost one screen and a
+   reader who does not want video swipes past nothing. */
+@media (max-width:760px){
+  .vgrid{
+    display:flex !important;
+    grid-template-columns:none !important;
+    gap:.6rem;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:.5rem;
+    /* Bleed to the screen edges so the next card peeks in: the row reads
+       as scrollable without a caption saying so. */
+    margin-left:-1rem; margin-right:-1rem;
+    padding-left:1rem; padding-right:1rem;
+  }
+  .vgrid::-webkit-scrollbar{height:5px}
+  .vgrid::-webkit-scrollbar-thumb{background:var(--rule); border-radius:3px}
+  .vcard{flex:0 0 14rem !important; width:14rem; scroll-snap-align:start}
+  .vclaim{display:-webkit-box; -webkit-line-clamp:3;
+    -webkit-box-orient:vertical; overflow:hidden}
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
