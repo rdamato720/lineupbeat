@@ -167,6 +167,12 @@ jobs:
 
       - name: Deploy
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: npx --yes netlify-cli@latest deploy --dir=site --prod
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        # Cloudflare Pages rather than Netlify. Netlify moved to credit
+        # billing and ten deploys a day exhausted them, most shipping a
+        # rebuilt page where nothing had changed. Pages allows 500 builds a
+        # month and unlimited bandwidth free. The project is created on the
+        # first deploy if it does not exist.
+        run: npx --yes wrangler@latest pages deploy site
+             --project-name=lineupbeat --branch=main --commit-dirty=true
