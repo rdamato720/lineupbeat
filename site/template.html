@@ -1202,14 +1202,14 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;
     padding-bottom:.5rem;
-    /* Bleed to the screen edges so the next card peeks in: the row reads
-       as scrollable without a caption saying so. */
-    margin-left:-1rem; margin-right:-1rem;
-    padding-left:1rem; padding-right:1rem;
   }
   .vgrid::-webkit-scrollbar{height:5px}
   .vgrid::-webkit-scrollbar-thumb{background:var(--rule); border-radius:3px}
   .vcard{flex:0 0 14rem !important; width:14rem; scroll-snap-align:start}
+  /* The heading and its line sat side by side and the line ran off the
+     screen. Stacked, both fit. */
+  .shead{flex-wrap:wrap}
+  .shead .sub{flex:1 1 100%; margin:.15rem 0 0}
   .vclaim{display:-webkit-box; -webkit-line-clamp:3;
     -webkit-box-orient:vertical; overflow:hidden}
 }
