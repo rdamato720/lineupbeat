@@ -105,11 +105,15 @@ a{color:inherit}
    The right-hand slot is the wire itself rather than an illustration -- the
    most convincing thing this product can show a first-time visitor is three
    real reports filed in the last hour. */
-.herogrid{display:grid; grid-template-columns:1.15fr .85fr; gap:2.4rem;
-  align-items:center; padding:1.8rem 1rem 1.6rem}
+.herogrid{display:grid; grid-template-columns:1.02fr .9fr; gap:80px;
+  max-width:1130px; margin:0 auto; padding:110px 24px 90px;
+  align-items:start}
 @media (max-width:900px){
   .herogrid{grid-template-columns:1fr; gap:1.4rem; padding:1.4rem 1rem}
-  .livebox{order:2}
+  .livebox{background:rgba(15,19,20,.93);
+  border:1px solid rgba(255,255,255,.2); border-radius:18px;
+  width:475px; max-width:100%; min-height:660px; padding:24px;
+  box-shadow:0 30px 80px rgba(0,0,0,.35)}
 }
 /* The second paragraph sits closer to the first than a default margin
    allows: two sentences, one idea. */
@@ -135,16 +139,16 @@ a{color:inherit}
 .fdcard:hover h3{color:var(--signal)}
 .fdcard p{margin:.35rem 0 0; font-size:.79rem; line-height:1.45;
   color:var(--quiet)}
-.cta{display:flex; align-items:center; gap:.6rem; flex-wrap:wrap;
-  margin:1.1rem 0}
+.cta{display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  margin-top:34px}
 /* The second CTA is a link, not a button, because it goes somewhere. A
    ghost treatment says "also this" rather than competing with the primary
    action. */
 .btn.ghost{background:transparent; color:var(--ink);
   border:1px solid var(--rule); text-decoration:none}
 .btn.ghost:hover{border-color:var(--signal); color:var(--signal)}
-.lede{color:var(--quiet); font-size:1rem; line-height:1.55; max-width:46ch;
-  margin:.2rem 0 1.1rem}
+.lede{color:#c0c3bf; font-size:21px; line-height:1.65; max-width:590px;
+  margin:34px 0 0}
 .btn{min-height:44px; font-family:var(--agate); text-transform:uppercase; letter-spacing:.1em;
   font-size:.8rem; font-weight:600; padding:.7rem 1.3rem; border-radius:999px;
   background:var(--signal); color:#0A0C08; border:0; cursor:pointer;
@@ -234,9 +238,9 @@ a{color:inherit}
          font-size:.7rem; color:var(--quiet)}
 .stamp{margin-left:auto; color:var(--quiet)}
 
-.thesis{font-family:var(--text); font-size:clamp(1.55rem, 3.4vw, 2.4rem);
-  line-height:1.14; font-weight:600; margin:0 0 1rem; max-width:24ch;
-  letter-spacing:-.012em}
+.thesis{font-family:var(--text); font-size:clamp(46px, 4.2vw, 72px);
+  line-height:.98; font-weight:700; letter-spacing:-.035em;
+  color:#f2f1ec; max-width:620px; margin:0}
 .thesis em{font-style:normal; color:var(--signal)}
 
 /* the live line: the single most characteristic thing this product does */
@@ -262,8 +266,10 @@ a{color:inherit}
 .wire .line.swap{animation:tick .4s ease-out}
 @keyframes tick{from{opacity:0; transform:translateY(.45rem)}to{opacity:1; transform:none}}
 
-.facts{display:flex; flex-wrap:wrap; gap:1.4rem; color:var(--quiet)}
-.facts b{color:var(--signal); font-family:var(--data); font-size:.9rem; margin-right:.3rem}
+.facts{display:flex; align-items:center; gap:0; margin-top:46px;
+  color:var(--quiet); flex-wrap:nowrap}
+.facts b{display:block; color:#f1f1ed; font-family:var(--agate);
+  font-size:2.1rem; font-weight:700; line-height:1; margin:0}
 
 /* sticky bar, appears once the hero is scrolled past */
 header{position:sticky; top:0; z-index:20; background:rgba(8,9,11,.94);
@@ -1233,6 +1239,337 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     color:var(--signal)}
   .fdminibtn::after{content:" \2192"; margin-left:.35rem}
 }
+
+/* ---- hero, per the coder spec ----
+   Numbers from the specification rather than my judgement: a 1130px grid
+   at 1.02fr/0.9fr with an 80px gap, 110px above, a headline to 72px, 72px
+   buttons and a 475px Wire card. The rules above are edited in place --
+   overriding them from down here is what made the last six attempts fight
+   each other. */
+.eyebrow{font-family:var(--agate); font-size:20px; font-weight:700;
+  letter-spacing:.04em; text-transform:uppercase; color:#c6f53c;
+  margin:0 0 22px}
+.cta .btn{height:72px; display:inline-flex; align-items:center;
+  text-decoration:none; font-size:18px; font-weight:800; letter-spacing:.04em;
+  text-transform:uppercase; border-radius:8px; padding:0 46px}
+.cta .btn:not(.ghost)::after{content:"\2192"; margin-left:2rem}
+.cta .btn.ghost{padding:0 34px; background:transparent;
+  border:1px solid rgba(255,255,255,.3); color:#f1f1ed; font-weight:700}
+.cta .btn.ghost:hover{border-color:#c6f53c}
+.facts span{display:flex; align-items:center; gap:.7rem; padding:0 1.7rem;
+  border-left:1px solid var(--rule); white-space:nowrap}
+.facts span:first-child{padding-left:0; border-left:0}
+.facts i{display:block; font-style:normal; font-family:var(--agate);
+  text-transform:uppercase; letter-spacing:.06em; font-size:.66rem;
+  color:var(--quiet); margin-top:.25rem}
+.facts svg{flex:none; width:1.9rem; height:1.9rem; stroke:#c6f53c;
+  fill:none; stroke-width:1.5}
+@media (max-width:1050px){
+  .herogrid{grid-template-columns:1fr; gap:2rem; padding:2.4rem 1rem 2rem}
+  .thesis{font-size:40px}
+  .lede{font-size:18px; margin-top:24px}
+  .livebox{width:100%; min-height:0}
+  .facts{flex-wrap:wrap; gap:.8rem 0; margin-top:32px}
+}
+@media (max-width:760px){
+  .thesis{font-size:32px}
+  .cta .btn{height:56px; font-size:15px; padding:0 1.4rem}
+  .cta .btn:not(.ghost)::after{margin-left:.8rem}
+  .facts span{padding:0 1rem}
+  .facts b{font-size:1.4rem}
+  .facts svg{width:1.4rem; height:1.4rem}
+}
+
+/* ---- the hero frame ----
+   Faint dashboards down both edges and marks in the lower corners: the
+   density that makes the section read as a data product rather than a
+   headline in a dark box. All decoration, all drawn, none of it live. */
+.hero{position:relative; overflow:hidden}
+.hero > .wrap{position:relative; z-index:2}
+.herodeco{position:absolute; inset:0; z-index:0; pointer-events:none;
+  display:none}
+@media (min-width:1200px){ .herodeco{display:block} }
+.deco{position:absolute; top:0; bottom:0; width:9.5rem; padding:1.4rem 0;
+  display:flex; flex-direction:column; justify-content:center; gap:.55rem;
+  opacity:.28}
+.decoL{left:1.5rem;
+  -webkit-mask-image:linear-gradient(90deg, #000 45%, transparent);
+  mask-image:linear-gradient(90deg, #000 45%, transparent)}
+.decoR{right:1.5rem;
+  -webkit-mask-image:linear-gradient(270deg, #000 45%, transparent);
+  mask-image:linear-gradient(270deg, #000 45%, transparent)}
+.dpanel{border:1px solid var(--rule); border-radius:7px; padding:.45rem .55rem;
+  background:rgba(255,255,255,.014)}
+.dlab{display:block; font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.45rem; color:var(--quiet)}
+.dpanel svg{width:100%; height:1.7rem; margin-top:.25rem; fill:none;
+  stroke:var(--signal); stroke-width:1.4}
+.drows{list-style:none; margin:.25rem 0 0; padding:0}
+.drows li{display:flex; align-items:center; gap:.3rem; padding:.05rem 0;
+  font-size:.48rem; color:var(--quiet)}
+.drows li span{flex:1; min-width:0; overflow:hidden; white-space:nowrap;
+  text-overflow:ellipsis}
+.drows li b{font-family:var(--data); color:var(--ink); font-weight:600}
+.dkey li b{width:.7rem; text-align:center}
+.dkey .q{color:var(--signal)} .dkey .d{color:#E8A87C} .dkey .o{color:#FF6B4A}
+.dring{width:2.6rem; height:2.6rem; margin:.3rem auto .05rem;
+  border-radius:50%; display:grid; place-items:center;
+  background:conic-gradient(var(--signal) 0 28%, rgba(255,255,255,.06) 28% 100%)}
+.dring span{width:1.9rem; height:1.9rem; border-radius:50%; background:#0A0D0F;
+  display:grid; place-items:center; font-family:var(--data); font-size:.52rem;
+  color:var(--ink)}
+.dbars{display:flex; flex-direction:column; gap:.2rem; margin-top:.3rem}
+.dbars i{height:.2rem; border-radius:2px; width:var(--w);
+  background:linear-gradient(90deg, var(--signal), rgba(198,245,60,.3))}
+.herodeco::before{content:""; position:absolute; left:.5rem; bottom:.5rem;
+  width:13rem; height:6.5rem; opacity:.55;
+  background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyNjAnIGhlaWdodD0nMTMwJyBmaWxsPSdub25lJyBzdHJva2U9JyNDNkY1M0MnIHN0cm9rZS1vcGFjaXR5PScwLjQ1JyBzdHJva2Utd2lkdGg9JzEuNCc+PGNpcmNsZSBjeD0nMzQnIGN5PScxMDQnIHI9JzgnLz48Y2lyY2xlIGN4PSc2NCcgY3k9JzEwNCcgcj0nOCcvPjxjaXJjbGUgY3g9Jzk0JyBjeT0nMTA0JyByPSc4Jy8+PGNpcmNsZSBjeD0nMTI0JyBjeT0nMTA0JyByPSc4Jy8+PHBhdGggZD0nTTM0IDk0IHE2IC0zNCAzNCAtNDQgdDQ0IC0yMCcvPjxwYXRoIGQ9J005NCA5NCBxMTggLTI0IDEyIC01MicvPjxwYXRoIGQ9J00xMjQgOTQgcTMyIC0xOCA2MCAtNDggbC0xMSAtMSBtMTEgMSBsLTEgMTEnLz48cGF0aCBkPSdNMjIgMzggbDEyIDEyIE0zNCAzOCBsLTEyIDEyJy8+PHBhdGggZD0nTTc2IDIyIGwxMiAxMiBNODggMjIgbC0xMiAxMicvPjwvc3ZnPg==") left bottom / contain no-repeat}
+.herodeco::after{content:""; position:absolute; right:.5rem; bottom:.5rem;
+  width:15rem; height:6rem; opacity:.55;
+  background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSczMDAnIGhlaWdodD0nMTIwJyBmaWxsPSdub25lJz48ZyBmaWxsPScjQzZGNTNDJyBmaWxsLW9wYWNpdHk9JzAuMyc+PHJlY3QgeD0nMTYwJyB5PSc3Nicgd2lkdGg9JzEwJyBoZWlnaHQ9JzQwJy8+PHJlY3QgeD0nMTc2JyB5PSc2NCcgd2lkdGg9JzEwJyBoZWlnaHQ9JzUyJy8+PHJlY3QgeD0nMTkyJyB5PSc3MCcgd2lkdGg9JzEwJyBoZWlnaHQ9JzQ2Jy8+PHJlY3QgeD0nMjA4JyB5PSc0OCcgd2lkdGg9JzEwJyBoZWlnaHQ9JzY4Jy8+PHJlY3QgeD0nMjI0JyB5PSc1Nycgd2lkdGg9JzEwJyBoZWlnaHQ9JzU5Jy8+PHJlY3QgeD0nMjQwJyB5PSczMicgd2lkdGg9JzEwJyBoZWlnaHQ9Jzg0Jy8+PHJlY3QgeD0nMjU2JyB5PSc0MCcgd2lkdGg9JzEwJyBoZWlnaHQ9Jzc2Jy8+PC9nPjxwb2x5bGluZSBwb2ludHM9JzEyLDk4IDM4LDg2IDY0LDkyIDkwLDcyIDExNiw3OSAxNDIsNTYgMTY4LDYzIDE5NCw0MiAyMjAsNDkgMjQ2LDI2IDI3MiwxNicgc3Ryb2tlPScjQzZGNTNDJyBzdHJva2Utb3BhY2l0eT0nMC41JyBzdHJva2Utd2lkdGg9JzEuNScvPjwvc3ZnPg==") right bottom / contain no-repeat}
+
+/* ---- LineupBeat homepage hero ----
+   Supplied as a complete spec: every measurement here came with the
+   design rather than being inferred from a screenshot, and the lb-
+   prefix keeps it clear of the rules already in this file. The edge
+   panels carry no live numbers -- they are decoration, hidden from
+   screen readers, and gone below 1000px. */
+.lb-hero{position:relative; overflow:hidden; min-height:790px;
+  background:radial-gradient(circle at 37% 37%, rgba(35,43,45,.33) 0%,
+    rgba(12,15,16,.16) 32%, rgba(5,7,8,0) 55%), #050708;
+  color:#f1f1ed}
+.lb-hero::before{content:""; position:absolute; inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size:72px 72px; pointer-events:none;
+  -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,.75), rgba(0,0,0,.25));
+  mask-image:linear-gradient(to bottom, rgba(0,0,0,.75), rgba(0,0,0,.25))}
+.lb-hero-inner{position:relative; z-index:5; align-items:start;
+  width:min(1130px, calc(100% - 64px)); margin:0 auto; display:grid;
+  grid-template-columns:1.04fr .90fr; gap:72px;
+  padding-top:40px; padding-bottom:140px}
+.lb-hero-copy{position:relative; z-index:6}
+.lb-eyebrow{margin-bottom:23px; font-family:var(--agate); font-size:20px;
+  font-weight:700; color:#c6f53c; letter-spacing:.045em;
+  text-transform:uppercase}
+.lb-eyebrow span{padding:0 6px}
+.lb-hero-title{margin:0; max-width:650px; font-family:var(--text);
+  font-size:clamp(56px, 4.5vw, 72px); font-weight:400; line-height:.99;
+  letter-spacing:-.033em; color:#f2f1ec}
+.lb-hero-title span{color:#c6f53c}
+.lb-hero-description{max-width:590px; margin:33px 0 0; font-family:var(--text);
+  font-size:19px; line-height:1.7; color:#b5bab5}
+.lb-hero-actions{display:flex; align-items:center; gap:18px; margin-top:35px}
+.lb-btn{height:72px; display:inline-flex; align-items:center;
+  justify-content:center; box-sizing:border-box; border-radius:8px;
+  text-decoration:none; font-family:var(--agate); font-size:18px;
+  font-weight:700; letter-spacing:.045em;
+  transition:transform .18s ease, background .18s ease, border-color .18s ease}
+.lb-btn:hover{transform:translateY(-2px)}
+.lb-btn-primary{min-width:282px; padding:0 28px 0 42px;
+  justify-content:space-between; background:#c6f53c; color:#060806}
+.lb-btn-primary:hover{background:#d4ff4b}
+.lb-btn-primary svg, .lb-wire-footer svg{width:25px; height:25px; fill:none;
+  stroke:currentColor; stroke-width:1.7}
+.lb-btn-secondary{min-width:240px; padding:0 32px;
+  border:1px solid rgba(255,255,255,.30); color:#f0f1ec}
+.lb-btn-secondary:hover{border-color:#c6f53c}
+.lb-proof-row{display:grid; grid-template-columns:1fr 1fr 1.18fr;
+  margin-top:47px}
+.lb-proof{min-height:75px; display:flex; align-items:center; gap:15px;
+  padding-right:21px}
+.lb-proof + .lb-proof{padding-left:27px;
+  border-left:1px solid rgba(255,255,255,.18)}
+.lb-proof svg{width:42px; height:42px; flex-shrink:0; fill:none;
+  stroke:#c6f53c; stroke-width:1.8}
+.lb-proof div{display:flex; flex-direction:column}
+.lb-proof strong{font-family:var(--agate); font-size:38px; font-weight:700;
+  line-height:.95; color:#f0f1ed}
+.lb-proof strong.lb-updated{font-size:28px}
+.lb-proof span{margin-top:8px; font-family:var(--agate); font-size:12px;
+  font-weight:600; color:#9ba09c; letter-spacing:.085em;
+  text-transform:uppercase}
+.lb-wire-card{position:relative; z-index:8; width:100%; max-width:475px;
+  /* Fixed, not minimum. The panel rotates every four seconds and
+     claims differ in length, so a growing card shunted the whole
+     page down each time one arrived. */
+  height:660px; display:flex; flex-direction:column;
+  /* Measured: the card sat 35px below the headline, because the
+     eyebrow above it in the left column has no counterpart here. */
+  margin-top:-35px;
+  justify-self:end; overflow:hidden;
+  background:linear-gradient(180deg, rgba(17,21,22,.97), rgba(13,17,18,.97));
+  border:1px solid rgba(255,255,255,.22); border-radius:18px;
+  box-shadow:0 32px 90px rgba(0,0,0,.38)}
+.lb-wire-header{height:67px; padding:0 24px; display:flex; align-items:center;
+  justify-content:space-between; border-bottom:1px solid rgba(255,255,255,.13);
+  font-family:var(--agate); letter-spacing:.05em; text-transform:uppercase}
+.lb-wire-live{display:flex; align-items:center; gap:12px; color:#c6f53c;
+  font-size:18px; font-weight:700}
+.lb-live-dot{width:11px; height:11px; border-radius:50%; background:#c6f53c;
+  box-shadow:0 0 14px rgba(198,245,60,.35)}
+.lb-wire-time{color:#a5aaa6; font-size:13px; font-weight:600}
+.lb-wire-feed{position:relative; padding:0 23px; flex:1;
+  min-height:0; overflow:hidden}
+.lb-wire-feed::before{content:""; position:absolute; top:69px; bottom:72px;
+  left:57px; width:1px; background:rgba(255,255,255,.14)}
+.lb-wire-item{position:relative; min-height:172px; display:grid;
+  grid-template-columns:68px 1fr; padding:22px 0; color:inherit;
+  text-decoration:none; border-bottom:1px solid rgba(255,255,255,.13);
+  transition:background .16s ease}
+.lb-wire-item:hover{background:rgba(255,255,255,.018)}
+.lb-wire-marker{position:relative; z-index:2}
+.lb-player-avatar{position:relative; z-index:2; width:54px; height:54px;
+  display:flex; align-items:center; justify-content:center; border-radius:50%;
+  background:#1a1f20; border:1px solid rgba(255,255,255,.15);
+  font-family:var(--agate); font-size:16px; font-weight:700; color:#c6f53c;
+  overflow:hidden}
+.lb-player-avatar img{width:100%; height:100%; object-fit:contain}
+.lb-wire-marker::after{content:""; position:absolute; z-index:3; left:49px;
+  top:78px; width:9px; height:9px; border-radius:50%; background:#c6f53c}
+.lb-wire-content{min-width:0}
+.lb-wire-player-row{display:flex; align-items:center;
+  justify-content:space-between; gap:12px}
+.lb-wire-player-row > div{display:flex; align-items:baseline; gap:7px}
+.lb-wire-player-row strong{font-family:var(--agate); font-size:21px;
+  font-weight:700; letter-spacing:.015em}
+.lb-wire-player-row span{font-family:var(--agate); font-size:13px;
+  color:#a1a6a2}
+.lb-wire-player-row time{flex-shrink:0; font-family:var(--agate);
+  font-size:15px; color:#c6f53c}
+.lb-wire-content p{margin:8px 0 15px; font-family:var(--text); font-size:17px;
+  line-height:1.38; color:#e7e8e4}
+.lb-wire-source{font-family:var(--agate); font-size:15px; color:#a8ada8}
+.lb-wire-source span{padding:0 5px}
+.lb-wire-footer{min-height:66px; padding:0 30px 0 91px; display:flex;
+  align-items:center; justify-content:space-between; color:#c6f53c;
+  font-family:var(--agate); font-size:17px; font-weight:700;
+  letter-spacing:.05em; text-decoration:none; text-transform:uppercase}
+.lb-wire-footer:hover{background:rgba(198,245,60,.035)}
+/* ---- edge dashboards ----
+   Decoration only: no live numbers, hidden from screen readers, and gone
+   below 1000px where they would crowd the headline rather than frame it. */
+.lb-edge{position:absolute; top:45px; bottom:0; width:245px; z-index:2;
+  pointer-events:none; opacity:.32}
+.lb-edge-left{left:0;
+  -webkit-mask-image:linear-gradient(to right, black 0%, rgba(0,0,0,.95) 52%, transparent 100%);
+  mask-image:linear-gradient(to right, black 0%, rgba(0,0,0,.95) 52%, transparent 100%)}
+.lb-edge-right{right:0;
+  -webkit-mask-image:linear-gradient(to left, black 0%, rgba(0,0,0,.95) 52%, transparent 100%);
+  mask-image:linear-gradient(to left, black 0%, rgba(0,0,0,.95) 52%, transparent 100%)}
+.lb-mini-panel{position:absolute; width:185px; padding:13px;
+  box-sizing:border-box; border:1px solid rgba(255,255,255,.16);
+  border-radius:5px; background:rgba(13,17,18,.52); font-family:var(--agate);
+  color:#a9ada9}
+.lb-mini-title{margin-bottom:11px; font-size:12px; letter-spacing:.06em;
+  text-transform:uppercase}
+.lb-edge-left .lb-mini-panel:nth-child(1){top:10px; left:12px}
+.lb-edge-left .lb-mini-panel:nth-child(2){top:185px; left:0}
+.lb-edge-left .lb-mini-panel:nth-child(3){top:395px; left:12px}
+.lb-edge-right .lb-mini-panel:nth-child(1){top:45px; right:0}
+.lb-edge-right .lb-mini-panel:nth-child(2){top:245px; right:10px}
+.lb-edge-right .lb-mini-panel:nth-child(3){top:500px; right:0}
+.lb-chart-panel svg{width:100%; height:72px}
+.lb-rank-row{display:flex; justify-content:space-between; padding:4px 0;
+  font-size:13px}
+.lb-rank-row b{font-weight:500}
+.lb-target-panel{height:165px}
+.lb-donut{position:relative; width:92px; height:92px; margin:8px auto;
+  display:flex; align-items:center; justify-content:center; border-radius:50%;
+  background:conic-gradient(#c6f53c 0 28%, rgba(255,255,255,.06) 28% 100%)}
+.lb-donut::after{content:""; position:absolute; width:63px; height:63px;
+  border-radius:50%; background:#0c1011}
+.lb-donut span{position:relative; z-index:2; font-size:22px}
+.lb-bar-row{display:grid; grid-template-columns:1fr 38px; gap:8px;
+  align-items:center; padding:6px 0}
+.lb-bar-row i{position:relative; height:5px; background:rgba(255,255,255,.05)}
+.lb-bar-row i::after{content:""; position:absolute; left:0; top:0;
+  width:var(--bar); height:100%; background:#c6f53c}
+.lb-bar-row span{font-size:12px}
+.lb-status-row{display:flex; align-items:center; gap:11px; padding:4px 0;
+  font-size:12px}
+.lb-status-row .q, .lb-status-row .d{color:#c6f53c}
+.lb-status-row .out{color:#ef5c45}
+/* ---- playbook ---- */
+.lb-playbook{position:absolute; width:230px; height:160px; left:8px;
+  bottom:25px}
+.lb-playbook span{position:absolute; font-size:27px; color:#c6f53c}
+.lb-playbook .x1{left:50px; top:18px}
+.lb-playbook .x2{left:108px; top:34px}
+.lb-playbook .x3{left:161px; top:10px}
+.lb-playbook .o1{left:30px; top:91px}
+.lb-playbook .o2{left:95px; top:98px}
+.lb-playbook .o3{left:157px; top:84px}
+.lb-playbook svg{position:absolute; inset:0; width:100%; height:100%}
+.lb-playbook path{fill:none; stroke:#c6f53c; stroke-width:1.2;
+  stroke-dasharray:5 6}
+/* ---- tablet ---- */
+@media (max-width:1180px){
+  .lb-edge{opacity:.18}
+  .lb-hero-inner{width:min(100% - 48px, 1030px); gap:45px}
+  .lb-hero-title{font-size:clamp(51px, 5vw, 64px)}
+}
+/* ---- stack ---- */
+@media (max-width:1000px){
+  .lb-hero{min-height:auto}
+  .lb-edge{display:none}
+  .lb-hero-inner{width:min(100% - 40px, 760px); grid-template-columns:1fr;
+    gap:55px; padding-top:75px; padding-bottom:75px}
+  .lb-wire-card{justify-self:stretch; max-width:none}
+  .lb-hero-title{max-width:700px}
+  .lb-hero-description{max-width:650px}
+}
+/* ---- mobile ---- */
+@media (max-width:650px){
+  /* The card duplicates the reports directly below it, and on a
+     phone it is a full screen between the reader and the news. */
+  .lb-wire-card{display:none}
+  /* The Fantasy Data block goes too: the nav carries it, and on a phone
+     it sits between the reader and the reports. */
+  .fdata{display:none}
+  /* Three across rather than two-and-a-stray. The icons come out, since
+     at this width they cost more room than they earn, and the labels
+     shrink to fit rather than wrapping. */
+  .lb-proof-row{grid-template-columns:repeat(3, 1fr); row-gap:0}
+  /* Stacked rather than side by side: an icon beside a number needs
+     horizontal room that a third of a phone does not have, and above it
+     the same icon costs nothing. */
+  .lb-proof{padding-right:0; gap:0; min-height:0; flex-direction:column;
+    align-items:center; text-align:center}
+  .lb-proof + .lb-proof{padding-left:12px}
+  .lb-proof svg{width:24px; height:24px; margin-bottom:8px}
+  .lb-proof strong{font-size:26px}
+  /* 'Updated' is a word where the others are numbers, so at a
+     smaller size it floated above their baseline and dragged its
+     label with it. A fixed line box lands all three level. */
+  .lb-proof strong{line-height:26px; display:flex;
+    align-items:center; justify-content:center}
+  .lb-proof strong.lb-updated{font-size:17px}
+  .lb-proof span{font-size:10px; letter-spacing:.05em; margin-top:5px}
+  .lb-proof:nth-child(3){grid-column:auto; border-left:1px solid
+    rgba(255,255,255,.18); padding-left:12px}
+  .lb-hero-inner{width:calc(100% - 30px); padding-top:55px;
+    padding-bottom:55px}
+  .lb-eyebrow{font-size:16px}
+  .lb-hero-title{font-size:clamp(43px, 12vw, 56px)}
+  .lb-hero-description{font-size:17px}
+  .lb-hero-actions{flex-direction:column; align-items:stretch}
+  .lb-btn-primary, .lb-btn-secondary{width:100%; min-width:0}
+  .lb-proof-row{grid-template-columns:repeat(3, 1fr); row-gap:0}
+  .lb-proof:nth-child(3){grid-column:auto;
+    border-left:1px solid rgba(255,255,255,.18);
+    padding-left:12px}
+  .lb-proof strong{font-size:32px}
+  .lb-wire-card{border-radius:12px}
+  .lb-wire-item{grid-template-columns:56px 1fr}
+  .lb-player-avatar{width:44px; height:44px; font-size:13px}
+  .lb-wire-feed::before{left:47px}
+  .lb-wire-marker::after{left:39px}
+  .lb-wire-content p{font-size:16px}
+  .lb-wire-player-row strong{font-size:19px}
+  .lb-wire-footer{padding-left:80px}
+}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -1275,30 +1612,98 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   </div>
 </section>
 
-<section class="hero" id="hero">
-  <div class="wrap herogrid">
-    <div class="heroleft">
-      <h1 class="thesis">Everything that influences your fantasy football lineup, <em>before you set it</em>.</h1>
-      <p class="lede">Local beat reporting from all 32 NFL markets, matched
-         to the players it affects.</p>
-      <p class="lede lede2">You&rsquo;ll also get fantasy data informed by
-         the latest player news and deep analysis of each player&rsquo;s
-         role, performance and opportunity.</p>
-      <div class="cta">
-        <a class="btn" href="/nfl/data/">Explore fantasy data</a>
+<section class="lb-hero" id="hero">
+  <!-- LEFT EDGE DATA DECORATION -->
+  <div class="lb-edge lb-edge-left" aria-hidden="true">
+    <div class="lb-mini-panel lb-chart-panel">
+      <div class="lb-mini-title">FANTASY POINTS</div>
+      <svg viewBox="0 0 170 80" preserveAspectRatio="none">
+        <polyline
+          points="0,65 12,55 25,58 38,40 52,48 67,29 82,37 98,17 113,29 128,15 142,21 158,8"
+          fill="none" stroke="#c6f53c" stroke-width="2" />
+      </svg>
+    </div>
+    <div class="lb-mini-panel">
+      <div class="lb-mini-title">TOP PERFORMERS</div>
+      <div class="lb-rank-row"><span>1. J. Jefferson</span><b>28.4</b></div>
+      <div class="lb-rank-row"><span>2. C. McCaffrey</span><b>27.1</b></div>
+      <div class="lb-rank-row"><span>3. T. Hill</span><b>24.8</b></div>
+      <div class="lb-rank-row"><span>4. B. Hall</span><b>22.7</b></div>
+    </div>
+    <div class="lb-mini-panel lb-target-panel">
+      <div class="lb-mini-title">TARGET SHARE</div>
+      <div class="lb-donut"><span>28%</span></div>
+    </div>
+    <div class="lb-playbook">
+      <span class="lb-x x1">&times;</span>
+      <span class="lb-x x2">&times;</span>
+      <span class="lb-x x3">&times;</span>
+      <span class="lb-o o1">&#9675;</span>
+      <span class="lb-o o2">&#9675;</span>
+      <span class="lb-o o3">&#9675;</span>
+      <svg viewBox="0 0 250 120">
+        <path d="M40 85 C75 35, 105 35, 138 52" />
+        <path d="M90 98 C120 60, 165 67, 205 25" />
+      </svg>
+    </div>
+  </div>
+  <!-- RIGHT EDGE DATA DECORATION -->
+  <div class="lb-edge lb-edge-right" aria-hidden="true">
+    <div class="lb-mini-panel">
+      <div class="lb-mini-title">INJURY REPORT</div>
+      <div class="lb-status-row"><span class="q">Q</span><span>QUESTIONABLE</span></div>
+      <div class="lb-status-row"><span class="d">D</span><span>DOUBTFUL</span></div>
+      <div class="lb-status-row"><span class="out">O</span><span>OUT</span></div>
+    </div>
+    <div class="lb-mini-panel">
+      <div class="lb-mini-title">SNAP SHARE</div>
+      <div class="lb-bar-row"><i style="--bar:85%"></i><span>85%</span></div>
+      <div class="lb-bar-row"><i style="--bar:62%"></i><span>62%</span></div>
+      <div class="lb-bar-row"><i style="--bar:58%"></i><span>58%</span></div>
+      <div class="lb-bar-row"><i style="--bar:45%"></i><span>45%</span></div>
+    </div>
+    <div class="lb-mini-panel">
+      <div class="lb-mini-title">TEAM OFFENSE RANKINGS</div>
+      <div class="lb-rank-row"><span>1. SF</span><b>28.3</b></div>
+      <div class="lb-rank-row"><span>2. BUF</span><b>27.6</b></div>
+      <div class="lb-rank-row"><span>3. MIA</span><b>26.1</b></div>
+      <div class="lb-rank-row"><span>4. DET</span><b>24.7</b></div>
+    </div>
+  </div>
+  <!-- MAIN HERO CONTENT -->
+  <div class="lb-hero-inner">
+    <div class="lb-hero-copy">
+      <div class="lb-eyebrow">THE WIRE <span>&bull;</span> ALL 32 NFL TEAMS</div>
+      <h1 class="lb-hero-title">
+        Know what changed<br>
+        <span>before</span> your league does.
+      </h1>
+      <p class="lb-hero-description">
+        We follow multiple beat reporters per NFL team,
+        connect their reporting to the players it affects,
+        and pair it with free fantasy data.
+      </p>
+      <div class="lb-hero-actions">
+        <a href="#feed" class="lb-btn lb-btn-primary">
+          <span>OPEN THE WIRE</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="/nfl/data/" class="lb-btn lb-btn-secondary">Explore Fantasy Data</a>
       </div>
-      <div class="facts agate" id="facts"></div>
-
+      <div class="lb-proof-row" id="facts"></div>
     </div>
-
-    <aside class="livebox" aria-label="Latest reports">
-      <div class="livehead"><span class="pip"></span>
-        <span class="agate">Live on the wire</span>
-        <span class="liveago agate" id="liveago"></span></div>
-      <div id="livelist"></div>
+    <!-- LIVE WIRE PREVIEW -->
+    <aside class="lb-wire-card">
+      <div class="lb-wire-header">
+        <div class="lb-wire-live"><span class="lb-live-dot"></span>RECENT NEWS</div>
+        <div class="lb-wire-time" id="liveago">UPDATED NOW</div>
+      </div>
+      <div class="lb-wire-feed" id="livelist"></div>
+      <a href="#feed" class="lb-wire-footer">
+        <span>VIEW ALL WIRE UPDATES</span>
+        <svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+      </a>
     </aside>
-    </div>
-
   </div>
 </section>
 
@@ -3065,17 +3470,36 @@ let liveTimer = null;
 let liveIdx = 0;
 
 function liveRow(n, entering){
+  // Built to the design's structure: a team badge on the timeline, the
+  // player and position, the claim, and who filed it. The badge carries
+  // the team logo rather than a headshot -- three hotlinked portraits on
+  // every homepage load is three chances for somebody else's CDN to
+  // decide it would rather not.
   const src = n.attributions[0] || {};
-  const row = document.createElement("div");
-  row.className = "liverow" + (entering ? " enter" : "");
-  row.innerHTML = `${faceFor(n, "md")}
-    <div class="livebody">
-      <span class="livewho">${esc(n.player_name)}
-        <span class="livemeta">${esc(n.team)}</span></span>
-      <p class="liveclaim">${esc(n.claim)}</p>
-      <span class="livemeta">${esc(src.source_name || "")} · ${ago(n.published_at)}</span>
+  const p = PLAYERS.get(n.player_id);
+  const row = document.createElement("a");
+  row.className = "lb-wire-item" + (entering ? " enter" : "");
+  row.href = n.resolved && p ? `/nfl/${p.slug || ""}/` : "#feed";
+  row.innerHTML = `
+    <div class="lb-wire-marker">
+      <div class="lb-player-avatar">${logoHTML(n.team, "") ||
+        esc(n.team)}</div>
+    </div>
+    <div class="lb-wire-content">
+      <div class="lb-wire-player-row">
+        <div>
+          <strong>${esc(n.player_name)}</strong>
+          <span>${esc((p && p.pos) || n.team)}</span>
+        </div>
+        <time>${ago(n.published_at)}</time>
+      </div>
+      <p>${esc(n.claim)}</p>
+      <div class="lb-wire-source">${esc(src.source_name || "")}${
+        src.outlet ? ` <span>&bull;</span> ${esc(src.outlet)}` : ""}</div>
     </div>`;
-  row.onclick = (e) => { if(!fromControl(e) && n.resolved) openPlayer(n.player_id); };
+  row.onclick = (e) => {
+    if(!fromControl(e) && n.resolved){ e.preventDefault(); openPlayer(n.player_id); }
+  };
   return row;
 }
 
@@ -3146,10 +3570,22 @@ function renderFacts(){
     for(const a of n.attributions) if(a.source_id) writers.add(a.source_id);
     if(n.team) teams.add(n.team);
   }
+  // The proof points, in the shape the design expects. The reporter
+  // average is computed rather than stated: the source list changes, and
+  // a number typed into the markup goes stale the first time it does.
+  const perTeam = teams.size ? Math.round(writers.size / teams.size) : 0;
+  const _helm = `<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9 24v-7c0-7 5-12 12-12s12 5 12 12v7"/><path d="M7 24h28v7H7z"/><path d="M21 12v12"/></svg>`;
+  const _grp = `<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="14" cy="14" r="6"/><circle cx="27" cy="15" r="5"/><path d="M4 34c1-8 5-12 11-12s10 4 11 12"/><path d="M22 34c1-6 4-9 9-9 3 0 5 1 7 4"/></svg>`;
+  const _bolt = `<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M23 3 8 23h11l-2 14 15-21H21z"/></svg>`;
+
   document.getElementById("facts").innerHTML =
-    `<span><b>${day.length}</b> reports today</span>
-     <span><b>${writers.size}</b> sources on the beat</span>
-     <span><b>${teams.size}</b> teams covered</span>`;
+    `<div class="lb-proof">${_helm}<div><strong>${teams.size}</strong>
+       <span>Teams covered</span></div></div>
+     <div class="lb-proof">${_grp}<div><strong>${perTeam}</strong>
+       <span>Reporters / team avg.</span></div></div>
+     <div class="lb-proof">${_bolt}<div>
+       <strong class="lb-updated">Updated</strong>
+       <span>Throughout the day</span></div></div>`;
 }
 
 function render(){
@@ -3164,7 +3600,12 @@ function render(){
     rh.hidden = !ros;
     if(ros) renderRosterHead();
   }
-  document.getElementById("medhero").hidden = !med;
+  // The medical hero went with the old markup, and the view is no
+  // longer in use. Guarded rather than deleted: unpicking the whole
+  // medical path is a separate job, and an unguarded lookup here
+  // throws before the nav renders.
+  const _mh = document.getElementById("medhero");
+  if(_mh) _mh.hidden = !med;
   renderPos();
   renderViews();
   renderLive();
