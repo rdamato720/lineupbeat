@@ -1233,9 +1233,6 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     color:var(--signal)}
   .fdminibtn::after{content:" \2192"; margin-left:.35rem}
 }
-
-.barmoved #bar{margin:0 0 .7rem}
-.barmoved #bar .wrap{padding-left:0; padding-right:0; max-width:none}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -2734,7 +2731,7 @@ function renderFeed(){
   }
 
   const restSec = document.createElement("section");
-  restSec.className = "sec barmoved";
+  restSec.className = "sec";
   restSec.innerHTML = `<div class="shead">
     <h2>All reports</h2>
     <p class="sub">Everything from the beat, newest first.</p>
@@ -2742,12 +2739,6 @@ function renderFeed(){
   const wrap = document.createElement("div");
   wrap.className = "tiles";
   paged.forEach(n => wrap.appendChild(tileNode(n, sport)));
-  // The filters, beside what they filter. Moved rather than rebuilt:
-  // the buttons carry handlers, and a copy would look right and do
-  // nothing.
-  const bar = document.getElementById("bar");
-  if(bar) restSec.insertBefore(bar, restSec.firstChild);
-
   restSec.appendChild(wrap);
   feed.appendChild(restSec);
 
