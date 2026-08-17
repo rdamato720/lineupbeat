@@ -802,153 +802,1282 @@ document.addEventListener('DOMContentLoaded', function () {
 """
 
 
-def data_hub_page(base):
-    """The index for everything derived from the data rather than the wire.
+DATA_PAGE_CSS = """
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap');
 
-    Two entries now. Projections had briefly become its own nav item, which
-    put two data pages at different levels of the site for no reason a
-    reader could see -- one behind Fantasy Data and one beside it.
-    """
-    cards = [
-        {
-            "href": f"/{SPORT}/projections/",
-            "kicker": "Every relevant player",
-            "title": "Yearly projections",
-            "blurb": "Full-season point projections in PPR, half PPR and "
-                     "standard scoring, with the stat line behind each "
-                     "number. Ranked within position, and the board "
-                     "reorders when you change the scoring.",
-            "meta": "Updated through the preseason",
-        },
-        {
-            "href": f"/{SPORT}/projections/changes/",
-            "kicker": "Every change, with the reason",
-            "title": "What changed",
-            "blurb": "Every projection we moved this week, what moved it, "
-                     "and what we looked at and left alone. Grouped by the "
-                     "decision, with a source for each.",
-            "meta": "Updated weekly",
-        },
-        {
-            "href": f"/{SPORT}/draft-value/",
-            "kicker": "Every drafted player",
-            "title": "ADP & draft value",
-            "blurb": "Where the market is drafting every player compared "
-                     "with our projections. See who we rank higher than "
-                     "their price, who is going too early, and where the "
-                     "biggest gaps are at each position.",
-            "meta": "Updated daily",
-        },
-        {
-            "href": f"/{SPORT}/coaching/",
-            "kicker": "All 32 offenses",
-            "title": "Offensive coaching",
-            "blurb": "Who actually calls each offense, which seventeen teams "
-                     "changed callers, and which positions that favors. A "
-                     "tiebreaker between players at comparable ADP, not a "
-                     "reason to reach.",
-            "meta": "Verified August 9",
-        },
-        {
-            "href": f"/{SPORT}/strength-of-schedule/",
-            "kicker": "Every team, week by week",
-            "title": "Strength of schedule",
-            "blurb": "Which teams have the easiest run left, by opponent "
-                     "record and by the fantasy points each opponent "
-                     "actually allows to backs, receivers and tight ends. "
-                     "Reweights itself as the season is played.",
-            "meta": "Updated weekly in season",
-        },
-        {
-            "href": f"/{SPORT}/offensive-line-rb-performance/",
-            "kicker": "Blocking and the runner",
-            "title": "OL & RB performance",
-            "blurb": "How well each team blocked designed runs, and how "
-                     "much its backs created beyond what that blocking "
-                     "predicted. Historical performance, not a projection.",
-            "meta": "2025 season",
-        },
-        {
-            "href": f"/{SPORT}/durability/",
-            "kicker": "Every drafted player",
-            "title": "Durability and availability",
-            "blurb": "How many games each player has actually given, from "
-                     "every injury report and roster transaction since 2018, "
-                     "set against live ADP. Injured reserve, healthy "
-                     "scratches and suspensions counted separately.",
-            "meta": "Updated daily",
-        },
-    ]
-    items = []
-    for c in cards:
-        items.append(
-            f'<a class="hubcard" href="{c["href"]}">'
-            f'<span class="hk">{esc(c["kicker"])}</span>'
-            f'<h2>{esc(c["title"])}</h2>'
-            f'<p>{esc(c["blurb"])}</p>'
-            f'<span class="hm">{esc(c["meta"])}</span></a>')
+:root {
+  --lb-green: #c6f53c;
+  --lb-bg: #050708;
+  --lb-panel: #0e1213;
+  --lb-panel-hover: #101516;
+  --lb-text: #f2f2ed;
+  --lb-muted: #a2a8a4;
+  --lb-dim: #767d78;
+  --lb-line: rgba(255,255,255,.12);
+  --lb-line-strong: rgba(255,255,255,.20);
+  --lb-red: #ef6a60;
+  --lb-yellow: #e4cf58;
+  --lb-max: 1240px;
+}
 
-    body = (
-        '  <nav class="crumbs" aria-label="Breadcrumb">'
-        '<a href="/">LineupBeat</a><span>/</span><b>Fantasy data</b></nav>\n'
-        '  <h1 class="dh1">Fantasy data</h1>\n'
-        '  <p class="dlede">What the record says, separate from what the beat '
-        'is saying today. Everything here is built from published data and '
-        'refreshed on its own schedule.</p>\n'
-        f'  <div class="hubgrid">{"".join(items)}</div>\n')
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--lb-bg); }
+body {
+  margin: 0;
+  background: var(--lb-bg);
+  color: var(--lb-text);
+  font-family: "Barlow Condensed", Arial, sans-serif;
+}
+a { color: inherit; }
+svg { display: block; }
 
-    css = """
-.ppage{max-width:56rem}
-.dh1{font-family:var(--agate);text-transform:uppercase;font-size:2.6rem;
-  line-height:.95;margin:0 0 .8rem;letter-spacing:-.01em}
-.dlede{color:var(--quiet);font-size:1.02rem;line-height:1.6;max-width:42rem;
-  margin:0 0 2.2rem}
-.hubgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-.hubcard{display:block;background:var(--panel);border:1px solid var(--rule);
-  border-top:2px solid var(--signal);border-radius:0 0 10px 10px;
-  padding:1.2rem 1.15rem 1.3rem;text-decoration:none;color:inherit;
-  transition:border-color .12s, background .12s}
-.hubcard:hover{background:rgba(255,255,255,.03);border-color:var(--quiet);
-  border-top-color:var(--signal)}
-.hubcard .hk{font-family:var(--agate);font-size:.58rem;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--signal);display:block;
-  margin-bottom:.5rem}
-/* The app styles h2 on these pages as a small grey kicker, which is right
-   for a section label and wrong for a card title. Fifth class collision
-   after .hero, .big, .how and .dmgrid. */
-.hubcard h2{font-family:var(--agate)!important;text-transform:uppercase;
-  font-size:1.15rem!important;letter-spacing:.01em;margin:0 0 .5rem!important;
-  color:var(--ink)!important;font-weight:600}
-.hubcard p{margin:0 0 .9rem;color:var(--quiet);font-size:.86rem;
-  line-height:1.55}
-.hubcard .hm{font-family:var(--data,ui-monospace),monospace;font-size:.66rem;
-  color:var(--quiet);opacity:.7}
-@media(max-width:640px){.hubgrid{grid-template-columns:1fr}
-  .dh1{font-size:1.9rem}}
+.lb-data-page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 22% 8%, rgba(50,61,63,.22) 0%, rgba(5,7,8,0) 34%),
+    radial-gradient(circle at 84% 28%, rgba(198,245,60,.035) 0%, rgba(5,7,8,0) 30%),
+    var(--lb-bg);
+}
+
+.lb-data-page::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: .62;
+  background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black 0, rgba(0,0,0,.18) 46%, transparent 100%);
+}
+
+.lb-container {
+  width: min(var(--lb-max), calc(100% - 48px));
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.lb-eyebrow,
+.lb-section-kicker,
+.lb-card-kicker,
+.lb-status-pill,
+.lb-future-timing {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .11em;
+}
+
+.lb-eyebrow,
+.lb-section-kicker,
+.lb-card-kicker { color: var(--lb-green); }
+
+/* HERO */
+.lb-data-hero {
+  padding: 92px 0 70px;
+  border-bottom: 1px solid var(--lb-line);
+}
+
+.lb-data-hero-grid {
+  /* One column: the second held the proof row, and with that gone it
+     reserved 340px of nothing beside the copy. */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 80px;
+  align-items: end;
+}
+
+.lb-eyebrow { font-size: 15px; line-height: 1; }
+
+.lb-data-title {
+  margin: 20px 0 24px;
+  max-width: 1000px;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(58px, 6.1vw, 86px);
+  font-weight: 400;
+  line-height: .95;
+  letter-spacing: -.035em;
+}
+
+.lb-data-title .accent { color: var(--lb-green); }
+
+.lb-data-intro {
+  max-width: 860px;
+  margin: 0;
+  color: #b7bcb8;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  line-height: 1.65;
+}
+
+.lb-data-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.lb-button {
+  min-height: 58px;
+  padding: 0 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border-radius: 7px;
+  border: 1px solid var(--lb-line-strong);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.lb-button:hover { transform: translateY(-2px); }
+.lb-button-primary {
+  color: #070907;
+  background: var(--lb-green);
+  border-color: var(--lb-green);
+}
+.lb-button-primary:hover { background: #d4ff50; }
+.lb-button-secondary:hover { border-color: var(--lb-green); }
+
+.lb-arrow {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.lb-hero-proof {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-self: stretch;
+  border: 1px solid var(--lb-line);
+  border-radius: 14px;
+  background: rgba(13,17,18,.72);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.lb-proof-stat {
+  min-height: 148px;
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.lb-proof-stat + .lb-proof-stat { border-left: 1px solid var(--lb-line); }
+
+.lb-proof-stat strong {
+  font-size: 36px;
+  line-height: .95;
+  font-weight: 700;
+}
+
+.lb-proof-stat span {
+  margin-top: 10px;
+  color: var(--lb-muted);
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+/* SECTIONS */
+.lb-section {
+  padding: 78px 0;
+  border-bottom: 1px solid var(--lb-line);
+}
+
+.lb-section-heading {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.lb-section-kicker { font-size: 14px; line-height: 1; }
+
+.lb-section-heading h2,
+.lb-philosophy h2,
+.lb-wire-strip h2 {
+  margin: 9px 0 0;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.025em;
+}
+
+.lb-section-heading h2 { font-size: clamp(38px, 4vw, 54px); }
+
+.lb-section-heading p {
+  max-width: 540px;
+  margin: 0 0 3px;
+  color: var(--lb-muted);
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* CARDS */
+.lb-feature-grid,
+.lb-tool-grid,
+.lb-future-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 20px;
+}
+
+.lb-feature-card,
+.lb-tool-card,
+.lb-future-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  border: 1px solid var(--lb-line);
+  border-radius: 15px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.024), rgba(255,255,255,0) 43%),
+    var(--lb-panel);
+}
+
+a.lb-feature-card,
+a.lb-tool-card { text-decoration: none; }
+
+a.lb-feature-card,
+a.lb-tool-card {
+  transition: border-color .2s ease, transform .2s ease, background .2s ease;
+}
+
+a.lb-feature-card:hover,
+a.lb-tool-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(198,245,60,.42);
+  background:
+    linear-gradient(145deg, rgba(198,245,60,.035), rgba(255,255,255,0) 43%),
+    var(--lb-panel-hover);
+}
+
+.lb-feature-card {
+  min-height: 500px;
+  padding: 34px;
+}
+
+.lb-feature-number {
+  position: absolute;
+  right: 26px;
+  top: 18px;
+  color: rgba(255,255,255,.055);
+  font-size: 74px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.lb-card-kicker { font-size: 13px; }
+
+.lb-feature-card h3,
+.lb-tool-card h3,
+.lb-future-card h3 {
+  margin: 13px 0 12px;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -.02em;
+}
+
+.lb-feature-card h3 { font-size: 38px; }
+.lb-tool-card h3,
+.lb-future-card h3 { font-size: 30px; }
+
+.lb-card-deck {
+  max-width: 540px;
+  margin: 0;
+  color: #aeb4b0;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.lb-preview {
+  margin: 31px 0 28px;
+  border: 1px solid var(--lb-line);
+  border-radius: 10px;
+  background: #080b0c;
+  overflow: hidden;
+}
+
+.lb-preview-head {
+  min-height: 42px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #828a85;
+  border-bottom: 1px solid var(--lb-line);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.lb-preview-badge {
+  padding: 4px 8px;
+  color: var(--lb-green);
+  border: 1px solid rgba(198,245,60,.24);
+  border-radius: 999px;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.lb-preview-table { padding: 8px 14px 10px; }
+
+.lb-preview-row {
+  display: grid;
+  grid-template-columns: 1fr 78px;
+  min-height: 42px;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  font-size: 14px;
+}
+
+.lb-preview-row:last-child { border-bottom: 0; }
+.lb-preview-row strong { font-size: 15px; font-weight: 600; }
+.lb-preview-row > :last-child {
+  text-align: right;
+  color: var(--lb-green);
+  font-weight: 700;
+}
+
+.lb-value-preview .lb-preview-row {
+  grid-template-columns: 1fr 56px 62px 58px;
+  gap: 8px;
+  font-size: 13px;
+}
+.lb-value-preview .lb-preview-row span:not(:first-child) { text-align: right; }
+.lb-value-positive { color: var(--lb-green) !important; }
+.lb-value-negative { color: var(--lb-red) !important; }
+
+.lb-card-footer {
+  margin-top: auto;
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--lb-line);
+  color: var(--lb-green);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.lb-card-footer .lb-arrow { width: 18px; height: 18px; }
+
+/* LIVE TOOL CARDS */
+.lb-tool-card {
+  min-height: 340px;
+  padding: 29px;
+}
+
+.lb-tool-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.lb-tool-icon {
+  width: 43px;
+  height: 43px;
+  color: var(--lb-green);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.55;
+}
+
+.lb-tool-tag {
+  color: var(--lb-dim);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.lb-tool-visual {
+  min-height: 92px;
+  margin: 20px 0 23px;
+  padding: 16px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 9px;
+  background: #090c0d;
+}
+
+/* DURABILITY */
+.lb-season-line {
+  display: grid;
+  grid-template-columns: 42px 1fr 28px;
+  gap: 10px;
+  align-items: center;
+  margin: 7px 0;
+  color: #89908b;
+  font-size: 12px;
+}
+.lb-season-track { height: 7px; overflow: hidden; background: rgba(255,255,255,.06); }
+.lb-season-track i { display: block; width: var(--width); height: 100%; background: var(--lb-green); }
+
+/* SOS */
+.lb-schedule-row {
+  display: grid;
+  grid-template-columns: 36px 1fr 68px;
+  align-items: center;
+  min-height: 27px;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  color: #9ea49f;
+  font-size: 12px;
+}
+.lb-schedule-row:last-child { border-bottom: 0; }
+.lb-difficulty { text-align: right; font-weight: 700; }
+.easy { color: var(--lb-green); }
+.hard { color: var(--lb-red); }
+.avg { color: var(--lb-yellow); }
+
+/* COACHING */
+.lb-tendency-head {
+  display: flex;
+  justify-content: space-between;
+  color: #929994;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.lb-tendency-row {
+  display: grid;
+  grid-template-columns: 55px 1fr 34px;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #9da39f;
+}
+.lb-tendency-bar { height: 7px; background: rgba(255,255,255,.06); }
+.lb-tendency-bar i { display: block; width: var(--width); height: 100%; background: var(--lb-green); }
+
+/* OL + RB */
+.lb-ol-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  height: 100%;
+  gap: 10px;
+}
+.lb-ol-stat {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,.06);
+}
+.lb-ol-stat small {
+  color: #7e8680;
+  font-size: 10px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.lb-ol-stat strong { margin-top: 5px; font-size: 21px; }
+.lb-ol-stat strong.good { color: var(--lb-green); }
+
+/* FUTURE TOOLS */
+.lb-future-section {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(198,245,60,.018), transparent 32%),
+    #070a0b;
+}
+
+.lb-future-card {
+  min-height: 310px;
+  padding: 28px;
+}
+
+.lb-future-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(125deg, rgba(255,255,255,.015), transparent 40%);
+}
+
+.lb-future-card > * { position: relative; z-index: 1; }
+
+.lb-future-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.lb-status-pill {
+  padding: 6px 9px;
+  border: 1px solid rgba(198,245,60,.26);
+  border-radius: 999px;
+  color: var(--lb-green);
+  font-size: 10px;
+  line-height: 1;
+}
+
+.lb-future-timing {
+  color: #767e79;
+  font-size: 10px;
+}
+
+.lb-future-visual {
+  margin: 22px 0 0;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 9px;
+  background: rgba(5,7,8,.68);
+}
+
+.lb-future-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  min-height: 31px;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  color: #939a95;
+  font-size: 12px;
+}
+.lb-future-row:last-child { border-bottom: 0; }
+.lb-future-row b { color: var(--lb-green); font-weight: 700; }
+
+.lb-future-note {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--lb-line);
+  color: #7f8782;
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* PHILOSOPHY */
+.lb-philosophy {
+  padding: 84px 0;
+  background:
+    linear-gradient(90deg, rgba(198,245,60,.025), transparent 35%, transparent 65%, rgba(198,245,60,.018));
+}
+.lb-philosophy-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 80px;
+  align-items: center;
+}
+.lb-philosophy h2,
+.lb-wire-strip h2 { font-size: clamp(40px, 4.5vw, 60px); }
+.lb-philosophy-copy {
+  color: #adb3ae;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.lb-philosophy-copy p { margin: 0 0 17px; }
+.lb-method-list {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+}
+.lb-method-pill {
+  min-height: 64px;
+  padding: 12px 13px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid var(--lb-line);
+  border-radius: 8px;
+  color: #959c97;
+  font-size: 11px;
+  line-height: 1.25;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.lb-method-pill::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--lb-green);
+}
+
+/* WIRE CTA */
+.lb-wire-strip {
+  padding: 76px 0;
+  border-top: 1px solid var(--lb-line);
+  border-bottom: 1px solid var(--lb-line);
+  background:
+    radial-gradient(circle at 76% 50%, rgba(198,245,60,.06), transparent 28%),
+    #080b0c;
+}
+.lb-wire-strip-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 60px;
+}
+.lb-wire-strip p {
+  max-width: 730px;
+  margin: 18px 0 0;
+  color: #aeb4af;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1040px) {
+  .lb-data-hero-grid,
+  .lb-philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .lb-hero-proof { max-width: 700px; }
+  .lb-wire-strip-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+
+@media (max-width: 800px) {
+  .lb-feature-grid,
+  .lb-tool-grid,
+  .lb-future-grid { grid-template-columns: 1fr; }
+
+  .lb-section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .lb-feature-card { min-height: 450px; }
+}
+
+@media (max-width: 620px) {
+  .lb-container { width: calc(100% - 30px); }
+  .lb-data-hero { padding: 62px 0 52px; }
+  .lb-data-title { font-size: clamp(50px, 16vw, 68px); }
+  .lb-data-intro { font-size: 17px; }
+  .lb-data-actions { flex-direction: column; }
+  .lb-button { width: 100%; }
+  .lb-hero-proof { grid-template-columns: 1fr; }
+  .lb-proof-stat { min-height: 100px; justify-content: center; }
+  .lb-proof-stat + .lb-proof-stat {
+    border-left: 0;
+    border-top: 1px solid var(--lb-line);
+  }
+  .lb-section { padding: 58px 0; }
+  .lb-feature-card,
+  .lb-tool-card,
+  .lb-future-card { padding: 23px; }
+  .lb-feature-card h3 { font-size: 33px; }
+  .lb-value-preview .lb-preview-row {
+    grid-template-columns: 1fr 48px 52px 50px;
+    gap: 4px;
+    font-size: 11px;
+  }
+  .lb-method-list { grid-template-columns: 1fr; }
+  .lb-philosophy,
+  .lb-wire-strip { padding: 58px 0; }
+}
 """
+
+DATA_PAGE_HTML = """<main class="lb-data-page">
+
+  <section class="lb-data-hero">
+    <div class="lb-container">
+      <div class="lb-data-hero-grid">
+
+        <div>
+          <div class="lb-eyebrow">FANTASY DATA</div>
+
+          <h1 class="lb-data-title">
+            The numbers behind<br>
+            the <span class="accent">decision.</span>
+          </h1>
+
+          <p class="lb-data-intro">
+            Projections, market value, schedule, durability and team context,
+            built to help you decide who to draft, start and avoid.
+          </p>
+
+          <div class="lb-data-actions">
+            <a class="lb-button lb-button-primary" href="/nfl/projections/">
+              <span>VIEW PROJECTIONS</span>
+              <svg class="lb-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h13M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+
+            <a class="lb-button lb-button-secondary" href="#live-tools">
+              Explore All Tools
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- START HERE -->
+  <section class="lb-section" id="live-tools">
+    <div class="lb-container">
+
+      <div class="lb-section-heading">
+        <div>
+          <div class="lb-section-kicker">START HERE</div>
+          <h2>Our view, then the market.</h2>
+        </div>
+
+        <p>
+          Start with LineupBeat's projected stat line, then compare it with
+          where the market is actually drafting the player.
+        </p>
+      </div>
+
+      <div class="lb-feature-grid">
+
+        <a class="lb-feature-card" href="/nfl/projections/">
+          <span class="lb-feature-number">01</span>
+
+          <div class="lb-card-kicker">YEARLY PROJECTIONS</div>
+          <h3>Start with our view of the player.</h3>
+
+          <p class="lb-card-deck">
+            Full season projections for QB, RB, WR and TE, with the complete
+            stat line behind every fantasy point.
+          </p>
+
+          <div class="lb-preview" aria-hidden="true">
+            <div class="lb-preview-head">
+              <span>PROJECTION PREVIEW</span>
+              <span class="lb-preview-badge">PPR</span>
+            </div>
+
+            <div class="lb-preview-table">{PROJ_ROWS}</div>
+          </div>
+
+          <div class="lb-card-footer">
+            <span>VIEW PROJECTIONS</span>
+            <svg class="lb-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </div>
+        </a>
+
+
+        <a class="lb-feature-card" href="/nfl/draft-value/">
+          <span class="lb-feature-number">02</span>
+
+          <div class="lb-card-kicker">ADP &amp; DRAFT VALUE</div>
+          <h3>Then compare our view with the market.</h3>
+
+          <p class="lb-card-deck">
+            See where a player is being drafted versus where LineupBeat
+            projects him, and find the biggest values and reaches.
+          </p>
+
+          <div class="lb-preview lb-value-preview" aria-hidden="true">
+            <div class="lb-preview-head">
+              <span>VALUE PREVIEW</span>
+              <span class="lb-preview-badge">ADP vs LB</span>
+            </div>
+
+            <div class="lb-preview-table">{VALUE_ROWS}</div>
+          </div>
+
+          <div class="lb-card-footer">
+            <span>FIND DRAFT VALUE</span>
+            <svg class="lb-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- LIVE CONTEXT TOOLS -->
+  <section class="lb-section">
+    <div class="lb-container">
+
+      <div class="lb-section-heading">
+        <div>
+          <div class="lb-section-kicker">GO DEEPER</div>
+          <h2>Context changes the evaluation.</h2>
+        </div>
+
+        <p>
+          Use schedule, availability, play calling and offensive line context
+          to understand what sits underneath a player's fantasy projection.
+        </p>
+      </div>
+
+
+      <div class="lb-tool-grid">
+
+        <a class="lb-tool-card" href="/nfl/durability/">
+          <div class="lb-tool-top">
+            <svg class="lb-tool-icon" viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M24 5v38M5 24h38"/>
+              <path d="M10 13h8v8h-8zM30 27h8v8h-8z"/>
+            </svg>
+            <span class="lb-tool-tag">Availability history</span>
+          </div>
+
+          <h3>Who actually stays available?</h3>
+
+          <p class="lb-card-deck">
+            Games played, injuries, IR, suspensions and availability history
+            compared with current draft cost.
+          </p>
+
+          <div class="lb-tool-visual" aria-hidden="true">
+            <div class="lb-season-line">
+              <span>2023</span><div class="lb-season-track"><i style="--width:100%"></i></div><span>17</span>
+            </div>
+            <div class="lb-season-line">
+              <span>2024</span><div class="lb-season-track"><i style="--width:82%"></i></div><span>14</span>
+            </div>
+            <div class="lb-season-line">
+              <span>2025</span><div class="lb-season-track"><i style="--width:94%"></i></div><span>16</span>
+            </div>
+          </div>
+
+          <div class="lb-card-footer">
+            <span>CHECK DURABILITY</span>
+            <svg class="lb-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </div>
+        </a>
+
+
+        <a class="lb-tool-card" href="/nfl/strength-of-schedule/">
+          <div class="lb-tool-top">
+            <svg class="lb-tool-icon" viewBox="0 0 48 48" aria-hidden="true">
+              <rect x="7" y="10" width="34" height="31" rx="3"/>
+              <path d="M15 5v10M33 5v10M7 20h34"/>
+            </svg>
+            <span class="lb-tool-tag">Weekly context</span>
+          </div>
+
+          <h3>Who has the better road ahead?</h3>
+
+          <p class="lb-card-deck">
+            Opponent difficulty by actual fantasy points allowed to RBs, WRs
+            and TEs, reweighted as the season changes.
+          </p>
+
+          <div class="lb-tool-visual" aria-hidden="true">
+            {SCHED_ROWS}
+          </div>
+
+          <div class="lb-card-footer">
+            <span>VIEW SCHEDULES</span>
+            <svg class="lb-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </div>
+        </a>
+
+
+        <a class="lb-tool-card" href="/nfl/coaching/">
+          <div class="lb-tool-top">
+            <svg class="lb-tool-icon" viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M7 37c8-1 12-7 16-15 3-6 7-9 18-11"/>
+              <circle cx="9" cy="37" r="3"/>
+              <circle cx="23" cy="22" r="3"/>
+              <circle cx="41" cy="11" r="3"/>
+            </svg>
+            <span class="lb-tool-tag">All 32 offenses</span>
+          </div>
+
+          <h3>Who is actually calling the plays?</h3>
+
+          <p class="lb-card-deck">
+            Play callers, offensive tendencies and positional impact across
+            all 32 NFL teams.
+          </p>
+
+          <div class="lb-tool-visual" aria-hidden="true">
+            <div class="lb-tendency-head"><span>OFFENSE PROFILE</span><span>NEW CALLER</span></div>
+            <div class="lb-tendency-row"><span>PASS</span><div class="lb-tendency-bar"><i style="--width:74%"></i></div><span>↑</span></div>
+            <div class="lb-tendency-row"><span>RUN</span><div class="lb-tendency-bar"><i style="--width:51%"></i></div><span>→</span></div>
+            <div class="lb-tendency-row"><span>PACE</span><div class="lb-tendency-bar"><i style="--width:64%"></i></div><span>↑</span></div>
+          </div>
+
+          <div class="lb-card-footer">
+            <span>EXPLORE OFFENSES</span>
+            <svg class="lb-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </div>
+        </a>
+
+
+        <a class="lb-tool-card" href="/nfl/offensive-line-rb-performance/">
+          <div class="lb-tool-top">
+            <svg class="lb-tool-icon" viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M8 34h8V20H8zM20 34h8V12h-8zM32 34h8V7h-8z"/>
+              <path d="M7 40h35"/>
+            </svg>
+            <span class="lb-tool-tag">Historical performance</span>
+          </div>
+
+          <h3>Was it the RB or the line?</h3>
+
+          <p class="lb-card-deck">
+            Compare run blocking with how much each back gained above or below
+            expectation.
+          </p>
+
+          <div class="lb-tool-visual" aria-hidden="true">
+            <div class="lb-ol-grid">
+              <div class="lb-ol-stat">
+                <small>Run blocking</small>
+                <strong>#30</strong>
+              </div>
+              <div class="lb-ol-stat">
+                <small>RYOE / ATT</small>
+                <strong class="good">+0.97</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="lb-card-footer">
+            <span>COMPARE RB PERFORMANCE</span>
+            <svg class="lb-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FUTURE TOOL ROADMAP -->
+  <section class="lb-section lb-future-section">
+    <div class="lb-container">
+
+      <div class="lb-section-heading">
+        <div>
+          <div class="lb-section-kicker">NEXT ON LINEUPBEAT</div>
+          <h2>Tools built around what changed.</h2>
+        </div>
+
+        <p>
+          These cards are intentionally non-clickable until the underlying tools
+          exist. They show the recommended next build order without pretending
+          the functionality is already live.
+        </p>
+      </div>
+
+      <div class="lb-future-grid">
+
+        <article class="lb-future-card">
+          <div class="lb-future-top">
+            <span class="lb-status-pill">NEXT BUILD</span>
+            <span class="lb-future-timing">PRESEASON + IN SEASON</span>
+          </div>
+          <h3>Opportunity &amp; Usage Tracker</h3>
+          <p class="lb-card-deck">
+            Snaps, routes, targets, target share, carries, rushing share,
+            red zone opportunities and goal line work, with week over week movement.
+          </p>
+          <div class="lb-future-visual" aria-hidden="true">
+            <div class="lb-future-row"><span>Target share</span><b>14% → 26% ↑</b></div>
+            <div class="lb-future-row"><span>Route participation</span><b>61% → 84% ↑</b></div>
+            <div class="lb-future-row"><span>Red zone looks</span><b>2 → 5 ↑</b></div>
+          </div>
+          <div class="lb-future-note">Suggested route: /nfl/usage/</div>
+        </article>
+
+
+        <article class="lb-future-card">
+          <div class="lb-future-top">
+            <span class="lb-status-pill">BUILD NOW</span>
+            <span class="lb-future-timing">DRAFT SEASON</span>
+          </div>
+          <h3>ADP Movers</h3>
+          <p class="lb-card-deck">
+            Track where the market is moving over 24 hours, 7 days and 30 days,
+            then compare the move with LineupBeat's projection.
+          </p>
+          <div class="lb-future-visual" aria-hidden="true">
+            <div class="lb-future-row"><span>Current ADP</span><b>52.1</b></div>
+            <div class="lb-future-row"><span>7 day ADP</span><b>61.4</b></div>
+            <div class="lb-future-row"><span>Market move</span><b>+9.3 ↑</b></div>
+          </div>
+          <div class="lb-future-note">Suggested route: /nfl/adp-movers/</div>
+        </article>
+
+
+        <article class="lb-future-card">
+          <div class="lb-future-top">
+            <span class="lb-status-pill">WEEK 1+</span>
+            <span class="lb-future-timing">IN SEASON</span>
+          </div>
+          <h3>Weekly Opportunity Movers</h3>
+          <p class="lb-card-deck">
+            Surface the biggest role increases and decreases each week,
+            including new goal line work, route leaders and committee changes.
+          </p>
+          <div class="lb-future-visual" aria-hidden="true">
+            <div class="lb-future-row"><span>Player A</span><b>ADD</b></div>
+            <div class="lb-future-row"><span>Player B</span><b>ROLE ↑</b></div>
+            <div class="lb-future-row"><span>Player C</span><b>DOWNGRADE</b></div>
+          </div>
+          <div class="lb-future-note">Suggested route: /nfl/opportunity-movers/</div>
+        </article>
+
+
+        <article class="lb-future-card">
+          <div class="lb-future-top">
+            <span class="lb-status-pill">WEEK 1+</span>
+            <span class="lb-future-timing">IN SEASON</span>
+          </div>
+          <h3>Rest of Season Projections</h3>
+          <p class="lb-card-deck">
+            Recalculate the season ahead using games remaining, current role,
+            updated team environment and the same raw stat line first methodology.
+          </p>
+          <div class="lb-future-visual" aria-hidden="true">
+            <div class="lb-future-row"><span>ROS rank</span><b>RB18</b></div>
+            <div class="lb-future-row"><span>Projected touches</span><b>184.5</b></div>
+            <div class="lb-future-row"><span>Projected PPR</span><b>161.8</b></div>
+          </div>
+          <div class="lb-future-note">Suggested route: /nfl/rest-of-season/</div>
+        </article>
+
+
+        <article class="lb-future-card">
+          <div class="lb-future-top">
+            <span class="lb-status-pill">LATER</span>
+            <span class="lb-future-timing">IN SEASON</span>
+          </div>
+          <h3>Who Should I Start?</h3>
+          <p class="lb-card-deck">
+            Compare two to four players using projected points, opportunity,
+            matchup, role stability and current Wire reporting.
+          </p>
+          <div class="lb-future-visual" aria-hidden="true">
+            <div class="lb-future-row"><span>Player A</span><b>18.4 FP</b></div>
+            <div class="lb-future-row"><span>Player B</span><b>15.9 FP</b></div>
+            <div class="lb-future-row"><span>Recommendation</span><b>START A</b></div>
+          </div>
+          <div class="lb-future-note">Suggested route: /nfl/start-sit/</div>
+        </article>
+
+
+        <article class="lb-future-card">
+          <div class="lb-future-top">
+            <span class="lb-status-pill">LATER</span>
+            <span class="lb-future-timing">ROLE CONTEXT</span>
+          </div>
+          <h3>Backfield Usage Map</h3>
+          <p class="lb-card-deck">
+            Show all 32 backfields by early down work, passing downs, goal line
+            role, carry share and target share.
+          </p>
+          <div class="lb-future-visual" aria-hidden="true">
+            <div class="lb-future-row"><span>Early downs</span><b>RB1 72%</b></div>
+            <div class="lb-future-row"><span>Passing downs</span><b>RB2 58%</b></div>
+            <div class="lb-future-row"><span>Backfield type</span><b>LEAD + COMP.</b></div>
+          </div>
+          <div class="lb-future-note">Suggested route: /nfl/backfield-usage/</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PHILOSOPHY -->
+  <section class="lb-philosophy">
+    <div class="lb-container">
+      <div class="lb-philosophy-grid">
+        <div>
+          <div class="lb-section-kicker">DATA, NOT NOISE</div>
+          <h2>What the record says, separate from what changed today.</h2>
+        </div>
+
+        <div class="lb-philosophy-copy">
+          <p>
+            Every tool is built to answer a different fantasy question.
+            Projections estimate the season ahead. Draft Value compares that
+            view with the market. Schedule, durability, coaching and historical
+            performance provide the context around it.
+          </p>
+
+          <p>
+            The goal is not to force every signal into one score. It is to make
+            the underlying evidence easier to inspect before you make the decision.
+          </p>
+
+          <div class="lb-method-list">
+            <div class="lb-method-pill">Published data sources</div>
+            <div class="lb-method-pill">Transparent stat lines</div>
+            <div class="lb-method-pill">Updated by tool cadence</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WIRE CONNECTION -->
+  <section class="lb-wire-strip">
+    <div class="lb-container">
+      <div class="lb-wire-strip-grid">
+        <div>
+          <div class="lb-section-kicker">THE OTHER HALF OF LINEUPBEAT</div>
+          <h2>Data tells you what happened.<br>The Wire tells you what changed.</h2>
+
+          <p>
+            Pair the numbers with reporting from an average of 3 beat reporters
+            per NFL team, connected directly to the players it affects.
+          </p>
+        </div>
+
+        <a class="lb-button lb-button-primary" href="/nfl/wire/">
+          <span>OPEN THE WIRE</span>
+          <svg class="lb-arrow" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h13M13 6l6 6-6 6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>"""
+
+
+def _preview_rows():
+    """The four preview blocks, from real data.
+
+    The supplied markup carries example rows and warns not to publish them
+    as factual player data. Rather than dropping them, they read the same
+    boards the tools below them link to -- a preview of the projections
+    that disagrees with the projections would be worse than no preview.
+    """
+    import json, sqlite3
+
+    # Top projection per position.
+    best = {}
+    for name, pr in PROJECTIONS.items():
+        pos = (pr.get("pos") or "").upper()
+        ppr = pr.get("ppr")
+        if pos not in ("QB", "RB", "WR", "TE") or not ppr:
+            continue
+        if pos not in best or ppr > best[pos][1]:
+            best[pos] = (pr.get("name") or pr.get("player")
+                         or name.replace("-", " ").title(), ppr)
+    proj = "".join(
+        f'<div class="lb-preview-row"><strong>{esc(pos)} &middot; '
+        f'{esc(nm)}</strong><span>{v:.1f}</span></div>'
+        for pos, (nm, v) in sorted(best.items(), key=lambda x: -x[1][1])[:3])
+
+    # Value: where our rank and the market's disagree most. Positive is a
+    # player we like better than his ADP, which is the number a reader is
+    # actually shopping for.
+    # Read the roster here rather than threading it through: this runs
+    # once per build, from the same file the player pages use, so a second
+    # read cannot disagree with the first.
+    gaps = []
+    rp = ROOT / "rosters" / f"{SPORT}.csv"
+    if rp.exists():
+        for r in csv.DictReader(rp.open()):
+            adp = (r.get("adp") or "").strip()
+            pr = PROJECTIONS.get(slug(r.get("name") or ""))
+            if not adp or not pr or not pr.get("rank"):
+                continue
+            try:
+                adp = float(adp)
+            except (TypeError, ValueError):
+                continue
+            gaps.append((r.get("name"), int(round(adp)), int(pr["rank"]),
+                         int(round(adp)) - int(pr["rank"])))
+    gaps.sort(key=lambda x: -abs(x[3]))
+    value = "".join(
+        f'<div class="lb-preview-row"><span>{esc(nm)}</span>'
+        f'<span>{a}</span><span>{r}</span>'
+        f'<span class="lb-value-{"positive" if d > 0 else "negative"}">'
+        f'{"+" if d > 0 else "\u2212"}{abs(d)}</span></div>'
+        for nm, a, r, d in gaps[:3])
+
+    # Schedule: the Giants' opening four, with difficulty from the same
+    # opponent win percentage the strength of schedule page uses.
+    sched = ""
+    try:
+        sj = json.loads((SITE / "data" / "sos.json").read_text())
+        row = next((r for r in sj.get("rows", []) if r.get("team") == "NYG"), None)
+        if row:
+            out = []
+            for g in (row.get("sched") or [])[:4]:
+                wp = g.get("wp") or 0
+                band = "hard" if wp >= .55 else "easy" if wp <= .45 else "avg"
+                out.append(
+                    f'<div class="lb-schedule-row"><span>W{g.get("w")}</span>'
+                    f'<span>{esc(g.get("o") or "")}</span>'
+                    f'<span class="lb-difficulty {band}">{band.upper()}</span>'
+                    f'</div>')
+            sched = "".join(out)
+    except Exception as exc:
+        print(f"  schedule preview unavailable: {exc}")
+
+    return proj, value, sched
+
+
+def data_hub_page(base):
+    """The supplied design, with the previews reading live data."""
+    proj_rows, value_rows, sched_rows = _preview_rows()
+    body = DATA_PAGE_HTML.replace("{PROJ_ROWS}", proj_rows)
+    body = body.replace("{VALUE_ROWS}", value_rows)
+    body = body.replace("{SCHED_ROWS}", sched_rows)
+
+    # Dataset alongside the breadcrumbs. The citation fields are the ones
+    # the AI crawlers read, and this is the page they were added for: a
+    # hub that describes six boards should say what they contain and who
+    # made them, or a model quoting the numbers has nothing to attribute.
     ld = {"@context": "https://schema.org", "@graph": [
-        {"@type": "CollectionPage",
-         "name": "NFL fantasy data",
-         "description": "Durability, availability and draft data for the NFL, "
-                        "built from published records.",
-         "url": f"{base}/{SPORT}/data/"},
+        {"@type": "Dataset",
+         "name": "LineupBeat NFL fantasy data",
+         "description": ("Season projections, ADP and draft value, "
+                         "durability, strength of schedule, offensive "
+                         "coaching and offensive line and running back "
+                         "performance for the NFL."),
+         "url": f"{base}/{SPORT}/data/",
+         "keywords": ["fantasy football", "NFL projections", "ADP",
+                      "strength of schedule", "durability"],
+         "variableMeasured": ["Projected fantasy points", "ADP",
+                              "Draft value", "Games missed",
+                              "Opponent win percentage",
+                              "Run block win rate"],
+         **seo.dataset_extras(temporal="2026"),
+        },
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "LineupBeat",
-             "item": base + "/"},
+             "item": base},
             {"@type": "ListItem", "position": 2, "name": "Fantasy data",
              "item": f"{base}/{SPORT}/data/"}]}]}
 
     return _render(PAGE.format(
-        title="NFL Fantasy Data: Durability, Availability and ADP",
-        description=("Durability and availability for every drafted NFL "
-                     "player, built from injury reports and roster "
-                     "transactions since 2018. Free, and updated daily."),
+        title="NFL Fantasy Data: Projections, ADP and Schedule",
+        description=("Projections, market value, strength of schedule, "
+                     "durability and team context for every drafted NFL "
+                     "player. Free, and updated daily."),
         canonical=f"{base}/{SPORT}/data/",
         og_type="website",
         og_image=f'<meta property="og:image" content="{base}/og.png">',
         structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
-                    f'<style>{css}</style>'),
+                    f'<style>{DATA_PAGE_CSS}</style>'),
         body=body), "#C6F24E", "#C6F24E", section="data")
+
 
 
 def durability_page(conn, base):
