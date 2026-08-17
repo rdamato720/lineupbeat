@@ -2674,103 +2674,749 @@ def about_page(base, built):
     process -- no reviewer who does not review, no badge for a check nobody
     runs.
     """
-    body = f"""<main class="abwrap">
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">LineupBeat</a><span>/</span><b>About</b></nav>
+    # The supplied design, prefixed lb-about- so nothing here can
+    # reach the rest of the site. The stylesheet rides with it
+    # rather than joining the global sheet, for the same reason.
+    body = """<style>:root{
+  --green:#c6f53c;
+  --bg:#050708;
+  --panel:#0e1213;
+  --text:#f2f2ed;
+  --muted:#a6aca7;
+  --line:rgba(255,255,255,.12);
+  --line2:rgba(255,255,255,.20);
+  --max:1240px;
+}
+.lb-about-page,
+.lb-about-page *{box-sizing:border-box}
+.lb-about-page{color:var(--text);font-family:"Barlow Condensed",Arial,sans-serif}
+.lb-about-page a{color:inherit}
+.lb-about-page{
+  position:relative;overflow:hidden;min-height:100vh;
+  background:
+    radial-gradient(circle at 24% 8%,rgba(45,57,59,.25),transparent 32%),
+    radial-gradient(circle at 82% 26%,rgba(198,245,60,.035),transparent 30%),
+    var(--bg);
+}
+.lb-about-page:before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.58;
+  background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:linear-gradient(to bottom,#000 0,rgba(0,0,0,.15) 48%,transparent 100%);
+}
+.lb-about-wrap{position:relative;z-index:2;width:min(var(--max),calc(100% - 48px));margin:0 auto}
+.lb-about-kicker,.lb-about-card-kicker,.lb-about-step-number{color:var(--green);font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.lb-about-kicker{font-size:14px}
+.lb-about-hero{padding:100px 0 88px;border-bottom:1px solid var(--line)}
+.lb-about-hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:86px;align-items:start}
+.lb-about-hero h1{max-width:100%;margin:20px 0 27px;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(42px,4.6vw,78px);overflow-wrap:break-word;line-height:.95;font-weight:400;letter-spacing:-.036em}
+.lb-about-hero h1 span{color:var(--green)}
+.lb-about-lead{max-width:700px;margin:0;color:#b8bdb9;font-family:Georgia,serif;font-size:20px;line-height:1.7}
+.lb-about-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:35px}
+.lb-about-btn{min-height:58px;padding:0 27px;display:inline-flex;align-items:center;justify-content:center;gap:18px;border-radius:7px;border:1px solid var(--line2);text-decoration:none;font-size:17px;font-weight:700;letter-spacing:.045em;text-transform:uppercase;transition:.18s}
+.lb-about-btn:hover{transform:translateY(-2px)}
+a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
+  background:var(--green);border-color:var(--green)}
+.lb-about-btn-primary *{color:inherit}
+.lb-about-btn-primary:hover{background:#d4ff50}
+.lb-about-btn-secondary:hover{border-color:var(--green)}
+.lb-about-arrow{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}
 
-  <div class="abhead">
-    <h1>About LineupBeat</h1>
-  </div>
+/* Measured: the card sat 82px below the headline, because the kicker
+   above it in the left column has no counterpart on this side. */
+.lb-about-wire{margin-top:-82px;
+  position:relative;padding:25px;border:1px solid var(--line2);border-radius:18px;
+  background:linear-gradient(145deg,rgba(255,255,255,.025),transparent 45%),rgba(14,18,19,.94);
+  box-shadow:0 35px 90px rgba(0,0,0,.34)
+}
+.lb-about-wire-head{min-height:42px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.lb-about-live{display:flex;align-items:center;gap:10px;color:var(--green);font-size:15px;font-weight:700;letter-spacing:.065em;text-transform:uppercase}
+.lb-about-dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 13px rgba(198,245,60,.34)}
+.lb-about-wire-head>span{color:#777f7a;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.lb-about-wire-body{position:relative;padding:8px 0}
+.lb-about-wire-body:before{content:"";position:absolute;left:18px;top:37px;bottom:37px;width:1px;background:rgba(255,255,255,.11)}
+.lb-about-wire-item{position:relative;display:grid;grid-template-columns:48px 1fr;gap:15px;min-height:116px;padding:19px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.lb-about-wire-item:last-child{border-bottom:0}
+.lb-about-marker{position:relative;z-index:2;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:#151a1b;color:var(--green);font-size:12px;font-weight:700}
+.lb-about-marker:after{content:"";position:absolute;left:14px;bottom:-36px;width:7px;height:7px;border-radius:50%;background:var(--green)}
+.lb-about-wire-item:last-child .lb-about-marker:after{display:none}
+.lb-about-wire-title{display:flex;justify-content:space-between;gap:20px;align-items:baseline}
+.lb-about-wire-title strong{font-size:19px}.lb-about-wire-title time{color:var(--green);font-size:12px}
+.lb-about-wire-item p{margin:7px 0 12px;color:#e0e3df;font-family:Georgia,serif;font-size:15px;line-height:1.42}
+.lb-about-source{color:#838b86;font-size:12px}
 
-  <h2>Why we built it</h2>
-  <p>We&rsquo;ve been playing fantasy football for more than 20 years, and
-    we built LineupBeat to bring the information we use to make fantasy
-    decisions into one place.</p>
-  <p>Fantasy football is an information game, and some of the most useful
-    information comes from the beat reporters covering each team every
-    day.</p>
-  <p>They see who is getting first team reps, who is limited at practice,
-    who is moving up the depth chart, and whose role may be changing. The
-    problem is that this reporting is spread across 32 NFL markets and
-    hundreds of sources.</p>
-  <p>LineupBeat brings it together.</p>
-  <p>We follow an average of four beat reporters for every NFL team, match
-    their reporting to the players it affects, and always credit the
-    original source.</p>
-  <p>We pair that reporting with fantasy data to help you make better
-    decisions.</p>
-  <p>After more than 20 years of playing fantasy football, we know nobody
-    has all the answers.</p>
-  <p>Our goal is simple: put more of the right information in one place,
-    before you make your next fantasy decision.</p>
+.lb-about-proof-bar{border-bottom:1px solid var(--line);background:rgba(8,11,12,.72)}
+.lb-about-proof-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.lb-about-proof{min-height:125px;padding:26px 34px;display:flex;align-items:center;gap:17px}
+.lb-about-proof+.lb-about-proof{border-left:1px solid var(--line)}
+.lb-about-proof svg{width:42px;height:42px;flex:0 0 auto;fill:none;stroke:var(--green);stroke-width:1.6}
+.lb-about-proof strong{display:block;font-size:34px;line-height:.95}
+.lb-about-proof span{display:block;margin-top:8px;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 
-  <h2>How LineupBeat works</h2>
-  <p>LineupBeat is independent. We do not accept payment for coverage,
-    placement, rankings, or projections.</p>
+.lb-about-section{padding:82px 0;border-bottom:1px solid var(--line)}
+.lb-about-section-head{max-width:820px;margin-bottom:40px}
+.lb-about-section h2,.lb-about-split h2,.lb-about-final h2{margin:12px 0 0;font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:.98;letter-spacing:-.027em}
+.lb-about-section-head h2{font-size:clamp(40px,4.7vw,62px)}
+.lb-about-section-head p{max-width:720px;margin:18px 0 0;color:var(--muted);font-family:Georgia,serif;font-size:17px;line-height:1.65}
 
-  <div class="abgrid">
-    <div class="abcard"><h3>Beat reporting</h3>
-      <p>We follow local reporters across all 32 NFL markets. Every report
-         is paraphrased in our own words, matched to the player it affects,
-         and credited and linked to the original reporter. We do not
-         reproduce reporters&rsquo; work.</p></div>
-    <div class="abcard"><h3>Fantasy data</h3>
-      <p>We build our own fantasy projections from projected player stat
-         lines, so you can see the numbers behind every fantasy point
-         total. We also use market, roster, schedule, and historical data
-         from established sources, including
-         <a href="https://fantasyfootballcalculator.com/adp">Fantasy
-         Football Calculator</a>, Sleeper, and nflverse.</p></div>
-  </div>
+.lb-about-do-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.lb-about-do-card{min-height:330px;padding:29px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,.022),transparent 42%),var(--panel)}
+.lb-about-do-card svg{width:46px;height:46px;fill:none;stroke:var(--green);stroke-width:1.55}
+.lb-about-card-kicker{margin-top:28px;font-size:11px}
+.lb-about-do-card h3{margin:10px 0 13px;font-family:"DM Serif Display",Georgia,serif;font-size:29px;font-weight:400;line-height:1.05}
+.lb-about-do-card p{margin:0;color:#a7ada8;font-family:Georgia,serif;font-size:15px;line-height:1.62}
 
-  <h2>How we handle the data</h2>
-  <p>We would rather show uncertainty than pretend to know something we do
-    not.</p>
-  <p>If we cannot confidently match a report to a player, we mark it as
-    unmatched instead of guessing.</p>
-  <p>We also try not to count the same information twice. Coaching,
-    durability, schedule, projections, and draft value answer different
-    questions and are kept separate.</p>
-  <p>Our projections are estimates, not guarantees. When new information is
-    strong enough to change an assumption, we update them. When it is not,
-    we do not move a player just because of a headline.</p>
+.lb-about-split{display:grid;grid-template-columns:.78fr 1.22fr;gap:85px;align-items:start}
+.lb-about-split h2{font-size:clamp(40px,4.5vw,60px)}
+.lb-about-split-copy{margin-top:20px;color:var(--muted);font-family:Georgia,serif;font-size:17px;line-height:1.68}
+.lb-about-process{border-top:1px solid var(--line2)}
+.lb-about-step{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:28px 0;border-bottom:1px solid var(--line)}
+.lb-about-step-number{font-size:13px}
+.lb-about-step h3{margin:0 0 8px;font-size:23px;line-height:1}
+.lb-about-step p{margin:0;color:#9da49f;font-family:Georgia,serif;font-size:15px;line-height:1.55}
 
-  <h2>When we get something wrong</h2>
-  <p>Forecasts will be wrong. Facts should not be.</p>
-  <p>If you find an incorrect team, reporter, statistic, source, or other
-    factual error, email
-    <a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a> and we
-    will correct it.</p>
-  <p>Disagreeing with a projection is different, and we welcome that too.
-    Those disagreements are part of what makes fantasy football
-    interesting.</p>
+.lb-about-principles{background:linear-gradient(180deg,rgba(198,245,60,.016),transparent 30%),#070a0b}
+.lb-about-principle-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.lb-about-principle{min-height:245px;padding:28px 30px;border:1px solid var(--line);border-radius:13px;background:rgba(14,18,19,.72)}
+.lb-about-principle strong{display:inline-block;color:var(--green);font-size:12px;letter-spacing:.09em;text-transform:uppercase}
+.lb-about-principle h3{margin:15px 0 11px;font-family:"DM Serif Display",Georgia,serif;font-size:30px;font-weight:400}
+.lb-about-principle p{margin:0;color:#a6aca7;font-family:Georgia,serif;font-size:15px;line-height:1.6}
 
-  <h2>How current is the data?</h2>
-  <p>The Wire updates throughout the day.</p>
-  <p>Rosters and ADP refresh daily. Projections are updated when the
-    underlying assumptions change.</p>
-  <p>Every data page shows when it was last updated.</p>
+.lb-about-belief{padding:92px 0;border-bottom:1px solid var(--line);background:radial-gradient(circle at 50% 50%,rgba(198,245,60,.035),transparent 34%)}
+.lb-about-belief blockquote{max-width:1000px;margin:0 auto;text-align:center;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(43px,5.1vw,72px);font-weight:400;line-height:1.03;letter-spacing:-.028em}
+.lb-about-belief span{color:var(--green)}
 
-  <h2>Reading the data</h2>
-  <div class="abgrid">
-    <div class="abcard"><h3><a href="/{SPORT}/projections/">Projections</a></h3>
-      <p>Full-season points in three scoring formats, with the stat line
-         behind every total.</p></div>
-    <div class="abcard"><h3><a href="/{SPORT}/draft-value/">ADP &amp; draft value</a></h3>
-      <p>Where the market drafts a player against where our board ranks
-         him, as a gap you can check.</p></div>
-    <div class="abcard"><h3><a href="/{SPORT}/durability/">Durability</a></h3>
-      <p>Games actually played since 2018. Historical fact, no
-         projection.</p></div>
-    <div class="abcard"><h3><a href="/{SPORT}/strength-of-schedule/">Strength of schedule</a></h3>
-      <p>Opponent record and fantasy points allowed by position, with the
-         week-by-week schedule behind each rating.</p></div>
-    <div class="abcard"><h3><a href="/{SPORT}/coaching/">Offensive coaching</a></h3>
-      <p>Who calls each offense and which positions that favors. A
-         tiebreaker, not a ranking.</p></div>
-    <div class="abcard"><h3><a href="/{SPORT}/data/">All fantasy data</a></h3>
-      <p>Every board in one place.</p></div>
-  </div>
+.lb-about-source-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.lb-about-source-panel{padding:31px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.lb-about-source-panel h3{margin:0 0 16px;font-family:"DM Serif Display",Georgia,serif;font-size:29px;font-weight:400}
+.lb-about-source-panel p{margin:0;color:#a5aca7;font-family:Georgia,serif;font-size:15px;line-height:1.65}
+.lb-about-source-list{margin:22px 0 0;padding:0;list-style:none}
+.lb-about-source-list li{position:relative;padding:10px 0 10px 21px;border-top:1px solid rgba(255,255,255,.06);color:#929994;font-size:13px}
+.lb-about-source-list li:before{content:"";position:absolute;left:0;top:16px;width:7px;height:7px;border-radius:50%;background:var(--green)}
+
+.lb-about-final{padding:84px 0;background:radial-gradient(circle at 78% 50%,rgba(198,245,60,.065),transparent 27%),#080b0c}
+.lb-about-final-grid{display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center}
+.lb-about-final h2{font-size:clamp(42px,4.6vw,62px)}
+.lb-about-final p{max-width:680px;margin:18px 0 0;color:#aeb4af;font-family:Georgia,serif;font-size:17px;line-height:1.65}
+.lb-about-final-actions{display:flex;flex-direction:column;gap:12px}
+
+@media(max-width:1050px){
+  .lb-about-hero-grid,.lb-about-split{grid-template-columns:1fr;gap:50px}
+  .lb-about-wire{max-width:720px}
+  .lb-about-do-grid{grid-template-columns:1fr}
+  .lb-about-do-card{min-height:0}
+  .lb-about-final-grid{grid-template-columns:1fr;gap:32px}
+  .lb-about-final-actions{flex-direction:row;flex-wrap:wrap}
+}
+@media(max-width:760px){
+  .lb-about-proof-grid{grid-template-columns:1fr}
+  .lb-about-proof+.lb-about-proof{border-left:0;border-top:1px solid var(--line)}
+  .lb-about-principle-grid,.lb-about-source-grid{grid-template-columns:1fr}
+  .lb-about-section{padding:64px 0}
+}
+@media(max-width:620px){
+  .lb-about-wrap{width:calc(100% - 30px)}
+  .lb-about-hero{padding:62px 0 55px}
+  .lb-about-hero h1{font-size:clamp(50px,16vw,68px)}
+  .lb-about-lead{font-size:17px}
+  .lb-about-actions,.lb-about-final-actions{flex-direction:column}
+  .lb-about-btn{width:100%}
+  .lb-about-wire{padding:18px}
+  .lb-about-wire-title{flex-direction:column;gap:2px}
+  .lb-about-step{grid-template-columns:45px 1fr;gap:12px}
+  .lb-about-belief{padding:70px 0}
+}
+
+/* =========================================================
+   MOBILE / TABLET HARDENING
+   ========================================================= */
+
+/* Prevent accidental horizontal scrolling from long text or SVGs */
+.lb-about-page {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.lb-about-page img,
+.lb-about-page svg {
+  max-width: 100%;
+}
+
+.lb-about-page,
+.lb-about-wrap,
+.lb-about-hero-grid,
+.lb-about-proof-grid,
+.lb-about-do-grid,
+.lb-about-split,
+.lb-about-principle-grid,
+.lb-about-source-grid,
+.lb-about-final-grid {
+  min-width: 0;
+}
+
+.lb-about-hero-grid > *,
+.lb-about-split > *,
+.lb-about-final-grid > *,
+.lb-about-do-grid > *,
+.lb-about-principle-grid > *,
+.lb-about-source-grid > * {
+  min-width: 0;
+}
+
+/* Make touch targets comfortably tappable */
+.lb-about-btn {
+  min-height: 52px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Better tablet behavior */
+@media (max-width: 900px) {
+  /* Nothing to align to once the columns stack,
+     and the offset pulls the card into the stats. */
+  .lb-about-wire{margin-top:0}
+  .lb-about-hero {
+    padding-top: 72px;
+    padding-bottom: 64px;
+  }
+
+  .lb-about-hero-grid {
+    gap: 42px;
+  }
+
+  .lb-about-hero h1 {
+    max-width: 720px;
+  }
+
+  .lb-about-wire {
+    width: 100%;
+    max-width: none;
+  }
+
+  .lb-about-proof {
+    padding: 24px;
+  }
+
+  .lb-about-split {
+    gap: 42px;
+  }
+}
+
+/* Main mobile layout */
+@media (max-width: 620px) {
+  .lb-about-wrap {
+    width: calc(100% - 28px);
+  }
+
+  .lb-about-hero {
+    padding: 48px 0 42px;
+  }
+
+  .lb-about-hero-grid {
+    gap: 34px;
+  }
+
+  .lb-about-hero h1 {
+    margin-top: 16px;
+    margin-bottom: 20px;
+    font-size: clamp(44px, 13.5vw, 58px);
+    line-height: .98;
+    letter-spacing: -.03em;
+  }
+
+  .lb-about-lead {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .lb-about-actions {
+    gap: 10px;
+    margin-top: 26px;
+  }
+
+  .lb-about-btn {
+    width: 100%;
+    min-height: 54px;
+    padding: 0 18px;
+    font-size: 16px;
+  }
+
+  /* Wire preview becomes compact and easy to scan */
+  .lb-about-wire {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .lb-about-wire-head {
+    min-height: 38px;
+    gap: 10px;
+  }
+
+  .lb-about-live {
+    font-size: 13px;
+  }
+
+  .lb-about-wire-head > span {
+    font-size: 9px;
+  }
+
+  .lb-about-wire-item {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 12px;
+    min-height: 0;
+    padding: 16px 0;
+  }
+
+  .lb-about-marker {
+    width: 34px;
+    height: 34px;
+    font-size: 11px;
+  }
+
+  .lb-about-wire-body::before {
+    left: 16px;
+    top: 31px;
+    bottom: 31px;
+  }
+
+  .lb-about-marker::after {
+    left: 13px;
+    bottom: -31px;
+    width: 6px;
+    height: 6px;
+  }
+
+  .lb-about-wire-title {
+    display: block;
+  }
+
+  .lb-about-wire-title strong {
+    display: block;
+    font-size: 18px;
+  }
+
+  .lb-about-wire-title time {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+  }
+
+  .lb-about-wire-item p {
+    margin-top: 7px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .lb-about-source {
+    font-size: 11px;
+  }
+
+  /* Proof bar stacks cleanly */
+  .lb-about-proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lb-about-proof {
+    min-height: 92px;
+    padding: 19px 18px;
+  }
+
+  .lb-about-proof + .lb-about-proof {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .lb-about-proof svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .lb-about-proof strong {
+    font-size: 30px;
+  }
+
+  /* Sections */
+  .lb-about-section {
+    padding: 52px 0;
+  }
+
+  .lb-about-section-head {
+    margin-bottom: 28px;
+  }
+
+  .lb-about-section-head h2,
+  .lb-about-split h2,
+  .lb-about-final h2 {
+    font-size: clamp(36px, 11vw, 48px);
+    line-height: 1;
+  }
+
+  .lb-about-section-head p,
+  .lb-about-split-copy,
+  .lb-about-final p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Cards: one column, tighter but still premium */
+  .lb-about-do-grid,
+  .lb-about-principle-grid,
+  .lb-about-source-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .lb-about-do-card,
+  .lb-about-principle,
+  .lb-about-source-panel {
+    min-height: 0;
+    padding: 22px;
+    border-radius: 12px;
+  }
+
+  .lb-about-do-card h3,
+  .lb-about-principle h3,
+  .lb-about-source-panel h3 {
+    font-size: 27px;
+  }
+
+  /* How the Wire works */
+  .lb-about-split {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .lb-about-step {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 10px;
+    padding: 21px 0;
+  }
+
+  .lb-about-step h3 {
+    font-size: 21px;
+  }
+
+  .lb-about-step p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  /* Big belief quote */
+  .lb-about-belief {
+    padding: 56px 0;
+  }
+
+  .lb-about-belief blockquote {
+    font-size: clamp(38px, 12vw, 52px);
+    line-height: 1.04;
+  }
+
+  /* Final CTA */
+  .lb-about-final {
+    padding: 54px 0;
+  }
+
+  .lb-about-final-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .lb-about-final-actions {
+    width: 100%;
+    gap: 10px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 390px) {
+  .lb-about-wrap {
+    width: calc(100% - 22px);
+  }
+
+  .lb-about-hero h1 {
+    font-size: 42px;
+  }
+
+  .lb-about-kicker {
+    font-size: 12px;
+  }
+
+  .lb-about-wire {
+    padding: 14px;
+  }
+
+  .lb-about-proof {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .lb-about-do-card,
+  .lb-about-principle,
+  .lb-about-source-panel {
+    padding: 19px;
+  }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .lb-about-btn {
+    transition: none;
+  }
+
+  .lb-about-btn:hover {
+    transform: none;
+  }
+}</style>
+<main class="lb-about-page">
+
+  <section class="lb-about-hero">
+    <div class="lb-about-wrap">
+      <div class="lb-about-hero-grid">
+        <div>
+          <div class="lb-about-kicker">ABOUT LINEUPBEAT</div>
+          <h1>Fantasy decisions start with <span>better information.</span></h1>
+          <p class="lb-about-lead">
+            LineupBeat follows an average of 3 beat reporters for every NFL team,
+            connects their reporting to the players it affects, and pairs it with
+            fantasy data built to help you make better decisions.
+          </p>
+
+          <div class="lb-about-actions">
+            <a class="lb-about-btn lb-about-btn-primary" href="/nfl/wire/">
+              OPEN THE WIRE
+              <svg class="lb-about-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="lb-about-btn lb-about-btn-secondary" href="/nfl/data/">Explore Fantasy Data</a>
+          </div>
+        </div>
+
+        <aside class="lb-about-wire" aria-label="How the LineupBeat Wire works">
+          <div class="lb-about-wire-head">
+            <div class="lb-about-live"><span class="lb-about-dot"></span>LIVE ON THE WIRE</div>
+            <span>ALL 32 NFL TEAMS</span>
+          </div>
+
+          <div class="lb-about-wire-body">
+            <div class="lb-about-wire-item">
+              <div class="lb-about-marker">NFL</div>
+              <div>
+                <div class="lb-about-wire-title"><strong>Player role changes</strong><time>minutes ago</time></div>
+                <p>Local reporting surfaces a meaningful shift in first team work, health or opportunity.</p>
+                <div class="lb-about-source">Original reporter credited</div>
+              </div>
+            </div>
+
+            <div class="lb-about-wire-item">
+              <div class="lb-about-marker">→</div>
+              <div>
+                <div class="lb-about-wire-title"><strong>Matched to the player</strong><time>then</time></div>
+                <p>The report is connected directly to the fantasy relevant player so you do not have to hunt across dozens of feeds.</p>
+                <div class="lb-about-source">Reporting stays separate from model opinion</div>
+              </div>
+            </div>
+
+            <div class="lb-about-wire-item">
+              <div class="lb-about-marker">FP</div>
+              <div>
+                <div class="lb-about-wire-title"><strong>Put in fantasy context</strong><time>when warranted</time></div>
+                <p>The Wire and the data work together without turning every headline into an automatic projection change.</p>
+                <div class="lb-about-source">Evidence first</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="lb-about-proof-bar">
+    <div class="lb-about-wrap">
+      <div class="lb-about-proof-grid">
+        <div class="lb-about-proof">
+          <svg viewBox="0 0 48 48"><path d="M7 34c6-13 13-20 20-20 5 0 9 2 14 6"/><circle cx="10" cy="34" r="3"/><circle cx="28" cy="14" r="3"/><circle cx="41" cy="20" r="3"/></svg>
+          <div><strong>32</strong><span>NFL teams covered</span></div>
+        </div>
+        <div class="lb-about-proof">
+          <svg viewBox="0 0 48 48"><circle cx="16" cy="15" r="7"/><circle cx="32" cy="16" r="6"/><path d="M5 39c1-9 5-14 12-14s11 5 12 14"/><path d="M26 39c1-7 4-11 10-11 3 0 6 1 8 4"/></svg>
+          <div><strong>3</strong><span>Beat reporters per team, avg.</span></div>
+        </div>
+        <div class="lb-about-proof">
+          <svg viewBox="0 0 48 48"><path d="M28 4 9 28h13l-3 16 20-26H26z"/></svg>
+          <div><strong>FREE</strong><span>Fantasy tools and reporting</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lb-about-section">
+    <div class="lb-about-wrap">
+      <div class="lb-about-section-head">
+        <div class="lb-about-kicker">WHAT LINEUPBEAT DOES</div>
+        <h2>Reporting first. Fantasy context second.</h2>
+        <p>
+          The goal is simple: make it easier to see the information that matters
+          without blending verified reporting, projections and opinion into one thing.
+        </p>
+      </div>
+
+      <div class="lb-about-do-grid">
+        <article class="lb-about-do-card">
+          <svg viewBox="0 0 48 48"><path d="M8 10h32v24H20l-9 8v-8H8z"/><path d="M14 17h20M14 23h16M14 29h11"/></svg>
+          <div class="lb-about-card-kicker">01 · THE WIRE</div>
+          <h3>Follow the people closest to the teams.</h3>
+          <p>We follow local beat reporting across every NFL team, surface the fantasy relevant updates, and credit the original reporter and source.</p>
+        </article>
+
+        <article class="lb-about-do-card">
+          <svg viewBox="0 0 48 48"><path d="M8 38h7V24H8zM20 38h7V15h-7zM32 38h7V8h-7z"/><path d="M6 42h36"/></svg>
+          <div class="lb-about-card-kicker">02 · FANTASY DATA</div>
+          <h3>Show the numbers behind the decision.</h3>
+          <p>Projections, draft value, schedule, durability, coaching context and historical performance are built as separate tools so the underlying evidence remains visible.</p>
+        </article>
+
+        <article class="lb-about-do-card">
+          <svg viewBox="0 0 48 48"><path d="M24 5v9M24 34v9M5 24h9M34 24h9"/><circle cx="24" cy="24" r="9"/><path d="m20 24 3 3 6-7"/></svg>
+          <div class="lb-about-card-kicker">03 · THE CONNECTION</div>
+          <h3>Separate what changed from what we think it means.</h3>
+          <p>A report can matter without automatically changing a projection. Evidence changes the view when it is strong enough, and the distinction stays visible.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="lb-about-section">
+    <div class="lb-about-wrap">
+      <div class="lb-about-split">
+        <div>
+          <div class="lb-about-kicker">HOW THE WIRE WORKS</div>
+          <h2>Dozens of local feeds, one fantasy view.</h2>
+          <p class="lb-about-split-copy">
+            NFL news rarely arrives in one clean place. It shows up in practice observations,
+            press conferences, local reporting, injury updates and depth chart changes.
+            The Wire is built to organize that reporting around the player it affects.
+          </p>
+        </div>
+
+        <div class="lb-about-process">
+          <div class="lb-about-step">
+            <div class="lb-about-step-number">01</div>
+            <div><h3>Follow the source</h3><p>Track reporting from local NFL beat writers and established sources covering each team.</p></div>
+          </div>
+          <div class="lb-about-step">
+            <div class="lb-about-step-number">02</div>
+            <div><h3>Identify the fantasy relevance</h3><p>Surface the updates that can affect roles, health, opportunity, usage or the team environment.</p></div>
+          </div>
+          <div class="lb-about-step">
+            <div class="lb-about-step-number">03</div>
+            <div><h3>Connect it to the player</h3><p>Match the report to the relevant player or team so the context is immediately usable.</p></div>
+          </div>
+          <div class="lb-about-step">
+            <div class="lb-about-step-number">04</div>
+            <div><h3>Keep the source attached</h3><p>Credit the original reporter so users can see where the information came from and read the underlying reporting.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lb-about-section lb-about-principles">
+    <div class="lb-about-wrap">
+      <div class="lb-about-section-head">
+        <div class="lb-about-kicker">HOW WE THINK ABOUT FANTASY INFORMATION</div>
+        <h2>Facts, forecasts and uncertainty should look different.</h2>
+      </div>
+
+      <div class="lb-about-principle-grid">
+        <article class="lb-about-principle">
+          <strong>FACT</strong>
+          <h3>A report is a report.</h3>
+          <p>If a beat reporter says a player missed practice or worked with the first team, that is reporting. Present it accurately and preserve the source.</p>
+        </article>
+
+        <article class="lb-about-principle">
+          <strong>FORECAST</strong>
+          <h3>A projection is our estimate.</h3>
+          <p>Projected carries, targets, yards and fantasy points are model outputs. They are not facts, and they should not be presented as if they are.</p>
+        </article>
+
+        <article class="lb-about-principle">
+          <strong>UNCERTAINTY</strong>
+          <h3>Could happen is not will happen.</h3>
+          <p>Injury concern, possible discipline, camp competition and uncertain roles should stay uncertain until stronger evidence changes the probability.</p>
+        </article>
+
+        <article class="lb-about-principle">
+          <strong>ACCOUNTABILITY</strong>
+          <h3>The stat line should explain the rank.</h3>
+          <p>Rankings should come from the underlying projected opportunity and efficiency, not the other way around.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="lb-about-belief">
+    <div class="lb-about-wrap">
+      <blockquote>Forecasts will be wrong.<br><span>Facts should not be.</span></blockquote>
+    </div>
+  </section>
+
+  <section class="lb-about-section">
+    <div class="lb-about-wrap">
+      <div class="lb-about-section-head">
+        <div class="lb-about-kicker">SOURCES &amp; TRANSPARENCY</div>
+        <h2>Show where the information comes from.</h2>
+        <p>LineupBeat is most useful when users can distinguish original reporting, measured data and our own projections.</p>
+      </div>
+
+      <div class="lb-about-source-grid">
+        <article class="lb-about-source-panel">
+          <h3>Reporting</h3>
+          <p>Wire items should preserve attribution to the original reporter or publication rather than making the reporting look like it originated with LineupBeat.</p>
+          <ul class="lb-about-source-list">
+            <li>Original reporter credited</li>
+            <li>Publication or source shown</li>
+            <li>Player or team connection visible</li>
+            <li>Reporting kept separate from projection opinion</li>
+          </ul>
+        </article>
+
+        <article class="lb-about-source-panel">
+          <h3>Fantasy data</h3>
+          <p>Data tools should explain what they measure, use published sources where applicable, and expose enough of the underlying numbers that users can understand the result.</p>
+          <ul class="lb-about-source-list">
+            <li>Raw stat lines behind projections</li>
+            <li>Tool specific methodology</li>
+            <li>Historical data kept separate from forecasts</li>
+            <li>Updates handled on the appropriate cadence</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="lb-about-final">
+    <div class="lb-about-wrap">
+      <div class="lb-about-final-grid">
+        <div>
+          <div class="lb-about-kicker">SEE IT IN ACTION</div>
+          <h2>Start with what changed.<br>Then look at the numbers.</h2>
+          <p>Open the Wire for the latest reporting, or explore the fantasy data tools for projections, draft value, schedule and context.</p>
+        </div>
+
+        <div class="lb-about-final-actions">
+          <a class="lb-about-btn lb-about-btn-primary" href="/nfl/wire/">
+            OPEN THE WIRE
+            <svg class="lb-about-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="lb-about-btn lb-about-btn-secondary" href="/nfl/data/">EXPLORE FANTASY DATA</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>"""
 
     title = "About LineupBeat | How It Works and Where the Data Comes From"
