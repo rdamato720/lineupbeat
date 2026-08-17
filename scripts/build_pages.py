@@ -418,10 +418,13 @@ PAGE_CSS = """
 }
 """
 
+PAGE_FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">')
+
 PAGE = """<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
+{fonts}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{description}">
@@ -727,6 +730,7 @@ def player_page(p, nuggets, base):
             + "\n".join(arts))
 
     return _render(PAGE.format(
+        fonts=PAGE_FONTS,
         title=trim(esc(f"{name} news, beat reports and updates | LineupBeat"), 60),
         description=trim(esc(page_description(name, who, nuggets)), 155),
         canonical=esc(url), og_type="profile",
@@ -768,6 +772,7 @@ def team_page(team, players, count, base):
             f'  <h2>Players in the news</h2>\n'
             f'  <div class="grid">\n{cards}\n  </div>')
     return _render(PAGE.format(
+        fonts=PAGE_FONTS,
         title=trim(esc(f"{full} beat reports and player news | LineupBeat"), 60),
         # Was 90 characters, which leaves half the snippet empty. Naming
         # what a reader actually gets is both longer and more useful.
@@ -803,7 +808,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 DATA_PAGE_CSS = """
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap');
 
 :root {
   --lb-green: #c6f53c;
@@ -892,10 +896,13 @@ svg { display: block; }
 
 .lb-eyebrow { font-size: 15px; line-height: 1; }
 
-.lb-data-title {
+.lb-data-page .lb-data-title, .lb-data-title {
+  /* .ppage h1 also uppercases, and the homepage headline is
+     sentence case. Stated rather than inherited. */
+  text-transform: none;
   margin: 20px 0 24px;
   max-width: 1000px;
-  font-family: "DM Serif Display", Georgia, serif;
+  font-family: var(--text);
   font-size: clamp(58px, 6.1vw, 86px);
   font-weight: 400;
   line-height: .95;
@@ -1010,7 +1017,7 @@ svg { display: block; }
 .lb-philosophy h2,
 .lb-wire-strip h2 {
   margin: 9px 0 0;
-  font-family: "DM Serif Display", Georgia, serif;
+  font-family: var(--text);
   font-weight: 400;
   line-height: 1;
   letter-spacing: -.025em;
@@ -1089,7 +1096,7 @@ a.lb-tool-card:hover {
 .lb-tool-card h3,
 .lb-future-card h3 {
   margin: 13px 0 12px;
-  font-family: "DM Serif Display", Georgia, serif;
+  font-family: var(--text);
   font-weight: 400;
   letter-spacing: -.02em;
 }
@@ -2067,6 +2074,7 @@ def data_hub_page(base):
              "item": f"{base}/{SPORT}/data/"}]}]}
 
     return _render(PAGE.format(
+        fonts=PAGE_FONTS,
         title="NFL Fantasy Data: Projections, ADP and Schedule",
         description=("Projections, market value, strength of schedule, "
                      "durability and team context for every drafted NFL "
@@ -2593,6 +2601,7 @@ def durability_page(conn, base):
                      "refreshed daily, so it reflects where players are going "
                      "now rather than earlier in the offseason."}}]}]}
     return _render(PAGE.format(
+        fonts=PAGE_FONTS,
         # "Who Actually Plays" is a headline, not a query. Nobody types it.
         # People search for injury history, games missed, durability, and
         # they search it against a draft board -- so the title leads with
@@ -2637,7 +2646,7 @@ ABOUT_CSS = """
 
 .abwrap{max-width:1080px; margin:0 auto; padding:0 1rem 4rem}
 .abhead h1{font-size:1.7rem; margin:1.6rem 0 0; letter-spacing:-.01em;
-  font-family:var(--text)}
+  font-family:var(--lb-about-ink)}
 .ablede{font-size:1rem; line-height:1.65; color:var(--ink); max-width:70ch;
   margin:.8rem 0 0}
 .abwrap h2{font-family:var(--agate); text-transform:uppercase;
@@ -2681,7 +2690,7 @@ def about_page(base, built):
   --green:#c6f53c;
   --bg:#050708;
   --panel:#0e1213;
-  --text:#f2f2ed;
+  --lb-about-ink:#f2f2ed;
   --muted:#a6aca7;
   --line:rgba(255,255,255,.12);
   --line2:rgba(255,255,255,.20);
@@ -2689,7 +2698,7 @@ def about_page(base, built):
 }
 .lb-about-page,
 .lb-about-page *{box-sizing:border-box}
-.lb-about-page{color:var(--text);font-family:"Barlow Condensed",Arial,sans-serif}
+.lb-about-page{color:var(--lb-about-ink);font-family:"Barlow Condensed",Arial,sans-serif}
 .lb-about-page a{color:inherit}
 .lb-about-page{
   position:relative;overflow:hidden;min-height:100vh;
@@ -2711,7 +2720,7 @@ def about_page(base, built):
 .lb-about-kicker{font-size:14px}
 .lb-about-hero{padding:100px 0 88px;border-bottom:1px solid var(--line)}
 .lb-about-hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:86px;align-items:start}
-.lb-about-hero h1{max-width:100%;margin:20px 0 27px;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(42px,4.6vw,78px);overflow-wrap:break-word;line-height:.95;font-weight:400;letter-spacing:-.036em}
+.lb-about-hero h1{max-width:none;margin:20px 0 27px;text-transform:none;font-family:"Source Serif 4",Georgia,serif;font-size:clamp(42px,4.6vw,78px);line-height:.95;font-weight:400;letter-spacing:-.036em}
 .lb-about-hero h1 span{color:var(--green)}
 .lb-about-lead{max-width:700px;margin:0;color:#b8bdb9;font-family:Georgia,serif;font-size:20px;line-height:1.7}
 .lb-about-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:35px}
@@ -2757,7 +2766,7 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
 
 .lb-about-section{padding:82px 0;border-bottom:1px solid var(--line)}
 .lb-about-section-head{max-width:820px;margin-bottom:40px}
-.lb-about-section h2,.lb-about-split h2,.lb-about-final h2{margin:12px 0 0;font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:.98;letter-spacing:-.027em}
+.lb-about-section h2,.lb-about-split h2,.lb-about-final h2{margin:12px 0 0;font-family:var(--lb-about-ink);font-weight:400;line-height:.98;letter-spacing:-.027em}
 .lb-about-section-head h2{font-size:clamp(40px,4.7vw,62px)}
 .lb-about-section-head p{max-width:720px;margin:18px 0 0;color:var(--muted);font-family:Georgia,serif;font-size:17px;line-height:1.65}
 
@@ -2765,7 +2774,7 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
 .lb-about-do-card{min-height:330px;padding:29px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,.022),transparent 42%),var(--panel)}
 .lb-about-do-card svg{width:46px;height:46px;fill:none;stroke:var(--green);stroke-width:1.55}
 .lb-about-card-kicker{margin-top:28px;font-size:11px}
-.lb-about-do-card h3{margin:10px 0 13px;font-family:"DM Serif Display",Georgia,serif;font-size:29px;font-weight:400;line-height:1.05}
+.lb-about-do-card h3{margin:10px 0 13px;font-family:var(--lb-about-ink);font-size:29px;font-weight:400;line-height:1.05}
 .lb-about-do-card p{margin:0;color:#a7ada8;font-family:Georgia,serif;font-size:15px;line-height:1.62}
 
 .lb-about-split{display:grid;grid-template-columns:.78fr 1.22fr;gap:85px;align-items:start}
@@ -2781,16 +2790,16 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
 .lb-about-principle-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .lb-about-principle{min-height:245px;padding:28px 30px;border:1px solid var(--line);border-radius:13px;background:rgba(14,18,19,.72)}
 .lb-about-principle strong{display:inline-block;color:var(--green);font-size:12px;letter-spacing:.09em;text-transform:uppercase}
-.lb-about-principle h3{margin:15px 0 11px;font-family:"DM Serif Display",Georgia,serif;font-size:30px;font-weight:400}
+.lb-about-principle h3{margin:15px 0 11px;font-family:var(--lb-about-ink);font-size:30px;font-weight:400}
 .lb-about-principle p{margin:0;color:#a6aca7;font-family:Georgia,serif;font-size:15px;line-height:1.6}
 
 .lb-about-belief{padding:92px 0;border-bottom:1px solid var(--line);background:radial-gradient(circle at 50% 50%,rgba(198,245,60,.035),transparent 34%)}
-.lb-about-belief blockquote{max-width:1000px;margin:0 auto;text-align:center;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(43px,5.1vw,72px);font-weight:400;line-height:1.03;letter-spacing:-.028em}
+.lb-about-belief blockquote{max-width:1000px;margin:0 auto;text-align:center;font-family:var(--lb-about-ink);font-size:clamp(43px,5.1vw,72px);font-weight:400;line-height:1.03;letter-spacing:-.028em}
 .lb-about-belief span{color:var(--green)}
 
 .lb-about-source-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .lb-about-source-panel{padding:31px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
-.lb-about-source-panel h3{margin:0 0 16px;font-family:"DM Serif Display",Georgia,serif;font-size:29px;font-weight:400}
+.lb-about-source-panel h3{margin:0 0 16px;font-family:var(--lb-about-ink);font-size:29px;font-weight:400}
 .lb-about-source-panel p{margin:0;color:#a5aca7;font-family:Georgia,serif;font-size:15px;line-height:1.65}
 .lb-about-source-list{margin:22px 0 0;padding:0;list-style:none}
 .lb-about-source-list li{position:relative;padding:10px 0 10px 21px;border-top:1px solid rgba(255,255,255,.06);color:#929994;font-size:13px}
@@ -3684,6 +3693,7 @@ def main():
         try:
             body, title, desc, ld = about_page(base, eastern_now())
             page = PAGE.format(
+        fonts=PAGE_FONTS,
                 title=esc(title), description=esc(desc),
                 canonical=esc(f"{base}/about/"), og_type="website",
                 og_image="",
