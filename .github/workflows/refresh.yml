@@ -154,6 +154,10 @@ jobs:
           # reviewed, which is the one thing the gate exists to stop.
           python scripts/build_college_projections.py
 
+          # Unmatched paths fell through to the homepage, so a mistyped
+          # URL rendered the front page under it and read as a soft 404.
+          python scripts/build_404.py
+
           # Again, so the projection chips read the board that
           # was just rebuilt. Last, so the sitemap it writes includes
           # the college URLs added above.

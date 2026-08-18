@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://lineupbeat.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LineupBeat">
-<meta property="og:title" content="Fantasy Football News, Projections &amp; Data | LineupBeat">
+<meta property="og:title" content="NFL News, Fantasy Football Projections &amp; Data | LineupBeat">
 <meta property="og:description" content="Local NFL beat reports, fantasy football projections, ADP values, injury history, coaching changes and strength of schedule for every team and player.">
 <meta property="og:url" content="https://lineupbeat.com/">
 <meta property="og:image" content="https://lineupbeat.com/og.png">
@@ -2205,6 +2205,7 @@ function playerCounts(){
   return c;
 }
 let COUNTS = new Map();
+let PAGE_SLUGS = null;         // slugs that have a page; null until loaded
 let PLAYERS = new Map();      // id -> player, for headshots without a scan
 
 function renderHits(term){
@@ -2626,7 +2627,18 @@ function playerHref(id){
   const p = PLAYERS.get(id);
   if(!p || !p.name) return "#";
   const sport = p.sport || state.sport || "nfl";
-  return `/${sport}/${slugName(p.name)}/`;
+  const s = slugName(p.name);
+  // A name is not evidence that a page exists. Roughly 260 rostered
+  // players have neither a report nor a projection, so build_pages.py
+  // declines to write them a page -- and a link built from the name alone
+  // sent readers to a URL the host answers with the homepage, which is a
+  // soft 404 rather than an honest one.
+  //
+  // PAGE_SLUGS is null until it loads; until then behave as before rather
+  // than stripping every link on the page.
+  if(!s) return "#";
+  if(PAGE_SLUGS && !PAGE_SLUGS.has(s)) return "#";
+  return `/${sport}/${s}/`;
 }
 function playerLink(id, label, cls){
   if(!id) return esc(label);
@@ -3683,6 +3695,12 @@ function toggle(id, key){
   if(!DATA.sports[state.sport]) state.sport = sports[0];
   COUNTS = playerCounts();
   PLAYERS = new Map(DATA.players.map(p => [p.id, p]));
+  // Which players have a page, written by build_pages.py in the same pass
+  // that writes them. A failure here leaves PAGE_SLUGS null and links
+  // behave as they did before, which is the safe direction.
+  fetch("/data/pages.json").then(r => r.ok ? r.json() : null).then(d => {
+    if(d && d.slugs){ PAGE_SLUGS = new Set(d.slugs); render(); }
+  }).catch(() => {});
 
   document.getElementById("stamp").textContent = "Updated " + ago(DATA.generated_at);
   document.getElementById("home").onclick = openFeed;

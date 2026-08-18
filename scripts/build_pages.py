@@ -1493,9 +1493,12 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
           <div class="lb-eyebrow">FANTASY DATA</div>
 
           <h1 class="lb-data-title">
-            The numbers behind<br>
-            the <span class="accent">decision.</span>
+            NFL Fantasy Football <span class="accent">Data</span>
           </h1>
+
+          <p class="lb-data-hook">
+            The numbers behind the decision.
+          </p>
 
           <p class="lb-data-intro">
             Projections, market value, schedule, durability and team context,
@@ -2216,7 +2219,8 @@ def durability_page(conn, base):
         '<a href="/">LineupBeat</a><span>/</span>'
         f'<a href="/{SPORT}/data/">Fantasy data</a><span>/</span>'
         '<b>Durability</b></nav>\n'
-        '  <h1 class="dh1">Who actually plays</h1>\n'
+        '  <h1 class="dh1">2026 NFL Player Durability &amp; Injury History</h1>\n'
+        '  <p class="dhook">Who actually plays?</p>\n'
         '  <p class="dlede">We looked at every injury report and roster '
         'transaction since 2018 to work out how durable each player has '
         'actually been. Here is the latest ADP with durability and '
@@ -2276,6 +2280,8 @@ def durability_page(conn, base):
 
     css = """
 .ppage{max-width:56rem}
+.dhook{font-family:var(--agate);text-transform:uppercase;letter-spacing:.09em;font-size:.8rem;color:var(--quiet);margin:.3rem 0 0}
+.lb-data-hook{font-family:var(--agate);text-transform:uppercase;letter-spacing:.09em;font-size:.85rem;color:var(--quiet);margin:.4rem 0 0}
 .dh1{font-family:var(--agate);text-transform:uppercase;font-size:2.6rem;
   line-height:.95;margin:0 0 .8rem;letter-spacing:-.01em}
 .dlede{color:var(--quiet);font-size:1.02rem;line-height:1.6;max-width:42rem;
@@ -3542,6 +3548,15 @@ def main():
                      "daily" if ns else "weekly",
                      "0.8" if ns else "0.5"))
         written += 1
+
+    # Slugs that actually have a page, for the client-side linker. It
+    # cannot infer this: a name is not evidence that a page was built.
+    (SITE / "data").mkdir(parents=True, exist_ok=True)
+    (SITE / "data" / "pages.json").write_text(json.dumps({
+        "sport": args.sport,
+        "generated": now,
+        "slugs": sorted({u[0].rstrip("/").rsplit("/", 1)[-1] for u in urls}),
+    }, separators=(",", ":")))
 
     by_team = defaultdict(list)
     for pid, ns in by_player.items():
