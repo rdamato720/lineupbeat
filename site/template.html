@@ -1247,12 +1247,25 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
    a button somebody is about to press, not as where he already is. */
 .navlink[aria-current="page"]{box-shadow:inset 3px 0 0 var(--signal)}
 
-/* Teams, in the drawer. The same 32 links as the desktop dropdown, two
-   columns wide because a single column of 32 is a scroll nobody finishes. */
-.navteams{padding:.2rem 1rem 1.2rem}
-.navteams h3{font-family:var(--agate); text-transform:uppercase;
+/* Teams, in the drawer, behind a row of their own.
+   Open, the 32 links pushed every section above them off the screen and
+   put a division heading where a reader was looking for "Who We Are". A
+   <details> rather than a scripted panel: it works before the JavaScript
+   runs, the keyboard already knows how to operate it, and find-in-page
+   opens it in current browsers. */
+.navteams{border-bottom:1px solid var(--rule)}
+.navteams > summary{list-style:none; cursor:pointer}
+.navteams > summary::-webkit-details-marker{display:none}
+.navteams > summary::marker{content:""}
+.navteams[open] > summary{color:var(--signal)}
+.navcar{margin-left:auto; font-size:.7em; opacity:.7;
+  transition:transform .15s}
+.navteams[open] .navcar{transform:rotate(180deg)}
+.navtbody{padding:.2rem 1rem 1.2rem}
+.navtbody h3{font-family:var(--agate); text-transform:uppercase;
   letter-spacing:.1em; font-size:.68rem; color:var(--quiet);
   margin:1rem 0 .3rem; padding-top:.8rem; border-top:1px solid var(--rule)}
+.navtbody h3:first-child{border-top:0; padding-top:.2rem; margin-top:.4rem}
 .navtgrid{display:grid; grid-template-columns:repeat(2, minmax(0, 1fr));
   gap:0 .8rem}
 .navtgrid a{display:flex; align-items:center; gap:.5rem; min-height:44px;
@@ -1765,7 +1778,10 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
        app knows the report counts. The shell and its rules are shared. -->
   <div class="navdrawer" id="navdrawer" hidden>
     <nav class="navlinks" id="navlinks" aria-label="All sections"></nav>
-    <div class="navteams" id="navteams"></div>
+    <details class="navteams">
+      <summary class="navlink">Teams<span class="navcar" aria-hidden="true">&#9662;</span></summary>
+      <div class="navtbody" id="navteams"></div>
+    </details>
   </div>
 </header>
 
@@ -3547,7 +3563,6 @@ function renderRosterHead(){
 
 function renderViews(){
   const el = document.getElementById("views");
-  const medCount = medicalNuggets().length;
   el.innerHTML = "";
   // Cleared with the bar, or every render appends another set and the
   // drawer grows a copy of the site each time a filter changes.
@@ -3566,7 +3581,12 @@ function renderViews(){
    // renders as a link a crawler can follow. It points straight at the
    // projections: one product does not need a hub in front of it.
    ["College", "@/college-fantasy-football/projections/", ""],
-   ["The Medical Tent", "medical", medCount],
+   // The Medical Tent is retired. It was in this array and in
+   // HIDDEN_SECTIONS at the same time, so it rendered nowhere while still
+   // costing a medicalNuggets() pass on every render -- listed as a
+   // section, shown as neither a tab nor a drawer row. Unpicking the rest
+   // of the medical path is still a separate job; this only stops the nav
+   // claiming a section that does not exist.
    // Last, because it is the item somebody reaches for after the product
    // rather than instead of it.
    ["Who We Are", "@/about/", ""]]

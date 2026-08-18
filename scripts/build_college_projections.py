@@ -48,19 +48,36 @@ e = lambda s: html.escape(str(s), quote=True)
 # Columns per position. Targets are deliberately absent: receptions are
 # allocated directly by the frozen models and no target layer exists, so
 # a Targets column could only be invented here.
+# Points sits immediately after Team, not at the end.
+#
+# It was last, which on a phone put the number every one of these rankings
+# is built on past the right edge of the screen: a reader had to swipe the
+# full width of the stat line to reach the figure that explains the order
+# he was already looking at. The NFL board carries the same order for the
+# same reason.
+#
+# After it, what the position is paid for, then what explains it, then the
+# accounting. The rushing columns stay on every position, including the
+# receivers: the hybrid role is frequently the whole reason a tight end
+# ranks where he does, and there is a badge in the name cell that reads as
+# a bug without the carries beside it.
 COLS = {
     "QB": [("rank", "Rank"), ("name", "Player"), ("team", "Team"),
-           ("passAtt", "Pass Att"), ("comp", "Comp"), ("passYds", "Pass Yds"),
-           ("passTd", "Pass TD"), ("int", "INT"), ("rushAtt", "Carries"),
-           ("rushYds", "Rush Yds"), ("rushTd", "Rush TD"), ("pts", "Points")],
+           ("pts", "Points"),
+           ("passYds", "Pass Yds"), ("passTd", "Pass TD"),
+           ("rushAtt", "Carries"), ("rushYds", "Rush Yds"),
+           ("rushTd", "Rush TD"),
+           ("passAtt", "Pass Att"), ("comp", "Comp"), ("int", "INT")],
     "RB": [("rank", "Rank"), ("name", "Player"), ("team", "Team"),
+           ("pts", "Points"),
            ("rushAtt", "Carries"), ("rushYds", "Rush Yds"),
            ("rushTd", "Rush TD"), ("rec", "Rec"), ("recYds", "Rec Yds"),
-           ("recTd", "Rec TD"), ("pts", "Points")],
+           ("recTd", "Rec TD")],
     "WR": [("rank", "Rank"), ("name", "Player"), ("team", "Team"),
+           ("pts", "Points"),
            ("rec", "Rec"), ("recYds", "Rec Yds"), ("recTd", "Rec TD"),
            ("rushAtt", "Carries"), ("rushYds", "Rush Yds"),
-           ("rushTd", "Rush TD"), ("pts", "Points")],
+           ("rushTd", "Rush TD")],
 }
 COLS["TE"] = COLS["WR"]
 NUMERIC = {"rank", "passAtt", "comp", "passYds", "passTd", "int", "rushAtt",
@@ -230,10 +247,19 @@ CSS = """
   padding:.7rem .85rem;font-size:.8rem;line-height:1.5;color:var(--quiet);
   margin:0 0 1rem}
 .cnote strong{color:var(--ink)}
-.ctabwrap{overflow-x:auto;border:1px solid var(--rule);border-radius:10px}
-table.ctab{width:100%;border-collapse:collapse;font-size:.86rem}
+.ctabwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;
+  overscroll-behavior-x:contain;
+  border:1px solid var(--rule);border-radius:10px}
+.ctabwrap:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+/* border-collapse:separate is required, not a preference. With collapse
+   the browser owns the borders and drops them from a sticky cell, so the
+   pinned rank and player columns lost their rules and floated over the
+   rows they belonged to. The lines are inset shadows on the cells now,
+   which travel with them. */
+table.ctab{width:100%;border-collapse:separate;border-spacing:0;
+  font-size:.86rem}
 table.ctab th,table.ctab td{padding:.5rem .6rem;text-align:left;
-  border-bottom:1px solid var(--rule);white-space:nowrap}
+  box-shadow:inset 0 -1px 0 var(--rule);white-space:nowrap}
 table.ctab th{font-family:var(--agate);text-transform:uppercase;
   letter-spacing:.07em;font-size:.68rem;color:var(--quiet);
   background:var(--card);position:sticky;top:0;cursor:pointer;user-select:none}
@@ -246,7 +272,16 @@ table.ctab tbody tr:hover{background:rgba(255,255,255,.03)}
 table.ctab th:nth-child(1),table.ctab td:nth-child(1){position:sticky;left:0;
   background:var(--card);z-index:2}
 table.ctab th:nth-child(2),table.ctab td:nth-child(2){position:sticky;
-  left:3.2rem;background:var(--card);z-index:2}
+  left:3.2rem;background:var(--card);z-index:2;
+  box-shadow:inset 0 -1px 0 var(--rule),inset -1px 0 0 var(--rule)}
+table.ctab thead th:nth-child(1),table.ctab thead th:nth-child(2){z-index:3}
+/* Points is the number the ranking is built on; the stat line beside it
+   is deliberately quieter. */
+table.ctab td:nth-child(4){color:var(--signal);font-weight:600}
+/* 13px floor. Below that a stat line is unreadable at arm's length, and
+   shrinking the type to fit more columns is the mistake the sideways
+   scroll exists to avoid. */
+@media(max-width:900px){table.ctab{font-size:.85rem}}
 .hyb{font-family:var(--agate);text-transform:uppercase;letter-spacing:.06em;
   font-size:.6rem;color:var(--signal);border:1px solid var(--signal);
   border-radius:999px;padding:.05rem .4rem;margin-left:.4rem}
@@ -314,7 +349,10 @@ def page(pos):
                       + (f'<h2 class="cposh">{LABEL[p]}'
                          f'<span class="ccount">top 25</span></h2>'
                          if pos is None else "")
-                      + f'<div class="ctabwrap">{t}</div>{more}</section>')
+                      + seo.scroll_hint("the full stat line")
+                      + f'<div class="ctabwrap" tabindex="0" role="region" '
+                        f'aria-label="{e(LABEL[p])} projections">{t}</div>'
+                        f'{more}</section>')
     teams = sorted({p["team"] for p in P})
     desc = DESCRIPTIONS[pos]
     canon = f"https://lineupbeat.com{url}"
@@ -380,7 +418,7 @@ def page(pos):
 <link rel="canonical" href="{canon}">
 {seo.social_meta(title + " | LineupBeat", desc, canon)}
 <script type="application/ld+json">{crumb_schema}</script>\n{f'<script type="application/ld+json">{dataset}</script>' if dataset else ''}
-<style>{css}{seo.CRUMB_CSS}{CSS}</style>
+<style>{css}{seo.CRUMB_CSS}{seo.SCROLLTABLE_CSS}{CSS}</style>
 </head><body>
 {header}
 <main class="cwrap">

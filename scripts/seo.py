@@ -438,12 +438,25 @@ NAV_CSS = """
    a button somebody is about to press, not as where he already is. */
 .navlink[aria-current="page"]{box-shadow:inset 3px 0 0 var(--signal)}
 
-/* Teams, in the drawer. The same 32 links as the desktop dropdown, two
-   columns wide because a single column of 32 is a scroll nobody finishes. */
-.navteams{padding:.2rem 1rem 1.2rem}
-.navteams h3{font-family:var(--agate); text-transform:uppercase;
+/* Teams, in the drawer, behind a row of their own.
+   Open, the 32 links pushed every section above them off the screen and
+   put a division heading where a reader was looking for "Who We Are". A
+   <details> rather than a scripted panel: it works before the JavaScript
+   runs, the keyboard already knows how to operate it, and find-in-page
+   opens it in current browsers. */
+.navteams{border-bottom:1px solid var(--rule)}
+.navteams > summary{list-style:none; cursor:pointer}
+.navteams > summary::-webkit-details-marker{display:none}
+.navteams > summary::marker{content:""}
+.navteams[open] > summary{color:var(--signal)}
+.navcar{margin-left:auto; font-size:.7em; opacity:.7;
+  transition:transform .15s}
+.navteams[open] .navcar{transform:rotate(180deg)}
+.navtbody{padding:.2rem 1rem 1.2rem}
+.navtbody h3{font-family:var(--agate); text-transform:uppercase;
   letter-spacing:.1em; font-size:.68rem; color:var(--quiet);
   margin:1rem 0 .3rem; padding-top:.8rem; border-top:1px solid var(--rule)}
+.navtbody h3:first-child{border-top:0; padding-top:.2rem; margin-top:.4rem}
 .navtgrid{display:grid; grid-template-columns:repeat(2, minmax(0, 1fr));
   gap:0 .8rem}
 .navtgrid a{display:flex; align-items:center; gap:.5rem; min-height:44px;
@@ -584,7 +597,11 @@ def _nav_drawer(active, sport, search):
     return (
         '  <div class="navdrawer" id="navdrawer" hidden>\n'
         f'    <nav class="navlinks" aria-label="All sections">{links}</nav>\n'
-        f'    <div class="navteams">{"".join(cols)}</div>\n'
+        '    <details class="navteams">\n'
+        '      <summary class="navlink">Teams'
+        '<span class="navcar" aria-hidden="true">&#9662;</span></summary>\n'
+        f'      <div class="navtbody">{"".join(cols)}</div>\n'
+        '    </details>\n'
         '  </div>\n')
 
 
@@ -646,6 +663,104 @@ def site_nav(active=None, sport="nfl", search=""):
         # nothing at all.
         + TEAMS_JS + NAV_JS
     )
+
+
+# ------------------------------------------------------- wide data tables
+#
+# A projection board is ten to twelve columns. On a 390px phone that is
+# four times the width of the screen, and the answer up to now was to hide
+# most of them below 640px: the board collapsed to rank, player, team and
+# a points total, and every number explaining the ranking disappeared on
+# the layout most people read it in.
+#
+# So the table scrolls sideways instead. Nothing is hidden, rank and player
+# stay put while the stats move under them, and the right edge is shaded so
+# a reader can see there is more.
+#
+# Applied by wrapping a table in <div class="xtab"> and marking its two
+# leading columns .c-rk and .c-nm. The wrapper is what scrolls, never the
+# page.
+SCROLLTABLE_CSS = """
+/* The box that scrolls. tabindex makes it reachable by keyboard, and
+   focus-visible says so, because a scroll region a mouse can reach and a
+   keyboard cannot is not accessible. */
+.xtab{overflow-x:auto; -webkit-overflow-scrolling:touch;
+  overscroll-behavior-x:contain; max-width:100%}
+.xtab:focus-visible{outline:2px solid var(--signal); outline-offset:2px}
+/* The shading at the edges, and how a reader knows to swipe.
+   The two linear gradients are the paper-coloured caps, painted with
+   background-attachment:local so they scroll away once you are past the
+   end. The two radials stay put and read as a shadow under the edge the
+   content continues past. This is the same construction the durability
+   table has used since it shipped. */
+.xtab{background:
+    linear-gradient(90deg, var(--paper) 30%, transparent),
+    linear-gradient(90deg, transparent, var(--paper) 70%) 100% 0,
+    radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.55), transparent),
+    radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.55), transparent)
+      100% 0;
+  background-repeat:no-repeat;
+  background-size:38px 100%, 38px 100%, 15px 100%, 15px 100%;
+  background-attachment:local, local, scroll, scroll}
+
+/* A line of type telling somebody to swipe, shown only where swiping is
+   what they would do. It is not decoration: the shadow alone is missed by
+   plenty of people, and the columns to the right are the reason the
+   ranking is what it is. */
+.xhint{display:none; font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.08em; font-size:.68rem; color:var(--quiet);
+  margin:.1rem 0 .45rem}
+.xhint b{color:var(--signal); font-weight:600}
+
+/* Rank and player, pinned.
+   border-collapse:separate is required, not a preference: with collapse
+   the browser owns the borders and drops them from a sticky cell, so the
+   pinned columns lose their rules and float over the rows. The lines are
+   drawn as inset shadows on the cells instead, which stick with them. */
+.xtab table{border-collapse:separate; border-spacing:0; width:100%}
+.xtab th, .xtab td{box-shadow:inset 0 -1px 0 var(--rule)}
+.xtab .c-rk, .xtab .c-nm{position:sticky; z-index:2;
+  background:var(--paper)}
+.xtab thead .c-rk, .xtab thead .c-nm{z-index:3}
+.xtab .c-rk{left:0}
+/* Must equal .c-rk's width, or the two pinned columns overlap. Both are
+   set from the same custom property for that reason. */
+.xtab{--rkw:2.4rem}
+.xtab .c-nm{left:var(--rkw)}
+.xtab .c-rk{width:var(--rkw); min-width:var(--rkw)}
+/* The pinned name column carries a rule down its right edge so the join
+   between what is pinned and what is moving is visible while it moves. */
+.xtab .c-nm{box-shadow:inset 0 -1px 0 var(--rule),
+  inset -1px 0 0 var(--rule)}
+.xtab tbody tr:hover .c-rk, .xtab tbody tr:hover .c-nm{background:var(--card)}
+
+/* Numbers never wrap. A rushing total broken across two lines stops
+   being a number and starts being two. */
+.xtab td, .xtab th{white-space:nowrap}
+.xtab .c-nm{max-width:8.5rem; overflow:hidden; text-overflow:ellipsis}
+
+@media (max-width:900px){
+  .xhint{display:block}
+  /* 13px floor. Below that the numbers are unreadable at arm's length,
+     and shrinking type to fit more columns is the mistake the scroll
+     container exists to avoid. */
+  .xtab table{font-size:.85rem}
+  .xtab th{font-size:.72rem}
+  .xtab td, .xtab th{padding-left:.5rem; padding-right:.5rem}
+  /* Wide enough for "Trevor Lawrence" and "Amon-Ra St. Brown" to survive,
+     narrow enough that Points is still on screen before anybody swipes --
+     which is the column order's whole purpose. Longer names still clip;
+     the alternative is a name column that pushes the number it explains
+     off the edge. */
+  .xtab .c-nm{max-width:9rem}
+}
+"""
+
+
+def scroll_hint(what="the stats"):
+    """The swipe line above a wide table. One wording, every board."""
+    return (f'<p class="xhint">Swipe the table for {esc(what)} '
+            f'<b>&rarr;</b></p>')
 
 
 def esc(s):

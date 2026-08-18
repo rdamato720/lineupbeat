@@ -137,7 +137,7 @@ is not shared from the beginning.
 | # | Group | State |
 |---|---|---|
 | 1 | Mobile header and menu | done, `478161d` |
-| 2 | NFL and college projection tables | |
+| 2 | NFL and college projection tables | done |
 | 3 | Draft Value mobile cards | |
 | 4 | Durability and other data tables | |
 | 5 | Team and player pages | |

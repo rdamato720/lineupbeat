@@ -68,6 +68,38 @@ SITE = ROOT / "site"
 SPORT = "nfl"
 POSITIONS = ["QB", "RB", "WR", "TE"]
 
+# Stat columns per position, in reading order.
+#
+# One definition. The board and the four position pages each had their own
+# copy of this dict, identical, so a column added to one appeared on five
+# pages or on one depending on which copy somebody found.
+#
+# The order is a reading order rather than a stat sheet's. Points is
+# emitted before this list -- immediately after Team -- because the number
+# a ranking is built on should not be four swipes right of the ranking.
+# Then what the position is paid for, then what explains it, then the
+# accounting. A quarterback's rushing sits ahead of his attempts and
+# completions because two rushing touchdowns move a projection further
+# than a completion count does, and the same reasoning is why receivers
+# and tight ends carry rushing columns at all: hybrid usage is often the
+# whole reason a player ranks where he does, and it used to be the first
+# thing hidden on a phone.
+#
+# Targets came out. It sat beside receptions saying nearly the same thing,
+# and on a 390px screen a column has to earn its width against the one
+# next to it.
+STAT_COLUMNS = {
+    "QB": [("payd", "PASS YDS"), ("patd", "PASS TD"),
+           ("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD"),
+           ("patt", "ATT"), ("cmp", "CMP"), ("int", "INT")],
+    "RB": [("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD"),
+           ("rec", "REC"), ("recyd", "REC YDS"), ("rectd", "REC TD")],
+    "WR": [("rec", "REC"), ("recyd", "REC YDS"), ("rectd", "REC TD"),
+           ("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD")],
+    "TE": [("rec", "REC"), ("recyd", "REC YDS"), ("rectd", "REC TD"),
+           ("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD")],
+}
+
 
 def esc(s):
     return html.escape(str(s if s is not None else ""), quote=True)
@@ -405,10 +437,10 @@ def position_page(pos, board, links, css, header, footer, season, stats_json):
             for k in ("half", "std"))
         main = "" if r.get("ppr") is None else f'{r["ppr"]:.1f}'
         body_rows.append(
-            f'<tr><td class="l rk">{r["rank"]}</td>'
-            f'<td class="l nm">{nm}</td>'
+            f'<tr><td class="l rk c-rk">{r["rank"]}</td>'
+            f'<td class="l nm c-nm">{nm}</td>'
             f'<td class="l tm">{esc(r["team"])}</td>'
-            + cells + f'<td class="pt">{main}</td>' + alt + "</tr>")
+            + f'<td class="pt">{main}</td>' + cells + alt + "</tr>")
 
     heads = "".join(f'<th class="stat">{esc(lab)}</th>' for _k, lab in cols)
     return rows, prose, "\n".join(body_rows), heads
@@ -577,10 +609,39 @@ PAGE_CSS = """
     padding-top:.5rem; padding-bottom:.5rem}
 }
 @media (max-width:640px){
+  /* The stat columns used to be display:none here, so a phone got rank,
+     player, team and a points total and none of the numbers the ranking
+     is built from -- on the layout most people read this in. They scroll
+     sideways now, inside .xtab, and nothing is dropped.
+
+     The two alternate scoring formats do still go. They are the same
+     player scored three ways rather than three facts about him, the
+     format buttons above the table already switch between them, and at
+     390px they are two columns of width that push the stat line further
+     from the reader for no new information. */
   .pbtbl .alt{display:none}
-  .pbtbl .stat{display:none}
-  .pbtbl .stat.keep{display:table-cell}
   .pbfmt{margin-left:0; width:100%}
+}
+
+/* Inside a scroll container the table stops being width-constrained, so
+   it may take the width its columns need. Without this it compresses
+   back to the viewport and the columns wrap after all. */
+.xtab .pbtbl{width:auto; min-width:100%}
+/* The shared component draws the row lines as inset shadows, which is what
+   lets them stick with a pinned cell. The table's own borders would sit
+   directly on top of them and read as a double rule. */
+.xtab .pbtbl td, .xtab .pbtbl th{border-bottom:0}
+/* Points, the number the ranking is built on, reads as a total rather
+   than as one more stat: the stats beside it are deliberately quiet. */
+.pbtbl .pt{color:var(--signal)}
+.pbtbl thead th.pt{color:var(--signal)}
+@media (max-width:900px){
+  /* 13px floor, from a .82rem stat cell that measured 13.1 and a rank and
+     team that measured 12.5 and 12.2. Small numbers are the whole content
+     of this page. */
+  .pbtbl .stat{font-size:.84rem}
+  .pbtbl .rk{font-size:.82rem}
+  .pbtbl .tm{font-size:.82rem}
 }
 """
 
@@ -605,19 +666,7 @@ def build_html(board, links, css, header, footer, season, source_name, notes):
     # actually carried them. A table of empty columns is worse than a
     # narrower table: it looks like missing data rather than data that was
     # never part of this position.
-    STATS = {
-        "QB": [("patt", "ATT"), ("cmp", "CMP"), ("payd", "PASS YDS"),
-               ("patd", "PASS TD"), ("int", "INT"),
-               ("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD")],
-        "RB": [("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD"),
-               ("targets", "TGT"), ("rec", "REC"), ("recyd", "REC YDS"),
-               ("rectd", "REC TD")],
-        "WR": [("targets", "TGT"), ("rec", "REC"), ("recyd", "REC YDS"),
-               ("rectd", "REC TD"), ("ruatt", "CAR"), ("ruyd", "RUSH YDS"),
-               ("rutd", "RUSH TD")],
-        "TE": [("targets", "TGT"), ("rec", "REC"), ("recyd", "REC YDS"),
-               ("rectd", "REC TD")],
-    }
+    STATS = STAT_COLUMNS
     stats_json = {}
     for pos, rows in board.items():
         cols = [(k, lab) for k, lab in STATS.get(pos, [])
@@ -657,8 +706,8 @@ def build_html(board, links, css, header, footer, season, source_name, notes):
                       for k in ("half", "std"))
         main = "" if r.get("ppr") is None else f'{r["ppr"]:.1f}'
         _static.append(
-            f'<tr><td class="l rk">{r["rank"]}</td>'
-            f'<td class="l nm">{nm}</td>'
+            f'<tr><td class="l rk c-rk">{r["rank"]}</td>'
+            f'<td class="l nm c-nm">{nm}</td>'
             f'<td class="l tm">{esc(r["team"])}</td>'
             + cells
             + f'<td class="pt">{main}</td>'
@@ -707,12 +756,15 @@ def build_html(board, links, css, header, footer, season, source_name, notes):
     </div>
   </div>
 
+  {seo.scroll_hint("the full stat line")}
+  <div class="xtab" tabindex="0" role="region" aria-label="Projection board">
   <table class="pbtbl">
     <thead><tr id="pbhead"></tr></thead>
     <tbody id="pbbody">
 {static}
     </tbody>
   </table>
+  </div>
   <p class="pbempty" id="pbempty" hidden>No player by that name.</p>
 
   <p class="pbnote">
@@ -748,10 +800,10 @@ function draw() {{
   const alt = ["p", "h", "s"].filter(k => k !== fmt);
   const cols = STATS[pos] || [];
   document.getElementById("pbhead").innerHTML =
-    `<th class="l rk">#</th><th class="l">Player</th>`
+    `<th class="l rk c-rk">#</th><th class="l c-nm">Player</th>`
     + `<th class="l tm">Team</th>`
-    + cols.map(c => `<th class="stat">${{c[1]}}</th>`).join("")
     + `<th class="pt">${{LABEL[fmt]}}</th>`
+    + cols.map(c => `<th class="stat">${{c[1]}}</th>`).join("")
     + alt.map(k => `<th class="alt">${{LABEL[k]}}</th>`).join("");
   const term = (q.value || "").trim().toLowerCase();
   // Sorted by the format you are looking at.
@@ -779,11 +831,11 @@ function draw() {{
     const name = r.id
       ? `<a href="/{SPORT}/${{r.id}}/">${{r.n}}</a>` : r.n;
     return `<tr>
-      <td class="l rk">${{rank.get(r.n + "|" + r.t) || r.r}}</td>
-      <td class="l nm">${{name}}</td>
+      <td class="l rk c-rk">${{rank.get(r.n + "|" + r.t) || r.r}}</td>
+      <td class="l nm c-nm">${{name}}</td>
       <td class="l tm">${{r.t || ""}}</td>`
-      + cols.map(c => `<td class="stat">${{stat(r[c[0]], c[0])}}</td>`).join("")
       + `<td class="pt">${{num(r[fmt])}}</td>`
+      + cols.map(c => `<td class="stat">${{stat(r[c[0]], c[0])}}</td>`).join("")
       + alt.map(k => `<td class="alt dim">${{num(r[k])}}</td>`).join("")
       + `</tr>`;
   }}).join("");
@@ -875,7 +927,7 @@ draw();
 <link rel="canonical" href="https://lineupbeat.com/{SPORT}/projections/">
 {seo.social_meta(title, desc, f"https://lineupbeat.com/{SPORT}/projections/")}
 <script type="application/ld+json">{ldjson}</script>
-<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.SCROLLTABLE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}
@@ -1021,13 +1073,15 @@ def write_position_pages(board, links, css, header, footer, season,
     <a class="posnav" href="/{SPORT}/projections/">All positions</a>
   </div>
 
+  {seo.scroll_hint("the full stat line")}
+  <div class="xtab" tabindex="0" role="region" aria-label="{esc(label)} projections">
   <table class="pbtbl">
     <thead><tr>
-      <th class="l rk">#</th>
-      <th class="l">Player</th>
+      <th class="l rk c-rk">#</th>
+      <th class="l c-nm">Player</th>
       <th class="l tm">Team</th>
-      {heads}
       <th class="pt">PPR</th>
+      {heads}
       <th class="alt">Half</th>
       <th class="alt">Standard</th>
     </tr></thead>
@@ -1035,6 +1089,7 @@ def write_position_pages(board, links, css, header, footer, season,
 {body_rows}
     </tbody>
   </table>
+  </div>
 
   <p class="pbnote">
     Full-season totals, not per game. Ranks are within position. A
@@ -1059,7 +1114,7 @@ def write_position_pages(board, links, css, header, footer, season,
 {seo.social_meta(title, desc, f"{seo.SITE_URL}/{SPORT}/projections/{pos.lower()}/")}
 <script type="application/ld+json">{seo.graph(
     schema, crumbs, seo.faq_schema(faq), seo.ORGANISATION, itemlist)}</script>
-<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}{POS_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.SCROLLTABLE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}{POS_CSS}</style>
 </head>
 <body>
 {header}
@@ -1153,19 +1208,7 @@ def main():
     # "Fantasy football RB projections 2026" is a real query with far less
     # competition, and it is one this board answers better than they do
     # because the stat line is on the page.
-    STATS = {
-        "QB": [("patt", "ATT"), ("cmp", "CMP"), ("payd", "PASS YDS"),
-               ("patd", "PASS TD"), ("int", "INT"),
-               ("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD")],
-        "RB": [("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD"),
-               ("targets", "TGT"), ("rec", "REC"), ("recyd", "REC YDS"),
-               ("rectd", "REC TD")],
-        "WR": [("targets", "TGT"), ("rec", "REC"), ("recyd", "REC YDS"),
-               ("rectd", "REC TD"), ("ruatt", "CAR"), ("ruyd", "RUSH YDS"),
-               ("rutd", "RUSH TD")],
-        "TE": [("targets", "TGT"), ("rec", "REC"), ("recyd", "REC YDS"),
-               ("rectd", "REC TD")],
-    }
+    STATS = STAT_COLUMNS
     stats_json = {
         pos: [(k, lab) for k, lab in STATS.get(pos, [])
               if any(r.get(k) is not None for r in rows)]
