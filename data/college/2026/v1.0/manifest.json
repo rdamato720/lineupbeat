@@ -1,0 +1,89 @@
+{
+  "version": "college_projections_2026_v1.0",
+  "status": "PUBLISHED",
+  "generated_at": "2026-08-18T18:12:22+00:00",
+  "frozen_models": [
+    "Allocation_v0.2",
+    "Team_Projection_v0.1",
+    "Positional_Team_Budget_v0.1",
+    "Hybrid_Rush_Allocation_v0.1",
+    "Player_Opportunity_Volume_v0.1",
+    "Expected_QB_Role_v0.1",
+    "QB_Passing_Efficiency_v0.1.1",
+    "QB_Rushing_Portable_Signal_v0.1",
+    "QB_Rush_Propensity_v0.1",
+    "Expected_QB_Rush_Volume_v0.1",
+    "RB_Rushing_Portable_Signal_v0.1",
+    "RB_Returner_Group_Capture_v0.1",
+    "RB_Within_Returner_Pecking_Order_v0.1",
+    "RB_Incoming_Opportunity_Allocation_v0.1",
+    "Expected_RB_Rush_Volume_v0.1"
+  ],
+  "qa_status": "PASS",
+  "reconciliation_gates": 15,
+  "largest_delta": 9.094947017729282e-13,
+  "product_claim": {
+    "scoring": "Yahoo scoring rules",
+    "eligibility": "NOT ESTABLISHED",
+    "position_source": "CFBD/team roster",
+    "disclosure": "Positions reflect school roster listings sourced through CFBD. They may differ from eligibility on Yahoo or other fantasy platforms, particularly for hybrid players. Fantasy points use Yahoo scoring rules.",
+    "product_name": "College fantasy projections using Yahoo scoring",
+    "not_claimed": [
+      "Yahoo roster eligibility",
+      "Yahoo rankings",
+      "Yahoo lineup positions"
+    ],
+    "v1_1": "platform eligibility as a separately sourced enhancement"
+  },
+  "known_limitations": [
+    {
+      "issue": "platform eligibility never established",
+      "detail": "positions come from school roster listings via CFBD; no player carries a Yahoo id",
+      "v1_1": "separately sourced eligibility"
+    },
+    {
+      "issue": "no player-level WR/TE receiving efficiency",
+      "detail": "receivers are differentiated by opportunity and share team receiving rates",
+      "v1_1": "WR/TE receiving efficiency calibration"
+    },
+    {
+      "issue": "flatter RB tail than historical backfields",
+      "detail": "top-two concentration 67.9% against 79-81%",
+      "v1_1": "RB_Final_Room_Concentration_Calibration_v0.1"
+    }
+  ],
+  "files": {
+    "college_player_projections_2026_v1.0.csv": {
+      "bytes": 777679,
+      "sha256_16": "bcce6dc122331d21"
+    },
+    "college_team_projections_2026_v1.0.csv": {
+      "bytes": 9902,
+      "sha256_16": "e3b8282b31cb80b6"
+    },
+    "college_projection_qa_v1.0.json": {
+      "bytes": 2265,
+      "sha256_16": "e1733b388413f1dd"
+    },
+    "college_site_projections_2026.json": {
+      "bytes": 905612,
+      "sha256_16": "b3553fc64e62c691"
+    },
+    "build_college_projections.py": {
+      "bytes": 20367,
+      "sha256_16": "d58ef3a695b0b2fd"
+    },
+    "export_college_site.py": {
+      "bytes": 6811,
+      "sha256_16": "204c0b809932f491"
+    },
+    "production_authority.py": {
+      "bytes": 3762,
+      "sha256_16": "3eab359813c11a12"
+    },
+    "build_college_projection_pipeline.py": {
+      "bytes": 21637,
+      "sha256_16": "2c8181f44018fc14"
+    }
+  }
+}

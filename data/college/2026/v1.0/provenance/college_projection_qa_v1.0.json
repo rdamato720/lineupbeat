@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-08-18T18:11:37+00:00",
+  "season": 2026,
+  "reconciliation": {
+    "pass_attempts": 1.1368683772161603e-13,
+    "completions": 1.1368683772161603e-13,
+    "passing_yards": 9.094947017729282e-13,
+    "passing_td": 7.105427357601002e-15,
+    "interceptions": 3.552713678800501e-15,
+    "rushing_yards": 4.547473508864641e-13,
+    "rushing_td": 3.552713678800501e-15,
+    "qb_rush_attempts": 2.842170943040401e-14,
+    "rb_rush_attempts": 5.684341886080802e-14,
+    "RB_receptions": 7.105427357601002e-15,
+    "WR_receptions": 2.842170943040401e-14,
+    "TE_receptions": 7.105427357601002e-15,
+    "receptions_vs_completions": 5.684341886080802e-14,
+    "receiving_yards_named": 4.547473508864641e-13,
+    "receiving_td_named": 3.552713678800501e-15
+  },
+  "position_claim": {
+    "scoring": "Yahoo scoring rules",
+    "eligibility": "NOT ESTABLISHED",
+    "position_source": "CFBD/team roster",
+    "disclosure": "Positions reflect school roster listings sourced through CFBD. They may differ from eligibility on Yahoo or other fantasy platforms, particularly for hybrid players. Fantasy points use Yahoo scoring rules.",
+    "product_name": "College fantasy projections using Yahoo scoring",
+    "not_claimed": [
+      "Yahoo roster eligibility",
+      "Yahoo rankings",
+      "Yahoo lineup positions"
+    ],
+    "v1_1": "platform eligibility as a separately sourced enhancement"
+  },
+  "hybrid_disclosure": {
+    "blocking_eligibility_check": 6,
+    "presentation_disclosure": 16,
+    "note": "thresholds are material: a receiver with two carries and half a point is not a hybrid, however large the percentage"
+  },
+  "receiving_note": "receptions reconcile to the four frozen budget buckets and to team completions. Published receiving yards and touchdowns cover named players only; residual and non-skill receptions carry the remainder and are never redistributed to fantasy players.",
+  "players": 2351,
+  "by_position": {
+    "WR": 990,
+    "RB": 493,
+    "TE": 507,
+    "QB": 361
+  },
+  "teams": 68,
+  "duplicates": 0,
+  "multi_team_players": 0,
+  "negative_values": 0,
+  "blocking_failures": [],
+  "status": "PASS",
+  "wr_te_treatment": "opportunity-differentiated, efficiency-neutral; no player-level receiving calibration exists"
+}

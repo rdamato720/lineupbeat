@@ -897,16 +897,7 @@ def site_chrome():
     src = tpl.read_text()
     css = re.search(r"<style>(.*?)</style>", src, re.S)
     foot = re.search(r"<footer.*?</footer>", src, re.S)
-    header = (
-        '<header class="topbar">\n'
-        '  <div class="wrap tbrow">\n'
-        '    <a class="logo" href="/">Lineup<em>Beat</em></a>\n'
-        '    <nav class="views"><a class="vbtn" href="/">The Wire</a><a class="vbtn" href="/#v=roster">My Roster</a><a class="vbtn" href="/nfl/data/" aria-current="page">Fantasy Data</a>'
-        + seo.teams_menu()
-        + '<a class="vbtn" href="/about/">Who We Are</a></nav>\n'
-        '  </div>\n'
-        '</header>'
-    )
+    header = seo.site_nav("data")
     return (css.group(1) if css else ""), header, (foot.group(0) if foot else "")
 
 

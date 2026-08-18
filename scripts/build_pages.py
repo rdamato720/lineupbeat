@@ -111,31 +111,14 @@ def site_chrome(section=None):
     # on a static page -- so the nav is a real link and the search filters
     # the table in front of you, which on a two-hundred-row board is more
     # use than a site-wide lookup anyway.
-    header = (
-        '<header class="topbar">\n'
-        '  <div class="wrap tbrow">\n'
-        '    <a class="logo" href="/">Lineup<em>Beat</em></a>\n'
-        '    <nav class="views">'
-        '<a class="vbtn" href="/">The Wire</a>'
-        # My Roster is an in-app view, so from a static page it can only be a
-        # link into the app that opens it. The hash is what the wire reads on
-        # load, so the section is showing by the time anybody sees the page.
-        '<a class="vbtn" href="/#v=roster">My Roster</a>'
-        f'<a class="vbtn" href="/{SPORT}/data/"'
-        + (' aria-current="page"' if section == "data" else "")
-        + '>Fantasy Data</a>'
-        + seo.teams_menu(SPORT)
-        + '<a class="vbtn" href="/about/"'
-        + (' aria-current="page"' if section == "about" else "")
-        + '>Who We Are</a>'
+    header = seo.site_nav(section, SPORT).replace(
+        '</nav>\n',
         '</nav>\n'
         '    <div class="finder">\n'
-        '      <input id="pfind" type="search" placeholder="Find a player"\n'
+        '      <input id="pfind" type="search" '
+        'placeholder="Find a player"\n'
         '             autocomplete="off" aria-label="Find a player">\n'
-        '    </div>\n'
-        '  </div>\n'
-        '</header>'
-    )
+        '    </div>\n')
 
     return (css.group(1) if css else ""), header, (foot.group(0) if foot else "")
 

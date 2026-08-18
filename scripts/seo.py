@@ -336,6 +336,37 @@ TRACKING = ANALYTICS + "\n" + REDDIT_PIXEL + X_PIXEL + TRACKING_JS
 SPORT = "nfl"
 
 
+
+def site_nav(active=None, sport="nfl"):
+    """The site header, defined once.
+
+    Eight builders each carried their own copy of this markup, identical
+    apart from which item was current. Adding College would have meant
+    eight edits, and the next product another eight, which is how three
+    pages end up showing three different menus.
+
+    `active` takes the key of the current section: wire, roster, data,
+    college or about. Anything else leaves no item marked.
+    """
+    cur = lambda k: ' aria-current="page"' if active == k else ""
+    return (
+        '<header class="topbar">\n'
+        '  <div class="wrap tbrow">\n'
+        '    <a class="logo" href="/">Lineup<em>Beat</em></a>\n'
+        '    <nav class="views">'
+        f'<a class="vbtn" href="/"{cur("wire")}>The Wire</a>'
+        f'<a class="vbtn" href="/#v=roster"{cur("roster")}>My Roster</a>'
+        f'<a class="vbtn" href="/{sport}/data/"{cur("data")}>Fantasy Data</a>'
+        '<a class="vbtn" href="/college-fantasy-football/projections/"'
+        f'{cur("college")}>College</a>'
+        + teams_menu(sport)
+        + f'<a class="vbtn" href="/about/"{cur("about")}>Who We Are</a>'
+        '</nav>\n'
+        '  </div>\n'
+        '</header>'
+    )
+
+
 def esc(s):
     return html.escape(str(s if s is not None else ""), quote=True)
 

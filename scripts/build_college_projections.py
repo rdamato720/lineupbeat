@@ -1,0 +1,348 @@
+#!/usr/bin/env python3
+"""Build /college-fantasy-football/projections/.
+
+    python3 scripts/build_college_projections.py
+
+Reads two files from the active release and nothing else. Projections and
+fantasy points are not recomputed here: a second implementation of the
+scoring rules is one nobody validates, and it will disagree with the
+frozen one eventually.
+
+The manifest SHA is checked before anything is written. A release that
+does not match the pinned hash is not the release this page was reviewed
+against, so the build stops rather than publishing it.
+"""
+import html, json, pathlib, sys
+from datetime import datetime, timezone
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+SITE = ROOT / "site"
+OUT = SITE / "college-fantasy-football" / "projections"
+EXPECTED_SHA = "01b87ca7a3abdec0c5ab0e11b162f5edc7305ee843d44e28d6065b82aa90ea7a"
+
+import hashlib
+cfg = json.loads((ROOT / "data/college/config.json").read_text())
+REL = ROOT / "data/college" / cfg["activeCollegeProjectionVersion"]
+man_bytes = (REL / "manifest.json").read_bytes()
+sha = hashlib.sha256(man_bytes).hexdigest()
+if sha != EXPECTED_SHA:
+    sys.exit(f"  manifest SHA mismatch\n    found    {sha}\n"
+             f"    expected {EXPECTED_SHA}\n"
+             f"  refusing to publish a release this page was not reviewed "
+             f"against.")
+MAN = json.loads(man_bytes)
+DATA = json.loads((REL / "college_site_projections_2026.json").read_text())
+print(f"  release {cfg['activeCollegeProjectionVersion']}, SHA verified")
+
+P = DATA["players"]
+EXPECT = {"players": 2351, "teams": 68, "hybrids": 22}
+got = {"players": len(P), "teams": len(DATA["teams"]),
+       "hybrids": sum(1 for x in P if x.get("hybridRole"))}
+if got != EXPECT:
+    sys.exit(f"  publication totals differ: {got} against {EXPECT}")
+print(f"  {got['players']} players, {got['teams']} teams, "
+      f"{got['hybrids']} disclosed hybrids")
+
+e = lambda s: html.escape(str(s), quote=True)
+
+# Columns per position. Targets are deliberately absent: receptions are
+# allocated directly by the frozen models and no target layer exists, so
+# a Targets column could only be invented here.
+COLS = {
+    "QB": [("rank", "Rank"), ("name", "Player"), ("team", "Team"),
+           ("passAtt", "Pass Att"), ("comp", "Comp"), ("passYds", "Pass Yds"),
+           ("passTd", "Pass TD"), ("int", "INT"), ("rushAtt", "Carries"),
+           ("rushYds", "Rush Yds"), ("rushTd", "Rush TD"), ("pts", "Points")],
+    "RB": [("rank", "Rank"), ("name", "Player"), ("team", "Team"),
+           ("rushAtt", "Carries"), ("rushYds", "Rush Yds"),
+           ("rushTd", "Rush TD"), ("rec", "Rec"), ("recYds", "Rec Yds"),
+           ("recTd", "Rec TD"), ("pts", "Points")],
+    "WR": [("rank", "Rank"), ("name", "Player"), ("team", "Team"),
+           ("rec", "Rec"), ("recYds", "Rec Yds"), ("recTd", "Rec TD"),
+           ("rushAtt", "Carries"), ("rushYds", "Rush Yds"),
+           ("rushTd", "Rush TD"), ("pts", "Points")],
+}
+COLS["TE"] = COLS["WR"]
+NUMERIC = {"rank", "passAtt", "comp", "passYds", "passTd", "int", "rushAtt",
+           "rushYds", "rushTd", "rec", "recYds", "recTd", "pts"}
+LABEL = {"QB": "Quarterbacks", "RB": "Running backs",
+         "WR": "Wide receivers", "TE": "Tight ends"}
+print("  columns set; no Targets column, none exists in the artifact")
+
+
+import re
+sys.path.insert(0, str(ROOT / "scripts"))
+import seo
+
+POSITIONS = ["QB", "RB", "WR", "TE"]
+BASE = "/college-fantasy-football/projections/"
+TITLES = {
+    None: "2026 College Fantasy Football Projections",
+    "QB": "2026 College Fantasy Quarterback Projections",
+    "RB": "2026 College Fantasy Running Back Projections",
+    "WR": "2026 College Fantasy Wide Receiver Projections",
+    "TE": "2026 College Fantasy Tight End Projections",
+}
+
+
+def chrome():
+    """Site CSS and footer. The nav comes from seo.site_nav()."""
+    src = (SITE / "template.html").read_text()
+    css = re.search(r"<style>(.*?)</style>", src, re.S)
+    foot = re.search(r"<footer.*?</footer>", src, re.S)
+    f = foot.group(0) if foot else ""
+    # The footer described NFL data only; college projections now sit
+    # beside it.
+    f = f.replace(
+        "local beat reporting from every NFL market, independent\n"
+        "         projections, draft value, durability, schedule and coaching.",
+        "local NFL beat reporting, plus independent NFL and college "
+        "fantasy projections and data.")
+    return (css.group(1) if css else ""), seo.site_nav("college"), f
+
+
+def fmt(v, key):
+    if key not in NUMERIC:
+        return e(v)
+    if isinstance(v, float) and key in ("passTd", "int", "rushTd", "recTd",
+                                        "rec", "pts"):
+        return f"{v:,.1f}"
+    return f"{v:,.0f}" if isinstance(v, (int, float)) else e(v)
+
+
+def table(pos):
+    cols = COLS[pos]
+    sel = sorted((p for p in P if p["pos"] == pos), key=lambda x: x["rank"])
+    head = "".join(
+        f'<th data-k="{k}" class="{"num" if k in NUMERIC else ""}">{e(l)}</th>'
+        for k, l in cols)
+    body = []
+    for p in sel:
+        cells = []
+        for k, _ in cols:
+            v = p.get(k, 0)
+            cls = "num" if k in NUMERIC else ""
+            if k == "name":
+                tag = ""
+                if p.get("hybridRole"):
+                    # Without this a tight end ranked first on seventeen
+                    # catches reads as a bug rather than as a runner.
+                    tag = (' <span class="hyb" title="Rushing production '
+                           'materially affects this ranking">Hybrid rushing '
+                           'role</span>')
+                cells.append(f'<td class="{cls} pname">{e(v)}{tag}</td>')
+            else:
+                cells.append(f'<td class="{cls}">{fmt(v, k)}</td>')
+        body.append(f'<tr data-team="{e(p["team"])}" '
+                    f'data-name="{e(p["name"].lower())}">'
+                    + "".join(cells) + "</tr>")
+    return (f'<table class="ctab" id="tab-{pos}"><thead><tr>{head}</tr>'
+            f'</thead><tbody>{"".join(body)}</tbody></table>'), len(sel)
+
+
+def tabs(active):
+    out = []
+    for p in [None] + POSITIONS:
+        href = BASE if p is None else f"{BASE}{p.lower()}/"
+        lab = "All" if p is None else p
+        cur = ' aria-current="page"' if p == active else ""
+        out.append(f'<a class="ctab-link" href="{href}"{cur}>{e(lab)}</a>')
+    return '<nav class="ctabs">' + "".join(out) + "</nav>"
+
+
+print("  chrome, nav and table renderer ready")
+
+
+CSS = """
+.cwrap{max-width:1200px;margin:0 auto;padding:1.2rem 1rem 3rem}
+.chero h1{font-size:1.9rem;line-height:1.15;margin:0 0 .5rem}
+.chero p.lede{color:var(--quiet);font-size:.95rem;line-height:1.55;
+  max-width:52rem;margin:0 0 .3rem}
+.cmeta{font-family:var(--agate);text-transform:uppercase;letter-spacing:.08em;
+  font-size:.7rem;color:var(--quiet);margin:.6rem 0 0}
+.ctabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 .7rem}
+.ctab-link{font-family:var(--agate);text-transform:uppercase;
+  letter-spacing:.1em;font-size:.74rem;font-weight:600;padding:.4rem .85rem;
+  border:1px solid var(--rule);border-radius:999px;color:var(--quiet);
+  text-decoration:none}
+.ctab-link:hover{color:var(--ink);border-color:var(--signal)}
+.ctab-link[aria-current=page]{color:#0A0C08;background:var(--signal);
+  border-color:var(--signal)}
+.cctl{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;
+  margin:0 0 .7rem}
+.cctl input,.cctl select{background:var(--card);border:1px solid var(--rule);
+  color:var(--ink);border-radius:8px;padding:.45rem .7rem;font-size:.9rem}
+.cctl input{min-width:14rem}
+.cnote{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:.7rem .85rem;font-size:.8rem;line-height:1.5;color:var(--quiet);
+  margin:0 0 1rem}
+.cnote strong{color:var(--ink)}
+.ctabwrap{overflow-x:auto;border:1px solid var(--rule);border-radius:10px}
+table.ctab{width:100%;border-collapse:collapse;font-size:.86rem}
+table.ctab th,table.ctab td{padding:.5rem .6rem;text-align:left;
+  border-bottom:1px solid var(--rule);white-space:nowrap}
+table.ctab th{font-family:var(--agate);text-transform:uppercase;
+  letter-spacing:.07em;font-size:.68rem;color:var(--quiet);
+  background:var(--card);position:sticky;top:0;cursor:pointer;user-select:none}
+table.ctab th:hover{color:var(--ink)}
+table.ctab td.num,table.ctab th.num{text-align:right}
+table.ctab tbody tr:hover{background:rgba(255,255,255,.03)}
+/* Rank and player stay put while the stat line scrolls: on a phone the
+   columns run past the edge and a row of numbers with no name attached
+   is unreadable. */
+table.ctab th:nth-child(1),table.ctab td:nth-child(1){position:sticky;left:0;
+  background:var(--card);z-index:2}
+table.ctab th:nth-child(2),table.ctab td:nth-child(2){position:sticky;
+  left:3.2rem;background:var(--card);z-index:2}
+.hyb{font-family:var(--agate);text-transform:uppercase;letter-spacing:.06em;
+  font-size:.6rem;color:var(--signal);border:1px solid var(--signal);
+  border-radius:999px;padding:.05rem .4rem;margin-left:.4rem}
+.cfaq{margin:2rem 0 0}
+.cfaq h2{font-size:1.15rem;margin:0 0 .7rem}
+.cfaq details{border-bottom:1px solid var(--rule);padding:.6rem 0}
+.cfaq summary{cursor:pointer;font-weight:600;font-size:.92rem}
+.cfaq p{color:var(--quiet);font-size:.86rem;line-height:1.6;margin:.5rem 0 0}
+@media(max-width:640px){.chero h1{font-size:1.45rem}
+  table.ctab th:nth-child(2),table.ctab td:nth-child(2){left:2.8rem}}
+"""
+
+FAQ = [
+    ("What scoring do these projections use?",
+     "Yahoo scoring rules. Positions are a separate matter: they come from "
+     "school roster listings and have not been checked against Yahoo or any "
+     "other platform's eligibility."),
+    ("How are the projections built?",
+     DATA["methodology"]),
+    ("Why do some receivers and tight ends show carries?",
+     "Twenty-two players take enough carries that rushing materially "
+     "decides their fantasy value. One tight end's ranking rests mostly on "
+     "his rushing. Their carries and rushing yards are shown so the "
+     "ranking explains itself rather than looking like an error."),
+    ("Why are there no target projections?",
+     "Receptions are allocated directly by the underlying models. No target "
+     "layer has been built, so targets would have to be invented here, and "
+     "an invented column would weaken numbers that are otherwise exact."),
+    ("How accurate are the team totals?",
+     "Every player's projected stat line sums exactly to its team's "
+     "projected total, to twelve decimal places, across fifteen separate "
+     "reconciliation checks."),
+]
+
+
+def page(pos):
+    css, header, footer = chrome()
+    title = TITLES[pos]
+    url = BASE if pos is None else f"{BASE}{pos.lower()}/"
+    shown = POSITIONS if pos is None else [pos]
+    tables, counts = [], 0
+    for p in shown:
+        t, n = table(p)
+        counts += n
+        tables.append(f'<section class="cpos" data-pos="{p}">'
+                      + (f'<h2 class="cposh">{LABEL[p]}</h2>'
+                         if pos is None else "")
+                      + f'<div class="ctabwrap">{t}</div></section>')
+    teams = sorted({p["team"] for p in P})
+    desc = (f"Full season 2026 college fantasy projections for "
+            f"{len(P):,} players across {len(DATA['teams'])} teams, using "
+            f"Yahoo scoring.")
+    faq = "".join(
+        f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>"
+        for q, a in FAQ)
+    return f"""<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{e(title)} | LineupBeat</title>
+<meta name="description" content="{e(desc)}">
+<link rel="canonical" href="https://lineupbeat.com{url}">
+<style>{css}{CSS}</style>
+</head><body>
+{header}
+<main class="cwrap">
+  <div class="chero">
+    <h1>{e(title)}</h1>
+    <p class="lede">Full-season projections for {len(P):,} players across
+      {len(DATA['teams'])} teams, using Yahoo scoring. Every player's
+      projected stat line is shown behind the ranking.</p>
+    <p class="cmeta">Updated {DATA['generatedAt'][:10]} &middot;
+      Model {DATA['modelVersion']}</p>
+  </div>
+  {tabs(pos)}
+  <div class="cctl">
+    <input id="csearch" type="search" placeholder="Search players"
+           aria-label="Search players">
+    <select id="cteam" aria-label="Filter by team">
+      <option value="">All teams</option>
+      {"".join(f'<option>{e(t)}</option>' for t in teams)}
+    </select>
+  </div>
+  <p class="cnote"><strong>Positions</strong> reflect school roster listings
+    sourced through CFBD and may differ from eligibility on Yahoo or other
+    fantasy platforms. Fantasy points use Yahoo scoring rules.</p>
+  {"".join(tables)}
+  <section class="cfaq"><h2>About these projections</h2>{faq}</section>
+</main>
+{footer}
+<script>
+(function(){{
+  var s=document.getElementById('csearch'),t=document.getElementById('cteam');
+  function apply(){{
+    var q=(s.value||'').toLowerCase(),tm=t.value;
+    document.querySelectorAll('table.ctab tbody tr').forEach(function(r){{
+      var ok=(!q||r.dataset.name.indexOf(q)>-1)&&(!tm||r.dataset.team===tm);
+      r.style.display=ok?'':'none';
+    }});
+  }}
+  s.addEventListener('input',apply); t.addEventListener('change',apply);
+  document.querySelectorAll('table.ctab th').forEach(function(th){{
+    th.addEventListener('click',function(){{
+      var tb=th.closest('table'),i=[].indexOf.call(th.parentNode.children,th),
+          num=th.classList.contains('num'),
+          asc=tb.dataset.sc==i&&tb.dataset.sd!='asc';
+      var rows=[].slice.call(tb.tBodies[0].rows);
+      rows.sort(function(a,b){{
+        var x=a.cells[i].textContent.replace(/[,]/g,''),
+            y=b.cells[i].textContent.replace(/[,]/g,'');
+        if(num){{x=parseFloat(x)||0;y=parseFloat(y)||0;}}
+        return (x<y?-1:x>y?1:0)*(asc?1:-1);
+      }});
+      rows.forEach(function(r){{tb.tBodies[0].appendChild(r);}});
+      tb.dataset.sc=i; tb.dataset.sd=asc?'asc':'desc';
+    }});
+  }});
+}})();
+</script>
+</body></html>"""
+
+
+written = []
+for pos in [None] + POSITIONS:
+    d = OUT if pos is None else OUT / pos.lower()
+    d.mkdir(parents=True, exist_ok=True)
+    (d / "index.html").write_text(page(pos))
+    written.append((str((d / "index.html").relative_to(SITE)),
+                    (d / "index.html").stat().st_size))
+
+sm = SITE / "sitemap.xml"
+if sm.exists():
+    text = sm.read_text()
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    added = 0
+    for pos in [None] + POSITIONS:
+        u = "https://lineupbeat.com" + (BASE if pos is None
+                                        else f"{BASE}{pos.lower()}/")
+        if u not in text:
+            text = text.replace("</urlset>",
+                                f"  <url><loc>{u}</loc><lastmod>{today}"
+                                f"</lastmod><changefreq>weekly</changefreq>"
+                                f"<priority>0.8</priority></url>\n</urlset>")
+            added += 1
+    sm.write_text(text)
+    print(f"  sitemap: {added} URLs added")
+
+print(f"\n  PAGES\n")
+for path, size in written:
+    print(f"    {size:>9,}  /{path.rsplit('/index.html')[0]}/")
+print(f"\n  release {MAN['version']}, QA {MAN['qa_status']}, "
+      f"{MAN['reconciliation_gates']} gates")
