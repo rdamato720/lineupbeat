@@ -47,6 +47,12 @@ jobs:
         run: |
           python scripts/test_resolve.py
           python -m beatwire.cli doctor --sport nfl
+          # The homepage header is generated from seo.py. If somebody edits
+          # the template by hand instead, the app and the eight static
+          # builders start showing different menus -- which is the whole
+          # reason the nav was consolidated. Fails loudly rather than
+          # deploying two headers.
+          python scripts/sync_home_nav.py --check
 
       - name: Run pipeline
         env:

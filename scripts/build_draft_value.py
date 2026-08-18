@@ -921,7 +921,7 @@ def main():
 {header}
 {body}
 {footer}
-{seo.TEAMS_JS}{seo.TRACKING}{seo.VIEW_CONTENT}
+{seo.TRACKING}{seo.VIEW_CONTENT}
 </body>
 </html>"""
 

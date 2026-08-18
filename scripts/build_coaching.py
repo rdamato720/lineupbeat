@@ -589,7 +589,7 @@ def main():
 {header}
 {body}
 {footer}
-{seo.TEAMS_JS}{seo.TRACKING}
+{seo.TRACKING}
 </body>
 </html>"""
 

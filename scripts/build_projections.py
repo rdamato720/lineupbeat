@@ -881,7 +881,7 @@ draw();
 {header}
 {body}
 {footer}
-{seo.TEAMS_JS}{seo.TRACKING}
+{seo.TRACKING}
 </body>
 </html>"""
 
@@ -1065,7 +1065,7 @@ def write_position_pages(board, links, css, header, footer, season,
 {header}
 {body}
 {footer}
-{seo.TEAMS_JS}{seo.TRACKING}
+{seo.TRACKING}
 </body>
 </html>"""
 

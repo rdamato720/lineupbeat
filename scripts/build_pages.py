@@ -111,14 +111,14 @@ def site_chrome(section=None):
     # on a static page -- so the nav is a real link and the search filters
     # the table in front of you, which on a two-hundred-row board is more
     # use than a site-wide lookup anyway.
-    header = seo.site_nav(section, SPORT).replace(
-        '</nav>\n',
-        '</nav>\n'
-        '    <div class="finder">\n'
-        '      <input id="pfind" type="search" '
-        'placeholder="Find a player"\n'
-        '             autocomplete="off" aria-label="Find a player">\n'
-        '    </div>\n')
+    # site_nav places the field: in the row on a laptop, behind the search
+    # button on a phone. It used to be spliced in here by replacing the
+    # closing </nav>, which meant the header's shape was decided in two
+    # files and the mobile rules could not see it.
+    header = seo.site_nav(
+        section, SPORT,
+        search='<input id="pfind" type="search" placeholder="Find a player" '
+               'autocomplete="off" aria-label="Find a player">')
 
     return (css.group(1) if css else ""), header, (foot.group(0) if foot else "")
 
@@ -131,7 +131,7 @@ APP_CSS, APP_HEADER, APP_FOOTER = site_chrome()
 # several page shells here, and patching one meant player pages, the hub
 # and durability silently went unmeasured.
 APP_CSS = (APP_CSS or "") + seo.TEAMS_CSS
-APP_FOOTER = APP_FOOTER + seo.TEAMS_JS + (
+APP_FOOTER = APP_FOOTER + (
     "\n<!-- Cloudflare Web Analytics -->"
     "<script type='module' "
     "src='https://static.cloudflareinsights.com/beacon.min.js' "

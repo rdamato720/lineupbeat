@@ -164,23 +164,42 @@ TEAMS_JS = """
 //
 // Hover menus are a coin flip on a trackpad and do not exist on a phone,
 // so this is the same interaction everywhere.
+// Delegated rather than bound to the button, because on the homepage the
+// nav is re-rendered and the button this would have held a reference to is
+// thrown away on every state change. Looking it up at click time means a
+// freshly inserted menu works without anything having to re-bind.
 (function(){
-  var btn = document.querySelector('.tmbtn');
-  var menu = document.getElementById('tmmenu');
-  if (!btn || !menu) return;
-  function set(open){
+  function menuFor(btn){
+    var wrap = btn.closest ? btn.closest('.tmwrap') : null;
+    return wrap ? wrap.querySelector('.tmmenu') : null;
+  }
+  function set(btn, menu, open){
     menu.hidden = !open;
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    set(menu.hidden);
-  });
+  function closeAll(){
+    document.querySelectorAll('.tmwrap').forEach(function(w){
+      var b = w.querySelector('.tmbtn'), m = w.querySelector('.tmmenu');
+      if (b && m) set(b, m, false);
+    });
+  }
   document.addEventListener('click', function(e){
-    if (!menu.hidden && !menu.contains(e.target)) set(false);
+    var btn = e.target.closest ? e.target.closest('.tmbtn') : null;
+    if (btn){
+      var menu = menuFor(btn);
+      if (!menu) return;
+      var open = menu.hidden;
+      closeAll();
+      set(btn, menu, open);
+      e.stopPropagation();
+      return;
+    }
+    // A click inside an open panel is somebody reading it, not dismissing.
+    if (e.target.closest && e.target.closest('.tmmenu')) return;
+    closeAll();
   });
   document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') set(false);
+    if (e.key === 'Escape') closeAll();
   });
 })();
 </script>"""
@@ -337,33 +356,295 @@ SPORT = "nfl"
 
 
 
-def site_nav(active=None, sport="nfl"):
-    """The site header, defined once.
+# The sections, in nav order. One list feeds the desktop bar and the mobile
+# drawer, so an item cannot appear in one and not the other -- which is how
+# College came to be missing from a phone in the first place.
+#
+# (key, label, href-template)
+NAV_ITEMS = [
+    ("wire", "The Wire", "/"),
+    ("roster", "My Roster", "/#v=roster"),
+    ("data", "Fantasy Data", "/{sport}/data/"),
+    ("college", "College", "/college-fantasy-football/projections/"),
+    ("about", "Who We Are", "/about/"),
+]
+
+
+NAV_CSS = """
+/* ---- header ----
+   Designed at 390px and expanded, not a desktop bar squeezed down. Most
+   readers are on a phone, and six section links plus a 32-team dropdown do
+   not fit across one: they wrapped onto three rows and pushed the wire
+   below the fold before a word of it had been read.
+   So under 900px the links move into a drawer behind one button, and the
+   header keeps only what has to be there -- the brand, a way to search, and
+   a way to reach everything else. */
+
+/* Nothing in the header may widen the page. A single overflowing row here
+   gives every page a horizontal scrollbar, and the reader blames the page. */
+.topbar{max-width:100%}
+.tbrow{min-width:0}
+.tbrow .logo{flex:0 0 auto; white-space:nowrap}
+
+/* The two mobile controls. Hidden on desktop, where the real nav is
+   visible and a button to reveal it would be noise. */
+.navbtn{display:none; align-items:center; justify-content:center; gap:.4rem;
+  min-height:44px; min-width:44px; padding:0 .6rem;
+  font-family:var(--agate); text-transform:uppercase; letter-spacing:.1em;
+  font-size:.74rem; font-weight:600;
+  background:none; border:1px solid var(--rule); border-radius:999px;
+  color:var(--ink); cursor:pointer; flex:0 0 auto}
+.navbtn:hover{border-color:var(--quiet)}
+.navbtn svg{width:18px; height:18px; flex:none}
+.navbtn[aria-expanded="true"]{background:var(--signal); border-color:var(--signal);
+  color:#0A0C08}
+/* The bars become a cross when the drawer is open, so the button says what
+   it will do next rather than what it did.
+
+   transform-box is not optional here. A CSS transform on an SVG child
+   rotates about the viewBox origin unless it is told otherwise, so the
+   bars swung out of the icon instead of crossing in the middle of it. */
+.navtoggle .bar{transition:transform .18s, opacity .18s;
+  transform-box:fill-box; transform-origin:center}
+.navtoggle[aria-expanded="true"] .bar1{transform:translateY(5px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] .bar2{opacity:0}
+.navtoggle[aria-expanded="true"] .bar3{transform:translateY(-5px) rotate(-45deg)}
+
+/* ---- the drawer ----
+   Anchored under the header rather than sliding in from the side: the
+   header is sticky, so a side sheet would have to cover it and then find
+   somewhere else to put the close button. */
+.navdrawer{display:none; border-top:1px solid var(--rule);
+  background:var(--paper); max-height:calc(100vh - 3.6rem); overflow-y:auto;
+  -webkit-overflow-scrolling:touch; overscroll-behavior:contain}
+.navdrawer[hidden]{display:none}
+.navlinks{display:flex; flex-direction:column; padding:.4rem 0 .2rem}
+/* An in-app view is a button and a real page is a link, so this styles
+   both. Without the reset the buttons kept the browser's grey face and My
+   Roster sat in the drawer looking like a pressed key. */
+.navlink{display:flex; align-items:center; width:100%; min-height:48px;
+  padding:0 1rem; text-align:left; cursor:pointer;
+  background:none; border:0; border-bottom:1px solid var(--rule);
+  font-family:var(--agate); text-transform:uppercase; letter-spacing:.1em;
+  font-size:.92rem; font-weight:600; color:var(--ink); text-decoration:none}
+/* The report count, where the app supplies one. */
+.navlink .n{font-family:var(--data); font-size:.68rem; margin-left:.45rem;
+  color:var(--quiet); text-transform:none; letter-spacing:0}
+.navlink[aria-current="page"] .n{color:inherit; opacity:.7}
+.navlink:last-child{border-bottom:0}
+.navlink:hover{color:var(--signal)}
+.navlink[aria-current="page"]{color:var(--signal)}
+/* A left rule rather than a filled pill: at this size a filled row reads as
+   a button somebody is about to press, not as where he already is. */
+.navlink[aria-current="page"]{box-shadow:inset 3px 0 0 var(--signal)}
+
+/* Teams, in the drawer. The same 32 links as the desktop dropdown, two
+   columns wide because a single column of 32 is a scroll nobody finishes. */
+.navteams{padding:.2rem 1rem 1.2rem}
+.navteams h3{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.1em; font-size:.68rem; color:var(--quiet);
+  margin:1rem 0 .3rem; padding-top:.8rem; border-top:1px solid var(--rule)}
+.navtgrid{display:grid; grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:0 .8rem}
+.navtgrid a{display:flex; align-items:center; gap:.5rem; min-height:44px;
+  color:var(--ink); text-decoration:none; font-size:.9rem; min-width:0}
+.navtgrid a:hover{color:var(--signal)}
+.navtgrid img{width:1.15rem; height:1.15rem; object-fit:contain; flex:none}
+.navtgrid span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+
+/* ---- the search field ----
+   Worth a permanent place on a laptop and not on a phone, where at 390px it
+   would take the whole width and leave nowhere for the brand. It is the
+   same single field either way -- rendered once, moved by CSS -- because
+   two copies means two elements with one id, and the page script binds to
+   the first one it finds.
+
+   On a phone one 44px control drops it onto its own full-width row,
+   focused and ready to type. */
+
+@media (max-width:900px){
+  /* Wrapping is what gives the field a row of its own to drop into. */
+  .tbrow{flex-wrap:wrap; gap:.5rem}
+  /* The links are in the drawer now. */
+  .tbrow .views{display:none}
+  .navbtn{display:inline-flex}
+  .navdrawer{display:block}
+  /* Pushes the buttons right and lets the brand keep its natural width. */
+  .tbrow .logo{margin-right:auto}
+  /* Last in the row, so it lands on the line below rather than between the
+     brand and the buttons. */
+  .tbrow .finder{display:none; order:9; flex:0 0 100%; max-width:none;
+    margin:0 0 .15rem}
+  .topbar.searchopen .tbrow .finder{display:block}
+  /* The app writes a build stamp into the row. It is the first thing worth
+     losing when the width is this tight. */
+  .tbrow .stamp{display:none}
+}
+
+/* Between a large phone and a laptop the links fit again, so the drawer is
+   not needed and the field is back in the row on its own account. */
+@media (min-width:901px){
+  .navdrawer{display:none}
+}
+"""
+
+
+NAV_JS = """
+<script>
+// One button, one drawer, one search row -- on every page, from
+// seo.site_nav(). Written to no-op where the markup is absent so a page
+// that has not been rebuilt yet does not throw.
+(function(){
+  var bar = document.querySelector('.topbar');
+  if (!bar) return;
+  var toggle = bar.querySelector('.navtoggle');
+  var drawer = bar.querySelector('.navdrawer');
+  var sbtn = bar.querySelector('.navsearch');
+  var find = bar.querySelector('.finder');
+
+  function setDrawer(open){
+    if (!toggle || !drawer) return;
+    drawer.hidden = !open;
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  // The field is one element that the stylesheet moves, so this toggles a
+  // class on the header rather than the element's own hidden attribute --
+  // hiding it outright would hide it on a laptop too.
+  function setSearch(open){
+    if (!sbtn || !find) return;
+    bar.classList.toggle('searchopen', open);
+    sbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  function closeAll(){ setDrawer(false); setSearch(false); }
+
+  if (toggle && drawer){
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = drawer.hidden;
+      closeAll();
+      setDrawer(open);
+    });
+  }
+  if (sbtn && find){
+    sbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = !bar.classList.contains('searchopen');
+      closeAll();
+      setSearch(open);
+      // Opening a search box and making somebody tap it again to type is
+      // two taps for one intention.
+      if (open){
+        var input = find.querySelector('input');
+        if (input) input.focus();
+      }
+    });
+  }
+
+  // A tap outside closes, the same as the teams menu.
+  document.addEventListener('click', function(e){
+    if (bar.contains(e.target)) return;
+    closeAll();
+  });
+  // Escape closes and hands focus back to the button that opened it,
+  // otherwise the next tab starts from the top of the document.
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Escape') return;
+    if (drawer && !drawer.hidden && toggle) toggle.focus();
+    else if (bar.classList.contains('searchopen') && sbtn) sbtn.focus();
+    closeAll();
+  });
+  // Rotating to landscape crosses the breakpoint with the drawer still
+  // marked open, which left the button lit on a layout that no longer has
+  // a drawer.
+  var wide = window.matchMedia('(min-width:901px)');
+  var onWide = function(e){ if (e.matches) closeAll(); };
+  if (wide.addEventListener) wide.addEventListener('change', onWide);
+  else if (wide.addListener) wide.addListener(onWide);
+})();
+</script>"""
+
+
+def _nav_drawer(active, sport, search):
+    """The panel behind the menu button: sections, then all 32 teams."""
+    cur = lambda k: ' aria-current="page"' if active == k else ""
+    links = "".join(
+        f'<a class="navlink" href="{href.format(sport=sport)}"{cur(key)}>'
+        f'{label}</a>'
+        for key, label, href in NAV_ITEMS)
+    cols = []
+    for div, teams in DIVISIONS:
+        cells = "".join(
+            f'<a href="/{sport}/team/{code.lower()}/">'
+            f'<img src="https://a.espncdn.com/i/teamlogos/nfl/500/'
+            f'{code.lower()}.png" alt="" loading="lazy" '
+            f'onerror="this.style.visibility=&quot;hidden&quot;">'
+            f'<span>{name}</span></a>'
+            for code, name in teams)
+        cols.append(f'<h3>{div}</h3><div class="navtgrid">{cells}</div>')
+    return (
+        '  <div class="navdrawer" id="navdrawer" hidden>\n'
+        f'    <nav class="navlinks" aria-label="All sections">{links}</nav>\n'
+        f'    <div class="navteams">{"".join(cols)}</div>\n'
+        '  </div>\n')
+
+
+def site_nav(active=None, sport="nfl", search=""):
+    """The site header, defined once, mobile first.
 
     Eight builders each carried their own copy of this markup, identical
     apart from which item was current. Adding College would have meant
     eight edits, and the next product another eight, which is how three
     pages end up showing three different menus.
 
+    The CSS and the behaviour come back with it rather than being left for
+    each builder to remember. Two of them had already forgotten TEAMS_JS,
+    so the teams button on the 404 and the college pages opened nothing --
+    a menu is markup plus rules plus a listener, and shipping one third of
+    it silently is worse than shipping none.
+
     `active` takes the key of the current section: wire, roster, data,
-    college or about. Anything else leaves no item marked.
+    college or about. Anything else leaves no item marked. `search` takes
+    the markup for a search field, which appears in the row on a laptop and
+    behind the search button on a phone; pages without one pass nothing.
     """
     cur = lambda k: ' aria-current="page"' if active == k else ""
+    views = "".join(
+        f'<a class="vbtn" href="{href.format(sport=sport)}"{cur(key)}>'
+        f'{label}</a>'
+        + (teams_menu(sport) if key == "college" else "")
+        for key, label, href in NAV_ITEMS)
     return (
+        f'<style>{TEAMS_CSS}{NAV_CSS}</style>\n'
         '<header class="topbar">\n'
         '  <div class="wrap tbrow">\n'
         '    <a class="logo" href="/">Lineup<em>Beat</em></a>\n'
-        '    <nav class="views">'
-        f'<a class="vbtn" href="/"{cur("wire")}>The Wire</a>'
-        f'<a class="vbtn" href="/#v=roster"{cur("roster")}>My Roster</a>'
-        f'<a class="vbtn" href="/{sport}/data/"{cur("data")}>Fantasy Data</a>'
-        '<a class="vbtn" href="/college-fantasy-football/projections/"'
-        f'{cur("college")}>College</a>'
-        + teams_menu(sport)
-        + f'<a class="vbtn" href="/about/"{cur("about")}>Who We Are</a>'
-        '</nav>\n'
-        '  </div>\n'
-        '</header>'
+        f'    <nav class="views" aria-label="Sections">{views}</nav>\n'
+        + (f'    <div class="finder" id="navfind">{search}</div>\n'
+           if search else '')
+        + ('    <button class="navbtn navsearch" type="button" '
+           'aria-expanded="false" aria-controls="navfind" '
+           'aria-label="Find a player">'
+           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+           'stroke-width="2" aria-hidden="true">'
+           '<circle cx="11" cy="11" r="7"></circle>'
+           '<path d="M20 20l-3.5-3.5"></path></svg>'
+           '</button>\n' if search else '')
+        + '    <button class="navbtn navtoggle" type="button" '
+          'aria-expanded="false" aria-controls="navdrawer">'
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+          'stroke-width="2" stroke-linecap="round" aria-hidden="true">'
+          '<path class="bar bar1" d="M3 7h18"></path>'
+          '<path class="bar bar2" d="M3 12h18"></path>'
+          '<path class="bar bar3" d="M3 17h18"></path></svg>'
+          'Menu</button>\n'
+          '  </div>\n'
+        + _nav_drawer(active, sport, search)
+        + '</header>'
+        # Both listeners ship with the markup. Builders must not add
+        # TEAMS_JS on top: these are delegated, so a second copy sees the
+        # menu already open and closes it again, and the button does
+        # nothing at all.
+        + TEAMS_JS + NAV_JS
     )
 
 
