@@ -1673,14 +1673,34 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   .tmcol a{min-height:44px}
 }
 
+:root{--content-reading:992px;--content-data:1080px;
+  --content-wide-table:1200px}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;
+  margin:0 0 1.1rem;font:.68rem/1 var(--agate,system-ui),sans-serif;
+  letter-spacing:.08em;text-transform:uppercase}
+.crumbs a{color:var(--quiet);text-decoration:none}
+.crumbs a:hover{color:var(--signal)}
+.crumbs b,.crumbs span[aria-current]{color:var(--ink);font-weight:600}
+/* A breadcrumb link at eleven pixels is not tappable. The text stays
+   small because it is a breadcrumb; the target does not. */
+@media(max-width:760px){
+  .crumbs{gap:.2rem}
+  .crumbs a{display:inline-flex;align-items:center;min-height:44px;
+    padding:0 .3rem}
+  .crumbs b{display:inline-flex;align-items:center;min-height:44px}
+}
+/* Nothing may push the page sideways. A single wide table or an absolutely
+   positioned decoration is enough to give every page a horizontal
+   scrollbar on a phone, and the reader blames the page, not the element. */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,table{max-width:100%}
+
 /* Additions only. The app stylesheet does the heavy lifting; these are the
    few things a player page needs that the wire does not. */
 .ppage{padding-top:1rem;padding-bottom:3rem}
-/* Breadcrumb, replacing a lone nav pill that read as decoration. Says where
-   you are, gives Google a hierarchy to render in the result, and earns its
-   line in a way one tab did not. */
-.finder input{min-height:44px}
-}
+/* Breadcrumb base rules live in seo.CRUMB_CSS, included by _render. What is
+   left here is only what a player page adds on top of it: the separator,
+   which is decoration rather than a step. */
 .crumbs a:hover{color:var(--signal)}
 .crumbs span{color:var(--rule)}
 .crumbs b{color:var(--ink);font-weight:600}

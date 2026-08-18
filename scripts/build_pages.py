@@ -222,11 +222,9 @@ PAGE_CSS = """
 /* Additions only. The app stylesheet does the heavy lifting; these are the
    few things a player page needs that the wire does not. */
 .ppage{padding-top:1rem;padding-bottom:3rem}
-/* Breadcrumb, replacing a lone nav pill that read as decoration. Says where
-   you are, gives Google a hierarchy to render in the result, and earns its
-   line in a way one tab did not. */
-.finder input{min-height:44px}
-}
+/* Breadcrumb base rules live in seo.CRUMB_CSS, included by _render. What is
+   left here is only what a player page adds on top of it: the separator,
+   which is decoration rather than a step. */
 .crumbs a:hover{color:var(--signal)}
 .crumbs span{color:var(--rule)}
 .crumbs b{color:var(--ink);font-weight:600}
@@ -433,7 +431,11 @@ def _render(page, accent, c2="#C6F24E", section=None):
     # Both halves are raw CSS, so the tags belong here rather than in either
     # constant -- otherwise the stylesheet prints as text at the top of the
     # page, which is exactly what happened.
-    css = ("<style>" + (APP_CSS or "")
+    # The shared breadcrumb first, so the page-specific rules below it can
+    # override rather than lose to source order. Player, team and about
+    # pages all emit <nav class="crumbs">, and without this they carry the
+    # markup with none of the styling.
+    css = ("<style>" + (APP_CSS or "") + seo.CRUMB_CSS
            + PAGE_CSS.replace("__ACCENT__", accent).replace("__C2__", c2)
            + "</style>")
     return (page
@@ -2284,8 +2286,6 @@ def durability_page(conn, base):
   line-height:1;color:var(--signal);font-weight:600}
 .dstat span{font-family:var(--agate);font-size:.6rem;letter-spacing:.09em;
   text-transform:uppercase;color:var(--quiet)}
-.dtab{min-width:38rem}
-}
 .dtab{width:100%;border-collapse:collapse}
 .dtab th{font-family:var(--agate);text-transform:uppercase;font-size:.58rem;
   letter-spacing:.1em;color:var(--quiet);text-align:left;font-weight:600;
@@ -2596,7 +2596,7 @@ def durability_page(conn, base):
         og_type="article",
         og_image=f'<meta property="og:image" content="{base}/og.png">',
         structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
-                    f'<style>{css}{seo.CRUMB_CSS}</style>'
+                    f'<style>{css}</style>'
                     f'<script>{FIND_JS}</script>'),
         body=body), "#C6F24E", "#C6F24E", section="data")
 
