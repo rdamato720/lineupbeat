@@ -757,6 +757,46 @@ SCROLLTABLE_CSS = """
 """
 
 
+# --------------------------------------------------- wide tables as cards
+#
+# The other answer to a table too wide for a phone.
+#
+# Sideways scrolling is right where the columns are one kind of thing and
+# a reader compares down them -- a projection board is thirty rows of the
+# same eight numbers. It is wrong where a row is a small dossier about one
+# player and the columns are not comparable with each other: swiping back
+# and forth to assemble one player's argument is worse than reading it in
+# one block.
+#
+# So the same table becomes a stack of cards under 760px. One table, one
+# set of markup, one script: the rows are re-laid-out by CSS rather than
+# rendered twice, because two renderings is two things to keep in step and
+# one of them is always a release behind.
+#
+# Applied by putting .xcard on the table and data-lab on any cell whose
+# meaning came from a column heading that is no longer on screen.
+CARDTABLE_CSS = """
+@media (max-width:760px){
+  /* The heading row is the first casualty: its labels move onto the cells
+     themselves, where they stay next to the number they name. */
+  .xcard thead{display:none}
+  .xcard, .xcard tbody, .xcard tr, .xcard td{display:block; width:auto}
+  .xcard{border-collapse:separate; border-spacing:0}
+  .xcard tr{background:var(--card); border:1px solid var(--rule);
+    border-radius:12px; padding:.75rem .85rem; margin:0 0 .6rem}
+  .xcard td{padding:0; border:0; text-align:left; white-space:normal}
+  /* A cell with nothing in it is a blank line on a card, where in a table
+     it was a tidy gap in a column. */
+  .xcard td:empty{display:none}
+  .xcard td[data-lab]::before{content:attr(data-lab); display:block;
+    font-family:var(--agate); text-transform:uppercase; letter-spacing:.08em;
+    font-size:.62rem; color:var(--quiet); margin-bottom:.1rem}
+  /* The whole card is the tap target where the row was clickable. */
+  .xcard tr.r{cursor:pointer}
+}
+"""
+
+
 def scroll_hint(what="the stats"):
     """The swipe line above a wide table. One wording, every board."""
     return (f'<p class="xhint">Swipe the table for {esc(what)} '

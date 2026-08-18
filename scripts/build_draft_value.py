@@ -413,6 +413,63 @@ PAGE_CSS = """
 .dvxwhy{font-size:.86rem; line-height:1.55; color:var(--ink); max-width:74ch;
   margin:0}
 .dvempty{color:var(--quiet); padding:1.4rem .5rem; font-size:.86rem}
+
+/* ---- the board as cards, under 760px ----
+   The mechanism is seo.CARDTABLE_CSS; the arrangement is here, because
+   only this page knows what its columns mean.
+
+   A projection board scrolls sideways because it is thirty rows of the
+   same eight numbers and a reader compares down them. This one does not:
+   a row here is one player's case -- what the market pays, what we say,
+   the gap between them and the verdict -- and swiping back and forth to
+   reassemble that is worse than reading it in a block. Same table, same
+   script, re-laid-out.
+
+   The verdict sits top right against the ADP, because those two together
+   are the whole headline: what he costs, and what we think of it. */
+@media (max-width:760px){
+  .dvtbl tr.r{display:grid; grid-template-columns:repeat(4, 1fr);
+    grid-template-areas:
+      "adp adp sig sig"
+      "nm  nm  nm  nm"
+      "pos team team team"
+      "mkt lb  gap pts";
+    gap:.15rem .5rem; align-items:start}
+  .dvtbl tr.r .dvadp{grid-area:adp}
+  .dvtbl tr.r .dvnm{grid-area:nm; font-size:1.02rem; font-weight:600;
+    margin:.25rem 0 0}
+  .dvtbl tr.r .dvsig{grid-area:sig; justify-self:end; align-self:start}
+  /* Position and team sit on one line under the name, unlabelled: in a
+     table they had two column headings above them, and on a card "RB" and
+     "DET" need no telling apart. Two grid areas rather than one area and
+     a margin -- stacking them in the same cell and nudging one sideways
+     held only while position codes stayed two characters wide. */
+  .dvtbl tr.r .dvpos:not(.dvteam){grid-area:pos; margin-bottom:.5rem}
+  .dvtbl tr.r .dvteam{grid-area:team; justify-self:start;
+    margin-bottom:.5rem}
+  .dvtbl tr.r .dvrk[data-lab="Market"]{grid-area:mkt}
+  .dvtbl tr.r .dvrk[data-lab="LineupBeat"]{grid-area:lb}
+  .dvtbl tr.r .dvgap{grid-area:gap}
+  .dvtbl tr.r .dvpts{grid-area:pts}
+  /* The four numbers along the bottom are the comparison, so they get the
+     weight the labels above them do not. */
+  .dvtbl tr.r .dvrk, .dvtbl tr.r .dvgap, .dvtbl tr.r .dvpts{
+    font-size:.94rem; width:auto}
+  .dvtbl tr.r .dvadp{font-size:.94rem; width:auto}
+  /* 13px floor, the same one the projection boards hold to. Position and
+     team measured 12.8. */
+  .dvtbl tr.r .dvpos{font-size:.82rem; width:auto}
+  /* The verdict is a pill in a table and a headline on a card, where it is
+     one of the two things the top line says. 9.9px was a footnote. */
+  .dvtbl tr.r .sig{font-size:.72rem; padding:.2rem .55rem}
+  /* The expanded panel is a row of the table too, and a grid would lay
+     its single cell out as one narrow column. */
+  .dvtbl tr.dvx{display:block; background:none; border:0; padding:0;
+    margin:-.4rem 0 .6rem}
+  .dvtbl tr.dvx td{background:var(--card); border:1px solid var(--rule);
+    border-radius:12px}
+  .dvxgrid{gap:.9rem}
+}
 .dvonly{font-size:.82rem; line-height:1.55; color:var(--quiet);
   margin:.7rem 0 0; max-width:74ch}
 .dvonly b{color:var(--ink)}
@@ -488,15 +545,16 @@ def static_rows(rows):
         mkt = DASH if r["mkt_rank"] is None else f'{r["pos"]}{r["mkt_rank"]}'
         out.append(
             "<tr class=\"r\">"
-            f'<td class="l dvadp">{adp}</td>'
+            f'<td class="l dvadp" data-lab="ADP">{adp}</td>'
             f'<td class="l dvnm">{name}</td>'
             f'<td class="l dvpos">{esc(r["pos"])}</td>'
             f'<td class="l dvteam dvpos">{esc(r["team"])}</td>'
-            f'<td class="dvrk">{esc(mkt)}</td>'
-            f'<td class="dvrk">{esc(r["pos"])}{r["lb_rank"]}</td>'
-            f'<td class="dvgap {gcls}">{gtxt}</td>'
-            f'<td class="dvpts">{r["pts"]:.1f}</td>'
-            f'<td class="l"><span class="sig {scls}">{esc(sig)}</span></td>'
+            f'<td class="dvrk" data-lab="Market">{esc(mkt)}</td>'
+            f'<td class="dvrk" data-lab="LineupBeat">'
+            f'{esc(r["pos"])}{r["lb_rank"]}</td>'
+            f'<td class="dvgap {gcls}" data-lab="Gap">{gtxt}</td>'
+            f'<td class="dvpts" data-lab="Pts">{r["pts"]:.1f}</td>'
+            f'<td class="l dvsig"><span class="sig {scls}">{esc(sig)}</span></td>'
             "</tr>")
     return "\n".join(out)
 
@@ -614,7 +672,7 @@ def build_html(boards, meta, css, header, footer, formats):
 
   <p class="dvcount" id="dvcount"></p>
 
-  <table class="dvtbl">
+  <table class="dvtbl xcard">
     <thead><tr>
       <th class="l dvadp">ADP</th>
       <th class="l">Player</th>
@@ -715,15 +773,15 @@ function draw(){{
       ? `<a href="/{SPORT}/${{r.id}}/">${{r.n}}</a>` : r.n;
     const gcls = r.g === null ? "" : r.g > 0 ? "g-up" : r.g < 0 ? "g-dn" : "";
     return `<tr class="r" data-i="${{i}}">
-      <td class="l dvadp">${{r.a === null ? "\\u2014" : r.a.toFixed(1)}}</td>
+      <td class="l dvadp" data-lab="ADP">${{r.a === null ? "\\u2014" : r.a.toFixed(1)}}</td>
       <td class="l dvnm">${{name}}</td>
       <td class="l dvpos">${{r.p}}</td>
       <td class="l dvteam dvpos">${{r.t || ""}}</td>
-      <td class="dvrk">${{r.m === null ? "\\u2014" : r.p + r.m}}</td>
-      <td class="dvrk">${{r.p}}${{r.l}}</td>
-      <td class="dvgap ${{gcls}}">${{plus(r.g)}}</td>
-      <td class="dvpts">${{r.pt.toFixed(1)}}</td>
-      <td class="l"><span class="sig ${{sigClass(r.s)}}">${{
+      <td class="dvrk" data-lab="Market">${{r.m === null ? "\\u2014" : r.p + r.m}}</td>
+      <td class="dvrk" data-lab="LineupBeat">${{r.p}}${{r.l}}</td>
+      <td class="dvgap ${{gcls}}" data-lab="Gap">${{plus(r.g)}}</td>
+      <td class="dvpts" data-lab="Pts">${{r.pt.toFixed(1)}}</td>
+      <td class="l dvsig"><span class="sig ${{sigClass(r.s)}}">${{
         r.s || "No ADP"}}</span></td>
     </tr>`;
   }}).join("");
@@ -915,7 +973,7 @@ def main():
 <link rel="canonical" href="https://lineupbeat.com/{SPORT}/draft-value/">
 {seo.social_meta(title, desc, f"https://lineupbeat.com/{SPORT}/draft-value/")}
 <script type="application/ld+json">{ldjson}</script>
-<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.CARDTABLE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}
