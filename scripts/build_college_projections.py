@@ -76,6 +76,41 @@ import seo
 
 POSITIONS = ["QB", "RB", "WR", "TE"]
 BASE = "/college-fantasy-football/projections/"
+DESCRIPTIONS = {
+    None: ("2026 college fantasy football projections for 2,351 players "
+           "across 68 teams. View Yahoo-scoring rankings and complete "
+           "projected stat lines."),
+    "QB": ("2026 college fantasy quarterback projections using Yahoo "
+           "scoring. Compare passing, rushing and fantasy-point "
+           "projections for 361 quarterbacks."),
+    "RB": ("2026 college fantasy running back projections using Yahoo "
+           "scoring. Compare carries, rushing production, receptions and "
+           "fantasy points for 493 backs."),
+    "WR": ("2026 college fantasy wide receiver projections using Yahoo "
+           "scoring. Compare receptions, receiving production, rushing "
+           "roles and fantasy points."),
+    "TE": ("2026 college fantasy tight end projections using Yahoo "
+           "scoring, including receptions, receiving production, hybrid "
+           "rushing roles and fantasy points."),
+}
+INTROS = {
+    "QB": ("Quarterback value here comes from both arms and legs: passing "
+           "and rushing efficiency each carry calibrated player-history "
+           "adjustments, and the rushing columns often separate two "
+           "quarterbacks with similar passing lines."),
+    "RB": ("Backfield share is projected room by room, splitting each "
+           "team's carries between the backs who returned and those who "
+           "arrived. Rushing efficiency carries a calibrated adjustment; "
+           "receptions come from the same team allocation."),
+    "WR": ("Receivers are separated by projected opportunity rather than "
+           "by receiving efficiency, which is anchored to team rates. "
+           "Several receivers take enough carries that rushing decides "
+           "part of their value, and those columns are shown."),
+    "TE": ("Tight end value splits between receiving volume and, for a "
+           "few players, real rushing work. One tight end's ranking rests "
+           "mostly on his carries, which is why the rushing columns "
+           "appear alongside the receiving line."),
+}
 TITLES = {
     None: "2026 College Fantasy Football Projections",
     "QB": "2026 College Fantasy Quarterback Projections",
@@ -225,6 +260,12 @@ table.ctab th:nth-child(2),table.ctab td:nth-child(2){position:sticky;
 .fcollege h3{font-family:var(--agate);text-transform:uppercase;
   letter-spacing:.08em;font-size:.72rem;margin:0 0 .3rem}
 .fcollege p{font-size:.78rem;line-height:1.5;color:var(--quiet);margin:0}
+.crumbs{font-family:var(--agate);text-transform:uppercase;
+  letter-spacing:.07em;font-size:.66rem;color:var(--quiet);margin:0 0 .8rem}
+.crumbs a{color:var(--quiet);text-decoration:none}
+.crumbs a:hover{color:var(--signal)}
+.cintro{color:var(--quiet);font-size:.88rem;line-height:1.6;
+  max-width:52rem;margin:.6rem 0 0}
 .cfaq{margin:2rem 0 0}
 .cfaq h2{font-size:1.15rem;margin:0 0 .7rem}
 .cfaq details{border-bottom:1px solid var(--rule);padding:.6rem 0}
@@ -251,8 +292,8 @@ FAQ = [
      "layer has been built, so targets would have to be invented here, and "
      "an invented column would weaken numbers that are otherwise exact."),
     ("How accurate are the team totals?",
-     "Every player's projected stat line sums exactly to its team's "
-     "projected total, to twelve decimal places, across fifteen separate "
+     "Player projections aggregate exactly to the corresponding frozen "
+     "team totals, to twelve decimal places, across fifteen "
      "reconciliation checks."),
 ]
 
@@ -279,9 +320,58 @@ def page(pos):
                          if pos is None else "")
                       + f'<div class="ctabwrap">{t}</div>{more}</section>')
     teams = sorted({p["team"] for p in P})
-    desc = (f"Full season 2026 college fantasy projections for "
-            f"{len(P):,} players across {len(DATA['teams'])} teams, using "
-            f"Yahoo scoring.")
+    desc = DESCRIPTIONS[pos]
+    canon = f"https://lineupbeat.com{url}"
+    trail = ([("LineupBeat", "/"), ("College Fantasy Football", None),
+              ("Projections", canon)] if pos is None else
+             [("LineupBeat", "/"),
+              ("College Fantasy Football Projections",
+               f"https://lineupbeat.com{BASE}"),
+              (LABEL[pos], canon)])
+    crumbs = ('<nav class="crumbs" aria-label="Breadcrumb">'
+              + ' <span aria-hidden="true">/</span> '.join(
+                  (f'<a href="{h}">{e(t)}</a>' if h and t != TITLES[pos]
+                   else f'<span>{e(t)}</span>') for t, h in trail)
+              + '</nav>')
+    dataset = ""
+    if pos is None:
+        # Described as what it is: projections built by LineupBeat that use
+        # Yahoo scoring rules. Not Yahoo data, and not platform eligibility.
+        dataset = json.dumps({
+            "@context": "https://schema.org", "@type": "Dataset",
+            "name": "2026 College Fantasy Football Projections",
+            "description": DESCRIPTIONS[None],
+            "url": canon,
+            "dateModified": DATA["generatedAt"][:10],
+            "temporalCoverage": "2026",
+            "creator": {"@type": "Organization", "name": "LineupBeat"},
+            "isAccessibleForFree": True,
+            "creditText": "LineupBeat",
+            "inLanguage": "en-US",
+            "spatialCoverage": "United States",
+            "measurementTechnique": DATA["methodology"],
+            "variableMeasured": [
+                {"@type": "PropertyValue", "name": n_, "description": d_}
+                for n_, d_ in (
+                    ("Fantasy points",
+                     "Full-season projection under Yahoo scoring rules"),
+                    ("Pass attempts, completions, yards, touchdowns, "
+                     "interceptions",
+                     "Quarterback passing, with calibrated player-history "
+                     "efficiency"),
+                    ("Carries, rushing yards, rushing touchdowns",
+                     "Rushing for all positions; quarterback and running "
+                     "back efficiency carry calibrated adjustments"),
+                    ("Receptions, receiving yards, receiving touchdowns",
+                     "Receiving, differentiated by projected opportunity "
+                     "with efficiency anchored to team rates"),
+                    ("Position",
+                     "School roster listing sourced through CFBD, which may "
+                     "differ from fantasy-platform eligibility"))],
+            "size": f"{len(P):,} players across {len(DATA['teams'])} teams",
+        }, separators=(",", ":"))
+    crumb_schema = seo.breadcrumbs(
+        [(t, h) for t, h in trail if h] or [("LineupBeat", "/")])
     faq = "".join(
         f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>"
         for q, a in FAQ)
@@ -291,16 +381,20 @@ def page(pos):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)} | LineupBeat</title>
 <meta name="description" content="{e(desc)}">
-<link rel="canonical" href="https://lineupbeat.com{url}">
+<link rel="canonical" href="{canon}">
+{seo.social_meta(title + " | LineupBeat", desc, canon)}
+<script type="application/ld+json">{crumb_schema}</script>\n{f'<script type="application/ld+json">{dataset}</script>' if dataset else ''}
 <style>{css}{CSS}</style>
 </head><body>
 {header}
 <main class="cwrap">
+  {crumbs}
   <div class="chero">
     <h1>{e(title)}</h1>
     <p class="lede">Full-season projections for {len(P):,} players across
       {len(DATA['teams'])} teams, using Yahoo scoring. Every player's
       projected stat line is shown behind the ranking.</p>
+    {f'<p class="cintro">{e(INTROS[pos])}</p>' if pos else ''}
     <p class="cmeta">Updated {longdate(DATA['generatedAt'])} &middot;
       Model {DATA['modelVersion']}</p>
   </div>

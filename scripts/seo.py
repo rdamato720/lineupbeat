@@ -392,6 +392,44 @@ DATA_PAGES = [
 ]
 
 
+
+def social_meta(title, description, canonical_url,
+                image_url="https://lineupbeat.com/og.png"):
+    """Open Graph and Twitter tags, defined once.
+
+    Two builders each hardcoded a partial block: title, description, url
+    and type, with no image and no Twitter tags, so a shared link showed a
+    bare card. The homepage had the full set and the data pages did not,
+    which is the same drift the navigation had.
+
+    A missing image is worse than a small card, so an empty image_url
+    falls back to `summary` and omits the image tags rather than pointing
+    at something that will not load.
+    """
+    t, d = esc(title), esc(description)
+    out = [
+        '<meta property="og:type" content="website">',
+        '<meta property="og:site_name" content="LineupBeat">',
+        f'<meta property="og:title" content="{t}">',
+        f'<meta property="og:description" content="{d}">',
+        f'<meta property="og:url" content="{esc(canonical_url)}">',
+    ]
+    if image_url:
+        out += [
+            f'<meta property="og:image" content="{esc(image_url)}">',
+            '<meta property="og:image:width" content="1200">',
+            '<meta property="og:image:height" content="630">',
+            '<meta name="twitter:card" content="summary_large_image">',
+            f'<meta name="twitter:image" content="{esc(image_url)}">',
+        ]
+    else:
+        out.append('<meta name="twitter:card" content="summary">')
+    out += [
+        f'<meta name="twitter:title" content="{t}">',
+        f'<meta name="twitter:description" content="{d}">',
+    ]
+    return "\n".join(out)
+
 def related_html(current: str) -> str:
     """A strip of links to the other data pages.
 

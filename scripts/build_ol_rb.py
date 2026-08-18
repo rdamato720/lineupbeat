@@ -1050,11 +1050,7 @@ def main():
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical"
       href="{seo.SITE_URL}/{SPORT}/offensive-line-rb-performance/">
-<meta property="og:title" content="{esc(title)}">
-<meta property="og:description" content="{esc(desc)}">
-<meta property="og:url"
-      content="{seo.SITE_URL}/{SPORT}/offensive-line-rb-performance/">
-<meta property="og:type" content="website">
+{seo.social_meta(title, desc, f"{seo.SITE_URL}/{SPORT}/offensive-line-rb-performance/")}
 <script type="application/ld+json">{seo.graph(
     schema, crumbs, seo.faq_schema(OL_FAQ), seo.ORGANISATION)}</script>
 <style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}</style>

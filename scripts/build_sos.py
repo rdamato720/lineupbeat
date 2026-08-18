@@ -710,11 +710,7 @@ def main():
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical"
       href="https://lineupbeat.com/{SPORT}/strength-of-schedule/">
-<meta property="og:title" content="{esc(title)}">
-<meta property="og:description" content="{esc(desc)}">
-<meta property="og:url"
-      content="https://lineupbeat.com/{SPORT}/strength-of-schedule/">
-<meta property="og:type" content="website">
+{seo.social_meta(title, desc, f"{seo.SITE_URL}/{SPORT}/strength-of-schedule/")}
 <script type="application/ld+json">{ldjson}</script>
 <style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
 </head>

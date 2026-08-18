@@ -873,10 +873,7 @@ draw();
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="https://lineupbeat.com/{SPORT}/projections/">
-<meta property="og:title" content="{esc(title)}">
-<meta property="og:description" content="{esc(desc)}">
-<meta property="og:url" content="https://lineupbeat.com/{SPORT}/projections/">
-<meta property="og:type" content="website">
+{seo.social_meta(title, desc, f"https://lineupbeat.com/{SPORT}/projections/")}
 <script type="application/ld+json">{ldjson}</script>
 <style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
 </head>
@@ -1059,11 +1056,7 @@ def write_position_pages(board, links, css, header, footer, season,
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical"
       href="{seo.SITE_URL}/{SPORT}/projections/{pos.lower()}/">
-<meta property="og:title" content="{esc(title)}">
-<meta property="og:description" content="{esc(desc)}">
-<meta property="og:url"
-      content="{seo.SITE_URL}/{SPORT}/projections/{pos.lower()}/">
-<meta property="og:type" content="website">
+{seo.social_meta(title, desc, f"{seo.SITE_URL}/{SPORT}/projections/{pos.lower()}/")}
 <script type="application/ld+json">{seo.graph(
     schema, crumbs, seo.faq_schema(faq), seo.ORGANISATION, itemlist)}</script>
 <style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}{POS_CSS}</style>
