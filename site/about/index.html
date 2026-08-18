@@ -1679,20 +1679,6 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 /* Breadcrumb, replacing a lone nav pill that read as decoration. Says where
    you are, gives Google a hierarchy to render in the result, and earns its
    line in a way one tab did not. */
-.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;
-  margin:0 0 1.1rem;font:.68rem/1 var(--agate,system-ui),sans-serif;
-  letter-spacing:.08em;text-transform:uppercase}
-.crumbs a{color:var(--quiet);text-decoration:none}
-/* A breadcrumb link at eleven pixels is not tappable. The text stays small
-   because it is a breadcrumb; the target does not. */
-@media(max-width:760px){
-  .crumbs{gap:.2rem}
-  .crumbs a{display:inline-flex;align-items:center;min-height:44px;
-    padding:0 .3rem}
-  .crumbs b{display:inline-flex;align-items:center;min-height:44px}
-  @media (max-width:760px){
-  .finder input{min-height:44px; font-size:16px}
-}
 .finder input{min-height:44px}
 }
 .crumbs a:hover{color:var(--signal)}

@@ -430,6 +430,37 @@ def social_meta(title, description, canonical_url,
     ]
     return "\n".join(out)
 
+
+# One breadcrumb, one set of page widths. The college builder grew its own
+# .crumbs rule, so the same class rendered two ways depending which script
+# wrote the page -- the navigation had exactly this problem.
+#
+# The widths were 992, 1080, 1180 and 1200 across templates, which reads
+# as the left edge shifting slightly as you move between pages.
+CRUMB_CSS = """
+:root{--content-reading:992px;--content-data:1080px;
+  --content-wide-table:1200px}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;
+  margin:0 0 1.1rem;font:.68rem/1 var(--agate,system-ui),sans-serif;
+  letter-spacing:.08em;text-transform:uppercase}
+.crumbs a{color:var(--quiet);text-decoration:none}
+.crumbs a:hover{color:var(--signal)}
+.crumbs b,.crumbs span[aria-current]{color:var(--ink);font-weight:600}
+/* A breadcrumb link at eleven pixels is not tappable. The text stays
+   small because it is a breadcrumb; the target does not. */
+@media(max-width:760px){
+  .crumbs{gap:.2rem}
+  .crumbs a{display:inline-flex;align-items:center;min-height:44px;
+    padding:0 .3rem}
+  .crumbs b{display:inline-flex;align-items:center;min-height:44px}
+}
+/* Nothing may push the page sideways. A single wide table or an absolutely
+   positioned decoration is enough to give every page a horizontal
+   scrollbar on a phone, and the reader blames the page, not the element. */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,table{max-width:100%}
+"""
+
 def related_html(current: str) -> str:
     """A strip of links to the other data pages.
 

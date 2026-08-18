@@ -225,20 +225,6 @@ PAGE_CSS = """
 /* Breadcrumb, replacing a lone nav pill that read as decoration. Says where
    you are, gives Google a hierarchy to render in the result, and earns its
    line in a way one tab did not. */
-.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;
-  margin:0 0 1.1rem;font:.68rem/1 var(--agate,system-ui),sans-serif;
-  letter-spacing:.08em;text-transform:uppercase}
-.crumbs a{color:var(--quiet);text-decoration:none}
-/* A breadcrumb link at eleven pixels is not tappable. The text stays small
-   because it is a breadcrumb; the target does not. */
-@media(max-width:760px){
-  .crumbs{gap:.2rem}
-  .crumbs a{display:inline-flex;align-items:center;min-height:44px;
-    padding:0 .3rem}
-  .crumbs b{display:inline-flex;align-items:center;min-height:44px}
-  @media (max-width:760px){
-  .finder input{min-height:44px; font-size:16px}
-}
 .finder input{min-height:44px}
 }
 .crumbs a:hover{color:var(--signal)}
@@ -731,9 +717,13 @@ def team_page(team, players, count, base):
     accent = TEAM_COLORS.get(team, "#C6F24E")
     c2 = TEAM_C2.get(team, "#C6F24E")
     logo = f"https://a.espncdn.com/i/teamlogos/nfl/500/{team.lower()}.png"
+    # A section called "Players in the news" listing a player with no
+    # reports says the opposite of its own heading. They stay on the
+    # roster; they are not news.
+    in_news = [(n, c) for n, c in players if c > 0]
     cards = "\n".join(
         f'    <a href="/{SPORT}/{slug(n)}/">{esc(n)}<span>{c} report'
-        f'{"s" if c != 1 else ""}</span></a>' for n, c in players)
+        f'{"s" if c != 1 else ""}</span></a>' for n, c in in_news)
     ld = {"@context": "https://schema.org", "@type": "SportsTeam",
           "name": full, "url": url, "logo": logo}
     crumb = (f'  <nav class="crumbs" aria-label="Breadcrumb">'
@@ -751,7 +741,7 @@ def team_page(team, players, count, base):
             f'style="border-radius:0;object-fit:contain">\n'
             f'    <div>\n      <h1>{esc(full)}</h1>\n'
             f'      <p class="who">{count} beat reports across '
-            f'{len(players)} players</p>\n    </div>\n  </div>\n'
+            f'{len(in_news)} players</p>\n    </div>\n  </div>\n'
             f'  <h2>Players in the news</h2>\n'
             f'  <div class="grid">\n{cards}\n  </div>')
     return _render(PAGE.format(
@@ -2606,7 +2596,7 @@ def durability_page(conn, base):
         og_type="article",
         og_image=f'<meta property="og:image" content="{base}/og.png">',
         structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
-                    f'<style>{css}</style>'
+                    f'<style>{css}{seo.CRUMB_CSS}</style>'
                     f'<script>{FIND_JS}</script>'),
         body=body), "#C6F24E", "#C6F24E", section="data")
 

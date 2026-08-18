@@ -875,7 +875,7 @@ draw();
 <link rel="canonical" href="https://lineupbeat.com/{SPORT}/projections/">
 {seo.social_meta(title, desc, f"https://lineupbeat.com/{SPORT}/projections/")}
 <script type="application/ld+json">{ldjson}</script>
-<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}
@@ -1059,7 +1059,7 @@ def write_position_pages(board, links, css, header, footer, season,
 {seo.social_meta(title, desc, f"{seo.SITE_URL}/{SPORT}/projections/{pos.lower()}/")}
 <script type="application/ld+json">{seo.graph(
     schema, crumbs, seo.faq_schema(faq), seo.ORGANISATION, itemlist)}</script>
-<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}{POS_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}{POS_CSS}</style>
 </head>
 <body>
 {header}

@@ -207,7 +207,7 @@ print("  chrome, nav and table renderer ready")
 
 
 CSS = """
-.cwrap{max-width:1200px;margin:0 auto;padding:1.2rem 1rem 3rem}
+.cwrap{max-width:var(--content-wide-table);margin:0 auto;padding:1.2rem 1rem 3rem}
 .chero h1{font-size:1.9rem;line-height:1.15;margin:0 0 .5rem}
 .chero p.lede{color:var(--quiet);font-size:.95rem;line-height:1.55;
   max-width:52rem;margin:0 0 .3rem}
@@ -260,10 +260,6 @@ table.ctab th:nth-child(2),table.ctab td:nth-child(2){position:sticky;
 .fcollege h3{font-family:var(--agate);text-transform:uppercase;
   letter-spacing:.08em;font-size:.72rem;margin:0 0 .3rem}
 .fcollege p{font-size:.78rem;line-height:1.5;color:var(--quiet);margin:0}
-.crumbs{font-family:var(--agate);text-transform:uppercase;
-  letter-spacing:.07em;font-size:.66rem;color:var(--quiet);margin:0 0 .8rem}
-.crumbs a{color:var(--quiet);text-decoration:none}
-.crumbs a:hover{color:var(--signal)}
 .cintro{color:var(--quiet);font-size:.88rem;line-height:1.6;
   max-width:52rem;margin:.6rem 0 0}
 .cfaq{margin:2rem 0 0}
@@ -384,7 +380,7 @@ def page(pos):
 <link rel="canonical" href="{canon}">
 {seo.social_meta(title + " | LineupBeat", desc, canon)}
 <script type="application/ld+json">{crumb_schema}</script>\n{f'<script type="application/ld+json">{dataset}</script>' if dataset else ''}
-<style>{css}{CSS}</style>
+<style>{css}{seo.CRUMB_CSS}{CSS}</style>
 </head><body>
 {header}
 <main class="cwrap">

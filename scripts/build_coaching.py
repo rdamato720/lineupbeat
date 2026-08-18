@@ -583,7 +583,7 @@ def main():
 <link rel="canonical" href="https://lineupbeat.com/{SPORT}/coaching/">
 {seo.social_meta(title, desc, f"https://lineupbeat.com/{SPORT}/coaching/")}
 <script type="application/ld+json">{ldjson}</script>
-<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}
