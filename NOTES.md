@@ -123,6 +123,51 @@ correctness bug found through source integration.
 
 ---
 
+## Phase 2, the mobile rebuild
+
+**Mobile is the primary layout, not a compressed desktop.** Design at 390px
+first, then expand. Most readers are on a phone.
+
+Six groups. Screenshots at 390, 430, 768 and 1366 for each one before
+moving to the next. Shared components go in `seo.py` from the start: the
+nav, social metadata and breadcrumbs were each duplicated across builders
+before being consolidated, and anything new will drift the same way if it
+is not shared from the beginning.
+
+| # | Group | State |
+|---|---|---|
+| 1 | Mobile header and menu | done, `478161d` |
+| 2 | NFL and college projection tables | |
+| 3 | Draft Value mobile cards | |
+| 4 | Durability and other data tables | |
+| 5 | Team and player pages | |
+| 6 | Homepage, Data hub and About | |
+
+### Group 2 requirements
+
+- Tables in a horizontal scroll container
+- Rank and Player sticky left, if that can be made reliable
+- Table text no smaller than 13px
+- A swipe hint or a right-edge fade, so a reader knows there is more
+- Numbers never wrap
+- The Points column prominent
+- The hybrid rushing columns are never hidden: they explain the rankings
+
+**Mobile column order puts Points immediately after Team.** A reader should
+not have to scroll the full width to reach the number the ranking is based
+on.
+
+```
+QB       Rank, Player, Team, Points, Pass Yards, Pass TD, Carries,
+         Rush Yards, Rush TD, Pass Attempts, Completions, INT
+RB       Rank, Player, Team, Points, Carries, Rush Yards, Rush TD,
+         Receptions, Receiving Yards, Receiving TD
+WR, TE   Rank, Player, Team, Points, Receptions, Receiving Yards,
+         Receiving TD, Carries, Rush Yards, Rush TD
+```
+
+---
+
 ## Open items
 
 **CI passes almost nothing through the prefilter.** Local runs get ~200 new
