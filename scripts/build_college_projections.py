@@ -98,7 +98,23 @@ def chrome():
         "         projections, draft value, durability, schedule and coaching.",
         "local NFL beat reporting, plus independent NFL and college "
         "fantasy projections and data.")
+    f = f.replace("<h3>Data</h3>", "<h3>NFL Data</h3>")
+    # The source list under it describes NFL feeds. College comes from
+    # somewhere else and says so rather than sheltering under a heading
+    # that does not cover it.
+    f = f.replace(
+        "</footer>",
+        '  <div class="fcollege"><h3>College Data</h3>'
+        '<p>College positions and roster classifications are sourced '
+        'through CFBD. Positions may differ from fantasy-platform '
+        'eligibility.</p></div>\n</footer>')
     return (css.group(1) if css else ""), seo.site_nav("college"), f
+
+
+def longdate(iso):
+    """August 18, 2026, as the NFL pages write it."""
+    from datetime import datetime
+    return datetime.fromisoformat(iso[:10]).strftime("%B %-d, %Y")
 
 
 def fmt(v, key):
@@ -110,9 +126,11 @@ def fmt(v, key):
     return f"{v:,.0f}" if isinstance(v, (int, float)) else e(v)
 
 
-def table(pos):
+def table(pos, limit=None):
     cols = COLS[pos]
     sel = sorted((p for p in P if p["pos"] == pos), key=lambda x: x["rank"])
+    if limit:
+        sel = sel[:limit]
     head = "".join(
         f'<th data-k="{k}" class="{"num" if k in NUMERIC else ""}">{e(l)}</th>'
         for k, l in cols)
@@ -197,6 +215,16 @@ table.ctab th:nth-child(2),table.ctab td:nth-child(2){position:sticky;
 .hyb{font-family:var(--agate);text-transform:uppercase;letter-spacing:.06em;
   font-size:.6rem;color:var(--signal);border:1px solid var(--signal);
   border-radius:999px;padding:.05rem .4rem;margin-left:.4rem}
+.cmore{display:inline-block;margin:.7rem 0 0;font-family:var(--agate);
+  text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;
+  color:var(--signal);text-decoration:none}
+.cmore:hover{text-decoration:underline}
+.cposh{font-size:1.05rem;margin:1.4rem 0 .5rem}
+.ccount{font-family:var(--agate);text-transform:uppercase;font-size:.62rem;
+  letter-spacing:.08em;color:var(--quiet);margin-left:.5rem}
+.fcollege h3{font-family:var(--agate);text-transform:uppercase;
+  letter-spacing:.08em;font-size:.72rem;margin:0 0 .3rem}
+.fcollege p{font-size:.78rem;line-height:1.5;color:var(--quiet);margin:0}
 .cfaq{margin:2rem 0 0}
 .cfaq h2{font-size:1.15rem;margin:0 0 .7rem}
 .cfaq details{border-bottom:1px solid var(--rule);padding:.6rem 0}
@@ -236,12 +264,20 @@ def page(pos):
     shown = POSITIONS if pos is None else [pos]
     tables, counts = [], 0
     for p in shown:
-        t, n = table(p)
+        # The overview shows the top of each room; the position pages
+        # carry everyone. Search on this page follows suit and sends you
+        # to the position page, which is where the rest of the players are.
+        limit = 25 if pos is None else None
+        t, n = table(p, limit)
         counts += n
+        more = (f'<a class="cmore" href="{BASE}{p.lower()}/">View all '
+                f'{LABEL[p].lower()} projections &rarr;</a>'
+                if pos is None else "")
         tables.append(f'<section class="cpos" data-pos="{p}">'
-                      + (f'<h2 class="cposh">{LABEL[p]}</h2>'
+                      + (f'<h2 class="cposh">{LABEL[p]}'
+                         f'<span class="ccount">top 25</span></h2>'
                          if pos is None else "")
-                      + f'<div class="ctabwrap">{t}</div></section>')
+                      + f'<div class="ctabwrap">{t}</div>{more}</section>')
     teams = sorted({p["team"] for p in P})
     desc = (f"Full season 2026 college fantasy projections for "
             f"{len(P):,} players across {len(DATA['teams'])} teams, using "
@@ -265,7 +301,7 @@ def page(pos):
     <p class="lede">Full-season projections for {len(P):,} players across
       {len(DATA['teams'])} teams, using Yahoo scoring. Every player's
       projected stat line is shown behind the ranking.</p>
-    <p class="cmeta">Updated {DATA['generatedAt'][:10]} &middot;
+    <p class="cmeta">Updated {longdate(DATA['generatedAt'])} &middot;
       Model {DATA['modelVersion']}</p>
   </div>
   {tabs(pos)}
