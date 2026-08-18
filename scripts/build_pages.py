@@ -3579,6 +3579,14 @@ def main():
             (f"/{args.sport}/durability/", "weekly", "0.8"),
             (f"/{args.sport}/projections/changes/", "weekly", "0.7"),
             (f"/{args.sport}/offensive-line-rb-performance/", "weekly", "0.7"),
+            # College. Sport-neutral paths, so they are not built from
+            # args.sport: the projections are college whatever sport this
+            # run is generating pages for.
+            ("/college-fantasy-football/projections/", "weekly", "0.9"),
+            ("/college-fantasy-football/projections/qb/", "weekly", "0.8"),
+            ("/college-fantasy-football/projections/rb/", "weekly", "0.8"),
+            ("/college-fantasy-football/projections/wr/", "weekly", "0.8"),
+            ("/college-fantasy-football/projections/te/", "weekly", "0.8"),
             ("/about/", "monthly", "0.6")):
         if (SITE / path.lstrip("/") / "index.html").exists():
             urls.append((f"{base}{path}", now, freq, prio))

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#08090B">
-<title>Fantasy Football News, Projections &amp; Data | LineupBeat</title>
+<title>NFL News, Fantasy Football Projections &amp; Data | LineupBeat</title>
 <meta name="description" content="Local NFL beat reports, fantasy football projections, ADP values, injury history, coaching changes and strength of schedule for every team and player.">
 <link rel="canonical" href="https://lineupbeat.com/">
 <meta property="og:type" content="website">
@@ -1768,6 +1768,10 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
       <h3>ADP &amp; draft value</h3>
       <p>Where LineupBeat's projections disagree with the current fantasy
          draft market.</p></a>
+    <a class="fdcard" href="/college-fantasy-football/projections/">
+      <h3>College projections</h3>
+      <p>Full season rankings and projected stat lines for 2,351
+         players across 68 teams, using Yahoo scoring.</p></a>
     <a class="fdcard" href="/nfl/durability/">
       <h3>Durability &amp; availability</h3>
       <p>Games played, injured reserve, inactive weeks and availability
@@ -1810,8 +1814,8 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     <div class="fbrand">
       <span class="flogo">Lineup<em>Beat</em></span>
       <p class="ftag">The information that changes a fantasy decision:
-         local beat reporting from every NFL market, independent
-         projections, draft value, durability, schedule and coaching.</p>
+         local NFL beat reporting, plus independent NFL and college
+         fantasy projections and data.</p>
     </div>
 
     <div class="fteams">
@@ -3397,6 +3401,10 @@ function renderViews(){
    // its own nav item, which put two data pages at different levels of the
    // site for no reason a reader could see.
    ["Fantasy Data", "@/nfl/data/", ""],
+   // College is a real page like Fantasy Data, so it takes the @ form and
+   // renders as a link a crawler can follow. It points straight at the
+   // projections: one product does not need a hub in front of it.
+   ["College", "@/college-fantasy-football/projections/", ""],
    ["The Medical Tent", "medical", medCount],
    // Last, because it is the item somebody reaches for after the product
    // rather than instead of it.

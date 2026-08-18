@@ -147,8 +147,16 @@ jobs:
           # read twice rather than two that happen to agree today.
           python scripts/build_draft_value.py || true
 
+          # College projections, from the frozen release under
+          # data/college. Deliberately without `|| true`: the builder
+          # verifies the release manifest against a pinned SHA, and
+          # swallowing that failure would publish a release nobody
+          # reviewed, which is the one thing the gate exists to stop.
+          python scripts/build_college_projections.py
+
           # Again, so the projection chips read the board that
-          # was just rebuilt.
+          # was just rebuilt. Last, so the sitemap it writes includes
+          # the college URLs added above.
           python scripts/build_pages.py --base https://lineupbeat.com
 
 

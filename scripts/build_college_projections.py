@@ -324,22 +324,9 @@ for pos in [None] + POSITIONS:
     written.append((str((d / "index.html").relative_to(SITE)),
                     (d / "index.html").stat().st_size))
 
-sm = SITE / "sitemap.xml"
-if sm.exists():
-    text = sm.read_text()
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    added = 0
-    for pos in [None] + POSITIONS:
-        u = "https://lineupbeat.com" + (BASE if pos is None
-                                        else f"{BASE}{pos.lower()}/")
-        if u not in text:
-            text = text.replace("</urlset>",
-                                f"  <url><loc>{u}</loc><lastmod>{today}"
-                                f"</lastmod><changefreq>weekly</changefreq>"
-                                f"<priority>0.8</priority></url>\n</urlset>")
-            added += 1
-    sm.write_text(text)
-    print(f"  sitemap: {added} URLs added")
+# The sitemap is written from scratch by build_pages.py, which runs
+# last. Appending here would be silently discarded, so the college
+# URLs are declared there instead.
 
 print(f"\n  PAGES\n")
 for path, size in written:
