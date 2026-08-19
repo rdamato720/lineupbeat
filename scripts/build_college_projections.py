@@ -418,7 +418,7 @@ def page(pos):
 <link rel="canonical" href="{canon}">
 {seo.social_meta(title + " | LineupBeat", desc, canon)}
 <script type="application/ld+json">{crumb_schema}</script>\n{f'<script type="application/ld+json">{dataset}</script>' if dataset else ''}
-<style>{css}{seo.CRUMB_CSS}{seo.SCROLLTABLE_CSS}{CSS}</style>
+<style>{css}{seo.CRUMB_CSS}{seo.UI_CSS}{seo.SCROLLTABLE_CSS}{CSS}</style>
 </head><body>
 {header}
 <main class="cwrap">

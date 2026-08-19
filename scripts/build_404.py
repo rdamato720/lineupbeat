@@ -17,7 +17,7 @@ html = f"""<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Page not found | LineupBeat</title>
 <meta name="robots" content="noindex, follow">
-<style>{css}
+<style>{css}{seo.UI_CSS}
 .nf{{max-width:44rem;margin:0 auto;padding:4rem 1rem 6rem;text-align:center}}
 .nf h1{{font-size:2.1rem;margin:0 0 .6rem}}
 .nf p{{color:var(--quiet);font-size:.95rem;line-height:1.6;margin:0 auto 1.6rem;

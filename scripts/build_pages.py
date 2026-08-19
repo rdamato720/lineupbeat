@@ -252,9 +252,12 @@ PAGE_CSS = """
 .shot{width:104px;height:104px;border-radius:50%;object-fit:cover;
   background:rgba(0,0,0,.35);flex:none;
   border:2px solid rgba(255,255,255,.14)}
-.ppage h1{font-family:var(--agate,system-ui);text-transform:uppercase;
-  font-size:2.1rem;line-height:.98;margin:0 0 .45rem;letter-spacing:.01em;
-  font-weight:600}
+/* The face, size and weight come from seo.UI_CSS, which every page reads,
+   so a heading here looks like a heading anywhere else. This rule kept
+   only its spacing: it outranked the shared one -- .ppage h1 against .dh1
+   -- and PAGE_CSS is injected after it, so the durability page was the
+   last one still leading in the condensed face. */
+.ppage h1{margin:0 0 .45rem}
 /* inline-flex on the text, not the row: a flex container with a wrapping
    label left the team mark stranded on its own line at phone width. */
 .who{color:rgba(255,255,255,.82);font:.78rem/1.45 var(--agate,system-ui),sans-serif;
@@ -453,7 +456,7 @@ def _render(page, accent, c2="#C6F24E", section=None):
     # override rather than lose to source order. Player, team and about
     # pages all emit <nav class="crumbs">, and without this they carry the
     # markup with none of the styling.
-    css = ("<style>" + (APP_CSS or "") + seo.CRUMB_CSS + seo.SCROLLTABLE_CSS
+    css = ("<style>" + (APP_CSS or "") + seo.CRUMB_CSS + seo.UI_CSS + seo.SCROLLTABLE_CSS
            + PAGE_CSS.replace("__ACCENT__", accent).replace("__C2__", c2)
            + "</style>")
     return (page
@@ -2479,6 +2482,14 @@ def durability_page(conn, base):
   .dstat{gap:1.4rem}
   .dstat b{font-size:1.5rem}
 }
+/* The heading follows seo.UI_CSS like every other page's. It is declared
+   twice above in the duplicated block, both times in the condensed face,
+   and the later copy beat the shared rule -- this page was the only one
+   still leading in Barlow rather than the serif. */
+.dh1{font-family:var(--text); font-weight:400; letter-spacing:-.028em;
+  line-height:1.04; color:var(--ink); text-transform:none;
+  font-size:clamp(30px, 3.4vw, 44px)}
+
 /* ---- added last, deliberately ----
    The block above appears twice in this string: an older flat-panel
    version of the methodology cards and a newer gradient one, both live,

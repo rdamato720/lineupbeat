@@ -665,6 +665,73 @@ def site_nav(active=None, sport="nfl", search=""):
     )
 
 
+# ------------------------------------------------------------ one design
+#
+# The homepage was rebuilt to a supplied design and the eight data pages
+# were not, so the site read as two sites with the same logo. Measured at
+# 1366px before this existed:
+#
+#                      homepage              data pages
+#   heading            serif 61px / 400      serif 27px / 700, and
+#                                            Barlow 34px / 600 on durability
+#   control            8px corners,          999px pills, 12px,
+#                      Barlow 18px / 700     and serif on one page
+#   ink                #F2F1EC               #E4E7E2
+#   label grey         #9BA09C               #8C9691
+#
+# The colours are settled in the template's :root, which every builder
+# reads. This settles the other two, and it does it by naming the classes
+# the builders already carry rather than by rewriting eight sets of markup:
+# a restyle that needs eight coordinated edits is a restyle that half-ships.
+UI_CSS = """
+/* ---- controls ----
+   The homepage's button, applied to the filter and format rows on every
+   data page. They were 999px pills at 12px, which is a different product's
+   button; the homepage's is square-cornered, taller and set in agate. */
+.pbtab, .dvtab, .cotab, .sstab, .oltab, .posnav, .cmore{
+  font-family:var(--agate); text-transform:uppercase;
+  font-size:.95rem; font-weight:700; letter-spacing:.045em;
+  border-radius:8px; padding:.55rem 1.05rem;
+  border:1px solid rgba(255,255,255,.30); background:transparent;
+  color:var(--ink); cursor:pointer; text-decoration:none;
+  display:inline-flex; align-items:center; justify-content:center;
+  transition:transform .18s ease, background .18s ease, border-color .18s ease}
+.pbtab:hover, .dvtab:hover, .cotab:hover, .sstab:hover, .oltab:hover,
+.posnav:hover, .cmore:hover{
+  border-color:var(--signal); color:var(--ink); transform:translateY(-2px);
+  text-decoration:none}
+/* The pressed state is the primary button: lime, dark type. */
+.pbtab[aria-pressed="true"], .dvtab[aria-pressed="true"],
+.cotab[aria-pressed="true"], .sstab[aria-pressed="true"],
+.oltab[aria-pressed="true"]{
+  background:var(--signal); border-color:var(--signal); color:#060806}
+.pbtab[aria-pressed="true"]:hover, .dvtab[aria-pressed="true"]:hover,
+.cotab[aria-pressed="true"]:hover, .sstab[aria-pressed="true"]:hover,
+.oltab[aria-pressed="true"]:hover{background:#d4ff4b; border-color:#d4ff4b}
+
+/* ---- headings ----
+   The homepage's h1 is the serif at 400 with tight tracking. The data
+   pages set the same face at 700, which at their size reads as a
+   different typeface rather than a smaller one. Same treatment, scaled
+   for a page that leads with a table rather than a proposition. */
+.pbwrap h1, .dvwrap h1, .sswrap h1, .cowrap h1, .olwrap h1, .cwrap h1, .chwrap h1, .nf h1,
+.ppage h1, .dh1{
+  font-family:var(--text); font-weight:400; letter-spacing:-.028em;
+  line-height:1.04; color:var(--ink); text-transform:none;
+  font-size:clamp(30px, 3.4vw, 44px)}
+/* The eyebrow above it, lime agate, as on the homepage. */
+.pbsublab, .cposh + .ccount, .lb-data-hook, .dhook{
+  font-family:var(--agate); font-weight:700; letter-spacing:.045em;
+  text-transform:uppercase; color:var(--signal)}
+
+@media (max-width:760px){
+  /* The controls stay tappable and stop eating the row. */
+  .pbtab, .dvtab, .cotab, .sstab, .oltab, .posnav, .cmore{
+    min-height:44px; font-size:.9rem; padding:.5rem .85rem}
+}
+"""
+
+
 # ------------------------------------------------- projection stat columns
 #
 # Which stats each position shows, and in what order. One definition for

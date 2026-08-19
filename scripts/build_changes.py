@@ -517,7 +517,7 @@ def main():
 <meta property="og:type" content="website">
 <script type="application/ld+json">{seo.graph(
     schema, crumbs, seo.faq_schema(CHANGES_FAQ), seo.ORGANISATION)}</script>
-<style>{css}{PAGE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.UI_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}

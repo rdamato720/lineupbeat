@@ -1068,7 +1068,7 @@ def main():
 {seo.social_meta(title, desc, f"{seo.SITE_URL}/{SPORT}/offensive-line-rb-performance/")}
 <script type="application/ld+json">{seo.graph(
     schema, crumbs, seo.faq_schema(OL_FAQ), seo.ORGANISATION)}</script>
-<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.SCROLLTABLE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.UI_CSS}{seo.SCROLLTABLE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}</style>
 </head>
 <body>
 {header}

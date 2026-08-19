@@ -530,10 +530,11 @@ PAGE_CSS = """
   .boardnotes .posnav{min-height:44px; display:inline-flex;
     align-items:center}
 }
-.pbtab{font-family:var(--agate); text-transform:uppercase;
-       background:transparent; border:1px solid var(--rule); color:var(--quiet);
-       font:inherit; font-size:.8rem; padding:.34rem .8rem; border-radius:999px;
-       cursor:pointer; letter-spacing:.02em}
+/* `font:inherit` sat after `font-family` here and reset it, so these were
+   the only filter pills on the site set in the serif rather than the
+   agate. The shorthand is gone; seo.UI_CSS owns the rest. */
+.pbtab{background:transparent; border:1px solid var(--rule);
+       color:var(--quiet); cursor:pointer}
 .pbtab:hover{color:var(--ink); border-color:var(--ink)}
 .pbtab[aria-pressed="true"]{background:var(--signal); border-color:var(--signal);
        color:#0b0f0a; font-weight:600}
@@ -902,7 +903,7 @@ draw();
 <link rel="canonical" href="https://lineupbeat.com/{SPORT}/projections/">
 {seo.social_meta(title, desc, f"https://lineupbeat.com/{SPORT}/projections/")}
 <script type="application/ld+json">{ldjson}</script>
-<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.SCROLLTABLE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.UI_CSS}{seo.SCROLLTABLE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}
@@ -1089,7 +1090,7 @@ def write_position_pages(board, links, css, header, footer, season,
 {seo.social_meta(title, desc, f"{seo.SITE_URL}/{SPORT}/projections/{pos.lower()}/")}
 <script type="application/ld+json">{seo.graph(
     schema, crumbs, seo.faq_schema(faq), seo.ORGANISATION, itemlist)}</script>
-<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.SCROLLTABLE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}{POS_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.UI_CSS}{seo.SCROLLTABLE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}{POS_CSS}</style>
 </head>
 <body>
 {header}
@@ -1118,11 +1119,8 @@ POS_CSS = """
 .pbsublab{font-family:var(--agate); text-transform:uppercase;
   letter-spacing:.07em; font-size:.66rem; color:var(--quiet);
   margin-right:.3rem}
-.posnav{font-family:var(--agate); text-transform:uppercase;
-  letter-spacing:.04em; font-size:.74rem; color:var(--quiet);
-  border:1px solid var(--rule); border-radius:999px; padding:.3rem .7rem;
-  text-decoration:none}
-.posnav:hover{color:var(--signal); border-color:var(--signal)}
+/* .posnav is styled once, in seo.UI_CSS. This was a second copy that
+   came after it in the cascade and quietly won. */
 @media (max-width:760px){
   .posnav{min-height:44px; display:inline-flex; align-items:center}
 }

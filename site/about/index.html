@@ -80,9 +80,16 @@
      contrast is right for a ticker, one notch below it is right for reading. */
   --paper:#08090B;
   --card:#111417;
-  --ink:#E4E7E2;      /* "ink" is now the light foreground */
+  /* The homepage was built to a supplied design and brought its own
+     greys with it: five near-identical off-whites and six mid-greys,
+     hardcoded, against the two tokens the rest of the site reads. Two
+     palettes for one site. The homepage's values win -- it is the
+     reference -- and the near-duplicates collapse into these three.
+     Every other page reads them from here, so they follow automatically. */
+  --ink:#F2F1EC;      /* "ink" is now the light foreground */
   --rule:#242A2E;
-  --quiet:#8C9691;
+  --muted:#B5BAB5;    /* body copy and ledes, a step down from ink */
+  --quiet:#9BA09C;    /* labels, captions, agate */
   --signal:#C6F53C;   /* lime: live, top tier, active state */
   --alert:#FF6B4A;    /* warm coral: expiry only */
   --standing:#7FD4E8; /* ice: middle tier */
@@ -1512,7 +1519,7 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 .lb-hero{position:relative; overflow:hidden; min-height:790px;
   background:radial-gradient(circle at 37% 37%, rgba(35,43,45,.33) 0%,
     rgba(12,15,16,.16) 32%, rgba(5,7,8,0) 55%), #050708;
-  color:#f1f1ed}
+  color:var(--ink)}
 .lb-hero::before{content:""; position:absolute; inset:0;
   background-image:linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
@@ -1525,15 +1532,15 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   padding-top:40px; padding-bottom:140px}
 .lb-hero-copy{position:relative; z-index:6}
 .lb-eyebrow{margin-bottom:23px; font-family:var(--agate); font-size:20px;
-  font-weight:700; color:#c6f53c; letter-spacing:.045em;
+  font-weight:700; color:var(--signal); letter-spacing:.045em;
   text-transform:uppercase}
 .lb-eyebrow span{padding:0 6px}
 .lb-hero-title{margin:0; max-width:650px; font-family:var(--text);
   font-size:clamp(56px, 4.5vw, 72px); font-weight:400; line-height:.99;
-  letter-spacing:-.033em; color:#f2f1ec}
-.lb-hero-title span{color:#c6f53c}
+  letter-spacing:-.033em; color:var(--ink)}
+.lb-hero-title span{color:var(--signal)}
 .lb-hero-description{max-width:590px; margin:33px 0 0; font-family:var(--text);
-  font-size:19px; line-height:1.7; color:#b5bab5}
+  font-size:19px; line-height:1.7; color:var(--muted)}
 .lb-hero-actions{display:flex; align-items:center; gap:18px; margin-top:35px}
 .lb-btn{height:72px; display:inline-flex; align-items:center;
   justify-content:center; box-sizing:border-box; border-radius:8px;
@@ -1542,13 +1549,13 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   transition:transform .18s ease, background .18s ease, border-color .18s ease}
 .lb-btn:hover{transform:translateY(-2px)}
 .lb-btn-primary{min-width:282px; padding:0 28px 0 42px;
-  justify-content:space-between; background:#c6f53c; color:#060806}
+  justify-content:space-between; background:var(--signal); color:#060806}
 .lb-btn-primary:hover{background:#d4ff4b}
 .lb-btn-primary svg, .lb-wire-footer svg{width:25px; height:25px; fill:none;
   stroke:currentColor; stroke-width:1.7}
 .lb-btn-secondary{min-width:240px; padding:0 32px;
-  border:1px solid rgba(255,255,255,.30); color:#f0f1ec}
-.lb-btn-secondary:hover{border-color:#c6f53c}
+  border:1px solid rgba(255,255,255,.30); color:var(--ink)}
+.lb-btn-secondary:hover{border-color:var(--signal)}
 .lb-proof-row{display:grid; grid-template-columns:1fr 1fr 1.18fr;
   margin-top:47px}
 .lb-proof{min-height:75px; display:flex; align-items:center; gap:15px;
@@ -1556,13 +1563,13 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 .lb-proof + .lb-proof{padding-left:27px;
   border-left:1px solid rgba(255,255,255,.18)}
 .lb-proof svg{width:42px; height:42px; flex-shrink:0; fill:none;
-  stroke:#c6f53c; stroke-width:1.8}
+  stroke:var(--signal); stroke-width:1.8}
 .lb-proof div{display:flex; flex-direction:column}
 .lb-proof strong{font-family:var(--agate); font-size:38px; font-weight:700;
-  line-height:.95; color:#f0f1ed}
+  line-height:.95; color:var(--ink)}
 .lb-proof strong.lb-updated{font-size:28px}
 .lb-proof span{margin-top:8px; font-family:var(--agate); font-size:12px;
-  font-weight:600; color:#9ba09c; letter-spacing:.085em;
+  font-weight:600; color:var(--quiet); letter-spacing:.085em;
   text-transform:uppercase}
 .lb-wire-card{position:relative; z-index:8; width:100%; max-width:475px;
   /* Fixed, not minimum. The panel rotates every four seconds and
@@ -1579,11 +1586,11 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 .lb-wire-header{height:67px; padding:0 24px; display:flex; align-items:center;
   justify-content:space-between; border-bottom:1px solid rgba(255,255,255,.13);
   font-family:var(--agate); letter-spacing:.05em; text-transform:uppercase}
-.lb-wire-live{display:flex; align-items:center; gap:12px; color:#c6f53c;
+.lb-wire-live{display:flex; align-items:center; gap:12px; color:var(--signal);
   font-size:18px; font-weight:700}
-.lb-live-dot{width:11px; height:11px; border-radius:50%; background:#c6f53c;
+.lb-live-dot{width:11px; height:11px; border-radius:50%; background:var(--signal);
   box-shadow:0 0 14px rgba(198,245,60,.35)}
-.lb-wire-time{color:#a5aaa6; font-size:13px; font-weight:600}
+.lb-wire-time{color:var(--quiet); font-size:13px; font-weight:600}
 .lb-wire-feed{position:relative; padding:0 23px; flex:1;
   min-height:0; overflow:hidden}
 .lb-wire-feed::before{content:""; position:absolute; top:69px; bottom:72px;
@@ -1597,11 +1604,11 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 .lb-player-avatar{position:relative; z-index:2; width:54px; height:54px;
   display:flex; align-items:center; justify-content:center; border-radius:50%;
   background:#1a1f20; border:1px solid rgba(255,255,255,.15);
-  font-family:var(--agate); font-size:16px; font-weight:700; color:#c6f53c;
+  font-family:var(--agate); font-size:16px; font-weight:700; color:var(--signal);
   overflow:hidden}
 .lb-player-avatar img{width:100%; height:100%; object-fit:contain}
 .lb-wire-marker::after{content:""; position:absolute; z-index:3; left:49px;
-  top:78px; width:9px; height:9px; border-radius:50%; background:#c6f53c}
+  top:78px; width:9px; height:9px; border-radius:50%; background:var(--signal)}
 .lb-wire-content{min-width:0}
 .lb-wire-player-row{display:flex; align-items:center;
   justify-content:space-between; gap:12px}
@@ -1609,15 +1616,15 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 .lb-wire-player-row strong{font-family:var(--agate); font-size:21px;
   font-weight:700; letter-spacing:.015em}
 .lb-wire-player-row span{font-family:var(--agate); font-size:13px;
-  color:#a1a6a2}
+  color:var(--quiet)}
 .lb-wire-player-row time{flex-shrink:0; font-family:var(--agate);
-  font-size:15px; color:#c6f53c}
+  font-size:15px; color:var(--signal)}
 .lb-wire-content p{margin:8px 0 15px; font-family:var(--text); font-size:17px;
-  line-height:1.38; color:#e7e8e4}
-.lb-wire-source{font-family:var(--agate); font-size:15px; color:#a8ada8}
+  line-height:1.38; color:var(--ink)}
+.lb-wire-source{font-family:var(--agate); font-size:15px; color:var(--quiet)}
 .lb-wire-source span{padding:0 5px}
 .lb-wire-footer{min-height:66px; padding:0 30px 0 91px; display:flex;
-  align-items:center; justify-content:space-between; color:#c6f53c;
+  align-items:center; justify-content:space-between; color:var(--signal);
   font-family:var(--agate); font-size:17px; font-weight:700;
   letter-spacing:.05em; text-decoration:none; text-transform:uppercase}
 .lb-wire-footer:hover{background:rgba(198,245,60,.035)}
@@ -1635,7 +1642,7 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 .lb-mini-panel{position:absolute; width:185px; padding:13px;
   box-sizing:border-box; border:1px solid rgba(255,255,255,.16);
   border-radius:5px; background:rgba(13,17,18,.52); font-family:var(--agate);
-  color:#a9ada9}
+  color:var(--quiet)}
 .lb-mini-title{margin-bottom:11px; font-size:12px; letter-spacing:.06em;
   text-transform:uppercase}
 .lb-edge-left .lb-mini-panel:nth-child(1){top:10px; left:12px}
@@ -1651,7 +1658,7 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 .lb-target-panel{height:165px}
 .lb-donut{position:relative; width:92px; height:92px; margin:8px auto;
   display:flex; align-items:center; justify-content:center; border-radius:50%;
-  background:conic-gradient(#c6f53c 0 28%, rgba(255,255,255,.06) 28% 100%)}
+  background:conic-gradient(var(--signal) 0 28%, rgba(255,255,255,.06) 28% 100%)}
 .lb-donut::after{content:""; position:absolute; width:63px; height:63px;
   border-radius:50%; background:#0c1011}
 .lb-donut span{position:relative; z-index:2; font-size:22px}
@@ -1659,16 +1666,16 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   align-items:center; padding:6px 0}
 .lb-bar-row i{position:relative; height:5px; background:rgba(255,255,255,.05)}
 .lb-bar-row i::after{content:""; position:absolute; left:0; top:0;
-  width:var(--bar); height:100%; background:#c6f53c}
+  width:var(--bar); height:100%; background:var(--signal)}
 .lb-bar-row span{font-size:12px}
 .lb-status-row{display:flex; align-items:center; gap:11px; padding:4px 0;
   font-size:12px}
-.lb-status-row .q, .lb-status-row .d{color:#c6f53c}
+.lb-status-row .q, .lb-status-row .d{color:var(--signal)}
 .lb-status-row .out{color:#ef5c45}
 /* ---- playbook ---- */
 .lb-playbook{position:absolute; width:230px; height:160px; left:8px;
   bottom:25px}
-.lb-playbook span{position:absolute; font-size:27px; color:#c6f53c}
+.lb-playbook span{position:absolute; font-size:27px; color:var(--signal)}
 .lb-playbook .x1{left:50px; top:18px}
 .lb-playbook .x2{left:108px; top:34px}
 .lb-playbook .x3{left:161px; top:10px}
@@ -1676,7 +1683,7 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 .lb-playbook .o2{left:95px; top:98px}
 .lb-playbook .o3{left:157px; top:84px}
 .lb-playbook svg{position:absolute; inset:0; width:100%; height:100%}
-.lb-playbook path{fill:none; stroke:#c6f53c; stroke-width:1.2;
+.lb-playbook path{fill:none; stroke:var(--signal); stroke-width:1.2;
   stroke-dasharray:5 6}
 /* ---- tablet ---- */
 @media (max-width:1180px){
@@ -1690,7 +1697,14 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   .lb-edge{display:none}
   .lb-hero-inner{width:min(100% - 40px, 760px); grid-template-columns:1fr;
     gap:55px; padding-top:75px; padding-bottom:75px}
-  .lb-wire-card{justify-self:stretch; max-width:none}
+  /* The card goes for the whole stacked range, not only on phones.
+     It exists to sit beside the copy. Once the layout is one column it is
+     below the copy instead, where it duplicates the three reports that
+     follow it -- and it took the hero to 1311px at 768, which is a screen
+     and a half of pitch before the first piece of news on a tablet held
+     upright. It was already hidden under 650 for exactly this reason;
+     the reason does not stop at 650. */
+  .lb-wire-card{display:none}
   .lb-hero-title{max-width:700px}
   .lb-hero-description{max-width:650px}
 }
@@ -1721,7 +1735,6 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     z-index:1; pointer-events:none; opacity:.3;
     width:170px; height:118px; transform:scaleX(-1);
     background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyNTAnIGhlaWdodD0nMTIwJyBmaWxsPSdub25lJyBzdHJva2U9JyNjNmY1M2MnIHN0cm9rZS13aWR0aD0nMS4yJyBzdHJva2UtZGFzaGFycmF5PSc1IDYnPjxwYXRoIGQ9J000MCA4NSBDNzUgMzUsIDEwNSAzNSwgMTM4IDUyJy8+PHBhdGggZD0nTTkwIDk4IEMxMjAgNjAsIDE2NSA2NywgMjA1IDI1Jy8+PGcgc3Ryb2tlLWRhc2hhcnJheT0nMCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtc2l6ZT0nMjQnIGZpbGw9JyNjNmY1M2MnIHN0cm9rZT0nbm9uZSc+PHRleHQgeD0nNDQnIHk9JzM0Jz4mIzIxNTs8L3RleHQ+PHRleHQgeD0nMTAyJyB5PSc1MCc+JiMyMTU7PC90ZXh0Pjx0ZXh0IHg9JzE1NScgeT0nMjYnPiYjMjE1OzwvdGV4dD48dGV4dCB4PScyNCcgeT0nMTA3Jz4mIzk2NzU7PC90ZXh0Pjx0ZXh0IHg9Jzg5JyB5PScxMTQnPiYjOTY3NTs8L3RleHQ+PHRleHQgeD0nMTUxJyB5PScxMDAnPiYjOTY3NTs8L3RleHQ+PC9nPjwvc3ZnPg==") no-repeat center / contain}
-  .lb-wire-card{display:none}
   /* The Fantasy Data block goes too: the nav carries it, and on a phone
      it sits between the reader and the reports. */
   .fdata{display:none}
@@ -1833,6 +1846,52 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
    scrollbar on a phone, and the reader blames the page, not the element. */
 html,body{max-width:100%;overflow-x:hidden}
 img,svg,video,table{max-width:100%}
+
+/* ---- controls ----
+   The homepage's button, applied to the filter and format rows on every
+   data page. They were 999px pills at 12px, which is a different product's
+   button; the homepage's is square-cornered, taller and set in agate. */
+.pbtab, .dvtab, .cotab, .sstab, .oltab, .posnav, .cmore{
+  font-family:var(--agate); text-transform:uppercase;
+  font-size:.95rem; font-weight:700; letter-spacing:.045em;
+  border-radius:8px; padding:.55rem 1.05rem;
+  border:1px solid rgba(255,255,255,.30); background:transparent;
+  color:var(--ink); cursor:pointer; text-decoration:none;
+  display:inline-flex; align-items:center; justify-content:center;
+  transition:transform .18s ease, background .18s ease, border-color .18s ease}
+.pbtab:hover, .dvtab:hover, .cotab:hover, .sstab:hover, .oltab:hover,
+.posnav:hover, .cmore:hover{
+  border-color:var(--signal); color:var(--ink); transform:translateY(-2px);
+  text-decoration:none}
+/* The pressed state is the primary button: lime, dark type. */
+.pbtab[aria-pressed="true"], .dvtab[aria-pressed="true"],
+.cotab[aria-pressed="true"], .sstab[aria-pressed="true"],
+.oltab[aria-pressed="true"]{
+  background:var(--signal); border-color:var(--signal); color:#060806}
+.pbtab[aria-pressed="true"]:hover, .dvtab[aria-pressed="true"]:hover,
+.cotab[aria-pressed="true"]:hover, .sstab[aria-pressed="true"]:hover,
+.oltab[aria-pressed="true"]:hover{background:#d4ff4b; border-color:#d4ff4b}
+
+/* ---- headings ----
+   The homepage's h1 is the serif at 400 with tight tracking. The data
+   pages set the same face at 700, which at their size reads as a
+   different typeface rather than a smaller one. Same treatment, scaled
+   for a page that leads with a table rather than a proposition. */
+.pbwrap h1, .dvwrap h1, .sswrap h1, .cowrap h1, .olwrap h1, .cwrap h1,
+.ppage h1, .dh1{
+  font-family:var(--text); font-weight:400; letter-spacing:-.028em;
+  line-height:1.04; color:var(--ink); text-transform:none;
+  font-size:clamp(30px, 3.4vw, 44px)}
+/* The eyebrow above it, lime agate, as on the homepage. */
+.pbsublab, .cposh + .ccount, .lb-data-hook, .dhook{
+  font-family:var(--agate); font-weight:700; letter-spacing:.045em;
+  text-transform:uppercase; color:var(--signal)}
+
+@media (max-width:760px){
+  /* The controls stay tappable and stop eating the row. */
+  .pbtab, .dvtab, .cotab, .sstab, .oltab, .posnav, .cmore{
+    min-height:44px; font-size:.9rem; padding:.5rem .85rem}
+}
 
 /* The box that scrolls. tabindex makes it reachable by keyboard, and
    focus-visible says so, because a scroll region a mouse can reach and a
@@ -1948,9 +2007,12 @@ img,svg,video,table{max-width:100%}
 .shot{width:104px;height:104px;border-radius:50%;object-fit:cover;
   background:rgba(0,0,0,.35);flex:none;
   border:2px solid rgba(255,255,255,.14)}
-.ppage h1{font-family:var(--agate,system-ui);text-transform:uppercase;
-  font-size:2.1rem;line-height:.98;margin:0 0 .45rem;letter-spacing:.01em;
-  font-weight:600}
+/* The face, size and weight come from seo.UI_CSS, which every page reads,
+   so a heading here looks like a heading anywhere else. This rule kept
+   only its spacing: it outranked the shared one -- .ppage h1 against .dh1
+   -- and PAGE_CSS is injected after it, so the durability page was the
+   last one still leading in the condensed face. */
+.ppage h1{margin:0 0 .45rem}
 /* inline-flex on the text, not the row: a flex container with a wrapping
    label left the team mark stranded on its own line at phone width. */
 .who{color:rgba(255,255,255,.82);font:.78rem/1.45 var(--agate,system-ui),sans-serif;

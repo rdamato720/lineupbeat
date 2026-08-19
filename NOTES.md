@@ -174,6 +174,31 @@ WR, TE   Rank, Player, Team, Points, Receptions, Receiving Yards,
 
 ---
 
+## One design system
+
+**The homepage is the reference.** It was rebuilt to a supplied design and
+the eight data pages were not, so the site read as two sites sharing a
+logo. Measured at 1366px before this was fixed:
+
+| | homepage | data pages |
+|---|---|---|
+| heading | serif 61px / 400 | serif 27px / 700, and Barlow 34px / 600 on durability |
+| control | 8px corners, Barlow 18px / 700 | 999px pills at 12px, and serif on one page |
+| ink | `#F2F1EC` | `#E4E7E2` |
+| label grey | `#9BA09C` | `#8C9691` |
+
+Colours are settled in the template's `:root`, which every builder reads,
+so the homepage's palette reaches every page automatically. `--muted` was
+added for the lede grey the homepage used and the token set had no name
+for. Headings and controls are settled in `seo.UI_CSS`, which names the
+classes the builders already carry rather than requiring eight coordinated
+markup edits.
+
+**Anything new that a reader can see goes in `seo.UI_CSS`.** A page-local
+heading or button rule is how this happened the first time.
+
+---
+
 ## Open items
 
 **CI passes almost nothing through the prefilter.** Local runs get ~200 new
