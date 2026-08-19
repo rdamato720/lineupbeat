@@ -383,6 +383,24 @@ PAGE_CSS = """
 
 .chips{justify-content:center}
 }
+
+/* ---- added last, deliberately ----
+   The .proj chip rules appear twice above, an earlier version and a later
+   one, with the second silently overriding the first. Anything new goes at
+   the bottom rather than into whichever copy turns up first in a search.
+   Same shape of problem as the durability stylesheet; both are recorded in
+   NOTES.md.
+
+   Team page cards, two across on a phone.
+   The grid asks for 13rem a card, which at 390px fits exactly one, so a
+   thirteen-player team was nine hundred pixels of scrolling to read
+   thirteen names and thirteen counts. A card holds a name and a number;
+   it does not need two hundred pixels to do it. Desktop keeps 13rem. */
+@media (max-width:760px){
+  .grid{grid-template-columns:repeat(auto-fill, minmax(10.5rem, 1fr));
+    gap:.45rem}
+  .grid a{padding:.7rem .75rem}
+}
 """
 
 PAGE_FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">')
@@ -516,19 +534,11 @@ def load_projections():
 
 
 # Which stats to show, and what to call them, per position.
-STAT_LABELS = {
-    "QB": [("patt", "Att"), ("cmp", "Cmp"), ("payd", "Pass yds"),
-           ("patd", "Pass TD"), ("int", "INT"), ("ruatt", "Car"),
-           ("ruyd", "Rush yds"), ("rutd", "Rush TD")],
-    "RB": [("ruatt", "Car"), ("ruyd", "Rush yds"), ("rutd", "Rush TD"),
-           ("targets", "Tgt"), ("rec", "Rec"), ("recyd", "Rec yds"),
-           ("rectd", "Rec TD")],
-    "WR": [("targets", "Tgt"), ("rec", "Rec"), ("recyd", "Rec yds"),
-           ("rectd", "Rec TD"), ("ruatt", "Car"), ("ruyd", "Rush yds")],
-    "TE": [("targets", "Tgt"), ("rec", "Rec"), ("recyd", "Rec yds"),
-           ("rectd", "Rec TD")],
-}
-WHOLE = {"payd", "recyd", "ruyd", "patt", "ruatt", "targets"}
+# The chip on a player page shows the same stats, in the same order, as the
+# board that produced them. NOTES.md says they cannot disagree; they did,
+# so the list now has one home.
+STAT_LABELS = seo.STAT_COLUMNS
+WHOLE = seo.WHOLE_STATS
 
 
 def projection_block(name, pos):

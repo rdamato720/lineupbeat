@@ -68,37 +68,12 @@ SITE = ROOT / "site"
 SPORT = "nfl"
 POSITIONS = ["QB", "RB", "WR", "TE"]
 
-# Stat columns per position, in reading order.
-#
-# One definition. The board and the four position pages each had their own
-# copy of this dict, identical, so a column added to one appeared on five
-# pages or on one depending on which copy somebody found.
-#
-# The order is a reading order rather than a stat sheet's. Points is
-# emitted before this list -- immediately after Team -- because the number
-# a ranking is built on should not be four swipes right of the ranking.
-# Then what the position is paid for, then what explains it, then the
-# accounting. A quarterback's rushing sits ahead of his attempts and
-# completions because two rushing touchdowns move a projection further
-# than a completion count does, and the same reasoning is why receivers
-# and tight ends carry rushing columns at all: hybrid usage is often the
-# whole reason a player ranks where he does, and it used to be the first
-# thing hidden on a phone.
-#
-# Targets came out. It sat beside receptions saying nearly the same thing,
-# and on a 390px screen a column has to earn its width against the one
-# next to it.
-STAT_COLUMNS = {
-    "QB": [("payd", "PASS YDS"), ("patd", "PASS TD"),
-           ("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD"),
-           ("patt", "ATT"), ("cmp", "CMP"), ("int", "INT")],
-    "RB": [("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD"),
-           ("rec", "REC"), ("recyd", "REC YDS"), ("rectd", "REC TD")],
-    "WR": [("rec", "REC"), ("recyd", "REC YDS"), ("rectd", "REC TD"),
-           ("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD")],
-    "TE": [("rec", "REC"), ("recyd", "REC YDS"), ("rectd", "REC TD"),
-           ("ruatt", "CAR"), ("ruyd", "RUSH YDS"), ("rutd", "RUSH TD")],
-}
+# Stat columns per position. One definition, in seo.py, because the chip on
+# seven hundred player pages reads the same list -- and did not, until it
+# was moved there: the board dropped targets and reordered, the chip kept
+# the old list, and a receiver's page showed a Targets figure the board no
+# longer carried.
+STAT_COLUMNS = seo.STAT_COLUMNS
 
 
 def esc(s):

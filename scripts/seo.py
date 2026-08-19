@@ -665,6 +665,40 @@ def site_nav(active=None, sport="nfl", search=""):
     )
 
 
+# ------------------------------------------------- projection stat columns
+#
+# Which stats each position shows, and in what order. One definition for
+# the board, the four position pages and the chip on seven hundred player
+# pages.
+#
+# NOTES.md: "The projections page and the player-page chips read the same
+# board, so they cannot disagree." They did. The board was reordered to put
+# points first and drop targets, and the chip kept the old list -- so a
+# receiver's page showed a Targets figure the board no longer carried, and
+# a tight end's page showed no rushing where the board showed three
+# columns of it.
+#
+# The order is a reading order: what the position is paid for, then what
+# explains it, then the accounting. Points is emitted ahead of this list by
+# whatever is rendering it. Labels are title case here and uppercased by
+# CSS on both surfaces.
+STAT_COLUMNS = {
+    "QB": [("payd", "Pass yds"), ("patd", "Pass TD"),
+           ("ruatt", "Car"), ("ruyd", "Rush yds"), ("rutd", "Rush TD"),
+           ("patt", "Att"), ("cmp", "Cmp"), ("int", "INT")],
+    "RB": [("ruatt", "Car"), ("ruyd", "Rush yds"), ("rutd", "Rush TD"),
+           ("rec", "Rec"), ("recyd", "Rec yds"), ("rectd", "Rec TD")],
+    "WR": [("rec", "Rec"), ("recyd", "Rec yds"), ("rectd", "Rec TD"),
+           ("ruatt", "Car"), ("ruyd", "Rush yds"), ("rutd", "Rush TD")],
+    "TE": [("rec", "Rec"), ("recyd", "Rec yds"), ("rectd", "Rec TD"),
+           ("ruatt", "Car"), ("ruyd", "Rush yds"), ("rutd", "Rush TD")],
+}
+
+# Stats that are whole numbers. Receptions and touchdowns are not: a
+# projection is an average over seasons that did not happen.
+WHOLE_STATS = {"payd", "recyd", "ruyd", "patt", "ruatt", "targets"}
+
+
 # ------------------------------------------------------- wide data tables
 #
 # A projection board is ten to twelve columns. On a 390px phone that is

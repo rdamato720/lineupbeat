@@ -2079,6 +2079,24 @@ img,svg,video,table{max-width:100%}
 
 .chips{justify-content:center}
 }
+
+/* ---- added last, deliberately ----
+   The .proj chip rules appear twice above, an earlier version and a later
+   one, with the second silently overriding the first. Anything new goes at
+   the bottom rather than into whichever copy turns up first in a search.
+   Same shape of problem as the durability stylesheet; both are recorded in
+   NOTES.md.
+
+   Team page cards, two across on a phone.
+   The grid asks for 13rem a card, which at 390px fits exactly one, so a
+   thirteen-player team was nine hundred pixels of scrolling to read
+   thirteen names and thirteen counts. A card holds a name and a number;
+   it does not need two hundred pixels to do it. Desktop keeps 13rem. */
+@media (max-width:760px){
+  .grid{grid-template-columns:repeat(auto-fill, minmax(10.5rem, 1fr));
+    gap:.45rem}
+  .grid a{padding:.7rem .75rem}
+}
 </style>
 </head>
 <body>

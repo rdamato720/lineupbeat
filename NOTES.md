@@ -140,7 +140,7 @@ is not shared from the beginning.
 | 2 | NFL and college projection tables | done |
 | 3 | Draft Value mobile cards | done |
 | 4 | Durability and other data tables | done |
-| 5 | Team and player pages | |
+| 5 | Team and player pages | done |
 | 6 | Homepage, Data hub and About | |
 
 ### Group 2 requirements
@@ -180,6 +180,11 @@ board's player links come out empty in production ("0 of 614 link to a
 player page") while working locally, because local runs already have the
 directories from a previous build. Move it after, then rebuild pages so the
 projection chips pick up the board.
+
+**PAGE_CSS in `build_pages.py` has the same problem** as the durability
+stylesheet below: the `.proj` chip rules appear twice, an earlier version
+and a later one, with the second overriding the first. New rules go at the
+bottom of the string until both are untangled.
 
 **The durability stylesheet exists twice** in one string in
 `build_pages.py`: an older flat-panel version of the methodology cards and
