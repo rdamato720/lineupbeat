@@ -1834,6 +1834,87 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 html,body{max-width:100%;overflow-x:hidden}
 img,svg,video,table{max-width:100%}
 
+/* The box that scrolls. tabindex makes it reachable by keyboard, and
+   focus-visible says so, because a scroll region a mouse can reach and a
+   keyboard cannot is not accessible. */
+.xtab{overflow-x:auto; -webkit-overflow-scrolling:touch;
+  overscroll-behavior-x:contain; max-width:100%}
+.xtab:focus-visible{outline:2px solid var(--signal); outline-offset:2px}
+/* The shading at the edges, and how a reader knows to swipe.
+   The two linear gradients are the paper-coloured caps, painted with
+   background-attachment:local so they scroll away once you are past the
+   end. The two radials stay put and read as a shadow under the edge the
+   content continues past. This is the same construction the durability
+   table has used since it shipped. */
+.xtab{background:
+    linear-gradient(90deg, var(--paper) 30%, transparent),
+    linear-gradient(90deg, transparent, var(--paper) 70%) 100% 0,
+    radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.55), transparent),
+    radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.55), transparent)
+      100% 0;
+  background-repeat:no-repeat;
+  background-size:38px 100%, 38px 100%, 15px 100%, 15px 100%;
+  background-attachment:local, local, scroll, scroll}
+
+/* A line of type telling somebody to swipe, shown only where swiping is
+   what they would do. It is not decoration: the shadow alone is missed by
+   plenty of people, and the columns to the right are the reason the
+   ranking is what it is. */
+.xhint{display:none; font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.08em; font-size:.68rem; color:var(--quiet);
+  margin:.1rem 0 .45rem}
+.xhint b{color:var(--signal); font-weight:600}
+
+/* Rank and player, pinned.
+   border-collapse:separate is required, not a preference: with collapse
+   the browser owns the borders and drops them from a sticky cell, so the
+   pinned columns lose their rules and float over the rows. The lines are
+   drawn as inset shadows on the cells instead, which stick with them. */
+.xtab table{border-collapse:separate; border-spacing:0; width:100%}
+.xtab th, .xtab td{box-shadow:inset 0 -1px 0 var(--rule)}
+/* th and td explicitly, never the bare class.
+   The schedule table names its <col> elements .c-rk too, and a <col> is
+   not positionable -- so a bare .c-rk selector would match it, apply
+   nothing, and leave the cells unpinned with no error anywhere. */
+.xtab th.c-rk, .xtab td.c-rk, .xtab th.c-nm, .xtab td.c-nm{
+  position:sticky; z-index:2; background:var(--paper)}
+.xtab thead th.c-rk, .xtab thead th.c-nm{z-index:3}
+.xtab th.c-rk, .xtab td.c-rk{left:0}
+/* Must equal the first column's width, or the two pinned columns overlap.
+   Both read the same custom property for that reason, and a table with a
+   wider first column -- an ADP figure rather than a rank -- overrides it
+   rather than redefining the rule. */
+.xtab{--rkw:2.4rem}
+.xtab th.c-nm, .xtab td.c-nm{left:var(--rkw)}
+.xtab th.c-rk, .xtab td.c-rk{width:var(--rkw); min-width:var(--rkw)}
+/* The pinned name column carries a rule down its right edge so the join
+   between what is pinned and what is moving is visible while it moves. */
+.xtab th.c-nm, .xtab td.c-nm{box-shadow:inset 0 -1px 0 var(--rule),
+  inset -1px 0 0 var(--rule)}
+.xtab tbody tr:hover td.c-rk, .xtab tbody tr:hover td.c-nm{
+  background:var(--card)}
+
+/* Numbers never wrap. A rushing total broken across two lines stops
+   being a number and starts being two. */
+.xtab td, .xtab th{white-space:nowrap}
+.xtab th.c-nm, .xtab td.c-nm{max-width:8.5rem; overflow:hidden; text-overflow:ellipsis}
+
+@media (max-width:900px){
+  .xhint{display:block}
+  /* 13px floor. Below that the numbers are unreadable at arm's length,
+     and shrinking type to fit more columns is the mistake the scroll
+     container exists to avoid. */
+  .xtab table{font-size:.85rem}
+  .xtab th{font-size:.72rem}
+  .xtab td, .xtab th{padding-left:.5rem; padding-right:.5rem}
+  /* Wide enough for "Trevor Lawrence" and "Amon-Ra St. Brown" to survive,
+     narrow enough that Points is still on screen before anybody swipes --
+     which is the column order's whole purpose. Longer names still clip;
+     the alternative is a name column that pushes the number it explains
+     off the edge. */
+  .xtab th.c-nm, .xtab td.c-nm{max-width:9rem}
+}
+
 /* Additions only. The app stylesheet does the heavy lifting; these are the
    few things a player page needs that the wire does not. */
 .ppage{padding-top:1rem;padding-bottom:3rem}

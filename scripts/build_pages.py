@@ -435,7 +435,7 @@ def _render(page, accent, c2="#C6F24E", section=None):
     # override rather than lose to source order. Player, team and about
     # pages all emit <nav class="crumbs">, and without this they carry the
     # markup with none of the styling.
-    css = ("<style>" + (APP_CSS or "") + seo.CRUMB_CSS
+    css = ("<style>" + (APP_CSS or "") + seo.CRUMB_CSS + seo.SCROLLTABLE_CSS
            + PAGE_CSS.replace("__ACCENT__", accent).replace("__C2__", c2)
            + "</style>")
     return (page
@@ -2169,8 +2169,8 @@ def durability_page(conn, base):
         if r["missed_avg"] is None:
             rows.append(
                 f'<tr class="r-none">'
-                f'<td class="adp dim">{r["adp"]:.1f}</td>'
-                f'<td class="nm">{plink(name_of(r["name"]))}</td>'
+                f'<td class="adp dim c-rk">{r["adp"]:.1f}</td>'
+                f'<td class="nm c-nm">{plink(name_of(r["name"]))}</td>'
                 f'<td class="dim">{esc(r["pos"])}</td>'
                 # Sits under Missed/yr, where a reader is already looking
                 # for the number. Spanning from ADP left it floating in the
@@ -2189,8 +2189,8 @@ def durability_page(conn, base):
         g = "&ndash;".join(str(x) for x in r["seasons"])
         rows.append(
             f'<tr class="r-{risk}">'
-            f'<td class="adp dim">{r["adp"]:.1f}</td>'
-            f'<td class="nm">{plink(name_of(r["name"]))}</td>'
+            f'<td class="adp dim c-rk">{r["adp"]:.1f}</td>'
+            f'<td class="nm c-nm">{plink(name_of(r["name"]))}</td>'
             f'<td class="dim">{esc(r["pos"])}</td>'
             f'<td class="n gpy">{r["missed_avg"]:.1f}</td>'
             f'<td class="bw">{dbar(r["missed_avg"])}</td>'
@@ -2257,9 +2257,12 @@ def durability_page(conn, base):
         'first</dd></div>\n'
         '  </dl>\n'
         '  <h2 class="dsub" id="board">Every drafted player, in ADP order</h2>\n'
-        '  <div class="dtabwrap">\n'
+        f'  {seo.scroll_hint("the full injury history")}\n'
+        '  <div class="dtabwrap xtab" tabindex="0" role="region" '
+        'aria-label="Durability board">\n'
         '  <table class="dtab">\n'
-        '    <thead><tr><th class="adp">ADP</th><th>Player</th><th>Pos</th>'
+        '    <thead><tr><th class="adp c-rk">ADP</th>'
+        '<th class="c-nm">Player</th><th>Pos</th>'
         '<th class="ar">Missed/yr</th><th>Availability</th><th class="ar">On IR</th>'
         '<th class="ar">Inactive</th><th class="ar">Susp</th><th>Games by season</th>'
         '</tr></thead>\n'
@@ -2366,17 +2369,6 @@ def durability_page(conn, base):
    table scrolls sideways inside its own box rather than off the page. The
    shadow on the right edge is the only thing telling a reader there is
    more; without it people simply do not know to swipe. */
-@media (max-width:760px){
-  .dtabwrap{overflow-x:auto; -webkit-overflow-scrolling:touch;
-    background:linear-gradient(90deg, var(--paper) 30%, transparent),
-      linear-gradient(90deg, transparent, var(--paper) 70%) 100% 0,
-      radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.5), transparent),
-      radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.5), transparent)
-      100% 0;
-    background-repeat:no-repeat; background-size:36px 100%,36px 100%,
-      14px 100%,14px 100%; background-attachment:local,local,scroll,scroll}
-  .dtab{min-width:38rem}
-}
 .dtab{width:100%;border-collapse:collapse}
 .dtab th{font-family:var(--agate);text-transform:uppercase;font-size:.58rem;
   letter-spacing:.1em;color:var(--quiet);text-align:left;font-weight:600;
@@ -2476,6 +2468,29 @@ def durability_page(conn, base):
   .bw{width:3.5rem}
   .dstat{gap:1.4rem}
   .dstat b{font-size:1.5rem}
+}
+/* ---- added last, deliberately ----
+   The block above appears twice in this string: an older flat-panel
+   version of the methodology cards and a newer gradient one, both live,
+   with the second silently overriding the first. Rules added anywhere but
+   the end lose to that second copy -- these did, and the 13px floor below
+   quietly did nothing until it was moved here.
+
+   Deduplicating the two is worth doing and is not this change: the copies
+   are not identical, and the first still supplies properties the second
+   never sets. Until then, new rules go at the bottom. */
+.dtabwrap{--rkw:3.9rem}
+.dtabwrap .dtab th, .dtabwrap .dtab td{border-bottom:0}
+@media (max-width:760px){
+  .dtab{min-width:38rem}
+}
+/* 13px floor, to 900 rather than 760: the table is still scrolling at
+   tablet widths, and that is exactly where the numbers were 12.5.
+   Each class carries its own size, so raising it on the table alone
+   changed nothing. */
+@media (max-width:900px){
+  .dtab{font-size:.85rem}
+  .dtab .adp, .dtab .n, .dtab .w, .dtab .nm{font-size:.82rem}
 }
 """
     # Four schemas, each doing a different job.

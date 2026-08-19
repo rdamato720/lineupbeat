@@ -139,7 +139,7 @@ is not shared from the beginning.
 | 1 | Mobile header and menu | done, `478161d` |
 | 2 | NFL and college projection tables | done |
 | 3 | Draft Value mobile cards | done |
-| 4 | Durability and other data tables | |
+| 4 | Durability and other data tables | done |
 | 5 | Team and player pages | |
 | 6 | Homepage, Data hub and About | |
 
@@ -180,6 +180,14 @@ board's player links come out empty in production ("0 of 614 link to a
 player page") while working locally, because local runs already have the
 directories from a previous build. Move it after, then rebuild pages so the
 projection chips pick up the board.
+
+**The durability stylesheet exists twice** in one string in
+`build_pages.py`: an older flat-panel version of the methodology cards and
+a newer gradient one, both live, the second silently overriding the first.
+Rules added anywhere but the end of that string lose to the second copy.
+The two are not identical and the first still supplies properties the
+second never sets, so deduplicating needs a careful look at `.dmgrid`
+rather than a delete.
 
 **Adjusted fantasy points allowed** is the next methodology upgrade for
 strength of schedule. Raw points allowed flatters defences that faced weak

@@ -298,7 +298,21 @@ PAGE_CSS = """
   color:var(--ink); font:inherit; font-size:.82rem; padding:.34rem .7rem;
   border-radius:6px; min-width:170px}
 
-.oltblwrap{overflow-x:auto}
+/* The scroll box, its shading and its hint come from
+   seo.SCROLLTABLE_CSS. This was a bare overflow-x:auto: it scrolled, and
+   nothing on the page said so, which on a 56rem table is most of the
+   columns hidden behind a gesture nobody knew to make.
+
+   Team is the pinned column on both tables here, and a team name is
+   wider than a rank. */
+.oltblwrap{--rkw:3.4rem}
+.oltblwrap .oltbl th, .oltblwrap .oltbl td{border-bottom:0}
+@media (max-width:900px){
+  /* 13px floor, and it has to name the classes: each of these sets its own
+     size, so raising it on the table alone changed nothing. */
+  .oltbl{font-size:.85rem}
+  .oltbl .olrk, .oltbl .oltm, .oltbl .oltier{font-size:.82rem}
+}
 .oltbl{width:100%; border-collapse:collapse; font-size:.86rem;
   font-variant-numeric:tabular-nums; margin-top:1rem; min-width:56rem}
 /* Every heading carries a title, so the cursor says so rather than
@@ -432,8 +446,8 @@ def rankings_html(ol):
         cells.append(
             f'<tr data-rank="{r.get("rank") or ""}" '
             f'data-rbwr="{pct if pct is not None else ""}">'
-            f'<td class="olv olrk">{rank_s}</td>'
-            f'<td class="l oltm">'
+            f'<td class="olv olrk c-rk">{rank_s}</td>'
+            f'<td class="l oltm c-nm">'
             f'<a href="/{SPORT}/team/{r["team"].lower()}/">'
             f'{esc(r["team"])}</a></td>'
             f'<td class="l olteam">{esc(TEAM_NAMES.get(r["team"], ""))}</td>'
@@ -457,12 +471,12 @@ def rankings_html(ol):
     <h2>2025 Run Blocking Rankings</h2>
     <p class="olsub">All 32 teams by Run Block Win Rate. Highest win rate
       ranks first.</p>
-    <div class="oltblwrap">
+    <div class="oltblwrap xtab" tabindex="0" role="region" aria-label="Line and back performance">
     <table class="oltbl olranktbl">
       <thead><tr>
-        <th class="olrk" title="Team ranking from 1 to 32 based on run block
+        <th class="olrk c-rk" title="Team ranking from 1 to 32 based on run block
 win rate. Highest win rate ranks first.">Rank</th>
-        <th class="l">Team</th>
+        <th class="l c-nm">Team</th>
         <th class="l"></th>
         <th title="Run Block Win Rate: the percentage of run blocking
 assignments won.">RBWR</th>
@@ -565,7 +579,7 @@ def row_html(r, ol_tiers, links, has_rbwr):
         f'data-stuff="{d(r.get("stuff"))}" '
         f'data-expl="{d(r.get("explosive"))}" '
         f'data-olrank="{d(r.get("ol_rank"))}">'
-        f'<td class="l oltm">{esc(r["team"])}</td>'
+        f'<td class="l oltm c-rk">{esc(r["team"])}</td>'
         + block +
         f'<td class="l olnm">{name}{small}</td>'
         f'<td class="olv">{r["carries"]}</td>'
@@ -751,10 +765,11 @@ def build_html(rows, ol, season, built, links, has_rbwr, available=None):
 
   <p class="olcount" id="olcount"></p>
 
-  <div class="oltblwrap">
+  {seo.scroll_hint("every column")}
+  <div class="oltblwrap xtab" tabindex="0" role="region" aria-label="Line and back performance">
   <table class="oltbl">
     <thead><tr>
-      <th class="l">Team</th>
+      <th class="l c-rk">Team</th>
       {block_headers}
       <th class="l">Player</th>
       <th title="Carries on designed runs. Quarterback kneels and scrambles
@@ -1053,7 +1068,7 @@ def main():
 {seo.social_meta(title, desc, f"{seo.SITE_URL}/{SPORT}/offensive-line-rb-performance/")}
 <script type="application/ld+json">{seo.graph(
     schema, crumbs, seo.faq_schema(OL_FAQ), seo.ORGANISATION)}</script>
-<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.SCROLLTABLE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}</style>
 </head>
 <body>
 {header}

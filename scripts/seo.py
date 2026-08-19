@@ -719,25 +719,32 @@ SCROLLTABLE_CSS = """
    drawn as inset shadows on the cells instead, which stick with them. */
 .xtab table{border-collapse:separate; border-spacing:0; width:100%}
 .xtab th, .xtab td{box-shadow:inset 0 -1px 0 var(--rule)}
-.xtab .c-rk, .xtab .c-nm{position:sticky; z-index:2;
-  background:var(--paper)}
-.xtab thead .c-rk, .xtab thead .c-nm{z-index:3}
-.xtab .c-rk{left:0}
-/* Must equal .c-rk's width, or the two pinned columns overlap. Both are
-   set from the same custom property for that reason. */
+/* th and td explicitly, never the bare class.
+   The schedule table names its <col> elements .c-rk too, and a <col> is
+   not positionable -- so a bare .c-rk selector would match it, apply
+   nothing, and leave the cells unpinned with no error anywhere. */
+.xtab th.c-rk, .xtab td.c-rk, .xtab th.c-nm, .xtab td.c-nm{
+  position:sticky; z-index:2; background:var(--paper)}
+.xtab thead th.c-rk, .xtab thead th.c-nm{z-index:3}
+.xtab th.c-rk, .xtab td.c-rk{left:0}
+/* Must equal the first column's width, or the two pinned columns overlap.
+   Both read the same custom property for that reason, and a table with a
+   wider first column -- an ADP figure rather than a rank -- overrides it
+   rather than redefining the rule. */
 .xtab{--rkw:2.4rem}
-.xtab .c-nm{left:var(--rkw)}
-.xtab .c-rk{width:var(--rkw); min-width:var(--rkw)}
+.xtab th.c-nm, .xtab td.c-nm{left:var(--rkw)}
+.xtab th.c-rk, .xtab td.c-rk{width:var(--rkw); min-width:var(--rkw)}
 /* The pinned name column carries a rule down its right edge so the join
    between what is pinned and what is moving is visible while it moves. */
-.xtab .c-nm{box-shadow:inset 0 -1px 0 var(--rule),
+.xtab th.c-nm, .xtab td.c-nm{box-shadow:inset 0 -1px 0 var(--rule),
   inset -1px 0 0 var(--rule)}
-.xtab tbody tr:hover .c-rk, .xtab tbody tr:hover .c-nm{background:var(--card)}
+.xtab tbody tr:hover td.c-rk, .xtab tbody tr:hover td.c-nm{
+  background:var(--card)}
 
 /* Numbers never wrap. A rushing total broken across two lines stops
    being a number and starts being two. */
 .xtab td, .xtab th{white-space:nowrap}
-.xtab .c-nm{max-width:8.5rem; overflow:hidden; text-overflow:ellipsis}
+.xtab th.c-nm, .xtab td.c-nm{max-width:8.5rem; overflow:hidden; text-overflow:ellipsis}
 
 @media (max-width:900px){
   .xhint{display:block}
@@ -752,7 +759,7 @@ SCROLLTABLE_CSS = """
      which is the column order's whole purpose. Longer names still clip;
      the alternative is a name column that pushes the number it explains
      off the edge. */
-  .xtab .c-nm{max-width:9rem}
+  .xtab th.c-nm, .xtab td.c-nm{max-width:9rem}
 }
 """
 
@@ -797,10 +804,49 @@ CARDTABLE_CSS = """
 """
 
 
+SCROLLHINT_JS = """
+<script>
+// Hide the swipe line where the table does not actually scroll.
+//
+// Whether it does depends on the width, the column count and the length of
+// the longest name, so no media query can answer it. A phone-sized rule
+// put "swipe the table" over a five-column table that fits, and telling
+// somebody to do something that does nothing costs more trust than the
+// hint buys.
+//
+// Guarded so a page with several tables installs one listener, not one per
+// hint.
+(function(){
+  if (window.__xhint) return;
+  window.__xhint = 1;
+  function sync(){
+    document.querySelectorAll('.xhint').forEach(function(h){
+      var t = h.nextElementSibling;
+      while (t && !t.classList.contains('xtab')) t = t.nextElementSibling;
+      // Two pixels of slack: sub-pixel table widths report a one-pixel
+      // overflow on tables that visibly do not move.
+      var scrolls = t && t.scrollWidth > t.clientWidth + 2;
+      h.style.display = scrolls ? '' : 'none';
+    });
+  }
+  if (document.readyState === 'loading')
+    document.addEventListener('DOMContentLoaded', sync);
+  else sync();
+  window.addEventListener('resize', sync);
+  window.addEventListener('load', sync);
+})();
+</script>"""
+
+
 def scroll_hint(what="the stats"):
-    """The swipe line above a wide table. One wording, every board."""
+    """The swipe line above a wide table. One wording, every board.
+
+    Ships with the script that decides whether to show it, for the same
+    reason the nav ships with its own listener: a hint nobody wired up is
+    a hint that lies on the pages where the table happens to fit.
+    """
     return (f'<p class="xhint">Swipe the table for {esc(what)} '
-            f'<b>&rarr;</b></p>')
+            f'<b>&rarr;</b></p>{SCROLLHINT_JS}')
 
 
 def esc(s):

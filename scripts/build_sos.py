@@ -138,10 +138,10 @@ PAGE_CSS = """
    other and near their label. */
 .sstbl{width:100%; max-width:52rem; border-collapse:collapse;
   font-size:.88rem; font-variant-numeric:tabular-nums; table-layout:fixed}
-.sstbl col.c-rk{width:2.6rem}
-.sstbl col.c-tm{width:4.4rem}
-.sstbl col.c-wp{width:5.2rem}
-.sstbl col.c-pos{width:4.2rem}
+.sstbl col.cw-rk{width:2.6rem}
+.sstbl col.cw-tm{width:4.4rem}
+.sstbl col.cw-wp{width:5.2rem}
+.sstbl col.cw-pos{width:4.2rem}
 .sstbl col.c-g{width:4rem}
 .sstbl th{text-align:right; font-family:var(--agate); font-size:.7rem;
   letter-spacing:.08em; text-transform:uppercase; color:var(--quiet);
@@ -210,13 +210,30 @@ PAGE_CSS = """
   .sstab{min-height:44px; display:inline-flex; align-items:center;
     padding-top:.5rem; padding-bottom:.5rem}
 }
+/* The opponent column used to be display:none here.
+   Opponent win percentage is the number every other outlet publishes and
+   the one a reader arrives expecting to find, so hiding it on a phone
+   removed the familiar anchor and left only the unfamiliar one. The table
+   scrolls sideways instead, with rank and team pinned.
+
+   13px floor: the type dropped to .8rem, which is 12.8. */
 @media (max-width:720px){
-  .ssopp{display:none}
-  .sstbl{table-layout:auto; font-size:.8rem}
+  .sstbl{table-layout:auto; font-size:.85rem}
+
   .sstbl col{width:auto !important}
-  .sstbl th,.sstbl td{padding:.4rem .3rem}
+  .sstbl th,.sstbl td{padding:.4rem .45rem}
   .sswrap{padding-left:.6rem; padding-right:.6rem}
 }
+/* 13px floor, to 900 rather than 720: the table still scrolls at tablet
+   widths and the rank sets its own .76rem, which the table rule above
+   does not reach. */
+@media (max-width:900px){
+  .sstbl{font-size:.85rem}
+  .sstbl .ssrk{font-size:.82rem}
+}
+/* First column is a rank, so the shared default width fits. */
+.xtab .sstbl{width:auto; min-width:100%}
+.xtab .sstbl th, .xtab .sstbl td{border-bottom:0}
 """
 
 
@@ -316,8 +333,8 @@ def build_html(data, css, header, footer):
                 if r.get("byes") else "")
         _out.append(
             f'<tr class="tr" data-team="{esc(r["team"])}">'
-            f'<td class="l ssrk">{i}</td>'
-            f'<td class="l sstm">{esc(r["team"])}{_bye}</td>'
+            f'<td class="l ssrk c-rk">{i}</td>'
+            f'<td class="l sstm c-nm">{esc(r["team"])}{_bye}</td>'
             f'<td class="ssv {_shade(_rk["wp"].get(r["team"]))}">{wp}</td>'
             + cells + "</tr>")
     static = "\n".join(_out)
@@ -384,15 +401,18 @@ def build_html(data, css, header, footer):
     <button class="sstab" data-s="std" aria-pressed="false">Standard</button>
   </div>
 
+  {seo.scroll_hint("points allowed by position")}
+  <div class="xtab" tabindex="0" role="region"
+       aria-label="Strength of schedule">
   <table class="sstbl">
     <colgroup>
-      <col class="c-rk"><col class="c-tm"><col class="c-wp">
-      <col class="c-pos"><col class="c-pos"><col class="c-pos">
-      <col class="c-pos">
+      <col class="cw-rk"><col class="cw-tm"><col class="cw-wp">
+      <col class="cw-pos"><col class="cw-pos"><col class="cw-pos">
+      <col class="cw-pos">
     </colgroup>
     <thead><tr>
-      <th class="l ssrk">#</th>
-      <th class="l">Team</th>
+      <th class="l ssrk c-rk">#</th>
+      <th class="l c-nm">Team</th>
       <th>Opp win %</th>
       <th>QB</th><th>RB</th><th>WR</th><th>TE</th>
     </tr></thead>
@@ -400,6 +420,7 @@ def build_html(data, css, header, footer):
 {static}
     </tbody>
   </table>
+  </div>
 
   <section class="ssmeth">
     <h2 class="ssmh">How this is measured</h2>
@@ -528,8 +549,8 @@ function draw(){{
     const gm = weeks === "all" ? ""
       : `<span class="ssgm">${{r.games}}g</span>`;
     return `<tr class="tr" data-team="${{r.team}}">
-      <td class="l ssrk">${{i + 1}}</td>
-      <td class="l sstm">${{r.team}}${{gm}}${{bye}}</td>
+      <td class="l ssrk c-rk">${{i + 1}}</td>
+      <td class="l sstm c-nm">${{r.team}}${{gm}}${{bye}}</td>
       <td class="ssv ${{c("wp")}}${{em("wp")}}">${{cell(r.wp, 3)}}</td>
       <td class="ssv ${{c("QB")}}${{em("QB")}}">${{cell(r.QB, 1)}}</td>
       <td class="ssv ${{c("RB")}}${{em("RB")}}">${{cell(r.RB, 1)}}</td>
@@ -712,7 +733,7 @@ def main():
       href="https://lineupbeat.com/{SPORT}/strength-of-schedule/">
 {seo.social_meta(title, desc, f"{seo.SITE_URL}/{SPORT}/strength-of-schedule/")}
 <script type="application/ld+json">{ldjson}</script>
-<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
+<style>{css}{PAGE_CSS}{seo.CRUMB_CSS}{seo.SCROLLTABLE_CSS}{seo.RELATED_CSS}{seo.TEAMS_CSS}{seo.TEAMS_CSS}{seo.BYLINE_CSS}</style>
 </head>
 <body>
 {header}
