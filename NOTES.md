@@ -141,7 +141,13 @@ is not shared from the beginning.
 | 3 | Draft Value mobile cards | done |
 | 4 | Durability and other data tables | done |
 | 5 | Team and player pages | done |
-| 6 | Homepage, Data hub and About | |
+| 6 | Homepage, Data hub and About | done |
+
+Phase 2 is complete. What it left behind, for the next person:
+`seo.py` now owns the header (`site_nav`, `NAV_CSS`, `NAV_JS`), the wide
+table treatments (`SCROLLTABLE_CSS`, `scroll_hint`, `CARDTABLE_CSS`) and
+the projection stat columns (`STAT_COLUMNS`). Put anything new beside
+them rather than in a builder.
 
 ### Group 2 requirements
 

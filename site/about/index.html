@@ -1354,27 +1354,19 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 }
 /* __END_NAV_CSS__ */
 
-/* ---- the hero on a phone ----
-   A reader arriving from search wants the reports. On a laptop the hero
-   and the wire panel sit side by side and cost nothing, but stacked on a
-   phone they are a full screen of positioning copy before a single piece
-   of news.
+/* ---- the roster hero on a phone ----
+   What is left of the block that used to trim the homepage hero. That
+   hero was replaced -- .livebox, .lede2, .cta .ghost and the old .facts
+   went with it -- so those rules named classes that no longer exist and
+   had been doing nothing for some time. The replacement carries its own
+   mobile design further down, at 650px.
 
-   The panel goes because the same three reports appear as tiles below it,
-   so it is a duplicate rather than a loss. The second paragraph and the
-   stats go because they are the pitch, and the pitch can wait until
-   somebody has seen what the site does. */
+   .thesis and .lede survive here because the roster header still uses
+   them. */
 @media (max-width:760px){
-  .livebox{display:none}
-  .lede2{display:none}
   .facts{display:none}
-  .hero{padding-bottom:.4rem}
   .thesis{font-size:1.55rem; line-height:1.18}
   .lede{margin-bottom:.9rem}
-  /* One button, not two. "Explore fantasy data" is a second decision
-     asked before the first has been offered, and the nav already has it. */
-  .cta .ghost{display:none}
-  .cta .btn{width:100%; min-height:44px}
 }
 
 
@@ -1733,6 +1725,14 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   /* The Fantasy Data block goes too: the nav carries it, and on a phone
      it sits between the reader and the reports. */
   .fdata{display:none}
+  /* One button, not two.
+     Side by side on a laptop they cost a row; stacked on a phone they are
+     two full-width buttons and 150px of decision before the reader has
+     seen a single report. The second one is a choice offered before the
+     first has been taken, and the menu carries Fantasy Data one tap away.
+     This rule existed for the previous hero and was lost with it. */
+  .lb-hero-actions .lb-btn-secondary{display:none}
+  .lb-hero-actions{margin-top:26px}
   /* Three across rather than two-and-a-stray. The icons come out, since
      at this width they cost more room than they earn, and the labels
      shrink to fit rather than wrapping. */
