@@ -2315,20 +2315,6 @@ def durability_page(conn, base):
 @media(max-width:820px){.dkey{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.dkey{grid-template-columns:1fr}}
 .dmethod{margin:0 0 2rem}
-/* Flat panels with a lime rule, not gradients.
-   The gradient version borrowed blue, amber and violet from the team card
-   palette, where a colour means a team. Here it meant nothing, and it pulled
-   the eye toward a methodology note when the table is the thing worth
-   looking at. */
-.dmgrid div{background:var(--panel);border:1px solid var(--rule);
-  border-top:2px solid var(--signal);border-radius:0 0 8px 8px;
-  padding:1rem .95rem 1.1rem}
-.dmgrid b{display:block;font-family:var(--agate);font-size:.66rem;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--signal);
-  margin-bottom:.45rem}
-.dmgrid p{margin:0;color:var(--quiet);font-size:.8rem;line-height:1.55}
-@media(max-width:900px){.dmgrid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:540px){.dmgrid{grid-template-columns:1fr}}
 /* Nine columns of real data will not fit a phone at any font size, so the
    table scrolls sideways inside its own box rather than off the page. The
    shadow on the right edge is the only thing telling a reader there is
@@ -2395,37 +2381,37 @@ def durability_page(conn, base):
 .dmethod{margin:0 0 2.6rem}
 .dmethod h2{margin:0 0 1.1rem}
 .dmgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
-/* Same construction as a player card: a colour gradient with a second
-   colour thrown in from one corner, and a dark wash over the lower half so
-   the type stays readable. Four cards, four colours, so the page reads as
-   part of the site rather than a spreadsheet somebody left out. */
-.dmgrid div{position:relative;overflow:hidden;isolation:isolate;
-  border-radius:12px;padding:1.1rem 1rem 1.2rem;
-  border:1px solid rgba(255,255,255,.09);min-height:11rem}
-.dmgrid div::before{content:"";position:absolute;inset:0;z-index:-2;
-  opacity:.9}
-.dmgrid div::after{content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(180deg,transparent 30%,rgba(8,10,7,.82) 100%)}
-.dmgrid .c1::before{background:
-  radial-gradient(88% 70% at 92% 6%, #C6F24E 0%, transparent 58%),
-  linear-gradient(155deg,#1B4D3E 0%,#123028 42%,#0B0D0F 92%)}
-.dmgrid .c2::before{background:
-  radial-gradient(88% 70% at 92% 6%, #7FB2FF 0%, transparent 58%),
-  linear-gradient(155deg,#123A5E 0%,#0E2740 42%,#0B0D0F 92%)}
-.dmgrid .c3::before{background:
-  radial-gradient(88% 70% at 92% 6%, #FFB86B 0%, transparent 58%),
-  linear-gradient(155deg,#5A3312 0%,#3A210C 42%,#0B0D0F 92%)}
-.dmgrid .c4::before{background:
-  radial-gradient(88% 70% at 92% 6%, #D9A7FF 0%, transparent 58%),
-  linear-gradient(155deg,#3E2357 0%,#2A1739 42%,#0B0D0F 92%)}
+/* ---- methodology cards, one canonical treatment ----
+   Two generations of this lived in the same stylesheet -- flat panels with
+   a lime top rule, and a four-colour gradient card -- and the cascade
+   decided which appeared. It decided badly: the colour variants key off
+   .c1 to .c4, which this markup has never carried, so those four gradients
+   had never rendered at all. What shipped was the flat panel's background
+   under the gradient card's border and radius.
 
-
+   One card now, and charcoal rather than colour: on a player card a colour
+   means a team, and here it would mean nothing. Lime is the label and
+   nothing else -- no top rule, which is what made these read as an earlier
+   generation of the component. Nothing here is clickable, so nothing here
+   has a hover state. */
+.dmgrid div{position:relative; border-radius:12px;
+  padding:1.35rem 1.25rem;
+  border:1px solid var(--rule);
+  background:linear-gradient(158deg, #161A1D 0%, #111417 45%, #0C0F11 100%)}
+.dmgrid b{display:block; font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.78rem; color:var(--signal);
+  margin-bottom:.6rem}
+/* 16px. Four paragraphs explaining how a number somebody is about to
+   trust was arrived at, previously set at 12.8. */
+.dmgrid p{margin:0; color:var(--muted); font-size:1rem; line-height:1.6}
+/* Equal heights come from the grid stretching its rows, not from a
+   min-height guessed against the longest card. */
+.dmgrid{align-items:stretch}
 @media(max-width:900px){.dmgrid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:540px){.dmgrid{grid-template-columns:1fr}
-  .dmgrid div{min-height:0}}
+@media(max-width:620px){.dmgrid{grid-template-columns:1fr}}
+
+
 .dtab tr.hide{display:none}
-@media(max-width:860px){.dmgrid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.dmgrid{grid-template-columns:1fr;gap:1rem}}
 @media(max-width:700px){
   .dh1{font-size:1.9rem}
   .dtab .nm{font-size:.82rem}

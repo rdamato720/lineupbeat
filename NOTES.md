@@ -212,14 +212,15 @@ player page") while working locally, because local runs already have the
 directories from a previous build. Move it after, then rebuild pages so the
 projection chips pick up the board.
 
-**The duplicated stylesheets in `build_pages.py` are partly cleaned.**
-33 rules in the durability sheet that were byte-for-byte identical to a
-later copy are gone; `PAGE_CSS` had none of that kind. What remains is
-harder: both sheets still carry rules that differ between the copies, and
-a mechanical merge is not safe — collapsing them by declaration reorders
-shorthand against longhand and silently changed `.dmgrid div` borders and
-`.dtab .n` colour when it was tried. **New rules still go at the bottom of
-either string.**
+**The duplicated stylesheets in `build_pages.py` are mostly cleaned.**
+33 byte-identical rules are gone from the durability sheet, and `.dmgrid`
+— the one selector where the two copies genuinely disagreed — now has a
+single canonical treatment. What is left of the duplication is `PAGE_CSS`,
+where the `.proj` chip rules still appear twice. A mechanical merge is not
+safe there: collapsing rules by declaration reorders shorthand against
+longhand, and it silently moved `.dmgrid div` borders and `.dtab .n`
+colour when it was tried. **New rules still go at the bottom of either
+string.**
 
 **Adjusted fantasy points allowed** is the next methodology upgrade for
 strength of schedule. Raw points allowed flatters defences that faced weak
