@@ -709,6 +709,27 @@ UI_CSS = """
 .cotab[aria-pressed="true"]:hover, .sstab[aria-pressed="true"]:hover,
 .oltab[aria-pressed="true"]:hover{background:#d4ff4b; border-color:#d4ff4b}
 
+/* ---- vertical rhythm ----
+   Measured on the homepage at 1366px: 33px from the title to the
+   description, 35px on to the buttons, 47px on to the proof row. Three
+   steps, and the page breathes because of them.
+
+   The data pages had 6px between the heading and its lede -- the line that
+   says what the page is sat jammed under the title -- then 16px, then 42px
+   and 35px further down, which is a rhythm that gets looser as it goes
+   rather than the other way round.
+
+   The lede step is proportional rather than literal: 33px sits under a
+   61px hero title, and the same ratio under a 44px page heading is 24.
+   The block and section steps are the homepage's own. */
+:root{--gap-lede:24px; --gap-block:34px; --gap-section:47px}
+.pbsub, .dvsub, .sssub, .cosub, .olsub, .cintro, .chsub{
+  margin-top:var(--gap-lede)}
+/* .byline and .related set their own margin from the same tokens, in
+   BYLINE_CSS and RELATED_CSS: both are emitted after this block, so a
+   rule here would have lost to them. */
+.cfaq, .pbnote, .dvonly, .comethod{margin-top:var(--gap-section)}
+
 /* ---- headings ----
    The homepage's h1 is the serif at 400 with tight tracking. The data
    pages set the same face at 700, which at their size reads as a
@@ -725,9 +746,16 @@ UI_CSS = """
   text-transform:uppercase; color:var(--signal)}
 
 @media (max-width:760px){
-  /* The controls stay tappable and stop eating the row. */
+  /* Compact, and still 44px to the thumb.
+     The homepage's button is sized for two of them side by side. A filter
+     row is seventeen -- draft value ran to five rows and 298px of controls
+     before the first card, and the schedule board to 373px. Height is the
+     part a thumb needs, so height is the part that stays: the type comes
+     down a step and the side padding roughly halves, which fits more per
+     row without shrinking the target. */
   .pbtab, .dvtab, .cotab, .sstab, .oltab, .posnav, .cmore{
-    min-height:44px; font-size:.9rem; padding:.5rem .85rem}
+    min-height:44px; font-size:.82rem; letter-spacing:.03em;
+    padding:0 .6rem}
 }
 """
 
@@ -1067,7 +1095,7 @@ RELATED_CSS = """
 /* ---- related pages ----
    Four data pages that never mention each other are four pages a reader
    leaves after one visit. */
-.related{margin:2.6rem 0 0; border-top:1px solid var(--rule);
+.related{margin:var(--gap-section) 0 0; border-top:1px solid var(--rule);
   padding-top:1.4rem}
 .relh{font-family:var(--agate); text-transform:uppercase; letter-spacing:.07em;
   font-size:.78rem; color:var(--quiet); margin:0 0 .8rem}
@@ -1086,7 +1114,7 @@ RELATED_CSS = """
 /* ---- FAQ ----
    Prose, because a table has the numbers and none of the questions
    somebody typed to find them. */
-.faq{margin:2.2rem 0 0}
+.faq{margin:var(--gap-section) 0 0}
 .faqh{font-family:var(--agate); text-transform:uppercase; letter-spacing:.07em;
   font-size:.78rem; color:var(--quiet); margin:0 0 .9rem}
 .faq details{border-bottom:1px solid var(--rule); padding:.7rem 0}
@@ -1187,7 +1215,8 @@ BYLINE_CSS = """
    things somebody needs to decide whether to believe the numbers under
    it. */
 .byline{display:flex; gap:1.4rem; flex-wrap:wrap; align-items:baseline;
-  margin:1rem 0 0; padding:.7rem 0; border-top:1px solid var(--rule);
+  margin:var(--gap-block) 0 0; padding:.7rem 0;
+  border-top:1px solid var(--rule);
   border-bottom:1px solid var(--rule)}
 .byline div{display:flex; gap:.35rem; align-items:baseline}
 .byline dt{font-family:var(--agate); text-transform:uppercase;

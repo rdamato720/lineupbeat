@@ -2302,68 +2302,9 @@ def durability_page(conn, base):
   line-height:1;color:var(--signal);font-weight:600}
 .dstat span{font-family:var(--agate);font-size:.6rem;letter-spacing:.09em;
   text-transform:uppercase;color:var(--quiet)}
-.dtab{width:100%;border-collapse:collapse}
-.dtab th{font-family:var(--agate);text-transform:uppercase;font-size:.58rem;
-  letter-spacing:.1em;color:var(--quiet);text-align:left;font-weight:600;
-  padding:0 .6rem .6rem;border-bottom:1px solid var(--rule)}
-.dtab th.ar{text-align:right}
-/* One bar a player, filled by the share of a season he gives. */
-.bw{width:6rem}
-.dbar{display:block;height:.42rem;border-radius:2px;
-  background:rgba(255,255,255,.07);overflow:hidden}
-.dbar i{display:block;height:100%;border-radius:2px}
-.dbar .lo{background:var(--signal);opacity:.85}
-.dbar .mid{background:var(--signal);opacity:.45}
-.dbar .hi{background:var(--alert,#ff6b6b);opacity:.7}
-.dtab .w{color:var(--quiet);font-size:.8rem;
-  font-family:var(--data,ui-monospace),monospace}
-.dtab .sus{color:var(--signal);opacity:.75}
-.dtab td{padding:.62rem .6rem;border-bottom:1px solid rgba(255,255,255,.04);
-  vertical-align:middle}
-.dtab .nm{font-family:var(--agate);text-transform:uppercase;font-weight:600;
-  font-size:.92rem;letter-spacing:.01em}
-/* A table of two hundred underlined names is unreadable. The link is there,
-   it just does not announce itself until the cursor is on it. */
-.dtab .nm a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
-.dtab .nm a:hover{color:var(--signal);border-bottom-color:currentColor}
-.dtab .pos{color:var(--quiet);font-size:.62rem;letter-spacing:.08em;
-  margin-left:.5rem;font-weight:400}
-.dtab .why{display:block;font-family:var(--agate);font-size:.56rem;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--signal);
-  opacity:.65;margin-top:.15rem}
-.dtab .dim{color:var(--quiet)}
-/* ADP is a draft slot, not a measurement. Right-aligned it sat in a row of
-   numbers that all mean "how much football did he miss", and read as one
-   more of them. */
-.dtab .adp{text-align:left;font-family:var(--data,ui-monospace),monospace;
-  font-size:.78rem;width:3.6rem}
-.dtab .n{text-align:right;font-family:var(--data,ui-monospace),monospace;
-  font-size:.78rem}
-/* Not .big: that is the app featured card, and it carries a
-   min-height that made every row 233px tall. */
-.dtab .gpy{font-size:1.02rem;color:var(--ink)}
-.dtab tr:hover td{background:rgba(255,255,255,.03)}
-.dtab .norec{color:var(--quiet);opacity:.55;font-size:.78rem;
-  font-family:var(--agate);letter-spacing:.05em;text-transform:uppercase;
-  text-align:right;padding-right:1.2rem}
-.r-high .gpy{color:var(--alert,#ff6b6b)}
-.r-low .gpy{color:var(--signal)}
-.dsub{font-family:var(--agate);text-transform:uppercase;font-size:.68rem;
-  letter-spacing:.1em;color:var(--quiet);font-weight:600;margin:0 0 .8rem}
-.dkey{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem 1.6rem;
-  margin:0 0 1.8rem;padding:1.2rem 0;
-  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.dkey dt{font-family:var(--agate);font-size:.62rem;letter-spacing:.08em;
-  text-transform:uppercase;color:var(--ink);font-weight:600}
-.dkey dd{margin:.2rem 0 0;color:var(--quiet);font-size:.78rem;line-height:1.5}
 @media(max-width:820px){.dkey{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.dkey{grid-template-columns:1fr}}
-.adpwhen{font-family:var(--agate);font-size:.66rem;letter-spacing:.07em;
-  text-transform:uppercase;color:var(--quiet);margin:0 0 1.8rem}
-.adpwhen b{color:var(--signal);font-weight:600}
 .dmethod{margin:0 0 2rem}
-.dmethod h2{margin:0 0 1.1rem}
-.dmgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
 /* Flat panels with a lime rule, not gradients.
    The gradient version borrowed blue, amber and violet from the team card
    palette, where a colour means a team. Here it meant nothing, and it pulled

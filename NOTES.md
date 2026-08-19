@@ -212,18 +212,14 @@ player page") while working locally, because local runs already have the
 directories from a previous build. Move it after, then rebuild pages so the
 projection chips pick up the board.
 
-**PAGE_CSS in `build_pages.py` has the same problem** as the durability
-stylesheet below: the `.proj` chip rules appear twice, an earlier version
-and a later one, with the second overriding the first. New rules go at the
-bottom of the string until both are untangled.
-
-**The durability stylesheet exists twice** in one string in
-`build_pages.py`: an older flat-panel version of the methodology cards and
-a newer gradient one, both live, the second silently overriding the first.
-Rules added anywhere but the end of that string lose to the second copy.
-The two are not identical and the first still supplies properties the
-second never sets, so deduplicating needs a careful look at `.dmgrid`
-rather than a delete.
+**The duplicated stylesheets in `build_pages.py` are partly cleaned.**
+33 rules in the durability sheet that were byte-for-byte identical to a
+later copy are gone; `PAGE_CSS` had none of that kind. What remains is
+harder: both sheets still carry rules that differ between the copies, and
+a mechanical merge is not safe — collapsing them by declaration reorders
+shorthand against longhand and silently changed `.dmgrid div` borders and
+`.dtab .n` colour when it was tried. **New rules still go at the bottom of
+either string.**
 
 **Adjusted fantasy points allowed** is the next methodology upgrade for
 strength of schedule. Raw points allowed flatters defences that faced weak

@@ -297,7 +297,7 @@ table.ctab td:nth-child(4){color:var(--signal);font-weight:600}
 .fcollege p{font-size:.78rem;line-height:1.5;color:var(--quiet);margin:0}
 .cintro{color:var(--quiet);font-size:.88rem;line-height:1.6;
   max-width:52rem;margin:.6rem 0 0}
-.cfaq{margin:2rem 0 0}
+.cfaq{margin:var(--gap-section) 0 0}
 .cfaq h2{font-size:1.15rem;margin:0 0 .7rem}
 .cfaq details{border-bottom:1px solid var(--rule);padding:.6rem 0}
 .cfaq summary{cursor:pointer;font-weight:600;font-size:.92rem}
