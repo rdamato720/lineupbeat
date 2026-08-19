@@ -889,11 +889,20 @@ svg { display: block; }
      sentence case. Stated rather than inherited. */
   text-transform: none;
   margin: 20px 0 24px;
-  max-width: 1000px;
+  /* Two lines on a phone -- "NFL Fantasy / Football Data" -- rather than
+     three. The measure is what decides that, not the type size. */
+  max-width: 15ch;
   font-family: var(--text);
-  font-size: clamp(58px, 6.1vw, 86px);
+  /* 83px at 1366, which is what made this read as a different site: the
+     homepage headline is 61px and a projections heading is 44px, so the
+     hub was leading louder than the front door.
+     The floor and ceiling are the target sizes; 6.5vw rather than 5vw is
+     what carries the middle -- at 5vw a 768px tablet lands on the 42px
+     floor, which is a phone size on a tablet. This gives 64 / 50 / 42
+     across desktop, tablet and phone. */
+  font-size: clamp(42px, 6.5vw, 64px);
   font-weight: 400;
-  line-height: .95;
+  line-height: .98;
   letter-spacing: -.035em;
 }
 
@@ -1462,7 +1471,8 @@ a.lb-tool-card:hover {
 @media (max-width: 620px) {
   .lb-container { width: calc(100% - 30px); }
   .lb-data-hero { padding: 62px 0 52px; }
-  .lb-data-title { font-size: clamp(50px, 16vw, 68px); }
+  /* The base clamp already bottoms out at 42px here; the override
+     was putting it back up to 62. */
   .lb-data-intro { font-size: 17px; }
   .lb-data-actions { flex-direction: column; }
   .lb-button { width: 100%; }
