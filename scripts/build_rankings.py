@@ -46,6 +46,7 @@ import csv
 import hashlib
 import html
 import json
+import os
 import re
 import sys
 from datetime import datetime, timedelta, timezone
@@ -1789,25 +1790,73 @@ def main():
         print("\n  dry run, nothing written")
         return 0
 
-    payload = {
-        "metadata": {
-            "season": SEASON,
-            "scoring_format": SCORING_FORMAT,
-            "projection_source_file": src.name,
-            "projection_source_sha256": digest,
-            "ranking_config_file": CONFIG.name if cfg["sha256"] else None,
-            "ranking_config_sha256": cfg["sha256"],
-            "source_player_count": source_count,
-            "published_overall_count": TOP_N,
-            "generated_at": built.replace(microsecond=0).isoformat(),
-            **({"build_mode": "explicit-source"} if historical else {}),
-        },
-        "players": records,
+    # The published file is the last-known-good board.
+    #
+    # Every CI run starts from a fresh checkout, so when a gate fails the only
+    # rankings that exist are the ones in the repository. That makes two
+    # things matter: the file must never be half-written, and it must not
+    # churn for no reason. A rebuilt-but-identical board that rewrote its own
+    # timestamp would put a diff on twelve thousand lines every two hours and
+    # bury the one commit where a rank actually moved.
+    meta = {
+        "season": SEASON,
+        "scoring_format": SCORING_FORMAT,
+        "projection_source_file": src.name,
+        "projection_source_sha256": digest,
+        "ranking_config_file": CONFIG.name if cfg["sha256"] else None,
+        "ranking_config_sha256": cfg["sha256"],
+        "source_player_count": source_count,
+        "published_overall_count": TOP_N,
+        "generated_at": built.replace(microsecond=0).isoformat(),
+        **({"build_mode": "explicit-source"} if historical else {}),
     }
-    DATA_JSON.parent.mkdir(parents=True, exist_ok=True)
-    DATA_JSON.write_text(json.dumps(payload, indent=1) + "\n")
-    print(f"\n  wrote {DATA_JSON.relative_to(ROOT)} "
-          f"({len(records)} players, {DATA_JSON.stat().st_size:,} bytes)")
+
+    previous = {}
+    if DATA_JSON.exists():
+        try:
+            previous = json.loads(DATA_JSON.read_text())
+        except (ValueError, OSError):
+            previous = {}
+    old_meta = previous.get("metadata") or {}
+    same_inputs = (
+        old_meta.get("projection_source_sha256") == digest
+        and old_meta.get("ranking_config_sha256") == cfg["sha256"])
+    if same_inputs and previous.get("players") == records:
+        # Both inputs and every player identical: the board did not change,
+        # so neither does the file. The timestamp says when the rankings last
+        # moved, which is the honest thing for it to say.
+        meta["generated_at"] = old_meta.get("generated_at", meta["generated_at"])
+        # The pages carry the same stamp, so an unchanged board does not
+        # advertise itself as freshly updated.
+        try:
+            built = datetime.fromisoformat(meta["generated_at"])
+        except (TypeError, ValueError):
+            pass
+        print(f"\n  {DATA_JSON.relative_to(ROOT)} unchanged "
+              f"(same inputs, same board) -- not rewritten, "
+              f"generated_at still {meta['generated_at']}")
+    else:
+        payload = {"metadata": meta, "players": records}
+        DATA_JSON.parent.mkdir(parents=True, exist_ok=True)
+        tmp = DATA_JSON.with_name(DATA_JSON.name + ".tmp")
+        try:
+            tmp.write_text(json.dumps(payload, indent=1) + "\n")
+            # Validate what was actually written, not what we meant to write.
+            # A serialisation fault would otherwise replace a good board with
+            # a broken one, and this file is the fallback.
+            reread = json.loads(tmp.read_text())
+            again = validate(reread.get("players") or [], source_count)
+            if again:
+                for x in again[:6]:
+                    print(f"    {x}")
+                raise ValueError("the written file does not pass its own gates")
+            os.replace(tmp, DATA_JSON)
+        except Exception:
+            tmp.unlink(missing_ok=True)
+            raise
+        why = ("inputs changed" if not same_inputs else "the board changed")
+        print(f"\n  wrote {DATA_JSON.relative_to(ROOT)} ({why}: "
+              f"{len(records)} players, {DATA_JSON.stat().st_size:,} bytes)")
 
     css, header, footer = site_chrome()
     for pos in [None] + POSITIONS:

@@ -264,6 +264,23 @@ comparison player named in the JSON, and requires the result to equal the
 published order exactly. That catches the knock-on moves too: Jeanty passes
 two receivers on his way over Taylor and neither is named anywhere.
 
+**The published JSON is the last-known-good board, so writing it is careful
+in two ways.** Every CI run starts from a fresh checkout: when a gate fails,
+the only rankings that exist anywhere are the ones committed to the
+repository. That is why the file is tracked rather than gitignored like the
+built pages, and why the build never leaves it half-written -- the new board
+goes to a sibling temp file, is read back and re-validated from disk, and
+only then replaces the real one in a single atomic move. A failure unlinks
+the temp file and the committed board is untouched to the byte.
+
+It also does not rewrite the file for nothing. If both input SHAs match the
+ones in the existing metadata and every player record is identical, the board
+did not change: the previous `generated_at` is kept and nothing is written.
+Otherwise the timestamp moves with the board. Without that, a rebuild every
+two hours would put a diff on twelve thousand lines whether or not a single
+rank had moved, and the one commit where something actually changed would be
+impossible to find.
+
 **The gates stop the build.** Every configured player and comparison player
 resolving to exactly one player, both sides of a constraint sharing a
 position, no cycle, a published reason behind every adjustment and every
