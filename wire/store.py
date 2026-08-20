@@ -120,6 +120,24 @@ CREATE TABLE IF NOT EXISTS wire_discovery (
 );
 CREATE INDEX IF NOT EXISTS idx_disc_chan ON wire_discovery(channel_id);
 
+-- The Wire's own player identities. Built from the public nflverse roster
+-- and nothing else -- never from rosters/nfl.csv, which carries ADP.
+-- Identity fields only; a test walks this and the JSON for fantasy fields.
+CREATE TABLE IF NOT EXISTS wire_players (
+  player_id        TEXT,
+  full_name        TEXT NOT NULL,
+  display_name     TEXT,
+  aliases          TEXT,
+  team             TEXT,
+  position         TEXT,
+  status           TEXT,
+  season           INTEGER,
+  fantasy_candidate INTEGER,
+  context_only     INTEGER,
+  registry_version TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_players_team ON wire_players(team, position);
+
 CREATE TABLE IF NOT EXISTS wire_event_history (
   id               INTEGER PRIMARY KEY AUTOINCREMENT,
   event_fingerprint TEXT,
@@ -257,6 +275,34 @@ class WireStore:
             "SELECT * FROM wire_publications WHERE retracted = 0 "
             "ORDER BY published_at DESC").fetchall()
         return [dict(r) for r in rows]
+
+    # -- player registry ---------------------------------------------------
+
+    def replace_players(self, payload: dict) -> int:
+        """Swap the whole table in one transaction.
+
+        All or nothing: a half-written registry would resolve some names and
+        silently fail others, which is worse than resolving none.
+        """
+        rows = payload.get("players") or []
+        ver = payload.get("registry_version", "")
+        with self.conn:
+            self.conn.execute("DELETE FROM wire_players")
+            self.conn.executemany(
+                "INSERT INTO wire_players VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+                [(p.get("player_id", ""), p["full_name"],
+                  p.get("display_name", ""), json.dumps(p.get("aliases") or []),
+                  p.get("team", ""), p.get("position", ""),
+                  p.get("status", ""), int(p.get("season") or 0),
+                  1 if p.get("fantasy_candidate") else 0,
+                  1 if p.get("context_only") else 0, ver)
+                 for p in rows])
+        return len(rows)
+
+    def player_registry_version(self) -> str | None:
+        r = self.conn.execute(
+            "SELECT registry_version FROM wire_players LIMIT 1").fetchone()
+        return r["registry_version"] if r else None
 
     # -- discovery ---------------------------------------------------------
 

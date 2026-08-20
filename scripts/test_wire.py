@@ -451,6 +451,129 @@ check("the site build cannot read transcripts or discovery",
       not any(t in build for t in ("wire_transcripts", "wire_discovery",
                                    "wire_candidates")))
 
+# ------------------------------------------------------- player registry
+
+from wire import players as pl
+
+reg = pl.load()
+check("the player registry loads", len(reg.players) > 1500,
+      f"{len(reg.players)} players")
+check("the registry records its version and source",
+      bool(reg.version) and "nflverse" in reg.source_url, reg.version)
+
+raw = json.loads((ROOT / "sources" / "wire_players.json").read_text())
+check("the registry validates", not pl.validate(raw), str(pl.validate(raw)[:2]))
+
+# No fantasy-derived field, at any depth. Walked rather than eyeballed.
+def deep_keys(node, out):
+    if isinstance(node, dict):
+        for k, v in node.items():
+            out.add(str(k).lower())
+            deep_keys(v, out)
+    elif isinstance(node, list):
+        for x in node[:200]:
+            deep_keys(x, out)
+    return out
+
+keys = deep_keys(raw, set())
+leaked = sorted(k for k in keys
+                if any(f in k for f in pl.FORBIDDEN_FIELDS))
+check("no fantasy field appears anywhere in the registry", not leaked, str(leaked))
+check("only identity fields are stored",
+      keys >= {"player_id", "full_name", "team", "position"}
+      and not ({"adp", "projection", "points", "rank"} & keys))
+
+ids = [p.player_id for p in reg.players if p.player_id]
+check("player ids are unique", len(ids) == len(set(ids)),
+      f"{len(ids)} ids, {len(set(ids))} unique")
+teams = {p.team for p in reg.players if p.team}
+check("teams are the wire's own codes, all 32",
+      teams <= pl.NFL_TEAMS and len(teams) == 32,
+      str(sorted(teams - pl.NFL_TEAMS)[:4]))
+check("nflverse's AZ and LA are normalised",
+      "AZ" not in teams and "LA" not in teams
+      and "ARI" in teams and "LAR" in teams)
+check("candidate flags are only on QB/RB/WR/TE",
+      all(p.position in pl.CANDIDATE_POSITIONS
+          for p in reg.players if p.fantasy_candidate))
+check("linemen are kept as context, never as candidates",
+      any(p.context_only for p in reg.players)
+      and not any(p.context_only and p.fantasy_candidate for p in reg.players))
+
+# The Wire must never touch the fantasy roster, even to build this.
+psrc = code_only((ROOT / "wire" / "players.py").read_text())
+rsrc = code_only((ROOT / "scripts" / "wire_players_refresh.py").read_text())
+for nm, src in (("players.py", psrc), ("wire_players_refresh.py", rsrc)):
+    check(f"{nm} never references a fantasy file",
+          not FORBIDDEN_NAMES.search(src) and "rosters/" not in src)
+
+# Resolution: exact, or nothing.
+hits, how = reg.resolve("Jahmyr Gibbs", "DET", "RB")
+check("an exact name+team+position resolves", len(hits) == 1
+      and how == "name_team_position", how)
+check("a suffix is handled", len(reg.resolve("Marvin Harrison", "ARI", "WR")[0]) == 1)
+gibbs = hits[0].player_id
+check("a stable id resolves directly",
+      reg.resolve("anything at all", player_id=gibbs)[1] == "stable_id")
+
+hits, how = reg.resolve("Jayden Reed", "GB", "WR")
+other, _ = reg.resolve("Jarran Reed", "SEA", "DL")
+check("the misheard-caption pair stay separate",
+      len(hits) == 1 and len(other) == 1
+      and hits[0].player_id != other[0].player_id)
+
+check("a name with no team cannot resolve",
+      reg.resolve("Josh Allen")[1] == "name_only_insufficient")
+check("a wrong team does not resolve", not reg.resolve("Jahmyr Gibbs", "TB", "RB")[0])
+check("a wrong position does not resolve", not reg.resolve("Jahmyr Gibbs", "DET", "WR")[0])
+check("an unknown name does not resolve",
+      reg.resolve("Nobody At All", "TB", "WR")[1] == "no_match")
+check("nothing is fuzzy-matched",
+      not reg.resolve("Jahmir Gibs", "DET", "RB")[0])
+
+# Bad registries must never replace a good one.
+with tempfile.TemporaryDirectory() as tmp:
+    target = Path(tmp) / "reg.json"
+    good = dict(raw)
+    pl.write_atomic(good, target)
+    before = target.read_text()
+
+    partial = dict(raw, players=raw["players"][:10])
+    try:
+        pl.write_atomic(partial, target)
+        check("a partial registry is refused", False)
+    except Exception as e:
+        check("a partial registry is refused", True, str(e)[:40])
+    check("the good registry survives a refused write",
+          target.read_text() == before)
+    check("no temp file is left behind",
+          not (target.with_name(target.name + ".tmp")).exists())
+
+    poisoned = json.loads(json.dumps(raw))
+    poisoned["players"][0]["adp"] = 1.0
+    try:
+        pl.write_atomic(poisoned, target)
+        check("a registry carrying a fantasy field is refused", False)
+    except Exception as e:
+        check("a registry carrying a fantasy field is refused", True, str(e)[:40])
+    check("the good registry survives that too", target.read_text() == before)
+
+check("a download failure keeps the existing registry",
+      "keeping the existing registry" in
+      (ROOT / "scripts" / "wire_players_refresh.py").read_text())
+
+# An unresolved player can never be approved into a publication.
+with tempfile.TemporaryDirectory() as tmp:
+    st = WireStore(Path(tmp) / "p.db")
+    st.add_candidate("c9", "i9", "yt_pewter_report_tv",
+                     {"player_id": None, "player_name": "Unclear Name",
+                      "wire_label": "MONITOR", "canonical_url": "u"}, "fp9")
+    pend = st.candidates("EDITORIAL_REVIEW")
+    check("an unresolved player waits for a human",
+          len(pend) == 1 and len(st.publications()) == 0)
+    n, _ = st.export_publications(Path(tmp) / "pub.json")
+    check("an unresolved player never reaches the published file", n == 0)
+
 print()
 if FAILURES:
     print(f"{len(FAILURES)} failed: " + ", ".join(FAILURES[:6]))

@@ -193,6 +193,14 @@ python3 scripts/test_wire.py                     # 32 checks, incl. isolation
   `--plan` to see what is eligible without spending a request; `--status` for
   what the day has left. Discovery is free and separate -- titles, ids and
   durations never touch the caption endpoint.
+- **The Wire has its own player registry and builds it from nflverse.**
+  `scripts/wire_players_refresh.py` → `sources/wire_players.json`. It never
+  reads `rosters/nfl.csv`, not even to seed or compare, because that file
+  carries ADP. Identity fields only; a test walks the JSON recursively for
+  fantasy fields. Resolution is exact id, or name **plus team plus
+  position** — no fuzzy matching, because auto-captions mishear names rather
+  than misspell them, and Jarran Reed is not Jayden Reed. Zero or several
+  matches means manual review.
 - **Speaker identity comes from the video's format, never its content.**
   Transcripts carry no speaker labels and every one of these channels is
   auto-captioned, so only a plainly single-voice format (camp report,
