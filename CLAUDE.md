@@ -219,7 +219,10 @@ overwrote it twice and silently dropped `TWITTERAPI_IO_KEY`; every source then
 failed in a way that looked like a quiet news day.
 
 `beatwire.db` lives in the Actions cache, not the repo, keyed to restore from
-the most recent run. Losing it costs real money, so the cache is split into
+the most recent run, with one gzipped snapshot a day uploaded as a workflow
+artifact (30 days, free on a public repo). The cache is otherwise the only
+copy of the archive anywhere, and GitHub drops a cache nothing has touched
+for seven days. Losing it costs real money, so the cache is split into
 `actions/cache/restore` at the top and an explicit `actions/cache/save` with
 `if: always()` straight after the pipeline step — a run that dies still banks
 what it already paid for. Runs **queue** rather than cancel

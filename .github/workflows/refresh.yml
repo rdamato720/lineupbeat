@@ -224,6 +224,48 @@ jobs:
           path: beatwire.db
           key: beatwire-db-${{ github.run_id }}
 
+      # A daily snapshot of the database, kept off the critical path.
+      #
+      # The cache is otherwise the only copy that exists. It is not in the
+      # repository, it is not on anyone's laptop, and GitHub drops a cache
+      # nothing has touched for seven days. "Derived data" undersells what
+      # would be lost: it was derived from posts that scroll away, a beat
+      # writer's timeline goes back a few hundred tweets and then it is gone,
+      # and the player pages are built from what was captured before that
+      # happened. Losing it is losing the archive.
+      #
+      # Once a day, not every run. Twelve 20MB uploads a day is noise on the
+      # run log and minutes on the clock for no more safety than one. Runs are
+      # two hours apart, so a two-hour window catches exactly one of them
+      # whichever phase the trigger happens to be on.
+      - name: Snapshot the database
+        if: always()
+        id: snap
+        run: |
+          if [ ! -f beatwire.db ]; then
+            echo "  no database to snapshot"
+            exit 0
+          fi
+          hour=$(date -u +%H)
+          if [ "$hour" -ge 6 ] && [ "$hour" -lt 8 ]; then
+            gzip -c beatwire.db > "beatwire-$(date -u +%Y-%m-%d).db.gz"
+            ls -lh beatwire-*.db.gz
+            echo "due=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "  not the daily snapshot window (hour $hour UTC)"
+          fi
+
+      - name: Upload the database snapshot
+        if: always() && steps.snap.outputs.due == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: beatwire-db
+          path: beatwire-*.db.gz
+          # Thirty days of daily copies at ~20MB, and free on a public repo.
+          retention-days: 30
+          # Already gzipped; compressing it again buys nothing and costs time.
+          compression-level: 0
+
       # Publishes even if preflight warns, but records the verdict in the log
       # so a slow degradation shows up in run history instead of silently.
       - name: Preflight

@@ -278,6 +278,16 @@ A swapped or truncated artifact moves the SHA and fails.
 The JSON is `{metadata, players}` for that reason -- the numbers have to
 travel with what produced them, or a board and its provenance drift apart.
 
+**The database has one copy, so it gets a daily snapshot.** `beatwire.db` is
+not in the repository and not on anyone's laptop -- production's lives in the
+Actions cache, and GitHub drops a cache nothing has touched for seven days.
+Calling it derived data undersells it: it was derived from posts that scroll
+away, and the player pages are built from what was captured before they did.
+The workflow now gzips it once a day and uploads it as a 30-day artifact,
+which turns a cache eviction from losing the archive into losing a few hours.
+Once a day and not every run, because twelve 20MB uploads buys no more safety
+than one.
+
 **Production reads the live projection board.** `data/projections.xlsx` for
 the numbers, `data/nfl_rankings_config.json` for everything else -- the
 league shape, the replacement ranks, the tier bands and the approved
