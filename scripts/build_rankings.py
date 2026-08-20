@@ -1131,11 +1131,29 @@ PAGE_CSS = """
 .rkwhy details>summary:focus-visible{outline:2px solid var(--signal);
   outline-offset:2px}
 .rkwhy details[open]>summary .whylong{color:var(--muted)}
-.rkwhy .whyshort{display:none;color:var(--signal);font:600 .78rem/1.3 var(--agate);
+/* The control, on the laptop as well as the phone.
+   It used to be mobile-only: on desktop the reason was clamped to two lines
+   and the ellipsis was the only hint there was more, which reads as text
+   that got cut off rather than text you can open. For a ranking whose whole
+   claim is that the editorial calls are published, a hidden explanation is
+   the wrong default. */
+.rkwhy .whyshort{display:inline-flex;align-items:center;gap:.3rem;
+  margin:.28rem 0 0;color:var(--signal);font:600 .72rem/1 var(--agate);
   letter-spacing:.07em;text-transform:uppercase}
+/* The caret is drawn, not typed. U+25B8 is not in Barlow Condensed and came
+   out as a tofu box beside the label. */
+.rkwhy .whyshort::after{content:"";width:0;height:0;
+  border-left:4px solid currentColor;border-top:3px solid transparent;
+  border-bottom:3px solid transparent}
+.rkwhy details[open] .whyshort::after{border-left:3px solid transparent;
+  border-right:3px solid transparent;border-top:4px solid currentColor;
+  border-bottom:0}
+.rkwhy details>summary{display:block}
+/* Two lines and the button while closed; the full text and no preview once
+   open, so the first paragraph is not printed twice. */
 .rkwhy .whylong{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
   overflow:hidden}
-.rkwhy details[open] .whylong{-webkit-line-clamp:unset}
+.rkwhy details[open] .whylong{display:none}
 .rkwhy p{margin:.35rem 0 0;color:var(--muted);font-size:.86rem;line-height:1.45}
 
 /* ---- tier separators ----
@@ -1215,8 +1233,10 @@ PAGE_CSS = """
   .rktable td.rkadj.ed::after{content:none}
   .rktable td.rkwhy{display:block;margin:.25rem 0 0;max-width:none}
   .rktable td.rkwhy.plain{display:none}
-  .rkwhy .whyshort{display:inline-flex;align-items:center;min-height:44px}
-  .rkwhy .whylong{display:none}
+  /* The phone never shows the preview -- the card is tight enough without
+     two lines the button is about to replace. */
+  .rkwhy .whyshort{min-height:44px;margin:0}
+  .rkwhy .whylong,.rkwhy details[open] .whylong{display:none}
   .rktable td.rkwhy p{font-size:.9rem}
   .rktier-row td{display:block;padding:.55rem .2rem}
   .rkctl{padding:.6rem 0 .55rem}
@@ -1397,8 +1417,9 @@ def why_cell(r):
     short = "Why we're higher" if higher else "Why we're lower"
     body = "".join(f"<p>{esc(x)}</p>" for x in parts)
     return (f'<td class="l rkwhy" data-lab="Why"><details class="whyd">'
-            f'<summary><span class="whyshort">{short}</span>'
-            f'<span class="whylong">{esc(parts[0]) if parts else ""}</span>'
+            f'<summary><span class="whylong">'
+            f'{esc(parts[0]) if parts else ""}</span>'
+            f'<span class="whyshort">{short}</span>'
             f'</summary>{body}</details></td>')
 
 

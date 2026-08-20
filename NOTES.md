@@ -237,6 +237,15 @@ Nacua, Jeanty, Taylor -- where demoting would leave two receivers between
 Nacua and Jeanty. Everyone unaffected keeps his relative order; the only
 players who move are the one being lifted and the ones he passes.
 
+**Every editorial explanation opens on the laptop too.** It was a phone-only
+disclosure at first: on desktop the reason was clamped to two lines and the
+ellipsis was the only sign there was more, which reads as text that got cut
+off rather than text you can open. On a board whose whole claim is that the
+editorial calls are published, a hidden explanation is the wrong default. Two
+lines and a "Why we're higher" control now, expanding in place, with the
+preview replaced by the full text rather than repeated above it. Rows with
+nothing to explain stay one flat line and get no control at all.
+
 **Nobody is marked down for being passed.** Taylor, Jacobs, Nacua and Irving
 carry no adjustment and no override. Being ranked below somebody is not a
 downgrade, and printing a negative number against them would invent a
