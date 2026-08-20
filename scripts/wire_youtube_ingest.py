@@ -21,13 +21,14 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+from collections import Counter
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from wire import youtube
+from wire import youtube, ytapi
 from wire.store import WireStore, now
 
 
@@ -70,46 +71,72 @@ def may_request(state: dict) -> tuple[bool, str]:
     return True, ""
 
 
-def pick(store, channels, rules, verbose=True) -> list[tuple]:
-    """One eligible video per channel, cheapest checks first.
+def assess(store, ch, v, rules) -> tuple[bool, str, list[str]]:
+    """Eligible or not, and every reason either way. Requests no transcript."""
+    reasons = []
+    if not youtube.owner_matches(ch, v):
+        reasons.append(f"owner {v.get('channel_id')!r} is not {ch.channel_id}")
+        return False, "", reasons
+    if store.cached_transcript(v["video_id"]):
+        reasons.append("transcript already cached")
+        return False, "", reasons
 
-    Everything here is metadata: the feed, the title and the video's length.
-    None of it touches the caption endpoint, so a channel with nothing worth
-    transcribing today costs nothing to rule out.
+    secs = v.get("duration_seconds")
+    ok, mode, why = youtube.eligible(ch, v, rules, seconds=secs)
+    if not ok:
+        reasons.append(why)
+        return False, mode, reasons
+    if secs is None:
+        # RSS gives no length. A video whose duration cannot be established
+        # safely never spends one of five daily transcript requests.
+        reasons.append("duration unknown (RSS discovery); needs the Data API")
+        return False, mode, reasons
+
+    reasons.append(f"single voice, {secs // 60}m, owner verified")
+    return True, mode, reasons
+
+
+def pick(store, channels, rules, verbose=True) -> list[tuple]:
+    """One eligible video per channel. Metadata only -- no captions touched.
+
+    Everything discovered is recorded, eligible or not, with the reasons.
+    A run that finds nothing worth transcribing still leaves an account of
+    what it looked at and why it passed.
     """
     done = store.channels_done_today()
     plan = []
     for ch in channels:
+        vids, method, note = youtube.discover(ch, limit=8)
+        if verbose and note:
+            print(f"  {ch.team:<4}{note[:74]}")
+        chosen = None
+        for v in vids:
+            ok, mode, reasons = assess(store, ch, v, rules)
+            store.record_discovery({
+                "video_id": v["video_id"], "channel_id": v.get("channel_id", ""),
+                "channel_name": v.get("channel_name", ch.source_name),
+                "source_id": ch.source_id, "canonical_url": v["url"],
+                "title": v["title"], "description": v.get("description", ""),
+                "published_at": v.get("published_at", ""),
+                "duration_seconds": v.get("duration_seconds"),
+                "discovery_method": method, "eligible": ok,
+                "speaker_mode": mode, "reasons": reasons})
+            if ok and chosen is None and ch.channel_id not in done:
+                chosen = (ch, v, mode, v.get("duration_seconds"))
         if ch.channel_id in done:
             if verbose:
                 print(f"  {ch.team:<4}{ch.source_name[:26]:<27} already had its "
                       f"video today")
             continue
-        vids, err = youtube.uploads(ch, limit=8)
-        chosen = None
-        for v in vids:
-            if store.cached_transcript(v["video_id"]):
-                continue                      # never ask twice
-            ok, mode, why = youtube.eligible(ch, v, rules)
-            if not ok:
-                continue
-            secs, derr = youtube.duration_seconds(v["video_id"])
-            ok, mode, why = youtube.eligible(ch, v, rules, seconds=secs)
-            if not ok:
-                if verbose:
-                    print(f"  {ch.team:<4}{v['title'][:40]:<41} skipped: {why}")
-                continue
-            chosen = (ch, v, mode, secs)
-            break
         if chosen:
             plan.append(chosen)
             if verbose:
-                ch_, v, mode, secs = chosen
+                _, v, mode, secs = chosen
                 print(f"  {ch.team:<4}{v['title'][:40]:<41} "
-                      f"{mode} {secs//60}m -> eligible")
+                      f"{mode} {secs // 60}m -> eligible")
         elif verbose:
-            print(f"  {ch.team:<4}{ch.source_name[:26]:<27} nothing eligible"
-                  + (f" ({err})" if err else ""))
+            print(f"  {ch.team:<4}{ch.source_name[:26]:<27} nothing eligible "
+                  f"({len(vids)} seen via {method})")
     return plan
 
 
@@ -193,11 +220,83 @@ def take_one(store, ch, video, mode, secs, rules) -> str:
             f"({tr['chars']:,} chars, {len(spans)} spans)")
 
 
+def report(store, channels, days: int = 14) -> int:
+    """The pilot report, from the records rather than from memory.
+
+    The metric that matters is eligible substantial videos per day, not
+    whether the day's five requests were spent. Unused capacity is a finding,
+    not a failure: retrieving weak content to fill the allowance is the thing
+    this pipeline is built to avoid.
+    """
+    since = iso(datetime.now(timezone.utc) - timedelta(days=days))
+    disc = [d for d in store.discovered() if (d["last_seen_at"] or "") >= since]
+    by_ch = {}
+    for d in disc:
+        by_ch.setdefault(d["channel_id"], []).append(d)
+
+    print(f"  YouTube pilot, last {days} days\n")
+    print(f"  {'team':<5}{'channel':<26}{'seen':>6}{'eligible':>10}"
+          f"{'cached':>8}  top exclusion")
+    print("  " + "-" * 78)
+    for ch in channels:
+        rows = by_ch.get(ch.channel_id, [])
+        elig = [r for r in rows if r["eligible"]]
+        cached = sum(1 for r in rows
+                     if store.cached_transcript(r["video_id"]))
+        why = Counter(r["reasons"][0] for r in rows
+                      if not r["eligible"] and r["reasons"])
+        top = why.most_common(1)[0][0][:34] if why else ""
+        print(f"  {ch.team:<5}{ch.source_name[:25]:<26}{len(rows):>6}"
+              f"{len(elig):>10}{cached:>8}  {top}")
+
+    log = store.conn.execute(
+        "SELECT outcome, detail, requested_at FROM wire_transcript_log "
+        "WHERE requested_at >= ?", (since,)).fetchall()
+    ok = sum(1 for r in log if r["outcome"] == "OK")
+    failed = [r for r in log if r["outcome"] != "OK"]
+    blocks = [r for r in failed if "IpBlocked" in (r["detail"] or "")]
+    caption_off = [r for r in failed
+                   if "Disabled" in (r["detail"] or "")
+                   or "no caption" in (r["detail"] or "")]
+
+    days_seen = {(d["last_seen_at"] or "")[:10] for d in disc if d["last_seen_at"]}
+    elig_all = [d for d in disc if d["eligible"]]
+    elig_days = Counter((d["last_seen_at"] or "")[:10] for d in elig_all)
+    zero_days = len(days_seen) - len(elig_days)
+    capacity = max(1, len(days_seen)) * youtube.MAX_REQUESTS_PER_DAY
+
+    cands = store.candidates("EDITORIAL_REVIEW")
+    yt_cands = [c for c in cands
+                if '"kind": "youtube"' in (c["payload"] or "")]
+
+    print(f"\n  transcript attempts   {len(log)}  "
+          f"({ok} ok, {len(failed)} failed)")
+    print(f"  caption-disabled      {len(caption_off)}")
+    print(f"  ip blocks             {len(blocks)}"
+          f"  ({len(blocks) * youtube.COOLDOWN_HOURS_AFTER_BLOCK}h cooldown)")
+    print(f"  eligible videos       {len(elig_all)} over "
+          f"{len(days_seen)} active day(s)"
+          + (f", {len(elig_all) / len(days_seen):.1f}/day"
+             if days_seen else ""))
+    print(f"  days with none        {max(0, zero_days)}")
+    print(f"  unused capacity       {max(0, capacity - len(log))} of {capacity}")
+    print(f"  candidates pending    {len(yt_cands)} youtube, "
+          f"{len(cands) - len(yt_cands)} article")
+    teams = {d["source_id"] for d in elig_all}
+    print(f"  channels producing    {len(teams)} of {len(channels)}")
+    print("\n  Approval, edit and rejection counts come from the review log "
+          "once\n  items have been through review_wire.py.")
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true",
                     help="show what is eligible; request no transcripts")
     ap.add_argument("--status", action="store_true")
+    ap.add_argument("--report", action="store_true",
+                    help="the 14-day pilot report, from the stored records")
+    ap.add_argument("--days", type=int, default=14)
     ap.add_argument("--url", help="one video, still counted against the budget")
     ap.add_argument("--all-slots", action="store_true",
                     help="keep taking slots until the day's budget is spent")
@@ -222,7 +321,32 @@ def main():
              if state["wait_minutes"] else ""))
     print(f"  {len(pool)} channel(s) active, "
           f"{len(channels) - len(pool)} disabled or blocked")
+    if args.report:
+        return report(store, [c for c in channels if c.pollable], args.days)
+
     if args.status:
+        cd = store.cooldown_until()
+        cached = store.conn.execute(
+            "SELECT COUNT(*) c FROM wire_transcripts").fetchone()["c"]
+        pending = len(store.candidates("EDITORIAL_REVIEW"))
+        disc = store.discovered()
+        elig = [d for d in disc if d["eligible"]]
+        print(f"  discovery      {len(disc)} videos recorded, "
+              f"{len(elig)} eligible")
+        print(f"  last discovery {store.last_discovery_at() or 'never'}")
+        print(f"  last request   {state['last'] or 'never'}")
+        print(f"  next slot      "
+              + (f"in {state['wait_minutes']} min" if state["wait_minutes"]
+                 else "now" if state["remaining"] and not state["blocked_until"]
+                 else "not today"))
+        print(f"  cooldown       "
+              + (f"ACTIVE until {cd}" if state["blocked_until"]
+                 else f"none{f' (last set, expired {cd})' if cd else ''}"))
+        print(f"  transcripts    {cached} cached")
+        print(f"  candidates     {pending} awaiting review")
+        print(f"  discovery via  "
+              + ("YOUTUBE_DATA_API" if ytapi.available()
+                 else "YOUTUBE_RSS (no YOUTUBE_API_KEY set)"))
         return 0
 
     if args.url:

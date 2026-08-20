@@ -98,6 +98,28 @@ CREATE TABLE IF NOT EXISTS wire_cooldown (
   set_at    TEXT
 );
 
+-- Every video ever seen, with why it was accepted or excluded. Idempotent on
+-- (video_id): discovery may run as often as it likes and creates no
+-- duplicates. Costs nothing against the transcript budget.
+CREATE TABLE IF NOT EXISTS wire_discovery (
+  video_id         TEXT PRIMARY KEY,
+  channel_id       TEXT NOT NULL,
+  channel_name     TEXT,
+  source_id        TEXT,
+  canonical_url    TEXT,
+  title            TEXT,
+  description      TEXT,
+  published_at     TEXT,
+  duration_seconds INTEGER,
+  discovery_method TEXT,
+  discovered_at    TEXT,
+  eligible         INTEGER,
+  speaker_mode     TEXT,
+  reasons          TEXT,
+  last_seen_at     TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_disc_chan ON wire_discovery(channel_id);
+
 CREATE TABLE IF NOT EXISTS wire_event_history (
   id               INTEGER PRIMARY KEY AUTOINCREMENT,
   event_fingerprint TEXT,
@@ -235,6 +257,51 @@ class WireStore:
             "SELECT * FROM wire_publications WHERE retracted = 0 "
             "ORDER BY published_at DESC").fetchall()
         return [dict(r) for r in rows]
+
+    # -- discovery ---------------------------------------------------------
+
+    def record_discovery(self, rec: dict) -> bool:
+        """Store or refresh one discovered video. True if it is new.
+
+        Re-running discovery updates what can change -- the duration once it
+        is known, the eligibility verdict, when it was last seen -- and never
+        rewrites when it was first discovered.
+        """
+        existing = self.conn.execute(
+            "SELECT video_id, discovered_at FROM wire_discovery "
+            "WHERE video_id = ?", (rec["video_id"],)).fetchone()
+        first_seen = existing["discovered_at"] if existing else now()
+        self.conn.execute(
+            "INSERT OR REPLACE INTO wire_discovery VALUES "
+            "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            (rec["video_id"], rec["channel_id"], rec.get("channel_name", ""),
+             rec.get("source_id", ""), rec.get("canonical_url", ""),
+             rec.get("title", ""), (rec.get("description") or "")[:2000],
+             rec.get("published_at", ""), rec.get("duration_seconds"),
+             rec.get("discovery_method", ""), first_seen,
+             1 if rec.get("eligible") else 0, rec.get("speaker_mode", ""),
+             json.dumps(rec.get("reasons") or []), now()))
+        self.conn.commit()
+        return existing is None
+
+    def discovered(self, channel_id: str | None = None) -> list[dict]:
+        sql = "SELECT * FROM wire_discovery"
+        args: list = []
+        if channel_id:
+            sql += " WHERE channel_id = ?"
+            args.append(channel_id)
+        sql += " ORDER BY published_at DESC"
+        out = []
+        for r in self.conn.execute(sql, args).fetchall():
+            d = dict(r)
+            d["reasons"] = json.loads(d.get("reasons") or "[]")
+            out.append(d)
+        return out
+
+    def last_discovery_at(self) -> str | None:
+        r = self.conn.execute(
+            "SELECT MAX(last_seen_at) m FROM wire_discovery").fetchone()
+        return r["m"] if r and r["m"] else None
 
     # -- transcript cache and budget ---------------------------------------
 

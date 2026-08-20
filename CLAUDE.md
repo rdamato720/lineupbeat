@@ -178,6 +178,13 @@ python3 scripts/test_wire.py                     # 32 checks, incl. isolation
   `AUTHOR_PAGE_SCRAPE`) and `sources/wire_articles.yaml` names one per source.
 - **Manual URL submission is for missing discovery, never for a blocked
   publisher.** A 403 or a paywall refuses a person exactly as firmly.
+- **`YOUTUBE_API_KEY` lives in the environment and nowhere else.** Never in
+  the registry, a JSON file, the database, a log line or an exception —
+  `wire/ytapi.py` redacts anything key-shaped before raising. Only
+  `playlistItems.list` and `videos.list`; `search.list` costs 100 units
+  against 1 and is never used. No key means RSS discovery, labelled
+  `YOUTUBE_RSS`, which cannot establish duration — so those videos are never
+  eligible for an automatic transcript.
 - **YouTube is local-only and budgeted.** `wire_youtube_ingest.py` runs on a
   laptop, never in CI. Around forty caption requests in an hour earns an
   `IpBlocked`, so the pipeline does not poll: five transcripts a day, one per

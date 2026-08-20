@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import ast
 import json
+import os
 import re
 import sys
 import tempfile
@@ -315,6 +316,140 @@ with tempfile.TemporaryDirectory() as tmp:
     check("a transcript is cached permanently and never re-requested",
           st.cached_transcript("vidX") is not None)
     check("a channel gets one video a day", "UC1" in st.channels_done_today())
+
+# ------------------------------------------------- youtube data api + keys
+
+from wire import ytapi
+
+check("the key is read only from the environment",
+      "YOUTUBE_API_KEY" in (ROOT / "wire" / "ytapi.py").read_text()
+      and not any("YOUTUBE_API_KEY" in (ROOT / "sources" / f).read_text()
+                  for f in ("wire_youtube.yaml", "wire_articles.yaml")))
+check("no key is committed anywhere in the wire",
+      not any(re.search(r"AIza[0-9A-Za-z_\-]{20,}", f.read_text())
+              for f in list((ROOT / "wire").glob("*.py"))
+              + list((ROOT / "scripts").glob("wire_*.py"))
+              + list((ROOT / "sources").glob("wire_*.yaml"))))
+
+_saved = os.environ.get("YOUTUBE_API_KEY")
+os.environ["YOUTUBE_API_KEY"] = "AIzaSyFAKEKEYFAKEKEYFAKEKEYFAKEKEY01"
+try:
+    leak = "https://googleapis.com/v3/videos?key=AIzaSyFAKEKEYFAKEKEYFAKEKEYFAKEKEY01&id=x"
+    check("a url carrying the key is redacted",
+          "AIzaSy" not in ytapi.redact(leak) and "[REDACTED]" in ytapi.redact(leak))
+    check("a key we do not hold is redacted too",
+          "AIzaSyOTHERKEYOTHERKEYOTHERKEY99" not in
+          ytapi.redact("failed with key AIzaSyOTHERKEYOTHERKEYOTHERKEY99"))
+    try:
+        ytapi._call("videos", {"id": "x"})
+        raised = ""
+    except ytapi.YouTubeAPIError as e:
+        raised = str(e)
+    check("an api error never carries the key", "AIzaSy" not in raised, raised[:50])
+finally:
+    os.environ.pop("YOUTUBE_API_KEY", None)
+    if _saved is not None:
+        os.environ["YOUTUBE_API_KEY"] = _saved
+
+check("a missing key fails safely rather than raising",
+      ytapi.available() is False or isinstance(ytapi.api_key(), str))
+check("search.list is never used", "search.list" not in
+      code_only((ROOT / "wire" / "ytapi.py").read_text())
+      and "\"search\"" not in code_only((ROOT / "wire" / "ytapi.py").read_text()))
+check("uploads playlist id is derived from the channel id",
+      ytapi.uploads_playlist("UCwqeh84GMm9Hf7365M9lRYw") == "UUwqeh84GMm9Hf7365M9lRYw")
+try:
+    ytapi.uploads_playlist("@PewterReportTV")
+    check("a handle is refused as a channel id", False)
+except ytapi.YouTubeAPIError:
+    check("a handle is refused as a channel id", True)
+
+check("iso durations parse", ytapi.parse_duration("PT1H2M3S") == 3723
+      and ytapi.parse_duration("PT8M") == 480)
+check("an unreadable duration is None, not zero",
+      ytapi.parse_duration("") is None and ytapi.parse_duration("garbage") is None)
+check("the rss fallback is labelled rss, not the data api",
+      ytapi.RSS == "YOUTUBE_RSS" and ytapi.DATA_API == "YOUTUBE_DATA_API"
+      and ytapi.RSS != ytapi.DATA_API)
+
+# ------------------------------------------------- discovery and eligibility
+
+import wire_youtube_ingest as ing2
+
+tb = by_team["TB"]
+with tempfile.TemporaryDirectory() as tmp:
+    st = WireStore(Path(tmp) / "d.db")
+    good = {"video_id": "v1", "channel_id": tb.channel_id, "url": "u",
+            "title": "Bucs Camp Diary Day 9", "duration_seconds": 900}
+    ok, mode, why = ing2.assess(st, tb, good, rules)
+    check("a verified single-voice report is eligible", ok, str(why))
+
+    wrong = dict(good, channel_id="UCwrongwrongwrongwrong1")
+    ok, _, why = ing2.assess(st, tb, wrong, rules)
+    check("a video owned by another channel is refused", not ok, why[0][:52])
+
+    noduration = dict(good, duration_seconds=None)
+    ok, _, why = ing2.assess(st, tb, noduration, rules)
+    check("a video with no safe duration is refused", not ok, why[0][:52])
+
+    short = dict(good, duration_seconds=120)
+    ok, _, why = ing2.assess(st, tb, short, rules)
+    check("a video under five minutes is refused", not ok, why[0][:40])
+
+    for title in ("Bucs DT Vita Vea Speaks!", "Bucs press conference",
+                  "Members Q&A", "Bucs roundtable", "highlights #shorts"):
+        ok, _, why = ing2.assess(st, tb, dict(good, title=title), rules)
+        check(f"excluded: {title[:30]!r}", not ok, why[0][:34])
+
+    st.save_transcript("v1", tb.channel_id, {"transcript_source": "AUTO_CAPTIONS",
+                                             "language": "en", "chars": 9000,
+                                             "segments": []})
+    ok, _, why = ing2.assess(st, tb, good, rules)
+    check("a cached video is never requested again", not ok, why[0][:40])
+
+    # A to Z is a network channel; college content must not pass its filter.
+    ten = by_team["TEN"]
+    ok, _, why = ing2.assess(st, ten, {"video_id": "v9",
+                                       "channel_id": ten.channel_id, "url": "u",
+                                       "title": "Notre Dame camp report",
+                                       "duration_seconds": 900}, rules)
+    check("A to Z's team filter rejects college content", not ok, why[0][:40])
+
+    # Discovery is idempotent and costs no transcript budget.
+    rec = {"video_id": "d1", "channel_id": tb.channel_id, "canonical_url": "u",
+           "title": "t", "eligible": False, "reasons": ["x"]}
+    check("discovery is idempotent",
+          st.record_discovery(rec) is True and st.record_discovery(rec) is False)
+    check("discovery consumes no transcript budget",
+          ing2.budget_state(st)["used"] == 0)
+
+    # Discovery keeps working while transcripts are frozen.
+    until = (datetime.now(timezone.utc) + timedelta(hours=24)
+             ).replace(microsecond=0).isoformat()
+    st.set_cooldown(until, "IpBlocked")
+    state = ing2.budget_state(st)
+    check("the cooldown reports its exact expiry",
+          state["blocked_until"] == until, until)
+    check("discovery still records during a cooldown",
+          st.record_discovery(dict(rec, video_id="d2")) is True)
+    ok, why = ing2.may_request(state)
+    check("no transcript is requested during a cooldown", not ok, why[:40])
+
+disabled = [c for c in channels if not c.pollable]
+check("disabled channels can never be picked",
+      all(c.team in {"CLE", "NO", "GB", "PHI", "ARI"} for c in disabled),
+      ", ".join(c.team for c in disabled))
+check("PHNX stays blocked with captions disabled",
+      by_team["ARI"].classification == yt.BLOCKED
+      and by_team["ARI"].blocked_reason == "transcripts_disabled")
+check("the PHLY travel channel is never referenced",
+      "UCw0gNeeQuXiRcBd23239Ivg" not in
+      (ROOT / "sources" / "wire_youtube.yaml").read_text())
+
+# The site must not be able to reach any of this.
+check("the site build cannot read transcripts or discovery",
+      not any(t in build for t in ("wire_transcripts", "wire_discovery",
+                                   "wire_candidates")))
 
 print()
 if FAILURES:

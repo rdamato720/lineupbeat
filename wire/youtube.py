@@ -31,6 +31,7 @@ from pathlib import Path
 
 import yaml
 
+from . import ytapi
 from .capture import _get
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -224,6 +225,65 @@ def eligible(channel: Channel, video: dict, rules: Rules,
     if seconds is not None and seconds < MIN_DURATION_SECONDS:
         return False, mode, f"only {seconds}s long"
     return True, mode, ""
+
+
+def discover(channel: Channel, limit: int = 10) -> tuple[list[dict], str, str]:
+    """Recent uploads with as much metadata as the route can give.
+
+    Returns (videos, method, note). The Data API is preferred and gives
+    duration; RSS is the fallback and does not, which is why a video
+    discovered by RSS with no safely established length is never eligible for
+    an automatic transcript request.
+
+    Either way this costs nothing against the transcript budget. Metadata and
+    captions are different endpoints with different limits, and conflating
+    them is how a discovery run burns a day's allowance.
+    """
+    if ytapi.available():
+        try:
+            vids = ytapi.list_uploads(channel.channel_id, limit=limit)
+            ids = [v["video_id"] for v in vids]
+            try:
+                lengths = ytapi.durations(ids)
+            except ytapi.YouTubeAPIError as e:
+                lengths = {i: None for i in ids}
+                note = f"durations unavailable: {e}"
+            else:
+                note = ""
+            for v in vids:
+                v["duration_seconds"] = lengths.get(v["video_id"])
+            return vids, ytapi.DATA_API, note
+        except ytapi.YouTubeAPIError as e:
+            # A missing, invalid, restricted or exhausted key all land here,
+            # and all mean the same thing: carry on with less.
+            vids, err = uploads(channel, limit=limit)
+            for v in vids:
+                v["duration_seconds"] = None
+                v["discovery_method"] = ytapi.RSS
+                v["channel_id"] = channel.channel_id
+                v["channel_name"] = channel.source_name
+            return vids, ytapi.RSS, f"data api unavailable ({e}); used RSS"
+    vids, err = uploads(channel, limit=limit)
+    for v in vids:
+        v["duration_seconds"] = None
+        v["discovery_method"] = ytapi.RSS
+        # RSS gives no owner id, so the channel we asked is the best claim
+        # available -- and it is exactly why RSS-discovered videos need the
+        # Data API before they can be transcribed automatically.
+        v["channel_id"] = channel.channel_id
+        v["channel_name"] = channel.source_name
+    return vids, ytapi.RSS, err or "no YOUTUBE_API_KEY; used RSS"
+
+
+def owner_matches(channel: Channel, video: dict) -> bool:
+    """The video must belong to the registered channel.
+
+    Identity is the UC id and nothing else. A display name or a handle can be
+    changed by its owner or claimed by somebody else -- @PHLYEagles is a
+    stranger's travel channel -- so neither is ever accepted as proof.
+    """
+    owner = (video.get("channel_id") or "").strip()
+    return owner == channel.channel_id
 
 
 def uploads(channel: Channel, limit: int = 15) -> tuple[list[dict], str]:
