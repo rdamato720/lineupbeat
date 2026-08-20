@@ -24,7 +24,7 @@ import json
 import os
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from .ingest import SpendCapExceeded, stitch_threads
 from .models import RawItem, Source
@@ -158,9 +158,157 @@ def parse_timeline(payload: dict, source: Source, handle: str) -> list[RawItem]:
     return items
 
 
+SEARCH_PATH = "/twitter/tweet/advanced_search"
+TIMELINE_PATH = "/twitter/user/last_tweets"
+
+# Pages of a single poll's catch-up. A writer filing more than a hundred
+# posts between two-hourly polls does not happen; the cap is here so a
+# malformed cursor cannot walk forever.
+MAX_SEARCH_PAGES = 5
+
+# Re-ask from slightly before where we got to. The index lags real time by a
+# little, and seen_items drops whatever comes back twice, so the overlap
+# costs a few credits and closes the gap where a post lands between the last
+# tweet we saw and the moment we asked.
+OVERLAP_SECONDS = 300
+
+# How long a source may return nothing before we spend a full timeline read
+# on it. Search came back empty once for a writer who had posted an hour
+# earlier -- transient, and it corrected on the next call, but a source that
+# is genuinely missing from the index would otherwise go quiet forever and
+# look like a slow news week. This bounds that to a day.
+RECONCILE_AFTER_HOURS = 24
+
+
+def _hw_key(source_id: str) -> str:
+    return source_id
+
+
+def _rec_key(source_id: str) -> str:
+    return f"{source_id}#reconciled"
+
+
+def _iso(dt: datetime) -> str:
+    return dt.astimezone(timezone.utc).isoformat()
+
+
+def _parse_iso(raw: str | None) -> datetime | None:
+    if not raw:
+        return None
+    try:
+        dt = datetime.fromisoformat(raw)
+    except (TypeError, ValueError):
+        return None
+    return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+
+
+def _advance(store, source: Source, raw: list[dict],
+             high_water: datetime | None) -> None:
+    """Move the high-water mark to the newest post we actually received.
+
+    Forward only, and only from a real post. An empty response never reaches
+    here, which is the point: the mark is where the reporting got to, not
+    where the clock got to.
+    """
+    newest = max((_parse_time(t.get("createdAt") or t.get("created_at") or "")
+                  for t in raw), default=None)
+    if newest and (high_water is None or newest > high_water):
+        store.set_cursor(_hw_key(source.id), _iso(newest))
+
+
+def _bill(store, source: Source, n_tweets: int) -> None:
+    """One request, billed on what it returned.
+
+    There is a floor: a request that finds nothing still costs the price of
+    one tweet. Measured against the account balance, an empty two-hour
+    window charged exactly that. Busy pages occasionally charge slightly
+    more than the tweets we end up parsing, so treat this column as close
+    rather than exact -- `cli spend` is for spotting a runaway, and the
+    provider's own dashboard is the invoice.
+    """
+    store.record_spend("twitterapi", source.id, max(1, n_tweets),
+                       max(1, n_tweets) * COST_PER_TWEET)
+
+
+def _timeline(source: Source, store, key: str, handle: str) -> list[dict]:
+    """One page of the writer's timeline. The old behaviour, kept as the
+    fallback and as the reconciliation read.
+
+    includeReplies is on. It defaults to false, which is why no thread
+    continuation ever reached the extractor: a beat writer files practice
+    notes as a self-reply chain and the reporting is in posts two through
+    six. Measured on three handles, the flag changes which twenty posts come
+    back and costs nothing extra.
+    """
+    payload = _get(TIMELINE_PATH,
+                   {"userName": handle, "includeReplies": "true"}, key)
+    raw = tweets_from(payload)
+    if raw:
+        _bill(store, source, len(raw))
+    return raw
+
+
+def _search(source: Source, store, key: str, handle: str,
+            since: datetime, until: datetime) -> list[dict]:
+    """Everything the writer posted in a window, and nothing else.
+
+    This is the whole cost argument. `last_tweets` has no way to say "only
+    what is new": it returns its twenty most recent posts and bills for all
+    twenty, so a two-hourly poll pays for the same twenty posts twelve times
+    a day to collect the two that are new. Measured over a real day on one
+    handle, twelve polls cost 3,600 credits that way and 465 this way.
+    """
+    out: list[dict] = []
+    cursor, pages = "", 0
+    while pages < MAX_SEARCH_PAGES:
+        params = {
+            "query": (f"from:{handle} since_time:{int(since.timestamp())} "
+                      f"until_time:{int(until.timestamp())}"),
+            "queryType": "Latest",
+        }
+        if cursor:
+            params["cursor"] = cursor
+        payload = _get(SEARCH_PATH, params, key)
+        page = tweets_from(payload)
+        _bill(store, source, len(page))
+        out += page
+        pages += 1
+        cursor = payload.get("next_cursor") or ""
+        if not payload.get("has_next_page") or not cursor:
+            break
+    return out
+
+
 def fetch(source: Source, store=None, key: str | None = None,
           daily_cap: float = 12.0) -> list[RawItem]:
-    """Read one writer's timeline.
+    """Read one writer's timeline, paying only for what is new.
+
+    HOW THE WINDOW IS TRACKED, AND WHY THIS IS NOT THE 2018 BUG
+
+    There was a cursor here once and it was a disaster: `last_tweets`
+    paginates backwards, its `next_cursor` means *the page before this one*,
+    and persisting it walked each poll further into the past until the model
+    was being paid to read posts from February 2018. That cursor was removed
+    and page one taken every time instead.
+
+    What is stored now is not that. It is a timestamp -- the moment of the
+    newest post we have actually seen -- and it only ever moves forward. It
+    is the answer to "what is new since I last looked", which is the
+    question a poll is asking, and it cannot walk anywhere.
+
+    It advances only from a post we actually received. Never to "now", and
+    never on an empty response: search returned an empty page once for a
+    writer who had posted an hour before, and a high-water mark set to the
+    clock would have skipped that window permanently. Leaving it where it is
+    means a transient miss is picked up on the next poll instead.
+
+    THE FALLBACK
+
+    Anything that goes wrong with the search path -- an error, or a source
+    that stays silent past RECONCILE_AFTER_HOURS -- falls back to reading
+    the timeline the old way. It costs more, which is the point: it is what
+    stops a search-side problem from looking like a quiet news day. Set
+    BEATWIRE_TAPI_MODE=timeline to take the old path for everything.
 
     The cap was two dollars, which was right for eighty-nine handles. At a
     hundred and seventy-four it bought under four runs: the wire went silent
@@ -185,48 +333,59 @@ def fetch(source: Source, store=None, key: str | None = None,
         )
 
     handle = source.handle.lstrip("@")
-    params = {"userName": handle}
+    now = datetime.now(timezone.utc)
+    floor = now - timedelta(days=MAX_AGE_DAYS) if MAX_AGE_DAYS else now - timedelta(days=1)
 
-    # No cursor. Deliberately.
-    #
-    # `last_tweets` is newest-first and its next_cursor means "the page
-    # BEFORE this one". Storing that and sending it back next run resumed
-    # the poll one page deeper into the past, every hour, forever. The
-    # oldest post this collected was from February 2018, and the model was
-    # paid to read all of it -- roughly 2,500 items a run against a real
-    # publishing rate near a thousand a day across every source combined.
-    #
-    # Page one is what has been posted since the last poll, plus overlap.
-    # The overlap is free: seen_items drops it before extraction, which is
-    # what "where I got to" actually means here. A pagination cursor was
-    # never the right thing to persist.
+    raw: list[dict] = []
+    if os.environ.get("BEATWIRE_TAPI_MODE", "").lower() == "timeline":
+        raw = _timeline(source, store, key, handle)
+    else:
+        high_water = _parse_iso(store.get_cursor(_hw_key(source.id)))
+        since = (high_water - timedelta(seconds=OVERLAP_SECONDS)
+                 if high_water else floor)
+        # Never ask for more history than the age filter would keep anyway.
+        since = max(since, floor)
+        try:
+            raw = _search(source, store, key, handle, since, now)
+        except Exception as exc:
+            print(f"  ~ {source.id}: search failed ({str(exc)[:60]}), "
+                  f"falling back to the timeline")
+            raw = _timeline(source, store, key, handle)
 
-    payload = _get("/twitter/user/last_tweets", params, key)
-    raw = tweets_from(payload)
+        if raw:
+            _advance(store, source, raw, high_water)
+            store.set_cursor(_rec_key(source.id), _iso(now))
+        else:
+            # Nothing found. Do not move the high-water mark -- see the
+            # docstring. Start the clock if this source has never had one, so
+            # "silent since" means something on the next poll.
+            if high_water is None:
+                store.set_cursor(_hw_key(source.id), _iso(floor))
+            last_seen = _parse_iso(store.get_cursor(_rec_key(source.id))) or high_water
+            silent_for = None if last_seen is None else now - last_seen
+            if silent_for is None or silent_for > timedelta(hours=RECONCILE_AFTER_HOURS):
+                hours = "no history" if silent_for is None \
+                    else f"{silent_for.total_seconds() / 3600:.0f}h"
+                print(f"  ~ {source.id}: search has found nothing ({hours}), "
+                      f"reading the timeline")
+                raw = _timeline(source, store, key, handle)
+                store.set_cursor(_rec_key(source.id), _iso(now))
+                _advance(store, source, raw, high_water)
 
-    # Bill on what came back. Page one always returns something, so this is
-    # a real cost per poll now rather than free-when-empty -- but it is one
-    # page, not an unbounded walk.
-    if raw:
-        store.record_spend("twitterapi", source.id, len(raw),
-                           len(raw) * COST_PER_TWEET)
-
-    items = parse_timeline(payload, source, handle)
+    items = parse_timeline({"tweets": raw}, source, handle)
 
     # And a floor on age, so a first run against an empty database picks up
     # a few days rather than whatever the page happens to reach back to.
     if MAX_AGE_DAYS:
-        from datetime import datetime, timedelta, timezone
-        floor = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
         kept = []
         for it in items:
-            when = getattr(it, "published_at", None)
-            if when is None:
+            whenever = getattr(it, "published_at", None)
+            if whenever is None:
                 kept.append(it)
                 continue
-            if when.tzinfo is None:
-                when = when.replace(tzinfo=timezone.utc)
-            if when >= floor:
+            if whenever.tzinfo is None:
+                whenever = whenever.replace(tzinfo=timezone.utc)
+            if whenever >= floor:
                 kept.append(it)
         items = kept
 

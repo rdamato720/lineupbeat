@@ -24,18 +24,21 @@ changing anything under `scripts/`.
 pip install -r requirements.txt
 ```
 
-Gates — all three run in CI, run them before shipping:
+Gates — all four run in CI, run them before shipping:
 
 ```bash
 python3 scripts/test_resolve.py                # 25 resolver regressions
-python3 scripts/build_rankings.py --dry-run    # rankings gates, writes nothing
+python3 scripts/test_tapi.py                   # 18 X-fetch regressions, no network
+python3 scripts/build_rankings.py --dry-run    # 13 rankings gates, writes nothing
 python3 -m beatwire.cli doctor    --sport nfl  # registry team codes vs roster team codes
 python3 -m beatwire.cli preflight --sport nfl  # GO / NO-GO on the silent failure modes
 ```
 
 There is no pytest and no runner. Tests are plain scripts that exit non-zero:
-`scripts/test_resolve.py` (resolver) and `scripts/test_engine.py` (the unused
-projection engine, 71 assertions). Run one by running the file.
+`scripts/test_resolve.py` (resolver), `scripts/test_tapi.py` (the X fetch:
+window arithmetic, the empty-response rule, the fallback) and
+`scripts/test_engine.py` (the unused projection engine, 71 assertions). Run
+one by running the file.
 
 Pipeline:
 
@@ -89,8 +92,16 @@ and optionally `fixtures/<source_id>.json`.
 - `registry.py` loads the yaml + roster into `Registry(sport)`.
 - `ingest.py` — `ADAPTERS` keyed by `Source.kind`: `rss`, `podcast`, `bluesky`,
   `fixture`. `kind: x` dispatches out to `tapi.py`, or `sorsa.py` when
-  `BEATWIRE_X_PROVIDER=sorsa` (unsetting that variable is the whole rollback).
+  `BEATWIRE_X_PROVIDER=sorsa`. Sorsa is a hedge, not a cheaper primary — it
+  had a total outage; read `NOTES.md` before promoting it on price.
   Self-replies are stitched into threads; replies to others are dropped.
+- `tapi.py` — a poll asks `advanced_search` for what is new since a stored
+  high-water **timestamp** (forward-only, and nothing like the pagination
+  cursor that once walked back to 2018), not for the last twenty posts. An
+  empty answer never advances the mark; a source silent past a day gets one
+  full timeline read so a search-side failure cannot pass for a quiet news
+  week. `BEATWIRE_TAPI_MODE=timeline` puts everything back on the old path.
+  See "The X read path" in `NOTES.md`.
 - `extract.py` — `mentions_any_player()` prefilters for free before any model
   call; `SYSTEM` is the prompt and is where quality tuning happens. Model is
   `claude-haiku-4-5`, overridable with `BEATWIRE_MODEL`. The skill-position
@@ -159,10 +170,22 @@ Each exists because breaking it caused a real problem (see `NOTES.md`).
   moved a projection, applying it again on draft value counts it twice.
 - **One number, read twice.** Durability and draft value read the same ADP; the
   projections page and the player-page chips read the same board. Do not add a
-  second source for a number that already exists.
-- **`site/nfl/`, `site/index.html`, `site/data/`, `site/404.html` and
-  `beatwire.db` are gitignored.** CI rebuilds them. A page built on a laptop
-  does not exist in production.
+  second source for a number that already exists. Rankings derive from the same
+  workbook for this reason rather than carrying their own copy of the numbers.
+- **Rankings never use a sheet's `Rank` column.** It is not a reliable
+  Half-PPR position rank, and the workbook's replacement-point cells inherit
+  that error. Position rank is computed by sorting on `ranking_score` within
+  the position; overall rank by `ranking_score`, then projected points, then
+  name -- all at **one decimal**, the precision the record publishes. An
+  editorial adjustment moves draft order and never the frozen
+  projected-points column, and cannot be applied without a published reason.
+- **Rankings recalculate from the live projection board every run.**
+  `data/projections.xlsx` for the numbers, `data/nfl_rankings_config.json`
+  for the league shape, replacement ranks, tier bands and approved
+  adjustments. Never pin the frozen workbook as the production source: the
+  projections page would move while the rankings page quoted last week's
+  points. `data/archive/` plus `data/nfl_rankings_source.json` are provenance,
+  reachable through `--export` for an audit rebuild.
 - **Two kinds of editorial decision, and they must not be confused.** A
   manual adjustment is a number and moves `ranking_score`; an editorial order
   constraint moves rank only and touches no number. Both live in
@@ -177,6 +200,9 @@ Each exists because breaking it caused a real problem (see `NOTES.md`).
 - **`data/nfl_rankings_2026.json` is `{metadata, players}`, the whole board.** The top 200
   carry `overall_rank`; everyone else carries null and is ranked only at his
   position. The overall page lists 200, a position page lists its full pool.
+- **`site/nfl/`, `site/index.html`, `site/data/`, `site/404.html` and
+  `beatwire.db` are gitignored.** CI rebuilds them. A page built on a laptop
+  does not exist in production.
 - **Say `player`, not `man`.**
 - **No promotional language** — "must draft", "league winner" and friends are
   out. The numbers do the work.
@@ -193,9 +219,14 @@ overwrote it twice and silently dropped `TWITTERAPI_IO_KEY`; every source then
 failed in a way that looked like a quiet news day.
 
 `beatwire.db` lives in the Actions cache, not the repo, keyed to restore from
-the most recent run. Losing it costs real money. Runs use
-`concurrency: cancel-in-progress` because an overlapping run restores a database
-from before the run ahead of it and re-pays for the same articles.
+the most recent run. Losing it costs real money, so the cache is split into
+`actions/cache/restore` at the top and an explicit `actions/cache/save` with
+`if: always()` straight after the pipeline step — a run that dies still banks
+what it already paid for. Runs **queue** rather than cancel
+(`cancel-in-progress: false`): overlapping runs are the hazard, and queueing
+prevents overlap without throwing away a half-finished pass. Cancelling used
+to kill the source loop partway, always in the same place, so the bottom of
+`sources/nfl.yaml` was polled a fraction as often as the top.
 
 Deploy is **Cloudflare Pages** via wrangler (project `lineupbeat`).
 `netlify.toml` is left over from the previous host and is not the deploy path.
@@ -203,7 +234,8 @@ Deploy is **Cloudflare Pages** via wrangler (project `lineupbeat`).
 ## Environment variables
 
 `ANTHROPIC_API_KEY` (extraction), `TWITTERAPI_IO_KEY` / `SORSA_API_KEY` +
-`BEATWIRE_X_PROVIDER` (X reads), `BEATWIRE_MODEL`, `BEATWIRE_SKILL_ONLY`,
+`BEATWIRE_X_PROVIDER` (X reads), `BEATWIRE_TAPI_MODE` (`timeline` reverts the
+X fetch to one-page-per-poll), `BEATWIRE_MODEL`, `BEATWIRE_SKILL_ONLY`,
 `BEATWIRE_LOCAL` / `BEATWIRE_LOCAL_MODEL` / `BEATWIRE_LOCAL_TIMEOUT` (ollama),
 `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID` (deploy). A missing key means
 the run quietly produces nothing rather than erroring — `preflight` checks for

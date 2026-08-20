@@ -13,17 +13,32 @@ on:
 
 concurrency:
   group: refresh
-  # Cancel a run that is still going when the next one is due.
+  # Queue the next run. Do not cancel the one in flight.
   #
-  # The cache only saves when a job finishes, so an overlapping run restores
-  # a database from before the run ahead of it did any work -- it sees the
-  # same articles as unseen and pays to extract them all over again. Better
-  # to abandon the older run: the newer one covers the same feeds anyway.
-  cancel-in-progress: true
+  # The hazard this group exists for is two runs overlapping: the cache only
+  # saves when a job finishes, so the second restores a database from before
+  # the first did any work, sees the same articles as unseen, and pays to
+  # extract them again. Cancelling is not what prevents that -- not
+  # overlapping is, and queueing does it without throwing work away. At most
+  # one run sits pending here, so a third trigger displaces the pending one,
+  # which has done nothing and cost nothing.
+  #
+  # Cancelling mid-run was expensive in a way that did not show up as a
+  # failure. The loop in pipeline.py polls sources in file order, so a run
+  # killed partway always dies in the same place: every X call it had
+  # already made was billed, the database was never saved, and the bottom of
+  # sources/nfl.yaml was polled a fraction as often as the top. One day's
+  # spend table showed two full passes over the first 75 sources and 22
+  # sources never polled at all.
+  cancel-in-progress: false
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    # Nothing displaces a running job now, so a hung one would hold the queue
+    # until the six-hour default. Shorter than the two-hour trigger interval
+    # would cut healthy runs short; this bounds the damage without doing that.
+    timeout-minutes: 100
     steps:
       - uses: actions/checkout@v4
 
@@ -37,7 +52,7 @@ jobs:
       # seen_items is what stops you re-paying the model for an article you
       # already processed. Losing this cache costs real money, so it is keyed
       # to restore from the most recent run rather than rebuilt.
-      - uses: actions/cache@v4
+      - uses: actions/cache/restore@v4
         with:
           path: beatwire.db
           key: beatwire-db-${{ github.run_id }}
@@ -46,6 +61,7 @@ jobs:
       - name: Gates
         run: |
           python scripts/test_resolve.py
+          python scripts/test_tapi.py
           python -m beatwire.cli doctor --sport nfl
           # The homepage header is generated from seo.py. If somebody edits
           # the template by hand instead, the app and the eight static
@@ -192,6 +208,22 @@ jobs:
           python scripts/build_pages.py --base https://lineupbeat.com
 
 
+      # The database, banked whatever happened above.
+      #
+      # Directly after the step that writes it, and deliberately not at the
+      # end of the job: beatwire.db only changes in the pipeline step, and
+      # every minute between the work and the save is a minute a
+      # cancellation can throw it away. `always()` runs on cancellation,
+      # which is the case this exists for -- a killed run has already paid
+      # the model for whatever it extracted before it died, and pipeline.py
+      # commits per source, so there is always real work to keep.
+      - name: Save the database, whatever happened
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: beatwire.db
+          key: beatwire-db-${{ github.run_id }}
+
       # Publishes even if preflight warns, but records the verdict in the log
       # so a slow degradation shows up in run history instead of silently.
       - name: Preflight
@@ -218,7 +250,38 @@ jobs:
         # creating one that exists is a harmless failure, so this is a
         # no-op on every run after the first.
         run: |
+          # Folded and labelled, because it fails on every run after the
+          # first with "A project with this name already exists" and prints
+          # a full ERROR block to do it. That block is the loudest thing in
+          # a failed log and it is never the reason the job failed, which
+          # is exactly how it gets read as the cause.
+          echo "::group::Ensure the Pages project exists (expected to fail once it does)"
           npx --yes wrangler@latest pages project create lineupbeat \
               --production-branch=main || true
-          npx --yes wrangler@latest pages deploy site \
-              --project-name=lineupbeat --branch=main --commit-dirty=true
+          echo "::endgroup::"
+
+          # The deploy itself gets three attempts.
+          #
+          # It failed with "A fetch request failed, likely due to a
+          # connectivity issue" and then "fetch failed" -- the runner could
+          # not reach the Cloudflare API. Nothing was wrong with the build:
+          # the pages had been written, the gates had passed, and the whole
+          # run was thrown away by one network blip on the last step.
+          #
+          # A Pages deploy creates a new deployment each time, so a retry
+          # after a failed upload costs a deployment slot and nothing else.
+          for attempt in 1 2 3; do
+            if npx --yes wrangler@latest pages deploy site \
+                 --project-name=lineupbeat --branch=main --commit-dirty=true; then
+              echo "  deployed on attempt $attempt"
+              exit 0
+            fi
+            echo "  attempt $attempt failed"
+            # An `if`, not `[ ] && sleep`: the runner sets -e, and on the
+            # last pass the test fails, the && short-circuits, and the loop
+            # body exits non-zero before the message below is ever printed.
+            if [ "$attempt" -lt 3 ]; then sleep $((attempt * 20)); fi
+          done
+          echo "  three attempts failed. The build is fine; the Cloudflare"
+          echo "  API was not reachable. Re-run the job."
+          exit 1

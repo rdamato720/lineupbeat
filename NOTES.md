@@ -75,6 +75,30 @@ real publishing rate near a thousand a day across every source. Fixed by
 taking page one every time; `seen_items` already knows where we got to,
 which is what a cursor was supposed to do. See `tapi.py`.
 
+**Sorsa went dark, all of it at once.** It is wired up as a second X
+provider (`beatwire/sorsa.py`, `BEATWIRE_X_PROVIDER=sorsa`) and it is
+genuinely cheaper: a flat rate per request against twitterapi's per-tweet
+billing, roughly a sixth of the cost for the same 109 handles. It is still
+not the primary, and the price is not the reason. It had a full outage —
+not thin coverage on some handles, every source dark at once — and the wire
+went silent until we switched back. A provider whose failure mode is total
+is a hedge, not a primary, and the arithmetic that says otherwise is only
+counting the good days. The two `sorsa` rows in `api_spend` dated
+2026-08-12 are the tail of that switch-back, not evidence it works.
+
+Keep it wired and keep it working, so the variable is there when
+twitterapi is the one having the bad day. Do not promote it on cost alone.
+
+**Thread continuations never arrived.** `last_tweets` takes an
+`includeReplies` parameter, it defaults to false, and the fetch never sent
+it. So every comment in this codebase about beat writers filing practice
+notes as threads -- the reason `stitch_threads` exists at all -- described
+something that had never once happened on the X path. Measured on three
+handles: zero self-replies without the flag; with it, the continuations
+appear. It costs nothing, because the page is twenty posts either way and
+the bill is per post -- the flag changes which twenty. Both the search path
+and the timeline fallback ask for replies now.
+
 **The skill filter only filtered items, not nuggets.** An item mentioning a
 receiver passed, and the model dutifully produced a claim about the
 linebacker in the same paragraph. Over half the wire was linemen and
@@ -99,6 +123,69 @@ miscoded. The sheet's own tab is what the projection is for.
 III", the roster says "Luther Burden". Slugs are stripped of `jr|sr|ii|iii|iv|v`
 on both sides, and where a resolved slug already exists it is reused rather
 than derived twice.
+
+---
+
+## The X read path
+
+109 handles polled every two hours is the entire API bill, so it is worth
+knowing what one poll does.
+
+**A poll asks for what is new, not for the last twenty posts.**
+`last_tweets` returns the twenty most recent posts and bills for all twenty,
+every time, with no parameter to ask for fewer or newer -- the documented
+options are `userId`, `userName`, `cursor` and `includeReplies`, and that is
+all. So twelve polls a day paid for the same twenty posts twelve times to
+collect the two that were new. `advanced_search` takes
+`from:<handle> since_time:<unix>` and bills for what it returns, with a floor
+of one tweet's worth per request. Measured against the account balance over a
+real day on one handle: 3,600 credits the old way, 465 the new one. Across
+109 handles that is about $118/month against $15.
+
+Coverage was checked before the switch, because a cheaper call that quietly
+misses reporting is not cheaper. Over the same window search missed nothing
+the timeline had, returned two posts it did not, carried every field
+`parse_timeline` reads including `extendedEntities` for the video section,
+and returned self-replies that `stitch_threads` reassembled into real
+threads.
+
+**The stored timestamp is not the 2018 cursor.** Anyone who has read the
+walked-backwards entry above will flinch at the word, and should: that was a
+pagination token meaning *the page before this one*, and persisting it
+marched into the past forever. What is stored now is the time of the newest
+post actually received. It only moves forward, and it answers "what is new
+since I last looked", which is the question a poll is asking.
+
+**An empty answer never moves the mark.** Search returned an empty page once
+for a writer who had posted an hour earlier -- transient, corrected on the
+next call. Had the mark been set to the clock rather than to a real post,
+that window would have been skipped permanently and those posts never seen.
+So the mark advances only from a post in hand, and an empty response leaves
+it exactly where it was.
+
+**Silence past a day buys a full timeline read.** The cheap call cannot
+prove a negative: "nothing new" and "this source has fallen out of the
+index" look identical. A source that has returned nothing for
+`RECONCILE_AFTER_HOURS` gets one ordinary timeline read to settle it. It
+costs more, which is the point -- it is what stops a search-side problem
+from looking like a quiet news week.
+
+**`BEATWIRE_TAPI_MODE=timeline` is the rollback**, one variable, every
+source back on the old path.
+
+**Three handles have stopped posting.** An audit of all 109 in August 2026
+found `@Jeff_Legwold` silent since September 2024, `@Andrew_Krammer` since
+January 2025, and `@adamteicher` for forty days; `@JCAllenNFL` and
+`@Demetrius82` post one to three times a month. They are still enabled. Under
+the old fetch they cost full price for a page of years-old posts that the age
+filter discarded every time; under search they cost the floor, so this is now
+a coverage question rather than a billing one -- Denver, Minnesota and Kansas
+City may be short a live beat writer.
+
+Two things that audit taught, worth keeping: reading the credit balance
+(`GET /oapi/my/info`) is itself free, which makes it the honest way to price
+a call; and the balance settles a few seconds after the request, so reading
+it immediately reports zero and makes a paid call look free.
 
 ---
 

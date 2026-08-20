@@ -14,6 +14,16 @@ The switch is an environment variable because a provider that is cheaper on
 paper is not automatically better in practice. If coverage turns out to be
 thinner, going back is one variable rather than a rewrite.
 
+WHY THIS IS A HEDGE AND NOT THE PRIMARY
+
+Read this before recommending the switch on price. Sorsa had a full outage
+on this project -- every source dark at once, not thin coverage on a few
+handles -- and we switched back to twitterapi because of it. The cost case
+above is still true and still not sufficient: a provider whose failure mode
+is total belongs behind one that degrades. Keep this module working so the
+variable is there when twitterapi has the bad day. See NOTES.md, "Bugs that
+were expensive to find".
+
 WHAT IS DIFFERENT ABOUT THE SHAPE
 
 It is a POST with a JSON body, not a GET with query parameters. Fields are
