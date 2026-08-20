@@ -178,6 +178,15 @@ python3 scripts/test_wire.py                     # 32 checks, incl. isolation
   `AUTHOR_PAGE_SCRAPE`) and `sources/wire_articles.yaml` names one per source.
 - **Manual URL submission is for missing discovery, never for a blocked
   publisher.** A 403 or a paywall refuses a person exactly as firmly.
+- **YouTube is local-only and rate-limited hard.** `wire_youtube_ingest.py`
+  runs on a laptop, never in CI. Around forty caption requests in an hour
+  earns an `IpBlocked` that outlasts several minutes, so it is a handful of
+  chosen videos at a time rather than a poll.
+- **Speaker identity comes from the video's format, never its content.**
+  Transcripts carry no speaker labels and every one of these channels is
+  auto-captioned, so only a plainly single-voice format (camp report,
+  notebook, diary) may become a candidate automatically. Interviews, Q&As and
+  anything ambiguous are `MANUAL_REVIEW_ONLY`. No diarization in V1.
 
 ## Standing rules
 

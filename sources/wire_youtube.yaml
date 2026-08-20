@@ -1,0 +1,254 @@
+# Wire YouTube sources. Editorial Wire only -- reads no fantasy data.
+#
+# Every channel_id here was resolved from the channel page and then checked
+# against what the channel has actually uploaded. A handle is not proof:
+# @PHLYEagles resolves to a personal account called "Craig S" posting travel
+# videos, and three other plausible handles 404 outright. Verified 2026-08-20.
+#
+# WHAT THE PROBE FOUND, AND WHY THE RULES BELOW EXIST
+#
+# Thirty videos across ten channels produced twenty-four transcripts and
+# ZERO manual captions. Every one is auto-generated, so the stricter tier is
+# not an exception here, it is the normal case: names get misheard, negation
+# is lost, numbers move.
+#
+# A transcript also carries no speaker labels. On "Bucs DT Vita Vea Speaks!"
+# the reporter's questions and Vea's answers are one undifferentiated stream.
+# So speaker identity is decided by video FORMAT, never inferred from
+# context, and anything that is not plainly one approved voice goes to a
+# human. No diarization in V1: another uncertain model between the video and
+# the Wire is the opposite of what this is for.
+#
+# THE ACCESS PROBLEM, MEASURED
+#
+# Transcripts are rate-limited by IP and the ceiling is low. A probe of 30
+# videos returned 24 transcripts; a run of roughly 15 more, minutes later,
+# returned IpBlocked on every single request from the same residential
+# address, and was still blocked three minutes on. So this is not a
+# datacenter-versus-home problem -- it is a volume problem, and 40-odd
+# caption requests in an hour is past the line.
+#
+# What that means for the shape of V1: YouTube cannot be polled like RSS. It
+# has to be a small number of deliberately chosen videos, spaced out, run by
+# hand. The registry below is correct and the code works; what is not
+# available is unlimited access to captions.
+#
+# speaker_mode
+#   SINGLE_VOICE   one approved reporter talking: camp report, notebook,
+#                  diary, takeaways. Eligible for automatic candidates.
+#   MULTI_SPEAKER  interview, press conference, panel, call-in, members Q&A.
+#                  Candidates are created but always MANUAL_REVIEW_ONLY.
+#   UNCERTAIN      anything the title does not clearly place. Treated as
+#                  MULTI_SPEAKER, because guessing is the failure mode.
+
+defaults:
+  transcript_languages: [en]
+  # Below this a "transcript" is a caption on a highlight clip, not a report.
+  # NewOrleans.Football's three most recent ran 168, 289 and 360 characters.
+  min_transcript_chars: 1500
+  # Auto-generated captions are the only kind these channels publish.
+  allowed_transcript_sources: [MANUAL_CAPTIONS, AUTO_CAPTIONS]
+
+# Titles that mean more than one person is talking. Checked before anything
+# else, and deliberately broad -- a false MULTI costs a review, a false
+# SINGLE puts a player's words in a reporter's mouth.
+multi_speaker_patterns:
+  - "\\binterview\\b"
+  - "press conference|presser"
+  - "\\bq ?& ?a\\b|\\bmailbag\\b|call-?in"
+  - "\\bpanel\\b|roundtable|crossover"
+  - "\\bspeaks\\b|\\bon facing\\b|breaks down his\\b"
+  - "\\bwith\\b .*\\bjoins\\b|\\bjoins\\b"
+  - "\\bvs\\.? \\w+ podcast\\b|\\bdebate\\b"
+
+# Titles that mean one approved voice, reporting what he saw.
+single_voice_patterns:
+  - "camp report|training camp report"
+  - "notebook|camp diary|diary"
+  - "takeaways|observations|practice notes"
+  - "what i saw|film room|film review"
+
+sources:
+
+  - source_id: yt_buffalo_plus
+    team: "BUF"
+    source_name: Buffalo Plus
+    channel_id: UCCS1NlZ4loA0HIAuvxLA8pQ
+    handle: "@BuffaloPlus"
+    canonical_url: https://www.youtube.com/channel/UCCS1NlZ4loA0HIAuvxLA8pQ
+    approved_reporters: [Buffalo Plus staff]
+    classification: FIRSTHAND_APPROVED
+    attends_practice: true
+    transcript_languages: [en]
+    active: true
+    verified_on: 2026-08-20
+    verified_by: >-
+      Channel page resolved to this UC id; recent uploads mention Bills and
+      Buffalo. 3 of 3 videos returned auto-generated English transcripts.
+
+  - source_id: yt_orange_and_brown
+    team: "CLE"
+    source_name: Orange and Brown Talk (cleveland.com)
+    channel_id: UC6KVMlD2H7Rhjd-nywMqKVw
+    handle: "@clevelanddotcom"
+    canonical_url: https://www.youtube.com/channel/UC6KVMlD2H7Rhjd-nywMqKVw
+    approved_reporters: [cleveland.com Browns staff]
+    classification: MIXED_CHANNEL
+    attends_practice: true
+    transcript_languages: [en]
+    active: true
+    verified_on: 2026-08-20
+    verified_by: >-
+      Resolved from the channel page; recent uploads mention Cleveland. The
+      publisher's channel carries more than the Browns beat, so titles are
+      filtered. 3 of 3 transcripts, all short enough to need review.
+    # The publisher's channel carries the whole newsroom.
+    title_filter: "browns"
+
+  - source_id: yt_dk_pittsburgh
+    team: "PIT"
+    source_name: DK Pittsburgh Sports | Steelers
+    channel_id: UCpK7EXHwMf0p5p5TnTRzYdg
+    handle: "@DKPittsburghSports"
+    canonical_url: https://www.youtube.com/channel/UCpK7EXHwMf0p5p5TnTRzYdg
+    approved_reporters: [Dejan Kovacevic, DK Pittsburgh Sports staff]
+    classification: FIRSTHAND_APPROVED
+    attends_practice: true
+    transcript_languages: [en]
+    active: true
+    verified_on: 2026-08-20
+    verified_by: >-
+      Found by search, not by handle guess -- @DKPittsburghSports 404s.
+      Uploads are Steelers-only. 3 of 3 transcripts, but two are player
+      interviews and score MULTI_SPEAKER.
+
+  - source_id: yt_atoz_nashville
+    team: "TEN"
+    source_name: A to Z Sports Nashville
+    channel_id: UC3GSRnuKIZc1IFJSJiEYhdw
+    handle: "@AtoZSportsNashville"
+    canonical_url: https://www.youtube.com/channel/UC3GSRnuKIZc1IFJSJiEYhdw
+    approved_reporters: [Easton Freeze, A to Z Sports Nashville staff]
+    classification: MIXED_CHANNEL
+    attends_practice: true
+    transcript_languages: [en]
+    active: true
+    verified_on: 2026-08-20
+    verified_by: >-
+      Resolved and confirmed on Titans uploads. Same outlet as the article
+      source atoz_sports_easton_freeze, and the same caution applies: the
+      network covers college football too, so titles are filtered.
+    # The network also covers college football.
+    title_filter: "titans"
+
+  - source_id: yt_phly_sports
+    team: "PHI"
+    source_name: PHLY Sports
+    channel_id: UCkfUbHq1zhQo5oqLrGttp8Q
+    handle: "@PHLYSports"
+    canonical_url: https://www.youtube.com/channel/UCkfUbHq1zhQo5oqLrGttp8Q
+    approved_reporters: [PHLY Eagles staff]
+    classification: MIXED_CHANNEL
+    attends_practice: true
+    transcript_languages: [en]
+    active: true
+    verified_on: 2026-08-20
+    verified_by: >-
+      There is no PHLY Eagles channel. @PHLYEagles resolves to an unrelated
+      personal account ("Craig S", travel videos) and @PHLY_Eagles 404s. This
+      network channel carries Sixers and Phillies shows alongside the Eagles,
+      so the title filter is doing real work. 1 of 3 transcripts -- the two
+      Eagles videos had captions disabled.
+    title_filter: "eagles"
+
+  - source_id: yt_pack_a_day
+    team: "GB"
+    source_name: Pack-A-Day Podcast
+    channel_id: UCSGx5Pq0zA_7O726M3JEptA
+    handle: "@PackADayPodcast"
+    canonical_url: https://www.youtube.com/channel/UCSGx5Pq0zA_7O726M3JEptA
+    approved_reporters: [Andy Herman]
+    classification: MIXED_CHANNEL
+    attends_practice: true
+    transcript_languages: [en]
+    active: true
+    verified_on: 2026-08-20
+    verified_by: >-
+      Resolved and confirmed on Packers uploads. 2 of 3 transcripts; the
+      members Q&A had captions disabled and would have scored MULTI_SPEAKER
+      anyway. The daily camp report is the single-voice format worth having.
+    # Members Q&A and off-topic content share the channel.
+    title_filter: "packers"
+
+  - source_id: yt_purple_insider
+    team: "MIN"
+    source_name: Purple Insider
+    channel_id: UCg73V_bJRU_7_oRpaFqfTDQ
+    handle: "@PurpleInsider"
+    canonical_url: https://www.youtube.com/channel/UCg73V_bJRU_7_oRpaFqfTDQ
+    approved_reporters: [Matthew Coller]
+    classification: FIRSTHAND_APPROVED
+    attends_practice: true
+    transcript_languages: [en]
+    active: true
+    verified_on: 2026-08-20
+    verified_by: >-
+      Resolved and confirmed on Vikings uploads. Best transcript yield of the
+      ten: 3 of 3, 31,000 to 44,000 characters each. Coller is also an
+      approved X source (@MatthewColler).
+
+  - source_id: yt_neworleans_football
+    team: "NO"
+    source_name: NewOrleans.Football
+    channel_id: UCO3-HuPUXFliHV_u-qc33bQ
+    handle: "@NewOrleansFootball"
+    canonical_url: https://www.youtube.com/channel/UCO3-HuPUXFliHV_u-qc33bQ
+    approved_reporters: [Nick Underhill, NewOrleans.Football staff]
+    classification: FIRSTHAND_APPROVED
+    attends_practice: true
+    transcript_languages: [en]
+    active: true
+    verified_on: 2026-08-20
+    verified_by: >-
+      Resolved by search and confirmed on Saints uploads. Transcripts return
+      reliably but the recent three ran 168, 289 and 360 characters -- these
+      are clips, and the length floor will reject them until the channel
+      posts a full report.
+
+  - source_id: yt_pewter_report_tv
+    team: "TB"
+    source_name: PewterReport TV
+    channel_id: UCwqeh84GMm9Hf7365M9lRYw
+    handle: "@PewterReportTV"
+    canonical_url: https://www.youtube.com/channel/UCwqeh84GMm9Hf7365M9lRYw
+    approved_reporters: [Pewter Report staff]
+    classification: FIRSTHAND_APPROVED
+    attends_practice: true
+    transcript_languages: [en]
+    active: true
+    verified_on: 2026-08-20
+    verified_by: >-
+      Resolved and confirmed on Bucs uploads. 3 of 3 transcripts, two over
+      55,000 characters. Both long ones are player interviews, which is
+      exactly the case that must not be treated as a reporter's own words.
+
+  - source_id: yt_phnx_sports
+    team: "ARI"
+    source_name: PHNX Sports
+    channel_id: UCKaPEqS_Mc6eGNNBQN1QgQw
+    handle: "@PHNXSports"
+    canonical_url: https://www.youtube.com/channel/UCKaPEqS_Mc6eGNNBQN1QgQw
+    approved_reporters: [PHNX Cardinals staff]
+    classification: BLOCKED
+    blocked_reason: transcripts_disabled
+    attends_practice: true
+    transcript_languages: [en]
+    active: false
+    verified_on: 2026-08-20
+    verified_by: >-
+      There is no PHNX Cardinals channel -- @PHNX_Cardinals and three
+      variants all 404, and the network channel carries Suns and Arizona
+      State alongside the Cardinals. Captions are disabled on all three
+      recent videos, so nothing can be quoted from it. Left here with the
+      reason so it is not rediscovered and retried.
+    title_filter: "cardinals"

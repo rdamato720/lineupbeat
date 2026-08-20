@@ -177,6 +177,75 @@ with tempfile.TemporaryDirectory() as tmp:
     except ValueError:
         check("an unknown state is refused", True)
 
+# ------------------------------------------------------------------ youtube
+
+from wire import youtube as yt
+
+channels, rules = yt.load()
+check("youtube registry loads", len(channels) == 10, f"{len(channels)} channels")
+check("youtube registry passes its own rules", not yt.problems(channels),
+      str(yt.problems(channels)[:2]))
+check("every channel id is a real UC id",
+      all(re.fullmatch(r"UC[\w-]{22}", c.channel_id) for c in channels))
+check("every channel records when and how it was verified",
+      all(c.verified_on and c.verified_by for c in channels))
+
+by_team = {c.team: c for c in channels}
+# `NO` is YAML's boolean false. New Orleans parsed as `team: False` and
+# matched nothing until the codes were quoted.
+check("New Orleans survives YAML's boolean NO", "NO" in by_team,
+      str(sorted(by_team)[:4]))
+check("a channel with captions disabled is blocked and inactive",
+      by_team["ARI"].classification == yt.BLOCKED
+      and not by_team["ARI"].pollable
+      and by_team["ARI"].blocked_reason == "transcripts_disabled")
+
+# Speaker identity comes from the format, never from the content.
+cases = [
+    ("Packers Training Camp Report - Day 14!!!", yt.SINGLE_VOICE),
+    ("David Walker Camp Diary: Bucs Want To Get Out", yt.SINGLE_VOICE),
+    ("Bucs DT Vita Vea Speaks!", yt.MULTI_SPEAKER),
+    ("Pack-A-Day Members Q&A!!!", yt.MULTI_SPEAKER),
+    ("Will Howard, Steelers, breaks down his performance", yt.MULTI_SPEAKER),
+    ("Titans press conference: head coach", yt.MULTI_SPEAKER),
+    ("Vikings IMPORTANT intel from training camp", yt.UNCERTAIN),
+]
+for title, want in cases:
+    got = yt.speaker_mode(title, rules)
+    check(f"speaker mode: {title[:38]!r}", got == want, f"got {got}")
+
+# The rule that matters: only a plainly single voice may skip straight to a
+# candidate, and even then a human still approves it.
+firsthand = by_team["MIN"]
+check("a single-voice video from an approved reporter is AUTO_READY",
+      yt.readiness(firsthand, yt.SINGLE_VOICE) == yt.AUTO_READY)
+check("an interview is never AUTO_READY",
+      yt.readiness(firsthand, yt.MULTI_SPEAKER) == yt.MANUAL_REVIEW_ONLY)
+check("an unclassifiable title is never AUTO_READY",
+      yt.readiness(firsthand, yt.UNCERTAIN) == yt.MANUAL_REVIEW_ONLY)
+
+check("short transcripts are rejected by the floor",
+      rules.min_transcript_chars >= 1500, str(rules.min_transcript_chars))
+check("speech recognition is not an allowed transcript source",
+      "WHISPER_TRANSCRIPTION" not in rules.allowed_transcript_sources)
+
+segs = [{"start_seconds": 875.1, "duration_seconds": 4.8, "text": "one"},
+        {"start_seconds": 879.9, "duration_seconds": 4.0, "text": "two"}]
+spans = yt.evidence_spans("VID", segs, window=2)
+check("evidence spans carry a start, an end and a deep link",
+      len(spans) == 1 and spans[0]["start_seconds"] == 875.1
+      and spans[0]["url"].endswith("&t=875s"), str(spans[:1]))
+check("no evidence span claims to know who is speaking",
+      all("speaker" not in s for s in spans))
+
+ytsrc = (ROOT / "wire" / "youtube.py").read_text()
+check("youtube.py imports nothing from the fantasy side",
+      not FORBIDDEN_IMPORTS.findall(code_only(ytsrc)))
+check("youtube.py names no fantasy data file",
+      not FORBIDDEN_NAMES.search(code_only(ytsrc)))
+check("no diarization is attempted in V1",
+      "diariz" not in code_only(ytsrc).lower())
+
 print()
 if FAILURES:
     print(f"{len(FAILURES)} failed: " + ", ".join(FAILURES[:6]))
