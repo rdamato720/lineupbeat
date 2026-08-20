@@ -67,6 +67,37 @@ CREATE TABLE IF NOT EXISTS wire_publications (
   retracted        INTEGER NOT NULL DEFAULT 0
 );
 
+-- Every transcript ever retrieved, kept forever. A caption request is the
+-- scarcest thing this pipeline has: five a day, and a repeat spends one of
+-- them to learn something already known.
+CREATE TABLE IF NOT EXISTS wire_transcripts (
+  video_id          TEXT PRIMARY KEY,
+  channel_id        TEXT,
+  transcript_source TEXT,
+  language          TEXT,
+  chars             INTEGER,
+  segments          TEXT,
+  fetched_at        TEXT
+);
+
+-- The ledger the daily budget is counted from, successes and failures alike.
+-- A refused request still cost an attempt against the address.
+CREATE TABLE IF NOT EXISTS wire_transcript_log (
+  id           INTEGER PRIMARY KEY AUTOINCREMENT,
+  video_id     TEXT,
+  requested_at TEXT,
+  outcome      TEXT,
+  detail       TEXT
+);
+
+-- When the pipeline may next ask YouTube for anything.
+CREATE TABLE IF NOT EXISTS wire_cooldown (
+  scope     TEXT PRIMARY KEY,
+  until     TEXT,
+  reason    TEXT,
+  set_at    TEXT
+);
+
 CREATE TABLE IF NOT EXISTS wire_event_history (
   id               INTEGER PRIMARY KEY AUTOINCREMENT,
   event_fingerprint TEXT,
@@ -204,6 +235,63 @@ class WireStore:
             "SELECT * FROM wire_publications WHERE retracted = 0 "
             "ORDER BY published_at DESC").fetchall()
         return [dict(r) for r in rows]
+
+    # -- transcript cache and budget ---------------------------------------
+
+    def cached_transcript(self, video_id: str) -> dict | None:
+        r = self.conn.execute(
+            "SELECT * FROM wire_transcripts WHERE video_id = ?",
+            (video_id,)).fetchone()
+        if not r:
+            return None
+        d = dict(r)
+        d["segments"] = json.loads(d["segments"] or "[]")
+        return d
+
+    def save_transcript(self, video_id, channel_id, tr) -> None:
+        self.conn.execute(
+            "INSERT OR REPLACE INTO wire_transcripts VALUES (?,?,?,?,?,?,?)",
+            (video_id, channel_id, tr["transcript_source"], tr["language"],
+             tr["chars"], json.dumps(tr["segments"]), now()))
+        self.conn.commit()
+
+    def log_request(self, video_id, outcome, detail="") -> None:
+        self.conn.execute(
+            "INSERT INTO wire_transcript_log (video_id, requested_at, outcome, "
+            "detail) VALUES (?,?,?,?)", (video_id, now(), outcome, detail))
+        self.conn.commit()
+
+    def requests_today(self) -> list[dict]:
+        today = now()[:10]
+        return [dict(r) for r in self.conn.execute(
+            "SELECT * FROM wire_transcript_log WHERE substr(requested_at,1,10) = ?"
+            " ORDER BY requested_at", (today,)).fetchall()]
+
+    def last_request_at(self) -> str | None:
+        r = self.conn.execute(
+            "SELECT requested_at FROM wire_transcript_log "
+            "ORDER BY id DESC LIMIT 1").fetchone()
+        return r["requested_at"] if r else None
+
+    def channels_done_today(self) -> set:
+        """Which channels already spent their one video today."""
+        today = now()[:10]
+        rows = self.conn.execute(
+            "SELECT DISTINCT t.channel_id FROM wire_transcripts t "
+            "WHERE substr(t.fetched_at,1,10) = ?", (today,)).fetchall()
+        return {r["channel_id"] for r in rows if r["channel_id"]}
+
+    def cooldown_until(self, scope: str = "youtube") -> str | None:
+        r = self.conn.execute(
+            "SELECT until FROM wire_cooldown WHERE scope = ?", (scope,)).fetchone()
+        return r["until"] if r else None
+
+    def set_cooldown(self, until_iso: str, reason: str,
+                     scope: str = "youtube") -> None:
+        self.conn.execute(
+            "INSERT OR REPLACE INTO wire_cooldown VALUES (?,?,?,?)",
+            (scope, until_iso, reason, now()))
+        self.conn.commit()
 
     def log(self, fingerprint, candidate_id, action, actor, detail=""):
         self.conn.execute(

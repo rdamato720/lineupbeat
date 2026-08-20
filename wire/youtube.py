@@ -169,6 +169,63 @@ def readiness(channel: Channel, mode: str) -> str:
     return MANUAL_REVIEW_ONLY
 
 
+# The transcript budget. Not tuning knobs -- these are what the address will
+# tolerate. Thirty caption requests worked; roughly forty in an hour earned an
+# IpBlocked that outlasted several minutes, so the budget sits far below the
+# line rather than near it.
+MAX_REQUESTS_PER_DAY = 5
+MIN_MINUTES_BETWEEN = 45
+MAX_VIDEOS_PER_CHANNEL_PER_DAY = 1
+COOLDOWN_HOURS_AFTER_BLOCK = 24
+MIN_DURATION_SECONDS = 300          # under five minutes is a clip, not a report
+
+
+def duration_seconds(video_id: str) -> tuple[int, str]:
+    """How long the video is, without asking for captions.
+
+    The watch page carries lengthSeconds in its metadata. This is the cheap
+    half of discovery -- metadata costs nothing against the caption limit,
+    and knowing the length is what keeps a two-minute highlight from spending
+    one of five daily transcript requests.
+
+    With a Data API key this is videos.list(part=contentDetails), one unit.
+    """
+    status, html, _ = _get(f"https://www.youtube.com/watch?v={video_id}",
+                           timeout=25)
+    if not (isinstance(status, int) and status == 200 and html):
+        return 0, f"http {status}"
+    m = re.search(r'"lengthSeconds":"(\d+)"', html)
+    if not m:
+        m = re.search(r'"approxDurationMs":"(\d+)"', html)
+        if m:
+            return int(m.group(1)) // 1000, ""
+        return 0, "no duration in page"
+    return int(m.group(1)), ""
+
+
+def eligible(channel: Channel, video: dict, rules: Rules,
+             seconds: int | None = None) -> tuple[bool, str, str]:
+    """Whether this video may spend one of the day's five requests.
+
+    Returns (ok, speaker_mode, why_not). Deliberately strict: the budget is
+    small enough that one wasted request is a fifth of the day.
+    """
+    title = video.get("title", "")
+    if channel.title_filter and channel.title_filter.lower() not in title.lower():
+        return False, "", f"not a {channel.title_filter} video"
+    mode = speaker_mode(title, rules)
+    if mode != SINGLE_VOICE:
+        # Interviews, press conferences, panels and anything ambiguous are
+        # still reviewable material -- they are just not worth a scarce
+        # request while the budget is five a day.
+        return False, mode, f"{mode.lower()} format"
+    if re.search(r"#shorts\b|\bshorts?\b", title, re.I):
+        return False, mode, "short"
+    if seconds is not None and seconds < MIN_DURATION_SECONDS:
+        return False, mode, f"only {seconds}s long"
+    return True, mode, ""
+
+
 def uploads(channel: Channel, limit: int = 15) -> tuple[list[dict], str]:
     """Recent uploads, from the channel feed.
 

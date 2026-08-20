@@ -246,6 +246,76 @@ check("youtube.py names no fantasy data file",
 check("no diarization is attempted in V1",
       "diariz" not in code_only(ytsrc).lower())
 
+# ------------------------------------------------- youtube transcript budget
+
+sys.path.insert(0, str(ROOT / "scripts"))
+import wire_youtube_ingest as ing
+from datetime import datetime, timedelta, timezone
+
+active = [c for c in channels if c.pollable]
+check("exactly the five approved channels are active", len(active) == 5,
+      ", ".join(c.team for c in active))
+check("the starting five are the ones approved",
+      {c.team for c in active} == {"BUF", "PIT", "TEN", "MIN", "TB"},
+      str(sorted(c.team for c in active)))
+
+check("the budget is five a day, forty-five minutes apart",
+      yt.MAX_REQUESTS_PER_DAY == 5 and yt.MIN_MINUTES_BETWEEN == 45
+      and yt.MAX_VIDEOS_PER_CHANNEL_PER_DAY == 1)
+check("a block pauses everything for a day",
+      yt.COOLDOWN_HOURS_AFTER_BLOCK == 24)
+check("videos under five minutes are not worth a request",
+      yt.MIN_DURATION_SECONDS == 300)
+
+tb = by_team["TB"]
+for title, want_ok, why in [
+    ("David Walker Camp Diary: Bucs Want To Get Out", True, ""),
+    ("Bucs DT Vita Vea Speaks!", False, "multi"),
+    ("Bucs highlights #shorts", False, "short"),
+]:
+    ok, mode, reason = yt.eligible(tb, {"title": title}, rules)
+    check(f"eligibility: {title[:34]!r}", ok == want_ok, reason or "eligible")
+ok, _, reason = yt.eligible(tb, {"title": "Bucs Camp Diary Day 9"}, rules,
+                            seconds=120)
+check("a two-minute video is refused on length", not ok, reason)
+
+with tempfile.TemporaryDirectory() as tmp:
+    st = WireStore(Path(tmp) / "b.db")
+    check("a fresh day allows a request", ing.may_request(ing.budget_state(st))[0])
+
+    for i in range(yt.MAX_REQUESTS_PER_DAY):
+        st.log_request(f"v{i}", "OK", "")
+    ok, why = ing.may_request(ing.budget_state(st))
+    check("the daily cap stops further requests", not ok, why)
+
+with tempfile.TemporaryDirectory() as tmp:
+    st = WireStore(Path(tmp) / "b.db")
+    st.log_request("v1", "OK", "")
+    ok, why = ing.may_request(ing.budget_state(st))
+    check("requests are staggered", not ok, why)
+    # A refused request still spent an attempt against the address.
+    st2 = WireStore(Path(tmp) / "c.db")
+    st2.log_request("v9", "FAILED", "IpBlocked")
+    check("a failed request still counts against the day",
+          ing.budget_state(st2)["used"] == 1)
+
+with tempfile.TemporaryDirectory() as tmp:
+    st = WireStore(Path(tmp) / "b.db")
+    until = (datetime.now(timezone.utc) + timedelta(hours=24)
+             ).replace(microsecond=0).isoformat()
+    st.set_cooldown(until, "IpBlocked")
+    ok, why = ing.may_request(ing.budget_state(st))
+    check("an IpBlocked pauses every request for a day", not ok, why[:44])
+
+with tempfile.TemporaryDirectory() as tmp:
+    st = WireStore(Path(tmp) / "b.db")
+    st.save_transcript("vidX", "UC1", {"transcript_source": "AUTO_CAPTIONS",
+                                       "language": "en", "chars": 9000,
+                                       "segments": []})
+    check("a transcript is cached permanently and never re-requested",
+          st.cached_transcript("vidX") is not None)
+    check("a channel gets one video a day", "UC1" in st.channels_done_today())
+
 print()
 if FAILURES:
     print(f"{len(FAILURES)} failed: " + ", ".join(FAILURES[:6]))

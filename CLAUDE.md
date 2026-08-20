@@ -178,10 +178,14 @@ python3 scripts/test_wire.py                     # 32 checks, incl. isolation
   `AUTHOR_PAGE_SCRAPE`) and `sources/wire_articles.yaml` names one per source.
 - **Manual URL submission is for missing discovery, never for a blocked
   publisher.** A 403 or a paywall refuses a person exactly as firmly.
-- **YouTube is local-only and rate-limited hard.** `wire_youtube_ingest.py`
-  runs on a laptop, never in CI. Around forty caption requests in an hour
-  earns an `IpBlocked` that outlasts several minutes, so it is a handful of
-  chosen videos at a time rather than a poll.
+- **YouTube is local-only and budgeted.** `wire_youtube_ingest.py` runs on a
+  laptop, never in CI. Around forty caption requests in an hour earns an
+  `IpBlocked`, so the pipeline does not poll: five transcripts a day, one per
+  channel, 45 minutes apart, nothing under five minutes, every transcript
+  cached forever, and a full 24-hour stop the moment YouTube refuses. Use
+  `--plan` to see what is eligible without spending a request; `--status` for
+  what the day has left. Discovery is free and separate -- titles, ids and
+  durations never touch the caption endpoint.
 - **Speaker identity comes from the video's format, never its content.**
   Transcripts carry no speaker labels and every one of these channels is
   auto-captioned, so only a plainly single-voice format (camp report,
