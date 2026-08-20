@@ -155,6 +155,30 @@ is **not wired into the live site** — projections come from the spreadsheet.
 `evidence.py` is frozen: no architectural changes without a real correctness bug.
 Do not assume a `scripts/*.py` file is live; check whether the workflow calls it.
 
+## The editorial Wire (`wire/`, dark launch)
+
+A separate product from the X wire, which keeps running unchanged. Articles
+from approved beat reporters, captured and reviewed by hand before anything
+is published. Nothing here reaches the site automatically.
+
+```bash
+python3 scripts/wire_ingest.py                   # discover + capture candidates
+python3 scripts/wire_ingest.py --url https://... # manual submission
+python3 scripts/review_wire.py                   # approve / edit / reject / merge
+python3 scripts/test_wire.py                     # 32 checks, incl. isolation
+```
+
+- **The Wire never touches fantasy data.** No projections, rankings, ADP,
+  draft value, schedule strength or durability, and it may not recommend that
+  any of them change. `scripts/test_wire.py` enforces it against the code.
+- **Candidates and publications are different tables.** The site reads
+  `data/wire_publications.json`, which only a reviewer writes to.
+- **There is no universal extractor.** Four adapters already
+  (`FULL_TEXT_FEED`, `EXCERPT_FEED_PAGE_FETCH`, `SITE_FEED_AUTHOR_FILTER`,
+  `AUTHOR_PAGE_SCRAPE`) and `sources/wire_articles.yaml` names one per source.
+- **Manual URL submission is for missing discovery, never for a blocked
+  publisher.** A 403 or a paywall refuses a person exactly as firmly.
+
 ## Standing rules
 
 Each exists because breaking it caused a real problem (see `NOTES.md`).

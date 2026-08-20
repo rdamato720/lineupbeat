@@ -1,0 +1,260 @@
+# Wire article sources -- FIRST DRAFT, from the feasibility probe of 2026-08-20.
+#
+# Editorial Wire only. Nothing here reads or writes projections, rankings,
+# ADP, draft value, strength of schedule or durability.
+#
+# WHAT THE PROBE ESTABLISHED
+#
+# Discovery and extraction fail independently and must be tracked separately.
+# MassLive has a perfectly good feed and blocks the article; Boston Herald
+# extracts 13,000 clean characters and publishes no usable feed. Treating
+# either as one "does it work" number hides the fix.
+#
+# The pattern behind the failures is not random: independents and
+# team-focused outlets extract cleanly, national chains block. Every source
+# below that works is an independent, an On SI team channel or a local
+# station site. Every source that blocks belongs to Advance, McClatchy,
+# Disney or NYT. Build this registry out of the former.
+#
+# There is no universal path. Four adapters already: full-text feed,
+# excerpt-feed-plus-page-fetch, site-wide feed filtered by author, and
+# author-page scrape. Assume a fifth for the next publisher.
+#
+# STATUS VALUES
+#   AUTO_READY             discovery and extraction both work unattended
+#   MANUAL_URL_ONLY        extraction works; no discovery route found
+#   CUSTOM_ADAPTER_NEEDED  works, but not through RSS -- needs its own code
+#   BLOCKED                publisher refuses, or content is paid. Do not
+#                          work around either.
+
+sources:
+
+  # ---------------------------------------------------------------- AUTO_READY
+
+  - source_id: arizona_sports_tyler_drake
+    source_name: Arizona Sports
+    reporter_name: Tyler Drake
+    x_handle: Tdrake4sports
+    teams: [ARI]
+    formats: [article]
+    domains: [arizonasports.com]
+    feed_url: https://arizonasports.com/feed/
+    discovery: rss_sitewide_filtered
+    feed_scope: site
+    # The station covers the whole city: a 20-entry snapshot held 9 MLB, 5
+    # NFL, 3 NCAA and an NBA item. Approving the feed would put Diamondbacks
+    # coverage on the Wire, so it is filtered to the Cardinals section and to
+    # Drake's byline.
+    filter:
+      url_pattern: '^/nfl/arizona-cardinals/'
+      author: Tyler Drake
+    status: AUTO_READY
+    active: true
+    trust_tier: 1
+    reporting_type: LOCAL_BEAT
+    default_language: en
+    # The 403 seen earlier was user-agent only; a browser UA returns 200.
+    # Extracted body contains the exact quote verified against the article.
+    probe: {discovery: ok, body_chars: 5141, author: true, date: true,
+            canonical: true}
+
+  - source_id: packers_on_si_bill_huber
+    source_name: Packers On SI
+    reporter_name: Bill Huber
+    x_handle: BillHuberNFL
+    teams: [GB]
+    formats: [article]
+    domains: [si.com]
+    feed_url: https://www.si.com/feed
+    discovery: rss_sitewide_filtered
+    feed_scope: site
+    # There is no per-team feed. si.com/nfl/packers/rss and four other
+    # conventions all 404, and the channel page declares none. What exists is
+    # one site-wide feed, and in an 85-entry snapshot 19 were NFL On SI
+    # articles across 17 different teams, each with author and date. So the
+    # adapter filters on both the URL shape and the reporter's name.
+    filter:
+      url_pattern: '^/nfl/packers/onsi/'
+      author: Bill Huber
+    status: AUTO_READY
+    active: true
+    trust_tier: 1
+    reporting_type: LOCAL_BEAT
+    default_language: en
+    # Verified on a real Huber article, not on a Giants one picked up by a
+    # site-wide feed -- which is what the first probe actually measured.
+    probe: {discovery: ok, body_chars: 10210, author: true, date: true,
+            canonical: true,
+            sample: /nfl/packers/onsi/ten-winners-four-losers-from-practice-14}
+
+  - source_id: pewter_report
+    source_name: Pewter Report
+    reporter_name: Pewter Report staff
+    x_handle: PewterReport
+    teams: [TB]
+    formats: [article]
+    domains: [pewterreport.com]
+    feed_url: https://www.pewterreport.com/feed/
+    discovery: rss_full_text
+    feed_scope: publication
+    # Every entry opens with the same sponsor block. It is a plain paragraph
+    # in the feed body, so no extractor can tell it from reporting.
+    strip_patterns:
+      - "Pewter Report.{0,40}coverage is presented by.*?SynergyFL\\.com"
+      - "Become the envy of the neighborhood.*?SynergyFL\\.com"
+    # The only source here that needs no filter: Pewter Report covers the
+    # Buccaneers and nothing else, so every entry in the feed is on beat.
+    # Approved at publication level rather than by byline, which is why
+    # reporter_name is the masthead and not a person.
+    status: AUTO_READY
+    active: true
+    trust_tier: 1
+    reporting_type: LOCAL_BEAT
+    default_language: en
+    # Feed carries the whole article, so ingestion needs no page fetch at all.
+    probe: {discovery: ok, body_chars: 4527, feed_full_text: true,
+            author: true, date: true, canonical: true}
+
+  - source_id: atoz_sports_easton_freeze
+    source_name: A to Z Sports
+    reporter_name: Easton Freeze
+    x_handle: eastonfreeze
+    teams: [TEN]
+    formats: [article]
+    domains: [atozsports.com]
+    feed_url: https://atozsports.com/feed
+    discovery: rss_sitewide_filtered
+    feed_scope: site
+    # Half the feed is college football -- Notre Dame, Oklahoma, LSU, Georgia
+    # -- and the rest is spread across NFL teams. Filtered to the Titans
+    # section and Freeze's byline.
+    filter:
+      url_pattern: '^/nfl/tennessee-titans'
+      author: Easton Freeze
+    status: AUTO_READY
+    active: true
+    trust_tier: 1
+    reporting_type: LOCAL_BEAT
+    default_language: en
+    probe: {discovery: ok, body_chars: 3120, feed_full_text: true,
+            author: true, date: true, canonical: true}
+
+  - source_id: phillyvoice_jimmy_kempski
+    source_name: PhillyVoice
+    reporter_name: Jimmy Kempski
+    x_handle: JimmyKempski
+    teams: [PHI]
+    formats: [article]
+    domains: [phillyvoice.com]
+    feed_url: https://www.phillyvoice.com/feed/
+    discovery: rss_sitewide_filtered
+    feed_scope: site
+    # Site-wide feed -- it carries crime and events too, so the adapter must
+    # filter. Both signals are present and agree: author "Jimmy Kempski"
+    # (7 of the current 50) and category "Eagles".
+    filter: {author: Jimmy Kempski, categories: [Eagles, NFL]}
+    status: AUTO_READY
+    active: true
+    trust_tier: 1
+    reporting_type: LOCAL_BEAT
+    default_language: en
+    probe: {discovery: ok, body_chars: 8798, author: true, date: true,
+            canonical: true}
+
+  # ------------------------------------------------- CUSTOM_ADAPTER_NEEDED
+
+  - source_id: boston_herald_andrew_callahan
+    source_name: Boston Herald
+    reporter_name: Andrew Callahan
+    x_handle: _AndrewCallahan
+    teams: [NE]
+    formats: [article]
+    domains: [bostonherald.com]
+    author_page: https://www.bostonherald.com/author/andrew-callahan/
+    discovery: author_page_scrape
+    status: CUSTOM_ADAPTER_NEEDED
+    active: false
+    trust_tier: 1
+    reporting_type: LOCAL_BEAT
+    default_language: en
+    # Extraction is the best of the ten at 13,295 characters with author and
+    # date. No usable feed was found, but the author page returns 21
+    # article-shaped links, so this needs a small scraper rather than RSS.
+    # Turns AUTO_READY the day that adapter exists.
+    probe: {discovery: author_page_only, body_chars: 13295, author: true,
+            date: true, canonical: true}
+
+  # ------------------------------------------------------------------ BLOCKED
+
+  - source_id: masslive_mark_daniels
+    source_name: MassLive
+    reporter_name: Mark Daniels
+    x_handle: ByMarkDaniels
+    teams: [NE]
+    formats: [article]
+    domains: [masslive.com]
+    feed_url: https://www.masslive.com/arc/outboundfeeds/rss/?outputType=xml
+    discovery: rss_headlines_only
+    status: BLOCKED
+    active: false
+    trust_tier: 1
+    reporting_type: LOCAL_BEAT
+    default_language: en
+    # Discovery works and extraction does not, which is why the two are
+    # tracked apart. The feed lists 50 items but carries 86 characters of
+    # text, and the article page returns 403 to a browser user-agent on
+    # repeated attempts. Deliberate. Do not work around it.
+    probe: {discovery: ok, feed_text_chars: 86, article_http: 403,
+            attempts: 2}
+
+  - source_id: the_athletic_dan_wiederer
+    source_name: The Athletic
+    reporter_name: Dan Wiederer
+    x_handle: danwiederer
+    teams: [CHI]
+    formats: [article]
+    domains: [nytimes.com]
+    discovery: rss_headlines_only
+    status: BLOCKED
+    active: false
+    blocked_reason: paid_subscription_content
+    trust_tier: 1
+    reporting_type: LOCAL_BEAT
+    default_language: en
+    # Extracts cleanly at 10,657 characters. Excluded on policy, not
+    # capability: it is paid subscription journalism. Use only what the
+    # reporter says in public.
+    probe: {discovery: headlines_only, body_chars: 10657, paywalled: true}
+
+  - source_id: espn_jamison_hensley
+    source_name: ESPN
+    reporter_name: Jamison Hensley
+    x_handle: jamisonhensley
+    teams: [BAL]
+    formats: [article]
+    domains: [espn.com]
+    discovery: none_found
+    status: BLOCKED
+    active: false
+    trust_tier: 1
+    reporting_type: NATIONAL_REPORTER
+    default_language: en
+    # Every request answers 202 with 157 characters: an Akamai bot challenge,
+    # not a page. Consistent across attempts.
+    probe: {discovery: none, article_http: 202, body_chars: 157, attempts: 2}
+
+  - source_id: charlotte_observer_alex_zietlow
+    source_name: Charlotte Observer
+    reporter_name: Alex Zietlow
+    x_handle: alexzietlow05
+    teams: [CAR]
+    formats: [article]
+    domains: [charlotteobserver.com]
+    discovery: none_found
+    status: BLOCKED
+    active: false
+    trust_tier: 1
+    reporting_type: LOCAL_BEAT
+    default_language: en
+    # Connection times out on every attempt, homepage and article alike.
+    probe: {discovery: none, article_http: timeout, attempts: 2}
