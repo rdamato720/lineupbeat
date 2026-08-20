@@ -146,6 +146,13 @@ a{color:inherit}
 .fdcard:hover h3{color:var(--signal)}
 .fdcard p{margin:.35rem 0 0; font-size:.79rem; line-height:1.45;
   color:var(--quiet)}
+/* Only the rankings card carries a button. It is the newest board and the
+   one a visitor is most likely to have come for, and the arrow says the
+   card goes somewhere -- the others are self-evident from their titles. */
+.fdcardbtn{display:inline-flex; align-items:center; margin:.55rem 0 0;
+  font-family:var(--agate); text-transform:uppercase; letter-spacing:.08em;
+  font-size:.7rem; font-weight:600; color:var(--signal)}
+.fdcardbtn::after{content:" \2192"; margin-left:.3rem}
 .cta{display:flex; align-items:center; gap:14px; flex-wrap:wrap;
   margin-top:34px}
 /* The second CTA is a link, not a button, because it goes somewhere. A
@@ -1934,6 +1941,11 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     <p class="sub">The numbers behind the decision.</p>
   </div>
   <div class="fdgrid">
+    <a class="fdcard" href="/nfl/rankings/">
+      <h3>2026 Fantasy Rankings</h3>
+      <p>Overall and position-by-position draft rankings built from
+         LineupBeat's full statistical projections.</p>
+      <span class="fdcardbtn">View Rankings</span></a>
     <a class="fdcard" href="/nfl/projections/">
       <h3>Yearly projections</h3>
       <p>Full season PPR, half PPR and standard projections, with the stat
@@ -1966,8 +1978,9 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
        The names stay visible so the range is still discoverable, and the
        explanations live on the hub page where there is room. -->
   <a class="fdmini" href="/nfl/data/">
-    <span class="fdminilist">Projections &middot; Draft value &middot;
-      Durability &middot; Schedule &middot; Coaching &middot; OL &amp; RB</span>
+    <span class="fdminilist">Rankings &middot; Projections &middot;
+      Draft value &middot; Durability &middot; Schedule &middot; Coaching
+      &middot; OL &amp; RB</span>
     <span class="fdminibtn">Explore fantasy data</span>
   </a>
 </section>

@@ -127,6 +127,28 @@ jobs:
 
           python scripts/build_pages.py --base https://lineupbeat.com
 
+          # Rankings. After the first page pass, because the board only
+          # links to /nfl/<slug>/ where that directory already exists, and
+          # before the second, because the hub card previews the JSON this
+          # writes and the sitemap needs the five URLs.
+          #
+          # The failure is annotated, not swallowed, and not fatal. A trade
+          # worth stating plainly:
+          #
+          # The builder enforces thirteen published rules and exits non-zero
+          # on any of them, so invalid rankings never publish. That part is
+          # not optional and is not what this line decides. What it decides
+          # is whether a rankings data problem also stops the wire, the
+          # projections and the deploy, and it should not -- the same
+          # reasoning as the preflight step below.
+          #
+          # `::error::` rather than `|| true`: a silent skip is how a page
+          # goes stale for a week and looks like a quiet news day. This puts
+          # a red annotation on the run summary while the site still ships.
+          # Drop the `||` clause to make a gate failure stop everything.
+          python scripts/build_rankings.py \
+            || echo "::error title=Rankings not published::build_rankings.py failed its validation gates. The published board is unchanged."
+
           python scripts/build_sos.py || true
 
           # Projections, from the committed workbook. site/nfl is gitignored

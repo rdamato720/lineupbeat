@@ -28,6 +28,7 @@ Gates — all three run in CI, run them before shipping:
 
 ```bash
 python3 scripts/test_resolve.py                # 25 resolver regressions
+python3 scripts/build_rankings.py --dry-run    # rankings gates, writes nothing
 python3 -m beatwire.cli doctor    --sport nfl  # registry team codes vs roster team codes
 python3 -m beatwire.cli preflight --sport nfl  # GO / NO-GO on the silent failure modes
 ```
@@ -119,6 +120,7 @@ Page → source of truth:
 
 | Page | Built from | By |
 |---|---|---|
+| `/nfl/rankings/` + `/qb|rb|wr|te/` | `data/projections.xlsx` + `data/nfl_rankings_config.json` | `build_rankings.py` |
 | `/nfl/projections/` | `data/projections.xlsx` | `build_projections.py` |
 | `/nfl/draft-value/` | that workbook + roster ADP | `build_draft_value.py` |
 | `/nfl/strength-of-schedule/` | `games` + `weekly_stats` | `schedule_strength.py` → `build_sos.py` |
@@ -161,6 +163,20 @@ Each exists because breaking it caused a real problem (see `NOTES.md`).
 - **`site/nfl/`, `site/index.html`, `site/data/`, `site/404.html` and
   `beatwire.db` are gitignored.** CI rebuilds them. A page built on a laptop
   does not exist in production.
+- **Two kinds of editorial decision, and they must not be confused.** A
+  manual adjustment is a number and moves `ranking_score`; an editorial order
+  constraint moves rank only and touches no number. Both live in
+  `data/nfl_rankings_config.json` with a published reason. A player passed by
+  an override is never marked down for it, and an override never displays a
+  fabricated figure. Cycles are detected before sorting; on a cycle the build
+  stops and the previous board stands.
+- **The board is reconciled against its source, never a constant.** The
+  player count is counted from the artifact and published in the JSON's
+  `metadata` alongside both input SHA-256s. Adding a player, or changing an
+  adjustment, must not require a code change.
+- **`data/nfl_rankings_2026.json` is `{metadata, players}`, the whole board.** The top 200
+  carry `overall_rank`; everyone else carries null and is ranked only at his
+  position. The overall page lists 200, a position page lists its full pool.
 - **Say `player`, not `man`.**
 - **No promotional language** — "must draft", "league winner" and friends are
   out. The numbers do the work.

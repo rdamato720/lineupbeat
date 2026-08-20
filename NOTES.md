@@ -102,6 +102,195 @@ than derived twice.
 
 ---
 
+## Rankings
+
+Five URLs -- `/nfl/rankings/` and `/qb`, `/rb`, `/wr`, `/te` -- from one
+component in `scripts/build_rankings.py`. There is no second template and no
+hand-kept HTML: the position pages are the same render with a filter, so the
+board cannot drift between them.
+
+**Projections are the source, not a second spreadsheet.** A rankings workbook
+of its own would be a second copy of a number the site already publishes,
+free to disagree with the projections page. So the builder reads
+`data/projections.xlsx` and applies the published formula. `--export` takes
+the rankings workbook itself -- `.xlsx` (it reads `Source Data`, falling back
+to `Site Export`), `.csv` or `.json` -- through exactly the same validation.
+
+**The formula.** Replacement level is the 13th QB, 37th RB, 49th WR and 13th
+TE by projected points -- what a 12-team league starting 1/2/2/1 and two flex
+actually leaves on the board. VORP is projected Half-PPR points minus that,
+ranking score is VORP plus any editorial adjustment, and the published Top
+200 is the first 200 after sorting.
+
+**The score is compared at one decimal.** The published record stores
+`ranking_score` to one decimal and the page prints it, so that is the
+precision the sort uses: score, then projected points, then name, each at one
+decimal. Coarser comparison was tried and rejected -- rounding to whole
+numbers made visibly different scores tie, handed the decision to a tiebreak
+the reader cannot see, and amounted to inventing a rule to reproduce an
+expected order. The tiebreak is rare by design; it is for a genuine tie at
+the published precision, not a second sort.
+
+That precision decides RB8. McCaffrey is 288.1 - 128.1 - 33.0 = 127.0 and
+James Cook III is 255.2 - 128.1 = 127.1, so Cook is RB8 and McCaffrey RB9.
+Do not close that 0.1 by trimming the adjustment or coarsening the sort.
+
+**Never the workbook's own `Rank` or `Pos Rank`.** Not a theoretical risk:
+in `LineupBeat_2026_Half_PPR_Rankings_v1.0.xlsx`, James Cook III is listed
+RB9 with a ranking score above the RB7 and RB8 in the same sheet. That field
+is not a reliable Half-PPR position rank, and the ranks are recomputed here
+for that reason.
+
+**Which is also why the workbook's replacement-point cells are not used.**
+It carries 290.6/124.5/110.6/143.3, which were calculated from that same
+unreliable Rank field -- against the frozen projections those figures sit at
+ranks 13, 39, 48 and 12, not the stated 13/37/49/13. The stated ranks are
+authoritative, so the published values are QB13 290.6, RB37 128.1, WR49
+109.8, TE13 142.4. Within a position this changes nothing; it moves positions
+against each other in the overall list.
+
+**Tiers are rank ranges, not clusters.** The workbook defines them on its
+Assumptions sheet: overall 1-8, 9-24, 25-48, 49-72, 73-100, 101-130, 131-165,
+166-200; positions 1-3/4-8/9-14/15-24 where one starter is used and
+1-6/7-18/19-36/37-60 where two are. That is also why the brief asks for the
+first eight overall to be marked -- tier one *is* the top eight. A
+gap-clustered scheme was built first and thrown out: it disagreed with the
+published methodology, which is the thing the reader is being asked to trust.
+
+**The JSON is the whole board, not the page.** All 615 players, each with a
+position rank against the full pool at his position. The top 200 carry
+`overall_rank` 1-200 and a tier; everyone else carries null for both. A
+position rank that only counted players who had made some other cut would be
+a different number wearing the same name.
+
+**The pages follow from that.** Overall lists exactly 200. A position page
+lists its entire pool -- 255 wide receivers -- with the first fifty visible
+and the rest written into the markup behind `hidden`, cleared by one "Show
+more". Not paginated and not lazy-loaded, because a crawler and the search
+box both need the whole pool in the HTML. Search ignores the cap entirely: a
+player the board projects is findable whether or not he sits past the
+fiftieth row.
+
+**An adjustment moves draft order and nothing else.** The projected-points
+column stays frozen, and a non-zero adjustment without a published reason
+fails the build -- an unexplained thumb on the scale is indistinguishable
+from a bug. Two are approved: Jeanty +16.0, McCaffrey -33.0. Neither is in
+the workbook, which carries zero in every adjustment cell, so they live in
+`ADJUSTMENTS` in the builder and are applied on import.
+
+**The board is reconciled against its source, not against a number in the
+code.** There was a `TOTAL_EXPECTED = 615` constant for about an hour and it
+was wrong in a specific way: signing a player would have failed the build,
+and a gate that fails for a legitimate reason is a gate somebody deletes. So
+the count is counted from the source at read time, published in the JSON's
+metadata beside the source filename and its SHA-256, and pinned for the
+frozen artifact in `data/nfl_rankings_source.json`. A real addition moves the
+manifest, the SHA and the count together in one commit and shows in the diff.
+A swapped or truncated artifact moves the SHA and fails.
+
+The JSON is `{metadata, players}` for that reason -- the numbers have to
+travel with what produced them, or a board and its provenance drift apart.
+
+**Production reads the live projection board.** `data/projections.xlsx` for
+the numbers, `data/nfl_rankings_config.json` for everything else -- the
+league shape, the replacement ranks, the tier bands and the approved
+adjustments. Replacement points, VORP, ranking scores and both sets of ranks
+are recalculated from whatever the board says today, so updating the
+projections updates the rankings in the same run. The alternative was tried
+for one build: pinning the frozen workbook as the production source would
+have let the projections page move while the rankings page kept quoting last
+week's points for the same player.
+
+The config is a tracked file rather than constants in the builder because an
+editorial adjustment is a decision, and a decision should arrive as a data
+change with a diff and a reviewer, not as a deploy. Adjustments are keyed
+`name|TEAM|POS`: a bare name would follow a player to a new team, and a
+reason written about one situation is not automatically true of another. An
+adjustment matching nobody fails the build -- an approved decision that
+silently did not happen is worse than one that never existed.
+
+**The frozen workbook is provenance, not a feed.**
+`data/archive/LineupBeat_2026_Half_PPR_Rankings_v1.0.xlsx` is what the
+rankings were first cut from, pinned by `data/nfl_rankings_source.json`.
+`--export` rebuilds from it for an audit or a historical board, says so on
+the way past, and reconciles it against that manifest. The live board is
+deliberately not pinned: it is supposed to move.
+
+**The metadata names both inputs.** `projection_source_file` and its SHA-256,
+`ranking_config_file` and its SHA-256, the counted player total and the
+published 200. Two inputs decide a ranking, so a board that recorded only one
+of them could not be reproduced from what it says about itself.
+
+**Editorial order is separate from editorial adjustment, and they are not
+interchangeable.** An adjustment is a number: it moves `ranking_score` and
+shows on the page as `+16.0`. An order constraint is a preference: it moves
+where a player sits and touches no number at all -- not `projected_points`,
+not `replacement_points`, not `vorp`, not `ranking_score`. Both live in
+`nfl_rankings_config.json`, both need a published reason, and a player can
+carry both. Jeanty does.
+
+**Lift, do not demote.** When a constraint says A ranks above B, A is moved
+to sit immediately above B, rather than B being pushed below A. The two give
+different boards and it matters: with Chase over Nacua and Jeanty over
+Taylor, lifting produces the approved top six -- Gibbs, Robinson, Chase,
+Nacua, Jeanty, Taylor -- where demoting would leave two receivers between
+Nacua and Jeanty. Everyone unaffected keeps his relative order; the only
+players who move are the one being lifted and the ones he passes.
+
+**Nobody is marked down for being passed.** Taylor, Jacobs, Nacua and Irving
+carry no adjustment and no override. Being ranked below somebody is not a
+downgrade, and printing a negative number against them would invent a
+statistic to explain a preference. For the same reason an override shows as
+"Editorial ranking decision" and never as a fabricated figure.
+
+**Cycles are checked before anything is sorted.** Two constraints that each
+demand the other player is above cannot both be honoured, and the reorder
+pass would swap them back and forth until it hit its cap and published
+whichever side it stopped on. So the graph is walked first; a cycle is
+reported by name -- "Ashton Jeanty -> Jonathan Taylor -> Ashton Jeanty" --
+nothing is reordered, and the build stops with the previous board still
+published.
+
+**Both boards come off one order.** Position ranks are cut from the final
+overall sequence rather than sorted separately, so the overall page and a
+position page cannot disagree about two players. There is only one sequence
+to read them from.
+
+**The order gate rebuilds the board rather than trusting it.** "Scores must
+descend" cannot survive an approved override, and relaxing it to "unless
+somebody is overridden" would excuse any reordering at all. So validation
+re-sorts every player by the published key, re-applies each override from the
+comparison player named in the JSON, and requires the result to equal the
+published order exactly. That catches the knock-on moves too: Jeanty passes
+two receivers on his way over Taylor and neither is named anywhere.
+
+**The gates stop the build.** Every configured player and comparison player
+resolving to exactly one player, both sides of a constraint sharing a
+position, no cycle, a published reason behind every adjustment and every
+override, no override touching a number, the five approved relative orders,
+the approved top of the overall and RB boards, McCaffrey RB9, the overall and
+position boards agreeing, published count and unique-player count both equal
+to the source count, exactly 200 non-null
+overall ranks sequential from 1, null overall rank and tier for everyone
+else, every player position-ranked, position ranks sequential and unique
+within each position, both orderings matching the one-decimal sort key, no
+blank name or team or position, nothing outside QB/RB/WR/TE, no missing or
+negative points, nobody twice, no market label while ADP is null, Jeanty RB4
+and McCaffrey RB9. That last pair is a test of the sort, never an input to
+it, and it has already earned its keep twice.
+
+**The two sources agree exactly.** `data/projections.xlsx` and the rankings
+workbook's `Source Data` sheet carry the same 615 players with the same
+Half-PPR points, checked player by player. So the default derivation is not
+an approximation of the workbook, it is the same board, and `--export` is
+there for when that stops being true.
+
+**ADP is deliberately absent.** `adp` and `value_label` are null in every
+record and a gate rejects a label without an ADP behind it. Market-value
+labels wait for a verified ADP source.
+
+---
+
 ## The engine, and why nothing uses it
 
 `scripts/engine.py`, `evidence.py`, `freeze_release.py` and friends are a

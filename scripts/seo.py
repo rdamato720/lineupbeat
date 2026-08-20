@@ -985,6 +985,9 @@ def esc(s):
 # The other data pages, for the cross-link strip. Each page filters itself
 # out, so one list serves all of them.
 DATA_PAGES = [
+    ("rankings", f"/{SPORT}/rankings/", "Rankings",
+     "Half-PPR draft rankings, overall and by position, with tiers and "
+     "documented adjustments."),
     ("projections", f"/{SPORT}/projections/", "Projections",
      "Full-season points in three scoring formats, with the stat line "
      "behind each number."),

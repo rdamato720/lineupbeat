@@ -1557,8 +1557,35 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
 
       <div class="lb-feature-grid">
 
-        <a class="lb-feature-card" href="/nfl/projections/">
+        <a class="lb-feature-card" href="/nfl/rankings/">
           <span class="lb-feature-number">01</span>
+
+          <div class="lb-card-kicker">2026 FANTASY RANKINGS</div>
+          <h3>Start with the board itself.</h3>
+
+          <p class="lb-card-deck">
+            Overall and position-by-position draft rankings built from
+            LineupBeat's full statistical projections.
+          </p>
+
+          <div class="lb-preview" aria-hidden="true">
+            <div class="lb-preview-head">
+              <span>RANKINGS PREVIEW</span>
+              <span class="lb-preview-badge">HALF-PPR</span>
+            </div>
+
+            <div class="lb-preview-table">{RANK_ROWS}</div>
+          </div>
+
+          <div class="lb-card-footer">
+            <span>VIEW RANKINGS</span>
+            <svg class="lb-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </div>
+        </a>
+
+
+        <a class="lb-feature-card" href="/nfl/projections/">
+          <span class="lb-feature-number">02</span>
 
           <div class="lb-card-kicker">YEARLY PROJECTIONS</div>
           <h3>Start with our view of the player.</h3>
@@ -1585,7 +1612,7 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
 
 
         <a class="lb-feature-card" href="/nfl/draft-value/">
-          <span class="lb-feature-number">02</span>
+          <span class="lb-feature-number">03</span>
 
           <div class="lb-card-kicker">ADP &amp; DRAFT VALUE</div>
           <h3>Then compare our view with the market.</h3>
@@ -1965,6 +1992,33 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
 </main>"""
 
 
+def _rank_preview_rows():
+    """The top of the published rankings, for the hub card.
+
+    Reads the JSON the rankings builder writes rather than recomputing:
+    a preview that disagrees with the board it links to is worse than no
+    preview. Absent file means an empty block, not a crash -- the hub is
+    built on every run and the rankings are not.
+    """
+    f = ROOT / "data" / "nfl_rankings_2026.json"
+    if not f.exists():
+        return ""
+    try:
+        data = json.loads(f.read_text())
+    except (ValueError, OSError):
+        return ""
+    # The file is {metadata, players}. It was a bare list once, and reading
+    # the new shape as the old one raised rather than degrading, so accept
+    # both rather than depending on which built last.
+    players = data.get("players") if isinstance(data, dict) else data
+    rows = (players or [])[:3]
+    return "".join(
+        f'<div class="lb-preview-row"><strong>{r["overall_rank"]} &middot; '
+        f'{esc(r["player_name"])}</strong>'
+        f'<span>{esc(r["position"])}{r["position_rank"]}</span></div>'
+        for r in rows)
+
+
 def _preview_rows():
     """The four preview blocks, from real data.
 
@@ -2044,7 +2098,8 @@ def _preview_rows():
 def data_hub_page(base):
     """The supplied design, with the previews reading live data."""
     proj_rows, value_rows, sched_rows = _preview_rows()
-    body = DATA_PAGE_HTML.replace("{PROJ_ROWS}", proj_rows)
+    body = DATA_PAGE_HTML.replace("{RANK_ROWS}", _rank_preview_rows())
+    body = body.replace("{PROJ_ROWS}", proj_rows)
     body = body.replace("{VALUE_ROWS}", value_rows)
     body = body.replace("{SCHED_ROWS}", sched_rows)
 
@@ -3546,6 +3601,11 @@ def main():
     # owns the file, and it is the one that writes it.
     for path, freq, prio in (
             (f"/{args.sport}/data/", "weekly", "0.8"),
+            (f"/{args.sport}/rankings/", "daily", "0.9"),
+            (f"/{args.sport}/rankings/qb/", "daily", "0.8"),
+            (f"/{args.sport}/rankings/rb/", "daily", "0.8"),
+            (f"/{args.sport}/rankings/wr/", "daily", "0.8"),
+            (f"/{args.sport}/rankings/te/", "daily", "0.8"),
             (f"/{args.sport}/projections/", "daily", "0.9"),
             (f"/{args.sport}/projections/qb/", "daily", "0.8"),
             (f"/{args.sport}/projections/rb/", "daily", "0.8"),
@@ -3709,7 +3769,7 @@ def main():
         import shutil
         protected = {"team", "data", "projections", "draft-value",
                      "durability", "coaching", "strength-of-schedule",
-                     "offensive-line-rb-performance"}
+                     "offensive-line-rb-performance", "rankings"}
         for d in (SITE / args.sport).glob("*"):
             if not d.is_dir() or d.name in protected:
                 continue

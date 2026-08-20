@@ -1,0 +1,25 @@
+{
+ "_note": "Provenance for the workbooks the rankings were cut from, not the production feed. Production reads data/projections.xlsx with data/nfl_rankings_config.json. These are pinned so an --export rebuild of a historical board can be shown to have used the same artifact it claims.",
+ "positions_counted": [
+  "QB",
+  "RB",
+  "WR",
+  "TE"
+ ],
+ "artifacts": [
+  {
+   "file": "LineupBeat_2026_Half_PPR_Rankings_v1.0_with_editorial_order.xlsx",
+   "sheet": "Source Data",
+   "sha256": "712550a0707c0ca238dede29e157453e97a0a0c2835830eaa4f45d5c7222276d",
+   "player_count": 615,
+   "note": "Adds the editorial_override, ranked_ahead_of and override_reason columns and a 615-row Site Export. Supersedes the first cut; identical player projections."
+  },
+  {
+   "file": "LineupBeat_2026_Half_PPR_Rankings_v1.0.xlsx",
+   "sheet": "Source Data",
+   "sha256": "5ec35e097ffa173dfa545f892f71375240664e9be717e1c958fa4855c73251b3",
+   "player_count": 615,
+   "note": "First cut. 200-row Site Export, no editorial columns."
+  }
+ ]
+}
