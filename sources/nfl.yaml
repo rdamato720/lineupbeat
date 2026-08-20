@@ -1,3 +1,5 @@
+
+
 profile:
   display: NFL
   positions:
@@ -22,10 +24,10 @@ profile:
   - generic optimism from a coach about a player working hard
   - offseason workout program attendance
   - contract restructures with no roster impact
-  notes: 'NFL practices are largely closed to the public, so the beat writer in the
-    building is frequently the only source in the world for a given fact. Camp and
-    Wednesday through Friday practice reports carry the most signal. Coachspeak is
-    abundant and mostly worthless; prefer observed reps over quoted praise.
+  notes: 'NFL practices are largely closed to the public, so the beat writer in the building is frequently
+    the only source in the world for a given fact. Camp and Wednesday through Friday practice reports
+    carry the most signal. Coachspeak is abundant and mostly worthless; prefer observed reps over quoted
+    praise.
 
     '
 sources:
@@ -1808,3 +1810,262 @@ sources:
   outlet: Sports Illustrated
   teams:
   - SEA
+- id: nfl-ne-tapi-andrewcallahan
+  kind: twitterapi
+  handle: _AndrewCallahan
+  name: _AndrewCallahan
+  outlet: X
+  teams:
+  - NE
+- id: nfl-ne-tapi-bymarkdaniels
+  kind: twitterapi
+  handle: ByMarkDaniels
+  name: ByMarkDaniels
+  outlet: X
+  teams:
+  - NE
+- id: nfl-ne-tapi-tkyles39
+  kind: twitterapi
+  handle: tkyles39
+  name: tkyles39
+  outlet: X
+  teams:
+  - NE
+- id: nfl-phi-tapi-brandongowton
+  kind: twitterapi
+  handle: BrandonGowton
+  name: BrandonGowton
+  outlet: X
+  teams:
+  - PHI
+- id: nfl-phi-tapi-ejsmith94
+  kind: twitterapi
+  handle: EJSmith94
+  name: EJSmith94
+  outlet: X
+  teams:
+  - PHI
+- id: nfl-phi-tapi-bkubena
+  kind: twitterapi
+  handle: BKubena
+  name: BKubena
+  outlet: X
+  teams:
+  - PHI
+- id: nfl-phi-tapi-jimmykempski
+  kind: twitterapi
+  handle: JimmyKempski
+  name: JimmyKempski
+  outlet: X
+  teams:
+  - PHI
+- id: nfl-ari-tapi-donniedruin
+  kind: twitterapi
+  handle: DonnieDruin
+  name: DonnieDruin
+  outlet: X
+  teams:
+  - ARI
+- id: nfl-ari-tapi-tdrake4sports
+  kind: twitterapi
+  handle: Tdrake4sports
+  name: Tdrake4sports
+  outlet: X
+  teams:
+  - ARI
+- id: nfl-was-tapi-zachselbywc
+  kind: twitterapi
+  handle: ZachSelbyWC
+  name: ZachSelbyWC
+  outlet: X
+  teams:
+  - WAS
+- id: nfl-was-tapi-markbullocknfl
+  kind: twitterapi
+  handle: MarkBullockNFL
+  name: MarkBullockNFL
+  outlet: X
+  teams:
+  - WAS
+- id: nfl-no-tapi-rossjacksonnola
+  kind: twitterapi
+  handle: RossJacksonNOLA
+  name: RossJacksonNOLA
+  outlet: X
+  teams:
+  - 'NO'
+- id: nfl-gb-tapi-billhubernfl
+  kind: twitterapi
+  handle: BillHuberNFL
+  name: BillHuberNFL
+  outlet: X
+  teams:
+  - GB
+- id: nfl-ten-tapi-eastonfreeze
+  kind: twitterapi
+  handle: eastonfreeze
+  name: eastonfreeze
+  outlet: X
+  teams:
+  - TEN
+- id: nfl-ten-tapi-brycewlsports
+  kind: twitterapi
+  handle: BryceWL_Sports
+  name: BryceWL_Sports
+  outlet: X
+  teams:
+  - TEN
+- id: nfl-sf-tapi-grantcohn
+  kind: twitterapi
+  handle: grantcohn
+  name: grantcohn
+  outlet: X
+  teams:
+  - SF
+- id: nfl-sf-tapi-nwagoner
+  kind: twitterapi
+  handle: nwagoner
+  name: nwagoner
+  outlet: X
+  teams:
+  - SF
+- id: nfl-kc-tapi-goldmctnfl
+  kind: twitterapi
+  handle: goldmctNFL
+  name: goldmctNFL
+  outlet: X
+  teams:
+  - KC
+- id: nfl-kc-tapi-jacobs71
+  kind: twitterapi
+  handle: Jacobs71
+  name: Jacobs71
+  outlet: X
+  teams:
+  - KC
+- id: nfl-cle-tapi-ceasterlingabj
+  kind: twitterapi
+  handle: ceasterlingABJ
+  name: ceasterlingABJ
+  outlet: X
+  teams:
+  - CLE
+- id: nfl-lv-tapi-ryanmcfadden
+  kind: twitterapi
+  handle: ryanmcfadden_
+  name: ryanmcfadden_
+  outlet: X
+  teams:
+  - LV
+- id: nfl-lv-tapi-levidamien
+  kind: twitterapi
+  handle: LeviDamien
+  name: LeviDamien
+  outlet: X
+  teams:
+  - LV
+- id: nfl-chi-tapi-danwiederer
+  kind: twitterapi
+  handle: danwiederer
+  name: danwiederer
+  outlet: X
+  teams:
+  - CHI
+- id: nfl-min-tapi-willragatz
+  kind: twitterapi
+  handle: WillRagatz
+  name: WillRagatz
+  outlet: X
+  teams:
+  - MIN
+- id: nfl-min-tapi-matthewcoller
+  kind: twitterapi
+  handle: MatthewColler
+  name: MatthewColler
+  outlet: X
+  teams:
+  - MIN
+- id: nfl-min-tapi-therealforno
+  kind: twitterapi
+  handle: TheRealForno
+  name: TheRealForno
+  outlet: X
+  teams:
+  - MIN
+- id: nfl-nyj-tapi-nickfaria1720
+  kind: twitterapi
+  handle: Nick_Faria1720
+  name: Nick_Faria1720
+  outlet: X
+  teams:
+  - NYJ
+- id: nfl-nyg-tapi-dansalomone
+  kind: twitterapi
+  handle: Dan_Salomone
+  name: Dan_Salomone
+  outlet: X
+  teams:
+  - NYG
+- id: nfl-ind-tapi-nerlens
+  kind: twitterapi
+  handle: nerlens_
+  name: nerlens_
+  outlet: X
+  teams:
+  - IND
+- id: nfl-ind-tapi-jakearthurnfl
+  kind: twitterapi
+  handle: JakeArthurNFL
+  name: JakeArthurNFL
+  outlet: X
+  teams:
+  - IND
+- id: nfl-car-tapi-scottfowler
+  kind: twitterapi
+  handle: scott_fowler
+  name: scott_fowler
+  outlet: X
+  teams:
+  - CAR
+- id: nfl-car-tapi-alexzietlow05
+  kind: twitterapi
+  handle: alexzietlow05
+  name: alexzietlow05
+  outlet: X
+  teams:
+  - CAR
+- id: nfl-pit-tapi-mikedefabo
+  kind: twitterapi
+  handle: MikeDeFabo
+  name: MikeDeFabo
+  outlet: X
+  teams:
+  - PIT
+- id: nfl-det-tapi-erikschlitt
+  kind: twitterapi
+  handle: erikschlitt
+  name: erikschlitt
+  outlet: X
+  teams:
+  - DET
+- id: nfl-atl-tapi-bydanielflick
+  kind: twitterapi
+  handle: ByDanielFlick
+  name: ByDanielFlick
+  outlet: X
+  teams:
+  - ATL
+- id: nfl-tb-tapi-pewterreport
+  kind: twitterapi
+  handle: PewterReport
+  name: PewterReport
+  outlet: X
+  teams:
+  - TB
+- id: nfl-nyj-tapi-jetsxfactor
+  kind: twitterapi
+  handle: jetsxfactor
+  name: jetsxfactor
+  outlet: X
+  teams:
+  - NYJ

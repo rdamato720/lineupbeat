@@ -1,0 +1,61 @@
+# Beat writers observed in @32BeatWriters quote-tweets, 22 Apr - 20 Aug 2026.
+#
+# A separate file from writers.nfl.txt on purpose. That one is a published
+# seed list; this one is 120 days of watching an account whose whole product
+# is picking the fantasy-relevant beat post and quoting it. Different
+# provenance, different confidence, and worth being able to tell apart later.
+#
+# 168 quote-tweets, 30 of 32 teams -- they never covered Denver or Dallas in
+# four months. 93 accounts quoted; these are the individual NFL team beat
+# reporters among them that we did not already have.
+#
+# Team comes from each account's own profile, never from the text of the
+# tweet. The resolver is team-scoped, so a writer filed under the wrong team
+# quietly fails to resolve his own players -- which looks like a quiet news
+# day rather than a mistake.
+#
+# Deliberately not here: national and fantasy accounts (@ProFootballTalk,
+# @RotoPat, @MoveTheSticks, @Nate_Tice, @NFL_DougFarrar, @All22_FF), college
+# writers (@PeteThamel, @irishillustratd, @DougHaller), a baseball writer
+# (@kevin_barral, who covers the Marlins and matched "Miami"), and the team
+# PR accounts (@Chiefs, @Seahawks, @Commanders, @Browns, @Raiders).
+#
+#   python3 scripts/add_writers.py --all --file writers.32bw.txt
+
+_AndrewCallahan, NE
+ByMarkDaniels, NE
+tkyles39, NE
+BrandonGowton, PHI
+EJSmith94, PHI
+BKubena, PHI
+JimmyKempski, PHI
+DonnieDruin, ARI
+Tdrake4sports, ARI
+ZachSelbyWC, WAS
+MarkBullockNFL, WAS
+RossJacksonNOLA, NO
+BillHuberNFL, GB
+eastonfreeze, TEN
+BryceWL_Sports, TEN
+grantcohn, SF
+nwagoner, SF
+goldmctNFL, KC
+Jacobs71, KC
+ceasterlingABJ, CLE
+ryanmcfadden_, LV
+LeviDamien, LV
+danwiederer, CHI
+WillRagatz, MIN
+MatthewColler, MIN
+TheRealForno, MIN
+Nick_Faria1720, NYJ
+Dan_Salomone, NYG
+nerlens_, IND
+JakeArthurNFL, IND
+scott_fowler, CAR
+alexzietlow05, CAR
+MikeDeFabo, PIT
+erikschlitt, DET
+ByDanielFlick, ATL
+PewterReport, TB
+jetsxfactor, NYJ
