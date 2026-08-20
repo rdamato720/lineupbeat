@@ -115,7 +115,6 @@ ADJUSTMENTS = {
 }
 
 DEFAULT_REASON = "Projection-only v1.0"
-DEFAULT_WHY = "Projection-based ranking"
 
 # The expected top of the RB board after the approved adjustments.
 #
@@ -1111,51 +1110,6 @@ PAGE_CSS = """
 .rktable tr.top8 td{background:rgba(198,245,60,.035)}
 .rktable tr.top8 td.rkrank{box-shadow:inset 2px 0 0 var(--signal)}
 
-/* ---- adjustments ----
-   Never colour alone: the sign is in the text and the accessible name
-   spells out the direction, so the column survives being read aloud or
-   printed in greyscale. */
-.rkadj{font:600 .88rem/1.3 var(--agate);letter-spacing:.02em}
-.rkadj.up{color:var(--signal)}
-.rkadj.dn{color:#E2705C}
-.rkadj.flat{color:var(--quiet)}
-/* An editorial decision, set in the label face rather than the figure face,
-   so it does not read as a number that happens to be spelled out. */
-.rkadj.ed{color:var(--quiet);font:500 .72rem/1.3 var(--agate);
-  letter-spacing:.07em;text-transform:uppercase;white-space:normal}
-.rktable td.rkwhy{white-space:normal;max-width:26rem;font-size:.86rem;
-  color:var(--quiet)}
-.rktable td.rkname{white-space:normal}
-.rkwhy details>summary{cursor:pointer;list-style:none;color:var(--quiet)}
-.rkwhy details>summary::-webkit-details-marker{display:none}
-.rkwhy details>summary:focus-visible{outline:2px solid var(--signal);
-  outline-offset:2px}
-.rkwhy details[open]>summary .whylong{color:var(--muted)}
-/* The control, on the laptop as well as the phone.
-   It used to be mobile-only: on desktop the reason was clamped to two lines
-   and the ellipsis was the only hint there was more, which reads as text
-   that got cut off rather than text you can open. For a ranking whose whole
-   claim is that the editorial calls are published, a hidden explanation is
-   the wrong default. */
-.rkwhy .whyshort{display:inline-flex;align-items:center;gap:.3rem;
-  margin:.28rem 0 0;color:var(--signal);font:600 .72rem/1 var(--agate);
-  letter-spacing:.07em;text-transform:uppercase}
-/* The caret is drawn, not typed. U+25B8 is not in Barlow Condensed and came
-   out as a tofu box beside the label. */
-.rkwhy .whyshort::after{content:"";width:0;height:0;
-  border-left:4px solid currentColor;border-top:3px solid transparent;
-  border-bottom:3px solid transparent}
-.rkwhy details[open] .whyshort::after{border-left:3px solid transparent;
-  border-right:3px solid transparent;border-top:4px solid currentColor;
-  border-bottom:0}
-.rkwhy details>summary{display:block}
-/* Two lines and the button while closed; the full text and no preview once
-   open, so the first paragraph is not printed twice. */
-.rkwhy .whylong{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
-  overflow:hidden}
-.rkwhy details[open] .whylong{display:none}
-.rkwhy p{margin:.35rem 0 0;color:var(--muted);font-size:.86rem;line-height:1.45}
-
 /* ---- tier separators ----
    Subtle by design. A tier is context for the rows beneath it, not an
    event, and a badge on all two hundred rows is noise on a phone. */
@@ -1224,20 +1178,6 @@ PAGE_CSS = """
   .rktable td.rkpts::before{content:"\\00b7"}
   .rktable td.rkpts::after{content:" projected points";color:var(--quiet);
     font-weight:400}
-  /* Line four, only where there is an adjustment. */
-  .rktable td.rkadj{display:block;margin:.3rem 0 0;font-size:.85rem}
-  .rktable td.rkadj.flat{display:none}
-  .rktable td.rkadj::after{content:" ranking adjustment";color:var(--quiet);
-    font-weight:400;letter-spacing:0}
-  /* "Editorial ranking decision" is already a whole phrase. */
-  .rktable td.rkadj.ed::after{content:none}
-  .rktable td.rkwhy{display:block;margin:.25rem 0 0;max-width:none}
-  .rktable td.rkwhy.plain{display:none}
-  /* The phone never shows the preview -- the card is tight enough without
-     two lines the button is about to replace. */
-  .rkwhy .whyshort{min-height:44px;margin:0}
-  .rkwhy .whylong,.rkwhy details[open] .whylong{display:none}
-  .rktable td.rkwhy p{font-size:.9rem}
   .rktier-row td{display:block;padding:.55rem .2rem}
   .rkctl{padding:.6rem 0 .55rem}
   .rkfilters{flex-direction:column;align-items:stretch}
@@ -1321,16 +1261,6 @@ PAGE_JS = """
   clear.hidden = true;
   apply();
 
-  // aria-expanded on every disclosure, kept in step with the element.
-  Array.prototype.forEach.call(t.querySelectorAll('details.whyd'), function(d){
-    var s = d.querySelector('summary');
-    if (!s) return;
-    s.setAttribute('aria-expanded', d.open ? 'true' : 'false');
-    d.addEventListener('toggle', function(){
-      s.setAttribute('aria-expanded', d.open ? 'true' : 'false');
-    });
-  });
-
   // The sticky column heads sit under the sticky control bar, so the offset
   // is what that bar actually measures rather than a guess that breaks when
   // the filters wrap onto two lines.
@@ -1362,67 +1292,6 @@ def existing_slugs():
     return {p.name for p in d.glob("*") if p.is_dir()}
 
 
-def adj_cell(r):
-    """The adjustment column: a number only where there is a number.
-
-    An editorial override moves a player's rank and no figure exists for it,
-    so none is printed. Inventing one -- "+4.2" for a decision that was never
-    arithmetic -- would be a fabricated statistic on a page whose whole claim
-    is that the numbers are real.
-
-    And the players who were passed carry nothing at all. Being ranked below
-    somebody is not a downgrade, and printing one against Taylor or Jacobs
-    would invent a second fiction to explain the first.
-    """
-    a = r["manual_adjustment"]
-    if not a:
-        if r.get("editorial_override"):
-            return ('<td class="rkadj ed" data-lab="Adjustment">'
-                    'Editorial ranking decision</td>')
-        return ('<td class="rkadj flat" data-lab="Adjustment">'
-                '<span class="visually-hidden">No adjustment</span></td>')
-    up = a > 0
-    # U+2212 for the minus sign, because a hyphen next to a number reads as
-    # a dash and is announced as one.
-    txt = f"+{a:.1f}" if up else f"−{abs(a):.1f}"
-    arrow = "▲" if up else "▼"
-    word = "raised" if up else "lowered"
-    return (f'<td class="rkadj {"up" if up else "dn"}" data-lab="Adjustment">'
-            f'<span aria-hidden="true">{arrow} </span>{txt}'
-            f'<span class="visually-hidden"> points, {word}</span></td>')
-
-
-def why_cell(r):
-    """Why the player sits where he does.
-
-    A player can carry both a scored adjustment and an editorial override --
-    Jeanty does -- and they are separate claims, so both are published rather
-    than one standing in for the other.
-
-    Unadjusted, unoverridden players get one flat line and no disclosure.
-    There is nothing to disclose, and 200 empty expanders is how a board
-    starts looking like a form.
-    """
-    adj, override = r["manual_adjustment"], r.get("editorial_override")
-    if not adj and not override:
-        return f'<td class="l rkwhy plain" data-lab="Why">{esc(DEFAULT_WHY)}</td>'
-
-    parts = []
-    if adj and str(r.get("adjustment_reason") or "").strip():
-        parts.append(str(r["adjustment_reason"]).strip())
-    if override and str(r.get("override_reason") or "").strip():
-        parts.extend(str(r["override_reason"]).strip().split("\n\n"))
-
-    higher = override or adj > 0
-    short = "Why we're higher" if higher else "Why we're lower"
-    body = "".join(f"<p>{esc(x)}</p>" for x in parts)
-    return (f'<td class="l rkwhy" data-lab="Why"><details class="whyd">'
-            f'<summary><span class="whylong">'
-            f'{esc(parts[0]) if parts else ""}</span>'
-            f'<span class="whyshort">{short}</span>'
-            f'</summary>{body}</details></td>')
-
-
 INITIAL_ROWS = 50
 
 
@@ -1447,7 +1316,9 @@ def rows_html(records, pos, slugs):
     JavaScript is a board a crawler reads as an empty table. The script
     filters these rows; it never creates them.
     """
-    out, ncols = [], (7 if pos else 9)
+    # RK, TIER, PLAYER, TEAM, then POS and POS RK on the overall board or a
+    # hidden POS RK on a position board, then PROJ PTS.
+    out, ncols = [], (6 if pos else 7)
     seen_tier = None
     # Everything is written into the HTML; the tail is written hidden.
     #
@@ -1497,8 +1368,6 @@ def rows_html(records, pos, slugs):
                          f'{esc(r["position"])}{r["position_rank"]}</td>')
         cells.append(f'<td class="rkpts" data-lab="Proj pts">'
                      f'{r["projected_points"]:.1f}</td>')
-        cells.append(adj_cell(r))
-        cells.append(why_cell(r))
         out.append(
             f'<tr class="r{top8}{" beyond" if beyond else ""}"'
             f'{" hidden" if beyond else ""} '
@@ -1511,11 +1380,10 @@ def head_row(pos):
     cols = ["RK", "TIER", "PLAYER", "TEAM"]
     if not pos:
         cols += ["POS", "POS RK"]
-    cols += ["PROJ PTS", "ADJUSTMENT", "WHY"]
+    cols += ["PROJ PTS"]
     ths = []
     for c in cols:
-        left = (' class="l"' if c in ("PLAYER", "TEAM", "POS", "TIER", "WHY")
-                else "")
+        left = ' class="l"' if c in ("PLAYER", "TEAM", "POS", "TIER") else ""
         ths.append(f'<th scope="col"{left}>{c}</th>')
     if pos:
         # Kept in the markup for the mobile line, hidden in the table.

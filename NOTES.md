@@ -237,14 +237,21 @@ Nacua, Jeanty, Taylor -- where demoting would leave two receivers between
 Nacua and Jeanty. Everyone unaffected keeps his relative order; the only
 players who move are the one being lifted and the ones he passes.
 
-**Every editorial explanation opens on the laptop too.** It was a phone-only
-disclosure at first: on desktop the reason was clamped to two lines and the
-ellipsis was the only sign there was more, which reads as text that got cut
-off rather than text you can open. On a board whose whole claim is that the
-editorial calls are published, a hidden explanation is the wrong default. Two
-lines and a "Why we're higher" control now, expanding in place, with the
-preview replaced by the full text rather than repeated above it. Rows with
-nothing to explain stay one flat line and get no control at all.
+**The board shows ranks, not arguments.** The table carried an ADJUSTMENT
+column and a WHY column with the published reason behind a disclosure; both
+were removed as a product decision. The columns made every adjusted row two
+or three lines tall against one for everybody else, which is a lot of weight
+for something that applies to seven players out of six hundred.
+
+What that costs is worth stating, because it will look like a bug to
+somebody: Chase now sits above Nacua, and Jeanty above Taylor, with more
+projected points on the row below and nothing on the page saying why. The
+reasons are still published -- every adjustment and every override carries
+one in `nfl_rankings_2026.json`, and a gate still refuses to build without
+it -- and the methodology section still explains that adjustments exist. They
+are simply no longer on the board itself. If that reads as an error to
+readers, the cheapest fix is a marker beside the name rather than the two
+columns coming back.
 
 **Nobody is marked down for being passed.** Taylor, Jacobs, Nacua and Irving
 carry no adjustment and no override. Being ranked below somebody is not a
