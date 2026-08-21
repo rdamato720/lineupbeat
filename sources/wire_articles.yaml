@@ -1575,3 +1575,38 @@ sources:
     feed_scope: publication
     active: true
     trust_tier: 3
+
+  # ------------------------------------------ A to Z Sports network pilot
+  #
+  # The domain is not approved. A to Z runs one site-wide feed covering
+  # several NFL teams and college football -- a snapshot ran Raiders,
+  # Titans and two Tennessee Volunteers stories -- so the team comes from
+  # the url path and never from the domain.
+  #
+  # It also rewrites other outlets heavily ("ESPN QB expert exposes..."),
+  # which is why relay classification runs before quotation and firsthand,
+  # and why origin_reporter / origin_outlet / underlying_report_id are
+  # stored. An A to Z rewrite of a Boston Herald story is not independent
+  # corroboration of the Boston Herald.
+
+  - source_id: atoz_network_ne
+    source_name: A to Z Sports New England
+    reporter_name: ''
+    teams: ['NE']
+    formats: [article]
+    domains: [atozsports.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: rss_sitewide_filtered
+    source_class: INDEPENDENT_LOCAL
+    source_ownership: INDEPENDENT
+    feed_url: https://atozsports.com/feed/
+    feed_scope: site
+    filter:
+      url_pattern: '^/nfl/new-england-patriots-news/'
+    active: true
+    trust_tier: 3
+    # Rob Gregson is AGGREGATION pending a larger qualifying review: his
+    # sampled Patriots work relays Doug Kyed / Boston Herald reporting, and
+    # his profile lists Pittsburgh and Alabama as his primary coverage. No
+    # A to Z author is firsthand-approved for any team.

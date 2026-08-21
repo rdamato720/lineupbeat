@@ -22,14 +22,14 @@
    "authors": {
     "Donnie Druin": {
      "classification": "FIRSTHAND_APPROVED",
-     "evidence": "strict presence markers in 4/6 articles read (told reporters; told reporters); press-conference reporting in 4/6; 30 articles on the team page; single-team byline",
+     "evidence": "6 complete articles read: strict presence markers in 4 (told reporters; told reporters), press-conference reporting in 4, quotations in 5; single-team byline. strict presence markers in 4/6 articles read (told reporters; told reporters); press-conference reporting in 4/6; 30 articles on the team page; single-team byline",
      "sample_urls": [
       "https://www.si.com/nfl/cardinals/onsi/latest-tip-reiman-injury-update-has-tough-decision-looming-arizona-cardinals",
       "https://www.si.com/nfl/cardinals/onsi/garrett-williams-return-from-injury-gives-arizona-cardinals-boost-right-time",
       "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-reveal-qb-plan-dallas-cowboys-carson-beck-decision-made"
      ],
      "articles_in_sample": 30,
-     "articles_read": 3,
+     "articles_read": 6,
      "formats_observed": [
       "injury",
       "depth chart"
@@ -40,7 +40,8 @@
       "ARI"
      ],
      "auto_ready": false,
-     "reviewed_on": "2026-08-20"
+     "reviewed_on": "2026-08-20",
+     "verification_pass": "strict body test, 6 articles"
     }
    }
   },
@@ -1934,14 +1935,14 @@
    "authors": {
     "Alain Poupart": {
      "classification": "FIRSTHAND_APPROVED",
-     "evidence": "strict presence markers in 3/6 articles read (told reporters; did not participate); press-conference reporting in 2/6; 17 articles on the team page; single-team byline",
+     "evidence": "6 complete articles read: strict presence markers in 3 (told reporters; did not participate), press-conference reporting in 2, quotations in 4; single-team byline. strict presence markers in 3/6 articles read (told reporters; did not participate); press-conference reporting in 2/6; 17 articles on the team page; single-team byline",
      "sample_urls": [
       "https://www.si.com/nfl/dolphins/onsi/time-for-concern-or-what-to-make-of-the-dolphins-offense-getting-dominated-in-the-joint-practice-01m0g9v5b0cv",
       "https://www.si.com/nfl/dolphins/onsi/miami-dolphins-joint-practice-with-giants-observations-skirmishes-sacks-and-more-01m0fzmd7vz6",
       "https://www.si.com/nfl/dolphins/onsi/dolphins-wednesday-workout-group-includes-son-of-nfl-legend-more-transaction-notes-01m0dx17p5rz"
      ],
      "articles_in_sample": 17,
-     "articles_read": 3,
+     "articles_read": 6,
      "formats_observed": [
       "joint-practice",
       "observations"
@@ -1952,7 +1953,8 @@
       "MIA"
      ],
      "auto_ready": false,
-     "reviewed_on": "2026-08-20"
+     "reviewed_on": "2026-08-20",
+     "verification_pass": "strict body test, 6 articles"
     },
     "Jake Gibson": {
      "classification": "REPORTING",
@@ -2114,14 +2116,14 @@
    "authors": {
     "Ethan Hurwitz": {
      "classification": "FIRSTHAND_APPROVED",
-     "evidence": "strict presence markers in 4/6 articles read (said after practice; told reporters); press-conference reporting in 4/6; 22 articles on the team page; single-team byline",
+     "evidence": "6 complete articles read: strict presence markers in 4 (said after practice; told reporters), press-conference reporting in 4, quotations in 6; single-team byline. strict presence markers in 4/6 articles read (said after practice; told reporters); press-conference reporting in 4/6; 22 articles on the team page; single-team byline",
      "sample_urls": [
       "https://www.si.com/nfl/patriots/onsi/everything-drake-maye-said-about-eager-a-j-brown-after-patriots-joint-practices",
       "https://www.si.com/nfl/patriots/onsi/patriots-joint-practice-eagles-get-physical-as-a-j-brown-settles-down",
       "https://www.si.com/nfl/patriots/onsi/mack-hollins-continues-to-chug-along-in-patriots-wr-room"
      ],
      "articles_in_sample": 22,
-     "articles_read": 3,
+     "articles_read": 6,
      "formats_observed": [
       "joint-practice",
       "presser",
@@ -2133,7 +2135,8 @@
       "NE"
      ],
      "auto_ready": false,
-     "reviewed_on": "2026-08-20"
+     "reviewed_on": "2026-08-20",
+     "verification_pass": "strict body test, 6 articles"
     },
     "Zac Ventola": {
      "classification": "REPORTING",
@@ -2203,14 +2206,14 @@
    "authors": {
     "Patricia Traina": {
      "classification": "FIRSTHAND_APPROVED",
-     "evidence": "strict presence markers in 2/6 articles read (said after practice; first-team reps); press-conference reporting in 2/6; 12 articles on the team page; single-team byline",
+     "evidence": "6 complete articles read: strict presence markers in 2 (said after practice; first-team reps), press-conference reporting in 2, quotations in 5; single-team byline. strict presence markers in 2/6 articles read (said after practice; first-team reps); press-conference reporting in 2/6; 12 articles on the team page; single-team byline",
      "sample_urls": [
       "https://www.si.com/nfl/giants/onsi/giants-dolphins-joint-practice-fights-najee-harris-injuries-01m0g99nh69n",
       "https://www.si.com/nfl/giants/onsi/giants-dolphins-joint-practice-live-updates-01m013d4bkgs",
       "https://www.si.com/nfl/giants/onsi/giants-trade-daniel-faalele-jaguars-01m0d2amqc90"
      ],
      "articles_in_sample": 12,
-     "articles_read": 3,
+     "articles_read": 6,
      "formats_observed": [
       "joint-practice",
       "injury"
@@ -2221,7 +2224,8 @@
       "NYG"
      ],
      "auto_ready": false,
-     "reviewed_on": "2026-08-20"
+     "reviewed_on": "2026-08-20",
+     "verification_pass": "strict body test, 6 articles"
     },
     "Bob Folger": {
      "classification": "REPORTING",
@@ -3313,6 +3317,16 @@
    "classification": "AGGREGATION",
    "evidence": "no identifiable reporter",
    "scope": "national"
+  }
+ },
+ "network_authors": {
+  "Rob Gregson": {
+   "classification": "AGGREGATION",
+   "outlet": "A to Z Sports",
+   "team_seen": "NE",
+   "evidence": "sampled Patriots work relays Doug Kyed / Boston Herald reporting rather than original observation, and his own profile lists Pittsburgh and Alabama as primary coverage. Pending a larger qualifying review; never firsthand for New England",
+   "auto_ready": false,
+   "reviewed_on": "2026-08-21"
   }
  }
 }

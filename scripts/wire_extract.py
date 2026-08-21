@@ -124,13 +124,15 @@ def spans_from_transcript(store, video_id: str
 
 
 def extract_item(store, item, reg, ctx, cfg, dry=False,
-                 seen_claims=None) -> dict:
+                 seen_claims=None, seen_reports=None) -> dict:
     """One captured source becomes zero or more evidence candidates."""
     stats = {"spans": 0, "with_players": 0, "candidates": 0, "new": 0,
              "context_only": 0, "unresolved": 0, "refused": 0,
-             "superseded": 0, "not_relevant": 0, "duplicates": 0}
+             "superseded": 0, "not_relevant": 0, "duplicates": 0,
+             "same_underlying_report": 0}
     live: set = set()
     seen_claims = {} if seen_claims is None else seen_claims
+    seen_reports = {} if seen_reports is None else seen_reports
     # Per-article, so an overlap comparison stays cheap and only ever
     # compares spans that could actually be the same observation.
     claim_spans: list = []
@@ -226,8 +228,21 @@ def extract_item(store, item, reg, ctx, cfg, dry=False,
                 why_here = [f"quoted words, but the named speaker is not "
                             f"{(player.full_name if player else name)!r}"] + why_here
 
+            origin = ev.origin_of(text)
+            urid = ev.underlying_report_id(origin, text)
+            if urid and not dup:
+                # Two rewrites of one original are one underlying report.
+                prev = seen_reports.get(urid)
+                if prev:
+                    dup = prev
+                    stats["same_underlying_report"] += 1
+                else:
+                    seen_reports[urid] = "pending"
+
             rec = {
                 "claim_key": ckey,
+                **origin,
+                "underlying_report_id": urid,
                 "duplicate_of": dup,
                 "candidate_id": ev.candidate_id(
                     gid, player.player_id if player else "", name),
@@ -279,6 +294,8 @@ def extract_item(store, item, reg, ctx, cfg, dry=False,
             else:
                 seen_claims[ckey] = rec["candidate_id"]
                 claim_spans.append((text, rec["candidate_id"], pid))
+                if urid and seen_reports.get(urid) == "pending":
+                    seen_reports[urid] = rec["candidate_id"]
             stats["candidates"] += 1
             live.add(rec["candidate_id"])
             if not dry and store.upsert_evidence(rec):
@@ -335,15 +352,17 @@ def main():
 
     total = {"spans": 0, "with_players": 0, "candidates": 0, "new": 0,
              "context_only": 0, "unresolved": 0, "refused": 0, "superseded": 0,
-             "not_relevant": 0, "duplicates": 0}
+             "not_relevant": 0, "duplicates": 0, "same_underlying_report": 0}
     relevance_reasons: dict = {}
+    # Rewrites that trace to one original report, across every source.
+    seen_reports: dict = {}
     # Claims already seen in this run, so a syndicated story republished on
     # another team page links to the first copy instead of counting twice.
     seen_claims: dict = {}
     for item in items:
         ctx = source_context(store, item["source_id"], dict(item))
         st = extract_item(store, dict(item), reg, ctx, cfg, dry=args.dry_run,
-                          seen_claims=seen_claims)
+                          seen_claims=seen_claims, seen_reports=seen_reports)
         for k in total:
             total[k] += st.get(k, 0)
         for k, v in (st.get("relevance_reasons") or {}).items():
@@ -362,7 +381,9 @@ def main():
           f"development")
     for k, v in sorted(relevance_reasons.items(), key=lambda x: -x[1]):
         print(f"      {v:>5}  {k}")
-    print(f"  {total['duplicates']} duplicate claim(s) linked to a first copy")
+    print(f"  {total['duplicates']} duplicate claim(s) linked to a first copy"
+          f" ({total['same_underlying_report']} of them rewrites of one "
+          f"underlying report)")
     if total["superseded"]:
         print(f"  {total['superseded']} candidate(s) superseded "
               f"(the span that produced them no longer exists)")

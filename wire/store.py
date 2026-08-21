@@ -367,7 +367,9 @@ class WireStore:
         """
         cols = {r["name"] for r in
                 self.conn.execute("PRAGMA table_info(wire_evidence)")}
-        for name in ("claim_key", "duplicate_of", "source_ownership"):
+        for name in ("claim_key", "duplicate_of", "source_ownership",
+                     "origin_reporter", "origin_outlet", "origin_url",
+                     "underlying_report_id"):
             if name not in cols:
                 self.conn.execute(
                     f"ALTER TABLE wire_evidence ADD COLUMN {name} TEXT")
@@ -404,8 +406,11 @@ class WireStore:
             "classification_reasons, player_id, player_name, team, position, "
             "resolution_method, resolution_confidence, registry_version, "
             "registry_hash, review_status, exclusion_reason, created_at, "
-            "updated_at, claim_key, duplicate_of, source_ownership) VALUES "
-            "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "updated_at, claim_key, duplicate_of, source_ownership, "
+            "origin_reporter, origin_outlet, origin_url, underlying_report_id"
+            ") VALUES "
+            "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,"
+            "?,?,?,?)",
             (rec["candidate_id"], rec.get("evidence_group_id", ""),
              rec.get("source_type", ""), rec.get("source_id", ""),
              rec.get("source_url", ""), rec.get("source_title", ""),
@@ -423,7 +428,9 @@ class WireStore:
              rec.get("registry_version", ""), rec.get("registry_hash", ""),
              status, rec.get("exclusion_reason", ""), created, now(),
              rec.get("claim_key", ""), rec.get("duplicate_of", ""),
-             rec.get("source_ownership", "INDEPENDENT")))
+             rec.get("source_ownership", "INDEPENDENT"),
+             rec.get("origin_reporter", ""), rec.get("origin_outlet", ""),
+             rec.get("origin_url", ""), rec.get("underlying_report_id", "")))
         self.conn.commit()
         return prior is None
 
@@ -534,9 +541,18 @@ class WireStore:
         thing this pipeline must never show.
         """
         self._fantasy_schema()
+        self._evidence_extra_columns()
+        # Still-supporting evidence: a live review status AND a class that
+        # may support an interpretation at all. A span reclassified out of
+        # the supporting set -- a quotation found to be somebody else's
+        # words, say -- must stop holding up commentary built on it, or the
+        # commentary outlives the reason it existed.
         good = {r["candidate_id"] for r in self.conn.execute(
             "SELECT candidate_id FROM wire_evidence "
-            "WHERE review_status IN ('PENDING','APPROVED')")}
+            "WHERE review_status IN ('PENDING','APPROVED') "
+            "AND evidence_class IN ('FIRSTHAND_OBSERVATION','DIRECT_QUOTATION') "
+            "AND (exclusion_reason IS NULL OR exclusion_reason = '') "
+            "AND (duplicate_of IS NULL OR duplicate_of = '')")}
         n = 0
         for r in self.impacts():
             if r["review_status"] in ("INVALIDATED", "REJECTED"):
@@ -549,7 +565,8 @@ class WireStore:
                     " invalidated_at=?, invalidation_reason=?, updated_at=? "
                     "WHERE fantasy_impact_id=?",
                     (now(), "every supporting evidence candidate was rejected, "
-                     "superseded or invalidated", now(), r["fantasy_impact_id"]))
+                     "superseded, invalidated, or reclassified out of the "
+                     "supporting set", now(), r["fantasy_impact_id"]))
                 n += 1
             elif len(live) != len(ids):
                 # Some evidence survived. Recount rather than leave a source

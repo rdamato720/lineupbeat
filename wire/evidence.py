@@ -35,6 +35,10 @@ from . import players as pl
 FIRSTHAND_OBSERVATION = "FIRSTHAND_OBSERVATION"
 DIRECT_QUOTATION = "DIRECT_QUOTATION"
 ANALYSIS_OR_OPINION = "ANALYSIS_OR_OPINION"
+# Somebody else's reporting, arriving second-hand. Its own class rather than
+# a flavour of analysis: a reviewer needs to see at a glance that the outlet
+# on the byline is not the outlet that did the work.
+RELAYED_REPORTING = "RELAYED_REPORTING"
 UNCERTAIN = "UNCERTAIN"
 
 PENDING = "PENDING"
@@ -134,6 +138,15 @@ NOT_ACTIONABLE = [
         r"(?i)\b(mock draft|power rankings?|draft grades?)\b")),
     ("trade proposal", re.compile(
         r"(?i)\b(trade proposal|blockbuster trade|should trade for|trade idea)\b")),
+    ("simulation or hypothetical", re.compile(
+        r"(?i)\b(ai (?:simulation|predicts?|model)|grok|chatgpt|"
+        r"simulat(?:ed|ion|es)|hypothetical|what if the|"
+        r"blockbuster (?:trade|signing)|proposed (?:trade|signing)|"
+        r"roster simulation|madden sim)\b")),
+    ("listicle or entertainment", re.compile(
+        r"(?i)\b(\d+ (?:things|reasons|takes|players) (?:you|that|why)|"
+        r"went viral|social media (?:reacts|reaction)|fans react|"
+        r"savage|roasted|clapped back|hilarious)\b")),
     ("national list", re.compile(
         r"(?i)\b(top \d+ (?:players|prospects|quarterbacks)|"
         r"ranking the \w+|greatest \w+ of all time)\b")),
@@ -255,7 +268,7 @@ def classify(text: str, *, reporter_voice: bool,
     if relay:
         why.append(f"relays another outlet or reporter "
                    f"({relay.group(0).strip().lower()!r})")
-        return ANALYSIS_OR_OPINION if HEDGE.search(t) else UNCERTAIN, 0.35, why
+        return RELAYED_REPORTING, 0.35, why
 
     quoted = QUOTED.search(t)
     if quoted:
@@ -371,6 +384,55 @@ def is_speaker(player_name: str, text: str) -> bool:
         if last in pl.norm(m.group(1)).split():
             return True
     return False
+
+
+# Who actually did the reporting, when the rewrite says so. Stored rather
+# than merely detected: a reviewer deciding whether two articles corroborate
+# each other needs to see that both trace to one original.
+ORIGIN = re.compile(
+    r"(?i)\b(?:according to|per|via|citing|as (?:shared|posted|reported) by|"
+    r"told(?: the)?)\s+"
+    r"(?P<outlet>the athletic|espn|nfl network|nfl\.com|cbs sports|fox sports|"
+    r"yahoo sports|bleacher report|pro football focus|pff|the boston herald|"
+    r"boston herald|the ringer)"
+    r"|(?P<person>(?!And|But|He|She|They|It|The|This|That|Who|Coach)"
+    r"[A-Z][a-z]{2,}(?:\s+[A-Z][a-z]{2,})?)\s+"
+    r"(?:first )?(?:reported|wrote|tweeted|posted)"
+    r"|\b(?:per|according to)\s+"
+    r"(?P<person2>(?!head|assistant|offensive|defensive|the)"
+    r"[A-Z][a-z]{2,}\s+[A-Z][a-z]{2,})")
+
+OUTLET_URL = re.compile(r'href="(https?://(?!www\.si\.com)[^"]+)"')
+
+
+def origin_of(text: str, html: str = "") -> dict:
+    """The reporter and outlet a rewrite is standing on, where stated.
+
+    An A to Z rewrite of a Boston Herald story is not independent
+    corroboration of the Boston Herald. Recording the origin is what lets
+    two candidates that trace to one original be linked rather than counted
+    twice.
+    """
+    out = {"origin_reporter": "", "origin_outlet": "", "origin_url": ""}
+    m = ORIGIN.search(text or "")
+    if m:
+        out["origin_outlet"] = (m.group("outlet") or "").strip()
+        out["origin_reporter"] = ((m.group("person") or m.group("person2") or "")
+                                  .strip())
+    if html:
+        link = OUTLET_URL.search(html)
+        if link:
+            out["origin_url"] = link.group(1)[:300]
+    return out
+
+
+def underlying_report_id(origin: dict, text: str) -> str:
+    """One id per original report, shared by every rewrite of it."""
+    key = (origin.get("origin_reporter") or origin.get("origin_outlet") or "")
+    if not key:
+        return ""
+    return hashlib.sha256(
+        f"{key.lower()}|{norm_claim(text)[:160]}".encode()).hexdigest()[:20]
 
 
 def group_id(source_key: str, location: str, text: str) -> str:

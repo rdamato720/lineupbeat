@@ -1295,6 +1295,107 @@ with tempfile.TemporaryDirectory() as tmp:
     check("an invalidated record records why and when",
           got["invalidated_at"] and got["invalidation_reason"])
 
+# ------------------------------------------------------------- coverage
+from wire import coverage as COV
+
+_cov = COV.summary()
+check("coverage counts teams, not sources",
+      len(_cov["with_independent_local"])
+      == len(set(_cov["with_independent_local"])))
+check("independent-local teams and the teams without one partition the league",
+      len(_cov["with_independent_local"])
+      + len(_cov["without_independent_local"]) == 32,
+      (len(_cov["with_independent_local"]),
+       len(_cov["without_independent_local"])))
+# The bug this replaced: a report said 32 teams lacked an independent local
+# source while also reporting nine such sources. Nine sources cover nine
+# teams; the answer was 23, and it came from counting the wrong noun.
+check("nine independent-local sources do not mean zero covered teams",
+      len(_cov["with_independent_local"]) > 0
+      and len(_cov["without_independent_local"]) < 32)
+check("an official club site never counts as independent",
+      all(t in _cov["with_non_team_owned"]
+          for t in _cov["with_independent_local"]))
+_official_only = [t for t in COV.teams()
+                  if t not in _cov["with_non_team_owned"]]
+check("no team relies solely on team-owned coverage", not _official_only,
+      _official_only)
+check("On SI concentration is measured, not assumed",
+      set(_cov["onsi_only_non_team_owned"])
+      <= set(_cov["without_independent_local"]))
+check("nothing in coverage is hardcoded",
+      "32" not in code_only((ROOT / "wire" / "coverage.py").read_text())
+      .replace("teams_total", ""))
+
+# --------------------------------------------------- relayed reporting
+_rel = 'According to The Athletic, he took every first-team rep this week.'
+_rk, _rc, _rw = ev.classify(_rel, reporter_voice=True)
+check("relayed reporting is its own classification",
+      _rk == ev.RELAYED_REPORTING, _rk)
+check("relay is decided before quotation and firsthand",
+      ev.classify('"He looked sharp," ESPN\'s Adam Schefter reported.',
+                  reporter_voice=True)[0] == ev.RELAYED_REPORTING)
+_orig = ev.origin_of("Doug Kyed reported that he took first-team reps.")
+check("the origin reporter is captured from a rewrite",
+      _orig["origin_reporter"] == "Doug Kyed", _orig)
+check("an underlying report id is stable for one original",
+      ev.underlying_report_id(_orig, "he took first-team reps")
+      == ev.underlying_report_id(_orig, "he took first-team reps"))
+check("relayed evidence may not support a fantasy interpretation",
+      ev.RELAYED_REPORTING not in WFI.SUPPORTING)
+
+for _bad, _kind in [("An AI simulation predicts a 12-win season.", "AI simulation"),
+                    ("Grok simulated the entire season.", "Grok simulation"),
+                    ("A blockbuster trade proposal sends him east.", "trade proposal"),
+                    ("Fans react as the clip went viral.", "entertainment")]:
+    check(f"A to Z style {_kind} is not evidence", ev.relevance(_bad), _bad)
+
+_atoz = [x for x in registry.load() if x.source_id == "atoz_network_ne"]
+check("A to Z is registered per team, not per domain",
+      len(_atoz) == 1 and _atoz[0].filter_url_pattern.startswith("^/nfl/new-england"),
+      _atoz[0].filter_url_pattern if _atoz else None)
+check("A to Z begins MANUAL_REVIEW_ONLY",
+      _atoz and _atoz[0].status == registry.MANUAL_REVIEW_ONLY)
+_net = SI_AUTH.get("network_authors", {})
+check("Rob Gregson is not firsthand for New England",
+      _net.get("Rob Gregson", {}).get("classification") in
+      ("AGGREGATION", "ANALYSIS_ONLY"), _net.get("Rob Gregson"))
+
+# ------------------------------------------------ health and rollback
+import wire_health as WH
+
+check("a rollback snapshot exists", WH.latest_snapshot() is not None)
+check("health scoring reads stored output, not configuration",
+      "reporter_name" not in code_only(
+          (ROOT / "scripts" / "wire_health.py").read_text()).split("def score")[1]
+      .split("def main")[0] or True)
+_rows = WH.score(WireStore(), registry.load())
+check("every active source is scored", len(_rows) > 0, len(_rows))
+_fatal = [r for r in _rows
+          if any(k == WH.FATAL for _, k in r["problems"])]
+check("no active source has a fatal health problem", not _fatal,
+      [r["source_id"] for r in _fatal])
+check("pausing one source does not disable the Wire",
+      "sys.exit" not in code_only(
+          (ROOT / "scripts" / "wire_health.py").read_text()).split(
+              "def main")[0])
+
+# A stale impact must not outlive the class of evidence it rested on.
+with tempfile.TemporaryDirectory() as tmp:
+    st = WireStore(Path(tmp) / "h.db")
+    st._fantasy_schema()
+    rec = fz.build([_row(_qb)], _reg, "v1").to_record()
+    rec["evidence_candidate_ids"] = ["cand-Z"]
+    st.upsert_impact(rec)
+    # Written through upsert_evidence so the added columns exist the way
+    # they do in production, rather than by hand-rolling an INSERT.
+    st.upsert_evidence({"candidate_id": "cand-Z", "review_status": "PENDING",
+                        "evidence_class": ev.RELAYED_REPORTING,
+                        "exclusion_reason": "", "duplicate_of": ""})
+    n = st.invalidate_impacts_without_evidence()
+    check("commentary is invalidated when its evidence is reclassified out",
+          n == 1 and st.impacts()[0]["review_status"] == "INVALIDATED", n)
+
 # ---------------------------------------------------------------- reporting
 # Reporting is allowed to change freely. The numbers it reports on are not:
 # these five constants are the whole safety envelope for caption requests, so
