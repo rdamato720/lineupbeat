@@ -1,12 +1,14 @@
 {
  "published": false,
  "count_shown": 5,
- "removed_latest_from_the_wire_module": false,
+ "removed_latest_from_the_wire_module": true,
  "all_reports_renderer_disabled": true,
  "retired_feed": {
   "nuggets_removed": 0,
   "bytes_saved": 0,
-  "players_preserved": 3022
+  "players_preserved": 3022,
+  "feed_preserved": true,
+  "nuggets_preserved": 500
  },
  "cards": [
   {
@@ -33,7 +35,8 @@
    "reviewer_action": "APPROVE_WITH_EDIT",
    "evidence_candidate_id": "28a689bf503cbf0eedee",
    "player_id": "00-0036463",
-   "display_join": "no match"
+   "display_player_ref": "nfl-7521",
+   "display_join": "player_id"
   },
   {
    "publication_id": "approved:mack-hollins",
@@ -59,8 +62,10 @@
    "reviewer_action": "APPROVE_WITH_EDIT",
    "display_position_rank": "WR95",
    "display_projected_points": 54.0,
-   "player_id": "",
-   "display_join": "no match"
+   "player_id": "00-0033555",
+   "display_player_ref": "nfl-4177",
+   "display_espn": "2991662",
+   "display_join": "player_id"
   },
   {
    "publication_id": "approved:makai-lemon",
@@ -109,8 +114,9 @@
    "display_position_rank": "WR61",
    "display_adp": 112.7,
    "display_projected_points": 89.3,
-   "player_id": "",
-   "display_join": "no match"
+   "player_id": "00-0040867",
+   "display_player_ref": "nfl-13294",
+   "display_join": "player_id"
   },
   {
    "publication_id": "approved:devonta-smith",
@@ -171,8 +177,9 @@
    "display_position_rank": "WR16",
    "display_adp": 28.4,
    "display_projected_points": 184.3,
-   "player_id": "",
-   "display_join": "no match"
+   "player_id": "00-0036912",
+   "display_player_ref": "nfl-7525",
+   "display_join": "player_id"
   },
   {
    "publication_id": "approved:sam-laporta",
@@ -199,8 +206,9 @@
    "display_position_rank": "TE6",
    "display_adp": 86.7,
    "display_projected_points": 156.8,
-   "player_id": "",
-   "display_join": "no match"
+   "player_id": "00-0039065",
+   "display_player_ref": "nfl-10859",
+   "display_join": "player_id"
   }
  ]
 }

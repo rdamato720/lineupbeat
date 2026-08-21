@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -43,6 +44,17 @@ def esc(s):
     return html.escape(str(s or ""), quote=True)
 
 
+def payload_of(text):
+    i = text.find("const DATA = ")
+    if i < 0:
+        return None
+    j = text.find("\n", i)
+    try:
+        return json.loads(text[i + len("const DATA = "):j].rstrip(";"))
+    except ValueError:
+        return None
+
+
 def ago(iso):
     try:
         t = datetime.fromisoformat(str(iso).replace("Z", "+00:00"))
@@ -54,56 +66,169 @@ def ago(iso):
     return "just now" if h < 1 else f"{int(h)}h ago" if h < 24 else f"{int(h//24)}d ago"
 
 
+TEMPLATE = Path("site/template.html")
+
+
+def team_colors():
+    """The homepage's own palette, read from the homepage.
+
+    Parsed rather than copied. A second hand-maintained copy of 32 colour
+    pairs is a copy that drifts, and the left border of a Wire card has to
+    be the same blue as the left border of every other card on the page.
+    """
+    m = re.search(r"const TEAM_COLORS = \{(.*?)\n\};", TEMPLATE.read_text(),
+                  re.S)
+    out = {}
+    if m:
+        for code, c1, c2 in re.findall(
+                r'(\w+):\s*\[\s*"(#[0-9A-Fa-f]{6})"\s*,\s*"(#[0-9A-Fa-f]{6})"',
+                m.group(1)):
+            out[code] = (c1, c2)
+    return out
+
+
+PAGE = 8          # cards visible before "Load more"; not a publication cap
+
+COLORS = team_colors()
+FALLBACK = ("#2A3136", "#6B757D")
+
+
+def headshot(player_ref):
+    """Sleeper keys its CDN on the site's own player id, as headshotURL does."""
+    bare = re.sub(r"^[a-z]+-", "", str(player_ref or ""))
+    return (f"https://sleepercdn.com/content/nfl/players/thumb/{bare}.jpg"
+            if bare else "")
+
+
+def espn_headshot(espn_id):
+    return (f"https://a.espncdn.com/i/headshots/nfl/players/full/{espn_id}.png"
+            if espn_id else "")
+
+
+def team_logo(team):
+    t = str(team or "").lower()
+    return f"https://a.espncdn.com/i/teamlogos/nfl/500/{t}.png" if t else ""
+
+
 CSS = """
-/* The replacement section, in the homepage's own dark treatment. Two across
-   at 1000px and up, one below, never three. Cards grow with their content;
-   the approved analysis is never clamped. */
+/* The Wire section reuses the homepage's own card, not a second design.
+   `.tile` supplies the dark ground, the 8px radius, the team-coloured left
+   border and the masked headshot; everything here is the delta a Wire card
+   needs -- two columns rather than three, and text that is never clamped,
+   because a reviewer approved that wording in full. */
 #lbwire{padding:34px 0 10px}
 #lbwire .shead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
 #lbwire .shead h2{margin:0}
-#lbwire .n{font-family:var(--agate,inherit);font-size:.72rem;
-letter-spacing:.09em;text-transform:uppercase;color:var(--signal,#c8f05a);
-font-weight:700}
 #lbwire .sub{margin:2px 0 16px}
 #lbwire .wfilters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
 #lbwire .wfilters button,#lbwire .wfilters select{font:inherit;font-size:.78rem;
 padding:6px 12px;background:transparent;color:var(--quiet,#8f938a);
 border:1px solid var(--rule,#262a22);border-radius:99px;cursor:pointer}
-#lbwire .wfilters button.on{color:var(--signal,#c8f05a);
-border-color:var(--signal,#c8f05a)}
-#lbwire .wgrid{display:grid;grid-template-columns:1fr;gap:18px;
-align-items:start}
-@media(min-width:1000px){#lbwire .wgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-#lbwire .wc{background:var(--card,#131611);border:1px solid var(--rule,#262a22);
-border-radius:14px;padding:18px 19px;display:flex;flex-direction:column}
-#lbwire .wtop{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
-margin-bottom:10px}
-#lbwire .wlogo{width:28px;height:28px;border-radius:7px;
-background:#20241c;display:grid;place-items:center;font-size:.6rem;
-font-weight:700;color:var(--quiet,#8f938a);flex:none}
-#lbwire .wpic{width:34px;height:34px;border-radius:50%;background:#1c2018;
-display:grid;place-items:center;font-size:.66rem;font-weight:700;
-color:var(--quiet,#8f938a);flex:none}
-#lbwire .wb{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;
-font-weight:700;padding:2px 8px;border-radius:99px;
-border:1px solid var(--rule,#262a22);color:var(--quiet,#8f938a)}
-#lbwire .wb.rank{color:var(--signal,#c8f05a);border-color:var(--signal,#c8f05a)}
-#lbwire .wb.up{color:#7fbf8a;border-color:#7fbf8a}
-#lbwire .wb.down{color:#e08a7f;border-color:#e08a7f}
-#lbwire .wtime{margin-left:auto;color:var(--quiet,#8f938a);font-size:.72rem}
-#lbwire .wname{font-size:1.22rem;font-weight:700;margin:0 0 2px}
-#lbwire .wlab{font-size:.62rem;letter-spacing:.11em;text-transform:uppercase;
-color:var(--quiet,#8f938a);font-weight:700;margin:15px 0 6px}
-#lbwire .wrep{font-size:.94rem}
-#lbwire .wsrc{color:var(--quiet,#8f938a);font-size:.76rem;margin-top:9px}
+#lbwire .wfilters button.on{color:var(--signal,#C6F53C);
+border-color:var(--signal,#C6F53C)}
+
+/* Two across, one on a phone. Never three: a Wire card carries two blocks of
+   prose where a tile carries one line, and at a third of the width the
+   evidence and the interpretation stop being readable side by side. */
+#lbwire .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:900px){#lbwire .tiles{grid-template-columns:1fr}}
+
+#lbwire .tile{cursor:default;min-height:0;padding:.95rem 1.05rem 1.05rem}
+/* The tile clamps its claim to three lines and its heading to 16 characters.
+   Approved Wire wording is published whole. */
+#lbwire .tile h4,#lbwire .tile p{max-width:none}
+#lbwire .tile p{-webkit-line-clamp:none;display:block;overflow:visible}
+#lbwire .tile:hover{background:#101315}
+#lbwire .tile .shot{top:.9rem;width:6.4rem;height:6.4rem}
+#lbwire .tile h4{font-size:1.18rem;margin:0 0 .5rem}
+#lbwire .tile .tkick{flex-wrap:wrap;white-space:normal;row-gap:.3rem;
+padding-right:5.5rem}
+
+#lbwire .wb{font-family:var(--agate,inherit);font-size:.58rem;
+letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+padding:2px 7px;border-radius:99px;border:1px solid var(--rule,#262a22);
+color:var(--quiet,#8f938a)}
+#lbwire .wb.rank{color:var(--signal,#C6F53C);border-color:rgba(198,245,60,.45)}
+#lbwire .wb.up{color:#7fbf8a;border-color:rgba(127,191,138,.5)}
+#lbwire .wb.down{color:#e08a7f;border-color:rgba(224,138,127,.5)}
+#lbwire .wlab{font-family:var(--agate,inherit);font-size:.58rem;
+letter-spacing:.11em;text-transform:uppercase;color:var(--quiet,#8f938a);
+font-weight:600;margin:.9rem 0 .35rem}
+#lbwire .wrep{font-size:.9rem;line-height:1.5;color:#C9D0CC;margin:0}
+#lbwire .wsrc{color:var(--quiet,#8f938a);font-size:.74rem;line-height:1.5;
+margin:.55rem 0 0}
 #lbwire .wsrc a{color:var(--quiet,#8f938a)}
 #lbwire .wown{color:#d6a55a}
-#lbwire .wsplit{border:0;border-top:1px solid var(--rule,#262a22);margin:16px 0 0}
-#lbwire .wimp{background:#171b13;border-left:3px solid var(--signal,#c8f05a);
-border-radius:0 8px 8px 0;padding:12px 14px;margin-top:12px;font-size:.94rem}
-#lbwire .wfoot{color:var(--quiet,#8f938a);font-size:.71rem;letter-spacing:.05em;
-text-transform:uppercase;margin-top:12px}
+#lbwire .wsplit{border:0;border-top:1px solid var(--rule,#262a22);
+margin:1rem 0 0}
+/* The interpretation is ours, so it carries our accent, and it is visually a
+   different kind of statement from the evidence above it. */
+#lbwire .wimp{background:#171b13;border-left:3px solid var(--signal,#C6F53C);
+border-radius:0 8px 8px 0;padding:.7rem .85rem;margin-top:.75rem;
+font-size:.9rem;line-height:1.5;color:#C9D0CC}
+#lbwire .wfoot{font-family:var(--agate,inherit);color:var(--quiet,#8f938a);
+font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;
+margin:.75rem 0 0}
 """
+
+
+# The section's own behaviour. Filtering and paging are one function because
+# they interact: "Load more" must reveal the next cards *that pass the current
+# filter*, and changing a filter must reset the page. Two independent handlers
+# get that wrong in both directions.
+BEHAVIOUR = """
+(function(){
+  var sec = document.getElementById("lbwire");
+  if(!sec) return;
+  var cards = [].slice.call(sec.querySelectorAll("article.tile.wire"));
+  var more  = document.getElementById("wmore");
+  var team  = document.getElementById("wteam");
+  var PAGE  = %d;
+  var shown = PAGE, dir = "all", pos = "";
+
+  function apply(){
+    var n = 0, hits = 0;
+    cards.forEach(function(c){
+      var ok = (dir === "all" || c.dataset.dir === dir)
+            && (!pos || c.dataset.pos === pos)
+            && (!team || !team.value || c.dataset.team === team.value);
+      if(!ok){ c.hidden = true; return; }
+      hits++;
+      c.hidden = n++ >= shown;
+    });
+    if(more){
+      var left = Math.max(0, hits - shown);
+      more.hidden = left === 0;
+      var span = more.querySelector("span");
+      if(span) span.textContent = left + " more";
+    }
+    var count = sec.querySelector(".shead .n");
+    if(count) count.textContent = hits + (hits === 1 ? " reviewed report"
+                                                     : " reviewed reports");
+  }
+
+  sec.querySelectorAll(".wfilters button[data-f]").forEach(function(b){
+    b.addEventListener("click", function(){
+      sec.querySelectorAll(".wfilters button[data-f]").forEach(function(x){
+        x.classList.remove("on"); });
+      b.classList.add("on");
+      dir = b.dataset.f; shown = PAGE; apply();
+    });
+  });
+  sec.querySelectorAll(".wfilters button[data-p]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var was = b.classList.contains("on");
+      sec.querySelectorAll(".wfilters button[data-p]").forEach(function(x){
+        x.classList.remove("on"); });
+      if(!was){ b.classList.add("on"); pos = b.dataset.p; } else { pos = ""; }
+      shown = PAGE; apply();
+    });
+  });
+  if(team) team.addEventListener("change", function(){ shown = PAGE; apply(); });
+  if(more) more.addEventListener("click", function(){ shown += PAGE; apply(); });
+  apply();
+})();
+""" % PAGE
 
 
 def sources_html(c):
@@ -136,30 +261,45 @@ def sources_html(c):
 def card(c):
     d = c["direction"]
     cls = "up" if d == "POSITIVE" else "down" if d == "NEGATIVE" else ""
+    c1, c2 = COLORS.get(str(c.get("team", "")).upper(), FALLBACK)
+
     badges = f'<span class="wb">{esc(c["mechanism"].replace("_"," ").title())}</span>'
     if c.get("display_position_rank"):
         badges += f'<span class="wb rank">{esc(c["display_position_rank"])}</span>'
     if c.get("display_adp") is not None:
-        badges += f'<span class="wb">ADP {esc(round(float(c["display_adp"]),1))}</span>'
+        badges += f'<span class="wb">ADP {esc(round(float(c["display_adp"]), 1))}</span>'
     if c.get("display_projected_points") is not None:
         badges += f'<span class="wb">{esc(c["display_projected_points"])} proj</span>'
     badges += f'<span class="wb {cls}">{esc(c["reader_label"])}</span>'
-    initials = "".join(w[0] for w in c["player_name"].split()[:2]).upper()
-    return f"""<article class="wc" data-team="{esc(c['team'])}"
-   data-pos="{esc(c['position'])}" data-dir="{esc(d)}">
-  <div class="wtop">
-    <span class="wlogo">{esc(c['team'])}</span>
-    <span class="wpic">{esc(initials)}</span>
+
+    # Real art, with the page's own failure chain behind it: Sleeper, then
+    # ESPN, then the image is removed. Initials are what a reader sees only
+    # when a player genuinely has no photo at either source.
+    shot = headshot(c.get("display_player_ref"))
+    face = (f'<img class="shot" loading="lazy" alt="" src="{esc(shot)}" '
+            f'data-fallback="{esc(espn_headshot(c.get("display_espn")))}" '
+            f'onerror="faceFail(this)">' if shot else "")
+    logo = team_logo(c.get("team"))
+    logo_html = (f'<img loading="lazy" alt="" src="{esc(logo)}" '
+                 f'onerror="logoFail(this)">' if logo else "")
+
+    return f"""<article class="tile wire" style="--c1:{c1};--c2:{c2}"
+   data-team="{esc(c['team'])}" data-pos="{esc(c['position'])}"
+   data-dir="{esc(d)}">
+  {face}
+  <div class="tkick">
+    {logo_html}
+    <span class="tcat">{esc(c['team'])} {esc(c['position'])}</span>
     {badges}
-    <span class="wtime">{esc(ago(c.get('published_at')))}</span>
+    <span class="tago">{esc(ago(c.get('published_at')))}</span>
   </div>
-  <p class="wname">{esc(c['player_name'])} <span class="wb">{esc(c['position'])}</span></p>
+  <h4>{esc(c['player_name'])}</h4>
   <div class="wlab">What the reporter found</div>
-  <div class="wrep">{esc(c['reporter_found'])}</div>
+  <p class="wrep">{esc(c['reporter_found'])}</p>
   {sources_html(c)}
   <hr class="wsplit">
   <div class="wlab">Lineup Beat impact</div>
-  <div class="wimp">{esc(c['lineupbeat_impact'])}</div>
+  <p class="wimp">{esc(c['lineupbeat_impact'])}</p>
   <p class="wfoot">Evidence {esc(c.get('strength','LOW')).lower()} &middot;
     {esc(c.get('horizon','UNKNOWN')).replace('_',' ').lower()} &middot;
     {'No projection change' if c.get('projection_action')=='NONE' else esc(c.get('projection_action'))}</p>
@@ -175,7 +315,10 @@ def collect():
             "SELECT player_id FROM wire_evidence WHERE candidate_id = ?",
             (p.get("evidence_candidate_id", ""),)).fetchone()
         out.append(display.decorate({
-            **p, "player_id": row["player_id"] if row else "",
+            # The publication now carries the stable id itself; the evidence
+            # lookup stays as the fallback for records written before it did.
+            **p, "player_id": (p.get("player_id")
+                               or (row["player_id"] if row else "")),
             "published_at": p.get("published_date")}))
 
     # A card that has been published arrives from the publication file and
@@ -232,7 +375,13 @@ def main():
     cards = collect()
 
     teams = sorted({c["team"] for c in cards})
+
+    # Every approved report renders. There is no publication cap: the batch
+    # below governs how many are *visible* before the reader asks for more,
+    # and every card is in the HTML either way, which the crawler needs and
+    # the filters rely on.
     grid = "".join(card(c) for c in cards)
+    hidden = max(0, len(cards) - PAGE)
     section = f"""<section class="wrap sec" id="lbwire">
   <div class="shead">
     <h2>THE NFL WIRE</h2>
@@ -249,7 +398,8 @@ def main():
     <button data-p="QB">QB</button><button data-p="RB">RB</button>
     <button data-p="WR">WR</button><button data-p="TE">TE</button>
   </div>
-  <div class="wgrid">{grid}</div>
+  <div class="tiles wire">{grid}</div>
+  {f'<button class="more" id="wmore">Load more reports <span>{hidden} more</span></button>' if hidden else ''}
   <p class="sub" style="margin-top:14px">
     <a href="/nfl/wire/">View the full Wire</a></p>
 </section>"""
@@ -266,34 +416,25 @@ def main():
         home = head + rest.split("<!-- WIRE MODULE END -->", 1)[1]
         removed_module = True
 
-    # 2. Remove the retired X-report collection from the payload itself.
-    #    Disabling the renderer stops it being drawn; it does not stop it
-    #    being shipped, and a hidden report about a player a reviewer
-    #    rejected is still a report about him sitting in the page a reader
-    #    downloads. DATA.players stays: 3,022 roster rows carry the photo
-    #    ids, team codes and ADP that search, My Roster and the card badges
-    #    all read, and they are referenced five times against the nuggets'
-    #    one. The feed itself is untouched in site/data/feed.json and in
-    #    source control, so rollback restores it.
+    # 2. The feed payload is left alone.
+    #
+    # Stripping the nuggets to stop shipping retired All Reports data also
+    # emptied Recent News and Moving Now, which read the same collection --
+    # renderLive() and trending() both call nuggets(). The Wire replaces one
+    # renderer, not the feed underneath it. feed.json keeps powering Recent
+    # News, Moving Now, My Roster and search; wire_publications.json powers
+    # the Wire section and nothing else reads it.
+    #
+    # A player a Wire reviewer rejected may still appear in Recent News: that
+    # is a legitimate X-wire report about him, not a hidden Wire card, and
+    # the two systems are separate on purpose.
     stripped = {"nuggets_removed": 0, "bytes_saved": 0,
-                "players_preserved": 0}
-    marker = "const DATA = "
-    if marker in home:
-        di = home.index(marker) + len(marker)
-        dj = home.index("\n", di)
-        blob = home[di:dj].rstrip(";")
-        try:
-            data = json.loads(blob)
-        except ValueError:
-            data = None
-        if data:
-            for sport in data.get("sports", {}).values():
-                stripped["nuggets_removed"] += len(sport.get("nuggets") or [])
-                sport["nuggets"] = []
-            stripped["players_preserved"] = len(data.get("players") or [])
-            new_blob = json.dumps(data, separators=(",", ":"))
-            stripped["bytes_saved"] = len(blob) - len(new_blob)
-            home = home[:di] + new_blob + home[dj:]
+                "players_preserved": 0, "feed_preserved": True}
+    _d = payload_of(home)
+    if _d:
+        stripped["nuggets_preserved"] = sum(
+            len(sp.get("nuggets") or []) for sp in _d.get("sports", {}).values())
+        stripped["players_preserved"] = len(_d.get("players") or [])
 
     # 3. Neutralise the client-side ALL REPORTS renderer. Adding the new grid
     #    without this would show both, which is the outcome the replacement
@@ -314,7 +455,7 @@ def main():
     START, END = "<!-- LB WIRE REPLACEMENT START -->", \
                  "<!-- LB WIRE REPLACEMENT END -->"
     block = (f'{START}\n<script>window.__LB_WIRE_REPLACEMENT__=true;</script>\n'
-             f'{section}\n{END}')
+             f'{section}\n<script>{BEHAVIOUR}</script>\n{END}')
     if START in home and END in home:
         head = home.split(START)[0]
         tail = home.split(END, 1)[1]
@@ -349,11 +490,11 @@ def main():
               f"adp={c.get('display_adp','-')}")
     print(f"  Latest-from-the-Wire module removed: {removed_module}")
     print(f"  old All Reports renderer disabled:  {replaced_all_reports}")
-    print(f"  retired X reports removed from the payload: "
-          f"{stripped['nuggets_removed']}")
+    print(f"  legacy feed preserved: "
+          f"{stripped.get('nuggets_preserved', 0)} report(s) still powering "
+          f"Recent News and Moving Now")
     print(f"  roster rows preserved for photos, ADP and search: "
           f"{stripped['players_preserved']}")
-    print(f"  payload reduced by {stripped['bytes_saved']:,} bytes")
     print(f"  wrote {OUT}")
     return 0
 

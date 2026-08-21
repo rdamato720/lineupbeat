@@ -8,10 +8,16 @@ shipped, and a hidden report about a player a reviewer rejected is still a
 report about him in the bytes a reader downloads. These checks read the
 rendered payload, not the code that produced it.
 
-The distinction that matters throughout: a roster row is identity data other
-features need -- the photo id, the team code, the ADP -- and a nugget is a
-retired report. Anthony Richardson may appear as the former and must never
-appear as the latter.
+The distinction that matters throughout is which system a record belongs to.
+feed.json powers Recent News, Moving Now, My Roster and search;
+wire_publications.json powers the Wire section and nothing else reads it. The
+Wire replaces one renderer -- All reports -- and must leave the feed beneath
+it alone. It once emptied that collection on the way past, which is what
+Recent News and Moving Now render from, and both shipped blank.
+
+So a player a Wire reviewer rejected may still appear in Recent News: that is
+a legitimate X-wire report about him, not a hidden Wire card. What he may
+never be is a card in the replacement section.
 """
 
 from __future__ import annotations
@@ -61,19 +67,27 @@ def payload(text):
 data = payload(html)
 check("the homepage payload still parses", data is not None)
 
-# --- the retired collection is gone from the payload, not merely hidden ---
-nuggets = sum(len(s.get("nuggets") or []) for s in (data or {}).get("sports", {}).values())
-check("the retired X-report collection is not embedded", nuggets == 0, f"{nuggets} nuggets")
-check("no retired report markers remain", "dedupe_key" not in html)
-check("the renderer is also disabled", "__LB_WIRE_REPLACEMENT__" in html)
+# --- the feed beneath the replacement survives it ---
+nuggets = [n for s_ in (data or {}).get("sports", {}).values()
+           for n in (s_.get("nuggets") or [])]
+check("the feed records are still in the payload", bool(nuggets),
+      f"{len(nuggets)} report(s)")
+check("the renderer is disabled without emptying the feed",
+      "__LB_WIRE_REPLACEMENT__" in html and bool(nuggets))
 
-# --- excluded names: never as a report, roster identity is fine ---
+# The two sections that read the same collection. Each needs its mount point
+# and something to put in it; both shipped blank when the collection went.
+resolved = [n for n in nuggets if n.get("resolved")]
+check("Recent News has its mount point", 'id="livelist"' in html)
+check("Recent News has items to render", bool(resolved),
+      f"{len(resolved)} resolved report(s)")
+check("Moving Now has its mount point", 'id="trending"' in html)
+check("Moving Now has more than one player to rank",
+      len({n.get("player_id") for n in resolved if n.get("player_id")}) > 1)
+
+# --- excluded names: never as a Wire card; a feed report about them is fine ---
 for who in EXCLUDED:
     check(f"{who} is absent from the replacement section", who not in section)
-    reports = [n for s in (data or {}).get("sports", {}).values()
-               for n in (s.get("nuggets") or [])
-               if who.split()[-1] in str(n.get("player_name", ""))]
-    check(f"{who} has no report in the Wire data payload", not reports)
 
 # --- what other homepage features need must survive ---
 players = (data or {}).get("players") or []
@@ -90,15 +104,31 @@ for fn in ("loadRoster", "DATA.players"):
 approved = [d for d in json.loads(DECISIONS.read_text())["decisions"].values()
             if str(d["action"]).startswith("APPROVE")]
 names = ["Chris Blair"] + [d["subject"] for d in approved]
+CARD = r'<article class="tile wire'
+cards = re.findall(CARD, section)
+rendered = [re.sub(r"<[^>]+>", "", m).strip()
+            for m in re.findall(r"<h4>(.*?)</h4>", section, re.S)]
 for n in names:
-    check(f"{n} appears exactly once", section.count(f'>{n} <span class="wb">') == 1)
-check("exactly five cards render",
-      len(re.findall(r'<article class="wc"', section)) == 5,
-      f"{len(re.findall(chr(60) + 'article class=' + chr(34) + 'wc' + chr(34), section))}")
-check("the visible count reads 5 reviewed reports",
-      ">5 reviewed reports<" in section)
-check("the count equals the cards rendered",
-      len(re.findall(r'<article class="wc"', section)) == meta["count_shown"])
+    check(f"{n} appears exactly once", rendered.count(n) == 1,
+          f"{rendered.count(n)} card(s)")
+# No fixed card count. The section renders every approved report, and a
+# number written into a test is a cap nobody meant to impose.
+check("one card renders per approved report",
+      len(cards) == len(names), f"{len(cards)} cards, {len(names)} approved")
+check("the count equals the cards rendered", len(cards) == meta["count_shown"])
+
+# --- the design, which regressed to placeholders once ---
+per_card = re.findall(r'<article class="tile wire".*?</article>', section, re.S)
+check("every card carries a real player photo",
+      all('class="shot"' in c for c in per_card))
+check("every card carries a real team logo",
+      all("teamlogos/nfl/500" in c for c in per_card))
+check("no card falls back to initials by default",
+      'class="wpic"' not in section and 'class="wlogo"' not in section)
+check("every card carries its team colour",
+      len(re.findall(r"--c1:#", section)) == len(per_card))
+check("the grid is two columns, never three",
+      "repeat(2,minmax(0,1fr))" in html)
 
 for d in approved:
     esc = (d["edited_text"].replace("&", "&amp;").replace("<", "&lt;")
@@ -122,17 +152,15 @@ check("filters target the rendered cards",
 # moment the replacement was applied to it.
 BEFORE = ROOT / "data" / "rollback" / "index.homepage-before-replacement.html"
 if BEFORE.exists():
-    before = len(BEFORE.read_text())
-    check("the homepage does not grow from carrying both feeds",
-          len(html) < before, f"{len(html):,} vs {before:,} bytes before")
     before_data = payload(BEFORE.read_text())
-    before_nuggets = sum(len(s.get("nuggets") or [])
-                         for s in (before_data or {}).get("sports", {}).values())
-    check("the retired collection was there before and is gone now",
-          before_nuggets > 100 and nuggets == 0,
-          f"{before_nuggets} -> {nuggets}")
-    check("removing it saved real bytes",
-          before - len(html) > 100_000, f"{before - len(html):,} bytes")
+    before_nuggets = sum(len(s_.get("nuggets") or [])
+                         for s_ in (before_data or {}).get("sports", {}).values())
+    # The page carries both systems on purpose, so it is expected to grow.
+    # What must not happen is the feed shrinking: the earlier version saved
+    # half a megabyte by deleting the records Recent News renders.
+    check("no feed record was dropped on the way through",
+          len(nuggets) >= before_nuggets,
+          f"{before_nuggets} before, {len(nuggets)} now")
 
 # --- rollback ---
 snaps = sorted((ROOT / "data" / "wire_snapshots").glob("wire_publications.*.json")) \

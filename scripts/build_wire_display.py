@@ -57,6 +57,19 @@ def build() -> dict:
                                       r.get("position", ""))
                 if len(hits) != 1:
                     continue
+                # Identity first, and unconditionally. The site keys its
+                # headshots and its PLAYERS map on this id, not on the gsis
+                # id the Wire uses, so without the bridge every Wire card
+                # falls back to initials -- which is what shipped. It is
+                # written before the ADP guards below on purpose: a player
+                # with no draft slot still has a face.
+                site_id = (r.get("id") or "").strip()
+                if site_id:
+                    e = rows.setdefault(hits[0].player_id, {})
+                    e["player_ref"] = site_id
+                    if (r.get("espn_id") or "").strip():
+                        e["espn"] = r["espn_id"].strip()
+
                 # Only the ADP column. An empty ADP used to fall through to
                 # the roster's "rank", which is a different number entirely:
                 # Chris Blair was shown an ADP of 635 that was his rank.
@@ -72,11 +85,12 @@ def build() -> dict:
                 rows.setdefault(hits[0].player_id, {})["adp"] = adp
 
     return {
-        "schema_version": "display-v1",
+        "schema_version": "display-v2",
         "note": ("Display only, keyed by stable player_id. Never read during "
                  "evidence interpretation, relevance assessment or review. "
                  "Carries no player name, so nothing downstream can match on "
-                 "one."),
+                 "one. player_ref/espn are image identifiers for the "
+                 "homepage renderer and carry no fantasy value."),
         "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
         "count": len(rows),
         "players": rows,

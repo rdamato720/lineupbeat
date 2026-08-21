@@ -1,1425 +1,1806 @@
 {
- "schema_version": "display-v1",
- "note": "Display only, keyed by stable player_id. Never read during evidence interpretation, relevance assessment or review. Carries no player name, so nothing downstream can match on one.",
- "generated_at": "2026-08-21T16:33:18+00:00",
- "count": 609,
+ "schema_version": "display-v2",
+ "note": "Display only, keyed by stable player_id. Never read during evidence interpretation, relevance assessment or review. Carries no player name, so nothing downstream can match on one. player_ref/espn are image identifiers for the homepage renderer and carry no fantasy value.",
+ "generated_at": "2026-08-21T20:12:05+00:00",
+ "count": 1941,
  "players": {
   "00-0039139": {
    "position_rank": "RB1",
    "projected_points": 332.2,
+   "player_ref": "nfl-9221",
    "adp": 1.8
   },
   "00-0038542": {
    "position_rank": "RB2",
    "projected_points": 326.4,
+   "player_ref": "nfl-9509",
    "adp": 1.7
   },
   "00-0036900": {
    "position_rank": "WR1",
    "projected_points": 279.4,
+   "player_ref": "nfl-7564",
    "adp": 3.9
   },
   "00-0039075": {
    "position_rank": "WR2",
    "projected_points": 283.4,
+   "player_ref": "nfl-9493",
    "adp": 3.1
   },
   "00-0040122": {
    "position_rank": "RB3",
    "projected_points": 246.0,
+   "player_ref": "nfl-12527",
    "adp": 15.1
   },
   "00-0036223": {
    "position_rank": "RB4",
    "projected_points": 285.8,
+   "player_ref": "nfl-6813",
+   "espn": "4242335",
    "adp": 7.4
   },
   "00-0038543": {
    "position_rank": "WR3",
    "projected_points": 263.7,
+   "player_ref": "nfl-9488",
    "adp": 5.4
   },
   "00-0036963": {
    "position_rank": "WR4",
    "projected_points": 255.8,
+   "player_ref": "nfl-7547",
    "adp": 6.4
   },
   "00-0040666": {
    "position_rank": "RB5",
    "projected_points": 261.3,
+   "player_ref": "nfl-12507",
    "adp": 21.3
   },
   "00-0032764": {
    "position_rank": "RB6",
    "projected_points": 256.7,
+   "player_ref": "nfl-3198",
+   "espn": "3043078",
    "adp": 17.4
   },
   "00-0039040": {
    "position_rank": "RB7",
    "projected_points": 256.1,
+   "player_ref": "nfl-9226",
    "adp": 10.2
   },
   "00-0037248": {
    "position_rank": "RB8",
    "projected_points": 255.2,
+   "player_ref": "nfl-8138",
    "adp": 12.7
   },
   "00-0033280": {
    "position_rank": "RB9",
    "projected_points": 288.1,
+   "player_ref": "nfl-4034",
+   "espn": "3117251",
    "adp": 6.5
   },
   "00-0036322": {
    "position_rank": "WR5",
    "projected_points": 231.0,
+   "player_ref": "nfl-6794",
+   "espn": "4262921",
    "adp": 12.4
   },
   "00-0038134": {
    "position_rank": "RB10",
    "projected_points": 247.9,
+   "player_ref": "nfl-8151",
    "adp": 23.4
   },
   "00-0038597": {
    "position_rank": "RB11",
    "projected_points": 247.4,
+   "player_ref": "nfl-9224",
    "adp": 13.5
   },
   "00-0034844": {
    "position_rank": "RB12",
    "projected_points": 243.0,
+   "player_ref": "nfl-4866",
+   "espn": "3929630",
    "adp": 20.2
   },
   "00-0036358": {
    "position_rank": "WR6",
    "projected_points": 223.6,
+   "player_ref": "nfl-6786",
+   "espn": "4241389",
    "adp": 10.7
   },
   "00-0037238": {
    "position_rank": "WR7",
    "projected_points": 222.5,
+   "player_ref": "nfl-8112",
    "adp": 10.2
   },
   "00-0041027": {
    "position_rank": "RB13",
    "projected_points": 201.4,
+   "player_ref": "nfl-13287",
    "adp": 28.9
   },
   "00-0035685": {
    "position_rank": "RB14",
    "projected_points": 191.4,
+   "player_ref": "nfl-5892",
+   "espn": "4035538",
    "adp": 59.0
   },
   "00-0035700": {
    "position_rank": "RB15",
    "projected_points": 234.9,
+   "player_ref": "nfl-5850",
+   "espn": "4047365",
    "adp": 31.1
   },
   "00-0039067": {
    "position_rank": "WR8",
    "projected_points": 215.5,
+   "player_ref": "nfl-10229",
    "adp": 14.5
   },
   "00-0036997": {
    "position_rank": "RB16",
    "projected_points": 229.5,
+   "player_ref": "nfl-7588",
    "adp": 37.9
   },
   "00-0035676": {
    "position_rank": "WR9",
    "projected_points": 209.7,
+   "player_ref": "nfl-5859",
+   "espn": "4047646",
    "adp": 17.3
   },
   "00-0037239": {
    "position_rank": "WR10",
    "projected_points": 209.3,
+   "player_ref": "nfl-8144",
    "adp": 21.9
   },
   "00-0037840": {
    "position_rank": "RB17",
    "projected_points": 226.2,
+   "player_ref": "nfl-8150",
    "adp": 31.9
   },
   "00-0036554": {
    "position_rank": "WR11",
    "projected_points": 206.7,
+   "player_ref": "nfl-7569",
    "adp": 21.7
   },
   "00-0037247": {
    "position_rank": "WR12",
    "projected_points": 205.6,
+   "player_ref": "nfl-8137",
    "adp": 19.6
   },
   "00-0039064": {
    "position_rank": "WR13",
    "projected_points": 202.1,
+   "player_ref": "nfl-9997",
    "adp": 24.4
   },
   "00-0038120": {
    "position_rank": "RB18",
    "projected_points": 215.7,
+   "player_ref": "nfl-8155",
    "adp": 29.5
   },
   "00-0039919": {
    "position_rank": "WR14",
    "projected_points": 190.9,
+   "player_ref": "nfl-11620",
    "adp": 49.1
   },
   "00-0036275": {
    "position_rank": "RB19",
    "projected_points": 205.6,
+   "player_ref": "nfl-6790",
+   "espn": "4259545",
    "adp": 46.2
   },
   "00-0036410": {
    "position_rank": "WR15",
    "projected_points": 184.7,
+   "player_ref": "nfl-6801",
+   "espn": "4239993",
    "adp": 36.0
   },
   "00-0036912": {
    "position_rank": "WR16",
    "projected_points": 184.3,
+   "player_ref": "nfl-7525",
    "adp": 28.4
   },
   "00-0039849": {
    "position_rank": "WR17",
    "projected_points": 180.6,
+   "player_ref": "nfl-11628",
    "adp": 65.4
   },
   "00-0034857": {
    "position_rank": "QB1",
    "projected_points": 361.1,
+   "player_ref": "nfl-4984",
+   "espn": "3918298",
    "adp": 31.4
   },
   "00-0037740": {
    "position_rank": "WR18",
    "projected_points": 180.3,
+   "player_ref": "nfl-8146",
    "adp": 27.2
   },
   "00-0040124": {
    "position_rank": "WR19",
    "projected_points": 178.8,
+   "player_ref": "nfl-12526",
    "adp": 33.4
   },
   "00-0040129": {
    "position_rank": "WR20",
    "projected_points": 177.5,
+   "player_ref": "nfl-12514",
    "adp": 37.1
   },
   "00-0034827": {
    "position_rank": "WR21",
    "projected_points": 173.8,
+   "player_ref": "nfl-4983",
+   "espn": "3915416",
    "adp": 50.3
   },
   "00-0040735": {
    "position_rank": "WR22",
    "projected_points": 173.4,
+   "player_ref": "nfl-12519",
    "adp": 58.5
   },
   "00-0041512": {
    "position_rank": "RB20",
    "projected_points": 158.3,
+   "player_ref": "nfl-13286",
    "adp": 82.1
   },
   "00-0039361": {
    "position_rank": "RB21",
    "projected_points": 190.9,
+   "player_ref": "nfl-11584",
    "adp": 45.8
   },
   "00-0037240": {
    "position_rank": "WR23",
    "projected_points": 172.2,
+   "player_ref": "nfl-8148",
    "adp": 44.0
   },
   "00-0035659": {
    "position_rank": "WR24",
    "projected_points": 170.2,
+   "player_ref": "nfl-5927",
+   "espn": "3121422",
    "adp": 46.2
   },
   "00-0037744": {
    "position_rank": "TE1",
    "projected_points": 202.7,
+   "player_ref": "nfl-8130",
    "adp": 30.2
   },
   "00-0031408": {
    "position_rank": "WR25",
    "projected_points": 168.8,
+   "player_ref": "nfl-2216",
+   "espn": "16737",
    "adp": 53.4
   },
   "00-0040734": {
    "position_rank": "RB22",
    "projected_points": 186.2,
+   "player_ref": "nfl-12529",
    "adp": 60.3
   },
   "00-0039337": {
    "position_rank": "WR26",
    "projected_points": 167.1,
+   "player_ref": "nfl-11632",
    "adp": 27.8
   },
   "00-0036613": {
    "position_rank": "WR27",
    "projected_points": 166.4,
+   "player_ref": "nfl-7526",
    "adp": 45.5
   },
   "00-0040784": {
    "position_rank": "RB23",
    "projected_points": 184.0,
+   "player_ref": "nfl-12512",
    "adp": 51.8
   },
   "00-0036973": {
    "position_rank": "RB24",
    "projected_points": 183.5,
+   "player_ref": "nfl-7543",
    "adp": 41.9
   },
   "00-0039338": {
    "position_rank": "TE2",
    "projected_points": 196.0,
+   "player_ref": "nfl-11604",
    "adp": 36.8
   },
   "00-0034348": {
    "position_rank": "WR28",
    "projected_points": 163.0,
+   "player_ref": "nfl-5045",
+   "espn": "3128429",
    "adp": 61.2
   },
   "00-0039915": {
    "position_rank": "WR29",
    "projected_points": 162.0,
+   "player_ref": "nfl-11635",
    "adp": 39.0
   },
   "00-0031381": {
    "position_rank": "WR30",
    "projected_points": 161.3,
+   "player_ref": "nfl-2133",
+   "espn": "16800",
    "adp": 41.2
   },
   "00-0035640": {
    "position_rank": "WR31",
    "projected_points": 158.2,
+   "player_ref": "nfl-5846",
+   "espn": "4047650",
    "adp": 64.9
   },
   "00-0038124": {
    "position_rank": "WR32",
    "projected_points": 155.6,
+   "player_ref": "nfl-8167",
    "adp": 61.1
   },
   "00-0040719": {
    "position_rank": "RB25",
    "projected_points": 172.2,
+   "player_ref": "nfl-12490",
    "adp": 54.4
   },
   "00-0037228": {
    "position_rank": "RB26",
    "projected_points": 171.5,
+   "player_ref": "nfl-8228",
    "adp": 63.1
   },
   "00-0038117": {
    "position_rank": "WR33",
    "projected_points": 152.9,
+   "player_ref": "nfl-8126",
    "adp": 83.9
   },
   "00-0040715": {
    "position_rank": "RB27",
    "projected_points": 166.2,
+   "player_ref": "nfl-12481",
    "adp": 34.7
   },
   "00-0038606": {
    "position_rank": "WR34",
    "projected_points": 147.6,
+   "player_ref": "nfl-9487",
    "adp": 65.7
   },
   "00-0038559": {
    "position_rank": "WR35",
    "projected_points": 147.3,
+   "player_ref": "nfl-10232",
    "adp": 79.1
   },
   "00-0039893": {
    "position_rank": "WR36",
    "projected_points": 145.4,
+   "player_ref": "nfl-11631",
    "adp": 72.6
   },
   "00-0036252": {
    "position_rank": "WR37",
    "projected_points": 140.6,
+   "player_ref": "nfl-6819",
+   "espn": "4035687",
    "adp": 74.0
   },
   "00-0039146": {
    "position_rank": "WR38",
    "projected_points": 140.5,
+   "player_ref": "nfl-10222",
    "adp": 92.8
   },
   "00-0037525": {
    "position_rank": "RB28",
    "projected_points": 156.7,
+   "player_ref": "nfl-8408",
    "adp": 123.1
   },
   "00-0039910": {
    "position_rank": "QB2",
    "projected_points": 318.4,
+   "player_ref": "nfl-11566",
    "adp": 72.6
   },
   "00-0040126": {
    "position_rank": "TE3",
    "projected_points": 169.9,
+   "player_ref": "nfl-12517",
    "adp": 57.0
   },
   "00-0037664": {
    "position_rank": "WR39",
    "projected_points": 136.4,
+   "player_ref": "nfl-8142",
    "adp": 58.7
   },
   "00-0039918": {
    "position_rank": "QB3",
    "projected_points": 317.1,
+   "player_ref": "nfl-11560",
    "adp": 91.9
   },
   "00-0034796": {
    "position_rank": "QB4",
    "projected_points": 316.9,
+   "player_ref": "nfl-4881",
+   "espn": "3916387",
    "adp": 55.9
   },
   "00-0040242": {
    "position_rank": "RB29",
    "projected_points": 154.4,
+   "player_ref": "nfl-12533",
    "adp": 117.0
   },
   "00-0040667": {
    "position_rank": "WR40",
    "projected_points": 135.8,
+   "player_ref": "nfl-12501",
    "adp": 114.2
   },
   "00-0039851": {
    "position_rank": "QB5",
    "projected_points": 316.1,
+   "player_ref": "nfl-11564",
    "adp": 50.1
   },
   "00-0038994": {
    "position_rank": "WR41",
    "projected_points": 135.2,
+   "player_ref": "nfl-9756",
    "adp": 99.4
   },
   "00-0036389": {
    "position_rank": "QB6",
    "projected_points": 313.7,
+   "player_ref": "nfl-6904",
+   "espn": "4040715",
    "adp": 79.6
   },
   "00-0040128": {
    "position_rank": "TE4",
    "projected_points": 162.1,
+   "player_ref": "nfl-12518",
    "adp": 64.2
   },
   "00-0035261": {
    "position_rank": "RB30",
    "projected_points": 146.9,
+   "player_ref": "nfl-5967",
+   "espn": "3916148",
    "adp": 67.2
   },
   "00-0034960": {
    "position_rank": "WR42",
    "projected_points": 126.5,
+   "player_ref": "nfl-5947",
+   "espn": "3916433",
    "adp": 86.1
   },
   "00-0036442": {
    "position_rank": "QB7",
    "projected_points": 305.5,
+   "player_ref": "nfl-6770",
+   "espn": "3915511",
    "adp": 55.8
   },
   "00-0036970": {
    "position_rank": "TE5",
    "projected_points": 157.3,
+   "player_ref": "nfl-7553",
    "adp": 77.2
   },
   "00-0039065": {
    "position_rank": "TE6",
    "projected_points": 156.8,
+   "player_ref": "nfl-10859",
    "adp": 86.7
   },
   "00-0036139": {
    "position_rank": "RB31",
    "projected_points": 142.0,
+   "player_ref": "nfl-7021",
+   "espn": "4038815",
    "adp": 75.4
   },
   "00-0038997": {
    "position_rank": "WR44",
    "projected_points": 122.3,
+   "player_ref": "nfl-9500",
    "adp": 83.0
   },
   "00-0040663": {
    "position_rank": "TE7",
    "projected_points": 154.4,
+   "player_ref": "nfl-12506",
    "adp": 78.2
   },
   "00-0039894": {
    "position_rank": "WR45",
    "projected_points": 120.0,
+   "player_ref": "nfl-11624",
    "adp": 106.6
   },
   "00-0036875": {
    "position_rank": "RB32",
    "projected_points": 137.3,
+   "player_ref": "nfl-7611",
    "adp": 71.3
   },
   "00-0040236": {
    "position_rank": "RB33",
    "projected_points": 135.9,
+   "player_ref": "nfl-12534",
    "adp": 113.8
   },
   "00-0038563": {
    "position_rank": "WR46",
    "projected_points": 117.4,
+   "player_ref": "nfl-10213",
    "adp": 132.9
   },
   "00-0036971": {
    "position_rank": "QB8",
    "projected_points": 297.7,
+   "player_ref": "nfl-7523",
    "adp": 92.9
   },
   "00-0036355": {
    "position_rank": "QB9",
    "projected_points": 297.6,
+   "player_ref": "nfl-6797",
+   "espn": "4038941",
    "adp": 105.5
   },
   "00-0038544": {
    "position_rank": "WR47",
    "projected_points": 116.8,
+   "player_ref": "nfl-9754",
    "adp": 92.5
   },
   "00-0037838": {
    "position_rank": "TE8",
    "projected_points": 149.2,
+   "player_ref": "nfl-8131",
    "adp": 136.2
   },
   "00-0040691": {
    "position_rank": "QB10",
    "projected_points": 296.8,
+   "player_ref": "nfl-12508",
    "adp": 114.5
   },
   "00-0039732": {
    "position_rank": "QB11",
    "projected_points": 294.1,
+   "player_ref": "nfl-11563",
    "adp": 116.6
   },
   "00-0036555": {
    "position_rank": "RB34",
    "projected_points": 131.4,
+   "player_ref": "nfl-7594",
    "adp": 75.4
   },
   "00-0033077": {
    "position_rank": "QB12",
    "projected_points": 292.6,
+   "player_ref": "nfl-3294",
+   "espn": "2577417",
    "adp": 65.4
   },
   "00-0038041": {
    "position_rank": "TE9",
    "projected_points": 144.2,
+   "player_ref": "nfl-8110",
    "adp": 133.0
   },
   "00-0034351": {
    "position_rank": "TE10",
    "projected_points": 143.5,
+   "player_ref": "nfl-5022",
+   "espn": "3121023",
    "adp": 116.3
   },
   "00-0030506": {
    "position_rank": "TE11",
    "projected_points": 143.5,
+   "player_ref": "nfl-1466",
+   "espn": "15847",
    "adp": 107.7
   },
   "00-0039344": {
    "position_rank": "RB36",
    "projected_points": 129.2,
+   "player_ref": "nfl-11583",
    "adp": 108.1
   },
   "00-0038996": {
    "position_rank": "TE12",
    "projected_points": 143.3,
+   "player_ref": "nfl-9484",
    "adp": 102.6
   },
   "00-0039890": {
    "position_rank": "WR48",
    "projected_points": 110.6,
+   "player_ref": "nfl-11625",
    "adp": 162.4
   },
   "00-0037834": {
    "position_rank": "QB13",
    "projected_points": 290.6,
+   "player_ref": "nfl-8183",
    "adp": 88.2
   },
   "00-0038933": {
    "position_rank": "TE13",
    "projected_points": 142.4,
+   "player_ref": "nfl-10236",
    "adp": 151.9
   },
   "00-0039738": {
    "position_rank": "RB37",
    "projected_points": 128.1,
+   "player_ref": "nfl-11586",
    "adp": 122.6
   },
   "00-0041438": {
    "position_rank": "WR49",
    "projected_points": 109.8,
+   "player_ref": "nfl-13279",
    "adp": 74.0
   },
   "00-0036158": {
    "position_rank": "RB38",
    "projected_points": 127.7,
+   "player_ref": "nfl-6806",
+   "espn": "4241985",
    "adp": 98.3
   },
   "00-0033921": {
    "position_rank": "WR50",
    "projected_points": 109.2,
+   "player_ref": "nfl-4037",
+   "espn": "3116165",
    "adp": 82.4
   },
   "00-0033106": {
    "position_rank": "QB14",
    "projected_points": 289.5,
+   "player_ref": "nfl-3163",
+   "espn": "3046779",
    "adp": 104.0
   },
   "00-0034753": {
    "position_rank": "TE14",
    "projected_points": 141.1,
+   "player_ref": "nfl-5012",
+   "espn": "3116365",
    "adp": 131.7
   },
   "00-0037545": {
    "position_rank": "WR51",
    "projected_points": 108.0,
+   "player_ref": "nfl-8676",
    "adp": 128.1
   },
   "00-0036407": {
    "position_rank": "WR52",
    "projected_points": 106.5,
+   "player_ref": "nfl-6783",
+   "espn": "4241463",
    "adp": 130.2
   },
   "00-0033293": {
    "position_rank": "RB39",
    "projected_points": 124.5,
+   "player_ref": "nfl-4199",
+   "espn": "3042519",
    "adp": 100.1
   },
   "00-0037261": {
    "position_rank": "WR53",
    "projected_points": 105.2,
+   "player_ref": "nfl-8134",
    "adp": 100.7
   },
   "00-0033873": {
    "position_rank": "QB15",
    "projected_points": 285.3,
+   "player_ref": "nfl-4046",
+   "espn": "3139477",
    "adp": 99.4
   },
   "00-0041037": {
    "position_rank": "WR54",
    "projected_points": 104.1,
+   "player_ref": "nfl-13346",
    "adp": 144.9
   },
   "00-0036259": {
    "position_rank": "WR55",
    "projected_points": 102.6,
+   "player_ref": "nfl-7049",
+   "espn": "3886598",
    "adp": 143.5
   },
   "00-0040727": {
    "position_rank": "WR56",
    "projected_points": 100.8,
+   "player_ref": "nfl-12509",
    "adp": 166.2
   },
   "00-0040730": {
    "position_rank": "RB40",
    "projected_points": 118.7,
+   "player_ref": "nfl-12489",
    "adp": 83.9
   },
   "00-0034837": {
    "position_rank": "WR57",
    "projected_points": 98.8,
+   "player_ref": "nfl-4981",
+   "espn": "3925357",
    "adp": 140.0
   },
   "00-0041547": {
    "position_rank": "WR59",
    "projected_points": 97.0,
+   "player_ref": "nfl-13298",
    "adp": 125.1
   },
   "00-0037291": {
    "position_rank": "WR60",
    "projected_points": 95.2,
+   "player_ref": "nfl-8180",
    "adp": 151.7
   },
   "00-0038935": {
    "position_rank": "TE15",
    "projected_points": 127.2,
+   "player_ref": "nfl-9480",
    "adp": 163.9
   },
   "00-0034855": {
    "position_rank": "QB16",
    "projected_points": 275.2,
+   "player_ref": "nfl-4892",
+   "espn": "3052587",
    "adp": 129.6
   },
   "00-0033090": {
    "position_rank": "TE16",
    "projected_points": 125.3,
+   "player_ref": "nfl-3214",
+   "espn": "3046439",
    "adp": 157.1
   },
   "00-0026498": {
    "position_rank": "QB17",
    "projected_points": 273.1,
+   "player_ref": "nfl-421",
+   "espn": "12483",
    "adp": 79.8
   },
   "00-0039384": {
    "position_rank": "RB41",
    "projected_points": 110.2,
+   "player_ref": "nfl-11655",
    "adp": 151.4
   },
   "00-0038611": {
    "position_rank": "RB42",
    "projected_points": 109.6,
+   "player_ref": "nfl-10219",
    "adp": 159.3
   },
   "00-0040867": {
    "position_rank": "WR61",
    "projected_points": 89.3,
+   "player_ref": "nfl-13294",
    "adp": 112.7
   },
   "00-0040743": {
    "position_rank": "QB18",
    "projected_points": 268.9,
+   "player_ref": "nfl-12545",
    "adp": 136.4
   },
   "00-0036264": {
    "position_rank": "QB19",
    "projected_points": 268.8,
+   "player_ref": "nfl-6804",
+   "espn": "4036378",
    "adp": 143.1
   },
   "00-0039032": {
    "position_rank": "RB43",
    "projected_points": 105.4,
+   "player_ref": "nfl-9508",
    "adp": 133.5
   },
   "00-0037256": {
    "position_rank": "RB44",
    "projected_points": 104.6,
+   "player_ref": "nfl-8136",
    "adp": 106.3
   },
   "00-0039165": {
    "position_rank": "RB45",
    "projected_points": 104.3,
+   "player_ref": "nfl-9753",
    "adp": 138.7
   },
   "00-0040878": {
    "position_rank": "RB46",
    "projected_points": 103.6,
+   "player_ref": "nfl-13305",
    "adp": 150.4
   },
   "00-0041013": {
    "position_rank": "RB47",
-   "projected_points": 103.0
+   "projected_points": 103.0,
+   "player_ref": "nfl-13337"
   },
   "00-0040130": {
    "position_rank": "WR63",
    "projected_points": 83.9,
+   "player_ref": "nfl-12484",
    "adp": 128.0
   },
   "00-0035228": {
    "position_rank": "QB20",
    "projected_points": 263.7,
+   "player_ref": "nfl-5849",
+   "espn": "3917315",
    "adp": 136.5
   },
   "00-0037197": {
    "position_rank": "RB48",
    "projected_points": 100.5,
+   "player_ref": "nfl-8205",
    "adp": 154.4
   },
   "00-0037816": {
    "position_rank": "WR64",
    "projected_points": 82.2,
+   "player_ref": "nfl-8121",
    "adp": 111.7
   },
   "00-0041044": {
    "position_rank": "WR65",
    "projected_points": 82.0,
+   "player_ref": "nfl-13320",
    "adp": 170.2
   },
   "00-0037614": {
    "position_rank": "WR66",
    "projected_points": 81.6,
+   "player_ref": "nfl-8147",
    "adp": 123.0
   },
   "00-0033288": {
    "position_rank": "TE17",
    "projected_points": 113.6,
+   "player_ref": "nfl-4217",
+   "espn": "3040151",
    "adp": 115.3
   },
   "00-0038977": {
    "position_rank": "WR67",
    "projected_points": 80.8,
+   "player_ref": "nfl-9502",
    "adp": 156.6
   },
   "00-0039491": {
    "position_rank": "WR68",
    "projected_points": 80.6,
+   "player_ref": "nfl-11646",
    "adp": 121.8
   },
   "00-0040583": {
    "position_rank": "RB49",
    "projected_points": 98.4,
+   "player_ref": "nfl-12474",
    "adp": 150.7
   },
   "00-0039855": {
    "position_rank": "WR69",
    "projected_points": 79.5,
+   "player_ref": "nfl-11618",
    "adp": 139.8
   },
   "00-0038128": {
    "position_rank": "QB21",
    "projected_points": 259.4,
+   "player_ref": "nfl-8161",
    "adp": 161.8
   },
   "00-0039793": {
    "position_rank": "TE18",
    "projected_points": 110.8,
+   "player_ref": "nfl-11603",
    "adp": 161.6
   },
   "00-0033906": {
    "position_rank": "RB50",
    "projected_points": 96.2,
+   "player_ref": "nfl-4035",
+   "espn": "3054850",
    "adp": 144.7
   },
   "00-0034383": {
    "position_rank": "TE19",
    "projected_points": 109.8,
+   "player_ref": "nfl-5001",
+   "espn": "3117256",
    "adp": 157.4
   },
   "00-0036550": {
    "position_rank": "WR70",
    "projected_points": 76.6,
+   "player_ref": "nfl-7571",
    "adp": 146.1
   },
   "00-0037263": {
    "position_rank": "RB51",
    "projected_points": 94.5,
+   "player_ref": "nfl-8132",
    "adp": 163.3
   },
   "00-0041511": {
    "position_rank": "WR71",
    "projected_points": 75.8,
+   "player_ref": "nfl-13276",
    "adp": 161.7
   },
   "00-0040886": {
    "position_rank": "RB52",
-   "projected_points": 93.7
+   "projected_points": 93.7,
+   "player_ref": "nfl-13288"
   },
   "00-0038619": {
    "position_rank": "WR72",
-   "projected_points": 74.9
+   "projected_points": 74.9,
+   "player_ref": "nfl-10226"
   },
   "00-0036040": {
    "position_rank": "TE20",
    "projected_points": 106.3,
+   "player_ref": "nfl-7002",
+   "espn": "3929645",
    "adp": 149.2
   },
   "00-0041048": {
    "position_rank": "WR73",
-   "projected_points": 73.2
+   "projected_points": 73.2,
+   "player_ref": "nfl-13317"
   },
   "00-0039163": {
    "position_rank": "QB22",
    "projected_points": 253.9,
+   "player_ref": "nfl-9758",
    "adp": 159.0
   },
   "00-0040311": {
    "position_rank": "WR74",
    "projected_points": 72.8,
+   "player_ref": "nfl-12860",
    "adp": 138.0
   },
   "00-0039880": {
    "position_rank": "WR75",
    "projected_points": 72.0,
+   "player_ref": "nfl-11610",
    "adp": 151.4
   },
   "00-0038129": {
    "position_rank": "TE21",
-   "projected_points": 102.9
+   "projected_points": 102.9,
+   "player_ref": "nfl-8111"
   },
   "00-0035710": {
    "position_rank": "QB23",
    "projected_points": 250.5,
+   "player_ref": "nfl-5870",
+   "espn": "3917792",
    "adp": 156.5
   },
   "00-0037746": {
    "position_rank": "RB53",
    "projected_points": 86.8,
+   "player_ref": "nfl-8154",
    "adp": 162.7
   },
   "00-0034775": {
    "position_rank": "WR76",
-   "projected_points": 68.2
+   "projected_points": 68.2,
+   "player_ref": "nfl-4950",
+   "espn": "3895856"
   },
   "00-0041096": {
    "position_rank": "RB54",
-   "projected_points": 86.4
+   "projected_points": 86.4,
+   "player_ref": "nfl-13405"
   },
   "00-0041489": {
    "position_rank": "WR77",
    "projected_points": 68.0,
+   "player_ref": "nfl-13274",
    "adp": 171.5
   },
   "00-0035229": {
    "position_rank": "TE22",
    "projected_points": 99.9,
+   "player_ref": "nfl-5844",
+   "espn": "4036133",
    "adp": 167.1
   },
   "00-0036894": {
    "position_rank": "TE23",
    "projected_points": 99.5,
+   "player_ref": "nfl-7600",
    "adp": 190.2
   },
   "00-0040189": {
    "position_rank": "TE24",
    "projected_points": 99.3,
+   "player_ref": "nfl-12493",
    "adp": 140.7
   },
   "00-0041035": {
    "position_rank": "WR78",
    "projected_points": 66.2,
+   "player_ref": "nfl-13417",
    "adp": 149.3
   },
   "00-0040669": {
    "position_rank": "WR79",
    "projected_points": 66.1,
+   "player_ref": "nfl-12535",
    "adp": 178.9
   },
   "00-0040870": {
    "position_rank": "WR80",
    "projected_points": 66.1,
+   "player_ref": "nfl-13293",
    "adp": 162.4
   },
   "00-0040676": {
    "position_rank": "QB24",
    "projected_points": 246.1,
+   "player_ref": "nfl-12522",
    "adp": 172.1
   },
   "00-0039868": {
    "position_rank": "WR81",
-   "projected_points": 64.9
+   "projected_points": 64.9,
+   "player_ref": "nfl-11627"
   },
   "00-0037809": {
    "position_rank": "TE25",
    "projected_points": 97.2,
+   "player_ref": "nfl-8210",
    "adp": 161.9
   },
   "00-0034869": {
    "position_rank": "QB25",
    "projected_points": 245.1,
+   "player_ref": "nfl-4943",
+   "espn": "3912547",
    "adp": 143.3
   },
   "00-0040894": {
    "position_rank": "WR82",
-   "projected_points": 64.1
+   "projected_points": 64.1,
+   "player_ref": "nfl-13329"
   },
   "00-0039874": {
    "position_rank": "RB55",
-   "projected_points": 81.8
+   "projected_points": 81.8,
+   "player_ref": "nfl-11643"
   },
   "00-0038104": {
    "position_rank": "WR83",
-   "projected_points": 63.5
+   "projected_points": 63.5,
+   "player_ref": "nfl-8188"
   },
   "00-0038608": {
    "position_rank": "WR84",
    "projected_points": 62.8,
+   "player_ref": "nfl-9504",
    "adp": 170.1
   },
   "00-0039811": {
    "position_rank": "RB56",
    "projected_points": 80.5,
+   "player_ref": "nfl-11581",
    "adp": 165.1
   },
   "00-0033908": {
    "position_rank": "WR85",
    "projected_points": 61.9,
+   "player_ref": "nfl-4039",
+   "espn": "2977187",
    "adp": 153.8
   },
   "00-0038393": {
    "position_rank": "WR86",
    "projected_points": 61.8,
+   "player_ref": "nfl-9486",
    "adp": 171.7
   },
   "00-0041029": {
    "position_rank": "WR87",
    "projected_points": 61.3,
+   "player_ref": "nfl-13281",
    "adp": 96.9
   },
   "00-0037252": {
    "position_rank": "TE26",
    "projected_points": 93.6,
+   "player_ref": "nfl-8172",
    "adp": 171.8
   },
   "00-0040729": {
    "position_rank": "WR88",
-   "projected_points": 61.0
+   "projected_points": 61.0,
+   "player_ref": "nfl-12483"
   },
   "00-0038454": {
    "position_rank": "RB57",
    "projected_points": 78.8,
+   "player_ref": "nfl-9511",
    "adp": 164.3
   },
   "00-0039792": {
    "position_rank": "WR89",
-   "projected_points": 58.9
+   "projected_points": 58.9,
+   "player_ref": "nfl-11629"
   },
   "00-0040170": {
    "position_rank": "WR90",
-   "projected_points": 58.8
+   "projected_points": 58.8,
+   "player_ref": "nfl-12499"
   },
   "00-0039410": {
    "position_rank": "WR91",
    "projected_points": 58.1,
+   "player_ref": "nfl-11783",
    "adp": 166.3
   },
   "00-0041523": {
    "position_rank": "WR92",
    "projected_points": 57.4,
+   "player_ref": "nfl-13296",
    "adp": 177.2
   },
   "00-0041032": {
    "position_rank": "TE27",
    "projected_points": 89.8,
+   "player_ref": "nfl-13330",
    "adp": 170.1
   },
   "00-0034829": {
    "position_rank": "TE28",
-   "projected_points": 89.7
+   "projected_points": 89.7,
+   "player_ref": "nfl-4993",
+   "espn": "3116164"
   },
   "00-0038979": {
    "position_rank": "WR93",
-   "projected_points": 56.4
+   "projected_points": 56.4,
+   "player_ref": "nfl-10444"
   },
   "00-0040177": {
    "position_rank": "RB58",
    "projected_points": 72.7,
+   "player_ref": "nfl-12467",
    "adp": 165.7
   },
   "00-0033555": {
    "position_rank": "WR95",
-   "projected_points": 54.0
+   "projected_points": 54.0,
+   "player_ref": "nfl-4177",
+   "espn": "2991662"
   },
   "00-0040718": {
    "position_rank": "WR96",
    "projected_points": 54.0,
+   "player_ref": "nfl-12530",
    "adp": 159.3
   },
   "00-0039794": {
    "position_rank": "RB59",
    "projected_points": 71.3,
+   "player_ref": "nfl-11576",
    "adp": 150.8
   },
   "00-0040705": {
    "position_rank": "WR98",
    "projected_points": 52.3,
+   "player_ref": "nfl-12540",
    "adp": 150.5
   },
   "00-0040277": {
    "position_rank": "WR99",
-   "projected_points": 51.8
+   "projected_points": 51.8,
+   "player_ref": "nfl-13079"
   },
   "00-0037666": {
    "position_rank": "WR100",
    "projected_points": 51.8,
+   "player_ref": "nfl-8117",
    "adp": 168.7
   },
   "00-0041525": {
    "position_rank": "WR101",
-   "projected_points": 51.7
+   "projected_points": 51.7,
+   "player_ref": "nfl-13311"
   },
   "00-0040162": {
    "position_rank": "RB60",
    "projected_points": 69.7,
+   "player_ref": "nfl-12469",
    "adp": 160.8
   },
   "00-0040737": {
    "position_rank": "TE29",
    "projected_points": 83.8,
+   "player_ref": "nfl-12487",
    "adp": 176.7
   },
   "00-0040876": {
    "position_rank": "WR102",
-   "projected_points": 50.9
+   "projected_points": 50.9,
+   "player_ref": "nfl-13268"
   },
   "00-0040138": {
    "position_rank": "WR103",
-   "projected_points": 50.8
+   "projected_points": 50.8,
+   "player_ref": "nfl-12536"
   },
   "00-0039342": {
    "position_rank": "WR104",
    "projected_points": 50.5,
+   "player_ref": "nfl-11626",
    "adp": 190.0
   },
   "00-0035535": {
    "position_rank": "WR105",
    "projected_points": 50.4,
+   "player_ref": "nfl-6149",
+   "espn": "3916945",
    "adp": 174.9
   },
   "00-0040134": {
    "position_rank": "WR106",
    "projected_points": 50.3,
+   "player_ref": "nfl-12492",
    "adp": 151.6
   },
   "00-0039299": {
    "position_rank": "RB61",
-   "projected_points": 67.9
+   "projected_points": 67.9,
+   "player_ref": "nfl-12048"
   },
   "00-0038555": {
    "position_rank": "RB62",
    "projected_points": 67.9,
+   "player_ref": "nfl-9225",
    "adp": 164.1
   },
   "00-0039901": {
    "position_rank": "WR107",
-   "projected_points": 49.5
+   "projected_points": 49.5,
+   "player_ref": "nfl-11637"
   },
   "00-0036265": {
    "position_rank": "RB63",
-   "projected_points": 66.1
+   "projected_points": 66.1,
+   "player_ref": "nfl-6828",
+   "espn": "4239934"
   },
   "00-0033553": {
    "position_rank": "RB64",
    "projected_points": 65.5,
+   "player_ref": "nfl-4137",
+   "espn": "3045147",
    "adp": 163.0
   },
   "00-0033881": {
    "position_rank": "TE30",
-   "projected_points": 79.6
+   "projected_points": 79.6,
+   "player_ref": "nfl-4066",
+   "espn": "3051876"
   },
   "00-0033307": {
    "position_rank": "WR108",
-   "projected_points": 46.4
+   "projected_points": 46.4,
+   "player_ref": "nfl-4454",
+   "espn": "3045523"
   },
   "00-0040009": {
    "position_rank": "WR109",
-   "projected_points": 46.2
+   "projected_points": 46.2,
+   "player_ref": "nfl-12482"
   },
   "00-0036309": {
    "position_rank": "WR110",
-   "projected_points": 46.1
+   "projected_points": 46.1,
+   "player_ref": "nfl-7090",
+   "espn": "4040655"
   },
   "00-0023459": {
    "position_rank": "QB26",
    "projected_points": 226.6,
+   "player_ref": "nfl-96",
+   "espn": "8439",
    "adp": 165.7
   },
   "00-0040648": {
    "position_rank": "WR111",
-   "projected_points": 45.3
+   "projected_points": 45.3,
+   "player_ref": "nfl-12497"
   },
   "00-0039150": {
    "position_rank": "QB27",
    "projected_points": 226.0,
+   "player_ref": "nfl-9228",
    "adp": 172.6
   },
   "00-0039424": {
    "position_rank": "WR112",
-   "projected_points": 44.9
+   "projected_points": 44.9,
+   "player_ref": "nfl-11834"
   },
   "00-0037741": {
    "position_rank": "WR113",
-   "projected_points": 44.8
+   "projected_points": 44.8,
+   "player_ref": "nfl-8119"
   },
   "00-0038618": {
    "position_rank": "WR114",
-   "projected_points": 44.4
+   "projected_points": 44.4,
+   "player_ref": "nfl-10218"
   },
   "00-0041042": {
    "position_rank": "WR115",
-   "projected_points": 44.2
+   "projected_points": 44.2,
+   "player_ref": "nfl-13285"
   },
   "00-0033885": {
    "position_rank": "TE31",
-   "projected_points": 76.7
+   "projected_points": 76.7,
+   "player_ref": "nfl-4033",
+   "espn": "3123076"
   },
   "00-0040238": {
    "position_rank": "RB65",
-   "projected_points": 62.4
+   "projected_points": 62.4,
+   "player_ref": "nfl-12544"
   },
   "00-0038976": {
    "position_rank": "WR116",
-   "projected_points": 43.9
+   "projected_points": 43.9,
+   "player_ref": "nfl-9494"
   },
   "00-0035208": {
    "position_rank": "WR117",
-   "projected_points": 43.7
+   "projected_points": 43.7,
+   "player_ref": "nfl-6271",
+   "espn": "3917914"
   },
   "00-0041104": {
    "position_rank": "RB66",
-   "projected_points": 61.0
+   "projected_points": 61.0,
+   "player_ref": "nfl-13347"
   },
   "00-0038951": {
    "position_rank": "RB67",
-   "projected_points": 60.4
+   "projected_points": 60.4,
+   "player_ref": "nfl-9506"
   },
   "00-0039386": {
    "position_rank": "WR118",
-   "projected_points": 42.1
+   "projected_points": 42.1,
+   "player_ref": "nfl-11748"
   },
   "00-0040890": {
    "position_rank": "WR119",
    "projected_points": 40.8,
+   "player_ref": "nfl-13413",
    "adp": 152.7
   },
   "00-0041067": {
    "position_rank": "WR120",
-   "projected_points": 40.6
+   "projected_points": 40.6,
+   "player_ref": "nfl-13420"
   },
   "00-0040131": {
    "position_rank": "WR121",
-   "projected_points": 39.7
+   "projected_points": 39.7,
+   "player_ref": "nfl-12547"
   },
   "00-0038685": {
    "position_rank": "RB68",
-   "projected_points": 55.8
+   "projected_points": 55.8,
+   "player_ref": "nfl-11370"
   },
   "00-0038621": {
    "position_rank": "WR122",
-   "projected_points": 36.4
+   "projected_points": 36.4,
+   "player_ref": "nfl-9501"
   },
   "00-0037801": {
    "position_rank": "WR123",
-   "projected_points": 36.3
+   "projected_points": 36.3,
+   "player_ref": "nfl-8917"
   },
   "00-0030565": {
    "position_rank": "QB28",
-   "projected_points": 216.8
+   "projected_points": 216.8,
+   "player_ref": "nfl-1373",
+   "espn": "15864"
   },
   "00-0041496": {
    "position_rank": "RB69",
    "projected_points": 54.0,
+   "player_ref": "nfl-13345",
    "adp": 162.4
   },
   "00-0039391": {
    "position_rank": "RB70",
    "projected_points": 53.7,
+   "player_ref": "nfl-11647",
    "adp": 154.3
   },
   "00-0041040": {
    "position_rank": "WR124",
    "projected_points": 35.1,
+   "player_ref": "nfl-13301",
    "adp": 170.2
   },
   "00-0041550": {
    "position_rank": "WR125",
-   "projected_points": 34.3
+   "projected_points": 34.3,
+   "player_ref": "nfl-13380"
   },
   "00-0034975": {
    "position_rank": "RB71",
    "projected_points": 51.2,
+   "player_ref": "nfl-5995",
+   "espn": "4038441",
    "adp": 165.9
   },
   "00-0040584": {
    "position_rank": "TE32",
-   "projected_points": 65.2
+   "projected_points": 65.2,
+   "player_ref": "nfl-12502"
   },
   "00-0037837": {
    "position_rank": "WR126",
-   "projected_points": 32.5
+   "projected_points": 32.5,
+   "player_ref": "nfl-8125"
   },
   "00-0035021": {
    "position_rank": "WR127",
-   "projected_points": 32.3
+   "projected_points": 32.3,
+   "player_ref": "nfl-6427",
+   "espn": "4061956"
   },
   "00-0041443": {
    "position_rank": "WR128",
-   "projected_points": 32.1
+   "projected_points": 32.1,
+   "player_ref": "nfl-13402"
   },
   "00-0032464": {
    "position_rank": "WR129",
-   "projected_points": 31.9
+   "projected_points": 31.9,
+   "player_ref": "nfl-3634",
+   "espn": "2973405"
   },
   "00-0039739": {
    "position_rank": "WR130",
-   "projected_points": 30.4
+   "projected_points": 30.4,
+   "player_ref": "nfl-11630"
   },
   "00-0037563": {
    "position_rank": "RB72",
-   "projected_points": 47.9
+   "projected_points": 47.9,
+   "player_ref": "nfl-8800"
   },
   "00-0038558": {
    "position_rank": "TE33",
-   "projected_points": 62.1
+   "projected_points": 62.1,
+   "player_ref": "nfl-9479"
   },
   "00-0039405": {
    "position_rank": "RB73",
-   "projected_points": 47.4
+   "projected_points": 47.4,
+   "player_ref": "nfl-11588"
   },
   "00-0036626": {
    "position_rank": "WR131",
-   "projected_points": 28.4
+   "projected_points": 28.4,
+   "player_ref": "nfl-7587"
   },
   "00-0039751": {
    "position_rank": "WR132",
-   "projected_points": 28.1
+   "projected_points": 28.1,
+   "player_ref": "nfl-11623"
   },
   "00-0040208": {
    "position_rank": "RB74",
-   "projected_points": 46.1
+   "projected_points": 46.1,
+   "player_ref": "nfl-12543"
   },
   "00-0036849": {
    "position_rank": "WR133",
-   "projected_points": 27.7
+   "projected_points": 27.7,
+   "player_ref": "nfl-7562"
   },
   "00-0032775": {
    "position_rank": "WR134",
-   "projected_points": 26.3
+   "projected_points": 26.3,
+   "player_ref": "nfl-3286",
+   "espn": "3043116"
   },
   "00-0036415": {
    "position_rank": "WR135",
-   "projected_points": 26.0
+   "projected_points": 26.0,
+   "player_ref": "nfl-6853",
+   "espn": "3930066"
   },
   "00-0035689": {
    "position_rank": "TE34",
-   "projected_points": 58.5
+   "projected_points": 58.5,
+   "player_ref": "nfl-5906",
+   "espn": "3930086"
   },
   "00-0031235": {
    "position_rank": "WR136",
-   "projected_points": 25.8
+   "projected_points": 25.8,
+   "player_ref": "nfl-2078",
+   "espn": "16733"
   },
   "00-0040736": {
    "position_rank": "TE35",
-   "projected_points": 58.3
+   "projected_points": 58.3,
+   "player_ref": "nfl-12498"
   },
   "00-0041529": {
    "position_rank": "WR137",
-   "projected_points": 25.7
+   "projected_points": 25.7,
+   "player_ref": "nfl-13338"
   },
   "00-0039875": {
    "position_rank": "RB75",
    "projected_points": 43.6,
+   "player_ref": "nfl-11575",
    "adp": 165.6
   },
   "00-0036244": {
    "position_rank": "TE36",
-   "projected_points": 57.6
+   "projected_points": 57.6,
+   "player_ref": "nfl-6865",
+   "espn": "4242557"
   },
   "00-0036182": {
    "position_rank": "WR138",
-   "projected_points": 24.2
+   "projected_points": 24.2,
+   "player_ref": "nfl-7496",
+   "espn": "3929785"
   },
   "00-0040198": {
    "position_rank": "RB76",
-   "projected_points": 40.7
+   "projected_points": 40.7,
+   "player_ref": "nfl-12495"
   },
   "00-0041490": {
    "position_rank": "RB77",
-   "projected_points": 40.6
+   "projected_points": 40.6,
+   "player_ref": "nfl-13423"
   },
   "00-0037742": {
    "position_rank": "WR139",
-   "projected_points": 21.4
+   "projected_points": 21.4,
+   "player_ref": "nfl-8135"
   },
   "00-0041051": {
    "position_rank": "WR140",
-   "projected_points": 21.0
+   "projected_points": 21.0,
+   "player_ref": "nfl-13411"
   },
   "00-0040164": {
    "position_rank": "WR141",
-   "projected_points": 20.5
+   "projected_points": 20.5,
+   "player_ref": "nfl-12641"
   },
   "00-0040581": {
    "position_rank": "WR142",
-   "projected_points": 19.8
+   "projected_points": 19.8,
+   "player_ref": "nfl-12541"
   },
   "00-0040590": {
    "position_rank": "WR143",
-   "projected_points": 18.8
+   "projected_points": 18.8,
+   "player_ref": "nfl-12718"
   },
   "00-0039355": {
    "position_rank": "WR144",
-   "projected_points": 18.3
+   "projected_points": 18.3,
+   "player_ref": "nfl-11650"
   },
   "00-0033375": {
    "position_rank": "WR145",
-   "projected_points": 18.2
+   "projected_points": 18.2,
+   "player_ref": "nfl-4351",
+   "espn": "3134353"
   },
   "00-0040586": {
    "position_rank": "RB78",
    "projected_points": 35.6,
+   "player_ref": "nfl-12457",
    "adp": 167.5
   },
   "00-0033110": {
    "position_rank": "TE37",
-   "projected_points": 49.6
+   "projected_points": 49.6,
+   "player_ref": "nfl-3271",
+   "espn": "2573401"
   },
   "00-0037112": {
    "position_rank": "TE38",
-   "projected_points": 49.4
+   "projected_points": 49.4,
+   "player_ref": "nfl-8698"
   },
   "00-0040646": {
    "position_rank": "WR147",
-   "projected_points": 16.7
+   "projected_points": 16.7,
+   "player_ref": "nfl-12505"
   },
   "00-0041132": {
    "position_rank": "WR148",
-   "projected_points": 15.8
+   "projected_points": 15.8,
+   "player_ref": "nfl-13333"
   },
   "00-0041257": {
    "position_rank": "WR149",
-   "projected_points": 15.8
+   "projected_points": 15.8,
+   "player_ref": "nfl-13316"
   },
   "00-0035544": {
    "position_rank": "WR150",
-   "projected_points": 15.8
+   "projected_points": 15.8,
+   "player_ref": "nfl-6588",
+   "espn": "3126997"
   },
   "00-0040078": {
    "position_rank": "RB79",
-   "projected_points": 33.9
+   "projected_points": 33.9,
+   "player_ref": "nfl-12455"
   },
   "00-0040782": {
    "position_rank": "WR151",
-   "projected_points": 15.6
+   "projected_points": 15.6,
+   "player_ref": "nfl-12503"
   },
   "00-0038839": {
    "position_rank": "WR152",
-   "projected_points": 15.3
+   "projected_points": 15.3,
+   "player_ref": "nfl-11068"
   },
   "00-0038797": {
    "position_rank": "RB80",
-   "projected_points": 33.4
+   "projected_points": 33.4,
+   "player_ref": "nfl-11435"
   },
   "00-0035359": {
    "position_rank": "WR153",
-   "projected_points": 14.5
+   "projected_points": 14.5,
+   "player_ref": "nfl-6154",
+   "espn": "3871102"
   },
   "00-0034272": {
    "position_rank": "WR154",
-   "projected_points": 14.3
+   "projected_points": 14.3,
+   "player_ref": "nfl-5086",
+   "espn": "3051738"
   },
   "00-0039471": {
    "position_rank": "RB81",
-   "projected_points": 32.5
+   "projected_points": 32.5,
+   "player_ref": "nfl-11573"
   },
   "00-0040184": {
    "position_rank": "WR155",
-   "projected_points": 13.9
+   "projected_points": 13.9,
+   "player_ref": "nfl-12670"
   },
   "00-0039021": {
    "position_rank": "RB82",
-   "projected_points": 32.1
+   "projected_points": 32.1,
+   "player_ref": "nfl-10235"
   },
   "00-0040275": {
    "position_rank": "WR156",
-   "projected_points": 13.7
+   "projected_points": 13.7,
+   "player_ref": "nfl-12746"
   },
   "00-0039521": {
    "position_rank": "WR157",
-   "projected_points": 13.2
+   "projected_points": 13.2,
+   "player_ref": "nfl-11921"
   },
   "00-0041125": {
    "position_rank": "RB83",
-   "projected_points": 31.4
+   "projected_points": 31.4,
+   "player_ref": "nfl-13424"
   },
   "00-0040237": {
    "position_rank": "WR158",
-   "projected_points": 13.0
+   "projected_points": 13.0,
+   "player_ref": "nfl-12485"
   },
   "00-0040202": {
    "position_rank": "RB84",
-   "projected_points": 31.1
+   "projected_points": 31.1,
+   "player_ref": "nfl-12476"
   },
   "00-0041052": {
    "position_rank": "RB85",
    "projected_points": 30.6,
+   "player_ref": "nfl-13414",
    "adp": 151.7
   },
   "00-0037231": {
    "position_rank": "WR159",
-   "projected_points": 11.8
+   "projected_points": 11.8,
+   "player_ref": "nfl-8200"
   },
   "00-0039757": {
    "position_rank": "RB86",
@@ -1427,77 +1808,102 @@
   },
   "00-0035250": {
    "position_rank": "RB87",
-   "projected_points": 28.8
+   "projected_points": 28.8,
+   "player_ref": "nfl-6130",
+   "espn": "4040761"
   },
   "00-0035406": {
    "position_rank": "WR160",
-   "projected_points": 10.2
+   "projected_points": 10.2,
+   "player_ref": "nfl-5938",
+   "espn": "4039057"
   },
   "00-0035500": {
    "position_rank": "WR161",
-   "projected_points": 10.0
+   "projected_points": 10.0,
+   "player_ref": "nfl-5970",
+   "espn": "4037235"
   },
   "00-0035644": {
    "position_rank": "TE39",
-   "projected_points": 42.4
+   "projected_points": 42.4,
+   "player_ref": "nfl-5857",
+   "espn": "4036131"
   },
   "00-0038359": {
    "position_rank": "WR162",
-   "projected_points": 9.8
+   "projected_points": 9.8,
+   "player_ref": "nfl-11168"
   },
   "00-0039798": {
    "position_rank": "RB88",
-   "projected_points": 27.8
+   "projected_points": 27.8,
+   "player_ref": "nfl-11571"
   },
   "00-0038115": {
    "position_rank": "TE40",
-   "projected_points": 42.0
+   "projected_points": 42.0,
+   "player_ref": "nfl-8225"
   },
   "00-0029604": {
    "position_rank": "QB29",
-   "projected_points": 190.1
+   "projected_points": 190.1,
+   "player_ref": "nfl-1166",
+   "espn": "14880"
   },
   "00-0036862": {
    "position_rank": "WR163",
-   "projected_points": 9.3
+   "projected_points": 9.3,
+   "player_ref": "nfl-7757"
   },
   "00-0040142": {
    "position_rank": "RB89",
-   "projected_points": 27.5
+   "projected_points": 27.5,
+   "player_ref": "nfl-12504"
   },
   "00-0038551": {
    "position_rank": "RB90",
-   "projected_points": 27.3
+   "projected_points": 27.3,
+   "player_ref": "nfl-9757"
   },
   "00-0033526": {
    "position_rank": "RB91",
    "projected_points": 27.3,
+   "player_ref": "nfl-4147",
+   "espn": "3116389",
    "adp": 172.9
   },
   "00-0035537": {
    "position_rank": "RB92",
    "projected_points": 26.7,
+   "player_ref": "nfl-6039",
+   "espn": "3915411",
    "adp": 149.7
   },
   "00-0037276": {
    "position_rank": "RB93",
-   "projected_points": 26.3
+   "projected_points": 26.3,
+   "player_ref": "nfl-8230"
   },
   "00-0041069": {
    "position_rank": "WR165",
-   "projected_points": 7.9
+   "projected_points": 7.9,
+   "player_ref": "nfl-13477"
   },
   "00-0041070": {
    "position_rank": "WR166",
-   "projected_points": 7.4
+   "projected_points": 7.4,
+   "player_ref": "nfl-13297"
   },
   "00-0040218": {
    "position_rank": "WR167",
-   "projected_points": 7.3
+   "projected_points": 7.3,
+   "player_ref": "nfl-12523"
   },
   "00-0041217": {
    "position_rank": "RB94",
-   "projected_points": 25.5
+   "projected_points": 25.5,
+   "player_ref": "nfl-13348"
   },
   "00-0029892": {
    "position_rank": "RB95",
@@ -1505,59 +1911,74 @@
   },
   "00-0040021": {
    "position_rank": "RB96",
-   "projected_points": 25.5
+   "projected_points": 25.5,
+   "player_ref": "nfl-12738"
   },
   "00-0038840": {
    "position_rank": "WR168",
-   "projected_points": 7.0
+   "projected_points": 7.0,
+   "player_ref": "nfl-11157"
   },
   "00-0036980": {
    "position_rank": "WR169",
-   "projected_points": 6.7
+   "projected_points": 6.7,
+   "player_ref": "nfl-7596"
   },
   "00-0039920": {
    "position_rank": "WR170",
-   "projected_points": 6.6
+   "projected_points": 6.6,
+   "player_ref": "nfl-11617"
   },
   "00-0039451": {
    "position_rank": "WR171",
-   "projected_points": 6.5
+   "projected_points": 6.5,
+   "player_ref": "nfl-11608"
   },
   "00-0041399": {
    "position_rank": "WR172",
-   "projected_points": 6.4
+   "projected_points": 6.4,
+   "player_ref": "nfl-13270"
   },
   "00-0041248": {
    "position_rank": "WR173",
-   "projected_points": 6.4
+   "projected_points": 6.4,
+   "player_ref": "nfl-13318"
   },
   "00-0040154": {
    "position_rank": "WR174",
-   "projected_points": 6.4
+   "projected_points": 6.4,
+   "player_ref": "nfl-12496"
   },
   "00-0040024": {
    "position_rank": "WR175",
-   "projected_points": 6.3
+   "projected_points": 6.3,
+   "player_ref": "nfl-13150"
   },
   "00-0038573": {
    "position_rank": "WR176",
-   "projected_points": 6.1
+   "projected_points": 6.1,
+   "player_ref": "nfl-10234"
   },
   "00-0039623": {
    "position_rank": "WR177",
-   "projected_points": 6.1
+   "projected_points": 6.1,
+   "player_ref": "nfl-11895"
   },
   "00-0041129": {
    "position_rank": "RB97",
-   "projected_points": 24.3
+   "projected_points": 24.3,
+   "player_ref": "nfl-13403"
   },
   "00-0038679": {
    "position_rank": "WR178",
-   "projected_points": 5.9
+   "projected_points": 5.9,
+   "player_ref": "nfl-11377"
   },
   "00-0035891": {
    "position_rank": "WR179",
-   "projected_points": 5.8
+   "projected_points": 5.8,
+   "player_ref": "nfl-7039",
+   "espn": "4241983"
   },
   "00-0036567": {
    "position_rank": "RB98",
@@ -1565,185 +1986,239 @@
   },
   "00-0036165": {
    "position_rank": "WR180",
-   "projected_points": 5.4
+   "projected_points": 5.4,
+   "player_ref": "nfl-6920",
+   "espn": "4242540"
   },
   "00-0035249": {
    "position_rank": "TE41",
-   "projected_points": 37.9
+   "projected_points": 37.9,
+   "player_ref": "nfl-5973",
+   "espn": "3921690"
   },
   "00-0037329": {
    "position_rank": "RB99",
-   "projected_points": 23.5
+   "projected_points": 23.5,
+   "player_ref": "nfl-8423"
   },
   "00-0037005": {
    "position_rank": "TE42",
-   "projected_points": 37.7
+   "projected_points": 37.7,
+   "player_ref": "nfl-7694"
   },
   "00-0040179": {
    "position_rank": "RB100",
-   "projected_points": 23.4
+   "projected_points": 23.4,
+   "player_ref": "nfl-12471"
   },
   "00-0033589": {
    "position_rank": "WR181",
-   "projected_points": 5.1
+   "projected_points": 5.1,
+   "player_ref": "nfl-4274",
+   "espn": "4212909"
   },
   "00-0039062": {
    "position_rank": "WR182",
-   "projected_points": 5.0
+   "projected_points": 5.0,
+   "player_ref": "nfl-10225"
   },
   "00-0038705": {
    "position_rank": "RB101",
    "projected_points": 23.1,
+   "player_ref": "nfl-11199",
    "adp": 153.6
   },
   "00-0041397": {
    "position_rank": "WR183",
    "projected_points": 4.8,
+   "player_ref": "nfl-13491",
    "adp": 173.8
   },
   "00-0039816": {
    "position_rank": "WR184",
-   "projected_points": 4.6
+   "projected_points": 4.6,
+   "player_ref": "nfl-11762"
   },
   "00-0041004": {
    "position_rank": "WR185",
-   "projected_points": 4.5
+   "projected_points": 4.5,
+   "player_ref": "nfl-13410"
   },
   "00-0036427": {
    "position_rank": "WR186",
-   "projected_points": 4.4
+   "projected_points": 4.4,
+   "player_ref": "nfl-6960",
+   "espn": "2310331"
   },
   "00-0041293": {
    "position_rank": "WR187",
-   "projected_points": 4.3
+   "projected_points": 4.3,
+   "player_ref": "nfl-13336"
   },
   "00-0034386": {
    "position_rank": "WR188",
-   "projected_points": 4.3
+   "projected_points": 4.3,
+   "player_ref": "nfl-5374",
+   "espn": "3118892"
   },
   "00-0040692": {
    "position_rank": "RB102",
-   "projected_points": 22.5
+   "projected_points": 22.5,
+   "player_ref": "nfl-11569"
   },
   "00-0036020": {
    "position_rank": "RB103",
-   "projected_points": 22.4
+   "projected_points": 22.4,
+   "player_ref": "nfl-6918",
+   "espn": "4243315"
   },
   "00-0038389": {
    "position_rank": "RB104",
-   "projected_points": 22.3
+   "projected_points": 22.3,
+   "player_ref": "nfl-9227"
   },
   "00-0038752": {
    "position_rank": "WR189",
-   "projected_points": 3.9
+   "projected_points": 3.9,
+   "player_ref": "nfl-10867"
   },
   "00-0037258": {
    "position_rank": "RB105",
-   "projected_points": 22.1
+   "projected_points": 22.1,
+   "player_ref": "nfl-8129"
   },
   "00-0040582": {
    "position_rank": "WR190",
-   "projected_points": 3.6
+   "projected_points": 3.6,
+   "player_ref": "nfl-12539"
   },
   "00-0036637": {
    "position_rank": "TE43",
-   "projected_points": 36.1
+   "projected_points": 36.1,
+   "player_ref": "nfl-7828"
   },
   "00-0040888": {
    "position_rank": "RB106",
-   "projected_points": 21.8
+   "projected_points": 21.8,
+   "player_ref": "nfl-13302"
   },
   "00-0037267": {
    "position_rank": "RB107",
-   "projected_points": 21.8
+   "projected_points": 21.8,
+   "player_ref": "nfl-8143"
   },
   "00-0036630": {
    "position_rank": "WR191",
-   "projected_points": 3.5
+   "projected_points": 3.5,
+   "player_ref": "nfl-7595"
   },
   "00-0040522": {
    "position_rank": "WR193",
-   "projected_points": 3.2
+   "projected_points": 3.2,
+   "player_ref": "nfl-12520"
   },
   "00-0039356": {
    "position_rank": "TE44",
-   "projected_points": 35.7
+   "projected_points": 35.7,
+   "player_ref": "nfl-11600"
   },
   "00-0041216": {
    "position_rank": "WR194",
-   "projected_points": 3.1
+   "projected_points": 3.1,
+   "player_ref": "nfl-13356"
   },
   "00-0033955": {
    "position_rank": "RB108",
-   "projected_points": 21.2
+   "projected_points": 21.2,
+   "player_ref": "nfl-4219",
+   "espn": "3127586"
   },
   "00-0038930": {
    "position_rank": "RB109",
-   "projected_points": 21.1
+   "projected_points": 21.1,
+   "player_ref": "nfl-11186"
   },
   "00-0040400": {
    "position_rank": "RB110",
-   "projected_points": 21.1
+   "projected_points": 21.1,
+   "player_ref": "nfl-12515"
   },
   "00-0039363": {
    "position_rank": "RB111",
-   "projected_points": 21.1
+   "projected_points": 21.1,
+   "player_ref": "nfl-11651"
   },
   "00-0040653": {
    "position_rank": "WR196",
-   "projected_points": 2.8
+   "projected_points": 2.8,
+   "player_ref": "nfl-12475"
   },
   "00-0040895": {
    "position_rank": "WR197",
-   "projected_points": 2.5
+   "projected_points": 2.5,
+   "player_ref": "nfl-13313"
   },
   "00-0034487": {
    "position_rank": "WR198",
-   "projected_points": 2.4
+   "projected_points": 2.4,
+   "player_ref": "nfl-5154",
+   "espn": "3122168"
   },
   "00-0039650": {
    "position_rank": "WR199",
-   "projected_points": 2.1
+   "projected_points": 2.1,
+   "player_ref": "nfl-11959"
   },
   "00-0039373": {
    "position_rank": "RB112",
-   "projected_points": 20.2
+   "projected_points": 20.2,
+   "player_ref": "nfl-11579"
   },
   "00-0040172": {
    "position_rank": "WR200",
-   "projected_points": 1.8
+   "projected_points": 1.8,
+   "player_ref": "nfl-12634"
   },
   "00-0039589": {
    "position_rank": "WR201",
-   "projected_points": 1.8
+   "projected_points": 1.8,
+   "player_ref": "nfl-11994"
   },
   "00-0040739": {
    "position_rank": "TE45",
-   "projected_points": 33.9
+   "projected_points": 33.9,
+   "player_ref": "nfl-12521"
   },
   "00-0033857": {
    "position_rank": "WR202",
-   "projected_points": 1.3
+   "projected_points": 1.3,
+   "player_ref": "nfl-4040",
+   "espn": "3120348"
   },
   "00-0040644": {
    "position_rank": "RB113",
-   "projected_points": 19.5
+   "projected_points": 19.5,
+   "player_ref": "nfl-12531"
   },
   "00-0038794": {
    "position_rank": "RB114",
-   "projected_points": 19.4
+   "projected_points": 19.4,
+   "player_ref": "nfl-11439"
   },
   "00-0037120": {
    "position_rank": "RB115",
-   "projected_points": 19.3
+   "projected_points": 19.3,
+   "player_ref": "nfl-8207"
   },
   "00-0038098": {
    "position_rank": "RB116",
-   "projected_points": 19.2
+   "projected_points": 19.2,
+   "player_ref": "nfl-8116"
   },
   "00-0037557": {
    "position_rank": "RB117",
-   "projected_points": 19.2
+   "projected_points": 19.2,
+   "player_ref": "nfl-8195"
   },
   "00-0038738": {
    "position_rank": "RB118",
@@ -1751,7 +2226,9 @@
   },
   "00-0032392": {
    "position_rank": "TE46",
-   "projected_points": 32.6
+   "projected_points": 32.6,
+   "player_ref": "nfl-3202",
+   "espn": "3043275"
   },
   "00-0038612": {
    "position_rank": "WR203",
@@ -1759,216 +2236,278 @@
   },
   "00-0040900": {
    "position_rank": "WR204",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-13582"
   },
   "00-0034419": {
    "position_rank": "WR205",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-5121",
+   "espn": "3123075"
   },
   "00-0037132": {
    "position_rank": "WR206",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-8414"
   },
   "00-0034418": {
    "position_rank": "WR208",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-5113",
+   "espn": "4036335"
   },
   "00-0038576": {
    "position_rank": "WR209",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-10228"
   },
   "00-0041047": {
    "position_rank": "WR210",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-13353"
   },
   "00-0037828": {
    "position_rank": "WR212",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-8176"
   },
   "00-0037093": {
    "position_rank": "WR214",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-8527"
   },
   "00-0036331": {
    "position_rank": "WR216",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-6847",
+   "espn": "4039050"
   },
   "00-0040241": {
    "position_rank": "WR217",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-12732"
   },
   "00-0040563": {
    "position_rank": "WR218",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-12542"
   },
   "00-0040259": {
    "position_rank": "WR219",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-13101"
   },
   "00-0035645": {
    "position_rank": "WR220",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-6699",
+   "espn": "4424106"
   },
   "00-0036635": {
    "position_rank": "WR221",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-7559"
   },
   "00-0040558": {
    "position_rank": "WR223",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-13074"
   },
   "00-0039365": {
    "position_rank": "WR224",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11616"
   },
   "00-0038640": {
    "position_rank": "WR225",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11034"
   },
   "00-0038938": {
    "position_rank": "WR226",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-9497"
   },
   "00-0039379": {
    "position_rank": "WR227",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11633"
   },
   "00-0038492": {
    "position_rank": "WR228",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11311"
   },
   "00-0039710": {
    "position_rank": "WR229",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11911"
   },
   "00-0039236": {
    "position_rank": "WR230",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11636"
   },
   "00-0041100": {
    "position_rank": "WR231",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-13394"
   },
   "00-0038590": {
    "position_rank": "WR232",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-9489"
   },
   "00-0036345": {
    "position_rank": "WR233",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-7066",
+   "espn": "3916566"
   },
   "00-0040534": {
    "position_rank": "WR234",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-12971"
   },
   "00-0041446": {
    "position_rank": "WR235",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-13412"
   },
   "00-0040075": {
    "position_rank": "WR236",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-12699"
   },
   "00-0032951": {
    "position_rank": "WR237",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-3155",
+   "espn": "3051889"
   },
   "00-0041467": {
    "position_rank": "WR238",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-13541"
   },
   "00-0036176": {
    "position_rank": "WR239",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-7436",
+   "espn": "4057082"
   },
   "00-0035140": {
    "position_rank": "WR240",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-5917",
+   "espn": "4035004"
   },
   "00-0036959": {
    "position_rank": "WR241",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-8076"
   },
   "00-0040506": {
    "position_rank": "WR242",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-13075"
   },
   "00-0040551": {
    "position_rank": "WR243",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-12478"
   },
   "00-0038519": {
    "position_rank": "WR244",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11320"
   },
   "00-0039916": {
    "position_rank": "WR245",
    "projected_points": 0.0,
+   "player_ref": "nfl-11638",
    "adp": 112.3
   },
   "00-0038647": {
    "position_rank": "WR246",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-10221"
   },
   "00-0038824": {
    "position_rank": "WR247",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11421"
   },
   "00-0038090": {
    "position_rank": "WR249",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-8168"
   },
   "00-0039884": {
    "position_rank": "WR250",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11821"
   },
   "00-0036955": {
    "position_rank": "WR251",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-7565"
   },
   "00-0036497": {
    "position_rank": "WR252",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-8013"
   },
   "00-0039052": {
    "position_rank": "WR253",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-9492"
   },
   "00-0038941": {
    "position_rank": "WR254",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-9490"
   },
   "00-0038496": {
    "position_rank": "WR255",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11306"
   },
   "00-0040466": {
    "position_rank": "RB119",
-   "projected_points": 18.2
+   "projected_points": 18.2,
+   "player_ref": "nfl-12472"
   },
   "00-0036754": {
    "position_rank": "TE47",
-   "projected_points": 30.9
+   "projected_points": 30.9,
+   "player_ref": "nfl-7891"
   },
   "00-0039746": {
    "position_rank": "RB120",
-   "projected_points": 16.5
+   "projected_points": 16.5,
+   "player_ref": "nfl-11577"
   },
   "00-0036290": {
    "position_rank": "TE48",
-   "projected_points": 29.9
+   "projected_points": 29.9,
+   "player_ref": "nfl-6826",
+   "espn": "4258595"
   },
   "00-0036755": {
    "position_rank": "RB122",
-   "projected_points": 15.1
+   "projected_points": 15.1,
+   "player_ref": "nfl-7537"
   },
   "00-0041472": {
    "position_rank": "TE49",
-   "projected_points": 27.7
+   "projected_points": 27.7,
+   "player_ref": "nfl-13307"
   },
   "00-0039066": {
    "position_rank": "TE50",
-   "projected_points": 27.7
+   "projected_points": 27.7,
+   "player_ref": "nfl-9482"
   },
   "00-0031595": {
    "position_rank": "RB124",
@@ -1976,15 +2515,18 @@
   },
   "00-0037085": {
    "position_rank": "RB125",
-   "projected_points": 13.1
+   "projected_points": 13.1,
+   "player_ref": "nfl-8208"
   },
   "00-0039847": {
    "position_rank": "TE51",
-   "projected_points": 24.3
+   "projected_points": 24.3,
+   "player_ref": "nfl-11597"
   },
   "00-0040568": {
    "position_rank": "RB126",
-   "projected_points": 9.5
+   "projected_points": 9.5,
+   "player_ref": "nfl-12969"
   },
   "00-0035125": {
    "position_rank": "RB127",
@@ -1992,23 +2534,29 @@
   },
   "00-0041244": {
    "position_rank": "RB128",
-   "projected_points": 8.7
+   "projected_points": 8.7,
+   "player_ref": "nfl-13946"
   },
   "00-0039144": {
    "position_rank": "TE52",
-   "projected_points": 22.9
+   "projected_points": 22.9,
+   "player_ref": "nfl-9481"
   },
   "00-0040959": {
    "position_rank": "RB129",
-   "projected_points": 8.5
+   "projected_points": 8.5,
+   "player_ref": "nfl-13419"
   },
   "00-0039814": {
    "position_rank": "TE53",
-   "projected_points": 22.7
+   "projected_points": 22.7,
+   "player_ref": "nfl-11592"
   },
   "00-0034959": {
    "position_rank": "RB130",
-   "projected_points": 8.3
+   "projected_points": 8.3,
+   "player_ref": "nfl-6323",
+   "espn": "3125107"
   },
   "00-0036727": {
    "position_rank": "RB131",
@@ -2020,51 +2568,66 @@
   },
   "00-0041483": {
    "position_rank": "TE54",
-   "projected_points": 21.4
+   "projected_points": 21.4,
+   "player_ref": "nfl-13349"
   },
   "00-0041415": {
    "position_rank": "RB133",
-   "projected_points": 7.1
+   "projected_points": 7.1,
+   "player_ref": "nfl-13315"
   },
   "00-0041395": {
    "position_rank": "TE55",
-   "projected_points": 21.0
+   "projected_points": 21.0,
+   "player_ref": "nfl-13421"
   },
   "00-0040651": {
    "position_rank": "RB134",
-   "projected_points": 6.2
+   "projected_points": 6.2,
+   "player_ref": "nfl-12462"
   },
   "00-0036924": {
    "position_rank": "RB136",
-   "projected_points": 5.8
+   "projected_points": 5.8,
+   "player_ref": "nfl-7607"
   },
   "00-0036212": {
    "position_rank": "QB30",
-   "projected_points": 168.2
+   "projected_points": 168.2,
+   "player_ref": "nfl-6768",
+   "espn": "4241479"
   },
   "00-0039912": {
    "position_rank": "TE56",
-   "projected_points": 20.0
+   "projected_points": 20.0,
+   "player_ref": "nfl-11596"
   },
   "00-0036187": {
    "position_rank": "RB137",
-   "projected_points": 5.1
+   "projected_points": 5.1,
+   "player_ref": "nfl-7204",
+   "espn": "4039505"
   },
   "00-0041524": {
    "position_rank": "TE57",
-   "projected_points": 19.1
+   "projected_points": 19.1,
+   "player_ref": "nfl-13434"
   },
   "00-0041503": {
    "position_rank": "TE58",
-   "projected_points": 18.3
+   "projected_points": 18.3,
+   "player_ref": "nfl-13299"
   },
   "00-0040205": {
    "position_rank": "RB138",
-   "projected_points": 4.0
+   "projected_points": 4.0,
+   "player_ref": "nfl-12516"
   },
   "00-0032104": {
    "position_rank": "RB139",
-   "projected_points": 3.8
+   "projected_points": 3.8,
+   "player_ref": "nfl-2359",
+   "espn": "2576336"
   },
   "00-0033376": {
    "position_rank": "RB140",
@@ -2072,43 +2635,53 @@
   },
   "00-0040067": {
    "position_rank": "RB141",
-   "projected_points": 3.0
+   "projected_points": 3.0,
+   "player_ref": "nfl-13047"
   },
   "00-0037594": {
    "position_rank": "RB142",
-   "projected_points": 3.0
+   "projected_points": 3.0,
+   "player_ref": "nfl-8254"
   },
   "00-0039603": {
    "position_rank": "RB143",
-   "projected_points": 2.4
+   "projected_points": 2.4,
+   "player_ref": "nfl-12171"
   },
   "00-0040187": {
    "position_rank": "TE60",
-   "projected_points": 16.5
+   "projected_points": 16.5,
+   "player_ref": "nfl-12473"
   },
   "00-0039364": {
    "position_rank": "RB144",
-   "projected_points": 2.2
+   "projected_points": 2.2,
+   "player_ref": "nfl-11729"
   },
   "00-0040939": {
    "position_rank": "TE61",
-   "projected_points": 16.1
+   "projected_points": 16.1,
+   "player_ref": "nfl-13401"
   },
   "00-0039041": {
    "position_rank": "TE62",
-   "projected_points": 15.7
+   "projected_points": 15.7,
+   "player_ref": "nfl-10231"
   },
   "00-0038547": {
    "position_rank": "TE63",
-   "projected_points": 14.7
+   "projected_points": 14.7,
+   "player_ref": "nfl-10871"
   },
   "00-0038046": {
    "position_rank": "TE64",
-   "projected_points": 14.5
+   "projected_points": 14.5,
+   "player_ref": "nfl-8127"
   },
   "00-0037157": {
    "position_rank": "RB145",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-8122"
   },
   "00-0038488": {
    "position_rank": "RB146",
@@ -2116,75 +2689,96 @@
   },
   "00-0039325": {
    "position_rank": "RB147",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11582"
   },
   "00-0041239": {
    "position_rank": "RB148",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-13438"
   },
   "00-0039703": {
    "position_rank": "RB149",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11644"
   },
   "00-0040556": {
    "position_rank": "RB150",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-12491"
   },
   "00-0036425": {
    "position_rank": "RB152",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-6931",
+   "espn": "4240631"
   },
   "00-0039407": {
    "position_rank": "RB153",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11574"
   },
   "00-0038396": {
    "position_rank": "RB154",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-10223"
   },
   "00-0036569": {
    "position_rank": "RB155",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-7529"
   },
   "00-0038896": {
    "position_rank": "RB156",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11237"
   },
   "00-0040429": {
    "position_rank": "RB157",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-12787"
   },
   "00-0036842": {
    "position_rank": "RB158",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-7720"
   },
   "00-0041312": {
    "position_rank": "RB160",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-13437"
   },
   "00-0035973": {
    "position_rank": "RB161",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-6963",
+   "espn": "4039358"
   },
   "00-0039796": {
    "position_rank": "RB162",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11570"
   },
   "00-0040649": {
    "position_rank": "RB163",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-12656"
   },
   "00-0037509": {
    "position_rank": "RB164",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-8220"
   },
   "00-0035594": {
    "position_rank": "RB165",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-6012",
+   "espn": "4037457"
   },
   "00-0039921": {
    "position_rank": "RB166",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11589"
   },
   "00-0037745": {
    "position_rank": "RB167",
@@ -2192,288 +2786,374 @@
   },
   "00-0038440": {
    "position_rank": "RB168",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11299"
   },
   "00-0039074": {
    "position_rank": "TE65",
-   "projected_points": 12.2
+   "projected_points": 12.2,
+   "player_ref": "nfl-10214"
   },
   "00-0041087": {
    "position_rank": "TE66",
-   "projected_points": 12.1
+   "projected_points": 12.1,
+   "player_ref": "nfl-13435"
   },
   "00-0038710": {
    "position_rank": "TE67",
-   "projected_points": 11.0
+   "projected_points": 11.0,
+   "player_ref": "nfl-11201"
   },
   "00-0035631": {
    "position_rank": "TE68",
-   "projected_points": 10.9
+   "projected_points": 10.9,
+   "player_ref": "nfl-6001",
+   "espn": "3127310"
   },
   "00-0041041": {
    "position_rank": "TE69",
-   "projected_points": 10.7
+   "projected_points": 10.7,
+   "player_ref": "nfl-13319"
   },
   "00-0040046": {
    "position_rank": "TE70",
-   "projected_points": 9.7
+   "projected_points": 9.7,
+   "player_ref": "nfl-12851"
   },
   "00-0037277": {
    "position_rank": "TE71",
-   "projected_points": 9.7
+   "projected_points": 9.7,
+   "player_ref": "nfl-8227"
   },
   "00-0041116": {
    "position_rank": "TE72",
-   "projected_points": 9.6
+   "projected_points": 9.6,
+   "player_ref": "nfl-13282"
   },
   "00-0037282": {
    "position_rank": "TE73",
-   "projected_points": 9.6
+   "projected_points": 9.6,
+   "player_ref": "nfl-8170"
   },
   "00-0041510": {
    "position_rank": "TE74",
-   "projected_points": 9.6
+   "projected_points": 9.6,
+   "player_ref": "nfl-13278"
   },
   "00-0041558": {
    "position_rank": "TE75",
-   "projected_points": 9.3
+   "projected_points": 9.3,
+   "player_ref": "nfl-13322"
   },
   "00-0038809": {
    "position_rank": "TE76",
-   "projected_points": 9.0
+   "projected_points": 9.0,
+   "player_ref": "nfl-11082"
   },
   "00-0034613": {
    "position_rank": "TE77",
-   "projected_points": 9.0
+   "projected_points": 9.0,
+   "player_ref": "nfl-5409",
+   "espn": "3050481"
   },
   "00-0039631": {
    "position_rank": "TE78",
-   "projected_points": 8.9
+   "projected_points": 8.9,
+   "player_ref": "nfl-12062"
   },
   "00-0034798": {
    "position_rank": "TE80",
-   "projected_points": 8.3
+   "projected_points": 8.3,
+   "player_ref": "nfl-5008",
+   "espn": "3052897"
   },
   "00-0036422": {
    "position_rank": "TE81",
-   "projected_points": 7.6
+   "projected_points": 7.6,
+   "player_ref": "nfl-6869",
+   "espn": "3911853"
   },
   "00-0037004": {
    "position_rank": "TE82",
-   "projected_points": 7.4
+   "projected_points": 7.4,
+   "player_ref": "nfl-7535"
   },
   "00-0036741": {
    "position_rank": "TE83",
-   "projected_points": 7.3
+   "projected_points": 7.3,
+   "player_ref": "nfl-7946"
   },
   "00-0039530": {
    "position_rank": "TE84",
-   "projected_points": 7.2
+   "projected_points": 7.2,
+   "player_ref": "nfl-11593"
   },
   "00-0039359": {
    "position_rank": "TE85",
-   "projected_points": 6.9
+   "projected_points": 6.9,
+   "player_ref": "nfl-11599"
   },
   "00-0033119": {
    "position_rank": "QB31",
    "projected_points": 155.0,
+   "player_ref": "nfl-3257",
+   "espn": "2578570",
    "adp": 165.7
   },
   "00-0040955": {
    "position_rank": "TE86",
-   "projected_points": 6.5
+   "projected_points": 6.5,
+   "player_ref": "nfl-13342"
   },
   "00-0040566": {
    "position_rank": "TE87",
-   "projected_points": 6.1
+   "projected_points": 6.1,
+   "player_ref": "nfl-12984"
   },
   "00-0036429": {
    "position_rank": "TE88",
-   "projected_points": 6.1
+   "projected_points": 6.1,
+   "player_ref": "nfl-7075",
+   "espn": "4035020"
   },
   "00-0039824": {
    "position_rank": "TE89",
-   "projected_points": 6.0
+   "projected_points": 6.0,
+   "player_ref": "nfl-11595"
   },
   "00-0036628": {
    "position_rank": "TE90",
-   "projected_points": 5.9
+   "projected_points": 5.9,
+   "player_ref": "nfl-7716"
   },
   "00-0034270": {
    "position_rank": "TE91",
-   "projected_points": 5.7
+   "projected_points": 5.7,
+   "player_ref": "nfl-5133",
+   "espn": "3122920"
   },
   "00-0037086": {
    "position_rank": "TE92",
-   "projected_points": 5.6
+   "projected_points": 5.6,
+   "player_ref": "nfl-8177"
   },
   "00-0041094": {
    "position_rank": "TE93",
-   "projected_points": 5.5
+   "projected_points": 5.5,
+   "player_ref": "nfl-13308"
   },
   "00-0040509": {
    "position_rank": "TE94",
-   "projected_points": 5.5
+   "projected_points": 5.5,
+   "player_ref": "nfl-13121"
   },
   "00-0039754": {
    "position_rank": "TE95",
-   "projected_points": 5.4
+   "projected_points": 5.4,
+   "player_ref": "nfl-11820"
   },
   "00-0039489": {
    "position_rank": "TE96",
-   "projected_points": 5.2
+   "projected_points": 5.2,
+   "player_ref": "nfl-12389"
   },
   "00-0038783": {
    "position_rank": "TE97",
-   "projected_points": 5.1
+   "projected_points": 5.1,
+   "player_ref": "nfl-11433"
   },
   "00-0034981": {
    "position_rank": "TE98",
-   "projected_points": 5.0
+   "projected_points": 5.0,
+   "player_ref": "nfl-5985",
+   "espn": "3843945"
   },
   "00-0039737": {
    "position_rank": "TE99",
-   "projected_points": 4.9
+   "projected_points": 4.9,
+   "player_ref": "nfl-11716"
   },
   "00-0040194": {
    "position_rank": "TE100",
-   "projected_points": 4.6
+   "projected_points": 4.6,
+   "player_ref": "nfl-12658"
   },
   "00-0040887": {
    "position_rank": "TE101",
-   "projected_points": 4.6
+   "projected_points": 4.6,
+   "player_ref": "nfl-13273"
   },
   "00-0037805": {
    "position_rank": "TE102",
-   "projected_points": 4.4
+   "projected_points": 4.4,
+   "player_ref": "nfl-8145"
   },
   "00-0039050": {
    "position_rank": "TE103",
-   "projected_points": 4.0
+   "projected_points": 4.0,
+   "player_ref": "nfl-10227"
   },
   "00-0038394": {
    "position_rank": "TE104",
-   "projected_points": 4.0
+   "projected_points": 4.0,
+   "player_ref": "nfl-10220"
   },
   "00-0033217": {
    "position_rank": "TE105",
-   "projected_points": 3.7
+   "projected_points": 3.7,
+   "player_ref": "nfl-4054",
+   "espn": "2998565"
   },
   "00-0040363": {
    "position_rank": "TE106",
-   "projected_points": 3.6
+   "projected_points": 3.6,
+   "player_ref": "nfl-12765"
   },
   "00-0041133": {
    "position_rank": "TE107",
-   "projected_points": 3.3
+   "projected_points": 3.3,
+   "player_ref": "nfl-13577"
   },
   "00-0041084": {
    "position_rank": "TE108",
-   "projected_points": 3.1
+   "projected_points": 3.1,
+   "player_ref": "nfl-13408"
   },
   "00-0040901": {
    "position_rank": "TE109",
-   "projected_points": 2.9
+   "projected_points": 2.9,
+   "player_ref": "nfl-13422"
   },
   "00-0037539": {
    "position_rank": "TE110",
-   "projected_points": 2.6
+   "projected_points": 2.6,
+   "player_ref": "nfl-8249"
   },
   "00-0041579": {
    "position_rank": "TE111",
-   "projected_points": 2.6
+   "projected_points": 2.6,
+   "player_ref": "nfl-13429"
   },
   "00-0033576": {
    "position_rank": "TE112",
-   "projected_points": 2.4
+   "projected_points": 2.4,
+   "player_ref": "nfl-4189",
+   "espn": "2975863"
   },
   "00-0034365": {
    "position_rank": "TE113",
-   "projected_points": 2.3
+   "projected_points": 2.3,
+   "player_ref": "nfl-4995",
+   "espn": "4045305"
   },
   "00-0041077": {
    "position_rank": "TE114",
-   "projected_points": 2.2
+   "projected_points": 2.2,
+   "player_ref": "nfl-13400"
   },
   "00-0037311": {
    "position_rank": "TE115",
-   "projected_points": 1.8
+   "projected_points": 1.8,
+   "player_ref": "nfl-8484"
   },
   "00-0036887": {
    "position_rank": "TE116",
-   "projected_points": 1.8
+   "projected_points": 1.8,
+   "player_ref": "nfl-7842"
   },
   "00-0037348": {
    "position_rank": "TE117",
-   "projected_points": 1.8
+   "projected_points": 1.8,
+   "player_ref": "nfl-8849"
   },
   "00-0040225": {
    "position_rank": "TE118",
-   "projected_points": 1.7
+   "projected_points": 1.7,
+   "player_ref": "nfl-12715"
   },
   "00-0036876": {
    "position_rank": "TE119",
-   "projected_points": 1.5
+   "projected_points": 1.5,
+   "player_ref": "nfl-7602"
   },
   "00-0037340": {
    "position_rank": "TE120",
-   "projected_points": 1.5
+   "projected_points": 1.5,
+   "player_ref": "nfl-8799"
   },
   "00-0036556": {
    "position_rank": "TE121",
-   "projected_points": 1.3
+   "projected_points": 1.3,
+   "player_ref": "nfl-7568"
   },
   "00-0039420": {
    "position_rank": "TE123",
-   "projected_points": 1.2
+   "projected_points": 1.2,
+   "player_ref": "nfl-11605"
   },
   "00-0036825": {
    "position_rank": "TE124",
-   "projected_points": 1.0
+   "projected_points": 1.0,
+   "player_ref": "nfl-7531"
   },
   "00-0033246": {
    "position_rank": "TE125",
-   "projected_points": 0.8
+   "projected_points": 0.8,
+   "player_ref": "nfl-4314",
+   "espn": "3052096"
   },
   "00-0037475": {
    "position_rank": "TE126",
-   "projected_points": 0.6
+   "projected_points": 0.6,
+   "player_ref": "nfl-8583"
   },
   "00-0040628": {
    "position_rank": "TE127",
-   "projected_points": 0.5
+   "projected_points": 0.5,
+   "player_ref": "nfl-13210"
   },
   "00-0038589": {
    "position_rank": "TE128",
-   "projected_points": 0.5
+   "projected_points": 0.5,
+   "player_ref": "nfl-10212"
   },
   "00-0040244": {
    "position_rank": "TE129",
-   "projected_points": 0.5
+   "projected_points": 0.5,
+   "player_ref": "nfl-12480"
   },
   "00-0038564": {
    "position_rank": "TE130",
-   "projected_points": 0.4
+   "projected_points": 0.4,
+   "player_ref": "nfl-10210"
   },
   "00-0036534": {
    "position_rank": "TE131",
-   "projected_points": 0.4
+   "projected_points": 0.4,
+   "player_ref": "nfl-8041"
   },
   "00-0031484": {
    "position_rank": "TE132",
-   "projected_points": 0.3
+   "projected_points": 0.3,
+   "player_ref": "nfl-3048",
+   "espn": "2531358"
   },
   "00-0033757": {
    "position_rank": "TE133",
-   "projected_points": 0.1
+   "projected_points": 0.1,
+   "player_ref": "nfl-4602",
+   "espn": "2975674"
   },
   "00-0036423": {
    "position_rank": "TE134",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-6843",
+   "espn": "4035115"
   },
   "00-0038643": {
    "position_rank": "TE136",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-10224"
   },
   "00-0039458": {
    "position_rank": "TE137",
@@ -2481,47 +3161,59 @@
   },
   "00-0040240": {
    "position_rank": "TE138",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-12735"
   },
   "00-0041131": {
    "position_rank": "TE139",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-13580"
   },
   "00-0037078": {
    "position_rank": "TE140",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-8214"
   },
   "00-0039686": {
    "position_rank": "TE141",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11942"
   },
   "00-0039648": {
    "position_rank": "TE142",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-12357"
   },
   "00-0038498": {
    "position_rank": "TE143",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11304"
   },
   "00-0040215": {
    "position_rank": "TE144",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-12700"
   },
   "00-0040081": {
    "position_rank": "TE146",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-12817"
   },
   "00-0037755": {
    "position_rank": "TE147",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-8219"
   },
   "00-0038720": {
    "position_rank": "TE149",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-11371"
   },
   "00-0036145": {
    "position_rank": "TE150",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-7106",
+   "espn": "3917849"
   },
   "00-0037031": {
    "position_rank": "TE151",
@@ -2529,105 +3221,4357 @@
   },
   "00-0036590": {
    "position_rank": "TE152",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-7536"
   },
   "00-0036032": {
    "position_rank": "TE153",
-   "projected_points": 0.0
+   "projected_points": 0.0,
+   "player_ref": "nfl-6964",
+   "espn": "4036275"
   },
   "00-0040668": {
    "position_rank": "QB32",
-   "projected_points": 115.1
+   "projected_points": 115.1,
+   "player_ref": "nfl-12524"
   },
   "00-0033537": {
    "position_rank": "QB33",
-   "projected_points": 107.4
+   "projected_points": 107.4,
+   "player_ref": "nfl-4017",
+   "espn": "3122840"
   },
   "00-0041561": {
    "position_rank": "QB34",
-   "projected_points": 102.8
+   "projected_points": 102.8,
+   "player_ref": "nfl-13272"
   },
   "00-0039917": {
    "position_rank": "QB35",
-   "projected_points": 67.4
+   "projected_points": 67.4,
+   "player_ref": "nfl-11559"
   },
   "00-0041562": {
    "position_rank": "QB36",
    "projected_points": 48.0,
+   "player_ref": "nfl-13269",
    "adp": 156.6
   },
   "00-0039923": {
    "position_rank": "QB37",
-   "projected_points": 27.3
+   "projected_points": 27.3,
+   "player_ref": "nfl-11565"
+  },
+  "00-0035378": {
+   "player_ref": "nfl-6416",
+   "espn": "3918331"
+  },
+  "00-0040501": {
+   "player_ref": "nfl-12948"
+  },
+  "00-0036995": {
+   "player_ref": "nfl-7681"
+  },
+  "00-0035859": {
+   "player_ref": "nfl-7467",
+   "espn": "4045180"
+  },
+  "00-0040383": {
+   "player_ref": "nfl-12799"
+  },
+  "00-0033890": {
+   "player_ref": "nfl-4081",
+   "espn": "3127287"
+  },
+  "00-0030957": {
+   "player_ref": "nfl-2063",
+   "espn": "17304"
+  },
+  "00-0038567": {
+   "player_ref": "nfl-10955"
+  },
+  "00-0039382": {
+   "player_ref": "nfl-11768"
+  },
+  "00-0040645": {
+   "player_ref": "nfl-12648"
+  },
+  "00-0039864": {
+   "player_ref": "nfl-11744"
+  },
+  "00-0039854": {
+   "player_ref": "nfl-11658"
+  },
+  "00-0038782": {
+   "player_ref": "nfl-11336"
+  },
+  "00-0039823": {
+   "player_ref": "nfl-11717"
+  },
+  "00-0033676": {
+   "player_ref": "nfl-4592",
+   "espn": "3059839"
+  },
+  "00-0039956": {
+   "player_ref": "nfl-12451"
+  },
+  "00-0035289": {
+   "player_ref": "nfl-6011",
+   "espn": "4038524"
+  },
+  "00-0039007": {
+   "player_ref": "nfl-10932"
+  },
+  "00-0041368": {
+   "player_ref": "nfl-13670"
+  },
+  "00-0040219": {
+   "player_ref": "nfl-12692"
+  },
+  "00-0039808": {
+   "player_ref": "nfl-11718"
+  },
+  "00-0037596": {
+   "player_ref": "nfl-8680"
+  },
+  "00-0041366": {
+   "player_ref": "nfl-13879"
+  },
+  "00-0041113": {
+   "player_ref": "nfl-13581"
+  },
+  "00-0037141": {
+   "player_ref": "nfl-8683"
+  },
+  "00-0038571": {
+   "player_ref": "nfl-10946"
+  },
+  "00-0040382": {
+   "player_ref": "nfl-12798"
+  },
+  "00-0041093": {
+   "player_ref": "nfl-13551"
+  },
+  "00-0039577": {
+   "player_ref": "nfl-11648"
+  },
+  "00-0038984": {
+   "player_ref": "nfl-11014"
+  },
+  "00-0040230": {
+   "player_ref": "nfl-12736"
+  },
+  "00-0035144": {
+   "player_ref": "nfl-6131",
+   "espn": "4040983"
+  },
+  "00-0039807": {
+   "player_ref": "nfl-11693"
+  },
+  "00-0038600": {
+   "player_ref": "nfl-10969"
+  },
+  "00-0038540": {
+   "player_ref": "nfl-10890"
+  },
+  "00-0036646": {
+   "player_ref": "nfl-7812"
+  },
+  "00-0040765": {
+   "player_ref": "nfl-12918"
+  },
+  "00-0040706": {
+   "player_ref": "nfl-12552"
+  },
+  "00-0040751": {
+   "player_ref": "nfl-12565"
+  },
+  "00-0041370": {
+   "player_ref": "nfl-13672"
+  },
+  "00-0037804": {
+   "player_ref": "nfl-8295"
+  },
+  "00-0036933": {
+   "player_ref": "nfl-7637"
+  },
+  "00-0037620": {
+   "player_ref": "nfl-8514"
+  },
+  "00-0041469": {
+   "player_ref": "nfl-13389"
+  },
+  "00-0036552": {
+   "player_ref": "nfl-7653"
+  },
+  "00-0040156": {
+   "player_ref": "nfl-12647"
+  },
+  "00-0037815": {
+   "player_ref": "nfl-8383"
+  },
+  "00-0041191": {
+   "player_ref": "nfl-13595"
+  },
+  "00-0037813": {
+   "player_ref": "nfl-8272"
+  },
+  "00-0036463": {
+   "player_ref": "nfl-7521"
+  },
+  "00-0037823": {
+   "player_ref": "nfl-8278"
+  },
+  "00-0040546": {
+   "player_ref": "nfl-12603"
+  },
+  "00-0041409": {
+   "player_ref": "nfl-14028"
+  },
+  "00-0038628": {
+   "player_ref": "nfl-11050"
+  },
+  "00-0036990": {
+   "player_ref": "nfl-7677"
+  },
+  "00-0038953": {
+   "player_ref": "nfl-11474"
+  },
+  "00-0041112": {
+   "player_ref": "nfl-13555"
+  },
+  "00-0039370": {
+   "player_ref": "nfl-11770"
+  },
+  "00-0041194": {
+   "player_ref": "nfl-13602"
+  },
+  "00-0041195": {
+   "player_ref": "nfl-13846"
+  },
+  "00-0035280": {
+   "player_ref": "nfl-6093",
+   "espn": "3931395"
+  },
+  "00-0038587": {
+   "player_ref": "nfl-10986"
+  },
+  "00-0035237": {
+   "player_ref": "nfl-6121",
+   "espn": "4034961"
+  },
+  "00-0034675": {
+   "player_ref": "nfl-5017",
+   "espn": "3919512"
+  },
+  "00-0040552": {
+   "player_ref": "nfl-12883"
+  },
+  "00-0041276": {
+   "player_ref": "nfl-13703"
+  },
+  "00-0041266": {
+   "player_ref": "nfl-13973"
+  },
+  "00-0041066": {
+   "player_ref": "nfl-13482"
+  },
+  "00-0036082": {
+   "player_ref": "nfl-7313",
+   "espn": "3915528"
+  },
+  "00-0039048": {
+   "player_ref": "nfl-10910"
+  },
+  "00-0034639": {
+   "player_ref": "nfl-5691",
+   "espn": "3050916"
   },
   "00-0025565": {
+   "player_ref": "nfl-650",
+   "espn": "10621",
    "adp": 157.2
   },
+  "00-0036833": {
+   "player_ref": "nfl-7979"
+  },
+  "00-0039002": {
+   "player_ref": "nfl-10919"
+  },
+  "00-0041185": {
+   "player_ref": "nfl-13343"
+  },
+  "00-0040148": {
+   "player_ref": "nfl-12591"
+  },
+  "00-0038383": {
+   "player_ref": "nfl-11045"
+  },
+  "00-0039242": {
+   "player_ref": "nfl-11954"
+  },
+  "00-0039437": {
+   "player_ref": "nfl-11815"
+  },
+  "00-0040977": {
+   "player_ref": "nfl-13849"
+  },
+  "00-0039938": {
+   "player_ref": "nfl-12229"
+  },
+  "00-0039259": {
+   "player_ref": "nfl-11964"
+  },
+  "00-0040995": {
+   "player_ref": "nfl-13910"
+  },
+  "00-0040980": {
+   "player_ref": "nfl-13735"
+  },
+  "00-0040984": {
+   "player_ref": "nfl-13852"
+  },
+  "00-0040991": {
+   "player_ref": "nfl-13909"
+  },
+  "00-0040068": {
+   "player_ref": "nfl-12629"
+  },
+  "00-0040909": {
+   "player_ref": "nfl-13585"
+  },
+  "00-0040988": {
+   "player_ref": "nfl-13851"
+  },
+  "00-0040100": {
+   "player_ref": "nfl-13024"
+  },
+  "00-0040981": {
+   "player_ref": "nfl-13350"
+  },
+  "00-0038629": {
+   "player_ref": "nfl-11049"
+  },
+  "00-0036395": {
+   "player_ref": "nfl-6947",
+   "espn": "4035463"
+  },
+  "00-0040104": {
+   "player_ref": "nfl-13156"
+  },
+  "00-0038038": {
+   "player_ref": "nfl-8339"
+  },
+  "00-0040993": {
+   "player_ref": "nfl-13727"
+  },
+  "00-0040688": {
+   "player_ref": "nfl-12567"
+  },
+  "00-0040112": {
+   "player_ref": "nfl-13040"
+  },
+  "00-0040979": {
+   "player_ref": "nfl-13728"
+  },
+  "00-0035408": {
+   "player_ref": "nfl-6594",
+   "espn": "3915184"
+  },
+  "00-0040989": {
+   "player_ref": "nfl-13850"
+  },
+  "00-0040994": {
+   "player_ref": "nfl-13736"
+  },
+  "00-0040077": {
+   "player_ref": "nfl-12695"
+  },
+  "00-0039233": {
+   "player_ref": "nfl-11696"
+  },
+  "00-0034874": {
+   "player_ref": "nfl-4960",
+   "espn": "3915189"
+  },
+  "00-0040898": {
+   "player_ref": "nfl-13553"
+  },
+  "00-0040992": {
+   "player_ref": "nfl-13737"
+  },
+  "00-0037327": {
+   "player_ref": "nfl-8206"
+  },
+  "00-0039234": {
+   "player_ref": "nfl-11730"
+  },
+  "00-0040069": {
+   "player_ref": "nfl-12640"
+  },
+  "00-0037756": {
+   "player_ref": "nfl-8400"
+  },
+  "00-0038504": {
+   "player_ref": "nfl-10935"
+  },
+  "00-0035993": {
+   "player_ref": "nfl-7083",
+   "espn": "4035671"
+  },
   "00-0040074": {
+   "player_ref": "nfl-12711",
    "adp": 156.0
   },
+  "00-0040099": {
+   "player_ref": "nfl-13042"
+  },
+  "00-0037428": {
+   "player_ref": "nfl-8774"
+  },
+  "00-0034261": {
+   "player_ref": "nfl-4989",
+   "espn": "3056608"
+  },
+  "00-0034832": {
+   "player_ref": "nfl-4967",
+   "espn": "3116733"
+  },
+  "00-0041270": {
+   "player_ref": "nfl-13940"
+  },
+  "00-0035253": {
+   "player_ref": "nfl-5893",
+   "espn": "4034953"
+  },
+  "00-0040217": {
+   "player_ref": "nfl-12686"
+  },
+  "00-0037288": {
+   "player_ref": "nfl-8487"
+  },
+  "00-0039872": {
+   "player_ref": "nfl-11682"
+  },
+  "00-0041224": {
+   "player_ref": "nfl-13697"
+  },
+  "00-0036888": {
+   "player_ref": "nfl-7787"
+  },
+  "00-0037034": {
+   "player_ref": "nfl-8104"
+  },
+  "00-0035020": {
+   "player_ref": "nfl-6610",
+   "espn": "3931424"
+  },
+  "00-0038557": {
+   "player_ref": "nfl-10923"
+  },
+  "00-0036199": {
+   "player_ref": "nfl-6923",
+   "espn": "4240575"
+  },
+  "00-0041272": {
+   "player_ref": "nfl-13696"
+  },
+  "00-0039277": {
+   "player_ref": "nfl-12054"
+  },
+  "00-0039763": {
+   "player_ref": "nfl-12397"
+  },
+  "00-0040192": {
+   "player_ref": "nfl-12661"
+  },
+  "00-0041444": {
+   "player_ref": "nfl-13488"
+  },
+  "00-0041275": {
+   "player_ref": "nfl-13694"
+  },
+  "00-0040362": {
+   "player_ref": "nfl-12764"
+  },
+  "00-0034577": {
+   "player_ref": "nfl-5127",
+   "espn": "3115293"
+  },
+  "00-0040132": {
+   "player_ref": "nfl-12580"
+  },
+  "00-0040086": {
+   "player_ref": "nfl-12809"
+  },
+  "00-0040709": {
+   "player_ref": "nfl-12596"
+  },
+  "00-0034941": {
+   "player_ref": "nfl-6173",
+   "espn": "4035685"
+  },
+  "00-0038633": {
+   "player_ref": "nfl-11044"
+  },
+  "00-0038548": {
+   "player_ref": "nfl-10895"
+  },
+  "00-0038099": {
+   "player_ref": "nfl-8273"
+  },
+  "00-0032497": {
+   "player_ref": "nfl-3576",
+   "espn": "2976549"
+  },
+  "00-0036037": {
+   "player_ref": "nfl-7224",
+   "espn": "4044133"
+  },
+  "00-0039876": {
+   "player_ref": "nfl-11758"
+  },
+  "00-0036679": {
+   "player_ref": "nfl-8002"
+  },
+  "00-0040361": {
+   "player_ref": "nfl-12756"
+  },
+  "00-0040724": {
+   "player_ref": "nfl-12612"
+  },
+  "00-0037254": {
+   "player_ref": "nfl-8311"
+  },
+  "00-0041223": {
+   "player_ref": "nfl-13843"
+  },
+  "00-0041126": {
+   "player_ref": "nfl-13568"
+  },
+  "00-0039882": {
+   "player_ref": "nfl-11791"
+  },
   "00-0036162": {
+   "player_ref": "nfl-7042",
+   "espn": "3917232",
    "adp": 163.6
   },
+  "00-0040364": {
+   "player_ref": "nfl-13095"
+  },
+  "00-0039400": {
+   "player_ref": "nfl-11798"
+  },
+  "00-0038101": {
+   "player_ref": "nfl-8389"
+  },
+  "00-0040394": {
+   "player_ref": "nfl-12939"
+  },
+  "00-0040289": {
+   "player_ref": "nfl-12956"
+  },
+  "00-0039380": {
+   "player_ref": "nfl-11771"
+  },
+  "00-0038493": {
+   "player_ref": "nfl-11305"
+  },
+  "00-0035976": {
+   "player_ref": "nfl-7357",
+   "espn": "3929637"
+  },
+  "00-0039601": {
+   "player_ref": "nfl-12011"
+  },
+  "00-0037244": {
+   "player_ref": "nfl-8329"
+  },
+  "00-0041149": {
+   "player_ref": "nfl-13415"
+  },
+  "00-0041146": {
+   "player_ref": "nfl-13709"
+  },
+  "00-0026027": {
+   "player_ref": "nfl-439",
+   "espn": "11759"
+  },
+  "00-0037089": {
+   "player_ref": "nfl-8524"
+  },
+  "00-0040265": {
+   "player_ref": "nfl-13179"
+  },
+  "00-0041119": {
+   "player_ref": "nfl-13586"
+  },
+  "00-0036934": {
+   "player_ref": "nfl-7635"
+  },
+  "00-0038102": {
+   "player_ref": "nfl-8160"
+  },
+  "00-0040159": {
+   "player_ref": "nfl-12611"
+  },
+  "00-0041478": {
+   "player_ref": "nfl-13362"
+  },
+  "00-0039637": {
+   "player_ref": "nfl-12057"
+  },
+  "00-0041485": {
+   "player_ref": "nfl-14044"
+  },
+  "00-0035669": {
+   "player_ref": "nfl-6301",
+   "espn": "3116179"
+  },
+  "00-0037196": {
+   "player_ref": "nfl-8511"
+  },
+  "00-0036325": {
+   "player_ref": "nfl-7041",
+   "espn": "3917592"
+  },
+  "00-0036904": {
+   "player_ref": "nfl-7712"
+  },
+  "00-0040279": {
+   "player_ref": "nfl-12961"
+  },
+  "00-0030092": {
+   "player_ref": "nfl-1516",
+   "espn": "15928"
+  },
+  "00-0038791": {
+   "player_ref": "nfl-11441"
+  },
+  "00-0036962": {
+   "player_ref": "nfl-7659"
+  },
+  "00-0039347": {
+   "player_ref": "nfl-11724"
+  },
+  "00-0041076": {
+   "player_ref": "nfl-13522"
+  },
+  "00-0038411": {
+   "player_ref": "nfl-11036"
+  },
+  "00-0039840": {
+   "player_ref": "nfl-11760"
+  },
+  "00-0041167": {
+   "player_ref": "nfl-13715"
+  },
+  "00-0037081": {
+   "player_ref": "nfl-8479"
+  },
   "00-0031203": {
+   "player_ref": "nfl-2020",
+   "espn": "17427",
    "adp": 164.1
   },
+  "00-0028986": {
+   "player_ref": "nfl-1737",
+   "espn": "15168"
+  },
+  "00-0038136": {
+   "player_ref": "nfl-8293"
+  },
+  "00-0037271": {
+   "player_ref": "nfl-8367"
+  },
+  "00-0038932": {
+   "player_ref": "nfl-10887"
+  },
+  "00-0035525": {
+   "player_ref": "nfl-5843",
+   "espn": "4036261"
+  },
+  "00-0041538": {
+   "player_ref": "nfl-13371"
+  },
+  "00-0037096": {
+   "player_ref": "nfl-8509"
+  },
+  "00-0039070": {
+   "player_ref": "nfl-10899"
+  },
+  "00-0041170": {
+   "player_ref": "nfl-13712"
+  },
+  "00-0037109": {
+   "player_ref": "nfl-8363"
+  },
+  "00-0039461": {
+   "player_ref": "nfl-12035"
+  },
+  "00-0036292": {
+   "player_ref": "nfl-6839",
+   "espn": "4243253"
+  },
+  "00-0038716": {
+   "player_ref": "nfl-11271"
+  },
+  "00-0032391": {
+   "player_ref": "nfl-3247",
+   "espn": "2577773"
+  },
+  "00-0036802": {
+   "player_ref": "nfl-7957"
+  },
+  "00-0036239": {
+   "player_ref": "nfl-6965",
+   "espn": "4240655"
+  },
+  "00-0038595": {
+   "player_ref": "nfl-10977"
+  },
+  "00-0041110": {
+   "player_ref": "nfl-13540"
+  },
+  "00-0041085": {
+   "player_ref": "nfl-13512"
+  },
+  "00-0039822": {
+   "player_ref": "nfl-11707"
+  },
+  "00-0039624": {
+   "player_ref": "nfl-11891"
+  },
+  "00-0038111": {
+   "player_ref": "nfl-8365"
+  },
+  "00-0037708": {
+   "player_ref": "nfl-8921"
+  },
+  "00-0041172": {
+   "player_ref": "nfl-13310"
+  },
+  "00-0037544": {
+   "player_ref": "nfl-8328"
+  },
+  "00-0038390": {
+   "player_ref": "nfl-10984"
+  },
+  "00-0041168": {
+   "player_ref": "nfl-13941"
+  },
+  "00-0040740": {
+   "player_ref": "nfl-12606"
+  },
+  "00-0040167": {
+   "player_ref": "nfl-12637"
+  },
+  "00-0041175": {
+   "player_ref": "nfl-8584"
+  },
+  "00-0035039": {
+   "player_ref": "nfl-6451",
+   "espn": "3948283"
+  },
+  "00-0035386": {
+   "player_ref": "nfl-5960",
+   "espn": "3121544"
+  },
+  "00-0038395": {
+   "player_ref": "nfl-10972"
+  },
+  "00-0039745": {
+   "player_ref": "nfl-11732"
+  },
+  "00-0038416": {
+   "player_ref": "nfl-11256"
+  },
+  "00-0041408": {
+   "player_ref": "nfl-14030"
+  },
+  "00-0039925": {
+   "player_ref": "nfl-11666"
+  },
+  "00-0039535": {
+   "player_ref": "nfl-11854"
+  },
+  "00-0040157": {
+   "player_ref": "nfl-12646"
+  },
+  "00-0040372": {
+   "player_ref": "nfl-13083"
+  },
+  "00-0037193": {
+   "player_ref": "nfl-8294"
+  },
+  "00-0041546": {
+   "player_ref": "nfl-13364"
+  },
+  "00-0035238": {
+   "player_ref": "nfl-5856",
+   "espn": "3707061"
+  },
+  "00-0041247": {
+   "player_ref": "nfl-13719"
+  },
+  "00-0038549": {
+   "player_ref": "nfl-10894"
+  },
+  "00-0039414": {
+   "player_ref": "nfl-11831"
+  },
+  "00-0037743": {
+   "player_ref": "nfl-8286"
+  },
+  "00-0040738": {
+   "player_ref": "nfl-12617"
+  },
+  "00-0040785": {
+   "player_ref": "nfl-13264"
+  },
+  "00-0040140": {
+   "player_ref": "nfl-12627"
+  },
+  "00-0041243": {
+   "player_ref": "nfl-13718"
+  },
   "00-0036854": {
+   "player_ref": "nfl-7839",
    "adp": 170.3
   },
+  "00-0039143": {
+   "player_ref": "nfl-10909"
+  },
+  "00-0037307": {
+   "player_ref": "nfl-8481"
+  },
+  "00-0041242": {
+   "player_ref": "nfl-13721"
+  },
+  "00-0040180": {
+   "player_ref": "nfl-12674"
+  },
+  "00-0039742": {
+   "player_ref": "nfl-11737"
+  },
+  "00-0026158": {
+   "player_ref": "nfl-19",
+   "espn": "11252"
+  },
+  "00-0035363": {
+   "player_ref": "nfl-6105",
+   "espn": "3917797"
+  },
+  "00-0038560": {
+   "player_ref": "nfl-10927"
+  },
+  "00-0040375": {
+   "player_ref": "nfl-12761"
+  },
+  "00-0026300": {
+   "player_ref": "nfl-260",
+   "espn": "11394"
+  },
+  "00-0041246": {
+   "player_ref": "nfl-13312"
+  },
+  "00-0039266": {
+   "player_ref": "nfl-11649"
+  },
+  "00-0037422": {
+   "player_ref": "nfl-8783"
+  },
+  "00-0041241": {
+   "player_ref": "nfl-13436"
+  },
+  "00-0039908": {
+   "player_ref": "nfl-11688"
+  },
+  "00-0036231": {
+   "player_ref": "nfl-6872",
+   "espn": "4401811"
+  },
+  "00-0038429": {
+   "player_ref": "nfl-11281"
+  },
+  "00-0039354": {
+   "player_ref": "nfl-11713"
+  },
+  "00-0038546": {
+   "player_ref": "nfl-10875"
+  },
+  "00-0034754": {
+   "player_ref": "nfl-5031",
+   "espn": "3051746"
+  },
+  "00-0039632": {
+   "player_ref": "nfl-12058"
+  },
+  "00-0037844": {
+   "player_ref": "nfl-8510"
+  },
+  "00-0039323": {
+   "player_ref": "nfl-12163"
+  },
+  "00-0038391": {
+   "player_ref": "nfl-10983"
+  },
+  "00-0038890": {
+   "player_ref": "nfl-11251"
+  },
+  "00-0040756": {
+   "player_ref": "nfl-12560"
+  },
+  "00-0039313": {
+   "player_ref": "nfl-12255"
+  },
+  "00-0032445": {
+   "player_ref": "nfl-3376",
+   "espn": "2576188"
+  },
+  "00-0040379": {
+   "player_ref": "nfl-13086"
+  },
+  "00-0039473": {
+   "player_ref": "nfl-11969"
+  },
+  "00-0040260": {
+   "player_ref": "nfl-12797"
+  },
+  "00-0037251": {
+   "player_ref": "nfl-8376"
+  },
+  "00-0038428": {
+   "player_ref": "nfl-11261"
+  },
+  "00-0040579": {
+   "player_ref": "nfl-12578"
+  },
+  "00-0039513": {
+   "player_ref": "nfl-11916"
+  },
+  "00-0034721": {
+   "player_ref": "nfl-5721",
+   "espn": "4039396"
+  },
+  "00-0034966": {
+   "player_ref": "nfl-6476",
+   "espn": "3139389"
+  },
+  "00-0036306": {
+   "player_ref": "nfl-7053",
+   "espn": "4035505"
+  },
+  "00-0041277": {
+   "player_ref": "nfl-13339"
+  },
+  "00-0039014": {
+   "player_ref": "nfl-10956"
+  },
+  "00-0040704": {
+   "player_ref": "nfl-12486"
+  },
+  "00-0040263": {
+   "player_ref": "nfl-12783"
+  },
+  "00-0040261": {
+   "player_ref": "nfl-13165"
+  },
+  "00-0039878": {
+   "player_ref": "nfl-11757"
+  },
+  "00-0041471": {
+   "player_ref": "nfl-13360"
+  },
+  "00-0036282": {
+   "player_ref": "nfl-6799",
+   "espn": "4242208"
+  },
+  "00-0038574": {
+   "player_ref": "nfl-10943"
+  },
+  "00-0040380": {
+   "player_ref": "nfl-12886"
+  },
+  "00-0036915": {
+   "player_ref": "nfl-7651"
+  },
+  "00-0036249": {
+   "player_ref": "nfl-6851",
+   "espn": "4046690"
+  },
+  "00-0041075": {
+   "player_ref": "nfl-13524"
+  },
+  "00-0039755": {
+   "player_ref": "nfl-11817"
+  },
+  "00-0037832": {
+   "player_ref": "nfl-8375"
+  },
+  "00-0041285": {
+   "player_ref": "nfl-13747"
+  },
+  "00-0039442": {
+   "player_ref": "nfl-12384"
+  },
+  "00-0041287": {
+   "player_ref": "nfl-13749"
+  },
+  "00-0040617": {
+   "player_ref": "nfl-13189"
+  },
+  "00-0038609": {
+   "player_ref": "nfl-11013"
+  },
+  "00-0040685": {
+   "player_ref": "nfl-12573"
+  },
+  "00-0036087": {
+   "player_ref": "nfl-6946",
+   "espn": "4039010"
+  },
+  "00-0039417": {
+   "player_ref": "nfl-11836"
+  },
+  "00-0039406": {
+   "player_ref": "nfl-11790"
+  },
+  "00-0039567": {
+   "player_ref": "nfl-12393"
+  },
+  "00-0035680": {
+   "player_ref": "nfl-6214",
+   "espn": "3110565"
+  },
+  "00-0036443": {
+   "player_ref": "nfl-7498"
+  },
+  "00-0038715": {
+   "player_ref": "nfl-11352"
+  },
+  "00-0041092": {
+   "player_ref": "nfl-13306"
+  },
+  "00-0036953": {
+   "player_ref": "nfl-7663"
+  },
+  "00-0035234": {
+   "player_ref": "nfl-5901",
+   "espn": "3131498"
+  },
+  "00-0041284": {
+   "player_ref": "nfl-13748"
+  },
+  "00-0039515": {
+   "player_ref": "nfl-12083"
+  },
+  "00-0039350": {
+   "player_ref": "nfl-11715"
+  },
+  "00-0041286": {
+   "player_ref": "nfl-13745"
+  },
+  "00-0040017": {
+   "player_ref": "nfl-12698"
+  },
+  "00-0040045": {
+   "player_ref": "nfl-12855"
+  },
   "00-0037692": {
+   "player_ref": "nfl-11533",
    "adp": 130.2
   },
+  "00-0029692": {
+   "player_ref": "nfl-1113",
+   "espn": "14950"
+  },
+  "00-0039387": {
+   "player_ref": "nfl-11769"
+  },
+  "00-0040865": {
+   "player_ref": "nfl-13376"
+  },
+  "00-0040930": {
+   "player_ref": "nfl-13726"
+  },
+  "00-0037839": {
+   "player_ref": "nfl-8381"
+  },
+  "00-0039348": {
+   "player_ref": "nfl-11719"
+  },
+  "00-0036728": {
+   "player_ref": "nfl-8020"
+  },
+  "00-0040938": {
+   "player_ref": "nfl-13355"
+  },
+  "00-0041437": {
+   "player_ref": "nfl-13919"
+  },
+  "00-0037275": {
+   "player_ref": "nfl-8476"
+  },
+  "00-0038556": {
+   "player_ref": "nfl-10933"
+  },
+  "00-0038625": {
+   "player_ref": "nfl-11017"
+  },
+  "00-0037842": {
+   "player_ref": "nfl-8271"
+  },
+  "00-0040725": {
+   "player_ref": "nfl-12556"
+  },
+  "00-0040769": {
+   "player_ref": "nfl-13246"
+  },
+  "00-0040872": {
+   "player_ref": "nfl-13381"
+  },
+  "00-0035705": {
+   "player_ref": "nfl-6711",
+   "espn": "4043089"
+  },
+  "00-0039398": {
+   "player_ref": "nfl-11557"
+  },
+  "00-0040934": {
+   "player_ref": "nfl-13325"
+  },
+  "00-0039532": {
+   "player_ref": "nfl-12089"
+  },
+  "00-0040043": {
+   "player_ref": "nfl-12853"
+  },
+  "00-0040935": {
+   "player_ref": "nfl-13754"
+  },
+  "00-0041537": {
+   "player_ref": "nfl-13359"
+  },
+  "00-0033877": {
+   "player_ref": "nfl-4074",
+   "espn": "3121415"
+  },
+  "00-0039507": {
+   "player_ref": "nfl-12101"
+  },
+  "00-0039352": {
+   "player_ref": "nfl-11720"
+  },
+  "00-0037561": {
+   "player_ref": "nfl-8399"
+  },
+  "00-0036295": {
+   "player_ref": "nfl-6881",
+   "espn": "4044138"
+  },
+  "00-0037270": {
+   "player_ref": "nfl-8331"
+  },
+  "00-0035227": {
+   "player_ref": "nfl-6419",
+   "espn": "3929850"
+  },
+  "00-0038735": {
+   "player_ref": "nfl-11508"
+  },
+  "00-0037077": {
+   "player_ref": "nfl-8162"
+  },
+  "00-0037665": {
+   "player_ref": "nfl-8368"
+  },
+  "00-0040008": {
+   "player_ref": "nfl-12559"
+  },
+  "00-0040011": {
+   "player_ref": "nfl-12614"
+  },
+  "00-0038731": {
+   "player_ref": "nfl-11516"
+  },
+  "00-0034198": {
+   "player_ref": "nfl-5461",
+   "espn": "3052357"
+  },
+  "00-0039310": {
+   "player_ref": "nfl-11774"
+  },
+  "00-0040251": {
+   "player_ref": "nfl-12717"
+  },
+  "00-0040007": {
+   "player_ref": "nfl-12599"
+  },
+  "00-0039341": {
+   "player_ref": "nfl-11657"
+  },
+  "00-0037243": {
+   "player_ref": "nfl-8449"
+  },
+  "00-0040044": {
+   "player_ref": "nfl-12856"
+  },
+  "00-0038649": {
+   "player_ref": "nfl-11023"
+  },
+  "00-0031898": {
+   "player_ref": "nfl-2617",
+   "espn": "2612151"
+  },
+  "00-0036221": {
+   "player_ref": "nfl-6911",
+   "espn": "4039059"
+  },
+  "00-0041289": {
+   "player_ref": "nfl-13393"
+  },
+  "00-0035764": {
+   "player_ref": "nfl-7010",
+   "espn": "3915147"
+  },
+  "00-0041299": {
+   "player_ref": "nfl-13744"
+  },
+  "00-0041295": {
+   "player_ref": "nfl-13865"
+  },
+  "00-0036683": {
+   "player_ref": "nfl-8004"
+  },
+  "00-0039003": {
+   "player_ref": "nfl-10929"
+  },
+  "00-0038106": {
+   "player_ref": "nfl-8347"
+  },
+  "00-0038605": {
+   "player_ref": "nfl-11011"
+  },
+  "00-0040720": {
+   "player_ref": "nfl-12557"
+  },
+  "00-0035264": {
+   "player_ref": "nfl-6136",
+   "espn": "3892775"
+  },
+  "00-0040223": {
+   "player_ref": "nfl-12693"
+  },
+  "00-0037294": {
+   "player_ref": "nfl-8370"
+  },
+  "00-0040634": {
+   "player_ref": "nfl-13209"
+  },
+  "00-0041294": {
+   "player_ref": "nfl-13743"
+  },
+  "00-0036428": {
+   "player_ref": "nfl-6977",
+   "espn": "3919548"
+  },
+  "00-0040449": {
+   "player_ref": "nfl-12781"
+  },
+  "00-0041292": {
+   "player_ref": "nfl-13981"
+  },
+  "00-0039371": {
+   "player_ref": "nfl-11765"
+  },
+  "00-0039565": {
+   "player_ref": "nfl-12111"
+  },
+  "00-0041290": {
+   "player_ref": "nfl-13866"
+  },
+  "00-0037278": {
+   "player_ref": "nfl-8474"
+  },
+  "00-0035686": {
+   "player_ref": "nfl-5898",
+   "espn": "3121541"
+  },
+  "00-0037300": {
+   "player_ref": "nfl-8202"
+  },
+  "00-0041130": {
+   "player_ref": "nfl-13578"
+  },
+  "00-0036943": {
+   "player_ref": "nfl-8071"
+  },
+  "00-0039438": {
+   "player_ref": "nfl-11833"
+  },
+  "00-0037249": {
+   "player_ref": "nfl-8280"
+  },
+  "00-0041298": {
+   "player_ref": "nfl-13986"
+  },
+  "00-0040168": {
+   "player_ref": "nfl-12636"
+  },
+  "00-0037001": {
+   "player_ref": "nfl-7699"
+  },
+  "00-0041134": {
+   "player_ref": "nfl-13579"
+  },
+  "00-0038552": {
+   "player_ref": "nfl-10930"
+  },
+  "00-0036879": {
+   "player_ref": "nfl-7583"
+  },
+  "00-0036564": {
+   "player_ref": "nfl-7811"
+  },
+  "00-0041301": {
+   "player_ref": "nfl-13593"
+  },
+  "00-0037752": {
+   "player_ref": "nfl-8377"
+  },
+  "00-0041296": {
+   "player_ref": "nfl-13984"
+  },
   "00-0032569": {
+   "player_ref": "nfl-3678",
+   "espn": "2985659",
    "adp": 161.9
+  },
+  "00-0041454": {
+   "player_ref": "nfl-13740"
+  },
+  "00-0037236": {
+   "player_ref": "nfl-8289"
+  },
+  "00-0041458": {
+   "player_ref": "nfl-13358"
+  },
+  "00-0036272": {
+   "player_ref": "nfl-7060",
+   "espn": "4611506"
+  },
+  "00-0039141": {
+   "player_ref": "nfl-10905"
+  },
+  "00-0037297": {
+   "player_ref": "nfl-8502"
+  },
+  "00-0038661": {
+   "player_ref": "nfl-11345"
+  },
+  "00-0038820": {
+   "player_ref": "nfl-11427"
+  },
+  "00-0039408": {
+   "player_ref": "nfl-11788"
+  },
+  "00-0033294": {
+   "player_ref": "nfl-4224",
+   "espn": "3045463"
+  },
+  "00-0038592": {
+   "player_ref": "nfl-10981"
+  },
+  "00-0037281": {
+   "player_ref": "nfl-8309"
+  },
+  "00-0040233": {
+   "player_ref": "nfl-12731"
+  },
+  "00-0036964": {
+   "player_ref": "nfl-7726"
+  },
+  "00-0037414": {
+   "player_ref": "nfl-8784"
+  },
+  "00-0039862": {
+   "player_ref": "nfl-11689"
+  },
+  "00-0041455": {
+   "player_ref": "nfl-13739"
+  },
+  "00-0039362": {
+   "player_ref": "nfl-11746"
+  },
+  "00-0039445": {
+   "player_ref": "nfl-12159"
+  },
+  "00-0039652": {
+   "player_ref": "nfl-12356"
+  },
+  "00-0039018": {
+   "player_ref": "nfl-10880"
+  },
+  "00-0035156": {
+   "player_ref": "nfl-6523",
+   "espn": "3916370"
+  },
+  "00-0040390": {
+   "player_ref": "nfl-12938"
   },
   "00-0039172": {
+   "player_ref": "nfl-11539",
    "adp": 147.0
   },
+  "00-0041442": {
+   "player_ref": "nfl-13494"
+  },
+  "00-0035895": {
+   "player_ref": "nfl-7014",
+   "espn": "4036507"
+  },
+  "00-0038936": {
+   "player_ref": "nfl-10893"
+  },
+  "00-0041445": {
+   "player_ref": "nfl-13397"
+  },
+  "00-0037667": {
+   "player_ref": "nfl-8348"
+  },
+  "00-0040393": {
+   "player_ref": "nfl-12954"
+  },
+  "00-0036905": {
+   "player_ref": "nfl-7838"
+  },
+  "00-0039448": {
+   "player_ref": "nfl-12161"
+  },
+  "00-0041453": {
+   "player_ref": "nfl-13314"
+  },
+  "00-0037289": {
+   "player_ref": "nfl-8334"
+  },
+  "00-0038911": {
+   "player_ref": "nfl-10860"
+  },
+  "00-0040391": {
+   "player_ref": "nfl-12936"
+  },
+  "00-0041460": {
+   "player_ref": "nfl-13741"
+  },
+  "00-0038125": {
+   "player_ref": "nfl-8303"
+  },
+  "00-0040374": {
+   "player_ref": "nfl-12575"
+  },
+  "00-0040728": {
+   "player_ref": "nfl-12613"
+  },
+  "00-0040697": {
+   "player_ref": "nfl-13249"
+  },
+  "00-0039660": {
+   "player_ref": "nfl-11872"
+  },
+  "00-0038660": {
+   "player_ref": "nfl-11348"
+  },
+  "00-0040672": {
+   "player_ref": "nfl-12554"
+  },
+  "00-0040387": {
+   "player_ref": "nfl-13110"
+  },
+  "00-0036551": {
+   "player_ref": "nfl-7654"
+  },
+  "00-0036625": {
+   "player_ref": "nfl-7671"
+  },
+  "00-0041470": {
+   "player_ref": "nfl-13369"
+  },
+  "00-0038408": {
+   "player_ref": "nfl-11042"
+  },
+  "00-0037547": {
+   "player_ref": "nfl-8674"
+  },
+  "00-0037075": {
+   "player_ref": "nfl-8270"
+  },
+  "00-0039272": {
+   "player_ref": "nfl-12153"
+  },
+  "00-0039850": {
+   "player_ref": "nfl-11687"
+  },
+  "00-0039813": {
+   "player_ref": "nfl-11739"
+  },
+  "00-0036658": {
+   "player_ref": "nfl-7782"
+  },
+  "00-0039817": {
+   "player_ref": "nfl-11776"
+  },
+  "00-0040946": {
+   "player_ref": "nfl-13906"
+  },
+  "00-0039867": {
+   "player_ref": "nfl-11686"
+  },
+  "00-0039383": {
+   "player_ref": "nfl-11775"
+  },
+  "00-0040023": {
+   "player_ref": "nfl-12729"
+  },
+  "00-0040033": {
+   "player_ref": "nfl-12931"
+  },
+  "00-0037094": {
+   "player_ref": "nfl-8344"
+  },
+  "00-0039904": {
+   "player_ref": "nfl-11660"
+  },
+  "00-0038506": {
+   "player_ref": "nfl-11035"
+  },
+  "00-0039831": {
+   "player_ref": "nfl-11787"
+  },
+  "00-0039818": {
+   "player_ref": "nfl-11763"
+  },
+  "00-0036157": {
+   "player_ref": "nfl-7197",
+   "espn": "4036153"
+  },
+  "00-0040014": {
+   "player_ref": "nfl-12494"
+  },
+  "00-0039112": {
+   "player_ref": "nfl-10885"
+  },
+  "00-0039418": {
+   "player_ref": "nfl-11825"
+  },
+  "00-0039488": {
+   "player_ref": "nfl-12125"
+  },
+  "00-0035118": {
+   "player_ref": "nfl-6461",
+   "espn": "4422336"
+  },
+  "00-0039275": {
+   "player_ref": "nfl-12154"
+  },
+  "00-0036932": {
+   "player_ref": "nfl-7640"
+  },
+  "00-0040968": {
+   "player_ref": "nfl-13863"
+  },
+  "00-0040041": {
+   "player_ref": "nfl-12927"
+  },
+  "00-0036648": {
+   "player_ref": "nfl-7807"
+  },
+  "00-0040945": {
+   "player_ref": "nfl-13430"
+  },
+  "00-0037076": {
+   "player_ref": "nfl-8460"
+  },
+  "00-0040947": {
+   "player_ref": "nfl-13775"
+  },
   "00-0040899": {
+   "player_ref": "nfl-13545",
    "adp": 161.0
   },
+  "00-0039812": {
+   "player_ref": "nfl-11712"
+  },
+  "00-0028118": {
+   "player_ref": "nfl-827",
+   "espn": "14163"
+  },
+  "00-0040016": {
+   "player_ref": "nfl-12704"
+  },
+  "00-0040753": {
+   "player_ref": "nfl-12788"
+  },
+  "00-0036388": {
+   "player_ref": "nfl-6788",
+   "espn": "4241470"
+  },
+  "00-0034431": {
+   "player_ref": "nfl-5346",
+   "espn": "3124005"
+  },
+  "00-0041449": {
+   "player_ref": "nfl-13572"
+  },
+  "00-0040745": {
+   "player_ref": "nfl-12600"
+  },
+  "00-0040411": {
+   "player_ref": "nfl-13049"
+  },
+  "00-0040409": {
+   "player_ref": "nfl-13050"
+  },
+  "00-0035166": {
+   "player_ref": "nfl-6485",
+   "espn": "3919117"
+  },
+  "00-0039857": {
+   "player_ref": "nfl-11684"
+  },
+  "00-0034836": {
+   "player_ref": "nfl-5060",
+   "espn": "3121595"
+  },
+  "00-0039333": {
+   "player_ref": "nfl-12269"
+  },
+  "00-0039838": {
+   "player_ref": "nfl-11710"
+  },
+  "00-0041309": {
+   "player_ref": "nfl-13861"
+  },
+  "00-0036898": {
+   "player_ref": "nfl-7585"
+  },
+  "00-0037237": {
+   "player_ref": "nfl-8308"
+  },
+  "00-0041302": {
+   "player_ref": "nfl-13924"
+  },
+  "00-0037082": {
+   "player_ref": "nfl-8391"
+  },
+  "00-0039009": {
+   "player_ref": "nfl-10958"
+  },
+  "00-0034987": {
+   "player_ref": "nfl-6218",
+   "espn": "3071353"
+  },
+  "00-0041559": {
+   "player_ref": "nfl-13502"
+  },
+  "00-0040211": {
+   "player_ref": "nfl-12705"
+  },
+  "00-0038599": {
+   "player_ref": "nfl-10970"
+  },
+  "00-0039030": {
+   "player_ref": "nfl-10960"
+  },
+  "00-0037457": {
+   "player_ref": "nfl-8349"
+  },
+  "00-0037633": {
+   "player_ref": "nfl-8733"
+  },
+  "00-0037246": {
+   "player_ref": "nfl-8314"
+  },
+  "00-0039395": {
+   "player_ref": "nfl-11805"
+  },
+  "00-0038728": {
+   "player_ref": "nfl-11056"
+  },
+  "00-0039832": {
+   "player_ref": "nfl-11784"
+  },
+  "00-0038615": {
+   "player_ref": "nfl-11005"
+  },
+  "00-0040204": {
+   "player_ref": "nfl-12710"
+  },
+  "00-0039392": {
+   "player_ref": "nfl-11808"
+  },
+  "00-0040049": {
+   "player_ref": "nfl-12848"
+  },
+  "00-0041307": {
+   "player_ref": "nfl-13923"
+  },
+  "00-0040413": {
+   "player_ref": "nfl-13051"
+  },
   "00-0032726": {
+   "player_ref": "nfl-3451",
+   "espn": "2971573",
    "adp": 142.7
   },
+  "00-0038823": {
+   "player_ref": "nfl-11429"
+  },
+  "00-0040654": {
+   "player_ref": "nfl-13215"
+  },
+  "00-0039343": {
+   "player_ref": "nfl-11685"
+  },
+  "00-0041466": {
+   "player_ref": "nfl-13406"
+  },
+  "00-0041440": {
+   "player_ref": "nfl-13374"
+  },
+  "00-0040229": {
+   "player_ref": "nfl-12724"
+  },
+  "00-0040792": {
+   "player_ref": "nfl-13261"
+  },
+  "00-0038127": {
+   "player_ref": "nfl-8360"
+  },
+  "00-0034355": {
+   "player_ref": "nfl-5055",
+   "espn": "3116679"
+  },
+  "00-0037130": {
+   "player_ref": "nfl-8406"
+  },
+  "00-0041303": {
+   "player_ref": "nfl-13922"
+  },
+  "00-0034278": {
+   "player_ref": "nfl-5328",
+   "espn": "3134448"
+  },
+  "00-0032071": {
+   "player_ref": "nfl-2543",
+   "espn": "3043109"
+  },
+  "00-0041308": {
+   "player_ref": "nfl-13862"
+  },
+  "00-0041465": {
+   "player_ref": "nfl-13490"
+  },
+  "00-0039108": {
+   "player_ref": "nfl-10892"
+  },
+  "00-0041043": {
+   "player_ref": "nfl-13384"
+  },
+  "00-0039031": {
+   "player_ref": "nfl-10957"
+  },
+  "00-0036298": {
+   "player_ref": "nfl-6860",
+   "espn": "3917142"
+  },
+  "00-0041486": {
+   "player_ref": "nfl-14041"
+  },
+  "00-0039164": {
+   "player_ref": "nfl-9229"
+  },
+  "00-0039178": {
+   "player_ref": "nfl-11066"
+  },
+  "00-0041226": {
+   "player_ref": "nfl-13786"
+  },
+  "00-0039933": {
+   "player_ref": "nfl-12143"
+  },
+  "00-0037757": {
+   "player_ref": "nfl-8459"
+  },
+  "00-0039158": {
+   "player_ref": "nfl-10961"
+  },
   "00-0038905": {
+   "player_ref": "nfl-11058",
    "adp": 172.6
   },
+  "00-0041518": {
+   "player_ref": "nfl-13481"
+  },
+  "00-0041039": {
+   "player_ref": "nfl-13388"
+  },
+  "00-0041111": {
+   "player_ref": "nfl-13373"
+  },
+  "00-0037753": {
+   "player_ref": "nfl-8341"
+  },
+  "00-0040853": {
+   "player_ref": "nfl-13407"
+  },
+  "00-0040352": {
+   "player_ref": "nfl-12829"
+  },
+  "00-0039578": {
+   "player_ref": "nfl-12184"
+  },
+  "00-0038392": {
+   "player_ref": "nfl-10975"
+  },
+  "00-0040787": {
+   "player_ref": "nfl-13267"
+  },
+  "00-0041229": {
+   "player_ref": "nfl-13931"
+  },
+  "00-0035282": {
+   "player_ref": "nfl-6185",
+   "espn": "3120590"
+  },
+  "00-0040337": {
+   "player_ref": "nfl-12909"
+  },
+  "00-0041234": {
+   "player_ref": "nfl-13928"
+  },
+  "00-0040235": {
+   "player_ref": "nfl-12723"
+  },
+  "00-0040744": {
+   "player_ref": "nfl-12594"
+  },
+  "00-0038407": {
+   "player_ref": "nfl-11052"
+  },
+  "00-0036859": {
+   "player_ref": "nfl-7774"
+  },
+  "00-0040347": {
+   "player_ref": "nfl-13107"
+  },
+  "00-0034485": {
+   "player_ref": "nfl-5520",
+   "espn": "4331768"
+  },
+  "00-0041513": {
+   "player_ref": "nfl-13716"
+  },
+  "00-0037138": {
+   "player_ref": "nfl-8713"
+  },
+  "00-0037578": {
+   "player_ref": "nfl-8397"
+  },
+  "00-0039340": {
+   "player_ref": "nfl-11669"
+  },
+  "00-0032753": {
+   "player_ref": "nfl-3598",
+   "espn": "2566045"
+  },
+  "00-0037305": {
+   "player_ref": "nfl-8485"
+  },
+  "00-0039736": {
+   "player_ref": "nfl-11709"
+  },
+  "00-0038107": {
+   "player_ref": "nfl-8316"
+  },
+  "00-0034342": {
+   "player_ref": "nfl-4970",
+   "espn": "3129308"
+  },
+  "00-0041233": {
+   "player_ref": "nfl-13783"
+  },
+  "00-0033269": {
+   "player_ref": "nfl-4331",
+   "espn": "3914922"
+  },
+  "00-0040206": {
+   "player_ref": "nfl-12470"
+  },
+  "00-0041228": {
+   "player_ref": "nfl-13929"
+  },
+  "00-0037190": {
+   "player_ref": "nfl-8290"
+  },
+  "00-0039576": {
+   "player_ref": "nfl-12185"
+  },
+  "00-0041227": {
+   "player_ref": "nfl-13787"
+  },
+  "00-0039744": {
+   "player_ref": "nfl-11735"
+  },
+  "00-0040207": {
+   "player_ref": "nfl-12691"
+  },
+  "00-0040357": {
+   "player_ref": "nfl-12836"
+  },
+  "00-0040476": {
+   "player_ref": "nfl-12826"
+  },
+  "00-0041236": {
+   "player_ref": "nfl-13785"
+  },
+  "00-0038934": {
+   "player_ref": "nfl-10876"
+  },
+  "00-0038596": {
+   "player_ref": "nfl-10974"
+  },
+  "00-0036841": {
+   "player_ref": "nfl-7746"
+  },
+  "00-0041205": {
+   "player_ref": "nfl-13658"
+  },
+  "00-0040326": {
+   "player_ref": "nfl-12917"
+  },
+  "00-0041106": {
+   "player_ref": "nfl-13554"
+  },
+  "00-0040145": {
+   "player_ref": "nfl-12632"
+  },
   "00-0039409": {
+   "player_ref": "nfl-11786",
    "adp": 155.2
   },
+  "00-0040339": {
+   "player_ref": "nfl-12912"
+  },
+  "00-0039534": {
+   "player_ref": "nfl-11851"
+  },
+  "00-0040323": {
+   "player_ref": "nfl-12908"
+  },
+  "00-0038616": {
+   "player_ref": "nfl-11018"
+  },
+  "00-0036655": {
+   "player_ref": "nfl-7785"
+  },
+  "00-0040342": {
+   "player_ref": "nfl-12900"
+  },
+  "00-0034473": {
+   "player_ref": "nfl-5158",
+   "espn": "4334300"
+  },
+  "00-0041213": {
+   "player_ref": "nfl-13649"
+  },
+  "00-0033038": {
+   "player_ref": "nfl-3268",
+   "espn": "2970716"
+  },
+  "00-0034413": {
+   "player_ref": "nfl-5332",
+   "espn": "3050073"
+  },
+  "00-0040723": {
+   "player_ref": "nfl-12653"
+  },
+  "00-0041211": {
+   "player_ref": "nfl-13652"
+  },
+  "00-0041055": {
+   "player_ref": "nfl-13474"
+  },
+  "00-0039353": {
+   "player_ref": "nfl-11725"
+  },
+  "00-0038509": {
+   "player_ref": "nfl-11322"
+  },
+  "00-0041214": {
+   "player_ref": "nfl-13646"
+  },
+  "00-0041203": {
+   "player_ref": "nfl-13428"
+  },
+  "00-0040227": {
+   "player_ref": "nfl-12744"
+  },
+  "00-0040338": {
+   "player_ref": "nfl-12911"
+  },
+  "00-0034437": {
+   "player_ref": "nfl-5314",
+   "espn": "3115480"
+  },
+  "00-0041220": {
+   "player_ref": "nfl-13645"
+  },
+  "00-0037313": {
+   "player_ref": "nfl-8305"
+  },
+  "00-0033319": {
+   "player_ref": "nfl-4464",
+   "espn": "3059989"
+  },
+  "00-0041127": {
+   "player_ref": "nfl-13587"
+  },
+  "00-0040331": {
+   "player_ref": "nfl-12901"
+  },
+  "00-0035112": {
+   "player_ref": "nfl-6306",
+   "espn": "3863820"
+  },
+  "00-0041209": {
+   "player_ref": "nfl-13648"
+  },
+  "00-0040213": {
+   "player_ref": "nfl-12702"
+  },
+  "00-0038776": {
+   "player_ref": "nfl-11342"
+  },
+  "00-0036985": {
+   "player_ref": "nfl-7689"
+  },
+  "00-0035827": {
+   "player_ref": "nfl-7295",
+   "espn": "3928931"
+  },
+  "00-0041204": {
+   "player_ref": "nfl-13660"
+  },
+  "00-0040295": {
+   "player_ref": "nfl-12962"
+  },
+  "00-0038570": {
+   "player_ref": "nfl-10947"
+  },
+  "00-0040146": {
+   "player_ref": "nfl-12633"
+  },
+  "00-0038580": {
+   "player_ref": "nfl-10992"
+  },
+  "00-0036380": {
+   "player_ref": "nfl-7069",
+   "espn": "4039413"
+  },
+  "00-0040298": {
+   "player_ref": "nfl-12863"
+  },
+  "00-0038982": {
+   "player_ref": "nfl-10949"
+  },
+  "00-0037324": {
+   "player_ref": "nfl-8413"
+  },
+  "00-0039174": {
+   "player_ref": "nfl-11242"
+  },
+  "00-0035900": {
+   "player_ref": "nfl-7329",
+   "espn": "4036959"
+  },
+  "00-0040118": {
+   "player_ref": "nfl-13174"
+  },
+  "00-0036623": {
+   "player_ref": "nfl-7644"
+  },
+  "00-0040963": {
+   "player_ref": "nfl-13794"
+  },
+  "00-0035262": {
+   "player_ref": "nfl-6141",
+   "espn": "3129310"
+  },
+  "00-0040964": {
+   "player_ref": "nfl-13778"
+  },
+  "00-0039317": {
+   "player_ref": "nfl-12162"
+  },
+  "00-0040906": {
+   "player_ref": "nfl-13404"
+  },
+  "00-0037192": {
+   "player_ref": "nfl-8385"
+  },
   "00-0033303": {
+   "player_ref": "nfl-4227",
+   "espn": "3055899",
    "adp": 160.9
   },
+  "00-0039827": {
+   "player_ref": "nfl-11756"
+  },
+  "00-0037208": {
+   "player_ref": "nfl-8710"
+  },
+  "00-0040967": {
+   "player_ref": "nfl-13904"
+  },
+  "00-0039825": {
+   "player_ref": "nfl-11728"
+  },
+  "00-0030615": {
+   "player_ref": "nfl-1785",
+   "espn": "16665"
+  },
+  "00-0036557": {
+   "player_ref": "nfl-7834"
+  },
+  "00-0040953": {
+   "player_ref": "nfl-13392"
+  },
+  "00-0040072": {
+   "player_ref": "nfl-12672"
+  },
+  "00-0040120": {
+   "player_ref": "nfl-13173"
+  },
+  "00-0040116": {
+   "player_ref": "nfl-12553"
+  },
+  "00-0036945": {
+   "player_ref": "nfl-7591"
+  },
+  "00-0037242": {
+   "player_ref": "nfl-8296"
+  },
+  "00-0040313": {
+   "player_ref": "nfl-13177"
+  },
+  "00-0040089": {
+   "player_ref": "nfl-12819"
+  },
+  "00-0039844": {
+   "player_ref": "nfl-11681"
+  },
+  "00-0041543": {
+   "player_ref": "nfl-13385"
+  },
+  "00-0039433": {
+   "player_ref": "nfl-11828"
+  },
+  "00-0037284": {
+   "player_ref": "nfl-8486"
+  },
+  "00-0037266": {
+   "player_ref": "nfl-8477"
+  },
+  "00-0040093": {
+   "player_ref": "nfl-13118"
+  },
+  "00-0036621": {
+   "player_ref": "nfl-7648"
+  },
+  "00-0040954": {
+   "player_ref": "nfl-13905"
+  },
+  "00-0040958": {
+   "player_ref": "nfl-13789"
+  },
+  "00-0041545": {
+   "player_ref": "nfl-13390"
+  },
+  "00-0041501": {
+   "player_ref": "nfl-13372"
+  },
+  "00-0038717": {
+   "player_ref": "nfl-11353"
+  },
+  "00-0040094": {
+   "player_ref": "nfl-13116"
+  },
+  "00-0036660": {
+   "player_ref": "nfl-7777"
+  },
+  "00-0040951": {
+   "player_ref": "nfl-13791"
+  },
+  "00-0041020": {
+   "player_ref": "nfl-13916"
+  },
+  "00-0040957": {
+   "player_ref": "nfl-13793"
+  },
+  "00-0040966": {
+   "player_ref": "nfl-13790"
+  },
+  "00-0040039": {
+   "player_ref": "nfl-12928"
+  },
+  "00-0040212": {
+   "player_ref": "nfl-12703"
+  },
+  "00-0032146": {
+   "player_ref": "nfl-2327",
+   "espn": "2576702"
+  },
   "00-0037224": {
+   "player_ref": "nfl-8259",
    "adp": 143.5
   },
+  "00-0038103": {
+   "player_ref": "nfl-8448"
+  },
+  "00-0040464": {
+   "player_ref": "nfl-12773"
+  },
+  "00-0038553": {
+   "player_ref": "nfl-10914"
+  },
+  "00-0040629": {
+   "player_ref": "nfl-13202"
+  },
+  "00-0037320": {
+   "player_ref": "nfl-8519"
+  },
+  "00-0035202": {
+   "player_ref": "nfl-6348",
+   "espn": "4240528"
+  },
+  "00-0032103": {
+   "player_ref": "nfl-2353",
+   "espn": "2579621"
+  },
+  "00-0034790": {
+   "player_ref": "nfl-4971",
+   "espn": "3691739"
+  },
+  "00-0041377": {
+   "player_ref": "nfl-13627"
+  },
+  "00-0041380": {
+   "player_ref": "nfl-13632"
+  },
+  "00-0040468": {
+   "player_ref": "nfl-12840"
+  },
+  "00-0041384": {
+   "player_ref": "nfl-13630"
+  },
+  "00-0040472": {
+   "player_ref": "nfl-12841"
+  },
+  "00-0041064": {
+   "player_ref": "nfl-13399"
+  },
+  "00-0041376": {
+   "player_ref": "nfl-13603"
+  },
+  "00-0040065": {
+   "player_ref": "nfl-13131"
+  },
+  "00-0034162": {
+   "player_ref": "nfl-5087",
+   "espn": "3126368"
+  },
+  "00-0039722": {
+   "player_ref": "nfl-11940"
+  },
+  "00-0041378": {
+   "player_ref": "nfl-13629"
+  },
+  "00-0041375": {
+   "player_ref": "nfl-13606"
+  },
+  "00-0041373": {
+   "player_ref": "nfl-13608"
+  },
+  "00-0039897": {
+   "player_ref": "nfl-11673"
+  },
+  "00-0041452": {
+   "player_ref": "nfl-14029"
+  },
+  "00-0028845": {
+   "player_ref": "nfl-1238",
+   "espn": "15151"
+  },
+  "00-0040467": {
+   "player_ref": "nfl-12814"
+  },
+  "00-0039346": {
+   "player_ref": "nfl-11701"
+  },
+  "00-0039835": {
+   "player_ref": "nfl-11743"
+  },
+  "00-0036736": {
+   "player_ref": "nfl-7947"
+  },
+  "00-0038414": {
+   "player_ref": "nfl-11022"
+  },
+  "00-0031040": {
+   "player_ref": "nfl-2036",
+   "espn": "16710"
+  },
+  "00-0041372": {
+   "player_ref": "nfl-13607"
+  },
+  "00-0040461": {
+   "player_ref": "nfl-12803"
+  },
+  "00-0040460": {
+   "player_ref": "nfl-12835"
+  },
+  "00-0040473": {
+   "player_ref": "nfl-12827"
+  },
+  "00-0040471": {
+   "player_ref": "nfl-12838"
+  },
+  "00-0041371": {
+   "player_ref": "nfl-13605"
+  },
+  "00-0040221": {
+   "player_ref": "nfl-12694"
+  },
+  "00-0041374": {
+   "player_ref": "nfl-13604"
+  },
+  "00-0039366": {
+   "player_ref": "nfl-11779"
+  },
+  "00-0040458": {
+   "player_ref": "nfl-12801"
+  },
+  "00-0041386": {
+   "player_ref": "nfl-13631"
+  },
+  "00-0030294": {
+   "player_ref": "nfl-1686",
+   "espn": "16195"
+  },
+  "00-0037012": {
+   "player_ref": "nfl-7610"
+  },
+  "00-0036338": {
+   "player_ref": "nfl-6941",
+   "espn": "4038946"
+  },
+  "00-0041417": {
+   "player_ref": "nfl-13881"
+  },
+  "00-0036603": {
+   "player_ref": "nfl-7872"
+  },
+  "00-0041425": {
+   "player_ref": "nfl-13855"
+  },
+  "00-0039753": {
+   "player_ref": "nfl-11782"
+  },
+  "00-0040595": {
+   "player_ref": "nfl-13008"
+  },
+  "00-0039734": {
+   "player_ref": "nfl-11677"
+  },
+  "00-0040597": {
+   "player_ref": "nfl-13011"
+  },
+  "00-0041418": {
+   "player_ref": "nfl-13880"
+  },
+  "00-0039137": {
+   "player_ref": "nfl-10917"
+  },
+  "00-0039780": {
+   "player_ref": "nfl-12230"
+  },
+  "00-0034114": {
+   "player_ref": "nfl-5454",
+   "espn": "3052180"
+  },
+  "00-0041422": {
+   "player_ref": "nfl-13321"
+  },
+  "00-0041421": {
+   "player_ref": "nfl-13856"
+  },
+  "00-0030097": {
+   "player_ref": "nfl-1428",
+   "espn": "15946"
+  },
+  "00-0039830": {
+   "player_ref": "nfl-11803"
+  },
+  "00-0039775": {
+   "player_ref": "nfl-12227"
+  },
+  "00-0039059": {
+   "player_ref": "nfl-11051"
+  },
+  "00-0036672": {
+   "player_ref": "nfl-7750"
+  },
   "00-0039498": {
+   "player_ref": "nfl-12015",
    "adp": 153.3
   },
+  "00-0039776": {
+   "player_ref": "nfl-12142"
+  },
+  "00-0037195": {
+   "player_ref": "nfl-8373"
+  },
+  "00-0032228": {
+   "player_ref": "nfl-2469",
+   "espn": "2575907"
+  },
+  "00-0040601": {
+   "player_ref": "nfl-13010"
+  },
+  "00-0039772": {
+   "player_ref": "nfl-12132"
+  },
+  "00-0039784": {
+   "player_ref": "nfl-12141"
+  },
+  "00-0036349": {
+   "player_ref": "nfl-7136",
+   "espn": "4242154"
+  },
+  "00-0039834": {
+   "player_ref": "nfl-11726"
+  },
+  "00-0041394": {
+   "player_ref": "nfl-13461"
+  },
+  "00-0036339": {
+   "player_ref": "nfl-7116",
+   "espn": "3917599"
+  },
+  "00-0040603": {
+   "player_ref": "nfl-13001"
+  },
+  "00-0040598": {
+   "player_ref": "nfl-13013"
+  },
+  "00-0041414": {
+   "player_ref": "nfl-13597"
+  },
+  "00-0037587": {
+   "player_ref": "nfl-8659"
+  },
+  "00-0040600": {
+   "player_ref": "nfl-13007"
+  },
+  "00-0041413": {
+   "player_ref": "nfl-13814"
+  },
+  "00-0041419": {
+   "player_ref": "nfl-13809"
+  },
+  "00-0039774": {
+   "player_ref": "nfl-12140"
+  },
+  "00-0041423": {
+   "player_ref": "nfl-13883"
+  },
+  "00-0037841": {
+   "player_ref": "nfl-8330"
+  },
+  "00-0041403": {
+   "player_ref": "nfl-13810"
+  },
+  "00-0040613": {
+   "player_ref": "nfl-13000"
+  },
+  "00-0039107": {
+   "player_ref": "nfl-10857"
+  },
+  "00-0038366": {
+   "player_ref": "nfl-11151"
+  },
+  "00-0037447": {
+   "player_ref": "nfl-8854"
+  },
+  "00-0037191": {
+   "player_ref": "nfl-8364"
+  },
+  "00-0040609": {
+   "player_ref": "nfl-13003"
+  },
+  "00-0041568": {
+   "player_ref": "nfl-13275"
+  },
+  "00-0039077": {
+   "player_ref": "nfl-10965"
+  },
+  "00-0041404": {
+   "player_ref": "nfl-13808"
+  },
+  "00-0040611": {
+   "player_ref": "nfl-12997"
+  },
+  "00-0035190": {
+   "player_ref": "nfl-6555",
+   "espn": "3686689"
+  },
+  "00-0038579": {
+   "player_ref": "nfl-10866"
+  },
+  "00-0038360": {
+   "player_ref": "nfl-11167"
+  },
+  "00-0038586": {
+   "player_ref": "nfl-10987"
+  },
+  "00-0037382": {
+   "player_ref": "nfl-8756"
+  },
+  "00-0040150": {
+   "player_ref": "nfl-12624"
+  },
+  "00-0036644": {
+   "player_ref": "nfl-7814"
+  },
+  "00-0040488": {
+   "player_ref": "nfl-13122"
+  },
+  "00-0040151": {
+   "player_ref": "nfl-12589"
+  },
+  "00-0039244": {
+   "player_ref": "nfl-11963"
+  },
+  "00-0040228": {
+   "player_ref": "nfl-12722"
+  },
+  "00-0037304": {
+   "player_ref": "nfl-8181"
+  },
+  "00-0041005": {
+   "player_ref": "nfl-13898"
+  },
+  "00-0039349": {
+   "player_ref": "nfl-11708"
+  },
+  "00-0040883": {
+   "player_ref": "nfl-13523"
+  },
+  "00-0040641": {
+   "player_ref": "nfl-12584"
+  },
+  "00-0041000": {
+   "player_ref": "nfl-13896"
+  },
+  "00-0041018": {
+   "player_ref": "nfl-13914"
+  },
+  "00-0041011": {
+   "player_ref": "nfl-13805"
+  },
+  "00-0037512": {
+   "player_ref": "nfl-8838"
+  },
+  "00-0039735": {
+   "player_ref": "nfl-11683"
+  },
+  "00-0040996": {
+   "player_ref": "nfl-13802"
+  },
+  "00-0036293": {
+   "player_ref": "nfl-7016",
+   "espn": "4043169"
+  },
+  "00-0041563": {
+   "player_ref": "nfl-13368"
+  },
+  "00-0039423": {
+   "player_ref": "nfl-11827"
+  },
+  "00-0036604": {
+   "player_ref": "nfl-7873"
+  },
+  "00-0041017": {
+   "player_ref": "nfl-13911"
+  },
+  "00-0041582": {
+   "player_ref": "nfl-13804"
+  },
+  "00-0035269": {
+   "player_ref": "nfl-6083",
+   "espn": "4249087"
+  },
+  "00-0037615": {
+   "player_ref": "nfl-8267"
+  },
+  "00-0041016": {
+   "player_ref": "nfl-13913"
+  },
+  "00-0032208": {
+   "player_ref": "nfl-2334",
+   "espn": "2579604"
+  },
+  "00-0037074": {
+   "player_ref": "nfl-8266"
+  },
+  "00-0040998": {
+   "player_ref": "nfl-13416"
+  },
+  "00-0037527": {
+   "player_ref": "nfl-8620"
+  },
+  "00-0038891": {
+   "player_ref": "nfl-11257"
+  },
+  "00-0037829": {
+   "player_ref": "nfl-8465"
+  },
+  "00-0037262": {
+   "player_ref": "nfl-8380"
+  },
+  "00-0039374": {
+   "player_ref": "nfl-11761"
+  },
+  "00-0040487": {
+   "player_ref": "nfl-13016"
+  },
+  "00-0040868": {
+   "player_ref": "nfl-13398"
+  },
+  "00-0037461": {
+   "player_ref": "nfl-8542"
+  },
+  "00-0040997": {
+   "player_ref": "nfl-13799"
+  },
+  "00-0037825": {
+   "player_ref": "nfl-8450"
+  },
+  "00-0041008": {
+   "player_ref": "nfl-13800"
+  },
+  "00-0040302": {
+   "player_ref": "nfl-12865"
+  },
+  "00-0036171": {
+   "player_ref": "nfl-7440",
+   "espn": "4040537"
+  },
+  "00-0038646": {
+   "player_ref": "nfl-11027"
+  },
+  "00-0032065": {
+   "player_ref": "nfl-2468",
+   "espn": "2977680"
+  },
+  "00-0040222": {
+   "player_ref": "nfl-12688"
+  },
+  "00-0037315": {
+   "player_ref": "nfl-8526"
+  },
+  "00-0039004": {
+   "player_ref": "nfl-10948"
+  },
+  "00-0041533": {
+   "player_ref": "nfl-13370"
+  },
+  "00-0040182": {
+   "player_ref": "nfl-12673"
+  },
+  "00-0041158": {
+   "player_ref": "nfl-13409"
+  },
+  "00-0040308": {
+   "player_ref": "nfl-12861"
+  },
+  "00-0040066": {
+   "player_ref": "nfl-13130"
+  },
+  "00-0041522": {
+   "player_ref": "nfl-13453"
+  },
+  "00-0036387": {
+   "player_ref": "nfl-6798",
+   "espn": "4241802"
+  },
+  "00-0037295": {
+   "player_ref": "nfl-8480"
+  },
+  "00-0041155": {
+   "player_ref": "nfl-13932"
+  },
+  "00-0040742": {
+   "player_ref": "nfl-12598"
+  },
+  "00-0040175": {
+   "player_ref": "nfl-12679"
+  },
+  "00-0036409": {
+   "player_ref": "nfl-6949",
+   "espn": "4043130"
+  },
+  "00-0040307": {
+   "player_ref": "nfl-12862"
+  },
+  "00-0040655": {
+   "player_ref": "nfl-12937"
+  },
+  "00-0040127": {
+   "player_ref": "nfl-12564"
+  },
+  "00-0041137": {
+   "player_ref": "nfl-13933"
+  },
+  "00-0041527": {
+   "player_ref": "nfl-13479"
+  },
+  "00-0035244": {
+   "player_ref": "nfl-5883",
+   "espn": "4240780"
+  },
+  "00-0041160": {
+   "player_ref": "nfl-13817"
+  },
+  "00-0041156": {
+   "player_ref": "nfl-13816"
+  },
+  "00-0037280": {
+   "player_ref": "nfl-8332"
+  },
+  "00-0041528": {
+   "player_ref": "nfl-13517"
+  },
+  "00-0039899": {
+   "player_ref": "nfl-11680"
+  },
+  "00-0040234": {
+   "player_ref": "nfl-12500"
+  },
+  "00-0041136": {
+   "player_ref": "nfl-13815"
+  },
+  "00-0036816": {
+   "player_ref": "nfl-7922"
+  },
+  "00-0041159": {
+   "player_ref": "nfl-13934"
+  },
+  "00-0041526": {
+   "player_ref": "nfl-13484"
+  },
+  "00-0037686": {
+   "player_ref": "nfl-8933"
+  },
+  "00-0035352": {
+   "player_ref": "nfl-6315",
+   "espn": "4035232"
+  },
+  "00-0036362": {
+   "player_ref": "nfl-7023",
+   "espn": "4259804"
+  },
+  "00-0033862": {
+   "player_ref": "nfl-4233",
+   "espn": "3043234"
+  },
+  "00-0036677": {
+   "player_ref": "nfl-8000"
+  },
+  "00-0040248": {
+   "player_ref": "nfl-12720"
+  },
+  "00-0029714": {
+   "player_ref": "nfl-1721",
+   "espn": "15726"
+  },
+  "00-0035272": {
+   "player_ref": "nfl-6183",
+   "espn": "3133487"
+  },
+  "00-0041431": {
+   "player_ref": "nfl-14024"
+  },
+  "00-0035276": {
+   "player_ref": "nfl-6217",
+   "espn": "3728281"
+  },
+  "00-0041581": {
+   "player_ref": "nfl-13620"
+  },
+  "00-0040504": {
+   "player_ref": "nfl-12941"
+  },
+  "00-0041353": {
+   "player_ref": "nfl-13614"
+  },
+  "00-0032950": {
+   "player_ref": "nfl-3161",
+   "espn": "2573079"
+  },
+  "00-0039924": {
+   "player_ref": "nfl-11667"
+  },
+  "00-0041349": {
+   "player_ref": "nfl-13615"
+  },
+  "00-0041342": {
+   "player_ref": "nfl-13621"
+  },
+  "00-0040661": {
+   "player_ref": "nfl-12555"
+  },
+  "00-0040498": {
+   "player_ref": "nfl-12946"
+  },
+  "00-0039714": {
+   "player_ref": "nfl-11905"
+  },
+  "00-0040624": {
+   "player_ref": "nfl-13196"
+  },
+  "00-0033336": {
+   "player_ref": "nfl-4413",
+   "espn": "3056916"
+  },
+  "00-0041124": {
+   "player_ref": "nfl-13559"
+  },
+  "00-0038807": {
+   "player_ref": "nfl-11086"
+  },
+  "00-0040786": {
+   "player_ref": "nfl-12072"
+  },
+  "00-0041354": {
+   "player_ref": "nfl-13618"
+  },
+  "00-0041495": {
+   "player_ref": "nfl-13391"
+  },
+  "00-0041054": {
+   "player_ref": "nfl-13462"
+  },
+  "00-0038578": {
+   "player_ref": "nfl-10939"
+  },
+  "00-0028872": {
+   "player_ref": "nfl-1202",
+   "espn": "15153"
+  },
+  "00-0037184": {
+   "player_ref": "nfl-8285"
+  },
+  "00-0036348": {
+   "player_ref": "nfl-6901",
+   "espn": "4046537"
+  },
+  "00-0041352": {
+   "player_ref": "nfl-13619"
+  },
+  "00-0040494": {
+   "player_ref": "nfl-12775"
+  },
+  "00-0040970": {
+   "player_ref": "nfl-13890"
+  },
+  "00-0039419": {
+   "player_ref": "nfl-11818"
+  },
+  "00-0037404": {
+   "player_ref": "nfl-8822"
+  },
+  "00-0041432": {
+   "player_ref": "nfl-13987"
+  },
+  "00-0039720": {
+   "player_ref": "nfl-11930"
+  },
+  "00-0034488": {
+   "player_ref": "nfl-5519",
+   "espn": "4334405"
+  },
+  "00-0041481": {
+   "player_ref": "nfl-14040"
+  },
+  "00-0037301": {
+   "player_ref": "nfl-8496"
+  },
+  "00-0041351": {
+   "player_ref": "nfl-13623"
+  },
+  "00-0041475": {
+   "player_ref": "nfl-14038"
+  },
+  "00-0041348": {
+   "player_ref": "nfl-13609"
+  },
+  "00-0040712": {
+   "player_ref": "nfl-13230"
+  },
+  "00-0039828": {
+   "player_ref": "nfl-11812"
+  },
   "00-0039404": {
+   "player_ref": "nfl-11792",
    "adp": 159.2
   },
+  "00-0036979": {
+   "player_ref": "nfl-7638"
+  },
+  "00-0039539": {
+   "player_ref": "nfl-11855"
+  },
   "00-0040200": {
+   "player_ref": "nfl-12713",
    "adp": 167.8
   },
+  "00-0041123": {
+   "player_ref": "nfl-13295"
+  },
+  "00-0037205": {
+   "player_ref": "nfl-8726"
+  },
+  "00-0038610": {
+   "player_ref": "nfl-11007"
+  },
+  "00-0041319": {
+   "player_ref": "nfl-13962"
+  },
+  "00-0037811": {
+   "player_ref": "nfl-8371"
+  },
+  "00-0036813": {
+   "player_ref": "nfl-7921"
+  },
+  "00-0039147": {
+   "player_ref": "nfl-10881"
+  },
+  "00-0040716": {
+   "player_ref": "nfl-12654"
+  },
+  "00-0039692": {
+   "player_ref": "nfl-12115"
+  },
+  "00-0034828": {
+   "player_ref": "nfl-5030",
+   "espn": "3122793"
+  },
+  "00-0041325": {
+   "player_ref": "nfl-13966"
+  },
+  "00-0040147": {
+   "player_ref": "nfl-12592"
+  },
+  "00-0040570": {
+   "player_ref": "nfl-13124"
+  },
+  "00-0037330": {
+   "player_ref": "nfl-8322"
+  },
+  "00-0041322": {
+   "player_ref": "nfl-13967"
+  },
+  "00-0040310": {
+   "player_ref": "nfl-12872"
+  },
+  "00-0041324": {
+   "player_ref": "nfl-13885"
+  },
+  "00-0040171": {
+   "player_ref": "nfl-12587"
+  },
+  "00-0040246": {
+   "player_ref": "nfl-12727"
+  },
+  "00-0036643": {
+   "player_ref": "nfl-7815"
+  },
+  "00-0041088": {
+   "player_ref": "nfl-13510"
+  },
+  "00-0033132": {
+   "player_ref": "nfl-3233",
+   "espn": "2574056"
+  },
+  "00-0041321": {
+   "player_ref": "nfl-13915"
+  },
+  "00-0036307": {
+   "player_ref": "nfl-6928",
+   "espn": "4036651"
+  },
+  "00-0040252": {
+   "player_ref": "nfl-12726"
+  },
+  "00-0041318": {
+   "player_ref": "nfl-13830"
+  },
+  "00-0039289": {
+   "player_ref": "nfl-12031"
+  },
+  "00-0038426": {
+   "player_ref": "nfl-11263"
+  },
+  "00-0039390": {
+   "player_ref": "nfl-11809"
+  },
+  "00-0040226": {
+   "player_ref": "nfl-12728"
+  },
+  "00-0037253": {
+   "player_ref": "nfl-8359"
+  },
+  "00-0040593": {
+   "player_ref": "nfl-13204"
+  },
+  "00-0037493": {
+   "player_ref": "nfl-8532"
+  },
+  "00-0036198": {
+   "player_ref": "nfl-7123",
+   "espn": "4046545"
+  },
+  "00-0031330": {
+   "player_ref": "nfl-2098",
+   "espn": "16771"
+  },
+  "00-0041109": {
+   "player_ref": "nfl-13542"
+  },
+  "00-0041317": {
+   "player_ref": "nfl-13963"
+  },
+  "00-0041405": {
+   "player_ref": "nfl-14025"
+  },
+  "00-0034720": {
+   "player_ref": "nfl-5726",
+   "espn": "3129446"
+  },
+  "00-0041314": {
+   "player_ref": "nfl-13827"
+  },
+  "00-0038476": {
+   "player_ref": "nfl-11292"
+  },
+  "00-0041412": {
+   "player_ref": "nfl-14032"
+  },
+  "00-0036193": {
+   "player_ref": "nfl-6848",
+   "espn": "3925350"
+  },
+  "00-0038601": {
+   "player_ref": "nfl-10968"
+  },
+  "00-0038304": {
+   "player_ref": "nfl-11469"
+  },
+  "00-0041451": {
+   "player_ref": "nfl-14034"
+  },
+  "00-0041326": {
+   "player_ref": "nfl-13277"
+  },
+  "00-0036408": {
+   "player_ref": "nfl-6816",
+   "espn": "4258199"
+  },
+  "00-0039229": {
+   "player_ref": "nfl-11653"
+  },
+  "00-0036867": {
+   "player_ref": "nfl-7721"
+  },
+  "00-0041390": {
+   "player_ref": "nfl-13387"
+  },
+  "00-0041327": {
+   "player_ref": "nfl-13834"
+  },
+  "00-0040155": {
+   "player_ref": "nfl-12650"
+  },
+  "00-0035668": {
+   "player_ref": "nfl-5904",
+   "espn": "3917660"
+  },
+  "00-0036619": {
+   "player_ref": "nfl-7650"
+  },
+  "00-0040539": {
+   "player_ref": "nfl-13025"
+  },
+  "00-0040537": {
+   "player_ref": "nfl-13028"
+  },
+  "00-0035242": {
+   "player_ref": "nfl-5875",
+   "espn": "3917331"
+  },
+  "00-0039622": {
+   "player_ref": "nfl-11893"
+  },
+  "00-0039288": {
+   "player_ref": "nfl-12051"
+  },
+  "00-0039388": {
+   "player_ref": "nfl-11747"
+  },
+  "00-0037283": {
+   "player_ref": "nfl-8306"
+  },
+  "00-0040643": {
+   "player_ref": "nfl-12619"
+  },
+  "00-0038588": {
+   "player_ref": "nfl-10985"
+  },
+  "00-0036253": {
+   "player_ref": "nfl-7044",
+   "espn": "4035661"
+  },
+  "00-0034361": {
+   "player_ref": "nfl-5036",
+   "espn": "3931399"
+  },
+  "00-0035316": {
+   "player_ref": "nfl-6302",
+   "espn": "3124890"
+  },
+  "00-0040125": {
+   "player_ref": "nfl-12569"
+  },
+  "00-0039401": {
+   "player_ref": "nfl-11796"
+  },
+  "00-0039860": {
+   "player_ref": "nfl-11675"
+  },
+  "00-0041089": {
+   "player_ref": "nfl-13509"
+  },
+  "00-0037250": {
+   "player_ref": "nfl-8390"
+  },
+  "00-0038566": {
+   "player_ref": "nfl-10964"
+  },
+  "00-0036927": {
+   "player_ref": "nfl-7647"
+  },
+  "00-0037500": {
+   "player_ref": "nfl-8528"
+  },
+  "00-0039376": {
+   "player_ref": "nfl-11562"
+  },
+  "00-0039339": {
+   "player_ref": "nfl-11670"
+  },
+  "00-0036421": {
+   "player_ref": "nfl-7036",
+   "espn": "4035663"
+  },
+  "00-0040541": {
+   "player_ref": "nfl-13030"
+  },
+  "00-0039518": {
+   "player_ref": "nfl-12079"
+  },
+  "00-0037013": {
+   "player_ref": "nfl-7538"
+  },
+  "00-0033063": {
+   "player_ref": "nfl-3882",
+   "espn": "2575788"
+  },
+  "00-0036587": {
+   "player_ref": "nfl-7970"
+  },
+  "00-0041509": {
+   "player_ref": "nfl-13377"
+  },
+  "00-0039241": {
+   "player_ref": "nfl-11951"
+  },
+  "00-0041143": {
+   "player_ref": "nfl-13832"
+  },
+  "00-0040530": {
+   "player_ref": "nfl-13066"
+  },
+  "00-0041095": {
+   "player_ref": "nfl-13532"
+  },
+  "00-0032434": {
+   "player_ref": "nfl-3357",
+   "espn": "2574511"
+  },
+  "00-0039446": {
+   "player_ref": "nfl-12131"
+  },
+  "00-0041462": {
+   "player_ref": "nfl-13367"
+  },
+  "00-0040431": {
+   "player_ref": "nfl-12888"
+  },
+  "00-0041139": {
+   "player_ref": "nfl-13949"
+  },
+  "00-0040694": {
+   "player_ref": "nfl-12581"
+  },
+  "00-0039829": {
+   "player_ref": "nfl-11807"
+  },
+  "00-0039000": {
+   "player_ref": "nfl-10878"
+  },
+  "00-0041145": {
+   "player_ref": "nfl-13833"
+  },
+  "00-0034248": {
+   "player_ref": "nfl-5534",
+   "espn": "3932901"
+  },
+  "00-0037612": {
+   "player_ref": "nfl-8443"
+  },
+  "00-0041102": {
+   "player_ref": "nfl-13531"
+  },
+  "00-0031503": {
+   "player_ref": "nfl-2306",
+   "espn": "2969939"
+  },
+  "00-0041578": {
+   "player_ref": "nfl-14053"
+  },
+  "00-0033290": {
+   "player_ref": "nfl-4190",
+   "espn": "3115303"
+  },
+  "00-0036998": {
+   "player_ref": "nfl-7666"
+  },
+  "00-0039019": {
+   "player_ref": "nfl-10896"
+  },
+  "00-0038094": {
+   "player_ref": "nfl-8467"
+  },
+  "00-0037807": {
+   "player_ref": "nfl-8455"
+  },
+  "00-0040181": {
+   "player_ref": "nfl-12582"
+  },
+  "00-0037259": {
+   "player_ref": "nfl-8396"
+  },
+  "00-0037468": {
+   "player_ref": "nfl-8578"
+  },
+  "00-0041144": {
+   "player_ref": "nfl-13882"
+  },
+  "00-0034673": {
+   "player_ref": "nfl-4968",
+   "espn": "3929950"
+  },
+  "00-0039861": {
+   "player_ref": "nfl-11674"
+  },
+  "00-0038937": {
+   "player_ref": "nfl-10924"
+  },
+  "00-0038399": {
+   "player_ref": "nfl-11000"
+  },
+  "00-0036941": {
+   "player_ref": "nfl-7698"
+  },
+  "00-0040123": {
+   "player_ref": "nfl-12572"
+  },
+  "00-0039634": {
+   "player_ref": "nfl-12076"
+  },
+  "00-0040133": {
+   "player_ref": "nfl-12601"
+  },
+  "00-0038108": {
+   "player_ref": "nfl-8157"
+  },
+  "00-0040398": {
+   "player_ref": "nfl-12538"
+  },
+  "00-0036987": {
+   "player_ref": "nfl-7685"
+  },
+  "00-0041056": {
+   "player_ref": "nfl-13303"
+  },
+  "00-0038097": {
+   "player_ref": "nfl-8258"
+  },
+  "00-0041199": {
+   "player_ref": "nfl-13826"
+  },
+  "00-0041237": {
+   "player_ref": "nfl-13839"
+  },
+  "00-0041515": {
+   "player_ref": "nfl-14051"
+  },
+  "00-0034768": {
+   "player_ref": "nfl-5023",
+   "espn": "3129473"
+  },
+  "00-0041507": {
+   "player_ref": "nfl-14050"
+  },
+  "00-0041038": {
+   "player_ref": "nfl-13386"
+  },
+  "00-0041201": {
+   "player_ref": "nfl-13326"
+  },
+  "00-0038123": {
+   "player_ref": "nfl-8395"
+  },
+  "00-0041026": {
+   "player_ref": "nfl-13363"
+  },
+  "00-0040396": {
+   "player_ref": "nfl-12920"
+  },
+  "00-0029607": {
+   "player_ref": "nfl-1052",
+   "espn": "14958"
+  },
+  "00-0037255": {
+   "player_ref": "nfl-8458"
+  },
+  "00-0041410": {
+   "player_ref": "nfl-14023"
+  },
+  "00-0040405": {
+   "player_ref": "nfl-12925"
+  },
+  "00-0036500": {
+   "player_ref": "nfl-7841"
+  },
+  "00-0039372": {
+   "player_ref": "nfl-11766"
+  },
+  "00-0034794": {
+   "player_ref": "nfl-5119",
+   "espn": "3124679"
+  },
+  "00-0039145": {
+   "player_ref": "nfl-10907"
+  },
+  "00-0040397": {
+   "player_ref": "nfl-12923"
+  },
+  "00-0036622": {
+   "player_ref": "nfl-7645"
+  },
+  "00-0037083": {
+   "player_ref": "nfl-8382"
+  },
+  "00-0040214": {
+   "player_ref": "nfl-12701"
+  },
+  "00-0038194": {
+   "player_ref": "nfl-12429"
+  },
+  "00-0038223": {
+   "player_ref": "nfl-12426"
+  },
+  "00-0040165": {
+   "player_ref": "nfl-12639"
+  },
+  "00-0041267": {
+   "player_ref": "nfl-13825"
+  },
+  "00-0037526": {
+   "player_ref": "nfl-8618"
+  },
+  "00-0037748": {
+   "player_ref": "nfl-8507"
+  },
+  "00-0038545": {
+   "player_ref": "nfl-10877"
+  },
+  "00-0034789": {
+   "player_ref": "nfl-4963",
+   "espn": "3925345"
+  },
+  "00-0036300": {
+   "player_ref": "nfl-7012",
+   "espn": "4243009"
+  },
+  "00-0039790": {
+   "player_ref": "nfl-11671"
+  },
+  "00-0041200": {
+   "player_ref": "nfl-13873"
+  },
+  "00-0039886": {
+   "player_ref": "nfl-11691"
+  },
+  "00-0033260": {
+   "player_ref": "nfl-4325",
+   "espn": "2983155"
+  },
+  "00-0041238": {
+   "player_ref": "nfl-13950"
+  },
+  "00-0039267": {
+   "player_ref": "nfl-12102"
+  },
+  "00-0040749": {
+   "player_ref": "nfl-12604"
+  },
+  "00-0027973": {
+   "player_ref": "nfl-829",
+   "espn": "14012"
+  },
+  "00-0036313": {
+   "player_ref": "nfl-6950",
+   "espn": "4035239"
+  },
+  "00-0038978": {
+   "player_ref": "nfl-10925"
+  },
+  "00-0038112": {
+   "player_ref": "nfl-8453"
+  },
+  "00-0040687": {
+   "player_ref": "nfl-12586"
+  },
+  "00-0037312": {
+   "player_ref": "nfl-8369"
+  },
+  "00-0040891": {
+   "player_ref": "nfl-13335"
+  },
+  "00-0040905": {
+   "player_ref": "nfl-13561"
+  },
+  "00-0039841": {
+   "player_ref": "nfl-11678"
+  },
+  "00-0040922": {
+   "player_ref": "nfl-13591"
+  },
+  "00-0034116": {
+   "player_ref": "nfl-5452",
+   "espn": "3115481"
+  },
   "00-0033787": {
+   "player_ref": "nfl-4195",
+   "espn": "3050478",
    "adp": 144.8
   },
+  "00-0040422": {
+   "player_ref": "nfl-12795"
+  },
+  "00-0039072": {
+   "player_ref": "nfl-10963"
+  },
+  "00-0038386": {
+   "player_ref": "nfl-10888"
+  },
+  "00-0039826": {
+   "player_ref": "nfl-11752"
+  },
+  "00-0040708": {
+   "player_ref": "nfl-12566"
+  },
+  "00-0032580": {
+   "player_ref": "nfl-3415",
+   "espn": "2971027"
+  },
+  "00-0037073": {
+   "player_ref": "nfl-8269"
+  },
+  "00-0040928": {
+   "player_ref": "nfl-13823"
+  },
+  "00-0039140": {
+   "player_ref": "nfl-10962"
+  },
+  "00-0037002": {
+   "player_ref": "nfl-7665"
+  },
+  "00-0034993": {
+   "player_ref": "nfl-6284",
+   "espn": "3139368"
+  },
+  "00-0035662": {
+   "player_ref": "nfl-5848",
+   "espn": "4241372"
+  },
+  "00-0040923": {
+   "player_ref": "nfl-13877"
+  },
+  "00-0039013": {
+   "player_ref": "nfl-10873"
+  },
+  "00-0036271": {
+   "player_ref": "nfl-6927",
+   "espn": "4050373"
+  },
+  "00-0037079": {
+   "player_ref": "nfl-8374"
+  },
+  "00-0040925": {
+   "player_ref": "nfl-13821"
+  },
+  "00-0037098": {
+   "player_ref": "nfl-8235"
+  },
+  "00-0040013": {
+   "player_ref": "nfl-12667"
+  },
+  "00-0038400": {
+   "player_ref": "nfl-9230"
+  },
+  "00-0037833": {
+   "player_ref": "nfl-8321"
+  },
+  "00-0040929": {
+   "player_ref": "nfl-13820"
+  },
+  "00-0039001": {
+   "player_ref": "nfl-10920"
+  },
+  "00-0040631": {
+   "player_ref": "nfl-13004"
+  },
+  "00-0036418": {
+   "player_ref": "nfl-6815",
+   "espn": "3917657"
+  },
+  "00-0036333": {
+   "player_ref": "nfl-7113",
+   "espn": "4037333"
+  },
+  "00-0036775": {
+   "player_ref": "nfl-7865"
+  },
+  "00-0039109": {
+   "player_ref": "nfl-10884"
+  },
+  "00-0033729": {
+   "player_ref": "nfl-4654",
+   "espn": "3051397"
+  },
+  "00-0040231": {
+   "player_ref": "nfl-12733"
+  },
   "00-0031136": {
+   "player_ref": "nfl-1945",
+   "espn": "17372",
    "adp": 156.4
   },
+  "00-0034051": {
+   "player_ref": "nfl-4848",
+   "espn": "2978524"
+  },
+  "00-0039626": {
+   "player_ref": "nfl-12210"
+  },
+  "00-0035286": {
+   "player_ref": "nfl-6220",
+   "espn": "3116689"
+  },
+  "00-0034277": {
+   "player_ref": "nfl-5071",
+   "espn": "3929846"
+  },
+  "00-0040678": {
+   "player_ref": "nfl-12561"
+  },
+  "00-0041259": {
+   "player_ref": "nfl-13723"
+  },
+  "00-0040341": {
+   "player_ref": "nfl-12899"
+  },
+  "00-0039716": {
+   "player_ref": "nfl-11927"
+  },
+  "00-0041565": {
+   "player_ref": "nfl-13289"
+  },
+  "00-0037274": {
+   "player_ref": "nfl-8342"
+  },
+  "00-0041400": {
+   "player_ref": "nfl-13548"
+  },
+  "00-0041430": {
+   "player_ref": "nfl-14027"
+  },
+  "00-0040284": {
+   "player_ref": "nfl-13098"
+  },
+  "00-0036614": {
+   "player_ref": "nfl-7634"
+  },
+  "00-0038135": {
+   "player_ref": "nfl-8323"
+  },
+  "00-0039167": {
+   "player_ref": "nfl-10913"
+  },
+  "00-0041261": {
+   "player_ref": "nfl-13819"
+  },
+  "00-0039609": {
+   "player_ref": "nfl-11894"
+  },
+  "00-0041262": {
+   "player_ref": "nfl-13813"
+  },
+  "00-0041263": {
+   "player_ref": "nfl-13292"
+  },
+  "00-0038409": {
+   "player_ref": "nfl-9510"
+  },
+  "00-0039389": {
+   "player_ref": "nfl-11811"
+  },
+  "00-0036280": {
+   "player_ref": "nfl-6867",
+   "espn": "4040615"
+  },
+  "00-0039358": {
+   "player_ref": "nfl-11733"
+  },
+  "00-0034771": {
+   "player_ref": "nfl-4972",
+   "espn": "3116407"
+  },
+  "00-0038577": {
+   "player_ref": "nfl-10940"
+  },
+  "00-0036323": {
+   "player_ref": "nfl-6807",
+   "espn": "4242207"
+  },
+  "00-0039741": {
+   "player_ref": "nfl-11727"
+  },
+  "00-0041398": {
+   "player_ref": "nfl-13433"
+  },
+  "00-0041401": {
+   "player_ref": "nfl-13576"
+  },
+  "00-0040527": {
+   "player_ref": "nfl-12955"
+  },
+  "00-0038645": {
+   "player_ref": "nfl-11028"
+  },
+  "00-0039555": {
+   "player_ref": "nfl-12216"
+  },
+  "00-0033886": {
+   "player_ref": "nfl-4070",
+   "espn": "3045282"
+  },
+  "00-0041488": {
+   "player_ref": "nfl-14042"
+  },
+  "00-0039871": {
+   "player_ref": "nfl-11664"
+  },
+  "00-0040203": {
+   "player_ref": "nfl-12511"
+  },
+  "00-0039896": {
+   "player_ref": "nfl-11690"
+  },
+  "00-0038866": {
+   "player_ref": "nfl-11121"
+  },
+  "00-0037812": {
+   "player_ref": "nfl-8457"
+  },
+  "00-0039020": {
+   "player_ref": "nfl-10959"
+  },
+  "00-0041463": {
+   "player_ref": "nfl-13452"
+  },
+  "00-0039309": {
+   "player_ref": "nfl-11668"
+  },
+  "00-0037821": {
+   "player_ref": "nfl-8446"
+  },
+  "00-0037003": {
+   "player_ref": "nfl-7673"
+  },
+  "00-0040588": {
+   "player_ref": "nfl-12659"
+  },
+  "00-0038769": {
+   "player_ref": "nfl-11248"
+  },
+  "00-0039839": {
+   "player_ref": "nfl-11704"
+  },
+  "00-0037332": {
+   "player_ref": "nfl-8795"
+  },
+  "00-0039169": {
+   "player_ref": "nfl-10891"
+  },
+  "00-0038922": {
+   "player_ref": "nfl-11470"
+  },
+  "00-0035704": {
+   "player_ref": "nfl-5854",
+   "espn": "3924327"
+  },
+  "00-0036994": {
+   "player_ref": "nfl-7672"
+  },
+  "00-0040764": {
+   "player_ref": "nfl-13045"
+  },
+  "00-0040063": {
+   "player_ref": "nfl-13142"
+  },
+  "00-0040055": {
+   "player_ref": "nfl-13046"
+  },
+  "00-0040673": {
+   "player_ref": "nfl-12510"
+  },
+  "00-0039944": {
+   "player_ref": "nfl-12436"
+  },
   "00-0031492": {
+   "player_ref": "nfl-2747",
+   "espn": "2473037",
    "adp": 142.1
   },
+  "00-0037137": {
+   "player_ref": "nfl-8275"
+  },
+  "00-0036363": {
+   "player_ref": "nfl-6808",
+   "espn": "3914630"
+  },
+  "00-0034974": {
+   "player_ref": "nfl-5876",
+   "espn": "4046675"
+  },
+  "00-0040873": {
+   "player_ref": "nfl-13396"
+  },
+  "00-0040652": {
+   "player_ref": "nfl-12719"
+  },
+  "00-0040026": {
+   "player_ref": "nfl-12876"
+  },
+  "00-0040910": {
+   "player_ref": "nfl-13564"
+  },
+  "00-0034160": {
+   "player_ref": "nfl-5011",
+   "espn": "3929851"
+  },
+  "00-0040621": {
+   "player_ref": "nfl-13199"
+  },
+  "00-0040733": {
+   "player_ref": "nfl-12597"
+  },
+  "00-0040058": {
+   "player_ref": "nfl-13151"
+  },
+  "00-0038764": {
+   "player_ref": "nfl-11230"
+  },
+  "00-0041476": {
+   "player_ref": "nfl-14037"
+  },
+  "00-0040647": {
+   "player_ref": "nfl-12680"
+  },
+  "00-0038765": {
+   "player_ref": "nfl-11233"
+  },
+  "00-0039815": {
+   "player_ref": "nfl-11734"
+  },
+  "00-0034350": {
+   "player_ref": "nfl-5061",
+   "espn": "3120358"
+  },
+  "00-0040064": {
+   "player_ref": "nfl-13044"
+  },
+  "00-0038658": {
+   "player_ref": "nfl-11065"
+  },
+  "00-0040721": {
+   "player_ref": "nfl-12590"
+  },
+  "00-0038865": {
+   "player_ref": "nfl-11122"
+  },
+  "00-0036329": {
+   "player_ref": "nfl-6855",
+   "espn": "3858271"
+  },
+  "00-0035829": {
+   "player_ref": "nfl-7469",
+   "espn": "3920814"
+  },
+  "00-0035743": {
+   "player_ref": "nfl-6740",
+   "espn": "3129116"
+  },
+  "00-0041358": {
+   "player_ref": "nfl-13664"
+  },
+  "00-0041061": {
+   "player_ref": "nfl-13487"
+  },
+  "00-0036256": {
+   "player_ref": "nfl-6889",
+   "espn": "3916075"
+  },
+  "00-0040245": {
+   "player_ref": "nfl-12742"
+  },
+  "00-0035821": {
+   "player_ref": "nfl-7215",
+   "espn": "3125280"
+  },
+  "00-0036638": {
+   "player_ref": "nfl-7827"
+  },
+  "00-0036563": {
+   "player_ref": "nfl-7819"
+  },
+  "00-0039351": {
+   "player_ref": "nfl-11723"
+  },
+  "00-0039700": {
+   "player_ref": "nfl-11922"
+  },
+  "00-0034982": {
+   "player_ref": "nfl-6056",
+   "espn": "3916903"
+  },
   "00-0034173": {
+   "player_ref": "nfl-5189",
+   "espn": "4034949",
    "adp": 161.9
   },
+  "00-0041090": {
+   "player_ref": "nfl-13507"
+  },
+  "00-0039696": {
+   "player_ref": "nfl-11923"
+  },
+  "00-0034815": {
+   "player_ref": "nfl-5041",
+   "espn": "3138826"
+  },
+  "00-0036844": {
+   "player_ref": "nfl-7821"
+  },
+  "00-0038039": {
+   "player_ref": "nfl-8261"
+  },
+  "00-0041078": {
+   "player_ref": "nfl-13520"
+  },
+  "00-0032701": {
+   "player_ref": "nfl-3439",
+   "espn": "2577185"
+  },
+  "00-0041362": {
+   "player_ref": "nfl-13655"
+  },
+  "00-0038554": {
+   "player_ref": "nfl-10936"
+  },
+  "00-0027224": {
+   "player_ref": "nfl-548",
+   "espn": "13729"
+  },
+  "00-0039148": {
+   "player_ref": "nfl-10904"
+  },
+  "00-0040589": {
+   "player_ref": "nfl-12477"
+  },
+  "00-0041406": {
+   "player_ref": "nfl-14033"
+  },
+  "00-0035413": {
+   "player_ref": "nfl-6612",
+   "espn": "3116097"
+  },
+  "00-0036972": {
+   "player_ref": "nfl-7527"
+  },
+  "00-0039360": {
+   "player_ref": "nfl-11731"
+  },
+  "00-0034867": {
+   "player_ref": "nfl-5781",
+   "espn": "3115928"
+  },
+  "00-0040185": {
+   "player_ref": "nfl-12668"
+  },
+  "00-0040660": {
+   "player_ref": "nfl-12602"
+  },
+  "00-0040135": {
+   "player_ref": "nfl-12630"
+  },
+  "00-0037831": {
+   "player_ref": "nfl-8501"
+  },
+  "00-0039881": {
+   "player_ref": "nfl-11797"
+  },
+  "00-0039345": {
+   "player_ref": "nfl-11697"
+  },
+  "00-0040560": {
+   "player_ref": "nfl-13073"
+  },
+  "00-0039435": {
+   "player_ref": "nfl-11842"
+  },
+  "00-0041359": {
+   "player_ref": "nfl-13663"
+  },
+  "00-0041361": {
+   "player_ref": "nfl-13662"
+  },
+  "00-0033914": {
+   "player_ref": "nfl-4118",
+   "espn": "3043107"
+  },
+  "00-0035254": {
+   "player_ref": "nfl-6003",
+   "espn": "3894856"
+  },
+  "00-0036411": {
+   "player_ref": "nfl-6888",
+   "espn": "4034790"
+  },
+  "00-0041253": {
+   "player_ref": "nfl-13959"
+  },
+  "00-0038748": {
+   "player_ref": "nfl-11092"
+  },
+  "00-0040427": {
+   "player_ref": "nfl-12789"
+  },
+  "00-0040417": {
+   "player_ref": "nfl-12794"
+  },
+  "00-0040747": {
+   "player_ref": "nfl-12576"
+  },
+  "00-0041338": {
+   "player_ref": "nfl-13971"
+  },
+  "00-0039063": {
+   "player_ref": "nfl-10879"
+  },
   "00-0035358": {
+   "player_ref": "nfl-6650",
+   "espn": "3150744",
    "adp": 155.4
   },
+  "00-0039902": {
+   "player_ref": "nfl-11679"
+  },
+  "00-0035942": {
+   "player_ref": "nfl-7346",
+   "espn": "3909013"
+  },
+  "00-0040415": {
+   "player_ref": "nfl-12776"
+  },
+  "00-0037984": {
+   "player_ref": "nfl-8361"
+  },
+  "00-0033910": {
+   "player_ref": "nfl-4122",
+   "espn": "2979482"
+  },
+  "00-0040158": {
+   "player_ref": "nfl-12645"
+  },
+  "00-0041435": {
+   "player_ref": "nfl-14020"
+  },
+  "00-0037570": {
+   "player_ref": "nfl-8801"
+  },
+  "00-0041339": {
+   "player_ref": "nfl-13676"
+  },
+  "00-0040384": {
+   "player_ref": "nfl-12919"
+  },
+  "00-0038817": {
+   "player_ref": "nfl-11426"
+  },
+  "00-0039905": {
+   "player_ref": "nfl-11659"
+  },
+  "00-0040425": {
+   "player_ref": "nfl-13132"
+  },
+  "00-0040143": {
+   "player_ref": "nfl-12605"
+  },
+  "00-0035100": {
+   "player_ref": "nfl-6111",
+   "espn": "3886812"
+  },
+  "00-0041251": {
+   "player_ref": "nfl-13425"
+  },
+  "00-0041424": {
+   "player_ref": "nfl-13763"
+  },
+  "00-0040105": {
+   "player_ref": "nfl-13020"
+  },
+  "00-0040416": {
+   "player_ref": "nfl-12790"
+  },
+  "00-0041502": {
+   "player_ref": "nfl-13379"
+  },
+  "00-0041057": {
+   "player_ref": "nfl-13382"
+  },
+  "00-0041252": {
+   "player_ref": "nfl-13957"
+  },
+  "00-0037835": {
+   "player_ref": "nfl-8454"
+  },
+  "00-0040349": {
+   "player_ref": "nfl-12822"
+  },
+  "00-0032399": {
+   "player_ref": "nfl-3272",
+   "espn": "2575164"
+  },
+  "00-0040625": {
+   "player_ref": "nfl-13187"
+  },
+  "00-0041583": {
+   "player_ref": "nfl-13762"
+  },
+  "00-0039596": {
+   "player_ref": "nfl-11966"
+  },
+  "00-0032943": {
+   "player_ref": "nfl-3383",
+   "espn": "2577619"
+  },
+  "00-0034067": {
+   "player_ref": "nfl-4959",
+   "espn": "2980138"
+  },
+  "00-0039049": {
+   "player_ref": "nfl-10980"
+  },
+  "00-0039846": {
+   "player_ref": "nfl-11705"
+  },
+  "00-0037268": {
+   "player_ref": "nfl-8384"
+  },
+  "00-0038121": {
+   "player_ref": "nfl-8333"
+  },
+  "00-0035632": {
+   "player_ref": "nfl-5908",
+   "espn": "4036134"
+  },
+  "00-0041479": {
+   "player_ref": "nfl-13365"
+  },
+  "00-0040914": {
+   "player_ref": "nfl-13680"
+  },
+  "00-0039858": {
+   "player_ref": "nfl-11742"
+  },
+  "00-0035672": {
+   "player_ref": "nfl-6065",
+   "espn": "3926229"
+  },
+  "00-0037758": {
+   "player_ref": "nfl-8310"
+  },
+  "00-0040445": {
+   "player_ref": "nfl-12772"
+  },
+  "00-0040503": {
+   "player_ref": "nfl-12944"
+  },
+  "00-0040557": {
+   "player_ref": "nfl-12754"
+  },
+  "00-0038620": {
+   "player_ref": "nfl-11019"
+  },
+  "00-0040912": {
+   "player_ref": "nfl-13776"
+  },
+  "00-0038550": {
+   "player_ref": "nfl-9998"
+  },
+  "00-0039731": {
+   "player_ref": "nfl-11672"
+  },
+  "00-0040190": {
+   "player_ref": "nfl-12664"
+  },
+  "00-0037663": {
+   "player_ref": "nfl-8398"
+  },
+  "00-0038613": {
+   "player_ref": "nfl-10997"
+  },
+  "00-0039023": {
+   "player_ref": "nfl-11113"
+  },
   "00-0035192": {
+   "player_ref": "nfl-6528",
+   "espn": "3124084",
    "adp": 148.0
+  },
+  "00-0041508": {
+   "player_ref": "nfl-13395"
+  },
+  "00-0038703": {
+   "player_ref": "nfl-11185"
+  },
+  "00-0040141": {
+   "player_ref": "nfl-12588"
+  },
+  "00-0040674": {
+   "player_ref": "nfl-13220"
+  },
+  "00-0037055": {
+   "player_ref": "nfl-8745"
+  },
+  "00-0040920": {
+   "player_ref": "nfl-13893"
+  },
+  "00-0040201": {
+   "player_ref": "nfl-12712"
+  },
+  "00-0033869": {
+   "player_ref": "nfl-3976",
+   "espn": "3039707"
+  },
+  "00-0038711": {
+   "player_ref": "nfl-11350"
+  },
+  "00-0027557": {
+   "player_ref": "nfl-525",
+   "espn": "13848"
+  },
+  "00-0039034": {
+   "player_ref": "nfl-10886"
+  },
+  "00-0040918": {
+   "player_ref": "nfl-13891"
+  },
+  "00-0039235": {
+   "player_ref": "nfl-11841"
+  },
+  "00-0035889": {
+   "player_ref": "nfl-7307",
+   "espn": "3915398"
+  },
+  "00-0037155": {
+   "player_ref": "nfl-8860"
+  },
+  "00-0040919": {
+   "player_ref": "nfl-13600"
+  },
+  "00-0039152": {
+   "player_ref": "nfl-9999"
+  },
+  "00-0040318": {
+   "player_ref": "nfl-13176"
+  },
+  "00-0041117": {
+   "player_ref": "nfl-13557"
+  },
+  "00-0039913": {
+   "player_ref": "nfl-11702"
+  },
+  "00-0037092": {
+   "player_ref": "nfl-8522"
+  },
+  "00-0038535": {
+   "player_ref": "nfl-10938"
+  },
+  "00-0038388": {
+   "player_ref": "nfl-10990"
+  },
+  "00-0037826": {
+   "player_ref": "nfl-8351"
+  },
+  "00-0041182": {
+   "player_ref": "nfl-13968"
+  },
+  "00-0034302": {
+   "player_ref": "nfl-5580",
+   "espn": "3127273"
+  },
+  "00-0040317": {
+   "player_ref": "nfl-13120"
+  },
+  "00-0041176": {
+   "player_ref": "nfl-13760"
+  },
+  "00-0040864": {
+   "player_ref": "nfl-13761"
+  },
+  "00-0039906": {
+   "player_ref": "nfl-11699"
+  },
+  "00-0034465": {
+   "player_ref": "nfl-5792",
+   "espn": "3125248"
+  },
+  "00-0039368": {
+   "player_ref": "nfl-11778"
+  },
+  "00-0040686": {
+   "player_ref": "nfl-12558"
+  },
+  "00-0036286": {
+   "player_ref": "nfl-6800",
+   "espn": "4242205"
+  },
+  "00-0040216": {
+   "player_ref": "nfl-12684"
+  },
+  "00-0032380": {
+   "player_ref": "nfl-3159",
+   "espn": "3051890"
+  },
+  "00-0037819": {
+   "player_ref": "nfl-8362"
+  },
+  "00-0041181": {
+   "player_ref": "nfl-13854"
+  },
+  "00-0032268": {
+   "player_ref": "nfl-2307",
+   "espn": "2576980"
+  },
+  "00-0041108": {
+   "player_ref": "nfl-13536"
+  },
+  "00-0039898": {
+   "player_ref": "nfl-11676"
+  },
+  "00-0037616": {
+   "player_ref": "nfl-8392"
+  },
+  "00-0036940": {
+   "player_ref": "nfl-7626"
+  },
+  "00-0038100": {
+   "player_ref": "nfl-8394"
+  },
+  "00-0039149": {
+   "player_ref": "nfl-10903"
+  },
+  "00-0041180": {
+   "player_ref": "nfl-13870"
+  },
+  "00-0041178": {
+   "player_ref": "nfl-13418"
+  },
+  "00-0036618": {
+   "player_ref": "nfl-7652"
+  },
+  "00-0039677": {
+   "player_ref": "nfl-11558"
+  },
+  "00-0041028": {
+   "player_ref": "nfl-13375"
+  },
+  "00-0030140": {
+   "player_ref": "nfl-1506",
+   "espn": "16166"
+  },
+  "00-0040731": {
+   "player_ref": "nfl-12595"
+  },
+  "00-0031156": {
+   "player_ref": "nfl-1844",
+   "espn": "17378"
+  },
+  "00-0039681": {
+   "player_ref": "nfl-11934"
+  },
+  "00-0035655": {
+   "player_ref": "nfl-5920",
+   "espn": "3915297"
   }
  }
 }

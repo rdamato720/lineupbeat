@@ -131,7 +131,7 @@ if HOME_BEFORE is not None:
     # three-card teaser, so the old cap no longer applies. What matters is
     # that the count shown equals the cards rendered.
     import re as _re
-    _cards = len(_re.findall(r'<article class="wc"', home))
+    _cards = len(_re.findall(r'<article class="tile wire"', home))
     check("the replacement renders one card per publication",
           _cards == len(pubs), f"{_cards} cards, {len(pubs)} published")
     check("the homepage offers the full Wire", 'href="/nfl/wire/"' in home)

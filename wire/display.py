@@ -72,5 +72,11 @@ def decorate(publication: dict) -> dict:
         out["display_adp"] = extra["adp"]
     if extra.get("projected_points") is not None:
         out["display_projected_points"] = extra["projected_points"]
+    # Image identity. Not a fantasy value: the site keys headshots on its
+    # own player id, and without it the card can only draw initials.
+    if extra.get("player_ref"):
+        out["display_player_ref"] = extra["player_ref"]
+    if extra.get("espn"):
+        out["display_espn"] = extra["espn"]
     out["display_join"] = "player_id" if extra else "no match"
     return out

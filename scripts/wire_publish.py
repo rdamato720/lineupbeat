@@ -77,6 +77,10 @@ def main():
     ids = []
     for c in approved:
         payload = {
+            # The stable id travels with the card. Without it the homepage
+            # renderer has only a name, cannot reach the photo resolver or
+            # the display join, and falls back to initials for everyone.
+            "player_id": c.get("player_id") or "",
             "player_name": c["player"], "team": c["team"],
             "position": c["position"],
             "reader_label": c["reader_label"],

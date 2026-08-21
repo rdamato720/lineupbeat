@@ -72,6 +72,7 @@ jobs:
 
       - name: Run pipeline
         env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           # Which provider reads X. Unset means twitterapi, so
           # removing this variable is the whole rollback.
@@ -202,6 +203,24 @@ jobs:
           # URL rendered the front page under it and read as a soft 404.
           python scripts/build_404.py
 
+          # The Wire's YouTube pilot: discovery only.
+          #
+          # Discovery and transcripts are different endpoints with different
+          # limits. Discovery asks playlistItems for titles, ids and
+          # durations at one quota unit a channel and never touches the
+          # caption endpoint. Transcripts are rate-limited by IP -- roughly
+          # forty requests in an hour earns a day-long IpBlocked -- and a
+          # runner's IP is shared with everyone else on it, so the transcript
+          # half of the pilot stays on a laptop. `--plan` is the discovery
+          # half: it reports what is eligible and requests nothing.
+          #
+          # It runs here, inside the pipeline step, so what it discovers is
+          # banked by the cache save that follows; and with `|| true`,
+          # because a YouTube outage must never stop the website from
+          # publishing. A transcript cooldown does not suppress it -- the
+          # cooldown belongs to the endpoint that is not being called.
+          python scripts/wire_youtube_ingest.py --plan || true
+
           # The editorial Wire, and deliberately without `|| true`.
           #
           # This step validates data/wire_publications.json before it writes
@@ -262,6 +281,17 @@ jobs:
         with:
           path: beatwire.db
           key: beatwire-db-${{ github.run_id }}
+
+      # The YouTube pilot's numbers, on the job summary. Reports only: it
+      # requests nothing and swallows its own errors, so it can neither spend
+      # a quota unit nor fail the job.
+      - name: The Wire, YouTube pilot status
+        if: always()
+        continue-on-error: true
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          python scripts/wire_youtube_summary.py >> "$GITHUB_STEP_SUMMARY" || true
 
       # A daily snapshot of the database, kept off the critical path.
       #
