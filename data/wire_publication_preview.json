@@ -1,0 +1,52 @@
+{
+ "published": false,
+ "note": "preview only; nothing written to wire_publications.json",
+ "reviewer": "ralph",
+ "model": "claude-sonnet-4-5",
+ "prompt_version": "wire-fantasy-2026-08-21c",
+ "corpus_version": "eval-v2",
+ "cards": [
+  {
+   "player": "Anthony Richardson",
+   "team": "IND",
+   "position": "QB",
+   "direction": "NEUTRAL",
+   "evidence": "Anthony Richardson led the Colts' second-team offense down the field for a field goal score as time expired, and then the second-team defense followed suit with an impressive tip drill interception to wrap up training camp festivities at Grand Park once and for all.",
+   "commentary": "Anthony Richardson took second-team reps on the final day of Colts training camp, leading that unit down the field for a field goal. This is a concerning depth-chart signal for a quarterback who would typically be expected to work with the first team. The passage does not establish whether this was a rotation, a demotion, or who took first-team reps. One practice observation from one reporter warrants monitoring but does not confirm a permanent role change.",
+   "source": "Sports Illustrated -- IND",
+   "author": "Noah Compton",
+   "date": "2026-08-20T22:19:33Z",
+   "url": "https://www.si.com/nfl/colts/onsi/biggest-takeaways-from-final-day-of-colts-training-camp-keenan-allen-makes",
+   "ownership": "INDEPENDENT",
+   "evidence_candidate_id": "170556b0704ccba95f20",
+   "reviewer_action": "APPROVE_WITH_EDIT",
+   "framing_conflict": "marked NEUTRAL but the wording argues a negative: 'concerning'"
+  }
+ ],
+ "held_back": [
+  {
+   "player": "Quinn Ewers",
+   "why": "awaiting a reviewer decision"
+  },
+  {
+   "player": "Chris Blair",
+   "why": "inconclusive on a technical quotation failure"
+  },
+  {
+   "player": "Joe Burrow",
+   "why": "inconclusive on a technical quotation failure"
+  },
+  {
+   "player": "Geno Smith",
+   "why": "ABSTAIN \u2014 nothing to publish"
+  },
+  {
+   "player": "Eli Heidenreich",
+   "why": "awaiting a reviewer decision"
+  },
+  {
+   "player": "Mark Andrews",
+   "why": "NO_FANTASY_IMPACT \u2014 nothing to publish"
+  }
+ ]
+}

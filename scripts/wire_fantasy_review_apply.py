@@ -21,7 +21,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from wire.store import WireStore
 
-ACTIONS = {"APPROVE", "APPROVE_WITH_EDIT", "REJECT_UNSUPPORTED",
+# A quotation the model transcribed inexactly says nothing about whether its
+# football reading was right, so it is recorded as inconclusive rather than
+# counted as a substantive abstention.
+INCONCLUSIVE = "INCONCLUSIVE_TECHNICAL"
+
+ACTIONS = {"APPROVE", "APPROVE_WITH_EDIT", INCONCLUSIVE, "REJECT_UNSUPPORTED",
            "REJECT_OVERSTATED", "REJECT_NOT_FANTASY_RELEVANT",
            "REJECT_WRONG_HORIZON", "REJECT_WRONG_STRENGTH",
            "REJECT_WRONG_PLAYER", "REJECT_WRONG_DIRECTION",
@@ -67,7 +72,9 @@ def main():
             continue
         original = row["original_commentary"] or row["lineupbeat_commentary"]
         reason = d.get("reason", "") or (act if act.startswith("REJECT") else "")
-        status = ("APPROVED" if act.startswith("APPROVE") else "REJECTED")
+        status = (INCONCLUSIVE if act == INCONCLUSIVE
+                  else "APPROVED" if act.startswith("APPROVE")
+                  else "REJECTED")
         edited = d.get("edited_text", "") if act == "APPROVE_WITH_EDIT" else ""
         if args.dry_run:
             print(f"  would set {fid[:12]} -> {status} ({act})")

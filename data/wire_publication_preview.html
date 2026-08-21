@@ -1,0 +1,48 @@
+<title>Wire publication preview</title>
+<style>
+:root{--bg:#faf9f7;--ink:#171a15;--quiet:#5d6157;--rule:#dcd9d2;--own:#8a5a1b;
+--up:#2f6b3a;--down:#a4342a}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+--bg:#12140f;--ink:#e9e7e1;--quiet:#9a9d93;--rule:#2c2f27;--own:#d6a55a;
+--up:#7fbf8a;--down:#e08a7f}}
+:root[data-theme="dark"]{--bg:#12140f;--ink:#e9e7e1;--quiet:#9a9d93;
+--rule:#2c2f27;--own:#d6a55a;--up:#7fbf8a;--down:#e08a7f}
+body{background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,
+BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:30px}
+.wrap{max-width:640px;margin:0 auto}
+h1{font-size:1.4rem;margin-bottom:4px}
+.sub{color:var(--quiet);font-size:.87rem;margin-bottom:26px}
+.card{border:1px solid var(--rule);border-radius:12px;padding:20px;margin:20px 0}
+.who{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.name{font-size:1.12rem;font-weight:700}
+.pos{color:var(--quiet);font-size:.82rem;text-transform:uppercase;
+letter-spacing:.06em}
+.dir{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;
+font-weight:700;padding:2px 9px;border-radius:99px;border:1px solid}
+.up{color:var(--up);border-color:var(--up)}
+.down{color:var(--down);border-color:var(--down)}
+.flat{color:var(--quiet);border-color:var(--rule)}
+.lab{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+color:var(--quiet);font-weight:700;margin:16px 0 6px}
+.rep{border-left:3px solid var(--rule);padding-left:13px;font-size:.97rem}
+.lb{border-left:3px solid var(--own);padding-left:13px;font-size:.97rem}
+.src{color:var(--quiet);font-size:.8rem;margin-top:9px}
+.src a{color:var(--quiet)}
+.own{color:var(--own);font-weight:600}
+.held{border:1px dashed var(--rule);border-radius:10px;padding:14px;
+margin:16px 0;color:var(--quiet);font-size:.88rem}
+</style>
+<div class="wrap">
+<h1>The Wire — publication preview</h1>
+<p class="sub">Exactly what a reader would see. Nothing is published; wire_publications.json is untouched and projections are unchanged.</p>
+<div class="card">
+<div class="who"><span class="name">Anthony Richardson</span><span class="pos">IND QB</span><span class="dir flat">Worth noting</span></div>
+<div class="lab">What the reporter found</div>
+<div class="rep">Anthony Richardson led the Colts&#x27; second-team offense down the field for a field goal score as time expired, and then the second-team defense followed suit with an impressive tip drill interception to wrap up training camp festivities at Grand Park once and for all.</div>
+<p class="src">Noah Compton, Sports Illustrated -- IND &middot; 2026-08-20<br><a href="https://www.si.com/nfl/colts/onsi/biggest-takeaways-from-final-day-of-colts-training-camp-keenan-allen-makes">https://www.si.com/nfl/colts/onsi/biggest-takeaways-from-final-day-of-colts-training-cam</a></p>
+<div class="lab">Lineup Beat impact</div>
+<div class="lb">Anthony Richardson took second-team reps on the final day of Colts training camp, leading that unit down the field for a field goal. This is a concerning depth-chart signal for a quarterback who would typically be expected to work with the first team. The passage does not establish whether this was a rotation, a demotion, or who took first-team reps. One practice observation from one reporter warrants monitoring but does not confirm a permanent role change.</div>
+<p class="src" style="color:var(--down)"><b>Not publishable as written:</b> marked NEUTRAL but the wording argues a negative: &#x27;concerning&#x27;</p>
+</div>
+<div class="held"><b>Held back from this preview</b><ul><li>Quinn Ewers &mdash; awaiting a reviewer decision</li><li>Chris Blair &mdash; inconclusive on a technical quotation failure</li><li>Joe Burrow &mdash; inconclusive on a technical quotation failure</li><li>Geno Smith &mdash; ABSTAIN — nothing to publish</li><li>Eli Heidenreich &mdash; awaiting a reviewer decision</li><li>Mark Andrews &mdash; NO_FANTASY_IMPACT — nothing to publish</li></ul></div>
+</div>

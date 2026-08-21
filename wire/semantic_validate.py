@@ -56,8 +56,40 @@ AVAILABILITY = {"LIMITED_PARTICIPATION", "RETURN_TO_PRACTICE", "INJURY",
                 "TRANSACTION"}
 
 
+QUOTE_FAILURE = "supporting_quote is not an exact substring of the evidence"
+
+SMART = {"\u2019": "'", "\u2018": "'", "\u201c": '"', "\u201d": '"',
+         "\u2013": "-", "\u2014": "-", "\u2026": "..."}
+
+
 def _norm(s: str) -> str:
-    return " ".join((s or "").lower().split())
+    """Fold typography, then whitespace. Nothing else.
+
+    Publishers use curly quotes and dashes; a model reproducing a passage
+    faithfully may return straight ones. That difference says nothing about
+    whether the quotation came from the passage, which is what this check
+    exists to prove.
+    """
+    t = s or ""
+    for a, b in SMART.items():
+        t = t.replace(a, b)
+    return " ".join(t.lower().split())
+
+
+def _quote_in(quote: str, segment: str) -> bool:
+    """Is this quotation drawn from the passage, word for word?
+
+    A dangling delimiter is tolerated and nothing else is. Segmentation cuts
+    mid-quotation, so a passage can end without its closing quotation mark
+    and a model reproducing it adds one back: the Joe Burrow quotation was
+    132 characters against a 131-character passage, identical but for a
+    trailing '"'. The words must still match exactly.
+    """
+    q, seg = _norm(quote), _norm(segment)
+    if q in seg:
+        return True
+    trimmed = q.strip("\"' ")
+    return bool(trimmed) and trimmed in seg
 
 
 def _words(text: str) -> set:
@@ -93,8 +125,8 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
     #    passage does not contain is not an answer about this passage.
     if not a.supporting_quote:
         bad.append("no supporting_quote")
-    elif _norm(a.supporting_quote) not in seg_norm:
-        bad.append("supporting_quote is not an exact substring of the evidence")
+    elif not _quote_in(a.supporting_quote, segment):
+        bad.append(QUOTE_FAILURE)
 
     # A response that says INTERPRET while naming NO_FANTASY_IMPACT as its
     # mechanism is telling us two different things. Read it as the answer it
@@ -272,6 +304,52 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
     if a.projection_action == "UPDATE_RECOMMENDED" and a.impact_strength == "LOW":
         bad.append("UPDATE_RECOMMENDED on LOW evidence")
     return bad
+
+
+def evaluate_with_retry(provider, segment, meta, players, registry):
+    """Assess, and on an inexact quotation only, retry the quotation once.
+
+    A wrong quotation is a transcription failure, not a judgement failure --
+    Chris Blair and Joe Burrow both abstained on it while their football
+    reading was never examined. Every other validation failure still
+    abstains without a second chance, because those are judgements and a
+    retry would be asking the model to try again until it agrees with us.
+
+    Both attempts are stored.
+    """
+    a = provider.evaluate(segment, meta, players)
+    first_fails = validate(a, segment, players, registry, meta)
+    a.attempts = [{"attempt": 1, "supporting_quote": a.supporting_quote,
+                   "validation_failures": list(first_fails),
+                   "tokens_in": a.tokens_in, "tokens_out": a.tokens_out,
+                   "latency_ms": a.latency_ms}]
+
+    only_quote = first_fails and all(f == QUOTE_FAILURE for f in first_fails)
+    if only_quote and hasattr(provider, "retry_quote"):
+        quote, info = provider.retry_quote(segment, a)
+        a.retry_attempted = True
+        a.retry_reason = QUOTE_FAILURE
+        if quote:
+            a.supporting_quote = quote
+            a.tokens_in += info.get("input_tokens", 0)
+            a.tokens_out += info.get("output_tokens", 0)
+            a.latency_ms += info.get("latency_ms", 0)
+            a.cost_usd += (info.get("input_tokens", 0) * 3.00 / 1_000_000
+                           + info.get("output_tokens", 0) * 15.00 / 1_000_000)
+        a.attempts.append({"attempt": 2, "supporting_quote": quote or "",
+                           "error": info.get("error", ""),
+                           "tokens_in": info.get("input_tokens", 0),
+                           "tokens_out": info.get("output_tokens", 0),
+                           "latency_ms": info.get("latency_ms", 0)})
+
+    a = enforce(a, segment, players, registry, meta)
+    if getattr(a, "retry_attempted", False) and a.validation_failures:
+        # Still wrong after the one retry: pending for a person, not a
+        # third attempt and not a rules-engine substitute.
+        a.abstention_reason = (
+            f"quote retry did not produce an exact substring; "
+            f"{a.abstention_reason or ''}")[:400]
+    return a
 
 
 def enforce(a: sem.SemanticAssessment, segment: str, players: list,

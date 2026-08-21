@@ -96,7 +96,34 @@ class ClaudeSemanticProvider(sem.FantasySemanticProvider):
         a.output_hash = sem.output_hash(payload)
         return a
 
-    def _call(self, prompt: str) -> tuple[dict, dict]:
+    def retry_quote(self, evidence_segment: str, prior):
+        """One controlled retry, for an inexact quotation and nothing else.
+
+        Scoped deliberately: the model is shown its own assessment and told
+        it is not under review, and the schema it must answer has exactly one
+        field. It cannot use the retry to revisit the football, and it cannot
+        silently repair any other validation failure -- those still abstain.
+        """
+        t0 = time.time()
+        prompt = sem.build_quote_retry_prompt(evidence_segment, prior)
+        try:
+            if self._transport is not None:
+                payload, usage = self._transport(prompt)
+            else:
+                payload, usage = self._call(
+                    prompt, system=sem.QUOTE_RETRY_SYSTEM,
+                    schema=sem.QUOTE_RETRY_SCHEMA, tool="record_quote")
+        except Exception as e:
+            return None, {"error": redact(e)[:160],
+                          "latency_ms": int((time.time() - t0) * 1000)}
+        return payload.get("supporting_quote", ""), {
+            "input_tokens": usage.get("input_tokens", 0),
+            "output_tokens": usage.get("output_tokens", 0),
+            "latency_ms": int((time.time() - t0) * 1000)}
+
+    def _call(self, prompt: str, system: str | None = None,
+              schema: dict | None = None,
+              tool: str = TOOL_NAME) -> tuple[dict, dict]:
         if self._transport is not None:
             return self._transport(prompt)
         key = os.environ.get("ANTHROPIC_API_KEY")
@@ -109,7 +136,8 @@ class ClaudeSemanticProvider(sem.FantasySemanticProvider):
         client = anthropic.Anthropic(api_key=key)
         try:
             resp = client.messages.create(
-                model=self.model, max_tokens=1600, system=sem.SYSTEM,
+                model=self.model, max_tokens=1600,
+                system=system or sem.SYSTEM,
                 # Reduced variability, not determinism. Two runs of the same
                 # gold case disagreed -- one produced "No. 1" in its
                 # commentary and tripped a validator check the other never
@@ -118,10 +146,10 @@ class ClaudeSemanticProvider(sem.FantasySemanticProvider):
                 # stored with its model, prompt, schema and run version so
                 # results can be compared rather than assumed to repeat.
                 temperature=0,
-                tools=[{"name": TOOL_NAME,
-                        "description": "Record the assessment of this passage.",
-                        "input_schema": sem.RESPONSE_SCHEMA}],
-                tool_choice={"type": "tool", "name": TOOL_NAME},
+                tools=[{"name": tool,
+                        "description": "Record the result.",
+                        "input_schema": schema or sem.RESPONSE_SCHEMA}],
+                tool_choice={"type": "tool", "name": tool},
                 messages=[{"role": "user", "content": prompt}])
         except Exception as e:
             raise ClaudeProviderError(redact(f"{type(e).__name__}: {e}")) from None

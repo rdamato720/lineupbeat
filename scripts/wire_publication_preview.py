@@ -1,0 +1,216 @@
+#!/usr/bin/env python3
+"""The final preview: exactly what a reader would see, and nothing else.
+
+    python3 scripts/wire_publication_preview.py --build
+
+Every earlier page was a review instrument -- validator verdicts, token
+counts, confidence scores, provider metadata. None of that is published.
+This page shows the reader-facing card as it would actually appear, so the
+last approval is given on the words themselves rather than on a metric.
+
+It writes nothing to wire_publications.json. Publishing remains disabled.
+"""
+
+from __future__ import annotations
+
+import argparse
+import html
+import json
+import re
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+REVIEW = Path("data/reviews/seven_provisional.json")
+SEVEN = Path("data/wire_seven_review.json")
+OUT_HTML = Path("data/wire_publication_preview.html")
+OUT_JSON = Path("data/wire_publication_preview.json")
+
+# Reviewer edits, applied to the text before it is shown.
+EDITS = {"Anthony Richardson": {"direction": "NEUTRAL"}}
+
+DIRECTION_WORD = {"POSITIVE": "Trending up", "NEGATIVE": "Trending down",
+                  "NEUTRAL": "Worth noting", "UNCLEAR": "Unclear"}
+
+
+def publishable(case, decisions):
+    """Only an approved interpretation reaches a reader."""
+    key = case["player"].lower().replace(" ", "-").replace(".", "")
+    d = decisions.get(key)
+    if not d:
+        return None, "no reviewer decision"
+    act = d["action"]
+    if act == "INCONCLUSIVE_TECHNICAL":
+        return None, "inconclusive on a technical quotation failure"
+    if act == "PENDING":
+        return None, "awaiting a reviewer decision"
+    if act.startswith("REJECT"):
+        return None, f"rejected ({d.get('reason', '')})"
+    if case["decision"] != "INTERPRET":
+        return None, f"{case['decision']} — nothing to publish"
+    return d, ""
+
+
+NEGATIVE_WORDS = re.compile(
+    r"(?i)\b(concerning|worrying|demot|slipping|losing ground|troubl|"
+    r"bad sign|red flag|setback|behind)\b")
+POSITIVE_WORDS = re.compile(
+    r"(?i)\b(encouraging|promising|breakout|boost|ascend|surging|"
+    r"good sign|stepping up)\b")
+
+
+def framing_conflict(direction: str, text: str) -> str:
+    """Does the prose argue a direction the reviewer did not set?
+
+    A reviewer changing the direction field does not rewrite the sentences.
+    Anthony Richardson was set NEUTRAL while his commentary still called the
+    reps "a concerning depth-chart signal", so the badge said one thing and
+    the words said another. Publishing that would be worse than publishing
+    either on its own.
+    """
+    if direction == "NEUTRAL":
+        if NEGATIVE_WORDS.search(text):
+            return ("marked NEUTRAL but the wording argues a negative: "
+                    f"{NEGATIVE_WORDS.search(text).group(0)!r}")
+        if POSITIVE_WORDS.search(text):
+            return ("marked NEUTRAL but the wording argues a positive: "
+                    f"{POSITIVE_WORDS.search(text).group(0)!r}")
+    if direction == "POSITIVE" and NEGATIVE_WORDS.search(text):
+        return "marked POSITIVE but the wording is negative"
+    if direction == "NEGATIVE" and POSITIVE_WORDS.search(text):
+        return "marked NEGATIVE but the wording is positive"
+    return ""
+
+
+def render(cards, held) -> str:
+    e = html.escape
+    p = ["<title>Wire publication preview</title>", """<style>
+:root{--bg:#faf9f7;--ink:#171a15;--quiet:#5d6157;--rule:#dcd9d2;--own:#8a5a1b;
+--up:#2f6b3a;--down:#a4342a}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+--bg:#12140f;--ink:#e9e7e1;--quiet:#9a9d93;--rule:#2c2f27;--own:#d6a55a;
+--up:#7fbf8a;--down:#e08a7f}}
+:root[data-theme="dark"]{--bg:#12140f;--ink:#e9e7e1;--quiet:#9a9d93;
+--rule:#2c2f27;--own:#d6a55a;--up:#7fbf8a;--down:#e08a7f}
+body{background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,
+BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:30px}
+.wrap{max-width:640px;margin:0 auto}
+h1{font-size:1.4rem;margin-bottom:4px}
+.sub{color:var(--quiet);font-size:.87rem;margin-bottom:26px}
+.card{border:1px solid var(--rule);border-radius:12px;padding:20px;margin:20px 0}
+.who{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.name{font-size:1.12rem;font-weight:700}
+.pos{color:var(--quiet);font-size:.82rem;text-transform:uppercase;
+letter-spacing:.06em}
+.dir{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;
+font-weight:700;padding:2px 9px;border-radius:99px;border:1px solid}
+.up{color:var(--up);border-color:var(--up)}
+.down{color:var(--down);border-color:var(--down)}
+.flat{color:var(--quiet);border-color:var(--rule)}
+.lab{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+color:var(--quiet);font-weight:700;margin:16px 0 6px}
+.rep{border-left:3px solid var(--rule);padding-left:13px;font-size:.97rem}
+.lb{border-left:3px solid var(--own);padding-left:13px;font-size:.97rem}
+.src{color:var(--quiet);font-size:.8rem;margin-top:9px}
+.src a{color:var(--quiet)}
+.own{color:var(--own);font-weight:600}
+.held{border:1px dashed var(--rule);border-radius:10px;padding:14px;
+margin:16px 0;color:var(--quiet);font-size:.88rem}
+</style>""", '<div class="wrap">', "<h1>The Wire — publication preview</h1>",
+    '<p class="sub">Exactly what a reader would see. Nothing is published; '
+    'wire_publications.json is untouched and projections are unchanged.</p>']
+
+    for c in cards:
+        d = c["direction"]
+        cls = "up" if d == "POSITIVE" else "down" if d == "NEGATIVE" else "flat"
+        p.append('<div class="card">')
+        p.append(f'<div class="who"><span class="name">{e(c["player"])}</span>'
+                 f'<span class="pos">{e(c["team"])} {e(c["position"])}</span>'
+                 f'<span class="dir {cls}">{e(DIRECTION_WORD.get(d, d))}</span>'
+                 f'</div>')
+        p.append('<div class="lab">What the reporter found</div>')
+        p.append(f'<div class="rep">{e(c["evidence"])}</div>')
+        own = c["ownership"] == "TEAM_OWNED"
+        p.append(f'<p class="src">{e(c["author"] or "Staff")}, '
+                 f'{e(c["source"])}{" &middot; " if c["date"] else ""}'
+                 f'{e(c["date"][:10])}'
+                 + (' &middot; <span class="own">Official team source</span>'
+                    if own else "")
+                 + f'<br><a href="{e(c["url"])}">{e(c["url"][:88])}</a></p>')
+        p.append('<div class="lab">Lineup Beat impact</div>')
+        p.append(f'<div class="lb">{e(c["commentary"])}</div>')
+        if c.get("framing_conflict"):
+            p.append(f'<p class="src" style="color:var(--down)">'
+                     f'<b>Not publishable as written:</b> '
+                     f'{e(c["framing_conflict"])}</p>')
+        p.append('</div>')
+
+    if held:
+        p.append('<div class="held"><b>Held back from this preview</b><ul>'
+                 + "".join(f"<li>{e(h['player'])} &mdash; {e(h['why'])}</li>"
+                           for h in held) + "</ul></div>")
+    p.append("</div>")
+    return "\n".join(p)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--build", action="store_true")
+    args = ap.parse_args()
+
+    review = json.loads(REVIEW.read_text())
+    seven = json.loads(SEVEN.read_text())
+    decisions = review["decisions"]
+
+    cards, held = [], []
+    for case in seven["cases"]:
+        d, why = publishable(case, decisions)
+        if d is None:
+            held.append({"player": case["player"], "why": why})
+            continue
+        direction = EDITS.get(case["player"], {}).get(
+            "direction", case["direction"])
+        commentary = d.get("edited_text") or case["commentary"]
+        cards.append({
+            "player": case["player"], "team": case["team"],
+            "position": case["position"], "direction": direction,
+            "evidence": case["text"], "commentary": commentary,
+            "source": case.get("source_name", ""),
+            "author": case.get("author", ""),
+            "date": str(case.get("published_at", "")),
+            "url": case.get("article_url", ""),
+            "ownership": case.get("ownership", "INDEPENDENT"),
+            "evidence_candidate_id": case.get("evidence_candidate_id", ""),
+            "reviewer_action": d["action"],
+            "framing_conflict": framing_conflict(direction, commentary),
+        })
+
+    OUT_JSON.write_text(json.dumps(
+        {"published": False, "note": "preview only; nothing written to "
+                                     "wire_publications.json",
+         "reviewer": review["reviewer"], "model": review["model"],
+         "prompt_version": review["prompt_version"],
+         "corpus_version": review["corpus_version"],
+         "cards": cards, "held_back": held}, indent=1) + "\n")
+    OUT_HTML.write_text(render(cards, held) + "\n")
+
+    conflicted = [c for c in cards if c.get("framing_conflict")]
+    print(f"  {len(cards)} card(s) would be visible to a reader")
+    if conflicted:
+        print(f"  {len(conflicted)} NOT publishable as written:")
+        for c in conflicted:
+            print(f"    {c['player']}: {c['framing_conflict']}")
+    for c in cards:
+        print(f"    {c['player']:<20}{c['team']} {c['position']:<4}"
+              f"{c['direction']:<10}{c['reviewer_action']}")
+    print(f"  {len(held)} held back:")
+    for h in held:
+        print(f"    {h['player']:<20}{h['why']}")
+    print(f"  wrote {OUT_HTML} and {OUT_JSON}")
+    print("  publishing remains disabled")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main() or 0)

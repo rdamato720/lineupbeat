@@ -1470,6 +1470,53 @@ _rhtml = (ROOT / "data" / "wire_fantasy_review.html").read_text()
 for _r in ("REJECT_WRONG_DIRECTION", "REJECT_WRONG_UNIT"):
     check(f"the review page offers {_r}", _r in _rhtml)
 
+# ------------------------------------- quote retry and publication preview
+check("the retry schema has exactly one field",
+      list(SEM.QUOTE_RETRY_SCHEMA["properties"]) == ["supporting_quote"])
+check("the retry tells the model its interpretation is not under review",
+      "not yours to revisit" in SEM.QUOTE_RETRY_SYSTEM)
+check("the retry forbids tidying punctuation",
+      "complete or tidy punctuation" in SEM.QUOTE_RETRY_SYSTEM)
+_svsrc = (ROOT / "wire" / "semantic_validate.py").read_text()
+check("only an inexact quotation earns a retry",
+      "all(f == QUOTE_FAILURE for f in first_fails)" in _svsrc)
+check("both attempts are stored",
+      '"attempt": 1' in _svsrc and '"attempt": 2' in _svsrc)
+check("a failed retry leaves the case pending, not repaired",
+      "did not produce an exact substring" in _svsrc)
+
+# The quotation check folds typography and tolerates a dangling delimiter,
+# and nothing more: the words must still be the passage's words.
+check("curly and straight quotes compare equal",
+      SV._quote_in("they\u2019ve looked all camp", "they've looked all camp"))
+check("a dangling closing quote is tolerated",
+      SV._quote_in('he looked sharp."', "she said he looked sharp."))
+check("different words are still rejected",
+      not SV._quote_in("he took first-team reps", "he took second-team reps"))
+check("a paraphrase is still rejected",
+      not SV._quote_in("Richardson ran with the twos",
+                       "Anthony Richardson led the second-team offense"))
+
+import wire_publication_preview as PP
+check("a NEUTRAL card whose wording argues negative is flagged",
+      PP.framing_conflict("NEUTRAL", "This is a concerning depth-chart signal."))
+check("a consistent card is not flagged",
+      not PP.framing_conflict("NEUTRAL", "He took second-team reps on Tuesday."))
+# The file names wire_publications.json in prose to say it does not touch
+# it; what matters is that it never opens it for writing.
+_ppsrc = code_only((ROOT / "scripts" / "wire_publication_preview.py").read_text())
+check("the publication preview never writes the published file",
+      "export_publications" not in _ppsrc
+      and not re.search(r"wire_publications[^\"']*[\"']\s*\)?\.write", _ppsrc)
+      and not FORBIDDEN_NAMES.search(_ppsrc))
+_pp = json.loads((ROOT / "data" / "wire_publication_preview.json").read_text())
+check("the preview marks itself unpublished", _pp["published"] is False)
+check("only reviewer-approved cases reach the preview",
+      all(c["reviewer_action"].startswith("APPROVE") for c in _pp["cards"]))
+check("abstentions and inconclusive cases are held back",
+      any("inconclusive" in h["why"] for h in _pp["held_back"])
+      and any("ABSTAIN" in h["why"] for h in _pp["held_back"]))
+
 # --------------------------------------------- Claude as the interpreter
 # available() must mean usable, not present. The first version returned True
 # for an eight-character placeholder, so the guard that stops the rules

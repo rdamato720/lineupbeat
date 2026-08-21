@@ -135,6 +135,9 @@ class SemanticAssessment:
     cost_usd: float = 0.0
     latency_ms: int = 0
     validation_failures: list = field(default_factory=list)
+    attempts: list = field(default_factory=list)
+    retry_attempted: bool = False
+    retry_reason: str = ""
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -210,6 +213,38 @@ availability, snap share, routes, targets, carries, red-zone work, \
 depth-chart position. Never write "worth monitoring", "may affect his \
 value", or "a defined role" when no role is defined. State what was seen and \
 what it does not establish. Do not mention rankings, ADP or projections."""
+
+
+QUOTE_RETRY_SYSTEM = """You previously assessed a passage and named a supporting quotation that does not appear in it verbatim.
+
+Your only task now is to copy ONE exact contiguous substring of the passage that supports the assessment you already made. Copy it character for character, including punctuation and capitalisation. Do not paraphrase, trim, join two separate parts, correct anything, or add ellipses. Do not \
+complete or tidy punctuation: if the passage ends without a closing \
+quotation mark, neither does your answer.
+
+Do not reconsider the football interpretation. The claim subject, mechanism, direction, strength and horizon are already decided and are not yours to revisit here. Return only the quotation."""
+
+QUOTE_RETRY_SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["supporting_quote"],
+    "properties": {"supporting_quote": {"type": "string"}},
+}
+
+
+def build_quote_retry_prompt(segment: str, prior) -> str:
+    return f"""PASSAGE
+\"\"\"{segment}\"\"\"
+
+THE ASSESSMENT YOU ALREADY MADE, WHICH IS NOT UNDER REVIEW
+  claim subject : {prior.claim_subject_player_name}
+  mechanism     : {prior.fantasy_mechanism}
+  direction     : {prior.direction}
+
+THE QUOTATION YOU RETURNED, WHICH IS NOT IN THE PASSAGE
+  {prior.supporting_quote!r}
+
+Return one exact contiguous substring of the passage above that supports \
+that assessment."""
 
 
 def build_prompt(segment: str, meta: dict, players: list) -> str:

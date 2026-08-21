@@ -1,0 +1,47 @@
+{
+ "reviewed_at": "2026-08-21",
+ "reviewer": "ralph",
+ "provider": "claude",
+ "model": "claude-sonnet-4-5",
+ "prompt_version": "wire-fantasy-2026-08-21c",
+ "schema_version": "semantic-v1",
+ "corpus_version": "eval-v2",
+ "note": "provisional decisions on the seven real cases",
+ "decisions": {
+  "geno-smith": {
+   "action": "APPROVE",
+   "subject": "Geno Smith",
+   "verdict_on": "ABSTAIN",
+   "reason": "",
+   "note": "The passage is relayed reporting and contains no explicit return-to-practice evidence. Abstention is correct."
+  },
+  "anthony-richardson": {
+   "action": "APPROVE_WITH_EDIT",
+   "subject": "Anthony Richardson",
+   "field_changed": "direction",
+   "from": "NEGATIVE",
+   "to": "NEUTRAL",
+   "note": "Second-team reps in an unsettled quarterback competition do not establish a demotion without a verified prior baseline."
+  },
+  "mark-andrews": {
+   "action": "APPROVE",
+   "subject": "Mark Andrews",
+   "verdict_on": "NO_FANTASY_IMPACT",
+   "note": "Correctly suppresses non-actionable information."
+  },
+  "chris-blair": {
+   "action": "INCONCLUSIVE_TECHNICAL",
+   "subject": "Chris Blair",
+   "note": "Abstained on an inexact supporting quotation, not on a football judgement. Not a substantive abstention."
+  },
+  "joe-burrow": {
+   "action": "INCONCLUSIVE_TECHNICAL",
+   "subject": "Joe Burrow",
+   "note": "Abstained on an inexact supporting quotation, not on a football judgement. Not a substantive abstention."
+  },
+  "quinn-ewers": {"action": "PENDING", "subject": "Quinn Ewers",
+   "note": "No decision recorded yet."},
+  "eli-heidenreich": {"action": "PENDING", "subject": "Eli Heidenreich",
+   "note": "No decision recorded yet."}
+ }
+}
