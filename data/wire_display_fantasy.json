@@ -1,0 +1,2633 @@
+{
+ "schema_version": "display-v1",
+ "note": "Display only, keyed by stable player_id. Never read during evidence interpretation, relevance assessment or review. Carries no player name, so nothing downstream can match on one.",
+ "generated_at": "2026-08-21T16:33:18+00:00",
+ "count": 609,
+ "players": {
+  "00-0039139": {
+   "position_rank": "RB1",
+   "projected_points": 332.2,
+   "adp": 1.8
+  },
+  "00-0038542": {
+   "position_rank": "RB2",
+   "projected_points": 326.4,
+   "adp": 1.7
+  },
+  "00-0036900": {
+   "position_rank": "WR1",
+   "projected_points": 279.4,
+   "adp": 3.9
+  },
+  "00-0039075": {
+   "position_rank": "WR2",
+   "projected_points": 283.4,
+   "adp": 3.1
+  },
+  "00-0040122": {
+   "position_rank": "RB3",
+   "projected_points": 246.0,
+   "adp": 15.1
+  },
+  "00-0036223": {
+   "position_rank": "RB4",
+   "projected_points": 285.8,
+   "adp": 7.4
+  },
+  "00-0038543": {
+   "position_rank": "WR3",
+   "projected_points": 263.7,
+   "adp": 5.4
+  },
+  "00-0036963": {
+   "position_rank": "WR4",
+   "projected_points": 255.8,
+   "adp": 6.4
+  },
+  "00-0040666": {
+   "position_rank": "RB5",
+   "projected_points": 261.3,
+   "adp": 21.3
+  },
+  "00-0032764": {
+   "position_rank": "RB6",
+   "projected_points": 256.7,
+   "adp": 17.4
+  },
+  "00-0039040": {
+   "position_rank": "RB7",
+   "projected_points": 256.1,
+   "adp": 10.2
+  },
+  "00-0037248": {
+   "position_rank": "RB8",
+   "projected_points": 255.2,
+   "adp": 12.7
+  },
+  "00-0033280": {
+   "position_rank": "RB9",
+   "projected_points": 288.1,
+   "adp": 6.5
+  },
+  "00-0036322": {
+   "position_rank": "WR5",
+   "projected_points": 231.0,
+   "adp": 12.4
+  },
+  "00-0038134": {
+   "position_rank": "RB10",
+   "projected_points": 247.9,
+   "adp": 23.4
+  },
+  "00-0038597": {
+   "position_rank": "RB11",
+   "projected_points": 247.4,
+   "adp": 13.5
+  },
+  "00-0034844": {
+   "position_rank": "RB12",
+   "projected_points": 243.0,
+   "adp": 20.2
+  },
+  "00-0036358": {
+   "position_rank": "WR6",
+   "projected_points": 223.6,
+   "adp": 10.7
+  },
+  "00-0037238": {
+   "position_rank": "WR7",
+   "projected_points": 222.5,
+   "adp": 10.2
+  },
+  "00-0041027": {
+   "position_rank": "RB13",
+   "projected_points": 201.4,
+   "adp": 28.9
+  },
+  "00-0035685": {
+   "position_rank": "RB14",
+   "projected_points": 191.4,
+   "adp": 59.0
+  },
+  "00-0035700": {
+   "position_rank": "RB15",
+   "projected_points": 234.9,
+   "adp": 31.1
+  },
+  "00-0039067": {
+   "position_rank": "WR8",
+   "projected_points": 215.5,
+   "adp": 14.5
+  },
+  "00-0036997": {
+   "position_rank": "RB16",
+   "projected_points": 229.5,
+   "adp": 37.9
+  },
+  "00-0035676": {
+   "position_rank": "WR9",
+   "projected_points": 209.7,
+   "adp": 17.3
+  },
+  "00-0037239": {
+   "position_rank": "WR10",
+   "projected_points": 209.3,
+   "adp": 21.9
+  },
+  "00-0037840": {
+   "position_rank": "RB17",
+   "projected_points": 226.2,
+   "adp": 31.9
+  },
+  "00-0036554": {
+   "position_rank": "WR11",
+   "projected_points": 206.7,
+   "adp": 21.7
+  },
+  "00-0037247": {
+   "position_rank": "WR12",
+   "projected_points": 205.6,
+   "adp": 19.6
+  },
+  "00-0039064": {
+   "position_rank": "WR13",
+   "projected_points": 202.1,
+   "adp": 24.4
+  },
+  "00-0038120": {
+   "position_rank": "RB18",
+   "projected_points": 215.7,
+   "adp": 29.5
+  },
+  "00-0039919": {
+   "position_rank": "WR14",
+   "projected_points": 190.9,
+   "adp": 49.1
+  },
+  "00-0036275": {
+   "position_rank": "RB19",
+   "projected_points": 205.6,
+   "adp": 46.2
+  },
+  "00-0036410": {
+   "position_rank": "WR15",
+   "projected_points": 184.7,
+   "adp": 36.0
+  },
+  "00-0036912": {
+   "position_rank": "WR16",
+   "projected_points": 184.3,
+   "adp": 28.4
+  },
+  "00-0039849": {
+   "position_rank": "WR17",
+   "projected_points": 180.6,
+   "adp": 65.4
+  },
+  "00-0034857": {
+   "position_rank": "QB1",
+   "projected_points": 361.1,
+   "adp": 31.4
+  },
+  "00-0037740": {
+   "position_rank": "WR18",
+   "projected_points": 180.3,
+   "adp": 27.2
+  },
+  "00-0040124": {
+   "position_rank": "WR19",
+   "projected_points": 178.8,
+   "adp": 33.4
+  },
+  "00-0040129": {
+   "position_rank": "WR20",
+   "projected_points": 177.5,
+   "adp": 37.1
+  },
+  "00-0034827": {
+   "position_rank": "WR21",
+   "projected_points": 173.8,
+   "adp": 50.3
+  },
+  "00-0040735": {
+   "position_rank": "WR22",
+   "projected_points": 173.4,
+   "adp": 58.5
+  },
+  "00-0041512": {
+   "position_rank": "RB20",
+   "projected_points": 158.3,
+   "adp": 82.1
+  },
+  "00-0039361": {
+   "position_rank": "RB21",
+   "projected_points": 190.9,
+   "adp": 45.8
+  },
+  "00-0037240": {
+   "position_rank": "WR23",
+   "projected_points": 172.2,
+   "adp": 44.0
+  },
+  "00-0035659": {
+   "position_rank": "WR24",
+   "projected_points": 170.2,
+   "adp": 46.2
+  },
+  "00-0037744": {
+   "position_rank": "TE1",
+   "projected_points": 202.7,
+   "adp": 30.2
+  },
+  "00-0031408": {
+   "position_rank": "WR25",
+   "projected_points": 168.8,
+   "adp": 53.4
+  },
+  "00-0040734": {
+   "position_rank": "RB22",
+   "projected_points": 186.2,
+   "adp": 60.3
+  },
+  "00-0039337": {
+   "position_rank": "WR26",
+   "projected_points": 167.1,
+   "adp": 27.8
+  },
+  "00-0036613": {
+   "position_rank": "WR27",
+   "projected_points": 166.4,
+   "adp": 45.5
+  },
+  "00-0040784": {
+   "position_rank": "RB23",
+   "projected_points": 184.0,
+   "adp": 51.8
+  },
+  "00-0036973": {
+   "position_rank": "RB24",
+   "projected_points": 183.5,
+   "adp": 41.9
+  },
+  "00-0039338": {
+   "position_rank": "TE2",
+   "projected_points": 196.0,
+   "adp": 36.8
+  },
+  "00-0034348": {
+   "position_rank": "WR28",
+   "projected_points": 163.0,
+   "adp": 61.2
+  },
+  "00-0039915": {
+   "position_rank": "WR29",
+   "projected_points": 162.0,
+   "adp": 39.0
+  },
+  "00-0031381": {
+   "position_rank": "WR30",
+   "projected_points": 161.3,
+   "adp": 41.2
+  },
+  "00-0035640": {
+   "position_rank": "WR31",
+   "projected_points": 158.2,
+   "adp": 64.9
+  },
+  "00-0038124": {
+   "position_rank": "WR32",
+   "projected_points": 155.6,
+   "adp": 61.1
+  },
+  "00-0040719": {
+   "position_rank": "RB25",
+   "projected_points": 172.2,
+   "adp": 54.4
+  },
+  "00-0037228": {
+   "position_rank": "RB26",
+   "projected_points": 171.5,
+   "adp": 63.1
+  },
+  "00-0038117": {
+   "position_rank": "WR33",
+   "projected_points": 152.9,
+   "adp": 83.9
+  },
+  "00-0040715": {
+   "position_rank": "RB27",
+   "projected_points": 166.2,
+   "adp": 34.7
+  },
+  "00-0038606": {
+   "position_rank": "WR34",
+   "projected_points": 147.6,
+   "adp": 65.7
+  },
+  "00-0038559": {
+   "position_rank": "WR35",
+   "projected_points": 147.3,
+   "adp": 79.1
+  },
+  "00-0039893": {
+   "position_rank": "WR36",
+   "projected_points": 145.4,
+   "adp": 72.6
+  },
+  "00-0036252": {
+   "position_rank": "WR37",
+   "projected_points": 140.6,
+   "adp": 74.0
+  },
+  "00-0039146": {
+   "position_rank": "WR38",
+   "projected_points": 140.5,
+   "adp": 92.8
+  },
+  "00-0037525": {
+   "position_rank": "RB28",
+   "projected_points": 156.7,
+   "adp": 123.1
+  },
+  "00-0039910": {
+   "position_rank": "QB2",
+   "projected_points": 318.4,
+   "adp": 72.6
+  },
+  "00-0040126": {
+   "position_rank": "TE3",
+   "projected_points": 169.9,
+   "adp": 57.0
+  },
+  "00-0037664": {
+   "position_rank": "WR39",
+   "projected_points": 136.4,
+   "adp": 58.7
+  },
+  "00-0039918": {
+   "position_rank": "QB3",
+   "projected_points": 317.1,
+   "adp": 91.9
+  },
+  "00-0034796": {
+   "position_rank": "QB4",
+   "projected_points": 316.9,
+   "adp": 55.9
+  },
+  "00-0040242": {
+   "position_rank": "RB29",
+   "projected_points": 154.4,
+   "adp": 117.0
+  },
+  "00-0040667": {
+   "position_rank": "WR40",
+   "projected_points": 135.8,
+   "adp": 114.2
+  },
+  "00-0039851": {
+   "position_rank": "QB5",
+   "projected_points": 316.1,
+   "adp": 50.1
+  },
+  "00-0038994": {
+   "position_rank": "WR41",
+   "projected_points": 135.2,
+   "adp": 99.4
+  },
+  "00-0036389": {
+   "position_rank": "QB6",
+   "projected_points": 313.7,
+   "adp": 79.6
+  },
+  "00-0040128": {
+   "position_rank": "TE4",
+   "projected_points": 162.1,
+   "adp": 64.2
+  },
+  "00-0035261": {
+   "position_rank": "RB30",
+   "projected_points": 146.9,
+   "adp": 67.2
+  },
+  "00-0034960": {
+   "position_rank": "WR42",
+   "projected_points": 126.5,
+   "adp": 86.1
+  },
+  "00-0036442": {
+   "position_rank": "QB7",
+   "projected_points": 305.5,
+   "adp": 55.8
+  },
+  "00-0036970": {
+   "position_rank": "TE5",
+   "projected_points": 157.3,
+   "adp": 77.2
+  },
+  "00-0039065": {
+   "position_rank": "TE6",
+   "projected_points": 156.8,
+   "adp": 86.7
+  },
+  "00-0036139": {
+   "position_rank": "RB31",
+   "projected_points": 142.0,
+   "adp": 75.4
+  },
+  "00-0038997": {
+   "position_rank": "WR44",
+   "projected_points": 122.3,
+   "adp": 83.0
+  },
+  "00-0040663": {
+   "position_rank": "TE7",
+   "projected_points": 154.4,
+   "adp": 78.2
+  },
+  "00-0039894": {
+   "position_rank": "WR45",
+   "projected_points": 120.0,
+   "adp": 106.6
+  },
+  "00-0036875": {
+   "position_rank": "RB32",
+   "projected_points": 137.3,
+   "adp": 71.3
+  },
+  "00-0040236": {
+   "position_rank": "RB33",
+   "projected_points": 135.9,
+   "adp": 113.8
+  },
+  "00-0038563": {
+   "position_rank": "WR46",
+   "projected_points": 117.4,
+   "adp": 132.9
+  },
+  "00-0036971": {
+   "position_rank": "QB8",
+   "projected_points": 297.7,
+   "adp": 92.9
+  },
+  "00-0036355": {
+   "position_rank": "QB9",
+   "projected_points": 297.6,
+   "adp": 105.5
+  },
+  "00-0038544": {
+   "position_rank": "WR47",
+   "projected_points": 116.8,
+   "adp": 92.5
+  },
+  "00-0037838": {
+   "position_rank": "TE8",
+   "projected_points": 149.2,
+   "adp": 136.2
+  },
+  "00-0040691": {
+   "position_rank": "QB10",
+   "projected_points": 296.8,
+   "adp": 114.5
+  },
+  "00-0039732": {
+   "position_rank": "QB11",
+   "projected_points": 294.1,
+   "adp": 116.6
+  },
+  "00-0036555": {
+   "position_rank": "RB34",
+   "projected_points": 131.4,
+   "adp": 75.4
+  },
+  "00-0033077": {
+   "position_rank": "QB12",
+   "projected_points": 292.6,
+   "adp": 65.4
+  },
+  "00-0038041": {
+   "position_rank": "TE9",
+   "projected_points": 144.2,
+   "adp": 133.0
+  },
+  "00-0034351": {
+   "position_rank": "TE10",
+   "projected_points": 143.5,
+   "adp": 116.3
+  },
+  "00-0030506": {
+   "position_rank": "TE11",
+   "projected_points": 143.5,
+   "adp": 107.7
+  },
+  "00-0039344": {
+   "position_rank": "RB36",
+   "projected_points": 129.2,
+   "adp": 108.1
+  },
+  "00-0038996": {
+   "position_rank": "TE12",
+   "projected_points": 143.3,
+   "adp": 102.6
+  },
+  "00-0039890": {
+   "position_rank": "WR48",
+   "projected_points": 110.6,
+   "adp": 162.4
+  },
+  "00-0037834": {
+   "position_rank": "QB13",
+   "projected_points": 290.6,
+   "adp": 88.2
+  },
+  "00-0038933": {
+   "position_rank": "TE13",
+   "projected_points": 142.4,
+   "adp": 151.9
+  },
+  "00-0039738": {
+   "position_rank": "RB37",
+   "projected_points": 128.1,
+   "adp": 122.6
+  },
+  "00-0041438": {
+   "position_rank": "WR49",
+   "projected_points": 109.8,
+   "adp": 74.0
+  },
+  "00-0036158": {
+   "position_rank": "RB38",
+   "projected_points": 127.7,
+   "adp": 98.3
+  },
+  "00-0033921": {
+   "position_rank": "WR50",
+   "projected_points": 109.2,
+   "adp": 82.4
+  },
+  "00-0033106": {
+   "position_rank": "QB14",
+   "projected_points": 289.5,
+   "adp": 104.0
+  },
+  "00-0034753": {
+   "position_rank": "TE14",
+   "projected_points": 141.1,
+   "adp": 131.7
+  },
+  "00-0037545": {
+   "position_rank": "WR51",
+   "projected_points": 108.0,
+   "adp": 128.1
+  },
+  "00-0036407": {
+   "position_rank": "WR52",
+   "projected_points": 106.5,
+   "adp": 130.2
+  },
+  "00-0033293": {
+   "position_rank": "RB39",
+   "projected_points": 124.5,
+   "adp": 100.1
+  },
+  "00-0037261": {
+   "position_rank": "WR53",
+   "projected_points": 105.2,
+   "adp": 100.7
+  },
+  "00-0033873": {
+   "position_rank": "QB15",
+   "projected_points": 285.3,
+   "adp": 99.4
+  },
+  "00-0041037": {
+   "position_rank": "WR54",
+   "projected_points": 104.1,
+   "adp": 144.9
+  },
+  "00-0036259": {
+   "position_rank": "WR55",
+   "projected_points": 102.6,
+   "adp": 143.5
+  },
+  "00-0040727": {
+   "position_rank": "WR56",
+   "projected_points": 100.8,
+   "adp": 166.2
+  },
+  "00-0040730": {
+   "position_rank": "RB40",
+   "projected_points": 118.7,
+   "adp": 83.9
+  },
+  "00-0034837": {
+   "position_rank": "WR57",
+   "projected_points": 98.8,
+   "adp": 140.0
+  },
+  "00-0041547": {
+   "position_rank": "WR59",
+   "projected_points": 97.0,
+   "adp": 125.1
+  },
+  "00-0037291": {
+   "position_rank": "WR60",
+   "projected_points": 95.2,
+   "adp": 151.7
+  },
+  "00-0038935": {
+   "position_rank": "TE15",
+   "projected_points": 127.2,
+   "adp": 163.9
+  },
+  "00-0034855": {
+   "position_rank": "QB16",
+   "projected_points": 275.2,
+   "adp": 129.6
+  },
+  "00-0033090": {
+   "position_rank": "TE16",
+   "projected_points": 125.3,
+   "adp": 157.1
+  },
+  "00-0026498": {
+   "position_rank": "QB17",
+   "projected_points": 273.1,
+   "adp": 79.8
+  },
+  "00-0039384": {
+   "position_rank": "RB41",
+   "projected_points": 110.2,
+   "adp": 151.4
+  },
+  "00-0038611": {
+   "position_rank": "RB42",
+   "projected_points": 109.6,
+   "adp": 159.3
+  },
+  "00-0040867": {
+   "position_rank": "WR61",
+   "projected_points": 89.3,
+   "adp": 112.7
+  },
+  "00-0040743": {
+   "position_rank": "QB18",
+   "projected_points": 268.9,
+   "adp": 136.4
+  },
+  "00-0036264": {
+   "position_rank": "QB19",
+   "projected_points": 268.8,
+   "adp": 143.1
+  },
+  "00-0039032": {
+   "position_rank": "RB43",
+   "projected_points": 105.4,
+   "adp": 133.5
+  },
+  "00-0037256": {
+   "position_rank": "RB44",
+   "projected_points": 104.6,
+   "adp": 106.3
+  },
+  "00-0039165": {
+   "position_rank": "RB45",
+   "projected_points": 104.3,
+   "adp": 138.7
+  },
+  "00-0040878": {
+   "position_rank": "RB46",
+   "projected_points": 103.6,
+   "adp": 150.4
+  },
+  "00-0041013": {
+   "position_rank": "RB47",
+   "projected_points": 103.0
+  },
+  "00-0040130": {
+   "position_rank": "WR63",
+   "projected_points": 83.9,
+   "adp": 128.0
+  },
+  "00-0035228": {
+   "position_rank": "QB20",
+   "projected_points": 263.7,
+   "adp": 136.5
+  },
+  "00-0037197": {
+   "position_rank": "RB48",
+   "projected_points": 100.5,
+   "adp": 154.4
+  },
+  "00-0037816": {
+   "position_rank": "WR64",
+   "projected_points": 82.2,
+   "adp": 111.7
+  },
+  "00-0041044": {
+   "position_rank": "WR65",
+   "projected_points": 82.0,
+   "adp": 170.2
+  },
+  "00-0037614": {
+   "position_rank": "WR66",
+   "projected_points": 81.6,
+   "adp": 123.0
+  },
+  "00-0033288": {
+   "position_rank": "TE17",
+   "projected_points": 113.6,
+   "adp": 115.3
+  },
+  "00-0038977": {
+   "position_rank": "WR67",
+   "projected_points": 80.8,
+   "adp": 156.6
+  },
+  "00-0039491": {
+   "position_rank": "WR68",
+   "projected_points": 80.6,
+   "adp": 121.8
+  },
+  "00-0040583": {
+   "position_rank": "RB49",
+   "projected_points": 98.4,
+   "adp": 150.7
+  },
+  "00-0039855": {
+   "position_rank": "WR69",
+   "projected_points": 79.5,
+   "adp": 139.8
+  },
+  "00-0038128": {
+   "position_rank": "QB21",
+   "projected_points": 259.4,
+   "adp": 161.8
+  },
+  "00-0039793": {
+   "position_rank": "TE18",
+   "projected_points": 110.8,
+   "adp": 161.6
+  },
+  "00-0033906": {
+   "position_rank": "RB50",
+   "projected_points": 96.2,
+   "adp": 144.7
+  },
+  "00-0034383": {
+   "position_rank": "TE19",
+   "projected_points": 109.8,
+   "adp": 157.4
+  },
+  "00-0036550": {
+   "position_rank": "WR70",
+   "projected_points": 76.6,
+   "adp": 146.1
+  },
+  "00-0037263": {
+   "position_rank": "RB51",
+   "projected_points": 94.5,
+   "adp": 163.3
+  },
+  "00-0041511": {
+   "position_rank": "WR71",
+   "projected_points": 75.8,
+   "adp": 161.7
+  },
+  "00-0040886": {
+   "position_rank": "RB52",
+   "projected_points": 93.7
+  },
+  "00-0038619": {
+   "position_rank": "WR72",
+   "projected_points": 74.9
+  },
+  "00-0036040": {
+   "position_rank": "TE20",
+   "projected_points": 106.3,
+   "adp": 149.2
+  },
+  "00-0041048": {
+   "position_rank": "WR73",
+   "projected_points": 73.2
+  },
+  "00-0039163": {
+   "position_rank": "QB22",
+   "projected_points": 253.9,
+   "adp": 159.0
+  },
+  "00-0040311": {
+   "position_rank": "WR74",
+   "projected_points": 72.8,
+   "adp": 138.0
+  },
+  "00-0039880": {
+   "position_rank": "WR75",
+   "projected_points": 72.0,
+   "adp": 151.4
+  },
+  "00-0038129": {
+   "position_rank": "TE21",
+   "projected_points": 102.9
+  },
+  "00-0035710": {
+   "position_rank": "QB23",
+   "projected_points": 250.5,
+   "adp": 156.5
+  },
+  "00-0037746": {
+   "position_rank": "RB53",
+   "projected_points": 86.8,
+   "adp": 162.7
+  },
+  "00-0034775": {
+   "position_rank": "WR76",
+   "projected_points": 68.2
+  },
+  "00-0041096": {
+   "position_rank": "RB54",
+   "projected_points": 86.4
+  },
+  "00-0041489": {
+   "position_rank": "WR77",
+   "projected_points": 68.0,
+   "adp": 171.5
+  },
+  "00-0035229": {
+   "position_rank": "TE22",
+   "projected_points": 99.9,
+   "adp": 167.1
+  },
+  "00-0036894": {
+   "position_rank": "TE23",
+   "projected_points": 99.5,
+   "adp": 190.2
+  },
+  "00-0040189": {
+   "position_rank": "TE24",
+   "projected_points": 99.3,
+   "adp": 140.7
+  },
+  "00-0041035": {
+   "position_rank": "WR78",
+   "projected_points": 66.2,
+   "adp": 149.3
+  },
+  "00-0040669": {
+   "position_rank": "WR79",
+   "projected_points": 66.1,
+   "adp": 178.9
+  },
+  "00-0040870": {
+   "position_rank": "WR80",
+   "projected_points": 66.1,
+   "adp": 162.4
+  },
+  "00-0040676": {
+   "position_rank": "QB24",
+   "projected_points": 246.1,
+   "adp": 172.1
+  },
+  "00-0039868": {
+   "position_rank": "WR81",
+   "projected_points": 64.9
+  },
+  "00-0037809": {
+   "position_rank": "TE25",
+   "projected_points": 97.2,
+   "adp": 161.9
+  },
+  "00-0034869": {
+   "position_rank": "QB25",
+   "projected_points": 245.1,
+   "adp": 143.3
+  },
+  "00-0040894": {
+   "position_rank": "WR82",
+   "projected_points": 64.1
+  },
+  "00-0039874": {
+   "position_rank": "RB55",
+   "projected_points": 81.8
+  },
+  "00-0038104": {
+   "position_rank": "WR83",
+   "projected_points": 63.5
+  },
+  "00-0038608": {
+   "position_rank": "WR84",
+   "projected_points": 62.8,
+   "adp": 170.1
+  },
+  "00-0039811": {
+   "position_rank": "RB56",
+   "projected_points": 80.5,
+   "adp": 165.1
+  },
+  "00-0033908": {
+   "position_rank": "WR85",
+   "projected_points": 61.9,
+   "adp": 153.8
+  },
+  "00-0038393": {
+   "position_rank": "WR86",
+   "projected_points": 61.8,
+   "adp": 171.7
+  },
+  "00-0041029": {
+   "position_rank": "WR87",
+   "projected_points": 61.3,
+   "adp": 96.9
+  },
+  "00-0037252": {
+   "position_rank": "TE26",
+   "projected_points": 93.6,
+   "adp": 171.8
+  },
+  "00-0040729": {
+   "position_rank": "WR88",
+   "projected_points": 61.0
+  },
+  "00-0038454": {
+   "position_rank": "RB57",
+   "projected_points": 78.8,
+   "adp": 164.3
+  },
+  "00-0039792": {
+   "position_rank": "WR89",
+   "projected_points": 58.9
+  },
+  "00-0040170": {
+   "position_rank": "WR90",
+   "projected_points": 58.8
+  },
+  "00-0039410": {
+   "position_rank": "WR91",
+   "projected_points": 58.1,
+   "adp": 166.3
+  },
+  "00-0041523": {
+   "position_rank": "WR92",
+   "projected_points": 57.4,
+   "adp": 177.2
+  },
+  "00-0041032": {
+   "position_rank": "TE27",
+   "projected_points": 89.8,
+   "adp": 170.1
+  },
+  "00-0034829": {
+   "position_rank": "TE28",
+   "projected_points": 89.7
+  },
+  "00-0038979": {
+   "position_rank": "WR93",
+   "projected_points": 56.4
+  },
+  "00-0040177": {
+   "position_rank": "RB58",
+   "projected_points": 72.7,
+   "adp": 165.7
+  },
+  "00-0033555": {
+   "position_rank": "WR95",
+   "projected_points": 54.0
+  },
+  "00-0040718": {
+   "position_rank": "WR96",
+   "projected_points": 54.0,
+   "adp": 159.3
+  },
+  "00-0039794": {
+   "position_rank": "RB59",
+   "projected_points": 71.3,
+   "adp": 150.8
+  },
+  "00-0040705": {
+   "position_rank": "WR98",
+   "projected_points": 52.3,
+   "adp": 150.5
+  },
+  "00-0040277": {
+   "position_rank": "WR99",
+   "projected_points": 51.8
+  },
+  "00-0037666": {
+   "position_rank": "WR100",
+   "projected_points": 51.8,
+   "adp": 168.7
+  },
+  "00-0041525": {
+   "position_rank": "WR101",
+   "projected_points": 51.7
+  },
+  "00-0040162": {
+   "position_rank": "RB60",
+   "projected_points": 69.7,
+   "adp": 160.8
+  },
+  "00-0040737": {
+   "position_rank": "TE29",
+   "projected_points": 83.8,
+   "adp": 176.7
+  },
+  "00-0040876": {
+   "position_rank": "WR102",
+   "projected_points": 50.9
+  },
+  "00-0040138": {
+   "position_rank": "WR103",
+   "projected_points": 50.8
+  },
+  "00-0039342": {
+   "position_rank": "WR104",
+   "projected_points": 50.5,
+   "adp": 190.0
+  },
+  "00-0035535": {
+   "position_rank": "WR105",
+   "projected_points": 50.4,
+   "adp": 174.9
+  },
+  "00-0040134": {
+   "position_rank": "WR106",
+   "projected_points": 50.3,
+   "adp": 151.6
+  },
+  "00-0039299": {
+   "position_rank": "RB61",
+   "projected_points": 67.9
+  },
+  "00-0038555": {
+   "position_rank": "RB62",
+   "projected_points": 67.9,
+   "adp": 164.1
+  },
+  "00-0039901": {
+   "position_rank": "WR107",
+   "projected_points": 49.5
+  },
+  "00-0036265": {
+   "position_rank": "RB63",
+   "projected_points": 66.1
+  },
+  "00-0033553": {
+   "position_rank": "RB64",
+   "projected_points": 65.5,
+   "adp": 163.0
+  },
+  "00-0033881": {
+   "position_rank": "TE30",
+   "projected_points": 79.6
+  },
+  "00-0033307": {
+   "position_rank": "WR108",
+   "projected_points": 46.4
+  },
+  "00-0040009": {
+   "position_rank": "WR109",
+   "projected_points": 46.2
+  },
+  "00-0036309": {
+   "position_rank": "WR110",
+   "projected_points": 46.1
+  },
+  "00-0023459": {
+   "position_rank": "QB26",
+   "projected_points": 226.6,
+   "adp": 165.7
+  },
+  "00-0040648": {
+   "position_rank": "WR111",
+   "projected_points": 45.3
+  },
+  "00-0039150": {
+   "position_rank": "QB27",
+   "projected_points": 226.0,
+   "adp": 172.6
+  },
+  "00-0039424": {
+   "position_rank": "WR112",
+   "projected_points": 44.9
+  },
+  "00-0037741": {
+   "position_rank": "WR113",
+   "projected_points": 44.8
+  },
+  "00-0038618": {
+   "position_rank": "WR114",
+   "projected_points": 44.4
+  },
+  "00-0041042": {
+   "position_rank": "WR115",
+   "projected_points": 44.2
+  },
+  "00-0033885": {
+   "position_rank": "TE31",
+   "projected_points": 76.7
+  },
+  "00-0040238": {
+   "position_rank": "RB65",
+   "projected_points": 62.4
+  },
+  "00-0038976": {
+   "position_rank": "WR116",
+   "projected_points": 43.9
+  },
+  "00-0035208": {
+   "position_rank": "WR117",
+   "projected_points": 43.7
+  },
+  "00-0041104": {
+   "position_rank": "RB66",
+   "projected_points": 61.0
+  },
+  "00-0038951": {
+   "position_rank": "RB67",
+   "projected_points": 60.4
+  },
+  "00-0039386": {
+   "position_rank": "WR118",
+   "projected_points": 42.1
+  },
+  "00-0040890": {
+   "position_rank": "WR119",
+   "projected_points": 40.8,
+   "adp": 152.7
+  },
+  "00-0041067": {
+   "position_rank": "WR120",
+   "projected_points": 40.6
+  },
+  "00-0040131": {
+   "position_rank": "WR121",
+   "projected_points": 39.7
+  },
+  "00-0038685": {
+   "position_rank": "RB68",
+   "projected_points": 55.8
+  },
+  "00-0038621": {
+   "position_rank": "WR122",
+   "projected_points": 36.4
+  },
+  "00-0037801": {
+   "position_rank": "WR123",
+   "projected_points": 36.3
+  },
+  "00-0030565": {
+   "position_rank": "QB28",
+   "projected_points": 216.8
+  },
+  "00-0041496": {
+   "position_rank": "RB69",
+   "projected_points": 54.0,
+   "adp": 162.4
+  },
+  "00-0039391": {
+   "position_rank": "RB70",
+   "projected_points": 53.7,
+   "adp": 154.3
+  },
+  "00-0041040": {
+   "position_rank": "WR124",
+   "projected_points": 35.1,
+   "adp": 170.2
+  },
+  "00-0041550": {
+   "position_rank": "WR125",
+   "projected_points": 34.3
+  },
+  "00-0034975": {
+   "position_rank": "RB71",
+   "projected_points": 51.2,
+   "adp": 165.9
+  },
+  "00-0040584": {
+   "position_rank": "TE32",
+   "projected_points": 65.2
+  },
+  "00-0037837": {
+   "position_rank": "WR126",
+   "projected_points": 32.5
+  },
+  "00-0035021": {
+   "position_rank": "WR127",
+   "projected_points": 32.3
+  },
+  "00-0041443": {
+   "position_rank": "WR128",
+   "projected_points": 32.1
+  },
+  "00-0032464": {
+   "position_rank": "WR129",
+   "projected_points": 31.9
+  },
+  "00-0039739": {
+   "position_rank": "WR130",
+   "projected_points": 30.4
+  },
+  "00-0037563": {
+   "position_rank": "RB72",
+   "projected_points": 47.9
+  },
+  "00-0038558": {
+   "position_rank": "TE33",
+   "projected_points": 62.1
+  },
+  "00-0039405": {
+   "position_rank": "RB73",
+   "projected_points": 47.4
+  },
+  "00-0036626": {
+   "position_rank": "WR131",
+   "projected_points": 28.4
+  },
+  "00-0039751": {
+   "position_rank": "WR132",
+   "projected_points": 28.1
+  },
+  "00-0040208": {
+   "position_rank": "RB74",
+   "projected_points": 46.1
+  },
+  "00-0036849": {
+   "position_rank": "WR133",
+   "projected_points": 27.7
+  },
+  "00-0032775": {
+   "position_rank": "WR134",
+   "projected_points": 26.3
+  },
+  "00-0036415": {
+   "position_rank": "WR135",
+   "projected_points": 26.0
+  },
+  "00-0035689": {
+   "position_rank": "TE34",
+   "projected_points": 58.5
+  },
+  "00-0031235": {
+   "position_rank": "WR136",
+   "projected_points": 25.8
+  },
+  "00-0040736": {
+   "position_rank": "TE35",
+   "projected_points": 58.3
+  },
+  "00-0041529": {
+   "position_rank": "WR137",
+   "projected_points": 25.7
+  },
+  "00-0039875": {
+   "position_rank": "RB75",
+   "projected_points": 43.6,
+   "adp": 165.6
+  },
+  "00-0036244": {
+   "position_rank": "TE36",
+   "projected_points": 57.6
+  },
+  "00-0036182": {
+   "position_rank": "WR138",
+   "projected_points": 24.2
+  },
+  "00-0040198": {
+   "position_rank": "RB76",
+   "projected_points": 40.7
+  },
+  "00-0041490": {
+   "position_rank": "RB77",
+   "projected_points": 40.6
+  },
+  "00-0037742": {
+   "position_rank": "WR139",
+   "projected_points": 21.4
+  },
+  "00-0041051": {
+   "position_rank": "WR140",
+   "projected_points": 21.0
+  },
+  "00-0040164": {
+   "position_rank": "WR141",
+   "projected_points": 20.5
+  },
+  "00-0040581": {
+   "position_rank": "WR142",
+   "projected_points": 19.8
+  },
+  "00-0040590": {
+   "position_rank": "WR143",
+   "projected_points": 18.8
+  },
+  "00-0039355": {
+   "position_rank": "WR144",
+   "projected_points": 18.3
+  },
+  "00-0033375": {
+   "position_rank": "WR145",
+   "projected_points": 18.2
+  },
+  "00-0040586": {
+   "position_rank": "RB78",
+   "projected_points": 35.6,
+   "adp": 167.5
+  },
+  "00-0033110": {
+   "position_rank": "TE37",
+   "projected_points": 49.6
+  },
+  "00-0037112": {
+   "position_rank": "TE38",
+   "projected_points": 49.4
+  },
+  "00-0040646": {
+   "position_rank": "WR147",
+   "projected_points": 16.7
+  },
+  "00-0041132": {
+   "position_rank": "WR148",
+   "projected_points": 15.8
+  },
+  "00-0041257": {
+   "position_rank": "WR149",
+   "projected_points": 15.8
+  },
+  "00-0035544": {
+   "position_rank": "WR150",
+   "projected_points": 15.8
+  },
+  "00-0040078": {
+   "position_rank": "RB79",
+   "projected_points": 33.9
+  },
+  "00-0040782": {
+   "position_rank": "WR151",
+   "projected_points": 15.6
+  },
+  "00-0038839": {
+   "position_rank": "WR152",
+   "projected_points": 15.3
+  },
+  "00-0038797": {
+   "position_rank": "RB80",
+   "projected_points": 33.4
+  },
+  "00-0035359": {
+   "position_rank": "WR153",
+   "projected_points": 14.5
+  },
+  "00-0034272": {
+   "position_rank": "WR154",
+   "projected_points": 14.3
+  },
+  "00-0039471": {
+   "position_rank": "RB81",
+   "projected_points": 32.5
+  },
+  "00-0040184": {
+   "position_rank": "WR155",
+   "projected_points": 13.9
+  },
+  "00-0039021": {
+   "position_rank": "RB82",
+   "projected_points": 32.1
+  },
+  "00-0040275": {
+   "position_rank": "WR156",
+   "projected_points": 13.7
+  },
+  "00-0039521": {
+   "position_rank": "WR157",
+   "projected_points": 13.2
+  },
+  "00-0041125": {
+   "position_rank": "RB83",
+   "projected_points": 31.4
+  },
+  "00-0040237": {
+   "position_rank": "WR158",
+   "projected_points": 13.0
+  },
+  "00-0040202": {
+   "position_rank": "RB84",
+   "projected_points": 31.1
+  },
+  "00-0041052": {
+   "position_rank": "RB85",
+   "projected_points": 30.6,
+   "adp": 151.7
+  },
+  "00-0037231": {
+   "position_rank": "WR159",
+   "projected_points": 11.8
+  },
+  "00-0039757": {
+   "position_rank": "RB86",
+   "projected_points": 29.4
+  },
+  "00-0035250": {
+   "position_rank": "RB87",
+   "projected_points": 28.8
+  },
+  "00-0035406": {
+   "position_rank": "WR160",
+   "projected_points": 10.2
+  },
+  "00-0035500": {
+   "position_rank": "WR161",
+   "projected_points": 10.0
+  },
+  "00-0035644": {
+   "position_rank": "TE39",
+   "projected_points": 42.4
+  },
+  "00-0038359": {
+   "position_rank": "WR162",
+   "projected_points": 9.8
+  },
+  "00-0039798": {
+   "position_rank": "RB88",
+   "projected_points": 27.8
+  },
+  "00-0038115": {
+   "position_rank": "TE40",
+   "projected_points": 42.0
+  },
+  "00-0029604": {
+   "position_rank": "QB29",
+   "projected_points": 190.1
+  },
+  "00-0036862": {
+   "position_rank": "WR163",
+   "projected_points": 9.3
+  },
+  "00-0040142": {
+   "position_rank": "RB89",
+   "projected_points": 27.5
+  },
+  "00-0038551": {
+   "position_rank": "RB90",
+   "projected_points": 27.3
+  },
+  "00-0033526": {
+   "position_rank": "RB91",
+   "projected_points": 27.3,
+   "adp": 172.9
+  },
+  "00-0035537": {
+   "position_rank": "RB92",
+   "projected_points": 26.7,
+   "adp": 149.7
+  },
+  "00-0037276": {
+   "position_rank": "RB93",
+   "projected_points": 26.3
+  },
+  "00-0041069": {
+   "position_rank": "WR165",
+   "projected_points": 7.9
+  },
+  "00-0041070": {
+   "position_rank": "WR166",
+   "projected_points": 7.4
+  },
+  "00-0040218": {
+   "position_rank": "WR167",
+   "projected_points": 7.3
+  },
+  "00-0041217": {
+   "position_rank": "RB94",
+   "projected_points": 25.5
+  },
+  "00-0029892": {
+   "position_rank": "RB95",
+   "projected_points": 25.5
+  },
+  "00-0040021": {
+   "position_rank": "RB96",
+   "projected_points": 25.5
+  },
+  "00-0038840": {
+   "position_rank": "WR168",
+   "projected_points": 7.0
+  },
+  "00-0036980": {
+   "position_rank": "WR169",
+   "projected_points": 6.7
+  },
+  "00-0039920": {
+   "position_rank": "WR170",
+   "projected_points": 6.6
+  },
+  "00-0039451": {
+   "position_rank": "WR171",
+   "projected_points": 6.5
+  },
+  "00-0041399": {
+   "position_rank": "WR172",
+   "projected_points": 6.4
+  },
+  "00-0041248": {
+   "position_rank": "WR173",
+   "projected_points": 6.4
+  },
+  "00-0040154": {
+   "position_rank": "WR174",
+   "projected_points": 6.4
+  },
+  "00-0040024": {
+   "position_rank": "WR175",
+   "projected_points": 6.3
+  },
+  "00-0038573": {
+   "position_rank": "WR176",
+   "projected_points": 6.1
+  },
+  "00-0039623": {
+   "position_rank": "WR177",
+   "projected_points": 6.1
+  },
+  "00-0041129": {
+   "position_rank": "RB97",
+   "projected_points": 24.3
+  },
+  "00-0038679": {
+   "position_rank": "WR178",
+   "projected_points": 5.9
+  },
+  "00-0035891": {
+   "position_rank": "WR179",
+   "projected_points": 5.8
+  },
+  "00-0036567": {
+   "position_rank": "RB98",
+   "projected_points": 24.0
+  },
+  "00-0036165": {
+   "position_rank": "WR180",
+   "projected_points": 5.4
+  },
+  "00-0035249": {
+   "position_rank": "TE41",
+   "projected_points": 37.9
+  },
+  "00-0037329": {
+   "position_rank": "RB99",
+   "projected_points": 23.5
+  },
+  "00-0037005": {
+   "position_rank": "TE42",
+   "projected_points": 37.7
+  },
+  "00-0040179": {
+   "position_rank": "RB100",
+   "projected_points": 23.4
+  },
+  "00-0033589": {
+   "position_rank": "WR181",
+   "projected_points": 5.1
+  },
+  "00-0039062": {
+   "position_rank": "WR182",
+   "projected_points": 5.0
+  },
+  "00-0038705": {
+   "position_rank": "RB101",
+   "projected_points": 23.1,
+   "adp": 153.6
+  },
+  "00-0041397": {
+   "position_rank": "WR183",
+   "projected_points": 4.8,
+   "adp": 173.8
+  },
+  "00-0039816": {
+   "position_rank": "WR184",
+   "projected_points": 4.6
+  },
+  "00-0041004": {
+   "position_rank": "WR185",
+   "projected_points": 4.5
+  },
+  "00-0036427": {
+   "position_rank": "WR186",
+   "projected_points": 4.4
+  },
+  "00-0041293": {
+   "position_rank": "WR187",
+   "projected_points": 4.3
+  },
+  "00-0034386": {
+   "position_rank": "WR188",
+   "projected_points": 4.3
+  },
+  "00-0040692": {
+   "position_rank": "RB102",
+   "projected_points": 22.5
+  },
+  "00-0036020": {
+   "position_rank": "RB103",
+   "projected_points": 22.4
+  },
+  "00-0038389": {
+   "position_rank": "RB104",
+   "projected_points": 22.3
+  },
+  "00-0038752": {
+   "position_rank": "WR189",
+   "projected_points": 3.9
+  },
+  "00-0037258": {
+   "position_rank": "RB105",
+   "projected_points": 22.1
+  },
+  "00-0040582": {
+   "position_rank": "WR190",
+   "projected_points": 3.6
+  },
+  "00-0036637": {
+   "position_rank": "TE43",
+   "projected_points": 36.1
+  },
+  "00-0040888": {
+   "position_rank": "RB106",
+   "projected_points": 21.8
+  },
+  "00-0037267": {
+   "position_rank": "RB107",
+   "projected_points": 21.8
+  },
+  "00-0036630": {
+   "position_rank": "WR191",
+   "projected_points": 3.5
+  },
+  "00-0040522": {
+   "position_rank": "WR193",
+   "projected_points": 3.2
+  },
+  "00-0039356": {
+   "position_rank": "TE44",
+   "projected_points": 35.7
+  },
+  "00-0041216": {
+   "position_rank": "WR194",
+   "projected_points": 3.1
+  },
+  "00-0033955": {
+   "position_rank": "RB108",
+   "projected_points": 21.2
+  },
+  "00-0038930": {
+   "position_rank": "RB109",
+   "projected_points": 21.1
+  },
+  "00-0040400": {
+   "position_rank": "RB110",
+   "projected_points": 21.1
+  },
+  "00-0039363": {
+   "position_rank": "RB111",
+   "projected_points": 21.1
+  },
+  "00-0040653": {
+   "position_rank": "WR196",
+   "projected_points": 2.8
+  },
+  "00-0040895": {
+   "position_rank": "WR197",
+   "projected_points": 2.5
+  },
+  "00-0034487": {
+   "position_rank": "WR198",
+   "projected_points": 2.4
+  },
+  "00-0039650": {
+   "position_rank": "WR199",
+   "projected_points": 2.1
+  },
+  "00-0039373": {
+   "position_rank": "RB112",
+   "projected_points": 20.2
+  },
+  "00-0040172": {
+   "position_rank": "WR200",
+   "projected_points": 1.8
+  },
+  "00-0039589": {
+   "position_rank": "WR201",
+   "projected_points": 1.8
+  },
+  "00-0040739": {
+   "position_rank": "TE45",
+   "projected_points": 33.9
+  },
+  "00-0033857": {
+   "position_rank": "WR202",
+   "projected_points": 1.3
+  },
+  "00-0040644": {
+   "position_rank": "RB113",
+   "projected_points": 19.5
+  },
+  "00-0038794": {
+   "position_rank": "RB114",
+   "projected_points": 19.4
+  },
+  "00-0037120": {
+   "position_rank": "RB115",
+   "projected_points": 19.3
+  },
+  "00-0038098": {
+   "position_rank": "RB116",
+   "projected_points": 19.2
+  },
+  "00-0037557": {
+   "position_rank": "RB117",
+   "projected_points": 19.2
+  },
+  "00-0038738": {
+   "position_rank": "RB118",
+   "projected_points": 18.8
+  },
+  "00-0032392": {
+   "position_rank": "TE46",
+   "projected_points": 32.6
+  },
+  "00-0038612": {
+   "position_rank": "WR203",
+   "projected_points": 0.0
+  },
+  "00-0040900": {
+   "position_rank": "WR204",
+   "projected_points": 0.0
+  },
+  "00-0034419": {
+   "position_rank": "WR205",
+   "projected_points": 0.0
+  },
+  "00-0037132": {
+   "position_rank": "WR206",
+   "projected_points": 0.0
+  },
+  "00-0034418": {
+   "position_rank": "WR208",
+   "projected_points": 0.0
+  },
+  "00-0038576": {
+   "position_rank": "WR209",
+   "projected_points": 0.0
+  },
+  "00-0041047": {
+   "position_rank": "WR210",
+   "projected_points": 0.0
+  },
+  "00-0037828": {
+   "position_rank": "WR212",
+   "projected_points": 0.0
+  },
+  "00-0037093": {
+   "position_rank": "WR214",
+   "projected_points": 0.0
+  },
+  "00-0036331": {
+   "position_rank": "WR216",
+   "projected_points": 0.0
+  },
+  "00-0040241": {
+   "position_rank": "WR217",
+   "projected_points": 0.0
+  },
+  "00-0040563": {
+   "position_rank": "WR218",
+   "projected_points": 0.0
+  },
+  "00-0040259": {
+   "position_rank": "WR219",
+   "projected_points": 0.0
+  },
+  "00-0035645": {
+   "position_rank": "WR220",
+   "projected_points": 0.0
+  },
+  "00-0036635": {
+   "position_rank": "WR221",
+   "projected_points": 0.0
+  },
+  "00-0040558": {
+   "position_rank": "WR223",
+   "projected_points": 0.0
+  },
+  "00-0039365": {
+   "position_rank": "WR224",
+   "projected_points": 0.0
+  },
+  "00-0038640": {
+   "position_rank": "WR225",
+   "projected_points": 0.0
+  },
+  "00-0038938": {
+   "position_rank": "WR226",
+   "projected_points": 0.0
+  },
+  "00-0039379": {
+   "position_rank": "WR227",
+   "projected_points": 0.0
+  },
+  "00-0038492": {
+   "position_rank": "WR228",
+   "projected_points": 0.0
+  },
+  "00-0039710": {
+   "position_rank": "WR229",
+   "projected_points": 0.0
+  },
+  "00-0039236": {
+   "position_rank": "WR230",
+   "projected_points": 0.0
+  },
+  "00-0041100": {
+   "position_rank": "WR231",
+   "projected_points": 0.0
+  },
+  "00-0038590": {
+   "position_rank": "WR232",
+   "projected_points": 0.0
+  },
+  "00-0036345": {
+   "position_rank": "WR233",
+   "projected_points": 0.0
+  },
+  "00-0040534": {
+   "position_rank": "WR234",
+   "projected_points": 0.0
+  },
+  "00-0041446": {
+   "position_rank": "WR235",
+   "projected_points": 0.0
+  },
+  "00-0040075": {
+   "position_rank": "WR236",
+   "projected_points": 0.0
+  },
+  "00-0032951": {
+   "position_rank": "WR237",
+   "projected_points": 0.0
+  },
+  "00-0041467": {
+   "position_rank": "WR238",
+   "projected_points": 0.0
+  },
+  "00-0036176": {
+   "position_rank": "WR239",
+   "projected_points": 0.0
+  },
+  "00-0035140": {
+   "position_rank": "WR240",
+   "projected_points": 0.0
+  },
+  "00-0036959": {
+   "position_rank": "WR241",
+   "projected_points": 0.0
+  },
+  "00-0040506": {
+   "position_rank": "WR242",
+   "projected_points": 0.0
+  },
+  "00-0040551": {
+   "position_rank": "WR243",
+   "projected_points": 0.0
+  },
+  "00-0038519": {
+   "position_rank": "WR244",
+   "projected_points": 0.0
+  },
+  "00-0039916": {
+   "position_rank": "WR245",
+   "projected_points": 0.0,
+   "adp": 112.3
+  },
+  "00-0038647": {
+   "position_rank": "WR246",
+   "projected_points": 0.0
+  },
+  "00-0038824": {
+   "position_rank": "WR247",
+   "projected_points": 0.0
+  },
+  "00-0038090": {
+   "position_rank": "WR249",
+   "projected_points": 0.0
+  },
+  "00-0039884": {
+   "position_rank": "WR250",
+   "projected_points": 0.0
+  },
+  "00-0036955": {
+   "position_rank": "WR251",
+   "projected_points": 0.0
+  },
+  "00-0036497": {
+   "position_rank": "WR252",
+   "projected_points": 0.0
+  },
+  "00-0039052": {
+   "position_rank": "WR253",
+   "projected_points": 0.0
+  },
+  "00-0038941": {
+   "position_rank": "WR254",
+   "projected_points": 0.0
+  },
+  "00-0038496": {
+   "position_rank": "WR255",
+   "projected_points": 0.0
+  },
+  "00-0040466": {
+   "position_rank": "RB119",
+   "projected_points": 18.2
+  },
+  "00-0036754": {
+   "position_rank": "TE47",
+   "projected_points": 30.9
+  },
+  "00-0039746": {
+   "position_rank": "RB120",
+   "projected_points": 16.5
+  },
+  "00-0036290": {
+   "position_rank": "TE48",
+   "projected_points": 29.9
+  },
+  "00-0036755": {
+   "position_rank": "RB122",
+   "projected_points": 15.1
+  },
+  "00-0041472": {
+   "position_rank": "TE49",
+   "projected_points": 27.7
+  },
+  "00-0039066": {
+   "position_rank": "TE50",
+   "projected_points": 27.7
+  },
+  "00-0031595": {
+   "position_rank": "RB124",
+   "projected_points": 13.3
+  },
+  "00-0037085": {
+   "position_rank": "RB125",
+   "projected_points": 13.1
+  },
+  "00-0039847": {
+   "position_rank": "TE51",
+   "projected_points": 24.3
+  },
+  "00-0040568": {
+   "position_rank": "RB126",
+   "projected_points": 9.5
+  },
+  "00-0035125": {
+   "position_rank": "RB127",
+   "projected_points": 8.7
+  },
+  "00-0041244": {
+   "position_rank": "RB128",
+   "projected_points": 8.7
+  },
+  "00-0039144": {
+   "position_rank": "TE52",
+   "projected_points": 22.9
+  },
+  "00-0040959": {
+   "position_rank": "RB129",
+   "projected_points": 8.5
+  },
+  "00-0039814": {
+   "position_rank": "TE53",
+   "projected_points": 22.7
+  },
+  "00-0034959": {
+   "position_rank": "RB130",
+   "projected_points": 8.3
+  },
+  "00-0036727": {
+   "position_rank": "RB131",
+   "projected_points": 7.6
+  },
+  "00-0041081": {
+   "position_rank": "RB132",
+   "projected_points": 7.5
+  },
+  "00-0041483": {
+   "position_rank": "TE54",
+   "projected_points": 21.4
+  },
+  "00-0041415": {
+   "position_rank": "RB133",
+   "projected_points": 7.1
+  },
+  "00-0041395": {
+   "position_rank": "TE55",
+   "projected_points": 21.0
+  },
+  "00-0040651": {
+   "position_rank": "RB134",
+   "projected_points": 6.2
+  },
+  "00-0036924": {
+   "position_rank": "RB136",
+   "projected_points": 5.8
+  },
+  "00-0036212": {
+   "position_rank": "QB30",
+   "projected_points": 168.2
+  },
+  "00-0039912": {
+   "position_rank": "TE56",
+   "projected_points": 20.0
+  },
+  "00-0036187": {
+   "position_rank": "RB137",
+   "projected_points": 5.1
+  },
+  "00-0041524": {
+   "position_rank": "TE57",
+   "projected_points": 19.1
+  },
+  "00-0041503": {
+   "position_rank": "TE58",
+   "projected_points": 18.3
+  },
+  "00-0040205": {
+   "position_rank": "RB138",
+   "projected_points": 4.0
+  },
+  "00-0032104": {
+   "position_rank": "RB139",
+   "projected_points": 3.8
+  },
+  "00-0033376": {
+   "position_rank": "RB140",
+   "projected_points": 3.6
+  },
+  "00-0040067": {
+   "position_rank": "RB141",
+   "projected_points": 3.0
+  },
+  "00-0037594": {
+   "position_rank": "RB142",
+   "projected_points": 3.0
+  },
+  "00-0039603": {
+   "position_rank": "RB143",
+   "projected_points": 2.4
+  },
+  "00-0040187": {
+   "position_rank": "TE60",
+   "projected_points": 16.5
+  },
+  "00-0039364": {
+   "position_rank": "RB144",
+   "projected_points": 2.2
+  },
+  "00-0040939": {
+   "position_rank": "TE61",
+   "projected_points": 16.1
+  },
+  "00-0039041": {
+   "position_rank": "TE62",
+   "projected_points": 15.7
+  },
+  "00-0038547": {
+   "position_rank": "TE63",
+   "projected_points": 14.7
+  },
+  "00-0038046": {
+   "position_rank": "TE64",
+   "projected_points": 14.5
+  },
+  "00-0037157": {
+   "position_rank": "RB145",
+   "projected_points": 0.0
+  },
+  "00-0038488": {
+   "position_rank": "RB146",
+   "projected_points": 0.0
+  },
+  "00-0039325": {
+   "position_rank": "RB147",
+   "projected_points": 0.0
+  },
+  "00-0041239": {
+   "position_rank": "RB148",
+   "projected_points": 0.0
+  },
+  "00-0039703": {
+   "position_rank": "RB149",
+   "projected_points": 0.0
+  },
+  "00-0040556": {
+   "position_rank": "RB150",
+   "projected_points": 0.0
+  },
+  "00-0036425": {
+   "position_rank": "RB152",
+   "projected_points": 0.0
+  },
+  "00-0039407": {
+   "position_rank": "RB153",
+   "projected_points": 0.0
+  },
+  "00-0038396": {
+   "position_rank": "RB154",
+   "projected_points": 0.0
+  },
+  "00-0036569": {
+   "position_rank": "RB155",
+   "projected_points": 0.0
+  },
+  "00-0038896": {
+   "position_rank": "RB156",
+   "projected_points": 0.0
+  },
+  "00-0040429": {
+   "position_rank": "RB157",
+   "projected_points": 0.0
+  },
+  "00-0036842": {
+   "position_rank": "RB158",
+   "projected_points": 0.0
+  },
+  "00-0041312": {
+   "position_rank": "RB160",
+   "projected_points": 0.0
+  },
+  "00-0035973": {
+   "position_rank": "RB161",
+   "projected_points": 0.0
+  },
+  "00-0039796": {
+   "position_rank": "RB162",
+   "projected_points": 0.0
+  },
+  "00-0040649": {
+   "position_rank": "RB163",
+   "projected_points": 0.0
+  },
+  "00-0037509": {
+   "position_rank": "RB164",
+   "projected_points": 0.0
+  },
+  "00-0035594": {
+   "position_rank": "RB165",
+   "projected_points": 0.0
+  },
+  "00-0039921": {
+   "position_rank": "RB166",
+   "projected_points": 0.0
+  },
+  "00-0037745": {
+   "position_rank": "RB167",
+   "projected_points": 0.0
+  },
+  "00-0038440": {
+   "position_rank": "RB168",
+   "projected_points": 0.0
+  },
+  "00-0039074": {
+   "position_rank": "TE65",
+   "projected_points": 12.2
+  },
+  "00-0041087": {
+   "position_rank": "TE66",
+   "projected_points": 12.1
+  },
+  "00-0038710": {
+   "position_rank": "TE67",
+   "projected_points": 11.0
+  },
+  "00-0035631": {
+   "position_rank": "TE68",
+   "projected_points": 10.9
+  },
+  "00-0041041": {
+   "position_rank": "TE69",
+   "projected_points": 10.7
+  },
+  "00-0040046": {
+   "position_rank": "TE70",
+   "projected_points": 9.7
+  },
+  "00-0037277": {
+   "position_rank": "TE71",
+   "projected_points": 9.7
+  },
+  "00-0041116": {
+   "position_rank": "TE72",
+   "projected_points": 9.6
+  },
+  "00-0037282": {
+   "position_rank": "TE73",
+   "projected_points": 9.6
+  },
+  "00-0041510": {
+   "position_rank": "TE74",
+   "projected_points": 9.6
+  },
+  "00-0041558": {
+   "position_rank": "TE75",
+   "projected_points": 9.3
+  },
+  "00-0038809": {
+   "position_rank": "TE76",
+   "projected_points": 9.0
+  },
+  "00-0034613": {
+   "position_rank": "TE77",
+   "projected_points": 9.0
+  },
+  "00-0039631": {
+   "position_rank": "TE78",
+   "projected_points": 8.9
+  },
+  "00-0034798": {
+   "position_rank": "TE80",
+   "projected_points": 8.3
+  },
+  "00-0036422": {
+   "position_rank": "TE81",
+   "projected_points": 7.6
+  },
+  "00-0037004": {
+   "position_rank": "TE82",
+   "projected_points": 7.4
+  },
+  "00-0036741": {
+   "position_rank": "TE83",
+   "projected_points": 7.3
+  },
+  "00-0039530": {
+   "position_rank": "TE84",
+   "projected_points": 7.2
+  },
+  "00-0039359": {
+   "position_rank": "TE85",
+   "projected_points": 6.9
+  },
+  "00-0033119": {
+   "position_rank": "QB31",
+   "projected_points": 155.0,
+   "adp": 165.7
+  },
+  "00-0040955": {
+   "position_rank": "TE86",
+   "projected_points": 6.5
+  },
+  "00-0040566": {
+   "position_rank": "TE87",
+   "projected_points": 6.1
+  },
+  "00-0036429": {
+   "position_rank": "TE88",
+   "projected_points": 6.1
+  },
+  "00-0039824": {
+   "position_rank": "TE89",
+   "projected_points": 6.0
+  },
+  "00-0036628": {
+   "position_rank": "TE90",
+   "projected_points": 5.9
+  },
+  "00-0034270": {
+   "position_rank": "TE91",
+   "projected_points": 5.7
+  },
+  "00-0037086": {
+   "position_rank": "TE92",
+   "projected_points": 5.6
+  },
+  "00-0041094": {
+   "position_rank": "TE93",
+   "projected_points": 5.5
+  },
+  "00-0040509": {
+   "position_rank": "TE94",
+   "projected_points": 5.5
+  },
+  "00-0039754": {
+   "position_rank": "TE95",
+   "projected_points": 5.4
+  },
+  "00-0039489": {
+   "position_rank": "TE96",
+   "projected_points": 5.2
+  },
+  "00-0038783": {
+   "position_rank": "TE97",
+   "projected_points": 5.1
+  },
+  "00-0034981": {
+   "position_rank": "TE98",
+   "projected_points": 5.0
+  },
+  "00-0039737": {
+   "position_rank": "TE99",
+   "projected_points": 4.9
+  },
+  "00-0040194": {
+   "position_rank": "TE100",
+   "projected_points": 4.6
+  },
+  "00-0040887": {
+   "position_rank": "TE101",
+   "projected_points": 4.6
+  },
+  "00-0037805": {
+   "position_rank": "TE102",
+   "projected_points": 4.4
+  },
+  "00-0039050": {
+   "position_rank": "TE103",
+   "projected_points": 4.0
+  },
+  "00-0038394": {
+   "position_rank": "TE104",
+   "projected_points": 4.0
+  },
+  "00-0033217": {
+   "position_rank": "TE105",
+   "projected_points": 3.7
+  },
+  "00-0040363": {
+   "position_rank": "TE106",
+   "projected_points": 3.6
+  },
+  "00-0041133": {
+   "position_rank": "TE107",
+   "projected_points": 3.3
+  },
+  "00-0041084": {
+   "position_rank": "TE108",
+   "projected_points": 3.1
+  },
+  "00-0040901": {
+   "position_rank": "TE109",
+   "projected_points": 2.9
+  },
+  "00-0037539": {
+   "position_rank": "TE110",
+   "projected_points": 2.6
+  },
+  "00-0041579": {
+   "position_rank": "TE111",
+   "projected_points": 2.6
+  },
+  "00-0033576": {
+   "position_rank": "TE112",
+   "projected_points": 2.4
+  },
+  "00-0034365": {
+   "position_rank": "TE113",
+   "projected_points": 2.3
+  },
+  "00-0041077": {
+   "position_rank": "TE114",
+   "projected_points": 2.2
+  },
+  "00-0037311": {
+   "position_rank": "TE115",
+   "projected_points": 1.8
+  },
+  "00-0036887": {
+   "position_rank": "TE116",
+   "projected_points": 1.8
+  },
+  "00-0037348": {
+   "position_rank": "TE117",
+   "projected_points": 1.8
+  },
+  "00-0040225": {
+   "position_rank": "TE118",
+   "projected_points": 1.7
+  },
+  "00-0036876": {
+   "position_rank": "TE119",
+   "projected_points": 1.5
+  },
+  "00-0037340": {
+   "position_rank": "TE120",
+   "projected_points": 1.5
+  },
+  "00-0036556": {
+   "position_rank": "TE121",
+   "projected_points": 1.3
+  },
+  "00-0039420": {
+   "position_rank": "TE123",
+   "projected_points": 1.2
+  },
+  "00-0036825": {
+   "position_rank": "TE124",
+   "projected_points": 1.0
+  },
+  "00-0033246": {
+   "position_rank": "TE125",
+   "projected_points": 0.8
+  },
+  "00-0037475": {
+   "position_rank": "TE126",
+   "projected_points": 0.6
+  },
+  "00-0040628": {
+   "position_rank": "TE127",
+   "projected_points": 0.5
+  },
+  "00-0038589": {
+   "position_rank": "TE128",
+   "projected_points": 0.5
+  },
+  "00-0040244": {
+   "position_rank": "TE129",
+   "projected_points": 0.5
+  },
+  "00-0038564": {
+   "position_rank": "TE130",
+   "projected_points": 0.4
+  },
+  "00-0036534": {
+   "position_rank": "TE131",
+   "projected_points": 0.4
+  },
+  "00-0031484": {
+   "position_rank": "TE132",
+   "projected_points": 0.3
+  },
+  "00-0033757": {
+   "position_rank": "TE133",
+   "projected_points": 0.1
+  },
+  "00-0036423": {
+   "position_rank": "TE134",
+   "projected_points": 0.0
+  },
+  "00-0038643": {
+   "position_rank": "TE136",
+   "projected_points": 0.0
+  },
+  "00-0039458": {
+   "position_rank": "TE137",
+   "projected_points": 0.0
+  },
+  "00-0040240": {
+   "position_rank": "TE138",
+   "projected_points": 0.0
+  },
+  "00-0041131": {
+   "position_rank": "TE139",
+   "projected_points": 0.0
+  },
+  "00-0037078": {
+   "position_rank": "TE140",
+   "projected_points": 0.0
+  },
+  "00-0039686": {
+   "position_rank": "TE141",
+   "projected_points": 0.0
+  },
+  "00-0039648": {
+   "position_rank": "TE142",
+   "projected_points": 0.0
+  },
+  "00-0038498": {
+   "position_rank": "TE143",
+   "projected_points": 0.0
+  },
+  "00-0040215": {
+   "position_rank": "TE144",
+   "projected_points": 0.0
+  },
+  "00-0040081": {
+   "position_rank": "TE146",
+   "projected_points": 0.0
+  },
+  "00-0037755": {
+   "position_rank": "TE147",
+   "projected_points": 0.0
+  },
+  "00-0038720": {
+   "position_rank": "TE149",
+   "projected_points": 0.0
+  },
+  "00-0036145": {
+   "position_rank": "TE150",
+   "projected_points": 0.0
+  },
+  "00-0037031": {
+   "position_rank": "TE151",
+   "projected_points": 0.0
+  },
+  "00-0036590": {
+   "position_rank": "TE152",
+   "projected_points": 0.0
+  },
+  "00-0036032": {
+   "position_rank": "TE153",
+   "projected_points": 0.0
+  },
+  "00-0040668": {
+   "position_rank": "QB32",
+   "projected_points": 115.1
+  },
+  "00-0033537": {
+   "position_rank": "QB33",
+   "projected_points": 107.4
+  },
+  "00-0041561": {
+   "position_rank": "QB34",
+   "projected_points": 102.8
+  },
+  "00-0039917": {
+   "position_rank": "QB35",
+   "projected_points": 67.4
+  },
+  "00-0041562": {
+   "position_rank": "QB36",
+   "projected_points": 48.0,
+   "adp": 156.6
+  },
+  "00-0039923": {
+   "position_rank": "QB37",
+   "projected_points": 27.3
+  },
+  "00-0025565": {
+   "adp": 157.2
+  },
+  "00-0040074": {
+   "adp": 156.0
+  },
+  "00-0036162": {
+   "adp": 163.6
+  },
+  "00-0031203": {
+   "adp": 164.1
+  },
+  "00-0036854": {
+   "adp": 170.3
+  },
+  "00-0037692": {
+   "adp": 130.2
+  },
+  "00-0032569": {
+   "adp": 161.9
+  },
+  "00-0039172": {
+   "adp": 147.0
+  },
+  "00-0040899": {
+   "adp": 161.0
+  },
+  "00-0032726": {
+   "adp": 142.7
+  },
+  "00-0038905": {
+   "adp": 172.6
+  },
+  "00-0039409": {
+   "adp": 155.2
+  },
+  "00-0033303": {
+   "adp": 160.9
+  },
+  "00-0037224": {
+   "adp": 143.5
+  },
+  "00-0039498": {
+   "adp": 153.3
+  },
+  "00-0039404": {
+   "adp": 159.2
+  },
+  "00-0040200": {
+   "adp": 167.8
+  },
+  "00-0033787": {
+   "adp": 144.8
+  },
+  "00-0031136": {
+   "adp": 156.4
+  },
+  "00-0031492": {
+   "adp": 142.1
+  },
+  "00-0034173": {
+   "adp": 161.9
+  },
+  "00-0035358": {
+   "adp": 155.4
+  },
+  "00-0035192": {
+   "adp": 148.0
+  }
+ }
+}

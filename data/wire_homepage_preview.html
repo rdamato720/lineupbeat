@@ -1,0 +1,265 @@
+<title>Homepage Wire preview</title>
+<style>
+:root{--bg:#0b0d0a;--card:#131611;--ink:#e9e7e1;--quiet:#8f938a;
+--rule:#262a22;--signal:#c8f05a;--up:#7fbf8a;--down:#e08a7f;--own:#d6a55a}
+body{background:var(--bg);color:var(--ink);margin:0;padding:26px;
+font:16px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.wrap{max-width:1180px;margin:0 auto}
+.sechead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+margin:0 0 4px}
+.sechead h2{font-size:1.5rem;margin:0;letter-spacing:-.01em}
+.count{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;
+color:var(--signal);font-weight:700}
+.sub{color:var(--quiet);font-size:.9rem;margin:0 0 18px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
+.filters button,.filters select{font:inherit;font-size:.79rem;padding:6px 12px;
+background:transparent;color:var(--quiet);border:1px solid var(--rule);
+border-radius:99px;cursor:pointer}
+.filters button.on{color:var(--signal);border-color:var(--signal)}
+/* Two across, never three. Below 1000px it is one. */
+.grid{display:grid;grid-template-columns:1fr;gap:18px;align-items:start}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.c{background:var(--card);border:1px solid var(--rule);border-radius:14px;
+padding:18px 19px;display:flex;flex-direction:column}
+.chead{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+margin-bottom:10px}
+.logo{width:26px;height:26px;border-radius:6px;background:#20241c;
+display:grid;place-items:center;font-size:.62rem;font-weight:700;
+color:var(--quiet);flex:none}
+.badge{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;
+font-weight:700;padding:2px 8px;border-radius:99px;border:1px solid var(--rule);
+color:var(--quiet)}
+.badge.rank{color:var(--signal);border-color:var(--signal)}
+.badge.up{color:var(--up);border-color:var(--up)}
+.badge.down{color:var(--down);border-color:var(--down)}
+.time{margin-left:auto;color:var(--quiet);font-size:.72rem}
+.name{font-size:1.22rem;font-weight:700;margin:0 0 2px}
+.lab{font-size:.62rem;letter-spacing:.11em;text-transform:uppercase;
+color:var(--quiet);font-weight:700;margin:15px 0 6px}
+.rep{font-size:.93rem;color:#d6d4ce}
+.src{color:var(--quiet);font-size:.76rem;margin-top:9px}
+.src a{color:var(--quiet)}
+.own{color:var(--own)}
+/* The divider that keeps the two claims apart. */
+.split{border:0;border-top:1px solid var(--rule);margin:16px 0 0}
+.imp{background:#171b13;border-left:3px solid var(--signal);
+border-radius:0 8px 8px 0;padding:12px 14px;margin-top:12px;font-size:.93rem}
+.foot{color:var(--quiet);font-size:.71rem;letter-spacing:.05em;
+text-transform:uppercase;margin-top:12px}
+.pending{color:var(--own);border:1px dashed var(--own);border-radius:6px;
+padding:1px 7px;font-size:.62rem;letter-spacing:.07em;text-transform:uppercase}
+</style>
+<div class="wrap">
+<div class="sechead"><h2>THE NFL WIRE</h2>
+  <span class="count">1 reviewed report</span></div>
+<p class="sub">Verified beat reporting with Lineup Beat's fantasy impact.</p>
+<div class="filters">
+  <button class="on">All reports</button><button>Trending up</button>
+  <button>Trending down</button><button>Worth noting</button>
+  <select><option>Team</option></select>
+  <button>QB</button><button>RB</button><button>WR</button><button>TE</button>
+</div>
+<p class="sub">Below: 1 approved card,
+  then 8 backfill candidates shown
+  as they would render if approved. The count above deliberately counts only
+  approved reports.</p>
+<div class="grid"><article class="c" data-team="ATL"
+   data-pos="WR" data-dir="POSITIVE">
+  <div class="chead">
+    <span class="logo">ATL</span>
+    <span class="badge">Red Zone</span><span class="badge up">Trending up</span>
+    
+    <span class="time">16h ago</span>
+  </div>
+  <p class="name">Chris Blair
+     <span class="badge">WR</span></p>
+  <div class="lab">What the reporter found</div>
+  <div class="rep">Elsewhere, Jack Strand still did not receive team work, but he is expected to play half of Saturday’s preseason game. Chris Blair received most of Jahan Dotson’s first-team snaps during red-zone work, giving him another opportunity to make his case for a roster spot.</div>
+  <p class="src">Darius Hayes, Sports Illustrated -- ATL
+     <span class="">
+     Independent</span><br>
+     <a href="https://www.si.com/nfl/falcons/onsi/three-major-falcons-takeaways-from-day-2-joint-practice-with-colts" rel="nofollow noopener">Read the original report</a></p>
+  <hr class="split">
+  <div class="lab">Lineup Beat impact</div>
+  <div class="imp">Chris Blair took most of Jahan Dotson&#x27;s first-team red-zone snaps during one joint practice. The report does not say why those snaps were available or for how long, and it does not establish that Blair has moved ahead of Dotson.</div>
+  <p class="foot">Evidence low &middot;
+     immediate &middot;
+     No projection change</p>
+</article><article class="c" data-team="PHI"
+   data-pos="WR" data-dir="NEGATIVE">
+  <div class="chead">
+    <span class="logo">PHI</span>
+    <span class="badge">Limited Participation</span><span class="badge rank">WR16</span><span class="badge">ADP 28.4</span><span class="badge">184.3 proj</span><span class="badge down">Trending down</span>
+    <span class="pending">preview &middot; not approved</span>
+    <span class="time">1d ago</span>
+  </div>
+  <p class="name">DeVonta Smith
+     <span class="badge">WR</span></p>
+  <div class="lab">What the reporter found</div>
+  <div class="rep">• DeVonta Smith participated in individual drills, but not 11-on-11&#x27;s. He joined the huddle when the first-team offense was on the field in 11-on-11s, but would then stand back behind the play.</div>
+  <p class="src">Jimmy Kempski, PhillyVoice
+     <span class="">
+     Independent</span><br>
+     <a href="https://www.phillyvoice.com/eagles-2026-training-camp-practice-notes-day-13-eagles-patriots-joit-part-i/" rel="nofollow noopener">Read the original report</a></p>
+  <hr class="split">
+  <div class="lab">Lineup Beat impact</div>
+  <div class="imp">Smith was held out of 11-on-11 team drills at training camp, participating only in individual work. He remained with the first-team offense during team periods but did not take part in plays. The passage does not specify why Smith was limited or how long this restriction is expected to last.</div>
+  <p class="foot">Evidence low &middot;
+     immediate &middot;
+     REVIEW</p>
+</article><article class="c" data-team="DET"
+   data-pos="TE" data-dir="NEGATIVE">
+  <div class="chead">
+    <span class="logo">DET</span>
+    <span class="badge">Limited Participation</span><span class="badge rank">TE6</span><span class="badge">ADP 86.7</span><span class="badge">156.8 proj</span><span class="badge down">Trending down</span>
+    <span class="pending">preview &middot; not approved</span>
+    <span class="time">1d ago</span>
+  </div>
+  <p class="name">Sam LaPorta
+     <span class="badge">TE</span></p>
+  <div class="lab">What the reporter found</div>
+  <div class="rep">Star tight end Sam LaPorta was not spotted participating at all at practice. There were no reports as to why he was absent, as has been a participant in recent practices.</div>
+  <p class="src">John Maakaron, Sports Illustrated -- DET
+     <span class="">
+     Independent</span><br>
+     <a href="https://www.si.com/nfl/lions/onsi/detroit-lions-te-misses-wednesday-practice-jameson-williams-returns" rel="nofollow noopener">Read the original report</a></p>
+  <hr class="split">
+  <div class="lab">Lineup Beat impact</div>
+  <div class="imp">LaPorta did not participate in Wednesday&#x27;s practice, with no reason provided for his absence. This is a single practice observation from one reporter with no stated cause—it could be injury-related, rest, or something else entirely. The passage explicitly notes there were no reports explaining why he was absent. His availability for the upcoming game remains unclear until further information emerges.</div>
+  <p class="foot">Evidence low &middot;
+     immediate &middot;
+     REVIEW</p>
+</article><article class="c" data-team="PHI"
+   data-pos="WR" data-dir="NEGATIVE">
+  <div class="chead">
+    <span class="logo">PHI</span>
+    <span class="badge">Limited Participation</span><span class="badge rank">WR61</span><span class="badge">ADP 112.7</span><span class="badge">89.3 proj</span><span class="badge down">Trending down</span>
+    <span class="pending">preview &middot; not approved</span>
+    <span class="time">1d ago</span>
+  </div>
+  <p class="name">Makai Lemon
+     <span class="badge">WR</span></p>
+  <div class="lab">What the reporter found</div>
+  <div class="rep">Notes: DeVonta Smith returned to practice in a limited capacity, and although Makai Lemon wasn&#x27;t in uniform and listed as a non-participant, he took part in some WR drills.</div>
+  <p class="src">Jimmy Kempski, PhillyVoice
+     <span class="">
+     Independent</span><br>
+     <a href="https://www.phillyvoice.com/eagles-2026-training-camp-practice-participation-tracker/" rel="nofollow noopener">Read the original report</a></p>
+  <hr class="split">
+  <div class="lab">Lineup Beat impact</div>
+  <div class="imp">Makai Lemon was listed as a non-participant and was not in uniform for this training camp practice, though he did take part in some wide receiver drills. The passage does not specify why he was held out or the extent of his participation. This is a single practice observation from one reporter with no indication of severity or expected duration.</div>
+  <p class="foot">Evidence low &middot;
+     immediate &middot;
+     No projection change</p>
+</article><article class="c" data-team="MIA"
+   data-pos="RB" data-dir="POSITIVE">
+  <div class="chead">
+    <span class="logo">MIA</span>
+    <span class="badge">First Team Reps</span><span class="badge rank">RB76</span><span class="badge">40.7 proj</span><span class="badge up">Trending up</span>
+    <span class="pending">preview &middot; not approved</span>
+    <span class="time">20h ago</span>
+  </div>
+  <p class="name">Ollie Gordon II
+     <span class="badge">RB</span></p>
+  <div class="lab">What the reporter found</div>
+  <div class="rep">And the reality is the line struggled not only in pass protection but in run blocking as well. There were two good-looking runs by the first-team offense on this day, one by De&#x27;Von Achane and the other by Ollie Gordon II</div>
+  <p class="src">Alain Poupart, Sports Illustrated -- MIA
+     <span class="">
+     Independent</span><br>
+     <a href="https://www.si.com/nfl/dolphins/onsi/time-for-concern-or-what-to-make-of-the-dolphins-offense-getting-dominated-in-the-joint-practice-01m0g9v5b0cv" rel="nofollow noopener">Read the original report</a></p>
+  <hr class="split">
+  <div class="lab">Lineup Beat impact</div>
+  <div class="imp">Ollie Gordon II recorded a good-looking run with the first-team offense during joint practice. This indicates he received at least one carry with the first-team unit. The passage does not establish Gordon&#x27;s overall workload distribution, his depth-chart position, or whether this was representative of his typical usage. One observed carry with the first team in a single practice is insufficient to project a defined role.</div>
+  <p class="foot">Evidence low &middot;
+     short term &middot;
+     REVIEW</p>
+</article><article class="c" data-team="MIA"
+   data-pos="WR" data-dir="NEUTRAL">
+  <div class="chead">
+    <span class="logo">MIA</span>
+    <span class="badge">Targets</span><span class="badge rank">WR251</span><span class="badge"> proj</span><span class="badge ">Worth noting</span>
+    <span class="pending">preview &middot; not approved</span>
+    <span class="time">23h ago</span>
+  </div>
+  <p class="name">Terrace Marshall Jr.
+     <span class="badge">WR</span></p>
+  <div class="lab">What the reporter found</div>
+  <div class="rep">-- With Ewers sidelined, Cam Miller again got the second-most reps at QB and he had the best throw of the day, a completion for about 20 yards in the middle of the field to Terrace Marshall Jr.</div>
+  <p class="src">Alain Poupart, Sports Illustrated -- MIA
+     <span class="">
+     Independent</span><br>
+     <a href="https://www.si.com/nfl/dolphins/onsi/miami-dolphins-joint-practice-with-giants-observations-skirmishes-sacks-and-more-01m0fzmd7vz6" rel="nofollow noopener">Read the original report</a></p>
+  <hr class="split">
+  <div class="lab">Lineup Beat impact</div>
+  <div class="imp">Marshall caught one pass for approximately 20 yards from backup quarterback Cam Miller during joint practice. This is a single target from a second-string quarterback in a practice setting. The passage does not establish Marshall&#x27;s role with the starting offense, his target share, or his depth-chart position. One practice reception from a backup provides no actionable information about Marshall&#x27;s regular-season usage.</div>
+  <p class="foot">Evidence low &middot;
+     immediate &middot;
+     No projection change</p>
+</article><article class="c" data-team="NE"
+   data-pos="WR" data-dir="POSITIVE">
+  <div class="chead">
+    <span class="logo">NE</span>
+    <span class="badge">Routes</span><span class="badge rank">WR95</span><span class="badge">54.0 proj</span><span class="badge up">Trending up</span>
+    <span class="pending">preview &middot; not approved</span>
+    <span class="time">1d ago</span>
+  </div>
+  <p class="name">Mack Hollins
+     <span class="badge">WR</span></p>
+  <div class="lab">What the reporter found</div>
+  <div class="rep">FOXBORO --- If you look at any of the New England Patriots&#x27; two-minute drills to close each training camp practice this summer, it doesn&#x27;t matter which offensive unit is on the field. Chances are, you&#x27;ll see Mack Hollins</div>
+  <p class="src">Ethan Hurwitz, Sports Illustrated -- NE
+     <span class="">
+     Independent</span><br>
+     <a href="https://www.si.com/nfl/patriots/onsi/mack-hollins-continues-to-chug-along-in-patriots-wr-room" rel="nofollow noopener">Read the original report</a></p>
+  <hr class="split">
+  <div class="lab">Lineup Beat impact</div>
+  <div class="imp">Hollins is running routes in two-minute drills across multiple training camp practices, appearing with both first- and second-team units. This suggests he is working as a depth receiver in situational packages during camp. The passage does not establish his role in the regular rotation, his target share, or whether this two-minute usage will translate to regular-season snaps.</div>
+  <p class="foot">Evidence low &middot;
+     short term &middot;
+     REVIEW</p>
+</article><article class="c" data-team="JAX"
+   data-pos="WR" data-dir="NEGATIVE">
+  <div class="chead">
+    <span class="logo">JAX</span>
+    <span class="badge">Role Reduction</span><span class="badge rank">WR96</span><span class="badge">ADP 159.3</span><span class="badge">54.0 proj</span><span class="badge down">Trending down</span>
+    <span class="pending">preview &middot; not approved</span>
+    <span class="time">2d ago</span>
+  </div>
+  <p class="name">Travis Hunter
+     <span class="badge">WR</span></p>
+  <div class="lab">What the reporter found</div>
+  <div class="rep">It is also worth noting that Travis Hunter spent most of his day on defense. He got a few reps in team drills on offense but ended up sticking with the defense for the majority of team drills, producing a pass breakup la</div>
+  <p class="src">John Shipley, Sports Illustrated -- JAX
+     <span class="">
+     Independent</span><br>
+     <a href="https://www.si.com/nfl/jaguars/onsi/jacksonville-everything-i-saw-at-day-16-of-training-camp-running-game-picks-on-panthers" rel="nofollow noopener">Read the original report</a></p>
+  <hr class="split">
+  <div class="lab">Lineup Beat impact</div>
+  <div class="imp">Hunter, listed as a wide receiver, spent the majority of team drills on defense with only a few offensive reps during this single practice. This represents reduced offensive opportunity on this particular day. The passage does not establish whether this is a one-time occurrence or a pattern, nor does it quantify how many offensive snaps or routes Hunter ran. Without additional context about his typical usage or whether this defensive emphasis will continue, the fantasy impact remains uncertain.</div>
+  <p class="foot">Evidence low &middot;
+     immediate &middot;
+     REVIEW</p>
+</article><article class="c" data-team="IND"
+   data-pos="QB" data-dir="POSITIVE">
+  <div class="chead">
+    <span class="logo">IND</span>
+    <span class="badge">Performance</span><span class="badge rank">QB23</span><span class="badge">ADP 156.5</span><span class="badge">250.5 proj</span><span class="badge up">Trending up</span>
+    <span class="pending">preview &middot; not approved</span>
+    <span class="time">1d ago</span>
+  </div>
+  <p class="name">Daniel Jones
+     <span class="badge">QB</span></p>
+  <div class="lab">What the reporter found</div>
+  <div class="rep">By all accounts, Colts&#x27; starting quarterback Daniel Jones had his way with the Atlanta Falcons&#x27; first-team defense on Wednesday.</div>
+  <p class="src">Noah Compton, Sports Illustrated -- IND
+     <span class="">
+     Independent</span><br>
+     <a href="https://www.si.com/nfl/colts/onsi/good-and-not-so-good-from-colts-first-joint-practice-with-falcons" rel="nofollow noopener">Read the original report</a></p>
+  <hr class="split">
+  <div class="lab">Lineup Beat impact</div>
+  <div class="imp">Daniel Jones is identified as the Colts&#x27; starting quarterback and reportedly performed well against Atlanta&#x27;s first-team defense in a joint practice. The passage confirms his starting role but provides no specific data on completion rate, yardage, touchdowns, or interceptions. A single practice performance against another team&#x27;s defense, however positive, does not establish sustained usage patterns or in-game production.</div>
+  <p class="foot">Evidence low &middot;
+     immediate &middot;
+     No projection change</p>
+</article></div>
+</div>

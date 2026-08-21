@@ -30,6 +30,7 @@ import io
 import json
 import os
 import re
+import unicodedata
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -88,7 +89,14 @@ def norm(name: str) -> str:
     this is normalisation, not matching, and it must never bring two
     different people together.
     """
-    n = re.sub(r"[.'`’\-]", "", (name or "").lower())
+    # Accents are folded because reporters drop them: the registry has
+    # "Audric Estimé" and the beat writes "Audric Estime", and without this
+    # the same man fails his own name check. Folding cannot merge two people
+    # unless their names differ only by a diacritic, which would already be
+    # ambiguous to a reader.
+    n = unicodedata.normalize("NFKD", (name or "").lower())
+    n = "".join(c for c in n if not unicodedata.combining(c))
+    n = re.sub(r"[.'`\u2019\-]", "", n)
     n = SUFFIX.sub(" ", n)
     return " ".join(n.split())
 
