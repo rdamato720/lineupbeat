@@ -318,7 +318,11 @@ def inject_homepage(pubs: list[dict], index: Path) -> bool:
 
 
 REDIRECTS = Path("site/_redirects")
-WIRE_RULE = "/nfl/wire/* /#wire 301"
+# Two rules, because they match different things. The splat covers
+# /nfl/wire/ and anything under it; it does NOT cover the bare /nfl/wire,
+# which 404'd in production while its trailing-slash twin redirected. Both
+# forms were linked and both may be indexed.
+WIRE_RULES = ["/nfl/wire /#wire 301", "/nfl/wire/* /#wire 301"]
 
 
 def write_redirect() -> None:
@@ -338,11 +342,11 @@ def write_redirect() -> None:
         for ln in REDIRECTS.read_text().splitlines():
             if not ln.strip():
                 continue
-            if ln.startswith("/nfl/wire/") or ln.strip() in NOTE.splitlines():
+            if ln.startswith("/nfl/wire") or ln.strip() in NOTE.splitlines():
                 continue
             keep.append(ln)
-    REDIRECTS.write_text("\n".join(keep + [NOTE, WIRE_RULE]) + "\n")
-    print(f"  wrote {REDIRECTS} ({WIRE_RULE})")
+    REDIRECTS.write_text("\n".join(keep + [NOTE] + WIRE_RULES) + "\n")
+    print(f"  wrote {REDIRECTS} ({len(WIRE_RULES)} rules)")
 
 
 def main():

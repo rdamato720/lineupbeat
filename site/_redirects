@@ -1,3 +1,4 @@
 # The Wire lives on the homepage. This keeps every link, bookmark
 # and indexed URL to the old destination working.
+/nfl/wire /#wire 301
 /nfl/wire/* /#wire 301

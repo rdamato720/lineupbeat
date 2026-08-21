@@ -206,9 +206,12 @@ def main() -> int:
     rules = (root / "_redirects")
     text = rules.read_text() if rules.is_file() else ""
     check("_redirects is in the artifact", bool(text))
-    check("/nfl/wire/ redirects to the homepage Wire",
-          bool(re.search(r"^/nfl/wire/\S*\s+/#wire\s+30[12]\s*$", text, re.M)),
-          text.strip().splitlines()[-1] if text.strip() else "")
+    # Both forms. The bare path is not covered by the splat and 404'd in
+    # production while the trailing-slash form redirected.
+    for form, pat in (("/nfl/wire/", r"^/nfl/wire/\*?\s+/#wire\s+30[12]\s*$"),
+                      ("/nfl/wire", r"^/nfl/wire\s+/#wire\s+30[12]\s*$")):
+        check(f"{form} redirects to the homepage Wire",
+              bool(re.search(pat, text, re.M)))
 
     # No page may still send a reader to the retired destination.
     dangling = []

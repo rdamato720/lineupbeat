@@ -55,9 +55,11 @@ check("no separate Wire page is built",
 check("the redirect file was written", REDIRECTS.exists())
 _rd = REDIRECTS.read_text() if REDIRECTS.exists() else ""
 check("/nfl/wire/ redirects to the homepage Wire",
-      bool(re.search(r"^/nfl/wire/\S*\s+/#wire\s+30[12]\s*$", _rd, re.M)))
-check("the redirect file holds one rule for it, however often it is built",
-      _rd.count("/nfl/wire/") == 1, f"{_rd.count('/nfl/wire/')} rule(s)")
+      bool(re.search(r"^/nfl/wire/\*?\s+/#wire\s+30[12]\s*$", _rd, re.M)))
+check("the bare /nfl/wire redirects too",
+      bool(re.search(r"^/nfl/wire\s+/#wire\s+30[12]\s*$", _rd, re.M)))
+check("the rules do not multiply however often the build runs",
+      _rd.count("/nfl/wire") == 2, f"{_rd.count('/nfl/wire')} rule(s)")
 
 pubs = json.loads(PUBS.read_text())["publications"]
 names = [p["player_name"] for p in pubs]
