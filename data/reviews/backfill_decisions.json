@@ -1,0 +1,36 @@
+{
+ "reviewed_at": "2026-08-21",
+ "reviewer": "ralph",
+ "batch": "backfill-48h",
+ "published": false,
+ "decisions": {
+  "ollie-gordon-ii": {
+   "action": "REJECT_NOT_FANTASY_RELEVANT",
+   "subject": "Ollie Gordon II",
+   "publication_status": "NO_FANTASY_IMPACT",
+   "reviewer_reason": "INSUFFICIENT_ROLE_EVIDENCE",
+   "projection_action": "NONE",
+   "note": "One good-looking first-team carry, with no baseline and no repeated involvement, does not establish a fantasy-relevant role change.",
+   "evidence": "There were two good-looking runs by the first-team offense on this day, one by De'Von Achane and the other by Ollie Gordon II."
+  },
+  "devonta-smith": {
+   "action": "DECIDED_PENDING_SPAN_CHOICE",
+   "subject": "DeVonta Smith",
+   "mechanism": "LIMITED_PARTICIPATION",
+   "direction": "NEGATIVE",
+   "strength": "LOW",
+   "horizon": "IMMEDIATE",
+   "projection_action": "NONE",
+   "reviewer_instruction": "State that Smith participated in individual work but did not take part in 11-on-11 periods, and that no reason or timetable was reported. Do not call it an injury; do not imply his first-team role changed.",
+   "blocking_conflict": {
+    "issue_1_wrong_span": "The candidate in the review set is the 20 August PhillyVoice note ('returned to practice in a limited capacity'), which mentions neither individual drills nor 11-on-11s. The wording described belongs to the 19 August span: 'DeVonta Smith participated in individual drills, but not 11-on-11's. He joined the huddle when the first-team offense was on the field in 11-on-11s, but would then stand back behind the play.'",
+    "issue_2_cause_is_reported": "'No reason was reported' is true of either span in isolation and false of the corpus. Four articles across two sources inside the same 48 hours state a hamstring, including the club's own participation report: 'wide receiver DeVonta Smith (hamstring)' (philadelphiaeagles.com, 20 August) and PhillyVoice's participation tracker 'WR DeVonta Smith (hamstring)'. Publishing 'no reason was reported' would be accurate about the span and misleading about what the Wire holds.",
+    "awaiting": "Which span the card should rest on, and whether the officially reported hamstring may be stated or must be omitted."
+   },
+   "note": "Decision recorded, not applied to a card. Nothing published."
+  },
+  "sam-laporta": {"action": "PENDING", "subject": "Sam LaPorta"},
+  "makai-lemon": {"action": "PENDING", "subject": "Makai Lemon"},
+  "mack-hollins": {"action": "PENDING", "subject": "Mack Hollins"}
+ }
+}
