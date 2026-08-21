@@ -193,6 +193,15 @@ python3 scripts/test_wire.py                     # 32 checks, incl. isolation
   `--plan` to see what is eligible without spending a request; `--status` for
   what the day has left. Discovery is free and separate -- titles, ids and
   durations never touch the caption endpoint.
+- **Extraction produces reviewable evidence, not reporting.**
+  `scripts/wire_extract.py` turns captured articles and transcripts into
+  `wire_evidence` rows, all `PENDING`, and cannot write to
+  `wire_publications.json`. Classification is deterministic and timid: a
+  hedge beats observation language, a quotation needs a named speaker, an
+  unattributed medical claim is `UNCERTAIN`, and an auto-captioned
+  multi-speaker source is `UNCERTAIN` whatever it says. Candidate ids derive
+  from the span plus the player, so re-running updates rather than
+  duplicates — and never overwrites a reviewer's decision.
 - **The Wire has its own player registry and builds it from nflverse.**
   `scripts/wire_players_refresh.py` → `sources/wire_players.json`. It never
   reads `rosters/nfl.csv`, not even to seed or compare, because that file

@@ -18,6 +18,7 @@ import os
 import re
 import sys
 import tempfile
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -573,6 +574,118 @@ with tempfile.TemporaryDirectory() as tmp:
           len(pend) == 1 and len(st.publications()) == 0)
     n, _ = st.export_publications(Path(tmp) / "pub.json")
     check("an unresolved player never reaches the published file", n == 0)
+
+# ------------------------------------------------- evidence classification
+
+from wire import evidence as ev
+
+def cls(text, **kw):
+    kw.setdefault("reporter_voice", True)
+    return ev.classify(text, **kw)[0]
+
+check("observation in a reporter's voice is firsthand",
+      cls("Gibbs took first-team reps in team drills, by my count nine of them.")
+      == ev.FIRSTHAND_OBSERVATION)
+check("hedging beats observation language",
+      cls("I saw Gibbs at practice and I think he probably starts Week 1.")
+      == ev.ANALYSIS_OR_OPINION)
+check("prediction is opinion",
+      cls("Gibbs should lead the backfield and could see 300 touches.")
+      == ev.ANALYSIS_OR_OPINION)
+check("a quotation with a named attribution verb is a quotation",
+      cls('Campbell said \u201cJahmyr Gibbs looked sharp out there today\u201d after practice.')
+      == ev.DIRECT_QUOTATION)
+check("quoted words with nobody named are uncertain",
+      cls('\u201cJahmyr Gibbs looked sharp out there today and ran hard\u201d')
+      == ev.UNCERTAIN)
+check("relaying another outlet is never firsthand",
+      cls("According to Schefter, Gibbs will be limited at practice today.")
+      != ev.FIRSTHAND_OBSERVATION)
+check("an unattributed medical claim is uncertain",
+      cls("Gibbs has a torn hamstring and will miss four weeks of the season.")
+      == ev.UNCERTAIN)
+check("an attributed medical claim is not silently firsthand",
+      cls("Campbell said Gibbs has a hamstring strain and will miss four weeks.")
+      in (ev.DIRECT_QUOTATION, ev.UNCERTAIN))
+check("auto-captioned multi-speaker video is always uncertain",
+      cls("Gibbs took first-team reps in team drills, by my count.",
+          reporter_voice=False, auto_captions=True, multi_speaker=True)
+      == ev.UNCERTAIN)
+check("observation with no established speaker is uncertain",
+      cls("Gibbs took first-team reps in team drills.", reporter_voice=False,
+          auto_captions=True) == ev.UNCERTAIN)
+check("classification never invents a firsthand label from order alone",
+      cls("Gibbs looked good. He said he feels fast.", reporter_voice=False,
+          auto_captions=True, multi_speaker=True) == ev.UNCERTAIN)
+
+# ------------------------------------------------- player linking
+
+reg2 = pl.load()
+multi = ev.find_players(
+    "Jahmyr Gibbs and Jameson Williams both worked with the starters while "
+    "Sam LaPorta watched.", reg2, "DET")
+check("one excerpt can name several players", len(multi) == 3,
+      str(sorted(m[0] for m in multi)))
+check("a surname alone never matches",
+      not ev.find_players("Gibbs looked quick today.", reg2, "DET"))
+check("a misspelled name does not resolve",
+      not ev.find_players("Jahmir Gibs took reps.", reg2, "DET"))
+check("a player from another team does not resolve on this beat",
+      not ev.find_players("Jahmyr Gibbs took reps.", reg2, "TB"))
+
+ol = [p for p in reg2.players if p.context_only and p.team == "PHI"]
+check("linemen are in the registry as context",
+      bool(ol) and not any(p.fantasy_candidate for p in ol))
+
+# ------------------------------------------------- stored evidence
+
+store2 = WireStore()
+rows = store2.evidence()
+if rows:
+    check("every stored candidate is PENDING",
+          all(r["review_status"] == "PENDING" for r in rows))
+    check("registry version and hash are recorded on every row",
+          all(r["registry_version"] and r["registry_hash"] for r in rows))
+    check("identity confidence is stored apart from claim confidence",
+          all(r["resolution_confidence"] is not None
+              and r["classification_confidence"] is not None for r in rows))
+    ol_rows = [r for r in rows if "offensive line" in (r["exclusion_reason"] or "")]
+    check("offensive linemen are excluded from fantasy resolution",
+          bool(ol_rows) and all(r["position"] in pl.CONTEXT_POSITIONS
+                                for r in ol_rows), f"{len(ol_rows)} rows")
+    groups = Counter(r["evidence_group_id"] for r in rows)
+    check("players from one excerpt share an evidence group id",
+          any(v > 1 for v in groups.values()))
+    check("evidence text is preserved, not summarised",
+          all(len(r["evidence_text"]) > 40 for r in rows))
+
+with tempfile.TemporaryDirectory() as tmp:
+    st = WireStore(Path(tmp) / "ev.db")
+    rec = {"candidate_id": "x1", "evidence_group_id": "g1",
+           "source_id": "s", "evidence_text": "t", "review_status": "PENDING"}
+    check("evidence upsert is idempotent",
+          st.upsert_evidence(rec) is True and st.upsert_evidence(rec) is False)
+    st.conn.execute("UPDATE wire_evidence SET review_status='REJECTED' "
+                    "WHERE candidate_id='x1'")
+    st.conn.commit()
+    st.upsert_evidence(rec)
+    kept = st.evidence()[0]["review_status"]
+    check("re-extraction never overwrites a reviewer's decision",
+          kept == "REJECTED", kept)
+    n, _ = st.export_publications(Path(tmp) / "p.json")
+    check("extracted evidence cannot reach the published file", n == 0)
+
+extract_src = code_only((ROOT / "scripts" / "wire_extract.py").read_text())
+check("the extractor never writes to the publications file",
+      "wire_publications" not in extract_src
+      and "publish(" not in extract_src)
+check("the extractor references no fantasy file",
+      not FORBIDDEN_NAMES.search(extract_src))
+evsrc = code_only((ROOT / "wire" / "evidence.py").read_text())
+check("evidence.py references no fantasy file",
+      not FORBIDDEN_NAMES.search(evsrc))
+check("evidence.py imports nothing from the fantasy side",
+      not FORBIDDEN_IMPORTS.findall(evsrc))
 
 print()
 if FAILURES:

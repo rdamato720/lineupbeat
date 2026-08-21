@@ -138,6 +138,42 @@ CREATE TABLE IF NOT EXISTS wire_players (
 );
 CREATE INDEX IF NOT EXISTS idx_players_team ON wire_players(team, position);
 
+-- Extracted evidence, one row per player per span. Never read by the site
+-- build and never written to wire_publications.json: the only route out of
+-- here is a reviewer in review_wire.py.
+CREATE TABLE IF NOT EXISTS wire_evidence (
+  candidate_id     TEXT PRIMARY KEY,
+  evidence_group_id TEXT,
+  source_type      TEXT,
+  source_id        TEXT,
+  source_url       TEXT,
+  source_title     TEXT,
+  source_author_or_channel TEXT,
+  published_at     TEXT,
+  video_id         TEXT,
+  start_seconds    REAL,
+  end_seconds      REAL,
+  location         TEXT,
+  evidence_text    TEXT,
+  evidence_class   TEXT,
+  classification_confidence REAL,
+  classification_reasons TEXT,
+  player_id        TEXT,
+  player_name      TEXT,
+  team             TEXT,
+  position         TEXT,
+  resolution_method TEXT,
+  resolution_confidence REAL,
+  registry_version TEXT,
+  registry_hash    TEXT,
+  review_status    TEXT,
+  exclusion_reason TEXT,
+  created_at       TEXT,
+  updated_at       TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_ev_group ON wire_evidence(evidence_group_id);
+CREATE INDEX IF NOT EXISTS idx_ev_status ON wire_evidence(review_status);
+
 CREATE TABLE IF NOT EXISTS wire_event_history (
   id               INTEGER PRIMARY KEY AUTOINCREMENT,
   event_fingerprint TEXT,
@@ -275,6 +311,69 @@ class WireStore:
             "SELECT * FROM wire_publications WHERE retracted = 0 "
             "ORDER BY published_at DESC").fetchall()
         return [dict(r) for r in rows]
+
+    # -- extracted evidence -------------------------------------------------
+
+    def upsert_evidence(self, rec: dict) -> bool:
+        """Store one evidence candidate. True if new.
+
+        Keyed on candidate_id, which is derived from the span and the player,
+        so re-running extraction over the same article updates the row rather
+        than adding a second one. A reviewer's decision is never overwritten:
+        once review_status has moved off PENDING it stays where the human put
+        it.
+        """
+        prior = self.conn.execute(
+            "SELECT review_status, created_at FROM wire_evidence "
+            "WHERE candidate_id = ?", (rec["candidate_id"],)).fetchone()
+        status = rec.get("review_status", "PENDING")
+        created = now()
+        if prior:
+            created = prior["created_at"]
+            if prior["review_status"] and prior["review_status"] != "PENDING":
+                status = prior["review_status"]
+        self.conn.execute(
+            "INSERT OR REPLACE INTO wire_evidence VALUES "
+            "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            (rec["candidate_id"], rec.get("evidence_group_id", ""),
+             rec.get("source_type", ""), rec.get("source_id", ""),
+             rec.get("source_url", ""), rec.get("source_title", ""),
+             rec.get("source_author_or_channel", ""),
+             rec.get("published_at", ""), rec.get("video_id", ""),
+             rec.get("start_seconds"), rec.get("end_seconds"),
+             rec.get("location", ""), rec.get("evidence_text", ""),
+             rec.get("evidence_class", ""),
+             rec.get("classification_confidence"),
+             json.dumps(rec.get("classification_reasons") or []),
+             rec.get("player_id", ""), rec.get("player_name", ""),
+             rec.get("team", ""), rec.get("position", ""),
+             rec.get("resolution_method", ""),
+             rec.get("resolution_confidence"),
+             rec.get("registry_version", ""), rec.get("registry_hash", ""),
+             status, rec.get("exclusion_reason", ""), created, now()))
+        self.conn.commit()
+        return prior is None
+
+    def evidence(self, status: str | None = None,
+                 source_id: str | None = None) -> list[dict]:
+        sql, args = "SELECT * FROM wire_evidence", []
+        where = []
+        if status:
+            where.append("review_status = ?")
+            args.append(status)
+        if source_id:
+            where.append("source_id = ?")
+            args.append(source_id)
+        if where:
+            sql += " WHERE " + " AND ".join(where)
+        sql += " ORDER BY published_at DESC, evidence_group_id"
+        out = []
+        for r in self.conn.execute(sql, args).fetchall():
+            d = dict(r)
+            d["classification_reasons"] = json.loads(
+                d.get("classification_reasons") or "[]")
+            out.append(d)
+        return out
 
     # -- player registry ---------------------------------------------------
 
