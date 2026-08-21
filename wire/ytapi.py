@@ -69,12 +69,24 @@ def redact(text: str) -> str:
     return out
 
 
+# Metadata calls made in this process. Quota-billed by Google, and entirely
+# separate from the transcript budget -- they are different endpoints with
+# different limits, and reporting them as one number is how a discovery run
+# gets blamed for spending a caption allowance it never touched.
+CALLS: dict = {"playlistItems": 0, "videos": 0}
+
+
+def calls_made() -> int:
+    return sum(CALLS.values())
+
+
 def _call(endpoint: str, params: dict) -> dict:
     key = api_key()
     if not key:
         raise YouTubeAPIError("YOUTUBE_API_KEY is not set")
     q = dict(params)
     q["key"] = key
+    CALLS[endpoint] = CALLS.get(endpoint, 0) + 1
     url = f"{API}/{endpoint}?" + urllib.parse.urlencode(q)
     req = urllib.request.Request(url, headers={"User-Agent": "lineupbeat-wire/1.0"})
     try:

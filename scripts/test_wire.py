@@ -687,6 +687,37 @@ check("evidence.py references no fantasy file",
 check("evidence.py imports nothing from the fantasy side",
       not FORBIDDEN_IMPORTS.findall(evsrc))
 
+# ---------------------------------------------------------------- reporting
+# Reporting is allowed to change freely. The numbers it reports on are not:
+# these five constants are the whole safety envelope for caption requests, so
+# an edit to any of them should fail here rather than at YouTube.
+check("five caption requests a day", yt.MAX_REQUESTS_PER_DAY == 5,
+      yt.MAX_REQUESTS_PER_DAY)
+check("forty-five minutes between requests", yt.MIN_MINUTES_BETWEEN == 45,
+      yt.MIN_MINUTES_BETWEEN)
+check("a block stops requests for twenty-four hours",
+      yt.COOLDOWN_HOURS_AFTER_BLOCK == 24, yt.COOLDOWN_HOURS_AFTER_BLOCK)
+check("one video per channel per day",
+      yt.MAX_VIDEOS_PER_CHANNEL_PER_DAY == 1, yt.MAX_VIDEOS_PER_CHANNEL_PER_DAY)
+check("five minute minimum duration", yt.MIN_DURATION_SECONDS == 300,
+      yt.MIN_DURATION_SECONDS)
+
+bz = ing.both_zones("2026-08-22T01:12:22+00:00")
+check("a cooldown time is shown in UTC and in local time",
+      "UTC" in bz and "local" in bz and "01:12" in bz, bz)
+check("a missing timestamp reads as never", ing.both_zones("") == "never")
+check("an unparseable timestamp is passed through, not crashed on",
+      ing.both_zones("whenever") == "whenever")
+
+check("status makes no caption request",
+      "take_one" not in code_only(
+          (ROOT / "scripts" / "wire_youtube_ingest.py").read_text()
+      ).split("if args.status:")[1].split("return 0")[0])
+check("the data api counter counts metadata calls, not caption requests",
+      set(ytapi.CALLS) == {"playlistItems", "videos"}, sorted(ytapi.CALLS))
+check("the call counter holds no key material",
+      not any(re.search(r"AIza|[A-Za-z0-9_\-]{30,}", k) for k in ytapi.CALLS))
+
 print()
 if FAILURES:
     print(f"{len(FAILURES)} failed: " + ", ".join(FAILURES[:6]))

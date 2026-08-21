@@ -36,6 +36,23 @@ def iso(dt) -> str:
     return dt.replace(microsecond=0).isoformat()
 
 
+def both_zones(utc_iso: str) -> str:
+    """A timestamp in UTC and in the reader's own clock.
+
+    The records are UTC because they have to be comparable across machines,
+    but "until 01:12 UTC" is not a time anybody waits for. Both, always.
+    """
+    if not utc_iso:
+        return "never"
+    try:
+        dt = datetime.fromisoformat(utc_iso)
+    except (TypeError, ValueError):
+        return utc_iso
+    local = dt.astimezone()
+    return (f"{dt.strftime('%Y-%m-%d %H:%M')} UTC "
+            f"({local.strftime('%H:%M %Z')} local)")
+
+
 def budget_state(store) -> dict:
     """What the day has left, and whether YouTube is speaking to us."""
     used = store.requests_today()
@@ -313,12 +330,13 @@ def main():
     state = budget_state(store)
     pool = [c for c in channels if c.pollable]
 
-    print(f"  budget: {state['used']}/{youtube.MAX_REQUESTS_PER_DAY} used today"
-          f", {state['remaining']} left"
-          + (f", blocked until {state['blocked_until']}"
-             if state["blocked_until"] else "")
+    print(f"  transcript budget: {state['used']}/{youtube.MAX_REQUESTS_PER_DAY} "
+          f"caption requests used today, {state['remaining']} left"
           + (f", next slot in {state['wait_minutes']} min"
              if state["wait_minutes"] else ""))
+    if state["blocked_until"]:
+        print(f"  COOLDOWN ACTIVE   no caption requests until "
+              f"{both_zones(state['blocked_until'])}")
     print(f"  {len(pool)} channel(s) active, "
           f"{len(channels) - len(pool)} disabled or blocked")
     if args.report:
@@ -328,25 +346,80 @@ def main():
         cd = store.cooldown_until()
         cached = store.conn.execute(
             "SELECT COUNT(*) c FROM wire_transcripts").fetchone()["c"]
-        pending = len(store.candidates("EDITORIAL_REVIEW"))
+        pend = store.candidates("EDITORIAL_REVIEW")
+        yt_pend = [c for c in pend if '"kind": "youtube"' in (c["payload"] or "")]
         disc = store.discovered()
         elig = [d for d in disc if d["eligible"]]
-        print(f"  discovery      {len(disc)} videos recorded, "
-              f"{len(elig)} eligible")
-        print(f"  last discovery {store.last_discovery_at() or 'never'}")
-        print(f"  last request   {state['last'] or 'never'}")
-        print(f"  next slot      "
-              + (f"in {state['wait_minutes']} min" if state["wait_minutes"]
-                 else "now" if state["remaining"] and not state["blocked_until"]
-                 else "not today"))
-        print(f"  cooldown       "
-              + (f"ACTIVE until {cd}" if state["blocked_until"]
-                 else f"none{f' (last set, expired {cd})' if cd else ''}"))
-        print(f"  transcripts    {cached} cached")
-        print(f"  candidates     {pending} awaiting review")
-        print(f"  discovery via  "
+        today = now()[:10]
+        elig_today = [d for d in elig if (d["last_seen_at"] or "")[:10] == today]
+        done = state["channels_done"]
+
+        print("\n  METADATA  (YouTube Data API quota; never touches the "
+              "transcript budget)")
+        print(f"    discovery route   "
               + ("YOUTUBE_DATA_API" if ytapi.available()
                  else "YOUTUBE_RSS (no YOUTUBE_API_KEY set)"))
+        print(f"    api calls, this run {ytapi.calls_made()}")
+        print(f"    videos recorded   {len(disc)}")
+        print(f"    last discovery    {both_zones(store.last_discovery_at())}")
+
+        # Stored, selectable and selected are three different numbers and
+        # have been mistaken for each other. A channel can have two eligible
+        # videos and still offer only one, because the per-channel cap is a
+        # day rate, not a queue.
+        by_chan: dict = {}
+        for d in elig_today:
+            by_chan.setdefault(d["channel_id"], []).append(d)
+        selectable = [c for c in by_chan if c not in done]
+        attempts = store.conn.execute(
+            "SELECT l.outcome, l.video_id, d.channel_name "
+            "FROM wire_transcript_log l "
+            "LEFT JOIN wire_discovery d ON d.video_id = l.video_id "
+            "WHERE substr(l.requested_at,1,10) = ?", (today,)).fetchall()
+
+        print("\n  ELIGIBILITY")
+        print(f"    eligible stored   {len(elig)}  (all time)")
+        print(f"    eligible today    {len(elig_today)} across "
+              f"{len(by_chan)} channel(s)")
+        print(f"    selectable now    {len(selectable)}  (cap of "
+              f"{youtube.MAX_VIDEOS_PER_CHANNEL_PER_DAY} per channel per day; "
+              f"extra eligible videos wait for tomorrow)")
+        print(f"    attempted today   {len(attempts)}"
+              + (f"  ({', '.join(f'{a[2] or a[1]}: {a[0]}' for a in attempts)})"
+                 if attempts else ""))
+        print(f"    captured today    {len(done)}"
+              f"  ({', '.join(sorted(done)) if done else 'none'})")
+
+        print("\n  TRANSCRIPT BUDGET  (caption endpoint; the scarce one)")
+        print(f"    caption requests  {state['used']}/"
+              f"{youtube.MAX_REQUESTS_PER_DAY} today, "
+              f"{state['remaining']} left")
+        print(f"    last request      {both_zones(state['last'])}")
+        print(f"    next slot         "
+              + ("blocked by cooldown" if state["blocked_until"]
+                 else f"in {state['wait_minutes']} min" if state["wait_minutes"]
+                 else "now" if state["remaining"] else "not today"))
+        print(f"    cooldown          "
+              + (f"ACTIVE until {both_zones(cd)}" if state["blocked_until"]
+                 else f"none" + (f" (last expired {both_zones(cd)})" if cd else "")))
+        print(f"    transcripts cached {cached}")
+
+        print("\n  REVIEW QUEUE")
+        print(f"    youtube candidates {len(yt_pend)}")
+        print(f"    article candidates {len(pend) - len(yt_pend)}")
+
+        ok, why = may_request(state)
+        print("\n  NEXT SAFE COMMAND")
+        if state["blocked_until"]:
+            print("    cooldown active; use --plan or --status only")
+            print("    wire_youtube_ingest.py --plan")
+        elif not ok:
+            print(f"    {why}")
+            print("    wire_youtube_ingest.py --plan")
+        elif elig_today:
+            print("    wire_youtube_ingest.py        (takes one slot)")
+        else:
+            print("    nothing eligible; wire_youtube_ingest.py --plan")
         return 0
 
     if args.url:
