@@ -159,7 +159,14 @@ def main():
           + (f", {len(skipped)} active but not included" if skipped else "")
           + (f"  [dark launch: MANUAL_REVIEW_ONLY included]" if args.review else ""))
 
-    totals = {"candidates": 0, "seen": 0, "failed": 0}
+    # Mutually exclusive from here on. "failed" used to count everything
+    # that was not a candidate or already stored -- pre-capture refusals,
+    # content refusals and genuine extraction failures in one number -- and
+    # that number was then reported as "extraction failures", which it never
+    # was. Every outcome now lands in exactly one bucket.
+    totals = {"candidates": 0, "seen": 0, "refused_pre_capture": 0,
+              "refused_content": 0, "extraction_failed": 0, "other": 0}
+    detail = {}
     for src in pool:
         found = capture.discover(src, limit=args.limit)
         print(f"\n  {src.source_id}  [{src.adapter}]  {len(found)} in feed")
@@ -171,12 +178,33 @@ def main():
             if result.startswith("candidate"):
                 totals["candidates"] += 1
             elif not args.dry_run:
-                totals["failed"] += 1
+                if result.startswith("excluded:"):
+                    bucket, why = "refused_pre_capture", \
+                        result.split("excluded:", 1)[1].strip()
+                elif "official team site:" in result:
+                    bucket, why = "refused_content", \
+                        result.split("official team site:", 1)[1].strip()
+                elif result.startswith(("incomplete", "blocked")):
+                    bucket, why = "extraction_failed", \
+                        result.split(":", 1)[-1].strip()
+                else:
+                    bucket, why = "other", result
+                totals[bucket] += 1
+                key = f"{bucket}::{why.split('(')[0].strip()[:58]}"
+                detail[key] = detail.get(key, 0) + 1
             print(f"    {result:<38} {item['url'][:70]}")
             capture.polite_sleep(1.0)
 
+    not_candidate = (totals["refused_pre_capture"] + totals["refused_content"]
+                     + totals["extraction_failed"] + totals["other"])
     print(f"\n  new candidates {totals['candidates']}, "
-          f"already seen {totals['seen']}, unusable {totals['failed']}")
+          f"already seen {totals['seen']}, not-a-candidate {not_candidate}")
+    print(f"    refused before capture   {totals['refused_pre_capture']}")
+    print(f"    refused on content type  {totals['refused_content']}")
+    print(f"    extraction failed        {totals['extraction_failed']}")
+    print(f"    other                    {totals['other']}")
+    for k, v in sorted(detail.items(), key=lambda x: -x[1])[:14]:
+        print(f"      {v:>5}  {k.replace('::', ': ')}")
     if store:
         n, changed = store.export_publications()
         print(f"  {n} published items{' (file updated)' if changed else ''}")

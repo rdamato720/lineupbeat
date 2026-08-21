@@ -6,484 +6,424 @@
  },
  "discovery": {
   "sources_checked": 74,
-  "articles_new": 103,
-  "articles_seen": 516,
-  "extraction_failures": 204,
-  "refused::national list": 3,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/falcons/onsi/arthur-blank-agrees-to-sell-piece-": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/falcons/onsi/bad-timing-49ers-two-blessings-in-": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/falcons/onsi/what-atlanta-falcons-edge-room-loo": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/falcons/onsi/falcons-receive-apocalyptic-predic": 1,
-  "refused::unknown author": 51,
-  "refused::power rankings": 4,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/bills/onsi/transactions-former-bills-safety-tay": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/bills/onsi/preseason-cj-gardner-johnson-roasted": 1,
-  "refused::mock draft": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/panthers/onsi/how-panthers-qb-bryce-young-gave-": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/panthers/onsi/predicting-which-panthers-lb-will": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/panthers/onsi/why-darren-waller-could-be-an-abs": 1,
-  "refused::author is classified ANALYSIS_ONLY https://www.si.com/nfl/bears/onsi/3-important-questions-the-bears-need": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/bears/onsi/ben-johnson-crashes-antwaan-randle-e": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/bears/onsi/the-good-and-not-so-good-from-bears-": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/bears/onsi/ben-johnson-details-expectations-for": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/bears/onsi/ben-johnson-to-focus-on-one-unit-in-": 1,
-  "refused::author is classified ANALYSIS_ONLY https://www.si.com/nfl/bears/onsi/4-chicago-bears-on-the-bubble-who-ca": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/bears/onsi/bears-bengals-fight-joint-practice": 1,
-  "refused::author is classified ANALYSIS_ONLY https://www.si.com/nfl/bears/onsi/who-are-the-chicago-bears-most-logic": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/bears/onsi/bears-kyler-gorden-injury-update": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/bengals/onsi/setting-realistic-expectations-for": 1,
-  "refused::winners and losers": 3,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/browns/onsi/the-one-big-thing-everybody-s-missi": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/cowboys/onsi/jerry-jones-plans-punish-dallas-co": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/cowboys/onsi/dak-prescott-credits-dallas-cowboy": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/cowboys/onsi/joey-porter-jr-trade-would-complet": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/cowboys/onsi/caleb-downs-shows-christian-parker": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/cowboys/onsi/should-dallas-cowboys-explore-ryan": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/cowboys/onsi/von-miller-impressed-first-team-re": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/cowboys/onsi/brian-schottenheimer-ends-oxnard-t": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/cowboys/onsi/good-not-so-good-final-dallas-cowb": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-saints-facing-possi": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-injury-updates-trai": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/cowboys/onsi/christian-parker-views-von-miller-": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/cowboys/onsi/nfl-preseason-week-2-power-ranking": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/texans/onsi/texans-53-man-roster-projection-3-0": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/texans/onsi/texans-could-make-notable-o-line-ch": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/texans/onsi/texans-demeco-ryans-breaks-silence-": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/texans/onsi/3-winners-2-losers-from-texans-seco": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/texans/onsi/texans-linked-to-trade-for-patriots": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/texans/onsi/4-texans-players-with-most-to-gain-": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/texans/onsi/how-texans-plan-to-manage-c-j-strou": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/texans/onsi/this-dark-horse-can-make-texans-ros": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/texans/onsi/where-to-watch-stream-texans-vs-rai": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/texans/onsi/three-free-agent-wrs-texans-could-s": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/texans/onsi/one-texans-wr-poised-for-bigger-rol": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/texans/onsi/texans-change-plans-for-starters-in": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/chiefs/onsi/chiefs-reunite-with-former-lineback": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/chiefs/onsi/chiefs-on-si-mailbag-could-an-offse": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/chiefs/onsi/chiefs-injury-report-josh-simmons-t": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/chargers/onsi/chargers-latest-depth-chart-takea": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/chargers/onsi/49ers-chargers-will-reveal-emerge": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/chargers/onsi/chargers-49ers-predictions-starte": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/chargers/onsi/chargers-injury-updates-roster-mo": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/chargers/onsi/tyler-biadasz-injury-update-lates": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/rams/onsi/how-likely-is-puka-nacua-suspension": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/rams/onsi/rams-saints-preseason-insider-preview": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/rams/onsi/rams-winners-losers-joint-practice-sa": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/rams/onsi/rams-mailbag-alaric-jackson-dean-conn": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/rams/onsi/rams-players-watch-saints-preseason-w": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/rams/onsi/los-angeles-rams-trade-targets-before": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/rams/onsi/rams-puka-nacua-suspension-nfl-preced": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/rams/onsi/rams-puka-nacua-2028-trial-nfl-suspen": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/rams/onsi/rams-keagen-trost-injury-offensive-ta": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/rams/onsi/rams-rookie-rankings-ty-simpson-dean-": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/rams/onsi/rams-stetson-bennett-trade-after-ty-s": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/rams/onsi/ams-sign-alex-bachman-waive-mario-wil": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/saints/onsi/saints-vs-rams-tv-channel-game-time": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/saints/onsi/saints-stock-watch-6-players-trendi": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/saints/onsi/saints-bring-in-two-receivers-for-w": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/saints/onsi/tyler-shough-stays-hot-saints-cowbo": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/jets/onsi/3-jets-soaring-stocks-flipping-depth-": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/jets/onsi/nahshon-wright-starting-lose-ground-c": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/jets/onsi/demario-davis-jets-reunion-is-already": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/jets/onsi/cade-klubnik-s-next-jets-preseason-ga": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/jets/onsi/projecting-jets-wr-depth-chart-after-": 1,
-  "refused::roster prediction": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/49ers/onsi/6-49ers-lost-ground-preseason-week-2": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/49ers/onsi/6-49ers-may-won-jobs-preseason-play": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/49ers/onsi/6-49ers-defenders-facing-huge-presea": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/49ers/onsi/5-49ers-offensive-players-watch-pres": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/49ers/onsi/2-49ers-veterans-putting-3-draft-pic": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/titans/onsi/titans-sign-de-tanoh-kpassagnon-and": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/titans/onsi/3-titans-players-to-watch-closely-i": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/titans/onsi/titans-running-back-room-dealt-perf": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/titans/onsi/titans-fans-sound-off-on-tyjae-spea": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/titans/onsi/updated-titans-53-man-roster-projec": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/titans/onsi/3-titans-players-with-the-most-to-g": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/titans/onsi/will-levis-receives-bleak-outlook-a": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/titans/onsi/why-i-m-buying-the-early-titans-hyp": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/titans/onsi/titans-practice-report-carnell-tate": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/titans/onsi/3-titans-players-and-2-position-gro": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/titans/onsi/titans-sign-veteran-rb-d-ernest-joh": 1,
-  "refused::author is classified AGGREGATION https://www.si.com/nfl/titans/onsi/2-wants-and-2-needs-for-titans-pres": 1,
-  "refused::author is classified ANALYSIS_ONLY https://www.si.com/nfl/commanders/onsi/athan-kaliakmanis-commanders-qb": 1,
-  "refused::author is classified ANALYSIS_ONLY https://www.si.com/nfl/commanders/onsi/jeremy-mcnichols-commanders-run": 1,
-  "refused::mailbag or speculation": 16,
-  "refused::community or foundation": 4,
-  "refused::marketing or ticketing": 2,
-  "refused::fantasy or betting": 2,
+  "articles_new": 21,
+  "articles_seen": 616,
+  "not_a_candidate": 185,
+  "refused_pre_capture": 181,
+  "refused_content": 3,
+  "extraction_failed": 1,
+  "other": 0,
+  "detail::refused_pre_capture::national list": 4,
+  "detail::refused_pre_capture::author is classified AGGREGATION": 88,
+  "detail::refused_pre_capture::author 'Jason La Canfora' is not in the registry": 7,
+  "detail::refused_pre_capture::author 'Kyle J. Andrews' is not in the registry": 1,
+  "detail::refused_pre_capture::author 'Donovan Gibbs' is not in the registry": 1,
+  "detail::refused_pre_capture::power rankings": 4,
+  "detail::refused_pre_capture::mock draft": 1,
+  "detail::refused_pre_capture::author 'Mike Moraitis' is not in the registry": 1,
+  "detail::refused_pre_capture::author is classified ANALYSIS_ONLY": 4,
+  "detail::refused_pre_capture::author 'Arye Pulli' is not in the registry": 1,
+  "detail::refused_pre_capture::author 'Dominic Pagura' is not in the registry": 2,
+  "detail::refused_pre_capture::author 'Paul Keren' is not in the registry": 1,
+  "detail::refused_pre_capture::winners and losers": 3,
+  "detail::refused_pre_capture::author 'Noah Olson' is not in the registry": 1,
+  "detail::refused_pre_capture::author 'Bob Morris' is not in the registry": 1,
+  "detail::refused_pre_capture::author 'Vito Chirco' is not in the registry": 2,
+  "detail::extraction_failed::fetch returned 502": 1,
+  "detail::refused_pre_capture::author 'Emmett Matasovsky' is not in the registry": 1,
+  "detail::refused_pre_capture::author 'Drake Wally' is not in the registry": 3,
+  "detail::refused_pre_capture::author 'Michael Greene' is not in the registry": 2,
+  "detail::refused_pre_capture::author 'Brennan Isham' is not in the registry": 2,
+  "detail::refused_pre_capture::author 'Nate Gosney' is not in the registry": 1,
+  "detail::refused_pre_capture::author 'Fernando Alfaro-Donis' is not in the registry": 2,
+  "detail::refused_pre_capture::author 'Jared Feinberg' is not in the registry": 2,
+  "detail::refused_pre_capture::author 'Logan Lazarczyk' is not in the registry": 2,
+  "detail::refused_pre_capture::author 'Jacob Westendorf' is not in the registry": 1,
+  "detail::refused_pre_capture::author 'Doug Joubert' is not in the registry": 8,
+  "detail::refused_pre_capture::author 'Michael Haney' is not in the registry": 4,
+  "detail::refused_pre_capture::author 'Alex House' is not in the registry": 1,
+  "detail::refused_pre_capture::author 'Jeremy Brener' is not in the registry": 1,
+  "detail::refused_pre_capture::roster prediction": 1,
+  "detail::refused_pre_capture::author 'Grant Cohn' is not in the registry": 2,
+  "detail::refused_pre_capture::author 'Logan Robinson' is not in the registry": 2,
+  "detail::refused_pre_capture::mailbag or speculation": 16,
+  "detail::refused_content::team-produced copy with no concrete football observation": 3,
+  "detail::refused_pre_capture::marketing or ticketing": 2,
+  "detail::refused_pre_capture::community or foundation": 4,
+  "detail::refused_pre_capture::fantasy or betting": 2,
   "per_source": {
    "arizona_sports_tyler_drake": {
     "new": 0,
     "seen": 2,
-    "failed": 0
+    "not_candidate": 0
    },
    "packers_on_si_bill_huber": {
     "new": 0,
     "seen": 0,
-    "failed": 0
+    "not_candidate": 0
    },
    "pewter_report": {
     "new": 0,
     "seen": 9,
-    "failed": 0
+    "not_candidate": 0
    },
    "atoz_sports_easton_freeze": {
     "new": 0,
     "seen": 0,
-    "failed": 0
+    "not_candidate": 0
    },
    "phillyvoice_jimmy_kempski": {
     "new": 0,
-    "seen": 9,
-    "failed": 0
+    "seen": 8,
+    "not_candidate": 0
    },
    "si_cardinals": {
     "new": 0,
     "seen": 11,
-    "failed": 1
+    "not_candidate": 1
    },
    "si_falcons": {
     "new": 0,
     "seen": 8,
-    "failed": 4
+    "not_candidate": 4
    },
    "si_ravens": {
     "new": 0,
-    "seen": 3,
-    "failed": 9
+    "seen": 2,
+    "not_candidate": 10
    },
    "si_bills": {
     "new": 0,
     "seen": 8,
-    "failed": 4
+    "not_candidate": 4
    },
    "si_panthers": {
     "new": 0,
     "seen": 9,
-    "failed": 3
+    "not_candidate": 3
    },
    "si_bears": {
     "new": 0,
     "seen": 3,
-    "failed": 9
+    "not_candidate": 9
    },
    "si_bengals": {
-    "new": 0,
+    "new": 1,
     "seen": 10,
-    "failed": 2
+    "not_candidate": 1
    },
    "si_browns": {
-    "new": 0,
-    "seen": 6,
-    "failed": 6
+    "new": 1,
+    "seen": 5,
+    "not_candidate": 6
    },
    "si_cowboys": {
     "new": 0,
     "seen": 0,
-    "failed": 12
+    "not_candidate": 12
    },
    "si_broncos": {
     "new": 0,
     "seen": 10,
-    "failed": 2
+    "not_candidate": 2
    },
    "si_lions": {
     "new": 0,
-    "seen": 9,
-    "failed": 3
+    "seen": 8,
+    "not_candidate": 4
    },
    "si_packers": {
     "new": 0,
     "seen": 11,
-    "failed": 1
+    "not_candidate": 1
    },
    "si_texans": {
     "new": 0,
     "seen": 0,
-    "failed": 12
+    "not_candidate": 12
    },
    "si_colts": {
     "new": 0,
     "seen": 6,
-    "failed": 6
+    "not_candidate": 6
    },
    "si_jaguars": {
-    "new": 0,
-    "seen": 12,
-    "failed": 0
+    "new": 1,
+    "seen": 11,
+    "not_candidate": 0
    },
    "si_chiefs": {
-    "new": 0,
-    "seen": 8,
-    "failed": 4
+    "new": 1,
+    "seen": 7,
+    "not_candidate": 4
    },
    "si_chargers": {
     "new": 0,
     "seen": 4,
-    "failed": 8
+    "not_candidate": 8
    },
    "si_rams": {
     "new": 0,
     "seen": 0,
-    "failed": 12
+    "not_candidate": 12
    },
    "si_raiders": {
-    "new": 0,
+    "new": 1,
     "seen": 5,
-    "failed": 7
+    "not_candidate": 6
    },
    "si_dolphins": {
-    "new": 0,
+    "new": 1,
     "seen": 9,
-    "failed": 3
+    "not_candidate": 2
    },
    "si_vikings": {
-    "new": 0,
-    "seen": 12,
-    "failed": 0
+    "new": 1,
+    "seen": 11,
+    "not_candidate": 0
    },
    "si_patriots": {
     "new": 0,
-    "seen": 12,
-    "failed": 0
+    "seen": 11,
+    "not_candidate": 1
    },
    "si_saints": {
     "new": 0,
     "seen": 0,
-    "failed": 12
+    "not_candidate": 12
    },
    "si_giants": {
     "new": 0,
     "seen": 6,
-    "failed": 6
+    "not_candidate": 6
    },
    "si_jets": {
     "new": 0,
-    "seen": 7,
-    "failed": 5
+    "seen": 6,
+    "not_candidate": 6
    },
    "si_eagles": {
-    "new": 0,
-    "seen": 12,
-    "failed": 0
+    "new": 1,
+    "seen": 11,
+    "not_candidate": 0
    },
    "si_steelers": {
-    "new": 0,
-    "seen": 12,
-    "failed": 0
+    "new": 1,
+    "seen": 11,
+    "not_candidate": 0
    },
    "si_seahawks": {
-    "new": 0,
-    "seen": 10,
-    "failed": 2
+    "new": 1,
+    "seen": 9,
+    "not_candidate": 2
    },
    "si_49ers": {
     "new": 0,
-    "seen": 5,
-    "failed": 7
+    "seen": 4,
+    "not_candidate": 8
    },
    "si_buccaneers": {
     "new": 0,
-    "seen": 11,
-    "failed": 1
+    "seen": 10,
+    "not_candidate": 2
    },
    "si_titans": {
     "new": 0,
     "seen": 0,
-    "failed": 12
+    "not_candidate": 12
    },
    "si_commanders": {
     "new": 0,
     "seen": 10,
-    "failed": 2
+    "not_candidate": 2
    },
    "purple_insider_matthew_coller": {
     "new": 0,
     "seen": 12,
-    "failed": 0
+    "not_candidate": 0
    },
    "steelers_depot": {
-    "new": 0,
-    "seen": 12,
-    "failed": 0
+    "new": 5,
+    "seen": 7,
+    "not_candidate": 0
    },
    "jets_x_factor": {
-    "new": 0,
-    "seen": 12,
-    "failed": 0
+    "new": 1,
+    "seen": 11,
+    "not_candidate": 0
    },
    "pressbox_baltimore": {
     "new": 0,
     "seen": 3,
-    "failed": 0
+    "not_candidate": 0
    },
    "official_ari": {
     "new": 0,
     "seen": 12,
-    "failed": 0
+    "not_candidate": 0
    },
    "official_atl": {
     "new": 0,
     "seen": 12,
-    "failed": 0
+    "not_candidate": 0
    },
    "official_bal": {
     "new": 0,
     "seen": 11,
-    "failed": 1
+    "not_candidate": 1
    },
    "official_buf": {
     "new": 0,
     "seen": 12,
-    "failed": 0
+    "not_candidate": 0
    },
    "official_car": {
     "new": 0,
-    "seen": 12,
-    "failed": 0
+    "seen": 11,
+    "not_candidate": 1
    },
    "official_chi": {
     "new": 0,
     "seen": 12,
-    "failed": 0
+    "not_candidate": 0
    },
    "official_cin": {
     "new": 0,
     "seen": 12,
-    "failed": 0
+    "not_candidate": 0
    },
    "official_cle": {
     "new": 0,
     "seen": 12,
-    "failed": 0
+    "not_candidate": 0
    },
    "official_dal": {
-    "new": 0,
-    "seen": 8,
-    "failed": 4
+    "new": 1,
+    "seen": 7,
+    "not_candidate": 4
    },
    "official_den": {
     "new": 0,
     "seen": 8,
-    "failed": 0
+    "not_candidate": 0
    },
    "official_det": {
     "new": 0,
     "seen": 12,
-    "failed": 0
+    "not_candidate": 0
    },
    "official_gb": {
     "new": 0,
     "seen": 12,
-    "failed": 0
+    "not_candidate": 0
    },
    "official_hou": {
     "new": 0,
-    "seen": 12,
-    "failed": 0
+    "seen": 11,
+    "not_candidate": 1
    },
    "official_ind": {
     "new": 0,
     "seen": 9,
-    "failed": 3
+    "not_candidate": 3
    },
    "official_jax": {
     "new": 0,
     "seen": 4,
-    "failed": 8
+    "not_candidate": 8
    },
    "official_kc": {
     "new": 0,
     "seen": 11,
-    "failed": 1
+    "not_candidate": 1
    },
    "official_lac": {
     "new": 0,
     "seen": 12,
-    "failed": 0
+    "not_candidate": 0
    },
    "official_lar": {
-    "new": 0,
-    "seen": 12,
-    "failed": 0
+    "new": 2,
+    "seen": 10,
+    "not_candidate": 0
    },
    "official_lv": {
-    "new": 0,
-    "seen": 12,
-    "failed": 0
-   },
-   "official_mia": {
-    "new": 4,
-    "seen": 1,
-    "failed": 7
-   },
-   "official_min": {
-    "new": 11,
-    "seen": 0,
-    "failed": 1
-   },
-   "official_ne": {
-    "new": 12,
-    "seen": 0,
-    "failed": 0
-   },
-   "official_no": {
-    "new": 9,
-    "seen": 0,
-    "failed": 3
-   },
-   "official_nyg": {
-    "new": 11,
-    "seen": 0,
-    "failed": 1
-   },
-   "official_nyj": {
-    "new": 9,
-    "seen": 0,
-    "failed": 3
-   },
-   "official_phi": {
-    "new": 10,
-    "seen": 0,
-    "failed": 2
-   },
-   "official_pit": {
-    "new": 10,
-    "seen": 0,
-    "failed": 2
-   },
-   "official_sea": {
-    "new": 9,
-    "seen": 0,
-    "failed": 3
-   },
-   "official_sf": {
     "new": 1,
     "seen": 11,
-    "failed": 0
+    "not_candidate": 0
+   },
+   "official_mia": {
+    "new": 0,
+    "seen": 12,
+    "not_candidate": 0
+   },
+   "official_min": {
+    "new": 1,
+    "seen": 11,
+    "not_candidate": 0
+   },
+   "official_ne": {
+    "new": 0,
+    "seen": 12,
+    "not_candidate": 0
+   },
+   "official_no": {
+    "new": 0,
+    "seen": 12,
+    "not_candidate": 0
+   },
+   "official_nyg": {
+    "new": 0,
+    "seen": 12,
+    "not_candidate": 0
+   },
+   "official_nyj": {
+    "new": 0,
+    "seen": 12,
+    "not_candidate": 0
+   },
+   "official_phi": {
+    "new": 0,
+    "seen": 11,
+    "not_candidate": 1
+   },
+   "official_pit": {
+    "new": 0,
+    "seen": 11,
+    "not_candidate": 1
+   },
+   "official_sea": {
+    "new": 0,
+    "seen": 10,
+    "not_candidate": 2
+   },
+   "official_sf": {
+    "new": 0,
+    "seen": 11,
+    "not_candidate": 1
    },
    "official_tb": {
-    "new": 9,
-    "seen": 0,
-    "failed": 3
+    "new": 0,
+    "seen": 11,
+    "not_candidate": 1
    },
    "official_ten": {
-    "new": 1,
-    "seen": 9,
-    "failed": 2
+    "new": 0,
+    "seen": 10,
+    "not_candidate": 2
    },
    "official_was": {
-    "new": 7,
-    "seen": 0,
-    "failed": 5
+    "new": 0,
+    "seen": 12,
+    "not_candidate": 0
    },
    "atoz_network_ne": {
     "new": 0,
     "seen": 0,
-    "failed": 0
+    "not_candidate": 0
    }
   },
-  "seconds": 390.0
+  "seconds": 301.4
  },
  "window_articles": {
   "inside_window": 477,

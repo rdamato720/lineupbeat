@@ -83,15 +83,28 @@ def discover(store, cutoff, limit_per_source: int) -> dict:
             capture_output=True, text=True, timeout=1800)
         out = r.stdout
         import re as _re
-        m = _re.search(r"new candidates (\d+), already seen (\d+), unusable (\d+)",
-                       out)
+        m = _re.search(r"new candidates (\d+), already seen (\d+), "
+                       r"not-a-candidate (\d+)", out)
         if m:
             new, seen, bad = (int(x) for x in m.groups())
             stats["articles_new"] += new
             stats["articles_seen"] += seen
-            stats["extraction_failures"] += bad
-            per_source[src.source_id] = {"new": new, "seen": seen, "failed": bad}
+            stats["not_a_candidate"] += bad
+            per_source[src.source_id] = {"new": new, "seen": seen,
+                                         "not_candidate": bad}
+        for key, label in (("refused before capture", "refused_pre_capture"),
+                           ("refused on content type", "refused_content"),
+                           ("extraction failed", "extraction_failed"),
+                           ("other  ", "other")):
+            mm = _re.search(rf"{key}\s+(\d+)", out)
+            if mm:
+                stats[label] += int(mm.group(1))
         for line in out.split("\n"):
+            mm = _re.match(r"\s+(\d+)\s+(\w+)::?\s*(.+)", line.strip()
+                           if False else line)
+            if mm:
+                stats[f"detail::{mm.group(2)}::{mm.group(3).strip()[:56]}"] += int(mm.group(1))
+        for line in []:
             if "excluded:" in line:
                 reason = line.split("excluded:")[1].strip()
                 key = reason.split("(")[0].strip()
@@ -265,13 +278,29 @@ def main():
         d["seconds"] = round(time.time() - t0, 1)
         state["discovery"] = d
         STATE.write_text(json.dumps(state, indent=1) + "\n")
-        print(f"  sources checked {d['sources_checked']}, "
-              f"new articles {d.get('articles_new', 0)}, "
-              f"already stored {d.get('articles_seen', 0)}, "
-              f"unusable {d.get('extraction_failures', 0)}")
-        for k, v in sorted(d.items()):
-            if str(k).startswith("refused::"):
-                print(f"      {v:>5}  {k.split('::')[1]}")
+        # Mutually exclusive, and every outcome accounted for. The old line
+        # printed one "unusable" number that mixed pre-capture refusals,
+        # content refusals and extraction failures, and it was then reported
+        # as an extraction-failure count, which it never was.
+        nc = d.get("not_a_candidate", 0)
+        print(f"  sources checked {d['sources_checked']}")
+        print(f"    {'newly captured':<30}{d.get('articles_new', 0):>6}")
+        print(f"    {'already stored':<30}{d.get('articles_seen', 0):>6}")
+        print(f"    {'not a candidate':<30}{nc:>6}")
+        for label, key in (("refused before capture", "refused_pre_capture"),
+                           ("refused on content type", "refused_content"),
+                           ("extraction failed", "extraction_failed"),
+                           ("other", "other")):
+            print(f"       {label:<28}{d.get(key, 0):>6}")
+        parts = sum(d.get(k, 0) for k in ("refused_pre_capture",
+                                          "refused_content",
+                                          "extraction_failed", "other"))
+        print(f"       {'sub-total':<28}{parts:>6}"
+              f"{'  reconciles' if parts == nc else '  DOES NOT RECONCILE'}")
+        for k, v in sorted(((k, v) for k, v in d.items()
+                            if str(k).startswith("detail::")),
+                           key=lambda x: -x[1])[:12]:
+            print(f"      {v:>5}  {k.split('::', 1)[1].replace('::', ': ')}")
         return 0
 
     # Stage 5 onward, from what is stored.
