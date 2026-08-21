@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-21T20:12:30+00:00",
+ "generated_at": "2026-08-21T21:04:40+00:00",
  "count": 5,
  "publications": [
   {
@@ -26,7 +26,10 @@
    "reviewer_action": "APPROVE_WITH_EDIT",
    "display_position_rank": "WR95",
    "display_projected_points": 54.0,
-   "player_id": "00-0033555"
+   "player_id": "00-0033555",
+   "public_evidence_summary": "Hollins has regularly participated in two-minute drills with multiple Patriots offensive units.",
+   "public_evidence_summary_approved_by": "ralph",
+   "public_evidence_summary_approved_at": "2026-08-21T21:02:39+00:00"
   },
   {
    "publication_id": "approved:makai-lemon",
@@ -75,7 +78,10 @@
    "display_position_rank": "WR61",
    "display_adp": 112.7,
    "display_projected_points": 89.3,
-   "player_id": "00-0040867"
+   "player_id": "00-0040867",
+   "public_evidence_summary": "Lemon was officially listed as a non-participant with a hamstring issue but still completed some receiver drills.",
+   "public_evidence_summary_approved_by": "ralph",
+   "public_evidence_summary_approved_at": "2026-08-21T21:02:39+00:00"
   },
   {
    "publication_id": "approved:devonta-smith",
@@ -136,7 +142,10 @@
    "display_position_rank": "WR16",
    "display_adp": 28.4,
    "display_projected_points": 184.3,
-   "player_id": "00-0036912"
+   "player_id": "00-0036912",
+   "public_evidence_summary": "Smith returned to limited practice work after previously sitting out 11-on-11 periods with a hamstring issue.",
+   "public_evidence_summary_approved_by": "ralph",
+   "public_evidence_summary_approved_at": "2026-08-21T21:02:39+00:00"
   },
   {
    "publication_id": "approved:sam-laporta",
@@ -163,7 +172,10 @@
    "display_position_rank": "TE6",
    "display_adp": 86.7,
    "display_projected_points": 156.8,
-   "player_id": "00-0039065"
+   "player_id": "00-0039065",
+   "public_evidence_summary": "LaPorta missed one practice, and no reason for his absence was reported.",
+   "public_evidence_summary_approved_by": "ralph",
+   "public_evidence_summary_approved_at": "2026-08-21T21:02:39+00:00"
   },
   {
    "publication_id": "28a689bf503cbf0eedee",
@@ -180,7 +192,7 @@
    "horizon": "IMMEDIATE",
    "projection_action": "NONE",
    "reporter_found": "Elsewhere, Jack Strand still did not receive team work, but he is expected to play half of Saturday\u2019s preseason game. Chris Blair received most of Jahan Dotson\u2019s first-team snaps during red-zone work, giving him another opportunity to make his case for a roster spot.",
-   "lineupbeat_impact": "Chris Blair took most of Jahan Dotson's first-team red-zone snaps during one joint practice. The report does not say why those snaps were available or for how long, and it does not establish that Blair has moved ahead of Dotson.",
+   "lineupbeat_impact": "The opportunity is encouraging, but one practice does not establish that Blair has passed Dotson or earned a regular-season role.",
    "source": "Sports Illustrated -- ATL",
    "author": "Darius Hayes",
    "published_date": "2026-08-21T00:13:04Z",
@@ -188,7 +200,12 @@
    "source_ownership": "INDEPENDENT",
    "reviewer_action": "APPROVE_WITH_EDIT",
    "evidence_candidate_id": "28a689bf503cbf0eedee",
-   "player_id": "00-0036463"
+   "player_id": "00-0036463",
+   "public_evidence_summary": "Blair received most of Jahan Dotson's first-team red-zone snaps during one joint practice.",
+   "public_evidence_summary_approved_by": "ralph",
+   "public_evidence_summary_approved_at": "2026-08-21T21:02:39+00:00",
+   "lineupbeat_impact_approved_by": "ralph",
+   "lineupbeat_impact_approved_at": "2026-08-21T21:04:40+00:00"
   }
  ]
 }

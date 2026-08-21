@@ -41,6 +41,18 @@
 #   UNCERTAIN      anything the title does not clearly place. Treated as
 #                  MULTI_SPEAKER, because guessing is the failure mode.
 
+# PAUSED IN PRODUCTION -- 21 August 2026.
+#
+# Website reporting is the launch priority, so the pilot spends nothing:
+# no caption requests, no Claude calls on video evidence, and no step in
+# the scheduled workflow. Everything below is left exactly as it was --
+# channels, rules, budget, tests, and every cached transcript -- so this
+# is one line to reverse when video is reconsidered.
+#
+# `paused: true` refuses transcript requests and evidence extraction.
+# Discovery and the read-only --plan/--status views still work locally.
+paused: true
+
 defaults:
   transcript_languages: [en]
   # Below this a "transcript" is a caption on a highlight clip, not a report.

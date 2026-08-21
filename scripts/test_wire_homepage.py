@@ -50,7 +50,7 @@ if not PAGE.exists():
 
 html = PAGE.read_text()
 meta = json.loads(META.read_text())
-section = html.split('id="lbwire"', 1)[1].split('<main id="feed">')[0]
+section = html.split('id="wire"', 1)[1].split('<main id="feed">')[0]
 
 
 def payload(text):
@@ -127,8 +127,41 @@ check("no card falls back to initials by default",
       'class="wpic"' not in section and 'class="wlogo"' not in section)
 check("every card carries its team colour",
       len(re.findall(r"--c1:#", section)) == len(per_card))
-check("the grid is two columns, never three",
-      "repeat(2,minmax(0,1fr))" in html)
+gi = html.find("#wire .tiles{")
+rule = html[gi:gi + 120] if gi >= 0 else ""
+check("the Wire renders one card per row",
+      "display:block" in rule and "repeat(" not in rule, rule[:56])
+
+# --- the public sentence, and the evidence it may not replace ------------
+PUBS_F = ROOT / "data" / "wire_publications.json"
+records = (json.loads(PUBS_F.read_text())["publications"]
+           if PUBS_F.exists() else [])
+for r in records:
+    who = r["player_name"]
+    summ = (r.get("public_evidence_summary") or "").strip()
+    check(f"{who} carries an approved public summary",
+          bool(summ) and bool(r.get("public_evidence_summary_approved_by")))
+    check(f"{who}'s summary is one sentence within 180 characters",
+          bool(summ) and len(summ) <= 180
+          and summ.count(". ") == 0, f"{len(summ)} chars")
+    check(f"{who}'s stored evidence is retained",
+          bool((r.get("reporter_found") or "").strip()))
+    check(f"{who}'s passage is not published on the card",
+          (r.get("reporter_found") or "x" * 9)[:80] not in section)
+check("the card asks 'What changed'",
+      "What changed" in section and "What the reporter found" not in section)
+
+# --- one destination -----------------------------------------------------
+check("the homepage does not link to a separate Wire page",
+      "/nfl/wire/" not in html)
+check("the Wire section is the #wire anchor", 'id="wire"' in html)
+check("no 'View the full Wire' link remains", "View the full Wire" not in html)
+
+# --- retired sections ----------------------------------------------------
+check("League News is gone from the markup",
+      'class="league"' not in html and "<h2>League news</h2>" not in html)
+check("the video section is gone from the markup",
+      "<h2>Video from the beat</h2>" not in html and 'class="vgrid"' not in html)
 
 for d in approved:
     esc = (d["edited_text"].replace("&", "&amp;").replace("<", "&lt;")
@@ -136,7 +169,11 @@ for d in approved:
     check(f"{d['subject']}: approved wording is byte-identical", esc in section)
 
 # --- layout and filters ---
-check("two columns at 1000px and up", "repeat(2,minmax(0,1fr))" in html)
+# One card per row at every width. Two columns put the reporting, the
+# attribution and the analysis into a half-width measure.
+check("one card per row at every width",
+      "#wire .tiles{display:block" in html
+      and "minmax(0,1fr)" not in html.split("#wire .tiles{")[1][:120])
 check("never three columns in the section", "repeat(3" not in section)
 check("the analysis is never clamped",
       "line-clamp" not in section and "text-overflow" not in section)

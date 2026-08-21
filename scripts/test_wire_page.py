@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""The /nfl/wire page, checked against the built HTML.
+"""The publication gate, and the redirect that replaced the Wire page.
 
     python3 scripts/test_wire_page.py
 
-Asserting on the JSON would prove the data is right and say nothing about
-what a reader sees. Every check here reads site/nfl/wire/index.html, because
-the failure that matters -- a held record rendering, two blocks merging into
-one, a dead source link -- happens in the markup or not at all.
+The Wire has no page of its own: it is the homepage, and what a reader sees
+is covered by test_wire_homepage.py. build_wire.py is still the thing that
+decides whether a record may be published at all, so what is checked here is
+that it refuses everything it is supposed to refuse -- a held record, an
+unapproved one, a missing public summary -- and that /nfl/wire/ still
+answers for everyone who bookmarked it.
 """
 
 from __future__ import annotations
@@ -46,66 +48,31 @@ def build(pubs_json: str, out: Path) -> subprocess.CompletedProcess:
         PUBS.write_text(backup)
 
 
-if not PAGE.exists():
-    print("  site/nfl/wire/index.html has not been built; run build_wire.py")
-    sys.exit(1)
+REDIRECTS = ROOT / "site" / "_redirects"
 
-html = PAGE.read_text()
-payload = json.loads(PUBS.read_text())
-pubs = payload["publications"]
-names = sorted(p["player_name"] for p in pubs)
+check("no separate Wire page is built",
+      not (ROOT / "site" / "nfl" / "wire").exists())
+check("the redirect file was written", REDIRECTS.exists())
+_rd = REDIRECTS.read_text() if REDIRECTS.exists() else ""
+check("/nfl/wire/ redirects to the homepage Wire",
+      bool(re.search(r"^/nfl/wire/\S*\s+/#wire\s+30[12]\s*$", _rd, re.M)))
+check("the redirect file holds one rule for it, however often it is built",
+      _rd.count("/nfl/wire/") == 1, f"{_rd.count('/nfl/wire/')} rule(s)")
 
-check("the page was built", len(html) > 5000, f"{len(html):,} bytes")
-# Whoever is approved right now, not a hardcoded pair: Anthony Richardson
-# was retracted as REJECT_NOT_FANTASY_RELEVANT and a test naming him would
-# have to be edited every time a reviewer changes their mind.
+pubs = json.loads(PUBS.read_text())["publications"]
+names = [p["player_name"] for p in pubs]
 check("every published player carries a reviewer approval",
-      all(p["reviewer_action"].startswith("APPROVE") for p in pubs), names)
-check("Anthony Richardson is not published",
-      "Anthony Richardson" not in names, names)
-check("Chris Blair is published", "Chris Blair" in names, names)
-
-cards = re.findall(r'<article class="wcard"', html)
-check("one card per publication and no more",
-      len(cards) == len(pubs), f"{len(cards)} cards, {len(pubs)} publications")
-
-for p in pubs:
-    who = p["player_name"]
-    # Byte-identical commentary, allowing only HTML escaping.
-    esc = (p["lineupbeat_impact"].replace("&", "&amp;").replace("<", "&lt;")
-           .replace(">", "&gt;").replace('"', "&quot;").replace("'", "&#x27;"))
-    check(f"{who}: approved commentary is byte-identical",
-          esc in html, p["lineupbeat_impact"][:48])
-    check(f"{who}: appears exactly once as a card",
-          html.count(f'>{p["player_name"]}</span>') == 1)
-    check(f"{who}: direction label matches its structured direction",
-          f'>{p["reader_label"]}</span>' in html,
-          f'{p["direction"]} -> {p["reader_label"]}')
-    check(f"{who}: source link is intact", p["url"] in html)
-    check(f"{who}: reporter evidence is present",
-          p["reporter_found"][:40].replace("'", "&#x27;") in html)
-
-check("evidence and commentary are separate elements",
-      'class="wrep"' in html and 'class="wimp"' in html
-      and 'class="wrep"' != 'class="wimp"')
-check("the two blocks are never merged into one element",
-      not re.search(r'class="wrep"[^>]*>[^<]*class="wimp"', html))
-
-for who in ("Quinn Ewers", "Joe Burrow", "Geno Smith", "Eli Heidenreich",
-            "Mark Andrews", "Anthony Richardson"):
-    check(f"refused player absent from /nfl/wire/: {who}", who not in html)
-
-check("the disclosure is on the page", "How to read the Wire" in html)
-check("the canonical url is /nfl/wire/",
-      'rel="canonical" href="https://lineupbeat.com/nfl/wire/"' in html)
-check("no projection change is stated when the action is NONE",
-      html.count("No projection change") == sum(
-          1 for p in pubs if p["projection_action"] == "NONE"))
-check("evidence strength and horizon are secondary text",
-      "Evidence strength" in html and 'class="wfoot"' in html)
-check("the page links to no fantasy data file",
-      not re.search(r"projections\.xlsx|nfl_rankings_2026|rosters/nfl\.csv",
-                    html))
+      all(str(p.get("reviewer_action", "")).startswith("APPROVE") for p in pubs))
+check("no publication id repeats",
+      len({p["publication_id"] for p in pubs}) == len(pubs))
+check("every record keeps its evidence and its summary apart",
+      all((p.get("reporter_found") or "").strip()
+          and (p.get("public_evidence_summary") or "").strip()
+          and p["reporter_found"] != p["public_evidence_summary"]
+          for p in pubs))
+check("every record's commentary differs from its summary",
+      all(p.get("lineupbeat_impact") != p.get("public_evidence_summary")
+          for p in pubs))
 
 # Read before the mutation builds below, which rewrite the homepage module
 # as a side effect, and restored at the end so a test run leaves no trace.
@@ -117,16 +84,19 @@ if HOME_BEFORE is not None:
     # every card twice.
     check("the temporary Wire module is retired",
           "WIRE MODULE START" not in home)
-    check("the replacement section is present", 'id="lbwire"' in home)
-    _mod = home.split('id="lbwire"')[1].split("<main id=\"feed\">")[0] \
-        if 'id="lbwire"' in home else ""
+    check("the Wire section is present", 'id="wire"' in home)
+    _mod = home.split('id="wire"')[1].split("<main id=\"feed\">")[0] \
+        if 'id="wire"' in home else ""
     check("no retracted player is in the replacement section",
           "Anthony Richardson" not in _mod)
-    check("the replacement section shows the approved players",
+    check("the Wire section shows the approved players",
           all(p["player_name"] in _mod for p in pubs))
-    check("homepage cards link to /nfl/wire/",
-          home.count('href="/nfl/wire/"') >= 1,
-          f'{home.count(chr(34) + "/nfl/wire/" + chr(34))} links')
+    # The consolidation: one destination, and it is this page.
+    check("the homepage links to no separate Wire page",
+          "/nfl/wire/" not in home,
+          f'{home.count("/nfl/wire/")} link(s)')
+    check("the calls to action point at the homepage anchor",
+          home.count('href="#wire"') >= 2)
     # The replacement section carries every approved report, not a
     # three-card teaser, so the old cap no longer applies. What matters is
     # that the count shown equals the cards rendered.
@@ -134,7 +104,8 @@ if HOME_BEFORE is not None:
     _cards = len(_re.findall(r'<article class="tile wire"', home))
     check("the replacement renders one card per publication",
           _cards == len(pubs), f"{_cards} cards, {len(pubs)} published")
-    check("the homepage offers the full Wire", 'href="/nfl/wire/"' in home)
+    check("no 'View the full Wire' link remains",
+          "View the full Wire" not in home)
 
 with tempfile.TemporaryDirectory() as tmp:
     out = Path(tmp) / "p.html"
@@ -142,10 +113,10 @@ with tempfile.TemporaryDirectory() as tmp:
     r = build('{"generated_at":"x","count":0,"publications":[]}', out)
     check("a zero-publication build succeeds", r.returncode == 0, r.stderr[-90:])
     empty = out.read_text() if out.exists() else ""
-    check("the empty state is shown",
-          "No reviewed reports are available yet" in empty)
-    check("no filters are shown when there is nothing to filter",
-          'id="fteam"' not in empty)
+    # With no page to render, an empty publication set must still be a
+    # clean pass through the gate rather than a crash.
+    check("an empty publication set validates rather than crashing",
+          empty is not None)
 
     good = json.loads(PUBS.read_text())
     for label, mutate in [
@@ -177,8 +148,8 @@ with tempfile.TemporaryDirectory() as tmp:
 # passed.
 _bp = (ROOT / "scripts" / "build_pages.py").read_text()
 _prot = re.search(r"protected = \{(.+?)\}", _bp, re.S)
-check("build_pages protects the wire directory from the stale-page prune",
-      bool(_prot) and '"wire"' in _prot.group(1),
+check("build_pages no longer protects a wire directory it does not build",
+      bool(_prot) and '"wire"' not in _prot.group(1),
       _prot.group(1)[:70] if _prot else "protected set not found")
 
 # The artifact check must exist, run against the deploy directory, and be
@@ -192,14 +163,17 @@ check("the artifact check cannot be skipped",
 _va = (ROOT / "scripts" / "verify_deploy_artifact.py").read_text()
 # The verifier reads the published file rather than naming players, so a
 # retraction cannot fail the deploy.
-for _need, _label in [('"nfl" / "wire" / "index.html"', "the exact host path"),
-                      ('"The NFL Wire"', "the page heading"),
-                      ('wire_publications.json', "the published file")]:
+for _need, _label in [('"nfl" / "wire"', "that no separate page ships"),
+                      ('id="wire"', "the homepage anchor"),
+                      ('wire_publications.json', "the published file"),
+                      ('public_evidence_summary', "the approved summary")]:
     check(f"the artifact check asserts {_label}", _need in _va)
 check("the artifact check names no player",
       "Chris Blair" not in _va and "Anthony Richardson" not in _va)
-check("the artifact check resolves every homepage Wire link",
-      "resolve(root, href)" in _va)
+check("the artifact check asserts the redirect",
+      "/#wire" in _va and "_redirects" in _va)
+check("the artifact check asserts nothing links to the retired page",
+      "no page in the artifact links to /nfl/wire/" in _va)
 
 # Nothing about this page may touch the fantasy inputs.
 src = (ROOT / "scripts" / "build_wire.py").read_text()

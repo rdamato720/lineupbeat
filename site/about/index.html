@@ -19,7 +19,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0A0C08">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"AboutPage","name":"About LineupBeat | How It Works and Where the Data Comes From","description":"Why we built LineupBeat, how we follow beat reporters in all 32 NFL markets, where our projections and data come from, and how we correct factual errors.","url":"https://lineupbeat.com/about/","dateModified":"2026-08-18","publisher":{"@id":"https://lineupbeat.com/#org"},"mainEntity":{"@type":"Person","name":"Ralph Damato","description":"Built and maintains LineupBeat","email":"hello@lineupbeat.com","worksFor":{"@id":"https://lineupbeat.com/#org"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"LineupBeat","item":"https://lineupbeat.com/"},{"@type":"ListItem","position":2,"name":"About","item":"https://lineupbeat.com/about/"}]},{"@type":"Organization","@id":"https://lineupbeat.com/#org","name":"LineupBeat","url":"https://lineupbeat.com/","description":"Local NFL beat reporting matched to fantasy relevant players, with projections, ADP, coaching and schedule data.","email":"hello@lineupbeat.com","alternateName":"LineupBeat Fantasy Football","knowsAbout":["fantasy football","NFL","fantasy football projections","average draft position","NFL injuries","NFL strength of schedule"],"contactPoint":{"@type":"ContactPoint","email":"hello@lineupbeat.com","alternateName":"LineupBeat Fantasy Football","knowsAbout":["fantasy football","NFL","fantasy football projections","average draft position","NFL injuries","NFL strength of schedule"],"contactType":"customer support"}}]}</script><style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"AboutPage","name":"About LineupBeat | How It Works and Where the Data Comes From","description":"Why we built LineupBeat, how we follow beat reporters in all 32 NFL markets, where our projections and data come from, and how we correct factual errors.","url":"https://lineupbeat.com/about/","dateModified":"2026-08-21","publisher":{"@id":"https://lineupbeat.com/#org"},"mainEntity":{"@type":"Person","name":"Ralph Damato","description":"Built and maintains LineupBeat","email":"hello@lineupbeat.com","worksFor":{"@id":"https://lineupbeat.com/#org"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"LineupBeat","item":"https://lineupbeat.com/"},{"@type":"ListItem","position":2,"name":"About","item":"https://lineupbeat.com/about/"}]},{"@type":"Organization","@id":"https://lineupbeat.com/#org","name":"LineupBeat","url":"https://lineupbeat.com/","description":"Local NFL beat reporting matched to fantasy relevant players, with projections, ADP, coaching and schedule data.","email":"hello@lineupbeat.com","alternateName":"LineupBeat Fantasy Football","knowsAbout":["fantasy football","NFL","fantasy football projections","average draft position","NFL injuries","NFL strength of schedule"],"contactPoint":{"@type":"ContactPoint","email":"hello@lineupbeat.com","alternateName":"LineupBeat Fantasy Football","knowsAbout":["fantasy football","NFL","fantasy football projections","average draft position","NFL injuries","NFL strength of schedule"],"contactType":"customer support"}}]}</script><style>
 /* Inline links in prose, on a phone.
    A link inside a sentence should not be 44px tall -- that would break the
    line. What it needs is a bigger hit area than its text box, which extra
@@ -190,6 +190,13 @@ a{color:inherit}
 .fdcard:hover h3{color:var(--signal)}
 .fdcard p{margin:.35rem 0 0; font-size:.79rem; line-height:1.45;
   color:var(--quiet)}
+/* Only the rankings card carries a button. It is the newest board and the
+   one a visitor is most likely to have come for, and the arrow says the
+   card goes somewhere -- the others are self-evident from their titles. */
+.fdcardbtn{display:inline-flex; align-items:center; margin:.55rem 0 0;
+  font-family:var(--agate); text-transform:uppercase; letter-spacing:.08em;
+  font-size:.7rem; font-weight:600; color:var(--signal)}
+.fdcardbtn::after{content:" \2192"; margin-left:.3rem}
 .cta{display:flex; align-items:center; gap:14px; flex-wrap:wrap;
   margin-top:34px}
 /* The second CTA is a link, not a button, because it goes somewhere. A
@@ -513,13 +520,6 @@ aside{position:sticky; top:5.5rem}
 .lead .lclaim{font-size:1.12rem; line-height:1.42; margin:0 0 .55rem}
 .lead .vid{max-width:100%}
 
-/* ---- league news ----
-   National insiders have no team, so they cannot wear a team colour like
-   everything else. Rather than let three grey cards sit next to three
-   coloured ones and read as broken, they get their own band above the fold
-   with a treatment of their own: brighter, flatter, and marked BREAKING.
-   This is the biggest news of the day, so it goes first. */
-.league{margin:0 0 1.4rem}
 
 /* One header treatment for every section, so the page reads as three named
    parts rather than a run of cards. The rule under each is what actually
@@ -535,9 +535,6 @@ aside{position:sticky; top:5.5rem}
 .shead .n{margin-left:auto; color:var(--quiet); font-family:var(--data);
   font-size:.66rem}
 .sec{margin:0 0 1.5rem}
-.lgrid{display:grid; grid-template-columns:repeat(3, 1fr); gap:.6rem}
-@media (max-width:900px){ .lgrid{grid-template-columns:repeat(2, 1fr)} }
-@media (max-width:560px){ .lgrid{grid-template-columns:1fr} }
 .lcard{position:relative; overflow:hidden; isolation:isolate; cursor:pointer;
   background:linear-gradient(150deg, #1B2126 0%, #0E1114 70%);
   border:1px solid rgba(255,255,255,.1); border-top:3px solid var(--signal);
@@ -2996,7 +2993,7 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
           </p>
 
           <div class="lb-about-actions">
-            <a class="lb-about-btn lb-about-btn-primary" href="/nfl/wire/">
+            <a class="lb-about-btn lb-about-btn-primary" href="/#wire">
               OPEN THE WIRE
               <svg class="lb-about-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
             </a>
@@ -3218,7 +3215,7 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
         </div>
 
         <div class="lb-about-final-actions">
-          <a class="lb-about-btn lb-about-btn-primary" href="/nfl/wire/">
+          <a class="lb-about-btn lb-about-btn-primary" href="/#wire">
             OPEN THE WIRE
             <svg class="lb-about-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
           </a>

@@ -4,11 +4,13 @@
     python3 scripts/verify_deploy_artifact.py site
 
 `wrangler pages deploy site` uploads this directory, so this is the last
-place the truth can be checked. The distinction is not academic: /nfl/wire/
-was built correctly, and then deleted by a later step that prunes stale
+place the truth can be checked. The distinction is not academic: a page was
+once built correctly and then deleted by a later step that prunes stale
 player directories, and every local check still passed because they all read
-the builder's output rather than what remained on disk at deploy time. The
-homepage shipped with three links to a page that no longer existed.
+the builder's output rather than what remained on disk at deploy time.
+
+The Wire has no page of its own now -- it is the homepage -- so what these
+checks defend is the homepage and the redirect that keeps the old URL alive.
 
 So every assertion here reads files from the artifact root, and a link is
 only satisfied by a file that is present in it.
@@ -142,10 +144,50 @@ def check_homepage(root):
         check("every Wire card carries its team colour",
               len(re.findall(r"--c1:#", sec)) == len(cards),
               f"{len(re.findall(chr(45)+chr(45)+'c1:#', sec))} of {len(cards)}")
-        check("the Wire grid is two columns, never three",
-              "repeat(2,minmax(0,1fr))" in text and "repeat(3" not in
-              text[text.index("#lbwire .tiles{"):
-                   text.index("#lbwire .tiles{") + 120])
+        # One card per row at every width. A grid rule here would put the
+        # reporting, the attribution and our analysis into a half-width
+        # measure, which is the layout this replaced.
+        gi = text.find("#wire .tiles{")
+        rule = text[gi:gi + 120] if gi >= 0 else ""
+        check("the Wire is one card per row",
+              "display:block" in rule and "repeat(" not in rule, rule[:60])
+
+        # The public sentence, and the evidence it must not have replaced.
+        pubs_f = Path("data/wire_publications.json")
+        records = (json.loads(pubs_f.read_text())["publications"]
+                   if pubs_f.is_file() else [])
+        for r in records:
+            who = r["player_name"]
+            summary = (r.get("public_evidence_summary") or "").strip()
+            check(f"{who} has an approved one-sentence summary",
+                  bool(summary) and bool(r.get("public_evidence_summary_approved_by"))
+                  and len(summary) <= 180)
+            check(f"{who}'s summary is what the card shows",
+                  summary and summary.replace("'", "&#x27;") in sec
+                  or summary in sec)
+            check(f"{who}'s full evidence is retained internally",
+                  bool((r.get("reporter_found") or "").strip()))
+            check(f"{who}'s passage is not on the page",
+                  (r.get("reporter_found") or "x" * 9)[:80] not in sec)
+        check("the card labels the summary 'What changed'",
+              "What changed" in sec and "What the reporter found" not in sec)
+
+        # Retired sections, gone from the markup rather than hidden.
+        check("there is no League News section",
+              'class="league"' not in text and "<h2>League news</h2>" not in text)
+        check("there is no video section",
+              "<h2>Video from the beat</h2>" not in text
+              and 'class="vgrid"' not in text)
+        # The panel must route through playerHref, which checks the slug
+        # against the pages that were actually written. Comments mentioning
+        # the old shape are not code, so the check reads the assignment.
+        check("Recent News routes its links through playerHref",
+              "row.href = (href && href !== \"#\") ? href : \"#wire\";" in text)
+        check("no live code builds a player URL from a slug field",
+              "href = `/nfl/${p.slug" not in text
+              and "`/nfl/${p.slug || \"\"}/`" not in text)
+        check("no reporters-per-team claim remains",
+              "Reporters / team" not in text)
 
 
 def main() -> int:
@@ -155,59 +197,42 @@ def main() -> int:
         print("  the deploy directory does not exist")
         return 1
 
-    # The exact path the host needs. Not "somewhere under site" -- this one.
-    wire = root / "nfl" / "wire" / "index.html"
-    check("nfl/wire/index.html exists in the artifact", wire.is_file(),
-          str(wire))
-    if not wire.is_file():
-        # Nothing below can be meaningful without it.
-        print("\n  the Wire page is not in the artifact; refusing to deploy")
-        return 1
+    # There must be no separate destination, and the old one must still
+    # answer. Cloudflare Pages reads _redirects from the artifact root.
+    wire_dir = root / "nfl" / "wire"
+    check("there is no separate /nfl/wire/ page in the artifact",
+          not wire_dir.exists(), str(wire_dir))
 
-    html = wire.read_text()
-    check("it contains the page heading", "The NFL Wire" in html)
+    rules = (root / "_redirects")
+    text = rules.read_text() if rules.is_file() else ""
+    check("_redirects is in the artifact", bool(text))
+    check("/nfl/wire/ redirects to the homepage Wire",
+          bool(re.search(r"^/nfl/wire/\S*\s+/#wire\s+30[12]\s*$", text, re.M)),
+          text.strip().splitlines()[-1] if text.strip() else "")
 
-    # Whoever is published right now, read from the file the page is built
-    # from. Naming players here made a retraction fail the deploy: Anthony
-    # Richardson was rejected as not fantasy relevant and this check kept
-    # demanding him.
-    pubs_file = Path("data/wire_publications.json")
-    published, retracted = [], []
-    if pubs_file.is_file():
-        payload = json.loads(pubs_file.read_text())
-        published = [p["player_name"] for p in payload.get("publications", [])]
-    check("the artifact page matches the published file",
-          bool(published), f"{len(published)} published")
-    for who in published:
-        check(f"it contains {who}", who in html)
-    check("every card on the page is in the published file",
-          len(re.findall(r'<article class="wcard"', html)) == len(published),
-          f"{len(re.findall(chr(60) + 'article class=' + chr(34) + 'wcard' + chr(34), html))} cards, "
-          f"{len(published)} published")
-    check("the reporter block and our commentary are separate elements",
-          'class="wrep"' in html and 'class="wimp"' in html)
+    # No page may still send a reader to the retired destination.
+    dangling = []
+    for page in root.rglob("*.html"):
+        for href in set(re.findall(r'href="([^"]*?/nfl/wire/[^"]*)"',
+                                   page.read_text())):
+            dangling.append(f"{page.relative_to(root)} -> {href}")
+    check("no page in the artifact links to /nfl/wire/",
+          not dangling, "; ".join(dangling[:3]))
+
+    sm = root / "sitemap.xml"
+    if sm.is_file():
+        check("the sitemap does not list /nfl/wire/",
+              "/nfl/wire/" not in sm.read_text())
 
     check_homepage(root)
 
-    # Every homepage link to the Wire must land on a file that is here.
     home = root / "index.html"
     if home.is_file():
-        hrefs = set(re.findall(r'href="(/nfl/wire/[^"]*)"', home.read_text()))
-        check("the homepage links to the Wire", bool(hrefs), f"{len(hrefs)} href(s)")
-        for href in sorted(hrefs):
-            check(f"homepage link {href} resolves in the artifact",
-                  resolve(root, href) is not None)
-    else:
-        check("the homepage is in the artifact", False, str(home))
-
-    # And any other page that links to it, so this cannot regress elsewhere.
-    dangling = []
-    for page in root.rglob("*.html"):
-        for href in set(re.findall(r'href="(/nfl/wire/[^"]*)"', page.read_text())):
-            if resolve(root, href) is None:
-                dangling.append(f"{page.relative_to(root)} -> {href}")
-    check("no page in the artifact links to a missing Wire URL",
-          not dangling, "; ".join(dangling[:3]))
+        text = home.read_text()
+        check("the homepage carries the Wire anchor", 'id="wire"' in text)
+        check("the calls to action point at the homepage Wire",
+              text.count('href="#wire"') >= 2,
+              f"{text.count(chr(34) + chr(35) + 'wire' + chr(34))} anchor link(s)")
 
     print()
     if FAILURES:

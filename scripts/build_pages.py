@@ -1979,7 +1979,7 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
           </p>
         </div>
 
-        <a class="lb-button lb-button-primary" href="/nfl/wire/">
+        <a class="lb-button lb-button-primary" href="/#wire">
           <span>OPEN THE WIRE</span>
           <svg class="lb-arrow" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 12h13M13 6l6 6-6 6"/>
@@ -3201,7 +3201,7 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
           </p>
 
           <div class="lb-about-actions">
-            <a class="lb-about-btn lb-about-btn-primary" href="/nfl/wire/">
+            <a class="lb-about-btn lb-about-btn-primary" href="/#wire">
               OPEN THE WIRE
               <svg class="lb-about-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
             </a>
@@ -3423,7 +3423,7 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
         </div>
 
         <div class="lb-about-final-actions">
-          <a class="lb-about-btn lb-about-btn-primary" href="/nfl/wire/">
+          <a class="lb-about-btn lb-about-btn-primary" href="/#wire">
             OPEN THE WIRE
             <svg class="lb-about-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
           </a>
@@ -3628,7 +3628,6 @@ def main():
             # The editorial Wire. Included only when it exists, like every
             # other entry here, so a build with no reviewed publications
             # does not advertise a page it did not write.
-            ("/nfl/wire/", "daily", "0.8"),
             ("/about/", "monthly", "0.6")):
         if (SITE / path.lstrip("/") / "index.html").exists():
             urls.append((f"{base}{path}", now, freq, prio))
@@ -3778,7 +3777,7 @@ def main():
         # link to a page this loop had just deleted.
         protected = {"team", "data", "projections", "draft-value",
                      "durability", "coaching", "strength-of-schedule",
-                     "offensive-line-rb-performance", "rankings", "wire"}
+                     "offensive-line-rb-performance", "rankings"}
         for d in (SITE / args.sport).glob("*"):
             if not d.is_dir() or d.name in protected:
                 continue

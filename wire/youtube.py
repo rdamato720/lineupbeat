@@ -76,12 +76,18 @@ class Channel:
 
 @dataclass
 class Rules:
+    """Registry-wide settings. `paused` is the production kill switch."""
+
     min_transcript_chars: int = 1500
     transcript_languages: list[str] = field(default_factory=lambda: ["en"])
     allowed_transcript_sources: list[str] = field(
         default_factory=lambda: ["MANUAL_CAPTIONS", "AUTO_CAPTIONS"])
     multi_patterns: list[str] = field(default_factory=list)
     single_patterns: list[str] = field(default_factory=list)
+    # The production kill switch, declared in the registry rather than in an
+    # environment variable: the pause is an editorial decision about this
+    # pilot, and it should travel with the pilot's own configuration.
+    paused: bool = False
 
 
 def load(path: Path | None = None) -> tuple[list[Channel], Rules]:
@@ -94,6 +100,7 @@ def load(path: Path | None = None) -> tuple[list[Channel], Rules]:
         or ["MANUAL_CAPTIONS", "AUTO_CAPTIONS"],
         multi_patterns=doc.get("multi_speaker_patterns") or [],
         single_patterns=doc.get("single_voice_patterns") or [],
+        paused=bool(doc.get("paused", False)),
     )
     out = []
     for row in doc.get("sources", []):

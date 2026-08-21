@@ -87,7 +87,7 @@ def team_colors():
     return out
 
 
-PAGE = 8          # cards visible before "Load more"; not a publication cap
+PAGE = 10         # cards visible before "Load more"; not a publication cap
 
 COLORS = team_colors()
 FALLBACK = ("#2A3136", "#6B757D")
@@ -113,62 +113,69 @@ def team_logo(team):
 CSS = """
 /* The Wire section reuses the homepage's own card, not a second design.
    `.tile` supplies the dark ground, the 8px radius, the team-coloured left
-   border and the masked headshot; everything here is the delta a Wire card
-   needs -- two columns rather than three, and text that is never clamped,
-   because a reviewer approved that wording in full. */
-#lbwire{padding:34px 0 10px}
-#lbwire .shead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-#lbwire .shead h2{margin:0}
-#lbwire .sub{margin:2px 0 16px}
-#lbwire .wfilters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
-#lbwire .wfilters button,#lbwire .wfilters select{font:inherit;font-size:.78rem;
+   border and the masked headshot; everything here is the delta a reviewed
+   card needs. */
+#wire{padding:34px 0 10px}
+#wire .shead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+#wire .shead h2{margin:0}
+#wire .sub{margin:2px 0 16px}
+#wire .wfilters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+#wire .wfilters button,#wire .wfilters select{font:inherit;font-size:.78rem;
 padding:6px 12px;background:transparent;color:var(--quiet,#8f938a);
 border:1px solid var(--rule,#262a22);border-radius:99px;cursor:pointer}
-#lbwire .wfilters button.on{color:var(--signal,#C6F53C);
+#wire .wfilters button.on{color:var(--signal,#C6F53C);
 border-color:var(--signal,#C6F53C)}
 
-/* Two across, one on a phone. Never three: a Wire card carries two blocks of
-   prose where a tile carries one line, and at a third of the width the
-   evidence and the interpretation stop being readable side by side. */
-#lbwire .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
-@media(max-width:900px){#lbwire .tiles{grid-template-columns:1fr}}
+/* One card per row, at every width.
+   Two columns put the reporting, the attribution and our analysis into a
+   half-width measure, which cramped all three and made the interpretation
+   look like a caption. A single column gives the analysis the room it earns;
+   the max-width keeps the line length readable rather than letting it run
+   the width of a desktop. */
+#wire .tiles{display:block;max-width:56rem}
+#wire .tile{display:block;margin:0 0 .85rem;cursor:default;min-height:0;
+padding:1rem 1.15rem 1.1rem}
+#wire .tile h4,#wire .tile p{max-width:none}
+#wire .tile p{-webkit-line-clamp:none;display:block;overflow:visible}
+#wire .tile:hover{background:#101315}
+#wire .tile .shot{top:1rem;right:-.25rem;width:6.6rem;height:6.6rem}
+#wire .tile h4{font-size:1.3rem;margin:0 0 .1rem}
+#wire .tile .tkick{flex-wrap:wrap;white-space:normal;row-gap:.3rem;
+padding-right:6rem}
 
-#lbwire .tile{cursor:default;min-height:0;padding:.95rem 1.05rem 1.05rem}
-/* The tile clamps its claim to three lines and its heading to 16 characters.
-   Approved Wire wording is published whole. */
-#lbwire .tile h4,#lbwire .tile p{max-width:none}
-#lbwire .tile p{-webkit-line-clamp:none;display:block;overflow:visible}
-#lbwire .tile:hover{background:#101315}
-#lbwire .tile .shot{top:.9rem;width:6.4rem;height:6.4rem}
-#lbwire .tile h4{font-size:1.18rem;margin:0 0 .5rem}
-#lbwire .tile .tkick{flex-wrap:wrap;white-space:normal;row-gap:.3rem;
-padding-right:5.5rem}
-
-#lbwire .wb{font-family:var(--agate,inherit);font-size:.58rem;
+#wire .wb{font-family:var(--agate,inherit);font-size:.58rem;
 letter-spacing:.08em;text-transform:uppercase;font-weight:600;
 padding:2px 7px;border-radius:99px;border:1px solid var(--rule,#262a22);
 color:var(--quiet,#8f938a)}
-#lbwire .wb.rank{color:var(--signal,#C6F53C);border-color:rgba(198,245,60,.45)}
-#lbwire .wb.up{color:#7fbf8a;border-color:rgba(127,191,138,.5)}
-#lbwire .wb.down{color:#e08a7f;border-color:rgba(224,138,127,.5)}
-#lbwire .wlab{font-family:var(--agate,inherit);font-size:.58rem;
+#wire .wb.rank{color:var(--signal,#C6F53C);border-color:rgba(198,245,60,.45)}
+#wire .wb.up{color:#7fbf8a;border-color:rgba(127,191,138,.5)}
+#wire .wb.down{color:#e08a7f;border-color:rgba(224,138,127,.5)}
+#wire .wlab{font-family:var(--agate,inherit);font-size:.57rem;
 letter-spacing:.11em;text-transform:uppercase;color:var(--quiet,#8f938a);
-font-weight:600;margin:.9rem 0 .35rem}
-#lbwire .wrep{font-size:.9rem;line-height:1.5;color:#C9D0CC;margin:0}
-#lbwire .wsrc{color:var(--quiet,#8f938a);font-size:.74rem;line-height:1.5;
-margin:.55rem 0 0}
-#lbwire .wsrc a{color:var(--quiet,#8f938a)}
-#lbwire .wown{color:#d6a55a}
-#lbwire .wsplit{border:0;border-top:1px solid var(--rule,#262a22);
-margin:1rem 0 0}
-/* The interpretation is ours, so it carries our accent, and it is visually a
-   different kind of statement from the evidence above it. */
-#lbwire .wimp{background:#171b13;border-left:3px solid var(--signal,#C6F53C);
-border-radius:0 8px 8px 0;padding:.7rem .85rem;margin-top:.75rem;
-font-size:.9rem;line-height:1.5;color:#C9D0CC}
-#lbwire .wfoot{font-family:var(--agate,inherit);color:var(--quiet,#8f938a);
-font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;
-margin:.75rem 0 0}
+font-weight:600;margin:.85rem 0 .3rem}
+
+/* What changed: one sentence, deliberately quieter than the block below it.
+   It is the occasion for the card, not the point of it. */
+#wire .wrep{font-size:.92rem;line-height:1.5;color:#AEB6B1;margin:0;
+max-width:62ch}
+
+/* Lineup Beat impact: the reason the card exists, so it is the thing the eye
+   lands on -- larger than the sentence above it, on our accent, in the
+   page's reading face rather than the quieter agate. */
+#wire .wimplab{color:var(--signal,#C6F53C)}
+#wire .wimp{background:#171b13;border-left:3px solid var(--signal,#C6F53C);
+border-radius:0 8px 8px 0;padding:.8rem 1rem;margin:.35rem 0 0;
+font-size:1.02rem;line-height:1.55;color:#E4E9E5;max-width:62ch}
+
+/* Attribution last, and smallest. */
+#wire .wsrc{color:var(--quiet,#8f938a);font-size:.73rem;line-height:1.5;
+margin:.85rem 0 0}
+#wire .wsrc a{color:var(--quiet,#8f938a)}
+#wire .wown{color:#d6a55a}
+#wire .wfoot{font-family:var(--agate,inherit);color:var(--quiet,#8f938a);
+font-size:.57rem;letter-spacing:.06em;text-transform:uppercase;
+margin:.5rem 0 0}
+#wire .more{margin-top:.4rem}
 """
 
 
@@ -178,7 +185,7 @@ margin:.75rem 0 0}
 # get that wrong in both directions.
 BEHAVIOUR = """
 (function(){
-  var sec = document.getElementById("lbwire");
+  var sec = document.getElementById("wire");
   if(!sec) return;
   var cards = [].slice.call(sec.querySelectorAll("article.tile.wire"));
   var more  = document.getElementById("wmore");
@@ -232,33 +239,47 @@ BEHAVIOUR = """
 
 
 def sources_html(c):
+    """Reporter, publication, link. Last on the card and smallest on it.
+
+    The card's job is to say what changed and what we make of it; the
+    attribution is what lets a reader check us, which is important and is not
+    the headline. Ownership is still named, because a club's own report is
+    authoritative for its designation and is not independent corroboration.
+    """
     srcs = c.get("sources")
     if not srcs:
         own = c.get("source_ownership") == "TEAM_OWNED"
-        return (f'<p class="wsrc">{esc(c.get("author"))}, {esc(c.get("source"))}'
-                f' <span class="{"wown" if own else ""}">'
-                f'{"Official team source" if own else "Independent"}</span><br>'
+        bits = [esc(c.get("author")), esc(c.get("source"))]
+        line = " &middot; ".join(b for b in bits if b)
+        tag = (' <span class="wown">Official team source</span>' if own else "")
+        return (f'<p class="wsrc">{line}{tag} &middot; '
                 f'<a href="{esc(c.get("url"))}" rel="nofollow noopener" '
-                f'target="_blank">Read the original report</a></p>')
+                f'target="_blank">Read report</a></p>')
     rows = "".join(
         f'<div>{esc(ROLE_LABEL.get(s["role"], s["role"]))}: '
-        f'{esc(s.get("author"))}, {esc(s.get("publication"))} &middot; '
-        f'{esc(str(s.get("published_at",""))[:10])} '
-        f'<span class="{"wown" if s.get("ownership")=="TEAM_OWNED" else ""}">'
-        f'{"Official team source" if s.get("ownership")=="TEAM_OWNED" else "Independent"}'
-        f'</span> &middot; <a href="{esc(s.get("url"))}" rel="nofollow noopener" '
-        f'target="_blank">source</a></div>' for s in srcs)
+        f'{esc(s.get("author"))} &middot; {esc(s.get("publication"))} &middot; '
+        f'{esc(str(s.get("published_at",""))[:10])}'
+        f'{" <span class=\"wown\">Official team source</span>" if s.get("ownership")=="TEAM_OWNED" else ""}'
+        f' &middot; <a href="{esc(s.get("url"))}" rel="nofollow noopener" '
+        f'target="_blank">Read report</a></div>' for s in srcs)
     ind = c.get("independent_source_count") or 0
     tn = c.get("team_owned_source_count") or 0
     note = (f'{ind} independent reporter' + ('' if ind == 1 else 's')
             + (f' and {tn} club report' + ('' if tn == 1 else 's') if tn else ''))
     return ('<p class="wsrc">' + rows +
-            f'<div style="margin-top:5px">{esc(note)}. The club report is '
+            f'<div style="margin-top:4px">{esc(note)}. The club report is '
             f'authoritative for its own designation and is not independent '
             f'corroboration.</div></p>')
 
 
 def card(c):
+    """One reviewed report.
+
+    The hierarchy is deliberate and reads top to bottom: who this is and what
+    he is worth, what changed, what we make of it, who reported it. Our
+    reading is the largest block on the card because it is the only part a
+    reader cannot get anywhere else.
+    """
     d = c["direction"]
     cls = "up" if d == "POSITIVE" else "down" if d == "NEGATIVE" else ""
     c1, c2 = COLORS.get(str(c.get("team", "")).upper(), FALLBACK)
@@ -283,6 +304,12 @@ def card(c):
     logo_html = (f'<img loading="lazy" alt="" src="{esc(logo)}" '
                  f'onerror="logoFail(this)">' if logo else "")
 
+    # The public sentence, never the stored passage. build_wire.py refuses to
+    # publish a card without an approved one, so there is no fallback here --
+    # a fallback would quietly put the reporter's full paragraph back on the
+    # page the first time somebody forgot to write a summary.
+    summary = c.get("public_evidence_summary") or ""
+
     return f"""<article class="tile wire" style="--c1:{c1};--c2:{c2}"
    data-team="{esc(c['team'])}" data-pos="{esc(c['position'])}"
    data-dir="{esc(d)}">
@@ -294,12 +321,11 @@ def card(c):
     <span class="tago">{esc(ago(c.get('published_at')))}</span>
   </div>
   <h4>{esc(c['player_name'])}</h4>
-  <div class="wlab">What the reporter found</div>
-  <p class="wrep">{esc(c['reporter_found'])}</p>
-  {sources_html(c)}
-  <hr class="wsplit">
-  <div class="wlab">Lineup Beat impact</div>
+  <div class="wlab">What changed</div>
+  <p class="wrep">{esc(summary)}</p>
+  <div class="wlab wimplab">Lineup Beat impact</div>
   <p class="wimp">{esc(c['lineupbeat_impact'])}</p>
+  {sources_html(c)}
   <p class="wfoot">Evidence {esc(c.get('strength','LOW')).lower()} &middot;
     {esc(c.get('horizon','UNKNOWN')).replace('_',' ').lower()} &middot;
     {'No projection change' if c.get('projection_action')=='NONE' else esc(c.get('projection_action'))}</p>
@@ -382,7 +408,7 @@ def main():
     # the filters rely on.
     grid = "".join(card(c) for c in cards)
     hidden = max(0, len(cards) - PAGE)
-    section = f"""<section class="wrap sec" id="lbwire">
+    section = f"""<section class="wrap sec" id="wire">
   <div class="shead">
     <h2>THE NFL WIRE</h2>
     <span class="n">{len(cards)} reviewed report{'' if len(cards)==1 else 's'}</span>
@@ -400,8 +426,6 @@ def main():
   </div>
   <div class="tiles wire">{grid}</div>
   {f'<button class="more" id="wmore">Load more reports <span>{hidden} more</span></button>' if hidden else ''}
-  <p class="sub" style="margin-top:14px">
-    <a href="/nfl/wire/">View the full Wire</a></p>
 </section>"""
 
     if not HOME.exists():
@@ -439,13 +463,17 @@ def main():
     # 3. Neutralise the client-side ALL REPORTS renderer. Adding the new grid
     #    without this would show both, which is the outcome the replacement
     #    exists to prevent.
+    #    The guard is injected once. It used to be keyed on the line it sits
+    #    above, which is still there after the injection -- so a second build
+    #    added a second copy and a third added a third. Keyed on the guard
+    #    itself instead.
     old_render = 'const restSec = document.createElement("section");'
-    replaced_all_reports = old_render in home
-    if replaced_all_reports:
+    guard = 'if (window.__LB_WIRE_REPLACEMENT__) { return; }'
+    replaced_all_reports = guard in home or old_render in home
+    if guard not in home and old_render in home:
         home = home.replace(
             old_render,
-            'if (window.__LB_WIRE_REPLACEMENT__) { return; }\n'
-            '  const restSec = document.createElement("section");', 1)
+            guard + '\n  const restSec = document.createElement("section");', 1)
 
     # 4. Insert the replacement, once. Applying twice appended a second
     #    section and rendered every card again -- nine cards for five
@@ -464,9 +492,9 @@ def main():
         marker = '<main id="feed"></main>'
         if marker in home:
             home = home.replace(marker, f'{block}\n{marker}', 1)
-    if "id=\"lbwire-css\"" not in home:
+    if "id=\"wire-css\"" not in home:
         home = home.replace(
-            "</head>", f'<style id="lbwire-css">{CSS}</style></head>', 1)
+            "</head>", f'<style id="wire-css">{CSS}</style></head>', 1)
 
     if args.apply:
         # The production path. site/index.html is gitignored and rebuilt by

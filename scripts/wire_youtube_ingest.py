@@ -342,6 +342,15 @@ def main():
     if args.report:
         return report(store, [c for c in channels if c.pollable], args.days)
 
+    # Paused in production. Discovery and the read-only views still work --
+    # seeing what would happen costs nothing -- but nothing may spend a
+    # caption request while the registry says the pilot is stopped.
+    if getattr(rules, "paused", False) and not (args.status or args.plan
+                                                or args.report):
+        print("  the YouTube pilot is PAUSED in sources/wire_youtube.yaml")
+        print("  no transcript will be requested; --plan and --status still work")
+        return 0
+
     if args.status:
         cd = store.cooldown_until()
         cached = store.conn.execute(

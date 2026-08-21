@@ -157,6 +157,11 @@ def extract_item(store, item, reg, ctx, cfg, dry=False,
         byline_class = sicfg.classify_author(byline, team, _si_authors())
         reporter_voice = byline_class == sicfg.FIRSTHAND_APPROVED
     video_id = ""
+    if ctx["type"] == "youtube" and yt.load()[1].paused:
+        # Paused in production. Cached transcripts are kept, and the code
+        # that reads them is kept; what stops is turning them into evidence,
+        # because the next thing evidence does is cost a Claude call.
+        return []
     if ctx["type"] == "youtube":
         video_id = (item["canonical_url"] or "").split("v=")[-1].split("&")[0]
         spans = spans_from_transcript(store, video_id)

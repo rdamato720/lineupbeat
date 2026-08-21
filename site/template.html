@@ -476,13 +476,6 @@ aside{position:sticky; top:5.5rem}
 .lead .lclaim{font-size:1.12rem; line-height:1.42; margin:0 0 .55rem}
 .lead .vid{max-width:100%}
 
-/* ---- league news ----
-   National insiders have no team, so they cannot wear a team colour like
-   everything else. Rather than let three grey cards sit next to three
-   coloured ones and read as broken, they get their own band above the fold
-   with a treatment of their own: brighter, flatter, and marked BREAKING.
-   This is the biggest news of the day, so it goes first. */
-.league{margin:0 0 1.4rem}
 
 /* One header treatment for every section, so the page reads as three named
    parts rather than a run of cards. The rule under each is what actually
@@ -498,9 +491,6 @@ aside{position:sticky; top:5.5rem}
 .shead .n{margin-left:auto; color:var(--quiet); font-family:var(--data);
   font-size:.66rem}
 .sec{margin:0 0 1.5rem}
-.lgrid{display:grid; grid-template-columns:repeat(3, 1fr); gap:.6rem}
-@media (max-width:900px){ .lgrid{grid-template-columns:repeat(2, 1fr)} }
-@media (max-width:560px){ .lgrid{grid-template-columns:1fr} }
 .lcard{position:relative; overflow:hidden; isolation:isolate; cursor:pointer;
   background:linear-gradient(150deg, #1B2126 0%, #0E1114 70%);
   border:1px solid rgba(255,255,255,.1); border-top:3px solid var(--signal);
@@ -1883,12 +1873,12 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
         <span>before</span> your league does.
       </h1>
       <p class="lb-hero-description">
-        We follow multiple beat reporters per NFL team,
-        connect their reporting to the players it affects,
-        and pair it with free fantasy data.
+        Lineup Beat follows trusted sources, connects meaningful NFL
+        developments to the players they affect, and adds clear fantasy
+        context alongside free projections and data.
       </p>
       <div class="lb-hero-actions">
-        <a href="#feed" class="lb-btn lb-btn-primary">
+        <a href="#wire" class="lb-btn lb-btn-primary">
           <span>OPEN THE WIRE</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
         </a>
@@ -1903,7 +1893,7 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
         <div class="lb-wire-time" id="liveago">UPDATED NOW</div>
       </div>
       <div class="lb-wire-feed" id="livelist"></div>
-      <a href="#feed" class="lb-wire-footer">
+      <a href="#wire" class="lb-wire-footer">
         <span>VIEW ALL WIRE UPDATES</span>
         <svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
       </a>
@@ -2319,10 +2309,33 @@ function trending(limit = 8){
   //
   // One mention is news and belongs on the wire. Two or more in a day means
   // a situation people are still writing about.
+  const FANTASY = new Set(["QB", "RB", "WR", "TE"]);
   const score = new Map();
+  // One underlying event, counted once.
+  //
+  // A report that is rewritten by four outlets is one development, not four
+  // confirmations, and counting the rewrites is what turns a quiet day into
+  // a leaderboard. Nuggets that merged already carry a dedupe_key; where
+  // there is none, the claim text stands in for one.
+  const counted = new Map();
   for(const n of nuggets()){
     if(!n.resolved || hoursOld(n) > 24) continue;
     if(state.team && n.team !== state.team) continue;
+    // Defensive players and linemen are covered, and they matter to a
+    // fantasy player only through somebody else's opportunity. They do not
+    // belong in a list a reader scans for their own roster.
+    const p = PLAYERS.get(n.player_id);
+    const pos = ((p && p.pos) || n.position || "").toUpperCase();
+    if(pos && !FANTASY.has(pos)) continue;
+
+    const ek = (n.dedupe_key || "")
+      || (n.player_id + "|" + String(n.claim || "").toLowerCase()
+            .replace(/[^a-z0-9 ]/g, "").split(/\s+/).slice(0, 12).join(" "));
+    const seen = counted.get(n.player_id) || new Set();
+    if(seen.has(ek)) continue;
+    seen.add(ek);
+    counted.set(n.player_id, seen);
+
     const v = (n.actionability + 1) * (n.weight || 1) * (n.corroborations || 1);
     const cur = score.get(n.player_id)
       || {v:0, n:0, name:n.player_name, team:n.team, top:null};
@@ -3016,36 +3029,6 @@ function renderMedical(){
 }
 
 // One row builder, used by both the preview and the full view.
-function leagueCard(n){
-  const src = n.attributions[0] || {};
-  const p = PLAYERS.get(n.player_id);
-  const shot = headshotURL(n.player_id);
-  const reporters = reporterCount(n);
-
-  const el = document.createElement("article");
-  el.className = "lcard";
-  el.innerHTML = `
-    ${shot ? `<img class="shot" loading="lazy" alt="" src="${shot}"
-        data-fallback="${espnURL(p && p.espn)}" onerror="faceFail(this)">` : ""}
-    <div class="lkick">
-      <span class="brk">Breaking</span>
-      ${n.team ? logoHTML(n.team, "") : ""}
-      <span class="lago">${ago(n.published_at)}</span>
-    </div>
-    <h4>${playerLink(n.player_id, n.player_name)}</h4>
-    <p>${esc(n.claim)}</p>
-    <div class="lfoot">
-      <span>${esc(src.source_name || "")}</span>
-      ${reporters > 1 ? `<b>${reporters} reporters</b>` : ""}
-    </div>`;
-  el.onclick = (e) => {
-    if(fromControl(e)) return;
-    if(n.resolved) openPlayer(n.player_id);
-    else if(src.url) window.open(src.url, "_blank", "noopener");
-  };
-  return el;
-}
-
 function medRow(n){
   const src = n.attributions[0] || {};
   const row = document.createElement("div");
@@ -3149,216 +3132,23 @@ function renderFeed(){
     });
   }
 
-  // League news: national insiders, pulled out before featured so the biggest
-  // story of the day is not competing with a camp observation for the lead.
-  // Who filed it, not what it is about.
+  // National reporting is no longer pulled into a section of its own.
   //
-  // The "national" tag means league-wide news, so a Cleveland writer
-  // reporting a trade earned it too: forty-six sources were feeding a
-  // section headed "the national beat". The section promises four
-  // reporters, so it asks for those four by name.
-  const NATIONAL = /^nfl-natl-/;
-  const fromNational = n =>
-    (n.attributions || []).some(a => NATIONAL.test(a.source_id || ""));
+  // It used to be lifted out here into "League news", which competed with
+  // the reviewed Wire below it for the same glance and answered a question
+  // the hero panel already answers. Those reports now stay in the pool and
+  // reach the reader through Recent News, which is where somebody checking
+  // what changed is already looking.
 
-  const league = [];
-  rows = rows.filter(n => {
-    if(!fromNational(n)) return true;
-    if(n.resolved && league.length < 3 && claim(n)){ league.push(n); return false; }
-    return true;          // unmatched: stays in the wire, marked as such
-  });
-
-  // Video, pulled out like the other sections so a clip never shows up twice.
-  // One per player: a beat writer often posts several angles of the same
-  // practice and four cards of one guy is not a video section, it is a repeat.
-  // Collect EVERY clip, not the first eight.
-  //
-  // Capping here meant the pool was the eight highest-priority video
-  // nuggets, which are the same players featured wants. Featured claimed
-  // them, the pool emptied, and the section vanished with fourteen clips
-  // sitting in the data. Cap after claiming instead, so video draws from
-  // everything that is left rather than from a pre-narrowed shortlist.
-  const clipsPending = [];
-  rows = rows.filter(n => {
-    const media = videosOf(n);
-    if(!media.length) return true;
-    clipsPending.push({n, m: media[0]});
-    return false;
-  });
-
-  // Featured is the top of a wire, so it has to be fresh.
-  //
-  // It sorted on name recognition alone, with no age limit, so a Kyle Pitts
-  // extension from June sat at the top of a section headed "news today" and
-  // everything on it was fifteen hours old.
-  //
-  // Now: nothing older than four hours unless nothing else qualifies, and
-  // within that the national insiders lead. They break things first and
-  // everyone else corroborates them minutes later, which is exactly the
-  // ordering a reader wants at the top.
-  // Video claims BEFORE featured, not after.
-  //
-  // Claiming afterwards meant featured took the players it wanted and the
-  // clips of those same players were then rejected as already claimed --
-  // fourteen players had video and none of it rendered. A clip is the
-  // scarcer thing: a beat writer files fifty text reports for every video,
-  // and any player who loses his slot here still appears as a tile.
-  const clips = clipsPending
-    .sort((a, b) => new Date(b.n.published_at) - new Date(a.n.published_at))
-    .filter(({n}) => claim(n))
-    .slice(0, 8);
-
-  const FEATURED_HOURS = 4;
-  const featured = [];
-  const usedTeams = new Set();
-  if(rows.length > 6){
-    const score = n => {
-      const rank = (PLAYERS.get(n.player_id) || {}).rank || 9999;
-      // A national insider on a well-known player leads. Weight is 1.6 for
-      // the four who break news, 1 for everybody else.
-      return rank / (n.weight || 1);
-    };
-    let pool = rows.filter(n =>
-      n.resolved && n.actionability >= 3 && hoursOld(n) <= FEATURED_HOURS);
-    // Widen only if a quiet morning leaves nothing to show.
-    if(pool.length < 3){
-      pool = rows.filter(n => n.resolved && n.actionability >= 3
-                              && hoursOld(n) <= 12);
-    }
-    // Newest first, and nothing else.
-    //
-    // This ranked on name recognition divided by source weight, which put a
-    // well-known player's older item above a fresh one about somebody less
-    // famous. Recency is the only ordering a wire owes anybody.
-    const notable = pool
-      .map((n, i) => ({n, i, rank: -new Date(n.published_at).getTime()}))
-      .sort((a, b) => a.rank - b.rank);
-
-    const take = [];
-    // Remove from the grid back-to-front so earlier indices stay valid.
-    take.sort((a, b) => b.i - a.i).forEach(x => rows.splice(x.i, 1));
-    take.sort((a, b) => a.rank - b.rank).forEach(x => featured.push(x.n));
-  }
-
-
-
-  // The injury table and the video module both went here. Both showed items
-  // that already appear as tiles below, so the same news landed on screen
-  // three times. Duplication was doing more damage than any of the controls.
-
-  // One card per player. Two reports about the same guy on the same day are
-  // legitimately different news, but four Coby Bryant boxes reads as a bug
-  // whatever the content. The card shows his most important update and says
-  // how many more there are; the rest are one click away on his page.
-  // Players already shown in the video section come out of the grid too, for
-  // the same reason featured players do: one name, one card on a screen.
-  // Their other reports are counted on the card they do appear on.
-
-  const byPlayer = new Map();
-  const grouped = [];
-  for(const n of rows){
-    const key = n.player_id;
-    // Unresolved mentions group on the name string. Not collapsing them was
-    // over-cautious: two reports about "DJ Turner" on the same day are the
-    // same guy even when we cannot match him to an id, and rendering two
-    // identical-looking cards reads as a bug.
-    const gk = key || ("?" + (n.mention || n.player_name || "").toLowerCase().trim());
-    if(!gk){ grouped.push(n); continue; }
-    if(key && claimed.has(key) && !byPlayer.has(gk)){
-      // Shown in a section above: count the extra report on that card.
-      const host = featured.find(x => x.player_id === key)
-                || clips.find(c => c.n.player_id === key)?.n
-                || league.find(x => x.player_id === key);
-      if(host) host._extra = (host._extra || 0) + 1;
-      continue;
-    }
-    if(byPlayer.has(gk)){
-      byPlayer.get(gk)._extra = (byPlayer.get(gk)._extra || 0) + 1;
-      continue;
-    }
-    n._extra = 0;
-    byPlayer.set(gk, n);
-    grouped.push(n);
-  }
-  rows = grouped;
+  // Video is not collected. "Video from the beat" is retired from the
+  // homepage and the YouTube pilot is paused in production, so nothing here
+  // reads a clip. The adapters, the budget and their tests stay in the
+  // repository; this is a product decision, not a deletion.
+  const clips = [];
 
   const total2 = rows.length;
   document.getElementById("count").textContent =
     total2 + (total2 === 1 ? " player" : " players");
-
-  if(league.length){
-    const sec = document.createElement("section");
-    sec.className = "league";
-    sec.innerHTML = `<div class="shead"><span class="dot"></span>
-      <h2>League news</h2>
-      <p class="sub">Transactions and breaking news from the national beat.</p></div>
-      <div class="lgrid"></div>`;
-    const g = sec.querySelector(".lgrid");
-    league.forEach(n => g.appendChild(leagueCard(n)));
-    feed.appendChild(sec);
-  }
-
-  // No featured section.
-  //
-  // Once everything sorts by recency, "the biggest names in the last few
-  // hours" is the top of the list below it, printed larger. Three sections
-  // showing the same three items in three sizes is not a hierarchy, it is
-  // the same list three times.
-
-  if(medical.length){
-    // Preview only. The full room is a tab; three here is a taste, not a
-    // second copy of it.
-    const sec = document.createElement("section");
-    sec.className = "med";
-    sec.innerHTML = `<div class="shead"><span class="cross"></span>
-      <h2 style="color:var(--alert)">The Medical Tent</h2>
-      <p class="sub">What the injuries actually mean, from a former team physician.</p>
-      <button class="seeall">All ${medicalNuggets().length} &rarr;</button></div>`;
-    sec.querySelector(".seeall").onclick = e => {
-      e.stopPropagation();
-      state.view = "medical"; writeHash(); render(); window.scrollTo({top:0});
-    };
-    medical.slice(0, 3).forEach(n => sec.appendChild(medRow(n)));
-    feed.appendChild(sec);
-  }
-
-  const paged = rows.slice(0, state.shown);
-
-  // One grid, sorted by importance, no band headers. "Worth watching" versus
-  // "Background" was a distinction we invented and a reader cannot act on it:
-  // sorting by importance is useful, naming the bands is not. The sort still
-  // runs, so the top of the grid is still the news that matters most.
-  if(clips.length >= 2){
-    const vs = document.createElement("section");
-    vs.className = "sec";
-    vs.innerHTML = `<div class="shead">
-      <h2>Video from the beat</h2>
-      <p class="sub">Practice clips and interviews filed with today's reports.</p>
-      <span class="n">${clips.length} ${clips.length === 1 ? "clip" : "clips"}</span></div>
-      <div class="vgrid"></div>`;
-    const g = vs.querySelector(".vgrid");
-    clips.forEach(({n, m}) => {
-      shownClips.add(m.tweet_url);
-      const c = document.createElement("article");
-      c.className = "vcard";
-      c.innerHTML = `
-        <div class="vshot">
-          ${m.thumb ? `<img loading="lazy" src="${esc(m.thumb)}" alt="">`
-                    : `<div class="ph">clip</div>`}
-          <span class="play"></span>
-          ${m.duration_ms ? `<span class="dur">${fmtDur(m.duration_ms)}</span>` : ""}
-        </div>
-        <div class="vbody">
-          <span class="vwho">${playerLink(n.player_id, n.player_name)}</span>
-          <p class="vclaim">${esc(n.claim)}</p>
-          <span class="vteam">${logoHTML(n.team, "")}${esc(n.team)} ·
-            ${ago(n.published_at)}</span>
-        </div>`;
-      c.onclick = () => window.open(m.tweet_url, "_blank", "noopener");
-      g.appendChild(c);
-    });
-    feed.appendChild(vs);
-  }
 
   const restSec = document.createElement("section");
   restSec.className = "sec";
@@ -3752,7 +3542,15 @@ function liveRow(n, entering){
   const p = PLAYERS.get(n.player_id);
   const row = document.createElement("a");
   row.className = "lb-wire-item" + (entering ? " enter" : "");
-  row.href = n.resolved && p ? `/nfl/${p.slug || ""}/` : "#feed";
+  // playerHref is the only thing that knows a page exists.
+  //
+  // This used to build `/nfl/${p.slug}/` by hand, and no roster row has ever
+  // carried a `slug` field -- so every resolved player in this panel linked
+  // to /nfl//, the homepage under a path that is not a page. playerHref
+  // derives the slug from the name and checks it against PAGE_SLUGS, and
+  // returns "#" when there is no page to go to.
+  const href = n.resolved ? playerHref(n.player_id) : "#";
+  row.href = (href && href !== "#") ? href : "#wire";
   row.innerHTML = `
     <div class="lb-wire-marker">
       <div class="lb-player-avatar">${logoHTML(n.team, "") ||
@@ -3784,14 +3582,33 @@ function renderLive(){
   // One entry per player. Every other surface groups by player; this one did
   // not, so two reports on Ji'Ayir Brown filed a minute apart sat next to each
   // other in a three-row panel.
+  const FANTASY = new Set(["QB", "RB", "WR", "TE"]);
   const seenPlayer = new Set();
+  const seenEvent = new Set();
   const pool = [];
-  for(const n of nuggets()
+
+  // Newest first, but a fantasy-relevant development outranks a report about
+  // a player nobody can start. National and local reporting compete on the
+  // same terms here -- this panel is the only place either appears now, and
+  // sorting by who filed it would put a rewrite above the report it copied.
+  const fresh = nuggets()
         .filter(n => n.resolved)
-        .sort((a, b) => new Date(b.published_at) - new Date(a.published_at))){
+        .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+  const rank = n => {
+    const p = PLAYERS.get(n.player_id);
+    const pos = ((p && p.pos) || n.position || "").toUpperCase();
+    return FANTASY.has(pos) ? 0 : 1;
+  };
+  for(const n of [...fresh.filter(n => rank(n) === 0),
+                  ...fresh.filter(n => rank(n) === 1)]){
     const key = n.player_id || n.player_name;
     if(seenPlayer.has(key)) continue;
+    // Four outlets rewriting one report is one update.
+    const ek = n.dedupe_key || (key + "|" + String(n.claim || "").toLowerCase()
+      .replace(/[^a-z0-9 ]/g, "").split(/\s+/).slice(0, 12).join(" "));
+    if(seenEvent.has(ek)) continue;
     seenPlayer.add(key);
+    seenEvent.add(ek);
     pool.push(n);
     if(pool.length >= 12) break;
   }
@@ -3846,7 +3663,8 @@ function renderFacts(){
   // The proof points, in the shape the design expects. The reporter
   // average is computed rather than stated: the source list changes, and
   // a number typed into the markup goes stale the first time it does.
-  const perTeam = teams.size ? Math.round(writers.size / teams.size) : 0;
+  const tracked = new Set(all.filter(n => n.resolved)
+                             .map(n => n.player_id || n.player_name)).size;
   const _helm = `<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9 24v-7c0-7 5-12 12-12s12 5 12 12v7"/><path d="M7 24h28v7H7z"/><path d="M21 12v12"/></svg>`;
   const _grp = `<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="14" cy="14" r="6"/><circle cx="27" cy="15" r="5"/><path d="M4 34c1-8 5-12 11-12s10 4 11 12"/><path d="M22 34c1-6 4-9 9-9 3 0 5 1 7 4"/></svg>`;
   const _bolt = `<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M23 3 8 23h11l-2 14 15-21H21z"/></svg>`;
@@ -3854,8 +3672,8 @@ function renderFacts(){
   document.getElementById("facts").innerHTML =
     `<div class="lb-proof">${_helm}<div><strong>${teams.size}</strong>
        <span>Teams covered</span></div></div>
-     <div class="lb-proof">${_grp}<div><strong>${perTeam}</strong>
-       <span>Reporters / team avg.</span></div></div>
+     <div class="lb-proof">${_grp}<div><strong>${tracked}</strong>
+       <span>Players tracked</span></div></div>
      <div class="lb-proof">${_bolt}<div>
        <strong class="lb-updated">Updated</strong>
        <span>Throughout the day</span></div></div>`;

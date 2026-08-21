@@ -29,7 +29,10 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import seo
+
+from wire import public_summary as ps
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
@@ -113,6 +116,14 @@ def validate(payload: dict) -> list[str]:
             bad.append(f"{who}: evidence and commentary are the same text")
         if p.get("source_ownership") not in ("INDEPENDENT", "TEAM_OWNED"):
             bad.append(f"{who}: unknown source_ownership")
+
+        # The public sentence. A card shows this instead of the reporter's
+        # passage, so a missing one must fail the build rather than fall back
+        # -- the fallback is how the full paragraph gets back onto the page.
+        # The passage itself must still be stored: the summary is a display
+        # field and never replaces the record.
+        for why in ps.check_publication(p):
+            bad.append(f"{who}: public summary {why}")
     return bad
 
 
@@ -306,6 +317,34 @@ def inject_homepage(pubs: list[dict], index: Path) -> bool:
     return True
 
 
+REDIRECTS = Path("site/_redirects")
+WIRE_RULE = "/nfl/wire/* /#wire 301"
+
+
+def write_redirect() -> None:
+    """Keep /nfl/wire/ working, at the edge, without a page behind it.
+
+    Cloudflare Pages reads site/_redirects. The rule is written idempotently
+    into whatever else the file holds, because the deploy uploads the whole
+    directory and a second build must not append a duplicate.
+    """
+    # Rebuilt, not appended to. Filtering only the rule left its comment
+    # behind, so a second build added a second copy of the comment and a
+    # third added a third -- the file grew by two lines every run.
+    NOTE = ("# The Wire lives on the homepage. This keeps every link, "
+            "bookmark\n# and indexed URL to the old destination working.")
+    keep = []
+    if REDIRECTS.exists():
+        for ln in REDIRECTS.read_text().splitlines():
+            if not ln.strip():
+                continue
+            if ln.startswith("/nfl/wire/") or ln.strip() in NOTE.splitlines():
+                continue
+            keep.append(ln)
+    REDIRECTS.write_text("\n".join(keep + [NOTE, WIRE_RULE]) + "\n")
+    print(f"  wrote {REDIRECTS} ({WIRE_RULE})")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--base", default="https://lineupbeat.com")
@@ -322,13 +361,24 @@ def main():
         payload, pubs = load()
     except ValueError as e:
         print(f"  publication validation FAILED: {e}")
-        print("  refusing to build /nfl/wire")
+        print("  refusing to publish")
         return 1
     print(f"  {len(pubs)} approved publication(s) validated")
     for p in pubs:
         print(f"    {p['publication_id']}  {p['player_name']:<20}"
               f"{p['team']} {p['position']:<4}{p['reader_label']}")
+    # The Wire has no page of its own any more; it is the homepage.
+    #
+    # This step stays because it is the gate, not the renderer: every record
+    # must carry a reviewer approval, an approved one-sentence public
+    # summary, a fantasy position, a direction whose reader label agrees with
+    # it, an https source link, and evidence and commentary in separate
+    # fields. Failing here stops the job before Deploy. What it writes now is
+    # the redirect that keeps the old URL working.
     if args.validate_only:
+        return 0
+    if not args.preview_backfill:
+        write_redirect()
         return 0
 
     # A preview may show what unapproved candidates would look like. The
