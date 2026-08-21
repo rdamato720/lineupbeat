@@ -887,3 +887,28 @@ sources:
     # 4/5 extractable, 4 full text in the feed. Bylines: Robby Sabo, Michael
     # Nania, Connor Long. Nania's output is analysis; the mix is why this is
     # review-only.
+
+  - source_id: pressbox_baltimore
+    source_name: PressBox
+    reporter_name: ''
+    teams: ['BAL']
+    formats: [article]
+    domains: [pressboxonline.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: rss_excerpt_then_fetch
+    feed_url: https://www.pressboxonline.com/feed/
+    feed_scope: site
+    filter:
+      categories: [baltimore ravens, ravens]
+    active: true
+    trust_tier: 2
+    # Revisited with a team filter, as asked. The feed is every Baltimore
+    # sport -- a 10-entry snapshot ran 5 college, 2 baseball, 3 Ravens -- so
+    # it is registered on the category tags the publisher supplies and never
+    # as a whole-publication feed. 5/5 extractable by page fetch,
+    # 3,726-12,972 chars; bylines Antonio Barbera, Brooks DuBose, Karuga
+    # Koinange, Ken Zalis. Low Ravens volume is the open question, not
+    # extraction: three relevant articles in a ten-entry window may not be
+    # enough to be useful, and that is a yield judgement to make after a
+    # fortnight rather than now.

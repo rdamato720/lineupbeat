@@ -397,6 +397,25 @@ class WireStore:
         self.conn.commit()
         return prior is None
 
+    def supersede_evidence(self, source_url: str, live: set) -> int:
+        """Retire evidence rows this source no longer produces.
+
+        Marked SUPERSEDED rather than deleted, so the row survives for audit,
+        and only ever from PENDING: a reviewer's verdict is a fact about what
+        a person decided and re-extraction has no business overwriting it.
+        """
+        rows = self.conn.execute(
+            "SELECT candidate_id FROM wire_evidence WHERE source_url = ? "
+            "AND review_status = 'PENDING'", (source_url,)).fetchall()
+        stale = [r["candidate_id"] for r in rows if r["candidate_id"] not in live]
+        for cid in stale:
+            self.conn.execute(
+                "UPDATE wire_evidence SET review_status = 'SUPERSEDED', "
+                "updated_at = ? WHERE candidate_id = ?", (now(), cid))
+        if stale:
+            self.conn.commit()
+        return len(stale)
+
     def evidence(self, status: str | None = None,
                  source_id: str | None = None) -> list[dict]:
         sql, args = "SELECT * FROM wire_evidence", []

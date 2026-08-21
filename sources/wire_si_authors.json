@@ -1,44 +1,216 @@
 {
- "note": "Per-team, exact-name SI author classifications. An author absent from this file is UNKNOWN and can never be AUTO_READY. Presence on a team page is not approval; each entry records what was read.",
+ "note": "Per-team, exact-name SI author classifications. An author absent from this file is UNKNOWN and can never be AUTO_READY. Presence on a team page is not approval. FIRSTHAND_APPROVED requires affirmative body evidence: strict presence markers in at least 2 of 6 articles read, at least 7 articles on the team page, a single-team byline, and either press-conference access or 3+ strict markers.",
+ "standard": {
+  "articles_min": 7,
+  "strict_markers_min": 2,
+  "articles_read": 6,
+  "single_team_required": true,
+  "strict_marker_examples": [
+   "I saw",
+   "by my count",
+   "first-team reps",
+   "did not practice",
+   "told reporters",
+   "said after practice"
+  ]
+ },
  "reviewed_on": "2026-08-20",
  "teams": {
+  "ARI": {
+   "slug": "cardinals",
+   "landing_page": "https://www.si.com/nfl/cardinals",
+   "authors": {
+    "Donnie Druin": {
+     "classification": "FIRSTHAND_APPROVED",
+     "evidence": "strict presence markers in 4/6 articles read (told reporters; told reporters); press-conference reporting in 4/6; 30 articles on the team page; single-team byline",
+     "sample_urls": [
+      "https://www.si.com/nfl/cardinals/onsi/latest-tip-reiman-injury-update-has-tough-decision-looming-arizona-cardinals",
+      "https://www.si.com/nfl/cardinals/onsi/garrett-williams-return-from-injury-gives-arizona-cardinals-boost-right-time",
+      "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-reveal-qb-plan-dallas-cowboys-carson-beck-decision-made"
+     ],
+     "articles_in_sample": 30,
+     "articles_read": 3,
+     "formats_observed": [
+      "injury",
+      "depth chart"
+     ],
+     "si_profile": "https://www.si.com/author/donnie-druin",
+     "multi_team": false,
+     "teams_seen": [
+      "ARI"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "ATL": {
+   "slug": "falcons",
+   "landing_page": "https://www.si.com/nfl/falcons",
+   "authors": {
+    "Darius Hayes": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 1/3 articles read, quotations in 0/3; 3 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/falcons/onsi/three-major-falcons-takeaways-from-day-2-joint-practice-with-colts",
+      "https://www.si.com/nfl/falcons/onsi/three-major-takeaways-from-falcons-joint-practice-day-1-with-colts",
+      "https://www.si.com/nfl/falcons/onsi/atlanta-falcons-place-rb-on-injured-reserve"
+     ],
+     "articles_in_sample": 3,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/darius-hayes",
+     "multi_team": false,
+     "teams_seen": [
+      "ATL"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Gerald Thomas, III": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 3/3; 5 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/falcons/onsi/kevin-stefanski-shares-biggest-goal-for-falcons-joint-practices-with-colts",
+      "https://www.si.com/nfl/falcons/onsi/tua-tagovailoa-wants-another-shot-as-falcons-qb-battle-heats-up",
+      "https://www.si.com/nfl/falcons/onsi/falcons-qb-jack-strand-shines-in-otherwise-disastrous-preseason-opener"
+     ],
+     "articles_in_sample": 5,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/gerald-thomas-iii",
+     "multi_team": false,
+     "teams_seen": [
+      "ATL"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "BAL": {
+   "slug": "ravens",
+   "landing_page": "https://www.si.com/nfl/ravens",
+   "authors": {
+    "Josh Reed": {
+     "classification": "REPORTING",
+     "evidence": "fails the firsthand bar: strict presence markers in only 2/6 articles read; 7 articles. Reports, but body evidence does not establish attendance",
+     "sample_urls": [
+      "https://www.si.com/nfl/ravens/onsi/6-ravens-players-with-the-most-to-gain-in-second-preseason-game-01m0fvbweynp",
+      "https://www.si.com/nfl/ravens/onsi/derrick-henry-becomes-last-ravens-player-to-make-nfl-top-100-list-01m0ecc6cn71",
+      "https://www.si.com/nfl/ravens/onsi/danny-pinter-carted-off-from-ravens-joint-practice-with-vikings-due-to-injury-01m0dnh80wfr"
+     ],
+     "articles_in_sample": 7,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "injury",
+      "depth chart"
+     ],
+     "si_profile": "https://www.si.com/author/josh-reed",
+     "multi_team": false,
+     "teams_seen": [
+      "BAL"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Donovan Gibbs": {
+     "classification": "UNKNOWN",
+     "evidence": "only 2 article(s) in the sample; not researched",
+     "sample_urls": [
+      "https://www.si.com/nfl/ravens/onsi/3-ravens-players-with-the-most-to-gain-ahead-of-joint-practices-in-minnesota-01m0bcqndrkg",
+      "https://www.si.com/nfl/ravens/onsi/former-ravens-linebacker-o-j-brigance-leaves-a-legacy-that-transcends-football-01m0b1gxwyqy"
+     ],
+     "articles_in_sample": 2,
+     "articles_read": 2,
+     "formats_observed": [
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/donovan-gibbs",
+     "multi_team": false,
+     "teams_seen": [
+      "BAL"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
   "BUF": {
    "slug": "bills",
    "landing_page": "https://www.si.com/nfl/bills",
    "authors": {
-    "Ralph Ventre": {
-     "classification": "FIRSTHAND_APPROVED",
-     "evidence": "attends and files from practice: joint-practice good/not-so-good reports from Berea and direct coordinator quotes",
-     "sample_urls": [
-      "https://www.si.com/nfl/bills/onsi/preseason-the-good-and-not-so-good-from-bills-joint-practice-vs-browns-in-berea",
-      "https://www.si.com/nfl/bills/onsi/excited-joe-brady-remembers-bills-newest-defensive-addition-being-an-issue-in-past-01m0gmb0qxh9",
-      "https://www.si.com/nfl/bills/onsi/jordan-poyer-former-bills-captain-admits-defense-failed-josh-allen-in-nfl-postseason-losses"
-     ],
-     "articles_in_sample": 11,
-     "auto_ready": false,
-     "reviewed_on": "2026-08-20"
-    },
     "Mike Moraitis": {
-     "classification": "REPORTING",
-     "evidence": "injury reports and transactions; news reporting, not observation",
+     "classification": "AGGREGATION",
+     "evidence": "files for BUF, CAR, CHI and DAL -- a desk, not a beat -- and the review sample showed the output is largely rewritten from other outlets: 47 evidence spans relay a named reporter or publication, more than any other byline, including quotations lifted from The Athletic, which this pipeline refuses to fetch directly",
      "sample_urls": [
       "https://www.si.com/nfl/bills/onsi/transactions-former-bills-safety-taylor-rapp-signs-with-one-of-buffalo-s-top-afc-foes",
       "https://www.si.com/nfl/bills/onsi/preseason-cj-gardner-johnson-roasted-shedeur-sanders-during-bills-browns-joint-practice",
       "https://www.si.com/nfl/bills/onsi/injuries-keon-coleman-update-puts-buffalo-bills-wr-week-1-status-in-question"
      ],
      "articles_in_sample": 6,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/mike-moraitis",
+     "multi_team": true,
+     "teams_seen": [
+      "BUF",
+      "CAR",
+      "CHI",
+      "DAL"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     },
     "John Green": {
      "classification": "REPORTING",
-     "evidence": "files practice takeaways from Highmark, but mixes them with preview and fan-facing 'things to watch' pieces",
+     "evidence": "presence markers in 3/3 articles read, quotations in 2/3; 4 articles. Reports; not verified as consistently firsthand",
      "sample_urls": [
       "https://www.si.com/nfl/bills/onsi/injuries-bills-concerning-update-regarding-ed-oliver-khalil-shakir-in-cleveland",
       "https://www.si.com/nfl/bills/onsi/preseason-five-things-fans-must-watch-for-during-bills-joint-practice-with-browns",
       "https://www.si.com/nfl/bills/onsi/preseason-seven-takeaways-from-bills-highmark-stadium-practice-include-backup-breakouts"
      ],
      "articles_in_sample": 4,
+     "articles_read": 3,
+     "formats_observed": [
+      "injury",
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/john-green",
+     "multi_team": false,
+     "teams_seen": [
+      "BUF"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Ralph Ventre": {
+     "classification": "REPORTING",
+     "evidence": "fails the firsthand bar on the stricter body test: strict presence markers in only 1/6 articles read; 11 articles. Files joint-practice pieces, but the bodies do not consistently place the reporter at the event. Approved on headline format in the first pilot; demoted when the same bar was applied to every team",
+     "sample_urls": [
+      "https://www.si.com/nfl/bills/onsi/preseason-the-good-and-not-so-good-from-bills-joint-practice-vs-browns-in-berea",
+      "https://www.si.com/nfl/bills/onsi/excited-joe-brady-remembers-bills-newest-defensive-addition-being-an-issue-in-past-01m0gmb0qxh9",
+      "https://www.si.com/nfl/bills/onsi/jordan-poyer-former-bills-captain-admits-defense-failed-josh-allen-in-nfl-postseason-losses"
+     ],
+     "articles_in_sample": 11,
+     "articles_read": 6,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/ralph-ventre",
+     "multi_team": false,
+     "teams_seen": [
+      "BUF"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     },
@@ -51,6 +223,15 @@
       "https://www.si.com/nfl/bills/onsi/bills-te-named-roster-bubble-standout-other-teams-should-covet"
      ],
      "articles_in_sample": 6,
+     "articles_read": 0,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/randy-gurzi",
+     "multi_team": false,
+     "teams_seen": [
+      "BUF"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     },
@@ -61,6 +242,15 @@
       "https://www.si.com/nfl/bills/onsi/sean-mcdermott-team-one-of-nfl-s-best-to-never-reach-super-bowl"
      ],
      "articles_in_sample": 1,
+     "articles_read": 0,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/colin-richey",
+     "multi_team": false,
+     "teams_seen": [
+      "BUF"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     },
@@ -71,6 +261,702 @@
       "https://www.si.com/nfl/bills/onsi/preseason-bills-may-have-more-backup-qb-options-come-nfl-cutdown-day"
      ],
      "articles_in_sample": 1,
+     "articles_read": 0,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/khari-demos",
+     "multi_team": false,
+     "teams_seen": [
+      "BUF"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "CAR": {
+   "slug": "panthers",
+   "landing_page": "https://www.si.com/nfl/panthers",
+   "authors": {
+    "Zach Roberts": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 1/3 articles read, quotations in 0/3; 19 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/panthers/onsi/panthers-bryce-young-curiously-disrespected-saints-tyler-shough",
+      "https://www.si.com/nfl/panthers/onsi/panthers-may-call-texans-late-offseason-trade-jimmy-horn-john-metchie",
+      "https://www.si.com/nfl/panthers/onsi/haynes-king-injury-could-cost-carolina-panthers-dearly"
+     ],
+     "articles_in_sample": 19,
+     "articles_read": 3,
+     "formats_observed": [
+      "injury",
+      "joint-practice",
+      "depth chart"
+     ],
+     "si_profile": "https://www.si.com/author/zach-roberts",
+     "multi_team": false,
+     "teams_seen": [
+      "CAR"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Mike Moraitis": {
+     "classification": "AGGREGATION",
+     "evidence": "files for BUF, CAR, CHI and DAL -- a desk, not a beat -- and the review sample showed the output is largely rewritten from other outlets: 47 evidence spans relay a named reporter or publication, more than any other byline, including quotations lifted from The Athletic, which this pipeline refuses to fetch directly",
+     "sample_urls": [
+      "https://www.si.com/nfl/panthers/onsi/fights-carolina-panthers-jacksonville-jaguars-joint-practice",
+      "https://www.si.com/nfl/panthers/onsi/projecting-week-1-starters-carolina-panthers-today",
+      "https://www.si.com/nfl/panthers/onsi/most-troubling-thing-panthers-preseason-game-bills"
+     ],
+     "articles_in_sample": 4,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/mike-moraitis",
+     "multi_team": true,
+     "teams_seen": [
+      "BUF",
+      "CAR",
+      "CHI",
+      "DAL"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "CHI": {
+   "slug": "bears",
+   "landing_page": "https://www.si.com/nfl/bears",
+   "authors": {
+    "Pete Martuneac": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 2/3; 4 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/bears/onsi/ben-johnson-to-focus-on-one-unit-in-joint-practice-with-bengals",
+      "https://www.si.com/nfl/bears/onsi/4-questions-for-the-bears-at-their-joint-practice-with-the-bengals",
+      "https://www.si.com/nfl/bears/onsi/ben-johnson-caleb-williams-low-completion-rate"
+     ],
+     "articles_in_sample": 4,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/pete-martuneac",
+     "multi_team": false,
+     "teams_seen": [
+      "CHI"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Mike Moraitis": {
+     "classification": "AGGREGATION",
+     "evidence": "files for BUF, CAR, CHI and DAL -- a desk, not a beat -- and the review sample showed the output is largely rewritten from other outlets: 47 evidence spans relay a named reporter or publication, more than any other byline, including quotations lifted from The Athletic, which this pipeline refuses to fetch directly",
+     "sample_urls": [
+      "https://www.si.com/nfl/bears/onsi/the-good-and-not-so-good-from-bears-joint-practice-with-bengals",
+      "https://www.si.com/nfl/bears/onsi/ben-johnson-details-expectations-for-marcus-davenport-in-bears-defense",
+      "https://www.si.com/nfl/bears/onsi/bears-bengals-fight-joint-practice"
+     ],
+     "articles_in_sample": 12,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/mike-moraitis",
+     "multi_team": true,
+     "teams_seen": [
+      "BUF",
+      "CAR",
+      "CHI",
+      "DAL"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "CIN": {
+   "slug": "bengals",
+   "landing_page": "https://www.si.com/nfl/bengals",
+   "authors": {
+    "Russell Heltman": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 1/3 articles read, quotations in 3/3; 13 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/bengals/onsi/we-ve-invested-in-it-joe-burrow-updates-bengals-under-center-growth-following-bears-joint-practice-01m0g73gty45",
+      "https://www.si.com/nfl/bengals/onsi/manifest-it-joe-burrow-hammers-home-super-bowl-standard-again-for-bengals-following-bears-joint-practice-01m0fbmwfzqw",
+      "https://www.si.com/nfl/bengals/onsi/what-a-difference-a-year-makes-steady-growth-continuing-for-bengals-young-linebackers-01m0cvjz01xz"
+     ],
+     "articles_in_sample": 13,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/russell-heltman",
+     "multi_team": false,
+     "teams_seen": [
+      "CIN"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Jay Morrison": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 3/3; 4 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/bengals/onsi/bengals-joint-practice-observations-there-was-good-bad-and-fiery-from-joe-burrow-and-co-against-the-bears-01m0gfmhyy0j",
+      "https://www.si.com/nfl/bengals/onsi/closing-time-was-losing-time-for-bengals-in-2025-but-defense-authors-emphatic-ending-to-joint-practice-with-bears-01m0gczw0jdt",
+      "https://www.si.com/nfl/bengals/onsi/why-the-bengals-are-reversing-course-with-jalen-rivers-and-why-he-s-more-than-fine-with-it-01m0bep8yw43"
+     ],
+     "articles_in_sample": 4,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "observations"
+     ],
+     "si_profile": "https://www.si.com/author/jay-morrison",
+     "multi_team": false,
+     "teams_seen": [
+      "CIN"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "CLE": {
+   "slug": "browns",
+   "landing_page": "https://www.si.com/nfl/browns",
+   "authors": {
+    "Nick Pedone": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 2/3; 6 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/browns/onsi/winners-and-losers-from-cleveland-browns-joint-practice-against-buffalo-bills-01m0gc61xks4",
+      "https://www.si.com/nfl/browns/onsi/5-cleveland-browns-with-soaring-stock-who-flipped-depth-charts-in-preseason-01m0g2wb4sz4",
+      "https://www.si.com/nfl/browns/onsi/todd-monken-sheds-light-on-why-he-abruptly-ended-browns-training-camp-practice-01m0dgykxqb6"
+     ],
+     "articles_in_sample": 6,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "depth chart"
+     ],
+     "si_profile": "https://www.si.com/author/nick-pedone",
+     "multi_team": false,
+     "teams_seen": [
+      "CLE"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Noah Olson": {
+     "classification": "UNKNOWN",
+     "evidence": "only 1 article(s) in the sample; not researched",
+     "sample_urls": [
+      "https://www.si.com/nfl/browns/onsi/3-browns-that-have-the-most-to-gain-from-joint-practices-against-bills-01m0dgnwxqca"
+     ],
+     "articles_in_sample": 1,
+     "articles_read": 1,
+     "formats_observed": [
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/noah-olson",
+     "multi_team": false,
+     "teams_seen": [
+      "CLE"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "DAL": {
+   "slug": "cowboys",
+   "landing_page": "https://www.si.com/nfl/cowboys",
+   "authors": {
+    "Mike Moraitis": {
+     "classification": "AGGREGATION",
+     "evidence": "files for BUF, CAR, CHI and DAL -- a desk, not a beat -- and the review sample showed the output is largely rewritten from other outlets: 47 evidence spans relay a named reporter or publication, more than any other byline, including quotations lifted from The Athletic, which this pipeline refuses to fetch directly",
+     "sample_urls": [
+      "https://www.si.com/nfl/cowboys/onsi/von-miller-impressed-first-team-reps-dallas-cowboys-training-camp",
+      "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-saints-facing-possible-punishments-joint-practice-fights",
+      "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-injury-updates-training-camp-practice-oxnard"
+     ],
+     "articles_in_sample": 13,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "injury",
+      "presser"
+     ],
+     "si_profile": "https://www.si.com/author/mike-moraitis",
+     "multi_team": true,
+     "teams_seen": [
+      "BUF",
+      "CAR",
+      "CHI",
+      "DAL"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Randy Gurzi": {
+     "classification": "REPORTING",
+     "evidence": "files for 3 teams (BUF, DAL, SEA) -- a desk, not a beat, so no single team's firsthand voice",
+     "sample_urls": [
+      "https://www.si.com/nfl/cowboys/onsi/good-not-so-good-final-dallas-cowboys-training-camp-practice-oxnard",
+      "https://www.si.com/nfl/cowboys/onsi/nfl-preseason-week-2-power-rankings-dallas-cowboys-reality-check",
+      "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-oc-klayton-adams-very-important-snack-room-request"
+     ],
+     "articles_in_sample": 11,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/randy-gurzi",
+     "multi_team": true,
+     "teams_seen": [
+      "BUF",
+      "DAL",
+      "SEA"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "DEN": {
+   "slug": "broncos",
+   "landing_page": "https://www.si.com/nfl/broncos",
+   "authors": {
+    "Zack Kelberman": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 3/3; 7 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/broncos/onsi/broncos-waive-injured-levelle-bailey-injured-reserve",
+      "https://www.si.com/nfl/broncos/onsi/sean-payton-luke-wattenberg-broncos-center-injuries",
+      "https://www.si.com/nfl/broncos/onsi/broncos-darren-rizzi-luke-basso-long-snapper"
+     ],
+     "articles_in_sample": 7,
+     "articles_read": 3,
+     "formats_observed": [
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/zack-kelberman",
+     "multi_team": false,
+     "teams_seen": [
+      "DEN"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Bob Morris": {
+     "classification": "UNKNOWN",
+     "evidence": "only 2 article(s) in the sample; not researched",
+     "sample_urls": [
+      "https://www.si.com/nfl/broncos/onsi/5-broncos-vets-who-could-become-free-agents-on-cutdown-day",
+      "https://www.si.com/nfl/broncos/onsi/3-roster-questions-broncos-may-have-answered-in-preseason-opener"
+     ],
+     "articles_in_sample": 2,
+     "articles_read": 2,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/bob-morris",
+     "multi_team": false,
+     "teams_seen": [
+      "DEN"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "DET": {
+   "slug": "lions",
+   "landing_page": "https://www.si.com/nfl/lions",
+   "authors": {
+    "Emmett Matasovsky": {
+     "classification": "UNKNOWN",
+     "evidence": "only 2 article(s) in the sample; not researched",
+     "sample_urls": [
+      "https://www.si.com/nfl/lions/onsi/detroit-lions-bring-in-two-guards-for-tryouts",
+      "https://www.si.com/nfl/lions/onsi/jimmy-rolder-offers-very-promising-injury-update"
+     ],
+     "articles_in_sample": 2,
+     "articles_read": 2,
+     "formats_observed": [
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/emmett-matasovsky",
+     "multi_team": false,
+     "teams_seen": [
+      "DET"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "John Maakaron": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 0/3 articles read, quotations in 3/3; 10 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/lions/onsi/terrible-luck-continues-after-ennis-rakestraw-leaves-practice-injured",
+      "https://www.si.com/nfl/lions/onsi/former-nfl-gm-dan-campbell-has-balls-bigger-than-his-brains",
+      "https://www.si.com/nfl/lions/onsi/five-winners-two-losers-day-15-2026-lions-training-camp-practice"
+     ],
+     "articles_in_sample": 10,
+     "articles_read": 3,
+     "formats_observed": [
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/john-maakaron",
+     "multi_team": false,
+     "teams_seen": [
+      "DET"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "GB": {
+   "slug": "packers",
+   "landing_page": "https://www.si.com/nfl/packers",
+   "authors": {
+    "Bill Huber": {
+     "classification": "FIRSTHAND_APPROVED",
+     "evidence": "grandfathered author source, re-verified against the same bar: strict markers 3/6, press-conference reporting 3/6, 24 articles, single-team byline",
+     "sample_urls": [
+      "https://www.si.com/nfl/packers/onsi/consensus-nfl-power-rankings-titletown-packers-mired-in-mediocreville",
+      "https://www.si.com/nfl/packers/onsi/packers-lock-o-meter-3-0-projects-53-man-roster-with-10-days-until-final-cuts",
+      "https://www.si.com/nfl/packers/onsi/ten-winners-four-losers-from-practice-14-of-packers-training-camp"
+     ],
+     "articles_in_sample": 24,
+     "articles_read": 6,
+     "formats_observed": [
+      "practice",
+      "presser"
+     ],
+     "si_profile": "https://www.si.com/author/bill-huber",
+     "multi_team": false,
+     "teams_seen": [
+      "GB"
+     ],
+     "grandfathered": "GRANDFATHERED_AUTO_READY - existing individually verified author source predating SI team-page adapter",
+     "auto_ready": true,
+     "reviewed_on": "2026-08-20"
+    },
+    "Jacob Westendorf": {
+     "classification": "REPORTING",
+     "evidence": "files for 2 teams (GB, MIA) -- a desk, not a beat, so no single team's firsthand voice",
+     "sample_urls": [
+      "https://www.si.com/nfl/packers/onsi/packers-hoped-to-avoid-chaos-well-so-much-for-that-at-training-camp",
+      "https://www.si.com/nfl/packers/onsi/most-important-development-for-packers-in-preseason-they-showed-backbone",
+      "https://www.si.com/nfl/packers/onsi/winners-and-losers-from-packers-preseason-loss-at-steelers"
+     ],
+     "articles_in_sample": 3,
+     "articles_read": 3,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/jacob-westendorf",
+     "multi_team": true,
+     "teams_seen": [
+      "GB",
+      "MIA"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "HOU": {
+   "slug": "texans",
+   "landing_page": "https://www.si.com/nfl/texans",
+   "authors": {
+    "Jared Koch": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 1/3 articles read, quotations in 2/3; 20 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/texans/onsi/texans-linked-to-trade-for-patriots-wr-after-jayden-higgins-injury",
+      "https://www.si.com/nfl/texans/onsi/4-texans-players-with-most-to-gain-in-second-preseason-game-vs-raiders",
+      "https://www.si.com/nfl/texans/onsi/how-texans-plan-to-manage-c-j-stroud-in-raiders-preseason-game"
+     ],
+     "articles_in_sample": 20,
+     "articles_read": 3,
+     "formats_observed": [
+      "injury",
+      "joint-practice",
+      "presser",
+      "depth chart"
+     ],
+     "si_profile": "https://www.si.com/author/jared-koch",
+     "multi_team": false,
+     "teams_seen": [
+      "HOU"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "IND": {
+   "slug": "colts",
+   "landing_page": "https://www.si.com/nfl/colts",
+   "authors": {
+    "Noah Compton": {
+     "classification": "REPORTING",
+     "evidence": "fails the firsthand bar: strict presence markers in only 2/6 articles read; 10 articles. Reports, but body evidence does not establish attendance",
+     "sample_urls": [
+      "https://www.si.com/nfl/colts/onsi/biggest-takeaways-from-final-day-of-colts-training-camp-keenan-allen-makes",
+      "https://www.si.com/nfl/colts/onsi/indianapolis-colts-dodge-massive-bullet-with-latest-injury-update",
+      "https://www.si.com/nfl/colts/onsi/good-and-not-so-good-from-colts-first-joint-practice-with-falcons"
+     ],
+     "articles_in_sample": 10,
+     "articles_read": 3,
+     "formats_observed": [
+      "injury",
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/noah-compton",
+     "multi_team": false,
+     "teams_seen": [
+      "IND"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Andrew Moore": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 1/3 articles read, quotations in 2/3; 4 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/colts/onsi/colts-keenan-allen-reveals-why-he-signed-with-indianapolis",
+      "https://www.si.com/nfl/colts/onsi/colts-signing-keenan-allen-greatly-improves-suspect-wide-receiver-depth",
+      "https://www.si.com/nfl/colts/onsi/indianapolis-colts-camp-day-11-takeaways-jones-throws-multiple-tds-vs-strong-defense"
+     ],
+     "articles_in_sample": 4,
+     "articles_read": 3,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/andrew-moore",
+     "multi_team": false,
+     "teams_seen": [
+      "IND"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "JAX": {
+   "slug": "jaguars",
+   "landing_page": "https://www.si.com/nfl/jaguars",
+   "authors": {
+    "John Shipley": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 1/3 articles read, quotations in 1/3; 23 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/jaguars/onsi/jacksonville-grading-the-trade-for-daniel-faalele-why-james-gladstone-made-the-move",
+      "https://www.si.com/nfl/jaguars/onsi/jacksonville-5-things-we-learned-from-joint-practices-with-panthers",
+      "https://www.si.com/nfl/jaguars/onsi/jacksonville-3-observations-on-cole-van-lanen-return-and-what-it-means-for-ol"
+     ],
+     "articles_in_sample": 23,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "observations",
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/john-shipley",
+     "multi_team": false,
+     "teams_seen": [
+      "JAX"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "KC": {
+   "slug": "chiefs",
+   "landing_page": "https://www.si.com/nfl/chiefs",
+   "authors": {
+    "Joshua Brisco": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 1/3 articles read, quotations in 0/3; 5 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/chiefs/onsi/chiefs-reunite-with-former-linebacker-cam-jones-why-kc-made-the-move-now",
+      "https://www.si.com/nfl/chiefs/onsi/chiefs-on-si-mailbag-could-an-offseason-addition-be-a-surprise-cut-candidate",
+      "https://www.si.com/nfl/chiefs/onsi/chiefs-injury-report-josh-simmons-tyquan-thornton-ashton-gillotte-battle-training-camp-ailments"
+     ],
+     "articles_in_sample": 5,
+     "articles_read": 3,
+     "formats_observed": [
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/joshua-brisco",
+     "multi_team": false,
+     "teams_seen": [
+      "KC"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Jordan Foote": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 1/3 articles read, quotations in 3/3; 10 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/chiefs/onsi/patrick-mahomes-playing-status-chiefs-qb-plan-for-preseason-game-vs-bucs-revealed",
+      "https://www.si.com/nfl/chiefs/onsi/chiefs-shake-up-offensive-line-picture-sign-ot-kellen-diesch-final-day-training-camp",
+      "https://www.si.com/nfl/chiefs/onsi/preseason-week-1-star-jaden-hicks-gets-vote-of-confidence-from-steve-spagnuolo"
+     ],
+     "articles_in_sample": 10,
+     "articles_read": 3,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/jordan-foote",
+     "multi_team": false,
+     "teams_seen": [
+      "KC"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "LAC": {
+   "slug": "chargers",
+   "landing_page": "https://www.si.com/nfl/chargers",
+   "authors": {
+    "Chris Roling": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 0/3 articles read, quotations in 1/3; 9 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/chargers/onsi/chargers-latest-depth-chart-takeaways-question-preseason-49ers",
+      "https://www.si.com/nfl/chargers/onsi/49ers-chargers-will-reveal-emergency-trade-free-agent-signing",
+      "https://www.si.com/nfl/chargers/onsi/chargers-49ers-predictions-starters-nfl-preseason-game"
+     ],
+     "articles_in_sample": 9,
+     "articles_read": 3,
+     "formats_observed": [
+      "depth chart",
+      "injury",
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/chris-roling",
+     "multi_team": false,
+     "teams_seen": [
+      "LAC"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Thomas Martinez": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 1/3 articles read, quotations in 2/3; 8 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/chargers/onsi/chargers-49ers-preseason-preview-players-watch",
+      "https://www.si.com/nfl/chargers/onsi/tyler-biadasz-out-indefinitely-joe-hortiz-chargers-must-do-next",
+      "https://www.si.com/nfl/chargers/onsi/chargers-49ers-substation-injury-quentin-johnston-kyle-kennard"
+     ],
+     "articles_in_sample": 8,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/thomas-martinez",
+     "multi_team": false,
+     "teams_seen": [
+      "LAC"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "LAR": {
+   "slug": "rams",
+   "landing_page": "https://www.si.com/nfl/rams",
+   "authors": {
+    "Blaine Grisak": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 0/3 articles read, quotations in 1/3; 24 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/rams/onsi/rams-winners-losers-joint-practice-saints",
+      "https://www.si.com/nfl/rams/onsi/rams-mailbag-alaric-jackson-dean-connors-offensive-line",
+      "https://www.si.com/nfl/rams/onsi/rams-players-watch-saints-preseason-week-2"
+     ],
+     "articles_in_sample": 24,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/blaine-grisak",
+     "multi_team": false,
+     "teams_seen": [
+      "LAR"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "LV": {
+   "slug": "raiders",
+   "landing_page": "https://www.si.com/nfl/raiders",
+   "authors": {
+    "Hondo Carpenter": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 3/3 articles read, quotations in 3/3; 3 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/raiders/onsi/las-vegas-training-camp-report-22-takeaways-lessons-joint-practice",
+      "https://www.si.com/nfl/raiders/onsi/las-vegas-training-camp-report-21-winners-losers-joint-practice",
+      "https://www.si.com/nfl/raiders/onsi/las-vegas-training-camp-report-20-who-stood-out-today"
+     ],
+     "articles_in_sample": 3,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/hondo-carpenter",
+     "multi_team": false,
+     "teams_seen": [
+      "LV"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Ezekiel Trezevant": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 1/3 articles read, quotations in 2/3; 9 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/raiders/onsi/las-vegas-bowers-looks-stake-claim-league-best",
+      "https://www.si.com/nfl/raiders/onsi/las-vegas-joint-practice-texans-confirmed-areas-need",
+      "https://www.si.com/nfl/raiders/onsi/las-vegas-release-updated-depth-chart-reading-tea-leaves"
+     ],
+     "articles_in_sample": 9,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "depth chart"
+     ],
+     "si_profile": "https://www.si.com/author/ezekiel-trezevant",
+     "multi_team": false,
+     "teams_seen": [
+      "LV"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     }
@@ -82,25 +968,44 @@
    "authors": {
     "Alain Poupart": {
      "classification": "FIRSTHAND_APPROVED",
-     "evidence": "long-standing Dolphins beat reporter; files dated practice observation pieces and workout-group transaction notes from the facility",
+     "evidence": "strict presence markers in 3/6 articles read (told reporters; did not participate); press-conference reporting in 2/6; 17 articles on the team page; single-team byline",
      "sample_urls": [
       "https://www.si.com/nfl/dolphins/onsi/time-for-concern-or-what-to-make-of-the-dolphins-offense-getting-dominated-in-the-joint-practice-01m0g9v5b0cv",
       "https://www.si.com/nfl/dolphins/onsi/miami-dolphins-joint-practice-with-giants-observations-skirmishes-sacks-and-more-01m0fzmd7vz6",
       "https://www.si.com/nfl/dolphins/onsi/dolphins-wednesday-workout-group-includes-son-of-nfl-legend-more-transaction-notes-01m0dx17p5rz"
      ],
      "articles_in_sample": 17,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "observations"
+     ],
+     "si_profile": "https://www.si.com/author/alain-poupart",
+     "multi_team": false,
+     "teams_seen": [
+      "MIA"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     },
     "Jake Gibson": {
-     "classification": "ANALYSIS_ONLY",
-     "evidence": "winners-and-losers, should-they-sign and draft-pick evaluation",
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 3/3; 5 articles. Reports; not verified as consistently firsthand",
      "sample_urls": [
       "https://www.si.com/nfl/dolphins/onsi/why-biggers-could-make-the-biggest-impact-among-the-2025-dt-draft-picks-01m0bp79488f",
       "https://www.si.com/nfl/dolphins/onsi/two-miami-dolphins-players-stand-out-among-those-who-brought-the-physicality-jeff-hafley-loved-01m03zhbrt75",
       "https://www.si.com/nfl/dolphins/onsi/four-winners-and-four-losers-in-dolphins-preseason-opener-01m01jvtj3k9"
      ],
      "articles_in_sample": 5,
+     "articles_read": 3,
+     "formats_observed": [
+      "depth chart"
+     ],
+     "si_profile": "https://www.si.com/author/jake-gibson",
+     "multi_team": false,
+     "teams_seen": [
+      "MIA"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     },
@@ -112,6 +1017,15 @@
       "https://www.si.com/nfl/dolphins/onsi/grades-from-miami-dolphins-preseason-opener-rbs-dbs-lead-the-way-01m01mf0ja1r"
      ],
      "articles_in_sample": 2,
+     "articles_read": 0,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/jacob-westendorf",
+     "multi_team": false,
+     "teams_seen": [
+      "MIA"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     },
@@ -122,6 +1036,15 @@
       "https://www.si.com/nfl/dolphins/onsi/how-the-addition-of-chris-bell-impacts-the-dolphins-wr-corps-01m09e5y3z6j"
      ],
      "articles_in_sample": 1,
+     "articles_read": 0,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/tyler-desena",
+     "multi_team": false,
+     "teams_seen": [
+      "MIA"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     },
@@ -132,6 +1055,65 @@
       "https://www.si.com/nfl/dolphins/onsi/breaking-down-willis-dazzling-dolphins-preseason-debut-01m01gwyheq4"
      ],
      "articles_in_sample": 1,
+     "articles_read": 0,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/alex-villasis",
+     "multi_team": false,
+     "teams_seen": [
+      "MIA"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "MIN": {
+   "slug": "vikings",
+   "landing_page": "https://www.si.com/nfl/vikings",
+   "authors": {
+    "Jason Harmon": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 0/3 articles read, quotations in 0/3; 9 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/vikings/onsi/2-winners-2-losers-from-vikings-ravens-first-joint-practice-surprise-wr-continues-to-impress-01m0ed48ndtd",
+      "https://www.si.com/nfl/vikings/onsi/everything-i-saw-from-vikings-1st-joint-practice-ravens-8-19-dallas-turner-ready-spotlight-01m0dz74d5cs",
+      "https://www.si.com/nfl/vikings/onsi/examining-the-stakes-for-each-position-group-in-the-vikings-offense-this-season-01m0bx5f3mn2"
+     ],
+     "articles_in_sample": 9,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/jason-harmon",
+     "multi_team": false,
+     "teams_seen": [
+      "MIN"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Adam Carlson": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 0/3; 14 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/vikings/onsi/3-positions-vikings-more-from-week-2-preseason-secure-trenches-01m0e5nmn4fm",
+      "https://www.si.com/nfl/vikings/onsi/dillon-bell-every-reason-be-worried-time-vikings-running-out-01m0cekpjpsx",
+      "https://www.si.com/nfl/vikings/onsi/vikings-commitment-j-j-mccarthy-qb2-isn-t-cut-dry-as-it-seems-01m0dj3wa19c"
+     ],
+     "articles_in_sample": 14,
+     "articles_read": 3,
+     "formats_observed": [
+      "depth chart",
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/adam-carlson",
+     "multi_team": false,
+     "teams_seen": [
+      "MIN"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     }
@@ -143,25 +1125,123 @@
    "authors": {
     "Ethan Hurwitz": {
      "classification": "FIRSTHAND_APPROVED",
-     "evidence": "files Patriots joint-practice notebooks and 'everything X said' press-conference pieces; consistently at the facility",
+     "evidence": "strict presence markers in 4/6 articles read (said after practice; told reporters); press-conference reporting in 4/6; 22 articles on the team page; single-team byline",
      "sample_urls": [
       "https://www.si.com/nfl/patriots/onsi/everything-drake-maye-said-about-eager-a-j-brown-after-patriots-joint-practices",
       "https://www.si.com/nfl/patriots/onsi/patriots-joint-practice-eagles-get-physical-as-a-j-brown-settles-down",
       "https://www.si.com/nfl/patriots/onsi/mack-hollins-continues-to-chug-along-in-patriots-wr-room"
      ],
      "articles_in_sample": 22,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "presser",
+      "notebook"
+     ],
+     "si_profile": "https://www.si.com/author/ethan-hurwitz",
+     "multi_team": false,
+     "teams_seen": [
+      "NE"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     },
     "Zac Ventola": {
      "classification": "REPORTING",
-     "evidence": "covers joint practices firsthand but also writes storyline previews and announcements; sample too mixed to approve for firsthand",
+     "evidence": "presence markers in 3/3 articles read, quotations in 3/3; 6 articles. Reports; not verified as consistently firsthand",
      "sample_urls": [
       "https://www.si.com/nfl/patriots/onsi/drake-maye-a-j-brown-connection-falters-in-patriots-joint-practice-vs-eagles",
       "https://www.si.com/nfl/patriots/onsi/patriots-wr-a-j-brown-focused-as-he-shines-against-eagles-in-joint-practice",
       "https://www.si.com/nfl/patriots/onsi/three-storylines-to-watch-in-patriots-eagles-joint-practices"
      ],
      "articles_in_sample": 6,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/zac-ventola",
+     "multi_team": false,
+     "teams_seen": [
+      "NE"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "NO": {
+   "slug": "saints",
+   "landing_page": "https://www.si.com/nfl/saints",
+   "authors": {
+    "Grant Chachere": {
+     "classification": "REPORTING",
+     "evidence": "fails the firsthand bar: strict presence markers in only 0/6 articles read; 16 articles. Reports, but body evidence does not establish attendance",
+     "sample_urls": [
+      "https://www.si.com/nfl/saints/onsi/saints-stock-watch-6-players-trending-up-after-preseason-breakout-performances-01m0exh71b57",
+      "https://www.si.com/nfl/saints/onsi/saints-bring-in-two-receivers-for-workouts-after-tyson-injury-01m0bs09aee9",
+      "https://www.si.com/nfl/saints/onsi/tyler-shough-stays-hot-saints-cowboys-joint-practice-erupts-into-chaos-01m0br4q21a3"
+     ],
+     "articles_in_sample": 16,
+     "articles_read": 3,
+     "formats_observed": [
+      "injury",
+      "joint-practice",
+      "depth chart"
+     ],
+     "si_profile": "https://www.si.com/author/grant-chachere",
+     "multi_team": false,
+     "teams_seen": [
+      "NO"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "NYG": {
+   "slug": "giants",
+   "landing_page": "https://www.si.com/nfl/giants",
+   "authors": {
+    "Patricia Traina": {
+     "classification": "FIRSTHAND_APPROVED",
+     "evidence": "strict presence markers in 2/6 articles read (said after practice; first-team reps); press-conference reporting in 2/6; 12 articles on the team page; single-team byline",
+     "sample_urls": [
+      "https://www.si.com/nfl/giants/onsi/giants-dolphins-joint-practice-fights-najee-harris-injuries-01m0g99nh69n",
+      "https://www.si.com/nfl/giants/onsi/giants-dolphins-joint-practice-live-updates-01m013d4bkgs",
+      "https://www.si.com/nfl/giants/onsi/giants-trade-daniel-faalele-jaguars-01m0d2amqc90"
+     ],
+     "articles_in_sample": 12,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/patricia-traina",
+     "multi_team": false,
+     "teams_seen": [
+      "NYG"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Bob Folger": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 2/3; 4 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/giants/onsi/giants-linebackers-secondary-special-teams-grades-vikings-01m05tn0c0dv",
+      "https://www.si.com/nfl/giants/onsi/giants-offensive-defensive-line-grades-vikings-preseason-01m05m56n87h",
+      "https://www.si.com/nfl/giants/onsi/giants-receivers-tight-ends-grades-vikings-preseason-01m05ghsxx7r"
+     ],
+     "articles_in_sample": 4,
+     "articles_read": 3,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/bob-folger",
+     "multi_team": false,
+     "teams_seen": [
+      "NYG"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     }
@@ -173,13 +1253,47 @@
    "authors": {
     "Nick Faria": {
      "classification": "REPORTING",
-     "evidence": "reports from camp (Ossai's return) but also files 53-man roster projections and opinion columns",
+     "evidence": "presence markers in 3/3 articles read, quotations in 2/3; 13 articles. Reports; not verified as consistently firsthand",
      "sample_urls": [
       "https://www.si.com/nfl/jets/onsi/jets-geno-smith-risk-is-the-right-call-for-preseason-game-vs-steelers-01m0gqzrfya8",
       "https://www.si.com/nfl/jets/onsi/clearing-air-jets-qb-depth-chart-training-camp-buzz-grows-louder-01m0d48fek2k",
       "https://www.si.com/nfl/jets/onsi/joseph-ossai-eyeing-larger-role-after-returning-jets-practice-01m0d407j59z"
      ],
      "articles_in_sample": 13,
+     "articles_read": 3,
+     "formats_observed": [
+      "depth chart",
+      "injury",
+      "observations"
+     ],
+     "si_profile": "https://www.si.com/author/nick-faria",
+     "multi_team": false,
+     "teams_seen": [
+      "NYJ"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Devon Platana": {
+     "classification": "REPORTING",
+     "evidence": "files for 2 teams (MIN, NYJ) -- a desk, not a beat, so no single team's firsthand voice",
+     "sample_urls": [
+      "https://www.si.com/nfl/jets/onsi/projecting-jets-wr-depth-chart-after-multiple-training-camp-moves-on-wednesday-01m0d2gwxrnm",
+      "https://www.si.com/nfl/jets/onsi/examining-braelon-allen-s-outlook-if-breece-hall-misses-extended-time-01m08a5h7ytk",
+      "https://www.si.com/nfl/jets/onsi/breece-hall-injury-tracker-1st-update-on-jets-star-rb-is-optimistic-after-exit-from-monday-s-practice-01m08112y32n"
+     ],
+     "articles_in_sample": 5,
+     "articles_read": 3,
+     "formats_observed": [
+      "depth chart",
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/devon-platana",
+     "multi_team": true,
+     "teams_seen": [
+      "MIN",
+      "NYJ"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     },
@@ -192,18 +1306,15 @@
       "https://www.si.com/nfl/jets/onsi/one-jets-position-battle-that-could-be-decided-in-preseason-week-2-01m0ayahfvy9"
      ],
      "articles_in_sample": 5,
-     "auto_ready": false,
-     "reviewed_on": "2026-08-20"
-    },
-    "Devon Platana": {
-     "classification": "REPORTING",
-     "evidence": "injury trackers and depth-chart projections; reporting mixed with projection",
-     "sample_urls": [
-      "https://www.si.com/nfl/jets/onsi/projecting-jets-wr-depth-chart-after-multiple-training-camp-moves-on-wednesday-01m0d2gwxrnm",
-      "https://www.si.com/nfl/jets/onsi/examining-braelon-allen-s-outlook-if-breece-hall-misses-extended-time-01m08a5h7ytk",
-      "https://www.si.com/nfl/jets/onsi/breece-hall-injury-tracker-1st-update-on-jets-star-rb-is-optimistic-after-exit-from-monday-s-practice-01m08112y32n"
+     "articles_read": 0,
+     "formats_observed": [
+      "news"
      ],
-     "articles_in_sample": 5,
+     "si_profile": "https://www.si.com/author/colby-colwell",
+     "multi_team": false,
+     "teams_seen": [
+      "NYJ"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     },
@@ -216,6 +1327,352 @@
       "https://www.si.com/nfl/jets/onsi/sanders-york-who-currently-has-leg-up-jets-kicker-competition-preseason-week-2-01m08nnn2vxe"
      ],
      "articles_in_sample": 4,
+     "articles_read": 0,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/efstathios-savvidis",
+     "multi_team": false,
+     "teams_seen": [
+      "NYJ"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "PHI": {
+   "slug": "eagles",
+   "landing_page": "https://www.si.com/nfl/eagles",
+   "authors": {
+    "Jeff Kerr": {
+     "classification": "REPORTING",
+     "evidence": "fails the firsthand bar: strict presence markers in only 1/6 articles read, press-conference reporting in 2/6; 15 articles. Reports, but body evidence does not establish attendance",
+     "sample_urls": [
+      "https://www.si.com/nfl/eagles/onsi/7-eagles-who-significantly-helped-their-roster-chances-in-joint-practices-with-patriots-01m0g066m0h3",
+      "https://www.si.com/nfl/eagles/onsi/a-j-brown-and-jalen-hurts-appear-to-squash-beef-after-eagles-patriots-practice-01m0g10t72d0",
+      "https://www.si.com/nfl/eagles/onsi/5-eagles-that-need-a-big-finale-in-joint-training-camp-practice-with-patriots-01m0fj26tvy9"
+     ],
+     "articles_in_sample": 15,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice",
+      "injury",
+      "depth chart"
+     ],
+     "si_profile": "https://www.si.com/author/jeff-kerr",
+     "multi_team": false,
+     "teams_seen": [
+      "PHI"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Ed Kracz": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 3/3; 6 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/eagles/onsi/how-saquon-barkley-is-preparing-for-a-season-closer-to-2024-than-last-year-ed9",
+      "https://www.si.com/nfl/eagles/onsi/eagles-makai-lemon-progressing-could-he-play-in-second-preseason-game-01m0fvzzg354",
+      "https://www.si.com/nfl/eagles/onsi/now-in-heaven-a-j-brown-makes-life-hell-for-eagles-dbs-while-complimenting-one-01m0e4cw6a6y"
+     ],
+     "articles_in_sample": 6,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/ed-kracz",
+     "multi_team": false,
+     "teams_seen": [
+      "PHI"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "PIT": {
+   "slug": "steelers",
+   "landing_page": "https://www.si.com/nfl/steelers",
+   "authors": {
+    "Jacob Punturi": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 0/3 articles read, quotations in 0/3; 11 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/steelers/onsi/full-details-pittsburgh-steelers-keaanu-benton-extension-revealed",
+      "https://www.si.com/nfl/steelers/onsi/three-positions-pittsburgh-steelers-cut-kee-four-quarterbacks",
+      "https://www.si.com/nfl/steelers/onsi/will-howard-understands-pittsburgh-steelers-true-quarterback-battle"
+     ],
+     "articles_in_sample": 11,
+     "articles_read": 3,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/jacob-punturi",
+     "multi_team": false,
+     "teams_seen": [
+      "PIT"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Jack Markowski": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 2/3; 7 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-might-trade-partner-mason-rudolph",
+      "https://www.si.com/nfl/steelers/onsi/injury-crushing-pittsburgh-steelers-camp-darling-chances",
+      "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-quarterback-battle-all-over"
+     ],
+     "articles_in_sample": 7,
+     "articles_read": 3,
+     "formats_observed": [
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/jack-markowski",
+     "multi_team": false,
+     "teams_seen": [
+      "PIT"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "SEA": {
+   "slug": "seahawks",
+   "landing_page": "https://www.si.com/nfl/seahawks",
+   "authors": {
+    "Michael Hanich": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 0/3; 7 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/seahawks/onsi/how-seahawks-signing-trevon-diggs-affects-terrion-arnold",
+      "https://www.si.com/nfl/seahawks/onsi/two-highlights-in-seahawks-final-practice-before-joining-titans-in-nashville",
+      "https://www.si.com/nfl/seahawks/onsi/biggest-observations-from-hbo-s-hard-knocks-episode-3-of-seahawks"
+     ],
+     "articles_in_sample": 7,
+     "articles_read": 3,
+     "formats_observed": [
+      "observations"
+     ],
+     "si_profile": "https://www.si.com/author/michael-hanich",
+     "multi_team": false,
+     "teams_seen": [
+      "SEA"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Jeremy Brener": {
+     "classification": "REPORTING",
+     "evidence": "files for 2 teams (NYG, SEA) -- a desk, not a beat, so no single team's firsthand voice",
+     "sample_urls": [
+      "https://www.si.com/nfl/seahawks/onsi/seahawks-rb-tj-harden-has-shocking-new-plan-after-release",
+      "https://www.si.com/nfl/seahawks/onsi/seattle-seahawks-53-man-roster-projection-shakes-up-after-trevon-diggs-signing",
+      "https://www.si.com/nfl/seahawks/onsi/seattle-seahawks-get-grade-trevon-diggs-signing"
+     ],
+     "articles_in_sample": 12,
+     "articles_read": 3,
+     "formats_observed": [
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/jeremy-brener",
+     "multi_team": true,
+     "teams_seen": [
+      "NYG",
+      "SEA"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "SF": {
+   "slug": "49ers",
+   "landing_page": "https://www.si.com/nfl/49ers",
+   "authors": {
+    "Grant Cohn": {
+     "classification": "UNKNOWN",
+     "evidence": "only 2 article(s) in the sample; not researched",
+     "sample_urls": [
+      "https://www.si.com/nfl/49ers/onsi/san-francisco-49ers-los-angeles-chargers-live-blog",
+      "https://www.si.com/nfl/49ers/onsi/good-not-so-good-49ers-chargers-joint-practice-herbert-lance-shred-defense"
+     ],
+     "articles_in_sample": 2,
+     "articles_read": 2,
+     "formats_observed": [
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/grant-cohn",
+     "multi_team": false,
+     "teams_seen": [
+      "SF"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Tom Jensen": {
+     "classification": "UNKNOWN",
+     "evidence": "only 1 article(s) in the sample; not researched",
+     "sample_urls": [
+      "https://www.si.com/nfl/49ers/onsi/49ers-defense-exposed-joint-practice-chargers"
+     ],
+     "articles_in_sample": 1,
+     "articles_read": 1,
+     "formats_observed": [
+      "joint-practice"
+     ],
+     "si_profile": "https://www.si.com/author/tom-jensen",
+     "multi_team": false,
+     "teams_seen": [
+      "SF"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "TB": {
+   "slug": "buccaneers",
+   "landing_page": "https://www.si.com/nfl/buccaneers",
+   "authors": {
+    "River Wells": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 3/3 articles read, quotations in 0/3; 12 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/buccaneers/onsi/vita-vea-sets-the-record-straight-on-todd-bowles-and-buccaneers-2026",
+      "https://www.si.com/nfl/buccaneers/onsi/did-vita-vea-really-request-a-trade-from-the-bucs-here-s-what-he-said-2026",
+      "https://www.si.com/nfl/buccaneers/onsi/are-the-buccaneers-finally-nearing-an-agreement-with-vita-vea-2026"
+     ],
+     "articles_in_sample": 12,
+     "articles_read": 3,
+     "formats_observed": [
+      "presser",
+      "observations"
+     ],
+     "si_profile": "https://www.si.com/author/river-wells",
+     "multi_team": false,
+     "teams_seen": [
+      "TB"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Caleb Skinner": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 2/3; 5 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/buccaneers/onsi/jason-licht-comments-on-buccaneers-finally-extending-vita-vea-2026",
+      "https://www.si.com/nfl/buccaneers/onsi/baker-mayfield-raves-about-buccaneers-rookie-calls-him-an-animal-josiah-trotter",
+      "https://www.si.com/nfl/buccaneers/onsi/todd-bowles-reveals-multiple-buccaneers-injury-updates-2026"
+     ],
+     "articles_in_sample": 5,
+     "articles_read": 3,
+     "formats_observed": [
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/caleb-skinner",
+     "multi_team": false,
+     "teams_seen": [
+      "TB"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "TEN": {
+   "slug": "titans",
+   "landing_page": "https://www.si.com/nfl/titans",
+   "authors": {
+    "Lane Mills": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 0/3; 21 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/titans/onsi/titans-fans-sound-off-on-tyjae-spears-potential-to-become-rb1-01m0gdjncg10",
+      "https://www.si.com/nfl/titans/onsi/updated-titans-53-man-roster-projection-heading-into-preseason-game-2-01m0g58ax7xt",
+      "https://www.si.com/nfl/titans/onsi/3-titans-players-with-the-most-to-gain-in-preseason-duel-vs-seahawks-01m0fts1dn2z"
+     ],
+     "articles_in_sample": 21,
+     "articles_read": 3,
+     "formats_observed": [
+      "injury",
+      "presser"
+     ],
+     "si_profile": "https://www.si.com/author/lane-mills",
+     "multi_team": false,
+     "teams_seen": [
+      "TEN"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Dharya Sharma": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 2/3 articles read, quotations in 1/3; 5 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/titans/onsi/titans-running-back-room-dealt-perfect-bulletin-board-material-for-2026-season",
+      "https://www.si.com/nfl/titans/onsi/3-titans-players-and-2-position-groups-to-keep-tabs-on-vs-seahawks-this-week",
+      "https://www.si.com/nfl/titans/onsi/titans-offensive-line-receives-brutal-reality-check-ahead-of-2026-season"
+     ],
+     "articles_in_sample": 5,
+     "articles_read": 3,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/dharya-sharma",
+     "multi_team": false,
+     "teams_seen": [
+      "TEN"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "WAS": {
+   "slug": "commanders",
+   "landing_page": "https://www.si.com/nfl/commanders",
+   "authors": {
+    "Philip Hughes": {
+     "classification": "REPORTING",
+     "evidence": "presence markers in 1/3 articles read, quotations in 2/3; 25 articles. Reports; not verified as consistently firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/commanders/onsi/jeremy-reaves-usaa-national-military-monument-washington-commanders",
+      "https://www.si.com/nfl/commanders/onsi/commanders-camp-day-14-overreactions-injuries-center-battle-jayden-daniels",
+      "https://www.si.com/nfl/commanders/onsi/commanders-injury-updates-rachaad-white-nick-allegretti-trey-amos-johnny-newton"
+     ],
+     "articles_in_sample": 25,
+     "articles_read": 3,
+     "formats_observed": [
+      "injury"
+     ],
+     "si_profile": "https://www.si.com/author/philip-hughes",
+     "multi_team": false,
+     "teams_seen": [
+      "WAS"
+     ],
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Henry Brown": {
+     "classification": "UNKNOWN",
+     "evidence": "only 2 article(s) in the sample; not researched",
+     "sample_urls": [
+      "https://www.si.com/nfl/commanders/onsi/jeremy-mcnichols-commanders-running-back-roster-battle-injury",
+      "https://www.si.com/nfl/commanders/onsi/commanders-running-back-battle-kaytron-allen-robert-henry-jr-53-man-roster"
+     ],
+     "articles_in_sample": 2,
+     "articles_read": 2,
+     "formats_observed": [
+      "news"
+     ],
+     "si_profile": "https://www.si.com/author/henry-brown",
+     "multi_team": false,
+     "teams_seen": [
+      "WAS"
+     ],
      "auto_ready": false,
      "reviewed_on": "2026-08-20"
     }

@@ -1,0 +1,443 @@
+{
+ "generated_from": "wire_evidence + wire_exclusions",
+ "sampling_rule": {
+  "deterministic": true,
+  "order": "candidate_id ascending; exclusions by canonical_url",
+  "per_classification": 20,
+  "per_approved_author": 20,
+  "per_local_adapter": 20,
+  "spread_keys": [
+   "source_id",
+   "author",
+   "position",
+   "evidence_class",
+   "player_name"
+  ],
+  "note": "round-robin across the spread keys before topping up, so a stratum is not one article sampled twenty times"
+ },
+ "strata": {
+  "exclusion:analysis-only author": {
+   "count": 20,
+   "candidate_ids": [
+    "https://www.si.com/nfl/bears/onsi/bears-bengals-fight-joint-practice",
+    "https://www.si.com/nfl/bears/onsi/ben-johnson-details-expectations-for-marcus-davenport-in-bears-defense",
+    "https://www.si.com/nfl/bears/onsi/the-good-and-not-so-good-from-bears-joint-practice-with-bengals",
+    "https://www.si.com/nfl/bills/onsi/are-we-undervaluing-dj-moore-s-impact-on-josh-allen",
+    "https://www.si.com/nfl/bills/onsi/bills-te-named-roster-bubble-standout-other-teams-should-covet",
+    "https://www.si.com/nfl/bills/onsi/draft-bills-bet-on-untapped-potential-with-raw-wr-in-2027-nfl-mock",
+    "https://www.si.com/nfl/bills/onsi/most-important-players-to-watch-in-bills-preseason-week-2-game-vs-browns-01m08dhdwtep",
+    "https://www.si.com/nfl/bills/onsi/preseason-buffalo-bills-53-man-roster-prediction-entering-week-2",
+    "https://www.si.com/nfl/bills/onsi/preseason-cj-gardner-johnson-roasted-shedeur-sanders-during-bills-browns-joint-practice",
+    "https://www.si.com/nfl/bills/onsi/transactions-former-bills-safety-taylor-rapp-signs-with-one-of-buffalo-s-top-afc-foes",
+    "https://www.si.com/nfl/cowboys/onsi/christian-parker-views-von-miller-more-than-added-pass-rush-juice-dallas-cowboys",
+    "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-injury-updates-training-camp-practice-oxnard",
+    "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-saints-facing-possible-punishments-joint-practice-fights",
+    "https://www.si.com/nfl/cowboys/onsi/von-miller-impressed-first-team-reps-dallas-cowboys-training-camp",
+    "https://www.si.com/nfl/dolphins/onsi/could-the-dolphins-bring-back-jonnu-smith-should-they-01m00k853nw7",
+    "https://www.si.com/nfl/dolphins/onsi/four-winners-and-four-losers-in-dolphins-preseason-opener-01m01jvtj3k9",
+    "https://www.si.com/nfl/dolphins/onsi/two-miami-dolphins-players-stand-out-among-those-who-brought-the-physicality-jeff-hafley-loved-01m03zhbrt75",
+    "https://www.si.com/nfl/dolphins/onsi/why-biggers-could-make-the-biggest-impact-among-the-2025-dt-draft-picks-01m0bp79488f",
+    "https://www.si.com/nfl/jets/onsi/demario-davis-jets-reunion-is-already-aging-like-fine-wine-even-before-the-regular-season-begins-01m0g96zy7s1",
+    "https://www.si.com/nfl/jets/onsi/friday-s-loss-told-jets-all-need-to-know-malachi-moore-s-future-01m0733khwcc"
+   ]
+  },
+  "exclusion:national SI story syndicated to a team page": {
+   "count": 20,
+   "candidate_ids": [
+    "https://www.si.com/betting/49ers-vs-chargers-prediction-odds-spread-trends-for-nfl-preseason-week-2-01m0bfkcy19b",
+    "https://www.si.com/betting/best-nfl-picks-and-predictions-today-for-preseason-week-1-bet-falcons-as-underdogs-vs-broncos-01kzye64sz9p",
+    "https://www.si.com/betting/best-nfl-picks-and-predictions-today-for-preseason-week-2-thursday-01m0bgzba2fx",
+    "https://www.si.com/betting/denver-broncos-win-total-projection-for-2026-season-broncos-will-regress-after-overperforming-in-2025-01kytc74pf5f",
+    "https://www.si.com/betting/dolphins-vs-commanders-prediction-odds-spread-trends-for-nfl-preseason-week-1-01kzy0tmsr16",
+    "https://www.si.com/betting/how-to-bet-the-new-england-patriots-expect-significant-super-bowl-hangover-01m062tsqp6j",
+    "https://www.si.com/betting/kansas-city-chiefs-win-total-projection-for-2026-season-is-the-chiefs-era-over-01kytarasmdw",
+    "https://www.si.com/betting/las-vegas-raiders-win-total-projection-for-2026-season-raiders-expected-to-improve",
+    "https://www.si.com/betting/los-angeles-chargers-win-total-projection-for-2026-season-sky-is-the-limit-for-los-angeles",
+    "https://www.si.com/betting/miami-dolphins-win-total-projection-for-2026-season-dolphins-will-be-worst-team-in-nfl-01kyjnjasjat",
+    "https://www.si.com/betting/new-england-patriots-win-total-projection-for-2026-season-patriots-will-regress-01kyjm3d3tbk",
+    "https://www.si.com/betting/new-york-jets-win-total-projection-for-2026-season-jets-baffling-offseason-will-cost-them-01kyjrdj8k0v",
+    "https://www.si.com/betting/raiders-vs-texans-prediction-odds-spread-trends-for-nfl-preseason-week-2-01m0beff9jqt",
+    "https://www.si.com/collectibles/which-projected-nfl-breakout-stars-worth-investing",
+    "https://www.si.com/college/usc/football/usc-trojans-safety-nfl-preseason-opener-kamari-ramsey",
+    "https://www.si.com/nfl/8-things-you-missed-around-the-nfl-jayden-daniels-nil",
+    "https://www.si.com/nfl/aj-brown-speaks-volumes-with-play-patriots-eagles-joint-practice-2026",
+    "https://www.si.com/nfl/albert-breer-eagles-notebook-training-camp-2026",
+    "https://www.si.com/nfl/albert-breer-empties-his-commanders-notebook-training-camp-2026",
+    "https://www.si.com/nfl/jaguars-giants-trade-grades-jacksonville-adds-guard-depth"
+   ]
+  },
+  "exclusion:national list": {
+   "count": 3,
+   "candidate_ids": [
+    "https://www.si.com/nfl/bills/onsi/deone-walker-bills-dominant-dt-looking-like-top-10-guy-that-brandon-beane-knew-he-could-be",
+    "https://www.si.com/nfl/cardinals/onsi/nfl-top-100-trey-mcbride-earns-rave-reviews-from-nfl-peers",
+    "https://www.si.com/nfl/ravens/onsi/derrick-henry-becomes-last-ravens-player-to-make-nfl-top-100-list-01m0ecc6cn71"
+   ]
+  },
+  "exclusion:power rankings": {
+   "count": 3,
+   "candidate_ids": [
+    "https://www.si.com/nfl/cowboys/onsi/nfl-preseason-week-2-power-rankings-dallas-cowboys-reality-check",
+    "https://www.si.com/nfl/dolphins/onsi/dolphins-rookie-power-rankings-2-0-who-stands-out-among-promising-group-01m0dcfpjfz3",
+    "https://www.si.com/nfl/packers/onsi/consensus-nfl-power-rankings-titletown-packers-mired-in-mediocreville"
+   ]
+  },
+  "exclusion:roster prediction": {
+   "count": 2,
+   "candidate_ids": [
+    "https://www.si.com/nfl/seahawks/onsi/seattle-seahawks-53-man-roster-projection-shakes-up-after-trevon-diggs-signing",
+    "https://www.si.com/nfl/titans/onsi/updated-titans-53-man-roster-projection-heading-into-preseason-game-2-01m0g58ax7xt"
+   ]
+  },
+  "exclusion:unknown author": {
+   "count": 20,
+   "candidate_ids": [
+    "https://www.si.com/nfl/49ers/onsi/6-49ers-defenders-facing-huge-preseason-test-against-chargers",
+    "https://www.si.com/nfl/49ers/onsi/6-49ers-most-gain-preseason-game-chargers",
+    "https://www.si.com/nfl/49ers/onsi/ephesians-prysock-reveals-connections-49ers-drafted",
+    "https://www.si.com/nfl/49ers/onsi/san-francisco-49ers-los-angeles-chargers-live-blog",
+    "https://www.si.com/nfl/49ers/onsi/why-49ers-suddenly-optimistic-about-tight-end-luke-farrell",
+    "https://www.si.com/nfl/bears/onsi/4-chicago-bears-on-the-bubble-who-can-lock-up-a-roster-spot-against-the-bengals",
+    "https://www.si.com/nfl/bears/onsi/ben-johnson-spells-out-how-theo-benedet-can-fit-in-bears-tackle-mix",
+    "https://www.si.com/nfl/bears/onsi/who-are-the-chicago-bears-most-logical-trade-targets-with-vita-vea-off-the-board",
+    "https://www.si.com/nfl/bengals/onsi/bengals-rookie-landon-robinson-turning-heads-with-surprise-fullback-role-01m0e7pdwaec",
+    "https://www.si.com/nfl/bengals/onsi/setting-realistic-expectations-for-bengals-superstar-ja-marr-chase-in-2026-01m040rycf1x",
+    "https://www.si.com/nfl/bengals/onsi/we-better-f-ing-protect-joe-ja-marr-chase-sends-clear-message-to-bengals-offense-01m0g01s10y5",
+    "https://www.si.com/nfl/bills/onsi/preseason-bills-may-have-more-backup-qb-options-come-nfl-cutdown-day",
+    "https://www.si.com/nfl/bills/onsi/sean-mcdermott-team-one-of-nfl-s-best-to-never-reach-super-bowl",
+    "https://www.si.com/nfl/broncos/onsi/10-broncos-with-the-most-to-gain-vs-packers",
+    "https://www.si.com/nfl/broncos/onsi/5-broncos-with-the-most-to-lose-vs-packers-preseason",
+    "https://www.si.com/nfl/broncos/onsi/bo-nix-comeback-reaches-its-biggest-milestone-yet-broncos-packers",
+    "https://www.si.com/nfl/broncos/onsi/broncos-camp-day-14-bo-nix-strikes-back-winners-and-losers",
+    "https://www.si.com/nfl/broncos/onsi/broncos-packers-preseason-how-to-watch-tv-channel-live-stream-time",
+    "https://www.si.com/nfl/broncos/onsi/evan-engram-offers-telling-glimpse-davis-webb-vision-broncos-offense",
+    "https://www.si.com/nfl/broncos/onsi/taylor-rapp-signing-sends-clear-message-about-broncos-safety-depth"
+   ]
+  },
+  "exclusion:winners and losers": {
+   "count": 2,
+   "candidate_ids": [
+    "https://www.si.com/nfl/browns/onsi/winners-and-losers-from-cleveland-browns-joint-practice-against-buffalo-bills-01m0gc61xks4",
+    "https://www.si.com/nfl/rams/onsi/rams-winners-losers-joint-practice-saints"
+   ]
+  },
+  "exclusion:wrong team": {
+   "count": 12,
+   "candidate_ids": [
+    "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-reveal-qb-plan-dallas-cowboys-carson-beck-decision-made",
+    "https://www.si.com/nfl/chargers/onsi/chargers-49ers-predictions-starters-nfl-preseason-game",
+    "https://www.si.com/nfl/chargers/onsi/chargers-49ers-preseason-preview-players-watch",
+    "https://www.si.com/nfl/chargers/onsi/tyler-biadasz-out-indefinitely-joe-hortiz-chargers-must-do-next",
+    "https://www.si.com/nfl/cowboys/onsi/good-not-so-good-from-cowboys-joint-practice-with-saints",
+    "https://www.si.com/nfl/cowboys/onsi/predicting-dallas-cowboys-starters-vs-cardinals-nfl-preseason-week",
+    "https://www.si.com/nfl/cowboys/onsi/son-of-pro-wrestling-legend-suplexes-cowboys-player-during-joint-practice",
+    "https://www.si.com/nfl/cowboys/onsi/trevon-diggs-ready-prove-dallas-cowboys-doubters-wrong-seahawks-signing",
+    "https://www.si.com/nfl/falcons/onsi/falcons-rookies-to-watch-in-preseason-game-2-vs-colts",
+    "https://www.si.com/nfl/falcons/onsi/three-major-takeaways-from-falcons-joint-practice-day-1-with-colts",
+    "https://www.si.com/nfl/patriots/onsi/drake-maye-a-j-brown-connection-falters-in-patriots-joint-practice-vs-eagles",
+    "https://www.si.com/nfl/patriots/onsi/patriots-joint-practice-eagles-get-physical-as-a-j-brown-settles-down"
+   ]
+  },
+  "local_adapter:EXCERPT_FEED_PAGE_FETCH": {
+   "count": 20,
+   "candidate_ids": [
+    "008a6f768bb025a53a3c",
+    "2d6bcd12c6228988b8de",
+    "4b0e2eae2deffe426ae3",
+    "01684954f972c7736f3e",
+    "01b71f60112cc8c9666d",
+    "72d560e1167a6595c089",
+    "57ccf64055564c465de1",
+    "0519ad6f3836d05afd19",
+    "074bb0975ca355f2499b",
+    "7ce5f4d479c8adb2b88a",
+    "0a87f552bfa7a347775d",
+    "0ff01e566ab78aaec1db",
+    "8d661b9a45a0c159443c",
+    "0bfeb6473405ab1352bb",
+    "12dfccddbb9f273817fd",
+    "8ff1edd2e0a8eb34a186",
+    "0d79c2e19b3e998429f0",
+    "13281c7a68d432183ac7",
+    "9b30734ed962af639a9e",
+    "12e090706d0f1254d158"
+   ]
+  },
+  "local_adapter:FULL_TEXT_FEED": {
+   "count": 20,
+   "candidate_ids": [
+    "071dd26f46c924732f50",
+    "2ef7bd48cb1285273ee8",
+    "008288358afc65c377b6",
+    "02ff66a4edc510544d1e",
+    "51cd3955d6d5abf58f19",
+    "0129227cd7041f3c98a8",
+    "02bd826cffb0cbdad215",
+    "01d6683b1a0b97da747b",
+    "01b901858c690dc19761",
+    "12cb5a6bb2f7f1ae386b",
+    "0050a1b9ae5c6cda761e",
+    "214d6826ad993fac4a32",
+    "9791d2fa7d625a4b70f1",
+    "1fa7add20327601f594a",
+    "141dc685181cb72c1e16",
+    "5769d9dc99392da1e649",
+    "4b30cea1c6e9865d6752",
+    "048571874864395a6980",
+    "035fb5cd137a71f0f0aa",
+    "055da06906ac55e8285d"
+   ]
+  },
+  "local_adapter:SITE_FEED_AUTHOR_FILTER": {
+   "count": 20,
+   "candidate_ids": [
+    "0959912ea1bc1c7d3ff7",
+    "366efe46d38c650700a5",
+    "18bf9fb02f3c0d789af6",
+    "047e510dc01364cd4d11",
+    "1629ff4c8fff9987d152",
+    "029adf3c73221ae88956",
+    "01dec3fcbe40f40d097f",
+    "03bcf6bbfaff495185ba",
+    "588197f42b7428d9a341",
+    "016c43233a4c2be22753",
+    "0d820af9dcc379778dda",
+    "99b094d3ffecbe137817",
+    "21ae00bb2b6d595fccf3",
+    "1aa2d80f05cddcf31fd7",
+    "318f220d9d3200f0bacd",
+    "02f60e1fc41fea3be404",
+    "0a22eb2e65d31dfc61a8",
+    "6d3b2e16759a766c4f06",
+    "02b43a9fabeed3d48da6",
+    "168c849c592b94847739"
+   ]
+  },
+  "si_author:ARI:Donnie Druin": {
+   "count": 20,
+   "candidate_ids": [
+    "d9a9a3e068cc03965ec2",
+    "10df180ed3b601c56bb0",
+    "3eccca557216b4504643",
+    "11c3bf1ad20ec78019b4",
+    "51f76cece1d38917383c",
+    "02369ff46b71eec2af6f",
+    "051b6c2f4e060c2802e5",
+    "caef9f8d6e664cfc7ea1",
+    "1ab5e0ed36691114247d",
+    "37989e969be0d0545310",
+    "215fe2b80144a5f32db9",
+    "69a7d3e4bc0c0b6cce29",
+    "0a595bcd98f383db468b",
+    "a7c9643b25e03bacdd50",
+    "3ba6d49854bbc11e2fc6",
+    "114d9c0744d932e09960",
+    "205d32615e77a71111dd",
+    "48946d34f7a1b627edf6",
+    "60d372cb0b4c251244cc",
+    "5d64e5e1356de6529ade"
+   ]
+  },
+  "si_author:GB:Bill Huber": {
+   "count": 20,
+   "candidate_ids": [
+    "4c7a17e5fb649fa56dc4",
+    "3f5685565e2453588045",
+    "634f800700c13890528a",
+    "401aee8fbd357c5d6937",
+    "a2f0cab7e462baef08d4",
+    "2e344d661a332603e92a",
+    "34d78dcd7e5c52f8ccc8",
+    "2ed0e4a17b1775eec8a5",
+    "5b7e2e6edf775eb90456",
+    "13140b8091a31eea76ce",
+    "2e9f83a9101dffec8dc0",
+    "b5b386e2125ec93114c0",
+    "70d54b43f70b004e626b",
+    "91a335da5e8cc8d091c4",
+    "78b628ecb6fd9b1c2fc4",
+    "5a9776bf5ac95600e281",
+    "9f4a0b41bc48d7fed3c0",
+    "5aef188d4bd5a2107791",
+    "0167767b8bbdf918dcce",
+    "279c0e4e17e606f7eff9"
+   ]
+  },
+  "si_author:MIA:Alain Poupart": {
+   "count": 20,
+   "candidate_ids": [
+    "391c29592ebf54ddb292",
+    "0a882bc1536715d08639",
+    "49c6085fce7cf128b2f0",
+    "f8b764c10f62798b6101",
+    "0fb8ebdf56c35e8e3e34",
+    "13a27b6e433b8a0c94db",
+    "0f62e41738183118fec6",
+    "15078f0b1d649138846b",
+    "52be22b3d19d1a94cb6b",
+    "18010e1cb0c7dc841ae2",
+    "0f4d08f7703ee6c79a18",
+    "1449b9150f478e092522",
+    "7fefb32aa864b30ddc83",
+    "6d2f607898ecf6b9ce89",
+    "c5246577b376f2b49a16",
+    "3eeee1358b155c57f967",
+    "610b80984dc4d34a60aa",
+    "1dd0498ff7a4d91b973d",
+    "06de3774991282252edf",
+    "032d3d1b40cfa41ccf3b"
+   ]
+  },
+  "si_author:NE:Ethan Hurwitz": {
+   "count": 20,
+   "candidate_ids": [
+    "416a0c0201e120349725",
+    "359c06fe613659a7548f",
+    "0ab587c3c60ca20281e4",
+    "1669be094f750ce3f2fd",
+    "059c4d7c2a324f321575",
+    "054b8b2190a6f3386d97",
+    "31f8a160bb0c48a810ae",
+    "271bcecefbc14ef8750f",
+    "304056df923a156809e4",
+    "b3f886238252ceda7a30",
+    "5b6373548a80620ebcb9",
+    "4cdb3e958018c2cea175",
+    "8d860854025f3b85f7f6",
+    "3f1d3e7640e5c96a449a",
+    "260a5f9d510f00f6702a",
+    "d8f2d8aa9b84b3ed1f51",
+    "24b12a51199bb9dcb646",
+    "510f8e33db4f0ee01a6d",
+    "5edd5fd767102d982e95",
+    "831b8f1e865b03ca36a3"
+   ]
+  },
+  "si_author:NYG:Patricia Traina": {
+   "count": 20,
+   "candidate_ids": [
+    "49b27c33111a16d98322",
+    "76f746f53dac426e9ba8",
+    "15acce40b3846ae8b6b3",
+    "c442efe39eb24d721033",
+    "14d9e45145c36bfd9d7b",
+    "94e3f0568d2a851b28f9",
+    "6f044572ab29aa28ba3c",
+    "10977af6c380314e419f",
+    "576726d9b9f2217979f3",
+    "41d7ef396816eb08bf5d",
+    "50263e55f55c1769df6d",
+    "04ef30861f2494b1f293",
+    "17705c8cf5a1677befd1",
+    "73a3f0900e922e1fcd1f",
+    "5ae329c8c06137452bbb",
+    "075363867f3a891d1664",
+    "870dd6477414313ea1c4",
+    "1aece090e8f8f7b1a011",
+    "022058faf121d3daa3e2",
+    "95228c63a2a404daf51b"
+   ]
+  },
+  "si_class:ANALYSIS_OR_OPINION": {
+   "count": 20,
+   "candidate_ids": [
+    "477b71359c3df1685a19",
+    "8207407f86da806ccdfa",
+    "63cc118fa040eb1debac",
+    "49a22effeed16c5286a6",
+    "dc069a98e237fc365c88",
+    "01e9d4a103588a68b642",
+    "2c5a0f3a07ec39fe8634",
+    "3d902d354cd76a5aec52",
+    "25d8d81c188f4fee7d70",
+    "14c9d6515c36147861d4",
+    "4c259acb63ce61138efc",
+    "181e7204c325fc167c82",
+    "a58161d2e4124d24a395",
+    "de25fb05b4500822abbd",
+    "00a438c0d429ddfe195c",
+    "2e0dd56e2facb96e548e",
+    "1228ef177be8c9e67466",
+    "23c9b08c4a8bf8c5967a",
+    "1e0c72306179178532cb",
+    "c065768ba56f4f9ee46b"
+   ]
+  },
+  "si_class:DIRECT_QUOTATION": {
+   "count": 20,
+   "candidate_ids": [
+    "9171a031fbb4f628e2ce",
+    "84fbf5e701e2a241f252",
+    "23f9f061a2835ad9740e",
+    "1eda86d5799f3a173bec",
+    "07c7d4a2b3b302dbbfbd",
+    "54a58399b85c2ed4f0d9",
+    "d6db31b9de594fc2276d",
+    "bf8a8eac16ab2d3e64c4",
+    "c87b425c32abd425d8d3",
+    "4b8cbc3f83a313d9da80",
+    "47d138e23db25443acb7",
+    "3038347ae4a83836f504",
+    "024821aefcefe13ad0da",
+    "3ca26dbcdcff4271d43d",
+    "02d0a6bb1d768b326b50",
+    "05bbb3d6f4f27488a44c",
+    "4a5ed861eb38ac485e19",
+    "97b36f526f34455fc283",
+    "de29a18892b9d22fc377",
+    "0c0b8f7279c2e71fa604"
+   ]
+  },
+  "si_class:FIRSTHAND_OBSERVATION": {
+   "count": 20,
+   "candidate_ids": [
+    "1924b1abd3f40143d1aa",
+    "330b32b02c5f63c1a193",
+    "29a786d440c3b105d8e9",
+    "15264a7d09b6b1aa042c",
+    "10f4faeaadb66eceac2f",
+    "681cb25b3e1a1ee4be54",
+    "63e39fd2e2ef095b67c4",
+    "576726d9b9f2217979f3",
+    "0c8e0b9a387808d08912",
+    "42f1f1a6ea3931846de2",
+    "066d983836b99c2d7f8d",
+    "1b6ef797794e641d7acf",
+    "07b1d7af288cf30b71e5",
+    "a6a89cad71b2bcb6d3a0",
+    "933276afff98a6c6a762",
+    "3bd088f391e0a0a544b5",
+    "131aa4bcd1167f3d6fbb",
+    "40a82a032b63b5e74017",
+    "4cef8eef285260dfa177",
+    "9373e2c43a053f7a0f75"
+   ]
+  },
+  "si_class:UNCERTAIN": {
+   "count": 20,
+   "candidate_ids": [
+    "8ed1026b8f3e495307e6",
+    "51fdcf5a9f41a63ddf30",
+    "10d416a9f2669dd25c28",
+    "5bf96e665786564f1e63",
+    "9e2f5bd583f730ce5e55",
+    "39017bb1d47fd0545754",
+    "9cea15de0b1b521f280b",
+    "fe7a85165d39a5e0a833",
+    "162dc8f2ddc69db03961",
+    "101ec20e7754fcfe89be",
+    "23e7ddfdeea1313ae0fb",
+    "0f6058df467c50b5a4d4",
+    "89f2cd22d27527242e69",
+    "142cd444134a2ccddad8",
+    "0f388256d710e50a9414",
+    "249521720abee0d84c1e",
+    "6f64f237fd7960f52fb5",
+    "2590df78b038084d41b6",
+    "0e23aea7525593ca9a36",
+    "1cf08fdc309fcfc60d6d"
+   ]
+  }
+ },
+ "total": 322
+}

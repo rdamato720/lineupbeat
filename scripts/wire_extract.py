@@ -99,7 +99,9 @@ def spans_from_transcript(store, video_id: str
 def extract_item(store, item, reg, ctx, cfg, dry=False) -> dict:
     """One captured source becomes zero or more evidence candidates."""
     stats = {"spans": 0, "with_players": 0, "candidates": 0, "new": 0,
-             "context_only": 0, "unresolved": 0, "refused": 0}
+             "context_only": 0, "unresolved": 0, "refused": 0,
+             "superseded": 0}
+    live: set = set()
     if ctx.get("refuse"):
         # No spans, no candidates, no partial credit.
         stats["refused"] = 1
@@ -171,7 +173,13 @@ def extract_item(store, item, reg, ctx, cfg, dry=False) -> dict:
                 "video_id": video_id,
                 "start_seconds": start, "end_seconds": end,
                 "location": location,
-                "evidence_text": text[:1200],
+                # The whole span, not a slice of it. Spans run to 1,720
+                # characters and this was cut at 1,200, so a reviewer could
+                # be shown a passage that does not contain the player it is
+                # filed under -- the matcher had read the full span and was
+                # right, but nothing on screen said so. Evidence a reviewer
+                # cannot check is not evidence.
+                "evidence_text": text,
                 "evidence_class": klass,
                 "classification_confidence": conf,
                 "classification_reasons": (
@@ -195,8 +203,19 @@ def extract_item(store, item, reg, ctx, cfg, dry=False) -> dict:
                 "exclusion_reason": exclusion,
             }
             stats["candidates"] += 1
+            live.add(rec["candidate_id"])
             if not dry and store.upsert_evidence(rec):
                 stats["new"] += 1
+
+    # Retire what this run no longer produces. Re-extraction used to only
+    # add and update, so a candidate built from a superseded version of an
+    # article outlived the text it came from: one row in the review sample
+    # named Carlos Washington from a span that names Malik Washington, left
+    # behind when the article was re-fetched and its span boundaries moved.
+    # Superseded, never deleted, and a reviewer's decision is never touched.
+    if not dry:
+        stats["superseded"] = store.supersede_evidence(
+            item["canonical_url"], live)
     return stats
 
 
@@ -238,7 +257,7 @@ def main():
     print(f"  {len(items)} captured source(s), registry {reg.version}")
 
     total = {"spans": 0, "with_players": 0, "candidates": 0, "new": 0,
-             "context_only": 0, "unresolved": 0, "refused": 0}
+             "context_only": 0, "unresolved": 0, "refused": 0, "superseded": 0}
     for item in items:
         ctx = source_context(store, item["source_id"])
         st = extract_item(store, dict(item), reg, ctx, cfg, dry=args.dry_run)
@@ -254,6 +273,9 @@ def main():
           f"({total['new']} new, {total['candidates'] - total['new']} updated)")
     print(f"  {total['unresolved']} unresolved names, "
           f"{total['context_only']} offensive-line context")
+    if total["superseded"]:
+        print(f"  {total['superseded']} candidate(s) superseded "
+              f"(the span that produced them no longer exists)")
     if total["refused"]:
         print(f"  {total['refused']} source(s) refused outright "
               f"(paid: no span may be built from them)")

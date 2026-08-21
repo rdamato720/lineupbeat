@@ -79,6 +79,19 @@ MEDICAL = re.compile(
     r"strain(?:ed)?|concussion|surgery|out for the (?:season|year)|"
     r"weeks? to|re-?injur|ligament|hamstring|groin|high[- ]ankle)\b", re.I)
 
+# Another outlet's reporting, arriving second-hand. Named outlets, and the
+# shape "Surname wrote/reported", which is how a beat aggregator cites one.
+# The paid outlets are listed first and deliberately: our own registry
+# refuses to fetch The Athletic, and a rewrite of an Athletic story is the
+# same content taking a different door.
+RELAY = re.compile(
+    r"(?i)\b(the athletic|athletic'?s|espn'?s?|nfl network|nfl\.com|"
+    r"pro football talk|pft|the ringer|cbs sports|fox sports|yahoo sports|"
+    r"si\.com|bleacher report|chgo|the score|sports illustrated'?s)\b"
+    r"|\b[A-Z][a-z]+(?:\s[A-Z][a-z]+)? (?:wrote|reported|noted|added) that\b"
+    r"|\b[A-Z][a-z]+ (?:wrote|reported)\b"
+    r"|\b(per|according to) [A-Z][a-z]+\b", re.I)
+
 SENT_SPLIT = re.compile(r"(?<=[.!?])\s+(?=[A-Z“\"])")
 
 
@@ -126,6 +139,19 @@ def classify(text: str, *, reporter_voice: bool,
         why.append("speaker cannot be established from an auto-captioned "
                    "multi-speaker source")
         return UNCERTAIN, 0.2, why
+
+    # Relay is checked before quotation, and the order is the whole point. A
+    # writer quoting another outlet's reporter -- "Tough finish for the
+    # offense," Fishbain wrote -- has quotation marks and an attribution verb
+    # and is not a direct quotation from anyone at the facility. Checked the
+    # other way round it read as DIRECT_QUOTATION at 0.80, which is how a
+    # paywalled outlet's reporting arrives second-hand wearing our highest
+    # confidence score.
+    relay = RELAY.search(t)
+    if relay:
+        why.append(f"relays another outlet or reporter "
+                   f"({relay.group(0).strip().lower()!r})")
+        return ANALYSIS_OR_OPINION if HEDGE.search(t) else UNCERTAIN, 0.35, why
 
     quoted = QUOTED.search(t)
     if quoted:

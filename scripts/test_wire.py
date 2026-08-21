@@ -758,9 +758,9 @@ for headline, kind in [
         ("Bills 53-Man Roster Prediction 2.0", "roster prediction"),
         ("Winners and Losers From the Bills' Preseason Opener", "winners"),
         ("A Trade Proposal That Sends a Star to Buffalo", "trade proposal")]:
-    v = SI.evaluate({"canonical_url": "https://www.si.com/nfl/bills/onsi/x",
-                     "headline": headline, "author": "Ralph Ventre",
-                     "published_at": "2026-08-20"}, "BUF", SI_AUTH)
+    v = SI.evaluate({"canonical_url": "https://www.si.com/nfl/patriots/onsi/x",
+                     "headline": headline, "author": "Ethan Hurwitz",
+                     "published_at": "2026-08-20"}, "NE", SI_AUTH)
     check(f"{kind} cannot be eligible even from an approved author",
           not v.eligible, f"{headline!r} -> {v.exclusion_reason!r}")
 
@@ -769,24 +769,24 @@ for headline, kind in [
 # A team-segment url in a non-reporting section. The team check passes, so
 # this genuinely exercises the section rule rather than falling through to
 # the national-story refusal.
-vid = SI.evaluate({"canonical_url": "https://www.si.com/nfl/bills/video/camp",
-                   "headline": "Bills Camp Report", "author": "Ralph Ventre",
-                   "published_at": "2026-08-20"}, "BUF", SI_AUTH)
+vid = SI.evaluate({"canonical_url": "https://www.si.com/nfl/patriots/video/camp",
+                   "headline": "Patriots Camp Report", "author": "Ethan Hurwitz",
+                   "published_at": "2026-08-20"}, "NE", SI_AUTH)
 check("a video-section item is never reporting",
       not vid.eligible and "video" in vid.exclusion_reason,
       vid.exclusion_reason)
 
-unknown = SI.evaluate({"canonical_url": "https://www.si.com/nfl/bills/onsi/y",
+unknown = SI.evaluate({"canonical_url": "https://www.si.com/nfl/patriots/onsi/y",
                        "headline": "Bills Practice Report",
                        "author": "Somebody Nobody Researched",
-                       "published_at": "2026-08-20"}, "BUF", SI_AUTH)
+                       "published_at": "2026-08-20"}, "NE", SI_AUTH)
 check("an unresearched SI author is not eligible",
       not unknown.eligible and unknown.author_class == SI.UNKNOWN,
       unknown.exclusion_reason)
 
-noauthor = SI.evaluate({"canonical_url": "https://www.si.com/nfl/bills/onsi/z",
+noauthor = SI.evaluate({"canonical_url": "https://www.si.com/nfl/patriots/onsi/z",
                         "headline": "Bills Notes", "author": "SI Staff",
-                        "published_at": "2026-08-20"}, "BUF", SI_AUTH)
+                        "published_at": "2026-08-20"}, "NE", SI_AUTH)
 check("an article with no identifiable author is not eligible",
       not noauthor.eligible, noauthor.exclusion_reason)
 
@@ -797,9 +797,14 @@ check("team-page appearance alone grants no approval",
           for e in SI_AUTH.get("national", {}).values()),
       [n for n, e in SI_AUTH.get("national", {}).items()
        if e["classification"] == SI.FIRSTHAND_APPROVED])
-check("no SI author is marked auto_ready in the registry",
-      not [n for t in SI_AUTH.get("teams", {}).values()
-           for n, e in t["authors"].items() if e.get("auto_ready")])
+# Exactly one author carries auto_ready, and only with the grandfathering
+# note that says what it is. Nobody may be promoted by analogy to him.
+_auto = [(n, e) for t in SI_AUTH.get("teams", {}).values()
+         for n, e in t["authors"].items() if e.get("auto_ready")]
+check("only Bill Huber is marked auto_ready, and only as grandfathered",
+      len(_auto) == 1 and _auto[0][0] == "Bill Huber"
+      and "GRANDFATHERED_AUTO_READY" in _auto[0][1].get("grandfathered", ""),
+      [n for n, _ in _auto])
 
 # An analysis-only byline is not a firsthand voice, so a span that would
 # otherwise read as observation cannot be classified FIRSTHAND.
@@ -810,9 +815,52 @@ check("an analysis-only author cannot produce a firsthand claim",
       k_appr == ev.FIRSTHAND_OBSERVATION and k_anal != ev.FIRSTHAND_OBSERVATION,
       f"approved={k_appr} analysis={k_anal}")
 check("classify_author is exact-name and team-scoped",
-      SI.classify_author("Ralph Ventre", "BUF", SI_AUTH) == SI.FIRSTHAND_APPROVED
-      and SI.classify_author("Ralph Ventre", "MIA", SI_AUTH) == SI.UNKNOWN
-      and SI.classify_author("ralph ventre", "BUF", SI_AUTH) == SI.UNKNOWN)
+      SI.classify_author("Ethan Hurwitz", "NE", SI_AUTH) == SI.FIRSTHAND_APPROVED
+      and SI.classify_author("Ethan Hurwitz", "MIA", SI_AUTH) == SI.UNKNOWN
+      and SI.classify_author("ethan hurwitz", "NE", SI_AUTH) == SI.UNKNOWN)
+
+# A byline that files for several teams is a desk, not a beat, and is never
+# a single team's firsthand voice however good the article is.
+check("a multi-team byline is never FIRSTHAND_APPROVED",
+      all(not a.get("multi_team")
+          for t in SI_AUTH["teams"].values() for a in t["authors"].values()
+          if a["classification"] == SI.FIRSTHAND_APPROVED))
+
+# Relay beats quotation, and the order matters more than either rule. A beat
+# aggregator quoting a paywalled outlet's reporter has quotation marks and an
+# attribution verb; checked the other way round it scored DIRECT_QUOTATION at
+# 0.80, which is a paid outlet's reporting arriving second-hand wearing our
+# highest confidence.
+_relay = 'Here are the details. "Tough finish for the offense," Fishbain wrote.'
+_k, _c, _w = ev.classify(_relay, reporter_voice=True)
+check("a quote lifted from another outlet is not a DIRECT_QUOTATION",
+      _k != ev.DIRECT_QUOTATION and "relays" in _w[0], f"{_k} {_w}")
+_own = '"That is one of the best offenses," Bengals cornerback DJ Turner II said.'
+_k2, _, _ = ev.classify(_own, reporter_voice=True)
+check("a locker-room quote is still a DIRECT_QUOTATION",
+      _k2 == ev.DIRECT_QUOTATION, _k2)
+for _outlet in ("The Athletic", "ESPN", "NFL Network"):
+    _k3, _, _ = ev.classify(
+        f'{_outlet} reported the starter took every rep. "He looked sharp," it said.',
+        reporter_voice=True)
+    check(f"a story relayed from {_outlet} is never firsthand or quoted",
+          _k3 not in (ev.FIRSTHAND_OBSERVATION, ev.DIRECT_QUOTATION), _k3)
+
+# Whatever a candidate is filed under has to appear in the passage a
+# reviewer is shown. This failed once: spans reach 1,720 characters and
+# evidence_text was stored as text[:1200], so a correctly matched player fell
+# off the end of his own evidence.
+_ws = WireStore()
+_missing = []
+for _r in _ws.evidence():
+    if _r["review_status"] != "PENDING" or not _r["player_name"]:
+        continue
+    _hay = pl.norm(_r["evidence_text"])
+    _last = pl.norm(_r["player_name"]).split()[-1]
+    if _last not in _hay.split():
+        _missing.append((_r["player_name"], _r["source_url"][-40:]))
+check("every candidate names its player inside the stored evidence",
+      not _missing, _missing[:3])
 
 # ------------------------------------------------------------------- paid
 srcs = registry.load()
@@ -865,12 +913,15 @@ check("no SI source is pollable unattended",
       not any(s.pollable for s in si_srcs))
 check("every SI slug matches its registered team",
       all(SI.TEAMS[s.si_team_slug] == s.teams[0] for s in si_srcs))
+_noapproved = next(t for t in sorted(SI.CODE_TO_SLUG)
+                   if not [a for a in SI_AUTH["teams"].get(t, {}).get("authors", {}).values()
+                           if a["classification"] == SI.FIRSTHAND_APPROVED])
 bad_si = registry.Source(
-    source_id="si_x", source_name="x", reporter_name="", teams=["ARI"],
-    domains=["si.com"], status=registry.AUTO_READY,
+    source_id="si_x", source_name="x", reporter_name="", teams=[_noapproved],
+    domains=["si.com"], status=registry.AUTO_READY, feed_url="https://x/f",
     reporting_type="LOCAL_BEAT", adapter=registry.SI_TEAM_PAGE,
-    si_team_slug="cardinals", landing_page="https://www.si.com/nfl/cardinals",
-    active=True)
+    si_team_slug=SI.CODE_TO_SLUG[_noapproved],
+    landing_page="https://www.si.com/nfl/x", active=True)
 check("an SI team with no firsthand author cannot be AUTO_READY",
       any("no FIRSTHAND_APPROVED author" in b
           for b in registry.problems([bad_si])),
