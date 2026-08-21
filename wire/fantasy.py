@@ -197,6 +197,9 @@ def direction(text: str) -> str:
     return NEUTRAL
 
 
+AVAILABILITY_SIGNALS = {"LIMITED_PARTICIPATION", "RETURN_TO_PRACTICE", "INJURY"}
+
+
 def horizon(signal: str, text: str) -> str:
     if signal in ("LIMITED_PARTICIPATION", "RETURN_TO_PRACTICE"):
         return IMMEDIATE
@@ -208,9 +211,9 @@ def horizon(signal: str, text: str) -> str:
     if signal == "DEPTH_CHART":
         return SEASON_LONG if re.search(
             r"(?i)named (the )?starter|won the (starting )?job", text or "") else SHORT_TERM
-    if signal in ("FIRST_TEAM_REPS", "SECOND_TEAM_REPS", "ROLE_EXPANSION",
-                  "ROLE_REDUCTION", "RED_ZONE", "SNAP_SHARE", "TARGETS",
-                  "CARRIES", "ROUTES"):
+    if signal in ("FIRST_TEAM_REPS", "SECOND_TEAM_REPS", "THIRD_TEAM_REPS",
+                  "ROLE_EXPANSION", "ROLE_REDUCTION", "RED_ZONE",
+                  "SNAP_SHARE", "TARGETS", "CARRIES", "ROUTES"):
         return SHORT_TERM
     return UNKNOWN
 
@@ -297,58 +300,83 @@ def projection_action(rows: list, strength_val: str, impact: str,
 # ------------------------------------------------------------- commentary
 # Templates, not prose. A template can only say what it is handed, which is
 # what makes the no-invention rule checkable rather than hopeful.
-TEMPLATES = {
-    "FIRST_TEAM_REPS": ("{name} taking first-team reps could point to a larger "
-                        "role, though camp work is not a confirmed regular-season "
-                        "job. Worth monitoring."),
-    "SECOND_TEAM_REPS": ("{name} working with the second team suggests he is "
-                         "behind on the depth chart for now. One practice is not "
-                         "a settled role."),
-    "RED_ZONE": ("Scoring-area work is the part of {name}'s usage that matters "
-                 "most, and this suggests he may be involved there. A single "
-                 "practice is not enough to act on."),
-    "INJURY": ("An injury of this kind may reduce {name}'s availability, which "
-               "would matter more than any usage signal. Flag for review once "
-               "the timeline is confirmed."),
-    "RETURN_TO_PRACTICE": ("{name} returning to practice is a step toward "
-                           "availability, though it does not by itself confirm "
-                           "his role on return."),
-    "LIMITED_PARTICIPATION": ("Limited or missed participation could affect "
-                              "{name}'s availability. Worth monitoring through "
-                              "the week."),
-    "DEPTH_CHART": ("A depth-chart move could change how much opportunity {name} "
-                    "sees. Confirmation from a second report would strengthen it."),
-    "TARGETS": ("Target volume is the clearest driver of {name}'s value, and "
-                "this suggests involvement. One report is a small sample."),
-    "CARRIES": ("Backfield workload drives {name}'s value, and this points to "
-                "his share of it. Worth monitoring."),
-    "SNAP_SHARE": ("Snap share sets the ceiling on {name}'s opportunity, and "
-                   "this suggests where it may sit."),
-    "ROLE_EXPANSION": ("A larger role could mean more opportunity for {name}, "
-                       "though camp usage does not always survive into the season."),
-    "ROLE_REDUCTION": ("A reduced role could mean less opportunity for {name}. "
-                       "Worth watching whether it holds."),
-    "COACH_QUOTATION": ("A coach describing {name}'s role carries more weight "
-                        "than a single practice observation, but it is still a "
-                        "statement about intent rather than usage."),
-    "PLAYER_QUOTATION": ("This is {name}'s own account of his role, which is "
-                         "worth noting and is not the same as observed usage."),
-    "PERFORMANCE": ("A good practice showing from {name} is encouraging and is "
-                    "not, on its own, a change in role."),
-    "OTHER": ("This is a development involving {name} worth monitoring; it does "
-              "not yet suggest a change in his fantasy outlook."),
+# Commentary names the mechanism, or says there is none. The reviewed batch
+# put "worth monitoring" and "single report" on almost everything and claimed
+# the evidence "bears on the opportunity side of his value rather than on
+# efficiency" whether or not it did. A sentence that fits every item tells a
+# reader nothing about this one.
+MECHANISM_TEXT = {
+    "FIRST_TEAM_REPS": (
+        "{name} is working with the first team, which is the depth-chart "
+        "signal that most directly sets his snap share. Camp usage is not a "
+        "confirmed regular-season job."),
+    "SECOND_TEAM_REPS": (
+        "{name} is working with the second team. In a settled room that caps "
+        "his opportunity; in an open competition it can mean he is leading "
+        "the backup race, and the evidence here does not say which."),
+    "THIRD_TEAM_REPS": (
+        "{name} is working with the third team, which puts him outside the "
+        "projected rotation on the evidence available."),
+    "RED_ZONE": (
+        "{name} is being used in the scoring area, which is where a modest "
+        "snap share can still produce fantasy points."),
+    "TARGETS": (
+        "{name} is drawing targets. Target volume is the main driver of a "
+        "receiver's value, though no share was reported here."),
+    "CARRIES": (
+        "{name} is taking carries. Backfield workload is the main driver of "
+        "his value, though no split was reported here."),
+    "ROUTES": (
+        "{name} is running routes in a defined role, which speaks to route "
+        "participation rather than to a guaranteed target share."),
+    "SNAP_SHARE": (
+        "{name}'s snap workload is the ceiling on everything else he can "
+        "produce, and this speaks to where it may sit."),
+    "LIMITED_PARTICIPATION": (
+        "{name} is not practising fully. Availability outranks every usage "
+        "signal, and no timetable was reported."),
+    "RETURN_TO_PRACTICE": (
+        "{name} is back on the practice field, which is a step toward "
+        "availability rather than a confirmed role on return."),
+    "INJURY": (
+        "{name}'s availability is in question, which matters more than any "
+        "usage signal until a timetable is known."),
+    "COACH_OR_PLAYER_QUOTATION": (
+        "This is a stated account of {name}'s role or health rather than "
+        "observed usage, which makes it intent rather than evidence of what "
+        "he is actually doing."),
+    "DEPTH_CHART": (
+        "A depth-chart move would change how much opportunity {name} sees."),
 }
 
-HEDGE_BY_STRENGTH = {
-    LOW: "Single report, so treat it as a signal to monitor rather than to act on.",
-    MEDIUM: "More than one report points the same way, which makes it worth a closer look.",
-    HIGH: "This is material and independently corroborated; both players' outlooks should be reviewed.",
+# Said only when true, and never as a default.
+CORROBORATION = {
+    "single": "One report so far.",
+    "multi": "Reported independently by {n} reporters.",
+    "team": "This comes from the club's own site, which cannot corroborate "
+            "the club.",
+    "repeat": "Several articles repeat one original report, which is not "
+              "extra confirmation.",
 }
 
 
-def commentary(name: str, signal: str, strength_val: str) -> str:
-    base = TEMPLATES.get(signal, TEMPLATES["OTHER"]).format(name=name)
-    return f"{base} {HEDGE_BY_STRENGTH[strength_val]}"
+def commentary(name: str, mechanism: str, independent: int,
+               team_owned: bool, repeated: bool) -> str:
+    """Two to four sentences, naming the mechanism and the real support."""
+    base = MECHANISM_TEXT.get(mechanism, "").format(name=name)
+    if not base:
+        return (f"There is no role, usage or availability development for "
+                f"{name} in this report.")
+    parts = [base]
+    if team_owned:
+        parts.append(CORROBORATION["team"])
+    elif independent >= 2:
+        parts.append(CORROBORATION["multi"].format(n=independent))
+    else:
+        parts.append(CORROBORATION["single"])
+    if repeated:
+        parts.append(CORROBORATION["repeat"])
+    return " ".join(parts)
 
 
 # ------------------------------------------------------------- validation
@@ -421,6 +449,11 @@ def validate(imp: Impact, rows: list, registry) -> list[str]:
     return bad
 
 
+def _plural(n: int, noun: str) -> str:
+    """"1 span(s)" is not publication quality. This is the fix."""
+    return f"{n} {noun}" + ("" if n == 1 else "s")
+
+
 def build(rows: list, registry, registry_version: str = "") -> Impact | None:
     """One player's approved evidence becomes at most one impact record."""
     if not rows:
@@ -428,24 +461,65 @@ def build(rows: list, registry, registry_version: str = "") -> Impact | None:
     first = rows[0]
     player = registry.by_id.get(first["player_id"]) if registry else None
     if player is None or player.position not in FANTASY_POSITIONS:
-        return None
+        return {"suppressed": True, "player_name": first.get("player_name", ""),
+                "player_id": first.get("player_id", ""),
+                "team": first.get("team", ""),
+                "position": (player.position if player else ""),
+                "reason": "not a fantasy position or unknown player id",
+                "evidence_candidate_ids": [], "evidence_text": ""}
 
     text = " ".join(r["evidence_text"] for r in rows)
-    sig = role_signal(text)
+
+    # What this passage establishes about THIS player, if anything. The
+    # mechanism decides the signal, the direction and whether there is any
+    # fantasy consequence at all -- proximity is not a claim.
+    from . import claims as cl
+    mech = {"mechanism": cl.NO_FANTASY_IMPACT, "direction": NEUTRAL,
+            "detail": "no supporting span examined", "unit": ""}
+    for r in rows:
+        got = cl.fantasy_mechanism(
+            r["evidence_text"], player.full_name, r["evidence_class"],
+            speaker=r.get("source_author_or_channel", ""))
+        if got["mechanism"] != cl.NO_FANTASY_IMPACT:
+            mech = got
+            break
+        # Keep the last reason, so a suppression can say why rather than
+        # reporting a blank.
+        mech = got
+    if mech["mechanism"] == cl.NO_FANTASY_IMPACT:
+        # Suppressed, not hedged. The caller records why: a suppression rate
+        # is a quality measure and reporting it as "unknown position" hid it.
+        return {"suppressed": True, "player_name": player.full_name,
+                "player_id": player.player_id, "team": player.team,
+                "position": player.position, "reason": mech["detail"],
+                "evidence_candidate_ids": sorted(
+                    r["candidate_id"] for r in rows),
+                "evidence_text": rows[0]["evidence_text"][:400]}
+
+    sig = mech["mechanism"]
     ind = independent_sources(rows)
     st = strength(rows, sig, ind)
-    imp_dir = direction(text)
+    imp_dir = mech["direction"]
     act = projection_action(rows, st, imp_dir, ind)
+
+    team_owned = bool(rows) and all(
+        (r.get("source_ownership") or "") == "TEAM_OWNED" for r in rows)
+    repeated = any(r.get("duplicate_of") for r in rows)
 
     imp = Impact(
         player_id=player.player_id, player_name=player.full_name,
         team=player.team, position=player.position,
         fantasy_impact=imp_dir, impact_strength=st,
         impact_horizon=horizon(sig, text), role_signal=sig,
-        lineupbeat_commentary=commentary(player.full_name, sig, st),
-        reasoning=(f"{len(rows)} approved evidence span(s) from {ind} "
-                   f"independent reporter(s); role signal {sig}; direction "
-                   f"{imp_dir} from the observation language in the evidence"),
+        lineupbeat_commentary=commentary(
+            player.full_name, sig, ind, team_owned, repeated),
+        reasoning=(
+            f"{_plural(len(rows), 'evidence span')} from "
+            f"{_plural(ind, 'independent reporter')}"
+            + (" plus a team-owned source" if team_owned else "")
+            + f". The passage establishes {mech['detail']} with "
+            f"{player.full_name} as its subject, which is why the signal is "
+            f"{sig} and the direction {imp_dir}."),
         projection_action=act,
         evidence_candidate_ids=sorted(r["candidate_id"] for r in rows),
         evidence_group_ids=sorted({r["evidence_group_id"] for r in rows}),

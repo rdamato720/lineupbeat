@@ -502,8 +502,19 @@ class WireStore:
             commentary = (row["lineupbeat_commentary"]
                           if status in ("APPROVED", "REJECTED")
                           else rec["lineupbeat_commentary"])
+        # Named, not positional. Adding reviewer columns by ALTER TABLE broke
+        # a positional insert here exactly as it did on wire_evidence; once is
+        # a mistake, twice is a reason never to write one.
         self.conn.execute(
-            "INSERT OR REPLACE INTO wire_fantasy_impact VALUES "
+            "INSERT OR REPLACE INTO wire_fantasy_impact ("
+            "fantasy_impact_id, player_id, player_name, team, position, "
+            "fantasy_impact, impact_strength, impact_horizon, role_signal, "
+            "lineupbeat_commentary, reasoning, projection_action, "
+            "evidence_candidate_ids, evidence_group_ids, source_article_ids, "
+            "source_count, independent_source_count, generator, "
+            "prompt_version, registry_version, created_at, updated_at, "
+            "review_status, reviewed_at, reviewer_note, invalidated_at, "
+            "invalidation_reason) VALUES "
             "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (rec["fantasy_impact_id"], rec["player_id"], rec["player_name"],
              rec["team"], rec["position"], rec["fantasy_impact"],

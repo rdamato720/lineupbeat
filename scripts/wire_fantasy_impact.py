@@ -88,12 +88,15 @@ def main():
 
     made = new = refused = 0
     reasons: dict = {}
+    suppressed: list = []
     for pid, group in sorted(by_player.items()):
         imp = fz.build(group, reg, registry_version=reg.version)
+        if isinstance(imp, dict) and imp.get("suppressed"):
+            suppressed.append(imp)
+            reasons[imp["reason"]] = reasons.get(imp["reason"], 0) + 1
+            continue
         if imp is None:
             refused += 1
-            reasons["not a fantasy position or unknown id"] = \
-                reasons.get("not a fantasy position or unknown id", 0) + 1
             continue
         problems = fz.validate(imp, group, reg)
         if problems:
@@ -106,10 +109,17 @@ def main():
         if store.upsert_impact(imp.to_record()):
             new += 1
 
+    Path("data/wire_fantasy_suppressed.json").write_text(
+        json.dumps({"suppressed": len(suppressed), "items": suppressed},
+                   indent=1) + "\n")
     invalidated = store.invalidate_impacts_without_evidence()
     print(f"  {len(rows)} supporting evidence row(s) across "
           f"{len(by_player)} player(s)")
     print(f"  {made} impact record(s) ({new} new, {made - new} updated)")
+    total_considered = made + len(suppressed)
+    print(f"  {len(suppressed)} suppressed as NO_FANTASY_IMPACT "
+          f"({100 * len(suppressed) / max(1, total_considered):.0f}% of "
+          f"{total_considered} considered)")
     print(f"  {refused} refused by validation")
     for k, v in sorted(reasons.items(), key=lambda x: -x[1])[:6]:
         print(f"      {v:>4}  {k}")

@@ -1,0 +1,76 @@
+<title>Wire adversarial fixtures</title>
+<style>
+:root{--bg:#faf9f7;--ink:#171a15;--quiet:#5d6157;--rule:#dcd9d2;
+--ok:#2f6b3a;--bad:#a4342a}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+--bg:#12140f;--ink:#e9e7e1;--quiet:#9a9d93;--rule:#2c2f27;--ok:#7fbf8a;--bad:#e08a7f}}
+:root[data-theme="dark"]{--bg:#12140f;--ink:#e9e7e1;--quiet:#9a9d93;
+--rule:#2c2f27;--ok:#7fbf8a;--bad:#e08a7f}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,
+BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:28px}
+.wrap{max-width:860px;margin:0 auto}
+.f{border:1px solid var(--rule);border-radius:9px;padding:15px;margin:16px 0}
+.ok{color:var(--ok);font-weight:700}.bad{color:var(--bad);font-weight:700}
+.q{color:var(--quiet);font-size:.85rem}
+blockquote{border-left:3px solid var(--rule);margin:8px 0;padding-left:12px}
+table{border-collapse:collapse;font-size:.84rem;margin-top:6px}
+td{padding:1px 14px 1px 0}
+</style>
+<div class="wrap"><h1>Adversarial fixtures</h1>
+<p class="q">11 of 11 pass. Each case is a defect found in review, run through the real segmentation, classification and mechanism path.</p>
+<div class="f">
+<span class="ok">PASS</span> <b>keon-coleman-relay</b>
+<p class="q">Guards against: relayed reporting leaking into DIRECT_QUOTATION</p>
+<blockquote>On Thursday in Berea, Khalil Shakir and Dante Pettis added to the group of sidelined wide receivers, per Cameron Wolfe of NFL Network.</blockquote>
+<table><tr><td>player</td><td>Keon Coleman</td></tr><tr><td>classification</td><td>RELAYED_REPORTING</td></tr><tr><td>mechanism</td><td>NO_FANTASY_IMPACT</td></tr><tr><td>direction</td><td>NEUTRAL</td></tr><tr><td>why</td><td>no role, usage or availability claim about this player</td></tr></table></div>
+<div class="f">
+<span class="ok">PASS</span> <b>geno-about-omar</b>
+<p class="q">Guards against: a quote about another player filed as the speaker&#x27;s own account</p>
+<blockquote>&quot;Omar Cooper Jr. has taken over the slot role for us,&quot; Geno Smith said after practice.</blockquote>
+<table><tr><td>player</td><td>Geno Smith</td></tr><tr><td>classification</td><td>DIRECT_QUOTATION</td></tr><tr><td>mechanism</td><td>NO_FANTASY_IMPACT</td></tr><tr><td>direction</td><td>NEUTRAL</td></tr><tr><td>why</td><td>the quotation is not materially about this player</td></tr></table></div>
+<div class="f">
+<span class="ok">PASS</span> <b>hankerson-waived</b>
+<p class="q">Guards against: a waived player described as returning to practice</p>
+<blockquote>The team waived running back Anthony Hankerson on Tuesday afternoon.</blockquote>
+<table><tr><td>player</td><td>Anthony Hankerson</td></tr><tr><td>classification</td><td>UNCERTAIN</td></tr><tr><td>mechanism</td><td>NO_FANTASY_IMPACT</td></tr><tr><td>direction</td><td>NEUTRAL</td></tr><tr><td>why</td><td>no role, usage or availability claim about this player</td></tr></table></div>
+<div class="f">
+<span class="ok">PASS</span> <b>wease-missing</b>
+<p class="q">Guards against: an absent player described as returning</p>
+<blockquote>Theo Wease Jr. did not practice for the third straight day.</blockquote>
+<table><tr><td>player</td><td>Theo Wease</td></tr><tr><td>classification</td><td>FIRSTHAND_OBSERVATION</td></tr><tr><td>mechanism</td><td>LIMITED_PARTICIPATION</td></tr><tr><td>direction</td><td>NEGATIVE</td></tr><tr><td>why</td><td>availability</td></tr></table></div>
+<div class="f">
+<span class="ok">PASS</span> <b>engram-target</b>
+<p class="q">Guards against: a reception read as a return to practice</p>
+<blockquote>Evan Engram caught two passes over the middle during the team period.</blockquote>
+<table><tr><td>player</td><td>Evan Engram</td></tr><tr><td>classification</td><td>UNCERTAIN</td></tr><tr><td>mechanism</td><td>NO_FANTASY_IMPACT</td></tr><tr><td>direction</td><td>NEUTRAL</td></tr><tr><td>why</td><td>an isolated play, not a change in role or opportunity</td></tr></table></div>
+<div class="f">
+<span class="ok">PASS</span> <b>jones-not-second-team</b>
+<p class="q">Guards against: a player inheriting another player&#x27;s unit from proximity</p>
+<blockquote>Daniel Jones remains the named starter. Anthony Richardson ran with the second team throughout the session.</blockquote>
+<table><tr><td>player</td><td>Daniel Jones</td></tr><tr><td>classification</td><td>FIRSTHAND_OBSERVATION</td></tr><tr><td>mechanism</td><td>NO_FANTASY_IMPACT</td></tr><tr><td>direction</td><td>NEUTRAL</td></tr><tr><td>why</td><td>no role, usage or availability claim about this player</td></tr></table></div>
+<div class="f">
+<span class="ok">PASS</span> <b>richardson-second-team</b>
+<p class="q">Guards against: the correct subject still gets his own unit claim</p>
+<blockquote>Anthony Richardson ran with the second team throughout the session.</blockquote>
+<table><tr><td>player</td><td>Anthony Richardson</td></tr><tr><td>classification</td><td>FIRSTHAND_OBSERVATION</td></tr><tr><td>mechanism</td><td>SECOND_TEAM_REPS</td></tr><tr><td>direction</td><td>NEUTRAL</td></tr><tr><td>why</td><td>depth-chart position</td></tr></table></div>
+<div class="f">
+<span class="ok">PASS</span> <b>wentz-third-team</b>
+<p class="q">Guards against: third-team work reported as second team</p>
+<blockquote>Carson Wentz worked with the 3s for most of the afternoon.</blockquote>
+<table><tr><td>player</td><td>Carson Wentz</td></tr><tr><td>classification</td><td>FIRSTHAND_OBSERVATION</td></tr><tr><td>mechanism</td><td>THIRD_TEAM_REPS</td></tr><tr><td>direction</td><td>NEGATIVE</td></tr><tr><td>why</td><td>depth-chart position</td></tr></table></div>
+<div class="f">
+<span class="ok">PASS</span> <b>mccord-no-first-team</b>
+<p class="q">Guards against: a heading donating first-team reps to the next paragraph</p>
+<blockquote>Kyle McCord found Bo Melton on a crossing route for a first down.</blockquote>
+<table><tr><td>player</td><td>Kyle McCord</td></tr><tr><td>classification</td><td>UNCERTAIN</td></tr><tr><td>mechanism</td><td>NO_FANTASY_IMPACT</td></tr><tr><td>direction</td><td>NEUTRAL</td></tr><tr><td>why</td><td>no role, usage or availability claim about this player</td></tr></table></div>
+<div class="f">
+<span class="ok">PASS</span> <b>giddens-reaggravated</b>
+<p class="q">Guards against: a re-injury read as a healthy return</p>
+<blockquote>DJ Giddens returned to practice and immediately reaggravated his hamstring.</blockquote>
+<table><tr><td>player</td><td>DJ Giddens</td></tr><tr><td>classification</td><td>FIRSTHAND_OBSERVATION</td></tr><tr><td>mechanism</td><td>LIMITED_PARTICIPATION</td></tr><tr><td>direction</td><td>NEGATIVE</td></tr><tr><td>why</td><td>availability</td></tr></table></div>
+<div class="f">
+<span class="ok">PASS</span> <b>allen-team-energy</b>
+<p class="q">Guards against: a team-mood quote turned into fantasy commentary</p>
+<blockquote>&quot;The energy out here has been unbelievable all camp,&quot; Josh Allen said.</blockquote>
+<table><tr><td>player</td><td>Josh Allen</td></tr><tr><td>classification</td><td>DIRECT_QUOTATION</td></tr><tr><td>mechanism</td><td>NO_FANTASY_IMPACT</td></tr><tr><td>direction</td><td>NEUTRAL</td></tr><tr><td>why</td><td>the quotation is not materially about this player</td></tr></table></div>
+</div>

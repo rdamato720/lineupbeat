@@ -59,8 +59,22 @@ OBSERVED = re.compile(
     r"walkthrough|session)|at practice|on the field|in team drills|"
     r"took (?:first|second|1st|2nd)[- ]team reps|"
     r"lined up (?:at|with|as)|worked (?:with|as|at)|"
+    r"ran with the (?:first|second|third|ones|twos|threes|1s|2s|3s)|"
+    r"(?:first|second|third)[-\s]team (?:reps?|snaps?|offense|defense)|"
+    r"with the (?:ones|twos|threes|1s|2s|3s|starters)|"
     r"was (?:limited|held out|absent|present|in uniform)|"
-    r"did not (?:practice|participate)|split reps|rotated (?:in|with))\b",
+    r"did not (?:practice|participate)|split reps|rotated (?:in|with)|"
+    # Availability is observation. A reporter writing that a player is in a
+    # walking boot, sidelined, or has yet to take part is reporting what he
+    # saw at the facility, and treating that as unclassifiable flattened the
+    # most actionable evidence the wire produces into UNCERTAIN.
+    r"in a walking boot|sidelined|remains? (?:out|sidelined)|"
+    r"has (?:not|yet to) (?:practiced|participated|taken part)|"
+    r"missed (?:his |the |another |a )?(?:\w+\s+)?(?:practice|session|day|week)|"
+    r"non[-\s]participant|left (?:practice|the field)|"
+    r"reaggravated|re-?injured|carted off|"
+    r"returned to (?:the )?practice|back at practice|"
+    r"absent from (?:practice|the field))\b",
     re.I)
 
 # Somebody else did the reporting. Never firsthand, whoever repeats it.
@@ -286,9 +300,16 @@ def classify(text: str, *, reporter_voice: bool,
 
     if MEDICAL.search(t) and not SAID.search(t):
         # A diagnosis nobody is named as giving. The single most damaging
-        # thing this pipeline could publish confidently.
-        why.append("medical claim with no explicit attribution")
-        return UNCERTAIN, 0.3, why
+        # thing this pipeline could publish confidently -- unless what is
+        # being reported is the event rather than the diagnosis. An approved
+        # reporter writing that a player pulled up and left the field is
+        # attributing to himself, and treating that as an unsourced medical
+        # claim buried the most actionable evidence the wire produces.
+        if not (reporter_voice and OBSERVED.search(t)):
+            why.append("medical claim with no explicit attribution")
+            return UNCERTAIN, 0.3, why
+        why.append("injury event observed in an approved reporter's voice, "
+                   "not a diagnosis")
 
     hedged = HEDGE.search(t)
     observed = OBSERVED.search(t)

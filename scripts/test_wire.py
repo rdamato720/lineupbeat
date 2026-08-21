@@ -870,6 +870,7 @@ check("every candidate names its player inside the stored evidence",
 
 import wire_extract as WX
 from wire import fantasy as fz
+from wire import segment as seg
 
 # ------------------------------------------------------------ SI On SI
 check("On SI is the primary discovery url",
@@ -1163,13 +1164,15 @@ check("commentary cannot exist without supporting evidence ids",
       any("no supporting evidence" in b
           for b in fz.validate(_noev, [], _reg)), fz.validate(_noev, [], _reg))
 
+_ol_out = fz.build([_row(_ol)], _reg, "v1")
 check("an offensive lineman gets no individual commentary",
-      fz.build([_row(_ol)], _reg, "v1") is None)
+      isinstance(_ol_out, dict) and _ol_out.get("suppressed"), _ol_out)
 _def = next((p for p in _reg.players
              if p.position in ("LB", "DB", "DL") and p.player_id), None)
 if _def:
+    _def_out = fz.build([_row(_def)], _reg, "v1")
     check("a defensive player gets no individual commentary",
-          fz.build([_row(_def)], _reg, "v1") is None)
+          isinstance(_def_out, dict) and _def_out.get("suppressed"), _def_out)
 
 # Source fantasy advice is refused before it can ever be evidence.
 for _bad in ("He is a sleeper worth a round 8 pick.",
@@ -1294,6 +1297,103 @@ with tempfile.TemporaryDirectory() as tmp:
           n == 1 and got["review_status"] == "INVALIDATED", n)
     check("an invalidated record records why and when",
           got["invalidated_at"] and got["invalidation_reason"])
+
+# ------------------------------------------- semantic claim regressions
+from wire import claims as CL
+import wire_fixtures as FX
+
+_fx = FX.run()
+_fx_bad = [r for r in _fx if not r["pass"]]
+check("every adversarial fixture passes", not _fx_bad,
+      [r["id"] for r in _fx_bad])
+for _r in _fx:
+    check(f"fixture {_r['id']}", _r["pass"],
+          f"{_r['got_class']}/{_r['got_mech']}/{_r['got_dir']}")
+
+# Segmentation: a window may never leave its segment. This is what let a
+# quotation, a heading and the next paragraph become one claim.
+_multi = ('"We are clicking," said Allen.\n'
+          "NOT SO GOOD - More Bills' WRs on shelf\n"
+          "With Keon Coleman in a walking boot, the corps was hurting.")
+_spans = seg.spans(_multi)
+check("a span never spans a heading",
+      not any("Allen" in s["text"] and "Coleman" in s["text"] for s in _spans),
+      [s["text"][:50] for s in _spans])
+check("headings are not evidence",
+      not any("NOT SO GOOD" in s["text"] for s in _spans))
+check("footer biographies never enter a span",
+      not seg.spans("Jim Wyatt is a senior writer for the Titans."))
+
+# Subject rules.
+check("a player does not inherit another player's unit",
+      CL.unit_claim("Daniel Jones is the starter. Anthony Richardson ran "
+                    "with the second team.", "Daniel Jones") == "")
+check("the actual subject keeps his unit",
+      CL.unit_claim("Anthony Richardson ran with the second team.",
+                    "Anthony Richardson") == CL.SECOND_TEAM)
+check("third team is not second team",
+      CL.unit_claim("Carson Wentz worked with the 3s.", "Carson Wentz")
+      == CL.THIRD_TEAM)
+check("a waived player never returns to practice",
+      CL.availability("The team waived Anthony Hankerson.",
+                      "Anthony Hankerson") == ("", ""))
+check("an absence is negative, never a return",
+      CL.availability("Theo Wease Jr. did not practice.", "Theo Wease")
+      == ("LIMITED_PARTICIPATION", "NEGATIVE"))
+check("a re-injury is negative",
+      CL.availability("DJ Giddens returned and reaggravated his hamstring.",
+                      "DJ Giddens")[1] == "NEGATIVE")
+check("a genuine return is positive",
+      CL.availability("Bo Melton was back at practice on Tuesday.",
+                      "Bo Melton") == ("RETURN_TO_PRACTICE", "POSITIVE"))
+check("a team-mood quote yields no fantasy impact",
+      CL.fantasy_mechanism('"The energy has been unbelievable," Josh Allen '
+                           'said.', "Josh Allen", "DIRECT_QUOTATION",
+                           speaker="Josh Allen")["mechanism"]
+      == CL.NO_FANTASY_IMPACT)
+check("a quote about another player is not the speaker's own account",
+      CL.fantasy_mechanism('"Omar Cooper has taken the slot role," Geno '
+                           'Smith said.', "Geno Smith", "DIRECT_QUOTATION",
+                           speaker="Geno Smith")["mechanism"]
+      == CL.NO_FANTASY_IMPACT)
+check("an isolated play is not an opportunity change",
+      CL.fantasy_mechanism("Amon-Ra St. Brown caught a touchdown.",
+                           "Amon-Ra St. Brown", "FIRSTHAND_OBSERVATION"
+                           )["mechanism"] == CL.NO_FANTASY_IMPACT)
+
+# Commentary quality.
+_c = fz.commentary("Player X", "FIRST_TEAM_REPS", 1, False, False)
+check("commentary names the mechanism, not a generic hedge",
+      "first team" in _c and "worth monitoring" not in _c.lower(), _c)
+check("commentary does not print 1 span(s)",
+      "(s)" not in fz._plural(1, "span") and fz._plural(1, "span") == "1 span")
+check("a single report is not described as multiple",
+      "One report" in fz.commentary("X", "TARGETS", 1, False, False))
+check("team-owned support says so instead of claiming corroboration",
+      "cannot corroborate" in fz.commentary("X", "TARGETS", 1, True, False))
+check("repeated rewrites are named as repeats",
+      "not extra confirmation" in fz.commentary("X", "TARGETS", 2, False, True))
+
+# Suppression is a first-class outcome, not a hedge.
+check("NO_FANTASY_IMPACT is an available outcome",
+      CL.NO_FANTASY_IMPACT == "NO_FANTASY_IMPACT")
+_supfile = ROOT / "data" / "wire_fantasy_suppressed.json"
+check("suppressed cases are recorded with a reason",
+      _supfile.exists()
+      and all(x["reason"] for x in json.loads(_supfile.read_text())["items"]))
+
+# Review controls exist and publish nothing.
+_html = (ROOT / "data" / "wire_fantasy_review.html").read_text()
+for _act in ("APPROVE", "APPROVE_WITH_EDIT", "REJECT_UNSUPPORTED",
+             "REJECT_WRONG_PLAYER"):
+    check(f"the review page offers {_act}", _act in _html)
+check("the review page publishes nothing",
+      "wire_publications" not in _html)
+_apply = (ROOT / "scripts" / "wire_fantasy_review_apply.py").read_text()
+check("applying a decision never overwrites the generated text",
+      "original_commentary" in _apply)
+check("applying a decision publishes nothing",
+      "wire_publications" not in _apply)
 
 # ------------------------------------------------------------- coverage
 from wire import coverage as COV

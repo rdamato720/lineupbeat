@@ -28,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from wire import evidence as ev
 from wire import players as pl
 from wire import registry as artreg
+from wire import segment as seg
 from wire import si as sicfg
 from wire import youtube as yt
 from wire.store import WireStore
@@ -105,12 +106,15 @@ def source_context(store, source_id: str, item: dict | None = None) -> dict:
 
 
 def spans_from_article(item) -> list[tuple[str, str, float | None, float | None]]:
-    """(location, text, start, end) per candidate passage."""
-    sents = ev.sentences(item["raw_text"] or "")
-    out = []
-    for i in range(len(sents)):
-        out.append((f"sentence_{i + 1}", ev.window(sents, i), None, None))
-    return out
+    """(location, text, start, end) per candidate passage.
+
+    Windows never cross a structural boundary. Sentence windowing alone
+    merged a quotation, a section heading and the next paragraph into one
+    span, which is how Josh Allen's words about Dalton Kincaid were filed as
+    Keon Coleman's account of his own role.
+    """
+    return [(sp["location"], sp["text"], None, None)
+            for sp in seg.spans(item["raw_text"] or "")]
 
 
 def spans_from_transcript(store, video_id: str

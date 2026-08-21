@@ -124,6 +124,10 @@ def build(store, limit: int) -> list[dict]:
     auth = si.load_authors()
     rows = {r["candidate_id"]: dict(r) for r in store.evidence()}
 
+    suppressed_file = Path("data/wire_fantasy_suppressed.json")
+    suppressed = (json.loads(suppressed_file.read_text())["items"]
+                  if suppressed_file.exists() else [])
+
     items = []
     for imp in store.impacts():
         if imp["review_status"] in ("INVALIDATED", "REJECTED", "SUPERSEDED"):
@@ -248,6 +252,46 @@ def build(store, limit: int) -> list[dict]:
         if extra:
             picked.append(extra)
             chosen.add(extra["fantasy_impact_id"])
+    # Suppressed cases are part of the review: the reviewer needs to see
+    # where the layer correctly declines to speak, not only where it speaks.
+    for sup in suppressed[:max(0, limit - len(picked)) + 12]:
+        row = next((rows[c] for c in sup.get("evidence_candidate_ids", [])
+                    if c in rows), None)
+        picked.append({
+            "fantasy_impact_id": f"suppressed:{sup['player_id']}",
+            "suppressed": True,
+            "player_name": sup["player_name"], "player_id": sup["player_id"],
+            "team": sup["team"], "position": sup["position"],
+            "registry_version": (row or {}).get("registry_version", ""),
+            "identity_confidence": (row or {}).get("resolution_confidence", 0),
+            "evidence_confidence": (row or {}).get("classification_confidence", 0),
+            "evidence_text": sup.get("evidence_text", "")
+            or (row or {}).get("evidence_text", ""),
+            "evidence_classification": (row or {}).get("evidence_class", ""),
+            "classification_reason": (row or {}).get("classification_reasons", ""),
+            "publication": (row or {}).get("source_id", ""),
+            "author": (row or {}).get("source_author_or_channel", ""),
+            "article_title": (row or {}).get("source_title", ""),
+            "published_at": (row or {}).get("published_at", ""),
+            "article_url": (row or {}).get("source_url", ""),
+            "source_ownership": (row or {}).get("source_ownership", "INDEPENDENT"),
+            "source_class": "", "author_classification": "",
+            "origin_reporter": "", "origin_outlet": "", "origin_url": "",
+            "underlying_report_id": "",
+            "fantasy_impact": "NO_FANTASY_IMPACT", "impact_strength": "-",
+            "impact_horizon": "-", "role_signal": "NO_FANTASY_IMPACT",
+            "projection_action": "NONE",
+            "lineupbeat_commentary": "",
+            "reasoning": sup["reason"],
+            "independent_source_count": 0, "team_owned_source_count": 0,
+            "supporting_evidence_ids": sup.get("evidence_candidate_ids", []),
+            "evidence_group_ids": [], "article_ids": [],
+            "underlying_report_ids": [], "duplicate_reports": 0,
+            "conflicting": False, "review_status": "SUPPRESSED",
+            "generator": fz.GENERATOR,
+            "why_it_matters": "No fantasy interpretation is offered.",
+            "not_claiming": [sup["reason"]],
+            "projection_assumptions": [], "high_rule": ""})
     return picked
 
 
@@ -280,6 +324,19 @@ table{border-collapse:collapse;font-size:.8rem}
 td{padding:1px 12px 1px 0;vertical-align:top}
 .gap{border:1px dashed var(--rule);border-radius:8px;padding:12px;
 color:var(--quiet);font-size:.9rem}
+.sup{opacity:.72}
+.ctl{margin-top:14px;padding-top:12px;border-top:1px dashed var(--rule)}
+button{font:inherit;font-size:.82rem;padding:5px 12px;margin-right:6px;
+border:1px solid var(--rule);border-radius:7px;background:transparent;
+color:var(--ink);cursor:pointer}
+button.on{border-color:var(--own);color:var(--own);font-weight:700}
+select,textarea{font:inherit;font-size:.85rem;background:transparent;
+color:var(--ink);border:1px solid var(--rule);border-radius:7px;padding:6px;
+margin-top:6px;width:100%;max-width:100%;box-sizing:border-box}
+#panel{position:fixed;right:14px;bottom:14px;background:var(--bg);
+border:1px solid var(--rule);border-radius:10px;padding:12px;max-width:330px;
+font-size:.8rem;box-shadow:0 3px 14px rgba(0,0,0,.14);z-index:9}
+#out{width:100%;height:110px;font-family:ui-monospace,monospace;font-size:.7rem}
 </style>""", '<div class="wrap">',
     "<h1>Lineup Beat fantasy-spin review</h1>",
     f'<p class="meta">{len(items)} items from real stored evidence. '
@@ -294,7 +351,12 @@ color:var(--quiet);font-size:.9rem}
                              for g, why in gaps) + "</ul></div>")
     for it in items:
         own = it["source_ownership"] == "TEAM_OWNED"
-        out.append('<div class="item">')
+        sup = it.get("suppressed")
+        out.append(f'<div class="item{" sup" if sup else ""}">')
+        if sup:
+            out.append('<p class="meta"><b>NO FANTASY IMPACT</b> — the layer '
+                       'declines to comment. Shown so the suppression can be '
+                       'reviewed too.</p>')
         out.append(f'<h2>{e(it["player_name"])} '
                    f'<span class="meta">{e(it["team"])} {e(it["position"])}</span></h2>')
         out.append(f'<p class="meta">id {e(it["player_id"])} &middot; registry '
@@ -352,7 +414,63 @@ color:var(--quiet);font-size:.9rem}
                        'to inspect. No value is changed automatically.</p><ul>'
                        + "".join(f"<li>{e(x)}</li>" for x in it["projection_assumptions"])
                        + '</ul></div>')
+        # Per-item controls. Decisions live in localStorage and are exported
+        # as JSON for wire_fantasy_review_apply.py; nothing publishes from
+        # this page, and the original generated text is never overwritten.
+        fid = it["fantasy_impact_id"]
+        out.append(f'<div class="ctl" data-id="{e(fid)}">'
+                   f'<button data-act="APPROVE">Approve</button>'
+                   f'<button data-act="APPROVE_WITH_EDIT">Approve with edit</button>'
+                   f'<button data-act="REJECT">Reject</button>'
+                   f'<div class="edit" hidden><textarea rows="3" '
+                   f'placeholder="edited commentary">'
+                   f'{e(it["lineupbeat_commentary"])}</textarea></div>'
+                   f'<div class="rej" hidden><select>'
+                   + "".join(f'<option>{r}</option>' for r in
+                             ("REJECT_UNSUPPORTED", "REJECT_OVERSTATED",
+                              "REJECT_NOT_FANTASY_RELEVANT",
+                              "REJECT_WRONG_HORIZON", "REJECT_WRONG_STRENGTH",
+                              "REJECT_WRONG_PLAYER", "REJECT_DUPLICATE"))
+                   + '</select></div></div>')
         out.append('</div>')
+    out.append("""
+<div id="panel"><b>Decisions</b> <span id="n">0</span>
+<textarea id="out" readonly></textarea>
+<button onclick="navigator.clipboard.writeText(document.getElementById('out').value)">
+Copy JSON</button>
+<button onclick="localStorage.removeItem('lb_decisions');location.reload()">Clear</button>
+<div style="color:var(--quiet);margin-top:5px">Paste into a file, then run
+<code>wire_fantasy_review_apply.py</code></div></div>
+<script>
+const KEY='lb_decisions';
+let D=JSON.parse(localStorage.getItem(KEY)||'{}');
+function save(){localStorage.setItem(KEY,JSON.stringify(D));
+ document.getElementById('n').textContent=Object.keys(D).length;
+ document.getElementById('out').value=JSON.stringify(
+   {reviewed_at:new Date().toISOString(),decisions:D},null,1);}
+document.querySelectorAll('.ctl').forEach(c=>{
+ const id=c.dataset.id, ed=c.querySelector('.edit'), rj=c.querySelector('.rej');
+ c.querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  c.querySelectorAll('button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  const act=b.dataset.act;
+  ed.hidden = act!=='APPROVE_WITH_EDIT';
+  rj.hidden = act!=='REJECT';
+  D[id]={action:act,
+         edited_text: act==='APPROVE_WITH_EDIT'? ed.querySelector('textarea').value : '',
+         reason: act==='REJECT'? rj.querySelector('select').value : ''};
+  save();});
+ if(ed) ed.querySelector('textarea').oninput=()=>{
+   if(D[id]&&D[id].action==='APPROVE_WITH_EDIT'){
+     D[id].edited_text=ed.querySelector('textarea').value;save();}};
+ if(rj) rj.querySelector('select').onchange=()=>{
+   if(D[id]&&D[id].action==='REJECT'){
+     D[id].reason=rj.querySelector('select').value;save();}};
+ if(D[id]){const b=c.querySelector(`button[data-act="${D[id].action}"]`);
+   if(b)b.classList.add('on');}
+});
+save();
+</script>""")
     out.append("</div>")
     return "\n".join(out)
 
