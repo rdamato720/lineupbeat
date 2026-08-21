@@ -1470,6 +1470,49 @@ _rhtml = (ROOT / "data" / "wire_fantasy_review.html").read_text()
 for _r in ("REJECT_WRONG_DIRECTION", "REJECT_WRONG_UNIT"):
     check(f"the review page offers {_r}", _r in _rhtml)
 
+# --------------------------------------------- Claude as the interpreter
+# available() must mean usable, not present. The first version returned True
+# for an eight-character placeholder, so the guard that stops the rules
+# engine writing commentary in Claude's absence did not fire.
+_prev_key = os.environ.get("ANTHROPIC_API_KEY")
+try:
+    os.environ["ANTHROPIC_API_KEY"] = "sk-ant-x"
+    check("a malformed key is not 'available'",
+          not ClaudeSemanticProvider().available())
+    os.environ["ANTHROPIC_API_KEY"] = "placeholder"
+    check("a placeholder key is not 'available'",
+          not ClaudeSemanticProvider().available())
+    os.environ["ANTHROPIC_API_KEY"] = "sk-ant-" + "A" * 40
+    check("a well-shaped key is 'available'",
+          ClaudeSemanticProvider().available())
+    os.environ.pop("ANTHROPIC_API_KEY")
+    check("no key is not 'available'", not ClaudeSemanticProvider().available())
+finally:
+    if _prev_key is not None:
+        os.environ["ANTHROPIC_API_KEY"] = _prev_key
+    else:
+        os.environ.pop("ANTHROPIC_API_KEY", None)
+
+_gen_raw = (ROOT / "scripts" / "wire_fantasy_impact.py").read_text()
+_gen = code_only(_gen_raw)
+check("Claude is the default interpreter",
+      'default="claude"' in _gen_raw, "claude" in _gen_raw)
+check("the generator stops rather than falling back to rules",
+      "will NOT generate commentary in its place" in
+      (ROOT / "scripts" / "wire_fantasy_impact.py").read_text())
+_smoke = (ROOT / "scripts" / "wire_claude_smoke.py").read_text()
+check("the smoke test never prints the key",
+      "print(key" not in _smoke and "{key}" not in _smoke)
+check("the smoke test refuses to send a request on a bad key shape",
+      "certain to 401" in _smoke)
+_batch = (ROOT / "scripts" / "wire_claude_batch.py").read_text()
+check("the batch runs the smoke test first",
+      "wire_claude_smoke.py" in _batch)
+check("the batch does not grade unlabelled real cases",
+      "not counted as" in _batch or "ungraded" in _batch)
+check("OpenAI is built but not wired into generation",
+      "OpenAISemanticProvider" not in _gen_raw)
+
 # ------------------------------------------- semantic claim regressions
 from wire import claims as CL
 import wire_fixtures as FX

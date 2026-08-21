@@ -42,8 +42,14 @@ class OpenAISemanticProvider(sem.FantasySemanticProvider):
         self.model = model
         self._transport = transport
 
+    KEY_SHAPE = re.compile(r"sk-[A-Za-z0-9_\-]{20,}")
+
     def available(self) -> bool:
-        return bool(os.environ.get("OPENAI_API_KEY")) or self._transport
+        """Usable, not merely present. Disabled for this launch regardless."""
+        if self._transport is not None:
+            return True
+        return bool(self.KEY_SHAPE.fullmatch(
+            os.environ.get("OPENAI_API_KEY", "") or ""))
 
     def evaluate(self, evidence_segment, article_metadata, matched_players):
         t0 = time.time()

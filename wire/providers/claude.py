@@ -53,8 +53,22 @@ class ClaudeSemanticProvider(sem.FantasySemanticProvider):
         # without a key or a network call.
         self._transport = transport
 
+    KEY_SHAPE = re.compile(r"sk-ant-[A-Za-z0-9_\-]{20,}")
+
     def available(self) -> bool:
-        return bool(os.environ.get("ANTHROPIC_API_KEY")) or self._transport
+        """Usable, not merely present.
+
+        A placeholder in ANTHROPIC_API_KEY is present and unusable, and the
+        first version of this returned True for an eight-character value --
+        so the guard that stops the rules engine writing commentary in
+        Claude's absence did not fire, which is the exact failure it exists
+        to prevent. Shape is checked here; authentication is proved by the
+        smoke test.
+        """
+        if self._transport is not None:
+            return True
+        return bool(self.KEY_SHAPE.fullmatch(
+            os.environ.get("ANTHROPIC_API_KEY", "") or ""))
 
     def evaluate(self, evidence_segment, article_metadata, matched_players):
         t0 = time.time()

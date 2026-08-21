@@ -29,6 +29,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from wire import fantasy as fz
+from wire import semantic as sem
+from wire import semantic_validate as sv
+from wire.providers.claude import ClaudeSemanticProvider
 from wire import players as pl
 from wire.store import WireStore
 
@@ -63,6 +66,10 @@ def main():
                     help="dark launch: treat PENDING evidence as supporting")
     ap.add_argument("--show", action="store_true")
     ap.add_argument("--limit", type=int, default=10)
+    ap.add_argument("--interpreter", default="claude",
+                    choices=["claude", "rules"],
+                    help="rules is the measured baseline and may not produce "
+                         "publishable commentary")
     args = ap.parse_args()
 
     store = WireStore()
@@ -80,6 +87,20 @@ def main():
                   f"({r['independent_source_count']} independent)")
             print(f"    {r['lineupbeat_commentary']}")
         return 0
+
+    # Claude is the interpreter. The rules engine keeps segmentation, name
+    # detection, registry validation, relay detection, ownership, authority,
+    # deduplication and the deterministic response check -- everything except
+    # deciding what a passage means. When Claude is unavailable the evidence
+    # stays pending; it is never quietly reinterpreted by the baseline,
+    # because the baseline is the thing that produced the errors under review.
+    if args.interpreter == "claude":
+        prov = ClaudeSemanticProvider()
+        if not prov.available():
+            print("  Claude is unavailable (no ANTHROPIC_API_KEY).")
+            print("  Evidence is retained and left PENDING for manual review.")
+            print("  The rules engine will NOT generate commentary in its place.")
+            return 4
 
     rows = eligible_rows(store, args.include_pending)
     by_player: dict = defaultdict(list)
