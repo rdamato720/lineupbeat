@@ -33,6 +33,12 @@ MAX_CHARS = 180
 # Hedges and forecasts. A summary states what happened; anything that reaches
 # into what it might mean belongs in the Lineup Beat block, where it is
 # labelled as our reading rather than the reporter's observation.
+#
+# With one exception, below: an expectation a named person stated is a fact
+# about what that person said. "Steichen said he expects him back soon" is
+# reporting; "he is expected back soon" is us guessing with the speaker
+# filed off. ATTRIBUTION marks the first kind so it is not refused as the
+# second, and a hedge that appears before any attribution still fails.
 SPECULATION = re.compile(
     r"\b(may|might|could|should|likely|unlikely|expects?|expected|"
     r"anticipat\w+|projects?|projected|suggests?|hints?|appears? to|"
@@ -47,6 +53,10 @@ INFERRED = re.compile(
     r"timetable|weeks? away|games? away|questionable|doubtful|"
     r"ruled out|starter'?s? job|won the job|passed \w+ on the depth|"
     r"depth chart|has overtaken|now the (starter|backup|WR\d|RB\d))\b", re.I)
+
+ATTRIBUTION = re.compile(
+    r"\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?\s+"
+    r"(?:said|told|explained|announced|confirmed|added|reported)\b")
 
 QUOTE = re.compile(r"[\"“”]|(?<!\w)'(?=\w[^']{12,})")
 
@@ -100,9 +110,17 @@ def validate(summary: str, player_name: str = "", evidence: str = "") -> list[st
     if QUOTE.search(s):
         bad.append("contains a quotation; the summary is in our words")
 
-    m = SPECULATION.search(s)
-    if m:
+    # A hedge is allowed only downstream of a named attribution, and only
+    # then: the speaker has to be on the record before the expectation is.
+    attributed_from = None
+    a = ATTRIBUTION.search(s)
+    if a:
+        attributed_from = a.end()
+    for m in SPECULATION.finditer(s):
+        if attributed_from is not None and m.start() >= attributed_from:
+            continue
         bad.append(f"speculative language {m.group(0)!r}")
+        break
     m = INFERRED.search(s)
     if m:
         bad.append(f"inferred timetable or depth-chart movement {m.group(0)!r}")

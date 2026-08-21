@@ -100,10 +100,17 @@ for field, why in (("espn", "player photos"), ("team", "team marks"),
 for fn in ("loadRoster", "DATA.players"):
     check(f"live homepage code still references {fn}", fn in html)
 
-# --- the five cards ---
-approved = [d for d in json.loads(DECISIONS.read_text())["decisions"].values()
-            if str(d["action"]).startswith("APPROVE")]
-names = ["Chris Blair"] + [d["subject"] for d in approved]
+# --- the cards ---
+#
+# The publication file is the authority, not the review queue. Deriving the
+# expected set from backfill decisions missed Alec Pierce, who was approved
+# and published directly, and compared Mack Hollins against superseded
+# wording -- the queue records what a reviewer decided at the time, the
+# publication records what is published now.
+PUBS_F = ROOT / "data" / "wire_publications.json"
+published = (json.loads(PUBS_F.read_text())["publications"]
+             if PUBS_F.exists() else [])
+names = [p["player_name"] for p in published]
 CARD = r'<article class="tile wire'
 cards = re.findall(CARD, section)
 rendered = [re.sub(r"<[^>]+>", "", m).strip()
@@ -113,8 +120,8 @@ for n in names:
           f"{rendered.count(n)} card(s)")
 # No fixed card count. The section renders every approved report, and a
 # number written into a test is a cap nobody meant to impose.
-check("one card renders per approved report",
-      len(cards) == len(names), f"{len(cards)} cards, {len(names)} approved")
+check("one card renders per approved publication",
+      len(cards) == len(names), f"{len(cards)} cards, {len(names)} published")
 check("the count equals the cards rendered", len(cards) == meta["count_shown"])
 
 # --- the design, which regressed to placeholders once ---
@@ -133,9 +140,7 @@ check("the Wire renders one card per row",
       "display:block" in rule and "repeat(" not in rule, rule[:56])
 
 # --- the public sentence, and the evidence it may not replace ------------
-PUBS_F = ROOT / "data" / "wire_publications.json"
-records = (json.loads(PUBS_F.read_text())["publications"]
-           if PUBS_F.exists() else [])
+records = published
 for r in records:
     who = r["player_name"]
     summ = (r.get("public_evidence_summary") or "").strip()
@@ -163,10 +168,11 @@ check("League News is gone from the markup",
 check("the video section is gone from the markup",
       "<h2>Video from the beat</h2>" not in html and 'class="vgrid"' not in html)
 
-for d in approved:
-    esc = (d["edited_text"].replace("&", "&amp;").replace("<", "&lt;")
+for d in published:
+    esc = (d["lineupbeat_impact"].replace("&", "&amp;").replace("<", "&lt;")
            .replace(">", "&gt;").replace('"', "&quot;").replace("'", "&#x27;"))
-    check(f"{d['subject']}: approved wording is byte-identical", esc in section)
+    check(f"{d['player_name']}: published wording is byte-identical",
+          esc in section)
 
 # --- layout and filters ---
 # One card per row at every width. Two columns put the reporting, the

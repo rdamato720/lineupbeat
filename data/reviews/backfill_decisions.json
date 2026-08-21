@@ -151,6 +151,88 @@
     }
    },
    "note": "Reviewer-approved wording, applied verbatim."
+  },
+  "983c909d95fe01e076ee": {
+   "subject": "Terrace Marshall Jr.",
+   "action": "REJECT_NOT_FANTASY_RELEVANT",
+   "decision": "NO_FANTASY_IMPACT",
+   "reason": "INSUFFICIENT_ROLE_EVIDENCE",
+   "projection_action": "NONE",
+   "note": "One catch from a backup quarterback during a joint practice does not establish a target, depth-chart or regular-season role change.",
+   "decided_by": "ralph",
+   "decided_at": "2026-08-21T21:25:16+00:00",
+   "persistent": true,
+   "preserved_evidence": "-- With Ewers sidelined, Cam Miller again got the second-most reps at QB and he had the best throw of the day, a completion for about 20 yards in the middle of the field to Terrace Marshall Jr.",
+   "preserved_assessment": {
+    "decision": "INTERPRET",
+    "claim_subject_player_id": "00-0036955",
+    "claim_subject_player_name": "Terrace Marshall Jr.",
+    "mentioned_players": [
+     {
+      "player_id": "00-0036955",
+      "player_name": "Terrace Marshall Jr.",
+      "relationship": "CLAIM_SUBJECT"
+     },
+     {
+      "player_id": null,
+      "player_name": "Cam Miller",
+      "relationship": "OTHER"
+     },
+     {
+      "player_id": null,
+      "player_name": "Ewers",
+      "relationship": "ABSENT_PLAYER"
+     }
+    ],
+    "quote_speaker": null,
+    "pronoun_antecedents": [
+     {
+      "pronoun": "he",
+      "resolved_to": "Cam Miller",
+      "supporting_text": "Cam Miller again got the second-most reps at QB and he had the best throw of the day"
+     }
+    ],
+    "supporting_quote": "With Ewers sidelined, Cam Miller again got the second-most reps at QB and he had the best throw of the day, a completion for about 20 yards in the middle of the field to Terrace Marshall Jr.",
+    "evidence_classification": "FIRSTHAND_OBSERVATION",
+    "fantasy_mechanism": "TARGETS",
+    "direction": "POSITIVE",
+    "impact_strength": "LOW",
+    "impact_horizon": "SHORT_TERM",
+    "projection_action": "NONE",
+    "fantasy_commentary": "Marshall caught one pass for approximately 20 yards from backup quarterback Cam Miller during joint practice. This is a single practice observation involving a backup quarterback, which provides minimal information about Marshall's role with the starting offense or his target distribution in game situations. The passage does not establish Marshall's depth-chart position, his work with the starting quarterback, or his expected usage in the regular season.",
+    "why_it_matters": "Marshall demonstrated he can make plays when targeted, but this occurred with a backup quarterback in practice and does not indicate his standing in the regular rotation.",
+    "limitations": [
+     "Single practice observation from one reporter",
+     "Involved backup quarterback, not starter",
+     "No information about Marshall's depth-chart position or role with starting offense",
+     "No context for overall target distribution or snap expectations"
+    ],
+    "confidence": 0.85,
+    "abstention_reason": null,
+    "provider": "claude",
+    "model": "claude-sonnet-4-5",
+    "schema_version": "semantic-v1",
+    "prompt_version": "wire-fantasy-2026-08-21c",
+    "input_hash": "095ddb37f2d7898ee883",
+    "output_hash": "f591828afedc6653ef7d",
+    "tokens_in": 2507,
+    "tokens_out": 777,
+    "cost_usd": 0.019176,
+    "latency_ms": 11214,
+    "validation_failures": [],
+    "attempts": [
+     {
+      "attempt": 1,
+      "supporting_quote": "With Ewers sidelined, Cam Miller again got the second-most reps at QB and he had the best throw of the day, a completion for about 20 yards in the middle of the field to Terrace Marshall Jr.",
+      "validation_failures": [],
+      "tokens_in": 2507,
+      "tokens_out": 777,
+      "latency_ms": 11214
+     }
+    ],
+    "retry_attempted": false,
+    "retry_reason": ""
+   }
   }
  }
 }
