@@ -2,17 +2,18 @@
  "summary": {
   "model": "claude-sonnet-4-5",
   "gold_n": 23,
-  "gold_correct": 22,
-  "precision": "13/14",
-  "recall": "13/13",
+  "gold_correct": 21,
+  "precision": "12/14",
+  "recall": "12/13",
   "errors": {
+   "unsupported_role": 1,
    "false_positive": 1
   },
   "abstentions": 3,
   "validation_failures": 1,
-  "cost_usd": 0.504363,
-  "median_latency_ms": 11151,
-  "p95_latency_ms": 13513,
+  "cost_usd": 0.505638,
+  "median_latency_ms": 11203,
+  "p95_latency_ms": 13090,
   "real_ungraded": 7
  },
  "gold": [
@@ -30,11 +31,11 @@
    "direction": "NEUTRAL",
    "quote": "On Thursday in Berea, Khalil Shakir and Dante Pettis added to the group of sidelined wide receivers, per Cameron Wolfe of NFL Network.",
    "validation": [],
-   "abstention": "The passage discusses Khalil Shakir and Dante Pettis being sidelined, but neither player appears in the registry. The only registered player is Keon Coleman, who is not mentioned in the passage. There is no claim subject available from the registry to assess.",
+   "abstention": "The passage discusses Khalil Shakir and Dante Pettis being sidelined, but neither player appears in the registry. The only registered player is Keon Coleman, who is not mentioned in the passage. There is no claim subject that matches a registered player ID.",
    "tokens_in": 2445,
-   "tokens_out": 635,
-   "cost": 0.01686,
-   "latency": 10556,
+   "tokens_out": 641,
+   "cost": 0.01695,
+   "latency": 10143,
    "errors": [],
    "pass": true
   },
@@ -56,9 +57,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2449,
-   "tokens_out": 630,
-   "cost": 0.016797,
-   "latency": 10687,
+   "tokens_out": 649,
+   "cost": 0.017082,
+   "latency": 11500,
    "errors": [],
    "pass": true
   },
@@ -80,9 +81,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2430,
-   "tokens_out": 651,
-   "cost": 0.017055,
-   "latency": 12192,
+   "tokens_out": 674,
+   "cost": 0.017400000000000002,
+   "latency": 11244,
    "errors": [],
    "pass": true
   },
@@ -104,9 +105,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2444,
-   "tokens_out": 727,
-   "cost": 0.018237,
-   "latency": 13047,
+   "tokens_out": 706,
+   "cost": 0.017922,
+   "latency": 12391,
    "errors": [],
    "pass": true
   },
@@ -128,9 +129,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2425,
-   "tokens_out": 720,
-   "cost": 0.018075,
-   "latency": 13513,
+   "tokens_out": 664,
+   "cost": 0.017235,
+   "latency": 11693,
    "errors": [],
    "pass": true
   },
@@ -149,9 +150,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2430,
-   "tokens_out": 605,
-   "cost": 0.016365,
-   "latency": 9827,
+   "tokens_out": 604,
+   "cost": 0.01635,
+   "latency": 10263,
    "errors": [],
    "pass": true
   },
@@ -172,9 +173,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2430,
-   "tokens_out": 663,
-   "cost": 0.017235,
-   "latency": 12507,
+   "tokens_out": 660,
+   "cost": 0.01719,
+   "latency": 11242,
    "errors": [],
    "pass": true
   },
@@ -191,11 +192,11 @@
    "direction": "POSITIVE",
    "quote": "\"Omar Cooper Jr. has taken over the slot role for us,\" Geno Smith said after practice.",
    "validation": [],
-   "abstention": "Omar Cooper Jr. is not in the player registry, so no valid claim_subject_player_id can be assigned.",
+   "abstention": "The claim subject, Omar Cooper Jr., is not in the player registry and his position cannot be confirmed from the passage. Without knowing whether he plays a fantasy-relevant position (QB/RB/WR/TE), a proper assessment cannot be made.",
    "tokens_in": 2423,
-   "tokens_out": 646,
-   "cost": 0.016959000000000002,
-   "latency": 13617,
+   "tokens_out": 710,
+   "cost": 0.017919,
+   "latency": 13810,
    "errors": [],
    "pass": true
   },
@@ -214,9 +215,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2419,
-   "tokens_out": 539,
-   "cost": 0.015342000000000001,
-   "latency": 10028,
+   "tokens_out": 554,
+   "cost": 0.015567000000000001,
+   "latency": 10571,
    "errors": [],
    "pass": true
   },
@@ -237,9 +238,9 @@
    ],
    "abstention": "claim subject unresolved:Anthony Hankerson is not in the player registry",
    "tokens_in": 2421,
-   "tokens_out": 526,
-   "cost": 0.015153,
-   "latency": 9523,
+   "tokens_out": 540,
+   "cost": 0.015363,
+   "latency": 9533,
    "errors": [],
    "pass": true
   },
@@ -261,9 +262,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2422,
-   "tokens_out": 567,
-   "cost": 0.015771,
-   "latency": 10136,
+   "tokens_out": 576,
+   "cost": 0.015906,
+   "latency": 10370,
    "errors": [],
    "pass": true
   },
@@ -274,7 +275,7 @@
    "expected": {
     "decision": "INTERPRET",
     "subject": "DJ Giddens",
-    "mechanism": "INJURY",
+    "mechanism": "LIMITED_PARTICIPATION",
     "direction": "NEGATIVE"
    },
    "decision": "INTERPRET",
@@ -285,11 +286,13 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2422,
-   "tokens_out": 676,
-   "cost": 0.017405999999999998,
-   "latency": 13409,
-   "errors": [],
-   "pass": true
+   "tokens_out": 641,
+   "cost": 0.016881,
+   "latency": 11716,
+   "errors": [
+    "unsupported_role"
+   ],
+   "pass": false
   },
   {
    "id": "engram-adjacent-return",
@@ -306,9 +309,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2429,
-   "tokens_out": 570,
-   "cost": 0.015837,
-   "latency": 9863,
+   "tokens_out": 563,
+   "cost": 0.015732,
+   "latency": 9607,
    "errors": [],
    "pass": true
   },
@@ -327,9 +330,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2418,
-   "tokens_out": 675,
-   "cost": 0.017379,
-   "latency": 12829,
+   "tokens_out": 637,
+   "cost": 0.016809,
+   "latency": 11852,
    "errors": [
     "false_positive"
    ],
@@ -352,9 +355,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2424,
-   "tokens_out": 616,
-   "cost": 0.016512,
-   "latency": 12120,
+   "tokens_out": 608,
+   "cost": 0.016392,
+   "latency": 10805,
    "errors": [],
    "pass": true
   },
@@ -376,9 +379,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2416,
-   "tokens_out": 580,
-   "cost": 0.015948,
-   "latency": 10364,
+   "tokens_out": 585,
+   "cost": 0.016023,
+   "latency": 10135,
    "errors": [],
    "pass": true
   },
@@ -397,9 +400,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2416,
-   "tokens_out": 597,
-   "cost": 0.016203,
-   "latency": 11139,
+   "tokens_out": 599,
+   "cost": 0.016233,
+   "latency": 11271,
    "errors": [],
    "pass": true
   },
@@ -421,9 +424,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2428,
-   "tokens_out": 561,
-   "cost": 0.015699,
-   "latency": 9394,
+   "tokens_out": 568,
+   "cost": 0.015804,
+   "latency": 10344,
    "errors": [],
    "pass": true
   },
@@ -445,9 +448,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2427,
-   "tokens_out": 583,
-   "cost": 0.016026000000000002,
-   "latency": 11042,
+   "tokens_out": 588,
+   "cost": 0.016101,
+   "latency": 10638,
    "errors": [],
    "pass": true
   },
@@ -468,9 +471,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2436,
-   "tokens_out": 653,
-   "cost": 0.017103,
-   "latency": 11822,
+   "tokens_out": 634,
+   "cost": 0.016818,
+   "latency": 11165,
    "errors": [],
    "pass": true
   },
@@ -491,9 +494,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2455,
-   "tokens_out": 662,
-   "cost": 0.017294999999999998,
-   "latency": 12465,
+   "tokens_out": 643,
+   "cost": 0.01701,
+   "latency": 11677,
    "errors": [],
    "pass": true
   },
@@ -512,9 +515,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2426,
-   "tokens_out": 558,
-   "cost": 0.015648000000000002,
-   "latency": 10497,
+   "tokens_out": 557,
+   "cost": 0.015633,
+   "latency": 9829,
    "errors": [],
    "pass": true
   },
@@ -533,9 +536,9 @@
    "validation": [],
    "abstention": null,
    "tokens_in": 2435,
-   "tokens_out": 575,
-   "cost": 0.01593,
-   "latency": 10002,
+   "tokens_out": 579,
+   "cost": 0.01599,
+   "latency": 10129,
    "errors": [],
    "pass": true
   }
@@ -560,12 +563,12 @@
    "horizon": "IMMEDIATE",
    "quote": "Dolphins players who did not participate were QB Quinn Ewers, LB Jordyn Brooks, EDGE Robert Beal Jr., EDGE Cameron Goode, DT Kenneth Grant, TE Ben Sims, DT Zach Sieler, EDGE Clelin Ferrell. Saw Quinn Ewers but he's not practicing.",
    "validation": [],
-   "commentary": "Quinn Ewers did not participate in this joint practice session with the Giants. The reporter observed Ewers present at the practice facility but confirmed he was not practicing. The passage does not provide a reason for his absence from participation, whether injury, rest, or other cause. This is a single practice observation from one reporter.",
+   "commentary": "Quinn Ewers did not participate in this joint practice session with the Giants. The reporter observed Ewers present at the facility but confirmed he was not practicing. The passage does not provide a reason for his absence from practice, whether injury, rest, or another cause. This is a single practice observation from one reporter.",
    "limitations": [
-    "The passage does not explain why Ewers did not participate",
+    "The passage does not explain why Ewers did not practice",
     "This is a single practice observation from one reporter",
-    "No timeframe is given for his return to participation",
-    "The nature of the joint practice (preseason timing, workload management) is not specified"
+    "No indication of severity or expected duration",
+    "No information about whether this is part of a pattern or an isolated occurrence"
    ]
   },
   {
@@ -589,12 +592,13 @@
    "validation": [
     "supporting_quote is not an exact substring of the evidence"
    ],
-   "commentary": "Chris Blair received most of Jahan Dotson's first-team red-zone snaps during one day of joint practice. This represents an opportunity for a roster-bubble player to demonstrate value in scoring situations. The observation is from a single practice session and does not establish a regular-season role or depth-chart position. The passage notes Blair is competing for a roster spot, indicating he is not currently assured of making the team.",
+   "commentary": "Chris Blair received most of Jahan Dotson's first-team red-zone snaps during one joint practice session. This represents an opportunity for Blair to demonstrate his value in a high-leverage scoring area, though it occurred with Dotson apparently absent or limited. The observation is from a single practice and does not establish a regular role or depth-chart position. Blair is competing for a roster spot on the Falcons.",
    "limitations": [
     "Single practice observation from one reporter",
-    "Preseason context with Dotson apparently absent or limited",
-    "Blair described as competing for a roster spot, not an established player",
-    "No indication this usage would carry into regular season"
+    "Occurred during joint practice, not regular team practice",
+    "Does not establish whether Dotson was injured, resting, or otherwise unavailable",
+    "Blair is described as competing for a roster spot, indicating uncertain roster status",
+    "No indication this represents a permanent role or depth-chart change"
    ]
   },
   {
@@ -616,12 +620,12 @@
    "horizon": "SHORT_TERM",
    "quote": "Anthony Richardson led the Colts' second-team offense down the field for a field goal score as time expired",
    "validation": [],
-   "commentary": "Anthony Richardson took second-team reps on the final day of Colts training camp, leading that unit down the field for a field goal. This is a concerning depth-chart signal for a quarterback who would typically be expected to work with the first team. The passage does not establish whether this was a rotation, a demotion, or who took first-team reps. One practice observation from one reporter warrants monitoring but does not confirm a permanent role change.",
+   "commentary": "Anthony Richardson took second-team reps during the final day of Colts training camp, leading that unit on a field-goal drive. This is notable for a quarterback who would typically be expected to work with the first team if he is the starter. The passage does not establish whether this was a rotation, a demotion, or simply part of camp structure on the final day. One practice observation from one reporter carries limited weight without additional context about Richardson's overall camp workload or the team's depth chart intentions.",
    "limitations": [
-    "Does not identify who took first-team reps",
     "Single practice observation from one reporter",
-    "Does not explain why Richardson was with the second team",
-    "Final day of camp may involve non-standard rotations"
+    "No context provided about Richardson's first-team reps or overall camp workload",
+    "Final day of camp may involve non-standard rotations",
+    "Does not establish whether this is a permanent depth-chart change or situational"
    ]
   },
   {
@@ -649,7 +653,7 @@
    "limitations": [
     "The antecedent of 'they' is not specified in the passage",
     "No specific players or position groups are identified",
-    "No role, usage, or opportunity information is provided"
+    "No information about role, usage, or opportunity is provided"
    ]
   },
   {
@@ -663,22 +667,19 @@
    "author": "Nick Faria",
    "ownership": "INDEPENDENT",
    "url": "",
-   "decision": "ABSTAIN",
-   "mechanism": "NO_FANTASY_IMPACT",
+   "decision": "INTERPRET",
+   "mechanism": "INJURY",
    "subject": "Geno Smith",
    "direction": "POSITIVE",
    "strength": "LOW",
    "horizon": "IMMEDIATE",
    "quote": "the Jets will have starting quarterback Geno Smith receive playing time in tonight's second preseason contest against the Pittsburgh Steelers",
-   "validation": [
-    "RETURN_TO_PRACTICE without explicit return language"
-   ],
-   "commentary": "Geno Smith will play in the second preseason game after missing the first preseason contest due to an ankle injury suffered last week. The Jets believe he is fully healthy and ready to return. This confirms Smith's availability for the upcoming preseason game but does not establish his regular season role or workload beyond his designation as the starting quarterback.",
+   "validation": [],
+   "commentary": "Smith suffered an ankle injury that kept him out of the previous preseason game but is now cleared to play in the second preseason contest. The Jets believe he is 100% recovered and ready to return. This is a preseason availability update indicating Smith has recovered from his ankle injury and will be active for the game against Pittsburgh.",
    "limitations": [
-    "This is relayed reporting from SNY rather than firsthand observation",
-    "The passage does not specify how much playing time Smith will receive",
-    "No information about Smith's regular season workload or role beyond the starting designation",
-    "Single-source report without independent corroboration"
+    "This is a preseason game and does not directly establish regular season availability",
+    "The report is relayed from SNY rather than firsthand observation",
+    "No details provided about the extent of playing time Smith will receive"
    ]
   },
   {
@@ -697,15 +698,15 @@
    "subject": "Eli Heidenreich",
    "direction": "POSITIVE",
    "strength": "LOW",
-   "horizon": "SHORT_TERM",
+   "horizon": "IMMEDIATE",
    "quote": "rookie Eli Heidenreich spent the fourth quarter soaking up carries despite hardly practicing in the days leading up to the game.",
    "validation": [],
-   "commentary": "Eli Heidenreich received carries throughout the fourth quarter of a preseason game despite limited practice participation leading up to it. This suggests the team wanted to evaluate him in game action, though fourth-quarter preseason work typically comes against third-string competition. The passage does not establish his role in the regular-season depth chart or whether this usage will continue.",
+   "commentary": "Heidenreich received carries in the fourth quarter of a preseason game despite limited practice participation leading up to it. This is fourth-quarter preseason work, which typically involves low-leverage snaps against backup defenders. The passage does not establish Heidenreich's role in the regular-season depth chart or whether this usage reflects anything beyond late-game preseason opportunity.",
    "limitations": [
-    "Fourth-quarter preseason carries typically come against lower-level competition",
-    "Does not establish regular-season role or depth-chart position",
-    "Single game observation from one reporter",
-    "The reason for his limited practice participation is not stated"
+    "Fourth-quarter preseason carries do not establish regular-season role",
+    "No information about Heidenreich's depth-chart position",
+    "No context for why he received carries despite limited practice",
+    "Single-game observation from one reporter"
    ]
   },
   {
@@ -727,11 +728,11 @@
    "horizon": "UNKNOWN",
    "quote": "If Hibner comes out on Saturday and has another strong showing as a pass-catcher, in particular, the complementary role behind and sometimes alongside three-time Pro Bowl veteran Mark Andrews that was vacated when Isaiah Likely left in free agency is as good as his because he'll have proven he can be a gamer at this level.",
    "validation": [],
-   "commentary": "The passage describes Mark Andrews as a three-time Pro Bowl veteran and mentions him only as a reference point for Hibner's potential complementary role. No information is provided about Andrews' own availability, usage, role, targets, or snap share. The passage establishes nothing actionable about Andrews himself.",
+   "commentary": "The passage describes Mark Andrews as a three-time Pro Bowl veteran and mentions him only as a reference point for Hibner's potential complementary role. No information is provided about Andrews' own availability, usage, role, or opportunity. The passage is focused on Hibner's competition for a backup tight end position behind Andrews.",
    "limitations": [
-    "The passage is about Hibner, not Mark Andrews",
-    "No information about Andrews' role, usage, or availability is provided",
-    "Andrews is mentioned only as context for another player's potential role"
+    "The passage is entirely about another player (Hibner) competing for a backup role",
+    "No information about Andrews' availability, snap share, targets, or role is provided",
+    "The mention of Andrews is purely contextual"
    ]
   }
  ]

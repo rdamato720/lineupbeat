@@ -53,6 +53,11 @@ def grade(item: dict, a: sem.SemanticAssessment) -> dict:
     g["graded"] = True
 
     want_dec = exp["decision"]
+    # An unregistered player is not a required interpretation. Refusing him is
+    # identity validation working, not failing, and counting it as a failure
+    # also wrongly inflated the recall denominator to 14.
+    if item.get("identity_outcome") == "CORRECT_REGISTRY_REFUSAL":
+        g["identity_outcome"] = "CORRECT_REGISTRY_REFUSAL"
     # ABSTAIN on an item that should have been interpreted is a false
     # suppression, not a free pass.
     if want_dec == "INTERPRET":

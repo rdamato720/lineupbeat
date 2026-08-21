@@ -1,5 +1,5 @@
 {
- "schema_version": "eval-v1",
+ "schema_version": "eval-v2",
  "note": "GOLD items carry hand-written expected answers and are what accuracy is measured on. UNLABELLED items are real segments awaiting human labels and are never counted as correct until labelled.",
  "gold_items": 23,
  "unlabelled_items": 90,
@@ -297,7 +297,9 @@
     "decision": "NO_FANTASY_IMPACT"
    },
    "forbidden_mechanism": "RETURN_TO_PRACTICE",
-   "also_valid_subject": null
+   "also_valid_subject": null,
+   "identity_outcome": "CORRECT_REGISTRY_REFUSAL",
+   "label_note": "Anthony Hankerson is not in wire_players. Refusing to interpret an unregistered player is the correct outcome of identity validation, not a failure of it. He is therefore not a required interpretation, which is why the recall denominator is 13 rather than 14."
   },
   {
    "id": "wease-absent",
@@ -351,7 +353,7 @@
    "expected": {
     "decision": "INTERPRET",
     "subject": "DJ Giddens",
-    "mechanism": "LIMITED_PARTICIPATION",
+    "mechanism": "INJURY",
     "direction": "NEGATIVE"
    },
    "forbidden_mechanism": "RETURN_TO_PRACTICE",
@@ -407,7 +409,8 @@
     "decision": "NO_FANTASY_IMPACT"
    },
    "forbidden_mechanism": "SECOND_TEAM_REPS",
-   "also_valid_subject": null
+   "also_valid_subject": null,
+   "label_note": "'Remains the named starter' is status-quo information, not a new fantasy development."
   },
   {
    "id": "richardson-second-team",
@@ -3267,6 +3270,27 @@
    "expected": null,
    "forbidden_mechanism": null,
    "also_valid_subject": null
+  }
+ ],
+ "label_history": [
+  {
+   "case_id": "giddens-reinjury",
+   "changed_in": "eval-v2",
+   "changed_on": "2026-08-21",
+   "changed_by": "reviewer",
+   "previous_expected": {
+    "decision": "INTERPRET",
+    "subject": "DJ Giddens",
+    "mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEGATIVE"
+   },
+   "new_expected": {
+    "decision": "INTERPRET",
+    "subject": "DJ Giddens",
+    "mechanism": "INJURY",
+    "direction": "NEGATIVE"
+   },
+   "rationale": "The passage explicitly reports that Giddens reaggravated his hamstring. That establishes an injury, not merely limited participation."
   }
  ]
 }

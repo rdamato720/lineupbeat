@@ -110,11 +110,13 @@ class ClaudeSemanticProvider(sem.FantasySemanticProvider):
         try:
             resp = client.messages.create(
                 model=self.model, max_tokens=1600, system=sem.SYSTEM,
-                # A locked corpus needs a reproducible answer. Two runs of the
-                # same gold case disagreed -- one produced "No. 1" in its
-                # commentary and tripped a validator check the other did not
-                # reach -- and an evaluation that moves between runs cannot
-                # support a launch decision.
+                # Reduced variability, not determinism. Two runs of the same
+                # gold case disagreed -- one produced "No. 1" in its
+                # commentary and tripped a validator check the other never
+                # reached -- and temperature 0 narrows that spread without
+                # guaranteeing identical output. Every run is therefore
+                # stored with its model, prompt, schema and run version so
+                # results can be compared rather than assumed to repeat.
                 temperature=0,
                 tools=[{"name": TOOL_NAME,
                         "description": "Record the assessment of this passage.",
