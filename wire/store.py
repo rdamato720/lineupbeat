@@ -357,6 +357,22 @@ class WireStore:
 
     # -- extracted evidence -------------------------------------------------
 
+    def _evidence_extra_columns(self) -> None:
+        """claim_key and duplicate_of, added in place.
+
+        A claim is a player plus a normalised passage. Two copies of a
+        syndicated story produce the same key, and the second is linked to
+        the first rather than deleted -- a reviewer still needs to see that
+        two outlets carried it, and deleting one would look like it never ran.
+        """
+        cols = {r["name"] for r in
+                self.conn.execute("PRAGMA table_info(wire_evidence)")}
+        for name in ("claim_key", "duplicate_of"):
+            if name not in cols:
+                self.conn.execute(
+                    f"ALTER TABLE wire_evidence ADD COLUMN {name} TEXT")
+        self.conn.commit()
+
     def upsert_evidence(self, rec: dict) -> bool:
         """Store one evidence candidate. True if new.
 
@@ -366,6 +382,7 @@ class WireStore:
         once review_status has moved off PENDING it stays where the human put
         it.
         """
+        self._evidence_extra_columns()
         prior = self.conn.execute(
             "SELECT review_status, created_at FROM wire_evidence "
             "WHERE candidate_id = ?", (rec["candidate_id"],)).fetchone()
@@ -375,9 +392,20 @@ class WireStore:
             created = prior["created_at"]
             if prior["review_status"] and prior["review_status"] != "PENDING":
                 status = prior["review_status"]
+        # Columns named rather than positional. Adding claim_key and
+        # duplicate_of by ALTER TABLE broke a positional insert immediately,
+        # which is the argument for never writing one.
         self.conn.execute(
-            "INSERT OR REPLACE INTO wire_evidence VALUES "
-            "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT OR REPLACE INTO wire_evidence ("
+            "candidate_id, evidence_group_id, source_type, source_id, "
+            "source_url, source_title, source_author_or_channel, "
+            "published_at, video_id, start_seconds, end_seconds, location, "
+            "evidence_text, evidence_class, classification_confidence, "
+            "classification_reasons, player_id, player_name, team, position, "
+            "resolution_method, resolution_confidence, registry_version, "
+            "registry_hash, review_status, exclusion_reason, created_at, "
+            "updated_at, claim_key, duplicate_of) VALUES "
+            "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (rec["candidate_id"], rec.get("evidence_group_id", ""),
              rec.get("source_type", ""), rec.get("source_id", ""),
              rec.get("source_url", ""), rec.get("source_title", ""),
@@ -393,9 +421,144 @@ class WireStore:
              rec.get("resolution_method", ""),
              rec.get("resolution_confidence"),
              rec.get("registry_version", ""), rec.get("registry_hash", ""),
-             status, rec.get("exclusion_reason", ""), created, now()))
+             status, rec.get("exclusion_reason", ""), created, now(),
+             rec.get("claim_key", ""), rec.get("duplicate_of", "")))
         self.conn.commit()
         return prior is None
+
+    def _fantasy_schema(self) -> None:
+        """The fantasy layer is a separate table on purpose.
+
+        The reporter's evidence and our interpretation of it are different
+        kinds of claim with different authors, and a column on the evidence
+        row would make them one record that a reviewer approves or rejects
+        together. They are approved separately because they can be wrong
+        separately: the observation can be sound and our reading of it wrong.
+        """
+        self.conn.execute("""
+          CREATE TABLE IF NOT EXISTS wire_fantasy_impact (
+            fantasy_impact_id      TEXT PRIMARY KEY,
+            player_id              TEXT NOT NULL,
+            player_name            TEXT NOT NULL,
+            team                   TEXT NOT NULL,
+            position               TEXT NOT NULL,
+            fantasy_impact         TEXT NOT NULL,
+            impact_strength        TEXT NOT NULL,
+            impact_horizon         TEXT NOT NULL,
+            role_signal            TEXT NOT NULL,
+            lineupbeat_commentary  TEXT NOT NULL,
+            reasoning              TEXT NOT NULL,
+            projection_action      TEXT NOT NULL,
+            evidence_candidate_ids TEXT NOT NULL,
+            evidence_group_ids     TEXT NOT NULL,
+            source_article_ids     TEXT NOT NULL,
+            source_count           INTEGER NOT NULL,
+            independent_source_count INTEGER NOT NULL,
+            generator              TEXT NOT NULL,
+            prompt_version         TEXT,
+            registry_version       TEXT,
+            created_at             TEXT,
+            updated_at             TEXT,
+            review_status          TEXT NOT NULL,
+            reviewed_at            TEXT,
+            reviewer_note          TEXT,
+            invalidated_at         TEXT,
+            invalidation_reason    TEXT
+          )""")
+        self.conn.commit()
+
+    def upsert_impact(self, rec: dict) -> bool:
+        """Store one fantasy-impact record. Returns True if it is new.
+
+        Regeneration updates the generated fields and never the reviewed
+        ones. A reviewer's verdict, edit or note is a fact about what a
+        person decided, and no amount of re-running may quietly replace it.
+        """
+        self._fantasy_schema()
+        row = self.conn.execute(
+            "SELECT review_status, reviewed_at, reviewer_note, created_at, "
+            "lineupbeat_commentary, invalidated_at, invalidation_reason "
+            "FROM wire_fantasy_impact WHERE fantasy_impact_id = ?",
+            (rec["fantasy_impact_id"],)).fetchone()
+        new = row is None
+        if new:
+            status, reviewed_at, note = rec.get("review_status", "PENDING"), None, ""
+            created, inv_at, inv_why = now(), None, ""
+            commentary = rec["lineupbeat_commentary"]
+        else:
+            status = row["review_status"]
+            reviewed_at, note = row["reviewed_at"], row["reviewer_note"]
+            created = row["created_at"]
+            inv_at, inv_why = row["invalidated_at"], row["invalidation_reason"]
+            # An edited or decided record keeps the reviewer's words.
+            commentary = (row["lineupbeat_commentary"]
+                          if status in ("APPROVED", "REJECTED")
+                          else rec["lineupbeat_commentary"])
+        self.conn.execute(
+            "INSERT OR REPLACE INTO wire_fantasy_impact VALUES "
+            "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            (rec["fantasy_impact_id"], rec["player_id"], rec["player_name"],
+             rec["team"], rec["position"], rec["fantasy_impact"],
+             rec["impact_strength"], rec["impact_horizon"], rec["role_signal"],
+             commentary, rec["reasoning"], rec["projection_action"],
+             json.dumps(rec["evidence_candidate_ids"]),
+             json.dumps(rec["evidence_group_ids"]),
+             json.dumps(rec["source_article_ids"]),
+             rec["source_count"], rec["independent_source_count"],
+             rec.get("generator", ""), rec.get("prompt_version", ""),
+             rec.get("registry_version", ""), created, now(),
+             status, reviewed_at, note, inv_at, inv_why))
+        self.conn.commit()
+        return new
+
+    def impacts(self, status: str = "", player_id: str = ""):
+        self._fantasy_schema()
+        q = "SELECT * FROM wire_fantasy_impact"
+        cond, args = [], []
+        if status:
+            cond.append("review_status = ?")
+            args.append(status)
+        if player_id:
+            cond.append("player_id = ?")
+            args.append(player_id)
+        if cond:
+            q += " WHERE " + " AND ".join(cond)
+        return self.conn.execute(q, tuple(args)).fetchall()
+
+    def invalidate_impacts_without_evidence(self) -> int:
+        """Any impact whose supporting evidence has all gone becomes INVALIDATED.
+
+        Kept for audit rather than deleted, and removed from every preview:
+        commentary that outlives the reporting it rests on is exactly the
+        thing this pipeline must never show.
+        """
+        self._fantasy_schema()
+        good = {r["candidate_id"] for r in self.conn.execute(
+            "SELECT candidate_id FROM wire_evidence "
+            "WHERE review_status IN ('PENDING','APPROVED')")}
+        n = 0
+        for r in self.impacts():
+            if r["review_status"] in ("INVALIDATED", "REJECTED"):
+                continue
+            ids = json.loads(r["evidence_candidate_ids"])
+            live = [i for i in ids if i in good]
+            if not live:
+                self.conn.execute(
+                    "UPDATE wire_fantasy_impact SET review_status='INVALIDATED',"
+                    " invalidated_at=?, invalidation_reason=?, updated_at=? "
+                    "WHERE fantasy_impact_id=?",
+                    (now(), "every supporting evidence candidate was rejected, "
+                     "superseded or invalidated", now(), r["fantasy_impact_id"]))
+                n += 1
+            elif len(live) != len(ids):
+                # Some evidence survived. Recount rather than leave a source
+                # count that describes evidence no longer there.
+                self.conn.execute(
+                    "UPDATE wire_fantasy_impact SET evidence_candidate_ids=?, "
+                    "source_count=?, updated_at=? WHERE fantasy_impact_id=?",
+                    (json.dumps(live), len(live), now(), r["fantasy_impact_id"]))
+        self.conn.commit()
+        return n
 
     def supersede_evidence(self, source_url: str, live: set) -> int:
         """Retire evidence rows this source no longer produces.

@@ -19,26 +19,32 @@
   "exclusion:analysis-only author": {
    "count": 20,
    "candidate_ids": [
+    "https://www.si.com/nfl/49ers/onsi/6-49ers-defenders-facing-huge-preseason-test-against-chargers",
+    "https://www.si.com/nfl/bears/onsi/4-chicago-bears-on-the-bubble-who-can-lock-up-a-roster-spot-against-the-bengals",
     "https://www.si.com/nfl/bears/onsi/bears-bengals-fight-joint-practice",
     "https://www.si.com/nfl/bears/onsi/ben-johnson-details-expectations-for-marcus-davenport-in-bears-defense",
+    "https://www.si.com/nfl/bears/onsi/ben-johnson-to-focus-on-one-unit-in-joint-practice-with-bengals",
     "https://www.si.com/nfl/bears/onsi/the-good-and-not-so-good-from-bears-joint-practice-with-bengals",
+    "https://www.si.com/nfl/bears/onsi/who-are-the-chicago-bears-most-logical-trade-targets-with-vita-vea-off-the-board",
+    "https://www.si.com/nfl/bengals/onsi/setting-realistic-expectations-for-bengals-superstar-ja-marr-chase-in-2026-01m040rycf1x",
     "https://www.si.com/nfl/bills/onsi/are-we-undervaluing-dj-moore-s-impact-on-josh-allen",
     "https://www.si.com/nfl/bills/onsi/bills-te-named-roster-bubble-standout-other-teams-should-covet",
-    "https://www.si.com/nfl/bills/onsi/draft-bills-bet-on-untapped-potential-with-raw-wr-in-2027-nfl-mock",
     "https://www.si.com/nfl/bills/onsi/most-important-players-to-watch-in-bills-preseason-week-2-game-vs-browns-01m08dhdwtep",
     "https://www.si.com/nfl/bills/onsi/preseason-buffalo-bills-53-man-roster-prediction-entering-week-2",
     "https://www.si.com/nfl/bills/onsi/preseason-cj-gardner-johnson-roasted-shedeur-sanders-during-bills-browns-joint-practice",
     "https://www.si.com/nfl/bills/onsi/transactions-former-bills-safety-taylor-rapp-signs-with-one-of-buffalo-s-top-afc-foes",
-    "https://www.si.com/nfl/cowboys/onsi/christian-parker-views-von-miller-more-than-added-pass-rush-juice-dallas-cowboys",
-    "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-injury-updates-training-camp-practice-oxnard",
-    "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-saints-facing-possible-punishments-joint-practice-fights",
-    "https://www.si.com/nfl/cowboys/onsi/von-miller-impressed-first-team-reps-dallas-cowboys-training-camp",
-    "https://www.si.com/nfl/dolphins/onsi/could-the-dolphins-bring-back-jonnu-smith-should-they-01m00k853nw7",
-    "https://www.si.com/nfl/dolphins/onsi/four-winners-and-four-losers-in-dolphins-preseason-opener-01m01jvtj3k9",
-    "https://www.si.com/nfl/dolphins/onsi/two-miami-dolphins-players-stand-out-among-those-who-brought-the-physicality-jeff-hafley-loved-01m03zhbrt75",
-    "https://www.si.com/nfl/dolphins/onsi/why-biggers-could-make-the-biggest-impact-among-the-2025-dt-draft-picks-01m0bp79488f",
-    "https://www.si.com/nfl/jets/onsi/demario-davis-jets-reunion-is-already-aging-like-fine-wine-even-before-the-regular-season-begins-01m0g96zy7s1",
-    "https://www.si.com/nfl/jets/onsi/friday-s-loss-told-jets-all-need-to-know-malachi-moore-s-future-01m0733khwcc"
+    "https://www.si.com/nfl/browns/onsi/the-one-big-thing-everybody-s-missing-about-deshaun-watson-s-time-with-the-browns-01m0dpqwc21z",
+    "https://www.si.com/nfl/chargers/onsi/49ers-chargers-will-reveal-emergency-trade-free-agent-signing",
+    "https://www.si.com/nfl/chargers/onsi/chargers-latest-depth-chart-takeaways-question-preseason-49ers",
+    "https://www.si.com/nfl/chiefs/onsi/chiefs-on-si-mailbag-could-an-offseason-addition-be-a-surprise-cut-candidate",
+    "https://www.si.com/nfl/chiefs/onsi/chiefs-reunite-with-former-linebacker-cam-jones-why-kc-made-the-move-now",
+    "https://www.si.com/nfl/commanders/onsi/jeremy-mcnichols-commanders-running-back-roster-battle-injury"
+   ]
+  },
+  "exclusion:mock draft": {
+   "count": 1,
+   "candidate_ids": [
+    "https://www.si.com/nfl/bills/onsi/draft-bills-bet-on-untapped-potential-with-raw-wr-in-2027-nfl-mock"
    ]
   },
   "exclusion:national SI story syndicated to a team page": {
@@ -77,48 +83,47 @@
   "exclusion:power rankings": {
    "count": 3,
    "candidate_ids": [
-    "https://www.si.com/nfl/cowboys/onsi/nfl-preseason-week-2-power-rankings-dallas-cowboys-reality-check",
     "https://www.si.com/nfl/dolphins/onsi/dolphins-rookie-power-rankings-2-0-who-stands-out-among-promising-group-01m0dcfpjfz3",
-    "https://www.si.com/nfl/packers/onsi/consensus-nfl-power-rankings-titletown-packers-mired-in-mediocreville"
+    "https://www.si.com/nfl/packers/onsi/consensus-nfl-power-rankings-titletown-packers-mired-in-mediocreville",
+    "https://www.si.com/nfl/seahawks/onsi/seahawks-remain-underdogs-despite-elite-ranking-preseason-week-2-power-rankings"
    ]
   },
   "exclusion:roster prediction": {
-   "count": 2,
+   "count": 1,
    "candidate_ids": [
-    "https://www.si.com/nfl/seahawks/onsi/seattle-seahawks-53-man-roster-projection-shakes-up-after-trevon-diggs-signing",
-    "https://www.si.com/nfl/titans/onsi/updated-titans-53-man-roster-projection-heading-into-preseason-game-2-01m0g58ax7xt"
+    "https://www.si.com/nfl/seahawks/onsi/seattle-seahawks-53-man-roster-projection-shakes-up-after-trevon-diggs-signing"
    ]
   },
   "exclusion:unknown author": {
    "count": 20,
    "candidate_ids": [
-    "https://www.si.com/nfl/49ers/onsi/6-49ers-defenders-facing-huge-preseason-test-against-chargers",
     "https://www.si.com/nfl/49ers/onsi/6-49ers-most-gain-preseason-game-chargers",
     "https://www.si.com/nfl/49ers/onsi/ephesians-prysock-reveals-connections-49ers-drafted",
     "https://www.si.com/nfl/49ers/onsi/san-francisco-49ers-los-angeles-chargers-live-blog",
     "https://www.si.com/nfl/49ers/onsi/why-49ers-suddenly-optimistic-about-tight-end-luke-farrell",
-    "https://www.si.com/nfl/bears/onsi/4-chicago-bears-on-the-bubble-who-can-lock-up-a-roster-spot-against-the-bengals",
     "https://www.si.com/nfl/bears/onsi/ben-johnson-spells-out-how-theo-benedet-can-fit-in-bears-tackle-mix",
-    "https://www.si.com/nfl/bears/onsi/who-are-the-chicago-bears-most-logical-trade-targets-with-vita-vea-off-the-board",
     "https://www.si.com/nfl/bengals/onsi/bengals-rookie-landon-robinson-turning-heads-with-surprise-fullback-role-01m0e7pdwaec",
-    "https://www.si.com/nfl/bengals/onsi/setting-realistic-expectations-for-bengals-superstar-ja-marr-chase-in-2026-01m040rycf1x",
     "https://www.si.com/nfl/bengals/onsi/we-better-f-ing-protect-joe-ja-marr-chase-sends-clear-message-to-bengals-offense-01m0g01s10y5",
     "https://www.si.com/nfl/bills/onsi/preseason-bills-may-have-more-backup-qb-options-come-nfl-cutdown-day",
     "https://www.si.com/nfl/bills/onsi/sean-mcdermott-team-one-of-nfl-s-best-to-never-reach-super-bowl",
     "https://www.si.com/nfl/broncos/onsi/10-broncos-with-the-most-to-gain-vs-packers",
     "https://www.si.com/nfl/broncos/onsi/5-broncos-with-the-most-to-lose-vs-packers-preseason",
     "https://www.si.com/nfl/broncos/onsi/bo-nix-comeback-reaches-its-biggest-milestone-yet-broncos-packers",
-    "https://www.si.com/nfl/broncos/onsi/broncos-camp-day-14-bo-nix-strikes-back-winners-and-losers",
     "https://www.si.com/nfl/broncos/onsi/broncos-packers-preseason-how-to-watch-tv-channel-live-stream-time",
     "https://www.si.com/nfl/broncos/onsi/evan-engram-offers-telling-glimpse-davis-webb-vision-broncos-offense",
-    "https://www.si.com/nfl/broncos/onsi/taylor-rapp-signing-sends-clear-message-about-broncos-safety-depth"
+    "https://www.si.com/nfl/broncos/onsi/taylor-rapp-signing-sends-clear-message-about-broncos-safety-depth",
+    "https://www.si.com/nfl/browns/onsi/3-browns-that-have-the-most-to-gain-from-joint-practices-against-bills-01m0dgnwxqca",
+    "https://www.si.com/nfl/browns/onsi/3-cleveland-browns-players-with-the-most-to-gain-in-second-preseason-game-01m0g2eg9rrz",
+    "https://www.si.com/nfl/browns/onsi/3-reasons-it-may-be-best-for-shedeur-sanders-to-start-season-as-browns-backup-qb-01m0det9dmdw",
+    "https://www.si.com/nfl/browns/onsi/are-the-cleveland-browns-truly-a-qb-away-from-contention-01m0drfszqj6",
+    "https://www.si.com/nfl/browns/onsi/browns-edge-position-gets-even-thinner-with-recent-alex-wright-injury-01m0ge9crj4r"
    ]
   },
   "exclusion:winners and losers": {
    "count": 2,
    "candidate_ids": [
-    "https://www.si.com/nfl/browns/onsi/winners-and-losers-from-cleveland-browns-joint-practice-against-buffalo-bills-01m0gc61xks4",
-    "https://www.si.com/nfl/rams/onsi/rams-winners-losers-joint-practice-saints"
+    "https://www.si.com/nfl/broncos/onsi/broncos-camp-day-14-bo-nix-strikes-back-winners-and-losers",
+    "https://www.si.com/nfl/browns/onsi/winners-and-losers-from-cleveland-browns-joint-practice-against-buffalo-bills-01m0gc61xks4"
    ]
   },
   "exclusion:wrong team": {
@@ -141,26 +146,26 @@
   "local_adapter:EXCERPT_FEED_PAGE_FETCH": {
    "count": 20,
    "candidate_ids": [
+    "0599a0db6735d9b587b9",
+    "719058b6df6affc644af",
+    "0498d7d906e7e3a0b91a",
     "008a6f768bb025a53a3c",
-    "2d6bcd12c6228988b8de",
+    "8d661b9a45a0c159443c",
     "4b0e2eae2deffe426ae3",
     "01684954f972c7736f3e",
+    "0b80c15d182d156743d4",
+    "71f1340bfd33b27e9fe5",
+    "202ec5813c837c26a67c",
     "01b71f60112cc8c9666d",
-    "72d560e1167a6595c089",
     "57ccf64055564c465de1",
     "0519ad6f3836d05afd19",
+    "1413c4c4f57cdb72f94b",
+    "d0da9cc11a6f7d307f26",
+    "24ef8793116a2e4b4782",
     "074bb0975ca355f2499b",
-    "7ce5f4d479c8adb2b88a",
     "0a87f552bfa7a347775d",
-    "0ff01e566ab78aaec1db",
-    "8d661b9a45a0c159443c",
-    "0bfeb6473405ab1352bb",
-    "12dfccddbb9f273817fd",
-    "8ff1edd2e0a8eb34a186",
-    "0d79c2e19b3e998429f0",
-    "13281c7a68d432183ac7",
-    "9b30734ed962af639a9e",
-    "12e090706d0f1254d158"
+    "17c525330fbb6f8f2ee3",
+    "272f446eff53d7147f3d"
    ]
   },
   "local_adapter:FULL_TEXT_FEED": {
@@ -185,32 +190,32 @@
     "4b30cea1c6e9865d6752",
     "048571874864395a6980",
     "035fb5cd137a71f0f0aa",
-    "055da06906ac55e8285d"
+    "06a8710cc7310d418ed3"
    ]
   },
   "local_adapter:SITE_FEED_AUTHOR_FILTER": {
    "count": 20,
    "candidate_ids": [
     "0959912ea1bc1c7d3ff7",
-    "366efe46d38c650700a5",
     "18bf9fb02f3c0d789af6",
     "047e510dc01364cd4d11",
     "1629ff4c8fff9987d152",
     "029adf3c73221ae88956",
     "01dec3fcbe40f40d097f",
-    "03bcf6bbfaff495185ba",
+    "35bcc48a379a085286bd",
     "588197f42b7428d9a341",
     "016c43233a4c2be22753",
     "0d820af9dcc379778dda",
-    "99b094d3ffecbe137817",
     "21ae00bb2b6d595fccf3",
     "1aa2d80f05cddcf31fd7",
     "318f220d9d3200f0bacd",
     "02f60e1fc41fea3be404",
-    "0a22eb2e65d31dfc61a8",
+    "397bf776592927cf135d",
     "6d3b2e16759a766c4f06",
     "02b43a9fabeed3d48da6",
-    "168c849c592b94847739"
+    "168c849c592b94847739",
+    "2331e4b5de063e220f9e",
+    "27a2a86d8dc1c9b7c611"
    ]
   },
   "si_author:ARI:Donnie Druin": {
@@ -238,6 +243,106 @@
     "5d64e5e1356de6529ade"
    ]
   },
+  "si_author:BAL:Josh Reed": {
+   "count": 20,
+   "candidate_ids": [
+    "0c3cc70826f1da8a771a",
+    "0b9528ac37a6445d79ae",
+    "0190ecef7784314b6ebd",
+    "79fb51cd3b96089c4ccc",
+    "02c465628ce26e95067b",
+    "92432c173012a4489935",
+    "d2a7d67ffd1716add1c8",
+    "95ff56417afe3019f5ef",
+    "3dff9b834904ea697d38",
+    "5e841699fcec8e0682b1",
+    "2ef291d449d91fd5e685",
+    "54e4d62c97a74f4028a6",
+    "c2513d7998f931ceb0f4",
+    "4aa571781dc2e369d77f",
+    "d5baef338d762105908f",
+    "bc6a810ad940331a8346",
+    "45e6760fb7f4e8ae0db0",
+    "96615e2a739a55e9dddc",
+    "d8dd6ced4d90d5206bb3",
+    "ca28056f801e03abfa04"
+   ]
+  },
+  "si_author:CIN:Jay Morrison": {
+   "count": 20,
+   "candidate_ids": [
+    "9005f407d683e93c60dc",
+    "23f9f061a2835ad9740e",
+    "985f347234147f0d6fb5",
+    "07c7d4a2b3b302dbbfbd",
+    "1eda86d5799f3a173bec",
+    "54a58399b85c2ed4f0d9",
+    "5da2ff15d09aa49d5284",
+    "101ec20e7754fcfe89be",
+    "48dc997c95e35fb47094",
+    "3994dbbc0236f103a52a",
+    "162dc8f2ddc69db03961",
+    "23e7ddfdeea1313ae0fb",
+    "39713694b937eab91c33",
+    "74e9956e5ddaaddb0797",
+    "939ab7b5625dbfa0cc95",
+    "5ae012561f8d51f55346",
+    "646761f95d2cd22e17f7",
+    "447f1bc5d27ce2234b3b",
+    "6a61c77762ac4128afa2",
+    "91fa69850cef6ac61e6e"
+   ]
+  },
+  "si_author:DEN:Chad Jensen": {
+   "count": 20,
+   "candidate_ids": [
+    "6b664d5511fcdbe9eb2d",
+    "38209dc1f7b84f44f825",
+    "fcee80b1033ffbf7c0ba",
+    "c66645ee0c299fc50fdc",
+    "e8e060c93306c4f86889",
+    "11369656ccdd9cf36821",
+    "202784b25040d3e88c03",
+    "42f7e555107df2da84cd",
+    "c76e69e447d0f27f84ac",
+    "4082abf21ea334b73523",
+    "9dca6f14a7aaf6562b91",
+    "7097e8553ece58b3c17a",
+    "aa833f6ae982a3dec544",
+    "d8581c964f2def2ade9e",
+    "e68273623380bff046bb",
+    "09174e1b7589f9543174",
+    "3759363094f1eec3fe14",
+    "551d17b5b8347f263071",
+    "7b7169a28238aa52e402",
+    "441054f8a4a0050db45e"
+   ]
+  },
+  "si_author:DET:John Maakaron": {
+   "count": 20,
+   "candidate_ids": [
+    "39b9c574d275846f1a5d",
+    "219a1c4ac574bb21b3d2",
+    "39692e3a54a9d6758de1",
+    "556ff2da7dbc573bba4b",
+    "d397e5f2e79d9efe7cd5",
+    "0393bb46c56ab0ae7962",
+    "fd4d88dff6b8c6b91914",
+    "4828d797aa640f19d285",
+    "6db353e72980e8f42cb7",
+    "3599b641fd25ed7903e9",
+    "682bd491adefa17ae5ac",
+    "22f2ed105c721a4143a4",
+    "2d481d13a43686011e5a",
+    "93a1cb2121e1825dec89",
+    "2fb377861ecc8a0c64da",
+    "096d8ebd8808067db4b5",
+    "1e25e48472b190a1d108",
+    "18220d9608bf523b3271",
+    "5664dab8ee134b9ffe77",
+    "4d1ab9bf88c9162f254d"
+   ]
+  },
   "si_author:GB:Bill Huber": {
    "count": 20,
    "candidate_ids": [
@@ -263,6 +368,81 @@
     "279c0e4e17e606f7eff9"
    ]
   },
+  "si_author:IND:Noah Compton": {
+   "count": 20,
+   "candidate_ids": [
+    "feddc5e6a9942ca64e6c",
+    "1d22c3044df563423dca",
+    "33f42cde6ea1f74d3638",
+    "cf1ec8954e094e63a8fb",
+    "53c48ca07bb3e0791b7a",
+    "8601c3387af3401c5b0b",
+    "adfabf687f43671d1d29",
+    "7ff29690702bcd23799e",
+    "3eb4468e92d205f9c11c",
+    "1a921f556bd1eebfd87f",
+    "3274e02eca67e80b82eb",
+    "5241226afbc3545220fd",
+    "7219c519cce06cb90967",
+    "ccca3bc31c587c639019",
+    "1371062f28ceabbc2f7e",
+    "a0740ae74e1e0b5df0fd",
+    "4b58b55a49b54a6e0194",
+    "f437e127694aaa8f30cd",
+    "24a3b30f5c22047457e6",
+    "efab6c745e7c1c2bf3d0"
+   ]
+  },
+  "si_author:LAC:Thomas Martinez": {
+   "count": 20,
+   "candidate_ids": [
+    "5b5aea78c7e7edcdb4e3",
+    "061d73de1f80c9e84125",
+    "68188a26fc385f266671",
+    "8d04eec721b69a818490",
+    "954c34c9ebbee9098dd7",
+    "21113b7d346aff67a459",
+    "cbc3eecced8d3d62e3a7",
+    "86e9e22ce8443347f4a9",
+    "10393d990719749e3f6b",
+    "1e772e6e95082e74dad0",
+    "14b70d8fab4324f671b1",
+    "d5d12291c3cc8d7b3f59",
+    "36b75f45d4d339dd76b8",
+    "68bd59df6d8a7395689a",
+    "b77eb47bff5dc7063f0f",
+    "f270477b73dc55fc7eca",
+    "3845025f27da78ea23a3",
+    "8fe54ed2c56d38174aed",
+    "93c4f85024864e55fee1",
+    "558032d4652c395858c6"
+   ]
+  },
+  "si_author:LV:Hondo Carpenter": {
+   "count": 20,
+   "candidate_ids": [
+    "6e4cd08ee435cb8a9fd4",
+    "15498086e5dc69a1cd1b",
+    "bd051c56e5b09ab3799f",
+    "e2cbd8cfd5318c2fe90c",
+    "ad8b0c6bf460b58a747f",
+    "787398b7f70d64ece272",
+    "2f3704cd347cfc812590",
+    "4060dc9d2a2b09be9c66",
+    "26d71654426007d9ed38",
+    "191fa6e76b3ae252d0cb",
+    "71119bc2ccf220270fad",
+    "276ca14a1f03f238423f",
+    "6e69dd5a461d2dd4e924",
+    "35aec73412757d651617",
+    "3e3bbdf37dfad89b4692",
+    "e584a79b75a87856e08f",
+    "e434c120c9a26ce4b20b",
+    "fc5da7b4a4c2265a5548",
+    "f21a82d3992daf2d8dcd",
+    "a1938c4748a79d45b1a5"
+   ]
+  },
   "si_author:MIA:Alain Poupart": {
    "count": 20,
    "candidate_ids": [
@@ -286,6 +466,31 @@
     "1dd0498ff7a4d91b973d",
     "06de3774991282252edf",
     "032d3d1b40cfa41ccf3b"
+   ]
+  },
+  "si_author:MIN:Jason Harmon": {
+   "count": 20,
+   "candidate_ids": [
+    "292b8d03202f52aac931",
+    "2fb524f1a55c5663ce63",
+    "56454cb2a42915d4d857",
+    "590ada37d4ae35a34387",
+    "5843a82870d85167a020",
+    "80c4a5b4b81484fc2405",
+    "5490aa43e3352c522560",
+    "0f393f06e390f1ef3e32",
+    "2b712107dbea9de3f0fc",
+    "458a83ff14cbbf258d3d",
+    "0cd2ebb1586c8d9ef9dd",
+    "2b1f624e6b803e2dac19",
+    "2af97e99676d11d9d911",
+    "3836de3db4a33eb62c18",
+    "40d01e85341d60875c24",
+    "66fa4a6fe3eb742f1626",
+    "174fd90c0d544ae86ae8",
+    "4916d19eeef606e37251",
+    "05bb375c074bc9b15d35",
+    "350b9bc107d1c9cd6efe"
    ]
   },
   "si_author:NE:Ethan Hurwitz": {
@@ -338,9 +543,20 @@
     "95228c63a2a404daf51b"
    ]
   },
+  "si_author:PIT:Noah Strackbein": {
+   "count": 1,
+   "candidate_ids": [
+    "4509507aabb5a477bd8b"
+   ]
+  },
   "si_class:ANALYSIS_OR_OPINION": {
    "count": 20,
    "candidate_ids": [
+    "4c93c6b670b9d1b2688b",
+    "f285bcf831bdc01185fa",
+    "252da0af6b59eb03ac80",
+    "27f0ae50ba36495bd75a",
+    "6960f7677c580bdd4cdd",
     "477b71359c3df1685a19",
     "8207407f86da806ccdfa",
     "63cc118fa040eb1debac",
@@ -355,43 +571,47 @@
     "181e7204c325fc167c82",
     "a58161d2e4124d24a395",
     "de25fb05b4500822abbd",
-    "00a438c0d429ddfe195c",
-    "2e0dd56e2facb96e548e",
-    "1228ef177be8c9e67466",
-    "23c9b08c4a8bf8c5967a",
-    "1e0c72306179178532cb",
-    "c065768ba56f4f9ee46b"
+    "00a438c0d429ddfe195c"
    ]
   },
   "si_class:DIRECT_QUOTATION": {
    "count": 20,
    "candidate_ids": [
-    "9171a031fbb4f628e2ce",
-    "84fbf5e701e2a241f252",
+    "63a822ea077b942c89ef",
     "23f9f061a2835ad9740e",
     "1eda86d5799f3a173bec",
     "07c7d4a2b3b302dbbfbd",
     "54a58399b85c2ed4f0d9",
-    "d6db31b9de594fc2276d",
-    "bf8a8eac16ab2d3e64c4",
-    "c87b425c32abd425d8d3",
-    "4b8cbc3f83a313d9da80",
+    "dfedf66287bab1d5505a",
+    "84ad315b36447d5f88ac",
     "47d138e23db25443acb7",
     "3038347ae4a83836f504",
     "024821aefcefe13ad0da",
-    "3ca26dbcdcff4271d43d",
-    "02d0a6bb1d768b326b50",
-    "05bbb3d6f4f27488a44c",
+    "5e0a20c24cbcfc48e199",
+    "1c947053dff17a930d13",
     "4a5ed861eb38ac485e19",
     "97b36f526f34455fc283",
     "de29a18892b9d22fc377",
-    "0c0b8f7279c2e71fa604"
+    "b3f4b86b3e2319aa9046",
+    "0dfb9f90c1e6343043c1",
+    "48d89638fa9cb64faa76",
+    "209d44389dc43599c657",
+    "b23277ac4e5fede3c301"
    ]
   },
   "si_class:FIRSTHAND_OBSERVATION": {
    "count": 20,
    "candidate_ids": [
+    "3759363094f1eec3fe14",
+    "441054f8a4a0050db45e",
+    "7b7169a28238aa52e402",
+    "1943017df24298ad1b59",
     "1924b1abd3f40143d1aa",
+    "73726209225b77ee0c0c",
+    "e65b14769176e3686359",
+    "24a3b30f5c22047457e6",
+    "329aa866f44c5c9e383c",
+    "f437e127694aaa8f30cd",
     "330b32b02c5f63c1a193",
     "29a786d440c3b105d8e9",
     "15264a7d09b6b1aa042c",
@@ -399,23 +619,19 @@
     "681cb25b3e1a1ee4be54",
     "63e39fd2e2ef095b67c4",
     "576726d9b9f2217979f3",
-    "0c8e0b9a387808d08912",
-    "42f1f1a6ea3931846de2",
-    "066d983836b99c2d7f8d",
-    "1b6ef797794e641d7acf",
-    "07b1d7af288cf30b71e5",
-    "a6a89cad71b2bcb6d3a0",
-    "933276afff98a6c6a762",
-    "3bd088f391e0a0a544b5",
-    "131aa4bcd1167f3d6fbb",
-    "40a82a032b63b5e74017",
-    "4cef8eef285260dfa177",
-    "9373e2c43a053f7a0f75"
+    "2d481d13a43686011e5a",
+    "2fb377861ecc8a0c64da",
+    "096d8ebd8808067db4b5"
    ]
   },
   "si_class:UNCERTAIN": {
    "count": 20,
    "candidate_ids": [
+    "200456197de399a4164a",
+    "02f057b07cb0fc4208d1",
+    "7b3c128cf5e745cac885",
+    "5660bf16fc19f8ac5fb8",
+    "33dfbbe04b184caecbd6",
     "8ed1026b8f3e495307e6",
     "51fdcf5a9f41a63ddf30",
     "10d416a9f2669dd25c28",
@@ -423,21 +639,16 @@
     "9e2f5bd583f730ce5e55",
     "39017bb1d47fd0545754",
     "9cea15de0b1b521f280b",
-    "fe7a85165d39a5e0a833",
+    "3994dbbc0236f103a52a",
     "162dc8f2ddc69db03961",
     "101ec20e7754fcfe89be",
     "23e7ddfdeea1313ae0fb",
+    "05222c9cb5368567d30f",
+    "7081fd6b8b47620c4978",
     "0f6058df467c50b5a4d4",
-    "89f2cd22d27527242e69",
-    "142cd444134a2ccddad8",
-    "0f388256d710e50a9414",
-    "249521720abee0d84c1e",
-    "6f64f237fd7960f52fb5",
-    "2590df78b038084d41b6",
-    "0e23aea7525593ca9a36",
-    "1cf08fdc309fcfc60d6d"
+    "89f2cd22d27527242e69"
    ]
   }
  },
- "total": 322
+ "total": 483
 }

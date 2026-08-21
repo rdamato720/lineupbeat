@@ -57,9 +57,17 @@ def source_context(store, source_id: str) -> dict:
                         "auto_captions": False, "multi_speaker": True,
                         "channel_id": "", "paid": True, "si": False,
                         "refuse": artreg.PAID_LABEL}
+            # A named reporter is a verified voice; a multi-author
+            # publication is not. Registering Steelers Depot did not
+            # establish that every byline on it attends practice, and
+            # granting reporter_voice by source would have handed its
+            # aggregators the firsthand status that SI authors have to earn
+            # one at a time. Same standard, both routes.
+            named = bool((s.reporter_name or "").strip()) and \
+                "staff" not in s.reporter_name.lower()
             return {"type": "article", "name": s.source_name,
                     "author": s.reporter_name, "teams": s.teams,
-                    "reporter_voice": True, "auto_captions": False,
+                    "reporter_voice": named, "auto_captions": False,
                     "multi_speaker": False, "channel_id": "",
                     "paid": False, "si": s.adapter == artreg.SI_TEAM_PAGE,
                     "refuse": ""}
@@ -96,12 +104,17 @@ def spans_from_transcript(store, video_id: str
              s["start_seconds"], s["end_seconds"]) for s in spans]
 
 
-def extract_item(store, item, reg, ctx, cfg, dry=False) -> dict:
+def extract_item(store, item, reg, ctx, cfg, dry=False,
+                 seen_claims=None) -> dict:
     """One captured source becomes zero or more evidence candidates."""
     stats = {"spans": 0, "with_players": 0, "candidates": 0, "new": 0,
              "context_only": 0, "unresolved": 0, "refused": 0,
-             "superseded": 0}
+             "superseded": 0, "not_relevant": 0, "duplicates": 0}
     live: set = set()
+    seen_claims = {} if seen_claims is None else seen_claims
+    # Per-article, so an overlap comparison stays cheap and only ever
+    # compares spans that could actually be the same observation.
+    claim_spans: list = []
     if ctx.get("refuse"):
         # No spans, no candidates, no partial credit.
         stats["refused"] = 1
@@ -134,6 +147,17 @@ def extract_item(store, item, reg, ctx, cfg, dry=False) -> dict:
             continue                     # a passage naming nobody is not evidence
         stats["with_players"] += 1
 
+        # Is this a current football development at all? Most of a team page
+        # is not, and the publisher's own fantasy advice never is.
+        irrelevant = ev.relevance(text)
+        if irrelevant:
+            stats["not_relevant"] += 1
+            stats.setdefault("relevance_reasons", {})
+            key = irrelevant.split("(")[0].strip()
+            stats["relevance_reasons"][key] = \
+                stats["relevance_reasons"].get(key, 0) + 1
+            continue
+
         klass, conf, why = ev.classify(
             text,
             reporter_voice=reporter_voice,
@@ -157,7 +181,35 @@ def extract_item(store, item, reg, ctx, cfg, dry=False) -> dict:
                              else "no registry match")
                 stats["unresolved"] += 1
 
+            pid = player.player_id if player else name
+            ckey = ev.claim_key(pid, text)
+            dup = seen_claims.get(ckey, "")
+            if not dup:
+                # Windows overlap by construction -- each span is a sentence
+                # plus its neighbours -- so the same observation appears in
+                # consecutive spans with different text and a different key.
+                # An identical key catches a republished story; this catches
+                # the same claim said twice about the same player in the same
+                # article.
+                for prev_text, prev_id, prev_pid in claim_spans:
+                    if prev_pid == pid and ev.overlap(text, prev_text) >= 0.6:
+                        dup = prev_id
+                        break
+
+            # A quotation belongs to whoever gave it. Filed per player, a
+            # span that quotes one man and lists another handed the second
+            # a direct quotation he never spoke.
+            klass_here, conf_here, why_here = klass, conf, list(why)
+            if klass_here == ev.DIRECT_QUOTATION and not ev.is_speaker(
+                    player.full_name if player else name, text):
+                klass_here = ev.UNCERTAIN
+                conf_here = 0.3
+                why_here = [f"quoted words, but the named speaker is not "
+                            f"{(player.full_name if player else name)!r}"] + why_here
+
             rec = {
+                "claim_key": ckey,
+                "duplicate_of": dup,
                 "candidate_id": ev.candidate_id(
                     gid, player.player_id if player else "", name),
                 "evidence_group_id": gid,
@@ -180,11 +232,11 @@ def extract_item(store, item, reg, ctx, cfg, dry=False) -> dict:
                 # right, but nothing on screen said so. Evidence a reviewer
                 # cannot check is not evidence.
                 "evidence_text": text,
-                "evidence_class": klass,
-                "classification_confidence": conf,
+                "evidence_class": klass_here,
+                "classification_confidence": conf_here,
                 "classification_reasons": (
-                    why + [f"byline classified {byline_class}"]
-                    if byline_class else why),
+                    why_here + [f"byline classified {byline_class}"]
+                    if byline_class else why_here),
                 # Identity resolution is scored separately from the claim.
                 # A confident classification of an unidentified player is
                 # still not publishable, and one number would hide that.
@@ -202,6 +254,11 @@ def extract_item(store, item, reg, ctx, cfg, dry=False) -> dict:
                 "review_status": ev.PENDING,
                 "exclusion_reason": exclusion,
             }
+            if dup:
+                stats["duplicates"] += 1
+            else:
+                seen_claims[ckey] = rec["candidate_id"]
+                claim_spans.append((text, rec["candidate_id"], pid))
             stats["candidates"] += 1
             live.add(rec["candidate_id"])
             if not dry and store.upsert_evidence(rec):
@@ -257,12 +314,20 @@ def main():
     print(f"  {len(items)} captured source(s), registry {reg.version}")
 
     total = {"spans": 0, "with_players": 0, "candidates": 0, "new": 0,
-             "context_only": 0, "unresolved": 0, "refused": 0, "superseded": 0}
+             "context_only": 0, "unresolved": 0, "refused": 0, "superseded": 0,
+             "not_relevant": 0, "duplicates": 0}
+    relevance_reasons: dict = {}
+    # Claims already seen in this run, so a syndicated story republished on
+    # another team page links to the first copy instead of counting twice.
+    seen_claims: dict = {}
     for item in items:
         ctx = source_context(store, item["source_id"])
-        st = extract_item(store, dict(item), reg, ctx, cfg, dry=args.dry_run)
+        st = extract_item(store, dict(item), reg, ctx, cfg, dry=args.dry_run,
+                          seen_claims=seen_claims)
         for k in total:
-            total[k] += st[k]
+            total[k] += st.get(k, 0)
+        for k, v in (st.get("relevance_reasons") or {}).items():
+            relevance_reasons[k] = relevance_reasons.get(k, 0) + v
         if st["candidates"]:
             print(f"    {item['source_id'][:28]:<29}{st['candidates']:>3} "
                   f"candidates from {st['with_players']}/{st['spans']} spans"
@@ -273,6 +338,11 @@ def main():
           f"({total['new']} new, {total['candidates'] - total['new']} updated)")
     print(f"  {total['unresolved']} unresolved names, "
           f"{total['context_only']} offensive-line context")
+    print(f"  {total['not_relevant']} span(s) refused as not a current "
+          f"development")
+    for k, v in sorted(relevance_reasons.items(), key=lambda x: -x[1]):
+        print(f"      {v:>5}  {k}")
+    print(f"  {total['duplicates']} duplicate claim(s) linked to a first copy")
     if total["superseded"]:
         print(f"  {total['superseded']} candidate(s) superseded "
               f"(the span that produced them no longer exists)")

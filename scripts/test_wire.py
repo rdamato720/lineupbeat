@@ -642,8 +642,14 @@ check("linemen are in the registry as context",
 store2 = WireStore()
 rows = store2.evidence()
 if rows:
-    check("every stored candidate is PENDING",
-          all(r["review_status"] == "PENDING" for r in rows))
+    # PENDING or SUPERSEDED. Nothing may be APPROVED without a person, and
+    # SUPERSEDED exists because re-extraction retires a candidate whose span
+    # no longer exists rather than leaving it to outlive its own text.
+    _states = {r["review_status"] for r in rows}
+    check("no stored candidate is approved or published",
+          _states <= {"PENDING", "SUPERSEDED"}, sorted(_states))
+    check("nothing has been approved without a reviewer",
+          not [r for r in rows if r["review_status"] == "APPROVED"])
     check("registry version and hash are recorded on every row",
           all(r["registry_version"] and r["registry_hash"] for r in rows))
     check("identity confidence is stored apart from claim confidence",
@@ -973,6 +979,187 @@ check("the SI probe never writes to the publications file",
       "wire_publications" not in probe_src and "export_publications" not in probe_src)
 check("the SI probe references no fantasy file",
       not FORBIDDEN_NAMES.search(probe_src))
+
+# Firsthand voice is earned per reporter on both routes. A multi-author
+# local publication does not confer it: registering Steelers Depot said
+# nothing about whether every byline on it attends practice.
+_ctx_named = WX.source_context(None, "purple_insider_matthew_coller")
+_ctx_multi = WX.source_context(None, "steelers_depot")
+check("a named local reporter is a firsthand voice",
+      _ctx_named["reporter_voice"] is True)
+check("a multi-author local publication is not a firsthand voice",
+      _ctx_multi["reporter_voice"] is False)
+_ctx_staff = WX.source_context(None, "pewter_report")
+check("a staff byline is not a firsthand voice",
+      _ctx_staff["reporter_voice"] is False)
+
+# ------------------------------------------------------- FANTASY_IMPACT
+from wire import fantasy as fz
+import wire_fantasy_impact as WFI
+
+_reg = pl.load()
+_qb = next(p for p in _reg.players if p.position == "QB" and p.player_id)
+_ol = next(p for p in _reg.players if p.context_only and p.player_id)
+
+
+def _row(player, klass="FIRSTHAND_OBSERVATION", text=None, url="u1",
+         author="A Reporter", cid=None):
+    return {"candidate_id": cid or f"c{abs(hash((player.full_name, url, klass)))%10**8}",
+            "evidence_group_id": "g1", "source_url": url,
+            "source_author_or_channel": author,
+            "evidence_class": klass, "review_status": "APPROVED",
+            "exclusion_reason": "", "duplicate_of": "",
+            "player_id": player.player_id, "player_name": player.full_name,
+            "team": player.team, "position": player.position,
+            "evidence_text": text or
+            f"{player.full_name} took first-team reps during Tuesday's practice."}
+
+
+_base = fz.build([_row(_qb)], _reg, "v1")
+check("commentary is generated as PENDING", _base.review_status == fz.PENDING)
+check("commentary never carries fantasy-advice language",
+      not fz.SOURCE_FANTASY_ADVICE.search(_base.lineupbeat_commentary),
+      _base.lineupbeat_commentary)
+check("a fantasy-impact record stores its supporting evidence ids",
+      _base.evidence_candidate_ids and _base.evidence_group_ids)
+
+_noev = fz.Impact(player_id=_qb.player_id, player_name=_qb.full_name,
+                  team=_qb.team, position=_qb.position)
+check("commentary cannot exist without supporting evidence ids",
+      any("no supporting evidence" in b
+          for b in fz.validate(_noev, [], _reg)), fz.validate(_noev, [], _reg))
+
+check("an offensive lineman gets no individual commentary",
+      fz.build([_row(_ol)], _reg, "v1") is None)
+_def = next((p for p in _reg.players
+             if p.position in ("LB", "DB", "DL") and p.player_id), None)
+if _def:
+    check("a defensive player gets no individual commentary",
+          fz.build([_row(_def)], _reg, "v1") is None)
+
+# Source fantasy advice is refused before it can ever be evidence.
+for _bad in ("He is a sleeper worth a round 8 pick.",
+             "Start him this week in all fantasy formats.",
+             "Best DFS value plays and prop bets for Sunday.",
+             "Waiver wire adds: three players to claim."):
+    check(f"source fantasy advice is not evidence: {_bad[:26]!r}",
+          "fantasy" in ev.relevance(_bad) or "betting" in ev.relevance(_bad),
+          ev.relevance(_bad))
+
+# HIGH is reserved. One reporter cannot reach it however dramatic the words.
+_solo_major = [_row(_qb, text=f"{_qb.full_name} tore his ACL and is out for the season.")]
+_s1 = fz.strength(_solo_major, "INJURY", independent=1)
+check("one report cannot produce HIGH impact", _s1 != fz.HIGH, _s1)
+_two = [_row(_qb, text=f"{_qb.full_name} tore his ACL and is out for the season.",
+             url="u1", author="Reporter One"),
+        _row(_qb, text=f"{_qb.full_name} tore his ACL and is out for the season.",
+             url="u2", author="Reporter Two", klass="DIRECT_QUOTATION")]
+check("a confirmed major event with two reporters may reach HIGH",
+      fz.strength(_two, "INJURY", independent=2) == fz.HIGH)
+
+# Duplicates are not corroboration.
+_dupes = [_row(_qb, url="u1", author="Same Reporter"),
+          _row(_qb, url="u1", author="Same Reporter", cid="c-other")]
+check("the same article twice is one independent source",
+      fz.independent_sources(_dupes) == 1, fz.independent_sources(_dupes))
+_synd = [_row(_qb, url="u1", author="Same Reporter"),
+         _row(_qb, url="u2", author="Same Reporter")]
+check("a syndicated story by one reporter is one independent source",
+      fz.independent_sources(_synd) == 1, fz.independent_sources(_synd))
+
+# Two spans of one reporter's account of one practice are not repetition.
+_one_article = [_row(_qb, url="u1"), _row(_qb, url="u1", cid="c-second")]
+check("two spans from one article do not reach MEDIUM",
+      fz.strength(_one_article, "FIRST_TEAM_REPS", 1) == fz.LOW)
+
+# UPDATE_RECOMMENDED is a task for a person, never a projection change.
+_hi = fz.Impact(player_id=_qb.player_id, player_name=_qb.full_name,
+                team=_qb.team, position=_qb.position,
+                impact_strength=fz.HIGH, independent_source_count=1,
+                evidence_candidate_ids=["c1"],
+                lineupbeat_commentary="x", projection_action=fz.UPDATE_RECOMMENDED)
+check("UPDATE_RECOMMENDED without corroboration fails validation",
+      any("corroboration" in b for b in fz.validate(_hi, [_row(_qb)], _reg)))
+fsrc = code_only((ROOT / "wire" / "fantasy.py").read_text())
+wfi_src = code_only((ROOT / "scripts" / "wire_fantasy_impact.py").read_text())
+check("the fantasy layer never touches projection files",
+      not FORBIDDEN_NAMES.search(fsrc) and not FORBIDDEN_NAMES.search(wfi_src))
+check("the fantasy layer imports nothing from the fantasy side",
+      not FORBIDDEN_IMPORTS.findall(fsrc)
+      and not FORBIDDEN_IMPORTS.findall(wfi_src))
+check("UPDATE_RECOMMENDED writes no projection",
+      "projections.xlsx" not in wfi_src and "build_rankings" not in wfi_src)
+
+# Invented facts fail validation.
+_liar = fz.build([_row(_qb)], _reg, "v1")
+_liar.lineupbeat_commentary = ("He tore his ACL and will miss 6 weeks, and "
+                               "took 12 carries.")
+_probs = fz.validate(_liar, [_row(_qb)], _reg)
+check("commentary inventing an injury or a number fails validation",
+      any("injury or timeline" in b or "number" in b for b in _probs), _probs)
+_wrongplayer = fz.build([_row(_qb)], _reg, "v1")
+_wrongplayer.player_name = "Somebody Entirely Else"
+check("commentary about a player absent from the evidence fails validation",
+      any("not named in the supporting evidence" in b
+          for b in fz.validate(_wrongplayer, [_row(_qb)], _reg)))
+
+# A relayed Athletic quotation cannot become a strong signal.
+_relayed = "The Athletic's Jeff Zrebiec reported that he took every first-team rep."
+_rk, _, _ = ev.classify(_relayed, reporter_voice=True)
+check("a relayed Athletic report is neither firsthand nor a direct quotation",
+      _rk not in (ev.FIRSTHAND_OBSERVATION, ev.DIRECT_QUOTATION), _rk)
+check("a relayed report is not eligible to support commentary",
+      _rk not in WFI.SUPPORTING, _rk)
+
+# Storage separation, review independence and dependency.
+with tempfile.TemporaryDirectory() as tmp:
+    st = WireStore(Path(tmp) / "f.db")
+    st._fantasy_schema()
+    ecols = {r["name"] for r in st.conn.execute("PRAGMA table_info(wire_evidence)")}
+    check("evidence rows carry no generated commentary",
+          not (ecols & {"lineupbeat_commentary", "fantasy_impact",
+                        "impact_strength", "projection_action"}), sorted(ecols))
+    rec = fz.build([_row(_qb)], _reg, "v1").to_record()
+    rec["evidence_candidate_ids"] = ["cand-A"]
+    st.upsert_impact(rec)
+    check("a stored impact begins PENDING",
+          st.impacts()[0]["review_status"] == fz.PENDING)
+    # Regeneration is idempotent and never overwrites a decision.
+    st.upsert_impact(rec)
+    check("regenerating unchanged evidence makes no second record",
+          len(st.impacts()) == 1, len(st.impacts()))
+    st.conn.execute("UPDATE wire_fantasy_impact SET review_status='APPROVED', "
+                    "lineupbeat_commentary='a human wrote this'")
+    st.conn.commit()
+    st.upsert_impact(rec)
+    got = st.impacts()[0]
+    check("regeneration preserves an approved decision and its edited text",
+          got["review_status"] == "APPROVED"
+          and got["lineupbeat_commentary"] == "a human wrote this",
+          dict(got)["review_status"])
+    # Rejecting the commentary leaves the evidence alone.
+    st.conn.execute("UPDATE wire_fantasy_impact SET review_status='REJECTED'")
+    st.conn.commit()
+    st.conn.execute(
+        "INSERT INTO wire_evidence (candidate_id, review_status) VALUES (?,?)",
+        ("cand-A", "APPROVED"))
+    st.conn.commit()
+    ev_status = st.conn.execute(
+        "SELECT review_status FROM wire_evidence WHERE candidate_id='cand-A'"
+    ).fetchone()["review_status"]
+    check("rejecting commentary does not reject its evidence",
+          ev_status == "APPROVED", ev_status)
+    # Rejecting the evidence invalidates the commentary.
+    st.conn.execute("UPDATE wire_fantasy_impact SET review_status='PENDING'")
+    st.conn.execute("UPDATE wire_evidence SET review_status='REJECTED' "
+                    "WHERE candidate_id='cand-A'")
+    st.conn.commit()
+    n = st.invalidate_impacts_without_evidence()
+    got = st.impacts()[0]
+    check("rejecting all supporting evidence invalidates the commentary",
+          n == 1 and got["review_status"] == "INVALIDATED", n)
+    check("an invalidated record records why and when",
+          got["invalidated_at"] and got["invalidation_reason"])
 
 # ---------------------------------------------------------------- reporting
 # Reporting is allowed to change freely. The numbers it reports on are not:

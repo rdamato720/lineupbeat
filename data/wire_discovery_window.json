@@ -1,0 +1,1207 @@
+{
+ "observations": [
+  {
+   "observed_at": "2026-08-21T02:44:15+00:00",
+   "teams": {
+    "ARI": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SITE_FEED_AUTHOR_FILTER",
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 40,
+     "accepted": 28,
+     "excluded": 12,
+     "reasons": {
+      "national list": 1,
+      "wrong team": 1,
+      "national SI story syndicated to a team page": 10
+     },
+     "sources": [
+      "arizona_sports_tyler_drake",
+      "si_cardinals"
+     ]
+    },
+    "GB": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SITE_FEED_AUTHOR_FILTER",
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 40,
+     "accepted": 23,
+     "excluded": 17,
+     "reasons": {
+      "power rankings": 1,
+      "national SI story syndicated to a team page": 15,
+      "winners and losers": 1
+     },
+     "sources": [
+      "packers_on_si_bill_huber",
+      "si_packers"
+     ]
+    },
+    "TB": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "FULL_TEXT_FEED",
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 48,
+     "accepted": 24,
+     "excluded": 24,
+     "reasons": {
+      "unknown author": 7,
+      "wrong team": 2,
+      "national SI story syndicated to a team page": 15
+     },
+     "sources": [
+      "pewter_report",
+      "si_buccaneers"
+     ]
+    },
+    "TEN": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SITE_FEED_AUTHOR_FILTER",
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 20,
+     "excluded": 19,
+     "reasons": {
+      "roster prediction": 1,
+      "national SI story syndicated to a team page": 16,
+      "wrong team": 1,
+      "power rankings": 1
+     },
+     "sources": [
+      "atoz_sports_easton_freeze",
+      "si_titans"
+     ]
+    },
+    "PHI": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SITE_FEED_AUTHOR_FILTER",
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 45,
+     "accepted": 24,
+     "excluded": 21,
+     "reasons": {
+      "national SI story syndicated to a team page": 14,
+      "wrong team": 3,
+      "unknown author": 4
+     },
+     "sources": [
+      "phillyvoice_jimmy_kempski",
+      "si_eagles"
+     ]
+    },
+    "NE": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "AUTHOR_PAGE_SCRAPE",
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 54,
+     "accepted": 39,
+     "excluded": 15,
+     "reasons": {
+      "national SI story syndicated to a team page": 15
+     },
+     "sources": [
+      "boston_herald_andrew_callahan",
+      "si_patriots"
+     ]
+    },
+    "ATL": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 7,
+     "excluded": 32,
+     "reasons": {
+      "unknown author": 17,
+      "national SI story syndicated to a team page": 15
+     },
+     "sources": [
+      "si_falcons"
+     ]
+    },
+    "BAL": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SI_TEAM_PAGE",
+      "EXCERPT_FEED_PAGE_FETCH"
+     ],
+     "discovered": 42,
+     "accepted": 8,
+     "excluded": 34,
+     "reasons": {
+      "national SI story syndicated to a team page": 18,
+      "unknown author": 15,
+      "national list": 1
+     },
+     "sources": [
+      "si_ravens",
+      "pressbox_baltimore"
+     ]
+    },
+    "BUF": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 40,
+     "accepted": 14,
+     "excluded": 26,
+     "reasons": {
+      "author is classified AGGREGATION": 6,
+      "author is classified ANALYSIS_ONLY": 5,
+      "national list": 1,
+      "unknown author": 2,
+      "national SI story syndicated to a team page": 12
+     },
+     "sources": [
+      "si_bills"
+     ]
+    },
+    "CAR": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 16,
+     "excluded": 23,
+     "reasons": {
+      "unknown author": 8,
+      "author is classified AGGREGATION": 3,
+      "national SI story syndicated to a team page": 11,
+      "roster prediction": 1
+     },
+     "sources": [
+      "si_panthers"
+     ]
+    },
+    "CHI": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 4,
+     "excluded": 35,
+     "reasons": {
+      "national SI story syndicated to a team page": 14,
+      "unknown author": 10,
+      "author is classified AGGREGATION": 11
+     },
+     "sources": [
+      "si_bears"
+     ]
+    },
+    "CIN": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 15,
+     "excluded": 24,
+     "reasons": {
+      "unknown author": 11,
+      "national SI story syndicated to a team page": 12,
+      "national list": 1
+     },
+     "sources": [
+      "si_bengals"
+     ]
+    },
+    "CLE": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 40,
+     "accepted": 4,
+     "excluded": 36,
+     "reasons": {
+      "unknown author": 21,
+      "winners and losers": 1,
+      "national SI story syndicated to a team page": 13,
+      "wrong team": 1
+     },
+     "sources": [
+      "si_browns"
+     ]
+    },
+    "DAL": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 8,
+     "excluded": 31,
+     "reasons": {
+      "author is classified AGGREGATION": 13,
+      "unknown author": 5,
+      "wrong team": 2,
+      "power rankings": 1,
+      "national SI story syndicated to a team page": 10
+     },
+     "sources": [
+      "si_cowboys"
+     ]
+    },
+    "DEN": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 5,
+     "excluded": 34,
+     "reasons": {
+      "unknown author": 21,
+      "national SI story syndicated to a team page": 12,
+      "wrong team": 1
+     },
+     "sources": [
+      "si_broncos"
+     ]
+    },
+    "DET": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 9,
+     "excluded": 30,
+     "reasons": {
+      "national SI story syndicated to a team page": 17,
+      "unknown author": 13
+     },
+     "sources": [
+      "si_lions"
+     ]
+    },
+    "HOU": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 17,
+     "excluded": 22,
+     "reasons": {
+      "national SI story syndicated to a team page": 22
+     },
+     "sources": [
+      "si_texans"
+     ]
+    },
+    "IND": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 13,
+     "excluded": 26,
+     "reasons": {
+      "unknown author": 7,
+      "national SI story syndicated to a team page": 16,
+      "wrong team": 3
+     },
+     "sources": [
+      "si_colts"
+     ]
+    },
+    "JAX": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 19,
+     "excluded": 20,
+     "reasons": {
+      "national SI story syndicated to a team page": 19,
+      "no identifiable author": 1
+     },
+     "sources": [
+      "si_jaguars"
+     ]
+    },
+    "KC": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 12,
+     "excluded": 27,
+     "reasons": {
+      "unknown author": 12,
+      "national SI story syndicated to a team page": 14,
+      "roster prediction": 1
+     },
+     "sources": [
+      "si_chiefs"
+     ]
+    },
+    "LAC": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 15,
+     "excluded": 24,
+     "reasons": {
+      "national SI story syndicated to a team page": 18,
+      "unknown author": 6
+     },
+     "sources": [
+      "si_chargers"
+     ]
+    },
+    "LAR": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 38,
+     "accepted": 18,
+     "excluded": 20,
+     "reasons": {
+      "national SI story syndicated to a team page": 17,
+      "winners and losers": 1,
+      "wrong team": 1,
+      "roster prediction": 1
+     },
+     "sources": [
+      "si_rams"
+     ]
+    },
+    "LV": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 40,
+     "accepted": 11,
+     "excluded": 29,
+     "reasons": {
+      "unknown author": 10,
+      "national SI story syndicated to a team page": 19
+     },
+     "sources": [
+      "si_raiders"
+     ]
+    },
+    "MIA": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 18,
+     "excluded": 21,
+     "reasons": {
+      "unknown author": 4,
+      "power rankings": 1,
+      "national SI story syndicated to a team page": 16
+     },
+     "sources": [
+      "si_dolphins"
+     ]
+    },
+    "MIN": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SI_TEAM_PAGE",
+      "FULL_TEXT_FEED"
+     ],
+     "discovered": 59,
+     "accepted": 41,
+     "excluded": 18,
+     "reasons": {
+      "national SI story syndicated to a team page": 15,
+      "unknown author": 3
+     },
+     "sources": [
+      "si_vikings",
+      "purple_insider_matthew_coller"
+     ]
+    },
+    "NO": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 38,
+     "accepted": 14,
+     "excluded": 24,
+     "reasons": {
+      "national SI story syndicated to a team page": 22,
+      "wrong team": 2
+     },
+     "sources": [
+      "si_saints"
+     ]
+    },
+    "NYG": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 13,
+     "excluded": 26,
+     "reasons": {
+      "unknown author": 9,
+      "national SI story syndicated to a team page": 16,
+      "wrong team": 1
+     },
+     "sources": [
+      "si_giants"
+     ]
+    },
+    "NYJ": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SI_TEAM_PAGE",
+      "FULL_TEXT_FEED"
+     ],
+     "discovered": 79,
+     "accepted": 59,
+     "excluded": 20,
+     "reasons": {
+      "national SI story syndicated to a team page": 16,
+      "author is classified ANALYSIS_ONLY": 4
+     },
+     "sources": [
+      "si_jets",
+      "jets_x_factor"
+     ]
+    },
+    "PIT": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SI_TEAM_PAGE",
+      "EXCERPT_FEED_PAGE_FETCH"
+     ],
+     "discovered": 59,
+     "accepted": 37,
+     "excluded": 22,
+     "reasons": {
+      "unknown author": 5,
+      "national SI story syndicated to a team page": 17
+     },
+     "sources": [
+      "si_steelers",
+      "steelers_depot"
+     ]
+    },
+    "SEA": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 15,
+     "excluded": 24,
+     "reasons": {
+      "unknown author": 11,
+      "national SI story syndicated to a team page": 10,
+      "roster prediction": 1,
+      "wrong team": 1,
+      "national list": 1
+     },
+     "sources": [
+      "si_seahawks"
+     ]
+    },
+    "SF": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 0,
+     "excluded": 39,
+     "reasons": {
+      "national SI story syndicated to a team page": 18,
+      "unknown author": 16,
+      "wrong team": 5
+     },
+     "sources": [
+      "si_49ers"
+     ]
+    },
+    "WAS": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 38,
+     "accepted": 22,
+     "excluded": 16,
+     "reasons": {
+      "unknown author": 2,
+      "national SI story syndicated to a team page": 14
+     },
+     "sources": [
+      "si_commanders"
+     ]
+    }
+   }
+  },
+  {
+   "observed_at": "2026-08-21T02:56:40+00:00",
+   "teams": {
+    "ARI": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SITE_FEED_AUTHOR_FILTER",
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 40,
+     "accepted": 28,
+     "excluded": 12,
+     "reasons": {
+      "national list": 1,
+      "wrong team": 1,
+      "national SI story syndicated to a team page": 10
+     },
+     "sources": [
+      "arizona_sports_tyler_drake",
+      "si_cardinals"
+     ]
+    },
+    "GB": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SITE_FEED_AUTHOR_FILTER",
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 40,
+     "accepted": 23,
+     "excluded": 17,
+     "reasons": {
+      "power rankings": 1,
+      "national SI story syndicated to a team page": 15,
+      "winners and losers": 1
+     },
+     "sources": [
+      "packers_on_si_bill_huber",
+      "si_packers"
+     ]
+    },
+    "TB": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "FULL_TEXT_FEED",
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 48,
+     "accepted": 30,
+     "excluded": 18,
+     "reasons": {
+      "wrong team": 2,
+      "unknown author": 1,
+      "national SI story syndicated to a team page": 15
+     },
+     "sources": [
+      "pewter_report",
+      "si_buccaneers"
+     ]
+    },
+    "TEN": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SITE_FEED_AUTHOR_FILTER",
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 0,
+     "excluded": 39,
+     "reasons": {
+      "author is classified AGGREGATION": 22,
+      "national SI story syndicated to a team page": 16,
+      "wrong team": 1
+     },
+     "sources": [
+      "atoz_sports_easton_freeze",
+      "si_titans"
+     ]
+    },
+    "PHI": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SITE_FEED_AUTHOR_FILTER",
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 45,
+     "accepted": 28,
+     "excluded": 17,
+     "reasons": {
+      "national SI story syndicated to a team page": 14,
+      "wrong team": 3
+     },
+     "sources": [
+      "phillyvoice_jimmy_kempski",
+      "si_eagles"
+     ]
+    },
+    "NE": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "AUTHOR_PAGE_SCRAPE",
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 54,
+     "accepted": 39,
+     "excluded": 15,
+     "reasons": {
+      "national SI story syndicated to a team page": 15
+     },
+     "sources": [
+      "boston_herald_andrew_callahan",
+      "si_patriots"
+     ]
+    },
+    "ATL": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 13,
+     "excluded": 26,
+     "reasons": {
+      "author is classified AGGREGATION": 10,
+      "national SI story syndicated to a team page": 15,
+      "betting": 1
+     },
+     "sources": [
+      "si_falcons"
+     ]
+    },
+    "BAL": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SI_TEAM_PAGE",
+      "EXCERPT_FEED_PAGE_FETCH"
+     ],
+     "discovered": 42,
+     "accepted": 8,
+     "excluded": 34,
+     "reasons": {
+      "national SI story syndicated to a team page": 18,
+      "unknown author": 15,
+      "national list": 1
+     },
+     "sources": [
+      "si_ravens",
+      "pressbox_baltimore"
+     ]
+    },
+    "BUF": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 17,
+     "excluded": 22,
+     "reasons": {
+      "author is classified AGGREGATION": 5,
+      "mock draft": 1,
+      "national list": 1,
+      "unknown author": 2,
+      "national SI story syndicated to a team page": 12,
+      "roster prediction": 1
+     },
+     "sources": [
+      "si_bills"
+     ]
+    },
+    "CAR": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 18,
+     "excluded": 21,
+     "reasons": {
+      "author is classified AGGREGATION": 6,
+      "unknown author": 3,
+      "national SI story syndicated to a team page": 11,
+      "roster prediction": 1
+     },
+     "sources": [
+      "si_panthers"
+     ]
+    },
+    "CHI": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 8,
+     "excluded": 31,
+     "reasons": {
+      "national SI story syndicated to a team page": 14,
+      "author is classified AGGREGATION": 14,
+      "author is classified ANALYSIS_ONLY": 3
+     },
+     "sources": [
+      "si_bears"
+     ]
+    },
+    "CIN": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 18,
+     "excluded": 21,
+     "reasons": {
+      "author is classified AGGREGATION": 3,
+      "unknown author": 5,
+      "national SI story syndicated to a team page": 12,
+      "national list": 1
+     },
+     "sources": [
+      "si_bengals"
+     ]
+    },
+    "CLE": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 40,
+     "accepted": 12,
+     "excluded": 28,
+     "reasons": {
+      "unknown author": 9,
+      "winners and losers": 1,
+      "author is classified AGGREGATION": 4,
+      "national SI story syndicated to a team page": 13,
+      "wrong team": 1
+     },
+     "sources": [
+      "si_browns"
+     ]
+    },
+    "DAL": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 0,
+     "excluded": 39,
+     "reasons": {
+      "author is classified AGGREGATION": 27,
+      "wrong team": 2,
+      "national SI story syndicated to a team page": 10
+     },
+     "sources": [
+      "si_cowboys"
+     ]
+    },
+    "DEN": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 21,
+     "excluded": 18,
+     "reasons": {
+      "national SI story syndicated to a team page": 12,
+      "winners and losers": 2,
+      "unknown author": 2,
+      "wrong team": 1,
+      "roster prediction": 1
+     },
+     "sources": [
+      "si_broncos"
+     ]
+    },
+    "DET": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 16,
+     "excluded": 23,
+     "reasons": {
+      "national SI story syndicated to a team page": 17,
+      "unknown author": 5,
+      "winners and losers": 1
+     },
+     "sources": [
+      "si_lions"
+     ]
+    },
+    "HOU": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 0,
+     "excluded": 39,
+     "reasons": {
+      "national SI story syndicated to a team page": 22,
+      "author is classified AGGREGATION": 17
+     },
+     "sources": [
+      "si_texans"
+     ]
+    },
+    "IND": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 13,
+     "excluded": 26,
+     "reasons": {
+      "unknown author": 7,
+      "national SI story syndicated to a team page": 16,
+      "wrong team": 3
+     },
+     "sources": [
+      "si_colts"
+     ]
+    },
+    "JAX": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 19,
+     "excluded": 20,
+     "reasons": {
+      "national SI story syndicated to a team page": 19,
+      "no identifiable author": 1
+     },
+     "sources": [
+      "si_jaguars"
+     ]
+    },
+    "KC": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 18,
+     "excluded": 21,
+     "reasons": {
+      "national SI story syndicated to a team page": 14,
+      "author is classified AGGREGATION": 4,
+      "national list": 1,
+      "unknown author": 2
+     },
+     "sources": [
+      "si_chiefs"
+     ]
+    },
+    "LAC": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 6,
+     "excluded": 33,
+     "reasons": {
+      "national SI story syndicated to a team page": 18,
+      "author is classified AGGREGATION": 9,
+      "unknown author": 6
+     },
+     "sources": [
+      "si_chargers"
+     ]
+    },
+    "LAR": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 38,
+     "accepted": 0,
+     "excluded": 38,
+     "reasons": {
+      "national SI story syndicated to a team page": 17,
+      "author is classified AGGREGATION": 20,
+      "wrong team": 1
+     },
+     "sources": [
+      "si_rams"
+     ]
+    },
+    "LV": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 38,
+     "accepted": 10,
+     "excluded": 28,
+     "reasons": {
+      "unknown author": 10,
+      "national SI story syndicated to a team page": 18
+     },
+     "sources": [
+      "si_raiders"
+     ]
+    },
+    "MIA": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 18,
+     "excluded": 21,
+     "reasons": {
+      "unknown author": 4,
+      "power rankings": 1,
+      "national SI story syndicated to a team page": 16
+     },
+     "sources": [
+      "si_dolphins"
+     ]
+    },
+    "MIN": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SI_TEAM_PAGE",
+      "FULL_TEXT_FEED"
+     ],
+     "discovered": 59,
+     "accepted": 41,
+     "excluded": 18,
+     "reasons": {
+      "national SI story syndicated to a team page": 15,
+      "unknown author": 3
+     },
+     "sources": [
+      "si_vikings",
+      "purple_insider_matthew_coller"
+     ]
+    },
+    "NO": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 38,
+     "accepted": 0,
+     "excluded": 38,
+     "reasons": {
+      "national SI story syndicated to a team page": 22,
+      "author is classified AGGREGATION": 14,
+      "wrong team": 2
+     },
+     "sources": [
+      "si_saints"
+     ]
+    },
+    "NYG": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 13,
+     "excluded": 26,
+     "reasons": {
+      "unknown author": 9,
+      "national SI story syndicated to a team page": 16,
+      "wrong team": 1
+     },
+     "sources": [
+      "si_giants"
+     ]
+    },
+    "NYJ": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SI_TEAM_PAGE",
+      "FULL_TEXT_FEED"
+     ],
+     "discovered": 79,
+     "accepted": 52,
+     "excluded": 27,
+     "reasons": {
+      "national SI story syndicated to a team page": 16,
+      "author is classified AGGREGATION": 11
+     },
+     "sources": [
+      "si_jets",
+      "jets_x_factor"
+     ]
+    },
+    "PIT": {
+     "discovery_runs": 2,
+     "ok": 2,
+     "methods": [
+      "SI_TEAM_PAGE",
+      "EXCERPT_FEED_PAGE_FETCH"
+     ],
+     "discovered": 59,
+     "accepted": 41,
+     "excluded": 18,
+     "reasons": {
+      "national SI story syndicated to a team page": 17,
+      "roster prediction": 1
+     },
+     "sources": [
+      "si_steelers",
+      "steelers_depot"
+     ]
+    },
+    "SEA": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 22,
+     "excluded": 17,
+     "reasons": {
+      "power rankings": 1,
+      "national SI story syndicated to a team page": 10,
+      "roster prediction": 1,
+      "wrong team": 1,
+      "mock draft": 1,
+      "unknown author": 2,
+      "national list": 1
+     },
+     "sources": [
+      "si_seahawks"
+     ]
+    },
+    "SF": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 39,
+     "accepted": 9,
+     "excluded": 30,
+     "reasons": {
+      "national SI story syndicated to a team page": 18,
+      "unknown author": 2,
+      "author is classified AGGREGATION": 5,
+      "wrong team": 5
+     },
+     "sources": [
+      "si_49ers"
+     ]
+    },
+    "WAS": {
+     "discovery_runs": 1,
+     "ok": 1,
+     "methods": [
+      "SI_TEAM_PAGE"
+     ],
+     "discovered": 38,
+     "accepted": 22,
+     "excluded": 16,
+     "reasons": {
+      "author is classified ANALYSIS_ONLY": 2,
+      "national SI story syndicated to a team page": 14
+     },
+     "sources": [
+      "si_commanders"
+     ]
+    }
+   }
+  }
+ ]
+}

@@ -85,14 +85,118 @@ MEDICAL = re.compile(
 # refuses to fetch The Athletic, and a rewrite of an Athletic story is the
 # same content taking a different door.
 RELAY = re.compile(
-    r"(?i)\b(the athletic|athletic'?s|espn'?s?|nfl network|nfl\.com|"
-    r"pro football talk|pft|the ringer|cbs sports|fox sports|yahoo sports|"
-    r"si\.com|bleacher report|chgo|the score|sports illustrated'?s)\b"
-    r"|\b[A-Z][a-z]+(?:\s[A-Z][a-z]+)? (?:wrote|reported|noted|added) that\b"
-    r"|\b[A-Z][a-z]+ (?:wrote|reported)\b"
-    r"|\b(per|according to) [A-Z][a-z]+\b", re.I)
+    # An outlet only counts when it is doing the reporting: possessive, or
+    # next to a reporting verb, or introduced by per/via. A bare "ESPN"
+    # matched site chrome in every article a publisher wrote -- trafilatura
+    # keeps some navigation -- and marked twelve of twelve of one reporter's
+    # articles as relayed when none of them were.
+    r"(?i)\b(the athletic|espn|nfl network|nfl\.com|pro football talk|"
+    r"the ringer|cbs sports|fox sports|yahoo sports|bleacher report|"
+    r"pro football focus|pff|the ringer)"
+    r"(?:'s|\u2019s)\s+[A-Z]"                       # ESPN's Adam Schefter
+    r"|\b(?:per|via|according to)\s+"
+    r"(?:the athletic|espn|nfl network|nfl\.com|pff|pro football focus|"
+    r"cbs sports|fox sports|yahoo|bleacher report|multiple reports?|"
+    r"a report)\b"
+    r"|\b(the athletic|espn|nfl network|cbs sports|fox sports)\b"
+    r"\s+(?:first )?(?:reported|reports)\b"
+    # A named journalist doing the reporting. The surname has to look like a
+    # surname: "And wrote" is a sentence, not a source.
+    r"|\b(?!And|But|He|She|They|It|The|This|That|Who|Coach)"
+    r"[A-Z][a-z]{2,}(?:\s+[A-Z][a-z]{2,})?\s+"
+    r"(?:first )?(?:reported|wrote|tweeted|posted)\b"
+    r"|\b(?:per|according to)\s+"
+    r"(?!head|assistant|offensive|defensive|the team|the coach|sources)"
+    r"[A-Z][a-z]{2,}\s+[A-Z][a-z]{2,}\b")            # per Adam Schefter
 
 SENT_SPLIT = re.compile(r"(?<=[.!?])\s+(?=[A-Z“\"])")
+
+
+# --------------------------------------------------------------- relevance
+# A span has to be a current football development. Most of what a team page
+# publishes is not: biography, schedule notes, sponsor copy, and the
+# publisher's own fantasy advice, which is the one category that must never
+# become evidence no matter how confidently it is written. Each pattern
+# carries the reason it fires, because "excluded" without "why" cannot be
+# audited.
+NOT_ACTIONABLE = [
+    ("source fantasy advice", re.compile(
+        r"(?i)\b(sleeper|breakout candidate|bust|draft him|worth a (?:pick|round)|"
+        r"start(?:/| or )sit|start him|sit him|waiver (?:wire|add|claim)|"
+        r"must[- ]draft|league winner|fantasy (?:points|value|relevance|"
+        r"rankings?|projections?|advice|manager|owner|football)|"
+        r"\badp\b|\bdfs\b|flex play|roster(?:ed)? in \d+%|"
+        r"(?:round|rd\.?) \d+ (?:pick|value|target))\b")),
+    ("betting or props", re.compile(
+        r"(?i)\b(odds|betting|sportsbook|parlay|point spread|prop bets?|"
+        r"over/under|moneyline|promo code|to win the|\+\d{3}\b)\b")),
+    ("mock draft or power ranking", re.compile(
+        r"(?i)\b(mock draft|power rankings?|draft grades?)\b")),
+    ("trade proposal", re.compile(
+        r"(?i)\b(trade proposal|blockbuster trade|should trade for|trade idea)\b")),
+    ("national list", re.compile(
+        r"(?i)\b(top \d+ (?:players|prospects|quarterbacks)|"
+        r"ranking the \w+|greatest \w+ of all time)\b")),
+    ("schedule or fixture note", re.compile(
+        r"(?i)\b(kickoff is (?:set|scheduled)|will be televised|"
+        r"tv schedule|how to watch|game time is|tickets? (?:are )?(?:on sale|available))\b")),
+    ("promotional or sponsor copy", re.compile(
+        r"(?i)\b(sign up (?:for|now)|subscribe (?:to|now)|use promo|"
+        r"presented by|sponsored by|shop now|our partners|"
+        r"download the app|follow us on)\b")),
+    ("biography or history", re.compile(
+        r"(?i)\b(was born in|attended \w+ high school|drafted in the \w+ round of the "
+        r"\d{4}|his college career|back in (?:19|20)\d\d|"
+        r"a decade ago|hall of fame (?:induction|ceremony))\b")),
+]
+
+# What makes a span current and actionable. One of these has to be present:
+# a role, a usage, a health or availability fact, or a performance event.
+ACTIONABLE = re.compile(
+    r"(?i)\b(practice|reps?|snaps?|targets?|carries|routes?|depth chart|"
+    r"first[- ]team|second[- ]team|starter|starting|injur|limited|"
+    r"did not (?:practice|participate)|returned|activated|ruled out|"
+    r"questionable|doubtful|red[- ]zone|touchdown|caught|completion|"
+    r"role|rotation|package|workload|snap share|camp|drill)\b")
+
+
+def relevance(text: str) -> str:
+    """Why this span may not become a claim, or "".
+
+    The fantasy-advice rule runs first and is absolute. A source contributes
+    its real-world reporting; its conclusions about who to draft are its own
+    and are not ours to carry, however the sentence is phrased.
+    """
+    t = text or ""
+    for reason, pat in NOT_ACTIONABLE:
+        m = pat.search(t)
+        if m:
+            return f"{reason} ({m.group(0).strip().lower()!r})"
+    if not ACTIONABLE.search(t):
+        return "no current role, usage, health or performance development"
+    return ""
+
+
+def claim_key(player_id: str, text: str) -> str:
+    """Identity of a claim: this player, this normalised passage.
+
+    Normalised so that whitespace and punctuation differences between two
+    copies of a syndicated story do not read as two separate observations.
+    """
+    return hashlib.sha256(
+        f"{player_id}|{norm_claim(text)}".encode()).hexdigest()[:20]
+
+
+def norm_claim(text: str) -> str:
+    return " ".join(re.sub(r"[^a-z0-9 ]+", " ", (text or "").lower()).split())
+
+
+def overlap(a: str, b: str) -> float:
+    """How much two passages share, as a fraction of the shorter one."""
+    wa, wb = set(norm_claim(a).split()), set(norm_claim(b).split())
+    if not wa or not wb:
+        return 0.0
+    return len(wa & wb) / min(len(wa), len(wb))
 
 
 @dataclass
@@ -243,6 +347,30 @@ def find_players(text: str, registry: pl.Registry, team: str
                 hits, how = registry.resolve(p.full_name, p.team, p.position)
                 found[p.full_name] = (p.full_name, hits, how)
     return list(found.values())
+
+
+SPEAKER = re.compile(
+    r"([A-Z][\w.'\-]+(?:\s+[A-Z][\w.'\-]+){0,2})\s+"
+    r"(?:said|says|told|explained|added|noted|acknowledged|insisted|"
+    r"admitted|stated)", re.I)
+
+
+def is_speaker(player_name: str, text: str) -> bool:
+    """Is this player the one being quoted, or merely mentioned nearby?
+
+    A span can quote one player and list another two sentences later. Filed
+    per player without this check, the second one acquires a direct
+    quotation he never gave: a Patriots span quoting Hassan Haskins was
+    filed as a direct quotation from Jam Miller, who is named once, in a
+    list of running backs.
+    """
+    last = pl.norm(player_name).split()[-1] if player_name else ""
+    if not last:
+        return False
+    for m in SPEAKER.finditer(text or ""):
+        if last in pl.norm(m.group(1)).split():
+            return True
+    return False
 
 
 def group_id(source_key: str, location: str, text: str) -> str:
