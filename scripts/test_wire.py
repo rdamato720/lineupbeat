@@ -1502,6 +1502,47 @@ check("a NEUTRAL card whose wording argues negative is flagged",
       PP.framing_conflict("NEUTRAL", "This is a concerning depth-chart signal."))
 check("a consistent card is not flagged",
       not PP.framing_conflict("NEUTRAL", "He took second-team reps on Tuesday."))
+
+# Every readiness failure the reviewer asked to be automatic. Each is
+# checked on the finished wording, because each is a failure of wording that
+# no score would catch.
+_R = PP.readiness_failures
+check("stale framing blocks a card",
+      _R({"direction": "NEUTRAL", "mechanism": "SECOND_TEAM_REPS",
+          "reviewer_action": "APPROVE",
+          "commentary": "This is a concerning signal during one practice.",
+          "evidence": "He led the second-team offense."}))
+check("a mechanism unsupported by the passage blocks a card",
+      any("not supported by the evidence" in f for f in
+          _R({"direction": "NEGATIVE", "mechanism": "INJURY",
+              "reviewer_action": "APPROVE",
+              "commentary": "He missed one practice; no timetable was given.",
+              "evidence": "Players who did not participate were QB Quinn Ewers."})))
+check("an absence without temporary context blocks a card",
+      any("temporary context" in f for f in
+          _R({"direction": "NEGATIVE", "mechanism": "LIMITED_PARTICIPATION",
+              "reviewer_action": "APPROVE", "commentary": "He is not practising.",
+              "evidence": "He did not participate."})))
+check("implying a permanent change blocks a card",
+      any("permanent role change" in f for f in
+          _R({"direction": "POSITIVE", "mechanism": "RED_ZONE",
+              "reviewer_action": "APPROVE",
+              "commentary": "Blair has passed Dotson in one practice.",
+              "evidence": "Blair received most of Dotson's red-zone snaps."})))
+check("a pending item can never be presented as publishable",
+      any("not an approval" in f for f in
+          _R({"direction": "POSITIVE", "mechanism": "CARRIES",
+              "reviewer_action": "PENDING",
+              "commentary": "He took carries during one practice.",
+              "evidence": "He soaked up carries."})))
+check("a clean card passes readiness",
+      not _R({"direction": "NEUTRAL", "mechanism": "SECOND_TEAM_REPS",
+              "reviewer_action": "APPROVE_WITH_EDIT",
+              "commentary": "He led the second-team offense during one "
+                            "practice. The report does not establish whether "
+                            "this was a rotation.",
+              "evidence": "He led the second-team offense on a drive."}))
+
 # The file names wire_publications.json in prose to say it does not touch
 # it; what matters is that it never opens it for writing.
 _ppsrc = code_only((ROOT / "scripts" / "wire_publication_preview.py").read_text())
@@ -1513,9 +1554,12 @@ _pp = json.loads((ROOT / "data" / "wire_publication_preview.json").read_text())
 check("the preview marks itself unpublished", _pp["published"] is False)
 check("only reviewer-approved cases reach the preview",
       all(c["reviewer_action"].startswith("APPROVE") for c in _pp["cards"]))
-check("abstentions and inconclusive cases are held back",
-      any("inconclusive" in h["why"] for h in _pp["held_back"])
-      and any("ABSTAIN" in h["why"] for h in _pp["held_back"]))
+check("Claude's original wording is preserved beside a reviewer edit",
+      all("claude_original_commentary" in c for c in _pp["cards"]), _pp["cards"][0].keys() if _pp["cards"] else None)
+check("held-back items are named with a reason",
+      all(h.get("why") for h in _pp["held_back"]))
+check("a held evidence conflict is named as such",
+      any("not supported by the passage" in h["why"] for h in _pp["held_back"]))
 
 # --------------------------------------------- Claude as the interpreter
 # available() must mean usable, not present. The first version returned True

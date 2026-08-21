@@ -1,0 +1,65 @@
+{
+ "reviewed_at": "2026-08-21",
+ "reviewer": "ralph",
+ "provider": "claude",
+ "model": "claude-sonnet-4-5",
+ "prompt_version": "wire-fantasy-2026-08-21c",
+ "schema_version": "semantic-v1",
+ "corpus_version": "eval-v2",
+ "decisions": {
+  "anthony-richardson": {
+   "action": "APPROVE_WITH_EDIT",
+   "subject": "Anthony Richardson",
+   "mechanism": "SECOND_TEAM_REPS",
+   "direction": "NEUTRAL",
+   "strength": "LOW",
+   "horizon": "SHORT_TERM",
+   "projection_action": "NONE",
+   "reader_label": "Worth noting",
+   "edited_text": "Anthony Richardson led the Colts' second-team offense on a field-goal drive during the final day of training camp. The report does not establish whether this was a planned rotation, part of the quarterback competition or a depth-chart change, so it does not support moving his fantasy outlook in either direction.",
+   "note": "Reviewer override. Claude's original wording preserved separately."
+  },
+  "chris-blair": {
+   "action": "APPROVE_WITH_EDIT",
+   "subject": "Chris Blair",
+   "mechanism": "RED_ZONE",
+   "direction": "POSITIVE",
+   "strength": "LOW",
+   "horizon": "IMMEDIATE",
+   "projection_action": "NONE",
+   "reader_label": "Trending up",
+   "edited_text": "Chris Blair took most of Jahan Dotson's first-team red-zone snaps during one joint practice. The report does not say why those snaps were available or for how long, and it does not establish that Blair has moved ahead of Dotson.",
+   "note": "Approved only with explicit context that these were Dotson's snaps on one day. Must not imply Blair permanently passed Dotson."
+  },
+  "joe-burrow": {
+   "action": "APPROVE",
+   "subject": "Joe Burrow",
+   "verdict_on": "NO_FANTASY_IMPACT",
+   "note": "The quotation concerns Cincinnati's defense, not Burrow's role, usage, health or outlook."
+  },
+  "quinn-ewers": {
+   "action": "HELD_EVIDENCE_CONFLICT",
+   "subject": "Quinn Ewers",
+   "requested_mechanism": "INJURY",
+   "current_mechanism": "LIMITED_PARTICIPATION",
+   "note": "Reviewer asked for INJURY on the basis that Ewers was sidelined with a groin injury. The passage under review does not state a cause: 'Dolphins players who did not participate were QB Quinn Ewers... Saw Quinn Ewers but he's not practicing.' No stored span attributes a groin injury to him. Held pending either a source that establishes the injury or an instruction to proceed anyway."
+  },
+  "eli-heidenreich": {
+   "action": "PENDING",
+   "subject": "Eli Heidenreich",
+   "note": "Reviewer requires the complete passage before deciding."
+  },
+  "geno-smith": {
+   "action": "APPROVE",
+   "subject": "Geno Smith",
+   "verdict_on": "ABSTAIN",
+   "note": "Relayed reporting with no explicit return-to-practice evidence."
+  },
+  "mark-andrews": {
+   "action": "APPROVE",
+   "subject": "Mark Andrews",
+   "verdict_on": "NO_FANTASY_IMPACT",
+   "note": "Correctly suppresses non-actionable information."
+  }
+ }
+}

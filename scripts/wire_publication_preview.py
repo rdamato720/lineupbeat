@@ -22,7 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-REVIEW = Path("data/reviews/seven_provisional.json")
+REVIEW = Path("data/reviews/seven_final.json")
 SEVEN = Path("data/wire_seven_review.json")
 OUT_HTML = Path("data/wire_publication_preview.html")
 OUT_JSON = Path("data/wire_publication_preview.json")
@@ -43,10 +43,19 @@ def publishable(case, decisions):
     act = d["action"]
     if act == "INCONCLUSIVE_TECHNICAL":
         return None, "inconclusive on a technical quotation failure"
+    if act == "HELD_EVIDENCE_CONFLICT":
+        return None, ("held: the requested mechanism is not supported by the "
+                      "passage")
     if act == "PENDING":
         return None, "awaiting a reviewer decision"
     if act.startswith("REJECT"):
         return None, f"rejected ({d.get('reason', '')})"
+    # A reviewer who supplies a mechanism and the wording has made the call.
+    # Chris Blair's stored assessment was a stale ABSTAIN from a run whose
+    # quotation check has since been fixed; the human decision outranks it.
+    # The readiness checks still run on the result.
+    if d.get("mechanism") and d.get("edited_text"):
+        return d, ""
     if case["decision"] != "INTERPRET":
         return None, f"{case['decision']} — nothing to publish"
     return d, ""
@@ -58,6 +67,74 @@ NEGATIVE_WORDS = re.compile(
 POSITIVE_WORDS = re.compile(
     r"(?i)\b(encouraging|promising|breakout|boost|ascend|surging|"
     r"good sign|stepping up)\b")
+
+
+PERMANENCE = re.compile(
+    r"(?i)\b(has (?:taken|won|seized|claimed) (?:over |the )?(?:job|role|"
+    r"starting)|is now the (?:starter|no\.? ?1|top)|permanently|"
+    r"has (?:passed|overtaken|leapfrogged)|new (?:starter|no\.? ?1)|"
+    r"locked (?:up|down) the)\b")
+
+TEMPORARY_CONTEXT = re.compile(
+    r"(?i)\b(one (?:practice|session|day)|single (?:practice|session|report)|"
+    r"during one|that day|on the day|while|with .{0,24} (?:out|absent|"
+    r"unavailable|sidelined)|does not (?:say|establish)|for how long|"
+    r"joint practice|this practice)\b")
+
+ABSENCE_MECHANISMS = {"LIMITED_PARTICIPATION", "INJURY", "RETURN_TO_PRACTICE"}
+
+# Words the evidence must contain before a mechanism may claim them.
+MECHANISM_EVIDENCE = {
+    "INJURY": re.compile(r"(?i)\b(injur|groin|hamstring|ankle|knee|acl|"
+                         r"achilles|concussion|surgery|strain|sprain|"
+                         r"sore|tightness|hurt)\b"),
+    "RETURN_TO_PRACTICE": re.compile(
+        r"(?i)\b(returned|back (?:at|on|to)|activated|cleared)\b"),
+    "FIRST_TEAM_REPS": re.compile(r"(?i)first[-\s]?team|with the (?:ones|1s)"),
+    "SECOND_TEAM_REPS": re.compile(r"(?i)second[-\s]?team|with the (?:twos|2s)"),
+    "THIRD_TEAM_REPS": re.compile(r"(?i)third[-\s]?team|with the (?:threes|3s)"),
+    "RED_ZONE": re.compile(r"(?i)red[-\s]?zone|goal[-\s]?line"),
+    "CARRIES": re.compile(r"(?i)carr(?:y|ies|ied)|touches|rushing attempts"),
+    "TARGETS": re.compile(r"(?i)target"),
+}
+
+
+def readiness_failures(card: dict) -> list:
+    """Every reason this card may not go in front of a reader.
+
+    These fire on the finished text rather than on a score, because the
+    failures they catch are failures of wording. A direction field changed by
+    a reviewer does not rewrite the sentences underneath it, and a mechanism
+    can name something the passage never said.
+    """
+    out = []
+    text = card["commentary"]
+    ev = card["evidence"]
+
+    conflict = framing_conflict(card["direction"], text)
+    if conflict:
+        out.append(conflict)
+
+    # The mechanism must be supported by words actually in the passage.
+    pat = MECHANISM_EVIDENCE.get(card["mechanism"])
+    if pat and not pat.search(ev):
+        out.append(f"mechanism {card['mechanism']} is not supported by the "
+                   f"evidence passage")
+
+    # An availability item must say the absence is a point in time.
+    if card["mechanism"] in ABSENCE_MECHANISMS and not TEMPORARY_CONTEXT.search(text):
+        out.append("availability item omits the temporary context (which "
+                   "practice, and that no timetable was given)")
+
+    # Nothing may read as a settled change unless the passage settled it.
+    if PERMANENCE.search(text) and not PERMANENCE.search(ev):
+        out.append("commentary implies a permanent role change the passage "
+                   "does not establish")
+
+    if card["reviewer_action"] not in ("APPROVE", "APPROVE_WITH_EDIT"):
+        out.append(f"reviewer action is {card['reviewer_action']}, not an "
+                   f"approval")
+    return out
 
 
 def framing_conflict(direction: str, text: str) -> str:
@@ -140,10 +217,12 @@ margin:16px 0;color:var(--quiet);font-size:.88rem}
                  + f'<br><a href="{e(c["url"])}">{e(c["url"][:88])}</a></p>')
         p.append('<div class="lab">Lineup Beat impact</div>')
         p.append(f'<div class="lb">{e(c["commentary"])}</div>')
-        if c.get("framing_conflict"):
-            p.append(f'<p class="src" style="color:var(--down)">'
-                     f'<b>Not publishable as written:</b> '
-                     f'{e(c["framing_conflict"])}</p>')
+        if c.get("readiness_failures"):
+            p.append('<p class="src" style="color:var(--down)">'
+                     '<b>Not publishable as written:</b></p><ul>'
+                     + "".join(f'<li style="color:var(--down);font-size:.85rem">'
+                               f'{e(f)}</li>' for f in c["readiness_failures"])
+                     + "</ul>")
         p.append('</div>')
 
     if held:
@@ -169,12 +248,17 @@ def main():
         if d is None:
             held.append({"player": case["player"], "why": why})
             continue
-        direction = EDITS.get(case["player"], {}).get(
-            "direction", case["direction"])
+        direction = d.get("direction", case["direction"])
         commentary = d.get("edited_text") or case["commentary"]
         cards.append({
             "player": case["player"], "team": case["team"],
             "position": case["position"], "direction": direction,
+            "mechanism": d.get("mechanism", case["mechanism"]),
+            "strength": d.get("strength", case["strength"]),
+            "horizon": d.get("horizon", case["horizon"]),
+            "projection_action": d.get("projection_action", "NONE"),
+            "reader_label": d.get("reader_label", ""),
+            "claude_original_commentary": case["commentary"],
             "evidence": case["text"], "commentary": commentary,
             "source": case.get("source_name", ""),
             "author": case.get("author", ""),
@@ -183,8 +267,8 @@ def main():
             "ownership": case.get("ownership", "INDEPENDENT"),
             "evidence_candidate_id": case.get("evidence_candidate_id", ""),
             "reviewer_action": d["action"],
-            "framing_conflict": framing_conflict(direction, commentary),
         })
+        cards[-1]["readiness_failures"] = readiness_failures(cards[-1])
 
     OUT_JSON.write_text(json.dumps(
         {"published": False, "note": "preview only; nothing written to "
@@ -192,15 +276,19 @@ def main():
          "reviewer": review["reviewer"], "model": review["model"],
          "prompt_version": review["prompt_version"],
          "corpus_version": review["corpus_version"],
+         "readiness": ("PASS" if cards and not any(c["readiness_failures"]
+                                                   for c in cards) else "FAIL"),
          "cards": cards, "held_back": held}, indent=1) + "\n")
     OUT_HTML.write_text(render(cards, held) + "\n")
 
-    conflicted = [c for c in cards if c.get("framing_conflict")]
-    print(f"  {len(cards)} card(s) would be visible to a reader")
-    if conflicted:
-        print(f"  {len(conflicted)} NOT publishable as written:")
-        for c in conflicted:
-            print(f"    {c['player']}: {c['framing_conflict']}")
+    blocked = [c for c in cards if c["readiness_failures"]]
+    ready = [c for c in cards if not c["readiness_failures"]]
+    print(f"  {len(cards)} approved card(s); {len(ready)} pass readiness, "
+          f"{len(blocked)} blocked")
+    for c in blocked:
+        print(f"    BLOCKED {c['player']}:")
+        for f in c["readiness_failures"]:
+            print(f"       - {f}")
     for c in cards:
         print(f"    {c['player']:<20}{c['team']} {c['position']:<4}"
               f"{c['direction']:<10}{c['reviewer_action']}")
