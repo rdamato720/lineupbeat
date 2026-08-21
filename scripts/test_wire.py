@@ -1470,6 +1470,22 @@ _rhtml = (ROOT / "data" / "wire_fantasy_review.html").read_text()
 for _r in ("REJECT_WRONG_DIRECTION", "REJECT_WRONG_UNIT"):
     check(f"the review page offers {_r}", _r in _rhtml)
 
+# Anonymous synthesis. The relay detector needs a name to match, so "by all
+# accounts" slipped past it and a Daniel Jones performance note reached
+# FIRSTHAND_OBSERVATION from an approved reporter.
+for _phrase in ("By all accounts", "Reportedly", "Word is", "Sources say",
+                "It is believed"):
+    _k, _c, _w = ev.classify(f"{_phrase}, he had his way with the first-team "
+                             f"defense on Wednesday.", reporter_voice=True)
+    check(f"anonymous synthesis is not firsthand: {_phrase!r}",
+          _k != ev.FIRSTHAND_OBSERVATION, _k)
+check("a real observation is still firsthand",
+      ev.classify("He took first-team reps during Wednesday's practice.",
+                  reporter_voice=True)[0] == ev.FIRSTHAND_OBSERVATION)
+check("a counted observation is still firsthand",
+      ev.classify("I counted twelve first-team reps for him.",
+                  reporter_voice=True)[0] == ev.FIRSTHAND_OBSERVATION)
+
 # ---------------------------------------------- fantasy relevance gate
 from wire import relevance as RV
 

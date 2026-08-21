@@ -486,16 +486,16 @@
   "seconds": 390.0
  },
  "window_articles": {
-  "inside_window": 483,
-  "outside_window": 325,
+  "inside_window": 477,
+  "outside_window": 331,
   "no_reliable_publication_time": 11
  },
  "deterministic": {
-  "non_fantasy_position_or_context": 1758,
-  "duplicate_claim": 675,
-  "not_original_evidence": 796,
+  "non_fantasy_position_or_context": 1747,
+  "duplicate_claim": 647,
+  "not_original_evidence": 772,
   "relayed_reporting": 6,
-  "fantasy_relevance_gate": 10,
+  "fantasy_relevance_gate": 9,
   "evidence_created_relevance": 1
  },
  "suppressed": [
@@ -2000,16 +2000,6 @@
    "reason": "LB is not a fantasy position"
   },
   {
-   "candidate_id": "e9eb81a91756de9a32ed",
-   "player_name": "Chauncey Golston",
-   "team": "NYG",
-   "position": "DL",
-   "source_id": "official_nyg",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "It started in the secondary as safety Jev\u00f3n Holland blitzed off the edge to sack Dolphins quarterback Malik Willis during the first team period. A few plays later, Chauncey Golston read a Willis bootleg perfectly and met",
-   "reason": "DL is not a fantasy position"
-  },
-  {
    "candidate_id": "0af15d85369eb11f8e3c",
    "player_name": "Abdul Carter",
    "team": "NYG",
@@ -2050,7 +2040,17 @@
    "reason": "UNCERTAIN is not original evidence"
   },
   {
-   "candidate_id": "6521c8122d9af011856a",
+   "candidate_id": "f1a9e7d598e4d65fb6ab",
+   "player_name": "Jevon Holland",
+   "team": "NYG",
+   "position": "DB",
+   "source_id": "official_nyg",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "It started in the secondary as safety Jev\u00f3n Holland blitzed off the edge to sack Dolphins quarterback Malik Willis during the first team period. A few plays later, Chauncey Golston read a Willis bootleg perfectly and met",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "4c6ee5a9ebe07d12170d",
    "player_name": "Chauncey Golston",
    "team": "NYG",
    "position": "DL",
@@ -2078,6 +2078,26 @@
    "evidence_class": "UNCERTAIN",
    "evidence_text": "Brian Burns also got into the backfield for a sack during Thursday's practice. After the session, the veteran voiced his thoughts on how the defense looked against the Dolphins.",
    "reason": "LB is not a fantasy position"
+  },
+  {
+   "candidate_id": "0a44622af61062362665",
+   "player_name": "Jevon Holland",
+   "team": "NYG",
+   "position": "DB",
+   "source_id": "official_nyg",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "It started in the secondary as safety Jev\u00f3n Holland blitzed off the edge to sack Dolphins quarterback Malik Willis during the first team period. A few plays later, Chauncey Golston read a Willis bootleg perfectly and met",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "8200412009a246b12e30",
+   "player_name": "Chauncey Golston",
+   "team": "NYG",
+   "position": "DL",
+   "source_id": "official_nyg",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "It started in the secondary as safety Jev\u00f3n Holland blitzed off the edge to sack Dolphins quarterback Malik Willis during the first team period. A few plays later, Chauncey Golston read a Willis bootleg perfectly and met",
+   "reason": "DL is not a fantasy position"
   },
   {
    "candidate_id": "50ea0b71135094ffdbd1",
@@ -6910,6 +6930,16 @@
    "reason": "DL is not a fantasy position"
   },
   {
+   "candidate_id": "c2f6143a39ba305f44d3",
+   "player_name": "Tee Higgins",
+   "team": "CIN",
+   "position": "WR",
+   "source_id": "official_cin",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Wide receiver Tee Higgins caught all five of his targets, one for a red-zone touchdown. Higgins told the press he felt particularly good about it because he had a drop or two in the last practice on Tuesday \u2026",
+   "reason": "duplicate of an earlier claim"
+  },
+  {
    "candidate_id": "82f2e459e79da7503151",
    "player_name": "DJ Turner II",
    "team": "CIN",
@@ -6918,26 +6948,6 @@
    "evidence_class": "UNCERTAIN",
    "evidence_text": "Bengals cornerback DJ Turner II got good work against wide receiver Rome Odunze. After Odunze caught a hitch on him early, Turner got his hands on a ball over the middle, but Odunze caught it on the rebound. Then Turner ",
    "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "4f6c6ab2b149f9e9f26e",
-   "player_name": "Tee Higgins",
-   "team": "CIN",
-   "position": "WR",
-   "source_id": "official_cin",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Wide receiver Tee Higgins caught all five of his targets, one for a red-zone touchdown. Higgins told the press he felt particularly good about it because he had a drop or two in the last practice on Tuesday \u2026",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "a696ab6f92f4b0a8ebca",
-   "player_name": "Tee Higgins",
-   "team": "CIN",
-   "position": "WR",
-   "source_id": "official_cin",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Wide receiver Tee Higgins caught all five of his targets, one for a red-zone touchdown. Higgins told the press he felt particularly good about it because he had a drop or two in the last practice on Tuesday \u2026",
-   "reason": "duplicate of an earlier claim"
   },
   {
    "candidate_id": "2f99500bed78c99dec5d",
@@ -6988,6 +6998,16 @@
    "evidence_class": "UNCERTAIN",
    "evidence_text": "Demetrius Knight Jr., the Bengals sophomore linebacker no longer playing like a rookie, recalled after Thursday's joint practice that it was after the game against these Bears last midseason that his defense had a turnin",
    "reason": "LB is not a fantasy position"
+  },
+  {
+   "candidate_id": "c3291170fca468d61ca3",
+   "player_name": "Tee Higgins",
+   "team": "CIN",
+   "position": "WR",
+   "source_id": "official_cin",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Wide receiver Tee Higgins caught all five of his targets, one for a red-zone touchdown. Higgins told the press he felt particularly good about it because he had a drop or two in the last practice on Tuesday \u2026",
+   "reason": "UNCERTAIN is not original evidence"
   },
   {
    "candidate_id": "21d55d405a297e3e5548",
@@ -12731,6 +12751,46 @@
    "reason": "duplicate of an earlier claim"
   },
   {
+   "candidate_id": "c8113b13767541d64a8e",
+   "player_name": "Jevon Holland",
+   "team": "NYG",
+   "position": "DB",
+   "source_id": "official_nyg",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "It started in the secondary as safety Jev\u00f3n Holland blitzed off the edge to sack Dolphins quarterback Malik Willis during the first team period. A few plays later, Chauncey Golston read a Willis bootleg perfectly and met",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "0e3f91dcbed884dc20a4",
+   "player_name": "Chauncey Golston",
+   "team": "NYG",
+   "position": "DL",
+   "source_id": "official_nyg",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "It started in the secondary as safety Jev\u00f3n Holland blitzed off the edge to sack Dolphins quarterback Malik Willis during the first team period. A few plays later, Chauncey Golston read a Willis bootleg perfectly and met",
+   "reason": "DL is not a fantasy position"
+  },
+  {
+   "candidate_id": "c7a5902154896b57807b",
+   "player_name": "Jevon Holland",
+   "team": "NYG",
+   "position": "DB",
+   "source_id": "official_nyg",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "It started in the secondary as safety Jev\u00f3n Holland blitzed off the edge to sack Dolphins quarterback Malik Willis during the first team period. A few plays later, Chauncey Golston read a Willis bootleg perfectly and met",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "e2e6bd1d5cb2a5d11864",
+   "player_name": "Chauncey Golston",
+   "team": "NYG",
+   "position": "DL",
+   "source_id": "official_nyg",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "It started in the secondary as safety Jev\u00f3n Holland blitzed off the edge to sack Dolphins quarterback Malik Willis during the first team period. A few plays later, Chauncey Golston read a Willis bootleg perfectly and met",
+   "reason": "DL is not a fantasy position"
+  },
+  {
    "candidate_id": "7b20d054a59cb475c59d",
    "player_name": "Greg Newsome II",
    "team": "NYG",
@@ -12779,16 +12839,6 @@
    "evidence_class": "UNCERTAIN",
    "evidence_text": "Later on during 1-on-1s, Greg Newsome II broke up a pass, which was followed by Korie Black and Art Green doing the same. Jameis Winston connected with Odell Beckham Jr. for a solid gain after the veteran wideout ran a g",
    "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "38180bd9c800b0e6e628",
-   "player_name": "Chauncey Golston",
-   "team": "NYG",
-   "position": "DL",
-   "source_id": "official_nyg",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "It started in the secondary as safety Jev\u00f3n Holland blitzed off the edge to sack Dolphins quarterback Malik Willis during the first team period. A few plays later, Chauncey Golston read a Willis bootleg perfectly and met",
-   "reason": "DL is not a fantasy position"
   },
   {
    "candidate_id": "8df9ce464c3b8e07ffa3",
@@ -12849,16 +12899,6 @@
    "evidence_class": "UNCERTAIN",
    "evidence_text": "Brian Burns also got into the backfield for a sack during Thursday's practice. After the session, the veteran voiced his thoughts on how the defense looked against the Dolphins.",
    "reason": "LB is not a fantasy position"
-  },
-  {
-   "candidate_id": "865da4703ba3f95eed29",
-   "player_name": "Chauncey Golston",
-   "team": "NYG",
-   "position": "DL",
-   "source_id": "official_nyg",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "It started in the secondary as safety Jev\u00f3n Holland blitzed off the edge to sack Dolphins quarterback Malik Willis during the first team period. A few plays later, Chauncey Golston read a Willis bootleg perfectly and met",
-   "reason": "DL is not a fantasy position"
   },
   {
    "candidate_id": "03a5e9b8b000ff92ad0d",
@@ -12971,6 +13011,46 @@
    "reason": "DB is not a fantasy position"
   },
   {
+   "candidate_id": "95256df0fafced22b6f5",
+   "player_name": "Greg Newsome II",
+   "team": "NYG",
+   "position": "DB",
+   "source_id": "official_nyg",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Greg Newsome II, Elijah Campbell and Art Green all had pass breakups in the period. Jev\u00f3n Holland broke early on an out-route to a tight end, undercutting it and coming up with an interception of his own.",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "a4429700c85af2769ec5",
+   "player_name": "Elijah Campbell",
+   "team": "NYG",
+   "position": "DB",
+   "source_id": "official_nyg",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Greg Newsome II, Elijah Campbell and Art Green all had pass breakups in the period. Jev\u00f3n Holland broke early on an out-route to a tight end, undercutting it and coming up with an interception of his own.",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "4719fd20c81fa4cee462",
+   "player_name": "Art Green",
+   "team": "NYG",
+   "position": "DB",
+   "source_id": "official_nyg",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Greg Newsome II, Elijah Campbell and Art Green all had pass breakups in the period. Jev\u00f3n Holland broke early on an out-route to a tight end, undercutting it and coming up with an interception of his own.",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "098c55d94ad5d21dc6fe",
+   "player_name": "Jevon Holland",
+   "team": "NYG",
+   "position": "DB",
+   "source_id": "official_nyg",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Greg Newsome II, Elijah Campbell and Art Green all had pass breakups in the period. Jev\u00f3n Holland broke early on an out-route to a tight end, undercutting it and coming up with an interception of his own.",
+   "reason": "DB is not a fantasy position"
+  },
+  {
    "candidate_id": "61b1c238f5b486aebc5a",
    "player_name": "Deonte Banks",
    "team": "NYG",
@@ -13008,36 +13088,6 @@
    "source_id": "official_nyg",
    "evidence_class": "UNCERTAIN",
    "evidence_text": "* On defense, Deonte Banks created a turnover on the first defensive rep of 1-on-1's. He blanketed Jalen Reagor on a deep route down the sideline before getting his head around, locating the ball, and getting it out of R",
-   "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "0f89892ecd5f0280dd70",
-   "player_name": "Greg Newsome II",
-   "team": "NYG",
-   "position": "DB",
-   "source_id": "official_nyg",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Greg Newsome II, Elijah Campbell and Art Green all had pass breakups in the period. Jev\u00f3n Holland broke early on an out-route to a tight end, undercutting it and coming up with an interception of his own.",
-   "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "ade640b7ddab432b0f44",
-   "player_name": "Elijah Campbell",
-   "team": "NYG",
-   "position": "DB",
-   "source_id": "official_nyg",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Greg Newsome II, Elijah Campbell and Art Green all had pass breakups in the period. Jev\u00f3n Holland broke early on an out-route to a tight end, undercutting it and coming up with an interception of his own.",
-   "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "7dd6cb80876302dbc429",
-   "player_name": "Art Green",
-   "team": "NYG",
-   "position": "DB",
-   "source_id": "official_nyg",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Greg Newsome II, Elijah Campbell and Art Green all had pass breakups in the period. Jev\u00f3n Holland broke early on an out-route to a tight end, undercutting it and coming up with an interception of his own.",
    "reason": "DB is not a fantasy position"
   },
   {
@@ -13281,7 +13331,7 @@
    "reason": "LB is not a fantasy position"
   },
   {
-   "candidate_id": "b106068a9abc82ee1264",
+   "candidate_id": "7065016a3d061571ebc7",
    "player_name": "Greg Newsome II",
    "team": "NYG",
    "position": "DB",
@@ -13291,7 +13341,7 @@
    "reason": "DB is not a fantasy position"
   },
   {
-   "candidate_id": "f0152bc1bb175fda88d3",
+   "candidate_id": "d653d909256893bfcf7c",
    "player_name": "Elijah Campbell",
    "team": "NYG",
    "position": "DB",
@@ -13301,8 +13351,18 @@
    "reason": "DB is not a fantasy position"
   },
   {
-   "candidate_id": "2459945962b07d576d70",
+   "candidate_id": "bcbe74c72d6786fe498a",
    "player_name": "Art Green",
+   "team": "NYG",
+   "position": "DB",
+   "source_id": "official_nyg",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "He blanketed Jalen Reagor on a deep route down the sideline before getting his head around, locating the ball, and getting it out of Reagor's hands for the interception. Greg Newsome II, Elijah Campbell and Art Green all",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "d3c7db95fcc00c470682",
+   "player_name": "Jevon Holland",
    "team": "NYG",
    "position": "DB",
    "source_id": "official_nyg",
@@ -14851,16 +14911,6 @@
    "reason": "UNCERTAIN is not original evidence"
   },
   {
-   "candidate_id": "ce3bc789afbe32974ef3",
-   "player_name": "Jaishawn Barham",
-   "team": "DAL",
-   "position": "LB",
-   "source_id": "official_dal",
-   "evidence_class": "RELAYED_REPORTING",
-   "evidence_text": "Linebacker Jaishawn Barham had a \"great\" practice, according to the head coach. \"It was helmets only, but his ability to get off blocks \u2026 that's a heavy-handed guy. We love the versatility of him to be on and off the bal",
-   "reason": "LB is not a fantasy position"
-  },
-  {
    "candidate_id": "e0a4d1e96f249b264410",
    "player_name": "P.J. Locke",
    "team": "DAL",
@@ -15141,6 +15191,16 @@
    "reason": "duplicate of an earlier claim"
   },
   {
+   "candidate_id": "c6228c1397243ad76874",
+   "player_name": "Jaishawn Barham",
+   "team": "DAL",
+   "position": "LB",
+   "source_id": "official_dal",
+   "evidence_class": "RELAYED_REPORTING",
+   "evidence_text": "Linebacker Jaishawn Barham had a \"great\" practice, according to the head coach. \"It was helmets only, but his ability to get off blocks \u2026 that's a heavy-handed guy. We love the versatility of him to be on and off the bal",
+   "reason": "LB is not a fantasy position"
+  },
+  {
    "candidate_id": "fea4a41777641cd517d8",
    "player_name": "Joe Milton III",
    "team": "DAL",
@@ -15161,7 +15221,7 @@
    "reason": "ANALYSIS_OR_OPINION is not original evidence"
   },
   {
-   "candidate_id": "2f4f4375b265757f3c92",
+   "candidate_id": "1a22ded7f4be5fd1f160",
    "player_name": "Jaishawn Barham",
    "team": "DAL",
    "position": "LB",
@@ -20593,7 +20653,7 @@
    "reason": "DB is not a fantasy position"
   },
   {
-   "candidate_id": "698a207d1347e4bdcf61",
+   "candidate_id": "9063c621bae458d92cd5",
    "player_name": "Que Robinson",
    "team": "DEN",
    "position": "LB",
@@ -20603,7 +20663,7 @@
    "reason": "LB is not a fantasy position"
   },
   {
-   "candidate_id": "bdb8cddeb142da9eba71",
+   "candidate_id": "43b2c35acb78d9a7623b",
    "player_name": "Reese Taylor",
    "team": "DEN",
    "position": "DB",
@@ -20613,28 +20673,28 @@
    "reason": "DB is not a fantasy position"
   },
   {
-   "candidate_id": "4b410d83b093d922d62d",
+   "candidate_id": "722cc72e353984dbf536",
+   "player_name": "Que Robinson",
+   "team": "DEN",
+   "position": "LB",
+   "source_id": "official_den",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "\u2026 On Wednesday, Denver's increased focus on generating takeaways continued to pay dividends. Outside linebacker Que Robinson stepped in front of a pass to record what would have been a pick six under game conditions, and",
+   "reason": "LB is not a fantasy position"
+  },
+  {
+   "candidate_id": "57cb976a70253a337022",
+   "player_name": "Reese Taylor",
+   "team": "DEN",
+   "position": "DB",
+   "source_id": "official_den",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "\u2026 On Wednesday, Denver's increased focus on generating takeaways continued to pay dividends. Outside linebacker Que Robinson stepped in front of a pass to record what would have been a pick six under game conditions, and",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "e0b718b5765590d6cd2c",
    "player_name": "Kris Abrams-Draine",
-   "team": "DEN",
-   "position": "DB",
-   "source_id": "official_den",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "\u2026 On Wednesday, Denver's increased focus on generating takeaways continued to pay dividends. Outside linebacker Que Robinson stepped in front of a pass to record what would have been a pick six under game conditions, and",
-   "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "a70bfc321b557a679f3f",
-   "player_name": "Que Robinson",
-   "team": "DEN",
-   "position": "LB",
-   "source_id": "official_den",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "\u2026 On Wednesday, Denver's increased focus on generating takeaways continued to pay dividends. Outside linebacker Que Robinson stepped in front of a pass to record what would have been a pick six under game conditions, and",
-   "reason": "LB is not a fantasy position"
-  },
-  {
-   "candidate_id": "253e8b4a5bda95d38e70",
-   "player_name": "Reese Taylor",
    "team": "DEN",
    "position": "DB",
    "source_id": "official_den",
@@ -20661,6 +20721,16 @@
    "evidence_class": "UNCERTAIN",
    "evidence_text": "Second-year tight end Tyler Warren went down with a groin injury early in Wednesday's practice and did not return. Head coach Shane Steichen didn't provide any additional information regarding the severity of the injury ",
    "reason": "duplicate of an earlier claim"
+  },
+  {
+   "candidate_id": "f7bd0e6e22db0551323c",
+   "player_name": "Daniel Jones",
+   "team": "IND",
+   "position": "QB",
+   "source_id": "si_colts",
+   "evidence_class": "ANALYSIS_OR_OPINION",
+   "evidence_text": "By all accounts, Colts' starting quarterback Daniel Jones had his way with the Atlanta Falcons' first-team defense on Wednesday.",
+   "reason": "ANALYSIS_OR_OPINION is not original evidence"
   },
   {
    "candidate_id": "2fe6dc67fc744549eb91",
@@ -24237,6 +24307,126 @@
    "reason": "DB is not a fantasy position"
   },
   {
+   "candidate_id": "4329824a6ea6048ba1de",
+   "player_name": "Breece Hall",
+   "team": "NYJ",
+   "position": "RB",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "duplicate of an earlier claim"
+  },
+  {
+   "candidate_id": "71fd99203385ad99e225",
+   "player_name": "Mykal Walker",
+   "team": "NYJ",
+   "position": "LB",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "LB is not a fantasy position"
+  },
+  {
+   "candidate_id": "54b46dca95678c332aaf",
+   "player_name": "D'Angelo Ponds",
+   "team": "NYJ",
+   "position": "DB",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "0f024d2959ee2126a2d9",
+   "player_name": "Kenyon Sadiq",
+   "team": "NYJ",
+   "position": "TE",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "duplicate of an earlier claim"
+  },
+  {
+   "candidate_id": "9257e22326460e1b4e26",
+   "player_name": "Nahshon Wright",
+   "team": "NYJ",
+   "position": "DB",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "e377bd2f4b7313c1af0a",
+   "player_name": "Isaiah Davis",
+   "team": "NYJ",
+   "position": "RB",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "duplicate of an earlier claim"
+  },
+  {
+   "candidate_id": "6b691cc9eee267ceaec8",
+   "player_name": "Mory Bamba",
+   "team": "NYJ",
+   "position": "DB",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "f3c55a41d7189c3340e3",
+   "player_name": "Tyler Baron",
+   "team": "NYJ",
+   "position": "DL",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "DL is not a fantasy position"
+  },
+  {
+   "candidate_id": "e761893fcfc1e82dc8f2",
+   "player_name": "Jowon Briggs",
+   "team": "NYJ",
+   "position": "DL",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "DL is not a fantasy position"
+  },
+  {
+   "candidate_id": "c1c2640eb009029a11a9",
+   "player_name": "Tyler Baron",
+   "team": "NYJ",
+   "position": "DL",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Edge Tyler Baron (knee) is on the active/PUP list. \u2026 Bamba and Sadiq did work out on the bike during practice. \u2026 DL Jowon Briggs recorded a TFL when he stopped RB Braelon Allen's rush in the second team period. ... Forme",
+   "reason": "DL is not a fantasy position"
+  },
+  {
+   "candidate_id": "afa390d5275999b9820c",
+   "player_name": "Jowon Briggs",
+   "team": "NYJ",
+   "position": "DL",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Edge Tyler Baron (knee) is on the active/PUP list. \u2026 Bamba and Sadiq did work out on the bike during practice. \u2026 DL Jowon Briggs recorded a TFL when he stopped RB Braelon Allen's rush in the second team period. ... Forme",
+   "reason": "DL is not a fantasy position"
+  },
+  {
+   "candidate_id": "9a1cd2e2c31644a03bdc",
+   "player_name": "Jamien Sherwood",
+   "team": "NYJ",
+   "position": "LB",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Edge Tyler Baron (knee) is on the active/PUP list. \u2026 Bamba and Sadiq did work out on the bike during practice. \u2026 DL Jowon Briggs recorded a TFL when he stopped RB Braelon Allen's rush in the second team period. ... Forme",
+   "reason": "LB is not a fantasy position"
+  },
+  {
    "candidate_id": "9aa1f77d33acfd8fd86e",
    "player_name": "Joseph Ossai",
    "team": "NYJ",
@@ -24265,6 +24455,96 @@
    "evidence_class": "UNCERTAIN",
    "evidence_text": "The Maintenance Plan DT T'Vondre Sweat, edge Joseph Ossai and LB Kiko Mauigoa were on a maintenance plan on Wednesday and did not see any team reps, but participated in position specific drills. DL David Onyemata and WR ",
    "reason": "UNCERTAIN is not original evidence"
+  },
+  {
+   "candidate_id": "9d8ceee5b9dbb806cacd",
+   "player_name": "Breece Hall",
+   "team": "NYJ",
+   "position": "RB",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "UNCERTAIN is not original evidence"
+  },
+  {
+   "candidate_id": "0dab8fdb73928d3399a6",
+   "player_name": "Mykal Walker",
+   "team": "NYJ",
+   "position": "LB",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "LB is not a fantasy position"
+  },
+  {
+   "candidate_id": "d2ed90e9b14f65640b68",
+   "player_name": "D'Angelo Ponds",
+   "team": "NYJ",
+   "position": "DB",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "0f8474bd9c8f11d2db5f",
+   "player_name": "Kenyon Sadiq",
+   "team": "NYJ",
+   "position": "TE",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "UNCERTAIN is not original evidence"
+  },
+  {
+   "candidate_id": "537db50b9c6092f35df0",
+   "player_name": "Nahshon Wright",
+   "team": "NYJ",
+   "position": "DB",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "22b6e62548ff495ff0df",
+   "player_name": "Isaiah Davis",
+   "team": "NYJ",
+   "position": "RB",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "UNCERTAIN is not original evidence"
+  },
+  {
+   "candidate_id": "61cffb5ed6dd995a9d5c",
+   "player_name": "Mory Bamba",
+   "team": "NYJ",
+   "position": "DB",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "DB is not a fantasy position"
+  },
+  {
+   "candidate_id": "6a8f4cb4ac6fc67f466a",
+   "player_name": "Tyler Baron",
+   "team": "NYJ",
+   "position": "DL",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "DL is not a fantasy position"
+  },
+  {
+   "candidate_id": "4e31354effcfc3c46d8e",
+   "player_name": "Jowon Briggs",
+   "team": "NYJ",
+   "position": "DL",
+   "source_id": "official_nyj",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
+   "reason": "DL is not a fantasy position"
   },
   {
    "candidate_id": "f51873ce5416b61d30a4",
@@ -24297,96 +24577,6 @@
    "reason": "duplicate of an earlier claim"
   },
   {
-   "candidate_id": "66c1969d65e40b25ddd6",
-   "player_name": "Breece Hall",
-   "team": "NYJ",
-   "position": "RB",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "848a9616a796e14db81c",
-   "player_name": "Mykal Walker",
-   "team": "NYJ",
-   "position": "LB",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "LB is not a fantasy position"
-  },
-  {
-   "candidate_id": "6065502a0dc31d35212a",
-   "player_name": "D'Angelo Ponds",
-   "team": "NYJ",
-   "position": "DB",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "ed235fa8e539115ebec5",
-   "player_name": "Kenyon Sadiq",
-   "team": "NYJ",
-   "position": "TE",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "c7e5bd9ca53ccaf8b9e8",
-   "player_name": "Nahshon Wright",
-   "team": "NYJ",
-   "position": "DB",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "90a9d4f4a4d45d7c4358",
-   "player_name": "Isaiah Davis",
-   "team": "NYJ",
-   "position": "RB",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "8fa2df71d6cc1a6a0702",
-   "player_name": "Mory Bamba",
-   "team": "NYJ",
-   "position": "DB",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "2450f86b39b8d2ae8d86",
-   "player_name": "Tyler Baron",
-   "team": "NYJ",
-   "position": "DL",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "DL is not a fantasy position"
-  },
-  {
-   "candidate_id": "6c87e66784a7027ee7ef",
-   "player_name": "Jowon Briggs",
-   "team": "NYJ",
-   "position": "DL",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "DL is not a fantasy position"
-  },
-  {
    "candidate_id": "59056a08ff3218374972",
    "player_name": "Jamien Sherwood",
    "team": "NYJ",
@@ -24394,36 +24584,6 @@
    "source_id": "official_nyj",
    "evidence_class": "DIRECT_QUOTATION",
    "evidence_text": "Former Jets LB CJ Mosley visited practice for the second time this week. ... Veteran LB Jamien Sherwood\u00a0said Mosley played a pivotal part in his career. \"I wouldn't be standing here today [or] be here still, if it wasn't",
-   "reason": "LB is not a fantasy position"
-  },
-  {
-   "candidate_id": "b6a39e3b7345e7e966c5",
-   "player_name": "Tyler Baron",
-   "team": "NYJ",
-   "position": "DL",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Edge Tyler Baron (knee) is on the active/PUP list. \u2026 Bamba and Sadiq did work out on the bike during practice. \u2026 DL Jowon Briggs recorded a TFL when he stopped RB Braelon Allen's rush in the second team period. ... Forme",
-   "reason": "DL is not a fantasy position"
-  },
-  {
-   "candidate_id": "1a1072398d52538b541b",
-   "player_name": "Jowon Briggs",
-   "team": "NYJ",
-   "position": "DL",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Edge Tyler Baron (knee) is on the active/PUP list. \u2026 Bamba and Sadiq did work out on the bike during practice. \u2026 DL Jowon Briggs recorded a TFL when he stopped RB Braelon Allen's rush in the second team period. ... Forme",
-   "reason": "DL is not a fantasy position"
-  },
-  {
-   "candidate_id": "475cfbefda2e39febd6b",
-   "player_name": "Jamien Sherwood",
-   "team": "NYJ",
-   "position": "LB",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Edge Tyler Baron (knee) is on the active/PUP list. \u2026 Bamba and Sadiq did work out on the bike during practice. \u2026 DL Jowon Briggs recorded a TFL when he stopped RB Braelon Allen's rush in the second team period. ... Forme",
    "reason": "LB is not a fantasy position"
   },
   {
@@ -24465,96 +24625,6 @@
    "evidence_class": "UNCERTAIN",
    "evidence_text": "The defense had a strong performance, which started with forcing QB Geno Smith to throw two early incompletions. In the second team period, Smith targeted WR Garrett Wilson down the right sideline, but S Dane Belton got ",
    "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "864fee7f306caad03fd9",
-   "player_name": "Breece Hall",
-   "team": "NYJ",
-   "position": "RB",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "807ca38b0ca715ef2f4b",
-   "player_name": "Mykal Walker",
-   "team": "NYJ",
-   "position": "LB",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "LB is not a fantasy position"
-  },
-  {
-   "candidate_id": "10dce652eb9a1620b121",
-   "player_name": "D'Angelo Ponds",
-   "team": "NYJ",
-   "position": "DB",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "ed82d5bc83ce1754ed91",
-   "player_name": "Kenyon Sadiq",
-   "team": "NYJ",
-   "position": "TE",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "9abd465806a50d1e2d5b",
-   "player_name": "Nahshon Wright",
-   "team": "NYJ",
-   "position": "DB",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "658a54c493e375ddce10",
-   "player_name": "Isaiah Davis",
-   "team": "NYJ",
-   "position": "RB",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "27fd6d827a23c13c0218",
-   "player_name": "Mory Bamba",
-   "team": "NYJ",
-   "position": "DB",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "15a56b79768629da0802",
-   "player_name": "Tyler Baron",
-   "team": "NYJ",
-   "position": "DL",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "DL is not a fantasy position"
-  },
-  {
-   "candidate_id": "a99869c4169e8487b834",
-   "player_name": "Jowon Briggs",
-   "team": "NYJ",
-   "position": "DL",
-   "source_id": "official_nyj",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Jetcetera RB Breece Hall\u00a0(groin), LB Mykal Walker (calf), CB D'Angelo Ponds (calf strain), TE Kenyon Sadiq (hernia), CB Nahshon Wright\u00a0(hip), RB Isaiah Davis (knee), S VJ Payne\u00a0(bone bruise) and CB Mory Bamba (knee) rema",
-   "reason": "DL is not a fantasy position"
   },
   {
    "candidate_id": "98034d6c958aff7c6297",
@@ -28989,6 +29059,16 @@
    "reason": "offensive line: team context, not a fantasy player"
   },
   {
+   "candidate_id": "837949284d0d7a3526e3",
+   "player_name": "James Houston",
+   "team": "DAL",
+   "position": "DL",
+   "source_id": "official_dal",
+   "evidence_class": "UNCERTAIN",
+   "evidence_text": "Yep, he's 37, but at 36 last season he bagged nine sacks for the Commanders, which would have led the Cowboys in 2025, a half sack more than team leader Jadeveon Clowney, and 3\u00bd sacks more than the second guy, James Hous",
+   "reason": "DL is not a fantasy position"
+  },
+  {
    "candidate_id": "477e0726b40241272c78",
    "player_name": "Drew Shelton",
    "team": "DAL",
@@ -29046,16 +29126,6 @@
    "source_id": "official_dal",
    "evidence_class": "UNCERTAIN",
    "evidence_text": "The salary cap cost is reasonable, $5.5 million, with incentives raising the package to $7.5 million. Money now, no investment robbing the future. Yep, he's 37, but at 36 last season he bagged nine sacks for the Commande",
-   "reason": "DL is not a fantasy position"
-  },
-  {
-   "candidate_id": "226741c0948816241d1d",
-   "player_name": "James Houston",
-   "team": "DAL",
-   "position": "DL",
-   "source_id": "official_dal",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Money now, no investment robbing the future. Yep, he's 37, but at 36 last season he bagged nine sacks for the Commanders, which would have led the Cowboys in 2025, a half sack more than team leader Jadeveon Clowney, and ",
    "reason": "DL is not a fantasy position"
   },
   {
@@ -29139,13 +29209,13 @@
    "reason": "UNCERTAIN is not original evidence"
   },
   {
-   "candidate_id": "48736767c2745fafdb0f",
+   "candidate_id": "64294ec33ae83809df9c",
    "player_name": "James Houston",
    "team": "DAL",
    "position": "DL",
    "source_id": "official_dal",
    "evidence_class": "UNCERTAIN",
-   "evidence_text": "Yep, he's 37, but at 36 last season he bagged nine sacks for the Commanders, which would have led the Cowboys in 2025, a half sack more than team leader Jadeveon Clowney, and 3\u00bd sacks more than the second guy, James Hous",
+   "evidence_text": "Money now, no investment robbing the future. Yep, he's 37, but at 36 last season he bagged nine sacks for the Commanders, which would have led the Cowboys in 2025, a half sack more than team leader Jadeveon Clowney, and ",
    "reason": "DL is not a fantasy position"
   },
   {
@@ -32247,735 +32317,24 @@
    "evidence_class": "UNCERTAIN",
    "evidence_text": "However, he battled back to return for the Bears' playoff run and was on the receiving end of the most memorable plays of the year when he caught a 27-yard pass from quarterback Caleb Williams on fourth-and-8 while the B",
    "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "2b2efb5f661901c1ab09",
-   "player_name": "Matthew Stafford",
-   "team": "LAR",
-   "position": "QB",
-   "source_id": "si_rams",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "A serious case could be made that Trost is the best and most important depth piece that the Rams have on the offensive line. Both quarterback Matthew Stafford and right guard Kevin Dotson have confirmed that Trost has go",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "f5004e47dbf714c622be",
-   "player_name": "Kevin Dotson",
-   "team": "LAR",
-   "position": "OL",
-   "source_id": "si_rams",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "A serious case could be made that Trost is the best and most important depth piece that the Rams have on the offensive line. Both quarterback Matthew Stafford and right guard Kevin Dotson have confirmed that Trost has go",
-   "reason": "offensive line: team context, not a fantasy player"
-  },
-  {
-   "candidate_id": "233d9f22f301b9901365",
-   "player_name": "Alaric Jackson",
-   "team": "LAR",
-   "position": "OL",
-   "source_id": "si_rams",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "As it stands, the Rams already have some questions at offensive tackle heading into the season. It seems increasingly possible that starting left tackle Alaric Jackson is facing a suspension. While Jackson avoided a felo",
-   "reason": "offensive line: team context, not a fantasy player"
-  },
-  {
-   "candidate_id": "9369cdcf48030ce4142e",
-   "player_name": "Alaric Jackson",
-   "team": "LAR",
-   "position": "OL",
-   "source_id": "si_rams",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "It seems increasingly possible that starting left tackle Alaric Jackson is facing a suspension. While Jackson avoided a felony charge, his case was assigned to a pre-filing diversion program. That would constitute an aut",
-   "reason": "offensive line: team context, not a fantasy player"
-  },
-  {
-   "candidate_id": "ef2aad7e7d62bdbdded0",
-   "player_name": "Matthew Stafford",
-   "team": "LAR",
-   "position": "QB",
-   "source_id": "si_rams",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "An injury to a depth player on the offensive line is never good, but that\u2019s especially the case for the Rams at offensive tackle. A serious case could be made that Trost is the best and most important depth piece that th",
-   "reason": "ANALYSIS_OR_OPINION is not original evidence"
-  },
-  {
-   "candidate_id": "a5d44bee73db53a9cfea",
-   "player_name": "Kevin Dotson",
-   "team": "LAR",
-   "position": "OL",
-   "source_id": "si_rams",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "An injury to a depth player on the offensive line is never good, but that\u2019s especially the case for the Rams at offensive tackle. A serious case could be made that Trost is the best and most important depth piece that th",
-   "reason": "offensive line: team context, not a fantasy player"
-  },
-  {
-   "candidate_id": "398f30a0837b370a0dfc",
-   "player_name": "Alaric Jackson",
-   "team": "LAR",
-   "position": "OL",
-   "source_id": "si_rams",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "As it stands, the Rams already have some questions at offensive tackle heading into the season. It seems increasingly possible that starting left tackle Alaric Jackson is facing a suspension.",
-   "reason": "offensive line: team context, not a fantasy player"
-  },
-  {
-   "candidate_id": "2343be7491f24e47abce",
-   "player_name": "Christian Kirk",
-   "team": "SF",
-   "position": "WR",
-   "source_id": "si_49ers",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Some players need to step it up, while others desperately need to show up, like wide receiver Christian Kirk. The veteran hasn\u2019t participated in practice since Day 1 of camp.",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "473071b5e5268ed1e874",
-   "player_name": "Christian Kirk",
-   "team": "SF",
-   "position": "WR",
-   "source_id": "si_49ers",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Some players need to step it up, while others desperately need to show up, like wide receiver Christian Kirk. The veteran hasn\u2019t participated in practice since Day 1 of camp.",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "dce22964a2da365cddb4",
-   "player_name": "Jared Goff",
-   "team": "DET",
-   "position": "QB",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "1:33 p.m. -- Jared Goff with a beautiful throw over a linebacker to Amon-ra St. Brown for a touchdown.",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "0c901835306b42d469ef",
-   "player_name": "Amon-Ra St. Brown",
-   "team": "DET",
-   "position": "WR",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "1:33 p.m. -- Jared Goff with a beautiful throw over a linebacker to Amon-ra St. Brown for a touchdown.",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "474eb022b61a0ab10e02",
-   "player_name": "Jared Goff",
-   "team": "DET",
-   "position": "QB",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "1:33 p.m. -- Jared Goff with a beautiful throw over a linebacker to Amon-ra St. Brown for a touchdown.",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "a6fcac92c41067101c11",
-   "player_name": "Amon-Ra St. Brown",
-   "team": "DET",
-   "position": "WR",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "1:33 p.m. -- Jared Goff with a beautiful throw over a linebacker to Amon-ra St. Brown for a touchdown.",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "639ad74e7ade3f4845b7",
-   "player_name": "Jahmyr Gibbs",
-   "team": "DET",
-   "position": "RB",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "1:37 p.m. -- Jahmyr Gibbs broke free on the outside for a 60-yard touchdown run.",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "0444a99fc39fb50c010a",
-   "player_name": "Ennis Rakestraw Jr.",
-   "team": "DET",
-   "position": "DB",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "1:43 p.m. -- Cornerback Ennis Rakestraw just had a pass break up on Jameson Williams. Is playing confident to start practice.",
-   "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "2ecee3fbe4bef2b1e960",
-   "player_name": "Jameson Williams",
-   "team": "DET",
-   "position": "WR",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "1:43 p.m. -- Cornerback Ennis Rakestraw just had a pass break up on Jameson Williams. Is playing confident to start practice.",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "cb8e7ec36c189341c5b6",
-   "player_name": "Jared Goff",
-   "team": "DET",
-   "position": "QB",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "2:28 p.m. -- Jared Goff steps up in the pocket throws a touchdown toss to Amon-Ra St. Brown.",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "de116ee31c4b734b5478",
-   "player_name": "Amon-Ra St. Brown",
-   "team": "DET",
-   "position": "WR",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "2:28 p.m. -- Jared Goff steps up in the pocket throws a touchdown toss to Amon-Ra St. Brown.",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "ca0cbb3082695e614124",
-   "player_name": "Derrick Moore",
-   "team": "DET",
-   "position": "DL",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "2.05 p.m. -- Derrick Moore bests second-team offensive linemen to record a sack.",
-   "reason": "DL is not a fantasy position"
-  },
-  {
-   "candidate_id": "0e64cf393afee354f883",
-   "player_name": "Ennis Rakestraw Jr.",
-   "team": "DET",
-   "position": "DB",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "1:43 p.m. -- Cornerback Ennis Rakestraw just had a pass break up on Jameson Williams. Is playing confident to start practice.",
-   "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "0a6c3171bb6a999c0d6b",
-   "player_name": "Jameson Williams",
-   "team": "DET",
-   "position": "WR",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "1:43 p.m. -- Cornerback Ennis Rakestraw just had a pass break up on Jameson Williams. Is playing confident to start practice.",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "236c71d84f9ff913236c",
-   "player_name": "Jared Goff",
-   "team": "DET",
-   "position": "QB",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "2:28 p.m. -- Jared Goff steps up in the pocket throws a touchdown toss to Amon-Ra St. Brown.",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "5f2c0836bf3271f5b83a",
-   "player_name": "Amon-Ra St. Brown",
-   "team": "DET",
-   "position": "WR",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "2:28 p.m. -- Jared Goff steps up in the pocket throws a touchdown toss to Amon-Ra St. Brown.",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "cf106e05354a5563e58f",
-   "player_name": "Nick Whiteside",
-   "team": "DET",
-   "position": "DB",
-   "source_id": "si_lions",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "1:13 p.m. -- Cornerback Nick Whiteside spotted at Lions practice.",
-   "reason": "DB is not a fantasy position"
-  },
-  {
-   "candidate_id": "7b99e390bf152eb7f67f",
-   "player_name": "Tom Kennedy",
-   "team": "DET",
-   "position": "WR",
-   "source_id": "si_lions",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "12:35 p.m. -- Special teams coach Dave Fipp says Tom Kennedy and Greg Dortch are likely candidates to land the role of punt returner.",
-   "reason": "ANALYSIS_OR_OPINION is not original evidence"
-  },
-  {
-   "candidate_id": "17f1140600f53b5e23ed",
-   "player_name": "Greg Dortch",
-   "team": "DET",
-   "position": "WR",
-   "source_id": "si_lions",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "12:35 p.m. -- Special teams coach Dave Fipp says Tom Kennedy and Greg Dortch are likely candidates to land the role of punt returner.",
-   "reason": "ANALYSIS_OR_OPINION is not original evidence"
-  },
-  {
-   "candidate_id": "fc0d9ce5f18b65e8561d",
-   "player_name": "Tate Ratledge",
-   "team": "DET",
-   "position": "OL",
-   "source_id": "si_lions",
-   "evidence_class": "FIRSTHAND_OBSERVATION",
-   "evidence_text": "One thing to monitor at practice this week is how much right guard Tate Ratledge actually practices at center.",
-   "reason": "offensive line: team context, not a fantasy player"
-  },
-  {
-   "candidate_id": "582f2cb94937c84d7cbd",
-   "player_name": "Tanner Koziol",
-   "team": "JAX",
-   "position": "TE",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "- Tanner Koziol had an impressive day. He caught a touchdown from Nick Mullens in the red-zone, and then completely ran over Panthers safety Zakee Wheatley.",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "df66f647ee0197707c09",
-   "player_name": "Nick Mullens",
-   "team": "JAX",
-   "position": "QB",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "- Tanner Koziol had an impressive day. He caught a touchdown from Nick Mullens in the red-zone, and then completely ran over Panthers safety Zakee Wheatley.",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "a575b753e0a39e3e046f",
-   "player_name": "Brian Thomas Jr.",
-   "team": "JAX",
-   "position": "WR",
-   "source_id": "si_jaguars",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "- I thought Brian Thomas Jr. had a strong practice. He was the most-targeted Jaguars receiver on the day with Parker Washington out, and he caught every target until the last two. One of those looked like a potential DPI",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "911648baaf7bc4269db0",
-   "player_name": "Parker Washington",
-   "team": "JAX",
-   "position": "WR",
-   "source_id": "si_jaguars",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "- I thought Brian Thomas Jr. had a strong practice. He was the most-targeted Jaguars receiver on the day with Parker Washington out, and he caught every target until the last two. One of those looked like a potential DPI",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "1170c7332f61568a73ec",
-   "player_name": "Josh Hines-Allen",
-   "team": "JAX",
-   "position": "DL",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "While I kept most of my notes on the offensive side of the ball, I was still able to catch some reps from the defense while the Panthers and Jaguars staggered their reps on the other side of the field. I also saw the Jag",
-   "reason": "DL is not a fantasy position"
-  },
-  {
-   "candidate_id": "e19016e458d171073253",
-   "player_name": "Dennis Gardeck",
-   "team": "JAX",
-   "position": "LB",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "While I kept most of my notes on the offensive side of the ball, I was still able to catch some reps from the defense while the Panthers and Jaguars staggered their reps on the other side of the field. I also saw the Jag",
-   "reason": "LB is not a fantasy position"
-  },
-  {
-   "candidate_id": "f9f902819c4741332a7e",
-   "player_name": "Travis Hunter",
-   "team": "JAX",
-   "position": "WR",
-   "source_id": "si_jaguars",
-   "evidence_class": "FIRSTHAND_OBSERVATION",
-   "evidence_text": "It is also worth noting that Travis Hunter spent most of his day on defense. He got a few reps in team drills on offense but ended up sticking with the defense for the majority of team drills, producing a pass breakup la",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "41880117e63f4a79b0af",
-   "player_name": "Walker Little",
-   "team": "JAX",
-   "position": "OL",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "- The starting offensive line was as follows: Anton Harrison, Emmanuel Pregnon, Robert Hainsey, Ezra Cleveland, and Walker Little.",
-   "reason": "offensive line: team context, not a fantasy player"
-  },
-  {
-   "candidate_id": "8dc0f74e38f4fa33a94d",
-   "player_name": "Nate Boerkircher",
-   "team": "JAX",
-   "position": "TE",
-   "source_id": "si_jaguars",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "There were a few hiccups, such as a holding on Nate Boerkircher and a tackle for loss by Jaelan Philips, but the Jaguars' positive flashes from the running game far outpaced the negatives. Trevor Lawrence and Liam Coen b",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "f87fb2b5a5878e02fcff",
-   "player_name": "Trevor Lawrence",
-   "team": "JAX",
-   "position": "QB",
-   "source_id": "si_jaguars",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "There were a few hiccups, such as a holding on Nate Boerkircher and a tackle for loss by Jaelan Philips, but the Jaguars' positive flashes from the running game far outpaced the negatives. Trevor Lawrence and Liam Coen b",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "439ec574e93286f75aba",
-   "player_name": "Ameer Abdullah",
-   "team": "JAX",
-   "position": "RB",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "The backup running backs flashed, too. Ameer Abdullah sprung a long run against the Panthers' starting defense and looked like the back who will step up with LeQuint Allen injured. J'Mari Taylor also scored a touchdown d",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "df8f7fca04ca574d8914",
-   "player_name": "LeQuint Allen Jr.",
-   "team": "JAX",
-   "position": "RB",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "The backup running backs flashed, too. Ameer Abdullah sprung a long run against the Panthers' starting defense and looked like the back who will step up with LeQuint Allen injured. J'Mari Taylor also scored a touchdown d",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "1e8a682a28db7f5bd111",
-   "player_name": "J'mari Taylor",
-   "team": "JAX",
-   "position": "RB",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "The backup running backs flashed, too. Ameer Abdullah sprung a long run against the Panthers' starting defense and looked like the back who will step up with LeQuint Allen injured. J'Mari Taylor also scored a touchdown d",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "b62d7b70885bdc539a82",
-   "player_name": "Josh Cameron",
-   "team": "JAX",
-   "position": "WR",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "The backup running backs flashed, too. Ameer Abdullah sprung a long run against the Panthers' starting defense and looked like the back who will step up with LeQuint Allen injured. J'Mari Taylor also scored a touchdown d",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "459713a3278b8cfed1c5",
-   "player_name": "Kilian Zierer",
-   "team": "JAX",
-   "position": "OL",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "The backup running backs flashed, too. Ameer Abdullah sprung a long run against the Panthers' starting defense and looked like the back who will step up with LeQuint Allen injured. J'Mari Taylor also scored a touchdown d",
-   "reason": "offensive line: team context, not a fantasy player"
-  },
-  {
-   "candidate_id": "84bc92ba7b65cd60b603",
-   "player_name": "Nate Boerkircher",
-   "team": "JAX",
-   "position": "TE",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "On the next play, Lawrence moved around to buy some time and hit rookie tight end Nate Boerkircher for an impressive touchdown. Finally, he found Jakobi Meyers streaking over the middle of the end zone and lifted the bal",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "2633edc873f9b4de972d",
-   "player_name": "Jakobi Meyers",
-   "team": "JAX",
-   "position": "WR",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "On the next play, Lawrence moved around to buy some time and hit rookie tight end Nate Boerkircher for an impressive touchdown. Finally, he found Jakobi Meyers streaking over the middle of the end zone and lifted the bal",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "e99702eeeee5b1405da9",
-   "player_name": "Brian Thomas Jr.",
-   "team": "JAX",
-   "position": "WR",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "- I thought Brian Thomas Jr. had a strong practice. He was the most-targeted Jaguars receiver on the day with Parker Washington out, and he caught every target until the last two.",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "6cdea797120b0bbab6a2",
-   "player_name": "Parker Washington",
-   "team": "JAX",
-   "position": "WR",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "- I thought Brian Thomas Jr. had a strong practice. He was the most-targeted Jaguars receiver on the day with Parker Washington out, and he caught every target until the last two.",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "34563bf9d5e901942793",
-   "player_name": "Brenton Strange",
-   "team": "JAX",
-   "position": "TE",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "The first touchdown was a beauty, with Lawrence manipulating the eyes of Panthers linebacker Devin Lloyd to help spring open tight end Brenton Strange. On the next play, Lawrence moved around to buy some time and hit roo",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "afb3d97ce754d0c627a3",
-   "player_name": "Nate Boerkircher",
-   "team": "JAX",
-   "position": "TE",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "The first touchdown was a beauty, with Lawrence manipulating the eyes of Panthers linebacker Devin Lloyd to help spring open tight end Brenton Strange. On the next play, Lawrence moved around to buy some time and hit roo",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "b09884199c363d644940",
-   "player_name": "Jakobi Meyers",
-   "team": "JAX",
-   "position": "WR",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "The first touchdown was a beauty, with Lawrence manipulating the eyes of Panthers linebacker Devin Lloyd to help spring open tight end Brenton Strange. On the next play, Lawrence moved around to buy some time and hit roo",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "140916eabb6a9ddec564",
-   "player_name": "Ameer Abdullah",
-   "team": "JAX",
-   "position": "RB",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Ameer Abdullah sprung a long run against the Panthers' starting defense and looked like the back who will step up with LeQuint Allen injured. J'Mari Taylor also scored a touchdown during red-zone drills after two stellar",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "5b6865f22b475992a8c6",
-   "player_name": "LeQuint Allen Jr.",
-   "team": "JAX",
-   "position": "RB",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Ameer Abdullah sprung a long run against the Panthers' starting defense and looked like the back who will step up with LeQuint Allen injured. J'Mari Taylor also scored a touchdown during red-zone drills after two stellar",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "6659c6f0072a5b7c42a4",
-   "player_name": "J'mari Taylor",
-   "team": "JAX",
-   "position": "RB",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Ameer Abdullah sprung a long run against the Panthers' starting defense and looked like the back who will step up with LeQuint Allen injured. J'Mari Taylor also scored a touchdown during red-zone drills after two stellar",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "e4574aef36d66d9203c5",
-   "player_name": "Josh Cameron",
-   "team": "JAX",
-   "position": "WR",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Ameer Abdullah sprung a long run against the Panthers' starting defense and looked like the back who will step up with LeQuint Allen injured. J'Mari Taylor also scored a touchdown during red-zone drills after two stellar",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "19463779650103cae5fa",
-   "player_name": "Kilian Zierer",
-   "team": "JAX",
-   "position": "OL",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "Ameer Abdullah sprung a long run against the Panthers' starting defense and looked like the back who will step up with LeQuint Allen injured. J'Mari Taylor also scored a touchdown during red-zone drills after two stellar",
-   "reason": "offensive line: team context, not a fantasy player"
-  },
-  {
-   "candidate_id": "456b8fbe6a0b01f86a3d",
-   "player_name": "Parker Washington",
-   "team": "JAX",
-   "position": "WR",
-   "source_id": "si_jaguars",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "He was the most-targeted Jaguars receiver on the day with Parker Washington out, and he caught every target until the last two. One of those looked like a potential DPI, while the other was an overthrow from Lawrence. Th",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "ea2eaaa8e6cb09b95448",
-   "player_name": "Bhayshul Tuten",
-   "team": "JAX",
-   "position": "RB",
-   "source_id": "si_jaguars",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "I thought Bhayshul Tuten had his best practice of the summer, and probably of his Jaguars career thus far. He showed shiftyness at the second level, hit holes with authority, and had several runs that hit the second- and",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "9f45ff4d4ca82ece408a",
-   "player_name": "Chris Rodriguez Jr.",
-   "team": "JAX",
-   "position": "RB",
-   "source_id": "si_jaguars",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "I thought Bhayshul Tuten had his best practice of the summer, and probably of his Jaguars career thus far. He showed shiftyness at the second level, hit holes with authority, and had several runs that hit the second- and",
-   "reason": "ANALYSIS_OR_OPINION is not original evidence"
-  },
-  {
-   "candidate_id": "99135645eb1c72d4134d",
-   "player_name": "Trevor Lawrence",
-   "team": "JAX",
-   "position": "QB",
-   "source_id": "si_jaguars",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "Trevor Lawrence was perfect in the red-zone, an area that he once struggled in during such practices. Lawrence and the Jaguars had a stellar red-zone offense down the stretch last season however, and that seems like it h",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "cb30a8dff212d4c7875b",
-   "player_name": "Trevor Lawrence",
-   "team": "JAX",
-   "position": "QB",
-   "source_id": "si_jaguars",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "Trevor Lawrence was perfect in the red-zone, an area that he once struggled in during such practices. Lawrence and the Jaguars had a stellar red-zone offense down the stretch last season however, and that seems like it h",
-   "reason": "ANALYSIS_OR_OPINION is not original evidence"
-  },
-  {
-   "candidate_id": "a7a000ed0d2d19f5c904",
-   "player_name": "Nate Boerkircher",
-   "team": "JAX",
-   "position": "TE",
-   "source_id": "si_jaguars",
-   "evidence_class": "FIRSTHAND_OBSERVATION",
-   "evidence_text": "I watched mostly the offense during Wednesday's joint practice, and the biggest takeaway I had from the day is that the running game looked good. Really good, even. There were a few hiccups, such as a holding on Nate Boe",
-   "reason": "outside the relevance registry and the evidence shows only routine reserve work",
-   "tier": "NOT_RELEVANT"
-  },
-  {
-   "candidate_id": "c1985f163ef0e0a0691d",
-   "player_name": "Brenton Strange",
-   "team": "JAX",
-   "position": "TE",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "The first touchdown was a beauty, with Lawrence manipulating the eyes of Panthers linebacker Devin Lloyd to help spring open tight end Brenton Strange. On the next play, Lawrence moved around to buy some time and hit roo",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "5f91d98fd48d7758aba5",
-   "player_name": "Nate Boerkircher",
-   "team": "JAX",
-   "position": "TE",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "The first touchdown was a beauty, with Lawrence manipulating the eyes of Panthers linebacker Devin Lloyd to help spring open tight end Brenton Strange. On the next play, Lawrence moved around to buy some time and hit roo",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "c5c5c770925710bf62ff",
-   "player_name": "Ameer Abdullah",
-   "team": "JAX",
-   "position": "RB",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "The backup running backs flashed, too. Ameer Abdullah sprung a long run against the Panthers' starting defense and looked like the back who will step up with LeQuint Allen injured.",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "f904ab1674c17392b3ee",
-   "player_name": "LeQuint Allen Jr.",
-   "team": "JAX",
-   "position": "RB",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "The backup running backs flashed, too. Ameer Abdullah sprung a long run against the Panthers' starting defense and looked like the back who will step up with LeQuint Allen injured.",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "7b6f52a0da60fab2b694",
-   "player_name": "Bhayshul Tuten",
-   "team": "JAX",
-   "position": "RB",
-   "source_id": "si_jaguars",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "I thought Bhayshul Tuten had his best practice of the summer, and probably of his Jaguars career thus far. He showed shiftyness at the second level, hit holes with authority, and had several runs that hit the second- and",
-   "reason": "ANALYSIS_OR_OPINION is not original evidence"
-  },
-  {
-   "candidate_id": "62490f09ca1795748e59",
-   "player_name": "Nate Boerkircher",
-   "team": "JAX",
-   "position": "TE",
-   "source_id": "si_jaguars",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "Really good, even. There were a few hiccups, such as a holding on Nate Boerkircher and a tackle for loss by Jaelan Philips, but the Jaguars' positive flashes from the running game far outpaced the negatives. Trevor Lawre",
-   "reason": "duplicate of an earlier claim"
-  },
-  {
-   "candidate_id": "de6196e656cb0873a5e1",
-   "player_name": "Trevor Lawrence",
-   "team": "JAX",
-   "position": "QB",
-   "source_id": "si_jaguars",
-   "evidence_class": "ANALYSIS_OR_OPINION",
-   "evidence_text": "Really good, even. There were a few hiccups, such as a holding on Nate Boerkircher and a tackle for loss by Jaelan Philips, but the Jaguars' positive flashes from the running game far outpaced the negatives. Trevor Lawre",
-   "reason": "ANALYSIS_OR_OPINION is not original evidence"
-  },
-  {
-   "candidate_id": "627cebecddc49ff4258d",
-   "player_name": "Tanner Koziol",
-   "team": "JAX",
-   "position": "TE",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "- Tanner Koziol had an impressive day. He caught a touchdown from Nick Mullens in the red-zone, and then completely ran over Panthers safety Zakee Wheatley.",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "30bf96c8ce017cd5e681",
-   "player_name": "Nick Mullens",
-   "team": "JAX",
-   "position": "QB",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "- Tanner Koziol had an impressive day. He caught a touchdown from Nick Mullens in the red-zone, and then completely ran over Panthers safety Zakee Wheatley.",
-   "reason": "UNCERTAIN is not original evidence"
-  },
-  {
-   "candidate_id": "cada2cfb899c3c18c190",
-   "player_name": "Josh Hines-Allen",
-   "team": "JAX",
-   "position": "DL",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "While I kept most of my notes on the offensive side of the ball, I was still able to catch some reps from the defense while the Panthers and Jaguars staggered their reps on the other side of the field. I also saw the Jag",
-   "reason": "DL is not a fantasy position"
-  },
-  {
-   "candidate_id": "5047bb020f1440606761",
-   "player_name": "Dennis Gardeck",
-   "team": "JAX",
-   "position": "LB",
-   "source_id": "si_jaguars",
-   "evidence_class": "UNCERTAIN",
-   "evidence_text": "While I kept most of my notes on the offensive side of the ball, I was still able to catch some reps from the defense while the Panthers and Jaguars staggered their reps on the other side of the field. I also saw the Jag",
-   "reason": "LB is not a fantasy position"
   }
  ],
  "claude": {
   "model": "claude-sonnet-4-5",
   "prompt_version": "wire-fantasy-2026-08-21c",
   "schema_version": "semantic-v1",
-  "calls": 16,
-  "interpretations": 8,
+  "calls": 14,
+  "interpretations": 5,
   "abstentions": 2,
   "provider_failures": 0,
   "quote_retries": 0,
   "validator_failures": 2,
-  "tokens_in": 39931,
-  "tokens_out": 10306,
-  "cost_usd": 0.2744,
+  "tokens_in": 34974,
+  "tokens_out": 9091,
+  "cost_usd": 0.2413,
   "cap_usd": 15.0,
-  "median_latency_ms": 10059,
-  "p95_latency_ms": 12668
+  "median_latency_ms": 9940,
+  "p95_latency_ms": 10383
  },
  "results": [
   {
@@ -33016,12 +32375,12 @@
     "impact_strength": "LOW",
     "impact_horizon": "UNKNOWN",
     "projection_action": "NONE",
-    "fantasy_commentary": "Joe Burrow offers a general comment about \"they\" (presumably the defense based on the article title context) looking consistent with training camp. The passage contains no information about any player's role, usage, availability, opportunity, targets, carries, snap share, depth chart position, or any other fantasy-relevant mechanism. This is a team-mood quote with no actionable fantasy implications.",
-    "why_it_matters": "This passage carries no fantasy impact because it does not establish any role, usage, availability, or opportunity information about any fantasy-relevant player.",
+    "fantasy_commentary": "Joe Burrow offers a general comment about an unspecified group (\"they\") looking consistent with training camp performance. The passage does not identify who \"they\" refers to or provide any specific information about role, usage, availability, or opportunity for any fantasy-relevant player. This is a team-mood observation without actionable fantasy content.",
+    "why_it_matters": "This quote provides no fantasy-relevant information about any specific player's role, usage, or availability.",
     "limitations": [
-     "The antecedent of 'they' is not specified in the passage itself",
-     "No specific players are identified as the subject of the comment",
-     "No role, usage, or opportunity information is provided"
+     "The passage does not identify who 'they' refers to",
+     "No specific player role, usage, or opportunity information is provided",
+     "Context suggests this may be about the defense based on the article title, which would not be fantasy-relevant"
     ],
     "confidence": 0.95,
     "abstention_reason": null,
@@ -33030,11 +32389,11 @@
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "77874ec56fe53b5deeed",
-    "output_hash": "4b73f9c493570925a477",
+    "output_hash": "e6f821aaa20ee06fb04f",
     "tokens_in": 2478,
-    "tokens_out": 602,
-    "cost_usd": 0.016464,
-    "latency_ms": 9983,
+    "tokens_out": 591,
+    "cost_usd": 0.016299,
+    "latency_ms": 9448,
     "validation_failures": [],
     "attempts": [
      {
@@ -33042,8 +32401,8 @@
       "supporting_quote": "\"They look like how they've looked all training camp,\" Bengals quarterback Joe Burrow said. \"I'm excited to go and watch that tape.\"",
       "validation_failures": [],
       "tokens_in": 2478,
-      "tokens_out": 602,
-      "latency_ms": 9983
+      "tokens_out": 591,
+      "latency_ms": 9448
      }
     ],
     "retry_attempted": false,
@@ -33093,13 +32452,13 @@
     "impact_strength": "LOW",
     "impact_horizon": "IMMEDIATE",
     "projection_action": "NONE",
-    "fantasy_commentary": "Achane had one good-looking run during a joint practice session with the first-team offense. This is an isolated performance observation from a single practice that provides no information about role, snap share, carry distribution, or depth-chart standing. The passage does not establish how many total carries Achane received or what his workload was relative to other running backs.",
-    "why_it_matters": "This is a single positive run in one practice session that carries no actionable fantasy information about Achane's role or usage patterns.",
+    "fantasy_commentary": "Achane had one good-looking run during a joint practice session with the first-team offense. This is an isolated performance observation from a single practice that provides no information about role, snap share, carry distribution, or depth-chart standing. The passage does not establish volume, usage patterns, or any change in opportunity.",
+    "why_it_matters": "A single good-looking run in practice does not establish any meaningful change in role, opportunity, or usage for fantasy purposes.",
     "limitations": [
      "No information about total carries or workload distribution",
      "Single practice observation from one reporter",
-     "No context about Achane's overall role or snap share with the first team",
-     "Does not establish whether this represents typical usage or an outlier"
+     "No context about role or depth chart position",
+     "Isolated performance metric with no volume data"
     ],
     "confidence": 0.95,
     "abstention_reason": null,
@@ -33108,11 +32467,11 @@
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "bf5c1a53a08a16fe25de",
-    "output_hash": "da8a42d71c3ea8198f54",
+    "output_hash": "3e72c733b2293ba0c55f",
     "tokens_in": 2502,
-    "tokens_out": 640,
-    "cost_usd": 0.017106000000000003,
-    "latency_ms": 10156,
+    "tokens_out": 617,
+    "cost_usd": 0.016761,
+    "latency_ms": 9176,
     "validation_failures": [],
     "attempts": [
      {
@@ -33120,8 +32479,8 @@
       "supporting_quote": "There were two good-looking runs by the first-team offense on this day, one by De'Von Achane and the other by Ollie Gordon II.",
       "validation_failures": [],
       "tokens_in": 2502,
-      "tokens_out": 640,
-      "latency_ms": 10156
+      "tokens_out": 617,
+      "latency_ms": 9176
      }
     ],
     "retry_attempted": false,
@@ -33171,13 +32530,13 @@
     "impact_strength": "LOW",
     "impact_horizon": "SHORT_TERM",
     "projection_action": "REVIEW",
-    "fantasy_commentary": "Ollie Gordon II recorded a good-looking run with the first-team offense during joint practice. This indicates he received at least one carry with the first-team unit. The passage does not establish Gordon's overall workload distribution, his depth-chart position, or whether this was representative of his typical usage. One observed carry with the first team in a single practice is insufficient to project a defined role.",
-    "why_it_matters": "Gordon receiving first-team reps suggests he is competing for early-down work in Miami's backfield, though the extent of his opportunity share remains unclear from this single observation.",
+    "fantasy_commentary": "Ollie Gordon II recorded a good-looking run with the first-team offense during joint practice. This indicates he received at least one carry with the first-team unit. The passage does not establish Gordon's overall workload distribution, his depth-chart position, or whether this was representative of his typical usage pattern. One observed carry with the first team in a single practice is insufficient to project a defined role.",
+    "why_it_matters": "Gordon getting first-team reps as a running back suggests he is competing for a role in Miami's backfield rotation, though the extent of that role remains undefined from this single practice observation.",
     "limitations": [
      "Single practice observation from one reporter",
      "Does not establish Gordon's total carry count or snap distribution",
-     "Does not clarify his depth-chart position relative to Achane or other backs",
-     "No indication of red-zone or passing-down usage"
+     "Does not clarify his depth-chart position relative to other backs",
+     "Does not indicate whether this first-team usage is typical or an exception"
     ],
     "confidence": 0.85,
     "abstention_reason": null,
@@ -33186,11 +32545,11 @@
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "6b9bdc3c734413796e82",
-    "output_hash": "7a2fd2ba0ac5f8997366",
+    "output_hash": "837c37c2715c3af3bb27",
     "tokens_in": 2501,
-    "tokens_out": 657,
-    "cost_usd": 0.017358000000000002,
-    "latency_ms": 11161,
+    "tokens_out": 660,
+    "cost_usd": 0.017403000000000002,
+    "latency_ms": 11046,
     "validation_failures": [],
     "attempts": [
      {
@@ -33198,8 +32557,8 @@
       "supporting_quote": "There were two good-looking runs by the first-team offense on this day, one by De'Von Achane and the other by Ollie Gordon II.",
       "validation_failures": [],
       "tokens_in": 2501,
-      "tokens_out": 657,
-      "latency_ms": 11161
+      "tokens_out": 660,
+      "latency_ms": 11046
      }
     ],
     "retry_attempted": false,
@@ -33225,7 +32584,7 @@
    "ownership": "INDEPENDENT",
    "underlying_report_id": "",
    "assessment": {
-    "decision": "INTERPRET",
+    "decision": "NO_FANTASY_IMPACT",
     "claim_subject_player_id": "00-0036955",
     "claim_subject_player_name": "Terrace Marshall Jr.",
     "mentioned_players": [
@@ -33255,31 +32614,31 @@
     ],
     "supporting_quote": "With Ewers sidelined, Cam Miller again got the second-most reps at QB and he had the best throw of the day, a completion for about 20 yards in the middle of the field to Terrace Marshall Jr.",
     "evidence_classification": "FIRSTHAND_OBSERVATION",
-    "fantasy_mechanism": "TARGETS",
+    "fantasy_mechanism": "NO_FANTASY_IMPACT",
     "direction": "NEUTRAL",
     "impact_strength": "LOW",
-    "impact_horizon": "IMMEDIATE",
+    "impact_horizon": "UNKNOWN",
     "projection_action": "NONE",
-    "fantasy_commentary": "Marshall caught one pass for approximately 20 yards from backup quarterback Cam Miller during joint practice. This is a single target from a second-string quarterback in a practice setting. The passage does not establish Marshall's role with the starting offense, his target share, or his depth-chart position. One practice reception from a backup provides no actionable information about Marshall's regular-season usage.",
-    "why_it_matters": "Marshall received work with the backup quarterback during practice, but a single completion does not indicate his role or opportunity in the regular offense.",
+    "fantasy_commentary": "Marshall caught one pass for approximately 20 yards in a joint practice session. This is a single isolated reception from one practice observation. The passage provides no information about Marshall's overall target volume, route participation, depth-chart position, or role within the offense. One catch in practice does not establish usage patterns or opportunity share.",
+    "why_it_matters": "A single practice reception carries no actionable fantasy information about Marshall's role, target share, or opportunity within the Dolphins offense.",
     "limitations": [
      "Single practice observation from one reporter",
-     "Target came from backup quarterback, not starter",
-     "No information about Marshall's work with starting offense",
-     "No context about depth chart position or overall target distribution"
+     "No context about overall target volume or snap distribution",
+     "No information about Marshall's depth-chart position or role",
+     "Isolated play does not establish usage patterns"
     ],
-    "confidence": 0.92,
+    "confidence": 0.95,
     "abstention_reason": null,
     "provider": "claude",
     "model": "claude-sonnet-4-5",
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "095ddb37f2d7898ee883",
-    "output_hash": "5b52ece967f0c210674b",
+    "output_hash": "32c8de2a2b7f06fc380e",
     "tokens_in": 2498,
-    "tokens_out": 711,
-    "cost_usd": 0.018159,
-    "latency_ms": 10917,
+    "tokens_out": 704,
+    "cost_usd": 0.018054,
+    "latency_ms": 10063,
     "validation_failures": [],
     "attempts": [
      {
@@ -33287,8 +32646,8 @@
       "supporting_quote": "With Ewers sidelined, Cam Miller again got the second-most reps at QB and he had the best throw of the day, a completion for about 20 yards in the middle of the field to Terrace Marshall Jr.",
       "validation_failures": [],
       "tokens_in": 2498,
-      "tokens_out": 711,
-      "latency_ms": 10917
+      "tokens_out": 704,
+      "latency_ms": 10063
      }
     ],
     "retry_attempted": false,
@@ -33333,14 +32692,15 @@
     "impact_strength": "LOW",
     "impact_horizon": "SHORT_TERM",
     "projection_action": "REVIEW",
-    "fantasy_commentary": "Hollins is running routes in two-minute drills across multiple training camp practices, appearing with both first- and second-team units. This suggests he is working as a depth receiver in situational packages during camp. The passage does not establish his role in the regular rotation, his target share, or whether this two-minute usage will translate to regular-season snaps.",
-    "why_it_matters": "Consistent participation in two-minute drills across offensive units indicates Hollins is earning situational work in camp, though the passage provides no information about his standing in the depth chart or expected regular-season role.",
+    "fantasy_commentary": "Hollins is running routes in two-minute drills across both offensive units during training camp practices. The passage indicates consistent participation in these situational periods but does not specify his depth-chart position, snap share with the first team, or target volume. This is a single reporter's observation from camp and does not establish a defined regular-season role.",
+    "why_it_matters": "Hollins' presence in two-minute drills across multiple offensive units suggests he is working with various quarterback groups and may have a role in hurry-up situations, though the extent of that role in games remains unclear.",
     "limitations": [
      "Single reporter observation",
-     "Limited to two-minute drill participation only",
-     "No information about overall snap distribution or depth chart position",
-     "No indication of target volume or offensive role beyond route-running",
-     "Training camp usage does not guarantee regular-season role"
+     "Training camp context only",
+     "Does not specify depth chart position",
+     "Does not quantify target share or snap count",
+     "Does not indicate whether this is first-team or second-team work",
+     "No indication of regular-season role"
     ],
     "confidence": 0.88,
     "abstention_reason": null,
@@ -33349,11 +32709,11 @@
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "52a8ed49f0db4eb1e9f9",
-    "output_hash": "21829b30751b2179acf0",
+    "output_hash": "a71c2c691ac6dbde3c94",
     "tokens_in": 2502,
-    "tokens_out": 646,
-    "cost_usd": 0.017196000000000003,
-    "latency_ms": 20504,
+    "tokens_out": 645,
+    "cost_usd": 0.017181000000000002,
+    "latency_ms": 10285,
     "validation_failures": [],
     "attempts": [
      {
@@ -33361,8 +32721,8 @@
       "supporting_quote": "If you look at any of the New England Patriots' two-minute drills to close each training camp practice this summer, it doesn't matter which offensive unit is on the field. Chances are, you'll see Mack Hollins running routes and contributing.",
       "validation_failures": [],
       "tokens_in": 2502,
-      "tokens_out": 646,
-      "latency_ms": 20504
+      "tokens_out": 645,
+      "latency_ms": 10285
      }
     ],
     "retry_attempted": false,
@@ -33396,6 +32756,16 @@
       "player_id": "00-0036613",
       "player_name": "Jaylen Waddle",
       "relationship": "CLAIM_SUBJECT"
+     },
+     {
+      "player_id": null,
+      "player_name": "Marvin Mims Jr.",
+      "relationship": "TEAMMATE"
+     },
+     {
+      "player_id": null,
+      "player_name": "Nix",
+      "relationship": "TEAMMATE"
      }
     ],
     "quote_speaker": null,
@@ -33407,11 +32777,12 @@
     "impact_strength": "LOW",
     "impact_horizon": "UNKNOWN",
     "projection_action": "NONE",
-    "fantasy_commentary": "The passage is a speculative statement about what the Broncos offense might look like with Waddle on the field. It does not report any actual usage, role definition, snap share, targets, depth-chart position, or availability information. This is purely hypothetical commentary with no actionable fantasy information about Waddle's current or projected role.",
-    "why_it_matters": "This passage contains no concrete information about Waddle's role, usage, or availability. It is speculative analysis that does not establish any fantasy-relevant facts.",
+    "fantasy_commentary": "The passage is purely speculative commentary about what the Broncos offense might look like with Waddle on the field. It establishes no actual role, usage, snap share, target distribution, or depth-chart position. The statement is hypothetical projection rather than observation of practice participation, game action, or coaching statements about Waddle's deployment.",
+    "why_it_matters": "This is speculative analysis that provides no actionable information about Waddle's actual role or usage in the Broncos offense.",
     "limitations": [
-     "The passage is entirely speculative and does not report any actual practice observations, game usage, or role information",
-     "No concrete details about Waddle's targets, routes, snap share, or depth-chart position are provided"
+     "The passage is entirely hypothetical and establishes no concrete role or usage information",
+     "No practice observations, game participation, or coaching statements about Waddle are provided",
+     "The context is speculative commentary rather than reporting of actual events"
     ],
     "confidence": 0.95,
     "abstention_reason": null,
@@ -33420,11 +32791,11 @@
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "cd7c12a6bf48b31c4aea",
-    "output_hash": "adce65b0a530e31f434e",
+    "output_hash": "9c4b918b997986fb229d",
     "tokens_in": 2534,
-    "tokens_out": 619,
-    "cost_usd": 0.016887,
-    "latency_ms": 8792,
+    "tokens_out": 669,
+    "cost_usd": 0.017637,
+    "latency_ms": 9834,
     "validation_failures": [],
     "attempts": [
      {
@@ -33432,8 +32803,8 @@
       "supporting_quote": "Now imagine what that product on the field is going to look like with Nix as the triggerman and Jaylen Waddle and Marvin Mims Jr. on the field.",
       "validation_failures": [],
       "tokens_in": 2534,
-      "tokens_out": 619,
-      "latency_ms": 8792
+      "tokens_out": 669,
+      "latency_ms": 9834
      }
     ],
     "retry_attempted": false,
@@ -33478,12 +32849,12 @@
     "impact_strength": "LOW",
     "impact_horizon": "UNKNOWN",
     "projection_action": "NONE",
-    "fantasy_commentary": "The passage mentions Marvin Mims Jr. only in a speculative, forward-looking statement about what the offense might look like with certain players on the field. No specific role, usage, snap share, target distribution, depth-chart position, or availability information is provided. This is purely hypothetical commentary with no actionable fantasy information about Mims's actual usage or opportunity.",
-    "why_it_matters": "The passage provides no concrete information about Mims's role or usage that would affect fantasy evaluation.",
+    "fantasy_commentary": "The passage mentions Marvin Mims Jr. only in a speculative context about what the offense might look like with him on the field. No specific role, snap share, routes, targets, or depth-chart information is provided. This is purely forward-looking speculation without any concrete usage data or role definition from camp or preseason games.",
+    "why_it_matters": "The passage does not establish any actionable fantasy information about Mims. It is speculative commentary about future offensive potential rather than a report of actual usage or role.",
     "limitations": [
-     "The statement is speculative and hypothetical, offering no actual usage data or role definition",
-     "No information about Mims's current depth chart position, snap share, or target distribution",
-     "The passage does not establish whether Mims is expected to be a starter or what his specific role would be"
+     "No specific role or usage information provided",
+     "Purely speculative statement about future offense",
+     "No camp observations or preseason data about Mims specifically"
     ],
     "confidence": 0.95,
     "abstention_reason": null,
@@ -33492,11 +32863,11 @@
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "ea3b281b20a6d8546f48",
-    "output_hash": "04064808bd292dfd4feb",
+    "output_hash": "e89f98d036214f519937",
     "tokens_in": 2536,
-    "tokens_out": 632,
-    "cost_usd": 0.017088,
-    "latency_ms": 9257,
+    "tokens_out": 607,
+    "cost_usd": 0.016713,
+    "latency_ms": 8835,
     "validation_failures": [],
     "attempts": [
      {
@@ -33504,8 +32875,8 @@
       "supporting_quote": "Now imagine what that product on the field is going to look like with Nix as the triggerman and Jaylen Waddle and Marvin Mims Jr. on the field.",
       "validation_failures": [],
       "tokens_in": 2536,
-      "tokens_out": 632,
-      "latency_ms": 9257
+      "tokens_out": 607,
+      "latency_ms": 8835
      }
     ],
     "retry_attempted": false,
@@ -33531,7 +32902,7 @@
    "ownership": "INDEPENDENT",
    "underlying_report_id": "",
    "assessment": {
-    "decision": "ABSTAIN",
+    "decision": "INTERPRET",
     "claim_subject_player_id": "00-0036912",
     "claim_subject_player_name": "DeVonta Smith",
     "mentioned_players": [
@@ -33550,44 +32921,40 @@
     "pronoun_antecedents": [],
     "supporting_quote": "DeVonta Smith returned to practice in a limited capacity",
     "evidence_classification": "FIRSTHAND_OBSERVATION",
-    "fantasy_mechanism": "NO_FANTASY_IMPACT",
-    "direction": "POSITIVE",
+    "fantasy_mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEUTRAL",
     "impact_strength": "LOW",
     "impact_horizon": "IMMEDIATE",
     "projection_action": "NONE",
-    "fantasy_commentary": "DeVonta Smith returned to practice but participated in a limited capacity during this training camp session. The passage does not specify why he was limited or what he had been absent from previously. This represents a step toward full availability but does not establish his current health status or whether he will be ready for Week 1. The limited designation suggests some restriction remains.",
-    "why_it_matters": "Smith is returning to practice after an apparent absence, which is a positive development for his availability, though the limited participation indicates he is not yet at full capacity.",
+    "fantasy_commentary": "DeVonta Smith returned to practice but participated in a limited capacity during this training camp session. The passage does not specify why he was limited or how long he had been absent. This is a single practice observation from one reporter with no indication of the underlying cause or expected duration of the limitation.",
+    "why_it_matters": "Smith's limited participation suggests he is working back from some absence, but without knowing the cause or severity, fantasy managers cannot assess whether this represents progress toward full availability or an ongoing concern heading into the 2026 season.",
     "limitations": [
      "The passage does not explain why Smith was limited",
-     "The passage does not indicate what Smith was returning from",
-     "Single-reporter observation from one practice",
-     "No indication of timeline for full participation"
+     "No information about how long Smith had been absent",
+     "No indication of expected timeline for full participation",
+     "Single practice observation from one reporter"
     ],
-    "confidence": 0.92,
-    "abstention_reason": "an absence or limitation marked POSITIVE",
+    "confidence": 0.95,
+    "abstention_reason": null,
     "provider": "claude",
     "model": "claude-sonnet-4-5",
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "bccb8fadada6f43df577",
-    "output_hash": "256128bcaae19ce39eed",
+    "output_hash": "1e19b79f7450048e2975",
     "tokens_in": 2478,
     "tokens_out": 596,
     "cost_usd": 0.016374,
-    "latency_ms": 9456,
-    "validation_failures": [
-     "an absence or limitation marked POSITIVE"
-    ],
+    "latency_ms": 8933,
+    "validation_failures": [],
     "attempts": [
      {
       "attempt": 1,
       "supporting_quote": "DeVonta Smith returned to practice in a limited capacity",
-      "validation_failures": [
-       "an absence or limitation marked POSITIVE"
-      ],
+      "validation_failures": [],
       "tokens_in": 2478,
       "tokens_out": 596,
-      "latency_ms": 9456
+      "latency_ms": 8933
      }
     ],
     "retry_attempted": false,
@@ -33643,13 +33010,13 @@
     "impact_strength": "LOW",
     "impact_horizon": "IMMEDIATE",
     "projection_action": "NONE",
-    "fantasy_commentary": "Makai Lemon was listed as a non-participant and was not in uniform for this training camp practice, though he did take part in some wide receiver drills. The passage does not specify why he was held out or the extent of his participation. This is a single practice observation from one reporter with no indication of severity or expected duration.",
-    "why_it_matters": "Limited participation in training camp can affect a player's readiness and ability to compete for roster spots and playing time, particularly for a depth receiver.",
+    "fantasy_commentary": "Makai Lemon was listed as a non-participant and was not in uniform for this training camp practice, though he did take part in some wide receiver drills. The passage does not specify why he was limited or whether this represents an injury, rest day, or other reason. This is a single practice observation from one reporter and does not establish a pattern of availability concerns or a defined role change.",
+    "why_it_matters": "Limited participation in training camp can affect a player's ability to compete for roster spots and offensive roles, particularly for a depth receiver trying to make the team.",
     "limitations": [
-     "Single practice observation from one reporter",
-     "No reason given for limited participation",
-     "Unclear what percentage of practice he participated in",
-     "No indication of severity or expected duration"
+     "The passage does not explain why Lemon was not in uniform or listed as a non-participant",
+     "This is a single practice observation from one reporter",
+     "The extent of his participation in WR drills is not specified",
+     "No information about whether this is part of a pattern or an isolated occurrence"
     ],
     "confidence": 0.85,
     "abstention_reason": null,
@@ -33658,11 +33025,11 @@
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "c97ff081b5c83dbc0693",
-    "output_hash": "07615ede9d40a6e21772",
+    "output_hash": "6b32462b3fa7213c10e0",
     "tokens_in": 2480,
-    "tokens_out": 661,
-    "cost_usd": 0.017355000000000002,
-    "latency_ms": 9427,
+    "tokens_out": 703,
+    "cost_usd": 0.017985,
+    "latency_ms": 10135,
     "validation_failures": [],
     "attempts": [
      {
@@ -33670,81 +33037,8 @@
       "supporting_quote": "Makai Lemon wasn't in uniform and listed as a non-participant, he took part in some WR drills",
       "validation_failures": [],
       "tokens_in": 2480,
-      "tokens_out": 661,
-      "latency_ms": 9427
-     }
-    ],
-    "retry_attempted": false,
-    "retry_reason": ""
-   }
-  },
-  {
-   "candidate": {
-    "candidate_id": "f7bd0e6e22db0551323c",
-    "player_name": "Daniel Jones",
-    "team": "IND",
-    "position": "QB",
-    "source_id": "si_colts",
-    "evidence_class": "FIRSTHAND_OBSERVATION",
-    "evidence_text": "By all accounts, Colts' starting quarterback Daniel Jones had his way with the Atlanta Falcons' first-team defense on Wednesday."
-   },
-   "relevance_tier": "ROSTERABLE",
-   "relevance_reason": "inside the QB redraft boundary of 36 on the current board",
-   "source_url": "https://www.si.com/nfl/colts/onsi/good-and-not-so-good-from-colts-first-joint-practice-with-falcons",
-   "published_at": "2026-08-20T01:00:00Z",
-   "author": "Noah Compton",
-   "source_name": "Sports Illustrated -- IND",
-   "ownership": "INDEPENDENT",
-   "underlying_report_id": "",
-   "assessment": {
-    "decision": "INTERPRET",
-    "claim_subject_player_id": "00-0035710",
-    "claim_subject_player_name": "Daniel Jones",
-    "mentioned_players": [
-     {
-      "player_id": "00-0035710",
-      "player_name": "Daniel Jones",
-      "relationship": "CLAIM_SUBJECT"
-     }
-    ],
-    "quote_speaker": null,
-    "pronoun_antecedents": [],
-    "supporting_quote": "By all accounts, Colts' starting quarterback Daniel Jones had his way with the Atlanta Falcons' first-team defense on Wednesday.",
-    "evidence_classification": "RELAYED_REPORTING",
-    "fantasy_mechanism": "PERFORMANCE",
-    "direction": "POSITIVE",
-    "impact_strength": "LOW",
-    "impact_horizon": "IMMEDIATE",
-    "projection_action": "NONE",
-    "fantasy_commentary": "Daniel Jones is identified as the Colts' starting quarterback and reportedly performed well against Atlanta's first-team defense in a joint practice. The passage confirms his starting role but provides no specific data on completion rate, yardage, touchdowns, or interceptions. A single practice performance against another team's defense, however positive, does not establish sustained usage patterns or in-game production.",
-    "why_it_matters": "The passage confirms Jones holds the starting quarterback job for Indianapolis, which is the most important fantasy factor for a quarterback. However, the performance detail is vague and limited to one practice session.",
-    "limitations": [
-     "No specific statistics or measurable outcomes provided",
-     "Single practice observation",
-     "Joint practice performance may not translate to regular-season games",
-     "Relayed reporting ('by all accounts') rather than firsthand observation"
-    ],
-    "confidence": 0.85,
-    "abstention_reason": null,
-    "provider": "claude",
-    "model": "claude-sonnet-4-5",
-    "schema_version": "semantic-v1",
-    "prompt_version": "wire-fantasy-2026-08-21c",
-    "input_hash": "6704ac5b25f688ff25ec",
-    "output_hash": "48887c0859eb20b489ff",
-    "tokens_in": 2463,
-    "tokens_out": 597,
-    "cost_usd": 0.016344,
-    "latency_ms": 10136,
-    "validation_failures": [],
-    "attempts": [
-     {
-      "attempt": 1,
-      "supporting_quote": "By all accounts, Colts' starting quarterback Daniel Jones had his way with the Atlanta Falcons' first-team defense on Wednesday.",
-      "validation_failures": [],
-      "tokens_in": 2463,
-      "tokens_out": 597,
-      "latency_ms": 10136
+      "tokens_out": 703,
+      "latency_ms": 10135
      }
     ],
     "retry_attempted": false,
@@ -33795,13 +33089,13 @@
     "impact_strength": "LOW",
     "impact_horizon": "IMMEDIATE",
     "projection_action": "NONE",
-    "fantasy_commentary": "Alec Pierce remains sidelined from practice but had a promising workout on Tuesday. Head coach Shane Steichen indicated he expects Pierce to return in the near future. The passage does not specify the nature of Pierce's absence or provide a concrete timeline for his return to full participation. This is a single report from one beat writer relaying coach comments about a workout, not a confirmed return date.",
-    "why_it_matters": "Pierce's continued absence from practice limits his preparation for the regular season, but the positive workout and coach's optimism suggest his return is approaching. His availability for Week 1 remains uncertain based on this report alone.",
+    "fantasy_commentary": "Alec Pierce remains sidelined from practice but had a promising workout on Tuesday. Head coach Shane Steichen indicated he expects Pierce to return in the near future. The passage does not specify the nature of Pierce's absence or provide a concrete timeline for his return to full participation. This is a single report from one beat writer relaying coach comments.",
+    "why_it_matters": "Pierce's absence from practice limits his preparation for the regular season, but the positive workout and coach's optimism about a near-term return suggest the issue is not serious. His availability for Week 1 remains uncertain based on this report alone.",
     "limitations": [
-     "The passage does not specify the injury or reason for Pierce being sidelined",
+     "The passage does not specify why Pierce is sidelined",
      "No concrete timeline is provided for Pierce's return to practice",
-     "This is a single report from one reporter relaying coach comments",
-     "The nature and extent of the 'promising workout' is not detailed"
+     "The nature and severity of whatever is keeping Pierce out is not disclosed",
+     "This is a single report from one source with no independent corroboration"
     ],
     "confidence": 0.92,
     "abstention_reason": "an absence or limitation marked POSITIVE",
@@ -33810,11 +33104,11 @@
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "1be215a3601ecf2c99dc",
-    "output_hash": "673e66be5ba6a93abaf8",
+    "output_hash": "8ffa13f5234bb753ad6a",
     "tokens_in": 2500,
-    "tokens_out": 698,
-    "cost_usd": 0.01797,
-    "latency_ms": 10244,
+    "tokens_out": 692,
+    "cost_usd": 0.01788,
+    "latency_ms": 10365,
     "validation_failures": [
      "an absence or limitation marked POSITIVE"
     ],
@@ -33826,8 +33120,8 @@
        "an absence or limitation marked POSITIVE"
       ],
       "tokens_in": 2500,
-      "tokens_out": 698,
-      "latency_ms": 10244
+      "tokens_out": 692,
+      "latency_ms": 10365
      }
     ],
     "retry_attempted": false,
@@ -33878,14 +33172,13 @@
     "impact_strength": "LOW",
     "impact_horizon": "IMMEDIATE",
     "projection_action": "REVIEW",
-    "fantasy_commentary": "LaPorta did not participate in Wednesday's practice, with no reason provided for his absence. This is a single practice observation from one reporter with no stated cause\u2014it could be injury-related, rest, or something else entirely. The passage explicitly notes there were no reports explaining why he was absent. His availability for the upcoming game remains unclear until further information emerges.",
-    "why_it_matters": "LaPorta is Detroit's starting tight end and a significant fantasy asset. Any absence from practice raises immediate availability questions, though the lack of explanation and single-practice nature of this report limits its actionable value.",
+    "fantasy_commentary": "LaPorta did not participate in Wednesday's practice, with no reason provided for his absence. This is a single practice observation from one reporter with no explanation given. The passage explicitly states there were no reports as to why he was absent, so the cause is unknown. His availability for the upcoming game remains unclear until further information emerges.",
+    "why_it_matters": "LaPorta is Detroit's starting tight end and a significant fantasy asset. Any absence from practice raises questions about his availability, though without a stated reason or pattern across multiple practices, the significance cannot be determined.",
     "limitations": [
      "Single practice observation from one reporter",
-     "No explanation provided for the absence",
-     "No indication of severity or expected duration",
-     "No corroboration from other sources",
-     "Passage notes he had been participating in recent practices, suggesting this may be an isolated occurrence"
+     "No reason provided for absence",
+     "No information about severity or expected duration",
+     "No indication whether this is injury-related, rest-related, or personal"
     ],
     "confidence": 0.95,
     "abstention_reason": null,
@@ -33894,11 +33187,11 @@
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "fedf55be2bf8bd9fbec2",
-    "output_hash": "40a000680f997818f164",
+    "output_hash": "473350214ef20cf9f7ba",
     "tokens_in": 2472,
-    "tokens_out": 664,
-    "cost_usd": 0.017376,
-    "latency_ms": 12668,
+    "tokens_out": 643,
+    "cost_usd": 0.017061,
+    "latency_ms": 9168,
     "validation_failures": [],
     "attempts": [
      {
@@ -33906,8 +33199,8 @@
       "supporting_quote": "Star tight end Sam LaPorta was not spotted participating at all at practice. There were no reports as to why he was absent",
       "validation_failures": [],
       "tokens_in": 2472,
-      "tokens_out": 664,
-      "latency_ms": 12668
+      "tokens_out": 643,
+      "latency_ms": 9168
      }
     ],
     "retry_attempted": false,
@@ -33960,14 +33253,14 @@
     "fantasy_mechanism": "NO_FANTASY_IMPACT",
     "direction": "NEUTRAL",
     "impact_strength": "LOW",
-    "impact_horizon": "UNKNOWN",
+    "impact_horizon": "IMMEDIATE",
     "projection_action": "NONE",
     "fantasy_commentary": "Watson dropped one pass during a training camp practice session. This is an isolated play observation from a single practice and carries no meaningful information about Watson's role, target share, snap distribution, or depth-chart position. One dropped pass in practice does not establish a pattern or trend that would affect fantasy projections.",
-    "why_it_matters": "A single dropped pass in practice is not actionable for fantasy purposes and does not indicate any change to Watson's expected usage or opportunity.",
+    "why_it_matters": "This is a single-play observation with no role or usage implications for fantasy purposes.",
     "limitations": [
-     "This is one play from one practice observation",
-     "No information about Watson's overall practice performance or target volume",
-     "No context about his role or usage patterns"
+     "This is one play from one practice session",
+     "No information about Watson's overall target volume or role in this practice",
+     "Does not establish any pattern of performance or usage"
     ],
     "confidence": 0.95,
     "abstention_reason": null,
@@ -33976,11 +33269,11 @@
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "4787b687f0010910f435",
-    "output_hash": "c6a2f30ea7d26807f220",
+    "output_hash": "756c40424ce8ed7919a9",
     "tokens_in": 2495,
-    "tokens_out": 624,
-    "cost_usd": 0.016845,
-    "latency_ms": 9498,
+    "tokens_out": 617,
+    "cost_usd": 0.01674,
+    "latency_ms": 9375,
     "validation_failures": [],
     "attempts": [
      {
@@ -33988,8 +33281,8 @@
       "supporting_quote": "On third-and-5, Love's downfield pass to Christian Watson was right on the money but a bit of a wobbler, and Watson dropped it against Cisse.",
       "validation_failures": [],
       "tokens_in": 2495,
-      "tokens_out": 624,
-      "latency_ms": 9498
+      "tokens_out": 617,
+      "latency_ms": 9375
      }
     ],
     "retry_attempted": false,
@@ -34015,7 +33308,7 @@
    "ownership": "INDEPENDENT",
    "underlying_report_id": "",
    "assessment": {
-    "decision": "INTERPRET",
+    "decision": "ABSTAIN",
     "claim_subject_player_id": "00-0036912",
     "claim_subject_player_name": "DeVonta Smith",
     "mentioned_players": [
@@ -34030,45 +33323,49 @@
      {
       "pronoun": "He",
       "resolved_to": "DeVonta Smith",
-      "supporting_text": "DeVonta Smith participated in individual drills, but not 11-on-11's. He joined the huddle"
+      "supporting_text": "DeVonta Smith participated in individual drills, but not 11-on-11's. He joined the huddle when the first-team offense was on the field"
      }
     ],
     "supporting_quote": "DeVonta Smith participated in individual drills, but not 11-on-11's. He joined the huddle when the first-team offense was on the field in 11-on-11s, but would then stand back behind the play.",
     "evidence_classification": "FIRSTHAND_OBSERVATION",
-    "fantasy_mechanism": "LIMITED_PARTICIPATION",
+    "fantasy_mechanism": "NO_FANTASY_IMPACT",
     "direction": "NEGATIVE",
     "impact_strength": "LOW",
     "impact_horizon": "IMMEDIATE",
-    "projection_action": "REVIEW",
-    "fantasy_commentary": "Smith was held out of 11-on-11 team drills at training camp, participating only in individual work. He remained with the first-team offense during team periods but did not take part in plays. The passage does not specify why Smith was limited or how long this restriction is expected to last.",
-    "why_it_matters": "Smith's limited participation in team drills suggests some form of restriction, though the cause and duration are unclear. This is a single-day observation from one reporter at a joint practice.",
+    "projection_action": "NONE",
+    "fantasy_commentary": "DeVonta Smith was held out of 11-on-11 team drills on Day 13 of training camp, participating only in individual work. He joined the first-team huddle but did not take part in the actual plays. The passage does not specify why Smith was limited or whether this is related to an injury, rest, or another reason. This is a single-day observation from one reporter and does not establish a pattern or longer-term concern.",
+    "why_it_matters": "Smith's limited participation in team drills raises immediate availability questions for the Eagles' top receiver, though the cause and duration remain unclear from this single practice report.",
     "limitations": [
      "The passage does not explain why Smith was limited",
      "This is a single practice observation from one reporter",
-     "No timeframe is given for when Smith might return to full participation",
-     "No injury or specific condition is mentioned"
+     "No indication of whether this limitation continued beyond this practice",
+     "No information about injury status or expected return to full participation"
     ],
     "confidence": 0.95,
-    "abstention_reason": null,
+    "abstention_reason": "commentary states a figure (13) absent from the evidence",
     "provider": "claude",
     "model": "claude-sonnet-4-5",
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "35a7f4e308387aab4570",
-    "output_hash": "edd3b56337f22252ea6e",
+    "output_hash": "8038b187aef835492ac9",
     "tokens_in": 2499,
-    "tokens_out": 663,
-    "cost_usd": 0.017442,
-    "latency_ms": 9096,
-    "validation_failures": [],
+    "tokens_out": 703,
+    "cost_usd": 0.018042000000000002,
+    "latency_ms": 10047,
+    "validation_failures": [
+     "commentary states a figure (13) absent from the evidence"
+    ],
     "attempts": [
      {
       "attempt": 1,
       "supporting_quote": "DeVonta Smith participated in individual drills, but not 11-on-11's. He joined the huddle when the first-team offense was on the field in 11-on-11s, but would then stand back behind the play.",
-      "validation_failures": [],
+      "validation_failures": [
+       "commentary states a figure (13) absent from the evidence"
+      ],
       "tokens_in": 2499,
-      "tokens_out": 663,
-      "latency_ms": 9096
+      "tokens_out": 703,
+      "latency_ms": 10047
      }
     ],
     "retry_attempted": false,
@@ -34113,12 +33410,11 @@
     "impact_strength": "LOW",
     "impact_horizon": "UNKNOWN",
     "projection_action": "NONE",
-    "fantasy_commentary": "Hurts describes the offense as still being installed and notes they treated a practice like a regular session without gameplanning. This is general team-mood commentary about the installation process during training camp. The passage contains no information about Hurts' role, usage, availability, snap share, or any specific opportunity metric that would affect fantasy projections.",
-    "why_it_matters": "This is a general statement about offensive installation during camp with no actionable fantasy information about any individual player's role or opportunity.",
+    "fantasy_commentary": "Hurts describes the team's offensive installation process and practice approach, noting the offense is not yet at full capacity and they treated a session like a regular practice rather than gameplanning. This is general team-mood commentary about the preseason installation process and carries no specific information about Hurts' role, usage, availability, or opportunity. No actionable fantasy mechanism is present.",
+    "why_it_matters": "This passage provides context about the Eagles' offensive installation timeline but does not establish any specific role, usage, availability, or opportunity information for Hurts or any other fantasy-relevant player.",
     "limitations": [
-     "No specific information about Hurts' role, usage, or availability",
-     "General team commentary without individual player impact",
-     "No quantifiable metrics or practice observations"
+     "The quote is general commentary about team preparation and does not address any individual player's role, workload, or availability",
+     "No specific usage patterns, snap counts, or opportunity metrics are mentioned"
     ],
     "confidence": 0.95,
     "abstention_reason": null,
@@ -34127,11 +33423,11 @@
     "schema_version": "semantic-v1",
     "prompt_version": "wire-fantasy-2026-08-21c",
     "input_hash": "2161465fcf0c411721b5",
-    "output_hash": "2178ed2905b13bcb7a6b",
+    "output_hash": "37eafa0ba7a64711427a",
     "tokens_in": 2499,
-    "tokens_out": 618,
-    "cost_usd": 0.016767,
-    "latency_ms": 9408,
+    "tokens_out": 644,
+    "cost_usd": 0.017157,
+    "latency_ms": 10383,
     "validation_failures": [],
     "attempts": [
      {
@@ -34139,88 +33435,8 @@
       "supporting_quote": "\"I think we're still putting in a lot of different things. Our offense isn't in to its fullness,\" quarterback Jalen Hurts said. \"Came out here and didn't necessarily gameplan for the team and so we treated it like a regular practice.\"",
       "validation_failures": [],
       "tokens_in": 2499,
-      "tokens_out": 618,
-      "latency_ms": 9408
-     }
-    ],
-    "retry_attempted": false,
-    "retry_reason": ""
-   }
-  },
-  {
-   "candidate": {
-    "candidate_id": "c06256cfa239792a40cb",
-    "player_name": "Travis Hunter",
-    "team": "JAX",
-    "position": "WR",
-    "source_id": "si_jaguars",
-    "evidence_class": "FIRSTHAND_OBSERVATION",
-    "evidence_text": "It is also worth noting that Travis Hunter spent most of his day on defense. He got a few reps in team drills on offense but ended up sticking with the defense for the majority of team drills, producing a pass breakup la"
-   },
-   "relevance_tier": "ROSTERABLE",
-   "relevance_reason": "inside the WR redraft boundary of 100 on the current board",
-   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-everything-i-saw-at-day-16-of-training-camp-running-game-picks-on-panthers",
-   "published_at": "2026-08-19T16:49:41Z",
-   "author": "John Shipley",
-   "source_name": "Sports Illustrated -- JAX",
-   "ownership": "INDEPENDENT",
-   "underlying_report_id": "",
-   "assessment": {
-    "decision": "INTERPRET",
-    "claim_subject_player_id": "00-0040718",
-    "claim_subject_player_name": "Travis Hunter",
-    "mentioned_players": [
-     {
-      "player_id": "00-0040718",
-      "player_name": "Travis Hunter",
-      "relationship": "CLAIM_SUBJECT"
-     }
-    ],
-    "quote_speaker": null,
-    "pronoun_antecedents": [
-     {
-      "pronoun": "He",
-      "resolved_to": "Travis Hunter",
-      "supporting_text": "Travis Hunter spent most of his day on defense. He got a few reps in team drills on offense"
-     }
-    ],
-    "supporting_quote": "Travis Hunter spent most of his day on defense. He got a few reps in team drills on offense but ended up sticking with the defense for the majority of team drills",
-    "evidence_classification": "FIRSTHAND_OBSERVATION",
-    "fantasy_mechanism": "ROLE_REDUCTION",
-    "direction": "NEGATIVE",
-    "impact_strength": "LOW",
-    "impact_horizon": "IMMEDIATE",
-    "projection_action": "REVIEW",
-    "fantasy_commentary": "Hunter, listed as a wide receiver, spent the majority of team drills on defense with only a few offensive reps during this single practice. This represents reduced offensive opportunity on this particular day. The passage does not establish whether this is a one-time occurrence or a pattern, nor does it quantify how many offensive snaps or routes Hunter ran. Without additional context about his typical usage or whether this defensive emphasis will continue, the fantasy impact remains uncertain.",
-    "why_it_matters": "A wide receiver spending most of practice on defense rather than offense signals reduced offensive opportunity, which directly affects his ability to run routes and draw targets in games.",
-    "limitations": [
-     "Single practice observation from one reporter",
-     "Does not establish whether this is a pattern or an isolated occurrence",
-     "Does not quantify the exact number of offensive reps",
-     "Does not explain why Hunter was primarily on defense",
-     "No indication of whether this will continue or affect game-day usage"
-    ],
-    "confidence": 0.85,
-    "abstention_reason": null,
-    "provider": "claude",
-    "model": "claude-sonnet-4-5",
-    "schema_version": "semantic-v1",
-    "prompt_version": "wire-fantasy-2026-08-21c",
-    "input_hash": "6af13bf5eedf307e9c3a",
-    "output_hash": "2d835134826bcd06e4f8",
-    "tokens_in": 2494,
-    "tokens_out": 678,
-    "cost_usd": 0.017652,
-    "latency_ms": 11113,
-    "validation_failures": [],
-    "attempts": [
-     {
-      "attempt": 1,
-      "supporting_quote": "Travis Hunter spent most of his day on defense. He got a few reps in team drills on offense but ended up sticking with the defense for the majority of team drills",
-      "validation_failures": [],
-      "tokens_in": 2494,
-      "tokens_out": 678,
-      "latency_ms": 11113
+      "tokens_out": 644,
+      "latency_ms": 10383
      }
     ],
     "retry_attempted": false,

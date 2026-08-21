@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NFL Training Camp &amp; Beat Reporter Wire</title>
+<meta name="description" content="Verified reporting from NFL beat writers, separated from LineupBeat&#x27;s fantasy interpretation. Every published item is reviewed before it appears.">
+<link rel="canonical" href="https://lineupbeat.com/nfl/wire/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LineupBeat">
+<meta property="og:title" content="NFL Training Camp &amp; Beat Reporter Wire">
+<meta property="og:description" content="Verified reporting from NFL beat writers, separated from LineupBeat&#x27;s fantasy interpretation. Every published item is reviewed before it appears.">
+<meta property="og:url" content="https://lineupbeat.com/nfl/wire/">
+<meta property="og:image" content="https://lineupbeat.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lineupbeat.com/og.png">
+<meta name="twitter:title" content="NFL Training Camp &amp; Beat Reporter Wire">
+<meta name="twitter:description" content="Verified reporting from NFL beat writers, separated from LineupBeat&#x27;s fantasy interpretation. Every published item is reviewed before it appears.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"NFL Training Camp & Beat Reporter Wire","description":"Verified reporting from NFL beat writers, separated from LineupBeat's fantasy interpretation. Every published item is reviewed before it appears.","url":"https://lineupbeat.com/nfl/wire/","dateModified":"2026-08-21"},{"@type":"Organization","@id":"https://lineupbeat.com/#org","name":"LineupBeat","url":"https://lineupbeat.com/","description":"Local NFL beat reporting matched to fantasy relevant players, with projections, ADP, coaching and schedule data.","email":"hello@lineupbeat.com","alternateName":"LineupBeat Fantasy Football","knowsAbout":["fantasy football","NFL","fantasy football projections","average draft position","NFL injuries","NFL strength of schedule"],"contactPoint":{"@type":"ContactPoint","email":"hello@lineupbeat.com","alternateName":"LineupBeat Fantasy Football","knowsAbout":["fantasy football","NFL","fantasy football projections","average draft position","NFL injuries","NFL strength of schedule"],"contactType":"customer support"}}]}</script>
+<style>
+/* ---- header ----
+   Designed at 390px and expanded, not a desktop bar squeezed down. Most
+   readers are on a phone, and six section links plus a 32-team dropdown do
+   not fit across one: they wrapped onto three rows and pushed the wire
+   below the fold before a word of it had been read.
+   So under 900px the links move into a drawer behind one button, and the
+   header keeps only what has to be there -- the brand, a way to search, and
+   a way to reach everything else. */
+
+/* Nothing in the header may widen the page. A single overflowing row here
+   gives every page a horizontal scrollbar, and the reader blames the page. */
+.topbar{max-width:100%}
+.tbrow{min-width:0}
+.tbrow .logo{flex:0 0 auto; white-space:nowrap}
+
+/* The two mobile controls. Hidden on desktop, where the real nav is
+   visible and a button to reveal it would be noise. */
+.navbtn{display:none; align-items:center; justify-content:center; gap:.4rem;
+  min-height:44px; min-width:44px; padding:0 .6rem;
+  font-family:var(--agate); text-transform:uppercase; letter-spacing:.1em;
+  font-size:.74rem; font-weight:600;
+  background:none; border:1px solid var(--rule); border-radius:999px;
+  color:var(--ink); cursor:pointer; flex:0 0 auto}
+.navbtn:hover{border-color:var(--quiet)}
+.navbtn svg{width:18px; height:18px; flex:none}
+.navbtn[aria-expanded="true"]{background:var(--signal); border-color:var(--signal);
+  color:#0A0C08}
+/* The bars become a cross when the drawer is open, so the button says what
+   it will do next rather than what it did.
+
+   transform-box is not optional here. A CSS transform on an SVG child
+   rotates about the viewBox origin unless it is told otherwise, so the
+   bars swung out of the icon instead of crossing in the middle of it. */
+.navtoggle .bar{transition:transform .18s, opacity .18s;
+  transform-box:fill-box; transform-origin:center}
+.navtoggle[aria-expanded="true"] .bar1{transform:translateY(5px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] .bar2{opacity:0}
+.navtoggle[aria-expanded="true"] .bar3{transform:translateY(-5px) rotate(-45deg)}
+
+/* ---- the drawer ----
+   Anchored under the header rather than sliding in from the side: the
+   header is sticky, so a side sheet would have to cover it and then find
+   somewhere else to put the close button. */
+.navdrawer{display:none; border-top:1px solid var(--rule);
+  background:var(--paper); max-height:calc(100vh - 3.6rem); overflow-y:auto;
+  -webkit-overflow-scrolling:touch; overscroll-behavior:contain}
+.navdrawer[hidden]{display:none}
+.navlinks{display:flex; flex-direction:column; padding:.4rem 0 .2rem}
+/* An in-app view is a button and a real page is a link, so this styles
+   both. Without the reset the buttons kept the browser's grey face and My
+   Roster sat in the drawer looking like a pressed key. */
+.navlink{display:flex; align-items:center; width:100%; min-height:48px;
+  padding:0 1rem; text-align:left; cursor:pointer;
+  background:none; border:0; border-bottom:1px solid var(--rule);
+  font-family:var(--agate); text-transform:uppercase; letter-spacing:.1em;
+  font-size:.92rem; font-weight:600; color:var(--ink); text-decoration:none}
+/* The report count, where the app supplies one. */
+.navlink .n{font-family:var(--data); font-size:.68rem; margin-left:.45rem;
+  color:var(--quiet); text-transform:none; letter-spacing:0}
+.navlink[aria-current="page"] .n{color:inherit; opacity:.7}
+.navlink:last-child{border-bottom:0}
+.navlink:hover{color:var(--signal)}
+.navlink[aria-current="page"]{color:var(--signal)}
+/* A left rule rather than a filled pill: at this size a filled row reads as
+   a button somebody is about to press, not as where he already is. */
+.navlink[aria-current="page"]{box-shadow:inset 3px 0 0 var(--signal)}
+
+/* Teams, in the drawer, behind a row of their own.
+   Open, the 32 links pushed every section above them off the screen and
+   put a division heading where a reader was looking for "Who We Are". A
+   <details> rather than a scripted panel: it works before the JavaScript
+   runs, the keyboard already knows how to operate it, and find-in-page
+   opens it in current browsers. */
+.navteams{border-bottom:1px solid var(--rule)}
+.navteams > summary{list-style:none; cursor:pointer}
+.navteams > summary::-webkit-details-marker{display:none}
+.navteams > summary::marker{content:""}
+.navteams[open] > summary{color:var(--signal)}
+.navcar{margin-left:auto; font-size:.7em; opacity:.7;
+  transition:transform .15s}
+.navteams[open] .navcar{transform:rotate(180deg)}
+.navtbody{padding:.2rem 1rem 1.2rem}
+.navtbody h3{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.1em; font-size:.68rem; color:var(--quiet);
+  margin:1rem 0 .3rem; padding-top:.8rem; border-top:1px solid var(--rule)}
+.navtbody h3:first-child{border-top:0; padding-top:.2rem; margin-top:.4rem}
+.navtgrid{display:grid; grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:0 .8rem}
+.navtgrid a{display:flex; align-items:center; gap:.5rem; min-height:44px;
+  color:var(--ink); text-decoration:none; font-size:.9rem; min-width:0}
+.navtgrid a:hover{color:var(--signal)}
+.navtgrid img{width:1.15rem; height:1.15rem; object-fit:contain; flex:none}
+.navtgrid span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+
+/* ---- the search field ----
+   Worth a permanent place on a laptop and not on a phone, where at 390px it
+   would take the whole width and leave nowhere for the brand. It is the
+   same single field either way -- rendered once, moved by CSS -- because
+   two copies means two elements with one id, and the page script binds to
+   the first one it finds.
+
+   On a phone one 44px control drops it onto its own full-width row,
+   focused and ready to type. */
+
+@media (max-width:900px){
+  /* Wrapping is what gives the field a row of its own to drop into. */
+  .tbrow{flex-wrap:wrap; gap:.5rem}
+  /* The links are in the drawer now. */
+  .tbrow .views{display:none}
+  .navbtn{display:inline-flex}
+  .navdrawer{display:block}
+  /* Pushes the buttons right and lets the brand keep its natural width. */
+  .tbrow .logo{margin-right:auto}
+  /* Last in the row, so it lands on the line below rather than between the
+     brand and the buttons. */
+  .tbrow .finder{display:none; order:9; flex:0 0 100%; max-width:none;
+    margin:0 0 .15rem}
+  .topbar.searchopen .tbrow .finder{display:block}
+  /* The app writes a build stamp into the row. It is the first thing worth
+     losing when the width is this tight. */
+  .tbrow .stamp{display:none}
+}
+
+/* Between a large phone and a laptop the links fit again, so the drawer is
+   not needed and the field is back in the row on its own account. */
+@media (min-width:901px){
+  .navdrawer{display:none}
+}
+
+/* ---- controls ----
+   The homepage's button, applied to the filter and format rows on every
+   data page. They were 999px pills at 12px, which is a different product's
+   button; the homepage's is square-cornered, taller and set in agate. */
+.pbtab, .dvtab, .cotab, .sstab, .oltab, .posnav, .cmore{
+  font-family:var(--agate); text-transform:uppercase;
+  font-size:.95rem; font-weight:700; letter-spacing:.045em;
+  border-radius:8px; padding:.55rem 1.05rem;
+  border:1px solid rgba(255,255,255,.30); background:transparent;
+  color:var(--ink); cursor:pointer; text-decoration:none;
+  display:inline-flex; align-items:center; justify-content:center;
+  transition:transform .18s ease, background .18s ease, border-color .18s ease}
+.pbtab:hover, .dvtab:hover, .cotab:hover, .sstab:hover, .oltab:hover,
+.posnav:hover, .cmore:hover{
+  border-color:var(--signal); color:var(--ink); transform:translateY(-2px);
+  text-decoration:none}
+/* The pressed state is the primary button: lime, dark type. */
+.pbtab[aria-pressed="true"], .dvtab[aria-pressed="true"],
+.cotab[aria-pressed="true"], .sstab[aria-pressed="true"],
+.oltab[aria-pressed="true"]{
+  background:var(--signal); border-color:var(--signal); color:#060806}
+.pbtab[aria-pressed="true"]:hover, .dvtab[aria-pressed="true"]:hover,
+.cotab[aria-pressed="true"]:hover, .sstab[aria-pressed="true"]:hover,
+.oltab[aria-pressed="true"]:hover{background:#d4ff4b; border-color:#d4ff4b}
+
+/* ---- vertical rhythm ----
+   Measured on the homepage at 1366px: 33px from the title to the
+   description, 35px on to the buttons, 47px on to the proof row. Three
+   steps, and the page breathes because of them.
+
+   The data pages had 6px between the heading and its lede -- the line that
+   says what the page is sat jammed under the title -- then 16px, then 42px
+   and 35px further down, which is a rhythm that gets looser as it goes
+   rather than the other way round.
+
+   The lede step is proportional rather than literal: 33px sits under a
+   61px hero title, and the same ratio under a 44px page heading is 24.
+   The block and section steps are the homepage's own. */
+:root{--gap-lede:24px; --gap-block:34px; --gap-section:47px}
+.pbsub, .dvsub, .sssub, .cosub, .olsub, .cintro, .chsub{
+  margin-top:var(--gap-lede)}
+/* .byline and .related set their own margin from the same tokens, in
+   BYLINE_CSS and RELATED_CSS: both are emitted after this block, so a
+   rule here would have lost to them. */
+.cfaq, .pbnote, .dvonly, .comethod{margin-top:var(--gap-section)}
+
+/* ---- headings ----
+   The homepage's h1 is the serif at 400 with tight tracking. The data
+   pages set the same face at 700, which at their size reads as a
+   different typeface rather than a smaller one. Same treatment, scaled
+   for a page that leads with a table rather than a proposition. */
+.pbwrap h1, .dvwrap h1, .sswrap h1, .cowrap h1, .olwrap h1, .cwrap h1, .chwrap h1, .nf h1,
+.ppage h1, .dh1{
+  font-family:var(--text); font-weight:400; letter-spacing:-.028em;
+  line-height:1.04; color:var(--ink); text-transform:none;
+  font-size:clamp(30px, 3.4vw, 44px)}
+/* The eyebrow above it, lime agate, as on the homepage. */
+.pbsublab, .cposh + .ccount, .lb-data-hook, .dhook{
+  font-family:var(--agate); font-weight:700; letter-spacing:.045em;
+  text-transform:uppercase; color:var(--signal)}
+
+@media (max-width:760px){
+  /* Compact, and still 44px to the thumb.
+     The homepage's button is sized for two of them side by side. A filter
+     row is seventeen -- draft value ran to five rows and 298px of controls
+     before the first card, and the schedule board to 373px. Height is the
+     part a thumb needs, so height is the part that stays: the type comes
+     down a step and the side padding roughly halves, which fits more per
+     row without shrinking the target. */
+  .pbtab, .dvtab, .cotab, .sstab, .oltab, .posnav, .cmore{
+    min-height:44px; font-size:.82rem; letter-spacing:.03em;
+    padding:0 .6rem}
+}
+
+:root{--content-reading:992px;--content-data:1080px;
+  --content-wide-table:1200px}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;
+  margin:0 0 1.1rem;font:.68rem/1 var(--agate,system-ui),sans-serif;
+  letter-spacing:.08em;text-transform:uppercase}
+.crumbs a{color:var(--quiet);text-decoration:none}
+.crumbs a:hover{color:var(--signal)}
+.crumbs b,.crumbs span[aria-current]{color:var(--ink);font-weight:600}
+/* A breadcrumb link at eleven pixels is not tappable. The text stays
+   small because it is a breadcrumb; the target does not. */
+@media(max-width:760px){
+  .crumbs{gap:.2rem}
+  .crumbs a{display:inline-flex;align-items:center;min-height:44px;
+    padding:0 .3rem}
+  .crumbs b{display:inline-flex;align-items:center;min-height:44px}
+}
+/* Nothing may push the page sideways. A single wide table or an absolutely
+   positioned decoration is enough to give every page a horizontal
+   scrollbar on a phone, and the reader blames the page, not the element. */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,table{max-width:100%}
+
+.wire-intro{max-width:62ch}
+.wire-note{border:1px solid var(--rule); border-left:3px solid var(--signal);
+  border-radius:8px; padding:12px 15px; margin:18px 0 6px; max-width:62ch;
+  font-size:.85rem; line-height:1.5; color:var(--quiet)}
+.wire-filters{display:flex; gap:10px; flex-wrap:wrap; margin:22px 0 6px}
+.wire-filters select{font:inherit; font-size:.82rem; padding:7px 10px;
+  background:var(--card); color:var(--ink); border:1px solid var(--rule);
+  border-radius:8px}
+.wire-count{color:var(--quiet); font-size:.8rem; margin:10px 0 0;
+  font-family:var(--agate); text-transform:uppercase; letter-spacing:.07em}
+.wire-list{margin:18px 0 0}
+.wcard{border:1px solid var(--rule); border-radius:11px; padding:18px 19px;
+  margin:0 0 16px; background:var(--card)}
+.wcard-top{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap}
+.wcard-name{font-weight:700; font-size:1.08rem}
+.wcard-meta{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.72rem; color:var(--quiet)}
+.wdir{font-family:var(--agate); text-transform:uppercase; font-weight:700;
+  letter-spacing:.07em; font-size:.68rem; padding:2px 9px; border-radius:99px;
+  border:1px solid var(--rule); color:var(--quiet)}
+.wdir.up{color:#2f6b3a; border-color:#2f6b3a}
+.wdir.down{color:#a4342a; border-color:#a4342a}
+@media(prefers-color-scheme:dark){.wdir.up{color:#7fbf8a;border-color:#7fbf8a}
+  .wdir.down{color:#e08a7f;border-color:#e08a7f}}
+.wlab{font-family:var(--agate); text-transform:uppercase; font-weight:700;
+  letter-spacing:.09em; font-size:.65rem; color:var(--quiet); margin:15px 0 5px}
+.wrep{border-left:3px solid var(--rule); padding-left:13px; font-size:.96rem}
+.wimp{border-left:3px solid var(--signal); padding-left:13px; font-size:.96rem}
+.wsrc{color:var(--quiet); font-size:.79rem; margin-top:9px}
+.wsrc a{color:var(--quiet); text-decoration:underline}
+.wown{display:inline-block; border:1px solid var(--rule); border-radius:99px;
+  padding:1px 8px; font-size:.68rem; margin-left:4px}
+.wown.team{color:#8a5a1b; border-color:#8a5a1b}
+@media(prefers-color-scheme:dark){.wown.team{color:#d6a55a;border-color:#d6a55a}}
+.wfoot{color:var(--quiet); font-size:.75rem; margin-top:11px;
+  font-family:var(--agate); text-transform:uppercase; letter-spacing:.06em}
+.wempty{border:1px dashed var(--rule); border-radius:10px; padding:26px;
+  text-align:center; color:var(--quiet); margin:24px 0}
+</style>
+</head>
+<body>
+<style>
+/* ---- teams menu ----
+   A panel of all 32, by division, because that is how somebody looks for
+   his team. Opens on click rather than hover: hover menus are a coin flip
+   on a laptop trackpad and do not exist on a phone at all. */
+.tmwrap{position:relative}
+.tmbtn{display:inline-flex; align-items:center; gap:.3rem}
+.tmcar{font-size:.6em; opacity:.7; transition:transform .15s}
+.tmbtn[aria-expanded="true"] .tmcar{transform:rotate(180deg)}
+/* Anchored to the button's left edge but pulled back so it cannot run off
+   the screen: at 44rem wide, a menu opening from a nav item two-thirds
+   across the page hangs half of AFC West into nothing. */
+.tmmenu{position:absolute; top:calc(100% + .5rem); left:auto; right:0;
+  z-index:60;
+  background:var(--paper); border:1px solid var(--rule); border-radius:10px;
+  padding:1rem 1.1rem; display:grid; grid-template-columns:repeat(4, 1fr);
+  gap:1rem 1.6rem; box-shadow:0 18px 50px rgba(0,0,0,.55); min-width:44rem;
+  max-width:min(44rem, calc(100vw - 2rem))}
+.tmmenu[hidden]{display:none}
+.tmcol h3{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.07em; font-size:.64rem; color:var(--quiet);
+  margin:0 0 .45rem; padding-bottom:.35rem;
+  border-bottom:1px solid var(--rule)}
+.tmcol a{display:flex; align-items:center; gap:.45rem; padding:.28rem 0;
+  text-decoration:none; color:var(--ink); font-size:.86rem}
+.tmcol a:hover{color:var(--signal)}
+.tmcol img{width:1.15rem; height:1.15rem; object-fit:contain; flex:none}
+
+@media (max-width:900px){
+  .tmmenu{position:fixed; left:0; right:0; top:auto; min-width:0;
+    border-radius:0; border-left:0; border-right:0;
+    grid-template-columns:repeat(2, 1fr); gap:.8rem 1rem;
+    max-height:70vh; overflow-y:auto}
+  .tmcol a{min-height:44px}
+}
+
+/* ---- header ----
+   Designed at 390px and expanded, not a desktop bar squeezed down. Most
+   readers are on a phone, and six section links plus a 32-team dropdown do
+   not fit across one: they wrapped onto three rows and pushed the wire
+   below the fold before a word of it had been read.
+   So under 900px the links move into a drawer behind one button, and the
+   header keeps only what has to be there -- the brand, a way to search, and
+   a way to reach everything else. */
+
+/* Nothing in the header may widen the page. A single overflowing row here
+   gives every page a horizontal scrollbar, and the reader blames the page. */
+.topbar{max-width:100%}
+.tbrow{min-width:0}
+.tbrow .logo{flex:0 0 auto; white-space:nowrap}
+
+/* The two mobile controls. Hidden on desktop, where the real nav is
+   visible and a button to reveal it would be noise. */
+.navbtn{display:none; align-items:center; justify-content:center; gap:.4rem;
+  min-height:44px; min-width:44px; padding:0 .6rem;
+  font-family:var(--agate); text-transform:uppercase; letter-spacing:.1em;
+  font-size:.74rem; font-weight:600;
+  background:none; border:1px solid var(--rule); border-radius:999px;
+  color:var(--ink); cursor:pointer; flex:0 0 auto}
+.navbtn:hover{border-color:var(--quiet)}
+.navbtn svg{width:18px; height:18px; flex:none}
+.navbtn[aria-expanded="true"]{background:var(--signal); border-color:var(--signal);
+  color:#0A0C08}
+/* The bars become a cross when the drawer is open, so the button says what
+   it will do next rather than what it did.
+
+   transform-box is not optional here. A CSS transform on an SVG child
+   rotates about the viewBox origin unless it is told otherwise, so the
+   bars swung out of the icon instead of crossing in the middle of it. */
+.navtoggle .bar{transition:transform .18s, opacity .18s;
+  transform-box:fill-box; transform-origin:center}
+.navtoggle[aria-expanded="true"] .bar1{transform:translateY(5px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] .bar2{opacity:0}
+.navtoggle[aria-expanded="true"] .bar3{transform:translateY(-5px) rotate(-45deg)}
+
+/* ---- the drawer ----
+   Anchored under the header rather than sliding in from the side: the
+   header is sticky, so a side sheet would have to cover it and then find
+   somewhere else to put the close button. */
+.navdrawer{display:none; border-top:1px solid var(--rule);
+  background:var(--paper); max-height:calc(100vh - 3.6rem); overflow-y:auto;
+  -webkit-overflow-scrolling:touch; overscroll-behavior:contain}
+.navdrawer[hidden]{display:none}
+.navlinks{display:flex; flex-direction:column; padding:.4rem 0 .2rem}
+/* An in-app view is a button and a real page is a link, so this styles
+   both. Without the reset the buttons kept the browser's grey face and My
+   Roster sat in the drawer looking like a pressed key. */
+.navlink{display:flex; align-items:center; width:100%; min-height:48px;
+  padding:0 1rem; text-align:left; cursor:pointer;
+  background:none; border:0; border-bottom:1px solid var(--rule);
+  font-family:var(--agate); text-transform:uppercase; letter-spacing:.1em;
+  font-size:.92rem; font-weight:600; color:var(--ink); text-decoration:none}
+/* The report count, where the app supplies one. */
+.navlink .n{font-family:var(--data); font-size:.68rem; margin-left:.45rem;
+  color:var(--quiet); text-transform:none; letter-spacing:0}
+.navlink[aria-current="page"] .n{color:inherit; opacity:.7}
+.navlink:last-child{border-bottom:0}
+.navlink:hover{color:var(--signal)}
+.navlink[aria-current="page"]{color:var(--signal)}
+/* A left rule rather than a filled pill: at this size a filled row reads as
+   a button somebody is about to press, not as where he already is. */
+.navlink[aria-current="page"]{box-shadow:inset 3px 0 0 var(--signal)}
+
+/* Teams, in the drawer, behind a row of their own.
+   Open, the 32 links pushed every section above them off the screen and
+   put a division heading where a reader was looking for "Who We Are". A
+   <details> rather than a scripted panel: it works before the JavaScript
+   runs, the keyboard already knows how to operate it, and find-in-page
+   opens it in current browsers. */
+.navteams{border-bottom:1px solid var(--rule)}
+.navteams > summary{list-style:none; cursor:pointer}
+.navteams > summary::-webkit-details-marker{display:none}
+.navteams > summary::marker{content:""}
+.navteams[open] > summary{color:var(--signal)}
+.navcar{margin-left:auto; font-size:.7em; opacity:.7;
+  transition:transform .15s}
+.navteams[open] .navcar{transform:rotate(180deg)}
+.navtbody{padding:.2rem 1rem 1.2rem}
+.navtbody h3{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.1em; font-size:.68rem; color:var(--quiet);
+  margin:1rem 0 .3rem; padding-top:.8rem; border-top:1px solid var(--rule)}
+.navtbody h3:first-child{border-top:0; padding-top:.2rem; margin-top:.4rem}
+.navtgrid{display:grid; grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:0 .8rem}
+.navtgrid a{display:flex; align-items:center; gap:.5rem; min-height:44px;
+  color:var(--ink); text-decoration:none; font-size:.9rem; min-width:0}
+.navtgrid a:hover{color:var(--signal)}
+.navtgrid img{width:1.15rem; height:1.15rem; object-fit:contain; flex:none}
+.navtgrid span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+
+/* ---- the search field ----
+   Worth a permanent place on a laptop and not on a phone, where at 390px it
+   would take the whole width and leave nowhere for the brand. It is the
+   same single field either way -- rendered once, moved by CSS -- because
+   two copies means two elements with one id, and the page script binds to
+   the first one it finds.
+
+   On a phone one 44px control drops it onto its own full-width row,
+   focused and ready to type. */
+
+@media (max-width:900px){
+  /* Wrapping is what gives the field a row of its own to drop into. */
+  .tbrow{flex-wrap:wrap; gap:.5rem}
+  /* The links are in the drawer now. */
+  .tbrow .views{display:none}
+  .navbtn{display:inline-flex}
+  .navdrawer{display:block}
+  /* Pushes the buttons right and lets the brand keep its natural width. */
+  .tbrow .logo{margin-right:auto}
+  /* Last in the row, so it lands on the line below rather than between the
+     brand and the buttons. */
+  .tbrow .finder{display:none; order:9; flex:0 0 100%; max-width:none;
+    margin:0 0 .15rem}
+  .topbar.searchopen .tbrow .finder{display:block}
+  /* The app writes a build stamp into the row. It is the first thing worth
+     losing when the width is this tight. */
+  .tbrow .stamp{display:none}
+}
+
+/* Between a large phone and a laptop the links fit again, so the drawer is
+   not needed and the field is back in the row on its own account. */
+@media (min-width:901px){
+  .navdrawer{display:none}
+}
+</style>
+<header class="topbar">
+  <div class="wrap tbrow">
+    <a class="logo" href="/">Lineup<em>Beat</em></a>
+    <nav class="views" aria-label="Sections"><a class="vbtn" href="/">The Wire</a><a class="vbtn" href="/nfl/wire/" aria-current="page">NFL Wire</a><a class="vbtn" href="/#v=roster">My Roster</a><a class="vbtn" href="/nfl/data/">Fantasy Data</a><a class="vbtn" href="/college-fantasy-football/projections/">College</a><div class="tmwrap"><button class="vbtn tmbtn" aria-expanded="false" aria-controls="tmmenu">Teams<span class="tmcar">&#9662;</span></button><div class="tmmenu" id="tmmenu" hidden><div class="tmcol"><h3>AFC East</h3><a href="/nfl/team/buf/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bills</span></a><a href="/nfl/team/mia/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Dolphins</span></a><a href="/nfl/team/ne/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Patriots</span></a><a href="/nfl/team/nyj/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Jets</span></a></div><div class="tmcol"><h3>AFC North</h3><a href="/nfl/team/bal/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Ravens</span></a><a href="/nfl/team/cin/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bengals</span></a><a href="/nfl/team/cle/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Browns</span></a><a href="/nfl/team/pit/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Steelers</span></a></div><div class="tmcol"><h3>AFC South</h3><a href="/nfl/team/hou/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Texans</span></a><a href="/nfl/team/ind/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Colts</span></a><a href="/nfl/team/jax/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Jaguars</span></a><a href="/nfl/team/ten/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Titans</span></a></div><div class="tmcol"><h3>AFC West</h3><a href="/nfl/team/den/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Broncos</span></a><a href="/nfl/team/kc/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Chiefs</span></a><a href="/nfl/team/lv/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Raiders</span></a><a href="/nfl/team/lac/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Chargers</span></a></div><div class="tmcol"><h3>NFC East</h3><a href="/nfl/team/dal/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Cowboys</span></a><a href="/nfl/team/nyg/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Giants</span></a><a href="/nfl/team/phi/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Eagles</span></a><a href="/nfl/team/was/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/was.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Commanders</span></a></div><div class="tmcol"><h3>NFC North</h3><a href="/nfl/team/chi/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bears</span></a><a href="/nfl/team/det/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Lions</span></a><a href="/nfl/team/gb/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Packers</span></a><a href="/nfl/team/min/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/min.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Vikings</span></a></div><div class="tmcol"><h3>NFC South</h3><a href="/nfl/team/atl/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Falcons</span></a><a href="/nfl/team/car/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/car.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Panthers</span></a><a href="/nfl/team/no/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Saints</span></a><a href="/nfl/team/tb/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Buccaneers</span></a></div><div class="tmcol"><h3>NFC West</h3><a href="/nfl/team/ari/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Cardinals</span></a><a href="/nfl/team/lar/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Rams</span></a><a href="/nfl/team/sf/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>49ers</span></a><a href="/nfl/team/sea/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Seahawks</span></a></div></div></div><a class="vbtn" href="/about/">Who We Are</a></nav>
+    <button class="navbtn navtoggle" type="button" aria-expanded="false" aria-controls="navdrawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bar bar1" d="M3 7h18"></path><path class="bar bar2" d="M3 12h18"></path><path class="bar bar3" d="M3 17h18"></path></svg>Menu</button>
+  </div>
+  <div class="navdrawer" id="navdrawer" hidden>
+    <nav class="navlinks" aria-label="All sections"><a class="navlink" href="/">The Wire</a><a class="navlink" href="/nfl/wire/" aria-current="page">NFL Wire</a><a class="navlink" href="/#v=roster">My Roster</a><a class="navlink" href="/nfl/data/">Fantasy Data</a><a class="navlink" href="/college-fantasy-football/projections/">College</a><a class="navlink" href="/about/">Who We Are</a></nav>
+    <details class="navteams">
+      <summary class="navlink">Teams<span class="navcar" aria-hidden="true">&#9662;</span></summary>
+      <div class="navtbody"><h3>AFC East</h3><div class="navtgrid"><a href="/nfl/team/buf/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bills</span></a><a href="/nfl/team/mia/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Dolphins</span></a><a href="/nfl/team/ne/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Patriots</span></a><a href="/nfl/team/nyj/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Jets</span></a></div><h3>AFC North</h3><div class="navtgrid"><a href="/nfl/team/bal/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Ravens</span></a><a href="/nfl/team/cin/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bengals</span></a><a href="/nfl/team/cle/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Browns</span></a><a href="/nfl/team/pit/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Steelers</span></a></div><h3>AFC South</h3><div class="navtgrid"><a href="/nfl/team/hou/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Texans</span></a><a href="/nfl/team/ind/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Colts</span></a><a href="/nfl/team/jax/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Jaguars</span></a><a href="/nfl/team/ten/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Titans</span></a></div><h3>AFC West</h3><div class="navtgrid"><a href="/nfl/team/den/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Broncos</span></a><a href="/nfl/team/kc/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Chiefs</span></a><a href="/nfl/team/lv/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Raiders</span></a><a href="/nfl/team/lac/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Chargers</span></a></div><h3>NFC East</h3><div class="navtgrid"><a href="/nfl/team/dal/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Cowboys</span></a><a href="/nfl/team/nyg/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Giants</span></a><a href="/nfl/team/phi/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Eagles</span></a><a href="/nfl/team/was/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/was.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Commanders</span></a></div><h3>NFC North</h3><div class="navtgrid"><a href="/nfl/team/chi/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bears</span></a><a href="/nfl/team/det/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Lions</span></a><a href="/nfl/team/gb/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Packers</span></a><a href="/nfl/team/min/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/min.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Vikings</span></a></div><h3>NFC South</h3><div class="navtgrid"><a href="/nfl/team/atl/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Falcons</span></a><a href="/nfl/team/car/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/car.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Panthers</span></a><a href="/nfl/team/no/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Saints</span></a><a href="/nfl/team/tb/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Buccaneers</span></a></div><h3>NFC West</h3><div class="navtgrid"><a href="/nfl/team/ari/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Cardinals</span></a><a href="/nfl/team/lar/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Rams</span></a><a href="/nfl/team/sf/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>49ers</span></a><a href="/nfl/team/sea/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Seahawks</span></a></div></div>
+    </details>
+  </div>
+</header>
+<script>
+// Click to open, escape or an outside click to close.
+//
+// Hover menus are a coin flip on a trackpad and do not exist on a phone,
+// so this is the same interaction everywhere.
+// Delegated rather than bound to the button, because on the homepage the
+// nav is re-rendered and the button this would have held a reference to is
+// thrown away on every state change. Looking it up at click time means a
+// freshly inserted menu works without anything having to re-bind.
+(function(){
+  function menuFor(btn){
+    var wrap = btn.closest ? btn.closest('.tmwrap') : null;
+    return wrap ? wrap.querySelector('.tmmenu') : null;
+  }
+  function set(btn, menu, open){
+    menu.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  function closeAll(){
+    document.querySelectorAll('.tmwrap').forEach(function(w){
+      var b = w.querySelector('.tmbtn'), m = w.querySelector('.tmmenu');
+      if (b && m) set(b, m, false);
+    });
+  }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest ? e.target.closest('.tmbtn') : null;
+    if (btn){
+      var menu = menuFor(btn);
+      if (!menu) return;
+      var open = menu.hidden;
+      closeAll();
+      set(btn, menu, open);
+      e.stopPropagation();
+      return;
+    }
+    // A click inside an open panel is somebody reading it, not dismissing.
+    if (e.target.closest && e.target.closest('.tmmenu')) return;
+    closeAll();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeAll();
+  });
+})();
+</script>
+<script>
+// One button, one drawer, one search row -- on every page, from
+// seo.site_nav(). Written to no-op where the markup is absent so a page
+// that has not been rebuilt yet does not throw.
+(function(){
+  var bar = document.querySelector('.topbar');
+  if (!bar) return;
+  var toggle = bar.querySelector('.navtoggle');
+  var drawer = bar.querySelector('.navdrawer');
+  var sbtn = bar.querySelector('.navsearch');
+  var find = bar.querySelector('.finder');
+
+  function setDrawer(open){
+    if (!toggle || !drawer) return;
+    drawer.hidden = !open;
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  // The field is one element that the stylesheet moves, so this toggles a
+  // class on the header rather than the element's own hidden attribute --
+  // hiding it outright would hide it on a laptop too.
+  function setSearch(open){
+    if (!sbtn || !find) return;
+    bar.classList.toggle('searchopen', open);
+    sbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  function closeAll(){ setDrawer(false); setSearch(false); }
+
+  if (toggle && drawer){
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = drawer.hidden;
+      closeAll();
+      setDrawer(open);
+    });
+  }
+  if (sbtn && find){
+    sbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = !bar.classList.contains('searchopen');
+      closeAll();
+      setSearch(open);
+      // Opening a search box and making somebody tap it again to type is
+      // two taps for one intention.
+      if (open){
+        var input = find.querySelector('input');
+        if (input) input.focus();
+      }
+    });
+  }
+
+  // A tap outside closes, the same as the teams menu.
+  document.addEventListener('click', function(e){
+    if (bar.contains(e.target)) return;
+    closeAll();
+  });
+  // Escape closes and hands focus back to the button that opened it,
+  // otherwise the next tab starts from the top of the document.
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Escape') return;
+    if (drawer && !drawer.hidden && toggle) toggle.focus();
+    else if (bar.classList.contains('searchopen') && sbtn) sbtn.focus();
+    closeAll();
+  });
+  // Rotating to landscape crosses the breakpoint with the drawer still
+  // marked open, which left the button lit on a layout that no longer has
+  // a drawer.
+  var wide = window.matchMedia('(min-width:901px)');
+  var onWide = function(e){ if (e.matches) closeAll(); };
+  if (wide.addEventListener) wide.addEventListener('change', onWide);
+  else if (wide.addListener) wide.addListener(onWide);
+})();
+</script>
+<main class="wrap">
+{'@type': 'BreadcrumbList', 'itemListElement': [{'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://lineupbeat.com/'}, {'@type': 'ListItem', 'position': 2, 'name': 'NFL', 'item': 'https://lineupbeat.com/nfl/data/'}, {'@type': 'ListItem', 'position': 3, 'name': 'Wire', 'item': 'https://lineupbeat.com/nfl/wire/'}]}
+<h1>The NFL Wire</h1>
+<p class="wire-intro">Verified reporting from NFL beat writers, separated from Lineup Beat&#x27;s fantasy interpretation. Every published item is reviewed before it appears here.</p>
+<div class="wire-note"><b>How to read the Wire:</b> Reporter findings describe the underlying evidence. Lineup Beat impact is our fantasy interpretation of that evidence. A report appearing here does not automatically change our projections.</div>
+<div class="wire-filters">
+  <select id="fteam" aria-label="Filter by team"><option value="">All teams</option>
+    <option value="ATL">ATL</option><option value="DET">DET</option><option value="MIA">MIA</option><option value="NE">NE</option><option value="PHI">PHI</option></select>
+  <select id="fpos" aria-label="Filter by position"><option value="">All positions</option>
+    <option value="RB">RB</option><option value="WR">WR</option><option value="TE">TE</option></select>
+  <select id="fdir" aria-label="Filter by direction"><option value="">Any direction</option>
+    <option value="POSITIVE">Trending up</option><option value="NEGATIVE">Trending down</option><option value="NEUTRAL">Worth noting</option></select>
+</div>
+<p class="wire-count" id="wirecount">6 reports</p>
+<div class="wire-list"><article class="wcard" data-team="ATL"
+         data-pos="WR" data-dir="POSITIVE">
+  <div class="wcard-top">
+    <span class="wcard-name">Chris Blair</span>
+    <span class="wcard-meta">ATL WR</span>
+    <span class="wdir up">Trending up</span>
+    
+  </div>
+  <div class="wlab">What the reporter found</div>
+  <div class="wrep">Elsewhere, Jack Strand still did not receive team work, but he is expected to play half of Saturday’s preseason game. Chris Blair received most of Jahan Dotson’s first-team snaps during red-zone work, giving him another opportunity to make his case for a roster spot.</div>
+  <p class="wsrc">Darius Hayes, Sports Illustrated -- ATL &middot; 2026-08-21
+    <span class="wown">Independent</span>
+    <br><a href="https://www.si.com/nfl/falcons/onsi/three-major-falcons-takeaways-from-day-2-joint-practice-with-colts" rel="nofollow noopener" target="_blank">Read the original report</a></p>
+  <div class="wlab">Lineup Beat impact</div>
+  <div class="wimp">Chris Blair took most of Jahan Dotson&#x27;s first-team red-zone snaps during one joint practice. The report does not say why those snaps were available or for how long, and it does not establish that Blair has moved ahead of Dotson.</div>
+  <p class="wfoot">Evidence strength low &middot; immediate horizon &middot; No projection change</p>
+</article><article class="wcard" data-team="PHI"
+         data-pos="WR" data-dir="NEUTRAL">
+  <div class="wcard-top">
+    <span class="wcard-name">DeVonta Smith</span>
+    <span class="wcard-meta">PHI WR</span>
+    <span class="wdir ">Worth noting</span>
+    <span class="wdir" style="color:#a4342a;border-color:#a4342a">preview &middot; not approved</span>
+  </div>
+  <div class="wlab">What the reporter found</div>
+  <div class="wrep">Notes: DeVonta Smith returned to practice in a limited capacity, and although Makai Lemon wasn&#x27;t in uniform and listed as a non-participant, he took part in some WR drills.</div>
+  <p class="wsrc">Jimmy Kempski, PhillyVoice &middot; 2026-08-20
+    <span class="wown">Independent</span>
+    <br><a href="https://www.phillyvoice.com/eagles-2026-training-camp-practice-participation-tracker/" rel="nofollow noopener" target="_blank">Read the original report</a></p>
+  <div class="wlab">Lineup Beat impact</div>
+  <div class="wimp">DeVonta Smith returned to practice but participated in a limited capacity during this training camp session. The passage does not specify why he was limited or how long he had been absent. This is a single practice observation from one reporter with no indication of the underlying cause or expected duration of the limitation.</div>
+  <p class="wfoot">Evidence strength low &middot; immediate horizon &middot; No projection change</p>
+</article><article class="wcard" data-team="DET"
+         data-pos="TE" data-dir="NEGATIVE">
+  <div class="wcard-top">
+    <span class="wcard-name">Sam LaPorta</span>
+    <span class="wcard-meta">DET TE</span>
+    <span class="wdir down">Trending down</span>
+    <span class="wdir" style="color:#a4342a;border-color:#a4342a">preview &middot; not approved</span>
+  </div>
+  <div class="wlab">What the reporter found</div>
+  <div class="wrep">Star tight end Sam LaPorta was not spotted participating at all at practice. There were no reports as to why he was absent, as has been a participant in recent practices.</div>
+  <p class="wsrc">John Maakaron, Sports Illustrated -- DET &middot; 2026-08-19
+    <span class="wown">Independent</span>
+    <br><a href="https://www.si.com/nfl/lions/onsi/detroit-lions-te-misses-wednesday-practice-jameson-williams-returns" rel="nofollow noopener" target="_blank">Read the original report</a></p>
+  <div class="wlab">Lineup Beat impact</div>
+  <div class="wimp">LaPorta did not participate in Wednesday&#x27;s practice, with no reason provided for his absence. This is a single practice observation from one reporter with no explanation given. The passage explicitly states there were no reports as to why he was absent, so the cause is unknown. His availability for the upcoming game remains unclear until further information emerges.</div>
+  <p class="wfoot">Evidence strength low &middot; immediate horizon</p>
+</article><article class="wcard" data-team="PHI"
+         data-pos="WR" data-dir="NEGATIVE">
+  <div class="wcard-top">
+    <span class="wcard-name">Makai Lemon</span>
+    <span class="wcard-meta">PHI WR</span>
+    <span class="wdir down">Trending down</span>
+    <span class="wdir" style="color:#a4342a;border-color:#a4342a">preview &middot; not approved</span>
+  </div>
+  <div class="wlab">What the reporter found</div>
+  <div class="wrep">Notes: DeVonta Smith returned to practice in a limited capacity, and although Makai Lemon wasn&#x27;t in uniform and listed as a non-participant, he took part in some WR drills.</div>
+  <p class="wsrc">Jimmy Kempski, PhillyVoice &middot; 2026-08-20
+    <span class="wown">Independent</span>
+    <br><a href="https://www.phillyvoice.com/eagles-2026-training-camp-practice-participation-tracker/" rel="nofollow noopener" target="_blank">Read the original report</a></p>
+  <div class="wlab">Lineup Beat impact</div>
+  <div class="wimp">Makai Lemon was listed as a non-participant and was not in uniform for this training camp practice, though he did take part in some wide receiver drills. The passage does not specify why he was limited or whether this represents an injury, rest day, or other reason. This is a single practice observation from one reporter and does not establish a pattern of availability concerns or a defined role change.</div>
+  <p class="wfoot">Evidence strength low &middot; immediate horizon &middot; No projection change</p>
+</article><article class="wcard" data-team="MIA"
+         data-pos="RB" data-dir="POSITIVE">
+  <div class="wcard-top">
+    <span class="wcard-name">Ollie Gordon II</span>
+    <span class="wcard-meta">MIA RB</span>
+    <span class="wdir up">Trending up</span>
+    <span class="wdir" style="color:#a4342a;border-color:#a4342a">preview &middot; not approved</span>
+  </div>
+  <div class="wlab">What the reporter found</div>
+  <div class="wrep">And the reality is the line struggled not only in pass protection but in run blocking as well. There were two good-looking runs by the first-team offense on this day, one by De&#x27;Von Achane and the other by Ollie Gordon II.</div>
+  <p class="wsrc">Alain Poupart, Sports Illustrated -- MIA &middot; 2026-08-20
+    <span class="wown">Independent</span>
+    <br><a href="https://www.si.com/nfl/dolphins/onsi/time-for-concern-or-what-to-make-of-the-dolphins-offense-getting-dominated-in-the-joint-practice-01m0g9v5b0cv" rel="nofollow noopener" target="_blank">Read the original report</a></p>
+  <div class="wlab">Lineup Beat impact</div>
+  <div class="wimp">Ollie Gordon II recorded a good-looking run with the first-team offense during joint practice. This indicates he received at least one carry with the first-team unit. The passage does not establish Gordon&#x27;s overall workload distribution, his depth-chart position, or whether this was representative of his typical usage pattern. One observed carry with the first team in a single practice is insufficient to project a defined role.</div>
+  <p class="wfoot">Evidence strength low &middot; short term horizon</p>
+</article><article class="wcard" data-team="NE"
+         data-pos="WR" data-dir="POSITIVE">
+  <div class="wcard-top">
+    <span class="wcard-name">Mack Hollins</span>
+    <span class="wcard-meta">NE WR</span>
+    <span class="wdir up">Trending up</span>
+    <span class="wdir" style="color:#a4342a;border-color:#a4342a">preview &middot; not approved</span>
+  </div>
+  <div class="wlab">What the reporter found</div>
+  <div class="wrep">FOXBORO --- If you look at any of the New England Patriots&#x27; two-minute drills to close each training camp practice this summer, it doesn&#x27;t matter which offensive unit is on the field. Chances are, you&#x27;ll see Mack Hollins running routes and contributing.</div>
+  <p class="wsrc">Ethan Hurwitz, Sports Illustrated -- NE &middot; 2026-08-20
+    <span class="wown">Independent</span>
+    <br><a href="https://www.si.com/nfl/patriots/onsi/mack-hollins-continues-to-chug-along-in-patriots-wr-room" rel="nofollow noopener" target="_blank">Read the original report</a></p>
+  <div class="wlab">Lineup Beat impact</div>
+  <div class="wimp">Hollins is running routes in two-minute drills across both offensive units during training camp practices. The passage indicates consistent participation in these situational periods but does not specify his depth-chart position, snap share with the first team, or target volume. This is a single reporter&#x27;s observation from camp and does not establish a defined regular-season role.</div>
+  <p class="wfoot">Evidence strength low &middot; short term horizon</p>
+</article></div>
+</main>
+<script>
+(function(){
+  var sel=document.querySelectorAll('.wire-filters select');
+  var cards=[].slice.call(document.querySelectorAll('.wcard'));
+  var count=document.getElementById('wirecount');
+  function apply(){
+    var t=document.getElementById('fteam').value,
+        p=document.getElementById('fpos').value,
+        d=document.getElementById('fdir').value, n=0;
+    cards.forEach(function(c){
+      var ok=(!t||c.dataset.team===t)&&(!p||c.dataset.pos===p)&&
+             (!d||c.dataset.dir===d);
+      c.hidden=!ok; if(ok)n++;
+    });
+    if(count)count.textContent=n+(n===1?' report':' reports');
+  }
+  sel.forEach(function(s){s.addEventListener('change',apply);});
+  apply();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "351a7f1ca5a14571859dcf22cb395b89"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Reddit Pixel -->
+<script>
+!function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?
+p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};
+p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js";
+t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);
+rdt('init','a2_jhraddsbuel0');
+rdt('track','PageVisit');
+</script>
+<!-- End Reddit Pixel -->
+<!-- X conversion tracking base code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','reect');
+</script>
+<!-- End X conversion tracking base code -->
+<script>
+(function(){
+  var sent = {};
+  // One of each per page. A filter used once is the signal; used twenty
+  // times it is the same signal, more expensively.
+  window.lbTrack = function(name, meta){
+    try {
+      if (sent[name]) return;
+      sent[name] = 1;
+      if (typeof rdt !== "function") return;   // blocked, or not loaded yet
+      rdt("track", name, meta || {});
+    } catch (e) { /* never break a page to measure it */ }
+  };
+
+  // How many pages this visit has seen. sessionStorage rather than a
+  // cookie: it dies with the tab, which is the right lifetime for "did
+  // they look at a second thing".
+  try {
+    var n = (parseInt(sessionStorage.getItem("lb_pv") || "0", 10) || 0) + 1;
+    sessionStorage.setItem("lb_pv", String(n));
+    if (n >= 2) window.lbTrack("second_page_view", {pages: n});
+  } catch (e) {}
+
+  // Search, debounced. A keystroke is not a search; a pause is.
+  var timer;
+  document.addEventListener("input", function(e){
+    var el = e.target;
+    if (!el || el.type !== "search") return;
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      if ((el.value || "").trim().length >= 2) window.lbTrack("Search");
+    }, 900);
+  }, true);
+
+  // Filters, sorting and row expansion, from the attributes the pages
+  // already use. Catching them here rather than in five builders means a
+  // new control is measured the day it ships.
+  document.addEventListener("click", function(e){
+    var b = e.target && e.target.closest &&
+            e.target.closest("button, [role=button]");
+    if (!b) return;
+    var d = b.dataset || {};
+    if ("sort" in d) return window.lbTrack("sort_use", {sort: d.sort});
+    if ("pos" in d || "val" in d || "fmt" in d || "p" in d || "s" in d ||
+        "w" in d || "f" in d)
+      return window.lbTrack("filter_use");
+    if (b.classList.contains("follow") || /follow/i.test(b.textContent || ""))
+      return window.lbTrack("follow_player");
+  }, true);
+
+  // An expanded row: the point somebody stops scanning and starts reading.
+  document.addEventListener("click", function(e){
+    var tr = e.target && e.target.closest && e.target.closest("tr.r, tr.tr");
+    if (tr) window.lbTrack("player_expand");
+  }, true);
+})();
+</script>
+</body>
+</html>

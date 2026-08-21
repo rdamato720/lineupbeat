@@ -187,6 +187,20 @@ ACTIONABLE = re.compile(
     r"role|rotation|package|workload|snap share|camp|drill)\b")
 
 
+# Attribution to nobody in particular. "By all accounts" is a writer
+# summarising other people's reporting without naming any of it, and the
+# relay detector cannot see it because there is no outlet or byline to
+# match: a Daniel Jones performance note reached FIRSTHAND_OBSERVATION from
+# an approved reporter on exactly that phrase. Anonymous synthesis is not
+# firsthand observation, whoever writes it.
+SYNTHESIS = re.compile(
+    r"(?i)\b(by all accounts|reportedly|word (?:is|around|has it)|"
+    r"it (?:is|was) (?:believed|expected|understood|reported)|"
+    r"sources? (?:say|said|indicate|tell)|the (?:word|belief) is|"
+    r"is said to|apparently|rumou?r(?:ed|s)?|"
+    r"there (?:is|has been) talk|many (?:believe|expect))\b")
+
+
 def relevance(text: str) -> str:
     """Why this span may not become a claim, or "".
 
@@ -310,6 +324,15 @@ def classify(text: str, *, reporter_voice: bool,
             return UNCERTAIN, 0.3, why
         why.append("injury event observed in an approved reporter's voice, "
                    "not a diagnosis")
+
+    # Anonymous synthesis is checked with the hedges, and before the
+    # observation test, so a phrase like "by all accounts" cannot be
+    # outvoted by an observation word later in the same sentence.
+    synth = SYNTHESIS.search(t)
+    if synth:
+        why.append(f"anonymous synthesis ({synth.group(0).lower()!r}): the "
+                   f"writer is summarising reporting he does not name")
+        return ANALYSIS_OR_OPINION, 0.4, why
 
     hedged = HEDGE.search(t)
     observed = OBSERVED.search(t)

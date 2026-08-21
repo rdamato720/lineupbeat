@@ -1,0 +1,30 @@
+{
+ "reviewed_at": "2026-08-21",
+ "reviewer": "ralph",
+ "batch": "backfill-48h",
+ "note": "Provisional treatment pending the complete evidence. Nothing published.",
+ "decisions": {
+  "daniel-jones": {
+   "action": "HOLD", "subject": "Daniel Jones",
+   "reason": "RELAYED_OR_SYNTHESIZED_UNCONFIRMED",
+   "note": "'By all accounts' suggests relayed or synthesized reporting. Do not publish a performance interpretation unless the author provides direct firsthand evidence in the same segment."
+  },
+  "terrace-marshall": {
+   "action": "HOLD", "subject": "Terrace Marshall Jr.",
+   "reason": "CLAIM_SUBJECT_UNCONFIRMED",
+   "note": "Confirm the usage statement is about Marshall and not inherited from the adjacent Ewers or Cam Miller discussion."
+  },
+  "devonta-smith": {"action": "PENDING", "subject": "DeVonta Smith",
+   "note": "Held out of 11-on-11s must not be described as an injury unless the passage states one."},
+  "sam-laporta": {"action": "PENDING", "subject": "Sam LaPorta",
+   "note": "Absence may be reported; no cause may be inferred."},
+  "makai-lemon": {"action": "PENDING", "subject": "Makai Lemon",
+   "note": "Non-participation may affect availability; do not infer injury or timetable."},
+  "ollie-gordon-ii": {"action": "PENDING", "subject": "Ollie Gordon II",
+   "note": "One first-team carry is not automatically a meaningful role change."},
+  "mack-hollins": {"action": "PENDING", "subject": "Mack Hollins",
+   "note": "Confirm the two-minute routes were his and whether this is meaningful first-team usage."},
+  "travis-hunter": {"action": "PENDING", "subject": "Travis Hunter",
+   "note": "Confirm defensive snaps actually reduced or are expected to reduce offensive usage."}
+ }
+}

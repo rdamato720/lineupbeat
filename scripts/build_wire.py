@@ -196,6 +196,7 @@ FILTER_JS = """
 
 def card_html(p: dict) -> str:
     own = p["source_ownership"] == "TEAM_OWNED"
+    unapproved = p.get("_preview")
     dircls = DIR_CLASS.get(p["direction"], "")
     date = str(p.get("published_date", ""))[:10]
     foot = f"Evidence strength {esc(p.get('strength','LOW')).lower()} &middot; " \
@@ -208,6 +209,7 @@ def card_html(p: dict) -> str:
     <span class="wcard-name">{esc(p['player_name'])}</span>
     <span class="wcard-meta">{esc(p['team'])} {esc(p['position'])}</span>
     <span class="wdir {dircls}">{esc(p['reader_label'])}</span>
+    {'<span class="wdir" style="color:#a4342a;border-color:#a4342a">preview &middot; not approved</span>' if unapproved else ''}
   </div>
   <div class="wlab">What the reporter found</div>
   <div class="wrep">{esc(p['reporter_found'])}</div>
@@ -269,6 +271,10 @@ def main():
     ap.add_argument("--base", default="https://lineupbeat.com")
     ap.add_argument("--out")
     ap.add_argument("--validate-only", action="store_true")
+    ap.add_argument("--preview-backfill", action="store_true",
+                    help="render approved cards plus the backfill candidates, "
+                         "each marked unapproved. Preview only; never the "
+                         "production build.")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -284,6 +290,36 @@ def main():
               f"{p['team']} {p['position']:<4}{p['reader_label']}")
     if args.validate_only:
         return 0
+
+    # A preview may show what unapproved candidates would look like. The
+    # production build never can: publishable() is the only path into pubs,
+    # and this flag is not available to it.
+    preview_extra = []
+    if args.preview_backfill:
+        bf = Path("data/wire_backfill_review.json")
+        if bf.exists():
+            for r in json.loads(bf.read_text())["candidates"]:
+                a, c, f = r["assessment"], r["candidate"], r.get("full", {})
+                preview_extra.append({
+                    "publication_id": "preview:" + c["candidate_id"][:12],
+                    "player_name": c["player_name"], "team": c["team"],
+                    "position": c["position"], "direction": a["direction"],
+                    "reader_label": LABELS.get(a["direction"], "Worth noting"),
+                    "mechanism": a["fantasy_mechanism"],
+                    "strength": a["impact_strength"],
+                    "horizon": a["impact_horizon"],
+                    "projection_action": a["projection_action"],
+                    "reporter_found": f.get("evidence_text") or c["evidence_text"],
+                    "lineupbeat_impact": a["fantasy_commentary"],
+                    "source": f.get("publication", ""),
+                    "author": f.get("reporter", ""),
+                    "published_date": f.get("published_at", ""),
+                    "url": f.get("canonical_url", ""),
+                    "source_ownership": f.get("ownership", "INDEPENDENT"),
+                    "reviewer_action": "PREVIEW_UNAPPROVED",
+                    "_preview": True})
+        pubs = pubs + preview_extra
+        print(f"  preview: {len(preview_extra)} unapproved candidate(s) added")
 
     canonical = args.base.rstrip("/") + CANONICAL
     teams = sorted({p["team"] for p in pubs})
@@ -357,6 +393,8 @@ def main():
         print("  --dry-run, nothing written")
         return 0
 
+    if args.preview_backfill and not args.out:
+        args.out = "data/wire_page_preview.html"
     out = Path(args.out) if args.out else SITE / SPORT / "wire" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(seo.check_page(page, str(out)))
@@ -366,6 +404,9 @@ def main():
         shown = out            # an --out outside the repo is fine to report raw
     print(f"  wrote {shown} ({len(page):,} bytes)")
 
+    if args.preview_backfill:
+        print("  preview written; the live page and homepage are untouched")
+        return 0
     if inject_homepage(pubs, SITE / "index.html"):
         print(f"  homepage module: {min(len(pubs), 3)} card(s)")
     else:
