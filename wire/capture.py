@@ -24,8 +24,9 @@ from datetime import datetime, timezone
 import feedparser
 import trafilatura
 
-from .registry import (AUTHOR_PAGE_SCRAPE, EXCERPT_FEED_PAGE_FETCH,
-                       FULL_TEXT_FEED, SITE_FEED_AUTHOR_FILTER, Source)
+from .registry import (AUTHOR_PAGE_SCRAPE, EXCERPT_FEED_PAGE_FETCH, 
+                       FULL_TEXT_FEED, PAID_LABEL, SITE_FEED_AUTHOR_FILTER, 
+                       SI_TEAM_PAGE, Source)
 
 # A real browser string, and not as a trick. Several publishers answer a bare
 # urllib agent with 403 and a browser agent with the article -- Arizona Sports
@@ -158,6 +159,12 @@ def _matches(src: Source, entry) -> bool:
 
 def discover(src: Source, limit: int = 25) -> list[dict]:
     """Candidate URLs for one source. No fetching of article pages here."""
+    if src.paid:
+        # Discovery for a paid source is a human's job with a link, not a
+        # crawl. Returning nothing is the whole behaviour.
+        return []
+    if src.adapter == SI_TEAM_PAGE:
+        return _discover_si(src, limit)
     if src.adapter == AUTHOR_PAGE_SCRAPE:
         return _discover_author_page(src, limit)
     if not src.feed_url:
@@ -185,6 +192,40 @@ def discover(src: Source, limit: int = 25) -> list[dict]:
             # trafilatura strips that where a tag-strip cannot.
             "feed_html": best,
             "feed_text": _clean(best),
+        })
+        if len(out) >= limit:
+            break
+    return out
+
+
+def _discover_si(src: Source, limit: int) -> list[dict]:
+    """An SI team landing page, judged before anything is fetched.
+
+    Every article is evaluated against the registered team and the author
+    registry here, so an ineligible one never costs a request. Ineligible
+    items are still returned, carrying their reason -- the caller stores the
+    exclusion rather than discarding it, because a dropped article and an
+    article nobody wrote are indistinguishable a week later.
+    """
+    from . import si as _si
+    authors = _si.load_authors()
+    team = src.teams[0] if src.teams else ""
+    raw, meta = _si.discover_team(src.si_team_slug, pages=2)
+    out = []
+    for item in raw:
+        verdict = _si.evaluate(item, team, authors,
+                               item.get("discovery_url", ""))
+        out.append({
+            "url": verdict.canonical_url,
+            "headline": verdict.headline,
+            "author": verdict.author,
+            "published_at": verdict.published_at,
+            "feed_html": "", "feed_text": "",
+            "si_eligible": verdict.eligible,
+            "si_exclusion_reason": verdict.exclusion_reason,
+            "si_author_class": verdict.author_class,
+            "si_section": verdict.section,
+            "si_discovery_url": verdict.discovery_url,
         })
         if len(out) >= limit:
             break
@@ -221,6 +262,18 @@ def _discover_author_page(src: Source, limit: int) -> list[dict]:
 
 def capture(src: Source, item: dict) -> Article:
     """One candidate URL becomes one stored article, or an honest failure."""
+    if src.paid:
+        # The second of three refusals. Source.paid already blocks polling
+        # and manual submission; this one makes sure that a caller holding a
+        # url and a source cannot fetch the body by calling capture directly.
+        return Article(source_id=src.source_id,
+                       canonical_url=item.get("url", ""),
+                       headline=item.get("headline", ""),
+                       author=item.get("author", ""),
+                       published_at=item.get("published_at", ""),
+                       retrieved_at=datetime.now(timezone.utc).isoformat(),
+                       extraction_status=BLOCKED_FETCH,
+                       note=PAID_LABEL)
     art = Article(source_id=src.source_id,
                   canonical_url=item.get("url", ""),
                   headline=item.get("headline", ""),

@@ -687,6 +687,242 @@ check("evidence.py references no fantasy file",
 check("evidence.py imports nothing from the fantasy side",
       not FORBIDDEN_IMPORTS.findall(evsrc))
 
+# ----------------------------------------------------------------- SI adapter
+from wire import capture
+from wire import si as SI
+
+SI_AUTH = SI.load_authors()
+
+# Team association is decided by the canonical url and by nothing else. This
+# is the case a title filter and an author allowlist both miss: Albert
+# Breer's Eagles training-camp notebook is firsthand reporting by a
+# credentialed reporter, and it appears on the Bills landing page.
+wrong = SI.evaluate(
+    {"canonical_url": "https://www.si.com/nfl/jaguars/onsi/jaguars-practice-notes",
+     "headline": "Jaguars Practice Notes", "author": "Ralph Ventre",
+     "published_at": "2026-08-20"}, "BUF", SI_AUTH)
+check("an SI article from another team is rejected",
+      not wrong.eligible and "JAX" in wrong.exclusion_reason,
+      wrong.exclusion_reason)
+
+national = SI.evaluate(
+    {"canonical_url": "https://www.si.com/nfl/top-50-nfl-draft-prospects-2026",
+     "headline": "SI's Top 50 NFL Draft Prospects", "author": "Gilberto Manzano",
+     "published_at": "2026-08-20"}, "BUF", SI_AUTH)
+check("a national SI story syndicated onto a team page is rejected",
+      not national.eligible and "national" in national.exclusion_reason,
+      national.exclusion_reason)
+
+# The same national story sits on all four pilot pages. One canonical url,
+# so one stored article, whichever page found it.
+with tempfile.TemporaryDirectory() as tmp:
+    st = WireStore(Path(tmp) / "w.db")
+    from wire.capture import Article as _A
+    ids = set()
+    for team_src in ("si_bills", "si_dolphins", "si_patriots", "si_jets"):
+        ids.add(st.save_item(_A(
+            source_id=team_src,
+            canonical_url="https://www.si.com/nfl/one-national-story",
+            headline="One National Story", author="Albert Breer",
+            published_at="2026-08-20", raw_text="x" * 900,
+            content_sha256="deadbeef", extraction_status="COMPLETE")))
+    rows = st.conn.execute("SELECT COUNT(*) c FROM wire_source_items").fetchone()["c"]
+    check("one national article on four team pages stores one article",
+          rows == 1 and len(ids) == 1, f"{rows} rows, {len(ids)} ids")
+
+    # Idempotency is by url, not by body. A publisher fixing a typo must
+    # update the article, not file a second one -- every candidate id
+    # downstream is derived from this id.
+    first = st.save_item(_A(source_id="si_bills",
+                            canonical_url="https://www.si.com/nfl/bills/onsi/a",
+                            headline="A", published_at="2026-08-20",
+                            raw_text="y" * 900, content_sha256="aaa",
+                            extraction_status="COMPLETE"))
+    again = st.save_item(_A(source_id="si_bills",
+                            canonical_url="https://www.si.com/nfl/bills/onsi/a",
+                            headline="A (corrected)", published_at="2026-08-20",
+                            raw_text="y" * 950, content_sha256="bbb",
+                            extraction_status="COMPLETE"))
+    n = st.conn.execute("SELECT COUNT(*) c FROM wire_source_items").fetchone()["c"]
+    check("canonical-url dedup is idempotent across an edit",
+          first == again and n == 2, f"{first[:8]} vs {again[:8]}, {n} rows")
+
+# Content types that may never become an automatic claim. Checked one at a
+# time so a regression names the type it lost.
+for headline, kind in [
+        ("Bills Fantasy Football Start/Sit Advice for Week 2", "fantasy"),
+        ("Bills vs Browns Odds, Spread and Prop Bets", "betting"),
+        ("2027 NFL Mock Draft: Bills Take a Receiver", "mock draft"),
+        ("NFL Power Rankings: Where the Bills Land", "power rankings"),
+        ("Ranking the Five Best Free Agents Still Available", "national list"),
+        ("Bills 53-Man Roster Prediction 2.0", "roster prediction"),
+        ("Winners and Losers From the Bills' Preseason Opener", "winners"),
+        ("A Trade Proposal That Sends a Star to Buffalo", "trade proposal")]:
+    v = SI.evaluate({"canonical_url": "https://www.si.com/nfl/bills/onsi/x",
+                     "headline": headline, "author": "Ralph Ventre",
+                     "published_at": "2026-08-20"}, "BUF", SI_AUTH)
+    check(f"{kind} cannot be eligible even from an approved author",
+          not v.eligible, f"{headline!r} -> {v.exclusion_reason!r}")
+
+# The section is checked as well as the title, because a betting page can be
+# headlined like a news story.
+# A team-segment url in a non-reporting section. The team check passes, so
+# this genuinely exercises the section rule rather than falling through to
+# the national-story refusal.
+vid = SI.evaluate({"canonical_url": "https://www.si.com/nfl/bills/video/camp",
+                   "headline": "Bills Camp Report", "author": "Ralph Ventre",
+                   "published_at": "2026-08-20"}, "BUF", SI_AUTH)
+check("a video-section item is never reporting",
+      not vid.eligible and "video" in vid.exclusion_reason,
+      vid.exclusion_reason)
+
+unknown = SI.evaluate({"canonical_url": "https://www.si.com/nfl/bills/onsi/y",
+                       "headline": "Bills Practice Report",
+                       "author": "Somebody Nobody Researched",
+                       "published_at": "2026-08-20"}, "BUF", SI_AUTH)
+check("an unresearched SI author is not eligible",
+      not unknown.eligible and unknown.author_class == SI.UNKNOWN,
+      unknown.exclusion_reason)
+
+noauthor = SI.evaluate({"canonical_url": "https://www.si.com/nfl/bills/onsi/z",
+                        "headline": "Bills Notes", "author": "SI Staff",
+                        "published_at": "2026-08-20"}, "BUF", SI_AUTH)
+check("an article with no identifiable author is not eligible",
+      not noauthor.eligible, noauthor.exclusion_reason)
+
+# Appearing on a team page is not approval, and neither is appearing on
+# every team page. The national cohort is classified, not promoted.
+check("team-page appearance alone grants no approval",
+      all(e["classification"] != SI.FIRSTHAND_APPROVED
+          for e in SI_AUTH.get("national", {}).values()),
+      [n for n, e in SI_AUTH.get("national", {}).items()
+       if e["classification"] == SI.FIRSTHAND_APPROVED])
+check("no SI author is marked auto_ready in the registry",
+      not [n for t in SI_AUTH.get("teams", {}).values()
+           for n, e in t["authors"].items() if e.get("auto_ready")])
+
+# An analysis-only byline is not a firsthand voice, so a span that would
+# otherwise read as observation cannot be classified FIRSTHAND.
+obs = "Gurzi watched from the sideline. I counted only two reps for him at practice."
+k_appr, _, _ = ev.classify(obs, reporter_voice=True)
+k_anal, _, _ = ev.classify(obs, reporter_voice=False)
+check("an analysis-only author cannot produce a firsthand claim",
+      k_appr == ev.FIRSTHAND_OBSERVATION and k_anal != ev.FIRSTHAND_OBSERVATION,
+      f"approved={k_appr} analysis={k_anal}")
+check("classify_author is exact-name and team-scoped",
+      SI.classify_author("Ralph Ventre", "BUF", SI_AUTH) == SI.FIRSTHAND_APPROVED
+      and SI.classify_author("Ralph Ventre", "MIA", SI_AUTH) == SI.UNKNOWN
+      and SI.classify_author("ralph ventre", "BUF", SI_AUTH) == SI.UNKNOWN)
+
+# ------------------------------------------------------------------- paid
+srcs = registry.load()
+ath = [s for s in srcs if s.paid]
+check("The Athletic is registered and paid", len(ath) == 1, len(ath))
+ath = ath[0]
+check("a paid source is DISCOVERY_ONLY_PAID",
+      ath.status == registry.DISCOVERY_ONLY_PAID, ath.status)
+check("a paid source is never pollable", not ath.pollable)
+check("a paid source refuses manual URL submission", not ath.manual_ok)
+check("a paid source discovers nothing by crawling",
+      capture.discover(ath) == [])
+paid_art = capture.capture(ath, {"url": "https://www.nytimes.com/athletic/nfl/team/bills/",
+                                 "headline": "Bills camp notebook"})
+check("capturing a paid article fetches no body",
+      paid_art.raw_text == "" and paid_art.note == registry.PAID_LABEL,
+      f"{len(paid_art.raw_text)} chars, note={paid_art.note!r}")
+check("a paid item is labelled PAID_SUBSCRIPTION_REQUIRED",
+      paid_art.note == registry.PAID_LABEL)
+
+import wire_extract as WX
+pctx = WX.source_context(None, ath.source_id)
+pstats = WX.extract_item(None, {"source_id": ath.source_id,
+                                "raw_text": "Josh Allen took every first-team rep. " * 40,
+                                "canonical_url": "https://www.nytimes.com/athletic/x",
+                                "headline": "h", "published_at": "2026-08-20"},
+                         None, pctx, {}, dry=True)
+check("a paid source produces no evidence span and no candidate",
+      pstats["spans"] == 0 and pstats["candidates"] == 0 and pstats["refused"] == 1,
+      pstats)
+
+# A registry edit is the only way past any of this, and the validator says so.
+bad_paid = registry.Source(
+    source_id="x", source_name="x", reporter_name="", teams=["BUF"],
+    domains=["nytimes.com"], status=registry.AUTO_READY,
+    reporting_type="LOCAL_BEAT", adapter=registry.PAID_METADATA_ONLY,
+    active=True)
+check("a paid source marked AUTO_READY is a registry error",
+      any("paid source marked AUTO_READY" in b
+          for b in registry.problems([bad_paid])),
+      registry.problems([bad_paid]))
+
+# ------------------------------------------------------- SI registry rules
+si_srcs = [s for s in srcs if s.adapter == registry.SI_TEAM_PAGE]
+check("all 32 SI team pages are registered", len(si_srcs) == 32, len(si_srcs))
+check("every SI source is MANUAL_REVIEW_ONLY",
+      all(s.status == registry.MANUAL_REVIEW_ONLY for s in si_srcs),
+      [s.source_id for s in si_srcs if s.status != registry.MANUAL_REVIEW_ONLY])
+check("no SI source is pollable unattended",
+      not any(s.pollable for s in si_srcs))
+check("every SI slug matches its registered team",
+      all(SI.TEAMS[s.si_team_slug] == s.teams[0] for s in si_srcs))
+bad_si = registry.Source(
+    source_id="si_x", source_name="x", reporter_name="", teams=["ARI"],
+    domains=["si.com"], status=registry.AUTO_READY,
+    reporting_type="LOCAL_BEAT", adapter=registry.SI_TEAM_PAGE,
+    si_team_slug="cardinals", landing_page="https://www.si.com/nfl/cardinals",
+    active=True)
+check("an SI team with no firsthand author cannot be AUTO_READY",
+      any("no FIRSTHAND_APPROVED author" in b
+          for b in registry.problems([bad_si])),
+      registry.problems([bad_si]))
+
+# ---------------------------------------------------- isolation, unchanged
+with tempfile.TemporaryDirectory() as tmp:
+    st = WireStore(Path(tmp) / "w.db")
+    from wire.capture import Article as _A
+    iid = st.save_item(_A(source_id="si_bills",
+                          canonical_url="https://www.si.com/nfl/bills/onsi/keep",
+                          headline="Keep", published_at="2026-08-20",
+                          raw_text="z" * 900, content_sha256="c1",
+                          extraction_status="COMPLETE"))
+    st.add_candidate("cand1", iid, "si_bills", {"kind": "article"}, "fp1")
+    st.conn.execute("UPDATE wire_candidates SET state='REJECTED' "
+                    "WHERE candidate_id='cand1'")
+    st.conn.commit()
+    # Re-ingest the same url, edited.
+    st.save_item(_A(source_id="si_bills",
+                    canonical_url="https://www.si.com/nfl/bills/onsi/keep",
+                    headline="Keep (updated)", published_at="2026-08-20",
+                    raw_text="z" * 950, content_sha256="c2",
+                    extraction_status="COMPLETE"))
+    state = st.conn.execute("SELECT state FROM wire_candidates "
+                            "WHERE candidate_id='cand1'").fetchone()["state"]
+    check("a rejected candidate stays rejected after re-ingestion",
+          state == "REJECTED", state)
+    n, _ = st.export_publications(Path(tmp) / "pubs.json")
+    check("SI candidates cannot reach the published file", n == 0, n)
+
+# A failed run must leave the last good registry and publications in place.
+before = REGISTRY_YAML.read_text() if (REGISTRY_YAML := ROOT / "sources" / "wire_articles.yaml") else ""
+try:
+    SI.discover_team("not-a-team")
+    ok = False
+except ValueError:
+    ok = True
+check("an unknown team slug raises rather than inventing a page", ok)
+check("a failed probe leaves the source registry untouched",
+      (ROOT / "sources" / "wire_articles.yaml").read_text() == before)
+
+si_src = code_only((ROOT / "wire" / "si.py").read_text())
+check("si.py references no fantasy file", not FORBIDDEN_NAMES.search(si_src))
+check("si.py imports nothing from the fantasy side",
+      not FORBIDDEN_IMPORTS.findall(si_src))
+probe_src = code_only((ROOT / "scripts" / "wire_si_probe.py").read_text())
+check("the SI probe never writes to the publications file",
+      "wire_publications" not in probe_src and "export_publications" not in probe_src)
+check("the SI probe references no fantasy file",
+      not FORBIDDEN_NAMES.search(probe_src))
+
 # ---------------------------------------------------------------- reporting
 # Reporting is allowed to change freely. The numbers it reports on are not:
 # these five constants are the whole safety envelope for caption requests, so

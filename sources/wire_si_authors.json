@@ -1,0 +1,287 @@
+{
+ "note": "Per-team, exact-name SI author classifications. An author absent from this file is UNKNOWN and can never be AUTO_READY. Presence on a team page is not approval; each entry records what was read.",
+ "reviewed_on": "2026-08-20",
+ "teams": {
+  "BUF": {
+   "slug": "bills",
+   "landing_page": "https://www.si.com/nfl/bills",
+   "authors": {
+    "Ralph Ventre": {
+     "classification": "FIRSTHAND_APPROVED",
+     "evidence": "attends and files from practice: joint-practice good/not-so-good reports from Berea and direct coordinator quotes",
+     "sample_urls": [
+      "https://www.si.com/nfl/bills/onsi/preseason-the-good-and-not-so-good-from-bills-joint-practice-vs-browns-in-berea",
+      "https://www.si.com/nfl/bills/onsi/excited-joe-brady-remembers-bills-newest-defensive-addition-being-an-issue-in-past-01m0gmb0qxh9",
+      "https://www.si.com/nfl/bills/onsi/jordan-poyer-former-bills-captain-admits-defense-failed-josh-allen-in-nfl-postseason-losses"
+     ],
+     "articles_in_sample": 11,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Mike Moraitis": {
+     "classification": "REPORTING",
+     "evidence": "injury reports and transactions; news reporting, not observation",
+     "sample_urls": [
+      "https://www.si.com/nfl/bills/onsi/transactions-former-bills-safety-taylor-rapp-signs-with-one-of-buffalo-s-top-afc-foes",
+      "https://www.si.com/nfl/bills/onsi/preseason-cj-gardner-johnson-roasted-shedeur-sanders-during-bills-browns-joint-practice",
+      "https://www.si.com/nfl/bills/onsi/injuries-keon-coleman-update-puts-buffalo-bills-wr-week-1-status-in-question"
+     ],
+     "articles_in_sample": 6,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "John Green": {
+     "classification": "REPORTING",
+     "evidence": "files practice takeaways from Highmark, but mixes them with preview and fan-facing 'things to watch' pieces",
+     "sample_urls": [
+      "https://www.si.com/nfl/bills/onsi/injuries-bills-concerning-update-regarding-ed-oliver-khalil-shakir-in-cleveland",
+      "https://www.si.com/nfl/bills/onsi/preseason-five-things-fans-must-watch-for-during-bills-joint-practice-with-browns",
+      "https://www.si.com/nfl/bills/onsi/preseason-seven-takeaways-from-bills-highmark-stadium-practice-include-backup-breakouts"
+     ],
+     "articles_in_sample": 4,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Randy Gurzi": {
+     "classification": "ANALYSIS_ONLY",
+     "evidence": "mock drafts, roster-bubble speculation and value arguments",
+     "sample_urls": [
+      "https://www.si.com/nfl/bills/onsi/most-important-players-to-watch-in-bills-preseason-week-2-game-vs-browns-01m08dhdwtep",
+      "https://www.si.com/nfl/bills/onsi/draft-bills-bet-on-untapped-potential-with-raw-wr-in-2027-nfl-mock",
+      "https://www.si.com/nfl/bills/onsi/bills-te-named-roster-bubble-standout-other-teams-should-covet"
+     ],
+     "articles_in_sample": 6,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Colin Richey": {
+     "classification": "UNKNOWN",
+     "evidence": "single article in the sample; not researched",
+     "sample_urls": [
+      "https://www.si.com/nfl/bills/onsi/sean-mcdermott-team-one-of-nfl-s-best-to-never-reach-super-bowl"
+     ],
+     "articles_in_sample": 1,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Khari Demos": {
+     "classification": "UNKNOWN",
+     "evidence": "single article in the sample; not researched",
+     "sample_urls": [
+      "https://www.si.com/nfl/bills/onsi/preseason-bills-may-have-more-backup-qb-options-come-nfl-cutdown-day"
+     ],
+     "articles_in_sample": 1,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "MIA": {
+   "slug": "dolphins",
+   "landing_page": "https://www.si.com/nfl/dolphins",
+   "authors": {
+    "Alain Poupart": {
+     "classification": "FIRSTHAND_APPROVED",
+     "evidence": "long-standing Dolphins beat reporter; files dated practice observation pieces and workout-group transaction notes from the facility",
+     "sample_urls": [
+      "https://www.si.com/nfl/dolphins/onsi/time-for-concern-or-what-to-make-of-the-dolphins-offense-getting-dominated-in-the-joint-practice-01m0g9v5b0cv",
+      "https://www.si.com/nfl/dolphins/onsi/miami-dolphins-joint-practice-with-giants-observations-skirmishes-sacks-and-more-01m0fzmd7vz6",
+      "https://www.si.com/nfl/dolphins/onsi/dolphins-wednesday-workout-group-includes-son-of-nfl-legend-more-transaction-notes-01m0dx17p5rz"
+     ],
+     "articles_in_sample": 17,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Jake Gibson": {
+     "classification": "ANALYSIS_ONLY",
+     "evidence": "winners-and-losers, should-they-sign and draft-pick evaluation",
+     "sample_urls": [
+      "https://www.si.com/nfl/dolphins/onsi/why-biggers-could-make-the-biggest-impact-among-the-2025-dt-draft-picks-01m0bp79488f",
+      "https://www.si.com/nfl/dolphins/onsi/two-miami-dolphins-players-stand-out-among-those-who-brought-the-physicality-jeff-hafley-loved-01m03zhbrt75",
+      "https://www.si.com/nfl/dolphins/onsi/four-winners-and-four-losers-in-dolphins-preseason-opener-01m01jvtj3k9"
+     ],
+     "articles_in_sample": 5,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Jacob Westendorf": {
+     "classification": "UNKNOWN",
+     "evidence": "two articles in the sample; not researched",
+     "sample_urls": [
+      "https://www.si.com/nfl/dolphins/onsi/what-dolphins-head-coach-jeff-hafley-wants-to-accomplish-against-giants-01m0df17y3x7",
+      "https://www.si.com/nfl/dolphins/onsi/grades-from-miami-dolphins-preseason-opener-rbs-dbs-lead-the-way-01m01mf0ja1r"
+     ],
+     "articles_in_sample": 2,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Tyler DeSena": {
+     "classification": "UNKNOWN",
+     "evidence": "single article in the sample; not researched",
+     "sample_urls": [
+      "https://www.si.com/nfl/dolphins/onsi/how-the-addition-of-chris-bell-impacts-the-dolphins-wr-corps-01m09e5y3z6j"
+     ],
+     "articles_in_sample": 1,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Alex Villasis": {
+     "classification": "UNKNOWN",
+     "evidence": "single article in the sample; not researched",
+     "sample_urls": [
+      "https://www.si.com/nfl/dolphins/onsi/breaking-down-willis-dazzling-dolphins-preseason-debut-01m01gwyheq4"
+     ],
+     "articles_in_sample": 1,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "NE": {
+   "slug": "patriots",
+   "landing_page": "https://www.si.com/nfl/patriots",
+   "authors": {
+    "Ethan Hurwitz": {
+     "classification": "FIRSTHAND_APPROVED",
+     "evidence": "files Patriots joint-practice notebooks and 'everything X said' press-conference pieces; consistently at the facility",
+     "sample_urls": [
+      "https://www.si.com/nfl/patriots/onsi/everything-drake-maye-said-about-eager-a-j-brown-after-patriots-joint-practices",
+      "https://www.si.com/nfl/patriots/onsi/patriots-joint-practice-eagles-get-physical-as-a-j-brown-settles-down",
+      "https://www.si.com/nfl/patriots/onsi/mack-hollins-continues-to-chug-along-in-patriots-wr-room"
+     ],
+     "articles_in_sample": 22,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Zac Ventola": {
+     "classification": "REPORTING",
+     "evidence": "covers joint practices firsthand but also writes storyline previews and announcements; sample too mixed to approve for firsthand",
+     "sample_urls": [
+      "https://www.si.com/nfl/patriots/onsi/drake-maye-a-j-brown-connection-falters-in-patriots-joint-practice-vs-eagles",
+      "https://www.si.com/nfl/patriots/onsi/patriots-wr-a-j-brown-focused-as-he-shines-against-eagles-in-joint-practice",
+      "https://www.si.com/nfl/patriots/onsi/three-storylines-to-watch-in-patriots-eagles-joint-practices"
+     ],
+     "articles_in_sample": 6,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  },
+  "NYJ": {
+   "slug": "jets",
+   "landing_page": "https://www.si.com/nfl/jets",
+   "authors": {
+    "Nick Faria": {
+     "classification": "REPORTING",
+     "evidence": "reports from camp (Ossai's return) but also files 53-man roster projections and opinion columns",
+     "sample_urls": [
+      "https://www.si.com/nfl/jets/onsi/jets-geno-smith-risk-is-the-right-call-for-preseason-game-vs-steelers-01m0gqzrfya8",
+      "https://www.si.com/nfl/jets/onsi/clearing-air-jets-qb-depth-chart-training-camp-buzz-grows-louder-01m0d48fek2k",
+      "https://www.si.com/nfl/jets/onsi/joseph-ossai-eyeing-larger-role-after-returning-jets-practice-01m0d407j59z"
+     ],
+     "articles_in_sample": 13,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Colby Colwell": {
+     "classification": "REPORTING",
+     "evidence": "camp position-battle coverage framed analytically",
+     "sample_urls": [
+      "https://www.si.com/nfl/jets/onsi/nahshon-wright-starting-lose-ground-cb-battle-jets-camp-01m0g3xfdq8k",
+      "https://www.si.com/nfl/jets/onsi/cade-klubnik-s-next-jets-preseason-game-became-even-more-important-01m0dhv419pq",
+      "https://www.si.com/nfl/jets/onsi/one-jets-position-battle-that-could-be-decided-in-preseason-week-2-01m0ayahfvy9"
+     ],
+     "articles_in_sample": 5,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Devon Platana": {
+     "classification": "REPORTING",
+     "evidence": "injury trackers and depth-chart projections; reporting mixed with projection",
+     "sample_urls": [
+      "https://www.si.com/nfl/jets/onsi/projecting-jets-wr-depth-chart-after-multiple-training-camp-moves-on-wednesday-01m0d2gwxrnm",
+      "https://www.si.com/nfl/jets/onsi/examining-braelon-allen-s-outlook-if-breece-hall-misses-extended-time-01m08a5h7ytk",
+      "https://www.si.com/nfl/jets/onsi/breece-hall-injury-tracker-1st-update-on-jets-star-rb-is-optimistic-after-exit-from-monday-s-practice-01m08112y32n"
+     ],
+     "articles_in_sample": 5,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    },
+    "Efstathios Savvidis": {
+     "classification": "ANALYSIS_ONLY",
+     "evidence": "competition takes and outlook pieces",
+     "sample_urls": [
+      "https://www.si.com/nfl/jets/onsi/demario-davis-jets-reunion-is-already-aging-like-fine-wine-even-before-the-regular-season-begins-01m0g96zy7s1",
+      "https://www.si.com/nfl/jets/onsi/mory-bamba-injury-could-save-former-udfa-on-jets-roster-bubble-01m08wvt5mgh",
+      "https://www.si.com/nfl/jets/onsi/sanders-york-who-currently-has-leg-up-jets-kicker-competition-preseason-week-2-01m08nnn2vxe"
+     ],
+     "articles_in_sample": 4,
+     "auto_ready": false,
+     "reviewed_on": "2026-08-20"
+    }
+   }
+  }
+ },
+ "national": {
+  "Albert Breer": {
+   "classification": "REPORTING",
+   "evidence": "national NFL reporter; firsthand but never scoped to one team's beat",
+   "scope": "national"
+  },
+  "Conor Orr": {
+   "classification": "ANALYSIS_ONLY",
+   "evidence": "national columnist",
+   "scope": "national"
+  },
+  "Gilberto Manzano": {
+   "classification": "REPORTING",
+   "evidence": "national NFL reporter",
+   "scope": "national"
+  },
+  "Matt Verderame": {
+   "classification": "ANALYSIS_ONLY",
+   "evidence": "national columnist",
+   "scope": "national"
+  },
+  "Mike Kadlick": {
+   "classification": "AGGREGATION",
+   "evidence": "national roundups, rankings and trade grades",
+   "scope": "national"
+  },
+  "Andy Nesbitt": {
+   "classification": "AGGREGATION",
+   "evidence": "viral and off-field aggregation",
+   "scope": "national"
+  },
+  "Iain MacMillan": {
+   "classification": "ANALYSIS_ONLY",
+   "evidence": "betting picks, odds and win totals",
+   "scope": "national"
+  },
+  "Gray Deyo": {
+   "classification": "AGGREGATION",
+   "evidence": "national aggregation",
+   "scope": "national"
+  },
+  "Ethen Hutton": {
+   "classification": "AGGREGATION",
+   "evidence": "national aggregation",
+   "scope": "national"
+  },
+  "Jeff Salcedo": {
+   "classification": "AGGREGATION",
+   "evidence": "national aggregation",
+   "scope": "national"
+  },
+  "SI Video Staff": {
+   "classification": "AGGREGATION",
+   "evidence": "video desk, no identifiable reporter",
+   "scope": "national"
+  },
+  "SI Staff": {
+   "classification": "AGGREGATION",
+   "evidence": "no identifiable reporter",
+   "scope": "national"
+  }
+ }
+}

@@ -28,29 +28,53 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from wire import evidence as ev
 from wire import players as pl
 from wire import registry as artreg
+from wire import si as sicfg
 from wire import youtube as yt
 from wire.store import WireStore
+
+
+_SI_AUTHORS: dict = {}
+
+
+def _si_authors() -> dict:
+    global _SI_AUTHORS
+    if not _SI_AUTHORS:
+        _SI_AUTHORS = sicfg.load_authors()
+    return _SI_AUTHORS
 
 
 def source_context(store, source_id: str) -> dict:
     """Who the source is, and whether we can trust the voice in it."""
     for s in artreg.load():
         if s.source_id == source_id:
+            if s.paid:
+                # The third of three refusals, and the one that matters most:
+                # even if a body somehow reached the store, it produces no
+                # span here. Discovery metadata is not evidence and a
+                # headline is not a claim.
+                return {"type": "paid", "name": s.source_name, "author": "",
+                        "teams": s.teams, "reporter_voice": False,
+                        "auto_captions": False, "multi_speaker": True,
+                        "channel_id": "", "paid": True, "si": False,
+                        "refuse": artreg.PAID_LABEL}
             return {"type": "article", "name": s.source_name,
                     "author": s.reporter_name, "teams": s.teams,
                     "reporter_voice": True, "auto_captions": False,
-                    "multi_speaker": False, "channel_id": ""}
+                    "multi_speaker": False, "channel_id": "",
+                    "paid": False, "si": s.adapter == artreg.SI_TEAM_PAGE,
+                    "refuse": ""}
     chans, _ = yt.load()
     for c in chans:
         if c.source_id == source_id:
-            return {"type": "youtube", "name": c.source_name,
+            return {"type": "youtube", "paid": False, "si": False, "refuse": "", "name": c.source_name,
                     "author": ", ".join(c.approved_reporters),
                     "teams": [c.team], "reporter_voice": False,
                     "auto_captions": True, "multi_speaker": False,
                     "channel_id": c.channel_id}
     return {"type": "unknown", "name": source_id, "author": "", "teams": [],
             "reporter_voice": False, "auto_captions": False,
-            "multi_speaker": True, "channel_id": ""}
+            "multi_speaker": True, "channel_id": "", "paid": False,
+            "si": False, "refuse": ""}
 
 
 def spans_from_article(item) -> list[tuple[str, str, float | None, float | None]]:
@@ -75,8 +99,23 @@ def spans_from_transcript(store, video_id: str
 def extract_item(store, item, reg, ctx, cfg, dry=False) -> dict:
     """One captured source becomes zero or more evidence candidates."""
     stats = {"spans": 0, "with_players": 0, "candidates": 0, "new": 0,
-             "context_only": 0, "unresolved": 0}
+             "context_only": 0, "unresolved": 0, "refused": 0}
+    if ctx.get("refuse"):
+        # No spans, no candidates, no partial credit.
+        stats["refused"] = 1
+        return stats
     team = (ctx["teams"] or [""])[0]
+
+    reporter_voice = ctx["reporter_voice"]
+    byline = (item.get("author") or "").strip() or ctx["author"]
+    byline_class = ""
+    if ctx.get("si"):
+        # On SI the voice is a property of the byline, not the source. One
+        # landing page carries a beat reporter's practice notebook and a
+        # columnist's argument, and only the first is a firsthand voice.
+        # An author nobody has classified is not one either.
+        byline_class = sicfg.classify_author(byline, team, _si_authors())
+        reporter_voice = byline_class == sicfg.FIRSTHAND_APPROVED
     video_id = ""
     if ctx["type"] == "youtube":
         video_id = (item["canonical_url"] or "").split("v=")[-1].split("&")[0]
@@ -95,7 +134,7 @@ def extract_item(store, item, reg, ctx, cfg, dry=False) -> dict:
 
         klass, conf, why = ev.classify(
             text,
-            reporter_voice=ctx["reporter_voice"],
+            reporter_voice=reporter_voice,
             auto_captions=ctx["auto_captions"],
             multi_speaker=ctx["multi_speaker"])
         gid = ev.group_id(item["source_item_id"], location, text)
@@ -124,7 +163,10 @@ def extract_item(store, item, reg, ctx, cfg, dry=False) -> dict:
                 "source_id": item["source_id"],
                 "source_url": item["canonical_url"],
                 "source_title": item["headline"],
-                "source_author_or_channel": ctx["channel_id"] or ctx["author"],
+                # The byline, not the source. On SI the author is what
+                # decides whether a span may read as firsthand, so a
+                # candidate that does not name him cannot be reviewed.
+                "source_author_or_channel": ctx["channel_id"] or byline,
                 "published_at": item["published_at"],
                 "video_id": video_id,
                 "start_seconds": start, "end_seconds": end,
@@ -132,7 +174,9 @@ def extract_item(store, item, reg, ctx, cfg, dry=False) -> dict:
                 "evidence_text": text[:1200],
                 "evidence_class": klass,
                 "classification_confidence": conf,
-                "classification_reasons": why,
+                "classification_reasons": (
+                    why + [f"byline classified {byline_class}"]
+                    if byline_class else why),
                 # Identity resolution is scored separately from the claim.
                 # A confident classification of an unidentified player is
                 # still not publishable, and one number would hide that.
@@ -194,7 +238,7 @@ def main():
     print(f"  {len(items)} captured source(s), registry {reg.version}")
 
     total = {"spans": 0, "with_players": 0, "candidates": 0, "new": 0,
-             "context_only": 0, "unresolved": 0}
+             "context_only": 0, "unresolved": 0, "refused": 0}
     for item in items:
         ctx = source_context(store, item["source_id"])
         st = extract_item(store, dict(item), reg, ctx, cfg, dry=args.dry_run)
@@ -210,6 +254,9 @@ def main():
           f"({total['new']} new, {total['candidates'] - total['new']} updated)")
     print(f"  {total['unresolved']} unresolved names, "
           f"{total['context_only']} offensive-line context")
+    if total["refused"]:
+        print(f"  {total['refused']} source(s) refused outright "
+              f"(paid: no span may be built from them)")
     if args.dry_run:
         print("  --dry-run, nothing written")
     else:

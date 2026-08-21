@@ -258,3 +258,632 @@ sources:
     default_language: en
     # Connection times out on every attempt, homepage and article alike.
     probe: {discovery: none, article_http: timeout, attempts: 2}
+
+  # ------------------------------------------------- SI_TEAM_PAGE (32 teams)
+  #
+  # One adapter, thirty-two landing pages, probed 2026-08-20: all 32
+  # reachable, all 32 self-identifying as the right team, all 32 paginating,
+  # 1,246 articles discovered.
+  #
+  # Every one is MANUAL_REVIEW_ONLY and stays there. Promotion is per team
+  # and needs a FIRSTHAND_APPROVED author in sources/wire_si_authors.json,
+  # which is why 28 of these currently exclude 100% of what they discover:
+  # nobody has read their authors yet. That is the intended resting state,
+  # not a fault. An SI byline is not an approval and the brand is not an
+  # allowlist.
+
+  - source_id: si_cardinals
+    source_name: Sports Illustrated -- ARI
+    reporter_name: ''
+    teams: ['ARI']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: cardinals
+    landing_page: https://www.si.com/nfl/cardinals
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 8 active authors, no author researched yet
+
+  - source_id: si_falcons
+    source_name: Sports Illustrated -- ATL
+    reporter_name: ''
+    teams: ['ATL']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: falcons
+    landing_page: https://www.si.com/nfl/falcons
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 13 active authors, no author researched yet
+
+  - source_id: si_ravens
+    source_name: Sports Illustrated -- BAL
+    reporter_name: ''
+    teams: ['BAL']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: ravens
+    landing_page: https://www.si.com/nfl/ravens
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 16 active authors, no author researched yet
+
+  - source_id: si_bills
+    source_name: Sports Illustrated -- BUF
+    reporter_name: ''
+    teams: ['BUF']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: bills
+    landing_page: https://www.si.com/nfl/bills
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 19 eligible, 14 active authors, firsthand: Ralph Ventre
+
+  - source_id: si_panthers
+    source_name: Sports Illustrated -- CAR
+    reporter_name: ''
+    teams: ['CAR']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: panthers
+    landing_page: https://www.si.com/nfl/panthers
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 11 active authors, no author researched yet
+
+  - source_id: si_bears
+    source_name: Sports Illustrated -- CHI
+    reporter_name: ''
+    teams: ['CHI']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: bears
+    landing_page: https://www.si.com/nfl/bears
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 13 active authors, no author researched yet
+
+  - source_id: si_bengals
+    source_name: Sports Illustrated -- CIN
+    reporter_name: ''
+    teams: ['CIN']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: bengals
+    landing_page: https://www.si.com/nfl/bengals
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 15 active authors, no author researched yet
+
+  - source_id: si_browns
+    source_name: Sports Illustrated -- CLE
+    reporter_name: ''
+    teams: ['CLE']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: browns
+    landing_page: https://www.si.com/nfl/browns
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 41 discovered, 0 eligible, 19 active authors, no author researched yet
+
+  - source_id: si_cowboys
+    source_name: Sports Illustrated -- DAL
+    reporter_name: ''
+    teams: ['DAL']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: cowboys
+    landing_page: https://www.si.com/nfl/cowboys
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 12 active authors, no author researched yet
+
+  - source_id: si_broncos
+    source_name: Sports Illustrated -- DEN
+    reporter_name: ''
+    teams: ['DEN']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: broncos
+    landing_page: https://www.si.com/nfl/broncos
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 13 active authors, no author researched yet
+
+  - source_id: si_lions
+    source_name: Sports Illustrated -- DET
+    reporter_name: ''
+    teams: ['DET']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: lions
+    landing_page: https://www.si.com/nfl/lions
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 14 active authors, no author researched yet
+
+  - source_id: si_packers
+    source_name: Sports Illustrated -- GB
+    reporter_name: ''
+    teams: ['GB']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: packers
+    landing_page: https://www.si.com/nfl/packers
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 12 active authors, no author researched yet
+
+  - source_id: si_texans
+    source_name: Sports Illustrated -- HOU
+    reporter_name: ''
+    teams: ['HOU']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: texans
+    landing_page: https://www.si.com/nfl/texans
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 12 active authors, no author researched yet
+
+  - source_id: si_colts
+    source_name: Sports Illustrated -- IND
+    reporter_name: ''
+    teams: ['IND']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: colts
+    landing_page: https://www.si.com/nfl/colts
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 18 active authors, no author researched yet
+
+  - source_id: si_jaguars
+    source_name: Sports Illustrated -- JAX
+    reporter_name: ''
+    teams: ['JAX']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: jaguars
+    landing_page: https://www.si.com/nfl/jaguars
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 12 active authors, no author researched yet
+
+  - source_id: si_chiefs
+    source_name: Sports Illustrated -- KC
+    reporter_name: ''
+    teams: ['KC']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: chiefs
+    landing_page: https://www.si.com/nfl/chiefs
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 14 active authors, no author researched yet
+
+  - source_id: si_chargers
+    source_name: Sports Illustrated -- LAC
+    reporter_name: ''
+    teams: ['LAC']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: chargers
+    landing_page: https://www.si.com/nfl/chargers
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 14 active authors, no author researched yet
+
+  - source_id: si_rams
+    source_name: Sports Illustrated -- LAR
+    reporter_name: ''
+    teams: ['LAR']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: rams
+    landing_page: https://www.si.com/nfl/rams
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 38 discovered, 0 eligible, 12 active authors, no author researched yet
+
+  - source_id: si_raiders
+    source_name: Sports Illustrated -- LV
+    reporter_name: ''
+    teams: ['LV']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: raiders
+    landing_page: https://www.si.com/nfl/raiders
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 19 active authors, no author researched yet
+
+  - source_id: si_dolphins
+    source_name: Sports Illustrated -- MIA
+    reporter_name: ''
+    teams: ['MIA']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: dolphins
+    landing_page: https://www.si.com/nfl/dolphins
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 14 eligible, 14 active authors, firsthand: Alain Poupart
+
+  - source_id: si_vikings
+    source_name: Sports Illustrated -- MIN
+    reporter_name: ''
+    teams: ['MIN']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: vikings
+    landing_page: https://www.si.com/nfl/vikings
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 13 active authors, no author researched yet
+
+  - source_id: si_patriots
+    source_name: Sports Illustrated -- NE
+    reporter_name: ''
+    teams: ['NE']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: patriots
+    landing_page: https://www.si.com/nfl/patriots
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 24 eligible, 11 active authors, firsthand: Ethan Hurwitz
+
+  - source_id: si_saints
+    source_name: Sports Illustrated -- NO
+    reporter_name: ''
+    teams: ['NO']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: saints
+    landing_page: https://www.si.com/nfl/saints
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 38 discovered, 0 eligible, 15 active authors, no author researched yet
+
+  - source_id: si_giants
+    source_name: Sports Illustrated -- NYG
+    reporter_name: ''
+    teams: ['NYG']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: giants
+    landing_page: https://www.si.com/nfl/giants
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 16 active authors, no author researched yet
+
+  - source_id: si_jets
+    source_name: Sports Illustrated -- NYJ
+    reporter_name: ''
+    teams: ['NYJ']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: jets
+    landing_page: https://www.si.com/nfl/jets
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 19 eligible, 15 active authors, no author researched yet
+
+  - source_id: si_eagles
+    source_name: Sports Illustrated -- PHI
+    reporter_name: ''
+    teams: ['PHI']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: eagles
+    landing_page: https://www.si.com/nfl/eagles
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 38 discovered, 0 eligible, 14 active authors, no author researched yet
+
+  - source_id: si_steelers
+    source_name: Sports Illustrated -- PIT
+    reporter_name: ''
+    teams: ['PIT']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: steelers
+    landing_page: https://www.si.com/nfl/steelers
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 14 active authors, no author researched yet
+
+  - source_id: si_seahawks
+    source_name: Sports Illustrated -- SEA
+    reporter_name: ''
+    teams: ['SEA']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: seahawks
+    landing_page: https://www.si.com/nfl/seahawks
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 13 active authors, no author researched yet
+
+  - source_id: si_49ers
+    source_name: Sports Illustrated -- SF
+    reporter_name: ''
+    teams: ['SF']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: 49ers
+    landing_page: https://www.si.com/nfl/49ers
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 18 active authors, no author researched yet
+
+  - source_id: si_buccaneers
+    source_name: Sports Illustrated -- TB
+    reporter_name: ''
+    teams: ['TB']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: buccaneers
+    landing_page: https://www.si.com/nfl/buccaneers
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 17 active authors, no author researched yet
+
+  - source_id: si_titans
+    source_name: Sports Illustrated -- TEN
+    reporter_name: ''
+    teams: ['TEN']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: titans
+    landing_page: https://www.si.com/nfl/titans
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 39 discovered, 0 eligible, 15 active authors, no author researched yet
+
+  - source_id: si_commanders
+    source_name: Sports Illustrated -- WAS
+    reporter_name: ''
+    teams: ['WAS']
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: si_team_page
+    si_team_slug: commanders
+    landing_page: https://www.si.com/nfl/commanders
+    feed_scope: section
+    active: true
+    trust_tier: 2
+    # probe 2026-08-20: 38 discovered, 0 eligible, 11 active authors, no author researched yet
+
+  # --------------------------------------------- DISCOVERY_ONLY_PAID
+  #
+  # The Athletic. The reporting is good and it is not ours to take. This
+  # entry exists so a human researching a team has the link, and for no
+  # other reason: no body fetch, no cookies, no reader mode, no archive
+  # mirror, no reconstruction from excerpts, and no claim built from a
+  # headline. Manual URL submission does not lift any of that -- a
+  # subscription wall refuses a person exactly as firmly as a fetcher.
+  #
+  # Enforced in three places, not one: Source.paid blocks manual_ok and
+  # pollable, capture refuses the fetch, and the extractor refuses the
+  # source. Every item is labelled PAID_SUBSCRIPTION_REQUIRED.
+
+  - source_id: the_athletic_nfl
+    source_name: The Athletic
+    reporter_name: ''
+    teams: [ALL]
+    formats: [article]
+    domains: [nytimes.com, theathletic.com]
+    status: DISCOVERY_ONLY_PAID
+    reporting_type: LOCAL_BEAT
+    discovery: paid_metadata_only
+    landing_page: https://www.nytimes.com/athletic/nfl/
+    feed_scope: publication
+    active: false
+    trust_tier: 3
+    blocked_reason: >-
+      Subscription required. Discovery and external linking only; the
+      article body may never be fetched, extracted, reconstructed or
+      submitted by hand. Never AUTO_READY, never a countable full-text
+      source.
+
+
+  # ------------------------------------------- local expansion, 2026-08-20
+  #
+  # Probed against the qualification bar: one team, original reporting,
+  # identifiable bylines, publicly extractable, not subscription-only, not
+  # primarily aggregation or fan opinion. All MANUAL_REVIEW_ONLY -- a working
+  # feed is not an approval.
+  #
+  # Rejected rather than registered, and why:
+  #   Seaside Joe (SEA)    one pseudonymous byline, All-22 analysis rather
+  #                        than reporting. Extracts perfectly; still fails
+  #                        the bar.
+  #   PressBox (BAL)       real Baltimore bylines and 5/5 extraction, but the
+  #                        feed carries every Baltimore sport and opened with
+  #                        a fantasy mock draft. Needs a team filter before it
+  #                        can be registered; an unfiltered multi-sport feed
+  #                        is the mistake the first pilot already made.
+  #   SB Nation sites      Windy City Gridiron, Arrowhead Pride, Pride of
+  #                        Detroit: feeds work, content is primarily fan
+  #                        opinion.
+  #   DNVR, Buffalo Fanatics, Silver and Black Today: no reachable feed.
+
+  - source_id: purple_insider_matthew_coller
+    source_name: Purple Insider
+    reporter_name: Matthew Coller
+    teams: ['MIN']
+    formats: [article]
+    domains: [purpleinsider.substack.com, substack.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: FIRSTHAND_PRACTICE
+    discovery: rss_full_text
+    feed_url: https://purpleinsider.substack.com/feed
+    feed_scope: publication
+    active: true
+    trust_tier: 1
+    # 5/5 full text in the feed, 3,869-7,752 chars, one byline. Camp recaps
+    # and joint-practice diaries -- firsthand observation, not analysis.
+
+  - source_id: steelers_depot
+    source_name: Steelers Depot
+    reporter_name: ''
+    teams: ['PIT']
+    formats: [article]
+    domains: [steelersdepot.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: rss_excerpt_then_fetch
+    feed_url: https://steelersdepot.com/feed/
+    feed_scope: publication
+    active: true
+    trust_tier: 2
+    # 5/5 extractable by page fetch, 1,099-11,858 chars. Bylines: Alex
+    # Kozora, Dave Bryan, Troy Montgomery. Mixed firsthand camp reporting
+    # and aggregation, so every article goes to a human.
+
+  - source_id: jets_x_factor
+    source_name: Jets X-Factor
+    reporter_name: ''
+    teams: ['NYJ']
+    formats: [article]
+    domains: [jetsxfactor.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: rss_full_text
+    feed_url: https://jetsxfactor.com/feed/
+    feed_scope: publication
+    active: true
+    trust_tier: 2
+    # 4/5 extractable, 4 full text in the feed. Bylines: Robby Sabo, Michael
+    # Nania, Connor Long. Nania's output is analysis; the mix is why this is
+    # review-only.

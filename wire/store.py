@@ -14,6 +14,7 @@ database is the working copy; the JSON is what survives.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import sqlite3
@@ -208,6 +209,39 @@ class WireStore:
 
     # -- source items ------------------------------------------------------
 
+    def record_exclusion(self, source_id: str, url: str, headline: str,
+                         author: str, reason: str) -> None:
+        """An article we saw and refused, and why.
+
+        Exclusions are data. Without them the only evidence that the team
+        filter works is that nothing bad has been published yet, which is
+        also what a broken filter looks like.
+        """
+        self.conn.execute("""
+          CREATE TABLE IF NOT EXISTS wire_exclusions (
+            canonical_url TEXT PRIMARY KEY, source_id TEXT, headline TEXT,
+            author TEXT, reason TEXT, first_seen_at TEXT, last_seen_at TEXT)""")
+        row = self.conn.execute(
+            "SELECT first_seen_at FROM wire_exclusions WHERE canonical_url = ?",
+            (url,)).fetchone()
+        first = row["first_seen_at"] if row else now()
+        self.conn.execute(
+            "INSERT OR REPLACE INTO wire_exclusions VALUES (?,?,?,?,?,?,?)",
+            (url, source_id, headline, author, reason, first, now()))
+        self.conn.commit()
+
+    def exclusions(self, source_id: str = ""):
+        self.conn.execute("""
+          CREATE TABLE IF NOT EXISTS wire_exclusions (
+            canonical_url TEXT PRIMARY KEY, source_id TEXT, headline TEXT,
+            author TEXT, reason TEXT, first_seen_at TEXT, last_seen_at TEXT)""")
+        q = "SELECT * FROM wire_exclusions"
+        args: tuple = ()
+        if source_id:
+            q += " WHERE source_id = ?"
+            args = (source_id,)
+        return self.conn.execute(q, args).fetchall()
+
     def seen_url(self, url: str) -> bool:
         return bool(self.conn.execute(
             "SELECT 1 FROM wire_source_items WHERE canonical_url = ?",
@@ -218,8 +252,17 @@ class WireStore:
 
         Keyed on the canonical URL, so re-running discovery over a feed that
         still lists yesterday's article does not create a second copy of it.
+
+        The id is derived from the url and not from the body, which is the
+        difference between updating an article and duplicating it. A
+        publisher who fixes a typo changes the content hash; everything
+        downstream -- the evidence group id, and so every candidate id built
+        from it -- is derived from this id, so a content-keyed id would file
+        the corrected article as a new one and a reviewer would judge the
+        same paragraph twice. The canonical url is what does not move.
         """
-        item_id = art.content_sha256[:16] or art.canonical_url[-16:]
+        item_id = hashlib.sha256(
+            (art.canonical_url or "").encode()).hexdigest()[:16]
         self.conn.execute(
             "INSERT OR REPLACE INTO wire_source_items VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (item_id, art.source_id, art.canonical_url, art.headline,

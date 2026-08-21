@@ -27,18 +27,43 @@ FULL_TEXT_FEED = "FULL_TEXT_FEED"
 EXCERPT_FEED_PAGE_FETCH = "EXCERPT_FEED_PAGE_FETCH"
 SITE_FEED_AUTHOR_FILTER = "SITE_FEED_AUTHOR_FILTER"
 AUTHOR_PAGE_SCRAPE = "AUTHOR_PAGE_SCRAPE"
+# One adapter, thirty-two landing pages. See wire/si.py.
+SI_TEAM_PAGE = "SI_TEAM_PAGE"
+# A paid publisher we may look at and may not read. See PAID_ONLY below.
+PAID_METADATA_ONLY = "PAID_METADATA_ONLY"
 
 ADAPTERS = {
     "rss_full_text": FULL_TEXT_FEED,
     "rss_excerpt_then_fetch": EXCERPT_FEED_PAGE_FETCH,
     "rss_sitewide_filtered": SITE_FEED_AUTHOR_FILTER,
     "author_page_scrape": AUTHOR_PAGE_SCRAPE,
+    "si_team_page": SI_TEAM_PAGE,
+    "paid_metadata_only": PAID_METADATA_ONLY,
 }
 
 AUTO_READY = "AUTO_READY"
 MANUAL_URL_ONLY = "MANUAL_URL_ONLY"
 CUSTOM_ADAPTER_NEEDED = "CUSTOM_ADAPTER_NEEDED"
 BLOCKED = "BLOCKED"
+# A source whose extraction works but whose every article goes to a human.
+# This is where new SI teams start and where they stay until an author has
+# been read and promoted by hand.
+MANUAL_REVIEW_ONLY = "MANUAL_REVIEW_ONLY"
+# Worth reading, never a firsthand claim.
+ANALYSIS_ONLY = "ANALYSIS_ONLY"
+# Discovery is permitted; the body is not ours to take. Metadata supplied by
+# the publisher's own feed, an external link for a human, and nothing else.
+DISCOVERY_ONLY_PAID = "DISCOVERY_ONLY_PAID"
+
+# Every state a source may hold.
+STATES = {AUTO_READY, MANUAL_URL_ONLY, CUSTOM_ADAPTER_NEEDED, BLOCKED,
+          MANUAL_REVIEW_ONLY, ANALYSIS_ONLY, DISCOVERY_ONLY_PAID}
+
+# States whose articles may never yield an evidence span, whatever else is
+# true of them. Checked at the source, at capture and at extraction, because
+# one check is a bug away from being no check.
+PAID_ONLY = {DISCOVERY_ONLY_PAID}
+PAID_LABEL = "PAID_SUBSCRIPTION_REQUIRED"
 
 REPORTING_TYPES = {"FIRSTHAND_PRACTICE", "LOCAL_BEAT", "PRESS_CONFERENCE",
                    "NATIONAL_REPORTER", "ANALYSIS", "AGGREGATOR"}
@@ -66,6 +91,13 @@ class Source:
     filter_categories: list[str] = field(default_factory=list)
     feed_scope: str = "site"
     strip_patterns: list[str] = field(default_factory=list)
+    si_team_slug: str = ""
+    landing_page: str = ""
+
+    @property
+    def paid(self) -> bool:
+        """A paid source. Discovery only, forever, unless a human changes it."""
+        return self.status in PAID_ONLY or self.adapter == PAID_METADATA_ONLY
 
     @property
     def pollable(self) -> bool:
@@ -81,8 +113,13 @@ class Source:
         a publisher that refuses a fetch refuses it just as firmly when a
         person pastes the link.
         """
+        if self.paid:
+            # The one case manual submission must not rescue. A subscription
+            # wall refuses a person exactly as firmly as it refuses a
+            # fetcher, and pasting the link is not a licence to take the body.
+            return False
         return self.status in (AUTO_READY, MANUAL_URL_ONLY,
-                               CUSTOM_ADAPTER_NEEDED)
+                               CUSTOM_ADAPTER_NEEDED, MANUAL_REVIEW_ONLY)
 
     def owns(self, url: str) -> bool:
         host = re.sub(r"^https?://", "", url).split("/")[0].lower()
@@ -116,6 +153,8 @@ def load(path: Path | None = None) -> list[Source]:
             filter_categories=[c.lower() for c in (f.get("categories") or [])],
             feed_scope=row.get("feed_scope", "site"),
             strip_patterns=row.get("strip_patterns") or [],
+            si_team_slug=row.get("si_team_slug", "") or "",
+            landing_page=row.get("landing_page", "") or "",
         ))
     return out
 
@@ -149,4 +188,42 @@ def problems(sources: list[Source]) -> list[str]:
             bad.append(f"{s.source_id}: unknown feed_scope {s.feed_scope!r}")
         if not s.domains:
             bad.append(f"{s.source_id}: no domains, so no URL can be matched")
+
+        if s.status not in STATES:
+            bad.append(f"{s.source_id}: unknown status {s.status!r}")
+
+        # A paid source may never be promoted, polled or manually rescued.
+        # Three separate assertions because each has been a different bug in
+        # a different pipeline.
+        if s.paid:
+            if s.status == AUTO_READY:
+                bad.append(f"{s.source_id}: paid source marked AUTO_READY")
+            if s.pollable:
+                bad.append(f"{s.source_id}: paid source is pollable")
+            if s.manual_ok:
+                bad.append(f"{s.source_id}: paid source accepts manual URLs")
+        if s.status == DISCOVERY_ONLY_PAID and s.adapter != PAID_METADATA_ONLY:
+            bad.append(f"{s.source_id}: DISCOVERY_ONLY_PAID must use the "
+                       f"paid_metadata_only adapter, not {s.adapter!r}")
+
+        if s.adapter == SI_TEAM_PAGE:
+            from . import si as _si
+            if s.si_team_slug not in _si.TEAMS:
+                bad.append(f"{s.source_id}: {s.si_team_slug!r} is not an SI "
+                           f"team slug")
+            elif [_si.TEAMS[s.si_team_slug]] != s.teams:
+                bad.append(f"{s.source_id}: slug {s.si_team_slug!r} is "
+                           f"{_si.TEAMS[s.si_team_slug]}, registered as {s.teams}")
+            # The brand is not an allowlist. An SI source may only be
+            # promoted when a named author on that team has been read and
+            # classified FIRSTHAND_APPROVED, one team at a time.
+            if s.status == AUTO_READY:
+                authors = _si.load_authors()
+                team = s.teams[0] if s.teams else ""
+                approved = [n for n, e in (authors.get("teams", {})
+                            .get(team, {}) or {}).get("authors", {}).items()
+                            if e.get("classification") == _si.FIRSTHAND_APPROVED]
+                if not approved:
+                    bad.append(f"{s.source_id}: AUTO_READY with no "
+                               f"FIRSTHAND_APPROVED author for {team}")
     return bad

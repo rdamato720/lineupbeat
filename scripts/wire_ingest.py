@@ -74,6 +74,16 @@ def ingest_one(store, src, item, args) -> str:
     url = item.get("url", "")
     if not url:
         return "no url"
+    if item.get("si_exclusion_reason"):
+        # Refused before a request is made. Recorded rather than dropped: an
+        # article nobody excluded and an article nobody found look identical
+        # a week later, and only one of them is a bug.
+        if store is not None and not args.dry_run:
+            store.record_exclusion(src.source_id, url,
+                                   item.get("headline", ""),
+                                   item.get("author", ""),
+                                   item["si_exclusion_reason"])
+        return f"excluded: {item['si_exclusion_reason']}"
     if store is not None and store.seen_url(url) and not args.force:
         return "seen"
     art = capture.capture(src, item)
@@ -100,6 +110,8 @@ def main():
     ap.add_argument("--force", action="store_true",
                     help="re-capture URLs already stored")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--review", action="store_true",
+                    help="dark launch: also ingest MANUAL_REVIEW_ONLY sources")
     args = ap.parse_args()
 
     sources = registry.load()
@@ -131,11 +143,21 @@ def main():
 
     # -- scheduled discovery ----------------------------------------------
     pool = [s for s in sources if s.pollable]
+    if args.review:
+        # Dark launch. MANUAL_REVIEW_ONLY sources are never polled
+        # unattended -- that is what the state means -- so bringing them in
+        # is an explicit, named act. Everything they produce still lands in
+        # the review queue and nothing they produce can publish itself.
+        pool += [s for s in sources
+                 if s.active and s.status == registry.MANUAL_REVIEW_ONLY
+                 and s.adapter and not s.paid]
     if args.only:
         pool = [s for s in pool if args.only.lower() in s.source_id.lower()]
-    skipped = [s for s in sources if not s.pollable and s.active]
-    print(f"  {len(pool)} pollable source(s)"
-          + (f", {len(skipped)} active but not AUTO_READY" if skipped else ""))
+    skipped = [s for s in sources if not s.pollable and s.active
+               and s not in pool]
+    print(f"  {len(pool)} source(s) to poll"
+          + (f", {len(skipped)} active but not included" if skipped else "")
+          + (f"  [dark launch: MANUAL_REVIEW_ONLY included]" if args.review else ""))
 
     totals = {"candidates": 0, "seen": 0, "failed": 0}
     for src in pool:
