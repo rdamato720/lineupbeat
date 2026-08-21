@@ -99,6 +99,7 @@ def build(store, limit: int) -> dict:
                 "evidence_excerpt": r["evidence_text"],
                 "reporter": r["source_author_or_channel"],
                 "source": r["source_id"],
+                "source_ownership": r["source_ownership"] or "INDEPENDENT",
                 "article_date": r["published_at"],
                 "article_url": r["source_url"],
                 "claim_confidence": r["classification_confidence"],
@@ -151,8 +152,10 @@ def main():
                   f"[{it['classification_label']}]  claim "
                   f"{it['claim_confidence']:.2f} / identity "
                   f"{it['identity_confidence']:.2f}")
+            _own = ("  [Official team source]"
+                    if it["source_ownership"] == "TEAM_OWNED" else "")
             print(f"    WHAT THE REPORTER FOUND  -- {it['reporter']}, "
-                  f"{it['source']}, {it['article_date'][:10]}")
+                  f"{it['source']}, {it['article_date'][:10]}{_own}")
             _ex = it["evidence_excerpt"]
             print(f"      {_ex[:420]}"
                   + (f"  [+{len(_ex) - 420} more characters]"

@@ -121,6 +121,7 @@ class SIArticle:
     url_slug: str = ""          # the slug found in the url, if any
     section: str = ""
     discovery_url: str = ""     # the landing page it was found on
+    discovery_route: str = ""   # ONSI or TEAM_PAGE_FALLBACK
     author_class: str = UNKNOWN
     eligible: bool = False
     exclusion_reason: str = ""
@@ -131,6 +132,20 @@ class SIArticle:
 LD = re.compile(r'<script type="application/ld\+json"[^>]*>(.*?)</script>',
                 re.S | re.I)
 URL_TEAM = re.compile(r"^https?://(?:www\.)?si\.com/nfl/([a-z0-9-]+)(?:/|$)")
+
+# The On SI section of a team's own channel. This is the identity that
+# matters: /nfl/bills/onsi/<slug> is a Bills On SI article, and nothing else
+# on the broader team page is, whatever it is filed next to.
+ONSI_PATH = re.compile(r"^https?://(?:www\.)?si\.com/nfl/([a-z0-9-]+)/onsi/")
+
+
+def onsi_team(url: str) -> str | None:
+    """The team whose On SI section this canonical url belongs to."""
+    m = ONSI_PATH.match((url or "").strip())
+    if not m:
+        return None
+    slug = m.group(1)
+    return slug if slug in TEAMS else None
 
 
 def team_in_url(url: str) -> str | None:
@@ -251,7 +266,8 @@ def evaluate(raw: dict, team: str, authors: dict,
         published_at=raw.get("published_at", ""),
         description=raw.get("description", ""),
         team=team,
-        discovery_url=discovery_url,
+        discovery_url=discovery_url or raw.get("discovery_url", ""),
+        discovery_route=raw.get("discovery_route", ""),
     )
     art.url_slug = team_in_url(art.canonical_url) or ""
     art.section = section_of(art.canonical_url)
@@ -264,6 +280,16 @@ def evaluate(raw: dict, team: str, authors: dict,
         art.exclusion_reason = (
             f"canonical url is a {TEAMS[art.url_slug]} article, "
             f"discovered on the {team} page")
+        return art
+
+    # The canonical url must be in this team's On SI section. Where the
+    # article was found does not soften this: a "More {Team}" tile on an On
+    # SI page, or anything the fallback page surfaces, still has to be an
+    # /onsi/ article for this team or it is not one.
+    if onsi_team(art.canonical_url) != art.url_slug:
+        art.exclusion_reason = (
+            f"canonical url is not in the {team} On SI section "
+            f"(section {art.section!r})")
         return art
 
     if NO_AUTHOR.match(art.author or ""):
@@ -288,45 +314,74 @@ def evaluate(raw: dict, team: str, authors: dict,
 
 
 # ---------------------------------------------------------------- fetching
-def landing_url(slug: str, page: int = 1) -> str:
-    return f"{BASE}/{slug}" + ("" if page <= 1 else f"?page={page}")
+def landing_url(slug: str, page: int = 1, onsi: bool = True) -> str:
+    """The On SI section by default; the broader team page as fallback.
+
+    The broad page is a mixed feed -- national SI, syndication, fantasy,
+    betting, video -- and the On SI section is the team's own channel. On the
+    four pilot teams the section returned 44, 62, 67 and 50 articles against
+    34 from the broad page, and every one of Buffalo's was a Bills On SI
+    article where the broad page managed 25 of 34. San Francisco went from
+    14 usable articles to 42.
+    """
+    base = f"{BASE}/{slug}" + ("/onsi" if onsi else "")
+    return base + ("" if page <= 1 else f"?page={page}")
 
 
-def discover_team(slug: str, pages: int = 2, fetch=_get) -> tuple[list[dict], dict]:
-    """Raw items from a team's landing page, deduplicated by canonical url.
+def discover_team(slug: str, pages: int = 2, fetch=_get,
+                  onsi: bool = True, fallback: bool = True
+                  ) -> tuple[list[dict], dict]:
+    """Raw items from a team's On SI section, deduplicated by canonical url.
 
     Pagination overlaps heavily -- page two of the Bills repeats twenty-nine
     of thirty-four -- so pages are merged into one canonical-url-keyed set
     and the count that matters is the union, not the sum.
+
+    The broad team page is consulted only when the On SI section returns
+    nothing, and it buys no leniency: whatever it surfaces still has to pass
+    the same /onsi/ canonical test in evaluate().
     """
     if slug not in TEAMS:
         raise ValueError(f"{slug!r} is not an SI NFL team slug")
     items: dict[str, dict] = {}
-    meta = {"pages_fetched": 0, "pagination_works": False,
-            "http": [], "reachable": False}
-    first_page_ids: set = set()
-    for page in range(1, max(1, pages) + 1):
-        url = landing_url(slug, page)
-        try:
-            status, body, _ = fetch(url, timeout=45)
-        except Exception as e:
-            meta["http"].append(f"page {page}: {type(e).__name__}")
-            break
-        meta["http"].append(status)
-        if not (isinstance(status, int) and status == 200 and body):
-            break
-        meta["reachable"] = True
-        meta["pages_fetched"] += 1
-        found = parse_landing(body)
-        if page == 1:
-            first_page_ids = {f["canonical_url"] for f in found}
-        else:
-            fresh = {f["canonical_url"] for f in found} - first_page_ids
-            if fresh:
+    meta = {"pages_fetched": 0, "pagination_works": False, "http": [],
+            "reachable": False, "used_fallback": False,
+            "primary_url": landing_url(slug, 1, onsi=True),
+            "fallback_url": landing_url(slug, 1, onsi=False)}
+
+    def sweep(use_onsi: bool) -> int:
+        first: set = set()
+        got = 0
+        for page in range(1, max(1, pages) + 1):
+            url = landing_url(slug, page, onsi=use_onsi)
+            try:
+                status, body, _ = fetch(url, timeout=45)
+            except Exception as e:
+                meta["http"].append(f"page {page}: {type(e).__name__}")
+                break
+            meta["http"].append(status)
+            if not (isinstance(status, int) and status == 200 and body):
+                break
+            meta["reachable"] = True
+            meta["pages_fetched"] += 1
+            found = parse_landing(body)
+            got += len(found)
+            if page == 1:
+                first = {f["canonical_url"] for f in found}
+            elif {f["canonical_url"] for f in found} - first:
                 meta["pagination_works"] = True
-        for f in found:
-            f.setdefault("discovery_url", url)
-            items.setdefault(f["canonical_url"], f)
+            for f in found:
+                f.setdefault("discovery_url", url)
+                f.setdefault("discovery_route",
+                             "ONSI" if use_onsi else "TEAM_PAGE_FALLBACK")
+                items.setdefault(f["canonical_url"], f)
+        return got
+
+    if onsi:
+        sweep(True)
+    if not items and fallback:
+        meta["used_fallback"] = True
+        sweep(False)
     return list(items.values()), meta
 
 

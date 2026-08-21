@@ -367,7 +367,7 @@ class WireStore:
         """
         cols = {r["name"] for r in
                 self.conn.execute("PRAGMA table_info(wire_evidence)")}
-        for name in ("claim_key", "duplicate_of"):
+        for name in ("claim_key", "duplicate_of", "source_ownership"):
             if name not in cols:
                 self.conn.execute(
                     f"ALTER TABLE wire_evidence ADD COLUMN {name} TEXT")
@@ -404,8 +404,8 @@ class WireStore:
             "classification_reasons, player_id, player_name, team, position, "
             "resolution_method, resolution_confidence, registry_version, "
             "registry_hash, review_status, exclusion_reason, created_at, "
-            "updated_at, claim_key, duplicate_of) VALUES "
-            "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "updated_at, claim_key, duplicate_of, source_ownership) VALUES "
+            "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (rec["candidate_id"], rec.get("evidence_group_id", ""),
              rec.get("source_type", ""), rec.get("source_id", ""),
              rec.get("source_url", ""), rec.get("source_title", ""),
@@ -422,7 +422,8 @@ class WireStore:
              rec.get("resolution_confidence"),
              rec.get("registry_version", ""), rec.get("registry_hash", ""),
              status, rec.get("exclusion_reason", ""), created, now(),
-             rec.get("claim_key", ""), rec.get("duplicate_of", "")))
+             rec.get("claim_key", ""), rec.get("duplicate_of", ""),
+             rec.get("source_ownership", "INDEPENDENT")))
         self.conn.commit()
         return prior is None
 

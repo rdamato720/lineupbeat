@@ -127,6 +127,18 @@ SOURCE_FANTASY_ADVICE = re.compile(
     r"(?:round|rd\.?) \d+ (?:pick|value)|flex play)\b")
 
 
+# An official act a club is the authoritative source for.
+OFFICIAL_EVENT = re.compile(
+    r"(?i)\b(placed (?:\w+ )?on (?:ir|injured reserve|the pup)|waived|released|"
+    r"signed|claimed off waivers|activated|designated to return|"
+    r"named (?:the )?(?:starting|starter)|ruled out|"
+    r"official(?:ly)? (?:announced|designated)|traded)\b")
+
+
+def articles_of(rows: list) -> set:
+    return {r.get("source_url", "") for r in rows}
+
+
 @dataclass
 class Impact:
     player_id: str
@@ -212,10 +224,15 @@ def independent_sources(rows: list) -> int:
     """
     seen = set()
     for r in rows:
+        # A club's own site cannot corroborate the club. Two articles from
+        # one team site, or an article and its matching team video, are one
+        # source family -- and never an independent one.
+        if (r.get("source_ownership") or "") == "TEAM_OWNED":
+            continue
         seen.add((r.get("source_url", ""),
                   (r.get("source_author_or_channel") or "").strip().lower()))
     by_reporter = {a for _, a in seen if a}
-    return max(len(by_reporter), 1) if seen else 0
+    return len(by_reporter) if by_reporter else (1 if seen else 0)
 
 
 def strength(rows: list, signal: str, independent: int) -> str:
@@ -236,6 +253,17 @@ def strength(rows: list, signal: str, independent: int) -> str:
     articles = {r["source_url"] for r in rows}
     fh_articles = {r["source_url"] for r in firsthand}
 
+    team_owned_only = rows and all(
+        (r.get("source_ownership") or "") == "TEAM_OWNED" for r in rows)
+    if team_owned_only:
+        # A club is authoritative for its own acts and for nothing else. An
+        # official transaction, an IR placement or a formally announced
+        # starter may be material on the club's word alone; a practice
+        # observation from the same writer may not, however carefully he
+        # counted the repetitions.
+        if OFFICIAL_EVENT.search(text):
+            return HIGH if major else MEDIUM
+        return LOW if len(articles_of(rows)) < 2 else MEDIUM
     if major and independent >= 2 and (firsthand or quotes):
         return HIGH
     if len(fh_articles) >= 2:
@@ -381,8 +409,11 @@ def validate(imp: Impact, rows: list, registry) -> list[str]:
         bad.append("generated commentary must start PENDING")
 
     if imp.impact_strength == HIGH:
-        if imp.independent_source_count < 2:
-            bad.append("HIGH requires two independent reporters")
+        official = bool(OFFICIAL_EVENT.search(text)) and all(
+            (r.get("source_ownership") or "") == "TEAM_OWNED" for r in rows)
+        if imp.independent_source_count < 2 and not official:
+            bad.append("HIGH requires two independent reporters, or an "
+                       "official act reported by the club itself")
         if not MAJOR_EVENT.search(text):
             bad.append("HIGH requires a confirmed major event in the evidence")
     if imp.projection_action == UPDATE_RECOMMENDED and imp.independent_source_count < 2:

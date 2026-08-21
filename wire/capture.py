@@ -24,7 +24,7 @@ from datetime import datetime, timezone
 import feedparser
 import trafilatura
 
-from .registry import (AUTHOR_PAGE_SCRAPE, EXCERPT_FEED_PAGE_FETCH, 
+from .registry import (AUTHOR_PAGE_SCRAPE, EXCERPT_FEED_PAGE_FETCH, NFL_TEAM_SITE, 
                        FULL_TEXT_FEED, PAID_LABEL, SITE_FEED_AUTHOR_FILTER, 
                        SI_TEAM_PAGE, Source)
 
@@ -165,6 +165,8 @@ def discover(src: Source, limit: int = 25) -> list[dict]:
         return []
     if src.adapter == SI_TEAM_PAGE:
         return _discover_si(src, limit)
+    if src.adapter == NFL_TEAM_SITE:
+        return _discover_official(src, limit)
     if src.adapter == AUTHOR_PAGE_SCRAPE:
         return _discover_author_page(src, limit)
     if not src.feed_url:
@@ -195,6 +197,29 @@ def discover(src: Source, limit: int = 25) -> list[dict]:
         })
         if len(out) >= limit:
             break
+    return out
+
+
+def _discover_official(src: Source, limit: int) -> list[dict]:
+    """A club's own news index. Team-owned, and marked so at discovery.
+
+    The ownership travels with the item from the first moment, because
+    everything downstream -- the corroboration count, the reviewer's label,
+    the fantasy strength ceiling -- depends on knowing the club wrote it.
+    """
+    from . import nflteam as _nt
+    team = src.teams[0] if src.teams else ""
+    items, _meta = _nt.discover(team, limit=limit)
+    out = []
+    for item in items:
+        why = _nt.content_exclusion("", item["url"])
+        out.append({
+            "url": item["url"], "headline": "", "author": "",
+            "published_at": "", "feed_html": "", "feed_text": "",
+            "source_ownership": _nt.TEAM_OWNED,
+            "si_exclusion_reason": why,
+            "si_discovery_url": item["discovery_url"],
+        })
     return out
 
 
@@ -306,6 +331,21 @@ def capture(src: Source, item: dict) -> Article:
         body = trafilatura.extract(html, include_comments=False,
                                    include_tables=False,
                                    favor_precision=True) or ""
+        if src.adapter == NFL_TEAM_SITE:
+            # trafilatura reads the byline off some club pages as "Copied",
+            # which is the text of a share button. The embedded schema.org
+            # block says "Jim Wyatt".
+            from . import nflteam as _nt
+            got = _nt.parse_article(html)
+            art.author = got["author"] or art.author
+            art.headline = got["headline"] or art.headline
+            art.published_at = got["published_at"] or art.published_at
+            why = _nt.content_exclusion(art.headline, art.canonical_url, body)
+            if why:
+                art.extraction_status = INCOMPLETE
+                art.note = f"official team site: {why}"
+                art.raw_text = body
+                return art
         meta = trafilatura.extract_metadata(html)
         if meta:
             art.headline = art.headline or (meta.title or "")

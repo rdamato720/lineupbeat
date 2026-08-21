@@ -32,6 +32,8 @@ sources:
   # ---------------------------------------------------------------- AUTO_READY
 
   - source_id: arizona_sports_tyler_drake
+    source_class: INDEPENDENT_LOCAL
+    source_ownership: INDEPENDENT
     source_name: Arizona Sports
     reporter_name: Tyler Drake
     x_handle: Tdrake4sports
@@ -59,6 +61,8 @@ sources:
             canonical: true}
 
   - source_id: packers_on_si_bill_huber
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     source_name: Packers On SI
     reporter_name: Bill Huber
     x_handle: BillHuberNFL
@@ -88,6 +92,8 @@ sources:
             sample: /nfl/packers/onsi/ten-winners-four-losers-from-practice-14}
 
   - source_id: pewter_report
+    source_class: INDEPENDENT_LOCAL
+    source_ownership: INDEPENDENT
     source_name: Pewter Report
     reporter_name: Pewter Report staff
     x_handle: PewterReport
@@ -116,6 +122,8 @@ sources:
             author: true, date: true, canonical: true}
 
   - source_id: atoz_sports_easton_freeze
+    source_class: INDEPENDENT_LOCAL
+    source_ownership: INDEPENDENT
     source_name: A to Z Sports
     reporter_name: Easton Freeze
     x_handle: eastonfreeze
@@ -140,6 +148,8 @@ sources:
             author: true, date: true, canonical: true}
 
   - source_id: phillyvoice_jimmy_kempski
+    source_class: INDEPENDENT_LOCAL
+    source_ownership: INDEPENDENT
     source_name: PhillyVoice
     reporter_name: Jimmy Kempski
     x_handle: JimmyKempski
@@ -164,6 +174,8 @@ sources:
   # ------------------------------------------------- CUSTOM_ADAPTER_NEEDED
 
   - source_id: boston_herald_andrew_callahan
+    source_class: INDEPENDENT_LOCAL
+    source_ownership: INDEPENDENT
     source_name: Boston Herald
     reporter_name: Andrew Callahan
     x_handle: _AndrewCallahan
@@ -282,7 +294,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: cardinals
-    landing_page: https://www.si.com/nfl/cardinals
+    landing_page: https://www.si.com/nfl/cardinals/onsi
+    fallback_page: https://www.si.com/nfl/cardinals
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -298,7 +313,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: falcons
-    landing_page: https://www.si.com/nfl/falcons
+    landing_page: https://www.si.com/nfl/falcons/onsi
+    fallback_page: https://www.si.com/nfl/falcons
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -314,7 +332,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: ravens
-    landing_page: https://www.si.com/nfl/ravens
+    landing_page: https://www.si.com/nfl/ravens/onsi
+    fallback_page: https://www.si.com/nfl/ravens
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -330,7 +351,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: bills
-    landing_page: https://www.si.com/nfl/bills
+    landing_page: https://www.si.com/nfl/bills/onsi
+    fallback_page: https://www.si.com/nfl/bills
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -346,7 +370,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: panthers
-    landing_page: https://www.si.com/nfl/panthers
+    landing_page: https://www.si.com/nfl/panthers/onsi
+    fallback_page: https://www.si.com/nfl/panthers
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -362,7 +389,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: bears
-    landing_page: https://www.si.com/nfl/bears
+    landing_page: https://www.si.com/nfl/bears/onsi
+    fallback_page: https://www.si.com/nfl/bears
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -378,7 +408,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: bengals
-    landing_page: https://www.si.com/nfl/bengals
+    landing_page: https://www.si.com/nfl/bengals/onsi
+    fallback_page: https://www.si.com/nfl/bengals
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -394,7 +427,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: browns
-    landing_page: https://www.si.com/nfl/browns
+    landing_page: https://www.si.com/nfl/browns/onsi
+    fallback_page: https://www.si.com/nfl/browns
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -410,7 +446,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: cowboys
-    landing_page: https://www.si.com/nfl/cowboys
+    landing_page: https://www.si.com/nfl/cowboys/onsi
+    fallback_page: https://www.si.com/nfl/cowboys
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -426,7 +465,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: broncos
-    landing_page: https://www.si.com/nfl/broncos
+    landing_page: https://www.si.com/nfl/broncos/onsi
+    fallback_page: https://www.si.com/nfl/broncos
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -442,7 +484,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: lions
-    landing_page: https://www.si.com/nfl/lions
+    landing_page: https://www.si.com/nfl/lions/onsi
+    fallback_page: https://www.si.com/nfl/lions
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -458,7 +503,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: packers
-    landing_page: https://www.si.com/nfl/packers
+    landing_page: https://www.si.com/nfl/packers/onsi
+    fallback_page: https://www.si.com/nfl/packers
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -474,7 +522,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: texans
-    landing_page: https://www.si.com/nfl/texans
+    landing_page: https://www.si.com/nfl/texans/onsi
+    fallback_page: https://www.si.com/nfl/texans
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -490,7 +541,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: colts
-    landing_page: https://www.si.com/nfl/colts
+    landing_page: https://www.si.com/nfl/colts/onsi
+    fallback_page: https://www.si.com/nfl/colts
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -506,7 +560,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: jaguars
-    landing_page: https://www.si.com/nfl/jaguars
+    landing_page: https://www.si.com/nfl/jaguars/onsi
+    fallback_page: https://www.si.com/nfl/jaguars
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -522,7 +579,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: chiefs
-    landing_page: https://www.si.com/nfl/chiefs
+    landing_page: https://www.si.com/nfl/chiefs/onsi
+    fallback_page: https://www.si.com/nfl/chiefs
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -538,7 +598,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: chargers
-    landing_page: https://www.si.com/nfl/chargers
+    landing_page: https://www.si.com/nfl/chargers/onsi
+    fallback_page: https://www.si.com/nfl/chargers
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -554,7 +617,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: rams
-    landing_page: https://www.si.com/nfl/rams
+    landing_page: https://www.si.com/nfl/rams/onsi
+    fallback_page: https://www.si.com/nfl/rams
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -570,7 +636,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: raiders
-    landing_page: https://www.si.com/nfl/raiders
+    landing_page: https://www.si.com/nfl/raiders/onsi
+    fallback_page: https://www.si.com/nfl/raiders
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -586,7 +655,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: dolphins
-    landing_page: https://www.si.com/nfl/dolphins
+    landing_page: https://www.si.com/nfl/dolphins/onsi
+    fallback_page: https://www.si.com/nfl/dolphins
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -602,7 +674,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: vikings
-    landing_page: https://www.si.com/nfl/vikings
+    landing_page: https://www.si.com/nfl/vikings/onsi
+    fallback_page: https://www.si.com/nfl/vikings
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -618,7 +693,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: patriots
-    landing_page: https://www.si.com/nfl/patriots
+    landing_page: https://www.si.com/nfl/patriots/onsi
+    fallback_page: https://www.si.com/nfl/patriots
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -634,7 +712,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: saints
-    landing_page: https://www.si.com/nfl/saints
+    landing_page: https://www.si.com/nfl/saints/onsi
+    fallback_page: https://www.si.com/nfl/saints
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -650,7 +731,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: giants
-    landing_page: https://www.si.com/nfl/giants
+    landing_page: https://www.si.com/nfl/giants/onsi
+    fallback_page: https://www.si.com/nfl/giants
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -666,7 +750,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: jets
-    landing_page: https://www.si.com/nfl/jets
+    landing_page: https://www.si.com/nfl/jets/onsi
+    fallback_page: https://www.si.com/nfl/jets
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -682,7 +769,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: eagles
-    landing_page: https://www.si.com/nfl/eagles
+    landing_page: https://www.si.com/nfl/eagles/onsi
+    fallback_page: https://www.si.com/nfl/eagles
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -698,7 +788,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: steelers
-    landing_page: https://www.si.com/nfl/steelers
+    landing_page: https://www.si.com/nfl/steelers/onsi
+    fallback_page: https://www.si.com/nfl/steelers
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -714,7 +807,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: seahawks
-    landing_page: https://www.si.com/nfl/seahawks
+    landing_page: https://www.si.com/nfl/seahawks/onsi
+    fallback_page: https://www.si.com/nfl/seahawks
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -730,7 +826,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: 49ers
-    landing_page: https://www.si.com/nfl/49ers
+    landing_page: https://www.si.com/nfl/49ers/onsi
+    fallback_page: https://www.si.com/nfl/49ers
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -746,7 +845,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: buccaneers
-    landing_page: https://www.si.com/nfl/buccaneers
+    landing_page: https://www.si.com/nfl/buccaneers/onsi
+    fallback_page: https://www.si.com/nfl/buccaneers
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -762,7 +864,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: titans
-    landing_page: https://www.si.com/nfl/titans
+    landing_page: https://www.si.com/nfl/titans/onsi
+    fallback_page: https://www.si.com/nfl/titans
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -778,7 +883,10 @@ sources:
     reporting_type: LOCAL_BEAT
     discovery: si_team_page
     si_team_slug: commanders
-    landing_page: https://www.si.com/nfl/commanders
+    landing_page: https://www.si.com/nfl/commanders/onsi
+    fallback_page: https://www.si.com/nfl/commanders
+    source_class: SI_ONSI
+    source_ownership: INDEPENDENT
     feed_scope: section
     active: true
     trust_tier: 2
@@ -803,6 +911,8 @@ sources:
     teams: [ALL]
     formats: [article]
     domains: [nytimes.com, theathletic.com]
+    source_class: DISCOVERY_ONLY_PAID
+    source_ownership: INDEPENDENT
     status: DISCOVERY_ONLY_PAID
     reporting_type: LOCAL_BEAT
     discovery: paid_metadata_only
@@ -839,6 +949,8 @@ sources:
   #   DNVR, Buffalo Fanatics, Silver and Black Today: no reachable feed.
 
   - source_id: purple_insider_matthew_coller
+    source_class: INDEPENDENT_LOCAL
+    source_ownership: INDEPENDENT
     source_name: Purple Insider
     reporter_name: Matthew Coller
     teams: ['MIN']
@@ -855,6 +967,8 @@ sources:
     # and joint-practice diaries -- firsthand observation, not analysis.
 
   - source_id: steelers_depot
+    source_class: INDEPENDENT_LOCAL
+    source_ownership: INDEPENDENT
     source_name: Steelers Depot
     reporter_name: ''
     teams: ['PIT']
@@ -872,6 +986,8 @@ sources:
     # and aggregation, so every article goes to a human.
 
   - source_id: jets_x_factor
+    source_class: INDEPENDENT_LOCAL
+    source_ownership: INDEPENDENT
     source_name: Jets X-Factor
     reporter_name: ''
     teams: ['NYJ']
@@ -889,6 +1005,8 @@ sources:
     # review-only.
 
   - source_id: pressbox_baltimore
+    source_class: INDEPENDENT_LOCAL
+    source_ownership: INDEPENDENT
     source_name: PressBox
     reporter_name: ''
     teams: ['BAL']
@@ -912,3 +1030,544 @@ sources:
     # extraction: three relevant articles in a ten-entry window may not be
     # enough to be useful, and that is a yield judgement to make after a
     # fortnight rather than now.
+
+  # ------------------------------------------- OFFICIAL_TEAM_SITE (32)
+  #
+  # One adapter, thirty-two club sites, probed 2026-08-21: all 32 reachable
+  # with discoverable /news/ links, all on the same platform, article pages
+  # carrying schema.org bylines. Extraction 512-9,197 chars.
+  #
+  # Every one is TEAM_OWNED and MANUAL_REVIEW_ONLY, and none may ever be
+  # AUTO_READY. The risk with a club site is not a fabricated repetition --
+  # Jim Wyatt counts them accurately -- it is the story the club does not
+  # file. An omission carries no marker, no hedge and no byline, so no
+  # author allowlist can detect one. Team-owned evidence therefore never
+  # counts toward independent corroboration.
+  #
+  # Pilots: TEN, BUF, JAX, SF.
+
+  - source_id: official_ari
+    source_name: ARI official team site
+    reporter_name: ''
+    teams: ['ARI']
+    formats: [article]
+    domains: [azcardinals.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.azcardinals.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_atl
+    source_name: ATL official team site
+    reporter_name: ''
+    teams: ['ATL']
+    formats: [article]
+    domains: [atlantafalcons.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.atlantafalcons.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_bal
+    source_name: BAL official team site
+    reporter_name: ''
+    teams: ['BAL']
+    formats: [article]
+    domains: [baltimoreravens.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.baltimoreravens.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_buf
+    source_name: BUF official team site
+    reporter_name: ''
+    teams: ['BUF']
+    formats: [article]
+    domains: [buffalobills.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.buffalobills.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_car
+    source_name: CAR official team site
+    reporter_name: ''
+    teams: ['CAR']
+    formats: [article]
+    domains: [panthers.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.panthers.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_chi
+    source_name: CHI official team site
+    reporter_name: ''
+    teams: ['CHI']
+    formats: [article]
+    domains: [chicagobears.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.chicagobears.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_cin
+    source_name: CIN official team site
+    reporter_name: ''
+    teams: ['CIN']
+    formats: [article]
+    domains: [bengals.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.bengals.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_cle
+    source_name: CLE official team site
+    reporter_name: ''
+    teams: ['CLE']
+    formats: [article]
+    domains: [clevelandbrowns.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.clevelandbrowns.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_dal
+    source_name: DAL official team site
+    reporter_name: ''
+    teams: ['DAL']
+    formats: [article]
+    domains: [dallascowboys.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.dallascowboys.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_den
+    source_name: DEN official team site
+    reporter_name: ''
+    teams: ['DEN']
+    formats: [article]
+    domains: [denverbroncos.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.denverbroncos.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_det
+    source_name: DET official team site
+    reporter_name: ''
+    teams: ['DET']
+    formats: [article]
+    domains: [detroitlions.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.detroitlions.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_gb
+    source_name: GB official team site
+    reporter_name: ''
+    teams: ['GB']
+    formats: [article]
+    domains: [packers.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.packers.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_hou
+    source_name: HOU official team site
+    reporter_name: ''
+    teams: ['HOU']
+    formats: [article]
+    domains: [houstontexans.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.houstontexans.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_ind
+    source_name: IND official team site
+    reporter_name: ''
+    teams: ['IND']
+    formats: [article]
+    domains: [colts.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.colts.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_jax
+    source_name: JAX official team site
+    reporter_name: ''
+    teams: ['JAX']
+    formats: [article]
+    domains: [jaguars.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.jaguars.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_kc
+    source_name: KC official team site
+    reporter_name: ''
+    teams: ['KC']
+    formats: [article]
+    domains: [chiefs.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.chiefs.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_lac
+    source_name: LAC official team site
+    reporter_name: ''
+    teams: ['LAC']
+    formats: [article]
+    domains: [chargers.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.chargers.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_lar
+    source_name: LAR official team site
+    reporter_name: ''
+    teams: ['LAR']
+    formats: [article]
+    domains: [therams.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.therams.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_lv
+    source_name: LV official team site
+    reporter_name: ''
+    teams: ['LV']
+    formats: [article]
+    domains: [raiders.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.raiders.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_mia
+    source_name: MIA official team site
+    reporter_name: ''
+    teams: ['MIA']
+    formats: [article]
+    domains: [miamidolphins.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.miamidolphins.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_min
+    source_name: MIN official team site
+    reporter_name: ''
+    teams: ['MIN']
+    formats: [article]
+    domains: [vikings.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.vikings.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_ne
+    source_name: NE official team site
+    reporter_name: ''
+    teams: ['NE']
+    formats: [article]
+    domains: [patriots.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.patriots.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_no
+    source_name: NO official team site
+    reporter_name: ''
+    teams: ['NO']
+    formats: [article]
+    domains: [neworleanssaints.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.neworleanssaints.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_nyg
+    source_name: NYG official team site
+    reporter_name: ''
+    teams: ['NYG']
+    formats: [article]
+    domains: [giants.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.giants.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_nyj
+    source_name: NYJ official team site
+    reporter_name: ''
+    teams: ['NYJ']
+    formats: [article]
+    domains: [newyorkjets.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.newyorkjets.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_phi
+    source_name: PHI official team site
+    reporter_name: ''
+    teams: ['PHI']
+    formats: [article]
+    domains: [philadelphiaeagles.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.philadelphiaeagles.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_pit
+    source_name: PIT official team site
+    reporter_name: ''
+    teams: ['PIT']
+    formats: [article]
+    domains: [steelers.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.steelers.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_sea
+    source_name: SEA official team site
+    reporter_name: ''
+    teams: ['SEA']
+    formats: [article]
+    domains: [seahawks.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.seahawks.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_sf
+    source_name: SF official team site
+    reporter_name: ''
+    teams: ['SF']
+    formats: [article]
+    domains: [49ers.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.49ers.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_tb
+    source_name: TB official team site
+    reporter_name: ''
+    teams: ['TB']
+    formats: [article]
+    domains: [buccaneers.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.buccaneers.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+
+  - source_id: official_ten
+    source_name: TEN official team site
+    reporter_name: ''
+    teams: ['TEN']
+    formats: [article]
+    domains: [tennesseetitans.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.tennesseetitans.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3
+    reporter_name: Jim Wyatt
+    evidence_access: TEAM_EMPLOYED_FIRSTHAND
+    qualifying_series: '^Ten Observations From Titans Training Camp'
+    filter:
+      author: Jim Wyatt
+    # Wyatt is NOT firsthand-approved. His observation pieces are
+    # exactly the qualifying format -- Nashville dateline, eleven
+    # numbered practice notes, reporter-counted repetitions in 3 of 3
+    # read -- but only three are lawfully discoverable: the news index
+    # is alphabetical, ?page=2 returns the same 72 links, and there is
+    # no author archive. Three articles against a twelve-article
+    # standard is the same refusal that stopped Grant Cohn at four.
+    # The series restriction is configured and enforced so that if a
+    # deeper discovery route appears, approval is a one-line change.
+
+  - source_id: official_was
+    source_name: WAS official team site
+    reporter_name: ''
+    teams: ['WAS']
+    formats: [article]
+    domains: [commanders.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: LOCAL_BEAT
+    discovery: nfl_team_site
+    source_class: OFFICIAL_TEAM_SITE
+    source_ownership: TEAM_OWNED
+    landing_page: https://www.commanders.com/news/
+    feed_scope: publication
+    active: true
+    trust_tier: 3

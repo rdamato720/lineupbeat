@@ -56,7 +56,8 @@ def source_context(store, source_id: str) -> dict:
                         "teams": s.teams, "reporter_voice": False,
                         "auto_captions": False, "multi_speaker": True,
                         "channel_id": "", "paid": True, "si": False,
-                        "refuse": artreg.PAID_LABEL}
+                        "refuse": artreg.PAID_LABEL,
+                        "ownership": s.source_ownership}
             # A named reporter is a verified voice; a multi-author
             # publication is not. Registering Steelers Depot did not
             # establish that every byline on it attends practice, and
@@ -70,11 +71,12 @@ def source_context(store, source_id: str) -> dict:
                     "reporter_voice": named, "auto_captions": False,
                     "multi_speaker": False, "channel_id": "",
                     "paid": False, "si": s.adapter == artreg.SI_TEAM_PAGE,
-                    "refuse": ""}
+                    "refuse": "", "ownership": s.source_ownership}
     chans, _ = yt.load()
     for c in chans:
         if c.source_id == source_id:
-            return {"type": "youtube", "paid": False, "si": False, "refuse": "", "name": c.source_name,
+            return {"type": "youtube", "paid": False, "si": False, "refuse": "",
+                    "ownership": artreg.INDEPENDENT, "name": c.source_name,
                     "author": ", ".join(c.approved_reporters),
                     "teams": [c.team], "reporter_voice": False,
                     "auto_captions": True, "multi_speaker": False,
@@ -82,7 +84,7 @@ def source_context(store, source_id: str) -> dict:
     return {"type": "unknown", "name": source_id, "author": "", "teams": [],
             "reporter_voice": False, "auto_captions": False,
             "multi_speaker": True, "channel_id": "", "paid": False,
-            "si": False, "refuse": ""}
+            "si": False, "refuse": "", "ownership": artreg.INDEPENDENT}
 
 
 def spans_from_article(item) -> list[tuple[str, str, float | None, float | None]]:
@@ -251,6 +253,7 @@ def extract_item(store, item, reg, ctx, cfg, dry=False,
                     else 0.0),
                 "registry_version": reg.version,
                 "registry_hash": cfg.get("source_sha256", ""),
+                "source_ownership": ctx.get("ownership", artreg.INDEPENDENT),
                 "review_status": ev.PENDING,
                 "exclusion_reason": exclusion,
             }

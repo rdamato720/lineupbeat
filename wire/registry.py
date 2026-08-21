@@ -31,6 +31,22 @@ AUTHOR_PAGE_SCRAPE = "AUTHOR_PAGE_SCRAPE"
 SI_TEAM_PAGE = "SI_TEAM_PAGE"
 # A paid publisher we may look at and may not read. See PAID_ONLY below.
 PAID_METADATA_ONLY = "PAID_METADATA_ONLY"
+# One reusable adapter for the 32 club websites.
+NFL_TEAM_SITE = "NFL_TEAM_SITE"
+
+# What kind of source this is. The class decides what its evidence may be
+# used for, which is not the same question as whether the evidence is good.
+SI_ONSI = "SI_ONSI"
+OFFICIAL_TEAM_SITE = "OFFICIAL_TEAM_SITE"
+INDEPENDENT_LOCAL = "INDEPENDENT_LOCAL"
+SOURCE_CLASSES = {SI_ONSI, OFFICIAL_TEAM_SITE, INDEPENDENT_LOCAL,
+                  "DISCOVERY_ONLY_PAID"}
+
+# Who owns the publication. A club's own writer may be excellent and at every
+# practice, and still cannot corroborate the club: TEAM_OWNED evidence never
+# counts toward independent_source_count.
+TEAM_OWNED = "TEAM_OWNED"
+INDEPENDENT = "INDEPENDENT"
 
 ADAPTERS = {
     "rss_full_text": FULL_TEXT_FEED,
@@ -39,6 +55,7 @@ ADAPTERS = {
     "author_page_scrape": AUTHOR_PAGE_SCRAPE,
     "si_team_page": SI_TEAM_PAGE,
     "paid_metadata_only": PAID_METADATA_ONLY,
+    "nfl_team_site": NFL_TEAM_SITE,
 }
 
 AUTO_READY = "AUTO_READY"
@@ -93,6 +110,15 @@ class Source:
     strip_patterns: list[str] = field(default_factory=list)
     si_team_slug: str = ""
     landing_page: str = ""
+    fallback_page: str = ""
+    source_class: str = ""
+    source_ownership: str = INDEPENDENT
+    qualifying_series: str = ""
+    evidence_access: str = ""
+
+    @property
+    def team_owned(self) -> bool:
+        return self.source_ownership == TEAM_OWNED
 
     @property
     def paid(self) -> bool:
@@ -155,6 +181,11 @@ def load(path: Path | None = None) -> list[Source]:
             strip_patterns=row.get("strip_patterns") or [],
             si_team_slug=row.get("si_team_slug", "") or "",
             landing_page=row.get("landing_page", "") or "",
+            fallback_page=row.get("fallback_page", "") or "",
+            source_class=row.get("source_class", "") or "",
+            source_ownership=row.get("source_ownership", INDEPENDENT),
+            qualifying_series=row.get("qualifying_series", "") or "",
+            evidence_access=row.get("evidence_access", "") or "",
         ))
     return out
 
@@ -191,6 +222,22 @@ def problems(sources: list[Source]) -> list[str]:
 
         if s.status not in STATES:
             bad.append(f"{s.source_id}: unknown status {s.status!r}")
+        if s.source_class and s.source_class not in SOURCE_CLASSES:
+            bad.append(f"{s.source_id}: unknown source_class {s.source_class!r}")
+        if s.source_ownership not in (TEAM_OWNED, INDEPENDENT):
+            bad.append(f"{s.source_id}: unknown source_ownership "
+                       f"{s.source_ownership!r}")
+        # A club website is team-owned by definition, and mislabelling one as
+        # independent would let it corroborate itself.
+        if s.source_class == OFFICIAL_TEAM_SITE and not s.team_owned:
+            bad.append(f"{s.source_id}: OFFICIAL_TEAM_SITE must be TEAM_OWNED")
+        if s.adapter == NFL_TEAM_SITE and s.source_class != OFFICIAL_TEAM_SITE:
+            bad.append(f"{s.source_id}: nfl_team_site adapter must be "
+                       f"OFFICIAL_TEAM_SITE")
+        # A team-owned source may never be polled unattended: its omissions
+        # are the risk, and no author allowlist detects an omission.
+        if s.team_owned and s.status == AUTO_READY:
+            bad.append(f"{s.source_id}: team-owned source marked AUTO_READY")
 
         # A paid source may never be promoted, polled or manually rescued.
         # Three separate assertions because each has been a different bug in

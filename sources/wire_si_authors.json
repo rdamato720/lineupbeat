@@ -1540,15 +1540,15 @@
    "landing_page": "https://www.si.com/nfl/jaguars",
    "authors": {
     "John Shipley": {
-     "classification": "REPORTING",
-     "evidence": "reports, but direct-access evidence does not recur: presence 3, reps 1, counted 0, participation 1, presser 2 across 8 articles read (1 marker type(s) appearing twice or more)",
+     "classification": "FIRSTHAND_APPROVED",
+     "evidence": "12 complete articles read from a 50-article On SI pool: presence markers in 4 ('I saw' twice), practice-location references in 5, first/second-team rep observations in 3, press-conference reporting in 3, participation reporting in 2; relays another outlet in only 1. Qualifying formats: camp reports (10), joint-practice (5), observations (1)",
      "sample_urls": [
       "https://www.si.com/nfl/jaguars/onsi/jacksonville-grading-the-trade-for-daniel-faalele-why-james-gladstone-made-the-move",
       "https://www.si.com/nfl/jaguars/onsi/jacksonville-5-things-we-learned-from-joint-practices-with-panthers",
       "https://www.si.com/nfl/jaguars/onsi/jacksonville-3-observations-on-cole-van-lanen-return-and-what-it-means-for-ol"
      ],
-     "articles_in_sample": 51,
-     "articles_read": 8,
+     "articles_in_sample": 50,
+     "articles_read": 12,
      "formats_observed": [
       "camp report",
       "joint-practice",
@@ -1559,19 +1559,20 @@
      "teams_seen": [
       "JAX"
      ],
+     "url_pattern": "^/nfl/jaguars/onsi/",
      "markers": {
-      "presence": 3,
-      "location": 3,
-      "reps": 1,
+      "presence": 4,
+      "location": 5,
+      "reps": 3,
       "counted": 0,
-      "presser": 2,
+      "presser": 3,
       "questioning": 0,
-      "participation": 1,
+      "participation": 2,
       "relay": 1,
-      "opinion_only": 0
+      "opinion_only": 2
      },
      "auto_ready": false,
-     "reviewed_on": "2026-08-20"
+     "reviewed_on": "2026-08-21"
     },
     "SI Video Staff": {
      "classification": "UNKNOWN",

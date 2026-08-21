@@ -868,6 +868,124 @@ for _r in _ws.evidence():
 check("every candidate names its player inside the stored evidence",
       not _missing, _missing[:3])
 
+from wire import fantasy as fz
+
+# ------------------------------------------------------------ SI On SI
+check("On SI is the primary discovery url",
+      SI.landing_url("bills") == "https://www.si.com/nfl/bills/onsi")
+check("the broad team page is the fallback",
+      SI.landing_url("bills", onsi=False) == "https://www.si.com/nfl/bills")
+check("onsi_team reads the section from the canonical url",
+      SI.onsi_team("https://www.si.com/nfl/bills/onsi/x") == "bills"
+      and SI.onsi_team("https://www.si.com/nfl/bills/news/x") is None
+      and SI.onsi_team("https://www.si.com/nfl/top-50") is None)
+
+# The fallback page buys no leniency. A "More Bills" tile or anything else
+# the broad page surfaces still has to be an /onsi/ article for this team.
+_notonsi = SI.evaluate(
+    {"canonical_url": "https://www.si.com/nfl/bills/news/story",
+     "headline": "Bills practice report", "author": "Ethan Hurwitz",
+     "published_at": "2026-08-20",
+     "discovery_route": "TEAM_PAGE_FALLBACK"}, "BUF", SI_AUTH)
+check("fallback discovery cannot bypass the /onsi/ canonical rule",
+      not _notonsi.eligible and "On SI section" in _notonsi.exclusion_reason,
+      _notonsi.exclusion_reason)
+
+_si_srcs2 = [x for x in registry.load() if x.adapter == registry.SI_TEAM_PAGE]
+check("every SI source stores both discovery urls",
+      all(s.landing_page.endswith("/onsi") and s.fallback_page
+          for s in _si_srcs2))
+check("every SI source is classed SI_ONSI",
+      all(s.source_class == registry.SI_ONSI for s in _si_srcs2))
+check("Bill Huber keeps his exact author and /onsi/ url restrictions",
+      any(s.source_id == "packers_on_si_bill_huber"
+          and s.filter_author == "Bill Huber"
+          and s.filter_url_pattern == "^/nfl/packers/onsi/"
+          and s.status == registry.AUTO_READY
+          for s in registry.load()))
+
+# --------------------------------------------------- official team sites
+from wire import nflteam as NT
+
+check("one adapter covers all 32 club sites", len(NT.SITES) == 32, len(NT.SITES))
+_off = [x for x in registry.load()
+        if x.source_class == registry.OFFICIAL_TEAM_SITE]
+check("all 32 official team sites are registered", len(_off) == 32, len(_off))
+check("every official team source is TEAM_OWNED",
+      all(s.team_owned for s in _off))
+check("no official team source is pollable unattended",
+      not any(s.pollable for s in _off))
+_bad_off = registry.Source(
+    source_id="off_x", source_name="x", reporter_name="", teams=["TEN"],
+    domains=["x.com"], status=registry.AUTO_READY, feed_url="https://x/f",
+    reporting_type="LOCAL_BEAT", adapter=registry.NFL_TEAM_SITE,
+    source_class=registry.OFFICIAL_TEAM_SITE,
+    source_ownership=registry.TEAM_OWNED, active=True)
+check("a team-owned source cannot be AUTO_READY",
+      any("team-owned source marked AUTO_READY" in b
+          for b in registry.problems([_bad_off])))
+_mislabelled = registry.Source(
+    source_id="off_y", source_name="y", reporter_name="", teams=["TEN"],
+    domains=["y.com"], status=registry.MANUAL_REVIEW_ONLY,
+    reporting_type="LOCAL_BEAT", adapter=registry.NFL_TEAM_SITE,
+    source_class=registry.OFFICIAL_TEAM_SITE,
+    source_ownership=registry.INDEPENDENT)
+check("an official team site cannot be labelled independent",
+      any("must be TEAM_OWNED" in b for b in registry.problems([_mislabelled])))
+
+for _h, _kind in [("2026 Titans Foundation 5K, Presented by SeatGeek", "marketing"),
+                  ("Single-Game Tickets On Sale Now", "ticketing"),
+                  ("How To Watch: Titans vs Bills", "broadcast"),
+                  ("Titans Foundation Announces Community Grant", "community"),
+                  ("Titans Mailbag: What About The Secondary?", "mailbag"),
+                  ("Ring of Honor: Remembering the 1999 Run", "historical")]:
+    check(f"club {_kind} content is excluded",
+          NT.content_exclusion(_h, "/news/x"), _h)
+check("a club practice notebook is kept",
+      not NT.content_exclusion(
+          "Ten Observations From Titans Training Camp on Wednesday",
+          "/news/ten-observations",
+          "He took first-team reps during Wednesday's practice."))
+check("team hype with no concrete observation is refused",
+      NT.content_exclusion("A Special Season Awaits", "/news/hype",
+                           "The energy in the building is unmatched."))
+check("a recurring series can be restricted by exact headline",
+      NT.series_ok("Ten Observations From Titans Training Camp on Wednesday",
+                   "^Ten Observations From Titans Training Camp")
+      and not NT.series_ok("Titans Mailbag",
+                           "^Ten Observations From Titans Training Camp"))
+_ten = next(s for s in registry.load() if s.source_id == "official_ten")
+check("the Titans series restriction is configured",
+      _ten.qualifying_series.startswith("^Ten Observations")
+      and _ten.filter_author == "Jim Wyatt"
+      and _ten.evidence_access == "TEAM_EMPLOYED_FIRSTHAND")
+check("Jim Wyatt is not firsthand-approved on a three-article sample",
+      "Jim Wyatt" not in [n for t in SI_AUTH["teams"].values()
+                          for n, a in t["authors"].items()
+                          if a["classification"] == SI.FIRSTHAND_APPROVED])
+
+# Team-owned evidence never corroborates.
+_own_row = {"source_url": "u1", "source_author_or_channel": "Club Writer",
+            "source_ownership": "TEAM_OWNED",
+            "evidence_class": "FIRSTHAND_OBSERVATION",
+            "evidence_text": "He took first-team reps at practice."}
+_ind_row = {"source_url": "u2", "source_author_or_channel": "Beat Reporter",
+            "source_ownership": "INDEPENDENT",
+            "evidence_class": "FIRSTHAND_OBSERVATION",
+            "evidence_text": "He took first-team reps."}
+check("team-owned evidence adds no independent source",
+      fz.independent_sources([_own_row]) == 0)
+check("two club articles are still one source family",
+      fz.independent_sources([_own_row, dict(_own_row, source_url="u3")]) == 0)
+check("team-owned evidence does not inflate an independent count",
+      fz.independent_sources([_own_row, _ind_row]) == 1)
+check("one club practice report cannot reach HIGH",
+      fz.strength([_own_row], "FIRST_TEAM_REPS", 0) == fz.LOW)
+_ir = dict(_own_row, evidence_text="The club placed him on injured reserve "
+                                   "with a torn ACL, out for the season.")
+check("a club may confirm its own official act",
+      fz.strength([_ir], "INJURY", 0) == fz.HIGH)
+
 # ------------------------------------------------------------------- paid
 srcs = registry.load()
 ath = [s for s in srcs if s.paid]
