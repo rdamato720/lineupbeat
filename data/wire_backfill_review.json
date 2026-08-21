@@ -255,8 +255,23 @@
     "retry_reason": ""
    },
    "reviewer_decision": {
-    "action": "PENDING",
-    "subject": "Sam LaPorta"
+    "action": "APPROVE_WITH_EDIT",
+    "subject": "Sam LaPorta",
+    "player_team": "DET",
+    "player_position": "TE",
+    "mechanism": "ABSENT_FROM_PRACTICE",
+    "direction": "NEUTRAL",
+    "strength": "LOW",
+    "horizon": "IMMEDIATE",
+    "projection_action": "NONE",
+    "reader_label": "Worth noting",
+    "reporter_found": "Sam LaPorta did not participate in practice. The report did not provide a reason for his absence.",
+    "edited_text": "LaPorta's absence is worth noting, but one unexplained missed practice does not establish an injury or a continuing availability concern. No timetable or additional context was reported, so this does not change his projection.",
+    "must_not_say": [
+     "injury",
+     "Trending down"
+    ],
+    "note": "Reviewer-approved wording, applied verbatim. Not INJURY; not Trending down without a health issue or repeated absence."
    },
    "review_id": "bf:ff0a5b35f1a0ad0d",
    "full": {
@@ -369,8 +384,47 @@
     "retry_reason": ""
    },
    "reviewer_decision": {
-    "action": "PENDING",
-    "subject": "Makai Lemon"
+    "action": "APPROVE_WITH_EDIT",
+    "subject": "Makai Lemon",
+    "player_team": "PHI",
+    "player_position": "WR",
+    "mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEGATIVE",
+    "strength": "LOW",
+    "horizon": "IMMEDIATE",
+    "projection_action": "NONE",
+    "reader_label": "Trending down",
+    "reporter_found": "The Eagles officially listed Makai Lemon as a non-participant with a hamstring injury. Although he was not in uniform, he was observed taking part in some receiver drills.",
+    "edited_text": "Lemon's non-participant designation is a negative availability signal, although his receiver-drill work shows that he was not completely inactive. The evidence does not establish when he will resume full practice work, so this does not change his projection.",
+    "sources": [
+     {
+      "role": "OFFICIAL_DESIGNATION",
+      "label": "Club participation report",
+      "publication": "Philadelphia Eagles (official)",
+      "author": "Chris McPherson",
+      "published_at": "2026-08-20T19:45:02Z",
+      "ownership": "TEAM_OWNED",
+      "url": "https://www.philadelphiaeagles.com/news/practice-notes-jalyx-hunt-riq-woolen-force-several-t"
+     },
+     {
+      "role": "PRIMARY",
+      "label": "Reporter observation",
+      "publication": "PhillyVoice",
+      "author": "Jimmy Kempski",
+      "published_at": "2026-08-20T12:10:50+00:00",
+      "ownership": "INDEPENDENT",
+      "url": "https://www.phillyvoice.com/eagles-2026-training-camp-practice-participation-tracker/"
+     }
+    ],
+    "independent_source_count": 1,
+    "team_owned_source_count": 1,
+    "corroboration_note": "The club designation and the reporter's observation are different claims and are kept apart: the club is authoritative that he was a non-participant, the reporter saw him in receiver drills. LIMITED_PARTICIPATION describes the two together, not the club designation alone.",
+    "must_not_say": [
+     "completely absent",
+     "returned to practice",
+     "a limited participant in the official report"
+    ],
+    "note": "Reviewer-approved wording, applied verbatim."
    },
    "review_id": "bf:55e6dbf0e9381ec4",
    "full": {
@@ -475,7 +529,8 @@
    },
    "reviewer_decision": {
     "action": "PENDING",
-    "subject": "Mack Hollins"
+    "subject": "Mack Hollins",
+    "note": "Awaiting reviewer decision."
    },
    "review_id": "bf:52a06de947563bbc",
    "full": {

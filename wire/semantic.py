@@ -43,6 +43,11 @@ CLASSIFICATIONS = {"FIRSTHAND_OBSERVATION", "DIRECT_QUOTATION",
 MECHANISMS = {"FIRST_TEAM_REPS", "SECOND_TEAM_REPS", "THIRD_TEAM_REPS",
               "SNAP_SHARE", "ROUTES", "TARGETS", "CARRIES", "RED_ZONE",
               "DEPTH_CHART", "ROLE_EXPANSION", "ROLE_REDUCTION", "INJURY",
+              # An unexplained missed practice is not the same claim as a
+              # limited one: "did not participate, no reason given" states
+              # less than "limited", and collapsing them would have the wire
+              # implying a severity nobody reported.
+              "ABSENT_FROM_PRACTICE",
               "LIMITED_PARTICIPATION", "RETURN_TO_PRACTICE", "TRANSACTION",
               "PERFORMANCE", "OTHER", "NO_FANTASY_IMPACT"}
 
