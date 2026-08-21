@@ -38,11 +38,13 @@
    "note": "The quotation concerns Cincinnati's defense, not Burrow's role, usage, health or outlook."
   },
   "quinn-ewers": {
-   "action": "HELD_EVIDENCE_CONFLICT",
+   "action": "HOLD",
    "subject": "Quinn Ewers",
-   "requested_mechanism": "INJURY",
-   "current_mechanism": "LIMITED_PARTICIPATION",
-   "note": "Reviewer asked for INJURY on the basis that Ewers was sidelined with a groin injury. The passage under review does not state a cause: 'Dolphins players who did not participate were QB Quinn Ewers... Saw Quinn Ewers but he's not practicing.' No stored span attributes a groin injury to him. Held pending either a source that establishes the injury or an instruction to proceed anyway."
+   "fantasy_interpretation": "ABSTAIN",
+   "reason": "ABSENT_FROM_PRACTICE_WITHOUT_STATED_CAUSE",
+   "projection_action": "NONE",
+   "publication": "HOLD",
+   "note": "Both source passages retained. No fantasy commentary until a reliable source supplies the cause or additional role-relevant context. The absence must not be described as limited participation, an injury, or a return timetable."
   },
   "eli-heidenreich": {
    "action": "PENDING",

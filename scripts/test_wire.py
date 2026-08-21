@@ -1470,6 +1470,31 @@ _rhtml = (ROOT / "data" / "wire_fantasy_review.html").read_text()
 for _r in ("REJECT_WRONG_DIRECTION", "REJECT_WRONG_UNIT"):
     check(f"the review page offers {_r}", _r in _rhtml)
 
+# ------------------------------------------------ the published file
+_pubs = json.loads((ROOT / "data" / "wire_publications.json").read_text())
+_pub_names = sorted(p["player_name"] for p in _pubs["publications"])
+check("only reviewer-approved cards are published",
+      _pub_names == ["Anthony Richardson", "Chris Blair"], _pub_names)
+check("every published card names its reviewer approval",
+      all(p["reviewer_action"].startswith("APPROVE")
+          for p in _pubs["publications"]))
+check("no published card touches a projection",
+      all(p["projection_action"] == "NONE" for p in _pubs["publications"])) 
+check("every published card keeps its source link",
+      all(p["url"].startswith("https://") for p in _pubs["publications"]))
+check("every published card keeps the reporter's own words",
+      all(p["reporter_found"] for p in _pubs["publications"]))
+check("the reporter's evidence and our commentary stay separate fields",
+      all(p["reporter_found"] != p["lineupbeat_impact"]
+          for p in _pubs["publications"]))
+_pubsrc = (ROOT / "scripts" / "wire_publish.py").read_text()
+for _state in ("PENDING", "HOLD", "ABSTAIN", "NO_FANTASY_IMPACT"):
+    check(f"{_state} can never be published", _state in _pubsrc)
+check("publishing runs the readiness checks, not just the approval flag",
+      "readiness_failures" in _pubsrc)
+check("a model assessment alone authorises nothing",
+      "reviewer_action" in _pubsrc and "startswith(\"APPROVE\")" in _pubsrc)
+
 # ------------------------------------- quote retry and publication preview
 check("the retry schema has exactly one field",
       list(SEM.QUOTE_RETRY_SCHEMA["properties"]) == ["supporting_quote"])
