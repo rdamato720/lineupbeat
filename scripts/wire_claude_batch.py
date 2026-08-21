@@ -54,7 +54,19 @@ WANT_REAL = [
 ]
 
 
+FANTASY_POS = {"QB", "RB", "WR", "TE"}
+
+
 def pick_real(items, n=7):
+    """Real cases for review. Fantasy positions only.
+
+    The first pass returned five defensive players and a kicker, which the
+    layer is not permitted to interpret at all -- a review sample the
+    reviewer cannot act on is wasted reviewer time.
+    """
+    items = [x for x in items
+             if x["kind"] != "UNLABELLED"
+             or x["players"][0]["position"] in FANTASY_POS]
     chosen, used = [], set()
     for label, test in WANT_REAL:
         if len(chosen) >= n:

@@ -60,9 +60,21 @@ def _norm(s: str) -> str:
     return " ".join((s or "").lower().split())
 
 
+def _words(text: str) -> set:
+    """Tokens with punctuation stripped.
+
+    pl.norm leaves commas attached, so "included Sam LaPorta, Mekhi Wingo"
+    tokenised as "laporta," and the surname check failed. Every name in a
+    list failed it -- and a list is exactly how a practice absence is
+    reported, so the bug silently suppressed the most actionable evidence
+    the wire produces.
+    """
+    return {w.strip(".,;:!?()[]'\"") for w in pl.norm(text or "").split()}
+
+
 def _last(name: str) -> str:
     n = pl.norm(name or "").split()
-    return n[-1] if n else ""
+    return n[-1].strip(".,;:!?()[]'\"") if n else ""
 
 
 def validate(a: sem.SemanticAssessment, segment: str, players: list,
@@ -83,6 +95,13 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
         bad.append("no supporting_quote")
     elif _norm(a.supporting_quote) not in seg_norm:
         bad.append("supporting_quote is not an exact substring of the evidence")
+
+    # A response that says INTERPRET while naming NO_FANTASY_IMPACT as its
+    # mechanism is telling us two different things. Read it as the answer it
+    # gave about the football, not the label it put on the envelope.
+    if (a.decision == sem.INTERPRET
+            and a.fantasy_mechanism == "NO_FANTASY_IMPACT"):
+        a.decision = sem.NO_FANTASY_IMPACT
 
     if a.decision == sem.NO_FANTASY_IMPACT:
         return bad
@@ -124,8 +143,7 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
 
     # 3. The subject must actually appear in the quoted evidence, or be
     #    linked to it by a pronoun the model resolved and we can see.
-    quote_norm = pl.norm(a.supporting_quote)
-    named_in_quote = subject_last and subject_last in quote_norm.split()
+    named_in_quote = subject_last and subject_last in _words(a.supporting_quote)
     pronoun_ok = False
     for pa in a.pronoun_antecedents:
         if _last(pa.get("resolved_to", "")) != subject_last:
@@ -144,7 +162,7 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
         quoted = " ".join(re.findall(r"[\"“]([^\"“”]{6,})"
                                      r"[\"”]", segment))
         others = [p for p in players if _last(p["player_name"]) != subject_last
-                  and _last(p["player_name"]) in pl.norm(quoted).split()]
+                  and _last(p["player_name"]) in _words(quoted)]
         if others:
             bad.append("the speaker is credited with a claim his own words "
                        "make about another player")
@@ -186,15 +204,35 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
                    "quotation")
 
     # 9. Commentary may not introduce facts. Numbers are the cheap tell.
+    # Only statistics count. An ordinal -- "No. 1 offense", "second-team",
+    # "11 personnel" -- is describing a unit, not asserting a measurement,
+    # and banning it rejected correct commentary because one sampling wrote
+    # "No. 1 quarterback" where another wrote "first-string".
     seg_numbers = set(re.findall(r"\b\d+\b", segment))
-    for n in re.findall(r"\b\d+\b", a.fantasy_commentary or ""):
-        if n not in seg_numbers:
-            bad.append(f"commentary states a number ({n}) absent from the "
+    STAT = re.compile(
+        r"\b(\d+)\s*(?:%|percent|targets?|carries|catches|receptions?|"
+        r"yards?|touchdowns?|snaps?|reps?|games?|weeks?|days?|points?)\b"
+        r"|\b(\d{2,})\b", re.I)
+    for m in STAT.finditer(a.fantasy_commentary or ""):
+        n = m.group(1) or m.group(2)
+        if n and n not in seg_numbers:
+            bad.append(f"commentary states a figure ({n}) absent from the "
                        f"evidence")
-    banned = re.compile(r"(?i)\b(adp|ranking|ranked|projection|projected "
-                        r"points|sleeper|bust|start him|sit him|waiver)\b")
+    # Banning the word "projection" outright rejected commentary that
+    # correctly said a projection should NOT change, which is exactly the
+    # sentence we want. What is forbidden is asserting a change or a ranking,
+    # not disclaiming one.
+    banned = re.compile(r"(?i)\b(adp|ranking|ranked|sleeper|bust|"
+                        r"start him|sit him|waiver wire)\b")
+    asserted_projection = re.compile(
+        r"(?i)(?<!no )(?<!not )(?<!does not )(?<!without )"
+        r"\b(we (?:have )?(?:raised|lowered|changed|updated)|"
+        r"projection (?:has|was) (?:changed|updated|raised|lowered)|"
+        r"projected points (?:rise|fall|increase|decrease))\b")
     if banned.search(a.fantasy_commentary or ""):
-        bad.append("commentary refers to rankings, ADP or projections")
+        bad.append("commentary refers to rankings, ADP or waiver advice")
+    if asserted_projection.search(a.fantasy_commentary or ""):
+        bad.append("commentary asserts a projection change")
     for phrase in ("worth monitoring", "may affect his value",
                    "opportunity side of his value"):
         if phrase in (a.fantasy_commentary or "").lower():
@@ -207,6 +245,28 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
             and a.impact_strength == "HIGH"
             and a.fantasy_mechanism != "TRANSACTION"):
         bad.append("a team-owned observation was given HIGH")
+
+    # HIGH survives from the deterministic rules and was not carried into
+    # this validator when the model took over: Claude gave HIGH to a single
+    # practice observation of Anthony Richardson running the second team.
+    # One reporter, one article, is not a material confirmation whatever the
+    # observation is.
+    if a.impact_strength == "HIGH":
+        official = a.fantasy_mechanism == "TRANSACTION" or re.search(
+            r"(?i)\b(placed (?:\w+ )?on (?:ir|injured reserve)|waived|released|"
+            r"signed|activated|named (?:the )?starter|ruled out for the "
+            r"(?:season|year)|torn (?:acl|achilles))\b", segment)
+        corroborated = int(meta.get("independent_source_count") or 1) >= 2
+        if not (official or corroborated):
+            bad.append("HIGH from a single uncorroborated observation with no "
+                       "official act")
+
+    # A fantasy interpretation is for fantasy positions. Defensive players,
+    # linemen and kickers are team context.
+    if reg_player is not None and reg_player.position not in (
+            "QB", "RB", "WR", "TE"):
+        bad.append(f"{reg_player.position} may not receive individual "
+                   f"fantasy commentary")
     if a.impact_strength == "HIGH" and a.projection_action != "UPDATE_RECOMMENDED":
         pass                              # allowed: HIGH need not force action
     if a.projection_action == "UPDATE_RECOMMENDED" and a.impact_strength == "LOW":

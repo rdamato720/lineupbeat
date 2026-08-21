@@ -60,15 +60,26 @@ def grade(item: dict, a: sem.SemanticAssessment) -> dict:
             g["errors"].append("false_suppression")
         else:
             want_sub = exp.get("subject")
+            alt = item.get("also_valid_subject") or ""
+            chose_alt = alt and last(a.claim_subject_player_name) == last(alt)
             ok_subject = (not want_sub
                           or last(a.claim_subject_player_name) == last(want_sub)
-                          or last(a.claim_subject_player_name)
-                          == last(item.get("also_valid_subject") or ""))
+                          or chose_alt)
             if not ok_subject:
                 g["errors"].append("wrong_player")
-            if exp.get("mechanism") and a.fantasy_mechanism != exp["mechanism"]:
+            # A passage with two valid subjects has two valid answers. Grading
+            # the alternate subject against the primary subject's mechanism
+            # marked a correct reading wrong: Claude picked Brian Thomas and
+            # was scored against Parker Washington's absence.
+            exp_mech = exp.get("mechanism")
+            exp_dir = exp.get("direction")
+            if chose_alt:
+                alt_exp = item.get("also_valid_expected") or {}
+                exp_mech = alt_exp.get("mechanism")
+                exp_dir = alt_exp.get("direction")
+            if exp_mech and a.fantasy_mechanism != exp_mech:
                 g["errors"].append("unsupported_role")
-            if exp.get("direction") and a.direction != exp["direction"]:
+            if exp_dir and a.direction != exp_dir:
                 g["errors"].append("wrong_direction")
     else:
         if a.decision == "INTERPRET":

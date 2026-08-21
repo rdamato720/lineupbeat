@@ -110,6 +110,12 @@ class ClaudeSemanticProvider(sem.FantasySemanticProvider):
         try:
             resp = client.messages.create(
                 model=self.model, max_tokens=1600, system=sem.SYSTEM,
+                # A locked corpus needs a reproducible answer. Two runs of the
+                # same gold case disagreed -- one produced "No. 1" in its
+                # commentary and tripped a validator check the other did not
+                # reach -- and an evaluation that moves between runs cannot
+                # support a launch decision.
+                temperature=0,
                 tools=[{"name": TOOL_NAME,
                         "description": "Record the assessment of this passage.",
                         "input_schema": sem.RESPONSE_SCHEMA}],

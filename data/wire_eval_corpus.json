@@ -64,7 +64,11 @@
     "direction": "NEGATIVE"
    },
    "forbidden_mechanism": null,
-   "also_valid_subject": "Brian Thomas"
+   "also_valid_subject": "Brian Thomas",
+   "also_valid_expected": {
+    "mechanism": "TARGETS",
+    "direction": "POSITIVE"
+   }
   },
   {
    "id": "thomas-beneficiary",
@@ -128,7 +132,11 @@
     "direction": "NEGATIVE"
    },
    "forbidden_mechanism": null,
-   "also_valid_subject": "Austin Trammell"
+   "also_valid_subject": "Austin Trammell",
+   "also_valid_expected": {
+    "mechanism": "FIRST_TEAM_REPS",
+    "direction": "POSITIVE"
+   }
   },
   {
    "id": "trammell-first-team",
@@ -269,7 +277,7 @@
    "id": "hankerson-waived",
    "kind": "GOLD",
    "text": "The team waived running back Anthony Hankerson on Tuesday.",
-   "guards": "a waived player described as returning to practice",
+   "guards": "a waived player described as returning to practice, and an unregistered player being interpreted at all",
    "players": [
     {
      "player_id": "unresolved:Anthony Hankerson",
@@ -286,10 +294,7 @@
     "reporter_voice": true
    },
    "expected": {
-    "decision": "INTERPRET",
-    "subject": "Anthony Hankerson",
-    "mechanism": "TRANSACTION",
-    "direction": "NEGATIVE"
+    "decision": "NO_FANTASY_IMPACT"
    },
    "forbidden_mechanism": "RETURN_TO_PRACTICE",
    "also_valid_subject": null

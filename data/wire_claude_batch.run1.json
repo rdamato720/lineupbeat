@@ -1,0 +1,755 @@
+{
+ "summary": {
+  "model": "claude-sonnet-4-5",
+  "gold_n": 23,
+  "gold_correct": 15,
+  "precision": "8/13",
+  "recall": "8/14",
+  "errors": {
+   "unsupported_role": 3,
+   "wrong_direction": 2,
+   "false_positive": 2,
+   "false_suppression": 3
+  },
+  "abstentions": 5,
+  "validation_failures": 4,
+  "cost_usd": 0.47305200000000003,
+  "median_latency_ms": 10252,
+  "p95_latency_ms": 11482,
+  "real_ungraded": 7
+ },
+ "gold": [
+  {
+   "id": "keon-coleman-relay",
+   "guards": "relayed reporting leaking into a quotation or firsthand claim",
+   "text": "On Thursday in Berea, Khalil Shakir and Dante Pettis added to the group of sidelined wide receivers, per Cameron Wolfe of NFL Network.",
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT",
+    "classification": "RELAYED_REPORTING"
+   },
+   "decision": "ABSTAIN",
+   "subject": null,
+   "mechanism": "INJURY",
+   "direction": "UNCLEAR",
+   "quote": "On Thursday in Berea, Khalil Shakir and Dante Pettis added to the group of sidelined wide receivers, per Cameron Wolfe of NFL Network.",
+   "validation": [],
+   "abstention": "The passage discusses Khalil Shakir and Dante Pettis being sidelined, but neither player appears in the provided registry. The only matched player is Keon Coleman, who is not mentioned in the passage. There is no way to establish a claim about Coleman from text that does not reference him.",
+   "tokens_in": 2089,
+   "tokens_out": 680,
+   "cost": 0.016467000000000002,
+   "latency": 11739,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "washington-thomas-targets",
+   "guards": "an absent player inheriting the targets that went to somebody else",
+   "text": "With no Parker Washington on the field, the No. 1 target for Trevor Lawrence on Tuesday was pretty easily Brian Thomas Jr.",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Parker Washington",
+    "mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEGATIVE"
+   },
+   "decision": "INTERPRET",
+   "subject": "Brian Thomas Jr.",
+   "mechanism": "TARGETS",
+   "direction": "POSITIVE",
+   "quote": "With no Parker Washington on the field, the No. 1 target for Trevor Lawrence on Tuesday was pretty easily Brian Thomas Jr.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2093,
+   "tokens_out": 658,
+   "cost": 0.016149,
+   "latency": 9760,
+   "errors": [
+    "unsupported_role",
+    "wrong_direction"
+   ],
+   "pass": false
+  },
+  {
+   "id": "thomas-beneficiary",
+   "guards": "the beneficiary of an absence being suppressed",
+   "text": "With no Parker Washington on the field, the No. 1 target for Trevor Lawrence on Tuesday was pretty easily Brian Thomas Jr.",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Brian Thomas",
+    "mechanism": "TARGETS",
+    "direction": "POSITIVE"
+   },
+   "decision": "INTERPRET",
+   "subject": "Brian Thomas Jr.",
+   "mechanism": "TARGETS",
+   "direction": "POSITIVE",
+   "quote": "With no Parker Washington on the field, the No. 1 target for Trevor Lawrence on Tuesday was pretty easily Brian Thomas Jr.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2074,
+   "tokens_out": 654,
+   "cost": 0.016032,
+   "latency": 10062,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "washington-trammell-personnel",
+   "guards": "an absent player described as receiving first-team work",
+   "text": "Austin Trammell moved into the first-team 11 personnel package with Parker Washington out.",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Parker Washington",
+    "mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEGATIVE"
+   },
+   "decision": "INTERPRET",
+   "subject": "Austin Trammell",
+   "mechanism": "FIRST_TEAM_REPS",
+   "direction": "POSITIVE",
+   "quote": "Austin Trammell moved into the first-team 11 personnel package with Parker Washington out.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2088,
+   "tokens_out": 701,
+   "cost": 0.016779000000000002,
+   "latency": 11070,
+   "errors": [
+    "unsupported_role",
+    "wrong_direction"
+   ],
+   "pass": false
+  },
+  {
+   "id": "trammell-first-team",
+   "guards": "a conditional first-team opportunity being suppressed",
+   "text": "Austin Trammell moved into the first-team 11 personnel package with Parker Washington out.",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Austin Trammell",
+    "mechanism": "FIRST_TEAM_REPS",
+    "direction": "POSITIVE"
+   },
+   "decision": "INTERPRET",
+   "subject": "Austin Trammell",
+   "mechanism": "FIRST_TEAM_REPS",
+   "direction": "POSITIVE",
+   "quote": "Austin Trammell moved into the first-team 11 personnel package with Parker Washington out.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2069,
+   "tokens_out": 675,
+   "cost": 0.016332,
+   "latency": 10260,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "mccarthy-price-pronoun",
+   "guards": "a pronoun's reps landing on the wrong player",
+   "text": "JJ McCarthy had a big completion to Myles Price downfield. He took the majority of the second-team reps on Wednesday.",
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "decision": "INTERPRET",
+   "subject": "Myles Price",
+   "mechanism": "TARGETS",
+   "direction": "POSITIVE",
+   "quote": "JJ McCarthy had a big completion to Myles Price downfield.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2074,
+   "tokens_out": 645,
+   "cost": 0.015897,
+   "latency": 10520,
+   "errors": [
+    "false_positive"
+   ],
+   "pass": false
+  },
+  {
+   "id": "mccarthy-second-team",
+   "guards": "the real pronoun antecedent being suppressed",
+   "text": "JJ McCarthy had a big completion to Myles Price downfield. He took the majority of the second-team reps on Wednesday.",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "J.J. McCarthy",
+    "mechanism": "SECOND_TEAM_REPS"
+   },
+   "decision": "ABSTAIN",
+   "subject": "J.J. McCarthy",
+   "mechanism": "NO_FANTASY_IMPACT",
+   "direction": "NEUTRAL",
+   "quote": "He took the majority of the second-team reps on Wednesday.",
+   "validation": [
+    "commentary refers to rankings, ADP or projections"
+   ],
+   "abstention": "commentary refers to rankings, ADP or projections",
+   "tokens_in": 2074,
+   "tokens_out": 668,
+   "cost": 0.016242,
+   "latency": 11142,
+   "errors": [
+    "false_suppression"
+   ],
+   "pass": false
+  },
+  {
+   "id": "geno-about-omar",
+   "guards": "a quote speaker inheriting a claim about another player",
+   "text": "\"Omar Cooper Jr. has taken over the slot role for us,\" Geno Smith said after practice.",
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "decision": "ABSTAIN",
+   "subject": "Omar Cooper Jr.",
+   "mechanism": "NO_FANTASY_IMPACT",
+   "direction": "POSITIVE",
+   "quote": "\"Omar Cooper Jr. has taken over the slot role for us,\" Geno Smith said after practice.",
+   "validation": [
+    "INTERPRET with no claim subject id"
+   ],
+   "abstention": "INTERPRET with no claim subject id",
+   "tokens_in": 2067,
+   "tokens_out": 642,
+   "cost": 0.015830999999999998,
+   "latency": 10135,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "allen-team-energy",
+   "guards": "a team-mood quote becoming fantasy commentary",
+   "text": "\"The energy out here has been unbelievable all camp,\" Josh Allen said.",
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "decision": "NO_FANTASY_IMPACT",
+   "subject": "Josh Allen",
+   "mechanism": "NO_FANTASY_IMPACT",
+   "direction": "NEUTRAL",
+   "quote": "\"The energy out here has been unbelievable all camp,\" Josh Allen said.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2063,
+   "tokens_out": 553,
+   "cost": 0.014484,
+   "latency": 9176,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "hankerson-waived",
+   "guards": "a waived player described as returning to practice",
+   "text": "The team waived running back Anthony Hankerson on Tuesday.",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Anthony Hankerson",
+    "mechanism": "TRANSACTION",
+    "direction": "NEGATIVE"
+   },
+   "decision": "ABSTAIN",
+   "subject": "Anthony Hankerson",
+   "mechanism": "NO_FANTASY_IMPACT",
+   "direction": "NEGATIVE",
+   "quote": "The team waived running back Anthony Hankerson on Tuesday.",
+   "validation": [
+    "claim subject unresolved:Anthony Hankerson is not in the player registry"
+   ],
+   "abstention": "claim subject unresolved:Anthony Hankerson is not in the player registry",
+   "tokens_in": 2065,
+   "tokens_out": 589,
+   "cost": 0.015030000000000002,
+   "latency": 9588,
+   "errors": [
+    "false_suppression"
+   ],
+   "pass": false
+  },
+  {
+   "id": "wease-absent",
+   "guards": "an absence read as a return",
+   "text": "Theo Wease Jr. did not practice for the third straight day.",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Theo Wease",
+    "mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEGATIVE"
+   },
+   "decision": "INTERPRET",
+   "subject": "Theo Wease Jr.",
+   "mechanism": "LIMITED_PARTICIPATION",
+   "direction": "NEGATIVE",
+   "quote": "Theo Wease Jr. did not practice for the third straight day.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2066,
+   "tokens_out": 559,
+   "cost": 0.014583,
+   "latency": 9008,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "giddens-reinjury",
+   "guards": "a re-injury read as a healthy return",
+   "text": "DJ Giddens returned to practice and immediately reaggravated his hamstring.",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "DJ Giddens",
+    "mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEGATIVE"
+   },
+   "decision": "INTERPRET",
+   "subject": "DJ Giddens",
+   "mechanism": "INJURY",
+   "direction": "NEGATIVE",
+   "quote": "DJ Giddens returned to practice and immediately reaggravated his hamstring.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2066,
+   "tokens_out": 658,
+   "cost": 0.016068,
+   "latency": 10520,
+   "errors": [
+    "unsupported_role"
+   ],
+   "pass": false
+  },
+  {
+   "id": "engram-adjacent-return",
+   "guards": "adjacent return language attaching to the wrong player",
+   "text": "Evan Engram caught two passes over the middle. Travis Etienne was back at practice after a day off.",
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "decision": "NO_FANTASY_IMPACT",
+   "subject": "Evan Engram",
+   "mechanism": "NO_FANTASY_IMPACT",
+   "direction": "NEUTRAL",
+   "quote": "Evan Engram caught two passes over the middle.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2073,
+   "tokens_out": 581,
+   "cost": 0.014934000000000001,
+   "latency": 9524,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "jones-richardson-unit",
+   "guards": "a player inheriting another player's unit",
+   "text": "Daniel Jones remains the named starter. Anthony Richardson ran with the second team throughout the session.",
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "decision": "INTERPRET",
+   "subject": "Daniel Jones",
+   "mechanism": "DEPTH_CHART",
+   "direction": "POSITIVE",
+   "quote": "Daniel Jones remains the named starter.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2062,
+   "tokens_out": 594,
+   "cost": 0.015096,
+   "latency": 10245,
+   "errors": [
+    "false_positive"
+   ],
+   "pass": false
+  },
+  {
+   "id": "richardson-second-team",
+   "guards": "a genuine unit claim being suppressed",
+   "text": "Anthony Richardson led the Colts' second-team offense down the field for a field goal score as time expired.",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Anthony Richardson",
+    "mechanism": "SECOND_TEAM_REPS"
+   },
+   "decision": "INTERPRET",
+   "subject": "Anthony Richardson",
+   "mechanism": "SECOND_TEAM_REPS",
+   "direction": "NEGATIVE",
+   "quote": "Anthony Richardson led the Colts' second-team offense down the field for a field goal score as time expired.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2068,
+   "tokens_out": 645,
+   "cost": 0.015879,
+   "latency": 10849,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "wentz-third-team",
+   "guards": "third-team work reported as second team",
+   "text": "Carson Wentz worked with the 3s for most of the afternoon.",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Carson Wentz",
+    "mechanism": "THIRD_TEAM_REPS",
+    "direction": "NEGATIVE"
+   },
+   "decision": "INTERPRET",
+   "subject": "Carson Wentz",
+   "mechanism": "THIRD_TEAM_REPS",
+   "direction": "NEGATIVE",
+   "quote": "Carson Wentz worked with the 3s for most of the afternoon.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2060,
+   "tokens_out": 617,
+   "cost": 0.015435,
+   "latency": 10344,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "mccord-adjacent-heading",
+   "guards": "a starters heading donating first-team reps to the next line",
+   "text": "Kyle McCord found Bo Melton on a crossing route for a first down.",
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "decision": "NO_FANTASY_IMPACT",
+   "subject": "Kyle McCord",
+   "mechanism": "NO_FANTASY_IMPACT",
+   "direction": "NEUTRAL",
+   "quote": "Kyle McCord found Bo Melton on a crossing route for a first down.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2060,
+   "tokens_out": 579,
+   "cost": 0.014865,
+   "latency": 9109,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "jacobs-return",
+   "guards": "a genuine return being suppressed",
+   "text": "Returned to practice: RB Josh Jacobs (groin), edge Lukas Van Ness (shoulder).",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Josh Jacobs",
+    "mechanism": "RETURN_TO_PRACTICE",
+    "direction": "POSITIVE"
+   },
+   "decision": "INTERPRET",
+   "subject": "Josh Jacobs",
+   "mechanism": "RETURN_TO_PRACTICE",
+   "direction": "POSITIVE",
+   "quote": "Returned to practice: RB Josh Jacobs (groin)",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2072,
+   "tokens_out": 597,
+   "cost": 0.015171,
+   "latency": 9009,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "laporta-absent",
+   "guards": "an availability signal in a list being suppressed",
+   "text": "Those not participating at practice on Thursday included Sam LaPorta, Mekhi Wingo and Brian Branch.",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Sam LaPorta",
+    "mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEGATIVE"
+   },
+   "decision": "ABSTAIN",
+   "subject": "Sam LaPorta",
+   "mechanism": "NO_FANTASY_IMPACT",
+   "direction": "NEGATIVE",
+   "quote": "Those not participating at practice on Thursday included Sam LaPorta, Mekhi Wingo and Brian Branch.",
+   "validation": [
+    "the claim subject is neither named in the supporting quote nor linked by a validated pronoun"
+   ],
+   "abstention": "the claim subject is neither named in the supporting quote nor linked by a validated pronoun",
+   "tokens_in": 2071,
+   "tokens_out": 615,
+   "cost": 0.015438,
+   "latency": 10576,
+   "errors": [
+    "false_suppression"
+   ],
+   "pass": false
+  },
+  {
+   "id": "stidham-mixed-units",
+   "guards": "mixed first/second-team work being suppressed entirely",
+   "text": "Jarrett Stidham started Game 1 in Atlanta, playing the entire first half with the first- and second-team offensive units.",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Jarrett Stidham",
+    "mechanism": "FIRST_TEAM_REPS"
+   },
+   "decision": "INTERPRET",
+   "subject": "Jarrett Stidham",
+   "mechanism": "FIRST_TEAM_REPS",
+   "direction": "POSITIVE",
+   "quote": "Jarrett Stidham started Game 1 in Atlanta, playing the entire first half with the first- and second-team offensive units.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2080,
+   "tokens_out": 645,
+   "cost": 0.015915,
+   "latency": 10306,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "hollins-two-minute",
+   "guards": "overstating a recurring situational role as a defined role",
+   "text": "If you look at any of the Patriots' two-minute drills to close each training camp practice this summer, it does not matter which offensive unit is on the field. Chances are you will see Mack Hollins running routes.",
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Mack Hollins",
+    "mechanism": "ROUTES"
+   },
+   "decision": "INTERPRET",
+   "subject": "Mack Hollins",
+   "mechanism": "ROUTES",
+   "direction": "POSITIVE",
+   "quote": "If you look at any of the Patriots' two-minute drills to close each training camp practice this summer, it does not matter which offensive unit is on the field. Chances are you will see Mack Hollins running routes.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2099,
+   "tokens_out": 732,
+   "cost": 0.017277,
+   "latency": 11836,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "isolated-highlight",
+   "guards": "an isolated play treated as an opportunity change",
+   "text": "Amon-Ra St. Brown caught a short touchdown in the red-zone period.",
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "decision": "NO_FANTASY_IMPACT",
+   "subject": "Amon-Ra St. Brown",
+   "mechanism": "NO_FANTASY_IMPACT",
+   "direction": "NEUTRAL",
+   "quote": "Amon-Ra St. Brown caught a short touchdown in the red-zone period.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2070,
+   "tokens_out": 594,
+   "cost": 0.01512,
+   "latency": 8961,
+   "errors": [],
+   "pass": true
+  },
+  {
+   "id": "penalty-no-impact",
+   "guards": "a penalty becoming fantasy commentary",
+   "text": "Nate Boerkircher was flagged for holding on the second play of the team period.",
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "decision": "NO_FANTASY_IMPACT",
+   "subject": "Nate Boerkircher",
+   "mechanism": "NO_FANTASY_IMPACT",
+   "direction": "NEUTRAL",
+   "quote": "Nate Boerkircher was flagged for holding on the second play of the team period.",
+   "validation": [],
+   "abstention": null,
+   "tokens_in": 2079,
+   "tokens_out": 595,
+   "cost": 0.015162000000000002,
+   "latency": 8603,
+   "errors": [],
+   "pass": true
+  }
+ ],
+ "real": [
+  {
+   "id": "real:cc9e20816c96904a80aa",
+   "why_chosen": "an availability absence",
+   "text": "Those not participating at practice on Thursday included Giovanni Manu, Isiah Pacheco, Ben Bartch, Cade Mays, Sam LaPorta, Mekhi Wingo, Payton Turner, Damone Clark, Thomas Harper, Brian Branch and Kerby Joseph.",
+   "player": "Brian Branch",
+   "team": "DET",
+   "position": "DB",
+   "source_name": "Sports Illustrated -- DET",
+   "author": "John Maakaron",
+   "ownership": "INDEPENDENT",
+   "url": "",
+   "decision": "INTERPRET",
+   "mechanism": "LIMITED_PARTICIPATION",
+   "subject": "Brian Branch",
+   "direction": "NEGATIVE",
+   "strength": "LOW",
+   "horizon": "IMMEDIATE",
+   "quote": "Those not participating at practice on Thursday included Giovanni Manu, Isiah Pacheco, Ben Bartch, Cade Mays, Sam LaPorta, Mekhi Wingo, Payton Turner, Damone Clark, Thomas Harper, Brian Branch and Kerby Joseph.",
+   "validation": [],
+   "commentary": "Brian Branch did not participate in Thursday's practice. This is a single practice absence with no context provided about the reason for his non-participation or the severity of any potential injury. The passage does not establish whether this is related to rest, injury, or other circumstances, nor does it indicate how long he might be out. A single DNP in August does not typically carry immediate fantasy implications for defensive backs unless part of a longer pattern.",
+   "limitations": [
+    "No explanation given for why Branch did not participate",
+    "No indication of injury type or severity",
+    "Single practice report without context from previous days",
+    "No timeline provided for return",
+    "Defensive backs generally have lower fantasy relevance"
+   ]
+  },
+  {
+   "id": "real:bb439e80bc8bc3df318d",
+   "why_chosen": "a return to practice",
+   "text": "Dolphins players who did not participate were QB Quinn Ewers, LB Jordyn Brooks, EDGE Robert Beal Jr., EDGE Cameron Goode, DT Kenneth Grant, TE Ben Sims, DT Zach Sieler, EDGE Clelin Ferrell. Saw Quinn Ewers but he's not practicing. Ronnie Harrison Jr. is back at practice.",
+   "player": "Ronnie Harrison",
+   "team": "MIA",
+   "position": "LB",
+   "source_name": "Sports Illustrated -- MIA",
+   "author": "Alain Poupart",
+   "ownership": "INDEPENDENT",
+   "url": "",
+   "decision": "INTERPRET",
+   "mechanism": "RETURN_TO_PRACTICE",
+   "subject": "Ronnie Harrison Jr.",
+   "direction": "POSITIVE",
+   "strength": "MEDIUM",
+   "horizon": "IMMEDIATE",
+   "quote": "Ronnie Harrison Jr. is back at practice.",
+   "validation": [],
+   "commentary": "Ronnie Harrison Jr. returned to practice for the Dolphins after previously being absent. The passage confirms his presence at this joint practice session, indicating he is available and participating. This suggests he has cleared whatever kept him out previously, whether injury or rest. The passage does not specify his role, snap count, or reps distribution within the practice.",
+   "limitations": [
+    "Does not specify what kept Harrison out previously",
+    "Does not detail the extent of his participation or reps",
+    "Does not clarify his depth-chart position or role"
+   ]
+  },
+  {
+   "id": "real:9339b30be4daff5ec911",
+   "why_chosen": "first-team work",
+   "text": "Right now, he's one of three players in the mix for the sixth and likely final interior defensive lineman spot on the roster, with the other two being 2025 sixth-rounder Aeneas Peebles and former undrafted free agent C.J. Okoye, both of whom have been running with the first-team defense at times during camp.",
+   "player": "Aeneas Peebles",
+   "team": "BAL",
+   "position": "DL",
+   "source_name": "Sports Illustrated -- BAL",
+   "author": "Josh Reed",
+   "ownership": "INDEPENDENT",
+   "url": "",
+   "decision": "ABSTAIN",
+   "mechanism": "DEPTH_CHART",
+   "subject": null,
+   "direction": "UNCLEAR",
+   "strength": "LOW",
+   "horizon": "IMMEDIATE",
+   "quote": "Right now, he's one of three players in the mix for the sixth and likely final interior defensive lineman spot on the roster, with the other two being 2025 sixth-rounder Aeneas Peebles and former undrafted free agent C.J. Okoye, both of whom have been running with the first-team defense at times during camp.",
+   "validation": [],
+   "commentary": "The passage describes a three-way competition for a roster spot but the primary claim subject is \"he,\" an unnamed player. Aeneas Peebles is identified as one of the \"other two\" competitors and has received some first-team reps during camp. Without knowing who the pronoun \"he\" refers to, the claim subject cannot be determined.",
+   "limitations": [
+    "The pronoun 'he' is not resolved within the passage",
+    "The passage does not establish who the primary claim subject is",
+    "Context from the article title or other content would be needed to identify the claim subject"
+   ]
+  },
+  {
+   "id": "real:170556b0704ccba95f20",
+   "why_chosen": "second-team work",
+   "text": "Anthony Richardson led the Colts' second-team offense down the field for a field goal score as time expired, and then the second-team defense followed suit with an impressive tip drill interception to wrap up training camp festivities at Grand Park once and for all.",
+   "player": "Anthony Richardson",
+   "team": "IND",
+   "position": "QB",
+   "source_name": "Sports Illustrated -- IND",
+   "author": "Noah Compton",
+   "ownership": "INDEPENDENT",
+   "url": "",
+   "decision": "INTERPRET",
+   "mechanism": "SECOND_TEAM_REPS",
+   "subject": "Anthony Richardson",
+   "direction": "NEGATIVE",
+   "strength": "HIGH",
+   "horizon": "IMMEDIATE",
+   "quote": "Anthony Richardson led the Colts' second-team offense down the field for a field goal score as time expired",
+   "validation": [],
+   "commentary": "Anthony Richardson took reps with the second-team offense during the final day of Colts training camp. A franchise quarterback running with the second unit is highly unusual and suggests he is not currently the starting quarterback. This is a significant negative depth-chart development. The passage does not identify who was leading the first-team offense or explain the reasoning behind Richardson's demotion to the second unit.",
+   "limitations": [
+    "Does not identify who was taking first-team reps at quarterback",
+    "Does not explain the reason for Richardson working with the second team",
+    "Does not indicate whether this is a permanent change or a single-day rotation",
+    "Provides no quotes or context about the quarterback depth chart"
+   ]
+  },
+  {
+   "id": "real:149c1af907eb4c087d81",
+   "why_chosen": "a direct quotation",
+   "text": "\"Basically, don't get too comfortable,\" Marcus Jones said when asked about Mike Vrabel's message to the team ahead of Thursday's practice. \"You know, in the National Football League, it's 'What have you done for me lately?' And that's great that we did pretty good (on Wednesday). But we had things that we needed to get right.\"",
+   "player": "Marcus Jones",
+   "team": "NE",
+   "position": "DB",
+   "source_name": "Sports Illustrated -- NE",
+   "author": "Zac Ventola",
+   "ownership": "INDEPENDENT",
+   "url": "",
+   "decision": "NO_FANTASY_IMPACT",
+   "mechanism": "NO_FANTASY_IMPACT",
+   "subject": null,
+   "direction": "NEUTRAL",
+   "strength": "LOW",
+   "horizon": "UNKNOWN",
+   "quote": "\"Basically, don't get too comfortable,\" Marcus Jones said when asked about Mike Vrabel's message to the team ahead of Thursday's practice. \"You know, in the National Football League, it's 'What have you done for me lately?' And that's great that we did pretty good (on Wednesday). But we had things that we needed to get right.\"",
+   "validation": [],
+   "commentary": "Marcus Jones relays head coach Mike Vrabel's general message to the team about maintaining performance standards. The quote discusses team-wide practice performance and does not address any specific player's role, usage, availability, snap share, targets, carries, or depth-chart position. This is a generic team-mood statement with no actionable fantasy information.",
+   "limitations": []
+  },
+  {
+   "id": "real:b1b7749e278a0a7f8dda",
+   "why_chosen": "a relayed report",
+   "text": "#Steelers CB Joey Porter Jr. is a name multiple teams around the NFL have wondered about as a potential trade target, per sources. JPJ is in the final year of his rookie contract, and with where the CB market is, teams have wondered if Pittsburgh could ultimately be open to a move with the Pro Bowl caliber corner,\u201d he tweeted Thursday night.",
+   "player": "Joey Porter Jr.",
+   "team": "PIT",
+   "position": "DB",
+   "source_name": "Steelers Depot",
+   "author": "Alex Kozora",
+   "ownership": "INDEPENDENT",
+   "url": "",
+   "decision": "NO_FANTASY_IMPACT",
+   "mechanism": "NO_FANTASY_IMPACT",
+   "subject": "Joey Porter Jr.",
+   "direction": "NEUTRAL",
+   "strength": "LOW",
+   "horizon": "UNKNOWN",
+   "quote": "#Steelers CB Joey Porter Jr. is a name multiple teams around the NFL have wondered about as a potential trade target, per sources. JPJ is in the final year of his rookie contract, and with where the CB market is, teams have wondered if Pittsburgh could ultimately be open to a move with the Pro Bowl caliber corner",
+   "validation": [],
+   "commentary": "Porter is a cornerback being discussed as a potential trade target by other NFL teams due to his contract status and the cornerback market. No trade has occurred, and the passage states only that teams have wondered if Pittsburgh could be open to a move. Defensive backs, particularly cornerbacks, carry no standard fantasy relevance in the vast majority of formats. This is speculative trade discussion with no immediate roster or playing-time consequence.",
+   "limitations": [
+    "This is relayed speculation about trade interest, not a confirmed transaction",
+    "No actual trade or roster move has occurred",
+    "Cornerbacks are not fantasy-relevant in standard formats",
+    "The passage does not establish any change to Porter's playing time or role"
+   ]
+  },
+  {
+   "id": "real:d430b26574864b657f84",
+   "why_chosen": "additional real segment",
+   "text": "- I would not be surprised if the Patriots bring in a kicker this year on the practice squad. After Andy Borregales missed three kicks in the preseason opener, Vrabel was pretty harsh at the podium postgame. He changed his tune this week, essentially placing the blame on now-released backup long snapper Niko Lalos.",
+   "player": "Andy Borregales",
+   "team": "NE",
+   "position": "K",
+   "source_name": "Sports Illustrated -- NE",
+   "author": "Ethan Hurwitz",
+   "ownership": "INDEPENDENT",
+   "url": "",
+   "decision": "NO_FANTASY_IMPACT",
+   "mechanism": "NO_FANTASY_IMPACT",
+   "subject": "Andy Borregales",
+   "direction": "NEUTRAL",
+   "strength": "LOW",
+   "horizon": "UNKNOWN",
+   "quote": "After Andy Borregales missed three kicks in the preseason opener, Vrabel was pretty harsh at the podium postgame. He changed his tune this week, essentially placing the blame on now-released backup long snapper Niko Lalos.",
+   "validation": [],
+   "commentary": "Borregales missed three kicks in a preseason opener, and the coach initially criticized him before later shifting blame to the backup long snapper who has since been released. The passage speculates the Patriots might bring in a practice squad kicker but provides no concrete information about Borregales' roster status or role going forward. Preseason performance and practice squad speculation do not establish any material change to his regular-season availability or opportunity.",
+   "limitations": [
+    "Speculation about a practice squad addition does not establish any change to Borregales' depth-chart position",
+    "No information provided about whether Borregales will be the Week 1 kicker",
+    "Preseason performance does not necessarily predict regular-season role or roster status"
+   ]
+  }
+ ]
+}
