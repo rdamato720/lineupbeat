@@ -224,6 +224,17 @@ jobs:
           # the college URLs added above.
           python scripts/build_pages.py --base https://lineupbeat.com
 
+          # Last, and against the directory wrangler uploads rather than the
+          # build that produced it.
+          #
+          # /nfl/wire/ was built correctly and then deleted by build_pages,
+          # which prunes stale player directories under site/<sport>/ and did
+          # not know "wire" was a section. Every check up to that point read
+          # the builder's output and passed; the homepage shipped with three
+          # links to a page that no longer existed on disk. A build-time
+          # check cannot see that. This one reads the artifact.
+          python scripts/verify_deploy_artifact.py site
+
 
       # The database, banked whatever happened above.
       #

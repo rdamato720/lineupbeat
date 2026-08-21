@@ -150,6 +150,34 @@ with tempfile.TemporaryDirectory() as tmp:
         r = build(json.dumps(bad), out)
         check(f"the build fails on {label}", r.returncode != 0)
 
+# The prune that deleted this page once. build_pages.py removes any
+# directory under site/<sport>/ that is neither protected nor a current
+# player slug, and "wire" was missing from that set: the page was built by
+# the step before it and deleted by it, while every build-time check still
+# passed.
+_bp = (ROOT / "scripts" / "build_pages.py").read_text()
+_prot = re.search(r"protected = \{(.+?)\}", _bp, re.S)
+check("build_pages protects the wire directory from the stale-page prune",
+      bool(_prot) and '"wire"' in _prot.group(1),
+      _prot.group(1)[:70] if _prot else "protected set not found")
+
+# The artifact check must exist, run against the deploy directory, and be
+# the last thing before Deploy.
+_ci = (ROOT / ".github" / "workflows" / "refresh.yml").read_text()
+check("CI verifies the deploy artifact", "verify_deploy_artifact.py site" in _ci)
+check("the artifact check runs before Deploy",
+      _ci.index("verify_deploy_artifact.py") < _ci.index("wrangler@latest pages deploy"))
+check("the artifact check cannot be skipped",
+      "verify_deploy_artifact.py site || true" not in _ci)
+_va = (ROOT / "scripts" / "verify_deploy_artifact.py").read_text()
+for _need, _label in [('"nfl" / "wire" / "index.html"', "the exact host path"),
+                      ('"The NFL Wire"', "the page heading"),
+                      ('"Chris Blair"', "Chris Blair"),
+                      ('"Anthony Richardson"', "Anthony Richardson")]:
+    check(f"the artifact check asserts {_label}", _need in _va)
+check("the artifact check resolves every homepage Wire link",
+      "resolve(root, href)" in _va)
+
 # Nothing about this page may touch the fantasy inputs.
 src = (ROOT / "scripts" / "build_wire.py").read_text()
 check("the builder reads only the published file",

@@ -3771,9 +3771,14 @@ def main():
     # seven hundred.
     if not args.dry_run and written > 50:
         import shutil
+        # Every section directory under site/<sport>/ that is not a player
+        # page. Anything absent from this set is treated as a stale player
+        # slug and deleted, which is how /nfl/wire/ was built by the step
+        # before this one and then removed by it -- the homepage shipped a
+        # link to a page this loop had just deleted.
         protected = {"team", "data", "projections", "draft-value",
                      "durability", "coaching", "strength-of-schedule",
-                     "offensive-line-rb-performance", "rankings"}
+                     "offensive-line-rb-performance", "rankings", "wire"}
         for d in (SITE / args.sport).glob("*"):
             if not d.is_dir() or d.name in protected:
                 continue
