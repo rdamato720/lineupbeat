@@ -194,6 +194,48 @@ FILTER_JS = """
 """
 
 
+ROLE_LABEL = {"PRIMARY": "Latest practice report",
+              "SUPPORTING_OBSERVATION": "Earlier practice observation",
+              "OFFICIAL_DESIGNATION": "Club participation report"}
+
+
+def sources_block(p: dict, own: bool, date: str) -> str:
+    """One source, or several with their roles and the independence count.
+
+    Printing the count matters more than printing the links: three citations
+    where two share a byline and one belongs to the club is still one
+    independent reporter, and a reader counting links would conclude
+    otherwise.
+    """
+    srcs = p.get("sources")
+    if not srcs:
+        return (f'<p class="wsrc">{esc(p["author"])}, {esc(p["source"])}'
+                f'{" &middot; " if date else ""}{esc(date)}'
+                f'<span class="wown{" team" if own else ""}">'
+                f'{"Official team source" if own else "Independent"}</span>'
+                f'<br><a href="{esc(p["url"])}" rel="nofollow noopener" '
+                f'target="_blank">Read the original report</a></p>')
+    rows = []
+    for sc in srcs:
+        o = sc.get("ownership") == "TEAM_OWNED"
+        rows.append(
+            f'<div>{esc(ROLE_LABEL.get(sc["role"], sc["role"]))}: '
+            f'{esc(sc.get("author"))}, {esc(sc.get("publication"))} &middot; '
+            f'{esc(str(sc.get("published_at", ""))[:10])} '
+            f'<span class="wown{" team" if o else ""}">'
+            f'{"Official team source" if o else "Independent"}</span> &middot; '
+            f'<a href="{esc(sc.get("url"))}" rel="nofollow noopener" '
+            f'target="_blank">source</a></div>')
+    ind = p.get("independent_source_count") or 0
+    tn = p.get("team_owned_source_count") or 0
+    note = (f'{ind} independent reporter' + ('' if ind == 1 else 's')
+            + (f' and {tn} club report' + ('' if tn == 1 else 's') if tn else ''))
+    return ('<p class="wsrc">' + "".join(rows)
+            + f'<div style="margin-top:5px">{esc(note)}. The club report is '
+              f'authoritative for its own designation and is not independent '
+              f'corroboration.</div></p>')
+
+
 def card_html(p: dict) -> str:
     own = p["source_ownership"] == "TEAM_OWNED"
     unapproved = p.get("_preview")
@@ -213,9 +255,7 @@ def card_html(p: dict) -> str:
   </div>
   <div class="wlab">What the reporter found</div>
   <div class="wrep">{esc(p['reporter_found'])}</div>
-  <p class="wsrc">{esc(p['author'])}, {esc(p['source'])}{' &middot; ' if date else ''}{esc(date)}
-    <span class="wown{' team' if own else ''}">{'Official team source' if own else 'Independent'}</span>
-    <br><a href="{esc(p['url'])}" rel="nofollow noopener" target="_blank">Read the original report</a></p>
+  {sources_block(p, own, date)}
   <div class="wlab">Lineup Beat impact</div>
   <div class="wimp">{esc(p['lineupbeat_impact'])}</div>
   <p class="wfoot">{foot}</p>
@@ -298,19 +338,33 @@ def main():
     if args.preview_backfill:
         bf = Path("data/wire_backfill_review.json")
         if bf.exists():
+            _dec = {}
+            _dp = Path("data/reviews/backfill_decisions.json")
+            if _dp.exists():
+                for _k, _d in json.loads(_dp.read_text())["decisions"].items():
+                    _dec[_d["subject"]] = _d
             for r in json.loads(bf.read_text())["candidates"]:
                 a, c, f = r["assessment"], r["candidate"], r.get("full", {})
+                d = _dec.get(c["player_name"], {})
                 preview_extra.append({
                     "publication_id": "preview:" + c["candidate_id"][:12],
                     "player_name": c["player_name"], "team": c["team"],
-                    "position": c["position"], "direction": a["direction"],
-                    "reader_label": LABELS.get(a["direction"], "Worth noting"),
-                    "mechanism": a["fantasy_mechanism"],
-                    "strength": a["impact_strength"],
-                    "horizon": a["impact_horizon"],
-                    "projection_action": a["projection_action"],
-                    "reporter_found": f.get("evidence_text") or c["evidence_text"],
-                    "lineupbeat_impact": a["fantasy_commentary"],
+                    "position": c["position"],
+                    "direction": d.get("direction", a["direction"]),
+                    "reader_label": d.get("reader_label")
+                    or LABELS.get(a["direction"], "Worth noting"),
+                    "mechanism": d.get("mechanism", a["fantasy_mechanism"]),
+                    "strength": d.get("strength", a["impact_strength"]),
+                    "horizon": d.get("horizon", a["impact_horizon"]),
+                    "projection_action": d.get("projection_action",
+                                               a["projection_action"]),
+                    "reporter_found": d.get("reporter_found")
+                    or f.get("evidence_text") or c["evidence_text"],
+                    "lineupbeat_impact": d.get("edited_text")
+                    or a["fantasy_commentary"],
+                    "sources": d.get("sources"),
+                    "independent_source_count": d.get("independent_source_count"),
+                    "team_owned_source_count": d.get("team_owned_source_count"),
                     "source": f.get("publication", ""),
                     "author": f.get("reporter", ""),
                     "published_date": f.get("published_at", ""),

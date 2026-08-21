@@ -100,20 +100,54 @@
     "retry_reason": ""
    },
    "reviewer_decision": {
-    "action": "DECIDED_PENDING_SPAN_CHOICE",
+    "action": "APPROVE_WITH_EDIT",
     "subject": "DeVonta Smith",
-    "mechanism": "LIMITED_PARTICIPATION",
-    "direction": "NEGATIVE",
+    "player_team": "PHI",
+    "player_position": "WR",
+    "mechanism": "RETURN_TO_PRACTICE",
+    "direction": "POSITIVE",
     "strength": "LOW",
     "horizon": "IMMEDIATE",
     "projection_action": "NONE",
-    "reviewer_instruction": "State that Smith participated in individual work but did not take part in 11-on-11 periods, and that no reason or timetable was reported. Do not call it an injury; do not imply his first-team role changed.",
-    "blocking_conflict": {
-     "issue_1_wrong_span": "The candidate in the review set is the 20 August PhillyVoice note ('returned to practice in a limited capacity'), which mentions neither individual drills nor 11-on-11s. The wording described belongs to the 19 August span: 'DeVonta Smith participated in individual drills, but not 11-on-11's. He joined the huddle when the first-team offense was on the field in 11-on-11s, but would then stand back behind the play.'",
-     "issue_2_cause_is_reported": "'No reason was reported' is true of either span in isolation and false of the corpus. Four articles across two sources inside the same 48 hours state a hamstring, including the club's own participation report: 'wide receiver DeVonta Smith (hamstring)' (philadelphiaeagles.com, 20 August) and PhillyVoice's participation tracker 'WR DeVonta Smith (hamstring)'. Publishing 'no reason was reported' would be accurate about the span and misleading about what the Wire holds.",
-     "awaiting": "Which span the card should rest on, and whether the officially reported hamstring may be stated or must be omitted."
-    },
-    "note": "Decision recorded, not applied to a card. Nothing published."
+    "reader_label": "Trending up",
+    "reporter_found": "DeVonta Smith returned to practice in a limited capacity Thursday. The Eagles listed him as limited with a hamstring injury. A day earlier, he participated in individual drills but did not take part in 11-on-11 work.",
+    "edited_text": "Smith's return is a positive step for his availability, but limited practice work does not establish that he is ready for full team periods or game action. No timetable was reported, so this does not change his projection.",
+    "sources": [
+     {
+      "role": "PRIMARY",
+      "label": "Latest practice report",
+      "candidate_id": "117737a31db4c45bc40e",
+      "publication": "PhillyVoice",
+      "author": "Jimmy Kempski",
+      "published_at": "2026-08-20T12:10:50+00:00",
+      "ownership": "INDEPENDENT",
+      "url": "https://www.phillyvoice.com/eagles-2026-training-camp-practice-participation-tracker/"
+     },
+     {
+      "role": "SUPPORTING_OBSERVATION",
+      "label": "Earlier practice observation",
+      "candidate_id": "9aaa259b9bd29b999fc5",
+      "publication": "PhillyVoice",
+      "author": "Jimmy Kempski",
+      "published_at": "2026-08-19T20:02:38+00:00",
+      "ownership": "INDEPENDENT",
+      "url": "https://www.phillyvoice.com/eagles-2026-training-camp-practice-notes-day-13-eagles-patriots-joit-part-i/"
+     },
+     {
+      "role": "OFFICIAL_DESIGNATION",
+      "label": "Club participation report",
+      "candidate_id": "3115d3b8bf56fc47f4cf",
+      "publication": "Philadelphia Eagles (official)",
+      "author": "Chris McPherson",
+      "published_at": "2026-08-20T19:45:02Z",
+      "ownership": "TEAM_OWNED",
+      "url": "https://www.philadelphiaeagles.com/news/practice-notes-jalyx-hunt-riq-woolen-force-several-t"
+     }
+    ],
+    "independent_source_count": 1,
+    "team_owned_source_count": 1,
+    "corroboration_note": "One independent reporter, not two: both PhillyVoice spans are Jimmy Kempski. The hamstring designation comes from the club's own participation report, which is authoritative for its own designation and is never independent corroboration of the practice observation. Repeated participation-report language is linked to one underlying report rather than counted as separate confirmation.",
+    "note": "Reviewer-approved wording, applied verbatim."
    },
    "review_id": "bf:f063d4f44799e4bf",
    "full": {
