@@ -112,22 +112,29 @@ check("the page links to no fantasy data file",
 HOME_BEFORE = HOME.read_text() if HOME.exists() else None
 if HOME_BEFORE is not None:
     home = HOME_BEFORE
-    check("the homepage module exists", "WIRE MODULE START" in home)
-    # Only the module is ours. The rest of the homepage still renders the
-    # old X-wire feed, which legitimately mentions retracted players.
-    _mod = home.split("WIRE MODULE START")[1].split("WIRE MODULE END")[0]
-    check("no retracted player is in the homepage Wire module",
+    # The temporary module is retired: the replacement section carries the
+    # same reports in the main feed position, and shipping both would show
+    # every card twice.
+    check("the temporary Wire module is retired",
+          "WIRE MODULE START" not in home)
+    check("the replacement section is present", 'id="lbwire"' in home)
+    _mod = home.split('id="lbwire"')[1].split("<main id=\"feed\">")[0] \
+        if 'id="lbwire"' in home else ""
+    check("no retracted player is in the replacement section",
           "Anthony Richardson" not in _mod)
-    check("the homepage module shows only approved players",
-          all(p["player_name"] in _mod for p in pubs[:3]))
+    check("the replacement section shows the approved players",
+          all(p["player_name"] in _mod for p in pubs))
     check("homepage cards link to /nfl/wire/",
           home.count('href="/nfl/wire/"') >= 1,
           f'{home.count(chr(34) + "/nfl/wire/" + chr(34))} links')
-    check("the homepage shows at most three cards",
-          home.split("WIRE MODULE START")[1].split("WIRE MODULE END")[0]
-          .count('class="fdcard"') <= 3)
-    check("the homepage module offers the full Wire",
-          "View the full Wire" in home)
+    # The replacement section carries every approved report, not a
+    # three-card teaser, so the old cap no longer applies. What matters is
+    # that the count shown equals the cards rendered.
+    import re as _re
+    _cards = len(_re.findall(r'<article class="wc"', home))
+    check("the replacement renders one card per publication",
+          _cards == len(pubs), f"{_cards} cards, {len(pubs)} published")
+    check("the homepage offers the full Wire", 'href="/nfl/wire/"' in home)
 
 with tempfile.TemporaryDirectory() as tmp:
     out = Path(tmp) / "p.html"

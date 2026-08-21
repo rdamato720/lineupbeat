@@ -461,10 +461,16 @@ def main():
     if args.preview_backfill:
         print("  preview written; the live page and homepage are untouched")
         return 0
-    if inject_homepage(pubs, SITE / "index.html"):
-        print(f"  homepage module: {min(len(pubs), 3)} card(s)")
-    else:
-        print("  homepage not built yet; module skipped")
+    # The temporary "Latest from the Wire" module is retired: the homepage
+    # replacement renders the same reports in the main section, and shipping
+    # both would show every card twice. build_wire_homepage applies the
+    # replacement; this step no longer injects a module.
+    stale = SITE / "index.html"
+    if stale.exists() and "<!-- WIRE MODULE START -->" in stale.read_text():
+        text = stale.read_text()
+        head, rest = text.split("<!-- WIRE MODULE START -->", 1)
+        stale.write_text(head + rest.split("<!-- WIRE MODULE END -->", 1)[1])
+        print("  removed the retired Latest-from-the-Wire module")
     return 0
 
 

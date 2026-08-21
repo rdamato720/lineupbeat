@@ -178,6 +178,13 @@ def collect():
             **p, "player_id": row["player_id"] if row else "",
             "published_at": p.get("published_date")}))
 
+    # A card that has been published arrives from the publication file and
+    # must not arrive again from the approved-candidates list. Before they
+    # were published the two sets were disjoint; the moment they were
+    # written, every approved card counted twice and the section rendered
+    # nine reports for five.
+    published_names = {c["player_name"] for c in out}
+
     dec = {}
     if DECISIONS.exists():
         for _k, d in json.loads(DECISIONS.read_text())["decisions"].items():
@@ -189,6 +196,8 @@ def collect():
             d = dec.get(c["player_name"])
             if not d or not str(d.get("action", "")).startswith("APPROVE"):
                 continue
+            if c["player_name"] in published_names:
+                continue          # already carried by the publication file
             out.append(display.decorate({
                 "player_id": a.get("claim_subject_player_id") or f.get("player_id", ""),
                 "player_name": c["player_name"], "team": c["team"],
@@ -216,6 +225,9 @@ def collect():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build", action="store_true")
+    ap.add_argument("--apply", action="store_true",
+                    help="write the replacement into site/index.html. The "
+                         "production path; the preview is the default.")
     args = ap.parse_args()
     cards = collect()
 
@@ -254,7 +266,36 @@ def main():
         home = head + rest.split("<!-- WIRE MODULE END -->", 1)[1]
         removed_module = True
 
-    # 2. Neutralise the client-side ALL REPORTS renderer. Adding the new grid
+    # 2. Remove the retired X-report collection from the payload itself.
+    #    Disabling the renderer stops it being drawn; it does not stop it
+    #    being shipped, and a hidden report about a player a reviewer
+    #    rejected is still a report about him sitting in the page a reader
+    #    downloads. DATA.players stays: 3,022 roster rows carry the photo
+    #    ids, team codes and ADP that search, My Roster and the card badges
+    #    all read, and they are referenced five times against the nuggets'
+    #    one. The feed itself is untouched in site/data/feed.json and in
+    #    source control, so rollback restores it.
+    stripped = {"nuggets_removed": 0, "bytes_saved": 0,
+                "players_preserved": 0}
+    marker = "const DATA = "
+    if marker in home:
+        di = home.index(marker) + len(marker)
+        dj = home.index("\n", di)
+        blob = home[di:dj].rstrip(";")
+        try:
+            data = json.loads(blob)
+        except ValueError:
+            data = None
+        if data:
+            for sport in data.get("sports", {}).values():
+                stripped["nuggets_removed"] += len(sport.get("nuggets") or [])
+                sport["nuggets"] = []
+            stripped["players_preserved"] = len(data.get("players") or [])
+            new_blob = json.dumps(data, separators=(",", ":"))
+            stripped["bytes_saved"] = len(blob) - len(new_blob)
+            home = home[:di] + new_blob + home[dj:]
+
+    # 3. Neutralise the client-side ALL REPORTS renderer. Adding the new grid
     #    without this would show both, which is the outcome the replacement
     #    exists to prevent.
     old_render = 'const restSec = document.createElement("section");'
@@ -265,20 +306,39 @@ def main():
             'if (window.__LB_WIRE_REPLACEMENT__) { return; }\n'
             '  const restSec = document.createElement("section");', 1)
 
-    # 3. Insert the replacement immediately before the old feed mount.
-    marker = '<main id="feed"></main>'
-    if marker in home:
+    # 4. Insert the replacement, once. Applying twice appended a second
+    #    section and rendered every card again -- nine cards for five
+    #    reports -- so the block is fenced and replaced in place when it is
+    #    already there. A build step that is not idempotent will be run
+    #    twice eventually.
+    START, END = "<!-- LB WIRE REPLACEMENT START -->", \
+                 "<!-- LB WIRE REPLACEMENT END -->"
+    block = (f'{START}\n<script>window.__LB_WIRE_REPLACEMENT__=true;</script>\n'
+             f'{section}\n{END}')
+    if START in home and END in home:
+        head = home.split(START)[0]
+        tail = home.split(END, 1)[1]
+        home = head + block + tail
+    else:
+        marker = '<main id="feed"></main>'
+        if marker in home:
+            home = home.replace(marker, f'{block}\n{marker}', 1)
+    if "id=\"lbwire-css\"" not in home:
         home = home.replace(
-            marker,
-            f'<script>window.__LB_WIRE_REPLACEMENT__=true;</script>\n'
-            f'{section}\n{marker}', 1)
-    home = home.replace("</head>", f"<style>{CSS}</style></head>", 1)
+            "</head>", f'<style id="lbwire-css">{CSS}</style></head>', 1)
 
+    if args.apply:
+        # The production path. site/index.html is gitignored and rebuilt by
+        # CI every run, so this is applied after the homepage is generated
+        # rather than committed.
+        HOME.write_text(home)
+        print(f"  applied to {HOME}")
     OUT.write_text(home)
     OUT_JSON.write_text(json.dumps(
         {"published": False, "count_shown": len(cards),
          "removed_latest_from_the_wire_module": removed_module,
          "all_reports_renderer_disabled": replaced_all_reports,
+         "retired_feed": stripped,
          "cards": cards}, indent=1, default=str) + "\n")
 
     print(f"  {len(cards)} card(s) in the replacement section")
@@ -289,6 +349,11 @@ def main():
               f"adp={c.get('display_adp','-')}")
     print(f"  Latest-from-the-Wire module removed: {removed_module}")
     print(f"  old All Reports renderer disabled:  {replaced_all_reports}")
+    print(f"  retired X reports removed from the payload: "
+          f"{stripped['nuggets_removed']}")
+    print(f"  roster rows preserved for photos, ADP and search: "
+          f"{stripped['players_preserved']}")
+    print(f"  payload reduced by {stripped['bytes_saved']:,} bytes")
     print(f"  wrote {OUT}")
     return 0
 

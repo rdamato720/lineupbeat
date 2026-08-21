@@ -219,6 +219,17 @@ jobs:
           # /nfl/wire/.
           python scripts/build_wire.py --base https://lineupbeat.com
 
+          # The homepage replacement, applied to the generated homepage.
+          #
+          # It removes the retired X-report collection from the payload
+          # rather than only hiding its renderer -- a hidden report about a
+          # player a reviewer rejected is still shipped to the reader --
+          # while keeping the roster rows that carry photo ids, team codes
+          # and ADP for search, My Roster and the card badges. The feed
+          # itself stays in site/data/feed.json and in source control, so a
+          # rollback restores it.
+          python scripts/wire_homepage_replacement.py --apply
+
           # Again, so the projection chips read the board that
           # was just rebuilt. Last, so the sitemap it writes includes
           # the college URLs added above.
