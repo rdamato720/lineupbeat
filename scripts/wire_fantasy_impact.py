@@ -33,6 +33,7 @@ from wire import semantic as sem
 from wire import semantic_validate as sv
 from wire.providers.claude import ClaudeSemanticProvider
 from wire import players as pl
+from wire import relevance as rv
 from wire.store import WireStore
 
 # Only these classes may support an interpretation. Analysis is a writer's
@@ -57,6 +58,27 @@ def eligible_rows(store, include_pending: bool) -> list:
             continue          # identity must be exact
         out.append(dict(r))
     return out
+
+
+def relevance_filter(rows: list, registry: dict) -> tuple[list, list]:
+    """Split rows into those worth interpreting and those that are not.
+
+    Being a quarterback is not a qualification. This is the check that was
+    missing when a backup's routine second-team rep became a published card.
+    """
+    keep, dropped = [], []
+    for r in rows:
+        verdict = rv.assess(r["player_id"], r["position"], r["evidence_text"],
+                            registry)
+        if verdict["eligible"]:
+            keep.append(r)
+        else:
+            dropped.append({"player_name": r["player_name"],
+                            "position": r["position"],
+                            "candidate_id": r["candidate_id"],
+                            "reason": verdict["reason"],
+                            "tier": verdict["tier"]})
+    return keep, dropped
 
 
 def main():
@@ -103,6 +125,17 @@ def main():
             return 4
 
     rows = eligible_rows(store, args.include_pending)
+    rel_registry = rv.load()
+    rows, not_relevant = relevance_filter(rows, rel_registry)
+    if not_relevant:
+        Path("data/wire_not_relevant.json").write_text(json.dumps(
+            {"suppressed": len(not_relevant), "items": not_relevant},
+            indent=1) + "\n")
+        from collections import Counter as _C
+        print(f"  {len(not_relevant)} row(s) refused by the fantasy-relevance "
+              f"gate before any model call")
+        for k, v in _C(x["reason"].split(":")[0] for x in not_relevant).most_common(4):
+            print(f"      {v:>4}  {k[:64]}")
     by_player: dict = defaultdict(list)
     for r in rows:
         by_player[r["player_id"]].append(r)

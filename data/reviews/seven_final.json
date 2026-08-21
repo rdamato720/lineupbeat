@@ -8,16 +8,15 @@
  "corpus_version": "eval-v2",
  "decisions": {
   "anthony-richardson": {
-   "action": "APPROVE_WITH_EDIT",
+   "action": "REJECT_NOT_FANTASY_RELEVANT",
    "subject": "Anthony Richardson",
-   "mechanism": "SECOND_TEAM_REPS",
-   "direction": "NEUTRAL",
-   "strength": "LOW",
-   "horizon": "SHORT_TERM",
+   "publication_status": "NO_FANTASY_IMPACT",
+   "reviewer_decision": "REJECT_NOT_FANTASY_RELEVANT",
+   "reason": "BACKUP_QB_NO_ACTIONABLE_ROLE_CHANGE",
    "projection_action": "NONE",
-   "reader_label": "Worth noting",
-   "edited_text": "Anthony Richardson led the Colts' second-team offense on a field-goal drive during the final day of training camp. The report does not establish whether this was a planned rotation, part of the quarterback competition or a depth-chart change, so it does not support moving his fantasy outlook in either direction.",
-   "note": "Reviewer override. Claude's original wording preserved separately."
+   "previous_action": "APPROVE_WITH_EDIT",
+   "previous_text": "Anthony Richardson led the Colts' second-team offense on a field-goal drive during the final day of training camp. The report does not establish whether this was a planned rotation, part of the quarterback competition or a depth-chart change, so it does not support moving his fantasy outlook in either direction.",
+   "note": "Routine second-team work by a backup quarterback is not fantasy relevant absent a promotion, a starter injury, first-team opportunity or material movement in the competition. Evidence, Claude response and review history preserved."
   },
   "chris-blair": {
    "action": "APPROVE_WITH_EDIT",

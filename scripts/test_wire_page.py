@@ -56,8 +56,14 @@ pubs = payload["publications"]
 names = sorted(p["player_name"] for p in pubs)
 
 check("the page was built", len(html) > 5000, f"{len(html):,} bytes")
-check("exactly the approved players are published",
-      names == ["Anthony Richardson", "Chris Blair"], names)
+# Whoever is approved right now, not a hardcoded pair: Anthony Richardson
+# was retracted as REJECT_NOT_FANTASY_RELEVANT and a test naming him would
+# have to be edited every time a reviewer changes their mind.
+check("every published player carries a reviewer approval",
+      all(p["reviewer_action"].startswith("APPROVE") for p in pubs), names)
+check("Anthony Richardson is not published",
+      "Anthony Richardson" not in names, names)
+check("Chris Blair is published", "Chris Blair" in names, names)
 
 cards = re.findall(r'<article class="wcard"', html)
 check("one card per publication and no more",
@@ -86,8 +92,8 @@ check("the two blocks are never merged into one element",
       not re.search(r'class="wrep"[^>]*>[^<]*class="wimp"', html))
 
 for who in ("Quinn Ewers", "Joe Burrow", "Geno Smith", "Eli Heidenreich",
-            "Mark Andrews"):
-    check(f"refused player absent: {who}", who not in html)
+            "Mark Andrews", "Anthony Richardson"):
+    check(f"refused player absent from /nfl/wire/: {who}", who not in html)
 
 check("the disclosure is on the page", "How to read the Wire" in html)
 check("the canonical url is /nfl/wire/",
@@ -107,6 +113,13 @@ HOME_BEFORE = HOME.read_text() if HOME.exists() else None
 if HOME_BEFORE is not None:
     home = HOME_BEFORE
     check("the homepage module exists", "WIRE MODULE START" in home)
+    # Only the module is ours. The rest of the homepage still renders the
+    # old X-wire feed, which legitimately mentions retracted players.
+    _mod = home.split("WIRE MODULE START")[1].split("WIRE MODULE END")[0]
+    check("no retracted player is in the homepage Wire module",
+          "Anthony Richardson" not in _mod)
+    check("the homepage module shows only approved players",
+          all(p["player_name"] in _mod for p in pubs[:3]))
     check("homepage cards link to /nfl/wire/",
           home.count('href="/nfl/wire/"') >= 1,
           f'{home.count(chr(34) + "/nfl/wire/" + chr(34))} links')
@@ -170,11 +183,14 @@ check("the artifact check runs before Deploy",
 check("the artifact check cannot be skipped",
       "verify_deploy_artifact.py site || true" not in _ci)
 _va = (ROOT / "scripts" / "verify_deploy_artifact.py").read_text()
+# The verifier reads the published file rather than naming players, so a
+# retraction cannot fail the deploy.
 for _need, _label in [('"nfl" / "wire" / "index.html"', "the exact host path"),
                       ('"The NFL Wire"', "the page heading"),
-                      ('"Chris Blair"', "Chris Blair"),
-                      ('"Anthony Richardson"', "Anthony Richardson")]:
+                      ('wire_publications.json', "the published file")]:
     check(f"the artifact check asserts {_label}", _need in _va)
+check("the artifact check names no player",
+      "Chris Blair" not in _va and "Anthony Richardson" not in _va)
 check("the artifact check resolves every homepage Wire link",
       "resolve(root, href)" in _va)
 

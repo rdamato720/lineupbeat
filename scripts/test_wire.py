@@ -1470,11 +1470,95 @@ _rhtml = (ROOT / "data" / "wire_fantasy_review.html").read_text()
 for _r in ("REJECT_WRONG_DIRECTION", "REJECT_WRONG_UNIT"):
     check(f"the review page offers {_r}", _r in _rhtml)
 
+# ---------------------------------------------- fantasy relevance gate
+from wire import relevance as RV
+
+_rel = RV.load()
+check("the relevance registry exists and is populated",
+      _rel["count"] > 100, _rel["count"])
+_relfile = json.loads((ROOT / "data" / "wire_fantasy_relevance.json").read_text())
+_allowed = {"player_id", "team", "position", "relevance_tier",
+            "relevance_reason", "effective_at", "registry_version"}
+check("the relevance file carries identity fields only",
+      all(set(r) <= _allowed for r in _relfile["players"]),
+      sorted(set(_relfile["players"][0]) - _allowed) if _relfile["players"] else [])
+check("no ADP, rank, points or projection appears in the relevance file",
+      not re.search(r'"(adp|rank|ranking|points|projected|projection|vorp)"',
+                    json.dumps(_relfile["players"][:200])))
+check("relevance boundaries are recorded, not inferred",
+      set(_relfile["boundaries"]) == {"QB", "RB", "WR", "TE"},
+      _relfile["boundaries"])
+
+# Position eligibility and fantasy relevance are different questions. This
+# is the check that was missing when a backup quarterback's routine
+# second-team rep became a published card.
+def _rel_ok(pos, text, pid="zz-not-in-registry"):
+    return RV.assess(pid, pos, text, _rel)["eligible"]
+
+
+check("a backup quarterback taking routine second-team reps is suppressed",
+      not _rel_ok("QB", "Richardson led the second-team offense to a field goal."))
+check("a backup quarterback promoted to first-team work is reviewable",
+      _rel_ok("QB", "Richardson took first-team reps for the first time."))
+check("a backup quarterback named the starter is reviewable",
+      _rel_ok("QB", "The Colts named Anthony Richardson the starter for Week 1."))
+check("a backup quarterback replacing an injured starter is reviewable",
+      _rel_ok("QB", "Richardson replaced Daniel Jones after Jones left injured."))
+check("generic praise for a backup quarterback is suppressed",
+      not _rel_ok("QB", "Richardson has looked sharp and the coaches are pleased."))
+check("a deep receiver taking ordinary reserve reps is suppressed",
+      not _rel_ok("WR", "Blair worked with the reserves in individual drills."))
+check("a deep receiver taking first-team red-zone snaps is reviewable",
+      _rel_ok("WR", "Blair received most of Dotson's first-team snaps during "
+                    "red-zone work."))
+check("a deep back taking goal-line carries is reviewable",
+      _rel_ok("RB", "Heidenreich took the goal-line carries with the ones."))
+check("an offensive lineman remains team context",
+      not _rel_ok("OL", "Mailata handled Smith easily."))
+check("a defensive player remains team context",
+      not _rel_ok("DB", "Branch did not participate."))
+check("relevance is distinct from position eligibility",
+      RV.assess("zz", "QB", "led the second-team offense", _rel)["tier"]
+      == RV.NOT_RELEVANT
+      and "QB" in RV.FANTASY_POSITIONS)
+check("every suppression records a reason",
+      all(RV.assess("zz", p, t, _rel)["reason"]
+          for p, t in (("QB", "second-team reps"), ("OL", "blocked well"),
+                       ("WR", "reserve drills"))))
+check("relevance never authorises publication",
+      "publish" not in code_only((ROOT / "wire" / "relevance.py").read_text()))
+check("the relevance module reads no projection or ADP file",
+      not FORBIDDEN_NAMES.search(code_only(
+          (ROOT / "wire" / "relevance.py").read_text())))
+
+# The generator applies the gate before any model call.
+_gsrc = (ROOT / "scripts" / "wire_fantasy_impact.py").read_text()
+check("the gate runs before interpretation",
+      _gsrc.index("relevance_filter") < _gsrc.index('interpreter == "claude"')
+      if 'interpreter == "claude"' in _gsrc else True)
+check("refused rows are recorded with their reasons",
+      "wire_not_relevant.json" in _gsrc)
+
+# Nothing numeric may reach the model.
+_prompt = SEM.build_prompt("He took first-team reps.",
+                           {"team": "IND", "article_title": "t"},
+                           [{"player_name": "X", "player_id": "1",
+                             "team": "IND", "position": "QB"}])
+for _banned in ("adp", "ADP", "projected points", "rank"):
+    check(f"the model prompt contains no {_banned}", _banned not in _prompt)
+check("the model prompt carries no relevance tier or numeric field",
+      "ROSTERABLE" not in _prompt and "relevance" not in _prompt.lower())
+
 # ------------------------------------------------ the published file
 _pubs = json.loads((ROOT / "data" / "wire_publications.json").read_text())
 _pub_names = sorted(p["player_name"] for p in _pubs["publications"])
-check("only reviewer-approved cards are published",
-      _pub_names == ["Anthony Richardson", "Chris Blair"], _pub_names)
+# Whoever is approved now. Naming players here broke the moment a reviewer
+# retracted Anthony Richardson as not fantasy relevant.
+check("every published card carries a reviewer approval",
+      all(p["reviewer_action"].startswith("APPROVE")
+          for p in _pubs["publications"]), _pub_names)
+check("a retracted card is not published",
+      "Anthony Richardson" not in _pub_names, _pub_names)
 check("every published card names its reviewer approval",
       all(p["reviewer_action"].startswith("APPROVE")
           for p in _pubs["publications"]))

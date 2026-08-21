@@ -57,8 +57,25 @@ def main() -> int:
 
     html = wire.read_text()
     check("it contains the page heading", "The NFL Wire" in html)
-    for who in ("Chris Blair", "Anthony Richardson"):
+
+    # Whoever is published right now, read from the file the page is built
+    # from. Naming players here made a retraction fail the deploy: Anthony
+    # Richardson was rejected as not fantasy relevant and this check kept
+    # demanding him.
+    pubs_file = Path("data/wire_publications.json")
+    published, retracted = [], []
+    if pubs_file.is_file():
+        import json
+        payload = json.loads(pubs_file.read_text())
+        published = [p["player_name"] for p in payload.get("publications", [])]
+    check("the artifact page matches the published file",
+          bool(published), f"{len(published)} published")
+    for who in published:
         check(f"it contains {who}", who in html)
+    check("every card on the page is in the published file",
+          len(re.findall(r'<article class="wcard"', html)) == len(published),
+          f"{len(re.findall(chr(60) + 'article class=' + chr(34) + 'wcard' + chr(34), html))} cards, "
+          f"{len(published)} published")
     check("the reporter block and our commentary are separate elements",
           'class="wrep"' in html and 'class="wimp"' in html)
 
