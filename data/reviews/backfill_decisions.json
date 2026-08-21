@@ -126,9 +126,31 @@
    "note": "Reviewer-approved wording, applied verbatim."
   },
   "mack-hollins": {
-   "action": "PENDING",
+   "action": "APPROVE_WITH_EDIT",
    "subject": "Mack Hollins",
-   "note": "Awaiting reviewer decision."
+   "player_team": "NE",
+   "player_position": "WR",
+   "mechanism": "ROUTES",
+   "direction": "NEUTRAL",
+   "strength": "LOW",
+   "horizon": "SHORT_TERM",
+   "projection_action": "NONE",
+   "reader_label": "Worth noting",
+   "reporter_found": "Mack Hollins has regularly run routes and contributed during two-minute drills throughout Patriots training camp, regardless of which offensive unit was on the field.",
+   "edited_text": "Hollins' recurring participation in two-minute drills is a situational role worth tracking. However, the report includes work across multiple offensive units and does not establish first-team usage, target volume or a defined regular-season role. This does not change his projection.",
+   "overrides": {
+    "projection_action": {
+     "from": "REVIEW",
+     "to": "NONE",
+     "reason": "A low-strength camp observation without first-team attribution, targets or snap volume does not justify projection review."
+    },
+    "direction": {
+     "from": "POSITIVE",
+     "to": "NEUTRAL",
+     "reason": "The evidence establishes repeated situational participation, not movement up the depth chart."
+    }
+   },
+   "note": "Reviewer-approved wording, applied verbatim."
   }
  }
 }
