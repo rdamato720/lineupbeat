@@ -868,6 +868,7 @@ for _r in _ws.evidence():
 check("every candidate names its player inside the stored evidence",
       not _missing, _missing[:3])
 
+import wire_extract as WX
 from wire import fantasy as fz
 
 # ------------------------------------------------------------ SI On SI
@@ -955,14 +956,29 @@ check("a recurring series can be restricted by exact headline",
       and not NT.series_ok("Titans Mailbag",
                            "^Ten Observations From Titans Training Camp"))
 _ten = next(s for s in registry.load() if s.source_id == "official_ten")
-check("the Titans series restriction is configured",
+check("the Titans series restriction is configured but not granted",
       _ten.qualifying_series.startswith("^Ten Observations")
       and _ten.filter_author == "Jim Wyatt"
-      and _ten.evidence_access == "TEAM_EMPLOYED_FIRSTHAND")
+      and _ten.evidence_access == "",
+      _ten.evidence_access)
 check("Jim Wyatt is not firsthand-approved on a three-article sample",
       "Jim Wyatt" not in [n for t in SI_AUTH["teams"].values()
                           for n, a in t["authors"].items()
                           if a["classification"] == SI.FIRSTHAND_APPROVED])
+
+# Naming a club reporter in the config is not approving him. Wyatt produced
+# firsthand spans from a source where he is deliberately unapproved, purely
+# because his name was in the yaml.
+_ten_ctx = WX.source_context(
+    None, "official_ten",
+    {"headline": "Ten Observations From Titans Training Camp on Wednesday"})
+check("a named club reporter is not a firsthand voice without approval",
+      _ten_ctx["reporter_voice"] is False, _ten_ctx["reporter_voice"])
+check("official team context carries TEAM_OWNED ownership",
+      _ten_ctx["ownership"] == registry.TEAM_OWNED, _ten_ctx["ownership"])
+_off_ctx = WX.source_context(None, "official_buf", {"headline": "anything"})
+check("an unapproved club source is never a firsthand voice",
+      _off_ctx["reporter_voice"] is False)
 
 # Team-owned evidence never corroborates.
 _own_row = {"source_url": "u1", "source_author_or_channel": "Club Writer",

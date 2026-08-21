@@ -43,8 +43,14 @@ def _si_authors() -> dict:
     return _SI_AUTHORS
 
 
-def source_context(store, source_id: str) -> dict:
+def _series_ok(src, headline: str) -> bool:
+    from wire import nflteam as _nt
+    return _nt.series_ok(headline, src.qualifying_series)
+
+
+def source_context(store, source_id: str, item: dict | None = None) -> dict:
     """Who the source is, and whether we can trust the voice in it."""
+    item = item or {}
     for s in artreg.load():
         if s.source_id == source_id:
             if s.paid:
@@ -66,6 +72,17 @@ def source_context(store, source_id: str) -> dict:
             # one at a time. Same standard, both routes.
             named = bool((s.reporter_name or "").strip()) and \
                 "staff" not in s.reporter_name.lower()
+            if s.source_class == artreg.OFFICIAL_TEAM_SITE:
+                # A club writer is a firsthand voice only when he has been
+                # approved by name AND the article is one of his approved
+                # series. Naming the reporter in the config is not the
+                # approval -- that is the mistake this rule exists to stop:
+                # Jim Wyatt produced firsthand spans from a source where he
+                # is deliberately unapproved, purely because his name was in
+                # the yaml.
+                named = (s.evidence_access == "TEAM_EMPLOYED_FIRSTHAND"
+                         and named
+                         and _series_ok(s, item.get("headline", "")))
             return {"type": "article", "name": s.source_name,
                     "author": s.reporter_name, "teams": s.teams,
                     "reporter_voice": named, "auto_captions": False,
@@ -324,7 +341,7 @@ def main():
     # another team page links to the first copy instead of counting twice.
     seen_claims: dict = {}
     for item in items:
-        ctx = source_context(store, item["source_id"])
+        ctx = source_context(store, item["source_id"], dict(item))
         st = extract_item(store, dict(item), reg, ctx, cfg, dry=args.dry_run,
                           seen_claims=seen_claims)
         for k in total:

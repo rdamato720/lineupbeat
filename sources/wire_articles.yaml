@@ -1542,7 +1542,11 @@ sources:
     active: true
     trust_tier: 3
     reporter_name: Jim Wyatt
-    evidence_access: TEAM_EMPLOYED_FIRSTHAND
+    # evidence_access is deliberately unset. Setting it to
+    # TEAM_EMPLOYED_FIRSTHAND is what grants his observation pieces a
+    # firsthand voice, and it is the single line to change if a deeper
+    # discovery route ever yields the twelve articles the standard wants.
+    evidence_access: ''
     qualifying_series: '^Ten Observations From Titans Training Camp'
     filter:
       author: Jim Wyatt
