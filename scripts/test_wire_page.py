@@ -1,0 +1,177 @@
+#!/usr/bin/env python3
+"""The /nfl/wire page, checked against the built HTML.
+
+    python3 scripts/test_wire_page.py
+
+Asserting on the JSON would prove the data is right and say nothing about
+what a reader sees. Every check here reads site/nfl/wire/index.html, because
+the failure that matters -- a held record rendering, two blocks merging into
+one, a dead source link -- happens in the markup or not at all.
+"""
+
+from __future__ import annotations
+
+import json
+import re
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+ROOT = Path(__file__).resolve().parent.parent
+PAGE = ROOT / "site" / "nfl" / "wire" / "index.html"
+HOME = ROOT / "site" / "index.html"
+PUBS = ROOT / "data" / "wire_publications.json"
+
+FAILURES = []
+
+
+def check(name, ok, detail=""):
+    print(f"[{'  ok' if ok else 'FAIL'}] {name}" + (f"   {detail}" if detail else ""))
+    if not ok:
+        FAILURES.append(name)
+
+
+def build(pubs_json: str, out: Path) -> subprocess.CompletedProcess:
+    """Run the real builder against a given publications file."""
+    backup = PUBS.read_text()
+    try:
+        PUBS.write_text(pubs_json)
+        return subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "build_wire.py"),
+             "--out", str(out)], capture_output=True, text=True)
+    finally:
+        PUBS.write_text(backup)
+
+
+if not PAGE.exists():
+    print("  site/nfl/wire/index.html has not been built; run build_wire.py")
+    sys.exit(1)
+
+html = PAGE.read_text()
+payload = json.loads(PUBS.read_text())
+pubs = payload["publications"]
+names = sorted(p["player_name"] for p in pubs)
+
+check("the page was built", len(html) > 5000, f"{len(html):,} bytes")
+check("exactly the approved players are published",
+      names == ["Anthony Richardson", "Chris Blair"], names)
+
+cards = re.findall(r'<article class="wcard"', html)
+check("one card per publication and no more",
+      len(cards) == len(pubs), f"{len(cards)} cards, {len(pubs)} publications")
+
+for p in pubs:
+    who = p["player_name"]
+    # Byte-identical commentary, allowing only HTML escaping.
+    esc = (p["lineupbeat_impact"].replace("&", "&amp;").replace("<", "&lt;")
+           .replace(">", "&gt;").replace('"', "&quot;").replace("'", "&#x27;"))
+    check(f"{who}: approved commentary is byte-identical",
+          esc in html, p["lineupbeat_impact"][:48])
+    check(f"{who}: appears exactly once as a card",
+          html.count(f'>{p["player_name"]}</span>') == 1)
+    check(f"{who}: direction label matches its structured direction",
+          f'>{p["reader_label"]}</span>' in html,
+          f'{p["direction"]} -> {p["reader_label"]}')
+    check(f"{who}: source link is intact", p["url"] in html)
+    check(f"{who}: reporter evidence is present",
+          p["reporter_found"][:40].replace("'", "&#x27;") in html)
+
+check("evidence and commentary are separate elements",
+      'class="wrep"' in html and 'class="wimp"' in html
+      and 'class="wrep"' != 'class="wimp"')
+check("the two blocks are never merged into one element",
+      not re.search(r'class="wrep"[^>]*>[^<]*class="wimp"', html))
+
+for who in ("Quinn Ewers", "Joe Burrow", "Geno Smith", "Eli Heidenreich",
+            "Mark Andrews"):
+    check(f"refused player absent: {who}", who not in html)
+
+check("the disclosure is on the page", "How to read the Wire" in html)
+check("the canonical url is /nfl/wire/",
+      'rel="canonical" href="https://lineupbeat.com/nfl/wire/"' in html)
+check("no projection change is stated when the action is NONE",
+      html.count("No projection change") == sum(
+          1 for p in pubs if p["projection_action"] == "NONE"))
+check("evidence strength and horizon are secondary text",
+      "Evidence strength" in html and 'class="wfoot"' in html)
+check("the page links to no fantasy data file",
+      not re.search(r"projections\.xlsx|nfl_rankings_2026|rosters/nfl\.csv",
+                    html))
+
+# Read before the mutation builds below, which rewrite the homepage module
+# as a side effect, and restored at the end so a test run leaves no trace.
+HOME_BEFORE = HOME.read_text() if HOME.exists() else None
+if HOME_BEFORE is not None:
+    home = HOME_BEFORE
+    check("the homepage module exists", "WIRE MODULE START" in home)
+    check("homepage cards link to /nfl/wire/",
+          home.count('href="/nfl/wire/"') >= 1,
+          f'{home.count(chr(34) + "/nfl/wire/" + chr(34))} links')
+    check("the homepage shows at most three cards",
+          home.split("WIRE MODULE START")[1].split("WIRE MODULE END")[0]
+          .count('class="fdcard"') <= 3)
+    check("the homepage module offers the full Wire",
+          "View the full Wire" in home)
+
+with tempfile.TemporaryDirectory() as tmp:
+    out = Path(tmp) / "p.html"
+
+    r = build('{"generated_at":"x","count":0,"publications":[]}', out)
+    check("a zero-publication build succeeds", r.returncode == 0, r.stderr[-90:])
+    empty = out.read_text() if out.exists() else ""
+    check("the empty state is shown",
+          "No reviewed reports are available yet" in empty)
+    check("no filters are shown when there is nothing to filter",
+          'id="fteam"' not in empty)
+
+    good = json.loads(PUBS.read_text())
+    for label, mutate in [
+            ("an unapproved record", lambda d: d["publications"][0].update(
+                {"reviewer_action": "PENDING"})),
+            ("a held record", lambda d: d["publications"][0].update(
+                {"reviewer_action": "HOLD"})),
+            ("a missing source link", lambda d: d["publications"][0].update(
+                {"url": ""})),
+            ("a label contradicting its direction",
+             lambda d: d["publications"][0].update(
+                 {"reader_label": "Trending down"})),
+            ("merged evidence and commentary",
+             lambda d: d["publications"][0].update(
+                 {"lineupbeat_impact": d["publications"][0]["reporter_found"]})),
+            ("a non-fantasy position", lambda d: d["publications"][0].update(
+                {"position": "DB"})),
+            ("a count that disagrees with the records",
+             lambda d: d.update({"count": 99}))]:
+        bad = json.loads(json.dumps(good))
+        mutate(bad)
+        r = build(json.dumps(bad), out)
+        check(f"the build fails on {label}", r.returncode != 0)
+
+# Nothing about this page may touch the fantasy inputs.
+src = (ROOT / "scripts" / "build_wire.py").read_text()
+check("the builder reads only the published file",
+      "wire_publications" in src and "wire_candidates" not in src
+      and "wire_evidence" not in src and "wire_fantasy_impact" not in src)
+check("the builder opens no projection or ranking file",
+      not re.search(r"projections\.xlsx|nfl_rankings|rosters/nfl\.csv|"
+                    r"draft_value|coaching\.csv", src))
+# The word "projections" appears in the page's own disclosure text, so the
+# check is for writes, not for the noun.
+check("the builder never writes a projection or ranking",
+      "build_rankings" not in src
+      and not re.search(r"projections\.xlsx|nfl_rankings[^\"']*\.json", src)
+      and not re.search(r"(projections|rankings)[^\n]*\.write_text", src))
+
+if HOME_BEFORE is not None:
+    HOME.write_text(HOME_BEFORE)
+    check("the test run leaves the homepage as it found it",
+          HOME.read_text() == HOME_BEFORE)
+
+print()
+if FAILURES:
+    print(f"{len(FAILURES)} failed: " + ", ".join(FAILURES[:6]))
+    sys.exit(1)
+print("all passed")

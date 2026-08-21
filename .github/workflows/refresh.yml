@@ -202,6 +202,23 @@ jobs:
           # URL rendered the front page under it and read as a soft 404.
           python scripts/build_404.py
 
+          # The editorial Wire, and deliberately without `|| true`.
+          #
+          # This step validates data/wire_publications.json before it writes
+          # anything: every record must carry a reviewer approval, a fantasy
+          # position, a direction whose reader label agrees with it, an https
+          # source link, and evidence and commentary in separate fields. A
+          # record in any held state -- PENDING, HOLD, ABSTAIN,
+          # NO_FANTASY_IMPACT, REJECTED, SUPERSEDED -- fails the build rather
+          # than being skipped, because a page that renders what it can and
+          # drops the rest publishes a silent subset and nobody finds out.
+          #
+          # Failing here stops the job before Deploy, which is the point.
+          # It runs after build_404 so site/index.html exists for the
+          # homepage module, and before build_pages so the sitemap includes
+          # /nfl/wire/.
+          python scripts/build_wire.py --base https://lineupbeat.com
+
           # Again, so the projection chips read the board that
           # was just rebuilt. Last, so the sitemap it writes includes
           # the college URLs added above.

@@ -3625,6 +3625,10 @@ def main():
             ("/college-fantasy-football/projections/rb/", "weekly", "0.8"),
             ("/college-fantasy-football/projections/wr/", "weekly", "0.8"),
             ("/college-fantasy-football/projections/te/", "weekly", "0.8"),
+            # The editorial Wire. Included only when it exists, like every
+            # other entry here, so a build with no reviewed publications
+            # does not advertise a page it did not write.
+            ("/nfl/wire/", "daily", "0.8"),
             ("/about/", "monthly", "0.6")):
         if (SITE / path.lstrip("/") / "index.html").exists():
             urls.append((f"{base}{path}", now, freq, prio))

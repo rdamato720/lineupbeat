@@ -363,6 +363,11 @@ SPORT = "nfl"
 # (key, label, href-template)
 NAV_ITEMS = [
     ("wire", "The Wire", "/"),
+    # The editorial Wire is a different product from the homepage feed and
+    # needs a label a reader can tell apart from it. "The Wire" is the X
+    # feed on the homepage; this is reviewed beat reporting with our own
+    # reading of it kept separate.
+    ("nflwire", "NFL Wire", "/{sport}/wire/"),
     ("roster", "My Roster", "/#v=roster"),
     ("data", "Fantasy Data", "/{sport}/data/"),
     ("college", "College", "/college-fantasy-football/projections/"),
