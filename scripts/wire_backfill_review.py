@@ -61,8 +61,28 @@ def main():
     results = state.get("results", [])
     # Only genuine candidates: an abstention is not a proposal, and a
     # NO_FANTASY_IMPACT is the layer declining to speak.
-    live = [r for r in results if r["assessment"]["decision"] == "INTERPRET"]
+    # Reviewer decisions drive the artifact. Editing the output by hand was
+    # undone the moment it was regenerated, which is the wrong place to hold
+    # a decision: it belongs in the decisions file that survives a rebuild.
+    decided = {}
+    dpath = Path("data/reviews/backfill_decisions.json")
+    if dpath.exists():
+        for key, dec in json.loads(dpath.read_text())["decisions"].items():
+            decided[dec["subject"]] = dec
+
+    def rejected(r):
+        d = decided.get(r["candidate"]["player_name"])
+        return bool(d) and str(d.get("action", "")).startswith("REJECT")
+
+    live = [r for r in results
+            if r["assessment"]["decision"] == "INTERPRET" and not rejected(r)]
     other = [r for r in results if r["assessment"]["decision"] != "INTERPRET"]
+    reviewer_rejected = [r for r in results
+                         if r["assessment"]["decision"] == "INTERPRET"
+                         and rejected(r)]
+    for r in live:
+        r["reviewer_decision"] = decided.get(
+            r["candidate"]["player_name"], {"action": "PENDING"})
     live.sort(key=rank)
 
     # The reviewer needs the whole record, not a summary of it. _slim cut
@@ -184,6 +204,12 @@ color:var(--quiet);font-size:.86rem}
             f = r.get("full", {})
             p.append(f'<p class="q">relevance: <b>{e(r.get("relevance_tier",""))}</b> '
                      f'&mdash; {e(r.get("relevance_reason",""))}</p>')
+            _rd = r.get("reviewer_decision", {})
+            if _rd.get("action") and _rd["action"] != "PENDING":
+                p.append(f'<p class="q"><b>reviewer:</b> {e(_rd["action"])}'
+                         + (f' &mdash; {e(_rd.get("blocking_conflict",{}).get("awaiting",""))}'
+                            if _rd.get("blocking_conflict") else "")
+                         + '</p>')
             p.append('<div class="lab">What the reporter found &mdash; complete segment</div>')
             p.append(f'<div class="rep">{e(f.get("evidence_text") or cd["evidence_text"])}</div>')
             p.append('<div class="lab">Source</div>')
@@ -294,8 +320,21 @@ save();</script>""")
     OUT_JSON.write_text(json.dumps(
         {"window": w, "claude": c, "candidates": live,
          "not_candidates": other, "deterministic": det,
+         "reviewer_rejected": [
+             {"player_name": r["candidate"]["player_name"],
+              "decision": decided[r["candidate"]["player_name"]].get(
+                  "publication_status", "REJECTED"),
+              "reason": decided[r["candidate"]["player_name"]].get(
+                  "reviewer_reason", ""),
+              "evidence": r.get("full", {}).get("evidence_text", "")}
+             for r in reviewer_rejected],
          "published": False}, indent=1, default=str) + "\n")
-    print(f"  {len(live)} candidate(s) for review, {len(other)} produced none")
+    print(f"  {len(live)} candidate(s) for review, {len(other)} produced none, "
+          f"{len(reviewer_rejected)} rejected by the reviewer")
+    for r in reviewer_rejected:
+        d = decided[r["candidate"]["player_name"]]
+        print(f"      rejected  {r['candidate']['player_name']:<20}"
+              f"{d.get('reviewer_reason','')}")
     for label, _ in PRIORITY:
         if groups.get(label):
             print(f"    {len(groups[label]):>3}  {label}")

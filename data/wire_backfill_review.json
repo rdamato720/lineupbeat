@@ -99,6 +99,22 @@
     "retry_attempted": false,
     "retry_reason": ""
    },
+   "reviewer_decision": {
+    "action": "DECIDED_PENDING_SPAN_CHOICE",
+    "subject": "DeVonta Smith",
+    "mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEGATIVE",
+    "strength": "LOW",
+    "horizon": "IMMEDIATE",
+    "projection_action": "NONE",
+    "reviewer_instruction": "State that Smith participated in individual work but did not take part in 11-on-11 periods, and that no reason or timetable was reported. Do not call it an injury; do not imply his first-team role changed.",
+    "blocking_conflict": {
+     "issue_1_wrong_span": "The candidate in the review set is the 20 August PhillyVoice note ('returned to practice in a limited capacity'), which mentions neither individual drills nor 11-on-11s. The wording described belongs to the 19 August span: 'DeVonta Smith participated in individual drills, but not 11-on-11's. He joined the huddle when the first-team offense was on the field in 11-on-11s, but would then stand back behind the play.'",
+     "issue_2_cause_is_reported": "'No reason was reported' is true of either span in isolation and false of the corpus. Four articles across two sources inside the same 48 hours state a hamstring, including the club's own participation report: 'wide receiver DeVonta Smith (hamstring)' (philadelphiaeagles.com, 20 August) and PhillyVoice's participation tracker 'WR DeVonta Smith (hamstring)'. Publishing 'no reason was reported' would be accurate about the span and misleading about what the Wire holds.",
+     "awaiting": "Which span the card should rest on, and whether the officially reported hamstring may be stated or must be omitted."
+    },
+    "note": "Decision recorded, not applied to a card. Nothing published."
+   },
    "review_id": "bf:f063d4f44799e4bf",
    "full": {
     "evidence_text": "Notes: DeVonta Smith returned to practice in a limited capacity, and although Makai Lemon wasn't in uniform and listed as a non-participant, he took part in some WR drills.",
@@ -203,6 +219,10 @@
     ],
     "retry_attempted": false,
     "retry_reason": ""
+   },
+   "reviewer_decision": {
+    "action": "PENDING",
+    "subject": "Sam LaPorta"
    },
    "review_id": "bf:ff0a5b35f1a0ad0d",
    "full": {
@@ -314,6 +334,10 @@
     "retry_attempted": false,
     "retry_reason": ""
    },
+   "reviewer_decision": {
+    "action": "PENDING",
+    "subject": "Makai Lemon"
+   },
    "review_id": "bf:55e6dbf0e9381ec4",
    "full": {
     "evidence_text": "Notes: DeVonta Smith returned to practice in a limited capacity, and although Makai Lemon wasn't in uniform and listed as a non-participant, he took part in some WR drills.",
@@ -336,110 +360,6 @@
     "evidence_group_id": "9dd7905d2cfd59746b57",
     "claim_key": "c4c23dd1f2a932232936",
     "player_id": "00-0040867",
-    "identity_confidence": 0.85,
-    "resolution_method": "name_team_position",
-    "registry_version": "911ca3da496f792d"
-   }
-  },
-  {
-   "candidate": {
-    "candidate_id": "d4ac712ccc7106608342",
-    "player_name": "Ollie Gordon II",
-    "team": "MIA",
-    "position": "RB",
-    "source_id": "si_dolphins",
-    "evidence_class": "FIRSTHAND_OBSERVATION",
-    "evidence_text": "And the reality is the line struggled not only in pass protection but in run blocking as well. There were two good-looking runs by the first-team offense on this day, one by De'Von Achane and the other by Ollie Gordon II"
-   },
-   "relevance_tier": "ROSTERABLE",
-   "relevance_reason": "inside the RB redraft boundary of 80 on the current board",
-   "source_url": "https://www.si.com/nfl/dolphins/onsi/time-for-concern-or-what-to-make-of-the-dolphins-offense-getting-dominated-in-the-joint-practice-01m0g9v5b0cv",
-   "published_at": "2026-08-20T20:15:00Z",
-   "author": "Alain Poupart",
-   "source_name": "Sports Illustrated -- MIA",
-   "ownership": "INDEPENDENT",
-   "underlying_report_id": "",
-   "assessment": {
-    "decision": "INTERPRET",
-    "claim_subject_player_id": "00-0040198",
-    "claim_subject_player_name": "Ollie Gordon II",
-    "mentioned_players": [
-     {
-      "player_id": "00-0040198",
-      "player_name": "Ollie Gordon II",
-      "relationship": "CLAIM_SUBJECT"
-     },
-     {
-      "player_id": null,
-      "player_name": "De'Von Achane",
-      "relationship": "TEAMMATE"
-     }
-    ],
-    "quote_speaker": null,
-    "pronoun_antecedents": [],
-    "supporting_quote": "There were two good-looking runs by the first-team offense on this day, one by De'Von Achane and the other by Ollie Gordon II.",
-    "evidence_classification": "FIRSTHAND_OBSERVATION",
-    "fantasy_mechanism": "FIRST_TEAM_REPS",
-    "direction": "POSITIVE",
-    "impact_strength": "LOW",
-    "impact_horizon": "SHORT_TERM",
-    "projection_action": "REVIEW",
-    "fantasy_commentary": "Ollie Gordon II recorded a good-looking run with the first-team offense during joint practice. This indicates he received at least one carry with the first-team unit. The passage does not establish Gordon's overall workload distribution, his depth-chart position, or whether this was representative of his typical usage pattern. One observed carry with the first team in a single practice is insufficient to project a defined role.",
-    "why_it_matters": "Gordon getting first-team reps as a running back suggests he is competing for a role in Miami's backfield rotation, though the extent of that role remains undefined from this single practice observation.",
-    "limitations": [
-     "Single practice observation from one reporter",
-     "Does not establish Gordon's total carry count or snap distribution",
-     "Does not clarify his depth-chart position relative to other backs",
-     "Does not indicate whether this first-team usage is typical or an exception"
-    ],
-    "confidence": 0.85,
-    "abstention_reason": null,
-    "provider": "claude",
-    "model": "claude-sonnet-4-5",
-    "schema_version": "semantic-v1",
-    "prompt_version": "wire-fantasy-2026-08-21c",
-    "input_hash": "6b9bdc3c734413796e82",
-    "output_hash": "837c37c2715c3af3bb27",
-    "tokens_in": 2501,
-    "tokens_out": 660,
-    "cost_usd": 0.017403000000000002,
-    "latency_ms": 11046,
-    "validation_failures": [],
-    "attempts": [
-     {
-      "attempt": 1,
-      "supporting_quote": "There were two good-looking runs by the first-team offense on this day, one by De'Von Achane and the other by Ollie Gordon II.",
-      "validation_failures": [],
-      "tokens_in": 2501,
-      "tokens_out": 660,
-      "latency_ms": 11046
-     }
-    ],
-    "retry_attempted": false,
-    "retry_reason": ""
-   },
-   "review_id": "bf:6d1cad767c49f999",
-   "full": {
-    "evidence_text": "And the reality is the line struggled not only in pass protection but in run blocking as well. There were two good-looking runs by the first-team offense on this day, one by De'Von Achane and the other by Ollie Gordon II.",
-    "article_title": "Time for Concern? (or What to Make of the Dolphins Offense Getting Dominated in the Joint Practice)",
-    "reporter": "Alain Poupart",
-    "publication": "Sports Illustrated -- MIA",
-    "source_class": "SI_ONSI",
-    "ownership": "INDEPENDENT",
-    "canonical_url": "https://www.si.com/nfl/dolphins/onsi/time-for-concern-or-what-to-make-of-the-dolphins-offense-getting-dominated-in-the-joint-practice-01m0g9v5b0cv",
-    "published_at": "2026-08-20T20:15:00Z",
-    "evidence_classification": "FIRSTHAND_OBSERVATION",
-    "classification_reasons": "[\"observation language ('first-team offense') in an approved reporter's voice\", \"byline classified FIRSTHAND_APPROVED\"]",
-    "authority_status": "FIRSTHAND_APPROVED",
-    "evidence_access": "",
-    "origin_reporter": "",
-    "origin_outlet": "",
-    "origin_url": "",
-    "underlying_report_id": "",
-    "duplicate_of": "",
-    "evidence_group_id": "4fa962c75d43da69f899",
-    "claim_key": "430b00a624e049ee6f28",
-    "player_id": "00-0040198",
     "identity_confidence": 0.85,
     "resolution_method": "name_team_position",
     "registry_version": "911ca3da496f792d"
@@ -518,6 +438,10 @@
     ],
     "retry_attempted": false,
     "retry_reason": ""
+   },
+   "reviewer_decision": {
+    "action": "PENDING",
+    "subject": "Mack Hollins"
    },
    "review_id": "bf:52a06de947563bbc",
    "full": {
@@ -1269,5 +1193,13 @@
   "fantasy_relevance_gate": 9,
   "evidence_created_relevance": 1
  },
+ "reviewer_rejected": [
+  {
+   "player_name": "Ollie Gordon II",
+   "decision": "NO_FANTASY_IMPACT",
+   "reason": "INSUFFICIENT_ROLE_EVIDENCE",
+   "evidence": ""
+  }
+ ],
  "published": false
 }
