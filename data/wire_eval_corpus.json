@@ -1,0 +1,3267 @@
+{
+ "schema_version": "eval-v1",
+ "note": "GOLD items carry hand-written expected answers and are what accuracy is measured on. UNLABELLED items are real segments awaiting human labels and are never counted as correct until labelled.",
+ "gold_items": 23,
+ "unlabelled_items": 90,
+ "items": [
+  {
+   "id": "keon-coleman-relay",
+   "kind": "GOLD",
+   "text": "On Thursday in Berea, Khalil Shakir and Dante Pettis added to the group of sidelined wide receivers, per Cameron Wolfe of NFL Network.",
+   "guards": "relayed reporting leaking into a quotation or firsthand claim",
+   "players": [
+    {
+     "player_id": "00-0039901",
+     "player_name": "Keon Coleman",
+     "team": "BUF",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "BUF",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT",
+    "classification": "RELAYED_REPORTING"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "washington-thomas-targets",
+   "kind": "GOLD",
+   "text": "With no Parker Washington on the field, the No. 1 target for Trevor Lawrence on Tuesday was pretty easily Brian Thomas Jr.",
+   "guards": "an absent player inheriting the targets that went to somebody else",
+   "players": [
+    {
+     "player_id": "00-0038606",
+     "player_name": "Parker Washington",
+     "team": "JAX",
+     "position": "WR"
+    },
+    {
+     "player_id": "00-0039893",
+     "player_name": "Brian Thomas Jr.",
+     "team": "JAX",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "JAX",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Parker Washington",
+    "mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEGATIVE"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": "Brian Thomas"
+  },
+  {
+   "id": "thomas-beneficiary",
+   "kind": "GOLD",
+   "text": "With no Parker Washington on the field, the No. 1 target for Trevor Lawrence on Tuesday was pretty easily Brian Thomas Jr.",
+   "guards": "the beneficiary of an absence being suppressed",
+   "players": [
+    {
+     "player_id": "00-0039893",
+     "player_name": "Brian Thomas Jr.",
+     "team": "JAX",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "JAX",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Brian Thomas",
+    "mechanism": "TARGETS",
+    "direction": "POSITIVE"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "washington-trammell-personnel",
+   "kind": "GOLD",
+   "text": "Austin Trammell moved into the first-team 11 personnel package with Parker Washington out.",
+   "guards": "an absent player described as receiving first-team work",
+   "players": [
+    {
+     "player_id": "00-0038606",
+     "player_name": "Parker Washington",
+     "team": "JAX",
+     "position": "WR"
+    },
+    {
+     "player_id": "00-0036841",
+     "player_name": "Austin Trammell",
+     "team": "JAX",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "JAX",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Parker Washington",
+    "mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEGATIVE"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": "Austin Trammell"
+  },
+  {
+   "id": "trammell-first-team",
+   "kind": "GOLD",
+   "text": "Austin Trammell moved into the first-team 11 personnel package with Parker Washington out.",
+   "guards": "a conditional first-team opportunity being suppressed",
+   "players": [
+    {
+     "player_id": "00-0036841",
+     "player_name": "Austin Trammell",
+     "team": "JAX",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "JAX",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Austin Trammell",
+    "mechanism": "FIRST_TEAM_REPS",
+    "direction": "POSITIVE"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "mccarthy-price-pronoun",
+   "kind": "GOLD",
+   "text": "JJ McCarthy had a big completion to Myles Price downfield. He took the majority of the second-team reps on Wednesday.",
+   "guards": "a pronoun's reps landing on the wrong player",
+   "players": [
+    {
+     "player_id": "00-0040506",
+     "player_name": "Myles Price",
+     "team": "MIN",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "MIN",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "mccarthy-second-team",
+   "kind": "GOLD",
+   "text": "JJ McCarthy had a big completion to Myles Price downfield. He took the majority of the second-team reps on Wednesday.",
+   "guards": "the real pronoun antecedent being suppressed",
+   "players": [
+    {
+     "player_id": "00-0039923",
+     "player_name": "J.J. McCarthy",
+     "team": "MIN",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "MIN",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "J.J. McCarthy",
+    "mechanism": "SECOND_TEAM_REPS"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "geno-about-omar",
+   "kind": "GOLD",
+   "text": "\"Omar Cooper Jr. has taken over the slot role for us,\" Geno Smith said after practice.",
+   "guards": "a quote speaker inheriting a claim about another player",
+   "players": [
+    {
+     "player_id": "00-0030565",
+     "player_name": "Geno Smith",
+     "team": "NYJ",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "NYJ",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "allen-team-energy",
+   "kind": "GOLD",
+   "text": "\"The energy out here has been unbelievable all camp,\" Josh Allen said.",
+   "guards": "a team-mood quote becoming fantasy commentary",
+   "players": [
+    {
+     "player_id": "00-0034857",
+     "player_name": "Josh Allen",
+     "team": "BUF",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "BUF",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "hankerson-waived",
+   "kind": "GOLD",
+   "text": "The team waived running back Anthony Hankerson on Tuesday.",
+   "guards": "a waived player described as returning to practice",
+   "players": [
+    {
+     "player_id": "unresolved:Anthony Hankerson",
+     "player_name": "Anthony Hankerson",
+     "team": "CLE",
+     "position": "RB"
+    }
+   ],
+   "metadata": {
+    "team": "CLE",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Anthony Hankerson",
+    "mechanism": "TRANSACTION",
+    "direction": "NEGATIVE"
+   },
+   "forbidden_mechanism": "RETURN_TO_PRACTICE",
+   "also_valid_subject": null
+  },
+  {
+   "id": "wease-absent",
+   "kind": "GOLD",
+   "text": "Theo Wease Jr. did not practice for the third straight day.",
+   "guards": "an absence read as a return",
+   "players": [
+    {
+     "player_id": "00-0040311",
+     "player_name": "Theo Wease Jr.",
+     "team": "MIA",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "MIA",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Theo Wease",
+    "mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEGATIVE"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "giddens-reinjury",
+   "kind": "GOLD",
+   "text": "DJ Giddens returned to practice and immediately reaggravated his hamstring.",
+   "guards": "a re-injury read as a healthy return",
+   "players": [
+    {
+     "player_id": "00-0040179",
+     "player_name": "DJ Giddens",
+     "team": "IND",
+     "position": "RB"
+    }
+   ],
+   "metadata": {
+    "team": "IND",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "DJ Giddens",
+    "mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEGATIVE"
+   },
+   "forbidden_mechanism": "RETURN_TO_PRACTICE",
+   "also_valid_subject": null
+  },
+  {
+   "id": "engram-adjacent-return",
+   "kind": "GOLD",
+   "text": "Evan Engram caught two passes over the middle. Travis Etienne was back at practice after a day off.",
+   "guards": "adjacent return language attaching to the wrong player",
+   "players": [
+    {
+     "player_id": "00-0033881",
+     "player_name": "Evan Engram",
+     "team": "DEN",
+     "position": "TE"
+    }
+   ],
+   "metadata": {
+    "team": "DEN",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "forbidden_mechanism": "RETURN_TO_PRACTICE",
+   "also_valid_subject": null
+  },
+  {
+   "id": "jones-richardson-unit",
+   "kind": "GOLD",
+   "text": "Daniel Jones remains the named starter. Anthony Richardson ran with the second team throughout the session.",
+   "guards": "a player inheriting another player's unit",
+   "players": [
+    {
+     "player_id": "00-0035710",
+     "player_name": "Daniel Jones",
+     "team": "IND",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "IND",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "forbidden_mechanism": "SECOND_TEAM_REPS",
+   "also_valid_subject": null
+  },
+  {
+   "id": "richardson-second-team",
+   "kind": "GOLD",
+   "text": "Anthony Richardson led the Colts' second-team offense down the field for a field goal score as time expired.",
+   "guards": "a genuine unit claim being suppressed",
+   "players": [
+    {
+     "player_id": "00-0039164",
+     "player_name": "Anthony Richardson",
+     "team": "IND",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "IND",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Anthony Richardson",
+    "mechanism": "SECOND_TEAM_REPS"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "wentz-third-team",
+   "kind": "GOLD",
+   "text": "Carson Wentz worked with the 3s for most of the afternoon.",
+   "guards": "third-team work reported as second team",
+   "players": [
+    {
+     "player_id": "00-0032950",
+     "player_name": "Carson Wentz",
+     "team": "MIN",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "MIN",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Carson Wentz",
+    "mechanism": "THIRD_TEAM_REPS",
+    "direction": "NEGATIVE"
+   },
+   "forbidden_mechanism": "SECOND_TEAM_REPS",
+   "also_valid_subject": null
+  },
+  {
+   "id": "mccord-adjacent-heading",
+   "kind": "GOLD",
+   "text": "Kyle McCord found Bo Melton on a crossing route for a first down.",
+   "guards": "a starters heading donating first-team reps to the next line",
+   "players": [
+    {
+     "player_id": "00-0040014",
+     "player_name": "Kyle McCord",
+     "team": "GB",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "GB",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "forbidden_mechanism": "FIRST_TEAM_REPS",
+   "also_valid_subject": null
+  },
+  {
+   "id": "jacobs-return",
+   "kind": "GOLD",
+   "text": "Returned to practice: RB Josh Jacobs (groin), edge Lukas Van Ness (shoulder).",
+   "guards": "a genuine return being suppressed",
+   "players": [
+    {
+     "player_id": "00-0035700",
+     "player_name": "Josh Jacobs",
+     "team": "GB",
+     "position": "RB"
+    }
+   ],
+   "metadata": {
+    "team": "GB",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Josh Jacobs",
+    "mechanism": "RETURN_TO_PRACTICE",
+    "direction": "POSITIVE"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "laporta-absent",
+   "kind": "GOLD",
+   "text": "Those not participating at practice on Thursday included Sam LaPorta, Mekhi Wingo and Brian Branch.",
+   "guards": "an availability signal in a list being suppressed",
+   "players": [
+    {
+     "player_id": "00-0039065",
+     "player_name": "Sam LaPorta",
+     "team": "DET",
+     "position": "TE"
+    }
+   ],
+   "metadata": {
+    "team": "DET",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Sam LaPorta",
+    "mechanism": "LIMITED_PARTICIPATION",
+    "direction": "NEGATIVE"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "stidham-mixed-units",
+   "kind": "GOLD",
+   "text": "Jarrett Stidham started Game 1 in Atlanta, playing the entire first half with the first- and second-team offensive units.",
+   "guards": "mixed first/second-team work being suppressed entirely",
+   "players": [
+    {
+     "player_id": "00-0035264",
+     "player_name": "Jarrett Stidham",
+     "team": "DEN",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "DEN",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Jarrett Stidham",
+    "mechanism": "FIRST_TEAM_REPS"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "hollins-two-minute",
+   "kind": "GOLD",
+   "text": "If you look at any of the Patriots' two-minute drills to close each training camp practice this summer, it does not matter which offensive unit is on the field. Chances are you will see Mack Hollins running routes.",
+   "guards": "overstating a recurring situational role as a defined role",
+   "players": [
+    {
+     "player_id": "00-0033555",
+     "player_name": "Mack Hollins",
+     "team": "NE",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "NE",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "INTERPRET",
+    "subject": "Mack Hollins",
+    "mechanism": "ROUTES"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "isolated-highlight",
+   "kind": "GOLD",
+   "text": "Amon-Ra St. Brown caught a short touchdown in the red-zone period.",
+   "guards": "an isolated play treated as an opportunity change",
+   "players": [
+    {
+     "player_id": "00-0036963",
+     "player_name": "Amon-Ra St. Brown",
+     "team": "DET",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "DET",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "penalty-no-impact",
+   "kind": "GOLD",
+   "text": "Nate Boerkircher was flagged for holding on the second play of the team period.",
+   "guards": "a penalty becoming fantasy commentary",
+   "players": [
+    {
+     "player_id": "unresolved:Nate Boerkircher",
+     "player_name": "Nate Boerkircher",
+     "team": "DEN",
+     "position": "TE"
+    }
+   ],
+   "metadata": {
+    "team": "DEN",
+    "source_name": "fixture",
+    "author": "fixture",
+    "source_ownership": "INDEPENDENT",
+    "reporter_voice": true
+   },
+   "expected": {
+    "decision": "NO_FANTASY_IMPACT"
+   },
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:b1b7749e278a0a7f8dda",
+   "kind": "UNLABELLED",
+   "text": "#Steelers CB Joey Porter Jr. is a name multiple teams around the NFL have wondered about as a potential trade target, per sources. JPJ is in the final year of his rookie contract, and with where the CB market is, teams have wondered if Pittsburgh could ultimately be open to a move with the Pro Bowl caliber corner,\u201d he tweeted Thursday night.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039167",
+     "player_name": "Joey Porter Jr.",
+     "team": "PIT",
+     "position": "DB"
+    }
+   ],
+   "metadata": {
+    "team": "PIT",
+    "article_title": "Schultz: NFL Teams View CB Joey Porter Jr. As Potential Trade Target",
+    "published_at": "2026-08-21T01:10:21+00:00",
+    "source_name": "Steelers Depot",
+    "author": "Alex Kozora",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "eee368baa23e4f755605",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:9339b30be4daff5ec911",
+   "kind": "UNLABELLED",
+   "text": "Right now, he's one of three players in the mix for the sixth and likely final interior defensive lineman spot on the roster, with the other two being 2025 sixth-rounder Aeneas Peebles and former undrafted free agent C.J. Okoye, both of whom have been running with the first-team defense at times during camp.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040076",
+     "player_name": "Aeneas Peebles",
+     "team": "BAL",
+     "position": "DL"
+    }
+   ],
+   "metadata": {
+    "team": "BAL",
+    "article_title": "6 Ravens Players With the Most To Gain in Second Preseason Game",
+    "published_at": "2026-08-21T00:30:50Z",
+    "source_name": "Sports Illustrated -- BAL",
+    "author": "Josh Reed",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "fd681a5fa62e324170be",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:d430b26574864b657f84",
+   "kind": "UNLABELLED",
+   "text": "- I would not be surprised if the Patriots bring in a kicker this year on the practice squad. After Andy Borregales missed three kicks in the preseason opener, Vrabel was pretty harsh at the podium postgame. He changed his tune this week, essentially placing the blame on now-released backup long snapper Niko Lalos.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040200",
+     "player_name": "Andy Borregales",
+     "team": "NE",
+     "position": "K"
+    }
+   ],
+   "metadata": {
+    "team": "NE",
+    "article_title": "Ethan Hurwitz: A.J. Brown Gave Patriots Everything They Needed to See vs. Eagles",
+    "published_at": "2026-08-20T10:00:05Z",
+    "source_name": "Sports Illustrated -- NE",
+    "author": "Ethan Hurwitz",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "ae4ab1e5b81225600359",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:1ff29c0ddacc94cff1b5",
+   "kind": "UNLABELLED",
+   "text": "Dean has a history of health issues, and while Tommy Eichenberg is ahead of Olubi on the depth chart, Thursday confirmed that this should not be set in stone at the moment. At the very worst, Olubi has looked just as good as Eichenberg in training camp and both preseason games.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039374",
+     "player_name": "Tommy Eichenberg",
+     "team": "LV",
+     "position": "LB"
+    }
+   ],
+   "metadata": {
+    "team": "LV",
+    "article_title": "Raiders Who Helped Their Roster Chances vs. Texans",
+    "published_at": "2026-08-21T03:06:36Z",
+    "source_name": "Sports Illustrated -- LV",
+    "author": "Ezekiel Trezevant",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:660a8af31b0b4484ed23",
+   "kind": "UNLABELLED",
+   "text": "He ran hard and surged the pile ahead as best he could. A healthy touchdown run was called back due to a holding penalty on OT Troy Fautanu. But Nichols bounced the run arguably wider than he needed to, which contributed to the penalty.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039871",
+     "player_name": "Troy Fautanu",
+     "team": "PIT",
+     "position": "OL"
+    }
+   ],
+   "metadata": {
+    "team": "PIT",
+    "article_title": "Steelers 2026 Training Camp Grades: Running Back",
+    "published_at": "2026-08-20T23:00:32+00:00",
+    "source_name": "Steelers Depot",
+    "author": "Alex Kozora",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "8322e7ace5fa9515738a",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:651fcf549147974f760c",
+   "kind": "UNLABELLED",
+   "text": "I was all in on Brett Thorson before camp, and I still am. But it seems like a year developing as part of the NFL\u2019s international player pathway and learning from Johnny Hekker may be the best move for the young punter. Will Reichard continues to inspire a level of faith that no reasonable Vikings fan should feel while watching their kicker line up.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041581",
+     "player_name": "Brett Thorson",
+     "team": "MIN",
+     "position": "P"
+    }
+   ],
+   "metadata": {
+    "team": "MIN",
+    "article_title": "Vikings 53-Man Roster Projections 2.0: Who Helped Their Case in Preseason Week 1? ",
+    "published_at": "2026-08-19T11:00:02Z",
+    "source_name": "Sports Illustrated -- MIN",
+    "author": "Jason Harmon",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "157fd1b6735c09ab79f5",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:8a7183592e535758e02c",
+   "kind": "UNLABELLED",
+   "text": "As reported by SNY Thursday afternoon, the Jets will have starting quarterback Geno Smith receive playing time in tonight's second preseason contest against the Pittsburgh Steelers. Smith suffered an ankle injury last week that kept him out of action against the Tampa Bay Buccaneers. While the injury appeared to hobble him earlier in the week, the Jets believe he's 100% and ready to go for the second preseason game.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0030565",
+     "player_name": "Geno Smith",
+     "team": "NYJ",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "NYJ",
+    "article_title": "Jets' Geno Smith Risk is the Right Call for Preseason Game vs. Steelers",
+    "published_at": "2026-08-21T00:38:52Z",
+    "source_name": "Sports Illustrated -- NYJ",
+    "author": "Nick Faria",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "c7dd07dc826e4518c7a7",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:b7ce5463ee6562b8fbab",
+   "kind": "UNLABELLED",
+   "text": "Johnson played just one series, carried the ball only twice, and rookie Eli Heidenreich spent the fourth quarter soaking up carries despite hardly practicing in the days leading up to the game. Johnson only saw three snaps on special teams. He has practiced on the kick return game but doesn\u2019t seem like a viable option to play opposite Kaden Wetjen.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041490",
+     "player_name": "Eli Heidenreich",
+     "team": "PIT",
+     "position": "RB"
+    }
+   ],
+   "metadata": {
+    "team": "PIT",
+    "article_title": "Steelers 2026 Training Camp Grades: Running Back",
+    "published_at": "2026-08-20T23:00:32+00:00",
+    "source_name": "Steelers Depot",
+    "author": "Alex Kozora",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "5897cd0247ca861b4767",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:fe2a0ff98d17024a8f5e",
+   "kind": "UNLABELLED",
+   "text": "If Hibner comes out on Saturday and has another strong showing as a pass-catcher, in particular, the complementary role behind and sometimes alongside three-time Pro Bowl veteran Mark Andrews that was vacated when Isaiah Likely left in free agency is as good as his because he'll have proven he can be a gamer at this level.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0034753",
+     "player_name": "Mark Andrews",
+     "team": "BAL",
+     "position": "TE"
+    }
+   ],
+   "metadata": {
+    "team": "BAL",
+    "article_title": "6 Ravens Players With the Most To Gain in Second Preseason Game",
+    "published_at": "2026-08-21T00:30:50Z",
+    "source_name": "Sports Illustrated -- BAL",
+    "author": "Josh Reed",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:28a689bf503cbf0eedee",
+   "kind": "UNLABELLED",
+   "text": "Elsewhere, Jack Strand still did not receive team work, but he is expected to play half of Saturday\u2019s preseason game. Chris Blair received most of Jahan Dotson\u2019s first-team snaps during red-zone work, giving him another opportunity to make his case for a roster spot.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0036463",
+     "player_name": "Chris Blair",
+     "team": "ATL",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "ATL",
+    "article_title": "Three Major Falcons Takeaways From Day 2 Joint Practice With Colts",
+    "published_at": "2026-08-21T00:13:04Z",
+    "source_name": "Sports Illustrated -- ATL",
+    "author": "Darius Hayes",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "611b0f75d7b1d21dd96c",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:149c1af907eb4c087d81",
+   "kind": "UNLABELLED",
+   "text": "\"Basically, don't get too comfortable,\" Marcus Jones said when asked about Mike Vrabel's message to the team ahead of Thursday's practice. \"You know, in the National Football League, it's 'What have you done for me lately?' And that's great that we did pretty good (on Wednesday). But we had things that we needed to get right.\"",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0037253",
+     "player_name": "Marcus Jones",
+     "team": "NE",
+     "position": "DB"
+    }
+   ],
+   "metadata": {
+    "team": "NE",
+    "article_title": "Drake Maye, A.J. Brown Connection Falters In Patriots Joint Practice vs. Eagles",
+    "published_at": "2026-08-20T20:26:37Z",
+    "source_name": "Sports Illustrated -- NE",
+    "author": "Zac Ventola",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "bb20e4654a2806499153",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:73d018512048f6078c05",
+   "kind": "UNLABELLED",
+   "text": "\u201cWe'll see the Saquon of two years ago,\u201d right tackle Lane Johnson told reporters after Wednesday\u2019s practice. \u201cWe'll see the big plays. We'll see him flexing out wide at receiver, see him in the screen game.\u201d",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0030561",
+     "player_name": "Lane Johnson",
+     "team": "PHI",
+     "position": "OL"
+    }
+   ],
+   "metadata": {
+    "team": "PHI",
+    "article_title": "How Saquon Barkley Is Preparing For A Season Closer To 2024 Than Last Year",
+    "published_at": "2026-08-20T23:00:00Z",
+    "source_name": "Sports Illustrated -- PHI",
+    "author": "Ed Kracz",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "3d1e04d8f70ec9e51b47",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:af03ebb9d1015afd88ff",
+   "kind": "UNLABELLED",
+   "text": "\"They look like how they've looked all training camp,\" Bengals quarterback Joe Burrow said. \"I'm excited to go and watch that tape.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0036442",
+     "player_name": "Joe Burrow",
+     "team": "CIN",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "CIN",
+    "article_title": "Closing Time Was Losing Time for Bengals in 2025, but Defense Authors Emphatic Ending to Joint Practice with Bears",
+    "published_at": "2026-08-20T20:25:03Z",
+    "source_name": "Sports Illustrated -- CIN",
+    "author": "Jay Morrison",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:cc9e20816c96904a80aa",
+   "kind": "UNLABELLED",
+   "text": "Those not participating at practice on Thursday included Giovanni Manu, Isiah Pacheco, Ben Bartch, Cade Mays, Sam LaPorta, Mekhi Wingo, Payton Turner, Damone Clark, Thomas Harper, Brian Branch and Kerby Joseph.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039141",
+     "player_name": "Brian Branch",
+     "team": "DET",
+     "position": "DB"
+    }
+   ],
+   "metadata": {
+    "team": "DET",
+    "article_title": "Terrible Luck Continues After Ennis Rakestraw Leaves Practice Injured",
+    "published_at": "2026-08-20T19:48:19Z",
+    "source_name": "Sports Illustrated -- DET",
+    "author": "John Maakaron",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:93e9ef7055105184bcf8",
+   "kind": "UNLABELLED",
+   "text": "Analysis: For the first half of training camp, Nazir Stackhouse was taking more first-team reps at nose tackle than Ford. However, Ford got the start against the Steelers and has been running ahead of Stackhouse all week.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040041",
+     "player_name": "Nazir Stackhouse",
+     "team": "GB",
+     "position": "DL"
+    }
+   ],
+   "metadata": {
+    "team": "GB",
+    "article_title": "Packers Lock-O-Meter 3.0 Projects 53-Man Roster With 10 Days Until Final Cuts",
+    "published_at": "2026-08-20T19:01:10Z",
+    "source_name": "Sports Illustrated -- GB",
+    "author": "Bill Huber",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:bb439e80bc8bc3df318d",
+   "kind": "UNLABELLED",
+   "text": "Dolphins players who did not participate were QB Quinn Ewers, LB Jordyn Brooks, EDGE Robert Beal Jr., EDGE Cameron Goode, DT Kenneth Grant, TE Ben Sims, DT Zach Sieler, EDGE Clelin Ferrell. Saw Quinn Ewers but he's not practicing. Ronnie Harrison Jr. is back at practice.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0034779",
+     "player_name": "Ronnie Harrison",
+     "team": "MIA",
+     "position": "LB"
+    }
+   ],
+   "metadata": {
+    "team": "MIA",
+    "article_title": "Miami Dolphins Joint Practice with Giants Observations: Skirmishes, Sacks, and More",
+    "published_at": "2026-08-20T17:20:43Z",
+    "source_name": "Sports Illustrated -- MIA",
+    "author": "Alain Poupart",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:e0605678b3a0c64fba8b",
+   "kind": "UNLABELLED",
+   "text": "Giants rookie right guard Francis Mauigoa left practice early, accompanied by Vice President of Medical Services Ronnie Barnes. Head coach John Harbaugh said Mauigoa suffered a mild stinger.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041505",
+     "player_name": "Francis Mauigoa",
+     "team": "NYG",
+     "position": "OL"
+    }
+   ],
+   "metadata": {
+    "team": "NYG",
+    "article_title": "Giants Defense Dominates Dolphins in Joint Practice",
+    "published_at": "2026-08-20T19:41:33Z",
+    "source_name": "Sports Illustrated -- NYG",
+    "author": "Patricia Traina",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "a8775152fe87e38f756f",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:170556b0704ccba95f20",
+   "kind": "UNLABELLED",
+   "text": "Anthony Richardson led the Colts' second-team offense down the field for a field goal score as time expired, and then the second-team defense followed suit with an impressive tip drill interception to wrap up training camp festivities at Grand Park once and for all.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039164",
+     "player_name": "Anthony Richardson",
+     "team": "IND",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "IND",
+    "article_title": "Biggest Takeaways From Final Day of Colts Training Camp: Keenan Allen Makes Debut",
+    "published_at": "2026-08-20T22:19:33Z",
+    "source_name": "Sports Illustrated -- IND",
+    "author": "Noah Compton",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:9ba81b8d2771a839a747",
+   "kind": "UNLABELLED",
+   "text": "And the reality is the line struggled not only in pass protection but in run blocking as well. There were two good-looking runs by the first-team offense on this day, one by De'Von Achane and the other by Ollie Gordon II.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039040",
+     "player_name": "De'Von Achane",
+     "team": "MIA",
+     "position": "RB"
+    }
+   ],
+   "metadata": {
+    "team": "MIA",
+    "article_title": "Time for Concern? (or What to Make of the Dolphins Offense Getting Dominated in the Joint Practice)",
+    "published_at": "2026-08-20T20:15:00Z",
+    "source_name": "Sports Illustrated -- MIA",
+    "author": "Alain Poupart",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:0df9cf875461f44c85f7",
+   "kind": "UNLABELLED",
+   "text": "Star tight end Sam LaPorta was not spotted participating at all at practice. There were no reports as to why he was absent, as has been a participant in recent practices.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039065",
+     "player_name": "Sam LaPorta",
+     "team": "DET",
+     "position": "TE"
+    }
+   ],
+   "metadata": {
+    "team": "DET",
+    "article_title": "Detroit Lions TE Misses Wednesday Practice, Jameson Williams Returns",
+    "published_at": "2026-08-19T21:48:27Z",
+    "source_name": "Sports Illustrated -- DET",
+    "author": "John Maakaron",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:983c909d95fe01e076ee",
+   "kind": "UNLABELLED",
+   "text": "-- With Ewers sidelined, Cam Miller again got the second-most reps at QB and he had the best throw of the day, a completion for about 20 yards in the middle of the field to Terrace Marshall Jr.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0036955",
+     "player_name": "Terrace Marshall Jr.",
+     "team": "MIA",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "MIA",
+    "article_title": "Miami Dolphins Joint Practice with Giants Observations: Skirmishes, Sacks, and More",
+    "published_at": "2026-08-20T17:20:43Z",
+    "source_name": "Sports Illustrated -- MIA",
+    "author": "Alain Poupart",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:4bebcf0a463a700ef5ce",
+   "kind": "UNLABELLED",
+   "text": "With no contract extension and seemingly no progress towards a long-term deal, NFL teams are wondering if CB Joey Porter Jr. could be traded instead of extended. Per insider Jordan Schultz, teams are considering Porter a potential trade target.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039167",
+     "player_name": "Joey Porter Jr.",
+     "team": "PIT",
+     "position": "DB"
+    }
+   ],
+   "metadata": {
+    "team": "PIT",
+    "article_title": "Schultz: NFL Teams View CB Joey Porter Jr. As Potential Trade Target",
+    "published_at": "2026-08-21T01:10:21+00:00",
+    "source_name": "Steelers Depot",
+    "author": "Alex Kozora",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "4cc37df906bef57b54bc",
+    "underlying_report_id": "fd53a882e035c9347e28",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:b88abb9a0f15a41ec040",
+   "kind": "UNLABELLED",
+   "text": "After holding in during mandatory minicamp earlier this summer and throughout training camp, Bucs defensive tackle Vita Vea is getting the raise he has been after, and a contract extension. ESPN\u2019s Adam Schefter has reported that the Bucs and Vea have agreed to a one-year contract extension worth $30 million, including $6 million more on his salary this season.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0034773",
+     "player_name": "Vita Vea",
+     "team": "TB",
+     "position": "DL"
+    }
+   ],
+   "metadata": {
+    "team": "TB",
+    "article_title": "BREAKING: Vita Vea Agrees To Contract Extension With Bucs",
+    "published_at": "2026-08-19T23:07:10+00:00",
+    "source_name": "Pewter Report",
+    "author": "Joshua Queipo",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "15be3c2c0760f0e0eab8",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:4bcff5d14803bb356c20",
+   "kind": "UNLABELLED",
+   "text": "The defense was the star of the show making life difficult for the 49ers the entire way and locking down near the redzone. The Chargers defensive backs, even without Tarheeb Still made Brock Purdy and Mac Jones struggle to find completions. ESPN's beat writer for the 49ers Nick Wagoner had several noteworthy observations from practice, including Tuli Tuipulotu wreaking havoc on the 49ers offensive line.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039111",
+     "player_name": "Tuli Tuipulotu",
+     "team": "LAC",
+     "position": "LB"
+    }
+   ],
+   "metadata": {
+    "team": "LAC",
+    "article_title": "Chargers Hot in Joint Practice but 49ers Bring Their Substation Injury Problems to LA",
+    "published_at": "2026-08-19T17:30:00Z",
+    "source_name": "Sports Illustrated -- LAC",
+    "author": "Thomas Martinez",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:1dd9d895c46a11aaad9d",
+   "kind": "UNLABELLED",
+   "text": "A little later on, Dolphins tackle Austin Jackson got himself kicked out of practice for taking part in a brawl that, per Alain Poupart of the Miami Dolphins on SI, saw Dolphins players Keith Cooper Jr., Ronnie Harrison Jr., and Zeek Biggers and Giants players Jameis Winston and J.C. Davis in the middle of it.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041101",
+     "player_name": "J.C. Davis",
+     "team": "NYG",
+     "position": "OL"
+    }
+   ],
+   "metadata": {
+    "team": "NYG",
+    "article_title": "Giants Defense Dominates Dolphins in Joint Practice",
+    "published_at": "2026-08-20T19:41:33Z",
+    "source_name": "Sports Illustrated -- NYG",
+    "author": "Patricia Traina",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "289de29033b10aacc7e8",
+    "underlying_report_id": "1e6af72892e9ce0c389d",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:31b074254dc42f974962",
+   "kind": "UNLABELLED",
+   "text": "\"Tough finish for the Bears' offense,\" Fishbain wrote. \"They went four-and-out on a two-minute drill and on their next possession, Myles Murphy's sack put them behind the sticks, and then Caleb Williams threw an interception \u2014 his pass to Colston Loveland sailed and landed in Jalen Davis' arms.\"",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039918",
+     "player_name": "Caleb Williams",
+     "team": "CHI",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "CHI",
+    "article_title": "The Good and Not So Good From Bears' Joint Practice With Bengals",
+    "published_at": "2026-08-20T21:00:01Z",
+    "source_name": "Sports Illustrated -- CHI",
+    "author": "Mike Moraitis",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "e4dcc79b93652c7d17b2",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:756706da516d51697360",
+   "kind": "UNLABELLED",
+   "text": "\"Latu\u2019s run blocking was exceptional in the Bills\u2019 29-14 win over the Panthers on Saturday. He had a pancake block in the fourth quarter that spurred a 16-yard run from running back Frank Gore Jr. Latu also had key blocks on two Buffalo touchdown runs in the fourth quarter,\" Popper wrote.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039471",
+     "player_name": "Frank Gore Jr.",
+     "team": "BUF",
+     "position": "RB"
+    }
+   ],
+   "metadata": {
+    "team": "BUF",
+    "article_title": "Bills' Tight End Named Roster Bubble Standout Other Teams Should Covet",
+    "published_at": "2026-08-19T17:47:00Z",
+    "source_name": "Sports Illustrated -- BUF",
+    "author": "Randy Gurzi",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "1f6f4ecc1f75b60ffce9",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:6f708fcaa30890c60bd1",
+   "kind": "UNLABELLED",
+   "text": "During Thursday's joint practice against the Browns, Dawson Knox, Dalton Kincaid and Jackson Hawes all made notable plays catching the football. The latter two posted multi-TD efforts.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0038933",
+     "player_name": "Dalton Kincaid",
+     "team": "BUF",
+     "position": "TE"
+    }
+   ],
+   "metadata": {
+    "team": "BUF",
+    "article_title": "The Good And Not So Good from Bills' Joint Practice vs. Browns in Berea",
+    "published_at": "2026-08-21T01:28:34Z",
+    "source_name": "Sports Illustrated -- BUF",
+    "author": "Ralph Ventre",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "f834eb2e4d424a70edab",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:b94e30dc6769e6f9f66d",
+   "kind": "UNLABELLED",
+   "text": "Carolina Panthers\u2019 wide receiver Jalen Coker has been a popular pick for the reigning NFC South champions, and with good reason. \u201cThrough his first two NFL seasons,\u201d explained Pro Football Focus\u2019 Gordon McGuinness, \u201cCoker has earned PFF receiving grades above 70.0 and averaged at least 1.60 yards per route run in both years.\u201d",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039491",
+     "player_name": "Jalen Coker",
+     "team": "CAR",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "CAR",
+    "article_title": "Jalen Coker Won\u2019t Overtake Tetairoa McMillan, But He Can Still Thrive",
+    "published_at": "2026-08-20T10:00:00Z",
+    "source_name": "Sports Illustrated -- CAR",
+    "author": "Russell Baxter",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "9a72782cd92838bcc5d1",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:a26ce8b5a5d11c904fed",
+   "kind": "UNLABELLED",
+   "text": "Undrafted free agent RB J'Mari Taylor rushed for 78 yards and a touchdown against the Saints, the second-most single-game rushing yards in the NFL this preseason. First-year CB Jabbar Muhammad led the team with six tackles (one for loss) versus New Orleans and sealed the Jaguars' victory with a pass breakup in the end zone on the final play of the game.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040336",
+     "player_name": "Jabbar Muhammad",
+     "team": "JAX",
+     "position": "DB"
+    }
+   ],
+   "metadata": {
+    "team": "JAX",
+    "article_title": "Where to Watch: Panthers vs. Jaguars, Preseason Week 2 of 2026 NFL Season",
+    "published_at": "2026-08-21T00:50:17.593Z",
+    "source_name": "JAX official team site",
+    "author": "Copied",
+    "source_ownership": "TEAM_OWNED",
+    "evidence_access": "",
+    "duplicate_of": "f62c6be551107da0b619",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:fd204cb072cb2ba3ea1d",
+   "kind": "UNLABELLED",
+   "text": "The Bills' defensive line rotation has yet to take shape, and TJ Sanders and Landon Jackson have firmly forced themselves into the mix this summer following disappointing rookie campaigns. Both players flashed again in Thursday against the Browns.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040724",
+     "player_name": "T.J. Sanders",
+     "team": "BUF",
+     "position": "DL"
+    }
+   ],
+   "metadata": {
+    "team": "BUF",
+    "article_title": "The Good And Not So Good from Bills' Joint Practice vs. Browns in Berea",
+    "published_at": "2026-08-21T01:28:34Z",
+    "source_name": "Sports Illustrated -- BUF",
+    "author": "Ralph Ventre",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "5f3643c2cfc8d1df61c0",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:397e2124e9afc36221a0",
+   "kind": "UNLABELLED",
+   "text": "Gonzalez was placed on injured reserve August 10, two days after leaving early the team's practice at Hard Rock Stadium. He had been signed as a free agent in the offseason, just before the Dolphins re-signed Riley Patterson coming off a franchise-record 27-of-29 performance on field goals.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0036816",
+     "player_name": "Riley Patterson",
+     "team": "MIA",
+     "position": "K"
+    }
+   ],
+   "metadata": {
+    "team": "MIA",
+    "article_title": "Dolphins Wednesday Workout Group Includes Son of NFL Legend, More Transaction Notes",
+    "published_at": "2026-08-19T21:25:50Z",
+    "source_name": "Sports Illustrated -- MIA",
+    "author": "Alain Poupart",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:8c752b6992d38725663a",
+   "kind": "UNLABELLED",
+   "text": "Wilson delivered an impressive performance, completing 11 of 16 passes for 145 yards and a touchdown. He connected on three passes of 20 yards or more, including throws of 28 and 37 yards to Bub Means and a 28-yard completion to Barion Brown.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041099",
+     "player_name": "Barion Brown",
+     "team": "NO",
+     "position": "KR"
+    }
+   ],
+   "metadata": {
+    "team": "NO",
+    "article_title": "Saints Stock Watch: 6 Players Trending Up After Preseason Breakout Performances",
+    "published_at": "2026-08-20T14:04:22Z",
+    "source_name": "Sports Illustrated -- NO",
+    "author": "Grant Chachere",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:a5bd3d16ea0c33fa2142",
+   "kind": "UNLABELLED",
+   "text": "The Raiders signed Quay Walker and Nakobe Dean to help solidify what was a bare group of linebackers following the 2025 season. Yet, the Raiders' depth chart faces serious questions after Walker and Dean.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0037074",
+     "player_name": "Quay Walker",
+     "team": "LV",
+     "position": "LB"
+    }
+   ],
+   "metadata": {
+    "team": "LV",
+    "article_title": "Raiders Who Helped Their Roster Chances vs. Texans",
+    "published_at": "2026-08-21T03:06:36Z",
+    "source_name": "Sports Illustrated -- LV",
+    "author": "Ezekiel Trezevant",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:3f4c26f989da6fccff00",
+   "kind": "UNLABELLED",
+   "text": "Not only that, but the Broncos have taken an extensive look at undrafted rookie Luke Basso throughout offseason practices and training camp. The results ... haven't been great, as Basso has notably mis-snapped a pair of balls, including in last week's preseason opener against the Falcons.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041290",
+     "player_name": "Luke Basso",
+     "team": "DEN",
+     "position": "LS"
+    }
+   ],
+   "metadata": {
+    "team": "DEN",
+    "article_title": "Broncos STC Darren Rizzi Explains Why Team Has Two Long-Snappers",
+    "published_at": "2026-08-19T01:49:34Z",
+    "source_name": "Sports Illustrated -- DEN",
+    "author": "Zack Kelberman",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "4a40bdfc1019a4e896f9",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:cd9afc1fec10ed23df48",
+   "kind": "UNLABELLED",
+   "text": "Some players were as advertised, if not better, in the opener, such as first-round rookie starting guard Olaivavega Ioane and third-round rookie wide receiver Ja'Kobi Lane. There are others who either flashed or didn't have ample opportunity to do so who are slated to get more run and have a lot to gain this week; here are half a dozen who fit that description.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040866",
+     "player_name": "Olaivavega Ioane",
+     "team": "BAL",
+     "position": "OL"
+    }
+   ],
+   "metadata": {
+    "team": "BAL",
+    "article_title": "6 Ravens Players With the Most To Gain in Second Preseason Game",
+    "published_at": "2026-08-21T00:30:50Z",
+    "source_name": "Sports Illustrated -- BAL",
+    "author": "Josh Reed",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "0580fb0eb43771ed39f2",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:74e3da884d3b6c057943",
+   "kind": "UNLABELLED",
+   "text": "Meanwhile, rookie punter Tommy Doman Jr. and veteran Mitch Wishnowsky both failed to get a punt rep in during the last preseason game, so that will need to change moving forward in order to give a more proper evaluation to that competition. Only so much can be learned from punts during a practice setting.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041126",
+     "player_name": "Tommy Doman",
+     "team": "BUF",
+     "position": "P"
+    }
+   ],
+   "metadata": {
+    "team": "BUF",
+    "article_title": "Five Preseason Questions That Bills Must Still Answer Before September",
+    "published_at": "2026-08-18T13:03:27Z",
+    "source_name": "Sports Illustrated -- BUF",
+    "author": "John Green",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:438409033ff9d3041d8e",
+   "kind": "UNLABELLED",
+   "text": "Before the Bears-Bengals practice in Cincinnati, Johnson told reporters he wanted to see Caleb Williams off to a fast start.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039918",
+     "player_name": "Caleb Williams",
+     "team": "CHI",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "CHI",
+    "article_title": "Caleb Williams and Bears Offense Hit One Key Ben Johnson Target ",
+    "published_at": "2026-08-21T02:45:09Z",
+    "source_name": "Sports Illustrated -- CHI",
+    "author": "Gene Chamberlain",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:4d06976abd0bdcfe142e",
+   "kind": "UNLABELLED",
+   "text": "Undrafted free agent RB J'Mari Taylor rushed for 78 yards and a touchdown against the Saints, the second-most single-game rushing yards in the NFL this preseason. First-year CB Jabbar Muhammad led the team with six tackles (one for loss) versus New Orleans and sealed the Jaguars' victory with a pass breakup in the end zone on the final play of the game.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041217",
+     "player_name": "J'mari Taylor",
+     "team": "JAX",
+     "position": "RB"
+    }
+   ],
+   "metadata": {
+    "team": "JAX",
+    "article_title": "Where to Watch: Panthers vs. Jaguars, Preseason Week 2 of 2026 NFL Season",
+    "published_at": "2026-08-21T00:50:17.593Z",
+    "source_name": "JAX official team site",
+    "author": "Copied",
+    "source_ownership": "TEAM_OWNED",
+    "evidence_access": "",
+    "duplicate_of": "c344f681e0df83142f87",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:e4356b7a4726cf131c27",
+   "kind": "UNLABELLED",
+   "text": "During one team period, Josh Allen found tight end Jackson Hawes over the middle for a touchdown. Hawes was tightly covered but did a great job of outmuscling his defender to come down with the TD. Later in the red zone, Allen found Hawes again for a touchdown as Hawes showcased his ability to be more than just a blocker.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040194",
+     "player_name": "Jackson Hawes",
+     "team": "BUF",
+     "position": "TE"
+    }
+   ],
+   "metadata": {
+    "team": "BUF",
+    "article_title": "What we learned from the Bills' joint practice with the Browns",
+    "published_at": "2026-08-21T00:43:57.179Z",
+    "source_name": "BUF official team site",
+    "author": "Maddy Glab",
+    "source_ownership": "TEAM_OWNED",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:9f361742e02b7113783a",
+   "kind": "UNLABELLED",
+   "text": "Loveland caught a TD pass, as did Kalif Raymond. Loveland's had to stir up bad memories for the Bengals after his miracle TD catch against them last year.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0032464",
+     "player_name": "Kalif Raymond",
+     "team": "CHI",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "CHI",
+    "article_title": "Caleb Williams and Bears Offense Hit One Key Ben Johnson Target ",
+    "published_at": "2026-08-21T02:45:09Z",
+    "source_name": "Sports Illustrated -- CHI",
+    "author": "Gene Chamberlain",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "1a22711333684adcebd7",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:eee368baa23e4f755605",
+   "kind": "UNLABELLED",
+   "text": "#Steelers CB Joey Porter Jr. is a name multiple teams around the NFL have wondered about as a potential trade target, per sources. JPJ is in the final year of his rookie contract, and with where the CB market is, teams have wondered if Pittsburgh could ultimately be open to a move with the Pro Bowl caliber corner,\u201d he tweeted Thursday night.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039167",
+     "player_name": "Joey Porter Jr.",
+     "team": "PIT",
+     "position": "DB"
+    }
+   ],
+   "metadata": {
+    "team": "PIT",
+    "article_title": "Schultz: NFL Teams View CB Joey Porter Jr. As Potential Trade Target",
+    "published_at": "2026-08-21T01:10:21+00:00",
+    "source_name": "Steelers Depot",
+    "author": "Alex Kozora",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:fd681a5fa62e324170be",
+   "kind": "UNLABELLED",
+   "text": "Right now, he's one of three players in the mix for the sixth and likely final interior defensive lineman spot on the roster, with the other two being 2025 sixth-rounder Aeneas Peebles and former undrafted free agent C.J. Okoye, both of whom have been running with the first-team defense at times during camp.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040076",
+     "player_name": "Aeneas Peebles",
+     "team": "BAL",
+     "position": "DL"
+    }
+   ],
+   "metadata": {
+    "team": "BAL",
+    "article_title": "6 Ravens Players With the Most To Gain in Second Preseason Game",
+    "published_at": "2026-08-21T00:30:50Z",
+    "source_name": "Sports Illustrated -- BAL",
+    "author": "Josh Reed",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:ae4ab1e5b81225600359",
+   "kind": "UNLABELLED",
+   "text": "- I would not be surprised if the Patriots bring in a kicker this year on the practice squad. After Andy Borregales missed three kicks in the preseason opener, Vrabel was pretty harsh at the podium postgame.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040200",
+     "player_name": "Andy Borregales",
+     "team": "NE",
+     "position": "K"
+    }
+   ],
+   "metadata": {
+    "team": "NE",
+    "article_title": "Ethan Hurwitz: A.J. Brown Gave Patriots Everything They Needed to See vs. Eagles",
+    "published_at": "2026-08-20T10:00:05Z",
+    "source_name": "Sports Illustrated -- NE",
+    "author": "Ethan Hurwitz",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:a8053457c848a588999a",
+   "kind": "UNLABELLED",
+   "text": "Dean has a history of health issues, and while Tommy Eichenberg is ahead of Olubi on the depth chart, Thursday confirmed that this should not be set in stone at the moment. At the very worst, Olubi has looked just as good as Eichenberg in training camp and both preseason games.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039374",
+     "player_name": "Tommy Eichenberg",
+     "team": "LV",
+     "position": "LB"
+    }
+   ],
+   "metadata": {
+    "team": "LV",
+    "article_title": "Raiders Who Helped Their Roster Chances vs. Texans",
+    "published_at": "2026-08-21T03:06:36Z",
+    "source_name": "Sports Illustrated -- LV",
+    "author": "Ezekiel Trezevant",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "1ff29c0ddacc94cff1b5",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:8322e7ace5fa9515738a",
+   "kind": "UNLABELLED",
+   "text": "Nichols filtered behind Homer for the preseason opener but saw more work. He ran hard and surged the pile ahead as best he could. A healthy touchdown run was called back due to a holding penalty on OT Troy Fautanu.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039871",
+     "player_name": "Troy Fautanu",
+     "team": "PIT",
+     "position": "OL"
+    }
+   ],
+   "metadata": {
+    "team": "PIT",
+    "article_title": "Steelers 2026 Training Camp Grades: Running Back",
+    "published_at": "2026-08-20T23:00:32+00:00",
+    "source_name": "Steelers Depot",
+    "author": "Alex Kozora",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:0c6837f06adfe5580d3d",
+   "kind": "UNLABELLED",
+   "text": "I was all in on Brett Thorson before camp, and I still am. But it seems like a year developing as part of the NFL\u2019s international player pathway and learning from Johnny Hekker may be the best move for the young punter. Will Reichard continues to inspire a level of faith that no reasonable Vikings fan should feel while watching their kicker line up.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0028872",
+     "player_name": "Johnny Hekker",
+     "team": "MIN",
+     "position": "P"
+    }
+   ],
+   "metadata": {
+    "team": "MIN",
+    "article_title": "Vikings 53-Man Roster Projections 2.0: Who Helped Their Case in Preseason Week 1? ",
+    "published_at": "2026-08-19T11:00:02Z",
+    "source_name": "Sports Illustrated -- MIN",
+    "author": "Jason Harmon",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "7b9552d0a85d2b99b6f6",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:21d55d405a297e3e5548",
+   "kind": "UNLABELLED",
+   "text": "Elsewhere, Jack Strand still did not receive team work, but he is expected to play half of Saturday\u2019s preseason game. Chris Blair received most of Jahan Dotson\u2019s first-team snaps during red-zone work, giving him another opportunity to make his case for a roster spot.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041194",
+     "player_name": "Jack Strand",
+     "team": "ATL",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "ATL",
+    "article_title": "Three Major Falcons Takeaways From Day 2 Joint Practice With Colts",
+    "published_at": "2026-08-21T00:13:04Z",
+    "source_name": "Sports Illustrated -- ATL",
+    "author": "Darius Hayes",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "01b95b5b51ecf53fa4fc",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:784c9555e1d51de452cd",
+   "kind": "UNLABELLED",
+   "text": "The Tennessee Titans are set to return nearly the same running back room from last season in 2026, as Tony Pollard will be the starter and Tyjae Spears will likely be the backup. Rookie Nicholas Singleton could also receive snaps and serve as quality depth behind the two top backs.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0035261",
+     "player_name": "Tony Pollard",
+     "team": "TEN",
+     "position": "RB"
+    }
+   ],
+   "metadata": {
+    "team": "TEN",
+    "article_title": "Titans' Running Back Room Dealt Perfect Bulletin Board Material for 2026 Season",
+    "published_at": "2026-08-20T22:56:54Z",
+    "source_name": "Sports Illustrated -- TEN",
+    "author": "Dharya Sharma",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "d3638fcd466dc3855062",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:663c0438bec8ccfd442c",
+   "kind": "UNLABELLED",
+   "text": "Fifth-round rookie tight end Joe Royer has missed the entirety of his rookie camp due to personal matters. That's tough on a rookie, and it's going to be difficult for Royer to catch up if he returns to the team.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041087",
+     "player_name": "Joe Royer",
+     "team": "CLE",
+     "position": "TE"
+    }
+   ],
+   "metadata": {
+    "team": "CLE",
+    "article_title": "5 Cleveland Browns With Soaring Stock Who Flipped Depth Charts in Preseason",
+    "published_at": "2026-08-20T17:25:49Z",
+    "source_name": "Sports Illustrated -- CLE",
+    "author": "Nick Pedone",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "d4e3735aa66c4afacbd1",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:611b0f75d7b1d21dd96c",
+   "kind": "UNLABELLED",
+   "text": "Elsewhere, Jack Strand still did not receive team work, but he is expected to play half of Saturday\u2019s preseason game. Chris Blair received most of Jahan Dotson\u2019s first-team snaps during red-zone work, giving him another opportunity to make his case for a roster spot.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0036463",
+     "player_name": "Chris Blair",
+     "team": "ATL",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "ATL",
+    "article_title": "Three Major Falcons Takeaways From Day 2 Joint Practice With Colts",
+    "published_at": "2026-08-21T00:13:04Z",
+    "source_name": "Sports Illustrated -- ATL",
+    "author": "Darius Hayes",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:bb20e4654a2806499153",
+   "kind": "UNLABELLED",
+   "text": "\"Basically, don't get too comfortable,\" Marcus Jones said when asked about Mike Vrabel's message to the team ahead of Thursday's practice. \"You know, in the National Football League, it's 'What have you done for me lately?' And that's great that we did pretty good (on Wednesday).",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0037253",
+     "player_name": "Marcus Jones",
+     "team": "NE",
+     "position": "DB"
+    }
+   ],
+   "metadata": {
+    "team": "NE",
+    "article_title": "Drake Maye, A.J. Brown Connection Falters In Patriots Joint Practice vs. Eagles",
+    "published_at": "2026-08-20T20:26:37Z",
+    "source_name": "Sports Illustrated -- NE",
+    "author": "Zac Ventola",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:3d1e04d8f70ec9e51b47",
+   "kind": "UNLABELLED",
+   "text": "\u201cWe'll see the Saquon of two years ago,\u201d right tackle Lane Johnson told reporters after Wednesday\u2019s practice. \u201cWe'll see the big plays.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0030561",
+     "player_name": "Lane Johnson",
+     "team": "PHI",
+     "position": "OL"
+    }
+   ],
+   "metadata": {
+    "team": "PHI",
+    "article_title": "How Saquon Barkley Is Preparing For A Season Closer To 2024 Than Last Year",
+    "published_at": "2026-08-20T23:00:00Z",
+    "source_name": "Sports Illustrated -- PHI",
+    "author": "Ed Kracz",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:1ca763206f6004c3ce30",
+   "kind": "UNLABELLED",
+   "text": "\"They look like how they've looked all training camp,\" Bengals quarterback Joe Burrow said. \"I'm excited to go and watch that tape. We'll watch that.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0036442",
+     "player_name": "Joe Burrow",
+     "team": "CIN",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "CIN",
+    "article_title": "Closing Time Was Losing Time for Bengals in 2025, but Defense Authors Emphatic Ending to Joint Practice with Bears",
+    "published_at": "2026-08-20T20:25:03Z",
+    "source_name": "Sports Illustrated -- CIN",
+    "author": "Jay Morrison",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "af03ebb9d1015afd88ff",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:be8edfab91f8b7d0e532",
+   "kind": "UNLABELLED",
+   "text": "Those not participating at practice on Thursday included Giovanni Manu, Isiah Pacheco, Ben Bartch, Cade Mays, Sam LaPorta, Mekhi Wingo, Payton Turner, Damone Clark, Thomas Harper, Brian Branch and Kerby Joseph.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0037667",
+     "player_name": "Kerby Joseph",
+     "team": "DET",
+     "position": "DB"
+    }
+   ],
+   "metadata": {
+    "team": "DET",
+    "article_title": "Terrible Luck Continues After Ennis Rakestraw Leaves Practice Injured",
+    "published_at": "2026-08-20T19:48:19Z",
+    "source_name": "Sports Illustrated -- DET",
+    "author": "John Maakaron",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:fc7965fa3e0f264b51e1",
+   "kind": "UNLABELLED",
+   "text": "Analysis: For the first half of training camp, Nazir Stackhouse was taking more first-team reps at nose tackle than Ford. However, Ford got the start against the Steelers and has been running ahead of Stackhouse all week.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040041",
+     "player_name": "Nazir Stackhouse",
+     "team": "GB",
+     "position": "DL"
+    }
+   ],
+   "metadata": {
+    "team": "GB",
+    "article_title": "Packers Lock-O-Meter 3.0 Projects 53-Man Roster With 10 Days Until Final Cuts",
+    "published_at": "2026-08-20T19:01:10Z",
+    "source_name": "Sports Illustrated -- GB",
+    "author": "Bill Huber",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "93e9ef7055105184bcf8",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:f7d532f9224eb3c54d62",
+   "kind": "UNLABELLED",
+   "text": "Three Dolphins players sustained injuries during the practice, the most notable involving linebacker Tyrel Dodson. He was observed walked behind one end zone toward the end of practice without shoes or his helmet or pads.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0035352",
+     "player_name": "Tyrel Dodson",
+     "team": "MIA",
+     "position": "LB"
+    }
+   ],
+   "metadata": {
+    "team": "MIA",
+    "article_title": "Miami Dolphins Joint Practice with Giants Observations: Skirmishes, Sacks, and More",
+    "published_at": "2026-08-20T17:20:43Z",
+    "source_name": "Sports Illustrated -- MIA",
+    "author": "Alain Poupart",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:a8775152fe87e38f756f",
+   "kind": "UNLABELLED",
+   "text": "Giants rookie right guard Francis Mauigoa left practice early, accompanied by Vice President of Medical Services Ronnie Barnes. Head coach John Harbaugh said Mauigoa suffered a mild stinger.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041505",
+     "player_name": "Francis Mauigoa",
+     "team": "NYG",
+     "position": "OL"
+    }
+   ],
+   "metadata": {
+    "team": "NYG",
+    "article_title": "Giants Defense Dominates Dolphins in Joint Practice",
+    "published_at": "2026-08-20T19:41:33Z",
+    "source_name": "Sports Illustrated -- NYG",
+    "author": "Patricia Traina",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:ad33134d22868d3c120b",
+   "kind": "UNLABELLED",
+   "text": "Dolphins players who did not participate were QB Quinn Ewers, LB Jordyn Brooks, EDGE Robert Beal Jr., EDGE Cameron Goode, DT Kenneth Grant, TE Ben Sims, DT Zach Sieler, EDGE Clelin Ferrell. Saw Quinn Ewers but he's not practicing. Ronnie Harrison Jr. is back at practice.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040234",
+     "player_name": "Quinn Ewers",
+     "team": "MIA",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "MIA",
+    "article_title": "Miami Dolphins Joint Practice with Giants Observations: Skirmishes, Sacks, and More",
+    "published_at": "2026-08-20T17:20:43Z",
+    "source_name": "Sports Illustrated -- MIA",
+    "author": "Alain Poupart",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "576435dc8ac0c5954e6a",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:d4ac712ccc7106608342",
+   "kind": "UNLABELLED",
+   "text": "And the reality is the line struggled not only in pass protection but in run blocking as well. There were two good-looking runs by the first-team offense on this day, one by De'Von Achane and the other by Ollie Gordon II.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040198",
+     "player_name": "Ollie Gordon II",
+     "team": "MIA",
+     "position": "RB"
+    }
+   ],
+   "metadata": {
+    "team": "MIA",
+    "article_title": "Time for Concern? (or What to Make of the Dolphins Offense Getting Dominated in the Joint Practice)",
+    "published_at": "2026-08-20T20:15:00Z",
+    "source_name": "Sports Illustrated -- MIA",
+    "author": "Alain Poupart",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:0f95d45d514ef2331b82",
+   "kind": "UNLABELLED",
+   "text": "Star tight end Sam LaPorta was not spotted participating at all at practice. There were no reports as to why he was absent, as has been a participant in recent practices.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039065",
+     "player_name": "Sam LaPorta",
+     "team": "DET",
+     "position": "TE"
+    }
+   ],
+   "metadata": {
+    "team": "DET",
+    "article_title": "Detroit Lions TE Misses Wednesday Practice, Jameson Williams Returns",
+    "published_at": "2026-08-19T21:48:27Z",
+    "source_name": "Sports Illustrated -- DET",
+    "author": "John Maakaron",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "0df9cf875461f44c85f7",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:ad8fb0225f2879ad5c6c",
+   "kind": "UNLABELLED",
+   "text": "FOXBORO --- If you look at any of the New England Patriots' two-minute drills to close each training camp practice this summer, it doesn't matter which offensive unit is on the field. Chances are, you'll see Mack Hollins running routes and contributing.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0033555",
+     "player_name": "Mack Hollins",
+     "team": "NE",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "NE",
+    "article_title": "Mack Hollins Continues To Chug Along in Patriots WR Room",
+    "published_at": "2026-08-20T15:00:03Z",
+    "source_name": "Sports Illustrated -- NE",
+    "author": "Ethan Hurwitz",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:4cc37df906bef57b54bc",
+   "kind": "UNLABELLED",
+   "text": "With no contract extension and seemingly no progress towards a long-term deal, NFL teams are wondering if CB Joey Porter Jr. could be traded instead of extended. Per insider Jordan Schultz, teams are considering Porter a potential trade target.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039167",
+     "player_name": "Joey Porter Jr.",
+     "team": "PIT",
+     "position": "DB"
+    }
+   ],
+   "metadata": {
+    "team": "PIT",
+    "article_title": "Schultz: NFL Teams View CB Joey Porter Jr. As Potential Trade Target",
+    "published_at": "2026-08-21T01:10:21+00:00",
+    "source_name": "Steelers Depot",
+    "author": "Alex Kozora",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "fd53a882e035c9347e28",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:358158dcf87350e2f304",
+   "kind": "UNLABELLED",
+   "text": "After holding in during mandatory minicamp earlier this summer and throughout training camp, Bucs defensive tackle Vita Vea is getting the raise he has been after, and a contract extension. ESPN\u2019s Adam Schefter has reported that the Bucs and Vea have agreed to a one-year contract extension worth $30 million, including $6 million more on his salary this season.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0034773",
+     "player_name": "Vita Vea",
+     "team": "TB",
+     "position": "DL"
+    }
+   ],
+   "metadata": {
+    "team": "TB",
+    "article_title": "BREAKING: Vita Vea Agrees To Contract Extension With Bucs",
+    "published_at": "2026-08-19T23:07:10+00:00",
+    "source_name": "Pewter Report",
+    "author": "Joshua Queipo",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "b88abb9a0f15a41ec040",
+    "underlying_report_id": "15be3c2c0760f0e0eab8",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:3f94f14a5f4368bdd2af",
+   "kind": "UNLABELLED",
+   "text": "The Chargers defensive backs, even without Tarheeb Still made Brock Purdy and Mac Jones struggle to find completions. ESPN's beat writer for the 49ers Nick Wagoner had several noteworthy observations from practice, including Tuli Tuipulotu wreaking havoc on the 49ers offensive line.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039111",
+     "player_name": "Tuli Tuipulotu",
+     "team": "LAC",
+     "position": "LB"
+    }
+   ],
+   "metadata": {
+    "team": "LAC",
+    "article_title": "Chargers Hot in Joint Practice but 49ers Bring Their Substation Injury Problems to LA",
+    "published_at": "2026-08-19T17:30:00Z",
+    "source_name": "Sports Illustrated -- LAC",
+    "author": "Thomas Martinez",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "4bcff5d14803bb356c20",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:c15dc0cf23356a798008",
+   "kind": "UNLABELLED",
+   "text": "A little later on, Dolphins tackle Austin Jackson got himself kicked out of practice for taking part in a brawl that, per Alain Poupart of the Miami Dolphins on SI, saw Dolphins players Keith Cooper Jr., Ronnie Harrison Jr., and Zeek Biggers and Giants players Jameis Winston and J.C. Davis in the middle of it.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041101",
+     "player_name": "J.C. Davis",
+     "team": "NYG",
+     "position": "OL"
+    }
+   ],
+   "metadata": {
+    "team": "NYG",
+    "article_title": "Giants Defense Dominates Dolphins in Joint Practice",
+    "published_at": "2026-08-20T19:41:33Z",
+    "source_name": "Sports Illustrated -- NYG",
+    "author": "Patricia Traina",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "289de29033b10aacc7e8",
+    "underlying_report_id": "1e6af72892e9ce0c389d",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:58cbb324ea3c5d8c8eb4",
+   "kind": "UNLABELLED",
+   "text": "\"Tough finish for the Bears' offense,\" Fishbain wrote. \"They went four-and-out on a two-minute drill and on their next possession, Myles Murphy's sack put them behind the sticks, and then Caleb Williams threw an interception \u2014 his pass to Colston Loveland sailed and landed in Jalen Davis' arms.\"",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039918",
+     "player_name": "Caleb Williams",
+     "team": "CHI",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "CHI",
+    "article_title": "The Good and Not So Good From Bears' Joint Practice With Bengals",
+    "published_at": "2026-08-20T21:00:01Z",
+    "source_name": "Sports Illustrated -- CHI",
+    "author": "Mike Moraitis",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "31b074254dc42f974962",
+    "underlying_report_id": "e4dcc79b93652c7d17b2",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:e48e234b7116d2b8d987",
+   "kind": "UNLABELLED",
+   "text": "He had a pancake block in the fourth quarter that spurred a 16-yard run from running back Frank Gore Jr. Latu also had key blocks on two Buffalo touchdown runs in the fourth quarter,\" Popper wrote.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039471",
+     "player_name": "Frank Gore Jr.",
+     "team": "BUF",
+     "position": "RB"
+    }
+   ],
+   "metadata": {
+    "team": "BUF",
+    "article_title": "Bills' Tight End Named Roster Bubble Standout Other Teams Should Covet",
+    "published_at": "2026-08-19T17:47:00Z",
+    "source_name": "Sports Illustrated -- BUF",
+    "author": "Randy Gurzi",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "756706da516d51697360",
+    "underlying_report_id": "f58b9a3d37aafbd72e11",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:5edc1045b9d2b70520d1",
+   "kind": "UNLABELLED",
+   "text": "During Thursday's joint practice against the Browns, Dawson Knox, Dalton Kincaid and Jackson Hawes all made notable plays catching the football. The latter two posted multi-TD efforts.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040194",
+     "player_name": "Jackson Hawes",
+     "team": "BUF",
+     "position": "TE"
+    }
+   ],
+   "metadata": {
+    "team": "BUF",
+    "article_title": "The Good And Not So Good from Bills' Joint Practice vs. Browns in Berea",
+    "published_at": "2026-08-21T01:28:34Z",
+    "source_name": "Sports Illustrated -- BUF",
+    "author": "Ralph Ventre",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "6f708fcaa30890c60bd1",
+    "underlying_report_id": "f834eb2e4d424a70edab",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:2d0cf33e8de9cc109e6b",
+   "kind": "UNLABELLED",
+   "text": "Carolina Panthers\u2019 wide receiver Jalen Coker has been a popular pick for the reigning NFC South champions, and with good reason. \u201cThrough his first two NFL seasons,\u201d explained Pro Football Focus\u2019 Gordon McGuinness, \u201cCoker has earned PFF receiving grades above 70.0 and averaged at least 1.60 yards per route run in both years.\u201d",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039491",
+     "player_name": "Jalen Coker",
+     "team": "CAR",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "CAR",
+    "article_title": "Jalen Coker Won\u2019t Overtake Tetairoa McMillan, But He Can Still Thrive",
+    "published_at": "2026-08-20T10:00:00Z",
+    "source_name": "Sports Illustrated -- CAR",
+    "author": "Russell Baxter",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "b94e30dc6769e6f9f66d",
+    "underlying_report_id": "9a72782cd92838bcc5d1",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:f62c6be551107da0b619",
+   "kind": "UNLABELLED",
+   "text": "Last week, Jacksonville started the 2026 preseason with a 24-20 win against the New Orleans Saints at Caesars Superdome. Undrafted free agent RB J'Mari Taylor rushed for 78 yards and a touchdown against the Saints, the second-most single-game rushing yards in the NFL this preseason. First-year CB Jabbar Muhammad led the team with six tackles (one for loss) versus New Orleans and sealed the Jaguars' victory with a pass breakup in the end zone on the final play of the game.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040336",
+     "player_name": "Jabbar Muhammad",
+     "team": "JAX",
+     "position": "DB"
+    }
+   ],
+   "metadata": {
+    "team": "JAX",
+    "article_title": "Where to Watch: Panthers vs. Jaguars, Preseason Week 2 of 2026 NFL Season",
+    "published_at": "2026-08-21T00:50:17.593Z",
+    "source_name": "JAX official team site",
+    "author": "Copied",
+    "source_ownership": "TEAM_OWNED",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:e545b56c0a5a5d77d6a3",
+   "kind": "UNLABELLED",
+   "text": "The Bills' defensive line rotation has yet to take shape, and TJ Sanders and Landon Jackson have firmly forced themselves into the mix this summer following disappointing rookie campaigns. Both players flashed again in Thursday against the Browns.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040132",
+     "player_name": "Landon Jackson",
+     "team": "BUF",
+     "position": "DL"
+    }
+   ],
+   "metadata": {
+    "team": "BUF",
+    "article_title": "The Good And Not So Good from Bills' Joint Practice vs. Browns in Berea",
+    "published_at": "2026-08-21T01:28:34Z",
+    "source_name": "Sports Illustrated -- BUF",
+    "author": "Ralph Ventre",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "660dd0b0bccb21036d69",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:e37a827ac031ccd11ef1",
+   "kind": "UNLABELLED",
+   "text": "Gonzalez was placed on injured reserve August 10, two days after leaving early the team's practice at Hard Rock Stadium. He had been signed as a free agent in the offseason, just before the Dolphins re-signed Riley Patterson coming off a franchise-record 27-of-29 performance on field goals.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0036816",
+     "player_name": "Riley Patterson",
+     "team": "MIA",
+     "position": "K"
+    }
+   ],
+   "metadata": {
+    "team": "MIA",
+    "article_title": "Dolphins Wednesday Workout Group Includes Son of NFL Legend, More Transaction Notes",
+    "published_at": "2026-08-19T21:25:50Z",
+    "source_name": "Sports Illustrated -- MIA",
+    "author": "Alain Poupart",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "397e2124e9afc36221a0",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:bb75d3d7e3c453c296b5",
+   "kind": "UNLABELLED",
+   "text": "Wilson delivered an impressive performance, completing 11 of 16 passes for 145 yards and a touchdown. He connected on three passes of 20 yards or more, including throws of 28 and 37 yards to Bub Means and a 28-yard completion to Barion Brown.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041099",
+     "player_name": "Barion Brown",
+     "team": "NO",
+     "position": "KR"
+    }
+   ],
+   "metadata": {
+    "team": "NO",
+    "article_title": "Saints Stock Watch: 6 Players Trending Up After Preseason Breakout Performances",
+    "published_at": "2026-08-20T14:04:22Z",
+    "source_name": "Sports Illustrated -- NO",
+    "author": "Grant Chachere",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "8c752b6992d38725663a",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:21817ce6ce0501e76016",
+   "kind": "UNLABELLED",
+   "text": "The Raiders signed Quay Walker and Nakobe Dean to help solidify what was a bare group of linebackers following the 2025 season. Yet, the Raiders' depth chart faces serious questions after Walker and Dean.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0037615",
+     "player_name": "Nakobe Dean",
+     "team": "LV",
+     "position": "LB"
+    }
+   ],
+   "metadata": {
+    "team": "LV",
+    "article_title": "Raiders Who Helped Their Roster Chances vs. Texans",
+    "published_at": "2026-08-21T03:06:36Z",
+    "source_name": "Sports Illustrated -- LV",
+    "author": "Ezekiel Trezevant",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:4a40bdfc1019a4e896f9",
+   "kind": "UNLABELLED",
+   "text": "Not only that, but the Broncos have taken an extensive look at undrafted rookie Luke Basso throughout offseason practices and training camp. The results ... haven't been great, as Basso has notably mis-snapped a pair of balls, including in last week's preseason opener against the Falcons.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041290",
+     "player_name": "Luke Basso",
+     "team": "DEN",
+     "position": "LS"
+    }
+   ],
+   "metadata": {
+    "team": "DEN",
+    "article_title": "Broncos STC Darren Rizzi Explains Why Team Has Two Long-Snappers",
+    "published_at": "2026-08-19T01:49:34Z",
+    "source_name": "Sports Illustrated -- DEN",
+    "author": "Zack Kelberman",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:0580fb0eb43771ed39f2",
+   "kind": "UNLABELLED",
+   "text": "Some players were as advertised, if not better, in the opener, such as first-round rookie starting guard Olaivavega Ioane and third-round rookie wide receiver Ja'Kobi Lane. There are others who either flashed or didn't have ample opportunity to do so who are slated to get more run and have a lot to gain this week; here are half a dozen who fit that description.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0040866",
+     "player_name": "Olaivavega Ioane",
+     "team": "BAL",
+     "position": "OL"
+    }
+   ],
+   "metadata": {
+    "team": "BAL",
+    "article_title": "6 Ravens Players With the Most To Gain in Second Preseason Game",
+    "published_at": "2026-08-21T00:30:50Z",
+    "source_name": "Sports Illustrated -- BAL",
+    "author": "Josh Reed",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:f0aa38e7badda5eae3cd",
+   "kind": "UNLABELLED",
+   "text": "Meanwhile, rookie punter Tommy Doman Jr. and veteran Mitch Wishnowsky both failed to get a punt rep in during the last preseason game, so that will need to change moving forward in order to give a more proper evaluation to that competition. Only so much can be learned from punts during a practice setting.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0034941",
+     "player_name": "Mitch Wishnowsky",
+     "team": "BUF",
+     "position": "P"
+    }
+   ],
+   "metadata": {
+    "team": "BUF",
+    "article_title": "Five Preseason Questions That Bills Must Still Answer Before September",
+    "published_at": "2026-08-18T13:03:27Z",
+    "source_name": "Sports Illustrated -- BUF",
+    "author": "John Green",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:5b4a29587973203849cd",
+   "kind": "UNLABELLED",
+   "text": "Wide receivers Mecole Hardman Jr., Ja'Mori Maclin and Quentin Skinner also scored touchdowns in the red zone. Another notable play on offense came when quarterback Shane Buechele tossed it down the sideline to running back Ian Wheeler who did a nice job of finding a hole for a positive gain. Wheeler continued to add yards when he lowered his shoulder against a defender to keep the play alive.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0036679",
+     "player_name": "Shane Buechele",
+     "team": "BUF",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "BUF",
+    "article_title": "What we learned from the Bills' joint practice with the Browns",
+    "published_at": "2026-08-21T00:43:57.179Z",
+    "source_name": "BUF official team site",
+    "author": "Maddy Glab",
+    "source_ownership": "TEAM_OWNED",
+    "evidence_access": "",
+    "duplicate_of": "37eb6a4f012636bed7c6",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:204a7c73e7d68b8c625f",
+   "kind": "UNLABELLED",
+   "text": "Last week, Jacksonville started the 2026 preseason with a 24-20 win against the New Orleans Saints at Caesars Superdome. Undrafted free agent RB J'Mari Taylor rushed for 78 yards and a touchdown against the Saints, the second-most single-game rushing yards in the NFL this preseason. First-year CB Jabbar Muhammad led the team with six tackles (one for loss) versus New Orleans and sealed the Jaguars' victory with a pass breakup in the end zone on the final play of the game.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041217",
+     "player_name": "J'mari Taylor",
+     "team": "JAX",
+     "position": "RB"
+    }
+   ],
+   "metadata": {
+    "team": "JAX",
+    "article_title": "Where to Watch: Panthers vs. Jaguars, Preseason Week 2 of 2026 NFL Season",
+    "published_at": "2026-08-21T00:50:17.593Z",
+    "source_name": "JAX official team site",
+    "author": "Copied",
+    "source_ownership": "TEAM_OWNED",
+    "evidence_access": "",
+    "duplicate_of": "c344f681e0df83142f87",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:1e9eb87e1a303f7ff3f2",
+   "kind": "UNLABELLED",
+   "text": "Allen also linked up with tight end Dalton Kincaid for two wide-open touchdowns. One happened in the red zone as Kincaid went airborne to come down with the catch. The second touchdown was a thing of beauty.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0038933",
+     "player_name": "Dalton Kincaid",
+     "team": "BUF",
+     "position": "TE"
+    }
+   ],
+   "metadata": {
+    "team": "BUF",
+    "article_title": "What we learned from the Bills' joint practice with the Browns",
+    "published_at": "2026-08-21T00:43:57.179Z",
+    "source_name": "BUF official team site",
+    "author": "Maddy Glab",
+    "source_ownership": "TEAM_OWNED",
+    "evidence_access": "",
+    "duplicate_of": "1e883da3ccccbb962a42",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:1a22711333684adcebd7",
+   "kind": "UNLABELLED",
+   "text": "Loveland caught a TD pass, as did Kalif Raymond. Loveland's had to stir up bad memories for the Bengals after his miracle TD catch against them last year.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0032464",
+     "player_name": "Kalif Raymond",
+     "team": "CHI",
+     "position": "WR"
+    }
+   ],
+   "metadata": {
+    "team": "CHI",
+    "article_title": "Caleb Williams and Bears Offense Hit One Key Ben Johnson Target ",
+    "published_at": "2026-08-21T02:45:09Z",
+    "source_name": "Sports Illustrated -- CHI",
+    "author": "Gene Chamberlain",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:686e14976987af8e1ba8",
+   "kind": "UNLABELLED",
+   "text": "Brandon Stephens is expected to be the starter on the right side of the secondary after signing a three-year, $36 million contract last offseason, but Wright and Thomas are definitely in a battle opposite of Stephens with only two weeks of preseason football remaining.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0036987",
+     "player_name": "Brandon Stephens",
+     "team": "NYJ",
+     "position": "DB"
+    }
+   ],
+   "metadata": {
+    "team": "NYJ",
+    "article_title": "Nahshon Wright Is Starting to Lose Ground in CB Battle at Jets Camp ",
+    "published_at": "2026-08-20T23:00:00Z",
+    "source_name": "Sports Illustrated -- NYJ",
+    "author": "Colby Colwell",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:a3c4cf052fd2ae7f2add",
+   "kind": "UNLABELLED",
+   "text": "Although George Karlaftis remains in an every-down role, Gillotte's absence could also open the door for R Mason Thomas and other young players to see increased snaps early in the season. The rookie out of Oklahoma flashed his impressive talent in the preseason opener and could benefit from a lengthy absence.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0037192",
+     "player_name": "George Karlaftis",
+     "team": "KC",
+     "position": "DL"
+    }
+   ],
+   "metadata": {
+    "team": "KC",
+    "article_title": "How Ashton Gillotte\u2019s Injury Impacts the Rest of Chiefs\u2019 Defensive Line",
+    "published_at": "2026-08-20T22:00:01Z",
+    "source_name": "Sports Illustrated -- KC",
+    "author": "Joshua Schulman",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "876ab979770604dca8d7",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:13f600dfea6b9c71015c",
+   "kind": "UNLABELLED",
+   "text": "I was all in on Brett Thorson before camp, and I still am. But it seems like a year developing as part of the NFL\u2019s international player pathway and learning from Johnny Hekker may be the best move for the young punter. Will Reichard continues to inspire a level of faith that no reasonable Vikings fan should feel while watching their kicker line up.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039404",
+     "player_name": "Will Reichard",
+     "team": "MIN",
+     "position": "K"
+    }
+   ],
+   "metadata": {
+    "team": "MIN",
+    "article_title": "Vikings 53-Man Roster Projections 2.0: Who Helped Their Case in Preseason Week 1? ",
+    "published_at": "2026-08-19T11:00:02Z",
+    "source_name": "Sports Illustrated -- MIN",
+    "author": "Jason Harmon",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:fa1236b2201199bd5be1",
+   "kind": "UNLABELLED",
+   "text": "The Raiders signed Quay Walker and Nakobe Dean to help solidify what was a bare group of linebackers following the 2025 season. Yet, the Raiders' depth chart faces serious questions after Walker and Dean. It will likely take more than this offseason to answer those questions.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0037074",
+     "player_name": "Quay Walker",
+     "team": "LV",
+     "position": "LB"
+    }
+   ],
+   "metadata": {
+    "team": "LV",
+    "article_title": "Raiders Who Helped Their Roster Chances vs. Texans",
+    "published_at": "2026-08-21T03:06:36Z",
+    "source_name": "Sports Illustrated -- LV",
+    "author": "Ezekiel Trezevant",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "a5bd3d16ea0c33fa2142",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:fcb28666fdc39da32f1e",
+   "kind": "UNLABELLED",
+   "text": "Star running back Jonathan Taylor could not get anything going against Atlanta's front seven during 11-on-11 play in the red zone. The Colts' offense ran to the left side most of the time, but they failed to net any positive results despite running behind Quenton Nelson and Co. But it was still the same when they rushed up the middle and/or the outside.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0034342",
+     "player_name": "Quenton Nelson",
+     "team": "IND",
+     "position": "OL"
+    }
+   ],
+   "metadata": {
+    "team": "IND",
+    "article_title": "Biggest Takeaways From Final Day of Colts Training Camp: Keenan Allen Makes Debut",
+    "published_at": "2026-08-20T22:19:33Z",
+    "source_name": "Sports Illustrated -- IND",
+    "author": "Noah Compton",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "43542a03f748f02bc8c9",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:157fd1b6735c09ab79f5",
+   "kind": "UNLABELLED",
+   "text": "I was all in on Brett Thorson before camp, and I still am. But it seems like a year developing as part of the NFL\u2019s international player pathway and learning from Johnny Hekker may be the best move for the young punter.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0041581",
+     "player_name": "Brett Thorson",
+     "team": "MIN",
+     "position": "P"
+    }
+   ],
+   "metadata": {
+    "team": "MIN",
+    "article_title": "Vikings 53-Man Roster Projections 2.0: Who Helped Their Case in Preseason Week 1? ",
+    "published_at": "2026-08-19T11:00:02Z",
+    "source_name": "Sports Illustrated -- MIN",
+    "author": "Jason Harmon",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:2ba06862a53eeed970c0",
+   "kind": "UNLABELLED",
+   "text": "After a relatively quiet offensive showing during Wednesday\u2019s practice, Atlanta had more positive moments on Day 2. Tua Tagovailoa in particular showed improvement, while Michael Penix Jr. continued working toward a potential return to full-team action.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0036212",
+     "player_name": "Tua Tagovailoa",
+     "team": "ATL",
+     "position": "QB"
+    }
+   ],
+   "metadata": {
+    "team": "ATL",
+    "article_title": "Three Major Falcons Takeaways From Day 2 Joint Practice With Colts",
+    "published_at": "2026-08-21T00:13:04Z",
+    "source_name": "Sports Illustrated -- ATL",
+    "author": "Darius Hayes",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  },
+  {
+   "id": "real:70ad6654388b317b9ccc",
+   "kind": "UNLABELLED",
+   "text": "The Tennessee Titans are set to return nearly the same running back room from last season in 2026, as Tony Pollard will be the starter and Tyjae Spears will likely be the backup. Rookie Nicholas Singleton could also receive snaps and serve as quality depth behind the two top backs.",
+   "guards": "",
+   "players": [
+    {
+     "player_id": "00-0039032",
+     "player_name": "Tyjae Spears",
+     "team": "TEN",
+     "position": "RB"
+    }
+   ],
+   "metadata": {
+    "team": "TEN",
+    "article_title": "Titans' Running Back Room Dealt Perfect Bulletin Board Material for 2026 Season",
+    "published_at": "2026-08-20T22:56:54Z",
+    "source_name": "Sports Illustrated -- TEN",
+    "author": "Dharya Sharma",
+    "source_ownership": "INDEPENDENT",
+    "evidence_access": "",
+    "duplicate_of": "e09b275a0b65ffa38116",
+    "underlying_report_id": "",
+    "reporter_voice": false
+   },
+   "expected": null,
+   "forbidden_mechanism": null,
+   "also_valid_subject": null
+  }
+ ]
+}

@@ -18,6 +18,7 @@ find out what the pipeline actually produces.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import sys
@@ -258,7 +259,10 @@ def build(store, limit: int) -> list[dict]:
         row = next((rows[c] for c in sup.get("evidence_candidate_ids", [])
                     if c in rows), None)
         picked.append({
-            "fantasy_impact_id": f"suppressed:{sup['player_id']}",
+            "fantasy_impact_id": "suppressed:" + hashlib.sha256(
+                (sup["player_id"] + "|"
+                 + "|".join(sorted(sup.get("evidence_candidate_ids", [])))
+                 + "|" + sup.get("reason", "")).encode()).hexdigest()[:16],
             "suppressed": True,
             "player_name": sup["player_name"], "player_id": sup["player_id"],
             "team": sup["team"], "position": sup["position"],
@@ -430,7 +434,8 @@ font-size:.8rem;box-shadow:0 3px 14px rgba(0,0,0,.14);z-index:9}
                              ("REJECT_UNSUPPORTED", "REJECT_OVERSTATED",
                               "REJECT_NOT_FANTASY_RELEVANT",
                               "REJECT_WRONG_HORIZON", "REJECT_WRONG_STRENGTH",
-                              "REJECT_WRONG_PLAYER", "REJECT_DUPLICATE"))
+                              "REJECT_WRONG_PLAYER", "REJECT_WRONG_DIRECTION",
+                              "REJECT_WRONG_UNIT", "REJECT_DUPLICATE"))
                    + '</select></div></div>')
         out.append('</div>')
     out.append("""

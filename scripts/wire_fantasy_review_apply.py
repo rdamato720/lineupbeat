@@ -24,7 +24,8 @@ from wire.store import WireStore
 ACTIONS = {"APPROVE", "APPROVE_WITH_EDIT", "REJECT_UNSUPPORTED",
            "REJECT_OVERSTATED", "REJECT_NOT_FANTASY_RELEVANT",
            "REJECT_WRONG_HORIZON", "REJECT_WRONG_STRENGTH",
-           "REJECT_WRONG_PLAYER", "REJECT_DUPLICATE", "REJECT"}
+           "REJECT_WRONG_PLAYER", "REJECT_WRONG_DIRECTION",
+           "REJECT_WRONG_UNIT", "REJECT_DUPLICATE", "REJECT"}
 
 
 def main():
@@ -41,7 +42,8 @@ def main():
     cols = {r["name"] for r in
             store.conn.execute("PRAGMA table_info(wire_fantasy_impact)")}
     for extra in ("original_commentary", "edited_commentary", "reviewer",
-                  "reviewer_action"):
+                  "reviewer_action", "provider", "model", "schema_version",
+                  "prompt_version"):
         if extra not in cols:
             store.conn.execute(
                 f"ALTER TABLE wire_fantasy_impact ADD COLUMN {extra} TEXT")

@@ -1,0 +1,231 @@
+"""Check a model's answer against the passage it was given.
+
+Nothing a provider returns is trusted. Every claim is re-checked against the
+evidence text, the player registry and the same authority rules the rest of
+the pipeline obeys, and any failure downgrades the answer to ABSTAIN for a
+human rather than being repaired. Repairing a wrong answer would hide the
+error rate, which is the number this whole exercise exists to measure.
+
+The checks are ordered by what they protect. Substring first, because an
+answer quoting text that is not in the passage is not about the passage at
+all. Then identity, then the specific transfers that went wrong in review: a
+pronoun's reps landing on the wrong player, an absent player inheriting his
+replacement's targets, a quote speaker inheriting a claim about someone else.
+"""
+
+from __future__ import annotations
+
+import re
+
+from . import players as pl
+from . import semantic as sem
+
+RETURN_LANG = re.compile(
+    r"(?i)\b(returned to (?:the )?practice|back (?:at|on|in) (?:the )?"
+    r"(?:practice|field)|practiced (?:again|for the first time)|"
+    r"participated again|was (?:a )?full participant|cleared to (?:practice|return)|"
+    r"activated (?:off|from)|came off (?:the )?(?:pup|nfi))\b")
+
+NEVER_RETURN = re.compile(
+    r"(?i)\b(waived|released|cut|signed|claimed off waivers|traded|"
+    r"did not (?:practice|participate)|missed (?:practice|the session)|"
+    r"reaggravated|re-?injured|remains? (?:out|sidelined)|"
+    r"has (?:not|yet to) (?:practiced|participated))\b")
+
+ABSENCE = re.compile(
+    r"(?i)\b(with(?:out)? no |absent|did not (?:practice|participate)|"
+    r"sidelined|out of practice|missing|in a walking boot|held out|"
+    r"was limited)\b")
+
+UNIT = re.compile(
+    r"(?i)\b(first|second|third|1st|2nd|3rd)[-\s]team\b|\bwith the "
+    r"(?:ones|twos|threes|1s|2s|3s|starters)\b")
+
+RELAY = re.compile(
+    r"(?i)\b(the athletic|espn|nfl network|cbs sports|fox sports|"
+    r"pro football focus|pff)\b\s*(?:'s|’s)?|\b(?:per|according to|via)\s+"
+    r"[A-Z][a-z]{2,}|\b[A-Z][a-z]{2,}(?:\s+[A-Z][a-z]{2,})?\s+"
+    r"(?:reported|wrote|tweeted)\b")
+
+# Mechanisms that transfer opportunity. An absent player may never hold one.
+OPPORTUNITY = {"FIRST_TEAM_REPS", "SECOND_TEAM_REPS", "THIRD_TEAM_REPS",
+               "TARGETS", "CARRIES", "ROUTES", "SNAP_SHARE", "RED_ZONE",
+               "ROLE_EXPANSION", "DEPTH_CHART"}
+
+AVAILABILITY = {"LIMITED_PARTICIPATION", "RETURN_TO_PRACTICE", "INJURY",
+                "TRANSACTION"}
+
+
+def _norm(s: str) -> str:
+    return " ".join((s or "").lower().split())
+
+
+def _last(name: str) -> str:
+    n = pl.norm(name or "").split()
+    return n[-1] if n else ""
+
+
+def validate(a: sem.SemanticAssessment, segment: str, players: list,
+             registry, meta: dict | None = None) -> list[str]:
+    """Reasons this answer may not be used. Empty means it stands."""
+    meta = meta or {}
+    bad: list[str] = []
+    seg_norm = _norm(segment)
+
+    if a.decision not in sem.DECISIONS:
+        bad.append(f"unknown decision {a.decision!r}")
+    if a.decision == sem.ABSTAIN:
+        return bad                      # abstention needs no further proof
+
+    # 1. The quote must be in the passage. An answer that cites text the
+    #    passage does not contain is not an answer about this passage.
+    if not a.supporting_quote:
+        bad.append("no supporting_quote")
+    elif _norm(a.supporting_quote) not in seg_norm:
+        bad.append("supporting_quote is not an exact substring of the evidence")
+
+    if a.decision == sem.NO_FANTASY_IMPACT:
+        return bad
+
+    # 2. Identity. The subject must be a real registry player, matched in
+    #    this passage, with the team and position we stored.
+    by_id = {p["player_id"]: p for p in players}
+    pid = a.claim_subject_player_id
+    if not pid:
+        bad.append("INTERPRET with no claim subject id")
+        return bad
+    if pid not in by_id:
+        bad.append(f"claim subject {pid} was not matched in this passage")
+        return bad
+    if registry is not None and pid not in registry.by_id:
+        bad.append(f"claim subject {pid} is not in the player registry")
+        return bad
+    ctx = by_id[pid]
+    reg_player = registry.by_id.get(pid) if registry else None
+    if reg_player is not None:
+        if reg_player.team != ctx.get("team"):
+            bad.append(f"registry team {reg_player.team} != stored "
+                       f"{ctx.get('team')}")
+        if reg_player.position != ctx.get("position"):
+            bad.append(f"registry position {reg_player.position} != stored "
+                       f"{ctx.get('position')}")
+
+    # The id and the name must agree. A response whose name says one player
+    # and whose id says another is not a near miss to be resolved in the
+    # model's favour -- it is an answer we cannot attribute, and picking
+    # either half would be guessing which one it meant.
+    claimed_name = a.claim_subject_player_name or ""
+    if claimed_name and _last(claimed_name) != _last(ctx.get("player_name", "")):
+        bad.append(f"claim subject name {claimed_name!r} does not match the "
+                   f"player its id points to ({ctx.get('player_name')!r})")
+        return bad
+
+    subject_last = _last(ctx.get("player_name", ""))
+
+    # 3. The subject must actually appear in the quoted evidence, or be
+    #    linked to it by a pronoun the model resolved and we can see.
+    quote_norm = pl.norm(a.supporting_quote)
+    named_in_quote = subject_last and subject_last in quote_norm.split()
+    pronoun_ok = False
+    for pa in a.pronoun_antecedents:
+        if _last(pa.get("resolved_to", "")) != subject_last:
+            continue
+        support = _norm(pa.get("supporting_text", ""))
+        if support and support in seg_norm:
+            pronoun_ok = True
+    if not (named_in_quote or pronoun_ok):
+        bad.append("the claim subject is neither named in the supporting "
+                   "quote nor linked by a validated pronoun")
+
+    # 4. A quote speaker may not inherit a claim about somebody else.
+    speaker_last = _last(a.quote_speaker or "")
+    if (a.evidence_classification == "DIRECT_QUOTATION" and speaker_last
+            and speaker_last == subject_last):
+        quoted = " ".join(re.findall(r"[\"“]([^\"“”]{6,})"
+                                     r"[\"”]", segment))
+        others = [p for p in players if _last(p["player_name"]) != subject_last
+                  and _last(p["player_name"]) in pl.norm(quoted).split()]
+        if others:
+            bad.append("the speaker is credited with a claim his own words "
+                       "make about another player")
+
+    # 5. Absence must not be read as opportunity, and the absent player must
+    #    not hold the work that moved to his replacement.
+    roles = {_last(m.get("player_name", "")): m.get("relationship")
+             for m in a.mentioned_players}
+    subject_role = roles.get(subject_last)
+    if subject_role == "ABSENT_PLAYER" and a.fantasy_mechanism in OPPORTUNITY:
+        bad.append(f"an absent player cannot hold {a.fantasy_mechanism}")
+    if subject_role == "ABSENT_PLAYER" and a.direction == "POSITIVE":
+        bad.append("an absent player was given a positive direction")
+
+    # 6. Availability direction, checked against the words rather than the
+    #    label. A waived or missing player is never a return.
+    if a.fantasy_mechanism == "RETURN_TO_PRACTICE":
+        if not RETURN_LANG.search(segment):
+            bad.append("RETURN_TO_PRACTICE without explicit return language")
+        if NEVER_RETURN.search(a.supporting_quote or segment):
+            bad.append("RETURN_TO_PRACTICE over language that means the "
+                       "opposite (waived, missing, reaggravated)")
+        if a.direction == "NEGATIVE":
+            bad.append("RETURN_TO_PRACTICE marked NEGATIVE")
+    if a.fantasy_mechanism == "LIMITED_PARTICIPATION" and a.direction == "POSITIVE":
+        bad.append("an absence or limitation marked POSITIVE")
+
+    # 7. A unit claim needs unit language in the quote, not merely nearby.
+    if a.fantasy_mechanism in ("FIRST_TEAM_REPS", "SECOND_TEAM_REPS",
+                               "THIRD_TEAM_REPS"):
+        if not UNIT.search(a.supporting_quote or ""):
+            bad.append("a unit claim whose supporting quote contains no unit "
+                       "language")
+
+    # 8. Relayed reporting stays relayed.
+    if RELAY.search(segment) and a.evidence_classification in (
+            "FIRSTHAND_OBSERVATION", "DIRECT_QUOTATION"):
+        bad.append("relayed reporting classified as firsthand or a direct "
+                   "quotation")
+
+    # 9. Commentary may not introduce facts. Numbers are the cheap tell.
+    seg_numbers = set(re.findall(r"\b\d+\b", segment))
+    for n in re.findall(r"\b\d+\b", a.fantasy_commentary or ""):
+        if n not in seg_numbers:
+            bad.append(f"commentary states a number ({n}) absent from the "
+                       f"evidence")
+    banned = re.compile(r"(?i)\b(adp|ranking|ranked|projection|projected "
+                        r"points|sleeper|bust|start him|sit him|waiver)\b")
+    if banned.search(a.fantasy_commentary or ""):
+        bad.append("commentary refers to rankings, ADP or projections")
+    for phrase in ("worth monitoring", "may affect his value",
+                   "opportunity side of his value"):
+        if phrase in (a.fantasy_commentary or "").lower():
+            bad.append(f"commentary uses the banned filler {phrase!r}")
+
+    # 10. Corroboration and ceilings, unchanged from the deterministic rules.
+    if meta.get("duplicate_of") and a.impact_strength != "LOW":
+        bad.append("a duplicate of another report was given more than LOW")
+    if (meta.get("source_ownership") == "TEAM_OWNED"
+            and a.impact_strength == "HIGH"
+            and a.fantasy_mechanism != "TRANSACTION"):
+        bad.append("a team-owned observation was given HIGH")
+    if a.impact_strength == "HIGH" and a.projection_action != "UPDATE_RECOMMENDED":
+        pass                              # allowed: HIGH need not force action
+    if a.projection_action == "UPDATE_RECOMMENDED" and a.impact_strength == "LOW":
+        bad.append("UPDATE_RECOMMENDED on LOW evidence")
+    return bad
+
+
+def enforce(a: sem.SemanticAssessment, segment: str, players: list,
+            registry, meta: dict | None = None) -> sem.SemanticAssessment:
+    """Validate, and on any failure downgrade to ABSTAIN for a human.
+
+    Never repaired. A repaired answer is an unmeasured answer, and the error
+    rate is the whole point.
+    """
+    fails = validate(a, segment, players, registry, meta)
+    a.validation_failures = fails
+    if fails:
+        a.decision = sem.ABSTAIN
+        a.abstention_reason = "; ".join(fails[:3])
+        a.fantasy_mechanism = "NO_FANTASY_IMPACT"
+        a.projection_action = "NONE"
+    return a

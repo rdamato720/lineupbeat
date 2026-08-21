@@ -1298,6 +1298,178 @@ with tempfile.TemporaryDirectory() as tmp:
     check("an invalidated record records why and when",
           got["invalidated_at"] and got["invalidation_reason"])
 
+# ------------------------------------------------- semantic LLM layer
+from wire import semantic as SEM
+from wire import semantic_validate as SV
+from wire.providers import REGISTRY as PROVIDERS
+from wire.providers.claude import ClaudeSemanticProvider, redact as credact
+from wire.providers.openai import OpenAISemanticProvider, redact as oredact
+
+check("three providers implement one interface",
+      set(PROVIDERS) == {"rules", "claude", "openai"}
+      and all(issubclass(c, SEM.FantasySemanticProvider)
+              for c in PROVIDERS.values()), sorted(PROVIDERS))
+check("the response schema is strict",
+      SEM.RESPONSE_SCHEMA["additionalProperties"] is False
+      and len(SEM.RESPONSE_SCHEMA["required"]) == 18)
+check("a provider may abstain", SEM.ABSTAIN in SEM.DECISIONS)
+check("Claude uses the native Messages API, not the compatibility layer",
+      "openai" not in code_only(
+          (ROOT / "wire" / "providers" / "claude.py").read_text()).lower())
+
+# Keys: environment only, and scrubbed from anything that escapes.
+for _mod, _key in (("claude.py", "ANTHROPIC_API_KEY"),
+                   ("openai.py", "OPENAI_API_KEY")):
+    _src = (ROOT / "wire" / "providers" / _mod).read_text()
+    check(f"{_mod} reads its key only from the environment",
+          f'os.environ.get("{_key}")' in _src or f"environ.get('{_key}')" in _src)
+    check(f"{_mod} hardcodes no key",
+          not re.search(r"sk-(ant-)?[A-Za-z0-9_\-]{16,}", _src))
+check("an anthropic key is scrubbed from an error",
+      "sk-ant-" not in credact("x-api-key sk-ant-AAAABBBBCCCCDDDDEEEE failed"))
+check("an openai key is scrubbed from an error",
+      "sk-proj" not in oredact("Authorization: Bearer sk-proj-AAAABBBBCCCCDDDD"))
+check("an authorization header is scrubbed",
+      "[REDACTED]" in credact('{"authorization": "Bearer abc123def456"}'))
+
+# A missing key is a clean failure, never a weakened standard.
+_noky = ClaudeSemanticProvider(transport=None)
+_prev = os.environ.pop("ANTHROPIC_API_KEY", None)
+try:
+    _a = _noky.evaluate("He took first-team reps.", {}, [])
+    check("a missing key abstains rather than interpreting",
+          _a.decision == SEM.ABSTAIN and "unavailable" in (_a.abstention_reason or ""),
+          _a.decision)
+finally:
+    if _prev is not None:
+        os.environ["ANTHROPIC_API_KEY"] = _prev
+
+# The validator: the model reads, it does not decide.
+_seg = ("With no Parker Washington on the field, the No. 1 target for Trevor "
+        "Lawrence on Tuesday was pretty easily Brian Thomas Jr.")
+_pl = [{"player_id": "PID", "player_name": "Brian Thomas Jr.",
+        "team": "JAX", "position": "WR"}]
+_base = {"decision": "INTERPRET", "claim_subject_player_id": "PID",
+         "claim_subject_player_name": "Brian Thomas Jr.",
+         "mentioned_players": [{"player_id": "PID",
+                                "player_name": "Brian Thomas Jr.",
+                                "relationship": "BENEFICIARY"}],
+         "quote_speaker": None, "pronoun_antecedents": [],
+         "supporting_quote": "the No. 1 target for Trevor Lawrence on Tuesday "
+                             "was pretty easily Brian Thomas Jr.",
+         "evidence_classification": "FIRSTHAND_OBSERVATION",
+         "fantasy_mechanism": "TARGETS", "direction": "POSITIVE",
+         "impact_strength": "LOW", "impact_horizon": "SHORT_TERM",
+         "projection_action": "NONE", "fantasy_commentary": "He led targets.",
+         "why_it_matters": "x", "limitations": [], "confidence": 0.7,
+         "abstention_reason": None}
+
+
+def _assess(**over):
+    d = dict(_base)
+    d.update(over)
+    p = ClaudeSemanticProvider(
+        transport=lambda prompt: (d, {"input_tokens": 10, "output_tokens": 5}))
+    a = p.evaluate(_seg, {"team": "JAX"}, over.pop("_players", None) or _pl)
+    return SV.enforce(a, _seg, over.get("_players") or _pl, None, {})
+
+
+check("a well-formed response is accepted",
+      _assess().decision == "INTERPRET")
+check("a quote absent from the passage is rejected",
+      _assess(supporting_quote="he took first-team reps").decision == SEM.ABSTAIN)
+check("an unknown player id is rejected",
+      _assess(claim_subject_player_id="NOPE").decision == SEM.ABSTAIN)
+check("a name that disagrees with its id is rejected",
+      _assess(claim_subject_player_name="Parker Washington").decision == SEM.ABSTAIN)
+check("commentary inventing a number is rejected",
+      _assess(fantasy_commentary="He saw 9 targets.").decision == SEM.ABSTAIN)
+check("commentary using banned filler is rejected",
+      _assess(fantasy_commentary="Worth monitoring.").decision == SEM.ABSTAIN)
+check("commentary mentioning ADP or rankings is rejected",
+      _assess(fantasy_commentary="His ADP is wrong.").decision == SEM.ABSTAIN)
+check("a validation failure abstains and is never repaired",
+      _assess(supporting_quote="nope").fantasy_mechanism == "NO_FANTASY_IMPACT")
+
+_absent_pl = [{"player_id": "PID", "player_name": "Parker Washington",
+               "team": "JAX", "position": "WR"}]
+_pa = ClaudeSemanticProvider(transport=lambda p: (
+    {**_base, "claim_subject_player_name": "Parker Washington",
+     "mentioned_players": [{"player_id": "PID",
+                            "player_name": "Parker Washington",
+                            "relationship": "ABSENT_PLAYER"}]},
+    {"input_tokens": 1, "output_tokens": 1}))
+_res = SV.enforce(_pa.evaluate(_seg, {}, _absent_pl), _seg, _absent_pl, None, {})
+check("an absent player cannot inherit the beneficiary's targets",
+      _res.decision == SEM.ABSTAIN
+      and any("absent" in f for f in _res.validation_failures),
+      _res.validation_failures)
+
+_relay_seg = "Per Cameron Wolfe of NFL Network, he was held out of practice."
+_rp = ClaudeSemanticProvider(transport=lambda p: (
+    {**_base, "supporting_quote": "he was held out of practice",
+     "evidence_classification": "FIRSTHAND_OBSERVATION"},
+    {"input_tokens": 1, "output_tokens": 1}))
+_rr = SV.enforce(_rp.evaluate(_relay_seg, {}, _pl), _relay_seg, _pl, None, {})
+check("relayed reporting cannot be relabelled firsthand by the model",
+      _rr.decision == SEM.ABSTAIN
+      and any("relayed" in f for f in _rr.validation_failures),
+      _rr.validation_failures)
+
+_ru = ClaudeSemanticProvider(transport=lambda p: (
+    {**_base, "fantasy_mechanism": "FIRST_TEAM_REPS"},
+    {"input_tokens": 1, "output_tokens": 1}))
+_rc = SV.enforce(_ru.evaluate(_seg, {}, _pl), _seg, _pl, None, {})
+check("a unit claim needs unit language in its own quote",
+      _rc.decision == SEM.ABSTAIN)
+
+_dup = SV.enforce(_assess(impact_strength="MEDIUM"), _seg, _pl, None,
+                  {"duplicate_of": "other"})
+check("a duplicate report cannot exceed LOW", _dup.decision == SEM.ABSTAIN)
+_own = SV.enforce(_assess(impact_strength="HIGH"), _seg, _pl, None,
+                  {"source_ownership": "TEAM_OWNED"})
+check("a team-owned observation cannot reach HIGH", _own.decision == SEM.ABSTAIN)
+
+# Isolation: the semantic layer touches nothing it must not.
+for _f in ("semantic.py", "semantic_validate.py", "providers/rules.py",
+           "providers/claude.py", "providers/openai.py"):
+    _src = code_only((ROOT / "wire" / _f).read_text())
+    check(f"{_f} reads no fantasy projection data",
+          not FORBIDDEN_NAMES.search(_src))
+    check(f"{_f} imports nothing from the fantasy side",
+          not FORBIDDEN_IMPORTS.findall(_src))
+    check(f"{_f} publishes nothing", "wire_publications" not in _src)
+_evalsrc = code_only((ROOT / "scripts" / "wire_semantic_eval.py").read_text())
+check("the evaluation harness publishes nothing",
+      "wire_publications" not in _evalsrc
+      and not FORBIDDEN_NAMES.search(_evalsrc))
+
+# The corpus reports its own labelled fraction rather than assuming it.
+_corpus = json.loads((ROOT / "data" / "wire_eval_corpus.json").read_text())
+check("the corpus separates gold from unlabelled",
+      _corpus["gold_items"] > 0 and _corpus["unlabelled_items"] > 0)
+check("unlabelled items carry no expected answer",
+      all(x["expected"] is None for x in _corpus["items"]
+          if x["kind"] == "UNLABELLED"))
+_gold_ids = {x["id"] for x in _corpus["items"] if x["kind"] == "GOLD"}
+for _need in ("keon-coleman-relay", "washington-thomas-targets",
+              "mccarthy-price-pronoun", "geno-about-omar",
+              "hankerson-waived", "giddens-reinjury", "jacobs-return",
+              "laporta-absent", "stidham-mixed-units"):
+    check(f"the corpus contains the {_need} fixture", _need in _gold_ids)
+
+# Review controls: unique ids and the full reason set.
+_rev = json.loads((ROOT / "data" / "wire_fantasy_review.json").read_text())
+_ids = [i["fantasy_impact_id"] for i in _rev["items"]]
+check("every review row has a unique stable id",
+      len(_ids) == len(set(_ids)), len(_ids) - len(set(_ids)))
+check("suppressed rows do not collide on player id",
+      len({i for i in _ids if i.startswith("suppressed:")})
+      == len([i for i in _ids if i.startswith("suppressed:")]))
+_rhtml = (ROOT / "data" / "wire_fantasy_review.html").read_text()
+for _r in ("REJECT_WRONG_DIRECTION", "REJECT_WRONG_UNIT"):
+    check(f"the review page offers {_r}", _r in _rhtml)
+
 # ------------------------------------------- semantic claim regressions
 from wire import claims as CL
 import wire_fixtures as FX
