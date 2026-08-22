@@ -137,8 +137,7 @@ def main():
         print(f"  manual: {owner.source_id}")
         print(f"    {ingest_one(store, owner, {'url': args.url}, args)}")
         if store:
-            n, changed = store.export_publications()
-            print(f"  {n} published items{' (file updated)' if changed else ''}")
+            print("  publication file untouched; candidate awaits human review")
         return 0
 
     # -- scheduled discovery ----------------------------------------------
@@ -206,9 +205,7 @@ def main():
     for k, v in sorted(detail.items(), key=lambda x: -x[1])[:14]:
         print(f"      {v:>5}  {k.replace('::', ': ')}")
     if store:
-        n, changed = store.export_publications()
-        print(f"  {n} published items{' (file updated)' if changed else ''}")
-        print("  nothing was published; candidates await review_wire.py")
+        print("  publication file untouched; candidates await human review")
     return 0
 
 
