@@ -36,6 +36,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from wire import evidence as ev
+from wire import currentness
+from wire import evidence_integrity as integrity
 from wire import players as pl
 from wire import registry as artreg
 from wire import relevance as rv
@@ -117,7 +119,7 @@ def discover(store, cutoff, limit_per_source: int) -> dict:
     return dict(stats)
 
 
-def in_window(store, cutoff) -> tuple[list, Counter]:
+def in_window(store, cutoff, end) -> tuple[list, Counter]:
     """Stored articles whose publisher timestamp is inside the window."""
     counts = Counter()
     keep = []
@@ -130,6 +132,9 @@ def in_window(store, cutoff) -> tuple[list, Counter]:
             continue
         if ts < cutoff:
             counts["outside_window"] += 1
+            continue
+        if ts > end:
+            counts["after_window"] += 1
             continue
         counts["inside_window"] += 1
         keep.append(dict(r))
@@ -148,7 +153,8 @@ def candidates_for(store, urls: set) -> list:
     return out
 
 
-def deterministic_filter(rows, rel_registry, sources) -> tuple[list, Counter, list]:
+def deterministic_filter(rows, rel_registry, sources,
+                         player_registry=None) -> tuple[list, Counter, list]:
     """Everything decidable without the model. Reasons recorded, not implied."""
     counts = Counter()
     suppressed = []
@@ -170,6 +176,22 @@ def deterministic_filter(rows, rel_registry, sources) -> tuple[list, Counter, li
         if not r["player_id"]:
             counts["identity_not_exact"] += 1
             suppressed.append({**_slim(r), "reason": "no exact player identity"})
+            continue
+        if player_registry is not None:
+            reg_player = player_registry.by_id.get(r["player_id"])
+            if (reg_player is None or pl.norm(reg_player.full_name) !=
+                    pl.norm(r["player_name"]) or reg_player.team != r["team"] or
+                    reg_player.position != r["position"]):
+                counts["registry_identity_mismatch"] += 1
+                suppressed.append({**_slim(r),
+                                   "reason": "candidate identity disagrees "
+                                             "with wire_players"})
+                continue
+        current = currentness.automatic_currentness(
+            r["source_url"], r.get("event_timestamp", ""))
+        if not current["eligible"]:
+            counts["unreliable_event_time"] += 1
+            suppressed.append({**_slim(r), "reason": current["reason"]})
             continue
         if r["duplicate_of"]:
             counts["duplicate_claim"] += 1
@@ -238,6 +260,22 @@ def _slim(r):
             "evidence_text": r["evidence_text"][:220]}
 
 
+def _result_candidate(r):
+    """The model/reviewer record always carries complete evidence.
+
+    ``_slim`` is only for the suppressed list.  Reusing it for model results
+    caused the independent reviewer and human page to receive 220 characters
+    while the generator had read the full passage.
+    """
+    return {"candidate_id": r["candidate_id"],
+            "player_id": r["player_id"], "player_name": r["player_name"],
+            "team": r["team"], "position": r["position"],
+            "source_id": r["source_id"],
+            "source_title": r["source_title"],
+            "evidence_class": r["evidence_class"],
+            "evidence_text": r["evidence_text"]}
+
+
 # Review order: what a fantasy manager needs first.
 PRIORITY = [
     ("injury, absence, participation, return", ("INJURY",
@@ -274,9 +312,11 @@ def main():
     end = now_utc()
     cutoff = end - timedelta(hours=args.hours)
     state = json.loads(STATE.read_text()) if STATE.exists() else {}
-    state.setdefault("window", {"from": cutoff.replace(microsecond=0).isoformat(),
-                                "to": end.replace(microsecond=0).isoformat(),
-                                "hours": args.hours})
+    window = {"from": cutoff.replace(microsecond=0).isoformat(),
+              "to": end.replace(microsecond=0).isoformat(),
+              "hours": args.hours}
+    state.setdefault("first_window", dict(state.get("window") or window))
+    state["window"] = window
     print(f"  window {state['window']['from']} .. {state['window']['to']} "
           f"({args.hours}h, publisher time)")
 
@@ -312,7 +352,7 @@ def main():
         return 0
 
     # Stage 5 onward, from what is stored.
-    articles, wcounts = in_window(store, cutoff)
+    articles, wcounts = in_window(store, cutoff, end)
     urls = {a["canonical_url"] for a in articles}
     state["window_articles"] = {k: v for k, v in wcounts.items()}
     print(f"  articles: {wcounts['inside_window']} inside the window, "
@@ -323,7 +363,9 @@ def main():
     print(f"  evidence candidates in window: {len(rows)}")
     sources = {s.source_id: s for s in artreg.load()}
     rel = rv.load()
-    survivors, counts, suppressed = deterministic_filter(rows, rel, sources)
+    player_registry = pl.load()
+    survivors, counts, suppressed = deterministic_filter(
+        rows, rel, sources, player_registry)
     state["deterministic"] = dict(counts)
     state["suppressed"] = suppressed
     rejected = {k: v for k, v in counts.items() if not k.startswith("note::")}
@@ -355,8 +397,16 @@ def main():
             state["stopped_at_cap"] = {"after_calls": calls,
                                        "remaining": len(survivors) - i + 1}
             break
-        players = [{"player_id": r["player_id"], "player_name": r["player_name"],
-                    "team": r["team"], "position": r["position"]}]
+        reg_player = player_registry.by_id.get(r["player_id"])
+        if (reg_player is None or pl.norm(reg_player.full_name) !=
+                pl.norm(r["player_name"]) or reg_player.team != r["team"] or
+                reg_player.position != r["position"]):
+            fails += 1
+            continue
+        players = [{"player_id": reg_player.player_id,
+                    "player_name": reg_player.full_name,
+                    "team": reg_player.team,
+                    "position": reg_player.position}]
         meta = {"team": r["team"], "article_title": r["source_title"],
                 "published_at": r["published_at"],
                 "source_name": (sources[r["source_id"]].source_name
@@ -367,7 +417,7 @@ def main():
                 "underlying_report_id": r["underlying_report_id"]}
         try:
             a = sv.evaluate_with_retry(prov, r["evidence_text"], meta,
-                                       players, pl.load())
+                                       players, player_registry)
         except Exception as e:
             fails += 1
             continue
@@ -380,7 +430,10 @@ def main():
             interprets += 1
         elif a.decision == sem.ABSTAIN:
             abstains += 1
-        results.append({"candidate": _slim(r),
+        evidence_sha = integrity.sha256_text(r["evidence_text"])
+        request_payload = {"evidence_text": r["evidence_text"],
+                           "metadata": meta, "players": players}
+        results.append({"candidate": _result_candidate(r),
                         "relevance_tier": r.get("relevance_tier"),
                         "relevance_reason": r.get("relevance_reason"),
                         "source_url": r["source_url"],
@@ -389,6 +442,16 @@ def main():
                         "source_name": meta["source_name"],
                         "ownership": meta["source_ownership"],
                         "underlying_report_id": r["underlying_report_id"],
+                        "supplied_identity": {
+                            "player_id": reg_player.player_id,
+                            "player_name": reg_player.full_name,
+                            "team": reg_player.team,
+                            "position": reg_player.position,
+                            "registry_version": player_registry.version,
+                            "registry_check": "VERIFIED"},
+                        "generator_input_evidence_sha256": evidence_sha,
+                        "generator_request_sha256":
+                            integrity.request_sha256(request_payload),
                         "assessment": a.to_dict()})
         if i % 10 == 0:
             print(f"    {i}/{len(survivors)}  ${spend:.2f}  "

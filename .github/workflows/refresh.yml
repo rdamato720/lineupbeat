@@ -62,6 +62,10 @@ jobs:
         run: |
           python scripts/test_resolve.py
           python scripts/test_tapi.py
+          # The semantic review path is a publication boundary. This focused
+          # suite catches stale per-card identity, evidence/request hash
+          # mixing, rolling-page timestamps and claim-subject enforcement.
+          python scripts/test_wire_review.py
           python -m beatwire.cli doctor --sport nfl
           # The homepage header is generated from seo.py. If somebody edits
           # the template by hand instead, the app and the eight static
