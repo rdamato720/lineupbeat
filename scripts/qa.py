@@ -277,7 +277,7 @@ def main():
         ok("workflow present", False, "missing")
     else:
         w = wf.read_text()
-        ok("anthropic key passed", "ANTHROPIC_API_KEY" in w)
+        ok("OpenAI key passed", "OPENAI_API_KEY" in w)
         ok("twitter key passed", "TWITTERAPI_IO_KEY" in w,
            "without it the X writers are skipped and the run still succeeds")
         ok("export limit raised", "--limit" in w,
