@@ -32,6 +32,32 @@ MIN_HOURS = 4.0
 PREFERRED_HOURS = 12.0
 
 
+def extraction_accounting(rows) -> dict:
+    """Separate intentional editorial refusals from extraction attempts."""
+    good = failed = refused = 0
+    for row in rows:
+        count = int(row["c"])
+        status = row["extraction_status"]
+        note = row["note"] or ""
+        if status == "COMPLETE":
+            good += count
+        elif note.startswith("official team site:"):
+            refused += count
+        else:
+            failed += count
+    attempted = good + failed
+    return {"complete": good, "failed": failed, "refused": refused,
+            "rate": round(100 * good / max(1, attempted), 1)}
+
+
+def reviewed_publications_valid(payload: dict) -> bool:
+    rows = payload.get("publications") or []
+    return (payload.get("count") == len(rows)
+            and all(str(r.get("reviewer_action", "")).startswith("APPROVE")
+                    and r.get("public_evidence_summary_approved_by")
+                    for r in rows))
+
+
 def discovery_gate(store) -> tuple[bool, list[str], dict]:
     fails, facts = [], {}
     obs = (json.loads(WINDOW.read_text())["observations"]
@@ -84,12 +110,14 @@ def discovery_gate(store) -> tuple[bool, list[str], dict]:
         fails.append(f"{len(paid_rows)} candidate(s) from a paid source")
 
     items = store.conn.execute(
-        "SELECT extraction_status, COUNT(*) c FROM wire_source_items "
-        "GROUP BY extraction_status").fetchall()
-    total = sum(r["c"] for r in items)
-    good = sum(r["c"] for r in items if r["extraction_status"] == "COMPLETE")
-    facts["extraction_rate"] = round(100 * good / max(1, total), 1)
-    if total and good / total < 0.90:
+        "SELECT extraction_status, note, COUNT(*) c FROM wire_source_items "
+        "GROUP BY extraction_status, note").fetchall()
+    extraction = extraction_accounting(items)
+    facts["extraction_rate"] = extraction["rate"]
+    facts["intentional_refusals"] = extraction["refused"]
+    facts["extraction_failures"] = extraction["failed"]
+    if extraction["complete"] + extraction["failed"] and \
+            extraction["rate"] < 90:
         fails.append(f"extraction {facts['extraction_rate']}% below 90%")
 
     facts["duplicates_linked"] = sum(1 for r in rows if r["duplicate_of"])
@@ -126,6 +154,8 @@ def main():
     print(f"    wrong-team candidates       : {facts['wrong_team_candidates']}")
     print(f"    paid-source candidates      : {facts['paid_candidates']}")
     print(f"    full-text extraction        : {facts['extraction_rate']}%")
+    print(f"    intentional content refusals: {facts['intentional_refusals']}")
+    print(f"    extraction failures         : {facts['extraction_failures']}")
     print(f"    duplicates linked           : {facts['duplicates_linked']}")
     print(f"    underlying reports linked   : {facts['underlying_reports_linked']}")
     print(f"    -> {'PASS' if ok_disc else 'FAIL'}")
@@ -154,8 +184,8 @@ def main():
         ("fantasy dry run built", review_built, ""),
         ("rollback snapshot banked", bool(snaps),
          str(snaps[-1]) if snaps else "none"),
-        ("nothing published", pubs.get("count", 0) == 0,
-         f"{pubs.get('count', 0)} published"),
+        ("reviewed publication set is valid", reviewed_publications_valid(pubs),
+         f"{pubs.get('count', 0)} reviewed publication(s)"),
     ]
     print("\n  MINIMUM_SWITCH_READY")
     for name, ok, note in mins:
