@@ -467,13 +467,44 @@ def main():
     #    above, which is still there after the injection -- so a second build
     #    added a second copy and a third added a third. Keyed on the guard
     #    itself instead.
-    old_render = 'const restSec = document.createElement("section");'
-    guard = 'if (window.__LB_WIRE_REPLACEMENT__) { return; }'
+    #
+    #    It sits at the top of renderFeed rather than just above the All
+    #    Reports section. Placed lower, the function still ran far enough to
+    #    render the feed's own empty state -- a grey "Nothing in this window,
+    #    turn off a filter to see more" box, advising a reader to unfilter a
+    #    list that is retired and will never appear. The whole legacy feed
+    #    render is skipped now, which is what "replaced" was supposed to mean.
+    #    The controls go with it. renderFeed is the only thing that ever
+    #    showed them -- every other view hides them -- and the only thing
+    #    they filtered was the retired list. Left visible they are a row of
+    #    chips above the Wire that change nothing a reader can see.
+    old_render = 'function renderFeed(){\n'
+    #    Scoped to the default view. renderFeed also draws My Roster, which
+    #    is the same renderer filtered to the reader's own players -- guarding
+    #    the whole function emptied that page. Only the wire view is replaced.
+    #    It clears the feed on the way out. Returning early without doing so
+    #    left whatever the previous view had rendered sitting under the Wire
+    #    -- go to My Roster and back and its empty state was still there.
+    guard = ('if (window.__LB_WIRE_REPLACEMENT__ '
+             '&& state.view === "wire" && !state.player) {\n'
+             '    var _c = document.getElementById("controls");\n'
+             '    if (_c) _c.style.display = "none";\n'
+             '    var _f = document.getElementById("feed");\n'
+             '    if (_f) _f.innerHTML = "";\n'
+             '    return;\n  }')
     replaced_all_reports = guard in home or old_render in home
     if guard not in home and old_render in home:
         home = home.replace(
-            old_render,
-            guard + '\n  const restSec = document.createElement("section");', 1)
+            old_render, 'function renderFeed(){\n  ' + guard + '\n', 1)
+
+    #    And the section itself is hidden away from the homepage view. It is
+    #    static markup inserted once, so without this it sat under My Roster
+    #    and under every player page too.
+    show = ('  var _w = document.getElementById("wire");\n'
+            '  if (_w) _w.hidden = !!state.player || state.view !== "wire";\n')
+    if "_w.hidden" not in home:
+        home = home.replace("  renderPos();\n  renderViews();\n",
+                            show + "  renderPos();\n  renderViews();\n", 1)
 
     # 4. Insert the replacement, once. Applying twice appended a second
     #    section and rendered every card again -- nine cards for five

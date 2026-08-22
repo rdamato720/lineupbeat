@@ -142,7 +142,6 @@ a{color:inherit}
    pinch back out to see what he was searching. */
 @media (max-width:760px){
   .finder input{min-height:44px; font-size:16px}
-  .trend{min-height:44px}
 }
 .tbrow .hits{top:2.2rem}
 .tbrow .stamp{flex:0 0 auto; margin-left:0}
@@ -170,33 +169,6 @@ a{color:inherit}
    allows: two sentences, one idea. */
 .lede2{margin-top:.7rem}
 
-/* ---- fantasy data on the homepage ----
-   Five boards a visitor would otherwise only find behind a nav label. */
-.fdata{margin:2.2rem auto 0}
-.fdhead{display:flex; align-items:baseline; gap:.7rem; flex-wrap:wrap;
-  margin-bottom:.9rem}
-.fdhead h2{font-family:var(--agate); text-transform:uppercase;
-  letter-spacing:.07em; font-size:.9rem; margin:0; color:var(--ink)}
-.fdhead .sub{margin:0; color:var(--quiet); font-size:.84rem}
-.fdgrid{display:grid; grid-template-columns:repeat(5, 1fr); gap:.7rem}
-@media (max-width:1000px){ .fdgrid{grid-template-columns:repeat(3, 1fr)} }
-@media (max-width:700px){ .fdgrid{grid-template-columns:repeat(2, 1fr)} }
-@media (max-width:480px){ .fdgrid{grid-template-columns:1fr} }
-.fdcard{display:block; background:var(--card); border:1px solid var(--rule);
-  border-radius:10px; padding:.85rem .9rem; text-decoration:none}
-.fdcard:hover{border-color:var(--signal)}
-.fdcard h3{font-family:var(--agate); text-transform:uppercase;
-  letter-spacing:.05em; font-size:.74rem; color:var(--ink); margin:0}
-.fdcard:hover h3{color:var(--signal)}
-.fdcard p{margin:.35rem 0 0; font-size:.79rem; line-height:1.45;
-  color:var(--quiet)}
-/* Only the rankings card carries a button. It is the newest board and the
-   one a visitor is most likely to have come for, and the arrow says the
-   card goes somewhere -- the others are self-evident from their titles. */
-.fdcardbtn{display:inline-flex; align-items:center; margin:.55rem 0 0;
-  font-family:var(--agate); text-transform:uppercase; letter-spacing:.08em;
-  font-size:.7rem; font-weight:600; color:var(--signal)}
-.fdcardbtn::after{content:" \2192"; margin-left:.3rem}
 .cta{display:flex; align-items:center; gap:14px; flex-wrap:wrap;
   margin-top:34px}
 /* The second CTA is a link, not a button, because it goes somewhere. A
@@ -409,52 +381,10 @@ header.stuck /* ---- search: the front door ---- */
 .count{color:var(--quiet)}
 @media (max-width:820px){  }
 
-/* ---- two column ---- */
-/* The content grid sat 1px under the controls border, so cards and the
-   sidebar looked glued to the rule above them. */
-.cols{display:grid; grid-template-columns:1fr 15rem; gap:1.6rem; align-items:start;
-  padding-top:1.1rem; padding-bottom:1rem}
-@media (max-width:820px){
-  .cols{grid-template-columns:1fr}
-  /* Moving Now goes BELOW the feed on a phone.
-     It was ordered first, so a thumb scrolled through a secondary panel
-     before reaching the reports the page exists to show. Sticky positioning
-     also does nothing in a single column, so it is dropped here.
-
-     Scoped to .cols > aside: there are two asides on this page and an
-     unscoped rule reordered the hero's live panel instead, which is a
-     different element with a different job. */
-  .cols > aside{order:1; position:static; margin-top:.5rem}
-}
-
-/* ---- moving now ---- */
+/* The hero's Recent News panel. This rule outlived the two-column layout
+   it was written for -- the sidebar it also styled is gone -- and stays
+   because the hero aside still wants to stick. */
 aside{position:sticky; top:5.5rem}
-.panel{background:var(--card); border:1px solid var(--rule); padding:.75rem .85rem;
-  border-radius:10px}
-.panel + .panel{margin-top:.7rem}
-.panel h2{font-family:var(--agate); text-transform:uppercase; letter-spacing:.09em;
-  font-size:.72rem; font-weight:600; color:var(--quiet); margin:0 0 .55rem}
-.panel .sub{color:var(--quiet); font-size:.76rem; margin:-.3rem 0 .6rem}
-.trend{all:unset; display:flex; gap:.55rem; align-items:flex-start; width:100%;
-  padding:.5rem 0; cursor:pointer; border-top:1px solid var(--rule); box-sizing:border-box}
-.trend:first-of-type{border-top:0}
-.trend:hover .tname{color:var(--signal)}
-.trow{flex:1; min-width:0}
-.tname{font-family:var(--agate); text-transform:uppercase; letter-spacing:.05em;
-  font-weight:600; font-size:.82rem; display:block}
-/* The reason a player is moving, not a count of how often. A bare number
-   next to a bar reads as two competing metrics and answers neither question
-   a reader actually has. */
-.twhy{display:block; font-size:.8rem; line-height:1.32; color:var(--ink);
-  margin:.12rem 0 .22rem; overflow:hidden; display:-webkit-box;
-  -webkit-line-clamp:2; -webkit-box-orient:vertical}
-.tmeta{color:var(--quiet); font-family:var(--data); font-size:.65rem}
-/* Contained by the row, whatever the inline width says. A percentage on an
-   element inside a flex child resolves against a box that can itself grow,
-   so the bars were running past the panel edge and into the column beside
-   them. */
-.tbar{display:block; height:2px; background:var(--signal); opacity:.75;
-  margin-top:.25rem; max-width:100%; border-radius:1px}
 .face.ring{box-shadow:0 0 0 1px var(--rule)}
 
 /* ---- featured grid ----
@@ -1403,22 +1333,6 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     -webkit-box-orient:vertical; overflow:hidden}
 }
 
-/* ---- fantasy data on a phone ---- */
-.fdmini{display:none}
-@media (max-width:760px){
-  .fdgrid{display:none}
-  .fdmini{display:block; background:var(--card); border:1px solid var(--rule);
-    border-radius:10px; padding:.85rem 1rem; text-decoration:none}
-  .fdmini:hover{border-color:var(--signal)}
-  .fdminilist{display:block; font-size:.82rem; line-height:1.6;
-    color:var(--quiet); font-family:var(--text)}
-  .fdminibtn{display:inline-flex; align-items:center; min-height:44px;
-    margin-top:.5rem; font-family:var(--agate); text-transform:uppercase;
-    letter-spacing:.06em; font-size:.78rem; font-weight:600;
-    color:var(--signal)}
-  .fdminibtn::after{content:" \2192"; margin-left:.35rem}
-}
-
 /* ---- hero, per the coder spec ----
    Numbers from the specification rather than my judgement: a 1130px grid
    at 1.02fr/0.9fr with an 80px gap, 110px above, a headline to 72px, 72px
@@ -1734,7 +1648,6 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
     background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyNTAnIGhlaWdodD0nMTIwJyBmaWxsPSdub25lJyBzdHJva2U9JyNjNmY1M2MnIHN0cm9rZS13aWR0aD0nMS4yJyBzdHJva2UtZGFzaGFycmF5PSc1IDYnPjxwYXRoIGQ9J000MCA4NSBDNzUgMzUsIDEwNSAzNSwgMTM4IDUyJy8+PHBhdGggZD0nTTkwIDk4IEMxMjAgNjAsIDE2NSA2NywgMjA1IDI1Jy8+PGcgc3Ryb2tlLWRhc2hhcnJheT0nMCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtc2l6ZT0nMjQnIGZpbGw9JyNjNmY1M2MnIHN0cm9rZT0nbm9uZSc+PHRleHQgeD0nNDQnIHk9JzM0Jz4mIzIxNTs8L3RleHQ+PHRleHQgeD0nMTAyJyB5PSc1MCc+JiMyMTU7PC90ZXh0Pjx0ZXh0IHg9JzE1NScgeT0nMjYnPiYjMjE1OzwvdGV4dD48dGV4dCB4PScyNCcgeT0nMTA3Jz4mIzk2NzU7PC90ZXh0Pjx0ZXh0IHg9Jzg5JyB5PScxMTQnPiYjOTY3NTs8L3RleHQ+PHRleHQgeD0nMTUxJyB5PScxMDAnPiYjOTY3NTs8L3RleHQ+PC9nPjwvc3ZnPg==") no-repeat center / contain}
   /* The Fantasy Data block goes too: the nav carries it, and on a phone
      it sits between the reader and the reports. */
-  .fdata{display:none}
   /* One button, not two.
      Side by side on a laptop they cost a row; stacked on a phone they are
      two full-width buttons and 150px of decision before the reader has

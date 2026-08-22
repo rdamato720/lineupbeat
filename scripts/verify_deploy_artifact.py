@@ -91,16 +91,22 @@ def check_homepage(root):
           f"{len(nuggets)} report(s) in the artifact"
           + (f", {expected} in the source feed" if expected else ""))
 
-    # Recent News renders resolved reports; Moving Now ranks the same
-    # collection. Each needs its mount point and enough data to fill it.
+    # Recent News renders resolved reports. Moving Now used to rank the same
+    # collection and has been removed from the homepage, so what is checked
+    # now is that it is gone -- and that Recent News, which still reads the
+    # feed, did not go with it.
     resolved = [n for n in nuggets if n.get("resolved")]
     check("Recent News has its mount point", 'id="livelist"' in text)
     check("Recent News has items to render", bool(resolved),
           f"{len(resolved)} resolved report(s)")
-    check("Moving Now has its mount point", 'id="trending"' in text)
-    check("Moving Now has items to rank",
-          len({n.get("player_id") for n in resolved if n.get("player_id")}) > 1,
-          f"{len({n.get('player_id') for n in resolved if n.get('player_id')})} player(s)")
+    check("Moving Now is gone from the homepage",
+          'id="trending"' not in text and 'id="mn-title"' not in text)
+    check("the Fantasy Data section is gone from the homepage",
+          'id="fdata"' not in text and "<h2>Fantasy data</h2>" not in text)
+    # The feed is still the reason Recent News works, so it must survive the
+    # removal of the two sections that also read it.
+    check("the feed still backs Recent News after both removals",
+          len(resolved) > 0, f"{len(resolved)} resolved report(s)")
 
     # Roster rows carry the photos, ADP and search index the rest of the page
     # uses; the Wire must not have taken them either.

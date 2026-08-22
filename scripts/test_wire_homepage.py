@@ -9,11 +9,11 @@ report about him in the bytes a reader downloads. These checks read the
 rendered payload, not the code that produced it.
 
 The distinction that matters throughout is which system a record belongs to.
-feed.json powers Recent News, Moving Now, My Roster and search;
+feed.json powers Recent News, My Roster and search;
 wire_publications.json powers the Wire section and nothing else reads it. The
 Wire replaces one renderer -- All reports -- and must leave the feed beneath
 it alone. It once emptied that collection on the way past, which is what
-Recent News and Moving Now render from, and both shipped blank.
+Recent News renders from, and it shipped blank.
 
 So a player a Wire reviewer rejected may still appear in Recent News: that is
 a legitimate X-wire report about him, not a hidden Wire card. What he may
@@ -81,9 +81,19 @@ resolved = [n for n in nuggets if n.get("resolved")]
 check("Recent News has its mount point", 'id="livelist"' in html)
 check("Recent News has items to render", bool(resolved),
       f"{len(resolved)} resolved report(s)")
-check("Moving Now has its mount point", 'id="trending"' in html)
-check("Moving Now has more than one player to rank",
-      len({n.get("player_id") for n in resolved if n.get("player_id")}) > 1)
+# Moving Now and the Fantasy Data section are removed from the homepage.
+# Removed from the markup, not hidden: a section that still ships and is
+# merely display:none is still bytes a reader downloads and a thing a future
+# stylesheet can bring back.
+check("Moving Now is gone", 'id="trending"' not in html
+      and 'id="mn-title"' not in html and 'class="panel"' not in html)
+check("the Fantasy Data section is gone",
+      'id="fdata"' not in html and "<h2>Fantasy data</h2>" not in html
+      and 'class="fdgrid"' not in html)
+check("their renderers are gone too",
+      "renderTrending" not in html and "function trending(" not in html)
+check("Recent News still has data after both removals", bool(resolved),
+      f"{len(resolved)} resolved report(s)")
 
 # --- excluded names: never as a Wire card; a feed report about them is fine ---
 for who in EXCLUDED:
