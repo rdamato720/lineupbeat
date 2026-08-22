@@ -38,6 +38,14 @@ ANALYSIS_OR_OPINION = "ANALYSIS_OR_OPINION"
 # Somebody else's reporting, arriving second-hand. Its own class rather than
 # a flavour of analysis: a reviewer needs to see at a glance that the outlet
 # on the byline is not the outlet that did the work.
+# A club's own participation report, injury designation or transaction.
+#
+# Deliberately not FIRSTHAND_OBSERVATION. Firsthand means a named, researched
+# reporter saw it, and the health check enforces that -- a designation has no
+# such reporter and should not borrow one. It is stronger than firsthand in
+# its own way: the team is the authority on its own designations, which is
+# also why it is never independent corroboration of anything.
+OFFICIAL_DESIGNATION = "OFFICIAL_DESIGNATION"
 RELAYED_REPORTING = "RELAYED_REPORTING"
 UNCERTAIN = "UNCERTAIN"
 
@@ -89,6 +97,23 @@ SAID = re.compile(
     r"\b(said|says|told|explained|added|noted|acknowledged|insisted|"
     r"admitted|stated)\b", re.I)
 QUOTED = re.compile(r"[\"“”]([^\"“”]{12,})[\"“”]")
+
+# An official participation designation. A club's practice report saying who
+# did not practice, and listing the body part beside each name, is the team's
+# own designation -- the most reliable availability evidence there is. It was
+# being read as an unattributed medical claim and filed UNCERTAIN, because it
+# contains the word "knee" and nobody is quoted saying it. The designation IS
+# the attribution.
+DESIGNATION = re.compile(
+    r"(the following [\w\s]{0,24}(?:did not|will not) (?:practice|participate)"
+    r"|did not (?:practice|participate) (?:on |today|wednesday|thursday|friday"
+    r"|saturday|sunday|monday|tuesday)"
+    r"|was (?:a )?(?:full|limited|non-?)participant"
+    r"|listed as (?:a )?(?:full|limited|non-?participant|dnp)"
+    r"|\bDNP\b|practice report|injury report"
+    r"|(?:placed on|activated from|designated (?:to return|for return))"
+    r"|(?:signed|waived|released|claimed|traded|activated) (?:to|from|by)?)",
+    re.I)
 
 # Medical claims need explicit attribution or they are UNCERTAIN, whatever
 # else the sentence looks like.
@@ -312,6 +337,12 @@ def classify(text: str, *, reporter_voice: bool,
         why.append("relays another outlet or an unnamed source")
         return ANALYSIS_OR_OPINION if HEDGE.search(t) else UNCERTAIN, 0.4, why
 
+    designation = DESIGNATION.search(t)
+    if designation:
+        why.append(f"official participation or transaction designation "
+                   f"({designation.group(0).strip().lower()!r})")
+        return OFFICIAL_DESIGNATION, 0.75, why
+
     if MEDICAL.search(t) and not SAID.search(t):
         # A diagnosis nobody is named as giving. The single most damaging
         # thing this pipeline could publish confidently -- unless what is
@@ -350,6 +381,40 @@ def classify(text: str, *, reporter_voice: bool,
     if observed:
         why.append("observation language but the speaker is not established")
         return UNCERTAIN, 0.3, why
+
+    # An approved reporter stating a fact is reporting it firsthand.
+    #
+    # This used to require one of the phrases in OBSERVED, which is a
+    # whitelist -- so "Burrow completed his first four passes in the first
+    # team period, connecting with Higgins three times and Drew Sample once"
+    # was UNCERTAIN, from a byline we had researched and approved precisely
+    # because he files from the facility. The whitelist asked a beat writer
+    # to prove he was there in every sentence, and the ones who write plainly
+    # failed hardest.
+    #
+    # The burden belongs the other way round: for an approved firsthand
+    # byline, a declarative sentence with no hedge, no attribution to anyone
+    # else and no relay is an observation. Lower confidence than an explicit
+    # marker, because the marker is still better evidence.
+    #
+    # An unapproved byline is unchanged: still UNCERTAIN, still a human's
+    # problem. This does not lower the firsthand standard, it stops applying
+    # a lexical test that the standard never asked for.
+    # An attributed statement with no quotation marks is still the speaker's
+    # claim, not the reporter's observation. "Campbell said Gibbs has a
+    # hamstring strain" is a coach on the record -- eligible, and among the
+    # best availability evidence there is -- but calling it FIRSTHAND would
+    # put the reporter's name on a diagnosis he was told.
+    who_spoke = named_speaker(t)
+    if who_spoke and SAID.search(t):
+        why.append(f"statement attributed to {who_spoke!r} without "
+                   f"quotation marks")
+        return DIRECT_QUOTATION, 0.6, why
+
+    if reporter_voice:
+        why.append("declarative statement in an approved reporter's voice, "
+                   "with no hedge, attribution or relay")
+        return FIRSTHAND_OBSERVATION, 0.55, why
 
     why.append("no observation, attribution or hedging markers")
     return UNCERTAIN, 0.25, why
@@ -410,6 +475,19 @@ SPEAKER = re.compile(
     r"([A-Z][\w.'\-]+(?:\s+[A-Z][\w.'\-]+){0,2})\s+"
     r"(?:said|says|told|explained|added|noted|acknowledged|insisted|"
     r"admitted|stated)", re.I)
+
+
+def named_speaker(text: str) -> str:
+    """Who is named as speaking in this span, if anyone.
+
+    A coach talking about a player's availability is the most actionable
+    evidence a beat produces, and it is not a quotation *from* that player.
+    Recording who spoke lets the span stay a DIRECT_QUOTATION filed against
+    the player it concerns, with the speaker carried alongside it, instead of
+    being demoted to UNCERTAIN for the crime of not being self-quotation.
+    """
+    m = SPEAKER.search(text or "")
+    return (m.group(1) or "").strip() if m else ""
 
 
 def is_speaker(player_name: str, text: str) -> bool:

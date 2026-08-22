@@ -179,8 +179,12 @@ def deterministic_filter(rows, rel_registry, sources) -> tuple[list, Counter, li
             counts["relayed_reporting"] += 1
             suppressed.append({**_slim(r), "reason": "relayed reporting"})
             continue
+        # What may reach the model. An official designation is not firsthand
+        # and is not a quotation, and it is better evidence of availability
+        # than either: the club is the authority on its own practice report.
         if r["evidence_class"] not in ("FIRSTHAND_OBSERVATION",
-                                       "DIRECT_QUOTATION"):
+                                       "DIRECT_QUOTATION",
+                                       "OFFICIAL_DESIGNATION"):
             counts["not_original_evidence"] += 1
             suppressed.append({**_slim(r),
                                "reason": f"{r['evidence_class']} is not "
@@ -195,7 +199,11 @@ def deterministic_filter(rows, rel_registry, sources) -> tuple[list, Counter, li
                                "tier": verdict["tier"]})
             continue
         if verdict["tier"] == rv.CONTINGENT:
-            counts["evidence_created_relevance"] += 1
+            # A tally of survivors, not a rejection: this row continues to
+            # the model. Named so it cannot be added into a rejection total
+            # again -- doing so is how the earlier accounting reported 2,637
+            # outcomes for a corpus of 2,636.
+            counts["note::contingent_relevance_survivors"] += 1
 
         # One underlying report, one call. Two sites rewriting one original
         # is not two reports and must not be paid for twice.
@@ -318,7 +326,12 @@ def main():
     survivors, counts, suppressed = deterministic_filter(rows, rel, sources)
     state["deterministic"] = dict(counts)
     state["suppressed"] = suppressed
+    rejected = {k: v for k, v in counts.items() if not k.startswith("note::")}
+    notes = {k[6:]: v for k, v in counts.items() if k.startswith("note::")}
     print(f"  after deterministic filters: {len(survivors)} reach the model")
+    print(f"  {sum(rejected.values())} rejected + {len(survivors)} sent = "
+          f"{sum(rejected.values()) + len(survivors)} "
+          f"({'reconciles' if sum(rejected.values()) + len(survivors) == len(rows) else 'DOES NOT RECONCILE against ' + str(len(rows))})")
     for k, v in counts.most_common():
         print(f"      {v:>5}  {k}")
 

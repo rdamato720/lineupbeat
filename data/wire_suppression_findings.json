@@ -1,0 +1,91 @@
+{
+ "audited_at": "2026-08-21",
+ "window": {
+  "from": "2026-08-19T16:31:51+00:00",
+  "to": "2026-08-21T16:31:51+00:00"
+ },
+ "denominator_note": "The reviewer asked the table to sum to 2,636. It does not, and cannot: 2,636 was measured mid-flight while a broader discovery pass was still extracting. The same window now holds 3,308 PENDING candidates. 3,308 is the honest denominator; 2,636 described a corpus that no longer exists.",
+ "hypotheses": [
+  {
+   "id": "H1",
+   "claim": "direct coach quotations classified as analysis or uncertain",
+   "verdict": "CONFIRMED",
+   "evidence": "41 sampled rows carry quoted words plus an attribution verb but were demoted to UNCERTAIN by a rule requiring the tagged player to be the speaker. A coach on a player's availability is the most actionable evidence the wire produces.",
+   "example": "Tony Pollard (TEN RB), Jim Wyatt: 'He woke up feeling some stiffness, hopefully we get him back on Friday,' Saleh said.",
+   "fix": "The quotation guard is narrowed to what it was written for: the player must be named in the span, the speaker is recorded, and whether the quote supports a claim about that player is left to the semantic layer."
+  },
+  {
+   "id": "H2",
+   "claim": "official injury and participation reports discarded",
+   "verdict": "CONFIRMED",
+   "evidence": "463 sampled rejections come from official club sites; 224 of them as 'insufficient evidence'. A club practice report naming who did not practice was read as an unattributed medical claim because it contains a body part and nobody is quoted.",
+   "example": "Dameon Pierce (PHI RB), Chris McPherson: 'The following Eagles did not practice on Thursday: ... tight end Grant Calcaterra (back) ...'",
+   "fix": "A participation or transaction designation is now its own path and classifies as firsthand. The designation IS the attribution."
+  },
+  {
+   "id": "H3",
+   "claim": "national original reporting treated as relay",
+   "verdict": "NOT CONFIRMED",
+   "evidence": "Only 6 rows in the window were rejected as relay, and the one sampled is a genuine relay of PFF's analysis. Relay is not a meaningful suppressor here.",
+   "note": "One latent defect found: the RELAY pattern matched the stat phrase 'per route run' via a bare 'per '. It happened to be a real relay, so nothing was lost, but the pattern can fire on statistics."
+  },
+  {
+   "id": "H4",
+   "claim": "actionable absences suppressed because no cause was stated",
+   "verdict": "CONFIRMED",
+   "evidence": "27 sampled absences rejected as insufficient evidence, including rest days and non-participation.",
+   "example": "Chris Olave (NO WR): 'Wide receiver Chris Olave and linebacker Kaden Elliss both did not dress for practice, a rest day.'",
+   "fix": "Covered by the designation path and by the approved-byline change."
+  },
+  {
+   "id": "H5",
+   "claim": "rosterable players excluded by a narrow relevance registry",
+   "verdict": "NOT CONFIRMED",
+   "evidence": "The relevance gate rejected 39 of 3,308 candidates, 1.2%. It is not the bottleneck."
+  },
+  {
+   "id": "H6",
+   "claim": "backups excluded despite a material promotion",
+   "verdict": "NOT CONFIRMED AS A VOLUME PROBLEM",
+   "evidence": "7 backup-quarterback rejections in the window, each requiring a promotion, starter absence or first-team opportunity the evidence did not contain."
+  },
+  {
+   "id": "H7",
+   "claim": "distinct developments collapsed as duplicates for sharing a player",
+   "verdict": "CONFIRMED",
+   "evidence": "107 players had two or more genuinely different passages all marked duplicate. The overlap test ran across the whole article, so any two paragraphs naming the same player and sharing camp vocabulary cleared 0.6.",
+   "example": "Shedeur Sanders (CLE): 'split first team reps during Thursday's joint practice' collapsed into a separate paragraph about resting starters.",
+   "fix": "Overlap is now compared only within the same segment. Consecutive windows of one paragraph are one observation; two paragraphs are two."
+  },
+  {
+   "id": "H8",
+   "claim": "multiple practice days collapsed into one underlying report",
+   "verdict": "CONFIRMED, same cause as H7"
+  },
+  {
+   "id": "H9",
+   "claim": "approved reporting rejected because the author is unresearched",
+   "verdict": "CONFIRMED, AND WORSE",
+   "evidence": "107 sampled rows came from bylines already classified FIRSTHAND_APPROVED and were still rejected, because the classifier required one of a fixed list of observation phrases. The whitelist asked an approved beat writer to prove he was at practice in every sentence, and the ones who write plainly failed hardest.",
+   "example": "Drew Sample (CIN TE), Jay Morrison: 'Burrow completed his first four passes in the first team period, connecting with Higgins three times and Drew Sample once.'",
+   "fix": "For an approved byline, a declarative sentence with no hedge, no attribution and no relay is now an observation at lower confidence. An unapproved byline is unchanged."
+  },
+  {
+   "id": "H10",
+   "claim": "segmentation failing to isolate numbered observation lists",
+   "verdict": "CONFIRMED AS A CONSEQUENCE",
+   "evidence": "128 rejected rows are bulleted or numbered observation lines. Segmentation isolates them correctly; they were then rejected by the marker whitelist, because a bullet is written plainly.",
+   "example": "Will Shipley (PHI RB), Dave Spadaro: '- A move-the-ball period ... Will Shipley got involved in the pass game, winning on a wheel route up the right sideline for a big gain.'"
+  }
+ ],
+ "defects_found_incidentally": [
+  {
+   "what": "598 exact-duplicate PENDING rows (identical url, player and full span) plus 299 overlapping-window pairs",
+   "why_it_matters": "The documented contract says candidate ids derive from the span plus the player so re-running updates rather than duplicates. It is being violated, and the duplicates inflate every denominator in this audit."
+  },
+  {
+   "what": "The backfill's own filter counters do not sum to its corpus",
+   "why_it_matters": "1462+619+529+9+5+1+12 is 2,637 against a stated 2,636. The counters answer 'what stopped this row', which is not a partition. The reconciliation script is the partition."
+  }
+ ]
+}

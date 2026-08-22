@@ -1963,3 +1963,56 @@ if FAILURES:
     print(f"{len(FAILURES)} failed: " + ", ".join(FAILURES[:6]))
     sys.exit(1)
 print("all passed")
+
+# --- the suppression audit of 21 August ------------------------------------
+#
+# Twelve model calls came out of two days and 468 articles. The cause was not
+# the evidence standard: an approved beat writer's plain declarative sentence
+# failed a lexical whitelist of observation phrases, so the plainest writers
+# were suppressed hardest. These pin the corrected behaviour.
+
+check("an approved byline's declarative sentence is an observation",
+      cls("Burrow completed his first four passes in the first team period, "
+          "connecting with Higgins three times and Drew Sample once.",
+          reporter_voice=True) == ev.FIRSTHAND_OBSERVATION)
+check("the same sentence from an unresearched byline is still uncertain",
+      cls("Burrow completed his first four passes in the first team period, "
+          "connecting with Higgins three times and Drew Sample once.",
+          reporter_voice=False) == ev.UNCERTAIN)
+check("a hedge still beats an approved byline",
+      cls("I think Blair could earn a bigger role this season.",
+          reporter_voice=True) == ev.ANALYSIS_OR_OPINION)
+
+check("a club participation report is an official designation",
+      cls("The following Eagles did not practice on Thursday: tight end "
+          "Grant Calcaterra (back).", reporter_voice=False)
+      == ev.OFFICIAL_DESIGNATION)
+check("a designation is not firsthand, so it borrows no reporter",
+      cls("The following Eagles did not practice on Thursday: tight end "
+          "Grant Calcaterra (back).", reporter_voice=False)
+      != ev.FIRSTHAND_OBSERVATION)
+
+check("a coach on the record without quote marks is attributed, not observed",
+      cls("Campbell said Gibbs has a hamstring strain and will miss four "
+          "weeks.", reporter_voice=True) == ev.DIRECT_QUOTATION)
+check("an unattributed diagnosis is still uncertain",
+      cls("Gibbs has a torn hamstring and will miss four weeks.",
+          reporter_voice=True) == ev.UNCERTAIN)
+
+# The backfill's counters must partition its corpus. They did not: a tally of
+# survivors was being added into the rejection total, which is how 2,636
+# candidates produced 2,637 outcomes.
+_bf = (ROOT / "scripts" / "wire_backfill.py").read_text()
+check("survivor tallies are namespaced out of the rejection total",
+      'counts["note::contingent_relevance_survivors"]' in _bf
+      and 'if not k.startswith("note::")' in _bf)
+check("the backfill prints its own reconciliation check",
+      "DOES NOT RECONCILE" in _bf)
+
+# Duplicate collapse compares within a segment. Across the whole article, any
+# two paragraphs naming one player and sharing camp vocabulary cleared 0.6.
+_ex = (ROOT / "scripts" / "wire_extract.py").read_text()
+check("duplicate overlap is scoped to one segment",
+      'str(prev_loc).split("s")[0] != here' in _ex)
+check("a quotation records who actually spoke",
+      '"quote_speaker"' in _ex and "named_speaker" in _ex)

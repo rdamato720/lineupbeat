@@ -215,27 +215,56 @@ def extract_item(store, item, reg, ctx, cfg, dry=False,
             ckey = ev.claim_key(pid, text)
             dup = seen_claims.get(ckey, "")
             if not dup:
-                # Windows overlap by construction -- each span is a sentence
-                # plus its neighbours -- so the same observation appears in
-                # consecutive spans with different text and a different key.
-                # An identical key catches a republished story; this catches
-                # the same claim said twice about the same player in the same
-                # article.
-                for prev_text, prev_id, prev_pid in claim_spans:
-                    if prev_pid == pid and ev.overlap(text, prev_text) >= 0.6:
+                # Only within the same segment. Windows overlap by
+                # construction -- each span is a sentence plus its
+                # neighbours -- so consecutive spans of one paragraph really
+                # are one observation. Two different paragraphs are two
+                # different observations, and comparing across the whole
+                # article collapsed them: Shedeur Sanders splitting first-team
+                # reps and Monken on resting starters became one report
+                # because both name Sanders and share enough camp vocabulary
+                # to clear 0.6.
+                here = str(location).split("s")[0]
+                for prev_text, prev_id, prev_pid, prev_loc in claim_spans:
+                    if prev_pid != pid:
+                        continue
+                    if str(prev_loc).split("s")[0] != here:
+                        continue
+                    if ev.overlap(text, prev_text) >= 0.6:
                         dup = prev_id
                         break
 
-            # A quotation belongs to whoever gave it. Filed per player, a
-            # span that quotes one man and lists another handed the second
-            # a direct quotation he never spoke.
+            # A quotation belongs to whoever gave it -- but it is usually
+            # ABOUT somebody else, and that somebody is the reason it matters.
+            #
+            # This used to demote any quotation the tagged player did not
+            # personally speak, which threw away exactly the class the wire
+            # exists to catch: a coach saying a player will be back Friday, a
+            # coordinator describing a role. The original bug it was written
+            # for is real -- a span quoting Hassan Haskins was filed as a
+            # quotation from Jam Miller, who is merely named nearby -- so the
+            # guard stays, narrowed to what it was for: the player has to be
+            # named in the span, and whoever actually spoke is recorded and
+            # travels with the record. Whether the quote supports a claim
+            # about this player is a question of meaning, which is the
+            # semantic layer's job, not a regex's.
             klass_here, conf_here, why_here = klass, conf, list(why)
-            if klass_here == ev.DIRECT_QUOTATION and not ev.is_speaker(
-                    player.full_name if player else name, text):
-                klass_here = ev.UNCERTAIN
-                conf_here = 0.3
-                why_here = [f"quoted words, but the named speaker is not "
-                            f"{(player.full_name if player else name)!r}"] + why_here
+            speaker = ""
+            if klass_here == ev.DIRECT_QUOTATION:
+                who = player.full_name if player else name
+                speaker = ev.named_speaker(text)
+                mentioned = pl.norm(who).split()[-1:] and (
+                    pl.norm(who).split()[-1] in pl.norm(text).split())
+                if not speaker:
+                    klass_here, conf_here = ev.UNCERTAIN, 0.3
+                    why_here = ["quoted words with no named speaker"] + why_here
+                elif not mentioned:
+                    klass_here, conf_here = ev.UNCERTAIN, 0.3
+                    why_here = [f"quoted words and {who!r} is not named in "
+                                f"the span"] + why_here
+                elif not ev.is_speaker(who, text):
+                    why_here = [f"quotation from {speaker!r} about "
+                                f"{who!r}"] + why_here
 
             origin = ev.origin_of(text)
             urid = ev.underlying_report_id(origin, text)
@@ -249,6 +278,7 @@ def extract_item(store, item, reg, ctx, cfg, dry=False,
                     seen_reports[urid] = "pending"
 
             rec = {
+                "quote_speaker": speaker if klass_here == ev.DIRECT_QUOTATION else "",
                 "claim_key": ckey,
                 **origin,
                 "underlying_report_id": urid,
@@ -302,7 +332,7 @@ def extract_item(store, item, reg, ctx, cfg, dry=False,
                 stats["duplicates"] += 1
             else:
                 seen_claims[ckey] = rec["candidate_id"]
-                claim_spans.append((text, rec["candidate_id"], pid))
+                claim_spans.append((text, rec["candidate_id"], pid, location))
                 if urid and seen_reports.get(urid) == "pending":
                     seen_reports[urid] = rec["candidate_id"]
             stats["candidates"] += 1
