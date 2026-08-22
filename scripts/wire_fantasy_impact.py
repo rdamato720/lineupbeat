@@ -31,7 +31,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from wire import fantasy as fz
 from wire import semantic as sem
 from wire import semantic_validate as sv
-from wire.providers.claude import ClaudeSemanticProvider
+from wire.providers.openai import OpenAISemanticProvider
 from wire import players as pl
 from wire import relevance as rv
 from wire.store import WireStore
@@ -88,8 +88,8 @@ def main():
                     help="dark launch: treat PENDING evidence as supporting")
     ap.add_argument("--show", action="store_true")
     ap.add_argument("--limit", type=int, default=10)
-    ap.add_argument("--interpreter", default="claude",
-                    choices=["claude", "rules"],
+    ap.add_argument("--interpreter", default="openai",
+                    choices=["openai", "rules"],
                     help="rules is the measured baseline and may not produce "
                          "publishable commentary")
     args = ap.parse_args()
@@ -110,16 +110,16 @@ def main():
             print(f"    {r['lineupbeat_commentary']}")
         return 0
 
-    # Claude is the interpreter. The rules engine keeps segmentation, name
+    # OpenAI is the interpreter. The rules engine keeps segmentation, name
     # detection, registry validation, relay detection, ownership, authority,
     # deduplication and the deterministic response check -- everything except
-    # deciding what a passage means. When Claude is unavailable the evidence
+    # deciding what a passage means. When OpenAI is unavailable the evidence
     # stays pending; it is never quietly reinterpreted by the baseline,
     # because the baseline is the thing that produced the errors under review.
-    if args.interpreter == "claude":
-        prov = ClaudeSemanticProvider()
+    if args.interpreter == "openai":
+        prov = OpenAISemanticProvider()
         if not prov.available():
-            print("  Claude is unavailable (no ANTHROPIC_API_KEY).")
+            print("  OpenAI is unavailable (no OPENAI_API_KEY).")
             print("  Evidence is retained and left PENDING for manual review.")
             print("  The rules engine will NOT generate commentary in its place.")
             return 4
