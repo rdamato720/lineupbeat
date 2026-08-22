@@ -1313,9 +1313,10 @@ from wire import semantic_validate as SV
 from wire.providers import REGISTRY as PROVIDERS
 from wire.providers.claude import ClaudeSemanticProvider, redact as credact
 from wire.providers.openai import OpenAISemanticProvider, redact as oredact
+from wire.providers.openai_review import OpenAIIndependentReviewer
 
-check("three providers implement one interface",
-      set(PROVIDERS) == {"rules", "claude", "openai"}
+check("only rules and OpenAI are active providers",
+      set(PROVIDERS) == {"rules", "openai"}
       and all(issubclass(c, SEM.FantasySemanticProvider)
               for c in PROVIDERS.values()), sorted(PROVIDERS))
 check("the response schema is strict",
@@ -1342,8 +1343,8 @@ check("an authorization header is scrubbed",
       "[REDACTED]" in credact('{"authorization": "Bearer abc123def456"}'))
 
 # A missing key is a clean failure, never a weakened standard.
-_noky = ClaudeSemanticProvider(transport=None)
-_prev = os.environ.pop("ANTHROPIC_API_KEY", None)
+_noky = OpenAISemanticProvider(transport=None)
+_prev = os.environ.pop("OPENAI_API_KEY", None)
 try:
     _a = _noky.evaluate("He took first-team reps.", {}, [])
     check("a missing key abstains rather than interpreting",
@@ -1351,7 +1352,7 @@ try:
           _a.decision)
 finally:
     if _prev is not None:
-        os.environ["ANTHROPIC_API_KEY"] = _prev
+        os.environ["OPENAI_API_KEY"] = _prev
 
 # The validator: the model reads, it does not decide.
 _seg = ("With no Parker Washington on the field, the No. 1 target for Trevor "
@@ -1377,7 +1378,7 @@ _base = {"decision": "INTERPRET", "claim_subject_player_id": "PID",
 def _assess(**over):
     d = dict(_base)
     d.update(over)
-    p = ClaudeSemanticProvider(
+    p = OpenAISemanticProvider(
         transport=lambda prompt: (d, {"input_tokens": 10, "output_tokens": 5}))
     a = p.evaluate(_seg, {"team": "JAX"}, over.pop("_players", None) or _pl)
     return SV.enforce(a, _seg, over.get("_players") or _pl, None, {})
@@ -1441,7 +1442,7 @@ check("a team-owned observation cannot reach HIGH", _own.decision == SEM.ABSTAIN
 
 # Isolation: the semantic layer touches nothing it must not.
 for _f in ("semantic.py", "semantic_validate.py", "providers/rules.py",
-           "providers/claude.py", "providers/openai.py"):
+           "providers/openai.py", "providers/openai_review.py"):
     _src = code_only((ROOT / "wire" / _f).read_text())
     check(f"{_f} reads no fantasy projection data",
           not FORBIDDEN_NAMES.search(_src))
@@ -1695,7 +1696,7 @@ check("held-back items are named with a reason",
 check("a held evidence conflict is named as such",
       any("not supported by the passage" in h["why"] for h in _pp["held_back"]))
 
-# --------------------------------------------- Claude as the interpreter
+# --------------------------------------------- OpenAI as the interpreter
 # available() must mean usable, not present. The first version returned True
 # for an eight-character placeholder, so the guard that stops the rules
 # engine writing commentary in Claude's absence did not fire.
@@ -1720,8 +1721,8 @@ finally:
 
 _gen_raw = (ROOT / "scripts" / "wire_fantasy_impact.py").read_text()
 _gen = code_only(_gen_raw)
-check("Claude is the default interpreter",
-      'default="claude"' in _gen_raw, "claude" in _gen_raw)
+check("OpenAI is the default interpreter",
+      'default="openai"' in _gen_raw, "openai" in _gen_raw)
 check("the generator stops rather than falling back to rules",
       "will NOT generate commentary in its place" in
       (ROOT / "scripts" / "wire_fantasy_impact.py").read_text())
@@ -1735,8 +1736,48 @@ check("the batch runs the smoke test first",
       "wire_claude_smoke.py" in _batch)
 check("the batch does not grade unlabelled real cases",
       "not counted as" in _batch or "ungraded" in _batch)
-check("OpenAI is built but not wired into generation",
-      "OpenAISemanticProvider" not in _gen_raw)
+check("OpenAI is wired into generation",
+      "OpenAISemanticProvider" in _gen_raw)
+
+_oai_src = (ROOT / "wire" / "providers" / "openai.py").read_text()
+_oai_review_src = (ROOT / "wire" / "providers" / "openai_review.py").read_text()
+check("OpenAI Responses are not stored",
+      "store=False" in _oai_src and "store=False" in _oai_review_src)
+check("both OpenAI passes require strict structured output",
+      '"strict": True' in _oai_src and '"strict": True' in _oai_review_src)
+_review_payload = {
+    "verdict": "HUMAN_REVIEW", "subject_is_correct": True,
+    "mechanism_is_supported": True, "direction_is_supported": True,
+    "commentary_overstates": False, "commentary_repeats_evidence": False,
+    "inference_not_in_evidence": False,
+    "performance_only_no_role_information": False,
+    "passage_names_a_different_subject": False,
+    "disagreement_summary": "manual check",
+}
+_or = OpenAIIndependentReviewer(
+    transport=lambda p: (_review_payload,
+                         {"input_tokens": 10, "output_tokens": 5}))
+check("OpenAI independent review validates its closed schema",
+      _or.evaluate("evidence", {}, {})["provider"] == "openai")
+
+_backfill_src = (ROOT / "scripts" / "wire_backfill.py").read_text()
+check("the dark launch has separate call and dollar caps",
+      "--max-calls" in _backfill_src and "--cap" in _backfill_src)
+check("the plan path makes zero model calls",
+      "model_calls_made\": 0" in _backfill_src)
+
+from scripts import wire_readiness as WR
+_account = WR.extraction_accounting([
+    {"extraction_status": "COMPLETE", "note": "", "c": 558},
+    {"extraction_status": "INCOMPLETE",
+     "note": "official team site: refused content", "c": 96},
+    {"extraction_status": "INCOMPLETE", "note": "body short", "c": 13},
+])
+check("readiness excludes intentional content refusals from extraction rate",
+      _account == {"complete": 558, "failed": 13, "refused": 96,
+                   "rate": 97.7}, _account)
+check("the historical reviewed publication set is readiness-valid",
+      WR.reviewed_publications_valid(_pubs))
 
 # ------------------------------------------- semantic claim regressions
 from wire import claims as CL
