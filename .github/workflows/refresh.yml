@@ -76,7 +76,7 @@ jobs:
 
       - name: Run pipeline
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # Which provider reads X. Unset means twitterapi, so
           # removing this variable is the whole rollback.
           BEATWIRE_X_PROVIDER: ${{ vars.BEATWIRE_X_PROVIDER }}
@@ -319,7 +319,7 @@ jobs:
       - name: Preflight
         continue-on-error: true
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # Which provider reads X. Unset means twitterapi, so
           # removing this variable is the whole rollback.
           BEATWIRE_X_PROVIDER: ${{ vars.BEATWIRE_X_PROVIDER }}
