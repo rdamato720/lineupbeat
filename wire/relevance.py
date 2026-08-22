@@ -84,6 +84,10 @@ ROUTINE = re.compile(
     r"expected to play|preseason (?:snaps|action|playing time)|"
     r"scout team|reserve)\b")
 
+AVAILABILITY_ONLY = re.compile(
+    r"(?i)\b(did not (?:practice|participate)|limited|held out|absent|"
+    r"sidelined|injur(?:y|ed)|hamstring|knee|ankle|shoulder|groin|back)\b")
+
 
 def load(path: Path | None = None) -> dict:
     p = Path(path or REGISTRY)
@@ -140,6 +144,15 @@ def assess(player_id: str, position: str, text: str,
             return {"eligible": False, "tier": tier,
                     "reason": "routine reserve work by a quarterback: no "
                               "promotion or starter change in the evidence"}
+        # An injury report is valid evidence, but it does not by itself make
+        # a fringe/watchlist player fantasy relevant. Dameon Pierce's missed
+        # practice cleared every identity check while establishing no role,
+        # opportunity or rosterable consequence.
+        if (tier == WATCHLIST and AVAILABILITY_ONLY.search(text or "")
+                and not opportunity):
+            return {"eligible": False, "tier": tier,
+                    "reason": "watchlist availability report with no "
+                              "actionable fantasy role or opportunity"}
         return {"eligible": True, "tier": tier,
                 "reason": entry["relevance_reason"]}
 
