@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from wire import evidence_integrity as integrity
 from wire import independent_review as review
 from wire import players
-from wire.providers.claude_review import ClaudeIndependentReviewer
+from wire.providers.openai_review import OpenAIIndependentReviewer
 
 SOURCE = Path("data/wire_backfill.json")
 OUTPUT = Path("data/wire_independent_review.json")
@@ -42,14 +42,15 @@ def main():
     ap.add_argument("--source", type=Path, default=SOURCE)
     ap.add_argument("--output", type=Path, default=OUTPUT)
     ap.add_argument("--cap", type=float, default=15.0)
+    ap.add_argument("--max-calls", type=int, default=15)
     args = ap.parse_args()
     state = json.loads(args.source.read_text())
     registry = players.load()
-    provider = ClaudeIndependentReviewer()
+    provider = OpenAIIndependentReviewer()
     if not provider.available():
-        print("Claude unavailable; nothing reviewed", file=sys.stderr)
+        print("OpenAI unavailable; nothing reviewed", file=sys.stderr)
         return 4
-    reviewed, spend = [], 0.0
+    reviewed, spend, calls = [], 0.0, 0
     for result in state.get("results", []):
         identity, identity_error = validated_identity(result, registry)
         evidence = (result.get("candidate") or {}).get("evidence_text", "")
@@ -61,9 +62,10 @@ def main():
                                  {"verdict": "HUMAN_REVIEW"},
                                  identity_resolved=False, integrity_ok=False)})
             continue
-        if spend >= args.cap:
+        if spend >= args.cap or calls >= args.max_calls:
             break
         payload = provider.evaluate(evidence, identity, result["assessment"])
+        calls += 1
         spend += payload.get("cost_usd", 0)
         request = {"evidence_text": evidence, "identity": identity,
                    "assessment": result["assessment"]}
@@ -84,6 +86,8 @@ def main():
            "prompt_version": review.PROMPT_VERSION,
            "schema_version": review.SCHEMA_VERSION,
            "cost_usd": round(spend, 4), "items": reviewed,
+           "provider": "openai", "model": provider.model,
+           "calls": calls, "max_calls": args.max_calls,
            "publications_applied": 0}
     args.output.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
     print(f"wrote {args.output}: {len(reviewed)} items, ${spend:.4f}, 0 published")
