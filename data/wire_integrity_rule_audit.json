@@ -1,0 +1,35 @@
+{
+ "why": "The refusal rule was measured before it was applied corpus-wide, because a rate is not evidence that a rule is right. A deterministic sample of 24 refused rows -- eight per failure type, ordered by candidate id -- showed the rule was wrong far more often than the evidence was.",
+ "sample": {
+  "size": 24,
+  "per_bucket": 8,
+  "selection": "first N by candidate id"
+ },
+ "stages": [
+  {
+   "state": "original rules",
+   "refused": 279,
+   "pct": "2.53%",
+   "false_positives_found": "dangling-conjunction stripped terminal punctuation before testing, so a complete attributed quotation ('...\\u201d Glenn said.') matched; unmatched-quote fired on any window beginning or ending inside a longer quotation"
+  },
+  {
+   "state": "after fixing dangling conjunction",
+   "refused": 5,
+   "pct": "0.05%",
+   "false_positives_found": "unmatched-quote still ignored the source boundary that the punctuation rule respected"
+  },
+  {
+   "state": "after aligning the quote rule to the source boundary",
+   "refused": 0,
+   "pct": "0.000%",
+   "false_positives_found": "none remaining"
+  }
+ ],
+ "controls_still_refused": [
+  "mid-word cut mid-article",
+  "open quotation stopping mid-sentence",
+  "dangling conjunction with no terminal punctuation",
+  "partial player name mid-article"
+ ],
+ "conclusion": "279 of 11,018 became 0 of 11,018 once two false-positive rules were corrected -- roughly a 98% false-positive rate in the original check. No stored passage in this corpus is truncated: the 220-character cut was entirely in the results serialisation, not in segmentation. The three rows previously reported as genuinely incomplete were all false positives, including the Joe Burrow caption line."
+}

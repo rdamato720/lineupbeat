@@ -1,0 +1,58 @@
+{
+ "window": {
+  "from": "2026-08-20T03:04:13+00:00",
+  "to": "2026-08-22T03:04:13+00:00"
+ },
+ "pending_rows_in_window": 1949,
+ "steps": [
+  {
+   "step": "in an eligible evidence class",
+   "left": 448,
+   "dropped": 1501,
+   "why": "UNCERTAIN, ANALYSIS_OR_OPINION, RELAYED_REPORTING"
+  },
+  {
+   "step": "minus position exclusions",
+   "left": 181,
+   "dropped": 267,
+   "why": "defensive players and offensive linemen; tested BEFORE class, so an eligible class does not protect a non-fantasy position"
+  },
+  {
+   "step": "minus rows with no exact identity",
+   "left": 181,
+   "dropped": 0,
+   "why": "zero or several registry matches; never guessed"
+  },
+  {
+   "step": "minus non-fantasy positions surviving the above",
+   "left": 181,
+   "dropped": 0,
+   "why": "kickers, punters, long snappers"
+  },
+  {
+   "step": "minus duplicates of an earlier copy",
+   "left": 91,
+   "dropped": 90,
+   "why": "the same claim already queued from another row"
+  },
+  {
+   "step": "minus the fantasy-relevance gate",
+   "left": 60,
+   "dropped": 31,
+   "why": "backups with no promotion, routine reserve work"
+  },
+  {
+   "step": "minus rewrites of one underlying report",
+   "left": 60,
+   "dropped": 0,
+   "why": "two outlets rewriting one original is one report"
+  },
+  {
+   "step": "minus identical claims already queued",
+   "left": 60,
+   "dropped": 0,
+   "why": "same player, same normalised passage"
+  }
+ ],
+ "reaching_model": 60
+}

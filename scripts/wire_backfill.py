@@ -36,6 +36,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from wire import evidence as ev
+from wire import evidence_integrity as eint
 from wire import players as pl
 from wire import registry as artreg
 from wire import relevance as rv
@@ -117,7 +118,7 @@ def discover(store, cutoff, limit_per_source: int) -> dict:
     return dict(stats)
 
 
-def in_window(store, cutoff) -> tuple[list, Counter]:
+def in_window(store, cutoff, end=None) -> tuple[list, Counter]:
     """Stored articles whose publisher timestamp is inside the window."""
     counts = Counter()
     keep = []
@@ -128,7 +129,7 @@ def in_window(store, cutoff) -> tuple[list, Counter]:
         if ts is None:
             counts["no_reliable_publication_time"] += 1
             continue
-        if ts < cutoff:
+        if ts < cutoff or (end is not None and ts > end):
             counts["outside_window"] += 1
             continue
         counts["inside_window"] += 1
@@ -182,9 +183,16 @@ def deterministic_filter(rows, rel_registry, sources) -> tuple[list, Counter, li
         # What may reach the model. An official designation is not firsthand
         # and is not a quotation, and it is better evidence of availability
         # than either: the club is the authority on its own practice report.
+        # What may reach the model. Four classes, and they are not equal:
+        # firsthand is an eyewitness account, a designation is the club's own
+        # record, a quotation is somebody on the record, and a declaration is
+        # an approved reporter asserting something plainly. All four can carry
+        # a fantasy claim; only the first is an eyewitness account, which is
+        # why they are separate labels rather than one promoted one.
         if r["evidence_class"] not in ("FIRSTHAND_OBSERVATION",
                                        "DIRECT_QUOTATION",
-                                       "OFFICIAL_DESIGNATION"):
+                                       "OFFICIAL_DESIGNATION",
+                                       "APPROVED_REPORTER_DECLARATION"):
             counts["not_original_evidence"] += 1
             suppressed.append({**_slim(r),
                                "reason": f"{r['evidence_class']} is not "
@@ -230,12 +238,23 @@ def deterministic_filter(rows, rel_registry, sources) -> tuple[list, Counter, li
     return survivors, counts, suppressed
 
 
-def _slim(r):
+def _slim(r, full_text: bool = False):
+    """A compact row. `full_text` for anything a later stage will READ.
+
+    The 220-character cut belongs to the suppressed list, where a snippet is
+    all a reader needs to see why a row was dropped. It was also being used
+    for the results list, which the reviewer and the review page read as
+    though it were the evidence -- so the generator judged the whole passage
+    and everything after it judged the first 220 characters. Nothing noticed,
+    because nothing compared them.
+    """
     return {"candidate_id": r["candidate_id"], "player_name": r["player_name"],
             "team": r["team"], "position": r["position"],
             "source_id": r["source_id"],
             "evidence_class": r["evidence_class"],
-            "evidence_text": r["evidence_text"][:220]}
+            "evidence_text": (r["evidence_text"] if full_text
+                              else r["evidence_text"][:220]),
+            "evidence_truncated_for_display": not full_text}
 
 
 # Review order: what a fantasy manager needs first.
@@ -274,9 +293,22 @@ def main():
     end = now_utc()
     cutoff = end - timedelta(hours=args.hours)
     state = json.loads(STATE.read_text()) if STATE.exists() else {}
-    state.setdefault("window", {"from": cutoff.replace(microsecond=0).isoformat(),
-                                "to": end.replace(microsecond=0).isoformat(),
-                                "hours": args.hours})
+    # The window is recomputed every run and recorded every run.
+    #
+    # This was a setdefault, so the first run's window was written into the
+    # state file and printed by every run after it, while `cutoff` above went
+    # on rolling. The label said 19 Aug 16:31 .. 21 Aug 16:31 while the filter
+    # was really using 20 Aug 03:03 onward -- 80 articles apart, and the
+    # reason two honest counts of "the same window" disagreed by 800
+    # candidates. A window that is not the window being applied is worse than
+    # no window at all.
+    first = state.get("first_window") or {
+        "from": cutoff.replace(microsecond=0).isoformat(),
+        "to": end.replace(microsecond=0).isoformat(), "hours": args.hours}
+    state["first_window"] = first
+    state["window"] = {"from": cutoff.replace(microsecond=0).isoformat(),
+                       "to": end.replace(microsecond=0).isoformat(),
+                       "hours": args.hours}
     print(f"  window {state['window']['from']} .. {state['window']['to']} "
           f"({args.hours}h, publisher time)")
 
@@ -312,7 +344,7 @@ def main():
         return 0
 
     # Stage 5 onward, from what is stored.
-    articles, wcounts = in_window(store, cutoff)
+    articles, wcounts = in_window(store, cutoff, end)
     urls = {a["canonical_url"] for a in articles}
     state["window_articles"] = {k: v for k, v in wcounts.items()}
     print(f"  articles: {wcounts['inside_window']} inside the window, "
@@ -380,7 +412,7 @@ def main():
             interprets += 1
         elif a.decision == sem.ABSTAIN:
             abstains += 1
-        results.append({"candidate": _slim(r),
+        results.append({"candidate": _slim(r, full_text=True),
                         "relevance_tier": r.get("relevance_tier"),
                         "relevance_reason": r.get("relevance_reason"),
                         "source_url": r["source_url"],
@@ -389,6 +421,11 @@ def main():
                         "source_name": meta["source_name"],
                         "ownership": meta["source_ownership"],
                         "underlying_report_id": r["underlying_report_id"],
+                        "evidence_integrity": eint.check(
+                            r["evidence_text"],
+                            generator_input=r["evidence_text"],
+                            start=r.get("start_seconds"),
+                            end=r.get("end_seconds")),
                         "assessment": a.to_dict()})
         if i % 10 == 0:
             print(f"    {i}/{len(survivors)}  ${spend:.2f}  "

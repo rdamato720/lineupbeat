@@ -46,6 +46,16 @@ ANALYSIS_OR_OPINION = "ANALYSIS_OR_OPINION"
 # its own way: the team is the authority on its own designations, which is
 # also why it is never independent corroboration of anything.
 OFFICIAL_DESIGNATION = "OFFICIAL_DESIGNATION"
+
+# An approved reporter stating a fact plainly, with no observation marker.
+#
+# Not FIRSTHAND_OBSERVATION. Firsthand should mean the writer put himself at
+# the event -- "I watched", "took first-team reps", "did not practice" -- and
+# promoting a bare declarative into that class quietly redefined the strongest
+# label the pipeline has. This is its own, weaker thing: an approved byline
+# asserting something, which is good enough to interpret and not good enough
+# to call an eyewitness account.
+APPROVED_REPORTER_DECLARATION = "APPROVED_REPORTER_DECLARATION"
 RELAYED_REPORTING = "RELAYED_REPORTING"
 UNCERTAIN = "UNCERTAIN"
 
@@ -133,22 +143,26 @@ RELAY = re.compile(
     # matched site chrome in every article a publisher wrote -- trafilatura
     # keeps some navigation -- and marked twelve of twelve of one reporter's
     # articles as relayed when none of them were.
-    r"(?i)\b(the athletic|espn|nfl network|nfl\.com|pro football talk|"
+    # NOT case-insensitive. A leading (?i) made every capitalisation guard
+    # below inert, so "[A-Z][a-z]{2,}" matched any word -- and "per route run",
+    # a stat phrase, read as "per <Named Source>". The outlet names are spelled
+    # with their own alternations instead, so the guards do what they say.
+    r"\b(?i:the athletic|espn|nfl network|nfl\.com|pro football talk|"
     r"the ringer|cbs sports|fox sports|yahoo sports|bleacher report|"
-    r"pro football focus|pff|the ringer)"
+    r"pro football focus|pff)"
     r"(?:'s|\u2019s)\s+[A-Z]"                       # ESPN's Adam Schefter
-    r"|\b(?:per|via|according to)\s+"
-    r"(?:the athletic|espn|nfl network|nfl\.com|pff|pro football focus|"
+    r"|\b(?i:per|via|according to)\s+"
+    r"(?i:the athletic|espn|nfl network|nfl\.com|pff|pro football focus|"
     r"cbs sports|fox sports|yahoo|bleacher report|multiple reports?|"
     r"a report)\b"
-    r"|\b(the athletic|espn|nfl network|cbs sports|fox sports)\b"
-    r"\s+(?:first )?(?:reported|reports)\b"
+    r"|\b(?i:the athletic|espn|nfl network|cbs sports|fox sports)\b"
+    r"\s+(?i:first )?(?i:reported|reports)\b"
     # A named journalist doing the reporting. The surname has to look like a
     # surname: "And wrote" is a sentence, not a source.
     r"|\b(?!And|But|He|She|They|It|The|This|That|Who|Coach)"
     r"[A-Z][a-z]{2,}(?:\s+[A-Z][a-z]{2,})?\s+"
-    r"(?:first )?(?:reported|wrote|tweeted|posted)\b"
-    r"|\b(?:per|according to)\s+"
+    r"(?i:first )?(?i:reported|wrote|tweeted|posted)\b"
+    r"|\b(?i:per|according to)\s+"
     r"(?!head|assistant|offensive|defensive|the team|the coach|sources)"
     r"[A-Z][a-z]{2,}\s+[A-Z][a-z]{2,}\b")            # per Adam Schefter
 
@@ -392,10 +406,11 @@ def classify(text: str, *, reporter_voice: bool,
     # to prove he was there in every sentence, and the ones who write plainly
     # failed hardest.
     #
-    # The burden belongs the other way round: for an approved firsthand
-    # byline, a declarative sentence with no hedge, no attribution to anyone
-    # else and no relay is an observation. Lower confidence than an explicit
-    # marker, because the marker is still better evidence.
+    # The burden belongs the other way round: for an approved byline, a
+    # declarative sentence with no hedge, no attribution and no relay is
+    # eligible -- as APPROVED_REPORTER_DECLARATION, its own class. It is not
+    # promoted to FIRSTHAND_OBSERVATION, because firsthand means the writer
+    # placed himself at the event and a plain assertion does not.
     #
     # An unapproved byline is unchanged: still UNCERTAIN, still a human's
     # problem. This does not lower the firsthand standard, it stops applying
@@ -414,7 +429,7 @@ def classify(text: str, *, reporter_voice: bool,
     if reporter_voice:
         why.append("declarative statement in an approved reporter's voice, "
                    "with no hedge, attribution or relay")
-        return FIRSTHAND_OBSERVATION, 0.55, why
+        return APPROVED_REPORTER_DECLARATION, 0.55, why
 
     why.append("no observation, attribution or hedging markers")
     return UNCERTAIN, 0.25, why
@@ -563,7 +578,17 @@ def group_id(source_key: str, location: str, text: str) -> str:
         f"{source_key}|{location}|{pl.norm(text)[:300]}".encode()).hexdigest()[:20]
 
 
-def candidate_id(group: str, player_id: str, name: str) -> str:
-    """Stable across runs, so re-extraction updates rather than duplicates."""
+def candidate_id(source_key: str, player_id: str, name: str,
+                 text: str = "") -> str:
+    """Stable across runs, so re-extraction updates rather than duplicates.
+
+    Keyed on the article, the player and the normalised passage -- not on the
+    span's group id. The group carries the span's LOCATION, and overlapping
+    windows produce the same passage at seg24s0 and seg24s1, so one claim
+    acquired two ids and 598 rows in one window were exact duplicates of
+    another row: same url, same player, same text, different id. The docstring
+    already promised this behaviour; now it is true.
+    """
     return hashlib.sha256(
-        f"{group}|{player_id or pl.norm(name)}".encode()).hexdigest()[:20]
+        f"{source_key}|{player_id or pl.norm(name)}|{norm_claim(text)}"
+        .encode()).hexdigest()[:20]

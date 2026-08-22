@@ -1971,10 +1971,17 @@ print("all passed")
 # failed a lexical whitelist of observation phrases, so the plainest writers
 # were suppressed hardest. These pin the corrected behaviour.
 
-check("an approved byline's declarative sentence is an observation",
+check("an approved byline's declarative is its own class, not firsthand",
       cls("Burrow completed his first four passes in the first team period, "
           "connecting with Higgins three times and Drew Sample once.",
-          reporter_voice=True) == ev.FIRSTHAND_OBSERVATION)
+          reporter_voice=True) == ev.APPROVED_REPORTER_DECLARATION)
+check("a plain declarative is never promoted to firsthand",
+      cls("Burrow completed his first four passes in the first team period, "
+          "connecting with Higgins three times and Drew Sample once.",
+          reporter_voice=True) != ev.FIRSTHAND_OBSERVATION)
+check("an explicit observation marker still reads as firsthand",
+      cls("Gibbs took first-team reps in team drills.", reporter_voice=True)
+      == ev.FIRSTHAND_OBSERVATION)
 check("the same sentence from an unresearched byline is still uncertain",
       cls("Burrow completed his first four passes in the first team period, "
           "connecting with Higgins three times and Drew Sample once.",
@@ -2016,3 +2023,67 @@ check("duplicate overlap is scoped to one segment",
       'str(prev_loc).split("s")[0] != here' in _ex)
 check("a quotation records who actually spoke",
       '"quote_speaker"' in _ex and "named_speaker" in _ex)
+
+# The relay pattern carried a leading (?i), which made every capitalisation
+# guard inside it inert: "[A-Z][a-z]{2,}" matched any word at all, so the
+# stat phrase "per route run" read as "per <Named Source>".
+check("a stat phrase is not a relay",
+      not ev.RELAY.search("He led the team with 2.8 yards per route run."))
+check("a lowercase run of words is not a named source",
+      not ev.RELAY.search("he gained more yards per carry run after run"))
+check("a named source is still a relay",
+      bool(ev.RELAY.search("per Adam Schefter, the deal is done")))
+check("an outlet doing the reporting is still a relay",
+      bool(ev.RELAY.search("ESPN's Adam Schefter reported the trade")))
+
+# candidate_id keyed on the span's group, which carries its location, so
+# overlapping windows gave one claim two ids and two rows.
+_a = ev.candidate_id("item1", "00-001", "A Player", "he took first team reps")
+_b = ev.candidate_id("item1", "00-001", "A Player", "He took first-team reps.")
+check("one passage is one candidate however it is punctuated", _a == _b)
+check("a different passage is a different candidate",
+      _a != ev.candidate_id("item1", "00-001", "A Player", "he was limited"))
+check("a different article is a different candidate",
+      _a != ev.candidate_id("item2", "00-001", "A Player",
+                            "he took first team reps"))
+check("a different player is a different candidate",
+      _a != ev.candidate_id("item1", "00-002", "B Player",
+                            "he took first team reps"))
+
+# --- the independent reviewer's deterministic rules ------------------------
+#
+# Code owns identity, the model evaluates meaning, and a human settles an
+# ambiguous subject. These pin that split so a prompt revision cannot quietly
+# move a decision back into the model.
+from wire import independent_review as _ir
+
+_sub = _ir.enforce({"verdict": _ir.AUTO_APPROVE,
+                    "passage_names_a_different_subject": True})
+check("a claim-subject conflict blocks auto-approval",
+      _sub["verdict"] == _ir.HUMAN_REVIEW)
+check("blocking a claim-subject conflict never manufactures a rejection",
+      _sub["verdict"] != _ir.REJECT)
+check("the model's own verdict is preserved when a rule overrides it",
+      _sub["model_verdict"] == _ir.AUTO_APPROVE and _sub["enforced"])
+
+_clean = _ir.enforce({"verdict": _ir.AUTO_APPROVE,
+                      "passage_names_a_different_subject": False})
+check("a clean auto-approval is left alone", _clean["verdict"] == _ir.AUTO_APPROVE)
+
+_roster = _ir.enforce({"verdict": _ir.AUTO_APPROVE,
+                       "identity_conflicts_with_supplied_registry": True})
+check("a stale roster objection changes nothing",
+      _roster["verdict"] == _ir.AUTO_APPROVE)
+check("a stale roster objection is still recorded",
+      any("stale roster" in r for r in _roster["enforcement_reasons"]))
+
+_unres = _ir.enforce({"verdict": _ir.AUTO_APPROVE}, identity_resolved=False)
+check("an unresolved registry identity blocks automatic publication",
+      _unres["verdict"] == _ir.HUMAN_REVIEW
+      and _unres["blocks_automatic_publication"])
+
+check("the reviewer is no longer asked to judge rosters",
+      "DO NOT REVIEW IT" in _ir.SYSTEM
+      and "identity_conflicts_with_supplied_registry" not in str(_ir.RESPONSE_SCHEMA))
+check("claim-subject validation is still asked for",
+      "subject_is_correct" in _ir.RESPONSE_SCHEMA["required"])
