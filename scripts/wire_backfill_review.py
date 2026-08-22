@@ -177,7 +177,7 @@ font-size:.78rem;z-index:9}
 color:var(--quiet);font-size:.86rem}
 </style>""", '<div class="wrap">', "<h1>48-hour backfill review</h1>"]
     w = state["window"]
-    c = state.get("claude", {})
+    c = state.get("openai", state.get("claude", {}))
     p.append(f'<p class="q">Window {e(w["from"])} to {e(w["to"])}, publisher '
              f'time. Model {e(c.get("model"))}, prompt {e(sem.PROMPT_VERSION)}, '
              f'schema {e(sem.SCHEMA_VERSION)}. {len(live)} candidate(s) for '
