@@ -15,8 +15,13 @@ import time
 
 from .. import semantic as sem
 
-MODEL = "gpt-4.1"
-COST_IN, COST_OUT = 2.00 / 1_000_000, 8.00 / 1_000_000
+MODEL = "gpt-5.6-terra"
+PRICES = {
+    "gpt-5.6-sol": (4.00 / 1_000_000, 20.00 / 1_000_000),
+    "gpt-5.6": (4.00 / 1_000_000, 20.00 / 1_000_000),
+    "gpt-5.6-terra": (2.00 / 1_000_000, 12.00 / 1_000_000),
+    "gpt-5.6-luna": (0.20 / 1_000_000, 1.20 / 1_000_000),
+}
 
 
 def redact(text: str) -> str:
@@ -71,7 +76,8 @@ class OpenAISemanticProvider(sem.FantasySemanticProvider):
                 setattr(a, k, v)
         a.tokens_in = usage.get("input_tokens", 0)
         a.tokens_out = usage.get("output_tokens", 0)
-        a.cost_usd = a.tokens_in * COST_IN + a.tokens_out * COST_OUT
+        cost_in, cost_out = PRICES.get(self.model, PRICES[MODEL])
+        a.cost_usd = a.tokens_in * cost_in + a.tokens_out * cost_out
         a.latency_ms = int((time.time() - t0) * 1000)
         a.output_hash = sem.output_hash(payload)
         return a
@@ -92,6 +98,8 @@ class OpenAISemanticProvider(sem.FantasySemanticProvider):
                 model=self.model,
                 instructions=sem.SYSTEM,
                 input=prompt,
+                store=False,
+                reasoning={"effort": "low"},
                 text={"format": {"type": "json_schema",
                                  "name": "wire_semantic_assessment",
                                  "strict": True,
