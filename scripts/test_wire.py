@@ -84,6 +84,15 @@ for name, src in (("wire_ingest.py", code_only(ingest)),
     check(f"{name} names no fantasy data file",
           not FORBIDDEN_NAMES.search(src))
 
+# Capture and discovery may add source items and review candidates to the
+# database, but they are not publication actions. In particular, a fresh
+# local database must never be allowed to replace the tracked reviewed launch
+# set with an empty export. Keeping the export route out of the ingestion
+# script makes the publication file byte-identical for every discovery run.
+check("article discovery cannot rewrite the publication mirror",
+      "export_publications" not in code_only(ingest)
+      and "wire_publications.json" not in code_only(ingest))
+
 # The site build must not be able to read candidates.
 build = (ROOT / "scripts" / "build_pages.py").read_text()
 # `wire.db` is a substring of `beatwire.db`, so this needs a boundary or it
