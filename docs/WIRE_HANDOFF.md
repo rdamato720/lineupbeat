@@ -267,15 +267,15 @@ Deterministic enforcement runs after the reviewer:
 
 ### 10.3 Provider state
 
-- Anthropic generator: implemented in `wire/providers/claude.py`.
-- Anthropic independent reviewer: implemented in
-  `wire/providers/claude_review.py`.
 - OpenAI generator: implemented in `wire/providers/openai.py` using the
-  Responses API and strict JSON Schema, but not production-approved.
-- OpenAI independent reviewer: not yet implemented.
-- `openai` is not currently declared in `requirements.txt`; an OpenAI migration
-  must add and pin the supported SDK, test error redaction, and run the locked
-  corpus before changing the production provider.
+  Responses API, strict JSON Schema, and `store: false`.
+- OpenAI independent reviewer: implemented in
+  `wire/providers/openai_review.py` as a separate Responses API pass.
+- `openai==3.3.1` is pinned in `requirements.txt`.
+- Anthropic transports remain as inert legacy/audit code but are absent from
+  the active provider registry, workflow secrets, and installed requirements.
+- OpenAI is the dark-launch provider, not production-approved until the locked
+  corpus and labelled real-evidence gates pass.
 
 Do not claim provider determinism. Temperature zero may reduce variability but
 does not guarantee identical results. Store provider, model, schema, prompt,
@@ -434,14 +434,13 @@ been inspected.
 
 ```bash
 python scripts/wire_semantic_eval.py --providers rules
-python scripts/wire_semantic_eval.py --providers rules,claude
+python scripts/wire_semantic_eval.py --providers rules,openai
 ```
 
-For a future OpenAI comparison, install/pin the OpenAI SDK on a branch, set
-`OPENAI_API_KEY` in the environment, and run:
+For an OpenAI comparison, set `OPENAI_API_KEY` in the environment and run:
 
 ```bash
-python scripts/wire_semantic_eval.py --providers rules,claude,openai
+python scripts/wire_semantic_eval.py --providers rules,openai
 ```
 
 Report zero-tolerance errors, correct/total, precision numerator/denominator,
@@ -455,8 +454,9 @@ These commands can spend provider budget. Confirm the cap and valid secret
 before running:
 
 ```bash
-python scripts/wire_backfill.py --interpret --report --hours 48 --cap 15
-python scripts/wire_independent_review.py --cap 15
+python scripts/wire_backfill.py --plan --report --hours 48
+python scripts/wire_backfill.py --interpret --report --hours 48 --cap 15 --max-calls 15
+python scripts/wire_independent_review.py --cap 15 --max-calls 15
 python scripts/wire_review_package.py
 ```
 
@@ -519,14 +519,13 @@ for the same work again.
 
 Current workflow secrets/variables referenced by the broader project include:
 
-- `ANTHROPIC_API_KEY`
+- `OPENAI_API_KEY`
 - `SORSA_API_KEY`
 - `TWITTERAPI_IO_KEY`
 - `BEATWIRE_X_PROVIDER` as a repository variable
 
 The paused YouTube pilot reads `YOUTUBE_API_KEY` only when used manually.
-An OpenAI migration would add `OPENAI_API_KEY` as a secret. ChatGPT
-subscriptions do not fund API calls; OpenAI API billing is separate.
+ChatGPT subscriptions do not fund API calls; OpenAI API billing is separate.
 
 Never echo secret values, return them from helper functions, serialize them,
 put them in URLs that reach logs, or commit them. Provider error paths perform
@@ -564,9 +563,9 @@ Run one dark-launch website window using the repaired boundaries, generate the
 HTML and JSON review package, and review the card-producing items manually.
 Publish nothing during that run.
 
-### OpenAI migration
+### OpenAI production-promotion checklist
 
-If moving production semantics from Anthropic to OpenAI:
+Before promoting the OpenAI dark-launch path to production semantics:
 
 1. Pin the OpenAI SDK in `requirements.txt`.
 2. Add an OpenAI independent-review transport using the same strict closed
@@ -580,7 +579,7 @@ If moving production semantics from Anthropic to OpenAI:
    failures.
 7. Set explicit precision and recall gates. Do not reward abstaining.
 8. Keep publication human-gated through a measured dark-launch period.
-9. Only then change the production provider and later remove Anthropic.
+9. Only then describe the OpenAI provider as production-approved.
 
 ### Review automation
 

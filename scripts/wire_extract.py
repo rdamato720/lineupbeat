@@ -387,6 +387,7 @@ def main():
     ).fetchall()
     if args.only:
         items = [i for i in items if args.only.lower() in i["source_id"].lower()]
+    items = items[:args.limit]
     print(f"  {len(items)} captured source(s), registry {reg.version}")
 
     total = {"spans": 0, "with_players": 0, "candidates": 0, "new": 0,

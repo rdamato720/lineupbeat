@@ -44,10 +44,11 @@ from wire import relevance as rv
 from wire import semantic as sem
 from wire import semantic_validate as sv
 from wire import si
-from wire.providers.claude import ClaudeSemanticProvider
+from wire.providers.openai import OpenAISemanticProvider
 from wire.store import WireStore
 
 STATE = Path("data/wire_backfill.json")
+PLAN = Path("data/wire_backfill_plan.json")
 WINDOW_HOURS = 48
 
 
@@ -303,7 +304,11 @@ def main():
     ap.add_argument("--discover", action="store_true")
     ap.add_argument("--interpret", action="store_true")
     ap.add_argument("--report", action="store_true")
+    ap.add_argument("--plan", action="store_true",
+                    help="write the deterministic model-call plan; no API calls")
     ap.add_argument("--cap", type=float, default=15.0)
+    ap.add_argument("--max-calls", type=int, default=15,
+                    help="hard model-call limit, independent of dollar cap")
     ap.add_argument("--limit-per-source", type=int, default=12)
     ap.add_argument("--hours", type=int, default=WINDOW_HOURS)
     args = ap.parse_args()
@@ -377,19 +382,42 @@ def main():
     for k, v in counts.most_common():
         print(f"      {v:>5}  {k}")
 
+    if args.plan:
+        planned = []
+        for r in survivors:
+            planned.append({"candidate": _result_candidate(r),
+                            "source_url": r["source_url"],
+                            "published_at": r["published_at"],
+                            "author": r["source_author_or_channel"],
+                            "source_id": r["source_id"],
+                            "relevance_tier": r.get("relevance_tier"),
+                            "relevance_reason": r.get("relevance_reason")})
+        payload = {"generated_at": now_utc().isoformat(), "window": window,
+                   "count": len(planned), "model_calls_made": 0,
+                   "candidates": planned}
+        PLAN.write_text(json.dumps(payload, indent=1, ensure_ascii=False) + "\n")
+        print(f"  wrote {PLAN}: {len(planned)} planned call(s), 0 API calls")
+        return 0
+
     if not args.interpret:
         STATE.write_text(json.dumps(state, indent=1) + "\n")
         return 0
 
-    prov = ClaudeSemanticProvider()
+    prov = OpenAISemanticProvider()
     if not prov.available():
-        print("  Claude unavailable; evidence retained, nothing interpreted")
+        print("  OpenAI unavailable; evidence retained, nothing interpreted")
         return 4
 
     spend = 0.0
     results, lat = [], []
     calls = fails = abstains = interprets = retries = 0
     for i, r in enumerate(survivors, 1):
+        if calls >= args.max_calls:
+            print(f"\n  CALL CAP {args.max_calls} reached; stopping cleanly "
+                  f"with {len(survivors) - i + 1} row(s) un-interpreted")
+            state["stopped_at_call_cap"] = {"after_calls": calls,
+                                             "remaining": len(survivors) - i + 1}
+            break
         if spend >= args.cap:
             print(f"\n  COST CAP ${args.cap:.2f} reached after {calls} calls; "
                   f"stopping cleanly with {len(survivors) - i + 1} row(s) "
@@ -458,7 +486,7 @@ def main():
                   f"{interprets} interpret, {abstains} abstain")
 
     import statistics
-    state["claude"] = {
+    state["openai"] = {
         "model": prov.model, "prompt_version": sem.PROMPT_VERSION,
         "schema_version": sem.SCHEMA_VERSION,
         "calls": calls, "interpretations": interprets, "abstentions": abstains,
@@ -473,8 +501,8 @@ def main():
     }
     state["results"] = results
     STATE.write_text(json.dumps(state, indent=1, default=str) + "\n")
-    c = state["claude"]
-    print(f"\n  Claude: {c['calls']} calls, {c['interpretations']} interpret, "
+    c = state["openai"]
+    print(f"\n  OpenAI: {c['calls']} calls, {c['interpretations']} interpret, "
           f"{c['abstentions']} abstain, {c['validator_failures']} validator "
           f"failures, {c['quote_retries']} quote retries")
     print(f"  tokens {c['tokens_in']} in / {c['tokens_out']} out, "
