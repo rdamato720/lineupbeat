@@ -1806,13 +1806,26 @@ _contradictory_review = {
     "disagreement_summary": "",
 }
 _enforced_review = IR.enforce(
-    _contradictory_review, identity_resolved=True, integrity_ok=True)
-check("performance-only evidence can never effectively auto-approve",
+    _contradictory_review, identity_resolved=True, integrity_ok=True,
+    proposed_assessment={"decision": "INTERPRET"})
+check("performance-only evidence cannot auto-approve an interpretation",
       _enforced_review["model_verdict"] == "AUTO_APPROVE"
       and _enforced_review["effective_verdict"] == "HUMAN_REVIEW"
       and any("performance-only" in reason
               for reason in _enforced_review["enforcement_reasons"]),
       _enforced_review)
+_confirmed_no_impact = IR.enforce(
+    _contradictory_review, identity_resolved=True, integrity_ok=True,
+    proposed_assessment={"decision": "NO_FANTASY_IMPACT"})
+check("performance-only evidence confirms a no-impact decision",
+      _confirmed_no_impact["model_verdict"] == "AUTO_APPROVE"
+      and _confirmed_no_impact["effective_verdict"] == "AUTO_APPROVE"
+      and not _confirmed_no_impact["enforcement_reasons"],
+      _confirmed_no_impact)
+
+_review_script = (ROOT / "scripts" / "wire_independent_review.py").read_text()
+check("independent enforcement receives the proposed generator decision",
+      "proposed_assessment=result" in _review_script)
 
 _backfill_src = (ROOT / "scripts" / "wire_backfill.py").read_text()
 check("the dark launch has separate call and dollar caps",
