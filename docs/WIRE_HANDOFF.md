@@ -94,6 +94,7 @@ There is no valid path from E or F directly to I.
 | `wire/providers/` | Rules, Anthropic, OpenAI, and independent-review transports |
 | `wire/store.py` | Candidate, impact, decision, audit, and publication persistence |
 | `scripts/wire_backfill.py` | Rolling-window discovery/interpretation/reporting |
+| `data/wire_paid_candidates.json` | Durable candidate-id ledger written before model requests |
 | `scripts/wire_independent_review.py` | Second-pass review; writes no publications |
 | `scripts/wire_review_package.py` | Human-review HTML and JSON package |
 | `scripts/wire_publish.py` | Only reviewed-card publication route |
@@ -247,7 +248,9 @@ Its response is never trusted directly. `wire/semantic_validate.py` verifies
 identity, exact quotation, named facts, mechanism support, directionality,
 unit language, relayed provenance, ownership limits, and forbidden filler.
 Any failed response becomes an abstention/human-review item, never a repaired
-automatic answer.
+automatic answer. Article titles are deliberately withheld from the generator
+because they are metadata rather than evidence and may contain football facts
+that are absent from the supplied passage.
 
 ### 10.2 Independent reviewer
 
@@ -279,7 +282,7 @@ Deterministic enforcement runs after the reviewer:
   Responses API, strict JSON Schema, and `store: false`.
 - OpenAI independent reviewer: implemented in
   `wire/providers/openai_review.py` as a separate Responses API pass.
-- Generator prompt `wire-fantasy-2026-08-23h` treats source metadata as
+- Generator prompt `wire-fantasy-2026-08-23i` treats source metadata as
   provenance context only, grounds all editorial fields in the evidence, and
   forbids `UPDATE_RECOMMENDED` on `LOW` evidence. Explicit "began practicing"
   language counts as a return event even when participation remains limited.
@@ -521,6 +524,10 @@ that explicitly after every run.
 For measured dark-launch batches, name every approved candidate with the
 repeatable `--candidate-id` option. Use `--exclude-candidate-id` for an
 already-paid case. Exact selection preserves the deterministic survivor order.
+`data/wire_paid_candidates.json` is the authoritative, append-only spend
+ledger. The backfill merges legacy result ids into it, automatically excludes
+every banked id, and records a candidate atomically before attempting its
+provider request so a failed transport cannot cause repeat spend.
 If an included id has aged out of the moving window or is no longer a
 survivor, the command exits before the first API call; it never substitutes a
 different candidate. The call limit and dollar cap remain independent.

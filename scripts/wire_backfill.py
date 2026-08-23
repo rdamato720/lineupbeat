@@ -51,7 +51,46 @@ from wire.store import WireStore
 
 STATE = Path("data/wire_backfill.json")
 PLAN = Path("data/wire_backfill_plan.json")
+PAID = Path("data/wire_paid_candidates.json")
 WINDOW_HOURS = 48
+
+
+def paid_candidate_ids(state: dict | None = None) -> set[str]:
+    """Every candidate for which a model request has already been attempted.
+
+    The ledger is independent from the current-run result file so replacing a
+    review batch cannot erase spend history.  Legacy result files are folded
+    in during migration.
+    """
+    ids: set[str] = set()
+    if PAID.exists():
+        payload = json.loads(PAID.read_text())
+        values = (payload.get("candidate_ids", [])
+                  if isinstance(payload, dict) else payload)
+        ids.update(x for x in values if isinstance(x, str) and x)
+    if state:
+        ids.update(x for x in state.get("paid_candidate_ids", [])
+                   if isinstance(x, str) and x)
+        ids.update(
+            row.get("candidate", {}).get("candidate_id")
+            for row in state.get("results", [])
+            if row.get("candidate", {}).get("candidate_id"))
+    return ids
+
+
+def write_paid_candidate_ids(ids: set[str]) -> None:
+    payload = {"schema_version": "wire-paid-candidates-v1",
+               "count": len(ids), "candidate_ids": sorted(ids)}
+    tmp = PAID.with_suffix(PAID.suffix + ".tmp")
+    tmp.write_text(json.dumps(payload, indent=1) + "\n")
+    tmp.replace(PAID)
+
+
+def record_paid_candidate(candidate_id: str, known: set[str]) -> None:
+    """Bank an attempted id before its request, preventing repeat spend."""
+    if candidate_id not in known:
+        known.add(candidate_id)
+        write_paid_candidate_ids(known)
 
 
 EDITORIAL_ONLY = re.compile(
@@ -428,6 +467,7 @@ def main():
     end = now_utc()
     cutoff = end - timedelta(hours=args.hours)
     state = json.loads(STATE.read_text()) if STATE.exists() else {}
+    paid_ids = paid_candidate_ids(state)
     if args.interpret:
         # This file describes the current run.  A legacy Claude summary from
         # the tracked handoff must not look like part of an OpenAI-only run.
@@ -500,8 +540,9 @@ def main():
     for k, v in counts.most_common():
         print(f"      {v:>5}  {k}")
 
+    refused_ids = set(args.exclude_candidate_id) | paid_ids
     selected, missing, overlap = select_survivors(
-        survivors, args.candidate_id, args.exclude_candidate_id)
+        survivors, args.candidate_id, refused_ids)
     if overlap:
         print("  EXACT SELECTION INVALID; ids are both included and excluded:")
         for candidate_id in overlap:
@@ -584,6 +625,9 @@ def main():
                 "duplicate_of": r["duplicate_of"],
                 "underlying_report_id": r["underlying_report_id"]}
         try:
+            # Bank before the request. A transport failure may still incur
+            # provider cost, and must never cause the next run to pay again.
+            record_paid_candidate(r["candidate_id"], paid_ids)
             a = sv.evaluate_with_retry(prov, r["evidence_text"], meta,
                                        players, player_registry)
         except Exception as e:
@@ -654,6 +698,7 @@ def main():
         "p95_latency_ms": int(sorted(lat)[max(0, int(len(lat) * .95) - 1)]) if lat else 0,
     }
     state["results"] = results
+    state["paid_candidate_ids"] = sorted(paid_ids)
     STATE.write_text(json.dumps(state, indent=1, default=str) + "\n")
     c = state["openai"]
     print(f"\n  OpenAI: {c['calls']} calls, {c['interpretations']} interpret, "

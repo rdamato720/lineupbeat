@@ -40,8 +40,13 @@ def publishable(item):
 def action_disagreement(item):
     proposed = publishable(item)
     verdict = item.get("independent_reviewer", {}).get("effective_verdict")
-    return ((proposed and verdict in {"REJECT", "HUMAN_REVIEW"})
-            or (not proposed and verdict == "AUTO_APPROVE"))
+    return proposed and verdict != "AUTO_APPROVE"
+
+
+def assessment_disagreement(item):
+    """The reviewer did not approve the generator's assessment as written."""
+    verdict = item.get("independent_reviewer", {}).get("effective_verdict")
+    return verdict != "AUTO_APPROVE"
 
 
 def validate_items(items, registry):
@@ -165,6 +170,8 @@ def main():
             not publishable(x) and x["independent_reviewer"].get(
                 "effective_verdict") == "AUTO_APPROVE" for x in items),
         "action_disagreements": sum(action_disagreement(x) for x in items),
+        "assessment_disagreements": sum(
+            assessment_disagreement(x) for x in items),
         "verdicts": dict(Counter(x["independent_reviewer"].get(
             "effective_verdict") for x in items)),
         "reviewer_cost_usd": payload.get("cost_usd", 0),
