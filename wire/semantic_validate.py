@@ -72,6 +72,19 @@ UNVERIFIED_METADATA = re.compile(
     r"evidence access (?:is|was|lists?|shows?) (?:as )?unverified|"
     r"evidentiary status (?:is|was) unverified)\b")
 
+NEGATED_CONTEXT = re.compile(
+    r"(?i)(?:(?:does|did|is|was|has|have|had|can|could|would|will)\s+not|"
+    r"without|no evidence (?:that|of|for)?)\s+(?:\w+[\s-]+){0,6}$")
+
+DIAGNOSIS = re.compile(
+    r"(?i)\b(?:soft[- ]tissue injury|concussion|fractur(?:e|ed)|"
+    r"sprain(?:ed)?|strain(?:ed)?|torn\s+(?:acl|mcl|achilles|hamstring)|"
+    r"diagnos(?:is|ed)|dislocat(?:ion|ed))\b")
+
+ATTRIBUTION = re.compile(
+    r"(?i)\b(?:said|says|told|reported|according to|per|announced|"
+    r"confirmed|listed|designated|ruled)\b")
+
 
 QUOTE_FAILURE = "supporting_quote is not an exact substring of the evidence"
 
@@ -126,6 +139,25 @@ def _last(name: str) -> str:
     return n[-1].strip(".,;:!?()[]'\"") if n else ""
 
 
+def _asserts_context(text: str, pattern: re.Pattern) -> bool:
+    """True when a context phrase is asserted, not explicitly disclaimed."""
+    for match in pattern.finditer(text or ""):
+        prefix = (text or "")[max(0, match.start() - 100):match.start()]
+        if NEGATED_CONTEXT.search(prefix):
+            continue
+        return True
+    return False
+
+
+def _sentence_at(text: str, offset: int) -> str:
+    """The sentence-like clause containing offset, for local attribution."""
+    before = max(text.rfind(mark, 0, offset) for mark in ".!?\n") + 1
+    ends = [text.find(mark, offset) for mark in ".!?\n"]
+    ends = [end for end in ends if end >= 0]
+    after = min(ends) if ends else len(text)
+    return text[before:after]
+
+
 def validate(a: sem.SemanticAssessment, segment: str, players: list,
              registry, meta: dict | None = None) -> list[str]:
     """Reasons this answer may not be used. Empty means it stands."""
@@ -151,7 +183,8 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
         bad.append("generated text claims unverified source metadata that "
                    "was not supplied")
     for label, pattern in PASSAGE_CONTEXT.items():
-        if pattern.search(generated) and not pattern.search(segment):
+        if (_asserts_context(generated, pattern)
+                and not pattern.search(segment)):
             bad.append(f"generated text adds {label} context absent from the "
                        "evidence")
 
@@ -193,6 +226,18 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
             and a.evidence_classification not in supporting_classes):
         bad.append(f"{a.evidence_classification} may not support a fantasy "
                    "interpretation")
+
+    # A reporter can observe a player leave hurt, but a diagnosis needs a
+    # named attribution or official designation.  In a mixed passage, a quote
+    # from another player cannot lend authority to a later unattributed
+    # medical assertion.
+    if a.evidence_classification == "FIRSTHAND_OBSERVATION":
+        diagnosis = DIAGNOSIS.search(a.supporting_quote or segment)
+        if diagnosis:
+            sentence = _sentence_at(a.supporting_quote or segment,
+                                    diagnosis.start())
+            if not ATTRIBUTION.search(sentence):
+                bad.append("unattributed diagnosis classified as firsthand")
 
     # 2. Identity. The subject must be a real registry player, matched in
     #    this passage, with the team and position we stored.
