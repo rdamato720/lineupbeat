@@ -1823,6 +1823,30 @@ check("performance-only evidence confirms a no-impact decision",
       and not _confirmed_no_impact["enforcement_reasons"],
       _confirmed_no_impact)
 
+_enriched_review = {
+    **_contradictory_review,
+    "provider": "openai", "model": "gpt-test",
+    "tokens_in": 10, "tokens_out": 5,
+    "cost_usd": 0.001, "latency_ms": 12,
+}
+_enforced_enriched = IR.enforce(
+    _enriched_review, identity_resolved=True, integrity_ok=True,
+    proposed_assessment={"decision": "NO_FANTASY_IMPACT"})
+check("trusted reviewer provenance is not mistaken for model schema output",
+      _enforced_enriched["effective_verdict"] == "AUTO_APPROVE"
+      and not _enforced_enriched["enforcement_reasons"]
+      and _enforced_enriched["provider"] == "openai",
+      _enforced_enriched)
+_enforced_unknown = IR.enforce(
+    {**_enriched_review, "model_invented_field": True},
+    identity_resolved=True, integrity_ok=True,
+    proposed_assessment={"decision": "NO_FANTASY_IMPACT"})
+check("a genuinely unexpected reviewer field still fails strict validation",
+      _enforced_unknown["effective_verdict"] == "HUMAN_REVIEW"
+      and any("model_invented_field" in reason
+              for reason in _enforced_unknown["enforcement_reasons"]),
+      _enforced_unknown)
+
 _review_script = (ROOT / "scripts" / "wire_independent_review.py").read_text()
 check("independent enforcement receives the proposed generator decision",
       "proposed_assessment=result" in _review_script)
