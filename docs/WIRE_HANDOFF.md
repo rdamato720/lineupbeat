@@ -279,7 +279,7 @@ Deterministic enforcement runs after the reviewer:
   Responses API, strict JSON Schema, and `store: false`.
 - OpenAI independent reviewer: implemented in
   `wire/providers/openai_review.py` as a separate Responses API pass.
-- Generator prompt `wire-fantasy-2026-08-23g` treats source metadata as
+- Generator prompt `wire-fantasy-2026-08-23h` treats source metadata as
   provenance context only, grounds all editorial fields in the evidence, and
   forbids `UPDATE_RECOMMENDED` on `LOW` evidence. Explicit "began practicing"
   language counts as a return event even when participation remains limited.
@@ -288,7 +288,9 @@ Deterministic enforcement runs after the reviewer:
   practice participation remains firsthand even when a nearby future-return
   forecast is only a limitation. A matched quote speaker never inherits a
   different player's role, and recurring two-minute-drill routes count as a
-  narrow `ROUTES` signal rather than isolated performance.
+  narrow `ROUTES` signal rather than isolated performance. Plainly reported
+  re-aggravations remain negative injury events, while unchanged named-starter
+  language remains non-actionable status quo.
 - Reviewer prompt `wire-independent-review-2026-08-23f` and schema
   `independent-review-v2` explicitly review the proposed evidence class,
   distinguish attributed speech from relayed reporting, and classify the
