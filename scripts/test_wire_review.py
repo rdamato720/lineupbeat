@@ -5,7 +5,9 @@ from __future__ import annotations
 
 import sys
 import json
+import os
 import tempfile
+import types
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -18,12 +20,14 @@ from wire import currentness
 from wire import evidence_integrity as integ
 from wire import human_review
 from wire import independent_review as review
+from wire import openai_promotion
 from wire import players
 from wire import relevance
 from wire import semantic
 import wire_review_package as package
 import wire_backfill as backfill
 import wire_semantic_eval as semantic_eval
+from wire.providers.openai import OpenAIProviderError, OpenAISemanticProvider
 
 
 class ReviewRepairTests(unittest.TestCase):
@@ -79,6 +83,65 @@ class ReviewRepairTests(unittest.TestCase):
                        "validation_failures": []}])
         self.assertFalse(gate["passed"])
         self.assertFalse(gate["checks"]["observed_spend_within_cap"])
+
+    def test_openai_auth_probe_rejects_a_well_shaped_invalid_key(self):
+        key = "sk-proj-" + "A" * 40
+
+        class BadModels:
+            @staticmethod
+            def retrieve(_model):
+                raise RuntimeError("401 for " + key)
+
+        class BadClient:
+            def __init__(self, api_key):
+                self.models = BadModels()
+
+        fake_openai = types.SimpleNamespace(OpenAI=BadClient)
+        with mock.patch.dict(os.environ, {"OPENAI_API_KEY": key}), \
+                mock.patch.dict(sys.modules, {"openai": fake_openai}):
+            provider = OpenAISemanticProvider()
+            self.assertTrue(provider.available())
+            with self.assertRaises(OpenAIProviderError) as caught:
+                provider.authenticate()
+        self.assertNotIn(key, str(caught.exception))
+        self.assertIn("[REDACTED]", str(caught.exception))
+
+    def test_transport_auth_probe_makes_no_extra_request(self):
+        calls = []
+        provider = OpenAISemanticProvider(
+            transport=lambda prompt: calls.append(prompt))
+        self.assertTrue(provider.authenticate())
+        self.assertEqual(calls, [])
+
+    def test_openai_promotion_receipt_is_valid_and_non_publishing(self):
+        receipt, errors = openai_promotion.validate()
+        self.assertEqual(errors, [])
+        self.assertEqual(receipt["status"], "QUALIFIED")
+        self.assertEqual(receipt["correct"], receipt["graded"])
+        self.assertFalse(receipt["publishing_authorized"])
+        self.assertFalse(receipt["deployment_triggered"])
+
+    def test_openai_promotion_receipt_detects_report_and_publication_edits(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            report = root / "eval.json"
+            report.write_bytes(openai_promotion.EVAL.read_bytes())
+            payload = json.loads(report.read_text())
+            payload["providers"]["openai"]["summary"]["correct_num"] = 22
+            report.write_text(json.dumps(payload))
+            _, errors = openai_promotion.validate(eval_path=report)
+            self.assertTrue(any("eval_report_sha256" in x for x in errors),
+                            errors)
+
+            publications = root / "publications.json"
+            publications.write_bytes(openai_promotion.PUBLICATIONS.read_bytes())
+            payload = json.loads(publications.read_text())
+            payload["count"] += 1
+            publications.write_text(json.dumps(payload))
+            _, errors = openai_promotion.validate(
+                publications_path=publications)
+            self.assertTrue(any("publications_sha256" in x for x in errors),
+                            errors)
 
     def test_generator_prompt_withholds_article_title(self):
         evidence = ("Without two of the top receivers, Christian Watson and "

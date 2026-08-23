@@ -1,6 +1,6 @@
 # Lineup Beat NFL Wire: complete engineering handoff
 
-Last verified: 2026-08-22
+Last verified: 2026-08-23
 
 Repository: `rdamato720/lineupbeat`
 
@@ -92,11 +92,13 @@ There is no valid path from E or F directly to I.
 | `wire/evidence_integrity.py` | Evidence-only and request hashing |
 | `wire/independent_review.py` | Independent-review schema, validation, deterministic overrides |
 | `wire/human_review.py` | Named-human receipt and paid-ledger validation |
+| `wire/openai_promotion.py` | Locked-corpus report/receipt promotion validation |
 | `wire/providers/` | Rules, Anthropic, OpenAI, and independent-review transports |
 | `wire/store.py` | Candidate, impact, decision, audit, and publication persistence |
 | `scripts/wire_backfill.py` | Rolling-window discovery/interpretation/reporting |
 | `data/wire_paid_candidates.json` | Durable candidate-id ledger written before model requests |
 | `data/wire_human_reviews.json` | Append-only named-human dark-launch review receipts |
+| `data/wire_openai_promotion.json` | Semantic-promotion receipt bound to corpus/report/publications hashes |
 | `scripts/wire_independent_review.py` | Second-pass review; writes no publications |
 | `scripts/wire_review_package.py` | Human-review HTML and JSON package |
 | `scripts/wire_publish.py` | Only reviewed-card publication route |
@@ -306,8 +308,13 @@ Deterministic enforcement runs after the reviewer:
 - `openai==3.3.1` is pinned in `requirements.txt`.
 - Anthropic transports remain as inert legacy/audit code but are absent from
   the active provider registry, workflow secrets, and installed requirements.
-- OpenAI is the dark-launch provider, not production-approved until the locked
-  corpus and labelled real-evidence gates pass.
+- OpenAI is production-qualified for semantic interpretation: the locked
+  23-item gold corpus passed 23/23 with 13/13 precision, 13/13 recall, one
+  safe abstention, and no zero-tolerance or unexpected-validation failures.
+  The labelled five-item real-evidence suppression cohort also passed both
+  model passes, deterministic enforcement, evidence-integrity review, and
+  named-human review. This qualification authorizes neither publication nor
+  deployment, and it does not authorize recurring paid calls.
 
 Do not claim provider determinism. Temperature zero may reduce variability but
 does not guarantee identical results. Store provider, model, schema, prompt,
@@ -492,6 +499,12 @@ incomplete, and therefore fails promotion. One in-flight response can cross
 the observed-spend ceiling; that also fails promotion and no later request is
 sent. The independent request-count ceiling remains exact.
 
+Before the first Responses request, the evaluation retrieves the configured
+model through the API's model metadata endpoint. This authentication probe
+uses no model tokens and is not a semantic-model call. A revoked, truncated,
+or otherwise invalid but well-shaped key therefore fails with zero model
+calls instead of consuming the first call slot.
+
 Report zero-tolerance errors, correct/total, precision numerator/denominator,
 recall numerator/denominator, false suppressions, false positives, abstentions,
 validation failures, token use, cost, median latency, and p95 latency. Unlabelled
@@ -647,28 +660,39 @@ checks, and Ralph Damato agreed on all five `NO_FANTASY_IMPACT` suppressions;
 zero publications were applied. The durable receipt and all 96 paid candidate
 ids are banked.
 
-After the receipt/readiness and evaluation-cap changes pass review, the next
-paid step is the complete 23-item locked OpenAI gold corpus under a separately
-approved dollar cap and 23-call limit. Do not describe OpenAI as
-production-approved unless that predeclared gate passes.
+The complete locked OpenAI evaluation then passed on commit
+`5cc2ab62f404b99f32f2ec0a5506cec043dd11fd`: 23/23 correct, 13/13 precision,
+13/13 recall, 1/23 abstentions, 23/23 calls, $0.1863 observed spend under the
+$0.50 cap, and every predeclared promotion check passed. The exact report is
+banked with SHA-256
+`e53f8920d59718bb65e7fa61ca70f3f1996b62a55689ed94d52db7932ba0b022`.
+The publication file remained at six records with SHA-256
+`b6d7cbe1c10e0583c31ba81996e846a75417d6f20ed9d1386433f7f282e40d09`.
+
+After the promotion receipt and authentication preflight pass review, the
+safest operational next step is another manually selected, explicitly capped,
+review-only batch with distinct candidate ids and named-human review. Do not
+enable scheduled paid interpretation, deployment, or publication as part of
+that step; recurring spend needs separate authorization and publications stay
+human-gated.
 
 ### OpenAI production-promotion checklist
 
-Before promoting the OpenAI dark-launch path to production semantics:
+Completed for semantic production qualification on 2026-08-23:
 
-1. Pin the OpenAI SDK in `requirements.txt`.
-2. Add an OpenAI independent-review transport using the same strict closed
+1. [x] Pin the OpenAI SDK in `requirements.txt`.
+2. [x] Add an OpenAI independent-review transport using the same strict closed
    schema and deterministic enforcement.
-3. Add provider-specific redaction and failure tests.
-4. Run the locked gold corpus side by side; never change labels merely to make
-   the new provider pass.
-5. Run a labelled real-evidence review set.
-6. Require zero wrong-player, wrong-subject, opposite-direction,
+3. [x] Add provider-specific redaction and failure tests.
+4. [x] Run the locked gold corpus side by side without changing its labels.
+5. [x] Run a labelled real-evidence review set.
+6. [x] Require zero wrong-player, wrong-subject, opposite-direction,
    unsupported-unit, relay-promotion, invented-fact, and quotation-integrity
    failures.
-7. Set explicit precision and recall gates. Do not reward abstaining.
-8. Keep publication human-gated through a measured dark-launch period.
-9. Only then describe the OpenAI provider as production-approved.
+7. [x] Set explicit precision and recall gates without rewarding abstention.
+8. [x] Keep publication human-gated through the measured dark launch.
+9. [x] Bank a hash-bound promotion receipt that explicitly authorizes no
+   publication or deployment.
 
 ### Review automation
 
