@@ -132,8 +132,19 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
     # mechanism is telling us two different things. Read it as the answer it
     # gave about the football, not the label it put on the envelope.
     if (a.decision == sem.INTERPRET
-            and a.fantasy_mechanism == "NO_FANTASY_IMPACT"):
+            and a.fantasy_mechanism in {
+                "PERFORMANCE", "OTHER", "NO_FANTASY_IMPACT"}):
+        # The Wire publishes role, usage, opportunity and availability
+        # developments.  A model cannot turn isolated performance into a
+        # publishable category merely by choosing PERFORMANCE or OTHER.  If
+        # the passage establishes a real change it must name the concrete
+        # mechanism (targets, carries, unit, role, health, and so on).
         a.decision = sem.NO_FANTASY_IMPACT
+        a.fantasy_mechanism = "NO_FANTASY_IMPACT"
+        a.direction = "NEUTRAL"
+        a.impact_strength = "LOW"
+        a.impact_horizon = "UNKNOWN"
+        a.projection_action = "NONE"
 
     if a.decision == sem.NO_FANTASY_IMPACT:
         return bad
