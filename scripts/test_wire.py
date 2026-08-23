@@ -1439,6 +1439,40 @@ check("the prompt explicitly routes isolated performance to no impact",
       "PERFORMANCE and OTHER are not publishable fantasy mechanisms"
       in SEM.SYSTEM
       and "return NO_FANTASY_IMPACT" in SEM.SYSTEM)
+check("the prompt treats source metadata as context rather than evidence",
+      "Source metadata is context for provenance and authority only"
+      in SEM.SYSTEM
+      and "A missing metadata field is not an \"unverified\"" in SEM.SYSTEM
+      and "evidence access: not supplied" in
+          SEM.build_prompt(_seg, {"team": "JAX"}, _pl))
+check("the prompt forbids an update recommendation on LOW evidence",
+      "LOW evidence may use NONE or REVIEW" in SEM.SYSTEM
+      and "never UPDATE_RECOMMENDED" in SEM.SYSTEM)
+_invented_metadata = _assess(
+    decision=SEM.ABSTAIN,
+    fantasy_mechanism="LIMITED_PARTICIPATION",
+    fantasy_commentary="The source metadata is unverified.",
+    abstention_reason="The evidentiary status is unverified.")
+check("an abstention cannot invent unverified source metadata",
+      _invented_metadata.decision == SEM.ABSTAIN
+      and any("unverified source metadata" in failure
+              for failure in _invented_metadata.validation_failures),
+      _invented_metadata.to_dict())
+_invented_preseason = _assess(
+    decision=SEM.NO_FANTASY_IMPACT,
+    fantasy_mechanism="NO_FANTASY_IMPACT",
+    fantasy_commentary="This was an isolated preseason game play.")
+check("a no-impact explanation cannot import game context from metadata",
+      _invented_preseason.decision == SEM.ABSTAIN
+      and any("preseason context" in failure
+              for failure in _invented_preseason.validation_failures),
+      _invented_preseason.to_dict())
+_low_update = _assess(projection_action="UPDATE_RECOMMENDED")
+check("LOW evidence cannot recommend an update",
+      _low_update.decision == SEM.ABSTAIN
+      and any("UPDATE_RECOMMENDED on LOW" in failure
+              for failure in _low_update.validation_failures),
+      _low_update.to_dict())
 _analysis_interpretation = _assess(
     evidence_classification="ANALYSIS_OR_OPINION")
 check("analysis or opinion cannot support an interpretation",
@@ -1819,6 +1853,7 @@ check("both OpenAI passes require strict structured output",
       '"strict": True' in _oai_src and '"strict": True' in _oai_review_src)
 _review_payload = {
     "verdict": "HUMAN_REVIEW", "subject_is_correct": True,
+    "evidence_classification_is_supported": True,
     "mechanism_is_supported": True, "direction_is_supported": True,
     "commentary_overstates": False, "commentary_repeats_evidence": False,
     "inference_not_in_evidence": False,
@@ -1855,6 +1890,28 @@ check("performance-only evidence confirms a no-impact decision",
       and _confirmed_no_impact["effective_verdict"] == "AUTO_APPROVE"
       and not _confirmed_no_impact["enforcement_reasons"],
       _confirmed_no_impact)
+
+_unsupported_class_review = IR.enforce(
+    {**_review_payload, "verdict": "AUTO_APPROVE",
+     "evidence_classification_is_supported": False,
+     "disagreement_summary": "the proposed class does not match the passage"},
+    identity_resolved=True, integrity_ok=True,
+    proposed_assessment={"decision": "NO_FANTASY_IMPACT"})
+check("an unsupported evidence classification cannot auto-approve",
+      _unsupported_class_review["model_verdict"] == "AUTO_APPROVE"
+      and _unsupported_class_review["effective_verdict"] == "HUMAN_REVIEW"
+      and any("evidence classification" in reason
+              for reason in
+              _unsupported_class_review["enforcement_reasons"]),
+      _unsupported_class_review)
+_review_prompt = IR.build_prompt(
+    "He took first-team reps.",
+    {"player_id": "1", "player_name": "X", "team": "IND", "position": "QB"},
+    {"decision": "INTERPRET",
+     "evidence_classification": "FIRSTHAND_OBSERVATION"})
+check("the independent reviewer receives the evidence classification",
+      '"evidence_classification": "FIRSTHAND_OBSERVATION"'
+      in _review_prompt)
 
 _enriched_review = {
     **_contradictory_review,
