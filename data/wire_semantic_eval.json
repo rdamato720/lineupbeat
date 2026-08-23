@@ -7,16 +7,26 @@
     "available": true,
     "model": "deterministic",
     "graded": 23,
+    "locked_gold_items": 23,
     "correct": 12,
+    "correct_num": 12,
+    "correct_den": 23,
     "precision": "5/9",
-    "recall": "5/14",
+    "precision_num": 5,
+    "precision_den": 9,
+    "recall": "5/13",
+    "recall_num": 5,
+    "recall_den": 13,
     "errors": {
      "unsupported_role": 2,
-     "wrong_direction": 2,
-     "false_suppression": 7,
-     "false_positive": 2
+     "wrong_direction": 1,
+     "false_suppression": 6,
+     "false_positive": 2,
+     "identity_refusal_bypassed": 1
     },
     "abstain": "0/23",
+    "abstain_num": 0,
+    "abstain_den": 23,
     "no_fantasy_impact": "14/23",
     "median_latency_ms": 0,
     "p95_latency_ms": 0,
@@ -74,11 +84,8 @@
     },
     {
      "id": "washington-trammell-personnel",
-     "errors": [
-      "unsupported_role",
-      "wrong_direction"
-     ],
-     "correct": false,
+     "errors": [],
+     "correct": true,
      "decision": "INTERPRET",
      "mechanism": "FIRST_TEAM_REPS",
      "direction": "POSITIVE",
@@ -166,7 +173,7 @@
     {
      "id": "hankerson-waived",
      "errors": [
-      "false_suppression"
+      "identity_refusal_bypassed"
      ],
      "correct": false,
      "decision": "NO_FANTASY_IMPACT",
@@ -174,6 +181,7 @@
      "direction": "NEUTRAL",
      "subject": "",
      "graded": true,
+     "identity_outcome": "CORRECT_REGISTRY_REFUSAL",
      "validation_failures": [],
      "abstention_reason": "",
      "latency_ms": 0,
@@ -195,8 +203,10 @@
     },
     {
      "id": "giddens-reinjury",
-     "errors": [],
-     "correct": true,
+     "errors": [
+      "unsupported_role"
+     ],
+     "correct": false,
      "decision": "INTERPRET",
      "mechanism": "LIMITED_PARTICIPATION",
      "direction": "NEGATIVE",
@@ -403,14 +413,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "00831394ea3a58b12725",
-      "output_hash": "e5fd7775a6f428362800",
+      "output_hash": "161cde9510aba3d45d36",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -448,14 +461,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "f4f993a73ec778f3264a",
-      "output_hash": "4ac52624d1428ec52b46",
+      "output_hash": "d271f9f7f5f976de589b",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -488,14 +504,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "0b550e9e5e82f3970292",
-      "output_hash": "2073fe3d7bb6e550b65e",
+      "output_hash": "f73e9071bf2220d4fdf9",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -519,7 +538,7 @@
       "quote_speaker": null,
       "pronoun_antecedents": [],
       "supporting_quote": "Austin Trammell moved into the first-team 11 personnel package with Parker Washington out.",
-      "evidence_classification": "UNCERTAIN",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
       "fantasy_mechanism": "FIRST_TEAM_REPS",
       "direction": "POSITIVE",
       "impact_strength": "LOW",
@@ -528,19 +547,22 @@
       "fantasy_commentary": "",
       "why_it_matters": "depth-chart position",
       "limitations": [],
-      "confidence": 0.25,
+      "confidence": 0.55,
       "abstention_reason": null,
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "f381ec1bfd07b8d63b3e",
-      "output_hash": "2c83bacc4a3f93a45b6a",
+      "output_hash": "868bd472e030141a8d7f",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -559,7 +581,7 @@
       "quote_speaker": null,
       "pronoun_antecedents": [],
       "supporting_quote": "Austin Trammell moved into the first-team 11 personnel package with Parker Washington out.",
-      "evidence_classification": "UNCERTAIN",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
       "fantasy_mechanism": "FIRST_TEAM_REPS",
       "direction": "POSITIVE",
       "impact_strength": "LOW",
@@ -568,19 +590,22 @@
       "fantasy_commentary": "",
       "why_it_matters": "depth-chart position",
       "limitations": [],
-      "confidence": 0.25,
+      "confidence": 0.55,
       "abstention_reason": null,
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "fe165d0472ac15a1f0fc",
-      "output_hash": "ba275791c3455d505917",
+      "output_hash": "5543633492ec6185b5b4",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -613,14 +638,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "0f2f33f041343e9c2ff9",
-      "output_hash": "fd9d41d329e0d0d21120",
+      "output_hash": "f8f8e52a5eeccba834a7",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -653,14 +681,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "2920bc0d6e3df4dcb974",
-      "output_hash": "a9c8adf3e4af6e4dba53",
+      "output_hash": "3e6e037771725854faee",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -693,14 +724,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "9cb8172e5aa01dc7e1ba",
-      "output_hash": "3aa5013b230bbd1c244d",
+      "output_hash": "3c7f50965be4a0b6a9db",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -733,14 +767,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "2293e9fcc00843f6b385",
-      "output_hash": "4bbb8b5d280a611f8f30",
+      "output_hash": "8b7063cd826b76d73da2",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -759,7 +796,7 @@
       "quote_speaker": null,
       "pronoun_antecedents": [],
       "supporting_quote": "The team waived running back Anthony Hankerson on Tuesday.",
-      "evidence_classification": "UNCERTAIN",
+      "evidence_classification": "OFFICIAL_DESIGNATION",
       "fantasy_mechanism": "NO_FANTASY_IMPACT",
       "direction": "NEUTRAL",
       "impact_strength": "LOW",
@@ -768,19 +805,22 @@
       "fantasy_commentary": "",
       "why_it_matters": "",
       "limitations": [],
-      "confidence": 0.25,
+      "confidence": 0.75,
       "abstention_reason": "",
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "f0358330021d8aedcf9d",
-      "output_hash": "b140af4dd8ec349c3d7b",
+      "output_hash": "b30f868018e610fa6f7e",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -813,14 +853,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "eff27303db3487a679aa",
-      "output_hash": "37613e458abffef2f176",
+      "output_hash": "c38a374c7140f586d411",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -853,14 +896,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "47af6887bfd7754e416f",
-      "output_hash": "2955cc7e531617137bfe",
+      "output_hash": "a7d8f7a530c8d5a65f77",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -893,14 +939,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "c5dfef9c2c227577334a",
-      "output_hash": "c4bcef9ec66ac1858bcc",
+      "output_hash": "073ed897a0c004a63b2a",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -933,14 +982,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "d4ee170cedd6dc2d5175",
-      "output_hash": "f4f19862b5b6f6f2fa91",
+      "output_hash": "f210f6fed2efd89eaf78",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -973,14 +1025,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "d7146697bc13a23f18db",
-      "output_hash": "12688293bce2e3087fd7",
+      "output_hash": "f0383437b49f5d927d72",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -1013,14 +1068,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "dde1e162897489360d00",
-      "output_hash": "7de70c5a5ac2a0edca42",
+      "output_hash": "e9fcc225e1fec398051c",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -1039,7 +1097,7 @@
       "quote_speaker": null,
       "pronoun_antecedents": [],
       "supporting_quote": "Kyle McCord found Bo Melton on a crossing route for a first down.",
-      "evidence_classification": "UNCERTAIN",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
       "fantasy_mechanism": "NO_FANTASY_IMPACT",
       "direction": "NEUTRAL",
       "impact_strength": "LOW",
@@ -1048,19 +1106,22 @@
       "fantasy_commentary": "",
       "why_it_matters": "",
       "limitations": [],
-      "confidence": 0.25,
+      "confidence": 0.55,
       "abstention_reason": "",
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "0a702eb39d8aedee0289",
-      "output_hash": "c19b0de9744cd182bbb6",
+      "output_hash": "53a79cb86ee797c0f27c",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -1093,14 +1154,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "60a62d6ecd44b475fb08",
-      "output_hash": "0e57beac309c061da071",
+      "output_hash": "e66cb6dcab0c827040af",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -1133,14 +1197,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "9e401ce6db8122afbf6d",
-      "output_hash": "0589681bfbb8ef7e98c7",
+      "output_hash": "b49600698206046ccfca",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -1159,7 +1226,7 @@
       "quote_speaker": null,
       "pronoun_antecedents": [],
       "supporting_quote": "Jarrett Stidham started Game 1 in Atlanta, playing the entire first half with the first- and second-team offensive units.",
-      "evidence_classification": "UNCERTAIN",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
       "fantasy_mechanism": "NO_FANTASY_IMPACT",
       "direction": "NEUTRAL",
       "impact_strength": "LOW",
@@ -1168,19 +1235,22 @@
       "fantasy_commentary": "",
       "why_it_matters": "",
       "limitations": [],
-      "confidence": 0.25,
+      "confidence": 0.55,
       "abstention_reason": "",
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "47f3954bef67e9f504b3",
-      "output_hash": "63d9eb82fdda676e6f7f",
+      "output_hash": "967aa08357fe4353da8f",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -1213,14 +1283,17 @@
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "1fe930ba13f28413bebd",
-      "output_hash": "b92171ba3e92bf62f6ab",
+      "output_hash": "f9ea8ce3f47a3d5938d7",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -1239,7 +1312,7 @@
       "quote_speaker": null,
       "pronoun_antecedents": [],
       "supporting_quote": "Amon-Ra St. Brown caught a short touchdown in the red-zone period.",
-      "evidence_classification": "UNCERTAIN",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
       "fantasy_mechanism": "RED_ZONE",
       "direction": "POSITIVE",
       "impact_strength": "LOW",
@@ -1248,19 +1321,22 @@
       "fantasy_commentary": "",
       "why_it_matters": "usage",
       "limitations": [],
-      "confidence": 0.25,
+      "confidence": 0.55,
       "abstention_reason": null,
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "74f3cb0675989fc29125",
-      "output_hash": "a2ae246830fb0e2410ce",
+      "output_hash": "caad4fed99f9b1aeca3f",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     },
     {
@@ -1279,7 +1355,7 @@
       "quote_speaker": null,
       "pronoun_antecedents": [],
       "supporting_quote": "Nate Boerkircher was flagged for holding on the second play of the team period.",
-      "evidence_classification": "UNCERTAIN",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
       "fantasy_mechanism": "NO_FANTASY_IMPACT",
       "direction": "NEUTRAL",
       "impact_strength": "LOW",
@@ -1288,19 +1364,22 @@
       "fantasy_commentary": "",
       "why_it_matters": "",
       "limitations": [],
-      "confidence": 0.25,
+      "confidence": 0.55,
       "abstention_reason": "",
       "provider": "rules",
       "model": "deterministic",
       "schema_version": "semantic-v1",
-      "prompt_version": "wire-fantasy-2026-08-21",
+      "prompt_version": "wire-fantasy-2026-08-23i",
       "input_hash": "6d786879b736543b7b07",
-      "output_hash": "9675e549131877c5ff74",
+      "output_hash": "38b89a09817692476fa7",
       "tokens_in": 0,
       "tokens_out": 0,
       "cost_usd": 0.0,
       "latency_ms": 0,
-      "validation_failures": []
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
      }
     }
    ]

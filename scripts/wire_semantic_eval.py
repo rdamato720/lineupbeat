@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import statistics
 import sys
 import time
@@ -30,6 +31,7 @@ from wire import players as pl
 from wire import semantic as sem
 from wire import semantic_validate as sv
 from wire.providers import REGISTRY
+from wire.providers.openai import redact as redact_openai
 
 CORPUS = Path("data/wire_eval_corpus.json")
 OUT = Path("data/wire_semantic_eval.json")
@@ -45,6 +47,25 @@ ZERO_TOLERANCE_ERRORS = {
     "unsupported_role", "wrong_classification", "forbidden_mechanism",
     "identity_refusal_bypassed",
 }
+
+
+def live_limit_errors(provider_names: list[str], item_count: int,
+                      cap: float | None,
+                      max_calls: int | None) -> list[str]:
+    """Preflight live-provider limits before the first paid request."""
+    if "openai" not in provider_names:
+        return []
+    errors = []
+    if cap is None or not math.isfinite(cap) or cap <= 0:
+        errors.append("OpenAI evaluation requires an explicit positive --cap")
+    if max_calls is None or max_calls <= 0:
+        errors.append(
+            "OpenAI evaluation requires an explicit positive --max-calls")
+    elif max_calls < item_count:
+        errors.append(
+            f"--max-calls {max_calls} cannot cover the selected "
+            f"{item_count}-item corpus; 0 API calls made")
+    return errors
 
 
 def last(name: str) -> str:
@@ -152,6 +173,11 @@ def promotion_gate(summary: dict, graded: list[dict]) -> dict:
         "zero_tolerance_errors_zero": not zero_tolerance,
         "unexpected_validation_failures_zero": not unexpected_validation,
     }
+    if "cap_usd" in summary:
+        checks["observed_spend_within_cap"] = (
+            summary.get("cost_usd_total", 0) <= summary["cap_usd"])
+        checks["call_limit_not_exceeded"] = (
+            summary.get("calls", 0) <= summary.get("max_calls", 0))
     return {
         "passed": all(checks.values()),
         "checks": checks,
@@ -169,6 +195,10 @@ def main():
     ap.add_argument("--providers", default="rules")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--include-unlabelled", action="store_true")
+    ap.add_argument("--cap", type=float,
+                    help="required observed-spend ceiling for OpenAI")
+    ap.add_argument("--max-calls", type=int,
+                    help="required hard request-count ceiling for OpenAI")
     args = ap.parse_args()
 
     corpus = json.loads(CORPUS.read_text())
@@ -176,12 +206,18 @@ def main():
              if x["kind"] == "GOLD" or args.include_unlabelled]
     if args.limit:
         items = items[:args.limit]
+    provider_names = [x.strip() for x in args.providers.split(",") if x.strip()]
+    limit_errors = live_limit_errors(
+        provider_names, len(items), args.cap, args.max_calls)
+    if limit_errors:
+        for error in limit_errors:
+            print(f"  {error}", file=sys.stderr)
+        return 2
     reg = pl.load()
 
     report = {"corpus": str(CORPUS), "graded_items": 0, "providers": {}}
     gate_failed = False
-    for pname in args.providers.split(","):
-        pname = pname.strip()
+    for pname in provider_names:
         cls = REGISTRY.get(pname)
         if cls is None:
             print(f"  unknown provider {pname!r}")
@@ -189,9 +225,35 @@ def main():
         prov = cls()
         avail = getattr(prov, "available", lambda: True)()
         results, graded = [], []
+        calls, observed_spend = 0, 0.0
+        stopped_at_cap = False
+        provider_error = ""
         t0 = time.time()
-        for item in items:
-            a = prov.evaluate(item["text"], item["metadata"], item["players"])
+        selected_items = [] if pname == "openai" and not avail else items
+        if pname == "openai" and not avail:
+            provider_error = "OpenAI unavailable; key missing or invalid"
+        for item in selected_items:
+            if pname == "openai" and calls >= args.max_calls:
+                # The preflight normally makes this unreachable. Keep the
+                # boundary here so later item-selection changes cannot spend
+                # an extra request.
+                break
+            if pname == "openai" and observed_spend >= args.cap:
+                stopped_at_cap = True
+                break
+            if pname == "openai":
+                calls += 1
+            try:
+                a = prov.evaluate(item["text"], item["metadata"],
+                                  item["players"])
+            except Exception as exc:
+                if pname != "openai":
+                    raise
+                provider_error = redact_openai(
+                    f"{type(exc).__name__}: {exc}")[:400]
+                break
+            if pname == "openai":
+                observed_spend += a.cost_usd
             a = sv.enforce(a, item["text"], item["players"], reg,
                            item["metadata"])
             g = grade(item, a)
@@ -247,6 +309,15 @@ def main():
             "wall_seconds": round(wall, 1),
         }
         if pname == "openai":
+            summary.update({
+                "calls": calls,
+                "max_calls": args.max_calls,
+                "cap_usd": args.cap,
+                "stopped_at_cap": stopped_at_cap,
+                "selected_items": len(items),
+                "completed_items": len(graded),
+                "provider_error": provider_error,
+            })
             summary["promotion_gate"] = promotion_gate(summary, graded)
             gate_failed = gate_failed or not summary["promotion_gate"]["passed"]
         report["providers"][pname] = {"summary": summary, "graded": graded,
@@ -267,6 +338,13 @@ def main():
         print(f"    latency median {summary['median_latency_ms']}ms  "
               f"p95 {summary['p95_latency_ms']}ms")
         print(f"    cost per 1000 segments ${summary['cost_per_1000_segments']}")
+        if pname == "openai":
+            print(f"    calls              {calls}/{args.max_calls}")
+            print(f"    observed spend     ${cost:.4f}/${args.cap:.2f} cap")
+            if stopped_at_cap:
+                print("    cost cap reached; no further request was sent")
+            if provider_error:
+                print(f"    provider failure   {provider_error}")
         if "promotion_gate" in summary:
             gate = summary["promotion_gate"]
             print(f"    promotion gate    "
