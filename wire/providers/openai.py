@@ -50,11 +50,29 @@ class OpenAISemanticProvider(sem.FantasySemanticProvider):
     KEY_SHAPE = re.compile(r"sk-[A-Za-z0-9_\-]{20,}")
 
     def available(self) -> bool:
-        """Usable, not merely present. Disabled for this launch regardless."""
+        """A transport or well-shaped key is present; this is not auth."""
         if self._transport is not None:
             return True
         return bool(self.KEY_SHAPE.fullmatch(
             os.environ.get("OPENAI_API_KEY", "") or ""))
+
+    def authenticate(self) -> bool:
+        """Verify the live key and model without making a Responses call."""
+        if self._transport is not None:
+            return True
+        key = os.environ.get("OPENAI_API_KEY")
+        if not key:
+            raise OpenAIProviderError("OPENAI_API_KEY is not set")
+        try:
+            from openai import OpenAI
+        except ImportError:
+            raise OpenAIProviderError("the openai package is not installed")
+        try:
+            OpenAI(api_key=key).models.retrieve(self.model)
+        except Exception as exc:
+            raise OpenAIProviderError(
+                redact(f"{type(exc).__name__}: {exc}")) from None
+        return True
 
     def evaluate(self, evidence_segment, article_metadata, matched_players):
         t0 = time.time()

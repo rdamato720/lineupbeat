@@ -1383,6 +1383,1544 @@
      }
     }
    ]
+  },
+  "openai": {
+   "summary": {
+    "available": true,
+    "model": "gpt-5.6-terra",
+    "graded": 23,
+    "locked_gold_items": 23,
+    "correct": 23,
+    "correct_num": 23,
+    "correct_den": 23,
+    "precision": "13/13",
+    "precision_num": 13,
+    "precision_den": 13,
+    "recall": "13/13",
+    "recall_num": 13,
+    "recall_den": 13,
+    "errors": {},
+    "abstain": "1/23",
+    "abstain_num": 1,
+    "abstain_den": 23,
+    "no_fantasy_impact": "9/23",
+    "median_latency_ms": 3174,
+    "p95_latency_ms": 4613,
+    "cost_usd_total": 0.1863,
+    "cost_per_1000_segments": 8.1,
+    "wall_seconds": 78.1,
+    "calls": 23,
+    "max_calls": 23,
+    "cap_usd": 0.5,
+    "stopped_at_cap": false,
+    "selected_items": 23,
+    "completed_items": 23,
+    "provider_error": "",
+    "promotion_gate": {
+     "passed": true,
+     "checks": {
+      "provider_available": true,
+      "locked_corpus_complete": true,
+      "accuracy_at_least_95_percent": true,
+      "precision_100_percent": true,
+      "recall_at_least_90_percent": true,
+      "abstention_at_most_15_percent": true,
+      "zero_tolerance_errors_zero": true,
+      "unexpected_validation_failures_zero": true,
+      "observed_spend_within_cap": true,
+      "call_limit_not_exceeded": true
+     },
+     "zero_tolerance_errors": {},
+     "unexpected_validation_failures": [],
+     "thresholds": {
+      "accuracy": 0.95,
+      "precision": 1.0,
+      "recall": 0.9,
+      "max_abstention_rate": 0.15
+     }
+    }
+   },
+   "graded": [
+    {
+     "id": "keon-coleman-relay",
+     "errors": [],
+     "correct": true,
+     "decision": "NO_FANTASY_IMPACT",
+     "mechanism": "NO_FANTASY_IMPACT",
+     "direction": "UNCLEAR",
+     "subject": "",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 4613,
+     "cost_usd": 0.00766
+    },
+    {
+     "id": "washington-thomas-targets",
+     "errors": [],
+     "correct": true,
+     "decision": "INTERPRET",
+     "mechanism": "TARGETS",
+     "direction": "POSITIVE",
+     "subject": "Brian Thomas Jr.",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 4671,
+     "cost_usd": 0.00913
+    },
+    {
+     "id": "thomas-beneficiary",
+     "errors": [],
+     "correct": true,
+     "decision": "INTERPRET",
+     "mechanism": "TARGETS",
+     "direction": "POSITIVE",
+     "subject": "Brian Thomas Jr.",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 4495,
+     "cost_usd": 0.008544
+    },
+    {
+     "id": "washington-trammell-personnel",
+     "errors": [],
+     "correct": true,
+     "decision": "INTERPRET",
+     "mechanism": "FIRST_TEAM_REPS",
+     "direction": "POSITIVE",
+     "subject": "Austin Trammell",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 4081,
+     "cost_usd": 0.009198000000000001
+    },
+    {
+     "id": "trammell-first-team",
+     "errors": [],
+     "correct": true,
+     "decision": "INTERPRET",
+     "mechanism": "FIRST_TEAM_REPS",
+     "direction": "POSITIVE",
+     "subject": "Austin Trammell",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 3479,
+     "cost_usd": 0.008744
+    },
+    {
+     "id": "mccarthy-price-pronoun",
+     "errors": [],
+     "correct": true,
+     "decision": "NO_FANTASY_IMPACT",
+     "mechanism": "PERFORMANCE",
+     "direction": "NEUTRAL",
+     "subject": "Myles Price",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 4034,
+     "cost_usd": 0.009342
+    },
+    {
+     "id": "mccarthy-second-team",
+     "errors": [],
+     "correct": true,
+     "decision": "INTERPRET",
+     "mechanism": "SECOND_TEAM_REPS",
+     "direction": "NEGATIVE",
+     "subject": "J.J. McCarthy",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 3535,
+     "cost_usd": 0.008314
+    },
+    {
+     "id": "geno-about-omar",
+     "errors": [],
+     "correct": true,
+     "decision": "NO_FANTASY_IMPACT",
+     "mechanism": "NO_FANTASY_IMPACT",
+     "direction": "UNCLEAR",
+     "subject": "Geno Smith",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 3088,
+     "cost_usd": 0.008048
+    },
+    {
+     "id": "allen-team-energy",
+     "errors": [],
+     "correct": true,
+     "decision": "NO_FANTASY_IMPACT",
+     "mechanism": "NO_FANTASY_IMPACT",
+     "direction": "UNCLEAR",
+     "subject": "Josh Allen",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 2467,
+     "cost_usd": 0.007264
+    },
+    {
+     "id": "hankerson-waived",
+     "errors": [],
+     "correct": true,
+     "decision": "ABSTAIN",
+     "mechanism": "NO_FANTASY_IMPACT",
+     "direction": "NEGATIVE",
+     "subject": "Anthony Hankerson",
+     "graded": true,
+     "identity_outcome": "CORRECT_REGISTRY_REFUSAL",
+     "validation_failures": [
+      "claim subject unresolved:Anthony Hankerson is not in the player registry"
+     ],
+     "abstention_reason": "claim subject unresolved:Anthony Hankerson is not in the player registry",
+     "latency_ms": 2950,
+     "cost_usd": 0.007402
+    },
+    {
+     "id": "wease-absent",
+     "errors": [],
+     "correct": true,
+     "decision": "INTERPRET",
+     "mechanism": "LIMITED_PARTICIPATION",
+     "direction": "NEGATIVE",
+     "subject": "Theo Wease Jr.",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 2975,
+     "cost_usd": 0.007478
+    },
+    {
+     "id": "giddens-reinjury",
+     "errors": [],
+     "correct": true,
+     "decision": "INTERPRET",
+     "mechanism": "INJURY",
+     "direction": "NEGATIVE",
+     "subject": "DJ Giddens",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 2356,
+     "cost_usd": 0.007452
+    },
+    {
+     "id": "engram-adjacent-return",
+     "errors": [],
+     "correct": true,
+     "decision": "NO_FANTASY_IMPACT",
+     "mechanism": "PERFORMANCE",
+     "direction": "NEUTRAL",
+     "subject": "Evan Engram",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 3131,
+     "cost_usd": 0.008388
+    },
+    {
+     "id": "jones-richardson-unit",
+     "errors": [],
+     "correct": true,
+     "decision": "NO_FANTASY_IMPACT",
+     "mechanism": "NO_FANTASY_IMPACT",
+     "direction": "NEUTRAL",
+     "subject": "Daniel Jones",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 2491,
+     "cost_usd": 0.007535999999999999
+    },
+    {
+     "id": "richardson-second-team",
+     "errors": [],
+     "correct": true,
+     "decision": "INTERPRET",
+     "mechanism": "SECOND_TEAM_REPS",
+     "direction": "NEGATIVE",
+     "subject": "Anthony Richardson",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 4883,
+     "cost_usd": 0.008322
+    },
+    {
+     "id": "wentz-third-team",
+     "errors": [],
+     "correct": true,
+     "decision": "INTERPRET",
+     "mechanism": "THIRD_TEAM_REPS",
+     "direction": "NEGATIVE",
+     "subject": "Carson Wentz",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 2925,
+     "cost_usd": 0.008014
+    },
+    {
+     "id": "mccord-adjacent-heading",
+     "errors": [],
+     "correct": true,
+     "decision": "NO_FANTASY_IMPACT",
+     "mechanism": "PERFORMANCE",
+     "direction": "NEUTRAL",
+     "subject": "Kyle McCord",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 2736,
+     "cost_usd": 0.007474
+    },
+    {
+     "id": "jacobs-return",
+     "errors": [],
+     "correct": true,
+     "decision": "INTERPRET",
+     "mechanism": "RETURN_TO_PRACTICE",
+     "direction": "POSITIVE",
+     "subject": "Josh Jacobs",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 3174,
+     "cost_usd": 0.00754
+    },
+    {
+     "id": "laporta-absent",
+     "errors": [],
+     "correct": true,
+     "decision": "INTERPRET",
+     "mechanism": "LIMITED_PARTICIPATION",
+     "direction": "NEGATIVE",
+     "subject": "Sam LaPorta",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 2661,
+     "cost_usd": 0.007846
+    },
+    {
+     "id": "stidham-mixed-units",
+     "errors": [],
+     "correct": true,
+     "decision": "INTERPRET",
+     "mechanism": "FIRST_TEAM_REPS",
+     "direction": "POSITIVE",
+     "subject": "Jarrett Stidham",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 3815,
+     "cost_usd": 0.009024
+    },
+    {
+     "id": "hollins-two-minute",
+     "errors": [],
+     "correct": true,
+     "decision": "INTERPRET",
+     "mechanism": "ROUTES",
+     "direction": "POSITIVE",
+     "subject": "Mack Hollins",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 3474,
+     "cost_usd": 0.008634
+    },
+    {
+     "id": "isolated-highlight",
+     "errors": [],
+     "correct": true,
+     "decision": "NO_FANTASY_IMPACT",
+     "mechanism": "PERFORMANCE",
+     "direction": "NEUTRAL",
+     "subject": "Amon-Ra St. Brown",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 3363,
+     "cost_usd": 0.0073880000000000005
+    },
+    {
+     "id": "penalty-no-impact",
+     "errors": [],
+     "correct": true,
+     "decision": "NO_FANTASY_IMPACT",
+     "mechanism": "NO_FANTASY_IMPACT",
+     "direction": "NEUTRAL",
+     "subject": "Nate Boerkircher",
+     "graded": true,
+     "validation_failures": [],
+     "abstention_reason": null,
+     "latency_ms": 2724,
+     "cost_usd": 0.007546000000000001
+    }
+   ],
+   "results": [
+    {
+     "item": "keon-coleman-relay",
+     "assessment": {
+      "decision": "NO_FANTASY_IMPACT",
+      "claim_subject_player_id": null,
+      "claim_subject_player_name": null,
+      "mentioned_players": [
+       {
+        "player_id": null,
+        "player_name": "Khalil Shakir",
+        "relationship": "OTHER"
+       },
+       {
+        "player_id": null,
+        "player_name": "Dante Pettis",
+        "relationship": "OTHER"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "On Thursday in Berea, Khalil Shakir and Dante Pettis added to the group of sidelined wide receivers, per Cameron Wolfe of NFL Network.",
+      "evidence_classification": "RELAYED_REPORTING",
+      "fantasy_mechanism": "NO_FANTASY_IMPACT",
+      "direction": "UNCLEAR",
+      "impact_strength": "LOW",
+      "impact_horizon": "UNKNOWN",
+      "projection_action": "NONE",
+      "fantasy_commentary": "The passage concerns Khalil Shakir and Dante Pettis being sidelined, not Keon Coleman. It establishes no availability, role or usage development for Coleman.",
+      "why_it_matters": "No matched player's fantasy-relevant role or availability is described.",
+      "limitations": [
+       "The report is relayed from Cameron Wolfe of NFL Network.",
+       "Keon Coleman is not mentioned in the passage."
+      ],
+      "confidence": 0.99,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "00831394ea3a58b12725",
+      "output_hash": "4d8431ad7ef1bf2e5233",
+      "tokens_in": 2264,
+      "tokens_out": 261,
+      "cost_usd": 0.00766,
+      "latency_ms": 4613,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "washington-thomas-targets",
+     "assessment": {
+      "decision": "INTERPRET",
+      "claim_subject_player_id": "00-0039893",
+      "claim_subject_player_name": "Brian Thomas Jr.",
+      "mentioned_players": [
+       {
+        "player_id": "00-0038606",
+        "player_name": "Parker Washington",
+        "relationship": "ABSENT_PLAYER"
+       },
+       {
+        "player_id": "00-0039893",
+        "player_name": "Brian Thomas Jr.",
+        "relationship": "CLAIM_SUBJECT"
+       },
+       {
+        "player_id": null,
+        "player_name": "Trevor Lawrence",
+        "relationship": "OTHER"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "With no Parker Washington on the field, the No. 1 target for Trevor Lawrence on Tuesday was pretty easily Brian Thomas Jr.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "TARGETS",
+      "direction": "POSITIVE",
+      "impact_strength": "LOW",
+      "impact_horizon": "SHORT_TERM",
+      "projection_action": "REVIEW",
+      "fantasy_commentary": "Brian Thomas Jr. was described as Trevor Lawrence's clear No. 1 target on Tuesday while Parker Washington was not on the field. This establishes a single observed target hierarchy in Washington's absence, not a permanent role change.",
+      "why_it_matters": "Thomas received the most prominent reported target usage in the observed setting.",
+      "limitations": [
+       "The passage describes only Tuesday and does not establish how long Parker Washington will be off the field.",
+       "This is one reporter observation and does not establish Thomas' usual target share or depth-chart standing."
+      ],
+      "confidence": 0.93,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "f4f993a73ec778f3264a",
+      "output_hash": "82d8e545e7bac12010c9",
+      "tokens_in": 2279,
+      "tokens_out": 381,
+      "cost_usd": 0.00913,
+      "latency_ms": 4671,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "thomas-beneficiary",
+     "assessment": {
+      "decision": "INTERPRET",
+      "claim_subject_player_id": "00-0039893",
+      "claim_subject_player_name": "Brian Thomas Jr.",
+      "mentioned_players": [
+       {
+        "player_id": null,
+        "player_name": "Parker Washington",
+        "relationship": "ABSENT_PLAYER"
+       },
+       {
+        "player_id": "00-0039893",
+        "player_name": "Brian Thomas Jr.",
+        "relationship": "CLAIM_SUBJECT"
+       },
+       {
+        "player_id": null,
+        "player_name": "Trevor Lawrence",
+        "relationship": "TEAMMATE"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "With no Parker Washington on the field, the No. 1 target for Trevor Lawrence on Tuesday was pretty easily Brian Thomas Jr.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "TARGETS",
+      "direction": "POSITIVE",
+      "impact_strength": "LOW",
+      "impact_horizon": "SHORT_TERM",
+      "projection_action": "REVIEW",
+      "fantasy_commentary": "Brian Thomas Jr. was Trevor Lawrence's clear No. 1 target on Tuesday while Parker Washington was not on the field. This is a single observed practice usage note and does not establish a lasting target hierarchy.",
+      "why_it_matters": "The report identifies Thomas as the primary target in the observed session.",
+      "limitations": [
+       "Parker Washington was not on the field, which may have affected the observed target distribution.",
+       "This reflects one Tuesday practice observation rather than repeated usage."
+      ],
+      "confidence": 0.94,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "0b550e9e5e82f3970292",
+      "output_hash": "d4f14f97942a405bb307",
+      "tokens_in": 2262,
+      "tokens_out": 335,
+      "cost_usd": 0.008544,
+      "latency_ms": 4495,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "washington-trammell-personnel",
+     "assessment": {
+      "decision": "INTERPRET",
+      "claim_subject_player_id": "00-0036841",
+      "claim_subject_player_name": "Austin Trammell",
+      "mentioned_players": [
+       {
+        "player_id": "00-0036841",
+        "player_name": "Austin Trammell",
+        "relationship": "CLAIM_SUBJECT"
+       },
+       {
+        "player_id": "00-0038606",
+        "player_name": "Parker Washington",
+        "relationship": "ABSENT_PLAYER"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "Austin Trammell moved into the first-team 11 personnel package with Parker Washington out.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "FIRST_TEAM_REPS",
+      "direction": "POSITIVE",
+      "impact_strength": "LOW",
+      "impact_horizon": "SHORT_TERM",
+      "projection_action": "REVIEW",
+      "fantasy_commentary": "Trammell moved into the first-team 11-personnel package while Parker Washington was out. This establishes first-team package work in that circumstance, not a permanent role change.",
+      "why_it_matters": "First-team work can signal a short-term opportunity increase for Trammell while Washington is unavailable.",
+      "limitations": [
+       "The passage does not state why Washington was out.",
+       "The report describes one first-team package arrangement and does not establish Trammell's broader usage or long-term role."
+      ],
+      "confidence": 0.94,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "f381ec1bfd07b8d63b3e",
+      "output_hash": "7ee515515c641549dce9",
+      "tokens_in": 2271,
+      "tokens_out": 388,
+      "cost_usd": 0.009198000000000001,
+      "latency_ms": 4081,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "trammell-first-team",
+     "assessment": {
+      "decision": "INTERPRET",
+      "claim_subject_player_id": "00-0036841",
+      "claim_subject_player_name": "Austin Trammell",
+      "mentioned_players": [
+       {
+        "player_id": "00-0036841",
+        "player_name": "Austin Trammell",
+        "relationship": "CLAIM_SUBJECT"
+       },
+       {
+        "player_id": null,
+        "player_name": "Parker Washington",
+        "relationship": "ABSENT_PLAYER"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "Austin Trammell moved into the first-team 11 personnel package with Parker Washington out.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "FIRST_TEAM_REPS",
+      "direction": "POSITIVE",
+      "impact_strength": "LOW",
+      "impact_horizon": "SHORT_TERM",
+      "projection_action": "REVIEW",
+      "fantasy_commentary": "Austin Trammell moved into the first-team 11-personnel package while Parker Washington was out. This establishes first-team package work in that circumstance, not a broader starting role or permanent increase in usage.",
+      "why_it_matters": "First-team work in 11 personnel indicates Trammell received an opportunity with Washington unavailable.",
+      "limitations": [
+       "The passage ties Trammell's first-team package work to Parker Washington being out.",
+       "It does not establish Trammell's snap share, targets, or role when Washington is available."
+      ],
+      "confidence": 0.93,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "fe165d0472ac15a1f0fc",
+      "output_hash": "1de81fdc2863441546eb",
+      "tokens_in": 2254,
+      "tokens_out": 353,
+      "cost_usd": 0.008744,
+      "latency_ms": 3479,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "mccarthy-price-pronoun",
+     "assessment": {
+      "decision": "NO_FANTASY_IMPACT",
+      "claim_subject_player_id": "00-0040506",
+      "claim_subject_player_name": "Myles Price",
+      "mentioned_players": [
+       {
+        "player_id": null,
+        "player_name": "JJ McCarthy",
+        "relationship": "OTHER"
+       },
+       {
+        "player_id": "00-0040506",
+        "player_name": "Myles Price",
+        "relationship": "CLAIM_SUBJECT"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [
+       {
+        "pronoun": "He",
+        "resolved_to": "JJ McCarthy",
+        "supporting_text": "JJ McCarthy had a big completion to Myles Price downfield. He took the majority of the second-team reps on Wednesday."
+       }
+      ],
+      "supporting_quote": "JJ McCarthy had a big completion to Myles Price downfield.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "PERFORMANCE",
+      "direction": "NEUTRAL",
+      "impact_strength": "LOW",
+      "impact_horizon": "UNKNOWN",
+      "projection_action": "NONE",
+      "fantasy_commentary": "Price was the receiver on a downfield completion from JJ McCarthy. The passage does not establish recurring targets, routes, unit reps, or a role change for Price.",
+      "why_it_matters": "This is an isolated play rather than concrete usage or availability news.",
+      "limitations": [
+       "The second-team reps in the passage belong to McCarthy, not Price.",
+       "No repeated usage, target volume, or depth-chart information for Price is stated."
+      ],
+      "confidence": 0.99,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "0f2f33f041343e9c2ff9",
+      "output_hash": "e261558249874077078a",
+      "tokens_in": 2259,
+      "tokens_out": 402,
+      "cost_usd": 0.009342,
+      "latency_ms": 4034,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "mccarthy-second-team",
+     "assessment": {
+      "decision": "INTERPRET",
+      "claim_subject_player_id": "00-0039923",
+      "claim_subject_player_name": "J.J. McCarthy",
+      "mentioned_players": [
+       {
+        "player_id": "00-0039923",
+        "player_name": "J.J. McCarthy",
+        "relationship": "CLAIM_SUBJECT"
+       },
+       {
+        "player_id": null,
+        "player_name": "Myles Price",
+        "relationship": "TEAMMATE"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [
+       {
+        "pronoun": "He",
+        "resolved_to": "J.J. McCarthy",
+        "supporting_text": "JJ McCarthy had a big completion to Myles Price downfield. He took the majority of the second-team reps on Wednesday."
+       }
+      ],
+      "supporting_quote": "He took the majority of the second-team reps on Wednesday.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "SECOND_TEAM_REPS",
+      "direction": "NEGATIVE",
+      "impact_strength": "LOW",
+      "impact_horizon": "SHORT_TERM",
+      "projection_action": "REVIEW",
+      "fantasy_commentary": "McCarthy took the majority of the second-team reps Wednesday. The passage does not establish why he worked with the second team or whether this usage will continue.",
+      "why_it_matters": "Second-team quarterback reps indicate McCarthy was not the primary first-team quarterback in this reported practice usage.",
+      "limitations": [
+       "This is a single Wednesday practice observation.",
+       "The passage does not identify who took first-team reps or explain the reason for McCarthy's second-team work."
+      ],
+      "confidence": 0.98,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "2920bc0d6e3df4dcb974",
+      "output_hash": "82cc504fd8ca0b2b85fb",
+      "tokens_in": 2261,
+      "tokens_out": 316,
+      "cost_usd": 0.008314,
+      "latency_ms": 3535,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "geno-about-omar",
+     "assessment": {
+      "decision": "NO_FANTASY_IMPACT",
+      "claim_subject_player_id": "00-0030565",
+      "claim_subject_player_name": "Geno Smith",
+      "mentioned_players": [
+       {
+        "player_id": null,
+        "player_name": "Omar Cooper Jr.",
+        "relationship": "OTHER"
+       },
+       {
+        "player_id": "00-0030565",
+        "player_name": "Geno Smith",
+        "relationship": "QUOTE_SPEAKER"
+       }
+      ],
+      "quote_speaker": "Geno Smith",
+      "pronoun_antecedents": [
+       {
+        "pronoun": "us",
+        "resolved_to": "Geno Smith and his team",
+        "supporting_text": "for us"
+       }
+      ],
+      "supporting_quote": "\"Omar Cooper Jr. has taken over the slot role for us,\" Geno Smith said after practice.",
+      "evidence_classification": "DIRECT_QUOTATION",
+      "fantasy_mechanism": "NO_FANTASY_IMPACT",
+      "direction": "UNCLEAR",
+      "impact_strength": "LOW",
+      "impact_horizon": "UNKNOWN",
+      "projection_action": "NONE",
+      "fantasy_commentary": "Geno Smith is only the quote speaker. His statement assigns the slot role to Omar Cooper Jr., not to Smith.",
+      "why_it_matters": "The passage establishes no availability, usage, or role change for Smith.",
+      "limitations": [
+       "Omar Cooper Jr. is not a registry-matched player, so the role statement cannot be assigned to a matched player.",
+       "The passage does not describe Smith's own role or usage."
+      ],
+      "confidence": 0.99,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "9cb8172e5aa01dc7e1ba",
+      "output_hash": "c1a2e4f5bfe6b4f5d958",
+      "tokens_in": 2254,
+      "tokens_out": 295,
+      "cost_usd": 0.008048,
+      "latency_ms": 3088,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "allen-team-energy",
+     "assessment": {
+      "decision": "NO_FANTASY_IMPACT",
+      "claim_subject_player_id": "00-0034857",
+      "claim_subject_player_name": "Josh Allen",
+      "mentioned_players": [
+       {
+        "player_id": "00-0034857",
+        "player_name": "Josh Allen",
+        "relationship": "QUOTE_SPEAKER"
+       }
+      ],
+      "quote_speaker": "Josh Allen",
+      "pronoun_antecedents": [],
+      "supporting_quote": "The energy out here has been unbelievable all camp,\" Josh Allen said.",
+      "evidence_classification": "DIRECT_QUOTATION",
+      "fantasy_mechanism": "NO_FANTASY_IMPACT",
+      "direction": "UNCLEAR",
+      "impact_strength": "LOW",
+      "impact_horizon": "UNKNOWN",
+      "projection_action": "NONE",
+      "fantasy_commentary": "Allen commented that the energy during camp has been unbelievable. The quote does not establish any change in his availability, role, or usage.",
+      "why_it_matters": "The passage contains only a team-mood comment and no fantasy-relevant football development.",
+      "limitations": [
+       "The quote does not identify any practice participation, depth-chart role, or workload information."
+      ],
+      "confidence": 0.99,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "2293e9fcc00843f6b385",
+      "output_hash": "4a2ecc0a97198b2ff6b3",
+      "tokens_in": 2246,
+      "tokens_out": 231,
+      "cost_usd": 0.007264,
+      "latency_ms": 2467,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "hankerson-waived",
+     "assessment": {
+      "decision": "ABSTAIN",
+      "claim_subject_player_id": "unresolved:Anthony Hankerson",
+      "claim_subject_player_name": "Anthony Hankerson",
+      "mentioned_players": [
+       {
+        "player_id": "unresolved:Anthony Hankerson",
+        "player_name": "Anthony Hankerson",
+        "relationship": "CLAIM_SUBJECT"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "The team waived running back Anthony Hankerson on Tuesday.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "NO_FANTASY_IMPACT",
+      "direction": "NEGATIVE",
+      "impact_strength": "LOW",
+      "impact_horizon": "IMMEDIATE",
+      "projection_action": "NONE",
+      "fantasy_commentary": "Anthony Hankerson was waived by the team. The passage establishes a roster transaction but does not identify a replacement or describe his prior role.",
+      "why_it_matters": "Being waived removes Hankerson from the team's active roster context described in the passage.",
+      "limitations": [
+       "The passage does not state whether Hankerson will be claimed, re-signed, or placed on another roster.",
+       "No usage, depth-chart role, or replacement is identified."
+      ],
+      "confidence": 0.98,
+      "abstention_reason": "claim subject unresolved:Anthony Hankerson is not in the player registry",
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "f0358330021d8aedcf9d",
+      "output_hash": "960ea3d82df289c35149",
+      "tokens_in": 2243,
+      "tokens_out": 243,
+      "cost_usd": 0.007402,
+      "latency_ms": 2950,
+      "validation_failures": [
+       "claim subject unresolved:Anthony Hankerson is not in the player registry"
+      ],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "wease-absent",
+     "assessment": {
+      "decision": "INTERPRET",
+      "claim_subject_player_id": "00-0040311",
+      "claim_subject_player_name": "Theo Wease Jr.",
+      "mentioned_players": [
+       {
+        "player_id": "00-0040311",
+        "player_name": "Theo Wease Jr.",
+        "relationship": "CLAIM_SUBJECT"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "Theo Wease Jr. did not practice for the third straight day.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "LIMITED_PARTICIPATION",
+      "direction": "NEGATIVE",
+      "impact_strength": "MEDIUM",
+      "impact_horizon": "IMMEDIATE",
+      "projection_action": "REVIEW",
+      "fantasy_commentary": "Theo Wease Jr. did not practice for a third consecutive day. The passage establishes an ongoing practice absence but does not provide a reason or injury designation.",
+      "why_it_matters": "A continued absence from practice can limit Wease's immediate availability and preparation.",
+      "limitations": [
+       "No reason for the practice absence is provided.",
+       "The passage does not state whether Wease is injured, held out, or expected to return."
+      ],
+      "confidence": 0.98,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "eff27303db3487a679aa",
+      "output_hash": "6487fc97bc01ca702ec1",
+      "tokens_in": 2251,
+      "tokens_out": 248,
+      "cost_usd": 0.007478,
+      "latency_ms": 2975,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "giddens-reinjury",
+     "assessment": {
+      "decision": "INTERPRET",
+      "claim_subject_player_id": "00-0040179",
+      "claim_subject_player_name": "DJ Giddens",
+      "mentioned_players": [
+       {
+        "player_id": "00-0040179",
+        "player_name": "DJ Giddens",
+        "relationship": "CLAIM_SUBJECT"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "DJ Giddens returned to practice and immediately reaggravated his hamstring.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "INJURY",
+      "direction": "NEGATIVE",
+      "impact_strength": "LOW",
+      "impact_horizon": "IMMEDIATE",
+      "projection_action": "REVIEW",
+      "fantasy_commentary": "DJ Giddens returned to practice but immediately reaggravated his hamstring. The reported re-aggravation is a negative availability development and overrides the return.",
+      "why_it_matters": "The re-aggravation creates an immediate setback to Giddens' practice availability.",
+      "limitations": [
+       "The passage does not state the severity of the hamstring issue or provide a recovery timeline.",
+       "This is a single reported observation."
+      ],
+      "confidence": 0.98,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "47af6887bfd7754e416f",
+      "output_hash": "b2505b0142946d34ec58",
+      "tokens_in": 2250,
+      "tokens_out": 246,
+      "cost_usd": 0.007452,
+      "latency_ms": 2356,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "engram-adjacent-return",
+     "assessment": {
+      "decision": "NO_FANTASY_IMPACT",
+      "claim_subject_player_id": "00-0033881",
+      "claim_subject_player_name": "Evan Engram",
+      "mentioned_players": [
+       {
+        "player_id": "00-0033881",
+        "player_name": "Evan Engram",
+        "relationship": "CLAIM_SUBJECT"
+       },
+       {
+        "player_id": null,
+        "player_name": "Travis Etienne",
+        "relationship": "OTHER"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "Evan Engram caught two passes over the middle.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "PERFORMANCE",
+      "direction": "NEUTRAL",
+      "impact_strength": "LOW",
+      "impact_horizon": "UNKNOWN",
+      "projection_action": "NONE",
+      "fantasy_commentary": "Engram was observed catching two passes over the middle. This is an isolated practice performance note and does not establish a usage, role, or availability change.",
+      "why_it_matters": "The passage does not establish a concrete fantasy-relevant change for Engram.",
+      "limitations": [
+       "The passage does not state Engram's route volume, target share, depth-chart role, or participation status."
+      ],
+      "confidence": 0.98,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "c5dfef9c2c227577334a",
+      "output_hash": "4fddc3df7f25b211e8ee",
+      "tokens_in": 2256,
+      "tokens_out": 323,
+      "cost_usd": 0.008388,
+      "latency_ms": 3131,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "jones-richardson-unit",
+     "assessment": {
+      "decision": "NO_FANTASY_IMPACT",
+      "claim_subject_player_id": "00-0035710",
+      "claim_subject_player_name": "Daniel Jones",
+      "mentioned_players": [
+       {
+        "player_id": "00-0035710",
+        "player_name": "Daniel Jones",
+        "relationship": "CLAIM_SUBJECT"
+       },
+       {
+        "player_id": null,
+        "player_name": "Anthony Richardson",
+        "relationship": "COMPETITOR"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "Daniel Jones remains the named starter.",
+      "evidence_classification": "ANALYSIS_OR_OPINION",
+      "fantasy_mechanism": "NO_FANTASY_IMPACT",
+      "direction": "NEUTRAL",
+      "impact_strength": "LOW",
+      "impact_horizon": "UNKNOWN",
+      "projection_action": "NONE",
+      "fantasy_commentary": "Jones is described as remaining the named starter. The passage does not establish a new depth-chart change for him.",
+      "why_it_matters": "The statement is status-quo starter language rather than a newly established designation.",
+      "limitations": [
+       "The report does not provide a new designation or change in Jones' role.",
+       "Richardson's second-team work does not establish a new fantasy-impacting development for Jones."
+      ],
+      "confidence": 0.99,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "d4ee170cedd6dc2d5175",
+      "output_hash": "5b060209abcf24ae08ec",
+      "tokens_in": 2250,
+      "tokens_out": 253,
+      "cost_usd": 0.007535999999999999,
+      "latency_ms": 2491,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "richardson-second-team",
+     "assessment": {
+      "decision": "INTERPRET",
+      "claim_subject_player_id": "00-0039164",
+      "claim_subject_player_name": "Anthony Richardson",
+      "mentioned_players": [
+       {
+        "player_id": "00-0039164",
+        "player_name": "Anthony Richardson",
+        "relationship": "CLAIM_SUBJECT"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "Anthony Richardson led the Colts' second-team offense down the field for a field goal score as time expired.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "SECOND_TEAM_REPS",
+      "direction": "NEGATIVE",
+      "impact_strength": "LOW",
+      "impact_horizon": "SHORT_TERM",
+      "projection_action": "REVIEW",
+      "fantasy_commentary": "Richardson led the Colts' second-team offense on the reported scoring drive. This establishes second-team usage in that sequence but does not establish his broader practice role or depth-chart standing.",
+      "why_it_matters": "Second-team quarterback reps can signal a potential limitation in immediate first-unit opportunity.",
+      "limitations": [
+       "The passage describes one drive only.",
+       "It does not identify who led the first-team offense or establish a broader depth-chart change."
+      ],
+      "confidence": 0.9,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "d7146697bc13a23f18db",
+      "output_hash": "f310ee1c979422e01862",
+      "tokens_in": 2253,
+      "tokens_out": 318,
+      "cost_usd": 0.008322,
+      "latency_ms": 4883,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "wentz-third-team",
+     "assessment": {
+      "decision": "INTERPRET",
+      "claim_subject_player_id": "00-0032950",
+      "claim_subject_player_name": "Carson Wentz",
+      "mentioned_players": [
+       {
+        "player_id": "00-0032950",
+        "player_name": "Carson Wentz",
+        "relationship": "CLAIM_SUBJECT"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "Carson Wentz worked with the 3s for most of the afternoon.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "THIRD_TEAM_REPS",
+      "direction": "NEGATIVE",
+      "impact_strength": "LOW",
+      "impact_horizon": "SHORT_TERM",
+      "projection_action": "REVIEW",
+      "fantasy_commentary": "Carson Wentz worked with the third team for most of the afternoon. This establishes third-team usage during the reported session but does not establish a longer-term depth-chart decision.",
+      "why_it_matters": "Third-team reps indicate Wentz was not working with the top two units for most of the observed afternoon.",
+      "limitations": [
+       "This is a single reported observation.",
+       "The passage does not state why Wentz worked with the third team or whether the alignment will continue."
+      ],
+      "confidence": 0.93,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "dde1e162897489360d00",
+      "output_hash": "eaa4cbd31d095a74fa80",
+      "tokens_in": 2249,
+      "tokens_out": 293,
+      "cost_usd": 0.008014,
+      "latency_ms": 2925,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "mccord-adjacent-heading",
+     "assessment": {
+      "decision": "NO_FANTASY_IMPACT",
+      "claim_subject_player_id": "00-0040014",
+      "claim_subject_player_name": "Kyle McCord",
+      "mentioned_players": [
+       {
+        "player_id": "00-0040014",
+        "player_name": "Kyle McCord",
+        "relationship": "CLAIM_SUBJECT"
+       },
+       {
+        "player_id": null,
+        "player_name": "Bo Melton",
+        "relationship": "OTHER"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "Kyle McCord found Bo Melton on a crossing route for a first down.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "PERFORMANCE",
+      "direction": "NEUTRAL",
+      "impact_strength": "LOW",
+      "impact_horizon": "UNKNOWN",
+      "projection_action": "NONE",
+      "fantasy_commentary": "McCord completed a first-down pass to Bo Melton on a crossing route. This isolated play does not establish a change in McCord's role, usage, or availability.",
+      "why_it_matters": "The passage records only an individual completion.",
+      "limitations": [
+       "It does not establish repeated usage, unit assignment, playing time, or a role change."
+      ],
+      "confidence": 0.99,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "0a702eb39d8aedee0289",
+      "output_hash": "d46b1fa017fc5b67cf88",
+      "tokens_in": 2249,
+      "tokens_out": 248,
+      "cost_usd": 0.007474,
+      "latency_ms": 2736,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "jacobs-return",
+     "assessment": {
+      "decision": "INTERPRET",
+      "claim_subject_player_id": "00-0035700",
+      "claim_subject_player_name": "Josh Jacobs",
+      "mentioned_players": [
+       {
+        "player_id": "00-0035700",
+        "player_name": "Josh Jacobs",
+        "relationship": "CLAIM_SUBJECT"
+       },
+       {
+        "player_id": null,
+        "player_name": "Lukas Van Ness",
+        "relationship": "OTHER"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "Returned to practice: RB Josh Jacobs (groin), edge Lukas Van Ness (shoulder).",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "RETURN_TO_PRACTICE",
+      "direction": "POSITIVE",
+      "impact_strength": "LOW",
+      "impact_horizon": "IMMEDIATE",
+      "projection_action": "REVIEW",
+      "fantasy_commentary": "Josh Jacobs returned to practice after being listed with a groin issue. The passage does not state whether he was a full or limited participant.",
+      "why_it_matters": "His return establishes that he resumed practice participation.",
+      "limitations": [
+       "The passage does not specify the extent of Jacobs' practice participation.",
+       "The passage does not establish his expected availability or workload."
+      ],
+      "confidence": 0.97,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "60a62d6ecd44b475fb08",
+      "output_hash": "b9b1df3c2296128a40e4",
+      "tokens_in": 2252,
+      "tokens_out": 253,
+      "cost_usd": 0.00754,
+      "latency_ms": 3174,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "laporta-absent",
+     "assessment": {
+      "decision": "INTERPRET",
+      "claim_subject_player_id": "00-0039065",
+      "claim_subject_player_name": "Sam LaPorta",
+      "mentioned_players": [
+       {
+        "player_id": "00-0039065",
+        "player_name": "Sam LaPorta",
+        "relationship": "CLAIM_SUBJECT"
+       },
+       {
+        "player_id": null,
+        "player_name": "Mekhi Wingo",
+        "relationship": "OTHER"
+       },
+       {
+        "player_id": null,
+        "player_name": "Brian Branch",
+        "relationship": "OTHER"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "Those not participating at practice on Thursday included Sam LaPorta, Mekhi Wingo and Brian Branch.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "LIMITED_PARTICIPATION",
+      "direction": "NEGATIVE",
+      "impact_strength": "LOW",
+      "impact_horizon": "IMMEDIATE",
+      "projection_action": "REVIEW",
+      "fantasy_commentary": "Sam LaPorta did not participate in Thursday's practice. The passage does not state why he was absent or whether the absence will continue.",
+      "why_it_matters": "LaPorta's practice availability was limited on Thursday.",
+      "limitations": [
+       "No reason for LaPorta's non-participation is provided.",
+       "The passage does not establish his availability beyond Thursday's practice."
+      ],
+      "confidence": 0.98,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "9e401ce6db8122afbf6d",
+      "output_hash": "c1cd6f43068dac5b249a",
+      "tokens_in": 2255,
+      "tokens_out": 278,
+      "cost_usd": 0.007846,
+      "latency_ms": 2661,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "stidham-mixed-units",
+     "assessment": {
+      "decision": "INTERPRET",
+      "claim_subject_player_id": "00-0035264",
+      "claim_subject_player_name": "Jarrett Stidham",
+      "mentioned_players": [
+       {
+        "player_id": "00-0035264",
+        "player_name": "Jarrett Stidham",
+        "relationship": "CLAIM_SUBJECT"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "Jarrett Stidham started Game 1 in Atlanta, playing the entire first half with the first- and second-team offensive units.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "FIRST_TEAM_REPS",
+      "direction": "POSITIVE",
+      "impact_strength": "LOW",
+      "impact_horizon": "SHORT_TERM",
+      "projection_action": "REVIEW",
+      "fantasy_commentary": "Stidham started and played the entire first half alongside both the first- and second-team offensive units. This establishes first-team work in this setting but does not establish a longer-term starting designation.",
+      "why_it_matters": "Taking the opening role and working with the first-team unit is a concrete signal in the quarterback competition.",
+      "limitations": [
+       "This is a single reported observation.",
+       "The passage does not establish whether this usage will continue or name a longer-term starter."
+      ],
+      "confidence": 0.9,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "47f3954bef67e9f504b3",
+      "output_hash": "3044323402d52eeb0b6b",
+      "tokens_in": 2262,
+      "tokens_out": 375,
+      "cost_usd": 0.009024,
+      "latency_ms": 3815,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "hollins-two-minute",
+     "assessment": {
+      "decision": "INTERPRET",
+      "claim_subject_player_id": "00-0033555",
+      "claim_subject_player_name": "Mack Hollins",
+      "mentioned_players": [
+       {
+        "player_id": "00-0033555",
+        "player_name": "Mack Hollins",
+        "relationship": "CLAIM_SUBJECT"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "If you look at any of the Patriots' two-minute drills to close each training camp practice this summer, it does not matter which offensive unit is on the field. Chances are you will see Mack Hollins running routes.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "ROUTES",
+      "direction": "POSITIVE",
+      "impact_strength": "MEDIUM",
+      "impact_horizon": "SHORT_TERM",
+      "projection_action": "UPDATE_RECOMMENDED",
+      "fantasy_commentary": "Hollins has been running routes in the Patriots' end-of-practice two-minute drills regardless of the offensive unit. This establishes recurring situational route participation, not an every-down role or starting designation.",
+      "why_it_matters": "Repeated two-minute-drill routes across offensive units show Hollins is involved in a recurring passing situation.",
+      "limitations": [
+       "The passage does not specify Hollins' overall snap share, target volume, depth-chart position, or role outside two-minute drills."
+      ],
+      "confidence": 0.93,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "1fe930ba13f28413bebd",
+      "output_hash": "29ed5f3af05f22011c16",
+      "tokens_in": 2277,
+      "tokens_out": 340,
+      "cost_usd": 0.008634,
+      "latency_ms": 3474,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "isolated-highlight",
+     "assessment": {
+      "decision": "NO_FANTASY_IMPACT",
+      "claim_subject_player_id": "00-0036963",
+      "claim_subject_player_name": "Amon-Ra St. Brown",
+      "mentioned_players": [
+       {
+        "player_id": "00-0036963",
+        "player_name": "Amon-Ra St. Brown",
+        "relationship": "CLAIM_SUBJECT"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "Amon-Ra St. Brown caught a short touchdown in the red-zone period.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "PERFORMANCE",
+      "direction": "NEUTRAL",
+      "impact_strength": "LOW",
+      "impact_horizon": "SHORT_TERM",
+      "projection_action": "NONE",
+      "fantasy_commentary": "St. Brown caught a short touchdown during the red-zone period. This is an isolated play and does not establish a recurring red-zone role, target pattern or usage change.",
+      "why_it_matters": "The passage records only a single scoring reception.",
+      "limitations": [
+       "It does not provide repetition, target volume, unit usage or a role change."
+      ],
+      "confidence": 0.99,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "74f3cb0675989fc29125",
+      "output_hash": "98d64e623b86a6018936",
+      "tokens_in": 2254,
+      "tokens_out": 240,
+      "cost_usd": 0.0073880000000000005,
+      "latency_ms": 3363,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    },
+    {
+     "item": "penalty-no-impact",
+     "assessment": {
+      "decision": "NO_FANTASY_IMPACT",
+      "claim_subject_player_id": "unresolved:Nate Boerkircher",
+      "claim_subject_player_name": "Nate Boerkircher",
+      "mentioned_players": [
+       {
+        "player_id": "unresolved:Nate Boerkircher",
+        "player_name": "Nate Boerkircher",
+        "relationship": "CLAIM_SUBJECT"
+       }
+      ],
+      "quote_speaker": null,
+      "pronoun_antecedents": [],
+      "supporting_quote": "Nate Boerkircher was flagged for holding on the second play of the team period.",
+      "evidence_classification": "FIRSTHAND_OBSERVATION",
+      "fantasy_mechanism": "NO_FANTASY_IMPACT",
+      "direction": "NEUTRAL",
+      "impact_strength": "LOW",
+      "impact_horizon": "UNKNOWN",
+      "projection_action": "NONE",
+      "fantasy_commentary": "Boerkircher was flagged for holding on a team-period play. An isolated penalty does not establish a fantasy-relevant role, usage, or availability change.",
+      "why_it_matters": "The passage reports only an individual penalty.",
+      "limitations": [
+       "It does not establish Boerkircher's place on the depth chart, playing time, targets, or availability."
+      ],
+      "confidence": 0.99,
+      "abstention_reason": null,
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "schema_version": "semantic-v1",
+      "prompt_version": "wire-fantasy-2026-08-23i",
+      "input_hash": "6d786879b736543b7b07",
+      "output_hash": "d21ab7534e8fd502c68b",
+      "tokens_in": 2255,
+      "tokens_out": 253,
+      "cost_usd": 0.007546000000000001,
+      "latency_ms": 2724,
+      "validation_failures": [],
+      "attempts": [],
+      "retry_attempted": false,
+      "retry_reason": ""
+     }
+    }
+   ]
   }
  }
 }

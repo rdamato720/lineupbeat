@@ -23,6 +23,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from wire import coverage
 from wire import human_review
+from wire import openai_promotion
 from wire import registry as artreg
 from wire import si
 from wire.store import WireStore
@@ -189,15 +190,18 @@ def main():
          f"{pubs.get('count', 0)} reviewed publication(s)"),
     ]
     human_ready, human_note = human_review.readiness()
+    semantic_ready, semantic_note = openai_promotion.readiness()
     print("\n  MINIMUM_SWITCH_READY")
     for name, ok, note in mins:
         print(f"    [{'PASS' if ok else 'FAIL'}] {name:<46}{note}")
     print(f"    [{'PASS' if human_ready else 'HOLD'}] "
           f"FANTASY_SPIN_REVIEW_READY               {human_note}")
+    print(f"    [{'PASS' if semantic_ready else 'HOLD'}] "
+          f"OPENAI_SEMANTIC_PROMOTION_READY          {semantic_note}")
 
     full_ok = len(cov["with_two_full_text"]) >= 24
     minimum_ok = all(ok for _, ok, _ in mins)
-    all_ready = full_ok and minimum_ok and human_ready
+    all_ready = full_ok and minimum_ok and human_ready and semantic_ready
     print("\n  FULL_COVERAGE_READY")
     print(f"    [{'PASS' if full_ok else 'FAIL'}] 24+ teams with two full-text "
           f"sources           {len(cov['with_two_full_text'])}/32")

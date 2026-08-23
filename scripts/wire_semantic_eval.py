@@ -228,9 +228,16 @@ def main():
         calls, observed_spend = 0, 0.0
         stopped_at_cap = False
         provider_error = ""
+        if pname == "openai" and avail:
+            try:
+                prov.authenticate()
+            except Exception as exc:
+                avail = False
+                provider_error = redact_openai(
+                    f"{type(exc).__name__}: {exc}")[:400]
         t0 = time.time()
         selected_items = [] if pname == "openai" and not avail else items
-        if pname == "openai" and not avail:
+        if pname == "openai" and not avail and not provider_error:
             provider_error = "OpenAI unavailable; key missing or invalid"
         for item in selected_items:
             if pname == "openai" and calls >= args.max_calls:
