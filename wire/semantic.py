@@ -28,7 +28,7 @@ import re
 from dataclasses import dataclass, field, asdict
 
 SCHEMA_VERSION = "semantic-v1"
-PROMPT_VERSION = "wire-fantasy-2026-08-21c"
+PROMPT_VERSION = "wire-fantasy-2026-08-23a"
 
 INTERPRET, NO_FANTASY_IMPACT, ABSTAIN = "INTERPRET", "NO_FANTASY_IMPACT", "ABSTAIN"
 DECISIONS = {INTERPRET, NO_FANTASY_IMPACT, ABSTAIN}
@@ -200,7 +200,11 @@ Return ABSTAIN rather than guessing when the passage is genuinely ambiguous \
 about who a claim concerns. Abstaining is a correct answer and is preferred \
 to a confident wrong one. NO_FANTASY_IMPACT is for passages that are clear \
 but carry no role, usage, availability or opportunity consequence: an \
-isolated catch, a penalty, a team-mood quote.
+isolated catch, a penalty, a team-mood quote. PERFORMANCE and OTHER are not \
+publishable fantasy mechanisms. If the passage establishes only performance, \
+return NO_FANTASY_IMPACT. If performance also establishes a concrete change \
+in routes, targets, carries, unit, competition or role, use that concrete \
+mechanism instead.
 
 supporting_quote must be copied EXACTLY from the passage, character for \
 character. It is checked automatically and a mismatch discards your answer.
