@@ -11,7 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 
-PROMPT_VERSION = "wire-independent-review-2026-08-22d"
+PROMPT_VERSION = "wire-independent-review-2026-08-23a"
 SCHEMA_VERSION = "independent-review-v1"
 
 VERDICTS = {"AUTO_APPROVE", "HUMAN_REVIEW", "REJECT", "ABSTAIN"}
@@ -122,10 +122,32 @@ def enforce(model_payload: dict, *, identity_resolved: bool,
     if not integrity_ok:
         effective = "HUMAN_REVIEW"
         reasons.append("evidence integrity not verified")
-    conflict = model_payload.get("passage_names_a_different_subject") is True
-    if conflict and effective == "AUTO_APPROVE":
-        effective = "HUMAN_REVIEW"
-        reasons.append("claim-subject conflict blocks automatic approval")
+    # AUTO_APPROVE is a conjunction, not an independent label.  The first
+    # live OpenAI review returned AUTO_APPROVE while also saying the passage
+    # contained performance only and no role information.  Preserve the
+    # model's contradictory verdict for audit, but never let it become the
+    # effective verdict.
+    auto_approval_blockers = (
+        (model_payload.get("subject_is_correct") is not True,
+         "reviewer did not confirm the claim subject"),
+        (model_payload.get("mechanism_is_supported") is not True,
+         "reviewer did not confirm the fantasy mechanism"),
+        (model_payload.get("direction_is_supported") is not True,
+         "reviewer did not confirm the direction"),
+        (model_payload.get("commentary_overstates") is True,
+         "reviewer says the commentary overstates the evidence"),
+        (model_payload.get("inference_not_in_evidence") is True,
+         "reviewer found an inference absent from the evidence"),
+        (model_payload.get("performance_only_no_role_information") is True,
+         "performance-only evidence with no role information blocks automatic approval"),
+        (model_payload.get("passage_names_a_different_subject") is True,
+         "claim-subject conflict blocks automatic approval"),
+    )
+    if effective == "AUTO_APPROVE":
+        blockers = [reason for blocked, reason in auto_approval_blockers if blocked]
+        if blockers:
+            effective = "HUMAN_REVIEW"
+            reasons.extend(blockers)
     # Never manufacture REJECT. A model REJECT remains visibly the model's.
     return {**model_payload, "model_verdict": original,
             "effective_verdict": effective,
