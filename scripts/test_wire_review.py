@@ -45,6 +45,11 @@ class ReviewRepairTests(unittest.TestCase):
         self.assertIn("wire_extract.py --limit 1000", batch)
         self.assertIn("github.event_name == 'pull_request'", batch)
         self.assertIn("github.event_name == 'workflow_dispatch'", batch)
+        self.assertIn("wire-review-selection-v1", batch)
+        self.assertIn('"approval_statement": "approved"', batch)
+        self.assertIn('"approved_cost_usd": 1.0', batch)
+        self.assertIn('"approved_max_calls": 40', batch)
+        self.assertIn("selection has no valid plan digest; 0 API calls", batch)
         self.assertNotIn("wire_publish.py", batch)
         self.assertNotIn("wrangler", batch)
 

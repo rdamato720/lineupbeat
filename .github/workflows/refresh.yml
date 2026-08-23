@@ -9,6 +9,7 @@ on:
       - main
     paths:
       - ".github/workflows/refresh.yml"
+      - "data/wire_review_selection.json"
   workflow_dispatch:
     inputs:
       skip_fetch:
@@ -75,6 +76,61 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      - name: Resolve and validate review request
+        id: review_request
+        env:
+          DISPATCH_MODE: ${{ inputs.wire_review_mode }}
+          DISPATCH_CANDIDATE_IDS: ${{ inputs.wire_candidate_ids }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import re
+          from pathlib import Path
+
+          mode = os.environ.get("DISPATCH_MODE") or "plan"
+          candidate_ids = os.environ.get("DISPATCH_CANDIDATE_IDS", "")
+          selection_path = Path("data/wire_review_selection.json")
+          if os.environ.get("GITHUB_EVENT_NAME") == "pull_request" and selection_path.exists():
+              selection = json.loads(selection_path.read_text())
+              required = {
+                  "schema_version": "wire-review-selection-v1",
+                  "approved_by": "Ralph Damato",
+                  "approval_statement": "approved",
+                  "approved_cost_usd": 1.0,
+                  "approved_max_calls": 40,
+                  "generator_cap_usd": 0.40,
+                  "generator_max_calls": 20,
+                  "reviewer_cap_usd": 0.40,
+                  "reviewer_max_calls": 20,
+                  "hours": 72,
+              }
+              bad = [key for key, value in required.items()
+                     if selection.get(key) != value]
+              ids = selection.get("candidate_ids")
+              if bad:
+                  raise SystemExit(f"selection authorization mismatch: {bad}; 0 API calls")
+              if not isinstance(selection.get("plan_run_id"), int):
+                  raise SystemExit("selection has no integer plan_run_id; 0 API calls")
+              if not re.fullmatch(r"[0-9a-f]{64}", selection.get("plan_digest", "")):
+                  raise SystemExit("selection has no valid plan digest; 0 API calls")
+              if not isinstance(ids, list) or not 1 <= len(ids) <= 20:
+                  raise SystemExit("selection requires 1-20 candidate ids; 0 API calls")
+              if any(not isinstance(value, str) or
+                     not re.fullmatch(r"[0-9a-f]{20}", value) for value in ids):
+                  raise SystemExit("selection has an invalid candidate id; 0 API calls")
+              if len(set(ids)) != len(ids):
+                  raise SystemExit("selection repeats a candidate id; 0 API calls")
+              candidate_ids = " ".join(ids)
+              mode = "review"
+          if mode not in {"plan", "review"}:
+              raise SystemExit(f"invalid review mode {mode!r}; 0 API calls")
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a") as output:
+              output.write(f"mode={mode}\n")
+              output.write(f"candidate_ids={candidate_ids}\n")
+          print(f"review request: {mode}")
+          PY
+
       - name: Review boundary gates
         run: |
           python scripts/test_wire_review.py
@@ -109,16 +165,16 @@ jobs:
           python scripts/wire_extract.py --limit 1000
 
       - name: Build zero-call plan
-        if: github.event_name == 'pull_request' || inputs.wire_review_mode == 'plan'
+        if: steps.review_request.outputs.mode == 'plan'
         run: |
           python scripts/wire_backfill.py --plan --report \
             --hours "$WIRE_REVIEW_HOURS"
 
       - name: Interpret exact approved cohort
-        if: github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'review'
+        if: steps.review_request.outputs.mode == 'review'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          WIRE_CANDIDATE_IDS: ${{ inputs.wire_candidate_ids }}
+          WIRE_CANDIDATE_IDS: ${{ steps.review_request.outputs.candidate_ids }}
         run: |
           python - <<'PY'
           import os
@@ -149,7 +205,7 @@ jobs:
           PY
 
       - name: Independently review exact cohort
-        if: github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'review'
+        if: steps.review_request.outputs.mode == 'review'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
@@ -157,7 +213,7 @@ jobs:
           python scripts/wire_review_package.py
 
       - name: Enforce approved total limits and non-publication
-        if: github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'review'
+        if: steps.review_request.outputs.mode == 'review'
         env:
           PUBLICATIONS_BEFORE: ${{ steps.publications.outputs.sha }}
         run: |
@@ -187,7 +243,7 @@ jobs:
           PY
 
       - name: Confirm plan made no paid calls or publications
-        if: github.event_name == 'pull_request' || inputs.wire_review_mode == 'plan'
+        if: steps.review_request.outputs.mode == 'plan'
         env:
           PUBLICATIONS_BEFORE: ${{ steps.publications.outputs.sha }}
         run: |
@@ -207,7 +263,7 @@ jobs:
           PY
 
       - name: Bank review ledger and artifacts on this branch
-        if: github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'review'
+        if: github.event_name == 'workflow_dispatch' && steps.review_request.outputs.mode == 'review'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -225,7 +281,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: wire-${{ github.event_name == 'pull_request' && 'plan' || inputs.wire_review_mode }}-${{ github.run_id }}
+          name: wire-${{ steps.review_request.outputs.mode }}-${{ github.run_id }}
           path: |
             data/wire_backfill.json
             data/wire_backfill_plan.json
