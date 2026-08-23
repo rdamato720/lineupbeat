@@ -183,6 +183,7 @@ class ReviewRepairTests(unittest.TestCase):
     def valid_review_payload():
         return {
             "verdict": "AUTO_APPROVE", "subject_is_correct": True,
+            "evidence_classification_is_supported": True,
             "mechanism_is_supported": True,
             "direction_is_supported": True,
             "commentary_overstates": False,
