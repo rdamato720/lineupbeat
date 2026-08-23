@@ -1310,6 +1310,7 @@ with tempfile.TemporaryDirectory() as tmp:
 # ------------------------------------------------- semantic LLM layer
 from wire import semantic as SEM
 from wire import semantic_validate as SV
+from wire import independent_review as IR
 from wire.providers import REGISTRY as PROVIDERS
 from wire.providers.claude import ClaudeSemanticProvider, redact as credact
 from wire.providers.openai import (OpenAIProviderError,
@@ -1777,6 +1778,21 @@ _or = OpenAIIndependentReviewer(
                          {"input_tokens": 10, "output_tokens": 5}))
 check("OpenAI independent review validates its closed schema",
       _or.evaluate("evidence", {}, {})["provider"] == "openai")
+
+_contradictory_review = {
+    **_review_payload,
+    "verdict": "AUTO_APPROVE",
+    "performance_only_no_role_information": True,
+    "disagreement_summary": "",
+}
+_enforced_review = IR.enforce(
+    _contradictory_review, identity_resolved=True, integrity_ok=True)
+check("performance-only evidence can never effectively auto-approve",
+      _enforced_review["model_verdict"] == "AUTO_APPROVE"
+      and _enforced_review["effective_verdict"] == "HUMAN_REVIEW"
+      and any("performance-only" in reason
+              for reason in _enforced_review["enforcement_reasons"]),
+      _enforced_review)
 
 _backfill_src = (ROOT / "scripts" / "wire_backfill.py").read_text()
 check("the dark launch has separate call and dollar caps",
