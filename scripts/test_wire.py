@@ -1359,6 +1359,19 @@ finally:
     if _prev is not None:
         os.environ["OPENAI_API_KEY"] = _prev
 
+def _raise_quota(_prompt):
+    raise OpenAIProviderError("RateLimitError: quota exceeded")
+
+try:
+    OpenAISemanticProvider(transport=_raise_quota).evaluate(
+        "He took first-team reps.", {}, [])
+except OpenAIProviderError:
+    _quota_is_provider_failure = True
+else:
+    _quota_is_provider_failure = False
+check("a quota error propagates instead of becoming a semantic abstention",
+      _quota_is_provider_failure)
+
 # The validator: the model reads, it does not decide.
 _seg = ("With no Parker Washington on the field, the No. 1 target for Trevor "
         "Lawrence on Tuesday was pretty easily Brian Thomas Jr.")
