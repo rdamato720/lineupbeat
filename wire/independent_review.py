@@ -11,7 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 
-PROMPT_VERSION = "wire-independent-review-2026-08-23d"
+PROMPT_VERSION = "wire-independent-review-2026-08-23e"
 SCHEMA_VERSION = "independent-review-v2"
 
 VERDICTS = {"AUTO_APPROVE", "HUMAN_REVIEW", "REJECT", "ABSTAIN"}
@@ -64,6 +64,19 @@ proposed class does not match the passage. If ANALYSIS_OR_OPINION is the
 supported class, a NO_FANTASY_IMPACT decision may correctly enforce the
 authority boundary even when the author's opinion describes a meaningful
 role.
+
+DIRECT_QUOTATION includes on-record attributed speech in either direct or
+indirect form. "Sam Darnold said there are things to improve" remains
+DIRECT_QUOTATION even without quotation marks. RELAYED_REPORTING instead
+means that this passage credits another reporter or outlet as the origin of
+the report, such as "according to ESPN" or "Schefter reported". Do not call
+ordinary attributed speech relayed reporting.
+
+The proposed evidence_classification describes the claim supported by
+supporting_quote, not every sentence in a mixed passage. A firsthand observed
+return may remain FIRSTHAND_OBSERVATION when a nearby sentence forecasts the
+next step, provided the assessment relies only on the observed return and
+clearly treats the forecast as a limitation rather than an established fact.
 
 An isolated positive practice performance does not support publication unless
 it establishes meaningful role, unit, repetition, opportunity, availability,
