@@ -1448,6 +1448,35 @@ check("the prompt treats source metadata as context rather than evidence",
 check("the prompt forbids an update recommendation on LOW evidence",
       "LOW evidence may use NONE or REVIEW" in SEM.SYSTEM
       and "never UPDATE_RECOMMENDED" in SEM.SYSTEM)
+_return_seg = ("Makai Lemon began practicing in a limited capacity on "
+               "Thursday. He will be returning to practice full-time soon.")
+_return_players = [{"player_id": "LEMON", "player_name": "Makai Lemon",
+                    "team": "PHI", "position": "WR"}]
+_return_payload = {
+    **_base,
+    "claim_subject_player_id": "LEMON",
+    "claim_subject_player_name": "Makai Lemon",
+    "mentioned_players": [{"player_id": "LEMON",
+                            "player_name": "Makai Lemon",
+                            "relationship": "CLAIM_SUBJECT"}],
+    "supporting_quote": ("Makai Lemon began practicing in a limited capacity "
+                         "on Thursday."),
+    "fantasy_mechanism": "RETURN_TO_PRACTICE",
+    "direction": "POSITIVE",
+    "fantasy_commentary": ("Lemon began practicing in a limited capacity on "
+                           "Thursday."),
+    "limitations": ["The passage does not establish full participation."],
+}
+_return_provider = OpenAISemanticProvider(
+    transport=lambda prompt: (_return_payload,
+                              {"input_tokens": 10, "output_tokens": 5}))
+_return_assessment = SV.enforce(
+    _return_provider.evaluate(_return_seg, {"team": "PHI"}, _return_players),
+    _return_seg, _return_players, None, {})
+check("began practicing is an explicit return-to-practice event",
+      _return_assessment.decision == SEM.INTERPRET
+      and _return_assessment.fantasy_mechanism == "RETURN_TO_PRACTICE",
+      _return_assessment.to_dict())
 _invented_metadata = _assess(
     decision=SEM.ABSTAIN,
     fantasy_mechanism="LIMITED_PARTICIPATION",
@@ -1912,6 +1941,14 @@ _review_prompt = IR.build_prompt(
 check("the independent reviewer receives the evidence classification",
       '"evidence_classification": "FIRSTHAND_OBSERVATION"'
       in _review_prompt)
+check("the reviewer distinguishes attributed speech from relayed reporting",
+      "DIRECT_QUOTATION includes on-record attributed speech"
+      in IR.SYSTEM
+      and "ordinary attributed speech relayed reporting" in
+          " ".join(IR.SYSTEM.split()))
+check("the reviewer classifies the supported claim in a mixed passage",
+      "describes the claim supported by" in IR.SYSTEM
+      and "not every sentence in a mixed passage" in IR.SYSTEM)
 
 _enriched_review = {
     **_contradictory_review,
