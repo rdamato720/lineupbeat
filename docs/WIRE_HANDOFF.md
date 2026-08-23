@@ -279,14 +279,16 @@ Deterministic enforcement runs after the reviewer:
   Responses API, strict JSON Schema, and `store: false`.
 - OpenAI independent reviewer: implemented in
   `wire/providers/openai_review.py` as a separate Responses API pass.
-- Generator prompt `wire-fantasy-2026-08-23f` treats source metadata as
+- Generator prompt `wire-fantasy-2026-08-23g` treats source metadata as
   provenance context only, grounds all editorial fields in the evidence, and
   forbids `UPDATE_RECOMMENDED` on `LOW` evidence. Explicit "began practicing"
   language counts as a return event even when participation remains limited.
   Clear authorial analysis routes to `NO_FANTASY_IMPACT`, while unattributed
   diagnoses remain `UNCERTAIN` and route to `ABSTAIN`. A reporter's observed
   practice participation remains firsthand even when a nearby future-return
-  forecast is only a limitation.
+  forecast is only a limitation. A matched quote speaker never inherits a
+  different player's role, and recurring two-minute-drill routes count as a
+  narrow `ROUTES` signal rather than isolated performance.
 - Reviewer prompt `wire-independent-review-2026-08-23f` and schema
   `independent-review-v2` explicitly review the proposed evidence class,
   distinguish attributed speech from relayed reporting, and classify the
@@ -470,6 +472,24 @@ Report zero-tolerance errors, correct/total, precision numerator/denominator,
 recall numerator/denominator, false suppressions, false positives, abstentions,
 validation failures, token use, cost, median latency, and p95 latency. Unlabelled
 items are review material, not scored passes.
+
+The locked OpenAI promotion gate is declared in code before a run and requires:
+
+- the provider to be available and the complete locked gold corpus to run;
+- at least 95% correct across graded items;
+- 100% precision for emitted interpretations;
+- at least 90% recall for required interpretations;
+- no more than 15% abstentions;
+- zero wrong-player, wrong-direction, wrong-unit, unsupported-role,
+  wrong-classification, forbidden-mechanism, false-positive, or
+  identity-refusal-bypass errors;
+- zero validator failures except the fixture explicitly labelled
+  `CORRECT_REGISTRY_REFUSAL`.
+
+An ordinary `ABSTAIN` does not count as a correct `NO_FANTASY_IMPACT`. The
+registry-refusal fixture is the sole exception because its required outcome is
+the validator's refusal itself. The evaluation command exits nonzero when the
+OpenAI gate fails.
 
 ### 16.5 Dark-launch interpretation and review
 
