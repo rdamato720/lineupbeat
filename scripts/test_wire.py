@@ -1448,6 +1448,13 @@ check("the prompt treats source metadata as context rather than evidence",
 check("the prompt forbids an update recommendation on LOW evidence",
       "LOW evidence may use NONE or REVIEW" in SEM.SYSTEM
       and "never UPDATE_RECOMMENDED" in SEM.SYSTEM)
+check("clear authorial analysis routes to no impact rather than abstention",
+      "must return NO_FANTASY_IMPACT, not ABSTAIN" in SEM.SYSTEM
+      and "authority boundary makes it non-actionable" in SEM.SYSTEM)
+check("the prompt keeps an unattributed diagnosis uncertain",
+      "An unattributed diagnosis or medical availability assertion is UNCERTAIN"
+      in " ".join(SEM.SYSTEM.split())
+      and "nearby quotation does not lend" in SEM.SYSTEM)
 _return_seg = ("Makai Lemon began practicing in a limited capacity on "
                "Thursday. He will be returning to practice full-time soon.")
 _return_players = [{"player_id": "LEMON", "player_name": "Makai Lemon",
@@ -1496,6 +1503,15 @@ check("a no-impact explanation cannot import game context from metadata",
       and any("preseason context" in failure
               for failure in _invented_preseason.validation_failures),
       _invented_preseason.to_dict())
+_negative_context = _assess(
+    decision=SEM.NO_FANTASY_IMPACT,
+    fantasy_mechanism="NO_FANTASY_IMPACT",
+    fantasy_commentary=("The passage does not establish regular-season "
+                        "availability."))
+check("a limitation may name context that the evidence does not establish",
+      _negative_context.decision == SEM.NO_FANTASY_IMPACT
+      and not _negative_context.validation_failures,
+      _negative_context.to_dict())
 _low_update = _assess(projection_action="UPDATE_RECOMMENDED")
 check("LOW evidence cannot recommend an update",
       _low_update.decision == SEM.ABSTAIN
@@ -1535,6 +1551,40 @@ check("non-evidence classification does not corrupt a no-impact decision",
 check("the prompt distinguishes official designations from firsthand reports",
       "OFFICIAL_DESIGNATION" in SEM.SYSTEM
       and "not a reporter's firsthand observation" in SEM.SYSTEM)
+
+_allen_seg = ("With LeQuint Allen Jr. out for the rest of training camp with "
+              "a soft-tissue injury, Abdullah could have a prime opportunity "
+              "to step up.")
+_allen_players = [{"player_id": "ALLEN", "player_name": "LeQuint Allen Jr.",
+                   "team": "JAX", "position": "RB"}]
+_allen_payload = {
+    **_base,
+    "claim_subject_player_id": "ALLEN",
+    "claim_subject_player_name": "LeQuint Allen Jr.",
+    "mentioned_players": [{"player_id": "ALLEN",
+                            "player_name": "LeQuint Allen Jr.",
+                            "relationship": "ABSENT_PLAYER"}],
+    "supporting_quote": _allen_seg,
+    "evidence_classification": "FIRSTHAND_OBSERVATION",
+    "fantasy_mechanism": "INJURY",
+    "direction": "NEGATIVE",
+    "fantasy_commentary": ("Allen is out for the rest of training camp with "
+                           "a soft-tissue injury."),
+    "limitations": ["The passage does not establish regular-season availability."],
+}
+_allen_provider = OpenAISemanticProvider(
+    transport=lambda prompt: (_allen_payload,
+                              {"input_tokens": 10, "output_tokens": 5}))
+_allen_assessment = SV.enforce(
+    _allen_provider.evaluate(_allen_seg, {"team": "JAX"}, _allen_players),
+    _allen_seg, _allen_players, None, {})
+check("an unattributed diagnosis cannot be classified as firsthand",
+      _allen_assessment.decision == SEM.ABSTAIN
+      and any("unattributed diagnosis" in failure
+              for failure in _allen_assessment.validation_failures)
+      and not any("regular season context" in failure
+                  for failure in _allen_assessment.validation_failures),
+      _allen_assessment.to_dict())
 
 _absent_pl = [{"player_id": "PID", "player_name": "Parker Washington",
                "team": "JAX", "position": "WR"}]
