@@ -104,6 +104,10 @@ jobs:
           python scripts/wire_backfill.py --discover --report \
             --hours "$WIRE_REVIEW_HOURS"
 
+      - name: Extract deterministic evidence candidates
+        run: |
+          python scripts/wire_extract.py --limit 1000
+
       - name: Build zero-call plan
         if: github.event_name == 'pull_request' || inputs.wire_review_mode == 'plan'
         run: |

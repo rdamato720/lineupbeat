@@ -42,6 +42,7 @@ class ReviewRepairTests(unittest.TestCase):
         self.assertIn("cost > 1.00", batch)
         self.assertIn("publication file changed during review batch", batch)
         self.assertIn("Clear stale review outputs from the runner", batch)
+        self.assertIn("wire_extract.py --limit 1000", batch)
         self.assertIn("github.event_name == 'pull_request'", batch)
         self.assertIn("github.event_name == 'workflow_dispatch'", batch)
         self.assertNotIn("wire_publish.py", batch)
