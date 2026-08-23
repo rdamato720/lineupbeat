@@ -28,7 +28,7 @@ import re
 from dataclasses import dataclass, field, asdict
 
 SCHEMA_VERSION = "semantic-v1"
-PROMPT_VERSION = "wire-fantasy-2026-08-23g"
+PROMPT_VERSION = "wire-fantasy-2026-08-23h"
 
 INTERPRET, NO_FANTASY_IMPACT, ABSTAIN = "INTERPRET", "NO_FANTASY_IMPACT", "ABSTAIN"
 DECISIONS = {INTERPRET, NO_FANTASY_IMPACT, ABSTAIN}
@@ -228,6 +228,17 @@ capacity" is a FIRSTHAND_OBSERVATION and RETURN_TO_PRACTICE event. Treat a \
 nearby forecast that he will be full-time soon as a limitation, not as the \
 support for the observed return. Return ABSTAIN rather than treating an \
 unattributed diagnosis as FIRSTHAND_OBSERVATION.
+- Do not turn every plainly reported injury event into an unattributed \
+diagnosis. In a reporter's own account, "DJ Giddens returned to practice and \
+immediately reaggravated his hamstring" is a FIRSTHAND_OBSERVATION of an \
+INJURY event with NEGATIVE direction. The re-aggravation overrides the return. \
+This is different from asserting an unsupported diagnosis, medical cause, or \
+timetable.
+- Status-quo starter language is not a new depth-chart development. "Remains \
+the named starter", "continues as the starter", or "is still the starter" \
+must return NO_FANTASY_IMPACT unless the passage explicitly establishes a new \
+designation or change. A different player's second-team work must not turn \
+the matched player's unchanged starter status into an interpretation.
 
 Return ABSTAIN rather than guessing when the passage is genuinely ambiguous \
 about who a claim concerns. Abstaining is a correct answer and is preferred \
