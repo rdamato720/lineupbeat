@@ -1311,6 +1311,7 @@ with tempfile.TemporaryDirectory() as tmp:
 from wire import semantic as SEM
 from wire import semantic_validate as SV
 from wire import independent_review as IR
+from scripts import wire_semantic_eval as WSE
 from wire.providers import REGISTRY as PROVIDERS
 from wire.providers.claude import ClaudeSemanticProvider, redact as credact
 from wire.providers.openai import (OpenAIProviderError,
@@ -1553,6 +1554,12 @@ check("non-evidence classification does not corrupt a no-impact decision",
 check("the prompt distinguishes official designations from firsthand reports",
       "OFFICIAL_DESIGNATION" in SEM.SYSTEM
       and "not a reporter's firsthand observation" in SEM.SYSTEM)
+check("the prompt does not transfer another player's role to a quote speaker",
+      "Geno Smith saying" in SEM.SYSTEM
+      and "return NO_FANTASY_IMPACT for the matched speaker" in SEM.SYSTEM)
+check("the prompt treats recurring two-minute routes as concrete usage",
+      "every two-minute drill" in SEM.SYSTEM
+      and "return INTERPRET with ROUTES" in SEM.SYSTEM)
 
 _allen_seg = ("With LeQuint Allen Jr. out for the rest of training camp with "
               "a soft-tissue injury, Abdullah could have a prime opportunity "
@@ -1641,6 +1648,63 @@ check("the evaluation harness publishes nothing",
       "wire_publications" not in _evalsrc
       and not FORBIDDEN_NAMES.search(_evalsrc))
 
+_ordinary_abstention = WSE.grade(
+    {"id": "ordinary-no-impact", "expected": {
+        "decision": SEM.NO_FANTASY_IMPACT}},
+    SEM.SemanticAssessment(decision=SEM.ABSTAIN))
+check("an ordinary abstention is not a correct no-impact answer",
+      not _ordinary_abstention["correct"]
+      and _ordinary_abstention["errors"] == ["unnecessary_abstention"],
+      _ordinary_abstention)
+_registry_refusal = WSE.grade(
+    {"id": "registry-refusal",
+     "identity_outcome": "CORRECT_REGISTRY_REFUSAL",
+     "expected": {"decision": SEM.NO_FANTASY_IMPACT},
+     "forbidden_mechanism": "RETURN_TO_PRACTICE"},
+    SEM.SemanticAssessment(decision=SEM.ABSTAIN))
+check("the labelled registry refusal remains a correct abstention",
+      _registry_refusal["correct"], _registry_refusal)
+
+_passing_summary = {
+    "available": True, "locked_gold_items": 23,
+    "correct_num": 22, "correct_den": 23,
+    "precision_num": 12, "precision_den": 12,
+    "recall_num": 12, "recall_den": 13,
+    "abstain_num": 3, "abstain_den": 23,
+}
+_passing_gate = WSE.promotion_gate(
+    _passing_summary,
+    [{"id": "clean", "errors": [], "validation_failures": []}])
+check("the locked semantic gate passes only a clean threshold result",
+      _passing_gate["passed"], _passing_gate)
+_partial_gate = WSE.promotion_gate(
+    {**_passing_summary, "correct_num": 1, "correct_den": 1,
+     "precision_num": 1, "precision_den": 1,
+     "recall_num": 1, "recall_den": 1,
+     "abstain_num": 0, "abstain_den": 1},
+    [{"id": "partial", "errors": [], "validation_failures": []}])
+check("a partial corpus cannot pass the locked semantic gate",
+      not _partial_gate["passed"]
+      and not _partial_gate["checks"]["locked_corpus_complete"],
+      _partial_gate)
+_validation_gate = WSE.promotion_gate(
+    _passing_summary,
+    [{"id": "invalid", "errors": [],
+      "validation_failures": ["INTERPRET with no claim subject id"]}])
+check("an unexpected validator failure blocks semantic promotion",
+      not _validation_gate["passed"]
+      and not _validation_gate["checks"][
+          "unexpected_validation_failures_zero"],
+      _validation_gate)
+_error_gate = WSE.promotion_gate(
+    _passing_summary,
+    [{"id": "wrong", "errors": ["wrong_player"],
+      "validation_failures": []}])
+check("a zero-tolerance semantic error blocks promotion",
+      not _error_gate["passed"]
+      and not _error_gate["checks"]["zero_tolerance_errors_zero"],
+      _error_gate)
+
 # The corpus reports its own labelled fraction rather than assuming it.
 _corpus = json.loads((ROOT / "data" / "wire_eval_corpus.json").read_text())
 check("the corpus separates gold from unlabelled",
@@ -1652,7 +1716,8 @@ _gold_ids = {x["id"] for x in _corpus["items"] if x["kind"] == "GOLD"}
 for _need in ("keon-coleman-relay", "washington-thomas-targets",
               "mccarthy-price-pronoun", "geno-about-omar",
               "hankerson-waived", "giddens-reinjury", "jacobs-return",
-              "laporta-absent", "stidham-mixed-units"):
+              "laporta-absent", "stidham-mixed-units",
+              "hollins-two-minute"):
     check(f"the corpus contains the {_need} fixture", _need in _gold_ids)
 
 # Review controls: unique ids and the full reason set.
