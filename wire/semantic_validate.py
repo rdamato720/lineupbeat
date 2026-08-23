@@ -23,6 +23,7 @@ from . import semantic as sem
 RETURN_LANG = re.compile(
     r"(?i)\b(returned to (?:the )?practice|back (?:at|on|in) (?:the )?"
     r"(?:practice|field)|practiced (?:again|for the first time)|"
+    r"began practi[cs]ing|"
     r"participated again|was (?:a )?full participant|cleared to (?:practice|return)|"
     r"activated (?:off|from)|came off (?:the )?(?:pup|nfi))\b")
 
@@ -41,6 +42,11 @@ UNIT = re.compile(
     r"(?i)\b(first|second|third|1st|2nd|3rd)[-\s]team\b|\bwith the "
     r"(?:ones|twos|threes|1s|2s|3s|starters)\b")
 
+STATUS_QUO_STARTER = re.compile(
+    r"(?i)\b(?:remains? (?:the )?(?:named )?starter|"
+    r"continues? as (?:the )?(?:named )?starter|"
+    r"is still (?:the )?(?:named )?starter)\b")
+
 RELAY = re.compile(
     r"(?i)\b(the athletic|espn|nfl network|cbs sports|fox sports|"
     r"pro football focus|pff)\b\s*(?:'s|’s)?|\b(?:per|according to|via)\s+"
@@ -54,6 +60,35 @@ OPPORTUNITY = {"FIRST_TEAM_REPS", "SECOND_TEAM_REPS", "THIRD_TEAM_REPS",
 
 AVAILABILITY = {"LIMITED_PARTICIPATION", "RETURN_TO_PRACTICE", "INJURY",
                 "TRANSACTION"}
+
+# These facts are often available in an article title or other source
+# metadata, but metadata is not the passage.  Generated editorial text may
+# use them only when the evidence itself supplies them.
+PASSAGE_CONTEXT = {
+    "preseason": re.compile(r"(?i)\bpre[- ]?season\b"),
+    "regular season": re.compile(r"(?i)\bregular[- ]season\b"),
+    "training camp": re.compile(r"(?i)\btraining camp\b"),
+    "joint practice": re.compile(r"(?i)\bjoint practices?\b"),
+}
+
+UNVERIFIED_METADATA = re.compile(
+    r"(?i)\b(?:unverified (?:source )?metadata|"
+    r"(?:source )?metadata (?:is|was|lists?|shows?) (?:as )?unverified|"
+    r"evidence access (?:is|was|lists?|shows?) (?:as )?unverified|"
+    r"evidentiary status (?:is|was) unverified)\b")
+
+NEGATED_CONTEXT = re.compile(
+    r"(?i)(?:(?:does|did|is|was|has|have|had|can|could|would|will)\s+not|"
+    r"without|no evidence (?:that|of|for)?)\s+(?:\w+[\s-]+){0,6}$")
+
+DIAGNOSIS = re.compile(
+    r"(?i)\b(?:soft[- ]tissue injury|concussion|fractur(?:e|ed)|"
+    r"sprain(?:ed)?|strain(?:ed)?|torn\s+(?:acl|mcl|achilles|hamstring)|"
+    r"diagnos(?:is|ed)|dislocat(?:ion|ed))\b")
+
+ATTRIBUTION = re.compile(
+    r"(?i)\b(?:said|says|told|reported|according to|per|announced|"
+    r"confirmed|listed|designated|ruled)\b")
 
 
 QUOTE_FAILURE = "supporting_quote is not an exact substring of the evidence"
@@ -109,6 +144,25 @@ def _last(name: str) -> str:
     return n[-1].strip(".,;:!?()[]'\"") if n else ""
 
 
+def _asserts_context(text: str, pattern: re.Pattern) -> bool:
+    """True when a context phrase is asserted, not explicitly disclaimed."""
+    for match in pattern.finditer(text or ""):
+        prefix = (text or "")[max(0, match.start() - 100):match.start()]
+        if NEGATED_CONTEXT.search(prefix):
+            continue
+        return True
+    return False
+
+
+def _sentence_at(text: str, offset: int) -> str:
+    """The sentence-like clause containing offset, for local attribution."""
+    before = max(text.rfind(mark, 0, offset) for mark in ".!?\n") + 1
+    ends = [text.find(mark, offset) for mark in ".!?\n"]
+    ends = [end for end in ends if end >= 0]
+    after = min(ends) if ends else len(text)
+    return text[before:after]
+
+
 def validate(a: sem.SemanticAssessment, segment: str, players: list,
              registry, meta: dict | None = None) -> list[str]:
     """Reasons this answer may not be used. Empty means it stands."""
@@ -118,6 +172,27 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
 
     if a.decision not in sem.DECISIONS:
         bad.append(f"unknown decision {a.decision!r}")
+
+    # Ground every generated editorial field before any decision-specific
+    # early return.  ABSTAIN and NO_FANTASY_IMPACT still reach review output,
+    # so invented context in either outcome must remain visible as a
+    # validation failure rather than escaping because no card was proposed.
+    generated = " ".join([
+        a.fantasy_commentary or "",
+        a.why_it_matters or "",
+        " ".join(a.limitations or []),
+        a.abstention_reason or "",
+    ])
+    if (UNVERIFIED_METADATA.search(generated)
+            and not meta.get("evidence_access")):
+        bad.append("generated text claims unverified source metadata that "
+                   "was not supplied")
+    for label, pattern in PASSAGE_CONTEXT.items():
+        if (_asserts_context(generated, pattern)
+                and not pattern.search(segment)):
+            bad.append(f"generated text adds {label} context absent from the "
+                       "evidence")
+
     if a.decision == sem.ABSTAIN:
         return bad                      # abstention needs no further proof
 
@@ -156,6 +231,18 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
             and a.evidence_classification not in supporting_classes):
         bad.append(f"{a.evidence_classification} may not support a fantasy "
                    "interpretation")
+
+    # A reporter can observe a player leave hurt, but a diagnosis needs a
+    # named attribution or official designation.  In a mixed passage, a quote
+    # from another player cannot lend authority to a later unattributed
+    # medical assertion.
+    if a.evidence_classification == "FIRSTHAND_OBSERVATION":
+        diagnosis = DIAGNOSIS.search(a.supporting_quote or segment)
+        if diagnosis:
+            sentence = _sentence_at(a.supporting_quote or segment,
+                                    diagnosis.start())
+            if not ATTRIBUTION.search(sentence):
+                bad.append("unattributed diagnosis classified as firsthand")
 
     # 2. Identity. The subject must be a real registry player, matched in
     #    this passage, with the team and position we stored.
@@ -240,6 +327,12 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
             bad.append("RETURN_TO_PRACTICE marked NEGATIVE")
     if a.fantasy_mechanism == "LIMITED_PARTICIPATION" and a.direction == "POSITIVE":
         bad.append("an absence or limitation marked POSITIVE")
+
+    if (a.decision == sem.INTERPRET
+            and a.fantasy_mechanism == "DEPTH_CHART"
+            and STATUS_QUO_STARTER.search(a.supporting_quote or segment)):
+        bad.append("status-quo starter language is not a new depth-chart "
+                   "development")
 
     # 7. A unit claim needs unit language in the quote, not merely nearby.
     if a.fantasy_mechanism in ("FIRST_TEAM_REPS", "SECOND_TEAM_REPS",

@@ -2,7 +2,7 @@
 """Run every provider over the locked corpus and grade them.
 
     python3 scripts/wire_semantic_eval.py --providers rules
-    python3 scripts/wire_semantic_eval.py --providers rules,claude,openai
+    python3 scripts/wire_semantic_eval.py --providers rules,openai
 
 Precision and recall are both reported, and that is the point. Grading only
 the interpretations a layer chose to emit rewards suppression: a provider
@@ -33,6 +33,18 @@ from wire.providers import REGISTRY
 
 CORPUS = Path("data/wire_eval_corpus.json")
 OUT = Path("data/wire_semantic_eval.json")
+
+# Promotion thresholds are declared before the provider is run.  They are
+# deliberately round policy boundaries, not numbers fitted to one result.
+MIN_ACCURACY = 0.95
+MIN_PRECISION = 1.00
+MIN_RECALL = 0.90
+MAX_ABSTENTION_RATE = 0.15
+ZERO_TOLERANCE_ERRORS = {
+    "false_positive", "wrong_player", "wrong_direction", "wrong_unit",
+    "unsupported_role", "wrong_classification", "forbidden_mechanism",
+    "identity_refusal_bypassed",
+}
 
 
 def last(name: str) -> str:
@@ -87,8 +99,19 @@ def grade(item: dict, a: sem.SemanticAssessment) -> dict:
             if exp_dir and a.direction != exp_dir:
                 g["errors"].append("wrong_direction")
     else:
-        if a.decision == "INTERPRET":
-            g["errors"].append("false_positive")
+        if item.get("identity_outcome") == "CORRECT_REGISTRY_REFUSAL":
+            if a.decision != "ABSTAIN":
+                g["errors"].append("identity_refusal_bypassed")
+        elif a.decision != want_dec:
+            if a.decision == "INTERPRET":
+                g["errors"].append("false_positive")
+            elif a.decision == "ABSTAIN":
+                # An abstention is safe, but it is not the requested semantic
+                # answer and may not be counted as correct.  This is the
+                # non-interpretation half of "do not reward abstaining".
+                g["errors"].append("unnecessary_abstention")
+            else:
+                g["errors"].append("wrong_decision")
         if exp.get("classification") and \
                 a.evidence_classification != exp["classification"]:
             g["errors"].append("wrong_classification")
@@ -102,6 +125,43 @@ def grade(item: dict, a: sem.SemanticAssessment) -> dict:
         g["errors"].append("wrong_unit")
     g["correct"] = not g["errors"]
     return g
+
+
+def promotion_gate(summary: dict, graded: list[dict]) -> dict:
+    """Apply the predeclared OpenAI promotion policy to one locked run."""
+    accuracy = summary["correct_num"] / max(1, summary["correct_den"])
+    precision = summary["precision_num"] / max(1, summary["precision_den"])
+    recall = summary["recall_num"] / max(1, summary["recall_den"])
+    abstention = summary["abstain_num"] / max(1, summary["abstain_den"])
+    errors = Counter(e for g in graded for e in g.get("errors", []))
+    zero_tolerance = {e: errors[e] for e in ZERO_TOLERANCE_ERRORS if errors[e]}
+    unexpected_validation = [
+        {"id": g["id"], "failures": g.get("validation_failures", [])}
+        for g in graded
+        if g.get("validation_failures")
+        and g.get("identity_outcome") != "CORRECT_REGISTRY_REFUSAL"
+    ]
+    checks = {
+        "provider_available": bool(summary.get("available")),
+        "locked_corpus_complete": (
+            summary["correct_den"] == summary["locked_gold_items"]),
+        "accuracy_at_least_95_percent": accuracy >= MIN_ACCURACY,
+        "precision_100_percent": precision >= MIN_PRECISION,
+        "recall_at_least_90_percent": recall >= MIN_RECALL,
+        "abstention_at_most_15_percent": abstention <= MAX_ABSTENTION_RATE,
+        "zero_tolerance_errors_zero": not zero_tolerance,
+        "unexpected_validation_failures_zero": not unexpected_validation,
+    }
+    return {
+        "passed": all(checks.values()),
+        "checks": checks,
+        "zero_tolerance_errors": zero_tolerance,
+        "unexpected_validation_failures": unexpected_validation,
+        "thresholds": {
+            "accuracy": MIN_ACCURACY, "precision": MIN_PRECISION,
+            "recall": MIN_RECALL, "max_abstention_rate": MAX_ABSTENTION_RATE,
+        },
+    }
 
 
 def main():
@@ -119,6 +179,7 @@ def main():
     reg = pl.load()
 
     report = {"corpus": str(CORPUS), "graded_items": 0, "providers": {}}
+    gate_failed = False
     for pname in args.providers.split(","):
         pname = pname.strip()
         cls = REGISTRY.get(pname)
@@ -164,11 +225,20 @@ def main():
             "available": bool(avail),
             "model": prov.model,
             "graded": n,
+            "locked_gold_items": corpus["gold_items"],
             "correct": sum(1 for g in gd if g["correct"]),
+            "correct_num": sum(1 for g in gd if g["correct"]),
+            "correct_den": n,
             "precision": f"{prec_num}/{prec_den}",
+            "precision_num": prec_num,
+            "precision_den": prec_den,
             "recall": f"{rec_num}/{rec_den}",
+            "recall_num": rec_num,
+            "recall_den": rec_den,
             "errors": dict(err),
             "abstain": f"{len(abst)}/{len(graded)}",
+            "abstain_num": len(abst),
+            "abstain_den": len(graded),
             "no_fantasy_impact": f"{len(nofi)}/{len(graded)}",
             "median_latency_ms": int(statistics.median(lat)),
             "p95_latency_ms": int(sorted(lat)[max(0, int(len(lat) * 0.95) - 1)]),
@@ -176,6 +246,9 @@ def main():
             "cost_per_1000_segments": round(cost / max(1, len(graded)) * 1000, 2),
             "wall_seconds": round(wall, 1),
         }
+        if pname == "openai":
+            summary["promotion_gate"] = promotion_gate(summary, graded)
+            gate_failed = gate_failed or not summary["promotion_gate"]["passed"]
         report["providers"][pname] = {"summary": summary, "graded": graded,
                                       "results": results}
         report["graded_items"] = n
@@ -194,10 +267,16 @@ def main():
         print(f"    latency median {summary['median_latency_ms']}ms  "
               f"p95 {summary['p95_latency_ms']}ms")
         print(f"    cost per 1000 segments ${summary['cost_per_1000_segments']}")
+        if "promotion_gate" in summary:
+            gate = summary["promotion_gate"]
+            print(f"    promotion gate    "
+                  f"{'PASS' if gate['passed'] else 'FAIL'}")
+            for name, passed in gate["checks"].items():
+                print(f"      {'PASS' if passed else 'FAIL':<5} {name}")
 
     OUT.write_text(json.dumps(report, indent=1, default=str) + "\n")
     print(f"\n  wrote {OUT}")
-    return 0
+    return 5 if gate_failed else 0
 
 
 if __name__ == "__main__":

@@ -28,7 +28,7 @@ import re
 from dataclasses import dataclass, field, asdict
 
 SCHEMA_VERSION = "semantic-v1"
-PROMPT_VERSION = "wire-fantasy-2026-08-23b"
+PROMPT_VERSION = "wire-fantasy-2026-08-23h"
 
 INTERPRET, NO_FANTASY_IMPACT, ABSTAIN = "INTERPRET", "NO_FANTASY_IMPACT", "ABSTAIN"
 DECISIONS = {INTERPRET, NO_FANTASY_IMPACT, ABSTAIN}
@@ -181,6 +181,14 @@ matched in it. Judge only what the passage states. Do not use anything you \
 know about the NFL, these players, or later events. If the passage does not \
 say it, it is not established.
 
+Source metadata is context for provenance and authority only. Article titles, \
+publication names, dates and other metadata are not evidence of football \
+facts. Do not introduce a game type, practice setting, injury status, role, \
+timeline or any other fact into fantasy_commentary, why_it_matters, \
+limitations or abstention_reason unless the PASSAGE states it. A missing \
+metadata field is not an "unverified" evidentiary status and is never a reason \
+to abstain.
+
 The distinctions that matter most, because they are where this goes wrong:
 
 - The claim subject is the player a statement is ABOUT, which is often not \
@@ -192,6 +200,11 @@ He took most of the second-team reps" gives the reps to McCarthy, not Price.
 - A quote speaker is not automatically the subject. If a quarterback \
 describes a receiver's role, the receiver is the claim subject and the \
 quarterback gets nothing unless the words are materially about him.
+- When the only registry-matched player is a quote speaker whose words are \
+about somebody else, return NO_FANTASY_IMPACT for the matched speaker. Do not \
+return INTERPRET with a null claim subject, and do not transfer the other \
+player's role to the speaker. Example: Geno Smith saying "Omar Cooper has \
+taken over the slot role" establishes no fantasy mechanism for Geno Smith.
 - A player who is absent cannot receive the work that went to whoever \
 replaced him. Record the replacement or beneficiary separately.
 - Reporting relayed from another outlet is RELAYED_REPORTING, never \
@@ -202,6 +215,30 @@ designation but is not a reporter's firsthand observation.
 - ANALYSIS_OR_OPINION, RELAYED_REPORTING and UNCERTAIN may not support an \
 INTERPRET decision. Return NO_FANTASY_IMPACT when the passage is clear but \
 non-actionable, or ABSTAIN when its evidentiary status is genuinely unclear.
+- A clear authorial depth-chart or role assessment is \
+ANALYSIS_OR_OPINION and must return NO_FANTASY_IMPACT, not ABSTAIN. The \
+authority boundary makes it non-actionable; it does not make the author's \
+meaning ambiguous.
+- An unattributed diagnosis, medical cause, or medical timetable is UNCERTAIN, \
+even on a team-owned page and even when the passage also quotes a different \
+player. A nearby quotation does not lend its speaker or authority to the \
+unattributed sentence. This does not make a reporter's plain observation of \
+practice participation uncertain: "Makai Lemon began practicing in a limited \
+capacity" is a FIRSTHAND_OBSERVATION and RETURN_TO_PRACTICE event. Treat a \
+nearby forecast that he will be full-time soon as a limitation, not as the \
+support for the observed return. Return ABSTAIN rather than treating an \
+unattributed diagnosis as FIRSTHAND_OBSERVATION.
+- Do not turn every plainly reported injury event into an unattributed \
+diagnosis. In a reporter's own account, "DJ Giddens returned to practice and \
+immediately reaggravated his hamstring" is a FIRSTHAND_OBSERVATION of an \
+INJURY event with NEGATIVE direction. The re-aggravation overrides the return. \
+This is different from asserting an unsupported diagnosis, medical cause, or \
+timetable.
+- Status-quo starter language is not a new depth-chart development. "Remains \
+the named starter", "continues as the starter", or "is still the starter" \
+must return NO_FANTASY_IMPACT unless the passage explicitly establishes a new \
+designation or change. A different player's second-team work must not turn \
+the matched player's unchanged starter status into an interpretation.
 
 Return ABSTAIN rather than guessing when the passage is genuinely ambiguous \
 about who a claim concerns. Abstaining is a correct answer and is preferred \
@@ -213,12 +250,33 @@ return NO_FANTASY_IMPACT. If performance also establishes a concrete change \
 in routes, targets, carries, unit, competition or role, use that concrete \
 mechanism instead.
 
+Repeated situational usage is concrete usage, not isolated performance. If a \
+reporter says a player runs routes in every two-minute drill across practices \
+or units, return INTERPRET with ROUTES. State the narrow recurring situation \
+and do not inflate it into an every-down or starting role.
+
 supporting_quote must be copied EXACTLY from the passage, character for \
 character. It is checked automatically and a mismatch discards your answer.
 
-AVAILABILITY has two different mechanisms and they are not interchangeable. LIMITED_PARTICIPATION is for a player not practising, held out, limited, or absent, when the passage does not say why. INJURY is only for a stated injury: a named injury, a diagnosis, a re-aggravation, a player leaving the field hurt. "Those not participating included Sam LaPorta" is LIMITED_PARTICIPATION -- calling it INJURY asserts a cause the passage never gives. Where the cause is unknown, say so in limitations rather than choosing a mechanism that implies it.
+AVAILABILITY has different mechanisms and they are not interchangeable. \
+LIMITED_PARTICIPATION is for a player not practising, held out, limited, or \
+absent, when the passage does not establish a return event. \
+RETURN_TO_PRACTICE requires explicit resumption language, including "returned \
+to practice", "was back at practice", or "began practicing" after an \
+absence; the return may still be limited. INJURY is only for a stated injury: \
+a named injury, a diagnosis, a re-aggravation, a player leaving the field \
+hurt. "Those not participating included Sam LaPorta" is \
+LIMITED_PARTICIPATION -- calling it INJURY asserts a cause the passage never \
+gives. A forecast that a player will be full-time soon is not itself an \
+observed return; base the mechanism and supporting quote on what already \
+happened and put the forecast in limitations. Where the cause is unknown, \
+say so in limitations rather than choosing a mechanism that implies it.
 
 STRENGTH is graded against corroboration, not drama. One practice observation from one reporter is LOW, however consequential it sounds -- a starting quarterback taking second-team reps is still LOW on one report. MEDIUM needs the same usage across several practices, a clear coach or player statement about role or health, or a second independent reporter. HIGH is reserved for an official act the club or league confirms -- injured reserve, a transaction, a formally announced starter, a season-ending injury -- or a role change corroborated by two independent reporters. If you are looking at one article by one reporter and no official act, the answer is LOW or MEDIUM, never HIGH.
+
+PROJECTION ACTION follows strength. LOW evidence may use NONE or REVIEW, \
+never UPDATE_RECOMMENDED. Do not turn a supported football interpretation \
+into ABSTAIN merely because the evidence is LOW; lower the action instead.
 
 HORIZON follows the mechanism: participation and injury news is IMMEDIATE, camp usage and competition is SHORT_TERM, a confirmed starting role or a season-ending injury is SEASON_LONG, and UNKNOWN when the passage gives no timeframe.
 
@@ -277,7 +335,7 @@ SOURCE
   publication: {meta.get('source_name', '')}
   author: {meta.get('author', '')}
   ownership: {meta.get('source_ownership', 'INDEPENDENT')}
-  evidence access: {meta.get('evidence_access', 'unverified')}
+  evidence access: {meta.get('evidence_access') or 'not supplied'}
   duplicate of another article: {meta.get('duplicate_of') or 'no'}
   underlying report id: {meta.get('underlying_report_id') or 'none'}
 

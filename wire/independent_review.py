@@ -11,14 +11,16 @@ from __future__ import annotations
 import hashlib
 import json
 
-PROMPT_VERSION = "wire-independent-review-2026-08-23c"
-SCHEMA_VERSION = "independent-review-v1"
+PROMPT_VERSION = "wire-independent-review-2026-08-23f"
+SCHEMA_VERSION = "independent-review-v2"
 
 VERDICTS = {"AUTO_APPROVE", "HUMAN_REVIEW", "REJECT", "ABSTAIN"}
 
 RESPONSE_SCHEMA = {
     "type": "object", "additionalProperties": False,
-    "required": ["verdict", "subject_is_correct", "mechanism_is_supported",
+    "required": ["verdict", "subject_is_correct",
+                 "evidence_classification_is_supported",
+                 "mechanism_is_supported",
                  "direction_is_supported", "commentary_overstates",
                  "commentary_repeats_evidence", "inference_not_in_evidence",
                  "performance_only_no_role_information",
@@ -26,6 +28,7 @@ RESPONSE_SCHEMA = {
     "properties": {
         "verdict": {"type": "string", "enum": sorted(VERDICTS)},
         "subject_is_correct": {"type": "boolean"},
+        "evidence_classification_is_supported": {"type": "boolean"},
         "mechanism_is_supported": {"type": "boolean"},
         "direction_is_supported": {"type": "boolean"},
         "commentary_overstates": {"type": "boolean"},
@@ -52,6 +55,28 @@ whether the team or position is current.
 Judge only the passage and the proposed assessment. A real claim-subject
 conflict is semantic: a passage filed under D'Andre Swift may materially
 describe Roschon Johnson. Flag that with passage_names_a_different_subject.
+
+Review the proposed evidence_classification before judging the fantasy
+mechanism. FIRSTHAND_OBSERVATION, DIRECT_QUOTATION and OFFICIAL_DESIGNATION
+may support an interpretation. ANALYSIS_OR_OPINION, RELAYED_REPORTING and
+UNCERTAIN may not. Set evidence_classification_is_supported false when the
+proposed class does not match the passage. If ANALYSIS_OR_OPINION is the
+supported class, a NO_FANTASY_IMPACT decision may correctly enforce the
+authority boundary even when the author's opinion describes a meaningful
+role.
+
+DIRECT_QUOTATION includes on-record attributed speech in either direct or
+indirect form. "Sam Darnold said there are things to improve" remains
+DIRECT_QUOTATION even without quotation marks. RELAYED_REPORTING instead
+means that this passage credits another reporter or outlet as the origin of
+the report, such as "according to ESPN" or "Schefter reported". Do not call
+ordinary attributed speech relayed reporting.
+
+The proposed evidence_classification describes the claim supported by
+supporting_quote, not every sentence in a mixed passage. A firsthand observed
+return may remain FIRSTHAND_OBSERVATION when a nearby sentence forecasts the
+next step, provided the assessment relies only on the observed return and
+clearly treats the forecast as a limitation rather than an established fact.
 
 An isolated positive practice performance does not support publication unless
 it establishes meaningful role, unit, repetition, opportunity, availability,
@@ -102,6 +127,7 @@ def build_prompt(evidence_text: str, identity: dict, assessment: dict) -> str:
     proposed = {k: assessment.get(k) for k in
                 ("decision", "claim_subject_player_id",
                  "claim_subject_player_name", "supporting_quote",
+                 "evidence_classification",
                  "fantasy_mechanism", "direction", "impact_strength",
                  "impact_horizon", "projection_action",
                  "fantasy_commentary", "why_it_matters", "limitations")}
@@ -143,9 +169,13 @@ def enforce(model_payload: dict, *, identity_resolved: bool,
     auto_approval_blockers = (
         (model_payload.get("subject_is_correct") is not True,
          "reviewer did not confirm the claim subject"),
-        (model_payload.get("mechanism_is_supported") is not True,
+        (model_payload.get("evidence_classification_is_supported") is not True,
+         "reviewer did not confirm the evidence classification"),
+        (model_payload.get("mechanism_is_supported") is not True
+         and (proposed_assessment or {}).get("decision") != "ABSTAIN",
          "reviewer did not confirm the fantasy mechanism"),
-        (model_payload.get("direction_is_supported") is not True,
+        (model_payload.get("direction_is_supported") is not True
+         and (proposed_assessment or {}).get("decision") != "ABSTAIN",
          "reviewer did not confirm the direction"),
         (model_payload.get("commentary_overstates") is True,
          "reviewer says the commentary overstates the evidence"),

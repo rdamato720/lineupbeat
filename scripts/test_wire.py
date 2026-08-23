@@ -1311,6 +1311,7 @@ with tempfile.TemporaryDirectory() as tmp:
 from wire import semantic as SEM
 from wire import semantic_validate as SV
 from wire import independent_review as IR
+from scripts import wire_semantic_eval as WSE
 from wire.providers import REGISTRY as PROVIDERS
 from wire.providers.claude import ClaudeSemanticProvider, redact as credact
 from wire.providers.openai import (OpenAIProviderError,
@@ -1439,6 +1440,87 @@ check("the prompt explicitly routes isolated performance to no impact",
       "PERFORMANCE and OTHER are not publishable fantasy mechanisms"
       in SEM.SYSTEM
       and "return NO_FANTASY_IMPACT" in SEM.SYSTEM)
+check("the prompt treats source metadata as context rather than evidence",
+      "Source metadata is context for provenance and authority only"
+      in SEM.SYSTEM
+      and "A missing metadata field is not an \"unverified\"" in SEM.SYSTEM
+      and "evidence access: not supplied" in
+          SEM.build_prompt(_seg, {"team": "JAX"}, _pl))
+check("the prompt forbids an update recommendation on LOW evidence",
+      "LOW evidence may use NONE or REVIEW" in SEM.SYSTEM
+      and "never UPDATE_RECOMMENDED" in SEM.SYSTEM)
+check("clear authorial analysis routes to no impact rather than abstention",
+      "must return NO_FANTASY_IMPACT, not ABSTAIN" in SEM.SYSTEM
+      and "authority boundary makes it non-actionable" in SEM.SYSTEM)
+check("the prompt keeps an unattributed diagnosis uncertain",
+      "An unattributed diagnosis, medical cause, or medical timetable is UNCERTAIN"
+      in " ".join(SEM.SYSTEM.split())
+      and "nearby quotation does not lend" in SEM.SYSTEM
+      and "Makai Lemon began practicing in a limited capacity" in
+          " ".join(SEM.SYSTEM.split()))
+_return_seg = ("Makai Lemon began practicing in a limited capacity on "
+               "Thursday. He will be returning to practice full-time soon.")
+_return_players = [{"player_id": "LEMON", "player_name": "Makai Lemon",
+                    "team": "PHI", "position": "WR"}]
+_return_payload = {
+    **_base,
+    "claim_subject_player_id": "LEMON",
+    "claim_subject_player_name": "Makai Lemon",
+    "mentioned_players": [{"player_id": "LEMON",
+                            "player_name": "Makai Lemon",
+                            "relationship": "CLAIM_SUBJECT"}],
+    "supporting_quote": ("Makai Lemon began practicing in a limited capacity "
+                         "on Thursday."),
+    "fantasy_mechanism": "RETURN_TO_PRACTICE",
+    "direction": "POSITIVE",
+    "fantasy_commentary": ("Lemon began practicing in a limited capacity on "
+                           "Thursday."),
+    "limitations": ["The passage does not establish full participation."],
+}
+_return_provider = OpenAISemanticProvider(
+    transport=lambda prompt: (_return_payload,
+                              {"input_tokens": 10, "output_tokens": 5}))
+_return_assessment = SV.enforce(
+    _return_provider.evaluate(_return_seg, {"team": "PHI"}, _return_players),
+    _return_seg, _return_players, None, {})
+check("began practicing is an explicit return-to-practice event",
+      _return_assessment.decision == SEM.INTERPRET
+      and _return_assessment.fantasy_mechanism == "RETURN_TO_PRACTICE",
+      _return_assessment.to_dict())
+_invented_metadata = _assess(
+    decision=SEM.ABSTAIN,
+    fantasy_mechanism="LIMITED_PARTICIPATION",
+    fantasy_commentary="The source metadata is unverified.",
+    abstention_reason="The evidentiary status is unverified.")
+check("an abstention cannot invent unverified source metadata",
+      _invented_metadata.decision == SEM.ABSTAIN
+      and any("unverified source metadata" in failure
+              for failure in _invented_metadata.validation_failures),
+      _invented_metadata.to_dict())
+_invented_preseason = _assess(
+    decision=SEM.NO_FANTASY_IMPACT,
+    fantasy_mechanism="NO_FANTASY_IMPACT",
+    fantasy_commentary="This was an isolated preseason game play.")
+check("a no-impact explanation cannot import game context from metadata",
+      _invented_preseason.decision == SEM.ABSTAIN
+      and any("preseason context" in failure
+              for failure in _invented_preseason.validation_failures),
+      _invented_preseason.to_dict())
+_negative_context = _assess(
+    decision=SEM.NO_FANTASY_IMPACT,
+    fantasy_mechanism="NO_FANTASY_IMPACT",
+    fantasy_commentary=("The passage does not establish regular-season "
+                        "availability."))
+check("a limitation may name context that the evidence does not establish",
+      _negative_context.decision == SEM.NO_FANTASY_IMPACT
+      and not _negative_context.validation_failures,
+      _negative_context.to_dict())
+_low_update = _assess(projection_action="UPDATE_RECOMMENDED")
+check("LOW evidence cannot recommend an update",
+      _low_update.decision == SEM.ABSTAIN
+      and any("UPDATE_RECOMMENDED on LOW" in failure
+              for failure in _low_update.validation_failures),
+      _low_update.to_dict())
 _analysis_interpretation = _assess(
     evidence_classification="ANALYSIS_OR_OPINION")
 check("analysis or opinion cannot support an interpretation",
@@ -1472,6 +1554,112 @@ check("non-evidence classification does not corrupt a no-impact decision",
 check("the prompt distinguishes official designations from firsthand reports",
       "OFFICIAL_DESIGNATION" in SEM.SYSTEM
       and "not a reporter's firsthand observation" in SEM.SYSTEM)
+check("the prompt does not transfer another player's role to a quote speaker",
+      "Geno Smith saying" in SEM.SYSTEM
+      and "return NO_FANTASY_IMPACT for the matched speaker" in SEM.SYSTEM)
+check("the prompt treats recurring two-minute routes as concrete usage",
+      "every two-minute drill" in SEM.SYSTEM
+      and "return INTERPRET with ROUTES" in SEM.SYSTEM)
+check("the prompt treats a plainly reported re-aggravation as an injury event",
+      "immediately reaggravated his hamstring" in SEM.SYSTEM
+      and "re-aggravation overrides the return" in SEM.SYSTEM)
+check("the prompt routes unchanged named-starter status to no impact",
+      "Status-quo starter language" in SEM.SYSTEM
+      and "must return NO_FANTASY_IMPACT" in SEM.SYSTEM)
+
+_allen_seg = ("With LeQuint Allen Jr. out for the rest of training camp with "
+              "a soft-tissue injury, Abdullah could have a prime opportunity "
+              "to step up.")
+_allen_players = [{"player_id": "ALLEN", "player_name": "LeQuint Allen Jr.",
+                   "team": "JAX", "position": "RB"}]
+_allen_payload = {
+    **_base,
+    "claim_subject_player_id": "ALLEN",
+    "claim_subject_player_name": "LeQuint Allen Jr.",
+    "mentioned_players": [{"player_id": "ALLEN",
+                            "player_name": "LeQuint Allen Jr.",
+                            "relationship": "ABSENT_PLAYER"}],
+    "supporting_quote": _allen_seg,
+    "evidence_classification": "FIRSTHAND_OBSERVATION",
+    "fantasy_mechanism": "INJURY",
+    "direction": "NEGATIVE",
+    "fantasy_commentary": ("Allen is out for the rest of training camp with "
+                           "a soft-tissue injury."),
+    "limitations": ["The passage does not establish regular-season availability."],
+}
+_allen_provider = OpenAISemanticProvider(
+    transport=lambda prompt: (_allen_payload,
+                              {"input_tokens": 10, "output_tokens": 5}))
+_allen_assessment = SV.enforce(
+    _allen_provider.evaluate(_allen_seg, {"team": "JAX"}, _allen_players),
+    _allen_seg, _allen_players, None, {})
+check("an unattributed diagnosis cannot be classified as firsthand",
+      _allen_assessment.decision == SEM.ABSTAIN
+      and any("unattributed diagnosis" in failure
+              for failure in _allen_assessment.validation_failures)
+      and not any("regular season context" in failure
+                  for failure in _allen_assessment.validation_failures),
+      _allen_assessment.to_dict())
+
+_giddens_seg = ("DJ Giddens returned to practice and immediately "
+                "reaggravated his hamstring.")
+_giddens_players = [{"player_id": "GIDDENS", "player_name": "DJ Giddens",
+                     "team": "IND", "position": "RB"}]
+_giddens_payload = {
+    **_base,
+    "claim_subject_player_id": "GIDDENS",
+    "claim_subject_player_name": "DJ Giddens",
+    "mentioned_players": [{"player_id": "GIDDENS",
+                            "player_name": "DJ Giddens",
+                            "relationship": "CLAIM_SUBJECT"}],
+    "supporting_quote": _giddens_seg,
+    "evidence_classification": "FIRSTHAND_OBSERVATION",
+    "fantasy_mechanism": "INJURY",
+    "direction": "NEGATIVE",
+    "fantasy_commentary": ("Giddens reaggravated his hamstring immediately "
+                            "after returning to practice."),
+}
+_giddens_provider = OpenAISemanticProvider(
+    transport=lambda prompt: (_giddens_payload,
+                              {"input_tokens": 10, "output_tokens": 5}))
+_giddens_assessment = SV.enforce(
+    _giddens_provider.evaluate(
+        _giddens_seg, {"team": "IND"}, _giddens_players),
+    _giddens_seg, _giddens_players, None, {})
+check("a plainly reported re-aggravation supports a negative injury event",
+      _giddens_assessment.decision == SEM.INTERPRET
+      and _giddens_assessment.fantasy_mechanism == "INJURY"
+      and _giddens_assessment.direction == "NEGATIVE",
+      _giddens_assessment.to_dict())
+
+_jones_seg = ("Daniel Jones remains the named starter. Anthony Richardson "
+              "ran with the second team throughout the session.")
+_jones_players = [{"player_id": "JONES", "player_name": "Daniel Jones",
+                   "team": "IND", "position": "QB"}]
+_jones_payload = {
+    **_base,
+    "claim_subject_player_id": "JONES",
+    "claim_subject_player_name": "Daniel Jones",
+    "mentioned_players": [{"player_id": "JONES",
+                            "player_name": "Daniel Jones",
+                            "relationship": "CLAIM_SUBJECT"}],
+    "supporting_quote": "Daniel Jones remains the named starter.",
+    "evidence_classification": "FIRSTHAND_OBSERVATION",
+    "fantasy_mechanism": "DEPTH_CHART",
+    "direction": "POSITIVE",
+    "fantasy_commentary": "Jones remains the named starter.",
+}
+_jones_provider = OpenAISemanticProvider(
+    transport=lambda prompt: (_jones_payload,
+                              {"input_tokens": 10, "output_tokens": 5}))
+_jones_assessment = SV.enforce(
+    _jones_provider.evaluate(_jones_seg, {"team": "IND"}, _jones_players),
+    _jones_seg, _jones_players, None, {})
+check("status-quo starter language cannot become a depth-chart interpretation",
+      _jones_assessment.decision == SEM.ABSTAIN
+      and any("status-quo starter language" in failure
+              for failure in _jones_assessment.validation_failures),
+      _jones_assessment.to_dict())
 
 _absent_pl = [{"player_id": "PID", "player_name": "Parker Washington",
                "team": "JAX", "position": "WR"}]
@@ -1526,6 +1714,63 @@ check("the evaluation harness publishes nothing",
       "wire_publications" not in _evalsrc
       and not FORBIDDEN_NAMES.search(_evalsrc))
 
+_ordinary_abstention = WSE.grade(
+    {"id": "ordinary-no-impact", "expected": {
+        "decision": SEM.NO_FANTASY_IMPACT}},
+    SEM.SemanticAssessment(decision=SEM.ABSTAIN))
+check("an ordinary abstention is not a correct no-impact answer",
+      not _ordinary_abstention["correct"]
+      and _ordinary_abstention["errors"] == ["unnecessary_abstention"],
+      _ordinary_abstention)
+_registry_refusal = WSE.grade(
+    {"id": "registry-refusal",
+     "identity_outcome": "CORRECT_REGISTRY_REFUSAL",
+     "expected": {"decision": SEM.NO_FANTASY_IMPACT},
+     "forbidden_mechanism": "RETURN_TO_PRACTICE"},
+    SEM.SemanticAssessment(decision=SEM.ABSTAIN))
+check("the labelled registry refusal remains a correct abstention",
+      _registry_refusal["correct"], _registry_refusal)
+
+_passing_summary = {
+    "available": True, "locked_gold_items": 23,
+    "correct_num": 22, "correct_den": 23,
+    "precision_num": 12, "precision_den": 12,
+    "recall_num": 12, "recall_den": 13,
+    "abstain_num": 3, "abstain_den": 23,
+}
+_passing_gate = WSE.promotion_gate(
+    _passing_summary,
+    [{"id": "clean", "errors": [], "validation_failures": []}])
+check("the locked semantic gate passes only a clean threshold result",
+      _passing_gate["passed"], _passing_gate)
+_partial_gate = WSE.promotion_gate(
+    {**_passing_summary, "correct_num": 1, "correct_den": 1,
+     "precision_num": 1, "precision_den": 1,
+     "recall_num": 1, "recall_den": 1,
+     "abstain_num": 0, "abstain_den": 1},
+    [{"id": "partial", "errors": [], "validation_failures": []}])
+check("a partial corpus cannot pass the locked semantic gate",
+      not _partial_gate["passed"]
+      and not _partial_gate["checks"]["locked_corpus_complete"],
+      _partial_gate)
+_validation_gate = WSE.promotion_gate(
+    _passing_summary,
+    [{"id": "invalid", "errors": [],
+      "validation_failures": ["INTERPRET with no claim subject id"]}])
+check("an unexpected validator failure blocks semantic promotion",
+      not _validation_gate["passed"]
+      and not _validation_gate["checks"][
+          "unexpected_validation_failures_zero"],
+      _validation_gate)
+_error_gate = WSE.promotion_gate(
+    _passing_summary,
+    [{"id": "wrong", "errors": ["wrong_player"],
+      "validation_failures": []}])
+check("a zero-tolerance semantic error blocks promotion",
+      not _error_gate["passed"]
+      and not _error_gate["checks"]["zero_tolerance_errors_zero"],
+      _error_gate)
+
 # The corpus reports its own labelled fraction rather than assuming it.
 _corpus = json.loads((ROOT / "data" / "wire_eval_corpus.json").read_text())
 check("the corpus separates gold from unlabelled",
@@ -1537,7 +1782,8 @@ _gold_ids = {x["id"] for x in _corpus["items"] if x["kind"] == "GOLD"}
 for _need in ("keon-coleman-relay", "washington-thomas-targets",
               "mccarthy-price-pronoun", "geno-about-omar",
               "hankerson-waived", "giddens-reinjury", "jacobs-return",
-              "laporta-absent", "stidham-mixed-units"):
+              "laporta-absent", "stidham-mixed-units",
+              "hollins-two-minute"):
     check(f"the corpus contains the {_need} fixture", _need in _gold_ids)
 
 # Review controls: unique ids and the full reason set.
@@ -1819,6 +2065,7 @@ check("both OpenAI passes require strict structured output",
       '"strict": True' in _oai_src and '"strict": True' in _oai_review_src)
 _review_payload = {
     "verdict": "HUMAN_REVIEW", "subject_is_correct": True,
+    "evidence_classification_is_supported": True,
     "mechanism_is_supported": True, "direction_is_supported": True,
     "commentary_overstates": False, "commentary_repeats_evidence": False,
     "inference_not_in_evidence": False,
@@ -1855,6 +2102,65 @@ check("performance-only evidence confirms a no-impact decision",
       and _confirmed_no_impact["effective_verdict"] == "AUTO_APPROVE"
       and not _confirmed_no_impact["enforcement_reasons"],
       _confirmed_no_impact)
+
+_abstain_diagnostics = {
+    **_review_payload,
+    "verdict": "AUTO_APPROVE",
+    "mechanism_is_supported": False,
+    "direction_is_supported": False,
+    "disagreement_summary": ("The abstention is supported; the diagnostic "
+                             "mechanism and direction are not established."),
+}
+_confirmed_abstention = IR.enforce(
+    _abstain_diagnostics, identity_resolved=True, integrity_ok=True,
+    proposed_assessment={"decision": "ABSTAIN"})
+check("unsupported diagnostics do not block confirmation of an abstention",
+      _confirmed_abstention["model_verdict"] == "AUTO_APPROVE"
+      and _confirmed_abstention["effective_verdict"] == "AUTO_APPROVE"
+      and not _confirmed_abstention["enforcement_reasons"],
+      _confirmed_abstention)
+_diagnostics_on_interpretation = IR.enforce(
+    _abstain_diagnostics, identity_resolved=True, integrity_ok=True,
+    proposed_assessment={"decision": "INTERPRET"})
+check("unsupported mechanism and direction still block an interpretation",
+      _diagnostics_on_interpretation["effective_verdict"] == "HUMAN_REVIEW"
+      and any("fantasy mechanism" in reason
+              for reason in
+              _diagnostics_on_interpretation["enforcement_reasons"])
+      and any("direction" in reason
+              for reason in
+              _diagnostics_on_interpretation["enforcement_reasons"]),
+      _diagnostics_on_interpretation)
+
+_unsupported_class_review = IR.enforce(
+    {**_review_payload, "verdict": "AUTO_APPROVE",
+     "evidence_classification_is_supported": False,
+     "disagreement_summary": "the proposed class does not match the passage"},
+    identity_resolved=True, integrity_ok=True,
+    proposed_assessment={"decision": "NO_FANTASY_IMPACT"})
+check("an unsupported evidence classification cannot auto-approve",
+      _unsupported_class_review["model_verdict"] == "AUTO_APPROVE"
+      and _unsupported_class_review["effective_verdict"] == "HUMAN_REVIEW"
+      and any("evidence classification" in reason
+              for reason in
+              _unsupported_class_review["enforcement_reasons"]),
+      _unsupported_class_review)
+_review_prompt = IR.build_prompt(
+    "He took first-team reps.",
+    {"player_id": "1", "player_name": "X", "team": "IND", "position": "QB"},
+    {"decision": "INTERPRET",
+     "evidence_classification": "FIRSTHAND_OBSERVATION"})
+check("the independent reviewer receives the evidence classification",
+      '"evidence_classification": "FIRSTHAND_OBSERVATION"'
+      in _review_prompt)
+check("the reviewer distinguishes attributed speech from relayed reporting",
+      "DIRECT_QUOTATION includes on-record attributed speech"
+      in IR.SYSTEM
+      and "ordinary attributed speech relayed reporting" in
+          " ".join(IR.SYSTEM.split()))
+check("the reviewer classifies the supported claim in a mixed passage",
+      "describes the claim supported by" in IR.SYSTEM
+      and "not every sentence in a mixed passage" in IR.SYSTEM)
 
 _enriched_review = {
     **_contradictory_review,

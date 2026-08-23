@@ -256,11 +256,19 @@ text. It does not judge roster correctness. It returns an auditable verdict
 plus diagnostic flags, including claim-subject conflicts and whether an
 isolated performance lacks role information.
 
+The proposed `evidence_classification` is part of the reviewer input and has
+its own required support flag. The reviewer must apply the same authority
+boundary as the generator: `FIRSTHAND_OBSERVATION`, `DIRECT_QUOTATION`, and
+`OFFICIAL_DESIGNATION` may support an interpretation;
+`ANALYSIS_OR_OPINION`, `RELAYED_REPORTING`, and `UNCERTAIN` may not.
+
 Deterministic enforcement runs after the reviewer:
 
 - unresolved identity blocks the call and automatic publication;
 - evidence-integrity failure routes to human review;
 - `passage_names_a_different_subject=true` blocks `AUTO_APPROVE` and routes to
+  `HUMAN_REVIEW`;
+- an unsupported evidence classification blocks `AUTO_APPROVE` and routes to
   `HUMAN_REVIEW`;
 - an independent model `REJECT` remains the model's rejection and is labelled
   as such; code does not invent one.
@@ -271,6 +279,25 @@ Deterministic enforcement runs after the reviewer:
   Responses API, strict JSON Schema, and `store: false`.
 - OpenAI independent reviewer: implemented in
   `wire/providers/openai_review.py` as a separate Responses API pass.
+- Generator prompt `wire-fantasy-2026-08-23h` treats source metadata as
+  provenance context only, grounds all editorial fields in the evidence, and
+  forbids `UPDATE_RECOMMENDED` on `LOW` evidence. Explicit "began practicing"
+  language counts as a return event even when participation remains limited.
+  Clear authorial analysis routes to `NO_FANTASY_IMPACT`, while unattributed
+  diagnoses remain `UNCERTAIN` and route to `ABSTAIN`. A reporter's observed
+  practice participation remains firsthand even when a nearby future-return
+  forecast is only a limitation. A matched quote speaker never inherits a
+  different player's role, and recurring two-minute-drill routes count as a
+  narrow `ROUTES` signal rather than isolated performance. Plainly reported
+  re-aggravations remain negative injury events, while unchanged named-starter
+  language remains non-actionable status quo.
+- Reviewer prompt `wire-independent-review-2026-08-23f` and schema
+  `independent-review-v2` explicitly review the proposed evidence class,
+  distinguish attributed speech from relayed reporting, and classify the
+  supported claim rather than unrelated sentences in a mixed passage. For an
+  `ABSTAIN` proposal, unsupported mechanism/direction diagnostics do not block
+  automatic confirmation of the safe abstention; identity, classification,
+  grounding, and commentary checks still do.
 - `openai==3.3.1` is pinned in `requirements.txt`.
 - Anthropic transports remain as inert legacy/audit code but are absent from
   the active provider registry, workflow secrets, and installed requirements.
@@ -448,6 +475,24 @@ recall numerator/denominator, false suppressions, false positives, abstentions,
 validation failures, token use, cost, median latency, and p95 latency. Unlabelled
 items are review material, not scored passes.
 
+The locked OpenAI promotion gate is declared in code before a run and requires:
+
+- the provider to be available and the complete locked gold corpus to run;
+- at least 95% correct across graded items;
+- 100% precision for emitted interpretations;
+- at least 90% recall for required interpretations;
+- no more than 15% abstentions;
+- zero wrong-player, wrong-direction, wrong-unit, unsupported-role,
+  wrong-classification, forbidden-mechanism, false-positive, or
+  identity-refusal-bypass errors;
+- zero validator failures except the fixture explicitly labelled
+  `CORRECT_REGISTRY_REFUSAL`.
+
+An ordinary `ABSTAIN` does not count as a correct `NO_FANTASY_IMPACT`. The
+registry-refusal fixture is the sole exception because its required outcome is
+the validator's refusal itself. The evaluation command exits nonzero when the
+OpenAI gate fails.
+
 ### 16.5 Dark-launch interpretation and review
 
 These commands can spend provider budget. Confirm the cap and valid secret
@@ -569,11 +614,12 @@ commentary as a fallback.
 
 ### Immediate next step
 
-Run a five-case exact-selection dark-launch batch across distinct teams and
-sources, excluding every already-paid candidate id. Run both OpenAI passes,
-generate the HTML and JSON review package, and review every item manually.
-Publish nothing during that run. Do not expand the batch until the generator,
-independent reviewer, deterministic enforcement, and a human agree on all five.
+After the evidence-grounding changes land, rerun the same five-case exact
+selection across distinct teams and sources, excluding every already-paid
+candidate id. Run both OpenAI passes, generate the HTML and JSON review
+package, and review every item manually. Publish nothing during that run. Do
+not expand the batch until the generator, independent reviewer, deterministic
+enforcement, and a human agree on all five.
 
 ### OpenAI production-promotion checklist
 
