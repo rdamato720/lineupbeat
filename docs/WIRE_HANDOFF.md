@@ -455,8 +455,11 @@ before running:
 
 ```bash
 python scripts/wire_backfill.py --plan --report --hours 48
-python scripts/wire_backfill.py --interpret --report --hours 48 --cap 15 --max-calls 15
-python scripts/wire_independent_review.py --cap 15 --max-calls 15
+python scripts/wire_backfill.py --interpret --report --hours 48 \
+  --candidate-id ID_1 --candidate-id ID_2 \
+  --exclude-candidate-id ALREADY_REVIEWED_ID \
+  --cap 0.20 --max-calls 2
+python scripts/wire_independent_review.py --cap 0.20 --max-calls 2
 python scripts/wire_review_package.py
 ```
 
@@ -469,6 +472,13 @@ Expected primary artifacts:
 
 The independent reviewer and package scripts write zero publications. Confirm
 that explicitly after every run.
+
+For measured dark-launch batches, name every approved candidate with the
+repeatable `--candidate-id` option. Use `--exclude-candidate-id` for an
+already-paid case. Exact selection preserves the deterministic survivor order.
+If an included id has aged out of the moving window or is no longer a
+survivor, the command exits before the first API call; it never substitutes a
+different candidate. The call limit and dollar cap remain independent.
 
 ### 16.6 Required tests
 
@@ -559,9 +569,11 @@ commentary as a fallback.
 
 ### Immediate next step
 
-Run one dark-launch website window using the repaired boundaries, generate the
-HTML and JSON review package, and review the card-producing items manually.
-Publish nothing during that run.
+Run a five-case exact-selection dark-launch batch across distinct teams and
+sources, excluding every already-paid candidate id. Run both OpenAI passes,
+generate the HTML and JSON review package, and review every item manually.
+Publish nothing during that run. Do not expand the batch until the generator,
+independent reviewer, deterministic enforcement, and a human agree on all five.
 
 ### OpenAI production-promotion checklist
 

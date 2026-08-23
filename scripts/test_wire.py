@@ -1862,6 +1862,33 @@ check("provider failures stop the batch instead of becoming abstentions",
       and "PROVIDER FAILURE" in _backfill_src)
 check("an OpenAI run drops stale Claude state",
       'state.pop(stale, None)' in _backfill_src and '"claude"' in _backfill_src)
+check("the dark launch supports exact include and exclude ids",
+      "--candidate-id" in _backfill_src
+      and "--exclude-candidate-id" in _backfill_src
+      and "EXACT SELECTION INVALID" in _backfill_src)
+
+from scripts.wire_backfill import select_survivors as _select_survivors
+_selection_rows = [
+    {"candidate_id": "a"}, {"candidate_id": "b"}, {"candidate_id": "c"}]
+_selected, _missing, _overlap = _select_survivors(
+    _selection_rows, include=["c", "a"], exclude=[])
+check("exact selection preserves deterministic survivor order",
+      [row["candidate_id"] for row in _selected] == ["a", "c"]
+      and not _missing and not _overlap,
+      (_selected, _missing, _overlap))
+_selected, _missing, _overlap = _select_survivors(
+    _selection_rows, include=["a", "missing"], exclude=[])
+check("an exact id outside the current window fails closed",
+      _missing == ["missing"], (_selected, _missing, _overlap))
+_selected, _missing, _overlap = _select_survivors(
+    _selection_rows, include=["a"], exclude=["a"])
+check("an id cannot be both included and excluded",
+      _overlap == ["a"], (_selected, _missing, _overlap))
+_selected, _missing, _overlap = _select_survivors(
+    _selection_rows, include=[], exclude=["b"])
+check("reviewed ids can be excluded without reordering the rest",
+      [row["candidate_id"] for row in _selected] == ["a", "c"],
+      _selected)
 
 from scripts import wire_readiness as WR
 _account = WR.extraction_accounting([
