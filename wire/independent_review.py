@@ -11,7 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 
-PROMPT_VERSION = "wire-independent-review-2026-08-23a"
+PROMPT_VERSION = "wire-independent-review-2026-08-23b"
 SCHEMA_VERSION = "independent-review-v1"
 
 VERDICTS = {"AUTO_APPROVE", "HUMAN_REVIEW", "REJECT", "ABSTAIN"}
@@ -107,7 +107,7 @@ def build_prompt(evidence_text: str, identity: dict, assessment: dict) -> str:
 
 
 def enforce(model_payload: dict, *, identity_resolved: bool,
-            integrity_ok: bool) -> dict:
+            integrity_ok: bool, proposed_assessment: dict | None = None) -> dict:
     """Apply non-model safety rules while preserving the model verdict."""
     schema_errors = validate_response(model_payload)
     original = model_payload.get("verdict", "ABSTAIN")
@@ -138,8 +138,11 @@ def enforce(model_payload: dict, *, identity_resolved: bool,
          "reviewer says the commentary overstates the evidence"),
         (model_payload.get("inference_not_in_evidence") is True,
          "reviewer found an inference absent from the evidence"),
-        (model_payload.get("performance_only_no_role_information") is True,
-         "performance-only evidence with no role information blocks automatic approval"),
+        (model_payload.get("performance_only_no_role_information") is True
+         and (proposed_assessment or {}).get("decision")
+             != "NO_FANTASY_IMPACT",
+         "performance-only evidence with no role information blocks automatic "
+         "approval of an interpretation"),
         (model_payload.get("passage_names_a_different_subject") is True,
          "claim-subject conflict blocks automatic approval"),
     )

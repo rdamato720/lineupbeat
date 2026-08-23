@@ -81,7 +81,8 @@ def main():
                          "evidence_integrity": record,
                          "independent_reviewer": review.enforce(
                              payload, identity_resolved=True,
-                             integrity_ok=not record["blocks_automatic_approval"])})
+                             integrity_ok=not record["blocks_automatic_approval"],
+                             proposed_assessment=result["assessment"])})
     out = {"run_status": "VALID", "source": str(args.source),
            "prompt_version": review.PROMPT_VERSION,
            "schema_version": review.SCHEMA_VERSION,
