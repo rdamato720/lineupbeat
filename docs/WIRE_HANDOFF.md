@@ -279,11 +279,14 @@ Deterministic enforcement runs after the reviewer:
   Responses API, strict JSON Schema, and `store: false`.
 - OpenAI independent reviewer: implemented in
   `wire/providers/openai_review.py` as a separate Responses API pass.
-- Generator prompt `wire-fantasy-2026-08-23c` treats source metadata as
+- Generator prompt `wire-fantasy-2026-08-23d` treats source metadata as
   provenance context only, grounds all editorial fields in the evidence, and
-  forbids `UPDATE_RECOMMENDED` on `LOW` evidence.
-- Reviewer prompt `wire-independent-review-2026-08-23d` and schema
-  `independent-review-v2` explicitly review the proposed evidence class.
+  forbids `UPDATE_RECOMMENDED` on `LOW` evidence. Explicit "began practicing"
+  language counts as a return event even when participation remains limited.
+- Reviewer prompt `wire-independent-review-2026-08-23e` and schema
+  `independent-review-v2` explicitly review the proposed evidence class,
+  distinguish attributed speech from relayed reporting, and classify the
+  supported claim rather than unrelated sentences in a mixed passage.
 - `openai==3.3.1` is pinned in `requirements.txt`.
 - Anthropic transports remain as inert legacy/audit code but are absent from
   the active provider registry, workflow secrets, and installed requirements.
