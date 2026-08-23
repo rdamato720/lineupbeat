@@ -11,7 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 
-PROMPT_VERSION = "wire-independent-review-2026-08-23b"
+PROMPT_VERSION = "wire-independent-review-2026-08-23c"
 SCHEMA_VERSION = "independent-review-v1"
 
 VERDICTS = {"AUTO_APPROVE", "HUMAN_REVIEW", "REJECT", "ABSTAIN"}
@@ -35,6 +35,12 @@ RESPONSE_SCHEMA = {
         "passage_names_a_different_subject": {"type": "boolean"},
         "disagreement_summary": {"type": "string"},
     },
+}
+
+# Added by the trusted provider wrapper after its strict schema validation.
+# These are provenance, not model-authored semantic fields.
+PROVIDER_PROVENANCE_FIELDS = {
+    "provider", "model", "tokens_in", "tokens_out", "cost_usd", "latency_ms",
 }
 
 SYSTEM = """You independently review one proposed fantasy-football Wire item.
@@ -109,7 +115,14 @@ def build_prompt(evidence_text: str, identity: dict, assessment: dict) -> str:
 def enforce(model_payload: dict, *, identity_resolved: bool,
             integrity_ok: bool, proposed_assessment: dict | None = None) -> dict:
     """Apply non-model safety rules while preserving the model verdict."""
-    schema_errors = validate_response(model_payload)
+    allowed = set(RESPONSE_SCHEMA["properties"])
+    semantic_payload = {key: value for key, value in model_payload.items()
+                        if key in allowed}
+    schema_errors = validate_response(semantic_payload)
+    unexpected = (set(model_payload) - allowed - PROVIDER_PROVENANCE_FIELDS)
+    if unexpected:
+        schema_errors.append(
+            "unexpected fields: " + ", ".join(sorted(unexpected)))
     original = model_payload.get("verdict", "ABSTAIN")
     effective = original if original in VERDICTS else "ABSTAIN"
     reasons = []
