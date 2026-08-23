@@ -11,7 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 
-PROMPT_VERSION = "wire-independent-review-2026-08-23e"
+PROMPT_VERSION = "wire-independent-review-2026-08-23f"
 SCHEMA_VERSION = "independent-review-v2"
 
 VERDICTS = {"AUTO_APPROVE", "HUMAN_REVIEW", "REJECT", "ABSTAIN"}
@@ -171,9 +171,11 @@ def enforce(model_payload: dict, *, identity_resolved: bool,
          "reviewer did not confirm the claim subject"),
         (model_payload.get("evidence_classification_is_supported") is not True,
          "reviewer did not confirm the evidence classification"),
-        (model_payload.get("mechanism_is_supported") is not True,
+        (model_payload.get("mechanism_is_supported") is not True
+         and (proposed_assessment or {}).get("decision") != "ABSTAIN",
          "reviewer did not confirm the fantasy mechanism"),
-        (model_payload.get("direction_is_supported") is not True,
+        (model_payload.get("direction_is_supported") is not True
+         and (proposed_assessment or {}).get("decision") != "ABSTAIN",
          "reviewer did not confirm the direction"),
         (model_payload.get("commentary_overstates") is True,
          "reviewer says the commentary overstates the evidence"),
