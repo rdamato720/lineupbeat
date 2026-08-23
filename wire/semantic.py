@@ -28,7 +28,7 @@ import re
 from dataclasses import dataclass, field, asdict
 
 SCHEMA_VERSION = "semantic-v1"
-PROMPT_VERSION = "wire-fantasy-2026-08-23b"
+PROMPT_VERSION = "wire-fantasy-2026-08-23c"
 
 INTERPRET, NO_FANTASY_IMPACT, ABSTAIN = "INTERPRET", "NO_FANTASY_IMPACT", "ABSTAIN"
 DECISIONS = {INTERPRET, NO_FANTASY_IMPACT, ABSTAIN}
@@ -181,6 +181,14 @@ matched in it. Judge only what the passage states. Do not use anything you \
 know about the NFL, these players, or later events. If the passage does not \
 say it, it is not established.
 
+Source metadata is context for provenance and authority only. Article titles, \
+publication names, dates and other metadata are not evidence of football \
+facts. Do not introduce a game type, practice setting, injury status, role, \
+timeline or any other fact into fantasy_commentary, why_it_matters, \
+limitations or abstention_reason unless the PASSAGE states it. A missing \
+metadata field is not an "unverified" evidentiary status and is never a reason \
+to abstain.
+
 The distinctions that matter most, because they are where this goes wrong:
 
 - The claim subject is the player a statement is ABOUT, which is often not \
@@ -219,6 +227,10 @@ character. It is checked automatically and a mismatch discards your answer.
 AVAILABILITY has two different mechanisms and they are not interchangeable. LIMITED_PARTICIPATION is for a player not practising, held out, limited, or absent, when the passage does not say why. INJURY is only for a stated injury: a named injury, a diagnosis, a re-aggravation, a player leaving the field hurt. "Those not participating included Sam LaPorta" is LIMITED_PARTICIPATION -- calling it INJURY asserts a cause the passage never gives. Where the cause is unknown, say so in limitations rather than choosing a mechanism that implies it.
 
 STRENGTH is graded against corroboration, not drama. One practice observation from one reporter is LOW, however consequential it sounds -- a starting quarterback taking second-team reps is still LOW on one report. MEDIUM needs the same usage across several practices, a clear coach or player statement about role or health, or a second independent reporter. HIGH is reserved for an official act the club or league confirms -- injured reserve, a transaction, a formally announced starter, a season-ending injury -- or a role change corroborated by two independent reporters. If you are looking at one article by one reporter and no official act, the answer is LOW or MEDIUM, never HIGH.
+
+PROJECTION ACTION follows strength. LOW evidence may use NONE or REVIEW, \
+never UPDATE_RECOMMENDED. Do not turn a supported football interpretation \
+into ABSTAIN merely because the evidence is LOW; lower the action instead.
 
 HORIZON follows the mechanism: participation and injury news is IMMEDIATE, camp usage and competition is SHORT_TERM, a confirmed starting role or a season-ending injury is SEASON_LONG, and UNKNOWN when the passage gives no timeframe.
 
@@ -277,7 +289,7 @@ SOURCE
   publication: {meta.get('source_name', '')}
   author: {meta.get('author', '')}
   ownership: {meta.get('source_ownership', 'INDEPENDENT')}
-  evidence access: {meta.get('evidence_access', 'unverified')}
+  evidence access: {meta.get('evidence_access') or 'not supplied'}
   duplicate of another article: {meta.get('duplicate_of') or 'no'}
   underlying report id: {meta.get('underlying_report_id') or 'none'}
 
