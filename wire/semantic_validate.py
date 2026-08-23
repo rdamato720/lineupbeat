@@ -135,6 +135,16 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
             and a.fantasy_mechanism == "NO_FANTASY_IMPACT"):
         a.decision = sem.NO_FANTASY_IMPACT
 
+    if (a.decision == sem.INTERPRET
+            and a.fantasy_mechanism in {"PERFORMANCE", "OTHER"}):
+        # Do not repair a wrong model judgement: that would hide its error
+        # rate.  Fail closed to ABSTAIN in enforce().  The prompt tells the
+        # model to return NO_FANTASY_IMPACT when performance establishes no
+        # concrete role, usage, opportunity or availability mechanism.
+        bad.append(f"{a.fantasy_mechanism} is not a publishable fantasy "
+                   "mechanism; use a concrete mechanism or "
+                   "NO_FANTASY_IMPACT")
+
     if a.decision == sem.NO_FANTASY_IMPACT:
         return bad
 

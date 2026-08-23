@@ -1419,6 +1419,26 @@ check("commentary mentioning ADP or rankings is rejected",
       _assess(fantasy_commentary="His ADP is wrong.").decision == SEM.ABSTAIN)
 check("a validation failure abstains and is never repaired",
       _assess(supporting_quote="nope").fantasy_mechanism == "NO_FANTASY_IMPACT")
+_perf_only = _assess(fantasy_mechanism="PERFORMANCE")
+check("performance-only INTERPRET fails closed instead of becoming a card",
+      _perf_only.decision == SEM.ABSTAIN
+      and any("not a publishable fantasy mechanism" in failure
+              for failure in _perf_only.validation_failures),
+      _perf_only.to_dict())
+_other_only = _assess(fantasy_mechanism="OTHER")
+check("OTHER cannot bypass the concrete-mechanism requirement",
+      _other_only.decision == SEM.ABSTAIN
+      and any("not a publishable fantasy mechanism" in failure
+              for failure in _other_only.validation_failures),
+      _other_only.to_dict())
+check("an explicit no-impact model decision remains no impact",
+      _assess(decision=SEM.NO_FANTASY_IMPACT,
+              fantasy_mechanism="NO_FANTASY_IMPACT").decision
+      == SEM.NO_FANTASY_IMPACT)
+check("the prompt explicitly routes isolated performance to no impact",
+      "PERFORMANCE and OTHER are not publishable fantasy mechanisms"
+      in SEM.SYSTEM
+      and "return NO_FANTASY_IMPACT" in SEM.SYSTEM)
 
 _absent_pl = [{"player_id": "PID", "player_name": "Parker Washington",
                "team": "JAX", "position": "WR"}]
