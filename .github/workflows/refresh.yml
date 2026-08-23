@@ -10,9 +10,28 @@ on:
         description: "Skip the wire fetch and only rebuild pages"
         type: boolean
         default: false
+      wire_review_mode:
+        description: "Run a non-publishing Wire review batch instead of refresh"
+        type: choice
+        options:
+          - none
+          - plan
+          - review
+        default: none
+      wire_review_hours:
+        description: "Publisher-time discovery window for the review batch"
+        type: choice
+        options:
+          - "48"
+          - "72"
+        default: "72"
+      wire_candidate_ids:
+        description: "Review mode only: comma/space-separated exact candidate ids"
+        type: string
+        default: ""
 
 concurrency:
-  group: refresh
+  group: ${{ inputs.wire_review_mode == 'none' && 'refresh' || 'wire-review-batch' }}
   # Queue the next run. Do not cancel the one in flight.
   #
   # The hazard this group exists for is two runs overlapping: the cache only
@@ -33,7 +52,182 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  wire-review-batch:
+    if: inputs.wire_review_mode != 'none'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Review boundary gates
+        run: |
+          python scripts/test_wire_review.py
+          python scripts/wire_health.py --check
+
+      - name: Clear stale review outputs from the runner
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          for name in (
+              "data/wire_backfill_plan.json",
+              "data/wire_independent_review.json",
+              "data/wire_review_package.json",
+              "data/wire_review_package.html",
+          ):
+              Path(name).unlink(missing_ok=True)
+          PY
+
+      - name: Record publication boundary
+        id: publications
+        run: |
+          echo "sha=$(sha256sum data/wire_publications.json | awk '{print $1}')" >> "$GITHUB_OUTPUT"
+
+      - name: Discover current evidence
+        run: |
+          python scripts/wire_backfill.py --discover --report \
+            --hours "${{ inputs.wire_review_hours }}"
+
+      - name: Build zero-call plan
+        if: inputs.wire_review_mode == 'plan'
+        run: |
+          python scripts/wire_backfill.py --plan --report \
+            --hours "${{ inputs.wire_review_hours }}"
+
+      - name: Interpret exact approved cohort
+        if: inputs.wire_review_mode == 'review'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          WIRE_CANDIDATE_IDS: ${{ inputs.wire_candidate_ids }}
+          WIRE_REVIEW_HOURS: ${{ inputs.wire_review_hours }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          import subprocess
+          import sys
+
+          candidate_ids = [
+              value for value in re.split(r"[\s,]+", os.environ["WIRE_CANDIDATE_IDS"].strip())
+              if value
+          ]
+          if not 1 <= len(candidate_ids) <= 20:
+              raise SystemExit("review mode requires 1-20 exact candidate ids; 0 API calls")
+          invalid = [value for value in candidate_ids
+                     if not re.fullmatch(r"[0-9a-f]{20}", value)]
+          if invalid:
+              raise SystemExit(f"invalid candidate ids {invalid}; 0 API calls")
+          if len(set(candidate_ids)) != len(candidate_ids):
+              raise SystemExit("duplicate candidate ids; 0 API calls")
+
+          command = [sys.executable, "scripts/wire_backfill.py",
+                     "--interpret", "--report",
+                     "--hours", os.environ["WIRE_REVIEW_HOURS"],
+                     "--cap", "0.40", "--max-calls", "20"]
+          for candidate_id in candidate_ids:
+              command.extend(("--candidate-id", candidate_id))
+          raise SystemExit(subprocess.run(command, check=False).returncode)
+          PY
+
+      - name: Independently review exact cohort
+        if: inputs.wire_review_mode == 'review'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python scripts/wire_independent_review.py --cap 0.40 --max-calls 20
+          python scripts/wire_review_package.py
+
+      - name: Enforce approved total limits and non-publication
+        if: inputs.wire_review_mode == 'review'
+        env:
+          PUBLICATIONS_BEFORE: ${{ steps.publications.outputs.sha }}
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          state = json.loads(Path("data/wire_backfill.json").read_text())
+          independent = json.loads(Path("data/wire_independent_review.json").read_text())
+          package = json.loads(Path("data/wire_review_package.json").read_text())
+          generator = state.get("openai") or {}
+          calls = int(generator.get("calls", 0)) + int(independent.get("calls", 0))
+          cost = float(generator.get("cost_usd", 0)) + float(independent.get("cost_usd", 0))
+          if calls > 40:
+              raise SystemExit(f"refused: {calls} calls exceeds approved limit 40")
+          if cost > 1.00:
+              raise SystemExit(f"refused: ${cost:.4f} exceeds approved limit $1.00")
+          if package.get("publications_applied") != 0:
+              raise SystemExit("refused: review package reports publications")
+          path = Path("data/wire_publications.json")
+          after = hashlib.sha256(path.read_bytes()).hexdigest()
+          if after != os.environ["PUBLICATIONS_BEFORE"]:
+              raise SystemExit("refused: publication file changed during review batch")
+          print(f"approved boundary held: {calls}/40 calls, ${cost:.4f}/$1.00, 0 published")
+          PY
+
+      - name: Confirm plan made no paid calls or publications
+        if: inputs.wire_review_mode == 'plan'
+        env:
+          PUBLICATIONS_BEFORE: ${{ steps.publications.outputs.sha }}
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          plan = json.loads(Path("data/wire_backfill_plan.json").read_text())
+          if plan.get("model_calls_made") != 0:
+              raise SystemExit("plan unexpectedly reports model calls")
+          after = hashlib.sha256(Path("data/wire_publications.json").read_bytes()).hexdigest()
+          if after != os.environ["PUBLICATIONS_BEFORE"]:
+              raise SystemExit("publication file changed during plan")
+          print(f"plan boundary held: {plan['count']} candidates, 0 calls, 0 published")
+          PY
+
+      - name: Bank review ledger and artifacts on this branch
+        if: inputs.wire_review_mode == 'review'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/wire_paid_candidates.json data/wire_backfill.json \
+            data/wire_independent_review.json data/wire_review_package.json \
+            data/wire_review_package.html
+          if git diff --cached --quiet; then
+            echo "No review artifacts changed"
+          else
+            git commit -m "Bank expanded Wire review batch"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Upload review-only artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wire-${{ inputs.wire_review_mode }}-${{ github.run_id }}
+          path: |
+            data/wire_backfill.json
+            data/wire_backfill_plan.json
+            data/wire_paid_candidates.json
+            data/wire_independent_review.json
+            data/wire_review_package.json
+            data/wire_review_package.html
+          if-no-files-found: warn
+          retention-days: 30
+
   refresh:
+    if: inputs.wire_review_mode == 'none'
     runs-on: ubuntu-latest
     # Nothing displaces a running job now, so a hung one would hold the queue
     # until the six-hour default. Shorter than the two-hour trigger interval

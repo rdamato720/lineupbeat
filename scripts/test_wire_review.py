@@ -31,6 +31,20 @@ from wire.providers.openai import OpenAIProviderError, OpenAISemanticProvider
 
 
 class ReviewRepairTests(unittest.TestCase):
+    def test_expanded_batch_workflow_is_capped_and_non_publishing(self):
+        workflow = (ROOT / ".github" / "workflows" / "refresh.yml").read_text()
+        batch = workflow.split("  wire-review-batch:", 1)[1].split(
+            "\n  refresh:", 1)[0]
+        self.assertIn('--cap", "0.40", "--max-calls", "20"', batch)
+        self.assertIn("wire_independent_review.py --cap 0.40 --max-calls 20",
+                      batch)
+        self.assertIn("calls > 40", batch)
+        self.assertIn("cost > 1.00", batch)
+        self.assertIn("publication file changed during review batch", batch)
+        self.assertIn("Clear stale review outputs from the runner", batch)
+        self.assertNotIn("wire_publish.py", batch)
+        self.assertNotIn("wrangler", batch)
+
     def test_named_human_suppression_receipt_is_valid_and_banked(self):
         receipt, errors = human_review.validate_ledger()
         self.assertEqual(errors, [])
