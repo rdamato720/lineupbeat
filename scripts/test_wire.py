@@ -1312,7 +1312,8 @@ from wire import semantic as SEM
 from wire import semantic_validate as SV
 from wire.providers import REGISTRY as PROVIDERS
 from wire.providers.claude import ClaudeSemanticProvider, redact as credact
-from wire.providers.openai import OpenAISemanticProvider, redact as oredact
+from wire.providers.openai import (OpenAIProviderError,
+                                   OpenAISemanticProvider, redact as oredact)
 from wire.providers.openai_review import OpenAIIndependentReviewer
 
 check("only rules and OpenAI are active providers",
@@ -1346,10 +1347,14 @@ check("an authorization header is scrubbed",
 _noky = OpenAISemanticProvider(transport=None)
 _prev = os.environ.pop("OPENAI_API_KEY", None)
 try:
-    _a = _noky.evaluate("He took first-team reps.", {}, [])
-    check("a missing key abstains rather than interpreting",
-          _a.decision == SEM.ABSTAIN and "unavailable" in (_a.abstention_reason or ""),
-          _a.decision)
+    try:
+        _noky.evaluate("He took first-team reps.", {}, [])
+    except OpenAIProviderError:
+        _raised_provider_error = True
+    else:
+        _raised_provider_error = False
+    check("a missing key is a provider failure, not a semantic abstention",
+          _raised_provider_error)
 finally:
     if _prev is not None:
         os.environ["OPENAI_API_KEY"] = _prev
@@ -1765,6 +1770,12 @@ check("the dark launch has separate call and dollar caps",
       "--max-calls" in _backfill_src and "--cap" in _backfill_src)
 check("the plan path makes zero model calls",
       "model_calls_made\": 0" in _backfill_src)
+check("provider failures stop the batch instead of becoming abstentions",
+      "stopped_at_provider_failure" in _backfill_src
+      and "provider_errors" in _backfill_src
+      and "PROVIDER FAILURE" in _backfill_src)
+check("an OpenAI run drops stale Claude state",
+      'state.pop(stale, None)' in _backfill_src and '"claude"' in _backfill_src)
 
 from scripts import wire_readiness as WR
 _account = WR.extraction_accounting([
