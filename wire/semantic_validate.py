@@ -42,6 +42,11 @@ UNIT = re.compile(
     r"(?i)\b(first|second|third|1st|2nd|3rd)[-\s]team\b|\bwith the "
     r"(?:ones|twos|threes|1s|2s|3s|starters)\b")
 
+STATUS_QUO_STARTER = re.compile(
+    r"(?i)\b(?:remains? (?:the )?(?:named )?starter|"
+    r"continues? as (?:the )?(?:named )?starter|"
+    r"is still (?:the )?(?:named )?starter)\b")
+
 RELAY = re.compile(
     r"(?i)\b(the athletic|espn|nfl network|cbs sports|fox sports|"
     r"pro football focus|pff)\b\s*(?:'s|’s)?|\b(?:per|according to|via)\s+"
@@ -322,6 +327,12 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
             bad.append("RETURN_TO_PRACTICE marked NEGATIVE")
     if a.fantasy_mechanism == "LIMITED_PARTICIPATION" and a.direction == "POSITIVE":
         bad.append("an absence or limitation marked POSITIVE")
+
+    if (a.decision == sem.INTERPRET
+            and a.fantasy_mechanism == "DEPTH_CHART"
+            and STATUS_QUO_STARTER.search(a.supporting_quote or segment)):
+        bad.append("status-quo starter language is not a new depth-chart "
+                   "development")
 
     # 7. A unit claim needs unit language in the quote, not merely nearby.
     if a.fantasy_mechanism in ("FIRST_TEAM_REPS", "SECOND_TEAM_REPS",
