@@ -16,15 +16,70 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from wire import currentness
 from wire import evidence_integrity as integ
+from wire import human_review
 from wire import independent_review as review
 from wire import players
 from wire import relevance
 from wire import semantic
 import wire_review_package as package
 import wire_backfill as backfill
+import wire_semantic_eval as semantic_eval
 
 
 class ReviewRepairTests(unittest.TestCase):
+    def test_named_human_suppression_receipt_is_valid_and_banked(self):
+        receipt, errors = human_review.validate_ledger()
+        self.assertEqual(errors, [])
+        self.assertEqual(receipt["approved_by"], "Ralph Damato")
+        self.assertEqual(receipt["action"], "APPROVE_SUPPRESSIONS")
+        self.assertEqual(receipt["candidate_count"], 5)
+        self.assertEqual(receipt["publication_count_before"],
+                         receipt["publication_count_after"])
+
+    def test_model_name_cannot_satisfy_human_review_gate(self):
+        payload = json.loads(human_review.LEDGER.read_text())
+        payload["receipts"][0]["approved_by"] = "OpenAI"
+        payload["receipts"][0]["approved_by_handle"] = "model"
+        with tempfile.TemporaryDirectory() as tmp:
+            ledger = Path(tmp) / "human.json"
+            ledger.write_text(json.dumps(payload))
+            _, errors = human_review.validate_ledger(ledger)
+        self.assertTrue(any("human approver" in x for x in errors), errors)
+
+    def test_openai_eval_requires_explicit_limits_before_calls(self):
+        errors = semantic_eval.live_limit_errors(["rules", "openai"], 23,
+                                                 None, None)
+        self.assertEqual(len(errors), 2)
+        self.assertTrue(any("--cap" in x for x in errors))
+        self.assertTrue(any("--max-calls" in x for x in errors))
+        self.assertTrue(semantic_eval.live_limit_errors(
+            ["openai"], 1, float("nan"), 1))
+
+    def test_openai_eval_refuses_partial_call_limit_before_calls(self):
+        errors = semantic_eval.live_limit_errors(["openai"], 23, 0.50, 22)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("0 API calls", errors[0])
+        self.assertEqual(
+            semantic_eval.live_limit_errors(["openai"], 23, 0.50, 23), [])
+        self.assertEqual(
+            semantic_eval.live_limit_errors(["rules"], 23, None, None), [])
+
+    def test_openai_promotion_fails_if_observed_spend_crosses_cap(self):
+        summary = {
+            "available": True, "locked_gold_items": 1,
+            "correct_num": 1, "correct_den": 1,
+            "precision_num": 1, "precision_den": 1,
+            "recall_num": 1, "recall_den": 1,
+            "abstain_num": 0, "abstain_den": 1,
+            "cost_usd_total": 0.11, "cap_usd": 0.10,
+            "calls": 1, "max_calls": 1,
+        }
+        gate = semantic_eval.promotion_gate(
+            summary, [{"id": "clean", "errors": [],
+                       "validation_failures": []}])
+        self.assertFalse(gate["passed"])
+        self.assertFalse(gate["checks"]["observed_spend_within_cap"])
+
     def test_generator_prompt_withholds_article_title(self):
         evidence = ("Without two of the top receivers, Christian Watson and "
                     "Matthew Golden played 11 snaps apiece.")

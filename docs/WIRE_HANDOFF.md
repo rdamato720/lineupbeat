@@ -91,10 +91,12 @@ There is no valid path from E or F directly to I.
 | `wire/semantic_validate.py` | Deterministic interpretation validation |
 | `wire/evidence_integrity.py` | Evidence-only and request hashing |
 | `wire/independent_review.py` | Independent-review schema, validation, deterministic overrides |
+| `wire/human_review.py` | Named-human receipt and paid-ledger validation |
 | `wire/providers/` | Rules, Anthropic, OpenAI, and independent-review transports |
 | `wire/store.py` | Candidate, impact, decision, audit, and publication persistence |
 | `scripts/wire_backfill.py` | Rolling-window discovery/interpretation/reporting |
 | `data/wire_paid_candidates.json` | Durable candidate-id ledger written before model requests |
+| `data/wire_human_reviews.json` | Append-only named-human dark-launch review receipts |
 | `scripts/wire_independent_review.py` | Second-pass review; writes no publications |
 | `scripts/wire_review_package.py` | Human-review HTML and JSON package |
 | `scripts/wire_publish.py` | Only reviewed-card publication route |
@@ -367,6 +369,15 @@ publication risk:
 An auto-approval on `NO_FANTASY_IMPACT` is a suppression agreement, not a
 publishable card, and must be counted separately.
 
+Dark-launch suppression approval is recorded separately in
+`data/wire_human_reviews.json`. The active receipt names the human, preserves
+the exact approval statement, identifies every candidate and evidence/request
+hash, references the reviewed package by SHA-256, reconciles calls and cost,
+and proves that the publication count did not change. Readiness also requires
+every reviewed candidate to exist in the append-only paid-candidate ledger.
+A suppression receipt can satisfy the fantasy-review readiness gate, but can
+never authorize a publication.
+
 The public evidence sentence starts blank. It is authored or explicitly
 approved by a human. Human decisions store reviewer, timestamp, rejection
 reason, original generated text, and any edited replacement separately.
@@ -464,14 +475,22 @@ been inspected.
 
 ```bash
 python scripts/wire_semantic_eval.py --providers rules
-python scripts/wire_semantic_eval.py --providers rules,openai
 ```
 
 For an OpenAI comparison, set `OPENAI_API_KEY` in the environment and run:
 
 ```bash
-python scripts/wire_semantic_eval.py --providers rules,openai
+python scripts/wire_semantic_eval.py --providers rules,openai \
+  --cap 0.50 --max-calls 23
 ```
+
+The dollar cap and independent call-count cap are mandatory for every OpenAI
+evaluation. If either is absent, or the call limit cannot cover the selected
+corpus, preflight exits before the first API call. Observed spend is checked
+before every later request; reaching it stops the run, leaves the corpus
+incomplete, and therefore fails promotion. One in-flight response can cross
+the observed-spend ceiling; that also fails promotion and no later request is
+sent. The independent request-count ceiling remains exact.
 
 Report zero-tolerance errors, correct/total, precision numerator/denominator,
 recall numerator/denominator, false suppressions, false positives, abstentions,
@@ -517,6 +536,7 @@ Expected primary artifacts:
 - `data/wire_independent_review.json`
 - `data/wire_review_package.html`
 - `data/wire_review_package.json`
+- `data/wire_human_reviews.json` after named-human review
 
 The independent reviewer and package scripts write zero publications. Confirm
 that explicitly after every run.
@@ -621,12 +641,16 @@ commentary as a fallback.
 
 ### Immediate next step
 
-After the evidence-grounding changes land, rerun the same five-case exact
-selection across distinct teams and sources, excluding every already-paid
-candidate id. Run both OpenAI passes, generate the HTML and JSON review
-package, and review every item manually. Publish nothing during that run. Do
-not expand the batch until the generator, independent reviewer, deterministic
-enforcement, and a human agree on all five.
+The final five-case exact selection completed across distinct teams and
+sources. Both OpenAI passes, deterministic enforcement, evidence-integrity
+checks, and Ralph Damato agreed on all five `NO_FANTASY_IMPACT` suppressions;
+zero publications were applied. The durable receipt and all 96 paid candidate
+ids are banked.
+
+After the receipt/readiness and evaluation-cap changes pass review, the next
+paid step is the complete 23-item locked OpenAI gold corpus under a separately
+approved dollar cap and 23-call limit. Do not describe OpenAI as
+production-approved unless that predeclared gate passes.
 
 ### OpenAI production-promotion checklist
 
