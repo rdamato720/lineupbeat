@@ -148,6 +148,15 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
     if a.decision == sem.NO_FANTASY_IMPACT:
         return bad
 
+    supporting_classes = {
+        "FIRSTHAND_OBSERVATION", "DIRECT_QUOTATION",
+        "OFFICIAL_DESIGNATION",
+    }
+    if (a.decision == sem.INTERPRET
+            and a.evidence_classification not in supporting_classes):
+        bad.append(f"{a.evidence_classification} may not support a fantasy "
+                   "interpretation")
+
     # 2. Identity. The subject must be a real registry player, matched in
     #    this passage, with the team and position we stored.
     by_id = {p["player_id"]: p for p in players}

@@ -1439,6 +1439,39 @@ check("the prompt explicitly routes isolated performance to no impact",
       "PERFORMANCE and OTHER are not publishable fantasy mechanisms"
       in SEM.SYSTEM
       and "return NO_FANTASY_IMPACT" in SEM.SYSTEM)
+_analysis_interpretation = _assess(
+    evidence_classification="ANALYSIS_OR_OPINION")
+check("analysis or opinion cannot support an interpretation",
+      _analysis_interpretation.decision == SEM.ABSTAIN
+      and any("may not support" in failure
+              for failure in _analysis_interpretation.validation_failures),
+      _analysis_interpretation.to_dict())
+_relay_interpretation = _assess(
+    evidence_classification="RELAYED_REPORTING")
+check("relayed reporting cannot support an interpretation",
+      _relay_interpretation.decision == SEM.ABSTAIN
+      and any("may not support" in failure
+              for failure in _relay_interpretation.validation_failures),
+      _relay_interpretation.to_dict())
+_uncertain_interpretation = _assess(evidence_classification="UNCERTAIN")
+check("uncertain evidence cannot support an interpretation",
+      _uncertain_interpretation.decision == SEM.ABSTAIN
+      and any("may not support" in failure
+              for failure in _uncertain_interpretation.validation_failures),
+      _uncertain_interpretation.to_dict())
+check("an official designation remains an eligible evidence class",
+      _assess(evidence_classification="OFFICIAL_DESIGNATION").decision
+      == SEM.INTERPRET
+      and "OFFICIAL_DESIGNATION" in
+          SEM.RESPONSE_SCHEMA["properties"]["evidence_classification"]["enum"])
+check("non-evidence classification does not corrupt a no-impact decision",
+      _assess(decision=SEM.NO_FANTASY_IMPACT,
+              fantasy_mechanism="NO_FANTASY_IMPACT",
+              evidence_classification="ANALYSIS_OR_OPINION").decision
+      == SEM.NO_FANTASY_IMPACT)
+check("the prompt distinguishes official designations from firsthand reports",
+      "OFFICIAL_DESIGNATION" in SEM.SYSTEM
+      and "not a reporter's firsthand observation" in SEM.SYSTEM)
 
 _absent_pl = [{"player_id": "PID", "player_name": "Parker Washington",
                "team": "JAX", "position": "WR"}]
