@@ -72,7 +72,8 @@ ABSENCE_LANG = re.compile(
     r"remains? (?:out|sidelined|on the (?:pup|nfi))|non[-\s]participant|"
     r"sidelined|in a walking boot|left (?:practice|the field)|"
     r"reaggravated|re-?injured|carted off|ruled out|"
-    r"absent from (?:practice|the field)|out of practice)\b")
+    r"absent from (?:practice|the field)|out of practice|"
+    r"won['’]?t (?:be )?(?:playing|suiting up)|will not (?:play|suit up))\b")
 
 # Things that are emphatically not a return to practice, and which the
 # reviewed batch turned into one.

@@ -20,6 +20,7 @@ from wire import independent_review as review
 from wire import players
 from wire import relevance
 import wire_review_package as package
+import wire_backfill as backfill
 
 
 class ReviewRepairTests(unittest.TestCase):
@@ -96,6 +97,64 @@ class ReviewRepairTests(unittest.TestCase):
             "p", "RB", "Dameon Pierce did not practice with a hamstring.",
             registry)
         self.assertFalse(result["eligible"])
+
+    def test_observed_dark_launch_cohort_is_filtered_before_model_spend(self):
+        def row(name, text, klass="FIRSTHAND_OBSERVATION"):
+            return {"player_name": name, "evidence_text": text,
+                    "evidence_class": klass}
+
+        blocked = [
+            row("Ty Chandler",
+                "RB Ty Chandler also added 21 rushing yards on six carries.",
+                "FIRSTHAND_OBSERVATION"),
+            row("Ameer Abdullah",
+                "Mullens led a drive that would have ended in a touchdown "
+                "if not for an Ameer Abdullah drop."),
+            row("Fernando Mendoza",
+                "Fernando Mendoza is coming from a different scheme, and "
+                "people wondered about the rookie before Kubiak evaluated him."),
+            row("Sam Darnold",
+                "I’m not sure how Sam Darnold can be considered a bottom half "
+                "of the league starter; the list becomes even more dubious."),
+            row("Kyler Murray",
+                "Saturday was a chance for McCarthy to reclaim momentum after "
+                "losing the starting job to Kyler Murray."),
+            row("Jared Goff",
+                "Veteran quarterback Jared Goff caught up with a former "
+                "teammate during pre-game warmups."),
+            row("Mack Hollins",
+                "We got a few snaps out of Mack Hollins, but it was primarily "
+                "backups."),
+            row("RJ Harvey",
+                'Payton said Nix "was solid" in an efficient opening drive '
+                "capped by a touchdown pass to running back RJ Harvey.",
+                "DIRECT_QUOTATION"),
+        ]
+        for candidate in blocked:
+            with self.subTest(player=candidate["player_name"]):
+                self.assertFalse(backfill.pre_model_claim_gate(candidate)[0])
+
+    def test_ambiguous_usage_and_explicit_absence_still_reach_review(self):
+        cases = [
+            {"player_name": "Jacoby Brissett",
+             "evidence_text": "Jacoby Brissett and other starting players "
+                              "won't be suiting up in Arizona.",
+             "evidence_class": "FIRSTHAND_OBSERVATION"},
+            {"player_name": "Christian Watson",
+             "evidence_text": "Christian Watson and Matthew Golden played "
+                              "11 snaps apiece.",
+             "evidence_class": "FIRSTHAND_OBSERVATION"},
+            {"player_name": "Gardner Minshew",
+             "evidence_text": "LaFleur said Gardner Minshew will not play.",
+             "evidence_class": "DIRECT_QUOTATION"},
+            {"player_name": "Kyler Murray",
+             "evidence_text": "Kyler Murray will not be seeing the field "
+                              "this weekend.",
+             "evidence_class": "FIRSTHAND_OBSERVATION"},
+        ]
+        for candidate in cases:
+            with self.subTest(player=candidate["player_name"]):
+                self.assertTrue(backfill.pre_model_claim_gate(candidate)[0])
 
     def test_package_rejects_stale_identity_reused_for_every_card(self):
         registry = players.load()
