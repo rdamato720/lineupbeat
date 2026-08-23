@@ -1452,9 +1452,11 @@ check("clear authorial analysis routes to no impact rather than abstention",
       "must return NO_FANTASY_IMPACT, not ABSTAIN" in SEM.SYSTEM
       and "authority boundary makes it non-actionable" in SEM.SYSTEM)
 check("the prompt keeps an unattributed diagnosis uncertain",
-      "An unattributed diagnosis or medical availability assertion is UNCERTAIN"
+      "An unattributed diagnosis, medical cause, or medical timetable is UNCERTAIN"
       in " ".join(SEM.SYSTEM.split())
-      and "nearby quotation does not lend" in SEM.SYSTEM)
+      and "nearby quotation does not lend" in SEM.SYSTEM
+      and "Makai Lemon began practicing in a limited capacity" in
+          " ".join(SEM.SYSTEM.split()))
 _return_seg = ("Makai Lemon began practicing in a limited capacity on "
                "Thursday. He will be returning to practice full-time soon.")
 _return_players = [{"player_id": "LEMON", "player_name": "Makai Lemon",
@@ -1969,6 +1971,35 @@ check("performance-only evidence confirms a no-impact decision",
       and _confirmed_no_impact["effective_verdict"] == "AUTO_APPROVE"
       and not _confirmed_no_impact["enforcement_reasons"],
       _confirmed_no_impact)
+
+_abstain_diagnostics = {
+    **_review_payload,
+    "verdict": "AUTO_APPROVE",
+    "mechanism_is_supported": False,
+    "direction_is_supported": False,
+    "disagreement_summary": ("The abstention is supported; the diagnostic "
+                             "mechanism and direction are not established."),
+}
+_confirmed_abstention = IR.enforce(
+    _abstain_diagnostics, identity_resolved=True, integrity_ok=True,
+    proposed_assessment={"decision": "ABSTAIN"})
+check("unsupported diagnostics do not block confirmation of an abstention",
+      _confirmed_abstention["model_verdict"] == "AUTO_APPROVE"
+      and _confirmed_abstention["effective_verdict"] == "AUTO_APPROVE"
+      and not _confirmed_abstention["enforcement_reasons"],
+      _confirmed_abstention)
+_diagnostics_on_interpretation = IR.enforce(
+    _abstain_diagnostics, identity_resolved=True, integrity_ok=True,
+    proposed_assessment={"decision": "INTERPRET"})
+check("unsupported mechanism and direction still block an interpretation",
+      _diagnostics_on_interpretation["effective_verdict"] == "HUMAN_REVIEW"
+      and any("fantasy mechanism" in reason
+              for reason in
+              _diagnostics_on_interpretation["enforcement_reasons"])
+      and any("direction" in reason
+              for reason in
+              _diagnostics_on_interpretation["enforcement_reasons"]),
+      _diagnostics_on_interpretation)
 
 _unsupported_class_review = IR.enforce(
     {**_review_payload, "verdict": "AUTO_APPROVE",
