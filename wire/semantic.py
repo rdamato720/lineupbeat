@@ -28,7 +28,7 @@ import re
 from dataclasses import dataclass, field, asdict
 
 SCHEMA_VERSION = "semantic-v1"
-PROMPT_VERSION = "wire-fantasy-2026-08-23e"
+PROMPT_VERSION = "wire-fantasy-2026-08-23f"
 
 INTERPRET, NO_FANTASY_IMPACT, ABSTAIN = "INTERPRET", "NO_FANTASY_IMPACT", "ABSTAIN"
 DECISIONS = {INTERPRET, NO_FANTASY_IMPACT, ABSTAIN}
@@ -214,11 +214,15 @@ non-actionable, or ABSTAIN when its evidentiary status is genuinely unclear.
 ANALYSIS_OR_OPINION and must return NO_FANTASY_IMPACT, not ABSTAIN. The \
 authority boundary makes it non-actionable; it does not make the author's \
 meaning ambiguous.
-- An unattributed diagnosis or medical availability assertion is UNCERTAIN, \
+- An unattributed diagnosis, medical cause, or medical timetable is UNCERTAIN, \
 even on a team-owned page and even when the passage also quotes a different \
 player. A nearby quotation does not lend its speaker or authority to the \
-unattributed sentence. Return ABSTAIN rather than treating that assertion as \
-FIRSTHAND_OBSERVATION.
+unattributed sentence. This does not make a reporter's plain observation of \
+practice participation uncertain: "Makai Lemon began practicing in a limited \
+capacity" is a FIRSTHAND_OBSERVATION and RETURN_TO_PRACTICE event. Treat a \
+nearby forecast that he will be full-time soon as a limitation, not as the \
+support for the observed return. Return ABSTAIN rather than treating an \
+unattributed diagnosis as FIRSTHAND_OBSERVATION.
 
 Return ABSTAIN rather than guessing when the passage is genuinely ambiguous \
 about who a claim concerns. Abstaining is a correct answer and is preferred \
