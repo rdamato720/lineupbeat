@@ -28,7 +28,7 @@ import re
 from dataclasses import dataclass, field, asdict
 
 SCHEMA_VERSION = "semantic-v1"
-PROMPT_VERSION = "wire-fantasy-2026-08-23h"
+PROMPT_VERSION = "wire-fantasy-2026-08-23i"
 
 INTERPRET, NO_FANTASY_IMPACT, ABSTAIN = "INTERPRET", "NO_FANTASY_IMPACT", "ABSTAIN"
 DECISIONS = {INTERPRET, NO_FANTASY_IMPACT, ABSTAIN}
@@ -329,7 +329,6 @@ def build_prompt(segment: str, meta: dict, players: list) -> str:
 \"\"\"{segment}\"\"\"
 
 SOURCE
-  article: {meta.get('article_title', '')}
   published: {meta.get('published_at', '')}
   team beat: {meta.get('team', '')}
   publication: {meta.get('source_name', '')}

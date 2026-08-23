@@ -19,11 +19,64 @@ from wire import evidence_integrity as integ
 from wire import independent_review as review
 from wire import players
 from wire import relevance
+from wire import semantic
 import wire_review_package as package
 import wire_backfill as backfill
 
 
 class ReviewRepairTests(unittest.TestCase):
+    def test_generator_prompt_withholds_article_title(self):
+        evidence = ("Without two of the top receivers, Christian Watson and "
+                    "Matthew Golden played 11 snaps apiece.")
+        prompt = semantic.build_prompt(
+            evidence,
+            {"article_title": "Packers Preseason Win at Denver",
+             "source_name": "Packers On SI"},
+            [{"player_id": "watson", "player_name": "Christian Watson",
+              "team": "GB", "position": "WR"}])
+        self.assertIn(evidence, prompt)
+        self.assertNotIn("Packers Preseason Win at Denver", prompt)
+        self.assertNotIn("Preseason", prompt)
+
+    def test_suppression_approval_is_not_an_action_disagreement(self):
+        item = {
+            "assessment": {"decision": "NO_FANTASY_IMPACT",
+                           "fantasy_mechanism": "NO_FANTASY_IMPACT",
+                           "validation_failures": []},
+            "evidence_integrity": {"blocks_automatic_approval": False},
+            "independent_reviewer": {"effective_verdict": "AUTO_APPROVE"},
+        }
+        self.assertFalse(package.publishable(item))
+        self.assertFalse(package.action_disagreement(item))
+        self.assertFalse(package.assessment_disagreement(item))
+
+    def test_rejected_suppression_is_an_assessment_not_action_disagreement(self):
+        item = {
+            "assessment": {"decision": "ABSTAIN",
+                           "fantasy_mechanism": "NO_FANTASY_IMPACT",
+                           "validation_failures": ["unsupported context"]},
+            "evidence_integrity": {"blocks_automatic_approval": False},
+            "independent_reviewer": {"effective_verdict": "REJECT"},
+        }
+        self.assertFalse(package.action_disagreement(item))
+        self.assertTrue(package.assessment_disagreement(item))
+
+    def test_paid_ledger_merges_legacy_results_and_never_drops_ids(self):
+        state = {"results": [
+            {"candidate": {"candidate_id": "legacy-paid"}}]}
+        with tempfile.TemporaryDirectory() as tmp:
+            ledger = Path(tmp) / "paid.json"
+            ledger.write_text(json.dumps({
+                "candidate_ids": ["banked-paid"]}))
+            with mock.patch.object(backfill, "PAID", ledger):
+                known = backfill.paid_candidate_ids(state)
+                self.assertEqual(known, {"legacy-paid", "banked-paid"})
+                backfill.record_paid_candidate("new-paid", known)
+                saved = json.loads(ledger.read_text())
+                self.assertEqual(saved["count"], 3)
+                self.assertEqual(set(saved["candidate_ids"]),
+                                 {"legacy-paid", "banked-paid", "new-paid"})
+
     def test_evidence_hash_excludes_player_metadata(self):
         text = "The player worked with the first team."
         self.assertEqual(integ.sha256_text(text), integ.sha256_text(text))
