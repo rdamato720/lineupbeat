@@ -1560,6 +1560,12 @@ check("the prompt does not transfer another player's role to a quote speaker",
 check("the prompt treats recurring two-minute routes as concrete usage",
       "every two-minute drill" in SEM.SYSTEM
       and "return INTERPRET with ROUTES" in SEM.SYSTEM)
+check("the prompt treats a plainly reported re-aggravation as an injury event",
+      "immediately reaggravated his hamstring" in SEM.SYSTEM
+      and "re-aggravation overrides the return" in SEM.SYSTEM)
+check("the prompt routes unchanged named-starter status to no impact",
+      "Status-quo starter language" in SEM.SYSTEM
+      and "must return NO_FANTASY_IMPACT" in SEM.SYSTEM)
 
 _allen_seg = ("With LeQuint Allen Jr. out for the rest of training camp with "
               "a soft-tissue injury, Abdullah could have a prime opportunity "
@@ -1594,6 +1600,66 @@ check("an unattributed diagnosis cannot be classified as firsthand",
       and not any("regular season context" in failure
                   for failure in _allen_assessment.validation_failures),
       _allen_assessment.to_dict())
+
+_giddens_seg = ("DJ Giddens returned to practice and immediately "
+                "reaggravated his hamstring.")
+_giddens_players = [{"player_id": "GIDDENS", "player_name": "DJ Giddens",
+                     "team": "IND", "position": "RB"}]
+_giddens_payload = {
+    **_base,
+    "claim_subject_player_id": "GIDDENS",
+    "claim_subject_player_name": "DJ Giddens",
+    "mentioned_players": [{"player_id": "GIDDENS",
+                            "player_name": "DJ Giddens",
+                            "relationship": "CLAIM_SUBJECT"}],
+    "supporting_quote": _giddens_seg,
+    "evidence_classification": "FIRSTHAND_OBSERVATION",
+    "fantasy_mechanism": "INJURY",
+    "direction": "NEGATIVE",
+    "fantasy_commentary": ("Giddens reaggravated his hamstring immediately "
+                            "after returning to practice."),
+}
+_giddens_provider = OpenAISemanticProvider(
+    transport=lambda prompt: (_giddens_payload,
+                              {"input_tokens": 10, "output_tokens": 5}))
+_giddens_assessment = SV.enforce(
+    _giddens_provider.evaluate(
+        _giddens_seg, {"team": "IND"}, _giddens_players),
+    _giddens_seg, _giddens_players, None, {})
+check("a plainly reported re-aggravation supports a negative injury event",
+      _giddens_assessment.decision == SEM.INTERPRET
+      and _giddens_assessment.fantasy_mechanism == "INJURY"
+      and _giddens_assessment.direction == "NEGATIVE",
+      _giddens_assessment.to_dict())
+
+_jones_seg = ("Daniel Jones remains the named starter. Anthony Richardson "
+              "ran with the second team throughout the session.")
+_jones_players = [{"player_id": "JONES", "player_name": "Daniel Jones",
+                   "team": "IND", "position": "QB"}]
+_jones_payload = {
+    **_base,
+    "claim_subject_player_id": "JONES",
+    "claim_subject_player_name": "Daniel Jones",
+    "mentioned_players": [{"player_id": "JONES",
+                            "player_name": "Daniel Jones",
+                            "relationship": "CLAIM_SUBJECT"}],
+    "supporting_quote": "Daniel Jones remains the named starter.",
+    "evidence_classification": "FIRSTHAND_OBSERVATION",
+    "fantasy_mechanism": "DEPTH_CHART",
+    "direction": "POSITIVE",
+    "fantasy_commentary": "Jones remains the named starter.",
+}
+_jones_provider = OpenAISemanticProvider(
+    transport=lambda prompt: (_jones_payload,
+                              {"input_tokens": 10, "output_tokens": 5}))
+_jones_assessment = SV.enforce(
+    _jones_provider.evaluate(_jones_seg, {"team": "IND"}, _jones_players),
+    _jones_seg, _jones_players, None, {})
+check("status-quo starter language cannot become a depth-chart interpretation",
+      _jones_assessment.decision == SEM.ABSTAIN
+      and any("status-quo starter language" in failure
+              for failure in _jones_assessment.validation_failures),
+      _jones_assessment.to_dict())
 
 _absent_pl = [{"player_id": "PID", "player_name": "Parker Washington",
                "team": "JAX", "position": "WR"}]
