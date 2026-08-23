@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 import time
@@ -35,6 +36,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from wire import claims as claim_rules
 from wire import evidence as ev
 from wire import currentness
 from wire import evidence_integrity as integrity
@@ -50,6 +52,86 @@ from wire.store import WireStore
 STATE = Path("data/wire_backfill.json")
 PLAN = Path("data/wire_backfill_plan.json")
 WINDOW_HOURS = 48
+
+
+EDITORIAL_ONLY = re.compile(
+    r"(?i)\b(i['’]?m not sure|people wondered|can be considered|"
+    r"bottom half of the league|more dubious|stock (?:up|down)|"
+    r"winners? (?:and|&) losers?|player grades?|bold predictions?)\b")
+
+BOX_SCORE_ONLY = re.compile(
+    r"(?i)\b(?:added|finished with|recorded|had)\s+\d+\s+"
+    r"(?:rushing|receiving|passing)?\s*yards?\s+(?:on|from)\s+"
+    r"(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+"
+    r"(?:carries|catches|receptions?|attempts?)\b")
+
+NON_DEVELOPMENT_CONTEXT = re.compile(
+    r"(?i)\b(pre[- ]game warmups?|caught up with (?:a )?former teammate)\b")
+
+ROUTINE_BACKUP_CONTEXT = re.compile(
+    r"(?i)\b(?:a few|limited) snaps? (?:out of|for) .{0,45}"
+    r"(?:primarily|mostly) backups?\b")
+
+
+def _coordinated_usage(text: str, player_name: str) -> bool:
+    """True only for an explicit joined subject sharing one usage verb."""
+    parts = [re.escape(x) for x in (player_name or "").split()]
+    if not parts:
+        return False
+    player = r"\s+".join(parts)
+    other = r"[A-Z][\w.'-]+(?:\s+[A-Z][\w.'-]+){0,2}"
+    return bool(re.search(
+        rf"(?i)\b{player}\s+and\s+{other}\s+"
+        rf"(?:played|logged|took|received|saw)\s+\d+\s+"
+        rf"(?:offensive\s+)?(?:snaps?|targets?|carries|routes?)\b",
+        text or ""))
+
+
+def pre_model_claim_gate(row: dict) -> tuple[bool, str]:
+    """Refuse only deterministic player/claim failures before a model call."""
+    text = row.get("evidence_text", "") or ""
+    name = row.get("player_name", "") or ""
+    klass = row.get("evidence_class", "") or ""
+
+    if EDITORIAL_ONLY.search(text):
+        return False, "editorial opinion or ranking context, not a development"
+    if BOX_SCORE_ONLY.search(text):
+        return False, "isolated box-score production with no role change"
+
+    if klass == "OFFICIAL_DESIGNATION":
+        return True, "official designation requires semantic interpretation"
+
+    if klass == "DIRECT_QUOTATION":
+        quotes = list(re.finditer(r'["“]([^"“”]{2,})["”]', text))
+        if not quotes:
+            return True, "attributed statement requires semantic interpretation"
+        surname = pl.norm(name).split()[-1] if name else ""
+        norm_quoted = pl.norm(" ".join(m.group(1) for m in quotes))
+        if surname and surname in norm_quoted.split():
+            return True, "the supplied player is named in the quoted words"
+        raw_player_at = text.lower().find(name.lower()) if name else -1
+        if raw_player_at > max(m.end() for m in quotes):
+            return False, "the supplied player appears only after the quotation"
+        return True, "quotation subject requires semantic interpretation"
+
+    mechanism = claim_rules.fantasy_mechanism(text, name, klass)
+    if mechanism["mechanism"] != claim_rules.NO_FANTASY_IMPACT:
+        return True, mechanism["detail"]
+    if _coordinated_usage(text, name):
+        return True, "explicit coordinated usage for both named players"
+    if mechanism["detail"].startswith("an isolated play"):
+        return False, mechanism["detail"]
+    if NON_DEVELOPMENT_CONTEXT.search(text):
+        return False, "non-football pregame context, not a development"
+    if ROUTINE_BACKUP_CONTEXT.search(text):
+        return False, "routine backup participation with no role change"
+    name_parts = [re.escape(x) for x in name.split()]
+    comparison_name = (r"\s+".join(name_parts) + "|" + name_parts[-1]
+                       if name_parts else "")
+    if comparison_name and re.search(
+            rf"(?i)\b(?:starting )?job\s+to\s+(?:{comparison_name})\b", text):
+        return False, "the supplied player is the comparison, not the claim subject"
+    return True, "no deterministic failure; semantic interpretation required"
 
 
 def now_utc():
@@ -227,6 +309,13 @@ def deterministic_filter(rows, rel_registry, sources,
             # again -- doing so is how the earlier accounting reported 2,637
             # outcomes for a corpus of 2,636.
             counts["note::contingent_relevance_survivors"] += 1
+
+        claim_ok, claim_reason = pre_model_claim_gate(r)
+        if not claim_ok:
+            counts["no_player_specific_development"] += 1
+            suppressed.append({**_slim(r), "reason": claim_reason,
+                               "tier": verdict["tier"]})
+            continue
 
         # One underlying report, one call. Two sites rewriting one original
         # is not two reports and must not be paid for twice.
