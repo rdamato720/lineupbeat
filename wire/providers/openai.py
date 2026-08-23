@@ -64,13 +64,11 @@ class OpenAISemanticProvider(sem.FantasySemanticProvider):
             input_hash=sem.input_hash(evidence_segment, players))
         prompt = sem.build_prompt(evidence_segment, article_metadata or {},
                                   players)
-        try:
-            payload, usage = self._call(prompt)
-        except Exception as e:
-            a.decision = sem.ABSTAIN
-            a.abstention_reason = f"provider unavailable: {redact(e)[:160]}"
-            a.latency_ms = int((time.time() - t0) * 1000)
-            return a
+        # Transport failures are operational failures, not football
+        # judgements.  Let them propagate so the batch can stop immediately;
+        # recording them as ABSTAIN would corrupt the semantic error rate and
+        # make a failed request look like a completed model decision.
+        payload, usage = self._call(prompt)
         for k, v in payload.items():
             if hasattr(a, k):
                 setattr(a, k, v)
