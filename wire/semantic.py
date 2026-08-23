@@ -28,7 +28,7 @@ import re
 from dataclasses import dataclass, field, asdict
 
 SCHEMA_VERSION = "semantic-v1"
-PROMPT_VERSION = "wire-fantasy-2026-08-23a"
+PROMPT_VERSION = "wire-fantasy-2026-08-23b"
 
 INTERPRET, NO_FANTASY_IMPACT, ABSTAIN = "INTERPRET", "NO_FANTASY_IMPACT", "ABSTAIN"
 DECISIONS = {INTERPRET, NO_FANTASY_IMPACT, ABSTAIN}
@@ -38,7 +38,8 @@ RELATIONSHIPS = {"CLAIM_SUBJECT", "QUOTE_SPEAKER", "ABSENT_PLAYER",
                  "OTHER"}
 
 CLASSIFICATIONS = {"FIRSTHAND_OBSERVATION", "DIRECT_QUOTATION",
-                   "RELAYED_REPORTING", "ANALYSIS_OR_OPINION", "UNCERTAIN"}
+                   "OFFICIAL_DESIGNATION", "RELAYED_REPORTING",
+                   "ANALYSIS_OR_OPINION", "UNCERTAIN"}
 
 MECHANISMS = {"FIRST_TEAM_REPS", "SECOND_TEAM_REPS", "THIRD_TEAM_REPS",
               "SNAP_SHARE", "ROUTES", "TARGETS", "CARRIES", "RED_ZONE",
@@ -195,6 +196,12 @@ quarterback gets nothing unless the words are materially about him.
 replaced him. Record the replacement or beneficiary separately.
 - Reporting relayed from another outlet is RELAYED_REPORTING, never \
 firsthand and never a direct quotation, however it is worded.
+- A club or league designation about its own transaction, roster status or \
+practice participation is OFFICIAL_DESIGNATION. It is authoritative for that \
+designation but is not a reporter's firsthand observation.
+- ANALYSIS_OR_OPINION, RELAYED_REPORTING and UNCERTAIN may not support an \
+INTERPRET decision. Return NO_FANTASY_IMPACT when the passage is clear but \
+non-actionable, or ABSTAIN when its evidentiary status is genuinely unclear.
 
 Return ABSTAIN rather than guessing when the passage is genuinely ambiguous \
 about who a claim concerns. Abstaining is a correct answer and is preferred \
