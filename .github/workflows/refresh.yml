@@ -4,6 +4,11 @@ on:
   # No GitHub schedule: cron-job.org triggers this via
   # workflow_dispatch. Both running meant two runs where
   # one was intended, and twice the API spend.
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/refresh.yml"
   workflow_dispatch:
     inputs:
       skip_fetch:
@@ -31,7 +36,7 @@ on:
         default: ""
 
 concurrency:
-  group: ${{ inputs.wire_review_mode == 'none' && 'refresh' || 'wire-review-batch' }}
+  group: ${{ github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'none' && 'refresh' || 'wire-review-batch' }}
   # Queue the next run. Do not cancel the one in flight.
   #
   # The hazard this group exists for is two runs overlapping: the cache only
@@ -53,11 +58,13 @@ concurrency:
 
 jobs:
   wire-review-batch:
-    if: inputs.wire_review_mode != 'none'
+    if: github.event_name == 'pull_request' || inputs.wire_review_mode != 'none'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     permissions:
       contents: write
+    env:
+      WIRE_REVIEW_HOURS: ${{ inputs.wire_review_hours || '72' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -95,20 +102,19 @@ jobs:
       - name: Discover current evidence
         run: |
           python scripts/wire_backfill.py --discover --report \
-            --hours "${{ inputs.wire_review_hours }}"
+            --hours "$WIRE_REVIEW_HOURS"
 
       - name: Build zero-call plan
-        if: inputs.wire_review_mode == 'plan'
+        if: github.event_name == 'pull_request' || inputs.wire_review_mode == 'plan'
         run: |
           python scripts/wire_backfill.py --plan --report \
-            --hours "${{ inputs.wire_review_hours }}"
+            --hours "$WIRE_REVIEW_HOURS"
 
       - name: Interpret exact approved cohort
-        if: inputs.wire_review_mode == 'review'
+        if: github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'review'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           WIRE_CANDIDATE_IDS: ${{ inputs.wire_candidate_ids }}
-          WIRE_REVIEW_HOURS: ${{ inputs.wire_review_hours }}
         run: |
           python - <<'PY'
           import os
@@ -139,7 +145,7 @@ jobs:
           PY
 
       - name: Independently review exact cohort
-        if: inputs.wire_review_mode == 'review'
+        if: github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'review'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
@@ -147,7 +153,7 @@ jobs:
           python scripts/wire_review_package.py
 
       - name: Enforce approved total limits and non-publication
-        if: inputs.wire_review_mode == 'review'
+        if: github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'review'
         env:
           PUBLICATIONS_BEFORE: ${{ steps.publications.outputs.sha }}
         run: |
@@ -177,7 +183,7 @@ jobs:
           PY
 
       - name: Confirm plan made no paid calls or publications
-        if: inputs.wire_review_mode == 'plan'
+        if: github.event_name == 'pull_request' || inputs.wire_review_mode == 'plan'
         env:
           PUBLICATIONS_BEFORE: ${{ steps.publications.outputs.sha }}
         run: |
@@ -197,7 +203,7 @@ jobs:
           PY
 
       - name: Bank review ledger and artifacts on this branch
-        if: inputs.wire_review_mode == 'review'
+        if: github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'review'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -215,7 +221,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: wire-${{ inputs.wire_review_mode }}-${{ github.run_id }}
+          name: wire-${{ github.event_name == 'pull_request' && 'plan' || inputs.wire_review_mode }}-${{ github.run_id }}
           path: |
             data/wire_backfill.json
             data/wire_backfill_plan.json
@@ -227,7 +233,7 @@ jobs:
           retention-days: 30
 
   refresh:
-    if: inputs.wire_review_mode == 'none'
+    if: github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'none'
     runs-on: ubuntu-latest
     # Nothing displaces a running job now, so a hung one would hold the queue
     # until the six-hour default. Shorter than the two-hour trigger interval
