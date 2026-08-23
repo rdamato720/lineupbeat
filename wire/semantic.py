@@ -28,7 +28,7 @@ import re
 from dataclasses import dataclass, field, asdict
 
 SCHEMA_VERSION = "semantic-v1"
-PROMPT_VERSION = "wire-fantasy-2026-08-23d"
+PROMPT_VERSION = "wire-fantasy-2026-08-23e"
 
 INTERPRET, NO_FANTASY_IMPACT, ABSTAIN = "INTERPRET", "NO_FANTASY_IMPACT", "ABSTAIN"
 DECISIONS = {INTERPRET, NO_FANTASY_IMPACT, ABSTAIN}
@@ -210,6 +210,15 @@ designation but is not a reporter's firsthand observation.
 - ANALYSIS_OR_OPINION, RELAYED_REPORTING and UNCERTAIN may not support an \
 INTERPRET decision. Return NO_FANTASY_IMPACT when the passage is clear but \
 non-actionable, or ABSTAIN when its evidentiary status is genuinely unclear.
+- A clear authorial depth-chart or role assessment is \
+ANALYSIS_OR_OPINION and must return NO_FANTASY_IMPACT, not ABSTAIN. The \
+authority boundary makes it non-actionable; it does not make the author's \
+meaning ambiguous.
+- An unattributed diagnosis or medical availability assertion is UNCERTAIN, \
+even on a team-owned page and even when the passage also quotes a different \
+player. A nearby quotation does not lend its speaker or authority to the \
+unattributed sentence. Return ABSTAIN rather than treating that assertion as \
+FIRSTHAND_OBSERVATION.
 
 Return ABSTAIN rather than guessing when the passage is genuinely ambiguous \
 about who a claim concerns. Abstaining is a correct answer and is preferred \
