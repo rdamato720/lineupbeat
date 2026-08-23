@@ -23,6 +23,7 @@ from . import semantic as sem
 RETURN_LANG = re.compile(
     r"(?i)\b(returned to (?:the )?practice|back (?:at|on|in) (?:the )?"
     r"(?:practice|field)|practiced (?:again|for the first time)|"
+    r"began practi[cs]ing|"
     r"participated again|was (?:a )?full participant|cleared to (?:practice|return)|"
     r"activated (?:off|from)|came off (?:the )?(?:pup|nfi))\b")
 
