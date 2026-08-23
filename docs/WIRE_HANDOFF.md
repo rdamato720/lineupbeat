@@ -256,11 +256,19 @@ text. It does not judge roster correctness. It returns an auditable verdict
 plus diagnostic flags, including claim-subject conflicts and whether an
 isolated performance lacks role information.
 
+The proposed `evidence_classification` is part of the reviewer input and has
+its own required support flag. The reviewer must apply the same authority
+boundary as the generator: `FIRSTHAND_OBSERVATION`, `DIRECT_QUOTATION`, and
+`OFFICIAL_DESIGNATION` may support an interpretation;
+`ANALYSIS_OR_OPINION`, `RELAYED_REPORTING`, and `UNCERTAIN` may not.
+
 Deterministic enforcement runs after the reviewer:
 
 - unresolved identity blocks the call and automatic publication;
 - evidence-integrity failure routes to human review;
 - `passage_names_a_different_subject=true` blocks `AUTO_APPROVE` and routes to
+  `HUMAN_REVIEW`;
+- an unsupported evidence classification blocks `AUTO_APPROVE` and routes to
   `HUMAN_REVIEW`;
 - an independent model `REJECT` remains the model's rejection and is labelled
   as such; code does not invent one.
@@ -271,6 +279,11 @@ Deterministic enforcement runs after the reviewer:
   Responses API, strict JSON Schema, and `store: false`.
 - OpenAI independent reviewer: implemented in
   `wire/providers/openai_review.py` as a separate Responses API pass.
+- Generator prompt `wire-fantasy-2026-08-23c` treats source metadata as
+  provenance context only, grounds all editorial fields in the evidence, and
+  forbids `UPDATE_RECOMMENDED` on `LOW` evidence.
+- Reviewer prompt `wire-independent-review-2026-08-23d` and schema
+  `independent-review-v2` explicitly review the proposed evidence class.
 - `openai==3.3.1` is pinned in `requirements.txt`.
 - Anthropic transports remain as inert legacy/audit code but are absent from
   the active provider registry, workflow secrets, and installed requirements.
@@ -569,11 +582,12 @@ commentary as a fallback.
 
 ### Immediate next step
 
-Run a five-case exact-selection dark-launch batch across distinct teams and
-sources, excluding every already-paid candidate id. Run both OpenAI passes,
-generate the HTML and JSON review package, and review every item manually.
-Publish nothing during that run. Do not expand the batch until the generator,
-independent reviewer, deterministic enforcement, and a human agree on all five.
+After the evidence-grounding changes land, rerun the same five-case exact
+selection across distinct teams and sources, excluding every already-paid
+candidate id. Run both OpenAI passes, generate the HTML and JSON review
+package, and review every item manually. Publish nothing during that run. Do
+not expand the batch until the generator, independent reviewer, deterministic
+enforcement, and a human agree on all five.
 
 ### OpenAI production-promotion checklist
 
