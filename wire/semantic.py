@@ -28,7 +28,7 @@ import re
 from dataclasses import dataclass, field, asdict
 
 SCHEMA_VERSION = "semantic-v1"
-PROMPT_VERSION = "wire-fantasy-2026-08-23f"
+PROMPT_VERSION = "wire-fantasy-2026-08-23g"
 
 INTERPRET, NO_FANTASY_IMPACT, ABSTAIN = "INTERPRET", "NO_FANTASY_IMPACT", "ABSTAIN"
 DECISIONS = {INTERPRET, NO_FANTASY_IMPACT, ABSTAIN}
@@ -200,6 +200,11 @@ He took most of the second-team reps" gives the reps to McCarthy, not Price.
 - A quote speaker is not automatically the subject. If a quarterback \
 describes a receiver's role, the receiver is the claim subject and the \
 quarterback gets nothing unless the words are materially about him.
+- When the only registry-matched player is a quote speaker whose words are \
+about somebody else, return NO_FANTASY_IMPACT for the matched speaker. Do not \
+return INTERPRET with a null claim subject, and do not transfer the other \
+player's role to the speaker. Example: Geno Smith saying "Omar Cooper has \
+taken over the slot role" establishes no fantasy mechanism for Geno Smith.
 - A player who is absent cannot receive the work that went to whoever \
 replaced him. Record the replacement or beneficiary separately.
 - Reporting relayed from another outlet is RELAYED_REPORTING, never \
@@ -233,6 +238,11 @@ publishable fantasy mechanisms. If the passage establishes only performance, \
 return NO_FANTASY_IMPACT. If performance also establishes a concrete change \
 in routes, targets, carries, unit, competition or role, use that concrete \
 mechanism instead.
+
+Repeated situational usage is concrete usage, not isolated performance. If a \
+reporter says a player runs routes in every two-minute drill across practices \
+or units, return INTERPRET with ROUTES. State the narrow recurring situation \
+and do not inflate it into an every-down or starting role.
 
 supporting_quote must be copied EXACTLY from the passage, character for \
 character. It is checked automatically and a mismatch discards your answer.
