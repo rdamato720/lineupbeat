@@ -299,6 +299,24 @@ def priority_of(mechanism: str) -> int:
     return len(PRIORITY) - 1
 
 
+def select_survivors(rows: list[dict], include=None, exclude=None):
+    """Select exact candidate ids without changing deterministic order.
+
+    An included id that is not in the current survivor set is an error at the
+    call site, not something to ignore: the 48-hour window may have moved
+    since the plan was reviewed, and silently substituting another row would
+    spend money on evidence nobody selected.
+    """
+    wanted = set(include or [])
+    refused = set(exclude or [])
+    available = {r["candidate_id"] for r in rows}
+    missing = sorted(wanted - available)
+    overlap = sorted(wanted & refused)
+    selected = [r for r in rows if not wanted or r["candidate_id"] in wanted]
+    selected = [r for r in selected if r["candidate_id"] not in refused]
+    return selected, missing, overlap
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--discover", action="store_true")
@@ -310,6 +328,10 @@ def main():
     ap.add_argument("--max-calls", type=int, default=15,
                     help="hard model-call limit, independent of dollar cap")
     ap.add_argument("--limit-per-source", type=int, default=12)
+    ap.add_argument("--candidate-id", action="append", default=[],
+                    help="interpret/plan only these exact candidate ids; repeatable")
+    ap.add_argument("--exclude-candidate-id", action="append", default=[],
+                    help="skip these candidate ids; repeatable")
     ap.add_argument("--hours", type=int, default=WINDOW_HOURS)
     args = ap.parse_args()
 
@@ -388,6 +410,27 @@ def main():
           f"({'reconciles' if sum(rejected.values()) + len(survivors) == len(rows) else 'DOES NOT RECONCILE against ' + str(len(rows))})")
     for k, v in counts.most_common():
         print(f"      {v:>5}  {k}")
+
+    selected, missing, overlap = select_survivors(
+        survivors, args.candidate_id, args.exclude_candidate_id)
+    if overlap:
+        print("  EXACT SELECTION INVALID; ids are both included and excluded:")
+        for candidate_id in overlap:
+            print(f"    {candidate_id}")
+        return 5
+    if missing:
+        print("  EXACT SELECTION INVALID; requested ids are not current survivors:")
+        for candidate_id in missing:
+            print(f"    {candidate_id}")
+        print("  0 API calls")
+        return 5
+    if args.candidate_id or args.exclude_candidate_id:
+        print(f"  exact selection: {len(selected)} of {len(survivors)} "
+              "current survivor(s)")
+    survivors = selected
+    if args.interpret and not survivors:
+        print("  exact selection is empty; 0 API calls")
+        return 5
 
     if args.plan:
         planned = []
