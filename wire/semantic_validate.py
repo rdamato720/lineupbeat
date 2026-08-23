@@ -55,6 +55,22 @@ OPPORTUNITY = {"FIRST_TEAM_REPS", "SECOND_TEAM_REPS", "THIRD_TEAM_REPS",
 AVAILABILITY = {"LIMITED_PARTICIPATION", "RETURN_TO_PRACTICE", "INJURY",
                 "TRANSACTION"}
 
+# These facts are often available in an article title or other source
+# metadata, but metadata is not the passage.  Generated editorial text may
+# use them only when the evidence itself supplies them.
+PASSAGE_CONTEXT = {
+    "preseason": re.compile(r"(?i)\bpre[- ]?season\b"),
+    "regular season": re.compile(r"(?i)\bregular[- ]season\b"),
+    "training camp": re.compile(r"(?i)\btraining camp\b"),
+    "joint practice": re.compile(r"(?i)\bjoint practices?\b"),
+}
+
+UNVERIFIED_METADATA = re.compile(
+    r"(?i)\b(?:unverified (?:source )?metadata|"
+    r"(?:source )?metadata (?:is|was|lists?|shows?) (?:as )?unverified|"
+    r"evidence access (?:is|was|lists?|shows?) (?:as )?unverified|"
+    r"evidentiary status (?:is|was) unverified)\b")
+
 
 QUOTE_FAILURE = "supporting_quote is not an exact substring of the evidence"
 
@@ -118,6 +134,26 @@ def validate(a: sem.SemanticAssessment, segment: str, players: list,
 
     if a.decision not in sem.DECISIONS:
         bad.append(f"unknown decision {a.decision!r}")
+
+    # Ground every generated editorial field before any decision-specific
+    # early return.  ABSTAIN and NO_FANTASY_IMPACT still reach review output,
+    # so invented context in either outcome must remain visible as a
+    # validation failure rather than escaping because no card was proposed.
+    generated = " ".join([
+        a.fantasy_commentary or "",
+        a.why_it_matters or "",
+        " ".join(a.limitations or []),
+        a.abstention_reason or "",
+    ])
+    if (UNVERIFIED_METADATA.search(generated)
+            and not meta.get("evidence_access")):
+        bad.append("generated text claims unverified source metadata that "
+                   "was not supplied")
+    for label, pattern in PASSAGE_CONTEXT.items():
+        if pattern.search(generated) and not pattern.search(segment):
+            bad.append(f"generated text adds {label} context absent from the "
+                       "evidence")
+
     if a.decision == sem.ABSTAIN:
         return bad                      # abstention needs no further proof
 
