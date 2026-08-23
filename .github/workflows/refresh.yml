@@ -136,6 +136,24 @@ jobs:
           python scripts/test_wire_review.py
           python scripts/wire_health.py --check
 
+      - name: Verify review provider before discovery
+        if: steps.review_request.outputs.mode == 'review'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python - <<'PY'
+          from wire.providers.openai import OpenAISemanticProvider
+          from wire.providers.openai_review import OpenAIIndependentReviewer
+
+          generator = OpenAISemanticProvider()
+          reviewer = OpenAIIndependentReviewer()
+          if not generator.available() or not reviewer.available():
+              raise SystemExit("OPENAI_API_KEY is unavailable; 0 API calls, discovery not started")
+          generator.authenticate()
+          OpenAISemanticProvider(model=reviewer.model).authenticate()
+          print("review providers authenticated; 0 Responses API calls")
+          PY
+
       - name: Clear stale review outputs from the runner
         run: |
           python - <<'PY'
@@ -201,7 +219,26 @@ jobs:
                      "--cap", "0.40", "--max-calls", "20"]
           for candidate_id in candidate_ids:
               command.extend(("--candidate-id", candidate_id))
-          raise SystemExit(subprocess.run(command, check=False).returncode)
+          completed = subprocess.run(command, check=False)
+          if completed.returncode:
+              raise SystemExit(completed.returncode)
+
+          import json
+          from pathlib import Path
+
+          state = json.loads(Path("data/wire_backfill.json").read_text())
+          generator = state.get("openai") or {}
+          result_ids = [
+              (item.get("candidate") or {}).get("candidate_id")
+              for item in state.get("results", [])
+          ]
+          if generator.get("provider_failures"):
+              raise SystemExit("generator provider failure; independent review refused")
+          if result_ids != candidate_ids:
+              raise SystemExit(
+                  "generator did not complete the exact approved cohort; "
+                  "independent review refused"
+              )
           PY
 
       - name: Independently review exact cohort
@@ -229,6 +266,18 @@ jobs:
           generator = state.get("openai") or {}
           calls = int(generator.get("calls", 0)) + int(independent.get("calls", 0))
           cost = float(generator.get("cost_usd", 0)) + float(independent.get("cost_usd", 0))
+          selected = json.loads(Path("data/wire_review_selection.json").read_text())
+          selected_ids = selected.get("candidate_ids") or []
+          generated_ids = [(item.get("candidate") or {}).get("candidate_id")
+                           for item in state.get("results", [])]
+          reviewed_ids = [(item.get("candidate") or {}).get("candidate_id")
+                          for item in independent.get("items", [])]
+          if generated_ids != selected_ids or reviewed_ids != selected_ids:
+              raise SystemExit("refused: exact approved cohort is incomplete")
+          if int(generator.get("calls", 0)) > 20 or float(generator.get("cost_usd", 0)) > 0.40:
+              raise SystemExit("refused: generator exceeded its approved boundary")
+          if int(independent.get("calls", 0)) > 20 or float(independent.get("cost_usd", 0)) > 0.40:
+              raise SystemExit("refused: independent reviewer exceeded its approved boundary")
           if calls > 40:
               raise SystemExit(f"refused: {calls} calls exceeds approved limit 40")
           if cost > 1.00:

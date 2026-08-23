@@ -50,8 +50,25 @@ class ReviewRepairTests(unittest.TestCase):
         self.assertIn('"approved_cost_usd": 1.0', batch)
         self.assertIn('"approved_max_calls": 40', batch)
         self.assertIn("selection has no valid plan digest; 0 API calls", batch)
+        self.assertIn("Verify review provider before discovery", batch)
+        self.assertIn("0 Responses API calls", batch)
+        self.assertIn("generator did not complete the exact approved cohort", batch)
+        self.assertIn("exact approved cohort is incomplete", batch)
         self.assertNotIn("wire_publish.py", batch)
         self.assertNotIn("wrangler", batch)
+
+    def test_local_approved_runner_is_capped_and_non_publishing(self):
+        runner = (ROOT / "scripts" / "wire_review_approved.py").read_text()
+        self.assertIn('"approved_cost_usd": 1.0', runner)
+        self.assertIn('"approved_max_calls": 40', runner)
+        self.assertIn('"generator_cap_usd": 0.40', runner)
+        self.assertIn('"reviewer_cap_usd": 0.40', runner)
+        self.assertIn('"publications_authorized": 0', runner)
+        self.assertIn('"deployment_authorized": False', runner)
+        self.assertIn("generator.authenticate()", runner)
+        self.assertIn("publication file changed during review", runner)
+        self.assertNotIn("wire_publish.py", runner)
+        self.assertNotIn("wrangler", runner)
 
     def test_named_human_suppression_receipt_is_valid_and_banked(self):
         receipt, errors = human_review.validate_ledger()

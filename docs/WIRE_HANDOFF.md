@@ -543,6 +543,20 @@ python scripts/wire_independent_review.py --cap 0.20 --max-calls 2
 python scripts/wire_review_package.py
 ```
 
+When `data/wire_review_selection.json` contains the exact named-human approval,
+the preferred local path is one command:
+
+```bash
+python scripts/wire_review_approved.py
+```
+
+It validates the approval and publication hash, authenticates both configured
+models before the source crawl, runs only the manifest's exact candidate ids,
+enforces the per-pass and total call/cost ceilings, builds the review package,
+and confirms that zero publications were applied. The GitHub review-only job
+performs the same provider preflight before discovery; a missing or invalid
+`OPENAI_API_KEY` therefore stops with zero Responses API calls and no crawl.
+
 Expected primary artifacts:
 
 - `data/wire_backfill.json`
