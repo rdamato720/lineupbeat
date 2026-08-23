@@ -44,7 +44,7 @@ from wire import relevance as rv
 from wire import semantic as sem
 from wire import semantic_validate as sv
 from wire import si
-from wire.providers.openai import OpenAISemanticProvider
+from wire.providers.openai import OpenAISemanticProvider, redact as redact_openai
 from wire.store import WireStore
 
 STATE = Path("data/wire_backfill.json")
@@ -317,6 +317,13 @@ def main():
     end = now_utc()
     cutoff = end - timedelta(hours=args.hours)
     state = json.loads(STATE.read_text()) if STATE.exists() else {}
+    if args.interpret:
+        # This file describes the current run.  A legacy Claude summary from
+        # the tracked handoff must not look like part of an OpenAI-only run.
+        for stale in ("claude", "openai", "results",
+                      "stopped_at_call_cap", "stopped_at_cap",
+                      "stopped_at_provider_failure"):
+            state.pop(stale, None)
     window = {"from": cutoff.replace(microsecond=0).isoformat(),
               "to": end.replace(microsecond=0).isoformat(),
               "hours": args.hours}
@@ -411,6 +418,7 @@ def main():
     spend = 0.0
     results, lat = [], []
     calls = fails = abstains = interprets = retries = 0
+    provider_errors = []
     for i, r in enumerate(survivors, 1):
         if calls >= args.max_calls:
             print(f"\n  CALL CAP {args.max_calls} reached; stopping cleanly "
@@ -447,8 +455,21 @@ def main():
             a = sv.evaluate_with_retry(prov, r["evidence_text"], meta,
                                        players, player_registry)
         except Exception as e:
+            # An attempted request that fails is neither an abstention nor an
+            # interpretation. Stop immediately so an account or network
+            # failure cannot consume the rest of the batch.
+            calls += 1
             fails += 1
-            continue
+            error = redact_openai(f"{type(e).__name__}: {e}")[:400]
+            provider_errors.append(error)
+            state["stopped_at_provider_failure"] = {
+                "after_calls": calls,
+                "remaining": len(survivors) - i,
+                "error": error,
+            }
+            print(f"\n  PROVIDER FAILURE after {calls} attempted call(s); "
+                  f"stopping with {len(survivors) - i} row(s) un-interpreted")
+            break
         calls += 1
         if getattr(a, "retry_attempted", False):
             retries += 1
@@ -490,7 +511,8 @@ def main():
         "model": prov.model, "prompt_version": sem.PROMPT_VERSION,
         "schema_version": sem.SCHEMA_VERSION,
         "calls": calls, "interpretations": interprets, "abstentions": abstains,
-        "provider_failures": fails, "quote_retries": retries,
+        "provider_failures": fails, "provider_errors": provider_errors,
+        "quote_retries": retries,
         "validator_failures": sum(1 for x in results
                                   if x["assessment"]["validation_failures"]),
         "tokens_in": sum(x["assessment"]["tokens_in"] for x in results),
@@ -503,8 +525,9 @@ def main():
     STATE.write_text(json.dumps(state, indent=1, default=str) + "\n")
     c = state["openai"]
     print(f"\n  OpenAI: {c['calls']} calls, {c['interpretations']} interpret, "
-          f"{c['abstentions']} abstain, {c['validator_failures']} validator "
-          f"failures, {c['quote_retries']} quote retries")
+          f"{c['abstentions']} abstain, {c['provider_failures']} provider "
+          f"failures, {c['validator_failures']} validator failures, "
+          f"{c['quote_retries']} quote retries")
     print(f"  tokens {c['tokens_in']} in / {c['tokens_out']} out, "
           f"${c['cost_usd']} of ${c['cap_usd']} cap")
     print(f"  latency median {c['median_latency_ms']}ms p95 {c['p95_latency_ms']}ms")
