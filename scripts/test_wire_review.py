@@ -176,7 +176,8 @@ class ReviewRepairTests(unittest.TestCase):
                             errors)
 
             publications = root / "publications.json"
-            publications.write_bytes(openai_promotion.PUBLICATIONS.read_bytes())
+            publications.write_bytes(
+                openai_promotion.QUALIFIED_PUBLICATIONS.read_bytes())
             payload = json.loads(publications.read_text())
             payload["count"] += 1
             publications.write_text(json.dumps(payload))

@@ -27,11 +27,66 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import wire_publication_preview as PP
+from wire import public_summary as PS
 from wire.store import WireStore
 
 PREVIEW = Path("data/wire_publication_preview.json")
+PUBLICATIONS = Path("data/wire_publications.json")
 NEVER_PUBLISH = {"PENDING", "HOLD", "ABSTAIN", "NO_FANTASY_IMPACT",
                  "INCONCLUSIVE_TECHNICAL", "HELD_EVIDENCE_CONFLICT"}
+
+
+def hydrate_publication_store(store: WireStore,
+                              mirror_path: Path = PUBLICATIONS) -> int:
+    """Make a clean local database match the tracked publication mirror.
+
+    The database is intentionally untracked, so a fresh clone can have a
+    valid publication JSON file and an empty SQLite store. Publishing against
+    that empty store would replace the historical cards with only the new
+    batch. Import the mirror only when the database is completely empty; any
+    other mismatch fails closed and requires a human reconciliation.
+    """
+    mirror = json.loads(mirror_path.read_text())
+    publications = mirror.get("publications") or []
+    if mirror.get("count") != len(publications):
+        raise ValueError("publication mirror count does not match its records")
+
+    stored = store.publications()
+    if stored:
+        stored_records = {
+            row["publication_id"]: {
+                "publication_id": row["publication_id"],
+                "version": row["version"],
+                "published_at": row["published_at"],
+                "updated_at": row["updated_at"],
+                **json.loads(row["payload"]),
+            }
+            for row in stored
+        }
+        mirror_records = {row.get("publication_id"): row
+                          for row in publications}
+        if stored_records != mirror_records:
+            raise ValueError(
+                "publication database and tracked mirror disagree; refusing "
+                "to publish")
+        return 0
+
+    with store.conn:
+        for row in publications:
+            publication_id = str(row.get("publication_id") or "").strip()
+            candidate_id = str(row.get("evidence_candidate_id") or
+                               publication_id).strip()
+            if not publication_id or not candidate_id:
+                raise ValueError("historical publication is missing its id")
+            payload = {key: value for key, value in row.items()
+                       if key not in {"publication_id", "version",
+                                      "published_at", "updated_at"}}
+            store.conn.execute(
+                "INSERT INTO wire_publications VALUES (?,?,?,?,?,?,?,0)",
+                (publication_id, candidate_id, f"wire:{candidate_id}",
+                 int(row.get("version") or 1), json.dumps(payload),
+                 row.get("published_at", ""), row.get("updated_at", "")))
+    return len(publications)
 
 
 def main():
@@ -44,6 +99,10 @@ def main():
     preview = json.loads(PREVIEW.read_text())
     cards = preview["cards"]
     store = WireStore()
+    hydrated = hydrate_publication_store(store)
+    if hydrated:
+        print(f"  hydrated {hydrated} historical publication(s) from the "
+              "tracked mirror")
 
     approved, refused = [], []
     for c in cards:
@@ -52,6 +111,17 @@ def main():
             refused.append((c["player"], f"reviewer action {act or 'none'}"))
             continue
         fails = PP.readiness_failures(c)
+        summary = str(c.get("public_summary") or "").strip()
+        if not summary:
+            fails.append("named-human-approved public summary is missing")
+        else:
+            fails.extend(PS.validate(summary, c["player"], c["evidence"]))
+        if not str(c.get("public_summary_approved_by") or "").strip():
+            fails.append("public summary has no named-human approval")
+        if not str(c.get("commentary_approved_by") or "").strip():
+            fails.append("Lineup Beat impact has no named-human approval")
+        if not str(c.get("approved_at") or "").strip():
+            fails.append("finished wording has no approval timestamp")
         if fails:
             refused.append((c["player"], "; ".join(fails)))
             continue
@@ -88,7 +158,13 @@ def main():
             "strength": c["strength"], "horizon": c["horizon"],
             "projection_action": c["projection_action"],
             "reporter_found": c["evidence"],
+            "public_evidence_summary": c["public_summary"],
+            "public_evidence_summary_approved_by":
+                c["public_summary_approved_by"],
+            "public_evidence_summary_approved_at": c["approved_at"],
             "lineupbeat_impact": c["commentary"],
+            "lineupbeat_impact_approved_by": c["commentary_approved_by"],
+            "lineupbeat_impact_approved_at": c["approved_at"],
             "source": c["source"], "author": c["author"],
             "published_date": c["date"], "url": c["url"],
             "source_ownership": c["ownership"],

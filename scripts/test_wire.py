@@ -1922,6 +1922,15 @@ check("publishing runs the readiness checks, not just the approval flag",
       "readiness_failures" in _pubsrc)
 check("a model assessment alone authorises nothing",
       "reviewer_action" in _pubsrc and "startswith(\"APPROVE\")" in _pubsrc)
+check("publishing validates the separately approved public summary",
+      "public_summary.validate" in _pubsrc
+      or "PS.validate" in _pubsrc)
+check("publishing preserves both named-human wording approvals",
+      "public_evidence_summary_approved_by" in _pubsrc
+      and "lineupbeat_impact_approved_by" in _pubsrc)
+check("a clean database hydrates the tracked publication history",
+      "hydrate_publication_store" in _pubsrc
+      and "publication database and tracked mirror disagree" in _pubsrc)
 
 # ------------------------------------- quote retry and publication preview
 check("the retry schema has exactly one field",

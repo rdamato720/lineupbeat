@@ -2,8 +2,9 @@
 
 The raw evaluation report remains the source of model outputs.  This small
 receipt binds that report to the locked corpus, the tested commit, and the
-unchanged publication file so a stale or edited report cannot satisfy
-readiness silently.
+banked publication snapshot from the evaluation checkpoint so a stale or
+edited report cannot satisfy readiness silently.  Later named-human
+publications do not invalidate a provider's locked-corpus qualification.
 """
 
 from __future__ import annotations
@@ -19,7 +20,8 @@ from pathlib import Path
 EVAL = Path("data/wire_semantic_eval.json")
 CORPUS = Path("data/wire_eval_corpus.json")
 RECEIPT = Path("data/wire_openai_promotion.json")
-PUBLICATIONS = Path("data/wire_publications.json")
+QUALIFIED_PUBLICATIONS = Path(
+    "data/wire_snapshots/wire_publications.2026-08-24T121145+0000.json")
 SCHEMA_VERSION = "wire-openai-promotion-v1"
 _SHA256 = re.compile(r"[0-9a-f]{64}")
 _COMMIT = re.compile(r"[0-9a-f]{40}")
@@ -58,7 +60,7 @@ def _load(path: Path, label: str, errors: list[str]) -> dict:
 
 def validate(receipt_path: Path = RECEIPT, eval_path: Path = EVAL,
              corpus_path: Path = CORPUS,
-             publications_path: Path = PUBLICATIONS) \
+             publications_path: Path = QUALIFIED_PUBLICATIONS) \
         -> tuple[dict | None, list[str]]:
     errors: list[str] = []
     receipt = _load(receipt_path, "OpenAI promotion receipt", errors)
@@ -174,7 +176,8 @@ def validate(receipt_path: Path = RECEIPT, eval_path: Path = EVAL,
 
 def readiness(receipt_path: Path = RECEIPT, eval_path: Path = EVAL,
               corpus_path: Path = CORPUS,
-              publications_path: Path = PUBLICATIONS) -> tuple[bool, str]:
+              publications_path: Path = QUALIFIED_PUBLICATIONS) \
+        -> tuple[bool, str]:
     receipt, errors = validate(receipt_path, eval_path, corpus_path,
                                publications_path)
     if errors:
