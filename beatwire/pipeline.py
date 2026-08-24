@@ -52,12 +52,17 @@ def run(
     x_daily_cap: float = 5.0,
     tapi_daily_cap: float = 12.0,
     only: str | None = None,
+    kinds: set[str] | None = None,
+    capture_only: bool = False,
 ) -> RunReport:
-    reg = Registry(sport)
-    resolver = Resolver(reg.players, reg.profile.position_groups)
+    reg = Registry(sport, load_players=not capture_only)
+    resolver = (Resolver(reg.players, reg.profile.position_groups)
+                if not capture_only else None)
     report = RunReport(sport=sport)
 
     sources = reg.enabled_sources
+    if kinds:
+        sources = [s for s in sources if s.kind in kinds]
     if only:
         # Substring match on the source id, so `--only profootballdoc` or
         # `--only nyj` both work. Polling 121 sources to test one is the kind
@@ -101,7 +106,7 @@ def run(
         # this thread, one item at a time, because the connection is not
         # shared safely across threads.
         results = []
-        if fresh:
+        if fresh and not capture_only:
             def work(it):
                 return it, extract(it, source, reg.profile, resolver,
                                    client=client, stub=stub)

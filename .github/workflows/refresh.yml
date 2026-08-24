@@ -9,7 +9,14 @@ on:
       - main
     paths:
       - ".github/workflows/refresh.yml"
+      - ".github/workflows/wire-monitor.yml"
+      - ".github/workflows/wire-mobile-approve.yml"
       - "data/wire_review_selection.json"
+      - "wire/mobile_*.py"
+      - "scripts/wire_mobile*.py"
+      - "beatwire/cli.py"
+      - "beatwire/pipeline.py"
+      - "beatwire/registry.py"
   workflow_dispatch:
     inputs:
       skip_fetch:
@@ -37,7 +44,11 @@ on:
         default: ""
 
 concurrency:
-  group: ${{ github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'none' && 'refresh' || 'wire-review-batch' }}
+  # The mobile monitor and mobile publication workflow use the same runtime
+  # group. They share the beatwire cache and publication mirror, so allowing
+  # either to overlap this refresh would replay paid source reads or race a
+  # human-approved publication.
+  group: ${{ github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'none' && 'wire-runtime' || 'wire-review-batch' }}
   # Queue the next run. Do not cancel the one in flight.
   #
   # The hazard this group exists for is two runs overlapping: the cache only
@@ -203,6 +214,7 @@ jobs:
 
       - name: Review boundary gates
         run: |
+          python scripts/test_wire_mobile.py
           python scripts/test_wire_review.py
           python scripts/wire_health.py --check
 

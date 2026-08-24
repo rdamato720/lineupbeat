@@ -410,6 +410,38 @@ python scripts/wire_publish.py --publish --actor <reviewer>
 The second command is a material production-data mutation. Never run it merely
 because a model evaluation completed.
 
+### 13.1 Phone approval
+
+The 30-minute monitor may create proposed wording, but the GitHub issue it
+opens is still the final editorial boundary. Each issue embeds a compressed
+manifest containing the exact player identity, evidence, public summary,
+Lineup Beat impact, source and batch metadata. The batch id is the SHA-256 of
+that manifest. The approval runner recomputes the hash and refuses altered or
+malformed issue bodies. It also regenerates the human-visible issue from that
+manifest and requires a byte-for-byte match, so hidden payload text cannot
+differ from the wording Ralph reviewed.
+
+Only newly created issue comments from the allow-listed GitHub account
+`rdamato720`, on an issue carrying the `wire-inbox` label and created by the
+trusted workflow or Ralph, are actionable. Supported commands are deliberately
+closed:
+
+```text
+approve all
+approve 1,3
+reject 2
+edit 3 | replacement What changed sentence. | Replacement impact.
+```
+
+An edit approves only the two exact replacement sentences in that command.
+Partial decisions are allowed; the issue closes only after every card has an
+append-only approval or rejection receipt. The runner rechecks identity,
+finished wording, evidence, publication-store continuity and duplicate status,
+then invokes `scripts/wire_publish.py`. No other mobile workflow writes the
+publication store. Additive publications from another pending inbox are safe;
+a lower publication count (rollback/deletion) or an already-published
+candidate fails closed and requires a fresh review.
+
 ## 14. Homepage rendering
 
 The homepage replacement is built from reviewed publications, then display
@@ -596,6 +628,7 @@ different candidate. The call limit and dollar cap remain independent.
 
 ```bash
 python scripts/test_wire_review.py
+python scripts/test_wire_mobile.py
 python scripts/test_wire.py
 python scripts/test_wire_page.py
 python scripts/test_wire_homepage.py
@@ -637,6 +670,46 @@ Concurrency is queued with `cancel-in-progress: false`. Cancelling a running
 job can lose the updated cache after paid calls and cause the next run to pay
 for the same work again.
 
+### 17.1 Thirty-minute monitor and mobile publication
+
+`.github/workflows/wire-monitor.yml` runs at minutes 7 and 37 and may also be
+dispatched manually. It is fail-closed unless the repository variable
+`WIRE_MOBILE_AUTODRAFT` is exactly `true`. Enabling it also requires three
+explicit independent ceilings:
+
+- `WIRE_MOBILE_MAX_CALLS`, from 1 through 10 per run;
+- `WIRE_MOBILE_RUN_CAP_USD`, greater than zero and no more than $1.00 per run;
+- `WIRE_MOBILE_TAPI_DAILY_CAP_USD`, greater than zero and no more than $25.00
+  per UTC day.
+
+The monitor discovers and deterministically extracts recent On SI evidence.
+It captures registered X sources into the isolated `wire-mobile-x.db` cache in
+capture-only mode. That mode loads source configuration but deliberately does
+not load `rosters/nfl.csv`; identity is resolved later from
+`sources/wire_players.json`. The mobile cache is separate from `beatwire.db`,
+so capture cannot cause the Recent News extractor to treat an undrafted raw
+post as already processed.
+
+The model may draft inclusion-first reporting or clearly attributed fantasy
+analysis, including opinion, speculation, rankings and ADP arguments found in
+the supplied source. It cannot approve. Attempted candidate ids are banked
+before each request, model calls and observed cost are recorded, and one
+in-flight response may cross the observed cap but no later request is sent.
+An empty or fully ignored batch creates no issue and no deploy.
+
+When cards remain, the monitor commits the exact pending batch and opens an
+assigned `wire-inbox` issue. GitHub Mobile notifications provide the phone
+alert. `.github/workflows/wire-mobile-approve.yml` reacts only to Ralph's
+closed command syntax, records the receipt, publishes through
+`scripts/wire_publish.py`, pushes the changed publication mirror, and queues
+`refresh.yml` with `skip_fetch=true`. Rejections create no deployment.
+
+All three workflows share the `wire-runtime` concurrency group so publication,
+monitor state and deployment cache work cannot overlap. GitHub Actions must
+have repository write permission, and branch protection must permit the
+trusted Actions bot to push the approved publication commit to `main`; if it
+does not, the job fails before any deploy is dispatched.
+
 ## 18. Secrets and provider configuration
 
 Current workflow secrets/variables referenced by the broader project include:
@@ -645,6 +718,10 @@ Current workflow secrets/variables referenced by the broader project include:
 - `SORSA_API_KEY`
 - `TWITTERAPI_IO_KEY`
 - `BEATWIRE_X_PROVIDER` as a repository variable
+- `WIRE_MOBILE_AUTODRAFT` as an explicit recurring-spend enable switch
+- `WIRE_MOBILE_MAX_CALLS`
+- `WIRE_MOBILE_RUN_CAP_USD`
+- `WIRE_MOBILE_TAPI_DAILY_CAP_USD`
 
 The paused YouTube pilot reads `YOUTUBE_API_KEY` only when used manually.
 ChatGPT subscriptions do not fund API calls; OpenAI API billing is separate.
@@ -696,12 +773,11 @@ banked with SHA-256
 The publication file remained at six records with SHA-256
 `b6d7cbe1c10e0583c31ba81996e846a75417d6f20ed9d1386433f7f282e40d09`.
 
-After the promotion receipt and authentication preflight pass review, the
-safest operational next step is another manually selected, explicitly capped,
-review-only batch with distinct candidate ids and named-human review. Do not
-enable scheduled paid interpretation, deployment, or publication as part of
-that step; recurring spend needs separate authorization and publications stay
-human-gated.
+The mobile monitor implementation remains disabled until the repository owner
+sets the explicit enable switch and all recurring call/cost ceilings. Enabling
+scheduled drafting does not enable publication: final wording remains
+hash-bound to a named-human GitHub comment, and only approved cards enter the
+existing publication route.
 
 ### OpenAI production-promotion checklist
 

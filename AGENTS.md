@@ -31,6 +31,11 @@ refresh workflow.
 
 - A model assessment never authorizes publication. Only a named human approval
   of the final public summary and final commentary can create a publication.
+- A GitHub mobile approval counts only when the issue carries the immutable
+  hash-bound Wire manifest, the comment comes from the allow-listed
+  `rdamato720` account, and the comment names the exact cards or exact edited
+  replacement sentences. A reaction, issue close, or model-generated comment
+  is not approval.
 - `PENDING`, `HOLD`, `ABSTAIN`, `NO_FANTASY_IMPACT`, unresolved identity,
   failed validation, evidence-integrity failure, and claim-subject conflict can
   never auto-publish.
@@ -96,6 +101,7 @@ For every Wire change, run at minimum:
 
 ```bash
 python scripts/test_wire_review.py
+python scripts/test_wire_mobile.py
 python scripts/test_wire.py
 python scripts/test_wire_page.py
 python scripts/test_wire_homepage.py

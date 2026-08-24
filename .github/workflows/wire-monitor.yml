@@ -1,0 +1,167 @@
+name: Wire 30-minute monitor
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: wire-runtime
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    # No recurring provider spend is authorized merely by merging this file.
+    # The owner must deliberately set this repository variable to true and
+    # configure all three independent ceilings below.
+    if: vars.WIRE_MOBILE_AUTODRAFT == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+      issues: write
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      BEATWIRE_X_PROVIDER: ${{ vars.BEATWIRE_X_PROVIDER }}
+      SORSA_API_KEY: ${{ secrets.SORSA_API_KEY }}
+      TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+      MOBILE_MAX_CALLS: ${{ vars.WIRE_MOBILE_MAX_CALLS }}
+      MOBILE_RUN_CAP: ${{ vars.WIRE_MOBILE_RUN_CAP_USD }}
+      TAPI_DAILY_CAP: ${{ vars.WIRE_MOBILE_TAPI_DAILY_CAP_USD }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - uses: actions/cache/restore@v4
+        with:
+          path: wire-mobile-x.db
+          key: wire-mobile-x-db-${{ github.run_id }}
+          restore-keys: wire-mobile-x-db-
+
+      - name: Validate explicit recurring limits
+        run: |
+          python - <<'PY'
+          import os
+          from decimal import Decimal, InvalidOperation
+
+          try:
+              calls = int(os.environ["MOBILE_MAX_CALLS"])
+              run_cap = Decimal(os.environ["MOBILE_RUN_CAP"])
+              x_cap = Decimal(os.environ["TAPI_DAILY_CAP"])
+          except (KeyError, ValueError, InvalidOperation):
+              raise SystemExit("mobile call, run-dollar and X daily caps must all be configured")
+          if not 1 <= calls <= 10:
+              raise SystemExit("WIRE_MOBILE_MAX_CALLS must be 1-10")
+          if not Decimal("0") < run_cap <= Decimal("1.00"):
+              raise SystemExit("WIRE_MOBILE_RUN_CAP_USD must be >0 and <=1.00")
+          if not Decimal("0") < x_cap <= Decimal("25.00"):
+              raise SystemExit("WIRE_MOBILE_TAPI_DAILY_CAP_USD must be >0 and <=25.00")
+          print(f"authorized ceilings: {calls} draft calls, ${run_cap}/run, ${x_cap}/day X")
+          PY
+
+      - name: Gates
+        run: |
+          python scripts/test_wire_mobile.py
+          python scripts/test_wire_review.py
+          python scripts/wire_health.py --check
+
+      - name: Recover any banked inbox that has no issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -f data/wire_mobile_batch.json ] && { [ ! -f data/wire_mobile_inbox.json ] || [ ! -f data/wire_mobile_inbox.md ]; }; then
+            python scripts/wire_mobile_inbox.py
+          fi
+          if [ ! -f data/wire_mobile_inbox.json ] || [ ! -f data/wire_mobile_inbox.md ]; then
+            exit 0
+          fi
+          prefix=$(python -c 'import json; print(json.load(open("data/wire_mobile_inbox.json"))["batch_id"][:12])')
+          found=$(gh issue list --state all --label wire-inbox --search "$prefix in:title" --json number --jq 'length')
+          if [ "$found" = "0" ]; then
+            gh label create wire-inbox --color b7ff2a --description "Lineup Beat mobile review" --force
+            gh issue create --title "Wire approval — $prefix" \
+              --body-file data/wire_mobile_inbox.md --label wire-inbox \
+              --assignee rdamato720
+          fi
+
+      - name: Verify draft provider before source reads
+        run: |
+          python - <<'PY'
+          from wire.mobile_draft import OpenAIMobileDraftProvider
+          OpenAIMobileDraftProvider().authenticate()
+          print("mobile draft provider authenticated; 0 Responses API calls")
+          PY
+
+      - name: Capture On SI and X
+        run: |
+          python scripts/wire_backfill.py --discover --report --hours 2
+          python scripts/wire_extract.py --limit 1000
+          python scripts/wire_inclusive_review.py --hours 2
+          python -m beatwire.cli --db wire-mobile-x.db run --sport nfl \
+            --kind twitterapi --capture-only \
+            --tapi-daily-cap "$TAPI_DAILY_CAP"
+
+      - name: Draft exact mobile batch
+        id: draft
+        continue-on-error: true
+        run: |
+          python scripts/wire_mobile_draft.py --hours 2 \
+            --max-calls "$MOBILE_MAX_CALLS" --cap "$MOBILE_RUN_CAP"
+          cards=$(python -c 'import json; print(len(json.load(open("data/wire_mobile_batch.json"))["cards"]))')
+          echo "cards=$cards" >> "$GITHUB_OUTPUT"
+
+      - name: Build phone inbox
+        if: steps.draft.outcome == 'success' && steps.draft.outputs.cards != '0'
+        run: python scripts/wire_mobile_inbox.py
+
+      - name: Bank dedupe ledger and exact pending batch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/wire_mobile_seen.json
+          if [ "${{ steps.draft.outcome }}" = "success" ] && [ "${{ steps.draft.outputs.cards }}" != "0" ] && [ -f data/wire_mobile_batch.json ]; then
+            git add data/wire_mobile_batch.json
+            for path in data/wire_mobile_inbox.json data/wire_mobile_inbox.md; do
+              if [ -f "$path" ]; then git add "$path"; fi
+            done
+          fi
+          if git diff --cached --quiet; then
+            echo "No mobile state changed"
+          else
+            git commit -m "Bank Wire mobile monitor batch"
+            git push origin HEAD:main
+          fi
+
+      - name: Open phone approval issue
+        if: steps.draft.outcome == 'success' && steps.draft.outputs.cards != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          prefix=$(python -c 'import json; print(json.load(open("data/wire_mobile_inbox.json"))["batch_id"][:12])')
+          gh label create wire-inbox --color b7ff2a --description "Lineup Beat mobile review" --force
+          gh issue create --title "Wire approval — $prefix" \
+            --body-file data/wire_mobile_inbox.md --label wire-inbox \
+            --assignee rdamato720
+
+      - name: Save isolated X cursor and raw-item cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: wire-mobile-x.db
+          key: wire-mobile-x-db-${{ github.run_id }}
+
+      - name: Fail after banking attempted spend
+        if: steps.draft.outcome == 'failure'
+        run: |
+          echo "Drafting failed; attempted ids were banked before this failure."
+          exit 1
