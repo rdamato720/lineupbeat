@@ -84,6 +84,7 @@ jobs:
         run: |
           python - <<'PY'
           import json
+          import hashlib
           import os
           import re
           from pathlib import Path
@@ -122,8 +123,53 @@ jobs:
               if len(set(ids)) != len(ids):
                   raise SystemExit("selection repeats a candidate id; 0 API calls")
               candidate_ids = " ".join(ids)
-              mode = "review"
-          if mode not in {"plan", "review"}:
+              paths = {
+                  "paid": Path("data/wire_paid_candidates.json"),
+                  "state": Path("data/wire_backfill.json"),
+                  "independent": Path("data/wire_independent_review.json"),
+                  "package": Path("data/wire_review_package.json"),
+              }
+              banked = False
+              if all(path.exists() for path in paths.values()):
+                  paid = json.loads(paths["paid"].read_text())
+                  state = json.loads(paths["state"].read_text())
+                  independent = json.loads(paths["independent"].read_text())
+                  package = json.loads(paths["package"].read_text())
+                  generator = state.get("openai") or {}
+                  generated_ids = [
+                      (item.get("candidate") or {}).get("candidate_id")
+                      for item in state.get("results", [])
+                  ]
+                  reviewed_ids = [
+                      (item.get("candidate") or {}).get("candidate_id")
+                      for item in independent.get("items", [])
+                  ]
+                  packaged_ids = [
+                      (item.get("candidate") or {}).get("candidate_id")
+                      for item in package.get("items", [])
+                  ]
+                  calls = int(generator.get("calls", 0)) + int(independent.get("calls", 0))
+                  cost = float(generator.get("cost_usd", 0)) + float(independent.get("cost_usd", 0))
+                  publication_sha = hashlib.sha256(
+                      Path("data/wire_publications.json").read_bytes()).hexdigest()
+                  banked = all((
+                      set(ids).issubset(set(paid.get("candidate_ids") or [])),
+                      generated_ids == ids,
+                      len(reviewed_ids) == len(ids) and set(reviewed_ids) == set(ids),
+                      len(packaged_ids) == len(ids) and set(packaged_ids) == set(ids),
+                      not generator.get("provider_failures"),
+                      int(generator.get("calls", 0)) <= 20,
+                      float(generator.get("cost_usd", 0)) <= 0.40,
+                      int(independent.get("calls", 0)) <= 20,
+                      float(independent.get("cost_usd", 0)) <= 0.40,
+                      calls <= 40,
+                      cost <= 1.00,
+                      independent.get("publications_applied") == 0,
+                      package.get("publications_applied") == 0,
+                      publication_sha == selection.get("publication_sha256_before"),
+                  ))
+              mode = "banked" if banked else "review"
+          if mode not in {"plan", "review", "banked"}:
               raise SystemExit(f"invalid review mode {mode!r}; 0 API calls")
           with Path(os.environ["GITHUB_OUTPUT"]).open("a") as output:
               output.write(f"mode={mode}\n")
@@ -155,6 +201,7 @@ jobs:
           PY
 
       - name: Clear stale review outputs from the runner
+        if: steps.review_request.outputs.mode != 'banked'
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -174,11 +221,13 @@ jobs:
           echo "sha=$(sha256sum data/wire_publications.json | awk '{print $1}')" >> "$GITHUB_OUTPUT"
 
       - name: Discover current evidence
+        if: steps.review_request.outputs.mode != 'banked'
         run: |
           python scripts/wire_backfill.py --discover --report \
             --hours "$WIRE_REVIEW_HOURS"
 
       - name: Extract deterministic evidence candidates
+        if: steps.review_request.outputs.mode != 'banked'
         run: |
           python scripts/wire_extract.py --limit 1000
 
@@ -309,6 +358,21 @@ jobs:
           if after != os.environ["PUBLICATIONS_BEFORE"]:
               raise SystemExit("publication file changed during plan")
           print(f"plan boundary held: {plan['count']} candidates, 0 calls, 0 published")
+          PY
+
+      - name: Confirm banked review receipt
+        if: steps.review_request.outputs.mode == 'banked'
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          state = json.loads(Path("data/wire_backfill.json").read_text())
+          independent = json.loads(Path("data/wire_independent_review.json").read_text())
+          generator = state["openai"]
+          calls = generator["calls"] + independent["calls"]
+          cost = generator["cost_usd"] + independent["cost_usd"]
+          print(f"banked receipt valid: {calls}/40 calls, ${cost:.4f}/$1.00, 0 published")
           PY
 
       - name: Bank review ledger and artifacts on this branch

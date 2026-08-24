@@ -54,6 +54,9 @@ class ReviewRepairTests(unittest.TestCase):
         self.assertIn("0 Responses API calls", batch)
         self.assertIn("generator did not complete the exact approved cohort", batch)
         self.assertIn("exact approved cohort is incomplete", batch)
+        self.assertIn('mode = "banked" if banked else "review"', batch)
+        self.assertIn("Confirm banked review receipt", batch)
+        self.assertIn("steps.review_request.outputs.mode != 'banked'", batch)
         self.assertNotIn("wire_publish.py", batch)
         self.assertNotIn("wrangler", batch)
 

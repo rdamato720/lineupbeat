@@ -556,6 +556,10 @@ enforces the per-pass and total call/cost ceilings, builds the review package,
 and confirms that zero publications were applied. The GitHub review-only job
 performs the same provider preflight before discovery; a missing or invalid
 `OPENAI_API_KEY` therefore stops with zero Responses API calls and no crawl.
+After the exact cohort, append-only paid ledger, independent review, package,
+spend limits, and publication hash are banked together, subsequent PR checks
+validate that receipt without provider authentication, discovery, or paid
+calls.
 
 Expected primary artifacts:
 
