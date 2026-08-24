@@ -1,0 +1,90 @@
+{
+ "version": "college_projections_2026_v1.1",
+ "status": "PUBLISHED",
+ "generated_at": "2026-08-24T15:05:00+00:00",
+ "source_release": "2026/v1.0",
+ "source_manifest_sha256": "01b87ca7a3abdec0c5ab0e11b162f5edc7305ee843d44e28d6065b82aa90ea7a",
+ "frozen_models": [
+  "Allocation_v0.2",
+  "Team_Projection_v0.1",
+  "Positional_Team_Budget_v0.1",
+  "Hybrid_Rush_Allocation_v0.1",
+  "Player_Opportunity_Volume_v0.1",
+  "Expected_QB_Role_v0.1",
+  "QB_Passing_Efficiency_v0.1.1",
+  "QB_Rushing_Portable_Signal_v0.1",
+  "QB_Rush_Propensity_v0.1",
+  "Expected_QB_Rush_Volume_v0.1",
+  "RB_Rushing_Portable_Signal_v0.1",
+  "RB_Returner_Group_Capture_v0.1",
+  "RB_Within_Returner_Pecking_Order_v0.1",
+  "RB_Incoming_Opportunity_Allocation_v0.1",
+  "Expected_RB_Rush_Volume_v0.1",
+  "RB_Final_Room_Concentration_Calibration_v0.1"
+ ],
+ "qa_status": "PASS",
+ "reconciliation_gates": 15,
+ "largest_delta": 9.094947017729282e-13,
+ "product_claim": {
+  "scoring": "Yahoo scoring rules",
+  "eligibility": "NOT ESTABLISHED",
+  "position_source": "CFBD/team roster",
+  "disclosure": "Positions reflect school roster listings sourced through CFBD. They may differ from eligibility on Yahoo or other fantasy platforms, particularly for hybrid players. Fantasy points use Yahoo scoring rules.",
+  "product_name": "College fantasy projections using Yahoo scoring",
+  "not_claimed": [
+   "Yahoo roster eligibility",
+   "Yahoo rankings",
+   "Yahoo lineup positions"
+  ],
+  "future_enhancement": "platform eligibility as a separately sourced enhancement"
+ },
+ "calibrations": [
+  {
+   "model": "RB_Final_Room_Concentration_Calibration_v0.1",
+   "target_minimum": 0.79,
+   "before": 0.6709884856083221,
+   "after": 0.7972581472353698,
+   "teams_adjusted": 54,
+   "method": "Scale each sub-79% room's top two and tail proportionally, then normalize player rushing yards and touchdowns back to the exact frozen team budgets."
+  }
+ ],
+ "known_limitations": [
+  {
+   "issue": "platform eligibility never established",
+   "detail": "positions come from school roster listings via CFBD; no player carries a Yahoo id",
+   "v1_1": "separately sourced eligibility"
+  },
+  {
+   "issue": "no player-level WR/TE receiving efficiency",
+   "detail": "receivers are differentiated by opportunity and share team receiving rates",
+   "v1_1": "WR/TE receiving efficiency calibration"
+  },
+  {
+   "issue": "flatter RB tail than historical backfields",
+   "detail": "top-two concentration 67.9% against 79-81%",
+   "v1_1": "RB_Final_Room_Concentration_Calibration_v0.1"
+  }
+ ],
+ "files": {
+  "college_player_projections_2026_v1.1.csv": {
+   "bytes": 784491,
+   "sha256": "afc62d4fb090346d97abe1e15d11719cc7a275728d6218feb1aceb69b416f5a5"
+  },
+  "college_team_projections_2026_v1.1.csv": {
+   "bytes": 9833,
+   "sha256": "9f8aff4392e29a11884d3d6d8e6dfad185a2d8b554cc68df0b7a67122633c63b"
+  },
+  "college_projection_qa_v1.1.json": {
+   "bytes": 2197,
+   "sha256": "408b4cc5034f13474d24aee723d70a6b90f78c0048a5359efa1bb947a8788541"
+  },
+  "college_site_projections_2026.json": {
+   "bytes": 1163067,
+   "sha256": "740cf753e192925d083412229caaa1553038aefb101dc07409597a100077e921"
+  },
+  "generate_college_v1_1.py": {
+   "bytes": 22874,
+   "sha256": "3e0e7fbc481916a5e27d29e5b6bac6902688ac86025f14ef3a4382b5fc339cf7"
+  }
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "generated_at": "2026-08-24T15:05:00+00:00",
+ "season": 2026,
+ "reconciliation": {
+  "pass_attempts": 0.0,
+  "completions": 0.0,
+  "passing_yards": 0.0,
+  "passing_td": 0.0,
+  "interceptions": 0.0,
+  "rushing_yards": 9.094947017729282e-13,
+  "rushing_td": 1.0658141036401503e-14,
+  "qb_rush_attempts": 0.0,
+  "rb_rush_attempts": 1.1368683772161603e-13,
+  "RB_receptions": 0.0,
+  "WR_receptions": 0.0,
+  "TE_receptions": 0.0,
+  "receptions_vs_completions": 0.0,
+  "receiving_yards_named": 0.0,
+  "receiving_td_named": 0.0
+ },
+ "position_claim": {
+  "scoring": "Yahoo scoring rules",
+  "eligibility": "NOT ESTABLISHED",
+  "position_source": "CFBD/team roster",
+  "disclosure": "Positions reflect school roster listings sourced through CFBD. They may differ from eligibility on Yahoo or other fantasy platforms, particularly for hybrid players. Fantasy points use Yahoo scoring rules.",
+  "product_name": "College fantasy projections using Yahoo scoring",
+  "not_claimed": [
+   "Yahoo roster eligibility",
+   "Yahoo rankings",
+   "Yahoo lineup positions"
+  ],
+  "v1_1": "platform eligibility remains a separately sourced future enhancement"
+ },
+ "hybrid_disclosure": {
+  "blocking_eligibility_check": 6,
+  "presentation_disclosure": 16,
+  "note": "thresholds are material: a receiver with two carries and half a point is not a hybrid, however large the percentage"
+ },
+ "receiving_note": "receptions reconcile to the four frozen budget buckets and to team completions. Published receiving yards and touchdowns cover named players only; residual and non-skill receptions carry the remainder and are never redistributed to fantasy players.",
+ "rb_room_concentration": {
+  "model": "RB_Final_Room_Concentration_Calibration_v0.1",
+  "target_minimum": 0.79,
+  "before": 0.6709884856083221,
+  "after": 0.7972581472353698,
+  "teams_adjusted": 54,
+  "status": "PASS"
+ },
+ "players": 2351,
+ "by_position": {
+  "QB": 361,
+  "RB": 493,
+  "TE": 507,
+  "WR": 990
+ },
+ "teams": 68,
+ "duplicates": 0,
+ "multi_team_players": 0,
+ "negative_values": 0,
+ "blocking_failures": [],
+ "status": "PASS",
+ "wr_te_treatment": "opportunity-differentiated, efficiency-neutral; no player-level receiving calibration exists"
+}
