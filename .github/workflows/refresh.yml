@@ -68,6 +68,10 @@ jobs:
       WIRE_REVIEW_HOURS: ${{ inputs.wire_review_hours || '72' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The review resolver compares the PR to its base so an old paid
+          # selection cannot be replayed by an unrelated code change.
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -81,18 +85,34 @@ jobs:
         env:
           DISPATCH_MODE: ${{ inputs.wire_review_mode }}
           DISPATCH_CANDIDATE_IDS: ${{ inputs.wire_candidate_ids }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
           python - <<'PY'
           import json
           import hashlib
           import os
           import re
+          import subprocess
           from pathlib import Path
 
           mode = os.environ.get("DISPATCH_MODE") or "plan"
           candidate_ids = os.environ.get("DISPATCH_CANDIDATE_IDS", "")
           selection_path = Path("data/wire_review_selection.json")
-          if os.environ.get("GITHUB_EVENT_NAME") == "pull_request" and selection_path.exists():
+          selection_changed = False
+          if (os.environ.get("GITHUB_EVENT_NAME") == "pull_request"
+                  and selection_path.exists()):
+              base_sha = os.environ.get("PR_BASE_SHA", "")
+              if not re.fullmatch(r"[0-9a-f]{40}", base_sha):
+                  raise SystemExit("pull request has no valid base SHA; 0 API calls")
+              changed = subprocess.run(
+                  ["git", "diff", "--quiet", base_sha, "HEAD", "--",
+                   str(selection_path)], check=False)
+              if changed.returncode not in (0, 1):
+                  raise SystemExit(
+                      "could not verify the review-selection diff; 0 API calls")
+              selection_changed = changed.returncode == 1
+          if (os.environ.get("GITHUB_EVENT_NAME") == "pull_request"
+                  and selection_changed):
               selection = json.loads(selection_path.read_text())
               required = {
                   "schema_version": "wire-review-selection-v1",
@@ -169,7 +189,11 @@ jobs:
                       publication_sha == selection.get("publication_sha256_before"),
                   ))
               mode = "banked" if banked else "review"
-          if mode not in {"plan", "review", "banked"}:
+          elif os.environ.get("GITHUB_EVENT_NAME") == "pull_request":
+              # An authorization committed for an earlier cohort is not a
+              # standing approval to spend again on every later code PR.
+              mode = "check"
+          if mode not in {"plan", "review", "banked", "check"}:
               raise SystemExit(f"invalid review mode {mode!r}; 0 API calls")
           with Path(os.environ["GITHUB_OUTPUT"]).open("a") as output:
               output.write(f"mode={mode}\n")
@@ -201,7 +225,7 @@ jobs:
           PY
 
       - name: Clear stale review outputs from the runner
-        if: steps.review_request.outputs.mode != 'banked'
+        if: steps.review_request.outputs.mode != 'banked' && steps.review_request.outputs.mode != 'check'
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -221,13 +245,13 @@ jobs:
           echo "sha=$(sha256sum data/wire_publications.json | awk '{print $1}')" >> "$GITHUB_OUTPUT"
 
       - name: Discover current evidence
-        if: steps.review_request.outputs.mode != 'banked'
+        if: steps.review_request.outputs.mode != 'banked' && steps.review_request.outputs.mode != 'check'
         run: |
           python scripts/wire_backfill.py --discover --report \
             --hours "$WIRE_REVIEW_HOURS"
 
       - name: Extract deterministic evidence candidates
-        if: steps.review_request.outputs.mode != 'banked'
+        if: steps.review_request.outputs.mode != 'banked' && steps.review_request.outputs.mode != 'check'
         run: |
           python scripts/wire_extract.py --limit 1000
 
@@ -360,6 +384,23 @@ jobs:
           print(f"plan boundary held: {plan['count']} candidates, 0 calls, 0 published")
           PY
 
+      - name: Confirm code-only check made no calls or publications
+        if: steps.review_request.outputs.mode == 'check'
+        env:
+          PUBLICATIONS_BEFORE: ${{ steps.publications.outputs.sha }}
+        run: |
+          python - <<'PY'
+          import hashlib
+          import os
+          from pathlib import Path
+
+          after = hashlib.sha256(
+              Path("data/wire_publications.json").read_bytes()).hexdigest()
+          if after != os.environ["PUBLICATIONS_BEFORE"]:
+              raise SystemExit("publication file changed during code-only check")
+          print("code-only boundary held: 0 provider calls, 0 model calls, 0 published")
+          PY
+
       - name: Confirm banked review receipt
         if: steps.review_request.outputs.mode == 'banked'
         run: |
@@ -391,7 +432,7 @@ jobs:
           fi
 
       - name: Upload review-only artifacts
-        if: always()
+        if: always() && steps.review_request.outputs.mode != 'check'
         uses: actions/upload-artifact@v4
         with:
           name: wire-${{ steps.review_request.outputs.mode }}-${{ github.run_id }}
@@ -449,6 +490,11 @@ jobs:
 
       - name: Run pipeline
         env:
+          # Recent News still uses the legacy beat-feed extractor, which
+          # requires Anthropic.  The editorial Wire review uses OpenAI.
+          # Keep both here: replacing one with the other makes the scheduled
+          # refresh exit before it can export any new feed records.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # Which provider reads X. Unset means twitterapi, so
           # removing this variable is the whole rollback.
@@ -692,6 +738,7 @@ jobs:
       - name: Preflight
         continue-on-error: true
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # Which provider reads X. Unset means twitterapi, so
           # removing this variable is the whole rollback.

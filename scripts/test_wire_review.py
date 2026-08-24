@@ -31,6 +31,21 @@ from wire.providers.openai import OpenAIProviderError, OpenAISemanticProvider
 
 
 class ReviewRepairTests(unittest.TestCase):
+    def test_refresh_exposes_both_semantic_provider_keys(self):
+        workflow = (ROOT / ".github" / "workflows" / "refresh.yml").read_text()
+        refresh = workflow.split("\n  refresh:", 1)[1]
+        pipeline = refresh.split("      - name: Run pipeline", 1)[1].split(
+            "      - name: Save the database", 1)[0]
+        preflight = refresh.split("      - name: Preflight", 1)[1].split(
+            "      - name: Deploy", 1)[0]
+        for step in (pipeline, preflight):
+            self.assertIn(
+                "ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}", step
+            )
+            self.assertIn(
+                "OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}", step
+            )
+
     def test_expanded_batch_workflow_is_capped_and_non_publishing(self):
         workflow = (ROOT / ".github" / "workflows" / "refresh.yml").read_text()
         batch = workflow.split("  wire-review-batch:", 1)[1].split(
@@ -50,12 +65,20 @@ class ReviewRepairTests(unittest.TestCase):
         self.assertIn('"approved_cost_usd": 1.0', batch)
         self.assertIn('"approved_max_calls": 40', batch)
         self.assertIn("selection has no valid plan digest; 0 API calls", batch)
+        self.assertIn("git", batch)
+        self.assertIn("diff", batch)
+        self.assertIn("selection_changed = changed.returncode == 1", batch)
+        self.assertIn('mode = "check"', batch)
         self.assertIn("Verify review provider before discovery", batch)
         self.assertIn("0 Responses API calls", batch)
         self.assertIn("generator did not complete the exact approved cohort", batch)
         self.assertIn("exact approved cohort is incomplete", batch)
         self.assertIn('mode = "banked" if banked else "review"', batch)
         self.assertIn("Confirm banked review receipt", batch)
+        self.assertIn("Confirm code-only check made no calls or publications",
+                      batch)
+        self.assertIn("publication file changed during code-only check", batch)
+        self.assertIn("outputs.mode != 'check'", batch)
         self.assertIn("steps.review_request.outputs.mode != 'banked'", batch)
         self.assertNotIn("wire_publish.py", batch)
         self.assertNotIn("wrangler", batch)
