@@ -28,10 +28,12 @@ import wire_review_package as package
 import wire_backfill as backfill
 import wire_semantic_eval as semantic_eval
 from wire.providers.openai import OpenAIProviderError, OpenAISemanticProvider
+from beatwire import extract as beat_extract
+from beatwire import cli as beat_cli
 
 
 class ReviewRepairTests(unittest.TestCase):
-    def test_refresh_exposes_both_semantic_provider_keys(self):
+    def test_refresh_uses_openai_for_recent_news(self):
         workflow = (ROOT / ".github" / "workflows" / "refresh.yml").read_text()
         refresh = workflow.split("\n  refresh:", 1)[1]
         pipeline = refresh.split("      - name: Run pipeline", 1)[1].split(
@@ -40,11 +42,74 @@ class ReviewRepairTests(unittest.TestCase):
             "      - name: Deploy", 1)[0]
         for step in (pipeline, preflight):
             self.assertIn(
-                "ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}", step
-            )
-            self.assertIn(
                 "OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}", step
             )
+            self.assertNotIn("ANTHROPIC_API_KEY", step)
+
+    def test_recent_news_extractor_uses_openai_structured_outputs(self):
+        calls = []
+
+        class Responses:
+            @staticmethod
+            def create(**kwargs):
+                calls.append(kwargs)
+                return types.SimpleNamespace(output_text=json.dumps({
+                    "items": [{
+                        "player": "Bijan Robinson",
+                        "category": "injury",
+                        "event": "practice_limited",
+                        "horizon": "day",
+                        "claim": "Limited with general soreness.",
+                        "actionability": 2,
+                        "tags": ["soreness"],
+                        "position_hint": "RB",
+                    }]
+                }))
+
+        client = types.SimpleNamespace(responses=Responses())
+        rows = beat_extract._call_model("item", client, "fixed")
+        self.assertEqual(rows[0]["player"], "Bijan Robinson")
+        self.assertEqual(calls[0]["model"], "gpt-5.6-luna")
+        self.assertFalse(calls[0]["store"])
+        self.assertEqual(calls[0]["reasoning"], {"effort": "low"})
+        self.assertTrue(calls[0]["text"]["format"]["strict"])
+        self.assertIn("fixed", calls[0]["instructions"])
+
+    def test_recent_news_extractor_scrubs_provider_errors(self):
+        key = "sk-proj-" + "B" * 40
+
+        class Responses:
+            @staticmethod
+            def create(**_kwargs):
+                raise RuntimeError("401 for " + key)
+
+        client = types.SimpleNamespace(responses=Responses())
+        with mock.patch.dict(os.environ, {"OPENAI_API_KEY": key}):
+            with self.assertRaises(beat_extract.OpenAIExtractionError) as caught:
+                beat_extract._call_model("item", client, "fixed")
+        self.assertNotIn(key, str(caught.exception))
+        self.assertIn("[REDACTED]", str(caught.exception))
+
+    def test_recent_news_authenticates_before_source_crawl(self):
+        key = "sk-proj-" + "C" * 40
+        retrieved = []
+
+        class Models:
+            @staticmethod
+            def retrieve(model):
+                retrieved.append(model)
+
+        class Client:
+            def __init__(self, api_key):
+                self.api_key = api_key
+                self.models = Models()
+
+        fake_openai = types.SimpleNamespace(OpenAI=Client)
+        with mock.patch.dict(os.environ, {"OPENAI_API_KEY": key}, clear=False), \
+                mock.patch.dict(sys.modules, {"openai": fake_openai}):
+            client = beat_cli._client(stub=False)
+        self.assertEqual(client.api_key, key)
+        self.assertEqual(retrieved, ["gpt-5.6-luna"])
 
     def test_expanded_batch_workflow_is_capped_and_non_publishing(self):
         workflow = (ROOT / ".github" / "workflows" / "refresh.yml").read_text()

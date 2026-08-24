@@ -47,11 +47,21 @@ def _client(stub: bool):
     from . import local_model
     if local_model.enabled():
         return None
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        sys.exit("Set ANTHROPIC_API_KEY, set BEATWIRE_LOCAL to point at an "
+    key = os.environ.get("OPENAI_API_KEY")
+    if not key:
+        sys.exit("Set OPENAI_API_KEY, set BEATWIRE_LOCAL to point at an "
                  "ollama host, or pass --stub.")
-    import anthropic
-    return anthropic.Anthropic()
+    from openai import OpenAI
+    from .extract import MODEL, _redact_provider_error
+    client = OpenAI(api_key=key)
+    try:
+        # Authenticate before polling sources. A bad key must not let the
+        # crawler mark fresh items seen when none could be interpreted.
+        client.models.retrieve(MODEL)
+    except Exception as exc:
+        sys.exit("OpenAI extraction preflight failed: "
+                 + _redact_provider_error(f"{type(exc).__name__}: {exc}"))
+    return client
 
 
 def cmd_run(args):
@@ -402,8 +412,8 @@ def cmd_preflight(args):
         ok.append("resolver tests pass")
 
     # 6. extraction is really running, not stubbed
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        fail.append("ANTHROPIC_API_KEY not set, so you are still on --stub")
+    if not os.environ.get("OPENAI_API_KEY"):
+        fail.append("OPENAI_API_KEY not set, so you are still on --stub")
     else:
         ok.append("extraction key present")
 
