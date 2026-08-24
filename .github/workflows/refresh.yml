@@ -449,6 +449,11 @@ jobs:
 
       - name: Run pipeline
         env:
+          # Recent News still uses the legacy beat-feed extractor, which
+          # requires Anthropic.  The editorial Wire review uses OpenAI.
+          # Keep both here: replacing one with the other makes the scheduled
+          # refresh exit before it can export any new feed records.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # Which provider reads X. Unset means twitterapi, so
           # removing this variable is the whole rollback.
@@ -692,6 +697,7 @@ jobs:
       - name: Preflight
         continue-on-error: true
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # Which provider reads X. Unset means twitterapi, so
           # removing this variable is the whole rollback.
