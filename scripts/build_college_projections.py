@@ -18,7 +18,7 @@ from datetime import datetime, timezone
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 OUT = SITE / "college-fantasy-football" / "projections"
-EXPECTED_SHA = "01b87ca7a3abdec0c5ab0e11b162f5edc7305ee843d44e28d6065b82aa90ea7a"
+EXPECTED_SHA = "4c2f35fec2eaa3d43d2e18a2956d3118a20a17805ff1d4c74989a5cc069d6eb0"
 
 import hashlib
 cfg = json.loads((ROOT / "data/college/config.json").read_text())
@@ -117,8 +117,11 @@ INTROS = {
            "quarterbacks with similar passing lines."),
     "RB": ("Backfield share is projected room by room, splitting each "
            "team's carries between the backs who returned and those who "
-           "arrived. Rushing efficiency carries a calibrated adjustment; "
-           "receptions come from the same team allocation."),
+           "arrived. A final room-concentration calibration moves the "
+           "aggregate top-two carry share into the historical 79-81% band "
+           "while preserving every team rushing budget. Rushing efficiency "
+           "carries a calibrated adjustment; receptions come from the same "
+           "team allocation."),
     "WR": ("Receivers are separated by projected opportunity rather than "
            "by receiving efficiency, which is anchored to team rates. "
            "Several receivers take enough carries that rushing decides "
