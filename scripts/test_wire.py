@@ -1971,6 +1971,19 @@ check("a mechanism unsupported by the passage blocks a card",
               "reviewer_action": "APPROVE",
               "commentary": "He missed one practice; no timetable was given.",
               "evidence": "Players who did not participate were QB Quinn Ewers."})))
+check("football injury language supports an injury mechanism",
+      not any("mechanism INJURY" in f for f in
+              _R({"direction": "NEGATIVE", "mechanism": "INJURY",
+                  "reviewer_action": "APPROVE_WITH_EDIT",
+                  "commentary": "There is no diagnosis or timetable yet.",
+                  "evidence": "He got banged up during joint practice."})))
+check("explicit return-to-practice language supports that mechanism",
+      not any("mechanism RETURN_TO_PRACTICE" in f for f in
+              _R({"direction": "POSITIVE",
+                  "mechanism": "RETURN_TO_PRACTICE",
+                  "reviewer_action": "APPROVE_WITH_EDIT",
+                  "commentary": "It is not a full green light just yet.",
+                  "evidence": "Several starters return to practice Saturday."})))
 check("an absence without temporary context blocks a card",
       any("temporary context" in f for f in
           _R({"direction": "NEGATIVE", "mechanism": "LIMITED_PARTICIPATION",
@@ -2007,12 +2020,21 @@ _pp = json.loads((ROOT / "data" / "wire_publication_preview.json").read_text())
 check("the preview marks itself unpublished", _pp["published"] is False)
 check("only reviewer-approved cases reach the preview",
       all(c["reviewer_action"].startswith("APPROVE") for c in _pp["cards"]))
-check("Claude's original wording is preserved beside a reviewer edit",
-      all("claude_original_commentary" in c for c in _pp["cards"]), _pp["cards"][0].keys() if _pp["cards"] else None)
+check("the model's original wording is preserved beside a reviewer edit",
+      all("model_original_commentary" in c for c in _pp["cards"]),
+      _pp["cards"][0].keys() if _pp["cards"] else None)
+check("every preview card has separately approved reporting and analysis",
+      all(c.get("public_summary")
+          and c.get("public_summary_approved_by")
+          and c.get("commentary_approved_by")
+          and c.get("approved_at")
+          and c["public_summary"] != c["evidence"]
+          and c["public_summary"] != c["commentary"]
+          for c in _pp["cards"]))
 check("held-back items are named with a reason",
       all(h.get("why") for h in _pp["held_back"]))
-check("a held evidence conflict is named as such",
-      any("not supported by the passage" in h["why"] for h in _pp["held_back"]))
+check("suppressed items remain absent from the reader preview",
+      all("NO_FANTASY_IMPACT" in h["why"] for h in _pp["held_back"]))
 
 # --------------------------------------------- OpenAI as the interpreter
 # available() must mean usable, not present. The first version returned True
