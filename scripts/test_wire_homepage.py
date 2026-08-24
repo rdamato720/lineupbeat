@@ -25,6 +25,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from html import unescape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -34,8 +35,8 @@ LIVE = ROOT / "site" / "index.html"
 DECISIONS = ROOT / "data" / "reviews" / "backfill_decisions.json"
 
 FAILURES = []
-EXCLUDED = ("Anthony Richardson", "Ollie Gordon II", "Daniel Jones",
-            "Terrace Marshall", "Travis Hunter")
+EXCLUDED = ("Anthony Richardson", "Ollie Gordon II", "Terrace Marshall",
+            "Travis Hunter")
 
 
 def check(name, ok, detail=""):
@@ -62,6 +63,13 @@ def payload(text):
         return json.loads(text[i + len("const DATA = "):j].rstrip(";"))
     except ValueError:
         return None
+
+
+def one_sentence(text):
+    """Count sentence stops without treating suffixes as sentence ends."""
+    normalized = re.sub(r"\b(Jr|Sr|Mr|Mrs|Ms|Dr)\.", r"\1", text)
+    return (len(text) <= 180 and text.endswith((".", "!", "?"))
+            and not re.search(r"[.!?]\s+\S", normalized))
 
 
 data = payload(html)
@@ -123,11 +131,17 @@ published = (json.loads(PUBS_F.read_text())["publications"]
 names = [p["player_name"] for p in published]
 CARD = r'<article class="tile wire'
 cards = re.findall(CARD, section)
-rendered = [re.sub(r"<[^>]+>", "", m).strip()
+rendered = [unescape(re.sub(r"<[^>]+>", "", m).strip())
             for m in re.findall(r"<h4>(.*?)</h4>", section, re.S)]
-for n in names:
-    check(f"{n} appears exactly once", rendered.count(n) == 1,
-          f"{rendered.count(n)} card(s)")
+rendered_ids = [unescape(m) for m in re.findall(
+    r'data-publication-id="([^"]+)"', section)]
+for record in published:
+    publication_id = record["publication_id"]
+    count = rendered_ids.count(publication_id)
+    check(f"{record['player_name']} [{publication_id}] appears exactly once",
+          count == 1, f"{count} card(s)")
+check("publication ids are unique in the rendered section",
+      len(rendered_ids) == len(set(rendered_ids)))
 # No fixed card count. The section renders every approved report, and a
 # number written into a test is a cap nobody meant to impose.
 check("one card renders per approved publication",
@@ -136,6 +150,11 @@ check("the count equals the cards rendered", len(cards) == meta["count_shown"])
 
 # --- the design, which regressed to placeholders once ---
 per_card = re.findall(r'<article class="tile wire".*?</article>', section, re.S)
+cards_by_id = {}
+for rendered_card in per_card:
+    found = re.search(r'data-publication-id="([^"]+)"', rendered_card)
+    if found:
+        cards_by_id[unescape(found.group(1))] = rendered_card
 check("every card carries a real player photo",
       all('class="shot"' in c for c in per_card))
 check("every card carries a real team logo",
@@ -144,6 +163,20 @@ check("no card falls back to initials by default",
       'class="wpic"' not in section and 'class="wlogo"' not in section)
 check("every card carries its team colour",
       len(re.findall(r"--c1:#", section)) == len(per_card))
+analysis_records = [r for r in published
+                    if r.get("content_type") == "FANTASY_ANALYSIS"]
+reporting_records = [r for r in published
+                     if r.get("content_type") != "FANTASY_ANALYSIS"]
+check("analysis cards are labelled as analysis",
+      all("Fantasy analysis" in cards_by_id.get(r["publication_id"], "")
+          and '<p class="wfoot">Analysis ' in
+          cards_by_id.get(r["publication_id"], "")
+          for r in analysis_records), f"{len(analysis_records)} card(s)")
+check("reporting cards keep the reporting labels",
+      all("What changed" in cards_by_id.get(r["publication_id"], "")
+          and '<p class="wfoot">Evidence ' in
+          cards_by_id.get(r["publication_id"], "")
+          for r in reporting_records), f"{len(reporting_records)} card(s)")
 gi = html.find("#wire .tiles{")
 rule = html[gi:gi + 120] if gi >= 0 else ""
 check("the Wire renders one card per row",
@@ -157,8 +190,7 @@ for r in records:
     check(f"{who} carries an approved public summary",
           bool(summ) and bool(r.get("public_evidence_summary_approved_by")))
     check(f"{who}'s summary is one sentence within 180 characters",
-          bool(summ) and len(summ) <= 180
-          and summ.count(". ") == 0, f"{len(summ)} chars")
+          bool(summ) and one_sentence(summ), f"{len(summ)} chars")
     check(f"{who}'s stored evidence is retained",
           bool((r.get("reporter_found") or "").strip()))
     check(f"{who}'s passage is not published on the card",

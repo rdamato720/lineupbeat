@@ -25,6 +25,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from wire import registry
+from wire import public_summary as PS
 from wire.store import WireStore
 
 FAILURES = []
@@ -762,8 +763,10 @@ with tempfile.TemporaryDirectory() as tmp:
     check("canonical-url dedup is idempotent across an edit",
           first == again and n == 2, f"{first[:8]} vs {again[:8]}, {n} rows")
 
-# Content types that may never become an automatic claim. Checked one at a
-# time so a regression names the type it lost.
+# Opinion, fantasy, betting and speculative formats remain visible in the
+# explicit named-human review lane.  ``eligible`` here means capturable for
+# review, never auto-approved or firsthand.  Checked one at a time so a
+# regression names the topic it started suppressing again.
 for headline, kind in [
         ("Bills Fantasy Football Start/Sit Advice for Week 2", "fantasy"),
         ("Bills vs Browns Odds, Spread and Prop Bets", "betting"),
@@ -776,8 +779,8 @@ for headline, kind in [
     v = SI.evaluate({"canonical_url": "https://www.si.com/nfl/patriots/onsi/x",
                      "headline": headline, "author": "Ethan Hurwitz",
                      "published_at": "2026-08-20"}, "NE", SI_AUTH)
-    check(f"{kind} cannot be eligible even from an approved author",
-          not v.eligible, f"{headline!r} -> {v.exclusion_reason!r}")
+    check(f"{kind} remains eligible for named-human review",
+          v.eligible, f"{headline!r} -> {v.exclusion_reason!r}")
 
 # The section is checked as well as the title, because a betting page can be
 # headlined like a news story.
@@ -795,8 +798,8 @@ unknown = SI.evaluate({"canonical_url": "https://www.si.com/nfl/patriots/onsi/y"
                        "headline": "Bills Practice Report",
                        "author": "Somebody Nobody Researched",
                        "published_at": "2026-08-20"}, "NE", SI_AUTH)
-check("an unresearched SI author is not eligible",
-      not unknown.eligible and unknown.author_class == SI.UNKNOWN,
+check("an unresearched SI author remains reviewable but not firsthand",
+      unknown.eligible and unknown.author_class == SI.UNKNOWN,
       unknown.exclusion_reason)
 
 noauthor = SI.evaluate({"canonical_url": "https://www.si.com/nfl/patriots/onsi/z",
@@ -891,6 +894,17 @@ check("onsi_team reads the section from the canonical url",
       and SI.onsi_team("https://www.si.com/nfl/bills/news/x") is None
       and SI.onsi_team("https://www.si.com/nfl/top-50") is None)
 
+_fantasy_landing = '''<script type="application/ld+json">{
+ "@type":"ItemList","itemListElement":[{"@type":"NewsArticle",
+ "url":"https://www.si.com/onsi/fantasy/news/value",
+ "headline":"A useful fantasy take","datePublished":"2026-08-24T12:00:00Z",
+ "author":{"name":"Writer One"}}]}</script>'''
+_fantasy_rows = SI.parse_landing(_fantasy_landing)
+check("Fantasy On SI ItemList discovery retains its NewsArticle",
+      len(_fantasy_rows) == 1
+      and _fantasy_rows[0]["author"] == "Writer One",
+      _fantasy_rows)
+
 # The fallback page buys no leniency. A "More Bills" tile or anything else
 # the broad page surfaces still has to be an /onsi/ article for this team.
 _notonsi = SI.evaluate(
@@ -908,6 +922,16 @@ check("every SI source stores both discovery urls",
           for s in _si_srcs2))
 check("every SI source is classed SI_ONSI",
       all(s.source_class == registry.SI_ONSI for s in _si_srcs2))
+_fantasy_src = next((s for s in registry.load()
+                     if s.source_id == "si_fantasy"), None)
+check("Fantasy On SI has a manual analysis-only adapter",
+      _fantasy_src is not None
+      and _fantasy_src.adapter == registry.SI_FANTASY_PAGE
+      and _fantasy_src.status == registry.MANUAL_REVIEW_ONLY
+      and not _fantasy_src.pollable)
+check("SI URL ownership is path-specific",
+      _fantasy_src.owns("https://www.si.com/onsi/fantasy/news/value")
+      and not _fantasy_src.owns("https://www.si.com/nfl/bills/onsi/value"))
 check("Bill Huber keeps his exact author and /onsi/ url restrictions",
       any(s.source_id == "packers_on_si_bill_huber"
           and s.filter_author == "Bill Huber"
@@ -1191,6 +1215,15 @@ for _bad in ("He is a sleeper worth a round 8 pick.",
     check(f"source fantasy advice is not evidence: {_bad[:26]!r}",
           "fantasy" in ev.relevance(_bad) or "betting" in ev.relevance(_bad),
           ev.relevance(_bad))
+check("the inclusive On SI lane retains fantasy analysis for human review",
+      not ev.relevance("He is a sleeper worth a round 8 pick.",
+                       allow_analysis=True))
+check("the inclusive On SI lane retains betting analysis for human review",
+      not ev.relevance("His betting odds imply useful fantasy value.",
+                       allow_analysis=True))
+check("the inclusive On SI lane still refuses promotional sponsor copy",
+      "promotional" in ev.relevance("Sign up now with our partners.",
+                                     allow_analysis=True))
 
 # HIGH is reserved. One reporter cannot reach it however dramatic the words.
 _solo_major = [_row(_qb, text=f"{_qb.full_name} tore his ACL and is out for the season.")]
@@ -1928,6 +1961,15 @@ check("publishing validates the separately approved public summary",
 check("publishing preserves both named-human wording approvals",
       "public_evidence_summary_approved_by" in _pubsrc
       and "lineupbeat_impact_approved_by" in _pubsrc)
+check("attributed fantasy analysis can use an approved source-take sentence",
+      not PS.validate(
+          "Fantasy On SI lists Travis Kelce as an ADP value at tight end.",
+          "Travis Kelce", "Fantasy On SI argues Kelce is a value.",
+          "FANTASY_ANALYSIS"))
+check("an unattributed fantasy take still fails closed",
+      "fantasy analysis is not explicitly attributed" in PS.validate(
+          "Travis Kelce is an ADP value at tight end.", "Travis Kelce",
+          "Fantasy On SI argues Kelce is a value.", "FANTASY_ANALYSIS"))
 check("a clean database hydrates the tracked publication history",
       "hydrate_publication_store" in _pubsrc
       and "publication database and tracked mirror disagree" in _pubsrc)

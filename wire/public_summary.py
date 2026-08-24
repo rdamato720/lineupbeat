@@ -58,6 +58,11 @@ ATTRIBUTION = re.compile(
     r"\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?\s+"
     r"(?:said|told|explained|announced|confirmed|added|reported)\b")
 
+ANALYSIS_ATTRIBUTION = re.compile(
+    r"(?i)\b(?:fantasy )?on si\b|\b(?:the article|the author|the analysis)\b"
+    r".{0,45}\b(?:argues?|calls?|views?|ranks?|lists?|highlights?|"
+    r"recommends?|prefers?|identifies?)\b")
+
 QUOTE = re.compile(r"[\"“”]|(?<!\w)'(?=\w[^']{12,})")
 
 # One sentence: at most one terminal mark, and it ends the string. An
@@ -94,7 +99,8 @@ def looks_truncated(summary: str, evidence: str) -> bool:
     return bool(core) and core in b
 
 
-def validate(summary: str, player_name: str = "", evidence: str = "") -> list[str]:
+def validate(summary: str, player_name: str = "", evidence: str = "",
+             content_type: str = "REPORTING") -> list[str]:
     """Everything wrong with this sentence. Empty means it may be published."""
     bad = []
     s = (summary or "").strip()
@@ -110,20 +116,24 @@ def validate(summary: str, player_name: str = "", evidence: str = "") -> list[st
     if QUOTE.search(s):
         bad.append("contains a quotation; the summary is in our words")
 
-    # A hedge is allowed only downstream of a named attribution, and only
-    # then: the speaker has to be on the record before the expectation is.
-    attributed_from = None
-    a = ATTRIBUTION.search(s)
-    if a:
-        attributed_from = a.end()
-    for m in SPECULATION.finditer(s):
-        if attributed_from is not None and m.start() >= attributed_from:
-            continue
-        bad.append(f"speculative language {m.group(0)!r}")
-        break
-    m = INFERRED.search(s)
-    if m:
-        bad.append(f"inferred timetable or depth-chart movement {m.group(0)!r}")
+    if content_type == "FANTASY_ANALYSIS":
+        if not ANALYSIS_ATTRIBUTION.search(s):
+            bad.append("fantasy analysis is not explicitly attributed")
+    else:
+        # A hedge is allowed only downstream of a named attribution, and only
+        # then: the speaker has to be on the record before the expectation is.
+        attributed_from = None
+        a = ATTRIBUTION.search(s)
+        if a:
+            attributed_from = a.end()
+        for m in SPECULATION.finditer(s):
+            if attributed_from is not None and m.start() >= attributed_from:
+                continue
+            bad.append(f"speculative language {m.group(0)!r}")
+            break
+        m = INFERRED.search(s)
+        if m:
+            bad.append(f"inferred timetable or depth-chart movement {m.group(0)!r}")
 
     who = surname(player_name)
     if who and who.lower() not in _fold(s).lower():
@@ -138,7 +148,8 @@ def check_publication(pub: dict) -> list[str]:
     """Validate a publication's summary, and that the evidence survived."""
     bad = validate(pub.get("public_evidence_summary", ""),
                    pub.get("player_name", ""),
-                   pub.get("reporter_found", ""))
+                   pub.get("reporter_found", ""),
+                   pub.get("content_type", "REPORTING"))
     if not (pub.get("reporter_found") or "").strip():
         bad.append("the stored evidence is missing; the summary may not "
                    "replace it")

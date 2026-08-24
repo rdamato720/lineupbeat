@@ -29,6 +29,9 @@ SITE_FEED_AUTHOR_FILTER = "SITE_FEED_AUTHOR_FILTER"
 AUTHOR_PAGE_SCRAPE = "AUTHOR_PAGE_SCRAPE"
 # One adapter, thirty-two landing pages. See wire/si.py.
 SI_TEAM_PAGE = "SI_TEAM_PAGE"
+# The national Fantasy On SI landing page. It is a manual editorial-analysis
+# lane, not a source of firsthand team reporting.
+SI_FANTASY_PAGE = "SI_FANTASY_PAGE"
 # A paid publisher we may look at and may not read. See PAID_ONLY below.
 PAID_METADATA_ONLY = "PAID_METADATA_ONLY"
 # One reusable adapter for the 32 club websites.
@@ -37,9 +40,10 @@ NFL_TEAM_SITE = "NFL_TEAM_SITE"
 # What kind of source this is. The class decides what its evidence may be
 # used for, which is not the same question as whether the evidence is good.
 SI_ONSI = "SI_ONSI"
+SI_ONSI_ANALYSIS = "SI_ONSI_ANALYSIS"
 OFFICIAL_TEAM_SITE = "OFFICIAL_TEAM_SITE"
 INDEPENDENT_LOCAL = "INDEPENDENT_LOCAL"
-SOURCE_CLASSES = {SI_ONSI, OFFICIAL_TEAM_SITE, INDEPENDENT_LOCAL,
+SOURCE_CLASSES = {SI_ONSI, SI_ONSI_ANALYSIS, OFFICIAL_TEAM_SITE, INDEPENDENT_LOCAL,
                   "DISCOVERY_ONLY_PAID"}
 
 # Who owns the publication. A club's own writer may be excellent and at every
@@ -54,6 +58,7 @@ ADAPTERS = {
     "rss_sitewide_filtered": SITE_FEED_AUTHOR_FILTER,
     "author_page_scrape": AUTHOR_PAGE_SCRAPE,
     "si_team_page": SI_TEAM_PAGE,
+    "si_fantasy_page": SI_FANTASY_PAGE,
     "paid_metadata_only": PAID_METADATA_ONLY,
     "nfl_team_site": NFL_TEAM_SITE,
 }
@@ -150,7 +155,18 @@ class Source:
     def owns(self, url: str) -> bool:
         host = re.sub(r"^https?://", "", url).split("/")[0].lower()
         host = host.split(":")[0]
-        return any(host == d or host.endswith("." + d) for d in self.domains)
+        if not any(host == d or host.endswith("." + d) for d in self.domains):
+            return False
+        path = "/" + url.split("/", 3)[3].split("?", 1)[0] \
+            if "/" in re.sub(r"^https?://", "", url) else "/"
+        if self.adapter == SI_TEAM_PAGE:
+            return bool(re.match(
+                rf"^/nfl/{re.escape(self.si_team_slug)}/onsi/", path))
+        if self.adapter == SI_FANTASY_PAGE:
+            return path.startswith("/onsi/fantasy/")
+        if self.filter_url_pattern:
+            return bool(re.search(self.filter_url_pattern, path))
+        return True
 
 
 def load(path: Path | None = None) -> list[Source]:
@@ -273,4 +289,16 @@ def problems(sources: list[Source]) -> list[str]:
                 if not approved:
                     bad.append(f"{s.source_id}: AUTO_READY with no "
                                f"FIRSTHAND_APPROVED author for {team}")
+        if s.adapter == SI_FANTASY_PAGE:
+            if s.source_class != SI_ONSI_ANALYSIS:
+                bad.append(f"{s.source_id}: Fantasy On SI must be classed "
+                           f"{SI_ONSI_ANALYSIS}")
+            if s.status != MANUAL_REVIEW_ONLY:
+                bad.append(f"{s.source_id}: Fantasy On SI must remain "
+                           "MANUAL_REVIEW_ONLY")
+            if s.reporting_type != "ANALYSIS":
+                bad.append(f"{s.source_id}: Fantasy On SI must use ANALYSIS")
+            if s.teams:
+                bad.append(f"{s.source_id}: Fantasy On SI cannot claim one "
+                           "team")
     return bad

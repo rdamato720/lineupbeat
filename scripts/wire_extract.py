@@ -88,7 +88,11 @@ def source_context(store, source_id: str, item: dict | None = None) -> dict:
                     "author": s.reporter_name, "teams": s.teams,
                     "reporter_voice": named, "auto_captions": False,
                     "multi_speaker": False, "channel_id": "",
-                    "paid": False, "si": s.adapter == artreg.SI_TEAM_PAGE,
+                    "paid": False,
+                    "si": s.adapter in (artreg.SI_TEAM_PAGE,
+                                         artreg.SI_FANTASY_PAGE),
+                    "analysis_lane": s.source_class in (
+                        artreg.SI_ONSI, artreg.SI_ONSI_ANALYSIS),
                     "refuse": "", "ownership": s.source_ownership}
     chans, _ = yt.load()
     for c in chans:
@@ -102,7 +106,8 @@ def source_context(store, source_id: str, item: dict | None = None) -> dict:
     return {"type": "unknown", "name": source_id, "author": "", "teams": [],
             "reporter_voice": False, "auto_captions": False,
             "multi_speaker": True, "channel_id": "", "paid": False,
-            "si": False, "refuse": "", "ownership": artreg.INDEPENDENT}
+            "si": False, "analysis_lane": False, "refuse": "",
+            "ownership": artreg.INDEPENDENT}
 
 
 def spans_from_article(item) -> list[tuple[str, str, float | None, float | None]]:
@@ -177,9 +182,11 @@ def extract_item(store, item, reg, ctx, cfg, dry=False,
             continue                     # a passage naming nobody is not evidence
         stats["with_players"] += 1
 
-        # Is this a current football development at all? Most of a team page
-        # is not, and the publisher's own fantasy advice never is.
-        irrelevant = ev.relevance(text)
+        # Is this a current football development at all? The ordinary
+        # reporting lane stays strict; the explicit On SI analysis lane keeps
+        # attributed fantasy opinion visible for named-human review.
+        irrelevant = ev.relevance(
+            text, allow_analysis=bool(ctx.get("analysis_lane")))
         if irrelevant:
             stats["not_relevant"] += 1
             stats.setdefault("relevance_reasons", {})
