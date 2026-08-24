@@ -35,6 +35,7 @@ from wire.store import WireStore
 
 
 _SI_AUTHORS: dict = {}
+X_BRIDGE_NOTE = "CACHED_X_REVIEW_BRIDGE"
 
 
 def _si_authors() -> dict:
@@ -193,6 +194,22 @@ def extract_item(store, item, reg, ctx, cfg, dry=False,
             reporter_voice=reporter_voice,
             auto_captions=ctx["auto_captions"],
             multi_speaker=ctx["multi_speaker"])
+        if ctx.get("type") == "x":
+            why = list(why)
+            if not ctx.get("authority_verified"):
+                why.append(
+                    "X account is enabled for cached discovery but has no "
+                    "researched firsthand Wire authority"
+                )
+            # A team can authoritatively designate its own transaction or
+            # participation status.  An independent X account repeating the
+            # same words cannot borrow that authority merely because the
+            # deterministic classifier recognised designation language.
+            if (klass == ev.OFFICIAL_DESIGNATION
+                    and ctx.get("ownership") != artreg.TEAM_OWNED):
+                klass, conf = ev.UNCERTAIN, 0.3
+                why.insert(0, "independent X post is not the club's own "
+                              "official designation")
         gid = ev.group_id(item["source_item_id"], location, text)
 
         for name, hits, how in named:
@@ -383,7 +400,8 @@ def main():
         return 0
 
     items = store.conn.execute(
-        "SELECT * FROM wire_source_items WHERE extraction_status = 'COMPLETE'"
+        "SELECT * FROM wire_source_items WHERE extraction_status = 'COMPLETE' "
+        "AND COALESCE(note, '') != ?", (X_BRIDGE_NOTE,)
     ).fetchall()
     if args.only:
         items = [i for i in items if args.only.lower() in i["source_id"].lower()]

@@ -96,6 +96,7 @@ python scripts/test_wire_page.py
 python scripts/test_wire_homepage.py
 python scripts/test_resolve.py
 python scripts/test_tapi.py
+python scripts/test_wire_x_import.py
 python scripts/wire_fixtures.py
 python scripts/wire_health.py --check
 python -m beatwire.cli doctor --sport nfl
