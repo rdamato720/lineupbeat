@@ -94,6 +94,10 @@ refresh workflow.
 - Never change a human-approved sentence by changing only its structured
   direction/mechanism fields. Badge and prose must agree, or the item is not
   publishable as written.
+- Mobile event deduplication may combine only the same stable player,
+  mechanism, direction and content type inside its declared time window.
+  Conflicting participation states, team-unit levels, transaction types or
+  injury areas are materially different and must remain separate.
 
 ## Required verification
 

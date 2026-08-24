@@ -103,6 +103,11 @@ def render(manifest: dict) -> str:
             "",
             "</details>",
         ])
+        corroborating = card.get("corroborating_sources") or []
+        if corroborating:
+            lines.extend(["", "**Also reported by:** " + ", ".join(
+                f"[{row['author']} · {row['source']}]({row['url']})"
+                for row in corroborating)])
     lines.extend(["", mobile.encode_manifest(manifest), ""])
     body = "\n".join(lines)
     if len(body.encode()) > MAX_ISSUE_BYTES:

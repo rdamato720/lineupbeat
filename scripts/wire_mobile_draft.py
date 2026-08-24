@@ -22,7 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import wire_publication_preview as publication_preview
 from beatwire.registry import Registry as BeatRegistry
-from wire import players, public_summary, semantic
+from wire import mobile_dedupe, players, public_summary, semantic
 from wire.mobile_approval import MAX_CARDS
 from wire.mobile_draft import OpenAIMobileDraftProvider
 from wire.providers.openai import MODEL
@@ -86,6 +86,10 @@ def published_keys() -> tuple[set[str], set[tuple[str, str]]]:
         if player_id and url:
             pairs.add((player_id, url))
     return ids, pairs
+
+
+def published_cards() -> list[dict]:
+    return list(json.loads(PUBLICATIONS.read_text()).get("publications") or [])
 
 
 def onsi_candidates(registry, cutoff: datetime) -> list[dict]:
@@ -281,6 +285,8 @@ def main() -> int:
                   and (row["player_id"], row["source_url"]) not in published_pairs]
 
     cards, outcomes = [], []
+    publications = published_cards()
+    attempts_by_id, outcomes_by_id = {}, {}
     calls, cost = 0, 0.0
     for candidate in candidates:
         if calls >= args.max_calls or cost >= args.cap or len(cards) >= args.max_cards:
@@ -292,6 +298,7 @@ def main() -> int:
             "attempted_at": attempted_at, "status": "ATTEMPTED",
         }
         seen["attempts"].append(attempt)
+        attempts_by_id[candidate["candidate_id"]] = attempt
         save_seen(seen)
         identity = {key: candidate[key] for key in
                     ("player", "player_id", "team", "position")}
@@ -309,19 +316,58 @@ def main() -> int:
             card = card_from(candidate, result)
             errors.extend(card["readiness_failures"])
             if not errors:
-                cards.append(card)
+                published_match = mobile_dedupe.find_duplicate(card, publications)
+                pending_match = mobile_dedupe.find_duplicate(card, cards)
+                if published_match:
+                    _, _, prior, detail = published_match
+                    status = "DUPLICATE_EVENT"
+                    attempt.update({"duplicate_of": prior.get(
+                        "evidence_candidate_id", prior.get("publication_id", "")),
+                                    "dedupe_detail": detail})
+                elif pending_match:
+                    _, index, prior, detail = pending_match
+                    prior_id = prior["evidence_candidate_id"]
+                    if mobile_dedupe.quality(card) > mobile_dedupe.quality(prior):
+                        refs = list(prior.get("corroborating_sources") or [])
+                        refs.append(mobile_dedupe.source_ref(prior))
+                        card["corroborating_sources"] = refs
+                        cards[index] = card
+                        old_attempt = attempts_by_id[prior_id]
+                        old_attempt.update({"status": "SUPERSEDED_EVENT",
+                                            "duplicate_of": card[
+                                                "evidence_candidate_id"],
+                                            "dedupe_detail": detail})
+                        if prior_id in outcomes_by_id:
+                            outcomes_by_id[prior_id].update({
+                                "decision": "SUPERSEDED_EVENT",
+                                "duplicate_of": card["evidence_candidate_id"],
+                                "dedupe_detail": detail})
+                    else:
+                        prior.setdefault("corroborating_sources", []).append(
+                            mobile_dedupe.source_ref(card))
+                        status = "DUPLICATE_EVENT"
+                        attempt.update({"duplicate_of": prior_id,
+                                        "dedupe_detail": detail})
+                else:
+                    cards.append(card)
             else:
                 status = "VALIDATION_FAILED"
         attempt.update({"status": status, "completed_at": now_utc().replace(
             microsecond=0).isoformat(), "provider": meta["provider"],
             "model": meta["model"], "cost_usd": round(meta["cost_usd"], 6)})
         save_seen(seen)
-        outcomes.append({
+        outcome = {
             "candidate_id": candidate["candidate_id"], "player": candidate["player"],
             "origin": candidate["origin"], "decision": status,
             "reason": result.get("reason", ""), "validation_failures": errors,
             "cost_usd": round(meta["cost_usd"], 6),
-        })
+        }
+        if attempt.get("duplicate_of"):
+            outcome.update({"duplicate_of": attempt["duplicate_of"],
+                            "dedupe_detail": attempt["dedupe_detail"]})
+        outcomes.append(outcome)
+        outcomes_by_id[candidate["candidate_id"]] = outcome
+        save_seen(seen)
 
     payload = {
         "schema_version": SCHEMA,
@@ -333,6 +379,8 @@ def main() -> int:
         "limits": {"max_calls": args.max_calls, "cap_usd": args.cap,
                    "max_cards": args.max_cards},
         "candidate_count": len(candidates), "cards": cards,
+        "event_duplicates": sum(row["decision"] in {
+            "DUPLICATE_EVENT", "SUPERSEDED_EVENT"} for row in outcomes),
         "outcomes": outcomes,
     }
     OUT.write_text(json.dumps(payload, indent=1, ensure_ascii=False) + "\n")

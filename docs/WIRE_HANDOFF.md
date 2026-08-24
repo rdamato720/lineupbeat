@@ -697,6 +697,16 @@ before each request, model calls and observed cost are recorded, and one
 in-flight response may cross the observed cap but no later request is sent.
 An empty or fully ignored batch creates no issue and no deploy.
 
+After deterministic wording validation, the mobile path applies a 12-hour
+event-level duplicate check across the current batch and existing
+publications. It requires the same stable player id, mechanism, direction and
+content type, then checks normalized claim similarity and closed status
+markers. Conflicting participation states, unit levels, transaction types or
+named injury areas remain separate. Corroborating reports are attached to one
+review card; the stronger and more specific pending card survives. A matching
+already-published event is audited as `DUPLICATE_EVENT` and cannot create
+another homepage card.
+
 When cards remain, the monitor commits the exact pending batch and opens an
 assigned `wire-inbox` issue. GitHub Mobile notifications provide the phone
 alert. `.github/workflows/wire-mobile-approve.yml` reacts only to Ralph's

@@ -176,6 +176,7 @@ def main():
             "source_ownership": c["ownership"],
             "reviewer_action": c["reviewer_action"],
             "evidence_candidate_id": c["evidence_candidate_id"],
+            "corroborating_sources": c.get("corroborating_sources", []),
         }
         cid = c["evidence_candidate_id"] or c["player"].lower().replace(" ", "-")
         pub_id = store.publish(cid, payload,
