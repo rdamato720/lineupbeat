@@ -67,7 +67,8 @@ class SportProfile:
 
 
 class Registry:
-    def __init__(self, sport: str, root: Path = ROOT):
+    def __init__(self, sport: str, root: Path = ROOT,
+                 load_players: bool = True):
         self.sport = sport
         self.root = root
         cfg_path = root / "sources" / f"{sport}.yaml"
@@ -81,7 +82,11 @@ class Registry:
         self.sources = [
             Source(sport=sport, **s) for s in raw.get("sources", [])
         ]
-        self.players = self._load_roster()
+        # Capture-only source polling is also used by the editorial Wire.
+        # That boundary may read source identities but must not read the
+        # fantasy roster (which carries rank, ADP and depth fields), so raw
+        # capture can deliberately omit it.
+        self.players = self._load_roster() if load_players else []
 
     def _load_roster(self) -> list[Player]:
         path = self.root / "rosters" / f"{self.sport}.csv"

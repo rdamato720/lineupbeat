@@ -66,11 +66,12 @@ def _client(stub: bool):
 
 def cmd_run(args):
     store = Store(args.db)
-    client = _client(args.stub)
+    client = None if args.capture_only else _client(args.stub)
     report = run_pipeline(
         args.sport, store, client=client, stub=args.stub, offline=args.offline,
         x_daily_cap=args.x_daily_cap,
         tapi_daily_cap=args.tapi_daily_cap, only=args.only,
+        kinds=set(args.kind or []), capture_only=args.capture_only,
     )
     print(report)
     print(f"  totals: {store.stats()}")
@@ -652,6 +653,10 @@ def main():
                    help="hard local ceiling on X spend per day")
     r.add_argument("--only", help="poll only sources whose id or handle "
                                   "contains this, e.g. --only profootballdoc")
+    r.add_argument("--kind", action="append",
+                   help="poll only this source kind; repeat to include more")
+    r.add_argument("--capture-only", action="store_true",
+                   help="store new source items without model extraction")
     r.set_defaults(func=cmd_run)
 
     f = sub.add_parser("feed")
