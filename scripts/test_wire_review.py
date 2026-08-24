@@ -31,6 +31,48 @@ from wire.providers.openai import OpenAIProviderError, OpenAISemanticProvider
 
 
 class ReviewRepairTests(unittest.TestCase):
+    def test_expanded_batch_workflow_is_capped_and_non_publishing(self):
+        workflow = (ROOT / ".github" / "workflows" / "refresh.yml").read_text()
+        batch = workflow.split("  wire-review-batch:", 1)[1].split(
+            "\n  refresh:", 1)[0]
+        self.assertIn('--cap", "0.40", "--max-calls", "20"', batch)
+        self.assertIn("wire_independent_review.py --cap 0.40 --max-calls 20",
+                      batch)
+        self.assertIn("calls > 40", batch)
+        self.assertIn("cost > 1.00", batch)
+        self.assertIn("publication file changed during review batch", batch)
+        self.assertIn("Clear stale review outputs from the runner", batch)
+        self.assertIn("wire_extract.py --limit 1000", batch)
+        self.assertIn("github.event_name == 'pull_request'", batch)
+        self.assertIn("github.event_name == 'workflow_dispatch'", batch)
+        self.assertIn("wire-review-selection-v1", batch)
+        self.assertIn('"approval_statement": "approved"', batch)
+        self.assertIn('"approved_cost_usd": 1.0', batch)
+        self.assertIn('"approved_max_calls": 40', batch)
+        self.assertIn("selection has no valid plan digest; 0 API calls", batch)
+        self.assertIn("Verify review provider before discovery", batch)
+        self.assertIn("0 Responses API calls", batch)
+        self.assertIn("generator did not complete the exact approved cohort", batch)
+        self.assertIn("exact approved cohort is incomplete", batch)
+        self.assertIn('mode = "banked" if banked else "review"', batch)
+        self.assertIn("Confirm banked review receipt", batch)
+        self.assertIn("steps.review_request.outputs.mode != 'banked'", batch)
+        self.assertNotIn("wire_publish.py", batch)
+        self.assertNotIn("wrangler", batch)
+
+    def test_local_approved_runner_is_capped_and_non_publishing(self):
+        runner = (ROOT / "scripts" / "wire_review_approved.py").read_text()
+        self.assertIn('"approved_cost_usd": 1.0', runner)
+        self.assertIn('"approved_max_calls": 40', runner)
+        self.assertIn('"generator_cap_usd": 0.40', runner)
+        self.assertIn('"reviewer_cap_usd": 0.40', runner)
+        self.assertIn('"publications_authorized": 0', runner)
+        self.assertIn('"deployment_authorized": False', runner)
+        self.assertIn("generator.authenticate()", runner)
+        self.assertIn("publication file changed during review", runner)
+        self.assertNotIn("wire_publish.py", runner)
+        self.assertNotIn("wrangler", runner)
+
     def test_named_human_suppression_receipt_is_valid_and_banked(self):
         receipt, errors = human_review.validate_ledger()
         self.assertEqual(errors, [])
