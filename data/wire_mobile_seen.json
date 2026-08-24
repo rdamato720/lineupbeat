@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 10,
+ "count": 15,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -111,6 +111,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00444
+  },
+  {
+   "candidate_id": "mobile:x:5a2cd88bb3303ca84c69",
+   "player_id": "00-0039910",
+   "source_url": "https://x.com/john_keim/status/2092032377325236610",
+   "attempted_at": "2026-08-24T23:44:30+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-24T23:44:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004502
+  },
+  {
+   "candidate_id": "mobile:x:63e5def4f1c46a2b7a2a",
+   "player_id": "00-0040138",
+   "source_url": "https://x.com/AaronWilson_NFL/status/2092032030833828016",
+   "attempted_at": "2026-08-24T23:44:37+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-24T23:44:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004584
+  },
+  {
+   "candidate_id": "mobile:onsi:38be32b86ca565c2097d",
+   "player_id": "00-0035535",
+   "source_url": "https://www.si.com/nfl/giants/onsi/giants-more-trades-coming-harbaugh-faalele-01m0txdyt0yx",
+   "attempted_at": "2026-08-24T23:44:41+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-24T23:44:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003986
+  },
+  {
+   "candidate_id": "mobile:x:3e473e1082f020452097",
+   "player_id": "00-0035710",
+   "source_url": "https://x.com/RomeovilleKid/status/2092031563781255456",
+   "attempted_at": "2026-08-24T23:44:44+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-24T23:44:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003052
+  },
+  {
+   "candidate_id": "mobile:x:13f4e4deb2a093b60d23",
+   "player_id": "00-0039921",
+   "source_url": "https://x.com/BoBrack/status/2092030767836860534",
+   "attempted_at": "2026-08-24T23:44:46+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-24T23:44:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003402
   }
  ]
 }
