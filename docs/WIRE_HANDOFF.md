@@ -47,6 +47,17 @@ At this checkpoint:
 - `sources/wire_articles.yaml` currently loads 80 registered article sources;
   the last verified health run reported 74 active sources and zero fatal
   problems.
+- The broader beat feed already has 142 enabled X accounts. The cached-X
+  review bridge admits the 140 single-team accounts into PENDING editorial
+  review; the two national accounts remain deferred until national identity
+  and team-routing rules are explicitly reviewed. Ten accounts have an exact
+  team, handle, and named-reporter match in the researched Wire article
+  registry; X configuration alone grants no firsthand authority.
+- GitHub Actions run `32729416858` exercised the bridge over a 72-hour window
+  with zero provider/model calls and zero publications: 2,000 recent cached X
+  posts produced 453 new PENDING evidence rows. After combined deterministic
+  filtering and reconciliation, 12 X-backed candidates appeared in the
+  51-item zero-call review plan.
 - `data/wire_publications.json` is the only Wire publication input read by the
   public builder. Evidence candidates and review artifacts are not public.
 
@@ -62,6 +73,7 @@ data, not fixtures to rewrite casually.
 ```mermaid
 flowchart TD
   A["Trusted website sources"] --> B["Discovery and capture"]
+  X["Cached team-scoped X posts"] --> B
   B --> C["Segmentation and evidence classification"]
   C --> D["Deterministic identity, currentness, relevance and dedup"]
   D --> E["Semantic interpretation"]
@@ -98,6 +110,8 @@ There is no valid path from E or F directly to I.
 | `wire/providers/` | Rules, Anthropic, OpenAI, and independent-review transports |
 | `wire/store.py` | Candidate, impact, decision, audit, and publication persistence |
 | `scripts/wire_backfill.py` | Rolling-window discovery/interpretation/reporting |
+| `scripts/wire_x_import.py` | Read-only cached X bridge into PENDING Wire evidence |
+| `scripts/test_wire_x_import.py` | No-network X bridge, authority, identity, and publication-boundary tests |
 | `data/wire_paid_candidates.json` | Durable candidate-id ledger written before model requests |
 | `data/wire_human_reviews.json` | Append-only named-human dark-launch review receipts |
 | `data/wire_openai_promotion.json` | Semantic-promotion receipt bound to corpus/report/pre-publication snapshot hashes |
@@ -145,6 +159,35 @@ fantasy-advice articles, mock drafts, power rankings, mailbags, community
 posts, roster predictions, and marketing content before paying for semantic
 interpretation. Record refusals rather than making them disappear from health
 accounting.
+
+### 5.4 Cached X review bridge
+
+The normal beat feed already polls X under its own cursor and spend cap. The
+editorial Wire does not call those providers again. `scripts/wire_x_import.py`
+opens the latest `beatwire.db` cache read-only, accepts only enabled sources
+with exactly one NFL team, and re-runs the original post text through the
+Wire's deterministic segmentation, currentness, exact identity, relevance,
+and evidence rules.
+
+The bridge is intentionally conservative:
+
+- it makes zero network, model, and publication calls;
+- it ignores disabled and national sources;
+- it accepts only direct `x.com` or `twitter.com` status permalinks;
+- every evidence row begins `PENDING`;
+- a configured account has no firsthand authority unless its team, handle,
+  and named reporter exactly match the researched Wire article registry;
+- the current ten exact matches cover ARI, BAL, CAR, CHI, GB, MIN, NE, PHI,
+  and TEN; the other 130 team accounts remain `UNCERTAIN`;
+- an independent X post cannot be promoted to an official club designation;
+- re-import preserves any non-pending human decision;
+- the article extractor skips bridge-owned rows so a later extraction pass
+  cannot supersede them under an `unknown` source classification.
+
+The review workflow restores the paid-fetch cache without saving over it,
+imports up to 72 hours of cached X posts, and then builds the usual zero-call
+plan. Human selection, capped semantic review, separate final-copy approval,
+publication, and deployment remain later independent actions.
 
 ## 6. Evidence model
 
@@ -555,13 +598,19 @@ python scripts/wire_review_approved.py
 It validates the approval and publication hash, authenticates both configured
 models before the source crawl, runs only the manifest's exact candidate ids,
 enforces the per-pass and total call/cost ceilings, builds the review package,
-and confirms that zero publications were applied. The GitHub review-only job
-performs the same provider preflight before discovery; a missing or invalid
+and confirms that zero publications were applied. A pull request invokes paid
+review only when that pull request itself changes
+`data/wire_review_selection.json`; an old approved cohort is not standing
+authorization for an unrelated code PR. All other pull requests run only the
+code, source-health, publication-boundary, and no-network bridge tests. Build
+a current zero-call plan with an explicit `workflow_dispatch` in `plan` mode.
+For an authorized review, the GitHub review-only job performs the same
+provider preflight before discovery; a missing or invalid
 `OPENAI_API_KEY` therefore stops with zero Responses API calls and no crawl.
 After the exact cohort, append-only paid ledger, independent review, package,
-spend limits, and publication hash are banked together, subsequent PR checks
-validate that receipt without provider authentication, discovery, or paid
-calls.
+spend limits, and publication hash are banked together, checks for that
+selection validate the receipt without provider authentication, discovery,
+or paid calls.
 
 Expected primary artifacts:
 
