@@ -92,8 +92,10 @@ MECHANISM_EVIDENCE = {
     "RETURN_TO_PRACTICE": re.compile(
         r"(?i)\b(return(?:ed|ing)? to practice|back (?:at|on|to)|"
         r"activated|cleared)\b"),
-    "FIRST_TEAM_REPS": re.compile(r"(?i)first[-\s]?team|with the (?:ones|1s)"),
-    "SECOND_TEAM_REPS": re.compile(r"(?i)second[-\s]?team|with the (?:twos|2s)"),
+    "FIRST_TEAM_REPS": re.compile(
+        r"(?i)first[-\s]?team|with the (?:ones|1s)|starting (?:offense|receivers?)"),
+    "SECOND_TEAM_REPS": re.compile(
+        r"(?i)second[-\s]?team|with the (?:twos|2s)|\bQB2\b"),
     "THIRD_TEAM_REPS": re.compile(r"(?i)third[-\s]?team|with the (?:threes|3s)"),
     "RED_ZONE": re.compile(r"(?i)red[-\s]?zone|goal[-\s]?line"),
     "CARRIES": re.compile(r"(?i)carr(?:y|ies|ied)|touches|rushing attempts"),

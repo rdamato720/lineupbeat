@@ -117,7 +117,8 @@ def main():
         else:
             fails.extend(PS.validate(
                 summary, c["player"], c["evidence"],
-                c.get("content_type", "REPORTING")))
+                c.get("content_type", "REPORTING"),
+                bool(c.get("summary_subject_context"))))
         if not str(c.get("public_summary_approved_by") or "").strip():
             fails.append("public summary has no named-human approval")
         if not str(c.get("commentary_approved_by") or "").strip():
@@ -162,6 +163,8 @@ def main():
             "projection_action": c["projection_action"],
             "reporter_found": c["evidence"],
             "public_evidence_summary": c["public_summary"],
+            "summary_subject_context": bool(
+                c.get("summary_subject_context")),
             "public_evidence_summary_approved_by":
                 c["public_summary_approved_by"],
             "public_evidence_summary_approved_at": c["approved_at"],

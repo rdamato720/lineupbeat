@@ -1966,6 +1966,21 @@ check("attributed fantasy analysis can use an approved source-take sentence",
           "Fantasy On SI lists Travis Kelce as an ADP value at tight end.",
           "Travis Kelce", "Fantasy On SI argues Kelce is a value.",
           "FANTASY_ANALYSIS"))
+check("named author analysis may be explicitly attributed",
+      not PS.validate(
+          "Breer argued the injury could delay Fernando Mendoza's debut.",
+          "Fernando Mendoza", "Breer connected Mendoza's debut to the injury.",
+          "FANTASY_ANALYSIS"))
+check("a reviewed collective subject can rely on the player card header",
+      not PS.validate(
+          "The coach said all four quarterbacks remain under review.",
+          "Will Howard", "Will Howard is one of the four quarterbacks.",
+          "REPORTING", allow_contextual_subject=True))
+check("a missing subject still fails without an explicit contextual exception",
+      "does not name Howard" in PS.validate(
+          "The coach said all four quarterbacks remain under review.",
+          "Will Howard", "Will Howard is one of the four quarterbacks.",
+          "REPORTING"))
 check("an unattributed fantasy take still fails closed",
       "fantasy analysis is not explicitly attributed" in PS.validate(
           "Travis Kelce is an ADP value at tight end.", "Travis Kelce",

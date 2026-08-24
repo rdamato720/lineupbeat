@@ -59,9 +59,11 @@ ATTRIBUTION = re.compile(
     r"(?:said|told|explained|announced|confirmed|added|reported)\b")
 
 ANALYSIS_ATTRIBUTION = re.compile(
-    r"(?i)\b(?:fantasy )?on si\b|\b(?:the article|the author|the analysis)\b"
-    r".{0,45}\b(?:argues?|calls?|views?|ranks?|lists?|highlights?|"
-    r"recommends?|prefers?|identifies?)\b")
+    r"(?i)\b[A-Z][a-z]+\s+argu(?:e|es|ed)\b|"
+    r"\b[A-Z][a-z]+\s+[A-Z][a-z]+\s+argu(?:e|es|ed)\b|"
+    r"\b(?:fantasy )?on si\b|\b(?:the article|the author|the analysis)\b"
+    r".{0,45}\b(?:argu(?:e|es|ed)|calls?|views?|ranks?|lists?|highlights?|"
+    r"recommends?|prefers?|identifies?|says?|expects?|projects?)\b")
 
 QUOTE = re.compile(r"[\"“”]|(?<!\w)'(?=\w[^']{12,})")
 
@@ -100,7 +102,8 @@ def looks_truncated(summary: str, evidence: str) -> bool:
 
 
 def validate(summary: str, player_name: str = "", evidence: str = "",
-             content_type: str = "REPORTING") -> list[str]:
+             content_type: str = "REPORTING",
+             allow_contextual_subject: bool = False) -> list[str]:
     """Everything wrong with this sentence. Empty means it may be published."""
     bad = []
     s = (summary or "").strip()
@@ -136,7 +139,8 @@ def validate(summary: str, player_name: str = "", evidence: str = "",
             bad.append(f"inferred timetable or depth-chart movement {m.group(0)!r}")
 
     who = surname(player_name)
-    if who and who.lower() not in _fold(s).lower():
+    if (who and who.lower() not in _fold(s).lower()
+            and not allow_contextual_subject):
         bad.append(f"does not name {who}")
 
     if looks_truncated(s, evidence):
@@ -149,7 +153,8 @@ def check_publication(pub: dict) -> list[str]:
     bad = validate(pub.get("public_evidence_summary", ""),
                    pub.get("player_name", ""),
                    pub.get("reporter_found", ""),
-                   pub.get("content_type", "REPORTING"))
+                   pub.get("content_type", "REPORTING"),
+                   bool(pub.get("summary_subject_context")))
     if not (pub.get("reporter_found") or "").strip():
         bad.append("the stored evidence is missing; the summary may not "
                    "replace it")
