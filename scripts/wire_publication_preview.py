@@ -79,7 +79,8 @@ TEMPORARY_CONTEXT = re.compile(
     r"(?i)\b(one (?:practice|session|day)|single (?:practice|session|report)|"
     r"during one|that day|on the day|while|with .{0,24} (?:out|absent|"
     r"unavailable|sidelined)|does not (?:say|establish)|for how long|"
-    r"joint practice|this practice)\b")
+    r"joint practice|this practice|next practice|consecutive practices|"
+    r"for now|just yet|no .{0,24}(?:timetable|diagnosis))\b")
 
 ABSENCE_MECHANISMS = {"LIMITED_PARTICIPATION", "INJURY", "RETURN_TO_PRACTICE"}
 
@@ -87,9 +88,10 @@ ABSENCE_MECHANISMS = {"LIMITED_PARTICIPATION", "INJURY", "RETURN_TO_PRACTICE"}
 MECHANISM_EVIDENCE = {
     "INJURY": re.compile(r"(?i)\b(injur|groin|hamstring|ankle|knee|acl|"
                          r"achilles|concussion|surgery|strain|sprain|"
-                         r"sore|tightness|hurt)\b"),
+                         r"sore|tightness|hurt|banged[- ]?up)\b"),
     "RETURN_TO_PRACTICE": re.compile(
-        r"(?i)\b(returned|back (?:at|on|to)|activated|cleared)\b"),
+        r"(?i)\b(return(?:ed|ing)? to practice|back (?:at|on|to)|"
+        r"activated|cleared)\b"),
     "FIRST_TEAM_REPS": re.compile(r"(?i)first[-\s]?team|with the (?:ones|1s)"),
     "SECOND_TEAM_REPS": re.compile(r"(?i)second[-\s]?team|with the (?:twos|2s)"),
     "THIRD_TEAM_REPS": re.compile(r"(?i)third[-\s]?team|with the (?:threes|3s)"),
@@ -207,7 +209,10 @@ margin:16px 0;color:var(--quiet);font-size:.88rem}
                  f'<span class="dir {cls}">{e(DIRECTION_WORD.get(d, d))}</span>'
                  f'</div>')
         p.append('<div class="lab">What the reporter found</div>')
-        p.append(f'<div class="rep">{e(c["evidence"])}</div>')
+        # Readers see the named-human-approved summary. The complete source
+        # passage remains in ``evidence`` for audit and publication checks.
+        reporting = c.get("public_summary") or c["evidence"]
+        p.append(f'<div class="rep">{e(reporting)}</div>')
         own = c["ownership"] == "TEAM_OWNED"
         p.append(f'<p class="src">{e(c["author"] or "Staff")}, '
                  f'{e(c["source"])}{" &middot; " if c["date"] else ""}'
@@ -258,7 +263,7 @@ def main():
             "horizon": d.get("horizon", case["horizon"]),
             "projection_action": d.get("projection_action", "NONE"),
             "reader_label": d.get("reader_label", ""),
-            "claude_original_commentary": case["commentary"],
+            "model_original_commentary": case["commentary"],
             "evidence": case["text"], "commentary": commentary,
             "source": case.get("source_name", ""),
             "author": case.get("author", ""),
