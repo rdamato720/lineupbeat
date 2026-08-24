@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 5,
+ "count": 10,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -56,6 +56,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004664
+  },
+  {
+   "candidate_id": "mobile:onsi:11a3059ee448a36758a1",
+   "player_id": "00-0038120",
+   "source_url": "https://www.si.com/nfl/jets/onsi/3-studs-3-duds-from-jets-training-camp-practice-8-24-geno-smith-builds-off-preseason-debut-01m0sv6cvmpf",
+   "attempted_at": "2026-08-24T23:14:33+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-24T23:14:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003782
+  },
+  {
+   "candidate_id": "mobile:onsi:226211b340c080d83ca4",
+   "player_id": "00-0041056",
+   "source_url": "https://www.si.com/nfl/jets/onsi/3-studs-3-duds-from-jets-training-camp-practice-8-24-geno-smith-builds-off-preseason-debut-01m0sv6cvmpf",
+   "attempted_at": "2026-08-24T23:14:37+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-24T23:14:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004118
+  },
+  {
+   "candidate_id": "mobile:onsi:9647bc5e43933ccc009c",
+   "player_id": "00-0030565",
+   "source_url": "https://www.si.com/nfl/jets/onsi/3-studs-3-duds-from-jets-training-camp-practice-8-24-geno-smith-builds-off-preseason-debut-01m0sv6cvmpf",
+   "attempted_at": "2026-08-24T23:14:41+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-24T23:14:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004308
+  },
+  {
+   "candidate_id": "mobile:onsi:b81ae8813cc3887be57f",
+   "player_id": "00-0041032",
+   "source_url": "https://www.si.com/nfl/jets/onsi/3-studs-3-duds-from-jets-training-camp-practice-8-24-geno-smith-builds-off-preseason-debut-01m0sv6cvmpf",
+   "attempted_at": "2026-08-24T23:14:45+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-24T23:14:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004952
+  },
+  {
+   "candidate_id": "mobile:onsi:21f312306fa32d9a8e79",
+   "player_id": "00-0041511",
+   "source_url": "https://www.si.com/nfl/jets/onsi/3-studs-3-duds-from-jets-training-camp-practice-8-24-geno-smith-builds-off-preseason-debut-01m0sv6cvmpf",
+   "attempted_at": "2026-08-24T23:14:49+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-24T23:14:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00444
   }
  ]
 }
