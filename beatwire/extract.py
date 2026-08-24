@@ -34,7 +34,7 @@ from .resolve import Resolver, normalize, surname
 RESOLVE_MIN = 0.85
 
 
-MODEL = os.environ.get("BEATWIRE_MODEL", "claude-haiku-4-5")
+MODEL = os.environ.get("BEATWIRE_MODEL", "gpt-5.6-luna")
 
 # A clip stays attached only if the post it came from is about fewer than
 # this many players. Three is the line between "here is a player doing
@@ -493,10 +493,11 @@ who was not, the other is not playing who was. Horizon is day for both: this
 is about Sunday, not about the season. A quarterback change that lasts is a
 different claim, and the source would have to say so.
 
-Return ONLY a JSON array. No prose, no markdown fences."""
+Return ONLY a JSON object with one key, `items`, whose value is the JSON array.
+No prose and no markdown fences."""
 
-# What never changes between calls. Sent as a second cached system block, so
-# it is bought once every five minutes rather than once per article.
+# What never changes between calls. It stays in the instructions prefix so
+# repeated requests can reuse the same provider-side prompt-cache prefix.
 FIXED_TMPL = """{profile}
 
 Valid categories: {categories}
@@ -511,9 +512,41 @@ Published: {published}
 {text}
 --- END ITEM ---
 
-Return a JSON array of objects with keys:
+Return a JSON object with an `items` array of objects with keys:
 player, category, event, horizon, claim, actionability, tags,
-position_hint (optional)"""
+position_hint (use null when the source gives no position hint)"""
+
+
+EXTRACTION_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "items": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "player": {"type": "string"},
+                    "category": {"type": "string", "enum": list(CATEGORIES)},
+                    "event": {"type": "string", "enum": list(EVENTS)},
+                    "horizon": {"type": "string", "enum": ["day", "season"]},
+                    "claim": {"type": "string"},
+                    "actionability": {
+                        "type": "integer", "minimum": 0, "maximum": 3,
+                    },
+                    "tags": {"type": "array", "items": {"type": "string"}},
+                    "position_hint": {"type": ["string", "null"]},
+                },
+                "required": [
+                    "player", "category", "event", "horizon", "claim",
+                    "actionability", "tags", "position_hint",
+                ],
+                "additionalProperties": False,
+            },
+        },
+    },
+    "required": ["items"],
+    "additionalProperties": False,
+}
 
 
 # ---------------------------------------------------------------------------
@@ -574,52 +607,47 @@ def mentions_any_player(item: RawItem, resolver: Resolver, team: str | None,
 # Stage 2: extraction
 # ---------------------------------------------------------------------------
 
-def _strip_fences(s: str) -> str:
-    s = s.strip()
-    s = re.sub(r"^```(?:json)?", "", s).strip()
-    s = re.sub(r"```$", "", s).strip()
-    return s
+def _redact_provider_error(value: object) -> str:
+    text = str(value)
+    key = os.environ.get("OPENAI_API_KEY", "")
+    if key:
+        text = text.replace(key, "[REDACTED]")
+    return re.sub(r"sk-[A-Za-z0-9_\-]{12,}", "[REDACTED]", text)
+
+
+class OpenAIExtractionError(RuntimeError):
+    """An OpenAI transport or response failure with secrets removed."""
 
 
 def _call_model(prompt: str, client, fixed: str = "") -> list[dict]:
-    # Cache the system prompt.
-    #
-    # It is identical on every call and it is most of the input: the rules,
-    # the event vocabulary, the severity and reference guidance run to a few
-    # thousand tokens, against a few hundred for the article itself. We were
-    # paying to send all of it thirteen hundred times a day.
-    #
-    # A week of billing came to $59.61, of which $40.36 -- sixty-eight
-    # percent -- was uncached input, with no cache reads at all.
-    #
-    # The marker goes on the system block only. The article text is different
-    # every time and there is nothing to reuse there.
-    resp = client.messages.create(
-        model=MODEL,
-        max_tokens=2000,
-        # Two blocks, one breakpoint at the end of the second.
-        #
-        # The rules were cached and the vocabulary was not: the event list,
-        # the categories and the sport profile sat in the user message, after
-        # the breakpoint, so 316 identical tokens were bought at full price
-        # on every call. At seventeen hundred calls an hour that is half a
-        # million tokens a day paying ten times what they should.
-        #
-        # An X post is forty to eighty tokens. Everything else about a call
-        # is the same as the last one.
-        system=[
-            {"type": "text", "text": SYSTEM},
-            {"type": "text", "text": fixed,
-             "cache_control": {"type": "ephemeral"}},
-        ],
-        messages=[{"role": "user", "content": prompt}],
-    )
-    text = "".join(b.text for b in resp.content if b.type == "text")
+    # The long rules, event vocabulary and sport profile are the stable
+    # instructions prefix; only the source item in `input` changes per call.
     try:
-        parsed = json.loads(_strip_fences(text))
-    except json.JSONDecodeError:
-        return []
-    return parsed if isinstance(parsed, list) else []
+        resp = client.responses.create(
+            model=MODEL,
+            instructions=f"{SYSTEM}\n\n{fixed}",
+            input=prompt,
+            store=False,
+            reasoning={"effort": "low"},
+            text={
+                "format": {
+                    "type": "json_schema",
+                    "name": "beatwire_extraction",
+                    "strict": True,
+                    "schema": EXTRACTION_SCHEMA,
+                }
+            },
+        )
+    except Exception as exc:
+        raise OpenAIExtractionError(
+            _redact_provider_error(f"{type(exc).__name__}: {exc}")) from None
+    try:
+        parsed = json.loads(resp.output_text)
+        rows = parsed["items"]
+    except (AttributeError, KeyError, TypeError, json.JSONDecodeError) as exc:
+        raise OpenAIExtractionError(
+            _redact_provider_error(f"invalid structured response: {exc}")) from None
+    return rows if isinstance(rows, list) else []
 
 
 def extract(
@@ -668,7 +696,7 @@ def extract(
         rows = local_model.extract_rows(item.text[:6000])
     else:
         if client is None:
-            raise ValueError("Pass an Anthropic client or use stub=True")
+            raise ValueError("Pass an OpenAI client or use stub=True")
         rows = _call_model(prompt, client, fixed)
 
     # How many distinct players does this item talk about? Counted before the
