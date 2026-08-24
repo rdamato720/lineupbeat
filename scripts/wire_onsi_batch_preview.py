@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the exact, publication-disabled preview for the loose On SI batch."""
+"""Build an exact, publication-disabled preview for a reviewed Wire batch."""
 
 from __future__ import annotations
 
@@ -80,7 +80,8 @@ def enrich(card: dict, identities: dict[str, list[dict]],
     failures = publication_preview.readiness_failures(check)
     failures.extend(public_summary.validate(
         out["public_summary"], out["player"], out["evidence"],
-        out.get("content_type", "REPORTING")))
+        out.get("content_type", "REPORTING"),
+        bool(out.get("summary_subject_context"))))
     if not out["evidence"].strip():
         failures.append("stored evidence is empty")
     out["readiness_failures"] = sorted(set(failures))
@@ -90,7 +91,8 @@ def enrich(card: dict, identities: dict[str, list[dict]],
 def render(payload: dict) -> str:
     e = html.escape
     parts = ["<!doctype html><meta charset='utf-8'>",
-             "<title>On SI Wire publication preview</title>", """<style>
+             f"<title>{e(payload.get('batch_label', 'Wire batch'))} "
+             "publication preview</title>", """<style>
 :root{--bg:#f8f7f3;--card:#fff;--ink:#171914;--muted:#62675e;--rule:#d9d7cf;
 --up:#28653a;--down:#a43830;--accent:#8a5a1b}*{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui}
@@ -107,17 +109,17 @@ font-weight:700;margin:15px 0 5px}.block{border-left:3px solid var(--rule);paddi
 .src a{color:inherit}.fail{color:var(--down);font-size:.85rem}
 .ok{color:var(--up);font-weight:700}.top{border-left:4px solid var(--accent);
 padding:10px 15px;background:#fff7e9;border-radius:7px}</style>""", "<main>",
-             "<h1>The Wire — wider On SI batch</h1>",
+             f"<h1>The Wire — {e(payload.get('batch_label', 'review batch'))}</h1>",
              f"<p class='meta'>{len(payload['cards'])} exact reader cards · "
              f"{payload['catalog_counts']['source_items']} source items reviewed · "
              f"{payload.get('model_calls', 0)} model calls · "
              f"{payload.get('publications_applied', 0)} publications applied</p>",
              ("<p class='top'><b>Approval recorded:</b> Ralph approved all "
-              "36 cards exactly as shown. The approved batch has been "
+              f"{len(payload['cards'])} cards exactly as shown. The approved batch has been "
               "applied to the publication store.</p>" if
               payload.get("publications_applied")
               else "<p class='top'><b>Approval recorded:</b> Ralph approved "
-              "all 36 cards exactly as shown. The publication step remains "
+              f"all {len(payload['cards'])} cards exactly as shown. The publication step remains "
               "separate.</p>" if payload.get("reviewer_action") == "APPROVED"
               else "<p class='top'><b>Approval needed:</b> review the exact "
               "summary and Lineup Beat impact text below. Nothing on this "
@@ -151,10 +153,13 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--approve", action="store_true")
     parser.add_argument("--actor", default="")
+    parser.add_argument("--source", type=Path, default=SOURCE)
+    parser.add_argument("--out-json", type=Path, default=OUT_JSON)
+    parser.add_argument("--out-html", type=Path, default=OUT_HTML)
     args = parser.parse_args()
     if args.approve and not args.actor.strip():
         raise SystemExit("--approve requires --actor")
-    source = json.loads(SOURCE.read_text())
+    source = json.loads(args.source.read_text())
     player_payload = json.loads(PLAYERS.read_text())
     identities: dict[str, list[dict]] = {}
     for row in player_payload["players"]:
@@ -162,15 +167,16 @@ def main() -> int:
     conn = sqlite3.connect(DB)
     cards = [enrich(card, identities, conn) for card in source["cards"]]
     catalog = json.loads((ROOT / "data" / "wire_inclusive_review.json").read_text())
+    catalog_counts = source.get("catalog_counts") or {
+        "source_items": catalog["counts"]["articles"],
+        "player_candidates": catalog["counts"]["player_candidates"],
+        "discovered_not_captured": catalog["counts"]["discovered_not_captured"],
+    }
     payload = {**{key: value for key, value in source.items() if key != "cards"},
                "readiness": "PASS" if all(not c["readiness_failures"]
                                              for c in cards) else "FAIL",
-               "catalog_counts": {
-                   "source_items": catalog["counts"]["articles"],
-                   "player_candidates": catalog["counts"]["player_candidates"],
-                   "discovered_not_captured":
-                       catalog["counts"]["discovered_not_captured"],
-               }, "cards": cards, "held_back": []}
+               "catalog_counts": catalog_counts,
+               "cards": cards, "held_back": []}
     if args.approve:
         approved_at = datetime.now(timezone.utc).replace(
             microsecond=0).isoformat().replace("+00:00", "Z")
@@ -184,7 +190,8 @@ def main() -> int:
             card["readiness_failures"] = publication_preview.readiness_failures(card)
             card["readiness_failures"].extend(public_summary.validate(
                 card["public_summary"], card["player"], card["evidence"],
-                card.get("content_type", "REPORTING")))
+                card.get("content_type", "REPORTING"),
+                bool(card.get("summary_subject_context"))))
             card["readiness_failures"] = sorted(
                 set(card["readiness_failures"]))
         before_payload = json.loads(PUBLICATIONS.read_text())
@@ -202,7 +209,8 @@ def main() -> int:
             "reviewer": args.actor,
             "reviewer_name": "Ralph Damato",
             "approved_at": approved_at,
-            "approval_statement": "Ralph approved all 36 cards as written.",
+            "approval_statement": (
+                f"Ralph approved all {len(cards)} cards as written."),
             "publication_count_before": before,
             "publication_count_after": after,
             "publications_applied": already_applied,
@@ -212,8 +220,9 @@ def main() -> int:
         CANON_JSON.write_text(json.dumps(
             payload, indent=1, ensure_ascii=False) + "\n")
         CANON_HTML.write_text(render(payload))
-    OUT_JSON.write_text(json.dumps(payload, indent=1, ensure_ascii=False) + "\n")
-    OUT_HTML.write_text(render(payload))
+    args.out_json.write_text(
+        json.dumps(payload, indent=1, ensure_ascii=False) + "\n")
+    args.out_html.write_text(render(payload))
     blocked = [card for card in cards if card["readiness_failures"]]
     print(f"  {len(cards)} draft card(s); {len(cards)-len(blocked)} pass, "
           f"{len(blocked)} blocked")
