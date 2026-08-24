@@ -201,9 +201,11 @@ def discover(store, cutoff, limit_per_source: int) -> dict:
     stats["sources_checked"] = len(sources)
     per_source = {}
     for src in sources:
+        hours = max(1, int((now_utc() - cutoff).total_seconds() / 3600))
         r = subprocess.run(
             [sys.executable, "scripts/wire_ingest.py", "--review",
-             "--only", src.source_id, "--limit", str(limit_per_source)],
+             "--only", src.source_id, "--limit", str(limit_per_source),
+             "--hours", str(hours)],
             capture_output=True, text=True, timeout=1800)
         out = r.stdout
         import re as _re
@@ -217,6 +219,7 @@ def discover(store, cutoff, limit_per_source: int) -> dict:
             per_source[src.source_id] = {"new": new, "seen": seen,
                                          "not_candidate": bad}
         for key, label in (("refused before capture", "refused_pre_capture"),
+                           ("outside time window", "outside_window"),
                            ("refused on content type", "refused_content"),
                            ("extraction failed", "extraction_failed"),
                            ("other  ", "other")):
@@ -499,11 +502,13 @@ def main():
         print(f"    {'already stored':<30}{d.get('articles_seen', 0):>6}")
         print(f"    {'not a candidate':<30}{nc:>6}")
         for label, key in (("refused before capture", "refused_pre_capture"),
+                           ("outside time window", "outside_window"),
                            ("refused on content type", "refused_content"),
                            ("extraction failed", "extraction_failed"),
                            ("other", "other")):
             print(f"       {label:<28}{d.get(key, 0):>6}")
-        parts = sum(d.get(k, 0) for k in ("refused_pre_capture",
+        parts = sum(d.get(k, 0) for k in ("outside_window",
+                                          "refused_pre_capture",
                                           "refused_content",
                                           "extraction_failed", "other"))
         print(f"       {'sub-total':<28}{parts:>6}"

@@ -271,6 +271,26 @@ sources:
     # Connection times out on every attempt, homepage and article alike.
     probe: {discovery: none, article_http: timeout, attempts: 2}
 
+  # ----------------------------------------------- FANTASY ON SI (editorial)
+  # Manually reviewed fantasy analysis. This source can contribute attributed
+  # opinion, rankings and speculation, but it never counts as firsthand or as
+  # independent corroboration of an underlying NFL report.
+  - source_id: si_fantasy
+    source_name: Fantasy On SI
+    reporter_name: ''
+    teams: []
+    formats: [article]
+    domains: [si.com]
+    status: MANUAL_REVIEW_ONLY
+    reporting_type: ANALYSIS
+    discovery: si_fantasy_page
+    landing_page: https://www.si.com/onsi/fantasy
+    source_class: SI_ONSI_ANALYSIS
+    source_ownership: INDEPENDENT
+    feed_scope: section
+    active: true
+    trust_tier: 2
+
   # ------------------------------------------------- SI_TEAM_PAGE (32 teams)
   #
   # One adapter, thirty-two landing pages, probed 2026-08-20: all 32

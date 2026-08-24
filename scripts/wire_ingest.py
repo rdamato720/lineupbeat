@@ -22,6 +22,7 @@ import argparse
 import hashlib
 import re
 import sys
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -112,6 +113,9 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--review", action="store_true",
                     help="dark launch: also ingest MANUAL_REVIEW_ONLY sources")
+    ap.add_argument("--hours", type=int,
+                    help="publisher-time discovery window; older items are "
+                         "counted and skipped before article fetch")
     args = ap.parse_args()
 
     sources = registry.load()
@@ -163,13 +167,28 @@ def main():
     # content refusals and genuine extraction failures in one number -- and
     # that number was then reported as "extraction failures", which it never
     # was. Every outcome now lands in exactly one bucket.
-    totals = {"candidates": 0, "seen": 0, "refused_pre_capture": 0,
+    totals = {"candidates": 0, "seen": 0, "outside_window": 0,
+              "refused_pre_capture": 0,
               "refused_content": 0, "extraction_failed": 0, "other": 0}
     detail = {}
     for src in pool:
         found = capture.discover(src, limit=args.limit)
         print(f"\n  {src.source_id}  [{src.adapter}]  {len(found)} in feed")
         for item in found:
+            if args.hours and item.get("published_at"):
+                try:
+                    published = datetime.fromisoformat(
+                        str(item["published_at"]).replace("Z", "+00:00"))
+                    if published.tzinfo is None:
+                        published = published.replace(tzinfo=timezone.utc)
+                    cutoff = datetime.now(timezone.utc) - timedelta(
+                        hours=args.hours)
+                    if published < cutoff:
+                        totals["outside_window"] += 1
+                        print(f"    {'outside window':<38} {item['url'][:70]}")
+                        continue
+                except (TypeError, ValueError):
+                    pass
             result = ingest_one(store, src, item, args)
             if result == "seen":
                 totals["seen"] += 1
@@ -194,11 +213,13 @@ def main():
             print(f"    {result:<38} {item['url'][:70]}")
             capture.polite_sleep(1.0)
 
-    not_candidate = (totals["refused_pre_capture"] + totals["refused_content"]
+    not_candidate = (totals["outside_window"] + totals["refused_pre_capture"]
+                     + totals["refused_content"]
                      + totals["extraction_failed"] + totals["other"])
     print(f"\n  new candidates {totals['candidates']}, "
           f"already seen {totals['seen']}, not-a-candidate {not_candidate}")
     print(f"    refused before capture   {totals['refused_pre_capture']}")
+    print(f"    outside time window      {totals['outside_window']}")
     print(f"    refused on content type  {totals['refused_content']}")
     print(f"    extraction failed        {totals['extraction_failed']}")
     print(f"    other                    {totals['other']}")

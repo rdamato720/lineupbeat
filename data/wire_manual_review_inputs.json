@@ -1,0 +1,38 @@
+{
+ "schema_version": "wire-manual-review-inputs-v1",
+ "items": [
+  {
+   "kind": "article_exception",
+   "reason": "explicitly requested by Ralph Damato; useful analysis outside the rolling window",
+   "url": "https://www.si.com/onsi/fantasy/news/top-5-tight-end-adp-values-travis-kelce-is-still-a-valuable-fantasy-asset"
+  },
+  {
+   "kind": "x_post",
+   "source_id": "nfl-atl-tapi-torimcelhaney",
+   "source_name": "Atlanta Falcons",
+   "author": "Tori McElhaney",
+   "source_ownership": "TEAM_OWNED",
+   "published_at": "2026-08-24T16:06:08.412000+00:00",
+   "url": "https://x.com/tori_mcelhaney/status/2091919998998470892",
+   "text": "\"This is a big step for Mike, and he is excited for it,\" Kevin Stefanski on Michael Penix Jr. getting the green light to participate in full 11-on-11 periods in practice today.",
+   "players": [
+    {"name": "Michael Penix Jr.", "team": "ATL", "position": "QB",
+     "evidence_class": "DIRECT_QUOTATION"}
+   ]
+  },
+  {
+   "kind": "x_post",
+   "source_id": "nfl-hou-tapi-aaronwilsonnfl",
+   "source_name": "KPRC 2",
+   "author": "Aaron Wilson",
+   "source_ownership": "INDEPENDENT",
+   "published_at": "2026-08-24T15:34:11.803000+00:00",
+   "url": "https://x.com/AaronWilson_NFL/status/2091911960157692023",
+   "text": "Jaylin Noel incorporated into the Texans offense more today with a touchdown catch and some underneath routes.",
+   "players": [
+    {"name": "Jaylin Noel", "team": "HOU", "position": "WR",
+     "evidence_class": "FIRSTHAND_OBSERVATION"}
+   ]
+  }
+ ]
+}

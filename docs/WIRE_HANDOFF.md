@@ -16,7 +16,8 @@ engine, or an autonomous publisher.
 
 Each card answers two different questions:
 
-1. **What changed?** One short, human-approved factual sentence.
+1. **What changed or what is the source's take?** One short, human-approved
+   sentence, explicitly labelled `What changed` or `Fantasy analysis`.
 2. **Lineup Beat impact.** A separate, human-approved fantasy interpretation
    that states what the evidence supports and what it does not establish.
 
@@ -138,13 +139,19 @@ approved-reporter declaration even when it does not contain a magic phrase
 such as "I saw." An unresearched byline does not receive that benefit. Hedges,
 relay language, and attribution still override the byline.
 
-### 5.3 Refuse before capture or interpretation
+### 5.3 Capture first for inclusive review
 
-Reject wrong-team canonicals, national syndication, aggregation, betting,
-fantasy-advice articles, mock drafts, power rankings, mailbags, community
-posts, roster predictions, and marketing content before paying for semantic
-interpretation. Record refusals rather than making them disappear from health
-accounting.
+The inclusive On SI review path keeps opinion, speculation, aggregation,
+fantasy advice, ADP arguments, mock drafts, rankings, betting angles,
+mailbags, roster predictions and isolated practice notes visible for a human.
+None receives firsthand authority merely by being captured. Promotional or
+sponsor copy, failed captures and unresolved player identities remain
+unpublishable, and their outcomes stay visible in health accounting.
+
+`scripts/wire_inclusive_review.py --hours 24` builds the complete review
+catalog with zero model calls and zero publications. This catalog is broader
+than the paid semantic funnel by design; semantic suppression must not hide an
+item from human editorial review.
 
 ## 6. Evidence model
 

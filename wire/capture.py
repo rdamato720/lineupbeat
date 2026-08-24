@@ -26,7 +26,7 @@ import trafilatura
 
 from .registry import (AUTHOR_PAGE_SCRAPE, EXCERPT_FEED_PAGE_FETCH, NFL_TEAM_SITE, 
                        FULL_TEXT_FEED, PAID_LABEL, SITE_FEED_AUTHOR_FILTER, 
-                       SI_TEAM_PAGE, Source)
+                       SI_FANTASY_PAGE, SI_TEAM_PAGE, Source)
 
 # A real browser string, and not as a trick. Several publishers answer a bare
 # urllib agent with 403 and a browser agent with the article -- Arizona Sports
@@ -165,6 +165,8 @@ def discover(src: Source, limit: int = 25) -> list[dict]:
         return []
     if src.adapter == SI_TEAM_PAGE:
         return _discover_si(src, limit)
+    if src.adapter == SI_FANTASY_PAGE:
+        return _discover_si_fantasy(src, limit)
     if src.adapter == NFL_TEAM_SITE:
         return _discover_official(src, limit)
     if src.adapter == AUTHOR_PAGE_SCRAPE:
@@ -240,6 +242,31 @@ def _discover_si(src: Source, limit: int) -> list[dict]:
     for item in raw:
         verdict = _si.evaluate(item, team, authors,
                                item.get("discovery_url", ""))
+        out.append({
+            "url": verdict.canonical_url,
+            "headline": verdict.headline,
+            "author": verdict.author,
+            "published_at": verdict.published_at,
+            "feed_html": "", "feed_text": "",
+            "si_eligible": verdict.eligible,
+            "si_exclusion_reason": verdict.exclusion_reason,
+            "si_author_class": verdict.author_class,
+            "si_section": verdict.section,
+            "si_discovery_url": verdict.discovery_url,
+        })
+        if len(out) >= limit:
+            break
+    return out
+
+
+def _discover_si_fantasy(src: Source, limit: int) -> list[dict]:
+    """Fantasy On SI analysis, explicitly routed to manual review."""
+    from . import si as _si
+    raw, _meta = _si.discover_fantasy(pages=2)
+    out = []
+    for item in raw:
+        verdict = _si.evaluate_fantasy(
+            item, item.get("discovery_url", src.landing_page))
         out.append({
             "url": verdict.canonical_url,
             "headline": verdict.headline,

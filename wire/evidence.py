@@ -226,19 +226,32 @@ SYNTHESIS = re.compile(
     r"there (?:is|has been) talk|many (?:believe|expect))\b")
 
 
-def relevance(text: str) -> str:
+ANALYSIS_HARD_EXCLUSIONS = {
+    "promotional or sponsor copy",
+}
+
+
+def relevance(text: str, *, allow_analysis: bool = False) -> str:
     """Why this span may not become a claim, or "".
 
-    The fantasy-advice rule runs first and is absolute. A source contributes
-    its real-world reporting; its conclusions about who to draft are its own
-    and are not ours to carry, however the sentence is phrased.
+    The normal reporting lane rejects source fantasy advice. The explicit On
+    SI analysis lane admits useful, attributed draft opinion and speculation
+    for named-human review while retaining only promotional-copy exclusions.
     """
     t = text or ""
     for reason, pat in NOT_ACTIONABLE:
         m = pat.search(t)
         if m:
+            if allow_analysis and reason not in ANALYSIS_HARD_EXCLUSIONS:
+                continue
             return f"{reason} ({m.group(0).strip().lower()!r})"
     if not ACTIONABLE.search(t):
+        # Inclusion-first On SI review: a full span that names a registry
+        # player stays visible even when it is background, an ADP argument,
+        # a one-play observation or pure opinion. Human review decides its
+        # usefulness; this layer no longer hides it first.
+        if allow_analysis:
+            return ""
         return "no current role, usage, health or performance development"
     return ""
 

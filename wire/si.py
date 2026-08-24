@@ -78,33 +78,12 @@ AUTHOR_CLASSES = {FIRSTHAND_APPROVED, REPORTING, ANALYSIS_ONLY,
 PROMOTABLE = {FIRSTHAND_APPROVED}
 
 # ------------------------------------------------------------- exclusions
-# Content types that may never become an automatic Wire claim. Each is a
-# reason string as well as a pattern, because "excluded" without "why" is
-# indistinguishable from "missed".
-EXCLUSIONS = [
-    ("fantasy", re.compile(
-        r"\b(fantasy|start[ /]?sit|waiver wire|sleepers?|draft kit|"
-        r"lineup advice|dfs|flex play|start em|sit em)\b", re.I)),
-    ("betting", re.compile(
-        r"\b(odds|betting|sportsbook|parlay|point spread|prop bets?|"
-        r"over/under|moneyline|promo code|bet365|draftkings|fanduel)\b", re.I)),
-    ("mock draft", re.compile(r"\bmock draft\b", re.I)),
-    ("power rankings", re.compile(r"\bpower rankings?\b", re.I)),
-    ("national list", re.compile(
-        r"\b(top \d+|ranking the|best \w+ (still )?available|"
-        r"greatest \w+ of all time|all[- ]time \w+ list)\b", re.I)),
-    ("trade proposal", re.compile(
-        r"\b(trade proposal|blockbuster trade|should trade for|"
-        r"trade idea|proposed trade)\b", re.I)),
-    ("roster prediction", re.compile(
-        r"\b(53[- ]man roster (prediction|projection)|roster prediction|"
-        r"depth chart projection|final roster projection)\b", re.I)),
-    ("winners and losers", re.compile(r"\bwinners and losers\b", re.I)),
-]
+# No topic label blocks an On SI item before named-human review. URL sections
+# that are purely promotional remain excluded below.
+EXCLUSIONS = []
 
 # Sections in the url that are never reporting.
-EXCLUDED_SECTIONS = {"video", "betting", "fantasy", "prediction-markets",
-                     "sportsbook-promos", "promos"}
+EXCLUDED_SECTIONS = {"video", "sportsbook-promos", "promos"}
 
 NO_AUTHOR = re.compile(r"^\s*(si (video )?staff|staff report|admin|"
                        r"the editors?|onsi staff)?\s*$", re.I)
@@ -137,6 +116,7 @@ URL_TEAM = re.compile(r"^https?://(?:www\.)?si\.com/nfl/([a-z0-9-]+)(?:/|$)")
 # matters: /nfl/bills/onsi/<slug> is a Bills On SI article, and nothing else
 # on the broader team page is, whatever it is filed next to.
 ONSI_PATH = re.compile(r"^https?://(?:www\.)?si\.com/nfl/([a-z0-9-]+)/onsi/")
+FANTASY_PATH = re.compile(r"^https?://(?:www\.)?si\.com/onsi/fantasy/")
 
 
 def onsi_team(url: str) -> str | None:
@@ -168,20 +148,36 @@ def section_of(url: str) -> str:
         if parts[1] in TEAMS:
             return parts[2] if len(parts) > 2 else ""
         return parts[1]
+    if len(parts) >= 2 and parts[:2] == ["onsi", "fantasy"]:
+        return parts[2] if len(parts) > 2 else ""
     return ""
 
 
 def parse_landing(html: str) -> list[dict]:
-    """Every NewsArticle block embedded in a landing page."""
+    """Every NewsArticle block embedded in a landing page.
+
+    Team pages expose top-level NewsArticle objects. Fantasy On SI wraps the
+    same objects in an ItemList, so both shapes are traversed explicitly.
+    """
     out, seen = [], set()
+
+    def news_nodes(value):
+        if isinstance(value, list):
+            for child in value:
+                yield from news_nodes(child)
+        elif isinstance(value, dict):
+            if value.get("@type") == "NewsArticle":
+                yield value
+            for key in ("itemListElement", "@graph"):
+                if key in value:
+                    yield from news_nodes(value[key])
+
     for blob in LD.findall(html or ""):
         try:
             data = json.loads(blob)
         except Exception:
             continue
-        for node in (data if isinstance(data, list) else [data]):
-            if not isinstance(node, dict) or node.get("@type") != "NewsArticle":
-                continue
+        for node in news_nodes(data):
             url = (node.get("@id") or node.get("url") or "").split("?")[0]
             if not url or url in seen:
                 continue
@@ -297,18 +293,43 @@ def evaluate(raw: dict, team: str, authors: dict,
         return art
 
     art.author_class = classify_author(art.author, team, authors)
-    if art.author_class == UNKNOWN:
-        art.exclusion_reason = f"author {art.author!r} is not in the registry"
-        return art
-    if art.author_class in (ANALYSIS_ONLY, AGGREGATION):
-        art.exclusion_reason = f"author is classified {art.author_class}"
-        return art
-
     why = content_exclusion(art.headline, art.canonical_url)
     if why:
         art.exclusion_reason = why
         return art
 
+    art.eligible = True
+    return art
+
+
+def evaluate_fantasy(raw: dict, discovery_url: str = "") -> SIArticle:
+    """A Fantasy On SI item eligible for manual editorial review.
+
+    Eligibility means only that the complete article may be read. The byline
+    receives no firsthand authority, and every player claim remains labelled
+    analysis, relay or uncertainty downstream.
+    """
+    art = SIArticle(
+        canonical_url=raw.get("canonical_url", ""),
+        headline=raw.get("headline", ""),
+        author=(raw.get("author") or "").strip(),
+        published_at=raw.get("published_at", ""),
+        description=raw.get("description", ""),
+        discovery_url=discovery_url or raw.get("discovery_url", ""),
+        discovery_route="FANTASY_ONSI",
+        author_class=ANALYSIS_ONLY,
+        section=section_of(raw.get("canonical_url", "")),
+    )
+    if not FANTASY_PATH.match(art.canonical_url):
+        art.exclusion_reason = "canonical url is not in Fantasy On SI"
+        return art
+    if NO_AUTHOR.match(art.author or ""):
+        art.exclusion_reason = "no identifiable author"
+        return art
+    why = content_exclusion(art.headline, art.canonical_url)
+    if why:
+        art.exclusion_reason = why
+        return art
     art.eligible = True
     return art
 
@@ -382,6 +403,29 @@ def discover_team(slug: str, pages: int = 2, fetch=_get,
     if not items and fallback:
         meta["used_fallback"] = True
         sweep(False)
+    return list(items.values()), meta
+
+
+def discover_fantasy(pages: int = 2, fetch=_get) -> tuple[list[dict], dict]:
+    """Discover the national Fantasy On SI section for manual review."""
+    items: dict[str, dict] = {}
+    meta = {"pages_fetched": 0, "http": [], "reachable": False,
+            "primary_url": "https://www.si.com/onsi/fantasy"}
+    for page in range(1, max(1, pages) + 1):
+        url = meta["primary_url"] + ("" if page == 1 else f"?page={page}")
+        try:
+            status, body, _ = fetch(url, timeout=45)
+        except Exception as exc:
+            meta["http"].append(f"page {page}: {type(exc).__name__}")
+            break
+        meta["http"].append(status)
+        if not (isinstance(status, int) and status == 200 and body):
+            break
+        meta["reachable"] = True
+        meta["pages_fetched"] += 1
+        for row in parse_landing(body):
+            row.setdefault("discovery_url", url)
+            items.setdefault(row["canonical_url"], row)
     return list(items.values()), meta
 
 

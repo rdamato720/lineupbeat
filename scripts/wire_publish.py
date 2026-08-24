@@ -115,7 +115,9 @@ def main():
         if not summary:
             fails.append("named-human-approved public summary is missing")
         else:
-            fails.extend(PS.validate(summary, c["player"], c["evidence"]))
+            fails.extend(PS.validate(
+                summary, c["player"], c["evidence"],
+                c.get("content_type", "REPORTING")))
         if not str(c.get("public_summary_approved_by") or "").strip():
             fails.append("public summary has no named-human approval")
         if not str(c.get("commentary_approved_by") or "").strip():
@@ -151,6 +153,7 @@ def main():
             # renderer has only a name, cannot reach the photo resolver or
             # the display join, and falls back to initials for everyone.
             "player_id": c.get("player_id") or "",
+            "content_type": c.get("content_type", "REPORTING"),
             "player_name": c["player"], "team": c["team"],
             "position": c["position"],
             "reader_label": c["reader_label"],

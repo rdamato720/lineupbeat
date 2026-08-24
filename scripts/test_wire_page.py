@@ -91,8 +91,9 @@ if HOME_BEFORE is not None:
         if 'id="wire"' in home else ""
     check("no retracted player is in the replacement section",
           "Anthony Richardson" not in _mod)
-    check("the Wire section shows the approved players",
-          all(p["player_name"] in _mod for p in pubs))
+    check("the Wire section shows every approved publication",
+          all(f'data-publication-id="{p["publication_id"]}"' in _mod
+              for p in pubs))
     # The consolidation: one destination, and it is this page.
     check("the homepage links to no separate Wire page",
           "/nfl/wire/" not in home,

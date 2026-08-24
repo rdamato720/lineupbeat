@@ -21,6 +21,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from html import unescape
 from pathlib import Path
 
 FAILURES = []
@@ -118,24 +119,28 @@ def check_homepage(root):
     if "<!-- LB WIRE REPLACEMENT START" in text:
         sec = text[text.index("<!-- LB WIRE REPLACEMENT START"):
                    text.index("<!-- LB WIRE REPLACEMENT END")]
-        names = [re.sub(r"<[^>]+>", "", m)
+        cards = re.findall(r'<article class="tile wire".*?</article>', sec, re.S)
+        names = [unescape(re.sub(r"<[^>]+>", "", m))
                  for m in re.findall(r"<h4>(.*?)</h4>", sec, re.S)]
+        publication_ids = [unescape(m) for c in cards for m in
+                           re.findall(r'data-publication-id="([^"]+)"', c)]
         pubs = Path("data/wire_publications.json")
         approved = []
         if pubs.is_file():
-            approved = [p["player_name"]
+            approved = [(p["publication_id"], p["player_name"])
                         for p in json.loads(pubs.read_text())["publications"]]
-        dupes = sorted({n for n in names if names.count(n) > 1})
+        dupes = sorted({pid for pid in publication_ids
+                        if publication_ids.count(pid) > 1})
         check("no Wire report is duplicated in the replaced section",
               not dupes, "; ".join(dupes[:3]))
-        for who in approved:
-            check(f"the homepage carries {who} exactly once",
-                  names.count(who) == 1, f"{names.count(who)} card(s)")
+        for publication_id, who in approved:
+            count = publication_ids.count(publication_id)
+            check(f"the homepage carries {who} [{publication_id}] exactly once",
+                  count == 1, f"{count} card(s)")
         check("the old All reports renderer is disabled",
               "__LB_WIRE_REPLACEMENT__" in text)
 
         # The design regression: placeholders instead of art.
-        cards = re.findall(r'<article class="tile wire".*?</article>', sec, re.S)
         check("every Wire card is a homepage tile",
               len(cards) == len(names), f"{len(cards)} tile(s)")
         no_photo = [n for c, n in zip(cards, names) if 'class="shot"' not in c]

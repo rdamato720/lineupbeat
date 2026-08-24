@@ -310,7 +310,12 @@ def card(c):
     # page the first time somebody forgot to write a summary.
     summary = c.get("public_evidence_summary") or ""
 
+    analysis = c.get("content_type") == "FANTASY_ANALYSIS"
+    source_label = "Fantasy analysis" if analysis else "What changed"
+    footer_label = "Analysis" if analysis else "Evidence"
+
     return f"""<article class="tile wire" style="--c1:{c1};--c2:{c2}"
+   data-publication-id="{esc(c['publication_id'])}"
    data-team="{esc(c['team'])}" data-pos="{esc(c['position'])}"
    data-dir="{esc(d)}">
   {face}
@@ -321,12 +326,12 @@ def card(c):
     <span class="tago">{esc(ago(c.get('published_at')))}</span>
   </div>
   <h4>{esc(c['player_name'])}</h4>
-  <div class="wlab">What changed</div>
+  <div class="wlab">{source_label}</div>
   <p class="wrep">{esc(summary)}</p>
   <div class="wlab wimplab">Lineup Beat impact</div>
   <p class="wimp">{esc(c['lineupbeat_impact'])}</p>
   {sources_html(c)}
-  <p class="wfoot">Evidence {esc(c.get('strength','LOW')).lower()} &middot;
+  <p class="wfoot">{footer_label} {esc(c.get('strength','LOW')).lower()} &middot;
     {esc(c.get('horizon','UNKNOWN')).replace('_',' ').lower()} &middot;
     {'No projection change' if c.get('projection_action')=='NONE' else esc(c.get('projection_action'))}</p>
 </article>"""
@@ -352,7 +357,11 @@ def collect():
     # were published the two sets were disjoint; the moment they were
     # written, every approved card counted twice and the section rendered
     # nine reports for five.
-    published_names = {c["player_name"] for c in out}
+    published_candidate_ids = {
+        str(c.get("evidence_candidate_id") or "") for c in out
+        if c.get("evidence_candidate_id")}
+    published_events = {
+        (c["player_name"], c.get("url") or "") for c in out}
 
     dec = {}
     if DECISIONS.exists():
@@ -365,9 +374,12 @@ def collect():
             d = dec.get(c["player_name"])
             if not d or not str(d.get("action", "")).startswith("APPROVE"):
                 continue
-            if c["player_name"] in published_names:
-                continue          # already carried by the publication file
+            event = (c["player_name"], f.get("canonical_url") or "")
+            if (c["candidate_id"] in published_candidate_ids
+                    or event in published_events):
+                continue          # exact event is already in the publication file
             out.append(display.decorate({
+                "publication_id": "approved-candidate:" + c["candidate_id"],
                 "player_id": a.get("claim_subject_player_id") or f.get("player_id", ""),
                 "player_name": c["player_name"], "team": c["team"],
                 "position": c["position"],

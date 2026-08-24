@@ -9,14 +9,17 @@ refresh workflow.
 
 - The NFL Wire lives on the homepage at `/#wire`. Do not restore a separate
   `/nfl/wire/` destination. Legacy forms redirect to the homepage anchor.
-- Public cards cover fantasy-relevant QB, RB, WR, and TE developments only.
-  Position eligibility is not fantasy relevance.
+- Public cards cover useful fantasy-relevant QB, RB, WR, and TE information.
+  That includes reported developments and clearly labelled fantasy analysis,
+  opinion, speculation, ADP arguments, rankings and practice observations.
+  Analysis must never be presented as firsthand reporting.
 - Each public card keeps the established homepage design: team colour, player
   photo, team logo, mechanism, direction, positional rank, ADP, projected
   points, relative time, and attribution where those display values exist.
   Missing display values are omitted, never guessed or rendered as zero.
-- Render one card per row. Public reporting is one short approved sentence;
-  Lineup Beat analysis is a separate, visually dominant block. Never publish
+- Render one card per row. The source block is one short approved sentence
+  labelled either `What changed` or `Fantasy analysis`; Lineup Beat analysis
+  is a separate, visually dominant block. Never publish
   the stored evidence passage or a first-N-character truncation as the public
   summary.
 - League News and the video section remain removed. National fantasy-relevant
@@ -67,9 +70,11 @@ refresh workflow.
 - On SI articles must match the exact team `/onsi/` canonical path and the
   researched byline. Broad team landing-page placement is not team identity.
 - Official team sites are team-owned and labelled as such.
-- Mixed publications require an explicit team filter. Wrong-team, national
-  syndication, aggregation, mailbag, betting, mock-draft, and non-reporting
-  content is refused before semantic interpretation.
+- Mixed publications require an explicit team filter. Wrong-team and national
+  syndication remain visible in the inclusive review catalog with their
+  provenance. Analysis, aggregation, mailbags, mock drafts, fantasy advice,
+  rankings, betting angles and opinion may enter named-human review.
+  Promotional and sponsor copy remains outside the Wire.
 
 ## Editing and migration rules
 
