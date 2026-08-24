@@ -130,7 +130,10 @@ with tempfile.TemporaryDirectory() as tmp:
                 {"url": ""})),
             ("a label contradicting its direction",
              lambda d: d["publications"][0].update(
-                 {"reader_label": "Trending down"})),
+                 {"reader_label": (
+                     "Trending up"
+                     if d["publications"][0]["direction"] != "POSITIVE"
+                     else "Trending down")})),
             ("merged evidence and commentary",
              lambda d: d["publications"][0].update(
                  {"lineupbeat_impact": d["publications"][0]["reporter_found"]})),

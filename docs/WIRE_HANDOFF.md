@@ -1,6 +1,6 @@
 # Lineup Beat NFL Wire: complete engineering handoff
 
-Last verified: 2026-08-23
+Last verified: 2026-08-24
 
 Repository: `rdamato720/lineupbeat`
 
@@ -28,7 +28,7 @@ them nor sends them to a model.
 
 At this checkpoint:
 
-- The homepage publication file contains six reviewed cards.
+- The homepage publication file contains nine reviewed cards.
 - Nothing in the new semantic-review repair automatically publishes.
 - The Wire is homepage-only. Legacy `/nfl/wire` and `/nfl/wire/` routes belong
   on redirects to `/#wire`, not in navigation or the sitemap.
@@ -50,10 +50,12 @@ At this checkpoint:
 - `data/wire_publications.json` is the only Wire publication input read by the
   public builder. Evidence candidates and review artifacts are not public.
 
-The six records currently in `data/wire_publications.json` are the historical
-reviewed launch set. Do not infer that all six would pass a newly invented rule
-without a migration and explicit review. Existing human decisions are data,
-not fixtures to rewrite casually.
+Six records in `data/wire_publications.json` are the historical reviewed launch
+set. Three more cards (Jakobi Meyers, Matthew Golden, and Tre Harris) were
+published with Ralph's exact final-summary and final-commentary approvals on
+2026-08-24. Do not infer that the historical six would pass a newly invented
+rule without a migration and explicit review. Existing human decisions are
+data, not fixtures to rewrite casually.
 
 ## 3. High-level architecture
 
@@ -98,7 +100,7 @@ There is no valid path from E or F directly to I.
 | `scripts/wire_backfill.py` | Rolling-window discovery/interpretation/reporting |
 | `data/wire_paid_candidates.json` | Durable candidate-id ledger written before model requests |
 | `data/wire_human_reviews.json` | Append-only named-human dark-launch review receipts |
-| `data/wire_openai_promotion.json` | Semantic-promotion receipt bound to corpus/report/publications hashes |
+| `data/wire_openai_promotion.json` | Semantic-promotion receipt bound to corpus/report/pre-publication snapshot hashes |
 | `scripts/wire_independent_review.py` | Second-pass review; writes no publications |
 | `scripts/wire_review_package.py` | Human-review HTML and JSON package |
 | `scripts/wire_publish.py` | Only reviewed-card publication route |
