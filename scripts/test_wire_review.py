@@ -31,6 +31,21 @@ from wire.providers.openai import OpenAIProviderError, OpenAISemanticProvider
 
 
 class ReviewRepairTests(unittest.TestCase):
+    def test_refresh_exposes_both_semantic_provider_keys(self):
+        workflow = (ROOT / ".github" / "workflows" / "refresh.yml").read_text()
+        refresh = workflow.split("\n  refresh:", 1)[1]
+        pipeline = refresh.split("      - name: Run pipeline", 1)[1].split(
+            "      - name: Save the database", 1)[0]
+        preflight = refresh.split("      - name: Preflight", 1)[1].split(
+            "      - name: Deploy", 1)[0]
+        for step in (pipeline, preflight):
+            self.assertIn(
+                "ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}", step
+            )
+            self.assertIn(
+                "OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}", step
+            )
+
     def test_expanded_batch_workflow_is_capped_and_non_publishing(self):
         workflow = (ROOT / ".github" / "workflows" / "refresh.yml").read_text()
         batch = workflow.split("  wire-review-batch:", 1)[1].split(
