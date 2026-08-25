@@ -1130,6 +1130,22 @@ PAGE_CSS = """
   color:var(--quiet)}
 .rknote{font:400 .9rem/1.5 var(--text);color:var(--quiet);margin:.9rem 0 0}
 
+/* ---- scoring-format directory ---- */
+.rkformats{margin:1.4rem 0 1.8rem;padding:1.1rem 1.2rem;
+  border:1px solid var(--rule);background:rgba(255,255,255,.018)}
+.rkformats h2{font:600 .88rem/1 var(--agate);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--quiet);margin:0 0 .8rem}
+.rkformatgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.25rem 1.4rem}
+.rkformatgrid a,.rkformatgrid span{display:block;padding:.42rem 0;
+  font:400 1rem/1.25 var(--text)}
+.rkformatgrid a{color:var(--ink);text-decoration:none}
+.rkformatgrid a:hover{color:var(--signal)}
+.rkformatgrid .soon{color:var(--quiet)}
+.rkformatgrid small{font:600 .68rem/1 var(--agate);letter-spacing:.08em;
+  text-transform:uppercase;margin-left:.45rem}
+@media(max-width:680px){.rkformatgrid{grid-template-columns:1fr}}
+
 /* ---- mobile ----
    Not the desktop table squeezed. Below 720px each row becomes a compact
    block: rank and tier, then the name, then the line a drafter actually
@@ -1275,6 +1291,30 @@ PAGE_JS = """
 })();
 </script>
 """
+
+RANKING_FORMAT_LINKS = (
+    ("Preseason Rankings (PPR)", "/nfl/rankings/ppr/", True),
+    ("Preseason Rankings (NON-PPR)", "/nfl/rankings/non-ppr/", True),
+    ("Top 200 Rankings (PPR)", "/nfl/rankings/top-200-ppr/", True),
+    ("Top 200 Rankings (NON-PPR)", "/nfl/rankings/top-200-non-ppr/", True),
+    ("Top 200 Rankings (Superflex)", "/nfl/rankings/top-200-superflex/", True),
+    ("Dynasty Rankings", "/nfl/rankings/dynasty/", True),
+)
+
+
+def ranking_format_nav(active=""):
+    """The complete rankings menu; unsupported datasets are never faked."""
+    links = []
+    for label, href, live in RANKING_FORMAT_LINKS:
+        if live:
+            current = ' aria-current="page"' if href == active else ""
+            links.append(f'<a href="{href}"{current}>{esc(label)}</a>')
+        else:
+            links.append(f'<span class="soon">{esc(label)}'
+                         '<small>Data required</small></span>')
+    return ('<section class="rkformats" aria-labelledby="ranking-formats">'
+            '<h2 id="ranking-formats">Rankings</h2>'
+            f'<div class="rkformatgrid">{"".join(links)}</div></section>')
 
 
 # ------------------------------------------------------------------ page
@@ -1483,6 +1523,8 @@ def page_html(records, pos, built, replacement):
        12-team, one-QB leagues</p>
     <a class="rkmethlink" href="#methodology">How these rankings work</a>
   </header>
+
+{ranking_format_nav()}
 
   <div class="rkctl">
     <nav class="rktabs" aria-label="Rankings by position">{tabs_html}</nav>

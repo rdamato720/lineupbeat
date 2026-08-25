@@ -104,6 +104,39 @@ def check_player_page_impacts(root):
               not evidence or evidence[:80] not in module)
 
 
+def check_ranking_formats(root):
+    """The supported ranking URLs must survive every later pruning step."""
+    paths = [
+        "nfl/rankings/ppr/index.html",
+        *[f"nfl/rankings/ppr/{p}/index.html" for p in ("qb", "rb", "wr", "te")],
+        "nfl/rankings/non-ppr/index.html",
+        *[f"nfl/rankings/non-ppr/{p}/index.html" for p in ("qb", "rb", "wr", "te")],
+        "nfl/rankings/top-200-ppr/index.html",
+        "nfl/rankings/top-200-non-ppr/index.html",
+        "nfl/rankings/top-200-superflex/index.html",
+        "nfl/rankings/dynasty/index.html",
+        *[f"nfl/rankings/dynasty/{p}/index.html" for p in ("qb", "rb", "wr", "te")],
+    ]
+    missing = [path for path in paths if not (root / path).is_file()]
+    check("all supported ranking-format pages are in the artifact",
+          not missing, "; ".join(missing[:3]))
+    hub = root / "nfl" / "rankings" / "index.html"
+    text = hub.read_text() if hub.is_file() else ""
+    for label in ("Preseason Rankings (PPR)", "Preseason Rankings (NON-PPR)",
+                  "Top 200 Rankings (PPR)", "Top 200 Rankings (NON-PPR)",
+                  "Top 200 Rankings (Superflex)", "Dynasty Rankings"):
+        check(f"the rankings menu includes {label}", label in text)
+    check("IDP is omitted and Dynasty is linked as a live page",
+          '/nfl/rankings/idp/' not in text
+          and '/nfl/rankings/dynasty/' in text)
+    sitemap = root / "sitemap.xml"
+    sm = sitemap.read_text() if sitemap.is_file() else ""
+    absent = [path for path in paths
+              if f"/{path.removesuffix('index.html')}" not in sm]
+    check("every supported ranking-format page is in the sitemap",
+          not absent, "; ".join(absent[:3]))
+
+
 def check_homepage(root):
     """The homepage sections the Wire replaced *around*.
 
@@ -289,6 +322,7 @@ def main() -> int:
 
     check_homepage(root)
     check_player_page_impacts(root)
+    check_ranking_formats(root)
 
     home = root / "index.html"
     if home.is_file():
