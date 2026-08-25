@@ -137,11 +137,35 @@ CSS = r"""
 /* Match the homepage's editorial typography: Source Serif for editorial
    headlines and body copy, Barlow Condensed for players and UI labels, and
    the monospace face for comparison data. */
+.cmpwrap{position:relative;max-width:1430px;padding:3.8rem 2rem 6rem}
+.cmpwrap:before{content:"";position:fixed;z-index:-1;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(198,245,60,.035) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(198,245,60,.035) 1px,transparent 1px),
+  radial-gradient(circle at 50% 25%,rgba(35,48,34,.2),transparent 44%);
+  background-size:98px 98px,98px 98px,auto}
+.cmphead{max-width:980px;margin:2.4rem auto 2.8rem}
 .cmphead h1,.verdict h2{font-family:var(--text);font-weight:400;letter-spacing:-.025em}
+.cmphead h1{font-size:clamp(3.6rem,7vw,6.7rem);line-height:.9;margin:.7rem 0 1.5rem}
+.cmphead h1 span{color:var(--signal)}
 .cmphead p,.verdict p{color:var(--muted)}
+.cmphead>p:not(.rkeyebrow):not(.rkstatus){max-width:760px;margin-left:auto;margin-right:auto;font-size:1.25rem;line-height:1.55}
+.cmphead .rkeyebrow{font-size:.92rem;letter-spacing:.13em}
+.cmpbox{max-width:1180px;margin:0 auto;border:1px solid #3b4241;border-top:1px solid #3b4241;
+  border-radius:24px;background:linear-gradient(145deg,rgba(18,23,22,.98),rgba(8,11,11,.98));
+  padding:2rem;box-shadow:0 24px 80px rgba(0,0,0,.28)}
+.cmpselectors{gap:1.5rem}.cmpselect label,.fmt label{font-size:.78rem;letter-spacing:.13em}
+.cmpselect select,.fmt select{min-height:56px;border-color:#343b3e;border-radius:10px;background:#0b1012;
+  font-family:var(--text);font-weight:600}.versus{font-size:1.15rem;letter-spacing:.12em}
+.fmt{max-width:300px;margin:1.35rem auto}.verdict{border-radius:16px;border-color:#445224;
+  background:linear-gradient(110deg,#11170d,#17200d);padding:1.8rem}
 .pcard h3,.popular h2,.method h2{font-family:var(--agate);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.pcard{border-radius:15px;border-color:#303638;padding:1.5rem}.pcard h3{font-size:2.1rem}
 .metric b,.edge .left,.edge .right{font-family:var(--data)}
+.metric{border-radius:8px;background:#141918}.edge{font-size:1rem}.wireimpact{border-radius:0 10px 10px 0}
 .chip{text-transform:uppercase}
+.popular,.method{max-width:1180px;width:100%;margin-left:auto;margin-right:auto}.popular{margin-top:4rem}
+.popular h2,.method h2{font-size:1.55rem;letter-spacing:.09em}.pairgrid a{border-radius:10px;background:#0d1111}
+.method{margin-top:4rem;border-color:#303638;border-radius:16px;background:#0d1111;padding:2rem}
 @media(max-width:760px){.cmpselectors{grid-template-columns:1fr}.versus{text-align:center;padding:0}.players,.pairgrid{grid-template-columns:1fr}.edge{grid-template-columns:1fr}.edge .left,.edge .right{text-align:center}.metrics{grid-template-columns:repeat(2,1fr)}}
 """
 
@@ -204,7 +228,14 @@ def main() -> int:
     built = formats.source_updated(formats.SOURCE)
     pairs = popular_pairs(players)
     OUT.mkdir(parents=True, exist_ok=True)
-    hub = seo.check_page(html(players, built, pairs=pairs), str(OUT / "index.html"))
+    hub_html = html(players, built, pairs=pairs).replace(
+        "<h1>Who Should I Draft?</h1>",
+        "<h1>Make the right pick<br><span>before the clock runs out.</span></h1>",
+    ).replace(
+        "Put two players head to head. Compare what they are projected to do with how they actually scored week to week.",
+        "Put two players head to head. Lineup Beat combines current rankings, projections and ADP with the weekly consistency, floor and ceiling behind the average.",
+    )
+    hub = seo.check_page(hub_html, str(OUT / "index.html"))
     (OUT / "index.html").write_text(hub)
     for a, b in pairs:
         dest = OUT / f'{a["slug"]}-vs-{b["slug"]}' / "index.html"
@@ -212,7 +243,11 @@ def main() -> int:
         related = [(x, y) for x, y in pairs
                    if (x["position"] == a["position"] and
                        {x["slug"], y["slug"]} != {a["slug"], b["slug"]})][:12]
-        dest.write_text(seo.check_page(html(players, built, a, b, related), str(dest)))
+        pair_html = html(players, built, a, b, related).replace(
+            "<h1>Who Should I Draft?</h1>",
+            f'<h1>{base.esc(a["name"])} or<br><span>{base.esc(b["name"])}?</span></h1>',
+        )
+        dest.write_text(seo.check_page(pair_html, str(dest)))
     print(f"  comparison pool: {len(players)} players")
     print(f"  wrote {1 + len(pairs)} pages under {OUT.relative_to(ROOT)}")
     return 0
