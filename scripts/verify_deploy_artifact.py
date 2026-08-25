@@ -137,6 +137,21 @@ def check_ranking_formats(root):
           not absent, "; ".join(absent[:3]))
 
 
+def check_comparison_tool(root):
+    hub = root / "nfl" / "who-should-i-draft" / "index.html"
+    text = hub.read_text() if hub.is_file() else ""
+    check("Who Should I Draft tool is in the artifact",
+          bool(text) and "Who Should I Draft?" in text)
+    check("comparison tool includes weekly consistency metrics",
+          "Weekly floor" in text and "Consistency score" in text)
+    pair_pages = list((hub.parent if hub.parent.exists() else root).glob("*-vs-*/index.html"))
+    check("indexable comparison pages are in the artifact",
+          len(pair_pages) >= 100, str(len(pair_pages)))
+    sitemap = (root / "sitemap.xml").read_text()
+    check("comparison hub is in the sitemap",
+          "/nfl/who-should-i-draft/</loc>" in sitemap)
+
+
 def check_homepage(root):
     """The homepage sections the Wire replaced *around*.
 
@@ -323,6 +338,7 @@ def main() -> int:
     check_homepage(root)
     check_player_page_impacts(root)
     check_ranking_formats(root)
+    check_comparison_tool(root)
 
     home = root / "index.html"
     if home.is_file():

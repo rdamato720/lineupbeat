@@ -3889,6 +3889,7 @@ def main():
             (f"/{args.sport}/rankings/dynasty/rb/", "daily", "0.8"),
             (f"/{args.sport}/rankings/dynasty/wr/", "daily", "0.8"),
             (f"/{args.sport}/rankings/dynasty/te/", "daily", "0.8"),
+            (f"/{args.sport}/who-should-i-draft/", "daily", "0.9"),
             (f"/{args.sport}/projections/", "daily", "0.9"),
             (f"/{args.sport}/projections/qb/", "daily", "0.8"),
             (f"/{args.sport}/projections/rb/", "daily", "0.8"),
@@ -3914,6 +3915,14 @@ def main():
             ("/about/", "monthly", "0.6")):
         if (SITE / path.lstrip("/") / "index.html").exists():
             urls.append((f"{base}{path}", now, freq, prio))
+
+    # Curated, server-rendered player comparisons. The builder owns which
+    # pairs are useful; this final sitemap owner merely lists what survived.
+    comparison_root = SITE / args.sport / "who-should-i-draft"
+    if comparison_root.exists():
+        for page in sorted(comparison_root.glob("*-vs-*/index.html")):
+            rel = page.parent.relative_to(SITE).as_posix()
+            urls.append((f"{base}/{rel}/", now, "daily", "0.7"))
 
     urls.insert(0, (f"{base}/", now, "hourly", "1.0"))
 
@@ -4060,7 +4069,8 @@ def main():
         # link to a page this loop had just deleted.
         protected = {"team", "data", "projections", "draft-value",
                      "durability", "coaching", "strength-of-schedule",
-                     "offensive-line-rb-performance", "rankings"}
+                     "offensive-line-rb-performance", "rankings",
+                     "who-should-i-draft"}
         for d in (SITE / args.sport).glob("*"):
             if not d.is_dir() or d.name in protected:
                 continue

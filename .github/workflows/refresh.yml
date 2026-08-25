@@ -496,11 +496,10 @@ jobs:
           # wording. This gate proves pending drafts and raw evidence cannot
           # leak into those pages.
           python scripts/test_player_pages.py
-          # Every supported rankings format must reconcile all 615 offensive
-          # players, publish exactly 200 overall ranks and keep sequential
-          # position ranks. Dynasty and IDP remain unlinked until real source
-          # data exists.
+          # Every supported rankings format must reconcile the offensive pool,
+          # publish exactly 200 overall ranks and keep sequential position ranks.
           python scripts/test_ranking_formats.py
+          python scripts/test_comparison_tool.py
           python -m beatwire.cli doctor --sport nfl
           # The homepage header is generated from seo.py. If somebody edits
           # the template by hand instead, the app and the eight static
@@ -606,6 +605,8 @@ jobs:
             || echo "::error title=Rankings not published::build_rankings.py failed its validation gates. The published board is unchanged."
           python scripts/build_ranking_formats.py \
             || echo "::error title=Ranking formats not published::build_ranking_formats.py failed its validation gates. The supported format pages are unchanged."
+          python scripts/build_comparison_tool.py \
+            || echo "::error title=Comparison tool not published::build_comparison_tool.py failed its validation gates."
 
           python scripts/build_sos.py || true
 
