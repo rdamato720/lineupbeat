@@ -31,8 +31,12 @@ At this checkpoint:
 
 - The homepage publication file contains nine reviewed cards.
 - Nothing in the new semantic-review repair automatically publishes.
-- The Wire is homepage-only. Legacy `/nfl/wire` and `/nfl/wire/` routes belong
-  on redirects to `/#wire`, not in navigation or the sitemap.
+- The Wire list is homepage-only. Legacy `/nfl/wire` and `/nfl/wire/` routes
+  belong on redirects to `/#wire`, not in navigation or the sitemap. The
+  newest final, human-approved summary and Lineup Beat impact may also appear
+  on the matching canonical player page after stable identity resolution:
+  player id, or an exact name + team + position crosswalk between registries.
+  No draft, raw evidence passage, or separate Wire archive may appear there.
 - Cards are one per row, not two or three columns.
 - Player photos, team logos, team colours, mechanism, direction, position
   rank, ADP, projection, relative time, and attribution are preserved when a
@@ -459,6 +463,9 @@ Required behavior:
 - excluded/held/abstained/no-impact players absent as reports even though their
   roster identity may remain in the page payload for search and My Roster;
 - no separate Wire link or page;
+- canonical player pages may show the newest approved summary and Lineup Beat
+  impact, but must use the same publication validator as the homepage and
+  must never read pending candidates or model-output files;
 - builds are idempotent and survive every later page-pruning step.
 
 The deployed artifact, not an intermediate builder output, is the thing to

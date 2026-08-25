@@ -10,10 +10,12 @@ rendered payload, not the code that produced it.
 
 The distinction that matters throughout is which system a record belongs to.
 feed.json powers Recent News, My Roster and search;
-wire_publications.json powers the Wire section and nothing else reads it. The
-Wire replaces one renderer -- All reports -- and must leave the feed beneath
-it alone. It once emptied that collection on the way past, which is what
-Recent News renders from, and it shipped blank.
+wire_publications.json powers the Wire section and, through the same final
+publication validator, the newest Lineup Beat impact on a canonical player
+page. No other public surface reads pending Wire material. The Wire replaces
+one renderer -- All reports -- and must leave the feed beneath it alone. It
+once emptied that collection on the way past, which is what Recent News
+renders from, and it shipped blank.
 
 So a player a Wire reviewer rejected may still appear in Recent News: that is
 a legitimate X-wire report about him, not a hidden Wire card. What he may

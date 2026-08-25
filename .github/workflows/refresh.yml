@@ -492,6 +492,10 @@ jobs:
           # suite catches stale per-card identity, evidence/request hash
           # mixing, rolling-page timestamps and claim-subject enforcement.
           python scripts/test_wire_review.py
+          # Canonical player pages may reuse only final, human-approved Wire
+          # wording. This gate proves pending drafts and raw evidence cannot
+          # leak into those pages.
+          python scripts/test_player_pages.py
           python -m beatwire.cli doctor --sport nfl
           # The homepage header is generated from seo.py. If somebody edits
           # the template by hand instead, the app and the eight static
@@ -651,8 +655,8 @@ jobs:
           #
           # Failing here stops the job before Deploy, which is the point.
           # It runs after build_404 so site/index.html exists for the
-          # homepage module, and before build_pages so the sitemap includes
-          # /nfl/wire/.
+          # homepage replacement, and before the final player-page pass so
+          # those pages reuse the same validated, approved wording.
           python scripts/build_wire.py --base https://lineupbeat.com
 
           # The homepage replacement, applied to the generated homepage.

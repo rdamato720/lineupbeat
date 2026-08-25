@@ -94,14 +94,15 @@ check("article discovery cannot rewrite the publication mirror",
       "export_publications" not in code_only(ingest)
       and "wire_publications.json" not in code_only(ingest))
 
-# The site build must not be able to read candidates.
+# The site build must not be able to read candidates. Canonical player pages
+# may reuse final publications, but only through build_wire's validation gate.
 build = (ROOT / "scripts" / "build_pages.py").read_text()
 # `wire.db` is a substring of `beatwire.db`, so this needs a boundary or it
 # reports the fantasy database as a Wire leak.
 check("the site build never reads wire_candidates",
       "wire_candidates" not in build
       and not re.search(r"(?<!beat)wire\.db", build)
-      and "wire_publications" not in build)
+      and "load_approved_wire" in build)
 
 # ---------------------------------------------------------------- registry
 
