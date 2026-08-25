@@ -1,111 +1,105 @@
 {
  "schema_version": "wire-mobile-batch-v1",
- "generated_at": "2026-08-25T22:12:28+00:00",
+ "generated_at": "2026-08-25T23:47:52+00:00",
  "window": {
-  "from": "2026-08-25T20:12:28.689224+00:00",
-  "to": "2026-08-25T22:12:28.689224+00:00",
+  "from": "2026-08-25T21:47:52.134583+00:00",
+  "to": "2026-08-25T23:47:52.134583+00:00",
   "hours": 2.0
  },
  "published": false,
  "model": "gpt-5.6-terra",
  "model_calls": 5,
- "cost_usd": 0.022544,
+ "cost_usd": 0.02014,
  "limits": {
   "max_calls": 5,
   "cap_usd": 0.08,
   "max_cards": 10
  },
- "candidate_count": 71,
+ "candidate_count": 45,
  "cards": [
   {
-   "player": "Tee Higgins",
-   "player_id": "00-0036410",
-   "team": "CIN",
-   "position": "WR",
+   "player": "Dallas Goedert",
+   "player_id": "00-0034351",
+   "team": "PHI",
+   "position": "TE",
    "content_type": "REPORTING",
-   "direction": "NEGATIVE",
-   "mechanism": "ABSENT_FROM_PRACTICE",
+   "direction": "NEUTRAL",
+   "mechanism": "ROLE_EXPANSION",
    "strength": "LOW",
    "horizon": "SHORT_TERM",
    "projection_action": "NONE",
-   "reader_label": "Trending down",
-   "public_summary": "Tee Higgins was absent from Bengals practice as the offense finished the session strongly without him and Ja'Marr Chase.",
-   "evidence": "Imagine a world ... \n\nIt wasn't a movie trailer. It was real life at #Bengals practice.\n\nBut Ja'Marr Chase shook off the injury scare, and the offense overcame his and Tee Higgins' absence to finish with a flurry.\n\n\"Everybody can breathe.\"\n\nhttps://t.co/Elc7xvHOiJ",
-   "commentary": "Higgins' practice absence is a short-term availability flag, but the report gives no reason, severity, or indication of whether he will miss additional time.",
+   "reader_label": "Worth noting",
+   "public_summary": "Dallas Goedert took a rep at H-back in an offset-I look, as the team has not clarified whether it will carry a fullback.",
+   "evidence": "Dallas Goedert just got a look as the H-back in the off-set I.\n\nSean Mannion has played it close to the vest about whether they’ll have a fullback",
+   "commentary": "This suggests Goedert could be part of heavy personnel packages, but one H-back look does not establish a larger receiving role or projected workload.",
    "source": "X",
-   "author": "ByJayMorrison",
-   "date": "2026-08-25T21:22:19+00:00",
-   "url": "https://x.com/ByJayMorrison/status/2092361955864383881",
+   "author": "BKubena",
+   "date": "2026-08-25T23:43:15+00:00",
+   "url": "https://x.com/BKubena/status/2092397423503028605",
    "ownership": "INDEPENDENT",
-   "evidence_candidate_id": "mobile:x:340cee4ba1d8b1a5405d",
+   "evidence_candidate_id": "mobile:x:c02ce69de5cf93f7904b",
    "reviewer_action": "PENDING",
    "public_summary_approved_by": "",
    "commentary_approved_by": "",
    "approved_at": "",
    "commentary_origin": "MODEL_DRAFT",
-   "model_original_commentary": "Higgins' practice absence is a short-term availability flag, but the report gives no reason, severity, or indication of whether he will miss additional time.",
+   "model_original_commentary": "This suggests Goedert could be part of heavy personnel packages, but one H-back look does not establish a larger receiving role or projected workload.",
    "draft_limitations": [
-    "No reason for Higgins' absence was provided.",
-    "The report does not indicate his expected return or game availability."
+    "The evidence describes a single look rather than a sustained usage trend.",
+    "No target, route, snap-share, or depth-chart implications were reported.",
+    "The team’s fullback plans remain unclear."
    ],
-   "draft_confidence": 0.9,
+   "draft_confidence": 0.78,
    "readiness_failures": []
   }
  ],
- "relevance_suppressed": 97,
+ "relevance_suppressed": 57,
  "event_duplicates": 0,
  "outcomes": [
   {
-   "candidate_id": "mobile:x:fb963d0a8e9cc9acab7f",
+   "candidate_id": "mobile:x:a93ba9957067afbe9e2b",
    "player": "Ashton Jeanty",
    "origin": "X",
-   "decision": "VALIDATION_FAILED",
-   "reason": "The coach directly confirmed Jeanty is injured and recovering, though the lack of details limits the actionable outlook.",
-   "validation_failures": [
-    "mechanism INJURY is not supported by the evidence passage"
-   ],
-   "cost_usd": 0.003738
-  },
-  {
-   "candidate_id": "mobile:x:e92f1a3c967b4c16a569",
-   "player": "Josh Allen",
-   "origin": "X",
    "decision": "IGNORE",
-   "reason": "The evidence mentions Josh Allen only as someone who commented on another player and contains no actionable fantasy information about Allen.",
+   "reason": "No actionable fantasy update is contained in the supplied evidence.",
    "validation_failures": [],
-   "cost_usd": 0.00418
+   "cost_usd": 0.004122
   },
   {
-   "candidate_id": "mobile:onsi:c05acba1f904a830ce1c",
-   "player": "Jeremiyah Love",
-   "origin": "ONSI",
-   "decision": "VALIDATION_FAILED",
-   "reason": "The source explicitly identifies Love as part of Arizona's planned heavy one-two running back punch, establishing a plausible fantasy-relevant role.",
-   "validation_failures": [
-    "speculative language 'expected'"
-   ],
-   "cost_usd": 0.004888
-  },
-  {
-   "candidate_id": "mobile:x:340cee4ba1d8b1a5405d",
-   "player": "Tee Higgins",
+   "candidate_id": "mobile:x:c02ce69de5cf93f7904b",
+   "player": "Dallas Goedert",
    "origin": "X",
    "decision": "CARD",
-   "reason": "The source directly states that Higgins was absent from practice, creating a limited short-term availability signal.",
+   "reason": "The report provides a specific practice alignment for a draftable tight end, though its fantasy implications are limited and uncertain.",
    "validation_failures": [],
-   "cost_usd": 0.00524
+   "cost_usd": 0.0046
   },
   {
-   "candidate_id": "mobile:x:e942da1b6a40710247f1",
-   "player": "Ja'Marr Chase",
+   "candidate_id": "mobile:x:bd4f311b1b6e72cc2d36",
+   "player": "Chris Godwin Jr.",
    "origin": "X",
-   "decision": "VALIDATION_FAILED",
-   "reason": "The report directly says Chase shook off an injury scare, providing actionable reassurance for a draftable WR, though injury details are limited.",
-   "validation_failures": [
-    "availability item omits the temporary context (which practice, and that no timetable was given)",
-    "mechanism INJURY is not supported by the evidence passage"
-   ],
-   "cost_usd": 0.004498
+   "decision": "IGNORE",
+   "reason": "Generic post-practice comments do not provide actionable fantasy context.",
+   "validation_failures": [],
+   "cost_usd": 0.00431
+  },
+  {
+   "candidate_id": "mobile:x:695a161d154483c9fd28",
+   "player": "Jalen Hurts",
+   "origin": "X",
+   "decision": "IGNORE",
+   "reason": "An isolated impressive completion does not materially change Jalen Hurts' fantasy outlook.",
+   "validation_failures": [],
+   "cost_usd": 0.00314
+  },
+  {
+   "candidate_id": "mobile:x:a98a8c85578e04e2cdc1",
+   "player": "DeVonta Smith",
+   "origin": "X",
+   "decision": "IGNORE",
+   "reason": "The evidence describes one successful play but provides no actionable change in Smith's fantasy outlook.",
+   "validation_failures": [],
+   "cost_usd": 0.003968
   }
  ]
 }
