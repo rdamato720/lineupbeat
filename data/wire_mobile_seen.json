@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 40,
+ "count": 45,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -441,6 +441,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003472
+  },
+  {
+   "candidate_id": "mobile:x:30da44cf4d09ecbb508d",
+   "player_id": "00-0039337",
+   "source_url": "https://x.com/JordanRaanan/status/2092235931579281573",
+   "attempted_at": "2026-08-25T13:17:30+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-25T13:17:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003436
+  },
+  {
+   "candidate_id": "mobile:onsi:2bf887a0133c30c44ca2",
+   "player_id": "00-0036389",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/makai-lemon-squeezes-every-bit-of-juice-out-of-much-needed-return-to-eagles-camp-01m0trg85jtg",
+   "attempted_at": "2026-08-25T13:17:33+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-25T13:17:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004878
+  },
+  {
+   "candidate_id": "mobile:onsi:cdaeb9418db7143f7764",
+   "player_id": "00-0039793",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/seattle-seahawks-53-man-roster-prediction-following-slew-of-injuries",
+   "attempted_at": "2026-08-25T13:17:37+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-25T13:17:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00432
+  },
+  {
+   "candidate_id": "mobile:onsi:4f17b6cd173e3e5cfc24",
+   "player_id": "00-0037545",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/seattle-seahawks-53-man-roster-prediction-following-slew-of-injuries",
+   "attempted_at": "2026-08-25T13:17:41+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-25T13:17:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00473
+  },
+  {
+   "candidate_id": "mobile:x:8d00f781f9593860da46",
+   "player_id": "00-0034796",
+   "source_url": "https://x.com/jamisonhensley/status/2092235341243543554",
+   "attempted_at": "2026-08-25T13:17:48+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-25T13:17:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004944
   }
  ]
 }
