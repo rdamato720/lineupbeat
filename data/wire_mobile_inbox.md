@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**2 cards** · batch `8990d9a0c784` · 5 draft calls · $0.0202
+**1 cards** · batch `7ce7a88cba57` · 5 draft calls · $0.0232
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,55 +19,28 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. TreVeyon Henderson — NE RB
+## 1. Ja'Marr Chase — CIN WR
 
-**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
-
-### What changed
-
-Patriots EVP Eliot Wolf said TreVeyon Henderson is unlikely to practice today as the team works through his injury situation.
-
-### Lineup Beat impact
-
-Henderson's expected practice absence is a short-term negative for his availability and preparation. The injury type and expected return timeline were not provided.
-
-[DougKyed · X](https://x.com/DougKyed/status/2092307996000788878) · 2026-08-25
-
-<details><summary>Full evidence reviewed</summary>
-
-Patriots EVP Eliot Wolf says RB TreVeyon Henderson (injury) likely won't be at practice today.
-
-"We're working through that situation now."
-
-</details>
-
----
-
-## 2. Ashton Jeanty — LV RB
-
-**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
+**Trending down** · INJURY · MEDIUM evidence
 
 ### What changed
 
-Ashton Jeanty did not participate in the Raiders’ final practice before Thursday’s preseason finale against San Francisco.
+Ja'Marr Chase was still walking around after going down and appeared to be finished for the day following a left-knee concern.
 
 ### Lineup Beat impact
 
-Jeanty’s absence is a short-term negative signal for preseason availability, but the report gives no reason, severity, or indication of regular-season impact.
+Chase's apparent early shutdown is a short-term practice concern, but the evidence provides no diagnosis, severity, or timetable.
 
-[ryanmcfadden_ · X](https://x.com/ryanmcfadden_/status/2092306517542556051) · 2026-08-25
+[pauldehnerjr · X](https://x.com/pauldehnerjr/status/2092326580643127663) · 2026-08-25
 
 <details><summary>Full evidence reviewed</summary>
 
-#Raiders final practice before Thursday’s preseason finale vs. San Francisco. The following players are not participating:
+Jeremy all over the play where Chase originally went down.
 
-RB Ashton Jeanty
-WR Dont’e Thornton Jr.
-WR Chase Roberts
-TE Carter Runyon
+[Responding to]: Here’s a closer look at how Ja’Marr Chase went down. Watch his left knee. 
 
-We will hear from HC Klint Kubiak after practice. https://t.co/QWLtHPa3lA
+Again. He’s still out here. Walking around. Appears to be shut down for the day. #Bengals @FOX19 https://t.co/z7fyHKNL4A
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrVV2tv2zYU_SuE9qEbZjvUW_K3NHGb9JFkrpcMWAqBkq5sthJpkJQTryiwv7G_t1-yS8l24vSxYg9sRYBEJq8vec8959zonZMzUywyXjpjJ0lTWqaMFnESJFUSuhELmZcWzI2rOHUrF0o3KoKE5SykHvUDN0oqnxWVG6RekAbOwCmYKrUz_vmdw5ZLJVdQZsxgatxirVlIhc_Hsp0_X0Npw2XTgDBMrXH9BEQJSkvxSBO4XUJhoCRLxQrDCyAs1yDwL9eEEY2ZzNCAaoiAOTN8BaSSiizs7orxmuW85mZNmLApYMkUBkkxIrMFphBvWrUmZr2ELmB3mALTKkEMb6DmAsgNKCBCGmJL4SWUo707Z7sa83Vf4709qficC1x-eX48eZEdTw-fzLoIYTAis4fj5nRycT6dnZ49xa2SGbvkUS8a0mTohTM3HgfxOAy-p3RMqQ3hCm-KhWDc2eTp4ez0cmKXFatMhqkrvCSC5IzpKA236zVvuOnKt51xLAKCYaF98RpWoCxUsiLmDpxd6SXXRS11X_uZ7MAxLK97wO_3bIPeDdN7eNnzsAPYMMLKUoHWoIlEdD_dYynq9ch5PXBgtS3IuWBGcWk0mVxekEmNj-RK1hXRbK3J9DGZKbiEtRR3VyLf9rV8R2r-FmqsCa9pSI7nmLszjSzZenQt8Me5gkdY9Y1Ub7mYIxoKmbrAvxivuWk7DBGUm9G1bfb2clmBOHLbvV5GjUTywfh27Llhkns094ogonmSBKkP-D3kLv-la-GrE2x-NptMX-JyA8WCCa4b3Dh8_GpyNsueTM9fZhfTw6PZ6ZHtcyNLqDfMYnX2NapH3gi85YIv8cqnZ8eTiwn-OrPKWNZsDdYfPuzkbrcHmNIhpQGNfes4S4mt6RUxfWw_K_mm10jGdlI5P7PwLdu85kWm26bpMfs0p3j5MUIhPq3YkMnIBxwiyHsrIAOs6TikdwyywG5g2_Fo9MGFPrQTBQxPzrAfUPfAINGQmSWiuNlGoLXOKmwaCtrq-7VdX3FA9O8AsCj3JqNlqzo9_WQ_GMw4NwvrUpPj0x8tDe31O3fB51bZYxfGLPX44OB2hIQ72Lr3gUZPafWBR1PPp3GaRpTSOEmSOHHeDz7n_2rNRFNUaAYgsodD4BkwYda___qb_nPOaj5HGXTURZZqYLZH9wk8IHlruqZsDGiOX9PISfxsgwc79xsQTMIR3aIXOZqhgnlbMzXc5OXNEuH8DwaAN6buPzoA0MQ3ZMSaeyA6DC1OW8w_Y-Kl7CDcuTm517KeE7tsGwhJD-FDR_9mijJDYZHKutmdmnLA7wN6Tas06qpLfNffLhjISo_IKybIE8VEgSNK9uZUybqWN1YjvWEgdbYmxBRm50vEQczH1u9xaBzqhcGcfQXX4mpKjrE9eKI9XirRbapRt3O0YBrIVOagjL4Wswk5wpSgyLQVaBM24xUCx-uaLACLrpRsyMkReY5maMjzNufsLcF2gNqVOiJbbRnU1sEPVy_MyQXz68MvmS40rfwCfD8NosCneQgQ_3vT5SuQ5RdMlr12f3youJ73N4fK3iH471P5gH52gnbFb-iPoP4lBbA540KbByr4f0-VF5efmCp7M2F_tEShG4eBF4YRDV3n_WtrodpkrS6ty-F7iJskA2cO2H0EdzNv9j009Maev_PQnucFq2usLNzi1REMSd-iNzOTdc7pjGN_f18vmBdG9wIcVqVVBfgmFADkXpJXaeRCmKRuCiVN87CIaFR5wHJa-mVapWHgl1UUh4lfBHGYW7bpYgENy5Dyugf2Bl1-2At9yEUub4crd4dy1r-x9TfB4CBKEpf6OHk9Pw9ifG8DfIDABT-KKxqUXlnmQZjSNEmiANK0zMsqDoowdAO_8hHSPwArJ8ii:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrNVdty2zYQ_RUM-5CHWjLvFz3VrZXYTiJnVKVJJ_FwQGAhwiYJDgBaUTKZ6W_09_olXZCWbDc_0BcOsbvYy9mzi29eRS2rS8m9hZcxyGies4omWZHznDPKwzgCUdGQscIP_LhKWcH8WNBCBGGY-hBFmSjSXIQVo96Jx6jmxlt8-ubRvtfqHnhJLbpGFR1srTT-93RoONQd6Fvtrqi2hc5SvUfdbzU18MIQvE01SglQ3eyJqQfL1a4jElV4UtrOLOiW9JoyKxkQpjoGujsh1WCJrYHAveSAMuLSwF9DOkW4pNtOGWlOiIF70NLuT4jSxMoWLK0amD9LqDwWUe2nIp7olJZb2aH47fX58k15vj57uRktOosWpd33gMr18t31enO5eoUqTq0ThX6Yzvx8FiaboFj4wSJOfvb9he87E6kBC1LO72r56mxz-cfSiTUVtkTXYirKW_jzrDjIG9lKS90tB723eVo9V2Pl9gADwncEwVV-gMEVfmkfzcdYCPCuBkRTk7ExZCebhrTSYBc4ly4ibR574FB0Pre0BeMcukxUZUDfj9m57lXohhP8r_FgMOsBfQns5di0vqHYEBefEgu0JbK7HfSeDL3Dbu7dnHiHyhCgK9DQ7gnFnLBJjx5c0hoeUp7ahDYodoRyNJp_7j53n9ZgetVx2W2JVTcLcoGX_vnrb8cw1ijMmjRK3RFqSa125Iqi7i3VRyiOzsgHN0JjQQ0IS-46gDlxIc62VKL-YnJrrENPIT9deu5ac-eCU62Gjs_JWd8j2w0mQyoYKT_6J0JNpXG6n5OffoVuSxtDfnl5_TEoSG1tbxanp3bO1OnXTOwvXq_exGfeI1Alo1ikw2-a8lZVsoHFl0VRpRCLXGRVnPhZnkY0EHgPh0t-HQn4-wVSt9ws129R3AKraSdNi4rL1dX79Z9OqDg05QHi8n83yhgHtKllPyZ9vny3xM_KjanjCbhtdEVfPHb1qJig8v2Z70dpMY5mj8EeJvPD2p21up1mtaTHkb1euXHth6qRrDRD205YPAtCdvRAht0zCjwMwlY50YgRdcKRFjg0Ey-ExCbUeHxCC_xvGrUbPY0cnDkOHoCc_5DRj3tNA-VYdUMraFCywYbxQxYPatmBMaWgshk0uEVz4-T3EnZ48YiAQ3jadkYNehzTj-5g0ePW1m5dLs8v3ztGuQF3PLlc4WHQLu6BzV-Qze3p04fidNoVp6FfhFGYJrmfxlEQZmkaed9v3No1thwMd5vRR4vgxNsC3kTaPzxB_1m7-SJIj2t34jHDLYGFJQe4xqWFpB5wnVNbjsvWW2TRc72paZikTww8KgohIEjzGKAK8wofyACSvAgK4H5RJSz1UxECrXwe8UIUSRxxkWZJHrE4S6rQ4cVqaGmJvDYTrjt8GGbT6M5kV6kvs_vgCHI5PeJTJmgsWBQWGDTygRcxZ0lQxUEOYZxz4ecUWAYFPvFCBLxKs1wABFkRpRGr_LSiMfe-_wvHkbkM:WIRE_MOBILE_MANIFEST_V1 -->
