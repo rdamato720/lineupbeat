@@ -22,9 +22,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import wire_publication_preview as publication_preview
 from beatwire.registry import Registry as BeatRegistry
-from wire import mobile_dedupe, players, public_summary, semantic
+from wire import mobile_dedupe, players, public_summary, relevance, semantic
 from wire.mobile_approval import MAX_CARDS
-from wire.mobile_draft import OpenAIMobileDraftProvider
+from wire.mobile_draft import OpenAIMobileDraftProvider, redundant_outlet_lead
 from wire.public_labels import DIRECTION_LABELS
 from wire.providers.openai import MODEL
 
@@ -198,6 +198,21 @@ def x_candidates(registry, cutoff: datetime) -> list[dict]:
     return out
 
 
+def relevance_filter(rows: list[dict], registry: dict) -> tuple[list[dict], list[dict]]:
+    """Apply the deterministic draftability gate before any provider call."""
+    kept, suppressed = [], []
+    for row in rows:
+        verdict = relevance.assess(
+            row["player_id"], row["position"], row["evidence"], registry)
+        if verdict["eligible"]:
+            kept.append(row)
+        else:
+            suppressed.append({"candidate_id": row["candidate_id"],
+                               "player": row["player"],
+                               "reason": verdict["reason"]})
+    return kept, suppressed
+
+
 def validate_response(result: dict) -> list[str]:
     errors = []
     confidence = result.get("confidence")
@@ -251,6 +266,8 @@ def card_from(candidate: dict, result: dict) -> dict:
     failures.extend(public_summary.validate(
         card["public_summary"], card["player"], card["evidence"],
         card["content_type"], bool(card.get("summary_subject_context"))))
+    if redundant_outlet_lead(card["public_summary"], card["source"]):
+        failures.append("public summary redundantly starts with the cited outlet")
     card["readiness_failures"] = sorted(set(failures))
     return card
 
@@ -283,6 +300,8 @@ def main() -> int:
                   if row["candidate_id"] not in seen_ids
                   and row["candidate_id"] not in published_ids
                   and (row["player_id"], row["source_url"]) not in published_pairs]
+    candidates, relevance_suppressed = relevance_filter(
+        candidates, relevance.load())
 
     cards, outcomes = [], []
     publications = published_cards()
@@ -379,6 +398,7 @@ def main() -> int:
         "limits": {"max_calls": args.max_calls, "cap_usd": args.cap,
                    "max_cards": args.max_cards},
         "candidate_count": len(candidates), "cards": cards,
+        "relevance_suppressed": len(relevance_suppressed),
         "event_duplicates": sum(row["decision"] in {
             "DUPLICATE_EVENT", "SUPERSEDED_EVENT"} for row in outcomes),
         "outcomes": outcomes,
@@ -386,6 +406,9 @@ def main() -> int:
     OUT.write_text(json.dumps(payload, indent=1, ensure_ascii=False) + "\n")
     print(f"  mobile draft: {len(candidates)} new candidates, {calls} calls, "
           f"${cost:.4f}, {len(cards)} review cards, 0 publications")
+    if relevance_suppressed:
+        print(f"  {len(relevance_suppressed)} candidate(s) suppressed by "
+              "the draftability gate before provider spend")
     if cost > args.cap:
         print("  observed cap crossed by the final in-flight response; no later call sent")
     return 0

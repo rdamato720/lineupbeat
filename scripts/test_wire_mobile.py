@@ -24,8 +24,9 @@ sys.modules.setdefault("trafilatura", types.SimpleNamespace())
 from wire import mobile_approval as mobile
 from wire import mobile_dedupe
 from wire.public_labels import DIRECTION_LABELS
-from wire.mobile_draft import OpenAIMobileDraftProvider
+from wire.mobile_draft import OpenAIMobileDraftProvider, redundant_outlet_lead
 import wire_mobile_inbox as inbox
+import wire_mobile_draft as mobile_draft_script
 import wire_publication_preview as publication_preview
 
 
@@ -140,6 +141,69 @@ class MobileWireTests(unittest.TestCase):
         self.assertEqual(meta["provider"], "openai")
         self.assertGreater(meta["cost_usd"], 0)
         self.assertIn("COMPLETE EVIDENCE", prompts[0])
+
+    def test_rejected_fringe_players_are_filtered_before_provider_spend(self):
+        rows = [
+            {"candidate_id": "jaden", "player": "Jaden Bradley",
+             "player_id": "jaden", "team": "WAS", "position": "WR",
+             "evidence": "Jaden Bradley was a bottom-of-roster receiver who stood out."},
+            {"candidate_id": "kaytron", "player": "Kaytron Allen",
+             "player_id": "kaytron", "team": "WAS", "position": "RB",
+             "evidence": "Kaytron Allen continues to impress this preseason."},
+            {"candidate_id": "nick", "player": "Nick Nash",
+             "player_id": "nick", "team": "WAS", "position": "WR",
+             "evidence": "Nick Nash was a bottom-of-roster receiver who stood out."},
+            {"candidate_id": "sam", "player": "Sam Hartman",
+             "player_id": "sam", "team": "WAS", "position": "QB",
+             "evidence": "Athan Kaliakmanis took control of the developmental competition with Sam Hartman."},
+        ]
+        registry = {"players": {"kaytron": {
+            "relevance_tier": "WATCHLIST",
+            "relevance_reason": "outside the core draft boundary"}}}
+        kept, suppressed = mobile_draft_script.relevance_filter(rows, registry)
+        self.assertEqual(kept, [])
+        self.assertEqual({row["player"] for row in suppressed},
+                         {"Jaden Bradley", "Kaytron Allen", "Nick Nash",
+                          "Sam Hartman"})
+
+    def test_material_role_still_passes_mobile_draftability_gate(self):
+        row = {"candidate_id": "kaytron", "player": "Kaytron Allen",
+               "player_id": "kaytron", "team": "WAS", "position": "RB",
+               "evidence": "Kaytron Allen led Washington's first-team backfield in carries."}
+        registry = {"players": {"kaytron": {
+            "relevance_tier": "WATCHLIST",
+            "relevance_reason": "outside the core draft boundary"}}}
+        kept, suppressed = mobile_draft_script.relevance_filter([row], registry)
+        self.assertEqual(kept, [row])
+        self.assertEqual(suppressed, [])
+
+    def test_outlet_name_is_not_repeated_at_start_of_summary(self):
+        self.assertTrue(redundant_outlet_lead(
+            "Sports Illustrated's John said Kaytron Allen impressed.",
+            "Sports Illustrated -- WAS"))
+        self.assertFalse(redundant_outlet_lead(
+            "John said Kaytron Allen impressed.",
+            "Sports Illustrated -- WAS"))
+        candidate = {
+            "player": "Kaytron Allen", "player_id": "00-test",
+            "team": "WAS", "position": "RB", "source_name": "Sports Illustrated -- WAS",
+            "author": "John", "ownership": "INDEPENDENT",
+            "published_at": "2026-08-25T12:00:00Z",
+            "source_url": "https://example.com/report",
+            "candidate_id": "mobile:test:outlet",
+            "evidence": "John said Kaytron Allen continues to impress during the preseason.",
+        }
+        result = {
+            "content_type": "REPORTING", "direction": "POSITIVE",
+            "mechanism": "PERFORMANCE", "strength": "LOW",
+            "horizon": "SHORT_TERM",
+            "public_summary": "Sports Illustrated's John said Kaytron Allen continues to impress.",
+            "lineupbeat_impact": "The praise does not establish a fantasy role.",
+            "limitations": [], "confidence": 0.7,
+        }
+        proposed = mobile_draft_script.card_from(candidate, result)
+        self.assertIn("public summary redundantly starts with the cited outlet",
+                      proposed["readiness_failures"])
 
     def test_same_player_same_event_is_deduped(self):
         first = card()

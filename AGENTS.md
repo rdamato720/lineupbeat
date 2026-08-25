@@ -26,6 +26,8 @@ refresh workflow.
   is a separate, visually dominant block. Never publish
   the stored evidence passage or a first-N-character truncation as the public
   summary.
+- Because attribution is displayed below every card, do not begin the source
+  sentence by repeating the cited outlet (for example, "Sports Illustrated's").
 - League News and the video section remain removed. National fantasy-relevant
   reports may appear in Recent News. YouTube ingestion remains paused.
 - Use the phrase "trusted sources" in reader-facing descriptions. Do not name
@@ -52,6 +54,10 @@ refresh workflow.
   item to human review. It must never manufacture a rejection or approval.
 - Rolling/live/tracker pages require a span-level event timestamp. An article
   page's updated timestamp is not proof that every embedded update is current.
+- Reserve quarterbacks qualify only for a genuine starting-job battle,
+  first-team promotion, named start, or starter absence. Fringe RB/WR/TE
+  reports require a concrete role, workload, depth-chart or opportunity
+  change; generic praise and isolated preseason plays are not card-worthy.
 - Official team designations are authoritative for the club's own acts and
   participation labels, but never count as independent corroboration.
 - Paid/discovery-only sources contribute no evidence. Manual submission does

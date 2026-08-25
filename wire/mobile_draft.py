@@ -16,7 +16,7 @@ from .providers.openai import MODEL, PRICES, OpenAIProviderError, redact
 
 
 SCHEMA_VERSION = "wire-mobile-draft-v1"
-PROMPT_VERSION = "wire-mobile-inclusive-2026-08-24a"
+PROMPT_VERSION = "wire-mobile-draftable-2026-08-25a"
 DECISIONS = {"CARD", "IGNORE", "ABSTAIN"}
 CONTENT_TYPES = {"REPORTING", "FANTASY_ANALYSIS"}
 
@@ -58,15 +58,36 @@ not copy a sentence from the evidence. For FANTASY_ANALYSIS, it is one
 attributed sentence of no more than 180 characters explaining the source's
 take. Do not use quotation marks.
 
+The source and author are cited directly below the card. Do not begin the
+public summary with the outlet name or an outlet possessive such as "Sports
+Illustrated's" or "On SI's." When fantasy analysis needs attribution, use the
+named author's name alone.
+
 lineupbeat_impact is Lineup Beat's concise fantasy interpretation. It may make
 a cautious inference from the supplied evidence, but it must distinguish that
 inference from the source's report and state important limits. Do not invent a
 guaranteed role, workload, diagnosis or timetable.
 
-Return CARD when the item gives a fantasy player useful actionable context,
-including deep-league or watch-list context. Use IGNORE only for promotion,
-sponsor copy, no fantasy player impact, or a truly trivial isolated play. Use
-ABSTAIN when the player, speaker, claim subject or evidence is ambiguous."""
+Return CARD only when the item gives a plausibly draftable player actionable
+fantasy context, or the evidence establishes a concrete path to such a role.
+A backup quarterback is not useful unless the evidence shows a real starting
+quarterback battle, a promotion to first-team work, a named start, or a starter
+absence that can put him on the field. Ordinary QB2/QB3 or developmental-job
+competition is IGNORE. For a fringe RB, WR or TE, generic praise, "stood out,"
+an isolated preseason play, or roster-watch/deep-league language is IGNORE
+unless the evidence establishes material first-team work, workload, a depth
+chart move, a transaction into a plausible role, or a starter's absence with
+that player as the beneficiary. Use IGNORE for promotion, sponsor copy or no
+meaningful fantasy impact. Use ABSTAIN when the player, speaker, claim subject
+or evidence is ambiguous."""
+
+
+def redundant_outlet_lead(summary: str, source_name: str) -> bool:
+    """Whether a summary repeats the outlet already cited below the card."""
+    folded = (summary or "").strip().lower().replace("’", "'")
+    source = (source_name or "").split(" -- ", 1)[0].strip().lower()
+    outlets = {source, "sports illustrated", "on si"} - {""}
+    return any(folded.startswith(f"{outlet}'s ") for outlet in outlets)
 
 
 def build_prompt(evidence: str, metadata: dict, identity: dict) -> str:

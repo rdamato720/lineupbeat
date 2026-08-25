@@ -238,8 +238,13 @@ Fantasy position is necessary but insufficient. The gate recognizes:
 
 Rules to preserve:
 
-- A backup quarterback needs a promotion, named-starter call, starter absence,
-  or explicit first-team work that materially changes opportunity.
+- A backup quarterback needs a genuine starting-job battle, named-starter
+  call, starter absence, or explicit first-team promotion. QB2/QB3 and
+  developmental competitions are not relevant by themselves.
+- A fringe RB, WR or TE needs a concrete workload, first-team role,
+  depth-chart move, transaction into a plausible role, or starter absence.
+  Generic praise, "stood out" language and roster-watch speculation are not
+  sufficient.
 - An injury or absence alone does not make a WATCHLIST player relevant.
 - A third running back being behind two players is not a positive depth-chart
   development.
@@ -705,6 +710,11 @@ the supplied source. It cannot approve. Attempted candidate ids are banked
 before each request, model calls and observed cost are recorded, and one
 in-flight response may cross the observed cap but no later request is sent.
 An empty or fully ignored batch creates no issue and no deploy.
+
+The source citation is rendered separately below the card. Public summaries
+must therefore lead with the news itself or the named author when attribution
+is essential, not redundant outlet possessives such as "Sports Illustrated's"
+or "On SI's".
 
 After deterministic wording validation, the mobile path applies a 12-hour
 event-level duplicate check across the current batch and existing

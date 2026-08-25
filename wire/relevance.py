@@ -41,7 +41,7 @@ FANTASY_POSITIONS = {"QB", "RB", "WR", "TE"}
 OPPORTUNITY = [
     ("named the starter", re.compile(
         r"(?i)\b(named (?:[A-Z][\w.'-]+\s+){0,3}(?:the )?(?:starting|starter)|"
-        r"will start|won the (?:starting )?(?:job|competition)|"
+        r"will start|won the starting (?:job|competition)|"
         r"announced as (?:the )?starter|gets the (?:start|nod)|"
         r"(?:is|as) the (?:new )?starter)\b")),
     ("promoted to first-team work", re.compile(
@@ -55,9 +55,13 @@ OPPORTUNITY = [
         r"while .{0,28} (?:is |was )?(?:out|sidelined|absent))\b")),
     ("red-zone or goal-line work", re.compile(
         r"(?i)\b(red[-\s]?zone|goal[-\s]?line)\b")),
-    ("repeated targets, routes or carries", re.compile(
-        r"(?i)\b(targets?|routes?|carries|touches|backfield|"
-        r"snap share|workload)\b")),
+    ("a material workload or role", re.compile(
+        r"(?i)\b(?:(?:led|most|majority|featured|primary|every[- ]down|"
+        r"first[- ]team|with the (?:ones|1s)).{0,45}"
+        r"(?:targets?|routes?|carries|touches|backfield|snap share|workload)|"
+        r"(?:targets?|routes?|carries|touches|backfield|snap share|workload)"
+        r".{0,45}(?:led|most|majority|increased|first[- ]team|"
+        r"with the (?:ones|1s)))\b")),
     ("a signing or trade into a role", re.compile(
         r"(?i)\b(signed (?:with|by|a)|traded (?:to|for)|claimed off waivers|"
         r"agreed to terms)\b")),
@@ -73,21 +77,19 @@ OPPORTUNITY = [
 # his ordinary Tuesday.
 QB_PROMOTION = re.compile(
     r"(?i)\b(named (?:[A-Z][\w.'-]+\s+){0,3}(?:the )?(?:starting|starter)|"
-    r"will start|won the (?:starting )?(?:job|competition)|"
+    r"will start|won the starting (?:job|competition)|"
+    r"(?:competing|competition|battle) (?:for|to be) (?:the )?"
+    r"(?:starter|starting quarterback (?:job|role))|"
     r"(?:is|as) the (?:new )?starter|took (?:over )?(?:the )?first[-\s]team|"
     r"with the (?:ones|1s|starters)|first[-\s]team (?:reps?|snaps?)|"
-    r"in place of|replac(?:ed|ing)|elevated to|moved ahead of|"
+    r"in place of|replac(?:ed|ing)|elevated to (?:the )?starter|"
+    r"moved ahead of .{0,35}(?:for the starting job|to start)|"
     r"starter (?:is |was )?(?:out|injured|sidelined))\b")
 
 ROUTINE = re.compile(
     r"(?i)\b(second[-\s]team|third[-\s]team|with the (?:twos|2s|threes|3s)|"
     r"expected to play|preseason (?:snaps|action|playing time)|"
     r"scout team|reserve)\b")
-
-AVAILABILITY_ONLY = re.compile(
-    r"(?i)\b(did not (?:practice|participate)|limited|held out|absent|"
-    r"sidelined|injur(?:y|ed)|hamstring|knee|ankle|shoulder|groin|back)\b")
-
 
 def load(path: Path | None = None) -> dict:
     p = Path(path or REGISTRY)
@@ -139,20 +141,24 @@ def assess(player_id: str, position: str, text: str,
                           "absence or first-team opportunity in the evidence"}
 
     if tier in (ROSTERABLE, WATCHLIST):
+        if pos == "QB" and tier == WATCHLIST and not QB_PROMOTION.search(text or ""):
+            return {"eligible": False, "tier": tier,
+                    "reason": "watchlist quarterback with no true starting-job "
+                              "battle, named start, starter absence or first-team "
+                              "promotion"}
         # Even a rostered quarterback's routine second-team rep is not news.
         if pos == "QB" and ROUTINE.search(text or "") and not QB_PROMOTION.search(text or ""):
             return {"eligible": False, "tier": tier,
                     "reason": "routine reserve work by a quarterback: no "
                               "promotion or starter change in the evidence"}
-        # An injury report is valid evidence, but it does not by itself make
-        # a fringe/watchlist player fantasy relevant. Dameon Pierce's missed
-        # practice cleared every identity check while establishing no role,
-        # opportunity or rosterable consequence.
-        if (tier == WATCHLIST and AVAILABILITY_ONLY.search(text or "")
-                and not opportunity):
+        # A fringe/watchlist player needs the report itself to establish a
+        # material role. Generic praise, an isolated preseason play and an
+        # availability note do not become useful merely because the player
+        # sits just beyond the core draft boundary.
+        if tier == WATCHLIST and not opportunity:
             return {"eligible": False, "tier": tier,
-                    "reason": "watchlist availability report with no "
-                              "actionable fantasy role or opportunity"}
+                    "reason": "watchlist report with no actionable fantasy "
+                              "role, workload or opportunity"}
         return {"eligible": True, "tier": tier,
                 "reason": entry["relevance_reason"]}
 
