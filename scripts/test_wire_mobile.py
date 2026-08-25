@@ -223,8 +223,11 @@ class MobileWireTests(unittest.TestCase):
         self.assertIn("wire-mobile-x.db", monitor)
         self.assertIn("for attempt in 1 2 3", monitor)
         self.assertIn("git fetch origin main", monitor)
+        self.assertIn("git stash push --include-untracked", monitor)
         self.assertIn("git rebase origin/main", monitor)
         self.assertIn("git rebase --abort || true", monitor)
+        self.assertLess(monitor.index("git stash push --include-untracked"),
+                        monitor.index("git rebase origin/main"))
         self.assertLess(monitor.index("git rebase origin/main"),
                         monitor.index("git push origin HEAD:main"))
         self.assertNotIn("wire_publish.py", monitor)
