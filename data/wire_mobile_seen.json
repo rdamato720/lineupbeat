@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 60,
+ "count": 65,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -661,6 +661,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003924
+  },
+  {
+   "candidate_id": "mobile:onsi:3baa966ef67a96552fc7",
+   "player_id": "00-0035676",
+   "source_url": "https://www.si.com/onsi/fantasy/news/4-league-winning-wide-receivers-for-2026-fantasy-football-chris-olave-could-excel-with-tyler-shough",
+   "attempted_at": "2026-08-25T17:05:54+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-25T17:06:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006256
+  },
+  {
+   "candidate_id": "mobile:onsi:292a2f1f3d27d907874c",
+   "player_id": "00-0039732",
+   "source_url": "https://www.si.com/onsi/fantasy/news/4-league-winning-wide-receivers-for-2026-fantasy-football-chris-olave-could-excel-with-tyler-shough",
+   "attempted_at": "2026-08-25T17:06:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-25T17:06:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003974
+  },
+  {
+   "candidate_id": "mobile:onsi:da487c256b51e8993ac1",
+   "player_id": "00-0039893",
+   "source_url": "https://www.si.com/onsi/fantasy/news/4-league-winning-wide-receivers-for-2026-fantasy-football-chris-olave-could-excel-with-tyler-shough",
+   "attempted_at": "2026-08-25T17:06:07+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-25T17:06:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003556
+  },
+  {
+   "candidate_id": "mobile:onsi:cff054155272fd36d8c4",
+   "player_id": "00-0037239",
+   "source_url": "https://www.si.com/onsi/fantasy/news/4-league-winning-wide-receivers-for-2026-fantasy-football-chris-olave-could-excel-with-tyler-shough",
+   "attempted_at": "2026-08-25T17:06:10+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-25T17:06:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004084
+  },
+  {
+   "candidate_id": "mobile:onsi:7b415090e487695e065b",
+   "player_id": "00-0036912",
+   "source_url": "https://www.si.com/onsi/fantasy/news/4-league-winning-wide-receivers-for-2026-fantasy-football-chris-olave-could-excel-with-tyler-shough",
+   "attempted_at": "2026-08-25T17:06:14+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-25T17:06:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00489
   }
  ]
 }
