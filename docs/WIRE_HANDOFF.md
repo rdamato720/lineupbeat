@@ -710,9 +710,11 @@ another homepage card.
 When cards remain, the monitor commits the exact pending batch and opens an
 assigned `wire-inbox` issue. GitHub Mobile notifications provide the phone
 alert. `.github/workflows/wire-mobile-approve.yml` reacts only to Ralph's
-closed command syntax, records the receipt, publishes through
-`scripts/wire_publish.py`, pushes the changed publication mirror, and queues
-`refresh.yml` with `skip_fetch=true`. Rejections create no deployment.
+closed command syntax. It publishes through `scripts/wire_publish.py`, records
+the audit receipt, commits the changed publication mirror, and then queues
+`refresh.yml` with `skip_fetch=true` to build, verify and deploy the homepage.
+The approval runner does not attempt a homepage build from its data-only
+checkout. Rejections create no deployment.
 
 All three workflows share the `wire-runtime` concurrency group so publication,
 monitor state and deployment cache work cannot overlap. GitHub Actions must

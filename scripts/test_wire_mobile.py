@@ -213,6 +213,10 @@ class MobileWireTests(unittest.TestCase):
         self.assertIn("wire_mobile_approve.py", approval)
         self.assertIn("--publish", approval)
         self.assertIn("skip_fetch=true", approval)
+        self.assertNotIn("wire_homepage_replacement.py", approval)
+        self.assertNotIn("data/wire_homepage_replacement", approval)
+        self.assertLess(approval.index("git push origin HEAD:main"),
+                        approval.index("gh workflow run refresh.yml"))
         apply_script = (ROOT / "scripts" / "wire_mobile_approve.py").read_text()
         self.assertIn("visible issue wording does not match", apply_script)
 
