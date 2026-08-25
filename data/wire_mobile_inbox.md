@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `7ce7a88cba57` · 5 draft calls · $0.0232
+**1 cards** · batch `c72251ac65f7` · 5 draft calls · $0.0242
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,28 +19,24 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Ja'Marr Chase — CIN WR
+## 1. Ashton Jeanty — LV RB
 
-**Trending down** · INJURY · MEDIUM evidence
+**Trending down** · ABSENT_FROM_PRACTICE · LOW evidence
 
 ### What changed
 
-Ja'Marr Chase was still walking around after going down and appeared to be finished for the day following a left-knee concern.
+Ashton Jeanty was absent as Raiders rookie RB Mike Washington received attention for developing quickly.
 
 ### Lineup Beat impact
 
-Chase's apparent early shutdown is a short-term practice concern, but the evidence provides no diagnosis, severity, or timetable.
+Jeanty's unspecified absence could create short-term practice opportunities for other backs, but the evidence gives no reason, duration or indication that his role is at risk.
 
-[pauldehnerjr · X](https://x.com/pauldehnerjr/status/2092326580643127663) · 2026-08-25
+[LeviDamien · X](https://x.com/LeviDamien/status/2092337994225340776) · 2026-08-25
 
 <details><summary>Full evidence reviewed</summary>
 
-Jeremy all over the play where Chase originally went down.
-
-[Responding to]: Here’s a closer look at how Ja’Marr Chase went down. Watch his left knee. 
-
-Again. He’s still out here. Walking around. Appears to be shut down for the day. #Bengals @FOX19 https://t.co/z7fyHKNL4A
+#Raiders rookie RB Mike Washington 'growing up really fast' in Ashton Jeanty absence https://t.co/J6Hp9kQCUz via @TheRaidersWire
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrNVdty2zYQ_RUM-5CHWjLvFz3VrZXYTiJnVKVJJ_FwQGAhwiYJDgBaUTKZ6W_09_olXZCWbDc_0BcOsbvYy9mzi29eRS2rS8m9hZcxyGies4omWZHznDPKwzgCUdGQscIP_LhKWcH8WNBCBGGY-hBFmSjSXIQVo96Jx6jmxlt8-ubRvtfqHnhJLbpGFR1srTT-93RoONQd6Fvtrqi2hc5SvUfdbzU18MIQvE01SglQ3eyJqQfL1a4jElV4UtrOLOiW9JoyKxkQpjoGujsh1WCJrYHAveSAMuLSwF9DOkW4pNtOGWlOiIF70NLuT4jSxMoWLK0amD9LqDwWUe2nIp7olJZb2aH47fX58k15vj57uRktOosWpd33gMr18t31enO5eoUqTq0ThX6Yzvx8FiaboFj4wSJOfvb9he87E6kBC1LO72r56mxz-cfSiTUVtkTXYirKW_jzrDjIG9lKS90tB723eVo9V2Pl9gADwncEwVV-gMEVfmkfzcdYCPCuBkRTk7ExZCebhrTSYBc4ly4ibR574FB0Pre0BeMcukxUZUDfj9m57lXohhP8r_FgMOsBfQns5di0vqHYEBefEgu0JbK7HfSeDL3Dbu7dnHiHyhCgK9DQ7gnFnLBJjx5c0hoeUp7ahDYodoRyNJp_7j53n9ZgetVx2W2JVTcLcoGX_vnrb8cw1ijMmjRK3RFqSa125Iqi7i3VRyiOzsgHN0JjQQ0IS-46gDlxIc62VKL-YnJrrENPIT9deu5ac-eCU62Gjs_JWd8j2w0mQyoYKT_6J0JNpXG6n5OffoVuSxtDfnl5_TEoSG1tbxanp3bO1OnXTOwvXq_exGfeI1Alo1ikw2-a8lZVsoHFl0VRpRCLXGRVnPhZnkY0EHgPh0t-HQn4-wVSt9ws129R3AKraSdNi4rL1dX79Z9OqDg05QHi8n83yhgHtKllPyZ9vny3xM_KjanjCbhtdEVfPHb1qJig8v2Z70dpMY5mj8EeJvPD2p21up1mtaTHkb1euXHth6qRrDRD205YPAtCdvRAht0zCjwMwlY50YgRdcKRFjg0Ey-ExCbUeHxCC_xvGrUbPY0cnDkOHoCc_5DRj3tNA-VYdUMraFCywYbxQxYPatmBMaWgshk0uEVz4-T3EnZ48YiAQ3jadkYNehzTj-5g0ePW1m5dLs8v3ztGuQF3PLlc4WHQLu6BzV-Qze3p04fidNoVp6FfhFGYJrmfxlEQZmkaed9v3No1thwMd5vRR4vgxNsC3kTaPzxB_1m7-SJIj2t34jHDLYGFJQe4xqWFpB5wnVNbjsvWW2TRc72paZikTww8KgohIEjzGKAK8wofyACSvAgK4H5RJSz1UxECrXwe8UIUSRxxkWZJHrE4S6rQ4cVqaGmJvDYTrjt8GGbT6M5kV6kvs_vgCHI5PeJTJmgsWBQWGDTygRcxZ0lQxUEOYZxz4ecUWAYFPvFCBLxKs1wABFkRpRGr_LSiMfe-_wvHkbkM:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrVVUtz2zYQ_isY9uBDJQt8kzrFDyV1akuuosSd6Xg4eFFERBIsAEpWMvnvXYiybDeHnnshgd3FYvfb_RbfPUosqwrJvanH0iCIfcKSuEyDjOSpH-KEpknC4zRjMaOYslQQkoVpiP2UpVGUxmHgJ5z6UVBG3shjRHPjTf_67pGu02oreEEsuAYV6W2lNKxvxVZek0aK1h1QTSNaS_QeNB8Fae3-zKC-NZ1gspSCI0KNaJlATPU1R0wLYgUy4MqOrdAN6jRhVoKB6joQ9q20UhhUKo2UrYRGlLCNGSHaWwR7BLfzg8O13IJdqxC4NKodId5rYqVqERyVLZds2NmKWFRJg7SqBYI_bLU0m_M34RenhOl-SPiVTmm5li2I7xbXs9viennxfnWwaC1YFHbfCVAuZ_eL5epm_gFUHLIEUYCDZIyzcRCv_HwapVOc_IrxFGNnIrVgLkKwm88-XKxuvsycWJPSFuC6HPL0pvg8yZ7ltWykPeTlyuStXgPC1QEPi4x1GO-qPRoqgnbEDHWwLum5QlY2opatGAFQX3u9hx8A3pzg2ym9qRWBelWkXR9Qc-jARdx5cNdq4coFdWK9EU4tG6JlvUfg4U5uBHogppLt2qr23Hscec9hQra_LAmstauI2kiBlpf_PoHO1lrtYI36ztW3Br8lMfYMAkUXpnImx9ye-6uytjPTycSeMzX5mPzW5Zs_rj5_Q1tJ0DsI-HjnA6DuvURTMAKd4qo1cKhRVNZi-jT1CWc-j6KY4yBieRmXYQnnoG_lt0PJPs9_ny8e5iBrhENJmgakF5efZvNV8X65uCvulxdXq5srV9RGcVEf24jUxf-cNWrXApKV7CD6m_n17H4Gn7ljRFeTvXBD4k2NTooBY4zHGEfYDwKnUEYeSbC8dHutvg60KMiJHYu5A7HraS1ZYfqmGZB72wgvTY5g9d8tBuwTAAZgbR2LXdIOPi62olad672_e8k29f78p7t_HhaAJlxX1ISKGiQrLQBKcMEBq6Ma6GZMURJZ91o49j46-VaKHRw85eqwHEaIUb0-0OVPt7HgcW0rN38XDyCwgrh-u_0C6167O58J8AQEaCYvU3rixkFvJgHOgzBM8zyCZyKMcJom3o9HN8WMLXrD3aCBXg-CYOStBVQYWu44_t-OsTiahtlpjA2tzYCikFP8jNShiaDPexiPxBaH4eVN0_Ct3lQkiJNXBh4p87IUfpJFQtAgo2We-CLOcj8XHOc0ZglOykAQinnI8zKPo5CXSRpnIYPHjLqOMqwSDSm2UP0B0h1QfjwQeyxbqp7GW_-EbzE8oEMkYJwEKfYT5vshTTE8jzH1cxqVUYgpTRIXV5qWeZriUuQs4SSnfhZSsBZlhDHzvR__AEVmh40:WIRE_MOBILE_MANIFEST_V1 -->
