@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 80,
+ "count": 85,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -881,6 +881,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005586
+  },
+  {
+   "candidate_id": "mobile:x:0c5cf49e51f0275f34cc",
+   "player_id": "00-0040730",
+   "source_url": "https://x.com/NickKosmider/status/2092350715385803107",
+   "attempted_at": "2026-08-25T20:54:40+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-25T20:54:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004734
+  },
+  {
+   "candidate_id": "mobile:x:81abb4f741ecedfcd1b1",
+   "player_id": "00-0040730",
+   "source_url": "https://x.com/ParkerJGabriel/status/2092350473500258532",
+   "attempted_at": "2026-08-25T20:54:45+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-25T20:54:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004658
+  },
+  {
+   "candidate_id": "mobile:x:a527e80e98bf011c5346",
+   "player_id": "00-0037545",
+   "source_url": "https://x.com/CorbinSmithNFL/status/2092349615312146478",
+   "attempted_at": "2026-08-25T20:54:50+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-25T20:54:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003684
+  },
+  {
+   "candidate_id": "mobile:onsi:f091d9a54cc483f9e1d1",
+   "player_id": "00-0036900",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/if-i-had-a-game-tomorrow-i-d-play-ja-marr-chase-addresses-injury-scare-following-bengals-latest-practice-01m0x8thnmrc",
+   "attempted_at": "2026-08-25T20:54:54+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-25T20:54:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00555
+  },
+  {
+   "candidate_id": "mobile:onsi:587d1c8a89bd3e841e75",
+   "player_id": "00-0033077",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/why-one-former-nfl-quarter-buying-dallas-cowboys-hype",
+   "attempted_at": "2026-08-25T20:54:59+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-25T20:55:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00514
   }
  ]
 }

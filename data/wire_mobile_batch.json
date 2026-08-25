@@ -1,112 +1,111 @@
 {
  "schema_version": "wire-mobile-batch-v1",
- "generated_at": "2026-08-25T19:54:38+00:00",
+ "generated_at": "2026-08-25T20:54:40+00:00",
  "window": {
-  "from": "2026-08-25T17:54:38.634604+00:00",
-  "to": "2026-08-25T19:54:38.634604+00:00",
+  "from": "2026-08-25T18:54:40.407538+00:00",
+  "to": "2026-08-25T20:54:40.407538+00:00",
   "hours": 2.0
  },
  "published": false,
  "model": "gpt-5.6-terra",
  "model_calls": 5,
- "cost_usd": 0.024222,
+ "cost_usd": 0.023766,
  "limits": {
   "max_calls": 5,
   "cap_usd": 0.08,
   "max_cards": 10
  },
- "candidate_count": 116,
+ "candidate_count": 85,
  "cards": [
   {
-   "player": "Ashton Jeanty",
-   "player_id": "00-0040122",
-   "team": "LV",
+   "player": "RJ Harvey",
+   "player_id": "00-0040730",
+   "team": "DEN",
    "position": "RB",
    "content_type": "REPORTING",
    "direction": "NEGATIVE",
-   "mechanism": "ABSENT_FROM_PRACTICE",
-   "strength": "LOW",
-   "horizon": "UNKNOWN",
+   "mechanism": "LIMITED_PARTICIPATION",
+   "strength": "MEDIUM",
+   "horizon": "SHORT_TERM",
    "projection_action": "NONE",
    "reader_label": "Trending down",
-   "public_summary": "Ashton Jeanty was absent as Raiders rookie RB Mike Washington received attention for developing quickly.",
-   "evidence": "#Raiders rookie RB Mike Washington 'growing up really fast' in Ashton Jeanty absence https://t.co/J6Hp9kQCUz via @TheRaidersWire",
-   "commentary": "Jeanty's unspecified absence could create short-term practice opportunities for other backs, but the evidence gives no reason, duration or indication that his role is at risk.",
+   "public_summary": "RJ Harvey spent part of Broncos full-pads practice on the side field, Parker Gabriel reported.",
+   "evidence": "#Broncos practice in full pads is wrapped. Another day on the side field for Riley Moss. \n\nAlso Alex Forsyth and Drew Sanders on the side. RJ Harvey and Tycen Anderson for part, too. \n\nDidn’t see Taylor Rapp or Frank Crum.",
+   "commentary": "Harvey's partial side-field work may indicate a practice limitation, a short-term concern for his availability or preparation. The report provides no injury detail, timetable, or role impact.",
    "source": "X",
-   "author": "LeviDamien",
-   "date": "2026-08-25T19:47:06+00:00",
-   "url": "https://x.com/LeviDamien/status/2092337994225340776",
+   "author": "ParkerJGabriel",
+   "date": "2026-08-25T20:36:41+00:00",
+   "url": "https://x.com/ParkerJGabriel/status/2092350473500258532",
    "ownership": "INDEPENDENT",
-   "evidence_candidate_id": "mobile:x:1adc1d445d024c9f5f3f",
+   "evidence_candidate_id": "mobile:x:81abb4f741ecedfcd1b1",
    "reviewer_action": "PENDING",
    "public_summary_approved_by": "",
    "commentary_approved_by": "",
    "approved_at": "",
    "commentary_origin": "MODEL_DRAFT",
-   "model_original_commentary": "Jeanty's unspecified absence could create short-term practice opportunities for other backs, but the evidence gives no reason, duration or indication that his role is at risk.",
+   "model_original_commentary": "Harvey's partial side-field work may indicate a practice limitation, a short-term concern for his availability or preparation. The report provides no injury detail, timetable, or role impact.",
    "draft_limitations": [
-    "The evidence does not state why Jeanty was absent.",
-    "No timeline, injury information or workload change is provided.",
-    "The report focuses primarily on Mike Washington."
+    "No injury or reason for the limitation was reported.",
+    "The report did not specify how much practice Harvey missed.",
+    "No timetable or expected game availability was provided."
    ],
-   "draft_confidence": 0.68,
+   "draft_confidence": 0.9,
    "readiness_failures": []
   }
  ],
- "relevance_suppressed": 91,
+ "relevance_suppressed": 106,
  "event_duplicates": 0,
  "outcomes": [
   {
-   "candidate_id": "mobile:x:e75dfb36aeb26b7ec954",
-   "player": "Jaxson Dart",
-   "origin": "X",
-   "decision": "IGNORE",
-   "reason": "An isolated practice throw is not actionable for a backup quarterback without evidence of a meaningful starting battle, promotion or starter absence.",
-   "validation_failures": [],
-   "cost_usd": 0.00464
-  },
-  {
-   "candidate_id": "mobile:x:773fb5b0d344d8a2e650",
-   "player": "Chris Olave",
+   "candidate_id": "mobile:x:0c5cf49e51f0275f34cc",
+   "player": "RJ Harvey",
    "origin": "X",
    "decision": "VALIDATION_FAILED",
-   "reason": "Moore directly addressed Olave’s status with a positive assessment, offering actionable availability context despite limited details.",
+   "reason": "The source directly reports side-field work for Harvey during part of practice, but provides no diagnosis or availability detail.",
    "validation_failures": [
     "availability item omits the temporary context (which practice, and that no timetable was given)"
    ],
-   "cost_usd": 0.004084
+   "cost_usd": 0.004734
   },
   {
-   "candidate_id": "mobile:x:f07dc2147b99f06f1d75",
-   "player": "Ja'Marr Chase",
-   "origin": "X",
-   "decision": "VALIDATION_FAILED",
-   "reason": "Chase directly characterized the injury as a small hyperextension, said he was good, and indicated he could have continued.",
-   "validation_failures": [
-    "mechanism INJURY is not supported by the evidence passage"
-   ],
-   "cost_usd": 0.004484
-  },
-  {
-   "candidate_id": "mobile:x:8e8c11e12a1be07c018b",
-   "player": "Ja'Marr Chase",
-   "origin": "X",
-   "decision": "VALIDATION_FAILED",
-   "reason": "Chase directly addressed a practice-related issue, said he was better, and indicated he could have kept going; the team nevertheless took precautions.",
-   "validation_failures": [
-    "availability item omits the temporary context (which practice, and that no timetable was given)",
-    "mechanism INJURY is not supported by the evidence passage"
-   ],
-   "cost_usd": 0.005428
-  },
-  {
-   "candidate_id": "mobile:x:1adc1d445d024c9f5f3f",
-   "player": "Ashton Jeanty",
+   "candidate_id": "mobile:x:81abb4f741ecedfcd1b1",
+   "player": "RJ Harvey",
    "origin": "X",
    "decision": "CARD",
-   "reason": "The supplied headline explicitly references an Ashton Jeanty absence, but offers limited detail and no confirmed fantasy-role consequence.",
+   "reason": "The source directly reports that Harvey was on the side field for part of practice, but gives no additional medical or workload context.",
    "validation_failures": [],
-   "cost_usd": 0.005586
+   "cost_usd": 0.004658
+  },
+  {
+   "candidate_id": "mobile:x:a527e80e98bf011c5346",
+   "player": "Rashid Shaheed",
+   "origin": "X",
+   "decision": "IGNORE",
+   "reason": "No fantasy-relevant practice, injury, role, or usage update is provided.",
+   "validation_failures": [],
+   "cost_usd": 0.003684
+  },
+  {
+   "candidate_id": "mobile:onsi:f091d9a54cc483f9e1d1",
+   "player": "Ja'Marr Chase",
+   "origin": "ONSI",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The report describes a concrete knee-related practice exit for an elite, draftable WR, but offers no confirmed severity or availability outlook.",
+   "validation_failures": [
+    "availability item omits the temporary context (which practice, and that no timetable was given)"
+   ],
+   "cost_usd": 0.00555
+  },
+  {
+   "candidate_id": "mobile:onsi:587d1c8a89bd3e841e75",
+   "player": "Dak Prescott",
+   "origin": "ONSI",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The evidence contains a favorable fantasy-relevant evaluation of an established draftable quarterback, attributed to Brian Hoyer.",
+   "validation_failures": [
+    "fantasy analysis is not explicitly attributed"
+   ],
+   "cost_usd": 0.00514
   }
  ]
 }
