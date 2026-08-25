@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**3 cards** · batch `e7300cb8aca8` · 5 draft calls · $0.0195
+**2 cards** · batch `d910e243cd2b` · 5 draft calls · $0.0182
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,79 +19,53 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Jayden Daniels — WAS QB
+## 1. Daniel Jones — IND QB
 
-**Unclear** · DEPTH_CHART · LOW evidence
+**Unclear** · INJURY · LOW evidence
 
 ### What changed
 
-Jayden Daniels took center snaps with both Matt Gulbin and Julian Good-Jones in practice, John Keim reported.
+Tyrese Haliburton said Colts QB Daniel Jones’ Achilles recovery could feel substantially different between nine and 12-to-15 months.
 
 ### Lineup Beat impact
 
-Daniels is working through center combinations, a short-term continuity variable for the offense. The report does not establish either center as the starter or indicate a fantasy impact for Daniels.
+This is indirect rehab context rather than a report on Jones’ current health or practice status. It supports monitoring his recovery, but offers no timetable or role clarity.
 
-[john_keim · X](https://x.com/john_keim/status/2092032377325236610) · 2026-08-24
+[James Boyd · The Athletic](https://x.com/RomeovilleKid/status/2092040014163014140) · 2026-08-25
 
 <details><summary>Full evidence reviewed</summary>
 
-Jayden Daniels worked with both Matt Gulbin and Julian Good-Jones at center today. Would be good to see Gulbin get good reps vs the Ravens’ starters in the joint practice. See what he can do.
+More #Pacers star Tyrese Haliburton on #Colts QB Daniel Jones’ Achilles rehab:
+
+“There’s a big difference between 9-12, 12-15 (months). … Nine months, I felt like, ‘Hey, I could probably play.’ But even the way I feel now is like completely different than I did nine months ago.” https://t.co/NEQbDQppaX
 
 </details>
 
 ---
 
-## 2. Jaylin Noel — HOU WR
+## 2. Joe Milton III — DAL QB
 
-**Trending up** · RETURN_TO_PRACTICE · MEDIUM evidence
-
-### What changed
-
-KPRC 2's Aaron Wilson reports Texans WR Jaylin Noel is back after recovering from a strained hamstring and broken right pinkie finger and said he is good to go.
-
-### Lineup Beat impact
-
-Noel's return removes an immediate health concern and puts him back on the practice-field radar, but the report does not establish his role, workload or preseason availability.
-
-[Aaron Wilson · KPRC 2](https://x.com/AaronWilson_NFL/status/2092032030833828016) · 2026-08-24
-
-<details><summary>Full evidence reviewed</summary>
-
-#Texans receiver Jaylin Noel back at it after healing up from strained hamstring, broken right pinkie finger: 'Good to go'
- https://t.co/Kridfh1lhS
-
-</details>
-
----
-
-## 3. Trey Benson — ARI RB
-
-**Trending down** · TRANSACTION · HIGH evidence
+**Trending up** · PERFORMANCE · MEDIUM evidence
 
 ### What changed
 
-PHNX Cardinals' Bo Brack reported that the Cardinals waived running back Trey Benson.
+Cowboys coach Brian Schottenheimer said Joe Milton III's development is real and praised his growing touch and high-level quarterback play.
 
 ### Lineup Beat impact
 
-Benson's Arizona roster spot is no longer secure, removing any immediate Cardinals-based fantasy value. His next team and role are unknown.
+Schottenheimer’s strong developmental praise is a positive signal for Milton’s long-term outlook, but the report provides no information on his place in the QB pecking order or expected playing time.
 
-[Bo Brack · PHNX Cardinals](https://x.com/BoBrack/status/2092030767836860534) · 2026-08-24
+[Clarence Hill Jr. · Fort Worth Star-Telegram](https://x.com/clarencehilljr/status/2092037766678802655) · 2026-08-24
 
 <details><summary>Full evidence reviewed</summary>
 
-🚨BIG ROSTER MOVES🚨
+Cowboys coach Schottenheimer full take on Joe Milton development: “I first remember hearing about Joe Milton when he was at the University of Michigan and everyone applauded him for how hard and how far he could throw the ball. Cool. That’s awesome. Go be in a carnival somewhere. That’s not what playing an NFL quarterback is. It’s not. So to me, arm strength is cool. Go to the fair and win a teddy bear. But you got to play quarterback. And that’s what I think you see Joe learning is he’s playing quarterback. And he’s playing quarterback at a high level.”
 
-The Arizona Cardinals activated Josh Sweat &amp; waived RB Trey Benson. 
-
-Breaking down the Cards moves. 
-
-The latest on Jeremiyah Love &amp; Carson Beck's injuries.
-
-Join @JohnnyVenerable &amp; me on @PHNX_Cardinals ⬇️ https://t.co/Vsc0eYh94N
-
-JOIN THE CHAT: https://t.co/sX7P2jkYcA
+[Responding to]: Cowboys coach Brian Schottenheimer said Joe Milton’s progress and development is real. He has shown more touch.
+He was once know a strong arm qb who could throw it a long way:
+“Go to the fair, win a teddy bear”
+It takes a lot more to play quarterback. Milton is showing that now. https://t.co/kW1VgXFpFR
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrdWMty28gV_ZUupipaRJTwIvjIZiiZI1GWSIWiLU_FLlQD3SBaAtCsboASZ8pV2WWZdbLJNot8QL5nfiD5hJwGCEqUX3JcldfGIvp9zz33nG7_1AppESWBYK1Bi3ddy4rCHo1or8ccaved2LY82414r9ONO9TzvdD1-yy0Ha_r9SLH8y3LtWinH3Y7jLb2WxFVTLcGv_2pRZdLJVecBbTA0uiiZZFIhd83MsmDWy4yM15mGc8LqtboeEFzwVNNhCZ3Ut2KfEGKRMlykZAIg7giGB6KnBZC5nqfUKKxYtFGT4auvBB5KYo1WVElaJhyEkuFFTiRccxzzQ_IHB-KLzGJMMk1yWVBuC4wWOiEcIHBqtmL6mouepX5xFIiZyKiBcfGMcWh9ZqIbEmjotpoc_qDnaiCLQzhuobhUZ9UYiFyNF9MX4zOgxez4ffzagT2z4ugWC85Omejy-lsPp6coIthdzQ5luO3rV7b8eaOO3CdgWf_yrIGlmWGCMUjAxDGvZocn4-GM9OqaFwEWDkWjOcRFrEO-k1zKjJR1KAida2J3AZ9BxDMhELEgjMTmkFQy1JFnDDBKgA3gNIcAN2Uar1PllwBkYxiIyLLAiHzfQMgv1_ibJxV6U0lZSRKaL7g24XLxQLpwEEIDTGRnJQp8g20I0OGGV0hjc3hdHU6k6KaWXuayKXIMXm_OhbdHAzbLVOaH7Te7bf4qgm_dUbX-NlkrTqRORgoQEKJfy5osd2f5oyclalAiCdSsvaZzEEeWjRUKSSj6wNyLcuUkZCTBQahkWjOmyUWvKibcShNVvXB64B-_t0fH2LCUNNzI0VekKUCuUQE4l5hpbsEO6IvwjGYNJg14QRoQjZAjrqQMxmKlA_uBx3qRKzXC0PXtVxUtRf5fcwDWuLHiiFXp-BWMB_NLtCccZMOoTNTi6PL-WlwfDqcGUpmkvF0w1eaBv-fVSvvcmQgEUsENZ4AgBH-mZjwwZ81Vx-QZttTo25Zbahhv2-bMlxKLTZV-Jsj863kTV2XAW3KczKdjExXiUCiQJdZViP6hJqFlLdNeDqnoM_XsBQdDY32yRmkl7yE9G5r4-CDA3woWYpThiBTGvLUqEoepZyqTYfAJjqIqUhLxY1-vDPtK8HvMGUbqsGylrBaPND0xnwUiueLIsHn-fQaDQWnhn3Xwyt8lMpslxTFUg8OD-8PwKPDrXkcIsVFqQ8dq-9YruN2u67TcVzfB_zv9z_nP0OqIDDXItU42hMLmkieQkgUL0qV40-GJXQlbRjEhKFRwmkK5MHciKsa9WVZaJIA1ZBGt0TWJdyg3oZ0QhYUZVTtkxCqVnyWzwkKSckU2dqqJHi6BLicaqOMK2BNUeAomv-A2dgDu_dRs7mcXo3n49ejr3QbU9yNjj3AoWEUIl6TTT4aLMkSZS0isazmk5SveGowgGXVkJn6gL5Qhd8I26gufCQ1FWRURWS8qDSG4a8wss-VyZQ0B2BPLeIXc35Pc8OGiIsVqg-FmaKezKHqVEOQBZwmNqVpeGHEr1ySWMkMEqQoioORhGb4jS5kX8lbVDZSkUDdRX4rIHfo4WpA9k42rrGQe29z0tC-AO0PXyrB4sROk6vnqL7v8g7jsRfbkedTJ-xSh-6o_vjiYvRiPJyPnoj-bDR_NZsE82lwORsez8fHoy9o__9guTxP5Zs0f0ziPct2e7sSfz37Sol_eTk7Jg6geyxGmyg12fDuerbDOARak66iG0gJsA2tarrRjxCuQvvTnKu6NcU1Dghj9cWWgP-CK8yh5Kzm_7c6Qw3Orj0Ywr66eHCI0-mrTzhEhWgNaDD5_vyJT-C50nPdntOzbP8LPnEkyRFIefvUI45wK5G5yV1VT7hnSl158xLEFIafJJUVvppHpVGiqjDqfKwflcYxHkumpnQ7pBp5a64nK5qWuPacmrX4PQoAIVe5Mjwn0DZS5rc5iPzvl3_HH9jdj8r_ZHQy_Jz8f07_n1b35smxBqmZeQ_Ud0dT13cJr257dQ5wEUpTUt1G8BgwEq03bhCXUCReA2ambd8b0CZc0EUec6UM5KZ0jMCgdnJdk5JQpI8_NYN__PlPfzkan5DZ9ArXZXIxfT26Mm1v87e5iaEhwzapxKy2oub9cSYhVFd3HHbxS5otf10flpHZEUHZrDfRHBCz1hFKp7pEMyS4OppZUZNKWushZrsUC-vCiOcZLCwTa5qQcwzZbIA5Bp8jHt3u6fpdJjDdzD7D04J8Z26C-fo1hxhWhlhPy7hZ8bvL08mb4CGQn__6-7__7Q-7jvRaRxb_Iel7k2rN6XhC5qcjggfDfLA7Ur_pXjo3tz9Ew-d4l-3GHvcYDx1q9d3Qt5jjPsu75rPh5MqY1nTyBdP676rfZ_jRI4584snh2Lt-NPvaJ4fJ-EM8e6TRvoc3dGFenw0da15sWKzKPDfgVOb0mM_fYCKG_N9qI7sx7drJ6fjk9MFMhrPxJ8zkSFYw7JqI1fW7Pdfv-VbH9Vrv3xkZ1UVQamaUzrL7Hcffby2q2ioaZ9nVUc8buNZWR2u2RjTFMQedBrVK9EDdEvpMi6BSz9ag6-z247LrdPxHA1oui7lH3a7t-K7PWa8bdft23KOO77tWv4tOh4W002GxFTqOH3W9Lqdhxw-7dt-NHGaQihKe0cAIag3vHZS-XRdpW-ShvG-v7C3WQf1_iPVJDCsjaENsRbEdu7HVsWOfUsvinNp-H9bLaGhH3Kex1wd5qedEHue27UTMtrusEzut9_8E7lIAzg:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrdWO1u28gVfZWB9kdbVJJJ6oOi-sux5URZW3YUZbPFJhCGnJE4McnhDoeWtYsAeYwW2P7tg-VJeu5QsqVN0maxQIEWECRxPu_HOede6edWzG2SLpVojVsi8j0Z9HuJCGIhk340lP1hsApWUTiSg8gTIuJe4A0FDyIsSWTUXwk57CeBF4R-f9RqtxJuRNUa__Bzi5el0XdSLLnF0ZjitU21wffnPJcVe6K3gjboPJeF5WaLmUWqKkavQigjE8uMTHnMEl1YeY8nblNpmE15wTjmSm0s0wV7rgtZffzwd5bUxuAwlkqe2ZRpw0rDE6sSySrLbV112dSyqi5pZ8VyXSirjSrWjC7GjTDYbNssrnHuaiVNxQrNrMql5XEm6UCj8Zlk3Ci77R7Zv3zwON42Hh_M4Za1KjB8dX0-uVyez08vFm4FPCvs0m5Licn55OZ6vpjOnmJKcEtDCO2w4406wWDheWOvN_aCP9MXj5a4IClN576anV1OTuc0avjKLnHySglZJDjE647C_XimcoVQYBOlqfWMZyqujUUUhaqSuqqkcMHQm4KdJqnKMlnt0iDvS2kUHdlGWCxSsMtSXZKxD5mgsCxSyeRdYwATWlZuByVBsk0qdyvZhlOy39VGira7dp_BfS5oyxr3IfI0_ZDOkht8qtJ50m29bbf2t1GMtZHsmxueUAJxgGGLrZGVZAfe4vXNmc6AghdP2DkvlMwecXTs-PhN8ab4-OEX-GQkpit4Hqs1vCeIOA9jaTcSXkUdP2gzP-j4A_ZHwMum1Z-67OOHf7KZKiRrRtpsylYysyxTt3Dt44e_PZNbGkx0nQn4qGOgbcvKjG-7ZM4TwFHe4XjAHyHbuv2wt9AbYgsdg715mUkrsW9vl22YMsWAYMXj_YyvNc79B0utLavxyYntJvpkNnkRn78oS_596zGYy4SDipTdRiFyHatMju_H0h_44WgVrcJhX_RE4PMkwj4QXP20w-O3s-vXM4zlMoEZqsoxOp09fzX_Kw1qIbMdK3i2_F9XAbAFy1JVOh_PJzcTvM2I4ZRESap3iLGH8SaqntfxvN4g9InUpa7UjtMvntCz0e8ali_5nuyz69mEpuo4U8myqvN8F7lPYF5x5P5rcL6jWwNBh66qjhGuwiqeHYFqj3WHKMCD4G41Ib6BV_cTyz5VRiO5gPcZj2VGYCmSTHKzm8C5VbVccZVBF0il3tL4nZIbbHmIAYW4UcpK18bxnkTn1KaggUpo3MLetU0xc3n9GgNW8gaE53ioDd28p8A9KJCfzHUu9R2F5FslThqwnAReFHh9z_P7_rBH732v9b797wrcGYDhZOEZjmLPTffXde5lkmoL4U8lQGWcpMBYDQQK8DzTpVuaEW4V8qlIcRpc3AHDag3KsBVgeKUyJNntz7C7Y6XJma5tpvVtg19SjB1FyFqw2oFZFdieO_Ek6jhpzaCXmHBbgJVSJrfECW2QKcI8yX9iUR4IujRDjPivlsD-IuiNB_2xN_xsCby5fjldTL-bfKEGRv4XauCZ5kkKgeVZvY9Itv0LhWmvGx2EsI3clDbtQMxIbwzbaHObaS4wboFVFDPwYx9lQYGZ0QmOvY9R61DUXOgy4g8VwCY_tOW4jJ3pTay3qInOvmPMsFUNaFl-uyu7coeFQwCNUVp-QalQpiINzWUeYyNU0WkdjwGUw52uLKeNSbxBzqsCgDPA3RZCiHWQizWpLkgvSS40KUAJz2rh2obcoTJFWUKQhFtHDytO1-60xaYGQ3R6DGHpQpw03hcpt01p3cgKLOyypxpKQ3jkDE0lDAHmaWZDVfhgA_UVGzw8wBIGzi4u2Y818iRNzJNbEIgkf7-8y15CzjXLUXw5CLPXCeJZ4qx56ubJRqiQcX5snCXIktjCLm66ripvdc3WMACr6frDS7vstCBvd2Y6E6d4VsWt21ZJ6aJPwleQ3bg9bdqLvSefnPblecoYRwbWKQ4EAqi-U9vyw1xWpUYhJb7qt2N2DKonRiFcv4KWqxmPwGiuNHoNMa5cLA4wxlzF5IjZM4mkQ8dS6hxz6sCsrpO0-6Z41mBKkyLeUs_C92pH0f8xRmz0ETgU-UKCRs3O2PVexxlpf5IO5y6qOjGicrvt3ojPZGaHeNWY62JD6YFt3eOm6Pa1_936-4vyYv41TVEYRVKM_F4YcxkNvKS_8sOjpujl5PTl9Wx5ee3k7bAxupnML67nV6ezs8l_6I7-v2rHVzROBxI1nU4_2zpFvWj0O1un384LsuYP1efI4EjSxL_5MbU2O5QRIxpZBFM7jqlHLHYt_2_vnxYQMEfxuvy9PdQFpfs13lBxgLjOQmZybdA3HfVTV5Pz6aurx5bq_PTyCy1VsuuFqNF8Z456ql4YDofDcDRCfR8MWu_fUjNQ2WVdCarXnj_yR0G7tZaACMi2a7SOfxD7_rj_-IO44U2CugKXB_swOqiCRDW6DG6XrgdojcPgeL5KeTAYHixo9cRK9nkv9INhbwhih0kY-asRD4boA6MQk4GI-WAgVl4cBMMk7IeSx4NhHPpRLwno340qSWXOl66Iuohv0K90GsHoqCLW9507_yH8y-a_mMYSLO778SgSYhSPRJz4scf7vSBYRX0-CjHmDQJfRD0ZRDzsSX-U9IM4GAaeL0beSAQiXLXe_wvdDjVg:WIRE_MOBILE_MANIFEST_V1 -->

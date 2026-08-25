@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 15,
+ "count": 20,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -166,6 +166,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003402
+  },
+  {
+   "candidate_id": "mobile:x:e15178f9f764d3d21ac9",
+   "player_id": "00-0035710",
+   "source_url": "https://x.com/RomeovilleKid/status/2092040014163014140",
+   "attempted_at": "2026-08-25T00:11:42+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-25T00:11:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003656
+  },
+  {
+   "candidate_id": "mobile:x:7d24ba6db161f68bd67f",
+   "player_id": "00-0039921",
+   "source_url": "https://x.com/BoBrack/status/2092039030364139640",
+   "attempted_at": "2026-08-25T00:11:47+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-25T00:11:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.002998
+  },
+  {
+   "candidate_id": "mobile:x:e2edb1348c01893ec851",
+   "player_id": "00-0035710",
+   "source_url": "https://x.com/RomeovilleKid/status/2092038276378976640",
+   "attempted_at": "2026-08-25T00:11:49+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-25T00:11:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004246
+  },
+  {
+   "candidate_id": "mobile:x:799ed8137bae950c4f17",
+   "player_id": "00-0039398",
+   "source_url": "https://x.com/clarencehilljr/status/2092037766678802655",
+   "attempted_at": "2026-08-25T00:11:53+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-25T00:11:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003998
+  },
+  {
+   "candidate_id": "mobile:x:6a6ff9c77aebc7477776",
+   "player_id": "00-0036879",
+   "source_url": "https://x.com/ParkerJGabriel/status/2092037168814506478",
+   "attempted_at": "2026-08-25T00:11:57+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-25T00:12:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003284
   }
  ]
 }
