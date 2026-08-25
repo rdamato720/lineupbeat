@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-approval-ledger-v1",
- "count": 1,
+ "count": 2,
  "receipts": [
   {
    "receipt_id": "mobile:49f74b01c0954bb71f23e5fb8672a9a43dc3afb5edeb0b0b4bf6f7e24b35060f:5403509377",
@@ -32,6 +32,78 @@
      "evidence_sha256": "2c36873b71d125ca2568d866ed111f0cda68e3f7d31850f72bea797def8b7c44",
      "public_summary_sha256": "342c2ef1a7bda80bd3fdde967e5a4f8b552c98cc4df02fad436af6441f87dec2",
      "lineupbeat_impact_sha256": "23746596fdb6b1c4abb9ab54e71c87971f97452542385a0db5f895551d3e301e"
+    }
+   ]
+  },
+  {
+   "receipt_id": "mobile:e3143cf63efd2b53eccaf40dbc2ce7f82a7d06af842f19ec235b9094914022ff:5409680025",
+   "batch_id": "e3143cf63efd2b53eccaf40dbc2ce7f82a7d06af842f19ec235b9094914022ff",
+   "issue_number": 39,
+   "comment_id": "5409680025",
+   "approved_by": "Ralph Damato",
+   "approved_by_handle": "rdamato720",
+   "approved_at": "2026-08-25T11:26:20Z",
+   "approval_statement": "reject all",
+   "manifest_sha256": "e3143cf63efd2b53eccaf40dbc2ce7f82a7d06af842f19ec235b9094914022ff",
+   "publication_sha256_at_draft": "af9ffe1684eeb28bf961e58919ed09b5c606f2eab0d3d9f9543df67583c475b2",
+   "publication_sha256_before": "af9ffe1684eeb28bf961e58919ed09b5c606f2eab0d3d9f9543df67583c475b2",
+   "publication_sha256_after": "af9ffe1684eeb28bf961e58919ed09b5c606f2eab0d3d9f9543df67583c475b2",
+   "publication_store_changed_since_draft": false,
+   "publication_count_before": 73,
+   "publication_count_after": 73,
+   "publications_applied": 0,
+   "outcomes": [
+    {
+     "card_number": 1,
+     "candidate_id": "mobile:onsi:7e5c76adc2edce9e9830",
+     "player_id": "00-0041176",
+     "player_name": "Jaden Bradley",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Jaden Bradley was among Washington’s bottom-of-roster receivers who stood out during preseason action against Detroit.",
+     "lineupbeat_impact": "Bradley merits deep-league and roster-watch monitoring after the positive preseason mention, but the report provides no usage, role, or roster-security details.",
+     "evidence_sha256": "d33708e3faffddbf20823a984234b0093c9a2c837e27bc798673e92e39359b92",
+     "public_summary_sha256": "22ea64dca5c06a4becc9221037326bd4458153cd045d758c615f7b38573e279e",
+     "lineupbeat_impact_sha256": "777c6da97b230669772f1a94e4fca3bf1668d8c833e15ffdbf96300a48712f50"
+    },
+    {
+     "card_number": 2,
+     "candidate_id": "mobile:onsi:0ec410b55ffa3c4ee63b",
+     "player_id": "00-0041096",
+     "player_name": "Kaytron Allen",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Sports Illustrated's John said Kaytron Allen continues to impress during Washington's preseason.",
+     "lineupbeat_impact": "Allen's positive preseason mention is a mild watch-list signal, but the evidence gives no role, workload, snap, or depth-chart detail.",
+     "evidence_sha256": "a854a094d419980dd55930001e8397cdab77c4f1631f29cc53357706f8cdc680",
+     "public_summary_sha256": "8b403cfa93ebf836a0c4852573a05e81272152ff0c5004cff1d535f10b6aa6b6",
+     "lineupbeat_impact_sha256": "a9835f9fc51fb9b73142e67bfd19afd27287cc739d8b25b85faeb1f469c64205"
+    },
+    {
+     "card_number": 3,
+     "candidate_id": "mobile:onsi:706ec5089f8bace631f4",
+     "player_id": "00-0040551",
+     "player_name": "Nick Nash",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Nick Nash was among the Commanders' bottom-of-roster receivers who stood out during the preseason game against Detroit.",
+     "lineupbeat_impact": "Nash earns deep-league and roster-watch attention after the positive preseason mention, but the report provides no targets, snaps or indication of a secured role.",
+     "evidence_sha256": "d33708e3faffddbf20823a984234b0093c9a2c837e27bc798673e92e39359b92",
+     "public_summary_sha256": "1dd9bf25275083c769608aa0a5b8807ba1692015f210181368aa1b1c29ff838e",
+     "lineupbeat_impact_sha256": "66718bc37087884e2193485c5d9535da6134560be6873873f719b1d1deddb326"
+    },
+    {
+     "card_number": 4,
+     "candidate_id": "mobile:onsi:77e272608375c157c75e",
+     "player_id": "00-0039677",
+     "player_name": "Sam Hartman",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Sports Illustrated's Philip Hughes reported that Athan Kaliakmanis has taken control of Washington's developmental quarterback competition with Sam Hartman.",
+     "lineupbeat_impact": "Hartman's path to a developmental roster role appears less secure after Kaliakmanis reportedly seized the competition. This does not establish Washington's final QB depth chart or a regular-season role.",
+     "evidence_sha256": "d97ed169b78f625cc0df1b8ed9aa5e05d4114a713baa876da3d6a10fa1aa005d",
+     "public_summary_sha256": "12c8eee3a6c8620ba9871470cc010078888990b573d604a54fe1bebdfc21cb67",
+     "lineupbeat_impact_sha256": "0fd1c623664ecae5b470b73de195cbd0c050fa954e646f0c42f08f2f4f642ede"
     }
    ]
   }
