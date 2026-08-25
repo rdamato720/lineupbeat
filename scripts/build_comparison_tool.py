@@ -173,11 +173,12 @@ CSS = r"""
   background:radial-gradient(circle at 37% 20%,rgba(35,43,45,.33) 0%,rgba(12,15,16,.16) 32%,rgba(5,7,8,0) 55%),#050708}
 .cmpwrap:before{position:absolute;z-index:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:72px 72px;opacity:1}.cmpwrap>*{position:relative;z-index:1}
 .cmpwrap>.crumbs{display:none}.cmphead{grid-column:1;margin:23px 0 0;text-align:left;max-width:650px}
-.cmphead .rkeyebrow{margin:0 0 23px;font-size:20px;font-weight:700;letter-spacing:.045em}
+.topbar .tbrow{height:56px;padding-top:0;padding-bottom:0}.topbar .stamp{margin-left:auto;white-space:nowrap;color:var(--quiet);font-size:11px}
+.cmphead .rkeyebrow{margin:0 0 23px;font-size:20px;font-weight:700;letter-spacing:.045em;color:var(--signal)}
 .cmphead h1{max-width:650px;margin:0;font-size:clamp(56px,4.5vw,72px);line-height:.99;letter-spacing:-.033em}
 .cmphead>p:not(.rkeyebrow):not(.rkstatus){max-width:590px;margin:33px 0 0;font-size:19px;line-height:1.7}
 .cmphead .rkstatus{margin-top:30px;font-size:12px;letter-spacing:.085em}
-.cmpbox{grid-column:2;width:100%;max-width:475px;min-height:510px;margin:0;justify-self:end;
+.cmpbox{grid-column:2;width:100%;max-width:475px;height:660px;margin:43px 0 0;justify-self:end;
   padding:0 26px 30px;border:1px solid rgba(255,255,255,.22);border-radius:18px;
   background:linear-gradient(180deg,rgba(17,21,22,.97),rgba(13,17,18,.97));box-shadow:0 32px 90px rgba(0,0,0,.38)}
 .cmpbox:before{content:"PLAYER COMPARISON";display:flex;align-items:center;height:67px;margin:0 -26px 28px;
@@ -185,10 +186,26 @@ CSS = r"""
   font:700 18px var(--agate);letter-spacing:.05em;text-transform:uppercase}
 .cmpselectors{grid-template-columns:1fr;gap:14px}.versus{text-align:center;padding:0;color:var(--signal)}
 .cmpselect select,.fmt select{height:62px;font-size:18px}.fmt{max-width:none;margin:18px 0 0}
+.cmpselect select,.fmt select{font-family:var(--agate);font-size:20px;font-weight:700;letter-spacing:.015em}
+.cmpactions{display:flex;gap:18px;margin-top:35px}.cmpaction{height:72px;display:inline-flex;align-items:center;
+  justify-content:center;min-width:220px;padding:0 28px;border:1px solid rgba(255,255,255,.3);
+  border-radius:8px;color:var(--ink);font:700 18px var(--agate);letter-spacing:.045em;text-decoration:none}
+.cmpaction.primary{background:var(--signal);border-color:var(--signal);color:#060806}.cmpaction:hover{border-color:var(--signal)}
+.cmpproof{display:grid;grid-template-columns:1fr 1fr 1.15fr;margin-top:47px}.cmpproof div{min-height:75px;
+  padding:0 20px;display:flex;flex-direction:column;justify-content:center}.cmpproof div:first-child{padding-left:0}
+.cmpproof div+div{border-left:1px solid rgba(255,255,255,.18)}.cmpproof strong{font:700 34px/.95 var(--agate)}
+.cmpproof span{margin-top:8px;color:var(--quiet);font:600 11px var(--agate);letter-spacing:.085em;text-transform:uppercase}
+.cmpedge{position:absolute;z-index:0;top:60px;bottom:0;width:205px;opacity:.22;pointer-events:none}
+.cmpedge.left{left:0}.cmpedge.right{right:0}.cmpmini{position:absolute;width:185px;padding:13px;border:1px solid rgba(255,255,255,.16);
+  border-radius:5px;background:rgba(13,17,18,.52);color:var(--quiet);font:500 12px var(--agate);letter-spacing:.05em;text-transform:uppercase}
+.cmpedge.left .cmpmini:nth-child(1){top:20px;left:0}.cmpedge.left .cmpmini:nth-child(2){top:260px;left:15px}
+.cmpedge.right .cmpmini:nth-child(1){top:70px;right:0}.cmpedge.right .cmpmini:nth-child(2){top:360px;right:15px}
+.cmpbars i{display:block;height:5px;margin:14px 0;background:linear-gradient(90deg,var(--signal) var(--w),rgba(255,255,255,.05) var(--w))}
 .cmpresult.ready{grid-column:1/-1;margin-top:80px}.cmpresult .verdict{max-width:1130px;margin:0 auto 1.5rem}
 .cmpresult .players,.cmpresult .edges{max-width:1130px;margin-left:auto;margin-right:auto}
 .popular,.method,.faq,.related{grid-column:1/-1}.popular{margin-top:80px}
-@media(max-width:900px){.cmpwrap{grid-template-columns:1fr;gap:36px;padding:45px 24px 80px}.cmphead,.cmpbox{grid-column:1}.cmpbox{justify-self:stretch;max-width:none}.cmpresult.ready,.popular{margin-top:35px}}
+@media(max-width:1100px){.cmpedge{display:none}}
+@media(max-width:900px){.cmpwrap{grid-template-columns:1fr;gap:36px;padding:45px 24px 80px}.cmphead,.cmpbox{grid-column:1}.cmpbox{justify-self:stretch;max-width:none;height:auto;min-height:540px;margin-top:0}.cmpresult.ready,.popular{margin-top:35px}.topbar .stamp{display:none}.cmpactions{flex-wrap:wrap}.cmpproof{grid-template-columns:1fr 1fr 1fr}}
 @media(max-width:760px){.cmpselectors{grid-template-columns:1fr}.versus{text-align:center;padding:0}.players,.pairgrid{grid-template-columns:1fr}.edge{grid-template-columns:1fr}.edge .left,.edge .right{text-align:center}.metrics{grid-template-columns:repeat(2,1fr)}}
 """
 
@@ -227,7 +244,14 @@ def html(players: list[dict], built: datetime, a: dict | None = None,
         title = "Who Should I Draft? Fantasy Football Comparison Tool | LineupBeat"
         desc = "Compare two 2026 fantasy football players by rankings, projections, ADP, weekly consistency, floor, ceiling, durability and recent news."
         path = "/nfl/who-should-i-draft/"; intro = ""
-    css, header, footer = base.site_chrome()
+    css, _, footer = base.site_chrome()
+    search = ('<input type="search" placeholder="Search any player" '
+              'autocomplete="off" aria-label="Search any player">')
+    header = seo.site_nav("data", search=search).replace(
+        '  </div>\n',
+        f'    <span class="stamp agate">UPDATED {built:%b %d}</span>\n  </div>\n',
+        1,
+    )
     links = pairs or []
     pair_html = "".join(f'<a href="/nfl/who-should-i-draft/{x["slug"]}-vs-{y["slug"]}/"><b>{base.esc(x["name"])}</b> or <b>{base.esc(y["name"])}</b>?</a>' for x, y in links[:36])
     # Pair pages need only their two records. Repeating the entire 218-player
@@ -256,14 +280,30 @@ def main() -> int:
                   '<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">')
     move_result = ('<script>document.querySelector(".cmpbox").after('
                    'document.getElementById("cmpresult"));</script>')
+    hero_extras = (
+        '<div class="cmpactions"><a class="cmpaction primary" href="#pa">COMPARE PLAYERS &rarr;</a>'
+        '<a class="cmpaction" href="/nfl/rankings/">VIEW RANKINGS</a></div>'
+        '<div class="cmpproof"><div><strong>218</strong><span>Players to compare</span></div>'
+        '<div><strong>4</strong><span>Scoring formats</span></div>'
+        '<div><strong>2025</strong><span>Weekly results analyzed</span></div></div>')
+    edge_panels = (
+        '<div class="cmpedge left" aria-hidden="true"><div class="cmpmini">Fantasy points'
+        '<div class="cmpbars"><i style="--w:72%"></i><i style="--w:55%"></i><i style="--w:83%"></i></div></div>'
+        '<div class="cmpmini">Consistency<br><strong>Floor &middot; Ceiling &middot; Boom</strong></div></div>'
+        '<div class="cmpedge right" aria-hidden="true"><div class="cmpmini">Draft value'
+        '<div class="cmpbars"><i style="--w:64%"></i><i style="--w:79%"></i><i style="--w:48%"></i></div></div>'
+        '<div class="cmpmini">Four formats<br><strong>PPR &middot; Half &middot; Standard &middot; SF</strong></div></div>')
     hub_html = html(players, built, pairs=pairs).replace(
         '<meta name="viewport"', font_links + '<meta name="viewport"', 1
     ).replace(
         "<h1>Who Should I Draft?</h1>",
-        "<h1>Make the right pick<br><span>before the clock runs out.</span></h1>",
+        "<h1>Choose with confidence<br><span>before</span> your draft<br>clock runs out.</h1>",
     ).replace(
         "Put two players head to head. Compare what they are projected to do with how they actually scored week to week.",
         "Put two players head to head. Lineup Beat combines current rankings, projections and ADP with the weekly consistency, floor and ceiling behind the average.",
+    ).replace('</header><section class="cmpbox">',
+              hero_extras + '</header><section class="cmpbox">', 1
+    ).replace('<main class="cmpwrap">', '<main class="cmpwrap">' + edge_panels, 1
     ).replace('</body>', move_result + '</body>')
     hub = seo.check_page(hub_html, str(OUT / "index.html"))
     (OUT / "index.html").write_text(hub)
@@ -278,6 +318,9 @@ def main() -> int:
         ).replace(
             "<h1>Who Should I Draft?</h1>",
             f'<h1>{base.esc(a["name"])} or<br><span>{base.esc(b["name"])}?</span></h1>',
+        ).replace('</header><section class="cmpbox">',
+                  hero_extras + '</header><section class="cmpbox">', 1
+        ).replace('<main class="cmpwrap">', '<main class="cmpwrap">' + edge_panels, 1
         ).replace('</body>', move_result + '</body>')
         dest.write_text(seo.check_page(pair_html, str(dest)))
     print(f"  comparison pool: {len(players)} players")
