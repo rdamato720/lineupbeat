@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 35,
+ "count": 40,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -386,6 +386,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004962
+  },
+  {
+   "candidate_id": "mobile:x:7a1d41d9c882c29945c1",
+   "player_id": "00-0034577",
+   "source_url": "https://x.com/JaySkurski/status/2092222119966846993",
+   "attempted_at": "2026-08-25T12:12:56+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-25T12:13:02+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00442
+  },
+  {
+   "candidate_id": "mobile:x:4b7680022ccc4b95bf7f",
+   "player_id": "00-0034857",
+   "source_url": "https://x.com/JaySkurski/status/2092222119966846993",
+   "attempted_at": "2026-08-25T12:13:02+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-25T12:13:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005236
+  },
+  {
+   "candidate_id": "mobile:x:90303308ea7ba113fa90",
+   "player_id": "00-0036679",
+   "source_url": "https://x.com/JaySkurski/status/2092222119966846993",
+   "attempted_at": "2026-08-25T12:13:07+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-25T12:13:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004716
+  },
+  {
+   "candidate_id": "mobile:x:5987ba624b2147924b59",
+   "player_id": "00-0034857",
+   "source_url": "https://x.com/JaySkurski/status/2092221101069816301",
+   "attempted_at": "2026-08-25T12:13:11+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-25T12:13:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003068
+  },
+  {
+   "candidate_id": "mobile:onsi:f44e60ff0cda2b7d9726",
+   "player_id": "00-0040122",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-how-will-handle-absence-ashton-jeanty",
+   "attempted_at": "2026-08-25T12:13:14+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-25T12:13:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003472
   }
  ]
 }

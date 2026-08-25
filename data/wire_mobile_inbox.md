@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**4 cards** · batch `e3143cf63efd` · 5 draft calls · $0.0226
+**4 cards** · batch `8219eabaa01a` · 5 draft calls · $0.0209
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,102 +19,90 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Jaden Bradley — WAS WR
+## 1. Kyle Allen — BUF QB
 
-**Trending up** · PERFORMANCE · LOW evidence
+**Worth noting** · DEPTH_CHART · MEDIUM evidence
 
 ### What changed
 
-Jaden Bradley was among Washington’s bottom-of-roster receivers who stood out during preseason action against Detroit.
+Kyle Allen and Shane Buechele were praised by Joe Brady, but Buffalo has not named a No. 2 quarterback; both will play against Pittsburgh.
 
 ### Lineup Beat impact
 
-Bradley merits deep-league and roster-watch monitoring after the positive preseason mention, but the report provides no usage, role, or roster-security details.
+Allen remains in an unresolved competition for Buffalo's backup QB job. The upcoming preseason appearance could offer more clarity, but no depth-chart decision or regular-season role was reported.
 
-[Philip Hughes · Sports Illustrated -- WAS](https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-added-practice-kaliakmanis-antonio-williams-53-man-roster) · 2026-08-25
+[JaySkurski · X](https://x.com/JaySkurski/status/2092222119966846993) · 2026-08-25
 
 <details><summary>Full evidence reviewed</summary>
 
-The preseason is almost over, with one more joint practice and game to go against the Baltimore Ravens this week. The Washington Commanders visited the Detroit Lions for the second game, and we got a one-series look at Jayden Daniels, then some extended time with the backups. There were some bottom of the roster guys that stood out like WRs Jaden Bradley and Nick Nash.
-
-The Washington Commanders visited the Detroit Lions for the second game, and we got a one-series look at Jayden Daniels, then some extended time with the backups. There were some bottom of the roster guys that stood out like WRs Jaden Bradley and Nick Nash. Sixth-round pick Kaytron “Fatman” Allen takes the lead as top preseason back.
-
-There were some bottom of the roster guys that stood out like WRs Jaden Bradley and Nick Nash. Sixth-round pick Kaytron “Fatman” Allen takes the lead as top preseason back. Is there really a competition for QB3?
+Joe Brady spoke glowingly of the performance of both Kyle Allen and Shane Buechele behind Josh Allen through the first two preseason games, but didn't say whether the team has decided on the No. 2 quarterback. Both Allen and Buechele will play Thursday against Pittsburgh.
 
 </details>
 
 ---
 
-## 2. Kaytron Allen — WAS RB
+## 2. Josh Allen — BUF QB
 
-**Trending up** · PERFORMANCE · LOW evidence
+**Worth noting** · DEPTH_CHART · LOW evidence
 
 ### What changed
 
-Sports Illustrated's John said Kaytron Allen continues to impress during Washington's preseason.
+Josh Allen’s backup competition remains unresolved, with Kyle Allen and Shane Buechele set to play against Pittsburgh, Jay Skurski reported.
 
 ### Lineup Beat impact
 
-Allen's positive preseason mention is a mild watch-list signal, but the evidence gives no role, workload, snap, or depth-chart detail.
+This does not indicate a change to Josh Allen’s role, but it leaves Buffalo’s No. 2 quarterback unsettled for contingency/deep superflex monitoring.
 
-[Philip Hughes · Sports Illustrated -- WAS](https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-added-practice-kaliakmanis-antonio-williams-53-man-roster) · 2026-08-25
+[JaySkurski · X](https://x.com/JaySkurski/status/2092222119966846993) · 2026-08-25
 
 <details><summary>Full evidence reviewed</summary>
 
-John gives his second thoughts following Washington's second preseason game against the Detroit Lions. John discusses: Dan Quinn clearly not happy with Saturday's performance after adding another practice to the schedule, Sonny Styles surprisingly receiving hate online, Kaytron Allen continues to impress, and more.
+Joe Brady spoke glowingly of the performance of both Kyle Allen and Shane Buechele behind Josh Allen through the first two preseason games, but didn't say whether the team has decided on the No. 2 quarterback. Both Allen and Buechele will play Thursday against Pittsburgh.
 
 </details>
 
 ---
 
-## 3. Nick Nash — WAS WR
+## 3. Shane Buechele — BUF QB
 
-**Trending up** · PERFORMANCE · LOW evidence
+**Worth noting** · DEPTH_CHART · MEDIUM evidence
 
 ### What changed
 
-Nick Nash was among the Commanders' bottom-of-roster receivers who stood out during the preseason game against Detroit.
+Joe Brady praised Shane Buechele’s preseason work but said Buffalo has not named a No. 2 QB; Buechele will play against Pittsburgh.
 
 ### Lineup Beat impact
 
-Nash earns deep-league and roster-watch attention after the positive preseason mention, but the report provides no targets, snaps or indication of a secured role.
+Buechele remains in an unresolved backup-quarterback competition. Positive coach feedback helps his roster case, but the report provides no decision or indication he will win the No. 2 job.
 
-[Philip Hughes · Sports Illustrated -- WAS](https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-added-practice-kaliakmanis-antonio-williams-53-man-roster) · 2026-08-25
+[JaySkurski · X](https://x.com/JaySkurski/status/2092222119966846993) · 2026-08-25
 
 <details><summary>Full evidence reviewed</summary>
 
-The preseason is almost over, with one more joint practice and game to go against the Baltimore Ravens this week. The Washington Commanders visited the Detroit Lions for the second game, and we got a one-series look at Jayden Daniels, then some extended time with the backups. There were some bottom of the roster guys that stood out like WRs Jaden Bradley and Nick Nash.
-
-The Washington Commanders visited the Detroit Lions for the second game, and we got a one-series look at Jayden Daniels, then some extended time with the backups. There were some bottom of the roster guys that stood out like WRs Jaden Bradley and Nick Nash. Sixth-round pick Kaytron “Fatman” Allen takes the lead as top preseason back.
-
-There were some bottom of the roster guys that stood out like WRs Jaden Bradley and Nick Nash. Sixth-round pick Kaytron “Fatman” Allen takes the lead as top preseason back. Is there really a competition for QB3?
+Joe Brady spoke glowingly of the performance of both Kyle Allen and Shane Buechele behind Josh Allen through the first two preseason games, but didn't say whether the team has decided on the No. 2 quarterback. Both Allen and Buechele will play Thursday against Pittsburgh.
 
 </details>
 
 ---
 
-## 4. Sam Hartman — WAS QB
+## 4. Josh Allen — BUF QB
 
-**Trending down** · DEPTH_CHART · MEDIUM evidence
+**Trending down** · OTHER · HIGH evidence
 
 ### What changed
 
-Sports Illustrated's Philip Hughes reported that Athan Kaliakmanis has taken control of Washington's developmental quarterback competition with Sam Hartman.
+Bills offensive coordinator Joe Brady said Josh Allen will not play Thursday.
 
 ### Lineup Beat impact
 
-Hartman's path to a developmental roster role appears less secure after Kaliakmanis reportedly seized the competition. This does not establish Washington's final QB depth chart or a regular-season role.
+Allen is unavailable for Thursday, removing him from single-game and short-window lineup consideration. The report gives no reason or indication of a longer-term absence.
 
-[Philip Hughes · Sports Illustrated -- WAS](https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-added-practice-kaliakmanis-antonio-williams-53-man-roster) · 2026-08-25
+[JaySkurski · X](https://x.com/JaySkurski/status/2092221101069816301) · 2026-08-25
 
 <details><summary>Full evidence reviewed</summary>
 
-No player on the team has increased their roster standing more dramatically than Athan Kaliakmanis. In a span of just a few months, he's gone from a seventh-round rookie competing for a chance to be in the developmental quarterback battle to owning it. Backup quarterback Marcus Mariota's MCL injury opened the door for an extended competition between Sam Hartman and Kaliakmanis.
-
-In a span of just a few months, he's gone from a seventh-round rookie competing for a chance to be in the developmental quarterback battle to owning it. Backup quarterback Marcus Mariota's MCL injury opened the door for an extended competition between Sam Hartman and Kaliakmanis. Against Detroit, Kaliakmanis was 11 of 14 for 162 yards and no turnovers; his passer rating was 114.9.
-
-Backup quarterback Marcus Mariota's MCL injury opened the door for an extended competition between Sam Hartman and Kaliakmanis. Against Detroit, Kaliakmanis was 11 of 14 for 162 yards and no turnovers; his passer rating was 114.9. His passes produced the longest offensive plays of the game for Washington with a 55-yard pass to Nick Nash, a 30-yarder to Jaden Bradley, and a 21-yarder to Antonio Williams.
+Josh Allen will not play Thursday, Joe Brady says.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrtWu1u20YWfZWB_uTHijZFifraHwsndmu3sZ3I3s2PbSAMyaE0McXhcoZW1KJAXmOBXWCfZR8lT7LnzlAUlbit2wTbJDUQCBFnOHPn3HvPPXPlHzoRN_FyLpPOtCP6vUE_Tod9kSZBFPZFHPN04CdRHMRilI4DPkr8IU_HgyDtTUQc9MNo4k8Gk97AD4I07XQ7MS8T3Zn-_YcOL4pS3Ypkzg2WxhCvzFKV-P-zpcxkwU6rxVJoeketViI3vNxg8HHJk0xs2EqU0miWCFF4meCLSjCeJ6xU2ojSW5PRbKVyaVQp8wXjKR4zsxSsUFoaeYv_lEILrlXOaHWp8i6LKmPnlKJQpWFkoEyEZrlileYL0cX6GT5Vud1Ii7iCIRsYYrjM9MGevfPmkNHGHbI1BsMWMsfj88vjk6fz49nRV9d2Rm4wY242hcDg7OTZ5ez67OJrDCXc0KPAD4aeP_aC8NoPpv3R1B_8yfenvk9TZCliOgzheHl1dn32txN6XAKAOZZOcZ48xir-wWT7OJMraTi9RJ7pXAMAraoyFkylqSjt8XXOC91lMHwhjLYIaHpHGxnzjJBKKrsvAXC9g5C2MzKVAHHrOa4ZZ5EyRq08lXoOSFZkfCNKevtC4eVFlXFC1_qHQN9hzlRlAKNgUte7iOSg87LbEbfbw1kLdv7FRJ6t8DKDL8ouW0uzZCoXCJBSsFdK5uRrDvtjF0ULjuWNYgvF-ILLXLuweMwzI-07M34rco2HWHotxM0Box1fcL1EsBls-QR-xkqE3q1EwInErnAsTKmkYU8JbJYqF5IIIlXv2rX7rwW2NoAJRgKEkuDLlLph3LBv-AanZMc8lyIjlyzxTRMe4jUCJ6GdJL7ZQ9LqEY9vqkJbE2H6mj7sfOcDONnFvAN3UW3oXNhIG6USAptl8gaHm2nsTVs3joSlFzK-YRc498F3-Xf5Hx4EdiVfmyViusLjgh5_yzc4bc7evvnXV9wAjrdv_s2OsgxLGH4jtN0WBJZQXhhVtMKWbN7C-lnZzM7slJJYgGcZNmRI2EIYSQxhPf78cf8vnV3KzmPYJInfXKVZqUhmYor4kNORCOPRkCdxIJJYTMRk3CemQ62Q31ueuzoFQ86vT2bneLwS8RJRoVdEgCezry5n50cXT4gDVyoRWc26PJt_blVFrXMk0lIWMPfs4vjk2Qk-LqhiOOrE4z0vNwMOUd_3fH_Q642GNGCtteC9mNH3Ur1yZWPOt9Xj4vKCUCuqKJPxXFdIZQvVfiitic2ByKKV92_f_FO_T_CoSwIAgQvWS9WK0aSyUO5wcxY0xFuzxcF7trxfXBFtIJt5xiORUREowQS0dlXUgzIXWs9TQFphOxS7l_T8Vgrk1u7khKwruK4MUoiR5zQ7y7JKm5ITk3kee3F0RZMM9lmYJaY9vXyBB0Zwij43WpVkytKYQk8PD9fr9YGWB4i9wzzNDuOGIA8p1A-jqlwgCzcuGavC203weAJW87ZlyrvhmeQ3Kwp1j-dAXSpvLTM8XGkv7HsYqZHv_Nj9zWrLJv0j_TPhbYsrW8kMhE3p4WXQBEzLBXJsF_rbPGcLLGIj34X8WpU3meJJ1woMmwKJKMBGSGKkigv_z0hTjYY_I6oaENoMoAsRQx_FVgChkjWqyomsRpa0mAACqU5YkdQ4EnpMA7M9TN9BE0u7fKCk3Sknp9dqEJ07oxLv73ztFaIEaSOkSB9pjSSiue-Krm_UMq8dTLqoLugIM4SWoUKfZWot96jiUTNtF1hWfLVl155eOGB2m0TquCJLpiQC2PNK5jmLQdklyk0O2bBEmGxc_b_ipioTvqE4bh_EkjfSyjI53lmKFt5Qf1aVxEuRVATxlcrzDbsymwzn01VZlJA0-QLbOWajVVB9IVTzDDzTbaqoK5wUgjKvqHgqJld0XO10DgnKg3vWQl_Eg54fhWGa8n48EGLYjz52Lfxkcv4eFW8P47srnj95p-LNHv_Kivc--QMdG4Way-Qeft7WuL24b1B9qGy_R2Uj6ctAF_kvqD1uTB30Hyz2msuzvUxT3Et4MbZFgsQ8Z1b31aT-ZXUSKLfhX8jr7wGGBf8efQD6gjD36C63bT78BGFodz-q8a7LGngK_yKugSl5sOWwdiWonffQRHhoIjw0Eb7QJoI_FHHojyfpGKtDNvXSwccWTp9FSbmHqGq8eqeg8sOw94EthGaDVvuADrhL9Ue_un9g9sh67w7x0EH4HXXWKUo0ViLBy4lGUQyRHbciU4WdlG2pxzb5sQkSCBRNqtmFbp0k3-6sbe6uIAUtIChcRWixAzE05iXKZolhAldfOB4BtyfBU8phsIiTE8zJCeQQv-sHiE9Jj12cfH30G_VYTSINNK7_sGEtP21FTFsiARWHVu0talNUthtxzkupDMeLMn9VlRsWI0-2VboppC3ngKzc3dp2GQTROFUMQ75e8Q25IV-gUlE1tgZjBPf-d8RZrQ7p56DcrkY5gws4mUEWaGeBLFsW21z-73-s-AJAK25_vEIUoeLh_mY_W3GGEkSaURfccukrJC6-pmJNLWCzBOsuBY69IBGYlqilxLaQdE0dLCE0ZBOYoJHUBhcd0HUYIgFrrfX7KfGPCt4QJdVBFENjMjsb1E2LgMkgIkmJ7M2DH-JKs507zp883bpEFSKvPZIociXZkd_pHdhkIEZzdgU466CwJawNDOmJB2zuxoYd7Zed7h51UcHr9Qiy3sBu1RsGbEM_ituFqKQj2umGof9su2gF9dsQxNxsO3e93uBgYl3wxzgpO90O6vp35voQGXSDoPtYmuIeZcUT9VC3ktZqANq4dZmwUp6zMPTIErsqRU8jSHBpYH3fDpIwU_ua110pOAt6rRlHrnSyF3XpvG8rbzQSwSgY-uP-KIx74SgeheJ-ihSi7fp0_uT0aHb9C4r0iyq-91CurWi9S7v2J8PRaF-7Pv8ozcA9BdQg5C5S75UVW6ToCuSahTgeReweNj_NeO0crZvbzZE_ROAmQPf_JHHPT47P_nr-Karcl6TRtJlXOiEZ5QdBGA66nQVo0x7HSd-2SBtM--F0EDYizSUjiQoAF27dYRUYMrOC-ONmbrVZZzrq74_rJQ_CYWtCh6cTUFtvOB4IEQXjKJ0MeyIcT3oTkfiTKIyH_jANBI_8pJ9M0kk46CfpcBSO-_FgFEYB4R4vxYrPiWWd39aQkZ7jIU_mkXrt3fYaJ87dH3s5SzC5F_ujoS_8cNIfjnk6CocRtuMJ_dHXQPjjwTDgkzTp9yI-ipBckyTo93sjPhnzQARh1Pnxf-tKbI4:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrtWWtv20YW_SsDfumHlWy-H-onu1FjZxPZcZS2QBEIl5yhODXJUWeGUrRFgP0b-_f2l-wdknrZUpvWAZosYgSONE_ec889Z4b-zUpBZ8WMU2tkxa6TMEgBbAeiOIh9Gseu7bOQxUkOGYtziNwAWGZ7OfXiOM8jP05czwtsPwTXtwZWBpIqa_TzbxYsFlIsGZ2BxqWxCxpdCImfX8D6zX0j1T03E0RVsVqDXGPPRVmymkhWAa8V4TWBmjS1ZEqUuBLBsQumueaiJrmQ5LLJcyjFN4qkkN03C_L6kvwi0jMyLRhpFjic13OywPkMFM7BR2Igoc4YLtWUlIg8Z5JUQmJDCZLr9YCkjSa1IJQtdDHMCpAaP2dcmU1xT8nmDQ4d9ktKUTKyAoXtCyE1o2cHMc22KKTrDoW9PiH5nNfY_Orm2fjl7NndxffTdkStccRMrxcMO-_Gtzd30-vJc-yioE2Ta7vh0I6HbjB13JEdjrzkH7Y9sm0zhEuWGYRw3NvJdy_HF3emVUKuZ7hyzinD-K2RfZYEm_aSV1yDmWRSZxn0lGgkwkQ5RTA0MbM0z9cEyEScEZf82iAwTBrcTcS3ErhibVK6HEJNMT0sKxjiQwVT7TJMaUhLrgpcZ8XrGsF_DOlKyPtSQIukeZQOWSLqck3aCGSFCRe62H8IheuVJVmUsDa80ccJMIeKnVnvBhZbbnCwXghGLiXQNVELcc_IvBT4aHPcTOTtOgsmMa6qpQ02tTv_c41h7SJ9U0DNdvGmrODY-kJgoN0gXUjRzIt2PQxAaaJX4sGDqY57CHn9jSYKA1kVDCfIdpZmUJECiWbISLEYRBfl43SQS_OER9KwQ2haYPlR_ABzU2ma3HKtVdrIeWFQ36Azy3A-N6Tr9KESKS_Z6P0oAof6Dk0y1IfMTRI_yBych-XN_9Uy780VcnY2Hd-9wuYK94eaqwo7no1vp1ez764u7gzVK0FZ2dcBlLP_Ry0QK2S5KvgCQ7qeYPhj_DUxwZtMMKOHOzJtWzu8bXto254fRJHpEIr3df360nyX4peu0mewKfjJzWRsuhossmymmqrqsPx9uq4YxrxoK5iSdE22FdEB0CPbks8UcY1cpceE4NuuNnY0O86uw6d7rJCSAUUESkhZiS0_IpSF2Rjz1_fymik1y4GXDeYTJeudaV9yhpHswDBId7LZiRk2_WS-aMnquS6M7o6fXb81DDXFhd8v336PXxppti20XqjR-fn7M6TO-c6yzlHCdKPOXTtx8cdxkiQMYz9MEs_6MPhrtjctuNqJJEoHz7DmEGJTN3OsfbGnJf_9939US7UuO1yTksES5_Z5avsf5QZLRzGtS8ycqRbjMYgnFvn6nDK2IKoxMley91gBNddYkvX8c7Kyyfjt9O7i5Skr83_Hynr_2OJrlJXxVlh7qTDMXvV6ajQDd5mI0-BvDGpACgYlkhMBRVYYqEnHjgcq8NVwnmo4fhqFsW27bpZlfpoEaR7ln9pwPuMq_AgT2T3acROJg6eayIPg-9rZ9-GNWe9seoAc-EP2IiQG3BOWMSAonKRXzgNr_XyM5OXNj3-_i2zxPHlm6lI23CfkXvrOyG3LjqU5EUFWkJwx2g7CVReKmPKQQhmVy0D1xNc7gTVPjGWsuhPT7pTUV5L5VvSasOL7WtJL7hdyazrhNGgYj8t9C4PxA6hr0eAqDy82O8nZXLJWhSAINqC90M1tZj9R7YVro-SmbMzRVvPqxE3ryDH1qyc93ZMS27M9z44ZRCk4jpdDYn9qT_rSa_ojjOuQNkfNKwyj5MnmtSH45qJzuG9raTsqmiNei4UCTv_gBvT68ttj9Pp6-fkz7_y4OTXAEqNC2epeJG3qc2DIjzREjSt4RXIpKqKMOLGhUYy2vBXuoodIQSpWpESI2pNJrZC7ErpC2FPcOV92lJZdtg8JjfIGpBR4LpNDLIyKQKqMEPwNHuWOvPDEdej5xfT6h_Epk4pPu1Qf8-5VHRaVoVfrUX29by1qI4LHjMVoR58xXnK9RsVfC8zFJm-PPWbrBG2VmNUOhHhA9mwI1uqjVDhIYpTf0PVT1_GjBP8PkgMVvn5lmH4xHT8Q4Zvp1fjuo95BfSHc_CwuCZeYWdW-S8MAW9cREiUL8C5zkF1-cDI4zoe_oJdTlDdqsoFY159YMK-un189RS4dx3bsMImd0LMd68M7owdKzxpFTcnaOMhxBxbeBg0tNhp6KAj4L9gJQsfcDBBxaxRssGqJgjRuUGhAz1oZsEaRd9ivCnCDcG-ABXmCWXNQzhlL3TjNk9BhQZw4CaN2kgZZaIe5yyC1qUeTPAl8j-ZhFMRe5kdB6hqw0AMrmC2Rhh2oK5SsYVeqQ16n4v1w6WwRnnV_eeqeBAcz18lDD2ia2JSmEYDjx1jMrpuavz25cUjD3I4yO0ncyHdYlsS2n9OUOnEag--71of_ARTqKbI:WIRE_MOBILE_MANIFEST_V1 -->
