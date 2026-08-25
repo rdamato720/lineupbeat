@@ -165,6 +165,30 @@ CSS = r"""
 .popular,.method{max-width:1180px;width:100%;margin-left:auto;margin-right:auto}.popular{margin-top:4rem}
 .popular h2,.method h2{font-size:1.55rem;letter-spacing:.09em}.pairgrid a{border-radius:10px;background:#0d1111}
 .method{margin-top:4rem;border-color:#303638;border-radius:16px;background:#0d1111;padding:2rem}
+/* The comparison landing page uses the homepage hero itself as the layout
+   model: 1130px two-column frame, 72px field grid, editorial copy on the
+   left and one tall utility panel on the right. */
+.cmpwrap{display:grid;grid-template-columns:1.04fr .9fr;gap:0 72px;align-items:start;
+  max-width:none;min-height:790px;margin:0;padding:40px max(32px,calc((100vw - 1130px)/2)) 110px;
+  background:radial-gradient(circle at 37% 20%,rgba(35,43,45,.33) 0%,rgba(12,15,16,.16) 32%,rgba(5,7,8,0) 55%),#050708}
+.cmpwrap:before{position:absolute;z-index:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:72px 72px;opacity:1}.cmpwrap>*{position:relative;z-index:1}
+.cmpwrap>.crumbs{display:none}.cmphead{grid-column:1;margin:23px 0 0;text-align:left;max-width:650px}
+.cmphead .rkeyebrow{margin:0 0 23px;font-size:20px;font-weight:700;letter-spacing:.045em}
+.cmphead h1{max-width:650px;margin:0;font-size:clamp(56px,4.5vw,72px);line-height:.99;letter-spacing:-.033em}
+.cmphead>p:not(.rkeyebrow):not(.rkstatus){max-width:590px;margin:33px 0 0;font-size:19px;line-height:1.7}
+.cmphead .rkstatus{margin-top:30px;font-size:12px;letter-spacing:.085em}
+.cmpbox{grid-column:2;width:100%;max-width:475px;min-height:510px;margin:0;justify-self:end;
+  padding:0 26px 30px;border:1px solid rgba(255,255,255,.22);border-radius:18px;
+  background:linear-gradient(180deg,rgba(17,21,22,.97),rgba(13,17,18,.97));box-shadow:0 32px 90px rgba(0,0,0,.38)}
+.cmpbox:before{content:"PLAYER COMPARISON";display:flex;align-items:center;height:67px;margin:0 -26px 28px;
+  padding:0 26px;border-bottom:1px solid rgba(255,255,255,.13);color:var(--signal);
+  font:700 18px var(--agate);letter-spacing:.05em;text-transform:uppercase}
+.cmpselectors{grid-template-columns:1fr;gap:14px}.versus{text-align:center;padding:0;color:var(--signal)}
+.cmpselect select,.fmt select{height:62px;font-size:18px}.fmt{max-width:none;margin:18px 0 0}
+.cmpresult.ready{grid-column:1/-1;margin-top:80px}.cmpresult .verdict{max-width:1130px;margin:0 auto 1.5rem}
+.cmpresult .players,.cmpresult .edges{max-width:1130px;margin-left:auto;margin-right:auto}
+.popular,.method,.faq,.related{grid-column:1/-1}.popular{margin-top:80px}
+@media(max-width:900px){.cmpwrap{grid-template-columns:1fr;gap:36px;padding:45px 24px 80px}.cmphead,.cmpbox{grid-column:1}.cmpbox{justify-self:stretch;max-width:none}.cmpresult.ready,.popular{margin-top:35px}}
 @media(max-width:760px){.cmpselectors{grid-template-columns:1fr}.versus{text-align:center;padding:0}.players,.pairgrid{grid-template-columns:1fr}.edge{grid-template-columns:1fr}.edge .left,.edge .right{text-align:center}.metrics{grid-template-columns:repeat(2,1fr)}}
 """
 
@@ -230,6 +254,8 @@ def main() -> int:
     font_links = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
                   '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
                   '<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">')
+    move_result = ('<script>document.querySelector(".cmpbox").after('
+                   'document.getElementById("cmpresult"));</script>')
     hub_html = html(players, built, pairs=pairs).replace(
         '<meta name="viewport"', font_links + '<meta name="viewport"', 1
     ).replace(
@@ -238,7 +264,7 @@ def main() -> int:
     ).replace(
         "Put two players head to head. Compare what they are projected to do with how they actually scored week to week.",
         "Put two players head to head. Lineup Beat combines current rankings, projections and ADP with the weekly consistency, floor and ceiling behind the average.",
-    )
+    ).replace('</body>', move_result + '</body>')
     hub = seo.check_page(hub_html, str(OUT / "index.html"))
     (OUT / "index.html").write_text(hub)
     for a, b in pairs:
@@ -252,7 +278,7 @@ def main() -> int:
         ).replace(
             "<h1>Who Should I Draft?</h1>",
             f'<h1>{base.esc(a["name"])} or<br><span>{base.esc(b["name"])}?</span></h1>',
-        )
+        ).replace('</body>', move_result + '</body>')
         dest.write_text(seo.check_page(pair_html, str(dest)))
     print(f"  comparison pool: {len(players)} players")
     print(f"  wrote {1 + len(pairs)} pages under {OUT.relative_to(ROOT)}")
