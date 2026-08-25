@@ -45,6 +45,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import seo
+from build_wire import load as load_approved_wire
 
 
 def trim(s, limit):
@@ -308,6 +309,30 @@ PAGE_CSS = """
 .pjnote{margin:.8rem 0 0; font-size:.76rem; color:var(--quiet)}
 .pjnote a{color:var(--quiet); text-decoration:underline}
 .pjnote a:hover{color:__ACCENT__}
+.pupdated{margin:.65rem 0 0;color:var(--quiet);
+  font:.68rem/1.3 var(--data,ui-monospace),monospace;letter-spacing:.04em}
+.lbimpact{margin:1.4rem 0 0;padding:1rem 1.1rem 1.1rem;
+  border:1px solid var(--rule);border-top:3px solid var(--signal);
+  border-radius:10px;background:linear-gradient(180deg,rgba(198,245,60,.055),
+  var(--card) 38%)}
+.lbimpact-head{display:flex;align-items:center;justify-content:space-between;
+  gap:.75rem;margin-bottom:.85rem}
+.lbimpact-head h2{margin:0;border:0;padding:0;color:var(--ink)}
+.lbtrend{flex:none;border:1px solid var(--rule);border-radius:999px;
+  padding:.28rem .58rem;font:.62rem/1 var(--agate),sans-serif;
+  text-transform:uppercase;letter-spacing:.07em;font-weight:600}
+.lbtrend.up{color:#83d89a;border-color:rgba(131,216,154,.55)}
+.lbtrend.down{color:#ef8a80;border-color:rgba(239,138,128,.55)}
+.lbtrend.note{color:#d8ca75;border-color:rgba(216,202,117,.55)}
+.lbchanged>span,.lbreading>span{display:block;margin-bottom:.32rem;
+  color:var(--quiet);font:.6rem/1 var(--agate),sans-serif;
+  text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.lbchanged p{margin:0;font:1rem/1.55 var(--serif),serif;color:var(--ink)}
+.lbreading{margin:.9rem 0 .8rem;padding:.8rem .9rem;
+  border-left:3px solid var(--signal);background:rgba(198,245,60,.06)}
+.lbreading>span{color:var(--signal)}
+.lbreading p{margin:0;font:1.08rem/1.55 var(--serif),serif;color:var(--ink)}
+.related{margin-top:2.1rem;padding-top:.1rem}
 
 .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 0}
 .chip{font:.72rem/1 var(--agate,system-ui),sans-serif;letter-spacing:.06em;
@@ -339,6 +364,8 @@ PAGE_CSS = """
 @media(max-width:34rem){
   .phero{flex-direction:column;text-align:center}
   .ppage h1{font-size:1.55rem}
+  .pupdated{text-align:center}
+  .lbimpact-head{align-items:flex-start}
   /* ---- projection ----
    A panel, not a chip. The number is why a lot of people open the page, and
    a season total needs the line under it to be worth anything. */
@@ -467,7 +494,7 @@ def _render(page, accent, c2="#C6F24E", section=None):
             .replace("__FOOTER__", APP_FOOTER))
 
 
-def page_description(name, who, nuggets):
+def page_description(name, who, nuggets, wire_publications=None):
     """A description that reads as a sentence in a search result.
 
     The newest claim alone came out at 61 characters -- "Brown was limited
@@ -475,6 +502,11 @@ def page_description(name, who, nuggets):
     torn out of context and tells a searcher nothing about what the page is.
     Google also tends to write its own when the tag is too thin.
     """
+    wire_publications = wire_publications or []
+    if wire_publications:
+        lead = (wire_publications[0].get("public_evidence_summary") or "").strip()
+        body = f"{who}. {lead} Latest Lineup Beat fantasy impact and projection."
+        return body[:158].rsplit(" ", 1)[0] if len(body) > 160 else body
     n = len(nuggets)
     if not n:
         # A projected player with nothing filed yet. Describe what the page
@@ -496,16 +528,30 @@ def page_description(name, who, nuggets):
 # board can never quote different numbers. Reading the spreadsheet again
 # would be a second source of truth.
 PROJECTIONS = {}
+PROJECTION_UPDATED = ""
+WIRE_BY_PLAYER = {}
+RELATED_BY_TEAM = {}
 
 
 def load_projections():
     """Whatever the projections page was built from, by slug."""
+    global PROJECTION_UPDATED
+    PROJECTION_UPDATED = ""
     f = SITE / SPORT / "projections" / "index.html"
     if not f.exists():
         return {}
-    m = re.search(r"const PB = (\{.*?\});", f.read_text(), re.S)
+    source = f.read_text()
+    m = re.search(r"const PB = (\{.*?\});", source, re.S)
     if not m:
         return {}
+    updated = re.search(
+        r"Last updated ([A-Z][a-z]+ \d{1,2}, \d{4})", source)
+    if updated:
+        try:
+            PROJECTION_UPDATED = datetime.strptime(
+                updated.group(1), "%B %d, %Y").date().isoformat()
+        except ValueError:
+            PROJECTION_UPDATED = ""
     try:
         board = json.loads(m.group(1))
     except ValueError:
@@ -534,6 +580,62 @@ def load_projections():
                                   "ruatt", "ruyd", "rutd", "patt", "cmp",
                                   "payd", "patd", "int", "fl")}}
     return out
+
+
+def load_wire_impacts(path=None):
+    """Human-approved Wire publications, grouped only by stable player id.
+
+    ``build_wire.load`` is the publication gate used by the homepage. Reusing
+    it here means a player page can never render wording that the homepage
+    would reject. No candidate, model response, or pending review file is
+    available to this builder.
+    """
+    _, publications = load_approved_wire(path) if path else load_approved_wire()
+    grouped = defaultdict(list)
+    for publication in publications:
+        player_id = str(publication.get("player_id") or "").strip()
+        if not player_id:
+            raise ValueError(
+                f"{publication.get('publication_id')}: approved Wire "
+                "publication has no stable player id")
+        grouped[player_id].append(publication)
+    return dict(grouped)
+
+
+def wire_impacts_by_page(grouped, roster):
+    """Map the Wire's GSIS identity to the canonical roster page identity.
+
+    Publications remain grouped on their stable GSIS id. The site roster is
+    sourced from Sleeper and uses a different stable id, so page rendering
+    needs a crosswalk to retain its photo, ADP and depth-chart metadata. The
+    fallback is deliberately strict: exact normalized full name, team and
+    position, with exactly one roster match. It never guesses between names.
+    """
+    by_identity = defaultdict(list)
+    for row in roster.values():
+        key = (slug(row.get("name")), (row.get("team") or "").upper(),
+               (row.get("position") or "").upper())
+        if all(key):
+            by_identity[key].append(row)
+
+    mapped = defaultdict(list)
+    for stable_id, publications in grouped.items():
+        page_id = stable_id
+        if stable_id not in roster and publications:
+            latest = publications[0]
+            key = (slug(latest.get("player_name")),
+                   (latest.get("team") or "").upper(),
+                   (latest.get("position") or "").upper())
+            matches = by_identity.get(key, [])
+            if len(matches) == 1:
+                page_id = matches[0]["id"]
+        mapped[page_id].extend(publications)
+
+    for publications in mapped.values():
+        publications.sort(key=lambda item: (
+            str(item.get("published_date", "")),
+            str(item.get("publication_id", ""))), reverse=True)
+    return dict(mapped)
 
 
 # Which stats to show, and what to call them, per position.
@@ -594,13 +696,120 @@ def projection_block(name, pos):
         + (f'    <p class="pjmore">'
            f'<a href="/{SPORT}/projections/{pos.lower()}/">'
            f'All {esc(pos)} projections</a> &middot; '
+           f'<a href="/{SPORT}/rankings/{pos.lower()}/">'
+           f'{esc(pos)} rankings</a> &middot; '
            f'<a href="/{SPORT}/draft-value/">draft value against ADP</a>'
            f'</p>\n' if pos else "")
         + f'  </section>\n')
 
 
-def player_page(p, nuggets, base):
+def _as_datetime(value):
+    """An auditable timestamp for page freshness, or ``None``."""
+    text = str(value or "").strip()
+    if not text:
+        return None
+    try:
+        parsed = datetime.fromisoformat(text.replace("Z", "+00:00"))
+    except ValueError:
+        try:
+            parsed = datetime.strptime(text, "%Y-%m-%d")
+        except ValueError:
+            return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed
+
+
+def player_last_updated(name, nuggets, wire_publications):
+    """Newest real input shown on this player's page.
+
+    A daily build is not itself new information, so it does not refresh this
+    date. The timestamp moves only when the projection board, a report, or an
+    approved Wire publication shown on the page moves.
+    """
+    values = ([_as_datetime(PROJECTION_UPDATED)]
+              if PROJECTIONS.get(slug(name)) else [])
+    values.extend(_as_datetime(n.get("published_at")) for n in nuggets)
+    for publication in wire_publications:
+        values.extend((_as_datetime(publication.get("updated_at")),
+                       _as_datetime(publication.get("published_at")),
+                       _as_datetime(publication.get("published_date"))))
+    return max((value for value in values if value), default=None)
+
+
+def updated_block(name, nuggets, wire_publications):
+    updated = player_last_updated(name, nuggets, wire_publications)
+    if not updated:
+        return ""
+    return (f'  <p class="pupdated">Last updated '
+            f'<time datetime="{esc(updated.isoformat())}">'
+            f'{esc(updated.strftime("%B %-d, %Y"))}</time></p>\n')
+
+
+def wire_impact_block(publications):
+    """The newest final, human-approved Lineup Beat reading for a player."""
+    if not publications:
+        return ""
+    publication = publications[0]
+    content_label = ("Fantasy analysis"
+                     if publication.get("content_type") == "FANTASY_ANALYSIS"
+                     else "What changed")
+    direction = str(publication.get("direction") or "").upper()
+    direction_class = {"POSITIVE": "up", "NEGATIVE": "down"}.get(
+        direction, "note")
+    source_bits = [publication.get("author"), publication.get("source")]
+    source_bits = [esc(bit) for bit in source_bits if str(bit or "").strip()]
+    source_meta = " &middot; ".join(source_bits)
+    event_date = when(publication.get("published_date")
+                      or publication.get("published_at"))
+    if event_date:
+        source_meta += (" &middot; " if source_meta else "") + esc(event_date)
+    return (
+        '  <section class="lbimpact" aria-labelledby="latest-impact">\n'
+        '    <div class="lbimpact-head">\n'
+        '      <h2 id="latest-impact">Latest Lineup Beat impact</h2>\n'
+        f'      <span class="lbtrend {direction_class}">'
+        f'{esc(publication.get("reader_label"))}</span>\n'
+        '    </div>\n'
+        '    <div class="lbchanged">\n'
+        f'      <span>{esc(content_label)}</span>\n'
+        f'      <p>{esc(publication.get("public_evidence_summary"))}</p>\n'
+        '    </div>\n'
+        '    <div class="lbreading">\n'
+        '      <span>Lineup Beat impact</span>\n'
+        f'      <p>{esc(publication.get("lineupbeat_impact"))}</p>\n'
+        '    </div>\n'
+        f'    <p class="meta">{source_meta}'
+        + (f' &middot; <a href="{esc(publication.get("url"))}" '
+           'rel="nofollow noopener">Read report</a>'
+           if publication.get("url") else "")
+        + '</p>\n  </section>\n')
+
+
+def related_players_block(player):
+    team = player.get("team") or ""
+    related = [row for row in RELATED_BY_TEAM.get(team, [])
+               if row["name"] != player.get("name")][:4]
+    if not related:
+        return ""
+    cards = []
+    for row in related:
+        detail = f'{row["pos"]}{row["rank"]} &middot; {row["ppr"]:.1f} PPR proj'
+        cards.append(
+            f'    <a href="/{SPORT}/{slug(row["name"])}/">'
+            f'{esc(row["name"])}<span>{detail}</span></a>')
+    return (
+        f'  <section class="related"><h2>Related {esc(TEAM_NAMES.get(team, team))} '
+        f'players</h2>\n  <div class="grid">\n'
+        + "\n".join(cards)
+        + '\n  </div>\n'
+          f'  <p class="pjmore"><a href="/{SPORT}/team/{slug(team)}/">'
+          f'All {esc(TEAM_NAMES.get(team, team))} updates</a></p></section>\n')
+
+
+def player_page(p, nuggets, base, wire_publications=None):
     name, team = p["name"], p["team"]
+    wire_publications = wire_publications or []
     pos, meta = p["pos"], p.get("meta") or {}
     url = f"{base}/{SPORT}/{slug(name)}/"
     accent = TEAM_COLORS.get(team, "#C6F24E")
@@ -617,7 +826,8 @@ def player_page(p, nuggets, base):
         chips.append(f'<span class="chip">Depth <b>{esc(meta["depth_pos"])}'
                      f'{esc(meta["depth_order"])}</b></span>')
     if str(meta.get("adp") or "").strip():
-        chips.append(f'<span class="chip">ADP <b>{esc(meta["adp"])}</b></span>')
+        chips.append(f'<span class="chip">Current ADP '
+                     f'<b>{esc(meta["adp"])}</b></span>')
     if str(meta.get("age") or "").strip():
         chips.append(f'<span class="chip">Age <b>{esc(meta["age"])}</b></span>')
     y = str(meta.get("years_exp") or "").strip()
@@ -661,12 +871,13 @@ def player_page(p, nuggets, base):
 
     ld = {"@context": "https://schema.org", "@type": "Person", "name": name,
           "url": url, "image": shot, "jobTitle": who}
-    # A page that changes daily should say when it last changed. Google reads
-    # it for freshness; without it a wire looks like a static profile.
-    if nuggets:
+    # A page that changes should say when its displayed inputs last changed.
+    # The date is not the build date: rebuilding identical HTML is not news.
+    modified = player_last_updated(name, nuggets, wire_publications)
+    if modified:
         ld["subjectOf"] = {"@type": "CollectionPage",
                            "name": f"{name} beat reports", "url": url,
-                           "dateModified": nuggets[0]["published_at"][:19]}
+                           "dateModified": modified.isoformat()}
     # Google renders breadcrumbs in the result itself, which is worth more
     # than the nav pill this replaced: it shows the page's place in the site
     # instead of a bare URL, and it improves click-through.
@@ -703,20 +914,25 @@ def player_page(p, nuggets, base):
                f'width="18" height="18">' if team else "")
             + f'{esc(who)}</p>\n    </div>\n  </div>\n'
             + (f'  <div class="chips">{"".join(chips)}</div>\n' if chips else "")
+            + updated_block(name, nuggets, wire_publications)
+            + wire_impact_block(wire_publications)
             + projection_block(name, pos)
-            + (f'  <h2>{len(nuggets)} beat report'
-               f'{"s" if len(nuggets) != 1 else ""}, newest first</h2>\n'
+            + (f'  <h2>Recent practice and news timeline &middot; '
+               f'{len(nuggets)} report'
+               f'{"s" if len(nuggets) != 1 else ""}</h2>\n'
                if nuggets else
-               '  <h2>No beat reports yet</h2>\n'
-               '  <p class="dlede">Nothing has been filed about this player '
-               'since the wire started watching. The projection above is '
-               'what the board has him down for.</p>\n')
-            + "\n".join(arts))
+               '  <h2>No recent practice or news reports yet</h2>\n'
+               '  <p class="dlede">The projection above is the current '
+               'Lineup Beat view. New reports will appear here as they are '
+               'filed.</p>\n')
+            + "\n".join(arts)
+            + related_players_block(p))
 
     return _render(PAGE.format(
         fonts=PAGE_FONTS,
         title=trim(esc(f"{name} news, beat reports and updates | LineupBeat"), 60),
-        description=trim(esc(page_description(name, who, nuggets)), 155),
+        description=trim(esc(page_description(
+            name, who, nuggets, wire_publications)), 155),
         canonical=esc(url), og_type="profile",
         og_image=(f'<meta property="og:image" content="{esc(shot)}">'
                   f'<meta name="twitter:image" content="{esc(shot)}">'),
@@ -3459,6 +3675,7 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
 
 
 def main():
+    global PROJECTIONS, WIRE_BY_PLAYER, RELATED_BY_TEAM
     ap = argparse.ArgumentParser()
     ap.add_argument("--db", default="beatwire.db")
     ap.add_argument("--base", default="https://lineupbeat.com")
@@ -3467,6 +3684,11 @@ def main():
                     help="cap per page; a page is an archive, not the whole log")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
+
+    try:
+        WIRE_BY_PLAYER = load_wire_impacts()
+    except (ValueError, json.JSONDecodeError) as exc:
+        sys.exit(f"  approved Wire publications invalid: {exc}")
 
     # Read the DATABASE, not site/data/feed.json.
     #
@@ -3486,7 +3708,7 @@ def main():
                             (args.sport,)).fetchall()
     except sqlite3.OperationalError:
         sys.exit("  no nuggets table — run the pipeline first")
-    if not rows:
+    if not rows and not WIRE_BY_PLAYER:
         sys.exit("  no nuggets")
 
     roster = {}
@@ -3494,6 +3716,8 @@ def main():
     if rp.exists():
         for r in csv.DictReader(rp.open()):
             roster[r["id"]] = r
+
+    wire_by_page = wire_impacts_by_page(WIRE_BY_PLAYER, roster)
 
     by_player = defaultdict(list)
     for r in rows:
@@ -3506,10 +3730,28 @@ def main():
                      "meta": roster.get(pid, {})}
                for pid, v in by_player.items()}
 
-    global PROJECTIONS
     PROJECTIONS = load_projections()
     if PROJECTIONS:
         print(f"  {len(PROJECTIONS)} projections available for player pages")
+    print(f"  {sum(len(v) for v in WIRE_BY_PLAYER.values())} approved Wire "
+          f"impact(s) available for player pages")
+
+    RELATED_BY_TEAM = defaultdict(list)
+    for row in roster.values():
+        name = row.get("name") or ""
+        position = (row.get("position") or "").upper()
+        team = (row.get("team") or "").upper()
+        projection = PROJECTIONS.get(slug(name))
+        if (not name or position not in PUBLISHED_POSITIONS or not team
+                or not projection):
+            continue
+        RELATED_BY_TEAM[team].append({
+            "name": name, "pos": projection.get("pos") or position,
+            "rank": projection.get("rank") or "",
+            "ppr": projection.get("ppr") or 0.0,
+        })
+    for rows_for_team in RELATED_BY_TEAM.values():
+        rows_for_team.sort(key=lambda row: (-row["ppr"], row["name"]))
 
     base = args.base.rstrip("/")
     written, urls = 0, []
@@ -3534,6 +3776,26 @@ def main():
                             "pos": (r.get("position") or "").upper(),
                             "meta": r}
 
+    # An approved Wire publication is itself enough to create the canonical
+    # player page. Publications are grouped by stable GSIS id; the separate
+    # page-id crosswalk permits only the registry's exact name + team +
+    # position fallback, never a fuzzy guess.
+    for pid, publications in wire_by_page.items():
+        if pid not in by_player:
+            by_player[pid] = []
+        if pid in players:
+            continue
+        identity = roster.get(pid, {})
+        latest = publications[0]
+        players[pid] = {
+            "id": pid,
+            "name": identity.get("name") or latest.get("player_name") or "",
+            "team": (identity.get("team") or latest.get("team") or "").upper(),
+            "pos": (identity.get("position") or latest.get("position")
+                    or "").upper(),
+            "meta": identity,
+        }
+
     # Skill positions only.
     #
     # The wire already refuses to publish a nugget about a punter, so a
@@ -3555,16 +3817,19 @@ def main():
             continue
         kept_slugs.add(slug(p["name"]))
         ns = ns[:args.max_reports]
+        wire_publications = wire_by_page.get(pid, [])
         path = SITE / args.sport / slug(p["name"]) / "index.html"
         if not args.dry_run:
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(seo.check_page(player_page(p, ns, base), str(path)))
+            path.write_text(seo.check_page(
+                player_page(p, ns, base, wire_publications), str(path)))
         # A page with no reports still changes when the board does, so it
         # gets today's date and a lower priority rather than being left out.
+        modified = player_last_updated(p["name"], ns, wire_publications)
         urls.append((f"{base}/{args.sport}/{slug(p['name'])}/",
-                     ns[0]["published_at"][:10] if ns else now,
-                     "daily" if ns else "weekly",
-                     "0.8" if ns else "0.5"))
+                     modified.date().isoformat() if modified else now,
+                     "daily" if (ns or wire_publications) else "weekly",
+                     "0.8" if (ns or wire_publications) else "0.5"))
         written += 1
 
     # Slugs that actually have a page, for the client-side linker. It

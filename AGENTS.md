@@ -7,8 +7,12 @@ refresh workflow.
 
 ## Product contract
 
-- The NFL Wire lives on the homepage at `/#wire`. Do not restore a separate
-  `/nfl/wire/` destination. Legacy forms redirect to the homepage anchor.
+- The NFL Wire list lives on the homepage at `/#wire`. Do not restore a
+  separate `/nfl/wire/` destination. Legacy forms redirect to the homepage
+  anchor. Final, human-approved wording may also enrich the matching
+  canonical player page through stable identity resolution: player id, or an
+  exact name + team + position crosswalk between registries. Drafts and raw
+  evidence may not.
 - Public cards cover useful fantasy-relevant QB, RB, WR, and TE information.
   That includes reported developments and clearly labelled fantasy analysis,
   opinion, speculation, ADP arguments, rankings and practice observations.
