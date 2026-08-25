@@ -672,8 +672,10 @@ for the same work again.
 
 ### 17.1 Thirty-minute monitor and mobile publication
 
-`.github/workflows/wire-monitor.yml` runs at minutes 7 and 37 and may also be
-dispatched manually. It is fail-closed unless the repository variable
+`.github/workflows/wire-monitor.yml` runs at minutes 7 and 37 during the
+configured daytime/evening UTC windows (roughly 7:00 a.m. through 11:59 p.m.
+Eastern during daylight-saving time) and may also be dispatched manually. It
+does not schedule overnight provider work. It is fail-closed unless the repository variable
 `WIRE_MOBILE_AUTODRAFT` is exactly `true`. Enabling it also requires three
 explicit independent ceilings:
 
@@ -708,7 +710,10 @@ already-published event is audited as `DUPLICATE_EVENT` and cannot create
 another homepage card.
 
 When cards remain, the monitor commits the exact pending batch and opens an
-assigned `wire-inbox` issue. GitHub Mobile notifications provide the phone
+assigned `wire-inbox` issue. Before pushing, it fetches and rebases onto the
+current `main`, retrying a non-fast-forward push up to three times. A real
+content conflict fails closed rather than guessing which state to keep.
+GitHub Mobile notifications provide the phone
 alert. `.github/workflows/wire-mobile-approve.yml` reacts only to Ralph's
 closed command syntax. It publishes through `scripts/wire_publish.py`, records
 the audit receipt, commits the changed publication mirror, and then queues
