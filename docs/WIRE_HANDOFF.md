@@ -716,6 +716,11 @@ the audit receipt, commits the changed publication mirror, and then queues
 The approval runner does not attempt a homepage build from its data-only
 checkout. Rejections create no deployment.
 
+Every producer and renderer reads the public direction badges from
+`wire/public_labels.py`. Both `NEUTRAL` and `UNCLEAR` display as
+`Worth noting`; approval readiness rejects a card whose badge does not match
+its structured direction before it can enter the publication store.
+
 All three workflows share the `wire-runtime` concurrency group so publication,
 monitor state and deployment cache work cannot overlap. GitHub Actions must
 have repository write permission, and branch protection must permit the
