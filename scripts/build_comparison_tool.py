@@ -132,7 +132,6 @@ def recommendation(a: dict, b: dict, scoring: str) -> dict:
 
 
 CSS = r"""
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap');
 .cmpwrap{max-width:1180px;margin:auto;padding:2.2rem 1rem 5rem}.cmphead{text-align:center;max-width:850px;margin:0 auto 2rem}.cmphead h1{font:700 clamp(2.5rem,6vw,5.4rem)/.94 var(--display);margin:.4rem 0 1rem}.cmphead p{color:var(--text);font-size:1.08rem}.cmpbox{border:1px solid var(--rule);background:linear-gradient(145deg,#111716,#080b0b);padding:1.2rem;border-top:4px solid var(--signal)}.cmpselectors{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:end}.cmpselect label,.fmt label{display:block;font:700 .72rem var(--agate);letter-spacing:.11em;color:var(--quiet);text-transform:uppercase;margin-bottom:.45rem}.cmpselect select,.fmt select{width:100%;background:#090d0d;color:var(--ink);border:1px solid var(--rule);padding:.85rem;font:600 1rem var(--text)}.versus{font:800 1rem var(--agate);color:var(--signal);padding-bottom:1rem}.fmt{max-width:250px;margin:1rem auto}.cmpresult{display:none}.cmpresult.ready{display:block}.verdict{margin:1.5rem 0;border:1px solid #35411d;background:#11170d;padding:1.4rem;text-align:center}.verdict .pick{color:var(--signal);font:800 .74rem var(--agate);letter-spacing:.14em;text-transform:uppercase}.verdict h2{font:700 clamp(2rem,4vw,3.4rem)/1 var(--display);margin:.4rem 0}.verdict p{max-width:760px;margin:.5rem auto;color:var(--text)}.players{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.pcard{border:1px solid var(--rule);background:#0d1111;padding:1.2rem}.pcard h3{font:700 1.8rem var(--display);margin:.3rem 0}.chips{display:flex;gap:.35rem;flex-wrap:wrap}.chip{border:1px solid var(--rule);padding:.25rem .55rem;font:700 .68rem var(--agate);letter-spacing:.08em}.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-top:1rem}.metric{background:#131818;padding:.75rem}.metric b{display:block;font:700 1.35rem var(--display)}.metric span{font:600 .67rem var(--agate);color:var(--quiet);letter-spacing:.08em;text-transform:uppercase}.edges{margin-top:1rem;border-top:1px solid var(--rule)}.edge{display:grid;grid-template-columns:1fr auto 1fr;gap:.8rem;padding:.85rem 0;border-bottom:1px solid var(--rule);align-items:center}.edge .left{text-align:right}.edge .right{text-align:left}.edge strong{color:var(--signal)}.edge small{display:block;color:var(--quiet);font:600 .65rem var(--agate);text-transform:uppercase;letter-spacing:.08em}.wireimpact{margin-top:1rem;padding:1rem;border-left:3px solid var(--signal);background:#13190f}.wireimpact b{color:var(--signal);font:700 .7rem var(--agate);text-transform:uppercase;letter-spacing:.1em}.popular{margin-top:3rem}.popular h2{font:700 2rem var(--display)}.pairgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}.pairgrid a{display:block;border:1px solid var(--rule);padding:1rem;color:var(--ink);text-decoration:none}.pairgrid a:hover{border-color:var(--signal)}.method{margin-top:3rem;padding:1.4rem;border:1px solid var(--rule)}
 /* Match the homepage's editorial typography: Source Serif for editorial
    headlines and body copy, Barlow Condensed for players and UI labels, and
@@ -228,7 +227,12 @@ def main() -> int:
     built = formats.source_updated(formats.SOURCE)
     pairs = popular_pairs(players)
     OUT.mkdir(parents=True, exist_ok=True)
+    font_links = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
+                  '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+                  '<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">')
     hub_html = html(players, built, pairs=pairs).replace(
+        '<meta name="viewport"', font_links + '<meta name="viewport"', 1
+    ).replace(
         "<h1>Who Should I Draft?</h1>",
         "<h1>Make the right pick<br><span>before the clock runs out.</span></h1>",
     ).replace(
@@ -244,6 +248,8 @@ def main() -> int:
                    if (x["position"] == a["position"] and
                        {x["slug"], y["slug"]} != {a["slug"], b["slug"]})][:12]
         pair_html = html(players, built, a, b, related).replace(
+            '<meta name="viewport"', font_links + '<meta name="viewport"', 1
+        ).replace(
             "<h1>Who Should I Draft?</h1>",
             f'<h1>{base.esc(a["name"])} or<br><span>{base.esc(b["name"])}?</span></h1>',
         )
