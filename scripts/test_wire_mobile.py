@@ -22,6 +22,7 @@ sys.modules.setdefault("feedparser", types.SimpleNamespace())
 sys.modules.setdefault("trafilatura", types.SimpleNamespace())
 
 from wire import mobile_approval as mobile
+from wire import mobile_dedupe
 from wire.mobile_draft import OpenAIMobileDraftProvider
 import wire_mobile_inbox as inbox
 
@@ -137,6 +138,53 @@ class MobileWireTests(unittest.TestCase):
         self.assertEqual(meta["provider"], "openai")
         self.assertGreater(meta["cost_usd"], 0)
         self.assertIn("COMPLETE EVIDENCE", prompts[0])
+
+    def test_same_player_same_event_is_deduped(self):
+        first = card()
+        first.update({"mechanism": "RETURN_TO_PRACTICE", "direction": "POSITIVE",
+                      "date": "2026-08-24T12:00:00Z",
+                      "evidence": "Bijan Robinson joined full 11 on 11 team periods."})
+        second = {**first, "evidence_candidate_id": "mobile:test:2",
+                  "date": "2026-08-24T14:00:00Z",
+                  "evidence": "Robinson was a full participant in 11 on 11 work."}
+        duplicate, detail = mobile_dedupe.duplicate(first, second)
+        self.assertTrue(duplicate)
+        self.assertIn("eleven_on_eleven", detail["shared_markers"])
+
+    def test_materially_changed_status_is_not_deduped(self):
+        limited = card()
+        limited.update({"mechanism": "LIMITED_PARTICIPATION",
+                        "direction": "NEUTRAL",
+                        "date": "2026-08-24T12:00:00Z",
+                        "evidence": "Bijan Robinson was limited to individual drills."})
+        full = {**limited, "evidence_candidate_id": "mobile:test:2",
+                "mechanism": "RETURN_TO_PRACTICE",
+                "direction": "POSITIVE", "date": "2026-08-24T15:00:00Z",
+                "evidence": "Bijan Robinson was a full participant in team periods."}
+        self.assertFalse(mobile_dedupe.duplicate(limited, full)[0])
+
+    def test_different_injuries_and_old_events_remain_separate(self):
+        ankle = card()
+        ankle.update({"mechanism": "INJURY", "direction": "NEGATIVE",
+                      "date": "2026-08-24T12:00:00Z",
+                      "evidence": "Bijan Robinson left with an ankle injury."})
+        knee = {**ankle, "evidence_candidate_id": "mobile:test:2",
+                "date": "2026-08-24T14:00:00Z",
+                "evidence": "Bijan Robinson was evaluated for a knee injury."}
+        old_ankle = {**ankle, "evidence_candidate_id": "mobile:test:3",
+                     "date": "2026-08-23T12:00:00Z"}
+        self.assertFalse(mobile_dedupe.duplicate(ankle, knee)[0])
+        self.assertFalse(mobile_dedupe.duplicate(ankle, old_ankle)[0])
+
+    def test_stronger_more_specific_card_wins_pending_duplicate(self):
+        weak = card()
+        weak.update({"mechanism": "RETURN_TO_PRACTICE", "direction": "POSITIVE",
+                     "strength": "LOW", "date": "2026-08-24T12:00:00Z",
+                     "evidence": "Bijan Robinson returned to team periods."})
+        strong = {**weak, "strength": "HIGH", "date": "2026-08-24T13:00:00Z",
+                  "evidence": "Bijan Robinson was a full participant in 11 on 11 team periods."}
+        self.assertGreater(mobile_dedupe.quality(strong),
+                           mobile_dedupe.quality(weak))
 
     def test_capture_only_is_source_scoped_and_skips_extraction(self):
         cli = (ROOT / "beatwire" / "cli.py").read_text()
