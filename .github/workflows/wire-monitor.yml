@@ -2,7 +2,11 @@ name: Wire 30-minute monitor
 
 on:
   schedule:
-    - cron: "7,37 * * * *"
+    # GitHub cron is UTC. These windows run twice hourly from roughly
+    # 7:00 a.m. through 11:59 p.m. Eastern during daylight-saving time
+    # (6:00 a.m. through 10:59 p.m. Eastern during standard time).
+    - cron: "7,37 0-3 * * *"
+    - cron: "7,37 11-23 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -139,7 +143,23 @@ jobs:
             echo "No mobile state changed"
           else
             git commit -m "Bank Wire mobile monitor batch"
-            git push origin HEAD:main
+            # A PR or phone approval can advance main while capture and
+            # drafting are running. Rebase the exact banked state and retry
+            # instead of losing the batch to a one-shot non-fast-forward.
+            for attempt in 1 2 3; do
+              echo "Bank push attempt ${attempt}/3"
+              git fetch origin main
+              if ! git rebase origin/main; then
+                git rebase --abort || true
+                echo "Banked mobile state conflicts with current main; refusing to guess"
+                exit 1
+              fi
+              if git push origin HEAD:main; then
+                exit 0
+              fi
+            done
+            echo "Main kept advancing; banked mobile state was not pushed after 3 attempts"
+            exit 1
           fi
 
       - name: Open phone approval issue
