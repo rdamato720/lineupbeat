@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 25,
+ "count": 30,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -276,6 +276,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005106
+  },
+  {
+   "candidate_id": "mobile:onsi:7e5c76adc2edce9e9830",
+   "player_id": "00-0041176",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-added-practice-kaliakmanis-antonio-williams-53-man-roster",
+   "attempted_at": "2026-08-25T04:35:45+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-25T04:35:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003856
+  },
+  {
+   "candidate_id": "mobile:onsi:4b6209db8982daaf5aea",
+   "player_id": "00-0036628",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-added-practice-kaliakmanis-antonio-williams-53-man-roster",
+   "attempted_at": "2026-08-25T04:35:51+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-25T04:35:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004944
+  },
+  {
+   "candidate_id": "mobile:onsi:0ec410b55ffa3c4ee63b",
+   "player_id": "00-0041096",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-added-practice-kaliakmanis-antonio-williams-53-man-roster",
+   "attempted_at": "2026-08-25T04:35:55+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-25T04:35:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004434
+  },
+  {
+   "candidate_id": "mobile:onsi:706ec5089f8bace631f4",
+   "player_id": "00-0040551",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-added-practice-kaliakmanis-antonio-williams-53-man-roster",
+   "attempted_at": "2026-08-25T04:35:59+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-25T04:36:02+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004358
+  },
+  {
+   "candidate_id": "mobile:onsi:77e272608375c157c75e",
+   "player_id": "00-0039677",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-added-practice-kaliakmanis-antonio-williams-53-man-roster",
+   "attempted_at": "2026-08-25T04:36:02+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-25T04:36:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004962
   }
  ]
 }
