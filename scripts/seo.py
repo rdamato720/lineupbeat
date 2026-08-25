@@ -990,8 +990,8 @@ def esc(s):
 # out, so one list serves all of them.
 DATA_PAGES = [
     ("rankings", f"/{SPORT}/rankings/", "Rankings",
-     "Half-PPR draft rankings, overall and by position, with tiers and "
-     "documented adjustments."),
+     "PPR, Non-PPR, Half-PPR and Superflex draft rankings, overall and by "
+     "position, with tiers and transparent methodology."),
     ("projections", f"/{SPORT}/projections/", "Projections",
      "Full-season points in three scoring formats, with the stat line "
      "behind each number."),
