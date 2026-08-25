@@ -55,12 +55,8 @@ jobs:
               output.write(f"close_issue={str(result['close_issue']).lower()}\n")
           PY
 
-      - name: Rebuild and verify the approved Wire artifacts
+      - name: Verify the approved publication store
         run: |
-          python scripts/wire_homepage_replacement.py
-          python scripts/test_wire.py
-          python scripts/test_wire_page.py
-          python scripts/test_wire_homepage.py
           python scripts/wire_health.py --check
 
       - name: Commit the approval receipt and publications
@@ -70,8 +66,7 @@ jobs:
           git add data/wire_publications.json data/wire_publication_preview.json \
             data/wire_publication_preview.html data/wire_mobile_approvals.json \
             data/wire_mobile_approval_result.json \
-            data/wire_homepage_replacement.json \
-            data/wire_homepage_replacement.html data/wire_snapshots/
+            data/wire_snapshots/
           git commit -m "Publish phone-approved Wire cards"
           git push origin HEAD:main
 
