@@ -1298,8 +1298,7 @@ RANKING_FORMAT_LINKS = (
     ("Top 200 Rankings (PPR)", "/nfl/rankings/top-200-ppr/", True),
     ("Top 200 Rankings (NON-PPR)", "/nfl/rankings/top-200-non-ppr/", True),
     ("Top 200 Rankings (Superflex)", "/nfl/rankings/top-200-superflex/", True),
-    ("Preseason Rankings (IDP)", "", False),
-    ("Dynasty Rankings", "", False),
+    ("Dynasty Rankings", "/nfl/rankings/dynasty/", True),
 )
 
 

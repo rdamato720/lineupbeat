@@ -25,18 +25,64 @@ class RankingFormatTests(unittest.TestCase):
                                  list(range(1, len(group) + 1)))
 
     def test_superflex_uses_deeper_quarterback_replacement(self):
+        ranked, sf = formats.rank(self.rows["superflex"], "superflex")
         _, ppr = formats.rank(self.rows["ppr"], "ppr")
-        _, sf = formats.rank(self.rows["superflex"], "superflex")
         self.assertLess(sf["QB"], ppr["QB"])
         self.assertEqual(formats.FORMATS["superflex"]["replacement_qb"], 33)
+        where = {r["player_name"]: r for r in ranked}
+        self.assertLess(where["Bijan Robinson"]["overall_rank"],
+                        where["Jahmyr Gibbs"]["overall_rank"])
+        self.assertLess(where["Ja'Marr Chase"]["position_rank"],
+                        where["Puka Nacua"]["position_rank"])
+        self.assertEqual(where["Malik Nabers"]["position_rank"], 10)
+        self.assertIn("QB33", formats.editorial_notes("superflex"))
 
-    def test_menu_names_every_requested_product_without_fake_data_links(self):
+    def test_ppr_uses_independent_documented_editorial_decisions(self):
+        ranked, _ = formats.rank(self.rows["ppr"], "ppr")
+        where = {r["player_name"]: r for r in ranked}
+        self.assertLess(where["Bijan Robinson"]["overall_rank"],
+                        where["Jahmyr Gibbs"]["overall_rank"])
+        self.assertLess(where["Ja'Marr Chase"]["position_rank"],
+                        where["Puka Nacua"]["position_rank"])
+        self.assertEqual(where["Ashton Jeanty"]["manual_adjustment"], 16.0)
+        self.assertEqual(where["Christian McCaffrey"]["manual_adjustment"], -48.0)
+        self.assertEqual(where["Malik Nabers"]["position_rank"], 10)
+        self.assertNotIn("Jeff", formats.editorial_notes("ppr"))
+
+    def test_non_ppr_stays_projection_led_with_documented_role_calls(self):
+        ranked, _ = formats.rank(self.rows["non_ppr"], "non_ppr")
+        where = {r["player_name"]: r for r in ranked}
+        self.assertLess(where["Jahmyr Gibbs"]["overall_rank"],
+                        where["Bijan Robinson"]["overall_rank"])
+        self.assertLess(where["Puka Nacua"]["position_rank"],
+                        where["Ja'Marr Chase"]["position_rank"])
+        self.assertEqual(where["Ashton Jeanty"]["manual_adjustment"], 12.0)
+        self.assertEqual(where["Christian McCaffrey"]["manual_adjustment"], -33.0)
+        self.assertNotIn("Jeff", formats.editorial_notes("non_ppr"))
+
+    def test_menu_links_supported_products_and_omits_idp(self):
         menu = formats.format_nav("/nfl/rankings/ppr/")
         for label, _, _ in formats.FORMAT_NAV:
             self.assertIn(label, menu)
-        self.assertIn("Data required", menu)
         self.assertNotIn('href="/nfl/rankings/idp/', menu)
-        self.assertNotIn('href="/nfl/rankings/dynasty/', menu)
+        self.assertIn('href="/nfl/rankings/dynasty/', menu)
+
+    def test_dynasty_uses_verified_age_curve_without_outside_ratings(self):
+        ranked = formats.rank_dynasty(
+            self.rows["ppr"], formats.read_roster_ages(formats.ROSTER))
+        self.assertGreaterEqual(len(ranked), 500)
+        self.assertEqual(sum(r["overall_rank"] is not None for r in ranked), 200)
+        where = {r["player_name"]: r for r in ranked}
+        self.assertLess(where["Bijan Robinson"]["overall_rank"], 5)
+        self.assertLess(where["Bijan Robinson"]["overall_rank"],
+                        where["Jahmyr Gibbs"]["overall_rank"])
+        self.assertLess(where["Ashton Jeanty"]["position_rank"],
+                        where["Christian McCaffrey"]["position_rank"])
+        self.assertLessEqual(where["Ashton Jeanty"]["position_rank"], 3)
+        self.assertLessEqual(where["Malik Nabers"]["position_rank"], 10)
+        page = formats.render_dynasty(ranked, formats.source_updated(formats.SOURCE))
+        self.assertIn("verified roster age", page)
+        self.assertNotIn("RATING", page)
 
     def test_page_has_canonical_schema_faq_and_all_rows(self):
         ranked, _ = formats.rank(self.rows["superflex"], "superflex")

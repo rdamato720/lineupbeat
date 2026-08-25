@@ -114,6 +114,8 @@ def check_ranking_formats(root):
         "nfl/rankings/top-200-ppr/index.html",
         "nfl/rankings/top-200-non-ppr/index.html",
         "nfl/rankings/top-200-superflex/index.html",
+        "nfl/rankings/dynasty/index.html",
+        *[f"nfl/rankings/dynasty/{p}/index.html" for p in ("qb", "rb", "wr", "te")],
     ]
     missing = [path for path in paths if not (root / path).is_file()]
     check("all supported ranking-format pages are in the artifact",
@@ -122,12 +124,11 @@ def check_ranking_formats(root):
     text = hub.read_text() if hub.is_file() else ""
     for label in ("Preseason Rankings (PPR)", "Preseason Rankings (NON-PPR)",
                   "Top 200 Rankings (PPR)", "Top 200 Rankings (NON-PPR)",
-                  "Top 200 Rankings (Superflex)", "Preseason Rankings (IDP)",
-                  "Dynasty Rankings"):
+                  "Top 200 Rankings (Superflex)", "Dynasty Rankings"):
         check(f"the rankings menu includes {label}", label in text)
-    check("unsupported IDP and Dynasty rankings are not linked as live pages",
+    check("IDP is omitted and Dynasty is linked as a live page",
           '/nfl/rankings/idp/' not in text
-          and '/nfl/rankings/dynasty/' not in text)
+          and '/nfl/rankings/dynasty/' in text)
     sitemap = root / "sitemap.xml"
     sm = sitemap.read_text() if sitemap.is_file() else ""
     absent = [path for path in paths
