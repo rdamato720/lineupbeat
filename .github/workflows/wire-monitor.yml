@@ -143,6 +143,18 @@ jobs:
             echo "No mobile state changed"
           else
             git commit -m "Bank Wire mobile monitor batch"
+            # Discovery also refreshes local review artifacts that this job
+            # deliberately does not bank. Git refuses to start a rebase while
+            # those tracked or untracked generated files remain in the work
+            # tree, even when the committed mobile ledger has no conflict.
+            # Preserve them in the ephemeral runner stash so only the exact
+            # staged mobile state participates in the rebase and push.
+            if ! git diff --quiet || [ -n "$(git ls-files --others --exclude-standard)" ]; then
+              echo "Stashing generated files outside the banked mobile state"
+              git status --short
+              git stash push --include-untracked \
+                -m "Wire monitor generated files outside banked state"
+            fi
             # A PR or phone approval can advance main while capture and
             # drafting are running. Rebase the exact banked state and retry
             # instead of losing the batch to a one-shot non-fast-forward.
