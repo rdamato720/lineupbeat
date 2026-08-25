@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `74920aa52068` · 5 draft calls · $0.0238
+**1 cards** · batch `e58486bbd1d8` · 5 draft calls · $0.0225
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,28 +19,32 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. RJ Harvey — DEN RB
+## 1. Tee Higgins — CIN WR
 
-**Trending down** · LIMITED_PARTICIPATION · MEDIUM evidence
+**Trending down** · ABSENT_FROM_PRACTICE · LOW evidence
 
 ### What changed
 
-RJ Harvey spent part of Broncos full-pads practice on the side field, Parker Gabriel reported.
+Tee Higgins was absent from Bengals practice as the offense finished the session strongly without him and Ja'Marr Chase.
 
 ### Lineup Beat impact
 
-Harvey's partial side-field work may indicate a practice limitation, a short-term concern for his availability or preparation. The report provides no injury detail, timetable, or role impact.
+Higgins' practice absence is a short-term availability flag, but the report gives no reason, severity, or indication of whether he will miss additional time.
 
-[ParkerJGabriel · X](https://x.com/ParkerJGabriel/status/2092350473500258532) · 2026-08-25
+[ByJayMorrison · X](https://x.com/ByJayMorrison/status/2092361955864383881) · 2026-08-25
 
 <details><summary>Full evidence reviewed</summary>
 
-#Broncos practice in full pads is wrapped. Another day on the side field for Riley Moss. 
+Imagine a world ... 
 
-Also Alex Forsyth and Drew Sanders on the side. RJ Harvey and Tycen Anderson for part, too. 
+It wasn't a movie trailer. It was real life at #Bengals practice.
 
-Didn’t see Taylor Rapp or Frank Crum.
+But Ja'Marr Chase shook off the injury scare, and the offense overcame his and Tee Higgins' absence to finish with a flurry.
+
+"Everybody can breathe."
+
+https://t.co/Elc7xvHOiJ
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVV1u2zgQvgqhfdiHtR3q15Lf0tpJXTRO4HoXC2wDgSJHERtJFEjKjlsU2Gvs9fYkO7RsJ0ZvsA82xOH8fvPN8LtXMMurXApv5k2jLKCMxQFNUp5mxTSN4ghY7GfMBxoX3A_jNAwEE2kJaZFmEAfTNE59noTTOAFv5HGmhfFmf333WNdptQWRM4uu8Yr1tlIavx-Yfgb98ZYVWkLtjFTTQGuZ3uPtB6a3sP_VkI5pK1lNjBQwLlFTkJ3Sz6RheyJbITmzQBjpNONWciC1bKRlVqp2hGKDsezYgm4IVy0H3ZJSaVJJQ9iWyZoVspZ2T1DWacBYB8sJ2VRA8IzGxOWPsQ1pFQb82us9EWDRdkSsbPCrqGHkHGhVA5FNh4lMLsrJzyAU-wGEN3dKyyfZovjufr74lM_X1zebg0ZrUSO3-w7wcr14uF9vlqtbvBJYMYoCGiRjmo6DeBPQWZjMIv83SmeUOhWpgbtKUG-1uL3eLP9YOLFmpc3RdYkFIRrejE6yk_gVONc5b3Wu1pUGzKgBOlu9xZjsmDkCBcJV_QY4IQViZonpgMtyTyq1I03Pq9deDU0mjTRmsMagZ0xdXHhBW_RMnlgDlx1zgY-tQdPHkQfbU1HeL-80NluZ10gSk-_rGtkkDMHm7zT2BA3JNWZYgSYC6YTluOoc08jANFfwWtaY450yZkK-tF_a69oocl3DC7lR2uxtRVgryFzDjnzGL9DmraMJWX881en0NnsOLUZ1ekdEHcORS0oN_udStP_-_Q_iBkA2bF-7HDBbh8eNZu0zea_7xqF1qjjn6Fk6WgwD3CjECGYvs9RnRRGV08gHDqLkwi98tMOZkN8O3Pj8AVmVbxbrOxQ3wCvWStPgxafl3XKzmOcP18i698sHZND9yukoAfWRs6zO_2cjq3YttqWSHVazXM0XDwv8W7lx7Gq2B7e1zt08CwfMKR1TGtFp6MavU0Yep2_9zp21-jrMY87OY3m_ciPZ9UUteW76phlQfKULzk1rD2ASVZITpR2Nxwcan_H7ibcjMixXclyuFxN6GfHn3YSzjuTMEWfcyjNvowFb1j4Rgegcr2ULxuQlAtprcNvi0cm3EnZoeK7QoTdsLKN6fRjMP93BoscnW7mVt5gvf3fUs8Ac6xBsPPTaxa2s7czs6uplgiS7unwsrgzSpTdXAc2CMKbRFP9oEKdxGHg_Ht3yNDbvjXD7jQbhNElG3hNgb5F4x5focnvG0Syi5-05kJyzusba4hNiB5oh43vcyszmh6Xpzabh5b2pWBAnbxQ8VmZlCX6SRgBFkBZllvgQp5mfgaBZEfOEJmUArKAiFFmZxVEoymSKTyyPpnEROMh4BQ3Lt0jOAdod7vfxMOZj2RbqZbz1zzjnw1s-ZILKKaVZEmGUKS_Ro4iDklE_oBSCAF96nwGF1McMQvfzw8wvwxQwFXzuWUm59-M_Hi24Ig:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrVVdtu4zYQ_RVCfchDfaGulvyWi3fjYGMHXqNboAkEShxZ3EqiQVJ21MX-e4dS7HWaL-iLZc4M53LmzPCHkzGTl6ngztyBMA7iKMu4y-M84omb0IRnnLl54AWUh7PIDePQp9zz8RtkdMZyHkQeMEi8POPOyMmZ4tqZ__XDYfu9kgfgKTPoGlWsNaVU-P-me2Ddo1RKaNnYO7KuoTFMdai8F7udaPQV2SuWG5EDYZmGBr9CE0Y0ujBjA6om7MBExTJRCdORomK7EclaQ0wJRMEezchOHECTRuKZYagR0XAAheYjIhURDRc5M0I2RBbkWALeVARvH0VVkVpojMe5sAasIkbUMHmXbHquMOuGCi90UgksA8WP67vFl_Ruc_1p21s0Bi1S0-0BlZvF03qzXa4-o4ozY0Ue9aIxjcdeuPXcuefN3eR3SueUWhOhILf5oN1q8fl6u_xjYcWKFSZF14XgFilnTifJSVyJWpi-StsWZ3UCgxQIwRnsE8ZHpoktCh1xW-32F5hc9liaE25ASuwIvO4xJeBoZVrVWFx3rIZ3zZk4LyMHDqfknGXNMCrakKNUFSeTyYQ8N8_N0tj4zZVBTY05ADEKvYCakEFlU69IJQq8a8hvN9DsWKXPTJlYJzdIgQd29ciUIrcl02ApI__GFhc9NUTzvVUd0UhUGBHW8F6KWmjQFtupcpu_rc0qtwAfUTKSFKIRukSqmBKzLapWqa6P_-ws0EeXSd6RnDUkw5wxwuTZsdrSmL2eT6dmksvpospnr4f7tXhwfuGT4iUuLBmGmawlggjz17kf0BwgyBgOZ-ayMKChHTicB_FPz4iv98ildLvYPKK4hrxkmGKNiuubr4vVNv20WT-mT5vr2-3y1tKmlhyqN6KyKv1fTaE8NqB0KfaWTqu7xdMCf1Z2wvYV68BumYvOncUDpJSOKfWjwLUztZdavI3Ut409K_l9GLKUnWdtvbKA7dusEnmq27oeULoI0dOzx8iQQsma_JecBPWXTBsIBAP9NGhtEdBGyWZXdT2vJMJYirqn4TtGTz7k8nEVIdYc68XOQGUzVYA4Nzuc4mPzpsYR1DotsH2tArscXqwcx-6IF8-1W2SHBaVlq_r5_dMeDHrcmRKPX9bfUGCAWa7dLld4aJUNeiL7K5K9nr7b-lONO6nVU48mnh-5SRjGUeDHfhy7zs8Xuye1SVvN7SqjnhcGwcjZAfYc5-LtRblclLglvbkXnxflQO2cVRXWFZ7Q6lmGPG9xATOT9vvRmc_893pdMi-MLgwcViTYNDeKA4DMi7MiiVx8KvF5BE6TLMwjGhX4CGaU-zwpkjDweRHNwtjPg1mYeRauvISapch7PcB6xFU-HmZ7LJpMvo4P7hnjdHiTh0zQOPcL7lMfYt-fBTTBHRC6Pp3FCWMMspnr-UFW8DiK8tAN3SxM8FVmSRAkcZBQiHzn57_GxKKK:WIRE_MOBILE_MANIFEST_V1 -->
