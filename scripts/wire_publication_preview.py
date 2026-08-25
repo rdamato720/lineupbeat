@@ -22,6 +22,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from wire.public_labels import DIRECTION_LABELS
+
 REVIEW = Path("data/reviews/seven_final.json")
 SEVEN = Path("data/wire_seven_review.json")
 OUT_HTML = Path("data/wire_publication_preview.html")
@@ -30,8 +32,7 @@ OUT_JSON = Path("data/wire_publication_preview.json")
 # Reviewer edits, applied to the text before it is shown.
 EDITS = {"Anthony Richardson": {"direction": "NEUTRAL"}}
 
-DIRECTION_WORD = {"POSITIVE": "Trending up", "NEGATIVE": "Trending down",
-                  "NEUTRAL": "Worth noting", "UNCLEAR": "Unclear"}
+DIRECTION_WORD = DIRECTION_LABELS
 
 
 def publishable(case, decisions):
@@ -114,6 +115,12 @@ def readiness_failures(card: dict) -> list:
     out = []
     text = card["commentary"]
     ev = card["evidence"]
+
+    expected_label = DIRECTION_WORD.get(card.get("direction"))
+    if expected_label and card.get("reader_label") != expected_label:
+        out.append(
+            f"reader label {card.get('reader_label')!r} does not match "
+            f"direction {card.get('direction')}")
 
     conflict = framing_conflict(card["direction"], text)
     if conflict:

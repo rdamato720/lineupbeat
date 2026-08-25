@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import wire_publication_preview as publication_preview
 from wire import public_summary
+from wire.public_labels import DIRECTION_LABELS
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "data" / "wire_onsi_loose_batch.json"
@@ -28,8 +29,7 @@ PUBLICATIONS = ROOT / "data" / "wire_publications.json"
 PLAYERS = ROOT / "sources" / "wire_players.json"
 DB = ROOT / "wire.db"
 
-LABEL = {"POSITIVE": "Trending up", "NEGATIVE": "Trending down",
-         "NEUTRAL": "Worth noting", "UNCLEAR": "Unclear"}
+LABEL = DIRECTION_LABELS
 
 
 def resolve_identity(card: dict, identities: dict[str, list[dict]]) -> dict:
@@ -102,7 +102,8 @@ border-radius:13px;padding:20px;margin:20px 0}.head{display:flex;gap:9px;
 align-items:baseline;flex-wrap:wrap}.name{font-weight:750;font-size:1.12rem}
 .pos,.badge,.type{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase}
 .pos{color:var(--muted)}.badge,.type{border:1px solid;border-radius:99px;padding:2px 8px}
-.up{color:var(--up)}.down{color:var(--down)}.type{color:var(--accent)}
+.up{color:var(--up)}.down{color:var(--down)}.neutral{color:var(--muted)}
+.type{color:var(--accent)}
 .label{font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
 font-weight:700;margin:15px 0 5px}.block{border-left:3px solid var(--rule);padding-left:12px}
 .impact{border-color:var(--accent)}.src{font-size:.8rem;color:var(--muted)}
@@ -125,7 +126,9 @@ padding:10px 15px;background:#fff7e9;border-radius:7px}</style>""", "<main>",
               "summary and Lineup Beat impact text below. Nothing on this "
               "page is live.</p>")]
     for card in payload["cards"]:
-        direction_class = "up" if card["direction"] == "POSITIVE" else "down"
+        direction_class = {
+            "POSITIVE": "up", "NEGATIVE": "down",
+        }.get(card["direction"], "neutral")
         kind = "Fantasy analysis" if card["content_type"] == "FANTASY_ANALYSIS" else "Reporting"
         parts.extend(["<article class='card'>", "<div class='head'>",
                       f"<span class='name'>{e(card['player'])}</span>",

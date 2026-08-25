@@ -29,13 +29,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from wire import display
+from wire.public_labels import DIRECTION_LABELS
 from wire.store import WireStore
 
 OUT = Path("data/wire_homepage_preview.html")
 OUT_JSON = Path("data/wire_homepage_preview.json")
 
-LABEL = {"POSITIVE": "Trending up", "NEGATIVE": "Trending down",
-         "NEUTRAL": "Worth noting", "UNCLEAR": "Worth noting"}
+LABEL = DIRECTION_LABELS
 
 
 def esc(s):

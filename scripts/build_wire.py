@@ -33,6 +33,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import seo
 
 from wire import public_summary as ps
+from wire.public_labels import DIRECTION_LABELS
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
@@ -54,8 +55,7 @@ DISCLOSURE = ("<b>How to read the Wire:</b> Reporter findings describe the "
 EMPTY = ("No reviewed reports are available yet. Check back as new beat "
          "reporting is verified.")
 
-LABELS = {"POSITIVE": "Trending up", "NEGATIVE": "Trending down",
-          "NEUTRAL": "Worth noting", "UNCLEAR": "Worth noting"}
+LABELS = DIRECTION_LABELS
 DIR_CLASS = {"POSITIVE": "up", "NEGATIVE": "down"}
 
 FANTASY_POS = {"QB", "RB", "WR", "TE"}

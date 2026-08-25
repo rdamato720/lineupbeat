@@ -26,6 +26,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from wire import display
+from wire.public_labels import DIRECTION_LABELS
 from wire.store import WireStore
 
 HOME = Path("site/index.html")
@@ -33,8 +34,7 @@ OUT = Path("data/wire_homepage_replacement.html")
 OUT_JSON = Path("data/wire_homepage_replacement.json")
 DECISIONS = Path("data/reviews/backfill_decisions.json")
 
-LABEL = {"POSITIVE": "Trending up", "NEGATIVE": "Trending down",
-         "NEUTRAL": "Worth noting", "UNCLEAR": "Worth noting"}
+LABEL = DIRECTION_LABELS
 ROLE_LABEL = {"PRIMARY": "Latest practice report",
               "SUPPORTING_OBSERVATION": "Earlier practice observation",
               "OFFICIAL_DESIGNATION": "Club participation report"}

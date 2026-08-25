@@ -23,8 +23,10 @@ sys.modules.setdefault("trafilatura", types.SimpleNamespace())
 
 from wire import mobile_approval as mobile
 from wire import mobile_dedupe
+from wire.public_labels import DIRECTION_LABELS
 from wire.mobile_draft import OpenAIMobileDraftProvider
 import wire_mobile_inbox as inbox
+import wire_publication_preview as publication_preview
 
 
 def card() -> dict:
@@ -185,6 +187,16 @@ class MobileWireTests(unittest.TestCase):
                   "evidence": "Bijan Robinson was a full participant in 11 on 11 team periods."}
         self.assertGreater(mobile_dedupe.quality(strong),
                            mobile_dedupe.quality(weak))
+
+    def test_unclear_direction_uses_worth_noting_public_label(self):
+        self.assertEqual(DIRECTION_LABELS["UNCLEAR"], "Worth noting")
+        unclear = card()
+        unclear.update({"direction": "UNCLEAR", "reader_label": "Unclear"})
+        failures = publication_preview.readiness_failures(unclear)
+        self.assertTrue(any("reader label" in failure for failure in failures))
+        unclear["reader_label"] = "Worth noting"
+        failures = publication_preview.readiness_failures(unclear)
+        self.assertFalse(any("reader label" in failure for failure in failures))
 
     def test_capture_only_is_source_scoped_and_skips_extraction(self):
         cli = (ROOT / "beatwire" / "cli.py").read_text()

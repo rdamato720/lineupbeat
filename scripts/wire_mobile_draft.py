@@ -25,6 +25,7 @@ from beatwire.registry import Registry as BeatRegistry
 from wire import mobile_dedupe, players, public_summary, semantic
 from wire.mobile_approval import MAX_CARDS
 from wire.mobile_draft import OpenAIMobileDraftProvider
+from wire.public_labels import DIRECTION_LABELS
 from wire.providers.openai import MODEL
 
 
@@ -36,8 +37,7 @@ OUT = ROOT / "data" / "wire_mobile_batch.json"
 SEEN = ROOT / "data" / "wire_mobile_seen.json"
 SCHEMA = "wire-mobile-batch-v1"
 SEEN_SCHEMA = "wire-mobile-seen-v1"
-LABEL = {"POSITIVE": "Trending up", "NEGATIVE": "Trending down",
-         "NEUTRAL": "Worth noting", "UNCLEAR": "Unclear"}
+LABEL = DIRECTION_LABELS
 
 
 def now_utc() -> datetime:
