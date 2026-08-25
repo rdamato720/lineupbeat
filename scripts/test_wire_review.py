@@ -400,6 +400,39 @@ class ReviewRepairTests(unittest.TestCase):
             registry)
         self.assertFalse(result["eligible"])
 
+    def test_watchlist_praise_needs_a_material_role(self):
+        registry = {"players": {"p": {
+            "relevance_tier": relevance.WATCHLIST,
+            "relevance_reason": "outside normal redraft boundary"}}}
+        praise = relevance.assess(
+            "p", "RB", "Kaytron Allen continues to impress this preseason.",
+            registry)
+        role = relevance.assess(
+            "p", "RB", "Kaytron Allen led the first-team backfield in carries.",
+            registry)
+        self.assertFalse(praise["eligible"])
+        self.assertTrue(role["eligible"])
+
+    def test_developmental_qb_competition_is_not_starting_relevance(self):
+        registry = {"players": {}}
+        developmental = relevance.assess(
+            "p", "QB", "Athan Kaliakmanis took control of the developmental "
+            "quarterback competition with Sam Hartman.", registry)
+        starting = relevance.assess(
+            "p", "QB", "Sam Hartman is competing for the starting quarterback "
+            "job after the veteran was injured.", registry)
+        self.assertFalse(developmental["eligible"])
+        self.assertTrue(starting["eligible"])
+
+    def test_watchlist_qb_transaction_without_starting_path_is_suppressed(self):
+        registry = {"players": {"p": {
+            "relevance_tier": relevance.WATCHLIST,
+            "relevance_reason": "outside normal redraft boundary"}}}
+        result = relevance.assess(
+            "p", "QB", "Sam Hartman was traded for a conditional pick.",
+            registry)
+        self.assertFalse(result["eligible"])
+
     def test_observed_dark_launch_cohort_is_filtered_before_model_spend(self):
         def row(name, text, klass="FIRSTHAND_OBSERVATION"):
             return {"player_name": name, "evidence_text": text,

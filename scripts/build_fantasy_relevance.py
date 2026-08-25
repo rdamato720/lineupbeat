@@ -40,7 +40,7 @@ TIERS = {ROSTERABLE, WATCHLIST, CONTINGENT, NOT_RELEVANT}
 
 # Broad redraft boundaries. Editorial, so they live here and are recorded in
 # the output rather than being inferred later from the data.
-DEFAULT_BOUNDS = {"QB": 36, "RB": 80, "WR": 100, "TE": 40}
+DEFAULT_BOUNDS = {"QB": 24, "RB": 48, "WR": 60, "TE": 24}
 # Beyond the boundary but close enough to matter if the role moves.
 WATCH_MARGIN = 1.4
 

@@ -1884,6 +1884,11 @@ check("a backup quarterback replacing an injured starter is reviewable",
       _rel_ok("QB", "Richardson replaced Daniel Jones after Jones left injured."))
 check("generic praise for a backup quarterback is suppressed",
       not _rel_ok("QB", "Richardson has looked sharp and the coaches are pleased."))
+check("a developmental QB3 competition is suppressed",
+      not _rel_ok("QB", "Hartman is losing the developmental quarterback "
+                  "competition for the QB3 role."))
+check("a true starting quarterback battle is reviewable",
+      _rel_ok("QB", "Hartman is competing for the starting quarterback job."))
 check("a deep receiver taking ordinary reserve reps is suppressed",
       not _rel_ok("WR", "Blair worked with the reserves in individual drills."))
 check("a deep receiver taking first-team red-zone snaps is reviewable",
