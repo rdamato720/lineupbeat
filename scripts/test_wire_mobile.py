@@ -323,6 +323,73 @@ class MobileWireTests(unittest.TestCase):
         self.assertEqual([row["candidate_id"] for row in ordered],
                          ["onsi", "x-new", "x-old"])
 
+    def test_obj_isolated_red_zone_highlight_is_not_card_worthy(self):
+        candidate = {
+            "evidence": (
+                "Odell Beckham Jr. caught a touchdown in the back of the end "
+                "zone. Jaxson Dart later had red zone success with OBJ.")}
+        result = {
+            "decision": "CARD", "mechanism": "RED_ZONE",
+            "public_summary": (
+                "Odell Beckham Jr. caught a back-end-zone touchdown and had "
+                "another red-zone reception."),
+            "lineupbeat_impact": (
+                "The catches are a modest positive for his scoring-use outlook, "
+                "but they were isolated practice plays and do not establish a "
+                "regular role or target volume."),
+        }
+        failures = mobile_draft_script.event_quality_failures(candidate, result)
+        self.assertTrue(any("isolated practice" in failure for failure in failures))
+        self.assertTrue(any("editorial jargon" in failure for failure in failures))
+
+    def test_qb1_practice_recap_is_not_a_depth_chart_change(self):
+        candidate = {"evidence": (
+            "Jaxson Dart threw four touchdowns in one goal-line period and ran "
+            "for another. Another good day for Giants QB1.")}
+        result = {
+            "decision": "CARD", "mechanism": "DEPTH_CHART",
+            "public_summary": (
+                "Jaxson Dart accounted for five touchdowns in goal-line work."),
+            "lineupbeat_impact": (
+                "The session supports short-term starting-QB momentum, but it "
+                "does not establish a season-long role."),
+        }
+        failures = mobile_draft_script.event_quality_failures(candidate, result)
+        self.assertTrue(any("depth-chart" in failure for failure in failures))
+        self.assertTrue(any("editorial jargon" in failure for failure in failures))
+
+    def test_multi_practice_performance_trend_can_reach_review(self):
+        candidate = {"evidence": (
+            "Jalen Hurts threw 13 interceptions across 16 practices after "
+            "totaling 15 over the prior four training camps.")}
+        result = {
+            "decision": "CARD", "mechanism": "PERFORMANCE",
+            "public_summary": (
+                "Jalen Hurts has thrown 13 interceptions across 16 practices."),
+            "lineupbeat_impact": (
+                "The multi-practice turnover trend is worth monitoring before "
+                "Week 1, even though camp results do not guarantee game results."),
+        }
+        self.assertEqual(
+            mobile_draft_script.event_quality_failures(candidate, result), [])
+
+    def test_nabers_early_exit_remains_card_worthy(self):
+        candidate = {"evidence": (
+            "Malik Nabers looked very good running and made a leaping catch. "
+            "He did not finish practice and walked inside with the Giants' "
+            "return-to-play coordinator.")}
+        result = {
+            "decision": "CARD", "mechanism": "INJURY",
+            "public_summary": (
+                "Malik Nabers left practice early with the Giants' "
+                "return-to-play coordinator."),
+            "lineupbeat_impact": (
+                "Coming off ACL surgery, the early exit is worth monitoring. "
+                "The report does not say he suffered a setback."),
+        }
+        self.assertEqual(
+            mobile_draft_script.event_quality_failures(candidate, result), [])
+
 
 if __name__ == "__main__":
     unittest.main()
