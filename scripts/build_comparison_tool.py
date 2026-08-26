@@ -178,7 +178,7 @@ CSS = r"""
 .cmphead h1{max-width:650px;margin:0;font-size:clamp(56px,4.5vw,72px);line-height:.99;letter-spacing:-.033em}
 .cmphead>p:not(.rkeyebrow):not(.rkstatus){max-width:590px;margin:33px 0 0;font-size:19px;line-height:1.7}
 .cmphead .rkstatus{margin-top:30px;font-size:12px;letter-spacing:.085em}
-.cmpbox{grid-column:2;width:100%;max-width:475px;height:660px;margin:43px 0 0;justify-self:end;
+.cmpbox{grid-column:2;width:100%;max-width:475px;height:auto;margin:43px 0 0;justify-self:end;
   padding:0 26px 30px;border:1px solid rgba(255,255,255,.22);border-radius:18px;
   background:linear-gradient(180deg,rgba(17,21,22,.97),rgba(13,17,18,.97));box-shadow:0 32px 90px rgba(0,0,0,.38)}
 .cmpbox:before{content:"PLAYER COMPARISON";display:flex;align-items:center;height:67px;margin:0 -26px 28px;
@@ -187,6 +187,9 @@ CSS = r"""
 .cmpselectors{grid-template-columns:1fr;gap:14px}.versus{text-align:center;padding:0;color:var(--signal)}
 .cmpselect select,.fmt select{height:62px;font-size:18px}.fmt{max-width:none;margin:18px 0 0}
 .cmpselect select,.fmt select{font-family:var(--agate);font-size:20px;font-weight:700;letter-spacing:.015em}
+.cmpgo{width:100%;height:72px;margin-top:24px;border:0;border-radius:8px;background:var(--signal);
+  color:#060806;cursor:pointer;font:700 18px var(--agate);letter-spacing:.055em;text-transform:uppercase}
+.cmpgo:hover{background:#d4ff4b;transform:translateY(-2px)}
 .cmpactions{display:flex;gap:18px;margin-top:35px}.cmpaction{height:72px;display:inline-flex;align-items:center;
   justify-content:center;min-width:220px;padding:0 28px;border:1px solid rgba(255,255,255,.3);
   border-radius:8px;color:var(--ink);font:700 18px var(--agate);letter-spacing:.045em;text-decoration:none}
@@ -205,7 +208,7 @@ CSS = r"""
 .cmpresult .players,.cmpresult .edges{max-width:1130px;margin-left:auto;margin-right:auto}
 .popular,.method,.faq,.related{grid-column:1/-1}.popular{margin-top:80px}
 @media(max-width:1100px){.cmpedge{display:none}}
-@media(max-width:900px){.cmpwrap{grid-template-columns:1fr;gap:36px;padding:45px 24px 80px}.cmphead,.cmpbox{grid-column:1}.cmpbox{justify-self:stretch;max-width:none;height:auto;min-height:540px;margin-top:0}.cmpresult.ready,.popular{margin-top:35px}.topbar .stamp{display:none}.cmpactions{flex-wrap:wrap}.cmpproof{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:900px){.cmpwrap{grid-template-columns:1fr;gap:36px;padding:45px 24px 80px}.cmphead,.cmpbox{grid-column:1}.cmpbox{justify-self:stretch;max-width:none;height:auto;min-height:0;margin-top:0}.cmpresult.ready,.popular{margin-top:35px}.topbar .stamp{display:none}.cmpactions{flex-wrap:wrap}.cmpproof{grid-template-columns:1fr 1fr 1fr}}
 @media(max-width:760px){.cmpselectors{grid-template-columns:1fr}.versus{text-align:center;padding:0}.players,.pairgrid{grid-template-columns:1fr}.edge{grid-template-columns:1fr}.edge .left,.edge .right{text-align:center}.metrics{grid-template-columns:repeat(2,1fr)}}
 """
 
@@ -278,8 +281,11 @@ def main() -> int:
     font_links = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
                   '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
                   '<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">')
-    move_result = ('<script>document.querySelector(".cmpbox").after('
-                   'document.getElementById("cmpresult"));</script>')
+    compare_button = '<button class="cmpgo" id="cmpgo" type="button">Compare players &rarr;</button>'
+    move_result = ('<script>const result=document.getElementById("cmpresult");'
+                   'document.querySelector(".cmpbox").after(result);'
+                   'document.getElementById("cmpgo").addEventListener("click",()=>'
+                   'result.scrollIntoView({behavior:"smooth",block:"start"}));</script>')
     hero_extras = (
         '<div class="cmpactions"><a class="cmpaction primary" href="#pa">COMPARE PLAYERS &rarr;</a>'
         '<a class="cmpaction" href="/nfl/rankings/">VIEW RANKINGS</a></div>'
@@ -301,6 +307,7 @@ def main() -> int:
     ).replace(
         "Put two players head to head. Compare what they are projected to do with how they actually scored week to week.",
         "Put two players head to head. Lineup Beat combines current rankings, projections and ADP with the weekly consistency, floor and ceiling behind the average.",
+    ).replace('<div id="cmpresult"', compare_button + '<div id="cmpresult"', 1
     ).replace('</header><section class="cmpbox">',
               hero_extras + '</header><section class="cmpbox">', 1
     ).replace('<main class="cmpwrap">', '<main class="cmpwrap">' + edge_panels, 1
@@ -318,6 +325,7 @@ def main() -> int:
         ).replace(
             "<h1>Who Should I Draft?</h1>",
             f'<h1>{base.esc(a["name"])} or<br><span>{base.esc(b["name"])}?</span></h1>',
+        ).replace('<div id="cmpresult"', compare_button + '<div id="cmpresult"', 1
         ).replace('</header><section class="cmpbox">',
                   hero_extras + '</header><section class="cmpbox">', 1
         ).replace('<main class="cmpwrap">', '<main class="cmpwrap">' + edge_panels, 1
