@@ -44,6 +44,13 @@ class ComparisonToolTests(unittest.TestCase):
         self.assertIn("bijan-robinson-vs-jahmyr-gibbs", pair)
         self.assertIn("Lineup Beat PPR pick", pair)
 
+    def test_comparison_tool_is_discoverable(self):
+        template = (tool.ROOT / "site" / "template.html").read_text()
+        pages = (tool.ROOT / "scripts" / "build_pages.py").read_text()
+        self.assertIn('href="/nfl/who-should-i-draft/" class="lb-btn', template)
+        self.assertGreaterEqual(pages.count('href="/nfl/who-should-i-draft/"'), 2)
+        self.assertIn("COMPARE PLAYERS", pages)
+
 
 if __name__ == "__main__":
     unittest.main()
