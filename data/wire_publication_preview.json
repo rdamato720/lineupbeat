@@ -1,37 +1,92 @@
 {
  "schema_version": "wire-mobile-publication-preview-v1",
- "batch_id": "8219eabaa01a78584d88204e6e89face8fa725aec03fd388ff74892335046a24",
- "generated_at": "2026-08-25T12:12:56+00:00",
+ "batch_id": "8cab318be40dcb7e2adb18257759f2fd6a492f8e8df3c886e1b3edd176e5c0bd",
+ "generated_at": "2026-08-26T18:13:31+00:00",
  "reviewer_action": "APPROVED",
  "reviewer": "rdamato720",
  "reviewer_name": "Ralph Damato",
- "approved_at": "2026-08-26T17:36:51Z",
- "approval_statement": "reject all",
+ "approved_at": "2026-08-26T18:27:37Z",
+ "approval_statement": "approve all",
  "catalog_counts": {
-  "source_items": 4,
-  "player_candidates": 4,
+  "source_items": 2,
+  "player_candidates": 2,
   "discovered_not_captured": 0
  },
  "model_calls": 5,
- "cost_usd": 0.020912,
+ "cost_usd": 0.020146,
  "publications_applied": 0,
- "cards": [],
- "held_back": [
+ "cards": [
   {
-   "player": "Kyle Allen",
-   "why": "rejected from GitHub mobile review"
+   "approved_at": "2026-08-26T18:27:37Z",
+   "author": "ByNateTaylor",
+   "commentary": "The ankle issue creates a near-term availability concern for Walker, but the report provides no diagnosis, treatment plan or expected absence.",
+   "commentary_approved_by": "Ralph Damato",
+   "commentary_origin": "MODEL_DRAFT",
+   "content_type": "REPORTING",
+   "date": "2026-08-26T18:07:20+00:00",
+   "direction": "NEGATIVE",
+   "draft_confidence": 0.9,
+   "draft_limitations": [
+    "No severity, timetable or practice-status detail was provided.",
+    "The report does not say whether Walker will miss the preseason game or additional time."
+   ],
+   "evidence": "Andy Reid said Patrick Mahomes, Josh Simmons, Jack Cochrane, Ashton Gillotte, Jimmy Holiday, Chris Oladukon &amp; CJ Hanson will not play Friday against the Seahawks.\n\nGarrett Nussmeier will start.\n\nReid said Kenneth Walker III has a swollen ankle.",
+   "evidence_candidate_id": "mobile:x:4d21a06b660a777aebfc",
+   "horizon": "UNKNOWN",
+   "mechanism": "INJURY",
+   "model_original_commentary": "The ankle issue creates a near-term availability concern for Walker, but the report provides no diagnosis, treatment plan or expected absence.",
+   "ownership": "INDEPENDENT",
+   "player": "Kenneth Walker III",
+   "player_id": "00-0038134",
+   "position": "RB",
+   "projection_action": "NONE",
+   "public_summary": "Kenneth Walker III has a swollen ankle, Chiefs coach Andy Reid said.",
+   "public_summary_approved_by": "Ralph Damato",
+   "reader_label": "Trending down",
+   "readiness_failures": [],
+   "reviewer_action": "APPROVE_WITH_EDIT",
+   "source": "X",
+   "strength": "MEDIUM",
+   "team": "KC",
+   "url": "https://x.com/ByNateTaylor/status/2092675277981712831",
+   "evidence_sha256": "0da752d64559dddcafe73b4cad80cdc957a7eabbcbedffc7c032c9bd397d61ee"
   },
   {
-   "player": "Josh Allen",
-   "why": "rejected from GitHub mobile review"
-  },
-  {
-   "player": "Shane Buechele",
-   "why": "rejected from GitHub mobile review"
-  },
-  {
-   "player": "Josh Allen",
-   "why": "rejected from GitHub mobile review"
+   "approved_at": "2026-08-26T18:27:37Z",
+   "author": "Bo Brack",
+   "commentary": "The red-zone score is a positive practice signal for McBride's touchdown involvement, but one drill rep does not establish a season-long role or target share.",
+   "commentary_approved_by": "Ralph Damato",
+   "commentary_origin": "MODEL_DRAFT",
+   "content_type": "REPORTING",
+   "date": "2026-08-26T18:03:18+00:00",
+   "direction": "POSITIVE",
+   "draft_confidence": 0.9,
+   "draft_limitations": [
+    "Single practice observation",
+    "Coverage was not visible",
+    "No broader usage or workload context was provided"
+   ],
+   "evidence": "McBride &amp; Marv getting going in the red zone\n\n[Responding to]: In red zone drills, #Packers give up a TD from Jacoby Brissett to Trey McBride on an in breaking route. Could not see coverage.\n\nThen Marvin Harrison Jr. beats Keisean Nixon on a fade for TD. Looked like Nixon expected safety help that never came, and Harrison was wide open.",
+   "evidence_candidate_id": "mobile:x:4eb4d411559eee73de2a",
+   "horizon": "SHORT_TERM",
+   "mechanism": "RED_ZONE",
+   "model_original_commentary": "The red-zone score is a positive practice signal for McBride's touchdown involvement, but one drill rep does not establish a season-long role or target share.",
+   "ownership": "INDEPENDENT",
+   "player": "Trey McBride",
+   "player_id": "00-0037744",
+   "position": "TE",
+   "projection_action": "NONE",
+   "public_summary": "Trey McBride caught a red-zone touchdown from Jacoby Brissett on an in-breaking route during drills.",
+   "public_summary_approved_by": "Ralph Damato",
+   "reader_label": "Trending up",
+   "readiness_failures": [],
+   "reviewer_action": "APPROVE_WITH_EDIT",
+   "source": "PHNX Cardinals",
+   "strength": "LOW",
+   "team": "ARI",
+   "url": "https://x.com/BoBrack/status/2092674261089755238",
+   "evidence_sha256": "dbbcea8e4da84085ee70f87d7c7c9aa1fdc09f1ee79e8e4f2890620a81303745"
   }
- ]
+ ],
+ "held_back": []
 }

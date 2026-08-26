@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-approval-ledger-v1",
- "count": 7,
+ "count": 8,
  "receipts": [
   {
    "receipt_id": "mobile:49f74b01c0954bb71f23e5fb8672a9a43dc3afb5edeb0b0b4bf6f7e24b35060f:5403509377",
@@ -373,6 +373,52 @@
      "evidence_sha256": "d0f189f441c8228d134c8127ed161d22cca0469e440b01e78268c2c48190bce1",
      "public_summary_sha256": "e5146426c6c9540178cddeadac3a46615563c5b7f60481b82160cdabd2ae9d7c",
      "lineupbeat_impact_sha256": "b033fb76a37cfcb42baef960e959c426cb997c999c7079cc9653e8e6972d78a4"
+    }
+   ]
+  },
+  {
+   "receipt_id": "mobile:8cab318be40dcb7e2adb18257759f2fd6a492f8e8df3c886e1b3edd176e5c0bd:5429335383",
+   "batch_id": "8cab318be40dcb7e2adb18257759f2fd6a492f8e8df3c886e1b3edd176e5c0bd",
+   "issue_number": 58,
+   "comment_id": "5429335383",
+   "approved_by": "Ralph Damato",
+   "approved_by_handle": "rdamato720",
+   "approved_at": "2026-08-26T18:27:37Z",
+   "approval_statement": "approve all",
+   "manifest_sha256": "8cab318be40dcb7e2adb18257759f2fd6a492f8e8df3c886e1b3edd176e5c0bd",
+   "publication_sha256_at_draft": "032e643dee9a04739f4c1757398ade93778e1cae33ddd893e6d92d8e28890c3b",
+   "publication_sha256_before": "032e643dee9a04739f4c1757398ade93778e1cae33ddd893e6d92d8e28890c3b",
+   "publication_sha256_after": "fc9bf97cda510a4fb44c576f58b09247d001cf08cc0085ec40b12cc90c838072",
+   "publication_store_changed_since_draft": false,
+   "publication_count_before": 76,
+   "publication_count_after": 78,
+   "publications_applied": 2,
+   "outcomes": [
+    {
+     "card_number": 1,
+     "candidate_id": "mobile:x:4d21a06b660a777aebfc",
+     "player_id": "00-0038134",
+     "player_name": "Kenneth Walker III",
+     "decision": "APPROVED",
+     "edited": false,
+     "public_summary": "Kenneth Walker III has a swollen ankle, Chiefs coach Andy Reid said.",
+     "lineupbeat_impact": "The ankle issue creates a near-term availability concern for Walker, but the report provides no diagnosis, treatment plan or expected absence.",
+     "evidence_sha256": "0da752d64559dddcafe73b4cad80cdc957a7eabbcbedffc7c032c9bd397d61ee",
+     "public_summary_sha256": "732aed3ae5814c25ce86f71abdd904adf72d75513e302a2265032daad39af5b5",
+     "lineupbeat_impact_sha256": "bf5f4bf567425cc1ac2b6e174a9be65656469bc9588e98dab0d1fb0ed16a6b32"
+    },
+    {
+     "card_number": 2,
+     "candidate_id": "mobile:x:4eb4d411559eee73de2a",
+     "player_id": "00-0037744",
+     "player_name": "Trey McBride",
+     "decision": "APPROVED",
+     "edited": false,
+     "public_summary": "Trey McBride caught a red-zone touchdown from Jacoby Brissett on an in-breaking route during drills.",
+     "lineupbeat_impact": "The red-zone score is a positive practice signal for McBride's touchdown involvement, but one drill rep does not establish a season-long role or target share.",
+     "evidence_sha256": "dbbcea8e4da84085ee70f87d7c7c9aa1fdc09f1ee79e8e4f2890620a81303745",
+     "public_summary_sha256": "63fc6e36ca14654be84c90ebb9b46f32569c440afd2e77853629aae22f4dbe8b",
+     "lineupbeat_impact_sha256": "892d3205c5e47f5d6a81af1d78b9a69888461f0a4377cf4c94b8f58f40895b7e"
     }
    ]
   }
