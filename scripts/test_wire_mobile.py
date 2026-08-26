@@ -282,6 +282,7 @@ class MobileWireTests(unittest.TestCase):
         self.assertIn('cron: "7,37 0-3 * * *"', monitor)
         self.assertIn('cron: "7,37 11-23 * * *"', monitor)
         self.assertIn("--max-calls \"$MOBILE_MAX_CALLS\"", monitor)
+        self.assertIn("MOBILE_MAX_CALLS: 20", monitor)
         self.assertIn("--cap \"$MOBILE_RUN_CAP\"", monitor)
         self.assertIn("--capture-only", monitor)
         self.assertIn("wire-mobile-x.db", monitor)
@@ -297,6 +298,7 @@ class MobileWireTests(unittest.TestCase):
         self.assertNotIn("wire_publish.py", monitor)
         draft = (ROOT / "scripts" / "wire_mobile_draft.py").read_text()
         self.assertIn('"nfl", load_players=False', draft)
+        self.assertIn('"unreviewed_count"', draft)
         self.assertIn("github.actor == 'rdamato720'", approval)
         self.assertIn("wire_mobile_approve.py", approval)
         self.assertIn("--publish", approval)
@@ -307,6 +309,19 @@ class MobileWireTests(unittest.TestCase):
                         approval.index("gh workflow run refresh.yml"))
         apply_script = (ROOT / "scripts" / "wire_mobile_approve.py").read_text()
         self.assertIn("visible issue wording does not match", apply_script)
+
+    def test_onsi_candidates_receive_reserved_calls_before_newer_x(self):
+        rows = [
+            {"candidate_id": "x-new", "origin": "X",
+             "published_at": "2026-08-26T18:10:00+00:00"},
+            {"candidate_id": "onsi", "origin": "ONSI",
+             "published_at": "2026-08-26T18:00:00+00:00"},
+            {"candidate_id": "x-old", "origin": "X",
+             "published_at": "2026-08-26T17:50:00+00:00"},
+        ]
+        ordered = mobile_draft_script.prioritize_candidates(rows, max_calls=20)
+        self.assertEqual([row["candidate_id"] for row in ordered],
+                         ["onsi", "x-new", "x-old"])
 
 
 if __name__ == "__main__":
