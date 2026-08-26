@@ -1,37 +1,92 @@
 {
  "schema_version": "wire-mobile-publication-preview-v1",
- "batch_id": "e3143cf63efd2b53eccaf40dbc2ce7f82a7d06af842f19ec235b9094914022ff",
- "generated_at": "2026-08-25T04:35:45+00:00",
+ "batch_id": "a68e0666696d16739173daaffef131d7e47daacc5978a0f9bebc5b2a89044b25",
+ "generated_at": "2026-08-26T03:29:43+00:00",
  "reviewer_action": "APPROVED",
  "reviewer": "rdamato720",
  "reviewer_name": "Ralph Damato",
- "approved_at": "2026-08-25T11:26:20Z",
- "approval_statement": "reject all",
+ "approved_at": "2026-08-26T14:38:44Z",
+ "approval_statement": "approve all",
  "catalog_counts": {
-  "source_items": 4,
-  "player_candidates": 4,
+  "source_items": 2,
+  "player_candidates": 2,
   "discovered_not_captured": 0
  },
  "model_calls": 5,
- "cost_usd": 0.022554,
+ "cost_usd": 0.022078,
  "publications_applied": 0,
- "cards": [],
- "held_back": [
+ "cards": [
   {
-   "player": "Jaden Bradley",
-   "why": "rejected from GitHub mobile review"
+   "approved_at": "2026-08-26T14:38:44Z",
+   "author": "BrandonGowton",
+   "commentary": "Two practice interceptions are a short-term negative signal, but this isolated result does not establish a broader performance trend or change in Hurts' role.",
+   "commentary_approved_by": "Ralph Damato",
+   "commentary_origin": "MODEL_DRAFT",
+   "content_type": "REPORTING",
+   "date": "2026-08-26T02:53:37+00:00",
+   "direction": "NEGATIVE",
+   "draft_confidence": 0.93,
+   "draft_limitations": [
+    "The evidence is limited to a headline and provides no play-by-play context.",
+    "This was a single training camp practice result.",
+    "No role, health, or workload change was reported."
+   ],
+   "evidence": "Eagles Training Camp Practice Notes: Riq Woolen intercepts Jalen Hurts twice at The Linc \n\nhttps://t.co/XSrDIN59xM",
+   "evidence_candidate_id": "mobile:x:5d7103b0bd6d1f008efc",
+   "horizon": "SHORT_TERM",
+   "mechanism": "PERFORMANCE",
+   "model_original_commentary": "Two practice interceptions are a short-term negative signal, but this isolated result does not establish a broader performance trend or change in Hurts' role.",
+   "ownership": "INDEPENDENT",
+   "player": "Jalen Hurts",
+   "player_id": "00-0036389",
+   "position": "QB",
+   "projection_action": "NONE",
+   "public_summary": "Jalen Hurts was intercepted twice by Riq Woolen during an Eagles training camp practice at Lincoln Financial Field.",
+   "public_summary_approved_by": "Ralph Damato",
+   "reader_label": "Trending down",
+   "readiness_failures": [],
+   "reviewer_action": "APPROVE_WITH_EDIT",
+   "source": "X",
+   "strength": "LOW",
+   "team": "PHI",
+   "url": "https://x.com/BrandonGowton/status/2092445330314846529",
+   "evidence_sha256": "4751f871ff11692e5f2eb9263599acb7ec1995e41835bd2fc49bca7d74a66baf"
   },
   {
-   "player": "Kaytron Allen",
-   "why": "rejected from GitHub mobile review"
-  },
-  {
-   "player": "Nick Nash",
-   "why": "rejected from GitHub mobile review"
-  },
-  {
-   "player": "Sam Hartman",
-   "why": "rejected from GitHub mobile review"
+   "approved_at": "2026-08-26T14:38:44Z",
+   "author": "John McMullen",
+   "commentary": "This appears to be an isolated practice-play result and does not indicate a change to Smith’s role, workload or outlook.",
+   "commentary_approved_by": "Ralph Damato",
+   "commentary_origin": "MODEL_DRAFT",
+   "content_type": "REPORTING",
+   "date": "2026-08-26T02:00:00+00:00",
+   "direction": "NEUTRAL",
+   "draft_confidence": 0.9,
+   "draft_limitations": [
+    "Single play from a practice setting",
+    "The report does not describe a role, usage, health or workload change"
+   ],
+   "evidence": "The defense was credited with a 58-36 win that was capped by Woolen undercutting DeVonta Smith on a Jalen Hurts throw that didn't have much mustard on it during an end-of-game situational period. The speedy Woolen raced into the end zone and threw the football into the crowd that was over 45,000.",
+   "evidence_candidate_id": "mobile:onsi:f62f8dbda4a20ac06265",
+   "horizon": "IMMEDIATE",
+   "mechanism": "PERFORMANCE",
+   "model_original_commentary": "This appears to be an isolated practice-play result and does not indicate a change to Smith’s role, workload or outlook.",
+   "ownership": "INDEPENDENT",
+   "player": "DeVonta Smith",
+   "player_id": "00-0036912",
+   "position": "WR",
+   "projection_action": "NONE",
+   "public_summary": "DeVonta Smith was undercut by Woolen on a Jalen Hurts pass during an end-of-game situational period.",
+   "public_summary_approved_by": "Ralph Damato",
+   "reader_label": "Worth noting",
+   "readiness_failures": [],
+   "reviewer_action": "APPROVE_WITH_EDIT",
+   "source": "Sports Illustrated -- PHI",
+   "strength": "LOW",
+   "team": "PHI",
+   "url": "https://www.si.com/nfl/eagles/onsi/defensive-domination-everything-i-saw-from-eagles-only-open-practice-of-training-camp-01m0xnq8ve77",
+   "evidence_sha256": "7414447c1b5539474336e0b55244f73aa7137f03f54d6ca93d723c943902f158"
   }
- ]
+ ],
+ "held_back": []
 }
