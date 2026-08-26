@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sqlite3
 import sys
 from collections import defaultdict
@@ -39,6 +40,27 @@ SCHEMA = "wire-mobile-batch-v1"
 SEEN_SCHEMA = "wire-mobile-seen-v1"
 LABEL = DIRECTION_LABELS
 ONSI_RESERVED_CALLS = 8
+
+MULTI_PRACTICE_PATTERN = re.compile(
+    r"(?i)\b(across|over|during)\s+(?:the\s+)?(?:last\s+|past\s+|prior\s+)?"
+    r"(?:\d+|two|three|four|five|six|seven|eight|nine|ten|multiple|several)\s+"
+    r"(?:practices?|days?|sessions?)\b|"
+    r"\b(?:second|third|fourth|fifth)\s+(?:straight|consecutive)\s+"
+    r"(?:practice|day|session)\b|\bthroughout\s+(?:camp|the\s+week)\b")
+DEPTH_CHART_CHANGE = re.compile(
+    r"(?i)\b(named (?:the )?(?:starter|starting)|will start|won the starting|"
+    r"depth chart|promoted|demoted|moved ahead of|dropped behind|"
+    r"took over (?:the )?first[- ]team|elevated to (?:the )?starter)\b")
+CONCRETE_ROLE_CHANGE = re.compile(
+    r"(?i)\b(role (?:expanded|increased|changed)|workload (?:increased|rose)|"
+    r"took over|replaced|in place of|first[- ]team (?:reps|snaps)|"
+    r"led .{0,30}(?:targets|routes|carries|touches)|"
+    r"majority of .{0,30}(?:targets|routes|carries|touches))\b")
+ISOLATED_LIMITATION = re.compile(
+    r"(?i)\b(isolated|one (?:play|rep|practice|session)|single "
+    r"(?:play|rep|practice|session)|does not establish (?:a |the )?"
+    r"(?:regular )?(?:role|workload|target volume|trend))\b")
+EDITORIAL_JARGON = ("scoring-use outlook", "short-term starting-qb momentum")
 
 
 def now_utc() -> datetime:
@@ -257,6 +279,42 @@ def validate_response(result: dict) -> list[str]:
     return errors
 
 
+def event_quality_failures(candidate: dict, result: dict) -> list[str]:
+    """Reject structurally valid cards that do not contain a real event.
+
+    The semantic provider proposes copy, but deterministic policy decides
+    whether that proposal may reach the human inbox. Pure practice performance
+    needs a multi-session pattern. A depth-chart label needs an explicit
+    change, not a reporter casually calling the current starter QB1.
+    """
+    if result.get("decision") != "CARD":
+        return []
+    evidence = str(candidate.get("evidence") or "")
+    summary = str(result.get("public_summary") or "")
+    impact = str(result.get("lineupbeat_impact") or "")
+    combined = "\n".join((evidence, summary, impact))
+    mechanism = str(result.get("mechanism") or "")
+    failures = []
+
+    if mechanism == "DEPTH_CHART" and not DEPTH_CHART_CHANGE.search(combined):
+        failures.append("depth-chart card has no explicit starter or pecking-order change")
+
+    if mechanism in {"PERFORMANCE", "RED_ZONE"}:
+        material = (MULTI_PRACTICE_PATTERN.search(combined) or
+                    CONCRETE_ROLE_CHANGE.search(combined))
+        if not material:
+            failures.append(
+                "isolated practice performance has no multi-practice trend or role change")
+        if ISOLATED_LIMITATION.search(impact):
+            failures.append("impact admits the practice result is isolated or non-actionable")
+
+    folded = impact.lower().replace("‑", "-")
+    for phrase in EDITORIAL_JARGON:
+        if phrase in folded:
+            failures.append(f"impact uses empty editorial jargon: {phrase}")
+    return failures
+
+
 def card_from(candidate: dict, result: dict) -> dict:
     card = {
         "player": candidate["player"], "player_id": candidate["player_id"],
@@ -351,6 +409,7 @@ def main() -> int:
         errors = validate_response(result)
         status = result.get("decision", "INVALID") if not errors else "INVALID"
         if status == "CARD":
+            errors.extend(event_quality_failures(candidate, result))
             card = card_from(candidate, result)
             errors.extend(card["readiness_failures"])
             if not errors:

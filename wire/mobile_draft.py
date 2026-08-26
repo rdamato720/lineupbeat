@@ -16,7 +16,7 @@ from .providers.openai import MODEL, PRICES, OpenAIProviderError, redact
 
 
 SCHEMA_VERSION = "wire-mobile-draft-v1"
-PROMPT_VERSION = "wire-mobile-draftable-2026-08-25a"
+PROMPT_VERSION = "wire-mobile-event-first-2026-08-26a"
 DECISIONS = {"CARD", "IGNORE", "ABSTAIN"}
 CONTENT_TYPES = {"REPORTING", "FANTASY_ANALYSIS"}
 
@@ -68,8 +68,32 @@ a cautious inference from the supplied evidence, but it must distinguish that
 inference from the source's report and state important limits. Do not invent a
 guaranteed role, workload, diagnosis or timetable.
 
-Return CARD only when the item gives a plausibly draftable player actionable
-fantasy context, or the evidence establishes a concrete path to such a role.
+First identify the single most meaningful new development in the evidence.
+Do not create a card merely because the named player appears in the passage.
+Return CARD only when the evidence changes what a fantasy manager should
+monitor, expect or do: a new injury or early exit, participation change,
+return, transaction, suspension, explicit starter decision, genuine promotion
+or demotion, material workload/role change, or an evidence-backed multi-day
+performance trend. If your impact would amount to "one play does not establish
+a role" or "this changes nothing," return IGNORE instead.
+
+One catch, touchdown, interception, completion, drill result, goal-line period
+or red-zone rep is IGNORE for every player, including established starters.
+Several plays from one practice remain one isolated session. A PERFORMANCE or
+RED_ZONE card requires an explicit pattern across multiple practices or a
+separate concrete role/workload change. DEPTH_CHART requires an explicit named
+starter, promotion, demotion, or movement ahead of/behind another player;
+calling someone QB1 in a practice recap is not a depth-chart change.
+
+An unexpected early exit with medical or return-to-play staff is CARD-worthy
+availability news even when the evidence does not establish an injury. State
+that the reason and setback status are unknown. Prefer that development over
+unrelated highlights appearing in the same evidence.
+
+A useful impact is direct and conversational. Explain the actual fantasy
+consequence and the next fact that would change it. Avoid invented jargon such
+as "scoring-use outlook" or "short-term starting-QB momentum."
+
 A backup quarterback is not useful unless the evidence shows a real starting
 quarterback battle, a promotion to first-team work, a named start, or a starter
 absence that can put him on the field. Ordinary QB2/QB3 or developmental-job
