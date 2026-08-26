@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-approval-ledger-v1",
- "count": 6,
+ "count": 7,
  "receipts": [
   {
    "receipt_id": "mobile:49f74b01c0954bb71f23e5fb8672a9a43dc3afb5edeb0b0b4bf6f7e24b35060f:5403509377",
@@ -301,6 +301,78 @@
      "evidence_sha256": "5a124162cff3d5b92ace5915445175d1c33365a0eaca5dc80812ffcfa08c1c2b",
      "public_summary_sha256": "f2bb79fa2e84a1ae8f931e62bd310776ebadd50674226a0df4afe325086db7a2",
      "lineupbeat_impact_sha256": "bceaa1be4dd1bab96697552810e33a4dcfb73ae4533e508c306883acd146e9b1"
+    }
+   ]
+  },
+  {
+   "receipt_id": "mobile:8219eabaa01a78584d88204e6e89face8fa725aec03fd388ff74892335046a24:5428823721",
+   "batch_id": "8219eabaa01a78584d88204e6e89face8fa725aec03fd388ff74892335046a24",
+   "issue_number": 41,
+   "comment_id": "5428823721",
+   "approved_by": "Ralph Damato",
+   "approved_by_handle": "rdamato720",
+   "approved_at": "2026-08-26T17:36:51Z",
+   "approval_statement": "reject all",
+   "manifest_sha256": "8219eabaa01a78584d88204e6e89face8fa725aec03fd388ff74892335046a24",
+   "publication_sha256_at_draft": "af9ffe1684eeb28bf961e58919ed09b5c606f2eab0d3d9f9543df67583c475b2",
+   "publication_sha256_before": "032e643dee9a04739f4c1757398ade93778e1cae33ddd893e6d92d8e28890c3b",
+   "publication_sha256_after": "032e643dee9a04739f4c1757398ade93778e1cae33ddd893e6d92d8e28890c3b",
+   "publication_store_changed_since_draft": true,
+   "publication_count_before": 76,
+   "publication_count_after": 76,
+   "publications_applied": 0,
+   "outcomes": [
+    {
+     "card_number": 1,
+     "candidate_id": "mobile:x:7a1d41d9c882c29945c1",
+     "player_id": "00-0034577",
+     "player_name": "Kyle Allen",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Kyle Allen and Shane Buechele were praised by Joe Brady, but Buffalo has not named a No. 2 quarterback; both will play against Pittsburgh.",
+     "lineupbeat_impact": "Allen remains in an unresolved competition for Buffalo's backup QB job. The upcoming preseason appearance could offer more clarity, but no depth-chart decision or regular-season role was reported.",
+     "evidence_sha256": "a28b88e81ea3f71348e2a6e1862bc7553a71196de38ea30b66b28bdcf16fd824",
+     "public_summary_sha256": "f35dd237e4dc1f9c4630bcb1e1ec0713736ef4b45d64a9798414e6557ae8d30a",
+     "lineupbeat_impact_sha256": "c5b31cf67151789cba8d452f4d026a59c471ddfba7f0d5c64bd80cccb98df6fd"
+    },
+    {
+     "card_number": 2,
+     "candidate_id": "mobile:x:4b7680022ccc4b95bf7f",
+     "player_id": "00-0034857",
+     "player_name": "Josh Allen",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Josh Allen’s backup competition remains unresolved, with Kyle Allen and Shane Buechele set to play against Pittsburgh, Jay Skurski reported.",
+     "lineupbeat_impact": "This does not indicate a change to Josh Allen’s role, but it leaves Buffalo’s No. 2 quarterback unsettled for contingency/deep superflex monitoring.",
+     "evidence_sha256": "a28b88e81ea3f71348e2a6e1862bc7553a71196de38ea30b66b28bdcf16fd824",
+     "public_summary_sha256": "ea3375e8ba9fa653db090ea4dbea996f692e91db41bfcbbb7120b69717b2f447",
+     "lineupbeat_impact_sha256": "453a168a26f1c989518be7036ff3c32d36bb46802e0460dd578e66f724828807"
+    },
+    {
+     "card_number": 3,
+     "candidate_id": "mobile:x:90303308ea7ba113fa90",
+     "player_id": "00-0036679",
+     "player_name": "Shane Buechele",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Joe Brady praised Shane Buechele’s preseason work but said Buffalo has not named a No. 2 QB; Buechele will play against Pittsburgh.",
+     "lineupbeat_impact": "Buechele remains in an unresolved backup-quarterback competition. Positive coach feedback helps his roster case, but the report provides no decision or indication he will win the No. 2 job.",
+     "evidence_sha256": "a28b88e81ea3f71348e2a6e1862bc7553a71196de38ea30b66b28bdcf16fd824",
+     "public_summary_sha256": "3fadc05b6d5c0ce6fe4fa0417aec4adb6dca513c88de168083308454193da31e",
+     "lineupbeat_impact_sha256": "a9b43f9868769e550b811676bfed4a4a8758e27f507088fb677e773fc1fa9d30"
+    },
+    {
+     "card_number": 4,
+     "candidate_id": "mobile:x:5987ba624b2147924b59",
+     "player_id": "00-0034857",
+     "player_name": "Josh Allen",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Bills offensive coordinator Joe Brady said Josh Allen will not play Thursday.",
+     "lineupbeat_impact": "Allen is unavailable for Thursday, removing him from single-game and short-window lineup consideration. The report gives no reason or indication of a longer-term absence.",
+     "evidence_sha256": "d0f189f441c8228d134c8127ed161d22cca0469e440b01e78268c2c48190bce1",
+     "public_summary_sha256": "e5146426c6c9540178cddeadac3a46615563c5b7f60481b82160cdabd2ae9d7c",
+     "lineupbeat_impact_sha256": "b033fb76a37cfcb42baef960e959c426cb997c999c7079cc9653e8e6972d78a4"
     }
    ]
   }
