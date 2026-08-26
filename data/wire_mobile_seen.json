@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 155,
+ "count": 173,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -1706,6 +1706,204 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004272
+  },
+  {
+   "candidate_id": "mobile:onsi:83ce2d3d37ac909bb676",
+   "player_id": "00-0037834",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-already-entering-season-two-touchdowns-behind",
+   "attempted_at": "2026-08-26T19:14:17+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T19:14:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004728
+  },
+  {
+   "candidate_id": "mobile:onsi:762eab411a11531717ff",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-already-entering-season-two-touchdowns-behind",
+   "attempted_at": "2026-08-26T19:14:22+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T19:14:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005564
+  },
+  {
+   "candidate_id": "mobile:onsi:d69a879e748e55a48ecc",
+   "player_id": "00-0039738",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-must-have-handcuff-running-backs-blake-corum-holds-valuable-role-behind-kyren-williams",
+   "attempted_at": "2026-08-26T19:14:28+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T19:14:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005058
+  },
+  {
+   "candidate_id": "mobile:onsi:8f2a6740c5db71aabd3b",
+   "player_id": "00-0037248",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-must-have-handcuff-running-backs-blake-corum-holds-valuable-role-behind-kyren-williams",
+   "attempted_at": "2026-08-26T19:14:33+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T19:14:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005286
+  },
+  {
+   "candidate_id": "mobile:onsi:27a109097b3cae738472",
+   "player_id": "00-0034857",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-must-have-handcuff-running-backs-blake-corum-holds-valuable-role-behind-kyren-williams",
+   "attempted_at": "2026-08-26T19:14:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:14:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00437
+  },
+  {
+   "candidate_id": "mobile:onsi:a527fec135f062e438db",
+   "player_id": "00-0034844",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-must-have-handcuff-running-backs-blake-corum-holds-valuable-role-behind-kyren-williams",
+   "attempted_at": "2026-08-26T19:14:44+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T19:14:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004042
+  },
+  {
+   "candidate_id": "mobile:onsi:8593c6a2b5522047d374",
+   "player_id": "00-0038555",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-must-have-handcuff-running-backs-blake-corum-holds-valuable-role-behind-kyren-williams",
+   "attempted_at": "2026-08-26T19:14:47+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:14:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004924
+  },
+  {
+   "candidate_id": "mobile:onsi:6c3346f12078c28841ac",
+   "player_id": "00-0039893",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-impact-ja-marr-chase-luther-burden-iii-and-3-other-injury-updates",
+   "attempted_at": "2026-08-26T19:14:51+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T19:14:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004342
+  },
+  {
+   "candidate_id": "mobile:x:a8f65699fbcc664ed0b9",
+   "player_id": "00-0037664",
+   "source_url": "https://x.com/RomeovilleKid/status/2092691370431377893",
+   "attempted_at": "2026-08-26T19:14:56+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-26T19:15:02+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00534
+  },
+  {
+   "candidate_id": "mobile:x:a0752168b2a437584f58",
+   "player_id": "00-0038997",
+   "source_url": "https://x.com/RomeovilleKid/status/2092688141450666073",
+   "attempted_at": "2026-08-26T19:15:02+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:15:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003986
+  },
+  {
+   "candidate_id": "mobile:x:bb5416a1d24479993e0c",
+   "player_id": "00-0038128",
+   "source_url": "https://x.com/DavidFurones_/status/2092687179298316342",
+   "attempted_at": "2026-08-26T19:15:07+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:15:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004248
+  },
+  {
+   "candidate_id": "mobile:x:74a7fb4aa3d22a29de69",
+   "player_id": "00-0035710",
+   "source_url": "https://x.com/RomeovilleKid/status/2092684378144899248",
+   "attempted_at": "2026-08-26T19:15:10+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:15:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004108
+  },
+  {
+   "candidate_id": "mobile:x:465bdcd473b73dcf5156",
+   "player_id": "00-0036554",
+   "source_url": "https://x.com/AaronWilson_NFL/status/2092683916255563958",
+   "attempted_at": "2026-08-26T19:15:15+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:15:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003982
+  },
+  {
+   "candidate_id": "mobile:onsi:78647739c691af30d201",
+   "player_id": "00-0038997",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-impact-ja-marr-chase-luther-burden-iii-and-3-other-injury-updates",
+   "attempted_at": "2026-08-26T19:15:19+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-26T19:15:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004212
+  },
+  {
+   "candidate_id": "mobile:onsi:9b692290339980fb6ccd",
+   "player_id": "00-0040735",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-impact-ja-marr-chase-luther-burden-iii-and-3-other-injury-updates",
+   "attempted_at": "2026-08-26T19:15:22+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-26T19:15:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00468
+  },
+  {
+   "candidate_id": "mobile:x:05616e48836d7c568ca8",
+   "player_id": "00-0038400",
+   "source_url": "https://x.com/BrandonGowton/status/2092683566610026806",
+   "attempted_at": "2026-08-26T19:15:26+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T19:15:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003934
+  },
+  {
+   "candidate_id": "mobile:x:38c17cc4aa345569ed70",
+   "player_id": "00-0040867",
+   "source_url": "https://x.com/BrandonGowton/status/2092683566610026806",
+   "attempted_at": "2026-08-26T19:15:30+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:15:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00434
+  },
+  {
+   "candidate_id": "mobile:x:40e248f2b56b1e90ce4f",
+   "player_id": "00-0039849",
+   "source_url": "https://x.com/Tdrake4sports/status/2092683443067027485",
+   "attempted_at": "2026-08-26T19:15:33+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:15:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003274
   }
  ]
 }

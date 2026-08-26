@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**2 cards** · batch `8cab318be40d` · 5 draft calls · $0.0201
+**3 cards** · batch `8f51967101f6` · 18 draft calls · $0.0804
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,54 +19,76 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Kenneth Walker III — KC RB
+## 1. Alec Pierce — IND WR
 
-**Trending down** · INJURY · MEDIUM evidence
+**Trending down** · TARGETS · MEDIUM evidence
 
 ### What changed
 
-Kenneth Walker III has a swollen ankle, Chiefs coach Andy Reid said.
+Josh Downs said coaches will determine target distribution after the Colts added Keenan Allen alongside Alec Pierce and Tyler Warren.
 
 ### Lineup Beat impact
 
-The ankle issue creates a near-term availability concern for Walker, but the report provides no diagnosis, treatment plan or expected absence.
+Allen's addition introduces more target competition for Pierce, but the evidence provides no indication of how coaches will distribute routes, snaps or targets.
 
-[ByNateTaylor · X](https://x.com/ByNateTaylor/status/2092675277981712831) · 2026-08-26
+[James Boyd · The Athletic](https://x.com/RomeovilleKid/status/2092691370431377893) · 2026-08-26
 
 <details><summary>Full evidence reviewed</summary>
 
-Andy Reid said Patrick Mahomes, Josh Simmons, Jack Cochrane, Ashton Gillotte, Jimmy Holiday, Chris Oladukon &amp; CJ Hanson will not play Friday against the Seahawks.
+Josh Downs, asked if he’s “curious” about how his target share will pan out after the #Colts added another high-volume WR in Keenan Allen, in addition to WR Alec Pierce and TE Tyler Warren:
 
-Garrett Nussmeier will start.
-
-Reid said Kenneth Walker III has a swollen ankle.
+“Nah, coach gon’ handle it how he wants to handle it. So, that’s his responsibility.” https://t.co/Y5TzXD4n2M
 
 </details>
 
 ---
 
-## 2. Trey McBride — ARI TE
+## 2. Josh Downs — IND WR
 
-**Trending up** · RED_ZONE · LOW evidence
+**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
 
 ### What changed
 
-Trey McBride caught a red-zone touchdown from Jacoby Brissett on an in-breaking route during drills.
+Josh Downs missed the Colts' Aug. 26 practice with an undisclosed calf issue, with no severity update reported.
 
 ### Lineup Beat impact
 
-The red-zone score is a positive practice signal for McBride's touchdown involvement, but one drill rep does not establish a season-long role or target share.
+Downs' practice absence is a short-term availability concern, but the report gives no diagnosis, timeline or indication of his status for upcoming games.
 
-[Bo Brack · PHNX Cardinals](https://x.com/BoBrack/status/2092674261089755238) · 2026-08-26
+[Gray Deyo · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/fantasy-impact-ja-marr-chase-luther-burden-iii-and-3-other-injury-updates) · 2026-08-26
 
 <details><summary>Full evidence reviewed</summary>
 
-McBride &amp; Marv getting going in the red zone
+Indianapolis Colts Wr, Josh Downs appears to have some sort of calf injury and is a non-participant for Wednesday, Aug. 26 practice.
 
-[Responding to]: In red zone drills, #Packers give up a TD from Jacoby Brissett to Trey McBride on an in breaking route. Could not see coverage.
-
-Then Marvin Harrison Jr. beats Keisean Nixon on a fade for TD. Looked like Nixon expected safety help that never came, and Harrison was wide open.
+Indianapolis Colts Wr, Josh Downs appears to have some sort of calf injury and is a non-participant for Wednesday, Aug. 26 practice. The severity of the injury has yet to be revealed.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrNV01z2zYQ_SsYdqY91JL5IZGUenJsNZYTyx5ZadImGQ5ILEVUJMABQMlqJv-9C1KSrcRt0-bQXDgkFljsvn37VvrgpNRkRcKZM3bijKaBF6cwcFmWRuBTlnqxP4yi4Sj3cxbSwcjPY4hZHmRxHIKXBsCYF4UwzNyUOSdORhXTzvjtB4fWtZJrYAk16BpNtDGFVPj-bDujBhZ0W-InHpFVBcJQtUXbogBCxaoEwrVugGQKcK8mlAigqmdAVYSuKS9pyktutiSTIgMlSC4VeU3LFagTkjaGGHSkoJbKEBsHZ-hESMI4XQqpuT4hxrq2N5O6pILgebivITPACE01oNv-UXTJIaN022X0yCYVX3KBy9c3F5OXycX87OdFu0MY3JGYbQ1onE9ub-aL6ew5mhjmhUu-64c9N-754cKLx2409t0fXXfsunYLVxgPl9bvbPL8bDH9ZWKXFc1Ngq5zzArDdMZuf7RfLnnFDbWHbBmcmSQa1qAQKsyYV2BoiuBisrWi6DuDnsbtjSYMTbwkG6r3gDGb_-IBRyZbDA3RdEs2BSDEe8zJhpclqbBmLfC1Ag1US0GWtGpvo4xxGxQt2yj6zvsTB9b7-J0zwbZkDpyhb3zcUqN4tiLXtJAVYK2upC7IHa8qTAu_KNrOZVYoKuCEnOnC4FXPMQRpDC5c4cYtuZQlZxTTPi8U1-SmpKxZ4b7vaVX_RM6vyCUVNsQ2dJsW0mBLflb2EKFLyoXuaHQHtKCble6_E-_Ec6oUGENmjdYV8H3qCKIy7YaHLF6AEAjSHqLpdEoKaqmsN7IsQXREtyDvkUgyKhi3zOgaspLIchjfjwfM96gbpmHo0iiKKKR5huewn_gfLT1ezV7Mbl7PcK2CrKCC6wpXp7OrV_Nf7aJkUO5ISsvk2245uRGgdMHrNoOLye0EHzPbTrZCYCXkc2gP1g451-25bhB7wcAa8PZdG82f2W8lf-8aK6GH_rqZ2d6qm7TkWaKbqurQ-bIiWpJxyDViQ7OCHNO5_5nfz6UEgWEYO2IMpa2JAiSCWGLPbcTOzAVoneRYiAbbC5v7vV1fc9jgwUMeFqxOYLRsVNtcb-wHQi-WprAKNbmYvrrGNQPUkuTFOb43yl5bGFPr8enpfR8ZcvpYp087lTj13ZEfRkM_ikaxF3l-HHjOx5O_VXtJnqHUrJ5SegWsh_wFojOpLP8Q165YazgIFNF8aXXD0u06e4b9CT-gzMgmKyw6hIu1LNdgPXc8tA6Zsl2JbHxQLdBW-zgKCRavVadeKRFiJTtBxLiWgOJWUPV_KH8w9uInlf_25m76H5T_DulTPkJRYoOpdWtHT-eYjqJLaPXeorPmmuNkQBOOjFRJS0fSaLsFsdlItSpxjbRp3ZujMfGJlu9qtNPZa6rWBHE1ls1LaZ9c7KSCEVt8K5pv56Br2VHeyPdjMhUHe1dLVI_vbpFGqAxkaenR1FjHxQXJlazsRJDpFomGEmbV2UiCLbTd8wUpgX1qL06xk1a8rXpjoI9TpClZN9QApW-HSivkSFDRho_HLlH1uR0WV6pPUhQxjerOkUWCzPg9rtsLSI6gtTRdXPTJSylXmEHJV7Dbc9A6TXNAHS2grBEJalBo8V6S4aw8wTjZw3UW5k2bQA3iyyYFpAM28LzhcAQAUcDwV9zRpLi7RCImi8n8-pNhMZ9cJL91KvhP4-Kb7tsvGB-PufHk4IiiwSeDYzH5l4PjiH8ZbZaFwQQOyD3g8CSB94TtHROWsEa1Y6Ftia8ZLE39tWPl9nL2hpzj733LEX08Y17evH4YMGfz6V9NGNmOhuPhMvBDz41H0XDoB7Hz8b3VUm2SRjMrd67veoPwxFkCVhnpv5s4x2LqBePAO4hpx-aMImLOeLiHrFVCpHaDIk1N0mqoM47CYzuyyh-GjzY4buBDOMC-ghF1B1EwygeZFw3xJUakR0idGLyMQhAwxuJRACEb-SwGP45HbhakFqisgIom2PO6Q3eDct_rWrjHRSrve2vvAHXS_UPrIsHNEMd5FMf2hgHNUUoiz83Bx_9fWR7lOd7C3Gzoh2k29IYDjNYNGH6GgzBlMEh95-OfzZ63sw:WIRE_MOBILE_MANIFEST_V1 -->
+---
+
+## 3. Luther Burden III — CHI WR
+
+**Trending up** · RETURN_TO_PRACTICE · MEDIUM evidence
+
+### What changed
+
+Luther Burden III returned to on-field practice Aug. 26 for the first time since suffering a groin strain, Gray Deyo reported.
+
+### Lineup Beat impact
+
+Burden's return to on-field work is a positive step toward availability, but the report does not establish full participation, a Week 1 timetable, or his role.
+
+[Gray Deyo · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/fantasy-impact-ja-marr-chase-luther-burden-iii-and-3-other-injury-updates) · 2026-08-26
+
+<details><summary>Full evidence reviewed</summary>
+
+Back on Aug. 8, WR for the Chicago Bears, Luther Burden III went down in practice with a groin strain.
+
+Back on Aug. 8, WR for the Chicago Bears, Luther Burden III went down in practice with a groin strain. The Bears recently received positive news as Burden returned to practice on Wednesday, Aug.
+
+8, WR for the Chicago Bears, Luther Burden III went down in practice with a groin strain. The Bears recently received positive news as Burden returned to practice on Wednesday, Aug. 26, and did on-field work for the first time since he sustained his injury.
+
+</details>
+
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrVWN1y2zYafRWM9iIXK9okRVGk7uRYSbVNbI-srndnm9GAACgioQgNQVpRO53Ja3Rm9-XyJHsAyLRkp6m320nTG42Enw_fzznfAfRjL6MNK5aS98a9JB8GaTwK_CCPw4hGwzSJeTocJmGWpIwGLAgGo2GYj0SWhzENBkmU5IzRkHI6HI2iXr_HaM11b_yvH3t0s6nVreBL2sA0pmjbFKrG97_RtdDkTO242aDWa1E1tN5hZlKWonqmCeVcNlJVRFZNrXjLsH6takGwbiUagk0b0bgluarJlRQ1E32StQ1pCkHEreSiYoIYF_BVk0rBFpeM2j0qJ4XawgxlBSa3siwJl7qpJSwIUit86j7RFd1oAvvuWH1y5O-yizDbuQgP5lQtV7LC8OvL8-mr5fl88mJhV1QNViyb3UZgcj69upwvZhcvMcVpY4ZCP4w9P_HCeBGk4yAYB6O_-v7Y980SWQtmAsC6i-nLyWL296kZrmneLGE6d1H3xv5JEt2Nl3ItGxu2qUvvQu2j6bswTXgmTk8XtLYJe-vOQFpE3WWQm9jP1RbDXHKksyHmsEbmu332CUXdyKakO1GTbaG0yWMpXHJZQauVOOm96ffuamOAoHRBrNE-dr8TnEgURnz88LMmHz_8m7W1VK3--OE_hGbw1daskPoOBc5ja39DUVSsQMA43UDgL89V2VgkwSyFvwUmCrkqvFtVtmtBbuZABPlWiAp7LfD6ZqCDXqPMkkkpWBdgxcliSha7EqZuaF2Lavx99X0FVy9o0XdwIiuFgZ8JAuaIXu69hp-0gj-w2s2ckGvVh7O0sRGbyGqhN0i9zGQpm92JCb1omo0en542J0yd_nO4-OEf51EVvu7dZ3LJYFEa_DgarxW2i_H7MU3yeBinaZ4xFseR4H6WYh9YKH-wILqeTq4vL5avLi0C18KUSeo1ZhaT-cvp4tqMKi7KPZ5pufyz8RXoErUu5Abuzi7Op1dTfFwYLjqo2ii6GnfDLpO-7_n-YITcmQml5Z58N3Pzu6PKknasvLwwjNy0WSnZUrfrtUvUPdKJpuDPcSQCoF3LqktXF5qJ_R7Sh4g-xC2hpapWGnl7DNcDrJ48cuxxB6sF5Qi-pJkoDQqwjctqRThc30_DT62XOZVlC7Sipbwx47dSoF3cJ8Kk2fU1rdrasn2BECZNUQIIzIw3ML5qCtMjp-ez7wyiG0HXrk740dbGhTv4vwf816dztRZACKL-VvJTjb7W6tPQT8M4hTT50QCfoyQd9H7qf06BXtZ0R87FTj0UIFuiZ4ChCcTkMNMWl9L0No3NjWdqRegt4qeOpSgmltTVPZxrscFKspK3Dslc0lUF9ACijVyL0pQaKH0AcJzhArIUaTdwzKR-ZdTySytPMo788SD5LcqT_pLymPprcStqkzMEbDLFaJkjubo1_VFbWQH4WQn1sIoDtcLBCLXeHaXOJMXbZ6vdmADs_kOxWhz2FWsCraEqcTRMrHEmWHRX54fCNENlKJqJKlEUR7ubuk8OWIwKCFrv-_ktAgMw8YGqIzIXVfW2hdeGhRY9laq8Da1xnIRaNbbIN4KDTZzu-mTSrk5IGN-7ZJTla_CDfKpue6MFcr5Dw8LpmYH9raCly_6vaJPRuPEoiaPRaJAykJfmA5-HfnAsT98Ao8vFdP76gTpNzq7Rw5cv5pevl1fzyfPF7Pn0V6Tqa2b2EzTqvuSflKgkTUe_n0Tt2dFpzrNHqIBwNQUwRdqq4-sBmftuHgnqgLNnqUugw8gfKUYvAH2qd-SyItez_12NttvtiZZWkgyUT3Nn7tTyQgp9N-DJ9QZueG-phxhrDxDWwitbcxv1srYGRzwppQeSeAPPXlI9xy3PJUz_ViU7s8afmStl09b2Ogvi51KUnGxV_c4B3wHG9I1GbLBmi-fbEQUeQZ8r4fq0AKRRP4Amb-0NfN9STM5xnUdPEe9IYGlhFgITqnZ3XLwKviY9u7q8nn1Oz5LP6FknMF1a9EYw8yjaFsI-OVwdrDpRlymkwVoy-nPfh_dqZ4XtqAcd9hVTuFJRdPIKnWTtOsyx8B0L2Rll71B3x9-kb140pgVZZhdoUStFzox-9Mmr9tDd2WyG51_VWK6ZZ9ED4pNVrTAK1lBZWan6MidZMbJ2zL0A26Dn5gsgzO_BXImtNs_R_RGOAaahqXvrcPWB6pko_pSOozH3rb6bl_kxye8iyWWtGwsloqXBq9H0FgyWxrxhpes6T5XuNIvTMEz9wSBNEz_PYsb406R7Pl18N79YLi6fKtxffyN7gnw_gs6nVDzyR4Ph_6nijzF6CKIucR2a7oT9F4Gi2zyHgkN2jxHdJ530_C6i3m6-oKQ__2b2h0r6G6Nfulm2mhuJ8RM_CiAzKwEgYcVe5x_8FRiNg7gTMMcY3LhKpMjsdXm3oAV_WigjbZZWt3q4aB_P64KGw_hgQS9naZanI8bpMPBplGdRxIajOB8mGR7X0Yj7fsByP2HM95OhYJGfBSFjqc-SQeKPQpNuVog1XZp3livRFhrruaaBBGTqvXcbdPVaur-dnSdYHOdwIByOeExH_iDkAY1ino8yluBVn-WZGPLU53kQD_w0jtJhGgd0KIZRRkVAWRj1fvovuAHQ0A:WIRE_MOBILE_MANIFEST_V1 -->

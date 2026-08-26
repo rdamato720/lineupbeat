@@ -1,141 +1,308 @@
 {
  "schema_version": "wire-mobile-batch-v1",
- "generated_at": "2026-08-26T18:13:31+00:00",
+ "generated_at": "2026-08-26T19:14:16+00:00",
  "window": {
-  "from": "2026-08-26T16:13:31.808266+00:00",
-  "to": "2026-08-26T18:13:31.808266+00:00",
+  "from": "2026-08-26T17:14:16.876184+00:00",
+  "to": "2026-08-26T19:14:16.876184+00:00",
   "hours": 2.0
  },
  "published": false,
  "model": "gpt-5.6-terra",
- "model_calls": 5,
- "cost_usd": 0.020146,
+ "model_calls": 18,
+ "cost_usd": 0.080418,
  "limits": {
-  "max_calls": 5,
+  "max_calls": 20,
   "cap_usd": 0.08,
   "max_cards": 10
  },
- "candidate_count": 89,
+ "candidate_count": 84,
  "cards": [
   {
-   "player": "Kenneth Walker III",
-   "player_id": "00-0038134",
-   "team": "KC",
-   "position": "RB",
+   "player": "Alec Pierce",
+   "player_id": "00-0037664",
+   "team": "IND",
+   "position": "WR",
    "content_type": "REPORTING",
    "direction": "NEGATIVE",
-   "mechanism": "INJURY",
+   "mechanism": "TARGETS",
    "strength": "MEDIUM",
-   "horizon": "UNKNOWN",
+   "horizon": "SEASON_LONG",
    "projection_action": "NONE",
    "reader_label": "Trending down",
-   "public_summary": "Kenneth Walker III has a swollen ankle, Chiefs coach Andy Reid said.",
-   "evidence": "Andy Reid said Patrick Mahomes, Josh Simmons, Jack Cochrane, Ashton Gillotte, Jimmy Holiday, Chris Oladukon &amp; CJ Hanson will not play Friday against the Seahawks.\n\nGarrett Nussmeier will start.\n\nReid said Kenneth Walker III has a swollen ankle.",
-   "commentary": "The ankle issue creates a near-term availability concern for Walker, but the report provides no diagnosis, treatment plan or expected absence.",
-   "source": "X",
-   "author": "ByNateTaylor",
-   "date": "2026-08-26T18:07:20+00:00",
-   "url": "https://x.com/ByNateTaylor/status/2092675277981712831",
+   "public_summary": "Josh Downs said coaches will determine target distribution after the Colts added Keenan Allen alongside Alec Pierce and Tyler Warren.",
+   "evidence": "Josh Downs, asked if he’s “curious” about how his target share will pan out after the #Colts added another high-volume WR in Keenan Allen, in addition to WR Alec Pierce and TE Tyler Warren:\n\n“Nah, coach gon’ handle it how he wants to handle it. So, that’s his responsibility.” https://t.co/Y5TzXD4n2M",
+   "commentary": "Allen's addition introduces more target competition for Pierce, but the evidence provides no indication of how coaches will distribute routes, snaps or targets.",
+   "source": "The Athletic",
+   "author": "James Boyd",
+   "date": "2026-08-26T19:11:17+00:00",
+   "url": "https://x.com/RomeovilleKid/status/2092691370431377893",
    "ownership": "INDEPENDENT",
-   "evidence_candidate_id": "mobile:x:4d21a06b660a777aebfc",
+   "evidence_candidate_id": "mobile:x:a8f65699fbcc664ed0b9",
    "reviewer_action": "PENDING",
    "public_summary_approved_by": "",
    "commentary_approved_by": "",
    "approved_at": "",
    "commentary_origin": "MODEL_DRAFT",
-   "model_original_commentary": "The ankle issue creates a near-term availability concern for Walker, but the report provides no diagnosis, treatment plan or expected absence.",
+   "model_original_commentary": "Allen's addition introduces more target competition for Pierce, but the evidence provides no indication of how coaches will distribute routes, snaps or targets.",
    "draft_limitations": [
-    "No severity, timetable or practice-status detail was provided.",
-    "The report does not say whether Walker will miss the preseason game or additional time."
+    "No target, route or snap-share projections were provided.",
+    "Downs did not identify Pierce as a player whose role will change."
    ],
-   "draft_confidence": 0.9,
+   "draft_confidence": 0.84,
    "readiness_failures": []
   },
   {
-   "player": "Trey McBride",
-   "player_id": "00-0037744",
-   "team": "ARI",
-   "position": "TE",
+   "player": "Josh Downs",
+   "player_id": "00-0038997",
+   "team": "IND",
+   "position": "WR",
+   "content_type": "REPORTING",
+   "direction": "NEGATIVE",
+   "mechanism": "ABSENT_FROM_PRACTICE",
+   "strength": "MEDIUM",
+   "horizon": "SHORT_TERM",
+   "projection_action": "NONE",
+   "reader_label": "Trending down",
+   "public_summary": "Josh Downs missed the Colts' Aug. 26 practice with an undisclosed calf issue, with no severity update reported.",
+   "evidence": "Indianapolis Colts Wr, Josh Downs appears to have some sort of calf injury and is a non-participant for Wednesday, Aug. 26 practice.\n\nIndianapolis Colts Wr, Josh Downs appears to have some sort of calf injury and is a non-participant for Wednesday, Aug. 26 practice. The severity of the injury has yet to be revealed.",
+   "commentary": "Downs' practice absence is a short-term availability concern, but the report gives no diagnosis, timeline or indication of his status for upcoming games.",
+   "source": "Fantasy On SI",
+   "author": "Gray Deyo",
+   "date": "2026-08-26T18:40:38+00:00",
+   "url": "https://www.si.com/onsi/fantasy/injuries/fantasy-impact-ja-marr-chase-luther-burden-iii-and-3-other-injury-updates",
+   "ownership": "INDEPENDENT",
+   "evidence_candidate_id": "mobile:onsi:78647739c691af30d201",
+   "reviewer_action": "PENDING",
+   "public_summary_approved_by": "",
+   "commentary_approved_by": "",
+   "approved_at": "",
+   "commentary_origin": "MODEL_DRAFT",
+   "model_original_commentary": "Downs' practice absence is a short-term availability concern, but the report gives no diagnosis, timeline or indication of his status for upcoming games.",
+   "draft_limitations": [
+    "The severity of the calf issue was not disclosed.",
+    "No recovery timeline or game-status update was provided.",
+    "The evidence covers only one missed practice."
+   ],
+   "draft_confidence": 0.94,
+   "readiness_failures": []
+  },
+  {
+   "player": "Luther Burden III",
+   "player_id": "00-0040735",
+   "team": "CHI",
+   "position": "WR",
    "content_type": "REPORTING",
    "direction": "POSITIVE",
-   "mechanism": "RED_ZONE",
-   "strength": "LOW",
+   "mechanism": "RETURN_TO_PRACTICE",
+   "strength": "MEDIUM",
    "horizon": "SHORT_TERM",
    "projection_action": "NONE",
    "reader_label": "Trending up",
-   "public_summary": "Trey McBride caught a red-zone touchdown from Jacoby Brissett on an in-breaking route during drills.",
-   "evidence": "McBride &amp; Marv getting going in the red zone\n\n[Responding to]: In red zone drills, #Packers give up a TD from Jacoby Brissett to Trey McBride on an in breaking route. Could not see coverage.\n\nThen Marvin Harrison Jr. beats Keisean Nixon on a fade for TD. Looked like Nixon expected safety help that never came, and Harrison was wide open.",
-   "commentary": "The red-zone score is a positive practice signal for McBride's touchdown involvement, but one drill rep does not establish a season-long role or target share.",
-   "source": "PHNX Cardinals",
-   "author": "Bo Brack",
-   "date": "2026-08-26T18:03:18+00:00",
-   "url": "https://x.com/BoBrack/status/2092674261089755238",
+   "public_summary": "Luther Burden III returned to on-field practice Aug. 26 for the first time since suffering a groin strain, Gray Deyo reported.",
+   "evidence": "Back on Aug. 8, WR for the Chicago Bears, Luther Burden III went down in practice with a groin strain.\n\nBack on Aug. 8, WR for the Chicago Bears, Luther Burden III went down in practice with a groin strain. The Bears recently received positive news as Burden returned to practice on Wednesday, Aug.\n\n8, WR for the Chicago Bears, Luther Burden III went down in practice with a groin strain. The Bears recently received positive news as Burden returned to practice on Wednesday, Aug. 26, and did on-field work for the first time since he sustained his injury.",
+   "commentary": "Burden's return to on-field work is a positive step toward availability, but the report does not establish full participation, a Week 1 timetable, or his role.",
+   "source": "Fantasy On SI",
+   "author": "Gray Deyo",
+   "date": "2026-08-26T18:40:38+00:00",
+   "url": "https://www.si.com/onsi/fantasy/injuries/fantasy-impact-ja-marr-chase-luther-burden-iii-and-3-other-injury-updates",
    "ownership": "INDEPENDENT",
-   "evidence_candidate_id": "mobile:x:4eb4d411559eee73de2a",
+   "evidence_candidate_id": "mobile:onsi:9b692290339980fb6ccd",
    "reviewer_action": "PENDING",
    "public_summary_approved_by": "",
    "commentary_approved_by": "",
    "approved_at": "",
    "commentary_origin": "MODEL_DRAFT",
-   "model_original_commentary": "The red-zone score is a positive practice signal for McBride's touchdown involvement, but one drill rep does not establish a season-long role or target share.",
+   "model_original_commentary": "Burden's return to on-field work is a positive step toward availability, but the report does not establish full participation, a Week 1 timetable, or his role.",
    "draft_limitations": [
-    "Single practice observation",
-    "Coverage was not visible",
-    "No broader usage or workload context was provided"
+    "The evidence does not specify whether Burden was a full or limited participant.",
+    "No game-availability timeline or workload information was provided."
    ],
-   "draft_confidence": 0.9,
+   "draft_confidence": 0.98,
    "readiness_failures": []
   }
  ],
- "relevance_suppressed": 60,
+ "unreviewed_count": 66,
+ "relevance_suppressed": 80,
  "event_duplicates": 0,
  "outcomes": [
   {
-   "candidate_id": "mobile:x:4d21a06b660a777aebfc",
-   "player": "Kenneth Walker III",
-   "origin": "X",
-   "decision": "CARD",
-   "reason": "A coach-reported ankle issue is actionable for a draftable RB, though its fantasy effect is unclear without a timetable.",
-   "validation_failures": [],
-   "cost_usd": 0.004452
+   "candidate_id": "mobile:onsi:83ce2d3d37ac909bb676",
+   "player": "Brock Purdy",
+   "origin": "ONSI",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The source directly reports that Purdy has had a clean bill of health during training camp, which is actionable availability context for a starting quarterback.",
+   "validation_failures": [
+    "availability item omits the temporary context (which practice, and that no timetable was given)",
+    "mechanism INJURY is not supported by the evidence passage"
+   ],
+   "cost_usd": 0.004728
   },
   {
-   "candidate_id": "mobile:x:035e9958dc7ace96cebc",
-   "player": "Garrett Nussmeier",
+   "candidate_id": "mobile:onsi:762eab411a11531717ff",
+   "player": "Mike Evans",
+   "origin": "ONSI",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The source explicitly reports that Evans has been in and out of camp and has a newly reported injury, creating actionable availability uncertainty for a draftable WR.",
+   "validation_failures": [
+    "availability item omits the temporary context (which practice, and that no timetable was given)",
+    "mechanism INJURY is not supported by the evidence passage"
+   ],
+   "cost_usd": 0.005564
+  },
+  {
+   "candidate_id": "mobile:onsi:d69a879e748e55a48ecc",
+   "player": "Blake Corum",
+   "origin": "ONSI",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The author presents a fantasy-relevant case for a potentially larger role based on Corum's 2025 efficiency, while acknowledging the role expansion is not confirmed.",
+   "validation_failures": [
+    "fantasy analysis is not explicitly attributed"
+   ],
+   "cost_usd": 0.005058
+  },
+  {
+   "candidate_id": "mobile:onsi:8f2a6740c5db71aabd3b",
+   "player": "James Cook",
+   "origin": "ONSI",
+   "decision": "VALIDATION_FAILED",
+   "reason": "Fantasy On SI author Skyler Carlin frames Cook's 2025 56% offensive snap rate as an opening for Ray Davis to handle a decent-sized role in 2026.",
+   "validation_failures": [
+    "fantasy analysis is not explicitly attributed"
+   ],
+   "cost_usd": 0.005286
+  },
+  {
+   "candidate_id": "mobile:onsi:27a109097b3cae738472",
+   "player": "Josh Allen",
+   "origin": "ONSI",
+   "decision": "IGNORE",
+   "reason": "Generic contextual analysis of Buffalo RBs does not create a fantasy-relevant Wire update for Allen.",
+   "validation_failures": [],
+   "cost_usd": 0.00437
+  },
+  {
+   "candidate_id": "mobile:onsi:a527fec135f062e438db",
+   "player": "Saquon Barkley",
+   "origin": "ONSI",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The analysis explicitly projects a massive 2026 workload for Barkley, creating actionable season-long fantasy context.",
+   "validation_failures": [
+    "fantasy analysis is not explicitly attributed"
+   ],
+   "cost_usd": 0.004042
+  },
+  {
+   "candidate_id": "mobile:onsi:8593c6a2b5522047d374",
+   "player": "Tank Bigsby",
+   "origin": "ONSI",
+   "decision": "IGNORE",
+   "reason": "Vague role speculation and past efficiency do not establish actionable fantasy context.",
+   "validation_failures": [],
+   "cost_usd": 0.004924
+  },
+  {
+   "candidate_id": "mobile:onsi:6c3346f12078c28841ac",
+   "player": "Brian Thomas Jr.",
+   "origin": "ONSI",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The report says Thomas was evaluated by trainers and shut down for the rest of a joint practice after appearing to injure his shoulder.",
+   "validation_failures": [
+    "inferred timetable or depth-chart movement 'out for'",
+    "mechanism INJURY is not supported by the evidence passage"
+   ],
+   "cost_usd": 0.004342
+  },
+  {
+   "candidate_id": "mobile:x:a8f65699fbcc664ed0b9",
+   "player": "Alec Pierce",
+   "origin": "X",
+   "decision": "CARD",
+   "reason": "The source identifies Allen as an added high-volume receiver in a passing game that includes Pierce, creating actionable target-competition context without confirming a role change.",
+   "validation_failures": [],
+   "cost_usd": 0.00534
+  },
+  {
+   "candidate_id": "mobile:x:a0752168b2a437584f58",
+   "player": "Josh Downs",
+   "origin": "X",
+   "decision": "IGNORE",
+   "reason": "Generic player-development commentary does not provide meaningful actionable fantasy context.",
+   "validation_failures": [],
+   "cost_usd": 0.003986
+  },
+  {
+   "candidate_id": "mobile:x:bb5416a1d24479993e0c",
+   "player": "Malik Willis",
+   "origin": "X",
+   "decision": "IGNORE",
+   "reason": "Generic positive practice praise for a quarterback without evidence of a path to starting work is not actionable.",
+   "validation_failures": [],
+   "cost_usd": 0.004248
+  },
+  {
+   "candidate_id": "mobile:x:74a7fb4aa3d22a29de69",
+   "player": "Daniel Jones",
+   "origin": "X",
+   "decision": "IGNORE",
+   "reason": "This is an isolated practice-play observation and provides no actionable quarterback role change or starting-path evidence.",
+   "validation_failures": [],
+   "cost_usd": 0.004108
+  },
+  {
+   "candidate_id": "mobile:x:465bdcd473b73dcf5156",
+   "player": "Nico Collins",
+   "origin": "X",
+   "decision": "IGNORE",
+   "reason": "Promotional quote offers no meaningful fantasy-relevant development.",
+   "validation_failures": [],
+   "cost_usd": 0.003982
+  },
+  {
+   "candidate_id": "mobile:onsi:78647739c691af30d201",
+   "player": "Josh Downs",
+   "origin": "ONSI",
+   "decision": "CARD",
+   "reason": "The source directly reports Downs did not participate in practice because of an apparent calf injury, though details remain limited.",
+   "validation_failures": [],
+   "cost_usd": 0.004212
+  },
+  {
+   "candidate_id": "mobile:onsi:9b692290339980fb6ccd",
+   "player": "Luther Burden III",
+   "origin": "ONSI",
+   "decision": "CARD",
+   "reason": "The source directly reports Burden resumed on-field practice after a groin strain.",
+   "validation_failures": [],
+   "cost_usd": 0.00468
+  },
+  {
+   "candidate_id": "mobile:x:05616e48836d7c568ca8",
+   "player": "Tanner McKee",
    "origin": "X",
    "decision": "VALIDATION_FAILED",
-   "reason": "The coach explicitly named Nussmeier as the starter while Mahomes will not play.",
+   "reason": "The source directly indicates McKee seemed likely to start an upcoming preseason game, creating concrete immediate playing-time context.",
    "validation_failures": [
     "mechanism FIRST_TEAM_REPS is not supported by the evidence passage"
    ],
-   "cost_usd": 0.004192
+   "cost_usd": 0.003934
   },
   {
-   "candidate_id": "mobile:x:10e0845e1883708190f2",
-   "player": "Bijan Robinson",
+   "candidate_id": "mobile:x:38c17cc4aa345569ed70",
+   "player": "Makai Lemon",
    "origin": "X",
    "decision": "IGNORE",
-   "reason": "Off-field human-interest item with no actionable fantasy-football impact.",
+   "reason": "The evidence only indicates likely limited preseason-game participation and provides no concrete path to a draftable role.",
    "validation_failures": [],
-   "cost_usd": 0.003254
+   "cost_usd": 0.00434
   },
   {
-   "candidate_id": "mobile:x:83f15a9594585106ac14",
-   "player": "Bijan Robinson",
+   "candidate_id": "mobile:x:40e248f2b56b1e90ce4f",
+   "player": "Marvin Harrison Jr.",
    "origin": "X",
    "decision": "IGNORE",
-   "reason": "Generic teammate praise does not create actionable fantasy context for Bijan Robinson.",
+   "reason": "This is not a substantive report from the cited author and only references an isolated touchdown in the embedded post, which does not establish actionable fantasy context.",
    "validation_failures": [],
-   "cost_usd": 0.003976
-  },
-  {
-   "candidate_id": "mobile:x:4eb4d411559eee73de2a",
-   "player": "Trey McBride",
-   "origin": "X",
-   "decision": "CARD",
-   "reason": "The evidence directly reports McBride scoring in red-zone drills, a fantasy-relevant scoring-area usage signal.",
-   "validation_failures": [],
-   "cost_usd": 0.004272
+   "cost_usd": 0.003274
   }
  ]
 }
