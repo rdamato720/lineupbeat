@@ -28,6 +28,27 @@ export function validateSubmission(raw) {
   return { errors, value: { category, message, email: email || null, pageUrl } };
 }
 
+export function feedbackEmail(value, id, createdAt) {
+  return {
+    to: "hello@lineupbeat.com",
+    from: { email: "feedback@lineupbeat.com", name: "Lineup Beat" },
+    subject: `New ${value.category.toLowerCase()} feedback`,
+    text: [
+      "New Lineup Beat reader feedback",
+      "",
+      `Category: ${value.category}`,
+      `Submitted: ${createdAt}`,
+      `Page: ${value.pageUrl}`,
+      `Reader email: ${value.email || "Not provided"}`,
+      `Feedback ID: ${id}`,
+      "",
+      value.message,
+      "",
+      "Review: https://feedback.lineupbeat.com/admin",
+    ].join("\n"),
+  };
+}
+
 function allowedOrigins(env) {
   return new Set(String(env.ALLOWED_ORIGINS || "https://lineupbeat.com")
     .split(",").map(value => value.trim()).filter(Boolean));
@@ -65,7 +86,7 @@ function authorized(request, env) {
   return Boolean(env.ADMIN_TOKEN) && supplied === `Bearer ${env.ADMIN_TOKEN}`;
 }
 
-async function submit(request, env, headers) {
+async function submit(request, env, headers, ctx) {
   let body;
   try { body = await request.json(); }
   catch { return json({ error: "Invalid JSON." }, 400, headers); }
@@ -89,6 +110,11 @@ async function submit(request, env, headers) {
      VALUES (?, ?, ?, ?, ?, ?, ?, 'NEW', ?)`
   ).bind(id, value.category, value.message, value.email, value.pageUrl,
     String(request.headers.get("User-Agent") || "").slice(0, 500), hash, createdAt).run();
+  if (env.EMAIL) {
+    ctx.waitUntil(env.EMAIL.send(feedbackEmail(value, id, createdAt)).catch(() => {
+      console.error("Feedback saved, but its email notification failed.");
+    }));
+  }
   return json({ ok: true, id }, 201, headers);
 }
 
@@ -146,7 +172,7 @@ document.querySelector('#load').onclick=load;
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const origin = request.headers.get("Origin") || "";
     const headers = cors(origin, env);
@@ -157,7 +183,7 @@ export default {
       return new Response(null, { status: 204, headers });
     }
     if (url.pathname === "/health" && request.method === "GET") return json({ ok: true });
-    if (url.pathname === "/feedback" && request.method === "POST") return submit(request, env, headers);
+    if (url.pathname === "/feedback" && request.method === "POST") return submit(request, env, headers, ctx);
     if (url.pathname === "/admin" && request.method === "GET") return adminPage();
     if (url.pathname === "/admin/feedback" && request.method === "GET") return listFeedback(request, env, headers);
     const match = url.pathname.match(/^\/admin\/feedback\/([a-f0-9-]+)$/i);

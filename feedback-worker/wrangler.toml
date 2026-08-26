@@ -9,6 +9,11 @@ binding = "DB"
 database_name = "lineupbeat-feedback"
 database_id = "ca58d282-f90d-4c89-b207-de60614adc57"
 
+[[send_email]]
+name = "EMAIL"
+destination_address = "hello@lineupbeat.com"
+allowed_sender_addresses = ["feedback@lineupbeat.com"]
+
 [vars]
 ALLOWED_ORIGINS = "https://lineupbeat.com,https://www.lineupbeat.com"
 
