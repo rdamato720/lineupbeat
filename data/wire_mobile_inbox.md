@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**3 cards** · batch `8f51967101f6` · 18 draft calls · $0.0804
+**2 cards** · batch `16533117f518` · 17 draft calls · $0.0822
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,76 +19,68 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Alec Pierce — IND WR
+## 1. Odell Beckham Jr. — NYG WR
 
-**Trending down** · TARGETS · MEDIUM evidence
+**Trending up** · RED_ZONE · LOW evidence
 
 ### What changed
 
-Josh Downs said coaches will determine target distribution after the Colts added Keenan Allen alongside Alec Pierce and Tyler Warren.
+Odell Beckham Jr. caught a back-end-zone touchdown from Jameis Winston and had a red-zone reception from Jaxson Dart, Pat Leonard reported.
 
 ### Lineup Beat impact
 
-Allen's addition introduces more target competition for Pierce, but the evidence provides no indication of how coaches will distribute routes, snaps or targets.
+The reported red-zone catches are a modest positive for Beckham’s scoring-use outlook, but they were isolated practice plays and do not establish a regular role or target volume.
 
-[James Boyd · The Athletic](https://x.com/RomeovilleKid/status/2092691370431377893) · 2026-08-26
+[Pat Leonard · NY Daily News](https://x.com/PLeonardNYDN/status/2092693825160405128) · 2026-08-26
 
 <details><summary>Full evidence reviewed</summary>
 
-Josh Downs, asked if he’s “curious” about how his target share will pan out after the #Colts added another high-volume WR in Keenan Allen, in addition to WR Alec Pierce and TE Tyler Warren:
+Some big Giants pass plays today in 11 on 11 situation period:
 
-“Nah, coach gon’ handle it how he wants to handle it. So, that’s his responsibility.” https://t.co/Y5TzXD4n2M
+Isaiah Hodgins with an awesome one-handed grab deep down the sideline from Brandon Allen
+
+Odell Beckham Jr. with a TD catch in the back of the end zone from Jameis Winston on a similar route and throw to the one in the Miami game
+
+Jaxson Dart had some red zone period success to Malik Nabers, Darnell Mooney, Chris Manhertz, OBJ
+
+Malik Nabers looked very good running today and even made a leaping catch on the sideline. But he also didn’t finish the practice
+
+He walked inside with the Giants’ return to play coordinator as the situation period began
 
 </details>
+
+**Also reported by:** [Jordan Raanan · ESPN](https://x.com/JordanRaanan/status/2092693842650653094)
 
 ---
 
-## 2. Josh Downs — IND WR
+## 2. Jaxson Dart — NYG QB
 
-**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
-
-### What changed
-
-Josh Downs missed the Colts' Aug. 26 practice with an undisclosed calf issue, with no severity update reported.
-
-### Lineup Beat impact
-
-Downs' practice absence is a short-term availability concern, but the report gives no diagnosis, timeline or indication of his status for upcoming games.
-
-[Gray Deyo · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/fantasy-impact-ja-marr-chase-luther-burden-iii-and-3-other-injury-updates) · 2026-08-26
-
-<details><summary>Full evidence reviewed</summary>
-
-Indianapolis Colts Wr, Josh Downs appears to have some sort of calf injury and is a non-participant for Wednesday, Aug. 26 practice.
-
-Indianapolis Colts Wr, Josh Downs appears to have some sort of calf injury and is a non-participant for Wednesday, Aug. 26 practice. The severity of the injury has yet to be revealed.
-
-</details>
-
----
-
-## 3. Luther Burden III — CHI WR
-
-**Trending up** · RETURN_TO_PRACTICE · MEDIUM evidence
+**Trending up** · DEPTH_CHART · MEDIUM evidence
 
 ### What changed
 
-Luther Burden III returned to on-field practice Aug. 26 for the first time since suffering a groin strain, Gray Deyo reported.
+Jaxson Dart had multiple deep completions and accounted for five touchdowns in the Giants’ goal-line work, according to Art Stapleton.
 
 ### Lineup Beat impact
 
-Burden's return to on-field work is a positive step toward availability, but the report does not establish full participation, a Week 1 timetable, or his role.
+Stapleton’s description of Dart as Giants QB1 and his productive goal-line session support short-term starting-QB momentum, but this is one practice report without workload or season-long role certainty.
 
-[Gray Deyo · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/fantasy-impact-ja-marr-chase-luther-burden-iii-and-3-other-injury-updates) · 2026-08-26
+[Art Stapleton · The Record](https://x.com/art_stapleton/status/2092693828058649067) · 2026-08-26
 
 <details><summary>Full evidence reviewed</summary>
 
-Back on Aug. 8, WR for the Chicago Bears, Luther Burden III went down in practice with a groin strain.
+Jaxson Dart connected on a couple big pass plays in live team periods today at Giants
 
-Back on Aug. 8, WR for the Chicago Bears, Luther Burden III went down in practice with a groin strain. The Bears recently received positive news as Burden returned to practice on Wednesday, Aug.
+OBJ 35-yarder on which Beckham went up and got it inside 5. Was not touched, so OBJ crawled final 3 yards to break goal line for TD
 
-8, WR for the Chicago Bears, Luther Burden III went down in practice with a groin strain. The Bears recently received positive news as Burden returned to practice on Wednesday, Aug. 26, and did on-field work for the first time since he sustained his injury.
+Dart offscript, chased by Abdul Carter in own EZ, fired deep to Darnell Mooney with great catch between 2 defenders for 40+
+
+Later in practice, Jaxson Dart continued his strong play in goal line period.
+
+Eight plays, Dart threw 4 TD passes (Nabers, Fields, Manhertz, OBJ) and ran for another TD
+
+Another good day for Giants QB1
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrVWN1y2zYafRWM9iIXK9okRVGk7uRYSbVNbI-srndnm9GAACgioQgNQVpRO53Ja3Rm9-XyJHsAyLRkp6m320nTG42Enw_fzznfAfRjL6MNK5aS98a9JB8GaTwK_CCPw4hGwzSJeTocJmGWpIwGLAgGo2GYj0SWhzENBkmU5IzRkHI6HI2iXr_HaM11b_yvH3t0s6nVreBL2sA0pmjbFKrG97_RtdDkTO242aDWa1E1tN5hZlKWonqmCeVcNlJVRFZNrXjLsH6takGwbiUagk0b0bgluarJlRQ1E32StQ1pCkHEreSiYoIYF_BVk0rBFpeM2j0qJ4XawgxlBSa3siwJl7qpJSwIUit86j7RFd1oAvvuWH1y5O-yizDbuQgP5lQtV7LC8OvL8-mr5fl88mJhV1QNViyb3UZgcj69upwvZhcvMcVpY4ZCP4w9P_HCeBGk4yAYB6O_-v7Y980SWQtmAsC6i-nLyWL296kZrmneLGE6d1H3xv5JEt2Nl3ItGxu2qUvvQu2j6bswTXgmTk8XtLYJe-vOQFpE3WWQm9jP1RbDXHKksyHmsEbmu332CUXdyKakO1GTbaG0yWMpXHJZQauVOOm96ffuamOAoHRBrNE-dr8TnEgURnz88LMmHz_8m7W1VK3--OE_hGbw1daskPoOBc5ja39DUVSsQMA43UDgL89V2VgkwSyFvwUmCrkqvFtVtmtBbuZABPlWiAp7LfD6ZqCDXqPMkkkpWBdgxcliSha7EqZuaF2Lavx99X0FVy9o0XdwIiuFgZ8JAuaIXu69hp-0gj-w2s2ckGvVh7O0sRGbyGqhN0i9zGQpm92JCb1omo0en542J0yd_nO4-OEf51EVvu7dZ3LJYFEa_DgarxW2i_H7MU3yeBinaZ4xFseR4H6WYh9YKH-wILqeTq4vL5avLi0C18KUSeo1ZhaT-cvp4tqMKi7KPZ5pufyz8RXoErUu5Abuzi7Op1dTfFwYLjqo2ii6GnfDLpO-7_n-YITcmQml5Z58N3Pzu6PKknasvLwwjNy0WSnZUrfrtUvUPdKJpuDPcSQCoF3LqktXF5qJ_R7Sh4g-xC2hpapWGnl7DNcDrJ48cuxxB6sF5Qi-pJkoDQqwjctqRThc30_DT62XOZVlC7Sipbwx47dSoF3cJ8Kk2fU1rdrasn2BECZNUQIIzIw3ML5qCtMjp-ez7wyiG0HXrk740dbGhTv4vwf816dztRZACKL-VvJTjb7W6tPQT8M4hTT50QCfoyQd9H7qf06BXtZ0R87FTj0UIFuiZ4ChCcTkMNMWl9L0No3NjWdqRegt4qeOpSgmltTVPZxrscFKspK3Dslc0lUF9ACijVyL0pQaKH0AcJzhArIUaTdwzKR-ZdTySytPMo788SD5LcqT_pLymPprcStqkzMEbDLFaJkjubo1_VFbWQH4WQn1sIoDtcLBCLXeHaXOJMXbZ6vdmADs_kOxWhz2FWsCraEqcTRMrHEmWHRX54fCNENlKJqJKlEUR7ubuk8OWIwKCFrv-_ktAgMw8YGqIzIXVfW2hdeGhRY9laq8Da1xnIRaNbbIN4KDTZzu-mTSrk5IGN-7ZJTla_CDfKpue6MFcr5Dw8LpmYH9raCly_6vaJPRuPEoiaPRaJAykJfmA5-HfnAsT98Ao8vFdP76gTpNzq7Rw5cv5pevl1fzyfPF7Pn0V6Tqa2b2EzTqvuSflKgkTUe_n0Tt2dFpzrNHqIBwNQUwRdqq4-sBmftuHgnqgLNnqUugw8gfKUYvAH2qd-SyItez_12NttvtiZZWkgyUT3Nn7tTyQgp9N-DJ9QZueG-phxhrDxDWwitbcxv1srYGRzwppQeSeAPPXlI9xy3PJUz_ViU7s8afmStl09b2Ogvi51KUnGxV_c4B3wHG9I1GbLBmi-fbEQUeQZ8r4fq0AKRRP4Amb-0NfN9STM5xnUdPEe9IYGlhFgITqnZ3XLwKviY9u7q8nn1Oz5LP6FknMF1a9EYw8yjaFsI-OVwdrDpRlymkwVoy-nPfh_dqZ4XtqAcd9hVTuFJRdPIKnWTtOsyx8B0L2Rll71B3x9-kb140pgVZZhdoUStFzox-9Mmr9tDd2WyG51_VWK6ZZ9ED4pNVrTAK1lBZWan6MidZMbJ2zL0A26Dn5gsgzO_BXImtNs_R_RGOAaahqXvrcPWB6pko_pSOozH3rb6bl_kxye8iyWWtGwsloqXBq9H0FgyWxrxhpes6T5XuNIvTMEz9wSBNEz_PYsb406R7Pl18N79YLi6fKtxffyN7gnw_gs6nVDzyR4Ph_6nijzF6CKIucR2a7oT9F4Gi2zyHgkN2jxHdJ530_C6i3m6-oKQ__2b2h0r6G6Nfulm2mhuJ8RM_CiAzKwEgYcVe5x_8FRiNg7gTMMcY3LhKpMjsdXm3oAV_WigjbZZWt3q4aB_P64KGw_hgQS9naZanI8bpMPBplGdRxIajOB8mGR7X0Yj7fsByP2HM95OhYJGfBSFjqc-SQeKPQpNuVog1XZp3livRFhrruaaBBGTqvXcbdPVaur-dnSdYHOdwIByOeExH_iDkAY1ino8yluBVn-WZGPLU53kQD_w0jtJhGgd0KIZRRkVAWRj1fvovuAHQ0A:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrdWH9v28gR_SoL_dXiJJs_RUr_2bEusRHLjq02uOsFxHK5lLYmucJyaUU5BLiv0a_XT9I3S0m24txd2qIocECgiNzd2Zk3M--N_PMg51asMlUMpgN_HIeh7ydl7KeFN05jmUx8PinLKEjCIggiGXvYUMrSC5Pcj_w8GUeTYJxwLPHQGwwHgpuiHUz_9vOAr9dGP8oi4xamscQ7u9IG32-5ZW-lbrCVTui6lo3lZoulxUoyI9faWFngSzH6pBvJBLkoW8aNZJzVupCtZWvdKqseJSu1YedSPKx4_c9f_tGyVmijmuWoayXTna20fhiyvLPMruSWbSSMqFZXnK5YGy6sEpKtK77FBU3BCs0abRmu4Hml2hVuNHLZVdwwoyuYNAzOLqVlj7rqanlyFEN2CDvf9mE_W4NfS9Xg9fXNxextdnF39v3C7WgsdmR2u5ZYvJvd3twtLuev3ZIxOteGW0SUtbozQu7g3aN5pU3BG3bHecMbHCkQGF4HXjAeeekoGC_8yTTwp17ynedNPUqSfFSFbITMBAJWdKDPf61zVcnpx-lYJn4u44mMysQL0jDGI87192Pj7P52jufOVHhYWbtup6enH08Q6mnvTu_NKTC0XXsaeCiSSZhGwTj2UGPeJBp8_vAbrgYHVwtlJDKkCbXbm_vLxeVfZ_Ta8NJmAK7sIxlMvZM03b-vVK1wM04RVoNz3iLVukEmW8CIHB7S3tcapZAqb48LagDVdlwFpTKtHVnJa9ZHNWRtw9esXaEqh7uSwEuUB67psEc1z2uYaudk8OEJfAR0r2vJcrVkrxVvbMvWvG13lWh1wbdMNcz3yXN8oto7FxNbS6N0Mf2p-am5bLniK_ZGFyislm2URb0i0I1syTYuHq2QYziyNDxnhZRrBLdpqBdgsZAVvGSl0TU7N9gI62dVJRuyfYPVat9Z7Mqc7MyzxUXfkeQe2cm5eGC6dN8lOsjF62xe8Vqqlr2HbxamdymoVd9MnZWu4-zK6A0idgbo7M7uteK1YkvYIHeu-McWBi64sWzFC-YCBLz9dT0mAF6gQQg-ds0r9cDmPJcGacGxhsK51ti9HbJXKwPHrnmzksZ-GrKb8yu65PkhRswB-4_SbNlSw7rpmgYFtEsOuS4fZcNqXhAvVZKvabXHRh9jfMLOwUB4watWMzRdA66yqKqGiot27muS3Hgj2YZXdDmQg4UeedrVVwrOInTbmYYipYphQqPxVMMtFWC7u_u4Ylgul44ifrf_kzCYeEIWXplLIXKZljLFORCO-uRa8f4NKCpbzO6u8bqWAkWm2tqR10X2482cepR4utpxHq-yPwLPo3NQGCu1RgiX84vZ7Qwfc-JwsiuJjl90zWGxx9jzRp4X-kEY04KLzSH6_o6ejf57T3cZ37PevEdz3cFLkbVdXfcQvmxPwbvlyiIOasgROrFH1epOrFzTf60nCQpqJ_6MqqSQa1c3uwOHxhuyZ9p9SODJC_deqqCRaBKTVegs0oyFgXvULN16t4geadus5KrqjJO4D_T-UUkk8gkMArxXxoMWzX-Aa6rasrnctLRgYXtpV1h6e_MeL4iz3b7XvyJZt7uA5j9czL-UrCD2x17kxX6QDj4Pf2uqOQMv3Vu-riRg_XKuOSy4ykVdC6N6iMGbjtLQszsVeHfu91lBlnBZ0QlX_kvNq5Gj6xZI0dG2W1MCIEH4hDQZJ02GRoXRu3P0D93f1fumgDn8c2R5LH-OXdBBbKPNQ6VRDKj9VnJkfVRpJMn1gwBRQtPs9n868PzqSBD-RyNB8t-OBDuEDgNBu5ZCldsnshj1QB1h55xANvgRivvcfHUUeK5uON4gwr2DQneoHTcnPBsQoJEVlYWbSHp-308NaNG-lJyKn1-xMB5tUd_SkMHNSkGe9ryxQR7QhK7glohP2b3kxCfsPe-DdgwiC0w8moSSCcM3FdwridhZyMi409wcnfzgKpX1gwXAWFyQGy4wXZZ94Q8ZFIMykG_ZWV50FXuFdfiHqIioZj8OaeDCBjexwPKxfvd6uMRtdie3ubQbCS0OcKIEt5B-0-2R9x1d_5bvrO_TPGRfII7MdLJvOjAI5cvJKo48hdPDfEIGZ4qo1qVi2NvAFCM3LKLpiNKEevnTfvj4XsmqwP9H48afHeYYupyfHDhjbYfW2e7JTR2UUtryRA_fIuFizDFwj-MgGPvJOJBeIstvk3DI2uJN9urN2d3id1T8j8Zq3yDvz6rma8IeeeOJfyzs787_TWH_ctCtu8oqYgDXC0gAYU5E5vDkAvzQEFlQjZSOEvaC3-4n6aep8QlvgmXojpuiH2rZkYT9f1WduPdOkm_Hkn49u7j8y_W3qDrgy9p9MC9kPfXidBxNvHHifokK3dqsawsSDS8N_Hg4WEoUAw2PvdQfK1IYTv0nRep7RPCqQoh-ssfNyU3m0gMbmROiwTRJj9fxAzKIx882DEoxyctJIgoe-x6PyjyKRJyMyzjN4X6UFJ7ni9JLhfC8NJYi8nI_EAITexqmXhIQYuDrmmf46dL2EG_ApqOeHEaqyfXH0aN_wDvr_wbUe4LNYTxJkihPkkkZcS5wu5A8TuVkEpQTWYY5vsu8iMKJH01CPwmCKCqDYpynQTgu8nDw-V9DjkM0:WIRE_MOBILE_MANIFEST_V1 -->

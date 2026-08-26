@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 173,
+ "count": 190,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -1904,6 +1904,201 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003274
+  },
+  {
+   "candidate_id": "mobile:onsi:ac9a7eb13c36ad7377da",
+   "player_id": "00-0038542",
+   "source_url": "https://www.si.com/nfl/falcons/onsi/no-preseason-no-problem-for-falcons-qb-michael-penix-jr",
+   "attempted_at": "2026-08-26T19:33:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:33:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003892
+  },
+  {
+   "candidate_id": "mobile:onsi:1815e906dc6d90bbe68c",
+   "player_id": "00-0036900",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/joe-burrow-dohnte-meyers-stay-40-minutes-after-bengals-practice-to-work-on-routes-chemistry-01m0zmw9vatt",
+   "attempted_at": "2026-08-26T19:33:17+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T19:33:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003734
+  },
+  {
+   "candidate_id": "mobile:onsi:2361bdd2ef20f56ba862",
+   "player_id": "00-0036442",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/joe-burrow-dohnte-meyers-stay-40-minutes-after-bengals-practice-to-work-on-routes-chemistry-01m0zmw9vatt",
+   "attempted_at": "2026-08-26T19:33:20+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:33:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00491
+  },
+  {
+   "candidate_id": "mobile:onsi:4e5bdd0ad879ba1026e3",
+   "player_id": "00-0037261",
+   "source_url": "https://www.si.com/nfl/bills/onsi/cutdown-day-ray-davis-trent-sherfield-push-ex-chiefs-all-pro-squarely-onto-bills-roster-bubble",
+   "attempted_at": "2026-08-26T19:33:24+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:33:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003036
+  },
+  {
+   "candidate_id": "mobile:onsi:a1dee39fc1bb3dfb7277",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/how-the-bears-can-buck-every-trend-in-2026-and-get-to-the-super-bowl",
+   "attempted_at": "2026-08-26T19:33:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:33:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004116
+  },
+  {
+   "candidate_id": "mobile:onsi:b56b50bfb2db64192d59",
+   "player_id": "00-0036912",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/dynasty-rookie-only-mock-draft-fantasy-football-2026",
+   "attempted_at": "2026-08-26T19:33:30+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:33:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004448
+  },
+  {
+   "candidate_id": "mobile:onsi:2fe2d08c2f71c7ce66a1",
+   "player_id": "00-0041037",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/dynasty-rookie-only-mock-draft-fantasy-football-2026",
+   "attempted_at": "2026-08-26T19:33:33+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T19:33:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006172
+  },
+  {
+   "candidate_id": "mobile:onsi:6982f9b583820d039983",
+   "player_id": "00-0036407",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/dynasty-rookie-only-mock-draft-fantasy-football-2026",
+   "attempted_at": "2026-08-26T19:33:39+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T19:33:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00544
+  },
+  {
+   "candidate_id": "mobile:x:c44aada52166d2bab764",
+   "player_id": "00-0040691",
+   "source_url": "https://x.com/DDuggan21/status/2092695474054606920",
+   "attempted_at": "2026-08-26T19:33:44+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:33:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003864
+  },
+  {
+   "candidate_id": "mobile:x:6e71be59e4f70283571b",
+   "player_id": "00-0031235",
+   "source_url": "https://x.com/JordanRaanan/status/2092693842650653094",
+   "attempted_at": "2026-08-26T19:33:47+00:00",
+   "status": "SUPERSEDED_EVENT",
+   "completed_at": "2026-08-26T19:33:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007082,
+   "duplicate_of": "mobile:x:73290ced0fbeccbe8fe8",
+   "dedupe_detail": {
+    "similarity": 0.2247,
+    "shared_markers": [
+     "red_zone"
+    ],
+    "window_hours": 12
+   }
+  },
+  {
+   "candidate_id": "mobile:x:33aff3e6d44c562e340a",
+   "player_id": "00-0040691",
+   "source_url": "https://x.com/JordanRaanan/status/2092693842650653094",
+   "attempted_at": "2026-08-26T19:33:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:33:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004754
+  },
+  {
+   "candidate_id": "mobile:x:768282783d568ee78c2c",
+   "player_id": "00-0036309",
+   "source_url": "https://x.com/art_stapleton/status/2092693828058649067",
+   "attempted_at": "2026-08-26T19:33:59+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:34:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00586
+  },
+  {
+   "candidate_id": "mobile:x:c6a384652261762e07ef",
+   "player_id": "00-0040691",
+   "source_url": "https://x.com/art_stapleton/status/2092693828058649067",
+   "attempted_at": "2026-08-26T19:34:05+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-26T19:34:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005186
+  },
+  {
+   "candidate_id": "mobile:x:73290ced0fbeccbe8fe8",
+   "player_id": "00-0031235",
+   "source_url": "https://x.com/PLeonardNYDN/status/2092693825160405128",
+   "attempted_at": "2026-08-26T19:34:10+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-26T19:34:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005508
+  },
+  {
+   "candidate_id": "mobile:x:3978402bd082c7515a62",
+   "player_id": "00-0036165",
+   "source_url": "https://x.com/PLeonardNYDN/status/2092693825160405128",
+   "attempted_at": "2026-08-26T19:34:15+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:34:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004332
+  },
+  {
+   "candidate_id": "mobile:x:5c672a7596c90369c0fa",
+   "player_id": "00-0039337",
+   "source_url": "https://x.com/PLeonardNYDN/status/2092693825160405128",
+   "attempted_at": "2026-08-26T19:34:19+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T19:34:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004956
+  },
+  {
+   "candidate_id": "mobile:x:5cdb6bb99ebaaeacf497",
+   "player_id": "00-0040691",
+   "source_url": "https://x.com/PLeonardNYDN/status/2092693825160405128",
+   "attempted_at": "2026-08-26T19:34:24+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T19:34:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00486
   }
  ]
 }
