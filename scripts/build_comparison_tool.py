@@ -24,6 +24,24 @@ PUBLICATIONS = ROOT / "data" / "wire_publications.json"
 OUT = SITE / "nfl" / "who-should-i-draft"
 FORMAT_LABELS = {"ppr": "PPR", "half_ppr": "Half-PPR",
                  "non_ppr": "Non-PPR", "superflex": "Superflex"}
+TEAM_COLORS = {
+    "ARI": ("#97233F", "#FFB612"), "ATL": ("#A71930", "#A5ACAF"),
+    "BAL": ("#241773", "#9E7C0C"), "BUF": ("#00338D", "#C60C30"),
+    "CAR": ("#0085CA", "#BFC0BF"), "CHI": ("#0B162A", "#C83803"),
+    "CIN": ("#FB4F14", "#000000"), "CLE": ("#FF3C00", "#311D00"),
+    "DAL": ("#003594", "#869397"), "DEN": ("#FB4F14", "#002244"),
+    "DET": ("#0076B6", "#B0B7BC"), "GB": ("#203731", "#FFB612"),
+    "HOU": ("#03202F", "#A71930"), "IND": ("#002C5F", "#A2AAAD"),
+    "JAX": ("#006778", "#D7A22A"), "KC": ("#E31837", "#FFB81C"),
+    "LV": ("#292929", "#A5ACAF"), "LAC": ("#0080C6", "#FFC20E"),
+    "LAR": ("#003594", "#FFA300"), "MIA": ("#008E97", "#FC4C02"),
+    "MIN": ("#4F2683", "#FFC62F"), "NE": ("#002244", "#C60C30"),
+    "NO": ("#101820", "#D3BC8D"), "NYG": ("#0B2265", "#A71930"),
+    "NYJ": ("#125740", "#FFFFFF"), "PHI": ("#004C54", "#A5ACAF"),
+    "PIT": ("#101820", "#FFB612"), "SF": ("#AA0000", "#B3995D"),
+    "SEA": ("#002244", "#69BE28"), "TB": ("#D50A0A", "#FF7900"),
+    "TEN": ("#0C2340", "#4B92DB"), "WAS": ("#5A1414", "#FFB612"),
+}
 
 
 def slug(name: str) -> str:
@@ -41,6 +59,11 @@ def roster_data() -> dict[str, dict]:
                 "age": int(row["age"]) if row.get("age") else None,
                 "depth": row.get("depth_order") or None,
                 "injury": row.get("injury_status") or None,
+                "photo": (f'https://sleepercdn.com/content/nfl/players/thumb/'
+                          f'{re.sub(r"^[a-z]+-", "", row["id"])}.jpg')
+                         if row.get("id") else None,
+                "photo_fallback": (f'https://a.espncdn.com/i/headshots/nfl/players/full/'
+                                   f'{row["espn_id"]}.png') if row.get("espn_id") else None,
             }
     return out
 
@@ -97,6 +120,8 @@ def player_payload() -> list[dict]:
             }
     for s, p in names.items():
         p.update(roster.get(s, {}))
+        p["team_logo"] = f'https://a.espncdn.com/i/teamlogos/nfl/500/{p["team"].lower()}.png'
+        p["team_colors"] = TEAM_COLORS.get(p["team"], ("#263238", "#68757B"))
         p["consistency"] = history.get(s, {})
         p["wire"] = impacts.get(s)
     return sorted(names.values(), key=lambda p: (p["position"], p["name"]))
@@ -159,6 +184,14 @@ CSS = r"""
   background:linear-gradient(110deg,#11170d,#17200d);padding:1.8rem}
 .pcard h3,.popular h2,.method h2{font-family:var(--agate);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
 .pcard{border-radius:15px;border-color:#303638;padding:1.5rem}.pcard h3{font-size:2.1rem}
+.pcard{position:relative;overflow:hidden;padding:0;background:linear-gradient(145deg,color-mix(in srgb,var(--team) 42%,#0b1010),#0b1010 68%)}
+.pcard:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 22%,color-mix(in srgb,var(--team2) 28%,transparent),transparent 45%);pointer-events:none}
+.pcardhero{position:relative;min-height:245px;padding:1.5rem;overflow:hidden}.pcopy{position:relative;z-index:3;max-width:66%}
+.pcard h3{font-size:2.35rem;line-height:.95;margin-top:1rem}.pheadshot{position:absolute;z-index:2;right:-1%;bottom:-10px;width:47%;height:94%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 15px 18px rgba(0,0,0,.4))}
+.pwatermark{position:absolute;z-index:1;right:5%;top:15%;width:37%;height:55%;object-fit:contain;opacity:.12;filter:grayscale(1)}
+.teamchip{display:inline-flex;align-items:center;gap:.35rem}.teamchip img{width:19px;height:19px;object-fit:contain}
+.pcard .metrics{position:relative;z-index:4;margin:0;padding:1rem;grid-template-columns:repeat(4,1fr);background:rgba(5,8,8,.72);border-top:1px solid rgba(255,255,255,.11)}
+.pcard .metric{padding:.8rem .65rem;background:rgba(255,255,255,.04)}.pcard .metric b{font-size:1rem}
 .metric b,.edge .left,.edge .right{font-family:var(--data)}
 .metric{border-radius:8px;background:#141918}.edge{font-size:1rem}.wireimpact{border-radius:0 10px 10px 0}
 .chip{text-transform:uppercase}
@@ -206,15 +239,34 @@ CSS = r"""
 .cmpbars i{display:block;height:5px;margin:14px 0;background:linear-gradient(90deg,var(--signal) var(--w),rgba(255,255,255,.05) var(--w))}
 .cmpresult.ready{grid-column:1/-1;margin-top:80px}.cmpresult .verdict{max-width:1130px;margin:0 auto 1.5rem}
 .cmpresult .players,.cmpresult .edges{max-width:1130px;margin-left:auto;margin-right:auto}
+.cmpresult .edges{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px;border:0}
+.cmpresult .edge{grid-template-columns:1fr 1fr;grid-template-areas:"label label" "left right";gap:7px 18px;
+  padding:18px 22px;border:1px solid #303638;border-radius:12px;background:linear-gradient(145deg,#111615,#0b0f0f)}
+.cmpresult .edge small{grid-area:label;text-align:center;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.08)}
+.cmpresult .edge .left{grid-area:left;text-align:center;font-size:1.35rem}.cmpresult .edge .right{grid-area:right;text-align:center;font-size:1.35rem}
+.cmpresult .edge strong{display:inline-block;padding:2px 8px;border-radius:5px;background:rgba(198,245,60,.1)}
 .popular,.method,.faq,.related{grid-column:1/-1}.popular{margin-top:80px}
 @media(max-width:1100px){.cmpedge{display:none}}
 @media(max-width:900px){.cmpwrap{grid-template-columns:1fr;gap:36px;padding:45px 24px 80px}.cmphead,.cmpbox{grid-column:1}.cmpbox{justify-self:stretch;max-width:none;height:auto;min-height:0;margin-top:0}.cmpresult.ready,.popular{margin-top:35px}.topbar .stamp{display:none}.cmpactions{flex-wrap:wrap}.cmpproof{grid-template-columns:1fr 1fr 1fr}}
-@media(max-width:760px){.cmpselectors{grid-template-columns:1fr}.versus{text-align:center;padding:0}.players,.pairgrid{grid-template-columns:1fr}.edge{grid-template-columns:1fr}.edge .left,.edge .right{text-align:center}.metrics{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.cmpselectors{grid-template-columns:1fr}.versus{text-align:center;padding:0}.players,.pairgrid,.cmpresult .edges{grid-template-columns:1fr}.edge .left,.edge .right{text-align:center}.metrics,.pcard .metrics{grid-template-columns:repeat(2,1fr)}.pcardhero{min-height:220px}.pcard h3{font-size:1.9rem}.pheadshot{width:50%}}
 """
 
 JS = r"""
 (()=>{const DATA=JSON.parse(document.getElementById('cmpdata').textContent),by=Object.fromEntries(DATA.map(p=>[p.slug,p]));const a=document.getElementById('pa'),b=document.getElementById('pb'),fmt=document.getElementById('format'),out=document.getElementById('cmpresult');const labels={ppr:'PPR',half_ppr:'Half-PPR',non_ppr:'Non-PPR',superflex:'Superflex'};function n(v,d='—'){return v===null||v===undefined?d:v}function hist(p,k){return p.consistency[k==='superflex'?'ppr':k]||{}}function rank(p,k){return p.formats[k]||p.formats.ppr}function edge(label,av,bv,low=false,suffix=''){let win=av===bv?'Even':((low?av<bv:av>bv)?'a':'b');return `<div class="edge"><div class="left ${win==='a'?'win':''}">${win==='a'?'<strong>':''}${n(av)}${suffix}${win==='a'?'</strong>':''}</div><small>${label}</small><div class="right ${win==='b'?'win':''}">${win==='b'?'<strong>':''}${n(bv)}${suffix}${win==='b'?'</strong>':''}</div></div>`}function card(p,k){let f=rank(p,k),h=hist(p,k);return `<article class="pcard"><div class="chips"><span class="chip">${p.team} ${p.position}</span><span class="chip">${p.position}${f.position_rank}</span>${p.adp?`<span class="chip">ADP ${p.adp}</span>`:''}</div><h3>${p.name}</h3><div class="metrics"><div class="metric"><b>${f.overall_rank}</b><span>Overall rank</span></div><div class="metric"><b>${f.projected_points}</b><span>Projected pts</span></div><div class="metric"><b>${n(h.average)}</b><span>2025 avg</span></div><div class="metric"><b>${n(h.consistency_score)}</b><span>Consistency /100</span></div></div>${p.wire?`<div class="wireimpact"><b>Latest Lineup Beat impact</b><p>${p.wire.impact}</p></div>`:''}</article>`}function recommendation(x,y,k){let fx=rank(x,k),fy=rank(y,k),hx=hist(x,k),hy=hist(y,k);let sx=(205-fx.overall_rank)/2+n(hx.consistency_score,50)*.22+n(hx.floor_p25,0)*.55,sy=(205-fy.overall_rank)/2+n(hy.consistency_score,50)*.22+n(hy.floor_p25,0)*.55,w=sx>=sy?x:y,o=sx>=sy?y:x,g=Math.abs(sx-sy),c=g>=18?'Strong':g>=8?'Moderate':'Slight';return {w,o,c}}function draw(){let x=by[a.value],y=by[b.value],k=fmt.value;if(!x||!y||x.slug===y.slug){out.className='cmpresult';return}let r=recommendation(x,y,k),fx=rank(x,k),fy=rank(y,k),hx=hist(x,k),hy=hist(y,k);out.innerHTML=`<section class="verdict"><div class="pick">${r.c} edge · ${labels[k]}</div><h2>Draft ${r.w.name}</h2><p>${r.w.name} gets the Lineup Beat edge over ${r.o.name} after combining current rank and projection with weekly floor and consistency. Use the category breakdown below to decide whether your roster needs safety or ceiling.</p></section><div class="players">${card(x,k)}${card(y,k)}</div><div class="edges">${edge('Overall rank',fx.overall_rank,fy.overall_rank,true)}${edge('Projected points',fx.projected_points,fy.projected_points)}${edge('2025 points per game',hx.average,hy.average)}${edge('Weekly floor · 25th percentile',hx.floor_p25,hy.floor_p25)}${edge('Weekly ceiling · 75th percentile',hx.ceiling_p75,hy.ceiling_p75)}${edge('Consistency score',hx.consistency_score,hy.consistency_score)}${edge('Boom games',hx.boom_rate,hy.boom_rate,false,'%')}${edge('Bust games',hx.bust_rate,hy.bust_rate,true,'%')}${edge('ADP',x.adp,y.adp,true)}</div>`;out.className='cmpresult ready';history.replaceState(null,'',`?player1=${x.slug}&player2=${y.slug}&format=${k}`)}function options(sel,chosen){sel.innerHTML=DATA.map(p=>`<option value="${p.slug}" ${p.slug===chosen?'selected':''}>${p.name} · ${p.team} ${p.position}</option>`).join('')}let q=new URLSearchParams(location.search),one=q.get('player1')||document.body.dataset.a||'bijan-robinson',two=q.get('player2')||document.body.dataset.b||'jahmyr-gibbs';options(a,one);options(b,two);fmt.value=q.get('format')||'ppr';[a,b,fmt].forEach(el=>el.addEventListener('change',draw));draw()})();
 """
+
+# Give each side of the comparison the same visual identity used on player
+# pages: team colour, team mark and a real player headshot. Keeping this as
+# a focused replacement leaves the calculation code below unchanged.
+JS = re.sub(
+    r"function card\(p,k\)\{.*?\}function recommendation",
+    r'''function card(p,k){let f=rank(p,k),h=hist(p,k),c=p.team_colors||['#263238','#68757B'],photo=p.photo||p.team_logo;return `<article class="pcard" style="--team:${c[0]};--team2:${c[1]}"><div class="pcardhero"><img class="pwatermark" src="${p.team_logo}" alt=""><div class="pcopy"><div class="chips"><span class="chip teamchip"><img src="${p.team_logo}" alt="">${p.team} ${p.position}</span><span class="chip">${p.position}${f.position_rank}</span>${p.adp?`<span class="chip">ADP ${p.adp}</span>`:''}</div><h3>${p.name}</h3></div><img class="pheadshot" src="${photo}" alt="${p.name}" onerror="this.onerror=null;this.src='${p.team_logo}'"></div><div class="metrics"><div class="metric"><b>${f.overall_rank}</b><span>Overall rank</span></div><div class="metric"><b>${f.projected_points}</b><span>Projected pts</span></div><div class="metric"><b>${n(h.average)}</b><span>2025 avg</span></div><div class="metric"><b>${n(h.consistency_score)}</b><span>Consistency /100</span></div></div>${p.wire?`<div class="wireimpact"><b>Latest Lineup Beat impact</b><p>${p.wire.impact}</p></div>`:''}</article>`}function recommendation''',
+    JS,
+    count=1,
+    flags=re.S,
+)
+JS = JS.replace("this.src='${p.team_logo}'",
+                "this.src='${p.photo_fallback||p.team_logo}'")
 
 
 def popular_pairs(players: list[dict]) -> list[tuple[dict, dict]]:
