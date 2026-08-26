@@ -171,7 +171,7 @@ CSS = r"""
 .cmpwrap{display:grid;grid-template-columns:1.04fr .9fr;gap:0 72px;align-items:start;
   max-width:none;min-height:790px;margin:0;padding:40px max(32px,calc((100vw - 1130px)/2)) 110px;
   background:radial-gradient(circle at 37% 20%,rgba(35,43,45,.33) 0%,rgba(12,15,16,.16) 32%,rgba(5,7,8,0) 55%),#050708}
-.cmpwrap:before{position:absolute;z-index:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:72px 72px;opacity:1}.cmpwrap>*{position:relative;z-index:1}
+.cmpwrap:before{display:none}.cmpwrap>*{position:relative;z-index:1}
 .cmpwrap>.crumbs{display:none}.cmphead{grid-column:1;margin:23px 0 0;text-align:left;max-width:650px}
 .topbar .tbrow{height:56px;padding-top:0;padding-bottom:0}.topbar .stamp{margin-left:auto;white-space:nowrap;color:var(--quiet);font-size:11px}
 .cmphead .rkeyebrow{margin:0 0 23px;font-size:20px;font-weight:700;letter-spacing:.045em;color:var(--signal)}
