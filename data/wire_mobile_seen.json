@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 125,
+ "count": 130,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -1376,6 +1376,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00487
+  },
+  {
+   "candidate_id": "mobile:x:ed7a04fde063b671050f",
+   "player_id": "00-0034855",
+   "source_url": "https://x.com/PewterReport/status/2092577617907986493",
+   "attempted_at": "2026-08-26T11:53:14+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T11:53:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004502
+  },
+  {
+   "candidate_id": "mobile:onsi:8831dd35b16800093bad",
+   "player_id": "00-0036900",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/one-bengals-offseason-acquisition-is-itching-to-get-the-2026-season-started-01m0y42fxke3",
+   "attempted_at": "2026-08-26T11:53:19+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T11:53:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003884
+  },
+  {
+   "candidate_id": "mobile:onsi:17302a463fa7841c4015",
+   "player_id": "00-0039910",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-ravens-joint-practice-jayden-daniels-roster-cuts",
+   "attempted_at": "2026-08-26T11:53:23+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T11:53:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00476
+  },
+  {
+   "candidate_id": "mobile:onsi:8f5c0117c9cd3e9205f6",
+   "player_id": "00-0038935",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-3-things-i-m-watching-closest-in-final-joint-practice-with-buccaneers",
+   "attempted_at": "2026-08-26T11:53:27+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T11:53:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004902
+  },
+  {
+   "candidate_id": "mobile:onsi:79ebc37e4e0c0ea80101",
+   "player_id": "00-0039893",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-3-things-i-m-watching-closest-in-final-joint-practice-with-buccaneers",
+   "attempted_at": "2026-08-26T11:53:31+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T11:53:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004544
   }
  ]
 }
