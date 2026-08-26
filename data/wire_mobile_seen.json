@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 140,
+ "count": 145,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -1541,6 +1541,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.002958
+  },
+  {
+   "candidate_id": "mobile:x:408695ddfd51b0956267",
+   "player_id": "00-0034796",
+   "source_url": "https://x.com/jamisonhensley/status/2092649922369613834",
+   "attempted_at": "2026-08-26T16:33:48+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T16:33:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003678
+  },
+  {
+   "candidate_id": "mobile:x:3cd5f9564f17b34881d6",
+   "player_id": "00-0038996",
+   "source_url": "https://x.com/RobDemovsky/status/2092648095204991209",
+   "attempted_at": "2026-08-26T16:33:52+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-26T16:34:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004414
+  },
+  {
+   "candidate_id": "mobile:onsi:47bf990b45696ef8e31b",
+   "player_id": "00-0029604",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-still-face-critical-decisions-preseason-concludes",
+   "attempted_at": "2026-08-26T16:34:04+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T16:34:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004702
+  },
+  {
+   "candidate_id": "mobile:x:e4eba5b9bfb8cf3975a4",
+   "player_id": "00-0034796",
+   "source_url": "https://x.com/jamisonhensley/status/2092646059004600631",
+   "attempted_at": "2026-08-26T16:34:10+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T16:34:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003728
+  },
+  {
+   "candidate_id": "mobile:x:ce5b4e2e7778df97eb2e",
+   "player_id": "00-0033553",
+   "source_url": "https://x.com/Tdrake4sports/status/2092645516748468609",
+   "attempted_at": "2026-08-26T16:34:17+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-26T16:34:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004696
   }
  ]
 }
