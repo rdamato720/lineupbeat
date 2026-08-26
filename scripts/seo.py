@@ -666,6 +666,7 @@ def site_nav(active=None, sport="nfl", search=""):
         # menu already open and closes it again, and the button does
         # nothing at all.
         + TEAMS_JS + NAV_JS
+        + '<script defer src="/feedback.js"></script>'
     )
 
 

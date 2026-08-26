@@ -1,0 +1,12 @@
+name = "lineupbeat-feedback"
+main = "src/index.js"
+compatibility_date = "2026-08-26"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "lineupbeat-feedback"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+[vars]
+ALLOWED_ORIGINS = "https://lineupbeat.com,https://www.lineupbeat.com"
+
