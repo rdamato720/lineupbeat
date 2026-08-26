@@ -38,6 +38,7 @@ SEEN = ROOT / "data" / "wire_mobile_seen.json"
 SCHEMA = "wire-mobile-batch-v1"
 SEEN_SCHEMA = "wire-mobile-seen-v1"
 LABEL = DIRECTION_LABELS
+ONSI_RESERVED_CALLS = 8
 
 
 def now_utc() -> datetime:
@@ -213,6 +214,23 @@ def relevance_filter(rows: list[dict], registry: dict) -> tuple[list[dict], list
     return kept, suppressed
 
 
+def prioritize_candidates(rows: list[dict], max_calls: int) -> list[dict]:
+    """Reserve early provider calls for On SI without discarding recency.
+
+    Capture combines article candidates with a much faster X stream. A single
+    newest-first queue let X consume the entire call ceiling before an article
+    published minutes earlier could be interpreted. Put up to eight newest On
+    SI candidates first, then return to a normal newest-first queue.
+    """
+    newest = sorted(rows, key=lambda row: row["published_at"], reverse=True)
+    reserved = min(ONSI_RESERVED_CALLS, max_calls)
+    onsi = [row for row in newest if row.get("origin") == "ONSI"]
+    priority_ids = {row["candidate_id"] for row in onsi[:reserved]}
+    return onsi[:reserved] + [
+        row for row in newest if row["candidate_id"] not in priority_ids
+    ]
+
+
 def validate_response(result: dict) -> list[str]:
     errors = []
     confidence = result.get("confidence")
@@ -302,6 +320,7 @@ def main() -> int:
                   and (row["player_id"], row["source_url"]) not in published_pairs]
     candidates, relevance_suppressed = relevance_filter(
         candidates, relevance.load())
+    candidates = prioritize_candidates(candidates, args.max_calls)
 
     cards, outcomes = [], []
     publications = published_cards()
@@ -398,6 +417,7 @@ def main() -> int:
         "limits": {"max_calls": args.max_calls, "cap_usd": args.cap,
                    "max_cards": args.max_cards},
         "candidate_count": len(candidates), "cards": cards,
+        "unreviewed_count": max(0, len(candidates) - calls),
         "relevance_suppressed": len(relevance_suppressed),
         "event_duplicates": sum(row["decision"] in {
             "DUPLICATE_EVENT", "SUPERSEDED_EVENT"} for row in outcomes),
@@ -409,6 +429,9 @@ def main() -> int:
     if relevance_suppressed:
         print(f"  {len(relevance_suppressed)} candidate(s) suppressed by "
               "the draftability gate before provider spend")
+    if len(candidates) > calls:
+        print(f"  {len(candidates) - calls} eligible candidate(s) remain "
+              "unreviewed after the call/dollar ceiling")
     if cost > args.cap:
         print("  observed cap crossed by the final in-flight response; no later call sent")
     return 0

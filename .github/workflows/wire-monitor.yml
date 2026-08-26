@@ -29,7 +29,9 @@ jobs:
       BEATWIRE_X_PROVIDER: ${{ vars.BEATWIRE_X_PROVIDER }}
       SORSA_API_KEY: ${{ secrets.SORSA_API_KEY }}
       TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
-      MOBILE_MAX_CALLS: ${{ vars.WIRE_MOBILE_MAX_CALLS }}
+      # The dollar ceiling remains the binding spend limit. Twenty attempts
+      # prevents a handful of newer X posts from starving captured On SI work.
+      MOBILE_MAX_CALLS: 20
       MOBILE_RUN_CAP: ${{ vars.WIRE_MOBILE_RUN_CAP_USD }}
       TAPI_DAILY_CAP: ${{ vars.WIRE_MOBILE_TAPI_DAILY_CAP_USD }}
     steps:
@@ -63,8 +65,8 @@ jobs:
               x_cap = Decimal(os.environ["TAPI_DAILY_CAP"])
           except (KeyError, ValueError, InvalidOperation):
               raise SystemExit("mobile call, run-dollar and X daily caps must all be configured")
-          if not 1 <= calls <= 10:
-              raise SystemExit("WIRE_MOBILE_MAX_CALLS must be 1-10")
+          if not 1 <= calls <= 20:
+              raise SystemExit("MOBILE_MAX_CALLS must be 1-20")
           if not Decimal("0") < run_cap <= Decimal("1.00"):
               raise SystemExit("WIRE_MOBILE_RUN_CAP_USD must be >0 and <=1.00")
           if not Decimal("0") < x_cap <= Decimal("25.00"):
