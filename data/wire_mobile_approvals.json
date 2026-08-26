@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-approval-ledger-v1",
- "count": 4,
+ "count": 5,
  "receipts": [
   {
    "receipt_id": "mobile:49f74b01c0954bb71f23e5fb8672a9a43dc3afb5edeb0b0b4bf6f7e24b35060f:5403509377",
@@ -183,6 +183,65 @@
      "evidence_sha256": "4fcf3e94dbc1ceba9b6bc1e3db24471b36fc133e3e4373824ce32bb02fe6c0a7",
      "public_summary_sha256": "d51554a98967b9a2eaef88df5503a9c536a850a79dfd97149c2ed79ab3b7a427",
      "lineupbeat_impact_sha256": "5f2b9f231faaa7646e24391ee1c754aefe02aeb5de88b228b162d71b1731620e"
+    }
+   ]
+  },
+  {
+   "receipt_id": "mobile:e3883b63967708e41fbb80b852c3b704f7a1ce1ba59e9d0a285902a1b38edff9:5428809514",
+   "batch_id": "e3883b63967708e41fbb80b852c3b704f7a1ce1ba59e9d0a285902a1b38edff9",
+   "issue_number": 30,
+   "comment_id": "5428809514",
+   "approved_by": "Ralph Damato",
+   "approved_by_handle": "rdamato720",
+   "approved_at": "2026-08-26T17:35:34Z",
+   "approval_statement": "reject all",
+   "manifest_sha256": "e3883b63967708e41fbb80b852c3b704f7a1ce1ba59e9d0a285902a1b38edff9",
+   "publication_sha256_at_draft": "3dfe4a3712636ed87c791f8a2663097fe42dba55df0b226c747eab56b7193c2d",
+   "publication_sha256_before": "032e643dee9a04739f4c1757398ade93778e1cae33ddd893e6d92d8e28890c3b",
+   "publication_sha256_after": "032e643dee9a04739f4c1757398ade93778e1cae33ddd893e6d92d8e28890c3b",
+   "publication_store_changed_since_draft": true,
+   "publication_count_before": 76,
+   "publication_count_after": 76,
+   "publications_applied": 0,
+   "outcomes": [
+    {
+     "card_number": 1,
+     "candidate_id": "mobile:onsi:226211b340c080d83ca4",
+     "player_id": "00-0041056",
+     "player_name": "Cade Klubnik",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Cade Klubnik was consistently pressured in practice, amid concerns about New York's offensive line depth.",
+     "lineupbeat_impact": "The reported pressure is a negative practice-context signal for Klubnik's passing environment, but it does not establish a game role, recurring issue, or season-long outlook.",
+     "evidence_sha256": "f4f4c124674fd59e0801b17a28190a0d23c4b2c84b02415f192aebd2201444cb",
+     "public_summary_sha256": "2c0fc8ff6e265c7528f150e76108e277bd0f6cb451b79feccb47d259cbee803d",
+     "lineupbeat_impact_sha256": "9f2b42f9dca3ffe6e3b3724d4cb7bd41827877f1b26da632749f8733bafe26f8"
+    },
+    {
+     "card_number": 2,
+     "candidate_id": "mobile:onsi:9647bc5e43933ccc009c",
+     "player_id": "00-0030565",
+     "player_name": "Geno Smith",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Geno Smith followed his preseason touchdown drive with a strong Jets practice, including move-the-ball and red-zone work.",
+     "lineupbeat_impact": "Smith's recent preseason and practice performance is a positive short-term signal, but the report does not establish a starting role, workload, or regular-season outlook.",
+     "evidence_sha256": "49b670a503fab985bfb36f48d01bcfdafe650d33a30ff8bdb6d637d0c431d520",
+     "public_summary_sha256": "05ef5186e2a6663e96b86741f1b5f67df275fb750e5643525be4fa005e798ba5",
+     "lineupbeat_impact_sha256": "23cc0e4bd3a4e71cf8fd828ab6c1f7a121550233b47f6a814373a881a92aaee9"
+    },
+    {
+     "card_number": 3,
+     "candidate_id": "mobile:onsi:21f312306fa32d9a8e79",
+     "player_id": "00-0041511",
+     "player_name": "Omar Cooper",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Rookie Omar Cooper Jr. caught a touchdown from Smith in practice, with the report citing improved play.",
+     "lineupbeat_impact": "The practice touchdown and reported improvement are positive watch-list signals for Cooper, but the evidence does not establish a regular-season role or target volume.",
+     "evidence_sha256": "d622b2a59ae410d689e2236747bbb65059f2c18bf170a044d4e717b255bb8bb2",
+     "public_summary_sha256": "a2f16594fa8e5a19fdfbc423b0dd7e4b46a948a59bea1c8ff1c0c93f3bccecba",
+     "lineupbeat_impact_sha256": "8ea9528c50959b15d376935d880f82ba44db42e51ef647f72781d5c0b81390ef"
     }
    ]
   }
