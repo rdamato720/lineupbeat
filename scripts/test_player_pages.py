@@ -132,8 +132,10 @@ class PlayerPageTests(unittest.TestCase):
         self.assertIn('/nfl/devonta-smith/', rendered)
         self.assertIn("Recent practice and news timeline", rendered)
         self.assertIn("Last updated", rendered)
-        self.assertIn('datetime="2026-08-25', rendered)
-        self.assertIn('"dateModified": "2026-08-25', rendered)
+        expected_date = (publication.get("updated_at") or
+                         publication["published_at"])[:10]
+        self.assertIn(f'datetime="{expected_date}', rendered)
+        self.assertIn(f'"dateModified": "{expected_date}', rendered)
 
 
 if __name__ == "__main__":
