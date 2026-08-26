@@ -1737,6 +1737,13 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
           </p>
 
           <div class="lb-data-actions">
+            <a class="lb-button lb-button-primary" href="/nfl/who-should-i-draft/">
+              <span>COMPARE PLAYERS</span>
+              <svg class="lb-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h13M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+
             <a class="lb-button lb-button-primary" href="/nfl/projections/">
               <span>VIEW PROJECTIONS</span>
               <svg class="lb-arrow" viewBox="0 0 24 24" aria-hidden="true">
@@ -1773,8 +1780,36 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
 
       <div class="lb-feature-grid">
 
-        <a class="lb-feature-card" href="/nfl/rankings/">
+        <a class="lb-feature-card" href="/nfl/who-should-i-draft/">
           <span class="lb-feature-number">01</span>
+
+          <div class="lb-card-kicker">WHO SHOULD I DRAFT?</div>
+          <h3>Put two players head to head.</h3>
+
+          <p class="lb-card-deck">
+            Compare current rankings, projections and ADP with weekly
+            consistency, floor, ceiling and recent Lineup Beat impact.
+          </p>
+
+          <div class="lb-preview" aria-hidden="true">
+            <div class="lb-preview-head">
+              <span>PLAYER COMPARISON</span>
+              <span class="lb-preview-badge">PPR</span>
+            </div>
+            <div class="lb-preview-table">
+              <div class="lb-preview-row"><span>PLAYER ONE</span><b>RANK</b><b>FLOOR</b><b>ADP</b></div>
+              <div class="lb-preview-row"><span>VS PLAYER TWO</span><b>PTS</b><b>CEILING</b><b>VALUE</b></div>
+            </div>
+          </div>
+
+          <div class="lb-card-footer">
+            <span>COMPARE PLAYERS</span>
+            <svg class="lb-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </div>
+        </a>
+
+        <a class="lb-feature-card" href="/nfl/rankings/">
+          <span class="lb-feature-number">02</span>
 
           <div class="lb-card-kicker">2026 FANTASY RANKINGS</div>
           <h3>Start with the board itself.</h3>
@@ -1801,7 +1836,7 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
 
 
         <a class="lb-feature-card" href="/nfl/projections/">
-          <span class="lb-feature-number">02</span>
+          <span class="lb-feature-number">03</span>
 
           <div class="lb-card-kicker">YEARLY PROJECTIONS</div>
           <h3>Start with our view of the player.</h3>
@@ -1828,7 +1863,7 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
 
 
         <a class="lb-feature-card" href="/nfl/draft-value/">
-          <span class="lb-feature-number">03</span>
+          <span class="lb-feature-number">04</span>
 
           <div class="lb-card-kicker">ADP &amp; DRAFT VALUE</div>
           <h3>Then compare our view with the market.</h3>
