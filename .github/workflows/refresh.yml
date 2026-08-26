@@ -500,6 +500,8 @@ jobs:
           # publish exactly 200 overall ranks and keep sequential position ranks.
           python scripts/test_ranking_formats.py
           python scripts/test_comparison_tool.py
+          python scripts/test_feedback.py
+          node --test feedback-worker/test/*.test.js
           python -m beatwire.cli doctor --sport nfl
           # The homepage header is generated from seo.py. If somebody edits
           # the template by hand instead, the app and the eight static
