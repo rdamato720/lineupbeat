@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 130,
+ "count": 135,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -1431,6 +1431,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004544
+  },
+  {
+   "candidate_id": "mobile:x:479d78357f8adacf1755",
+   "player_id": "00-0036389",
+   "source_url": "https://x.com/EliotShorrParks/status/2092600673695051831",
+   "attempted_at": "2026-08-26T13:23:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T13:23:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003828
+  },
+  {
+   "candidate_id": "mobile:x:5d3c8be045a7f350ce97",
+   "player_id": "00-0041438",
+   "source_url": "https://x.com/PaulKuharskyNFL/status/2092598139270172833",
+   "attempted_at": "2026-08-26T13:23:43+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T13:23:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003706
+  },
+  {
+   "candidate_id": "mobile:onsi:25ae3598195666c315f1",
+   "player_id": "00-0037834",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-must-be-regretting-signing-veteran-player",
+   "attempted_at": "2026-08-26T13:23:47+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T13:23:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005744
+  },
+  {
+   "candidate_id": "mobile:onsi:22a3ca5102478a2ea1b0",
+   "player_id": "00-0033077",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/good-not-so-good-dallas-cowboys-first-practice-at-the-star",
+   "attempted_at": "2026-08-26T13:23:52+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T13:23:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004318
+  },
+  {
+   "candidate_id": "mobile:x:6f17901004630abe5a84",
+   "player_id": "00-0036264",
+   "source_url": "https://x.com/mattschneidman/status/2092596852256387352",
+   "attempted_at": "2026-08-26T13:23:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T13:23:58+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003462
   }
  ]
 }
