@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-approval-ledger-v1",
- "count": 3,
+ "count": 4,
  "receipts": [
   {
    "receipt_id": "mobile:49f74b01c0954bb71f23e5fb8672a9a43dc3afb5edeb0b0b4bf6f7e24b35060f:5403509377",
@@ -150,6 +150,39 @@
      "evidence_sha256": "7414447c1b5539474336e0b55244f73aa7137f03f54d6ca93d723c943902f158",
      "public_summary_sha256": "3fe526aba603f15ef6a1fadee59ad885195f6d3bd3c73ea9542a62546020b5a8",
      "lineupbeat_impact_sha256": "bfc2613977085ef61b51214eef674ab8bf0d4f06df796172f4b736b910df1c11"
+    }
+   ]
+  },
+  {
+   "receipt_id": "mobile:7ce7a88cba5798d8dcad243efba2cc90104b6c9c04fa9f12260e337f968f2bca:5426917499",
+   "batch_id": "7ce7a88cba5798d8dcad243efba2cc90104b6c9c04fa9f12260e337f968f2bca",
+   "issue_number": 46,
+   "comment_id": "5426917499",
+   "approved_by": "Ralph Damato",
+   "approved_by_handle": "rdamato720",
+   "approved_at": "2026-08-26T14:43:40Z",
+   "approval_statement": "approve all",
+   "manifest_sha256": "7ce7a88cba5798d8dcad243efba2cc90104b6c9c04fa9f12260e337f968f2bca",
+   "publication_sha256_at_draft": "af9ffe1684eeb28bf961e58919ed09b5c606f2eab0d3d9f9543df67583c475b2",
+   "publication_sha256_before": "89fca0be6a95f990fd59b14dccb10f397d4bfedc8ddd120de86b9b7beb7a00f1",
+   "publication_sha256_after": "032e643dee9a04739f4c1757398ade93778e1cae33ddd893e6d92d8e28890c3b",
+   "publication_store_changed_since_draft": true,
+   "publication_count_before": 75,
+   "publication_count_after": 76,
+   "publications_applied": 1,
+   "outcomes": [
+    {
+     "card_number": 1,
+     "candidate_id": "mobile:x:9b6e4f8f7b4507863a1f",
+     "player_id": "00-0036900",
+     "player_name": "Ja'Marr Chase",
+     "decision": "APPROVED",
+     "edited": false,
+     "public_summary": "Ja'Marr Chase was still walking around after going down and appeared to be finished for the day following a left-knee concern.",
+     "lineupbeat_impact": "Chase's apparent early shutdown is a short-term practice concern, but the evidence provides no diagnosis, severity, or timetable.",
+     "evidence_sha256": "4fcf3e94dbc1ceba9b6bc1e3db24471b36fc133e3e4373824ce32bb02fe6c0a7",
+     "public_summary_sha256": "d51554a98967b9a2eaef88df5503a9c536a850a79dfd97149c2ed79ab3b7a427",
+     "lineupbeat_impact_sha256": "5f2b9f231faaa7646e24391ee1c754aefe02aeb5de88b228b162d71b1731620e"
     }
    ]
   }
