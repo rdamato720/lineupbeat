@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 120,
+ "count": 125,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -1321,6 +1321,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003924
+  },
+  {
+   "candidate_id": "mobile:x:5d7103b0bd6d1f008efc",
+   "player_id": "00-0036389",
+   "source_url": "https://x.com/BrandonGowton/status/2092445330314846529",
+   "attempted_at": "2026-08-26T03:29:43+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-26T03:29:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00551
+  },
+  {
+   "candidate_id": "mobile:x:c1401c7e115b210b0f5c",
+   "player_id": "00-0036389",
+   "source_url": "https://x.com/Jeff_McLane/status/2092439065765310583",
+   "attempted_at": "2026-08-26T03:29:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T03:29:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003346
+  },
+  {
+   "candidate_id": "mobile:x:02cb645cd49f023e75cc",
+   "player_id": "00-0036912",
+   "source_url": "https://x.com/EliotShorrParks/status/2092435130145030539",
+   "attempted_at": "2026-08-26T03:29:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T03:29:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004502
+  },
+  {
+   "candidate_id": "mobile:onsi:f62f8dbda4a20ac06265",
+   "player_id": "00-0036912",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/defensive-domination-everything-i-saw-from-eagles-only-open-practice-of-training-camp-01m0xnq8ve77",
+   "attempted_at": "2026-08-26T03:29:55+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-26T03:29:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00385
+  },
+  {
+   "candidate_id": "mobile:onsi:47e312af4da52e1e9805",
+   "player_id": "00-0036389",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/defensive-domination-everything-i-saw-from-eagles-only-open-practice-of-training-camp-01m0xnq8ve77",
+   "attempted_at": "2026-08-26T03:29:57+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-26T03:30:02+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00487
   }
  ]
 }
