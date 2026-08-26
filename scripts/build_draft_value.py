@@ -50,6 +50,7 @@ warnings.filterwarnings("ignore")
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import seo
 import seo_faqs
+from build_comparison_tool import TEAM_COLORS
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -206,20 +207,22 @@ def read_adp():
         sys.exit(f"  no {rp}")
     adp, meta = {}, {}
     formats = ["ppr"]
-    for r in csv.DictReader(rp.open()):
-        if formats == ["ppr"]:
-            formats = available_formats(r)
-        v = (r.get("adp") or "").strip()
-        try:
-            v = float(v)
-        except (TypeError, ValueError):
-            continue
-        if v <= 0:
-            continue
-        k = key(r.get("name", ""))
-        adp[k] = {"adp": v, "id": r.get("id"), "slug": slug(r.get("name", "")),
-                  "team": (r.get("team") or "").upper(),
-                  "pos": (r.get("position") or "").upper()}
+    with rp.open(newline="") as handle:
+        for r in csv.DictReader(handle):
+            if formats == ["ppr"]:
+                formats = available_formats(r)
+            v = (r.get("adp") or "").strip()
+            try:
+                v = float(v)
+            except (TypeError, ValueError):
+                continue
+            if v <= 0:
+                continue
+            k = key(r.get("name", ""))
+            adp[k] = {"adp": v, "id": r.get("id"),
+                      "slug": slug(r.get("name", "")),
+                      "team": (r.get("team") or "").upper(),
+                      "pos": (r.get("position") or "").upper()}
     mp = ROOT / "rosters" / "adp_meta.json"
     if mp.exists():
         try:
@@ -333,12 +336,64 @@ PAGE_CSS = """
 /* ---- draft value ----
    A draft board first: ADP ascending, so it reads the way the room reads.
    The value column is what it adds. */
-.dvwrap{max-width:1080px; margin:0 auto; padding:0 1rem 4rem}
-.dvhead{margin:1.6rem 0 .4rem}
-.dvhead h1{font-size:1.7rem; margin:0; letter-spacing:-.01em;
-  font-family:var(--text)}
+.dvwrap{max-width:1180px; margin:0 auto; padding:0 1rem 5rem}
+.dvhero{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
+  gap:3rem; align-items:end; padding:4.5rem 0 3rem}
+.dveyebrow{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.09em; color:var(--signal); font-weight:600; font-size:.86rem}
+.dvhead{margin:0}
+.dvhead h1{font-size:clamp(3.2rem,6.5vw,6.3rem); line-height:.88; margin:.8rem 0 0;
+  letter-spacing:-.055em; font-family:var(--text); font-weight:400; max-width:10ch}
+.dvhead h1 em{display:block; color:var(--signal); font-style:normal}
 .dvsub{color:var(--quiet); font-size:.86rem; margin:.4rem 0 0; max-width:72ch;
   line-height:1.55}
+.dvhero .dvsub{font-family:var(--text); font-size:1.08rem; line-height:1.65;
+  margin:1.5rem 0 0; max-width:52ch}
+.dvheroproof{border:1px solid var(--rule); border-radius:18px;
+  background:linear-gradient(145deg,rgba(190,255,38,.07),rgba(15,20,18,.92) 45%);
+  padding:1.4rem}
+.dvheroresult{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.08em; color:var(--quiet); font-size:.7rem}
+.dvheroresult strong{display:block; color:var(--signal); font-size:2.6rem;
+  line-height:1; margin:.45rem 0 .2rem}
+.dvheroresult span{display:block; color:var(--ink); font-family:var(--text);
+  text-transform:none; letter-spacing:0; font-size:1rem; line-height:1.45}
+.dvherostats{display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem;
+  margin-top:1.2rem}
+.dvherostats div{border-top:1px solid var(--rule); padding-top:.75rem}
+.dvherostats b{display:block; font-family:var(--agate); color:var(--ink);
+  font-size:1.35rem}
+.dvherostats small{font-family:var(--agate); color:var(--quiet);
+  text-transform:uppercase; letter-spacing:.07em}
+.dvleaders{padding:1.4rem 0 2.2rem; border-top:1px solid var(--rule)}
+.dvsectionhead{display:flex; justify-content:space-between; gap:1rem;
+  align-items:end; margin-bottom:1rem}
+.dvsectionhead h2{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.06em; font-size:1.25rem; margin:0}
+.dvsectionhead p{color:var(--quiet); margin:0; font-size:.82rem}
+.dvleadergrid{display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem}
+.dvleader{position:relative; overflow:hidden; min-height:210px;
+  border:1px solid var(--rule); border-radius:14px; padding:1rem;
+  background:linear-gradient(145deg,var(--team-glow),rgba(12,16,14,.96) 58%)}
+.dvleader:before{content:""; position:absolute; inset:0 0 auto 0; height:3px;
+  background:var(--team)}
+.dvleader .dvleadtop{display:flex; justify-content:space-between; gap:.5rem;
+  font-family:var(--agate); text-transform:uppercase; letter-spacing:.06em;
+  font-size:.68rem; color:var(--quiet)}
+.dvleader h3{font-family:var(--agate); font-size:1.55rem; text-transform:uppercase;
+  margin:1.4rem 0 .15rem; line-height:1}
+.dvleader .dvleadcase{color:var(--quiet); font-size:.8rem; line-height:1.45;
+  min-height:3.4em}
+.dvleadgap{font-family:var(--agate); color:var(--signal); font-size:1.8rem}
+.dvleadgap span{font-size:.68rem; color:var(--quiet); text-transform:uppercase;
+  letter-spacing:.06em; margin-left:.25rem}
+.dvleadactions{display:flex; gap:.45rem; margin-top:1rem}
+.dvleadactions a{font-family:var(--agate); text-transform:uppercase;
+  letter-spacing:.06em; font-size:.68rem; text-decoration:none; padding:.42rem .6rem;
+  border:1px solid var(--rule); border-radius:999px; color:var(--ink)}
+.dvleadactions a:first-child{background:var(--signal); border-color:var(--signal);
+  color:#0a0c08}
+.dvboard{border-top:1px solid var(--rule); padding-top:2rem}
 .dvdate{display:inline-block; margin-left:.4rem; font-family:var(--agate);
   text-transform:uppercase; letter-spacing:.06em; font-size:.7rem;
   color:var(--signal); border:1px solid var(--rule); border-radius:999px;
@@ -428,6 +483,9 @@ PAGE_CSS = """
    The verdict sits top right against the ADP, because those two together
    are the whole headline: what he costs, and what we think of it. */
 @media (max-width:760px){
+  .dvhero{grid-template-columns:1fr; gap:1.5rem; padding:2.5rem 0 2rem}
+  .dvhead h1{font-size:clamp(3rem,15vw,4.5rem)}
+  .dvleadergrid{grid-template-columns:1fr 1fr}
   .dvtbl tr.r{display:grid; grid-template-columns:repeat(4, 1fr);
     grid-template-areas:
       "adp adp sig sig"
@@ -469,6 +527,10 @@ PAGE_CSS = """
   .dvtbl tr.dvx td{background:var(--card); border:1px solid var(--rule);
     border-radius:12px}
   .dvxgrid{gap:.9rem}
+}
+@media (max-width:520px){
+  .dvleadergrid{grid-template-columns:1fr}
+  .dvsectionhead{display:block}.dvsectionhead p{margin-top:.35rem}
 }
 .dvonly{font-size:.82rem; line-height:1.55; color:var(--quiet);
   margin:.7rem 0 0; max-width:74ch}
@@ -609,6 +671,38 @@ def build_html(boards, meta, css, header, footer, formats):
             f'<a href="/{SPORT}/projections/">projections page</a>.</p>')
 
     n = len([x for x in boards["ppr"] if x["adp"] is not None])
+    priced = [x for x in boards["ppr"] if x["gap"] is not None]
+    best = sorted(priced, key=lambda x: (-x["gap"], x["adp"]))[:2]
+    risks = sorted(priced, key=lambda x: (x["gap"], x["adp"]))[:2]
+
+    def comparison_peer(row):
+        peers = [x for x in priced
+                 if x["pos"] == row["pos"] and x["slug"] != row["slug"]]
+        return min(peers, key=lambda x: abs(x["adp"] - row["adp"])) if peers else None
+
+    def leader_card(row, kind):
+        primary, _secondary = TEAM_COLORS.get(row["team"], ("#64706a", "#aeb7b2"))
+        peer = comparison_peer(row)
+        compare = (f'/nfl/who-should-i-draft/?player1={row["slug"]}'
+                   f'&amp;player2={peer["slug"]}&amp;format=ppr') if peer else (
+                       '/nfl/who-should-i-draft/')
+        case = (f'LineupBeat ranks him {abs(row["gap"])} spots higher than '
+                f'the PPR market.' if row["gap"] > 0 else
+                f'The PPR market ranks him {abs(row["gap"])} spots higher '
+                f'than LineupBeat.')
+        return f'''<article class="dvleader" style="--team:{primary};
+          --team-glow:{primary}28">
+          <div class="dvleadtop"><span>{kind}</span>
+            <span>{esc(row["team"])} {esc(row["pos"])} &middot; ADP {row["adp"]:.1f}</span></div>
+          <h3>{esc(row["name"])}</h3>
+          <div class="dvleadgap">{row["gap"]:+d}<span>positional gap</span></div>
+          <p class="dvleadcase">{esc(case)}</p>
+          <div class="dvleadactions"><a href="{compare}">Compare</a>
+            <a href="/{SPORT}/{row['slug']}/">Player page</a></div>
+        </article>'''
+
+    leader_html = "".join(leader_card(r, "Best value") for r in best)
+    leader_html += "".join(leader_card(r, "Price check") for r in risks)
     when = ""
     if meta.get("end"):
         def short(s):
@@ -635,14 +729,37 @@ def build_html(boards, meta, css, header, footer, formats):
     <a href="/{SPORT}/data/">Fantasy data</a><span>/</span>
     <b>ADP &amp; draft value</b></nav>
 
-  <div class="dvhead">
-    <h1>2026 Fantasy Football ADP &amp; Draft Value</h1>
-    <p class="dvsub">Where the market is drafting every player compared
-      with our projections, and where the biggest gaps are.</p>
-    {when}
-  </div>
+  <section class="dvhero">
+    <div class="dvhead">
+      <div class="dveyebrow">2026 Draft Lab &middot; Current PPR ADP</div>
+      <h1>Find the value <em>before your league does.</em></h1>
+      <p class="dvsub">Lineup Beat compares current market prices with our
+        projections to show where you can wait—and where the room may be
+        paying too much.</p>
+      {when}
+    </div>
+    <aside class="dvheroproof" aria-label="Draft value summary">
+      <div class="dvheroresult">Players priced <strong>{n}</strong>
+        <span>Every current ADP is translated into a positional market rank,
+        then compared with Lineup Beat's projection.</span></div>
+      <div class="dvherostats">
+        <div><b>{len([r for r in priced if r['gap'] >= VALUE_MIN])}</b><small>Values</small></div>
+        <div><b>{len([r for r in priced if r['gap'] <= OVERPRICED_MAX])}</b><small>Overpriced</small></div>
+        <div><b>4</b><small>Positions</small></div>
+      </div>
+    </aside>
+  </section>
 
 {seo.byline_html(built, data_through=(longform(meta["end"]) if meta.get("end") else None))}
+  <section class="dvleaders" aria-labelledby="dvleaders-title">
+    <div class="dvsectionhead"><h2 id="dvleaders-title">Current draft edges</h2>
+      <p>The two biggest values and two steepest prices in the current sample.</p></div>
+    <div class="dvleadergrid">{leader_html}</div>
+  </section>
+
+  <section class="dvboard" aria-labelledby="dvboard-title">
+  <div class="dvsectionhead"><h2 id="dvboard-title">Full draft-value board</h2>
+    <p>Filter every priced quarterback, running back, receiver and tight end.</p></div>
   <div class="dvrow">
     <span class="dvlab">Position</span>
     <button class="dvtab" data-pos="ALL" aria-pressed="true">All</button>
@@ -721,6 +838,7 @@ def build_html(boards, meta, css, header, footer, formats):
     <p>Durability, coaching and strength of schedule are deliberately not
        part of this calculation. Each has its own page, and folding them in
        would make this number impossible to check.</p>
+  </section>
   </section>
 {seo.faq_html(seo_faqs.DRAFT_VALUE)}{seo.related_html('draft-value')}
 </main>
