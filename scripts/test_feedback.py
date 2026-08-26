@@ -10,6 +10,7 @@ def main():
     template = (ROOT / "site" / "template.html").read_text()
     seo = (ROOT / "scripts" / "seo.py").read_text()
     widget = (ROOT / "site" / "feedback.js").read_text()
+    styles = (ROOT / "site" / "feedback.css").read_text()
     worker = (ROOT / "feedback-worker" / "src" / "index.js").read_text()
     migration = (ROOT / "feedback-worker" / "migrations" /
                  "0001_feedback.sql").read_text()
@@ -18,6 +19,8 @@ def main():
     assert '<script defer src="/feedback.js"></script>' in seo
     assert "https://feedback.lineupbeat.com/feedback" in widget
     assert "data.page_url=location.href" in widget
+    assert "writing-mode:vertical-rl" in styles
+    assert "transform:rotate(-90deg) translateY(100%)" not in styles
     assert "ADMIN_TOKEN" in worker and "IP_HASH_SALT" in worker
     assert "CF-Connecting-IP" in worker
     assert "ip_hash TEXT NOT NULL" in migration
