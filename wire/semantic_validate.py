@@ -25,7 +25,10 @@ RETURN_LANG = re.compile(
     r"(?:practice|field)|practiced (?:again|for the first time)|"
     r"began practi[cs]ing|"
     r"participated again|was (?:a )?full participant|cleared to (?:practice|return)|"
-    r"activated (?:off|from)|came off (?:the )?(?:pup|nfi))\b")
+    r"activated (?:off|from)|coming off (?:the )?(?:pup|nfi)|"
+    r"came off (?:the )?(?:pup|nfi)|off (?:the )?(?:pup|nfi)|"
+    r"removed .{0,40} from (?:the )?(?:pup|nfi)|"
+    r"taking .{0,40} off (?:the )?(?:pup|nfi))\b")
 
 NEVER_RETURN = re.compile(
     r"(?i)\b(waived|released|cut|signed|claimed off waivers|traded|"

@@ -31,7 +31,15 @@ MARKERS = {
     "traded": r"\b(trade|traded|acquired)\b",
     "signed": r"\b(sign|signed|signing)\b",
     "released": r"\b(released|waived|cut)\b",
-    "activated": r"\b(activated|activation)\b",
+    "activated": r"\b(activated|activation|coming off (?:the )?pup|"
+                 r"came off (?:the )?pup|off (?:the )?pup|"
+                 r"removed .{0,40} from (?:the )?pup|"
+                 r"taking .{0,40} off (?:the )?pup)\b",
+    "return": r"\b(is back|returned|returning|back at practice|"
+              r"coming off (?:the )?pup|came off (?:the )?pup|"
+              r"off (?:the )?pup|activated .* pup|"
+              r"removed .{0,40} from (?:the )?pup|"
+              r"taking .{0,40} off (?:the )?pup)\b",
     "ankle": r"\bankle\b", "knee": r"\bknee\b", "hamstring": r"\bhamstring\b",
     "shoulder": r"\bshoulder\b", "foot": r"\bfoot\b", "groin": r"\bgroin\b",
     "back": r"\b(back injury|back soreness|injured (his|her) back)\b",
@@ -44,6 +52,12 @@ CONFLICT_GROUPS = (
     {"ankle", "knee", "hamstring", "shoulder", "foot", "groin", "back",
      "concussion"},
 )
+PRECALL_EVENT_MARKERS = {
+    "absent", "limited", "full", "seven_on_seven", "eleven_on_eleven",
+    "first_team", "second_team", "third_team", "red_zone", "traded",
+    "signed", "released", "activated", "return", "ankle", "knee",
+    "hamstring", "shoulder", "foot", "groin", "back", "concussion",
+}
 
 
 def parse_time(value):
@@ -135,6 +149,61 @@ def find_duplicate(card: dict, existing: list[dict]):
         if same:
             matches.append((detail["similarity"], index, prior, detail))
     return max(matches, default=None, key=lambda item: item[0])
+
+
+def precall_duplicate(left: dict, right: dict,
+                      window_hours: int = WINDOW_HOURS) -> tuple[bool, dict]:
+    """Conservatively match raw reports before spending a provider call.
+
+    Raw candidates do not yet have a model-assigned mechanism or direction,
+    so this requires the same player, a narrow time window and at least one
+    shared concrete event marker. Generic same-player reporting stays apart.
+    """
+    if not identity(left) or identity(left) != identity(right):
+        return False, {}
+    a_time, b_time = date(left), date(right)
+    if not a_time or not b_time or abs((a_time - b_time).total_seconds()) > \
+            window_hours * 3600:
+        return False, {}
+    a_markers, b_markers = markers(left), markers(right)
+    if marker_conflict(a_markers, b_markers):
+        return False, {}
+    shared = (a_markers & b_markers) & PRECALL_EVENT_MARKERS
+    return bool(shared), {
+        "shared_markers": sorted(shared), "window_hours": window_hours,
+    }
+
+
+def precall_quality(candidate: dict) -> tuple:
+    """Prefer the most specific report as the one provider-call input."""
+    event_markers = markers(candidate) & PRECALL_EVENT_MARKERS
+    evidence = str(candidate.get("evidence") or "")
+    return len(event_markers), len(tokens(candidate)), len(evidence)
+
+
+def collapse_precall(candidates: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Return one primary candidate per concrete event plus audit rows."""
+    kept: list[dict] = []
+    collapsed: list[dict] = []
+    for candidate in sorted(candidates, key=precall_quality, reverse=True):
+        match = next((prior for prior in kept
+                      if precall_duplicate(candidate, prior)[0]), None)
+        if match is None:
+            match = dict(candidate)
+            match["corroborating_candidates"] = []
+            kept.append(match)
+            continue
+        same, detail = precall_duplicate(candidate, match)
+        match["corroborating_candidates"].append(candidate)
+        collapsed.append({
+            "candidate_id": candidate.get("candidate_id", ""),
+            "primary_candidate_id": match.get("candidate_id", ""),
+            "player": candidate.get("player", ""),
+            "source_name": candidate.get("source_name", ""),
+            "source_url": candidate.get("source_url", ""),
+            "detail": detail,
+        })
+    return kept, collapsed
 
 
 def quality(card: dict) -> tuple:

@@ -252,6 +252,54 @@ class MobileWireTests(unittest.TestCase):
         self.assertGreater(mobile_dedupe.quality(strong),
                            mobile_dedupe.quality(weak))
 
+    def test_pup_reports_collapse_before_provider_spend(self):
+        base = {
+            "player": "Alec Pierce", "player_id": "00-pierce",
+            "team": "IND", "position": "WR", "origin": "X",
+            "published_at": "2026-08-27T14:00:00Z",
+            "source_name": "Reporter", "source_url": "https://x.com/1",
+        }
+        rows = [
+            {**base, "candidate_id": "vague", "evidence": "Alec Pierce is back."},
+            {**base, "candidate_id": "detailed", "source_url": "https://x.com/2",
+             "evidence": "Alec Pierce is coming off PUP after ankle surgery."},
+            {**base, "candidate_id": "confirm", "source_url": "https://x.com/3",
+             "evidence": "The Colts removed Alec Pierce from the PUP list."},
+        ]
+        kept, collapsed = mobile_dedupe.collapse_precall(rows)
+        self.assertEqual(len(kept), 1)
+        self.assertEqual(kept[0]["candidate_id"], "detailed")
+        self.assertEqual(len(kept[0]["corroborating_candidates"]), 2)
+        self.assertEqual(len(collapsed), 2)
+
+    def test_pup_activation_passes_availability_readiness(self):
+        proposed = card()
+        proposed.update({
+            "mechanism": "RETURN_TO_PRACTICE", "direction": "POSITIVE",
+            "reader_label": "Trending up",
+            "evidence": (
+                "The Colts activated Alec Pierce from PUP after ankle surgery."),
+            "commentary": (
+                "Pierce can begin ramping up, but his Week 1 workload remains uncertain."),
+        })
+        failures = publication_preview.readiness_failures(proposed)
+        self.assertFalse(any("not supported by the evidence" in f for f in failures))
+        self.assertFalse(any("temporary context" in f for f in failures))
+
+    def test_lower_body_issue_supports_narrow_injury_card(self):
+        proposed = card()
+        proposed.update({
+            "mechanism": "INJURY", "direction": "NEGATIVE",
+            "reader_label": "Trending down",
+            "evidence": "Dan Quinn said the player is working through a lower-body issue.",
+            "commentary": (
+                "His availability is uncertain; the report gives no severity, "
+                "participation update or timetable."),
+        })
+        failures = publication_preview.readiness_failures(proposed)
+        self.assertFalse(any("not supported by the evidence" in f for f in failures))
+        self.assertFalse(any("temporary context" in f for f in failures))
+
     def test_unclear_direction_uses_worth_noting_public_label(self):
         self.assertEqual(DIRECTION_LABELS["UNCLEAR"], "Worth noting")
         unclear = card()
