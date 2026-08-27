@@ -1,43 +1,36 @@
 {
  "schema_version": "wire-mobile-batch-v1",
- "generated_at": "2026-08-27T03:45:31+00:00",
+ "generated_at": "2026-08-27T09:45:30+00:00",
  "window": {
-  "from": "2026-08-27T01:45:31.771111+00:00",
-  "to": "2026-08-27T03:45:31.771111+00:00",
+  "from": "2026-08-27T07:45:30.742810+00:00",
+  "to": "2026-08-27T09:45:30.742810+00:00",
   "hours": 2.0
  },
  "published": false,
  "model": "gpt-5.6-terra",
- "model_calls": 8,
- "cost_usd": 0.041056,
+ "model_calls": 4,
+ "cost_usd": 0.022008,
  "limits": {
   "max_calls": 20,
   "cap_usd": 0.08,
   "max_cards": 10
  },
- "candidate_count": 8,
+ "candidate_count": 4,
  "cards": [],
  "unreviewed_count": 0,
- "relevance_suppressed": 7,
- "validation_failed": 1,
+ "relevance_suppressed": 1,
+ "validation_failed": 0,
  "outcome_counts": {
-  "IGNORE": 7,
-  "VALIDATION_FAILED": 1
+  "IGNORE": 4
  },
  "coverage": {
   "source_candidate_counts": {
-   "nfl-no-tapi-rossjacksonnola": 1,
-   "official_dal": 2,
-   "si_broncos": 3,
-   "si_commanders": 1,
-   "si_eagles": 1
+   "nfl-tb-tapi-pewterreport": 1,
+   "steelers_depot": 3
   },
   "team_candidate_counts": {
-   "DAL": 2,
-   "DEN": 3,
-   "NO": 1,
-   "PHI": 1,
-   "WAS": 1
+   "PIT": 3,
+   "TB": 1
   },
   "teams_without_candidates": [
    "ARI",
@@ -48,6 +41,8 @@
    "CHI",
    "CIN",
    "CLE",
+   "DAL",
+   "DEN",
    "DET",
    "GB",
    "HOU",
@@ -60,13 +55,14 @@
    "MIA",
    "MIN",
    "NE",
+   "NO",
    "NYG",
    "NYJ",
-   "PIT",
+   "PHI",
    "SEA",
    "SF",
-   "TB",
-   "TEN"
+   "TEN",
+   "WAS"
   ],
   "eligible_article_sources": [
    "arizona_sports_tyler_drake",
@@ -146,10 +142,7 @@
    "steelers_depot"
   ],
   "article_sources_with_candidates": [
-   "official_dal",
-   "si_broncos",
-   "si_commanders",
-   "si_eagles"
+   "steelers_depot"
   ],
   "article_sources_without_candidates": [
    "arizona_sports_tyler_drake",
@@ -164,6 +157,7 @@
    "official_chi",
    "official_cin",
    "official_cle",
+   "official_dal",
    "official_den",
    "official_det",
    "official_gb",
@@ -196,14 +190,17 @@
    "si_bears",
    "si_bengals",
    "si_bills",
+   "si_broncos",
    "si_browns",
    "si_buccaneers",
    "si_cardinals",
    "si_chargers",
    "si_chiefs",
    "si_colts",
+   "si_commanders",
    "si_cowboys",
    "si_dolphins",
+   "si_eagles",
    "si_falcons",
    "si_fantasy",
    "si_giants",
@@ -221,132 +218,66 @@
    "si_steelers",
    "si_texans",
    "si_titans",
-   "si_vikings",
-   "steelers_depot"
+   "si_vikings"
   ]
  },
  "event_duplicates": 0,
  "outcomes": [
   {
-   "candidate_id": "mobile:onsi:d93b6ededb41b31b859f",
-   "player": "Bo Nix",
-   "player_id": "00-0039732",
-   "team": "DEN",
+   "candidate_id": "mobile:article:ec61e2836822e36f9d44",
+   "player": "Eli Heidenreich",
+   "player_id": "00-0041490",
+   "team": "PIT",
    "origin": "ARTICLE",
-   "source_id": "si_broncos",
-   "source_name": "Sports Illustrated -- DEN",
-   "source_url": "https://www.si.com/nfl/broncos/onsi/5-broncos-who-need-bounce-back-game-vikings-preseason",
+   "source_id": "steelers_depot",
+   "source_name": "Steelers Depot",
+   "source_url": "https://steelersdepot.com/2026/08/can-eli-heidenreich-make-one-final-push-for-steelers-53-man-roster/",
    "decision": "IGNORE",
-   "reason": "The evidence only says Nix will not play in one preseason game and focuses on an unresolved QB2 battle; it provides no actionable fantasy-role or availability change for Nix.",
+   "reason": "The evidence only speculates that Pittsburgh could carry two running backs and says Heidenreich needs to make a push; it reports no concrete development affecting his role.",
    "validation_failures": [],
-   "cost_usd": 0.004824
+   "cost_usd": 0.00448
   },
   {
-   "candidate_id": "mobile:onsi:10df55650bcc79081533",
-   "player": "Jaylen Waddle",
-   "player_id": "00-0036613",
-   "team": "DEN",
+   "candidate_id": "mobile:article:9e3c0c1394ca7e49dc48",
+   "player": "Jaylen Warren",
+   "player_id": "00-0037228",
+   "team": "PIT",
    "origin": "ARTICLE",
-   "source_id": "si_broncos",
-   "source_name": "Sports Illustrated -- DEN",
-   "source_url": "https://www.si.com/nfl/broncos/onsi/5-broncos-who-need-bounce-back-game-vikings-preseason",
+   "source_id": "steelers_depot",
+   "source_name": "Steelers Depot",
+   "source_url": "https://steelersdepot.com/2026/08/can-eli-heidenreich-make-one-final-push-for-steelers-53-man-roster/",
    "decision": "IGNORE",
-   "reason": "Waddle is mentioned as context for Franklin's demotion, but the evidence does not establish a meaningful new fantasy-relevant role or availability development for Waddle.",
+   "reason": "The evidence does not establish a new fantasy-relevant development for Warren.",
    "validation_failures": [],
-   "cost_usd": 0.005476
+   "cost_usd": 0.005582
   },
   {
-   "candidate_id": "mobile:onsi:b6e79b693c7da87b9406",
-   "player": "Pat Bryant",
-   "player_id": "00-0040134",
-   "team": "DEN",
+   "candidate_id": "mobile:article:a20c104f1c1558e55677",
+   "player": "Rico Dowdle",
+   "player_id": "00-0036139",
+   "team": "PIT",
    "origin": "ARTICLE",
-   "source_id": "si_broncos",
-   "source_name": "Sports Illustrated -- DEN",
-   "source_url": "https://www.si.com/nfl/broncos/onsi/5-broncos-who-need-bounce-back-game-vikings-preseason",
-   "decision": "VALIDATION_FAILED",
-   "reason": "The evidence directly links Bryant’s emergence to Franklin being pushed down the depth chart, creating a monitorable potential rise for Bryant, though usage details are absent.",
-   "validation_failures": [
-    "fantasy analysis is not explicitly attributed"
-   ],
-   "cost_usd": 0.008148,
-   "held_for_review": {
-    "evidence": "In two preseason games, Franklin has garnered just two targets, both of which came in Atlanta two weeks ago. Franklin has been pushed down the depth chart by the arrival of Jaylen Waddle and the emergence of Pat Bryant this summer.",
-    "public_summary": "Chad Jensen says Pat Bryant’s summer emergence has helped push Troy Franklin down Denver’s depth chart.",
-    "lineupbeat_impact": "Bryant is worth monitoring as a possible riser in Denver’s WR rotation, but the report does not specify his spot, first-team usage or expected targets. Upcoming preseason deployment would clarify whether this is a meaningful role change.",
-    "direction": "POSITIVE",
-    "mechanism": "DEPTH_CHART"
-   }
-  },
-  {
-   "candidate_id": "mobile:article:5386ed3b85e61ed702e9",
-   "player": "CeeDee Lamb",
-   "player_id": "00-0036358",
-   "team": "DAL",
-   "origin": "ARTICLE",
-   "source_id": "official_dal",
-   "source_name": "DAL official team site",
-   "source_url": "https://www.dallascowboys.com/news/practice-points-news-and-notes-from-final-cowboys-training-camp-practice",
+   "source_id": "steelers_depot",
+   "source_name": "Steelers Depot",
+   "source_url": "https://steelersdepot.com/2026/08/can-eli-heidenreich-make-one-final-push-for-steelers-53-man-roster/",
    "decision": "IGNORE",
-   "reason": "Lamb's catches were isolated practice highlights and do not establish a meaningful fantasy-relevant change.",
+   "reason": "The evidence is a speculative roster-construction discussion, not a meaningful new fantasy-relevant development for Dowdle.",
    "validation_failures": [],
-   "cost_usd": 0.004714
+   "cost_usd": 0.008166
   },
   {
-   "candidate_id": "mobile:article:bd7d6f9e62994764f3e9",
-   "player": "Dak Prescott",
-   "player_id": "00-0033077",
-   "team": "DAL",
-   "origin": "ARTICLE",
-   "source_id": "official_dal",
-   "source_name": "DAL official team site",
-   "source_url": "https://www.dallascowboys.com/news/practice-points-news-and-notes-from-final-cowboys-training-camp-practice",
-   "decision": "IGNORE",
-   "reason": "Prescott's practice highlights, including sidearm throws and a completion to Ryan Flournoy, are isolated-session performance notes and do not create a meaningful fantasy-actionable development.",
-   "validation_failures": [],
-   "cost_usd": 0.004184
-  },
-  {
-   "candidate_id": "mobile:onsi:8de4591ebf37894959c8",
-   "player": "Jalen Hurts",
-   "player_id": "00-0036389",
-   "team": "PHI",
-   "origin": "ARTICLE",
-   "source_id": "si_eagles",
-   "source_name": "Sports Illustrated -- PHI",
-   "source_url": "https://www.si.com/nfl/eagles/onsi/eagles-final-training-camp-roster-locks-bubble-players-and-who-s-set-to-be-cut-01m0t9qd151e",
-   "decision": "IGNORE",
-   "reason": "The evidence concerns an unresolved QB2 battle and offers no meaningful new fantasy development for Hurts.",
-   "validation_failures": [],
-   "cost_usd": 0.004784
-  },
-  {
-   "candidate_id": "mobile:onsi:92efe518d15591b709d4",
-   "player": "Jayden Daniels",
-   "player_id": "00-0039910",
-   "team": "WAS",
-   "origin": "ARTICLE",
-   "source_id": "si_commanders",
-   "source_name": "Sports Illustrated -- WAS",
-   "source_url": "https://www.si.com/nfl/commanders/onsi/jayden-daniels-press-conference-transcript-ravens-joint-practice-lsu",
-   "decision": "IGNORE",
-   "reason": "A single general comment about an uneven offensive practice is not a meaningful fantasy-relevant development.",
-   "validation_failures": [],
-   "cost_usd": 0.004536
-  },
-  {
-   "candidate_id": "mobile:x:c01e87b9161b16814323",
-   "player": "Chris Olave",
-   "player_id": "00-0037239",
-   "team": "NO",
+   "candidate_id": "mobile:x:12667b5124527e479099",
+   "player": "Baker Mayfield",
+   "player_id": "00-0034855",
+   "team": "TB",
    "origin": "X",
-   "source_id": "nfl-no-tapi-rossjacksonnola",
+   "source_id": "nfl-tb-tapi-pewterreport",
    "source_name": "X",
-   "source_url": "https://x.com/RossJacksonNOLA/status/2092812413506560049",
+   "source_url": "https://x.com/PewterReport/status/2092899928104452211",
    "decision": "IGNORE",
-   "reason": "Another strong performance is insufficiently specific to establish a fantasy-relevant change, and isolated practice praise is not card-worthy.",
+   "reason": "A vague positive assessment of one practice is an isolated performance note, not a fantasy-actionable role or availability development.",
    "validation_failures": [],
-   "cost_usd": 0.00439
+   "cost_usd": 0.00378
   }
  ]
 }

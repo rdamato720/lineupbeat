@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 248,
+ "count": 252,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -2737,6 +2737,50 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00439
+  },
+  {
+   "candidate_id": "mobile:article:ec61e2836822e36f9d44",
+   "player_id": "00-0041490",
+   "source_url": "https://steelersdepot.com/2026/08/can-eli-heidenreich-make-one-final-push-for-steelers-53-man-roster/",
+   "attempted_at": "2026-08-27T09:45:30+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T09:45:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00448
+  },
+  {
+   "candidate_id": "mobile:article:9e3c0c1394ca7e49dc48",
+   "player_id": "00-0037228",
+   "source_url": "https://steelersdepot.com/2026/08/can-eli-heidenreich-make-one-final-push-for-steelers-53-man-roster/",
+   "attempted_at": "2026-08-27T09:45:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T09:45:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005582
+  },
+  {
+   "candidate_id": "mobile:article:a20c104f1c1558e55677",
+   "player_id": "00-0036139",
+   "source_url": "https://steelersdepot.com/2026/08/can-eli-heidenreich-make-one-final-push-for-steelers-53-man-roster/",
+   "attempted_at": "2026-08-27T09:45:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T09:45:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.008166
+  },
+  {
+   "candidate_id": "mobile:x:12667b5124527e479099",
+   "player_id": "00-0034855",
+   "source_url": "https://x.com/PewterReport/status/2092899928104452211",
+   "attempted_at": "2026-08-27T09:45:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T09:45:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00378
   }
  ]
 }
