@@ -1,0 +1,138 @@
+name: Wire V2 dark launch
+
+on:
+  workflow_dispatch:
+    inputs:
+      hours:
+        description: "Evidence lookback in hours (1-48)"
+        required: true
+        default: "24"
+      max_calls:
+        description: "Maximum ChatGPT event decisions (1-40)"
+        required: true
+        default: "30"
+      cap_usd:
+        description: "Maximum estimated model spend (0-1 USD)"
+        required: true
+        default: "0.20"
+
+concurrency:
+  group: wire-v2-dark-launch
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      issues: write
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      BEATWIRE_X_PROVIDER: ${{ vars.BEATWIRE_X_PROVIDER }}
+      SORSA_API_KEY: ${{ secrets.SORSA_API_KEY }}
+      TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+      TAPI_DAILY_CAP: ${{ vars.WIRE_MOBILE_TAPI_DAILY_CAP_USD }}
+      V2_HOURS: ${{ inputs.hours }}
+      V2_MAX_CALLS: ${{ inputs.max_calls }}
+      V2_CAP_USD: ${{ inputs.cap_usd }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            wire-v2-x.db
+            wire-v2-state.json
+          key: wire-v2-state-${{ github.run_id }}
+          restore-keys: wire-v2-state-
+
+      - name: Validate dark-launch limits
+        run: |
+          python - <<'PY'
+          import os
+          from decimal import Decimal, InvalidOperation
+          try:
+              hours = float(os.environ["V2_HOURS"])
+              calls = int(os.environ["V2_MAX_CALLS"])
+              cap = Decimal(os.environ["V2_CAP_USD"])
+              x_cap = Decimal(os.environ["TAPI_DAILY_CAP"])
+          except (KeyError, ValueError, InvalidOperation):
+              raise SystemExit("V2 hours, calls and dollar caps must be configured")
+          if not 1 <= hours <= 48:
+              raise SystemExit("V2_HOURS must be 1-48")
+          if not 1 <= calls <= 40:
+              raise SystemExit("V2_MAX_CALLS must be 1-40")
+          if not Decimal("0") < cap <= Decimal("1"):
+              raise SystemExit("V2_CAP_USD must be >0 and <=1")
+          if not Decimal("0") < x_cap <= Decimal("25"):
+              raise SystemExit("TAPI_DAILY_CAP must be >0 and <=25")
+          print(f"dark launch: {hours}h, {calls} calls, ${cap} model cap")
+          PY
+
+      - name: Offline V2 gates
+        run: |
+          python scripts/test_wire_v2.py
+          python scripts/test_wire_mobile.py
+          python scripts/wire_health.py --check
+
+      - name: Authenticate ChatGPT before source reads
+        run: |
+          python - <<'PY'
+          from wire.v2_draft import OpenAIV2DraftProvider
+          OpenAIV2DraftProvider().authenticate()
+          print("Wire V2 provider authenticated; 0 Responses API calls")
+          PY
+
+      - name: Capture article and X evidence
+        run: |
+          python scripts/wire_backfill.py --discover --report --hours "$V2_HOURS"
+          python scripts/wire_extract.py --limit 3000
+          python scripts/wire_inclusive_review.py --hours "$V2_HOURS"
+          python -m beatwire.cli --db wire-v2-x.db run --sport nfl \
+            --kind twitterapi --capture-only \
+            --tapi-daily-cap "$TAPI_DAILY_CAP"
+
+      - name: Draft one decision per event
+        run: |
+          python scripts/wire_v2_draft.py --hours "$V2_HOURS" \
+            --max-calls "$V2_MAX_CALLS" --cap "$V2_CAP_USD" \
+            --state wire-v2-state.json
+          python scripts/wire_v2_inbox.py
+
+      - name: Upload exact dark-launch review
+        uses: actions/upload-artifact@v4
+        with:
+          name: wire-v2-dark-${{ github.run_id }}
+          path: |
+            data/wire_v2_dark_batch.json
+            data/wire_v2_dark_inbox.md
+          if-no-files-found: error
+
+      - name: Open review-only issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create wire-v2-dark --color 4f46e5 \
+            --description "Wire V2 review only; cannot publish" --force
+          gh issue create --title "Wire V2 dark launch — run ${{ github.run_number }}" \
+            --body-file data/wire_v2_dark_inbox.md --label wire-v2-dark \
+            --assignee rdamato720
+
+      - name: Save isolated V2 cursors
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            wire-v2-x.db
+            wire-v2-state.json
+          key: wire-v2-state-${{ github.run_id }}

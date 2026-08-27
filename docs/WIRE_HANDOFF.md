@@ -749,6 +749,38 @@ have repository write permission, and branch protection must permit the
 trusted Actions bot to push the approved publication commit to `main`; if it
 does not, the job fails before any deploy is dispatched.
 
+### 17.2 Event-centric Wire V2 dark launch
+
+`.github/workflows/wire-v2-dark-launch.yml` is a manual, review-only comparison
+path. It has `contents: read` permission, no schedule, no publication-file
+reference and no approval workflow. It must remain incapable of publishing
+until Ralph explicitly approves a cutover after live comparison.
+
+V2 reuses the established article and X capture/identity layer, then replaces
+the downstream candidate maze with player-event records in `wire/v2.py`.
+Reports are clustered before provider spend; one detailed primary report goes
+to ChatGPT and every matching report remains attached as provenance. The V2
+editor chooses `PROPOSE`, `IGNORE` or `ABSTAIN` once per event. Deterministic
+safeguards are intentionally narrow: closed output fields, stable player
+identity, HTTPS sources and one exact evidence excerpt. V2 does not apply the
+legacy mechanism-specific wording validators.
+
+The workflow requires explicit 1-48 hour, 1-40 call and $0-$1 model ceilings.
+It stores source ids and the isolated X cursor in an Actions cache rather than
+committing queue state to `main`. Its output is an artifact plus a
+`wire-v2-dark` issue. That issue accepts editorial notes such as `keep 1` for
+evaluation only; no job consumes those comments and no encoded publication
+manifest is present.
+
+Required V2 gates:
+
+```bash
+python scripts/test_wire_v2.py
+python scripts/test_wire_mobile.py
+python scripts/test_wire_review.py
+python scripts/wire_health.py --check
+```
+
 ## 18. Secrets and provider configuration
 
 Current workflow secrets/variables referenced by the broader project include:
