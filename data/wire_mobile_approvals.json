@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-approval-ledger-v1",
- "count": 9,
+ "count": 10,
  "receipts": [
   {
    "receipt_id": "mobile:49f74b01c0954bb71f23e5fb8672a9a43dc3afb5edeb0b0b4bf6f7e24b35060f:5403509377",
@@ -478,6 +478,52 @@
      "evidence_sha256": "fef438134d68153d8e4b446ad5de75658d71d2ced72e550aa3e3f5aefc9d31d5",
      "public_summary_sha256": "e892d6ae7ef99ae3b584be4301f988f5ff19ebb072462d26db11a1345ff6f8c2",
      "lineupbeat_impact_sha256": "23e6776d4eab4e985b6fcbc61b9f756a7cd8e50734610ade670790a5c23105ed"
+    }
+   ]
+  },
+  {
+   "receipt_id": "mobile:16533117f518d0685e791a9ff4273d224e50331fef037b141b7649267a24ea30:5432651989",
+   "batch_id": "16533117f518d0685e791a9ff4273d224e50331fef037b141b7649267a24ea30",
+   "issue_number": 62,
+   "comment_id": "5432651989",
+   "approved_by": "Ralph Damato",
+   "approved_by_handle": "rdamato720",
+   "approved_at": "2026-08-27T00:17:22Z",
+   "approval_statement": "reject 1,2",
+   "manifest_sha256": "16533117f518d0685e791a9ff4273d224e50331fef037b141b7649267a24ea30",
+   "publication_sha256_at_draft": "fc9bf97cda510a4fb44c576f58b09247d001cf08cc0085ec40b12cc90c838072",
+   "publication_sha256_before": "8dd26a83eea261c1523e7041b84282e3f8d8092d8589b370963b58d8a21985cf",
+   "publication_sha256_after": "8dd26a83eea261c1523e7041b84282e3f8d8092d8589b370963b58d8a21985cf",
+   "publication_store_changed_since_draft": true,
+   "publication_count_before": 81,
+   "publication_count_after": 81,
+   "publications_applied": 0,
+   "outcomes": [
+    {
+     "card_number": 1,
+     "candidate_id": "mobile:x:73290ced0fbeccbe8fe8",
+     "player_id": "00-0031235",
+     "player_name": "Odell Beckham Jr.",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Odell Beckham Jr. caught a back-end-zone touchdown from Jameis Winston and had a red-zone reception from Jaxson Dart, Pat Leonard reported.",
+     "lineupbeat_impact": "The reported red-zone catches are a modest positive for Beckham’s scoring-use outlook, but they were isolated practice plays and do not establish a regular role or target volume.",
+     "evidence_sha256": "f3c75fa8536a661a623ca9c9a13508842820fc5209b1b74bd7e337abeabca215",
+     "public_summary_sha256": "73f5e4745c2ee9500f41a7b6b9d72bafe0acafccba4d08306363c5740a868aa3",
+     "lineupbeat_impact_sha256": "0b194e1a799e81d753bfd13b3c015812e2f146525c74a856df174cd464161f18"
+    },
+    {
+     "card_number": 2,
+     "candidate_id": "mobile:x:c6a384652261762e07ef",
+     "player_id": "00-0040691",
+     "player_name": "Jaxson Dart",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Jaxson Dart had multiple deep completions and accounted for five touchdowns in the Giants’ goal-line work, according to Art Stapleton.",
+     "lineupbeat_impact": "Stapleton’s description of Dart as Giants QB1 and his productive goal-line session support short-term starting-QB momentum, but this is one practice report without workload or season-long role certainty.",
+     "evidence_sha256": "b361bc7755533f0ac2598306f559f83fbe7fa68d1db3a10784bfecbc82fdf29e",
+     "public_summary_sha256": "530a1a880bcd191c1472047481a6c80a632bc061967cbe21ea323e4264f53c14",
+     "lineupbeat_impact_sha256": "764b895986e82f3422bae52d0a0f37d92efb0c0e5f212113231d9bc25bac9b0b"
     }
    ]
   }
