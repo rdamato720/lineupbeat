@@ -18,7 +18,8 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from wire import v2
-from wire.v2_draft import build_prompt, validate
+from wire import players
+from wire.v2_draft import SYSTEM, build_prompt, validate
 import wire_v2_draft
 import wire_v2_inbox
 
@@ -88,6 +89,14 @@ class WireV2Tests(unittest.TestCase):
         self.assertFalse(v2.same_event(injured, returned)[0])
         self.assertEqual(len(v2.cluster([injured, returned])), 2)
 
+    def test_charge_rewrites_merge_even_when_wording_differs(self):
+        first = candidate(
+            "first", "Alec Pierce was charged with misdemeanor battery.", 0)
+        second = candidate(
+            "second", "Court records list battery charges against Alec Pierce.", 5)
+        self.assertTrue(v2.same_event(first, second)[0])
+        self.assertEqual(len(v2.cluster([first, second])), 1)
+
     def test_ambiguous_bridge_cannot_merge_injury_and_return(self):
         injured = candidate(
             "injury", "Alec Pierce left practice hurt with an ankle injury.", 0)
@@ -118,6 +127,44 @@ class WireV2Tests(unittest.TestCase):
         bad = {**good, "evidence_basis": "Pierce returned to full practice."}
         self.assertIn("evidence_basis is not an exact supplied excerpt",
                       validate(bad, event))
+
+    def test_validator_rejects_stronger_diagnosis_than_primary_source(self):
+        official = candidate("official", "Alec Pierce suffered a knee injury.")
+        official["ownership"] = "OFFICIAL"
+        analysis = candidate(
+            "analysis", "Pierce reportedly suffered a season-ending injury.", 1)
+        event = v2.cluster([official, analysis])[0]
+        result = proposal("Pierce reportedly suffered a season-ending injury.")
+        result["what_changed"] = "Alec Pierce suffered a season-ending injury."
+        self.assertIn("season-ending is not supported by the primary source",
+                      validate(result, event))
+
+    def test_validator_rejects_secondary_beneficiary_filler(self):
+        event = v2.cluster([candidate(
+            "one", "The Colts released another receiver; Alec Pierce remains.")])[0]
+        result = proposal(
+            "The Colts released another receiver; Alec Pierce remains.")
+        result["what_changed"] = (
+            "Alec Pierce now has one fewer receiver to beat for snaps.")
+        self.assertIn("speculative secondary-beneficiary impact",
+                      validate(result, event))
+
+    def test_prompt_rejects_unexplained_absence_and_secondary_inference(self):
+        self.assertIn("unexplained single-practice", SYSTEM)
+        self.assertIn("speculative secondary-beneficiary cards", SYSTEM)
+
+    def test_final_proposal_dedupe_catches_same_player_event(self):
+        left = {
+            "player_id": "00-pierce", "event_type": "SUSPENSION",
+            "what_changed": "Alec Pierce was charged with misdemeanor battery.",
+            "evidence_basis": "Court records show a misdemeanor battery charge.",
+        }
+        right = {
+            "player_id": "00-pierce", "event_type": "SUSPENSION",
+            "what_changed": "Court records charge Alec Pierce with battery.",
+            "evidence_basis": "Pierce faces a misdemeanor battery charge.",
+        }
+        self.assertTrue(wire_v2_draft.duplicate_proposal(left, right))
 
     def test_one_provider_call_per_event_and_cache_state(self):
         reports = [

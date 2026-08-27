@@ -106,6 +106,25 @@ def card_from(event: dict, result: dict) -> dict:
     }
 
 
+def _proposal_tokens(card: dict) -> set[str]:
+    text = f"{card.get('what_changed', '')} {card.get('evidence_basis', '')}"
+    return set(v2.mobile_dedupe.normalized(text).split()) - {
+        "the", "a", "an", "and", "or", "to", "of", "in", "for", "with",
+        "has", "have", "was", "were", "is", "are", "on", "after",
+    }
+
+
+def duplicate_proposal(left: dict, right: dict) -> bool:
+    """Catch same-player/event rewrites that survive pre-call clustering."""
+    if (left.get("player_id") != right.get("player_id") or
+            left.get("event_type") != right.get("event_type")):
+        return False
+    a, b = _proposal_tokens(left), _proposal_tokens(right)
+    if not a or not b:
+        return False
+    return len(a & b) / len(a | b) >= 0.42
+
+
 def run(args, provider=None) -> dict:
     provider = provider or OpenAIV2DraftProvider(model=args.model)
     provider.authenticate()
@@ -154,7 +173,11 @@ def run(args, provider=None) -> dict:
         if failures:
             decision = "VALIDATION_FAILED"
         if decision == "PROPOSE":
-            proposals.append(card_from(event, result))
+            card = card_from(event, result)
+            if any(duplicate_proposal(card, prior) for prior in proposals):
+                decision = "DUPLICATE_PROPOSAL"
+            else:
+                proposals.append(card)
         outcomes.append({
             "event_id": event["event_id"], "player": event["player"],
             "team": event["team"], "source_count": event["source_count"],
