@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 208,
+ "count": 228,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -2297,6 +2297,226 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003918
+  },
+  {
+   "candidate_id": "mobile:onsi:e668c81145a812c8b652",
+   "player_id": "00-0035676",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/kayshon-boutte-pens-heartfelt-thank-you-to-patriots-after-trade-texans",
+   "attempted_at": "2026-08-27T00:34:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:34:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004916
+  },
+  {
+   "candidate_id": "mobile:onsi:cc101eec4cf860e6cdb8",
+   "player_id": "00-0034857",
+   "source_url": "https://www.si.com/nfl/bills/onsi/three-bold-predictions-for-buffalo-bills-preseason-finale-vs-steelers",
+   "attempted_at": "2026-08-27T00:34:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:34:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004422
+  },
+  {
+   "candidate_id": "mobile:onsi:d5cfd73b67d4a596af3f",
+   "player_id": "00-0037132",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/the-good-and-not-so-good-from-final-day-of-eagles-camp-jalen-hurts-inconsistent-01m102wmb6k4",
+   "attempted_at": "2026-08-27T00:34:59+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003884
+  },
+  {
+   "candidate_id": "mobile:onsi:cd418f05dd7a639a03c7",
+   "player_id": "00-0034351",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/the-good-and-not-so-good-from-final-day-of-eagles-camp-jalen-hurts-inconsistent-01m102wmb6k4",
+   "attempted_at": "2026-08-27T00:35:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003842
+  },
+  {
+   "candidate_id": "mobile:onsi:b429c5016ad3185a4741",
+   "player_id": "00-0040024",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/the-good-and-not-so-good-from-final-day-of-eagles-camp-jalen-hurts-inconsistent-01m102wmb6k4",
+   "attempted_at": "2026-08-27T00:35:05+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003978
+  },
+  {
+   "candidate_id": "mobile:onsi:abc8685074a51eebc133",
+   "player_id": "00-0036912",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/the-good-and-not-so-good-from-final-day-of-eagles-camp-jalen-hurts-inconsistent-01m102wmb6k4",
+   "attempted_at": "2026-08-27T00:35:08+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004596
+  },
+  {
+   "candidate_id": "mobile:onsi:328e9cc3244e5edc7fee",
+   "player_id": "00-0036980",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/the-good-and-not-so-good-from-final-day-of-eagles-camp-jalen-hurts-inconsistent-01m102wmb6k4",
+   "attempted_at": "2026-08-27T00:35:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00379
+  },
+  {
+   "candidate_id": "mobile:onsi:ca8cba71bb598fa5770b",
+   "player_id": "00-0036389",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/the-good-and-not-so-good-from-final-day-of-eagles-camp-jalen-hurts-inconsistent-01m102wmb6k4",
+   "attempted_at": "2026-08-27T00:35:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003948
+  },
+  {
+   "candidate_id": "mobile:x:a9491d354e625266f889",
+   "player_id": "00-0041027",
+   "source_url": "https://x.com/BoBrack/status/2092768945803821529",
+   "attempted_at": "2026-08-27T00:35:15+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-27T00:35:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003722
+  },
+  {
+   "candidate_id": "mobile:x:412bd6e73b97fa43e47e",
+   "player_id": "00-0038606",
+   "source_url": "https://x.com/_John_Shipley/status/2092768512473174457",
+   "attempted_at": "2026-08-27T00:35:17+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00432
+  },
+  {
+   "candidate_id": "mobile:x:13b9fa4865f42dba2171",
+   "player_id": "00-0037239",
+   "source_url": "https://x.com/Kat_Terrell/status/2092768308655271963",
+   "attempted_at": "2026-08-27T00:35:21+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003556
+  },
+  {
+   "candidate_id": "mobile:x:a00c3487e4e889a265fd",
+   "player_id": "00-0033077",
+   "source_url": "https://x.com/clarencehilljr/status/2092767402429690306",
+   "attempted_at": "2026-08-27T00:35:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004204
+  },
+  {
+   "candidate_id": "mobile:x:bf17405009e6e2327fed",
+   "player_id": "00-0036358",
+   "source_url": "https://x.com/clarencehilljr/status/2092767402429690306",
+   "attempted_at": "2026-08-27T00:35:25+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003718
+  },
+  {
+   "candidate_id": "mobile:x:06b95ebd1f054629e899",
+   "player_id": "00-0037247",
+   "source_url": "https://x.com/clarencehilljr/status/2092767402429690306",
+   "attempted_at": "2026-08-27T00:35:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:29+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003786
+  },
+  {
+   "candidate_id": "mobile:x:5b28e0291c31b71ff85a",
+   "player_id": "00-0040676",
+   "source_url": "https://x.com/PaulKuharskyNFL/status/2092765788168163373",
+   "attempted_at": "2026-08-27T00:35:29+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00477
+  },
+  {
+   "candidate_id": "mobile:x:7e942470570521b0e6de",
+   "player_id": "00-0038996",
+   "source_url": "https://x.com/RobDemovsky/status/2092764918562816418",
+   "attempted_at": "2026-08-27T00:35:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004284
+  },
+  {
+   "candidate_id": "mobile:x:9bb9a1644c87897aaf5d",
+   "player_id": "00-0037239",
+   "source_url": "https://x.com/RossJacksonNOLA/status/2092764768062820599",
+   "attempted_at": "2026-08-27T00:35:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00403
+  },
+  {
+   "candidate_id": "mobile:x:873273dfd54554d48b83",
+   "player_id": "00-0037239",
+   "source_url": "https://x.com/Kat_Terrell/status/2092764698169020804",
+   "attempted_at": "2026-08-27T00:35:37+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T00:35:40+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004166
+  },
+  {
+   "candidate_id": "mobile:onsi:01e760ff847548e3791e",
+   "player_id": "00-0033246",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/the-good-and-not-so-good-from-final-day-of-eagles-camp-jalen-hurts-inconsistent-01m102wmb6k4",
+   "attempted_at": "2026-08-27T00:35:40+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003842
+  },
+  {
+   "candidate_id": "mobile:onsi:f0d99b503f7511f13788",
+   "player_id": "00-0036271",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/the-good-and-not-so-good-from-final-day-of-eagles-camp-jalen-hurts-inconsistent-01m102wmb6k4",
+   "attempted_at": "2026-08-27T00:35:43+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T00:35:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004114
   }
  ]
 }
