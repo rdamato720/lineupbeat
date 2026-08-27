@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Build an inclusion-first On SI/X human-review catalog.
+"""Build an inclusion-first article/X human-review catalog.
 
-This is intentionally not the semantic publication funnel. Every complete On
-SI article in the publisher-time window stays visible, including opinion,
+This is intentionally not the semantic publication funnel. Every complete,
+eligible article in the publisher-time window stays visible, including opinion,
 speculation, rankings, ADP arguments, isolated plays and relayed reporting.
 The output makes zero provider calls and writes zero publications.
 """
@@ -39,8 +39,7 @@ def parse_time(value: str):
 def article_rows(store: WireStore, cutoff: datetime, end: datetime,
                  exception_urls: set[str]):
     sources = {s.source_id: s for s in registry.load()
-               if s.source_class in (registry.SI_ONSI,
-                                     registry.SI_ONSI_ANALYSIS)}
+               if s.active and s.adapter and not s.paid}
     rows = []
     for row in store.conn.execute(
             "SELECT * FROM wire_source_items ORDER BY published_at DESC"):
@@ -52,7 +51,8 @@ def article_rows(store: WireStore, cutoff: datetime, end: datetime,
             continue
         rows.append({**dict(row), "manual_exception": forced,
                      "source_name": sources[row["source_id"]].source_name,
-                     "source_ownership": sources[row["source_id"]].source_ownership})
+                     "source_ownership": sources[row["source_id"]].source_ownership,
+                     "source_class": sources[row["source_id"]].source_class})
     return rows
 
 
@@ -67,8 +67,7 @@ def evidence_by_url(store: WireStore):
 
 def exclusion_rows(store: WireStore, cutoff: datetime, end: datetime):
     sources = {s.source_id: s for s in registry.load()
-               if s.source_class in (registry.SI_ONSI,
-                                     registry.SI_ONSI_ANALYSIS)}
+               if s.active and s.adapter and not s.paid}
     out = []
     try:
         rows = store.conn.execute(
@@ -90,6 +89,7 @@ def exclusion_rows(store: WireStore, cutoff: datetime, end: datetime):
         out.append({
             "source_id": row["source_id"], "source_name": src.source_name,
             "source_ownership": src.source_ownership,
+            "source_class": src.source_class,
             "canonical_url": row["canonical_url"],
             "headline": row["headline"], "author": row["author"],
             "published_at": row["last_seen_at"],
@@ -110,6 +110,7 @@ def manual_x(items: list[dict]):
             "source_id": item["source_id"],
             "source_name": item["source_name"],
             "source_ownership": item["source_ownership"],
+            "source_class": "MANUAL_X",
             "canonical_url": item["url"],
             "headline": item["text"],
             "author": item["author"],
@@ -210,6 +211,11 @@ def main():
             "discovered_not_captured": sum(
                 r.get("extraction_status") == "DISCOVERED_NOT_CAPTURED"
                 for r in articles),
+            "sources": len({r.get("source_id") for r in articles
+                            if r.get("source_id")}),
+            "sources_with_evidence": len({r.get("source_id") for r in articles
+                                          if r.get("source_id") and
+                                          r.get("evidence")}),
         },
         "articles": articles,
     }

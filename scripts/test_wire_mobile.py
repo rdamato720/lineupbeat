@@ -310,18 +310,33 @@ class MobileWireTests(unittest.TestCase):
         apply_script = (ROOT / "scripts" / "wire_mobile_approve.py").read_text()
         self.assertIn("visible issue wording does not match", apply_script)
 
-    def test_onsi_candidates_receive_reserved_calls_before_newer_x(self):
+    def test_article_candidates_receive_reserved_calls_before_newer_x(self):
         rows = [
             {"candidate_id": "x-new", "origin": "X",
              "published_at": "2026-08-26T18:10:00+00:00"},
-            {"candidate_id": "onsi", "origin": "ONSI",
+            {"candidate_id": "local", "origin": "ARTICLE",
              "published_at": "2026-08-26T18:00:00+00:00"},
             {"candidate_id": "x-old", "origin": "X",
              "published_at": "2026-08-26T17:50:00+00:00"},
         ]
         ordered = mobile_draft_script.prioritize_candidates(rows, max_calls=20)
         self.assertEqual([row["candidate_id"] for row in ordered],
-                         ["onsi", "x-new", "x-old"])
+                         ["local", "x-new", "x-old"])
+
+    def test_inclusive_review_is_not_limited_to_si_sources(self):
+        source = (ROOT / "scripts" / "wire_inclusive_review.py").read_text()
+        self.assertIn("s.active and s.adapter and not s.paid", source)
+        self.assertNotIn("registry.SI_ONSI,", source)
+
+    def test_zero_card_batches_are_banked_with_diagnostics(self):
+        workflow = (ROOT / ".github" / "workflows" /
+                    "wire-monitor.yml").read_text()
+        self.assertIn(
+            'steps.draft.outcome }}" = "success" ] && [ -f data/wire_mobile_batch.json',
+            workflow)
+        script = (ROOT / "scripts" / "wire_mobile_draft.py").read_text()
+        self.assertIn('"held_for_review"', script)
+        self.assertIn('"article_sources_without_candidates"', script)
 
     def test_obj_isolated_red_zone_highlight_is_not_card_worthy(self):
         candidate = {

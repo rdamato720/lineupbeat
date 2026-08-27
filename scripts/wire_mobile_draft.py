@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draft an inclusion-first On SI/X mobile review batch.
+"""Draft an inclusion-first article/X mobile review batch.
 
 This script spends only inside explicit call and dollar ceilings.  It records
 an attempted candidate before asking the provider, but it never records human
@@ -14,7 +14,7 @@ import json
 import re
 import sqlite3
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -24,6 +24,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import wire_publication_preview as publication_preview
 from beatwire.registry import Registry as BeatRegistry
 from wire import mobile_dedupe, players, public_summary, relevance, semantic
+from wire import registry as article_registry
 from wire.mobile_approval import MAX_CARDS
 from wire.mobile_draft import OpenAIMobileDraftProvider, redundant_outlet_lead
 from wire.public_labels import DIRECTION_LABELS
@@ -39,7 +40,7 @@ SEEN = ROOT / "data" / "wire_mobile_seen.json"
 SCHEMA = "wire-mobile-batch-v1"
 SEEN_SCHEMA = "wire-mobile-seen-v1"
 LABEL = DIRECTION_LABELS
-ONSI_RESERVED_CALLS = 8
+ARTICLE_RESERVED_CALLS = 8
 
 MULTI_PRACTICE_PATTERN = re.compile(
     r"(?i)\b(across|over|during)\s+(?:the\s+)?(?:last\s+|past\s+|prior\s+)?"
@@ -115,14 +116,12 @@ def published_cards() -> list[dict]:
     return list(json.loads(PUBLICATIONS.read_text()).get("publications") or [])
 
 
-def onsi_candidates(registry, cutoff: datetime) -> list[dict]:
+def article_candidates(registry, cutoff: datetime) -> list[dict]:
     if not INCLUSIVE.exists():
         return []
     payload = json.loads(INCLUSIVE.read_text())
     grouped: dict[tuple[str, str], dict] = {}
     for article in payload.get("articles") or []:
-        if "si.com/" not in str(article.get("canonical_url") or "").lower():
-            continue
         stamp = parse_time(article.get("published_at"))
         if stamp is None or stamp < cutoff:
             continue
@@ -138,15 +137,23 @@ def onsi_candidates(registry, cutoff: datetime) -> list[dict]:
             player = matches[0]
             url = str(article.get("canonical_url") or "")
             key = (url, player.player_id)
+            # Preserve historical SI ids so the source expansion does not
+            # replay SI evidence that the monitor already reviewed.
+            candidate_prefix = (
+                "mobile:onsi:" if "si.com/" in url.lower()
+                else "mobile:article:"
+            )
             row = grouped.setdefault(key, {
-                "candidate_id": "mobile:onsi:" + digest(url, player.player_id),
+                "candidate_id": candidate_prefix + digest(url, player.player_id),
                 "player": player.full_name, "player_id": player.player_id,
                 "team": player.team, "position": player.position,
-                "source_name": str(article.get("source_name") or "On SI"),
+                "source_name": str(article.get("source_name") or "Article source"),
+                "source_id": str(article.get("source_id") or ""),
+                "source_class": str(article.get("source_class") or ""),
                 "ownership": str(article.get("source_ownership") or "INDEPENDENT"),
-                "author": str(article.get("author") or "On SI"),
+                "author": str(article.get("author") or "Article source"),
                 "source_url": url, "published_at": stamp.isoformat(),
-                "evidence_parts": [], "origin": "ONSI",
+                "evidence_parts": [], "origin": "ARTICLE",
             })
             text = str(evidence.get("evidence_text") or "").strip()
             if text and text not in row["evidence_parts"]:
@@ -214,6 +221,7 @@ def x_candidates(registry, cutoff: datetime) -> list[dict]:
                 "player": player.full_name, "player_id": player.player_id,
                 "team": player.team, "position": player.position,
                 "source_name": source.outlet or "X",
+                "source_id": source.id, "source_class": "X",
                 "ownership": "INDEPENDENT", "author": source.name or source.handle,
                 "source_url": str(raw["url"]), "published_at": stamp.isoformat(),
                 "evidence": evidence[:6000], "origin": "X",
@@ -237,18 +245,18 @@ def relevance_filter(rows: list[dict], registry: dict) -> tuple[list[dict], list
 
 
 def prioritize_candidates(rows: list[dict], max_calls: int) -> list[dict]:
-    """Reserve early provider calls for On SI without discarding recency.
+    """Reserve early provider calls for articles without discarding recency.
 
     Capture combines article candidates with a much faster X stream. A single
     newest-first queue let X consume the entire call ceiling before an article
-    published minutes earlier could be interpreted. Put up to eight newest On
-    SI candidates first, then return to a normal newest-first queue.
+    published minutes earlier could be interpreted. Put up to eight newest
+    article candidates first, then return to a normal newest-first queue.
     """
     newest = sorted(rows, key=lambda row: row["published_at"], reverse=True)
-    reserved = min(ONSI_RESERVED_CALLS, max_calls)
-    onsi = [row for row in newest if row.get("origin") == "ONSI"]
-    priority_ids = {row["candidate_id"] for row in onsi[:reserved]}
-    return onsi[:reserved] + [
+    reserved = min(ARTICLE_RESERVED_CALLS, max_calls)
+    articles = [row for row in newest if row.get("origin") == "ARTICLE"]
+    priority_ids = {row["candidate_id"] for row in articles[:reserved]}
+    return articles[:reserved] + [
         row for row in newest if row["candidate_id"] not in priority_ids
     ]
 
@@ -366,7 +374,7 @@ def main() -> int:
     generated = now_utc()
     cutoff = generated - timedelta(hours=args.hours)
     registry = players.load()
-    candidates = onsi_candidates(registry, cutoff) + x_candidates(registry, cutoff)
+    candidates = article_candidates(registry, cutoff) + x_candidates(registry, cutoff)
     candidates.sort(key=lambda row: row["published_at"], reverse=True)
     seen = load_seen()
     save_seen(seen)
@@ -455,10 +463,21 @@ def main() -> int:
         save_seen(seen)
         outcome = {
             "candidate_id": candidate["candidate_id"], "player": candidate["player"],
-            "origin": candidate["origin"], "decision": status,
+            "player_id": candidate["player_id"], "team": candidate["team"],
+            "origin": candidate["origin"], "source_id": candidate.get("source_id", ""),
+            "source_name": candidate["source_name"],
+            "source_url": candidate["source_url"], "decision": status,
             "reason": result.get("reason", ""), "validation_failures": errors,
             "cost_usd": round(meta["cost_usd"], 6),
         }
+        if status == "VALIDATION_FAILED":
+            outcome["held_for_review"] = {
+                "evidence": candidate["evidence"],
+                "public_summary": result.get("public_summary", ""),
+                "lineupbeat_impact": result.get("lineupbeat_impact", ""),
+                "direction": result.get("direction", ""),
+                "mechanism": result.get("mechanism", ""),
+            }
         if attempt.get("duplicate_of"):
             outcome.update({"duplicate_of": attempt["duplicate_of"],
                             "dedupe_detail": attempt["dedupe_detail"]})
@@ -466,6 +485,17 @@ def main() -> int:
         outcomes_by_id[candidate["candidate_id"]] = outcome
         save_seen(seen)
 
+    outcome_counts = Counter(row["decision"] for row in outcomes)
+    source_counts = Counter(row.get("source_id") or row["source_name"]
+                            for row in candidates)
+    team_counts = Counter(row["team"] for row in candidates)
+    all_teams = sorted({player.team for player in registry.players if player.team})
+    eligible_article_sources = sorted(
+        source.source_id for source in article_registry.load()
+        if source.active and source.adapter and not source.paid)
+    article_sources_with_candidates = sorted({
+        row.get("source_id") for row in candidates
+        if row.get("origin") == "ARTICLE" and row.get("source_id")})
     payload = {
         "schema_version": SCHEMA,
         "generated_at": generated.replace(microsecond=0).isoformat(),
@@ -478,6 +508,17 @@ def main() -> int:
         "candidate_count": len(candidates), "cards": cards,
         "unreviewed_count": max(0, len(candidates) - calls),
         "relevance_suppressed": len(relevance_suppressed),
+        "validation_failed": outcome_counts.get("VALIDATION_FAILED", 0),
+        "outcome_counts": dict(sorted(outcome_counts.items())),
+        "coverage": {
+            "source_candidate_counts": dict(sorted(source_counts.items())),
+            "team_candidate_counts": dict(sorted(team_counts.items())),
+            "teams_without_candidates": sorted(set(all_teams) - set(team_counts)),
+            "eligible_article_sources": eligible_article_sources,
+            "article_sources_with_candidates": article_sources_with_candidates,
+            "article_sources_without_candidates": sorted(
+                set(eligible_article_sources) - set(article_sources_with_candidates)),
+        },
         "event_duplicates": sum(row["decision"] in {
             "DUPLICATE_EVENT", "SUPERSEDED_EVENT"} for row in outcomes),
         "outcomes": outcomes,
