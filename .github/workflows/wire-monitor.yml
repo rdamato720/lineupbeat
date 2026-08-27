@@ -30,7 +30,7 @@ jobs:
       SORSA_API_KEY: ${{ secrets.SORSA_API_KEY }}
       TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
       # The dollar ceiling remains the binding spend limit. Twenty attempts
-      # prevents a handful of newer X posts from starving captured On SI work.
+      # prevents a handful of newer X posts from starving captured article work.
       MOBILE_MAX_CALLS: 20
       MOBILE_RUN_CAP: ${{ vars.WIRE_MOBILE_RUN_CAP_USD }}
       TAPI_DAILY_CAP: ${{ vars.WIRE_MOBILE_TAPI_DAILY_CAP_USD }}
@@ -107,7 +107,7 @@ jobs:
           print("mobile draft provider authenticated; 0 Responses API calls")
           PY
 
-      - name: Capture On SI and X
+      - name: Capture eligible articles and X
         run: |
           python scripts/wire_backfill.py --discover --report --hours 2
           python scripts/wire_extract.py --limit 1000
@@ -135,8 +135,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/wire_mobile_seen.json
-          if [ "${{ steps.draft.outcome }}" = "success" ] && [ "${{ steps.draft.outputs.cards }}" != "0" ] && [ -f data/wire_mobile_batch.json ]; then
+          if [ "${{ steps.draft.outcome }}" = "success" ] && [ -f data/wire_mobile_batch.json ]; then
             git add data/wire_mobile_batch.json
+          fi
+          if [ "${{ steps.draft.outcome }}" = "success" ] && [ "${{ steps.draft.outputs.cards }}" != "0" ]; then
             for path in data/wire_mobile_inbox.json data/wire_mobile_inbox.md; do
               if [ -f "$path" ]; then git add "$path"; fi
             done
