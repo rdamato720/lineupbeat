@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 269,
+ "count": 286,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -2968,6 +2968,193 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004416
+  },
+  {
+   "candidate_id": "mobile:onsi:3c791badfb43e9c6ed6f",
+   "player_id": "00-0038997",
+   "source_url": "https://www.si.com/nfl/colts/onsi/indianapolis-colts-get-long-awaited-alec-pierce-update-before-week-1",
+   "attempted_at": "2026-08-27T16:28:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T16:28:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004734
+  },
+  {
+   "candidate_id": "mobile:onsi:f3f8fe5b02b4c4a74ffb",
+   "player_id": "00-0037664",
+   "source_url": "https://www.si.com/nfl/colts/onsi/indianapolis-colts-get-long-awaited-alec-pierce-update-before-week-1",
+   "attempted_at": "2026-08-27T16:28:21+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-27T16:28:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00391
+  },
+  {
+   "candidate_id": "mobile:onsi:9928bdf76379be433176",
+   "player_id": "00-0031235",
+   "source_url": "https://www.si.com/nfl/giants/onsi/giants-roster-depth-trades-cutdown-decisions-01m11htra8pd",
+   "attempted_at": "2026-08-27T16:28:24+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T16:28:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004294
+  },
+  {
+   "candidate_id": "mobile:onsi:e863affcf24d98645a2d",
+   "player_id": "00-0040126",
+   "source_url": "https://www.si.com/nfl/bears/onsi/bears-players-who-showed-the-most-improvement-during-training-camp",
+   "attempted_at": "2026-08-27T16:28:28+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T16:28:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004368
+  },
+  {
+   "candidate_id": "mobile:onsi:8182a612bb4e0b13a9ec",
+   "player_id": "00-0040735",
+   "source_url": "https://www.si.com/nfl/bears/onsi/bears-players-who-showed-the-most-improvement-during-training-camp",
+   "attempted_at": "2026-08-27T16:28:31+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T16:28:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005228
+  },
+  {
+   "candidate_id": "mobile:onsi:4292d472e4bee0b7469b",
+   "player_id": "00-0039919",
+   "source_url": "https://www.si.com/nfl/bears/onsi/bears-players-who-showed-the-most-improvement-during-training-camp",
+   "attempted_at": "2026-08-27T16:28:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T16:28:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00502
+  },
+  {
+   "candidate_id": "mobile:onsi:adb29793dce9f103173b",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/bears-players-who-showed-the-most-improvement-during-training-camp",
+   "attempted_at": "2026-08-27T16:28:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T16:28:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005242
+  },
+  {
+   "candidate_id": "mobile:onsi:8f329ab72a8e186022c0",
+   "player_id": "00-0040236",
+   "source_url": "https://www.si.com/nfl/bears/onsi/bears-players-who-showed-the-most-improvement-during-training-camp",
+   "attempted_at": "2026-08-27T16:28:43+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T16:28:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005948
+  },
+  {
+   "candidate_id": "mobile:x:02fd503605d628ab40c1",
+   "player_id": "00-0037664",
+   "source_url": "https://x.com/RomeovilleKid/status/2093009523640332790",
+   "attempted_at": "2026-08-27T16:28:48+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T16:28:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005368
+  },
+  {
+   "candidate_id": "mobile:x:145e9f549bf9a8040f7a",
+   "player_id": "00-0038997",
+   "source_url": "https://x.com/RomeovilleKid/status/2093008056837607728",
+   "attempted_at": "2026-08-27T16:28:52+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T16:28:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00469
+  },
+  {
+   "candidate_id": "mobile:x:82ab2c742557f3be0b2b",
+   "player_id": "00-0040128",
+   "source_url": "https://x.com/RomeovilleKid/status/2093008056837607728",
+   "attempted_at": "2026-08-27T16:28:56+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-27T16:28:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004416
+  },
+  {
+   "candidate_id": "mobile:x:2582ec713324526add89",
+   "player_id": "00-0040735",
+   "source_url": "https://x.com/BradBiggs/status/2093008008636735624",
+   "attempted_at": "2026-08-27T16:28:59+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T16:29:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006372
+  },
+  {
+   "candidate_id": "mobile:x:c47d29a59caaf19c6ac4",
+   "player_id": "00-0037664",
+   "source_url": "https://x.com/JoelAErickson/status/2093007255780147485",
+   "attempted_at": "2026-08-27T16:29:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T16:29:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003592
+  },
+  {
+   "candidate_id": "mobile:x:296adfffb2f2b344683d",
+   "player_id": "00-0039144",
+   "source_url": "https://x.com/mattschneidman/status/2093006922861449281",
+   "attempted_at": "2026-08-27T16:29:06+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T16:29:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004758
+  },
+  {
+   "candidate_id": "mobile:x:937d0a66ccf530e616f5",
+   "player_id": "00-0038996",
+   "source_url": "https://x.com/RobDemovsky/status/2093006759304560950",
+   "attempted_at": "2026-08-27T16:29:10+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T16:29:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006594
+  },
+  {
+   "candidate_id": "mobile:x:9590078d4820fb1bb4e3",
+   "player_id": "00-0039918",
+   "source_url": "https://x.com/danwiederer/status/2093006129915707611",
+   "attempted_at": "2026-08-27T16:29:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T16:29:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00468
+  },
+  {
+   "candidate_id": "mobile:onsi:a1f17de488754358ef9b",
+   "player_id": "00-0035228",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/how-to-watch-vikings-preseason-finale-vs-broncos-start-time-channel-who-to-monitor-more-01m11pn826kj",
+   "attempted_at": "2026-08-27T16:29:19+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-27T16:29:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004604
   }
  ]
 }
