@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 252,
+ "count": 269,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -2781,6 +2781,193 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00378
+  },
+  {
+   "candidate_id": "mobile:onsi:99d4bec5b11371c4f5d4",
+   "player_id": "00-0041438",
+   "source_url": "https://www.si.com/nfl/titans/onsi/a-way-too-early-2027-mock-draft-expects-great-news-for-titans-fans-01m11r74a160",
+   "attempted_at": "2026-08-27T14:36:47+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T14:36:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003674
+  },
+  {
+   "candidate_id": "mobile:onsi:ff602857ccd8282e8a17",
+   "player_id": "00-0039040",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/how-should-dolphins-fans-treat-tua-s-return-to-hard-rock-stadium-and-why-is-it-even-a-topic-01m11prrj6bv",
+   "attempted_at": "2026-08-27T14:36:50+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T14:36:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003922
+  },
+  {
+   "candidate_id": "mobile:onsi:178fc97906565f7feda6",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/how-should-dolphins-fans-treat-tua-s-return-to-hard-rock-stadium-and-why-is-it-even-a-topic-01m11prrj6bv",
+   "attempted_at": "2026-08-27T14:36:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T14:36:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003858
+  },
+  {
+   "candidate_id": "mobile:onsi:42d4b3d141fd9e083ab0",
+   "player_id": "00-0036626",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-cuts-5-questions-preseason-finale",
+   "attempted_at": "2026-08-27T14:36:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T14:37:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005426
+  },
+  {
+   "candidate_id": "mobile:onsi:179728a0eac4b441525e",
+   "player_id": "00-0040242",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-cuts-5-questions-preseason-finale",
+   "attempted_at": "2026-08-27T14:37:01+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T14:37:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005512
+  },
+  {
+   "candidate_id": "mobile:onsi:8479140010b138b26b4b",
+   "player_id": "00-0039910",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-cuts-5-questions-preseason-finale",
+   "attempted_at": "2026-08-27T14:37:05+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T14:37:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00527
+  },
+  {
+   "candidate_id": "mobile:onsi:379cc3a59b0c64bcbedd",
+   "player_id": "00-0040164",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-cuts-5-questions-preseason-finale",
+   "attempted_at": "2026-08-27T14:37:09+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T14:37:12+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004838
+  },
+  {
+   "candidate_id": "mobile:onsi:eb9647333e9d26bff9b1",
+   "player_id": "00-0039355",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-cuts-5-questions-preseason-finale",
+   "attempted_at": "2026-08-27T14:37:12+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T14:37:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005394
+  },
+  {
+   "candidate_id": "mobile:x:de731ee374fb064d44cf",
+   "player_id": "00-0037614",
+   "source_url": "https://x.com/mike_e_kaye/status/2092983874380874030",
+   "attempted_at": "2026-08-27T14:37:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T14:37:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005402
+  },
+  {
+   "candidate_id": "mobile:x:d79f467764a98638de47",
+   "player_id": "00-0037664",
+   "source_url": "https://x.com/mchappell51/status/2092982333905264751",
+   "attempted_at": "2026-08-27T14:37:20+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T14:37:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005218
+  },
+  {
+   "candidate_id": "mobile:x:c78b6495221e556decdf",
+   "player_id": "00-0037664",
+   "source_url": "https://x.com/RomeovilleKid/status/2092982215344857134",
+   "attempted_at": "2026-08-27T14:37:25+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T14:37:29+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005824
+  },
+  {
+   "candidate_id": "mobile:x:456e0a451c7c3f35f1c3",
+   "player_id": "00-0037664",
+   "source_url": "https://x.com/JoelAErickson/status/2092982132243112231",
+   "attempted_at": "2026-08-27T14:37:29+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T14:37:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004486
+  },
+  {
+   "candidate_id": "mobile:x:e444f62f17c4cdb03a65",
+   "player_id": "00-0037664",
+   "source_url": "https://x.com/RapSheet/status/2092981657548603546",
+   "attempted_at": "2026-08-27T14:37:33+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T14:37:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005262
+  },
+  {
+   "candidate_id": "mobile:x:9ae64c166f5afa4f0895",
+   "player_id": "00-0037664",
+   "source_url": "https://x.com/JakeArthurNFL/status/2092981643736662459",
+   "attempted_at": "2026-08-27T14:37:37+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T14:37:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004546
+  },
+  {
+   "candidate_id": "mobile:x:0690ef0ac7be9dc1c8f7",
+   "player_id": "00-0037664",
+   "source_url": "https://x.com/AdamSchefter/status/2092981429315523068",
+   "attempted_at": "2026-08-27T14:37:41+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T14:37:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004754
+  },
+  {
+   "candidate_id": "mobile:x:14c2a2132db187b0dbf0",
+   "player_id": "00-0037664",
+   "source_url": "https://x.com/mchappell51/status/2092980281892286764",
+   "attempted_at": "2026-08-27T14:37:44+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T14:37:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004434
+  },
+  {
+   "candidate_id": "mobile:onsi:58913611b9c4d8ac93c8",
+   "player_id": "00-0035659",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-cuts-5-questions-preseason-finale",
+   "attempted_at": "2026-08-27T14:37:48+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T14:37:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004416
   }
  ]
 }
