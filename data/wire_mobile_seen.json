@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 228,
+ "count": 240,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -2517,6 +2517,138 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004114
+  },
+  {
+   "candidate_id": "mobile:article:fde2585d38101a84ee0e",
+   "player_id": "00-0034351",
+   "source_url": "https://www.phillyvoice.com/eagles-2026-training-camp-battle-tracker-wide-receiver-tight-end-safety-edge-qb2/",
+   "attempted_at": "2026-08-27T01:04:01+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T01:04:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004396
+  },
+  {
+   "candidate_id": "mobile:article:bf9071f9354c36fa4c96",
+   "player_id": "00-0036912",
+   "source_url": "https://www.phillyvoice.com/eagles-2026-training-camp-battle-tracker-wide-receiver-tight-end-safety-edge-qb2/",
+   "attempted_at": "2026-08-27T01:04:05+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T01:04:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00544
+  },
+  {
+   "candidate_id": "mobile:article:211c9d060d0789b46224",
+   "player_id": "00-0038393",
+   "source_url": "https://www.phillyvoice.com/eagles-2026-training-camp-battle-tracker-wide-receiver-tight-end-safety-edge-qb2/",
+   "attempted_at": "2026-08-27T01:04:09+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T01:04:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005608
+  },
+  {
+   "candidate_id": "mobile:article:26326fbd796577b75027",
+   "player_id": "00-0036389",
+   "source_url": "https://www.phillyvoice.com/eagles-2026-training-camp-battle-tracker-wide-receiver-tight-end-safety-edge-qb2/",
+   "attempted_at": "2026-08-27T01:04:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T01:04:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004574
+  },
+  {
+   "candidate_id": "mobile:article:cef1e1f983c1dc6ad2b7",
+   "player_id": "00-0039163",
+   "source_url": "https://www.houstontexans.com/news/harris-hits-texans-offense-closes-2026-training-camp-with-a-statement-day-at-panthers-joint-practice",
+   "attempted_at": "2026-08-27T01:04:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T01:04:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003904
+  },
+  {
+   "candidate_id": "mobile:article:23812f65c67398d0dec1",
+   "player_id": "00-0035685",
+   "source_url": "https://www.houstontexans.com/news/harris-hits-texans-offense-closes-2026-training-camp-with-a-statement-day-at-panthers-joint-practice",
+   "attempted_at": "2026-08-27T01:04:19+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T01:04:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004932
+  },
+  {
+   "candidate_id": "mobile:article:2af98f38f51e0438ca53",
+   "player_id": "00-0036554",
+   "source_url": "https://www.houstontexans.com/news/harris-hits-texans-offense-closes-2026-training-camp-with-a-statement-day-at-panthers-joint-practice",
+   "attempted_at": "2026-08-27T01:04:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T01:04:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004008
+  },
+  {
+   "candidate_id": "mobile:onsi:f1ffe3d44d3df3f9392f",
+   "player_id": "00-0039732",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/bo-nix-wont-play-preseason-finale-what-it-means-broncos-qb2-battle",
+   "attempted_at": "2026-08-27T01:04:24+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T01:04:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003712
+  },
+  {
+   "candidate_id": "mobile:x:959929ed182c92094fdb",
+   "player_id": "00-0040743",
+   "source_url": "https://x.com/RossJacksonNOLA/status/2092779703132180943",
+   "attempted_at": "2026-08-27T01:04:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T01:04:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00357
+  },
+  {
+   "candidate_id": "mobile:x:8a64d60192ad4fd9c45c",
+   "player_id": "00-0040743",
+   "source_url": "https://x.com/RossJacksonNOLA/status/2092778751734042878",
+   "attempted_at": "2026-08-27T01:04:28+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T01:04:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004592
+  },
+  {
+   "candidate_id": "mobile:x:25e237b6590e315b73c9",
+   "player_id": "00-0036442",
+   "source_url": "https://x.com/pauldehnerjr/status/2092757705878352180",
+   "attempted_at": "2026-08-27T01:04:31+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-27T01:04:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003866
+  },
+  {
+   "candidate_id": "mobile:article:ad4957a39eff2c04ab3e",
+   "player_id": "00-0040667",
+   "source_url": "https://www.packers.com/news/5-takeaways-from-packers-cardinals-joint-practice-2026",
+   "attempted_at": "2026-08-27T01:04:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T01:04:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004478
   }
  ]
 }
