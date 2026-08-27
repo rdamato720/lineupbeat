@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-approval-ledger-v1",
- "count": 10,
+ "count": 11,
  "receipts": [
   {
    "receipt_id": "mobile:49f74b01c0954bb71f23e5fb8672a9a43dc3afb5edeb0b0b4bf6f7e24b35060f:5403509377",
@@ -524,6 +524,39 @@
      "evidence_sha256": "b361bc7755533f0ac2598306f559f83fbe7fa68d1db3a10784bfecbc82fdf29e",
      "public_summary_sha256": "530a1a880bcd191c1472047481a6c80a632bc061967cbe21ea323e4264f53c14",
      "lineupbeat_impact_sha256": "764b895986e82f3422bae52d0a0f37d92efb0c0e5f212113231d9bc25bac9b0b"
+    }
+   ]
+  },
+  {
+   "receipt_id": "mobile:d00f5405051a48f21b2ffc14a9ea563bf368c3d80473f222cc670a6bcaa16899:5442320275",
+   "batch_id": "d00f5405051a48f21b2ffc14a9ea563bf368c3d80473f222cc670a6bcaa16899",
+   "issue_number": 70,
+   "comment_id": "5442320275",
+   "approved_by": "Ralph Damato",
+   "approved_by_handle": "rdamato720",
+   "approved_at": "2026-08-27T16:46:32Z",
+   "approval_statement": "approve 1",
+   "manifest_sha256": "d00f5405051a48f21b2ffc14a9ea563bf368c3d80473f222cc670a6bcaa16899",
+   "publication_sha256_at_draft": "8dd26a83eea261c1523e7041b84282e3f8d8092d8589b370963b58d8a21985cf",
+   "publication_sha256_before": "8dd26a83eea261c1523e7041b84282e3f8d8092d8589b370963b58d8a21985cf",
+   "publication_sha256_after": "b5f5d8844f4bbed6f90672bb90a3ff44d94bdd70d65c3fdb2824a4af41587699",
+   "publication_store_changed_since_draft": false,
+   "publication_count_before": 81,
+   "publication_count_after": 82,
+   "publications_applied": 1,
+   "outcomes": [
+    {
+     "card_number": 1,
+     "candidate_id": "mobile:x:82ab2c742557f3be0b2b",
+     "player_id": "00-0040128",
+     "player_name": "Tyler Warren",
+     "decision": "APPROVED",
+     "edited": false,
+     "public_summary": "Tyler Warren did not practice Thursday because of a groin issue, James Boyd reported.",
+     "lineupbeat_impact": "Warren's groin-related absence is worth monitoring because it could affect his preparation and availability. His injury severity and expected return remain unknown.",
+     "evidence_sha256": "eb45d31d8ee3eace8515124ef8a7861252d28fb7d5e63295165d4bd64a401391",
+     "public_summary_sha256": "a4183c2dfde5e080907ff6dd9c66d6c895fa8ffc45042d2f0b8e81db21d50157",
+     "lineupbeat_impact_sha256": "a0cb610607e727c54cdb9a914c4e0611a3bdea1d62147caa86e56b3140b75a3e"
     }
    ]
   }
