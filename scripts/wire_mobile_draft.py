@@ -345,6 +345,17 @@ def card_from(candidate: dict, result: dict) -> dict:
         "draft_limitations": result["limitations"],
         "draft_confidence": result["confidence"],
     }
+    corroborating = []
+    for report in candidate.get("corroborating_candidates") or []:
+        corroborating.append({
+            "author": report.get("author", ""),
+            "source": report.get("source_name", ""),
+            "url": report.get("source_url", ""),
+            "date": report.get("published_at", ""),
+            "evidence_candidate_id": report.get("candidate_id", ""),
+        })
+    if corroborating:
+        card["corroborating_sources"] = corroborating
     check = {**card, "reviewer_action": "APPROVE_WITH_EDIT"}
     failures = publication_preview.readiness_failures(check)
     failures.extend(public_summary.validate(
@@ -386,6 +397,8 @@ def main() -> int:
                   and (row["player_id"], row["source_url"]) not in published_pairs]
     candidates, relevance_suppressed = relevance_filter(
         candidates, relevance.load())
+    draftable_candidates = list(candidates)
+    candidates, precall_duplicates = mobile_dedupe.collapse_precall(candidates)
     candidates = prioritize_candidates(candidates, args.max_calls)
 
     cards, outcomes = [], []
@@ -487,14 +500,14 @@ def main() -> int:
 
     outcome_counts = Counter(row["decision"] for row in outcomes)
     source_counts = Counter(row.get("source_id") or row["source_name"]
-                            for row in candidates)
-    team_counts = Counter(row["team"] for row in candidates)
+                            for row in draftable_candidates)
+    team_counts = Counter(row["team"] for row in draftable_candidates)
     all_teams = sorted({player.team for player in registry.players if player.team})
     eligible_article_sources = sorted(
         source.source_id for source in article_registry.load()
         if source.active and source.adapter and not source.paid)
     article_sources_with_candidates = sorted({
-        row.get("source_id") for row in candidates
+        row.get("source_id") for row in draftable_candidates
         if row.get("origin") == "ARTICLE" and row.get("source_id")})
     payload = {
         "schema_version": SCHEMA,
@@ -505,7 +518,10 @@ def main() -> int:
         "model_calls": calls, "cost_usd": round(cost, 6),
         "limits": {"max_calls": args.max_calls, "cap_usd": args.cap,
                    "max_cards": args.max_cards},
+        "raw_candidate_count": len(draftable_candidates),
         "candidate_count": len(candidates), "cards": cards,
+        "precall_duplicate_count": len(precall_duplicates),
+        "precall_duplicates": precall_duplicates,
         "unreviewed_count": max(0, len(candidates) - calls),
         "relevance_suppressed": len(relevance_suppressed),
         "validation_failed": outcome_counts.get("VALIDATION_FAILED", 0),

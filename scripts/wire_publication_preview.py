@@ -81,18 +81,28 @@ TEMPORARY_CONTEXT = re.compile(
     r"during one|that day|on the day|while|with .{0,24} (?:out|absent|"
     r"unavailable|sidelined)|does not (?:say|establish)|for how long|"
     r"joint practice|this practice|next practice|consecutive practices|"
-    r"for now|just yet|no .{0,24}(?:timetable|diagnosis))\b")
+    r"for now|just yet|no .{0,60}(?:timetable|diagnosis))\b")
+
+PUP_ACTIVATION = re.compile(
+    r"(?i)\b(activat(?:ed|ing) .* (?:pup|nfi)|coming off (?:the )?(?:pup|nfi)|"
+    r"came off (?:the )?(?:pup|nfi)|off (?:the )?(?:pup|nfi)|"
+    r"removed .{0,40} from (?:the )?(?:pup|nfi)|"
+    r"taking .{0,40} off (?:the )?(?:pup|nfi))\b")
 
 ABSENCE_MECHANISMS = {"LIMITED_PARTICIPATION", "INJURY", "RETURN_TO_PRACTICE"}
 
 # Words the evidence must contain before a mechanism may claim them.
 MECHANISM_EVIDENCE = {
-    "INJURY": re.compile(r"(?i)\b(injur|groin|hamstring|ankle|knee|acl|"
+    "INJURY": re.compile(r"(?i)\b(injur|lower[- ]body issue|upper[- ]body issue|"
+                         r"groin|hamstring|ankle|knee|acl|"
                          r"achilles|concussion|surgery|strain|sprain|"
                          r"sore|tightness|hurt|banged[- ]?up)\b"),
     "RETURN_TO_PRACTICE": re.compile(
         r"(?i)\b(return(?:ed|ing)? to practice|back (?:at|on|to)|"
-        r"activated|cleared)\b"),
+        r"activated|cleared|coming off (?:the )?(?:pup|nfi)|"
+        r"off (?:the )?(?:pup|nfi)|"
+        r"removed .{0,40} from (?:the )?(?:pup|nfi)|"
+        r"taking .{0,40} off (?:the )?(?:pup|nfi))\b"),
     "FIRST_TEAM_REPS": re.compile(
         r"(?i)first[-\s]?team|with the (?:ones|1s)|starting (?:offense|receivers?)"),
     "SECOND_TEAM_REPS": re.compile(
@@ -133,7 +143,10 @@ def readiness_failures(card: dict) -> list:
                    f"evidence passage")
 
     # An availability item must say the absence is a point in time.
-    if card["mechanism"] in ABSENCE_MECHANISMS and not TEMPORARY_CONTEXT.search(text):
+    pup_return = (card["mechanism"] == "RETURN_TO_PRACTICE" and
+                  PUP_ACTIVATION.search(ev))
+    if (card["mechanism"] in ABSENCE_MECHANISMS and not pup_return and
+            not TEMPORARY_CONTEXT.search(text)):
         out.append("availability item omits the temporary context (which "
                    "practice, and that no timetable was given)")
 

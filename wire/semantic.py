@@ -262,7 +262,8 @@ AVAILABILITY has different mechanisms and they are not interchangeable. \
 LIMITED_PARTICIPATION is for a player not practising, held out, limited, or \
 absent, when the passage does not establish a return event. \
 RETURN_TO_PRACTICE requires explicit resumption language, including "returned \
-to practice", "was back at practice", or "began practicing" after an \
+to practice", "was back at practice", "began practicing", or an official \
+activation/removal from PUP or NFI after an \
 absence; the return may still be limited. INJURY is only for a stated injury: \
 a named injury, a diagnosis, a re-aggravation, a player leaving the field \
 hurt. "Those not participating included Sam LaPorta" is \
