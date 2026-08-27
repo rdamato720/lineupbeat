@@ -1,46 +1,43 @@
 {
  "schema_version": "wire-mobile-batch-v1",
- "generated_at": "2026-08-27T01:04:00+00:00",
+ "generated_at": "2026-08-27T03:45:31+00:00",
  "window": {
-  "from": "2026-08-26T23:04:00.941506+00:00",
-  "to": "2026-08-27T01:04:00.941506+00:00",
+  "from": "2026-08-27T01:45:31.771111+00:00",
+  "to": "2026-08-27T03:45:31.771111+00:00",
   "hours": 2.0
  },
  "published": false,
  "model": "gpt-5.6-terra",
- "model_calls": 12,
- "cost_usd": 0.05308,
+ "model_calls": 8,
+ "cost_usd": 0.041056,
  "limits": {
   "max_calls": 20,
   "cap_usd": 0.08,
   "max_cards": 10
  },
- "candidate_count": 12,
+ "candidate_count": 8,
  "cards": [],
  "unreviewed_count": 0,
- "relevance_suppressed": 37,
- "validation_failed": 2,
+ "relevance_suppressed": 7,
+ "validation_failed": 1,
  "outcome_counts": {
-  "ABSTAIN": 1,
-  "IGNORE": 9,
-  "VALIDATION_FAILED": 2
+  "IGNORE": 7,
+  "VALIDATION_FAILED": 1
  },
  "coverage": {
   "source_candidate_counts": {
-   "nfl-cin-tapi-pauldehnerjr": 1,
-   "nfl-no-tapi-rossjacksonnola": 2,
-   "official_gb": 1,
-   "official_hou": 3,
-   "phillyvoice_jimmy_kempski": 4,
-   "si_broncos": 1
+   "nfl-no-tapi-rossjacksonnola": 1,
+   "official_dal": 2,
+   "si_broncos": 3,
+   "si_commanders": 1,
+   "si_eagles": 1
   },
   "team_candidate_counts": {
-   "CIN": 1,
-   "DEN": 1,
-   "GB": 1,
-   "HOU": 3,
-   "NO": 2,
-   "PHI": 4
+   "DAL": 2,
+   "DEN": 3,
+   "NO": 1,
+   "PHI": 1,
+   "WAS": 1
   },
   "teams_without_candidates": [
    "ARI",
@@ -49,9 +46,11 @@
    "BUF",
    "CAR",
    "CHI",
+   "CIN",
    "CLE",
-   "DAL",
    "DET",
+   "GB",
+   "HOU",
    "IND",
    "JAX",
    "KC",
@@ -67,8 +66,7 @@
    "SEA",
    "SF",
    "TB",
-   "TEN",
-   "WAS"
+   "TEN"
   ],
   "eligible_article_sources": [
    "arizona_sports_tyler_drake",
@@ -148,10 +146,10 @@
    "steelers_depot"
   ],
   "article_sources_with_candidates": [
-   "official_gb",
-   "official_hou",
-   "phillyvoice_jimmy_kempski",
-   "si_broncos"
+   "official_dal",
+   "si_broncos",
+   "si_commanders",
+   "si_eagles"
   ],
   "article_sources_without_candidates": [
    "arizona_sports_tyler_drake",
@@ -166,9 +164,10 @@
    "official_chi",
    "official_cin",
    "official_cle",
-   "official_dal",
    "official_den",
    "official_det",
+   "official_gb",
+   "official_hou",
    "official_ind",
    "official_jax",
    "official_kc",
@@ -190,6 +189,7 @@
    "official_was",
    "packers_on_si_bill_huber",
    "pewter_report",
+   "phillyvoice_jimmy_kempski",
    "pressbox_baltimore",
    "purple_insider_matthew_coller",
    "si_49ers",
@@ -202,10 +202,8 @@
    "si_chargers",
    "si_chiefs",
    "si_colts",
-   "si_commanders",
    "si_cowboys",
    "si_dolphins",
-   "si_eagles",
    "si_falcons",
    "si_fantasy",
    "si_giants",
@@ -230,191 +228,125 @@
  "event_duplicates": 0,
  "outcomes": [
   {
-   "candidate_id": "mobile:article:fde2585d38101a84ee0e",
-   "player": "Dallas Goedert",
-   "player_id": "00-0034351",
-   "team": "PHI",
-   "origin": "ARTICLE",
-   "source_id": "phillyvoice_jimmy_kempski",
-   "source_name": "PhillyVoice",
-   "source_url": "https://www.phillyvoice.com/eagles-2026-training-camp-battle-tracker-wide-receiver-tight-end-safety-edge-qb2/",
-   "decision": "IGNORE",
-   "reason": "The source offers an expected status, but no new actionable change in Goedert's role, health, or usage.",
-   "validation_failures": [],
-   "cost_usd": 0.004396
-  },
-  {
-   "candidate_id": "mobile:article:bf9071f9354c36fa4c96",
-   "player": "DeVonta Smith",
-   "player_id": "00-0036912",
-   "team": "PHI",
-   "origin": "ARTICLE",
-   "source_id": "phillyvoice_jimmy_kempski",
-   "source_name": "PhillyVoice",
-   "source_url": "https://www.phillyvoice.com/eagles-2026-training-camp-battle-tracker-wide-receiver-tight-end-safety-edge-qb2/",
-   "decision": "VALIDATION_FAILED",
-   "reason": "The source explicitly identifies Smith as the Eagles’ WR1, an actionable named starter designation.",
-   "validation_failures": [
-    "depth-chart card has no explicit starter or pecking-order change",
-    "speculative language 'is set to'"
-   ],
-   "cost_usd": 0.00544,
-   "held_for_review": {
-    "evidence": "DeVonta Smith is going to be the Eagles' WR1 (duh). Dontayvion Wicks will be the WR2. I am convinced that Lemon will be the WR3, (a) because he was the 20th overall pick in the draft, and (b) none of the other receivers did enough throughout camp to claim a starting role.\n\nPre-camp analysis: DeVonta Smith will be the WR1 after being something of a WR1b alongside former WR1a A.J. Brown.\n\nPre-camp analysis: DeVonta Smith will be the WR1 after being something of a WR1b alongside former WR1a A.J. Brown. Who will get the most playing time opposite Smith will be decided in camp.",
-    "public_summary": "DeVonta Smith is set to be Philadelphia’s WR1, according to Jimmy Kempski’s camp battle tracker.",
-    "lineupbeat_impact": "Smith’s lead receiver designation supports treating him as the Eagles’ top wideout entering the season. It does not establish his target share or resolve how the offense will distribute work.",
-    "direction": "POSITIVE",
-    "mechanism": "DEPTH_CHART"
-   }
-  },
-  {
-   "candidate_id": "mobile:article:211c9d060d0789b46224",
-   "player": "Dontayvion Wicks",
-   "player_id": "00-0038393",
-   "team": "PHI",
-   "origin": "ARTICLE",
-   "source_id": "phillyvoice_jimmy_kempski",
-   "source_name": "PhillyVoice",
-   "source_url": "https://www.phillyvoice.com/eagles-2026-training-camp-battle-tracker-wide-receiver-tight-end-safety-edge-qb2/",
-   "decision": "VALIDATION_FAILED",
-   "reason": "The source makes a clear camp-based projection that Wicks will be Philadelphia’s WR2, representing a potentially material role expectation.",
-   "validation_failures": [
-    "fantasy analysis is not explicitly attributed"
-   ],
-   "cost_usd": 0.005608,
-   "held_for_review": {
-    "evidence": "• Dontayvion Wicks is a dirty work type of player with upside as a route runner and toughness as a blocker. The Eagles traded for him.\n\nDeVonta Smith is going to be the Eagles' WR1 (duh). Dontayvion Wicks will be the WR2. I am convinced that Lemon will be the WR3, (a) because he was the 20th overall pick in the draft, and (b) none of the other receivers did enough throughout camp to claim a starting role.\n\nDontayvion Wicks will be the WR2. I am convinced that Lemon will be the WR3, (a) because he was the 20th overall pick in the draft, and (b) none of the other receivers did enough throughout camp to claim a starting role. So I've seen enough.",
-    "public_summary": "Jimmy Kempski projects Dontayvion Wicks as the Eagles’ WR2 after camp, behind DeVonta Smith.",
-    "lineupbeat_impact": "This is a meaningful projected starting-role endorsement that puts Wicks on the fantasy radar. It remains one writer’s camp-based assessment, so preseason usage and an official depth chart could change the outlook.",
-    "direction": "POSITIVE",
-    "mechanism": "DEPTH_CHART"
-   }
-  },
-  {
-   "candidate_id": "mobile:article:26326fbd796577b75027",
-   "player": "Jalen Hurts",
-   "player_id": "00-0036389",
-   "team": "PHI",
-   "origin": "ARTICLE",
-   "source_id": "phillyvoice_jimmy_kempski",
-   "source_name": "PhillyVoice",
-   "source_url": "https://www.phillyvoice.com/eagles-2026-training-camp-battle-tracker-wide-receiver-tight-end-safety-edge-qb2/",
-   "decision": "IGNORE",
-   "reason": "Hurts is mentioned only in connection with an isolated completion and incompletion, neither of which changes a fantasy expectation.",
-   "validation_failures": [],
-   "cost_usd": 0.004574
-  },
-  {
-   "candidate_id": "mobile:article:cef1e1f983c1dc6ad2b7",
-   "player": "C.J. Stroud",
-   "player_id": "00-0039163",
-   "team": "HOU",
-   "origin": "ARTICLE",
-   "source_id": "official_hou",
-   "source_name": "HOU official team site",
-   "source_url": "https://www.houstontexans.com/news/harris-hits-texans-offense-closes-2026-training-camp-with-a-statement-day-at-panthers-joint-practice",
-   "decision": "IGNORE",
-   "reason": "The passage reports a strong isolated practice performance, but a single session of passing success is not card-worthy without a multi-practice trend or concrete role change.",
-   "validation_failures": [],
-   "cost_usd": 0.003904
-  },
-  {
-   "candidate_id": "mobile:article:23812f65c67398d0dec1",
-   "player": "David Montgomery",
-   "player_id": "00-0035685",
-   "team": "HOU",
-   "origin": "ARTICLE",
-   "source_id": "official_hou",
-   "source_name": "HOU official team site",
-   "source_url": "https://www.houstontexans.com/news/harris-hits-texans-offense-closes-2026-training-camp-with-a-statement-day-at-panthers-joint-practice",
-   "decision": "IGNORE",
-   "reason": "The report describes isolated practice-play results rather than a multi-day performance trend or concrete role change.",
-   "validation_failures": [],
-   "cost_usd": 0.004932
-  },
-  {
-   "candidate_id": "mobile:article:2af98f38f51e0438ca53",
-   "player": "Nico Collins",
-   "player_id": "00-0036554",
-   "team": "HOU",
-   "origin": "ARTICLE",
-   "source_id": "official_hou",
-   "source_name": "HOU official team site",
-   "source_url": "https://www.houstontexans.com/news/harris-hits-texans-offense-closes-2026-training-camp-with-a-statement-day-at-panthers-joint-practice",
-   "decision": "IGNORE",
-   "reason": "Collins' catches are single-session practice highlights, which do not establish a meaningful fantasy-relevant change.",
-   "validation_failures": [],
-   "cost_usd": 0.004008
-  },
-  {
-   "candidate_id": "mobile:onsi:f1ffe3d44d3df3f9392f",
+   "candidate_id": "mobile:onsi:d93b6ededb41b31b859f",
    "player": "Bo Nix",
    "player_id": "00-0039732",
    "team": "DEN",
    "origin": "ARTICLE",
    "source_id": "si_broncos",
    "source_name": "Sports Illustrated -- DEN",
-   "source_url": "https://www.si.com/nfl/broncos/onsi/bo-nix-wont-play-preseason-finale-what-it-means-broncos-qb2-battle",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/5-broncos-who-need-bounce-back-game-vikings-preseason",
    "decision": "IGNORE",
-   "reason": "No meaningful new fantasy-relevant development is supported by the supplied sentence.",
+   "reason": "The evidence only says Nix will not play in one preseason game and focuses on an unresolved QB2 battle; it provides no actionable fantasy-role or availability change for Nix.",
    "validation_failures": [],
-   "cost_usd": 0.003712
+   "cost_usd": 0.004824
   },
   {
-   "candidate_id": "mobile:x:959929ed182c92094fdb",
-   "player": "Tyler Shough",
-   "player_id": "00-0040743",
-   "team": "NO",
-   "origin": "X",
-   "source_id": "nfl-no-tapi-rossjacksonnola",
-   "source_name": "X",
-   "source_url": "https://x.com/RossJacksonNOLA/status/2092779703132180943",
-   "decision": "IGNORE",
-   "reason": "Shough throwing passes with fans is not a meaningful fantasy-football development.",
-   "validation_failures": [],
-   "cost_usd": 0.00357
-  },
-  {
-   "candidate_id": "mobile:x:8a64d60192ad4fd9c45c",
-   "player": "Tyler Shough",
-   "player_id": "00-0040743",
-   "team": "NO",
-   "origin": "X",
-   "source_id": "nfl-no-tapi-rossjacksonnola",
-   "source_name": "X",
-   "source_url": "https://x.com/RossJacksonNOLA/status/2092778751734042878",
-   "decision": "IGNORE",
-   "reason": "No meaningful fantasy-football development is present.",
-   "validation_failures": [],
-   "cost_usd": 0.004592
-  },
-  {
-   "candidate_id": "mobile:x:25e237b6590e315b73c9",
-   "player": "Joe Burrow",
-   "player_id": "00-0036442",
-   "team": "CIN",
-   "origin": "X",
-   "source_id": "nfl-cin-tapi-pauldehnerjr",
-   "source_name": "X",
-   "source_url": "https://x.com/pauldehnerjr/status/2092757705878352180",
-   "decision": "ABSTAIN",
-   "reason": "The post only endorses linked commentary and provides no verifiable underlying claim to summarize as a Wire card.",
-   "validation_failures": [],
-   "cost_usd": 0.003866
-  },
-  {
-   "candidate_id": "mobile:article:ad4957a39eff2c04ab3e",
-   "player": "Matthew Golden",
-   "player_id": "00-0040667",
-   "team": "GB",
+   "candidate_id": "mobile:onsi:10df55650bcc79081533",
+   "player": "Jaylen Waddle",
+   "player_id": "00-0036613",
+   "team": "DEN",
    "origin": "ARTICLE",
-   "source_id": "official_gb",
-   "source_name": "GB official team site",
-   "source_url": "https://www.packers.com/news/5-takeaways-from-packers-cardinals-joint-practice-2026",
+   "source_id": "si_broncos",
+   "source_name": "Sports Illustrated -- DEN",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/5-broncos-who-need-bounce-back-game-vikings-preseason",
    "decision": "IGNORE",
-   "reason": "A single touchdown in one practice is not card-worthy under the performance threshold.",
+   "reason": "Waddle is mentioned as context for Franklin's demotion, but the evidence does not establish a meaningful new fantasy-relevant role or availability development for Waddle.",
    "validation_failures": [],
-   "cost_usd": 0.004478
+   "cost_usd": 0.005476
+  },
+  {
+   "candidate_id": "mobile:onsi:b6e79b693c7da87b9406",
+   "player": "Pat Bryant",
+   "player_id": "00-0040134",
+   "team": "DEN",
+   "origin": "ARTICLE",
+   "source_id": "si_broncos",
+   "source_name": "Sports Illustrated -- DEN",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/5-broncos-who-need-bounce-back-game-vikings-preseason",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The evidence directly links Bryant’s emergence to Franklin being pushed down the depth chart, creating a monitorable potential rise for Bryant, though usage details are absent.",
+   "validation_failures": [
+    "fantasy analysis is not explicitly attributed"
+   ],
+   "cost_usd": 0.008148,
+   "held_for_review": {
+    "evidence": "In two preseason games, Franklin has garnered just two targets, both of which came in Atlanta two weeks ago. Franklin has been pushed down the depth chart by the arrival of Jaylen Waddle and the emergence of Pat Bryant this summer.",
+    "public_summary": "Chad Jensen says Pat Bryant’s summer emergence has helped push Troy Franklin down Denver’s depth chart.",
+    "lineupbeat_impact": "Bryant is worth monitoring as a possible riser in Denver’s WR rotation, but the report does not specify his spot, first-team usage or expected targets. Upcoming preseason deployment would clarify whether this is a meaningful role change.",
+    "direction": "POSITIVE",
+    "mechanism": "DEPTH_CHART"
+   }
+  },
+  {
+   "candidate_id": "mobile:article:5386ed3b85e61ed702e9",
+   "player": "CeeDee Lamb",
+   "player_id": "00-0036358",
+   "team": "DAL",
+   "origin": "ARTICLE",
+   "source_id": "official_dal",
+   "source_name": "DAL official team site",
+   "source_url": "https://www.dallascowboys.com/news/practice-points-news-and-notes-from-final-cowboys-training-camp-practice",
+   "decision": "IGNORE",
+   "reason": "Lamb's catches were isolated practice highlights and do not establish a meaningful fantasy-relevant change.",
+   "validation_failures": [],
+   "cost_usd": 0.004714
+  },
+  {
+   "candidate_id": "mobile:article:bd7d6f9e62994764f3e9",
+   "player": "Dak Prescott",
+   "player_id": "00-0033077",
+   "team": "DAL",
+   "origin": "ARTICLE",
+   "source_id": "official_dal",
+   "source_name": "DAL official team site",
+   "source_url": "https://www.dallascowboys.com/news/practice-points-news-and-notes-from-final-cowboys-training-camp-practice",
+   "decision": "IGNORE",
+   "reason": "Prescott's practice highlights, including sidearm throws and a completion to Ryan Flournoy, are isolated-session performance notes and do not create a meaningful fantasy-actionable development.",
+   "validation_failures": [],
+   "cost_usd": 0.004184
+  },
+  {
+   "candidate_id": "mobile:onsi:8de4591ebf37894959c8",
+   "player": "Jalen Hurts",
+   "player_id": "00-0036389",
+   "team": "PHI",
+   "origin": "ARTICLE",
+   "source_id": "si_eagles",
+   "source_name": "Sports Illustrated -- PHI",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/eagles-final-training-camp-roster-locks-bubble-players-and-who-s-set-to-be-cut-01m0t9qd151e",
+   "decision": "IGNORE",
+   "reason": "The evidence concerns an unresolved QB2 battle and offers no meaningful new fantasy development for Hurts.",
+   "validation_failures": [],
+   "cost_usd": 0.004784
+  },
+  {
+   "candidate_id": "mobile:onsi:92efe518d15591b709d4",
+   "player": "Jayden Daniels",
+   "player_id": "00-0039910",
+   "team": "WAS",
+   "origin": "ARTICLE",
+   "source_id": "si_commanders",
+   "source_name": "Sports Illustrated -- WAS",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/jayden-daniels-press-conference-transcript-ravens-joint-practice-lsu",
+   "decision": "IGNORE",
+   "reason": "A single general comment about an uneven offensive practice is not a meaningful fantasy-relevant development.",
+   "validation_failures": [],
+   "cost_usd": 0.004536
+  },
+  {
+   "candidate_id": "mobile:x:c01e87b9161b16814323",
+   "player": "Chris Olave",
+   "player_id": "00-0037239",
+   "team": "NO",
+   "origin": "X",
+   "source_id": "nfl-no-tapi-rossjacksonnola",
+   "source_name": "X",
+   "source_url": "https://x.com/RossJacksonNOLA/status/2092812413506560049",
+   "decision": "IGNORE",
+   "reason": "Another strong performance is insufficiently specific to establish a fantasy-relevant change, and isolated practice praise is not card-worthy.",
+   "validation_failures": [],
+   "cost_usd": 0.00439
   }
  ]
 }
