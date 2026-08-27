@@ -6,7 +6,10 @@ on:
     # 7:00 a.m. through 11:59 p.m. Eastern during daylight-saving time
     # (6:00 a.m. through 10:59 p.m. Eastern during standard time).
     - cron: "7,37 0-3 * * *"
-    - cron: "7,37 11-23 * * *"
+    # Split the first morning run so it can safely catch the overnight gap.
+    - cron: "7 11 * * *"
+    - cron: "37 11 * * *"
+    - cron: "7,37 12-23 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -107,11 +110,27 @@ jobs:
           print("mobile draft provider authenticated; 0 Responses API calls")
           PY
 
+      - name: Select evidence window
+        id: window
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          hours=2
+          if [ "$SCHEDULE" = "7 11 * * *" ]; then
+            # The previous scheduled run is 03:37 UTC. Eight hours covers
+            # that 7.5-hour overnight gap with the normal overlap cushion.
+            hours=8
+          fi
+          echo "hours=$hours" >> "$GITHUB_OUTPUT"
+          echo "evidence lookback: $hours hour(s)"
+
       - name: Capture eligible articles and X
         run: |
-          python scripts/wire_backfill.py --discover --report --hours 2
+          python scripts/wire_backfill.py --discover --report \
+            --hours "${{ steps.window.outputs.hours }}"
           python scripts/wire_extract.py --limit 1000
-          python scripts/wire_inclusive_review.py --hours 2
+          python scripts/wire_inclusive_review.py \
+            --hours "${{ steps.window.outputs.hours }}"
           python -m beatwire.cli --db wire-mobile-x.db run --sport nfl \
             --kind twitterapi --capture-only \
             --tapi-daily-cap "$TAPI_DAILY_CAP"
@@ -120,7 +139,8 @@ jobs:
         id: draft
         continue-on-error: true
         run: |
-          python scripts/wire_mobile_draft.py --hours 2 \
+          python scripts/wire_mobile_draft.py \
+            --hours "${{ steps.window.outputs.hours }}" \
             --max-calls "$MOBILE_MAX_CALLS" --cap "$MOBILE_RUN_CAP"
           cards=$(python -c 'import json; print(len(json.load(open("data/wire_mobile_batch.json"))["cards"]))')
           echo "cards=$cards" >> "$GITHUB_OUTPUT"
