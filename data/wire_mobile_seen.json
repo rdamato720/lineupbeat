@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 321,
+ "count": 337,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -3570,6 +3570,182 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00479
+  },
+  {
+   "candidate_id": "mobile:onsi:43a691d73ebb760f2254",
+   "player_id": "00-0038797",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/3-seattle-seahawks-position-groups-watch-vs-kansas-city-chiefs",
+   "attempted_at": "2026-08-27T23:57:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T23:57:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006316
+  },
+  {
+   "candidate_id": "mobile:onsi:1f2cbae30b420d038724",
+   "player_id": "00-0039299",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/3-seattle-seahawks-position-groups-watch-vs-kansas-city-chiefs",
+   "attempted_at": "2026-08-27T23:57:34+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T23:57:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005308
+  },
+  {
+   "candidate_id": "mobile:onsi:8a625ecb0f4c5ea0b76b",
+   "player_id": "00-0040067",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/3-seattle-seahawks-position-groups-watch-vs-kansas-city-chiefs",
+   "attempted_at": "2026-08-27T23:57:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T23:57:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00514
+  },
+  {
+   "candidate_id": "mobile:onsi:d6a4b5c7e8d66bba3295",
+   "player_id": "00-0041512",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/3-seattle-seahawks-position-groups-watch-vs-kansas-city-chiefs",
+   "attempted_at": "2026-08-27T23:57:42+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T23:57:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004876
+  },
+  {
+   "candidate_id": "mobile:onsi:ace305095da3a466d61f",
+   "player_id": "00-0037545",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/3-seattle-seahawks-position-groups-watch-vs-kansas-city-chiefs",
+   "attempted_at": "2026-08-27T23:57:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T23:57:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004538
+  },
+  {
+   "candidate_id": "mobile:onsi:35b7b34871f3d4b7665d",
+   "player_id": "00-0033280",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/san-franicsco-49ers-las-vegas-raiders-preseason-live-blog",
+   "attempted_at": "2026-08-27T23:57:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T23:57:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00475
+  },
+  {
+   "candidate_id": "mobile:onsi:8376c197735247960d54",
+   "player_id": "00-0040126",
+   "source_url": "https://www.si.com/nfl/bears/onsi/caleb-williams-details-exactly-where-and-how-he-progressed-at-bears-camp",
+   "attempted_at": "2026-08-27T23:57:52+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T23:57:58+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004926
+  },
+  {
+   "candidate_id": "mobile:onsi:df68771c5a8a2be54857",
+   "player_id": "00-0039919",
+   "source_url": "https://www.si.com/nfl/bears/onsi/caleb-williams-details-exactly-where-and-how-he-progressed-at-bears-camp",
+   "attempted_at": "2026-08-27T23:57:58+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T23:58:02+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00502
+  },
+  {
+   "candidate_id": "mobile:x:7db76849075e8bf13c7e",
+   "player_id": "00-0035676",
+   "source_url": "https://x.com/ByMarkDaniels/status/2093123528090399137",
+   "attempted_at": "2026-08-27T23:58:02+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T23:58:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004662
+  },
+  {
+   "candidate_id": "mobile:x:c1598276d4d638ccdb0d",
+   "player_id": "00-0040734",
+   "source_url": "https://x.com/ByMarkDaniels/status/2093123528090399137",
+   "attempted_at": "2026-08-27T23:58:05+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-27T23:58:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006152
+  },
+  {
+   "candidate_id": "mobile:x:f06257e9b3e44f3bd372",
+   "player_id": "00-0033090",
+   "source_url": "https://x.com/ByMarkDaniels/status/2093123528090399137",
+   "attempted_at": "2026-08-27T23:58:09+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T23:58:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005354
+  },
+  {
+   "candidate_id": "mobile:x:f1b183a32d9a8e9026c3",
+   "player_id": "00-0036875",
+   "source_url": "https://x.com/ByMarkDaniels/status/2093123528090399137",
+   "attempted_at": "2026-08-27T23:58:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T23:58:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006272
+  },
+  {
+   "candidate_id": "mobile:x:288a3f798b53691cfe30",
+   "player_id": "00-0039851",
+   "source_url": "https://x.com/ByMarkDaniels/status/2093123528090399137",
+   "attempted_at": "2026-08-27T23:58:18+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T23:58:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004398
+  },
+  {
+   "candidate_id": "mobile:x:927685e936d2c7090eaf",
+   "player_id": "00-0035676",
+   "source_url": "https://x.com/tkyles39/status/2093123413711745163",
+   "attempted_at": "2026-08-27T23:58:21+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T23:58:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00636
+  },
+  {
+   "candidate_id": "mobile:x:ca17d33a05fef2520b26",
+   "player_id": "00-0035676",
+   "source_url": "https://x.com/DougKyed/status/2093123250104492349",
+   "attempted_at": "2026-08-27T23:58:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T23:58:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005406
+  },
+  {
+   "candidate_id": "mobile:x:5578b5c82517436385be",
+   "player_id": "00-0040734",
+   "source_url": "https://x.com/DougKyed/status/2093123250104492349",
+   "attempted_at": "2026-08-27T23:58:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T23:58:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00554
   }
  ]
 }
