@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 286,
+ "count": 304,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -3155,6 +3155,210 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004604
+  },
+  {
+   "candidate_id": "mobile:onsi:aee03c316780056a8ad7",
+   "player_id": "00-0039075",
+   "source_url": "https://www.si.com/nfl/rams/onsi/rams-tutu-atwell-trade-jarquez-hunter",
+   "attempted_at": "2026-08-27T19:48:25+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T19:48:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004254
+  },
+  {
+   "candidate_id": "mobile:onsi:1fb00e75c3f87b9571cf",
+   "player_id": "00-0031381",
+   "source_url": "https://www.si.com/nfl/rams/onsi/rams-tutu-atwell-trade-jarquez-hunter",
+   "attempted_at": "2026-08-27T19:48:31+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T19:48:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004036
+  },
+  {
+   "candidate_id": "mobile:onsi:b096c6ca560785b097e8",
+   "player_id": "00-0037840",
+   "source_url": "https://www.si.com/nfl/rams/onsi/rams-tutu-atwell-trade-jarquez-hunter",
+   "attempted_at": "2026-08-27T19:48:34+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T19:48:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003766
+  },
+  {
+   "candidate_id": "mobile:onsi:3b5d9ac5257e4ffc313d",
+   "player_id": "00-0032764",
+   "source_url": "https://www.si.com/nfl/ravens/onsi/ravens-qb-lamar-jackson-says-he-is-up-for-running-more-this-season-but-won-t-be-asked-to-01m1220z6pdt",
+   "attempted_at": "2026-08-27T19:48:36+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T19:48:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004098
+  },
+  {
+   "candidate_id": "mobile:onsi:53177ea90f1b909ffd39",
+   "player_id": "00-0034857",
+   "source_url": "https://www.si.com/nfl/bills/onsi/joe-brady-explains-how-bills-weakness-under-sean-mcdermott-became-position-of-strength-pass-rush",
+   "attempted_at": "2026-08-27T19:48:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T19:48:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003816
+  },
+  {
+   "candidate_id": "mobile:onsi:48a03bdcab3b24337760",
+   "player_id": "00-0035685",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/isiah-pacheco-injury-update-latest-news-lions-rb-hampers-week-1-fantasy-outlook",
+   "attempted_at": "2026-08-27T19:48:42+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-27T19:48:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00543
+  },
+  {
+   "candidate_id": "mobile:onsi:046bb4eeeacaed6b28a2",
+   "player_id": "00-0037197",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/isiah-pacheco-injury-update-latest-news-lions-rb-hampers-week-1-fantasy-outlook",
+   "attempted_at": "2026-08-27T19:48:46+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-27T19:48:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005914
+  },
+  {
+   "candidate_id": "mobile:onsi:19f4e7a5a8e53b46c432",
+   "player_id": "00-0039139",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/isiah-pacheco-injury-update-latest-news-lions-rb-hampers-week-1-fantasy-outlook",
+   "attempted_at": "2026-08-27T19:48:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T19:48:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004042
+  },
+  {
+   "candidate_id": "mobile:x:fc742f6d42458d1730b0",
+   "player_id": "00-0035700",
+   "source_url": "https://x.com/mattschneidman/status/2093061349521621034",
+   "attempted_at": "2026-08-27T19:48:53+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-27T19:48:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004034
+  },
+  {
+   "candidate_id": "mobile:x:2c5a39f8bd477e4b844b",
+   "player_id": "00-0035700",
+   "source_url": "https://x.com/AdamSchefter/status/2093061267686625324",
+   "attempted_at": "2026-08-27T19:48:56+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-27T19:49:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00441
+  },
+  {
+   "candidate_id": "mobile:x:543ca1afca9ebfabb0e3",
+   "player_id": "00-0035700",
+   "source_url": "https://x.com/RobDemovsky/status/2093060630018240668",
+   "attempted_at": "2026-08-27T19:49:00+00:00",
+   "status": "DUPLICATE_EVENT",
+   "duplicate_of": "mobile:x:2c5a39f8bd477e4b844b",
+   "dedupe_detail": {
+    "similarity": 0.5385,
+    "shared_markers": [],
+    "window_hours": 12
+   },
+   "completed_at": "2026-08-27T19:49:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00438
+  },
+  {
+   "candidate_id": "mobile:x:5fccb261ba32463fc0f8",
+   "player_id": "00-0037664",
+   "source_url": "https://x.com/RomeovilleKid/status/2093058598091812944",
+   "attempted_at": "2026-08-27T19:49:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T19:49:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003744
+  },
+  {
+   "candidate_id": "mobile:x:ffa099cfe0a802c75411",
+   "player_id": "00-0038117",
+   "source_url": "https://x.com/eastonfreeze/status/2093056367711900066",
+   "attempted_at": "2026-08-27T19:49:06+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T19:49:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00506
+  },
+  {
+   "candidate_id": "mobile:onsi:5cd310016a3717e91a20",
+   "player_id": "00-0039361",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-football-draft-debate-quinshon-judkins-vs-bucky-irving",
+   "attempted_at": "2026-08-27T19:49:09+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T19:49:12+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004896
+  },
+  {
+   "candidate_id": "mobile:onsi:c06f734e9d984e216298",
+   "player_id": "00-0040784",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-football-draft-debate-quinshon-judkins-vs-bucky-irving",
+   "attempted_at": "2026-08-27T19:49:12+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T19:49:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004362
+  },
+  {
+   "candidate_id": "mobile:x:7a6a1c4ccbeb658088f3",
+   "player_id": "00-0038117",
+   "source_url": "https://x.com/jwyattsports/status/2093055321870610910",
+   "attempted_at": "2026-08-27T19:49:15+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T19:49:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005358
+  },
+  {
+   "candidate_id": "mobile:x:88cacb7f73cea925c5f0",
+   "player_id": "00-0040676",
+   "source_url": "https://x.com/jwyattsports/status/2093054189945467236",
+   "attempted_at": "2026-08-27T19:49:20+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T19:49:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00463
+  },
+  {
+   "candidate_id": "mobile:x:32677c28d261b2a12c17",
+   "player_id": "00-0040676",
+   "source_url": "https://x.com/TDavenport_NFL/status/2093054176779501616",
+   "attempted_at": "2026-08-27T19:49:24+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T19:49:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00426
   }
  ]
 }

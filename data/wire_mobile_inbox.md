@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**2 cards** · batch `d00f5405051a` · 17 draft calls · $0.0838
+**3 cards** · batch `22fed2924865` · 18 draft calls · $0.0805
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,50 +19,70 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Tyler Warren — IND TE
+## 1. David Montgomery — HOU RB
 
-**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
+**Worth noting** · TRANSACTION · MEDIUM evidence
 
 ### What changed
 
-Tyler Warren did not practice Thursday because of a groin issue, James Boyd reported.
+David Montgomery signed with the Texans after departing Detroit, according to Ethen Hutton.
 
 ### Lineup Beat impact
 
-Warren's groin-related absence is worth monitoring because it could affect his preparation and availability. His injury severity and expected return remain unknown.
+Montgomery’s move to Houston creates a new backfield situation to monitor, but the report does not establish his role, workload or standing with the Texans.
 
-[James Boyd · The Athletic](https://x.com/RomeovilleKid/status/2093008056837607728) · 2026-08-27
+[Ethen Hutton · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/isiah-pacheco-injury-update-latest-news-lions-rb-hampers-week-1-fantasy-outlook) · 2026-08-27
 
 <details><summary>Full evidence reviewed</summary>
 
-#Colts WR Josh Downs (calf), TE Tyler Warren (groin), TE Will Mallory (right thumb), SS A.J. Haulcy (undisclosed) and CB Johnathan Edwards (undisclosed), DE Micheal Clemons (undisclosed) are not practicing today.
+The Detroit Lions filled a massive void in the running back room, bringing in free agent Isiah Pacheco to replace David Montgomery. Montgomery signed with the Houston Texans, as Detroit ultimately inked star running back Jahmyr Gibbs to a long-term deal.
 
 </details>
 
 ---
 
-## 2. Kyler Murray — MIN QB
+## 2. Isiah Pacheco — DET RB
 
-**Trending up** · DEPTH_CHART · HIGH evidence
+**Trending up** · TRANSACTION · MEDIUM evidence
 
 ### What changed
 
-Kyler Murray won Minnesota's starting quarterback competition earlier this month, according to Devon Platana.
+Isiah Pacheco signed with the Lions as a free agent after David Montgomery departed for Houston, Fantasy On SI reported.
 
 ### Lineup Beat impact
 
-Murray appears to be Minnesota's named starter, making him the Vikings QB fantasy managers should track. His preseason usage and any official confirmation would add clarity.
+Pacheco lands in Detroit's backfield and is worth monitoring as Montgomery's replacement, but the report does not establish his workload or role alongside Jahmyr Gibbs.
 
-[Devon Platana · Sports Illustrated -- MIN](https://www.si.com/nfl/vikings/onsi/how-to-watch-vikings-preseason-finale-vs-broncos-start-time-channel-who-to-monitor-more-01m11pn826kj) · 2026-08-27
+[Ethen Hutton · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/isiah-pacheco-injury-update-latest-news-lions-rb-hampers-week-1-fantasy-outlook) · 2026-08-27
 
 <details><summary>Full evidence reviewed</summary>
 
-A lot of Vikings are under pressure heading into Friday's preseason finale, including J.J. McCarthy, who lost the starting quarterback competition to Kyler Murray earlier this month.
-
-A lot of Vikings are under pressure heading into Friday's preseason finale, including J.J. McCarthy, who lost the starting quarterback competition to Kyler Murray earlier this month. Given how poorly McCarthy has performed this summer, Minnesota fans need a strong performance from him to squash any worries.
-
-McCarthy, who lost the starting quarterback competition to Kyler Murray earlier this month. Given how poorly McCarthy has performed this summer, Minnesota fans need a strong performance from him to squash any worries.
+The Detroit Lions filled a massive void in the running back room, bringing in free agent Isiah Pacheco to replace David Montgomery. Montgomery signed with the Houston Texans, as Detroit ultimately inked star running back Jahmyr Gibbs to a long-term deal.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrdWF1z27YS_SsY9aHpVLT5oQ9Kb7KtxEpr2ZXV5uE2wwEJUEQMEiwASlE7-e89IGXZcnuTe6cPd3JfLAu7IBZnz9ld6o9eSm1WJIL1pj3m-_lw4A_9YUAHcR4GaZjnWTCgE06HoyjNo1GcRSz2B-MoD8Mwy0Zjn47SjNJgFE8mvX4vo5qZ3vRff_RoXWu15SyhFo-GiTa2UBr_v6UlN-RC7ZnboMqSV5bqPSzvqNa8-taQjVai8jSX1HJGaGp4lXEiDNkpbQtSqkpYpUW1ISnPaGNgsyRTjYRznvPMkgLOteY11dQKVRFawbSlQtJUSGH3Z-QaHqL60Og9MXzLNRZbL_6xxgNwrOa20RU-Sioq0lQPldpVZycxJ8dbpvvuls9sCHAjKizf3F7Nf0yuVrPX69ajsvBI7L7mMK7md7er9WL5BiaG62Ip9MOR58deOF4Ho6k_mQ6C731_6vvORWhEhxvBbzl_M1svfpm7ZU1zm-DRuWAOq97UP5sMHtelKIVtcXC56a0LjlvVgJIwhVRUyhKDS4t8TyxsRzhU3n5vswH0TcPd9ZeKWFFyS1PJ-wQIW5GJuoMZsCMx2KmfcNwg3yfYkx11yVFbxMrOeu_7Pb59DLv3zaWS1pB3K_JWmYJcAXNDXmVU5t_1yXpO1nvJNemYQl61oXWGd0JKckOldOe_AvaFRfRNmcJ8f09mZ2-Rc9rIDNamYsJkUhnOvmuTfnmB44qK2oJWZM52jsanbn1yNSc3Iis4leRScnDQvHyQ5i2WtaaZwwT0tIrRvQPt8YZJhuOES3SnuVIBEz79OI1DmobZeBAOh-M8Srmfhin2QTLi9zbb99fgSbKer26wXPIMkQpTwjC7uJ8v18nr1e1NcreaXa4Xl44SpWJcHkhIZfI1Cg0fXJtC1Ah5sbya383xZ-lEVEu6566YPKfDcb2D1vc93x_4QRg7gzLiIJu1Qwf0-9AJKaFHPd0uW1OTSpElpinLDq0TyiF5z5PMybpotEGWjwhBNfS5ZvrkqeIddOdo__Kgv9YSzSnDZYAkly4MHM9cKhhwOZhFxY1JcsDdaO7E_d6tbwXfYePxYg63rsIY1ehWZq4GzGwhOe7g1i0evrGFq1bzq8XPjmOW07IDHl8a7UIorK3N9Pz84xnodL5SJYeIpeQ_CHZuUGEacx76k8j3Y384iqPxyB-PAf-n_uf6wRXfgjd3oCCt6MuWcNNoDWyxm1NtoCfADBlWuLeyFAyugC0jOByo6j4p6YODqBBlW7p-Ee6rIT9dkJzimWYPj4puQCtiipbHFol86FgKHhtODaJpDHw6LleuDuaQM3TfFlhddkzfdTJgjGSSOlb_D3qD6wp_2xvubu8Xn-sNn2kNj6XKlQEKwma0dvha7oInkHkBNbSFkpLuSOKoAqQq1WCfczv0CYYuIaQhQKtLJBJ2lP0T2ig2D1JR5tqG5psGcHoHk1aSt4X13_WLGZFQIzT3mGrnjLKMGN0BBrogRauUDaoQ-PNao_y6QJ7Oz12FhE5Flcmm9XzrusVNdglWFfs-2RUKxxjbtUfHNef0W9OSLgV_wIyyhpZaYuCQH9qScSAvmCtFixkQRUm1xdmv1a_V1xk5eSO2KIOF2pFaKS33x8NI4do617nSTpLtHlfbnCyPinUyhGi56zaIRytEc9hDHedyrcpOvYoYhIkRwCkQDNGCmxa3_9vLfXlMgErFlAZ5MGZ8EMfj4SAaxjyfvJgU5rP722Xy421bOJ6PCmih6-vk8nq2Wn9hQvja6u5_MCo8T_7fjQrRMHw5Kvx08V-OCicE27my9wyyLzL0r4zsE5plSrNuliQnrfKfjBBN_U8HiHs3xxiykLIB09vx0fPIzWJ5Ok1cL95cP80Snfl0ltjtdmdGtANFlcvzbcecc0f1cwjRs8rbuXdU72DxjmzxuurnbY2XQmuZMl4LsedeTzzH-opLD0XCPeMwyuJTc88PyiCoqzgcPXzofXrvGq-xSWOY641-HMVB3O9tOCjlLtaNLKedN4ynwfDYeTsl4SVFAsJg_JiXlq_QVYOWTm3SdtzeNA5O7aag4XD0zKEXMxaOaBxxTsNRkAXDMOJjfxCk8SCMQx7lMV7CJyGLh_Ekjcb-BC_nQ6zRMJjEwyx3KcCLSkkTjNumS-EOndrryognqlR99LbBMZ9J9ytAFwmc-YhyjPcR49yP0jgdsdE4wivJJIzySRSwwYTTaEhzGsSUsyijg8koHfMgjmgc-3Ha-_QnOF6gEw:WIRE_MOBILE_MANIFEST_V1 -->
+---
+
+## 3. Josh Jacobs — GB RB
+
+**Worth noting** · OTHER · HIGH evidence
+
+### What changed
+
+Josh Jacobs has been charged with misdemeanor battery and misdemeanor criminal damage to property, according to Wisconsin court records.
+
+### Lineup Beat impact
+
+This creates potential off-field and availability risk for Jacobs, but the report does not establish any team discipline, league action or timetable. Monitor for updates from the Packers or NFL.
+
+[AdamSchefter · X](https://x.com/AdamSchefter/status/2093061267686625324) · 2026-08-27
+
+<details><summary>Full evidence reviewed</summary>
+
+Packers RB Josh Jacobs now has been charged with misdemeanor battery and misdemeanor criminal damage to property, according to Wisconsin court records. https://t.co/egkNH5oQim
+
+</details>
+
+**Also reported by:** [RobDemovsky · X](https://x.com/RobDemovsky/status/2093060630018240668)
+
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrtWF2P47YV_SuEX_oQayxL1JffZjPeHW8n9tbjzQYoFgYpURYzkmiQlD1usED_Rv9ef0nvlWyP7dlFJpu2SYq-DGSSIu8999xzqPmpx5lNi6XMeqOe5-Ui8xKPxmFA04Smge8NWRCEfuS6PHN9EYS5H9Fh7NE0jGM_oDR2RRoEmYhiL-z1eynTmemN_vpTj63XWm1EtmQWtoYp1thCaXge20LU5LaxVtX4iqoqUVumdzD3nartSlVC7_75938YUsEOxCpyqxoDq0mqBbPCEEZqsSWcpQ-5FGVGjLQNsxJWwOJK1dIq3Se8sQTOIlqslbYkU_BmrSwRxjJeSlOQQhqiVSn6ZKv0Q6lYRpQmMF1nsl6RrbRFu8NCPLLaXJ1FuzxmyHddhidzSsuVrDGh2c34bnkzv369aFfUFlYs7W4tYHI-fjebLybTNzCVQWJYA9cLHTd2vGgxTEaeN3Ldb1wX_uISqUWKWcK699Nv78bXcxzVLLdL2DmXmahT2MS9iv3DeCkraVtosCy9BSQjNt3CJ0DMWqQy35EL9MUjjFuRtRAhMEeQZH0oCWJytiliAo-4McnE2hZOWjBAH15vDFsJeDdXuuqqBU8n-D4V9Kr3sd87bAnZ4gk3wmolLbnDXEguyxIiY6RixkhgyUbJNq624E1dY_1wPwheVcAFDQM4BktyLQSBUGpLJkaygrxjaSFSheQBrpQM0rhhcPoJIFcnz0C3VQ2HH-lxoGeXRp8wc4y2Ka2EZEW5g5Mf4CUglz4P8C0rqp0mbyTnBkNgpFT1yrFCV4AgKxHiAxbLFKmJXOlatlJclmIEiMgRjZnr8yxl3Oce9f0oCpE10HTyby1n7sfX97Pp8m7WEq4SUJhamgrxnV9P76-_XUxmU5xRmSj3FGbl8o_VoGpbC20KuYZgJ9Ob8bsx_Jli80FhdwIF6LK2x7kOU9d1XNcPwjjACQWhdy03f4W_tfqxa8IlO_TidDYd41QDMadL01RVh9XlOc94s6c99KnQ2CzQJ5jVnjvAozRVuk0UUDuVzatnxz1XI6hEBimVjIsSRj4AwgWiC9vtZ2UtjFnmTJaNFigPH3F8I8UW3jtmhwB2EmVUo9t2fM2ADmZHZjW5n-CE1aJe2QL5Mb6ZvP8OxqxgyKzb2Xv40WgMobB2bUaDwXa7vTLyCng1QOIO8m67gax_bLQUZiCxK51115VOO7xzmjXS3imRX9YBehmnRClwNHcKVq2h6s5WiAdn6Ow3dFRjS6Ueep_6X-tHB2UogXAGtWNfmz-diBWBOQI83bYI78mNRQMZeCo-vLHXFtz9pdw_ZX2rwgy1wYAYnMnG78mZ3s3uJ4vJ9-MvWFMy_Cpr2hcCUNx3IEppzdbEgLuAPMDFA6nT4iRSITdYAETsmUF9Bml24VTQN12TnmP8f0_6xZ7k0pBzKoRgKRNZyL2Yef92T_oDNekL3Oms_J-1pmiYRL_Sms45dsmdjs4MbfyEl51NPTO1zrfgdbzM7VnXJ2cWscdPZF_hWwuwltYCm_V_0bZuxovfu21dZ6y6h6OwKpe2tUBaHu5ia4XKLllJVJ47T93ANgAhg16Vdke0NA9tBd-yVHHzEuqzekcQLpJJk8p1CXXpk1KwVQOMacuADQFSI_AN0aoVdl17TAcLaKZWVXsOcPEBsMBXpq_v_qOGBpcqrbjSDO9Cy44e-4_WA7hzxW8EXG7Nw-5LDujHIz88OuDPiOHjKKB-yoYsT1kieM44d4V_Ss4fnvHtsaXaSSQDgN42ZuC5ie-Gbui7Ln6Ku2EY9z59_EKYdDhy46_4hEziX-TTe5owYhqwbGgPFIFn7EghW-ASxIl1Pn5fnjFRVtBB9mDbpVgBcaH6UCLT0RZoBwyBE80aQkKGVgxEv6lhRJUb8ezr8UCt-SvyVpliT3EIe0sKEDku4PqH1r86aGAlTQYOwGoIkjNrUebw6NPxVAMsYEWQTYWftWCSECW0s91dXNw_AAAoGPU-fagATJorcii0hUIPxOphehuov8jqJWzy0oD5SR7zjEaRoDymlJ_56vvpn6ezD9MLT50tbsfzn3HT_wnteIHPnlDh8x-AUdsxv8ZlT9n2WzLtt_1a_OHcam8nb26fjPbNqy_o3qm9nQvf0AujMA5DL_A92gpfqoxdNiZD3XJjlyb9HtxYBAj8wTgvNDEeefSoiV0zpKwsIathfMCqVTxojQZMhNllq4W9Ueydz8PnhxeEJwt6PMiDLIaGzCnncOfNEzeMPM4Tl_l5TmmWUJ5lkZuFQernGVyJPcooy-kwiKMwSRAtyLtiyw1QuEN1C7LtdM0P9wquHp3N8AjxsvsXbhcJLM79XCQZjf04SN00o2FCM-qHvo8BcMrTmEaxy6Mh88JhDD_jLKY8CpKQuzRwh71P_wKc95Rw:WIRE_MOBILE_MANIFEST_V1 -->
