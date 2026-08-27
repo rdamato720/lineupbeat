@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**3 cards** · batch `22fed2924865` · 18 draft calls · $0.0805
+**1 cards** · batch `a0a604524886` · 17 draft calls · $0.0813
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,70 +19,30 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. David Montgomery — HOU RB
-
-**Worth noting** · TRANSACTION · MEDIUM evidence
-
-### What changed
-
-David Montgomery signed with the Texans after departing Detroit, according to Ethen Hutton.
-
-### Lineup Beat impact
-
-Montgomery’s move to Houston creates a new backfield situation to monitor, but the report does not establish his role, workload or standing with the Texans.
-
-[Ethen Hutton · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/isiah-pacheco-injury-update-latest-news-lions-rb-hampers-week-1-fantasy-outlook) · 2026-08-27
-
-<details><summary>Full evidence reviewed</summary>
-
-The Detroit Lions filled a massive void in the running back room, bringing in free agent Isiah Pacheco to replace David Montgomery. Montgomery signed with the Houston Texans, as Detroit ultimately inked star running back Jahmyr Gibbs to a long-term deal.
-
-</details>
-
----
-
-## 2. Isiah Pacheco — DET RB
-
-**Trending up** · TRANSACTION · MEDIUM evidence
-
-### What changed
-
-Isiah Pacheco signed with the Lions as a free agent after David Montgomery departed for Houston, Fantasy On SI reported.
-
-### Lineup Beat impact
-
-Pacheco lands in Detroit's backfield and is worth monitoring as Montgomery's replacement, but the report does not establish his workload or role alongside Jahmyr Gibbs.
-
-[Ethen Hutton · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/isiah-pacheco-injury-update-latest-news-lions-rb-hampers-week-1-fantasy-outlook) · 2026-08-27
-
-<details><summary>Full evidence reviewed</summary>
-
-The Detroit Lions filled a massive void in the running back room, bringing in free agent Isiah Pacheco to replace David Montgomery. Montgomery signed with the Houston Texans, as Detroit ultimately inked star running back Jahmyr Gibbs to a long-term deal.
-
-</details>
-
----
-
-## 3. Josh Jacobs — GB RB
+## 1. Josh Jacobs — GB RB
 
 **Worth noting** · OTHER · HIGH evidence
 
 ### What changed
 
-Josh Jacobs has been charged with misdemeanor battery and misdemeanor criminal damage to property, according to Wisconsin court records.
+Josh Jacobs is facing charges, and the Packers said they are cooperating with the NFL while the matter is reviewed.
 
 ### Lineup Beat impact
 
-This creates potential off-field and availability risk for Jacobs, but the report does not establish any team discipline, league action or timetable. Monitor for updates from the Packers or NFL.
+This creates potential availability risk, but there is no announced team action, NFL discipline or timetable. Monitor for league or team updates.
 
-[AdamSchefter · X](https://x.com/AdamSchefter/status/2093061267686625324) · 2026-08-27
+[RobDemovsky · X](https://x.com/RobDemovsky/status/2093090778025279598) · 2026-08-27
 
 <details><summary>Full evidence reviewed</summary>
 
-Packers RB Josh Jacobs now has been charged with misdemeanor battery and misdemeanor criminal damage to property, according to Wisconsin court records. https://t.co/egkNH5oQim
+Clearly, the Packers are not cutting Jacobs -- at least not at this point.
+
+[Responding to]: Statement from the Packers: 
+
+“We are aware of the charges brought against Josh Jacobs. We will continue to cooperate with the NFL as we work through the process. We will have no further comment at this time.”
 
 </details>
 
-**Also reported by:** [RobDemovsky · X](https://x.com/RobDemovsky/status/2093060630018240668)
+**Also reported by:** [RobDemovsky · X](https://x.com/RobDemovsky/status/2093090493328511344), [Matt Schneidman · The Athletic](https://x.com/mattschneidman/status/2093088443181994286), [Ryan Wood · USA Today Network](https://x.com/ByRyanWood/status/2093087046210310640), [BillHuberNFL · X](https://x.com/BillHuberNFL/status/2093086962609512648)
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrtWF2P47YV_SuEX_oQayxL1JffZjPeHW8n9tbjzQYoFgYpURYzkmiQlD1usED_Rv9ef0nvlWyP7dlFJpu2SYq-DGSSIu8999xzqPmpx5lNi6XMeqOe5-Ui8xKPxmFA04Smge8NWRCEfuS6PHN9EYS5H9Fh7NE0jGM_oDR2RRoEmYhiL-z1eynTmemN_vpTj63XWm1EtmQWtoYp1thCaXge20LU5LaxVtX4iqoqUVumdzD3nartSlVC7_75938YUsEOxCpyqxoDq0mqBbPCEEZqsSWcpQ-5FGVGjLQNsxJWwOJK1dIq3Se8sQTOIlqslbYkU_BmrSwRxjJeSlOQQhqiVSn6ZKv0Q6lYRpQmMF1nsl6RrbRFu8NCPLLaXJ1FuzxmyHddhidzSsuVrDGh2c34bnkzv369aFfUFlYs7W4tYHI-fjebLybTNzCVQWJYA9cLHTd2vGgxTEaeN3Ldb1wX_uISqUWKWcK699Nv78bXcxzVLLdL2DmXmahT2MS9iv3DeCkraVtosCy9BSQjNt3CJ0DMWqQy35EL9MUjjFuRtRAhMEeQZH0oCWJytiliAo-4McnE2hZOWjBAH15vDFsJeDdXuuqqBU8n-D4V9Kr3sd87bAnZ4gk3wmolLbnDXEguyxIiY6RixkhgyUbJNq624E1dY_1wPwheVcAFDQM4BktyLQSBUGpLJkaygrxjaSFSheQBrpQM0rhhcPoJIFcnz0C3VQ2HH-lxoGeXRp8wc4y2Ka2EZEW5g5Mf4CUglz4P8C0rqp0mbyTnBkNgpFT1yrFCV4AgKxHiAxbLFKmJXOlatlJclmIEiMgRjZnr8yxl3Oce9f0oCpE10HTyby1n7sfX97Pp8m7WEq4SUJhamgrxnV9P76-_XUxmU5xRmSj3FGbl8o_VoGpbC20KuYZgJ9Ob8bsx_Jli80FhdwIF6LK2x7kOU9d1XNcPwjjACQWhdy03f4W_tfqxa8IlO_TidDYd41QDMadL01RVh9XlOc94s6c99KnQ2CzQJ5jVnjvAozRVuk0UUDuVzatnxz1XI6hEBimVjIsSRj4AwgWiC9vtZ2UtjFnmTJaNFigPH3F8I8UW3jtmhwB2EmVUo9t2fM2ADmZHZjW5n-CE1aJe2QL5Mb6ZvP8OxqxgyKzb2Xv40WgMobB2bUaDwXa7vTLyCng1QOIO8m67gax_bLQUZiCxK51115VOO7xzmjXS3imRX9YBehmnRClwNHcKVq2h6s5WiAdn6Ow3dFRjS6Ueep_6X-tHB2UogXAGtWNfmz-diBWBOQI83bYI78mNRQMZeCo-vLHXFtz9pdw_ZX2rwgy1wYAYnMnG78mZ3s3uJ4vJ9-MvWFMy_Cpr2hcCUNx3IEppzdbEgLuAPMDFA6nT4iRSITdYAETsmUF9Bml24VTQN12TnmP8f0_6xZ7k0pBzKoRgKRNZyL2Yef92T_oDNekL3Oms_J-1pmiYRL_Sms45dsmdjs4MbfyEl51NPTO1zrfgdbzM7VnXJ2cWscdPZF_hWwuwltYCm_V_0bZuxovfu21dZ6y6h6OwKpe2tUBaHu5ia4XKLllJVJ47T93ANgAhg16Vdke0NA9tBd-yVHHzEuqzekcQLpJJk8p1CXXpk1KwVQOMacuADQFSI_AN0aoVdl17TAcLaKZWVXsOcPEBsMBXpq_v_qOGBpcqrbjSDO9Cy44e-4_WA7hzxW8EXG7Nw-5LDujHIz88OuDPiOHjKKB-yoYsT1kieM44d4V_Ss4fnvHtsaXaSSQDgN42ZuC5ie-Gbui7Ln6Ku2EY9z59_EKYdDhy46_4hEziX-TTe5owYhqwbGgPFIFn7EghW-ASxIl1Pn5fnjFRVtBB9mDbpVgBcaH6UCLT0RZoBwyBE80aQkKGVgxEv6lhRJUb8ezr8UCt-SvyVpliT3EIe0sKEDku4PqH1r86aGAlTQYOwGoIkjNrUebw6NPxVAMsYEWQTYWftWCSECW0s91dXNw_AAAoGPU-fagATJorcii0hUIPxOphehuov8jqJWzy0oD5SR7zjEaRoDymlJ_56vvpn6ezD9MLT50tbsfzn3HT_wnteIHPnlDh8x-AUdsxv8ZlT9n2WzLtt_1a_OHcam8nb26fjPbNqy_o3qm9nQvf0AujMA5DL_A92gpfqoxdNiZD3XJjlyb9HtxYBAj8wTgvNDEeefSoiV0zpKwsIathfMCqVTxojQZMhNllq4W9Ueydz8PnhxeEJwt6PMiDLIaGzCnncOfNEzeMPM4Tl_l5TmmWUJ5lkZuFQernGVyJPcooy-kwiKMwSRAtyLtiyw1QuEN1C7LtdM0P9wquHp3N8AjxsvsXbhcJLM79XCQZjf04SN00o2FCM-qHvo8BcMrTmEaxy6Mh88JhDD_jLKY8CpKQuzRwh71P_wKc95Rw:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrNVt1u2zYUfhVCt4sTiqIkyndJkzbdWqdIM2RAGwj8k8VWEg2KiusVBfog28v1SXYoOa6NLkN6twAOxEOew_Odn-_wcyS4l3VpVDSPOOYZpimhjGUpzYmmMk-pIFkqWIVjInFFWMGSRCuBUxXjIiFCxIzGGdcFk9FRJLlTfTR_9zniq5Wz91qV3INp2OKDr62D72srznVr7_uPm6Bh21Z3nrsNbN3UpkfSae51j1bWw4bhDeL33DRcmMb4DXKm_3iExOCRr7XTCDQ6i3jX2aGTWiGveYu49MZ2R2jx_BVSppdm1ZhOI-uQN632XDT6GL22nfEgquDXaL4cpgNBf1ip4MPxgYPlDpPYTJj29qwzS9OB-PXV-cWr8vz69PnNeKILKEq_WemA_eLN1fXNy8WLccs5K6zj3nTLsreDk3obu38PVXAJhASTbIbZjOQ3JJ4n-TzOfsF4jjEc0fdGaQhDKXmnTFCYUttaiJ6ef5pnGWEsT7Ici4oribmOCehNt8PBP2AxuAa-au9X_fzk5NMxoDzZ8-Sk99wP_QmB_OMC0yJJCEvjOKE0-nK05_1r7j16K-tOG9Xy7jEEpJjj_OkISCoqEkuKRZzSlEma0HwfwU2t0amvG-2NfARMC471O78O8DBGaRKzuCgoYdkhnusN79CttepRJMk8oU9HwrMkyahQOlaJTCSG1FT7SH5_e4purOIbtNB-bd3HR-CcbYJnwbFDKDmmGYlxEuOM4kMoZ6ZpLgehHTTIf6CJfwINhC1jKS0EZwyrLE5Ylj2lsvZdOfQ_KzKS4SKNSUZZ9OXusQ5g4OrOT2WcHps_BHDx7NXF6XWQOl75EpqxmlBEc3xcpA_yxrQGLgal0H9jBXXgB5CLrQLLIFlztwRKGrnGo8ACYEcFelhY1A_9Snf9SDim-zC4zRHyjnf9xEKBVFYN30CXzyZ8wV631GjN--_EFYyFm99w-VG7HvXcKPQrl1bs7hUabCAJ1McD-5nAkabzx9Hd9_wA7GdAZq4JTuyZ44Am2ADtwDcPlmezYAsUej9uHxp-373v3l3rfmUh56Dk7d0cvQUMOtAeqpxt9y-Zo6Dw7etft3q8j6_5jzEUzg7LGm5actPBrb_avt56c4xAcQ31gAJtmg4I2Vv4tisNLBm2fD3aCrQOsVuDCNoCRKPNcQtyAzS6Z6rm9wE5qgYXBgbacvYOaRgIx9--_v2UGheKV5hzyvM01VwIlRYU9KCnzJ_bivttcXW7AFmrQ5JN34L06ubyIlRha5VutpOCN-X_fvTZdQdZrc0K_Hu5OL94cwH_FmGshXrWgUj2srcTT0HDeIZxkuZjV65sb7ZNeX0W1s5-mNq05A_durhaXIStQTRGlv3QtlNk9q4IiCsuxy6YyukI4KuDQh_7BgSbsQQfiieoHJTPuoaUjqswDaAuwLSDAtDrqRUP3fhx9EOmFECF3OjAabcWqit0EFy03YWo931ZQf6ASQKx3AX5eIP7jjrEdHoPHDBl753ulr6G5eXLF5cgCcmB1Yuzn57Qec4wSUlepMVEo9L2vhx6FVgQs5jk2VG01N3YZNsH2yHFpgmQ645ipzKWvGkAVZw_xGokUCjqAZ473JcjtUZzRg73-5qTNNs7EIm0SlWYuxUVQqusKnCWw8OywDypKkpVATNS5TBTUplUShBGKLRgReOU5VlRhGjJWre8vIf8T1FdwxSYTW07M52wn2b38S7E5fTmnTyBw1VOJNMCwoBTSmnMtZDwVyWCyKJKcuh2ppSCp5LSjMIn1HUiYaZihikci778A55Lrgc:WIRE_MOBILE_MANIFEST_V1 -->

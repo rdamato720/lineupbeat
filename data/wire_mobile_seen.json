@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 304,
+ "count": 321,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -3359,6 +3359,217 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00426
+  },
+  {
+   "candidate_id": "mobile:article:0e9924886ffe440a49ac",
+   "player_id": "00-0037240",
+   "source_url": "https://www.detroitlions.com/news/twentyman-training-camp-day-19-observations-goff-stbrown-gibbs",
+   "attempted_at": "2026-08-27T21:53:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T21:53:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004168
+  },
+  {
+   "candidate_id": "mobile:article:c19491e8cc4bc72af6bf",
+   "player_id": "00-0039065",
+   "source_url": "https://www.detroitlions.com/news/twentyman-training-camp-day-19-observations-goff-stbrown-gibbs",
+   "attempted_at": "2026-08-27T21:53:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T21:53:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00417
+  },
+  {
+   "candidate_id": "mobile:article:b5d98411097c316d875c",
+   "player_id": "00-0039139",
+   "source_url": "https://www.detroitlions.com/news/twentyman-training-camp-day-19-observations-goff-stbrown-gibbs",
+   "attempted_at": "2026-08-27T21:53:07+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T21:53:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00442
+  },
+  {
+   "candidate_id": "mobile:article:2c7a99f521260abf9c8f",
+   "player_id": "00-0036963",
+   "source_url": "https://www.detroitlions.com/news/twentyman-training-camp-day-19-observations-goff-stbrown-gibbs",
+   "attempted_at": "2026-08-27T21:53:10+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T21:53:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003926
+  },
+  {
+   "candidate_id": "mobile:onsi:8b7b973ddf582f5c486d",
+   "player_id": "00-0036971",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-everything-we-learned-that-actually-matters-at-training-camp--",
+   "attempted_at": "2026-08-27T21:53:13+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T21:53:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004558
+  },
+  {
+   "candidate_id": "mobile:onsi:6c378e3568500ba2f8cf",
+   "player_id": "00-0037840",
+   "source_url": "https://www.si.com/nfl/rams/onsi/rams-tutu-atwell-trade-xavier-smith-roster-spot",
+   "attempted_at": "2026-08-27T21:53:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T21:53:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004738
+  },
+  {
+   "candidate_id": "mobile:onsi:4c55b48fc5a6a74c892d",
+   "player_id": "00-0038996",
+   "source_url": "https://www.si.com/onsi/fantasy/news/tucker-kraft-injury-update-packers-tight-end-s-fantasy-football-outlook-is-murky",
+   "attempted_at": "2026-08-27T21:53:19+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-27T21:53:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00742
+  },
+  {
+   "candidate_id": "mobile:onsi:9e57be6ce80b7d1b1e55",
+   "player_id": "00-0039146",
+   "source_url": "https://www.si.com/onsi/fantasy/news/tucker-kraft-injury-update-packers-tight-end-s-fantasy-football-outlook-is-murky",
+   "attempted_at": "2026-08-27T21:53:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T21:53:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00514
+  },
+  {
+   "candidate_id": "mobile:x:bdaf0aa4a755eabbd594",
+   "player_id": "00-0035700",
+   "source_url": "https://x.com/RobDemovsky/status/2093090778025279598",
+   "attempted_at": "2026-08-27T21:53:31+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-27T21:53:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004462
+  },
+  {
+   "candidate_id": "mobile:x:6628873670bfadc0ae12",
+   "player_id": "00-0035700",
+   "source_url": "https://x.com/RobDemovsky/status/2093090493328511344",
+   "attempted_at": "2026-08-27T21:53:34+00:00",
+   "status": "DUPLICATE_EVENT",
+   "duplicate_of": "mobile:x:bdaf0aa4a755eabbd594",
+   "dedupe_detail": {
+    "similarity": 0.5417,
+    "shared_markers": [],
+    "window_hours": 12
+   },
+   "completed_at": "2026-08-27T21:53:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006256
+  },
+  {
+   "candidate_id": "mobile:x:25bf21c40b15458c4347",
+   "player_id": "00-0035700",
+   "source_url": "https://x.com/mattschneidman/status/2093088443181994286",
+   "attempted_at": "2026-08-27T21:53:41+00:00",
+   "status": "DUPLICATE_EVENT",
+   "duplicate_of": "mobile:x:bdaf0aa4a755eabbd594",
+   "dedupe_detail": {
+    "similarity": 0.5745,
+    "shared_markers": [],
+    "window_hours": 12
+   },
+   "completed_at": "2026-08-27T21:53:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005074
+  },
+  {
+   "candidate_id": "mobile:x:5b7dc5f1a2a80dbbc23d",
+   "player_id": "00-0035700",
+   "source_url": "https://x.com/BillHuberNFL/status/2093087608855216324",
+   "attempted_at": "2026-08-27T21:53:45+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T21:53:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003904
+  },
+  {
+   "candidate_id": "mobile:x:a63364bde1d3c3c0628f",
+   "player_id": "00-0035700",
+   "source_url": "https://x.com/ByRyanWood/status/2093087046210310640",
+   "attempted_at": "2026-08-27T21:53:47+00:00",
+   "status": "DUPLICATE_EVENT",
+   "duplicate_of": "mobile:x:bdaf0aa4a755eabbd594",
+   "dedupe_detail": {
+    "similarity": 0.42,
+    "shared_markers": [],
+    "window_hours": 12
+   },
+   "completed_at": "2026-08-27T21:53:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004986
+  },
+  {
+   "candidate_id": "mobile:x:43168549ba880d613866",
+   "player_id": "00-0035700",
+   "source_url": "https://x.com/BillHuberNFL/status/2093086962609512648",
+   "attempted_at": "2026-08-27T21:53:51+00:00",
+   "status": "DUPLICATE_EVENT",
+   "duplicate_of": "mobile:x:bdaf0aa4a755eabbd594",
+   "dedupe_detail": {
+    "similarity": 0.6136,
+    "shared_markers": [],
+    "window_hours": 12
+   },
+   "completed_at": "2026-08-27T21:53:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004316
+  },
+  {
+   "candidate_id": "mobile:x:a74b0493e234fbea6d28",
+   "player_id": "00-0041438",
+   "source_url": "https://x.com/jwyattsports/status/2093085015034720615",
+   "attempted_at": "2026-08-27T21:53:55+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T21:53:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00513
+  },
+  {
+   "candidate_id": "mobile:onsi:3f20994ff3f6df41c91f",
+   "player_id": "00-0040667",
+   "source_url": "https://www.si.com/onsi/fantasy/news/tucker-kraft-injury-update-packers-tight-end-s-fantasy-football-outlook-is-murky",
+   "attempted_at": "2026-08-27T21:53:59+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T21:54:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003818
+  },
+  {
+   "candidate_id": "mobile:article:2a6ed29613397deedb82",
+   "player_id": "00-0037055",
+   "source_url": "https://www.tennesseetitans.com/news/ten-observations-from-thursday-s-titans-vs-bears-joint-practice",
+   "attempted_at": "2026-08-27T21:54:01+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-27T21:54:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00479
   }
  ]
 }
