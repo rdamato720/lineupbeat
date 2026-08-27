@@ -280,7 +280,9 @@ class MobileWireTests(unittest.TestCase):
         self.assertIn("WIRE_MOBILE_AUTODRAFT == 'true'", monitor)
         self.assertNotIn('cron: "7,37 * * * *"', monitor)
         self.assertIn('cron: "7,37 0-3 * * *"', monitor)
-        self.assertIn('cron: "7,37 11-23 * * *"', monitor)
+        self.assertIn('cron: "7 11 * * *"', monitor)
+        self.assertIn('cron: "37 11 * * *"', monitor)
+        self.assertIn('cron: "7,37 12-23 * * *"', monitor)
         self.assertIn("--max-calls \"$MOBILE_MAX_CALLS\"", monitor)
         self.assertIn("MOBILE_MAX_CALLS: 20", monitor)
         self.assertIn("--cap \"$MOBILE_RUN_CAP\"", monitor)
@@ -337,6 +339,15 @@ class MobileWireTests(unittest.TestCase):
         script = (ROOT / "scripts" / "wire_mobile_draft.py").read_text()
         self.assertIn('"held_for_review"', script)
         self.assertIn('"article_sources_without_candidates"', script)
+
+    def test_first_morning_run_catches_the_overnight_gap(self):
+        workflow = (ROOT / ".github" / "workflows" /
+                    "wire-monitor.yml").read_text()
+        self.assertIn('- cron: "7 11 * * *"', workflow)
+        self.assertIn('if [ "$SCHEDULE" = "7 11 * * *" ]; then', workflow)
+        self.assertIn("hours=8", workflow)
+        self.assertGreaterEqual(
+            workflow.count('${{ steps.window.outputs.hours }}'), 3)
 
     def test_obj_isolated_red_zone_highlight_is_not_card_worthy(self):
         candidate = {
