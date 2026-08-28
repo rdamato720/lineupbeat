@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `cb8b6e0ece1e` · 4 draft calls · $0.0191
+**1 cards** · batch `3d4e0c376b9e` · 16 draft calls · $0.0832
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,24 +19,29 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Breece Hall — NYJ RB
+## 1. Lamar Jackson — BAL QB
 
-**Trending down** · INJURY · MEDIUM evidence
+**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
 
 ### What changed
 
-Breece Hall is dealing with a groin injury, Colby Colwell reported.
+Lamar Jackson was not in uniform for the offense, according to Jeff Zrebiec.
 
 ### Lineup Beat impact
 
-Hall's groin issue is worth monitoring because any practice limitations or missed time could affect his availability. The report provides no severity, timetable or participation detail.
+Jackson’s apparent practice absence is worth monitoring for availability news. The reason, injury status and whether this is a setback are unknown; his next participation update is key.
 
-[Colby Colwell · Sports Illustrated -- NYJ](https://www.si.com/nfl/jets/onsi/3-surprise-roster-cuts-jets-could-be-forced-make-01m124yjn0e9) · 2026-08-28
+[jeffzrebiec · X](https://x.com/jeffzrebiec/status/2093451303389127014) · 2026-08-28
 
 <details><summary>Full evidence reviewed</summary>
 
-Along with the kicking troubles that ultimately led to the Jets waiving Cade York on Tuesday, injuries have also taken a toll on several key players on the roster, from Breece Hall (groin) and Nahshon Wright (hip) to D'Angelo Ponds (calf) and Kenyon Sadiq (hernia).
+Not in uniform on offense
+QB: Lamar Jackson
+RBs: Derrick Henry, Justice Hill
+WR: Zay Flowers, Rashod Bateman, Ja'Kobi Lane
+TE: Mark Andrews, Durham Smythe
+OL: Roger Rosengarten, Vega Ioane, John Simpson, Ronnie Stanley
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVW1z2zYM_is8fWl7ixK92Zb8LW28Lu3q9FJnvdyupwNJKGJCiR5J2fN6_e8DpThLtn-wLzwbAEHgwfNA3yMOXrS1ktEyErzkc0xQYIr5vMQizUBUVSryKkulkJjxdIZ8ljeASdnMFzlyKCGvRCGadLaITiIBVrpo-fv3CLZba3Yoa_CUmlww-NZY-v3OaH5gdO5R63DHdB32HuyBnL-A1q8cu7NG9Uw5NyCdbG-sb1lneuWNVf0d4yhgcMigP7CtBeGVQKZVpzx4ZXrHjGUdXUfJvOqQCTNoyaBpUHjWUkbYgdLAlVb-cMo2LTKLW3qFhaqVRMd6wxzu0FLAyZjEA9cYEm_B0ntqOz7FJDmUPn3RSP3UPT9M3T_zUQd3qifzp6uL1a_1xfX5z5sxovcUUfvDFsl5vfp8db25XL8nlwQfTFmSzeOkjLNyk6bLJFkms5_CmYQQZak1qofi1qv355vL31bBbKHxNaVuqKdeUJbktDqan-FFI4sCCM4MlpCUZgTAU3NOWMWReXKq_n6wB5rOEZfQ9Nr8Aw7hZBF8aHTE6TgYR68MNEVwR3jlafTtJMLdsaroXBsa617RmMNTD0o8hDl7awZK7MgIng2aniIs9IHpMFkzxn5AH3KrXbjwDiSyW2MfGI1mM6CTQOMbK1eUpoUdkUY7ugkP2DOgJFqH2LEn0OwBiVEaDmhdMIcHrHEe7QlrrOnYW4skEBZ4yl6PNH1DLJRsDa1r6cJXmm7r2etWbd-ECi9enfd3qA37bHrp2GsBuplufMT-QBe-gFR_UDzaXsGbAOkRllpQmArDn_TZGeIrLmlcasnLokrzJm94k2RBtRyRrpLC1F8jCW7WH9dXX9dk61C00CvXkfVy_eHm-jYYjUT9SEXQ9f9Gg2bf0-QI_LHZi9XnFR3roK9pqGR-NsEn8wRwksRJkpdpFhS1NU49Cur6bfhvzf0ksRqelHa1DirbEkeVqN3QdROCz0lCjUoErY70hiOwo5pO2It1-IhA0Me_0_53p5DWJJVOEKImy8Yi0YWekQTCo1v16FzdEDiDxaDyb8G-U7ini09tBJCmTTPpn0xfQhmOXWo9OG-JgpLFMVvffghBpPL-zrdhha0uLm8-kc0jBH5NAYMN9bTeb93y7Gy_3586dUoUO-sbfXZPcj0LHD7LYzfYrVUO40lisRi8i0NAPJIl5hg3hgqScUdyjZO0S7PicN8nWEU_voWd6Xw9OBnWWpKSIMqT6A6JAaHg6cvzcmlm1TJdPC3NSQSkSE3QFEfAR0qRIgZaxuDrcVdGyzJ76XctZLP5s4CIz5qZLMuiaArOUc6bKpkvMs6rBPKmKQpZFVzKRSLnM5E3kmdlVkABTZHOysW8qgKyosUOamK8myazp7UeT7qPVc_Nn_EufRpTPX27p0ooeJ7lWZnPKT8veJkXeVLO57wUMywWi5yXDZZFUskGRI4ZfcWpsiznM1kUIGGWp9GPvwHkqLlO:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVdtu20YQ_ZUFX_pQ2eb91ic5VhK7vkVW0yJ1QAy5Q3FjcldYLiUrQYD-Rn-vX9JZUZbt5g8KGKa4MzuXM2cOvzklmKopBHdyJ-AhulWQxGWGUFdpVrkxhFGVpT5UCSZhHPqZB2Xk1QHWPIUw870oSzDz67qMYmfiVKB57-R_fnNgtdJqjbwAQ6HJBINplKbfX7Cuv2osBVb2huo6lAb0lkwXUD30Sv7z1989owCgycJWGiojKmRQ9ijpKXq2Udo0rFNSGKWFXLJaaQZrEC2UohVmyyRu-mO2aJBpBIo5YUJ-GfSW9QbMQOElZ5sGTYOamYZC0h-wHk1JNTDKzAb5INVG_sKsVeIjVQKaChErMEJJNqw4mF01D7g9ftVKcei-3I7dv7BRwUsh6fjq5mx2WZzNp28XOw9pyKMw2xWScT67vZkvzq_fkcnmoSPf9eMjNz3y04Xv5YGbR9nPrpu7rnURGitbFvldz95NF-cfZ_ZYQ20KCl0LbrFzcvc4fTpuRSfMrhc7MsdihevRj3GF1LQybCnWhPwexB3M-yHtrCVa8AWBIQXZOgvDuXm-jYR22Yq-Ibz3A5g8gTxhFAwfV1Q3ckpgBi2ZER3aK7iPROgOsmoR9GFaVGYn-p7uQNu-YAc91nbyFFXJlp51jbK35RNbHo6dzxPnqT0LElX3XDfd2PvjvfxwmrNL6ODQ6r2cn_Y5O0OtBZHjPUrbxsXQ7xK_F217L3-f5-wTbNnbVm1Q9xM2h75RnJ3S7Dog-l3AT7-qUlBkSTkWs5xdgX5gU8k1UXXCzgbdQMfuui11eS9vLnM2V0vqd66I9kuiHlKUj7gEdq4oBkVUjWR3olvt6D1XUgpkdwZki1vnudmiIq4Ly6FxzTuqosX8MQevrgGiCDyPYwxBnaQB3aMtFV93RDq_upqdnU8XlkkdVg1I0Xd0Pj29m10virfzm6vidj59szh_s3NRHNs9vaEt_kebTc4000asLCjXZ7PbGf27tlu7amGLVtVeEeZgGBF33SPXDcIksxK5Ur3YL-qHU_uu1ZdxdQs4bPDNtQV0NdDuVEU_dN2I4qskbAPjkr2gsQWLGn_i8oS2olKaWxyNYhekvOzTKL3HP8T_UbQIX049EPLY0smChrYLxQmPvVlI7PuipvEMGq2MfLbna4G0BM_9WLxGKevVoHf794d9MRRxaRqrhUS0367ozCBYip1OL-ll0DZvY8yqz09OHo-JUicvPh8n48RPfDcLwsgL3CBIM89PXC90vn-2ktqbYui5VT03DbzEnzhLpFHSdPcfpv9oapKHwUFTRz5XpDLUmBc_4bXjCLF7ILEGU-y01MlT_7W9b8CP4hcOThnVEU_TMKzDskQe15kbJ35ZZi6tXh2GPAtLzhOXx1EV1Lz0Uz-EEOrQi9IkzjILWNWQmBRrIuMI7IZk_2hc6CMhS_V4tPYOKBfjt32shJw9L_Ir7lcxQMA5ZUwznmVxhljHcezRd75KwgDDKCtDKiNzMam5F8al5yZRGUTO938BAaTAVw:WIRE_MOBILE_MANIFEST_V1 -->

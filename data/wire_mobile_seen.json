@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 341,
+ "count": 357,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -3790,6 +3790,182 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005462
+  },
+  {
+   "candidate_id": "mobile:onsi:b68d435d0b58b1359672",
+   "player_id": "00-0040676",
+   "source_url": "https://www.si.com/nfl/titans/onsi/cam-ward-and-titans-avoid-worst-case-scenario-in-wan-dale-robinson-injury-update",
+   "attempted_at": "2026-08-28T21:37:44+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T21:37:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005136
+  },
+  {
+   "candidate_id": "mobile:onsi:28f192918f1ce8d40f48",
+   "player_id": "00-0041438",
+   "source_url": "https://www.si.com/nfl/titans/onsi/cam-ward-and-titans-avoid-worst-case-scenario-in-wan-dale-robinson-injury-update",
+   "attempted_at": "2026-08-28T21:37:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T21:37:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004918
+  },
+  {
+   "candidate_id": "mobile:onsi:b68f34f5591d4a5a25b5",
+   "player_id": "00-0038117",
+   "source_url": "https://www.si.com/nfl/titans/onsi/cam-ward-and-titans-avoid-worst-case-scenario-in-wan-dale-robinson-injury-update",
+   "attempted_at": "2026-08-28T21:37:53+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-28T21:37:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004374
+  },
+  {
+   "candidate_id": "mobile:onsi:c3883c93eddc815e4f44",
+   "player_id": "00-0039923",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/4-definitive-reasons-carson-wentz-vikings-qb2-over-j-j-mccarthy-week-1-01m1267n1np1",
+   "attempted_at": "2026-08-28T21:37:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T21:38:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005302
+  },
+  {
+   "candidate_id": "mobile:onsi:f9f0d5484ff5f887b509",
+   "player_id": "00-0035228",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/4-definitive-reasons-carson-wentz-vikings-qb2-over-j-j-mccarthy-week-1-01m1267n1np1",
+   "attempted_at": "2026-08-28T21:38:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T21:38:02+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00394
+  },
+  {
+   "candidate_id": "mobile:onsi:522cfc8c98f5ed47c873",
+   "player_id": "00-0033280",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-backfield-depth-behind-christian-mccaffrey-looks-much-improved",
+   "attempted_at": "2026-08-28T21:38:02+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T21:38:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005236
+  },
+  {
+   "candidate_id": "mobile:onsi:4cb3ffafd4963d3372dc",
+   "player_id": "00-0040206",
+   "source_url": "https://www.si.com/nfl/colts/onsi/4-colts-with-the-most-on-the-line-in-preseason-finale-vs-lions",
+   "attempted_at": "2026-08-28T21:38:06+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-28T21:38:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00672
+  },
+  {
+   "candidate_id": "mobile:onsi:5e143cd0003d71810ce9",
+   "player_id": "00-0039338",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-every-player-whose-roster-spot-danger",
+   "attempted_at": "2026-08-28T21:38:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T21:38:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004164
+  },
+  {
+   "candidate_id": "mobile:x:1eb4bf8c854a9dc3de7a",
+   "player_id": "00-0040691",
+   "source_url": "https://x.com/JordanRaanan/status/2093451437980217410",
+   "attempted_at": "2026-08-28T21:38:14+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T21:38:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005712
+  },
+  {
+   "candidate_id": "mobile:x:a1ffaa55a11de6a3f783",
+   "player_id": "00-0034796",
+   "source_url": "https://x.com/jeffzrebiec/status/2093451303389127014",
+   "attempted_at": "2026-08-28T21:38:18+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-28T21:38:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005814
+  },
+  {
+   "candidate_id": "mobile:x:24e8f72efd01ab05203d",
+   "player_id": "00-0039040",
+   "source_url": "https://x.com/DavidFurones_/status/2093449461913485652",
+   "attempted_at": "2026-08-28T21:38:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T21:38:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0039
+  },
+  {
+   "candidate_id": "mobile:x:4daa75b76f1032dda40b",
+   "player_id": "00-0039337",
+   "source_url": "https://x.com/art_stapleton/status/2093448601850536256",
+   "attempted_at": "2026-08-28T21:38:24+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-28T21:38:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003774
+  },
+  {
+   "candidate_id": "mobile:x:10d8bad01ef113e83a81",
+   "player_id": "00-0035659",
+   "source_url": "https://x.com/BenStandig/status/2093436669697667564",
+   "attempted_at": "2026-08-28T21:38:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T21:38:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006922
+  },
+  {
+   "candidate_id": "mobile:x:4e3d4fdc71146e2a221c",
+   "player_id": "00-0037256",
+   "source_url": "https://x.com/BenStandig/status/2093436669697667564",
+   "attempted_at": "2026-08-28T21:38:31+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-28T21:38:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005168
+  },
+  {
+   "candidate_id": "mobile:x:714eac9a08e0179fd8d5",
+   "player_id": "00-0039910",
+   "source_url": "https://x.com/BenStandig/status/2093436669697667564",
+   "attempted_at": "2026-08-28T21:38:34+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T21:38:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005202
+  },
+  {
+   "candidate_id": "mobile:x:55d0444c687b57e66e92",
+   "player_id": "00-0040242",
+   "source_url": "https://x.com/BenStandig/status/2093436669697667564",
+   "attempted_at": "2026-08-28T21:38:37+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-28T21:38:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00689
   }
  ]
 }
