@@ -1,19 +1,28 @@
 #!/usr/bin/env python3
 """Render the complete digest as one human-review issue."""
 import argparse
+import hashlib
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+
+from wire import digest_approval
+
+PUBLICATIONS = ROOT / "data/wire_digest_publications.json"
 
 
-def render(payload: dict) -> str:
-    updates = payload.get("proposals") or []
+def render(manifest: dict) -> str:
+    updates = manifest.get("updates") or []
     lines = ["# Fantasy Football News Updates You Need to Know", "",
-             f"**{len(updates)} updates** selected from {payload['reviewed_report_count']} prioritized reports · "
-             f"{payload.get('high_signal_report_count', 0)} high-signal reports in the full window · "
-             f"1 batch call · ${payload['cost_usd']:.4f}", "",
-             "Nothing here can publish. Approve or edit the complete digest as one editorial package.", ""]
+             f"**{len(updates)} updates** · batch `{manifest['batch_id'][:12]}` · "
+             f"{manifest['model_calls']} batch call · ${manifest['cost_usd']:.4f}", "",
+             "Nothing is live yet. Approve, reject or edit the exact numbered bullets below.", "",
+             "```text", "approve all", "approve 1,2,3", "reject 4",
+             "edit 5 | Alec Pierce returned to practice.", "```", "",
+             "Only comments from `rdamato720` can publish.", ""]
     for number, update in enumerate(updates, 1):
         lines.append(f"{number}. {update['bullet']} [Source]({update['source_url']})")
     if updates:
@@ -23,12 +32,7 @@ def render(payload: dict) -> str:
                       f"[{update['author']} · {update['source_name']}]({update['source_url']})", "",
                       f"> {update['evidence_quote']}", ""]
         lines += ["</details>"]
-    rejected = payload.get("validation_rejections") or []
-    lines += ["", "<details><summary>Validation diagnostics</summary>", "",
-              f"- Model selections rejected deterministically: {len(rejected)}"]
-    for row in rejected:
-        lines.append(f"- {', '.join(row['failures'])}")
-    lines += ["", "</details>"]
+    lines += ["", digest_approval.encode(manifest)]
     return "\n".join(lines) + "\n"
 
 
@@ -36,12 +40,22 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", type=Path, default=ROOT / "data/wire_digest_dark_batch.json")
     parser.add_argument("--output", type=Path, default=ROOT / "data/wire_digest_dark_inbox.md")
+    parser.add_argument("--manifest", type=Path, default=ROOT / "data/wire_digest_inbox.json")
     args = parser.parse_args()
-    body = render(json.loads(args.source.read_text()))
+    source = json.loads(args.source.read_text())
+    publications = json.loads(PUBLICATIONS.read_text())
+    manifest = digest_approval.make_manifest(
+        source.get("proposals") or [], source["generated_at"],
+        hashlib.sha256(args.source.read_bytes()).hexdigest(),
+        hashlib.sha256(PUBLICATIONS.read_bytes()).hexdigest(),
+        int(publications.get("count") or 0), int(source.get("model_calls") or 0),
+        float(source.get("cost_usd") or 0))
+    body = render(manifest)
     if len(body.encode()) > 62_000:
         raise SystemExit("digest issue exceeds GitHub limit")
     args.output.write_text(body)
-    print("  Digest review issue rendered; 0 publications")
+    args.manifest.write_text(json.dumps(manifest, indent=1, ensure_ascii=False) + "\n")
+    print("  Digest approval issue rendered; 0 publications")
     return 0
 
 

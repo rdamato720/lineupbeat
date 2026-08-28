@@ -1,0 +1,74 @@
+name: Publish approved Wire digest updates
+
+on:
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: wire-runtime
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: >-
+      github.actor == 'rdamato720' &&
+      github.event.issue.pull_request == null &&
+      contains(github.event.issue.labels.*.name, 'wire-digest-inbox')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      issues: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Approval boundary gates
+        run: |
+          python scripts/test_wire_digest.py
+          python scripts/test_wire_digest_approval.py
+          python scripts/wire_health.py --check
+      - name: Apply exact authorized comment
+        id: apply
+        run: |
+          python scripts/wire_digest_approve.py --event "$GITHUB_EVENT_PATH"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          result = json.loads(Path("data/wire_digest_approval_result.json").read_text())
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a") as output:
+              for key in ("approved", "rejected", "published", "remaining"):
+                  output.write(f"{key}={result[key]}\n")
+              output.write(f"close_issue={str(result['close_issue']).lower()}\n")
+          PY
+      - name: Commit publication and immutable receipt
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/wire_digest_publications.json data/wire_digest_approvals.json \
+            data/wire_digest_approval_result.json
+          git commit -m "Publish approved Wire digest updates"
+          git push origin HEAD:main
+      - name: Confirm on issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" \
+            --body "Applied: ${{ steps.apply.outputs.approved }} approved, ${{ steps.apply.outputs.rejected }} rejected, ${{ steps.apply.outputs.published }} published. ${{ steps.apply.outputs.remaining }} remain."
+      - name: Close completed inbox
+        if: steps.apply.outputs.close_issue == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue close "${{ github.event.issue.number }}"
+      - name: Queue homepage rebuild
+        if: steps.apply.outputs.published != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run refresh.yml --ref main -f skip_fetch=true -f wire_review_mode=none

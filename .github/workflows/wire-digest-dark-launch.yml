@@ -1,4 +1,4 @@
-name: Wire curated digest dark launch
+name: Wire curated digest
 
 on:
   workflow_dispatch:
@@ -17,7 +17,7 @@ on:
         default: "0.20"
 
 concurrency:
-  group: wire-digest-dark-launch
+  group: wire-digest-review
   cancel-in-progress: false
 
 jobs:
@@ -86,27 +86,33 @@ jobs:
           python -m beatwire.cli --db wire-digest-x.db run --sport nfl \
             --kind twitterapi --capture-only --tapi-daily-cap "$TAPI_DAILY_CAP"
       - name: Curate one complete digest
+        id: digest
         run: |
           python scripts/wire_digest_draft.py --hours "$DIGEST_HOURS" \
             --max-reports "$DIGEST_MAX_REPORTS" --cap "$DIGEST_CAP_USD" \
             --state wire-digest-state.json
-          python scripts/wire_digest_inbox.py
+          updates=$(python -c 'import json; print(len(json.load(open("data/wire_digest_dark_batch.json"))["proposals"]))')
+          echo "updates=$updates" >> "$GITHUB_OUTPUT"
+          if [ "$updates" -gt 0 ]; then python scripts/wire_digest_inbox.py; fi
       - name: Upload exact review artifacts
+        if: steps.digest.outputs.updates != '0'
         uses: actions/upload-artifact@v4
         with:
           name: wire-digest-dark-${{ github.run_id }}
           path: |
             data/wire_digest_dark_batch.json
             data/wire_digest_dark_inbox.md
+            data/wire_digest_inbox.json
           if-no-files-found: error
       - name: Open review-only issue
+        if: steps.digest.outputs.updates != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh label create wire-digest-dark --color 15803d \
-            --description "Curated digest review; cannot publish" --force
-          gh issue create --title "Wire curated digest dark launch — run ${{ github.run_number }}" \
-            --body-file data/wire_digest_dark_inbox.md --label wire-digest-dark \
+          gh label create wire-digest-inbox --color b7ff2a \
+            --description "Hash-bound curated digest approval" --force
+          gh issue create --title "Wire curated digest approval — run ${{ github.run_number }}" \
+            --body-file data/wire_digest_dark_inbox.md --label wire-digest-inbox \
             --assignee rdamato720
       - name: Save isolated digest cursors
         if: always()

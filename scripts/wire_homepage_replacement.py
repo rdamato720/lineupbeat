@@ -33,6 +33,7 @@ HOME = Path("site/index.html")
 OUT = Path("data/wire_homepage_replacement.html")
 OUT_JSON = Path("data/wire_homepage_replacement.json")
 DECISIONS = Path("data/reviews/backfill_decisions.json")
+DIGEST_PUBLICATIONS = Path("data/wire_digest_publications.json")
 
 LABEL = DIRECTION_LABELS
 ROLE_LABEL = {"PRIMARY": "Latest practice report",
@@ -176,6 +177,18 @@ margin:.85rem 0 0}
 font-size:.57rem;letter-spacing:.06em;text-transform:uppercase;
 margin:.5rem 0 0}
 #wire .more{margin-top:.4rem}
+#wire .wdigest{list-style:none;margin:1.1rem 0 0;padding:0;max-width:56rem;
+border-top:1px solid var(--rule,#262a22)}
+#wire .wdigest li{display:grid;grid-template-columns:auto 1fr auto;gap:.8rem;
+align-items:baseline;padding:1rem .15rem;border-bottom:1px solid var(--rule,#262a22)}
+#wire .wdnum{font-family:var(--agate,inherit);color:var(--signal,#C6F53C);
+font-size:.72rem;font-weight:700;min-width:1.5rem}
+#wire .wdcopy{font-size:1.02rem;line-height:1.5;color:#E4E9E5}
+#wire .wdmeta{font-family:var(--agate,inherit);font-size:.68rem;color:var(--quiet,#8f938a);
+white-space:nowrap}
+#wire .wdmeta a{color:var(--signal,#C6F53C)}
+@media(max-width:640px){#wire .wdigest li{grid-template-columns:auto 1fr}
+#wire .wdmeta{grid-column:2;white-space:normal}}
 """
 
 
@@ -403,6 +416,52 @@ def collect():
     return out
 
 
+def digest_items():
+    if not DIGEST_PUBLICATIONS.exists():
+        return []
+    payload = json.loads(DIGEST_PUBLICATIONS.read_text())
+    if payload.get("schema_version") != "wire-digest-publications-v1":
+        raise ValueError("unsupported digest publication schema")
+    items = list(payload.get("publications") or [])
+    if payload.get("count") != len(items):
+        raise ValueError("digest publication count is invalid")
+    return sorted(items, key=lambda row: row["source_published_at"], reverse=True)
+
+
+def render_digest(items, legacy_cards):
+    rows = []
+    for number, item in enumerate(items, 1):
+        rows.append(
+            f'<li data-digest-item-id="{esc(item["digest_item_id"])}">'
+            f'<span class="wdnum">{number:02d}</span>'
+            f'<span class="wdcopy">{esc(item["bullet"])}</span>'
+            f'<span class="wdmeta">{esc(ago(item.get("source_published_at")))} · '
+            f'<a href="{esc(item["source_url"])}" rel="nofollow noopener" '
+            f'target="_blank">Source</a></span></li>')
+    # Preserve the already-approved card markup as a hidden rollback/audit
+    # block during the digest migration. Readers see only the simple digest;
+    # no pending evidence is included and the legacy publication store stays
+    # reversible until the digest has proven stable in production.
+    teams = sorted({row["team"] for row in legacy_cards})
+    legacy = "".join(card(row) for row in legacy_cards)
+    return f"""<section class="wrap sec" id="wire">
+  <div class="shead"><h2>THE NFL WIRE</h2>
+    <span class="n">{len(items)} approved update{'' if len(items)==1 else 's'}</span>
+  </div>
+  <p class="sub">Fantasy football news updates you need to know, curated from trusted sources.</p>
+  <ol class="wdigest">{''.join(rows)}</ol>
+  <div class="wire-legacy-audit" hidden aria-hidden="true">
+    <div class="wfilters"><button class="on" data-f="all">All reports</button>
+      <button data-f="POSITIVE">Trending up</button><button data-f="NEGATIVE">Trending down</button>
+      <button data-f="NEUTRAL">Worth noting</button>
+      <select id="wteam"><option value="">Team</option>{''.join(f'<option>{esc(t)}</option>' for t in teams)}</select>
+      <button data-p="QB">QB</button><button data-p="RB">RB</button>
+      <button data-p="WR">WR</button><button data-p="TE">TE</button>
+    </div><div class="tiles wire">{legacy}</div>
+  </div>
+</section>"""
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build", action="store_true")
@@ -411,6 +470,7 @@ def main():
                          "production path; the preview is the default.")
     args = ap.parse_args()
     cards = collect()
+    digest = digest_items()
 
     teams = sorted({c["team"] for c in cards})
 
@@ -420,7 +480,7 @@ def main():
     # the filters rely on.
     grid = "".join(card(c) for c in cards)
     hidden = max(0, len(cards) - PAGE)
-    section = f"""<section class="wrap sec" id="wire">
+    section = render_digest(digest, cards) if digest else f"""<section class="wrap sec" id="wire">
   <div class="shead">
     <h2>THE NFL WIRE</h2>
     <span class="n">{len(cards)} reviewed report{'' if len(cards)==1 else 's'}</span>
@@ -525,8 +585,9 @@ def main():
     #    twice eventually.
     START, END = "<!-- LB WIRE REPLACEMENT START -->", \
                  "<!-- LB WIRE REPLACEMENT END -->"
+    behaviour = "" if digest else f"<script>{BEHAVIOUR}</script>"
     block = (f'{START}\n<script>window.__LB_WIRE_REPLACEMENT__=true;</script>\n'
-             f'{section}\n<script>{BEHAVIOUR}</script>\n{END}')
+             f'{section}\n{behaviour}\n{END}')
     if START in home and END in home:
         head = home.split(START)[0]
         tail = home.split(END, 1)[1]
@@ -548,12 +609,14 @@ def main():
     OUT.write_text(home)
     OUT_JSON.write_text(json.dumps(
         {"published": False, "count_shown": len(cards),
+         "digest_mode": bool(digest), "digest": digest,
          "removed_latest_from_the_wire_module": removed_module,
          "all_reports_renderer_disabled": replaced_all_reports,
          "retired_feed": stripped,
          "cards": cards}, indent=1, default=str) + "\n")
 
-    print(f"  {len(cards)} card(s) in the replacement section")
+    print(f"  {len(digest) if digest else len(cards)} "
+          f"{'digest update(s)' if digest else 'card(s)'} in the replacement section")
     for c in cards:
         print(f"    {c['player_name']:<16}{c['team']} {c['position']:<3}"
               f"{c['reader_label']:<14}{c['mechanism']:<24}"
