@@ -1,5 +1,73 @@
 {
  "schema_version": "wire-digest-approval-ledger-v1",
- "count": 0,
- "receipts": []
+ "count": 1,
+ "receipts": [
+  {
+   "receipt_id": "digest:a2b8ed0a6929fadbb0635c7b526baa1f7a04a021aa88fe8773c50029c56cb701:5456950323",
+   "batch_id": "a2b8ed0a6929fadbb0635c7b526baa1f7a04a021aa88fe8773c50029c56cb701",
+   "issue_number": 91,
+   "comment_id": "5456950323",
+   "approved_by": "Ralph Damato",
+   "approved_at": "2026-08-28T19:36:48Z",
+   "approval_statement": "approve 1,2,3,4,7\nreject 5,6,8\n",
+   "outcomes": [
+    {
+     "number": 1,
+     "digest_item_id": "digest:dad33d7aa3bd856b135daa69",
+     "decision": "APPROVED",
+     "edited": false,
+     "bullet": "Kayshon Boutte was traded to the Texans."
+    },
+    {
+     "number": 2,
+     "digest_item_id": "digest:0f3fff32350abab9dfb8a32d",
+     "decision": "APPROVED",
+     "edited": false,
+     "bullet": "The Rams agreed to trade Jarquez Hunter to the Dolphins for Tutu Atwell."
+    },
+    {
+     "number": 3,
+     "digest_item_id": "digest:cefb178b81dbee785c521e2d",
+     "decision": "APPROVED",
+     "edited": false,
+     "bullet": "The Browns waived Cedric Tillman."
+    },
+    {
+     "number": 4,
+     "digest_item_id": "digest:0265e45a7c466b6791f46efc",
+     "decision": "APPROVED",
+     "edited": false,
+     "bullet": "Josh Jacobs was charged with misdemeanor battery and misdemeanor criminal damage to property."
+    },
+    {
+     "number": 7,
+     "digest_item_id": "digest:131acd96f783b15cca31ee05",
+     "decision": "APPROVED",
+     "edited": false,
+     "bullet": "Calvin Austin III suffered a knee injury."
+    },
+    {
+     "number": 5,
+     "digest_item_id": "digest:e30dedd059f7668eacc268f1",
+     "decision": "REJECTED",
+     "edited": false,
+     "bullet": "Hunter Henry signed a contract extension during training camp."
+    },
+    {
+     "number": 6,
+     "digest_item_id": "digest:7a684e4a764517bbe2d58ded",
+     "decision": "REJECTED",
+     "edited": false,
+     "bullet": "Brayden Willis is out with a concussion."
+    },
+    {
+     "number": 8,
+     "digest_item_id": "digest:5aa8493ae118379ed5145791",
+     "decision": "REJECTED",
+     "edited": false,
+     "bullet": "Matthew Caldwell exited with a knee injury."
+    }
+   ]
+  }
+ ]
 }
