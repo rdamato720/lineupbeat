@@ -10,7 +10,7 @@ on:
       max_reports:
         description: "Maximum standalone reports in the batch (10-100)"
         required: true
-        default: "60"
+        default: "100"
       cap_usd:
         description: "Maximum estimated spend for the one batch call"
         required: true

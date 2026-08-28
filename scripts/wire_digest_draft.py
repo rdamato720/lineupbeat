@@ -48,9 +48,10 @@ def run(args, provider=None) -> dict:
     capture.BEAT_DB = args.x_db
     raw = capture.article_candidates(registry, cutoff) + capture.x_candidates(registry, cutoff)
     all_reports = digest.collect(raw, max_reports=2000)
-    state = load_state(args.state)
-    seen = set(state["report_ids"])
-    reports = [row for row in all_reports if row["report_id"] not in seen][:args.max_reports]
+    # A digest is a complete rolling-window view, not a paginated queue. Always
+    # rescan the full window so low-value newer chatter cannot hide an older
+    # material report that is still inside the requested period.
+    reports = all_reports[:args.max_reports]
     calls, cost, accepted, rejected, model_summary = 0, 0.0, [], [], ""
     if reports:
         provider = provider or digest.OpenAIDigestProvider(model=args.model)
@@ -59,6 +60,7 @@ def run(args, provider=None) -> dict:
         calls, cost = 1, float(meta["cost_usd"])
         accepted, rejected = digest.validate(result, reports)
         model_summary = str(result.get("summary") or "")
+        state = load_state(args.state)
         state["report_ids"].extend(row["report_id"] for row in reports)
         save_state(args.state, state)
     payload = {
@@ -69,6 +71,8 @@ def run(args, provider=None) -> dict:
         "model_calls": calls, "cost_usd": round(cost, 6),
         "limits": {"max_reports": args.max_reports, "cap_usd": args.cap},
         "raw_candidate_count": len(raw), "standalone_report_count": len(all_reports),
+        "high_signal_report_count": sum(
+            1 for row in all_reports if digest.HIGH_SIGNAL.search(row["evidence"])),
         "reviewed_report_count": len(reports), "proposal_count": len(accepted),
         "validation_rejection_count": len(rejected), "model_summary": model_summary,
         "proposals": accepted, "validation_rejections": rejected,

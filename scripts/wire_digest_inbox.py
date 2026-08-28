@@ -10,7 +10,8 @@ ROOT = Path(__file__).resolve().parent.parent
 def render(payload: dict) -> str:
     updates = payload.get("proposals") or []
     lines = ["# Fantasy Football News Updates You Need to Know", "",
-             f"**{len(updates)} updates** selected from {payload['reviewed_report_count']} standalone reports · "
+             f"**{len(updates)} updates** selected from {payload['reviewed_report_count']} prioritized reports · "
+             f"{payload.get('high_signal_report_count', 0)} high-signal reports in the full window · "
              f"1 batch call · ${payload['cost_usd']:.4f}", "",
              "Nothing here can publish. Approve or edit the complete digest as one editorial package.", ""]
     for number, update in enumerate(updates, 1):

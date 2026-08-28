@@ -93,8 +93,23 @@ class DigestTests(unittest.TestCase):
         self.assertEqual(len(accepted), 2)
         self.assertEqual(rejected, [])
 
+    def test_high_signal_news_ranks_ahead_of_newer_practice_chatter(self):
+        practice = digest.collect([candidate(
+            "A.J. Brown", "aj", "A.J. Brown made a nice catch in practice.",
+            url="https://x.com/test/status/9")], max_reports=10)[0]
+        practice["published_at"] = "2026-08-28T13:00:00+00:00"
+        trade = digest.collect([candidate(
+            "Tutu Atwell", "ta", "The Dolphins traded Tutu Atwell to the Rams.",
+            url="https://x.com/test/status/8")], max_reports=10)[0]
+        trade["published_at"] = "2026-08-28T12:00:00+00:00"
+        ranked = sorted([practice, trade], key=digest.report_priority, reverse=True)
+        self.assertEqual(ranked[0]["report_id"], trade["report_id"])
+
+    def test_prompt_requests_every_qualifying_development(self):
+        self.assertIn("Select every qualifying concrete development", digest.SYSTEM)
+
     def test_issue_is_one_compact_digest(self):
-        payload = {"reviewed_report_count": 0, "cost_usd": 0,
+        payload = {"reviewed_report_count": 0, "high_signal_report_count": 0, "cost_usd": 0,
                    "proposals": [], "validation_rejections": []}
         issue = wire_digest_inbox.render(payload)
         self.assertIn("complete digest as one editorial package", issue)
