@@ -18,7 +18,8 @@ def render(manifest: dict) -> str:
     updates = manifest.get("updates") or []
     lines = ["# Fantasy Football News Updates You Need to Know", "",
              f"**{len(updates)} updates** · batch `{manifest['batch_id'][:12]}` · "
-             f"{manifest['model_calls']} batch call · ${manifest['cost_usd']:.4f}", "",
+             f"{manifest['model_calls']} batch call{'' if manifest['model_calls']==1 else 's'} · "
+             f"${manifest['cost_usd']:.4f}", "",
              "Nothing is live yet. Approve, reject or edit the exact numbered bullets below.", "",
              "```text", "approve all", "approve 1,2,3", "reject 4",
              "edit 5 | Alec Pierce returned to practice.", "```", "",

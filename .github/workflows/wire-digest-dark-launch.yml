@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       hours:
-        description: "Evidence lookback in hours (1-48)"
+        description: "Evidence lookback in hours (1-168)"
         required: true
         default: "24"
       max_reports:
@@ -61,10 +61,10 @@ jobs:
           reports = int(os.environ["DIGEST_MAX_REPORTS"])
           cap = Decimal(os.environ["DIGEST_CAP_USD"])
           x_cap = Decimal(os.environ["TAPI_DAILY_CAP"])
-          assert 1 <= hours <= 48 and 10 <= reports <= 100
+          assert 1 <= hours <= 168 and 10 <= reports <= 100
           assert Decimal("0") < cap <= Decimal("1")
           assert Decimal("0") < x_cap <= Decimal("25")
-          print(f"digest dark launch: {hours}h; {reports} reports; one batch call; ${cap} cap")
+          print(f"digest review: {hours}h; {reports} reports/day; daily batch calls; ${cap} total cap")
           PY
       - name: Offline digest gates
         run: |
