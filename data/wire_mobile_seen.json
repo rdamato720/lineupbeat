@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 369,
+ "count": 383,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -4098,6 +4098,160 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005632
+  },
+  {
+   "candidate_id": "mobile:onsi:aad5dc2c856f39877487",
+   "player_id": "00-0040691",
+   "source_url": "https://www.si.com/nfl/giants/onsi/giants-jaxson-dart-preseason-finale-sit-mistake-01m15575tt4n",
+   "attempted_at": "2026-08-28T22:26:01+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-28T22:26:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004812
+  },
+  {
+   "candidate_id": "mobile:onsi:41265b2602919d399f06",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/the-biggest-dolphins-roster-question-at-every-position-01m151rgs6cx",
+   "attempted_at": "2026-08-28T22:26:07+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-28T22:26:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005904
+  },
+  {
+   "candidate_id": "mobile:onsi:595b7c31a0957b0b5892",
+   "player_id": "00-0036912",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/eagles-rookie-draft-picks-most-at-risk-of-being-roster-cuts-this-weekend-01m148hpf7da",
+   "attempted_at": "2026-08-28T22:26:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T22:26:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004142
+  },
+  {
+   "candidate_id": "mobile:onsi:a5ec89d8508769d97963",
+   "player_id": "00-0041483",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/eagles-rookie-draft-picks-most-at-risk-of-being-roster-cuts-this-weekend-01m148hpf7da",
+   "attempted_at": "2026-08-28T22:26:17+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T22:26:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00433
+  },
+  {
+   "candidate_id": "mobile:onsi:1e5c767cf395ae130b6b",
+   "player_id": "00-0040867",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/eagles-rookie-draft-picks-most-at-risk-of-being-roster-cuts-this-weekend-01m148hpf7da",
+   "attempted_at": "2026-08-28T22:26:20+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T22:26:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004184
+  },
+  {
+   "candidate_id": "mobile:article:3c8a5f890d7c1808bf25",
+   "player_id": "00-0041438",
+   "source_url": "https://atozsports.com/nfl/tennessee-titans-news/every-play-cam-wards-day-going-deep-titans-bears-joint-practice-stats-passer-rating-final-outing-week-1/",
+   "attempted_at": "2026-08-28T22:26:23+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T22:26:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005006
+  },
+  {
+   "candidate_id": "mobile:article:1c5dbad5849030d7d269",
+   "player_id": "00-0040676",
+   "source_url": "https://atozsports.com/nfl/tennessee-titans-news/every-play-cam-wards-day-going-deep-titans-bears-joint-practice-stats-passer-rating-final-outing-week-1/",
+   "attempted_at": "2026-08-28T22:26:28+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T22:26:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004862
+  },
+  {
+   "candidate_id": "mobile:article:3654f90287993f8e4f31",
+   "player_id": "00-0039032",
+   "source_url": "https://atozsports.com/nfl/tennessee-titans-news/every-play-cam-wards-day-going-deep-titans-bears-joint-practice-stats-passer-rating-final-outing-week-1/",
+   "attempted_at": "2026-08-28T22:26:31+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T22:26:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004582
+  },
+  {
+   "candidate_id": "mobile:x:38a27363fa579d72a017",
+   "player_id": "00-0033873",
+   "source_url": "https://x.com/mattderrick/status/2093464282897711136",
+   "attempted_at": "2026-08-28T22:26:34+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T22:26:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00527
+  },
+  {
+   "candidate_id": "mobile:x:67f8ed05ede2be514416",
+   "player_id": "00-0040691",
+   "source_url": "https://x.com/JordanRaanan/status/2093463533207900252",
+   "attempted_at": "2026-08-28T22:26:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T22:26:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004124
+  },
+  {
+   "candidate_id": "mobile:x:2ac2a2f86df1a210fe27",
+   "player_id": "00-0039732",
+   "source_url": "https://x.com/ParkerJGabriel/status/2093462614772715623",
+   "attempted_at": "2026-08-28T22:26:41+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T22:26:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006568
+  },
+  {
+   "candidate_id": "mobile:x:9b35c47b23e243d4c4c4",
+   "player_id": "00-0038128",
+   "source_url": "https://x.com/DavidFurones_/status/2093462421578867053",
+   "attempted_at": "2026-08-28T22:26:46+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-28T22:26:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00959
+  },
+  {
+   "candidate_id": "mobile:article:95876f04f712d25b3d0b",
+   "player_id": "00-0035261",
+   "source_url": "https://atozsports.com/nfl/tennessee-titans-news/every-play-cam-wards-day-going-deep-titans-bears-joint-practice-stats-passer-rating-final-outing-week-1/",
+   "attempted_at": "2026-08-28T22:26:55+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T22:26:58+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004966
+  },
+  {
+   "candidate_id": "mobile:article:915dbdc904327c163c2a",
+   "player_id": "00-0034837",
+   "source_url": "https://atozsports.com/nfl/tennessee-titans-news/every-play-cam-wards-day-going-deep-titans-bears-joint-practice-stats-passer-rating-final-outing-week-1/",
+   "attempted_at": "2026-08-28T22:26:58+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T22:27:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003908
   }
  ]
 }

@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `ad1c26ca6298` · 12 draft calls · $0.0674
+**2 cards** · batch `a2fa282b9465` · 14 draft calls · $0.0722
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,36 +19,46 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Lamar Jackson — BAL QB
+## 1. Jaxson Dart — NYG QB
 
-**Worth noting** · ABSENT_FROM_PRACTICE · MEDIUM evidence
+**Worth noting** · OTHER · MEDIUM evidence
 
 ### What changed
 
-Lamar Jackson was listed as not in uniform on offense, with no reason provided in the report.
+Jeremy Fowler reported that Jaxson Dart is not expected to play in the preseason finale against the Jets.
 
 ### Lineup Beat impact
 
-Monitor for an explanation and Jackson’s next participation status. This is an availability flag, but the report does not confirm an injury, setback or timetable.
+Dart appears set to sit out the finale, so there will be no final preseason playing-time data from this game. This does not establish a regular-season role change; confirmation from the team would strengthen it.
 
-[jeffzrebiec · X](https://x.com/jeffzrebiec/status/2093452521893237218) · 2026-08-28
+[Patricia Traina · Sports Illustrated -- NYG](https://www.si.com/nfl/giants/onsi/giants-jaxson-dart-preseason-finale-sit-mistake-01m15575tt4n) · 2026-08-28
 
 <details><summary>Full evidence reviewed</summary>
 
-Not in uniform on defense
-DL: Madubuike, Campbell, Jenkins, Washington, Jones 
-OLB: Young, Green, Hendrickson, Robinson
-ILB: Roquan, Simpson, Buchanan, Jamon Johnson, Carl Jones
-CB: Wiggins, Awuzie, Bilhal Kone, Marlon Humphrey
-S: Kyle Hamilton, Jaylinn Hawkins, Malaki Starks
-
-[Responding to]: Not in uniform on offense
-QB: Lamar Jackson
-RBs: Derrick Henry, Justice Hill
-WR: Zay Flowers, Rashod Bateman, Ja'Kobi Lane
-TE: Mark Andrews, Durham Smythe
-OL: Roger Rosengarten, Vega Ioane, John Simpson, Ronnie Stanley
+This week was no different in terms of whether he planned to play his starters. If ESPN reporter Jeremy Fowler’s sources are correct, Harbaugh has decided against playing starting quarterback Jaxson Dart in the preseason finale against the Jets.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrVVtty2zYQ_RUMX_pQ2eZNlMg3yVISO5bsyErdNvJwAGIpIiYBFgQtK5nM9Df6e_2SLkjLl7o_0BnduBdg9-zBgb47jJqsSAV3EodyL_OjjEZ-PIY44jRiPs_d3B-7jPkRD0bcy8FlGY-CnI-pH3qjIOac-xDGses7AyejmjdO8uW7Q-taq3vgKTW4NLpoawql8fdXyPNvGpiAzGaoqgJpqN6ja6GkMEqTHN9UEnioSyqpEUriIyfnNLtrlPz7z78aIuHBkJpqIzJR9yGNoaZtjsm6EA3BF65A76koKROlMHuSl3Q7IKw1xBRANNRKG8IV4GLKkEzJXOjKZgn5tdX7AWnAMNySYDVGVGAoK-H4Vc3pU5ts37f5wqe02App27qczS_S2Wrybt1FSIMRqdnXgM7V_OpytT5bvkcXp8aafNePjtzxkT9e-14SDJOh-7PrJq5rQ4SGzLaLcZ-XpxfzycpaNc1N2rXAQWa4iHscH8ylqITpILKjcdb_0byFDsiu2B8wJjvae4QkrRQ4kMp2bnMRFSPk1iLcBeCGRuQC-KAbklSP-FnYNJhWyw69UkiwORYvzOHHzu3AgftDvc7y1WYES-CQg2xgI2cXCVlQ3rJW3MGAnNKqZlCWA3IO8k7IZkBuaFNgTUZJNCqJXW3k5cU0Ib-pVuLQ32sAdH0AybXoGhyQlWKYq-RGntnIlfqjpWi-FlXd-adtViD77Iq0wnLOVSE7xynVZb_LRp5i5o3YbrsqJrv2m8ACp6IsaEk-YsgAC9clZn9oq7rQsN_I64R83JdAPtBKlH3FdI_oYAzd9e0saEnvBLlGGt3hJhv5ZQVNrSS3uBt1m5C3aKn8Ea1PWNIFrag-zHIjV9MmITPQtncLgiX3edvg2cEyRFlu5M0qIb_TPXlXqh1oLGGFiCpOpsiLqsfgp48IGK4scY_13E5E35EJAgo7jJ-1uqAVua72eLgs-BbRLWj8bEBu8aDaAfwCW0rOFLXAWDyf0V4pKQXYlmUJe-eZGmmGrBL2ZPQqVWEVJSQPicsjz8vCnLMgzFw2pENvhHkoMuJbdzzOFov57GyynqO1AjtM0VRon0yv58t1-m51uUivVpPT9dlpF6I4lI-Hlpbp_1GY1E7i8ApR2-6Xs_nVHD-WVnSw3j1Y9X3FjCdHD63rHrluEI7iyDpUIx515tPUPmv1tVeelB4EaHm5tMjVLStFljZtVfVwvdqkk5JSNAY4eSMqL5g7IDthCqsfGqjNOyiFDX8G5vjNhm9FGBfg2BQCDCVabjDNLmxl69GLYtQ0aY5DaDVYWby19nsByP7n_ix-vTI3qtWdTP1qH4xGSpvCEgMZ9nmBNgPUcms6ucCHVtttC2PqJjk5eThGLp28uPZOekKc-G4chEN_6HvjOPCDEX47P27tDdGYtG24VXE3GoWuP3C2gKPFQ_B4ob6-IoZ-EoRPV0RP5IyWJTbm-Qe4Oi4irVu8e6hJu7vBScb_8jcF9YfRiwCHDfMhH4_DMA8ZAx7lMdbkMxa7NMjzMORxyDgf4XEcZvi_gPljP6QhzUNvOB5FcWwBywpUkfQeydkDu8Nb7Kg_yUdCMvVwdO89oZz2_0n6SjB4DCEL2YjFo8j3soDHmRd5kTvKvWjMs8xzWQhByDMsKcc6WICqkMUYHgRennuu8-MfzHL_dQ:WIRE_MOBILE_MANIFEST_V1 -->
+---
+
+## 2. Malik Willis — MIA QB
+
+**Trending up** · INJURY · MEDIUM evidence
+
+### What changed
+
+David Furones reported Quinn Ewers will miss the game with a groin issue and will not be available behind Malik Willis.
+
+### Lineup Beat impact
+
+Willis appears positioned to handle the available quarterback role with Ewers out. Monitor whether Miami confirms Willis as the starter and whether Ewers' absence extends beyond this game.
+
+[DavidFurones_ · X](https://x.com/DavidFurones_/status/2093462421578867053) · 2026-08-28
+
+<details><summary>Full evidence reviewed</summary>
+
+Quinn Ewers (groin) is indeed not in uniform for pregame warmups, as @CameronWolfe reported he won't go either behind Malik Willis.
+
+</details>
+
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrlV9tu20YQ_ZWFXtKipk1RJEWpL01rpVUQX-IoTYMiEIbcobQJuavuLi2rQYD-Rn-vX9IZUrKl3IMCBYrChkDtZXbnnDNnqNe9HHyxnCvZG_cgKiHKonwUp8kghSLNogFmOBim8QDTAiLoZ_0ojDBKYBQORlGMCIhRWCQySXDYO-oVYKXrjX993YPVypprlHPwFJqmoPFLY-n5ErxVhQIxs6A08C5T16g92A1Nn4L1gnYjWCcceuGNcMoL09DjEkVJeyo8Es7wV4tirapK5Ci06ebEyqJDcEaLVQUbpReBVzUKCR5EaU1N-5QTC6jxWMz4URp0tN0LdB7ySrmlAGFx0VRgg20oayoUxRL0Ar8VhdGlsjV4RTPbkCg8Qi3WpqmkcN6iXtCgFsofH6Q4v0Um33TI7M0ZqxZK0_DZxenk0fz06v6DWbtCe1ox95sV0uTV5PLiajY9_5GmKCseIlrSIMyCKJtF0TgMx_3-N_QZhrxEWSz4qrTufPJ0dnX_EY9aKP28zUSiLihIeDxMd-OVqpVv82M6ezNKz-LKEDWEF3hiMG88SibnIZFQb8QDs67Q3iPOTGMLAtQC80PIgBb0b8qSWa86mEBr09CpnDjjwwfgdXeTOz6IDk8ELzeiVUXLdKsFK5SWquBZ0Bv68rKxG47zRHlPjBN_dyroFHMXNacN3mFV7nh8l22JK78MiG46lZk_7r046u3uRzC2slkjvhJr4KBCqrIkHDThoylDWztKmG6OLQaUHElR6w4wVqXgAJSepbXuWExLMXlyeb7FmHYcgPrXH3_ewQok-cJYpvRI_AQ2h2axFEu6hsSCLigFLKiunN-pvzuGH35r2vNyKF6Jh3DDiba48pX5im8jtgvEkw_ROwZ4B8K8AGKA1deZR21yVeGY9KLGADKRRVRkSVoORtlwGGdsDlT-6vdWhdOzs8np9P5sQqM1clUpV9P4xeynyRWPGYnVthigmv8P_MGsNQlhqVaMzvnp5HJCH-dc-3xHZN_cY-x2uMM-DIMwjMN01OcJQ2h0xf74e_5uzcuu_Odw6wIX5wz9qqFkirlr6rrD9kB1OzFKLmF_KJgtHDcrirwn6i8R0uHh77qiRZCUYAU5VjTyjK6y5FOJr-2s0ujcvARVNXQg2dQLHr9WuKZ9t7kykp1VdhVEQ084LyemVdUQEcAZBIE4f94u2jLDHkwafXpGY0wco9YuaCxfZ-n9yo1PTtbr9bFTx6TQE11WJwsF2rsTroLtc_CyxS2QhFtwC0zQARMQVUGtSFWvMAj7dT9Jhon3se69OfpYCz0FqsIHjTWEwPztBvqM9M4mvS2RnR46mkigkghhIuCakCM544EvtDpeK8J6QjA6LqtjcWa08mS6Oz87U1Crncqd2J3o2rhbVyNjlrcb2lj3BOSuNXi8oXYmHVXlxmi5V2__eqfsJ-N--N5OeXnxZDqb_jz5UKvMPt0q73zjZkVaV77aCE1p7gDbQ2vXAx1eo1V-wy2OXcm3BJXmFsKFNVRlyrkGd2XIILHxv92kHjdK6y2NX7X7vuYt1DmRxMA7KVKjFUWv2yNInswC9TRbNyt3xIx-9wONkNCemarEO0ugq66NvufFwghULcc5Lim0OINKvdpm-BkN42Y8ygdJEQ9zetmM4oGMC_r7rG4xPX_49Or5J9rFf7waPqMv7AP-vsYwoJf27B82htZwxNZx7lSwr7C2zZKXdWl3OmLg4ECyLQy8sn0R24f9A_L5wjYxI_eW_K7TrP5pl_jl493gbHr_nW5w0zaCA3c-4XfYxp1E4WgQp1Ec9ZNhlqXDMBn03rxgw3J-3jjJnhIOoygmX1kgkc5tqXP-Q8eK0nF4927fSb-AqqLU-vEOr9aOqBAaskLw89aoeuMsOpx3S4iSdG9BL0_KRGZZHJdxnqNMy1GYDqM8H4UwKMs4lqM4l3IYyjQpBqXM6ediDDGUcT_JhuloxJAVS6xhTjbmOmjXZKpBV-2B0rm5Ca77tzjPu9-f3U34N2g_gTineDBKMAYswxH04yyNBoMwyaMyKooizulHZynpdkUaxuUgHWXEsyz6Q8h6b_4GF3USHA:WIRE_MOBILE_MANIFEST_V1 -->
