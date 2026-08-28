@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from wire import digest
+from wire import digest, digest_approval
 import wire_digest_inbox
 
 
@@ -109,10 +109,17 @@ class DigestTests(unittest.TestCase):
         self.assertIn("Select every qualifying concrete development", digest.SYSTEM)
 
     def test_issue_is_one_compact_digest(self):
-        payload = {"reviewed_report_count": 0, "high_signal_report_count": 0, "cost_usd": 0,
-                   "proposals": [], "validation_rejections": []}
-        issue = wire_digest_inbox.render(payload)
-        self.assertIn("complete digest as one editorial package", issue)
+        update_row = {"player_id": "ta", "player": "Tutu Atwell", "team": "MIA",
+                      "position": "WR", "event_type": "TRANSACTION",
+                      "bullet": "Tutu Atwell was traded to the Rams.",
+                      "evidence_quote": "The Dolphins traded Tutu Atwell to the Rams.",
+                      "source_url": "https://x.com/test/status/1", "author": "Reporter",
+                      "source_name": "Test", "published_at": "2026-08-28T12:00:00Z",
+                      "report_id": "report:one"}
+        manifest = digest_approval.make_manifest(
+            [update_row], "2026-08-28T12:00:00Z", "a" * 64, "b" * 64, 0, 1, .01)
+        issue = wire_digest_inbox.render(manifest)
+        self.assertIn("Approve, reject or edit", issue)
         self.assertNotIn("Lineup Beat impact", issue)
         self.assertNotIn("wire_publications", issue)
 

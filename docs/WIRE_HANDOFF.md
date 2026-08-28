@@ -2,6 +2,19 @@
 
 Last verified: 2026-08-24
 
+## 2026-08-28 curated-digest transition
+
+The reader-facing Wire is migrating from individual impact cards to one
+concise chronological digest. Trusted standalone X and official-team reports
+are reviewed in one batch. ChatGPT selects and deduplicates factual updates,
+but that selection has no publication authority. The final numbered bullets
+are bound into an immutable manifest; only an explicit comment from the
+allow-listed `rdamato720` account may append them to
+`data/wire_digest_publications.json`. The homepage then renders one bullet and
+one source link per row. Existing approved card publications remain intact as
+a hidden rollback aid during the migration. Pending evidence, rejection
+diagnostics and model output never reach the public page.
+
 Repository: `rdamato720/lineupbeat`
 
 Baseline containing the semantic-boundary repair: `1dfa6f5`
