@@ -25,6 +25,30 @@ def now_utc():
     return datetime.now(timezone.utc)
 
 
+def parse_time(value):
+    try:
+        stamp = datetime.fromisoformat(str(value or "").replace("Z", "+00:00"))
+        return stamp if stamp.tzinfo else stamp.replace(tzinfo=timezone.utc)
+    except (TypeError, ValueError):
+        return None
+
+
+def daily_batches(reports: list[dict], end: datetime, hours: float,
+                  max_reports: int) -> list[list[dict]]:
+    """Split long backfills into bounded newest-first 24-hour batches."""
+    count = max(1, int((hours + 23.999) // 24))
+    batches = []
+    for day in range(count):
+        upper = end - timedelta(hours=24 * day)
+        lower = max(end - timedelta(hours=hours), upper - timedelta(hours=24))
+        rows = [row for row in reports
+                if (stamp := parse_time(row.get("published_at"))) is not None
+                and lower <= stamp < upper]
+        if rows:
+            batches.append(rows[:max_reports])
+    return batches
+
+
 def load_state(path: Path) -> dict:
     if not path.exists():
         return {"schema_version": "wire-digest-state-v1", "report_ids": []}
@@ -47,19 +71,33 @@ def run(args, provider=None) -> dict:
     registry = players.load()
     capture.BEAT_DB = args.x_db
     raw = capture.article_candidates(registry, cutoff) + capture.x_candidates(registry, cutoff)
-    all_reports = digest.collect(raw, max_reports=2000)
+    all_reports = digest.collect(raw, max_reports=10_000)
     # A digest is a complete rolling-window view, not a paginated queue. Always
     # rescan the full window so low-value newer chatter cannot hide an older
     # material report that is still inside the requested period.
-    reports = all_reports[:args.max_reports]
-    calls, cost, accepted, rejected, model_summary = 0, 0.0, [], [], ""
-    if reports:
+    batches = daily_batches(all_reports, generated, args.hours, args.max_reports)
+    reports = [row for batch in batches for row in batch]
+    calls, cost, accepted, rejected, summaries = 0, 0.0, [], [], []
+    if batches:
         provider = provider or digest.OpenAIDigestProvider(model=args.model)
         provider.authenticate()
-        result, meta = provider.draft(reports)
-        calls, cost = 1, float(meta["cost_usd"])
-        accepted, rejected = digest.validate(result, reports)
-        model_summary = str(result.get("summary") or "")
+        for batch in batches:
+            if cost >= args.cap:
+                break
+            result, meta = provider.draft(batch)
+            calls += 1
+            cost += float(meta["cost_usd"])
+            batch_accepted, batch_rejected = digest.validate(result, batch)
+            accepted.extend(batch_accepted)
+            rejected.extend(batch_rejected)
+            summaries.append(str(result.get("summary") or ""))
+        # Exact repeats across daily batches are retained once. Human review
+        # still decides differently worded follow-ups and reversals.
+        unique = {}
+        for row in accepted:
+            key = (row["player_id"], row["event_type"], row["evidence_quote"])
+            unique.setdefault(key, row)
+        accepted = list(unique.values())
         state = load_state(args.state)
         state["report_ids"].extend(row["report_id"] for row in reports)
         save_state(args.state, state)
@@ -73,8 +111,9 @@ def run(args, provider=None) -> dict:
         "raw_candidate_count": len(raw), "standalone_report_count": len(all_reports),
         "high_signal_report_count": sum(
             1 for row in all_reports if digest.HIGH_SIGNAL.search(row["evidence"])),
+        "daily_batch_count": len(batches),
         "reviewed_report_count": len(reports), "proposal_count": len(accepted),
-        "validation_rejection_count": len(rejected), "model_summary": model_summary,
+        "validation_rejection_count": len(rejected), "model_summary": " ".join(summaries),
         "proposals": accepted, "validation_rejections": rejected,
         "cap_crossed": cost > args.cap,
     }
@@ -92,11 +131,11 @@ def main() -> int:
     parser.add_argument("--x-db", type=Path, default=X_DB)
     parser.add_argument("--output", type=Path, default=OUT)
     args = parser.parse_args()
-    if not 1 <= args.hours <= 48 or not 10 <= args.max_reports <= 100 or not 0 < args.cap <= 1:
-        raise SystemExit("hours 1-48; reports 10-100; cap >0 and <=1")
+    if not 1 <= args.hours <= 168 or not 10 <= args.max_reports <= 100 or not 0 < args.cap <= 1:
+        raise SystemExit("hours 1-168; reports 10-100 per day; cap >0 and <=1")
     payload = run(args)
     print(f"  Wire digest: {payload['reviewed_report_count']} standalone reports, "
-          f"{payload['model_calls']} batch call, ${payload['cost_usd']:.4f}, "
+          f"{payload['model_calls']} daily batch call(s), ${payload['cost_usd']:.4f}, "
           f"{payload['proposal_count']} updates, 0 publications")
     if payload["cap_crossed"]:
         print("  observed cap crossed by the single batch response")

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import sys
 import unittest
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -12,6 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from wire import digest, digest_approval
 import wire_digest_inbox
+import wire_digest_draft
 
 
 def candidate(player, pid, evidence, url="https://x.com/test/status/1",
@@ -107,6 +109,17 @@ class DigestTests(unittest.TestCase):
 
     def test_prompt_requests_every_qualifying_development(self):
         self.assertIn("Select every qualifying concrete development", digest.SYSTEM)
+
+    def test_week_backfill_splits_into_seven_daily_batches(self):
+        end = datetime(2026, 8, 28, 12, tzinfo=timezone.utc)
+        reports = []
+        for day in range(7):
+            reports.append({"published_at": (
+                end.replace(hour=11) - timedelta(days=day)
+            ).isoformat(), "report_id": f"day-{day}"})
+        batches = wire_digest_draft.daily_batches(reports, end, 168, 100)
+        self.assertEqual(len(batches), 7)
+        self.assertEqual(sum(len(batch) for batch in batches), 7)
 
     def test_issue_is_one_compact_digest(self):
         update_row = {"player_id": "ta", "player": "Tutu Atwell", "team": "MIA",

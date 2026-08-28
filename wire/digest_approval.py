@@ -31,8 +31,8 @@ def hash_body(value: dict) -> str:
 def make_manifest(updates: list[dict], generated_at: str, source_sha256: str,
                   publication_sha256: str, publication_count: int,
                   model_calls: int, cost_usd: float) -> dict:
-    if not updates or len(updates) > 20:
-        raise ValueError("digest inbox requires 1-20 updates")
+    if not updates or len(updates) > 50:
+        raise ValueError("digest inbox requires 1-50 updates")
     body = {"schema_version": SCHEMA, "generated_at": generated_at,
             "source_sha256": source_sha256,
             "publication_sha256_at_draft": publication_sha256,
@@ -53,8 +53,8 @@ def validate_manifest(manifest: dict) -> list[str]:
         if not re.fullmatch(r"[0-9a-f]{64}", str(manifest.get(field) or "")):
             errors.append(f"invalid {field}")
     updates = manifest.get("updates")
-    if not isinstance(updates, list) or not 1 <= len(updates) <= 20:
-        errors.append("digest manifest requires 1-20 updates")
+    if not isinstance(updates, list) or not 1 <= len(updates) <= 50:
+        errors.append("digest manifest requires 1-50 updates")
         return errors
     ids = []
     for number, row in enumerate(updates, 1):
