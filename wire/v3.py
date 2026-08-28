@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import hashlib
 import re
+from datetime import datetime, timezone
 from urllib.parse import urlsplit, urlunsplit
 
 from . import mobile_dedupe
-from .v2 import candidate_quality, parse_time
 
 
 WINDOW_HOURS = 12
@@ -32,6 +32,23 @@ PRESEASON_LINEUP = re.compile(
 REGULAR_SEASON = re.compile(
     r"(?i)\b(week 1|regular season|official depth chart|named (?:the )?starter|"
     r"first[- ]team promotion)\b")
+
+
+def parse_time(value: str):
+    try:
+        stamp = datetime.fromisoformat(str(value or "").replace("Z", "+00:00"))
+        return stamp if stamp.tzinfo else stamp.replace(tzinfo=timezone.utc)
+    except (TypeError, ValueError):
+        return None
+
+
+def candidate_quality(candidate: dict) -> tuple:
+    ownership = 1 if candidate.get("ownership") in {"OFFICIAL", "TEAM_OWNED"} else 0
+    event_markers = mobile_dedupe.markers(candidate) & mobile_dedupe.PRECALL_EVENT_MARKERS
+    evidence = str(candidate.get("evidence") or "")
+    stamp = parse_time(candidate.get("published_at"))
+    return (ownership, len(event_markers), len(_candidate_tokens(candidate)),
+            len(evidence), stamp.timestamp() if stamp else 0)
 
 
 def canonical_url(value: str) -> str:
@@ -82,6 +99,7 @@ def _report(row: dict) -> dict:
         "published_at": str(row.get("published_at") or ""),
         "ownership": str(row.get("ownership") or ""),
         "origin": str(row.get("origin") or ""),
+        "source_class": str(row.get("source_class") or ""),
         "evidence": str(row.get("evidence") or ""),
     }
 

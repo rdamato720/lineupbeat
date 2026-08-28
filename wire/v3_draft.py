@@ -17,6 +17,15 @@ DECISIONS = {"PROPOSE", "IGNORE", "ABSTAIN"}
 EVENT_TYPES = {"AVAILABILITY", "ROLE", "USAGE", "TRANSACTION", "SUSPENSION",
                "FANTASY_ANALYSIS", "OTHER"}
 DIRECTIONS = {"POSITIVE", "NEGATIVE", "NEUTRAL", "UNCLEAR"}
+CURRENT_UPDATE = re.compile(
+    r"(?i)\b(today|tonight|monday|tuesday|wednesday|thursday|friday|saturday|"
+    r"sunday|this week|now|returned|activated|placed on|ruled out|diagnosed|"
+    r"suffered|left practice|did not practice|limited|full participant|"
+    r"will miss|expected to miss|week 1)\b")
+INJURY_AREAS = re.compile(
+    r"(?i)\b(ankle|knee|hamstring|calf|groin|quad|hip|back|shoulder|elbow|"
+    r"wrist|hand|finger|foot|toe|neck|head|concussion|achilles|acl|mcl)\b")
+VAGUE_INJURY = re.compile(r"(?i)\b(injur(?:y|ed)|health|banged up|ailment)\b")
 CARD = {
     "type": "object", "additionalProperties": False,
     "required": ["player_id", "event_type", "direction", "what_changed",
@@ -57,6 +66,13 @@ single-practice absences, broad inactive or lineup lists, preseason starter
 lists without regular-season meaning, ordinary backup-quarterback activity,
 fringe transactions without a plausible role, mock-draft filler, or a
 speculative beneficiary inferred only from another player's news.
+
+A newly published article repeating an older injury or absence is not a new
+development. Availability proposals require a current, directly supported
+change such as a new diagnosis, participation update, activation, return,
+game-status designation or timetable. Ignore vague references to a player's
+"health" or an unspecified injury. Never add an injury area that does not
+appear in the supplied evidence.
 
 Return one card by default. A second card is exceptional: it requires a
 different supplied player and a separate, explicit, material development with
@@ -191,6 +207,18 @@ def validate(result: dict, story: dict, relevance: dict[str, str] | None = None)
         if is_preseason_lineup(basis) or (card.get("event_type") in {"ROLE", "USAGE"} and
                                           is_preseason_lineup(all_evidence)):
             failures.append(prefix + "preseason lineup does not establish a regular-season role")
+        if card.get("event_type") == "AVAILABILITY":
+            supporting = next((row for row in story.get("reports") or []
+                               if basis in row.get("evidence", "")), {})
+            is_analysis = ("fantasy" in str(supporting.get("source_name") or "").lower() or
+                           "analysis" in str(supporting.get("source_class") or "").lower())
+            if is_analysis and not CURRENT_UPDATE.search(basis):
+                failures.append(prefix + "analysis article does not establish a new availability update")
+            if VAGUE_INJURY.search(basis) and not INJURY_AREAS.search(basis):
+                failures.append(prefix + "injury reference is too vague for an availability update")
+            for area in INJURY_AREAS.findall(summary):
+                if not re.search(rf"(?i)\b{re.escape(area)}\b", all_evidence):
+                    failures.append(prefix + f"{area.lower()} injury detail is absent from the evidence")
         tier = (relevance or {}).get(player_id, "")
         if identity.get("position") == "QB" and tier != "ROSTERABLE":
             qb_role = re.search(r"(?i)\b(named (?:the )?starter|will start|first[- ]team|"
