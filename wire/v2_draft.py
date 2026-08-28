@@ -11,7 +11,7 @@ from .v2 import complete_evidence
 
 
 SCHEMA_VERSION = "wire-v2-editorial-v1"
-PROMPT_VERSION = "wire-v2-event-editor-2026-08-27a"
+PROMPT_VERSION = "wire-v2-event-editor-2026-08-27c"
 DECISIONS = {"PROPOSE", "IGNORE", "ABSTAIN"}
 EVENT_TYPES = {
     "AVAILABILITY", "ROLE", "USAGE", "TRANSACTION", "SUSPENSION",
@@ -53,6 +53,30 @@ attributed and labeled FANTASY_ANALYSIS. Choose IGNORE for mere name mentions,
 mock-draft filler, generic praise, isolated highlights, ordinary backup work,
 promotion, sponsor copy, or an article that contains no new development for
 this player. Choose ABSTAIN only when identity or meaning is genuinely unclear.
+
+Evaluate the authoritative player identity independently when a source post is
+a multi-player roundup. A short attributed bullet can be a useful event by
+itself. Do not ignore it merely because the report is concise or lacks a long
+explanation. Limited or non-contact work, returns to practice, supported
+injury-severity updates and game-status uncertainty normally merit a narrow
+AVAILABILITY proposal when they are new. Ignore an unexplained single-practice
+absence unless the supplied evidence establishes that it materially affects a
+current fantasy role, roster decision or near-term availability.
+
+The card must be about a development directly affecting the authoritative
+player. Another player's release, injury, signing or trade is not by itself a
+role change for this player. Ignore speculative secondary-beneficiary cards
+such as "one fewer player to beat," "a clearer path" or "improved roster
+chances" unless a supplied source directly reports a concrete first-team role,
+workload, promotion or opportunity change for this player. A multi-player
+event may support more than one proposal only when each player has a distinct,
+material and directly supported fantasy impact.
+
+Never state a diagnosis, season-ending status, surgery, suspension or missed-
+game timetable more strongly than the most authoritative primary report. If a
+secondary analysis source makes a stronger claim than the primary report,
+preserve the primary report's narrower wording and put the uncertainty in the
+limitations.
 
 For PROPOSE, what_changed should be one or two plain-English sentences naming
 the player and accurately summarizing the event. lineupbeat_impact should sound
@@ -170,6 +194,21 @@ def validate(result: dict, event: dict) -> list[str]:
         failures.append("lineupbeat_impact must be 1-700 characters")
     if not basis or basis not in all_evidence:
         failures.append("evidence_basis is not an exact supplied excerpt")
+    secondary_phrases = (
+        "one fewer", "path to a roster", "path to snaps", "path to playing",
+        "removes one", "chance to stick", "roster chances",
+    )
+    combined_copy = f"{summary} {impact}".lower()
+    if any(phrase in combined_copy for phrase in secondary_phrases):
+        failures.append("speculative secondary-beneficiary impact")
+    primary_evidence = str((event.get("sources") or [{}])[0].get("evidence") or "")
+    strong_claims = (
+        "season-ending", "out for the season", "torn acl", "torn achilles",
+        "underwent surgery", "will undergo surgery", "suspended for",
+    )
+    for claim in strong_claims:
+        if claim in summary.lower() and claim not in primary_evidence.lower():
+            failures.append(f"{claim} is not supported by the primary source")
     sources = event.get("sources") or []
     if not sources or not all(str(row.get("url") or "").startswith("https://")
                               for row in sources):

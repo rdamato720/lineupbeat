@@ -24,6 +24,16 @@ CURRENT_INJURY = re.compile(
     r"(?i)\b(left (?:practice|the field)|suffered|reaggravated|re-?injured|"
     r"working through .{0,30}(?:issue|injury)|diagnosed|hurt|"
     r"new .{0,20}(?:injury|issue))\b")
+EVENT_SIGNATURES = (
+    ("LEGAL_CHARGE", re.compile(
+        r"(?i)\b(?:charged|charges?|misdemeanor|felony|arrested)\b")),
+    ("WAIVER_RELEASE", re.compile(
+        r"(?i)\b(?:waived|waiving|released|releasing|cut)\b")),
+    ("TRADE", re.compile(
+        r"(?i)\b(?:traded|trade(?:s|d)?|acquired in exchange)\b")),
+    ("SIGNING", re.compile(
+        r"(?i)\b(?:signed|signing|agreed to (?:a|an)|one-year deal)\b")),
+)
 
 
 def parse_time(value: str):
@@ -43,6 +53,12 @@ def phase(candidate: dict) -> str:
     return ""
 
 
+def event_signatures(candidate: dict) -> set[str]:
+    """Return narrow action anchors that safely join rewrites of one event."""
+    evidence = str(candidate.get("evidence") or "")
+    return {name for name, pattern in EVENT_SIGNATURES if pattern.search(evidence)}
+
+
 def same_event(left: dict, right: dict,
                window_hours: int = WINDOW_HOURS) -> tuple[bool, dict]:
     """Conservatively decide whether two raw reports describe one event."""
@@ -55,6 +71,15 @@ def same_event(left: dict, right: dict,
     a_phase, b_phase = phase(left), phase(right)
     if a_phase and b_phase and a_phase != b_phase:
         return False, {"reason": "event_phase_conflict"}
+    shared_signatures = event_signatures(left) & event_signatures(right)
+    signature_similarity = mobile_dedupe.similarity(left, right)
+    if shared_signatures and signature_similarity >= 0.12:
+        return True, {
+            "reason": "shared_event_signature",
+            "signatures": sorted(shared_signatures),
+            "similarity": round(signature_similarity, 4),
+            "window_hours": window_hours,
+        }
     same, detail = mobile_dedupe.precall_duplicate(
         left, right, window_hours=window_hours)
     if same:
