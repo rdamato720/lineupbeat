@@ -28,10 +28,11 @@ def render(payload: dict) -> str:
                   card["evidence_basis"], "", "</details>"]
     rejected = [row for row in payload.get("outcomes") or [] if row["decision"] != "PROPOSE"]
     if rejected:
-        lines += ["", "---", "", "## Stories not proposed", ""]
+        lines += ["", "---", "", "<details><summary>Stories not proposed and diagnostics</summary>", ""]
         for row in rejected:
             detail = "; ".join(row.get("validation_failures") or []) or row.get("reason") or "No reason"
             lines.append(f"- **{', '.join(row['players'])}** — {row['decision']}: {detail}")
+        lines += ["", "</details>"]
     return "\n".join(lines) + "\n"
 
 

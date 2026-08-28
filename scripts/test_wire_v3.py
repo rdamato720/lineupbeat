@@ -89,6 +89,26 @@ class WireV3Tests(unittest.TestCase):
         self.assertIn("second card lacks a distinct player and evidence basis",
                       validate(result, story, {"ap": "ROSTERABLE", "mp": "ROSTERABLE"}))
 
+    def test_analysis_article_cannot_repackage_old_availability(self):
+        evidence = "The Seahawks will be without Zach Charbonnet for roughly half of this season."
+        report = row("a", "Zach Charbonnet", "zc", evidence, position="RB")
+        report["source_name"] = "Fantasy On SI"
+        story = v3.cluster([report])[0]
+        result = {"decision": "PROPOSE", "cards": [
+            card("zc", "Zach Charbonnet", evidence, "AVAILABILITY")], "reason": ""}
+        self.assertTrue(any("does not establish a new availability" in failure
+                            for failure in validate(result, story, {"zc": "ROSTERABLE"})))
+
+    def test_vague_injury_and_invented_body_part_fail(self):
+        evidence = "The wild card is the health of Savion Williams, who was injured at Denver."
+        story = v3.cluster([row("a", "Savion Williams", "sw", evidence)])[0]
+        result = {"decision": "PROPOSE", "cards": [
+            card("sw", "Savion Williams", evidence, "AVAILABILITY")], "reason": ""}
+        result["cards"][0]["what_changed"] = "Savion Williams injured his ankle at Denver."
+        failures = validate(result, story, {"sw": "ROSTERABLE"})
+        self.assertTrue(any("too vague" in failure for failure in failures))
+        self.assertTrue(any("ankle injury detail" in failure for failure in failures))
+
     def test_prompt_and_issue_are_explicitly_review_only(self):
         story = v3.cluster([row("a", "Alec Pierce", "ap", "Alec Pierce returned to practice.")])[0]
         self.assertIn("REPORT COUNT: 1", build_prompt(story))
@@ -98,6 +118,15 @@ class WireV3Tests(unittest.TestCase):
         issue = wire_v3_inbox.render(payload)
         self.assertIn("Nothing here can publish", issue)
         self.assertNotIn("wire_publications", issue)
+
+    def test_rejection_diagnostics_are_collapsed(self):
+        payload = {"reviewed_story_count": 1, "reports_merged": 0, "cost_usd": 0,
+                   "proposals": [], "outcomes": [{"players": ["Example Player"],
+                   "decision": "IGNORE", "reason": "No new development",
+                   "validation_failures": []}]}
+        issue = wire_v3_inbox.render(payload)
+        self.assertIn("<details><summary>Stories not proposed and diagnostics</summary>", issue)
+        self.assertIn("</details>", issue)
 
 
 if __name__ == "__main__":
