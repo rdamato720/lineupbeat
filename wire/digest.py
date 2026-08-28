@@ -16,6 +16,13 @@ PRESEASON_ONLY = re.compile(r"(?i)\b(preseason finale|preseason game|preseason w
 REGULAR_CONTEXT = re.compile(r"(?i)\b(week 1|regular season|season opener|53-man|"
                              r"active roster|injured reserve|\bir\b|\bpup\b)\b")
 NEGATED_EVENT = re.compile(r"(?i)\b(nothing to do with|not related to|if they|might|could possibly)\b")
+HIGH_SIGNAL = re.compile(
+    r"(?i)\b(charged?|arrested|traded?|released?|waived?|signed?|activated|"
+    r"placed on (?:injured reserve|ir|pup)|returned? to practice|"
+    r"did not practice|dnp|limited participant|full participant|"
+    r"concussion|walking boot|ruled out|expected to miss|will miss|"
+    r"on track for week 1|named (?:the )?starter|will start|first[- ]team|"
+    r"larger role|top backup)\b")
 EVENT_SUPPORT = {
     "TRANSACTION": re.compile(r"(?i)\b(traded?|released?|waived?|signed?|activated|"
                                r"placed on (?:injured reserve|ir|pup)|claimed)\b"),
@@ -60,7 +67,7 @@ SYSTEM = """You are the news editor for Lineup Beat. Create one concise NFL
 fantasy-news digest from the supplied standalone trusted reports. Nothing you
 return is approved or published; a human editor reviews the complete list.
 
-Select only concrete, newly reported developments: injury/participation or
+Select every qualifying concrete development in the batch, up to 20: injury/participation or
 return updates, trades/releases/signings/activations, suspensions/legal news,
 and official or explicit regular-season role/starter decisions. Ignore
 practice highlights, generic praise, roster speculation, hypothetical events,
@@ -102,6 +109,7 @@ def collect(candidates: list[dict], max_reports: int = 80) -> list[dict]:
         report = grouped.setdefault(key, {
             "report_id": "report:" + hashlib.sha256(f"{url}|{evidence}".encode()).hexdigest()[:20],
             "source_name": str(row.get("source_name") or ""),
+            "source_id": str(row.get("source_id") or ""),
             "author": str(row.get("author") or ""), "url": url,
             "published_at": str(row.get("published_at") or ""),
             "ownership": str(row.get("ownership") or ""),
@@ -116,8 +124,23 @@ def collect(candidates: list[dict], max_reports: int = 80) -> list[dict]:
     for report in grouped.values():
         report["identities"] = list(report["identities"].values())
         reports.append(report)
-    reports.sort(key=lambda row: (row["origin"] == "X", row["published_at"]), reverse=True)
+    reports.sort(key=report_priority, reverse=True)
     return reports[:max_reports]
+
+
+def report_priority(report: dict) -> tuple:
+    """Put explicit news and authoritative national/official sources first."""
+    evidence = str(report.get("evidence") or "")
+    signals = len({match.group(0).lower() for match in HIGH_SIGNAL.finditer(evidence)})
+    source_id = str(report.get("source_id") or "").lower()
+    author = re.sub(r"[^a-z]", "", str(report.get("author") or "").lower())
+    national = int("natl" in source_id or author in {
+        "adamschefter", "rapsheet", "robdemovsky", "byryanwood",
+        "turrondavenport", "jakearthurnfl", "danieloyefusi",
+    })
+    official = int(report.get("ownership") in {"OFFICIAL", "TEAM_OWNED"})
+    return (signals > 0, signals, national, official,
+            report.get("origin") == "X", report.get("published_at", ""))
 
 
 def build_prompt(reports: list[dict]) -> str:
