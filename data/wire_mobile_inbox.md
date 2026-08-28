@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `a0a604524886` · 17 draft calls · $0.0813
+**1 cards** · batch `cb8b6e0ece1e` · 4 draft calls · $0.0191
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,30 +19,24 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Josh Jacobs — GB RB
+## 1. Breece Hall — NYJ RB
 
-**Worth noting** · OTHER · HIGH evidence
+**Trending down** · INJURY · MEDIUM evidence
 
 ### What changed
 
-Josh Jacobs is facing charges, and the Packers said they are cooperating with the NFL while the matter is reviewed.
+Breece Hall is dealing with a groin injury, Colby Colwell reported.
 
 ### Lineup Beat impact
 
-This creates potential availability risk, but there is no announced team action, NFL discipline or timetable. Monitor for league or team updates.
+Hall's groin issue is worth monitoring because any practice limitations or missed time could affect his availability. The report provides no severity, timetable or participation detail.
 
-[RobDemovsky · X](https://x.com/RobDemovsky/status/2093090778025279598) · 2026-08-27
+[Colby Colwell · Sports Illustrated -- NYJ](https://www.si.com/nfl/jets/onsi/3-surprise-roster-cuts-jets-could-be-forced-make-01m124yjn0e9) · 2026-08-28
 
 <details><summary>Full evidence reviewed</summary>
 
-Clearly, the Packers are not cutting Jacobs -- at least not at this point.
-
-[Responding to]: Statement from the Packers: 
-
-“We are aware of the charges brought against Josh Jacobs. We will continue to cooperate with the NFL as we work through the process. We will have no further comment at this time.”
+Along with the kicking troubles that ultimately led to the Jets waiving Cade York on Tuesday, injuries have also taken a toll on several key players on the roster, from Breece Hall (groin) and Nahshon Wright (hip) to D'Angelo Ponds (calf) and Kenyon Sadiq (hernia).
 
 </details>
 
-**Also reported by:** [RobDemovsky · X](https://x.com/RobDemovsky/status/2093090493328511344), [Matt Schneidman · The Athletic](https://x.com/mattschneidman/status/2093088443181994286), [Ryan Wood · USA Today Network](https://x.com/ByRyanWood/status/2093087046210310640), [BillHuberNFL · X](https://x.com/BillHuberNFL/status/2093086962609512648)
-
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrNVt1u2zYUfhVCt4sTiqIkyndJkzbdWqdIM2RAGwj8k8VWEg2KiusVBfog28v1SXYoOa6NLkN6twAOxEOew_Odn-_wcyS4l3VpVDSPOOYZpimhjGUpzYmmMk-pIFkqWIVjInFFWMGSRCuBUxXjIiFCxIzGGdcFk9FRJLlTfTR_9zniq5Wz91qV3INp2OKDr62D72srznVr7_uPm6Bh21Z3nrsNbN3UpkfSae51j1bWw4bhDeL33DRcmMb4DXKm_3iExOCRr7XTCDQ6i3jX2aGTWiGveYu49MZ2R2jx_BVSppdm1ZhOI-uQN632XDT6GL22nfEgquDXaL4cpgNBf1ip4MPxgYPlDpPYTJj29qwzS9OB-PXV-cWr8vz69PnNeKILKEq_WemA_eLN1fXNy8WLccs5K6zj3nTLsreDk3obu38PVXAJhASTbIbZjOQ3JJ4n-TzOfsF4jjEc0fdGaQhDKXmnTFCYUttaiJ6ef5pnGWEsT7Ici4oribmOCehNt8PBP2AxuAa-au9X_fzk5NMxoDzZ8-Sk99wP_QmB_OMC0yJJCEvjOKE0-nK05_1r7j16K-tOG9Xy7jEEpJjj_OkISCoqEkuKRZzSlEma0HwfwU2t0amvG-2NfARMC471O78O8DBGaRKzuCgoYdkhnusN79CttepRJMk8oU9HwrMkyahQOlaJTCSG1FT7SH5_e4purOIbtNB-bd3HR-CcbYJnwbFDKDmmGYlxEuOM4kMoZ6ZpLgehHTTIf6CJfwINhC1jKS0EZwyrLE5Ylj2lsvZdOfQ_KzKS4SKNSUZZ9OXusQ5g4OrOT2WcHps_BHDx7NXF6XWQOl75EpqxmlBEc3xcpA_yxrQGLgal0H9jBXXgB5CLrQLLIFlztwRKGrnGo8ACYEcFelhY1A_9Snf9SDim-zC4zRHyjnf9xEKBVFYN30CXzyZ8wV631GjN--_EFYyFm99w-VG7HvXcKPQrl1bs7hUabCAJ1McD-5nAkabzx9Hd9_wA7GdAZq4JTuyZ44Am2ADtwDcPlmezYAsUej9uHxp-373v3l3rfmUh56Dk7d0cvQUMOtAeqpxt9y-Zo6Dw7etft3q8j6_5jzEUzg7LGm5actPBrb_avt56c4xAcQ31gAJtmg4I2Vv4tisNLBm2fD3aCrQOsVuDCNoCRKPNcQtyAzS6Z6rm9wE5qgYXBgbacvYOaRgIx9--_v2UGheKV5hzyvM01VwIlRYU9KCnzJ_bivttcXW7AFmrQ5JN34L06ubyIlRha5VutpOCN-X_fvTZdQdZrc0K_Hu5OL94cwH_FmGshXrWgUj2srcTT0HDeIZxkuZjV65sb7ZNeX0W1s5-mNq05A_durhaXIStQTRGlv3QtlNk9q4IiCsuxy6YyukI4KuDQh_7BgSbsQQfiieoHJTPuoaUjqswDaAuwLSDAtDrqRUP3fhx9EOmFECF3OjAabcWqit0EFy03YWo931ZQf6ASQKx3AX5eIP7jjrEdHoPHDBl753ulr6G5eXLF5cgCcmB1Yuzn57Qec4wSUlepMVEo9L2vhx6FVgQs5jk2VG01N3YZNsH2yHFpgmQ645ipzKWvGkAVZw_xGokUCjqAZ473JcjtUZzRg73-5qTNNs7EIm0SlWYuxUVQqusKnCWw8OywDypKkpVATNS5TBTUplUShBGKLRgReOU5VlRhGjJWre8vIf8T1FdwxSYTW07M52wn2b38S7E5fTmnTyBw1VOJNMCwoBTSmnMtZDwVyWCyKJKcuh2ppSCp5LSjMIn1HUiYaZihikci778A55Lrgc:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVW1z2zYM_is8fWl7ixK92Zb8LW28Lu3q9FJnvdyupwNJKGJCiR5J2fN6_e8DpThLtn-wLzwbAEHgwfNA3yMOXrS1ktEyErzkc0xQYIr5vMQizUBUVSryKkulkJjxdIZ8ljeASdnMFzlyKCGvRCGadLaITiIBVrpo-fv3CLZba3Yoa_CUmlww-NZY-v3OaH5gdO5R63DHdB32HuyBnL-A1q8cu7NG9Uw5NyCdbG-sb1lneuWNVf0d4yhgcMigP7CtBeGVQKZVpzx4ZXrHjGUdXUfJvOqQCTNoyaBpUHjWUkbYgdLAlVb-cMo2LTKLW3qFhaqVRMd6wxzu0FLAyZjEA9cYEm_B0ntqOz7FJDmUPn3RSP3UPT9M3T_zUQd3qifzp6uL1a_1xfX5z5sxovcUUfvDFsl5vfp8db25XL8nlwQfTFmSzeOkjLNyk6bLJFkms5_CmYQQZak1qofi1qv355vL31bBbKHxNaVuqKdeUJbktDqan-FFI4sCCM4MlpCUZgTAU3NOWMWReXKq_n6wB5rOEZfQ9Nr8Aw7hZBF8aHTE6TgYR68MNEVwR3jlafTtJMLdsaroXBsa617RmMNTD0o8hDl7awZK7MgIng2aniIs9IHpMFkzxn5AH3KrXbjwDiSyW2MfGI1mM6CTQOMbK1eUpoUdkUY7ugkP2DOgJFqH2LEn0OwBiVEaDmhdMIcHrHEe7QlrrOnYW4skEBZ4yl6PNH1DLJRsDa1r6cJXmm7r2etWbd-ECi9enfd3qA37bHrp2GsBuplufMT-QBe-gFR_UDzaXsGbAOkRllpQmArDn_TZGeIrLmlcasnLokrzJm94k2RBtRyRrpLC1F8jCW7WH9dXX9dk61C00CvXkfVy_eHm-jYYjUT9SEXQ9f9Gg2bf0-QI_LHZi9XnFR3roK9pqGR-NsEn8wRwksRJkpdpFhS1NU49Cur6bfhvzf0ksRqelHa1DirbEkeVqN3QdROCz0lCjUoErY70hiOwo5pO2It1-IhA0Me_0_53p5DWJJVOEKImy8Yi0YWekQTCo1v16FzdEDiDxaDyb8G-U7ini09tBJCmTTPpn0xfQhmOXWo9OG-JgpLFMVvffghBpPL-zrdhha0uLm8-kc0jBH5NAYMN9bTeb93y7Gy_3586dUoUO-sbfXZPcj0LHD7LYzfYrVUO40lisRi8i0NAPJIl5hg3hgqScUdyjZO0S7PicN8nWEU_voWd6Xw9OBnWWpKSIMqT6A6JAaHg6cvzcmlm1TJdPC3NSQSkSE3QFEfAR0qRIgZaxuDrcVdGyzJ76XctZLP5s4CIz5qZLMuiaArOUc6bKpkvMs6rBPKmKQpZFVzKRSLnM5E3kmdlVkABTZHOysW8qgKyosUOamK8myazp7UeT7qPVc_Nn_EufRpTPX27p0ooeJ7lWZnPKT8veJkXeVLO57wUMywWi5yXDZZFUskGRI4ZfcWpsiznM1kUIGGWp9GPvwHkqLlO:WIRE_MOBILE_MANIFEST_V1 -->

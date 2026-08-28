@@ -1,77 +1,46 @@
 {
  "schema_version": "wire-mobile-inbox-v1",
- "generated_at": "2026-08-27T21:53:00+00:00",
+ "generated_at": "2026-08-28T11:29:17+00:00",
  "publication_sha256_at_draft": "b5f5d8844f4bbed6f90672bb90a3ff44d94bdd70d65c3fdb2824a4af41587699",
  "publication_count_at_draft": 82,
- "source_batch_sha256": "f72c8eb276054441aebccccf3b2c9f37a758dddae1de848dd0033c6400804cf3",
- "model_calls": 17,
- "cost_usd": 0.081276,
+ "source_batch_sha256": "6232836d65b4b83430866b8c5e4773b8fe8409dfac3e253fb9023b5d44ada531",
+ "model_calls": 4,
+ "cost_usd": 0.019138,
  "cards": [
   {
-   "player": "Josh Jacobs",
-   "player_id": "00-0035700",
-   "team": "GB",
+   "player": "Breece Hall",
+   "player_id": "00-0038120",
+   "team": "NYJ",
    "position": "RB",
    "content_type": "REPORTING",
-   "direction": "UNCLEAR",
-   "mechanism": "OTHER",
-   "strength": "HIGH",
+   "direction": "NEGATIVE",
+   "mechanism": "INJURY",
+   "strength": "MEDIUM",
    "horizon": "UNKNOWN",
    "projection_action": "NONE",
-   "reader_label": "Worth noting",
-   "public_summary": "Josh Jacobs is facing charges, and the Packers said they are cooperating with the NFL while the matter is reviewed.",
-   "evidence": "Clearly, the Packers are not cutting Jacobs -- at least not at this point.\n\n[Responding to]: Statement from the Packers: \n\n“We are aware of the charges brought against Josh Jacobs. We will continue to cooperate with the NFL as we work through the process. We will have no further comment at this time.”",
-   "commentary": "This creates potential availability risk, but there is no announced team action, NFL discipline or timetable. Monitor for league or team updates.",
-   "source": "X",
-   "author": "RobDemovsky",
-   "date": "2026-08-27T21:38:23+00:00",
-   "url": "https://x.com/RobDemovsky/status/2093090778025279598",
+   "reader_label": "Trending down",
+   "public_summary": "Breece Hall is dealing with a groin injury, Colby Colwell reported.",
+   "evidence": "Along with the kicking troubles that ultimately led to the Jets waiving Cade York on Tuesday, injuries have also taken a toll on several key players on the roster, from Breece Hall (groin) and Nahshon Wright (hip) to D'Angelo Ponds (calf) and Kenyon Sadiq (hernia).",
+   "commentary": "Hall's groin issue is worth monitoring because any practice limitations or missed time could affect his availability. The report provides no severity, timetable or participation detail.",
+   "source": "Sports Illustrated -- NYJ",
+   "author": "Colby Colwell",
+   "date": "2026-08-28T11:00:05+00:00",
+   "url": "https://www.si.com/nfl/jets/onsi/3-surprise-roster-cuts-jets-could-be-forced-make-01m124yjn0e9",
    "ownership": "INDEPENDENT",
-   "evidence_candidate_id": "mobile:x:bdaf0aa4a755eabbd594",
+   "evidence_candidate_id": "mobile:onsi:b84913f3fbf02b6e0bee",
    "reviewer_action": "PENDING",
    "public_summary_approved_by": "",
    "commentary_approved_by": "",
    "approved_at": "",
    "commentary_origin": "MODEL_DRAFT",
-   "model_original_commentary": "This creates potential availability risk, but there is no announced team action, NFL discipline or timetable. Monitor for league or team updates.",
+   "model_original_commentary": "Hall's groin issue is worth monitoring because any practice limitations or missed time could affect his availability. The report provides no severity, timetable or participation detail.",
    "draft_limitations": [
-    "The nature of the charges is not provided.",
-    "No suspension, injury, transaction or playing-status change was announced.",
-    "The Packers said Jacobs is not being cut at this point."
+    "The source does not describe the injury's severity.",
+    "No timetable, treatment or practice status was provided."
    ],
-   "draft_confidence": 0.95,
-   "readiness_failures": [],
-   "corroborating_sources": [
-    {
-     "author": "RobDemovsky",
-     "source": "X",
-     "url": "https://x.com/RobDemovsky/status/2093090493328511344",
-     "date": "2026-08-27T21:37:16+00:00",
-     "evidence_candidate_id": "mobile:x:6628873670bfadc0ae12"
-    },
-    {
-     "author": "Matt Schneidman",
-     "source": "The Athletic",
-     "url": "https://x.com/mattschneidman/status/2093088443181994286",
-     "date": "2026-08-27T21:29:07+00:00",
-     "evidence_candidate_id": "mobile:x:25bf21c40b15458c4347"
-    },
-    {
-     "author": "Ryan Wood",
-     "source": "USA Today Network",
-     "url": "https://x.com/ByRyanWood/status/2093087046210310640",
-     "date": "2026-08-27T21:23:34+00:00",
-     "evidence_candidate_id": "mobile:x:a63364bde1d3c3c0628f"
-    },
-    {
-     "author": "BillHuberNFL",
-     "source": "X",
-     "url": "https://x.com/BillHuberNFL/status/2093086962609512648",
-     "date": "2026-08-27T21:23:14+00:00",
-     "evidence_candidate_id": "mobile:x:43168549ba880d613866"
-    }
-   ]
+   "draft_confidence": 0.9,
+   "readiness_failures": []
   }
  ],
- "batch_id": "a0a6045248865472e4c754b265b8f012c0f289833edb05d10932bb18416ae98c"
+ "batch_id": "cb8b6e0ece1e368e412ac991c3921dcde2b15eb53fae08f673eba8a39c4cf157"
 }

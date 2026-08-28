@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 337,
+ "count": 341,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -3746,6 +3746,50 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00554
+  },
+  {
+   "candidate_id": "mobile:onsi:b84913f3fbf02b6e0bee",
+   "player_id": "00-0038120",
+   "source_url": "https://www.si.com/nfl/jets/onsi/3-surprise-roster-cuts-jets-could-be-forced-make-01m124yjn0e9",
+   "attempted_at": "2026-08-28T11:29:17+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-28T11:29:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00435
+  },
+  {
+   "candidate_id": "mobile:onsi:32018ab221ebbe2e23b5",
+   "player_id": "00-0034351",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/five-roster-thoughts-heading-into-eagles-final-preseason-game-before-roster-cuts-01m10f9b87vy",
+   "attempted_at": "2026-08-28T11:29:21+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T11:29:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004794
+  },
+  {
+   "candidate_id": "mobile:onsi:5cb445665757f404ed21",
+   "player_id": "00-0040122",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-final-53-man-roster-projection-post-training-camp",
+   "attempted_at": "2026-08-28T11:29:25+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-28T11:29:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004532
+  },
+  {
+   "candidate_id": "mobile:onsi:135b96d0f1d729187316",
+   "player_id": "00-0040878",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-final-53-man-roster-projection-post-training-camp",
+   "attempted_at": "2026-08-28T11:29:28+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-28T11:29:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005462
   }
  ]
 }
