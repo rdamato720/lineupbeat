@@ -1,0 +1,118 @@
+name: Wire curated digest dark launch
+
+on:
+  workflow_dispatch:
+    inputs:
+      hours:
+        description: "Evidence lookback in hours (1-48)"
+        required: true
+        default: "24"
+      max_reports:
+        description: "Maximum standalone reports in the batch (10-100)"
+        required: true
+        default: "60"
+      cap_usd:
+        description: "Maximum estimated spend for the one batch call"
+        required: true
+        default: "0.20"
+
+concurrency:
+  group: wire-digest-dark-launch
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      issues: write
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      BEATWIRE_X_PROVIDER: ${{ vars.BEATWIRE_X_PROVIDER }}
+      SORSA_API_KEY: ${{ secrets.SORSA_API_KEY }}
+      TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+      TAPI_DAILY_CAP: ${{ vars.WIRE_MOBILE_TAPI_DAILY_CAP_USD }}
+      DIGEST_HOURS: ${{ inputs.hours }}
+      DIGEST_MAX_REPORTS: ${{ inputs.max_reports }}
+      DIGEST_CAP_USD: ${{ inputs.cap_usd }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            wire-digest-x.db
+            wire-digest-state.json
+          key: wire-digest-state-${{ github.run_id }}
+          restore-keys: wire-digest-state-
+      - name: Validate isolated limits
+        run: |
+          python - <<'PY'
+          import os
+          from decimal import Decimal
+          hours = float(os.environ["DIGEST_HOURS"])
+          reports = int(os.environ["DIGEST_MAX_REPORTS"])
+          cap = Decimal(os.environ["DIGEST_CAP_USD"])
+          x_cap = Decimal(os.environ["TAPI_DAILY_CAP"])
+          assert 1 <= hours <= 48 and 10 <= reports <= 100
+          assert Decimal("0") < cap <= Decimal("1")
+          assert Decimal("0") < x_cap <= Decimal("25")
+          print(f"digest dark launch: {hours}h; {reports} reports; one batch call; ${cap} cap")
+          PY
+      - name: Offline digest gates
+        run: |
+          python scripts/test_wire_digest.py
+          python scripts/test_wire_mobile.py
+          python scripts/wire_health.py --check
+      - name: Authenticate before source reads
+        run: |
+          python - <<'PY'
+          from wire.digest import OpenAIDigestProvider
+          OpenAIDigestProvider().authenticate()
+          print("Digest provider authenticated; 0 Responses API calls")
+          PY
+      - name: Capture trusted source evidence
+        run: |
+          python scripts/wire_backfill.py --discover --report --hours "$DIGEST_HOURS"
+          python scripts/wire_extract.py --limit 3000
+          python scripts/wire_inclusive_review.py --hours "$DIGEST_HOURS"
+          python -m beatwire.cli --db wire-digest-x.db run --sport nfl \
+            --kind twitterapi --capture-only --tapi-daily-cap "$TAPI_DAILY_CAP"
+      - name: Curate one complete digest
+        run: |
+          python scripts/wire_digest_draft.py --hours "$DIGEST_HOURS" \
+            --max-reports "$DIGEST_MAX_REPORTS" --cap "$DIGEST_CAP_USD" \
+            --state wire-digest-state.json
+          python scripts/wire_digest_inbox.py
+      - name: Upload exact review artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wire-digest-dark-${{ github.run_id }}
+          path: |
+            data/wire_digest_dark_batch.json
+            data/wire_digest_dark_inbox.md
+          if-no-files-found: error
+      - name: Open review-only issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create wire-digest-dark --color 15803d \
+            --description "Curated digest review; cannot publish" --force
+          gh issue create --title "Wire curated digest dark launch — run ${{ github.run_number }}" \
+            --body-file data/wire_digest_dark_inbox.md --label wire-digest-dark \
+            --assignee rdamato720
+      - name: Save isolated digest cursors
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            wire-digest-x.db
+            wire-digest-state.json
+          key: wire-digest-state-${{ github.run_id }}
