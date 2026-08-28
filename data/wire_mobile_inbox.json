@@ -1,11 +1,11 @@
 {
  "schema_version": "wire-mobile-inbox-v1",
- "generated_at": "2026-08-28T21:37:43+00:00",
+ "generated_at": "2026-08-28T21:52:34+00:00",
  "publication_sha256_at_draft": "b5f5d8844f4bbed6f90672bb90a3ff44d94bdd70d65c3fdb2824a4af41587699",
  "publication_count_at_draft": 82,
- "source_batch_sha256": "1152cd2c6aa3ddf4489d9969eef6661c98c743e459b470d90e7fd146b1075b35",
- "model_calls": 16,
- "cost_usd": 0.083172,
+ "source_batch_sha256": "8e4b4b7b97621c3d9c161607f168dcc10b4e34dcbb9fd70b31c4c9b97331ff10",
+ "model_calls": 12,
+ "cost_usd": 0.067402,
  "cards": [
   {
    "player": "Lamar Jackson",
@@ -13,35 +13,34 @@
    "team": "BAL",
    "position": "QB",
    "content_type": "REPORTING",
-   "direction": "NEGATIVE",
+   "direction": "UNCLEAR",
    "mechanism": "ABSENT_FROM_PRACTICE",
    "strength": "MEDIUM",
    "horizon": "IMMEDIATE",
    "projection_action": "NONE",
-   "reader_label": "Trending down",
-   "public_summary": "Lamar Jackson was not in uniform for the offense, according to Jeff Zrebiec.",
-   "evidence": "Not in uniform on offense\nQB: Lamar Jackson\nRBs: Derrick Henry, Justice Hill\nWR: Zay Flowers, Rashod Bateman, Ja'Kobi Lane\nTE: Mark Andrews, Durham Smythe\nOL: Roger Rosengarten, Vega Ioane, John Simpson, Ronnie Stanley",
-   "commentary": "Jackson’s apparent practice absence is worth monitoring for availability news. The reason, injury status and whether this is a setback are unknown; his next participation update is key.",
+   "reader_label": "Worth noting",
+   "public_summary": "Lamar Jackson was listed as not in uniform on offense, with no reason provided in the report.",
+   "evidence": "Not in uniform on defense\nDL: Madubuike, Campbell, Jenkins, Washington, Jones \nOLB: Young, Green, Hendrickson, Robinson\nILB: Roquan, Simpson, Buchanan, Jamon Johnson, Carl Jones\nCB: Wiggins, Awuzie, Bilhal Kone, Marlon Humphrey\nS: Kyle Hamilton, Jaylinn Hawkins, Malaki Starks\n\n[Responding to]: Not in uniform on offense\nQB: Lamar Jackson\nRBs: Derrick Henry, Justice Hill\nWR: Zay Flowers, Rashod Bateman, Ja'Kobi Lane\nTE: Mark Andrews, Durham Smythe\nOL: Roger Rosengarten, Vega Ioane, John Simpson, Ronnie Stanley",
+   "commentary": "Monitor for an explanation and Jackson’s next participation status. This is an availability flag, but the report does not confirm an injury, setback or timetable.",
    "source": "X",
    "author": "jeffzrebiec",
-   "date": "2026-08-28T21:30:59+00:00",
-   "url": "https://x.com/jeffzrebiec/status/2093451303389127014",
+   "date": "2026-08-28T21:35:50+00:00",
+   "url": "https://x.com/jeffzrebiec/status/2093452521893237218",
    "ownership": "INDEPENDENT",
-   "evidence_candidate_id": "mobile:x:a1ffaa55a11de6a3f783",
+   "evidence_candidate_id": "mobile:x:0d611c4fdb34c0b5a517",
    "reviewer_action": "PENDING",
    "public_summary_approved_by": "",
    "commentary_approved_by": "",
    "approved_at": "",
    "commentary_origin": "MODEL_DRAFT",
-   "model_original_commentary": "Jackson’s apparent practice absence is worth monitoring for availability news. The reason, injury status and whether this is a setback are unknown; his next participation update is key.",
+   "model_original_commentary": "Monitor for an explanation and Jackson’s next participation status. This is an availability flag, but the report does not confirm an injury, setback or timetable.",
    "draft_limitations": [
-    "The evidence does not give a reason for Jackson not being in uniform.",
-    "It does not establish an injury, setback, or expected return timetable.",
-    "It is unclear whether he missed all practice activity or only offensive work."
+    "The report does not state why Jackson was not in uniform.",
+    "The setting is not identified, and no injury or return timeline is provided."
    ],
-   "draft_confidence": 0.8,
+   "draft_confidence": 0.9,
    "readiness_failures": []
   }
  ],
- "batch_id": "3d4e0c376b9eafc89c06a45c982ac7e7464291ab51f3efd8a4921597e92ffb56"
+ "batch_id": "ad1c26ca6298e96da6b2df0f280bb26d37d1fe0bcd63fd8a241739ddd2e49902"
 }
