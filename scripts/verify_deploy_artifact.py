@@ -218,7 +218,7 @@ def check_homepage(root):
                    text.index("<!-- LB WIRE REPLACEMENT END")]
         cards = re.findall(r'<article class="tile wire".*?</article>', sec, re.S)
         names = [unescape(re.sub(r"<[^>]+>", "", m))
-                 for m in re.findall(r"<h4>(.*?)</h4>", sec, re.S)]
+                 for m in re.findall(r"<h4[^>]*>(.*?)</h4>", sec, re.S)]
         publication_ids = [unescape(m) for c in cards for m in
                            re.findall(r'data-publication-id="([^"]+)"', c)]
         pubs = Path("data/wire_publications.json")
@@ -277,8 +277,12 @@ def check_homepage(root):
                   bool((r.get("reporter_found") or "").strip()))
             check(f"{who}'s passage is not on the page",
                   (r.get("reporter_found") or "x" * 9)[:80] not in sec)
-        check("the card labels the summary 'What changed'",
-              "What changed" in sec and "What the reporter found" not in sec)
+        check("the card uses the compact news and Analysis hierarchy",
+              all(marker in sec for marker in (
+                  'class="wplayer"', 'class="wheadline"',
+                  'class="wmeta"', 'class="wdate"',
+                  '<div class="wlab">Analysis</div>'))
+              and "What the reporter found" not in sec)
 
         # Retired sections, gone from the markup rather than hidden.
         check("there is no League News section",
