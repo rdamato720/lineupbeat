@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 424,
+ "count": 437,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -4703,6 +4703,149 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004642
+  },
+  {
+   "candidate_id": "mobile:article:78d58fb522120fec9333",
+   "player_id": "00-0033921",
+   "source_url": "https://www.buccaneers.com/news/positional-depth-decisions-complicate-bucs-roster-cutdown-2026",
+   "attempted_at": "2026-08-29T16:05:21+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:05:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004564
+  },
+  {
+   "candidate_id": "mobile:article:a5e146547538a5dcc67c",
+   "player_id": "00-0040129",
+   "source_url": "https://www.buccaneers.com/news/positional-depth-decisions-complicate-bucs-roster-cutdown-2026",
+   "attempted_at": "2026-08-29T16:05:25+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-29T16:05:29+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00635
+  },
+  {
+   "candidate_id": "mobile:article:9a44a38aec66bc2a2b22",
+   "player_id": "00-0039855",
+   "source_url": "https://www.buccaneers.com/news/positional-depth-decisions-complicate-bucs-roster-cutdown-2026",
+   "attempted_at": "2026-08-29T16:05:29+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-29T16:05:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004812
+  },
+  {
+   "candidate_id": "mobile:article:6c2fed15b113b2f1cd13",
+   "player_id": "00-0039361",
+   "source_url": "https://www.buccaneers.com/news/positional-depth-decisions-complicate-bucs-roster-cutdown-2026",
+   "attempted_at": "2026-08-29T16:05:33+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-29T16:05:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00726
+  },
+  {
+   "candidate_id": "mobile:article:63aeffeadf4092f290dc",
+   "player_id": "00-0040429",
+   "source_url": "https://www.buccaneers.com/news/positional-depth-decisions-complicate-bucs-roster-cutdown-2026",
+   "attempted_at": "2026-08-29T16:05:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:05:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005434
+  },
+  {
+   "candidate_id": "mobile:article:1b4dd1d37b8c4d1843aa",
+   "player_id": "00-0038951",
+   "source_url": "https://www.buccaneers.com/news/positional-depth-decisions-complicate-bucs-roster-cutdown-2026",
+   "attempted_at": "2026-08-29T16:05:42+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:05:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006754
+  },
+  {
+   "candidate_id": "mobile:onsi:d3e1abc0427f43b01e3e",
+   "player_id": "00-0040878",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-kubiak-holds-nothing-back-about-his-team",
+   "attempted_at": "2026-08-29T16:05:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:05:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005032
+  },
+  {
+   "candidate_id": "mobile:onsi:5e633f44b72c74f18837",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/nfl/packers/onsi/predicting-packers-53-man-roster-before-sundays-final-cuts",
+   "attempted_at": "2026-08-29T16:05:50+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-29T16:05:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006346
+  },
+  {
+   "candidate_id": "mobile:x:6a741534e72612a78896",
+   "player_id": "00-0039851",
+   "source_url": "https://x.com/tkyles39/status/2093731034449760378",
+   "attempted_at": "2026-08-29T16:05:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:05:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003902
+  },
+  {
+   "candidate_id": "mobile:x:9fc53255710a1cfdda05",
+   "player_id": "00-0040676",
+   "source_url": "https://x.com/eastonfreeze/status/2093730013635903752",
+   "attempted_at": "2026-08-29T16:05:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:05:58+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00372
+  },
+  {
+   "candidate_id": "mobile:x:0cf3ee9633c8194a7cd6",
+   "player_id": "00-0038997",
+   "source_url": "https://x.com/RomeovilleKid/status/2093728952607003007",
+   "attempted_at": "2026-08-29T16:05:58+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-29T16:06:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0046
+  },
+  {
+   "candidate_id": "mobile:onsi:a65b7023768f83f62f3c",
+   "player_id": "00-0041525",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/five-instant-overreactions-from-dolphins-falcons-preseason-finale-01m15msd7cyb",
+   "attempted_at": "2026-08-29T16:06:01+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-29T16:06:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00589
+  },
+  {
+   "candidate_id": "mobile:onsi:254264834887a14dc539",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/five-instant-overreactions-from-dolphins-falcons-preseason-finale-01m15msd7cyb",
+   "attempted_at": "2026-08-29T16:06:05+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:06:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005118
   }
  ]
 }
