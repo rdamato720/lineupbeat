@@ -2,7 +2,21 @@
 
 Last verified: 2026-08-24
 
-## 2026-08-28 curated-digest transition
+## 2026-08-29 player-card restoration
+
+The curated digest experiment is retired. The homepage again renders the
+existing human-approved individual player cards from
+`data/wire_publications.json`, including the approved source summary and the
+separate Lineup Beat impact. The digest workflows are disabled and digest
+approval comments cannot publish. Historical digest artifacts remain in the
+repository only as audit history and are not a public input.
+
+The restored card is deliberately compact: player, event headline,
+position/team, date, approved report, `ANALYSIS`, interpretation and source.
+Player photos, team logos and team-colour accents remain; fantasy-data and
+mechanism badges do not.
+
+## 2026-08-28 curated-digest transition (retired)
 
 The reader-facing Wire is migrating from individual impact cards to one
 concise chronological digest. Trusted standalone X and official-team reports

@@ -10,10 +10,9 @@ concurrency:
 
 jobs:
   publish:
-    if: >-
-      github.actor == 'rdamato720' &&
-      github.event.issue.pull_request == null &&
-      contains(github.event.issue.labels.*.name, 'wire-digest-inbox')
+    # Retired: digest comments can no longer publish. Keep the old job only
+    # as an auditable record of the experiment.
+    if: ${{ false }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
