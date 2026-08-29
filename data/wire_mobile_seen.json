@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 470,
+ "count": 485,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -5209,6 +5209,171 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.007254
+  },
+  {
+   "candidate_id": "mobile:onsi:f64329664993cc20f760",
+   "player_id": "00-0037247",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-land-former-first-round-ot-trade-pittsburgh-steelers",
+   "attempted_at": "2026-08-29T22:48:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T22:48:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004628
+  },
+  {
+   "candidate_id": "mobile:onsi:a7a0aeae36b2ee0c092e",
+   "player_id": "00-0036223",
+   "source_url": "https://www.si.com/nfl/colts/onsi/3-takeaways-from-colts-preseason-finale-against-lions-starters-good-depth-bad",
+   "attempted_at": "2026-08-29T22:48:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T22:48:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004178
+  },
+  {
+   "candidate_id": "mobile:onsi:a2d0f54320675004c27d",
+   "player_id": "00-0037664",
+   "source_url": "https://www.si.com/nfl/colts/onsi/3-takeaways-from-colts-preseason-finale-against-lions-starters-good-depth-bad",
+   "attempted_at": "2026-08-29T22:48:34+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-29T22:48:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004604
+  },
+  {
+   "candidate_id": "mobile:onsi:f50096ca2d522a4441ab",
+   "player_id": "00-0038997",
+   "source_url": "https://www.si.com/nfl/colts/onsi/3-takeaways-from-colts-preseason-finale-against-lions-starters-good-depth-bad",
+   "attempted_at": "2026-08-29T22:48:37+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T22:48:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003858
+  },
+  {
+   "candidate_id": "mobile:onsi:d33bdce79842a7f252dc",
+   "player_id": "00-0040128",
+   "source_url": "https://www.si.com/nfl/colts/onsi/3-takeaways-from-colts-preseason-finale-against-lions-starters-good-depth-bad",
+   "attempted_at": "2026-08-29T22:48:39+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-29T22:48:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004592
+  },
+  {
+   "candidate_id": "mobile:onsi:3baaefa7a77d1ae4bd36",
+   "player_id": "00-0035710",
+   "source_url": "https://www.si.com/nfl/colts/onsi/3-takeaways-from-colts-preseason-finale-against-lions-starters-good-depth-bad",
+   "attempted_at": "2026-08-29T22:48:42+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-29T22:48:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00726
+  },
+  {
+   "candidate_id": "mobile:onsi:44ca2209f2042582ec3e",
+   "player_id": "00-0036252",
+   "source_url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-cut-two-more-players-including-former-first-round-pick",
+   "attempted_at": "2026-08-29T22:48:48+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T22:48:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004024
+  },
+  {
+   "candidate_id": "mobile:onsi:550a2a50005dc8a63688",
+   "player_id": "00-0039849",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-waive-former-5th-round-pick-roster-cuts-begin",
+   "attempted_at": "2026-08-29T22:48:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T22:48:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003834
+  },
+  {
+   "candidate_id": "mobile:onsi:921722cbeb68f8384451",
+   "player_id": "00-0036264",
+   "source_url": "https://www.si.com/nfl/packers/onsi/winners-losers-at-every-position-on-packers-roster-bubble-after-preseason-finale",
+   "attempted_at": "2026-08-29T22:48:53+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T22:48:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004402
+  },
+  {
+   "candidate_id": "mobile:onsi:4d357ae1a5d95edcfbe5",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/nfl/packers/onsi/winners-losers-at-every-position-on-packers-roster-bubble-after-preseason-finale",
+   "attempted_at": "2026-08-29T22:48:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T22:49:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00529
+  },
+  {
+   "candidate_id": "mobile:onsi:d8ec7f966148b7660b9d",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/what-now-at-backup-qb-for-the-dolphins-with-big-ewers-news-01m17mh14tm5",
+   "attempted_at": "2026-08-29T22:49:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T22:49:02+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00391
+  },
+  {
+   "candidate_id": "mobile:onsi:224a45fa8d1b6fbe3c48",
+   "player_id": "00-0040663",
+   "source_url": "https://www.si.com/nfl/browns/onsi/browns-initial-53-man-roster-projection-final-decisions-before-cutdown-day-01m176j79gxz",
+   "attempted_at": "2026-08-29T22:49:02+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T22:49:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003866
+  },
+  {
+   "candidate_id": "mobile:article:16a9c00cfd3d014dd24a",
+   "player_id": "00-0039361",
+   "source_url": "https://www.buccaneers.com/news/next-game-tampa-bay-buccaneers-vs-cincinnati-bengals-nfl-season-week-1-2026",
+   "attempted_at": "2026-08-29T22:49:04+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-29T22:49:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004756
+  },
+  {
+   "candidate_id": "mobile:onsi:ccd3853300ba8ce2e08e",
+   "player_id": "00-0039163",
+   "source_url": "https://www.si.com/nfl/texans/onsi/texans-make-decision-on-qb-brett-rypien-as-roster-cuts-begin",
+   "attempted_at": "2026-08-29T22:49:07+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T22:49:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004148
+  },
+  {
+   "candidate_id": "mobile:onsi:78f281bfb8d7f3efd173",
+   "player_id": "00-0033106",
+   "source_url": "https://www.si.com/nfl/lions/onsi/9-winners-4-losers-from-lions-preseason-win-over-indianapolis-colts",
+   "attempted_at": "2026-08-29T22:49:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T22:49:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005738
   }
  ]
 }
