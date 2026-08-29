@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**2 cards** · batch `a2fa282b9465` · 14 draft calls · $0.0722
+**2 cards** · batch `8a05d7af3c46` · 18 draft calls · $0.0825
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,46 +19,50 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Jaxson Dart — NYG QB
+## 1. Patrick Mahomes — KC QB
 
-**Worth noting** · OTHER · MEDIUM evidence
+**Trending down** · INJURY · HIGH evidence
 
 ### What changed
 
-Jeremy Fowler reported that Jaxson Dart is not expected to play in the preseason finale against the Jets.
+Patrick Mahomes is recovering from torn ACL and LCL ligaments in his knee, Jordan Foote reported.
 
 ### Lineup Beat impact
 
-Dart appears set to sit out the finale, so there will be no final preseason playing-time data from this game. This does not establish a regular-season role change; confirmation from the team would strengthen it.
+Mahomes' knee recovery is the key availability issue to monitor. The report provides no timetable or practice status, so it does not establish when he will return or whether he will miss games.
 
-[Patricia Traina · Sports Illustrated -- NYG](https://www.si.com/nfl/giants/onsi/giants-jaxson-dart-preseason-finale-sit-mistake-01m15575tt4n) · 2026-08-28
+[Jordan Foote · Sports Illustrated -- KC](https://www.si.com/nfl/chiefs/onsi/four-takeaways-from-chiefs-9-9-tie-seahawks) · 2026-08-29
 
 <details><summary>Full evidence reviewed</summary>
 
-This week was no different in terms of whether he planned to play his starters. If ESPN reporter Jeremy Fowler’s sources are correct, Harbaugh has decided against playing starting quarterback Jaxson Dart in the preseason finale against the Jets.
+When the Chiefs traded for Justin Fields, they assumed they were landing a suitable backup for Patrick Mahomes as he recovered from a torn ACL and LCL in his knee. Fields was perfectly fine in his preseason stint, completing 13 of 16 passes for 105 yards and a 94.0 rating across two games.
+
+When the Chiefs traded for Justin Fields, they assumed they were landing a suitable backup for Patrick Mahomes as he recovered from a torn ACL and LCL in his knee. Fields was perfectly fine in his preseason stint, completing 13 of 16 passes for 105 yards and a 94.0 rating across two games. Despite posting worse numbers through a couple of weeks, though, it was seventh-round rookie Garrett Nussmeier who stole the show with an inspired debut and some nice plays just days later.
 
 </details>
 
 ---
 
-## 2. Malik Willis — MIA QB
+## 2. Tyrone Tracy Jr. — NYG RB
 
-**Trending up** · INJURY · MEDIUM evidence
+**Trending down** · INJURY · MEDIUM evidence
 
 ### What changed
 
-David Furones reported Quinn Ewers will miss the game with a groin issue and will not be available behind Malik Willis.
+Tyrone Tracy Jr. has a stinger, though Harbaugh said the team did not have any major injuries.
 
 ### Lineup Beat impact
 
-Willis appears positioned to handle the available quarterback role with Ewers out. Monitor whether Miami confirms Willis as the starter and whether Ewers' absence extends beyond this game.
+Monitor Tracy’s practice status after the stinger. The report characterizes it as non-major, but it provides no timetable or indication of whether he will miss work.
 
-[DavidFurones_ · X](https://x.com/DavidFurones_/status/2093462421578867053) · 2026-08-28
+[DDuggan21 · X](https://x.com/DDuggan21/status/2093539612782211329) · 2026-08-29
 
 <details><summary>Full evidence reviewed</summary>
 
-Quinn Ewers (groin) is indeed not in uniform for pregame warmups, as @CameronWolfe reported he won't go either behind Malik Willis.
+Harbaugh said they didn't have any major injuries tonight. RB Tyrone Tracy has a stinger. 
+
+CB Korie Black pulled his groin. Terrible timing for a player on the bubble. TBD on the severity.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrlV9tu20YQ_ZWFXtKipk1RJEWpL01rpVUQX-IoTYMiEIbcobQJuavuLi2rQYD-Rn-vX9IZUrKl3IMCBYrChkDtZXbnnDNnqNe9HHyxnCvZG_cgKiHKonwUp8kghSLNogFmOBim8QDTAiLoZ_0ojDBKYBQORlGMCIhRWCQySXDYO-oVYKXrjX993YPVypprlHPwFJqmoPFLY-n5ErxVhQIxs6A08C5T16g92A1Nn4L1gnYjWCcceuGNcMoL09DjEkVJeyo8Es7wV4tirapK5Ci06ebEyqJDcEaLVQUbpReBVzUKCR5EaU1N-5QTC6jxWMz4URp0tN0LdB7ySrmlAGFx0VRgg20oayoUxRL0Ar8VhdGlsjV4RTPbkCg8Qi3WpqmkcN6iXtCgFsofH6Q4v0Um33TI7M0ZqxZK0_DZxenk0fz06v6DWbtCe1ox95sV0uTV5PLiajY9_5GmKCseIlrSIMyCKJtF0TgMx_3-N_QZhrxEWSz4qrTufPJ0dnX_EY9aKP28zUSiLihIeDxMd-OVqpVv82M6ezNKz-LKEDWEF3hiMG88SibnIZFQb8QDs67Q3iPOTGMLAtQC80PIgBb0b8qSWa86mEBr09CpnDjjwwfgdXeTOz6IDk8ELzeiVUXLdKsFK5SWquBZ0Bv68rKxG47zRHlPjBN_dyroFHMXNacN3mFV7nh8l22JK78MiG46lZk_7r046u3uRzC2slkjvhJr4KBCqrIkHDThoylDWztKmG6OLQaUHElR6w4wVqXgAJSepbXuWExLMXlyeb7FmHYcgPrXH3_ewQok-cJYpvRI_AQ2h2axFEu6hsSCLigFLKiunN-pvzuGH35r2vNyKF6Jh3DDiba48pX5im8jtgvEkw_ROwZ4B8K8AGKA1deZR21yVeGY9KLGADKRRVRkSVoORtlwGGdsDlT-6vdWhdOzs8np9P5sQqM1clUpV9P4xeynyRWPGYnVthigmv8P_MGsNQlhqVaMzvnp5HJCH-dc-3xHZN_cY-x2uMM-DIMwjMN01OcJQ2h0xf74e_5uzcuu_Odw6wIX5wz9qqFkirlr6rrD9kB1OzFKLmF_KJgtHDcrirwn6i8R0uHh77qiRZCUYAU5VjTyjK6y5FOJr-2s0ujcvARVNXQg2dQLHr9WuKZ9t7kykp1VdhVEQ084LyemVdUQEcAZBIE4f94u2jLDHkwafXpGY0wco9YuaCxfZ-n9yo1PTtbr9bFTx6TQE11WJwsF2rsTroLtc_CyxS2QhFtwC0zQARMQVUGtSFWvMAj7dT9Jhon3se69OfpYCz0FqsIHjTWEwPztBvqM9M4mvS2RnR46mkigkghhIuCakCM544EvtDpeK8J6QjA6LqtjcWa08mS6Oz87U1Crncqd2J3o2rhbVyNjlrcb2lj3BOSuNXi8oXYmHVXlxmi5V2__eqfsJ-N--N5OeXnxZDqb_jz5UKvMPt0q73zjZkVaV77aCE1p7gDbQ2vXAx1eo1V-wy2OXcm3BJXmFsKFNVRlyrkGd2XIILHxv92kHjdK6y2NX7X7vuYt1DmRxMA7KVKjFUWv2yNInswC9TRbNyt3xIx-9wONkNCemarEO0ugq66NvufFwghULcc5Lim0OINKvdpm-BkN42Y8ygdJEQ9zetmM4oGMC_r7rG4xPX_49Or5J9rFf7waPqMv7AP-vsYwoJf27B82htZwxNZx7lSwr7C2zZKXdWl3OmLg4ECyLQy8sn0R24f9A_L5wjYxI_eW_K7TrP5pl_jl493gbHr_nW5w0zaCA3c-4XfYxp1E4WgQp1Ec9ZNhlqXDMBn03rxgw3J-3jjJnhIOoygmX1kgkc5tqXP-Q8eK0nF4927fSb-AqqLU-vEOr9aOqBAaskLw89aoeuMsOpx3S4iSdG9BL0_KRGZZHJdxnqNMy1GYDqM8H4UwKMs4lqM4l3IYyjQpBqXM6ediDDGUcT_JhuloxJAVS6xhTjbmOmjXZKpBV-2B0rm5Ca77tzjPu9-f3U34N2g_gTineDBKMAYswxH04yyNBoMwyaMyKooizulHZynpdkUaxuUgHWXEsyz6Q8h6b_4GF3USHA:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrtV9ty4zYS_RWUXvKwksz7RW_jsePxXDSzjmazqWSKBZKgiBFJqADQGiU1Vfsb-b18yZ4mZdmyc3_I1m5t2aULutlonD59GvphknNb1JksJ4tJwp2wjHnlF0EkkjhKqtzhSe6GaRQVVVLGke8lcRUUSVHGaQE_z_dFEflFnFSuG0ymk4Lr0kwW3_4w4dutVreizLhFaJh4b2ul8fml0iXv2JdKWUGPqLYVneV6D9sbXqtWmC_YphOCaVEghN4zaZitBduIPeO3XDY8l420tG56waxireqkVXrOVjU9tlXaMtpflsKwTjErW2F53gimNAy8sLIQzFhuezNlRjFpWakGX8uEIVdpararRccQcSebBmFtrzsKgGWko4-WFnmwNUfi85MDZUcQ8v0IwgOb0nItOzrz24vL19nFzbMvV4NHZ-GR2f1WwHhz-e7tzep6eQVTyS0teY4XzZxk5qUrx1-40SJI_-Y4C8chFwnMrFQUd3l59Wx1_Y9LWta8shlCVwCkKxDFmafB3XojWwkk8BSVbrJU98ATbo3scE5uDriKkg4Jp6LXGpnew7nlGu9yO4QinAiS04JRmENdhjBULnE7JnVfAMP3R4zpRbAaz-UCxeDMCJvzYjOffJhO7h7Fab-mUhFJntdSVOCL5tiDVUjjZW-sBOGkaEpUG06gEZjTwj582dEWDe9K2a1ph16OXKF9-u0Q4x23WhYbdiAonmf1kaC0j1YtHgUHO_bs-WuGYOw13rFvDfYSneeHDEYQhK5QqWbPKoL34LbVwghugB5lbKcMfNk2wlJers9UxdwIMBuDDCgr1wnZnlpu2I-zNJg7TPPBnxdagZZ2pw7U_K77rvs_Sr-FErsQZist2KzM4LFT2gjW9W0uNMmQVv26RpRC9VvSkwrAiM2AGFmmJCWUuxG36I56Bn_sqpXaSMGuOHrGWrbsjWmFFKQlCsdQiERlMbXaQVMsNuhwXGRCsJUi7-2QvAGsrBuareF7wz6iaKykTw3EQVNL3fVEVlCpSDNGdW8VelAs0ORyEbtuVCRxWnGRpEUYuFFMUgx9lt8P2vF--Wr59usl1lpR1LyTpsXq9fLl-5tvaFGVojkoGG-y_zkJV7sOxa7ldjj0xeW7S7wsSZ4JdkFT7BHVj6YRbMeZOY7vJ7FPBmXkQZP_fk7ftfo4qnTGj2L9dklCve2RdZGh69oRzccdJc0dpMTNoZ-edFMj6SCdNQ_7asoezt0TLT_d9OnQ0gIioTOUTDRYWUH1Bw0oAdPBjO40JqtQ1x7NiSnygdZvpYBo3B-SYBxHmVG9HmT7K0rDsOumAZPRk2D7bMZePScfi43WtobXi-urF1ixghMNB2uvKZfa2q1ZnJ3tdru5kXMQ8ayrmrNiULcz4vpZha1mlm8E36FPZgTZbLTPUvxZKWZQk5rvNmbyefprF5eLi3695p3nPrm1jNRlK7By_9O_fjSP-ckwZsdZNkjWWpzSHB1G_qjp91RiS7rZqW7W8o9KTxk1v_yVZpAoR3EYutXPMxsitvnr7yaeuwiDP3U38X_5bnKE9nDBmB0g7reUw8_eMEiKNYnNoP_d_gF8HDOt7zYdqPz4RvGC65yT1hsuDyMQetp9YXEbuRVDnKFAwP9jryUKY8GDdW3n7OacrfZaYWQNlBiuL_y-9DSJn5-zV4BZsPMG85Nt-6YB96lb11rJDvwQWktKEckOvY6dOBtFhqlxiud9Dg_4nl_cLd2d9XeMgk-LRKRhVTpOmAdpVPqhE8bFyRz46gUqnK0ub978qVHwX9MXv0PwTwr6chi1TxU_9ZPgVPFv_qjiP97nlDx31wz2hJ2M1JEYOgzAX6Dof1ru_3mq628uL67fv7lX9uU3V0-k_dOg6kftPRuZc-Y5qR_6aeR6ceJ5rut76eTzB9IoY7PelCQjTuKF08laoLY0WUZFfyhRwQL_bnSUqJHMBW8aHMpN7rAaOARq99A-brNBmSaLxDu1m5p7YfTAYZKHVVgmSRBUQZ6LMqpSJ4q9PE8d7ldVEJRpkJdl7JRRWPhVmXuJF_CAV4Eb4ud3mhJYRS1anqGnzQjqDio6Gxt4JrtcfZrdukeEs_HX_JgJnCM_jITrizj2qoSHUZTHYVSknvDDNPQjNwlL7kdO6AdOEKcJT8qwiEVaxVWaRK6IJp__DYPOf60:WIRE_MOBILE_MANIFEST_V1 -->

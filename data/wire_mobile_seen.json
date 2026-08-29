@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 383,
+ "count": 401,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -4252,6 +4252,204 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003908
+  },
+  {
+   "candidate_id": "mobile:article:0a9775600dfb3b24499d",
+   "player_id": "00-0035100",
+   "source_url": "https://www.buccaneers.com/news/bucs-jaguars-preseason-week-3-recap-postgame-report-2026",
+   "attempted_at": "2026-08-29T04:04:17+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T04:04:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004348
+  },
+  {
+   "candidate_id": "mobile:onsi:0cd6acafb44231611ab1",
+   "player_id": "00-0036900",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/hardest-48-hours-zac-taylor-faces-tough-cuts-following-bengals-first-undefeated-preseason-in-20-years-01m13zamgdyc",
+   "attempted_at": "2026-08-29T04:04:20+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T04:04:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0037
+  },
+  {
+   "candidate_id": "mobile:article:048db36f151ec748396c",
+   "player_id": "00-0039384",
+   "source_url": "https://www.giants.com/news/instant-analysis-giants-close-preseason-with-23-6-win-over-jets",
+   "attempted_at": "2026-08-29T04:04:22+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-29T04:04:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004372
+  },
+  {
+   "candidate_id": "mobile:onsi:7116c879fae89c54167e",
+   "player_id": "00-0033873",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/four-takeaways-from-chiefs-9-9-tie-seahawks",
+   "attempted_at": "2026-08-29T04:04:25+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-29T04:04:29+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006936
+  },
+  {
+   "candidate_id": "mobile:onsi:fe465224bdd1d9032735",
+   "player_id": "00-0041013",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/four-takeaways-from-chiefs-9-9-tie-seahawks",
+   "attempted_at": "2026-08-29T04:04:29+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T04:04:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00484
+  },
+  {
+   "candidate_id": "mobile:onsi:d7dc75e81978eb3b7329",
+   "player_id": "00-0038134",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/four-takeaways-from-chiefs-9-9-tie-seahawks",
+   "attempted_at": "2026-08-29T04:04:34+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-29T04:04:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00652
+  },
+  {
+   "candidate_id": "mobile:onsi:7af7bfc5ea0641e57201",
+   "player_id": "00-0038797",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/2-winners-2-losers-seattle-seahawks-tie-kansas-city-chiefs",
+   "attempted_at": "2026-08-29T04:04:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T04:04:40+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004148
+  },
+  {
+   "candidate_id": "mobile:onsi:bccd39b0135f257466cc",
+   "player_id": "00-0039299",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/2-winners-2-losers-seattle-seahawks-tie-kansas-city-chiefs",
+   "attempted_at": "2026-08-29T04:04:40+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T04:04:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004472
+  },
+  {
+   "candidate_id": "mobile:x:34cdf381b68c3afe956f",
+   "player_id": "00-0035700",
+   "source_url": "https://x.com/mattschneidman/status/2093546028288921890",
+   "attempted_at": "2026-08-29T04:04:42+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-29T04:04:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00561
+  },
+  {
+   "candidate_id": "mobile:x:69b8aef78ce8baecb871",
+   "player_id": "00-0035700",
+   "source_url": "https://x.com/RobDemovsky/status/2093546012157608063",
+   "attempted_at": "2026-08-29T04:04:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T04:04:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003802
+  },
+  {
+   "candidate_id": "mobile:x:79501e376475645473c1",
+   "player_id": "00-0035700",
+   "source_url": "https://x.com/ByRyanWood/status/2093545978364141735",
+   "attempted_at": "2026-08-29T04:04:48+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-29T04:04:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004692
+  },
+  {
+   "candidate_id": "mobile:x:68fcc3885c92d8094143",
+   "player_id": "00-0036264",
+   "source_url": "https://x.com/ByRyanWood/status/2093544445664719322",
+   "attempted_at": "2026-08-29T04:04:50+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T04:04:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00472
+  },
+  {
+   "candidate_id": "mobile:x:db6c2583d3b8d65117c8",
+   "player_id": "00-0036264",
+   "source_url": "https://x.com/RobDemovsky/status/2093544416065564756",
+   "attempted_at": "2026-08-29T04:04:53+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T04:04:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00388
+  },
+  {
+   "candidate_id": "mobile:x:892f7f1e82de371ac4b0",
+   "player_id": "00-0036264",
+   "source_url": "https://x.com/mattschneidman/status/2093544158703030363",
+   "attempted_at": "2026-08-29T04:04:55+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T04:04:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003702
+  },
+  {
+   "candidate_id": "mobile:x:f5c43aceb8b5d8e8c65d",
+   "player_id": "00-0036264",
+   "source_url": "https://x.com/RobDemovsky/status/2093544154034745796",
+   "attempted_at": "2026-08-29T04:04:57+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T04:04:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003744
+  },
+  {
+   "candidate_id": "mobile:x:f44ba76620b62331dc87",
+   "player_id": "00-0036442",
+   "source_url": "https://x.com/Ben_Baby/status/2093543408694427704",
+   "attempted_at": "2026-08-29T04:04:59+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T04:05:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00428
+  },
+  {
+   "candidate_id": "mobile:x:8e95fd005b496d35057c",
+   "player_id": "00-0039384",
+   "source_url": "https://x.com/DDuggan21/status/2093539612782211329",
+   "attempted_at": "2026-08-29T04:05:01+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-29T04:05:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004342
+  },
+  {
+   "candidate_id": "mobile:x:75b7d5ae90c78ed952c3",
+   "player_id": "00-0039337",
+   "source_url": "https://x.com/DDuggan21/status/2093539004771676551",
+   "attempted_at": "2026-08-29T04:05:06+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-29T04:05:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004392
   }
  ]
 }
