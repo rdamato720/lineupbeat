@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 437,
+ "count": 454,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -4846,6 +4846,193 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005118
+  },
+  {
+   "candidate_id": "mobile:onsi:a3c1d5fc4c861da8194e",
+   "player_id": "00-0040556",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/12-winners-losers-arizona-cardinals-green-bay-packers",
+   "attempted_at": "2026-08-29T16:53:29+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:53:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005248
+  },
+  {
+   "candidate_id": "mobile:onsi:844d6bc7c6a15a019224",
+   "player_id": "00-0037004",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-5-winners-3-losers-from-preseason-victory-over-buccaneers",
+   "attempted_at": "2026-08-29T16:53:33+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:53:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00483
+  },
+  {
+   "candidate_id": "mobile:onsi:0918e3ab83ce2538fe84",
+   "player_id": "00-0036590",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-5-winners-3-losers-from-preseason-victory-over-buccaneers",
+   "attempted_at": "2026-08-29T16:53:36+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:53:40+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004822
+  },
+  {
+   "candidate_id": "mobile:onsi:b47ce782efcd1b26665b",
+   "player_id": "00-0040566",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/final-patriots-53-man-roster-prediction-interesting-conversations-at-rb-lb-db",
+   "attempted_at": "2026-08-29T16:53:40+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:53:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004018
+  },
+  {
+   "candidate_id": "mobile:onsi:feb5c486058abfaad09d",
+   "player_id": "00-0039305",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/final-patriots-53-man-roster-prediction-interesting-conversations-at-rb-lb-db",
+   "attempted_at": "2026-08-29T16:53:42+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:53:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004054
+  },
+  {
+   "candidate_id": "mobile:onsi:0d3d96cb634b2511d4ec",
+   "player_id": "00-0038597",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/rumor-bengals-interested-in-signing-or-trading-for-steelers-running-back-cut-candidate-01m173xr7c9k",
+   "attempted_at": "2026-08-29T16:53:44+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:53:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00469
+  },
+  {
+   "candidate_id": "mobile:onsi:0dc554f031d7eac8b2a4",
+   "player_id": "00-0038454",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-roster-bubble-cutdown-dj-uiagalelei-trevor-penning",
+   "attempted_at": "2026-08-29T16:53:47+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-29T16:53:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00409
+  },
+  {
+   "candidate_id": "mobile:onsi:764fdb18a6324b8cc4a6",
+   "player_id": "00-0035228",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/grading-vikings-after-34-6-loss-to-broncos-01m15fv4a2ce",
+   "attempted_at": "2026-08-29T16:53:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:53:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00467
+  },
+  {
+   "candidate_id": "mobile:x:2fd6e72de90d193aafce",
+   "player_id": "00-0033280",
+   "source_url": "https://x.com/LombardiHimself/status/2093738654527324195",
+   "attempted_at": "2026-08-29T16:53:53+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:53:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004306
+  },
+  {
+   "candidate_id": "mobile:x:ab3708848143df2f7dff",
+   "player_id": "00-0038997",
+   "source_url": "https://x.com/mchappell51/status/2093738023238152436",
+   "attempted_at": "2026-08-29T16:53:55+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-29T16:53:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004462
+  },
+  {
+   "candidate_id": "mobile:x:90ad66c416a57600e47c",
+   "player_id": "00-0040128",
+   "source_url": "https://x.com/mchappell51/status/2093738023238152436",
+   "attempted_at": "2026-08-29T16:53:57+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-29T16:54:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00498
+  },
+  {
+   "candidate_id": "mobile:x:23da0ffe907c12b1b8da",
+   "player_id": "00-0037664",
+   "source_url": "https://x.com/mchappell51/status/2093735073157636309",
+   "attempted_at": "2026-08-29T16:54:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:54:02+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00355
+  },
+  {
+   "candidate_id": "mobile:x:e445e42a9abfd29eba3e",
+   "player_id": "00-0033288",
+   "source_url": "https://x.com/grantcohn/status/2093733091533865156",
+   "attempted_at": "2026-08-29T16:54:02+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:54:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004822
+  },
+  {
+   "candidate_id": "mobile:x:a13664a86083dc27a99e",
+   "player_id": "00-0039851",
+   "source_url": "https://x.com/DougKyed/status/2093731945301639374",
+   "attempted_at": "2026-08-29T16:54:06+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:54:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003868
+  },
+  {
+   "candidate_id": "mobile:x:a951f33dbe598d4ef90d",
+   "player_id": "00-0041547",
+   "source_url": "https://x.com/DanielOyefusi/status/2093731271381766534",
+   "attempted_at": "2026-08-29T16:54:08+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-29T16:54:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004682
+  },
+  {
+   "candidate_id": "mobile:article:b722a029ff3708d51a06",
+   "player_id": "00-0039849",
+   "source_url": "https://arizonasports.com/nfl/arizona-cardinals/cardinals-toughest-53-man-roster-decisions-come-down-to-3-rooms",
+   "attempted_at": "2026-08-29T16:54:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:54:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003722
+  },
+  {
+   "candidate_id": "mobile:article:ba0e444de8f4cf9c990a",
+   "player_id": "00-0038559",
+   "source_url": "https://arizonasports.com/nfl/arizona-cardinals/cardinals-toughest-53-man-roster-decisions-come-down-to-3-rooms",
+   "attempted_at": "2026-08-29T16:54:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T16:54:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003802
   }
  ]
 }
