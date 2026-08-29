@@ -157,28 +157,20 @@ for rendered_card in per_card:
     found = re.search(r'data-publication-id="([^"]+)"', rendered_card)
     if found:
         cards_by_id[unescape(found.group(1))] = rendered_card
-check("every card carries a real player photo",
+check("cards use the compact news layout",
+      all('class="wplayer"' in c and 'class="wheadline"' in c
+          and 'class="wmeta"' in c and 'class="wdate"' in c
+          for c in per_card))
+check("every card carries a player photo",
       all('class="shot"' in c for c in per_card))
-check("every card carries a real team logo",
-      all("teamlogos/nfl/500" in c for c in per_card))
-check("no card falls back to initials by default",
-      'class="wpic"' not in section and 'class="wlogo"' not in section)
+check("every card carries a team logo",
+      all('class="wteamlogo"' in c and "teamlogos/nfl/500" in c
+          for c in per_card))
 check("every card carries its team colour",
       len(re.findall(r"--c1:#", section)) == len(per_card))
-analysis_records = [r for r in published
-                    if r.get("content_type") == "FANTASY_ANALYSIS"]
-reporting_records = [r for r in published
-                     if r.get("content_type") != "FANTASY_ANALYSIS"]
-check("analysis cards are labelled as analysis",
-      all("Fantasy analysis" in cards_by_id.get(r["publication_id"], "")
-          and '<p class="wfoot">Analysis ' in
-          cards_by_id.get(r["publication_id"], "")
-          for r in analysis_records), f"{len(analysis_records)} card(s)")
-check("reporting cards keep the reporting labels",
-      all("What changed" in cards_by_id.get(r["publication_id"], "")
-          and '<p class="wfoot">Evidence ' in
-          cards_by_id.get(r["publication_id"], "")
-          for r in reporting_records), f"{len(reporting_records)} card(s)")
+check("every card separates the report from Lineup Beat analysis",
+      all('<p class="wrep">' in c and '<div class="wlab">Analysis</div>' in c
+          and '<p class="wimp">' in c for c in per_card))
 gi = html.find("#wire .tiles{")
 rule = html[gi:gi + 120] if gi >= 0 else ""
 check("the Wire renders one card per row",
@@ -197,8 +189,9 @@ for r in records:
           bool((r.get("reporter_found") or "").strip()))
     check(f"{who}'s passage is not published on the card",
           (r.get("reporter_found") or "x" * 9)[:80] not in section)
-check("the card asks 'What changed'",
-      "What changed" in section and "What the reporter found" not in section)
+check("the card uses the simple Analysis label",
+      '<div class="wlab">Analysis</div>' in section
+      and "What the reporter found" not in section)
 
 # --- one destination -----------------------------------------------------
 check("the homepage does not link to a separate Wire page",

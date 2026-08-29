@@ -64,24 +64,23 @@ class DigestApprovalTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             digest_approval.validate_event(event)
 
-    def test_publication_store_starts_empty_and_separate(self):
+    def test_historical_publication_store_remains_separate(self):
         payload = json.loads((ROOT / "data/wire_digest_publications.json").read_text())
-        self.assertEqual(payload["count"], 0)
-        self.assertEqual(payload["publications"], [])
+        self.assertEqual(payload["count"], len(payload["publications"]))
+        self.assertEqual(payload["schema_version"], "wire-digest-publications-v1")
 
-    def test_homepage_has_simple_digest_renderer(self):
+    def test_homepage_has_restored_player_card_renderer(self):
         source = (ROOT / "scripts/wire_homepage_replacement.py").read_text()
-        self.assertIn("def render_digest", source)
-        self.assertIn("Fantasy football news updates you need to know", source)
-        self.assertIn("wdigest", source)
+        self.assertNotIn("def render_digest", source)
+        self.assertNotIn("wire_digest_publications.json", source)
+        self.assertIn('<div class="wlab">Analysis</div>', source)
+        self.assertIn("wfilters", source)
 
-    def test_workflow_is_comment_gated_and_rebuilds_after_publication(self):
+    def test_retired_workflow_cannot_publish(self):
         workflow = (ROOT / ".github/workflows/wire-digest-approve.yml").read_text()
         self.assertIn("issue_comment", workflow)
-        self.assertIn("github.actor == 'rdamato720'", workflow)
-        self.assertIn("wire-digest-inbox", workflow)
+        self.assertIn("if: ${{ false }}", workflow)
         self.assertIn("wire_digest_approve.py", workflow)
-        self.assertIn("refresh.yml", workflow)
 
     def test_authorized_comment_appends_only_selected_bullet(self):
         with tempfile.TemporaryDirectory() as td:

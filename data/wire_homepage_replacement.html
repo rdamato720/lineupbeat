@@ -1671,10 +1671,7 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <style id="wire-css">
-/* The Wire section reuses the homepage's own card, not a second design.
-   `.tile` supplies the dark ground, the 8px radius, the team-coloured left
-   border and the masked headshot; everything here is the delta a reviewed
-   card needs. */
+/* A compact news card: player, headline, team/date, report, analysis. */
 #wire{padding:34px 0 10px}
 #wire .shead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
 #wire .shead h2{margin:0}
@@ -1693,49 +1690,45 @@ border-color:var(--signal,#C6F53C)}
    the max-width keeps the line length readable rather than letting it run
    the width of a desktop. */
 #wire .tiles{display:block;max-width:56rem}
-#wire .tile{display:block;margin:0 0 .85rem;cursor:default;min-height:0;
-padding:1rem 1.15rem 1.1rem}
+#wire .tile{display:block;margin:0 0 .75rem;cursor:default;min-height:0;
+padding:1.15rem 7.5rem 1.2rem 1.25rem;border-left:3px solid var(--c1,#C6F53C)}
 #wire .tile h4,#wire .tile p{max-width:none}
 #wire .tile p{-webkit-line-clamp:none;display:block;overflow:visible}
 #wire .tile:hover{background:#101315}
-#wire .tile .shot{top:1rem;right:-.25rem;width:6.6rem;height:6.6rem}
-#wire .tile h4{font-size:1.3rem;margin:0 0 .1rem}
-#wire .tile .tkick{flex-wrap:wrap;white-space:normal;row-gap:.3rem;
-padding-right:6rem}
-
-#wire .wb{font-family:var(--agate,inherit);font-size:.58rem;
-letter-spacing:.08em;text-transform:uppercase;font-weight:600;
-padding:2px 7px;border-radius:99px;border:1px solid var(--rule,#262a22);
-color:var(--quiet,#8f938a)}
-#wire .wb.rank{color:var(--signal,#C6F53C);border-color:rgba(198,245,60,.45)}
-#wire .wb.up{color:#7fbf8a;border-color:rgba(127,191,138,.5)}
-#wire .wb.down{color:#e08a7f;border-color:rgba(224,138,127,.5)}
+#wire .tile .shot{position:absolute;top:1rem;right:.45rem;width:6.4rem;
+height:6.4rem;object-fit:contain;object-position:bottom right}
+#wire .wplayer{font-size:1.12rem;font-weight:750;color:#fff;margin:0 0 .15rem}
+#wire .wheadline{font-size:1.12rem;font-weight:700;line-height:1.3;margin:0 0 .45rem}
+#wire .wheadline a{color:var(--signal,#C6F53C);text-decoration:none}
+#wire .wmeta{display:flex;gap:.45rem;align-items:baseline;flex-wrap:wrap;
+font-family:var(--agate,inherit);font-size:.7rem;color:var(--quiet,#8f938a);
+margin:0 0 .85rem}
+#wire .wteamlogo{width:19px;height:19px;object-fit:contain;align-self:center}
+#wire .wpos{font-weight:750;color:#fff}
+#wire .wdate{font-weight:650;color:#c8cec9;margin:.8rem 0}
 #wire .wlab{font-family:var(--agate,inherit);font-size:.57rem;
-letter-spacing:.11em;text-transform:uppercase;color:var(--quiet,#8f938a);
-font-weight:600;margin:.85rem 0 .3rem}
+letter-spacing:.11em;text-transform:uppercase;color:var(--signal,#C6F53C);
+font-weight:700;margin:1rem 0 .3rem}
 
 /* What changed: one sentence, deliberately quieter than the block below it.
    It is the occasion for the card, not the point of it. */
-#wire .wrep{font-size:.92rem;line-height:1.5;color:#AEB6B1;margin:0;
+#wire .wrep{font-size:.96rem;line-height:1.55;color:#E4E9E5;margin:0;
 max-width:62ch}
 
 /* Lineup Beat impact: the reason the card exists, so it is the thing the eye
    lands on -- larger than the sentence above it, on our accent, in the
    page's reading face rather than the quieter agate. */
-#wire .wimplab{color:var(--signal,#C6F53C)}
-#wire .wimp{background:#171b13;border-left:3px solid var(--signal,#C6F53C);
-border-radius:0 8px 8px 0;padding:.8rem 1rem;margin:.35rem 0 0;
-font-size:1.02rem;line-height:1.55;color:#E4E9E5;max-width:62ch}
+#wire .wimp{font-size:.96rem;line-height:1.55;color:#E4E9E5;max-width:62ch;
+margin:0}
 
 /* Attribution last, and smallest. */
 #wire .wsrc{color:var(--quiet,#8f938a);font-size:.73rem;line-height:1.5;
 margin:.85rem 0 0}
 #wire .wsrc a{color:var(--quiet,#8f938a)}
 #wire .wown{color:#d6a55a}
-#wire .wfoot{font-family:var(--agate,inherit);color:var(--quiet,#8f938a);
-font-size:.57rem;letter-spacing:.06em;text-transform:uppercase;
-margin:.5rem 0 0}
 #wire .more{margin-top:.4rem}
+@media(max-width:640px){#wire .tile{padding-right:5.8rem}
+#wire .tile .shot{width:5rem;height:5rem;opacity:.88}}
 </style></head>
 <body>
 
@@ -1907,7 +1900,7 @@ margin:.5rem 0 0}
 <section class="wrap sec" id="wire">
   <div class="shead">
     <h2>THE NFL WIRE</h2>
-    <span class="n">73 reviewed reports</span>
+    <span class="n">82 reviewed reports</span>
   </div>
   <p class="sub">Verified beat reporting with Lineup Beat's fantasy impact.</p>
   <div class="wfilters">
@@ -1916,1472 +1909,1406 @@ margin:.5rem 0 0}
     <button data-f="NEGATIVE">Trending down</button>
     <button data-f="NEUTRAL">Worth noting</button>
     <select id="wteam"><option value="">Team</option>
-      <option>ATL</option><option>BAL</option><option>BUF</option><option>CAR</option><option>CHI</option><option>CIN</option><option>CLE</option><option>DAL</option><option>DEN</option><option>DET</option><option>GB</option><option>HOU</option><option>IND</option><option>JAX</option><option>KC</option><option>LAC</option><option>LAR</option><option>LV</option><option>MIA</option><option>NE</option><option>NYG</option><option>NYJ</option><option>PHI</option><option>PIT</option><option>SEA</option><option>SF</option><option>TB</option><option>TEN</option></select>
+      <option>ARI</option><option>ATL</option><option>BAL</option><option>BUF</option><option>CAR</option><option>CHI</option><option>CIN</option><option>CLE</option><option>DAL</option><option>DEN</option><option>DET</option><option>GB</option><option>HOU</option><option>IND</option><option>JAX</option><option>KC</option><option>LAC</option><option>LAR</option><option>LV</option><option>MIA</option><option>NE</option><option>NYG</option><option>NYJ</option><option>PHI</option><option>PIT</option><option>SEA</option><option>SF</option><option>TB</option><option>TEN</option></select>
     <button data-p="QB">QB</button><button data-p="RB">RB</button>
     <button data-p="WR">WR</button><button data-p="TE">TE</button>
   </div>
-  <div class="tiles wire"><article class="tile wire" style="--c1:#004C54;--c2:#A5ACAF"
+  <div class="tiles wire"><article class="tile wire" style="--c1:#002C5F;--c2:#A2AAAD"
+   data-publication-id="mobile:x:82ab2c742557f3be0b2b"
+   data-team="IND" data-pos="TE"
+   data-dir="NEGATIVE">
+  <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12518.jpg" data-fallback="" onerror="faceFail(this)">
+  <h4 class="wplayer">Tyler Warren</h4>
+  <h5 class="wheadline"><a href="https://x.com/RomeovilleKid/status/2093008056837607728" rel="nofollow noopener"
+    target="_blank">Misses practice</a></h5>
+  <p class="wmeta"><span class="wpos">TE</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png"
+      onerror="logoFail(this)">
+    <span>Indianapolis Colts</span></p>
+  <p class="wdate">August 27, 2026</p>
+  <p class="wrep">Tyler Warren did not practice Thursday because of a groin issue, James Boyd reported.</p>
+  <div class="wlab">Analysis</div>
+  <p class="wimp">Warren&#x27;s groin-related absence is worth monitoring because it could affect his preparation and availability. His injury severity and expected return remain unknown.</p>
+  <p class="wsrc">James Boyd &middot; The Athletic &middot; <a href="https://x.com/RomeovilleKid/status/2093008056837607728" rel="nofollow noopener" target="_blank">Read report</a></p>
+</article><article class="tile wire" style="--c1:#002C5F;--c2:#A2AAAD"
+   data-publication-id="mobile:x:a8f65699fbcc664ed0b9"
+   data-team="IND" data-pos="WR"
+   data-dir="NEGATIVE">
+  <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/8142.jpg" data-fallback="" onerror="faceFail(this)">
+  <h4 class="wplayer">Alec Pierce</h4>
+  <h5 class="wheadline"><a href="https://x.com/RomeovilleKid/status/2092691370431377893" rel="nofollow noopener"
+    target="_blank">Target competition update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png"
+      onerror="logoFail(this)">
+    <span>Indianapolis Colts</span></p>
+  <p class="wdate">August 26, 2026</p>
+  <p class="wrep">Josh Downs said coaches will determine target distribution after the Colts added Keenan Allen alongside Alec Pierce and Tyler Warren.</p>
+  <div class="wlab">Analysis</div>
+  <p class="wimp">Allen&#x27;s addition introduces more target competition for Pierce, but the evidence provides no indication of how coaches will distribute routes, snaps or targets.</p>
+  <p class="wsrc">James Boyd &middot; The Athletic &middot; <a href="https://x.com/RomeovilleKid/status/2092691370431377893" rel="nofollow noopener" target="_blank">Read report</a></p>
+</article><article class="tile wire" style="--c1:#0B162A;--c2:#C83803"
+   data-publication-id="mobile:onsi:9b692290339980fb6ccd"
+   data-team="CHI" data-pos="WR"
+   data-dir="POSITIVE">
+  <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12519.jpg" data-fallback="" onerror="faceFail(this)">
+  <h4 class="wplayer">Luther Burden III</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/injuries/fantasy-impact-ja-marr-chase-luther-burden-iii-and-3-other-injury-updates" rel="nofollow noopener"
+    target="_blank">Returns to practice</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png"
+      onerror="logoFail(this)">
+    <span>Chicago Bears</span></p>
+  <p class="wdate">August 26, 2026</p>
+  <p class="wrep">Luther Burden III returned to on-field practice Aug. 26 for the first time since suffering a groin strain, Gray Deyo reported.</p>
+  <div class="wlab">Analysis</div>
+  <p class="wimp">Burden&#x27;s return to on-field work is a positive step toward availability, but the report does not establish full participation, a Week 1 timetable, or his role.</p>
+  <p class="wsrc">Gray Deyo &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/injuries/fantasy-impact-ja-marr-chase-luther-burden-iii-and-3-other-injury-updates" rel="nofollow noopener" target="_blank">Read report</a></p>
+</article><article class="tile wire" style="--c1:#002C5F;--c2:#A2AAAD"
+   data-publication-id="mobile:onsi:78647739c691af30d201"
+   data-team="IND" data-pos="WR"
+   data-dir="NEGATIVE">
+  <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/9500.jpg" data-fallback="" onerror="faceFail(this)">
+  <h4 class="wplayer">Josh Downs</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/injuries/fantasy-impact-ja-marr-chase-luther-burden-iii-and-3-other-injury-updates" rel="nofollow noopener"
+    target="_blank">Misses practice</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png"
+      onerror="logoFail(this)">
+    <span>Indianapolis Colts</span></p>
+  <p class="wdate">August 26, 2026</p>
+  <p class="wrep">Josh Downs missed the Colts&#x27; Aug. 26 practice with an undisclosed calf issue, with no severity update reported.</p>
+  <div class="wlab">Analysis</div>
+  <p class="wimp">Downs&#x27; practice absence is a short-term availability concern, but the report gives no diagnosis, timeline or indication of his status for upcoming games.</p>
+  <p class="wsrc">Gray Deyo &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/injuries/fantasy-impact-ja-marr-chase-luther-burden-iii-and-3-other-injury-updates" rel="nofollow noopener" target="_blank">Read report</a></p>
+</article><article class="tile wire" style="--c1:#E31837;--c2:#FFB81C"
+   data-publication-id="mobile:x:4d21a06b660a777aebfc"
+   data-team="KC" data-pos="RB"
+   data-dir="NEGATIVE">
+  <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/8151.jpg" data-fallback="" onerror="faceFail(this)">
+  <h4 class="wplayer">Kenneth Walker III</h4>
+  <h5 class="wheadline"><a href="https://x.com/ByNateTaylor/status/2092675277981712831" rel="nofollow noopener"
+    target="_blank">Dealing with injury</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png"
+      onerror="logoFail(this)">
+    <span>Kansas City Chiefs</span></p>
+  <p class="wdate">August 26, 2026</p>
+  <p class="wrep">Kenneth Walker III has a swollen ankle, Chiefs coach Andy Reid said.</p>
+  <div class="wlab">Analysis</div>
+  <p class="wimp">The ankle issue creates a near-term availability concern for Walker, but the report provides no diagnosis, treatment plan or expected absence.</p>
+  <p class="wsrc">ByNateTaylor &middot; X &middot; <a href="https://x.com/ByNateTaylor/status/2092675277981712831" rel="nofollow noopener" target="_blank">Read report</a></p>
+</article><article class="tile wire" style="--c1:#97233F;--c2:#FFB612"
+   data-publication-id="mobile:x:4eb4d411559eee73de2a"
+   data-team="ARI" data-pos="TE"
+   data-dir="POSITIVE">
+  <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/8130.jpg" data-fallback="" onerror="faceFail(this)">
+  <h4 class="wplayer">Trey McBride</h4>
+  <h5 class="wheadline"><a href="https://x.com/BoBrack/status/2092674261089755238" rel="nofollow noopener"
+    target="_blank">Red-zone work</a></h5>
+  <p class="wmeta"><span class="wpos">TE</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png"
+      onerror="logoFail(this)">
+    <span>Arizona Cardinals</span></p>
+  <p class="wdate">August 26, 2026</p>
+  <p class="wrep">Trey McBride caught a red-zone touchdown from Jacoby Brissett on an in-breaking route during drills.</p>
+  <div class="wlab">Analysis</div>
+  <p class="wimp">The red-zone score is a positive practice signal for McBride&#x27;s touchdown involvement, but one drill rep does not establish a season-long role or target share.</p>
+  <p class="wsrc">Bo Brack &middot; PHNX Cardinals &middot; <a href="https://x.com/BoBrack/status/2092674261089755238" rel="nofollow noopener" target="_blank">Read report</a></p>
+</article><article class="tile wire" style="--c1:#004C54;--c2:#A5ACAF"
+   data-publication-id="mobile:x:5d7103b0bd6d1f008efc"
+   data-team="PHI" data-pos="QB"
+   data-dir="NEGATIVE">
+  <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/6904.jpg" data-fallback="https://a.espncdn.com/i/headshots/nfl/players/full/4040715.png" onerror="faceFail(this)">
+  <h4 class="wplayer">Jalen Hurts</h4>
+  <h5 class="wheadline"><a href="https://x.com/BrandonGowton/status/2092445330314846529" rel="nofollow noopener"
+    target="_blank">Practice report</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+      onerror="logoFail(this)">
+    <span>Philadelphia Eagles</span></p>
+  <p class="wdate">August 26, 2026</p>
+  <p class="wrep">Jalen Hurts was intercepted twice by Riq Woolen during an Eagles training camp practice at Lincoln Financial Field.</p>
+  <div class="wlab">Analysis</div>
+  <p class="wimp">Two practice interceptions are a short-term negative signal, but this isolated result does not establish a broader performance trend or change in Hurts&#x27; role.</p>
+  <p class="wsrc">BrandonGowton &middot; X &middot; <a href="https://x.com/BrandonGowton/status/2092445330314846529" rel="nofollow noopener" target="_blank">Read report</a></p>
+</article><article class="tile wire" style="--c1:#004C54;--c2:#A5ACAF"
+   data-publication-id="mobile:onsi:f62f8dbda4a20ac06265"
+   data-team="PHI" data-pos="WR"
+   data-dir="NEUTRAL">
+  <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/7525.jpg" data-fallback="" onerror="faceFail(this)">
+  <h4 class="wplayer">DeVonta Smith</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/eagles/onsi/defensive-domination-everything-i-saw-from-eagles-only-open-practice-of-training-camp-01m0xnq8ve77" rel="nofollow noopener"
+    target="_blank">Practice report</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+      onerror="logoFail(this)">
+    <span>Philadelphia Eagles</span></p>
+  <p class="wdate">August 26, 2026</p>
+  <p class="wrep">DeVonta Smith was undercut by Woolen on a Jalen Hurts pass during an end-of-game situational period.</p>
+  <div class="wlab">Analysis</div>
+  <p class="wimp">This appears to be an isolated practice-play result and does not indicate a change to Smith’s role, workload or outlook.</p>
+  <p class="wsrc">John McMullen &middot; Sports Illustrated -- PHI &middot; <a href="https://www.si.com/nfl/eagles/onsi/defensive-domination-everything-i-saw-from-eagles-only-open-practice-of-training-camp-01m0xnq8ve77" rel="nofollow noopener" target="_blank">Read report</a></p>
+</article><article class="tile wire" style="--c1:#FB4F14;--c2:#000000"
+   data-publication-id="mobile:x:9b6e4f8f7b4507863a1f"
+   data-team="CIN" data-pos="WR"
+   data-dir="NEGATIVE">
+  <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/7564.jpg" data-fallback="" onerror="faceFail(this)">
+  <h4 class="wplayer">Ja&#x27;Marr Chase</h4>
+  <h5 class="wheadline"><a href="https://x.com/pauldehnerjr/status/2092326580643127663" rel="nofollow noopener"
+    target="_blank">Dealing with injury</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png"
+      onerror="logoFail(this)">
+    <span>Cincinnati Bengals</span></p>
+  <p class="wdate">August 25, 2026</p>
+  <p class="wrep">Ja&#x27;Marr Chase was still walking around after going down and appeared to be finished for the day following a left-knee concern.</p>
+  <div class="wlab">Analysis</div>
+  <p class="wimp">Chase&#x27;s apparent early shutdown is a short-term practice concern, but the evidence provides no diagnosis, severity, or timetable.</p>
+  <p class="wsrc">pauldehnerjr &middot; X &middot; <a href="https://x.com/pauldehnerjr/status/2092326580643127663" rel="nofollow noopener" target="_blank">Read report</a></p>
+</article><article class="tile wire" style="--c1:#004C54;--c2:#A5ACAF"
    data-publication-id="mobile:x:4b6540dee5192c5b9c15"
    data-team="PHI" data-pos="QB"
    data-dir="UNCLEAR">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/6904.jpg" data-fallback="https://a.espncdn.com/i/headshots/nfl/players/full/4040715.png" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" onerror="logoFail(this)">
-    <span class="tcat">PHI QB</span>
-    <span class="wb">Performance</span><span class="wb rank">QB6</span><span class="wb">ADP 79.6</span><span class="wb">313.7 proj</span><span class="wb ">Worth noting</span>
-    <span class="tago">2h ago</span>
-  </div>
-  <h4>Jalen Hurts</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Jalen Hurts</h4>
+  <h5 class="wheadline"><a href="https://x.com/Jeff_McLane/status/2092020768745939427" rel="nofollow noopener"
+    target="_blank">Practice report</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+      onerror="logoFail(this)">
+    <span>Philadelphia Eagles</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Jeff McLane reported mixed results for Jalen Hurts and the Eagles offense during the team’s 15th training-camp practice.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">This is a minor practice-performance flag rather than a role or health update. Mixed camp results alone do not materially change Hurts’ fantasy outlook.</p>
   <p class="wsrc">Jeff_McLane &middot; X &middot; <a href="https://x.com/Jeff_McLane/status/2092020768745939427" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    short term &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#311D00;--c2:#FF3C00"
    data-publication-id="manual:e50467d739b767342d1e"
    data-team="CLE" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/10444.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" onerror="logoFail(this)">
-    <span class="tcat">CLE WR</span>
-    <span class="wb">Other</span><span class="wb rank">WR93</span><span class="wb">56.4 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">7h ago</span>
-  </div>
-  <h4>Cedric Tillman</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Cedric Tillman</h4>
+  <h5 class="wheadline"><a href="https://x.com/TonyGrossi/status/2091937443821854999" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png"
+      onerror="logoFail(this)">
+    <span>Cleveland Browns</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Grossi observed Tillman return to Browns practice Monday.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Tillman is moving in the right direction, but the report does not establish how much work he handled.</p>
   <p class="wsrc">Tony Grossi &middot; ESPN Cleveland &middot; <a href="https://x.com/TonyGrossi/status/2091937443821854999" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#311D00;--c2:#FF3C00"
    data-publication-id="manual:0af2b73bf570f59509b6"
    data-team="CLE" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12512.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" onerror="logoFail(this)">
-    <span class="tcat">CLE RB</span>
-    <span class="wb">Other</span><span class="wb rank">RB23</span><span class="wb">ADP 51.8</span><span class="wb">184.0 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">7h ago</span>
-  </div>
-  <h4>Quinshon Judkins</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Quinshon Judkins</h4>
+  <h5 class="wheadline"><a href="https://x.com/TonyGrossi/status/2091937443821854999" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png"
+      onerror="logoFail(this)">
+    <span>Cleveland Browns</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Tony Grossi observed Judkins return to Browns practice Monday.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">The return is a useful availability checkpoint; workload and contact participation still need confirmation.</p>
   <p class="wsrc">Tony Grossi &middot; ESPN Cleveland &middot; <a href="https://x.com/TonyGrossi/status/2091937443821854999" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#125740;--c2:#FFFFFF"
    data-publication-id="manual:b4d1737ee0bca58299e6"
    data-team="NYJ" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/8155.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" onerror="logoFail(this)">
-    <span class="tcat">NYJ RB</span>
-    <span class="wb">Other</span><span class="wb rank">RB18</span><span class="wb">ADP 29.5</span><span class="wb">215.7 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">7h ago</span>
-  </div>
-  <h4>Breece Hall</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Breece Hall</h4>
+  <h5 class="wheadline"><a href="https://x.com/antwanstaley/status/2091937384250114315" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png"
+      onerror="logoFail(this)">
+    <span>New York Jets</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Antwan Staley reported Aaron Glenn expects Hall to be ready for Week 1.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">That is the clearest reassurance yet; keep Hall’s projection intact while monitoring his return to full practice.</p>
   <p class="wsrc">Antwan Staley &middot; New York Daily News &middot; <a href="https://x.com/antwanstaley/status/2091937384250114315" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence medium &middot;
-    short term &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#002244;--c2:#C60C30"
    data-publication-id="manual:fc86f5565800c1949ffd"
    data-team="NE" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/13403.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" onerror="logoFail(this)">
-    <span class="tcat">NE RB</span>
-    <span class="wb">Role</span><span class="wb rank">RB97</span><span class="wb">24.3 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Jam Miller</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Jam Miller</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/injuries/treveyon-henderson-injury-could-move-rhamondre-stevenson-up-fantasy-rankings-and-open-the-door-for-a-sleeper" rel="nofollow noopener"
+    target="_blank">Role update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png"
+      onerror="logoFail(this)">
+    <span>New England Patriots</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI identifies Jam Miller as a dark-horse roster and backfield beneficiary if Henderson misses time.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Miller is still a longshot, but the injury gives the seventh-round rookie a clearer path to surviving cuts and earning reserve touches.</p>
   <p class="wsrc">Mark Morales-Smith &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/injuries/treveyon-henderson-injury-could-move-rhamondre-stevenson-up-fantasy-rankings-and-open-the-door-for-a-sleeper" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    short term &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#002244;--c2:#C60C30"
    data-publication-id="manual:f6cebd5de77bfc6838bc"
    data-team="NE" data-pos="RB"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12529.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" onerror="logoFail(this)">
-    <span class="tcat">NE RB</span>
-    <span class="wb">Injury</span><span class="wb rank">RB22</span><span class="wb">ADP 60.3</span><span class="wb">186.2 proj</span><span class="wb down">Trending down</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>TreVeyon Henderson</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">TreVeyon Henderson</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/injuries/treveyon-henderson-injury-could-move-rhamondre-stevenson-up-fantasy-rankings-and-open-the-door-for-a-sleeper" rel="nofollow noopener"
+    target="_blank">Dealing with injury</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png"
+      onerror="logoFail(this)">
+    <span>New England Patriots</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI relayed that TreVeyon Henderson left practice after slipping during a cut and receiving attention on his right ankle, foot or leg.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">The location and severity remain uncertain, so this is monitoring mode rather than panic mode. Any missed time would be especially costly while Henderson fights for touches.</p>
   <p class="wsrc">Mark Morales-Smith &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/injuries/treveyon-henderson-injury-could-move-rhamondre-stevenson-up-fantasy-rankings-and-open-the-door-for-a-sleeper" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#002244;--c2:#C60C30"
    data-publication-id="manual:8d359b09be0e69a0c837"
    data-team="NE" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/7611.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" onerror="logoFail(this)">
-    <span class="tcat">NE RB</span>
-    <span class="wb">Role</span><span class="wb rank">RB32</span><span class="wb">ADP 71.3</span><span class="wb">137.3 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Rhamondre Stevenson</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Rhamondre Stevenson</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/injuries/treveyon-henderson-injury-could-move-rhamondre-stevenson-up-fantasy-rankings-and-open-the-door-for-a-sleeper" rel="nofollow noopener"
+    target="_blank">Role update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png"
+      onerror="logoFail(this)">
+    <span>New England Patriots</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI projects Stevenson’s workload could rise substantially if Henderson’s injury costs him time.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Stevenson would move from a risky flex toward RB2 territory if Henderson sits. That upgrade remains entirely contingent on the diagnosis.</p>
   <p class="wsrc">Mark Morales-Smith &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/injuries/treveyon-henderson-injury-could-move-rhamondre-stevenson-up-fantasy-rankings-and-open-the-door-for-a-sleeper" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    short term &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#203731;--c2:#FFB612"
    data-publication-id="manual:d37b30b0c4398c227255"
    data-team="GB" data-pos="RB"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/11581.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" onerror="logoFail(this)">
-    <span class="tcat">GB RB</span>
-    <span class="wb">Other</span><span class="wb rank">RB56</span><span class="wb">ADP 165.1</span><span class="wb">80.5 proj</span><span class="wb down">Trending down</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>MarShawn Lloyd</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">MarShawn Lloyd</h4>
+  <h5 class="wheadline"><a href="https://x.com/ByRyanWood/status/2091937060487680027" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png"
+      onerror="logoFail(this)">
+    <span>Green Bay Packers</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Ryan Wood observed Lloyd lose his first fumble of camp during an inside handoff.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">One exchange mistake will not erase his summer, but ball security matters for a back still earning the staff’s trust.</p>
   <p class="wsrc">Ryan Wood &middot; Green Bay Press-Gazette &middot; <a href="https://x.com/ByRyanWood/status/2091937060487680027" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#004C54;--c2:#A5ACAF"
    data-publication-id="manual:5bb65f334da72a333a04"
    data-team="PHI" data-pos="QB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/9230.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" onerror="logoFail(this)">
-    <span class="tcat">PHI QB</span>
-    <span class="wb">Second Team Reps</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Tanner McKee</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Tanner McKee</h4>
+  <h5 class="wheadline"><a href="https://x.com/BrandonGowton/status/2091935807716114652" rel="nofollow noopener"
+    target="_blank">Works with second team</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+      onerror="logoFail(this)">
+    <span>Philadelphia Eagles</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Gowton observed McKee take the first QB2 reps during Monday’s 11-on-11 period.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">It is only one practice, but McKee currently appears to have the inside track on Philadelphia’s backup job.</p>
   <p class="wsrc">Brandon Lee Gowton &middot; Bleeding Green Nation &middot; <a href="https://x.com/BrandonGowton/status/2091935807716114652" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#A71930;--c2:#A5ACAF"
    data-publication-id="manual:c8540e4abf2d2e477881"
    data-team="ATL" data-pos="QB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/11559.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" onerror="logoFail(this)">
-    <span class="tcat">ATL QB</span>
-    <span class="wb">Other</span><span class="wb rank">QB35</span><span class="wb">67.4 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Michael Penix Jr.</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Michael Penix Jr.</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/falcons/onsi/michael-penix-jr-still-a-doubt-as-stefanski-details-falcons-plans-vs-dolphins" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png"
+      onerror="logoFail(this)">
+    <span>Atlanta Falcons</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Kevin Stefanski remained noncommittal about Penix playing Friday despite his clearance for full 11-on-11 work.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Full-team practice remains encouraging, but Penix has not received a game-action green light. His recovery is progressing without settling Atlanta’s Week 1 decision.</p>
   <p class="wsrc">Darius Hayes &middot; Sports Illustrated -- ATL &middot; <a href="https://www.si.com/nfl/falcons/onsi/michael-penix-jr-still-a-doubt-as-stefanski-details-falcons-plans-vs-dolphins" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#A71930;--c2:#A5ACAF"
    data-publication-id="manual:29b6053edbfba43b6504"
    data-team="ATL" data-pos="QB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/6768.jpg" data-fallback="https://a.espncdn.com/i/headshots/nfl/players/full/4241479.png" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" onerror="logoFail(this)">
-    <span class="tcat">ATL QB</span>
-    <span class="wb">Depth Chart</span><span class="wb rank">QB30</span><span class="wb">168.2 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Tua Tagovailoa</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Tua Tagovailoa</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/falcons/onsi/michael-penix-jr-still-a-doubt-as-stefanski-details-falcons-plans-vs-dolphins" rel="nofollow noopener"
+    target="_blank">Depth-chart update</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png"
+      onerror="logoFail(this)">
+    <span>Atlanta Falcons</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Falcons On SI expects Tua Tagovailoa to start Friday while Atlanta evaluates whether Penix is ready to play.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Another start would give Tua the next opportunity to strengthen his case. This is an informed expectation, not a regular-season starter announcement.</p>
   <p class="wsrc">Darius Hayes &middot; Sports Illustrated -- ATL &middot; <a href="https://www.si.com/nfl/falcons/onsi/michael-penix-jr-still-a-doubt-as-stefanski-details-falcons-plans-vs-dolphins" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#004C54;--c2:#A5ACAF"
    data-publication-id="manual:27c35a2c991443c22a0d"
    data-team="PHI" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/5848.jpg" data-fallback="https://a.espncdn.com/i/headshots/nfl/players/full/4241372.png" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" onerror="logoFail(this)">
-    <span class="tcat">PHI WR</span>
-    <span class="wb">Other</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Marquise Brown</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Marquise Brown</h4>
+  <h5 class="wheadline"><a href="https://x.com/EliotShorrParks/status/2091934835962994997" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+      onerror="logoFail(this)">
+    <span>Philadelphia Eagles</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Eliot Shorr-Parks observed Brown catch a roughly 35-yard pass from Jalen Hurts.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">One deep completion is not a target-share trend, but it is an encouraging example of Brown supplying the vertical element Philadelphia wants.</p>
   <p class="wsrc">Eliot Shorr-Parks &middot; 94WIP &middot; <a href="https://x.com/EliotShorrParks/status/2091934835962994997" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#101820;--c2:#FFB612"
    data-publication-id="manual:9ee835571674ca57fbd6"
    data-team="PIT" data-pos="QB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/13289.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" onerror="logoFail(this)">
-    <span class="tcat">PIT QB</span>
-    <span class="wb">Other</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Drew Allar</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Drew Allar</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-mike-mccarthy-pushes-back-quarterback-rumor" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png"
+      onerror="logoFail(this)">
+    <span>Pittsburgh Steelers</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Steelers On SI says Drew Allar has flashed during the preseason and shown noticeably improved footwork under McCarthy.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Allar looks like Pittsburgh’s preferred developmental quarterback. That is dynasty-watchlist material, even though Aaron Rodgers blocks his immediate path.</p>
   <p class="wsrc">Jacob Punturi &middot; Sports Illustrated -- PIT &middot; <a href="https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-mike-mccarthy-pushes-back-quarterback-rumor" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    short term &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#101820;--c2:#FFB612"
    data-publication-id="manual:538f393dc231b5cc8201"
    data-team="PIT" data-pos="QB"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12511.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" onerror="logoFail(this)">
-    <span class="tcat">PIT QB</span>
-    <span class="wb">Depth Chart</span><span class="wb down">Trending down</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Will Howard</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Will Howard</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-mike-mccarthy-pushes-back-quarterback-rumor" rel="nofollow noopener"
+    target="_blank">Depth-chart update</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png"
+      onerror="logoFail(this)">
+    <span>Pittsburgh Steelers</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Mike McCarthy said Pittsburgh has not selected its 53-man roster, pushing back on a report that all four quarterbacks would stay.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Howard remains on the bubble after a poor preseason start. Nothing is final, but he appears to have the most vulnerable spot in the room.</p>
   <p class="wsrc">Jacob Punturi &middot; Sports Illustrated -- PIT &middot; <a href="https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-mike-mccarthy-pushes-back-quarterback-rumor" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0C2340;--c2:#4B92DB"
    data-publication-id="manual:ff2bfb2f7540cb486380"
    data-team="TEN" data-pos="WR"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/11959.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" onerror="logoFail(this)">
-    <span class="tcat">TEN WR</span>
-    <span class="wb">Depth Chart</span><span class="wb rank">WR199</span><span class="wb">2.1 proj</span><span class="wb down">Trending down</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Bryce Oliver</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Bryce Oliver</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/titans/onsi/2-titans-players-who-helped-their-roster-case-vs-seahawks-and-2-who-hurt-it-01m0t28jp34x" rel="nofollow noopener"
+    target="_blank">Depth-chart update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png"
+      onerror="logoFail(this)">
+    <span>Tennessee Titans</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Bryce Oliver caught none of his two targets while Xavier Restrepo produced two receptions in Tennessee’s latest preseason game.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">One quiet game should not decide a roster battle, but Oliver appears to be losing ground in the competition for Tennessee’s sixth receiver spot.</p>
   <p class="wsrc">Lane Mills &middot; Sports Illustrated -- TEN &middot; <a href="https://www.si.com/nfl/titans/onsi/2-titans-players-who-helped-their-roster-case-vs-seahawks-and-2-who-hurt-it-01m0t28jp34x" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0C2340;--c2:#4B92DB"
    data-publication-id="manual:e053944fd726c6abaf65"
    data-team="TEN" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/8254.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" onerror="logoFail(this)">
-    <span class="tcat">TEN RB</span>
-    <span class="wb">Other</span><span class="wb rank">RB142</span><span class="wb">3.0 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Julius Chestnut</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Julius Chestnut</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/titans/onsi/2-titans-players-who-helped-their-roster-case-vs-seahawks-and-2-who-hurt-it-01m0t28jp34x" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png"
+      onerror="logoFail(this)">
+    <span>Tennessee Titans</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Julius Chestnut led Tennessee’s backs for a second straight week, producing 48 rushing yards and 24 receiving yards while Kalel Mullings was sidelined.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Chestnut is making a legitimate roster case. The performance does not establish a regular-season role, but he is winning the current depth battle.</p>
   <p class="wsrc">Lane Mills &middot; Sports Illustrated -- TEN &middot; <a href="https://www.si.com/nfl/titans/onsi/2-titans-players-who-helped-their-roster-case-vs-seahawks-and-2-who-hurt-it-01m0t28jp34x" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0C2340;--c2:#4B92DB"
    data-publication-id="manual:7e10e5017f6e6b3b0ec8"
    data-team="TEN" data-pos="QB"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/9999.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" onerror="logoFail(this)">
-    <span class="tcat">TEN QB</span>
-    <span class="wb">Depth Chart</span><span class="wb down">Trending down</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Will Levis</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Will Levis</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/titans/onsi/2-titans-players-who-helped-their-roster-case-vs-seahawks-and-2-who-hurt-it-01m0t28jp34x" rel="nofollow noopener"
+    target="_blank">Depth-chart update</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png"
+      onerror="logoFail(this)">
+    <span>Tennessee Titans</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Titans On SI noted Will Levis completed 4 of 9 passes for 15 yards and finished behind Mitch Trubisky and Hendon Hooker in the quarterback rotation.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Levis is running out of runway in Tennessee. He needs a sharp preseason finale merely to preserve a roster spot, let alone fantasy value.</p>
   <p class="wsrc">Lane Mills &middot; Sports Illustrated -- TEN &middot; <a href="https://www.si.com/nfl/titans/onsi/2-titans-players-who-helped-their-roster-case-vs-seahawks-and-2-who-hurt-it-01m0t28jp34x" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0C2340;--c2:#4B92DB"
    data-publication-id="manual:62338ede76eaaf2032be"
    data-team="TEN" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12520.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" onerror="logoFail(this)">
-    <span class="tcat">TEN WR</span>
-    <span class="wb">Depth Chart</span><span class="wb rank">WR193</span><span class="wb">3.2 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Xavier Restrepo</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Xavier Restrepo</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/titans/onsi/2-titans-players-who-helped-their-roster-case-vs-seahawks-and-2-who-hurt-it-01m0t28jp34x" rel="nofollow noopener"
+    target="_blank">Depth-chart update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png"
+      onerror="logoFail(this)">
+    <span>Tennessee Titans</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Xavier Restrepo caught two of three targets while direct competitor Bryce Oliver went without a reception.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Restrepo is beginning to edge ahead for Tennessee’s final receiver spot. It is deep-league information, but the role trend is worth tracking.</p>
   <p class="wsrc">Lane Mills &middot; Sports Illustrated -- TEN &middot; <a href="https://www.si.com/nfl/titans/onsi/2-titans-players-who-helped-their-roster-case-vs-seahawks-and-2-who-hurt-it-01m0t28jp34x" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0085CA;--c2:#BFC0BF"
    data-publication-id="manual:09b79d33c9207bfacc2c"
    data-team="CAR" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/7594.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/car.png" onerror="logoFail(this)">
-    <span class="tcat">CAR RB</span>
-    <span class="wb">Other</span><span class="wb rank">RB34</span><span class="wb">ADP 75.4</span><span class="wb">131.4 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Chuba Hubbard</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Chuba Hubbard</h4>
+  <h5 class="wheadline"><a href="https://x.com/Sheena_Marie3/status/2091933399124451638" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/car.png"
+      onerror="logoFail(this)">
+    <span>Carolina Panthers</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Sheena Quick reported Hubbard is expected back for Week 1 after reaching 20 mph during return-to-play work.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">That is strong recovery evidence and reinforces Hubbard as Carolina’s likely opening-week lead back.</p>
   <p class="wsrc">Sheena Quick &middot; FOX Sports Radio 1340 AM &middot; <a href="https://x.com/Sheena_Marie3/status/2091933399124451638" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence medium &middot;
-    short term &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#004C54;--c2:#A5ACAF"
    data-publication-id="manual:c710071ac3f168d96a32"
    data-team="PHI" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/9486.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" onerror="logoFail(this)">
-    <span class="tcat">PHI WR</span>
-    <span class="wb">First Team Reps</span><span class="wb rank">WR86</span><span class="wb">ADP 171.7</span><span class="wb">61.8 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Dontayvion Wicks</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Dontayvion Wicks</h4>
+  <h5 class="wheadline"><a href="https://x.com/BrandonGowton/status/2091933199513399335" rel="nofollow noopener"
+    target="_blank">Works with first team</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+      onerror="logoFail(this)">
+    <span>Philadelphia Eagles</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Brandon Lee Gowton observed Wicks open practice with Philadelphia’s starting receivers.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">One practice does not lock down a role, but first-team placement makes Wicks substantially more interesting.</p>
   <p class="wsrc">Brandon Lee Gowton &middot; Bleeding Green Nation &middot; <a href="https://x.com/BrandonGowton/status/2091933199513399335" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#125740;--c2:#FFFFFF"
    data-publication-id="manual:727642957cb8c957ae82"
    data-team="NYJ" data-pos="TE"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/13330.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" onerror="logoFail(this)">
-    <span class="tcat">NYJ TE</span>
-    <span class="wb">Other</span><span class="wb rank">TE27</span><span class="wb">ADP 170.1</span><span class="wb">89.8 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Kenyon Sadiq</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Kenyon Sadiq</h4>
+  <h5 class="wheadline"><a href="https://x.com/ZackBlatt/status/2091932460485419029" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">TE</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png"
+      onerror="logoFail(this)">
+    <span>New York Jets</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Zack Blatt observed Sadiq with the Jets offense in a helmet but said he had not participated.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Seeing him near the offense is encouraging, but this was not a return to practice. His draft price should remain suppressed until team work resumes.</p>
   <p class="wsrc">Zack Blatt &middot; The Athletic &middot; <a href="https://x.com/ZackBlatt/status/2091932460485419029" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#004C54;--c2:#A5ACAF"
    data-publication-id="manual:34c79d812d88cb8c1556"
    data-team="PHI" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/7525.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" onerror="logoFail(this)">
-    <span class="tcat">PHI WR</span>
-    <span class="wb">First Team Reps</span><span class="wb rank">WR16</span><span class="wb">ADP 28.4</span><span class="wb">184.3 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>DeVonta Smith</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">DeVonta Smith</h4>
+  <h5 class="wheadline"><a href="https://x.com/EJSmith94/status/2091932306743173386" rel="nofollow noopener"
+    target="_blank">Works with first team</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+      onerror="logoFail(this)">
+    <span>Philadelphia Eagles</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">EJ Smith observed DeVonta work with the starting offense and make an over-the-middle catch.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">First-team work is another positive checkpoint following his hamstring limitation.</p>
   <p class="wsrc">EJ Smith &middot; The Philadelphia Inquirer &middot; <a href="https://x.com/EJSmith94/status/2091932306743173386" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#241773;--c2:#9E7C0C"
    data-publication-id="manual:248bd4147cfba2c48896"
    data-team="BAL" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/11570.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" onerror="logoFail(this)">
-    <span class="tcat">BAL RB</span>
-    <span class="wb">Other</span><span class="wb rank">RB162</span><span class="wb"> proj</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Rasheen Ali</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Rasheen Ali</h4>
+  <h5 class="wheadline"><a href="https://x.com/jeffzrebiec/status/2091932034755109147" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png"
+      onerror="logoFail(this)">
+    <span>Baltimore Ravens</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Zrebiec observed Ali return to Ravens practice Monday.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">The return keeps Ali alive in Baltimore’s reserve-back competition, although no workload was reported.</p>
   <p class="wsrc">Jeff Zrebiec &middot; The Athletic &middot; <a href="https://x.com/jeffzrebiec/status/2091932034755109147" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#241773;--c2:#9E7C0C"
    data-publication-id="manual:20fc7bdcda8b5565a877"
    data-team="BAL" data-pos="WR"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/9997.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" onerror="logoFail(this)">
-    <span class="tcat">BAL WR</span>
-    <span class="wb">Limited Participation</span><span class="wb rank">WR13</span><span class="wb">ADP 24.4</span><span class="wb">202.1 proj</span><span class="wb down">Trending down</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Zay Flowers</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Zay Flowers</h4>
+  <h5 class="wheadline"><a href="https://x.com/jeffzrebiec/status/2091932034755109147" rel="nofollow noopener"
+    target="_blank">Limited in practice</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png"
+      onerror="logoFail(this)">
+    <span>Baltimore Ravens</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Jeff Zrebiec reported Flowers was not practicing Monday.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">No reason or timetable was supplied, so this is a new availability flag without enough information to change his projection.</p>
   <p class="wsrc">Jeff Zrebiec &middot; The Athletic &middot; <a href="https://x.com/jeffzrebiec/status/2091932034755109147" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#004C54;--c2:#A5ACAF"
    data-publication-id="manual:f9cc5ebd0907d464015f"
    data-team="PHI" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/13294.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" onerror="logoFail(this)">
-    <span class="tcat">PHI WR</span>
-    <span class="wb">Other</span><span class="wb rank">WR61</span><span class="wb">ADP 112.7</span><span class="wb">89.3 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Makai Lemon</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Makai Lemon</h4>
+  <h5 class="wheadline"><a href="https://x.com/Jeff_McLane/status/2091931852432896074" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+      onerror="logoFail(this)">
+    <span>Philadelphia Eagles</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Jeff McLane observed Lemon make a full return to practice and participate in 7-on-7 work.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">This is a major step beyond limited receiver drills and puts his early-season role back on track.</p>
   <p class="wsrc">Jeff McLane &middot; The Philadelphia Inquirer &middot; <a href="https://x.com/Jeff_McLane/status/2091931852432896074" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence medium &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#311D00;--c2:#FF3C00"
    data-publication-id="manual:b15990448c9ea94c1343"
    data-team="CLE" data-pos="QB"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12524.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" onerror="logoFail(this)">
-    <span class="tcat">CLE QB</span>
-    <span class="wb">Depth Chart</span><span class="wb rank">QB32</span><span class="wb">115.1 proj</span><span class="wb down">Trending down</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Shedeur Sanders</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Shedeur Sanders</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/video/albert-breer-on-watson-qb1-in-cleveland-jeanty-sprains-ankle-nfl-to-ncaa-dilemma-01m0ta7rxzbs87xe9wvn" rel="nofollow noopener"
+    target="_blank">Depth-chart update</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png"
+      onerror="logoFail(this)">
+    <span>Cleveland Browns</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Breer reported Cleveland told Shedeur Sanders to play the long game after choosing Watson as its starter.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Sanders’ immediate path is closed, but Cleveland can pivot if Watson struggles. He is a deep superflex stash, not a redraft starter.</p>
   <p class="wsrc">Albert Breer &middot; Sports Illustrated &middot; <a href="https://www.si.com/nfl/video/albert-breer-on-watson-qb1-in-cleveland-jeanty-sprains-ankle-nfl-to-ncaa-dilemma-01m0ta7rxzbs87xe9wvn" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence medium &middot;
-    short term &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#311D00;--c2:#FF3C00"
    data-publication-id="manual:96e53d1a5ac20f028b94"
    data-team="CLE" data-pos="QB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/4017.jpg" data-fallback="https://a.espncdn.com/i/headshots/nfl/players/full/3122840.png" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" onerror="logoFail(this)">
-    <span class="tcat">CLE QB</span>
-    <span class="wb">Depth Chart</span><span class="wb rank">QB33</span><span class="wb">107.4 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Deshaun Watson</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Deshaun Watson</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/video/albert-breer-on-watson-qb1-in-cleveland-jeanty-sprains-ankle-nfl-to-ncaa-dilemma-01m0ta7rxzbs87xe9wvn" rel="nofollow noopener"
+    target="_blank">Depth-chart update</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png"
+      onerror="logoFail(this)">
+    <span>Cleveland Browns</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Albert Breer reported Cleveland chose Deshaun Watson to start after weighing his full spring and training-camp body of work.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Watson has the job, but not much leash. Breer expects Cleveland to reconsider if the first two games go poorly, leaving Watson as a volatile QB2.</p>
   <p class="wsrc">Albert Breer &middot; Sports Illustrated &middot; <a href="https://www.si.com/nfl/video/albert-breer-on-watson-qb1-in-cleveland-jeanty-sprains-ankle-nfl-to-ncaa-dilemma-01m0ta7rxzbs87xe9wvn" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence medium &middot;
-    short term &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0B0B0B;--c2:#A5ACAF"
    data-publication-id="manual:93fae5b26a3bf82727b9"
    data-team="LV" data-pos="QB"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/13269.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" onerror="logoFail(this)">
-    <span class="tcat">LV QB</span>
-    <span class="wb">Other</span><span class="wb rank">QB36</span><span class="wb">ADP 156.6</span><span class="wb">48.0 proj</span><span class="wb down">Trending down</span>
-    <span class="tago">8h ago</span>
-  </div>
-  <h4>Fernando Mendoza</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Fernando Mendoza</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/video/albert-breer-on-watson-qb1-in-cleveland-jeanty-sprains-ankle-nfl-to-ncaa-dilemma-01m0ta7rxzbs87xe9wvn" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png"
+      onerror="logoFail(this)">
+    <span>Las Vegas Raiders</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Breer argued Ashton Jeanty’s ankle injury could delay Fernando Mendoza’s debut because Las Vegas wants a reliable run game supporting its rookie quarterback.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">This is a second-order risk, not a setback to Mendoza himself. His redraft value remains near zero until Las Vegas prepares to start him.</p>
   <p class="wsrc">Albert Breer &middot; Sports Illustrated &middot; <a href="https://www.si.com/nfl/video/albert-breer-on-watson-qb1-in-cleveland-jeanty-sprains-ankle-nfl-to-ncaa-dilemma-01m0ta7rxzbs87xe9wvn" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    short term &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#A71930;--c2:#A5ACAF"
    data-publication-id="manual:648c39bc0a96201f0726"
    data-team="ATL" data-pos="QB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/11559.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" onerror="logoFail(this)">
-    <span class="tcat">ATL QB</span>
-    <span class="wb">Other</span><span class="wb rank">QB35</span><span class="wb">67.4 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">9h ago</span>
-  </div>
-  <h4>Michael Penix Jr.</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Michael Penix Jr.</h4>
+  <h5 class="wheadline"><a href="https://x.com/tori_mcelhaney/status/2091919998998470892" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png"
+      onerror="logoFail(this)">
+    <span>Atlanta Falcons</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Tori McElhaney relayed Kevin Stefanski&#x27;s announcement that Michael Penix Jr. was cleared for full 11-on-11 work Monday.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">This is the next checkpoint we wanted to see. Full-team work puts Penix much closer to normal football activity, even though one practice does not settle his Week 1 workload.</p>
   <p class="wsrc">Tori McElhaney &middot; Atlanta Falcons <span class="wown">Official team source</span> &middot; <a href="https://x.com/tori_mcelhaney/status/2091919998998470892" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#002C5F;--c2:#A2AAAD"
    data-publication-id="e6f4f4e526e28667ecde"
    data-team="IND" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/9500.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" onerror="logoFail(this)">
-    <span class="tcat">IND WR</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">WR44</span><span class="wb">ADP 83.0</span><span class="wb">122.3 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">9h ago</span>
-  </div>
-  <h4>Josh Downs</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Josh Downs</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/colts/onsi/colts-fantasy-football-sleepers-to-target-in-2026" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png"
+      onerror="logoFail(this)">
+    <span>Indianapolis Colts</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">The article identifies Josh Downs as its favorite Colts value at a WR42 PPR price entering a contract season.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">WR42 is a friendly price for a slot receiver with something to prove and a quarterback who will use the middle of the field. Downs is the Colts receiver we want first at cost.</p>
   <p class="wsrc">Michael Greene &middot; Sports Illustrated -- IND &middot; <a href="https://www.si.com/nfl/colts/onsi/colts-fantasy-football-sleepers-to-target-in-2026" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#002C5F;--c2:#A2AAAD"
    data-publication-id="d377fcebd50540a11805"
    data-team="IND" data-pos="QB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/5870.jpg" data-fallback="https://a.espncdn.com/i/headshots/nfl/players/full/3917792.png" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" onerror="logoFail(this)">
-    <span class="tcat">IND QB</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">QB23</span><span class="wb">ADP 156.5</span><span class="wb">250.5 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">9h ago</span>
-  </div>
-  <h4>Daniel Jones</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Daniel Jones</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/colts/onsi/colts-fantasy-football-sleepers-to-target-in-2026" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png"
+      onerror="logoFail(this)">
+    <span>Indianapolis Colts</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">The article identifies Daniel Jones as a QB24 value after a full camp and a top-five fantasy start to the 2025 season.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">QB24 is a cheap way to buy rushing points in a Shane Steichen offense. The Achilles history is real, but the camp participation makes Jones one of the better late quarterback swings.</p>
   <p class="wsrc">Michael Greene &middot; Sports Illustrated -- IND &middot; <a href="https://www.si.com/nfl/colts/onsi/colts-fantasy-football-sleepers-to-target-in-2026" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#002C5F;--c2:#A2AAAD"
    data-publication-id="a494ac11a1f3cb45b064"
    data-team="IND" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/8142.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" onerror="logoFail(this)">
-    <span class="tcat">IND WR</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">WR39</span><span class="wb">ADP 58.7</span><span class="wb">136.4 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">9h ago</span>
-  </div>
-  <h4>Alec Pierce</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Alec Pierce</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/colts/onsi/colts-fantasy-football-sleepers-to-target-in-2026" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png"
+      onerror="logoFail(this)">
+    <span>Indianapolis Colts</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">The article identifies Alec Pierce as a late-round upside play if his current injury pushes his draft price down.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Pierce is the kind of player we want to buy after the room gets nervous. The weekly floor will always bounce around, but very few late picks can create this much yardage on a handful of targets.</p>
   <p class="wsrc">Michael Greene &middot; Sports Illustrated -- IND &middot; <a href="https://www.si.com/nfl/colts/onsi/colts-fantasy-football-sleepers-to-target-in-2026" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#008E97;--c2:#FC4C02"
    data-publication-id="e4158f6af80b12bf0a37"
    data-team="MIA" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/13311.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" onerror="logoFail(this)">
-    <span class="tcat">MIA WR</span>
-    <span class="wb">Return To Practice</span><span class="wb rank">WR101</span><span class="wb">51.7 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">9h ago</span>
-  </div>
-  <h4>Chris Bell</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Chris Bell</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/dolphins/onsi/miami-dolphins-training-camp-practice-14-observations-big-bell-ewers-news-but-with-a-caveat-johnson-shines-01m0t5m7a1xa" rel="nofollow noopener"
+    target="_blank">Returns to practice</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png"
+      onerror="logoFail(this)">
+    <span>Miami Dolphins</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Alain Poupart observed Chris Bell practice without a red jersey Monday for the first time since his NFI activation.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Bell shedding the red jersey is real progress. For now, the mostly half-speed practice means we should treat it as another recovery step, not proof that he is all the way back.</p>
   <p class="wsrc">Alain Poupart &middot; Sports Illustrated -- MIA &middot; <a href="https://www.si.com/nfl/dolphins/onsi/miami-dolphins-training-camp-practice-14-observations-big-bell-ewers-news-but-with-a-caveat-johnson-shines-01m0t5m7a1xa" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#008E97;--c2:#FC4C02"
    data-publication-id="c454c6e7c864840569f6"
    data-team="MIA" data-pos="TE"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/8172.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" onerror="logoFail(this)">
-    <span class="tcat">MIA TE</span>
-    <span class="wb">Other</span><span class="wb rank">TE26</span><span class="wb">ADP 171.8</span><span class="wb">93.6 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">9h ago</span>
-  </div>
-  <h4>Greg Dulcich</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Greg Dulcich</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/dolphins/onsi/miami-dolphins-training-camp-practice-14-observations-big-bell-ewers-news-but-with-a-caveat-johnson-shines-01m0t5m7a1xa" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">TE</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png"
+      onerror="logoFail(this)">
+    <span>Miami Dolphins</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Alain Poupart observed Greg Dulcich make a difficult catch over the middle on a pass thrown behind him Monday.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">It is only one catch, and that is fine. In a thin Miami pass-catching group, every sign that Dulcich is earning useful middle-of-field work belongs on the radar.</p>
   <p class="wsrc">Alain Poupart &middot; Sports Illustrated -- MIA &middot; <a href="https://www.si.com/nfl/dolphins/onsi/miami-dolphins-training-camp-practice-14-observations-big-bell-ewers-news-but-with-a-caveat-johnson-shines-01m0t5m7a1xa" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#008E97;--c2:#FC4C02"
    data-publication-id="790edef514e407637acf"
    data-team="MIA" data-pos="QB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12500.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" onerror="logoFail(this)">
-    <span class="tcat">MIA QB</span>
-    <span class="wb">Return To Practice</span><span class="wb up">Trending up</span>
-    <span class="tago">9h ago</span>
-  </div>
-  <h4>Quinn Ewers</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Quinn Ewers</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/dolphins/onsi/miami-dolphins-training-camp-practice-14-observations-big-bell-ewers-news-but-with-a-caveat-johnson-shines-01m0t5m7a1xa" rel="nofollow noopener"
+    target="_blank">Returns to practice</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png"
+      onerror="logoFail(this)">
+    <span>Miami Dolphins</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Alain Poupart observed Quinn Ewers back at Dolphins practice Monday for the first time since his reported groin injury.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Getting back on the field matters, especially with roster decisions coming. For now, the half-speed setting keeps this from being a full clearance signal.</p>
   <p class="wsrc">Alain Poupart &middot; Sports Illustrated -- MIA &middot; <a href="https://www.si.com/nfl/dolphins/onsi/miami-dolphins-training-camp-practice-14-observations-big-bell-ewers-news-but-with-a-caveat-johnson-shines-01m0t5m7a1xa" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#008E97;--c2:#FC4C02"
    data-publication-id="61cd9f452ed725a3e224"
    data-team="MIA" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/8117.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" onerror="logoFail(this)">
-    <span class="tcat">MIA WR</span>
-    <span class="wb">Red Zone</span><span class="wb rank">WR100</span><span class="wb">ADP 168.7</span><span class="wb">51.8 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">9h ago</span>
-  </div>
-  <h4>Jalen Tolbert</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Jalen Tolbert</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/dolphins/onsi/miami-dolphins-training-camp-practice-14-observations-big-bell-ewers-news-but-with-a-caveat-johnson-shines-01m0t5m7a1xa" rel="nofollow noopener"
+    target="_blank">Red-zone work</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png"
+      onerror="logoFail(this)">
+    <span>Miami Dolphins</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Alain Poupart observed Jalen Tolbert win at the back of the end zone for a red-zone touchdown during Monday&#x27;s Dolphins practice.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">We are not turning one practice touchdown into a depth-chart declaration. It is still a useful note for a receiver trying to carve out a role in a wide-open Miami group.</p>
   <p class="wsrc">Alain Poupart &middot; Sports Illustrated -- MIA &middot; <a href="https://www.si.com/nfl/dolphins/onsi/miami-dolphins-training-camp-practice-14-observations-big-bell-ewers-news-but-with-a-caveat-johnson-shines-01m0t5m7a1xa" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#004C54;--c2:#A5ACAF"
    data-publication-id="53d997d9f41f56ca36dd"
    data-team="PHI" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/7525.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" onerror="logoFail(this)">
-    <span class="tcat">PHI WR</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">WR16</span><span class="wb">ADP 28.4</span><span class="wb">184.3 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">9h ago</span>
-  </div>
-  <h4>DeVonta Smith</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">DeVonta Smith</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/rankings/rashee-rice-vs-devonta-smith-the-fantasy-football-wr-debate-that-could-make-or-break-your-draft" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+      onerror="logoFail(this)">
+    <span>Philadelphia Eagles</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI identifies DeVonta Smith as the safer pick over Rashee Rice because of his established production and weekly floor.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Smith is the clean roster-construction pick. He may not match Rice&#x27;s spike-week ceiling, but the new alpha role gives us a reliable way to bank targets without taking on the same availability risk.</p>
   <p class="wsrc">Daniel Outerbridge &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/rankings/rashee-rice-vs-devonta-smith-the-fantasy-football-wr-debate-that-could-make-or-break-your-draft" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#E31837;--c2:#FFB81C"
    data-publication-id="307cce6e589186570429"
    data-team="KC" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/10229.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" onerror="logoFail(this)">
-    <span class="tcat">KC WR</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">WR8</span><span class="wb">ADP 14.5</span><span class="wb">215.5 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">9h ago</span>
-  </div>
-  <h4>Rashee Rice</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Rashee Rice</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/rankings/rashee-rice-vs-devonta-smith-the-fantasy-football-wr-debate-that-could-make-or-break-your-draft" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png"
+      onerror="logoFail(this)">
+    <span>Kansas City Chiefs</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI prefers Rashee Rice for ceiling over DeVonta Smith when managers are comfortable accepting more availability risk.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Rice is the aggressive pick in this range. If the roster can absorb volatility, the path to WR1 weeks is more exciting than the safer alternatives around him.</p>
   <p class="wsrc">Daniel Outerbridge &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/rankings/rashee-rice-vs-devonta-smith-the-fantasy-football-wr-debate-that-could-make-or-break-your-draft" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#03202F;--c2:#A71930"
    data-publication-id="manual:d64f33affd9bb47cfdc7"
    data-team="HOU" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12536.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" onerror="logoFail(this)">
-    <span class="tcat">HOU WR</span>
-    <span class="wb">Other</span><span class="wb rank">WR103</span><span class="wb">50.8 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">9h ago</span>
-  </div>
-  <h4>Jaylin Noel</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Jaylin Noel</h4>
+  <h5 class="wheadline"><a href="https://x.com/AaronWilson_NFL/status/2091911960157692023" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png"
+      onerror="logoFail(this)">
+    <span>Houston Texans</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Aaron Wilson observed Jaylin Noel getting more work in Houston&#x27;s offense, including underneath routes and a touchdown catch Monday.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">One practice is one practice, but this is exactly the usage we want from a slot candidate. Noel is healthy again and earning touches while Houston sorts out the targets left by Jayden Higgins.</p>
   <p class="wsrc">Aaron Wilson &middot; KPRC 2 &middot; <a href="https://x.com/AaronWilson_NFL/status/2091911960157692023" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#003594;--c2:#869397"
    data-publication-id="531b156c082e6c555f0a"
    data-team="DAL" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/8800.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" onerror="logoFail(this)">
-    <span class="tcat">DAL RB</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">RB72</span><span class="wb">47.9 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">10h ago</span>
-  </div>
-  <h4>Malik Davis</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Malik Davis</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-answer-rb2-couldnt-be-clearer-nfl-preseason-finale" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png"
+      onerror="logoFail(this)">
+    <span>Dallas Cowboys</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">The article argues Malik Davis deserves Dallas&#x27;s RB2 role after an efficient preseason showing and useful pass-protection work.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">This is exactly the kind of boring depth-chart fight that produces useful late-round value. Davis is making the trust plays coaches notice, even if Blue remains the more explosive name.</p>
   <p class="wsrc">Josh Sanchez &middot; Sports Illustrated -- DAL &middot; <a href="https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-answer-rb2-couldnt-be-clearer-nfl-preseason-finale" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#003594;--c2:#FFA300"
    data-publication-id="f4ea13ef9ecb1b638251"
    data-team="LAR" data-pos="TE"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12487.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" onerror="logoFail(this)">
-    <span class="tcat">LAR TE</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">TE29</span><span class="wb">ADP 176.7</span><span class="wb">83.8 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">11h ago</span>
-  </div>
-  <h4>Terrance Ferguson</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Terrance Ferguson</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/nfl/2026-fantasy-football-deep-sleepers-terrance-ferguson" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">TE</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png"
+      onerror="logoFail(this)">
+    <span>Los Angeles Rams</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI highlights Terrance Ferguson as a deep sleeper at TE26 because he has a path to the Rams&#x27; third receiving role.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">TE26 is the perfect price for this bet. Ferguson does not need a huge weekly role to matter, and one injury ahead of him would put a Sean McVay target funnel in play.</p>
   <p class="wsrc">Skyler Carlin &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/nfl/2026-fantasy-football-deep-sleepers-terrance-ferguson" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0C2340;--c2:#FB4F14"
    data-publication-id="95f328167121317cad99"
    data-team="DEN" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12492.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" onerror="logoFail(this)">
-    <span class="tcat">DEN WR</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">WR106</span><span class="wb">ADP 151.6</span><span class="wb">50.3 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">11h ago</span>
-  </div>
-  <h4>Pat Bryant</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Pat Bryant</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/nfl/2026-fantasy-football-deep-sleepers-terrance-ferguson" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png"
+      onerror="logoFail(this)">
+    <span>Denver Broncos</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI highlights Pat Bryant as a WR82 deep sleeper with a path to steady three-receiver work in Denver.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Bryant is free, and the route to snaps is believable. We are not drafting a guaranteed starter; we are drafting a big receiver who can stay on the field if the veterans miss time.</p>
   <p class="wsrc">Skyler Carlin &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/nfl/2026-fantasy-football-deep-sleepers-terrance-ferguson" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#00338D;--c2:#C60C30"
    data-publication-id="7abc71dd620ccddc7a1a"
    data-team="BUF" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/11575.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" onerror="logoFail(this)">
-    <span class="tcat">BUF RB</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">RB75</span><span class="wb">ADP 165.6</span><span class="wb">43.6 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">11h ago</span>
-  </div>
-  <h4>Ray Davis</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Ray Davis</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/nfl/2026-fantasy-football-deep-sleepers-terrance-ferguson" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png"
+      onerror="logoFail(this)">
+    <span>Buffalo Bills</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI highlights Ray Davis as a late handcuff with standalone touches and a larger path while Ty Johnson is sidelined.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Davis gives us two ways to win: a few useful touches now and a much bigger role if Cook misses time. That is exactly what we want after pick 200.</p>
   <p class="wsrc">Skyler Carlin &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/nfl/2026-fantasy-football-deep-sleepers-terrance-ferguson" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#006778;--c2:#D7A22A"
    data-publication-id="manual:dde86955df8725e5d3b2"
    data-team="JAX" data-pos="QB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/7523.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" onerror="logoFail(this)">
-    <span class="tcat">JAX QB</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">QB8</span><span class="wb">ADP 92.9</span><span class="wb">297.7 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">11h ago</span>
-  </div>
-  <h4>Trevor Lawrence</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Trevor Lawrence</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/rankings/dak-prescott-vs-trevor-lawrence-which-quarterback-should-fantasy-football-managers-draft-in-2026" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png"
+      onerror="logoFail(this)">
+    <span>Jacksonville Jaguars</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI prefers Trevor Lawrence over Dak Prescott for his rushing floor and top-five ceiling at a lower draft cost.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Lawrence is the better swing when we want ceiling without paying the elite-quarterback tax. The rushing work gives him more ways to win a week and more protection when the passing line is ordinary.</p>
   <p class="wsrc">Daniel Outerbridge &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/rankings/dak-prescott-vs-trevor-lawrence-which-quarterback-should-fantasy-football-managers-draft-in-2026" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#003594;--c2:#869397"
    data-publication-id="manual:a55008e707603b79d9a3"
    data-team="DAL" data-pos="QB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/3294.jpg" data-fallback="https://a.espncdn.com/i/headshots/nfl/players/full/2577417.png" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" onerror="logoFail(this)">
-    <span class="tcat">DAL QB</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">QB12</span><span class="wb">ADP 65.4</span><span class="wb">292.6 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">11h ago</span>
-  </div>
-  <h4>Dak Prescott</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Dak Prescott</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/rankings/dak-prescott-vs-trevor-lawrence-which-quarterback-should-fantasy-football-managers-draft-in-2026" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png"
+      onerror="logoFail(this)">
+    <span>Dallas Cowboys</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI identifies Dak Prescott as the safer middle-round quarterback because of Dallas&#x27;s stable, pass-heavy offense.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Dak is the floor play. He will not rescue a quiet passing day with his legs, but Dallas gives him enough volume to keep an otherwise aggressive roster stable at quarterback.</p>
   <p class="wsrc">Daniel Outerbridge &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/rankings/dak-prescott-vs-trevor-lawrence-which-quarterback-should-fantasy-football-managers-draft-in-2026" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#D50A0A;--c2:#FF7900"
    data-publication-id="manual:ad4f2556294f82d2b402"
    data-team="TB" data-pos="WR"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12514.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" onerror="logoFail(this)">
-    <span class="tcat">TB WR</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">WR20</span><span class="wb">ADP 37.1</span><span class="wb">177.5 proj</span><span class="wb down">Trending down</span>
-    <span class="tago">12h ago</span>
-  </div>
-  <h4>Emeka Egbuka</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Emeka Egbuka</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/rankings/wide-receiver-debate-rankings-upside-mid-round-tee-higgins-emeka-egbuka" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png"
+      onerror="logoFail(this)">
+    <span>Tampa Bay Buccaneers</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI argues Emeka Egbuka&#x27;s WR19 ADP carries added risk while he works back from turf toe.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Egbuka can absolutely beat this take, but WR19 leaves very little room for a slow start. We would rather buy the ceiling after the toe risk is reflected in the price.</p>
   <p class="wsrc">Thomas Carelli &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/rankings/wide-receiver-debate-rankings-upside-mid-round-tee-higgins-emeka-egbuka" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#FB4F14;--c2:#000000"
    data-publication-id="f0c64f129e8ebbd1479c"
    data-team="CIN" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/6801.jpg" data-fallback="https://a.espncdn.com/i/headshots/nfl/players/full/4239993.png" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" onerror="logoFail(this)">
-    <span class="tcat">CIN WR</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">WR15</span><span class="wb">ADP 36.0</span><span class="wb">184.7 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">12h ago</span>
-  </div>
-  <h4>Tee Higgins</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Tee Higgins</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/rankings/wide-receiver-debate-rankings-upside-mid-round-tee-higgins-emeka-egbuka" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png"
+      onerror="logoFail(this)">
+    <span>Cincinnati Bengals</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI prefers Tee Higgins over Emeka Egbuka because Higgins carries less health risk in a stronger passing offense.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Higgins does not need Ja&#x27;Marr Chase to disappear to pay off. Joe Burrow and a huge passing pie keep the weekly ceiling high enough to justify taking the steadier side of this debate.</p>
   <p class="wsrc">Thomas Carelli &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/rankings/wide-receiver-debate-rankings-upside-mid-round-tee-higgins-emeka-egbuka" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0B0B0B;--c2:#A5ACAF"
    data-publication-id="276b8076a164e5cd9e9f"
    data-team="LV" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/13305.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" onerror="logoFail(this)">
-    <span class="tcat">LV RB</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">RB46</span><span class="wb">ADP 150.4</span><span class="wb">103.6 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">12h ago</span>
-  </div>
-  <h4>Mike Washington</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Mike Washington</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/raiders/onsi/las-vegas-why-mike-washington-capable-snaps" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png"
+      onerror="logoFail(this)">
+    <span>Las Vegas Raiders</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">The article argues Mike Washington can handle early-down RB1 work if Ashton Jeanty misses time, while noting third downs remain unsettled.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Washington is no longer a generic handcuff. The early-down case is strong enough to draft, but the passing-game caveat keeps us from treating him like a full three-down replacement.</p>
   <p class="wsrc">Jared Feinberg &middot; Sports Illustrated -- LV &middot; <a href="https://www.si.com/nfl/raiders/onsi/las-vegas-why-mike-washington-capable-snaps" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0085CA;--c2:#BFC0BF"
    data-publication-id="manual:3a38436b4d439953d796"
    data-team="CAR" data-pos="RB"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/11583.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/car.png" onerror="logoFail(this)">
-    <span class="tcat">CAR RB</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">RB36</span><span class="wb">ADP 108.1</span><span class="wb">129.2 proj</span><span class="wb down">Trending down</span>
-    <span class="tago">13h ago</span>
-  </div>
-  <h4>Jonathon Brooks</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Jonathon Brooks</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/rankings/panthers-running-back-draft-rankings-adp-value-chuba-hubbard-jonathan-brooks" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/car.png"
+      onerror="logoFail(this)">
+    <span>Carolina Panthers</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI argues Jonathon Brooks has climbed above fair value because his role and post-injury workload remain uncertain.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">The talent case is easy to understand; the price is the problem. Brooks now asks us to pay for a takeover before we know his workload, and Hubbard is still built to hold the important snaps.</p>
   <p class="wsrc">Thomas Carelli &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/rankings/panthers-running-back-draft-rankings-adp-value-chuba-hubbard-jonathan-brooks" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0B2265;--c2:#A71930"
    data-publication-id="b5ad0f29f970def4c648"
    data-team="NYG" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/11632.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" onerror="logoFail(this)">
-    <span class="tcat">NYG WR</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">WR26</span><span class="wb">ADP 27.8</span><span class="wb">167.1 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">13h ago</span>
-  </div>
-  <h4>Malik Nabers</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Malik Nabers</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/injuries/malik-nabers-and-george-kittle-become-fantasy-draft-steals-with-recent-injury-updates" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png"
+      onerror="logoFail(this)">
+    <span>New York Giants</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI argues Malik Nabers is a draft value after he progressed to team-controlled drills in a red non-contact jersey.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">The injury discount is starting to look more interesting than scary. Nabers still needs contact clearance, but team work puts his WR12-WR13 price squarely in the upside zone.</p>
   <p class="wsrc">Gray Deyo &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/injuries/malik-nabers-and-george-kittle-become-fantasy-draft-steals-with-recent-injury-updates" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#AA0000;--c2:#B3995D"
    data-publication-id="89c915fdd308dd7f3b00"
    data-team="SF" data-pos="TE"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/4217.jpg" data-fallback="https://a.espncdn.com/i/headshots/nfl/players/full/3040151.png" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" onerror="logoFail(this)">
-    <span class="tcat">SF TE</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">TE17</span><span class="wb">ADP 115.3</span><span class="wb">113.6 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">13h ago</span>
-  </div>
-  <h4>George Kittle</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">George Kittle</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/injuries/malik-nabers-and-george-kittle-become-fantasy-draft-steals-with-recent-injury-updates" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">TE</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png"
+      onerror="logoFail(this)">
+    <span>San Francisco 49ers</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI argues George Kittle is undervalued at a TE10-TE11 ADP after his PUP activation and recent recovery report.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">TE10 pricing leaves room for a few missed games and still gives us access to elite per-game production. Kittle is one of the clearest injury-discount swings on the board right now.</p>
   <p class="wsrc">Gray Deyo &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/injuries/malik-nabers-and-george-kittle-become-fantasy-draft-steals-with-recent-injury-updates" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0085CA;--c2:#BFC0BF"
    data-publication-id="361e5bd5a3db3910d200"
    data-team="CAR" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/7594.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/car.png" onerror="logoFail(this)">
-    <span class="tcat">CAR RB</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">RB34</span><span class="wb">ADP 75.4</span><span class="wb">131.4 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">13h ago</span>
-  </div>
-  <h4>Chuba Hubbard</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Chuba Hubbard</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/rankings/panthers-running-back-draft-rankings-adp-value-chuba-hubbard-jonathan-brooks" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/car.png"
+      onerror="logoFail(this)">
+    <span>Carolina Panthers</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Fantasy On SI argues Chuba Hubbard remains the better value at RB29 than the rapidly rising Jonathon Brooks.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Hubbard is the less exciting click, which is exactly why the price works. Pass protection and a Week 1 lead role give him a much cleaner path to paying off than the market is admitting.</p>
   <p class="wsrc">Thomas Carelli &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/rankings/panthers-running-back-draft-rankings-adp-value-chuba-hubbard-jonathan-brooks" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0B2265;--c2:#A71930"
    data-publication-id="35392c9d8464d2cbce6a"
    data-team="NYG" data-pos="RB"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/11655.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" onerror="logoFail(this)">
-    <span class="tcat">NYG RB</span>
-    <span class="wb">Other</span><span class="wb rank">RB41</span><span class="wb">ADP 151.4</span><span class="wb">110.2 proj</span><span class="wb down">Trending down</span>
-    <span class="tago">13h ago</span>
-  </div>
-  <h4>Tyrone Tracy Jr.</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Tyrone Tracy Jr.</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/giants/onsi/tyrone-tracy-jr-roster-status-01m0rqy526dc" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png"
+      onerror="logoFail(this)">
+    <span>New York Giants</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Patricia Traina reported John Harbaugh said the roster standing for Tyrone Tracy Jr. remains under evaluation after two costly preseason mistakes.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">The coach is not burying Tracy, but pass protection and ball security are the two mistakes that can shrink a running back&#x27;s role fast. Najee Harris and Devin Singletary make the next week especially important.</p>
   <p class="wsrc">Patricia Traina &middot; Sports Illustrated -- NYG &middot; <a href="https://www.si.com/nfl/giants/onsi/tyrone-tracy-jr-roster-status-01m0rqy526dc" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0B0B0B;--c2:#A5ACAF"
    data-publication-id="2db9c0fdf65368f193bc"
    data-team="LV" data-pos="RB"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12527.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" onerror="logoFail(this)">
-    <span class="tcat">LV RB</span>
-    <span class="wb">Injury</span><span class="wb rank">RB3</span><span class="wb">ADP 15.1</span><span class="wb">246.0 proj</span><span class="wb down">Trending down</span>
-    <span class="tago">20h ago</span>
-  </div>
-  <h4>Ashton Jeanty</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Ashton Jeanty</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/raiders/onsi/good-news-ashton-jeanty-potential-las-vegas-inury" rel="nofollow noopener"
+    target="_blank">Dealing with injury</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png"
+      onerror="logoFail(this)">
+    <span>Las Vegas Raiders</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Hondo Carpenter reported preliminary information pointed to an ankle sprain for Ashton Jeanty, with more testing still pending.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">The first update is far better than the scene at practice, but this remains an injury with no firm timetable. For now, Jeanty&#x27;s draft price carries more short-term risk and Mike Washington matters a lot more.</p>
   <p class="wsrc">Hondo Carpenter &middot; Sports Illustrated -- LV &middot; <a href="https://www.si.com/nfl/raiders/onsi/good-news-ashton-jeanty-potential-las-vegas-inury" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#AA0000;--c2:#B3995D"
    data-publication-id="d2720baf3dfef4cdfcd1"
    data-team="SF" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/4034.jpg" data-fallback="https://a.espncdn.com/i/headshots/nfl/players/full/3117251.png" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" onerror="logoFail(this)">
-    <span class="tcat">SF RB</span>
-    <span class="wb">Other</span><span class="wb rank">RB9</span><span class="wb">ADP 6.5</span><span class="wb">288.1 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">1d ago</span>
-  </div>
-  <h4>Christian McCaffrey</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Christian McCaffrey</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/49ers/onsi/49ers-christian-mccaffrey-puts-bed-all-hold-narratives" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png"
+      onerror="logoFail(this)">
+    <span>San Francisco 49ers</span></p>
+  <p class="wdate">August 24, 2026</p>
   <p class="wrep">Henry Cheal reported Christian McCaffrey said his camp absence was part of a planned workload ramp-down and that he feels fresh.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">That explanation is much easier to live with than an unexplained hold-in or a new injury. The 49ers are managing their centerpiece, and McCaffrey says his body is responding.</p>
   <p class="wsrc">Henry Cheal &middot; Sports Illustrated -- SF &middot; <a href="https://www.si.com/nfl/49ers/onsi/49ers-christian-mccaffrey-puts-bed-all-hold-narratives" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#00338D;--c2:#C60C30"
    data-publication-id="53fde63c7161d26d8ea5"
    data-team="BUF" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/13696.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" onerror="logoFail(this)">
-    <span class="tcat">BUF WR</span>
-    <span class="wb">Other</span><span class="wb up">Trending up</span>
-    <span class="tago">1d ago</span>
-  </div>
-  <h4>Ja&#x27;Mori Maclin</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Ja&#x27;Mori Maclin</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/bills/onsi/preseason-bills-wr-roster-battle-just-got-really-interesting-with-two-breakouts-vs-browns" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png"
+      onerror="logoFail(this)">
+    <span>Buffalo Bills</span></p>
+  <p class="wdate">August 23, 2026</p>
   <p class="wrep">Ralph Ventre reported Ja&#x27;Mori Maclin caught two passes for 108 yards and a touchdown against Cleveland.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Maclin is no longer just a camp name. He has at least pushed his way into the practice-squad picture and made Buffalo&#x27;s final receiver decision more interesting.</p>
   <p class="wsrc">Ralph Ventre &middot; Sports Illustrated -- BUF &middot; <a href="https://www.si.com/nfl/bills/onsi/preseason-bills-wr-roster-battle-just-got-really-interesting-with-two-breakouts-vs-browns" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#002244;--c2:#69BE28"
    data-publication-id="4c8f9c709e8ae7adb959"
    data-team="SEA" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/13286.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" onerror="logoFail(this)">
-    <span class="tcat">SEA RB</span>
-    <span class="wb">Other</span><span class="wb rank">RB20</span><span class="wb">ADP 82.1</span><span class="wb">158.3 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">1d ago</span>
-  </div>
-  <h4>Jadarian Price</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Jadarian Price</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/seahawks/onsi/seahawks-announce-surprising-plan-jadarian-price-preseason" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png"
+      onerror="logoFail(this)">
+    <span>Seattle Seahawks</span></p>
+  <p class="wdate">August 23, 2026</p>
   <p class="wrep">Brendon Nelson relayed Gregg Bell&#x27;s report that Seattle plans to sit Jadarian Price in every preseason game.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Seattle treating Price like a player it cannot afford to lose says plenty about his September role. The rookie will enter Week 1 without exhibition reps, so the workload is exciting but not risk-free.</p>
   <p class="wsrc">Brendon Nelson &middot; Sports Illustrated -- SEA &middot; <a href="https://www.si.com/nfl/seahawks/onsi/seahawks-announce-surprising-plan-jadarian-price-preseason" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#003594;--c2:#869397"
    data-publication-id="e50adba0e778fb0b030f"
    data-team="DAL" data-pos="QB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/11557.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" onerror="logoFail(this)">
-    <span class="tcat">DAL QB</span>
-    <span class="wb">Other</span><span class="wb up">Trending up</span>
-    <span class="tago">1d ago</span>
-  </div>
-  <h4>Joe Milton III</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Joe Milton III</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/cowboys/onsi/joe-milton-flips-dallas-cowboys-qb2-battle-on-head-dominating-nfl-preseason-week-2" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">QB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png"
+      onerror="logoFail(this)">
+    <span>Dallas Cowboys</span></p>
+  <p class="wdate">August 23, 2026</p>
   <p class="wrep">Mike Moraitis reported Joe Milton III completed 9 of 13 passes for 179 yards, two passing scores and one rushing touchdown Saturday.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Milton has made the Dallas QB2 race a real conversation. The athletic ceiling was never the question; two straight efficient games are evidence that the decision-making is catching up.</p>
   <p class="wsrc">Mike Moraitis &middot; Sports Illustrated -- DAL &middot; <a href="https://www.si.com/nfl/cowboys/onsi/joe-milton-flips-dallas-cowboys-qb2-battle-on-head-dominating-nfl-preseason-week-2" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#FB4F14;--c2:#000000"
    data-publication-id="131a54ad106a792d2696"
    data-team="CIN" data-pos="TE"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/11592.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" onerror="logoFail(this)">
-    <span class="tcat">CIN TE</span>
-    <span class="wb">Other</span><span class="wb rank">TE53</span><span class="wb">22.7 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">1d ago</span>
-  </div>
-  <h4>Erick All</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Erick All</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/bengals/onsi/cincinnati-bengals-tight-end-erick-all-jr-relishes-first-game-action-in-657-days-01m0qt3x1w8d" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">TE</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png"
+      onerror="logoFail(this)">
+    <span>Cincinnati Bengals</span></p>
+  <p class="wdate">August 23, 2026</p>
   <p class="wrep">Jay Morrison reported Erick All played nine snaps in his first game action in 657 days following a two-surgery ACL recovery.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Nine snaps without a target will not move a projection, but getting through live action after that recovery absolutely matters. This is a health milestone worth tracking into the final preseason week.</p>
   <p class="wsrc">Jay Morrison &middot; Sports Illustrated -- CIN &middot; <a href="https://www.si.com/nfl/bengals/onsi/cincinnati-bengals-tight-end-erick-all-jr-relishes-first-game-action-in-657-days-01m0qt3x1w8d" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#004C54;--c2:#A5ACAF"
    data-publication-id="0cab823a9a0152694ad6"
    data-team="PHI" data-pos="RB"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/11582.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" onerror="logoFail(this)">
-    <span class="tcat">PHI RB</span>
-    <span class="wb">Other</span><span class="wb rank">RB147</span><span class="wb"> proj</span><span class="wb up">Trending up</span>
-    <span class="tago">1d ago</span>
-  </div>
-  <h4>Carson Steele</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Carson Steele</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/eagles/onsi/eagles-stock-market-following-preseason-game-2-start-buying-on-carson-steele-01m0pax8am5n" rel="nofollow noopener"
+    target="_blank">Latest update</a></h5>
+  <p class="wmeta"><span class="wpos">RB</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+      onerror="logoFail(this)">
+    <span>Philadelphia Eagles</span></p>
+  <p class="wdate">August 23, 2026</p>
   <p class="wrep">John McMullen reported Carson Steele caught six of seven targets for 84 yards and a touchdown against New England.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">That receiving line is hard to ignore for a player fighting to stick. Steele still has to survive cutdown day, but he just gave Philadelphia a reason to keep the versatile back around.</p>
   <p class="wsrc">John McMullen &middot; Sports Illustrated -- PHI &middot; <a href="https://www.si.com/nfl/eagles/onsi/eagles-stock-market-following-preseason-game-2-start-buying-on-carson-steele-01m0pax8am5n" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#006778;--c2:#D7A22A"
    data-publication-id="fa06ca3ffc88d2605f73"
    data-team="JAX" data-pos="WR"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/5947.jpg" data-fallback="https://a.espncdn.com/i/headshots/nfl/players/full/3916433.png" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" onerror="logoFail(this)">
-    <span class="tcat">JAX WR</span>
-    <span class="wb">Injury</span><span class="wb rank">WR42</span><span class="wb">ADP 86.1</span><span class="wb">126.5 proj</span><span class="wb down">Trending down</span>
-    <span class="tago">1d ago</span>
-  </div>
-  <h4>Jakobi Meyers</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Jakobi Meyers</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/jaguars/onsi/jacksonville-everything-i-saw-day-17-of-training-camp" rel="nofollow noopener"
+    target="_blank">Dealing with injury</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png"
+      onerror="logoFail(this)">
+    <span>Jacksonville Jaguars</span></p>
+  <p class="wdate">August 23, 2026</p>
   <p class="wrep">Jakobi Meyers got banged up during joint practice and was wearing medical protection on his right hand Friday.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">This is not panic time, but we are absolutely keeping an eye on it. There is no diagnosis or timetable yet, so guessing would be pointless. Meyers’ next practice update should tell us whether this was a minor August issue or something more.</p>
   <p class="wsrc">John Shipley &middot; Sports Illustrated -- JAX &middot; <a href="https://www.si.com/nfl/jaguars/onsi/jacksonville-everything-i-saw-day-17-of-training-camp" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0080C6;--c2:#FFC20E"
    data-publication-id="7d0cd091e28d81333703"
    data-team="LAC" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12509.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" onerror="logoFail(this)">
-    <span class="tcat">LAC WR</span>
-    <span class="wb">Return To Practice</span><span class="wb rank">WR56</span><span class="wb">ADP 166.2</span><span class="wb">100.8 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">1d ago</span>
-  </div>
-  <h4>Tre Harris</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Tre Harris</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/chargers/onsi/chargers-injury-updates-offensive-line-sparks-concerns-recover-practice" rel="nofollow noopener"
+    target="_blank">Returns to practice</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png"
+      onerror="logoFail(this)">
+    <span>Los Angeles Chargers</span></p>
+  <p class="wdate">August 23, 2026</p>
   <p class="wrep">Tre Harris was back on the field Saturday as several Chargers starters returned to practice.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">This is good news. It is not a full green light just yet. We need to learn how much work Harris handled and whether he can put together consecutive practices. For now, though, he is moving in the right direction.</p>
   <p class="wsrc">Thomas Martinez &middot; Sports Illustrated -- LAC &middot; <a href="https://www.si.com/nfl/chargers/onsi/chargers-injury-updates-offensive-line-sparks-concerns-recover-practice" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#203731;--c2:#FFB612"
    data-publication-id="b9c6360b43e2231a9613"
    data-team="GB" data-pos="WR"
    data-dir="NEUTRAL">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12501.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" onerror="logoFail(this)">
-    <span class="tcat">GB WR</span>
-    <span class="wb">Snap Share</span><span class="wb rank">WR40</span><span class="wb">ADP 114.2</span><span class="wb">135.8 proj</span><span class="wb ">Worth noting</span>
-    <span class="tago">2d ago</span>
-  </div>
-  <h4>Matthew Golden</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Matthew Golden</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/packers/onsi/updating-brandon-cisse-and-key-injuries-from-packers-preseason-win-at-denver" rel="nofollow noopener"
+    target="_blank">Snap-share update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png"
+      onerror="logoFail(this)">
+    <span>Green Bay Packers</span></p>
+  <p class="wdate">August 22, 2026</p>
   <p class="wrep">Matthew Golden played 11 snaps against Denver and turned his only catch into a 19-yard gain.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Do not lose your mind over one preseason catch, but do not ignore the snap count either. Golden gave us a small but useful piece of information. Now we need to see more routes, first-team reps and consistent usage before calling this a real role trend.</p>
   <p class="wsrc">Bill Huber &middot; Packers On SI &middot; <a href="https://www.si.com/nfl/packers/onsi/updating-brandon-cisse-and-key-injuries-from-packers-preseason-win-at-denver" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    unknown &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#A71930;--c2:#A5ACAF"
    data-publication-id="28a689bf503cbf0eedee"
    data-team="ATL" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/7521.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" onerror="logoFail(this)">
-    <span class="tcat">ATL WR</span>
-    <span class="wb">Red Zone</span><span class="wb up">Trending up</span>
-    <span class="tago">4d ago</span>
-  </div>
-  <h4>Chris Blair</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Chris Blair</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/falcons/onsi/three-major-falcons-takeaways-from-day-2-joint-practice-with-colts" rel="nofollow noopener"
+    target="_blank">Red-zone work</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png"
+      onerror="logoFail(this)">
+    <span>Atlanta Falcons</span></p>
+  <p class="wdate">August 21, 2026</p>
   <p class="wrep">Blair received most of Jahan Dotson&#x27;s first-team red-zone snaps during one joint practice.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">The opportunity is encouraging, but one practice does not establish that Blair has passed Dotson or earned a regular-season role.</p>
   <p class="wsrc">Darius Hayes &middot; Sports Illustrated -- ATL &middot; <a href="https://www.si.com/nfl/falcons/onsi/three-major-falcons-takeaways-from-day-2-joint-practice-with-colts" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#311D00;--c2:#FF3C00"
    data-publication-id="manual:feb542e17d488355262a"
    data-team="CLE" data-pos="TE"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12506.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" onerror="logoFail(this)">
-    <span class="tcat">CLE TE</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">TE7</span><span class="wb">ADP 78.2</span><span class="wb">154.4 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">4d ago</span>
-  </div>
-  <h4>Harold Fannin Jr.</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Harold Fannin Jr.</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/news/top-5-tight-end-adp-values-travis-kelce-is-still-a-valuable-fantasy-asset" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">TE</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png"
+      onerror="logoFail(this)">
+    <span>Cleveland Browns</span></p>
+  <p class="wdate">August 21, 2026</p>
   <p class="wrep">Fantasy On SI lists Harold Fannin Jr. as a TE7 value after he led Cleveland with 731 receiving yards as a rookie.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Fannin already proved he can command volume in an ugly offense. TE7 is not a giveaway, but the route and target case is much sturdier than the price suggests.</p>
   <p class="wsrc">Jeff Salcedo &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/news/top-5-tight-end-adp-values-travis-kelce-is-still-a-valuable-fantasy-asset" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0B162A;--c2:#C83803"
    data-publication-id="manual:90d4d64469c1b1cafafc"
    data-team="CHI" data-pos="TE"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/12517.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" onerror="logoFail(this)">
-    <span class="tcat">CHI TE</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">TE3</span><span class="wb">ADP 57.0</span><span class="wb">169.9 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">4d ago</span>
-  </div>
-  <h4>Colston Loveland</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Colston Loveland</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/news/top-5-tight-end-adp-values-travis-kelce-is-still-a-valuable-fantasy-asset" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">TE</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png"
+      onerror="logoFail(this)">
+    <span>Chicago Bears</span></p>
+  <p class="wdate">August 21, 2026</p>
   <p class="wrep">Fantasy On SI lists Colston Loveland as a TE3 value because his role carries fewer questions than nearby skill-position picks.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Loveland is expensive for a tight end, but the role is unusually clean for this part of the draft. Buying the young focal point can be smarter than forcing a shakier running back or receiver.</p>
   <p class="wsrc">Jeff Salcedo &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/news/top-5-tight-end-adp-values-travis-kelce-is-still-a-valuable-fantasy-asset" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0B2265;--c2:#A71930"
    data-publication-id="manual:638f1ea757077d7c9539"
    data-team="NYG" data-pos="TE"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/8131.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" onerror="logoFail(this)">
-    <span class="tcat">NYG TE</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">TE8</span><span class="wb">ADP 136.2</span><span class="wb">149.2 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">4d ago</span>
-  </div>
-  <h4>Isaiah Likely</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Isaiah Likely</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/news/top-5-tight-end-adp-values-travis-kelce-is-still-a-valuable-fantasy-asset" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">TE</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png"
+      onerror="logoFail(this)">
+    <span>New York Giants</span></p>
+  <p class="wdate">August 21, 2026</p>
   <p class="wrep">Fantasy On SI lists Isaiah Likely as a TE13 value with a starting role and a path to become the Giants&#x27; second target.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Likely finally has the route volume fantasy players have been waiting for. TE13 is still cheap for a player with a believable path to finishing second on his team in targets.</p>
   <p class="wsrc">Jeff Salcedo &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/news/top-5-tight-end-adp-values-travis-kelce-is-still-a-valuable-fantasy-asset" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#E31837;--c2:#FFB81C"
    data-publication-id="manual:15caaf6f6005dcf99bcb"
    data-team="KC" data-pos="TE"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/1466.jpg" data-fallback="https://a.espncdn.com/i/headshots/nfl/players/full/15847.png" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" onerror="logoFail(this)">
-    <span class="tcat">KC TE</span>
-    <span class="wb">Fantasy Value</span><span class="wb rank">TE11</span><span class="wb">ADP 107.7</span><span class="wb">143.5 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">4d ago</span>
-  </div>
-  <h4>Travis Kelce</h4>
-  <div class="wlab">Fantasy analysis</div>
+  <h4 class="wplayer">Travis Kelce</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/onsi/fantasy/news/top-5-tight-end-adp-values-travis-kelce-is-still-a-valuable-fantasy-asset" rel="nofollow noopener"
+    target="_blank">Fantasy outlook update</a></h5>
+  <p class="wmeta"><span class="wpos">TE</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png"
+      onerror="logoFail(this)">
+    <span>Kansas City Chiefs</span></p>
+  <p class="wdate">August 21, 2026</p>
   <p class="wrep">Fantasy On SI lists Travis Kelce as a TE11 value after three straight PPR finishes inside the top five at the position.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Kelce no longer needs to be the TE1 to smash this price. At TE11, we are paying for ordinary production and getting three years of elite positional results as the upside case.</p>
   <p class="wsrc">Jeff Salcedo &middot; Fantasy On SI &middot; <a href="https://www.si.com/onsi/fantasy/news/top-5-tight-end-adp-values-travis-kelce-is-still-a-valuable-fantasy-asset" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Analysis low &middot;
-    draft day &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#002244;--c2:#C60C30"
    data-publication-id="approved:mack-hollins"
    data-team="NE" data-pos="WR"
    data-dir="NEUTRAL">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/4177.jpg" data-fallback="https://a.espncdn.com/i/headshots/nfl/players/full/2991662.png" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" onerror="logoFail(this)">
-    <span class="tcat">NE WR</span>
-    <span class="wb">Routes</span><span class="wb rank">WR95</span><span class="wb">54.0 proj</span><span class="wb ">Worth noting</span>
-    <span class="tago">4d ago</span>
-  </div>
-  <h4>Mack Hollins</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Mack Hollins</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/patriots/onsi/mack-hollins-continues-to-chug-along-in-patriots-wr-room" rel="nofollow noopener"
+    target="_blank">Route participation update</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png"
+      onerror="logoFail(this)">
+    <span>New England Patriots</span></p>
+  <p class="wdate">August 20, 2026</p>
   <p class="wrep">Hollins has regularly participated in two-minute drills with multiple Patriots offensive units.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Hollins has repeatedly participated in two-minute drills, but the work has come across multiple offensive units. The report does not establish first-team usage, target volume or a defined regular-season role, so his projection remains unchanged.</p>
   <p class="wsrc">Ethan Hurwitz &middot; Sports Illustrated -- NE &middot; <a href="https://www.si.com/nfl/patriots/onsi/mack-hollins-continues-to-chug-along-in-patriots-wr-room" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    short term &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#004C54;--c2:#A5ACAF"
    data-publication-id="approved:makai-lemon"
    data-team="PHI" data-pos="WR"
    data-dir="NEGATIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/13294.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" onerror="logoFail(this)">
-    <span class="tcat">PHI WR</span>
-    <span class="wb">Limited Participation</span><span class="wb rank">WR61</span><span class="wb">ADP 112.7</span><span class="wb">89.3 proj</span><span class="wb down">Trending down</span>
-    <span class="tago">4d ago</span>
-  </div>
-  <h4>Makai Lemon</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Makai Lemon</h4>
+  <h5 class="wheadline"><a href="https://www.phillyvoice.com/eagles-2026-training-camp-practice-participation-tracker/" rel="nofollow noopener"
+    target="_blank">Limited in practice</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+      onerror="logoFail(this)">
+    <span>Philadelphia Eagles</span></p>
+  <p class="wdate">August 20, 2026</p>
   <p class="wrep">Lemon was officially listed as a non-participant with a hamstring issue but still completed some receiver drills.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Lemon&#x27;s non-participant designation is a negative availability signal, although his receiver-drill work shows that he was not completely inactive. The evidence does not establish when he will resume full practice work, so this does not change his projection.</p>
   <p class="wsrc"><div>Club participation report: Chris McPherson &middot; Philadelphia Eagles (official) &middot; 2026-08-20 <span class="wown">Official team source</span> &middot; <a href="https://www.philadelphiaeagles.com/news/practice-notes-jalyx-hunt-riq-woolen-force-several-t" rel="nofollow noopener" target="_blank">Read report</a></div><div>Latest practice report: Jimmy Kempski &middot; PhillyVoice &middot; 2026-08-20 &middot; <a href="https://www.phillyvoice.com/eagles-2026-training-camp-practice-participation-tracker/" rel="nofollow noopener" target="_blank">Read report</a></div><div style="margin-top:4px">1 independent reporter and 1 club report. The club report is authoritative for its own designation and is not independent corroboration.</div></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#004C54;--c2:#A5ACAF"
    data-publication-id="approved:devonta-smith"
    data-team="PHI" data-pos="WR"
    data-dir="POSITIVE">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/7525.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" onerror="logoFail(this)">
-    <span class="tcat">PHI WR</span>
-    <span class="wb">Return To Practice</span><span class="wb rank">WR16</span><span class="wb">ADP 28.4</span><span class="wb">184.3 proj</span><span class="wb up">Trending up</span>
-    <span class="tago">4d ago</span>
-  </div>
-  <h4>DeVonta Smith</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">DeVonta Smith</h4>
+  <h5 class="wheadline"><a href="https://www.phillyvoice.com/eagles-2026-training-camp-practice-participation-tracker/" rel="nofollow noopener"
+    target="_blank">Returns to practice</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png"
+      onerror="logoFail(this)">
+    <span>Philadelphia Eagles</span></p>
+  <p class="wdate">August 20, 2026</p>
   <p class="wrep">Smith returned to limited practice work after previously sitting out 11-on-11 periods with a hamstring issue.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Smith&#x27;s return is a positive step for his availability, but limited practice work does not establish that he is ready for full team periods or game action. No timetable was reported, so this does not change his projection.</p>
   <p class="wsrc"><div>Latest practice report: Jimmy Kempski &middot; PhillyVoice &middot; 2026-08-20 &middot; <a href="https://www.phillyvoice.com/eagles-2026-training-camp-practice-participation-tracker/" rel="nofollow noopener" target="_blank">Read report</a></div><div>Earlier practice observation: Jimmy Kempski &middot; PhillyVoice &middot; 2026-08-19 &middot; <a href="https://www.phillyvoice.com/eagles-2026-training-camp-practice-notes-day-13-eagles-patriots-joit-part-i/" rel="nofollow noopener" target="_blank">Read report</a></div><div>Club participation report: Chris McPherson &middot; Philadelphia Eagles (official) &middot; 2026-08-20 <span class="wown">Official team source</span> &middot; <a href="https://www.philadelphiaeagles.com/news/practice-notes-jalyx-hunt-riq-woolen-force-several-t" rel="nofollow noopener" target="_blank">Read report</a></div><div style="margin-top:4px">1 independent reporter and 1 club report. The club report is authoritative for its own designation and is not independent corroboration.</div></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#002C5F;--c2:#A2AAAD"
    data-publication-id="31750439b004add7d884"
    data-team="IND" data-pos="WR"
    data-dir="NEUTRAL">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/8142.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" onerror="logoFail(this)">
-    <span class="tcat">IND WR</span>
-    <span class="wb">Absent From Practice</span><span class="wb rank">WR39</span><span class="wb">ADP 58.7</span><span class="wb">136.4 proj</span><span class="wb ">Worth noting</span>
-    <span class="tago">5d ago</span>
-  </div>
-  <h4>Alec Pierce</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Alec Pierce</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/colts/onsi/biggest-takeaways-from-day-1-of-colts-falcons-joint-practice-daniel-jones-has-his-way" rel="nofollow noopener"
+    target="_blank">Misses practice</a></h5>
+  <p class="wmeta"><span class="wpos">WR</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png"
+      onerror="logoFail(this)">
+    <span>Indianapolis Colts</span></p>
+  <p class="wdate">August 19, 2026</p>
   <p class="wrep">Pierce remains sidelined, although Shane Steichen said he expects him to return soon.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">Steichen&#x27;s expectation reduces concern about an extended absence, but Pierce has not returned to practice and no firm timetable was provided. His projection remains unchanged.</p>
   <p class="wsrc">Noah Compton &middot; Sports Illustrated -- IND &middot; <a href="https://www.si.com/nfl/colts/onsi/biggest-takeaways-from-day-1-of-colts-falcons-joint-practice-daniel-jones-has-his-way" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    short term &middot;
-    No projection change</p>
 </article><article class="tile wire" style="--c1:#0076B6;--c2:#B0B7BC"
    data-publication-id="approved:sam-laporta"
    data-team="DET" data-pos="TE"
    data-dir="NEUTRAL">
   <img class="shot" loading="lazy" alt="" src="https://sleepercdn.com/content/nfl/players/thumb/10859.jpg" data-fallback="" onerror="faceFail(this)">
-  <div class="tkick">
-    <img loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" onerror="logoFail(this)">
-    <span class="tcat">DET TE</span>
-    <span class="wb">Absent From Practice</span><span class="wb rank">TE6</span><span class="wb">ADP 86.7</span><span class="wb">156.8 proj</span><span class="wb ">Worth noting</span>
-    <span class="tago">5d ago</span>
-  </div>
-  <h4>Sam LaPorta</h4>
-  <div class="wlab">What changed</div>
+  <h4 class="wplayer">Sam LaPorta</h4>
+  <h5 class="wheadline"><a href="https://www.si.com/nfl/lions/onsi/detroit-lions-te-misses-wednesday-practice-jameson-williams-returns" rel="nofollow noopener"
+    target="_blank">Misses practice</a></h5>
+  <p class="wmeta"><span class="wpos">TE</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png"
+      onerror="logoFail(this)">
+    <span>Detroit Lions</span></p>
+  <p class="wdate">August 19, 2026</p>
   <p class="wrep">LaPorta missed one practice, and no reason for his absence was reported.</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">LaPorta&#x27;s absence is worth noting, but one unexplained missed practice does not establish an injury or a continuing availability concern. No timetable or additional context was reported, so this does not change his projection.</p>
   <p class="wsrc">John Maakaron &middot; Sports Illustrated -- DET &middot; <a href="https://www.si.com/nfl/lions/onsi/detroit-lions-te-misses-wednesday-practice-jameson-williams-returns" rel="nofollow noopener" target="_blank">Read report</a></p>
-  <p class="wfoot">Evidence low &middot;
-    immediate &middot;
-    No projection change</p>
 </article></div>
-  <button class="more" id="wmore">Load more reports <span>63 more</span></button>
+  <button class="more" id="wmore">Load more reports <span>72 more</span></button>
 </section>
 <script>
 (function(){

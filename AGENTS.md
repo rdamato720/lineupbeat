@@ -13,18 +13,18 @@ refresh workflow.
   canonical player page through stable identity resolution: player id, or an
   exact name + team + position crosswalk between registries. Drafts and raw
   evidence may not.
-- The public homepage Wire is a concise, chronological digest of useful
-  fantasy-relevant QB, RB, WR, and TE updates. Each item is one approved
-  factual sentence with a direct source link. The retired card markup remains
-  only as a hidden rollback aid during the digest migration.
-- Digest updates cover useful fantasy-relevant QB, RB, WR, and TE information.
+- Public cards cover useful fantasy-relevant QB, RB, WR, and TE information.
   That includes reported developments and clearly labelled fantasy analysis,
   opinion, speculation, ADP arguments, rankings and practice observations.
   Analysis must never be presented as firsthand reporting.
-- Render one digest update per row. Never publish the stored evidence passage,
-  model reasoning, rejection diagnostics, or a first-N-character truncation.
-  Legacy human-approved cards remain stored for rollback but are not the
-  reader-facing presentation once a digest publication exists.
+- Each public card uses the compact news hierarchy: player name, short
+  deterministic event headline, position and full team name, source date, one
+  approved factual sentence, `ANALYSIS`, and the separately approved Lineup
+  Beat interpretation. Preserve the player photo, team logo and team-colour
+  accent. Do not add rank, ADP, projection or mechanism badges to this
+  reader-facing card.
+- Render one card per row. Never publish the stored evidence passage, model
+  reasoning, rejection diagnostics, or a first-N-character truncation.
 - Because attribution is displayed below every card, do not begin the source
   sentence by repeating the cited outlet (for example, "Sports Illustrated's").
 - League News and the video section remain removed. National fantasy-relevant

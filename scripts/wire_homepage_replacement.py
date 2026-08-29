@@ -33,7 +33,6 @@ HOME = Path("site/index.html")
 OUT = Path("data/wire_homepage_replacement.html")
 OUT_JSON = Path("data/wire_homepage_replacement.json")
 DECISIONS = Path("data/reviews/backfill_decisions.json")
-DIGEST_PUBLICATIONS = Path("data/wire_digest_publications.json")
 
 LABEL = DIRECTION_LABELS
 ROLE_LABEL = {"PRIMARY": "Latest practice report",
@@ -93,9 +92,54 @@ PAGE = 10         # cards visible before "Load more"; not a publication cap
 COLORS = team_colors()
 FALLBACK = ("#2A3136", "#6B757D")
 
+TEAM_NAMES = {
+    "ARI":"Arizona Cardinals", "ATL":"Atlanta Falcons", "BAL":"Baltimore Ravens",
+    "BUF":"Buffalo Bills", "CAR":"Carolina Panthers", "CHI":"Chicago Bears",
+    "CIN":"Cincinnati Bengals", "CLE":"Cleveland Browns", "DAL":"Dallas Cowboys",
+    "DEN":"Denver Broncos", "DET":"Detroit Lions", "GB":"Green Bay Packers",
+    "HOU":"Houston Texans", "IND":"Indianapolis Colts", "JAX":"Jacksonville Jaguars",
+    "KC":"Kansas City Chiefs", "LV":"Las Vegas Raiders", "LAC":"Los Angeles Chargers",
+    "LAR":"Los Angeles Rams", "MIA":"Miami Dolphins", "MIN":"Minnesota Vikings",
+    "NE":"New England Patriots", "NO":"New Orleans Saints", "NYG":"New York Giants",
+    "NYJ":"New York Jets", "PHI":"Philadelphia Eagles", "PIT":"Pittsburgh Steelers",
+    "SEA":"Seattle Seahawks", "SF":"San Francisco 49ers", "TB":"Tampa Bay Buccaneers",
+    "TEN":"Tennessee Titans", "WAS":"Washington Commanders",
+}
+
+HEADLINES = {
+    "ABSENT_FROM_PRACTICE": "Misses practice",
+    "LIMITED_PARTICIPATION": "Limited in practice",
+    "RETURN_TO_PRACTICE": "Returns to practice",
+    "INJURY": "Dealing with injury",
+    "DEPTH_CHART": "Depth-chart update",
+    "ROLE": "Role update",
+    "FIRST_TEAM_REPS": "Works with first team",
+    "SECOND_TEAM_REPS": "Works with second team",
+    "THIRD_TEAM_REPS": "Works with third team",
+    "RED_ZONE": "Red-zone work",
+    "TARGETS": "Target competition update",
+    "SNAP_SHARE": "Snap-share update",
+    "ROUTES": "Route participation update",
+    "FANTASY_VALUE": "Fantasy outlook update",
+    "PERFORMANCE": "Practice report",
+    "TRANSACTION": "Roster move",
+}
+
+
+def headline(c):
+    return HEADLINES.get(c.get("mechanism"), "Latest update")
+
+
+def date_label(iso):
+    try:
+        value = datetime.fromisoformat(str(iso).replace("Z", "+00:00"))
+    except (ValueError, TypeError):
+        return ""
+    return f"{value.strftime('%B')} {value.day}, {value.year}"
+
 
 def headshot(player_ref):
-    """Sleeper keys its CDN on the site's own player id, as headshotURL does."""
+    """Use the same stable player image identity as the rest of the site."""
     bare = re.sub(r"^[a-z]+-", "", str(player_ref or ""))
     return (f"https://sleepercdn.com/content/nfl/players/thumb/{bare}.jpg"
             if bare else "")
@@ -107,15 +151,12 @@ def espn_headshot(espn_id):
 
 
 def team_logo(team):
-    t = str(team or "").lower()
-    return f"https://a.espncdn.com/i/teamlogos/nfl/500/{t}.png" if t else ""
+    value = str(team or "").lower()
+    return f"https://a.espncdn.com/i/teamlogos/nfl/500/{value}.png" if value else ""
 
 
 CSS = """
-/* The Wire section reuses the homepage's own card, not a second design.
-   `.tile` supplies the dark ground, the 8px radius, the team-coloured left
-   border and the masked headshot; everything here is the delta a reviewed
-   card needs. */
+/* A compact news card: player, headline, team/date, report, analysis. */
 #wire{padding:34px 0 10px}
 #wire .shead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
 #wire .shead h2{margin:0}
@@ -134,61 +175,45 @@ border-color:var(--signal,#C6F53C)}
    the max-width keeps the line length readable rather than letting it run
    the width of a desktop. */
 #wire .tiles{display:block;max-width:56rem}
-#wire .tile{display:block;margin:0 0 .85rem;cursor:default;min-height:0;
-padding:1rem 1.15rem 1.1rem}
+#wire .tile{display:block;margin:0 0 .75rem;cursor:default;min-height:0;
+padding:1.15rem 7.5rem 1.2rem 1.25rem;border-left:3px solid var(--c1,#C6F53C)}
 #wire .tile h4,#wire .tile p{max-width:none}
 #wire .tile p{-webkit-line-clamp:none;display:block;overflow:visible}
 #wire .tile:hover{background:#101315}
-#wire .tile .shot{top:1rem;right:-.25rem;width:6.6rem;height:6.6rem}
-#wire .tile h4{font-size:1.3rem;margin:0 0 .1rem}
-#wire .tile .tkick{flex-wrap:wrap;white-space:normal;row-gap:.3rem;
-padding-right:6rem}
-
-#wire .wb{font-family:var(--agate,inherit);font-size:.58rem;
-letter-spacing:.08em;text-transform:uppercase;font-weight:600;
-padding:2px 7px;border-radius:99px;border:1px solid var(--rule,#262a22);
-color:var(--quiet,#8f938a)}
-#wire .wb.rank{color:var(--signal,#C6F53C);border-color:rgba(198,245,60,.45)}
-#wire .wb.up{color:#7fbf8a;border-color:rgba(127,191,138,.5)}
-#wire .wb.down{color:#e08a7f;border-color:rgba(224,138,127,.5)}
+#wire .tile .shot{position:absolute;top:1rem;right:.45rem;width:6.4rem;
+height:6.4rem;object-fit:contain;object-position:bottom right}
+#wire .wplayer{font-size:1.12rem;font-weight:750;color:#fff;margin:0 0 .15rem}
+#wire .wheadline{font-size:1.12rem;font-weight:700;line-height:1.3;margin:0 0 .45rem}
+#wire .wheadline a{color:var(--signal,#C6F53C);text-decoration:none}
+#wire .wmeta{display:flex;gap:.45rem;align-items:baseline;flex-wrap:wrap;
+font-family:var(--agate,inherit);font-size:.7rem;color:var(--quiet,#8f938a);
+margin:0 0 .85rem}
+#wire .wteamlogo{width:19px;height:19px;object-fit:contain;align-self:center}
+#wire .wpos{font-weight:750;color:#fff}
+#wire .wdate{font-weight:650;color:#c8cec9;margin:.8rem 0}
 #wire .wlab{font-family:var(--agate,inherit);font-size:.57rem;
-letter-spacing:.11em;text-transform:uppercase;color:var(--quiet,#8f938a);
-font-weight:600;margin:.85rem 0 .3rem}
+letter-spacing:.11em;text-transform:uppercase;color:var(--signal,#C6F53C);
+font-weight:700;margin:1rem 0 .3rem}
 
 /* What changed: one sentence, deliberately quieter than the block below it.
    It is the occasion for the card, not the point of it. */
-#wire .wrep{font-size:.92rem;line-height:1.5;color:#AEB6B1;margin:0;
+#wire .wrep{font-size:.96rem;line-height:1.55;color:#E4E9E5;margin:0;
 max-width:62ch}
 
 /* Lineup Beat impact: the reason the card exists, so it is the thing the eye
    lands on -- larger than the sentence above it, on our accent, in the
    page's reading face rather than the quieter agate. */
-#wire .wimplab{color:var(--signal,#C6F53C)}
-#wire .wimp{background:#171b13;border-left:3px solid var(--signal,#C6F53C);
-border-radius:0 8px 8px 0;padding:.8rem 1rem;margin:.35rem 0 0;
-font-size:1.02rem;line-height:1.55;color:#E4E9E5;max-width:62ch}
+#wire .wimp{font-size:.96rem;line-height:1.55;color:#E4E9E5;max-width:62ch;
+margin:0}
 
 /* Attribution last, and smallest. */
 #wire .wsrc{color:var(--quiet,#8f938a);font-size:.73rem;line-height:1.5;
 margin:.85rem 0 0}
 #wire .wsrc a{color:var(--quiet,#8f938a)}
 #wire .wown{color:#d6a55a}
-#wire .wfoot{font-family:var(--agate,inherit);color:var(--quiet,#8f938a);
-font-size:.57rem;letter-spacing:.06em;text-transform:uppercase;
-margin:.5rem 0 0}
 #wire .more{margin-top:.4rem}
-#wire .wdigest{list-style:none;margin:1.1rem 0 0;padding:0;max-width:56rem;
-border-top:1px solid var(--rule,#262a22)}
-#wire .wdigest li{display:grid;grid-template-columns:auto 1fr auto;gap:.8rem;
-align-items:baseline;padding:1rem .15rem;border-bottom:1px solid var(--rule,#262a22)}
-#wire .wdnum{font-family:var(--agate,inherit);color:var(--signal,#C6F53C);
-font-size:.72rem;font-weight:700;min-width:1.5rem}
-#wire .wdcopy{font-size:1.02rem;line-height:1.5;color:#E4E9E5}
-#wire .wdmeta{font-family:var(--agate,inherit);font-size:.68rem;color:var(--quiet,#8f938a);
-white-space:nowrap}
-#wire .wdmeta a{color:var(--signal,#C6F53C)}
-@media(max-width:640px){#wire .wdigest li{grid-template-columns:auto 1fr}
-#wire .wdmeta{grid-column:2;white-space:normal}}
+@media(max-width:640px){#wire .tile{padding-right:5.8rem}
+#wire .tile .shot{width:5rem;height:5rem;opacity:.88}}
 """
 
 
@@ -294,59 +319,36 @@ def card(c):
     reader cannot get anywhere else.
     """
     d = c["direction"]
-    cls = "up" if d == "POSITIVE" else "down" if d == "NEGATIVE" else ""
     c1, c2 = COLORS.get(str(c.get("team", "")).upper(), FALLBACK)
-
-    badges = f'<span class="wb">{esc(c["mechanism"].replace("_"," ").title())}</span>'
-    if c.get("display_position_rank"):
-        badges += f'<span class="wb rank">{esc(c["display_position_rank"])}</span>'
-    if c.get("display_adp") is not None:
-        badges += f'<span class="wb">ADP {esc(round(float(c["display_adp"]), 1))}</span>'
-    if c.get("display_projected_points") is not None:
-        badges += f'<span class="wb">{esc(c["display_projected_points"])} proj</span>'
-    badges += f'<span class="wb {cls}">{esc(c["reader_label"])}</span>'
-
-    # Real art, with the page's own failure chain behind it: Sleeper, then
-    # ESPN, then the image is removed. Initials are what a reader sees only
-    # when a player genuinely has no photo at either source.
-    shot = headshot(c.get("display_player_ref"))
-    face = (f'<img class="shot" loading="lazy" alt="" src="{esc(shot)}" '
-            f'data-fallback="{esc(espn_headshot(c.get("display_espn")))}" '
-            f'onerror="faceFail(this)">' if shot else "")
-    logo = team_logo(c.get("team"))
-    logo_html = (f'<img loading="lazy" alt="" src="{esc(logo)}" '
-                 f'onerror="logoFail(this)">' if logo else "")
 
     # The public sentence, never the stored passage. build_wire.py refuses to
     # publish a card without an approved one, so there is no fallback here --
     # a fallback would quietly put the reporter's full paragraph back on the
     # page the first time somebody forgot to write a summary.
     summary = c.get("public_evidence_summary") or ""
-
-    analysis = c.get("content_type") == "FANTASY_ANALYSIS"
-    source_label = "Fantasy analysis" if analysis else "What changed"
-    footer_label = "Analysis" if analysis else "Evidence"
+    shot = headshot(c.get("display_player_ref"))
+    face = (f'<img class="shot" loading="lazy" alt="" src="{esc(shot)}" '
+            f'data-fallback="{esc(espn_headshot(c.get("display_espn")))}" '
+            f'onerror="faceFail(this)">' if shot else "")
+    logo = team_logo(c.get("team"))
 
     return f"""<article class="tile wire" style="--c1:{c1};--c2:{c2}"
    data-publication-id="{esc(c['publication_id'])}"
    data-team="{esc(c['team'])}" data-pos="{esc(c['position'])}"
    data-dir="{esc(d)}">
   {face}
-  <div class="tkick">
-    {logo_html}
-    <span class="tcat">{esc(c['team'])} {esc(c['position'])}</span>
-    {badges}
-    <span class="tago">{esc(ago(c.get('published_at')))}</span>
-  </div>
-  <h4>{esc(c['player_name'])}</h4>
-  <div class="wlab">{source_label}</div>
+  <h4 class="wplayer">{esc(c['player_name'])}</h4>
+  <h5 class="wheadline"><a href="{esc(c.get('url'))}" rel="nofollow noopener"
+    target="_blank">{esc(headline(c))}</a></h5>
+  <p class="wmeta"><span class="wpos">{esc(c['position'])}</span>
+    <img class="wteamlogo" loading="lazy" alt="" src="{esc(logo)}"
+      onerror="logoFail(this)">
+    <span>{esc(TEAM_NAMES.get(c['team'], c['team']))}</span></p>
+  <p class="wdate">{esc(date_label(c.get('published_at')))}</p>
   <p class="wrep">{esc(summary)}</p>
-  <div class="wlab wimplab">Lineup Beat impact</div>
+  <div class="wlab">Analysis</div>
   <p class="wimp">{esc(c['lineupbeat_impact'])}</p>
   {sources_html(c)}
-  <p class="wfoot">{footer_label} {esc(c.get('strength','LOW')).lower()} &middot;
-    {esc(c.get('horizon','UNKNOWN')).replace('_',' ').lower()} &middot;
-    {'No projection change' if c.get('projection_action')=='NONE' else esc(c.get('projection_action'))}</p>
 </article>"""
 
 
@@ -416,52 +418,6 @@ def collect():
     return out
 
 
-def digest_items():
-    if not DIGEST_PUBLICATIONS.exists():
-        return []
-    payload = json.loads(DIGEST_PUBLICATIONS.read_text())
-    if payload.get("schema_version") != "wire-digest-publications-v1":
-        raise ValueError("unsupported digest publication schema")
-    items = list(payload.get("publications") or [])
-    if payload.get("count") != len(items):
-        raise ValueError("digest publication count is invalid")
-    return sorted(items, key=lambda row: row["source_published_at"], reverse=True)
-
-
-def render_digest(items, legacy_cards):
-    rows = []
-    for number, item in enumerate(items, 1):
-        rows.append(
-            f'<li data-digest-item-id="{esc(item["digest_item_id"])}">'
-            f'<span class="wdnum">{number:02d}</span>'
-            f'<span class="wdcopy">{esc(item["bullet"])}</span>'
-            f'<span class="wdmeta">{esc(ago(item.get("source_published_at")))} · '
-            f'<a href="{esc(item["source_url"])}" rel="nofollow noopener" '
-            f'target="_blank">Source</a></span></li>')
-    # Preserve the already-approved card markup as a hidden rollback/audit
-    # block during the digest migration. Readers see only the simple digest;
-    # no pending evidence is included and the legacy publication store stays
-    # reversible until the digest has proven stable in production.
-    teams = sorted({row["team"] for row in legacy_cards})
-    legacy = "".join(card(row) for row in legacy_cards)
-    return f"""<section class="wrap sec" id="wire">
-  <div class="shead"><h2>THE NFL WIRE</h2>
-    <span class="n">{len(items)} approved update{'' if len(items)==1 else 's'}</span>
-  </div>
-  <p class="sub">Fantasy football news updates you need to know, curated from trusted sources.</p>
-  <ol class="wdigest">{''.join(rows)}</ol>
-  <div class="wire-legacy-audit" hidden aria-hidden="true">
-    <div class="wfilters"><button class="on" data-f="all">All reports</button>
-      <button data-f="POSITIVE">Trending up</button><button data-f="NEGATIVE">Trending down</button>
-      <button data-f="NEUTRAL">Worth noting</button>
-      <select id="wteam"><option value="">Team</option>{''.join(f'<option>{esc(t)}</option>' for t in teams)}</select>
-      <button data-p="QB">QB</button><button data-p="RB">RB</button>
-      <button data-p="WR">WR</button><button data-p="TE">TE</button>
-    </div><div class="tiles wire">{legacy}</div>
-  </div>
-</section>"""
-
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build", action="store_true")
@@ -470,7 +426,6 @@ def main():
                          "production path; the preview is the default.")
     args = ap.parse_args()
     cards = collect()
-    digest = digest_items()
 
     teams = sorted({c["team"] for c in cards})
 
@@ -480,7 +435,7 @@ def main():
     # the filters rely on.
     grid = "".join(card(c) for c in cards)
     hidden = max(0, len(cards) - PAGE)
-    section = render_digest(digest, cards) if digest else f"""<section class="wrap sec" id="wire">
+    section = f"""<section class="wrap sec" id="wire">
   <div class="shead">
     <h2>THE NFL WIRE</h2>
     <span class="n">{len(cards)} reviewed report{'' if len(cards)==1 else 's'}</span>
@@ -585,9 +540,8 @@ def main():
     #    twice eventually.
     START, END = "<!-- LB WIRE REPLACEMENT START -->", \
                  "<!-- LB WIRE REPLACEMENT END -->"
-    behaviour = "" if digest else f"<script>{BEHAVIOUR}</script>"
     block = (f'{START}\n<script>window.__LB_WIRE_REPLACEMENT__=true;</script>\n'
-             f'{section}\n{behaviour}\n{END}')
+             f'{section}\n<script>{BEHAVIOUR}</script>\n{END}')
     if START in home and END in home:
         head = home.split(START)[0]
         tail = home.split(END, 1)[1]
@@ -596,7 +550,12 @@ def main():
         marker = '<main id="feed"></main>'
         if marker in home:
             home = home.replace(marker, f'{block}\n{marker}', 1)
-    if "id=\"wire-css\"" not in home:
+    if "id=\"wire-css\"" in home:
+        home = re.sub(
+            r'<style id="wire-css">.*?</style>',
+            f'<style id="wire-css">{CSS}</style>', home, count=1,
+            flags=re.S)
+    else:
         home = home.replace(
             "</head>", f'<style id="wire-css">{CSS}</style></head>', 1)
 
@@ -608,15 +567,13 @@ def main():
         print(f"  applied to {HOME}")
     OUT.write_text(home)
     OUT_JSON.write_text(json.dumps(
-        {"published": False, "count_shown": len(cards),
-         "digest_mode": bool(digest), "digest": digest,
+         {"published": False, "count_shown": len(cards),
          "removed_latest_from_the_wire_module": removed_module,
          "all_reports_renderer_disabled": replaced_all_reports,
          "retired_feed": stripped,
          "cards": cards}, indent=1, default=str) + "\n")
 
-    print(f"  {len(digest) if digest else len(cards)} "
-          f"{'digest update(s)' if digest else 'card(s)'} in the replacement section")
+    print(f"  {len(cards)} card(s) in the replacement section")
     for c in cards:
         print(f"    {c['player_name']:<16}{c['team']} {c['position']:<3}"
               f"{c['reader_label']:<14}{c['mechanism']:<24}"
