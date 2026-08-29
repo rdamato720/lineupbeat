@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 401,
+ "count": 407,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -4450,6 +4450,72 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004392
+  },
+  {
+   "candidate_id": "mobile:article:dca539018caf957512b0",
+   "player_id": "00-0041244",
+   "source_url": "https://www.bengals.com/news/postgame-quick-hits-bengals-end-unbeaten-preseason-with-another-depth-charge",
+   "attempted_at": "2026-08-29T07:12:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T07:12:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005072
+  },
+  {
+   "candidate_id": "mobile:article:069aa855d0555c49f4c3",
+   "player_id": "00-0041241",
+   "source_url": "https://www.bengals.com/news/postgame-quick-hits-bengals-end-unbeaten-preseason-with-another-depth-charge",
+   "attempted_at": "2026-08-29T07:12:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T07:12:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004352
+  },
+  {
+   "candidate_id": "mobile:onsi:3b79523cdcf1c6cc923a",
+   "player_id": "00-0034348",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/broncos-53-man-roster-projection-5-0-preseason-finale-changes-everything",
+   "attempted_at": "2026-08-29T07:12:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T07:12:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00399
+  },
+  {
+   "candidate_id": "mobile:onsi:f5cb914c156f4c77365a",
+   "player_id": "00-0036613",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/broncos-53-man-roster-projection-5-0-preseason-finale-changes-everything",
+   "attempted_at": "2026-08-29T07:12:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T07:12:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004772
+  },
+  {
+   "candidate_id": "mobile:article:f037d29a92a608fef68c",
+   "player_id": "00-0037755",
+   "source_url": "https://www.newyorkjets.com/news/cade-klubnik-rookie-qb-starts-final-jets-preseason-game-08-28-2026",
+   "attempted_at": "2026-08-29T07:12:59+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-29T07:13:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00379
+  },
+  {
+   "candidate_id": "mobile:article:aca11c253d1d93994181",
+   "player_id": "00-0036973",
+   "source_url": "https://www.neworleanssaints.com/news/new-orleans-saints-clean-up-play-in-preseason-finale-prepare-for-roster-cut-sunday",
+   "attempted_at": "2026-08-29T07:13:03+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-29T07:13:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006528
   }
  ]
 }
