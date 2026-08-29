@@ -174,6 +174,11 @@ for _need, _label in [('"nfl" / "wire"', "that no separate page ships"),
                       ('wire_publications.json', "the published file"),
                       ('public_evidence_summary', "the approved summary")]:
     check(f"the artifact check asserts {_label}", _need in _va)
+check("the artifact check recognizes styled player headings",
+      'r"<h4[^>]*>(.*?)</h4>"' in _va)
+check("the artifact check recognizes the compact Analysis layout",
+      'class=\"wheadline\"' in _va
+      and '<div class=\"wlab\">Analysis</div>' in _va)
 check("the artifact check names no player",
       "Chris Blair" not in _va and "Anthony Richardson" not in _va)
 check("the artifact check asserts the redirect",
