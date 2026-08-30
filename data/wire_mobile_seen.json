@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 514,
+ "count": 522,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -5693,6 +5693,94 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003982
+  },
+  {
+   "candidate_id": "mobile:onsi:b26382f6eea88d9c7b60",
+   "player_id": "00-0040676",
+   "source_url": "https://www.si.com/nfl/titans/onsi/what-titans-fans-learned-from-carnell-tate-ending-the-preseason-without-a-reception-01m18hftg2yn",
+   "attempted_at": "2026-08-30T16:48:14+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T16:48:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004142
+  },
+  {
+   "candidate_id": "mobile:onsi:d48208ab8fbf789b3663",
+   "player_id": "00-0039337",
+   "source_url": "https://www.si.com/nfl/giants/onsi/giants-trade-candidates-hudson-slayton-sauls-harbaugh-01m19qpp2c9w",
+   "attempted_at": "2026-08-30T16:48:17+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T16:48:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003988
+  },
+  {
+   "candidate_id": "mobile:onsi:1f12e08d44c2261d0461",
+   "player_id": "00-0033106",
+   "source_url": "https://www.si.com/nfl/lions/onsi/roundtable-player-detroit-lions-may-really-regret-cutting-2026",
+   "attempted_at": "2026-08-30T16:48:19+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T16:48:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00424
+  },
+  {
+   "candidate_id": "mobile:onsi:03de9048bcaac2cbee09",
+   "player_id": "00-0039139",
+   "source_url": "https://www.si.com/nfl/lions/onsi/roundtable-player-detroit-lions-may-really-regret-cutting-2026",
+   "attempted_at": "2026-08-30T16:48:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T16:48:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004228
+  },
+  {
+   "candidate_id": "mobile:onsi:ec1ef7edf1622918fdef",
+   "player_id": "00-0034855",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-football-impact-emeka-egbuka-and-jalen-mcmillan-latest-injury-news",
+   "attempted_at": "2026-08-30T16:48:25+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T16:48:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005164
+  },
+  {
+   "candidate_id": "mobile:onsi:52a578b0a3ba4313c691",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-football-impact-emeka-egbuka-and-jalen-mcmillan-latest-injury-news",
+   "attempted_at": "2026-08-30T16:48:28+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T16:48:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004702
+  },
+  {
+   "candidate_id": "mobile:onsi:cd076815bc87d50c7e45",
+   "player_id": "00-0040129",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-football-impact-emeka-egbuka-and-jalen-mcmillan-latest-injury-news",
+   "attempted_at": "2026-08-30T16:48:32+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-30T16:48:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004562
+  },
+  {
+   "candidate_id": "mobile:onsi:e443b9d9749bd6c4f8bb",
+   "player_id": "00-0037744",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/hunter-long-trade-raises-more-questions-arizona-cardinals-jacksonville-jaguars-deal",
+   "attempted_at": "2026-08-30T16:48:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T16:48:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003542
   }
  ]
 }

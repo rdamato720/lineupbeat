@@ -1,49 +1,58 @@
 {
  "schema_version": "wire-mobile-batch-v1",
- "generated_at": "2026-08-30T15:45:34+00:00",
+ "generated_at": "2026-08-30T16:48:14+00:00",
  "window": {
-  "from": "2026-08-30T13:45:34.055068+00:00",
-  "to": "2026-08-30T15:45:34.055068+00:00",
+  "from": "2026-08-30T14:48:14.081996+00:00",
+  "to": "2026-08-30T16:48:14.081996+00:00",
   "hours": 2.0
  },
  "published": false,
  "model": "gpt-5.6-terra",
- "model_calls": 1,
- "cost_usd": 0.003982,
+ "model_calls": 8,
+ "cost_usd": 0.034568,
  "limits": {
   "max_calls": 20,
   "cap_usd": 0.08,
   "max_cards": 10
  },
- "raw_candidate_count": 1,
- "candidate_count": 1,
+ "raw_candidate_count": 8,
+ "candidate_count": 8,
  "cards": [],
  "precall_duplicate_count": 0,
  "precall_duplicates": [],
  "unreviewed_count": 0,
- "relevance_suppressed": 32,
- "validation_failed": 0,
+ "relevance_suppressed": 29,
+ "validation_failed": 1,
  "outcome_counts": {
-  "IGNORE": 1
+  "IGNORE": 7,
+  "VALIDATION_FAILED": 1
  },
  "coverage": {
   "source_candidate_counts": {
-   "si_bears": 1
+   "si_cardinals": 1,
+   "si_fantasy": 3,
+   "si_giants": 1,
+   "si_lions": 2,
+   "si_titans": 1
   },
   "team_candidate_counts": {
-   "CHI": 1
+   "ARI": 1,
+   "DET": 2,
+   "NYG": 1,
+   "SF": 1,
+   "TB": 2,
+   "TEN": 1
   },
   "teams_without_candidates": [
-   "ARI",
    "ATL",
    "BAL",
    "BUF",
    "CAR",
+   "CHI",
    "CIN",
    "CLE",
    "DAL",
    "DEN",
-   "DET",
    "GB",
    "HOU",
    "IND",
@@ -56,14 +65,10 @@
    "MIN",
    "NE",
    "NO",
-   "NYG",
    "NYJ",
    "PHI",
    "PIT",
    "SEA",
-   "SF",
-   "TB",
-   "TEN",
    "WAS"
   ],
   "eligible_article_sources": [
@@ -144,7 +149,11 @@
    "steelers_depot"
   ],
   "article_sources_with_candidates": [
-   "si_bears"
+   "si_cardinals",
+   "si_fantasy",
+   "si_giants",
+   "si_lions",
+   "si_titans"
   ],
   "article_sources_without_candidates": [
    "arizona_sports_tyler_drake",
@@ -189,12 +198,12 @@
    "pressbox_baltimore",
    "purple_insider_matthew_coller",
    "si_49ers",
+   "si_bears",
    "si_bengals",
    "si_bills",
    "si_broncos",
    "si_browns",
    "si_buccaneers",
-   "si_cardinals",
    "si_chargers",
    "si_chiefs",
    "si_colts",
@@ -203,11 +212,8 @@
    "si_dolphins",
    "si_eagles",
    "si_falcons",
-   "si_fantasy",
-   "si_giants",
    "si_jaguars",
    "si_jets",
-   "si_lions",
    "si_packers",
    "si_panthers",
    "si_patriots",
@@ -218,7 +224,6 @@
    "si_seahawks",
    "si_steelers",
    "si_texans",
-   "si_titans",
    "si_vikings",
    "steelers_depot"
   ]
@@ -226,18 +231,127 @@
  "event_duplicates": 0,
  "outcomes": [
   {
-   "candidate_id": "mobile:onsi:71c900c3531076e0a00c",
-   "player": "Luther Burden III",
-   "player_id": "00-0040735",
-   "team": "CHI",
+   "candidate_id": "mobile:onsi:b26382f6eea88d9c7b60",
+   "player": "Cam Ward",
+   "player_id": "00-0040676",
+   "team": "TEN",
    "origin": "ARTICLE",
-   "source_id": "si_bears",
-   "source_name": "Sports Illustrated -- CHI",
-   "source_url": "https://www.si.com/nfl/bears/onsi/chicago-bears-final-53-man-roster-predictions-following-preseason-finale",
+   "source_id": "si_titans",
+   "source_name": "Sports Illustrated -- TEN",
+   "source_url": "https://www.si.com/nfl/titans/onsi/what-titans-fans-learned-from-carnell-tate-ending-the-preseason-without-a-reception-01m18hftg2yn",
    "decision": "IGNORE",
-   "reason": "Burden III is merely included in a five-player WR list; the supplied excerpt provides no meaningful new role, workload, transaction, or availability information.",
+   "reason": "Cam Ward is not the subject of a meaningful new fantasy-relevant development in the supplied evidence.",
    "validation_failures": [],
-   "cost_usd": 0.003982
+   "cost_usd": 0.004142
+  },
+  {
+   "candidate_id": "mobile:onsi:d48208ab8fbf789b3663",
+   "player": "Malik Nabers",
+   "player_id": "00-0039337",
+   "team": "NYG",
+   "origin": "ARTICLE",
+   "source_id": "si_giants",
+   "source_name": "Sports Illustrated -- NYG",
+   "source_url": "https://www.si.com/nfl/giants/onsi/giants-trade-candidates-hudson-slayton-sauls-harbaugh-01m19qpp2c9w",
+   "decision": "IGNORE",
+   "reason": "Nabers is mentioned only as context for Darius Slayton's gradually reduced role; this does not establish a new, actionable development for Nabers.",
+   "validation_failures": [],
+   "cost_usd": 0.003988
+  },
+  {
+   "candidate_id": "mobile:onsi:1f12e08d44c2261d0461",
+   "player": "Jared Goff",
+   "player_id": "00-0033106",
+   "team": "DET",
+   "origin": "ARTICLE",
+   "source_id": "si_lions",
+   "source_name": "Sports Illustrated -- DET",
+   "source_url": "https://www.si.com/nfl/lions/onsi/roundtable-player-detroit-lions-may-really-regret-cutting-2026",
+   "decision": "IGNORE",
+   "reason": "Goff is mentioned only as an example of a player whose hypothetical absence could hurt Detroit; this does not change fantasy expectations.",
+   "validation_failures": [],
+   "cost_usd": 0.00424
+  },
+  {
+   "candidate_id": "mobile:onsi:03de9048bcaac2cbee09",
+   "player": "Jahmyr Gibbs",
+   "player_id": "00-0039139",
+   "team": "DET",
+   "origin": "ARTICLE",
+   "source_id": "si_lions",
+   "source_name": "Sports Illustrated -- DET",
+   "source_url": "https://www.si.com/nfl/lions/onsi/roundtable-player-detroit-lions-may-really-regret-cutting-2026",
+   "decision": "IGNORE",
+   "reason": "No meaningful new Gibbs development; this is conditional running-game commentary.",
+   "validation_failures": [],
+   "cost_usd": 0.004228
+  },
+  {
+   "candidate_id": "mobile:onsi:ec1ef7edf1622918fdef",
+   "player": "Baker Mayfield",
+   "player_id": "00-0034855",
+   "team": "TB",
+   "origin": "ARTICLE",
+   "source_id": "si_fantasy",
+   "source_name": "Fantasy On SI",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-football-impact-emeka-egbuka-and-jalen-mcmillan-latest-injury-news",
+   "decision": "IGNORE",
+   "reason": "Mayfield is mentioned only as the quarterback Egbuka could rely on; the evidence contains no meaningful new fantasy development for Mayfield.",
+   "validation_failures": [],
+   "cost_usd": 0.005164
+  },
+  {
+   "candidate_id": "mobile:onsi:52a578b0a3ba4313c691",
+   "player": "Mike Evans",
+   "player_id": "00-0031408",
+   "team": "SF",
+   "origin": "ARTICLE",
+   "source_id": "si_fantasy",
+   "source_name": "Fantasy On SI",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-football-impact-emeka-egbuka-and-jalen-mcmillan-latest-injury-news",
+   "decision": "IGNORE",
+   "reason": "Evans is mentioned only as background in analysis of another player's fantasy ceiling, without a new Evans-specific development that changes his fantasy outlook.",
+   "validation_failures": [],
+   "cost_usd": 0.004702
+  },
+  {
+   "candidate_id": "mobile:onsi:cd076815bc87d50c7e45",
+   "player": "Emeka Egbuka",
+   "player_id": "00-0040129",
+   "team": "TB",
+   "origin": "ARTICLE",
+   "source_id": "si_fantasy",
+   "source_name": "Fantasy On SI",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-football-impact-emeka-egbuka-and-jalen-mcmillan-latest-injury-news",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The source provides a new coach-stated expectation regarding Egbuka’s availability for Week 1, while retaining uncertainty.",
+   "validation_failures": [
+    "availability item omits the temporary context (which practice, and that no timetable was given)",
+    "mechanism INJURY is not supported by the evidence passage",
+    "speculative language 'expected'"
+   ],
+   "cost_usd": 0.004562,
+   "held_for_review": {
+    "evidence": "“Bowles said he expects Jalen McMillan and \"hopefully\" Emeka Egbuka to be ready for Week 1, doesn't think they'll need to carry an extra receiver on the 53 to offset short-term injuries.”",
+    "public_summary": "Emeka Egbuka is hopefully expected to be ready for Week 1, according to Todd Bowles.",
+    "lineupbeat_impact": "Egbuka appears to be progressing toward Week 1 availability, but Bowles’ qualifier leaves his status short of certain. Monitor his practice participation and final game-status reporting.",
+    "direction": "POSITIVE",
+    "mechanism": "INJURY"
+   }
+  },
+  {
+   "candidate_id": "mobile:onsi:e443b9d9749bd6c4f8bb",
+   "player": "Trey McBride",
+   "player_id": "00-0037744",
+   "team": "ARI",
+   "origin": "ARTICLE",
+   "source_id": "si_cardinals",
+   "source_name": "Sports Illustrated -- ARI",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/hunter-long-trade-raises-more-questions-arizona-cardinals-jacksonville-jaguars-deal",
+   "decision": "IGNORE",
+   "reason": "No meaningful new fantasy-relevant development for Trey McBride.",
+   "validation_failures": [],
+   "cost_usd": 0.003542
   }
  ]
 }
