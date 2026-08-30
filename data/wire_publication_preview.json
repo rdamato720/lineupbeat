@@ -1,25 +1,57 @@
 {
  "schema_version": "wire-mobile-publication-preview-v1",
- "batch_id": "a1750b4783d6640a3885656e1526d7f84df6529ad31d28c3b2ae528a5ec0513f",
- "generated_at": "2026-08-30T19:37:27+00:00",
+ "batch_id": "bc05dc47a30a2fb677da69e05d8e290bb297d06fc994aac00dc9f58f6c38ce9d",
+ "generated_at": "2026-08-30T00:49:35+00:00",
  "reviewer_action": "APPROVED",
  "reviewer": "rdamato720",
  "reviewer_name": "Ralph Damato",
- "approved_at": "2026-08-30T23:15:40Z",
- "approval_statement": "reject all",
+ "approved_at": "2026-08-30T23:16:07Z",
+ "approval_statement": "approve all",
  "catalog_counts": {
   "source_items": 1,
   "player_candidates": 1,
   "discovered_not_captured": 0
  },
- "model_calls": 11,
- "cost_usd": 0.058254,
+ "model_calls": 8,
+ "cost_usd": 0.038016,
  "publications_applied": 0,
- "cards": [],
- "held_back": [
+ "cards": [
   {
-   "player": "Caleb Williams",
-   "why": "rejected from GitHub mobile review"
+   "approved_at": "2026-08-30T23:16:07Z",
+   "author": "Grant Cohn",
+   "commentary": "Kittle's Week 1 availability appears unsettled despite Shanahan saying he is healthy and doing well. Monitor his practice participation and a clear return-to-play decision; no setback or timetable was specified.",
+   "commentary_approved_by": "Ralph Damato",
+   "commentary_origin": "MODEL_DRAFT",
+   "content_type": "REPORTING",
+   "date": "2026-08-30T00:02:05+00:00",
+   "direction": "NEGATIVE",
+   "draft_confidence": 0.9,
+   "draft_limitations": [
+    "The source does not specify why Kittle took a step back.",
+    "Shanahan said Kittle is healthy and doing well.",
+    "No definitive playing-status decision or timetable was provided."
+   ],
+   "evidence": "George Kittle wants to do something heroic and unprecedented in fewer than two weeks, and the 49ers shouldn't let him.\n\n\"Yeah, you hope so,\" Shanahan answered. \"Those are things that we have to evaluate sooner than later. There are just guys who are going to be close, guys like Mykel Williams, guys like George Kittle who has taken a step back, want to see how Nick Bosa does in these practices.\n\n\"Those are things that we have to evaluate sooner than later. There are just guys who are going to be close, guys like Mykel Williams, guys like George Kittle who has taken a step back, want to see how Nick Bosa does in these practices. They're guys who are healthy and doing good, but are they ready to get back and play right away?\"\n\nThere are just guys who are going to be close, guys like Mykel Williams, guys like George Kittle who has taken a step back, want to see how Nick Bosa does in these practices. They're guys who are healthy and doing good, but are they ready to get back and play right away?\"",
+   "evidence_candidate_id": "mobile:onsi:7cb94a3ad213905f4277",
+   "horizon": "IMMEDIATE",
+   "mechanism": "LIMITED_PARTICIPATION",
+   "model_original_commentary": "Kittle's Week 1 availability appears unsettled despite Shanahan saying he is healthy and doing well. Monitor his practice participation and a clear return-to-play decision; no setback or timetable was specified.",
+   "ownership": "INDEPENDENT",
+   "player": "George Kittle",
+   "player_id": "00-0033288",
+   "position": "TE",
+   "projection_action": "NONE",
+   "public_summary": "Kyle Shanahan said George Kittle has taken a step back as the 49ers assess whether he is ready to return and play immediately.",
+   "public_summary_approved_by": "Ralph Damato",
+   "reader_label": "Trending down",
+   "readiness_failures": [],
+   "reviewer_action": "APPROVE_WITH_EDIT",
+   "source": "Sports Illustrated -- SF",
+   "strength": "MEDIUM",
+   "team": "SF",
+   "url": "https://www.si.com/nfl/49ers/onsi/49ers-should-not-bring-george-kittle-australia-week-1",
+   "evidence_sha256": "3514d71cc83d5eb9865ad341b78c3ebd4b6d24013c313dcdcfcfd1aafe4c18fa"
   }
- ]
+ ],
+ "held_back": []
 }

@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-approval-ledger-v1",
- "count": 13,
+ "count": 14,
  "receipts": [
   {
    "receipt_id": "mobile:49f74b01c0954bb71f23e5fb8672a9a43dc3afb5edeb0b0b4bf6f7e24b35060f:5403509377",
@@ -636,6 +636,39 @@
      "evidence_sha256": "9366f81d4c403a434a7205ce874a94885fb2cdeda013e3d327e618e9d445cf1e",
      "public_summary_sha256": "adb6fa9e853ba414d4d36c22420d18e8b0f4624346eaa8901a992dd87aca1e9a",
      "lineupbeat_impact_sha256": "5a9288d7eb5acb7ab09e4d5737dab460b62942e2cb6fca4af7c26ef1832abc5b"
+    }
+   ]
+  },
+  {
+   "receipt_id": "mobile:bc05dc47a30a2fb677da69e05d8e290bb297d06fc994aac00dc9f58f6c38ce9d:5471867944",
+   "batch_id": "bc05dc47a30a2fb677da69e05d8e290bb297d06fc994aac00dc9f58f6c38ce9d",
+   "issue_number": 105,
+   "comment_id": "5471867944",
+   "approved_by": "Ralph Damato",
+   "approved_by_handle": "rdamato720",
+   "approved_at": "2026-08-30T23:16:07Z",
+   "approval_statement": "approve all",
+   "manifest_sha256": "bc05dc47a30a2fb677da69e05d8e290bb297d06fc994aac00dc9f58f6c38ce9d",
+   "publication_sha256_at_draft": "b5f5d8844f4bbed6f90672bb90a3ff44d94bdd70d65c3fdb2824a4af41587699",
+   "publication_sha256_before": "1f2897e6847492d997d328d685a5c46945f84254e03e7ef1c362ff6031095198",
+   "publication_sha256_after": "b0c9e59b8b7dca3934113aeb02024a3ea1dac4b64ba7ba79bc6fc50cc5b87fc1",
+   "publication_store_changed_since_draft": true,
+   "publication_count_before": 84,
+   "publication_count_after": 85,
+   "publications_applied": 1,
+   "outcomes": [
+    {
+     "card_number": 1,
+     "candidate_id": "mobile:onsi:7cb94a3ad213905f4277",
+     "player_id": "00-0033288",
+     "player_name": "George Kittle",
+     "decision": "APPROVED",
+     "edited": false,
+     "public_summary": "Kyle Shanahan said George Kittle has taken a step back as the 49ers assess whether he is ready to return and play immediately.",
+     "lineupbeat_impact": "Kittle's Week 1 availability appears unsettled despite Shanahan saying he is healthy and doing well. Monitor his practice participation and a clear return-to-play decision; no setback or timetable was specified.",
+     "evidence_sha256": "3514d71cc83d5eb9865ad341b78c3ebd4b6d24013c313dcdcfcfd1aafe4c18fa",
+     "public_summary_sha256": "36e37deafcdec7571ee65659de43bc7573ec7af4b3dbed9b8e6e074cb290b852",
+     "lineupbeat_impact_sha256": "3c9245e17bbdbcb0da70b6f78268e471d5c165ac0c75a463b4df1982ae45c90a"
     }
    ]
   }
