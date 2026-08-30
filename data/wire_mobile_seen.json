@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 497,
+ "count": 513,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -5506,6 +5506,182 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00436
+  },
+  {
+   "candidate_id": "mobile:onsi:d227cba8ceb375ea1897",
+   "player_id": "00-0034753",
+   "source_url": "https://www.si.com/nfl/ravens/onsi/ranking-the-thinnest-position-groups-on-baltimore-ravens-roster-01m1876xcmwk",
+   "attempted_at": "2026-08-30T15:31:17+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-30T15:31:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005986
+  },
+  {
+   "candidate_id": "mobile:onsi:255555e4047d74185e00",
+   "player_id": "00-0034796",
+   "source_url": "https://www.si.com/nfl/ravens/onsi/ranking-the-thinnest-position-groups-on-baltimore-ravens-roster-01m1876xcmwk",
+   "attempted_at": "2026-08-30T15:31:23+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T15:31:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004402
+  },
+  {
+   "candidate_id": "mobile:onsi:eb9d03a151048fc5056d",
+   "player_id": "00-0039064",
+   "source_url": "https://www.si.com/nfl/ravens/onsi/ranking-the-thinnest-position-groups-on-baltimore-ravens-roster-01m1876xcmwk",
+   "attempted_at": "2026-08-30T15:31:26+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-30T15:31:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007444
+  },
+  {
+   "candidate_id": "mobile:article:efdac6361fd9280c37ee",
+   "player_id": "00-0039737",
+   "source_url": "https://arizonasports.com/nfl/arizona-cardinals/cardinals-trading-for-jaguars-te-hunter-long",
+   "attempted_at": "2026-08-30T15:31:32+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-30T15:31:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004632
+  },
+  {
+   "candidate_id": "mobile:onsi:476fcdc1049ef7ef5dce",
+   "player_id": "00-0036971",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-3-winners-4-losers-following-trade-for-quinn-ewers",
+   "attempted_at": "2026-08-30T15:31:36+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T15:31:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004398
+  },
+  {
+   "candidate_id": "mobile:onsi:cfbd2f9a2f1faa0d161b",
+   "player_id": "00-0034855",
+   "source_url": "https://www.si.com/nfl/buccaneers/onsi/buccaneers-officially-have-winner-in-2026-quarterback-competition",
+   "attempted_at": "2026-08-30T15:31:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T15:31:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00454
+  },
+  {
+   "candidate_id": "mobile:onsi:afafa03c6ca578a96684",
+   "player_id": "00-0037746",
+   "source_url": "https://www.si.com/nfl/falcons/onsi/stefanski-critiques-tua-tagovailoa-performance-vs-dolphins-roster-cuts-loom",
+   "attempted_at": "2026-08-30T15:31:42+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T15:31:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00397
+  },
+  {
+   "candidate_id": "mobile:onsi:fb4eb9835c6e05fae7b2",
+   "player_id": "00-0040122",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-where-showed-future-promise-final-preseason-game",
+   "attempted_at": "2026-08-30T15:31:45+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T15:31:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004716
+  },
+  {
+   "candidate_id": "mobile:onsi:8477b264e3596a20df79",
+   "player_id": "00-0040878",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-where-showed-future-promise-final-preseason-game",
+   "attempted_at": "2026-08-30T15:31:47+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T15:31:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004326
+  },
+  {
+   "candidate_id": "mobile:onsi:957affc39b24b758bdf4",
+   "player_id": "00-0041438",
+   "source_url": "https://www.si.com/nfl/titans/onsi/xavier-restrepo-just-made-the-perfect-final-argument-for-titans-roster-spot-vs-bears-01m18cgttt9q",
+   "attempted_at": "2026-08-30T15:31:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T15:31:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00493
+  },
+  {
+   "candidate_id": "mobile:onsi:813be12210a9caec2cb2",
+   "player_id": "00-0039849",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/4-toughest-decisions-arizona-cardinals-must-make-cut-down-day",
+   "attempted_at": "2026-08-30T15:31:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T15:31:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005056
+  },
+  {
+   "candidate_id": "mobile:onsi:0f5b0e7fb61b39382cc0",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/handing-out-dolphins-grades-for-the-ewers-and-atwell-trades-01m19anv5nh2",
+   "attempted_at": "2026-08-30T15:31:57+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-30T15:32:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006876
+  },
+  {
+   "candidate_id": "mobile:onsi:d00c6c9774b2704b7422",
+   "player_id": "00-0039040",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/handing-out-dolphins-grades-for-the-ewers-and-atwell-trades-01m19anv5nh2",
+   "attempted_at": "2026-08-30T15:32:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T15:32:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004776
+  },
+  {
+   "candidate_id": "mobile:onsi:6954403647b00156efe9",
+   "player_id": "00-0036442",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/cincinnati-bengals-entire-2026-season-rides-on-key-factor-01m0x0y4yrzz",
+   "attempted_at": "2026-08-30T15:32:07+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T15:32:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005176
+  },
+  {
+   "candidate_id": "mobile:onsi:4ef68693fed1671c91e1",
+   "player_id": "00-0036900",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/cincinnati-bengals-entire-2026-season-rides-on-key-factor-01m0x0y4yrzz",
+   "attempted_at": "2026-08-30T15:32:10+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T15:32:12+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003854
+  },
+  {
+   "candidate_id": "mobile:onsi:0569a24f7a14535eaf1d",
+   "player_id": "00-0040704",
+   "source_url": "https://www.si.com/nfl/browns/onsi/exploring-the-idea-of-the-browns-adding-j-j-mccarthy-if-he-s-released-01m17dpf2s6b",
+   "attempted_at": "2026-08-30T15:32:12+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T15:32:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005628
   }
  ]
 }
