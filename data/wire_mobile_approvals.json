@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-approval-ledger-v1",
- "count": 12,
+ "count": 13,
  "receipts": [
   {
    "receipt_id": "mobile:49f74b01c0954bb71f23e5fb8672a9a43dc3afb5edeb0b0b4bf6f7e24b35060f:5403509377",
@@ -603,6 +603,39 @@
      "evidence_sha256": "bac62af2fe17a4363015fbc301ba8d0d2def4b4fa8b024619ec41cc06fbaaf17",
      "public_summary_sha256": "cf9cba2a492bb9bbf721ccef74716c6a4f56b4b15d75e62b6eccd081f6372165",
      "lineupbeat_impact_sha256": "6e2e2834d8be2eef852b60f941d92f4d733dc638ebbd468df0e7ff7dafb83a64"
+    }
+   ]
+  },
+  {
+   "receipt_id": "mobile:a1750b4783d6640a3885656e1526d7f84df6529ad31d28c3b2ae528a5ec0513f:5471866778",
+   "batch_id": "a1750b4783d6640a3885656e1526d7f84df6529ad31d28c3b2ae528a5ec0513f",
+   "issue_number": 106,
+   "comment_id": "5471866778",
+   "approved_by": "Ralph Damato",
+   "approved_by_handle": "rdamato720",
+   "approved_at": "2026-08-30T23:15:40Z",
+   "approval_statement": "reject all",
+   "manifest_sha256": "a1750b4783d6640a3885656e1526d7f84df6529ad31d28c3b2ae528a5ec0513f",
+   "publication_sha256_at_draft": "b5f5d8844f4bbed6f90672bb90a3ff44d94bdd70d65c3fdb2824a4af41587699",
+   "publication_sha256_before": "1f2897e6847492d997d328d685a5c46945f84254e03e7ef1c362ff6031095198",
+   "publication_sha256_after": "1f2897e6847492d997d328d685a5c46945f84254e03e7ef1c362ff6031095198",
+   "publication_store_changed_since_draft": true,
+   "publication_count_before": 84,
+   "publication_count_after": 84,
+   "publications_applied": 0,
+   "outcomes": [
+    {
+     "card_number": 1,
+     "candidate_id": "mobile:onsi:93c89ae2ffabaef1aab8",
+     "player_id": "00-0039918",
+     "player_name": "Caleb Williams",
+     "decision": "REJECTED",
+     "edited": false,
+     "public_summary": "Bears coach Ben Johnson said Caleb Williams is ready for the season opener despite limited preseason passing work.",
+     "lineupbeat_impact": "Williams' availability for the opener appears intact, removing concern that his light preseason usage reflected a readiness issue. This does not establish anything about his workload or performance.",
+     "evidence_sha256": "9366f81d4c403a434a7205ce874a94885fb2cdeda013e3d327e618e9d445cf1e",
+     "public_summary_sha256": "adb6fa9e853ba414d4d36c22420d18e8b0f4624346eaa8901a992dd87aca1e9a",
+     "lineupbeat_impact_sha256": "5a9288d7eb5acb7ab09e4d5737dab460b62942e2cb6fca4af7c26ef1832abc5b"
     }
    ]
   }
