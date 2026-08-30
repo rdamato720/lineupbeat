@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `a1750b4783d6` · 11 draft calls · $0.0583
+**2 cards** · batch `84dfa6e11ae7` · 11 draft calls · $0.0497
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,24 +19,46 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Caleb Williams — CHI QB
+## 1. Dillon Gabriel — CLE QB
 
-**Trending up** · OTHER · MEDIUM evidence
+**Trending down** · TRANSACTION · HIGH evidence
 
 ### What changed
 
-Bears coach Ben Johnson said Caleb Williams is ready for the season opener despite limited preseason passing work.
+The Browns placed Dillon Gabriel on injured reserve as they set their initial 53-man roster.
 
 ### Lineup Beat impact
 
-Williams' availability for the opener appears intact, removing concern that his light preseason usage reflected a readiness issue. This does not establish anything about his workload or performance.
+Gabriel is off Cleveland's active roster for now, removing any immediate path to game action. The report does not identify the injury or provide a return timeline.
 
-[Gene Chamberlain · Sports Illustrated -- CHI](https://www.si.com/nfl/bears/onsi/the-one-bears-position-still-bothering-ben-johnson-more-than-others) · 2026-08-30
+[Kelsey Russo · CLE official team site](https://www.clevelandbrowns.com/news/browns-announce-initial-53-man-roster-heading-into-the-2026-season) · 2026-08-30
 
 <details><summary>Full evidence reviewed</summary>
 
-Bears coach Ben Johnson labeled quarterback Caleb Williams ready to go for the start of the season even if he had only five passing attempts in preseason and none as he watched Saturday's finale against the Titans from the sidelines. Johnson has bigger headaches as roster cuts come Sunday and then the Carolina Panthers.
+Offensively, the Browns are rostering three quarterbacks in Taylen Green, Shedeur Sanders and Deshaun Watson, with Sanders to serve as the backup quarterback to Watson as the starter. The Browns also placed Dillon Gabriel on injured reserve.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVtty2zYQ_RUMX_JQUyIpXvWW2GqiTnyprbYPnQxnQQAiEhJgAVCqmsm_d0Faqt1Mf6AzHlncBfZy9pwVvwYUXNPWkgXrAOIii2halCuW52kEq7LM8izncZbkrBBlykSeJRWwVcySslnRBHiWlJDxJsrilQiuggYMs8H6968BDIPRB85qcBgaXTC6Vhv8_p4rTq5b6Ck3HUjlr-m-58qBOaH_N9l1Enr7hsABZAdUdtKdiNCGuJYTPeB9QzA-B2OJxGuNuyKG9_og1Z40WjXcKDwLjrTSkk7uW0cGwy0HqxUZLew5nhcdbxxnBPA7MKm4xWjWjnxBdv4e09wSpR3h1gHtpG0JqJNrfRKgepyjH7X50mlgBMsbuMEqe8ACFq-6qi9o0NOMxgufNnKPKKyD2_ubzcf65vHtj7vphHJ4onangaPzcfNw_7jb3r1HFwPnTUmU5GFUhqtoF5frKMK_H6ZPf0Qa7E5qH_fh_mm72_668WYDwtUYWkjGscxgHS2q9GzvZC8d-Ft-hsGu9TAN2jjEBWFqNDQtQTAc97UjGozs5WFCCefweTSnCQWDA5ENDwcw-F8OU0TCuMNpelw--jQI_D8jAYchB4dJOo3kYHrCXSomG0yGifB7-HzW6I6TpgW1R5A_XQX8cG4leDcxYi7zHVfkJ90qfwU5xDtM-MeIFXFDoflCrqHjlJy5NlHgRJwme31hGnaKrWsxP8zZ-QHjSkHQ0vqhqw6ZiRiQAaydmHFuRaqXDSJUyrcG1l89etFhQU_gRsPg9MZiEIUVEdijIqybUu5wGAo9RvdzCdho53m6uHTWYjwq93sURIsdYOM4DbQZbbFR0ozO49Fz8jQqzDPVgaHUFO8aEEtMSx5A4bOxfjhnOOsGz0rPtHk59Bp1yNdIDbmuVk1ZAU-EAApcxAC0xKsob_nXxLjt7e3mZvt25ynXcz8saXu03-8-bB69TWMnz8SHrv5_yl8fsVDbysEDcnezedjgx52X9tDBiftV-JqEF8-MeBSFUbSqqthjO2grn-X88zv_bPTnWeA1nHV-d3_nAR9GrLap7dj3M6L_JQsLkv1bB_IshYsIZtSeYWfcDqhd0n0n4TP_PSCL76r4fgH6LNjpJE207AxHuuH9cXh2ThOpBVJgxCS4jz55-0HyI1679OxBnZei1aOZtsCT31iWbLtutM6ALzMMyfWHrT_kMM_etX7bIkN_uUWb4-C5OR8Yja-mdW6w6-XyeDwurFwgP5dKdEvqgVx6CSwRmhD1HE6m8Dyd0DoEMqTaywm7QbcKP89wh702PERaqnBy2-DbJ7_lratHy_wijrIyyXAZ7z3Uvu75t_Plmq_Wq2KdFJc1Pwupga5DhOL4DPu0cVFWI_5-gKun7R6sy-S137aQZPmLAwHNRMbKMk1FSilnuaiivEgorfBlQIg0ZVVKGSsilmfNSjCalEkKKYg0zsoiryqPMK6gHuoDNjhP6Ii_ROG8PUKpqP4zPMSXcdXz68dciX8FKbOoyJMiF6tEsFXJC5E2PEpoxWgRR7RMopJVFSZmcUPjrGk45IImRZryhMVF8O1vRy8D2A:WIRE_MOBILE_MANIFEST_V1 -->
+---
+
+## 2. Shedeur Sanders — CLE QB
+
+**Worth noting** · DEPTH_CHART · HIGH evidence
+
+### What changed
+
+Shedeur Sanders will back up Browns starter Deshaun Watson after Cleveland set its initial 53-man roster.
+
+### Lineup Beat impact
+
+Sanders is officially positioned as Watson’s backup, giving him contingency value only if Watson misses time. Monitor whether Cleveland changes the quarterback depth chart or Watson’s availability.
+
+[Kelsey Russo · CLE official team site](https://www.clevelandbrowns.com/news/browns-announce-initial-53-man-roster-heading-into-the-2026-season) · 2026-08-30
+
+<details><summary>Full evidence reviewed</summary>
+
+Offensively, the Browns are rostering three quarterbacks in Taylen Green, Shedeur Sanders and Deshaun Watson, with Sanders to serve as the backup quarterback to Watson as the starter. The Browns also placed Dillon Gabriel on injured reserve.
+
+</details>
+
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrtV9ty2zYQ_RUMX_pQSeb9ojfFVm1PHMm1leahk-GAxFJEShIqAEpVM5npb_T3-iVd8KLISWfSpn3o7UkkdgHsnj17lnprZVTnZcqZNbdinxU0BMehEEWR7bAsBuZ6QRCFYVSEThIGDi7ENvMjL0tCz0t8r8gpy4I4p5RZEyunkilr_u1bi-52UuyBpVTj0WiirS6FxOfnUCk4kodWKWG2iLqGRlN5RNs1zSSHinBFRFGQywr2UNGGfaEIzTXfA5FCaZCkEJI04jAhEmqx582W0OZIOB7FONVAdlSXRAuypTV0W0UzI5sS98NOSE2YAIUHaMIZXs6LI9Fo5M2bVh4Jnm2CRxOhuEG3siGa11DxBmZPQk5PaWbHPs0zm5B8yxtcfrG-Wt6lVw-LrzadR6PRI9XHHaDxYXm_ftjcrq7RxDB0XHJtN5za8dSzN64999y5789cx7Vt-0vbntu28eQSuqzQfbW8Xmxuv1maZUkLneINhckrx8PsWZKM6xWvuaZml6mRZeBQopU5vIeDcZVXQgEZKoHA96CYvFfiHA1NswoMVp0DsKkEBRJLxEDxbdPdg8-a8kqRA0gYQWUz6_XEgv0YorUuCmgUVrc6Tro6PJPi0GDJ5VhvU2BdSgDyfUslLmQ0_86ERjb0WEFDrtHWTMhjCQxaSR6RMyDxhIaRK1AlbRvyimol0OfAkRqjA1KkD5qq7mZzbrs7v8W49FtHH6U7Y8-nMdRKCbKraA54Ia8q9B65jI8DQmRAyGA5pp_mGAk3he-bsBYZr2CON_Acf31qQ1J4MbhJkBV-FrDY9Bl2Ev-xK_7L1fPV-tUK12rIS9pwVePq5mGxelxcbm7XnUUwqAY60ir9B3YcYozVKvnO5LZcvEgx5eUVGhDyIxhVeQr6ydKDattT2_btyPaNQSg-dM7Xz8y7FG_6XkrpqaXWK9NOuzareJ6qtq57tM4q_nuLPbDmiDzT5oGbhsEAaEUCb1rTZgB49tF9H4uLBIqsTSuaYYoYjQTkDlaCYUSDGQFTKi2w6TAI0-avzfqeA3bg-_zul6urXnJ6AcCly7ulYQDPTWQaaE0QJjAeGq_Z6hJ9bm6vb3DFWPsd-NJKE0qp9U7NLy4Oh8MsHzmUdUjNkG8XDRzURf8-pU0jWqT-dMBh2uMw7XGYll0WW7RqMUXApp0cKqDYgta7yeeOlrHje6J3aVZHMpIB64V16vv8l59-VoMQTMiWd1wveU2McOMzdu2R7GnVovg1eAQvRn2ouVJIckPcGXkhMDvk9aEETEK-7yxi2nQLvZacCw2DHbYQWrFbcONZMHSP9aQoDFwf_5YD6CUKzt3nzJ9BHAZN4IjKSbqfCHLW6lEhjIpgCzGe9yNGFKgZnSabQomdObBtBqRW4kxizmFEHiisYHEC2hCjj-b_AfUHBhR4EGcBSqvjxgkLsjCm0ZMB9bhcPK5X6d26I9j5kLpa3m9u0subxcPmE0Pq39S7nx5lH3Dkt2dZGMZ_cpZ9SMUDsqKDjiC_BtYMTPqAogSb-QkqZrRxrf6ywfYKu7A0HwtYsv_IXHttdFnptFXMiKbtJ5EzsZCwILH1hll3rsvu3AnmXnwS5L5_cuwMRMdxRsw7jcRualHwqU47IbbmsfvUjtV1g_DMwcqCAr81Y9_Hj84MWFgkdhi5WZbY1CsK32eJnzEW2SwMcq9gmRu7PvVp4TtBHIVJYgDOS6hpukdy9dU54MyY9vqBKGTih-neOZUq7f-J9pGgc544iR87YZxEvoPqgn81wyzPmUehcLwg8W2IHZtRj9HIiXx0crwkyqPAZ0EAgWe9-xWOMhx6:WIRE_MOBILE_MANIFEST_V1 -->

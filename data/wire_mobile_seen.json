@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 533,
+ "count": 544,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -5902,6 +5902,127 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.0045
+  },
+  {
+   "candidate_id": "mobile:article:3f2a80497ee77b5731fd",
+   "player_id": "00-0036971",
+   "source_url": "https://www.jaguars.com/news/roster-reduction-jaguars-move-to-53-players-x8887",
+   "attempted_at": "2026-08-30T22:15:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T22:15:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003856
+  },
+  {
+   "candidate_id": "mobile:onsi:6a0d5054281892894507",
+   "player_id": "00-0038618",
+   "source_url": "https://www.si.com/nfl/texans/onsi/texans-wr-tank-dell-to-start-season-on-ir-what-it-means",
+   "attempted_at": "2026-08-30T22:15:41+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T22:15:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00471
+  },
+  {
+   "candidate_id": "mobile:onsi:47a7e5b7390c4258b9c8",
+   "player_id": "00-0041027",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-make-final-james-conner-decision-roster-cut-deadline-arrives",
+   "attempted_at": "2026-08-30T22:15:45+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T22:15:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005548
+  },
+  {
+   "candidate_id": "mobile:onsi:0c6de0165e89a5434657",
+   "player_id": "00-0040663",
+   "source_url": "https://www.si.com/nfl/browns/onsi/browns-initial-53-man-roster-is-set-biggest-takeaways-from-every-position-01m1a7r9nkjk",
+   "attempted_at": "2026-08-30T22:15:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T22:15:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004304
+  },
+  {
+   "candidate_id": "mobile:article:d01eba964a3d622b9f83",
+   "player_id": "00-0034855",
+   "source_url": "https://www.pewterreport.com/baker-mayfield-wife-emily-be-the-ball-event/",
+   "attempted_at": "2026-08-30T22:15:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T22:15:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003518
+  },
+  {
+   "candidate_id": "mobile:article:0d34c4a13b5a9d934082",
+   "player_id": "00-0041547",
+   "source_url": "https://www.clevelandbrowns.com/news/browns-announce-initial-53-man-roster-heading-into-the-2026-season",
+   "attempted_at": "2026-08-30T22:15:53+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T22:15:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00471
+  },
+  {
+   "candidate_id": "mobile:article:defcd539c1b8e6853099",
+   "player_id": "00-0040663",
+   "source_url": "https://www.clevelandbrowns.com/news/browns-announce-initial-53-man-roster-heading-into-the-2026-season",
+   "attempted_at": "2026-08-30T22:15:55+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-30T22:15:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004908
+  },
+  {
+   "candidate_id": "mobile:article:c0c383754a72e1dd43d7",
+   "player_id": "00-0041037",
+   "source_url": "https://www.clevelandbrowns.com/news/browns-announce-initial-53-man-roster-heading-into-the-2026-season",
+   "attempted_at": "2026-08-30T22:15:59+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T22:16:02+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004214
+  },
+  {
+   "candidate_id": "mobile:article:7202f724574d4135f2a7",
+   "player_id": "00-0036407",
+   "source_url": "https://www.clevelandbrowns.com/news/browns-announce-initial-53-man-roster-heading-into-the-2026-season",
+   "attempted_at": "2026-08-30T22:16:02+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T22:16:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004658
+  },
+  {
+   "candidate_id": "mobile:article:4a0e9f38e295bf4b5d8d",
+   "player_id": "00-0040704",
+   "source_url": "https://www.clevelandbrowns.com/news/browns-announce-initial-53-man-roster-heading-into-the-2026-season",
+   "attempted_at": "2026-08-30T22:16:05+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-30T22:16:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004762
+  },
+  {
+   "candidate_id": "mobile:article:e3e8b50701289d5b68a7",
+   "player_id": "00-0040668",
+   "source_url": "https://www.clevelandbrowns.com/news/browns-announce-initial-53-man-roster-heading-into-the-2026-season",
+   "attempted_at": "2026-08-30T22:16:08+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-30T22:16:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004522
   }
  ]
 }
