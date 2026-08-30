@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `bc05dc47a30a` · 8 draft calls · $0.0380
+**1 cards** · batch `a1750b4783d6` · 11 draft calls · $0.0583
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,30 +19,24 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. George Kittle — SF TE
+## 1. Caleb Williams — CHI QB
 
-**Trending down** · LIMITED_PARTICIPATION · MEDIUM evidence
+**Trending up** · OTHER · MEDIUM evidence
 
 ### What changed
 
-Kyle Shanahan said George Kittle has taken a step back as the 49ers assess whether he is ready to return and play immediately.
+Bears coach Ben Johnson said Caleb Williams is ready for the season opener despite limited preseason passing work.
 
 ### Lineup Beat impact
 
-Kittle's Week 1 availability appears unsettled despite Shanahan saying he is healthy and doing well. Monitor his practice participation and a clear return-to-play decision; no setback or timetable was specified.
+Williams' availability for the opener appears intact, removing concern that his light preseason usage reflected a readiness issue. This does not establish anything about his workload or performance.
 
-[Grant Cohn · Sports Illustrated -- SF](https://www.si.com/nfl/49ers/onsi/49ers-should-not-bring-george-kittle-australia-week-1) · 2026-08-30
+[Gene Chamberlain · Sports Illustrated -- CHI](https://www.si.com/nfl/bears/onsi/the-one-bears-position-still-bothering-ben-johnson-more-than-others) · 2026-08-30
 
 <details><summary>Full evidence reviewed</summary>
 
-George Kittle wants to do something heroic and unprecedented in fewer than two weeks, and the 49ers shouldn't let him.
-
-"Yeah, you hope so," Shanahan answered. "Those are things that we have to evaluate sooner than later. There are just guys who are going to be close, guys like Mykel Williams, guys like George Kittle who has taken a step back, want to see how Nick Bosa does in these practices.
-
-"Those are things that we have to evaluate sooner than later. There are just guys who are going to be close, guys like Mykel Williams, guys like George Kittle who has taken a step back, want to see how Nick Bosa does in these practices. They're guys who are healthy and doing good, but are they ready to get back and play right away?"
-
-There are just guys who are going to be close, guys like Mykel Williams, guys like George Kittle who has taken a step back, want to see how Nick Bosa does in these practices. They're guys who are healthy and doing good, but are they ready to get back and play right away?"
+Bears coach Ben Johnson labeled quarterback Caleb Williams ready to go for the start of the season even if he had only five passing attempts in preseason and none as he watched Saturday's finale against the Titans from the sidelines. Johnson has bigger headaches as roster cuts come Sunday and then the Carolina Panthers.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrtVlFv20YM_isHvfRhlnOWZEvyHoascQNjixO02YphKQRKR1lXn3WC7mRPK_rfx5McJ2m2X9AhiG2QPB758TuSX7wcbFFlUnhLLy_4XBRRDCGHoMwXcSxgkSIJEwxSnudBGgu-KIs0jQAKzkWRlvOkXBRhUmAqvIlXQCuMt_zziwdN0-oDigwsuSYVdLbSLf2-bqG27K2uandA7_dYW2h70vwirVX4xrCPiDs2Y3AAqSCXStqekUOE1rCuNujMBBNoGmmRfaigBvpnBnpZb1mFTBr6BGUrOleTpXbyIyo1ZTe6lla3rCKbpoXCygJZAy19ywas1PVwBFih6D7Wou3a2rfabxT0dGchDdn8yGrNKJAcih0jb1bu0UKukB3BMNOQWSlRTF-kmJ1ByfsRlGc63cqtrEl8c3u1-jW7en_57n6wqC1ZZLZvkJTvV3e37-_Xm2tSCbBOFPBg4fPED_k950seLPn8B_eDOxPZYuFyIrvN6vryfv37yolbKG1GrkspsC7IC5-mj2Il99IOQLhKevcEp9FdSygJjYbytqf8enYkfMeiMav1jkAzFhvmQHGZPyuMFI-G_10aOrHRhHApqULyQFVRQ0F9Q-F05oz9a7wdqpQJwf1p4uHhMSnvGnW7xcebj8Q7Q4HSnZQRna9GtrRaFkMsXd0QXEinLdFL1qzEI9JdLgV71BQl7sxkMLWESpQi8dFUulOifmOZQkus2k8favrz_kCoJqzXHat04yCcPHhPVIXakGuKmD0Qwtogg5ZAdBEZd6Gly1gFBwcswwOojopNTnT9GJAiQTtlVJ52PPy5M5Ztu95QWfQg2Q7YkoMcic10yWTUK7lDdtPvULGPUikJe_Nc8w1q5KwijC3ssH5e4ckAqHNvkGLVR7aR9Bh-1gZGphCABBOl9vjMzAma7yhhF27_xoX2PM7XD2CrtZiwvLMnWLCnzgOid7dtiVdDn3HmQxeiVlGR5RH6nx48h-n_oHwDivfUB7KCTKRrluOY22uaKLik9iaXcZHTLAtBBLMw5fMyCuKYjtKgkn8PTXN9c7O6Wl_eu665x4J4KM2e5L-ub9b3q6vs7pK68dv1HXXW242z0QLVqZeDyr6D8aaP9EJNJRuH1uZqdbeij40bXc4jtt-24bNirAbnPudhGCSJU2gjT9NqQJz6-udxfmVwHmO3m0HV5UoWmen2-xO6vXqBFU2clxT-V_oyJzz3cjAGjWMkzQZqOyPSZ8qNWD0RTlJthSReqX76KqLXs975oayp4qhcgi0SLalughA8qWVN12cl0aJr0U3fT05-kG4MPSHgEB43gHEuk-hDo1uabWul6Pm34MaX77MP75yNpYu2tnKbBVH5txuSWQRH4kHftS6aytrGLC8ujsfj1Mgp8faiLtXFAMuFeyrjT3-cdj4tAX7eutm8HTD2dwPGPgzXUy_x3az0Z97XT26FMTbrjHBbBg8TPltMvC0Sa1yc4374coeJ0mX4tMOMT6oApQiR5BHngcr0vjrajcBmw-pC6uCl3lQQzBfPDLx8XtI-m0RRGeU5ikWZ8kUc5HnKISzLKBJplAsRc7GYF2Ep8iAJIoigjGbzJF6kqUO0qHAP2YHwGAtypC3LH9uKL-tc_-UfZufqZOOGPUYyED6C-TxYxBjzGPMyLHgyC7CY8xyjJMcSijgtZxjMIU6jMCpSCJMgns14EidJCN7XfwB8LQF3:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVtty2zYQ_RUMX_JQUyIpXvWW2GqiTnyprbYPnQxnQQAiEhJgAVCqmsm_d0Faqt1Mf6AzHlncBfZy9pwVvwYUXNPWkgXrAOIii2halCuW52kEq7LM8izncZbkrBBlykSeJRWwVcySslnRBHiWlJDxJsrilQiuggYMs8H6968BDIPRB85qcBgaXTC6Vhv8_p4rTq5b6Ck3HUjlr-m-58qBOaH_N9l1Enr7hsABZAdUdtKdiNCGuJYTPeB9QzA-B2OJxGuNuyKG9_og1Z40WjXcKDwLjrTSkk7uW0cGwy0HqxUZLew5nhcdbxxnBPA7MKm4xWjWjnxBdv4e09wSpR3h1gHtpG0JqJNrfRKgepyjH7X50mlgBMsbuMEqe8ACFq-6qi9o0NOMxgufNnKPKKyD2_ubzcf65vHtj7vphHJ4onangaPzcfNw_7jb3r1HFwPnTUmU5GFUhqtoF5frKMK_H6ZPf0Qa7E5qH_fh_mm72_668WYDwtUYWkjGscxgHS2q9GzvZC8d-Ft-hsGu9TAN2jjEBWFqNDQtQTAc97UjGozs5WFCCefweTSnCQWDA5ENDwcw-F8OU0TCuMNpelw--jQI_D8jAYchB4dJOo3kYHrCXSomG0yGifB7-HzW6I6TpgW1R5A_XQX8cG4leDcxYi7zHVfkJ90qfwU5xDtM-MeIFXFDoflCrqHjlJy5NlHgRJwme31hGnaKrWsxP8zZ-QHjSkHQ0vqhqw6ZiRiQAaydmHFuRaqXDSJUyrcG1l89etFhQU_gRsPg9MZiEIUVEdijIqybUu5wGAo9RvdzCdho53m6uHTWYjwq93sURIsdYOM4DbQZbbFR0ozO49Fz8jQqzDPVgaHUFO8aEEtMSx5A4bOxfjhnOOsGz0rPtHk59Bp1yNdIDbmuVk1ZAU-EAApcxAC0xKsob_nXxLjt7e3mZvt25ynXcz8saXu03-8-bB69TWMnz8SHrv5_yl8fsVDbysEDcnezedjgx52X9tDBiftV-JqEF8-MeBSFUbSqqthjO2grn-X88zv_bPTnWeA1nHV-d3_nAR9GrLap7dj3M6L_JQsLkv1bB_IshYsIZtSeYWfcDqhd0n0n4TP_PSCL76r4fgH6LNjpJE207AxHuuH9cXh2ThOpBVJgxCS4jz55-0HyI1679OxBnZei1aOZtsCT31iWbLtutM6ALzMMyfWHrT_kMM_etX7bIkN_uUWb4-C5OR8Yja-mdW6w6-XyeDwurFwgP5dKdEvqgVx6CSwRmhD1HE6m8Dyd0DoEMqTaywm7QbcKP89wh702PERaqnBy2-DbJ7_lratHy_wijrIyyXAZ7z3Uvu75t_Plmq_Wq2KdFJc1Pwupga5DhOL4DPu0cVFWI_5-gKun7R6sy-S137aQZPmLAwHNRMbKMk1FSilnuaiivEgorfBlQIg0ZVVKGSsilmfNSjCalEkKKYg0zsoiryqPMK6gHuoDNjhP6Ii_ROG8PUKpqP4zPMSXcdXz68dciX8FKbOoyJMiF6tEsFXJC5E2PEpoxWgRR7RMopJVFSZmcUPjrGk45IImRZryhMVF8O1vRy8D2A:WIRE_MOBILE_MANIFEST_V1 -->

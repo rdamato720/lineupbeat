@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 522,
+ "count": 533,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -5781,6 +5781,127 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003542
+  },
+  {
+   "candidate_id": "mobile:onsi:32ff975556d8d1013888",
+   "player_id": "00-0040009",
+   "source_url": "https://www.si.com/nfl/packers/onsi/dream-come-true-j-michael-sturdivant-extends-packers-incredible-streak",
+   "attempted_at": "2026-08-30T19:37:27+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-30T19:37:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005862
+  },
+  {
+   "candidate_id": "mobile:onsi:3546a9a2722b7e73d008",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/josh-jacobs-placed-on-nfl-commissioner-s-exempt-list-opens-the-door-for-three-must-know-fantasy-football-sleepers",
+   "attempted_at": "2026-08-30T19:37:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T19:37:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006564
+  },
+  {
+   "candidate_id": "mobile:onsi:bacbf0518d631ce37f2b",
+   "player_id": "00-0040676",
+   "source_url": "https://www.si.com/nfl/titans/onsi/titans-cut-will-levis-amidst-huge-second-wave-of-roster-departures-01m1a0bqke9b",
+   "attempted_at": "2026-08-30T19:37:37+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-30T19:37:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006132
+  },
+  {
+   "candidate_id": "mobile:onsi:853ab16321b7cead36ed",
+   "player_id": "00-0040142",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-impact-packers-acquire-kaleb-johnson-nfl-places-josh-jacobs-on-exempt-list",
+   "attempted_at": "2026-08-30T19:37:42+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-30T19:37:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004636
+  },
+  {
+   "candidate_id": "mobile:onsi:e1262c31680f4b118bba",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-impact-packers-acquire-kaleb-johnson-nfl-places-josh-jacobs-on-exempt-list",
+   "attempted_at": "2026-08-30T19:37:44+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-30T19:37:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007714
+  },
+  {
+   "candidate_id": "mobile:onsi:2ba0051599a87ab4abb5",
+   "player_id": "00-0036264",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-impact-packers-acquire-kaleb-johnson-nfl-places-josh-jacobs-on-exempt-list",
+   "attempted_at": "2026-08-30T19:37:50+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T19:37:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003944
+  },
+  {
+   "candidate_id": "mobile:onsi:37f3b52b7ea8b711db6e",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/nfl/packers/onsi/packers-trade-for-former-third-round-pick-after-nfl-sidelines-josh-jacobs",
+   "attempted_at": "2026-08-30T19:37:52+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-30T19:37:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004608
+  },
+  {
+   "candidate_id": "mobile:onsi:57137d0cbc49a4733eea",
+   "player_id": "00-0039732",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/sean-payton-explains-viral-response-to-bo-nix-criticism",
+   "attempted_at": "2026-08-30T19:37:55+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T19:37:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00446
+  },
+  {
+   "candidate_id": "mobile:onsi:25dbbabf8e6d45542477",
+   "player_id": "00-0037197",
+   "source_url": "https://www.si.com/nfl/lions/onsi/grades-detroit-lions-bully-colts-with-strong-day-in-trenches",
+   "attempted_at": "2026-08-30T19:37:57+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-30T19:38:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005028
+  },
+  {
+   "candidate_id": "mobile:onsi:7fe393d7c53dde7affe5",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/what-to-know-about-new-dolphins-qb-kyle-mccord-01m19pe2ksat",
+   "attempted_at": "2026-08-30T19:38:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T19:38:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004806
+  },
+  {
+   "candidate_id": "mobile:onsi:93c89ae2ffabaef1aab8",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/the-one-bears-position-still-bothering-ben-johnson-more-than-others",
+   "attempted_at": "2026-08-30T19:38:03+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-30T19:38:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0045
   }
  ]
 }
