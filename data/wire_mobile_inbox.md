@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `80f6833311c2` · 15 draft calls · $0.0691
+**1 cards** · batch `bc05dc47a30a` · 8 draft calls · $0.0380
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,26 +19,30 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Bucky Irving — TB RB
+## 1. George Kittle — SF TE
 
-**Trending down** · ROLE_REDUCTION · LOW evidence
+**Trending down** · LIMITED_PARTICIPATION · MEDIUM evidence
 
 ### What changed
 
-Bucky Irving will form a new Buccaneers running back tandem with Kenny Gainwell, according to the team site.
+Kyle Shanahan said George Kittle has taken a step back as the 49ers assess whether he is ready to return and play immediately.
 
 ### Lineup Beat impact
 
-Gainwell's arrival gives Irving a listed backfield partner, adding workload uncertainty. Monitor preseason and early-season usage for any clearer split.
+Kittle's Week 1 availability appears unsettled despite Shanahan saying he is healthy and doing well. Monitor his practice participation and a clear return-to-play decision; no setback or timetable was specified.
 
-[Scott Smith · TB official team site](https://www.buccaneers.com/news/next-game-tampa-bay-buccaneers-vs-cincinnati-bengals-nfl-season-week-1-2026) · 2026-08-29
+[Grant Cohn · Sports Illustrated -- SF](https://www.si.com/nfl/49ers/onsi/49ers-should-not-bring-george-kittle-australia-week-1) · 2026-08-30
 
 <details><summary>Full evidence reviewed</summary>
 
-After the additions of Lawrence and Mafe, the Bengals appear to have a more dangerous defensive front of their own, also now featuring defensive tackle Jonathan Allen and second-round edge rusher Cashius Howell. The Bucs will counter with an offensive line that, after a severely injury-plagued 2025 season, is back to the starting five that produced very impressive results in 2024, anchored by All-Pro left tackle Tristan Wirfs. The Bucs will also be unveiling a new offensive coordinated by Zac Robinson and now featuring a stacked receiver room and a new running back tandem with Kenny Gainwell joining Bucky Irving.
+George Kittle wants to do something heroic and unprecedented in fewer than two weeks, and the 49ers shouldn't let him.
 
-The Bucs will counter with an offensive line that, after a severely injury-plagued 2025 season, is back to the starting five that produced very impressive results in 2024, anchored by All-Pro left tackle Tristan Wirfs. The Bucs will also be unveiling a new offensive coordinated by Zac Robinson and now featuring a stacked receiver room and a new running back tandem with Kenny Gainwell joining Bucky Irving.
+"Yeah, you hope so," Shanahan answered. "Those are things that we have to evaluate sooner than later. There are just guys who are going to be close, guys like Mykel Williams, guys like George Kittle who has taken a step back, want to see how Nick Bosa does in these practices.
+
+"Those are things that we have to evaluate sooner than later. There are just guys who are going to be close, guys like Mykel Williams, guys like George Kittle who has taken a step back, want to see how Nick Bosa does in these practices. They're guys who are healthy and doing good, but are they ready to get back and play right away?"
+
+There are just guys who are going to be close, guys like Mykel Williams, guys like George Kittle who has taken a step back, want to see how Nick Bosa does in these practices. They're guys who are healthy and doing good, but are they ready to get back and play right away?"
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrtVltv2zYU_iuEXvYwy6VkWZb8ljRely2xi8Rbga2FQJFHNhuKNEjKrlv0v-9Qsp10fdnjBgwwYofn_p3rl6hmnm8rKaJ5VNAmLyaTSZLwlM0aEEVSQz6hvGF1QxOez2jO8UUIUfJixlPBy2ZaZECnZZ3RNBpFnFnhovmfXyK221mzB1Exj6qRxDq_NRZ_P3LjPXlspd8GCdO2oD2zRyS9YVIfQKkfHGHWyj1TZCP34Mit3Uu9IYwo6TwIUjP-1EhQguyY9RrsiDAhAsvB2CdlmCCd5mA9KvTHMbk3Wnpjyc6CA-aMJkwLAsyqY3x66BzbAGmQiekj4QqJYInbKenH3_hZXUKrj0NoL2jGyo3U-Hy_ulncVTcPVz-tew7tkaPyxx0g8WHxdvWwvl2-QZJgPjylNM1jWsRpuU6TeZLPk9k4zwpK6Y-UzikNnNIC99IE9cvFm6v17e-L8GxZ4yu00EgBGHQ0p-NZen5XEoFmQSrkJVpvgVjYGeuJMAisNp4EMS-bI8LrMAiPYSMKAhy3sgZ8vWB6QWNpiNNsNyKYcHscERTbgA9iG8NUrKSGE6ACMAfKkQNYIAE3tCbG0YdRBPuzv9FVE4x69C1ksXeWmIbcsYMNHH2y7lkDo57nGvSGoUrMAyaJeEO2bB_8bA3aEExvwJrOoekGtMP6IY1F_INGFJcY3UFjvShnMPwDaYD5zobaeRbwWF8KyC9GM79lmlwpBUPNOECkRYwGQgEJjNB2bovev2ZuK9HqzyZU8JgEpK87jpFLpQhH_hDjAase9aAvZ1M9VmjEo0s9DJgF2CNa6kik_tjZY7xTbNNh1WONTMlQriMiXd8FIfwASp-5EETT-4_6Atqi4yiH2lBXG4q_N4nfnfIO1QeVGRrWHHsz9NUxhBq_tYYoaPwZh7XFtkOv30nbuL-H1gOJddLpPUg1tKmGw4sQuTEWm5P5wcIfjJMHU0t97sNvs9BXIX9CXix3QHlLrDFtzzlotp3WgXOIH9-hHYD9FTT27nmKkI9G9nzo69PxNEPG7_V7_X9u_p25iZ6nQsVRVobhOCynFp1SMA9A4mzGAclKTnE1iYmgSSZEmjGURqTk535APi6uHlfL6m7VD9kWOLaxdG0Yvqu7RfWwuPnt9fp2tQxEI0CdJjdT1X9lI-EUA4szZ4durhdX99Xq3XJxgwQsySOETfsS28v7ACelMaWTcpIngWCcPO2Vh-vwvzUfh01TscvCWS3Dstl1tZK8cl3bDgC9tDHUHDrcnooBiZhGQDf_aV0gapz3Fbk5d48H1hJ0EMbf2f9-FVtgAmNUrAYVcMH90esSiNaJjD3tXNXgVuoQe1yKH8L7XgKuqOd43y6WN8OCdqaz_ZZaX4e-kVxiEVycCgwerWzwmplHd6t3-BCIPT_-7mzwY-v9zs1fvTocDuP6AsoYS-0V4uTwzycfb1gLsWftjsU1O8bPfPHexVxq_GCfyrge9l-sG3UqlfgA8BQncTgioq8fwr3hfNU5EW4Bmpe0KEbRBrBeQp8PJ9nLgyOdZ8U8nV0ujaEjOFMK8UmmZ9j7M6LqxyXqqPoDI5oX6bd0t2XpNH_BENXTZiqKIsuarK5B5E1J81la1yVlk6bJMlFmtRAzKvIpnzSiTgvs5ow1WTItZnlZBoz5FlpW4cBxQ34OeAzFw1CIpa7Np3ifXJJVDVft4Em4bJOshmKS1KiznLJcJOUkm-YzkeU0SaZ0OilnrEyTWgDNEpjizcvprEBvp5AnWRJ9_QtTUtWs:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrtVlFv20YM_isHvfRhlnOWZEvyHoascQNjixO02YphKQRKR1lXn3WC7mRPK_rfx5McJ2m2X9AhiG2QPB758TuSX7wcbFFlUnhLLy_4XBRRDCGHoMwXcSxgkSIJEwxSnudBGgu-KIs0jQAKzkWRlvOkXBRhUmAqvIlXQCuMt_zziwdN0-oDigwsuSYVdLbSLf2-bqG27K2uandA7_dYW2h70vwirVX4xrCPiDs2Y3AAqSCXStqekUOE1rCuNujMBBNoGmmRfaigBvpnBnpZb1mFTBr6BGUrOleTpXbyIyo1ZTe6lla3rCKbpoXCygJZAy19ywas1PVwBFih6D7Wou3a2rfabxT0dGchDdn8yGrNKJAcih0jb1bu0UKukB3BMNOQWSlRTF-kmJ1ByfsRlGc63cqtrEl8c3u1-jW7en_57n6wqC1ZZLZvkJTvV3e37-_Xm2tSCbBOFPBg4fPED_k950seLPn8B_eDOxPZYuFyIrvN6vryfv37yolbKG1GrkspsC7IC5-mj2Il99IOQLhKevcEp9FdSygJjYbytqf8enYkfMeiMav1jkAzFhvmQHGZPyuMFI-G_10aOrHRhHApqULyQFVRQ0F9Q-F05oz9a7wdqpQJwf1p4uHhMSnvGnW7xcebj8Q7Q4HSnZQRna9GtrRaFkMsXd0QXEinLdFL1qzEI9JdLgV71BQl7sxkMLWESpQi8dFUulOifmOZQkus2k8favrz_kCoJqzXHat04yCcPHhPVIXakGuKmD0Qwtogg5ZAdBEZd6Gly1gFBwcswwOojopNTnT9GJAiQTtlVJ52PPy5M5Ztu95QWfQg2Q7YkoMcic10yWTUK7lDdtPvULGPUikJe_Nc8w1q5KwijC3ssH5e4ckAqHNvkGLVR7aR9Bh-1gZGphCABBOl9vjMzAma7yhhF27_xoX2PM7XD2CrtZiwvLMnWLCnzgOid7dtiVdDn3HmQxeiVlGR5RH6nx48h-n_oHwDivfUB7KCTKRrluOY22uaKLik9iaXcZHTLAtBBLMw5fMyCuKYjtKgkn8PTXN9c7O6Wl_eu665x4J4KM2e5L-ub9b3q6vs7pK68dv1HXXW242z0QLVqZeDyr6D8aaP9EJNJRuH1uZqdbeij40bXc4jtt-24bNirAbnPudhGCSJU2gjT9NqQJz6-udxfmVwHmO3m0HV5UoWmen2-xO6vXqBFU2clxT-V_oyJzz3cjAGjWMkzQZqOyPSZ8qNWD0RTlJthSReqX76KqLXs975oayp4qhcgi0SLalughA8qWVN12cl0aJr0U3fT05-kG4MPSHgEB43gHEuk-hDo1uabWul6Pm34MaX77MP75yNpYu2tnKbBVH5txuSWQRH4kHftS6aytrGLC8ujsfj1Mgp8faiLtXFAMuFeyrjT3-cdj4tAX7eutm8HTD2dwPGPgzXUy_x3az0Z97XT26FMTbrjHBbBg8TPltMvC0Sa1yc4374coeJ0mX4tMOMT6oApQiR5BHngcr0vjrajcBmw-pC6uCl3lQQzBfPDLx8XtI-m0RRGeU5ikWZ8kUc5HnKISzLKBJplAsRc7GYF2Ep8iAJIoigjGbzJF6kqUO0qHAP2YHwGAtypC3LH9uKL-tc_-UfZufqZOOGPUYyED6C-TxYxBjzGPMyLHgyC7CY8xyjJMcSijgtZxjMIU6jMCpSCJMgns14EidJCN7XfwB8LQF3:WIRE_MOBILE_MANIFEST_V1 -->

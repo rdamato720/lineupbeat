@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 485,
+ "count": 493,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -5374,6 +5374,94 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005738
+  },
+  {
+   "candidate_id": "mobile:onsi:7cb94a3ad213905f4277",
+   "player_id": "00-0033288",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-should-not-bring-george-kittle-australia-week-1",
+   "attempted_at": "2026-08-30T00:49:35+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-30T00:49:40+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006878
+  },
+  {
+   "candidate_id": "mobile:onsi:966d111815eeeb2474bc",
+   "player_id": "00-0039796",
+   "source_url": "https://www.si.com/nfl/ravens/onsi/12-winners-and-4-losers-from-ravens-preseason-win-over-commanders-01m15w29h67c",
+   "attempted_at": "2026-08-30T00:49:40+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T00:49:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00438
+  },
+  {
+   "candidate_id": "mobile:onsi:209adeca8674604b8124",
+   "player_id": "00-0037664",
+   "source_url": "https://www.si.com/nfl/colts/onsi/indianapolis-colts-position-battles-clear-winners-and-remaining-questions-entering-cut-day",
+   "attempted_at": "2026-08-30T00:49:42+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-30T00:49:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004322
+  },
+  {
+   "candidate_id": "mobile:onsi:11cb04d25f49c05f71c5",
+   "player_id": "00-0038997",
+   "source_url": "https://www.si.com/nfl/colts/onsi/indianapolis-colts-position-battles-clear-winners-and-remaining-questions-entering-cut-day",
+   "attempted_at": "2026-08-30T00:49:45+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-30T00:49:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004476
+  },
+  {
+   "candidate_id": "mobile:onsi:2a70f7320356fd0e26c7",
+   "player_id": "00-0035710",
+   "source_url": "https://www.si.com/nfl/colts/onsi/indianapolis-colts-position-battles-clear-winners-and-remaining-questions-entering-cut-day",
+   "attempted_at": "2026-08-30T00:49:47+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T00:49:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003788
+  },
+  {
+   "candidate_id": "mobile:onsi:9591afd4a9b4cafb0c63",
+   "player_id": "00-0036223",
+   "source_url": "https://www.si.com/nfl/colts/onsi/indianapolis-colts-position-battles-clear-winners-and-remaining-questions-entering-cut-day",
+   "attempted_at": "2026-08-30T00:49:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T00:49:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00483
+  },
+  {
+   "candidate_id": "mobile:onsi:d5c720b2a26765c6997f",
+   "player_id": "00-0039040",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/dolphins-saturday-mailbag-grant-growth-rookies-and-more-01m179yy810t",
+   "attempted_at": "2026-08-30T00:49:52+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T00:49:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005652
+  },
+  {
+   "candidate_id": "mobile:onsi:fc73f0726095ebe92e71",
+   "player_id": "00-0039849",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/final-arizona-cardinals-53-man-roster-projection",
+   "attempted_at": "2026-08-30T00:49:55+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-30T00:49:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00369
   }
  ]
 }
