@@ -282,7 +282,7 @@ def write(sport: str, rows: list[dict]) -> Path:
             fh, fieldnames=["id", "name", "team", "position", "aliases",
                             "espn_id", "rank", "depth_pos", "depth_order",
                             "injury_status", "years_exp", "age"],
-            extrasaction="ignore",
+            extrasaction="ignore", lineterminator="\n",
         )
         w.writeheader()
         w.writerows(rows)

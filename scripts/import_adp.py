@@ -143,7 +143,9 @@ def main():
         return
 
     with path.open("w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=fields, extrasaction="ignore")
+        w = csv.DictWriter(
+            fh, fieldnames=fields, extrasaction="ignore", lineterminator="\n"
+        )
         w.writeheader()
         w.writerows(existing)
     print(f"\n  wrote {path} ({hits} players carry an ADP)")
