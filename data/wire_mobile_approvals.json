@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-approval-ledger-v1",
- "count": 11,
+ "count": 12,
  "receipts": [
   {
    "receipt_id": "mobile:49f74b01c0954bb71f23e5fb8672a9a43dc3afb5edeb0b0b4bf6f7e24b35060f:5403509377",
@@ -557,6 +557,52 @@
      "evidence_sha256": "eb45d31d8ee3eace8515124ef8a7861252d28fb7d5e63295165d4bd64a401391",
      "public_summary_sha256": "a4183c2dfde5e080907ff6dd9c66d6c895fa8ffc45042d2f0b8e81db21d50157",
      "lineupbeat_impact_sha256": "a0cb610607e727c54cdb9a914c4e0611a3bdea1d62147caa86e56b3140b75a3e"
+    }
+   ]
+  },
+  {
+   "receipt_id": "mobile:84dfa6e11ae77701db8ed23557667f619651ed280d473b9633943fcadb58caad:5471840774",
+   "batch_id": "84dfa6e11ae77701db8ed23557667f619651ed280d473b9633943fcadb58caad",
+   "issue_number": 107,
+   "comment_id": "5471840774",
+   "approved_by": "Ralph Damato",
+   "approved_by_handle": "rdamato720",
+   "approved_at": "2026-08-30T23:10:19Z",
+   "approval_statement": "approve all",
+   "manifest_sha256": "84dfa6e11ae77701db8ed23557667f619651ed280d473b9633943fcadb58caad",
+   "publication_sha256_at_draft": "b5f5d8844f4bbed6f90672bb90a3ff44d94bdd70d65c3fdb2824a4af41587699",
+   "publication_sha256_before": "b5f5d8844f4bbed6f90672bb90a3ff44d94bdd70d65c3fdb2824a4af41587699",
+   "publication_sha256_after": "1f2897e6847492d997d328d685a5c46945f84254e03e7ef1c362ff6031095198",
+   "publication_store_changed_since_draft": false,
+   "publication_count_before": 82,
+   "publication_count_after": 84,
+   "publications_applied": 2,
+   "outcomes": [
+    {
+     "card_number": 1,
+     "candidate_id": "mobile:article:4a0e9f38e295bf4b5d8d",
+     "player_id": "00-0040704",
+     "player_name": "Dillon Gabriel",
+     "decision": "APPROVED",
+     "edited": false,
+     "public_summary": "The Browns placed Dillon Gabriel on injured reserve as they set their initial 53-man roster.",
+     "lineupbeat_impact": "Gabriel is off Cleveland's active roster for now, removing any immediate path to game action. The report does not identify the injury or provide a return timeline.",
+     "evidence_sha256": "bac62af2fe17a4363015fbc301ba8d0d2def4b4fa8b024619ec41cc06fbaaf17",
+     "public_summary_sha256": "4b3477f6eea86c3ad611a0caa85479caadfaf8f7e47308816b388355bff5bc54",
+     "lineupbeat_impact_sha256": "11f99e80f9a691bec367e18e4584f686da944011754feaee14789e2a0a29a98f"
+    },
+    {
+     "card_number": 2,
+     "candidate_id": "mobile:article:e3e8b50701289d5b68a7",
+     "player_id": "00-0040668",
+     "player_name": "Shedeur Sanders",
+     "decision": "APPROVED",
+     "edited": false,
+     "public_summary": "Shedeur Sanders will back up Browns starter Deshaun Watson after Cleveland set its initial 53-man roster.",
+     "lineupbeat_impact": "Sanders is officially positioned as Watson’s backup, giving him contingency value only if Watson misses time. Monitor whether Cleveland changes the quarterback depth chart or Watson’s availability.",
+     "evidence_sha256": "bac62af2fe17a4363015fbc301ba8d0d2def4b4fa8b024619ec41cc06fbaaf17",
+     "public_summary_sha256": "cf9cba2a492bb9bbf721ccef74716c6a4f56b4b15d75e62b6eccd081f6372165",
+     "lineupbeat_impact_sha256": "6e2e2834d8be2eef852b60f941d92f4d733dc638ebbd468df0e7ff7dafb83a64"
     }
    ]
   }
