@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-approval-ledger-v1",
- "count": 14,
+ "count": 15,
  "receipts": [
   {
    "receipt_id": "mobile:49f74b01c0954bb71f23e5fb8672a9a43dc3afb5edeb0b0b4bf6f7e24b35060f:5403509377",
@@ -669,6 +669,39 @@
      "evidence_sha256": "3514d71cc83d5eb9865ad341b78c3ebd4b6d24013c313dcdcfcfd1aafe4c18fa",
      "public_summary_sha256": "36e37deafcdec7571ee65659de43bc7573ec7af4b3dbed9b8e6e074cb290b852",
      "lineupbeat_impact_sha256": "3c9245e17bbdbcb0da70b6f78268e471d5c165ac0c75a463b4df1982ae45c90a"
+    }
+   ]
+  },
+  {
+   "receipt_id": "mobile:a587c96928b22a4ae61a9d40ed6c4774ab5fc3cb75382f7357efcecbec77e7f5:5471872892",
+   "batch_id": "a587c96928b22a4ae61a9d40ed6c4774ab5fc3cb75382f7357efcecbec77e7f5",
+   "issue_number": 103,
+   "comment_id": "5471872892",
+   "approved_by": "Ralph Damato",
+   "approved_by_handle": "rdamato720",
+   "approved_at": "2026-08-30T23:17:53Z",
+   "approval_statement": "approve all",
+   "manifest_sha256": "a587c96928b22a4ae61a9d40ed6c4774ab5fc3cb75382f7357efcecbec77e7f5",
+   "publication_sha256_at_draft": "b5f5d8844f4bbed6f90672bb90a3ff44d94bdd70d65c3fdb2824a4af41587699",
+   "publication_sha256_before": "b0c9e59b8b7dca3934113aeb02024a3ea1dac4b64ba7ba79bc6fc50cc5b87fc1",
+   "publication_sha256_after": "a7e875ec1910304f2648eaf63b30fafcdd71ca65fdf4b37db50741bf3983ecea",
+   "publication_store_changed_since_draft": true,
+   "publication_count_before": 85,
+   "publication_count_after": 86,
+   "publications_applied": 1,
+   "outcomes": [
+    {
+     "card_number": 1,
+     "candidate_id": "mobile:onsi:9b8cd1cd8ecd712517a3",
+     "player_id": "00-0040735",
+     "player_name": "Luther Burden III",
+     "decision": "APPROVED",
+     "edited": false,
+     "public_summary": "Luther Burden III has been unavailable for the Bears late in the preseason, with his status for the opener not specified.",
+     "lineupbeat_impact": "Burden's availability is worth monitoring as the opener approaches, but the source gives no reason for his absence, diagnosis, or timetable. His practice status next week would provide the clearest update.",
+     "evidence_sha256": "73414185540874bdda6f4f29804e0ec103ffc1190463c1bd73838b9686a59861",
+     "public_summary_sha256": "b1e63d8d25614699899de6cdf49c745e1adecadf064f3840d4ede9147b2cc3d9",
+     "lineupbeat_impact_sha256": "a6b3995eea81fe07679840cd66b3b7b4ed51571ea151792d4badc16e84cb5c5f"
     }
    ]
   }
