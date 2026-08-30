@@ -13,7 +13,7 @@ class RankingFormatTests(unittest.TestCase):
         self.assertEqual(set(self.rows), {"ppr", "non_ppr", "superflex"})
         self.assertTrue(all(len(rows) == 615 for rows in self.rows.values()))
         self.assertEqual(formats.source_updated(formats.SOURCE).date().isoformat(),
-                         "2026-08-24")
+                         "2026-08-30")
 
     def test_top_200_and_position_ranks_are_complete(self):
         for key, rows in self.rows.items():
