@@ -37,3 +37,10 @@ python scripts/odds_inputs.py --report
 The collector reserves API credits, limits prop games per sport and reports
 provider quota headers without printing the secret. Missing credentials skip
 the private refresh and do not stop the public site build.
+
+`generate_college_week1.py --odds-db beatwire.db` consumes the latest private
+NCAAF snapshot when preparing the next reviewed candidate. Qualified consensus
+game lines replace the single scoreboard line. High-quality props receive a
+30% blend, medium-quality props an 18% blend, and one-book props no adjustment;
+stat-specific caps prevent the market from becoming the projection. The
+command refuses to overwrite the published immutable v1.0 release.

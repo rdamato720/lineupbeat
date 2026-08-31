@@ -493,6 +493,7 @@ jobs:
           python scripts/test_resolve.py
           python scripts/test_tapi.py
           python scripts/test_odds_inputs.py
+          python scripts/test_weekly_market_inputs.py
           # The semantic review path is a publication boundary. This focused
           # suite catches stale per-card identity, evidence/request hash
           # mixing, rolling-page timestamps and claim-subject enforcement.

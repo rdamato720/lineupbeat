@@ -10,6 +10,7 @@ import argparse
 import csv
 import hashlib
 import json
+import re
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -22,6 +23,21 @@ STATS = (
     "interceptions", "rush_attempts", "rushing_yards", "rushing_td",
     "receptions", "receiving_yards", "receiving_td",
 )
+PROP_TO_STAT = {
+    "player_pass_yds": "passing_yards",
+    "player_pass_tds": "passing_td",
+    "player_rush_yds": "rushing_yards",
+    "player_receptions": "receptions",
+    "player_reception_yds": "receiving_yards",
+}
+PROP_WEIGHTS = {"HIGH": .30, "MEDIUM": .18, "LOW": 0.0}
+PROP_CAPS = {
+    "passing_yards": .20,
+    "passing_td": .30,
+    "rushing_yards": .25,
+    "receptions": .20,
+    "receiving_yards": .25,
+}
 
 
 def clamp(value, low, high):
@@ -47,6 +63,124 @@ def yahoo_points(row):
 
 def event_team(team):
     return team.get("location") or team.get("shortDisplayName")
+
+
+def normalized_name(value):
+    value = re.sub(r"[^a-z0-9 ]", "", (value or "").lower())
+    return " ".join(re.sub(r"\b(jr|sr|ii|iii|iv|v)\b", "", value).split())
+
+
+def team_similarity(model_name, market_name):
+    """Conservative team-name match for location vs full sportsbook names."""
+    model = normalized_name(TEAM_ALIASES.get(model_name, model_name))
+    market = normalized_name(market_name)
+    if not model or not market:
+        return 0.0
+    if model == market:
+        return 1.0
+    if market.startswith(model + " ") or model.startswith(market + " "):
+        # A one-word location is ambiguous (Texas vs Texas State, Miami vs
+        # Miami Ohio). Let the opponent half of the matchup disambiguate it.
+        return .60 if min(len(model.split()), len(market.split())) == 1 else .85
+    left, right = set(model.split()), set(market.split())
+    return len(left & right) / len(left | right)
+
+
+def game_match_score(team, opponent, is_home, market):
+    expected_team = market["home_team"] if is_home else market["away_team"]
+    expected_opp = market["away_team"] if is_home else market["home_team"]
+    first = team_similarity(team, expected_team)
+    second = team_similarity(opponent, expected_opp)
+    if min(first, second) < .50:
+        return 0.0
+    return first + second
+
+
+def overlay_game_markets(games, market_games):
+    """Prefer qualified multi-book consensus to the single scoreboard line."""
+    overlaid = 0
+    seen = set()
+    for team, game in games.items():
+        best = max(
+            market_games,
+            key=lambda market: game_match_score(
+                team, game["opponent"], game["home"], market),
+            default=None,
+        )
+        if not best:
+            continue
+        score = game_match_score(team, game["opponent"], game["home"], best)
+        if score < 1.35 or best.get("quality") not in {"HIGH", "MEDIUM"}:
+            continue
+        implied = (best.get("home_implied_total") if game["home"]
+                   else best.get("away_implied_total"))
+        opponent_implied = (best.get("away_implied_total") if game["home"]
+                            else best.get("home_implied_total"))
+        if implied is None or opponent_implied is None:
+            continue
+        game["implied"] = float(implied)
+        game["opponent_implied"] = float(opponent_implied)
+        game["over_under"] = float(best["game_total"])
+        game["market_event_id"] = best["event_id"]
+        if best["event_id"] not in seen:
+            overlaid += 1
+            seen.add(best["event_id"])
+    return overlaid
+
+
+def capped_blend(model_value, market_value, weight, cap):
+    if weight <= 0 or market_value is None:
+        return model_value
+    if model_value <= 0:
+        return model_value
+    target = model_value + weight * (float(market_value) - model_value)
+    return clamp(target, model_value * (1 - cap), model_value * (1 + cap))
+
+
+def apply_player_markets(rows, market_props):
+    """Calibrate matching weekly stats; missing or one-book props do nothing."""
+    candidates = defaultdict(list)
+    for row in rows:
+        candidates[normalized_name(row["player_name"])].append(row)
+    adjustments = 0
+    matched_players = set()
+    for prop in market_props:
+        stat = PROP_TO_STAT.get(prop.get("market_key"))
+        weight = PROP_WEIGHTS.get(prop.get("quality"), 0.0)
+        line = prop.get("consensus_line")
+        if not stat or weight <= 0 or line is None:
+            continue
+        matches = []
+        for row in candidates.get(normalized_name(prop.get("player_name")), []):
+            score = game_match_score(
+                row["team_name"], row["opponent"], row["home"], prop)
+            if score >= 1.35:
+                matches.append((score, row))
+        if not matches:
+            continue
+        matches.sort(key=lambda value: value[0], reverse=True)
+        row = matches[0][1]
+        before = float(row[stat])
+        after = capped_blend(before, line, weight, PROP_CAPS[stat])
+        if abs(after - before) > 1e-12:
+            row[stat] = after
+            adjustments += 1
+            matched_players.add(row["player_id"])
+    for row in rows:
+        row["fantasy_points"] = yahoo_points(row)
+    return adjustments, len(matched_players)
+
+
+def private_market_inputs(path):
+    """Read the latest private snapshots through the collector's stable API."""
+    import odds_inputs
+    conn = odds_inputs.connect(path)
+    sport = odds_inputs.SPORT_KEYS["ncaaf"]
+    games = odds_inputs.latest_team_inputs(conn, sport)
+    props = odds_inputs.latest_player_inputs(conn, sport)
+    if not games:
+        raise SystemExit("private odds database has no NCAAF game snapshot")
+    return games, props
 
 
 def scheduled_games(scoreboard, eligible):
@@ -92,7 +226,7 @@ def scheduled_games(scoreboard, eligible):
     return games, compact
 
 
-def project(players, teams, games, generated_at):
+def project(players, teams, games, generated_at, market_props=None):
     team_by_name = {row["team_name"]: row for row in teams}
     output = []
     for source in players:
@@ -146,6 +280,10 @@ def project(players, teams, games, generated_at):
         row["fantasy_points"] = yahoo_points(row)
         output.append(row)
 
+    adjustment_count = matched_players = 0
+    if market_props:
+        adjustment_count, matched_players = apply_player_markets(output, market_props)
+
     by_position = defaultdict(list)
     for row in output:
         by_position[row["position"]].append(row)
@@ -156,7 +294,7 @@ def project(players, teams, games, generated_at):
     output.sort(key=lambda x: (-x["fantasy_points"], x["player_name"]))
     for rank, row in enumerate(output, 1):
         row["overall_rank"] = rank
-    return output
+    return output, adjustment_count, matched_players
 
 
 def main():
@@ -164,6 +302,10 @@ def main():
     parser.add_argument("--scoreboard", required=True)
     parser.add_argument("--output", default=str(ROOT / "data/college/2026/week-1/v1.0"))
     parser.add_argument("--generated-at", default=datetime.now(timezone.utc).isoformat())
+    parser.add_argument(
+        "--odds-db",
+        help="private runtime database; creates a market-calibrated candidate",
+    )
     args = parser.parse_args()
     out = Path(args.output)
     provenance = out / "provenance"
@@ -174,7 +316,16 @@ def main():
         teams = list(csv.DictReader(handle))
     scoreboard = json.loads(Path(args.scoreboard).read_text())
     games, compact = scheduled_games(scoreboard, {r["team_name"] for r in teams})
-    rows = project(players, teams, games, args.generated_at)
+    market_games = market_props = []
+    overlaid_games = 0
+    if args.odds_db:
+        if out.resolve() == (ROOT / "data/college/2026/week-1/v1.0").resolve():
+            raise SystemExit(
+                "private odds inputs must write a candidate output, not overwrite v1.0")
+        market_games, market_props = private_market_inputs(args.odds_db)
+        overlaid_games = overlay_game_markets(games, market_games)
+    rows, prop_adjustments, matched_prop_players = project(
+        players, teams, games, args.generated_at, market_props)
     if len(games) != 64:
         raise SystemExit(f"expected 64 scheduled model teams, found {len(games)}")
     if not rows:
@@ -223,8 +374,18 @@ def main():
                                  for p in ("QB", "RB", "WR", "TE")}},
         "files": files,
     }
+    if args.odds_db:
+        manifest["private_market_calibration"] = {
+            "game_events_overlaid": overlaid_games,
+            "prop_stat_adjustments": prop_adjustments,
+            "players_with_prop_adjustments": matched_prop_players,
+            "published_odds": False,
+        }
     (out / "manifest.json").write_text(json.dumps(manifest, indent=1) + "\n")
-    print(f"week 1: {len(rows)} players, {len(games)} teams")
+    print(
+        f"week 1: {len(rows)} players, {len(games)} teams; "
+        f"private market games={overlaid_games}, prop players={matched_prop_players}"
+    )
 
 
 if __name__ == "__main__":
