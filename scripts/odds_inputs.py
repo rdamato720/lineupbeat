@@ -120,6 +120,20 @@ def iso(value: datetime | None = None) -> str:
     return (value or utcnow()).astimezone(timezone.utc).isoformat()
 
 
+def parse_iso(value: str) -> datetime:
+    return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
+
+
+def prop_schedule_window(path: Path | str) -> tuple[datetime, datetime]:
+    """Return the exact kickoff window from a frozen weekly schedule."""
+    payload = json.loads(Path(path).read_text())
+    games = payload.get("games") if isinstance(payload, dict) else payload
+    dates = [parse_iso(game["date"]) for game in (games or []) if game.get("date")]
+    if not dates:
+        raise ValueError("prop schedule contains no dated games")
+    return min(dates), max(dates)
+
+
 def median(values):
     values = [float(value) for value in values if value is not None]
     return statistics.median(values) if values else None
@@ -459,7 +473,8 @@ def latest_player_inputs(conn, sport_key: str) -> list[dict]:
 
 
 def fetch_sport(conn, client: OddsClient, sport: str, include_props: bool,
-                max_prop_events: int, credit_reserve: int):
+                max_prop_events: int, credit_reserve: int,
+                prop_window: tuple[datetime, datetime] | None = None):
     sport_key = SPORT_KEYS[sport]
     events = client.get(
         f"sports/{sport_key}/odds",
@@ -477,8 +492,16 @@ def fetch_sport(conn, client: OddsClient, sport: str, include_props: bool,
         # More heavily covered games are much more likely to carry player
         # markets. Chronological selection burned the NCAAF cap on small early
         # games whose event payloads were valid but contained zero props.
+        candidates = events
+        if prop_window:
+            start, end = prop_window
+            candidates = [
+                event for event in events
+                if event.get("commence_time")
+                and start <= parse_iso(event["commence_time"]) <= end
+            ]
         upcoming = sorted(
-            events,
+            candidates,
             key=lambda event: (
                 -len(event.get("bookmakers") or []),
                 event.get("commence_time") or "",
@@ -543,6 +566,10 @@ def main(argv=None):
     parser.add_argument("--sports", default="nfl,ncaaf")
     parser.add_argument("--include-props", action="store_true")
     parser.add_argument("--max-prop-events-per-sport", type=int, default=16)
+    parser.add_argument(
+        "--prop-schedule",
+        help="limit player-prop attempts to the kickoff window in this JSON schedule",
+    )
     parser.add_argument("--credit-reserve", type=int, default=75)
     parser.add_argument("--max-age-hours", type=float, default=20)
     parser.add_argument("--force", action="store_true")
@@ -566,6 +593,7 @@ def main(argv=None):
         print("  THE_ODDS_API_KEY unavailable; private odds refresh skipped")
         return 0
     client = OddsClient(key)
+    schedule_window = prop_schedule_window(args.prop_schedule) if args.prop_schedule else None
     failures = []
     for sport in sports:
         sport_key = SPORT_KEYS[sport]
@@ -576,6 +604,7 @@ def main(argv=None):
             snapshot_id, events, prop_events, prop_attempts = fetch_sport(
                 conn, client, sport, args.include_props,
                 args.max_prop_events_per_sport, args.credit_reserve,
+                prop_window=schedule_window,
             )
             print(
                 f"  {sport}: snapshot {snapshot_id}, {events} games, "

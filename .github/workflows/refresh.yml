@@ -728,7 +728,8 @@ jobs:
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
         run: |
           python scripts/odds_inputs.py --sports ncaaf --include-props --force \
-            --max-prop-events-per-sport 16 --credit-reserve 75
+            --max-prop-events-per-sport 16 --credit-reserve 75 \
+            --prop-schedule data/college/2026/week-1/v1.0/provenance/college_week1_schedule_2026.json
 
       # A props-enabled branch run produces a review artifact only. It reads
       # the private cache, writes no raw lines, and never changes the active

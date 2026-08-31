@@ -150,6 +150,47 @@ class ConsensusTests(unittest.TestCase):
             self.assertEqual({row["player_name"] for row in players},
                              {"Example Quarterback", "Example Runner"})
 
+    def test_prop_window_excludes_better_covered_off_slate_game(self):
+        off_slate = fixture()
+        off_slate["id"] = "event-off-slate"
+        off_slate["sport_key"] = odds.SPORT_KEYS["ncaaf"]
+        off_slate["commence_time"] = "2026-09-12T16:00:00Z"
+        off_slate["bookmakers"].append({
+            "key": "fourth", "last_update": "2026-08-30T20:00:00Z",
+            "markets": [],
+        })
+        on_slate = fixture()
+        on_slate["id"] = "event-on-slate"
+        on_slate["sport_key"] = odds.SPORT_KEYS["ncaaf"]
+        on_slate["commence_time"] = "2026-09-05T16:00:00Z"
+
+        class Client:
+            credits_used = 0
+            credits_remaining = 500
+
+            def __init__(self):
+                self.attempted = []
+
+            def get(self, path, **params):
+                if "/events/" not in path:
+                    return [off_slate, on_slate]
+                self.attempted.append(path)
+                return on_slate
+
+        client = Client()
+        window = (
+            odds.parse_iso("2026-09-03T22:00:00Z"),
+            odds.parse_iso("2026-09-07T23:30:00Z"),
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            conn = odds.connect(Path(directory) / "runtime.db")
+            _, _, prop_events, attempts = odds.fetch_sport(
+                conn, client, "ncaaf", True, max_prop_events=1,
+                credit_reserve=75, prop_window=window)
+        self.assertEqual((prop_events, attempts), (1, 1))
+        self.assertEqual(len(client.attempted), 1)
+        self.assertIn("event-on-slate", client.attempted[0])
+
 
 if __name__ == "__main__":
     unittest.main()
