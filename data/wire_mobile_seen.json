@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 559,
+ "count": 564,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -6188,6 +6188,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.007812
+  },
+  {
+   "candidate_id": "mobile:onsi:01a94251882cd15bc262",
+   "player_id": "00-0039040",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/late-round-sleepers-rankings-targets-wide-receiver-fantasy-football-caleb-douglas",
+   "attempted_at": "2026-08-31T05:35:28+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T05:35:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00391
+  },
+  {
+   "candidate_id": "mobile:onsi:c6365a9b13e8aff6a70f",
+   "player_id": "00-0039338",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/late-round-sleepers-rankings-targets-wide-receiver-fantasy-football-caleb-douglas",
+   "attempted_at": "2026-08-31T05:35:31+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-31T05:35:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007868
+  },
+  {
+   "candidate_id": "mobile:onsi:0f742d698f5298ff8b7b",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/late-round-sleepers-rankings-targets-wide-receiver-fantasy-football-caleb-douglas",
+   "attempted_at": "2026-08-31T05:35:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T05:35:40+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004092
+  },
+  {
+   "candidate_id": "mobile:onsi:4fba2893ff0f65ee38ec",
+   "player_id": "00-0034351",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/late-round-sleepers-rankings-targets-wide-receiver-fantasy-football-caleb-douglas",
+   "attempted_at": "2026-08-31T05:35:40+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T05:35:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005724
+  },
+  {
+   "candidate_id": "mobile:onsi:d8ef8cdd8dd6da5c3b41",
+   "player_id": "00-0041547",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/late-round-sleepers-rankings-targets-wide-receiver-fantasy-football-caleb-douglas",
+   "attempted_at": "2026-08-31T05:35:45+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T05:35:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005142
   }
  ]
 }
