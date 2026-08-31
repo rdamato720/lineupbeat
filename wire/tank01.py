@@ -131,10 +131,14 @@ def extract_items(payload: object) -> list[dict]:
     if status is not None and str(status) not in {"200", "200.0"}:
         detail = payload.get("error") or payload.get("message") or "provider error"
         raise Tank01Error(redact(f"Tank01 statusCode {status}: {detail}"))
-    if payload.get("error") and not payload.get("body"):
+    has_body = "body" in payload
+    body = _json_body(payload["body"] if has_body else payload)
+    # Tank01 returns a successful empty result as statusCode=200, body=[],
+    # error="Your query returned no results."  An empty list is a valid news
+    # collection, not a provider failure.  Keep failing when an error arrives
+    # without any parseable response body.
+    if payload.get("error") and (not has_body or body in (None, "", {})):
         raise Tank01Error(redact(f"Tank01 error: {payload['error']}"))
-
-    body = _json_body(payload.get("body", payload))
     if isinstance(body, list):
         if not all(isinstance(row, dict) for row in body):
             raise Tank01Error("Tank01 news list contains a non-object item")

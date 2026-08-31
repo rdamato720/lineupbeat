@@ -50,6 +50,18 @@ class Tank01Tests(unittest.TestCase):
         with self.assertRaisesRegex(tank01.Tank01Error, "statusCode 429"):
             tank01.extract_items({"statusCode": 429, "error": "quota"})
 
+    def test_http_200_empty_news_result_is_valid(self):
+        payload = {
+            "statusCode": 200,
+            "body": [],
+            "error": "Your query returned no results.",
+        }
+        self.assertEqual(tank01.extract_items(payload), [])
+
+    def test_http_200_error_without_body_still_fails(self):
+        with self.assertRaisesRegex(tank01.Tank01Error, "Tank01 error: quota"):
+            tank01.extract_items({"statusCode": 200, "error": "quota"})
+
     def test_key_is_scrubbed_from_transport_failure(self):
         key = "test-rapidapi-secret-12345"
         def broken(_url, _headers, _timeout):
@@ -130,6 +142,37 @@ class Tank01Tests(unittest.TestCase):
             self.assertEqual(state["observations"][0]["item_count"], 1)
             self.assertEqual(report["stories_observed"], 1)
             self.assertTrue(args.raw.exists())
+            self.assertFalse(report["published"])
+            self.assertEqual(report["model_calls"], 0)
+
+    def test_empty_news_capture_counts_as_successful_observation(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            args = argparse.Namespace(
+                state=root / "state.json", raw=root / "raw.json",
+                report_json=root / "report.json", report_md=root / "report.md",
+                days=7, max_requests=3,
+            )
+            payload = {
+                "statusCode": 200,
+                "body": [],
+                "error": "Your query returned no results.",
+            }
+            original = os.environ.get(tank01.KEY_ENV)
+            os.environ[tank01.KEY_ENV] = "test-rapidapi-secret-12345"
+            try:
+                report = dark.run(args, transport=lambda *_: payload,
+                                  at=datetime(2026, 8, 31, 13, tzinfo=timezone.utc))
+            finally:
+                if original is None:
+                    os.environ.pop(tank01.KEY_ENV, None)
+                else:
+                    os.environ[tank01.KEY_ENV] = original
+            state = json.loads(args.state.read_text())
+            self.assertEqual(state["attempts"][0]["outcome"], "SUCCESS")
+            self.assertEqual(state["observations"][0]["item_count"], 0)
+            self.assertEqual(report["observations"], 1)
+            self.assertEqual(report["stories_observed"], 0)
             self.assertFalse(report["published"])
             self.assertEqual(report["model_calls"], 0)
 
