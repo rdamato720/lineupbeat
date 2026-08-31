@@ -25,8 +25,9 @@ jobs:
       TANK01_RAPIDAPI_KEY: ${{ secrets.TANK01_RAPIDAPI_KEY }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: main
+        # Manual dispatches must test the selected development ref. Scheduled
+        # runs exist only on the default branch after this is approved and
+        # merged, so no hard-coded production checkout is needed here.
 
       - uses: actions/setup-python@v5
         with:
