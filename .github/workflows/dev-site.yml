@@ -1,0 +1,105 @@
+name: build development site
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+concurrency:
+  group: lineupbeat-development-site
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    env:
+      DEV_PROJECT: lineupbeat-dev
+      DEV_BASE_URL: https://lineupbeat-dev.pages.dev
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Development safety gates
+        run: |
+          python scripts/test_dev_site.py
+          python scripts/test_resolve.py
+          python scripts/test_player_pages.py
+          python scripts/test_ranking_formats.py
+          python scripts/test_comparison_tool.py
+          python scripts/test_feedback.py
+          python -m beatwire.cli doctor --sport nfl
+          python scripts/sync_home_nav.py --check
+
+      - name: Read the public production feed
+        run: |
+          if ! curl --fail --silent --show-error --location --retry 3 \
+              https://lineupbeat.com/data/feed.json \
+              --output /tmp/lineupbeat-public-feed.json; then
+            echo "::warning title=Live feed unavailable::Using the committed public rollback snapshot."
+            cp data/rollback/feed.before-replacement.json \
+              /tmp/lineupbeat-public-feed.json
+          fi
+
+      - name: Build development artifact without private APIs
+        run: |
+          python scripts/dev_site.py seed \
+            --feed /tmp/lineupbeat-public-feed.json
+          python scripts/dev_site.py hydrate-db \
+            --feed /tmp/lineupbeat-public-feed.json \
+            --db /tmp/lineupbeat-development.db
+          python scripts/schedule_strength.py --season 2026 --quiet || true
+          python scripts/build_projections.py data/projections.xlsx || true
+          python scripts/build_pages.py --base "$DEV_BASE_URL" \
+            --db /tmp/lineupbeat-development.db
+          python scripts/build_rankings.py \
+            || echo "::error title=Development rankings unavailable::Rankings validation failed."
+          python scripts/build_ranking_formats.py \
+            || echo "::error title=Development ranking formats unavailable::Ranking-format validation failed."
+          python scripts/build_comparison_tool.py \
+            || echo "::error title=Development comparison tool unavailable::Comparison validation failed."
+          python scripts/build_sos.py || true
+          python scripts/build_projections.py data/projections.xlsx || true
+          python scripts/build_coaching.py || true
+          python scripts/build_ol_rb.py --season 2025 || true
+          python scripts/build_changes.py || true
+          python scripts/build_draft_value.py || true
+          python scripts/build_college_projections.py
+          python scripts/build_404.py
+          python scripts/build_wire.py --base "$DEV_BASE_URL"
+          python scripts/wire_homepage_replacement.py --apply
+          python scripts/build_pages.py --base "$DEV_BASE_URL" \
+            --db /tmp/lineupbeat-development.db
+          python scripts/dev_site.py protect --label "$GITHUB_REF_NAME"
+          python scripts/verify_deploy_artifact.py site
+          python scripts/dev_site.py verify
+
+      - name: Upload development artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lineupbeat-development-${{ github.run_id }}
+          path: site
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Deploy only to the isolated development project
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          test "$DEV_PROJECT" = "lineupbeat-dev"
+          npx --yes wrangler@latest pages project create "$DEV_PROJECT" \
+            --production-branch=develop || true
+          branch=$(printf '%s' "$GITHUB_REF_NAME" | tr '/_' '--')
+          npx --yes wrangler@latest pages deploy site \
+            --project-name="$DEV_PROJECT" --branch="$branch" \
+            --commit-dirty=true

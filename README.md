@@ -175,6 +175,20 @@ reporter accuracy scoring later.
 
 ## The site
 
+### Development site
+
+Production is built only from `main`. The isolated development project is
+`lineupbeat-dev`, built by `.github/workflows/dev-site.yml` from `develop` or
+by manual dispatch from a feature branch. It reads only the already-public
+production feed, makes no news, odds, roster, or model API calls, and deploys
+only to `lineupbeat-dev.pages.dev`. Every HTML page carries a visible
+development banner plus `noindex`; `_headers` and `robots.txt` enforce the
+same boundary for crawlers.
+
+Normal flow: merge a feature branch into `develop`, review the development
+URL, then merge the approved changes into `main`. The development workflow
+has no command that targets the production `lineupbeat` Pages project.
+
 ```bash
 python -m beatwire.cli export --sports nfl,nhl --out site/data/feed.json
 open site/index.html
