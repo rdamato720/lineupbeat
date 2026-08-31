@@ -44,3 +44,10 @@ game lines replace the single scoreboard line. High-quality props receive a
 30% blend, medium-quality props an 18% blend, and one-book props no adjustment;
 stat-specific caps prevent the market from becoming the projection. The
 command refuses to overwrite the published immutable v1.0 release.
+
+A manual refresh with `fetch_odds_props` enabled builds a `v1.1` candidate and
+uploads only its derived projections and deterministic QA report. The database,
+bookmaker names, raw lines, prices, probabilities and consensus values are not
+included. Branch runs cannot deploy. Promotion requires reviewing the candidate,
+copying it into a new immutable release directory, pinning its manifest hash and
+rerunning the weekly publication tests.

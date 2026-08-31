@@ -91,6 +91,11 @@ class ConsensusTests(unittest.TestCase):
             players = odds.latest_player_inputs(conn, "americanfootball_nfl")
             self.assertEqual({row["player_name"] for row in players},
                              {"Example Quarterback", "Example Runner"})
+            info = odds.latest_snapshot_info(
+                conn, "americanfootball_nfl", require_props=True)
+            self.assertEqual(info["snapshot_id"], snapshot_id)
+            self.assertEqual(info["player_count"], 2)
+            self.assertEqual(info["prop_count"], 2)
             tables = {row[0] for row in conn.execute(
                 "SELECT name FROM sqlite_master WHERE type='table'")}
             self.assertIn("odds_quotes", tables)

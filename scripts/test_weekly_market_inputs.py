@@ -12,6 +12,20 @@ SPEC.loader.exec_module(week)
 
 
 class WeeklyMarketTests(unittest.TestCase):
+    def test_frozen_compact_schedule_is_reusable(self):
+        schedule = {"games": [{
+            "event_id": "espn-1", "date": "2026-09-05T00:00:00Z",
+            "home": "Texas", "away": "Texas State",
+            "home_abbr": "TEX", "away_abbr": "TXST",
+            "over_under": 61.5, "home_spread": -24.5,
+            "source": "https://example.test/game",
+        }]}
+        games, compact = week.scheduled_games(schedule, {"Texas", "Texas State"})
+        self.assertEqual(len(compact), 1)
+        self.assertEqual(games["Texas"]["opponent"], "Texas State")
+        self.assertAlmostEqual(games["Texas"]["implied"], 43.0)
+        self.assertAlmostEqual(games["Texas State"]["implied"], 18.5)
+
     def test_consensus_game_overlay_replaces_single_book_line(self):
         games = {
             "Texas": {

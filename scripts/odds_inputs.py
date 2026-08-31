@@ -413,6 +413,25 @@ def latest_team_inputs(conn, sport_key: str) -> list[dict]:
     )]
 
 
+def latest_snapshot_info(conn, sport_key: str, require_props: bool = False) -> dict | None:
+    """Return audit metadata without exposing quotes or provider payloads."""
+    prop_clause = "AND r.include_props=1" if require_props else ""
+    row = conn.execute(
+        f"""SELECT r.snapshot_id, r.sport_key, r.fetched_at, r.include_props,
+                   r.event_count, r.prop_event_count, r.credits_used,
+                   r.credits_remaining,
+                   COUNT(DISTINCT p.player_name) AS player_count,
+                   COUNT(p.market_key) AS prop_count
+              FROM odds_fetch_runs r
+              LEFT JOIN odds_player_props p USING (snapshot_id)
+             WHERE r.sport_key=? AND r.status='complete' {prop_clause}
+             GROUP BY r.snapshot_id
+             ORDER BY r.fetched_at DESC LIMIT 1""",
+        (sport_key,),
+    ).fetchone()
+    return dict(row) if row else None
+
+
 def latest_player_inputs(conn, sport_key: str) -> list[dict]:
     """Private player-prop consensus from the latest prop-bearing snapshot."""
     row = conn.execute(
@@ -480,7 +499,8 @@ def report(conn):
         """SELECT r.snapshot_id, r.sport_key, r.fetched_at, r.include_props,
                   r.status, r.event_count, r.prop_event_count,
                   r.credits_used, r.credits_remaining,
-                  COUNT(DISTINCT p.player_name) player_count
+                  COUNT(DISTINCT p.player_name) player_count,
+                  COUNT(p.market_key) prop_count
            FROM odds_fetch_runs r
            LEFT JOIN odds_player_props p USING (snapshot_id)
            GROUP BY r.snapshot_id
@@ -494,7 +514,8 @@ def report(conn):
         print(
             f"  {row['snapshot_id']:>4} {row['sport_key']:<24} "
             f"events={row['event_count']:<3} prop_events={row['prop_event_count']:<3} "
-            f"players={row['player_count']:<4} remaining={row['credits_remaining']} "
+            f"players={row['player_count']:<4} props={row['prop_count']:<5} "
+            f"remaining={row['credits_remaining']} "
             f"{row['fetched_at']}"
         )
 

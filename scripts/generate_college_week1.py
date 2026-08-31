@@ -38,6 +38,9 @@ PROP_CAPS = {
     "receptions": .20,
     "receiving_yards": .25,
 }
+PRIVATE_ROW_FIELDS = {
+    "implied_team_total", "game_total", "market_event_id",
+}
 
 
 def clamp(value, low, high):
@@ -178,12 +181,59 @@ def private_market_inputs(path):
     sport = odds_inputs.SPORT_KEYS["ncaaf"]
     games = odds_inputs.latest_team_inputs(conn, sport)
     props = odds_inputs.latest_player_inputs(conn, sport)
+    game_snapshot = odds_inputs.latest_snapshot_info(conn, sport)
+    prop_snapshot = odds_inputs.latest_snapshot_info(conn, sport, require_props=True)
     if not games:
         raise SystemExit("private odds database has no NCAAF game snapshot")
-    return games, props
+    audit = {
+        "game_snapshot_id": game_snapshot["snapshot_id"],
+        "game_snapshot_fetched_at": game_snapshot["fetched_at"],
+        "prop_snapshot_id": prop_snapshot["snapshot_id"] if prop_snapshot else None,
+        "prop_snapshot_fetched_at": prop_snapshot["fetched_at"] if prop_snapshot else None,
+        "available_prop_players": prop_snapshot["player_count"] if prop_snapshot else 0,
+        "available_prop_markets": prop_snapshot["prop_count"] if prop_snapshot else 0,
+    }
+    return games, props, audit
+
+
+def compact_games(schedule, eligible):
+    """Rebuild the model schedule from the frozen, public matchup audit."""
+    games = {}
+    compact = []
+    for source in schedule.get("games", []):
+        home_name = source["home"]
+        away_name = source["away"]
+        total = source.get("over_under")
+        home_line = source.get("home_spread")
+        implied_home = ((float(total) - float(home_line)) / 2
+                        if total is not None and home_line is not None else None)
+        implied_away = float(total) - implied_home if implied_home is not None else None
+        record = {
+            "event_id": source["event_id"], "date": source["date"],
+            "home": home_name, "away": away_name,
+            "home_abbr": source.get("home_abbr"),
+            "away_abbr": source.get("away_abbr"),
+            "over_under": float(total) if total is not None else None,
+            "home_spread": float(home_line) if home_line is not None else None,
+            "source": source.get("source", ""),
+        }
+        compact.append(record)
+        for team, opponent, is_home, implied, opp_implied in (
+            (home_name, away_name, True, implied_home, implied_away),
+            (away_name, home_name, False, implied_away, implied_home),
+        ):
+            canonical = next((name for name in eligible
+                              if TEAM_ALIASES.get(name, name) == team), None)
+            if canonical:
+                games[canonical] = {**record, "opponent": opponent,
+                                    "home": is_home, "implied": implied,
+                                    "opponent_implied": opp_implied}
+    return games, compact
 
 
 def scheduled_games(scoreboard, eligible):
+    if "events" not in scoreboard and "games" in scoreboard:
+        return compact_games(scoreboard, eligible)
     games = {}
     compact = []
     for event in scoreboard.get("events", []):
@@ -226,7 +276,8 @@ def scheduled_games(scoreboard, eligible):
     return games, compact
 
 
-def project(players, teams, games, generated_at, market_props=None):
+def project(players, teams, games, generated_at, market_props=None,
+            model_version="week1-v1.0"):
     team_by_name = {row["team_name"]: row for row in teams}
     output = []
     for source in players:
@@ -263,7 +314,7 @@ def project(players, teams, games, generated_at, market_props=None):
             "position_source": source["position_source"],
             "platform_eligibility": source["platform_eligibility"],
             "source_season_ppg": num(source, "fantasy_points_per_game"),
-            "model_version": "week1-v1.0", "generated_at": generated_at,
+            "model_version": model_version, "generated_at": generated_at,
         }
         base = {key: num(source, key) / season_games for key in STATS}
         row["pass_attempts"] = base["pass_attempts"] * pace * pass_script
@@ -302,11 +353,16 @@ def main():
     parser.add_argument("--scoreboard", required=True)
     parser.add_argument("--output", default=str(ROOT / "data/college/2026/week-1/v1.0"))
     parser.add_argument("--generated-at", default=datetime.now(timezone.utc).isoformat())
+    parser.add_argument("--release-version", default="v1.0")
+    parser.add_argument("--status", choices=("CANDIDATE", "PUBLISHED"))
     parser.add_argument(
         "--odds-db",
         help="private runtime database; creates a market-calibrated candidate",
     )
     args = parser.parse_args()
+    if not re.fullmatch(r"v[0-9]+\.[0-9]+", args.release_version):
+        parser.error("release version must look like v1.1")
+    status = args.status or ("CANDIDATE" if args.odds_db else "PUBLISHED")
     out = Path(args.output)
     provenance = out / "provenance"
     provenance.mkdir(parents=True, exist_ok=True)
@@ -317,43 +373,54 @@ def main():
     scoreboard = json.loads(Path(args.scoreboard).read_text())
     games, compact = scheduled_games(scoreboard, {r["team_name"] for r in teams})
     market_games = market_props = []
+    market_audit = {}
     overlaid_games = 0
     if args.odds_db:
         if out.resolve() == (ROOT / "data/college/2026/week-1/v1.0").resolve():
             raise SystemExit(
                 "private odds inputs must write a candidate output, not overwrite v1.0")
-        market_games, market_props = private_market_inputs(args.odds_db)
+        market_games, market_props, market_audit = private_market_inputs(args.odds_db)
         overlaid_games = overlay_game_markets(games, market_games)
     rows, prop_adjustments, matched_prop_players = project(
-        players, teams, games, args.generated_at, market_props)
+        players, teams, games, args.generated_at, market_props,
+        model_version=f"week1-{args.release_version}")
     if len(games) != 64:
         raise SystemExit(f"expected 64 scheduled model teams, found {len(games)}")
     if not rows:
         raise SystemExit("no weekly projections generated")
 
-    csv_path = provenance / "college_week1_player_projections_2026_v1.0.csv"
+    csv_path = provenance / f"college_week1_player_projections_2026_{args.release_version}.csv"
+    public_rows = [
+        {key: value for key, value in row.items() if key not in PRIVATE_ROW_FIELDS}
+        for row in rows
+    ]
     with csv_path.open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
-        writer.writeheader(); writer.writerows(rows)
+        writer = csv.DictWriter(handle, fieldnames=list(public_rows[0]), lineterminator="\n")
+        writer.writeheader(); writer.writerows(public_rows)
     schedule_path = provenance / "college_week1_schedule_2026.json"
     schedule_path.write_text(json.dumps({
-        "source": "ESPN college football scoreboard; odds displayed by ESPN",
+        "source": "ESPN college football scoreboard",
         "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard",
-        "generated_at": args.generated_at, "games": compact,
+        "generated_at": args.generated_at,
+        "games": [
+            {key: value for key, value in game.items()
+             if key not in {"over_under", "home_spread"}}
+            for game in compact
+        ],
     }, indent=1) + "\n")
     site_path = out / "college_week1_site_projections_2026.json"
     site_path.write_text(json.dumps({
-        "season": 2026, "week": 1, "modelVersion": "week1-v1.0",
+        "season": 2026, "week": 1, "modelVersion": f"week1-{args.release_version}",
         "generatedAt": args.generated_at, "scoring": "Yahoo scoring rules",
         "disclosure": "Positions reflect school roster listings sourced through CFBD and may differ from fantasy-platform eligibility.",
-        "methodology": "Season v1.1 per-game player allocations adjusted for the Week 1 schedule, market-implied team total, game total and expected game script. No unconfirmed injury or depth-chart change is inferred.",
+        "methodology": "Season v1.1 per-game player allocations calibrated with private multi-book game and player markets for the Week 1 scoring environment and expected game script. Sportsbook lines are not published. No unconfirmed injury or depth-chart change is inferred.",
         "counts": {"players": len(rows), "teams": len(games), "games": len({r['event_id'] for r in rows})},
         "players": [{
             "id": r["player_id"], "name": r["player_name"], "team": r["team_name"],
             "teamId": r["team_id"], "pos": r["position"], "rank": r["position_rank"],
             "overallRank": r["overall_rank"], "opponent": r["opponent"],
             "home": r["home"], "gameDate": r["game_date"],
-            "impliedTotal": r["implied_team_total"], "pts": round(r["fantasy_points"], 1),
+            "pts": round(r["fantasy_points"], 1),
             "passAtt": round(r["pass_attempts"], 1), "comp": round(r["completions"], 1),
             "passYds": round(r["passing_yards"], 1), "passTd": round(r["passing_td"], 2),
             "int": round(r["interceptions"], 2), "rushAtt": round(r["rush_attempts"], 1),
@@ -365,7 +432,7 @@ def main():
     files = {p.name: {"bytes": p.stat().st_size, "sha256": sha(p)}
              for p in (csv_path, schedule_path, site_path)}
     manifest = {
-        "version": "college_week1_2026_v1.0", "status": "PUBLISHED",
+        "version": f"college_week1_2026_{args.release_version}", "status": status,
         "generated_at": args.generated_at, "source_release": "2026/v1.1",
         "source_manifest_sha256": sha(SOURCE / "manifest.json"),
         "qa_status": "PASS", "scoring": "Yahoo scoring rules",
@@ -376,6 +443,7 @@ def main():
     }
     if args.odds_db:
         manifest["private_market_calibration"] = {
+            **market_audit,
             "game_events_overlaid": overlaid_games,
             "prop_stat_adjustments": prop_adjustments,
             "players_with_prop_adjustments": matched_prop_players,
