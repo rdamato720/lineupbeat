@@ -716,6 +716,18 @@ jobs:
           # check cannot see that. This one reads the artifact.
           python scripts/verify_deploy_artifact.py site
 
+      # A branch candidate gets one targeted NCAAF retry. The first production
+      # pull selected the earliest games and found no player markets; the
+      # collector now prioritizes heavily covered games and counts only
+      # prop-bearing responses against its 16-event cap. The credit reserve is
+      # checked before every attempt. Remove this one-time force after the
+      # reviewed Week 1 release is promoted.
+      - name: Retry NCAAF props for the Week 1 candidate
+        if: inputs.fetch_odds_props == true && github.ref != 'refs/heads/main'
+        run: |
+          python scripts/odds_inputs.py --sports ncaaf --include-props --force \
+            --max-prop-events-per-sport 16 --credit-reserve 75
+
       # A props-enabled branch run produces a review artifact only. It reads
       # the private cache, writes no raw lines, and never changes the active
       # release or deploys the branch. The reviewed artifact is promoted in a

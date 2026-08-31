@@ -107,6 +107,49 @@ class ConsensusTests(unittest.TestCase):
         self.assertNotIn("super-secret-value", message)
         self.assertIn("[redacted]", message)
 
+    def test_prop_cap_counts_only_prop_bearing_events(self):
+        empty = fixture()
+        empty["id"] = "event-empty"
+        empty["sport_key"] = odds.SPORT_KEYS["ncaaf"]
+        empty["bookmakers"] = [
+            {**book, "markets": [
+                market for market in book["markets"]
+                if not market["key"].startswith("player_")
+            ]}
+            for book in empty["bookmakers"]
+        ]
+        # Give the empty major game more book coverage so it is attempted
+        # first; the collector must continue to the next event.
+        empty["bookmakers"].append({
+            "key": "fourth", "last_update": "2026-08-30T20:00:00Z",
+            "markets": [],
+        })
+        with_props = fixture()
+        with_props["id"] = "event-props"
+        with_props["sport_key"] = odds.SPORT_KEYS["ncaaf"]
+
+        class Client:
+            credits_used = 0
+            credits_remaining = 500
+
+            def get(self, path, **params):
+                if "/events/" not in path:
+                    return [empty, with_props]
+                self.credits_used += 6
+                self.credits_remaining -= 6
+                return empty if "event-empty" in path else with_props
+
+        with tempfile.TemporaryDirectory() as directory:
+            conn = odds.connect(Path(directory) / "runtime.db")
+            snapshot, events, prop_events, attempts = odds.fetch_sport(
+                conn, Client(), "ncaaf", True, max_prop_events=1,
+                credit_reserve=75)
+            self.assertGreater(snapshot, 0)
+            self.assertEqual((events, prop_events, attempts), (2, 1, 2))
+            players = odds.latest_player_inputs(conn, odds.SPORT_KEYS["ncaaf"])
+            self.assertEqual({row["player_name"] for row in players},
+                             {"Example Quarterback", "Example Runner"})
+
 
 if __name__ == "__main__":
     unittest.main()

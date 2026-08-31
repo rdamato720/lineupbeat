@@ -344,7 +344,8 @@ def is_fresh(conn, sport_key: str, include_props: bool, max_age_hours: float) ->
 
 
 def store_snapshot(conn, sport_key: str, events: list[dict], prop_events: list[dict],
-                   client: OddsClient, error: str | None = None) -> int:
+                   client: OddsClient, error: str | None = None,
+                   include_props: bool | None = None) -> int:
     fetched_at = iso()
     status = "failed" if error else "complete"
     with conn:
@@ -353,7 +354,9 @@ def store_snapshot(conn, sport_key: str, events: list[dict], prop_events: list[d
                (sport_key, fetched_at, include_props, status, event_count,
                 prop_event_count, credits_used, credits_remaining, error)
                VALUES (?,?,?,?,?,?,?,?,?)""",
-            (sport_key, fetched_at, bool(prop_events), status, len(events),
+            (sport_key, fetched_at,
+             bool(prop_events) if include_props is None else include_props,
+             status, len(events),
              len(prop_events), client.credits_used, client.credits_remaining, error),
         )
         snapshot_id = int(cursor.lastrowid)
@@ -469,15 +472,25 @@ def fetch_sport(conn, client: OddsClient, sport: str, include_props: bool,
         raise RuntimeError(f"odds API returned a non-list event payload for {sport}")
 
     prop_events = []
+    prop_attempts = 0
     if include_props:
-        upcoming = sorted(events, key=lambda event: event.get("commence_time") or "")
-        affordable = max_prop_events
-        if client.credits_remaining is not None:
-            affordable = min(
-                affordable,
-                max(0, (client.credits_remaining - credit_reserve) // len(PROP_MARKETS)),
-            )
-        for event in upcoming[:affordable]:
+        # More heavily covered games are much more likely to carry player
+        # markets. Chronological selection burned the NCAAF cap on small early
+        # games whose event payloads were valid but contained zero props.
+        upcoming = sorted(
+            events,
+            key=lambda event: (
+                -len(event.get("bookmakers") or []),
+                event.get("commence_time") or "",
+            ),
+        )
+        max_attempts = min(len(upcoming), max_prop_events * 2)
+        for event in upcoming:
+            if len(prop_events) >= max_prop_events or prop_attempts >= max_attempts:
+                break
+            if (client.credits_remaining is not None
+                    and client.credits_remaining - credit_reserve < len(PROP_MARKETS)):
+                break
             payload = client.get(
                 f"sports/{sport_key}/events/{event['id']}/odds",
                 regions="us",
@@ -485,13 +498,17 @@ def fetch_sport(conn, client: OddsClient, sport: str, include_props: bool,
                 oddsFormat="american",
                 dateFormat="iso",
             )
-            if isinstance(payload, dict):
+            prop_attempts += 1
+            if isinstance(payload, dict) and props_consensus(payload):
                 # The event endpoint may omit sport_key; keep the join stable.
                 payload.setdefault("sport_key", sport_key)
                 prop_events.append(payload)
 
-    snapshot_id = store_snapshot(conn, sport_key, events, prop_events, client)
-    return snapshot_id, len(events), len(prop_events)
+    snapshot_id = store_snapshot(
+        conn, sport_key, events, prop_events, client,
+        include_props=include_props,
+    )
+    return snapshot_id, len(events), len(prop_events), prop_attempts
 
 
 def report(conn):
@@ -556,18 +573,22 @@ def main(argv=None):
             print(f"  {sport}: private odds snapshot is fresh; 0 API credits used")
             continue
         try:
-            snapshot_id, events, prop_events = fetch_sport(
+            snapshot_id, events, prop_events, prop_attempts = fetch_sport(
                 conn, client, sport, args.include_props,
                 args.max_prop_events_per_sport, args.credit_reserve,
             )
             print(
                 f"  {sport}: snapshot {snapshot_id}, {events} games, "
-                f"{prop_events} prop games, credits remaining={client.credits_remaining}"
+                f"{prop_events} prop games from {prop_attempts} attempts, "
+                f"credits remaining={client.credits_remaining}"
             )
         except Exception as exc:
             safe = client._safe_error(exc)
             failures.append(f"{sport}: {safe}")
-            store_snapshot(conn, sport_key, [], [], client, error=safe)
+            store_snapshot(
+                conn, sport_key, [], [], client, error=safe,
+                include_props=args.include_props,
+            )
             print(f"  {sport}: private odds refresh failed: {safe}", file=sys.stderr)
     return 1 if failures else 0
 

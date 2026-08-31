@@ -38,6 +38,10 @@ The collector reserves API credits, limits prop games per sport and reports
 provider quota headers without printing the secret. Missing credentials skip
 the private refresh and do not stop the public site build.
 
+Prop candidates are ordered by bookmaker coverage, then kickoff time. Empty
+event responses do not consume the 16-game success cap; the collector may try
+up to twice that many events, checking the credit reserve before every request.
+
 `generate_college_week1.py --odds-db beatwire.db` consumes the latest private
 NCAAF snapshot when preparing the next reviewed candidate. Qualified consensus
 game lines replace the single scoreboard line. High-quality props receive a
