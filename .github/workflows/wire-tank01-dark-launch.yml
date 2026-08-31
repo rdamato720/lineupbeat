@@ -1,6 +1,14 @@
 name: Tank01 news dark launch
 
 on:
+  push:
+    branches:
+      - develop
+    paths:
+      - ".github/workflows/wire-tank01-dark-launch.yml"
+      - "wire/tank01.py"
+      - "scripts/wire_tank01_dark.py"
+      - "scripts/test_tank01.py"
   schedule:
     # One request per hour. The isolated state enforces both seven elapsed
     # days and 180 total attempts, below the 1,000-request free-plan ceiling.
@@ -14,9 +22,12 @@ concurrency:
 jobs:
   observe:
     # Merging this workflow does not authorize recurring API calls. A manual
-    # dispatch can validate one response; recurring calls require this exact
-    # repository variable to be deliberately enabled.
-    if: github.event_name == 'workflow_dispatch' || vars.TANK01_DARK_LAUNCH == 'true'
+    # dispatch or a Tank01-only development push can validate one response;
+    # recurring calls require this exact repository variable to be enabled.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'push' && github.ref == 'refs/heads/develop') ||
+      vars.TANK01_DARK_LAUNCH == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:

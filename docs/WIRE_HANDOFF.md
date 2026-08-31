@@ -819,11 +819,14 @@ against the current mobile batch and reviewed publications are uploaded only
 as private workflow artifacts. An unknown response shape fails visibly rather
 than being counted as a quiet news hour.
 
-A manual dispatch may validate one response. Recurring calls remain disabled
-until the repository owner sets `TANK01_DARK_LAUNCH=true`. The request ledger
-is stored only in the isolated `wire-tank01-state.json` Actions cache. Tank01
-items are investigation leads during this experiment; they are not approved
-reporting or publication evidence.
+A manual dispatch may validate one response. Installing or changing only the
+Tank01 integration files on `develop` also makes one validation request, so the
+provider can be checked before the workflow reaches the default branch.
+Unrelated development pushes make no Tank01 request. Recurring calls remain
+disabled until the repository owner sets `TANK01_DARK_LAUNCH=true`. The request
+ledger is stored only in the isolated `wire-tank01-state.json` Actions cache.
+Tank01 items are investigation leads during this experiment; they are not
+approved reporting or publication evidence.
 
 Required Tank01 gate:
 
