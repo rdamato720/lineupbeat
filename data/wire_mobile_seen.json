@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 593,
+ "count": 612,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -6562,6 +6562,215 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003906
+  },
+  {
+   "candidate_id": "mobile:article:27c1e94592528b2a134d",
+   "player_id": "00-0036849",
+   "source_url": "https://www.miamidolphins.com/news/transcript-gm-jon-eric-sullivan-press-conference-aug-31",
+   "attempted_at": "2026-08-31T23:21:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:21:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004192
+  },
+  {
+   "candidate_id": "mobile:onsi:6476b911fd680634beda",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/takeaways-bears-personnel-moves-final-roster",
+   "attempted_at": "2026-08-31T23:21:31+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:21:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003748
+  },
+  {
+   "candidate_id": "mobile:onsi:b566cd5e9914dc60c52e",
+   "player_id": "00-0041547",
+   "source_url": "https://www.si.com/nfl/browns/onsi/browns-rookie-receiver-kc-concepcion-named-recipient-of-training-camp-award-01m1cky5tjmx",
+   "attempted_at": "2026-08-31T23:21:34+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:21:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00421
+  },
+  {
+   "candidate_id": "mobile:onsi:3cc031a8d075e7b4ce9f",
+   "player_id": "00-0036407",
+   "source_url": "https://www.si.com/nfl/browns/onsi/browns-rookie-receiver-kc-concepcion-named-recipient-of-training-camp-award-01m1cky5tjmx",
+   "attempted_at": "2026-08-31T23:21:36+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:21:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00402
+  },
+  {
+   "candidate_id": "mobile:onsi:cce226ee33ee5fa10444",
+   "player_id": "00-0041037",
+   "source_url": "https://www.si.com/nfl/browns/onsi/browns-rookie-receiver-kc-concepcion-named-recipient-of-training-camp-award-01m1cky5tjmx",
+   "attempted_at": "2026-08-31T23:21:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:21:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00385
+  },
+  {
+   "candidate_id": "mobile:onsi:66ab55419142309bc2cb",
+   "player_id": "00-0033280",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-defensive-end-nick-bosa-hasnt-practiced-four-weeks",
+   "attempted_at": "2026-08-31T23:21:42+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:21:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003822
+  },
+  {
+   "candidate_id": "mobile:onsi:58f5c766f6ea74269ba0",
+   "player_id": "00-0033288",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-defensive-end-nick-bosa-hasnt-practiced-four-weeks",
+   "attempted_at": "2026-08-31T23:21:45+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:21:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003914
+  },
+  {
+   "candidate_id": "mobile:onsi:ee5ab008f4fea35ac86e",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-defensive-end-nick-bosa-hasnt-practiced-four-weeks",
+   "attempted_at": "2026-08-31T23:21:47+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-31T23:21:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004844
+  },
+  {
+   "candidate_id": "mobile:onsi:5e2a13a56a88ab2f21dc",
+   "player_id": "00-0037834",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-defensive-end-nick-bosa-hasnt-practiced-four-weeks",
+   "attempted_at": "2026-08-31T23:21:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:21:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004866
+  },
+  {
+   "candidate_id": "mobile:onsi:ab31ad9579871fb73fb1",
+   "player_id": "00-0039912",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-cuts-surprises-non-surprises-analysis",
+   "attempted_at": "2026-08-31T23:21:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:21:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004416
+  },
+  {
+   "candidate_id": "mobile:onsi:de082629a30cde08a413",
+   "player_id": "00-0039686",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-cuts-surprises-non-surprises-analysis",
+   "attempted_at": "2026-08-31T23:21:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:21:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004058
+  },
+  {
+   "candidate_id": "mobile:onsi:3ffb8ca4633b5f14735e",
+   "player_id": "00-0036628",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-cuts-surprises-non-surprises-analysis",
+   "attempted_at": "2026-08-31T23:21:59+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:22:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004162
+  },
+  {
+   "candidate_id": "mobile:onsi:dbf30c386cdbb2541a07",
+   "player_id": "00-0033955",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-cuts-surprises-non-surprises-analysis",
+   "attempted_at": "2026-08-31T23:22:02+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:22:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004132
+  },
+  {
+   "candidate_id": "mobile:onsi:dc2bb3afdf8f2c7b8ca0",
+   "player_id": "00-0037256",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-cuts-surprises-non-surprises-analysis",
+   "attempted_at": "2026-08-31T23:22:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:22:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004072
+  },
+  {
+   "candidate_id": "mobile:onsi:b891022e9cb26265bee5",
+   "player_id": "00-0041178",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-cuts-surprises-non-surprises-analysis",
+   "attempted_at": "2026-08-31T23:22:07+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:22:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004188
+  },
+  {
+   "candidate_id": "mobile:article:b0602197b34be662b00e",
+   "player_id": "00-0040743",
+   "source_url": "https://www.neworleanssaints.com/news/kicker-daniel-carlson-made-most-of-limited-preseason-time-with-new-orleans-saints",
+   "attempted_at": "2026-08-31T23:22:09+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:22:12+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004014
+  },
+  {
+   "candidate_id": "mobile:onsi:0becc139abb06c4cfb5e",
+   "player_id": "00-0034857",
+   "source_url": "https://www.si.com/nfl/bills/onsi/transactions-buffalo-bills-practice-squad-tracker-who-joining-team-s-16-player-reserve-unit",
+   "attempted_at": "2026-08-31T23:22:12+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:22:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004646
+  },
+  {
+   "candidate_id": "mobile:article:cf2c07abe0aba6e74d1a",
+   "player_id": "00-0040405",
+   "source_url": "https://www.newyorkjets.com/news/jets-practice-squad-2026-season",
+   "attempted_at": "2026-08-31T23:22:15+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T23:22:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004384
+  },
+  {
+   "candidate_id": "mobile:onsi:ecfc3c7d1d23680c469b",
+   "player_id": "00-0033288",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-reveal-5-new-updates-after-roster-cuts",
+   "attempted_at": "2026-08-31T23:22:17+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-31T23:22:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004786
   }
  ]
 }
