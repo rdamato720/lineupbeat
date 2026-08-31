@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 580,
+ "count": 584,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -6419,6 +6419,50 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00554
+  },
+  {
+   "candidate_id": "mobile:onsi:3010675b36a2af330df0",
+   "player_id": "00-0041037",
+   "source_url": "https://www.si.com/nfl/browns/onsi/where-the-cleveland-browns-rank-amongst-the-youngest-rosters-in-the-nfl-01m1cfv64p4z",
+   "attempted_at": "2026-08-31T18:23:43+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T18:23:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003942
+  },
+  {
+   "candidate_id": "mobile:onsi:cf7220e49de18b2895af",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/onsi/fantasy/news/marshawn-lloyd-vs-kaleb-johnson-which-packers-running-back-shines-in-fantasy-football-as-josh-jacobs-is-out",
+   "attempted_at": "2026-08-31T18:23:47+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-31T18:23:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005014
+  },
+  {
+   "candidate_id": "mobile:onsi:eee2508e40d68ef9e932",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/ruben-hyppolite-ii-is-ryan-poles-latest-colossal-mid-round-draft-bust",
+   "attempted_at": "2026-08-31T18:23:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T18:23:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004468
+  },
+  {
+   "candidate_id": "mobile:onsi:a70fff509941e68004dd",
+   "player_id": "00-0033288",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-football-preseason-losers-mike-evans-had-a-rough-month-but-not-as-bad-as-another-wide-receiver",
+   "attempted_at": "2026-08-31T18:23:55+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-31T18:24:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0068
   }
  ]
 }
