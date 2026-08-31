@@ -42,6 +42,10 @@ on:
         description: "Review mode only: comma/space-separated exact candidate ids"
         type: string
         default: ""
+      fetch_odds_props:
+        description: "Private projection input: fetch player props (uses more odds credits)"
+        type: boolean
+        default: false
 
 concurrency:
   # The mobile monitor and mobile publication workflow use the same runtime
@@ -488,6 +492,8 @@ jobs:
         run: |
           python scripts/test_resolve.py
           python scripts/test_tapi.py
+          python scripts/test_odds_inputs.py
+          python scripts/test_weekly_market_inputs.py
           # The semantic review path is a publication boundary. This focused
           # suite catches stale per-card identity, evidence/request hash
           # mixing, rolling-page timestamps and claim-subject enforcement.
@@ -519,7 +525,21 @@ jobs:
           BEATWIRE_X_PROVIDER: ${{ vars.BEATWIRE_X_PROVIDER }}
           SORSA_API_KEY: ${{ secrets.SORSA_API_KEY }}
           TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+          # Private projection calibration only. No odds table is exported to
+          # site/ and the key is scrubbed from provider failures.
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
         run: |
+          # Featured NFL/NCAAF lines cost very little and refresh at most once
+          # per 20 hours. Props are event-by-event, so they require the
+          # explicit manual input above instead of spending on every refresh.
+          ODDS_PROP_FLAG=""
+          if [ "${{ inputs.fetch_odds_props }}" = "true" ]; then
+            ODDS_PROP_FLAG="--include-props"
+          fi
+          python scripts/odds_inputs.py --sports nfl,ncaaf \
+                 --max-age-hours 20 --max-prop-events-per-sport 16 \
+                 $ODDS_PROP_FLAG || echo "::warning title=Private odds refresh failed::Existing projection inputs were preserved; no odds data is public."
+
           # Rosters first, once a day.
           #
           # The wire always knows before the roster does -- that is the point
