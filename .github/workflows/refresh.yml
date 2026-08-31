@@ -716,52 +716,6 @@ jobs:
           # check cannot see that. This one reads the artifact.
           python scripts/verify_deploy_artifact.py site
 
-      # A branch candidate gets one targeted NCAAF retry. The first production
-      # pull selected the earliest games and found no player markets; the
-      # collector now prioritizes heavily covered games and counts only
-      # prop-bearing responses against its 16-event cap. The credit reserve is
-      # checked before every attempt. Remove this one-time force after the
-      # reviewed Week 1 release is promoted.
-      - name: Retry NCAAF props for the Week 1 candidate
-        if: inputs.fetch_odds_props == true && github.ref != 'refs/heads/main'
-        env:
-          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
-        run: |
-          python scripts/odds_inputs.py --sports ncaaf --include-props --force \
-            --max-prop-events-per-sport 16 --credit-reserve 75 \
-            --prop-schedule data/college/2026/week-1/v1.0/provenance/college_week1_schedule_2026.json
-
-      # A props-enabled branch run produces a review artifact only. It reads
-      # the private cache, writes no raw lines, and never changes the active
-      # release or deploys the branch. The reviewed artifact is promoted in a
-      # later commit by changing the pinned weekly version and manifest hash.
-      - name: Build college Week 1 private-market candidate
-        if: inputs.fetch_odds_props == true
-        env:
-          CANDIDATE_DIR: ${{ runner.temp }}/college-week1-market-v1.1
-        run: |
-          rm -rf "$CANDIDATE_DIR"
-          python scripts/generate_college_week1.py \
-            --scoreboard data/college/2026/week-1/v1.0/provenance/college_week1_schedule_2026.json \
-            --odds-db beatwire.db \
-            --output "$CANDIDATE_DIR" \
-            --release-version v1.1 \
-            --status CANDIDATE
-          python scripts/audit_college_week1_candidate.py \
-            --release "$CANDIDATE_DIR" \
-            --baseline data/college/2026/week-1/v1.0
-          python scripts/odds_inputs.py --report
-
-      - name: Upload college Week 1 candidate
-        if: always() && inputs.fetch_odds_props == true
-        uses: actions/upload-artifact@v4
-        with:
-          name: college-week1-market-candidate-${{ github.run_id }}
-          path: ${{ runner.temp }}/college-week1-market-v1.1
-          if-no-files-found: error
-          retention-days: 7
-
-
       # The database, banked whatever happened above.
       #
       # Directly after the step that writes it, and deliberately not at the

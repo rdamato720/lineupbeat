@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Integrity and publication tests for 2026 college Week 1 v1.0."""
+"""Integrity and publication tests for 2026 college Week 1 v1.1."""
 import csv
 import hashlib
 import json
@@ -8,7 +8,7 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-REL = ROOT / "data/college/2026/week-1/v1.0"
+REL = ROOT / "data/college/2026/week-1/v1.1"
 SEASON = ROOT / "data/college/2026/v1.1"
 
 
@@ -21,12 +21,12 @@ class CollegeWeek1Tests(unittest.TestCase):
     def setUpClass(cls):
         cls.manifest = json.loads((REL / "manifest.json").read_text())
         cls.site = json.loads((REL / "college_week1_site_projections_2026.json").read_text())
-        with (REL / "provenance/college_week1_player_projections_2026_v1.0.csv").open(newline="") as handle:
+        with (REL / "provenance/college_week1_player_projections_2026_v1.1.csv").open(newline="") as handle:
             cls.rows = list(csv.DictReader(handle))
 
     def test_release_is_active_and_pinned(self):
         config = json.loads((ROOT / "data/college/config.json").read_text())
-        self.assertEqual(config["activeCollegeWeeklyProjectionVersion"], "2026/week-1/v1.0")
+        self.assertEqual(config["activeCollegeWeeklyProjectionVersion"], "2026/week-1/v1.1")
         builder = (ROOT / "scripts/build_college_week1.py").read_text()
         self.assertIn(digest(REL / "manifest.json"), builder)
 
@@ -34,7 +34,7 @@ class CollegeWeek1Tests(unittest.TestCase):
         self.assertEqual(self.manifest["source_release"], "2026/v1.1")
         self.assertEqual(self.manifest["source_manifest_sha256"], digest(SEASON / "manifest.json"))
         locations = {
-            "college_week1_player_projections_2026_v1.0.csv": REL / "provenance",
+            "college_week1_player_projections_2026_v1.1.csv": REL / "provenance",
             "college_week1_schedule_2026.json": REL / "provenance",
             "college_week1_site_projections_2026.json": REL,
         }
@@ -42,6 +42,22 @@ class CollegeWeek1Tests(unittest.TestCase):
             path = directory / name
             self.assertEqual(self.manifest["files"][name]["bytes"], path.stat().st_size)
             self.assertEqual(self.manifest["files"][name]["sha256"], digest(path))
+
+    def test_private_market_calibration_is_audited_not_published(self):
+        self.assertEqual(self.manifest["status"], "PUBLISHED")
+        calibration = self.manifest["private_market_calibration"]
+        self.assertEqual(calibration["game_events_overlaid"], 39)
+        self.assertFalse(calibration["published_odds"])
+        self.assertEqual(calibration["prop_stat_adjustments"], 0)
+        public = (REL / "college_week1_site_projections_2026.json").read_text().lower()
+        schedule = (REL / "provenance/college_week1_schedule_2026.json").read_text().lower()
+        for private_field in (
+            "bookmaker", "american_price", "home_spread", "game_total",
+            "implied_team_total", "consensus_line", "odds_quotes",
+            "odds_player_props",
+        ):
+            self.assertNotIn(private_field, public)
+            self.assertNotIn(private_field, schedule)
 
     def test_counts_and_rank_sequences(self):
         self.assertEqual(self.site["counts"], {"players": 2205, "teams": 64, "games": 55})
