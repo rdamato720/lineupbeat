@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 564,
+ "count": 580,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -6243,6 +6243,182 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005142
+  },
+  {
+   "candidate_id": "mobile:onsi:5e1537b8169f6c0da69d",
+   "player_id": "00-0036997",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/5-nfl-roster-cut-casualties-cowboys-should-target-immediately",
+   "attempted_at": "2026-08-31T18:11:06+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-31T18:11:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007762
+  },
+  {
+   "candidate_id": "mobile:onsi:5d20c619252d417d5fab",
+   "player_id": "00-0039746",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/eagles-practice-squad-signing-waiver-claim-tracker-roster-coming-into-full-form-01m1ccyah80b",
+   "attempted_at": "2026-08-31T18:11:15+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T18:11:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003946
+  },
+  {
+   "candidate_id": "mobile:onsi:50c27cf1f9d788d96ae1",
+   "player_id": "00-0038976",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/broncos-practice-squad-tracker-every-signing-and-roster-move",
+   "attempted_at": "2026-08-31T18:11:18+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T18:11:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005874
+  },
+  {
+   "candidate_id": "mobile:onsi:035fafcc247a1630d196",
+   "player_id": "00-0041512",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/winners-and-losers-from-seattle-seahawks-53-man-roster-cutdown",
+   "attempted_at": "2026-08-31T18:11:23+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T18:11:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006524
+  },
+  {
+   "candidate_id": "mobile:article:2d718104fa6b01db0740",
+   "player_id": "00-0035659",
+   "source_url": "https://www.commanders.com/news/key-takeaways-from-washington-s-roster-cuts",
+   "attempted_at": "2026-08-31T18:11:28+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T18:11:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00449
+  },
+  {
+   "candidate_id": "mobile:onsi:0b2dc2a1bb62174f8973",
+   "player_id": "00-0037261",
+   "source_url": "https://www.si.com/nfl/bills/onsi/cutdown-buffalo-bills-roster-decisions-create-three-big-losers-two-big-winners-2026",
+   "attempted_at": "2026-08-31T18:11:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T18:11:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004878
+  },
+  {
+   "candidate_id": "mobile:onsi:298f8f8b3baf553d0591",
+   "player_id": "00-0033537",
+   "source_url": "https://www.si.com/nfl/browns/onsi/what-to-expect-from-cleveland-browns-rookie-draft-class-heading-to-week-1-01m1cbx12cw9",
+   "attempted_at": "2026-08-31T18:11:35+00:00",
+   "status": "CARD",
+   "completed_at": "2026-08-31T18:11:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004744
+  },
+  {
+   "candidate_id": "mobile:onsi:6de21dea2b35f99561de",
+   "player_id": "00-0041547",
+   "source_url": "https://www.si.com/nfl/browns/onsi/what-to-expect-from-cleveland-browns-rookie-draft-class-heading-to-week-1-01m1cbx12cw9",
+   "attempted_at": "2026-08-31T18:11:39+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-31T18:11:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006418
+  },
+  {
+   "candidate_id": "mobile:onsi:4241dfa43bec5ab277e5",
+   "player_id": "00-0041037",
+   "source_url": "https://www.si.com/nfl/browns/onsi/what-to-expect-from-cleveland-browns-rookie-draft-class-heading-to-week-1-01m1cbx12cw9",
+   "attempted_at": "2026-08-31T18:11:44+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-31T18:11:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006246
+  },
+  {
+   "candidate_id": "mobile:onsi:263f43f166d61e256cbe",
+   "player_id": "00-0040676",
+   "source_url": "https://www.si.com/nfl/titans/onsi/robert-saleh-ready-to-bet-his-titans-job-on-cam-ward-s-success-01m1c5r02pkg",
+   "attempted_at": "2026-08-31T18:11:50+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T18:11:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004322
+  },
+  {
+   "candidate_id": "mobile:onsi:9d874ebeb101580788e3",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/commissioners-exemption-list-placement-suspension-fantasy-football-draft-ranking-josh-jacobs",
+   "attempted_at": "2026-08-31T18:11:53+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-31T18:11:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004456
+  },
+  {
+   "candidate_id": "mobile:onsi:a84268cf42867e806481",
+   "player_id": "00-0036158",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/commissioners-exemption-list-placement-suspension-fantasy-football-draft-ranking-josh-jacobs",
+   "attempted_at": "2026-08-31T18:11:57+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T18:11:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004214
+  },
+  {
+   "candidate_id": "mobile:onsi:5ccf3f9d879184034d2b",
+   "player_id": "00-0034855",
+   "source_url": "https://www.si.com/nfl/buccaneers/onsi/5-buccaneers-players-who-survived-the-cut-and-earned-their-spot-2026",
+   "attempted_at": "2026-08-31T18:11:59+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T18:12:02+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004326
+  },
+  {
+   "candidate_id": "mobile:onsi:3acf479775496b790d07",
+   "player_id": "00-0039361",
+   "source_url": "https://www.si.com/nfl/buccaneers/onsi/5-buccaneers-players-who-survived-the-cut-and-earned-their-spot-2026",
+   "attempted_at": "2026-08-31T18:12:02+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-08-31T18:12:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005304
+  },
+  {
+   "candidate_id": "mobile:onsi:df02176697eca2e60ce4",
+   "player_id": "00-0039344",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-football-preseason-losers-mike-evans-had-a-rough-month-but-not-as-bad-as-another-wide-receiver",
+   "attempted_at": "2026-08-31T18:12:06+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-08-31T18:12:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004762
+  },
+  {
+   "candidate_id": "mobile:onsi:4118a83c2673beeb0ac8",
+   "player_id": "00-0040142",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-football-preseason-losers-mike-evans-had-a-rough-month-but-not-as-bad-as-another-wide-receiver",
+   "attempted_at": "2026-08-31T18:12:11+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-08-31T18:12:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00554
   }
  ]
 }
