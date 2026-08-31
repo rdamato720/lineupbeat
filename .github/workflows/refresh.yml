@@ -17,6 +17,11 @@ on:
       - "beatwire/cli.py"
       - "beatwire/pipeline.py"
       - "beatwire/registry.py"
+  push:
+    branches:
+      - main
+    paths:
+      - "data/wire_publications.json"
   workflow_dispatch:
     inputs:
       skip_fetch:
@@ -52,7 +57,7 @@ concurrency:
   # group. They share the beatwire cache and publication mirror, so allowing
   # either to overlap this refresh would replay paid source reads or race a
   # human-approved publication.
-  group: ${{ github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'none' && 'wire-runtime' || 'wire-review-batch' }}
+  group: ${{ (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'none')) && 'wire-runtime' || 'wire-review-batch' }}
   # Queue the next run. Do not cancel the one in flight.
   #
   # The hazard this group exists for is two runs overlapping: the cache only
@@ -74,7 +79,7 @@ concurrency:
 
 jobs:
   wire-review-batch:
-    if: github.event_name == 'pull_request' || inputs.wire_review_mode != 'none'
+    if: github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && inputs.wire_review_mode != 'none')
     runs-on: ubuntu-latest
     timeout-minutes: 45
     permissions:
@@ -463,7 +468,7 @@ jobs:
           retention-days: 30
 
   refresh:
-    if: github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'none'
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.wire_review_mode == 'none')
     runs-on: ubuntu-latest
     # Nothing displaces a running job now, so a hung one would hold the queue
     # until the six-hour default. Shorter than the two-hour trigger interval
@@ -532,13 +537,16 @@ jobs:
           # Featured NFL/NCAAF lines cost very little and refresh at most once
           # per 20 hours. Props are event-by-event, so they require the
           # explicit manual input above instead of spending on every refresh.
-          ODDS_PROP_FLAG=""
-          if [ "${{ inputs.fetch_odds_props }}" = "true" ]; then
-            ODDS_PROP_FLAG="--include-props"
+          if [ "$GITHUB_EVENT_NAME" != "push" ] \
+              && [ "${{ inputs.skip_fetch }}" != "true" ]; then
+            ODDS_PROP_FLAG=""
+            if [ "${{ inputs.fetch_odds_props }}" = "true" ]; then
+              ODDS_PROP_FLAG="--include-props"
+            fi
+            python scripts/odds_inputs.py --sports nfl,ncaaf \
+                   --max-age-hours 20 --max-prop-events-per-sport 16 \
+                   $ODDS_PROP_FLAG || echo "::warning title=Private odds refresh failed::Existing projection inputs were preserved; no odds data is public."
           fi
-          python scripts/odds_inputs.py --sports nfl,ncaaf \
-                 --max-age-hours 20 --max-prop-events-per-sport 16 \
-                 $ODDS_PROP_FLAG || echo "::warning title=Private odds refresh failed::Existing projection inputs were preserved; no odds data is public."
 
           # Rosters first, once a day.
           #
@@ -548,7 +556,9 @@ jobs:
           # Washington and five reports about him carried no position, so the
           # skill filter dropped him and his video never showed, on the one
           # day anybody wanted it.
-          if [ "$(date -u +%H)" -lt 12 ]; then
+          if [ "$GITHUB_EVENT_NAME" != "push" ] \
+              && [ "${{ inputs.skip_fetch }}" != "true" ] \
+              && [ "$(date -u +%H)" -lt 12 ]; then
             python scripts/import_rosters.py nfl || true
             python scripts/import_adp.py || true
             python scripts/import_depth.py --season 2026 || true
@@ -560,7 +570,8 @@ jobs:
           # The fetch is the only part that costs money, so a manual run
           # testing a page change can skip it and rebuild from whatever the
           # database already holds.
-          if [ "${{ inputs.skip_fetch }}" = "true" ]; then
+          if [ "$GITHUB_EVENT_NAME" = "push" ] \
+              || [ "${{ inputs.skip_fetch }}" = "true" ]; then
             echo "  skip_fetch: not fetching, rebuilding pages only"
           else
             # A wrong claim, removed before anything is published.

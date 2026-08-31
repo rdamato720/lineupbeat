@@ -353,8 +353,10 @@ class MobileWireTests(unittest.TestCase):
         self.assertIn("wire_mobile_approve.py", approval)
         self.assertIn("--publish", approval)
         self.assertIn("skip_fetch=true", approval)
-        self.assertNotIn("wire_homepage_replacement.py", approval)
-        self.assertNotIn("data/wire_homepage_replacement", approval)
+        self.assertIn("wire_homepage_replacement.py", approval)
+        self.assertIn("--source data/wire_homepage_replacement.html", approval)
+        self.assertIn("data/wire_homepage_replacement.html", approval)
+        self.assertIn("data/wire_homepage_replacement.json", approval)
         self.assertLess(approval.index("git push origin HEAD:main"),
                         approval.index("gh workflow run refresh.yml"))
         apply_script = (ROOT / "scripts" / "wire_mobile_approve.py").read_text()

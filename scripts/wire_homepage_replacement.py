@@ -424,8 +424,23 @@ def main():
     ap.add_argument("--apply", action="store_true",
                     help="write the replacement into site/index.html. The "
                          "production path; the preview is the default.")
+    ap.add_argument("--source", type=Path, default=HOME,
+                    help="homepage shell to update; defaults to site/index.html. "
+                         "The approval workflow uses the tracked preview so it "
+                         "can refresh review artifacts without building or deploying.")
     args = ap.parse_args()
     cards = collect()
+
+    publications = json.loads(Path("data/wire_publications.json").read_text()) \
+        .get("publications", [])
+    expected_ids = [str(item.get("publication_id") or "") for item in publications]
+    rendered_ids = [str(item.get("publication_id") or "") for item in cards]
+    if (len(rendered_ids) != len(expected_ids)
+            or len(set(rendered_ids)) != len(rendered_ids)
+            or set(rendered_ids) != set(expected_ids)):
+        print("  publication/render count FAILED: "
+              f"{len(expected_ids)} approved, {len(rendered_ids)} rendered")
+        return 1
 
     teams = sorted({c["team"] for c in cards})
 
@@ -455,10 +470,10 @@ def main():
   {f'<button class="more" id="wmore">Load more reports <span>{hidden} more</span></button>' if hidden else ''}
 </section>"""
 
-    if not HOME.exists():
-        print("  site/index.html not built; run the site build first")
+    if not args.source.exists():
+        print(f"  homepage source not built: {args.source}")
         return 1
-    home = HOME.read_text()
+    home = args.source.read_text()
 
     # 1. Remove the temporary module so the same reports cannot appear twice.
     removed_module = False

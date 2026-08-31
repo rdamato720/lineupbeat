@@ -59,6 +59,13 @@ jobs:
         run: |
           python scripts/wire_health.py --check
 
+      - name: Regenerate the tracked homepage replacement
+        if: steps.apply.outputs.published != '0'
+        run: |
+          python scripts/wire_homepage_replacement.py \
+            --source data/wire_homepage_replacement.html
+          python scripts/test_wire_homepage.py
+
       - name: Commit the approval receipt and publications
         run: |
           git config user.name "github-actions[bot]"
@@ -66,6 +73,8 @@ jobs:
           git add data/wire_publications.json data/wire_publication_preview.json \
             data/wire_publication_preview.html data/wire_mobile_approvals.json \
             data/wire_mobile_approval_result.json \
+            data/wire_homepage_replacement.html \
+            data/wire_homepage_replacement.json \
             data/wire_snapshots/
           git commit -m "Publish phone-approved Wire cards"
           git push origin HEAD:main

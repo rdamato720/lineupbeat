@@ -69,7 +69,10 @@ def payload(text):
 
 def one_sentence(text):
     """Count sentence stops without treating suffixes as sentence ends."""
-    normalized = re.sub(r"\b(Jr|Sr|Mr|Mrs|Ms|Dr)\.", r"\1", text)
+    normalized = re.sub(
+        r"\b(Jr|Sr|Mr|Mrs|Ms|Dr|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.",
+        r"\1", text,
+    )
     return (len(text) <= 180 and text.endswith((".", "!", "?"))
             and not re.search(r"[.!?]\s+\S", normalized))
 

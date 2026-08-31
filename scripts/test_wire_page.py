@@ -167,6 +167,15 @@ check("the artifact check runs before Deploy",
 check("the artifact check cannot be skipped",
       "verify_deploy_artifact.py site || true" not in _ci)
 _va = (ROOT / "scripts" / "verify_deploy_artifact.py").read_text()
+check("the final artifact verifies publication/card count equality",
+      "approved publication count equals rendered Wire-card count" in _va)
+_refresh = (ROOT / ".github" / "workflows" / "refresh.yml").read_text()
+check("publication changes on main trigger a replacement deployment",
+      'push:' in _refresh
+      and '- "data/wire_publications.json"' in _refresh)
+check("publication-triggered deployments skip provider and roster refreshes",
+      _refresh.count('if [ "$GITHUB_EVENT_NAME" != "push" ]') >= 2
+      and 'if [ "$GITHUB_EVENT_NAME" = "push" ]' in _refresh)
 # The verifier reads the published file rather than naming players, so a
 # retraction cannot fail the deploy.
 for _need, _label in [('"nfl" / "wire"', "that no separate page ships"),

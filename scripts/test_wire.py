@@ -2075,6 +2075,7 @@ check("a pending item can never be presented as publishable",
               "evidence": "He soaked up carries."})))
 check("a clean card passes readiness",
       not _R({"direction": "NEUTRAL", "mechanism": "SECOND_TEAM_REPS",
+              "reader_label": "Worth noting",
               "reviewer_action": "APPROVE_WITH_EDIT",
               "commentary": "He led the second-team offense during one "
                             "practice. The report does not establish whether "
@@ -2089,7 +2090,8 @@ check("the publication preview never writes the published file",
       and not re.search(r"wire_publications[^\"']*[\"']\s*\)?\.write", _ppsrc)
       and not FORBIDDEN_NAMES.search(_ppsrc))
 _pp = json.loads((ROOT / "data" / "wire_publication_preview.json").read_text())
-check("the preview marks itself unpublished", _pp["published"] is False)
+check("the preview marks itself unpublished",
+      _pp.get("publications_applied") == 0)
 check("only reviewer-approved cases reach the preview",
       all(c["reviewer_action"].startswith("APPROVE") for c in _pp["cards"]))
 check("the model's original wording is preserved beside a reviewer edit",

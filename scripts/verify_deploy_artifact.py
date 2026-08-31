@@ -230,6 +230,9 @@ def check_homepage(root):
                         if publication_ids.count(pid) > 1})
         check("no Wire report is duplicated in the replaced section",
               not dupes, "; ".join(dupes[:3]))
+        check("approved publication count equals rendered Wire-card count",
+              len(approved) == len(cards),
+              f"{len(approved)} approved, {len(cards)} rendered")
         for publication_id, who in approved:
             count = publication_ids.count(publication_id)
             check(f"the homepage carries {who} [{publication_id}] exactly once",
