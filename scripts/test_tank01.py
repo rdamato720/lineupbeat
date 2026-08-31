@@ -21,6 +21,19 @@ import wire_tank01_dark as dark  # noqa: E402
 
 
 class Tank01Tests(unittest.TestCase):
+    def test_news_request_asks_for_fantasy_news_and_top_headlines(self):
+        calls = []
+        tank01.fetch_news(
+            key="test-rapidapi-secret-12345",
+            transport=lambda url, headers, timeout: calls.append((url, headers, timeout)) or {},
+        )
+        self.assertEqual(len(calls), 1)
+        url, _, _ = calls[0]
+        self.assertEqual(
+            url,
+            f"https://{tank01.HOST}/getNFLNews?fantasyNews=true&topNews=true",
+        )
+
     def test_documented_body_list_normalizes(self):
         payload = {"statusCode": 200, "body": [{
             "newsID": "n-1", "title": "Alec Pierce returned to practice",

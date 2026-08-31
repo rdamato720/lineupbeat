@@ -16,11 +16,13 @@ import re
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from urllib.error import HTTPError, URLError
+from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 
 HOST = "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
-URL = f"https://{HOST}/getNFLNews"
+NEWS_QUERY = (("fantasyNews", "true"), ("topNews", "true"))
+URL = f"https://{HOST}/getNFLNews?{urlencode(NEWS_QUERY)}"
 KEY_ENV = "TANK01_RAPIDAPI_KEY"
 CONTAINER_KEYS = (
     "news", "items", "articles", "playerNews", "fantasyNews", "topNews",
