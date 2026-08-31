@@ -183,7 +183,9 @@ by manual dispatch from a feature branch. It reads only the already-public
 production feed, makes no news, odds, roster, or model API calls, and deploys
 only to `lineupbeat-dev.pages.dev`. Every HTML page carries a visible
 development banner plus `noindex`; `_headers` and `robots.txt` enforce the
-same boundary for crawlers.
+same boundary for crawlers. The final artifact removes Cloudflare Analytics,
+Reddit and X tracking scripts so development traffic cannot enter production
+pageview, conversion, search, filter, or engagement reporting.
 
 Normal flow: merge a feature branch into `develop`, review the development
 URL, then merge the approved changes into `main`. The development workflow

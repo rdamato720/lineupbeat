@@ -83,6 +83,34 @@ class DevSiteTests(unittest.TestCase):
         self.assertNotIn("index, follow", text)
         self.assertIn("feature/test", text)
 
+    def test_protection_removes_analytics_but_keeps_application_scripts(self):
+        self.site.mkdir()
+        page = self.site / "index.html"
+        page.write_text(
+            '<html><head><script>window.appReady=true;</script>'
+            '<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" '
+            'data-cf-beacon="token"></script></head><body>'
+            '<script>rdt("track", "PageVisit");</script>'
+            '<script>twq("config", "test");</script></body></html>'
+        )
+        dev_site.protect(self.site, "develop")
+        text = page.read_text()
+        self.assertIn("window.appReady=true", text)
+        for needle in dev_site.TRACKING_NEEDLES:
+            self.assertNotIn(needle, text.lower())
+        dev_site.verify(self.site)
+
+    def test_verify_rejects_tracking_in_a_protected_page(self):
+        self.site.mkdir()
+        page = self.site / "index.html"
+        page.write_text("<html><head></head><body></body></html>")
+        dev_site.protect(self.site, "develop")
+        page.write_text(page.read_text().replace(
+            "</body>", '<script>twq("config", "test")</script></body>'
+        ))
+        with self.assertRaises(SystemExit):
+            dev_site.verify(self.site)
+
     def test_verify_rejects_unprotected_artifact(self):
         self.site.mkdir()
         (self.site / "index.html").write_text("<html><head></head><body></body></html>")

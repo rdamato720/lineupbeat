@@ -22,6 +22,16 @@ DATA_PLACEHOLDER = (
     '"sports":{},"players":[]}'
 )
 ROBOTS_META = '<meta name="robots" content="noindex, nofollow, noarchive">'
+TRACKING_NEEDLES = (
+    "cloudflareinsights.com/beacon.min.js",
+    "data-cf-beacon",
+    "redditstatic.com/ads/pixel.js",
+    "rdt(",
+    "static.ads-twitter.com/uwt.js",
+    "twq(",
+    "window.lbtrack",
+    'sessionstorage.getitem("lb_pv")',
+)
 BANNER_STYLE = """<style id="lb-dev-style">
 #lb-dev-banner{position:fixed;top:0;left:0;right:0;z-index:2147483647;
 background:#facc15;color:#111827;border-bottom:2px solid #111827;
@@ -142,6 +152,18 @@ def _protect_page(path: Path, label: str) -> None:
     if "<head" not in text or "</head>" not in text or "<body" not in text:
         raise SystemExit(f"refusing to protect malformed HTML: {path}")
 
+    # Analytics is a production concern. Remove each complete tracking script
+    # from the finished artifact so development views cannot inflate pageview,
+    # conversion, search, filter, or engagement numbers. Functional scripts
+    # remain byte-for-byte intact.
+    def drop_tracking(match: re.Match) -> str:
+        script = match.group(0)
+        lowered = script.lower()
+        return "" if any(needle in lowered for needle in TRACKING_NEEDLES) else script
+
+    text = re.sub(r"<script\b[^>]*>.*?</script>", drop_tracking, text,
+                  flags=re.I | re.S)
+
     text = re.sub(
         r'<meta\s+name=["\']robots["\'][^>]*>',
         ROBOTS_META,
@@ -211,6 +233,10 @@ def verify(root: Path) -> None:
             failures.append(f"{path}: development style count is not one")
         if ROBOTS_META not in text:
             failures.append(f"{path}: robots meta is missing")
+        lowered = text.lower()
+        remaining = [needle for needle in TRACKING_NEEDLES if needle in lowered]
+        if remaining:
+            failures.append(f"{path}: analytics remains ({', '.join(remaining)})")
     headers = root / "_headers"
     if not headers.is_file() or "X-Robots-Tag: noindex" not in headers.read_text():
         failures.append("Cloudflare noindex header is missing")
