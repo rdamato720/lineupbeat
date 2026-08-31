@@ -724,6 +724,8 @@ jobs:
       # reviewed Week 1 release is promoted.
       - name: Retry NCAAF props for the Week 1 candidate
         if: inputs.fetch_odds_props == true && github.ref != 'refs/heads/main'
+        env:
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
         run: |
           python scripts/odds_inputs.py --sports ncaaf --include-props --force \
             --max-prop-events-per-sport 16 --credit-reserve 75
