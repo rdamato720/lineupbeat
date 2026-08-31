@@ -1,61 +1,63 @@
 {
  "schema_version": "wire-mobile-batch-v1",
- "generated_at": "2026-08-31T18:23:43+00:00",
+ "generated_at": "2026-08-31T19:16:47+00:00",
  "window": {
-  "from": "2026-08-31T16:23:43.099687+00:00",
-  "to": "2026-08-31T18:23:43.099687+00:00",
+  "from": "2026-08-31T17:16:47.930390+00:00",
+  "to": "2026-08-31T19:16:47.930390+00:00",
   "hours": 2.0
  },
  "published": false,
  "model": "gpt-5.6-terra",
- "model_calls": 4,
- "cost_usd": 0.020224,
+ "model_calls": 9,
+ "cost_usd": 0.039434,
  "limits": {
   "max_calls": 20,
   "cap_usd": 0.08,
   "max_cards": 10
  },
- "raw_candidate_count": 4,
- "candidate_count": 4,
+ "raw_candidate_count": 9,
+ "candidate_count": 9,
  "cards": [],
  "precall_duplicate_count": 0,
  "precall_duplicates": [],
  "unreviewed_count": 0,
- "relevance_suppressed": 58,
+ "relevance_suppressed": 39,
  "validation_failed": 2,
  "outcome_counts": {
-  "IGNORE": 2,
+  "ABSTAIN": 1,
+  "IGNORE": 6,
   "VALIDATION_FAILED": 2
  },
  "coverage": {
   "source_candidate_counts": {
-   "si_bears": 1,
-   "si_browns": 1,
-   "si_fantasy": 2
+   "si_cardinals": 1,
+   "si_fantasy": 4,
+   "si_packers": 1,
+   "si_rams": 1,
+   "si_texans": 2
   },
   "team_candidate_counts": {
+   "ARI": 2,
+   "BUF": 1,
    "CHI": 1,
-   "CLE": 1,
    "GB": 1,
-   "SF": 1
+   "HOU": 2,
+   "LAR": 1,
+   "LV": 1
   },
   "teams_without_candidates": [
-   "ARI",
    "ATL",
    "BAL",
-   "BUF",
    "CAR",
    "CIN",
+   "CLE",
    "DAL",
    "DEN",
    "DET",
-   "HOU",
    "IND",
    "JAX",
    "KC",
    "LAC",
-   "LAR",
-   "LV",
    "MIA",
    "MIN",
    "NE",
@@ -65,6 +67,7 @@
    "PHI",
    "PIT",
    "SEA",
+   "SF",
    "TB",
    "TEN",
    "WAS"
@@ -147,9 +150,11 @@
    "steelers_depot"
   ],
   "article_sources_with_candidates": [
-   "si_bears",
-   "si_browns",
-   "si_fantasy"
+   "si_cardinals",
+   "si_fantasy",
+   "si_packers",
+   "si_rams",
+   "si_texans"
   ],
   "article_sources_without_candidates": [
    "arizona_sports_tyler_drake",
@@ -194,11 +199,12 @@
    "pressbox_baltimore",
    "purple_insider_matthew_coller",
    "si_49ers",
+   "si_bears",
    "si_bengals",
    "si_bills",
    "si_broncos",
+   "si_browns",
    "si_buccaneers",
-   "si_cardinals",
    "si_chargers",
    "si_chiefs",
    "si_colts",
@@ -211,16 +217,13 @@
    "si_jaguars",
    "si_jets",
    "si_lions",
-   "si_packers",
    "si_panthers",
    "si_patriots",
    "si_raiders",
-   "si_rams",
    "si_ravens",
    "si_saints",
    "si_seahawks",
    "si_steelers",
-   "si_texans",
    "si_titans",
    "si_vikings",
    "steelers_depot"
@@ -229,78 +232,149 @@
  "event_duplicates": 0,
  "outcomes": [
   {
-   "candidate_id": "mobile:onsi:3010675b36a2af330df0",
-   "player": "Denzel Boston",
-   "player_id": "00-0041037",
-   "team": "CLE",
+   "candidate_id": "mobile:onsi:f8932167fcc9d527cd18",
+   "player": "Josh Allen",
+   "player_id": "00-0034857",
+   "team": "BUF",
    "origin": "ARTICLE",
-   "source_id": "si_browns",
-   "source_name": "Sports Illustrated -- CLE",
-   "source_url": "https://www.si.com/nfl/browns/onsi/where-the-cleveland-browns-rank-amongst-the-youngest-rosters-in-the-nfl-01m1cfv64p4z",
+   "source_id": "si_fantasy",
+   "source_name": "Fantasy On SI",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/printable-fantasy-football-cheat-sheets-for-all-scoring-formats-post-josh-jacobs-fallout-for-packers-backfield",
    "decision": "IGNORE",
-   "reason": "Boston is mentioned as one of 10 Browns rookies who made the team, but the source provides no actionable usage or role information.",
+   "reason": "A static ranking mention is not a meaningful new development for fantasy managers.",
    "validation_failures": [],
-   "cost_usd": 0.003942
+   "cost_usd": 0.003744
   },
   {
-   "candidate_id": "mobile:onsi:cf7220e49de18b2895af",
+   "candidate_id": "mobile:onsi:254adbfa5fc8a49356d4",
+   "player": "Dalton Schultz",
+   "player_id": "00-0034383",
+   "team": "HOU",
+   "origin": "ARTICLE",
+   "source_id": "si_texans",
+   "source_name": "Sports Illustrated -- HOU",
+   "source_url": "https://www.si.com/nfl/texans/onsi/every-texans-rookie-who-made-the-53-man-roster-and-their-projected-roles",
+   "decision": "IGNORE",
+   "reason": "The report speculates that rookie Marlin Klein may be the primary backup behind Schultz, but it does not establish a meaningful fantasy-relevant role change for Schultz.",
+   "validation_failures": [],
+   "cost_usd": 0.004072
+  },
+  {
+   "candidate_id": "mobile:onsi:ed1b06c7513901606ae9",
+   "player": "Marlin Klein",
+   "player_id": "00-0041472",
+   "team": "HOU",
+   "origin": "ARTICLE",
+   "source_id": "si_texans",
+   "source_name": "Sports Illustrated -- HOU",
+   "source_url": "https://www.si.com/nfl/texans/onsi/every-texans-rookie-who-made-the-53-man-roster-and-their-projected-roles",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The report identifies a potential rise to primary backup based on camp and preseason performance, which is a possible depth-chart development but remains unconfirmed.",
+   "validation_failures": [
+    "fantasy analysis is not explicitly attributed"
+   ],
+   "cost_usd": 0.004708,
+   "held_for_review": {
+    "evidence": "Marlin Klein | TE2 or TE3: Houston's second-round rookie tight end has been a pleasant surprise throughout the course of camp and preseason. And as a result, he might be someone who's pushed his way up the depth chart as the primary backup at the position to Dalton Schultz.",
+    "public_summary": "Jared Koch says Marlin Klein may have climbed to become Dalton Schultz's primary backup after a strong camp and preseason.",
+    "lineupbeat_impact": "Klein is a name to monitor in deep TE formats if Houston confirms he is Schultz's top backup, but the report is still speculative and does not establish a meaningful weekly role.",
+    "direction": "POSITIVE",
+    "mechanism": "DEPTH_CHART"
+   }
+  },
+  {
+   "candidate_id": "mobile:onsi:733f62b7ee4dfa6a676e",
+   "player": "Marvin Harrison Jr.",
+   "player_id": "00-0039849",
+   "team": "ARI",
+   "origin": "ARTICLE",
+   "source_id": "si_cardinals",
+   "source_name": "Sports Illustrated -- ARI",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-practice-squad-waiver-wire-tracker-2026",
+   "decision": "IGNORE",
+   "reason": "A position-group list alone does not change what fantasy managers should monitor or expect.",
+   "validation_failures": [],
+   "cost_usd": 0.003684
+  },
+  {
+   "candidate_id": "mobile:onsi:c1f0bb4d2f1d091625fc",
+   "player": "D'Andre Swift",
+   "player_id": "00-0036275",
+   "team": "CHI",
+   "origin": "ARTICLE",
+   "source_id": "si_fantasy",
+   "source_name": "Fantasy On SI",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/cheat-sheet-injuries-advice-draft-strategy-fantasy-football",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The source identifies a potentially meaningful early-season availability limitation for Monangai and projects Swift to benefit with an early advantage.",
+   "validation_failures": [
+    "availability item omits the temporary context (which practice, and that no timetable was given)",
+    "fantasy analysis is not explicitly attributed"
+   ],
+   "cost_usd": 0.004834,
+   "held_for_review": {
+    "evidence": "D'Andre Swift is going to have the early advantage in Chicago. While Monangai earned his 50/50 split in 2025, early-season woes could give Swift formidable volume well into the season.\n\nD'Andre Swift is going to have the early advantage in Chicago. While Monangai earned his 50/50 split in 2025, early-season woes could give Swift formidable volume well into the season. Monangai is uncertain to play Week 1 and will require a multi-week ramp-up from his knee hyperextension.",
+    "public_summary": "Thomas Carelli expects D'Andre Swift to open with an edge in Chicago as Monangai may miss Week 1 and needs a multi-week knee ramp-up.",
+    "lineupbeat_impact": "Swift could see a larger early workload if Monangai is unavailable or limited, but this is an analyst projection; monitor Monangai's Week 1 status and practice participation.",
+    "direction": "POSITIVE",
+    "mechanism": "INJURY"
+   }
+  },
+  {
+   "candidate_id": "mobile:onsi:7c69a383e2a027c252d3",
+   "player": "Mike Washington",
+   "player_id": "00-0040878",
+   "team": "LV",
+   "origin": "ARTICLE",
+   "source_id": "si_fantasy",
+   "source_name": "Fantasy On SI",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/cheat-sheet-injuries-advice-draft-strategy-fantasy-football",
+   "decision": "ABSTAIN",
+   "reason": "Cannot reliably attribute the conditional fantasy analysis to the identified player.",
+   "validation_failures": [],
+   "cost_usd": 0.006212
+  },
+  {
+   "candidate_id": "mobile:onsi:0969712bab540006784d",
+   "player": "Trey McBride",
+   "player_id": "00-0037744",
+   "team": "ARI",
+   "origin": "ARTICLE",
+   "source_id": "si_fantasy",
+   "source_name": "Fantasy On SI",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/cheat-sheet-injuries-advice-draft-strategy-fantasy-football",
+   "decision": "IGNORE",
+   "reason": "The passage contains no actionable news, role change, injury update, or fantasy-relevant development for Trey McBride.",
+   "validation_failures": [],
+   "cost_usd": 0.003962
+  },
+  {
+   "candidate_id": "mobile:onsi:4a29c9fa4e25329610ac",
+   "player": "Davante Adams",
+   "player_id": "00-0031381",
+   "team": "LAR",
+   "origin": "ARTICLE",
+   "source_id": "si_rams",
+   "source_name": "Sports Illustrated -- LAR",
+   "source_url": "https://www.si.com/nfl/rams/onsi/aaron-donald-return-rams-salary-cap-impact",
+   "decision": "IGNORE",
+   "reason": "No meaningful new fantasy development: Adams' deal was mentioned only as a potential cap-saving option the Rams do not appear to need to use.",
+   "validation_failures": [],
+   "cost_usd": 0.004312
+  },
+  {
+   "candidate_id": "mobile:onsi:2c971180ec0bac2262f1",
    "player": "Josh Jacobs",
    "player_id": "00-0035700",
    "team": "GB",
    "origin": "ARTICLE",
-   "source_id": "si_fantasy",
-   "source_name": "Fantasy On SI",
-   "source_url": "https://www.si.com/onsi/fantasy/news/marshawn-lloyd-vs-kaleb-johnson-which-packers-running-back-shines-in-fantasy-football-as-josh-jacobs-is-out",
-   "decision": "VALIDATION_FAILED",
-   "reason": "The source reports a new availability-changing roster status for Jacobs with an undisclosed absence.",
-   "validation_failures": [
-    "fantasy analysis is not explicitly attributed"
-   ],
-   "cost_usd": 0.005014,
-   "held_for_review": {
-    "evidence": "With the news of Josh Jacobs being placed on the commissioner exempt list keeping the Packers running back out for an undisclosed amount of time, the role of Packers RB 1 is up for grabs.",
-    "public_summary": "Jeff Salcedo reports Josh Jacobs is on the commissioner exempt list for an undisclosed period, leaving Green Bay's lead RB role open.",
-    "lineupbeat_impact": "Jacobs cannot be counted on while he remains unavailable, and Green Bay's backfield should be monitored for a replacement workload. The duration and any timetable are undisclosed.",
-    "direction": "NEGATIVE",
-    "mechanism": "TRANSACTION"
-   }
-  },
-  {
-   "candidate_id": "mobile:onsi:eee2508e40d68ef9e932",
-   "player": "Caleb Williams",
-   "player_id": "00-0039918",
-   "team": "CHI",
-   "origin": "ARTICLE",
-   "source_id": "si_bears",
-   "source_name": "Sports Illustrated -- CHI",
-   "source_url": "https://www.si.com/nfl/bears/onsi/ruben-hyppolite-ii-is-ryan-poles-latest-colossal-mid-round-draft-bust",
+   "source_id": "si_packers",
+   "source_name": "Sports Illustrated -- GB",
+   "source_url": "https://www.si.com/nfl/packers/onsi/packers-practice-squad-tracker-safety-first-at-position-of-need",
    "decision": "IGNORE",
-   "reason": "Williams is mentioned only as part of retrospective commentary; the evidence provides no actionable fantasy development.",
+   "reason": "Jacobs' absence is mentioned without actionable availability details, and no fantasy-relevant role or workload change for him is reported.",
    "validation_failures": [],
-   "cost_usd": 0.004468
-  },
-  {
-   "candidate_id": "mobile:onsi:a70fff509941e68004dd",
-   "player": "George Kittle",
-   "player_id": "00-0033288",
-   "team": "SF",
-   "origin": "ARTICLE",
-   "source_id": "si_fantasy",
-   "source_name": "Fantasy On SI",
-   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-football-preseason-losers-mike-evans-had-a-rough-month-but-not-as-bad-as-another-wide-receiver",
-   "decision": "VALIDATION_FAILED",
-   "reason": "The author describes Kittle as having recovered, which is a potentially meaningful availability development, though it is unsupported by specifics.",
-   "validation_failures": [
-    "fantasy analysis is not explicitly attributed"
-   ],
-   "cost_usd": 0.0068,
-   "held_for_review": {
-    "evidence": "Around him, the team brought in Deebo Samuel, George Kittle made what looks like a miracle recovery, and De'Zhuan Stribling had a breakout preseason. To further complicate things, it feels like Evans has gotten hurt every time he's stepped on the field in training camp.\n\nAround him, the team brought in Deebo Samuel, George Kittle made what looks like a miracle recovery, and De'Zhuan Stribling had a breakout preseason. To further complicate things, it feels like Evans has gotten hurt every time he's stepped on the field in training camp. He has seen his stock drop significantly, while another receiver in the offense is on the rise.",
-    "public_summary": "Mark Morales-Smith says George Kittle appears to have made a remarkable recovery.",
-    "lineupbeat_impact": "This points to improved availability, but the source gives no injury details, participation level or role information. Monitor whether Kittle is fully active in team work.",
-    "direction": "POSITIVE",
-    "mechanism": "OTHER"
-   }
+   "cost_usd": 0.003906
   }
  ]
 }
