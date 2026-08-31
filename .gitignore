@@ -1,5 +1,6 @@
 __pycache__/
 *.pyc
+.venv/
 beatwire.db
 feed.html
 site/index.html
@@ -27,3 +28,4 @@ data/projections_*_backup.xlsx
 site/college-fantasy-football/
 site/404.html
 wire.db
+wire-tank01-state.json

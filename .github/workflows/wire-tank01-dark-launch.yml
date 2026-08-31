@@ -1,0 +1,74 @@
+name: Tank01 news dark launch
+
+on:
+  schedule:
+    # One request per hour. The isolated state enforces both seven elapsed
+    # days and 180 total attempts, below the 1,000-request free-plan ceiling.
+    - cron: "19 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: wire-tank01-dark-launch
+  cancel-in-progress: false
+
+jobs:
+  observe:
+    # Merging this workflow does not authorize recurring API calls. A manual
+    # dispatch can validate one response; recurring calls require this exact
+    # repository variable to be deliberately enabled.
+    if: github.event_name == 'workflow_dispatch' || vars.TANK01_DARK_LAUNCH == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    env:
+      TANK01_RAPIDAPI_KEY: ${{ secrets.TANK01_RAPIDAPI_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - uses: actions/cache/restore@v4
+        with:
+          path: wire-tank01-state.json
+          key: wire-tank01-state-${{ github.run_id }}
+          restore-keys: wire-tank01-state-
+
+      - name: Offline Tank01 gates
+        run: |
+          python scripts/test_tank01.py
+          python scripts/wire_health.py --check
+
+      - name: Verify secret without an external request
+        run: python scripts/wire_tank01_dark.py --check-key
+
+      - name: Capture one private observation
+        run: |
+          python scripts/wire_tank01_dark.py --days 7 --max-requests 180
+          cat data/wire_tank01_dark_report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload private response and comparison
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tank01-dark-${{ github.run_id }}
+          path: |
+            data/wire_tank01_dark_raw.json
+            data/wire_tank01_dark_report.json
+            data/wire_tank01_dark_report.md
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Save isolated request ledger
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: wire-tank01-state.json
+          key: wire-tank01-state-${{ github.run_id }}

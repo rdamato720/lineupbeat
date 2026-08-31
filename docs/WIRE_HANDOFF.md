@@ -808,6 +808,29 @@ python scripts/test_wire_review.py
 python scripts/wire_health.py --check
 ```
 
+### 17.3 Tank01 news-source dark launch
+
+`.github/workflows/wire-tank01-dark-launch.yml` is an isolated seven-day
+coverage experiment. It calls `/getNFLNews` at most once per hour, stops after
+seven elapsed days or 180 attempted requests, makes zero model calls, writes no
+repository content, and has no route to `data/wire_publications.json`. The raw
+provider response, normalized schema, freshness measures and comparison
+against the current mobile batch and reviewed publications are uploaded only
+as private workflow artifacts. An unknown response shape fails visibly rather
+than being counted as a quiet news hour.
+
+A manual dispatch may validate one response. Recurring calls remain disabled
+until the repository owner sets `TANK01_DARK_LAUNCH=true`. The request ledger
+is stored only in the isolated `wire-tank01-state.json` Actions cache. Tank01
+items are investigation leads during this experiment; they are not approved
+reporting or publication evidence.
+
+Required Tank01 gate:
+
+```bash
+python scripts/test_tank01.py
+```
+
 ## 18. Secrets and provider configuration
 
 Current workflow secrets/variables referenced by the broader project include:
@@ -820,6 +843,8 @@ Current workflow secrets/variables referenced by the broader project include:
 - `WIRE_MOBILE_MAX_CALLS`
 - `WIRE_MOBILE_RUN_CAP_USD`
 - `WIRE_MOBILE_TAPI_DAILY_CAP_USD`
+- `TANK01_RAPIDAPI_KEY`
+- `TANK01_DARK_LAUNCH` as an explicit recurring-request enable switch
 
 The paused YouTube pilot reads `YOUTUBE_API_KEY` only when used manually.
 ChatGPT subscriptions do not fund API calls; OpenAI API billing is separate.
