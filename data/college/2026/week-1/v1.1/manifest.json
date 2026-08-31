@@ -1,0 +1,45 @@
+{
+ "version": "college_week1_2026_v1.1",
+ "status": "PUBLISHED",
+ "generated_at": "2026-08-31T01:01:49.263995+00:00",
+ "source_release": "2026/v1.1",
+ "source_manifest_sha256": "4c2f35fec2eaa3d43d2e18a2956d3118a20a17805ff1d4c74989a5cc069d6eb0",
+ "qa_status": "PASS",
+ "scoring": "Yahoo scoring rules",
+ "counts": {
+  "players": 2205,
+  "teams": 64,
+  "positions": {
+   "QB": 339,
+   "RB": 462,
+   "WR": 924,
+   "TE": 480
+  }
+ },
+ "files": {
+  "college_week1_player_projections_2026_v1.1.csv": {
+   "bytes": 716905,
+   "sha256": "ec8ef906d8d5f33521060125b74b9b2dd306cf0f357d33892a3b9c134a3b947b"
+  },
+  "college_week1_schedule_2026.json": {
+   "bytes": 24140,
+   "sha256": "5dad41c147afa8e5e4945754cee2301a02c84cbb60bcb1a58f6219440f46763c"
+  },
+  "college_week1_site_projections_2026.json": {
+   "bytes": 821657,
+   "sha256": "7e9bc98ec08726ed36a02cb7a9e698640d1395cae92402d88ecb500041f9d694"
+  }
+ },
+ "private_market_calibration": {
+  "game_snapshot_id": 4,
+  "game_snapshot_fetched_at": "2026-08-31T01:01:49.191050+00:00",
+  "prop_snapshot_id": 4,
+  "prop_snapshot_fetched_at": "2026-08-31T01:01:49.191050+00:00",
+  "available_prop_players": 3,
+  "available_prop_markets": 7,
+  "game_events_overlaid": 39,
+  "prop_stat_adjustments": 0,
+  "players_with_prop_adjustments": 0,
+  "published_odds": false
+ }
+}

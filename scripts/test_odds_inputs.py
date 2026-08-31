@@ -91,6 +91,11 @@ class ConsensusTests(unittest.TestCase):
             players = odds.latest_player_inputs(conn, "americanfootball_nfl")
             self.assertEqual({row["player_name"] for row in players},
                              {"Example Quarterback", "Example Runner"})
+            info = odds.latest_snapshot_info(
+                conn, "americanfootball_nfl", require_props=True)
+            self.assertEqual(info["snapshot_id"], snapshot_id)
+            self.assertEqual(info["player_count"], 2)
+            self.assertEqual(info["prop_count"], 2)
             tables = {row[0] for row in conn.execute(
                 "SELECT name FROM sqlite_master WHERE type='table'")}
             self.assertIn("odds_quotes", tables)
@@ -101,6 +106,90 @@ class ConsensusTests(unittest.TestCase):
             "https://example.test?apiKey=super-secret-value failed")
         self.assertNotIn("super-secret-value", message)
         self.assertIn("[redacted]", message)
+
+    def test_prop_cap_counts_only_prop_bearing_events(self):
+        empty = fixture()
+        empty["id"] = "event-empty"
+        empty["sport_key"] = odds.SPORT_KEYS["ncaaf"]
+        empty["bookmakers"] = [
+            {**book, "markets": [
+                market for market in book["markets"]
+                if not market["key"].startswith("player_")
+            ]}
+            for book in empty["bookmakers"]
+        ]
+        # Give the empty major game more book coverage so it is attempted
+        # first; the collector must continue to the next event.
+        empty["bookmakers"].append({
+            "key": "fourth", "last_update": "2026-08-30T20:00:00Z",
+            "markets": [],
+        })
+        with_props = fixture()
+        with_props["id"] = "event-props"
+        with_props["sport_key"] = odds.SPORT_KEYS["ncaaf"]
+
+        class Client:
+            credits_used = 0
+            credits_remaining = 500
+
+            def get(self, path, **params):
+                if "/events/" not in path:
+                    return [empty, with_props]
+                self.credits_used += 6
+                self.credits_remaining -= 6
+                return empty if "event-empty" in path else with_props
+
+        with tempfile.TemporaryDirectory() as directory:
+            conn = odds.connect(Path(directory) / "runtime.db")
+            snapshot, events, prop_events, attempts = odds.fetch_sport(
+                conn, Client(), "ncaaf", True, max_prop_events=1,
+                credit_reserve=75)
+            self.assertGreater(snapshot, 0)
+            self.assertEqual((events, prop_events, attempts), (2, 1, 2))
+            players = odds.latest_player_inputs(conn, odds.SPORT_KEYS["ncaaf"])
+            self.assertEqual({row["player_name"] for row in players},
+                             {"Example Quarterback", "Example Runner"})
+
+    def test_prop_window_excludes_better_covered_off_slate_game(self):
+        off_slate = fixture()
+        off_slate["id"] = "event-off-slate"
+        off_slate["sport_key"] = odds.SPORT_KEYS["ncaaf"]
+        off_slate["commence_time"] = "2026-09-12T16:00:00Z"
+        off_slate["bookmakers"].append({
+            "key": "fourth", "last_update": "2026-08-30T20:00:00Z",
+            "markets": [],
+        })
+        on_slate = fixture()
+        on_slate["id"] = "event-on-slate"
+        on_slate["sport_key"] = odds.SPORT_KEYS["ncaaf"]
+        on_slate["commence_time"] = "2026-09-05T16:00:00Z"
+
+        class Client:
+            credits_used = 0
+            credits_remaining = 500
+
+            def __init__(self):
+                self.attempted = []
+
+            def get(self, path, **params):
+                if "/events/" not in path:
+                    return [off_slate, on_slate]
+                self.attempted.append(path)
+                return on_slate
+
+        client = Client()
+        window = (
+            odds.parse_iso("2026-09-03T22:00:00Z"),
+            odds.parse_iso("2026-09-07T23:30:00Z"),
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            conn = odds.connect(Path(directory) / "runtime.db")
+            _, _, prop_events, attempts = odds.fetch_sport(
+                conn, client, "ncaaf", True, max_prop_events=1,
+                credit_reserve=75, prop_window=window)
+        self.assertEqual((prop_events, attempts), (1, 1))
+        self.assertEqual(len(client.attempted), 1)
+        self.assertIn("event-on-slate", client.attempted[0])
 
 
 if __name__ == "__main__":
