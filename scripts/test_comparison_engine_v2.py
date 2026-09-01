@@ -201,6 +201,17 @@ class LayoutContracts(unittest.TestCase):
         self.assertIn("Evidence agreement", nfl)
         self.assertNotIn("Confidence and data quality", nfl)
 
+    def test_dynamic_agreement_summary_starts_with_a_capital_letter(self):
+        nfl = build_decision_room.render(decision_data.load_season())
+        self.assertIn("function sentenceStart(v)", nfl)
+        self.assertIn("sentenceStart(clauses.join('; '))", nfl)
+        self.assertNotIn("return `${clauses.join('; ')}. Evidence agreement", nfl)
+
+    def test_current_ranks_uses_plural_verb_in_dynamic_summary(self):
+        nfl = build_decision_room.render(decision_data.load_season())
+        self.assertIn("category!=='current ranks'?'favors':'favor'", nfl)
+        self.assertIn("agreementVerb(x.groups[p.id])", nfl)
+
     def test_missing_adp_copy_handles_one_and_both_players(self):
         nfl = build_decision_room.render(decision_data.load_season())
         self.assertIn("one-missing", nfl)
