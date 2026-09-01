@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 618,
+ "count": 636,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -6837,6 +6837,204 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004014
+  },
+  {
+   "candidate_id": "mobile:onsi:b85d0fa3e658d2766c72",
+   "player_id": "00-0036264",
+   "source_url": "https://www.si.com/nfl/packers/onsi/packers-coach-matt-lafleur-s-new-no-3-qb-was-on-brother-s-roster",
+   "attempted_at": "2026-09-01T15:40:45+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:40:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00406
+  },
+  {
+   "candidate_id": "mobile:onsi:53b3eabb47c78eeb9d03",
+   "player_id": "00-0035659",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-cuts-winners-losers-2026-analysis",
+   "attempted_at": "2026-09-01T15:40:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:40:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005478
+  },
+  {
+   "candidate_id": "mobile:onsi:58c5b895fd3b9bc275d3",
+   "player_id": "00-0036997",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/new-dallas-cowboys-rb-emari-demercado-jersey-number-first-practice",
+   "attempted_at": "2026-09-01T15:40:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:40:58+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004568
+  },
+  {
+   "candidate_id": "mobile:onsi:21e32a5ccf3bf079b539",
+   "player_id": "00-0036590",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-4-biggest-questions-facing-after-trimming-roster-cole-van-lanen-status",
+   "attempted_at": "2026-09-01T15:40:58+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:41:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004946
+  },
+  {
+   "candidate_id": "mobile:onsi:e515a7c9b20d71829d8b",
+   "player_id": "00-0040878",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/final-fantasy-football-running-back-draft-rankings-marshawn-lloyd-lands-as-an-rb3-after-josh-jacobs-fallout",
+   "attempted_at": "2026-09-01T15:41:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:41:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003764
+  },
+  {
+   "candidate_id": "mobile:onsi:2e48f9e525295f954ab6",
+   "player_id": "00-0041013",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/what-the-chiefs-final-roster-says-about-the-front-office-vision-brett-veach",
+   "attempted_at": "2026-09-01T15:41:14+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T15:41:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00695
+  },
+  {
+   "candidate_id": "mobile:onsi:319d968209a0ce9a0e51",
+   "player_id": "00-0033873",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/what-the-chiefs-final-roster-says-about-the-front-office-vision-brett-veach",
+   "attempted_at": "2026-09-01T15:41:21+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:41:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00393
+  },
+  {
+   "candidate_id": "mobile:article:ff8d13033fb65b0188e3",
+   "player_id": "00-0041263",
+   "source_url": "https://steelersdepot.com/2026/09/pff-grades-steelers-2026-preseason-recap/",
+   "attempted_at": "2026-09-01T15:41:23+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:41:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004826
+  },
+  {
+   "candidate_id": "mobile:onsi:9e4657a39c61c25c81fe",
+   "player_id": "00-0038543",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/jaxon-smith-njigba-represents-seahawks-strongly-top-100-list",
+   "attempted_at": "2026-09-01T15:41:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:41:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004846
+  },
+  {
+   "candidate_id": "mobile:article:c7851b08069e25e0fdf9",
+   "player_id": "00-0033090",
+   "source_url": "https://www.patriots.com/news/analysis-patriots-claim-te-cameron-latu-and-lb-darius-muasau-off-waivers-begin-filling-out-practice-squad",
+   "attempted_at": "2026-09-01T15:41:31+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:41:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00538
+  },
+  {
+   "candidate_id": "mobile:onsi:190d2862b1cebd3d8bd7",
+   "player_id": "00-0040124",
+   "source_url": "https://www.si.com/nfl/panthers/onsi/every-position-panthers-could-add-after-roster-finalization",
+   "attempted_at": "2026-09-01T15:41:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:41:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003972
+  },
+  {
+   "candidate_id": "mobile:onsi:3445b6c0ef237691df74",
+   "player_id": "00-0035228",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/grading-every-vikings-position-after-announcing-initial-53-man-roster-01m1cb59m34q",
+   "attempted_at": "2026-09-01T15:41:37+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T15:41:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004648
+  },
+  {
+   "candidate_id": "mobile:onsi:d2f03f468449a33968cf",
+   "player_id": "00-0033293",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/grading-every-vikings-position-after-announcing-initial-53-man-roster-01m1cb59m34q",
+   "attempted_at": "2026-09-01T15:41:41+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:41:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003992
+  },
+  {
+   "candidate_id": "mobile:onsi:eff4992ceb889f97d34e",
+   "player_id": "00-0037525",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/grading-every-vikings-position-after-announcing-initial-53-man-roster-01m1cb59m34q",
+   "attempted_at": "2026-09-01T15:41:44+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:41:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003944
+  },
+  {
+   "candidate_id": "mobile:onsi:b100beb53f02da1dc4fd",
+   "player_id": "00-0035229",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/grading-every-vikings-position-after-announcing-initial-53-man-roster-01m1cb59m34q",
+   "attempted_at": "2026-09-01T15:41:47+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:41:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005396
+  },
+  {
+   "candidate_id": "mobile:onsi:a750d82078036694d9b9",
+   "player_id": "00-0036259",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/grading-every-vikings-position-after-announcing-initial-53-man-roster-01m1cb59m34q",
+   "attempted_at": "2026-09-01T15:41:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:41:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003902
+  },
+  {
+   "candidate_id": "mobile:onsi:f2a4ac562f968ea8aa07",
+   "player_id": "00-0038994",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/grading-every-vikings-position-after-announcing-initial-53-man-roster-01m1cb59m34q",
+   "attempted_at": "2026-09-01T15:41:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:41:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004596
+  },
+  {
+   "candidate_id": "mobile:onsi:6d749a526ad61fc4aad4",
+   "player_id": "00-0036322",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/grading-every-vikings-position-after-announcing-initial-53-man-roster-01m1cb59m34q",
+   "attempted_at": "2026-09-01T15:41:57+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:42:02+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005052
   }
  ]
 }
