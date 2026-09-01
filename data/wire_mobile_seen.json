@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 676,
+ "count": 694,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -7475,6 +7475,204 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.006182
+  },
+  {
+   "candidate_id": "mobile:article:2f93fff3aee0a7f96397",
+   "player_id": "00-0033881",
+   "source_url": "https://www.denverbroncos.com/news/to-be-in-the-huddle-with-him-is-tremendous-qb-bo-nix-s-leadership-continues-to-develop-ahead-of-year-3",
+   "attempted_at": "2026-09-01T22:08:52+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:08:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004202
+  },
+  {
+   "candidate_id": "mobile:onsi:8d8a982f179f24e855c2",
+   "player_id": "00-0038606",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-5-most-important-things-james-gladstone-said-about-roster-and-why-they-matter",
+   "attempted_at": "2026-09-01T22:08:57+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T22:09:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007134
+  },
+  {
+   "candidate_id": "mobile:onsi:6b5e432bd6477cb9119b",
+   "player_id": "00-0039893",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-5-most-important-things-james-gladstone-said-about-roster-and-why-they-matter",
+   "attempted_at": "2026-09-01T22:09:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004912
+  },
+  {
+   "candidate_id": "mobile:article:9dbe0c31c512972917bd",
+   "player_id": "00-0037228",
+   "source_url": "https://steelersdepot.com/2026/09/its-a-big-deal-mccarthy-describes-how-eli-heidenreich-earned-his-roster-spot/",
+   "attempted_at": "2026-09-01T22:09:06+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004116
+  },
+  {
+   "candidate_id": "mobile:article:c97858bedfb74bde67b2",
+   "player_id": "00-0036139",
+   "source_url": "https://steelersdepot.com/2026/09/its-a-big-deal-mccarthy-describes-how-eli-heidenreich-earned-his-roster-spot/",
+   "attempted_at": "2026-09-01T22:09:09+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00544
+  },
+  {
+   "candidate_id": "mobile:onsi:0bfe2d990d8414bcb4e9",
+   "player_id": "00-0036442",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/cincinnati-bengals-double-down-on-swing-tackle-battle-with-2-new-additions-01m1fdpn5r9r",
+   "attempted_at": "2026-09-01T22:09:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003878
+  },
+  {
+   "candidate_id": "mobile:onsi:47530b6874578e97339b",
+   "player_id": "00-0036358",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/george-pickens-spectacularly-whiffed-golf-shot-cowboys-teammates-roasted-him",
+   "attempted_at": "2026-09-01T22:09:15+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003874
+  },
+  {
+   "candidate_id": "mobile:onsi:a3d033d01a9d4e26b74d",
+   "player_id": "00-0033077",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/george-pickens-spectacularly-whiffed-golf-shot-cowboys-teammates-roasted-him",
+   "attempted_at": "2026-09-01T22:09:18+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003922
+  },
+  {
+   "candidate_id": "mobile:onsi:bee52d279f5db8868fbd",
+   "player_id": "00-0037247",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/george-pickens-spectacularly-whiffed-golf-shot-cowboys-teammates-roasted-him",
+   "attempted_at": "2026-09-01T22:09:21+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003482
+  },
+  {
+   "candidate_id": "mobile:onsi:024023c85cfb159784da",
+   "player_id": "00-0039139",
+   "source_url": "https://www.si.com/onsi/fantasy/news/javonte-williams-leads-group-of-high-floor-safe-mid-round-fantasy-football-running-backs",
+   "attempted_at": "2026-09-01T22:09:23+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004082
+  },
+  {
+   "candidate_id": "mobile:onsi:bc588eaaf9a9cad49d8a",
+   "player_id": "00-0032764",
+   "source_url": "https://www.si.com/onsi/fantasy/news/javonte-williams-leads-group-of-high-floor-safe-mid-round-fantasy-football-running-backs",
+   "attempted_at": "2026-09-01T22:09:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:29+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004714
+  },
+  {
+   "candidate_id": "mobile:onsi:1993743980e98e627fca",
+   "player_id": "00-0036358",
+   "source_url": "https://www.si.com/onsi/fantasy/news/javonte-williams-leads-group-of-high-floor-safe-mid-round-fantasy-football-running-backs",
+   "attempted_at": "2026-09-01T22:09:29+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0049
+  },
+  {
+   "candidate_id": "mobile:onsi:3e579f0a92c11426b18a",
+   "player_id": "00-0037247",
+   "source_url": "https://www.si.com/onsi/fantasy/news/javonte-williams-leads-group-of-high-floor-safe-mid-round-fantasy-football-running-backs",
+   "attempted_at": "2026-09-01T22:09:33+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005064
+  },
+  {
+   "candidate_id": "mobile:onsi:5e188138dbe203add26c",
+   "player_id": "00-0037248",
+   "source_url": "https://www.si.com/nfl/bills/onsi/cutdown-how-bills-53-man-roster-maps-out-front-office-vision",
+   "attempted_at": "2026-09-01T22:09:37+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T22:09:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00483
+  },
+  {
+   "candidate_id": "mobile:onsi:65052ddf2f045ea4600a",
+   "player_id": "00-0036158",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/what-broncos-final-roster-says-about-the-front-office-vision",
+   "attempted_at": "2026-09-01T22:09:41+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003886
+  },
+  {
+   "candidate_id": "mobile:onsi:e4588e97b6f54021552c",
+   "player_id": "00-0039732",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/what-broncos-final-roster-says-about-the-front-office-vision",
+   "attempted_at": "2026-09-01T22:09:43+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003692
+  },
+  {
+   "candidate_id": "mobile:onsi:3802a5ce6b29cea5de25",
+   "player_id": "00-0040134",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/what-broncos-final-roster-says-about-the-front-office-vision",
+   "attempted_at": "2026-09-01T22:09:45+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005478
+  },
+  {
+   "candidate_id": "mobile:onsi:7c93b45638b12658ba38",
+   "player_id": "00-0039868",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/what-broncos-final-roster-says-about-the-front-office-vision",
+   "attempted_at": "2026-09-01T22:09:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T22:09:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005432
   }
  ]
 }
