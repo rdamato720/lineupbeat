@@ -302,7 +302,7 @@ def html(players: list[dict], built: datetime, a: dict | None = None,
     css, _, footer = base.site_chrome()
     search = ('<input type="search" placeholder="Search any player" '
               'autocomplete="off" aria-label="Search any player">')
-    header = seo.site_nav("data", search=search).replace(
+    header = seo.site_nav("decision", search=search).replace(
         '  </div>\n',
         f'    <span class="stamp agate">UPDATED {built:%b %d}</span>\n  </div>\n',
         1,

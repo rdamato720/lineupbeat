@@ -379,6 +379,55 @@ NAV_ITEMS = (("decision", "Decision"), ("rankings", "Rankings"),
              ("projections", "Projections"))
 
 
+# The shell must be complete wherever its markup is used. Most legacy page
+# builders also carry the large production stylesheet, but standalone tools
+# such as the Decision Rooms do not.
+SHELL_CSS = """
+:root{--paper:#08090B;--card:#111417;--ink:#F2F1EC;--rule:#242A2E;
+  --muted:#B5BAB5;--quiet:#9BA09C;--signal:#C6F53C;
+  --agate:"Barlow Condensed",ui-sans-serif,system-ui,sans-serif;
+  --text:"Source Serif 4",Georgia,serif;
+  --data:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;overflow-x:clip}
+body{overflow-x:clip}.wrap{max-width:64rem;margin:0 auto;padding:0 1rem}
+.topbar{position:sticky;top:0;z-index:40;max-width:100%;
+  background:rgba(8,9,11,.96);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);color:var(--ink);font-family:var(--agate)}
+.topbar .tbrow{display:flex;align-items:center;gap:1.1rem;min-width:0;padding:.6rem 1rem}
+.topbar .logo{display:inline-flex;align-items:center;min-height:44px;flex:0 0 auto;
+  padding:0;border:0;background:none;color:var(--ink);text-decoration:none;
+  font:600 1.15rem/1 var(--agate);letter-spacing:.16em;text-transform:uppercase}
+.topbar .logo em{color:var(--signal);font-style:normal}
+.topbar .views{display:flex;align-items:center;gap:.15rem;flex:0 0 auto}
+.topbar .vbtn{display:inline-flex;align-items:center;min-height:38px;padding:.5rem .75rem;
+  border:1px solid transparent;border-radius:999px;background:none;color:var(--quiet);
+  text-decoration:none;white-space:nowrap;font:600 .74rem/1 var(--agate);
+  letter-spacing:.1em;text-transform:uppercase}.topbar .vbtn:hover{color:var(--ink)}
+.topbar .finder{position:relative;flex:1;min-width:0;max-width:26rem;margin-left:auto}
+.topbar .finder input{width:100%;min-height:38px;padding:.42rem .7rem;
+  border:1px solid var(--rule);border-radius:8px;background:#0E1114;color:var(--ink);
+  font:400 .92rem/1.3 var(--text)}
+.topbar .finder input::placeholder{color:var(--quiet)}
+.topbar .finder input:focus{outline:2px solid var(--signal);outline-offset:-1px}
+.global-footer{margin-top:3rem;padding:1.5rem 0 3rem;border-top:1px solid var(--rule);
+  background:var(--card);color:var(--quiet);font-family:var(--text)}
+.global-footer .fbrand{padding-bottom:1.4rem;border-bottom:1px solid var(--rule)}
+.global-footer .flogo{color:var(--ink);font:600 1.05rem/1 var(--agate);
+  letter-spacing:.02em;text-transform:uppercase}.global-footer .flogo em{color:var(--signal);font-style:normal}
+.global-footer .ftag{max-width:52ch;margin:.55rem 0 0;font-size:.92rem;line-height:1.6}
+.global-footer .frow{display:flex;flex-wrap:wrap;gap:2rem;padding-top:1.4rem}
+.global-footer .fcol{flex:1 1 12rem}.global-footer h3{margin:0 0 .45rem;color:var(--ink);
+  font:600 .75rem/1.2 var(--agate);letter-spacing:.09em;text-transform:uppercase}
+.global-footer p{max-width:36ch;margin:.25rem 0;font-size:.88rem;line-height:1.7}
+.global-footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+.global-footer a:hover{color:var(--signal);border-bottom-color:var(--signal)}
+.global-footer .fbase{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;margin-top:1.5rem;
+  padding-top:1rem;border-top:1px solid var(--rule);color:var(--quiet);
+  font:600 .72rem/1.5 var(--agate);letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:900px){.topbar .tbrow{gap:.5rem}.topbar .finder input{font-size:16px}}
+"""
+
+
 NAV_CSS = """
 /* ---- header ----
    Designed at 390px and expanded, not a desktop bar squeezed down. Most
@@ -673,7 +722,7 @@ def site_nav(active=None, sport="nfl", search=""):
         search = ('<a class="college-search-entry" href="/decision-room/college/">'
                   'Search 2,205 College players</a>')
     return (
-        f'<style>{TEAMS_CSS}{NAV_CSS}</style>\n'
+        f'<style id="shared-shell-css">{SHELL_CSS}{TEAMS_CSS}{NAV_CSS}</style>\n'
         '<header class="topbar">\n'
         '  <div class="wrap tbrow">\n'
         '    <a class="logo" href="/">Lineup<em>Beat</em></a>\n'

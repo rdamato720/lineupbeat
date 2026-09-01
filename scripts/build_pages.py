@@ -144,7 +144,7 @@ APP_FOOTER = APP_FOOTER + (
 # A player page is wire content and gets the plain one; the hub and the
 # boards get the marker, so the highlight means where you are rather than
 # which script built the page.
-_, DATA_HEADER, _ = site_chrome("data")
+_, DATA_HEADER, _ = site_chrome(None)
 _, ABOUT_HEADER, _ = site_chrome("about")
 
 TEAM_C2 = {
@@ -916,8 +916,7 @@ def player_page(p, nuggets, base, wire_publications=None):
                f'{len(nuggets)} report'
                f'{"s" if len(nuggets) != 1 else ""}</h2>\n'
                if nuggets else
-               '  <h2>Decision context</h2>\n'
-               '  <p class="dlede">No additional validated decision context is available. The projection panel above remains the current Lineup Beat view.</p>\n')
+               '  <p class="dlede decision-empty">No additional validated decision context is available; the projection panel above remains the current Lineup Beat view.</p>\n')
             + "\n".join(arts)
             + related_players_block(p))
 
@@ -3666,6 +3665,12 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
 </main>"""
 
     body = '''<main class="lb-about-page"><section class="lb-about-hero"><div class="lb-about-wrap"><div class="lb-about-kicker">ABOUT LINEUPBEAT</div><h1>Understand the call.<br><span>Know what changes it.</span></h1><p class="lb-about-lead">Lineup Beat helps fantasy players compare validated outcomes, see the recommendation, understand its uncertainty, and identify the boundary that would change the pick.</p><div class="lb-about-actions"><a class="lb-about-btn lb-about-btn-primary" href="/decision-room/nfl/">OPEN NFL DECISION ROOM</a><a class="lb-about-btn lb-about-btn-secondary" href="/decision-room/college/">EXPLORE COLLEGE</a></div></div></section><section class="lb-about-section"><div class="lb-about-wrap"><div class="lb-about-section-head"><div class="lb-about-kicker">WHAT WE BUILD</div><h2>Evidence, forecast, boundary, record.</h2><p>Validated projections and rankings establish the current view. Decision boundaries show how much an input must move before the recommendation changes. Future timestamped records are designed to preserve calls instead of silently rewriting them.</p></div><div class="lb-about-do-grid"><article class="lb-about-do-card"><div class="lb-about-card-kicker">01 · COMPARE</div><h3>Put two outcomes side by side.</h3><p>NFL season comparisons support PPR, Half-PPR, and Non-PPR. College Week 1 currently supports Yahoo scoring only.</p></article><article class="lb-about-do-card"><div class="lb-about-card-kicker">02 · EXPLAIN</div><h3>Show what changes the pick.</h3><p>A recommendation is more useful when its threshold and scoring-format sensitivity are visible.</p></article><article class="lb-about-do-card"><div class="lb-about-card-kicker">03 · ACCOUNT</div><h3>Preserve the recommendation.</h3><p>Lineup Beat is building a decision record that retains inputs, timestamps, and eventual outcomes.</p></article></div></div></section><section class="lb-about-section"><div class="lb-about-wrap"><div class="lb-about-section-head"><div class="lb-about-kicker">HONEST COVERAGE</div><h2>NFL and College are separate validated datasets.</h2><p>The NFL Decision Room contains 177 identity-resolved players. Advanced Draft Comparison contains 216. NFL projection pages cover 615. College Week 1 contains 2,205 players across 64 teams; College season projections contain 2,351 across 68 teams. Those pools have different eligibility, horizons, formats, and identity coverage.</p></div></div></section><section class="lb-about-belief"><div class="lb-about-wrap"><blockquote>Recommendations can change.<br><span>The reason should remain visible.</span></blockquote></div></section></main>'''
+    body = ('<style>.lb-about-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}'
+            '.lb-about-actions .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}'
+            '.lb-about-actions .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule)}'
+            '@media(max-width:520px){.lb-about-actions{align-items:stretch}.lb-about-actions .btn{flex:1 1 100%}}'
+            '</style>' + body.replace('lb-about-btn lb-about-btn-primary', 'btn')
+            .replace('lb-about-btn lb-about-btn-secondary', 'btn ghost'))
     title = "About LineupBeat | Fantasy Decisions With Accountability"
     desc = ("How Lineup Beat uses validated NFL and College projections, "
             "decision boundaries, uncertainty, and accountable recommendations.")
