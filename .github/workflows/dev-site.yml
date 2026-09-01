@@ -37,6 +37,8 @@ jobs:
           python scripts/test_ranking_formats.py
           python scripts/test_comparison_tool.py
           python scripts/test_decision_room.py
+          python scripts/test_college_decision_room.py
+          python scripts/test_college_week1.py
           python scripts/test_feedback.py
           python -m beatwire.cli doctor --sport nfl
           python scripts/sync_home_nav.py --check

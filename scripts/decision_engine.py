@@ -8,6 +8,7 @@ from dataclasses import dataclass
 
 FORMATS = ("ppr", "half_ppr", "non_ppr")
 FORMAT_LABELS = {"ppr": "PPR", "half_ppr": "Half-PPR", "non_ppr": "Non-PPR"}
+FORMAT_LABELS["yahoo"] = "Yahoo"
 
 
 @dataclass(frozen=True)
@@ -18,11 +19,13 @@ class DecisionContext:
     week: int | None = None
 
     def __post_init__(self) -> None:
-        if self.mode != "season":
-            raise ValueError("only validated season mode is available")
-        if self.week is not None:
+        if self.mode not in ("season", "weekly"):
+            raise ValueError("unsupported projection mode")
+        if self.mode == "season" and self.week is not None:
             raise ValueError("season mode cannot carry a week")
-        if self.scoring_format not in FORMATS:
+        if self.mode == "weekly" and self.week is None:
+            raise ValueError("weekly mode requires a week")
+        if self.scoring_format not in FORMAT_LABELS:
             raise ValueError("unsupported scoring format")
 
 
@@ -52,7 +55,7 @@ def compare(a: dict, b: dict, context: DecisionContext) -> dict:
     bp = round(float(bf["projected_points"]), 1)
     if ap == bp:
         changes = []
-        for fmt in FORMATS:
+        for fmt in sorted(set(a.get("formats", {})) & set(b.get("formats", {}))):
             if fmt == context.scoring_format:
                 continue
             other = compare_shallow(a, b, fmt)
@@ -75,7 +78,7 @@ def compare(a: dict, b: dict, context: DecisionContext) -> dict:
     # smallest honest threshold that actually changes the recommendation.
     flip = round(gap + 0.1, 1)
     changes = []
-    for fmt in FORMATS:
+    for fmt in sorted(set(a.get("formats", {})) & set(b.get("formats", {}))):
         if fmt == context.scoring_format:
             continue
         try:
@@ -117,7 +120,8 @@ def compare_shallow(a: dict, b: dict, scoring_format: str) -> dict:
             "confidence": confidence(abs(ap - bp))}
 
 
-def closest_calls(players: list[dict], scoring_format: str, limit: int = 6) -> list[dict]:
+def closest_calls(players: list[dict], scoring_format: str, limit: int = 6,
+                  context: DecisionContext | None = None) -> list[dict]:
     calls = []
     caps = {"QB": 24, "RB": 48, "WR": 60, "TE": 30}
     for position, cap in caps.items():
@@ -126,12 +130,24 @@ def closest_calls(players: list[dict], scoring_format: str, limit: int = 6) -> l
                 and p["formats"][scoring_format].get("position_rank", 10_000) <= cap]
         pool.sort(key=lambda p: (-p["formats"][scoring_format]["projected_points"], p["name"]))
         for a, b in zip(pool, pool[1:]):
-            result = compare(a, b, DecisionContext("season", 2026, scoring_format))
+            result = compare(a, b, context or
+                             DecisionContext("season", 2026, scoring_format))
             calls.append(result)
     calls.sort(key=lambda r: (r["gap"],
                               (r["winner"] or r["player_a"])["position"],
                               (r["winner"] or r["player_a"])["name"]))
     return calls[:limit]
+
+
+def strongest_projection_edges(players: list[dict], scoring_format: str,
+                                limit: int = 6,
+                                context: DecisionContext | None = None) -> list[dict]:
+    """Largest adjacent same-position edges among decision-relevant players."""
+    rows = closest_calls(players, scoring_format, limit=len(players), context=context)
+    rows.sort(key=lambda r: (-r["gap"],
+                             (r["winner"] or r["player_a"])["position"],
+                             (r["winner"] or r["player_a"])["name"]))
+    return rows[:limit]
 
 
 def convictions(players: list[dict], scoring_format: str, limit: int = 6) -> list[dict]:

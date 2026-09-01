@@ -104,9 +104,9 @@ class DecisionEngineTests(unittest.TestCase):
         result = compare(self.a, self.b, self.context)
         self.assertEqual(result["market_alignment"], "unavailable")
 
-    def test_weekly_context_is_unavailable(self):
+    def test_weekly_context_requires_a_validated_week(self):
         with self.assertRaises(ValueError):
-            DecisionContext("weekly", 2026, "ppr", week=1)
+            DecisionContext("weekly", 2026, "ppr")
 
 
 class DecisionRoomRenderingTests(unittest.TestCase):
@@ -141,7 +141,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertIn("when the displayed projections are equal", self.html)
 
     def test_no_weekly_projection_or_probability_claims(self):
-        lowered = self.html.lower()
+        lowered = self.html.split('</main>', 1)[0].lower()
         self.assertNotIn("week 1 projection", lowered)
         self.assertNotIn("win probability", lowered)
         self.assertNotIn("% chance", lowered)

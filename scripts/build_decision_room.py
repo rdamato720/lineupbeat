@@ -10,6 +10,8 @@ import re
 from pathlib import Path
 
 import build_comparison_tool
+import college_decision_data
+import college_decision_room
 import decision_data
 from decision_engine import (FORMAT_LABELS, DecisionContext, closest_calls,
                              scoring_movers, value_signals)
@@ -84,6 +86,7 @@ def render(payload: dict) -> str:
                       for p in players)
     updated = payload["updated_at"]
     block = f'''{START}
+<nav class="dr-sports" aria-label="Decision Room sport"><a data-sport="nfl" href="/?sport=nfl" aria-pressed="true">NFL</a><a data-sport="college" href="/?sport=college" aria-pressed="false">College</a></nav>
 <main id="decision-room" class="dr-shell" data-mode="season" data-season="2026">
   <section class="dr-hero">
     <div class="dr-kicker">2026 Preseason Decision Room</div>
@@ -122,8 +125,10 @@ def render(payload: dict) -> str:
 
   <nav class="dr-tools" aria-label="More Lineup Beat tools"><span>Keep exploring</span><a href="/nfl/rankings/">Rankings</a><a href="/nfl/projections/">Projections</a><a href="/nfl/who-should-i-draft/">Draft comparison</a><a href="{WIRE_PATH}">The reviewed Wire</a></nav>
 </main>
+{college_decision_room.SHELL}
 <script id="dr-data" type="application/json">{data}</script>
 <script>{javascript((first['winner'] or first['player_a'])['id'], (first['runner_up'] or first['player_b'])['id'], updated)}</script>
+<script>{college_decision_room.JS}</script>
 {END}'''
     return block
 
@@ -142,6 +147,7 @@ A.value="''' + esc(default_a) + r'''";B.value="''' + esc(default_b) + r'''";let 
 
 CSS = r'''
 #decision-room{--dr-bg:#080c0c;--dr-panel:#101615;--dr-line:#29312d;--dr-lime:#c6f53c;--dr-ink:#f3f5ef;--dr-muted:#aab2ac;color:var(--dr-ink);background:var(--dr-bg)}
+.dr-sports{position:relative;z-index:5;display:flex;justify-content:center;gap:.35rem;padding:.7rem;background:#050807;border-bottom:1px solid #29312d}.dr-sports a{min-width:110px;padding:.7rem 1rem;text-align:center;color:#d8ddd8;border:1px solid #46504b;font:800 .75rem var(--agate);letter-spacing:.1em;text-transform:uppercase}.dr-sports a[aria-pressed=true]{background:#c6f53c;color:#101410;border-color:#c6f53c}.cdr{--dr-bg:#09100f;--dr-panel:#111b19;--dr-line:#29413b;--dr-lime:#6de0bd;--dr-ink:#f3f5ef;--dr-muted:#aabbb6;color:var(--dr-ink);background:var(--dr-bg)}.cdr-filters{display:grid;grid-template-columns:1fr 2fr;gap:1rem;margin:1.25rem 0}.cdr input[type=search]{display:block;width:100%;box-sizing:border-box;margin-top:.45rem;padding:.85rem;background:#0b100f;color:var(--dr-ink);border:1px solid #46504b;font:600 1rem var(--text)}.cdr-crest{position:absolute;right:1rem;top:1rem;display:grid;place-items:center;width:72px;height:72px;border:2px solid var(--dr-lime);border-radius:50%;color:var(--dr-lime);font:800 1.1rem var(--agate);opacity:.75}.cdr .dr-person{border-color:var(--dr-lime)}
 .dr-shell{font-family:var(--text);padding-bottom:5rem}.dr-hero{padding:clamp(3.5rem,7vw,7rem) max(1rem,calc((100% - 1180px)/2));background:radial-gradient(circle at 82% 8%,rgba(198,245,60,.13),transparent 31%),linear-gradient(145deg,#111817,#080b0b);border-bottom:1px solid var(--dr-line)}
 .dr-kicker,.dr-mode,.dr-section small,.dr-compare small,.dr-empty small{font:800 .72rem/1.2 var(--agate);letter-spacing:.13em;text-transform:uppercase}.dr-kicker{color:var(--dr-lime)}.dr-mode{display:inline-block;margin:.8rem 0 1.2rem;padding:.55rem .75rem;border:1px solid #52641f;background:#17200d}.dr-hero>h1{max-width:850px;margin:.4rem 0 1rem;font:700 clamp(3rem,7vw,6.4rem)/.9 var(--display);letter-spacing:-.04em}.dr-lede{max-width:720px;font-size:clamp(1.05rem,2vw,1.3rem);color:#d7ddd7}.dr-week-note{max-width:760px;color:var(--dr-muted);border-left:3px solid var(--dr-lime);padding-left:1rem}.dr-beat-link{display:inline-block;margin-top:.4rem;color:var(--dr-ink);font:800 .72rem var(--agate);letter-spacing:.08em;text-transform:uppercase}
 .dr-compare{margin-top:2.4rem;border:1px solid var(--dr-line);border-top:4px solid var(--dr-lime);background:rgba(8,12,12,.92);padding:clamp(1rem,3vw,2rem)}.dr-compare-head,.dr-section-head{display:flex;justify-content:space-between;gap:2rem;align-items:end}.dr-compare h2,.dr-section h2,.dr-empty h2{font:700 clamp(1.8rem,4vw,3rem)/1 var(--display);margin:.25rem 0}.dr-compare label{font:700 .72rem var(--agate);letter-spacing:.08em;text-transform:uppercase;color:var(--dr-muted)}.dr-compare select{display:block;width:100%;margin-top:.45rem;padding:.85rem;background:#0b100f;color:var(--dr-ink);border:1px solid #46504b;font:600 1rem var(--text)}.dr-selectors{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:end;margin:1.4rem 0}.dr-selectors>b{color:var(--dr-lime);padding-bottom:1rem}
@@ -153,7 +159,7 @@ CSS = r'''
 .dr-fades-head{margin-top:3rem}
 .dr-future-grid{max-width:1180px;margin:0 auto;padding:clamp(3.5rem,7vw,6rem) 1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}.dr-empty{min-height:220px}.dr-empty p{color:var(--dr-muted);max-width:520px}.dr-empty button,.dr-empty-line{margin-top:1.2rem;padding:.8rem;border:1px dashed #56605b;background:transparent;color:var(--dr-muted)}.dr-tools{max-width:1180px;margin:auto;padding:1.2rem 1rem;border-top:1px solid var(--dr-line);display:flex;gap:1.2rem;flex-wrap:wrap}.dr-tools span{color:var(--dr-muted)}.dr-tools a{color:var(--dr-ink)}
 .dr-news .lb-wire-card{display:block;max-width:760px;margin:1.5rem 0 0}.dr-news .lb-wire-feed{min-height:180px}
-@media(max-width:780px){.dr-hero{padding-top:4rem}.dr-compare-head,.dr-section-head,.dr-verdict{align-items:stretch;flex-direction:column}.dr-selectors{grid-template-columns:1fr}.dr-selectors>b{text-align:center;padding:0}.dr-player-grid,.dr-future-grid{grid-template-columns:1fr}.dr-boundary-grid{grid-template-columns:1fr 1fr}.dr-card-grid,.dr-signal-grid,.dr-mover-grid{grid-template-columns:1fr}.dr-player-grid dl{grid-template-columns:1fr 1fr}.dr-adv{text-align:left}.dr-photo{max-width:44%}}
+@media(max-width:780px){.dr-hero{padding-top:4rem}.dr-compare-head,.dr-section-head,.dr-verdict{align-items:stretch;flex-direction:column}.dr-selectors,.cdr-filters{grid-template-columns:1fr}.dr-selectors>b{text-align:center;padding:0}.dr-player-grid,.dr-future-grid{grid-template-columns:1fr}.dr-boundary-grid{grid-template-columns:1fr 1fr}.dr-card-grid,.dr-signal-grid,.dr-mover-grid{grid-template-columns:1fr}.dr-player-grid dl{grid-template-columns:1fr 1fr}.dr-adv{text-align:left}.dr-photo{max-width:44%}}
 @media(max-width:430px){.dr-boundary-grid,.dr-player-grid dl{grid-template-columns:1fr}.dr-hero>h1{font-size:3.35rem}.dr-person{height:115px}.dr-photo{height:110px}}
 '''
 
@@ -221,11 +227,15 @@ def update_metadata(page: str) -> str:
 
 def inject(path: Path) -> None:
     payload = decision_data.load_season(2026)
+    college_payload = college_decision_data.load_weekly()
     page = path.read_text()
     if "<body" not in page or "</head>" not in page:
         raise SystemExit("refusing to modify malformed homepage")
     page, complete_wire = split_wire(page)
     wire_page = write_wire_page(path, complete_wire, page)
+    college_path = path.parent / "data" / "decision-room-college.json"
+    college_path.parent.mkdir(parents=True, exist_ok=True)
+    college_path.write_text(json.dumps(college_payload, separators=(",", ":")) + "\n")
     block = render(payload)
     if START in page and END in page:
         page = page.split(START, 1)[0] + block + page.split(END, 1)[1]
@@ -243,6 +253,7 @@ def inject(path: Path) -> None:
     path.write_text(page)
     print(f"built 2026 season Decision Room with {len(payload['players'])} players in {path}")
     print(f"built complete reviewed Wire in {wire_page}")
+    print(f"built isolated College Decision Room payload with {len(college_payload['players'])} players in {college_path}")
 
 
 def main() -> None:

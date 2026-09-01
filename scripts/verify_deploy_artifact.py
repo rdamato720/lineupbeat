@@ -227,6 +227,21 @@ def check_homepage(root, decision_room=False):
         home_cards = re.findall(r'<article class="tile wire".*?</article>', text, re.S)
         check("the Decision Room homepage shows four supporting Wire cards",
               len(home_cards) == 4, f"{len(home_cards)} rendered")
+        college_payload = root / "data" / "decision-room-college.json"
+        check("the College Decision Room payload is isolated from the homepage",
+              college_payload.is_file() and '"CFP_' not in text,
+              str(college_payload))
+        if college_payload.is_file():
+            college = json.loads(college_payload.read_text())
+            players = college.get("players", [])
+            check("the deployed College Decision Room uses validated Week 1 metadata",
+                  college.get("mode") == "weekly" and college.get("season") == 2026
+                  and college.get("week") == 1)
+            check("the deployed college identity and player counts reconcile",
+                  len(players) == 2205 and
+                  len({p.get("id") for p in players}) == len(players))
+            check("the homepage exposes separate NFL and College URL states",
+                  '/?sport=nfl' in text and '/?sport=college' in text)
     if "<!-- LB WIRE REPLACEMENT START" in wire_text:
         sec = wire_text[wire_text.index("<!-- LB WIRE REPLACEMENT START"):
                         wire_text.index("<!-- LB WIRE REPLACEMENT END")]
