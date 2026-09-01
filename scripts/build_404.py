@@ -6,7 +6,7 @@ import seo
 SITE = pathlib.Path(__file__).resolve().parent.parent / "site"
 src = (SITE / "template.html").read_text()
 css = re.search(r"<style>(.*?)</style>", src, re.S).group(1)
-foot = re.search(r"<footer.*?</footer>", src, re.S).group(0)
+foot = seo.site_footer()
 
 # Without this, an unmatched path falls through to the homepage: the URL
 # stays, the front page renders under it, and a crawler reads a soft 404.
@@ -34,11 +34,11 @@ html = f"""<!doctype html>
 <main class="nf">
   <h1>That page isn't here</h1>
   <p>The address may be mistyped, or the player may not have a page yet.
-     Pages are written for players with beat reports or a projection, so a
-     deep roster name can be on the site without having one of his own.</p>
+     Player Decision Profiles are published only when validated profile data
+     is available, so a deep roster name may not have a page of his own.</p>
   <div class="links">
-    <a href="/">The Wire</a>
-    <a href="/nfl/data/">Fantasy Data</a>
+    <a href="/">Home</a>
+    <a href="/decision-room/nfl/">Decision Room</a>
     <a href="/nfl/projections/">NFL projections</a>
     <a href="/college-fantasy-football/projections/">College projections</a>
   </div>

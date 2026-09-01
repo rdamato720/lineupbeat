@@ -147,9 +147,9 @@ def render_home(payload: dict, college_payload: dict) -> str:
     feature = featured_decision(players)
     winner, runner = feature["winner"], feature["runner_up"]
     wf, rf = feature["winner_format"], feature["runner_up_format"]
-    calls = [r for r in closest_calls(players, "half_ppr", limit=20) if not r["is_tie"]][:3]
+    calls = [r for r in closest_calls(players, "half_ppr", limit=20) if not r["is_tie"]][:2]
     values, fades = value_signals(players, "half_ppr")
-    movers = scoring_movers(players)[:3]
+    movers = scoring_movers(players)[:2]
     flip = feature["runner_up_gain_to_flip"]
     nfl_count = len(players)
     college_count = len(college_payload["players"])
@@ -164,9 +164,9 @@ def render_home(payload: dict, college_payload: dict) -> str:
   <div class="lb-edge lb-edge-right" aria-hidden="true"><div class="lb-mini-panel"><div class="lb-mini-title">COLLEGE WEEK 1</div><div class="lb-data-number">{college_count:,}</div><span>players · {college_teams} teams</span></div><div class="lb-mini-panel"><div class="lb-mini-title">CLOSEST CALL</div><div class="lb-data-number">{calls[0]['gap']:.1f}</div><span>season-point gap</span></div><div class="lb-mini-panel"><div class="lb-mini-title">FORMAT SENSITIVITY</div><div class="lb-data-number">{max_mover}</div><span>position-rank spots</span></div></div>
   <div class="lb-hero-inner"><div class="lb-hero-copy"><div class="hp-sport-choice"><a href="{NFL_ROOM_PATH}">NFL</a><a href="{COLLEGE_ROOM_PATH}">College</a></div><div class="lb-eyebrow">FANTASY DECISION OPERATING SYSTEM</div><h1 class="lb-hero-title">Make the call<br>with <span>confidence.</span></h1><p class="lb-hero-description">Compare validated projections, identify market disagreements, and see the exact decision boundary that would change the pick.</p><div class="lb-hero-actions"><a class="lb-btn lb-btn-primary" href="{NFL_ROOM_PATH}"><span>Compare NFL Players</span><b>→</b></a><a class="lb-btn lb-btn-secondary" href="{COLLEGE_ROOM_PATH}">Explore College</a></div><div class="lb-proof-row"><div class="lb-proof"><strong>{nfl_count}</strong><span>NFL players</span></div><div class="lb-proof"><strong>{college_count:,}</strong><span>College players</span></div><div class="lb-proof"><strong>{college_teams}</strong><span>College teams</span></div><div class="lb-proof"><strong>±</strong><span>Decision boundaries shown</span></div></div></div>
   <article class="hp-feature lb-feature-card" style="--c:{esc(winner['team_color'])}"><small>Featured Decision · 2026 season · Half-PPR</small><div class="hp-feature-players"><div><img src="{esc(winner['photo'])}" alt="{esc(winner['name'])}"><span>{esc(winner['team'])} · {esc(winner['position'])}{wf['position_rank']}</span><b>{esc(winner['name'])}</b></div><i>VS</i><div><img src="{esc(runner['photo'])}" alt="{esc(runner['name'])}"><span>{esc(runner['team'])} · {esc(runner['position'])}{rf['position_rank']}</span><b>{esc(runner['name'])}</b></div></div><h2>{verb} {esc(winner['name'])}</h2><p><b>+{feature['gap']:.1f}</b> projected season points · {esc(feature['confidence'])}</p><div class="hp-boundary"><strong>What changes the pick?</strong> {esc(runner['name'])} needs +{flip:.1f} projected season points to move ahead.</div><a href="{esc(room_url(winner, runner))}">Open this decision →</a></article></div></section>
-  <section class="hp-section"><div class="hp-section-head"><small>Start here</small><h2>Quick Actions</h2></div><div class="hp-actions"><a href="{NFL_ROOM_PATH}"><b>Compare Players</b><span>Test a player-versus-player call</span></a><a href="{NFL_ROOM_PATH}#values"><b>Our Values</b><span>Where projections lead ADP</span></a><a href="{NFL_ROOM_PATH}#fades"><b>Our Fades</b><span>Where projections trail ADP</span></a><a href="/nfl/rankings/"><b>Rankings</b><span>Browse the full order</span></a><a href="/nfl/projections/"><b>Projections</b><span>Inspect validated inputs</span></a></div></section>
-  <section class="hp-section hp-board"><div class="hp-section-head"><small>Validated signals</small><h2>Today’s Decision Board</h2><p>NFL full-season projections · Half-PPR unless noted</p></div><div class="hp-board-grid">{''.join(board_call(r) for r in calls)}{''.join(board_signal(r, 'Value') for r in values[:2])}{''.join(board_signal(r, 'Fade') for r in fades[:2])}{''.join(board_mover(r) for r in movers)}</div></section>
-  <section class="hp-section"><div class="hp-section-head"><small>Choose your game</small><h2>NFL and College Decision Rooms</h2></div><div class="hp-sport-grid"><a class="hp-sport-card hp-nfl" href="{NFL_ROOM_PATH}"><small>NFL</small><h3>2026 Preseason Decision Room</h3><p>Draft mode using validated full-season PPR, Half-PPR, and Non-PPR projections, with ADP comparisons where available.</p><b>Compare NFL players →</b></a><a class="hp-sport-card hp-college" href="{COLLEGE_ROOM_PATH}"><small>College</small><h3>College Week 1 Decision Room</h3><p>2,205 players · 64 teams · Yahoo scoring</p><span>Validated Week 1 only. No player images, ADP, conference metadata, or additional scoring formats are available.</span><b>Open College Week 1 →</b></a></div></section>
+  <section class="hp-section"><div class="hp-section-head"><small>Choose your context</small><h2>NFL or College</h2><p>NFL uses validated 2026 full-season projections. College provides separate Week 1 Yahoo projections and season projections with different player pools.</p></div><div class="hp-actions"><a href="{NFL_ROOM_PATH}"><b>Compare</b><span>Open the NFL Decision Room</span></a><a href="/nfl/rankings/"><b>Rankings</b><span>Browse the current NFL order</span></a><a href="/nfl/projections/"><b>Projections</b><span>Inspect validated season inputs</span></a></div></section>
+  <section class="hp-section hp-board"><div class="hp-section-head"><small>Validated signals</small><h2>Today’s Decision Board</h2><p>NFL full-season projections · Half-PPR unless noted</p></div><div class="hp-board-grid">{''.join(board_call(r) for r in calls)}{''.join(board_signal(r, 'Value') for r in values[:1])}{''.join(board_signal(r, 'Fade') for r in fades[:1])}{''.join(board_mover(r) for r in movers)}</div></section>
+  <section class="hp-section hp-method"><div class="hp-section-head"><small>Methodology &amp; accountability</small><h2>The call should show its work.</h2><p>Lineup Beat separates validated inputs from recommendations, shows the boundary that changes a pick, and is building a timestamped record so decisions cannot be silently rewritten.</p></div><div class="hp-actions"><a href="/about/"><b>How decisions work</b><span>Inputs, uncertainty, and accountability</span></a><a href="{COLLEGE_ROOM_PATH}"><b>College Week 1</b><span>2,205 players · 64 teams · Yahoo only</span></a><a href="/nfl/who-should-i-draft/"><b>Advanced comparison</b><span>218-player pool with validated historical weekly context</span></a></div></section>
 </main><script>if(new URLSearchParams(location.search).get('sport')==='college')location.replace('{COLLEGE_ROOM_PATH}');else if(new URLSearchParams(location.search).get('sport')==='nfl')location.replace('{NFL_ROOM_PATH}');</script>
 {END}'''
 
@@ -248,8 +248,8 @@ body{margin:0;--display:Arial,sans-serif;--text:Arial,sans-serif;--agate:Arial,s
 .hp-shell{--lime:#c6f53c;--ink:#f3f5ef;--muted:#aeb7b0;--panel:#111715;background:#080c0b;color:var(--ink);font-family:var(--text)}.hp-nav{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:.8rem max(1rem,calc((100% - 1180px)/2));background:#050807;color:#fff;border-bottom:1px solid #2b332f}.hp-mark{font:900 1rem var(--agate);letter-spacing:.08em;color:#fff}.hp-mark b{color:#c6f53c}.hp-nav nav{display:flex;gap:1.15rem;align-items:center}.hp-nav nav a{color:#e4e9e4;font:800 .72rem var(--agate);letter-spacing:.06em;text-transform:uppercase}.hp-menu{display:none;background:#c6f53c;border:0;padding:.55rem .8rem;font-weight:800}.hp-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center;padding:clamp(3rem,7vw,7rem) max(1rem,calc((100% - 1180px)/2));background:radial-gradient(circle at 76% 18%,rgba(198,245,60,.13),transparent 28%),linear-gradient(145deg,#111817,#080b0b)}.hp-copy>small,.hp-section-head>small,.hp-beat-intro>small,.hp-feature>small,.hp-board-card>small,.hp-sport-card>small{font:800 .7rem var(--agate);letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}.hp-copy h1{font:800 clamp(3.5rem,7vw,6.7rem)/.87 var(--display);letter-spacing:-.055em;margin:.7rem 0 1.2rem}.hp-copy>p{max-width:620px;color:#ced5cf;font-size:clamp(1.05rem,2vw,1.28rem);line-height:1.55}.hp-sport-choice{display:flex;gap:.4rem;margin-bottom:1.5rem}.hp-sport-choice a{padding:.55rem 1rem;border:1px solid #4d5952;color:#fff;font-weight:800}.hp-sport-choice a:first-child{background:#c6f53c;color:#101410;border-color:#c6f53c}.hp-ctas{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2rem}.hp-ctas a{padding:.9rem 1.1rem;border:1px solid #79827c;color:#fff;font:800 .75rem var(--agate);text-transform:uppercase}.hp-ctas .hp-primary{background:#c6f53c;color:#101410;border-color:#c6f53c}.hp-feature{border:1px solid #3c4741;border-top:5px solid var(--c);background:#111715;padding:clamp(1rem,3vw,1.7rem);box-shadow:0 24px 70px #0008}.hp-feature-players{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:.5rem;margin:1rem 0}.hp-feature-players>div{min-width:0}.hp-feature-players img{display:block;width:100%;height:150px;object-fit:contain;background:linear-gradient(#1b231f,#101513)}.hp-feature-players span,.hp-feature-players b{display:block}.hp-feature-players span{font-size:.68rem;color:var(--muted);margin-top:.6rem}.hp-feature-players b{font:700 1.2rem var(--display)}.hp-feature-players i{padding-bottom:3rem;color:var(--lime);font:800 .7rem var(--agate)}.hp-feature h2{font:750 clamp(1.8rem,4vw,3rem) var(--display);margin:.8rem 0}.hp-feature>p b{color:var(--lime);font-size:1.5rem}.hp-boundary{padding:1rem;background:#e9efe6;color:#101410;margin:1rem 0;line-height:1.45}.hp-boundary strong{display:block;font:800 .7rem var(--agate);text-transform:uppercase}.hp-feature>a{color:var(--lime);font-weight:800}.hp-section{max-width:1180px;margin:auto;padding:clamp(3.2rem,6vw,5rem) 1rem;border-bottom:1px solid #29312d}.hp-section-head{display:flex;align-items:end;justify-content:space-between;gap:2rem;flex-wrap:wrap}.hp-section h2{font:750 clamp(2.2rem,5vw,4rem)/.95 var(--display);margin:.35rem 0}.hp-section-head p{color:var(--muted)}.hp-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1.5rem}.hp-actions a{border:1px solid #303a35;background:var(--panel);padding:1rem;color:#fff}.hp-actions b,.hp-actions span{display:block}.hp-actions span{color:var(--muted);margin-top:.35rem;font-size:.85rem}.hp-board{max-width:none;padding-left:max(1rem,calc((100% - 1180px)/2));padding-right:max(1rem,calc((100% - 1180px)/2));background:#0d1211}.hp-board-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.7rem;margin-top:1.5rem}.hp-board-card{padding:1rem;background:#151c19;border:1px solid #303b35;color:#fff;min-height:125px}.hp-board-card h3{font:700 1.15rem var(--display);margin:.55rem 0}.hp-board-card i{color:var(--muted);font-size:.75rem}.hp-board-card p{color:var(--muted);font-size:.82rem;line-height:1.4}.hp-sport-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}.hp-sport-card{display:block;min-height:230px;padding:clamp(1.3rem,3vw,2rem);border:1px solid #39433e;color:#fff;background:#121816}.hp-sport-card h3{font:750 clamp(1.8rem,4vw,3.1rem)/1 var(--display);margin:.7rem 0}.hp-sport-card p{font-size:1.08rem}.hp-sport-card span{display:block;color:var(--muted);line-height:1.5}.hp-sport-card b{display:block;margin-top:1.5rem;color:var(--lime)}.hp-college{background:linear-gradient(145deg,#13221e,#0d1412);border-top:5px solid #6de0bd}.hp-beat-intro{padding-bottom:1.5rem}.hp-beat-intro p{color:var(--muted);max-width:700px}.hp-beat-intro>a{color:var(--lime);font-weight:800}
 #decision-room{--dr-bg:#080c0c;--dr-panel:#101615;--dr-line:#29312d;--dr-lime:#c6f53c;--dr-ink:#f3f5ef;--dr-muted:#aab2ac;color:var(--dr-ink);background:var(--dr-bg)}
 .dr-sports{position:relative;z-index:5;display:flex;justify-content:center;gap:.35rem;padding:.7rem;background:#050807;border-bottom:1px solid #29312d}.dr-sports a{min-width:110px;padding:.7rem 1rem;text-align:center;color:#d8ddd8;border:1px solid #46504b;font:800 .75rem var(--agate);letter-spacing:.1em;text-transform:uppercase}.dr-sports a[aria-pressed=true]{background:#c6f53c;color:#101410;border-color:#c6f53c}.cdr{--dr-bg:#09100f;--dr-panel:#111b19;--dr-line:#29413b;--dr-lime:#6de0bd;--dr-ink:#f3f5ef;--dr-muted:#aabbb6;color:var(--dr-ink);background:var(--dr-bg)}.cdr-filters{display:grid;grid-template-columns:1fr 2fr;gap:1rem;margin:1.25rem 0}.cdr input[type=search]{display:block;width:100%;box-sizing:border-box;margin-top:.45rem;padding:.85rem;background:#0b100f;color:var(--dr-ink);border:1px solid #46504b;font:600 1rem var(--text)}.cdr-crest{position:absolute;right:1rem;top:1rem;display:grid;place-items:center;width:72px;height:72px;border:2px solid var(--dr-lime);border-radius:50%;color:var(--dr-lime);font:800 1.1rem var(--agate);opacity:.75}.cdr .dr-person{border-color:var(--dr-lime)}
-.dr-shell{font-family:var(--text);padding-bottom:5rem}.dr-hero{padding:clamp(3.5rem,7vw,7rem) max(1rem,calc((100% - 1180px)/2));background:radial-gradient(circle at 82% 8%,rgba(198,245,60,.13),transparent 31%),linear-gradient(145deg,#111817,#080b0b);border-bottom:1px solid var(--dr-line)}
-.dr-kicker,.dr-mode,.dr-section small,.dr-compare small,.dr-empty small{font:800 .72rem/1.2 var(--agate);letter-spacing:.13em;text-transform:uppercase}.dr-kicker{color:var(--dr-lime)}.dr-mode{display:inline-block;margin:.8rem 0 1.2rem;padding:.55rem .75rem;border:1px solid #52641f;background:#17200d}.dr-hero>h1{max-width:850px;margin:.4rem 0 1rem;font:700 clamp(3rem,7vw,6.4rem)/.9 var(--display);letter-spacing:-.04em}.dr-lede{max-width:720px;font-size:clamp(1.05rem,2vw,1.3rem);color:#d7ddd7}.dr-week-note{max-width:760px;color:var(--dr-muted);border-left:3px solid var(--dr-lime);padding-left:1rem}.dr-beat-link{display:inline-block;margin-top:.4rem;color:var(--dr-ink);font:800 .72rem var(--agate);letter-spacing:.08em;text-transform:uppercase}
+.dr-shell{font-family:var(--text);padding-bottom:5rem}.dr-hero{padding:clamp(2rem,4vw,3.75rem) max(1rem,calc((100% - 1180px)/2));background:radial-gradient(circle at 82% 8%,rgba(198,245,60,.13),transparent 31%),linear-gradient(145deg,#111817,#080b0b);border-bottom:1px solid var(--dr-line)}
+.dr-kicker,.dr-mode,.dr-section small,.dr-compare small,.dr-empty small{font:800 .72rem/1.2 var(--agate);letter-spacing:.13em;text-transform:uppercase}.dr-kicker{color:var(--dr-lime)}.dr-mode{display:inline-block;margin:.65rem 0 .8rem;padding:.45rem .7rem;border:1px solid #52641f;background:#17200d}.dr-hero>h1{max-width:850px;margin:.3rem 0 .65rem;font:700 clamp(2.35rem,5vw,4.5rem)/.94 var(--display);letter-spacing:-.04em}.dr-lede{max-width:720px;font-size:clamp(1rem,1.6vw,1.18rem);color:#d7ddd7}.dr-week-note{max-width:760px;color:var(--dr-muted);border-left:3px solid var(--dr-lime);padding-left:1rem}.dr-beat-link{display:inline-block;margin-top:.4rem;color:var(--dr-ink);font:800 .72rem var(--agate);letter-spacing:.08em;text-transform:uppercase}
 .dr-compare{margin-top:2.4rem;border:1px solid var(--dr-line);border-top:4px solid var(--dr-lime);background:rgba(8,12,12,.92);padding:clamp(1rem,3vw,2rem)}.dr-compare-head,.dr-section-head{display:flex;justify-content:space-between;gap:2rem;align-items:end}.dr-compare h2,.dr-section h2,.dr-empty h2{font:700 clamp(1.8rem,4vw,3rem)/1 var(--display);margin:.25rem 0}.dr-compare label{font:700 .72rem var(--agate);letter-spacing:.08em;text-transform:uppercase;color:var(--dr-muted)}.dr-compare select{display:block;width:100%;margin-top:.45rem;padding:.85rem;background:#0b100f;color:var(--dr-ink);border:1px solid #46504b;font:600 1rem var(--text)}.dr-selectors{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:end;margin:1.4rem 0}.dr-selectors>b{color:var(--dr-lime);padding-bottom:1rem}
 .dr-picker{position:relative}.dr-picker input[type=search],.dr-picker ul{display:none}.dr-enhanced .dr-picker input[type=search]{display:block;width:100%;margin-top:.45rem;padding:.85rem;background:#0b100f;color:var(--dr-ink);border:1px solid #46504b;font:600 1rem var(--text)}.dr-picker input:focus{outline:3px solid var(--dr-lime);outline-offset:2px}.dr-enhanced .dr-picker ul:not([hidden]){display:block;position:absolute;z-index:20;left:0;right:0;max-height:280px;overflow:auto;margin:2px 0 0;padding:0;list-style:none;background:#101615;border:1px solid #67716c;box-shadow:0 12px 30px #000}.dr-picker li{display:flex;justify-content:space-between;gap:1rem;padding:.75rem;cursor:pointer;text-transform:none;letter-spacing:0;color:var(--dr-ink)}.dr-picker li[aria-selected=true],.dr-picker li:hover{background:#26331d}.dr-picker li small{color:var(--dr-muted)}.dr-enhanced .dr-native{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}.dr-cross{display:flex!important;align-items:center;gap:.55rem;margin:-.5rem 0 1.25rem}.dr-cross input{width:1.15rem;height:1.15rem;accent-color:var(--dr-lime)}
 .dr-verdict{display:flex;justify-content:space-between;gap:2rem;align-items:center;padding:1.3rem;border:1px solid #52641f;background:#131b0e}.dr-verdict small{color:var(--dr-lime)}.dr-verdict h2{font-size:clamp(2rem,5vw,4rem)}.dr-verdict p{max-width:720px;margin:.5rem 0;color:#d8ddd8}.dr-adv{text-align:center;min-width:150px}.dr-adv b{display:block;font:700 3rem var(--display);color:var(--dr-lime)}.dr-adv span{font:700 .67rem var(--agate);text-transform:uppercase;color:var(--dr-muted)}
@@ -295,8 +295,8 @@ def write_wire_page(homepage: Path, complete: str, source_page: str) -> Path:
 <meta name="description" content="The complete filterable collection of human-reviewed Lineup Beat fantasy football updates.">
 <meta name="robots" content="noindex,nofollow"><style>{WIRE_PAGE_CSS}</style>
 <style id="wire-css">{style_match.group(1)}</style></head><body>
-<header class="rw-head"><a href="/">← Decision Room</a><h1>Reviewed Wire</h1><p>All human-approved fantasy-relevant updates from trusted sources. Filter by team or position.</p></header>
-<main class="rw-main"><a class="rw-back" href="/">Back to the Decision Room</a>{complete}</main></body></html>'''
+{seo.site_nav(None, "nfl")}<header class="rw-head"><p>Unlisted internal archive</p><h1>Reviewed Wire Archive</h1><p>Preserved human-approved fantasy-relevant updates from trusted sources. Filter by team or position.</p></header>
+<main class="rw-main">{complete}</main>{seo.site_footer()}</body></html>'''
     target.write_text(document)
     return target
 
@@ -309,7 +309,7 @@ def write_decision_pages(homepage: Path, payload: dict, source_page: str) -> tup
         head_style_text = head_style.group(0)
     block = render(payload)
     nfl_nav = sport_header("nfl", "decision", payload["players"])
-    base = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Compare validated fantasy football projections and see what changes the pick.">''' + head_style_text + '''</head><body>''' + nfl_nav + block + '''</body></html>'''
+    base = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Compare validated fantasy football projections and see what changes the pick.">''' + head_style_text + '''</head><body>''' + nfl_nav + block + seo.site_footer() + '''</body></html>'''
     nfl = homepage.parent / "decision-room" / "nfl" / "index.html"
     college = homepage.parent / "decision-room" / "college" / "index.html"
     nfl.parent.mkdir(parents=True, exist_ok=True)
@@ -317,7 +317,7 @@ def write_decision_pages(homepage: Path, payload: dict, source_page: str) -> tup
     nfl.write_text(base.replace("</head>", "<title>2026 NFL Decision Room | Lineup Beat</title></head>", 1))
     college_block = (college_decision_room.SHELL
                      + f'<script>{college_decision_room.JS}</script>')
-    college_doc = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Compare validated 2026 College Week 1 fantasy projections and see what changes the pick."><title>College Week 1 Decision Room | Lineup Beat</title>''' + head_style_text + '''</head><body data-default-sport="college">''' + sport_header("college", "decision") + college_block + '''</body></html>'''
+    college_doc = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Compare validated 2026 College Week 1 fantasy projections and see what changes the pick."><title>College Week 1 Decision Room | Lineup Beat</title>''' + head_style_text + '''</head><body data-default-sport="college">''' + sport_header("college", "decision") + college_block + seo.site_footer() + '''</body></html>'''
     college.write_text(college_doc)
     return nfl, college
 
@@ -350,41 +350,6 @@ def remove_original_header(page: str) -> str:
                 raise SystemExit("production header boundary is malformed")
             page = page[:start] + page[end + len('</header>'):]
     return page
-
-
-def update_footer(page: str) -> str:
-    page = re.sub(r'<p class="ftag">.*?</p>',
-                  '<p class="ftag">NFL and College fantasy projections, player comparisons, decision boundaries, rankings, and accountable recommendations.</p>',
-                  page, count=1, flags=re.S)
-    page = page.replace('Every team on the beat', 'NFL team tools')
-    footer_columns = '''<div class="frow"><div class="fcol"><h3>Decision tools</h3><p>Compare NFL and College players and see the projection boundary that changes each call.</p></div><div class="fcol"><h3>Validated data</h3><p>Explore scoring-aware projections, rankings, and market ADP comparisons where validated data is available.</p></div><div class="fcol"><h3>Accountability</h3><p>Recommendations are designed to preserve their inputs and timestamps instead of silently rewriting the call.</p></div><div class="fcol"><h3>Contact</h3><p>Questions or a projection you think is wrong: <a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a>.</p></div></div>'''
-    page = re.sub(r'<div class="frow">.*?</div>\s*<div class="fbase">',
-                  footer_columns + '<div class="fbase">', page, count=1, flags=re.S)
-    page = page.replace('Updated through the day, every day of the season.',
-                        'NFL and College fantasy decision tools.')
-    return page
-
-
-def patch_sport_sections(site_root: Path, payload: dict) -> list[Path]:
-    """Give canonical ranking/projection pages the same URL-aware header."""
-    targets = [
-        ("nfl", "rankings", site_root / "nfl/rankings/index.html"),
-        ("nfl", "projections", site_root / "nfl/projections/index.html"),
-        ("college", "rankings", site_root / "college-fantasy-football/week-1/index.html"),
-        ("college", "projections", site_root / "college-fantasy-football/projections/index.html"),
-    ]
-    changed = []
-    for sport, activity, target in targets:
-        if not target.exists():
-            continue
-        text = remove_original_header(target.read_text())
-        nav = sport_header(sport, activity, payload["players"] if sport == "nfl" else None)
-        text = text.replace("<body>", "<body>" + nav, 1)
-        if 'id="decision-room-css"' not in text:
-            text = text.replace("</head>", f'<style id="decision-room-css">{CSS}</style></head>', 1)
-        target.write_text(text)
-        changed.append(target)
-    return changed
 
 
 def inject(path: Path) -> None:
@@ -423,7 +388,6 @@ def inject(path: Path) -> None:
     if 'id="decision-room-css"' not in page:
         page = page.replace("</head>", decision_style + "\n</head>", 1)
     nfl_page, college_page = write_decision_pages(path, payload, page)
-    sport_pages = patch_sport_sections(path.parent, payload)
     block = render_home(payload, college_payload)
     if START in page and END in page:
         page = page.split(START, 1)[0] + block + page.split(END, 1)[1]
@@ -433,7 +397,8 @@ def inject(path: Path) -> None:
             raise SystemExit("development homepage hero boundary not found")
         page = page[:hero.start()] + block + "\n" + page[hero.end():]
     page = update_metadata(page)
-    page = update_footer(page)
+    page = re.sub(r'<section class="medhero" id="roshero".*?</section>', '', page, count=1, flags=re.S)
+    page = re.sub(r'<section class="hero medhero" id="medhero".*?(?=<footer)', '', page, count=1, flags=re.S)
     style = f'<style id="decision-room-css">{CSS}</style>'
     if 'id="decision-room-css"' in page:
         page = re.sub(r'<style id="decision-room-css">.*?</style>', style, page, count=1, flags=re.S)
@@ -444,7 +409,6 @@ def inject(path: Path) -> None:
     print(f"built complete reviewed Wire in {wire_page}")
     print(f"built NFL Decision Room in {nfl_page}")
     print(f"built College Decision Room in {college_page}")
-    print(f"patched sport-aware navigation on {len(sport_pages)} canonical section pages")
     print(f"built isolated College Decision Room payload with {len(college_payload['players'])} players in {college_path}")
 
 

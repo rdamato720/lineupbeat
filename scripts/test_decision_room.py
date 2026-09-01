@@ -188,7 +188,8 @@ class DecisionRoomRenderingTests(unittest.TestCase):
     def test_homepage_navigation_sections_and_mobile_structure(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
         for label in ("NFL", "College", "Decision", "Rankings", "Projections",
-                      "Quick Actions", "Today’s Decision Board",
+                      "Choose your context", "Today’s Decision Board",
+                      "Methodology &amp; accountability",
                       "Make the call", "confidence."):
             self.assertIn(label, home)
         self.assertIn('class="topbar"', home)
@@ -210,12 +211,12 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertIn('href="/decision-room/nfl/"', home)
         self.assertIn('href="/decision-room/college/"', home)
         self.assertNotIn('href="/decision-room/reviewed-wire/"', home)
-        self.assertEqual(home.count('<small>Closest call</small>'), 3)
-        self.assertEqual(home.count('<small>Our Value</small>'), 2)
-        self.assertEqual(home.count('<small>Our Fade</small>'), 2)
-        self.assertEqual(home.count('<small>Scoring-format mover</small>'), 3)
-        self.assertIn("2,205 players · 64 teams · Yahoo scoring", home)
-        self.assertIn("No player images, ADP, conference metadata", home)
+        self.assertEqual(home.count('<small>Closest call</small>'), 2)
+        self.assertEqual(home.count('<small>Our Value</small>'), 1)
+        self.assertEqual(home.count('<small>Our Fade</small>'), 1)
+        self.assertEqual(home.count('<small>Scoring-format mover</small>'), 2)
+        self.assertEqual(home.count('class="hp-board-card"'), 6)
+        self.assertIn("2,205 players · 64 teams · Yahoo only", home)
 
     def test_sport_navigation_uses_canonical_context_routes(self):
         nfl = page.sport_header("nfl", "rankings", self.payload["players"])

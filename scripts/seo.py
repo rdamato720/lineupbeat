@@ -1033,8 +1033,8 @@ DATA_PAGES = [
      "PPR, Non-PPR, Half-PPR and Superflex draft rankings, overall and by "
      "position, with tiers and transparent methodology."),
     ("compare", f"/{SPORT}/who-should-i-draft/", "Who Should I Draft?",
-     "Compare rankings, projections, ADP, weekly consistency, floor, ceiling "
-     "and recent Lineup Beat impact."),
+     "Compare rankings, projections, ADP, and validated historical weekly "
+     "consistency, floor, and ceiling."),
     ("projections", f"/{SPORT}/projections/", "Projections",
      "Full-season points in three scoring formats, with the stat line "
      "behind each number."),

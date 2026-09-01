@@ -502,20 +502,16 @@ def page_description(name, who, nuggets, wire_publications=None):
     Google also tends to write its own when the tag is too thin.
     """
     wire_publications = wire_publications or []
-    if wire_publications:
-        lead = (wire_publications[0].get("public_evidence_summary") or "").strip()
-        body = f"{who}. {lead} Latest Lineup Beat fantasy impact and projection."
-        return body[:158].rsplit(" ", 1)[0] if len(body) > 160 else body
+    pr = PROJECTIONS.get(slug(name))
+    if pr:
+        return (f"{who}. Projected for {pr['ppr']:.1f} PPR points this "
+                f"season, ranked {pr['pos']}{pr['rank']}, with decision "
+                f"context by scoring format.")[:158]
     n = len(nuggets)
     if not n:
         # A projected player with nothing filed yet. Describe what the page
         # actually holds rather than promising reports it does not have.
-        pr = PROJECTIONS.get(slug(name))
-        if pr:
-            return (f"{who}. Projected for {pr['ppr']:.1f} PPR points this "
-                    f"season, {pr['pos']}{pr['rank']}. Beat reports appear "
-                    f"here as they are filed.")[:158]
-        return f"{who}. Beat reports appear here as they are filed."
+        return f"{who}. A Player Decision Profile; validated projection data is not currently available."
     lead = (nuggets[0]["claim"] or "").rstrip(".")
     tail = (f"{n} beat reports on {name}, newest first, each linked to the "
             f"reporter who filed it.")
@@ -766,7 +762,7 @@ def wire_impact_block(publications):
     return (
         '  <section class="lbimpact" aria-labelledby="latest-impact">\n'
         '    <div class="lbimpact-head">\n'
-        '      <h2 id="latest-impact">Latest Lineup Beat impact</h2>\n'
+        '      <h2 id="latest-impact">Latest approved decision context</h2>\n'
         f'      <span class="lbtrend {direction_class}">'
         f'{esc(publication.get("reader_label"))}</span>\n'
         '    </div>\n'
@@ -803,7 +799,7 @@ def related_players_block(player):
         + "\n".join(cards)
         + '\n  </div>\n'
           f'  <p class="pjmore"><a href="/{SPORT}/team/{slug(team)}/">'
-          f'All {esc(TEAM_NAMES.get(team, team))} updates</a></p></section>\n')
+          f'{esc(TEAM_NAMES.get(team, team))} Decision Board</a></p></section>\n')
 
 
 def player_page(p, nuggets, base, wire_publications=None):
@@ -875,7 +871,7 @@ def player_page(p, nuggets, base, wire_publications=None):
     modified = player_last_updated(name, nuggets, wire_publications)
     if modified:
         ld["subjectOf"] = {"@type": "CollectionPage",
-                           "name": f"{name} beat reports", "url": url,
+                           "name": f"{name} Player Decision Profile", "url": url,
                            "dateModified": modified.isoformat()}
     # Google renders breadcrumbs in the result itself, which is worth more
     # than the nav pill this replaced: it shows the page's place in the site
@@ -916,20 +912,18 @@ def player_page(p, nuggets, base, wire_publications=None):
             + updated_block(name, nuggets, wire_publications)
             + wire_impact_block(wire_publications)
             + projection_block(name, pos)
-            + (f'  <h2>Recent practice and news timeline &middot; '
+            + (f'  <h2>Additional approved decision context &middot; '
                f'{len(nuggets)} report'
                f'{"s" if len(nuggets) != 1 else ""}</h2>\n'
                if nuggets else
-               '  <h2>No recent practice or news reports yet</h2>\n'
-               '  <p class="dlede">The projection above is the current '
-               'Lineup Beat view. New reports will appear here as they are '
-               'filed.</p>\n')
+               '  <h2>Decision context</h2>\n'
+               '  <p class="dlede">No additional validated decision context is available. The projection panel above remains the current Lineup Beat view.</p>\n')
             + "\n".join(arts)
             + related_players_block(p))
 
     return _render(PAGE.format(
         fonts=PAGE_FONTS,
-        title=trim(esc(f"{name} news, beat reports and updates | LineupBeat"), 60),
+        title=trim(esc(f"{name} Fantasy Decision Profile | LineupBeat"), 60),
         description=trim(esc(page_description(
             name, who, nuggets, wire_publications)), 155),
         canonical=esc(url), og_type="profile",
@@ -947,13 +941,17 @@ def team_page(team, players, count, base):
     accent = TEAM_COLORS.get(team, "#C6F24E")
     c2 = TEAM_C2.get(team, "#C6F24E")
     logo = f"https://a.espncdn.com/i/teamlogos/nfl/500/{team.lower()}.png"
-    # A section called "Players in the news" listing a player with no
-    # reports says the opposite of its own heading. They stay on the
-    # roster; they are not news.
-    in_news = [(n, c) for n, c in players if c > 0]
-    cards = "\n".join(
-        f'    <a href="/{SPORT}/{slug(n)}/">{esc(n)}<span>{c} report'
-        f'{"s" if c != 1 else ""}</span></a>' for n, c in in_news)
+    board_players = list(players)
+    cards = []
+    for n, _ in board_players:
+        pr = PROJECTIONS.get(slug(n))
+        context = (f'{pr["pos"]}{pr["rank"]} · {pr["ppr"]:.1f} PPR points'
+                   if pr else 'Validated projection unavailable')
+        label = f'{esc(n)}<span>{esc(context)}</span>'
+        target = SITE / SPORT / slug(n) / "index.html"
+        cards.append((f'<a href="/{SPORT}/{slug(n)}/">{label}</a>'
+                      if target.exists() else f'<div class="plain-player">{label}</div>'))
+    cards = "\n".join(cards)
     ld = {"@context": "https://schema.org", "@type": "SportsTeam",
           "name": full, "url": url, "logo": logo}
     crumb = (f'  <nav class="crumbs" aria-label="Breadcrumb">'
@@ -970,21 +968,18 @@ def team_page(team, players, count, base):
             f'alt="{esc(full)}" loading="lazy" width="84" height="84" '
             f'style="border-radius:0;object-fit:contain">\n'
             f'    <div>\n      <h1>{esc(full)}</h1>\n'
-            f'      <p class="who">{count} beat reports across '
-            f'{len(in_news)} players</p>\n    </div>\n  </div>\n'
-            f'  <h2>Players in the news</h2>\n'
+            f'      <p class="who">Team Decision Board · validated player profiles and projection context</p>\n    </div>\n  </div>\n'
+            f'  <h2>Player decision profiles</h2>\n'
             f'  <div class="grid">\n{cards}\n  </div>')
     return _render(PAGE.format(
         fonts=PAGE_FONTS,
-        title=trim(esc(f"{full} beat reports and player news | LineupBeat"), 60),
+        title=trim(esc(f"{full} Fantasy Team Decision Board | LineupBeat"), 60),
         # Was 90 characters, which leaves half the snippet empty. Naming
         # what a reader actually gets is both longer and more useful.
         # Was 90 characters, which leaves half a search snippet empty.
         # Naming what a reader gets is both longer and more useful, and it
         # has to stay under 158 or the end is cut off anyway.
-        description=esc(f"Local beat reporting on the {full}. Injuries, "
-                        f"first-team reps and depth chart moves matched to "
-                        f"the players affected, newest first."),
+        description=esc(f"{full} fantasy decision profiles with validated projections and rankings where available."),
         canonical=esc(url), og_type="website",
         og_image=f'<meta property="og:image" content="{esc(logo)}">',
         structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
@@ -1720,24 +1715,25 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
       <div class="lb-data-hero-grid">
 
         <div>
-          <div class="lb-eyebrow">FANTASY DATA</div>
+          <div class="lb-eyebrow">NFL TOOLS</div>
 
           <h1 class="lb-data-title">
-            NFL Fantasy Football <span class="accent">Data</span>
+            NFL Fantasy <span class="accent">Decision Tools</span>
           </h1>
 
           <p class="lb-data-hook">
-            The numbers behind the decision.
+            Start with the decision. Inspect the data behind it.
           </p>
 
           <p class="lb-data-intro">
-            Projections, market value, schedule, durability and team context,
-            built to help you decide who to draft, start and avoid.
+            The 177-player Decision Room, 615-player projection set, rankings,
+            and a separate 218-player advanced Draft Comparison serve different
+            validated scopes. Choose the tool that fits the question.
           </p>
 
           <div class="lb-data-actions">
-            <a class="lb-button lb-button-primary" href="/nfl/who-should-i-draft/">
-              <span>COMPARE PLAYERS</span>
+            <a class="lb-button lb-button-primary" href="/decision-room/nfl/">
+              <span>OPEN DECISION ROOM</span>
               <svg class="lb-arrow" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h13M13 6l6 6-6 6"/>
               </svg>
@@ -1786,8 +1782,8 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
           <h3>Put two players head to head.</h3>
 
           <p class="lb-card-deck">
-            Compare current rankings, projections and ADP with weekly
-            consistency, floor, ceiling and recent Lineup Beat impact.
+            Use the advanced 218-player comparison pool for current projections
+            plus validated 2025 weekly consistency, floor and ceiling context.
           </p>
 
           <div class="lb-preview" aria-hidden="true">
@@ -2215,30 +2211,6 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
   </section>
 
 
-  <!-- WIRE CONNECTION -->
-  <section class="lb-wire-strip">
-    <div class="lb-container">
-      <div class="lb-wire-strip-grid">
-        <div>
-          <div class="lb-section-kicker">THE OTHER HALF OF LINEUPBEAT</div>
-          <h2>Data tells you what happened.<br>The Wire tells you what changed.</h2>
-
-          <p>
-            Pair the numbers with reporting from an average of 3 beat reporters
-            per NFL team, connected directly to the players it affects.
-          </p>
-        </div>
-
-        <a class="lb-button lb-button-primary" href="/#wire">
-          <span>OPEN THE WIRE</span>
-          <svg class="lb-arrow" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 12h13M13 6l6 6-6 6"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
 </main>"""
 
 
@@ -2381,10 +2353,10 @@ def data_hub_page(base):
 
     return _render(PAGE.format(
         fonts=PAGE_FONTS,
-        title="NFL Fantasy Data: Projections, ADP and Schedule",
-        description=("Projections, market value, strength of schedule, "
-                     "durability and team context for every drafted NFL "
-                     "player. Free, and updated daily."),
+        title="NFL Fantasy Decision Tools | LineupBeat",
+        description=("NFL Decision Room, rankings, projections and advanced "
+                     "Draft Comparison, with each validated dataset scope "
+                     "identified clearly."),
         canonical=f"{base}/{SPORT}/data/",
         og_type="website",
         og_image=f'<meta property="og:image" content="{base}/og.png">',
@@ -3685,10 +3657,10 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
 
 </main>"""
 
-    title = "About LineupBeat | How It Works and Where the Data Comes From"
-    desc = ("Why we built LineupBeat, how we follow beat reporters in all "
-            "32 NFL markets, where our projections and data come from, and "
-            "how we correct factual errors.")
+    body = '''<main class="lb-about-page"><section class="lb-about-hero"><div class="lb-about-wrap"><div class="lb-about-kicker">ABOUT LINEUPBEAT</div><h1>Understand the call.<br><span>Know what changes it.</span></h1><p class="lb-about-lead">Lineup Beat helps fantasy players compare validated outcomes, see the recommendation, understand its uncertainty, and identify the boundary that would change the pick.</p><div class="lb-about-actions"><a class="lb-about-btn lb-about-btn-primary" href="/decision-room/nfl/">OPEN NFL DECISION ROOM</a><a class="lb-about-btn lb-about-btn-secondary" href="/decision-room/college/">EXPLORE COLLEGE</a></div></div></section><section class="lb-about-section"><div class="lb-about-wrap"><div class="lb-about-section-head"><div class="lb-about-kicker">WHAT WE BUILD</div><h2>Evidence, forecast, boundary, record.</h2><p>Validated projections and rankings establish the current view. Decision boundaries show how much an input must move before the recommendation changes. Future timestamped records are designed to preserve calls instead of silently rewriting them.</p></div><div class="lb-about-do-grid"><article class="lb-about-do-card"><div class="lb-about-card-kicker">01 · COMPARE</div><h3>Put two outcomes side by side.</h3><p>NFL season comparisons support PPR, Half-PPR, and Non-PPR. College Week 1 currently supports Yahoo scoring only.</p></article><article class="lb-about-do-card"><div class="lb-about-card-kicker">02 · EXPLAIN</div><h3>Show what changes the pick.</h3><p>A recommendation is more useful when its threshold and scoring-format sensitivity are visible.</p></article><article class="lb-about-do-card"><div class="lb-about-card-kicker">03 · ACCOUNT</div><h3>Preserve the recommendation.</h3><p>Lineup Beat is building a decision record that retains inputs, timestamps, and eventual outcomes.</p></article></div></div></section><section class="lb-about-section"><div class="lb-about-wrap"><div class="lb-about-section-head"><div class="lb-about-kicker">HONEST COVERAGE</div><h2>NFL and College are separate validated datasets.</h2><p>The NFL Decision Room contains 177 identity-resolved players. Advanced Draft Comparison contains 218. NFL projection pages cover 615. College Week 1 contains 2,205 players across 64 teams; College season projections contain 2,351 across 68 teams. Those pools have different eligibility, horizons, formats, and identity coverage.</p></div></div></section><section class="lb-about-belief"><div class="lb-about-wrap"><blockquote>Recommendations can change.<br><span>The reason should remain visible.</span></blockquote></div></section></main>'''
+    title = "About LineupBeat | Fantasy Decisions With Accountability"
+    desc = ("How Lineup Beat uses validated NFL and College projections, "
+            "decision boundaries, uncertainty, and accountable recommendations.")
     schema = {
         "@type": "AboutPage",
         "name": title,
@@ -3900,6 +3872,8 @@ def main():
     # owns the file, and it is the one that writes it.
     for path, freq, prio in (
             (f"/{args.sport}/data/", "weekly", "0.8"),
+            ("/decision-room/nfl/", "daily", "0.9"),
+            ("/decision-room/college/", "daily", "0.9"),
             (f"/{args.sport}/rankings/", "daily", "0.9"),
             (f"/{args.sport}/rankings/qb/", "daily", "0.8"),
             (f"/{args.sport}/rankings/rb/", "daily", "0.8"),

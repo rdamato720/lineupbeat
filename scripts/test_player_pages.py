@@ -121,7 +121,7 @@ class PlayerPageTests(unittest.TestCase):
         rendered = pages.player_page(
             player, nuggets, "https://lineupbeat.com", [publication])
 
-        self.assertIn("Latest Lineup Beat impact", rendered)
+        self.assertIn("Latest approved decision context", rendered)
         self.assertIn(html.escape(publication["public_evidence_summary"]),
                       rendered)
         self.assertIn(html.escape(publication["lineupbeat_impact"]), rendered)
@@ -130,7 +130,7 @@ class PlayerPageTests(unittest.TestCase):
         self.assertIn("QB3", rendered)
         self.assertIn('/nfl/rankings/qb/', rendered)
         self.assertIn('/nfl/devonta-smith/', rendered)
-        self.assertIn("Recent practice and news timeline", rendered)
+        self.assertIn("Additional approved decision context", rendered)
         self.assertIn("Last updated", rendered)
         expected_date = (publication.get("updated_at") or
                          publication["published_at"])[:10]

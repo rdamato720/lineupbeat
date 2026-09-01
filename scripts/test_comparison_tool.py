@@ -48,7 +48,8 @@ class ComparisonToolTests(unittest.TestCase):
         template = (tool.ROOT / "site" / "template.html").read_text()
         pages = (tool.ROOT / "scripts" / "build_pages.py").read_text()
         self.assertIn('href="/nfl/who-should-i-draft/" class="lb-btn', template)
-        self.assertGreaterEqual(pages.count('href="/nfl/who-should-i-draft/"'), 2)
+        self.assertIn('href="/decision-room/nfl/"', pages)
+        self.assertIn('href="/nfl/who-should-i-draft/"', pages)
         self.assertIn("COMPARE PLAYERS", pages)
 
 
