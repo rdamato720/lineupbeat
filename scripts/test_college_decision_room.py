@@ -46,11 +46,13 @@ class CollegeDecisionDataTests(unittest.TestCase):
         self.assertTrue(rows)
         self.assertTrue(all(p["position"] == chosen["position"] for p in rows))
 
-    def test_missing_adp_conference_and_images_are_explicit(self):
+    def test_missing_adp_conference_and_player_images_are_explicit(self):
         self.assertFalse(self.data["adp_available"])
         self.assertFalse(self.data["conference_available"])
-        self.assertTrue(all(p["adp"] is None and p["photo"] is None and
-                            p["team_logo"] is None for p in self.data["players"]))
+        self.assertTrue(all(p["adp"] is None and p["photo"] is None
+                            for p in self.data["players"]))
+        self.assertTrue(all(p["team_logo"].startswith("/assets/college-teams/CFF_")
+                            for p in self.data["players"]))
 
     def test_single_format_does_not_claim_reversals(self):
         self.assertEqual(self.data["available_formats"], ["yahoo"])

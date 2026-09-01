@@ -144,7 +144,7 @@ APP_FOOTER = APP_FOOTER + (
 # A player page is wire content and gets the plain one; the hub and the
 # boards get the marker, so the highlight means where you are rather than
 # which script built the page.
-_, DATA_HEADER, _ = site_chrome(None)
+_, DATA_HEADER, _ = site_chrome("data")
 _, ABOUT_HEADER, _ = site_chrome("about")
 
 TEAM_C2 = {
@@ -799,7 +799,8 @@ def related_players_block(player):
         + "\n".join(cards)
         + '\n  </div>\n'
           f'  <p class="pjmore"><a href="/{SPORT}/team/{slug(team)}/">'
-          f'{esc(TEAM_NAMES.get(team, team))} Decision Board</a></p></section>\n')
+          f'{esc(TEAM_NAMES.get(team, team))} Decision Board</a> &middot; '
+          f'<a href="/{SPORT}/data/">NFL Fantasy Data</a></p></section>\n')
 
 
 def player_page(p, nuggets, base, wire_publications=None):
@@ -1714,10 +1715,10 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
       <div class="lb-data-hero-grid">
 
         <div>
-          <div class="lb-eyebrow">NFL TOOLS</div>
+          <div class="lb-eyebrow">NFL FANTASY DATA</div>
 
           <h1 class="lb-data-title">
-            NFL Fantasy <span class="accent">Decision Tools</span>
+            NFL <span class="accent">Fantasy Data</span>
           </h1>
 
           <p class="lb-data-hook">
@@ -2360,7 +2361,7 @@ def data_hub_page(base):
 
     return _render(PAGE.format(
         fonts=PAGE_FONTS,
-        title="NFL Fantasy Decision Tools | LineupBeat",
+        title="NFL Fantasy Data | LineupBeat",
         description=("NFL Decision Room, rankings, projections and advanced "
                      "Draft Comparison, with each validated dataset scope "
                      "identified clearly."),

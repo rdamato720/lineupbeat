@@ -9,6 +9,7 @@ from pathlib import Path
 
 from decision_engine import (DecisionContext, closest_calls,
                              strongest_projection_edges)
+from college_team_logos import load_registry
 
 ROOT = Path(__file__).resolve().parent.parent
 COLLEGE = ROOT / "data" / "college"
@@ -31,12 +32,16 @@ def load_weekly() -> dict:
     raw = json.loads(source.read_text())
     if raw.get("season") != 2026 or raw.get("week") != 1:
         raise ValueError("unexpected college weekly horizon")
+    logos = load_registry()
     players = []
     for row in raw["players"]:
         players.append({
             "id": row["id"], "name": row["name"], "team": row["team"],
             "team_id": row["teamId"], "position": row["pos"],
-            "conference": None, "photo": None, "team_logo": None, "adp": None,
+            "conference": None, "photo": None,
+            "team_logo": logos[row["teamId"]]["local_asset_path"],
+            "team_color": "#" + (logos[row["teamId"]].get("primary_color") or "C6F53C").lstrip("#"),
+            "adp": None,
             "opponent": row.get("opponent"),
             "formats": {"yahoo": {
                 "projected_points": row["pts"], "overall_rank": row["overallRank"],

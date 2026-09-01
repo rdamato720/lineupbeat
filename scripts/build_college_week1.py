@@ -14,6 +14,7 @@ OUT = SITE / "college-fantasy-football" / "week-1"
 EXPECTED_SHA = "9b3436d1df2869c9b02b1e6bb905f5a430ee331dd2625cd62264ee79f216fca2"
 sys.path.insert(0, str(ROOT / "scripts"))
 import seo
+from college_team_logos import CSS as COLLEGE_LOGO_CSS, logo_html
 
 cfg = json.loads((ROOT / "data/college/config.json").read_text())
 release = ROOT / "data/college" / cfg["activeCollegeWeeklyProjectionVersion"]
@@ -60,6 +61,9 @@ def value(player, key):
     if key == "matchup":
         return matchup(player)
     raw = player.get(key, 0)
+    if key == "team":
+        return (f'<span class="college-team-cell">{logo_html(player["teamId"], player["team"])}'
+                f'<span>{e(player["team"])}</span></span>')
     if key not in numeric:
         return e(raw)
     return f"{raw:,.1f}" if key in {"pts", "passTd", "rushTd", "rec", "recTd"} else f"{raw:,.0f}"
@@ -78,7 +82,7 @@ def table(position, rows):
     return f'<div class="wtable" tabindex="0"><table><thead><tr>{head}</tr></thead><tbody>{"".join(body)}</tbody></table></div>'
 
 
-CSS = """
+CSS = COLLEGE_LOGO_CSS + """
 .wwrap{max-width:1180px;margin:auto;padding:1.25rem 1rem 3rem}.whero{max-width:800px}
 .whero h1{font-size:2rem;line-height:1.12;margin:.4rem 0}.whero p{color:var(--quiet);line-height:1.55}
 .wmeta{font-family:var(--agate);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}

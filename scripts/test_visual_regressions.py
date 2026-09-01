@@ -52,7 +52,7 @@ class VisualRegressionTests(unittest.TestCase):
         source = inspect.getsource(build_comparison_tool.html)
         self.assertIn('seo.site_nav("decision"', source)
         self.assertNotIn('seo.site_nav("data"', source)
-        self.assertNotIn('aria-current="page">Decision</a>', build_pages.DATA_HEADER)
+        self.assertIn('aria-current="page">Fantasy Data</a>', build_pages.DATA_HEADER)
         self.assertNotIn('aria-current="page">Projections</a>', build_pages.DATA_HEADER)
 
     def test_about_actions_use_button_system_and_mobile_wrap(self):

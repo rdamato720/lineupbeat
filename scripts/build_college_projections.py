@@ -90,6 +90,7 @@ print("  columns set; no Targets column, none exists in the artifact")
 import re
 sys.path.insert(0, str(ROOT / "scripts"))
 import seo
+from college_team_logos import CSS as COLLEGE_LOGO_CSS, logo_html
 
 POSITIONS = ["QB", "RB", "WR", "TE"]
 BASE = "/college-fantasy-football/projections/"
@@ -185,6 +186,9 @@ def table(pos, limit=None):
                            'materially affects this ranking">Hybrid rushing '
                            'role</span>')
                 cells.append(f'<td class="{cls} pname">{e(v)}{tag}</td>')
+            elif k == "team":
+                cells.append(f'<td class="team"><span class="college-team-cell">'
+                             f'{logo_html(p["teamId"], p["team"])}<span>{e(v)}</span></span></td>')
             else:
                 cells.append(f'<td class="{cls}">{fmt(v, k)}</td>')
         body.append(f'<tr data-team="{e(p["team"])}" '
@@ -207,7 +211,7 @@ def tabs(active):
 print("  chrome, nav and table renderer ready")
 
 
-CSS = """
+CSS = COLLEGE_LOGO_CSS + """
 .cwrap{max-width:var(--content-wide-table);margin:0 auto;padding:1.2rem 1rem 3rem}
 .chero h1{font-size:1.9rem;line-height:1.15;margin:0 0 .5rem}
 .chero p.lede{color:var(--quiet);font-size:.95rem;line-height:1.55;

@@ -366,6 +366,7 @@ SPORT_ROUTES = {
         "decision": "/decision-room/nfl/",
         "rankings": "/nfl/rankings/",
         "projections": "/nfl/projections/",
+        "data": "/nfl/data/",
         "landing": "/nfl/data/",
     },
     "college": {
@@ -375,8 +376,13 @@ SPORT_ROUTES = {
         "landing": "/decision-room/college/",
     },
 }
-NAV_ITEMS = (("decision", "Decision"), ("rankings", "Rankings"),
-             ("projections", "Projections"))
+SPORT_NAV_ITEMS = {
+    "nfl": (("decision", "Decision"), ("rankings", "Rankings"),
+            ("projections", "Projections"), ("data", "Fantasy Data")),
+    "college": (("decision", "Decision"),
+                ("rankings", "Week 1 Rankings"),
+                ("projections", "Season Projections")),
+}
 
 
 # The shell must be complete wherever its markup is used. Most legacy page
@@ -654,7 +660,7 @@ NAV_JS = """
 GLOBAL_FOOTER = """<footer class="global-footer"><div class="wrap">
   <div class="fbrand"><span class="flogo">Lineup<em>Beat</em></span>
     <p class="ftag">NFL and College fantasy projections, comparisons, decision boundaries, rankings, and accountable recommendations.</p></div>
-  <div class="frow"><div class="fcol"><h3>Decision tools</h3><p><a href="/decision-room/nfl/">NFL Decision Room</a><br><a href="/decision-room/college/">College Decision Room</a><br><a href="/nfl/who-should-i-draft/">Advanced Draft Comparison</a></p></div>
+  <div class="frow"><div class="fcol"><h3>Decision tools</h3><p><a href="/decision-room/nfl/">NFL Decision Room</a><br><a href="/decision-room/college/">College Decision Room</a><br><a href="/nfl/data/">NFL Fantasy Data</a><br><a href="/nfl/who-should-i-draft/">Advanced Draft Comparison</a></p></div>
   <div class="fcol"><h3>Validated data</h3><p><a href="/nfl/rankings/">NFL rankings</a><br><a href="/nfl/projections/">NFL projections</a><br><a href="/college-fantasy-football/week-1/">College Week 1</a><br><a href="/college-fantasy-football/projections/">College season projections</a></p></div>
   <div class="fcol"><h3>Methodology &amp; accountability</h3><p><a href="/about/">How Lineup Beat makes and preserves decisions</a></p></div>
   <div class="fcol"><h3>Contact</h3><p><a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a></p></div></div>
@@ -674,7 +680,7 @@ def _nav_drawer(active, sport, search):
     links = "".join(
         f'<a class="navlink" href="{routes[key]}"{cur(key)}>'
         f'{label}</a>'
-        for key, label in NAV_ITEMS)
+        for key, label in SPORT_NAV_ITEMS[sport])
     sport_links = ''.join(
         f'<a class="navlink" href="{SPORT_ROUTES[s][active] if active in SPORT_ROUTES[s] else SPORT_ROUTES[s]["landing"]}" '
         f'aria-current="{"page" if s == sport else "false"}">{s.upper()}</a>'
@@ -707,13 +713,13 @@ def site_nav(active=None, sport="nfl", search=""):
     behind the search button on a phone; pages without one pass nothing.
     """
     sport = sport if sport in SPORT_ROUTES else "nfl"
-    active = {"data": "projections", "college": "projections",
+    active = {"college": "projections",
               "wire": None, "roster": None}.get(active, active)
     cur = lambda k: ' aria-current="page"' if active == k else ""
     routes = SPORT_ROUTES[sport]
     views = "".join(
         f'<a class="vbtn" href="{routes[key]}"{cur(key)}>{label}</a>'
-        for key, label in NAV_ITEMS)
+        for key, label in SPORT_NAV_ITEMS[sport])
     switch = "".join(
         f'<a class="vbtn sport-pill" href="{SPORT_ROUTES[s][active] if active in SPORT_ROUTES[s] else SPORT_ROUTES[s]["landing"]}" '
         f'aria-pressed="{str(s == sport).lower()}">{s.upper()}</a>'
@@ -721,6 +727,9 @@ def site_nav(active=None, sport="nfl", search=""):
     if sport == "college":
         search = ('<a class="college-search-entry" href="/decision-room/college/">'
                   'Search 2,205 College players</a>')
+    elif not search:
+        search = ('<a class="college-search-entry" href="/decision-room/nfl/">'
+                  'Search NFL players</a>')
     return (
         f'<style id="shared-shell-css">{SHELL_CSS}{TEAMS_CSS}{NAV_CSS}</style>\n'
         '<header class="topbar">\n'

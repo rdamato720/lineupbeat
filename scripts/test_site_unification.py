@@ -110,7 +110,7 @@ def audit(root: Path) -> tuple[int, int, int]:
         if parser.footers != 1:
             errors.append(f"{rel}: expected one global footer, found {parser.footers}")
         shell = " ".join(parser.shell_text).lower()
-        for legacy in ("the wire", "my roster", "fantasy data",
+        for legacy in ("the wire", "my roster",
                        "every team on the beat"):
             if legacy in shell:
                 errors.append(f"{rel}: legacy shell text {legacy!r}")
@@ -122,7 +122,7 @@ def audit(root: Path) -> tuple[int, int, int]:
         if page == root / "index.html":
             scripts = " ".join(re.findall(r"<script\b[^>]*>(.*?)</script>", text,
                                            flags=re.I | re.S)).lower()
-            for legacy in ("the wire", "my roster", "fantasy data"):
+            for legacy in ("the wire", "my roster"):
                 if legacy in scripts:
                     errors.append(f"{rel}: hidden legacy homepage script {legacy!r}")
             for legacy_id in ('id="roshero"', 'id="medhero"'):
