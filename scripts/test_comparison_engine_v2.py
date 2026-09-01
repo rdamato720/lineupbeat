@@ -216,8 +216,14 @@ class LayoutContracts(unittest.TestCase):
         nfl = build_decision_room.render(decision_data.load_season())
         self.assertIn("one-missing", nfl)
         self.assertIn("both-missing", nfl)
-        self.assertIn("validated ADP is unavailable for ${safe(x.missing[0].name)}", nfl)
+        self.assertIn("validated ADP is unavailable for ${terminalName(x.missing[0])}", nfl)
         self.assertIn("validated ADP is unavailable for both", nfl)
+
+    def test_nfl_terminal_name_does_not_add_duplicate_suffix_punctuation(self):
+        nfl = build_decision_room.render(decision_data.load_weekly())
+        self.assertIn("terminalName=p=>terminalText(safe(p.name))", nfl)
+        self.assertIn("ahead of ${terminalName(r)}", nfl)
+        self.assertNotIn("ahead of ${safe(r.name)}.", nfl)
 
     def test_college_terminal_name_does_not_add_duplicate_punctuation(self):
         self.assertIn("function terminalName", college_decision_room.JS)

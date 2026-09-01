@@ -140,7 +140,8 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         for text in ("2026 NFL Week 1 Decision Room",
                      "Lineup Beat-owned weekly projections",
                      "Odds and current injury reports are unavailable",
-                     "Connect your league to see the decisions that matter on your roster.",
+                     "Connect an ESPN roster locally to see supported Week 1 starter and bench decisions.",
+                     'href="/my-team/"',
                      "No decisions have been recorded"):
             self.assertIn(text, self.html)
 
@@ -241,7 +242,8 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertEqual(home.count('data-home-sport="college"'), 1)
         self.assertEqual(home.count('class="hp-call-card"'), 6)
         self.assertEqual(home.count('class="hp-mover-card"'), 3)
-        self.assertEqual(home.count('class="hp-action"'), 8)
+        self.assertEqual(home.count('class="hp-action"'), 9)
+        self.assertIn('href="/my-team/"', home)
         self.assertEqual(home.count('class="hp-identity hp-college-identity"'), 10)
         self.assertEqual(home.count('class="hp-id-logo"'), 10)
         self.assertIn("Yahoo scoring", home)

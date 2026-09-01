@@ -152,6 +152,48 @@ def check_comparison_tool(root):
           "/nfl/who-should-i-draft/</loc>" in sitemap)
 
 
+def check_my_team(root):
+    """The development-only My Team surface must ship as a complete local app."""
+    page = root / "my-team" / "index.html"
+    text = page.read_text() if page.is_file() else ""
+    check("My Team has a dedicated development route", bool(text), str(page))
+    check("My Team is noindex and analytics-free",
+          bool(re.search(r'name="robots" content="noindex,\s*nofollow(?:,\s*noarchive)?"', text))
+          and "cloudflareinsights" not in text.lower()
+          and "data-cf-beacon" not in text.lower())
+    check("My Team exposes the browser-local privacy controls",
+          "Connect ESPN extension" in text
+          and "Disconnect &amp; clear" in text
+          and "Roster data never leaves this browser" in text)
+    check("unfinished providers have no active connection controls",
+          "Connect Yahoo" not in text and "Connect CBS" not in text
+          and "Connect Sleeper" not in text)
+    assets = [
+        root / "my-team" / "league-adapter.js",
+        root / "my-team" / "espn-adapter.js",
+        root / "my-team" / "my-team.js",
+        root / "my-team" / "my-team.css",
+        root / "my-team" / "lineupbeat-espn-extension.zip",
+    ]
+    check("My Team runtime and development extension are complete",
+          all(path.is_file() for path in assets),
+          "; ".join(str(path) for path in assets if not path.is_file()))
+    model_path = root / "data" / "my-team-week1.json"
+    try:
+        model = json.loads(model_path.read_text())
+    except (OSError, ValueError):
+        model = {}
+    players = model.get("players") or []
+    check("My Team ships only the redacted public Week 1 model",
+          model.get("schemaVersion") == "lineupbeat-my-team-week1-v1"
+          and len(players) == 182
+          and all(player.get("position") in {"QB", "RB", "WR", "TE"}
+                  for player in players)
+          and all("history" not in player and "adp" not in player
+                  for player in players),
+          f"{len(players)} player(s)")
+
+
 def check_homepage(root, decision_room=False):
     """The homepage sections the Wire replaced *around*.
 
@@ -424,6 +466,8 @@ def main() -> int:
     check_player_page_impacts(root)
     check_ranking_formats(root)
     check_comparison_tool(root)
+    if decision_room:
+        check_my_team(root)
 
     home = root / "index.html"
     if home.is_file():

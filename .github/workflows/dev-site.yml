@@ -42,6 +42,8 @@ jobs:
           python scripts/test_sport_experiences.py
           python scripts/test_college_decision_room.py
           python scripts/test_week1_intelligence.py
+          python scripts/test_my_team.py
+          node scripts/test_my_team_browser.js
           python scripts/test_feedback.py
           python -m beatwire.cli doctor --sport nfl
           python scripts/sync_home_nav.py --check
@@ -87,6 +89,7 @@ jobs:
           python scripts/build_decision_room.py
           python scripts/build_pages.py --base "$DEV_BASE_URL" \
             --db /tmp/lineupbeat-development.db
+          python scripts/build_my_team.py
           python scripts/dev_site.py protect --label "$GITHUB_REF_NAME"
           python scripts/verify_deploy_artifact.py site --decision-room
           python scripts/dev_site.py verify
