@@ -6,6 +6,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import unicodedata
 from pathlib import Path
 
 import build_ranking_formats as rankings
@@ -18,6 +19,32 @@ HISTORY = ROOT / "data" / "nfl_player_consistency_2025.json"
 EDITORIAL = ROOT / "data" / "comparison_editorial_opinions.json"
 ADP_META = ROOT / "rosters" / "adp_meta.json"
 WEEK1 = ROOT / "data" / "week1" / "2026" / "v1.0" / "nfl_week1_projections.json"
+NAME_SUFFIXES = {"jr", "sr", "ii", "iii", "iv", "v"}
+
+
+def normalize_player_name(value: str) -> str:
+    """Normalize only mechanical name variants; never perform fuzzy matching."""
+    ascii_name = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode()
+    tokens = re.sub(r"[^a-z0-9\s]", "", ascii_name.lower()).split()
+    while tokens and tokens[-1] in NAME_SUFFIXES:
+        tokens.pop()
+    return " ".join(tokens)
+
+
+def identity_index(players: list[dict]) -> dict[tuple[str, str, str], dict]:
+    """Index stable identities by normalized name plus exact team and position."""
+    index: dict[tuple[str, str, str], dict] = {}
+    for player in players:
+        key = (normalize_player_name(player["full_name"]), player["team"], player["position"])
+        if key in index:
+            other = index[key]
+            raise ValueError(
+                "ambiguous normalized identity: "
+                f"{other['player_id']} {other['full_name']} and "
+                f"{player['player_id']} {player['full_name']} for {key}"
+            )
+        index[key] = player
+    return index
 
 
 def load_weekly(season: int = 2026, week: int = 1) -> dict:
@@ -27,8 +54,20 @@ def load_weekly(season: int = 2026, week: int = 1) -> dict:
     payload = json.loads(WEEK1.read_text())
     if (payload.get("mode"), payload.get("season"), payload.get("week")) != ("weekly", season, week):
         raise ValueError("unexpected NFL weekly projection identity")
-    if len(payload.get("players", [])) + len(payload.get("excluded_players", [])) != 177:
-        raise ValueError("NFL weekly coverage no longer reconciles to the Decision Room set")
+    population = payload.get("population", {})
+    if population.get("projection_source") != (
+        population.get("identity_resolved", 0) + population.get("identity_unresolved", 0)
+    ):
+        raise ValueError("NFL projection-source identity coverage does not reconcile")
+    if population.get("ranked_production") != (
+        len(payload.get("players", [])) + len(payload.get("excluded_players", []))
+    ):
+        raise ValueError("NFL ranked production coverage does not reconcile")
+    if population.get("identity_resolved") != (
+        population.get("ranked_production", 0)
+        + population.get("identity_resolved_not_ranked", 0)
+    ):
+        raise ValueError("NFL resolved projection-source population does not reconcile")
     return payload
 
 
@@ -42,8 +81,7 @@ def load_season(season: int = 2026) -> dict:
     identities = json.loads(IDENTITIES.read_text())
     if identities.get("season") != season:
         raise ValueError("identity season does not match projection season")
-    by_key = {(p["full_name"], p["team"], p["position"]): p
-              for p in identities["players"]}
+    by_key = identity_index(identities["players"])
     display = json.loads(DISPLAY.read_text())["players"]
     history_payload = json.loads(HISTORY.read_text())
     history = {row["player_id"]: row["formats"]
@@ -61,7 +99,7 @@ def load_season(season: int = 2026) -> dict:
         for row in rows:
             if row.get("overall_rank") is None or row.get("position_rank") is None:
                 continue
-            key = (row["player_name"], row["team"], row["position"])
+            key = (normalize_player_name(row["player_name"]), row["team"], row["position"])
             identity = by_key.get(key)
             if identity is None:
                 continue
@@ -86,8 +124,27 @@ def load_season(season: int = 2026) -> dict:
     complete.sort(key=lambda p: (p["position"], p["formats"]["half_ppr"]["position_rank"], p["name"]))
     timestamp = rankings.source_updated(PROJECTIONS)
     adp_meta = json.loads(ADP_META.read_text())
+    source_rows = raw["ppr"]
+    source_keys = [{"name": row["player_name"], "team": row["team"],
+                    "position": row["position"]} for row in source_rows]
+    unresolved = [row for row in source_keys
+                  if (normalize_player_name(row["name"]), row["team"], row["position"]) not in by_key]
     return {"mode": "season", "season": season, "week": None,
             "updated_at": timestamp.isoformat(), "players": complete,
+            "population": {
+                "projection_source": len(source_keys),
+                "identity_resolved": len(source_keys) - len(unresolved),
+                "identity_unresolved": len(unresolved),
+                "ranked_production": len(complete),
+                "identity_resolved_not_ranked": (
+                    len(source_keys) - len(unresolved) - len(complete)
+                ),
+            },
+            "unresolved_players": unresolved,
+            "identity_method": (
+                "suffix- and punctuation-normalized name plus exact team and position; "
+                "no fuzzy matching; ambiguity is fatal"
+            ),
             "available_formats": ["ppr", "half_ppr", "non_ppr"],
             "editorial_opinions": editorial_payload,
             "schedule_sos_available": False,
@@ -126,8 +183,10 @@ def _editorial(by_key: dict[tuple[str, str, str], dict]) -> list[dict]:
     for row in payload["opinions"]:
         subject = row["subject"]
         other = row["preferred_over"]
-        subject_identity = by_key.get((subject["name"], subject["team"], subject["position"]))
-        other_identity = by_key.get((other["name"], other["team"], other["position"]))
+        subject_identity = by_key.get((normalize_player_name(subject["name"]),
+                                       subject["team"], subject["position"]))
+        other_identity = by_key.get((normalize_player_name(other["name"]),
+                                     other["team"], other["position"]))
         if not subject_identity or not other_identity:
             raise ValueError(f"unresolved comparison editorial identity: {row['opinion_id']}")
         resolved.append({

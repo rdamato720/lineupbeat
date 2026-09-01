@@ -16,6 +16,21 @@ import college_decision_data
 import decision_data
 
 
+IDENTITY_VARIANTS = {
+    "James Cook III": ("James Cook", "00-0037248", "BUF", "RB"),
+    "Travis Etienne Jr.": ("Travis Etienne", "00-0036973", "NO", "RB"),
+    "Michael Pittman Jr.": ("Michael Pittman", "00-0036252", "PIT", "WR"),
+    "Kyle Pitts Sr.": ("Kyle Pitts", "00-0036970", "ATL", "TE"),
+    "Aaron Jones Sr.": ("Aaron Jones", "00-0033293", "MIN", "RB"),
+    "Tre' Harris": ("Tre’ Harris", "00-0040727", "LAC", "WR"),
+    "KC Concepcion": ("K.C. Concepcion", "00-0041547", "CLE", "WR"),
+    "Mike Washington Jr.": ("Mike Washington", "00-0040878", "LV", "RB"),
+    "Omar Cooper Jr.": ("Omar Cooper", "00-0041511", "NYJ", "WR"),
+    "Brian Robinson Jr.": ("Brian Robinson", "00-0037746", "ATL", "RB"),
+    "Oronde Gadsden": ("Oronde Gadsden II", "00-0040189", "LAC", "TE"),
+}
+
+
 class NFLWeek1ArtifactTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -24,11 +39,44 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
         cls.provenance = json.loads((model.OUTPUT / "provenance.json").read_text())
 
     def test_schedule_and_identity_stop_conditions_pass(self):
-        self.assertEqual(len(self.payload["players"]), 171)
+        self.assertEqual(len(self.payload["players"]), 182)
         self.assertEqual(len(self.payload["excluded_players"]), 6)
-        self.assertEqual(len({p["id"] for p in self.payload["players"]}), 171)
+        self.assertEqual(len({p["id"] for p in self.payload["players"]}), 182)
         self.assertEqual(len({p["team"] for p in self.payload["players"]}), 32)
         self.assertTrue(all(p["opponent"] and p["kickoff"] for p in self.payload["players"]))
+
+    def test_full_projection_source_population_is_reported_honestly(self):
+        population = self.payload["population"]
+        self.assertEqual(population["projection_source"], 615)
+        self.assertEqual(population["identity_resolved"], 581)
+        self.assertEqual(population["identity_unresolved"], 34)
+        self.assertEqual(population["ranked_production"], 188)
+        self.assertEqual(population["identity_resolved_not_ranked"], 393)
+        self.assertEqual(population["ranked_active_projected"], 182)
+        self.assertEqual(population["ranked_excluded"], 6)
+        self.assertEqual(len(self.payload["unresolved_players"]), 34)
+
+    def test_all_documented_identity_variants_resolve_deterministically(self):
+        players = {player["name"]: player for player in self.payload["players"]}
+        for source_name, (identity_name, player_id, team, position) in IDENTITY_VARIANTS.items():
+            self.assertEqual(decision_data.normalize_player_name(source_name),
+                             decision_data.normalize_player_name(identity_name))
+            player = players[source_name]
+            self.assertEqual((player["id"], player["team"], player["position"]),
+                             (player_id, team, position), source_name)
+            identity = player["identity_resolution"]
+            self.assertEqual(identity["stable_gsis_id"], player_id)
+            self.assertTrue(identity["roster_record"])
+            self.assertTrue(identity["season_prior_stat_line"])
+
+    def test_normalized_identity_index_fails_on_ambiguity(self):
+        with self.assertRaisesRegex(ValueError, "ambiguous normalized identity"):
+            decision_data.identity_index([
+                {"player_id": "one", "full_name": "Example Player Jr.",
+                 "team": "BUF", "position": "WR"},
+                {"player_id": "two", "full_name": "Example Player",
+                 "team": "BUF", "position": "WR"},
+            ])
 
     def test_scoring_reconciles_from_components(self):
         for player in self.payload["players"]:
@@ -49,11 +97,14 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
 
     def test_backtest_is_leakage_safe_and_reports_baseline_by_position(self):
         self.assertEqual(self.backtest["future_rows_used"], 0)
+        self.assertEqual(self.backtest["evaluation_type"], "proxy_context_adjustment_backtest")
+        self.assertFalse(self.backtest["production_formula_reproduced"])
+        self.assertIn("does not reproduce the deployed production formula", self.backtest["limitation"])
         self.assertGreater(self.backtest["predictions"], 5000)
         for position in model.POSITIONS:
             row = self.backtest["by_position"][position]
             self.assertGreater(row["predictions"], 0)
-            self.assertGreater(row["model_mae"], 0)
+            self.assertGreater(row["proxy_mae"], 0)
             self.assertGreater(row["baseline_mae"], 0)
 
     def test_private_provider_and_license_record_are_honest(self):
@@ -75,6 +126,12 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
             self.assertIn(text, html)
         self.assertNotIn("Weekly lineup decisions will become available", html)
         self.assertNotIn("D.sources.projections", html)
+        self.assertIn("no D/ST projection is included", html)
+        self.assertEqual(self.payload["limitations"]["dst_model"],
+                         "unavailable; model population is QB/RB/WR/TE only")
+        self.assertFalse(self.payload["limitations"]["predictive_lift_claim"])
+        self.assertEqual(self.payload["limitations"]["matchup_context"],
+                         "2025 prior-season context")
 
     def test_browser_engine_uses_weekly_call_and_flip_boundaries(self):
         html = build_decision_room.render(self.payload)

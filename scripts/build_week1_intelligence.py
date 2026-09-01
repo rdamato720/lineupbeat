@@ -229,7 +229,7 @@ def backtest(player24: list[dict], player25: list[dict], schedule: list[dict]) -
         if game.get("season") == "2025" and game.get("game_type") == "REG":
             home[(game["game_id"], team(game["home_team"]))] = True
             home[(game["game_id"], team(game["away_team"]))] = False
-    errors = defaultdict(lambda: {"model": [], "baseline": []})
+    errors = defaultdict(lambda: {"proxy": [], "baseline": []})
     failures = []
     eligible = 0
     leakage_checks = 0
@@ -256,7 +256,7 @@ def backtest(player24: list[dict], player25: list[dict], schedule: list[dict]) -
             venue_factor = 1.01 if home.get((row.get("game_id"), team(row.get("team")))) else .99
             prediction = baseline * opp_factor * venue_factor
             observed = score(row, .5)
-            errors[row["position"]]["model"].append(abs(prediction - observed))
+            errors[row["position"]]["proxy"].append(abs(prediction - observed))
             errors[row["position"]]["baseline"].append(abs(baseline - observed))
             failures.append({"player_id": row.get("player_id"), "player": row.get("player_display_name"),
                              "position": row["position"], "week": week,
@@ -265,10 +265,10 @@ def backtest(player24: list[dict], player25: list[dict], schedule: list[dict]) -
     by_position = {}
     covered = 0
     for pos in POSITIONS:
-        model_errors = errors[pos]["model"]
-        covered += len(model_errors)
-        by_position[pos] = {"predictions": len(model_errors),
-                            "model_mae": round(mean(model_errors), 3),
+        proxy_errors = errors[pos]["proxy"]
+        covered += len(proxy_errors)
+        by_position[pos] = {"predictions": len(proxy_errors),
+                            "proxy_mae": round(mean(proxy_errors), 3),
                             "baseline_mae": round(mean(errors[pos]["baseline"]), 3)}
     if leakage_checks:
         raise ValueError("backtest leakage detected")
@@ -276,7 +276,16 @@ def backtest(player24: list[dict], player25: list[dict], schedule: list[dict]) -
             "scoring_format": "Half-PPR", "evaluation_population":
             "QB/RB/WR/TE weekly stat rows with at least two strictly prior appearances",
             "baseline": "mean Half-PPR points over the player's last eight prior appearances",
-            "model": "baseline adjusted by prior opponent-position allowance and historical venue context",
+            "evaluation_type": "proxy_context_adjustment_backtest",
+            "production_formula_reproduced": False,
+            "proxy": (
+                "last-eight-points baseline adjusted by prior opponent-position allowance "
+                "and historical venue context"
+            ),
+            "limitation": (
+                "This walk-forward test does not reproduce the deployed production formula's "
+                "team volume, player shares, efficiencies, current depth, or season priors."
+            ),
             "future_rows_used": 0, "eligible_appearances": eligible, "predictions": covered,
             "coverage_percent": round(100 * covered / max(1, eligible), 1),
             "by_position": by_position,
@@ -415,6 +424,12 @@ def build() -> tuple[dict, dict, dict, dict]:
                                  "depth_rank": int(float(depth["pos_rank"])) if depth.get("pos_rank") else None,
                                  "2025_average_offense_snap_pct": round(mean(snaps[pid]), 3) if snaps[pid] else None},
                         "availability": {"state": "active_roster", "injury_report": "unavailable"},
+                        "identity_resolution": {
+                            "method": "normalized name plus exact team and position",
+                            "stable_gsis_id": pid,
+                            "roster_record": True,
+                            "season_prior_stat_line": True,
+                        },
                         "matchup": {"label": "2025 defensive context", "opponent": opponent,
                                     "position": pos, "projection_factor": round(matchup_factor, 3),
                                     **pos_match, "rushing": matchup[opponent]["rushing"],
@@ -443,6 +458,20 @@ def build() -> tuple[dict, dict, dict, dict]:
 
     payload = {"schema_version": "lineupbeat-nfl-week1-v1", "mode": "weekly", "season": 2026, "week": 1,
                "updated_at": manifest["captured_at"], "players": players, "excluded_players": excluded,
+               "population": {
+                   **base["population"],
+                   "ranked_active_projected": len(players),
+                   "ranked_excluded": len(excluded),
+               },
+               "unresolved_players": base["unresolved_players"],
+               "identity_method": base["identity_method"],
+               "limitations": {
+                   "sportsbook_evidence": "unavailable; zero provider requests",
+                   "current_injury_report": "unavailable",
+                   "dst_model": "unavailable; model population is QB/RB/WR/TE only",
+                   "predictive_lift_claim": False,
+                   "matchup_context": "2025 prior-season context",
+               },
                "available_formats": ["ppr", "half_ppr", "non_ppr"],
                "editorial_opinions": base["editorial_opinions"],
                "schedule_sos_available": True,

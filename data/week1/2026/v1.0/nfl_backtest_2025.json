@@ -3,28 +3,29 @@
   "by_position": {
     "QB": {
       "baseline_mae": 6.808,
-      "model_mae": 6.807,
-      "predictions": 627
+      "predictions": 627,
+      "proxy_mae": 6.807
     },
     "RB": {
       "baseline_mae": 4.29,
-      "model_mae": 4.292,
-      "predictions": 1490
+      "predictions": 1490,
+      "proxy_mae": 4.292
     },
     "TE": {
       "baseline_mae": 3.215,
-      "model_mae": 3.241,
-      "predictions": 1225
+      "predictions": 1225,
+      "proxy_mae": 3.241
     },
     "WR": {
       "baseline_mae": 3.871,
-      "model_mae": 3.877,
-      "predictions": 2388
+      "predictions": 2388,
+      "proxy_mae": 3.877
     }
   },
   "coverage_percent": 94.9,
   "eligible_appearances": 6037,
   "evaluation_population": "QB/RB/WR/TE weekly stat rows with at least two strictly prior appearances",
+  "evaluation_type": "proxy_context_adjustment_backtest",
   "failure_cases": [
     {
       "absolute_error": 32.24,
@@ -118,8 +119,10 @@
     }
   ],
   "future_rows_used": 0,
-  "model": "baseline adjusted by prior opponent-position allowance and historical venue context",
+  "limitation": "This walk-forward test does not reproduce the deployed production formula's team volume, player shares, efficiencies, current depth, or season priors.",
   "predictions": 5730,
+  "production_formula_reproduced": false,
+  "proxy": "last-eight-points baseline adjusted by prior opponent-position allowance and historical venue context",
   "schema_version": "lineupbeat-week1-backtest-v1",
   "scoring_format": "Half-PPR",
   "season": 2025

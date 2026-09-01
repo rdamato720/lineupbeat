@@ -152,7 +152,7 @@ def render_home(payload: dict, college_payload: dict) -> str:
     feature = featured_decision(players, nfl_context)
     winner, runner = feature["winner"], feature["runner_up"]
     wf, rf = feature["winner_format"], feature["runner_up_format"]
-    calls = [r for r in closest_calls(players, "half_ppr", limit=30,
+    calls = [r for r in closest_calls(players, "half_ppr", limit=len(players),
                                       context=nfl_context)
              if not r["is_tie"]][:3]
     values, fades = value_signals(players, "half_ppr")
@@ -301,7 +301,7 @@ def render(payload: dict) -> str:
     <div class="dr-mode">Week 1 — Lineup Beat-owned weekly projections</div>
     <h1>Make the decision—not just the projection.</h1>
     <p class="dr-lede">Compare Week 1 projections, opportunity, opponent context and availability—and see which evidence is still missing.</p>
-    <p class="dr-week-note">Odds and current injury reports are unavailable. Prior-season matchup metrics are labeled 2025 context. A point difference alone cannot create an unqualified recommendation.</p>
+    <p class="dr-week-note">Odds and current injury reports are unavailable. Prior-season matchup metrics are labeled 2025 context. The model covers QB, RB, WR and TE only; no D/ST projection is included. A point difference alone cannot create an unqualified recommendation.</p>
     <section class="dr-compare" aria-labelledby="dr-compare-title">
       <div class="dr-compare-head"><div><small>Decision 01</small><h2 id="dr-compare-title">Player vs. player</h2></div>
         <label>Scoring format<select id="dr-format"><option value="ppr">PPR</option><option value="half_ppr" selected>Half-PPR</option><option value="non_ppr">Non-PPR</option></select></label></div>
