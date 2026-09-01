@@ -221,7 +221,7 @@ def check_homepage(root, decision_room=False):
         if dedicated.is_file():
             wire_text = dedicated.read_text()
             check("the complete reviewed Wire remains filterable",
-                  'id="wteam"' in wire_text and 'data-wfilter=' in wire_text)
+                  'id="wteam"' in wire_text and 'data-f="all"' in wire_text)
             check("the complete reviewed Wire preserves mobile viewport support",
                   'name="viewport"' in wire_text)
         home_cards = re.findall(r'<article class="tile wire".*?</article>', text, re.S)
