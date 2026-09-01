@@ -174,31 +174,32 @@ class DecisionRoomRenderingTests(unittest.TestCase):
             self.assertNotIn(">Old</section>", rendered)
             self.assertIn('id="lineup-beat-home"', rendered)
             self.assertNotIn('id="decision-room"', rendered)
-            self.assertIn('id="wire"', rendered)
-            self.assertEqual(rendered.count('class="tile wire"'), 4)
+            self.assertNotIn('id="wire"', rendered)
+            self.assertEqual(rendered.count('class="tile wire"'), 0)
             self.assertIn("Fantasy Football Decisions for NFL &amp; College | Lineup Beat", rendered)
             dedicated = Path(tmp) / "decision-room" / "reviewed-wire" / "index.html"
             self.assertEqual(dedicated.read_text().count('class="tile wire"'), 6)
             nfl = Path(tmp) / "decision-room" / "nfl" / "index.html"
             college = Path(tmp) / "decision-room" / "college" / "index.html"
             self.assertIn('role="combobox"', nfl.read_text())
-            self.assertIn('id="livelist"', nfl.read_text())
+            self.assertNotIn('id="livelist"', nfl.read_text())
             self.assertIn('id="college-decision-room"', college.read_text())
 
     def test_homepage_navigation_sections_and_mobile_structure(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
-        for label in ("NFL", "College", "Decision Room", "Rankings", "Projections",
-                      "The Beat", "Quick Actions", "Today’s Decision Board",
-                      "Make the call with confidence."):
+        for label in ("NFL", "College", "Decision", "Rankings", "Projections",
+                      "Quick Actions", "Today’s Decision Board",
+                      "Make the call", "confidence."):
             self.assertIn(label, home)
-        self.assertIn('class="hp-menu"', home)
-        self.assertIn('aria-controls="hp-links"', home)
+        self.assertIn('class="topbar sport-header"', home)
+        self.assertIn('aria-controls="sport-navdrawer"', home)
         self.assertIn("@media(max-width:780px)", page.CSS)
 
     def test_featured_decision_is_close_non_tie_with_complete_art(self):
         result = page.featured_decision(self.payload["players"])
         self.assertFalse(result["is_tie"])
-        self.assertGreaterEqual(result["gap"], .5)
+        self.assertEqual(result["confidence"], "Lean")
+        self.assertGreaterEqual(result["gap"], 2.1)
         self.assertLessEqual(result["gap"], 4.0)
         for player in (result["winner"], result["runner_up"]):
             self.assertTrue(player["photo"])
@@ -208,13 +209,33 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
         self.assertIn('href="/decision-room/nfl/"', home)
         self.assertIn('href="/decision-room/college/"', home)
-        self.assertIn('href="/decision-room/reviewed-wire/"', home)
+        self.assertNotIn('href="/decision-room/reviewed-wire/"', home)
         self.assertEqual(home.count('<small>Closest call</small>'), 3)
         self.assertEqual(home.count('<small>Our Value</small>'), 2)
         self.assertEqual(home.count('<small>Our Fade</small>'), 2)
         self.assertEqual(home.count('<small>Scoring-format mover</small>'), 3)
         self.assertIn("2,205 players · 64 teams · Yahoo scoring", home)
         self.assertIn("No player images, ADP, conference metadata", home)
+
+    def test_sport_navigation_uses_canonical_context_routes(self):
+        nfl = page.sport_header("nfl", "rankings", self.payload["players"])
+        college = page.sport_header("college", "projections")
+        self.assertIn('href="/nfl/rankings/" aria-current="page"', nfl)
+        self.assertIn('href="/college-fantasy-football/week-1/"', nfl)
+        self.assertIn('aria-label="Search NFL players"', nfl)
+        self.assertIn('href="/college-fantasy-football/projections/" aria-current="page"', college)
+        self.assertIn('href="/nfl/projections/"', college)
+        self.assertIn("Search 2,205 College players", college)
+        self.assertNotIn("The Beat", nfl + college)
+
+    def test_home_has_production_visual_language_without_public_news(self):
+        home = page.render_home(self.payload, page.college_decision_data.load_weekly())
+        for marker in ("lb-decision-hero", "lb-edge", "lb-mini-panel",
+                       "lb-feature-card", "Decision boundaries shown"):
+            self.assertIn(marker, home)
+        for removed in ("Reviewed Updates", "The latest from The Beat",
+                        "RECENT NEWS", "NEWS UPDATED"):
+            self.assertNotIn(removed, home)
 
     def test_development_workflow_builds_before_protection(self):
         workflow = (page.decision_data.ROOT / ".github/workflows/dev-site.yml").read_text()

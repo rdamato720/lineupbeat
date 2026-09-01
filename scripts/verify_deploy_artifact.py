@@ -198,8 +198,12 @@ def check_homepage(root, decision_room=False):
     nfl_decision = root / "decision-room" / "nfl" / "index.html"
     if decision_room and nfl_decision.is_file():
         recent_surface = nfl_decision.read_text()
-    check("Recent News has its mount point on a reader-facing route",
-          'id="livelist"' in recent_surface)
+    if decision_room:
+        check("Recent News is absent from the visible Decision Room experience",
+              'id="livelist"' not in recent_surface and "RECENT NEWS" not in text)
+    else:
+        check("Recent News has its mount point on a reader-facing route",
+              'id="livelist"' in recent_surface)
     check("Recent News has items to render", bool(resolved),
           f"{len(resolved)} resolved report(s)")
     check("Moving Now is gone from the homepage",
@@ -230,8 +234,8 @@ def check_homepage(root, decision_room=False):
             check("the complete reviewed Wire preserves mobile viewport support",
                   'name="viewport"' in wire_text)
         home_cards = re.findall(r'<article class="tile wire".*?</article>', text, re.S)
-        check("the Lineup Beat homepage shows four supporting Wire cards",
-              len(home_cards) == 4, f"{len(home_cards)} rendered")
+        check("the Lineup Beat homepage has no public Wire cards",
+              len(home_cards) == 0, f"{len(home_cards)} rendered")
         nfl_room = root / "decision-room" / "nfl" / "index.html"
         college_room = root / "decision-room" / "college" / "index.html"
         check("the full NFL Decision Room has a dedicated route", nfl_room.is_file(),
@@ -242,12 +246,15 @@ def check_homepage(root, decision_room=False):
               'id="lineup-beat-home"' in text and 'id="decision-room"' not in text)
         check("the homepage has complete primary navigation",
               all(f'>{label}<' in text for label in
-                  ("NFL", "College", "Decision Room", "Rankings", "Projections", "The Beat")))
-        check("the existing player search remains available",
-              'id="q"' in text and 'placeholder="Search any player"' in text)
+                  ("NFL", "College", "Decision", "Rankings", "Projections"))
+              and "The Beat" not in text)
+        check("the context-aware NFL player search remains available",
+              'id="site-player-search"' in text
+              and 'placeholder="Search NFL players"' in text)
         check("the homepage has the required decision sections",
               all(label in text for label in
-                  ("Quick Actions", "Today’s Decision Board", "The latest from The Beat")))
+                  ("Quick Actions", "Today’s Decision Board", "NFL and College Decision Rooms"))
+              and "The latest from The Beat" not in text)
         check("legacy sport query states have compatibility routing",
               "get('sport')==='college'" in text and "get('sport')==='nfl'" in text)
         college_payload = root / "data" / "decision-room-college.json"
@@ -287,7 +294,7 @@ def check_homepage(root, decision_room=False):
               f"{len(approved)} approved, {len(cards)} rendered")
         for publication_id, who in approved:
             count = publication_ids.count(publication_id)
-            check(f"the homepage carries {who} [{publication_id}] exactly once",
+            check(f"the reviewed archive carries {who} [{publication_id}] exactly once",
                   count == 1, f"{count} card(s)")
         check("the old All reports renderer is disabled",
               "__LB_WIRE_REPLACEMENT__" in text)
@@ -405,8 +412,8 @@ def main() -> int:
     if home.is_file():
         text = home.read_text()
         if decision_room:
-            check("the homepage links to the complete reviewed Wire",
-                  text.count('href="/decision-room/reviewed-wire/"') >= 2)
+            check("the reviewed Wire archive is unlisted from the homepage",
+                  'href="/decision-room/reviewed-wire/"' not in text)
         else:
             check("the homepage carries the Wire anchor", 'id="wire"' in text)
             check("the calls to action point at the homepage Wire",
