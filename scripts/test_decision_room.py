@@ -122,6 +122,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
             self.assertNotIn(">Old</section>", rendered)
             self.assertIn('id="decision-room"', rendered)
             self.assertIn('id="wire"', rendered)
+            self.assertGreaterEqual(rendered.count('href="#wire"'), 2)
 
     def test_development_workflow_builds_before_protection(self):
         workflow = (page.decision_data.ROOT / ".github/workflows/dev-site.yml").read_text()
