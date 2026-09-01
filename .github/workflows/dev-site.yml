@@ -80,12 +80,13 @@ jobs:
           python scripts/build_404.py
           python scripts/build_wire.py --base "$DEV_BASE_URL"
           python scripts/wire_homepage_replacement.py --apply
+          python scripts/build_decision_room.py
           python scripts/build_pages.py --base "$DEV_BASE_URL" \
             --db /tmp/lineupbeat-development.db
-          python scripts/build_decision_room.py
           python scripts/dev_site.py protect --label "$GITHUB_REF_NAME"
           python scripts/verify_deploy_artifact.py site --decision-room
           python scripts/dev_site.py verify
+          python scripts/test_site_unification.py site
 
       - name: Upload development artifact
         uses: actions/upload-artifact@v4

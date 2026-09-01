@@ -11,6 +11,7 @@ SHELL = '''
     <h1 id="cdr-title">College Decision Room</h1>
     <p class="dr-lede">Compare validated college projections and see the exact boundary that changes the recommendation.</p>
     <p id="cdr-meta" class="dr-week-note">Loading the validated college projection release…</p>
+    <p class="dr-week-note">Validated scope: 2,205 players across 64 teams · Yahoo scoring only · no player images, ADP, or conference metadata.</p>
     <section class="dr-compare" aria-labelledby="cdr-compare-title">
       <div class="dr-compare-head"><div><small>College decision</small><h2 id="cdr-compare-title">Player vs. player</h2></div><strong>Yahoo scoring</strong></div>
       <div class="cdr-filters"><label>Position<select id="cdr-position"><option value="">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option></select></label><label>Team<select id="cdr-team"><option value="">All teams</option></select></label></div>

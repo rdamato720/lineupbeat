@@ -1042,14 +1042,6 @@ DATA_PAGES = [
      "Where the market is drafting each player against where we rank him."),
     ("coaching", f"/{SPORT}/coaching/", "Offensive coaching",
      "Who actually calls each offense and which positions that favors."),
-    ("strength-of-schedule", f"/{SPORT}/strength-of-schedule/",
-     "Strength of schedule",
-     "Opponent record and fantasy points allowed, by position."),
-    ("ol-rb", f"/{SPORT}/offensive-line-rb-performance/",
-     "OL & RB performance",
-     "How well each line blocked, and what the back added beyond it."),
-    ("durability", f"/{SPORT}/durability/", "Durability",
-     "How many games each player has really given since 2018."),
 ]
 
 

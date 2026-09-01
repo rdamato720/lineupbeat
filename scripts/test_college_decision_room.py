@@ -82,7 +82,8 @@ class CollegeDecisionRenderingTests(unittest.TestCase):
         nfl = decision_data.load_season()
         rendered = build_decision_room.render(nfl)
         self.assertNotIn('"CFP_', rendered)
-        self.assertIn('/data/decision-room-college.json', rendered)
+        self.assertNotIn('/data/decision-room-college.json', rendered)
+        self.assertIn('/data/decision-room-college.json', college_decision_room.JS)
 
     def test_isolated_payload_size_is_reasonable(self):
         encoded = json.dumps(college_decision_data.load_weekly(),

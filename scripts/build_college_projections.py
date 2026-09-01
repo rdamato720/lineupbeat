@@ -345,11 +345,11 @@ def page(pos):
     desc = DESCRIPTIONS[pos]
     canon = f"https://lineupbeat.com{url}"
     trail = ([("LineupBeat", "/"), ("College Fantasy Football", None),
-              ("Projections", canon)] if pos is None else
+              ("Projections", BASE)] if pos is None else
              [("LineupBeat", "/"),
               ("College Fantasy Football Projections",
-               f"https://lineupbeat.com{BASE}"),
-              (LABEL[pos], canon)])
+               BASE),
+              (LABEL[pos], url)])
     crumbs = ('<nav class="crumbs" aria-label="Breadcrumb">'
               + ' <span aria-hidden="true">/</span> '.join(
                   (f'<a href="{h}">{e(t)}</a>' if h and t != TITLES[pos]

@@ -1727,7 +1727,7 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
 
           <p class="lb-data-intro">
             The 177-player Decision Room, 615-player projection set, rankings,
-            and a separate 218-player advanced Draft Comparison serve different
+            and a separate 216-player advanced Draft Comparison serve different
             validated scopes. Choose the tool that fits the question.
           </p>
 
@@ -1782,7 +1782,7 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
           <h3>Put two players head to head.</h3>
 
           <p class="lb-card-deck">
-            Use the advanced 218-player comparison pool for current projections
+            Use the advanced 216-player comparison pool for current projections
             plus validated 2025 weekly consistency, floor and ceiling context.
           </p>
 
@@ -2324,6 +2324,14 @@ def data_hub_page(base):
     body = body.replace("{PROJ_ROWS}", proj_rows)
     body = body.replace("{VALUE_ROWS}", value_rows)
     body = body.replace("{SCHED_ROWS}", sched_rows)
+    # Optional boards are linked only when their validated build artifact is
+    # present. A failed optional import must not leave a polished broken link.
+    for route in ("durability", "strength-of-schedule",
+                  "offensive-line-rb-performance"):
+        if not (SITE / SPORT / route / "index.html").is_file():
+            body = re.sub(
+                rf'<a class="lb-tool-card" href="/{SPORT}/{route}/">.*?</a>',
+                "", body, flags=re.S)
 
     # Dataset alongside the breadcrumbs. The citation fields are the ones
     # the AI crawlers read, and this is the page they were added for: a
@@ -3657,7 +3665,7 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
 
 </main>"""
 
-    body = '''<main class="lb-about-page"><section class="lb-about-hero"><div class="lb-about-wrap"><div class="lb-about-kicker">ABOUT LINEUPBEAT</div><h1>Understand the call.<br><span>Know what changes it.</span></h1><p class="lb-about-lead">Lineup Beat helps fantasy players compare validated outcomes, see the recommendation, understand its uncertainty, and identify the boundary that would change the pick.</p><div class="lb-about-actions"><a class="lb-about-btn lb-about-btn-primary" href="/decision-room/nfl/">OPEN NFL DECISION ROOM</a><a class="lb-about-btn lb-about-btn-secondary" href="/decision-room/college/">EXPLORE COLLEGE</a></div></div></section><section class="lb-about-section"><div class="lb-about-wrap"><div class="lb-about-section-head"><div class="lb-about-kicker">WHAT WE BUILD</div><h2>Evidence, forecast, boundary, record.</h2><p>Validated projections and rankings establish the current view. Decision boundaries show how much an input must move before the recommendation changes. Future timestamped records are designed to preserve calls instead of silently rewriting them.</p></div><div class="lb-about-do-grid"><article class="lb-about-do-card"><div class="lb-about-card-kicker">01 · COMPARE</div><h3>Put two outcomes side by side.</h3><p>NFL season comparisons support PPR, Half-PPR, and Non-PPR. College Week 1 currently supports Yahoo scoring only.</p></article><article class="lb-about-do-card"><div class="lb-about-card-kicker">02 · EXPLAIN</div><h3>Show what changes the pick.</h3><p>A recommendation is more useful when its threshold and scoring-format sensitivity are visible.</p></article><article class="lb-about-do-card"><div class="lb-about-card-kicker">03 · ACCOUNT</div><h3>Preserve the recommendation.</h3><p>Lineup Beat is building a decision record that retains inputs, timestamps, and eventual outcomes.</p></article></div></div></section><section class="lb-about-section"><div class="lb-about-wrap"><div class="lb-about-section-head"><div class="lb-about-kicker">HONEST COVERAGE</div><h2>NFL and College are separate validated datasets.</h2><p>The NFL Decision Room contains 177 identity-resolved players. Advanced Draft Comparison contains 218. NFL projection pages cover 615. College Week 1 contains 2,205 players across 64 teams; College season projections contain 2,351 across 68 teams. Those pools have different eligibility, horizons, formats, and identity coverage.</p></div></div></section><section class="lb-about-belief"><div class="lb-about-wrap"><blockquote>Recommendations can change.<br><span>The reason should remain visible.</span></blockquote></div></section></main>'''
+    body = '''<main class="lb-about-page"><section class="lb-about-hero"><div class="lb-about-wrap"><div class="lb-about-kicker">ABOUT LINEUPBEAT</div><h1>Understand the call.<br><span>Know what changes it.</span></h1><p class="lb-about-lead">Lineup Beat helps fantasy players compare validated outcomes, see the recommendation, understand its uncertainty, and identify the boundary that would change the pick.</p><div class="lb-about-actions"><a class="lb-about-btn lb-about-btn-primary" href="/decision-room/nfl/">OPEN NFL DECISION ROOM</a><a class="lb-about-btn lb-about-btn-secondary" href="/decision-room/college/">EXPLORE COLLEGE</a></div></div></section><section class="lb-about-section"><div class="lb-about-wrap"><div class="lb-about-section-head"><div class="lb-about-kicker">WHAT WE BUILD</div><h2>Evidence, forecast, boundary, record.</h2><p>Validated projections and rankings establish the current view. Decision boundaries show how much an input must move before the recommendation changes. Future timestamped records are designed to preserve calls instead of silently rewriting them.</p></div><div class="lb-about-do-grid"><article class="lb-about-do-card"><div class="lb-about-card-kicker">01 · COMPARE</div><h3>Put two outcomes side by side.</h3><p>NFL season comparisons support PPR, Half-PPR, and Non-PPR. College Week 1 currently supports Yahoo scoring only.</p></article><article class="lb-about-do-card"><div class="lb-about-card-kicker">02 · EXPLAIN</div><h3>Show what changes the pick.</h3><p>A recommendation is more useful when its threshold and scoring-format sensitivity are visible.</p></article><article class="lb-about-do-card"><div class="lb-about-card-kicker">03 · ACCOUNT</div><h3>Preserve the recommendation.</h3><p>Lineup Beat is building a decision record that retains inputs, timestamps, and eventual outcomes.</p></article></div></div></section><section class="lb-about-section"><div class="lb-about-wrap"><div class="lb-about-section-head"><div class="lb-about-kicker">HONEST COVERAGE</div><h2>NFL and College are separate validated datasets.</h2><p>The NFL Decision Room contains 177 identity-resolved players. Advanced Draft Comparison contains 216. NFL projection pages cover 615. College Week 1 contains 2,205 players across 64 teams; College season projections contain 2,351 across 68 teams. Those pools have different eligibility, horizons, formats, and identity coverage.</p></div></div></section><section class="lb-about-belief"><div class="lb-about-wrap"><blockquote>Recommendations can change.<br><span>The reason should remain visible.</span></blockquote></div></section></main>'''
     title = "About LineupBeat | Fantasy Decisions With Accountability"
     desc = ("How Lineup Beat uses validated NFL and College projections, "
             "decision boundaries, uncertainty, and accountable recommendations.")

@@ -600,8 +600,9 @@ def static_rows(rows):
         sig = r["signal"] or "No ADP"
         scls = (("v-" + sig.lower().replace(" ", "-")) if r["signal"]
                 else "v-none")
+        profile = SITE / SPORT / str(r.get("slug") or "") / "index.html"
         name = (f'<a href="/{SPORT}/{r["slug"]}/">{esc(r["name"])}</a>'
-                if r.get("slug") else esc(r["name"]))
+                if r.get("slug") and profile.is_file() else esc(r["name"]))
         adp = DASH if r["adp"] is None else f'{r["adp"]:.1f}'
         mkt = DASH if r["mkt_rank"] is None else f'{r["pos"]}{r["mkt_rank"]}'
         out.append(
@@ -635,7 +636,9 @@ def build_html(boards, meta, css, header, footer, formats):
              "im": round(r["implied"], 1) if r["implied"] is not None else None,
              "pv": round(r["pick_value"], 1) if r["pick_value"] is not None else None,
              "rv": round(r["round_value"], 1) if r["round_value"] is not None else None,
-             "id": r["slug"], "w": explain(r)}
+             "id": (r["slug"] if r.get("slug") and
+                    (SITE / SPORT / r["slug"] / "index.html").is_file()
+                    else None), "w": explain(r)}
             for r in sorted(rows, key=lambda x: (x["adp"] is None,
                                                  x["adp"] or 0, x["name"]))
         ]
@@ -689,6 +692,9 @@ def build_html(boards, meta, css, header, footer, formats):
                 f'the PPR market.' if row["gap"] > 0 else
                 f'The PPR market ranks him {abs(row["gap"])} spots higher '
                 f'than LineupBeat.')
+        profile = SITE / SPORT / row["slug"] / "index.html"
+        profile_link = (f'<a href="/{SPORT}/{row["slug"]}/">Player page</a>'
+                        if profile.is_file() else "")
         return f'''<article class="dvleader" style="--team:{primary};
           --team-glow:{primary}28">
           <div class="dvleadtop"><span>{kind}</span>
@@ -697,7 +703,7 @@ def build_html(boards, meta, css, header, footer, formats):
           <div class="dvleadgap">{row["gap"]:+d}<span>positional gap</span></div>
           <p class="dvleadcase">{esc(case)}</p>
           <div class="dvleadactions"><a href="{compare}">Compare</a>
-            <a href="/{SPORT}/{row['slug']}/">Player page</a></div>
+            {profile_link}</div>
         </article>'''
 
     leader_html = "".join(leader_card(r, "Best value") for r in best)
