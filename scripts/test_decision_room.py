@@ -6,6 +6,7 @@ import unittest
 from pathlib import Path
 
 import build_decision_room as page
+import dev_site
 import decision_data
 from decision_engine import (DecisionContext, closest_calls, compare,
                              confidence, convictions, eligible_opponents,
@@ -51,7 +52,8 @@ class DecisionEngineTests(unittest.TestCase):
 
     def test_scoring_format_can_change_pick(self):
         result = compare(self.a, self.b, self.context)
-        self.assertEqual(result["format_flips"], ["Half-PPR", "Non-PPR"])
+        self.assertEqual(result["format_flips"], ["Non-PPR"])
+        self.assertIn("Half-PPR", result["format_classification_changes"])
 
     def test_exact_tie_has_no_recommendation(self):
         self.b["formats"]["ppr"]["projected_points"] = 250.0
@@ -104,6 +106,18 @@ class DecisionEngineTests(unittest.TestCase):
         self.a["adp"] = None
         result = compare(self.a, self.b, self.context)
         self.assertEqual(result["market_alignment"], "unavailable")
+
+    def test_home_cleaning_is_stable_with_development_banner(self):
+        source = '<html><head><title>x</title></head><body><p>old</p></body></html>'
+        home = '<main id="replacement">new</main>'
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "index.html"
+            path.write_text(page.clean_home_document(source, home))
+            dev_site._protect_page(path, "develop")
+            first = path.read_text()
+            path.write_text(page.clean_home_document(first, home))
+            dev_site._protect_page(path, "develop")
+            self.assertEqual(first, path.read_text())
 
     def test_weekly_context_requires_a_validated_week(self):
         with self.assertRaises(ValueError):

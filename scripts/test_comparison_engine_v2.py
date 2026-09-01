@@ -10,7 +10,8 @@ import college_decision_data
 import college_decision_room
 import decision_data
 from decision_engine import (DecisionContext, compare, confidence,
-                             editorial_for_pair, evidence_stack)
+                             adp_availability, editorial_for_pair,
+                             evidence_stack, scoring_sensitivity)
 
 
 def fixture(pid: str, points: float, *, adp=None, history=None) -> dict:
@@ -60,6 +61,29 @@ class ThresholdTests(unittest.TestCase):
         result = compare(a, b, DecisionContext("season", 2026, "ppr"))
         self.assertIn("Half-PPR", result["format_flips"])
 
+    def test_raw_leader_change_inside_all_toss_up_formats_is_not_reversal(self):
+        a, b = fixture("a", 100.9), fixture("b", 100.0)
+        a["formats"]["half_ppr"]["projected_points"] = 99.6
+        b["formats"]["half_ppr"]["projected_points"] = 100.0
+        a["formats"]["non_ppr"]["projected_points"] = 101.6
+        result = scoring_sensitivity(
+            a, b, DecisionContext("season", 2026, "half_ppr"))
+        self.assertEqual(result["state"], "all_toss_up_raw_leader_change")
+        self.assertTrue(result["all_toss_up"])
+        self.assertTrue(result["raw_leader_changed"])
+        self.assertFalse(result["meaningful_reversal"])
+
+    def test_adp_availability_names_one_missing_player(self):
+        a, b = fixture("available", 100, adp=25.0), fixture("missing", 99)
+        status = adp_availability(a, b)
+        self.assertEqual(status["state"], "one_missing")
+        self.assertEqual(status["missing_player_names"], ["Missing"])
+
+    def test_adp_availability_names_both_missing_players(self):
+        status = adp_availability(fixture("first", 100), fixture("second", 99))
+        self.assertEqual(status["state"], "both_missing")
+        self.assertEqual(status["missing_player_names"], ["First", "Second"])
+
 
 class EvidenceTests(unittest.TestCase):
     @classmethod
@@ -100,14 +124,45 @@ class EvidenceTests(unittest.TestCase):
         self.assertTrue(stack["editorial_stale"])
         self.assertEqual(stack["categories"]["editorial"], "present")
 
-    def test_missing_adp_history_and_sos_reduce_quality(self):
+    def test_missing_adp_history_and_sos_reduce_coverage(self):
         stack = evidence_stack(
             fixture("a", 100), fixture("b", 90),
             DecisionContext("season", 2026, "ppr"))
         self.assertEqual(stack["categories"]["adp"], "unavailable")
         self.assertEqual(stack["categories"]["history"], "unavailable")
         self.assertEqual(stack["categories"]["schedule_sos"], "unavailable")
-        self.assertNotEqual(stack["data_quality"], "High")
+        self.assertLess(stack["data_coverage"]["present"],
+                        stack["data_coverage"]["total"])
+        self.assertNotIn("data_quality", stack)
+
+    def test_jeanty_taylor_is_strong_projection_edge_but_split_case(self):
+        players = {p["id"]: p for p in self.nfl["players"]}
+        stack = evidence_stack(
+            players["00-0040122"], players["00-0036223"],
+            DecisionContext("season", 2026, "half_ppr"),
+            self.nfl["editorial_opinions"], self.nfl["sources"])
+        self.assertEqual(stack["result"]["confidence"], "Strong Edge")
+        self.assertEqual(stack["result"]["winner"]["name"], "Jonathan Taylor")
+        self.assertEqual(stack["evidence_agreement"]["state"], "Split")
+        jeanty = stack["evidence_agreement"]["by_player"]["00-0040122"]
+        self.assertIn("Current ranks", jeanty)
+        self.assertIn("Dated Lineup Beat opinion", jeanty)
+
+    def test_chase_nacua_reconciles_projection_ranks_history_and_opinion(self):
+        players = {p["id"]: p for p in self.nfl["players"]}
+        stack = evidence_stack(
+            players["00-0036900"], players["00-0039075"],
+            DecisionContext("season", 2026, "half_ppr"),
+            self.nfl["editorial_opinions"], self.nfl["sources"])
+        self.assertEqual(stack["result"]["confidence"], "Lean")
+        self.assertEqual(stack["result"]["winner"]["name"], "Puka Nacua")
+        self.assertEqual(stack["evidence_agreement"]["state"], "Split")
+        self.assertEqual(
+            stack["evidence_agreement"]["by_player"]["00-0036900"],
+            ["Current ranks", "Dated Lineup Beat opinion"])
+        self.assertEqual(
+            stack["evidence_agreement"]["by_player"]["00-0039075"],
+            ["Projection edge", "Prior-year consistency"])
 
     def test_nfl_and_college_inputs_are_isolated(self):
         nfl_ids = {p["id"] for p in self.nfl["players"]}
@@ -122,8 +177,9 @@ class EvidenceTests(unittest.TestCase):
 class LayoutContracts(unittest.TestCase):
     def test_v2_stack_and_responsive_layouts_are_rendered(self):
         nfl = build_decision_room.render(decision_data.load_season())
-        for label in ("The Call", "Why", "Case for each player",
-                      "What changes the call", "Confidence and data quality"):
+        for label in ("Lineup Beat call", "Why", "Case for each player",
+                      "What changes the call",
+                      "Data coverage and evidence agreement"):
             self.assertIn(label, nfl)
             self.assertIn(label, college_decision_room.JS)
         for selector in (".dr-why-grid", ".dr-case-grid", ".dr-quality-grid",
@@ -136,6 +192,26 @@ class LayoutContracts(unittest.TestCase):
         self.assertIn("w=c==='Toss-Up'?null:lead", college_decision_room.JS)
         self.assertIn("No clear edge", nfl)
         self.assertIn("No clear edge", college_decision_room.JS)
+
+    def test_renderers_separate_projection_edge_from_overall_call(self):
+        nfl = build_decision_room.render(decision_data.load_season())
+        self.assertIn("Lineup Beat call", nfl)
+        self.assertIn("Projection edge", nfl)
+        self.assertIn("Split case", nfl)
+        self.assertIn("Evidence agreement", nfl)
+        self.assertNotIn("Confidence and data quality", nfl)
+
+    def test_missing_adp_copy_handles_one_and_both_players(self):
+        nfl = build_decision_room.render(decision_data.load_season())
+        self.assertIn("one-missing", nfl)
+        self.assertIn("both-missing", nfl)
+        self.assertIn("validated ADP is unavailable for ${safe(x.missing[0].name)}", nfl)
+        self.assertIn("validated ADP is unavailable for both", nfl)
+
+    def test_college_terminal_name_does_not_add_duplicate_punctuation(self):
+        self.assertIn("function terminalName", college_decision_room.JS)
+        self.assertIn("/[.!?]$/.test", college_decision_room.JS)
+        self.assertNotIn("${safe(r.name)}.`", college_decision_room.JS)
 
 
 if __name__ == "__main__":
