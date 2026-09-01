@@ -350,6 +350,24 @@ def remove_original_header(page: str) -> str:
     return page
 
 
+def clean_home_document(page: str, homepage: str) -> str:
+    """Keep the production visual head, but ship only the decision homepage.
+
+    The original homepage application used to remain after the replacement
+    block.  Its hidden roster views and old navigation were no longer visible,
+    but they still shipped as executable DOM-building code.  A product-shell
+    replacement must remove that application rather than merely cover it.
+    """
+    head_end = page.find("</head>")
+    if head_end < 0:
+        raise SystemExit("homepage head boundary is missing")
+    head = page[:head_end + len("</head>")]
+    banner = re.search(r'<div id="lb-dev-banner".*?</div>', page, re.S)
+    development_banner = banner.group(0) if banner else ""
+    return (head + '<body data-default-sport="nfl">' + development_banner
+            + homepage + seo.site_footer() + "</body></html>")
+
+
 def inject(path: Path) -> None:
     payload = decision_data.load_season(2026)
     college_payload = college_decision_data.load_weekly()
@@ -395,13 +413,12 @@ def inject(path: Path) -> None:
             raise SystemExit("development homepage hero boundary not found")
         page = page[:hero.start()] + block + "\n" + page[hero.end():]
     page = update_metadata(page)
-    page = re.sub(r'<section class="medhero" id="roshero".*?</section>', '', page, count=1, flags=re.S)
-    page = re.sub(r'<section class="hero medhero" id="medhero".*?(?=<footer)', '', page, count=1, flags=re.S)
     style = f'<style id="decision-room-css">{CSS}</style>'
     if 'id="decision-room-css"' in page:
         page = re.sub(r'<style id="decision-room-css">.*?</style>', style, page, count=1, flags=re.S)
     else:
         page = page.replace("</head>", style + "\n</head>", 1)
+    page = clean_home_document(page, block)
     path.write_text(page)
     print(f"built 2026 season Decision Room with {len(payload['players'])} players in {path}")
     print(f"built complete reviewed Wire in {wire_page}")

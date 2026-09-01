@@ -119,6 +119,15 @@ def audit(root: Path) -> tuple[int, int, int]:
             errors.append(f"{rel}: redundant Decision Room sport navigation")
         if '<meta name="viewport"' not in text:
             errors.append(f"{rel}: missing mobile viewport")
+        if page == root / "index.html":
+            scripts = " ".join(re.findall(r"<script\b[^>]*>(.*?)</script>", text,
+                                           flags=re.I | re.S)).lower()
+            for legacy in ("the wire", "my roster", "fantasy data"):
+                if legacy in scripts:
+                    errors.append(f"{rel}: hidden legacy homepage script {legacy!r}")
+            for legacy_id in ('id="roshero"', 'id="medhero"'):
+                if legacy_id in text:
+                    errors.append(f"{rel}: hidden legacy homepage DOM {legacy_id!r}")
 
     for page, parser in parsed.items():
         route = "/" + page.relative_to(root).as_posix()

@@ -168,13 +168,19 @@ class DecisionRoomRenderingTests(unittest.TestCase):
                               '<!-- LB WIRE REPLACEMENT START --><section id="wire"><p>6 reviewed reports</p>'
                               f'<div class="tiles">{cards}</div></section>'
                               '<script>window.__LB_WIRE_REPLACEMENT__=true;</script>'
-                              '<!-- LB WIRE REPLACEMENT END --></body></html>')
+                              '<!-- LB WIRE REPLACEMENT END -->'
+                              '<section id="roshero"><h2>My Roster</h2></section>'
+                              '<script>const oldNav=["The Wire","My Roster","Fantasy Data"];</script>'
+                              '</body></html>')
             page.inject(target)
             rendered = target.read_text()
             self.assertNotIn(">Old</section>", rendered)
             self.assertIn('id="lineup-beat-home"', rendered)
             self.assertNotIn('id="decision-room"', rendered)
             self.assertNotIn('id="wire"', rendered)
+            self.assertNotIn('id="roshero"', rendered)
+            self.assertNotIn('const oldNav', rendered)
+            self.assertNotIn('My Roster', rendered)
             self.assertEqual(rendered.count('class="tile wire"'), 0)
             self.assertIn("Fantasy Football Decisions for NFL &amp; College | Lineup Beat", rendered)
             dedicated = Path(tmp) / "decision-room" / "reviewed-wire" / "index.html"
