@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 612,
+ "count": 618,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -6771,6 +6771,72 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004786
+  },
+  {
+   "candidate_id": "mobile:onsi:321e2115b19f06057971",
+   "player_id": "00-0035659",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-practice-squad-tracker-wr-depth-allegretti-return",
+   "attempted_at": "2026-09-01T02:12:52+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T02:12:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004952
+  },
+  {
+   "candidate_id": "mobile:onsi:e29c1fd21f18d6e2b4f8",
+   "player_id": "00-0040730",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/broncos-biggest-roster-snubs-and-why-they-should-ve-made-the-53",
+   "attempted_at": "2026-09-01T02:12:57+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T02:13:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004812
+  },
+  {
+   "candidate_id": "mobile:onsi:e29ccf633f0f01f7efd2",
+   "player_id": "00-0036389",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/7-available-qbs-eagles-should-immediately-pounce-on-to-solve-backup-qb-problem-01m1csf6yws6",
+   "attempted_at": "2026-09-01T02:13:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T02:13:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004936
+  },
+  {
+   "candidate_id": "mobile:article:3d39420f80a49ef538c6",
+   "player_id": "00-0041077",
+   "source_url": "https://www.denverbroncos.com/news/we-re-pleased-with-what-transpired-in-the-last-24-hours-hc-sean-payton-offers-insight-into-roster-moves-after-broncos-set-initial-53-man-roster-practice-squad",
+   "attempted_at": "2026-09-01T02:13:05+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T02:13:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004342
+  },
+  {
+   "candidate_id": "mobile:onsi:09229eecbf74f2fbd360",
+   "player_id": "00-0036355",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/jaguars-patrick-herbert-chargers-reuniting-brother",
+   "attempted_at": "2026-09-01T02:13:08+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T02:13:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004078
+  },
+  {
+   "candidate_id": "mobile:onsi:30cc09970bc2ca31e8be",
+   "player_id": "00-0041027",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-9-biggest-winners-losers-from-roster-cut-weekend",
+   "attempted_at": "2026-09-01T02:13:10+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T02:13:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004014
   }
  ]
 }
