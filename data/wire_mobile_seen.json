@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 659,
+ "count": 676,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -7288,6 +7288,193 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00383
+  },
+  {
+   "candidate_id": "mobile:onsi:f2752d5aa4bc846ea33a",
+   "player_id": "00-0040676",
+   "source_url": "https://www.si.com/nfl/titans/onsi/everything-titans-gm-mike-borgonzi-said-in-first-appearance-after-roster-cuts-01m1f10trcgx",
+   "attempted_at": "2026-09-01T19:43:42+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T19:43:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004554
+  },
+  {
+   "candidate_id": "mobile:article:a775ece1defd44fa97c7",
+   "player_id": "00-0034796",
+   "source_url": "https://www.baltimoreravens.com/news/how-joe-fagnano-became-the-ravens-cinderella-man",
+   "attempted_at": "2026-09-01T19:43:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T19:43:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00472
+  },
+  {
+   "candidate_id": "mobile:article:fa9a76b861de02e37e61",
+   "player_id": "00-0033921",
+   "source_url": "https://www.buccaneers.com/news/gm-jason-licht-talks-garnes-confidence-godwin-jr-being-consistent-force-bucs-blitz",
+   "attempted_at": "2026-09-01T19:43:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T19:43:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005256
+  },
+  {
+   "candidate_id": "mobile:onsi:99b6b2a692f0986252dc",
+   "player_id": "00-0041395",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/patriots-rookie-te-tanner-arkin-found-out-he-made-roster-in-shocking-fashion",
+   "attempted_at": "2026-09-01T19:43:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T19:44:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007164
+  },
+  {
+   "candidate_id": "mobile:onsi:1d3636fc5e9fdf94a418",
+   "player_id": "00-0033090",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/patriots-rookie-te-tanner-arkin-found-out-he-made-roster-in-shocking-fashion",
+   "attempted_at": "2026-09-01T19:44:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T19:44:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005046
+  },
+  {
+   "candidate_id": "mobile:article:4bc8c4af5b571fd9be50",
+   "player_id": "00-0036555",
+   "source_url": "https://www.panthers.com/news/five-takeaways-from-tuesday-s-practice-following-roster-cuts-bobby-okereke-haynes-king-injury-updates-bears-opener",
+   "attempted_at": "2026-09-01T19:44:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T19:44:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00385
+  },
+  {
+   "candidate_id": "mobile:article:6c5d505806ee1b428980",
+   "player_id": "00-0039344",
+   "source_url": "https://www.panthers.com/news/five-takeaways-from-tuesday-s-practice-following-roster-cuts-bobby-okereke-haynes-king-injury-updates-bears-opener",
+   "attempted_at": "2026-09-01T19:44:07+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T19:44:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003838
+  },
+  {
+   "candidate_id": "mobile:article:5a70985c591f6232540c",
+   "player_id": "00-0036900",
+   "source_url": "https://www.bengals.com/news/quick-hits-zac-taylor-ja-marr-chase-tee-limited-this-week-but-have-eyes-on-bucs-week-why-jack-endries-and-ke-shawn-williams-made-it",
+   "attempted_at": "2026-09-01T19:44:10+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T19:44:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004466
+  },
+  {
+   "candidate_id": "mobile:article:c7b6ccb0cf900c7b156a",
+   "player_id": "00-0036410",
+   "source_url": "https://www.bengals.com/news/quick-hits-zac-taylor-ja-marr-chase-tee-limited-this-week-but-have-eyes-on-bucs-week-why-jack-endries-and-ke-shawn-williams-made-it",
+   "attempted_at": "2026-09-01T19:44:14+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-01T19:44:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0045
+  },
+  {
+   "candidate_id": "mobile:onsi:b294022f9c9e81c9c833",
+   "player_id": "00-0037525",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-football-ppr-mock-draft-from-pick-5-bijan-robinson-falls-to-pick-5-and-the-2nd-round-might-be-even-better",
+   "attempted_at": "2026-09-01T19:44:17+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T19:44:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005338
+  },
+  {
+   "candidate_id": "mobile:onsi:09d95076c026f934d464",
+   "player_id": "00-0036275",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-football-ppr-mock-draft-from-pick-5-bijan-robinson-falls-to-pick-5-and-the-2nd-round-might-be-even-better",
+   "attempted_at": "2026-09-01T19:44:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T19:44:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004362
+  },
+  {
+   "candidate_id": "mobile:onsi:118ad5ef86e43f237b44",
+   "player_id": "00-0039165",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/seattle-seahawks-running-back-plan-week-1-vs-patriots",
+   "attempted_at": "2026-09-01T19:44:25+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T19:44:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005622
+  },
+  {
+   "candidate_id": "mobile:onsi:740e1a48ad84fb86f142",
+   "player_id": "00-0041512",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/seattle-seahawks-running-back-plan-week-1-vs-patriots",
+   "attempted_at": "2026-09-01T19:44:30+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T19:44:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006364
+  },
+  {
+   "candidate_id": "mobile:onsi:94314b70fcbef5ed0e78",
+   "player_id": "00-0036355",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-roster-moves-best-case-scenario-junior-colson-kaiir-elam",
+   "attempted_at": "2026-09-01T19:44:37+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T19:44:40+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004414
+  },
+  {
+   "candidate_id": "mobile:onsi:cb91bf0ee90e9f76eae8",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/examining-the-dolphins-complicated-history-with-ex-jets-qbs-01m1f0fadte4",
+   "attempted_at": "2026-09-01T19:44:40+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T19:44:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004728
+  },
+  {
+   "candidate_id": "mobile:onsi:cca775bf56a360352297",
+   "player_id": "00-0038542",
+   "source_url": "https://www.si.com/onsi/fantasy/news/the-perfect-14-team-guillotine-league-first-round-jahmyr-gibbs-is-the-clear-first-overall-pick",
+   "attempted_at": "2026-09-01T19:44:44+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T19:44:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004526
+  },
+  {
+   "candidate_id": "mobile:onsi:eb77a59e169ce71950d4",
+   "player_id": "00-0035685",
+   "source_url": "https://www.si.com/onsi/fantasy/news/the-perfect-14-team-guillotine-league-first-round-jahmyr-gibbs-is-the-clear-first-overall-pick",
+   "attempted_at": "2026-09-01T19:44:47+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T19:44:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006182
   }
  ]
 }
