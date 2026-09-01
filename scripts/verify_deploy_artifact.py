@@ -253,7 +253,8 @@ def check_homepage(root, decision_room=False):
               and 'placeholder="Search NFL players"' in text)
         check("the homepage has the required decision sections",
               all(label in text for label in
-                  ("Quick Actions", "Today’s Decision Board", "NFL and College Decision Rooms"))
+                  ("Choose your context", "Today’s Decision Board",
+                   "Methodology &amp; accountability"))
               and "The latest from The Beat" not in text)
         check("legacy sport query states have compatibility routing",
               "get('sport')==='college'" in text and "get('sport')==='nfl'" in text)
