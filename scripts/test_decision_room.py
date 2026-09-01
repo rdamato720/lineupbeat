@@ -8,7 +8,8 @@ from pathlib import Path
 import build_decision_room as page
 import decision_data
 from decision_engine import (DecisionContext, closest_calls, compare,
-                             confidence, convictions)
+                             confidence, convictions, eligible_opponents,
+                             value_signals)
 
 
 def player(pid, name, pos, points, ranks, adp=None, photo=None):
@@ -37,6 +38,7 @@ class DecisionEngineTests(unittest.TestCase):
         self.assertEqual(result["confidence"], "Lean")
 
     def test_confidence_boundaries(self):
+        self.assertEqual(confidence(0), "True Toss-Up")
         self.assertEqual(confidence(2.0), "Toss-Up")
         self.assertEqual(confidence(2.1), "Lean")
         self.assertEqual(confidence(12.0), "Clear Edge")
@@ -49,6 +51,21 @@ class DecisionEngineTests(unittest.TestCase):
     def test_scoring_format_can_change_pick(self):
         result = compare(self.a, self.b, self.context)
         self.assertEqual(result["format_flips"], ["Half-PPR", "Non-PPR"])
+
+    def test_exact_tie_has_no_recommendation(self):
+        self.b["formats"]["ppr"]["projected_points"] = 250.0
+        result = compare(self.a, self.b, self.context)
+        self.assertTrue(result["is_tie"])
+        self.assertIsNone(result["winner"])
+        self.assertEqual(result["confidence"], "True Toss-Up")
+
+    def test_display_rounded_tie_has_no_recommendation(self):
+        self.a["formats"]["ppr"]["projected_points"] = 250.04
+        self.b["formats"]["ppr"]["projected_points"] = 250.03
+        result = compare(self.a, self.b, self.context)
+        self.assertTrue(result["is_tie"])
+        self.assertIsNone(result["winner"])
+        self.assertEqual(result["gap"], 0.0)
 
     def test_closest_calls_are_same_position_and_gap_ordered(self):
         c = player("c", "Gamma Runner", "RB",
@@ -65,6 +82,22 @@ class DecisionEngineTests(unittest.TestCase):
         rows = convictions([self.a, self.b], "ppr")
         self.assertEqual([r["player"]["id"] for r in rows], ["a"])
         self.assertEqual(rows[0]["rank_adp_delta"], 25.0)
+
+    def test_values_and_fades_are_separate(self):
+        self.a["adp"] = 35.0
+        self.b["adp"] = 1.0
+        values, fades = value_signals([self.a, self.b], "ppr")
+        self.assertEqual([r["player"]["id"] for r in values], ["a"])
+        self.assertEqual([r["player"]["id"] for r in fades], ["b"])
+
+    def test_player_two_defaults_to_same_position_unless_cross_position(self):
+        qb = player("q", "Quarter Back", "QB",
+                    {"ppr": 200, "half_ppr": 200, "non_ppr": 200},
+                    {"ppr": 30, "half_ppr": 30, "non_ppr": 30})
+        self.assertTrue(all(p["position"] == "RB" for p in
+                            eligible_opponents([self.a, self.b, qb], "a")))
+        self.assertIn("q", [p["id"] for p in
+                            eligible_opponents([self.a, self.b, qb], "a", True)])
 
     def test_missing_adp_does_not_create_market_claim(self):
         self.a["adp"] = None
@@ -96,6 +129,17 @@ class DecisionRoomRenderingTests(unittest.TestCase):
                      "No decisions have been recorded"):
             self.assertIn(text, self.html)
 
+    def test_searchable_accessible_selectors_and_market_sections_render(self):
+        for text in ('role="combobox"', 'role="listbox"',
+                     'Compare across positions', "Our Values", "Our Fades"):
+            self.assertIn(text, self.html)
+        self.assertNotIn("Lineup Beat Convictions", self.html)
+
+    def test_tie_copy_is_present_and_does_not_claim_a_higher_projection(self):
+        self.assertIn("No clear edge", self.html)
+        self.assertIn("True Toss-Up", self.html)
+        self.assertIn("when the displayed projections are equal", self.html)
+
     def test_no_weekly_projection_or_probability_claims(self):
         lowered = self.html.lower()
         self.assertNotIn("week 1 projection", lowered)
@@ -112,11 +156,19 @@ class DecisionRoomRenderingTests(unittest.TestCase):
                                        "rank_adp_delta": 20, "stance": "ahead"})
         self.assertIn('src="https://example.test/team.png"', markup)
 
-    def test_inject_replaces_news_hero_but_keeps_wire(self):
+    def test_inject_replaces_news_hero_and_splits_complete_wire(self):
         with tempfile.TemporaryDirectory() as tmp:
             target = Path(tmp) / "index.html"
-            target.write_text('<html><head></head><body><section class="lb-hero" id="hero">Old</section>'
-                              '<section class="hero medhero"></section><section id="wire">Beat</section></body></html>')
+            cards = "".join(f'<article class="tile wire" data-publication-id="p{i}"></article>'
+                            for i in range(6))
+            target.write_text('<html><head><title>Old</title><meta name="description" content="old">'
+                              '<style id="wire-css">#wire .tiles{display:block}</style></head><body>'
+                              '<section class="lb-hero" id="hero">Old</section>'
+                              '<section class="hero medhero"></section>'
+                              '<!-- LB WIRE REPLACEMENT START --><section id="wire"><p>6 reviewed reports</p>'
+                              f'<div class="tiles">{cards}</div></section>'
+                              '<script>window.__LB_WIRE_REPLACEMENT__=true;</script>'
+                              '<!-- LB WIRE REPLACEMENT END --></body></html>')
             page.inject(target)
             rendered = target.read_text()
             self.assertNotIn(">Old</section>", rendered)
@@ -124,12 +176,17 @@ class DecisionRoomRenderingTests(unittest.TestCase):
             self.assertIn('id="wire"', rendered)
             self.assertIn('id="livelist"', rendered)
             self.assertIn('id="liveago"', rendered)
-            self.assertGreaterEqual(rendered.count('href="#wire"'), 2)
+            self.assertEqual(rendered.count('class="tile wire"'), 4)
+            self.assertIn("Fantasy Football Decision Room | Lineup Beat", rendered)
+            dedicated = Path(tmp) / "decision-room" / "reviewed-wire" / "index.html"
+            self.assertEqual(dedicated.read_text().count('class="tile wire"'), 6)
+            self.assertIn('role="combobox"', rendered)
 
     def test_development_workflow_builds_before_protection(self):
         workflow = (page.decision_data.ROOT / ".github/workflows/dev-site.yml").read_text()
         self.assertLess(workflow.index("build_decision_room.py"),
                         workflow.index("dev_site.py protect"))
+        self.assertIn("verify_deploy_artifact.py site --decision-room", workflow)
 
 
 if __name__ == "__main__":

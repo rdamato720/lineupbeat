@@ -82,7 +82,7 @@ jobs:
             --db /tmp/lineupbeat-development.db
           python scripts/build_decision_room.py
           python scripts/dev_site.py protect --label "$GITHUB_REF_NAME"
-          python scripts/verify_deploy_artifact.py site
+          python scripts/verify_deploy_artifact.py site --decision-room
           python scripts/dev_site.py verify
 
       - name: Upload development artifact

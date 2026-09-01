@@ -28,6 +28,8 @@ class DecisionContext:
 
 def confidence(gap: float) -> str:
     """Classify a full-season point edge without implying probability."""
+    if round(abs(gap), 1) == 0:
+        return "True Toss-Up"
     if gap <= 2.0:
         return "Toss-Up"
     if gap < 12.0:
@@ -46,13 +48,27 @@ def compare(a: dict, b: dict, context: DecisionContext) -> dict:
     if a.get("id") == b.get("id"):
         raise ValueError("select two different players")
     af, bf = _format(a, context.scoring_format), _format(b, context.scoring_format)
-    ap, bp = float(af["projected_points"]), float(bf["projected_points"])
+    ap = round(float(af["projected_points"]), 1)
+    bp = round(float(bf["projected_points"]), 1)
     if ap == bp:
-        winner, runner_up = sorted((a, b), key=lambda p: (
-            _format(p, context.scoring_format).get("overall_rank", 10_000), p["name"]
-        ))
-    else:
-        winner, runner_up = (a, b) if ap > bp else (b, a)
+        changes = []
+        for fmt in FORMATS:
+            if fmt == context.scoring_format:
+                continue
+            other = compare_shallow(a, b, fmt)
+            if other["winner_id"] is not None:
+                changes.append(FORMAT_LABELS[fmt])
+        return {
+            "winner": None, "runner_up": None,
+            "player_a": a, "player_b": b,
+            "player_a_format": af, "player_b_format": bf,
+            "gap": 0.0, "confidence": "True Toss-Up", "is_tie": True,
+            "runner_up_gain_to_flip": 0.1,
+            "winner_decline_to_flip": 0.1,
+            "format_flips": changes, "market_alignment": "not_applicable",
+            "context": context,
+        }
+    winner, runner_up = (a, b) if ap > bp else (b, a)
     wf, rf = _format(winner, context.scoring_format), _format(runner_up, context.scoring_format)
     gap = round(float(wf["projected_points"]) - float(rf["projected_points"]), 1)
     # Inputs are published to one decimal. A tenth beyond equality is the
@@ -84,19 +100,20 @@ def compare(a: dict, b: dict, context: DecisionContext) -> dict:
         "format_flips": changes,
         "market_alignment": market,
         "context": context,
+        "is_tie": False,
     }
 
 
 def compare_shallow(a: dict, b: dict, scoring_format: str) -> dict:
     af, bf = _format(a, scoring_format), _format(b, scoring_format)
-    ap, bp = float(af["projected_points"]), float(bf["projected_points"])
+    ap = round(float(af["projected_points"]), 1)
+    bp = round(float(bf["projected_points"]), 1)
     if ap == bp:
-        winner = min((a, b), key=lambda p: (
-            _format(p, scoring_format).get("overall_rank", 10_000), p["name"]
-        ))
+        winner = None
     else:
         winner = a if ap > bp else b
-    return {"winner_id": winner["id"], "gap": round(abs(ap - bp), 1),
+    return {"winner_id": winner["id"] if winner else None,
+            "gap": round(abs(ap - bp), 1),
             "confidence": confidence(abs(ap - bp))}
 
 
@@ -111,7 +128,9 @@ def closest_calls(players: list[dict], scoring_format: str, limit: int = 6) -> l
         for a, b in zip(pool, pool[1:]):
             result = compare(a, b, DecisionContext("season", 2026, scoring_format))
             calls.append(result)
-    calls.sort(key=lambda r: (r["gap"], r["winner"]["position"], r["winner"]["name"]))
+    calls.sort(key=lambda r: (r["gap"],
+                              (r["winner"] or r["player_a"])["position"],
+                              (r["winner"] or r["player_a"])["name"]))
     return calls[:limit]
 
 
@@ -129,6 +148,25 @@ def convictions(players: list[dict], scoring_format: str, limit: int = 6) -> lis
                      "stance": "ahead" if delta > 0 else "behind"})
     rows.sort(key=lambda r: (-abs(r["rank_adp_delta"]), r["player"]["name"]))
     return rows[:limit]
+
+
+def value_signals(players: list[dict], scoring_format: str,
+                  limit: int = 3) -> tuple[list[dict], list[dict]]:
+    """Return projection-vs-ADP gaps as separate values and fades."""
+    rows = convictions(players, scoring_format, limit=len(players))
+    values = [row for row in rows if row["rank_adp_delta"] > 0][:limit]
+    fades = [row for row in rows if row["rank_adp_delta"] < 0][:limit]
+    return values, fades
+
+
+def eligible_opponents(players: list[dict], selected_id: str,
+                       cross_position: bool = False) -> list[dict]:
+    """The accessible selector's deterministic player-two candidate set."""
+    selected = next((p for p in players if p.get("id") == selected_id), None)
+    if selected is None:
+        return []
+    return [p for p in players if p.get("id") != selected_id and
+            (cross_position or p.get("position") == selected.get("position"))]
 
 
 def scoring_movers(players: list[dict], limit: int = 6) -> list[dict]:

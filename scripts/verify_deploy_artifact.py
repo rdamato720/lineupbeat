@@ -152,7 +152,7 @@ def check_comparison_tool(root):
           "/nfl/who-should-i-draft/</loc>" in sitemap)
 
 
-def check_homepage(root):
+def check_homepage(root, decision_room=False):
     """The homepage sections the Wire replaced *around*.
 
     The Wire replaces one renderer -- All reports -- and nothing else. It
@@ -213,9 +213,23 @@ def check_homepage(root):
           f"{len(data.get('players') or [])} row(s)")
 
     # And the replaced section itself: every approved card exactly once.
-    if "<!-- LB WIRE REPLACEMENT START" in text:
-        sec = text[text.index("<!-- LB WIRE REPLACEMENT START"):
-                   text.index("<!-- LB WIRE REPLACEMENT END")]
+    wire_text = text
+    if decision_room:
+        dedicated = root / "decision-room" / "reviewed-wire" / "index.html"
+        check("the complete reviewed Wire page is in the development artifact",
+              dedicated.is_file(), str(dedicated))
+        if dedicated.is_file():
+            wire_text = dedicated.read_text()
+            check("the complete reviewed Wire remains filterable",
+                  'id="wteam"' in wire_text and 'data-wfilter=' in wire_text)
+            check("the complete reviewed Wire preserves mobile viewport support",
+                  'name="viewport"' in wire_text)
+        home_cards = re.findall(r'<article class="tile wire".*?</article>', text, re.S)
+        check("the Decision Room homepage shows four supporting Wire cards",
+              len(home_cards) == 4, f"{len(home_cards)} rendered")
+    if "<!-- LB WIRE REPLACEMENT START" in wire_text:
+        sec = wire_text[wire_text.index("<!-- LB WIRE REPLACEMENT START"):
+                        wire_text.index("<!-- LB WIRE REPLACEMENT END")]
         cards = re.findall(r'<article class="tile wire".*?</article>', sec, re.S)
         names = [unescape(re.sub(r"<[^>]+>", "", m))
                  for m in re.findall(r"<h4[^>]*>(.*?)</h4>", sec, re.S)]
@@ -258,8 +272,8 @@ def check_homepage(root):
         # One card per row at every width. A grid rule here would put the
         # reporting, the attribution and our analysis into a half-width
         # measure, which is the layout this replaced.
-        gi = text.find("#wire .tiles{")
-        rule = text[gi:gi + 120] if gi >= 0 else ""
+        gi = wire_text.find("#wire .tiles{")
+        rule = wire_text[gi:gi + 120] if gi >= 0 else ""
         check("the Wire is one card per row",
               "display:block" in rule and "repeat(" not in rule, rule[:60])
 
@@ -306,7 +320,9 @@ def check_homepage(root):
 
 
 def main() -> int:
-    root = Path(sys.argv[1] if len(sys.argv) > 1 else "site")
+    args = [arg for arg in sys.argv[1:] if arg != "--decision-room"]
+    decision_room = "--decision-room" in sys.argv[1:]
+    root = Path(args[0] if args else "site")
     print(f"  artifact: {root.resolve()}")
     if not root.is_dir():
         print("  the deploy directory does not exist")
@@ -342,7 +358,7 @@ def main() -> int:
         check("the sitemap does not list /nfl/wire/",
               "/nfl/wire/" not in sm.read_text())
 
-    check_homepage(root)
+    check_homepage(root, decision_room=decision_room)
     check_player_page_impacts(root)
     check_ranking_formats(root)
     check_comparison_tool(root)
@@ -350,10 +366,14 @@ def main() -> int:
     home = root / "index.html"
     if home.is_file():
         text = home.read_text()
-        check("the homepage carries the Wire anchor", 'id="wire"' in text)
-        check("the calls to action point at the homepage Wire",
-              text.count('href="#wire"') >= 2,
-              f"{text.count(chr(34) + chr(35) + 'wire' + chr(34))} anchor link(s)")
+        if decision_room:
+            check("the homepage links to the complete reviewed Wire",
+                  text.count('href="/decision-room/reviewed-wire/"') >= 2)
+        else:
+            check("the homepage carries the Wire anchor", 'id="wire"' in text)
+            check("the calls to action point at the homepage Wire",
+                  text.count('href="#wire"') >= 2,
+                  f"{text.count(chr(34) + chr(35) + 'wire' + chr(34))} anchor link(s)")
 
     print()
     if FAILURES:
