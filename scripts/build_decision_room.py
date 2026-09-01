@@ -14,6 +14,7 @@ import build_comparison_tool
 import college_decision_data
 import college_decision_room
 import decision_data
+import seo
 from decision_engine import (FORMAT_LABELS, DecisionContext, closest_calls,
                              scoring_movers, value_signals)
 
@@ -24,13 +25,6 @@ WIRE_END = "<!-- LB WIRE REPLACEMENT END -->"
 WIRE_PATH = "/decision-room/reviewed-wire/"
 NFL_ROOM_PATH = "/decision-room/nfl/"
 COLLEGE_ROOM_PATH = "/decision-room/college/"
-SPORT_ROUTES = {
-    "nfl": {"decision": NFL_ROOM_PATH, "rankings": "/nfl/rankings/",
-            "projections": "/nfl/projections/"},
-    "college": {"decision": COLLEGE_ROOM_PATH,
-                "rankings": "/college-fantasy-football/week-1/",
-                "projections": "/college-fantasy-football/projections/"},
-}
 
 
 def esc(value: object) -> str:
@@ -134,35 +128,15 @@ def decision_language(result: dict) -> str:
 
 
 def sport_header(sport: str, activity: str, players: list[dict] | None = None) -> str:
-    """Production-style, URL-driven navigation with one persistent sport context."""
-    routes = SPORT_ROUTES[sport]
-    links = "".join(
-        f'<a class="vbtn" href="{path}"{(" aria-current=\"page\"" if key == activity else "")}>{key.title()}</a>'
-        for key, path in routes.items())
-    sport_links = (f'<a class="vbtn sport-pill" href="{SPORT_ROUTES["nfl"].get(activity, NFL_ROOM_PATH)}" '
-                   f'aria-pressed="{str(sport == "nfl").lower()}">NFL</a>'
-                   f'<a class="vbtn sport-pill" href="{SPORT_ROUTES["college"].get(activity, COLLEGE_ROOM_PATH)}" '
-                   f'aria-pressed="{str(sport == "college").lower()}">College</a>')
-    if sport == "college":
-        search = (f'<a class="context-search college-search" href="{COLLEGE_ROOM_PATH}#college-compare" '
-                  'aria-label="Search College players in the College Decision Room">'
-                  'Search 2,205 College players</a>')
-    else:
+    """Adapter to the one repository-wide shell, with NFL search data."""
+    search = ""
+    if sport == "nfl":
         options = "".join(f'<option value="{esc(player_label(p))}" data-id="{esc(p["id"])}"></option>'
                           for p in (players or []))
-        search = (f'<div class="finder context-search"><label class="sr-only" for="site-player-search">Search NFL players</label>'
-                  f'<input id="site-player-search" type="search" list="site-player-list" placeholder="Search NFL players" '
-                  f'aria-label="Search NFL players"><datalist id="site-player-list">{options}</datalist></div>')
-    mobile_search = (f'<a class="vbtn mobile-player-search" href="{routes["decision"]}">'
-                     f'Search {"College" if sport == "college" else "NFL"} players</a>')
-    return f'''<header class="topbar sport-header" data-sport="{sport}"><div class="wrap tbrow">
-      <a class="logo" href="/" aria-label="Lineup Beat home">Lineup<em>Beat</em></a>
-      <nav class="sport-switch" aria-label="Sport">{sport_links}</nav>
-      <nav class="views sport-activities" aria-label="Sections">{links}</nav>{search}
-      <button class="navbtn navtoggle" type="button" aria-expanded="false" aria-controls="sport-navdrawer">Menu</button>
-    </div><div class="navdrawer" id="sport-navdrawer" hidden><nav class="navlinks" aria-label="Mobile sections">{sport_links}{links}{mobile_search}</nav></div>
-    <script>(()=>{{const h=document.currentScript.parentElement,b=h.querySelector('.navtoggle'),d=h.querySelector('#sport-navdrawer');b?.addEventListener('click',()=>{{const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(o));d.hidden=!o}});const q=h.querySelector('#site-player-search'),l=h.querySelector('#site-player-list');q?.addEventListener('change',()=>{{const o=[...l.options].find(x=>x.value===q.value);if(o?.dataset.id)location.href='{NFL_ROOM_PATH}?a='+encodeURIComponent(o.dataset.id)}})}})();</script>
-    </header>'''
+        search = (f'<input id="site-player-search" type="search" list="site-player-list" '
+                  f'placeholder="Search NFL players" aria-label="Search NFL players">'
+                  f'<datalist id="site-player-list">{options}</datalist>')
+    return seo.site_nav(activity if activity != "home" else None, sport, search)
 
 
 def render_home(payload: dict, college_payload: dict) -> str:
@@ -213,7 +187,6 @@ def render(payload: dict) -> str:
                       for p in players)
     updated = payload["updated_at"]
     block = f'''{START}
-<nav class="dr-sports" aria-label="Decision Room sport"><a data-sport="nfl" href="{NFL_ROOM_PATH}" aria-pressed="true">NFL</a><a data-sport="college" href="{COLLEGE_ROOM_PATH}" aria-pressed="false">College</a></nav>
 <main id="decision-room" class="dr-shell" data-mode="season" data-season="2026">
   <section class="dr-hero">
     <div class="dr-kicker">2026 Preseason Decision Room</div>
@@ -342,10 +315,7 @@ def write_decision_pages(homepage: Path, payload: dict, source_page: str) -> tup
     nfl.parent.mkdir(parents=True, exist_ok=True)
     college.parent.mkdir(parents=True, exist_ok=True)
     nfl.write_text(base.replace("</head>", "<title>2026 NFL Decision Room | Lineup Beat</title></head>", 1))
-    college_block = (f'<nav class="dr-sports" aria-label="Decision Room sport">'
-                     f'<a data-sport="nfl" href="{NFL_ROOM_PATH}" aria-pressed="false">NFL</a>'
-                     f'<a data-sport="college" href="{COLLEGE_ROOM_PATH}" aria-pressed="true">College</a></nav>'
-                     + college_decision_room.SHELL
+    college_block = (college_decision_room.SHELL
                      + f'<script>{college_decision_room.JS}</script>')
     college_doc = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Compare validated 2026 College Week 1 fantasy projections and see what changes the pick."><title>College Week 1 Decision Room | Lineup Beat</title>''' + head_style_text + '''</head><body data-default-sport="college">''' + sport_header("college", "decision") + college_block + '''</body></html>'''
     college.write_text(college_doc)

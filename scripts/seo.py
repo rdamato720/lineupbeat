@@ -361,17 +361,22 @@ SPORT = "nfl"
 # College came to be missing from a phone in the first place.
 #
 # (key, label, href-template)
-NAV_ITEMS = [
-    ("wire", "The Wire", "/"),
-    # The editorial Wire is a different product from the homepage feed and
-    # needs a label a reader can tell apart from it. "The Wire" is the X
-    # feed on the homepage; this is reviewed beat reporting with our own
-    # reading of it kept separate.
-    ("roster", "My Roster", "/#v=roster"),
-    ("data", "Fantasy Data", "/{sport}/data/"),
-    ("college", "College", "/college-fantasy-football/projections/"),
-    ("about", "Who We Are", "/about/"),
-]
+SPORT_ROUTES = {
+    "nfl": {
+        "decision": "/decision-room/nfl/",
+        "rankings": "/nfl/rankings/",
+        "projections": "/nfl/projections/",
+        "landing": "/nfl/data/",
+    },
+    "college": {
+        "decision": "/decision-room/college/",
+        "rankings": "/college-fantasy-football/week-1/",
+        "projections": "/college-fantasy-football/projections/",
+        "landing": "/decision-room/college/",
+    },
+}
+NAV_ITEMS = (("decision", "Decision"), ("rankings", "Rankings"),
+             ("projections", "Projections"))
 
 
 NAV_CSS = """
@@ -389,6 +394,13 @@ NAV_CSS = """
 .topbar{max-width:100%}
 .tbrow{min-width:0}
 .tbrow .logo{flex:0 0 auto; white-space:nowrap}
+.sport-switch{display:flex; gap:.25rem; align-items:center}
+.sport-pill,.views .vbtn{border-radius:999px; padding:.55rem .75rem}
+.sport-pill[aria-pressed="true"],.views .vbtn[aria-current="page"]{
+  background:var(--signal); color:#0a0c08}
+.college-search-entry{color:var(--signal); text-decoration:none;
+  font-family:var(--agate); font-size:.78rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.05em}
 
 /* The two mobile controls. Hidden on desktop, where the real nav is
    visible and a button to reveal it would be noise. */
@@ -556,6 +568,16 @@ NAV_JS = """
       }
     });
   }
+  var sitePlayer = bar.querySelector('#site-player-search');
+  var siteList = bar.querySelector('#site-player-list');
+  if (sitePlayer && siteList){
+    sitePlayer.addEventListener('change', function(){
+      var options = Array.prototype.slice.call(siteList.options || []);
+      var hit = options.find(function(o){ return o.value === sitePlayer.value; });
+      if (hit && hit.dataset.id)
+        location.href = '/decision-room/nfl/?a=' + encodeURIComponent(hit.dataset.id);
+    });
+  }
 
   // A tap outside closes, the same as the teams menu.
   document.addEventListener('click', function(e){
@@ -580,32 +602,39 @@ NAV_JS = """
 })();
 </script>"""
 
+GLOBAL_FOOTER = """<footer class="global-footer"><div class="wrap">
+  <div class="fbrand"><span class="flogo">Lineup<em>Beat</em></span>
+    <p class="ftag">NFL and College fantasy projections, comparisons, decision boundaries, rankings, and accountable recommendations.</p></div>
+  <div class="frow"><div class="fcol"><h3>Decision tools</h3><p><a href="/decision-room/nfl/">NFL Decision Room</a><br><a href="/decision-room/college/">College Decision Room</a><br><a href="/nfl/who-should-i-draft/">Advanced Draft Comparison</a></p></div>
+  <div class="fcol"><h3>Validated data</h3><p><a href="/nfl/rankings/">NFL rankings</a><br><a href="/nfl/projections/">NFL projections</a><br><a href="/college-fantasy-football/week-1/">College Week 1</a><br><a href="/college-fantasy-football/projections/">College season projections</a></p></div>
+  <div class="fcol"><h3>Methodology &amp; accountability</h3><p><a href="/about/">How Lineup Beat makes and preserves decisions</a></p></div>
+  <div class="fcol"><h3>Contact</h3><p><a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a></p></div></div>
+  <div class="fbase"><span>&copy; 2026 LineupBeat</span><span>Decision tools for NFL and College fantasy football.</span></div>
+</div></footer>"""
+
+
+def site_footer():
+    """One decision-first footer for every generated public page."""
+    return GLOBAL_FOOTER
+
 
 def _nav_drawer(active, sport, search):
-    """The panel behind the menu button: sections, then all 32 teams."""
+    """Mobile form of the same sport-aware global navigation."""
     cur = lambda k: ' aria-current="page"' if active == k else ""
+    routes = SPORT_ROUTES[sport]
     links = "".join(
-        f'<a class="navlink" href="{href.format(sport=sport)}"{cur(key)}>'
+        f'<a class="navlink" href="{routes[key]}"{cur(key)}>'
         f'{label}</a>'
-        for key, label, href in NAV_ITEMS)
-    cols = []
-    for div, teams in DIVISIONS:
-        cells = "".join(
-            f'<a href="/{sport}/team/{code.lower()}/">'
-            f'<img src="https://a.espncdn.com/i/teamlogos/nfl/500/'
-            f'{code.lower()}.png" alt="" loading="lazy" '
-            f'onerror="this.style.visibility=&quot;hidden&quot;">'
-            f'<span>{name}</span></a>'
-            for code, name in teams)
-        cols.append(f'<h3>{div}</h3><div class="navtgrid">{cells}</div>')
+        for key, label in NAV_ITEMS)
+    sport_links = ''.join(
+        f'<a class="navlink" href="{SPORT_ROUTES[s][active] if active in SPORT_ROUTES[s] else SPORT_ROUTES[s]["landing"]}" '
+        f'aria-current="{"page" if s == sport else "false"}">{s.upper()}</a>'
+        for s in ("nfl", "college"))
+    player_entry = (f'<a class="navlink" href="{routes["decision"]}">'
+                    f'Search {"College" if sport == "college" else "NFL"} players</a>')
     return (
         '  <div class="navdrawer" id="navdrawer" hidden>\n'
-        f'    <nav class="navlinks" aria-label="All sections">{links}</nav>\n'
-        '    <details class="navteams">\n'
-        '      <summary class="navlink">Teams'
-        '<span class="navcar" aria-hidden="true">&#9662;</span></summary>\n'
-        f'      <div class="navtbody">{"".join(cols)}</div>\n'
-        '    </details>\n'
+        f'    <nav class="navlinks" aria-label="All sections">{sport_links}{links}{player_entry}</nav>\n'
         '  </div>\n')
 
 
@@ -628,17 +657,27 @@ def site_nav(active=None, sport="nfl", search=""):
     the markup for a search field, which appears in the row on a laptop and
     behind the search button on a phone; pages without one pass nothing.
     """
+    sport = sport if sport in SPORT_ROUTES else "nfl"
+    active = {"data": "projections", "college": "projections",
+              "wire": None, "roster": None}.get(active, active)
     cur = lambda k: ' aria-current="page"' if active == k else ""
+    routes = SPORT_ROUTES[sport]
     views = "".join(
-        f'<a class="vbtn" href="{href.format(sport=sport)}"{cur(key)}>'
-        f'{label}</a>'
-        + (teams_menu(sport) if key == "college" else "")
-        for key, label, href in NAV_ITEMS)
+        f'<a class="vbtn" href="{routes[key]}"{cur(key)}>{label}</a>'
+        for key, label in NAV_ITEMS)
+    switch = "".join(
+        f'<a class="vbtn sport-pill" href="{SPORT_ROUTES[s][active] if active in SPORT_ROUTES[s] else SPORT_ROUTES[s]["landing"]}" '
+        f'aria-pressed="{str(s == sport).lower()}">{s.upper()}</a>'
+        for s in ("nfl", "college"))
+    if sport == "college":
+        search = ('<a class="college-search-entry" href="/decision-room/college/">'
+                  'Search 2,205 College players</a>')
     return (
         f'<style>{TEAMS_CSS}{NAV_CSS}</style>\n'
         '<header class="topbar">\n'
         '  <div class="wrap tbrow">\n'
         '    <a class="logo" href="/">Lineup<em>Beat</em></a>\n'
+        f'    <nav class="sport-switch" aria-label="Sport">{switch}</nav>\n'
         f'    <nav class="views" aria-label="Sections">{views}</nav>\n'
         + (f'    <div class="finder" id="navfind">{search}</div>\n'
            if search else '')

@@ -144,26 +144,7 @@ def chrome():
     """Site CSS and footer. The nav comes from seo.site_nav()."""
     src = (SITE / "template.html").read_text()
     css = re.search(r"<style>(.*?)</style>", src, re.S)
-    foot = re.search(r"<footer.*?</footer>", src, re.S)
-    f = foot.group(0) if foot else ""
-    # The footer described NFL data only; college projections now sit
-    # beside it.
-    f = f.replace(
-        "local beat reporting from every NFL market, independent\n"
-        "         projections, draft value, durability, schedule and coaching.",
-        "local NFL beat reporting, plus independent NFL and college "
-        "fantasy projections and data.")
-    f = f.replace("<h3>Data</h3>", "<h3>NFL Data</h3>")
-    # The source list under it describes NFL feeds. College comes from
-    # somewhere else and says so rather than sheltering under a heading
-    # that does not cover it.
-    f = f.replace(
-        "</footer>",
-        '  <div class="fcollege"><h3>College Data</h3>'
-        '<p>College positions and roster classifications are sourced '
-        'through CFBD. Positions may differ from fantasy-platform '
-        'eligibility.</p></div>\n</footer>')
-    return (css.group(1) if css else ""), seo.site_nav("college"), f
+    return (css.group(1) if css else ""), seo.site_nav("projections", "college"), seo.site_footer()
 
 
 def longdate(iso):

@@ -243,9 +243,8 @@ def site_chrome():
         return "", "", ""
     src = tpl.read_text()
     css = re.search(r"<style>(.*?)</style>", src, re.S)
-    foot = re.search(r"<footer.*?</footer>", src, re.S)
-    header = seo.site_nav("data")
-    return (css.group(1) if css else ""), header, (foot.group(0) if foot else "")
+    header = seo.site_nav(None)
+    return (css.group(1) if css else ""), header, seo.site_footer()
 
 
 def build_html(data, css, header, footer):

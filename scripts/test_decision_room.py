@@ -191,8 +191,8 @@ class DecisionRoomRenderingTests(unittest.TestCase):
                       "Quick Actions", "Today’s Decision Board",
                       "Make the call", "confidence."):
             self.assertIn(label, home)
-        self.assertIn('class="topbar sport-header"', home)
-        self.assertIn('aria-controls="sport-navdrawer"', home)
+        self.assertIn('class="topbar"', home)
+        self.assertIn('aria-controls="navdrawer"', home)
         self.assertIn("@media(max-width:780px)", page.CSS)
 
     def test_featured_decision_is_close_non_tie_with_complete_art(self):

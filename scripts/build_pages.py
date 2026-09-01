@@ -104,7 +104,6 @@ def site_chrome(section=None):
         return "", "", ""
     src = TEMPLATE.read_text()
     css = re.search(r"<style>(.*?)</style>", src, re.S)
-    foot = re.search(r"<footer.*?</footer>", src, re.S)
     # The app header carries a search box and a JS-populated nav. A static
     # page gets the same bar and typography without the machinery.
     # The same bar as the homepage. The nav there is built by the app's
@@ -121,7 +120,7 @@ def site_chrome(section=None):
         search='<input id="pfind" type="search" placeholder="Find a player" '
                'autocomplete="off" aria-label="Find a player">')
 
-    return (css.group(1) if css else ""), header, (foot.group(0) if foot else "")
+    return (css.group(1) if css else ""), header, seo.site_footer()
 
 
 APP_CSS, APP_HEADER, APP_FOOTER = site_chrome()

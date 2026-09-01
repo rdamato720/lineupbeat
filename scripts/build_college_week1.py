@@ -49,8 +49,7 @@ numeric = {"rank", "pts", "passYds", "passTd", "rushAtt", "rushYds",
 def chrome():
     source = (SITE / "template.html").read_text()
     css = re.search(r"<style>(.*?)</style>", source, re.S)
-    footer = re.search(r"<footer.*?</footer>", source, re.S)
-    return css.group(1), seo.site_nav("college"), footer.group(0) if footer else ""
+    return css.group(1), seo.site_nav("rankings", "college"), seo.site_footer()
 
 
 def matchup(player):
@@ -119,4 +118,3 @@ for position in (None,) + positions:
     target.mkdir(parents=True, exist_ok=True)
     (target / "index.html").write_text(page(position))
 print(f"  Week 1 college: {len(players)} players, manifest verified")
-
