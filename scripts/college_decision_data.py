@@ -29,6 +29,12 @@ def load_weekly() -> dict:
         raise ValueError("college weekly projection artifact does not match its manifest")
     if manifest.get("qa_status") != "PASS":
         raise ValueError("college weekly projection release has not passed QA")
+    schedule = release / "provenance" / "college_week1_schedule_2026.json"
+    schedule_expected = manifest["files"][schedule.name]
+    if (schedule.stat().st_size != schedule_expected["bytes"] or
+            _digest(schedule) != schedule_expected["sha256"]):
+        raise ValueError("college weekly schedule artifact does not match its manifest")
+    schedule_payload = json.loads(schedule.read_text())
     raw = json.loads(source.read_text())
     if raw.get("season") != 2026 or raw.get("week") != 1:
         raise ValueError("unexpected college weekly horizon")
@@ -43,6 +49,11 @@ def load_weekly() -> dict:
             "team_color": "#" + (logos[row["teamId"]].get("primary_color") or "C6F53C").lstrip("#"),
             "adp": None,
             "opponent": row.get("opponent"),
+            "home": row.get("home"),
+            "game_date": row.get("gameDate"),
+            "implied_total": row.get("impliedTotal"),
+            "projection_confidence": row.get("confidence"),
+            "history": {}, "history_season": None,
             "formats": {"yahoo": {
                 "projected_points": row["pts"], "overall_rank": row["overallRank"],
                 "position_rank": row["rank"],
@@ -68,6 +79,23 @@ def load_weekly() -> dict:
         "strongest_edges": [_summary(r) for r in strongest_projection_edges(
             players, "yahoo", context=context)],
         "available_formats": ["yahoo"],
+        "editorial_opinions": [], "schedule_sos_available": False,
+        "opponent_context_available": True,
+        "schedule_sos_required_artifact": (
+            "data/college/2026/week-1/comparison_scenarios.json: validated "
+            "same-player Yahoo projections against an alternate opponent or "
+            "neutral baseline, keyed by stable college player id"),
+        "sources": {
+            "projections": {"label": "Validated College Week 1 Yahoo projections",
+                            "updated_at": raw["generatedAt"]},
+            "ranks": {"label": "College Week 1 overall and position ranks",
+                      "updated_at": raw["generatedAt"]},
+            "adp": {"label": "Validated college ADP", "updated_at": None},
+            "history": {"label": "Validated college weekly history", "updated_at": None},
+            "editorial": {"label": "Lineup Beat college editorial opinion", "updated_at": None},
+            "schedule_sos": {"label": schedule_payload["source"],
+                             "updated_at": schedule_payload["generated_at"]},
+        },
     }
 
 

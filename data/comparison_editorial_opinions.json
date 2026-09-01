@@ -1,0 +1,65 @@
+{
+  "schema_version": "comparison-editorial-opinions-v1",
+  "sport": "nfl",
+  "evidence_date": "2026-08-18",
+  "historical_only": true,
+  "note": "Historical Lineup Beat rank-order opinions extracted only from the two archived August 18 workbooks. They are comparison context, not the current ranking source, and never override a current projection call.",
+  "source_artifacts": [
+    {
+      "file": "data/archive/LineupBeat_2026_Half_PPR_Rankings_v1.0.xlsx",
+      "sheet": "Source Data",
+      "sha256": "5ec35e097ffa173dfa545f892f71375240664e9be717e1c958fa4855c73251b3",
+      "role": "615-player projection-identical baseline with no editorial overrides"
+    },
+    {
+      "file": "data/archive/LineupBeat_2026_Half_PPR_Rankings_v1.0_with_editorial_order.xlsx",
+      "sheet": "Source Data",
+      "sha256": "712550a0707c0ca238dede29e157453e97a0a0c2835830eaa4f45d5c7222276d",
+      "role": "615-player historical ranking cut containing the five marked rows and six pairwise constraints"
+    }
+  ],
+  "opinions": [
+    {
+      "opinion_id": "2026-08-18-jamarr-chase-over-puka-nacua",
+      "subject": {"name": "Ja'Marr Chase", "team": "CIN", "position": "WR"},
+      "preferred_over": {"name": "Puka Nacua", "team": "LAR", "position": "WR"},
+      "source_row": 174,
+      "source_text": "Ranked ahead of Puka Nacua because Chase combines comparable projected production with the stronger touchdown ceiling and a longer record of elite target dominance. Their frozen statistical projections remain unchanged."
+    },
+    {
+      "opinion_id": "2026-08-18-ashton-jeanty-over-jonathan-taylor",
+      "subject": {"name": "Ashton Jeanty", "team": "LV", "position": "RB"},
+      "preferred_over": {"name": "Jonathan Taylor", "team": "IND", "position": "RB"},
+      "source_row": 12,
+      "source_text": "Ranked ahead of Jonathan Taylor because Jeanty’s elite tackle-breaking profile should benefit substantially from Las Vegas’ improved run-game coaching and blocking environment. LineupBeat believes his frozen median projection understates his 2026 ceiling. Their frozen statistical projections remain unchanged."
+    },
+    {
+      "opinion_id": "2026-08-18-jeremiyah-love-over-david-montgomery",
+      "subject": {"name": "Jeremiyah Love", "team": "ARI", "position": "RB"},
+      "preferred_over": {"name": "David Montgomery", "team": "HOU", "position": "RB"},
+      "source_row": 22,
+      "source_text": "LineupBeat prefers Love’s ascending role, explosiveness and 2026 upside over Montgomery and Jacobs despite their stronger frozen median projections."
+    },
+    {
+      "opinion_id": "2026-08-18-jeremiyah-love-over-josh-jacobs",
+      "subject": {"name": "Jeremiyah Love", "team": "ARI", "position": "RB"},
+      "preferred_over": {"name": "Josh Jacobs", "team": "GB", "position": "RB"},
+      "source_row": 22,
+      "source_text": "LineupBeat prefers Love’s ascending role, explosiveness and 2026 upside over Montgomery and Jacobs despite their stronger frozen median projections."
+    },
+    {
+      "opinion_id": "2026-08-18-david-montgomery-over-josh-jacobs",
+      "subject": {"name": "David Montgomery", "team": "HOU", "position": "RB"},
+      "preferred_over": {"name": "Josh Jacobs", "team": "GB", "position": "RB"},
+      "source_row": 25,
+      "source_text": "LineupBeat prefers Montgomery’s projected scoring role and touchdown opportunity when comparing the two players at draft cost."
+    },
+    {
+      "opinion_id": "2026-08-18-jadarian-price-over-bucky-irving",
+      "subject": {"name": "Jadarian Price", "team": "SEA", "position": "RB"},
+      "preferred_over": {"name": "Bucky Irving", "team": "TB", "position": "RB"},
+      "source_row": 31,
+      "source_text": "LineupBeat prefers Price’s projected rushing environment and upside despite Irving carrying the higher frozen statistical projection."
+    }
+  ]
+}

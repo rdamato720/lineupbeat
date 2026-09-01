@@ -38,10 +38,11 @@ class DecisionEngineTests(unittest.TestCase):
         self.assertEqual(result["confidence"], "Lean")
 
     def test_confidence_boundaries(self):
-        self.assertEqual(confidence(0), "True Toss-Up")
+        self.assertEqual(confidence(0), "Toss-Up")
         self.assertEqual(confidence(2.0), "Toss-Up")
-        self.assertEqual(confidence(2.1), "Lean")
-        self.assertEqual(confidence(12.0), "Clear Edge")
+        self.assertEqual(confidence(2.1, 200), "Lean")
+        self.assertEqual(confidence(6.1, 200), "Edge")
+        self.assertEqual(confidence(14.1, 200), "Strong Edge")
 
     def test_decision_flip_threshold_uses_published_precision(self):
         result = compare(self.a, self.b, self.context)
@@ -57,7 +58,7 @@ class DecisionEngineTests(unittest.TestCase):
         result = compare(self.a, self.b, self.context)
         self.assertTrue(result["is_tie"])
         self.assertIsNone(result["winner"])
-        self.assertEqual(result["confidence"], "True Toss-Up")
+        self.assertEqual(result["confidence"], "Toss-Up")
 
     def test_display_rounded_tie_has_no_recommendation(self):
         self.a["formats"]["ppr"]["projected_points"] = 250.04
@@ -73,7 +74,7 @@ class DecisionEngineTests(unittest.TestCase):
                    {"ppr": 15, "half_ppr": 16, "non_ppr": 17})
         calls = closest_calls([self.a, self.b, c], "ppr", limit=2)
         self.assertEqual([x["gap"] for x in calls], [0.2, 6.0])
-        self.assertTrue(all(x["winner"]["position"] == x["runner_up"]["position"]
+        self.assertTrue(all(x["player_a"]["position"] == x["player_b"]["position"]
                             for x in calls))
 
     def test_convictions_use_projection_rank_against_adp(self):
@@ -137,8 +138,9 @@ class DecisionRoomRenderingTests(unittest.TestCase):
 
     def test_tie_copy_is_present_and_does_not_claim_a_higher_projection(self):
         self.assertIn("No clear edge", self.html)
-        self.assertIn("True Toss-Up", self.html)
-        self.assertIn("when the displayed projections are equal", self.html)
+        self.assertIn("Toss-Up", self.html)
+        self.assertIn("inside the deterministic no-call band", self.html)
+        self.assertNotIn("Recommend ${w.name}", self.html)
 
     def test_no_weekly_projection_or_probability_claims(self):
         lowered = self.html.split('</main>', 1)[0].lower()
@@ -209,8 +211,6 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         result = page.featured_decision(self.payload["players"])
         self.assertFalse(result["is_tie"])
         self.assertEqual(result["confidence"], "Lean")
-        self.assertGreaterEqual(result["gap"], 2.1)
-        self.assertLessEqual(result["gap"], 4.0)
         for player in (result["winner"], result["runner_up"]):
             self.assertTrue(player["photo"])
             self.assertTrue(player["team_logo"])

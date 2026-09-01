@@ -4,11 +4,23 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import date, datetime
 
 
 FORMATS = ("ppr", "half_ppr", "non_ppr")
 FORMAT_LABELS = {"ppr": "PPR", "half_ppr": "Half-PPR", "non_ppr": "Non-PPR"}
 FORMAT_LABELS["yahoo"] = "Yahoo"
+MIN_HISTORY_GAMES = 8
+THRESHOLDS = {
+    # A full-season difference must clear both the published-point noise floor
+    # and one percent of the higher projection before it becomes a call.
+    "season": {"toss_up_abs": 2.0, "toss_up_pct": 1.0,
+               "lean_pct": 3.0, "edge_pct": 7.0},
+    # Weekly projections are smaller and noisier, so the honest no-call band
+    # is wider as a percentage of the higher displayed projection.
+    "weekly": {"toss_up_abs": 0.5, "toss_up_pct": 3.0,
+               "lean_pct": 7.0, "edge_pct": 15.0},
+}
 
 
 @dataclass(frozen=True)
@@ -29,15 +41,37 @@ class DecisionContext:
             raise ValueError("unsupported scoring format")
 
 
-def confidence(gap: float) -> str:
-    """Classify a full-season point edge without implying probability."""
-    if round(abs(gap), 1) == 0:
-        return "True Toss-Up"
-    if gap <= 2.0:
+def confidence(gap: float, reference_points: float = 200.0,
+               mode: str = "season") -> str:
+    """Classify a displayed edge without implying win probability.
+
+    The public inputs are rounded to one decimal.  Absolute floors keep tiny
+    differences from becoming calls, while percentage bands make the same
+    framework honest for full-season NFL and weekly College projections.
+    """
+    if mode not in THRESHOLDS:
+        raise ValueError("unsupported threshold mode")
+    gap = round(abs(float(gap)), 1)
+    reference = max(abs(float(reference_points)), 0.1)
+    pct = round(gap / reference * 100, 6)
+    threshold = THRESHOLDS[mode]
+    if gap <= threshold["toss_up_abs"] or pct <= threshold["toss_up_pct"]:
         return "Toss-Up"
-    if gap < 12.0:
+    if pct <= threshold["lean_pct"]:
         return "Lean"
-    return "Clear Edge"
+    if pct <= threshold["edge_pct"]:
+        return "Edge"
+    return "Strong Edge"
+
+
+def gap_percent(gap: float, reference_points: float) -> float:
+    return round(abs(float(gap)) / max(abs(float(reference_points)), 0.1) * 100, 1)
+
+
+def meaningful_gap_to_call(reference_points: float, mode: str) -> float:
+    threshold = THRESHOLDS[mode]
+    pct_floor = abs(float(reference_points)) * threshold["toss_up_pct"] / 100
+    return round(max(threshold["toss_up_abs"], pct_floor) + 0.1, 1)
 
 
 def _format(player: dict, scoring_format: str) -> dict:
@@ -53,27 +87,17 @@ def compare(a: dict, b: dict, context: DecisionContext) -> dict:
     af, bf = _format(a, context.scoring_format), _format(b, context.scoring_format)
     ap = round(float(af["projected_points"]), 1)
     bp = round(float(bf["projected_points"]), 1)
-    if ap == bp:
-        changes = []
-        for fmt in sorted(set(a.get("formats", {})) & set(b.get("formats", {}))):
-            if fmt == context.scoring_format:
-                continue
-            other = compare_shallow(a, b, fmt)
-            if other["winner_id"] is not None:
-                changes.append(FORMAT_LABELS[fmt])
-        return {
-            "winner": None, "runner_up": None,
-            "player_a": a, "player_b": b,
-            "player_a_format": af, "player_b_format": bf,
-            "gap": 0.0, "confidence": "True Toss-Up", "is_tie": True,
-            "runner_up_gain_to_flip": 0.1,
-            "winner_decline_to_flip": 0.1,
-            "format_flips": changes, "market_alignment": "not_applicable",
-            "context": context,
-        }
-    winner, runner_up = (a, b) if ap > bp else (b, a)
-    wf, rf = _format(winner, context.scoring_format), _format(runner_up, context.scoring_format)
-    gap = round(float(wf["projected_points"]) - float(rf["projected_points"]), 1)
+    projection_leader = None if ap == bp else (a if ap > bp else b)
+    projection_runner_up = None if projection_leader is None else (
+        b if projection_leader["id"] == a["id"] else a)
+    gap = round(abs(ap - bp), 1)
+    reference = max(ap, bp)
+    classification = confidence(gap, reference, context.mode)
+    no_clear_edge = classification == "Toss-Up"
+    winner = None if no_clear_edge else projection_leader
+    runner_up = None if no_clear_edge else projection_runner_up
+    wf = _format(projection_leader, context.scoring_format) if projection_leader else af
+    rf = _format(projection_runner_up, context.scoring_format) if projection_runner_up else bf
     # Inputs are published to one decimal. A tenth beyond equality is the
     # smallest honest threshold that actually changes the recommendation.
     flip = round(gap + 0.1, 1)
@@ -82,42 +106,115 @@ def compare(a: dict, b: dict, context: DecisionContext) -> dict:
         if fmt == context.scoring_format:
             continue
         try:
-            other = compare_shallow(a, b, fmt)
+            other = compare_shallow(a, b, fmt, context.mode)
         except ValueError:
             continue
-        if other["winner_id"] != winner["id"]:
+        leader_id = winner["id"] if winner else None
+        if other["winner_id"] != leader_id:
             changes.append(FORMAT_LABELS[fmt])
-    wa, ra = winner.get("adp"), runner_up.get("adp")
-    market = "unavailable"
-    if wa is not None and ra is not None:
-        market = "disagrees" if float(wa) > float(ra) else "agrees"
+    market = "not_applicable" if no_clear_edge else "unavailable"
+    if winner and runner_up:
+        wa, ra = winner.get("adp"), runner_up.get("adp")
+        if wa is not None and ra is not None:
+            market = "disagrees" if float(wa) > float(ra) else "agrees"
     return {
         "winner": winner,
         "runner_up": runner_up,
+        "projection_leader": projection_leader,
+        "projection_runner_up": projection_runner_up,
+        "player_a": a, "player_b": b,
+        "player_a_format": af, "player_b_format": bf,
         "winner_format": wf,
         "runner_up_format": rf,
         "gap": gap,
-        "confidence": confidence(gap),
+        "gap_percent": gap_percent(gap, reference),
+        "confidence": classification,
+        "call": "No clear edge" if no_clear_edge else winner["name"],
+        "recommendation": None if no_clear_edge else winner["id"],
+        "no_clear_edge": no_clear_edge,
+        "meaningful_gap_to_call": meaningful_gap_to_call(reference, context.mode),
         "runner_up_gain_to_flip": flip,
         "winner_decline_to_flip": flip,
         "format_flips": changes,
         "market_alignment": market,
         "context": context,
-        "is_tie": False,
+        "is_tie": ap == bp,
     }
 
 
-def compare_shallow(a: dict, b: dict, scoring_format: str) -> dict:
+def compare_shallow(a: dict, b: dict, scoring_format: str,
+                    mode: str = "season") -> dict:
     af, bf = _format(a, scoring_format), _format(b, scoring_format)
     ap = round(float(af["projected_points"]), 1)
     bp = round(float(bf["projected_points"]), 1)
-    if ap == bp:
-        winner = None
-    else:
-        winner = a if ap > bp else b
+    gap = round(abs(ap - bp), 1)
+    classification = confidence(gap, max(ap, bp), mode)
+    winner = None if classification == "Toss-Up" else (a if ap > bp else b)
     return {"winner_id": winner["id"] if winner else None,
-            "gap": round(abs(ap - bp), 1),
-            "confidence": confidence(abs(ap - bp))}
+            "gap": gap, "gap_percent": gap_percent(gap, max(ap, bp)),
+            "confidence": classification}
+
+
+def editorial_for_pair(a: dict, b: dict, opinions: list[dict]) -> dict | None:
+    pair = {a.get("id"), b.get("id")}
+    for opinion in opinions:
+        if {opinion.get("subject_id"), opinion.get("preferred_over_id")} == pair:
+            return opinion
+    return None
+
+
+def _history(player: dict, scoring_format: str) -> dict | None:
+    history = (player.get("history") or {}).get(scoring_format)
+    if history and int(history.get("games") or 0) >= MIN_HISTORY_GAMES:
+        return history
+    return None
+
+
+def evidence_stack(a: dict, b: dict, context: DecisionContext,
+                   opinions: list[dict] | None = None,
+                   sources: dict | None = None) -> dict:
+    """Build factual comparison evidence without narrative inference."""
+    result = compare(a, b, context)
+    af, bf = result["player_a_format"], result["player_b_format"]
+    common_formats = sorted(set(a.get("formats", {})) & set(b.get("formats", {})))
+    ah, bh = _history(a, context.scoring_format), _history(b, context.scoring_format)
+    editorial = editorial_for_pair(a, b, opinions or [])
+    opponent_context = bool(a.get("opponent") and b.get("opponent"))
+    categories = {
+        "projections": "present",
+        "ranks": "present",
+        "adp": "present" if a.get("adp") is not None and b.get("adp") is not None else "unavailable",
+        "scoring_formats": "present" if len(common_formats) > 1 else "unavailable",
+        "history": "present" if ah and bh else "unavailable",
+        "editorial": "present" if editorial else "not_documented",
+        "schedule_sos": "context_only" if opponent_context else "unavailable",
+    }
+    present = sum(value in {"present", "context_only"} for value in categories.values())
+    quality = "High" if present >= 6 else "Moderate" if present >= 4 else "Limited"
+    return {
+        "result": result,
+        "categories": categories,
+        "data_quality": quality,
+        "categories_present": present,
+        "categories_total": len(categories),
+        "history_a": ah, "history_b": bh,
+        "editorial": editorial,
+        "editorial_stale": bool(editorial and _is_older(
+            editorial.get("evidence_date"), (sources or {}).get("projections", {}).get("updated_at"))),
+        "common_formats": common_formats,
+        "rank_gap": abs(int(af["overall_rank"]) - int(bf["overall_rank"])),
+    }
+
+
+def _is_older(evidence_date: str | None, current_date: str | None) -> bool:
+    if not evidence_date or not current_date:
+        return False
+    try:
+        old = date.fromisoformat(evidence_date[:10])
+        new = datetime.fromisoformat(current_date).date()
+    except ValueError:
+        return False
+    return old < new
 
 
 def closest_calls(players: list[dict], scoring_format: str, limit: int = 6,

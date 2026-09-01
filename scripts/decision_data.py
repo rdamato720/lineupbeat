@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -13,6 +14,9 @@ ROOT = Path(__file__).resolve().parent.parent
 PROJECTIONS = ROOT / "data" / "projections.xlsx"
 IDENTITIES = ROOT / "sources" / "wire_players.json"
 DISPLAY = ROOT / "data" / "wire_display_fantasy.json"
+HISTORY = ROOT / "data" / "nfl_player_consistency_2025.json"
+EDITORIAL = ROOT / "data" / "comparison_editorial_opinions.json"
+ADP_META = ROOT / "rosters" / "adp_meta.json"
 
 
 def slug(text: str) -> str:
@@ -28,6 +32,10 @@ def load_season(season: int = 2026) -> dict:
     by_key = {(p["full_name"], p["team"], p["position"]): p
               for p in identities["players"]}
     display = json.loads(DISPLAY.read_text())["players"]
+    history_payload = json.loads(HISTORY.read_text())
+    history = {row["player_id"]: row["formats"]
+               for row in history_payload["players"]}
+    editorial_payload = _editorial(by_key)
     raw = rankings.read_projection_formats(PROJECTIONS)
     ranked = {fmt: rankings.rank(raw[fmt], fmt)[0]
               for fmt in ("ppr", "non_ppr")}
@@ -50,6 +58,8 @@ def load_season(season: int = 2026) -> dict:
                 "id": pid, "slug": slug(row["player_name"]), "name": row["player_name"],
                 "team": row["team"], "position": row["position"], "formats": {},
                 "adp": show.get("adp"),
+                "history": history.get(pid, {}),
+                "history_season": history_payload["season"] if pid in history else None,
                 "photo": _photo(show),
                 "team_logo": f"https://a.espncdn.com/i/teamlogos/nfl/500/{row['team'].lower()}.png",
             })
@@ -62,8 +72,61 @@ def load_season(season: int = 2026) -> dict:
                 if all(fmt in p["formats"] for fmt in ("ppr", "half_ppr", "non_ppr"))]
     complete.sort(key=lambda p: (p["position"], p["formats"]["half_ppr"]["position_rank"], p["name"]))
     timestamp = rankings.source_updated(PROJECTIONS)
+    adp_meta = json.loads(ADP_META.read_text())
     return {"mode": "season", "season": season, "week": None,
-            "updated_at": timestamp.isoformat(), "players": complete}
+            "updated_at": timestamp.isoformat(), "players": complete,
+            "available_formats": ["ppr", "half_ppr", "non_ppr"],
+            "editorial_opinions": editorial_payload,
+            "schedule_sos_available": False,
+            "schedule_sos_required_artifact": (
+                "data/nfl_position_sos_2026.json: validated 2026 team/week/opponent "
+                "schedule joined to position-specific adjusted fantasy points allowed, "
+                "with source timestamps and QA metadata"),
+            "sources": {
+                "projections": {"label": "Lineup Beat 2026 projections",
+                                "updated_at": timestamp.isoformat()},
+                "ranks": {"label": "Lineup Beat 2026 ranks",
+                          "updated_at": half_payload["metadata"]["generated_at"]},
+                "adp": {"label": f"{adp_meta['drafts']:,} twelve-team PPR drafts",
+                        "updated_at": adp_meta["end"], "start_at": adp_meta["start"]},
+                "history": {"label": history_payload["source"],
+                            "updated_at": "2025 regular season"},
+                "editorial": {"label": "Lineup Beat historical ranking opinion",
+                              "updated_at": editorial_payload[0]["evidence_date"]
+                              if editorial_payload else None},
+                "schedule_sos": {"label": "Position-specific strength of schedule",
+                                 "updated_at": None},
+            }}
+
+
+def _editorial(by_key: dict[tuple[str, str, str], dict]) -> list[dict]:
+    payload = json.loads(EDITORIAL.read_text())
+    if payload.get("schema_version") != "comparison-editorial-opinions-v1":
+        raise ValueError("unexpected comparison editorial schema")
+    if not payload.get("historical_only") or len(payload.get("opinions", [])) != 6:
+        raise ValueError("comparison editorial layer must contain six historical opinions")
+    for source in payload.get("source_artifacts", []):
+        path = ROOT / source["file"]
+        if hashlib.sha256(path.read_bytes()).hexdigest() != source["sha256"]:
+            raise ValueError(f"editorial provenance hash mismatch: {path.name}")
+    resolved = []
+    for row in payload["opinions"]:
+        subject = row["subject"]
+        other = row["preferred_over"]
+        subject_identity = by_key.get((subject["name"], subject["team"], subject["position"]))
+        other_identity = by_key.get((other["name"], other["team"], other["position"]))
+        if not subject_identity or not other_identity:
+            raise ValueError(f"unresolved comparison editorial identity: {row['opinion_id']}")
+        resolved.append({
+            **row,
+            "subject_id": subject_identity["player_id"],
+            "preferred_over_id": other_identity["player_id"],
+            "evidence_date": payload["evidence_date"],
+            "historical_only": True,
+            "source_file": payload["source_artifacts"][1]["file"],
+            "source_sheet": payload["source_artifacts"][1]["sheet"],
+        })
+    return resolved
 
 
 def _photo(display: dict) -> str | None:
