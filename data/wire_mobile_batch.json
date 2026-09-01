@@ -1,49 +1,34 @@
 {
  "schema_version": "wire-mobile-batch-v1",
- "generated_at": "2026-09-01T02:12:52+00:00",
+ "generated_at": "2026-09-01T05:09:06+00:00",
  "window": {
-  "from": "2026-09-01T00:12:52.080606+00:00",
-  "to": "2026-09-01T02:12:52.080606+00:00",
+  "from": "2026-09-01T03:09:06.178024+00:00",
+  "to": "2026-09-01T05:09:06.178024+00:00",
   "hours": 2.0
  },
  "published": false,
  "model": "gpt-5.6-terra",
- "model_calls": 6,
- "cost_usd": 0.027134,
+ "model_calls": 0,
+ "cost_usd": 0.0,
  "limits": {
   "max_calls": 20,
   "cap_usd": 0.08,
   "max_cards": 10
  },
- "raw_candidate_count": 6,
- "candidate_count": 6,
+ "raw_candidate_count": 0,
+ "candidate_count": 0,
  "cards": [],
  "precall_duplicate_count": 0,
  "precall_duplicates": [],
  "unreviewed_count": 0,
- "relevance_suppressed": 31,
- "validation_failed": 1,
- "outcome_counts": {
-  "IGNORE": 5,
-  "VALIDATION_FAILED": 1
- },
+ "relevance_suppressed": 0,
+ "validation_failed": 0,
+ "outcome_counts": {},
  "coverage": {
-  "source_candidate_counts": {
-   "official_den": 1,
-   "si_broncos": 1,
-   "si_cardinals": 1,
-   "si_chargers": 1,
-   "si_commanders": 1,
-   "si_eagles": 1
-  },
-  "team_candidate_counts": {
-   "ARI": 1,
-   "DEN": 2,
-   "LAC": 1,
-   "PHI": 1,
-   "WAS": 1
-  },
+  "source_candidate_counts": {},
+  "team_candidate_counts": {},
   "teams_without_candidates": [
+   "ARI",
    "ATL",
    "BAL",
    "BUF",
@@ -52,12 +37,14 @@
    "CIN",
    "CLE",
    "DAL",
+   "DEN",
    "DET",
    "GB",
    "HOU",
    "IND",
    "JAX",
    "KC",
+   "LAC",
    "LAR",
    "LV",
    "MIA",
@@ -66,11 +53,13 @@
    "NO",
    "NYG",
    "NYJ",
+   "PHI",
    "PIT",
    "SEA",
    "SF",
    "TB",
-   "TEN"
+   "TEN",
+   "WAS"
   ],
   "eligible_article_sources": [
    "arizona_sports_tyler_drake",
@@ -149,14 +138,7 @@
    "si_vikings",
    "steelers_depot"
   ],
-  "article_sources_with_candidates": [
-   "official_den",
-   "si_broncos",
-   "si_cardinals",
-   "si_chargers",
-   "si_commanders",
-   "si_eagles"
-  ],
+  "article_sources_with_candidates": [],
   "article_sources_without_candidates": [
    "arizona_sports_tyler_drake",
    "atoz_network_ne",
@@ -171,6 +153,7 @@
    "official_cin",
    "official_cle",
    "official_dal",
+   "official_den",
    "official_det",
    "official_gb",
    "official_hou",
@@ -202,12 +185,17 @@
    "si_bears",
    "si_bengals",
    "si_bills",
+   "si_broncos",
    "si_browns",
    "si_buccaneers",
+   "si_cardinals",
+   "si_chargers",
    "si_chiefs",
    "si_colts",
+   "si_commanders",
    "si_cowboys",
    "si_dolphins",
+   "si_eagles",
    "si_falcons",
    "si_fantasy",
    "si_giants",
@@ -230,100 +218,5 @@
   ]
  },
  "event_duplicates": 0,
- "outcomes": [
-  {
-   "candidate_id": "mobile:onsi:321e2115b19f06057971",
-   "player": "Terry McLaurin",
-   "player_id": "00-0035659",
-   "team": "WAS",
-   "origin": "ARTICLE",
-   "source_id": "si_commanders",
-   "source_name": "Sports Illustrated -- WAS",
-   "source_url": "https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-practice-squad-tracker-wr-depth-allegretti-return",
-   "decision": "VALIDATION_FAILED",
-   "reason": "The source explicitly characterizes Diggs as the No. 2 option opposite McLaurin, a meaningful projected receiving hierarchy change.",
-   "validation_failures": [
-    "depth-chart card has no explicit starter or pecking-order change",
-    "fantasy analysis is not explicitly attributed"
-   ],
-   "cost_usd": 0.004952,
-   "held_for_review": {
-    "evidence": "Most of that can be credited to the addition of Stefon Diggs, who joins the Commanders with an extensive resume and will serve as the No. 2 option opposite Terry McLaurin.\n\nMost of that can be credited to the addition of Stefon Diggs, who joins the Commanders with an extensive resume and will serve as the No. 2 option opposite Terry McLaurin. The Commanders solved one of their biggest concerns by bringing in Diggs, but his presence in the room changes the roles for the rest of the players in the room.\n\n2 option opposite Terry McLaurin. The Commanders solved one of their biggest concerns by bringing in Diggs, but his presence in the room changes the roles for the rest of the players in the room. Antonio Williams, who could have had a much larger role, can now develop without added pressure.",
-    "public_summary": "Philip Hughes writes that Stefon Diggs will be the Commanders’ No. 2 option opposite Terry McLaurin.",
-    "lineupbeat_impact": "This supports McLaurin remaining a featured outside option, while Diggs gives Washington a credible second target. It does not establish target shares or change McLaurin’s workload by itself.",
-    "direction": "NEUTRAL",
-    "mechanism": "DEPTH_CHART"
-   }
-  },
-  {
-   "candidate_id": "mobile:onsi:e29c1fd21f18d6e2b4f8",
-   "player": "RJ Harvey",
-   "player_id": "00-0040730",
-   "team": "DEN",
-   "origin": "ARTICLE",
-   "source_id": "si_broncos",
-   "source_name": "Sports Illustrated -- DEN",
-   "source_url": "https://www.si.com/nfl/broncos/onsi/broncos-biggest-roster-snubs-and-why-they-should-ve-made-the-53",
-   "decision": "IGNORE",
-   "reason": "No meaningful new fantasy-relevant development for RJ Harvey is established.",
-   "validation_failures": [],
-   "cost_usd": 0.004812
-  },
-  {
-   "candidate_id": "mobile:onsi:e29ccf633f0f01f7efd2",
-   "player": "Jalen Hurts",
-   "player_id": "00-0036389",
-   "team": "PHI",
-   "origin": "ARTICLE",
-   "source_id": "si_eagles",
-   "source_name": "Sports Illustrated -- PHI",
-   "source_url": "https://www.si.com/nfl/eagles/onsi/7-available-qbs-eagles-should-immediately-pounce-on-to-solve-backup-qb-problem-01m1csf6yws6",
-   "decision": "IGNORE",
-   "reason": "Hurts is only referenced as the starter behind whom the team may develop a backup; this creates no actionable fantasy development for him.",
-   "validation_failures": [],
-   "cost_usd": 0.004936
-  },
-  {
-   "candidate_id": "mobile:article:3d39420f80a49ef538c6",
-   "player": "Justin Joly",
-   "player_id": "00-0041077",
-   "team": "DEN",
-   "origin": "ARTICLE",
-   "source_id": "official_den",
-   "source_name": "DEN official team site",
-   "source_url": "https://www.denverbroncos.com/news/we-re-pleased-with-what-transpired-in-the-last-24-hours-hc-sean-payton-offers-insight-into-roster-moves-after-broncos-set-initial-53-man-roster-practice-squad",
-   "decision": "IGNORE",
-   "reason": "The evidence reports Joly was claimed off waivers by the Dolphins, but provides no role, depth-chart, first-team usage or starter-absence signal to make this actionable for fantasy managers.",
-   "validation_failures": [],
-   "cost_usd": 0.004342
-  },
-  {
-   "candidate_id": "mobile:onsi:09229eecbf74f2fbd360",
-   "player": "Justin Herbert",
-   "player_id": "00-0036355",
-   "team": "LAC",
-   "origin": "ARTICLE",
-   "source_id": "si_chargers",
-   "source_name": "Sports Illustrated -- LAC",
-   "source_url": "https://www.si.com/nfl/chargers/onsi/jaguars-patrick-herbert-chargers-reuniting-brother",
-   "decision": "IGNORE",
-   "reason": "Patrick Herbert joining the Chargers practice squad is not a meaningful fantasy development for Justin Herbert.",
-   "validation_failures": [],
-   "cost_usd": 0.004078
-  },
-  {
-   "candidate_id": "mobile:onsi:30cc09970bc2ca31e8be",
-   "player": "Jeremiyah Love",
-   "player_id": "00-0041027",
-   "team": "ARI",
-   "origin": "ARTICLE",
-   "source_id": "si_cardinals",
-   "source_name": "Sports Illustrated -- ARI",
-   "source_url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-9-biggest-winners-losers-from-roster-cut-weekend",
-   "decision": "IGNORE",
-   "reason": "Jeremiyah Love is mentioned incidentally, with no actionable fantasy change established for him.",
-   "validation_failures": [],
-   "cost_usd": 0.004014
-  }
- ]
+ "outcomes": []
 }
