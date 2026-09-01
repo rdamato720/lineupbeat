@@ -9,9 +9,10 @@ roster to a Lineup Beat server.
 2. Open `chrome://extensions`, enable Developer mode, choose **Load unpacked**,
    and select the unzipped directory.
 3. Open the ESPN team roster page, select its reception scoring, and choose
-   **Send roster to Lineup Beat**. The extension does not guess league scoring.
+   **Save roster locally for My Team**. The extension does not guess league scoring.
 4. Open `https://lineupbeat-dev.pages.dev/my-team/` and choose **Connect ESPN**.
 5. Use **Disconnect & clear** on My Team to delete the extension-local copy.
 
 The extension is host-limited to ESPN Fantasy Football, the isolated Lineup
-Beat development site, and localhost. It cannot connect to production.
+Beat development My Team route. It cannot run on other development routes,
+localhost, loopback addresses, or production.

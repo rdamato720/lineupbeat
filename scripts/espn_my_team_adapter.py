@@ -17,6 +17,12 @@ RESERVE_SLOTS = {"IR", "RES", "RESERVE", "TAXI"}
 BENCH_SLOTS = {"BE", "BENCH"}
 FLEX_ALLOWED = {
     "FLEX": ["RB", "WR", "TE"],
+    "RB/WR/TE": ["RB", "WR", "TE"],
+    "WR/RB/TE": ["RB", "WR", "TE"],
+    "RB/WR": ["RB", "WR"],
+    "WR/RB": ["RB", "WR"],
+    "WR/TE": ["WR", "TE"],
+    "RB/TE": ["RB", "TE"],
     "OP": ["QB", "RB", "WR", "TE"],
     "SUPERFLEX": ["QB", "RB", "WR", "TE"],
 }

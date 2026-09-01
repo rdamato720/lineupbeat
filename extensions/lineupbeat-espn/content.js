@@ -22,7 +22,7 @@
   if(isEspn){
     const panel=document.createElement('div'),select=document.createElement('select'),button=document.createElement('button');
     select.setAttribute('aria-label','Reception scoring');select.innerHTML='<option value="">Choose scoring</option><option value="1">PPR</option><option value="0.5">Half-PPR</option><option value="0">Non-PPR</option>';
-    button.type='button';button.textContent='Send roster to Lineup Beat';button.setAttribute('aria-label','Capture visible roster for Lineup Beat My Team');
+    button.type='button';button.textContent='Save roster locally for My Team';button.setAttribute('aria-label','Save visible ESPN roster locally for My Team');
     Object.assign(panel.style,{position:'fixed',right:'18px',bottom:'18px',zIndex:'2147483647',display:'flex',gap:'6px',padding:'8px',borderRadius:'6px',background:'#0b100f',boxShadow:'0 8px 30px rgba(0,0,0,.35)'});
     Object.assign(select.style,{padding:'10px',background:'#fff',color:'#0b100f'});Object.assign(button.style,{padding:'12px 16px',border:'0',borderRadius:'4px',background:'#c6f53c',color:'#0b100f',fontWeight:'800',cursor:'pointer'});
     button.addEventListener('click',()=>{if(select.value===''){button.textContent='Choose scoring first';return}try{const payload=capture(select.value);chrome.runtime.sendMessage({type:'LB_CAPTURE_ESPN_ROSTER',version:1,payload},response=>{button.textContent=response&&response.ok?'Roster saved locally — open Lineup Beat':'Capture failed — try again'})}catch(error){button.textContent=error.message}});

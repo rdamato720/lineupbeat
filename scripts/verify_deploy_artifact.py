@@ -22,6 +22,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import zipfile
 from html import unescape
 from pathlib import Path
 
@@ -178,6 +179,25 @@ def check_my_team(root):
     check("My Team runtime and development extension are complete",
           all(path.is_file() for path in assets),
           "; ".join(str(path) for path in assets if not path.is_file()))
+    try:
+        with zipfile.ZipFile(assets[-1]) as archive:
+            manifest = json.loads(archive.read("lineupbeat-espn/manifest.json"))
+            worker = archive.read("lineupbeat-espn/background.js").decode()
+    except (OSError, KeyError, ValueError, zipfile.BadZipFile):
+        manifest, worker = {}, ""
+    scripts = manifest.get("content_scripts") or [{}, {}]
+    matches = scripts[1].get("matches") if len(scripts) > 1 else None
+    check("the distributed extension bridge is restricted to My Team",
+          matches == ["https://lineupbeat-dev.pages.dev/my-team/*"]
+          and "localhost" not in json.dumps(manifest)
+          and "127.0.0.1" not in json.dumps(manifest)
+          and "https://lineupbeat.com" not in json.dumps(manifest))
+    check("the distributed extension validates capture, retrieval, and clear senders",
+          "ESPN_ORIGIN='https://fantasy.espn.com'" in worker
+          and "ESPN_PATH='/football/'" in worker
+          and "MY_TEAM_ORIGIN='https://lineupbeat-dev.pages.dev'" in worker
+          and "MY_TEAM_PATH='/my-team/'" in worker
+          and worker.count("return reject(sendResponse)") == 3)
     model_path = root / "data" / "my-team-week1.json"
     try:
         model = json.loads(model_path.read_text())

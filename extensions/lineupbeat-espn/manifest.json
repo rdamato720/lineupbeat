@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Lineup Beat ESPN My Team (Development)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Captures the visible ESPN fantasy roster locally and shares it only with Lineup Beat development.",
   "permissions": ["storage"],
   "background": {"service_worker": "background.js"},
@@ -12,7 +12,7 @@
       "run_at": "document_idle"
     },
     {
-      "matches": ["https://lineupbeat-dev.pages.dev/*", "http://127.0.0.1/*", "http://localhost/*"],
+      "matches": ["https://lineupbeat-dev.pages.dev/my-team/*"],
       "js": ["content.js"],
       "run_at": "document_start"
     }

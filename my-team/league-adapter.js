@@ -76,7 +76,7 @@
     const starters=(league.roster.starters||[]).filter(p=>p.identity&&score(p)!=null),bench=(league.roster.bench||[]).filter(p=>p.identity&&score(p)!=null),out=[];
     bench.forEach(b=>starters.forEach(s=>{
       const slot=(league.startingLineupSlots||[]).find(x=>x.slotId===s.lineupSlot);
-      const eligible=s.position===b.position||(slot&&slot.allowedPositions.includes(b.position));
+      const eligible=Boolean(slot&&slot.allowedPositions.includes(b.position));
       if(!eligible)return;
       const bp=score(b),sp=score(s),classification=classify(bp,sp),gap=+(bp-sp).toFixed(1);
       out.push({bench:b,starter:s,benchPoints:bp,starterPoints:sp,gap,classification,action:gap>0&&classification!=='Toss-Up'?'consider_swap':'hold_or_toss_up'});

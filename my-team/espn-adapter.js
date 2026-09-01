@@ -2,7 +2,7 @@
   'use strict';
   const A=root.LineupBeatLeagueAdapter;
   const reserve=new Set(['IR','RES','RESERVE','TAXI']),bench=new Set(['BE','BENCH']);
-  const flex={FLEX:['RB','WR','TE'],OP:['QB','RB','WR','TE'],SUPERFLEX:['QB','RB','WR','TE']};
+  const flex={FLEX:['RB','WR','TE'],'RB/WR/TE':['RB','WR','TE'],'WR/RB/TE':['RB','WR','TE'],'RB/WR':['RB','WR'],'WR/RB':['RB','WR'],'WR/TE':['WR','TE'],'RB/TE':['RB','TE'],OP:['QB','RB','WR','TE'],SUPERFLEX:['QB','RB','WR','TE']};
   function text(v,fallback){v=String(v==null?'':v).trim();return v||fallback}
   function scoring(settings){const points=Number(settings&&settings.receptionPoints||0);return{format:points>=.75?'ppr':points>=.25?'half_ppr':'non_ppr',receptionPoints:points}}
   function adapt(raw){

@@ -2,27 +2,91 @@ const fs=require('fs'),vm=require('vm'),assert=require('assert');
 vm.runInThisContext(fs.readFileSync('my-team/league-adapter.js','utf8'));
 vm.runInThisContext(fs.readFileSync('my-team/espn-adapter.js','utf8'));
 
-const raw={provider:'espn',league:{id:'1',name:'League',season:2026,scoringSettings:{receptionPoints:.5},cookie:'secret'},team:{id:'2',name:'Team',manager:'private'},sessionToken:'secret',roster:[
-  {providerPlayerId:'99',name:'Starter Back',team:'BUF',position:'RB',lineupSlot:'RB'},
-  {providerPlayerId:'missing',name:'Travis Etienne',team:'NO',position:'RB',lineupSlot:'BE'},
-  {providerPlayerId:'dst',name:'Bills D/ST',team:'BUF',position:'D/ST',lineupSlot:'D/ST'}
-]};
-const model={players:[
-  {id:'starter',name:'Starter Back',team:'BUF',position:'RB',providerIds:{espn:'99'},formats:{half_ppr:{projectedPoints:10}},expectedOpportunity:{carries:10,targets:2}},
-  {id:'etienne',name:'Travis Etienne Jr.',team:'NO',position:'RB',providerIds:{},formats:{half_ppr:{projectedPoints:12}},expectedOpportunity:{carries:12,targets:3}}
-]};
-let league=LineupBeatEspnAdapter.adapt(raw);
-assert.equal(league.league.scoring.format,'half_ppr');
-assert(!JSON.stringify(league).includes('private'));
-assert(!JSON.stringify(league).includes('secret'));
-league=LineupBeatLeagueAdapter.match(league,model);
-assert.equal(league.roster.starters[0].matchStatus,'matched_provider_id');
-assert.equal(league.roster.bench[0].matchStatus,'matched_identity');
-assert.equal(league.roster.starters[1].matchStatus,'unsupported_position');
-assert(league.roster.starters[1].unresolvedReason.includes('does not guess'));
-const decisions=LineupBeatLeagueAdapter.lineupDecisions(league,model,'half_ppr');
-assert.equal(decisions[0].action,'consider_swap');
-assert.equal(decisions[0].classification,'Edge');
-assert.equal(LineupBeatLeagueAdapter.classify(10,9.9),'Toss-Up');
-assert.equal(LineupBeatLeagueAdapter.normalizeName('Travis Etienne Jr.'),'travis etienne');
-console.log('My Team browser adapter tests passed');
+function modelPlayer(id,name,team,position,points){return{id,name,team,position,providerIds:{espn:id},formats:{half_ppr:{projectedPoints:points}},expectedOpportunity:{}}}
+
+async function main(){
+  const raw={provider:'espn',league:{id:'1',name:'League',season:2026,scoringSettings:{receptionPoints:.5},cookie:'secret'},team:{id:'2',name:'Team',manager:'private'},sessionToken:'secret',roster:[
+    {providerPlayerId:'99',name:'Starter Back',team:'BUF',position:'RB',lineupSlot:'RB'},
+    {providerPlayerId:'missing',name:'Travis Etienne',team:'NO',position:'RB',lineupSlot:'BE'},
+    {providerPlayerId:'dst',name:'Bills D/ST',team:'BUF',position:'D/ST',lineupSlot:'D/ST'}
+  ]};
+  const model={players:[
+    {id:'starter',name:'Starter Back',team:'BUF',position:'RB',providerIds:{espn:'99'},formats:{half_ppr:{projectedPoints:10}},expectedOpportunity:{carries:10,targets:2}},
+    {id:'etienne',name:'Travis Etienne Jr.',team:'NO',position:'RB',providerIds:{},formats:{half_ppr:{projectedPoints:12}},expectedOpportunity:{carries:12,targets:3}}
+  ]};
+  let league=LineupBeatEspnAdapter.adapt(raw);
+  assert.equal(league.league.scoring.format,'half_ppr');
+  assert(!JSON.stringify(league).includes('private'));
+  assert(!JSON.stringify(league).includes('secret'));
+  league=LineupBeatLeagueAdapter.match(league,model);
+  assert.equal(league.roster.starters[0].matchStatus,'matched_provider_id');
+  assert.equal(league.roster.bench[0].matchStatus,'matched_identity');
+  assert.equal(league.roster.starters[1].matchStatus,'unsupported_position');
+  assert(league.roster.starters[1].unresolvedReason.includes('does not guess'));
+  const decisions=LineupBeatLeagueAdapter.lineupDecisions(league,model,'half_ppr');
+  assert.equal(decisions[0].action,'consider_swap');
+  assert.equal(decisions[0].classification,'Edge');
+  assert.equal(LineupBeatLeagueAdapter.classify(10,9.9),'Toss-Up');
+  assert.equal(LineupBeatLeagueAdapter.normalizeName('Travis Etienne Jr.'),'travis etienne');
+
+  const expectedSlots={FLEX:['RB','WR','TE'],'RB/WR/TE':['RB','WR','TE'],'WR/RB/TE':['RB','WR','TE'],'RB/WR':['RB','WR'],'WR/RB':['RB','WR'],'WR/TE':['WR','TE'],'RB/TE':['RB','TE'],OP:['QB','RB','WR','TE'],SUPERFLEX:['QB','RB','WR','TE']};
+  const slotRaw={provider:'espn',league:{id:'1',name:'Slots',season:2026,scoringSettings:{receptionPoints:.5}},team:{id:'2',name:'Slots'},roster:Object.keys(expectedSlots).map((slot,index)=>({providerPlayerId:String(index),name:'Player '+index,team:'BUF',position:'RB',lineupSlot:slot})).concat([{providerPlayerId:'unknown',name:'Unknown Slot',team:'BUF',position:'RB',lineupSlot:'W/R/T'}])};
+  const normalizedSlots=LineupBeatEspnAdapter.adapt(slotRaw).startingLineupSlots;
+  Object.entries(expectedSlots).forEach(([slot,allowed])=>assert.deepEqual(normalizedSlots.find(x=>x.slotId===slot).allowedPositions,allowed));
+  assert.deepEqual(normalizedSlots.find(x=>x.slotId==='W/R/T').allowedPositions,[]);
+
+  const flexRaw={provider:'espn',league:{id:'1',name:'Flex',season:2026,scoringSettings:{receptionPoints:.5}},team:{id:'2',name:'Flex'},roster:[
+    {providerPlayerId:'flex-rb',name:'Flex Back',team:'BUF',position:'RB',lineupSlot:'RB/WR/TE'},
+    {providerPlayerId:'bench-wr',name:'Bench Wideout',team:'NO',position:'WR',lineupSlot:'BE'}
+  ]};
+  const flexModel={players:[modelPlayer('flex-rb','Flex Back','BUF','RB',10),modelPlayer('bench-wr','Bench Wideout','NO','WR',14)]};
+  const flexLeague=LineupBeatLeagueAdapter.match(LineupBeatEspnAdapter.adapt(flexRaw),flexModel);
+  const flexDecision=LineupBeatLeagueAdapter.lineupDecisions(flexLeague,flexModel,'half_ppr')[0];
+  assert.equal(flexDecision.action,'consider_swap');
+  assert.equal(flexDecision.bench.position,'WR');
+  assert.equal(flexDecision.starter.position,'RB');
+  assert.equal(flexDecision.starter.lineupSlot,'RB/WR/TE');
+
+  const positions=['RB','WR','TE','QB'];
+  const ordinaryRaw={provider:'espn',league:{id:'1',name:'Ordinary',season:2026,scoringSettings:{receptionPoints:.5}},team:{id:'2',name:'Ordinary'},roster:positions.flatMap(position=>[
+    {providerPlayerId:'start-'+position,name:'Start '+position,team:'BUF',position,lineupSlot:position},
+    {providerPlayerId:'bench-'+position,name:'Bench '+position,team:'NO',position,lineupSlot:'BE'}
+  ])};
+  const ordinaryModel={players:positions.flatMap(position=>[modelPlayer('start-'+position,'Start '+position,'BUF',position,10),modelPlayer('bench-'+position,'Bench '+position,'NO',position,14)])};
+  const ordinaryLeague=LineupBeatLeagueAdapter.match(LineupBeatEspnAdapter.adapt(ordinaryRaw),ordinaryModel);
+  const ordinaryDecisions=LineupBeatLeagueAdapter.lineupDecisions(ordinaryLeague,ordinaryModel,'half_ppr');
+  assert.equal(ordinaryDecisions.length,4);
+  assert(ordinaryDecisions.every(row=>row.bench.position===row.starter.position));
+  assert.deepEqual(new Set(ordinaryDecisions.map(row=>row.starter.position)),new Set(positions));
+  const unknownRaw={provider:'espn',league:{id:'1',name:'Unknown',season:2026,scoringSettings:{receptionPoints:.5}},team:{id:'2',name:'Unknown'},roster:[
+    {providerPlayerId:'unknown-start',name:'Unknown Start',team:'BUF',position:'RB',lineupSlot:'W/R/T'},
+    {providerPlayerId:'unknown-bench',name:'Unknown Bench',team:'NO',position:'RB',lineupSlot:'BE'}
+  ]};
+  const unknownModel={players:[modelPlayer('unknown-start','Unknown Start','BUF','RB',10),modelPlayer('unknown-bench','Unknown Bench','NO','RB',14)]};
+  const unknownLeague=LineupBeatLeagueAdapter.match(LineupBeatEspnAdapter.adapt(unknownRaw),unknownModel);
+  assert.equal(LineupBeatLeagueAdapter.lineupDecisions(unknownLeague,unknownModel,'half_ppr').length,0);
+
+  let listener,store={};
+  const chrome={runtime:{onMessage:{addListener(fn){listener=fn}}},storage:{local:{set(value){Object.assign(store,value);return Promise.resolve()},get(key){return Promise.resolve({[key]:store[key]})},remove(key){delete store[key];return Promise.resolve()}}}};
+  vm.runInNewContext(fs.readFileSync('extensions/lineupbeat-espn/background.js','utf8'),{chrome,URL});
+  const send=(type,url,payload)=>new Promise(resolve=>listener({type,version:1,payload},{url},resolve));
+  const roster={private:'browser-local-test'};
+  assert.equal((await send('LB_CAPTURE_ESPN_ROSTER','https://fantasy.espn.com/football/team?leagueId=1',roster)).ok,true);
+  for(const url of ['https://lineupbeat-dev.pages.dev/','https://lineupbeat-dev.pages.dev/decision-room/nfl/','https://lineupbeat.com/my-team/','http://localhost/my-team/','http://127.0.0.1/my-team/']){
+    const get=await send('LB_GET_ESPN_ROSTER',url);
+    assert.equal(get.ok,false);assert.equal(get.payload,undefined);
+    const clear=await send('LB_CLEAR_ESPN_ROSTER',url);
+    assert.equal(clear.ok,false);assert(store.lineupBeatEspnRosterV1);
+  }
+  const validGet=await send('LB_GET_ESPN_ROSTER','https://lineupbeat-dev.pages.dev/my-team/?league=1');
+  assert.deepEqual(validGet.payload,roster);
+  assert.equal((await send('LB_CLEAR_ESPN_ROSTER','https://lineupbeat-dev.pages.dev/my-team/')).ok,true);
+  assert.equal((await send('LB_GET_ESPN_ROSTER','https://lineupbeat-dev.pages.dev/my-team/')).payload,null);
+  for(const url of ['https://lineupbeat-dev.pages.dev/my-team/','https://fantasy.espn.com/','https://fantasy.espn.com/baseball/','https://fantasy.espn.com.evil.example/football/']){
+    const badCapture=await send('LB_CAPTURE_ESPN_ROSTER',url,roster);
+    assert.equal(badCapture.ok,false);
+  }
+
+  console.log('My Team browser adapter and extension worker tests passed');
+}
+main().catch(error=>{console.error(error);process.exitCode=1});
