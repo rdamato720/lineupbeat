@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 641,
+ "count": 659,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -7090,6 +7090,204 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.006762
+  },
+  {
+   "candidate_id": "mobile:article:72bcc3b5faf26db17dc9",
+   "player_id": "00-0038996",
+   "source_url": "https://www.packers.com/news/5-things-learned-from-gm-brian-gutekunst-about-packers-roster-sep-1-2026",
+   "attempted_at": "2026-09-01T16:43:15+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T16:43:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004318
+  },
+  {
+   "candidate_id": "mobile:onsi:e3031ac249943375529f",
+   "player_id": "00-0036355",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-biggest-remaining-question-jim-harbaugh-comments-emergency",
+   "attempted_at": "2026-09-01T16:43:21+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T16:43:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004254
+  },
+  {
+   "candidate_id": "mobile:onsi:e67fc801e1c1c3a51cbc",
+   "player_id": "00-0034351",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/why-eagles-should-bring-back-zach-ertz-and-who-they-would-cut-to-fix-te-problem-01m1em7rzn9m",
+   "attempted_at": "2026-09-01T16:43:25+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T16:43:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003974
+  },
+  {
+   "candidate_id": "mobile:onsi:ff68a31edb318d95f391",
+   "player_id": "00-0040122",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-every-rookie-who-made-initial-53-their-role",
+   "attempted_at": "2026-09-01T16:43:27+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T16:43:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004608
+  },
+  {
+   "candidate_id": "mobile:onsi:be8504857da1d1baefa2",
+   "player_id": "00-0039738",
+   "source_url": "https://www.si.com/nfl/rams/onsi/rams-53-man-roster-winners-losers",
+   "attempted_at": "2026-09-01T16:43:38+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T16:43:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.008014
+  },
+  {
+   "candidate_id": "mobile:onsi:fcc4efb9e5061dba6559",
+   "player_id": "00-0037840",
+   "source_url": "https://www.si.com/nfl/rams/onsi/rams-53-man-roster-winners-losers",
+   "attempted_at": "2026-09-01T16:43:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T16:43:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004196
+  },
+  {
+   "candidate_id": "mobile:onsi:cfdad0159520b20226f1",
+   "player_id": "00-0039337",
+   "source_url": "https://www.si.com/nfl/giants/onsi/malik-nabers-giants-acl-recovery-season-opener-status-01m1etyfc655",
+   "attempted_at": "2026-09-01T16:43:49+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T16:43:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00446
+  },
+  {
+   "candidate_id": "mobile:article:9e93dc8fe05c8d26dbb8",
+   "player_id": "00-0039794",
+   "source_url": "https://www.newyorkjets.com/news/jets-rb-braelon-allen-breece-hall-working-towards-regular-season",
+   "attempted_at": "2026-09-01T16:43:53+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-01T16:43:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004786
+  },
+  {
+   "candidate_id": "mobile:article:acdd090afa63648e5ad9",
+   "player_id": "00-0038120",
+   "source_url": "https://www.newyorkjets.com/news/jets-rb-braelon-allen-breece-hall-working-towards-regular-season",
+   "attempted_at": "2026-09-01T16:43:57+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T16:44:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005552
+  },
+  {
+   "candidate_id": "mobile:onsi:5351218d8ea8a6569eda",
+   "player_id": "00-0033288",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/final-fantasy-football-tight-end-draft-rankings-harold-fannin-jr-drops-after-shedeur-sanders-gets-benched",
+   "attempted_at": "2026-09-01T16:44:01+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T16:44:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005436
+  },
+  {
+   "candidate_id": "mobile:onsi:c06b5dc2468eb23fab1d",
+   "player_id": "00-0040663",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/final-fantasy-football-tight-end-draft-rankings-harold-fannin-jr-drops-after-shedeur-sanders-gets-benched",
+   "attempted_at": "2026-09-01T16:44:06+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T16:44:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003654
+  },
+  {
+   "candidate_id": "mobile:onsi:25bc262009dad5c30243",
+   "player_id": "00-0035228",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/one-vikings-53-man-roster-decision-quickly-blow-up-kevin-o-connell-s-face-01m1cen8vzyd",
+   "attempted_at": "2026-09-01T16:44:08+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T16:44:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003782
+  },
+  {
+   "candidate_id": "mobile:onsi:de401293f4c658e86175",
+   "player_id": "00-0034796",
+   "source_url": "https://www.si.com/nfl/ravens/onsi/ravens-undrafted-rookie-qb-joe-fagnano-undaunted-by-challenges-ahead-01m1esb31js2",
+   "attempted_at": "2026-09-01T16:44:10+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T16:44:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00396
+  },
+  {
+   "candidate_id": "mobile:onsi:fbc124504f5b64ac2a09",
+   "player_id": "00-0041438",
+   "source_url": "https://www.si.com/nfl/titans/onsi/grading-the-titans-4-biggest-roster-decisions-after-cut-day-01m1er36gpjp",
+   "attempted_at": "2026-09-01T16:44:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T16:44:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004034
+  },
+  {
+   "candidate_id": "mobile:onsi:17c58cdc224a98a12bf7",
+   "player_id": "00-0038117",
+   "source_url": "https://www.si.com/nfl/titans/onsi/grading-the-titans-4-biggest-roster-decisions-after-cut-day-01m1er36gpjp",
+   "attempted_at": "2026-09-01T16:44:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T16:44:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0052
+  },
+  {
+   "candidate_id": "mobile:onsi:28d081b16fcc9b63e6b2",
+   "player_id": "00-0039064",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/should-fantasy-managers-be-worried-about-zay-flowers-latest-injury-news",
+   "attempted_at": "2026-09-01T16:44:20+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-01T16:44:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005338
+  },
+  {
+   "candidate_id": "mobile:onsi:0f2228ca79e0782ddfa7",
+   "player_id": "00-0034796",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/should-fantasy-managers-be-worried-about-zay-flowers-latest-injury-news",
+   "attempted_at": "2026-09-01T16:44:24+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T16:44:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004336
+  },
+  {
+   "candidate_id": "mobile:onsi:0f54ed1cdf6ac921adce",
+   "player_id": "00-0034753",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/should-fantasy-managers-be-worried-about-zay-flowers-latest-injury-news",
+   "attempted_at": "2026-09-01T16:44:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T16:44:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00383
   }
  ]
 }

@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `0d2c869168ea` · 16 draft calls · $0.0838
+**2 cards** · batch `e237b793f05a` · 18 draft calls · $0.0837
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,28 +19,48 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Deshaun Watson — CLE QB
+## 1. Braelon Allen — NYJ RB
 
-**Trending up** · DEPTH_CHART · HIGH evidence
+**Trending up** · FIRST_TEAM_REPS · MEDIUM evidence
 
 ### What changed
 
-Deshaun Watson has been confirmed as the Browns’ starting quarterback for Week 1 at Jacksonville.
+Braelon Allen has worked with the Jets’ first-team offense as Breece Hall returns to full fitness from a groin injury.
 
 ### Lineup Beat impact
 
-Watson’s starting status is settled for Week 1, giving him immediate QB usability in formats where he was being held for clarity. The report does not address his workload, health or longer-term security.
+Allen’s first-team practice work is worth monitoring while Hall is not yet fully healthy. It suggests Allen could be next up if Hall is limited, but the report does not establish a changed depth-chart role or workload.
 
-[Paul Keren · Sports Illustrated -- CLE](https://www.si.com/nfl/browns/onsi/what-to-expect-from-cleveland-browns-rookie-draft-class-heading-to-week-1-01m1cbx12cw9) · 2026-08-31
+[Jack Bell · NYJ official team site](https://www.newyorkjets.com/news/jets-rb-braelon-allen-breece-hall-working-towards-regular-season) · 2026-09-01
 
 <details><summary>Full evidence reviewed</summary>
 
-The Cleveland Browns will start their season just a couple of days later, as they go on the road to visit the Jacksonville Jaguars in a tough Week 1 matchup. As we get into September, the main question has been answered: Deshaun Watson will be the starting quarterback.
-
-The Cleveland Browns will start their season just a couple of days later, as they go on the road to visit the Jacksonville Jaguars in a tough Week 1 matchup. As we get into September, the main question has been answered: Deshaun Watson will be the starting quarterback. Now, how does the revamped roster fall in behind him?
-
-As we get into September, the main question has been answered: Deshaun Watson will be the starting quarterback. Now, how does the revamped roster fall in behind him?
+With RB Breece Hall working his way back to full fitness after dealing with a groin injury, Braelon Allen has the benefit of working with the first-team offense in practice and in limited work in a pair of preseason games.has the benefit of working with the first-team offense in practice and in limited work in a pair of preseason games.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrtVutu2zYUfhVCfxc5pGTJsv8MaZM12RonTY31x1oIvBxZbCRRJSm7XlFgr7HX25PsUIrTtN0LbBgMGPa5n-_c-CkS3Mu61CpaRVQlssiXLC-AJ3k1TyTnCoksK2jFqoKCknzBEqG4YJRloig4nUuRJ0tYMCWik0hyq1y0-u1TxPvemh2okns0jSw--NpY_H3Lh4b8Aha6oGDaFjrP7QE5b7h3pvvrjz8dcUjyutuGH35wRCMJvG9AkcpY8gbgnrATstW7IFTrlmg0pDT3QF49I4PjQjfaH4jugkKLlsm-RqekBrLnjggYFaGZDMqGWxSfkQ3yLfTGeqIMONIZT7hSFpxDN2jE2PvGcHWCurzxNUHlxnRbsLEH22KUchgtfZVc-QiHOExwPOEZq7e6Q_L1zfnFy_L87uynzSjReZQo_aEHZN5d3N7cba7WL5ClME0kJTTJY1rEKduwxYqyVZL_QOmK0iCiLUivTbB7e_P6anP160UgW175Ek1XWkEn0QqdLfMjvdGtRrxRKxQxCljAbhIkpmsOZFS0rSMeWVMRplKBDQmvzQMqJ484BXwccKxrHGAi1jRAFHiuGwQzFCQAgz7ULHp3Eh3dYdTB-_MGdtDwTpFn1uw71NBNM3kMIeijbfJ-cFgnjG_o0b6piOIHRxrEyZ4QPsZ7IFuDWYyh2xCZN2SnnR4tkZ-5vEdDO7Qf_mwHbl1oHo5iw7Y-JtuGcRn6GTkL0ZMteBRCQ6-h99CK4C1YazmqfhjABSxJPfYboLHOhZTVipyDq_nQkanlp7QEjLqPrf9hGIEVGNnsbfe2-x-QJ4CQtdnjDJr9NKZjDrDjbY8bwhqHYqTiaAPdCqg1AoZL4scA478i0OjLKJQSy63DyE9rujW42mCFM6pXybKo8CNSwassSxXNlgxVcdHq38fRv7q-vji_OtuE2W9B1rzTrkX6-cXt5rJ8fnl2F1ZNaxQ0D3uIN-V_einj1IB1te4DOmvE4QK_1gGFvuEHCBfq6xI_ch6uJI0pTdMsXQSGwXGZluyrZ-G_Ne-ntVvy4_Zd36wD-v0gGi1LN7TtBOw3jfTYag87FkGdxvRh0rEC_9hgT6An3H81trPv3H5_hyxwhak1XEATli6eZRU8DP0DU3eIclnhvh4QbzwL7wJ9pwHn4UuSAcXpNjkz2HF_vw71cuSqaXAVWewBReKYPH8ZwEACdFtfo9jl1YtLpHjgoS8n9mBDLLX3vVudnu73-5nTM-zK065qTsUIx2no_9N9zX3sTQwfe4Q9rqxpY3lckfEkGVtj7jXE44lDLncursfEtkF1j9DFLKasZVJ8ZIncL6PP78L5db4cnAoXkhZpQfFKbgF7J2QyvWqe3t9ixdiKfrm_00hJnGzEjOXHQozHFQdswMPOfTnGFK2Kb_jYGEmWPxGI-AKKRQaSLRlN6bxK8jm-0qo8FSmteCWVWjDJ86xS1VykCyUyupgzUaXLIgUJPGAua2h5ucPun2q2xydCPG2TWHfCfIx37LGA5fQwnCJBYXztVQlknIpkmS1kkYhlrgRTSZLNF8sUFxEVWaJyWTC-SNO0KCohk1xQCjLBR2T0-W_hYpM-:WIRE_MOBILE_MANIFEST_V1 -->
+---
+
+## 2. Zay Flowers — BAL WR
+
+**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
+
+### What changed
+
+Zay Flowers missed Monday's practice with an undisclosed lower-body injury after sitting out multiple practices last week.
+
+### Lineup Beat impact
+
+Flowers' availability for the opener is now worth monitoring after a multi-practice absence. The injury severity and his timetable remain unknown; a return to practice would be the key next signal.
+
+[Gray Deyo · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/should-fantasy-managers-be-worried-about-zay-flowers-latest-injury-news) · 2026-09-01
+
+<details><summary>Full evidence reviewed</summary>
+
+After missing multiple practices last week, Zay Flowers did not practice on Monday, Aug. 31, due to an undisclosed lower-body injury.
+
+After missing multiple practices last week, Zay Flowers did not practice on Monday, Aug. 31, due to an undisclosed lower-body injury. The Ravens are less than two weeks away from playing the Indianapolis Colts on Sep.13, which puts into question whether or not Flowers will be available.
+
+</details>
+
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrlWNFu40YS_JWBXvIQUSZFiSKVJ3ktb7SI5YXsZHF3WRBDTlOcNclhZobWMsEC-Y38Xr4k3aQky2vDe4cAl-AONiyTM-zprq6uov3LIOE2zWMpBvMBjP1ZMov8zJ3yLBz7Yuamk2CSgudPxSSNAm_iRqmbRL5wgc9Cd-IFkR8FE1ckCXjhYDhIuRZmMP_XLwNe11rdg4i5xdC4xBubK42_v-HpHTuHoqD9qiyhsly3uLAoCqh-__U3wzKpjXUs8JLVmqdWpsB2St8xaejT5qxUlbRKy2rLdrksgH3Li4KWK2VZC5ZlTVG0LAde2LwdsZVlptluwVjDunNYqppCsARYBR8ta2oms2OQQpbSghiypLHM5sA01HgsEwr6EzAOTwppcsZZmvNqC4IJqG3u4BVu1ApTUrpLulBcjB7VGh_BSdoenJM1LGorK7x9dX2x_C6-2Cwub7sdlcUdsW1rwMXN8u315na1fo1Lglu6NXbHgeNGjuvdesHcdfH76-4nbZEaEEZFcd9e36xuVz8s6bbmmY0xdCYFVClGcUfR4XYHAqeHqKOD22dgMDWkMmvZQ-cOBXfF54DYaWwC20kEVoPlsjptLsYzTOHBR-Qftw1TXCsGH-tCptIiF1SpKCGKfgp33wK242afIiDi74cDuD_UNXgnkTWbc3auAQ7nUbLEoJxoxVuWEDOt6pLANG0FxjCEAug0XnRkozCcbbXCSmT1odHtEGNyKDCrnlg5ZkGcSaACDMJUdjyoe5rWTjBQWQaVAQz2wHVeCbre03BP_QrPrbnUFLDWYIAbPHPLSzCjv-LMwQO-cYpPS-JhrySlSnAm59gameJnBCgZaZiBO01DMQ5QLkgsUA7kzx0lb75FMse3y80V3i6B2ilNiQuXq80NLSyuYmT8Da0qAcV-SHgR_z8JiNpVoE0uayy1g-T63Xp5gQt1wVsgaX1ExONC3xPXdVzXj2bRhBaUkXs52JzTtVYfeoGI-UEn1tdr0oi6wTzT2DRl2aP8lO2UJFHmwLQ3YA224TnG4e7TCURJaHRlngxdhpP-2ZiNnuTyVEY1cIH1FjyBgkDSgLTEDjf1flFS9DjjsmiQzShr7-n-vYQdPnas_O1yfdFLq1GN7uRj_Y83VAPKEC9YVxECCLTD4iFbm5NgLy9W3xODab1_Bi8aTank1tZmfna22-1GFexaROwDojRC_p7htTmjK0cnTtKj63BCF68IKyfHK2c_0I5VO3JZR8O2Kbh2-qEcfBq-ZLqvNerbBbTqc9O9LBTWbr5i_B5R4Ti30rYsQ-pRJ1WNgqL7sdg9nZxeGzkrm8JK50FKEkOqMGLkGX33mIF70BSadIYE18oSaAZoNkryhaa6w0OqbzBeTwtixcn07qeN0rqDtp86I7eoAv9td53OJ_7cnzzrruvl68VL7jp5wV67VjiJEu0BNXI0kgshTVooA50O0NaD8j4oCtWM9xA9Ifm2wgE3Q4bk5JZqR3FB8y2GpCkHdA8NOMTsyY5-jLpneGu6Nj2iBV5jo35qUL0w72-YPFG0rk5dHt2-lGSenVd87sWLjja0gUjUkadGHhx6jfLJjWU7gLsh-yfyds9RLEzsS92TAlXoSlWCowcvmu2I-d6QiQaIOJwIdYTtKbSjH6sfq79FIt2UbPg96iPjGllAAmjRE5jdqe5wvE-vJ50okqRTsjQGK4zLK14rNBL2ShWWXqbYDdQjzx-SraU5qxtLTcNEDm07vpchFaiIQ1Fd13DA9h3vefEFh0fyyvk4FG7oJV6QpWmUBD4Eyfjfs_fF-c1yfRtfbq6v4rebxavb1avlFzz-f0WvTs18tb5YkucgFqdufsK4573cDT7z8neb_9DLT0lNY4AE7Xn8lTkppXvn_QKN99hiKpaQVvje89I8_Rk3F4jdn_XzS46EMi27xnlZvWzj54vvnrVxIzv3phE4y_pwZx0WEsyZyan_zv6-U-KYbhFkJwHycdwiHJ4gSM7PvHWyvgNOgeOFL0w9oA69Fgw-vSdzMjZujCD_cEN_5o-Hgy3xHLfvrf7x337oTt706E79NKX4CoEAeeEB9856cLYatD1u486UBvMweLxucj6eBicbBnwG4WwKqRd5ru9OsnEwCYFngZ_4bsazVIiZl_JgmolskvgzkUzd2cRLMj8KfXyX4QR2muMIxThgpm_QDg3U6SUFq0_UR-feO3Yr7v9F0WeCm6cT108iPuY8GE-jbIxfbiJ4NEln43HouYE7DcIADwz5zBdRMMU_N6LUgySdeSL0k8GnPwBT2d92:WIRE_MOBILE_MANIFEST_V1 -->
