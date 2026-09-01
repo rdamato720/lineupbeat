@@ -62,8 +62,9 @@ class CollegeDecisionDataTests(unittest.TestCase):
 
 class CollegeDecisionRenderingTests(unittest.TestCase):
     def test_url_state_and_honest_labels(self):
-        self.assertIn('/?sport=college', college_decision_room.SHELL)
+        self.assertIn('/decision-room/college/', college_decision_room.SHELL)
         self.assertIn("new URLSearchParams(location.search)", college_decision_room.JS)
+        self.assertIn("/decision-room/college", college_decision_room.JS)
         self.assertIn("Week 1 projections", college_decision_room.SHELL)
         self.assertNotIn("College Season Decision Room", college_decision_room.SHELL)
 

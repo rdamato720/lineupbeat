@@ -194,7 +194,12 @@ def check_homepage(root, decision_room=False):
     # now is that it is gone -- and that Recent News, which still reads the
     # feed, did not go with it.
     resolved = [n for n in nuggets if n.get("resolved")]
-    check("Recent News has its mount point", 'id="livelist"' in text)
+    recent_surface = text
+    nfl_decision = root / "decision-room" / "nfl" / "index.html"
+    if decision_room and nfl_decision.is_file():
+        recent_surface = nfl_decision.read_text()
+    check("Recent News has its mount point on a reader-facing route",
+          'id="livelist"' in recent_surface)
     check("Recent News has items to render", bool(resolved),
           f"{len(resolved)} resolved report(s)")
     check("Moving Now is gone from the homepage",
@@ -225,8 +230,26 @@ def check_homepage(root, decision_room=False):
             check("the complete reviewed Wire preserves mobile viewport support",
                   'name="viewport"' in wire_text)
         home_cards = re.findall(r'<article class="tile wire".*?</article>', text, re.S)
-        check("the Decision Room homepage shows four supporting Wire cards",
+        check("the Lineup Beat homepage shows four supporting Wire cards",
               len(home_cards) == 4, f"{len(home_cards)} rendered")
+        nfl_room = root / "decision-room" / "nfl" / "index.html"
+        college_room = root / "decision-room" / "college" / "index.html"
+        check("the full NFL Decision Room has a dedicated route", nfl_room.is_file(),
+              str(nfl_room))
+        check("the full College Decision Room has a dedicated route", college_room.is_file(),
+              str(college_room))
+        check("the root is a decision-first Lineup Beat homepage, not the full tool",
+              'id="lineup-beat-home"' in text and 'id="decision-room"' not in text)
+        check("the homepage has complete primary navigation",
+              all(f'>{label}<' in text for label in
+                  ("NFL", "College", "Decision Room", "Rankings", "Projections", "The Beat")))
+        check("the existing player search remains available",
+              'id="q"' in text and 'placeholder="Search any player"' in text)
+        check("the homepage has the required decision sections",
+              all(label in text for label in
+                  ("Quick Actions", "Today’s Decision Board", "The latest from The Beat")))
+        check("legacy sport query states have compatibility routing",
+              "get('sport')==='college'" in text and "get('sport')==='nfl'" in text)
         college_payload = root / "data" / "decision-room-college.json"
         check("the College Decision Room payload is isolated from the homepage",
               college_payload.is_file() and '"CFP_' not in text,
@@ -240,8 +263,8 @@ def check_homepage(root, decision_room=False):
             check("the deployed college identity and player counts reconcile",
                   len(players) == 2205 and
                   len({p.get("id") for p in players}) == len(players))
-            check("the homepage exposes separate NFL and College URL states",
-                  '/?sport=nfl' in text and '/?sport=college' in text)
+            check("the homepage exposes separate NFL and College routes",
+                  '/decision-room/nfl/' in text and '/decision-room/college/' in text)
     if "<!-- LB WIRE REPLACEMENT START" in wire_text:
         sec = wire_text[wire_text.index("<!-- LB WIRE REPLACEMENT START"):
                         wire_text.index("<!-- LB WIRE REPLACEMENT END")]
