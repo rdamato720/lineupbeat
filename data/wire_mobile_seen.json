@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 636,
+ "count": 641,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -7035,6 +7035,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005052
+  },
+  {
+   "candidate_id": "mobile:onsi:eedaf0c7fcd0e44cd585",
+   "player_id": "00-0040154",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/why-j-j-mccarthy-s-spot-vikings-isn-t-safe-despite-surviving-roster-cuts-01m1d9t14dpf",
+   "attempted_at": "2026-09-01T15:54:30+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:54:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004654
+  },
+  {
+   "candidate_id": "mobile:onsi:4123d06f40e673044a85",
+   "player_id": "00-0035228",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/why-j-j-mccarthy-s-spot-vikings-isn-t-safe-despite-surviving-roster-cuts-01m1d9t14dpf",
+   "attempted_at": "2026-09-01T15:54:34+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T15:54:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004588
+  },
+  {
+   "candidate_id": "mobile:onsi:f7624640aea4e688ba0f",
+   "player_id": "00-0039851",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/every-patriots-rookie-who-made-the-initial-53-man-roster-and-what-their-role-will-be",
+   "attempted_at": "2026-09-01T15:54:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:54:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005018
+  },
+  {
+   "candidate_id": "mobile:onsi:8a2c284e6c00019ae57f",
+   "player_id": "00-0040735",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/final-fantasy-football-wide-receiver-draft-rankings-aj-brown-knocks-justin-jefferson-out-of-the-top-5",
+   "attempted_at": "2026-09-01T15:54:53+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-01T15:54:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004548
+  },
+  {
+   "candidate_id": "mobile:onsi:7c5881f33dbe730c314b",
+   "player_id": "00-0036252",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/final-fantasy-football-wide-receiver-draft-rankings-aj-brown-knocks-justin-jefferson-out-of-the-top-5",
+   "attempted_at": "2026-09-01T15:54:56+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-01T15:55:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006762
   }
  ]
 }
