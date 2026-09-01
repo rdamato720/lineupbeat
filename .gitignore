@@ -14,6 +14,7 @@ adp_curve.json
 # local scratch
 scripts/_*.py
 audit/
+.cache/week1-intelligence/
 site/player/
 site/team/
 site/sitemap.xml

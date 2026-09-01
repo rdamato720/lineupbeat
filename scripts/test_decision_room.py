@@ -127,26 +127,27 @@ class DecisionEngineTests(unittest.TestCase):
 class DecisionRoomRenderingTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.payload = decision_data.load_season()
+        cls.payload = decision_data.load_weekly()
         cls.html = page.render(cls.payload)
 
-    def test_validated_adapter_is_season_only(self):
-        self.assertEqual(self.payload["mode"], "season")
+    def test_validated_adapter_is_weekly(self):
+        self.assertEqual(self.payload["mode"], "weekly")
         self.assertEqual(self.payload["season"], 2026)
-        self.assertIsNone(self.payload["week"])
+        self.assertEqual(self.payload["week"], 1)
         self.assertGreaterEqual(len(self.payload["players"]), 150)
 
-    def test_required_season_labels_and_empty_states_render(self):
-        for text in ("2026 Preseason Decision Room",
-                     "Draft Mode — based on full-season projections",
-                     "Weekly lineup decisions will become available",
+    def test_required_weekly_labels_and_empty_states_render(self):
+        for text in ("2026 NFL Week 1 Decision Room",
+                     "Lineup Beat-owned weekly projections",
+                     "Odds and current injury reports are unavailable",
                      "Connect your league to see the decisions that matter on your roster.",
                      "No decisions have been recorded"):
             self.assertIn(text, self.html)
 
     def test_searchable_accessible_selectors_and_market_sections_render(self):
         for text in ('role="combobox"', 'role="listbox"',
-                     'Compare across positions', "Our Values", "Our Fades"):
+                     'Compare across positions', "Opportunity and opponent context",
+                     "What the market says"):
             self.assertIn(text, self.html)
         self.assertNotIn("Lineup Beat Convictions", self.html)
 
@@ -156,9 +157,9 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertIn("inside the deterministic no-call band", self.html)
         self.assertNotIn("Recommend ${w.name}", self.html)
 
-    def test_no_weekly_projection_or_probability_claims(self):
+    def test_no_probability_floor_or_ceiling_claims(self):
         lowered = self.html.split('</main>', 1)[0].lower()
-        self.assertNotIn("week 1 projection", lowered)
+        self.assertIn("week 1 projection", lowered)
         self.assertNotIn("win probability", lowered)
         self.assertNotIn("% chance", lowered)
         self.assertNotIn("floor", lowered)
@@ -210,9 +211,9 @@ class DecisionRoomRenderingTests(unittest.TestCase):
     def test_homepage_navigation_sections_and_mobile_structure(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
         for label in ("NFL", "College", "Decision", "Rankings", "Projections",
-                      "MAKE YOUR NEXT MOVE", "WHERE WE SEE IT DIFFERENTLY",
+                      "MAKE YOUR NEXT MOVE", "START WITH THE EVIDENCE",
                       "CLOSEST CALLS", "SCORING FORMAT MOVERS",
-                      "Make the call before", "Find the Week 1 edge"):
+                      "Make the Week 1 call", "Find the Week 1 edge"):
             self.assertIn(label, home)
         self.assertNotIn("NFL or College", home)
         self.assertNotIn("Today’s Decision Board", home)
@@ -222,9 +223,11 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertIn("@media(max-width:780px)", page.CSS)
 
     def test_featured_decision_is_close_non_tie_with_complete_art(self):
-        result = page.featured_decision(self.payload["players"])
+        result = page.featured_decision(
+            self.payload["players"],
+            DecisionContext("weekly", 2026, "half_ppr", 1))
         self.assertFalse(result["is_tie"])
-        self.assertEqual(result["confidence"], "Lean")
+        self.assertNotEqual(result["confidence"], "Toss-Up")
         for player in (result["winner"], result["runner_up"]):
             self.assertTrue(player["photo"])
             self.assertTrue(player["team_logo"])

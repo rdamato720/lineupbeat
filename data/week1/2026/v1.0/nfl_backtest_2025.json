@@ -1,0 +1,126 @@
+{
+  "baseline": "mean Half-PPR points over the player's last eight prior appearances",
+  "by_position": {
+    "QB": {
+      "baseline_mae": 6.808,
+      "model_mae": 6.807,
+      "predictions": 627
+    },
+    "RB": {
+      "baseline_mae": 4.29,
+      "model_mae": 4.292,
+      "predictions": 1490
+    },
+    "TE": {
+      "baseline_mae": 3.215,
+      "model_mae": 3.241,
+      "predictions": 1225
+    },
+    "WR": {
+      "baseline_mae": 3.871,
+      "model_mae": 3.877,
+      "predictions": 2388
+    }
+  },
+  "coverage_percent": 94.9,
+  "eligible_appearances": 6037,
+  "evaluation_population": "QB/RB/WR/TE weekly stat rows with at least two strictly prior appearances",
+  "failure_cases": [
+    {
+      "absolute_error": 32.24,
+      "actual": 40.1,
+      "player": "Kyle Pitts",
+      "player_id": "00-0036970",
+      "position": "TE",
+      "projected": 7.86,
+      "week": 15
+    },
+    {
+      "absolute_error": 30.51,
+      "actual": 45.6,
+      "player": "Derrick Henry",
+      "player_id": "00-0032764",
+      "position": "RB",
+      "projected": 15.09,
+      "week": 17
+    },
+    {
+      "absolute_error": 30.29,
+      "actual": 36.9,
+      "player": "Tre Tucker",
+      "player_id": "00-0038563",
+      "position": "WR",
+      "projected": 6.61,
+      "week": 3
+    },
+    {
+      "absolute_error": 29.19,
+      "actual": 33.0,
+      "player": "Sean Tucker",
+      "player_id": "00-0038951",
+      "position": "RB",
+      "projected": 3.81,
+      "week": 11
+    },
+    {
+      "absolute_error": 27.91,
+      "actual": 44.3,
+      "player": "Trevor Lawrence",
+      "player_id": "00-0036971",
+      "position": "QB",
+      "projected": 16.39,
+      "week": 15
+    },
+    {
+      "absolute_error": 27.3,
+      "actual": 37.3,
+      "player": "Brock Bowers",
+      "player_id": "00-0039338",
+      "position": "TE",
+      "projected": 10.0,
+      "week": 9
+    },
+    {
+      "absolute_error": 27.08,
+      "actual": 49.9,
+      "player": "Jahmyr Gibbs",
+      "player_id": "00-0039139",
+      "position": "RB",
+      "projected": 22.82,
+      "week": 12
+    },
+    {
+      "absolute_error": 26.69,
+      "actual": 28.86,
+      "player": "Mitchell Trubisky",
+      "player_id": "00-0033869",
+      "position": "QB",
+      "projected": 2.17,
+      "week": 18
+    },
+    {
+      "absolute_error": 25.93,
+      "actual": 33.46,
+      "player": "Shedeur Sanders",
+      "player_id": "00-0040668",
+      "position": "QB",
+      "projected": 7.53,
+      "week": 14
+    },
+    {
+      "absolute_error": 25.24,
+      "actual": 40.5,
+      "player": "Puka Nacua",
+      "player_id": "00-0039075",
+      "position": "WR",
+      "projected": 15.26,
+      "week": 16
+    }
+  ],
+  "future_rows_used": 0,
+  "model": "baseline adjusted by prior opponent-position allowance and historical venue context",
+  "predictions": 5730,
+  "schema_version": "lineupbeat-week1-backtest-v1",
+  "scoring_format": "Half-PPR",
+  "season": 2025
+}

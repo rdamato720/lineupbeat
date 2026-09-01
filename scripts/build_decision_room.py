@@ -16,7 +16,8 @@ import college_decision_room
 import decision_data
 import seo
 from decision_engine import (FORMAT_LABELS, DecisionContext, closest_calls,
-                             confidence, scoring_movers, value_signals)
+                             confidence, scoring_movers,
+                             strongest_projection_edges, value_signals)
 
 START = "<!-- LB DECISION ROOM START -->"
 END = "<!-- LB DECISION ROOM END -->"
@@ -84,20 +85,21 @@ def room_url(a: dict | None = None, b: dict | None = None,
     return f"{NFL_ROOM_PATH}?{urlencode(query)}"
 
 
-def featured_decision(players: list[dict]) -> dict:
+def featured_decision(players: list[dict], context: DecisionContext | None = None) -> dict:
     """Choose a close, credible same-position call with complete visual identity."""
-    candidates = closest_calls(players, "half_ppr", limit=60)
+    candidates = strongest_projection_edges(players, "half_ppr", limit=60,
+                                             context=context)
     for result in candidates:
         a = result["winner"] or result["player_a"]
         b = result["runner_up"] or result["player_b"]
         af = result["winner_format"] if result["winner"] else result["player_a_format"]
         bf = result["runner_up_format"] if result["runner_up"] else result["player_b_format"]
-        if (result["confidence"] == "Lean"
+        if (result["confidence"] in {"Lean", "Edge", "Strong Edge"}
                 and a.get("photo") and b.get("photo")
                 and a.get("team_logo") and b.get("team_logo")
                 and abs(af["position_rank"] - bf["position_rank"]) <= 2):
             return result
-    raise ValueError("no eligible featured decision with complete player art")
+    raise ValueError("no eligible featured projection edge with complete player art")
 
 
 def board_call(result: dict) -> str:
@@ -145,12 +147,22 @@ def render_home(payload: dict, college_payload: dict) -> str:
     for p in players:
         p["team_color"] = build_comparison_tool.TEAM_COLORS.get(
             p["team"], ("#263238", "#c6f53c"))[0]
-    feature = featured_decision(players)
+    nfl_context = DecisionContext(payload["mode"], payload["season"],
+                                  "half_ppr", payload.get("week"))
+    feature = featured_decision(players, nfl_context)
     winner, runner = feature["winner"], feature["runner_up"]
     wf, rf = feature["winner_format"], feature["runner_up_format"]
-    calls = [r for r in closest_calls(players, "half_ppr", limit=30)
+    calls = [r for r in closest_calls(players, "half_ppr", limit=30,
+                                      context=nfl_context)
              if not r["is_tie"]][:3]
     values, fades = value_signals(players, "half_ppr")
+    if payload.get("mode") == "weekly":
+        weekly = sorted(players, key=lambda p: (
+            -p["formats"]["half_ppr"]["projected_points"], p["name"]))[:4]
+        values = [{"player": p, "format": p["formats"]["half_ppr"],
+                   "rank_adp_delta": 0} for p in weekly[:2]]
+        fades = [{"player": p, "format": p["formats"]["half_ppr"],
+                  "rank_adp_delta": 0} for p in weekly[2:]]
     movers = scoring_movers(players)[:3]
 
     cp = {p["id"]: p for p in college_payload["players"]}
@@ -192,6 +204,16 @@ def render_home(payload: dict, college_payload: dict) -> str:
 
     def nfl_signal(row: dict, stance: str) -> str:
         p, f, delta = row["player"], row["format"], row["rank_adp_delta"]
+        if payload.get("mode") == "weekly":
+            venue = "vs." if p.get("home") else "at"
+            opp = p.get("expected_opportunity", {})
+            opportunity = (f'{opp.get("pass_attempts", 0):.1f} attempts'
+                           if p["position"] == "QB" else
+                           f'{opp.get("carries", 0):.1f} carries · {opp.get("targets", 0):.1f} targets')
+            return (f'<a class="hp-signal-card" href="{esc(room_url(p))}">{identity(p)}'
+                    f'<small>WEEK 1 MODEL SIGNAL</small><p><b>{f["projected_points"]:.1f}</b> Half-PPR · '
+                    f'{venue} {esc(p["opponent"])} · {esc(opportunity)}</p>'
+                    f'<strong>2025 matchup context</strong></a>')
         return (f'<a class="hp-signal-card" href="{esc(room_url(p))}#{stance.lower()}s">{identity(p)}'
                 f'<small>OUR {stance.upper()}</small><p>Projection rank <b>#{f["overall_rank"]}</b> · '
                 f'ADP <b>{float(p["adp"]):.1f}</b></p><strong>{abs(delta):.1f}-spot disagreement</strong></a>')
@@ -214,20 +236,22 @@ def render_home(payload: dict, college_payload: dict) -> str:
         else:
             a = row["winner"] or row["player_a"]
             b = row["runner_up"] or row["player_b"]
-            href, scoring = room_url(a, b), "Half-PPR · 2026 season"
+            href, scoring = room_url(a, b), ("Half-PPR · Week 1"
+                                           if payload.get("mode") == "weekly"
+                                           else "Half-PPR · 2026 season")
         return (f'<a class="hp-call-card" href="{esc(href)}"><div class="hp-call-art">'
                 f'{identity(a, college)}<span>VS</span>{identity(b, college)}</div>'
                 f'<div class="hp-call-data"><small>{scoring}</small><b>{row["gap"]:.1f}-point gap</b>'
                 f'<span>{esc(row["confidence"])} · Compare →</span></div></a>')
 
     nfl_header = sport_header("nfl", "home", players)
-    nfl_feature = f'''<article class="hp-feature lb-feature-card" style="--c:{esc(winner['team_color'])}"><small>Featured Decision · 2026 season · Half-PPR</small><div class="hp-feature-players"><div><img src="{esc(winner['photo'])}" alt="{esc(winner['name'])}"><img class="hp-team-mark" src="{esc(winner['team_logo'])}" alt=""><span>{esc(winner['position'])} · {esc(winner['team'])}</span><b>{esc(winner['name'])}</b></div><i>VS</i><div><img src="{esc(runner['photo'])}" alt="{esc(runner['name'])}"><img class="hp-team-mark" src="{esc(runner['team_logo'])}" alt=""><span>{esc(runner['position'])} · {esc(runner['team'])}</span><b>{esc(runner['name'])}</b></div></div><h2>{decision_language(feature)} {esc(winner['name'])}</h2><p><b>+{feature['gap']:.1f}</b> projected season points · {esc(feature['confidence'])}</p><div class="hp-boundary"><strong>What changes the pick?</strong> {esc(runner['name'])} needs +{feature['runner_up_gain_to_flip']:.1f} projected season points to move ahead.</div><a class="hp-card-cta" href="{esc(room_url(winner, runner))}">Open NFL Decision Room →</a></article>'''
+    nfl_feature = f'''<article class="hp-feature lb-feature-card" style="--c:{esc(winner['team_color'])}"><small>Featured evidence · Week 1 · Half-PPR</small><div class="hp-feature-players"><div><img src="{esc(winner['photo'])}" alt="{esc(winner['name'])}"><img class="hp-team-mark" src="{esc(winner['team_logo'])}" alt=""><span>{esc(winner['position'])} · {esc(winner['team'])} · {"vs." if winner.get("home") else "at"} {esc(winner.get("opponent"))}</span><b>{esc(winner['name'])}</b></div><i>VS</i><div><img src="{esc(runner['photo'])}" alt="{esc(runner['name'])}"><img class="hp-team-mark" src="{esc(runner['team_logo'])}" alt=""><span>{esc(runner['position'])} · {esc(runner['team'])} · {"vs." if runner.get("home") else "at"} {esc(runner.get("opponent"))}</span><b>{esc(runner['name'])}</b></div></div><h2>Projection edge: {esc(winner['name'])}</h2><p><b>+{feature['gap']:.1f}</b> projected Week 1 points · {esc(feature['confidence'])}</p><div class="hp-boundary"><strong>What changes the call?</strong> Projection difference alone is not an unqualified recommendation. Check matchup, opportunity, availability, and missing market evidence.</div><a class="hp-card-cta" href="{esc(room_url(winner, runner))}">Open the full evidence case →</a></article>'''
     college_feature_html = f'''<article class="hp-feature hp-college-feature lb-feature-card" style="--c:{esc(cw['team_color'])}"><small>Featured Decision · Week 1 · Yahoo scoring</small><div class="hp-feature-players"><div><img src="{esc(cw['team_logo'])}" alt="{esc(cw['team'])}"><span>{esc(cw['position'])} · {esc(cw['team'])}</span><b>{esc(cw['name'])}</b><em>{cf['projected_points']:.1f} pts</em></div><i>VS</i><div><img src="{esc(cr['team_logo'])}" alt="{esc(cr['team'])}"><span>{esc(cr['position'])} · {esc(cr['team'])}</span><b>{esc(cr['name'])}</b><em>{crf['projected_points']:.1f} pts</em></div></div><h2>Prefer {esc(cw['name'])}</h2><p><b>+{college_feature['gap']:.1f}</b> Week 1 projected points · {esc(college_feature['confidence'])}</p><div class="hp-boundary"><strong>What changes the pick?</strong> {esc(cr['name'])} needs +{college_feature['gap'] + .1:.1f} projected points to move ahead.</div><a class="hp-card-cta" href="{COLLEGE_ROOM_PATH}?a={esc(cw['id'])}&amp;b={esc(cr['id'])}">Open College Decision Room →</a></article>'''
 
-    nfl_body = f'''<div class="hp-experience" data-home-sport="nfl"><section class="lb-hero lb-decision-hero"><div class="lb-hero-inner"><div class="lb-hero-copy"><div class="lb-eyebrow">NFL DECISION INTELLIGENCE</div><h1 class="lb-hero-title">Make the call before <span>your league does.</span></h1><p class="lb-hero-description">Compare players, uncover where our projections break from the market, and see exactly what would change the pick.</p><div class="lb-hero-actions"><a class="lb-btn lb-btn-primary" href="{NFL_ROOM_PATH}">Compare Players <b>→</b></a><a class="lb-btn lb-btn-secondary" href="/nfl/rankings/">Explore NFL Rankings</a></div></div>{nfl_feature}</div></section>
+    nfl_body = f'''<div class="hp-experience" data-home-sport="nfl"><section class="lb-hero lb-decision-hero"><div class="lb-hero-inner"><div class="lb-hero-copy"><div class="lb-eyebrow">NFL WEEK 1 INTELLIGENCE</div><h1 class="lb-hero-title">Make the Week 1 call <span>before kickoff.</span></h1><p class="lb-hero-description">Compare Lineup Beat-owned weekly projections with opportunity, opponent, availability, and clearly labeled missing market evidence.</p><div class="lb-hero-actions"><a class="lb-btn lb-btn-primary" href="{NFL_ROOM_PATH}">Compare Week 1 Players <b>→</b></a><a class="lb-btn lb-btn-secondary" href="/nfl/rankings/">Explore Season Rankings</a></div></div>{nfl_feature}</div></section>
     <section class="hp-section"><div class="hp-section-head"><small>MAKE YOUR NEXT MOVE</small><h2>Go straight to the decision.</h2></div><div class="hp-action-grid">{action(NFL_ROOM_PATH,'±','Decision Room','Compare two players and see the flip boundary.')}{action('/nfl/rankings/','#','Rankings','See the projection order by format and position.')}{action('/nfl/projections/','Σ','Projections','Inspect the validated full-season numbers.')}{action('/nfl/data/','⌁','NFL Fantasy Data','Open ADP, draft value, context, and advanced tools.')}</div></section>
-    <section class="hp-section hp-difference"><div class="hp-section-head"><small>MARKET DISAGREEMENT</small><h2>WHERE WE SEE IT DIFFERENTLY</h2><p>Validated half-PPR projection rank compared with market ADP.</p></div><div class="hp-signal-grid">{''.join(nfl_signal(x,'Value') for x in values[:2])}{''.join(nfl_signal(x,'Fade') for x in fades[:2])}</div></section>
-    <section class="hp-section"><div class="hp-section-head"><small>DECISION PRESSURE</small><h2>CLOSEST CALLS</h2><p>Three useful season decisions where the projection edge remains narrow.</p></div><div class="hp-call-grid">{''.join(closest_card(x) for x in calls)}</div></section>
+    <section class="hp-section hp-difference"><div class="hp-section-head"><small>WEEK 1 MODEL</small><h2>START WITH THE EVIDENCE</h2><p>Weekly points, expected opportunity, opponent and venue. Odds and current injury reports are explicitly unavailable.</p></div><div class="hp-signal-grid">{''.join(nfl_signal(x,'Value') for x in values[:2])}{''.join(nfl_signal(x,'Fade') for x in fades[:2])}</div></section>
+    <section class="hp-section"><div class="hp-section-head"><small>DECISION PRESSURE</small><h2>CLOSEST CALLS</h2><p>Three Week 1 decisions where the projection edge remains narrow and cannot stand alone.</p></div><div class="hp-call-grid">{''.join(closest_card(x) for x in calls)}</div></section>
     <section class="hp-section hp-movers"><div class="hp-section-head"><small>FORMAT SENSITIVITY</small><h2>SCORING FORMAT MOVERS</h2><p>Position rank changes across PPR, Half-PPR, and Non-PPR.</p></div><div class="hp-mover-grid">{''.join(mover_card(x).replace('class="dr-mover"','class="hp-mover-card"') for x in movers)}</div></section></div>'''
     college_body = f'''<div class="hp-experience" data-home-sport="college" hidden><section class="lb-hero lb-decision-hero hp-college-hero"><div class="lb-hero-inner"><div class="lb-hero-copy"><div class="lb-eyebrow">COLLEGE WEEK 1 DECISIONS</div><div class="lb-hero-title" data-home-title>Find the Week 1 edge <span>before kickoff.</span></div><p class="lb-hero-description">Compare 2,205 players across 64 teams using validated Yahoo Week 1 projections.</p><div class="lb-hero-actions"><a class="lb-btn lb-btn-primary" href="{COLLEGE_ROOM_PATH}">Compare College Players <b>→</b></a><a class="lb-btn lb-btn-secondary" href="/college-fantasy-football/week-1/">Explore Week 1 Rankings</a></div></div>{college_feature_html}</div></section>
     <section class="hp-section"><div class="hp-section-head"><small>MAKE YOUR NEXT MOVE</small><h2>Start with Week 1.</h2></div><div class="hp-action-grid">{action(COLLEGE_ROOM_PATH,'±','Decision Room','Compare validated Yahoo Week 1 projections.')}{action('/college-fantasy-football/week-1/','#','Week 1 Rankings','Browse 2,205 players across 64 modeled teams.')}{action('/college-fantasy-football/projections/','Σ','Season Projections','Explore the separate 2,351-player season dataset.')}{action(COLLEGE_ROOM_PATH,'⌕','Player Search','Find College players inside the comparison tool.')}</div></section>
@@ -243,7 +267,8 @@ document.addEventListener("click",function(e){var a=e.target.closest&&e.target.c
 
 def render(payload: dict) -> str:
     players = payload["players"]
-    calls = closest_calls(players, "half_ppr")
+    calls = closest_calls(players, "half_ppr", context=DecisionContext(
+        payload["mode"], payload["season"], "half_ppr", payload.get("week")))
     values, fades = value_signals(players, "half_ppr")
     movers = scoring_movers(players)
     if not calls:
@@ -256,14 +281,27 @@ def render(payload: dict) -> str:
     options = "".join(f'<option value="{esc(p["id"])}">{esc(player_label(p))}</option>'
                       for p in players)
     updated = payload["updated_at"]
+    context_players = sorted(players, key=lambda p: (
+        -p["formats"]["half_ppr"]["projected_points"], p["name"]))[:6]
+
+    def weekly_context_card(p: dict) -> str:
+        opportunity = p.get("expected_opportunity", {})
+        role = (f'{opportunity.get("pass_attempts", 0):.1f} pass attempts'
+                if p["position"] == "QB" else
+                f'{opportunity.get("carries", 0):.1f} carries · {opportunity.get("targets", 0):.1f} targets')
+        venue = "vs." if p.get("home") else "at"
+        return (f'<article class="dr-signal"><img src="{esc(p.get("photo") or p["team_logo"])}" alt="">'
+                f'<div><small>{esc(p["team"])} · {esc(p["position"])} · {venue} {esc(p.get("opponent"))}</small>'
+                f'<h3>{esc(p["name"])}</h3><p>{p["formats"]["half_ppr"]["projected_points"]:.1f} Half-PPR · '
+                f'{esc(role)} · 2025 matchup factor {p.get("matchup", {}).get("projection_factor", 1):.2f}.</p></div></article>')
     block = f'''{START}
-<main id="decision-room" class="dr-shell" data-mode="season" data-season="2026">
+<main id="decision-room" class="dr-shell" data-mode="weekly" data-season="2026" data-week="1">
   <section class="dr-hero">
-    <div class="dr-kicker">2026 Preseason Decision Room</div>
-    <div class="dr-mode">Draft Mode — based on full-season projections</div>
+    <div class="dr-kicker">2026 NFL Week 1 Decision Room</div>
+    <div class="dr-mode">Week 1 — Lineup Beat-owned weekly projections</div>
     <h1>Make the decision—not just the projection.</h1>
-    <p class="dr-lede">Compare outcomes, see the stronger full-season projection, and understand exactly what would change the pick.</p>
-    <p class="dr-week-note">Weekly lineup decisions will become available after validated weekly projections are added. Season values are never presented as weekly forecasts.</p>
+    <p class="dr-lede">Compare Week 1 projections, opportunity, opponent context and availability—and see which evidence is still missing.</p>
+    <p class="dr-week-note">Odds and current injury reports are unavailable. Prior-season matchup metrics are labeled 2025 context. A point difference alone cannot create an unqualified recommendation.</p>
     <section class="dr-compare" aria-labelledby="dr-compare-title">
       <div class="dr-compare-head"><div><small>Decision 01</small><h2 id="dr-compare-title">Player vs. player</h2></div>
         <label>Scoring format<select id="dr-format"><option value="ppr">PPR</option><option value="half_ppr" selected>Half-PPR</option><option value="non_ppr">Non-PPR</option></select></label></div>
@@ -273,13 +311,11 @@ def render(payload: dict) -> str:
     </section>
   </section>
 
-  <section class="dr-section" id="closest"><div class="dr-section-head"><div><small>Decision pressure</small><h2>Closest Calls</h2></div><p>Same-position preseason decisions separated by the fewest validated half-PPR season points.</p></div>
+  <section class="dr-section" id="closest"><div class="dr-section-head"><div><small>Decision pressure</small><h2>Closest Calls</h2></div><p>Same-position Week 1 decisions separated by the fewest modeled half-PPR points.</p></div>
     <div class="dr-card-grid">{''.join(call_card(c) for c in calls)}</div></section>
 
-  <section class="dr-section dr-convictions" id="values"><div class="dr-section-head"><div><small>Projection rank vs. ADP</small><h2>Our Values</h2></div><p>Players Lineup Beat ranks meaningfully earlier than validated market ADP.</p></div>
-    <div class="dr-signal-grid">{''.join(conviction_card(c) for c in values)}</div>
-    <div class="dr-section-head dr-fades-head" id="fades"><div><small>Projection rank vs. ADP</small><h2>Our Fades</h2></div><p>Players Lineup Beat ranks meaningfully later than validated market ADP.</p></div>
-    <div class="dr-signal-grid">{''.join(conviction_card(c) for c in fades)}</div></section>
+  <section class="dr-section dr-convictions" id="week1-context"><div class="dr-section-head"><div><small>Validated weekly inputs</small><h2>Opportunity and opponent context</h2></div><p>Modeled opportunity with clearly labeled 2025 prior-season defense. Odds and current injury reports remain unavailable.</p></div>
+    <div class="dr-signal-grid">{''.join(weekly_context_card(p) for p in context_players)}</div></section>
 
   <section class="dr-section" id="movers"><div class="dr-section-head"><div><small>Format sensitivity</small><h2>Scoring-format movers</h2></div><p>Players whose position rank changes most when receptions change value.</p></div>
     <div class="dr-mover-grid">{''.join(mover_card(m) for m in movers)}</div></section>
@@ -313,14 +349,15 @@ def comparison_v2_javascript(default_a: str, default_b: str, updated: str) -> st
     """Render Comparison Engine v2 from validated, identity-keyed evidence."""
     script = r'''(()=>{
 const root=document.getElementById("decision-room");root.classList.add("dr-enhanced");
-const D=JSON.parse(document.getElementById("dr-data").textContent),P=Object.fromEntries(D.players.map(p=>[p.id,p])),A=document.getElementById("dr-a"),B=document.getElementById("dr-b"),F=document.getElementById("dr-format"),X=document.getElementById("dr-cross-position"),O=document.getElementById("dr-result"),L={ppr:"PPR",half_ppr:"Half-PPR",non_ppr:"Non-PPR"},FM=["ppr","half_ppr","non_ppr"];
+const D=JSON.parse(document.getElementById("dr-data").textContent),P=Object.fromEntries(D.players.map(p=>[p.id,p])),A=document.getElementById("dr-a"),B=document.getElementById("dr-b"),F=document.getElementById("dr-format"),X=document.getElementById("dr-cross-position"),O=document.getElementById("dr-result"),L={ppr:"PPR",half_ppr:"Half-PPR",non_ppr:"Non-PPR"},FM=["ppr","half_ppr","non_ppr"],weekly=D.mode==="weekly";
 const safe=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])),shown=v=>+Number(v).toFixed(1),num=v=>shown(v).toFixed(1),fmt=(p,k)=>p.formats[k],points=(p,k)=>shown(fmt(p,k).projected_points),pct=(g,r)=>+(g/Math.max(Math.abs(r),.1)*100).toFixed(1);
-function classification(g,r){let q=pct(g,r);if(g<=2||q<=1)return"Toss-Up";if(q<=3)return"Lean";if(q<=7)return"Edge";return"Strong Edge"}
+function classification(g,r){let q=pct(g,r);if(weekly){if(g<=.5||q<=3)return"Toss-Up";if(q<=7)return"Lean";if(q<=15)return"Edge";return"Strong Edge"}if(g<=2||q<=1)return"Toss-Up";if(q<=3)return"Lean";if(q<=7)return"Edge";return"Strong Edge"}
 function projectedLeader(a,b,k){let x=points(a,k),y=points(b,k);return x===y?null:(x>y?a:b)}
 function opinion(a,b){return (D.editorial_opinions||[]).find(x=>[x.subject_id,x.preferred_over_id].includes(a.id)&&[x.subject_id,x.preferred_over_id].includes(b.id))||null}
 function history(p,k){let h=(p.history||{})[k];return h&&Number(h.games)>=8?h:null}
 function portrait(p){return `<div class="dr-person" style="--team:${safe(p.team_color)}"><img class="dr-logo" src="${safe(p.team_logo)}" alt=""><img class="dr-photo" src="${safe(p.photo||p.team_logo)}" alt="${safe(p.name)}" onerror="this.src='${safe(p.team_logo)}'"><div><small>${safe(p.team)} · ${safe(p.position)}</small><h3>${safe(p.name)}</h3></div></div>`}
-function playerCards(a,b,k){return `<div class="dr-player-grid">${[a,b].map(p=>`<article>${portrait(p)}<dl><div><dt>Projected points</dt><dd>${num(points(p,k))}</dd></div><div><dt>Overall / position</dt><dd>#${fmt(p,k).overall_rank} · ${safe(p.position)}${fmt(p,k).position_rank}</dd></div><div><dt>ADP</dt><dd>${p.adp==null?'—':Number(p.adp).toFixed(1)}</dd></div></dl></article>`).join('')}</div>`}
+function opportunity(p){let o=p.expected_opportunity||{};return p.position==='QB'?`${num(o.pass_attempts||0)} attempts`:`${num(o.carries||0)} carries · ${num(o.targets||0)} targets`}
+function playerCards(a,b,k){return `<div class="dr-player-grid">${[a,b].map(p=>`<article>${portrait(p)}<dl><div><dt>Week 1 projection</dt><dd>${num(points(p,k))}</dd></div><div><dt>Opponent</dt><dd>${p.home?'vs.':'at'} ${safe(p.opponent||'—')}</dd></div><div><dt>Opportunity</dt><dd>${opportunity(p)}</dd></div></dl></article>`).join('')}</div>`}
 function spotWord(n){return Number(n)===1?'spot':'spots'}
 function rankText(a,b,k){let af=fmt(a,k),bf=fmt(b,k),og=Math.abs(af.overall_rank-bf.overall_rank),pg=Math.abs(af.position_rank-bf.position_rank),overall=af.overall_rank===bf.overall_rank?'Overall ranks are tied.':`${af.overall_rank<bf.overall_rank?safe(a.name):safe(b.name)} ranks ${og} overall ${spotWord(og)} higher.`,position=af.position_rank===bf.position_rank?'Position ranks are tied.':`${af.position_rank<bf.position_rank?safe(a.name):safe(b.name)} ranks ${pg} ${safe(a.position===b.position?a.position:'position')} ${spotWord(pg)} higher.`;return overall+' '+position}
 function adpState(a,b){let missing=[a,b].filter(p=>p.adp==null);return{state:missing.length===0?'present':missing.length===1?'one-missing':'both-missing',missing}}
@@ -331,16 +368,16 @@ function sensitivity(a,b){let rows=formatRows(a,b),meaningful=rows.filter(x=>x.w
 function formatText(a,b){return sensitivity(a,b).text}
 function historyText(a,b,k){let ah=history(a,k),bh=history(b,k);if(!ah||!bh)return'Unavailable — each player needs at least eight games in the validated 2025 history.';let steady=Number(ah.consistency_score)>=Number(bh.consistency_score)?a:b,h=steady.id===a.id?ah:bh;return `${safe(steady.name)} had the higher 2025 consistency score (${h.consistency_score}) across ${h.games} games. ${safe(a.name)} averaged ${num(ah.average)}; ${safe(b.name)} averaged ${num(bh.average)} ${L[k]} points per game.`}
 function editorialText(a,b){let e=opinion(a,b);if(!e)return'No documented Lineup Beat comparison opinion for this exact pair.';return `Historical opinion (${safe(e.evidence_date)}): ${safe(e.source_text)} This is dated evidence, not the current ranking source.`}
-function caseFor(p,o,k,e){let facts=[],pf=fmt(p,k),of=fmt(o,k);if(points(p,k)>points(o,k))facts.push(`Projects ${num(points(p,k)-points(o,k))} season points higher.`);if(pf.overall_rank<of.overall_rank){let g=of.overall_rank-pf.overall_rank;facts.push(`Ranks ${g} overall ${spotWord(g)} higher.`)}if(p.adp!=null&&o.adp!=null&&Number(p.adp)>Number(o.adp))facts.push(`Available ${Math.abs(Number(p.adp)-Number(o.adp)).toFixed(1)} picks later by ADP.`);let ph=history(p,k),oh=history(o,k);if(ph&&oh&&Number(ph.consistency_score)>Number(oh.consistency_score))facts.push(`Higher validated 2025 consistency score (${ph.consistency_score} vs. ${oh.consistency_score}).`);if(e&&e.subject_id===p.id&&e.preferred_over_id===o.id)facts.push(`The dated August 18 editorial opinion preferred ${safe(p.name)} in this exact pair.`);return facts.length?facts.slice(0,3).map(x=>`<li>${x}</li>`).join(''):'<li>No additional validated counter-case is available.</li>'}
-function coverage(a,b,k,e){let cats=[['Projection','Present'],['Ranks','Present'],['ADP',a.adp!=null&&b.adp!=null?'Present':'Unavailable'],['Scoring formats','Present'],['2025 consistency',history(a,k)&&history(b,k)?'Present':'Unavailable'],['Editorial opinion',e?'Historical':'Not documented'],['Position SOS','Unavailable']],present=cats.filter(x=>['Present','Historical'].includes(x[1])).length;return {cats,present}}
-function agreement(a,b,k,e,cls,lead){let signals=[],add=(category,p)=>signals.push({category,player:p});if(cls!=='Toss-Up'&&lead)add('projection edge',lead);let af=fmt(a,k),bf=fmt(b,k);if(af.overall_rank!==bf.overall_rank)add('current ranks',af.overall_rank<bf.overall_rank?a:b);if(a.adp!=null&&b.adp!=null){let av=Number(a.adp)-af.overall_rank,bv=Number(b.adp)-bf.overall_rank;if(Math.abs(av-bv)>=5)add('draft value',av>bv?a:b)}let ah=history(a,k),bh=history(b,k);if(ah&&bh){let cg=Number(ah.consistency_score)-Number(bh.consistency_score),ag=Number(ah.average)-Number(bh.average);if(Math.abs(cg)>=5)add('prior-year consistency',cg>0?a:b);else if(Math.abs(ag)>=3)add('prior-year consistency',ag>0?a:b)}if(e)add('dated Lineup Beat opinion',e.subject_id===a.id?a:b);let groups={[a.id]:signals.filter(x=>x.player.id===a.id),[b.id]:signals.filter(x=>x.player.id===b.id)},represented=[a,b].filter(p=>groups[p.id].length),state=represented.length<=1?'Aligned':represented.every(p=>groups[p.id].length>=2)?'Split':'Mixed';return{state,groups,signals}}
+function caseFor(p,o,k,e){let facts=[],pf=fmt(p,k),of=fmt(o,k);if(points(p,k)>points(o,k))facts.push(`Projects ${num(points(p,k)-points(o,k))} Week 1 points higher.`);let po=p.expected_opportunity||{},oo=o.expected_opportunity||{},pv=p.position==='QB'?Number(po.pass_attempts||0):Number(po.carries||0)+Number(po.targets||0),ov=o.position==='QB'?Number(oo.pass_attempts||0):Number(oo.carries||0)+Number(oo.targets||0);if(pv>ov)facts.push(`Carries the stronger validated opportunity estimate (${opportunity(p)}).`);if(Number(p.matchup?.projection_factor||1)>Number(o.matchup?.projection_factor||1))facts.push(`Draws the more favorable 2025 opponent-context factor.`);let ph=history(p,k),oh=history(o,k);if(ph&&oh&&Number(ph.consistency_score)>Number(oh.consistency_score))facts.push(`Higher validated 2025 consistency score (${ph.consistency_score} vs. ${oh.consistency_score}).`);if(e&&e.subject_id===p.id&&e.preferred_over_id===o.id)facts.push(`The dated August 18 editorial opinion preferred ${safe(p.name)} in this exact pair.`);return facts.length?facts.slice(0,3).map(x=>`<li>${x}</li>`).join(''):'<li>No additional validated counter-case is available.</li>'}
+function coverage(a,b,k,e){let cats=[['Week 1 projection','Present'],['Opportunity','Present'],['2025 matchup','Present'],['Scoring formats','Present'],['2025 consistency',history(a,k)&&history(b,k)?'Present':'Unavailable'],['Current injury report','Unavailable'],['Betting market','Unavailable']],present=cats.filter(x=>x[1]==='Present').length;return {cats,present}}
+function agreement(a,b,k,e,cls,lead){let signals=[],add=(category,p)=>signals.push({category,player:p});if(cls!=='Toss-Up'&&lead)add('projection edge',lead);let ao=a.expected_opportunity||{},bo=b.expected_opportunity||{},av=a.position==='QB'?Number(ao.pass_attempts||0):Number(ao.carries||0)+Number(ao.targets||0),bv=b.position==='QB'?Number(bo.pass_attempts||0):Number(bo.carries||0)+Number(bo.targets||0);if(a.position===b.position&&Math.abs(av-bv)>=2)add('expected opportunity',av>bv?a:b);let am=Number(a.matchup?.projection_factor||1),bm=Number(b.matchup?.projection_factor||1);if(Math.abs(am-bm)>=.03)add('2025 opponent context',am>bm?a:b);let ah=history(a,k),bh=history(b,k);if(ah&&bh){let cg=Number(ah.consistency_score)-Number(bh.consistency_score),ag=Number(ah.average)-Number(bh.average);if(Math.abs(cg)>=5)add('prior-year consistency',cg>0?a:b);else if(Math.abs(ag)>=3)add('prior-year consistency',ag>0?a:b)}if(e)add('dated Lineup Beat opinion',e.subject_id===a.id?a:b);let groups={[a.id]:signals.filter(x=>x.player.id===a.id),[b.id]:signals.filter(x=>x.player.id===b.id)},represented=[a,b].filter(p=>groups[p.id].length),state=represented.length===0?'Mixed':represented.length===1&&signals.length>1?'Aligned':represented.length===1?'Mixed':represented.every(p=>groups[p.id].length>=2)?'Split':'Mixed';return{state,groups,signals}}
 function joinWords(xs){return xs.length<2?xs[0]||'validated evidence':xs.length===2?`${xs[0]} and ${xs[1]}`:`${xs.slice(0,-1).join(', ')}, and ${xs.at(-1)}`}
 function sentenceStart(v){return v?v.charAt(0).toUpperCase()+v.slice(1):v}
 function agreementVerb(xs){return xs.length===1&&xs[0].category!=='current ranks'?'favors':'favor'}
 function agreementText(a,b,x){let clauses=[a,b].filter(p=>x.groups[p.id].length).map(p=>`${joinWords(x.groups[p.id].map(s=>s.category))} ${agreementVerb(x.groups[p.id])} ${safe(p.name)}`);return `${sentenceStart(clauses.join('; '))}. Evidence agreement is ${x.state}.`}
-function changeCards(a,b,k,lead,cls){let gap=Math.abs(points(a,k)-points(b,k)),reference=Math.max(points(a,k),points(b,k)),need=cls==='Toss-Up'?+(Math.max(2,reference*.01)+.1).toFixed(1):+(gap+.1).toFixed(1),runner=lead?(lead.id===a.id?b:a):null,s=sensitivity(a,b),adp=a.adp!=null&&b.adp!=null?`${safe(Number(a.adp)<Number(b.adp)?a.name:b.name)} goes earlier by ${Math.abs(Number(a.adp)-Number(b.adp)).toFixed(1)} picks.`:adpMissingText(a,b);return `<div class="dr-boundary-grid"><article><b>+${num(need)}</b><span>${cls==='Toss-Up'?`A displayed gap above the ${num(need-.1)}-point no-call boundary is required for a Lean.`:`${safe(runner.name)} needs this projection gain to move ahead.`}</span></article><article><b>${safe(s.label)}</b><span>${s.text}</span></article><article><b>${a.adp!=null&&b.adp!=null?'ADP order':'No ADP'}</b><span>${adp}</span></article><article><b>Unavailable</b><span>Schedule/SOS reversal needs ${safe(D.schedule_sos_required_artifact)}.</span></article></div>`}
+function changeCards(a,b,k,lead,cls){let gap=Math.abs(points(a,k)-points(b,k)),reference=Math.max(points(a,k),points(b,k)),boundary=weekly?Math.max(.5,reference*.03):Math.max(2,reference*.01),need=cls==='Toss-Up'?+(boundary+.1).toFixed(1):+(gap+.1).toFixed(1),runner=lead?(lead.id===a.id?b:a):null,s=sensitivity(a,b);return `<div class="dr-boundary-grid"><article><b>+${num(need)}</b><span>${cls==='Toss-Up'?`A displayed gap above the ${num(need-.1)}-point no-call boundary is required for a Lean.`:`${safe(runner.name)} needs this projection gain to move ahead.`}</span></article><article><b>${safe(s.label)}</b><span>${s.text}</span></article><article><b>Unavailable</b><span>Odds were not requested because the isolated credential is unavailable.</span></article><article><b>Check status</b><span>Current Week 1 injury reports are unavailable; a validated availability change can reverse the call.</span></article></div>`}
 function draw(){let a=P[A.value],b=P[B.value],k=F.value;if(!a||!b||a.id===b.id){O.innerHTML='<p class="dr-error">Choose two different players.</p>';return}let ap=points(a,k),bp=points(b,k),gap=Math.abs(ap-bp),gp=pct(gap,Math.max(ap,bp)),lead=projectedLeader(a,b,k),cls=classification(gap,Math.max(ap,bp)),w=cls==='Toss-Up'?null:lead,r=w?(w.id===a.id?b:a):null,e=opinion(a,b),q=coverage(a,b,k,e),agree=agreement(a,b,k,e,cls,lead),call=cls==='Toss-Up'?'No clear edge':agree.state==='Split'?'Split case':agree.state==='Mixed'?`Mixed case — projection favors ${safe(w.name)}`:`${cls==='Lean'?'Prefer':cls==='Edge'?'Recommend':'Strongly prefer'} ${safe(w.name)}`,projection=cls==='Toss-Up'?`Projection edge: Toss-Up. The ${num(gap)}-point difference (${gp.toFixed(1)}%) is inside the deterministic no-call band.`:`Projection edge: ${cls} — ${safe(w.name)}. ${safe(w.name)} projects ${num(gap)} points (${gp.toFixed(1)}%) ahead of ${safe(r.name)}.`,reconcile=agree.signals.length?agreementText(a,b,agree):'No additional directional evidence is available.';
-O.innerHTML=`<section class="dr-verdict"><div><small>Lineup Beat call · ${agree.state} · ${L[k]}</small><h2>${call}</h2><p><strong>${projection}</strong> ${reconcile}</p></div><div class="dr-adv"><b>${gap?'+':''}${num(gap)}</b><span>season-point difference</span></div></section>${playerCards(a,b,k)}<section class="dr-evidence"><div class="dr-evidence-title"><small>Evidence stack 02</small><h2>Why</h2></div><div class="dr-why-grid"><article><h3>Projection edge</h3><p>${cls} · ${num(gap)} points · ${gp.toFixed(1)}% difference.</p></article><article><h3>Ranks</h3><p>${rankText(a,b,k)}</p></article><article><h3>Draft cost</h3><p>${marketText(a,b,k)}</p></article><article><h3>Scoring sensitivity</h3><p>${formatText(a,b)}</p></article><article><h3>Prior-year consistency</h3><p>${historyText(a,b,k)}</p></article><article><h3>Lineup Beat opinion</h3><p>${editorialText(a,b)}</p></article></div></section><section class="dr-cases"><div class="dr-evidence-title"><small>Balanced evidence 03</small><h2>Case for each player</h2></div><div class="dr-case-grid"><article><h3>${safe(a.name)}</h3><ul>${caseFor(a,b,k,e)}</ul></article><article><h3>${safe(b.name)}</h3><ul>${caseFor(b,a,k,e)}</ul></article></div></section><section class="dr-boundary"><div class="dr-boundary-title"><small>Decision boundaries 04</small><h2>What changes the call</h2></div>${changeCards(a,b,k,lead,cls)}</section><section class="dr-quality"><div class="dr-evidence-title"><small>Transparency 05</small><h2>Data coverage and evidence agreement</h2><p><b>Data coverage</b> · ${q.present} of ${q.cats.length} evidence categories available for this pair.</p><p><b>Evidence agreement</b> · ${agree.state}. Classification describes projection-edge size, not probability or confidence.</p></div><div class="dr-quality-grid">${q.cats.map(x=>`<span class="${x[1].toLowerCase().replace(' ','-')}"><b>${x[0]}</b>${x[1]}</span>`).join('')}</div><p class="dr-stamp">Projection ${safe(D.sources.projections.updated_at)} · Ranks ${safe(D.sources.ranks.updated_at)} · ADP through ${safe(D.sources.adp.updated_at)} · History: ${safe(D.sources.history.updated_at)}${e?` · Editorial ${safe(e.evidence_date)} (historical/stale)`:''}</p></section>`}
+O.innerHTML=`<section class="dr-verdict"><div><small>Lineup Beat call · ${agree.state} · ${L[k]}</small><h2>${call}</h2><p><strong>${projection}</strong> ${reconcile}</p></div><div class="dr-adv"><b>${gap?'+':''}${num(gap)}</b><span>Week 1 point difference</span></div></section>${playerCards(a,b,k)}<section class="dr-evidence"><div class="dr-evidence-title"><small>Evidence stack 02</small><h2>Why</h2></div><div class="dr-why-grid"><article><h3>Our Week 1 projection</h3><p>${cls} · ${num(gap)} points · ${gp.toFixed(1)}% difference.</p></article><article><h3>What the market says</h3><p>Unavailable — zero odds requests were made because the isolated credential is unavailable.</p></article><article><h3>Opponent matchup</h3><p>${safe(a.name)}: ${safe(a.matchup?.label)} factor ${Number(a.matchup?.projection_factor||1).toFixed(2)}. ${safe(b.name)}: ${safe(b.matchup?.label)} factor ${Number(b.matchup?.projection_factor||1).toFixed(2)}.</p></article><article><h3>Expected opportunity</h3><p>${safe(a.name)}: ${opportunity(a)}. ${safe(b.name)}: ${opportunity(b)}.</p></article><article><h3>Availability</h3><p>Both are active on the captured roster. Current Week 1 injury reports are unavailable.</p></article><article><h3>Prior-year consistency</h3><p>${historyText(a,b,k)}</p></article></div></section><section class="dr-cases"><div class="dr-evidence-title"><small>Balanced evidence 03</small><h2>Case for each player</h2></div><div class="dr-case-grid"><article><h3>${safe(a.name)}</h3><ul>${caseFor(a,b,k,e)}</ul></article><article><h3>${safe(b.name)}</h3><ul>${caseFor(b,a,k,e)}</ul></article></div></section><section class="dr-boundary"><div class="dr-boundary-title"><small>Decision boundaries 04</small><h2>What changes the call</h2></div>${changeCards(a,b,k,lead,cls)}</section><section class="dr-quality"><div class="dr-evidence-title"><small>Transparency 05</small><h2>Data coverage and evidence agreement</h2><p><b>Data coverage</b> · ${q.present} of ${q.cats.length} evidence categories available for this pair.</p><p><b>Evidence agreement</b> · ${agree.state}. Classification describes projection-edge size, not probability or confidence.</p></div><div class="dr-quality-grid">${q.cats.map(x=>`<span class="${x[1].toLowerCase().replace(' ','-')}"><b>${x[0]}</b>${x[1]}</span>`).join('')}</div><p class="dr-stamp">Lineup Beat model ${safe(D.sources.model.updated_at)} · History: ${safe(D.sources.history.updated_at)} · Matchup: 2025 context · Market: unavailable${e?` · Editorial ${safe(e.evidence_date)} (historical/stale)`:''}</p></section>`}
 function candidates(which){let other=which===A?B:A,base=D.players.filter(p=>p.id!==other.value);if(which===B&&!X.checked&&P[A.value])base=base.filter(p=>p.position===P[A.value].position);return base}
 function setup(select,input,list){let active=-1;function close(){list.hidden=true;input.setAttribute('aria-expanded','false');active=-1}function show(){let q=input.value.toLowerCase(),rows=candidates(select).filter(p=>!q||(`${p.name} ${p.team} ${p.position}`).toLowerCase().includes(q)).slice(0,40);list.innerHTML=rows.length?rows.map((p,i)=>`<li role="option" data-id="${safe(p.id)}" id="${list.id}-${i}">${safe(p.name)}<small>${safe(p.team)} · ${safe(p.position)}</small></li>`).join(''):'<li class="dr-no-result">No matching players</li>';list.hidden=false;input.setAttribute('aria-expanded','true')}function choose(id){let p=P[id];if(!p)return;select.value=id;input.value=`${p.name} · ${p.team} ${p.position}`;close();select.dispatchEvent(new Event('change'))}input.addEventListener('focus',()=>{input.select();show()});input.addEventListener('input',show);input.addEventListener('keydown',e=>{let rows=[...list.querySelectorAll('[role=option]')];if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();active=Math.max(0,Math.min(rows.length-1,active+(e.key==='ArrowDown'?1:-1)));rows.forEach((x,i)=>x.setAttribute('aria-selected',i===active?'true':'false'));if(rows[active])rows[active].scrollIntoView({block:'nearest'})}else if(e.key==='Enter'&&rows[active]){e.preventDefault();choose(rows[active].dataset.id)}else if(e.key==='Escape')close()});list.addEventListener('mousedown',e=>{let row=e.target.closest('[role=option]');if(row){e.preventDefault();choose(row.dataset.id)}});select.addEventListener('change',()=>{let p=P[select.value];if(p)input.value=`${p.name} · ${p.team} ${p.position}`});document.addEventListener('click',e=>{if(!e.target.closest('.dr-picker'))close()});return{refresh:show}}
 let Q=new URLSearchParams(location.search);A.value=P[Q.get('a')]?Q.get('a'):__DEFAULT_A__;B.value=P[Q.get('b')]&&Q.get('b')!==A.value?Q.get('b'):__DEFAULT_B__;if(F.querySelector(`option[value="${Q.get('format')}"]`))F.value=Q.get('format');let PA=setup(A,document.getElementById('dr-a-search'),document.getElementById('dr-a-list')),PB=setup(B,document.getElementById('dr-b-search'),document.getElementById('dr-b-list'));A.dispatchEvent(new Event('change'));B.dispatchEvent(new Event('change'));A.addEventListener('change',()=>{if(!X.checked&&P[A.value]&&(!P[B.value]||P[B.value].position!==P[A.value].position||A.value===B.value)){let next=D.players.find(p=>p.id!==A.value&&p.position===P[A.value].position);if(next){B.value=next.id;B.dispatchEvent(new Event('change'))}}draw()});[B,F].forEach(x=>x.addEventListener('change',draw));X.addEventListener('change',()=>{A.dispatchEvent(new Event('change'));PB.refresh()});document.querySelectorAll('.dr-open').forEach(x=>x.addEventListener('click',()=>{A.value=x.dataset.a;B.value=x.dataset.b;A.dispatchEvent(new Event('change'));B.dispatchEvent(new Event('change'));draw();document.getElementById('dr-compare-title').scrollIntoView({behavior:'smooth'})}));draw()})();'''
@@ -428,7 +465,7 @@ def write_decision_pages(homepage: Path, payload: dict, source_page: str) -> tup
     college = homepage.parent / "decision-room" / "college" / "index.html"
     nfl.parent.mkdir(parents=True, exist_ok=True)
     college.parent.mkdir(parents=True, exist_ok=True)
-    nfl.write_text(base.replace("</head>", "<title>2026 NFL Decision Room | Lineup Beat</title></head>", 1))
+    nfl.write_text(base.replace("</head>", "<title>2026 NFL Week 1 Decision Room | Lineup Beat</title></head>", 1))
     college_block = (college_decision_room.SHELL
                      + f'<script>{college_decision_room.JS}</script>')
     college_doc = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Compare validated 2026 College Week 1 fantasy projections and see what changes the pick."><title>College Week 1 Decision Room | Lineup Beat</title>''' + head_style_text + '''</head><body data-default-sport="college">''' + sport_header("college", "decision") + college_block + seo.site_footer() + '''</body></html>'''
@@ -485,7 +522,7 @@ def clean_home_document(page: str, homepage: str) -> str:
 
 
 def inject(path: Path) -> None:
-    payload = decision_data.load_season(2026)
+    payload = decision_data.load_weekly(2026, 1)
     college_payload = college_decision_data.load_weekly()
     page = path.read_text()
     if "<body" not in page or "</head>" not in page:
@@ -536,7 +573,7 @@ def inject(path: Path) -> None:
         page = page.replace("</head>", style + "\n</head>", 1)
     page = clean_home_document(page, block)
     path.write_text(page)
-    print(f"built 2026 season Decision Room with {len(payload['players'])} players in {path}")
+    print(f"built 2026 Week 1 Decision Room with {len(payload['players'])} active players in {path}")
     print(f"built complete reviewed Wire in {wire_page}")
     print(f"built NFL Decision Room in {nfl_page}")
     print(f"built College Decision Room in {college_page}")

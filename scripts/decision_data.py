@@ -17,6 +17,19 @@ DISPLAY = ROOT / "data" / "wire_display_fantasy.json"
 HISTORY = ROOT / "data" / "nfl_player_consistency_2025.json"
 EDITORIAL = ROOT / "data" / "comparison_editorial_opinions.json"
 ADP_META = ROOT / "rosters" / "adp_meta.json"
+WEEK1 = ROOT / "data" / "week1" / "2026" / "v1.0" / "nfl_week1_projections.json"
+
+
+def load_weekly(season: int = 2026, week: int = 1) -> dict:
+    """Load the immutable Lineup Beat-owned weekly projection artifact."""
+    if (season, week) != (2026, 1):
+        raise ValueError("only the validated 2026 Week 1 artifact is available")
+    payload = json.loads(WEEK1.read_text())
+    if (payload.get("mode"), payload.get("season"), payload.get("week")) != ("weekly", season, week):
+        raise ValueError("unexpected NFL weekly projection identity")
+    if len(payload.get("players", [])) + len(payload.get("excluded_players", [])) != 177:
+        raise ValueError("NFL weekly coverage no longer reconciles to the Decision Room set")
+    return payload
 
 
 def slug(text: str) -> str:

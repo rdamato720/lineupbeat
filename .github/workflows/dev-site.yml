@@ -41,6 +41,7 @@ jobs:
           python scripts/test_visual_regressions.py
           python scripts/test_sport_experiences.py
           python scripts/test_college_decision_room.py
+          python scripts/test_week1_intelligence.py
           python scripts/test_feedback.py
           python -m beatwire.cli doctor --sport nfl
           python scripts/sync_home_nav.py --check

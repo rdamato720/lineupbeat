@@ -1,0 +1,279 @@
+{
+  "assets": [
+    {
+      "bytes": 511720,
+      "filename": "games.csv.gz",
+      "license": {
+        "attribution_required": true,
+        "derived_use_permitted": true,
+        "name": "Creative Commons Attribution 4.0 International",
+        "share_alike": false,
+        "spdx": "CC-BY-4.0",
+        "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
+      },
+      "provenance": "nflverse/nflverse-data release asset; schedules are maintained by Lee Sharpe's nfldata project and accessed through nflreadr",
+      "release": "schedules",
+      "release_sha256": "5aa0054db97cd25185d09ab3a97375bdda316c08b3d18dc9785bfb7cbd2a2a62",
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "etag": "\"0x8DF0857EF3CFF9A\"",
+        "last-modified": "Tue, 01 Sep 2026 18:36:27 GMT"
+      },
+      "response_sha256": "5aa0054db97cd25185d09ab3a97375bdda316c08b3d18dc9785bfb7cbd2a2a62",
+      "retrieved_at": "2026-09-01T18:40:00.816267+00:00",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv.gz"
+    },
+    {
+      "bytes": 1244175,
+      "filename": "stats_player_week_2024.csv.gz",
+      "license": {
+        "attribution_required": true,
+        "derived_use_permitted": true,
+        "name": "Creative Commons Attribution 4.0 International",
+        "share_alike": false,
+        "spdx": "CC-BY-4.0",
+        "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
+      },
+      "provenance": "nflverse/nflverse-data release asset accessed through nflreadr",
+      "release": "stats_player",
+      "release_sha256": "61fc9a44706522218a4448001706e3fec65ebbb97c1d9c5746ceef364989125d",
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "etag": "\"0x8DEF95ACC875BCD\"",
+        "last-modified": "Thu, 13 Aug 2026 16:49:10 GMT"
+      },
+      "response_sha256": "61fc9a44706522218a4448001706e3fec65ebbb97c1d9c5746ceef364989125d",
+      "retrieved_at": "2026-09-01T18:40:01.202579+00:00",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2024.csv.gz"
+    },
+    {
+      "bytes": 1262421,
+      "filename": "stats_player_week_2025.csv.gz",
+      "license": {
+        "attribution_required": true,
+        "derived_use_permitted": true,
+        "name": "Creative Commons Attribution 4.0 International",
+        "share_alike": false,
+        "spdx": "CC-BY-4.0",
+        "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
+      },
+      "provenance": "nflverse/nflverse-data release asset accessed through nflreadr",
+      "release": "stats_player",
+      "release_sha256": "c7401e321bdb369443f3280b9acd74ba6e16d82e710383bf1c01acabfebeac0b",
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "etag": "\"0x8DEF95B1AD8390C\"",
+        "last-modified": "Thu, 13 Aug 2026 16:51:22 GMT"
+      },
+      "response_sha256": "c7401e321bdb369443f3280b9acd74ba6e16d82e710383bf1c01acabfebeac0b",
+      "retrieved_at": "2026-09-01T18:40:01.558297+00:00",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2025.csv.gz"
+    },
+    {
+      "bytes": 76675,
+      "filename": "stats_team_week_2024.csv.gz",
+      "license": {
+        "attribution_required": true,
+        "derived_use_permitted": true,
+        "name": "Creative Commons Attribution 4.0 International",
+        "share_alike": false,
+        "spdx": "CC-BY-4.0",
+        "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
+      },
+      "provenance": "nflverse/nflverse-data release asset accessed through nflreadr",
+      "release": "stats_team",
+      "release_sha256": "6f27957fd1d3a759a7160586bf0558cea010a83f9cb3ee68a9bda04e35674c14",
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "etag": "\"0x8DEF95ACE062A0E\"",
+        "last-modified": "Thu, 13 Aug 2026 16:49:13 GMT"
+      },
+      "response_sha256": "6f27957fd1d3a759a7160586bf0558cea010a83f9cb3ee68a9bda04e35674c14",
+      "retrieved_at": "2026-09-01T18:40:01.862105+00:00",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_week_2024.csv.gz"
+    },
+    {
+      "bytes": 76602,
+      "filename": "stats_team_week_2025.csv.gz",
+      "license": {
+        "attribution_required": true,
+        "derived_use_permitted": true,
+        "name": "Creative Commons Attribution 4.0 International",
+        "share_alike": false,
+        "spdx": "CC-BY-4.0",
+        "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
+      },
+      "provenance": "nflverse/nflverse-data release asset accessed through nflreadr",
+      "release": "stats_team",
+      "release_sha256": "5348409f099b285877641446e869dcda3179464584dd71f73becc087219b0383",
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "etag": "\"0x8DEF95B1C17C057\"",
+        "last-modified": "Thu, 13 Aug 2026 16:51:24 GMT"
+      },
+      "response_sha256": "5348409f099b285877641446e869dcda3179464584dd71f73becc087219b0383",
+      "retrieved_at": "2026-09-01T18:40:02.212493+00:00",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_week_2025.csv.gz"
+    },
+    {
+      "bytes": 502822,
+      "filename": "snap_counts_2024.csv.gz",
+      "license": {
+        "attribution_required": true,
+        "derived_use_permitted": true,
+        "name": "Creative Commons Attribution 4.0 International",
+        "share_alike": false,
+        "spdx": "CC-BY-4.0",
+        "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
+      },
+      "provenance": "nflverse/nflverse-data release asset accessed through nflreadr",
+      "release": "snap_counts",
+      "release_sha256": "fe1d819db55d6e333057a8efcec52e8506ef111c7961b0e0411310393bb912bb",
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "etag": "\"0x8DE04A4C1F5E443\"",
+        "last-modified": "Mon, 06 Oct 2025 06:51:20 GMT"
+      },
+      "response_sha256": "fe1d819db55d6e333057a8efcec52e8506ef111c7961b0e0411310393bb912bb",
+      "retrieved_at": "2026-09-01T18:40:02.566516+00:00",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2024.csv.gz"
+    },
+    {
+      "bytes": 504034,
+      "filename": "snap_counts_2025.csv.gz",
+      "license": {
+        "attribution_required": true,
+        "derived_use_permitted": true,
+        "name": "Creative Commons Attribution 4.0 International",
+        "share_alike": false,
+        "spdx": "CC-BY-4.0",
+        "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
+      },
+      "provenance": "nflverse/nflverse-data release asset accessed through nflreadr",
+      "release": "snap_counts",
+      "release_sha256": "700bef40cc5db8917b49e2eca93d7091dbd4a3cd740b2fd4dfa1795f7b9187db",
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "etag": "\"0x8DE67E0B30C25D3\"",
+        "last-modified": "Mon, 09 Feb 2026 13:39:50 GMT"
+      },
+      "response_sha256": "700bef40cc5db8917b49e2eca93d7091dbd4a3cd740b2fd4dfa1795f7b9187db",
+      "retrieved_at": "2026-09-01T18:40:02.922436+00:00",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2025.csv.gz"
+    },
+    {
+      "bytes": 340914,
+      "filename": "roster_2026.csv.gz",
+      "license": {
+        "attribution_required": true,
+        "derived_use_permitted": true,
+        "name": "Creative Commons Attribution 4.0 International",
+        "share_alike": false,
+        "spdx": "CC-BY-4.0",
+        "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
+      },
+      "provenance": "nflverse/nflverse-data release asset accessed through nflreadr",
+      "release": "rosters",
+      "release_sha256": "bf492c7e4111b66591e4ed4c9605ca2822037437f5dffbb331a142548c3d164a",
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "etag": "\"0x8DF0822C46D782F\"",
+        "last-modified": "Tue, 01 Sep 2026 12:15:52 GMT"
+      },
+      "response_sha256": "bf492c7e4111b66591e4ed4c9605ca2822037437f5dffbb331a142548c3d164a",
+      "retrieved_at": "2026-09-01T18:40:03.321668+00:00",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2026.csv.gz"
+    },
+    {
+      "bytes": 9628253,
+      "filename": "depth_charts_2026.csv.gz",
+      "license": {
+        "attribution_required": true,
+        "derived_use_permitted": true,
+        "name": "Creative Commons Attribution 4.0 International",
+        "share_alike": false,
+        "spdx": "CC-BY-4.0",
+        "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
+      },
+      "provenance": "nflverse/nflverse-data release asset accessed through nflreadr",
+      "release": "depth_charts",
+      "release_sha256": "9905db95882cbbb190adb823630262f12909a16a3bd363f5d5fd3e4fa406a27a",
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "etag": "\"0x8DF082362434F25\"",
+        "last-modified": "Tue, 01 Sep 2026 12:20:17 GMT"
+      },
+      "response_sha256": "9905db95882cbbb190adb823630262f12909a16a3bd363f5d5fd3e4fa406a27a",
+      "retrieved_at": "2026-09-01T18:40:03.859000+00:00",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv.gz"
+    },
+    {
+      "bytes": 19362351,
+      "filename": "play_by_play_2024.csv.gz",
+      "license": {
+        "attribution_required": true,
+        "derived_use_permitted": true,
+        "name": "Creative Commons Attribution 4.0 International",
+        "share_alike": false,
+        "spdx": "CC-BY-4.0",
+        "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
+      },
+      "provenance": "nflverse/nflverse-data release asset accessed through nflreadr",
+      "release": "pbp",
+      "release_sha256": "23370d5d10f8104d80d46a1fc5e61f4f6f5a3263fe96fe2dd629913cfcb08c06",
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "etag": "\"0x8DEF93619008762\"",
+        "last-modified": "Thu, 13 Aug 2026 12:26:27 GMT"
+      },
+      "response_sha256": "23370d5d10f8104d80d46a1fc5e61f4f6f5a3263fe96fe2dd629913cfcb08c06",
+      "retrieved_at": "2026-09-01T18:40:04.614098+00:00",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2024.csv.gz"
+    },
+    {
+      "bytes": 19105296,
+      "filename": "play_by_play_2025.csv.gz",
+      "license": {
+        "attribution_required": true,
+        "derived_use_permitted": true,
+        "name": "Creative Commons Attribution 4.0 International",
+        "share_alike": false,
+        "spdx": "CC-BY-4.0",
+        "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
+      },
+      "provenance": "nflverse/nflverse-data release asset accessed through nflreadr",
+      "release": "pbp",
+      "release_sha256": "2f135887790a013fd004e609e37096bb4816d5cc80b9f19122e1bad478961978",
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "etag": "\"0x8DEF9360DE7D564\"",
+        "last-modified": "Thu, 13 Aug 2026 12:26:09 GMT"
+      },
+      "response_sha256": "2f135887790a013fd004e609e37096bb4816d5cc80b9f19122e1bad478961978",
+      "retrieved_at": "2026-09-01T18:40:05.243146+00:00",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2025.csv.gz"
+    }
+  ],
+  "generated_at": "2026-09-01T18:40:05.243210+00:00",
+  "license_review": {
+    "attribution_required": true,
+    "derived_use_permitted": true,
+    "name": "Creative Commons Attribution 4.0 International",
+    "share_alike": false,
+    "spdx": "CC-BY-4.0",
+    "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
+  },
+  "provider_requests": {
+    "blocker": "THE_ODDS_API_KEY was unavailable in every normal local/development environment; zero requests were made.",
+    "cost_usd": 0,
+    "model_api": 0,
+    "odds": 0,
+    "player_props": 0,
+    "quota_headers": {}
+  },
+  "schema_version": "lineupbeat-week1-provenance-v1",
+  "unavailable": {
+    "current_injuries": "No injuries_2026 release asset was available in nflverse-data at capture time.",
+    "odds": "THE_ODDS_API_KEY was unavailable in every normal local/development environment; zero requests were made."
+  }
+}

@@ -52,6 +52,11 @@ def load_weekly() -> dict:
             "home": row.get("home"),
             "game_date": row.get("gameDate"),
             "implied_total": row.get("impliedTotal"),
+            "expected_opportunity": {
+                "pass_attempts": row.get("passAtt"),
+                "carries": row.get("rushAtt"),
+                "receptions": row.get("rec"),
+            },
             "projection_confidence": row.get("confidence"),
             "history": {}, "history_season": None,
             "formats": {"yahoo": {
@@ -71,6 +76,8 @@ def load_weekly() -> dict:
         "projection_horizon": "Week 1 projections",
         "scoring_format": "yahoo", "scoring_label": raw["scoring"],
         "updated_at": raw["generatedAt"], "adp_available": False,
+        "market": {"state": "frozen_single_observation",
+                   "label": "Frozen ESPN lines captured 2026-08-30; not multi-book consensus"},
         "conference_available": False, "counts": raw["counts"],
         "identity_coverage": {"resolved": len(ids), "total": len(players)},
         "players": players,
@@ -95,6 +102,8 @@ def load_weekly() -> dict:
             "editorial": {"label": "Lineup Beat college editorial opinion", "updated_at": None},
             "schedule_sos": {"label": schedule_payload["source"],
                              "updated_at": schedule_payload["generated_at"]},
+            "market": {"label": "Frozen ESPN line; single observation, not consensus",
+                       "updated_at": schedule_payload["generated_at"]},
         },
     }
 
