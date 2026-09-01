@@ -257,18 +257,21 @@ def check_homepage(root, decision_room=False):
               'id="lineup-beat-home"' in text and 'id="decision-room"' not in text)
         check("the homepage has complete primary navigation",
               all(f'>{label}<' in text for label in
-                  ("NFL", "College", "Decision", "Rankings", "Projections"))
+                  ("NFL", "COLLEGE", "Decision", "Rankings", "Projections"))
               and "The Beat" not in text)
         check("the context-aware NFL player search remains available",
               'id="site-player-search"' in text
               and 'placeholder="Search NFL players"' in text)
         check("the homepage has the required decision sections",
               all(label in text for label in
-                  ("Choose your context", "Today’s Decision Board",
-                   "Methodology &amp; accountability"))
+                  ("MAKE YOUR NEXT MOVE", "WHERE WE SEE IT DIFFERENTLY",
+                   "CLOSEST CALLS"))
+              and "NFL or College" not in text
+              and "Today’s Decision Board" not in text
               and "The latest from The Beat" not in text)
         check("legacy sport query states have compatibility routing",
-              "get('sport')==='college'" in text and "get('sport')==='nfl'" in text)
+              "new URLSearchParams(location.search).get" in text
+              and "pushState" in text and "popstate" in text)
         college_payload = root / "data" / "decision-room-college.json"
         check("the College Decision Room payload is isolated from the homepage",
               college_payload.is_file() and '"CFP_' not in text,
