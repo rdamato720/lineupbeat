@@ -46,14 +46,19 @@ def write_member(archive: zipfile.ZipFile, name: str, data: bytes) -> None:
     archive.writestr(info, data, compresslevel=9)
 
 
+def write_package(package: Path) -> None:
+    package.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(package, "w") as archive:
+        for name in RUNTIME_FILES:
+            write_member(archive, name, (EXTENSION / name).read_bytes())
+
+
 def build(output: Path) -> dict:
     manifest = json.loads((EXTENSION / "manifest.json").read_text())
     version = manifest["version"]
     output.mkdir(parents=True, exist_ok=True)
     package = output / f"lineupbeat-espn-my-team-beta-{version}.zip"
-    with zipfile.ZipFile(package, "w") as archive:
-        for name in RUNTIME_FILES:
-            write_member(archive, name, (EXTENSION / name).read_bytes())
+    write_package(package)
 
     listing = output / "listing-materials"
     if listing.exists():

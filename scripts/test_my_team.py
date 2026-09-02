@@ -5,6 +5,7 @@ import json
 import sys
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -119,7 +120,7 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertIn('id="mt-demo"', page)
         self.assertIn("hidden>Load reviewer demo roster", page)
 
-    def test_build_writes_public_model_and_support_pages_but_no_public_zip(self):
+    def test_build_writes_public_model_support_and_validated_development_zip(self):
         with tempfile.TemporaryDirectory() as directory:
             site = Path(directory)
             stale = site / "my-team" / "lineupbeat-espn-extension.zip"
@@ -130,7 +131,15 @@ class MyTeamArtifactTests(unittest.TestCase):
             self.assertTrue((site / "my-team" / "extension" / "index.html").exists())
             privacy = site / "my-team" / "extension" / "privacy" / "index.html"
             self.assertTrue(privacy.exists())
-            self.assertFalse((site / "my-team" / "lineupbeat-espn-extension.zip").exists())
+            package = site / "my-team" / "lineupbeat-espn-extension.zip"
+            self.assertTrue(package.exists())
+            with zipfile.ZipFile(package) as archive:
+                packaged = json.loads(archive.read("manifest.json"))
+                self.assertEqual(packaged["version"], "0.2.0")
+                self.assertEqual(
+                    archive.namelist(),
+                    list(build_my_team.build_chrome_store_bundle.RUNTIME_FILES),
+                )
             model = json.loads((site / "data" / "my-team-week1.json").read_text())
             self.assertEqual(model["schemaVersion"], "lineupbeat-my-team-week1-v1")
             self.assertIn("chrome.storage.local", privacy.read_text())
@@ -164,6 +173,7 @@ class MyTeamArtifactTests(unittest.TestCase):
         for text in (guide, readme):
             self.assertIn("Save roster locally for My Team", text)
             self.assertNotIn("Send roster to Lineup Beat", text)
+        self.assertIn("Download version 0.2.0", guide)
         self.assertIn("chrome.storage.local", privacy)
         self.assertIn("No ESPN password, cookie, session token", privacy)
         self.assertIn("not placed in a URL or sent to a Lineup Beat server", privacy)

@@ -22,6 +22,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import zipfile
 from html import unescape
 from pathlib import Path
 
@@ -178,8 +179,28 @@ def check_my_team(root):
           all(path.is_file() for path in assets),
           "; ".join(str(path) for path in assets if not path.is_file()))
     public_zip = root / "my-team" / "lineupbeat-espn-extension.zip"
-    check("the Chrome Web Store package is not publicly deployed",
-          not public_zip.exists(), str(public_zip))
+    try:
+        with zipfile.ZipFile(public_zip) as archive:
+            manifest = json.loads(archive.read("manifest.json"))
+            worker = archive.read("background.js").decode()
+            package_files = archive.namelist()
+    except (OSError, KeyError, ValueError, zipfile.BadZipFile):
+        manifest, worker, package_files = {}, "", []
+    scripts = manifest.get("content_scripts") or [{}, {}]
+    matches = scripts[1].get("matches") if len(scripts) > 1 else None
+    check("the development download is the restricted version 0.2.0 package",
+          manifest.get("version") == "0.2.0"
+          and matches == ["https://lineupbeat-dev.pages.dev/my-team/*"]
+          and "localhost" not in json.dumps(manifest)
+          and "127.0.0.1" not in json.dumps(manifest)
+          and "https://lineupbeat.com" not in json.dumps(manifest)
+          and package_files[:3] == ["manifest.json", "background.js", "content.js"])
+    check("the development download validates capture, retrieval, and clear senders",
+          "ESPN_ORIGIN = 'https://fantasy.espn.com'" in worker
+          and "ESPN_PATH = '/football/'" in worker
+          and "MY_TEAM_ORIGIN = 'https://lineupbeat-dev.pages.dev'" in worker
+          and "MY_TEAM_PATH = '/my-team/'" in worker
+          and worker.count("return reject(sendResponse)") == 4)
     support = root / "my-team" / "extension" / "index.html"
     privacy = root / "my-team" / "extension" / "privacy" / "index.html"
     support_text = support.read_text() if support.is_file() else ""
@@ -191,9 +212,10 @@ def check_my_team(root):
           and "not placed in a URL or sent to a Lineup Beat server" in privacy_text
           and "Disconnect &amp; clear" in privacy_text
           and "No ESPN password, cookie, session token" in privacy_text)
-    check("extension support exposes no public package download",
-          "lineupbeat-espn-extension.zip" not in support_text
-          and "No public package download" in support_text)
+    check("extension support exposes the labeled development package",
+          'href="/my-team/lineupbeat-espn-extension.zip"' in support_text
+          and "Download version 0.2.0" in support_text
+          and "Development-only package" in support_text)
     model_path = root / "data" / "my-team-week1.json"
     try:
         model = json.loads(model_path.read_text())

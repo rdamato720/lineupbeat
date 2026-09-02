@@ -188,15 +188,19 @@ class ChromeStoreBundleTests(unittest.TestCase):
         self.assertIn("No credentials are required", listing)
         self.assertNotIn("Ralph's private", listing)
 
-    def test_privacy_and_support_are_public_but_package_is_not(self):
-        with tempfile.TemporaryDirectory() as directory:
+    def test_privacy_support_and_validated_package_are_public(self):
+        with tempfile.TemporaryDirectory() as directory, tempfile.TemporaryDirectory() as bundle:
             site = Path(directory)
             build_my_team.build(site)
             privacy = site / "my-team" / "extension" / "privacy" / "index.html"
             support = site / "my-team" / "extension" / "index.html"
             self.assertTrue(privacy.is_file())
             self.assertTrue(support.is_file())
-            self.assertFalse((site / "my-team" / "lineupbeat-espn-extension.zip").exists())
+            package = site / "my-team" / "lineupbeat-espn-extension.zip"
+            report = build_chrome_store_bundle.build(Path(bundle))
+            expected = Path(bundle) / report["package"]
+            self.assertEqual(package.read_bytes(), expected.read_bytes())
+            self.assertIn("Download version 0.2.0", support.read_text())
             text = privacy.read_text()
             for required in (
                 "chrome.storage.local", "No roster upload", "No ESPN password, cookie, session token",
