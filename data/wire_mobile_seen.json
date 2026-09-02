@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 728,
+ "count": 735,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -8047,6 +8047,83 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.007084
+  },
+  {
+   "candidate_id": "mobile:onsi:3acbe477da651b0b8c87",
+   "player_id": "00-0036442",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/want-to-see-him-go-somewhere-else-top-nfl-draft-analyst-hopes-joe-burrow-leaves-cincinnati-if-bengals-fail-01m1gwnkdzzq",
+   "attempted_at": "2026-09-02T15:30:21+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:30:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004888
+  },
+  {
+   "candidate_id": "mobile:onsi:4b4ca68814900faef55a",
+   "player_id": "00-0034960",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-why-the-are-suddenly-clearing-cap-space-ahead-of-week-1",
+   "attempted_at": "2026-09-02T15:30:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:30:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005364
+  },
+  {
+   "candidate_id": "mobile:onsi:8237e03143f49726ebfe",
+   "player_id": "00-0037004",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-why-the-are-suddenly-clearing-cap-space-ahead-of-week-1",
+   "attempted_at": "2026-09-02T15:30:30+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:30:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003868
+  },
+  {
+   "candidate_id": "mobile:onsi:8b41e124abcf56c48da4",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/george-kittle-injury-update-is-positive-news-for-fantasy-football-owners-but-bad-news-for-one-49ers-pass-catcher",
+   "attempted_at": "2026-09-02T15:30:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:30:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00581
+  },
+  {
+   "candidate_id": "mobile:onsi:a88148f0c9f148c44e7a",
+   "player_id": "00-0033288",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/george-kittle-injury-update-is-positive-news-for-fantasy-football-owners-but-bad-news-for-one-49ers-pass-catcher",
+   "attempted_at": "2026-09-02T15:30:36+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T15:30:40+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004726
+  },
+  {
+   "candidate_id": "mobile:article:02181a7585a2114bd04b",
+   "player_id": "00-0033921",
+   "source_url": "https://www.pewterreport.com/rueben-bain-jr-emeka-egbuka-bucs-injury/",
+   "attempted_at": "2026-09-02T15:30:40+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:30:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004006
+  },
+  {
+   "candidate_id": "mobile:article:6a4a1b9b0269798e0aa6",
+   "player_id": "00-0040129",
+   "source_url": "https://www.pewterreport.com/rueben-bain-jr-emeka-egbuka-bucs-injury/",
+   "attempted_at": "2026-09-02T15:30:43+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-09-02T15:30:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004018
   }
  ]
 }
