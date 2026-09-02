@@ -273,8 +273,14 @@ class DecisionRoomRenderingTests(unittest.TestCase):
 
     def test_development_workflow_builds_before_protection(self):
         workflow = (page.decision_data.ROOT / ".github/workflows/dev-site.yml").read_text()
-        self.assertLess(workflow.index("build_decision_room.py"),
-                        workflow.index("dev_site.py protect"))
+        if 'build_nfl_v15_development.py --development' in workflow:
+            runner = (page.decision_data.ROOT / 'scripts/build_nfl_v15_development.py').read_text()
+            self.assertLess(runner.index("run('build_decision_room')"),
+                            runner.index('dev_site.protect('))
+            self.assertLess(runner.index('dev_site.protect('), runner.index('dev_site.verify('))
+        else:
+            self.assertLess(workflow.index("build_decision_room.py"),
+                            workflow.index("dev_site.py protect"))
         self.assertIn("verify_deploy_artifact.py site --decision-room", workflow)
 
 

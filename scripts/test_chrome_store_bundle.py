@@ -227,7 +227,11 @@ class ChromeStoreBundleTests(unittest.TestCase):
 
     def test_public_workflow_uploads_only_scoped_store_artifacts(self):
         workflow = (ROOT / ".github" / "workflows" / "dev-site.yml").read_text()
-        self.assertIn("python scripts/build_chrome_store_bundle.py", workflow)
+        if 'build_nfl_v15_development.py --development' in workflow:
+            runner = (ROOT / 'scripts/build_nfl_v15_development.py').read_text()
+            self.assertIn("run('build_chrome_store_bundle')", runner)
+        else:
+            self.assertIn("python scripts/build_chrome_store_bundle.py", workflow)
         self.assertIn("lineupbeat-espn-cws-submission-${{ github.run_id }}", workflow)
         self.assertIn("lineupbeat-espn-cws-listing-${{ github.run_id }}", workflow)
         self.assertIn(
