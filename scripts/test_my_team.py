@@ -135,7 +135,7 @@ class MyTeamArtifactTests(unittest.TestCase):
             self.assertTrue(package.exists())
             with zipfile.ZipFile(package) as archive:
                 packaged = json.loads(archive.read("manifest.json"))
-                self.assertEqual(packaged["version"], "0.2.3")
+                self.assertEqual(packaged["version"], "0.2.4")
                 self.assertEqual(len(archive.namelist()), 8)
                 self.assertEqual(
                     archive.namelist(),
@@ -179,7 +179,7 @@ class MyTeamArtifactTests(unittest.TestCase):
         for text in (guide, readme):
             self.assertIn("Save roster locally for My Team", text)
             self.assertNotIn("Send roster to Lineup Beat", text)
-        self.assertIn("Download version 0.2.3", guide)
+        self.assertIn("Download version 0.2.4", guide)
         self.assertIn("chrome.storage.local", privacy)
         self.assertIn("No ESPN password, cookie, session token", privacy)
         self.assertIn("not placed in a URL or sent to a Lineup Beat server", privacy)

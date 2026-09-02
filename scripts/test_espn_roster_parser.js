@@ -125,6 +125,10 @@ async function main() {
   assert.equal(rosterTable.querySelectorAll('tr').length, 12);
   assert(rosterTable.querySelectorAll('tr')[1].children.length === 14,
     'the live-shape fixture must retain the observed 14-cell row');
+  const splitMetadata = rosterTable.querySelectorAll('.player-column__position');
+  assert.equal(splitMetadata.length, 9);
+  assert(splitMetadata.every(node => node.children.length === 2),
+    'the live-shape fixture must keep team and position in separate sibling nodes');
   const inspection = parser.inspect(fixture);
   const roster = parser.requireRoster(fixture);
   assert.equal(roster.length, 9);
@@ -154,6 +158,15 @@ async function main() {
   assert.deepEqual(untrustedInspection.roster, []);
   assert.equal(untrustedInspection.diagnostics.rejections.missingProviderId, 1,
     'team logos and numeric links outside the mapped player cell cannot provide identity');
+
+  const unboundedSplit = parseFixture(`
+    <html><body><table><thead><tr><th>SLOT</th><th>PLAYER</th></tr></thead><tbody>
+      <tr><td>QB</td><td><img src="https://a.espncdn.com/i/headshots/nfl/players/full/950003.png"><div>Sanitized Unbounded</div><div>BUF</div><div>QB</div></td></tr>
+    </tbody></table></body></html>`);
+  const unboundedInspection = parser.inspect(unboundedSplit);
+  assert.deepEqual(unboundedInspection.roster, []);
+  assert.equal(unboundedInspection.diagnostics.rejections.invalidIdentityText, 1,
+    'separate team and position tokens require one exact two-child metadata container');
 
   const ambiguous = parseFixture(`
     <html><body><table><thead><tr><th>PLAYER</th><th>SLOT</th></tr></thead><tbody>

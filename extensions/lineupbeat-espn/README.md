@@ -6,7 +6,7 @@ store passwords or session tokens, collect manager identities, or send a
 roster to a Lineup Beat server.
 
 1. Download the submission artifact from the successful development workflow,
-   or download parser-repair version 0.2.3 from the development support page, and unzip the
+   or download parser-repair version 0.2.4 from the development support page, and unzip the
    store package.
 2. Open `chrome://extensions`, enable Developer mode, choose **Load unpacked**,
    and select the unzipped directory.
@@ -16,8 +16,8 @@ roster to a Lineup Beat server.
    prevents that, choose the prominent **Open My Team** action.
 5. Use **Disconnect & clear** on My Team to delete the extension-local copy.
 
-Version 0.2.3 adds a row-first parser for the live ESPN table structure, while
-retaining the historical identity-first parser as a compatibility fallback.
+Version 0.2.4 extends the row-first parser for ESPN's live split team/position
+markup, while retaining the historical identity-first parser as a compatibility fallback.
 Installed-extension QA remains blocked until Ralph verifies a live save. If
 the empty-roster error appears, choose **Copy safe diagnostics** and paste the
 JSON into Codex. The diagnostic is created only by that click, copied only to

@@ -200,9 +200,45 @@
     const candidate = text(value);
     const label = upper(candidate);
     if (!candidate || candidate.length > 80 || NON_NAME_LABELS.has(label) ||
-        SLOT_ALIASES.includes(label) || teamPosition(candidate) ||
+        SLOT_ALIASES.includes(label) || TEAMS.includes(label) || POSITIONS.includes(label) ||
+        teamPosition(candidate) ||
         /^(?:VS\.?|@)\s+[A-Z]{2,3}$/.test(label) || /^\d+(?:\.\d+)?$/.test(label)) return false;
     return /[\p{L}]/u.test(candidate) && /^[\p{L}\p{M}0-9 ./'\u2019-]+$/u.test(candidate);
+  }
+
+  function splitTeamPosition(cell) {
+    const containers = [];
+    const candidates = new Map();
+    function visit(container) {
+      containers.push(container);
+      for (const child of Array.from(container.children || [])) visit(child);
+    }
+    visit(cell);
+    for (const container of containers) {
+      if (!isVisible(container)) continue;
+      const children = Array.from(container.children || []).filter(isVisible);
+      if (children.length !== 2) continue;
+      const labels = children.map(child => upper(child.textContent));
+      const teams = labels.filter(label => TEAMS.includes(label));
+      const positions = labels.filter(label => POSITIONS.includes(label));
+      if (teams.length !== 1 || positions.length !== 1) continue;
+      const candidate = {
+        team: teams[0],
+        position: positions[0] === 'DST' ? 'D/ST' : positions[0],
+        labels
+      };
+      candidates.set(`${candidate.team}\u0000${candidate.position}`, candidate);
+    }
+    return candidates.size === 1 ? [...candidates.values()][0] : null;
+  }
+
+  function precedingName(lines, metadataIndexes) {
+    const boundary = Math.min(...metadataIndexes.filter(index => index >= 0));
+    if (!Number.isFinite(boundary)) return '';
+    for (let index = boundary - 1; index >= 0; index -= 1) {
+      if (likelyName(lines[index])) return lines[index];
+    }
+    return '';
   }
 
   function mappedIdentity(cell) {
@@ -210,11 +246,15 @@
     for (let index = 0; index < lines.length; index += 1) {
       const metadata = teamPosition(lines[index]);
       if (!metadata) continue;
-      for (let nameIndex = index - 1; nameIndex >= 0; nameIndex -= 1) {
-        if (likelyName(lines[nameIndex])) {
-          return {name: lines[nameIndex], team: metadata.team, position: metadata.position};
-        }
-      }
+      const name = precedingName(lines, [index]);
+      if (name) return {name, team: metadata.team, position: metadata.position};
+    }
+    const split = splitTeamPosition(cell);
+    if (split) {
+      const indexes = split.labels.map(label => lines.findIndex(line => upper(line) === label));
+      if (indexes.some(index => index < 0)) return null;
+      const name = precedingName(lines, indexes);
+      if (name) return {name, team: split.team, position: split.position};
     }
     return null;
   }
