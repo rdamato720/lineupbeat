@@ -135,7 +135,8 @@ class MyTeamArtifactTests(unittest.TestCase):
             self.assertTrue(package.exists())
             with zipfile.ZipFile(package) as archive:
                 packaged = json.loads(archive.read("manifest.json"))
-                self.assertEqual(packaged["version"], "0.2.1")
+                self.assertEqual(packaged["version"], "0.2.2")
+                self.assertEqual(len(archive.namelist()), 8)
                 self.assertEqual(
                     archive.namelist(),
                     list(build_my_team.build_chrome_store_bundle.RUNTIME_FILES),
@@ -167,6 +168,8 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertIn("Save roster locally for My Team", content)
         self.assertIn("Open My Team", content)
         self.assertIn("LB_SAVE_REVIEW_DEMO_ROSTER", content)
+        self.assertIn("Copy safe diagnostics", content)
+        self.assertIn("clipboard.writeText", content)
         self.assertNotIn("Send roster to Lineup Beat", content)
 
     def test_local_copy_never_implies_server_upload(self):
@@ -176,7 +179,7 @@ class MyTeamArtifactTests(unittest.TestCase):
         for text in (guide, readme):
             self.assertIn("Save roster locally for My Team", text)
             self.assertNotIn("Send roster to Lineup Beat", text)
-        self.assertIn("Download version 0.2.1", guide)
+        self.assertIn("Download version 0.2.2", guide)
         self.assertIn("chrome.storage.local", privacy)
         self.assertIn("No ESPN password, cookie, session token", privacy)
         self.assertIn("not placed in a URL or sent to a Lineup Beat server", privacy)

@@ -1,5 +1,230 @@
+(function (root, factory) {
+  'use strict';
+  const diagnostics = factory();
+  if (typeof module === 'object' && module.exports) module.exports = diagnostics;
+  root.LineupBeatSafeDiagnostics = diagnostics;
+})(typeof globalThis === 'object' ? globalThis : this, function () {
+  'use strict';
+
+  const SLOT_LABELS = new Set([
+    'QB', 'RB', 'WR', 'TE', 'FLEX', 'RB/WR/TE', 'WR/RB/TE', 'RB/WR', 'WR/RB',
+    'WR/TE', 'RB/TE', 'OP', 'SUPERFLEX', 'D/ST', 'DST', 'K', 'BE', 'BN',
+    'BENCH', 'IR', 'RES', 'RESERVE'
+  ]);
+  const HEADER_LABELS = new Set([
+    'SLOT', 'PLAYER', 'ACTION', 'OPP', 'STATUS', 'PROJ', 'SCORE', 'OPRK', '%ST', '%ROST'
+  ]);
+  const ROLE_ALLOWLIST = new Set([
+    'table', 'row', 'cell', 'gridcell', 'rowgroup', 'columnheader', 'grid', 'presentation'
+  ]);
+  const SAFE_WORDS = new Set([
+    'table', 'tr', 'td', 'th', 'row', 'cell', 'grid', 'roster', 'lineup', 'slot',
+    'player', 'position', 'team', 'column', 'header', 'body', 'wrapper', 'container',
+    'scroll', 'fixed', 'responsive', 'desktop', 'mobile', 'starter', 'bench', 'flex',
+    'sm', 'md', 'lg', 'even', 'odd', 'data', 'testid', 'id', 'index', 'athlete',
+    'html', 'main', 'section', 'article', 'div', 'span', 'a', 'img', 'table',
+    'thead', 'tbody', 'tr', 'th', 'td', 'ul', 'li'
+  ]);
+  const SAFE_HOST_LABELS = new Set([
+    'www', 'fantasy', 'espn', 'espncdn', 'cdn', 'images', 'secure', 'a', 'com', 'net'
+  ]);
+  const SAFE_PATH_SEGMENTS = new Set([
+    '_', 'nfl', 'football', 'fantasy', 'player', 'players', 'playercard', 'athlete',
+    'profile', 'id', 'team', 'league', 'game', 'games', 'boxscore', 'i', 'headshots',
+    'full', 'combiner', 'photo', 'photos', 'images', 'image', 'cdn', 'assets', 'logos'
+  ]);
+  const PLAYER_ATTRIBUTES = [
+    'data-playerid', 'data-player-id', 'data-athlete-id', 'data-lineup-slot',
+    'data-slot', 'data-slot-id', 'data-position', 'data-team'
+  ];
+
+  function normalized(value) {
+    return String(value || '').replace(/\s+/g, ' ').trim().toUpperCase();
+  }
+
+  function queryAll(root, selector) {
+    return root && typeof root.querySelectorAll === 'function'
+      ? Array.from(root.querySelectorAll(selector)) : [];
+  }
+
+  function visible(node) {
+    for (let current = node; current && current.nodeType === 1; current = current.parentElement) {
+      if (current.hidden || current.hasAttribute('hidden') || current.hasAttribute('inert') ||
+          normalized(current.getAttribute('aria-hidden')) === 'TRUE') return false;
+      const style = current.style || {};
+      if (style.display === 'none' || style.visibility === 'hidden') return false;
+      const view = current.ownerDocument && current.ownerDocument.defaultView;
+      if (view && typeof view.getComputedStyle === 'function') {
+        const computed = view.getComputedStyle(current);
+        if (computed.display === 'none' || computed.visibility === 'hidden') return false;
+      }
+    }
+    return true;
+  }
+
+  function safeToken(value) {
+    return String(value || '').replace(/[A-Za-z]+|\d+/g, part => {
+      if (/^\d+$/.test(part)) return '#';
+      return SAFE_WORDS.has(part.toLowerCase()) ? part : '*';
+    });
+  }
+
+  function safePathSegment(value) {
+    const part = String(value || '');
+    if (!part) return '';
+    const extensionMatch = part.match(/(\.[A-Za-z]{1,5})$/);
+    const extension = extensionMatch ? extensionMatch[1].toLowerCase() : '';
+    const base = extension ? part.slice(0, -extension.length) : part;
+    if (/^\d+$/.test(base)) return `#${extension}`;
+    if (SAFE_PATH_SEGMENTS.has(base.toLowerCase())) return `${base.toLowerCase()}${extension}`;
+    return `*${extension}`;
+  }
+
+  function safePath(value) {
+    const parts = String(value || '/').split('/').map(safePathSegment);
+    const result = parts.join('/');
+    return result.startsWith('/') ? result : `/${result}`;
+  }
+
+  function safeHostname(value) {
+    return String(value || '').split('.').map(label => {
+      if (/^\d+$/.test(label)) return '#';
+      return SAFE_HOST_LABELS.has(label.toLowerCase()) ? label.toLowerCase() : '*';
+    }).join('.');
+  }
+
+  function safeUrl(value, baseOrigin, image) {
+    try {
+      const url = new URL(String(value || ''), baseOrigin);
+      if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+      const pathname = safePath(url.pathname);
+      if (image) return `${safeHostname(url.hostname)}${pathname}`;
+      return `${url.protocol}//${safeHostname(url.hostname)}${pathname}`;
+    } catch (_error) {
+      return null;
+    }
+  }
+
+  function classTokens(node) {
+    return String(node.getAttribute('class') || '').split(/\s+/).filter(Boolean)
+      .slice(0, 12).map(safeToken);
+  }
+
+  function dataAttributeNames(node) {
+    if (typeof node.getAttributeNames !== 'function') return [];
+    return node.getAttributeNames().filter(name => name.toLowerCase().startsWith('data-'))
+      .slice(0, 12).map(safeToken);
+  }
+
+  function descendantPatterns(nodes, attribute, baseOrigin, image) {
+    const patterns = [];
+    for (const node of nodes) {
+      for (const target of queryAll(node, image ? 'img[src]' : 'a[href]')) {
+        const pattern = safeUrl(target.getAttribute(attribute), baseOrigin, image);
+        if (pattern && !patterns.includes(pattern)) patterns.push(pattern);
+        if (patterns.length === 5) return patterns;
+      }
+    }
+    return patterns;
+  }
+
+  function candidateDetails(candidate, baseOrigin) {
+    const ancestors = [];
+    const nodes = [];
+    for (let current = candidate.parentElement; current && ancestors.length < 8;
+         current = current.parentElement) {
+      nodes.push(current);
+      const rawRole = String(current.getAttribute('role') || '').toLowerCase();
+      ancestors.push({
+        tag: safeToken(String(current.tagName || '').toLowerCase()).toUpperCase(),
+        classes: classTokens(current),
+        role: ROLE_ALLOWLIST.has(rawRole) ? rawRole : null,
+        dataAttributes: dataAttributeNames(current),
+        childCount: Number((current.children || []).length),
+        descendantAnchor: Boolean(current.querySelector && current.querySelector('a[href]')),
+        descendantImage: Boolean(current.querySelector && current.querySelector('img[src]'))
+      });
+    }
+    return {
+      slot: normalized(candidate.textContent),
+      ancestors,
+      anchorPatterns: descendantPatterns(nodes, 'href', baseOrigin, false),
+      imagePatterns: descendantPatterns(nodes, 'src', baseOrigin, true)
+    };
+  }
+
+  function generate({document, location, version, playerSelector}) {
+    const elements = queryAll(document, '*');
+    const exactSlots = elements.filter(node => visible(node) && SLOT_LABELS.has(normalized(node.textContent)));
+    const leafSlots = exactSlots.filter(node => !Array.from(node.children || [])
+      .some(child => visible(child) && normalized(child.textContent) === normalized(node.textContent)));
+    const headers = [];
+    for (const node of elements) {
+      const label = visible(node) ? normalized(node.textContent) : '';
+      if (HEADER_LABELS.has(label) && !headers.includes(label)) headers.push(label);
+    }
+    const attributePresence = {};
+    for (const name of PLAYER_ATTRIBUTES) {
+      attributePresence[name] = elements.some(node => node.hasAttribute && node.hasAttribute(name));
+    }
+    return {
+      schemaVersion: 'lineupbeat-espn-safe-diagnostics-v1',
+      extensionVersion: /^\d+\.\d+\.\d+$/.test(String(version || '')) ? String(version) : 'unknown',
+      pathname: safePath(location && location.pathname),
+      counts: {
+        tr: queryAll(document, 'tr').length,
+        roleRow: queryAll(document, '[role="row"]').length,
+        table: queryAll(document, 'table').length,
+        roleTable: queryAll(document, '[role="table"]').length,
+        tableClassRow: queryAll(document, '.Table__TR').length,
+        tableClassCell: queryAll(document, '.Table__TD').length,
+        currentPlayerSelector: playerSelector ? queryAll(document, playerSelector).length : 0,
+        knownSlotLabel: exactSlots.length
+      },
+      headerLabels: headers,
+      likelyPlayerAttributes: attributePresence,
+      slotCandidates: leafSlots.slice(0, 3).map(node =>
+        candidateDetails(node, location && location.origin))
+    };
+  }
+
+  function install({button, status, document, location, version, playerSelector, clipboard,
+                    generateDiagnostics}) {
+    let enabled = false;
+    const create = generateDiagnostics || generate;
+    button.hidden = true;
+    if (button.style) button.style.display = 'none';
+    button.addEventListener('click', async () => {
+      if (!enabled) return;
+      try {
+        const payload = create({document, location, version, playerSelector});
+        await clipboard.writeText(JSON.stringify(payload, null, 2));
+        status.textContent = 'Safe diagnostics copied. Paste the JSON into Codex.';
+      } catch (_error) {
+        status.textContent = 'Safe diagnostics could not be copied. Clipboard access was denied.';
+      }
+    });
+    return {
+      show() {
+        enabled = true;
+        button.hidden = false;
+        if (button.style) button.style.display = 'inline-block';
+      },
+      hide() {
+        enabled = false;
+        button.hidden = true;
+        if (button.style) button.style.display = 'none';
+      }
+    };
+  }
+
+  return {generate, install};
+});
+
 (function () {
   'use strict';
+
+  if (typeof location === 'undefined' || typeof document === 'undefined') return;
 
   const ESPN_ORIGIN = 'https://fantasy.espn.com';
   const ESPN_PATH = '/football/';
@@ -45,7 +270,7 @@
     };
   }
 
-  function stylePanel(panel, select, save, open) {
+  function stylePanel(panel, select, save, open, diagnostics) {
     Object.assign(panel.style, {
       position: 'fixed', right: '18px', bottom: '18px', zIndex: '2147483647',
       width: 'min(380px, calc(100vw - 36px))', padding: '14px', borderRadius: '8px',
@@ -53,7 +278,7 @@
       font: '14px/1.35 Arial,sans-serif'
     });
     Object.assign(select.style, {padding: '10px', background: '#fff', color: '#0b100f'});
-    for (const node of [save, open]) {
+    for (const node of [save, open, diagnostics]) {
       Object.assign(node.style, {
         display: 'inline-block', padding: '12px 16px', border: '0', borderRadius: '4px',
         background: '#c6f53c', color: '#0b100f', fontWeight: '800', cursor: 'pointer',
@@ -71,6 +296,7 @@
     const select = document.createElement('select');
     const save = document.createElement('button');
     const open = document.createElement('a');
+    const diagnostics = document.createElement('button');
     const status = document.createElement('p');
 
     heading.textContent = 'Lineup Beat My Team BETA';
@@ -90,13 +316,26 @@
     open.rel = 'noopener';
     open.textContent = 'Open My Team';
     open.hidden = true;
+    diagnostics.type = 'button';
+    diagnostics.textContent = 'Copy safe diagnostics';
+    diagnostics.setAttribute('aria-label', 'Copy safe roster-discovery diagnostics');
     status.setAttribute('role', 'status');
     status.style.margin = '10px 0 0';
     controls.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:12px';
     disclosure.style.margin = '8px 0 4px';
 
-    stylePanel(panel, select, save, open);
+    stylePanel(panel, select, save, open, diagnostics);
+    const diagnosticController = globalThis.LineupBeatSafeDiagnostics.install({
+      button: diagnostics,
+      status,
+      document,
+      location,
+      version: chrome.runtime.getManifest().version,
+      playerSelector: globalThis.LineupBeatEspnRosterParser.PLAYER_SELECTOR,
+      clipboard: navigator.clipboard
+    });
     save.addEventListener('click', () => {
+      diagnosticController.hide();
       if (select.value === '') {
         status.textContent = 'Choose scoring before saving.';
         return;
@@ -118,10 +357,13 @@
         );
       } catch (error) {
         status.textContent = error.message;
+        if (error.message === globalThis.LineupBeatEspnRosterParser.EMPTY_ERROR) {
+          diagnosticController.show();
+        }
       }
     });
 
-    controls.append(select, save, open);
+    controls.append(select, save, open, diagnostics);
     panel.append(heading, disclosure, privacy, controls, status);
     document.documentElement.appendChild(panel);
   }

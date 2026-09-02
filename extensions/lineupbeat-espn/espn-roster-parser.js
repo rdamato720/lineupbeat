@@ -189,5 +189,5 @@
     return roster;
   }
 
-  return {discover, requireRoster, EMPTY_ERROR};
+  return {discover, requireRoster, EMPTY_ERROR, PLAYER_SELECTOR};
 });

@@ -188,8 +188,9 @@ def check_my_team(root):
         manifest, worker, package_files = {}, "", []
     scripts = manifest.get("content_scripts") or [{}, {}]
     matches = scripts[1].get("matches") if len(scripts) > 1 else None
-    check("the development download is the restricted version 0.2.1 package",
-          manifest.get("version") == "0.2.1"
+    check("the development download is the restricted eight-file version 0.2.2 package",
+          manifest.get("version") == "0.2.2"
+          and len(package_files) == 8
           and matches == ["https://lineupbeat-dev.pages.dev/my-team/*"]
           and "localhost" not in json.dumps(manifest)
           and "127.0.0.1" not in json.dumps(manifest)
@@ -214,8 +215,8 @@ def check_my_team(root):
           and "No ESPN password, cookie, session token" in privacy_text)
     check("extension support exposes the labeled development package",
           'href="/my-team/lineupbeat-espn-extension.zip"' in support_text
-          and "Download version 0.2.1" in support_text
-          and "Development-only package" in support_text)
+          and "Download version 0.2.2" in support_text
+          and "Development diagnostic package" in support_text)
     model_path = root / "data" / "my-team-week1.json"
     try:
         model = json.loads(model_path.read_text())

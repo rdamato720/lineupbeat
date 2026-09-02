@@ -86,6 +86,7 @@ def build(output: Path) -> dict:
         "package": package.name,
         "packageBytes": package.stat().st_size,
         "packageSha256": sha256_bytes(package.read_bytes()),
+        "packageFileCount": len(members),
         "packageFiles": members,
         "listingFiles": assets,
     }

@@ -3,11 +3,15 @@
 Prepared for an **Unlisted** beta. This document is paste-ready, but it does
 not authorize an upload, review submission, or publication.
 
+**Release block:** version 0.2.2 is a development diagnostic build.
+Live ESPN roster capture remains unresolved, so Chrome Web Store upload and
+submission remain blocked.
+
 ## Package tab
 
-- Upload file: `lineupbeat-espn-my-team-beta-0.2.1.zip`
+- Upload file: `lineupbeat-espn-my-team-beta-0.2.2.zip`
 - Manifest version: 3
-- Extension version: 0.2.1
+- Extension version: 0.2.2
 - Extension name: `Lineup Beat ESPN My Team BETA`
 - Manifest description (104 characters):
 
@@ -156,8 +160,8 @@ The reviewer demo uses only public NFL player/model data and a generic sample te
 Optional ESPN capture test, if the reviewer already has access to any ESPN Fantasy Football roster:
 1. Open a team roster under https://fantasy.espn.com/football/
 2. Read the prominent local-storage disclosure, select reception scoring, and click Save roster locally for My Team.
-3. Confirm My Team opens automatically. If Chrome blocks the automatic tab, click the displayed Open My Team action.
-4. Confirm that supported players match locally and Disconnect & clear removes the local copy.
+3. Version 0.2.2 is diagnostic only. If the empty-roster error appears, click Copy safe diagnostics.
+4. Confirm the status reports that the JSON was copied, and paste it into Codex for investigation. Do not expect capture to succeed in this blocked release.
 
 The extension should never request an ESPN password, cookie, session token or manager identity. No roster request should be sent to a Lineup Beat server.
 ```
@@ -166,36 +170,32 @@ The extension should never request an ESPN password, cookie, session token or ma
 
 This checklist remains outstanding until Ralph runs it in installed Chrome:
 
-1. Install version 0.2.1 with **Load unpacked**, or reload the already installed
-   unpacked extension and confirm the version is 0.2.1.
+1. Install version 0.2.2 with **Load unpacked**, or reload the already installed
+   unpacked extension and confirm the version is 0.2.2.
 2. Open an ESPN Fantasy Football league roster under
    `https://fantasy.espn.com/football/`.
 3. Choose the league's reception scoring and select **Save roster locally for
    My Team**.
-4. Confirm My Team opens automatically in a new tab.
-5. Confirm the connected roster appears on My Team with supported and
-   unsupported players labeled honestly.
-6. Return to the ESPN roster page and confirm the visible **Open My Team**
-   fallback action opens My Team.
-7. Select **Disconnect & clear**, reload My Team, and confirm the local roster
-   is removed and does not reconnect.
-8. Open `https://lineupbeat-dev.pages.dev/my-team/?reviewer=1`, choose **Load
-   reviewer demo roster**, verify the credential-free sample team appears, and
-   clear it with **Disconnect & clear**.
+4. Reproduce the empty-roster error.
+5. Select **Copy safe diagnostics** and confirm the copy-success status.
+6. Paste the copied JSON into Codex. Do not paste a screenshot, page source,
+   roster export, cookie, token, or credential.
 
-## Manual steps Ralph must perform
+## Future Chrome Web Store steps — currently blocked
+
+Do not perform these steps while the version 0.2.2 release block is active.
 
 The successful development workflow publishes two public GitHub Actions
 artifacts containing only the reviewed extension package and store-listing
 materials. They contain no credentials, private roster exports, cookies,
 tokens, API keys or personal member information.
 
-The same version 0.2.1 submission ZIP is also available from the development
+The same version 0.2.2 diagnostic ZIP is also available from the development
 support page for manual installed-extension QA. Its SHA-256 must match the
 inventory below before use.
 
 1. Download the `lineupbeat-espn-cws-submission-<run-id>` artifact and extract
-   its `lineupbeat-espn-my-team-beta-0.2.1.zip` file.
+   its `lineupbeat-espn-my-team-beta-0.2.2.zip` file.
 2. Download the `lineupbeat-espn-cws-listing-<run-id>` artifact and extract its
    listing materials.
 3. Confirm the submission ZIP SHA-256 matches `package-inventory.json` in the
