@@ -3,15 +3,15 @@
 Prepared for an **Unlisted** beta. This document is paste-ready, but it does
 not authorize an upload, review submission, or publication.
 
-**Release block:** version 0.2.4 is a development parser-repair build.
-The row-first repair awaits Ralph's live ESPN save test, so Chrome Web Store
+**Release block:** version 0.2.5 is a development identity-label repair build.
+The identity-label repair awaits Ralph's live ESPN save test, so Chrome Web Store
 upload and submission remain blocked.
 
 ## Package tab
 
-- Upload file: `lineupbeat-espn-my-team-beta-0.2.4.zip`
+- Upload file: `lineupbeat-espn-my-team-beta-0.2.5.zip`
 - Manifest version: 3
-- Extension version: 0.2.4
+- Extension version: 0.2.5
 - Extension name: `Lineup Beat ESPN My Team BETA`
 - Manifest description (104 characters):
 
@@ -160,7 +160,7 @@ The reviewer demo uses only public NFL player/model data and a generic sample te
 Optional ESPN capture test, if the reviewer already has access to any ESPN Fantasy Football roster:
 1. Open a team roster under https://fantasy.espn.com/football/
 2. Read the prominent local-storage disclosure, select reception scoring, and click Save roster locally for My Team.
-3. Version 0.2.4 recognizes ESPN's split team/position player markup. Confirm My Team opens and displays the saved roster.
+3. Version 0.2.5 preserves ESPN's row-first capture and corrects status-designation names plus visible league/team labels. Confirm My Team opens and displays the saved roster.
 4. If the empty-roster error still appears, click Copy safe diagnostics, confirm the copy status, and paste the JSON into Codex for investigation.
 
 The extension should never request an ESPN password, cookie, session token or manager identity. No roster request should be sent to a Lineup Beat server.
@@ -170,8 +170,8 @@ The extension should never request an ESPN password, cookie, session token or ma
 
 This checklist remains outstanding until Ralph runs it in installed Chrome:
 
-1. Install version 0.2.4 with **Load unpacked**, or reload the already installed
-   unpacked extension and confirm the version is 0.2.4.
+1. Install version 0.2.5 with **Load unpacked**, or reload the already installed
+   unpacked extension and confirm the version is 0.2.5.
 2. Open an ESPN Fantasy Football league roster under
    `https://fantasy.espn.com/football/`.
 3. Choose the league's reception scoring and select **Save roster locally for
@@ -185,19 +185,19 @@ This checklist remains outstanding until Ralph runs it in installed Chrome:
 
 ## Future Chrome Web Store steps — currently blocked
 
-Do not perform these steps while the version 0.2.4 release block is active.
+Do not perform these steps while the version 0.2.5 release block is active.
 
 The successful development workflow publishes two public GitHub Actions
 artifacts containing only the reviewed extension package and store-listing
 materials. They contain no credentials, private roster exports, cookies,
 tokens, API keys or personal member information.
 
-The same version 0.2.4 parser-repair ZIP is also available from the development
+The same version 0.2.5 identity-label repair ZIP is also available from the development
 support page for manual installed-extension QA. Its SHA-256 must match the
 inventory below before use.
 
 1. Download the `lineupbeat-espn-cws-submission-<run-id>` artifact and extract
-   its `lineupbeat-espn-my-team-beta-0.2.4.zip` file.
+   its `lineupbeat-espn-my-team-beta-0.2.5.zip` file.
 2. Download the `lineupbeat-espn-cws-listing-<run-id>` artifact and extract its
    listing materials.
 3. Confirm the submission ZIP SHA-256 matches `package-inventory.json` in the

@@ -37,6 +37,10 @@
     'data-playerid', 'data-player-id', 'data-athlete-id', 'data-lineup-slot',
     'data-slot', 'data-slot-id', 'data-position', 'data-team'
   ];
+  const EXCLUDED_PAGE_LABELS = new Set([
+    'MY TEAM', 'TEAM SETTINGS', 'LEAGUE', 'OPPOSING TEAMS',
+    'ESPN FANTASY FOOTBALL'
+  ]);
 
   function normalized(value) {
     return String(value || '').replace(/\s+/g, ' ').trim().toUpperCase();
@@ -45,6 +49,82 @@
   function queryAll(root, selector) {
     return root && typeof root.querySelectorAll === 'function'
       ? Array.from(root.querySelectorAll(selector)) : [];
+  }
+
+  function pageLabel(value) {
+    const candidate = String(value || '').replace(/\s+/g, ' ').trim();
+    const label = normalized(candidate);
+    if (!candidate || candidate.length > 80 || EXCLUDED_PAGE_LABELS.has(label) ||
+        /https?:\/\//i.test(candidate) || /[?&](?:leagueId|teamId)=/i.test(candidate)) return '';
+    return /[\p{L}\p{N}]/u.test(candidate) ? candidate : '';
+  }
+
+  function managerContext(node) {
+    let depth = 0;
+    for (let current = node; current && current.nodeType === 1 && depth < 2;
+         current = current.parentElement, depth += 1) {
+      const context = ['class', 'id', 'data-testid', 'aria-label']
+        .map(name => String(current.getAttribute && current.getAttribute(name) || ''))
+        .join(' ');
+      if (/(?:^|[-_\s])(?:manager|owner|member)(?:$|[-_\s])/i.test(context)) return true;
+    }
+    return false;
+  }
+
+  function fantasyUrl(node) {
+    try {
+      const url = new URL(String(node.getAttribute('href') || ''), 'https://fantasy.espn.com');
+      return url.origin === 'https://fantasy.espn.com' && url.pathname.startsWith('/football/')
+        ? url : null;
+    } catch (_error) {
+      return null;
+    }
+  }
+
+  function oneLabel(values) {
+    const labels = new Map();
+    for (const value of values) {
+      const candidate = pageLabel(value);
+      if (candidate) labels.set(normalized(candidate), candidate);
+    }
+    return {value: labels.size === 1 ? [...labels.values()][0] : '', count: labels.size};
+  }
+
+  function pageLabels(document, leagueId, teamId) {
+    const leagueValues = [];
+    const teamCounts = new Map();
+    for (const link of queryAll(document, 'a[href]').filter(visible)) {
+      const url = fantasyUrl(link);
+      if (!url) continue;
+      const label = pageLabel(link.textContent);
+      if (!label) continue;
+      const leagueContext = url.pathname.startsWith('/football/league') ||
+        !url.searchParams.has('teamId');
+      if (leagueId && leagueContext &&
+          url.searchParams.get('leagueId') === String(leagueId)) leagueValues.push(label);
+      if (teamId && url.pathname.startsWith('/football/team') &&
+          url.searchParams.get('teamId') === String(teamId) &&
+          (!leagueId || !url.searchParams.has('leagueId') ||
+           url.searchParams.get('leagueId') === String(leagueId)) && !managerContext(link)) {
+        const key = normalized(label);
+        const row = teamCounts.get(key) || {label, count: 0};
+        row.count += 1;
+        teamCounts.set(key, row);
+      }
+    }
+    const league = oneLabel(leagueValues);
+    const repeatedTeam = [...teamCounts.values()].filter(row => row.count >= 2);
+    const team = oneLabel(repeatedTeam.map(row => row.label));
+    return {
+      leagueName: league.value || 'ESPN league',
+      teamName: team.value || 'My ESPN team',
+      diagnostics: {
+        leagueCandidateCount: league.count,
+        leagueConflict: league.count > 1,
+        teamCandidateCount: team.count,
+        teamConflict: team.count > 1
+      }
+    };
   }
 
   function visible(node) {
@@ -191,6 +271,16 @@
     for (const name of PLAYER_ATTRIBUTES) {
       attributePresence[name] = elements.some(node => node.hasAttribute && node.hasAttribute(name));
     }
+    let linkedLabels = {diagnostics: {
+      leagueCandidateCount: 0, leagueConflict: false,
+      teamCandidateCount: 0, teamConflict: false
+    }};
+    try {
+      const url = new URL(String(location && location.href || ''),
+        String(location && location.origin || 'https://fantasy.espn.com'));
+      linkedLabels = pageLabels(document, url.searchParams.get('leagueId') || '',
+        url.searchParams.get('teamId') || '');
+    } catch (_error) {}
     return {
       schemaVersion: 'lineupbeat-espn-safe-diagnostics-v1',
       extensionVersion: /^\d+\.\d+\.\d+$/.test(String(version || '')) ? String(version) : 'unknown',
@@ -207,6 +297,7 @@
       },
       headerLabels: headers,
       likelyPlayerAttributes: attributePresence,
+      metadataLabels: linkedLabels.diagnostics,
       rowFirst: safeRowDiagnostics(rowDiagnostics),
       slotCandidates: leafSlots.slice(0, 3).map(node =>
         candidateDetails(node, location && location.origin))
@@ -247,7 +338,7 @@
     };
   }
 
-  return {generate, install};
+  return {generate, install, pageLabels};
 });
 
 (function () {
@@ -270,30 +361,25 @@
     return new URL(location.href).searchParams.get(key) || '';
   }
 
-  function firstText(selectors, fallback) {
-    for (const selector of selectors) {
-      const node = document.querySelector(selector);
-      if (node && node.textContent.trim()) return node.textContent.trim();
-    }
-    return fallback;
-  }
-
   function capture(receptionPoints) {
     const parser = globalThis.LineupBeatEspnRosterParser;
     if (!parser) throw new Error('The ESPN roster parser did not load. Reload the extension and try again.');
     const roster = parser.requireRoster(document);
+    const leagueId = queryValue('leagueId') || 'unknown';
+    const teamId = queryValue('teamId') || 'unknown';
+    const labels = globalThis.LineupBeatSafeDiagnostics.pageLabels(document, leagueId, teamId);
     return {
       provider: 'espn',
       connectionType: 'browser_extension',
       league: {
-        id: queryValue('leagueId') || 'unknown',
-        name: firstText(['[data-testid="league-name"]', '.league-name', 'header h1'], 'ESPN league'),
+        id: leagueId,
+        name: labels.leagueName,
         season: Number(queryValue('seasonId') || new Date().getFullYear()),
         scoringSettings: {receptionPoints: Number(receptionPoints)}
       },
       team: {
-        id: queryValue('teamId') || 'unknown',
-        name: firstText(['[data-testid="team-name"]', '.team-name', 'main h1'], 'My ESPN team')
+        id: teamId,
+        name: labels.teamName
       },
       roster
     };

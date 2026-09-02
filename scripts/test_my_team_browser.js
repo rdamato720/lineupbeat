@@ -28,6 +28,41 @@ async function main(){
   assert.equal(decisions[0].classification,'Edge');
   assert.equal(LineupBeatLeagueAdapter.classify(10,9.9),'Toss-Up');
   assert.equal(LineupBeatLeagueAdapter.normalizeName('Travis Etienne Jr.'),'travis etienne');
+  const qRaw={provider:'espn',league:{id:'1',name:'League',season:2026,scoringSettings:{receptionPoints:.5}},team:{id:'2',name:'Team'},roster:[
+    {providerPlayerId:'q-provider',name:'Q',team:'BUF',position:'QB',lineupSlot:'QB',espnStatus:'Q'},
+    {providerPlayerId:'q-missing',name:'Q',team:'ATL',position:'RB',lineupSlot:'RB',espnStatus:'Q'},
+    {providerPlayerId:'exact-missing',name:"D'Andre Example Jr.",team:'NO',position:'RB',lineupSlot:'BE',espnStatus:'Q'}
+  ]};
+  const qModel={players:[
+    {id:'canonical-qb',name:'A.J. Canonical III',team:'BUF',position:'QB',providerIds:{espn:'q-provider'}},
+    {id:'canonical-rb',name:"D'Andre Example Jr.",team:'NO',position:'RB',providerIds:{}}
+  ]};
+  const qLeague=LineupBeatLeagueAdapter.match(LineupBeatEspnAdapter.adapt(qRaw),qModel);
+  assert.equal(qLeague.roster.starters[0].matchStatus,'matched_provider_id');
+  assert.deepEqual(LineupBeatLeagueAdapter.displayIdentity(qLeague.roster.starters[0]),{name:'A.J. Canonical III',team:'BUF',position:'QB'});
+  assert.equal(qLeague.roster.starters[1].matchStatus,'unresolved_identity');
+  assert(qLeague.roster.starters[1].unresolvedReason.includes('status designation'));
+  assert.equal(qLeague.roster.bench[0].matchStatus,'matched_identity');
+  assert.equal(qLeague.roster.bench[0].espnStatus,'Q');
+  assert(!LineupBeatLeagueAdapter.validPlayerName('Q'));
+  assert(LineupBeatLeagueAdapter.validPlayerName("D'Andre Example Jr."));
+  const liveSupported=Array.from({length:15},(_,index)=>({
+    providerPlayerId:index<12?'live-'+index:'unmapped-'+index,
+    name:'Live Player '+index,team:index%2?'ATL':'BUF',position:['QB','RB','WR','TE'][index%4],
+    lineupSlot:index<9?['QB','RB','WR','TE'][index%4]:'BE',espnStatus:index>=12?'Q':''
+  }));
+  const liveRaw={provider:'espn',league:{id:'live',name:'BG-N-Co.',season:2026,scoringSettings:{receptionPoints:.5}},team:{id:'3',name:'Some Pulp'},roster:liveSupported.concat([
+    {providerPlayerId:'',name:'Bills D/ST',team:'BUF',position:'D/ST',lineupSlot:'D/ST'}
+  ])};
+  const liveModel={players:liveSupported.map((row,index)=>({id:'model-'+index,name:row.name,team:row.team,position:row.position,providerIds:index<12?{espn:row.providerPlayerId}:{}}))};
+  const liveLeague=LineupBeatLeagueAdapter.match(LineupBeatEspnAdapter.adapt(liveRaw),liveModel);
+  const livePlayers=LineupBeatLeagueAdapter.allPlayers(liveLeague);
+  assert.deepEqual(liveLeague.roster.starters.length,10);
+  assert.deepEqual(liveLeague.roster.bench.length,6);
+  assert.deepEqual(liveLeague.roster.reserve.length,0);
+  assert.equal(livePlayers.filter(row=>row.identity).length,15);
+  assert.equal(livePlayers.filter(row=>row.matchStatus==='unsupported_position').length,1);
+  assert.equal(livePlayers.filter(row=>row.matchStatus==='unresolved_identity').length,0);
   assert.throws(()=>LineupBeatEspnAdapter.adapt({provider:'espn',league:{id:'1',name:'Missing id',season:2026},team:{id:'2',name:'Missing id'},roster:[
     {providerPlayerId:'',name:'Supported Player',team:'BUF',position:'RB',lineupSlot:'RB'}
   ]}),/player 0 is incomplete/);
@@ -108,6 +143,10 @@ async function main(){
   assert(content.includes("open.textContent = 'Open My Team'"));
   assert(content.includes('Roster saved locally. Use Open My Team to continue.'));
   assert(!content.includes('fetch('));assert(!content.includes('XMLHttpRequest'));
+  const myTeam=fs.readFileSync('my-team/my-team.js','utf8');
+  assert(myTeam.includes('display=LineupBeatLeagueAdapter.displayIdentity(player)'));
+  assert(myTeam.includes('ESPN status ${player.espnStatus}'));
+  assert(!myTeam.includes('<h3>${escape(player.name)}</h3>'));
 
   console.log('My Team browser adapter and extension worker tests passed');
 }

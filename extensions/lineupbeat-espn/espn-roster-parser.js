@@ -45,10 +45,14 @@
   ].join(',');
   const HEADER_SLOT_LABELS = new Set(['SLOT', 'LINEUP SLOT']);
   const HEADER_PLAYER_LABELS = new Set(['PLAYER', 'PLAYERS']);
+  const DESIGNATIONS = new Set([
+    'Q', 'O', 'D', 'IR', 'PUP', 'SUS', 'EXE', 'NFI', 'COVID', 'NA', 'OUT',
+    'DOUBTFUL', 'QUESTIONABLE', 'PROBABLE'
+  ]);
   const NON_NAME_LABELS = new Set([
     'SLOT', 'PLAYER', 'PLAYERS', 'ACTION', 'OPP', 'STATUS', 'PROJ', 'SCORE',
     'OPRK', '%ST', '%ROST', 'MOVE', 'DROP', 'TRADE', 'EDIT', 'ACTIVE',
-    'INACTIVE', 'QUESTIONABLE', 'DOUBTFUL', 'OUT', 'SUSP', 'PUP', 'NA'
+    'INACTIVE', 'SUSP', 'NEWS', 'PLAYER NEWS', 'VIEW PLAYER CARD'
   ]);
   const REJECTION_KEYS = [
     'missingMappedCells', 'invalidSlot', 'invalidIdentityText', 'missingProviderId',
@@ -200,21 +204,78 @@
     const candidate = text(value);
     const label = upper(candidate);
     if (!candidate || candidate.length > 80 || NON_NAME_LABELS.has(label) ||
+        DESIGNATIONS.has(label) ||
         SLOT_ALIASES.includes(label) || TEAMS.includes(label) || POSITIONS.includes(label) ||
         teamPosition(candidate) ||
         /^(?:VS\.?|@)\s+[A-Z]{2,3}$/.test(label) || /^\d+(?:\.\d+)?$/.test(label)) return false;
     return /[\p{L}]/u.test(candidate) && /^[\p{L}\p{M}0-9 ./'\u2019-]+$/u.test(candidate);
   }
 
-  function splitTeamPosition(cell) {
-    const containers = [];
-    const candidates = new Map();
-    function visit(container) {
-      containers.push(container);
-      for (const child of Array.from(container.children || [])) visit(child);
+  function personName(value) {
+    const candidate = text(value);
+    if (!likelyName(candidate)) return '';
+    const words = candidate.match(/[\p{L}\p{M}]+/gu) || [];
+    return words.length >= 2 ? candidate : '';
+  }
+
+  function descendants(node) {
+    const nodes = [];
+    function visit(current) {
+      nodes.push(current);
+      for (const child of Array.from(current.children || [])) visit(child);
     }
-    visit(cell);
-    for (const container of containers) {
+    visit(node);
+    return nodes;
+  }
+
+  function oneName(values) {
+    const names = new Map();
+    for (const value of values) {
+      const candidate = personName(value);
+      if (candidate) names.set(upper(candidate), candidate);
+    }
+    return names.size === 1 ? [...names.values()][0] : '';
+  }
+
+  function headshotAltName(cell) {
+    return oneName(queryAll(cell, 'img').filter(isVisible)
+      .map(image => image.getAttribute('alt') || ''));
+  }
+
+  function boundedName(cell) {
+    const values = [];
+    for (const node of descendants(cell)) {
+      if (!isVisible(node)) continue;
+      const explicit = node.getAttribute && node.getAttribute('data-player-name');
+      if (explicit) values.push(explicit);
+      const classes = String(node.getAttribute && node.getAttribute('class') || '')
+        .split(/\s+/).filter(Boolean);
+      const named = classes.some(token => /athlete/i.test(token) ||
+        (/player/i.test(token) && /name/i.test(token)));
+      if (named && !Array.from(node.children || []).filter(isVisible).length) {
+        values.push(node.innerText || node.textContent);
+      }
+    }
+    return oneName(values);
+  }
+
+  function structuredName(cell) {
+    return oneName(visibleLines(cell).filter(value => {
+      const label = upper(value);
+      return !DESIGNATIONS.has(label) && !TEAMS.includes(label) &&
+        !POSITIONS.includes(label) && !teamPosition(value);
+    }));
+  }
+
+  function espnStatus(cell) {
+    const statuses = [...new Set(visibleLines(cell).map(upper)
+      .filter(label => DESIGNATIONS.has(label)))];
+    return statuses.length === 1 ? statuses[0] : '';
+  }
+
+  function splitTeamPosition(cell) {
+    const candidates = new Map();
+    for (const container of descendants(cell)) {
       if (!isVisible(container)) continue;
       const children = Array.from(container.children || []).filter(isVisible);
       if (children.length !== 2) continue;
@@ -232,31 +293,12 @@
     return candidates.size === 1 ? [...candidates.values()][0] : null;
   }
 
-  function precedingName(lines, metadataIndexes) {
-    const boundary = Math.min(...metadataIndexes.filter(index => index >= 0));
-    if (!Number.isFinite(boundary)) return '';
-    for (let index = boundary - 1; index >= 0; index -= 1) {
-      if (likelyName(lines[index])) return lines[index];
-    }
-    return '';
-  }
-
   function mappedIdentity(cell) {
-    const lines = visibleLines(cell);
-    for (let index = 0; index < lines.length; index += 1) {
-      const metadata = teamPosition(lines[index]);
-      if (!metadata) continue;
-      const name = precedingName(lines, [index]);
-      if (name) return {name, team: metadata.team, position: metadata.position};
-    }
-    const split = splitTeamPosition(cell);
-    if (split) {
-      const indexes = split.labels.map(label => lines.findIndex(line => upper(line) === label));
-      if (indexes.some(index => index < 0)) return null;
-      const name = precedingName(lines, indexes);
-      if (name) return {name, team: split.team, position: split.position};
-    }
-    return null;
+    const combined = visibleLines(cell).map(teamPosition).filter(Boolean);
+    const metadata = combined.length === 1 ? combined[0] : splitTeamPosition(cell);
+    if (!metadata) return null;
+    const name = headshotAltName(cell) || boundedName(cell) || structuredName(cell);
+    return name ? {...metadata, name, espnStatus: espnStatus(cell)} : null;
   }
 
   function headshotPathId(value) {

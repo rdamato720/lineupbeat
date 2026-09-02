@@ -4,6 +4,7 @@
   const SUPPORTED=new Set(['QB','RB','WR','TE']);
   const GROUPS=['starters','bench','reserve'];
   const suffixes=new Set(['jr','sr','ii','iii','iv','v']);
+  const designations=new Set(['Q','O','D','IR','PUP','SUS','EXE','NFI','COVID','NA','OUT','DOUBTFUL','QUESTIONABLE','PROBABLE']);
   const teamAliases={JAC:'JAX',WSH:'WAS',LA:'LAR'};
   function clean(value){return String(value==null?'':value).trim()}
   function normalizeName(value){
@@ -13,6 +14,8 @@
     return tokens.join(' ');
   }
   function normalizeTeam(value){let team=clean(value).toUpperCase();return teamAliases[team]||team}
+  function validPlayerName(value){const name=clean(value),words=name.match(/[A-Za-z\u00c0-\u024f]+/g)||[];return Boolean(name&&!designations.has(name.toUpperCase())&&words.length>=2)}
+  function displayIdentity(player){const identity=player&&player.identity;return{name:clean(identity&&identity.name)||clean(player&&player.name),team:clean(identity&&identity.team)||clean(player&&player.providerTeam),position:clean(identity&&identity.position)||clean(player&&player.position)}}
   function allPlayers(league){return GROUPS.flatMap(group=>(league.roster&&league.roster[group])||[])}
   function validate(league){
     const errors=[];
@@ -54,6 +57,7 @@
       let hit=index.provider.get(clean(p.providerPlayerId));
       let status='matched_provider_id';
       if(!hit){
+        if(!validPlayerName(p.name)){p.matchStatus='unresolved_identity';p.unresolvedReason='The captured ESPN player label is a status designation, not a valid player name.';return}
         const key=[normalizeName(p.name),normalizeTeam(p.providerTeam),position].join('|');
         if(index.ambiguous.has(key)){
           p.matchStatus='ambiguous_identity';p.unresolvedReason='More than one Lineup Beat identity has this exact normalized name, team, and position.';return;
@@ -84,5 +88,5 @@
     }));
     return out.sort((a,b)=>(b.action==='consider_swap')-(a.action==='consider_swap')||b.gap-a.gap).slice(0,8);
   }
-  root.LineupBeatLeagueAdapter={VERSION,SUPPORTED,GROUPS,normalizeName,normalizeTeam,validate,match,classify,lineupDecisions,allPlayers};
+  root.LineupBeatLeagueAdapter={VERSION,SUPPORTED,GROUPS,normalizeName,normalizeTeam,validPlayerName,displayIdentity,validate,match,classify,lineupDecisions,allPlayers};
 })(typeof globalThis!=='undefined'?globalThis:window);

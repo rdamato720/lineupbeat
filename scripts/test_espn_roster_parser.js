@@ -136,8 +136,11 @@ async function main() {
   assert.deepEqual(roster.map(row => row.position), ['QB', 'RB', 'WR', 'TE', 'WR', 'D/ST', 'K', 'RB', 'WR']);
   assert.equal(roster[0].name, "Sanitized O'Brien-Jones II");
   assert.equal(roster[1].name, 'Sanitized Runner Jr.');
+  assert.equal(roster[2].name, 'Sanitized A.J. Receiver-Smith');
   assert.equal(roster[3].name, 'Sanitized Tight End III');
   assert.equal(roster[4].name, 'Sanitized Flex-Wideout IV');
+  assert.deepEqual(roster.slice(0, 4).map(row => row.espnStatus), ['Q', 'Q', 'Q', 'Q']);
+  assert(!roster.some(row => row.name === 'Q'), 'no captured player name may be a designation');
   assert.deepEqual(roster.map(row => row.team), ['BUF', 'ATL', 'CIN', 'DET', 'LAR', 'SEA', 'TB', 'NO', 'WAS']);
   assert.deepEqual(roster.map(row => row.providerPlayerId),
     ['920001', '920002', '920003', '920004', '920005', '', '', '920008', '920009']);
@@ -167,6 +170,16 @@ async function main() {
   assert.deepEqual(unboundedInspection.roster, []);
   assert.equal(unboundedInspection.diagnostics.rejections.invalidIdentityText, 1,
     'separate team and position tokens require one exact two-child metadata container');
+
+  const designations = ['Q', 'O', 'D', 'IR', 'PUP', 'SUS', 'EXE', 'NFI', 'COVID',
+    'NA', 'OUT', 'DOUBTFUL', 'QUESTIONABLE', 'PROBABLE'];
+  const designationOnly = parseFixture(`<html><body><table><thead><tr><th>SLOT</th><th>PLAYER</th></tr></thead><tbody>${designations.map((designation, index) => `
+    <tr><td>QB</td><td><img src="https://a.espncdn.com/i/headshots/nfl/players/full/${970000 + index}.png"><div>${designation}</div><div><span>BUF</span><span>QB</span></div></td></tr>`).join('')}
+    </tbody></table></body></html>`);
+  const designationInspection = parser.inspect(designationOnly);
+  assert.deepEqual(designationInspection.roster, []);
+  assert.equal(designationInspection.diagnostics.rejections.invalidIdentityText, designations.length,
+    'every exact ESPN designation-only candidate must be rejected as a name');
 
   const ambiguous = parseFixture(`
     <html><body><table><thead><tr><th>PLAYER</th><th>SLOT</th></tr></thead><tbody>
@@ -201,6 +214,17 @@ async function main() {
   assert(normalized.roster.starters.find(row => row.position === 'D/ST').unresolvedReason.includes('not supported'));
   assert(normalized.roster.starters.find(row => row.position === 'K').unresolvedReason.includes('not supported'));
   assert.deepEqual(normalized.startingLineupSlots.find(row => row.slotId === 'FLEX').allowedPositions, ['RB', 'WR', 'TE']);
+  assert.deepEqual(normalized.roster.starters.slice(0, 4).map(row => row.espnStatus), ['Q', 'Q', 'Q', 'Q']);
+  const matched = LineupBeatLeagueAdapter.match(normalized, {players: [
+    {id: 'canonical-provider', name: "Canonical O'Brien-Jones II", team: 'BUF', position: 'QB', providerIds: {espn: '920001'}},
+    {id: 'canonical-exact', name: 'Sanitized Runner Jr.', team: 'ATL', position: 'RB', providerIds: {}}
+  ]});
+  assert.equal(matched.roster.starters[0].matchStatus, 'matched_provider_id');
+  assert.equal(matched.roster.starters[1].matchStatus, 'matched_identity');
+  assert.deepEqual(LineupBeatLeagueAdapter.displayIdentity(matched.roster.starters[0]),
+    {name: "Canonical O'Brien-Jones II", team: 'BUF', position: 'QB'});
+  assert.notEqual(LineupBeatLeagueAdapter.displayIdentity(matched.roster.starters[0]).name, 'Q');
+  assert.notEqual(LineupBeatLeagueAdapter.displayIdentity(matched.roster.starters[1]).name, 'Q');
 
   const harness = backgroundHarness();
   const capture = await harness.send('LB_CAPTURE_ESPN_ROSTER', 'https://fantasy.espn.com/football/team?leagueId=sanitized&teamId=3', raw);

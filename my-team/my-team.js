@@ -8,8 +8,8 @@
   function opportunity(player){const o=player.expectedOpportunity||{};return player.position==='QB'?Number(o.passAttempts||0).toFixed(1)+' modeled pass attempts':Number(o.carries||0).toFixed(1)+' carries and '+Number(o.targets||0).toFixed(1)+' targets'}
   function modelPlayer(rosterPlayer){return state.model.players.find(p=>rosterPlayer.identity&&p.id===rosterPlayer.identity.playerId)}
   function playerRow(player){
-    const model=modelPlayer(player),status=player.matchStatus.replaceAll('_',' '),reason=player.unresolvedReason||'';
-    return `<article class="mt-player"><div class="mt-player-art">${model?`<img src="${escape(model.photo||model.teamLogo)}" alt="" onerror="this.src='${escape(model.teamLogo)}'"><img class="mt-logo" src="${escape(model.teamLogo)}" alt="">`:''}</div><div><small>${escape(player.lineupSlot)} · ${escape(player.position||'Unknown')}</small><h3>${escape(player.name)}</h3><p>${model?`${escape(model.team)} · ${escape(status)}`:`${escape(status)} · ${escape(reason)}`}</p></div></article>`;
+    const model=modelPlayer(player),status=player.matchStatus.replaceAll('_',' '),reason=player.unresolvedReason||'',display=LineupBeatLeagueAdapter.displayIdentity(player),espnStatus=player.espnStatus?` · ESPN status ${player.espnStatus}`:'';
+    return `<article class="mt-player"><div class="mt-player-art">${model?`<img src="${escape(model.photo||model.teamLogo)}" alt="" onerror="this.src='${escape(model.teamLogo)}'"><img class="mt-logo" src="${escape(model.teamLogo)}" alt="">`:''}</div><div><small>${escape(player.lineupSlot)} · ${escape(display.position||'Unknown')}${escape(espnStatus)}</small><h3>${escape(display.name)}</h3><p>${model?`${escape(display.team)} · ${escape(status)}`:`${escape(status)} · ${escape(reason)}`}</p></div></article>`;
   }
   function decisionCard(row,format){
     const b=modelPlayer(row.bench),s=modelPlayer(row.starter),swap=row.action==='consider_swap';

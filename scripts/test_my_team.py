@@ -135,7 +135,7 @@ class MyTeamArtifactTests(unittest.TestCase):
             self.assertTrue(package.exists())
             with zipfile.ZipFile(package) as archive:
                 packaged = json.loads(archive.read("manifest.json"))
-                self.assertEqual(packaged["version"], "0.2.4")
+                self.assertEqual(packaged["version"], "0.2.5")
                 self.assertEqual(len(archive.namelist()), 8)
                 self.assertEqual(
                     archive.namelist(),
@@ -179,7 +179,7 @@ class MyTeamArtifactTests(unittest.TestCase):
         for text in (guide, readme):
             self.assertIn("Save roster locally for My Team", text)
             self.assertNotIn("Send roster to Lineup Beat", text)
-        self.assertIn("Download version 0.2.4", guide)
+        self.assertIn("Download version 0.2.5", guide)
         self.assertIn("chrome.storage.local", privacy)
         self.assertIn("No ESPN password, cookie, session token", privacy)
         self.assertIn("not placed in a URL or sent to a Lineup Beat server", privacy)
@@ -196,6 +196,12 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertIn("${row.bench.name} and ${row.starter.name}", source)
         self.assertIn("<p>${escape(call)}</p>", source)
         self.assertNotIn("${escape(row.bench.name)} and ${escape(row.starter.name)}", source)
+
+    def test_matched_cards_use_canonical_identity_and_label_espn_status(self):
+        source = (ROOT / "my-team" / "my-team.js").read_text()
+        self.assertIn("LineupBeatLeagueAdapter.displayIdentity(player)", source)
+        self.assertIn("ESPN status ${player.espnStatus}", source)
+        self.assertNotIn("<h3>${escape(player.name)}</h3>", source)
 
 
 if __name__ == "__main__":

@@ -76,6 +76,16 @@ function fixture() {
     class: 'Roster private-team-Blue-Bombers', role: 'table',
     'data-roster-id': '998877', 'data-team-name': 'Blue Bombers'
   });
+  const metadata = new Element('nav', '', {class: 'league-team-context'}).append(
+    new Element('a', 'BG-N-Co.', {href: '/football/league?leagueId=998877&teamId=3'}),
+    new Element('a', 'Some Pulp', {href: '/football/team?leagueId=998877&teamId=3'}),
+    new Element('a', 'Some Pulp', {href: '/football/team?leagueId=998877&teamId=3&view=roster'}),
+    new Element('a', 'Ralph Manager', {class: 'manager-link', href: '/football/team?leagueId=998877&teamId=3'}),
+    new Element('a', 'My Team', {href: '/football/team?leagueId=998877&teamId=3'}),
+    new Element('a', 'Team Settings', {href: '/football/team?leagueId=998877&teamId=3&view=settings'}),
+    new Element('a', 'Opposing Teams', {href: '/football/team?leagueId=998877&teamId=3&view=opponents'}),
+    new Element('a', 'ESPN Fantasy Football', {href: '/football/team?leagueId=998877&teamId=3&view=home'})
+  );
   const header = new Element('div', '', {class: 'Table__TR header'}).append(
     new Element('div', 'SLOT', {class: 'Table__TH'}),
     new Element('div', 'PLAYER', {class: 'Table__TH'}),
@@ -105,7 +115,7 @@ function fixture() {
   );
   const hidden = new Element('div', '', {hidden: ''}).append(new Element('div', 'TE', {class: 'Table__TD'}));
   roster.append(header, row, rb, wr, hidden);
-  main.append(roster, new Element('div', 'Arbitrary private paragraph about the manager and league.'));
+  main.append(metadata, roster, new Element('div', 'Arbitrary private paragraph about the manager and league.'));
   body.append(main);
   html.append(body);
   return new FixtureDocument(html);
@@ -121,6 +131,7 @@ async function main() {
   const document = fixture();
   const location = {
     origin: 'https://fantasy.espn.com',
+    href: 'https://fantasy.espn.com/football/team?leagueId=998877&teamId=3#Jane-Doe',
     pathname: '/football/team',
     search: '?leagueId=998877&teamId=3',
     hash: '#Jane-Doe'
@@ -142,7 +153,7 @@ async function main() {
     value: {sendBeacon() { networkCalls += 1; throw new Error('network forbidden'); }}
   });
   const payload = diagnostics.generate({
-    document, location, version: '0.2.4', playerSelector: parser.PLAYER_SELECTOR,
+    document, location, version: '0.2.5', playerSelector: parser.PLAYER_SELECTOR,
     rowDiagnostics: {
       tablesScanned: 2, qualifyingTables: 1, rowsScanned: 10, rowsAccepted: 0,
       legacyFallbackUsed: false, legacyRowsAccepted: 0,
@@ -152,8 +163,9 @@ async function main() {
     }
   });
   const encoded = JSON.stringify(payload);
+  const labels = diagnostics.pageLabels(document, '998877', '3');
 
-  assert.equal(payload.extensionVersion, '0.2.4');
+  assert.equal(payload.extensionVersion, '0.2.5');
   assert.equal(payload.pathname, '/football/team');
   assert.equal(payload.counts.roleRow, 1);
   assert.equal(payload.counts.roleTable, 1);
@@ -165,6 +177,12 @@ async function main() {
   assert(payload.likelyPlayerAttributes['data-player-id']);
   assert(payload.slotCandidates[0].anchorPatterns.includes('https://www.espn.com/nfl/player/_/id/#/*'));
   assert(payload.slotCandidates[0].imagePatterns.includes('a.espncdn.com/i/headshots/nfl/players/full/#.png'));
+  assert.equal(labels.leagueName, 'BG-N-Co.');
+  assert.equal(labels.teamName, 'Some Pulp');
+  assert.deepEqual(payload.metadataLabels, {
+    leagueCandidateCount: 1, leagueConflict: false,
+    teamCandidateCount: 1, teamConflict: false
+  });
   assert.deepEqual(payload.rowFirst, {
     tablesScanned: 2, qualifyingTables: 1, rowsScanned: 10, rowsAccepted: 0,
     legacyFallbackUsed: false, legacyRowsAccepted: 0,
@@ -182,13 +200,31 @@ async function main() {
   assert(!encoded.includes('data-roster-id\":\"998877'));
   assert(!encoded.includes('data-private-name\":\"Jane Doe'));
 
+  const conflictRoot = new Element('html').append(new Element('body').append(
+    new Element('main').append(
+      new Element('a', 'League Alpha', {href: '/football/league?leagueId=77'}),
+      new Element('a', 'League Beta', {href: '/football/league?leagueId=77'}),
+      new Element('a', 'Team Alpha', {href: '/football/team?leagueId=77&teamId=8'}),
+      new Element('a', 'Team Alpha', {href: '/football/team?leagueId=77&teamId=8&view=one'}),
+      new Element('a', 'Team Beta', {href: '/football/team?leagueId=77&teamId=8&view=two'}),
+      new Element('a', 'Team Beta', {href: '/football/team?leagueId=77&teamId=8&view=three'})
+    )
+  ));
+  const conflict = diagnostics.pageLabels(new FixtureDocument(conflictRoot), '77', '8');
+  assert.equal(conflict.leagueName, 'ESPN league');
+  assert.equal(conflict.teamName, 'My ESPN team');
+  assert.deepEqual(conflict.diagnostics, {
+    leagueCandidateCount: 2, leagueConflict: true,
+    teamCandidateCount: 2, teamConflict: true
+  });
+
   let generated = 0;
   let inspected = 0;
   let copied = 0;
   const button = new Button();
   const status = {textContent: ''};
   const controller = diagnostics.install({
-    button, status, document, location, version: '0.2.4', playerSelector: parser.PLAYER_SELECTOR,
+    button, status, document, location, version: '0.2.5', playerSelector: parser.PLAYER_SELECTOR,
     clipboard: {writeText(value) { copied += 1; assert.deepEqual(JSON.parse(value), {safe: true}); return Promise.resolve(); }},
     generateDiagnostics() { generated += 1; return {safe: true}; },
     inspectRoster() { inspected += 1; return {diagnostics: {rowsAccepted: 0}}; }
@@ -218,7 +254,7 @@ async function main() {
   const failedButton = new Button();
   const failedStatus = {textContent: ''};
   const failed = diagnostics.install({
-    button: failedButton, status: failedStatus, document, location, version: '0.2.4',
+    button: failedButton, status: failedStatus, document, location, version: '0.2.5',
     playerSelector: parser.PLAYER_SELECTOR,
     clipboard: {writeText() { return Promise.reject(new Error('denied')); }}
   });
