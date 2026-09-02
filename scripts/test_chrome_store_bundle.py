@@ -4,13 +4,13 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import struct
 import sys
 import tempfile
 import unittest
 import zipfile
+import zlib
 from pathlib import Path
-
-from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -20,6 +20,64 @@ import build_my_team
 
 EXTENSION = ROOT / "extensions" / "lineupbeat-espn"
 LISTING = ROOT / "chrome-web-store"
+
+
+def png_header(path: Path) -> tuple[int, int, int, int, int]:
+    data = path.read_bytes()
+    if data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR":
+        raise AssertionError(f"not a PNG: {path}")
+    width, height, depth, color_type, _compression, _filter, interlace = struct.unpack(
+        ">IIBBBBB", data[16:29]
+    )
+    return width, height, depth, color_type, interlace
+
+
+def rgba_pixels(path: Path) -> tuple[int, int, bytes]:
+    width, height, depth, color_type, interlace = png_header(path)
+    if (depth, color_type, interlace) != (8, 6, 0):
+        raise AssertionError(f"expected non-interlaced 8-bit RGBA PNG: {path}")
+    data = path.read_bytes()
+    compressed = bytearray()
+    offset = 8
+    while offset < len(data):
+        length = struct.unpack(">I", data[offset:offset + 4])[0]
+        kind = data[offset + 4:offset + 8]
+        chunk = data[offset + 8:offset + 8 + length]
+        if kind == b"IDAT":
+            compressed.extend(chunk)
+        offset += 12 + length
+        if kind == b"IEND":
+            break
+    raw = zlib.decompress(compressed)
+    stride = width * 4
+    prior = bytearray(stride)
+    pixels = bytearray()
+    cursor = 0
+    for _row in range(height):
+        filter_type = raw[cursor]
+        cursor += 1
+        scanline = bytearray(raw[cursor:cursor + stride])
+        cursor += stride
+        for index, value in enumerate(scanline):
+            left = scanline[index - 4] if index >= 4 else 0
+            above = prior[index]
+            upper_left = prior[index - 4] if index >= 4 else 0
+            if filter_type == 1:
+                scanline[index] = (value + left) & 255
+            elif filter_type == 2:
+                scanline[index] = (value + above) & 255
+            elif filter_type == 3:
+                scanline[index] = (value + ((left + above) // 2)) & 255
+            elif filter_type == 4:
+                predictor = left + above - upper_left
+                distances = (abs(predictor - left), abs(predictor - above),
+                             abs(predictor - upper_left))
+                scanline[index] = (value + (left, above, upper_left)[distances.index(min(distances))]) & 255
+            elif filter_type != 0:
+                raise AssertionError(f"unknown PNG filter {filter_type}: {path}")
+        pixels.extend(scanline)
+        prior = scanline
+    return width, height, bytes(pixels)
 
 
 class ChromeStoreManifestTests(unittest.TestCase):
@@ -48,12 +106,12 @@ class ChromeStoreManifestTests(unittest.TestCase):
         self.assertEqual(set(self.manifest["icons"]), set(expected))
         for size, dimensions in expected.items():
             path = EXTENSION / self.manifest["icons"][size]
-            with Image.open(path) as image:
-                self.assertEqual(image.format, "PNG")
-                self.assertEqual(image.size, dimensions)
-        with Image.open(EXTENSION / self.manifest["icons"]["128"]).convert("RGBA") as icon:
-            self.assertEqual(icon.getpixel((0, 0))[3], 0)
-            self.assertGreater(icon.getpixel((64, 64))[3], 0)
+            width, height, depth, color_type, _interlace = png_header(path)
+            self.assertEqual((width, height), dimensions)
+            self.assertEqual((depth, color_type), (8, 6))
+        width, _height, pixels = rgba_pixels(EXTENSION / self.manifest["icons"]["128"])
+        self.assertEqual(pixels[3], 0)
+        self.assertGreater(pixels[((64 * width) + 64) * 4 + 3], 0)
 
     def test_authored_runtime_is_local_only_and_reviewable(self):
         background = (EXTENSION / "background.js").read_text()
@@ -112,9 +170,8 @@ class ChromeStoreBundleTests(unittest.TestCase):
             LISTING / "assets" / "screenshots" / "03-local-roster-1280x800.png": (1280, 800),
         }
         for path, dimensions in required.items():
-            with Image.open(path) as image:
-                self.assertEqual(image.format, "PNG")
-                self.assertEqual(image.size, dimensions)
+            width, height, _depth, _color_type, _interlace = png_header(path)
+            self.assertEqual((width, height), dimensions)
 
     def test_listing_is_complete_and_version_consistent(self):
         listing = (LISTING / "STORE_LISTING.md").read_text()
