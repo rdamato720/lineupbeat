@@ -5,7 +5,6 @@ import json
 import sys
 import tempfile
 import unittest
-import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -117,26 +116,30 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertNotIn("Connect CBS", page)
         self.assertNotIn("Cloudflare Web Analytics", page)
         self.assertIn('name="robots" content="noindex,nofollow"', page)
+        self.assertIn('id="mt-demo"', page)
+        self.assertIn("hidden>Load reviewer demo roster", page)
 
-    def test_build_writes_only_public_model_and_development_extension(self):
+    def test_build_writes_public_model_and_support_pages_but_no_public_zip(self):
         with tempfile.TemporaryDirectory() as directory:
             site = Path(directory)
+            stale = site / "my-team" / "lineupbeat-espn-extension.zip"
+            stale.parent.mkdir(parents=True)
+            stale.write_bytes(b"obsolete public package")
             build_my_team.build(site)
             self.assertTrue((site / "my-team" / "index.html").exists())
-            archive_path = site / "my-team" / "lineupbeat-espn-extension.zip"
-            self.assertTrue(archive_path.exists())
+            self.assertTrue((site / "my-team" / "extension" / "index.html").exists())
+            privacy = site / "my-team" / "extension" / "privacy" / "index.html"
+            self.assertTrue(privacy.exists())
+            self.assertFalse((site / "my-team" / "lineupbeat-espn-extension.zip").exists())
             model = json.loads((site / "data" / "my-team-week1.json").read_text())
             self.assertEqual(model["schemaVersion"], "lineupbeat-my-team-week1-v1")
-            with zipfile.ZipFile(archive_path) as archive:
-                packaged = json.loads(archive.read("lineupbeat-espn/manifest.json"))
-            source = json.loads((ROOT / "extensions" / "lineupbeat-espn" / "manifest.json").read_text())
-            self.assertEqual(packaged, source)
-            self.assertEqual(packaged["content_scripts"][1]["matches"],
-                             ["https://lineupbeat-dev.pages.dev/my-team/*"])
+            self.assertIn("chrome.storage.local", privacy.read_text())
+            self.assertIn("No roster upload", privacy.read_text())
 
     def test_extension_has_no_secret_permissions_or_production_access(self):
         manifest = json.loads((ROOT / "extensions" / "lineupbeat-espn" / "manifest.json").read_text())
         self.assertEqual(manifest["permissions"], ["storage"])
+        self.assertNotIn("host_permissions", manifest)
         self.assertEqual(manifest["content_scripts"][0]["matches"],
                          ["https://fantasy.espn.com/football/*"])
         self.assertEqual(manifest["content_scripts"][1]["matches"],
@@ -150,14 +153,21 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertNotIn("fetch(", content)
         self.assertNotIn("XMLHttpRequest", content)
         self.assertIn("Save roster locally for My Team", content)
+        self.assertIn("Open My Team", content)
+        self.assertIn("LB_SAVE_REVIEW_DEMO_ROSTER", content)
         self.assertNotIn("Send roster to Lineup Beat", content)
 
     def test_local_copy_never_implies_server_upload(self):
         guide = build_my_team.render_extension_guide()
+        privacy = build_my_team.render_extension_privacy()
         readme = (ROOT / "extensions" / "lineupbeat-espn" / "README.md").read_text()
         for text in (guide, readme):
             self.assertIn("Save roster locally for My Team", text)
             self.assertNotIn("Send roster to Lineup Beat", text)
+        self.assertIn("chrome.storage.local", privacy)
+        self.assertIn("No ESPN password, cookie, session token", privacy)
+        self.assertIn("not placed in a URL or sent to a Lineup Beat server", privacy)
+        self.assertIn("Disconnect &amp; clear", privacy)
 
     def test_suffix_terminal_punctuation_regression(self):
         source = (ROOT / "scripts" / "build_decision_room.py").read_text()

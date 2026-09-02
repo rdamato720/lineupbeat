@@ -1,0 +1,165 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import hashlib
+import json
+import re
+import sys
+import tempfile
+import unittest
+import zipfile
+from pathlib import Path
+
+from PIL import Image
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+import build_chrome_store_bundle
+import build_my_team
+
+EXTENSION = ROOT / "extensions" / "lineupbeat-espn"
+LISTING = ROOT / "chrome-web-store"
+
+
+class ChromeStoreManifestTests(unittest.TestCase):
+    def setUp(self):
+        self.manifest = json.loads((EXTENSION / "manifest.json").read_text())
+
+    def test_exact_hosts_minimal_permissions_and_beta_version(self):
+        self.assertEqual(self.manifest["manifest_version"], 3)
+        self.assertEqual(self.manifest["version"], "0.2.0")
+        self.assertTrue(self.manifest["name"].endswith("BETA"))
+        self.assertLessEqual(len(self.manifest["description"]), 132)
+        self.assertIn("THIS EXTENSION IS FOR BETA TESTING", self.manifest["description"])
+        self.assertEqual(self.manifest["permissions"], ["storage"])
+        self.assertNotIn("host_permissions", self.manifest)
+        self.assertEqual(
+            [script["matches"] for script in self.manifest["content_scripts"]],
+            [["https://fantasy.espn.com/football/*"],
+             ["https://lineupbeat-dev.pages.dev/my-team/*"]],
+        )
+        encoded = json.dumps(self.manifest)
+        for forbidden in ("lineupbeat.com", "localhost", "127.0.0.1", "<all_urls>", "cookies", "tabs"):
+            self.assertNotIn(forbidden, encoded)
+
+    def test_icons_are_required_png_dimensions_with_store_padding(self):
+        expected = {"16": (16, 16), "32": (32, 32), "48": (48, 48), "128": (128, 128)}
+        self.assertEqual(set(self.manifest["icons"]), set(expected))
+        for size, dimensions in expected.items():
+            path = EXTENSION / self.manifest["icons"][size]
+            with Image.open(path) as image:
+                self.assertEqual(image.format, "PNG")
+                self.assertEqual(image.size, dimensions)
+        with Image.open(EXTENSION / self.manifest["icons"]["128"]).convert("RGBA") as icon:
+            self.assertEqual(icon.getpixel((0, 0))[3], 0)
+            self.assertGreater(icon.getpixel((64, 64))[3], 0)
+
+    def test_authored_runtime_is_local_only_and_reviewable(self):
+        background = (EXTENSION / "background.js").read_text()
+        content = (EXTENSION / "content.js").read_text()
+        for source in (background, content):
+            self.assertNotIn("eval(", source)
+            self.assertNotIn("new Function", source)
+            self.assertGreater(source.count("\n"), 20)
+        for network_api in ("fetch(", "XMLHttpRequest", "WebSocket", "sendBeacon"):
+            self.assertNotIn(network_api, background)
+            self.assertNotIn(network_api, content)
+        self.assertIn("chrome.storage.local.set", background)
+        self.assertIn("chrome.storage.local.remove", background)
+        self.assertIn("chrome.tabs.create({url: MY_TEAM_URL})", background)
+        self.assertIn("Roster saved locally. Use Open My Team to continue.", content)
+        self.assertIn("Privacy details", content)
+
+
+class ChromeStoreBundleTests(unittest.TestCase):
+    def test_store_package_is_rooted_minimal_deterministic_and_inventoried(self):
+        with tempfile.TemporaryDirectory() as first, tempfile.TemporaryDirectory() as second:
+            report_a = build_chrome_store_bundle.build(Path(first))
+            report_b = build_chrome_store_bundle.build(Path(second))
+            package_a = Path(first) / report_a["package"]
+            package_b = Path(second) / report_b["package"]
+            self.assertEqual(package_a.read_bytes(), package_b.read_bytes())
+            self.assertEqual(report_a["packageSha256"], hashlib.sha256(package_a.read_bytes()).hexdigest())
+            self.assertEqual(report_a["packageSha256"], report_b["packageSha256"])
+            with zipfile.ZipFile(package_a) as archive:
+                names = archive.namelist()
+                self.assertEqual(names, list(build_chrome_store_bundle.RUNTIME_FILES))
+                self.assertIn("manifest.json", names)
+                self.assertFalse(any(name.startswith("lineupbeat-espn/") for name in names))
+                manifest = json.loads(archive.read("manifest.json"))
+                self.assertEqual(manifest["version"], report_a["extensionVersion"])
+                decoded = "\n".join(
+                    archive.read(name).decode(errors="ignore") for name in names
+                )
+            for forbidden in (
+                "node_modules", ".env", "BEGIN PRIVATE KEY", "Private Manager",
+                "must-not-survive", "Test League", "personal league export",
+            ):
+                self.assertNotIn(forbidden, decoded)
+                self.assertFalse(any(forbidden in name for name in names))
+            self.assertIsNone(re.search(r"(?i)(api[_-]?key|secret|token)\s*[:=]\s*['\"][A-Za-z0-9_-]{12,}", decoded))
+            inventory = json.loads((Path(first) / "listing-materials" / "package-inventory.json").read_text())
+            self.assertEqual(inventory["packageSha256"], report_a["packageSha256"])
+            self.assertEqual([row["path"] for row in inventory["packageFiles"]], names)
+
+    def test_listing_assets_have_required_formats_and_dimensions(self):
+        required = {
+            LISTING / "assets" / "store-icon-128.png": (128, 128),
+            LISTING / "assets" / "small-promo-440x280.png": (440, 280),
+            LISTING / "assets" / "screenshots" / "01-local-connection-1280x800.png": (1280, 800),
+            LISTING / "assets" / "screenshots" / "02-lineup-decision-1280x800.png": (1280, 800),
+            LISTING / "assets" / "screenshots" / "03-local-roster-1280x800.png": (1280, 800),
+        }
+        for path, dimensions in required.items():
+            with Image.open(path) as image:
+                self.assertEqual(image.format, "PNG")
+                self.assertEqual(image.size, dimensions)
+
+    def test_listing_is_complete_and_version_consistent(self):
+        listing = (LISTING / "STORE_LISTING.md").read_text()
+        for required in (
+            "Lineup Beat ESPN My Team BETA", "0.2.0", "Short summary",
+            "Detailed description", "Single purpose", "Permission justification",
+            "Data-use selections", "Support URL", "Privacy policy URL",
+            "Test instructions", "Unlisted", "Manual steps Ralph must perform",
+            "Ralph's manual installed-extension QA", "Install version 0.2.0",
+            "Save roster locally for My Team", "Open My Team",
+            "Disconnect & clear", "Load reviewer demo roster",
+        ):
+            self.assertIn(required, listing)
+        self.assertIn("No credentials are required", listing)
+        self.assertNotIn("Ralph's private", listing)
+
+    def test_privacy_and_support_are_public_but_package_is_not(self):
+        with tempfile.TemporaryDirectory() as directory:
+            site = Path(directory)
+            build_my_team.build(site)
+            privacy = site / "my-team" / "extension" / "privacy" / "index.html"
+            support = site / "my-team" / "extension" / "index.html"
+            self.assertTrue(privacy.is_file())
+            self.assertTrue(support.is_file())
+            self.assertFalse((site / "my-team" / "lineupbeat-espn-extension.zip").exists())
+            text = privacy.read_text()
+            for required in (
+                "chrome.storage.local", "No roster upload", "No ESPN password, cookie, session token",
+                "Disconnect &amp; clear", "hello@lineupbeat.com",
+                "fantasy.espn.com/football", "lineupbeat-dev.pages.dev/my-team",
+            ):
+                self.assertIn(required, text)
+
+    def test_public_workflow_uploads_only_scoped_store_artifacts(self):
+        workflow = (ROOT / ".github" / "workflows" / "dev-site.yml").read_text()
+        self.assertIn("python scripts/build_chrome_store_bundle.py", workflow)
+        self.assertIn("lineupbeat-espn-cws-submission-${{ github.run_id }}", workflow)
+        self.assertIn("lineupbeat-espn-cws-listing-${{ github.run_id }}", workflow)
+        self.assertIn(
+            "build/chrome-web-store/lineupbeat-espn-my-team-beta-0.2.0.zip",
+            workflow,
+        )
+        self.assertIn("build/chrome-web-store/listing-materials", workflow)
+        self.assertNotIn("site/my-team/lineupbeat-espn", workflow)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -66,12 +66,14 @@ async function main(){
   const unknownLeague=LineupBeatLeagueAdapter.match(LineupBeatEspnAdapter.adapt(unknownRaw),unknownModel);
   assert.equal(LineupBeatLeagueAdapter.lineupDecisions(unknownLeague,unknownModel,'half_ppr').length,0);
 
-  let listener,store={};
-  const chrome={runtime:{onMessage:{addListener(fn){listener=fn}}},storage:{local:{set(value){Object.assign(store,value);return Promise.resolve()},get(key){return Promise.resolve({[key]:store[key]})},remove(key){delete store[key];return Promise.resolve()}}}};
+  let listener,store={},opened=[];
+  const chrome={runtime:{onMessage:{addListener(fn){listener=fn}}},tabs:{create({url}){opened.push(url);return Promise.resolve({id:1,url})}},storage:{local:{set(value){Object.assign(store,value);return Promise.resolve()},get(key){return Promise.resolve({[key]:store[key]})},remove(key){delete store[key];return Promise.resolve()}}}};
   vm.runInNewContext(fs.readFileSync('extensions/lineupbeat-espn/background.js','utf8'),{chrome,URL});
   const send=(type,url,payload)=>new Promise(resolve=>listener({type,version:1,payload},{url},resolve));
   const roster={private:'browser-local-test'};
-  assert.equal((await send('LB_CAPTURE_ESPN_ROSTER','https://fantasy.espn.com/football/team?leagueId=1',roster)).ok,true);
+  const captured=await send('LB_CAPTURE_ESPN_ROSTER','https://fantasy.espn.com/football/team?leagueId=1',roster);
+  assert.equal(captured.ok,true);assert.equal(captured.opened,true);
+  assert.deepEqual(opened,['https://lineupbeat-dev.pages.dev/my-team/']);
   for(const url of ['https://lineupbeat-dev.pages.dev/','https://lineupbeat-dev.pages.dev/decision-room/nfl/','https://lineupbeat.com/my-team/','http://localhost/my-team/','http://127.0.0.1/my-team/']){
     const get=await send('LB_GET_ESPN_ROSTER',url);
     assert.equal(get.ok,false);assert.equal(get.payload,undefined);
@@ -82,10 +84,27 @@ async function main(){
   assert.deepEqual(validGet.payload,roster);
   assert.equal((await send('LB_CLEAR_ESPN_ROSTER','https://lineupbeat-dev.pages.dev/my-team/')).ok,true);
   assert.equal((await send('LB_GET_ESPN_ROSTER','https://lineupbeat-dev.pages.dev/my-team/')).payload,null);
+  const reviewRoster={provider:'espn',league:{id:'review'},roster:[]};
+  assert.equal((await send('LB_SAVE_REVIEW_DEMO_ROSTER','https://lineupbeat-dev.pages.dev/my-team/?reviewer=1',reviewRoster)).ok,true);
+  assert.deepEqual((await send('LB_GET_ESPN_ROSTER','https://lineupbeat-dev.pages.dev/my-team/')).payload,reviewRoster);
+  assert.equal((await send('LB_SAVE_REVIEW_DEMO_ROSTER','https://lineupbeat-dev.pages.dev/decision-room/nfl/',reviewRoster)).ok,false);
+  assert.deepEqual((await send('LB_GET_ESPN_ROSTER','https://lineupbeat-dev.pages.dev/my-team/')).payload,reviewRoster);
+  assert.equal((await send('LB_CLEAR_ESPN_ROSTER','https://lineupbeat-dev.pages.dev/my-team/')).ok,true);
   for(const url of ['https://lineupbeat-dev.pages.dev/my-team/','https://fantasy.espn.com/','https://fantasy.espn.com/baseball/','https://fantasy.espn.com.evil.example/football/']){
     const badCapture=await send('LB_CAPTURE_ESPN_ROSTER',url,roster);
     assert.equal(badCapture.ok,false);
   }
+
+  let fallbackListener,fallbackStore={};
+  const fallbackChrome={runtime:{onMessage:{addListener(fn){fallbackListener=fn}}},tabs:{create(){return Promise.reject(new Error('blocked'))}},storage:{local:{set(value){Object.assign(fallbackStore,value);return Promise.resolve()},get(key){return Promise.resolve({[key]:fallbackStore[key]})},remove(key){delete fallbackStore[key];return Promise.resolve()}}}};
+  vm.runInNewContext(fs.readFileSync('extensions/lineupbeat-espn/background.js','utf8'),{chrome:fallbackChrome,URL});
+  const fallbackSend=(type,url,payload)=>new Promise(resolve=>fallbackListener({type,version:1,payload},{url},resolve));
+  const fallback=await fallbackSend('LB_CAPTURE_ESPN_ROSTER','https://fantasy.espn.com/football/team',roster);
+  assert.equal(fallback.ok,true);assert.equal(fallback.opened,false);
+  const content=fs.readFileSync('extensions/lineupbeat-espn/content.js','utf8');
+  assert(content.includes("open.textContent = 'Open My Team'"));
+  assert(content.includes('Roster saved locally. Use Open My Team to continue.'));
+  assert(!content.includes('fetch('));assert(!content.includes('XMLHttpRequest'));
 
   console.log('My Team browser adapter and extension worker tests passed');
 }

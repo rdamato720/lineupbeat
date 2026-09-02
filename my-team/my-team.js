@@ -36,6 +36,27 @@
     setTimeout(()=>{if(!state.extension&&!state.league)setStatus('ESPN extension not detected. Install the development extension, open your ESPN roster, capture it, then return here.','warning')},1200);
   }
   function disconnect(){state.league=null;window.postMessage({type:'LB_MY_TEAM_CLEAR_REQUEST',version:1},location.origin);$('mt-team').hidden=true;$('mt-connect').hidden=false;$('mt-disconnect').hidden=true;setStatus('Disconnected. The extension was asked to clear its browser-local roster copy.','good')}
+  function reviewDemo(){
+    const wanted=[
+      ['00-0034857','QB'],['00-0036973','RB/WR/TE'],
+      ['00-0037744','TE'],['00-0036900','BE']
+    ];
+    const roster=wanted.map(([id,lineupSlot])=>{
+      const player=state.model.players.find(row=>row.id===id);
+      if(!player)throw new Error('The public reviewer fixture is unavailable.');
+      return{providerPlayerId:String(player.providerIds.espn||`review-${id}`),name:player.name,team:player.team,position:player.position,lineupSlot};
+    });
+    roster.push({providerPlayerId:'review-dst',name:'Bills D/ST',team:'BUF',position:'D/ST',lineupSlot:'D/ST'});
+    return{provider:'espn',connectionType:'browser_extension',league:{id:'review-demo',name:'Chrome Web Store review demo',season:state.model.season,scoringSettings:{receptionPoints:.5}},team:{id:'review-demo-team',name:'Sample Team — no user data'},roster};
+  }
+  function loadReviewDemo(){
+    if(!state.model){setStatus('The public Week 1 model is still loading.','warning');return}
+    try{
+      setStatus('Loading the public reviewer demo into extension-local storage…');
+      window.postMessage({type:'LB_MY_TEAM_REVIEW_DEMO_REQUEST',version:1,payload:reviewDemo()},location.origin);
+      setTimeout(()=>{if(!state.league)setStatus('Reviewer demo handoff was not detected. Confirm the beta extension is installed, then try again.','warning')},1500);
+    }catch(error){setStatus(error.message,'error')}
+  }
   window.addEventListener('message',event=>{
     if(event.source!==window||event.origin!==location.origin||!event.data)return;
     if(event.data.type==='LB_MY_TEAM_EXTENSION_READY'){state.extension=true;if(event.data.hasRoster)window.postMessage({type:'LB_MY_TEAM_CONNECT_REQUEST',version:1},location.origin)}
@@ -45,6 +66,7 @@
     }
     if(event.data.type==='LB_MY_TEAM_CLEAR_COMPLETE')setStatus('Disconnected and cleared from extension-local storage.','good');
   });
-  $('mt-connect').addEventListener('click',connect);$('mt-disconnect').addEventListener('click',disconnect);
+  $('mt-connect').addEventListener('click',connect);$('mt-disconnect').addEventListener('click',disconnect);$('mt-demo').addEventListener('click',loadReviewDemo);
+  if(new URLSearchParams(location.search).get('reviewer')==='1')$('mt-demo').hidden=false;
   fetch('/data/my-team-week1.json',{credentials:'omit',cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('public model unavailable');return response.json()}).then(model=>{state.model=model;setStatus('Public Week 1 model ready. Connect the ESPN browser extension when your roster has been captured.','good')}).catch(error=>setStatus('My Team cannot load the public Week 1 model: '+error.message,'error'));
 })();

@@ -44,6 +44,7 @@ jobs:
           python scripts/test_week1_intelligence.py
           python scripts/test_my_team.py
           node scripts/test_my_team_browser.js
+          python scripts/test_chrome_store_bundle.py
           python scripts/test_feedback.py
           python -m beatwire.cli doctor --sport nfl
           python scripts/sync_home_nav.py --check
@@ -90,6 +91,7 @@ jobs:
           python scripts/build_pages.py --base "$DEV_BASE_URL" \
             --db /tmp/lineupbeat-development.db
           python scripts/build_my_team.py
+          python scripts/build_chrome_store_bundle.py
           python scripts/dev_site.py protect --label "$GITHUB_REF_NAME"
           python scripts/verify_deploy_artifact.py site --decision-room
           python scripts/dev_site.py verify
@@ -102,6 +104,22 @@ jobs:
           path: site
           if-no-files-found: error
           retention-days: 7
+
+      - name: Upload Chrome Web Store submission package
+        uses: actions/upload-artifact@v4
+        with:
+          name: lineupbeat-espn-cws-submission-${{ github.run_id }}
+          path: build/chrome-web-store/lineupbeat-espn-my-team-beta-0.2.0.zip
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload Chrome Web Store listing materials
+        uses: actions/upload-artifact@v4
+        with:
+          name: lineupbeat-espn-cws-listing-${{ github.run_id }}
+          path: build/chrome-web-store/listing-materials
+          if-no-files-found: error
+          retention-days: 14
 
       - name: Deploy only to the isolated development project
         env:

@@ -22,7 +22,6 @@ from __future__ import annotations
 import json
 import re
 import sys
-import zipfile
 from html import unescape
 from pathlib import Path
 
@@ -174,30 +173,27 @@ def check_my_team(root):
         root / "my-team" / "espn-adapter.js",
         root / "my-team" / "my-team.js",
         root / "my-team" / "my-team.css",
-        root / "my-team" / "lineupbeat-espn-extension.zip",
     ]
-    check("My Team runtime and development extension are complete",
+    check("My Team runtime is complete",
           all(path.is_file() for path in assets),
           "; ".join(str(path) for path in assets if not path.is_file()))
-    try:
-        with zipfile.ZipFile(assets[-1]) as archive:
-            manifest = json.loads(archive.read("lineupbeat-espn/manifest.json"))
-            worker = archive.read("lineupbeat-espn/background.js").decode()
-    except (OSError, KeyError, ValueError, zipfile.BadZipFile):
-        manifest, worker = {}, ""
-    scripts = manifest.get("content_scripts") or [{}, {}]
-    matches = scripts[1].get("matches") if len(scripts) > 1 else None
-    check("the distributed extension bridge is restricted to My Team",
-          matches == ["https://lineupbeat-dev.pages.dev/my-team/*"]
-          and "localhost" not in json.dumps(manifest)
-          and "127.0.0.1" not in json.dumps(manifest)
-          and "https://lineupbeat.com" not in json.dumps(manifest))
-    check("the distributed extension validates capture, retrieval, and clear senders",
-          "ESPN_ORIGIN='https://fantasy.espn.com'" in worker
-          and "ESPN_PATH='/football/'" in worker
-          and "MY_TEAM_ORIGIN='https://lineupbeat-dev.pages.dev'" in worker
-          and "MY_TEAM_PATH='/my-team/'" in worker
-          and worker.count("return reject(sendResponse)") == 3)
+    public_zip = root / "my-team" / "lineupbeat-espn-extension.zip"
+    check("the Chrome Web Store package is not publicly deployed",
+          not public_zip.exists(), str(public_zip))
+    support = root / "my-team" / "extension" / "index.html"
+    privacy = root / "my-team" / "extension" / "privacy" / "index.html"
+    support_text = support.read_text() if support.is_file() else ""
+    privacy_text = privacy.read_text() if privacy.is_file() else ""
+    check("extension support and privacy pages are deployed",
+          bool(support_text) and bool(privacy_text))
+    check("extension privacy accurately describes local storage and deletion",
+          "chrome.storage.local" in privacy_text
+          and "not placed in a URL or sent to a Lineup Beat server" in privacy_text
+          and "Disconnect &amp; clear" in privacy_text
+          and "No ESPN password, cookie, session token" in privacy_text)
+    check("extension support exposes no public package download",
+          "lineupbeat-espn-extension.zip" not in support_text
+          and "No public package download" in support_text)
     model_path = root / "data" / "my-team-week1.json"
     try:
         model = json.loads(model_path.read_text())
