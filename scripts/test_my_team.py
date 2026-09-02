@@ -135,7 +135,7 @@ class MyTeamArtifactTests(unittest.TestCase):
             self.assertTrue(package.exists())
             with zipfile.ZipFile(package) as archive:
                 packaged = json.loads(archive.read("manifest.json"))
-                self.assertEqual(packaged["version"], "0.2.5")
+                self.assertEqual(packaged["version"], "0.2.6")
                 self.assertEqual(len(archive.namelist()), 8)
                 self.assertEqual(
                     archive.namelist(),
@@ -179,7 +179,7 @@ class MyTeamArtifactTests(unittest.TestCase):
         for text in (guide, readme):
             self.assertIn("Save roster locally for My Team", text)
             self.assertNotIn("Send roster to Lineup Beat", text)
-        self.assertIn("Download version 0.2.5", guide)
+        self.assertIn("Download version 0.2.6", guide)
         self.assertIn("chrome.storage.local", privacy)
         self.assertIn("No ESPN password, cookie, session token", privacy)
         self.assertIn("not placed in a URL or sent to a Lineup Beat server", privacy)
@@ -193,15 +193,36 @@ class MyTeamArtifactTests(unittest.TestCase):
 
     def test_decision_copy_escapes_names_once(self):
         source = (ROOT / "my-team" / "my-team.js").read_text()
-        self.assertIn("${row.bench.name} and ${row.starter.name}", source)
-        self.assertIn("<p>${escape(call)}</p>", source)
-        self.assertNotIn("${escape(row.bench.name)} and ${escape(row.starter.name)}", source)
+        self.assertIn("const reason=`${bench.name} is eligible", source)
+        self.assertIn("<p>${escape(reason)}</p>", source)
+        self.assertNotIn("const reason=`${escape(bench.name)}", source)
 
     def test_matched_cards_use_canonical_identity_and_label_espn_status(self):
         source = (ROOT / "my-team" / "my-team.js").read_text()
         self.assertIn("LineupBeatLeagueAdapter.displayIdentity(player)", source)
-        self.assertIn("ESPN status ${player.espnStatus}", source)
+        self.assertIn("Q:'Questionable'", source)
+        self.assertIn('aria-label="ESPN status: ${escape(label)}"', source)
         self.assertNotIn("<h3>${escape(player.name)}</h3>", source)
+
+    def test_connected_value_layer_precedes_roster_and_uses_validated_model_fields(self):
+        page = build_my_team.render_page(build_my_team.public_model())
+        source = (ROOT / "my-team" / "my-team.js").read_text()
+        self.assertLess(page.index('id="mt-outlook"'), page.index('id="mt-roster"'))
+        self.assertLess(page.index('id="mt-decisions"'), page.index('id="mt-roster"'))
+        for value in ("projectedPoints", "expectedOpportunity", "opponent",
+                      "matchupFactor", "Open full player comparison",
+                      "Your strongest lineup is already set"):
+            self.assertIn(value, source)
+        self.assertNotIn("matched identity", source)
+
+    def test_pollard_tuten_candidate_comes_from_public_model(self):
+        players = {row["name"]: row for row in build_my_team.public_model()["players"]}
+        pollard = players["Tony Pollard"]
+        tuten = players["Bhayshul Tuten"]
+        self.assertEqual(pollard["formats"]["half_ppr"]["projectedPoints"], 9.6)
+        self.assertEqual(tuten["formats"]["half_ppr"]["projectedPoints"], 6.4)
+        self.assertGreater(pollard["formats"]["half_ppr"]["projectedPoints"] -
+                           tuten["formats"]["half_ppr"]["projectedPoints"], 2)
 
 
 if __name__ == "__main__":

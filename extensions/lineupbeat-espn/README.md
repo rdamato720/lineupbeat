@@ -6,7 +6,7 @@ store passwords or session tokens, collect manager identities, or send a
 roster to a Lineup Beat server.
 
 1. Download the submission artifact from the successful development workflow,
-   or download identity-label repair version 0.2.5 from the development support page, and unzip the
+   or download product-polish version 0.2.6 from the development support page, and unzip the
    store package.
 2. Open `chrome://extensions`, enable Developer mode, choose **Load unpacked**,
    and select the unzipped directory.
@@ -16,9 +16,9 @@ roster to a Lineup Beat server.
    prevents that, choose the prominent **Open My Team** action.
 5. Use **Disconnect & clear** on My Team to delete the extension-local copy.
 
-Version 0.2.5 preserves the proven row-first parser while rejecting ESPN injury
-designations as names, preferring bounded identity text, and capturing only
-unambiguous league and fantasy-team link labels.
+Version 0.2.6 preserves the proven row-first parser and local handoff, improves
+unambiguous visible league/team label capture, and adds Week 1 roster outlook,
+projection, opponent, opportunity, status, and actionable lineup evidence.
 Installed-extension QA remains blocked until Ralph verifies a live save. If
 the empty-roster error appears, choose **Copy safe diagnostics** and paste the
 JSON into Codex. The diagnostic is created only by that click, copied only to

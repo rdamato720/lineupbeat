@@ -26,6 +26,7 @@ async function main(){
   const decisions=LineupBeatLeagueAdapter.lineupDecisions(league,model,'half_ppr');
   assert.equal(decisions[0].action,'consider_swap');
   assert.equal(decisions[0].classification,'Edge');
+  assert.equal(LineupBeatLeagueAdapter.actionableDecisions(league,model,'half_ppr').length,1);
   assert.equal(LineupBeatLeagueAdapter.classify(10,9.9),'Toss-Up');
   assert.equal(LineupBeatLeagueAdapter.normalizeName('Travis Etienne Jr.'),'travis etienne');
   const qRaw={provider:'espn',league:{id:'1',name:'League',season:2026,scoringSettings:{receptionPoints:.5}},team:{id:'2',name:'Team'},roster:[
@@ -84,6 +85,10 @@ async function main(){
   assert.equal(flexDecision.bench.position,'WR');
   assert.equal(flexDecision.starter.position,'RB');
   assert.equal(flexDecision.starter.lineupSlot,'RB/WR/TE');
+  assert.deepEqual(LineupBeatLeagueAdapter.actionableDecisions(flexLeague,flexModel,'half_ppr')[0],flexDecision);
+
+  const trivialModel={players:[modelPlayer('flex-rb','Flex Back','BUF','RB',10),modelPlayer('bench-wr','Bench Wideout','NO','WR',10.1)]};
+  assert.equal(LineupBeatLeagueAdapter.actionableDecisions(flexLeague,trivialModel,'half_ppr').length,0);
 
   const positions=['RB','WR','TE','QB'];
   const ordinaryRaw={provider:'espn',league:{id:'1',name:'Ordinary',season:2026,scoringSettings:{receptionPoints:.5}},team:{id:'2',name:'Ordinary'},roster:positions.flatMap(position=>[
@@ -145,7 +150,14 @@ async function main(){
   assert(!content.includes('fetch('));assert(!content.includes('XMLHttpRequest'));
   const myTeam=fs.readFileSync('my-team/my-team.js','utf8');
   assert(myTeam.includes('display=LineupBeatLeagueAdapter.displayIdentity(player)'));
-  assert(myTeam.includes('ESPN status ${player.espnStatus}'));
+  assert(myTeam.includes("Q:'Questionable'"));
+  assert(myTeam.includes('aria-label="ESPN status: ${escape(label)}"'));
+  assert(myTeam.includes('Week 1 ${escape(labels[format])} pts'));
+  assert(myTeam.includes('2025 prior-season context'));
+  assert(myTeam.includes('Open full player comparison'));
+  assert(myTeam.includes('Your strongest lineup is already set'));
+  assert(myTeam.includes('LineupBeatLeagueAdapter.actionableDecisions'));
+  assert(!myTeam.includes('matched identity'));
   assert(!myTeam.includes('<h3>${escape(player.name)}</h3>'));
 
   console.log('My Team browser adapter and extension worker tests passed');

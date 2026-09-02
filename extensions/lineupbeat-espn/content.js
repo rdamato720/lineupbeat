@@ -55,8 +55,19 @@
     const candidate = String(value || '').replace(/\s+/g, ' ').trim();
     const label = normalized(candidate);
     if (!candidate || candidate.length > 80 || EXCLUDED_PAGE_LABELS.has(label) ||
-        /https?:\/\//i.test(candidate) || /[?&](?:leagueId|teamId)=/i.test(candidate)) return '';
+        /https?:\/\//i.test(candidate) || /[?&](?:leagueId|teamId)=/i.test(candidate) ||
+        /^\d+(?:-\d+){1,2}$/.test(candidate)) return '';
     return /[\p{L}\p{N}]/u.test(candidate) ? candidate : '';
+  }
+
+  function visibleLabelCandidates(link) {
+    const leaves = queryAll(link, '*').filter(node => visible(node) &&
+      !Array.from(node.children || []).some(visible));
+    const values = leaves.map(node => node.textContent);
+    if (!values.length) values.push(link.textContent);
+    const aria = link.getAttribute && link.getAttribute('aria-label');
+    if (aria) values.push(aria);
+    return values.map(pageLabel).filter(Boolean);
   }
 
   function managerContext(node) {
@@ -73,7 +84,9 @@
 
   function fantasyUrl(node) {
     try {
-      const url = new URL(String(node.getAttribute('href') || ''), 'https://fantasy.espn.com');
+      const base = node.ownerDocument && node.ownerDocument.baseURI ||
+        'https://fantasy.espn.com/football/team';
+      const url = new URL(String(node.getAttribute('href') || ''), base);
       return url.origin === 'https://fantasy.espn.com' && url.pathname.startsWith('/football/')
         ? url : null;
     } catch (_error) {
@@ -92,29 +105,25 @@
 
   function pageLabels(document, leagueId, teamId) {
     const leagueValues = [];
-    const teamCounts = new Map();
+    const teamValues = [];
     for (const link of queryAll(document, 'a[href]').filter(visible)) {
       const url = fantasyUrl(link);
       if (!url) continue;
-      const label = pageLabel(link.textContent);
-      if (!label) continue;
+      const labels = visibleLabelCandidates(link);
+      if (!labels.length) continue;
       const leagueContext = url.pathname.startsWith('/football/league') ||
         !url.searchParams.has('teamId');
       if (leagueId && leagueContext &&
-          url.searchParams.get('leagueId') === String(leagueId)) leagueValues.push(label);
+          url.searchParams.get('leagueId') === String(leagueId)) leagueValues.push(...labels);
       if (teamId && url.pathname.startsWith('/football/team') &&
           url.searchParams.get('teamId') === String(teamId) &&
           (!leagueId || !url.searchParams.has('leagueId') ||
            url.searchParams.get('leagueId') === String(leagueId)) && !managerContext(link)) {
-        const key = normalized(label);
-        const row = teamCounts.get(key) || {label, count: 0};
-        row.count += 1;
-        teamCounts.set(key, row);
+        teamValues.push(...labels);
       }
     }
     const league = oneLabel(leagueValues);
-    const repeatedTeam = [...teamCounts.values()].filter(row => row.count >= 2);
-    const team = oneLabel(repeatedTeam.map(row => row.label));
+    const team = oneLabel(teamValues);
     return {
       leagueName: league.value || 'ESPN league',
       teamName: team.value || 'My ESPN team',

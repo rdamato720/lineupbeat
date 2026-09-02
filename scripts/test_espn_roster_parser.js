@@ -2,6 +2,7 @@ const fs = require('fs');
 const vm = require('vm');
 const assert = require('assert');
 const parser = require('../extensions/lineupbeat-espn/espn-roster-parser.js');
+const diagnostics = require('../extensions/lineupbeat-espn/content.js');
 
 function parseStyle(value) {
   const style = {};
@@ -13,6 +14,7 @@ function parseStyle(value) {
 }
 
 function selectorPart(value) {
+  if (value.trim() === '*') return {wildcard: true};
   const match = value.trim().match(/^([a-zA-Z0-9_-]+)?(?:\.([a-zA-Z0-9_-]+))?(?:\[([a-zA-Z0-9_-]+)(\*=|=)?(?:"([^"]*)")?\])?$/);
   if (!match) throw new Error(`Unsupported fixture selector: ${value}`);
   return {tag: match[1], className: match[2], attribute: match[3], operator: match[4], value: match[5]};
@@ -41,6 +43,7 @@ class FixtureElement {
   matches(selector) {
     return selector.split(',').some(raw => {
       const part = selectorPart(raw);
+      if (part.wildcard) return true;
       if (part.tag && this.tagName !== part.tag.toUpperCase()) return false;
       if (part.className && !String(this.getAttribute('class') || '').split(/\s+/).includes(part.className)) return false;
       if (!part.attribute) return true;
@@ -66,6 +69,7 @@ class FixtureElement {
 function parseFixture(html) {
   const document = {
     nodeType: 9,
+    baseURI: 'https://fantasy.espn.com/football/team?leagueId=998877&teamId=3',
     documentElement: null,
     defaultView: {getComputedStyle: node => node.style},
     querySelectorAll(selector) { return this.documentElement.querySelectorAll(selector); },
@@ -118,6 +122,27 @@ function backgroundHarness() {
 }
 
 async function main() {
+  const metadataFixture = parseFixture(fs.readFileSync(
+    'scripts/fixtures/espn_metadata_labels_current.html', 'utf8'));
+  const metadataLabels = diagnostics.pageLabels(metadataFixture, '998877', '3');
+  assert.equal(metadataLabels.leagueName, 'BG-N-Co.');
+  assert.equal(metadataLabels.teamName, 'Some Pulp');
+  assert(!JSON.stringify(metadataLabels).includes('998877'));
+  assert(!JSON.stringify(metadataLabels).includes('Sanitized Manager'));
+
+  const conflictFixture = parseFixture(`
+    <html><body>
+      <a href="league?leagueId=998877">League Alpha</a>
+      <a href="league?leagueId=998877">League Beta</a>
+      <a href="?leagueId=998877&teamId=3">Team Alpha</a>
+      <a href="?leagueId=998877&teamId=3">Team Beta</a>
+    </body></html>`);
+  const conflicts = diagnostics.pageLabels(conflictFixture, '998877', '3');
+  assert.equal(conflicts.leagueName, 'ESPN league');
+  assert.equal(conflicts.teamName, 'My ESPN team');
+  assert.equal(conflicts.diagnostics.leagueConflict, true);
+  assert.equal(conflicts.diagnostics.teamConflict, true);
+
   const fixture = parseFixture(fs.readFileSync('scripts/fixtures/espn_roster_table_current.html', 'utf8'));
   assert.equal(fixture.querySelectorAll(parser.PLAYER_SELECTOR).length, 0,
     'the live-shape fixture must contain zero legacy player-selector matches');

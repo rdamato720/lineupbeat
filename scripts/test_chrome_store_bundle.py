@@ -86,7 +86,7 @@ class ChromeStoreManifestTests(unittest.TestCase):
 
     def test_exact_hosts_minimal_permissions_and_beta_version(self):
         self.assertEqual(self.manifest["manifest_version"], 3)
-        self.assertEqual(self.manifest["version"], "0.2.5")
+        self.assertEqual(self.manifest["version"], "0.2.6")
         self.assertTrue(self.manifest["name"].endswith("BETA"))
         self.assertLessEqual(len(self.manifest["description"]), 132)
         self.assertIn("THIS EXTENSION IS FOR BETA TESTING", self.manifest["description"])
@@ -189,17 +189,17 @@ class ChromeStoreBundleTests(unittest.TestCase):
     def test_listing_is_complete_and_version_consistent(self):
         listing = (LISTING / "STORE_LISTING.md").read_text()
         for required in (
-            "Lineup Beat ESPN My Team BETA", "0.2.5", "Short summary",
+            "Lineup Beat ESPN My Team BETA", "0.2.6", "Short summary",
             "Detailed description", "Single purpose", "Permission justification",
             "Data-use selections", "Support URL", "Privacy policy URL",
             "Test instructions", "Unlisted", "Future Chrome Web Store steps — currently blocked",
-            "Ralph's manual installed-extension QA", "Install version 0.2.5",
+            "Ralph's manual installed-extension QA", "Install version 0.2.6",
             "Save roster locally for My Team", "Open My Team",
             "Disconnect & clear", "Load reviewer demo roster",
         ):
             self.assertIn(required, listing)
         self.assertIn("No credentials are required", listing)
-        self.assertIn("identity-label repair awaits Ralph's live ESPN save test", listing)
+        self.assertIn("roster-intelligence polish awaits Ralph's live ESPN save test", listing)
         self.assertIn("Chrome Web Store", listing)
         self.assertIn("upload and submission remain blocked", listing)
         self.assertNotIn("Ralph's private", listing)
@@ -216,7 +216,7 @@ class ChromeStoreBundleTests(unittest.TestCase):
             report = build_chrome_store_bundle.build(Path(bundle))
             expected = Path(bundle) / report["package"]
             self.assertEqual(package.read_bytes(), expected.read_bytes())
-            self.assertIn("Download version 0.2.5", support.read_text())
+            self.assertIn("Download version 0.2.6", support.read_text())
             text = privacy.read_text()
             for required in (
                 "chrome.storage.local", "No roster upload", "No ESPN password, cookie, session token",
@@ -231,7 +231,7 @@ class ChromeStoreBundleTests(unittest.TestCase):
         self.assertIn("lineupbeat-espn-cws-submission-${{ github.run_id }}", workflow)
         self.assertIn("lineupbeat-espn-cws-listing-${{ github.run_id }}", workflow)
         self.assertIn(
-            "build/chrome-web-store/lineupbeat-espn-my-team-beta-0.2.5.zip",
+            "build/chrome-web-store/lineupbeat-espn-my-team-beta-0.2.6.zip",
             workflow,
         )
         self.assertIn("build/chrome-web-store/listing-materials", workflow)

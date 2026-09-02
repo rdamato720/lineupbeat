@@ -88,5 +88,14 @@
     }));
     return out.sort((a,b)=>(b.action==='consider_swap')-(a.action==='consider_swap')||b.gap-a.gap).slice(0,8);
   }
-  root.LineupBeatLeagueAdapter={VERSION,SUPPORTED,GROUPS,normalizeName,normalizeTeam,validPlayerName,displayIdentity,validate,match,classify,lineupDecisions,allPlayers};
+  function actionableDecisions(league,model,format){
+    const bench=new Set(),starters=new Set(),out=[];
+    for(const row of lineupDecisions(league,model,format)){
+      if(row.action!=='consider_swap'||bench.has(row.bench)||starters.has(row.starter))continue;
+      bench.add(row.bench);starters.add(row.starter);out.push(row);
+      if(out.length===3)break;
+    }
+    return out;
+  }
+  root.LineupBeatLeagueAdapter={VERSION,SUPPORTED,GROUPS,normalizeName,normalizeTeam,validPlayerName,displayIdentity,validate,match,classify,lineupDecisions,actionableDecisions,allPlayers};
 })(typeof globalThis!=='undefined'?globalThis:window);
