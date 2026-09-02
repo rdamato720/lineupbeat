@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 748,
+ "count": 766,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -8267,6 +8267,204 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00637
+  },
+  {
+   "candidate_id": "mobile:article:69b2367687128a0420e2",
+   "player_id": "00-0038606",
+   "source_url": "https://www.jaguars.com/news/coen-on-practice-squad-additions-a-more-competitive-situation",
+   "attempted_at": "2026-09-02T19:39:07+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:39:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005062
+  },
+  {
+   "candidate_id": "mobile:onsi:92ab860d9fe4fadbed00",
+   "player_id": "00-0041503",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-offensive-line-is-already-answering-its-biggest-questions",
+   "attempted_at": "2026-09-02T19:39:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:39:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004592
+  },
+  {
+   "candidate_id": "mobile:onsi:a8bb01d1e5aa0bf9c67d",
+   "player_id": "00-0040718",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-offensive-line-is-already-answering-its-biggest-questions",
+   "attempted_at": "2026-09-02T19:39:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:39:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003698
+  },
+  {
+   "candidate_id": "mobile:onsi:63c3687207866a5057dc",
+   "player_id": "00-0036442",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/rookie-jack-endries-makes-bengals-roster-via-unexpected-path-keeping-team-s-impressive-streak-alive-01m1hrpn292m",
+   "attempted_at": "2026-09-02T19:39:19+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:39:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004958
+  },
+  {
+   "candidate_id": "mobile:onsi:759c3ed273ecaa26c1c7",
+   "player_id": "00-0036900",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/bengals-edge-rusher-returns-to-practice-following-month-long-injury-01m1hrk7cx9z",
+   "attempted_at": "2026-09-02T19:39:23+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-02T19:39:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00466
+  },
+  {
+   "candidate_id": "mobile:onsi:b2467f8ee4ff288a2e50",
+   "player_id": "00-0036410",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/bengals-edge-rusher-returns-to-practice-following-month-long-injury-01m1hrk7cx9z",
+   "attempted_at": "2026-09-02T19:39:27+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-02T19:39:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005174
+  },
+  {
+   "candidate_id": "mobile:article:811124e4816c96267681",
+   "player_id": "00-0035640",
+   "source_url": "https://www.steelers.com/news/rodgers-reviews-progress-for-pass-catchers-and-fellow-passers",
+   "attempted_at": "2026-09-02T19:39:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:39:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003818
+  },
+  {
+   "candidate_id": "mobile:article:e5221b48bf0723969f53",
+   "player_id": "00-0036894",
+   "source_url": "https://www.steelers.com/news/rodgers-reviews-progress-for-pass-catchers-and-fellow-passers",
+   "attempted_at": "2026-09-02T19:39:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:39:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00424
+  },
+  {
+   "candidate_id": "mobile:onsi:72fdfa0aaeefe659b408",
+   "player_id": "00-0033537",
+   "source_url": "https://www.si.com/nfl/browns/onsi/how-browns-coach-todd-monken-is-wiping-slate-clean-with-deshaun-watson-01m1hcq41482",
+   "attempted_at": "2026-09-02T19:39:38+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T19:39:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005466
+  },
+  {
+   "candidate_id": "mobile:onsi:c667228c9459677f14c7",
+   "player_id": "00-0026498",
+   "source_url": "https://www.si.com/nfl/rams/onsi/rams-2026-roster-construction-breakdown",
+   "attempted_at": "2026-09-02T19:39:43+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:39:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00398
+  },
+  {
+   "candidate_id": "mobile:onsi:e94dcd53b076d1ad32fe",
+   "player_id": "00-0039075",
+   "source_url": "https://www.si.com/nfl/rams/onsi/rams-2026-roster-construction-breakdown",
+   "attempted_at": "2026-09-02T19:39:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:39:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004726
+  },
+  {
+   "candidate_id": "mobile:onsi:396dc853e7520557c699",
+   "player_id": "00-0039065",
+   "source_url": "https://www.si.com/nfl/lions/onsi/detroit-lions-provide-clarity-about-brian-branch-sam-laporta-extensions",
+   "attempted_at": "2026-09-02T19:39:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:39:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004828
+  },
+  {
+   "candidate_id": "mobile:onsi:427a6714f236b5ecc83e",
+   "player_id": "00-0039139",
+   "source_url": "https://www.si.com/nfl/lions/onsi/detroit-lions-provide-clarity-about-brian-branch-sam-laporta-extensions",
+   "attempted_at": "2026-09-02T19:39:53+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:39:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004252
+  },
+  {
+   "candidate_id": "mobile:onsi:9105326e21a8530a56f6",
+   "player_id": "00-0041013",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/chiefs-on-si-mailbag-which-running-backs-can-be-trusted-to-protect-patrick-mahomes",
+   "attempted_at": "2026-09-02T19:39:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:40:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005304
+  },
+  {
+   "candidate_id": "mobile:onsi:87934a2774a464fb4d9e",
+   "player_id": "00-0037261",
+   "source_url": "https://www.si.com/nfl/bills/onsi/special-teams-one-problem-bills-failed-to-solve-this-summer-but-brandon-beane-has-some-ideas",
+   "attempted_at": "2026-09-02T19:40:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:40:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003558
+  },
+  {
+   "candidate_id": "mobile:article:d41f95f92c0019e0381e",
+   "player_id": "00-0033077",
+   "source_url": "https://www.dallascowboys.com/news/sam-howell-on-earning-qb2-job-the-work-doesn-t-stop-now",
+   "attempted_at": "2026-09-02T19:40:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:40:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004386
+  },
+  {
+   "candidate_id": "mobile:article:f0de8433e77815fb94d9",
+   "player_id": "00-0036252",
+   "source_url": "https://steelersdepot.com/2026/09/aaron-rodgers-hopes-to-crank-up-connection-with-michael-pittman-jr/",
+   "attempted_at": "2026-09-02T19:40:07+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T19:40:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004876
+  },
+  {
+   "candidate_id": "mobile:onsi:5501354706442d3eb077",
+   "player_id": "00-0039337",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/low-risk-safe-picks-adp-fantasy-football-kenneth-gainwell-2026",
+   "attempted_at": "2026-09-02T19:40:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T19:40:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005858
   }
  ]
 }
