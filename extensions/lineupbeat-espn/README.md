@@ -6,7 +6,7 @@ store passwords or session tokens, collect manager identities, or send a
 roster to a Lineup Beat server.
 
 1. Download the submission artifact from the successful development workflow,
-   or download version 0.2.0 from the development support page, and unzip the
+   or download version 0.2.1 from the development support page, and unzip the
    store package.
 2. Open `chrome://extensions`, enable Developer mode, choose **Load unpacked**,
    and select the unzipped directory.

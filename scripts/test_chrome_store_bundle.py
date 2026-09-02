@@ -86,7 +86,7 @@ class ChromeStoreManifestTests(unittest.TestCase):
 
     def test_exact_hosts_minimal_permissions_and_beta_version(self):
         self.assertEqual(self.manifest["manifest_version"], 3)
-        self.assertEqual(self.manifest["version"], "0.2.0")
+        self.assertEqual(self.manifest["version"], "0.2.1")
         self.assertTrue(self.manifest["name"].endswith("BETA"))
         self.assertLessEqual(len(self.manifest["description"]), 132)
         self.assertIn("THIS EXTENSION IS FOR BETA TESTING", self.manifest["description"])
@@ -96,6 +96,10 @@ class ChromeStoreManifestTests(unittest.TestCase):
             [script["matches"] for script in self.manifest["content_scripts"]],
             [["https://fantasy.espn.com/football/*"],
              ["https://lineupbeat-dev.pages.dev/my-team/*"]],
+        )
+        self.assertEqual(
+            [script["js"] for script in self.manifest["content_scripts"]],
+            [["espn-roster-parser.js", "content.js"], ["content.js"]],
         )
         encoded = json.dumps(self.manifest)
         for forbidden in ("lineupbeat.com", "localhost", "127.0.0.1", "<all_urls>", "cookies", "tabs"):
@@ -115,13 +119,15 @@ class ChromeStoreManifestTests(unittest.TestCase):
 
     def test_authored_runtime_is_local_only_and_reviewable(self):
         background = (EXTENSION / "background.js").read_text()
+        parser = (EXTENSION / "espn-roster-parser.js").read_text()
         content = (EXTENSION / "content.js").read_text()
-        for source in (background, content):
+        for source in (background, parser, content):
             self.assertNotIn("eval(", source)
             self.assertNotIn("new Function", source)
             self.assertGreater(source.count("\n"), 20)
         for network_api in ("fetch(", "XMLHttpRequest", "WebSocket", "sendBeacon"):
             self.assertNotIn(network_api, background)
+            self.assertNotIn(network_api, parser)
             self.assertNotIn(network_api, content)
         self.assertIn("chrome.storage.local.set", background)
         self.assertIn("chrome.storage.local.remove", background)
@@ -176,11 +182,11 @@ class ChromeStoreBundleTests(unittest.TestCase):
     def test_listing_is_complete_and_version_consistent(self):
         listing = (LISTING / "STORE_LISTING.md").read_text()
         for required in (
-            "Lineup Beat ESPN My Team BETA", "0.2.0", "Short summary",
+            "Lineup Beat ESPN My Team BETA", "0.2.1", "Short summary",
             "Detailed description", "Single purpose", "Permission justification",
             "Data-use selections", "Support URL", "Privacy policy URL",
             "Test instructions", "Unlisted", "Manual steps Ralph must perform",
-            "Ralph's manual installed-extension QA", "Install version 0.2.0",
+            "Ralph's manual installed-extension QA", "Install version 0.2.1",
             "Save roster locally for My Team", "Open My Team",
             "Disconnect & clear", "Load reviewer demo roster",
         ):
@@ -200,7 +206,7 @@ class ChromeStoreBundleTests(unittest.TestCase):
             report = build_chrome_store_bundle.build(Path(bundle))
             expected = Path(bundle) / report["package"]
             self.assertEqual(package.read_bytes(), expected.read_bytes())
-            self.assertIn("Download version 0.2.0", support.read_text())
+            self.assertIn("Download version 0.2.1", support.read_text())
             text = privacy.read_text()
             for required in (
                 "chrome.storage.local", "No roster upload", "No ESPN password, cookie, session token",
@@ -215,7 +221,7 @@ class ChromeStoreBundleTests(unittest.TestCase):
         self.assertIn("lineupbeat-espn-cws-submission-${{ github.run_id }}", workflow)
         self.assertIn("lineupbeat-espn-cws-listing-${{ github.run_id }}", workflow)
         self.assertIn(
-            "build/chrome-web-store/lineupbeat-espn-my-team-beta-0.2.0.zip",
+            "build/chrome-web-store/lineupbeat-espn-my-team-beta-0.2.1.zip",
             workflow,
         )
         self.assertIn("build/chrome-web-store/listing-materials", workflow)

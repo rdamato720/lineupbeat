@@ -43,6 +43,7 @@ jobs:
           python scripts/test_college_decision_room.py
           python scripts/test_week1_intelligence.py
           python scripts/test_my_team.py
+          node scripts/test_espn_roster_parser.js
           node scripts/test_my_team_browser.js
           python scripts/test_chrome_store_bundle.py
           python scripts/test_feedback.py
@@ -109,7 +110,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: lineupbeat-espn-cws-submission-${{ github.run_id }}
-          path: build/chrome-web-store/lineupbeat-espn-my-team-beta-0.2.0.zip
+          path: build/chrome-web-store/lineupbeat-espn-my-team-beta-0.2.1.zip
           if-no-files-found: error
           retention-days: 14
 

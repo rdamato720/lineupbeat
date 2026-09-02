@@ -24,37 +24,10 @@
     return fallback;
   }
 
-  function parseRow(row) {
-    const link = row.querySelector('a[href*="/nfl/player/_/id/"],a[href*="playerId="]');
-    if (!link) return null;
-    const href = link.href || '';
-    const id = (href.match(/\/id\/(\d+)/) || href.match(/[?&]playerId=(\d+)/) || [])[1];
-    if (!id) return null;
-
-    const name = (link.textContent || '').trim();
-    const text = (row.innerText || '').replace(/\s+/g, ' ').trim();
-    const positions = ['D/ST', 'QB', 'RB', 'WR', 'TE', 'K'];
-    const position = positions.find(value =>
-      new RegExp(`(?:^|\\s)${value.replace('/', '\\/')}(?:\\s|$)`).test(text)) || '';
-    const teams = [
-      'ARI', 'ATL', 'BAL', 'BUF', 'CAR', 'CHI', 'CIN', 'CLE', 'DAL', 'DEN', 'DET',
-      'GB', 'HOU', 'IND', 'JAX', 'KC', 'LV', 'LAC', 'LAR', 'MIA', 'MIN', 'NE',
-      'NO', 'NYG', 'NYJ', 'PHI', 'PIT', 'SEA', 'SF', 'TB', 'TEN', 'WAS'
-    ];
-    const team = teams.find(value =>
-      new RegExp(`(?:^|\\s)${value}(?:\\s|$)`).test(text)) || '';
-    const firstCell = row.querySelector('td,th');
-    const slot = ((firstCell && firstCell.textContent) || position)
-      .trim().split(/\s+/)[0].toUpperCase();
-    return {providerPlayerId: id, name, team, position, lineupSlot: slot};
-  }
-
   function capture(receptionPoints) {
-    const roster = Array.from(document.querySelectorAll('tr,[role="row"]'))
-      .map(parseRow).filter(Boolean);
-    if (!roster.length) {
-      throw new Error('No visible ESPN roster rows were found. Open the team roster page and try again.');
-    }
+    const parser = globalThis.LineupBeatEspnRosterParser;
+    if (!parser) throw new Error('The ESPN roster parser did not load. Reload the extension and try again.');
+    const roster = parser.requireRoster(document);
     return {
       provider: 'espn',
       connectionType: 'browser_extension',

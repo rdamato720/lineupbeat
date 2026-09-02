@@ -5,9 +5,9 @@ not authorize an upload, review submission, or publication.
 
 ## Package tab
 
-- Upload file: `lineupbeat-espn-my-team-beta-0.2.0.zip`
+- Upload file: `lineupbeat-espn-my-team-beta-0.2.1.zip`
 - Manifest version: 3
-- Extension version: 0.2.0
+- Extension version: 0.2.1
 - Extension name: `Lineup Beat ESPN My Team BETA`
 - Manifest description (104 characters):
 
@@ -166,8 +166,8 @@ The extension should never request an ESPN password, cookie, session token or ma
 
 This checklist remains outstanding until Ralph runs it in installed Chrome:
 
-1. Install version 0.2.0 with **Load unpacked**, or reload the already installed
-   unpacked extension and confirm the version is 0.2.0.
+1. Install version 0.2.1 with **Load unpacked**, or reload the already installed
+   unpacked extension and confirm the version is 0.2.1.
 2. Open an ESPN Fantasy Football league roster under
    `https://fantasy.espn.com/football/`.
 3. Choose the league's reception scoring and select **Save roster locally for
@@ -190,12 +190,12 @@ artifacts containing only the reviewed extension package and store-listing
 materials. They contain no credentials, private roster exports, cookies,
 tokens, API keys or personal member information.
 
-The same version 0.2.0 submission ZIP is also available from the development
+The same version 0.2.1 submission ZIP is also available from the development
 support page for manual installed-extension QA. Its SHA-256 must match the
 inventory below before use.
 
 1. Download the `lineupbeat-espn-cws-submission-<run-id>` artifact and extract
-   its `lineupbeat-espn-my-team-beta-0.2.0.zip` file.
+   its `lineupbeat-espn-my-team-beta-0.2.1.zip` file.
 2. Download the `lineupbeat-espn-cws-listing-<run-id>` artifact and extract its
    listing materials.
 3. Confirm the submission ZIP SHA-256 matches `package-inventory.json` in the

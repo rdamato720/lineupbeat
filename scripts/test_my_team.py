@@ -135,7 +135,7 @@ class MyTeamArtifactTests(unittest.TestCase):
             self.assertTrue(package.exists())
             with zipfile.ZipFile(package) as archive:
                 packaged = json.loads(archive.read("manifest.json"))
-                self.assertEqual(packaged["version"], "0.2.0")
+                self.assertEqual(packaged["version"], "0.2.1")
                 self.assertEqual(
                     archive.namelist(),
                     list(build_my_team.build_chrome_store_bundle.RUNTIME_FILES),
@@ -151,8 +151,11 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertNotIn("host_permissions", manifest)
         self.assertEqual(manifest["content_scripts"][0]["matches"],
                          ["https://fantasy.espn.com/football/*"])
+        self.assertEqual(manifest["content_scripts"][0]["js"],
+                         ["espn-roster-parser.js", "content.js"])
         self.assertEqual(manifest["content_scripts"][1]["matches"],
                          ["https://lineupbeat-dev.pages.dev/my-team/*"])
+        self.assertEqual(manifest["content_scripts"][1]["js"], ["content.js"])
         encoded = json.dumps(manifest)
         self.assertNotIn("cookies", encoded)
         self.assertNotIn("lineupbeat.com", encoded)
@@ -173,7 +176,7 @@ class MyTeamArtifactTests(unittest.TestCase):
         for text in (guide, readme):
             self.assertIn("Save roster locally for My Team", text)
             self.assertNotIn("Send roster to Lineup Beat", text)
-        self.assertIn("Download version 0.2.0", guide)
+        self.assertIn("Download version 0.2.1", guide)
         self.assertIn("chrome.storage.local", privacy)
         self.assertIn("No ESPN password, cookie, session token", privacy)
         self.assertIn("not placed in a URL or sent to a Lineup Beat server", privacy)

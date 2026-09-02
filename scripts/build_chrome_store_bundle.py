@@ -18,6 +18,7 @@ FIXED_TIME = (2026, 9, 1, 0, 0, 0)
 RUNTIME_FILES = (
     "manifest.json",
     "background.js",
+    "espn-roster-parser.js",
     "content.js",
     "icons/icon-16.png",
     "icons/icon-32.png",
