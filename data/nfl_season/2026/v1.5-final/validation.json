@@ -1,0 +1,2601 @@
+{
+  "active_count": 505,
+  "failures": [],
+  "identity_count": 505,
+  "status": "PASS",
+  "teams": [
+    {
+      "budgets": {
+        "attempts": 597.105391,
+        "carries": 441.913484,
+        "completions": 386.807844,
+        "fumbles_lost_total": 8.545141,
+        "non_targeted_attempts": 24.546072,
+        "passing_interceptions": 12.425289,
+        "passing_tds": 24.496405,
+        "passing_yards": 4123.733541,
+        "receiving_tds": 24.496405,
+        "receiving_yards": 4123.733541,
+        "receptions": 386.807844,
+        "rushing_tds": 14.336698,
+        "rushing_yards": 1920.400879,
+        "targetable_attempts": 572.559318,
+        "targets": 572.559318
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 9.999999974752427e-07,
+        "completions": 9.999999974752427e-07,
+        "fumbles_lost_total": -1.999999998503199e-06,
+        "non_targeted_attempts": 2.0000000908737547e-06,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 0.0,
+        "receiving_yards": -9.99999429041054e-07,
+        "receptions": 9.999999974752427e-07,
+        "rushing_tds": -1.0000000010279564e-06,
+        "rushing_yards": 0.0,
+        "targetable_attempts": -9.999999974752427e-07,
+        "targets": -9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 597.105391,
+        "carries": 441.913485,
+        "completions": 386.807845,
+        "fumbles_lost_total": 8.545139,
+        "non_targeted_attempts": 24.54607400000009,
+        "passing_interceptions": 12.425289,
+        "passing_tds": 24.496405,
+        "passing_yards": 4123.733541,
+        "receiving_tds": 24.496405,
+        "receiving_yards": 4123.73354,
+        "receptions": 386.807845,
+        "rushing_tds": 14.336697,
+        "rushing_yards": 1920.400879,
+        "targetable_attempts": 572.559317,
+        "targets": 572.559317
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.145638740002783,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8437079801801204,
+          "receptions": 0.2126162777609029,
+          "targets": 0.18667226720428645
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0002525856395909386,
+          "receptions": 0.34940299969718297,
+          "targets": 0.3286003931561201
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.01040069644039194,
+          "receptions": 0.4379807251271771,
+          "targets": 0.4847273378930495
+        }
+      },
+      "team": "ARI"
+    },
+    {
+      "budgets": {
+        "attempts": 562.075891,
+        "carries": 492.005234,
+        "completions": 363.358094,
+        "fumbles_lost_total": 8.745641,
+        "non_targeted_attempts": 24.10662,
+        "passing_interceptions": 12.860539,
+        "passing_tds": 22.415093,
+        "passing_yards": 3953.836674,
+        "receiving_tds": 22.415093,
+        "receiving_yards": 3953.836674,
+        "receptions": 363.358094,
+        "rushing_tds": 17.026806,
+        "rushing_yards": 2227.661602,
+        "targetable_attempts": 537.96927,
+        "targets": 537.96927
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 5.684341886080802e-14,
+        "completions": 9.999999974752427e-07,
+        "fumbles_lost_total": -1.0000000010279564e-06,
+        "non_targeted_attempts": 9.99999905104687e-07,
+        "passing_interceptions": 1.7763568394002505e-15,
+        "passing_tds": 3.552713678800501e-15,
+        "passing_yards": 0.0,
+        "receiving_tds": 0.0,
+        "receiving_yards": 9.99999883788405e-07,
+        "receptions": 0.0,
+        "rushing_tds": 1.999999998503199e-06,
+        "rushing_yards": 9.99999883788405e-07,
+        "targetable_attempts": 0.0,
+        "targets": 0.0
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 562.075891,
+        "carries": 492.00523400000003,
+        "completions": 363.358095,
+        "fumbles_lost_total": 8.74564,
+        "non_targeted_attempts": 24.106620999999905,
+        "passing_interceptions": 12.860539000000001,
+        "passing_tds": 22.415093000000002,
+        "passing_yards": 3953.836674,
+        "receiving_tds": 22.415093,
+        "receiving_yards": 3953.836675,
+        "receptions": 363.358094,
+        "rushing_tds": 17.026808,
+        "rushing_yards": 2227.661603,
+        "targetable_attempts": 537.96927,
+        "targets": 537.96927
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.06454494750354628,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.9266200082741397,
+          "receptions": 0.22515499544644796,
+          "targets": 0.19296444757894812
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.000997149961213624,
+          "receptions": 0.2677227853358346,
+          "targets": 0.257836887225919
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.007837894261100483,
+          "receptions": 0.5071222192177175,
+          "targets": 0.5491986651951327
+        }
+      },
+      "team": "ATL"
+    },
+    {
+      "budgets": {
+        "attempts": 456.319141,
+        "carries": 493.698984,
+        "completions": 299.669594,
+        "fumbles_lost_total": 9.671141,
+        "non_targeted_attempts": 17.175203,
+        "passing_interceptions": 9.098039,
+        "passing_tds": 29.004863,
+        "passing_yards": 3739.066828,
+        "receiving_tds": 29.004863,
+        "receiving_yards": 3739.066828,
+        "receptions": 299.669594,
+        "rushing_tds": 20.776197,
+        "rushing_yards": 2610.781397,
+        "targetable_attempts": 439.143937,
+        "targets": 439.143937
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 9.999999974752427e-07,
+        "completions": 0.0,
+        "fumbles_lost_total": 0.0,
+        "non_targeted_attempts": 1.0658141036401503e-14,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 0.0,
+        "receiving_yards": -2.000000222324161e-06,
+        "receptions": 0.0,
+        "rushing_tds": 1.0000000010279564e-06,
+        "rushing_yards": -4.547473508864641e-13,
+        "targetable_attempts": 9.999999974752427e-07,
+        "targets": 9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 456.319141,
+        "carries": 493.698985,
+        "completions": 299.669594,
+        "fumbles_lost_total": 9.671141,
+        "non_targeted_attempts": 17.17520300000001,
+        "passing_interceptions": 9.098039,
+        "passing_tds": 29.004863,
+        "passing_yards": 3739.066828,
+        "receiving_tds": 29.004863,
+        "receiving_yards": 3739.0668259999998,
+        "receptions": 299.669594,
+        "rushing_tds": 20.776198,
+        "rushing_yards": 2610.7813969999997,
+        "targetable_attempts": 439.143938,
+        "targets": 439.143938
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.22209007624775667,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.7365037153894568,
+          "receptions": 0.15842106089682223,
+          "targets": 0.13686841587886933
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.01768537161907548,
+          "receptions": 0.26255473887017045,
+          "targets": 0.24654116083128344
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.023720838769236762,
+          "receptions": 0.5790242002330073,
+          "targets": 0.6165904255670049
+        }
+      },
+      "team": "BAL"
+    },
+    {
+      "budgets": {
+        "attempts": 506.623141,
+        "carries": 517.910734,
+        "completions": 340.315344,
+        "fumbles_lost_total": 8.659641,
+        "non_targeted_attempts": 21.444891,
+        "passing_interceptions": 11.017289,
+        "passing_tds": 28.439266,
+        "passing_yards": 3967.328026,
+        "receiving_tds": 28.439266,
+        "receiving_yards": 3967.328026,
+        "receptions": 340.315344,
+        "rushing_tds": 27.698681,
+        "rushing_yards": 2531.661662,
+        "targetable_attempts": 485.178249,
+        "targets": 485.178249
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 9.999999974752427e-07,
+        "completions": 0.0,
+        "fumbles_lost_total": -2.000000000279556e-06,
+        "non_targeted_attempts": 9.99999983264388e-07,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 0.0,
+        "receiving_yards": -1.0000003385357559e-06,
+        "receptions": 0.0,
+        "rushing_tds": -2.0000000020559128e-06,
+        "rushing_yards": -1.99999976757681e-06,
+        "targetable_attempts": 0.0,
+        "targets": 0.0
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 506.623141,
+        "carries": 517.910735,
+        "completions": 340.315344,
+        "fumbles_lost_total": 8.659639,
+        "non_targeted_attempts": 21.44489199999998,
+        "passing_interceptions": 11.017289,
+        "passing_tds": 28.439266,
+        "passing_yards": 3967.328026,
+        "receiving_tds": 28.439266,
+        "receiving_yards": 3967.328025,
+        "receptions": 340.315344,
+        "rushing_tds": 27.698679,
+        "rushing_yards": 2531.66166,
+        "targetable_attempts": 485.178249,
+        "targets": 485.178249
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.22458369824016813,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.7564187499539253,
+          "receptions": 0.1707948202300276,
+          "targets": 0.15025445009180535
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0,
+          "receptions": 0.2695418958247149,
+          "targets": 0.2576857026416285
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.01899755373674105,
+          "receptions": 0.5596632839452577,
+          "targets": 0.5920598472665661
+        }
+      },
+      "team": "BUF"
+    },
+    {
+      "budgets": {
+        "attempts": 514.374391,
+        "carries": 497.282484,
+        "completions": 325.372594,
+        "fumbles_lost_total": 11.158391,
+        "non_targeted_attempts": 34.788662,
+        "passing_interceptions": 11.837039,
+        "passing_tds": 21.133909,
+        "passing_yards": 3265.227456,
+        "receiving_tds": 21.133909,
+        "receiving_yards": 3265.227456,
+        "receptions": 325.372594,
+        "rushing_tds": 13.465801,
+        "rushing_yards": 2057.519479,
+        "targetable_attempts": 479.585729,
+        "targets": 479.585729
+      },
+      "differences": {
+        "attempts": 1.1368683772161603e-13,
+        "carries": 3.999999989900971e-06,
+        "completions": 0.0,
+        "fumbles_lost_total": -9.999999992515995e-07,
+        "non_targeted_attempts": -1.9999999523179213e-06,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": -1.0000000010279564e-06,
+        "receiving_yards": 9.99999883788405e-07,
+        "receptions": 9.999999974752427e-07,
+        "rushing_tds": 0.0,
+        "rushing_yards": 9.99999883788405e-07,
+        "targetable_attempts": 1.9999999949504854e-06,
+        "targets": 1.9999999949504854e-06
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 514.3743910000001,
+        "carries": 497.282488,
+        "completions": 325.372594,
+        "fumbles_lost_total": 11.15839,
+        "non_targeted_attempts": 34.78866000000005,
+        "passing_interceptions": 11.837039,
+        "passing_tds": 21.133909,
+        "passing_yards": 3265.227456,
+        "receiving_tds": 21.133907999999998,
+        "receiving_yards": 3265.227457,
+        "receptions": 325.372595,
+        "rushing_tds": 13.465801,
+        "rushing_yards": 2057.51948,
+        "targetable_attempts": 479.585731,
+        "targets": 479.585731
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0000000000000002,
+          "carries": 0.1145378589284878,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8582622890051362,
+          "receptions": 0.22197070168730926,
+          "targets": 0.19212954937614501
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0013850075604110762,
+          "receptions": 0.19102065492338302,
+          "targets": 0.1786218225855507
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.02581485254968281,
+          "receptions": 0.5870086464627072,
+          "targets": 0.6292486322085701
+        }
+      },
+      "team": "CAR"
+    },
+    {
+      "budgets": {
+        "attempts": 584.202891,
+        "carries": 555.262234,
+        "completions": 354.256844,
+        "fumbles_lost_total": 6.200641,
+        "non_targeted_attempts": 41.958542,
+        "passing_interceptions": 9.051789,
+        "passing_tds": 27.759503,
+        "passing_yards": 4010.187485,
+        "receiving_tds": 27.759503,
+        "receiving_yards": 4010.187485,
+        "receptions": 354.256844,
+        "rushing_tds": 20.191311,
+        "rushing_yards": 2497.724554,
+        "targetable_attempts": 542.244348,
+        "targets": 542.244348
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": -9.999999974752427e-07,
+        "completions": 0.0,
+        "fumbles_lost_total": 0.0,
+        "non_targeted_attempts": 2.9999999568985913e-06,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 0.0,
+        "receiving_yards": 0.0,
+        "receptions": -9.999999974752427e-07,
+        "rushing_tds": 1.0000000010279564e-06,
+        "rushing_yards": 0.0,
+        "targetable_attempts": -1.9999998812636477e-06,
+        "targets": -1.9999998812636477e-06
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 584.202891,
+        "carries": 555.262233,
+        "completions": 354.256844,
+        "fumbles_lost_total": 6.200641,
+        "non_targeted_attempts": 41.95854499999996,
+        "passing_interceptions": 9.051789,
+        "passing_tds": 27.759503,
+        "passing_yards": 4010.187485,
+        "receiving_tds": 27.759503,
+        "receiving_yards": 4010.187485,
+        "receptions": 354.256843,
+        "rushing_tds": 20.191312,
+        "rushing_yards": 2497.724554,
+        "targetable_attempts": 542.2443460000001,
+        "targets": 542.2443460000001
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.1583386076280491,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8076586872645115,
+          "receptions": 0.17461194906371377,
+          "targets": 0.14936113451200048
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0007905543959613144,
+          "receptions": 0.2597804857088378,
+          "targets": 0.24902482893191913
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.0332121489105272,
+          "receptions": 0.5656075624046377,
+          "targets": 0.6016140328677064
+        }
+      },
+      "team": "CHI"
+    },
+    {
+      "budgets": {
+        "attempts": 609.064891,
+        "carries": 406.540984,
+        "completions": 409.379594,
+        "fumbles_lost_total": 5.942891,
+        "non_targeted_attempts": 26.5081,
+        "passing_interceptions": 11.633289,
+        "passing_tds": 34.168207,
+        "passing_yards": 4312.170693,
+        "receiving_tds": 34.168207,
+        "receiving_yards": 4312.170693,
+        "receptions": 409.379594,
+        "rushing_tds": 12.420935,
+        "rushing_yards": 1736.169661,
+        "targetable_attempts": 582.556791,
+        "targets": 582.556791
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 5.684341886080802e-14,
+        "completions": 0.0,
+        "fumbles_lost_total": -8.881784197001252e-16,
+        "non_targeted_attempts": 1.4210854715202004e-14,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 9.999999974752427e-07,
+        "receiving_yards": -3.000000106112566e-06,
+        "receptions": 0.0,
+        "rushing_tds": -9.999999992515995e-07,
+        "rushing_yards": 1.0000001111620804e-06,
+        "targetable_attempts": 0.0,
+        "targets": 0.0
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 609.064891,
+        "carries": 406.54098400000004,
+        "completions": 409.379594,
+        "fumbles_lost_total": 5.9428909999999995,
+        "non_targeted_attempts": 26.508100000000013,
+        "passing_interceptions": 11.633289,
+        "passing_tds": 34.168207,
+        "passing_yards": 4312.170693,
+        "receiving_tds": 34.168208,
+        "receiving_yards": 4312.17069,
+        "receptions": 409.379594,
+        "rushing_tds": 12.420934,
+        "rushing_yards": 1736.169662,
+        "targetable_attempts": 582.556791,
+        "targets": 582.556791
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.11086077609336431,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8737099283451334,
+          "receptions": 0.1884169463512634,
+          "targets": 0.16468578597343997
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0010102327100187272,
+          "receptions": 0.21965837896649046,
+          "targets": 0.21184683091266207
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.01441906285148363,
+          "receptions": 0.5919246746822461,
+          "targets": 0.6234673831138979
+        }
+      },
+      "team": "CIN"
+    },
+    {
+      "budgets": {
+        "attempts": 547.831141,
+        "carries": 446.790234,
+        "completions": 332.002094,
+        "fumbles_lost_total": 9.728391,
+        "non_targeted_attempts": 29.126029,
+        "passing_interceptions": 16.102039,
+        "passing_tds": 19.665733,
+        "passing_yards": 3440.952566,
+        "receiving_tds": 19.665733,
+        "receiving_yards": 3440.952566,
+        "receptions": 332.002094,
+        "rushing_tds": 11.873001,
+        "rushing_yards": 1693.812205,
+        "targetable_attempts": 518.705111,
+        "targets": 518.705111
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 0.0,
+        "completions": -9.999999974752427e-07,
+        "fumbles_lost_total": -2.000000000279556e-06,
+        "non_targeted_attempts": 1.7763568394002505e-14,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": -1.0000000010279564e-06,
+        "receiving_yards": -9.99999883788405e-07,
+        "receptions": 0.0,
+        "rushing_tds": -1.0000000010279564e-06,
+        "rushing_yards": 0.0,
+        "targetable_attempts": 9.999999974752427e-07,
+        "targets": 9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 547.831141,
+        "carries": 446.790234,
+        "completions": 332.002093,
+        "fumbles_lost_total": 9.728389,
+        "non_targeted_attempts": 29.126029000000017,
+        "passing_interceptions": 16.102039,
+        "passing_tds": 19.665733,
+        "passing_yards": 3440.952566,
+        "receiving_tds": 19.665732,
+        "receiving_yards": 3440.952565,
+        "receptions": 332.002094,
+        "rushing_tds": 11.873,
+        "rushing_yards": 1693.812205,
+        "targetable_attempts": 518.705112,
+        "targets": 518.705112
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.12410907575925217,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8267315417641828,
+          "receptions": 0.2174964745854886,
+          "targets": 0.1878881428642796
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.014555980648404236,
+          "receptions": 0.3040758863406446,
+          "targets": 0.2865025615681662
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.034603401828160824,
+          "receptions": 0.4784276390738668,
+          "targets": 0.5256092974954318
+        }
+      },
+      "team": "CLE"
+    },
+    {
+      "budgets": {
+        "attempts": 592.286641,
+        "carries": 499.186734,
+        "completions": 391.063344,
+        "fumbles_lost_total": 8.062641,
+        "non_targeted_attempts": 13.988481,
+        "passing_interceptions": 11.487789,
+        "passing_tds": 30.206016,
+        "passing_yards": 4367.735687,
+        "receiving_tds": 30.206016,
+        "receiving_yards": 4367.735687,
+        "receptions": 391.063344,
+        "rushing_tds": 16.600957,
+        "rushing_yards": 2219.559393,
+        "targetable_attempts": 578.29816,
+        "targets": 578.29816
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 0.0,
+        "completions": 5.684341886080802e-14,
+        "fumbles_lost_total": -2.000000000279556e-06,
+        "non_targeted_attempts": -2.1316282072803006e-14,
+        "passing_interceptions": 0.0,
+        "passing_tds": -3.552713678800501e-15,
+        "passing_yards": 0.0,
+        "receiving_tds": 0.0,
+        "receiving_yards": -1.0000003385357559e-06,
+        "receptions": -1.9999999949504854e-06,
+        "rushing_tds": 0.0,
+        "rushing_yards": 1.0000003385357559e-06,
+        "targetable_attempts": 0.0,
+        "targets": 0.0
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 592.286641,
+        "carries": 499.186734,
+        "completions": 391.06334400000003,
+        "fumbles_lost_total": 8.062638999999999,
+        "non_targeted_attempts": 13.988480999999979,
+        "passing_interceptions": 11.487789,
+        "passing_tds": 30.206015999999998,
+        "passing_yards": 4367.735687,
+        "receiving_tds": 30.206016,
+        "receiving_yards": 4367.735686,
+        "receptions": 391.063342,
+        "rushing_tds": 16.600957,
+        "rushing_yards": 2219.5593940000003,
+        "targetable_attempts": 578.29816,
+        "targets": 578.29816
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.10015991731062308,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8492402063713497,
+          "receptions": 0.16198332820475242,
+          "targets": 0.14275959134990157
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0005392911743524017,
+          "receptions": 0.24804983000401085,
+          "targets": 0.2298856527573942
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.05006058514367491,
+          "receptions": 0.5899668366769758,
+          "targets": 0.6273547558927042
+        }
+      },
+      "team": "DAL"
+    },
+    {
+      "budgets": {
+        "attempts": 564.361141,
+        "carries": 457.182484,
+        "completions": 361.791844,
+        "fumbles_lost_total": 6.108141,
+        "non_targeted_attempts": 27.508023,
+        "passing_interceptions": 10.906039,
+        "passing_tds": 26.969785,
+        "passing_yards": 3812.082149,
+        "receiving_tds": 26.969785,
+        "receiving_yards": 3812.082149,
+        "receptions": 361.791844,
+        "rushing_tds": 15.278727,
+        "rushing_yards": 1966.694617,
+        "targetable_attempts": 536.853118,
+        "targets": 536.853118
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 0.0,
+        "completions": -9.999999974752427e-07,
+        "fumbles_lost_total": -1.000000000139778e-06,
+        "non_targeted_attempts": 9.999999761589606e-07,
+        "passing_interceptions": 0.0,
+        "passing_tds": -3.552713678800501e-15,
+        "passing_yards": 0.0,
+        "receiving_tds": -1.0000000010279564e-06,
+        "receiving_yards": 9.99999883788405e-07,
+        "receptions": 1.9999999949504854e-06,
+        "rushing_tds": 0.0,
+        "rushing_yards": 0.0,
+        "targetable_attempts": -9.999999974752427e-07,
+        "targets": -9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 564.361141,
+        "carries": 457.182484,
+        "completions": 361.79184300000003,
+        "fumbles_lost_total": 6.10814,
+        "non_targeted_attempts": 27.508023999999978,
+        "passing_interceptions": 10.906039,
+        "passing_tds": 26.969784999999998,
+        "passing_yards": 3812.082149,
+        "receiving_tds": 26.969784,
+        "receiving_yards": 3812.0821499999997,
+        "receptions": 361.791846,
+        "rushing_tds": 15.278727,
+        "rushing_yards": 1966.694617,
+        "targetable_attempts": 536.853117,
+        "targets": 536.853117
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.18287995259240947,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.7849920601945022,
+          "receptions": 0.23842187553570166,
+          "targets": 0.20966704900464042
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.00039062520164267713,
+          "receptions": 0.16856982823526556,
+          "targets": 0.16145846991243518
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.031737362011445745,
+          "receptions": 0.5930083017570733,
+          "targets": 0.6288744792202176
+        }
+      },
+      "team": "DEN"
+    },
+    {
+      "budgets": {
+        "attempts": 577.887641,
+        "carries": 464.400734,
+        "completions": 394.433844,
+        "fumbles_lost_total": 7.080891,
+        "non_targeted_attempts": 31.114591,
+        "passing_interceptions": 9.468289,
+        "passing_tds": 33.52191,
+        "passing_yards": 4573.921604,
+        "receiving_tds": 33.52191,
+        "receiving_yards": 4573.921604,
+        "receptions": 394.433844,
+        "rushing_tds": 20.331928,
+        "rushing_yards": 2181.630591,
+        "targetable_attempts": 546.77305,
+        "targets": 546.77305
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 9.999999974752427e-07,
+        "completions": 0.0,
+        "fumbles_lost_total": -1.000000000139778e-06,
+        "non_targeted_attempts": 1.000000015238811e-06,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": -9.999999974752427e-07,
+        "receiving_yards": -1.0000003385357559e-06,
+        "receptions": 9.999999974752427e-07,
+        "rushing_tds": 1.0000000010279564e-06,
+        "rushing_yards": 9.99999883788405e-07,
+        "targetable_attempts": -9.999999974752427e-07,
+        "targets": -9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 577.887641,
+        "carries": 464.400735,
+        "completions": 394.433844,
+        "fumbles_lost_total": 7.08089,
+        "non_targeted_attempts": 31.114592000000016,
+        "passing_interceptions": 9.468289,
+        "passing_tds": 33.52191,
+        "passing_yards": 4573.921604,
+        "receiving_tds": 33.521909,
+        "receiving_yards": 4573.921603,
+        "receptions": 394.433845,
+        "rushing_tds": 20.331929000000002,
+        "rushing_yards": 2181.630592,
+        "targetable_attempts": 546.773049,
+        "targets": 546.773049
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.05727288320780303,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.912411301227616,
+          "receptions": 0.2216536393362837,
+          "targets": 0.19774704879839997
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.00014589554890755192,
+          "receptions": 0.22790703781493962,
+          "targets": 0.2222382705219286
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.030169922168986067,
+          "receptions": 0.550439325384056,
+          "targets": 0.580014678850759
+        }
+      },
+      "team": "DET"
+    },
+    {
+      "budgets": {
+        "attempts": 517.140391,
+        "carries": 549.578734,
+        "completions": 339.761594,
+        "fumbles_lost_total": 6.880391,
+        "non_targeted_attempts": 23.753088,
+        "passing_interceptions": 8.520789,
+        "passing_tds": 27.562269,
+        "passing_yards": 3976.141119,
+        "receiving_tds": 27.562269,
+        "receiving_yards": 3976.141119,
+        "receptions": 339.761594,
+        "rushing_tds": 18.710894,
+        "rushing_yards": 2389.191189,
+        "targetable_attempts": 493.387302,
+        "targets": 493.387302
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": -1.0000001111620804e-06,
+        "completions": 0.0,
+        "fumbles_lost_total": 9.999999992515995e-07,
+        "non_targeted_attempts": -1.0658141036401503e-14,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 1.999999998503199e-06,
+        "receiving_yards": -9.99999883788405e-07,
+        "receptions": 0.0,
+        "rushing_tds": -1.0000000010279564e-06,
+        "rushing_yards": 9.99999883788405e-07,
+        "targetable_attempts": 1.0000000543186616e-06,
+        "targets": 1.0000000543186616e-06
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 517.140391,
+        "carries": 549.5787329999999,
+        "completions": 339.761594,
+        "fumbles_lost_total": 6.880392,
+        "non_targeted_attempts": 23.75308799999999,
+        "passing_interceptions": 8.520789,
+        "passing_tds": 27.562269,
+        "passing_yards": 3976.141119,
+        "receiving_tds": 27.562271,
+        "receiving_yards": 3976.141118,
+        "receptions": 339.761594,
+        "rushing_tds": 18.710893,
+        "rushing_yards": 2389.19119,
+        "targetable_attempts": 493.38730300000003,
+        "targets": 493.38730300000003
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.09584856680426064,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8379100382002771,
+          "receptions": 0.2023430994381313,
+          "targets": 0.17994362368085431
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0036703185098133717,
+          "receptions": 0.2133065075036115,
+          "targets": 0.19754970710616304
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.06257107466607323,
+          "receptions": 0.5843503930582572,
+          "targets": 0.6225066712397881
+        }
+      },
+      "team": "GB"
+    },
+    {
+      "budgets": {
+        "attempts": 560.550391,
+        "carries": 475.187484,
+        "completions": 353.140844,
+        "fumbles_lost_total": 6.870391,
+        "non_targeted_attempts": 25.674966,
+        "passing_interceptions": 10.549039,
+        "passing_tds": 23.662138,
+        "passing_yards": 3917.632225,
+        "receiving_tds": 23.662138,
+        "receiving_yards": 3917.632225,
+        "receptions": 353.140844,
+        "rushing_tds": 13.612481,
+        "rushing_yards": 1947.490751,
+        "targetable_attempts": 534.875425,
+        "targets": 534.875425
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 9.999999974752427e-07,
+        "completions": 0.0,
+        "fumbles_lost_total": -1.9999999993913775e-06,
+        "non_targeted_attempts": -9.999999583953922e-07,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 4.547473508864641e-13,
+        "receiving_tds": 0.0,
+        "receiving_yards": 1.0000003385357559e-06,
+        "receptions": 0.0,
+        "rushing_tds": -9.999999992515995e-07,
+        "rushing_yards": -1.0000001111620804e-06,
+        "targetable_attempts": 9.999999974752427e-07,
+        "targets": 9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 560.550391,
+        "carries": 475.187485,
+        "completions": 353.140844,
+        "fumbles_lost_total": 6.870389,
+        "non_targeted_attempts": 25.674965000000043,
+        "passing_interceptions": 10.549039,
+        "passing_tds": 23.662138,
+        "passing_yards": 3917.6322250000003,
+        "receiving_tds": 23.662138,
+        "receiving_yards": 3917.632226,
+        "receptions": 353.140844,
+        "rushing_tds": 13.612480000000001,
+        "rushing_yards": 1947.49075,
+        "targetable_attempts": 534.875426,
+        "targets": 534.875426
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.10972373800990096,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.851892990935763,
+          "receptions": 0.17069471295707728,
+          "targets": 0.14575281337705878
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0032789984005555167,
+          "receptions": 0.2306224651827586,
+          "targets": 0.2157799192213776
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.035104274758213115,
+          "receptions": 0.5986828218601641,
+          "targets": 0.6384672692711579
+        }
+      },
+      "team": "HOU"
+    },
+    {
+      "budgets": {
+        "attempts": 521.885891,
+        "carries": 458.264734,
+        "completions": 337.015344,
+        "fumbles_lost_total": 7.997641,
+        "non_targeted_attempts": 19.610439,
+        "passing_interceptions": 12.296539,
+        "passing_tds": 22.857922,
+        "passing_yards": 3773.818197,
+        "receiving_tds": 22.857922,
+        "receiving_yards": 3773.818197,
+        "receptions": 337.015344,
+        "rushing_tds": 19.997781,
+        "rushing_yards": 2057.513095,
+        "targetable_attempts": 502.275452,
+        "targets": 502.275452
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 9.999999974752427e-07,
+        "completions": 9.999999406318238e-07,
+        "fumbles_lost_total": 1.000000000139778e-06,
+        "non_targeted_attempts": -1.0000000116860974e-06,
+        "passing_interceptions": 1.7763568394002505e-15,
+        "passing_tds": 3.552713678800501e-15,
+        "passing_yards": 0.0,
+        "receiving_tds": 3.552713678800501e-15,
+        "receiving_yards": 0.0,
+        "receptions": 9.999999406318238e-07,
+        "rushing_tds": 0.0,
+        "rushing_yards": 4.547473508864641e-13,
+        "targetable_attempts": 1.0000000543186616e-06,
+        "targets": 1.0000000543186616e-06
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 521.885891,
+        "carries": 458.264735,
+        "completions": 337.01534499999997,
+        "fumbles_lost_total": 7.997642,
+        "non_targeted_attempts": 19.610437999999988,
+        "passing_interceptions": 12.296539000000001,
+        "passing_tds": 22.857922000000002,
+        "passing_yards": 3773.818197,
+        "receiving_tds": 22.857922000000002,
+        "receiving_yards": 3773.818197,
+        "receptions": 337.01534499999997,
+        "rushing_tds": 19.997781,
+        "rushing_yards": 2057.5130950000002,
+        "targetable_attempts": 502.275453,
+        "targets": 502.275453
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.13463095765950867,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8387991230413991,
+          "receptions": 0.1662310336825495,
+          "targets": 0.14292638374849345
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.01155094120770812,
+          "receptions": 0.25455978348570385,
+          "targets": 0.24369649862960058
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.01501898027352897,
+          "receptions": 0.5792091857989705,
+          "targets": 0.6133771196128455
+        }
+      },
+      "team": "IND"
+    },
+    {
+      "budgets": {
+        "attempts": 559.848141,
+        "carries": 495.585484,
+        "completions": 348.696344,
+        "fumbles_lost_total": 8.870141,
+        "non_targeted_attempts": 17.685576,
+        "passing_interceptions": 12.660039,
+        "passing_tds": 26.468153,
+        "passing_yards": 4000.055974,
+        "receiving_tds": 26.468153,
+        "receiving_yards": 4000.055974,
+        "receptions": 348.696344,
+        "rushing_tds": 19.372036,
+        "rushing_yards": 2046.002477,
+        "targetable_attempts": 542.162564,
+        "targets": 542.162564
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 9.999999974752427e-07,
+        "completions": 0.0,
+        "fumbles_lost_total": 9.999999992515995e-07,
+        "non_targeted_attempts": 8.171241461241152e-14,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 4.547473508864641e-13,
+        "receiving_tds": -1.0000000010279564e-06,
+        "receiving_yards": -9.99999883788405e-07,
+        "receptions": 0.0,
+        "rushing_tds": 9.999999974752427e-07,
+        "rushing_yards": 0.0,
+        "targetable_attempts": 9.999999974752427e-07,
+        "targets": 9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 559.848141,
+        "carries": 495.585485,
+        "completions": 348.696344,
+        "fumbles_lost_total": 8.870142,
+        "non_targeted_attempts": 17.685576000000083,
+        "passing_interceptions": 12.660039,
+        "passing_tds": 26.468153,
+        "passing_yards": 4000.0559740000003,
+        "receiving_tds": 26.468152,
+        "receiving_yards": 4000.055973,
+        "receptions": 348.696344,
+        "rushing_tds": 19.372037,
+        "rushing_yards": 2046.002477,
+        "targetable_attempts": 542.162565,
+        "targets": 542.162565
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.1539147381483837,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8147296340100227,
+          "receptions": 0.20403631475987025,
+          "targets": 0.17737713812346514
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0,
+          "receptions": 0.22967191477063492,
+          "targets": 0.2149183616447557
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.03135562985940887,
+          "receptions": 0.5662917704694949,
+          "targets": 0.6077045020762444
+        }
+      },
+      "team": "JAX"
+    },
+    {
+      "budgets": {
+        "attempts": 571.283891,
+        "carries": 526.425234,
+        "completions": 365.952344,
+        "fumbles_lost_total": 5.120891,
+        "non_targeted_attempts": 31.594476,
+        "passing_interceptions": 11.441539,
+        "passing_tds": 27.11763,
+        "passing_yards": 3981.413379,
+        "receiving_tds": 27.11763,
+        "receiving_yards": 3981.413379,
+        "receptions": 365.952344,
+        "rushing_tds": 17.587114,
+        "rushing_yards": 2354.819877,
+        "targetable_attempts": 539.689414,
+        "targets": 539.689414
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": -1.1368683772161603e-13,
+        "completions": 0.0,
+        "fumbles_lost_total": -1.000000000139778e-06,
+        "non_targeted_attempts": -1.4210854715202004e-14,
+        "passing_interceptions": -1.7763568394002505e-15,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 0.0,
+        "receiving_yards": -9.99999883788405e-07,
+        "receptions": 9.999999974752427e-07,
+        "rushing_tds": 9.999999974752427e-07,
+        "rushing_yards": 9.99999883788405e-07,
+        "targetable_attempts": 9.999999974752427e-07,
+        "targets": 9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 571.283891,
+        "carries": 526.4252339999999,
+        "completions": 365.952344,
+        "fumbles_lost_total": 5.12089,
+        "non_targeted_attempts": 31.594475999999986,
+        "passing_interceptions": 11.441538999999999,
+        "passing_tds": 27.11763,
+        "passing_yards": 3981.413379,
+        "receiving_tds": 27.11763,
+        "receiving_yards": 3981.413378,
+        "receptions": 365.952345,
+        "rushing_tds": 17.587114999999997,
+        "rushing_yards": 2354.819878,
+        "targetable_attempts": 539.689415,
+        "targets": 539.689415
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.12121049843138787,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.833247419898568,
+          "receptions": 0.2049621165973458,
+          "targets": 0.180452286951843
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.001050565140652053,
+          "receptions": 0.28474800259784644,
+          "targets": 0.2735430808357489
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.0444915165293919,
+          "receptions": 0.510289883537404,
+          "targets": 0.5460046340653255
+        }
+      },
+      "team": "KC"
+    },
+    {
+      "budgets": {
+        "attempts": 547.841641,
+        "carries": 529.678484,
+        "completions": 359.764344,
+        "fumbles_lost_total": 7.857641,
+        "non_targeted_attempts": 21.278738,
+        "passing_interceptions": 10.749539,
+        "passing_tds": 26.239959,
+        "passing_yards": 3968.853474,
+        "receiving_tds": 26.239959,
+        "receiving_yards": 3968.853474,
+        "receptions": 359.764344,
+        "rushing_tds": 16.782,
+        "rushing_yards": 2333.490249,
+        "targetable_attempts": 526.562902,
+        "targets": 526.562902
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": -9.999999974752427e-07,
+        "completions": 0.0,
+        "fumbles_lost_total": 0.0,
+        "non_targeted_attempts": 9.99999972606247e-07,
+        "passing_interceptions": -1.7763568394002505e-15,
+        "passing_tds": 3.552713678800501e-15,
+        "passing_yards": 0.0,
+        "receiving_tds": -1.999999998503199e-06,
+        "receiving_yards": 0.0,
+        "receptions": 0.0,
+        "rushing_tds": 0.0,
+        "rushing_yards": 0.0,
+        "targetable_attempts": 0.0,
+        "targets": 0.0
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 547.841641,
+        "carries": 529.678483,
+        "completions": 359.764344,
+        "fumbles_lost_total": 7.857641,
+        "non_targeted_attempts": 21.278738999999973,
+        "passing_interceptions": 10.749538999999999,
+        "passing_tds": 26.239959000000002,
+        "passing_yards": 3968.853474,
+        "receiving_tds": 26.239957,
+        "receiving_yards": 3968.853474,
+        "receptions": 359.764344,
+        "rushing_tds": 16.782,
+        "rushing_yards": 2333.490249,
+        "targetable_attempts": 526.562902,
+        "targets": 526.562902
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.15125771278260944,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8279698444386878,
+          "receptions": 0.20417312950835395,
+          "targets": 0.17641875575959204
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0008413443503210147,
+          "receptions": 0.23387828839424954,
+          "targets": 0.22621464130414567
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.019931096540443956,
+          "receptions": 0.5619485820973965,
+          "targets": 0.5973666029362623
+        }
+      },
+      "team": "LAC"
+    },
+    {
+      "budgets": {
+        "attempts": 561.413141,
+        "carries": 497.501484,
+        "completions": 361.108844,
+        "fumbles_lost_total": 6.967391,
+        "non_targeted_attempts": 18.795912,
+        "passing_interceptions": 9.260039,
+        "passing_tds": 32.586361,
+        "passing_yards": 4347.305236,
+        "receiving_tds": 32.586361,
+        "receiving_yards": 4347.305236,
+        "receptions": 361.108844,
+        "rushing_tds": 18.495017,
+        "rushing_yards": 2286.785556,
+        "targetable_attempts": 542.617229,
+        "targets": 542.617229
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 9.999999406318238e-07,
+        "completions": 5.684341886080802e-14,
+        "fumbles_lost_total": 1.000000000139778e-06,
+        "non_targeted_attempts": 4.263256414560601e-14,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 7.105427357601002e-15,
+        "receiving_yards": 0.0,
+        "receptions": 5.684341886080802e-14,
+        "rushing_tds": -2.9999999995311555e-06,
+        "rushing_yards": 2.000000222324161e-06,
+        "targetable_attempts": 0.0,
+        "targets": 0.0
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 561.413141,
+        "carries": 497.50148499999995,
+        "completions": 361.10884400000003,
+        "fumbles_lost_total": 6.967392,
+        "non_targeted_attempts": 18.795912000000044,
+        "passing_interceptions": 9.260039,
+        "passing_tds": 32.586361,
+        "passing_yards": 4347.305236,
+        "receiving_tds": 32.586361000000004,
+        "receiving_yards": 4347.305236,
+        "receptions": 361.10884400000003,
+        "rushing_tds": 18.495014,
+        "rushing_yards": 2286.785558,
+        "targetable_attempts": 542.617229,
+        "targets": 542.617229
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.05298912233998482,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.9112314205679837,
+          "receptions": 0.13912306451292566,
+          "targets": 0.12169104752108785
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.00037805314365655236,
+          "receptions": 0.24539027629021462,
+          "targets": 0.23874098918447723
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.03540140595841921,
+          "receptions": 0.6154866591968599,
+          "targets": 0.639567963294435
+        }
+      },
+      "team": "LAR"
+    },
+    {
+      "budgets": {
+        "attempts": 562.752891,
+        "carries": 462.180984,
+        "completions": 363.728094,
+        "fumbles_lost_total": 7.424641,
+        "non_targeted_attempts": 28.159613,
+        "passing_interceptions": 15.068539,
+        "passing_tds": 21.496313,
+        "passing_yards": 3750.350201,
+        "receiving_tds": 21.496313,
+        "receiving_yards": 3750.350201,
+        "receptions": 363.728094,
+        "rushing_tds": 11.962946,
+        "rushing_yards": 1744.32591,
+        "targetable_attempts": 534.593278,
+        "targets": 534.593278
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": -5.684341886080802e-14,
+        "completions": 0.0,
+        "fumbles_lost_total": -8.881784197001252e-16,
+        "non_targeted_attempts": 9.999999193155418e-07,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": -4.547473508864641e-13,
+        "receiving_tds": -2.0000000020559128e-06,
+        "receiving_yards": 0.0,
+        "receptions": 9.999999974752427e-07,
+        "rushing_tds": -1.0000000010279564e-06,
+        "rushing_yards": 1.0000001111620804e-06,
+        "targetable_attempts": -9.999999974752427e-07,
+        "targets": -9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 562.752891,
+        "carries": 462.18098399999997,
+        "completions": 363.728094,
+        "fumbles_lost_total": 7.424640999999999,
+        "non_targeted_attempts": 28.15961399999992,
+        "passing_interceptions": 15.068539,
+        "passing_tds": 21.496313,
+        "passing_yards": 3750.3502009999997,
+        "receiving_tds": 21.496311,
+        "receiving_yards": 3750.350201,
+        "receptions": 363.728095,
+        "rushing_tds": 11.962945,
+        "rushing_yards": 1744.3259110000001,
+        "targetable_attempts": 534.5932770000001,
+        "targets": 534.5932770000001
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.10011012482504039,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8593960369429652,
+          "receptions": 0.23329611157283878,
+          "targets": 0.20372384667358276
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.008022435211224527,
+          "receptions": 0.30748360339743236,
+          "targets": 0.29356290746326963
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.03247140302076989,
+          "receptions": 0.4592202877790353,
+          "targets": 0.5027132439925666
+        }
+      },
+      "team": "LV"
+    },
+    {
+      "budgets": {
+        "attempts": 505.256391,
+        "carries": 579.304734,
+        "completions": 332.340844,
+        "fumbles_lost_total": 12.396641,
+        "non_targeted_attempts": 17.899969,
+        "passing_interceptions": 12.905789,
+        "passing_tds": 20.509009,
+        "passing_yards": 3484.550891,
+        "receiving_tds": 20.509009,
+        "receiving_yards": 3484.550891,
+        "receptions": 332.340844,
+        "rushing_tds": 17.286325,
+        "rushing_yards": 2673.132028,
+        "targetable_attempts": 487.356421,
+        "targets": 487.356421
+      },
+      "differences": {
+        "attempts": -5.684341886080802e-14,
+        "carries": -1.1368683772161603e-13,
+        "completions": 0.0,
+        "fumbles_lost_total": 0.0,
+        "non_targeted_attempts": 9.999999406318238e-07,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 1.0000000010279564e-06,
+        "receiving_yards": 0.0,
+        "receptions": -2.999999992425728e-06,
+        "rushing_tds": 0.0,
+        "rushing_yards": 9.99999883788405e-07,
+        "targetable_attempts": 0.0,
+        "targets": 0.0
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 505.25639099999995,
+        "carries": 579.3047339999999,
+        "completions": 332.340844,
+        "fumbles_lost_total": 12.396641,
+        "non_targeted_attempts": 17.89996999999994,
+        "passing_interceptions": 12.905789,
+        "passing_tds": 20.509009,
+        "passing_yards": 3484.550891,
+        "receiving_tds": 20.50901,
+        "receiving_yards": 3484.550891,
+        "receptions": 332.340841,
+        "rushing_tds": 17.286325,
+        "rushing_yards": 2673.132029,
+        "targetable_attempts": 487.356421,
+        "targets": 487.356421
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 0.9999999999999999,
+          "carries": 0.15195010817916083,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8132345747411067,
+          "receptions": 0.25619853092748357,
+          "targets": 0.22670190283591235
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0012817589023879786,
+          "receptions": 0.22007979855765186,
+          "targets": 0.2122006390883275
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.03353355817734436,
+          "receptions": 0.5237216614879874,
+          "targets": 0.5610974580757602
+        }
+      },
+      "team": "MIA"
+    },
+    {
+      "budgets": {
+        "attempts": 543.729891,
+        "carries": 472.986984,
+        "completions": 351.267094,
+        "fumbles_lost_total": 8.996891,
+        "non_targeted_attempts": 22.523281,
+        "passing_interceptions": 14.873539,
+        "passing_tds": 24.702954,
+        "passing_yards": 3839.507793,
+        "receiving_tds": 24.702954,
+        "receiving_yards": 3839.507793,
+        "receptions": 351.267094,
+        "rushing_tds": 15.496599,
+        "rushing_yards": 2147.397254,
+        "targetable_attempts": 521.206609,
+        "targets": 521.206609
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": -9.999999974752427e-07,
+        "completions": 0.0,
+        "fumbles_lost_total": -9.999999992515995e-07,
+        "non_targeted_attempts": 9.99999993922529e-07,
+        "passing_interceptions": 1.7763568394002505e-15,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": -3.999999997006398e-06,
+        "receiving_yards": 9.99999883788405e-07,
+        "receptions": -9.999999974752427e-07,
+        "rushing_tds": 0.0,
+        "rushing_yards": 0.0,
+        "targetable_attempts": 0.0,
+        "targets": 0.0
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 543.729891,
+        "carries": 472.986983,
+        "completions": 351.267094,
+        "fumbles_lost_total": 8.99689,
+        "non_targeted_attempts": 22.523281999999995,
+        "passing_interceptions": 14.873539000000001,
+        "passing_tds": 24.702954,
+        "passing_yards": 3839.507793,
+        "receiving_tds": 24.70295,
+        "receiving_yards": 3839.507794,
+        "receptions": 351.267093,
+        "rushing_tds": 15.496599,
+        "rushing_yards": 2147.397254,
+        "targetable_attempts": 521.206609,
+        "targets": 521.206609
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.1676407759246077,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8203715073055794,
+          "receptions": 0.1969053042013665,
+          "targets": 0.17288581043299858
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0004182588669289893,
+          "receptions": 0.22788850811058323,
+          "targets": 0.21115974951115787
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.011569455788660773,
+          "receptions": 0.5752061848412138,
+          "targets": 0.6159544400558435
+        }
+      },
+      "team": "MIN"
+    },
+    {
+      "budgets": {
+        "attempts": 512.358641,
+        "carries": 521.104234,
+        "completions": 348.806344,
+        "fumbles_lost_total": 10.584391,
+        "non_targeted_attempts": 21.576194,
+        "passing_interceptions": 10.824539,
+        "passing_tds": 26.972929,
+        "passing_yards": 4025.565778,
+        "receiving_tds": 26.972929,
+        "receiving_yards": 4025.565778,
+        "receptions": 348.806344,
+        "rushing_tds": 18.093257,
+        "rushing_yards": 2330.495531,
+        "targetable_attempts": 490.782446,
+        "targets": 490.782446
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 0.0,
+        "completions": 0.0,
+        "fumbles_lost_total": -9.999999992515995e-07,
+        "non_targeted_attempts": 4.263256414560601e-14,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": -1.0000000010279564e-06,
+        "receiving_yards": 9.99999883788405e-07,
+        "receptions": 9.999999974752427e-07,
+        "rushing_tds": 9.999999974752427e-07,
+        "rushing_yards": 0.0,
+        "targetable_attempts": 9.999999974752427e-07,
+        "targets": 9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 512.358641,
+        "carries": 521.104234,
+        "completions": 348.806344,
+        "fumbles_lost_total": 10.58439,
+        "non_targeted_attempts": 21.576194000000044,
+        "passing_interceptions": 10.824539,
+        "passing_tds": 26.972929,
+        "passing_yards": 4025.565778,
+        "receiving_tds": 26.972928,
+        "receiving_yards": 4025.565779,
+        "receptions": 348.806345,
+        "rushing_tds": 18.093258,
+        "rushing_yards": 2330.495531,
+        "targetable_attempts": 490.782447,
+        "targets": 490.782447
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.18239256332735918,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.787925048791678,
+          "receptions": 0.24272803650612498,
+          "targets": 0.21324968497345154
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0,
+          "receptions": 0.2292060720088279,
+          "targets": 0.22567137823018227
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.029682387880962793,
+          "receptions": 0.5280658943519674,
+          "targets": 0.5610789388339288
+        }
+      },
+      "team": "NE"
+    },
+    {
+      "budgets": {
+        "attempts": 559.726391,
+        "carries": 525.896984,
+        "completions": 366.355344,
+        "fumbles_lost_total": 10.218641,
+        "non_targeted_attempts": 27.661289,
+        "passing_interceptions": 11.758789,
+        "passing_tds": 22.061143,
+        "passing_yards": 3879.805495,
+        "receiving_tds": 22.061143,
+        "receiving_yards": 3879.805495,
+        "receptions": 366.355344,
+        "rushing_tds": 14.995766,
+        "rushing_yards": 2082.641957,
+        "targetable_attempts": 532.065102,
+        "targets": 532.065102
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 0.0,
+        "completions": -9.999999974752427e-07,
+        "fumbles_lost_total": 0.0,
+        "non_targeted_attempts": 1.0658141036401503e-14,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 0.0,
+        "receiving_yards": -9.99999883788405e-07,
+        "receptions": -1.9999999949504854e-06,
+        "rushing_tds": -1.999999998503199e-06,
+        "rushing_yards": 0.0,
+        "targetable_attempts": 0.0,
+        "targets": 0.0
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 559.726391,
+        "carries": 525.896984,
+        "completions": 366.355343,
+        "fumbles_lost_total": 10.218641,
+        "non_targeted_attempts": 27.66128900000001,
+        "passing_interceptions": 11.758789,
+        "passing_tds": 22.061143,
+        "passing_yards": 3879.805495,
+        "receiving_tds": 22.061143,
+        "receiving_yards": 3879.805494,
+        "receptions": 366.355342,
+        "rushing_tds": 14.995764000000001,
+        "rushing_yards": 2082.641957,
+        "targetable_attempts": 532.065102,
+        "targets": 532.065102
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.13233021887799987,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8083115247529163,
+          "receptions": 0.22220628778380805,
+          "targets": 0.19759644375247898
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.042298206068434124,
+          "receptions": 0.249194216749299,
+          "targets": 0.23586074246981903
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.017060050300649755,
+          "receptions": 0.5285994900077123,
+          "targets": 0.5665428137777019
+        }
+      },
+      "team": "NO"
+    },
+    {
+      "budgets": {
+        "attempts": 515.891641,
+        "carries": 467.114984,
+        "completions": 325.022344,
+        "fumbles_lost_total": 7.597641,
+        "non_targeted_attempts": 27.541472,
+        "passing_interceptions": 11.480039,
+        "passing_tds": 21.70826,
+        "passing_yards": 3513.276734,
+        "receiving_tds": 21.70826,
+        "receiving_yards": 3513.276734,
+        "receptions": 325.022344,
+        "rushing_tds": 16.437641,
+        "rushing_yards": 2027.54244,
+        "targetable_attempts": 488.350169,
+        "targets": 488.350169
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 0.0,
+        "completions": 0.0,
+        "fumbles_lost_total": -1.000000000139778e-06,
+        "non_targeted_attempts": -9.999999406318238e-07,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 1.0000000010279564e-06,
+        "receiving_yards": -9.99999883788405e-07,
+        "receptions": 5.684341886080802e-14,
+        "rushing_tds": 1.0000000010279564e-06,
+        "rushing_yards": 2.000000222324161e-06,
+        "targetable_attempts": 9.999999974752427e-07,
+        "targets": 9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 515.891641,
+        "carries": 467.114984,
+        "completions": 325.022344,
+        "fumbles_lost_total": 7.59764,
+        "non_targeted_attempts": 27.541471000000058,
+        "passing_interceptions": 11.480039,
+        "passing_tds": 21.70826,
+        "passing_yards": 3513.276734,
+        "receiving_tds": 21.708261,
+        "receiving_yards": 3513.276733,
+        "receptions": 325.02234400000003,
+        "rushing_tds": 16.437642,
+        "rushing_yards": 2027.5424420000002,
+        "targetable_attempts": 488.35017,
+        "targets": 488.35017
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.21584475868579717,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.7719338628623397,
+          "receptions": 0.21641285991094814,
+          "targets": 0.18280800676860215
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0,
+          "receptions": 0.23158780739086668,
+          "targets": 0.21433388098202952
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.012221378451863149,
+          "receptions": 0.5519993326981854,
+          "targets": 0.6028581142970794
+        }
+      },
+      "team": "NYG"
+    },
+    {
+      "budgets": {
+        "attempts": 530.498141,
+        "carries": 431.037484,
+        "completions": 339.670344,
+        "fumbles_lost_total": 9.429891,
+        "non_targeted_attempts": 23.240597,
+        "passing_interceptions": 13.681289,
+        "passing_tds": 20.542314,
+        "passing_yards": 3353.843864,
+        "receiving_tds": 20.542314,
+        "receiving_yards": 3353.843864,
+        "receptions": 339.670344,
+        "rushing_tds": 11.511605,
+        "rushing_yards": 1854.943484,
+        "targetable_attempts": 507.257543,
+        "targets": 507.257543
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 9.999999974752427e-07,
+        "completions": 0.0,
+        "fumbles_lost_total": -9.999999992515995e-07,
+        "non_targeted_attempts": 1.0000000330023795e-06,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 0.0,
+        "receiving_yards": 0.0,
+        "receptions": -1.9999999949504854e-06,
+        "rushing_tds": 1.0000000010279564e-06,
+        "rushing_yards": 1.0000001111620804e-06,
+        "targetable_attempts": 0.0,
+        "targets": 0.0
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 530.498141,
+        "carries": 431.037485,
+        "completions": 339.670344,
+        "fumbles_lost_total": 9.42989,
+        "non_targeted_attempts": 23.240598000000034,
+        "passing_interceptions": 13.681289,
+        "passing_tds": 20.542314,
+        "passing_yards": 3353.843864,
+        "receiving_tds": 20.542314,
+        "receiving_yards": 3353.843864,
+        "receptions": 339.670342,
+        "rushing_tds": 11.511606,
+        "rushing_yards": 1854.943485,
+        "targetable_attempts": 507.257543,
+        "targets": 507.257543
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.1394230043343516,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8332814554012198,
+          "receptions": 0.20880890031424115,
+          "targets": 0.18022898281475136
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.00042342257175944357,
+          "receptions": 0.23942842357765562,
+          "targets": 0.226431450029714
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.026872120012653006,
+          "receptions": 0.5517626702200413,
+          "targets": 0.5933395671555347
+        }
+      },
+      "team": "NYJ"
+    },
+    {
+      "budgets": {
+        "attempts": 496.292641,
+        "carries": 562.615484,
+        "completions": 322.450344,
+        "fumbles_lost_total": 8.409641,
+        "non_targeted_attempts": 33.146191,
+        "passing_interceptions": 8.242039,
+        "passing_tds": 24.549319,
+        "passing_yards": 3608.512341,
+        "receiving_tds": 24.549319,
+        "receiving_yards": 3608.512341,
+        "receptions": 322.450344,
+        "rushing_tds": 22.431628,
+        "rushing_yards": 2526.395908,
+        "targetable_attempts": 463.14645,
+        "targets": 463.14645
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 0.0,
+        "completions": 1.0000000543186616e-06,
+        "fumbles_lost_total": -1.0000000010279564e-06,
+        "non_targeted_attempts": -1.4210854715202004e-14,
+        "passing_interceptions": 0.0,
+        "passing_tds": -3.552713678800501e-15,
+        "passing_yards": -4.547473508864641e-13,
+        "receiving_tds": -1.0000000010279564e-06,
+        "receiving_yards": 0.0,
+        "receptions": 2.0000000517939043e-06,
+        "rushing_tds": -9.999999974752427e-07,
+        "rushing_yards": 0.0,
+        "targetable_attempts": 0.0,
+        "targets": 0.0
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 496.292641,
+        "carries": 562.615484,
+        "completions": 322.450345,
+        "fumbles_lost_total": 8.40964,
+        "non_targeted_attempts": 33.14619099999999,
+        "passing_interceptions": 8.242039,
+        "passing_tds": 24.549318999999997,
+        "passing_yards": 3608.5123409999997,
+        "receiving_tds": 24.549318,
+        "receiving_yards": 3608.512341,
+        "receptions": 322.450346,
+        "rushing_tds": 22.431627000000002,
+        "rushing_yards": 2526.395908,
+        "targetable_attempts": 463.14645,
+        "targets": 463.14645
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.2205348528943082,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.767799435466657,
+          "receptions": 0.16938152498916237,
+          "targets": 0.1505019718924759
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.006994786158427165,
+          "receptions": 0.24319055463622022,
+          "targets": 0.22950666684371648
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.00467092548060764,
+          "receptions": 0.5874279265771228,
+          "targets": 0.6199913612638075
+        }
+      },
+      "team": "PHI"
+    },
+    {
+      "budgets": {
+        "attempts": 548.236641,
+        "carries": 518.196734,
+        "completions": 353.076094,
+        "fumbles_lost_total": 7.603141,
+        "non_targeted_attempts": 31.576836,
+        "passing_interceptions": 9.228039,
+        "passing_tds": 22.698537,
+        "passing_yards": 3630.760142,
+        "receiving_tds": 22.698537,
+        "receiving_yards": 3630.760142,
+        "receptions": 353.076094,
+        "rushing_tds": 13.087006,
+        "rushing_yards": 2175.734596,
+        "targetable_attempts": 516.659805,
+        "targets": 516.659805
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 9.999999974752427e-07,
+        "completions": 0.0,
+        "fumbles_lost_total": 0.0,
+        "non_targeted_attempts": -1.0000000401078069e-06,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": -4.547473508864641e-13,
+        "receiving_tds": -1.0000000010279564e-06,
+        "receiving_yards": 0.0,
+        "receptions": 9.999999974752427e-07,
+        "rushing_tds": 9.999999992515995e-07,
+        "rushing_yards": 0.0,
+        "targetable_attempts": 9.999999974752427e-07,
+        "targets": 9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 548.236641,
+        "carries": 518.196735,
+        "completions": 353.076094,
+        "fumbles_lost_total": 7.603141,
+        "non_targeted_attempts": 31.57683499999996,
+        "passing_interceptions": 9.228039,
+        "passing_tds": 22.698537,
+        "passing_yards": 3630.7601419999996,
+        "receiving_tds": 22.698536,
+        "receiving_yards": 3630.760142,
+        "receptions": 353.076095,
+        "rushing_tds": 13.087007,
+        "rushing_yards": 2175.734596,
+        "targetable_attempts": 516.659806,
+        "targets": 516.659806
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.07404678663991734,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.9136360515927142,
+          "receptions": 0.24361916442861747,
+          "targets": 0.21338627842357508
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0034760543280459967,
+          "receptions": 0.24348078349365673,
+          "targets": 0.22614743370640183
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.008841109369091469,
+          "receptions": 0.5129000549099764,
+          "targets": 0.5604662898055327
+        }
+      },
+      "team": "PIT"
+    },
+    {
+      "budgets": {
+        "attempts": 516.017891,
+        "carries": 494.521734,
+        "completions": 344.478094,
+        "fumbles_lost_total": 11.117641,
+        "non_targeted_attempts": 25.237305,
+        "passing_interceptions": 13.141539,
+        "passing_tds": 25.463433,
+        "passing_yards": 4065.07593,
+        "receiving_tds": 25.463433,
+        "receiving_yards": 4065.07593,
+        "receptions": 344.478094,
+        "rushing_tds": 17.134703,
+        "rushing_yards": 2065.555438,
+        "targetable_attempts": 490.780586,
+        "targets": 490.780586
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 1.0000000543186616e-06,
+        "completions": 0.0,
+        "fumbles_lost_total": -1.0000000010279564e-06,
+        "non_targeted_attempts": -1.000000061424089e-06,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 1.0000000010279564e-06,
+        "receiving_yards": -9.99999883788405e-07,
+        "receptions": -1.9999999949504854e-06,
+        "rushing_tds": -1.999999998503199e-06,
+        "rushing_yards": -9.99999883788405e-07,
+        "targetable_attempts": 9.999999974752427e-07,
+        "targets": 9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 516.017891,
+        "carries": 494.52173500000004,
+        "completions": 344.478094,
+        "fumbles_lost_total": 11.11764,
+        "non_targeted_attempts": 25.237303999999938,
+        "passing_interceptions": 13.141539,
+        "passing_tds": 25.463433,
+        "passing_yards": 4065.07593,
+        "receiving_tds": 25.463434,
+        "receiving_yards": 4065.075929,
+        "receptions": 344.478092,
+        "rushing_tds": 17.134701,
+        "rushing_yards": 2065.555437,
+        "targetable_attempts": 490.780587,
+        "targets": 490.780587
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.08666408380748741,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8649430016760397,
+          "receptions": 0.18261980978099582,
+          "targets": 0.16438008002215476
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.015180521873685737,
+          "receptions": 0.2107372609882125,
+          "targets": 0.19810059275653583
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.03321239466494308,
+          "receptions": 0.6066429234249072,
+          "targets": 0.6375193292588799
+        }
+      },
+      "team": "SEA"
+    },
+    {
+      "budgets": {
+        "attempts": 542.248641,
+        "carries": 522.875234,
+        "completions": 366.392344,
+        "fumbles_lost_total": 8.908641,
+        "non_targeted_attempts": 21.857825,
+        "passing_interceptions": 13.355289,
+        "passing_tds": 29.278021,
+        "passing_yards": 4255.99102,
+        "receiving_tds": 29.278021,
+        "receiving_yards": 4255.99102,
+        "receptions": 366.392344,
+        "rushing_tds": 18.75052,
+        "rushing_yards": 2219.673603,
+        "targetable_attempts": 520.390816,
+        "targets": 520.390816
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 9.999999974752427e-07,
+        "completions": 0.0,
+        "fumbles_lost_total": 1.0000000010279564e-06,
+        "non_targeted_attempts": 2.000000044688477e-06,
+        "passing_interceptions": -1.7763568394002505e-15,
+        "passing_tds": 0.0,
+        "passing_yards": -9.094947017729282e-13,
+        "receiving_tds": 0.0,
+        "receiving_yards": 9.99999429041054e-07,
+        "receptions": -9.999999974752427e-07,
+        "rushing_tds": -3.552713678800501e-15,
+        "rushing_yards": 0.0,
+        "targetable_attempts": -1.9999999949504854e-06,
+        "targets": -1.9999999949504854e-06
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 542.248641,
+        "carries": 522.875235,
+        "completions": 366.392344,
+        "fumbles_lost_total": 8.908642,
+        "non_targeted_attempts": 21.857827000000043,
+        "passing_interceptions": 13.355288999999999,
+        "passing_tds": 29.278021,
+        "passing_yards": 4255.9910199999995,
+        "receiving_tds": 29.278021,
+        "receiving_yards": 4255.991021,
+        "receptions": 366.392343,
+        "rushing_tds": 18.750519999999998,
+        "rushing_yards": 2219.673603,
+        "targetable_attempts": 520.390814,
+        "targets": 520.390814
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.1289521985659776,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8074747005516042,
+          "receptions": 0.2673553217039928,
+          "targets": 0.2348658493619534
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0005169875764282231,
+          "receptions": 0.2469228532788338,
+          "targets": 0.23325500233270838
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.06305611521849207,
+          "receptions": 0.4857218222878587,
+          "targets": 0.5318791444620729
+        }
+      },
+      "team": "SF"
+    },
+    {
+      "budgets": {
+        "attempts": 551.091641,
+        "carries": 479.856984,
+        "completions": 356.582844,
+        "fumbles_lost_total": 6.766891,
+        "non_targeted_attempts": 14.203922,
+        "passing_interceptions": 12.102539,
+        "passing_tds": 28.051728,
+        "passing_yards": 3939.02244,
+        "receiving_tds": 28.051728,
+        "receiving_yards": 3939.02244,
+        "receptions": 356.582844,
+        "rushing_tds": 15.248699,
+        "rushing_yards": 2126.090722,
+        "targetable_attempts": 536.887719,
+        "targets": 536.887719
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 0.0,
+        "completions": 0.0,
+        "fumbles_lost_total": 1.9999999993913775e-06,
+        "non_targeted_attempts": 1.0000000312260227e-06,
+        "passing_interceptions": 0.0,
+        "passing_tds": -3.552713678800501e-15,
+        "passing_yards": -4.547473508864641e-13,
+        "receiving_tds": 1.0000000010279564e-06,
+        "receiving_yards": -1.0000003385357559e-06,
+        "receptions": -9.999999974752427e-07,
+        "rushing_tds": 9.999999992515995e-07,
+        "rushing_yards": 0.0,
+        "targetable_attempts": -9.999999974752427e-07,
+        "targets": -9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 551.091641,
+        "carries": 479.856984,
+        "completions": 356.582844,
+        "fumbles_lost_total": 6.766893,
+        "non_targeted_attempts": 14.203923000000032,
+        "passing_interceptions": 12.102539,
+        "passing_tds": 28.051727999999997,
+        "passing_yards": 3939.0224399999997,
+        "receiving_tds": 28.051729,
+        "receiving_yards": 3939.022439,
+        "receptions": 356.582843,
+        "rushing_tds": 15.2487,
+        "rushing_yards": 2126.090722,
+        "targetable_attempts": 536.887718,
+        "targets": 536.887718
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.1230999588827491,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8419781361356616,
+          "receptions": 0.23547889477262682,
+          "targets": 0.20159682400930465
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.00022416887444947554,
+          "receptions": 0.18051164009449652,
+          "targets": 0.17181582803163356
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.03469773610713979,
+          "receptions": 0.5840094623284793,
+          "targets": 0.626587346096475
+        }
+      },
+      "team": "TB"
+    },
+    {
+      "budgets": {
+        "attempts": 583.164391,
+        "carries": 473.886734,
+        "completions": 360.875594,
+        "fumbles_lost_total": 11.699391,
+        "non_targeted_attempts": 31.831632,
+        "passing_interceptions": 11.447039,
+        "passing_tds": 19.673293,
+        "passing_yards": 3658.838011,
+        "receiving_tds": 19.673293,
+        "receiving_yards": 3658.838011,
+        "receptions": 360.875594,
+        "rushing_tds": 13.600791,
+        "rushing_yards": 1947.80574,
+        "targetable_attempts": 551.332759,
+        "targets": 551.332759
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 9.999999974752427e-07,
+        "completions": 0.0,
+        "fumbles_lost_total": -3.0000000013075123e-06,
+        "non_targeted_attempts": 1.4210854715202004e-14,
+        "passing_interceptions": 0.0,
+        "passing_tds": 0.0,
+        "passing_yards": 4.547473508864641e-13,
+        "receiving_tds": -1.0000000010279564e-06,
+        "receiving_yards": 1.0000003385357559e-06,
+        "receptions": 5.684341886080802e-14,
+        "rushing_tds": -1.999999998503199e-06,
+        "rushing_yards": 1.0000001111620804e-06,
+        "targetable_attempts": 0.0,
+        "targets": 0.0
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 583.164391,
+        "carries": 473.886735,
+        "completions": 360.875594,
+        "fumbles_lost_total": 11.699387999999999,
+        "non_targeted_attempts": 31.831632000000013,
+        "passing_interceptions": 11.447039,
+        "passing_tds": 19.673293,
+        "passing_yards": 3658.8380110000003,
+        "receiving_tds": 19.673292,
+        "receiving_yards": 3658.838012,
+        "receptions": 360.87559400000004,
+        "rushing_tds": 13.600789,
+        "rushing_yards": 1947.8057410000001,
+        "targetable_attempts": 551.332759,
+        "targets": 551.332759
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.11599898468565277,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.8493501571622387,
+          "receptions": 0.24136979737122377,
+          "targets": 0.2087445016123194
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.0005943719876319644,
+          "receptions": 0.19359525044522688,
+          "targets": 0.17921153674817278
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.034056488274685486,
+          "receptions": 0.5650349521835495,
+          "targets": 0.6120439616395078
+        }
+      },
+      "team": "TEN"
+    },
+    {
+      "budgets": {
+        "attempts": 512.443391,
+        "carries": 519.914734,
+        "completions": 333.433594,
+        "fumbles_lost_total": 8.357891,
+        "non_targeted_attempts": 32.003073,
+        "passing_interceptions": 11.631039,
+        "passing_tds": 24.293198,
+        "passing_yards": 3762.863759,
+        "receiving_tds": 24.293198,
+        "receiving_yards": 3762.863759,
+        "receptions": 333.433594,
+        "rushing_tds": 19.209467,
+        "rushing_yards": 2488.161238,
+        "targetable_attempts": 480.440318,
+        "targets": 480.440318
+      },
+      "differences": {
+        "attempts": 0.0,
+        "carries": 0.0,
+        "completions": 0.0,
+        "fumbles_lost_total": 0.0,
+        "non_targeted_attempts": -9.999999690535333e-07,
+        "passing_interceptions": 1.7763568394002505e-15,
+        "passing_tds": 0.0,
+        "passing_yards": 0.0,
+        "receiving_tds": 0.0,
+        "receiving_yards": 0.0,
+        "receptions": -5.684341886080802e-14,
+        "rushing_tds": 0.0,
+        "rushing_yards": 3.000000106112566e-06,
+        "targetable_attempts": 9.999999974752427e-07,
+        "targets": 9.999999974752427e-07
+      },
+      "pass": true,
+      "player_sums": {
+        "attempts": 512.443391,
+        "carries": 519.914734,
+        "completions": 333.433594,
+        "fumbles_lost_total": 8.357891,
+        "non_targeted_attempts": 32.00307200000003,
+        "passing_interceptions": 11.631039000000001,
+        "passing_tds": 24.293198,
+        "passing_yards": 3762.863759,
+        "receiving_tds": 24.293198,
+        "receiving_yards": 3762.863759,
+        "receptions": 333.43359399999997,
+        "rushing_tds": 19.209467,
+        "rushing_yards": 2488.1612410000002,
+        "targetable_attempts": 480.440319,
+        "targets": 480.440319
+      },
+      "position_room_shares": {
+        "QB": {
+          "attempts": 1.0,
+          "carries": 0.24117088207005885,
+          "receptions": 0.0,
+          "targets": 0.0
+        },
+        "RB": {
+          "attempts": 0.0,
+          "carries": 0.7443504380470203,
+          "receptions": 0.22879830158925135,
+          "targets": 0.20222661038202042
+        },
+        "TE": {
+          "attempts": 0.0,
+          "carries": 0.00014849550311070816,
+          "receptions": 0.19559319808669307,
+          "targets": 0.1904273362836297
+        },
+        "WR": {
+          "attempts": 0.0,
+          "carries": 0.014330184379810249,
+          "receptions": 0.5756085003240555,
+          "targets": 0.6073460554157739
+        }
+      },
+      "team": "WAS"
+    }
+  ],
+  "tolerance": 0.01
+}

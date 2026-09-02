@@ -1,0 +1,1192 @@
+{
+  "teams": [
+    {
+      "depth_shares": {
+        "00-0037004": 0.1051607581536539,
+        "00-0037744": 0.6361855139199953,
+        "00-0039041": 0.2586537279263507
+      },
+      "final_target_shares": {
+        "00-0037004": 0.09689969709249525,
+        "00-0037744": 0.7910979778733345,
+        "00-0039041": 0.11200232503417035
+      },
+      "input_hierarchy": {
+        "00-0037004": "historical target rate times expected active games (once)",
+        "00-0037744": "established expected-season target prior",
+        "00-0039041": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 8.646407,
+        "receiving_yards": 1280.911433,
+        "receptions": 135.151821,
+        "targets": 188.143217
+      },
+      "raw_opportunity_inputs": {
+        "00-0037004": 17.370909090909088,
+        "00-0037744": 152.0,
+        "00-0039041": 13.8
+      },
+      "team": "ARI",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0032392": 0.1051607581536539,
+        "00-0036429": 0.2586537279263507,
+        "00-0036970": 0.6361855139199953
+      },
+      "final_target_shares": {
+        "00-0032392": 0.15373613005284814,
+        "00-0036429": 0.08463701665742118,
+        "00-0036970": 0.7616268532897308
+      },
+      "input_hierarchy": {
+        "00-0032392": "established expected-season target prior",
+        "00-0036429": "established expected-season target prior",
+        "00-0036970": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 6.009285,
+        "receiving_yards": 1017.253248,
+        "receptions": 97.279241,
+        "targets": 138.708322
+      },
+      "raw_opportunity_inputs": {
+        "00-0032392": 24.6,
+        "00-0036429": 6.1,
+        "00-0036970": 117.6
+      },
+      "team": "ATL",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0034753": 0.610100558587175,
+        "00-0034798": 0.2480483765123372,
+        "00-0040879": 0.10084894403782894,
+        "00-0040887": 0.041002120862658836
+      },
+      "final_target_shares": {
+        "00-0034753": 0.75570852125947,
+        "00-0034798": 0.10092377530394328,
+        "00-0040879": 0.1091029745014006,
+        "00-0040887": 0.03426472893518616
+      },
+      "input_hierarchy": {
+        "00-0034753": "established expected-season target prior",
+        "00-0034798": "established expected-season target prior",
+        "00-0040879": "current-depth room share fallback",
+        "00-0040887": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 10.179139,
+        "receiving_yards": 832.720124,
+        "receptions": 78.679671,
+        "targets": 108.267056
+      },
+      "raw_opportunity_inputs": {
+        "00-0034753": 77.8,
+        "00-0034798": 6.3,
+        "00-0040879": 10.918618271684492,
+        "00-0040887": 3.2
+      },
+      "team": "BAL",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0035689": 0.2480483765123372,
+        "00-0038933": 0.610100558587175,
+        "00-0040194": 0.10084894403782894,
+        "00-0040363": 0.041002120862658836
+      },
+      "final_target_shares": {
+        "00-0035689": 0.2824971654676917,
+        "00-0038933": 0.6513670826064987,
+        "00-0040194": 0.03905255828042181,
+        "00-0040363": 0.02708319364538779
+      },
+      "input_hierarchy": {
+        "00-0035689": "established expected-season target prior",
+        "00-0038933": "established expected-season target prior",
+        "00-0040194": "established expected-season target prior",
+        "00-0040363": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 8.602552,
+        "receiving_yards": 1059.499637,
+        "receptions": 91.729243,
+        "targets": 125.023498
+      },
+      "raw_opportunity_inputs": {
+        "00-0035689": 37.0,
+        "00-0038933": 84.1,
+        "00-0040194": 3.0,
+        "00-0040363": 3.0
+      },
+      "team": "BUF",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0031610": 0.0991953361274868,
+        "00-0036825": 0.016396878778640146,
+        "00-0037005": 0.6000968136852405,
+        "00-0039356": 0.04032981405720666,
+        "00-0040187": 0.2439811573514259
+      },
+      "final_target_shares": {
+        "00-0031610": 0.354509353590328,
+        "00-0036825": 0.008954128361034975,
+        "00-0037005": 0.30728619871217727,
+        "00-0039356": 0.1858748777777256,
+        "00-0040187": 0.14337544155873427
+      },
+      "input_hierarchy": {
+        "00-0031610": "historical target rate times expected active games (once)",
+        "00-0036825": "established expected-season target prior",
+        "00-0037005": "established expected-season target prior",
+        "00-0039356": "established expected-season target prior",
+        "00-0040187": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 4.398781,
+        "receiving_yards": 535.794666,
+        "receptions": 62.152884,
+        "targets": 85.664477
+      },
+      "raw_opportunity_inputs": {
+        "00-0031610": 53.07777777777778,
+        "00-0036825": 0.9,
+        "00-0037005": 29.7,
+        "00-0039356": 28.2,
+        "00-0040187": 15.0
+      },
+      "team": "CAR",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0036290": 0.25423438273403837,
+        "00-0040126": 0.6253156787357075,
+        "00-0041170": 0.017085952047714834,
+        "00-0041558": 0.10336398648253922
+      },
+      "final_target_shares": {
+        "00-0036290": 0.18705415334554626,
+        "00-0040126": 0.7344382285892592,
+        "00-0041170": 0.015142987742216403,
+        "00-0041558": 0.06336463032297815
+      },
+      "input_hierarchy": {
+        "00-0036290": "established expected-season target prior",
+        "00-0040126": "established expected-season target prior",
+        "00-0041170": "current-depth room share fallback",
+        "00-0041558": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 8.359619,
+        "receiving_yards": 988.990432,
+        "receptions": 92.029015,
+        "targets": 135.032306
+      },
+      "raw_opportunity_inputs": {
+        "00-0036290": 26.8,
+        "00-0040126": 119.9,
+        "00-0041170": 2.307155505208356,
+        "00-0041558": 8.4
+      },
+      "team": "CHI",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0034829": 0.610100558587175,
+        "00-0035631": 0.2480483765123372,
+        "00-0039814": 0.10084894403782894,
+        "00-0041116": 0.041002120862658836
+      },
+      "final_target_shares": {
+        "00-0034829": 0.647020111717435,
+        "00-0035631": 0.1200642207570129,
+        "00-0039814": 0.16410918274695974,
+        "00-0041116": 0.06880648477859237
+      },
+      "input_hierarchy": {
+        "00-0034829": "established expected-season target prior",
+        "00-0035631": "established expected-season target prior",
+        "00-0039814": "established expected-season target prior",
+        "00-0041116": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 6.206127,
+        "receiving_yards": 814.299587,
+        "receptions": 89.923658,
+        "targets": 123.41281
+      },
+      "raw_opportunity_inputs": {
+        "00-0034829": 69.3,
+        "00-0035631": 9.3,
+        "00-0039814": 19.0,
+        "00-0041116": 8.0
+      },
+      "team": "CIN",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0038710": 0.2586537279263507,
+        "00-0040663": 0.6361855139199953,
+        "00-0041131": 0.1051607581536539
+      },
+      "final_target_shares": {
+        "00-0038710": 0.11199639289909111,
+        "00-0040663": 0.7755316389365585,
+        "00-0041131": 0.11247196816435023
+      },
+      "input_hierarchy": {
+        "00-0038710": "established expected-season target prior",
+        "00-0040663": "established expected-season target prior",
+        "00-0041131": "current-depth room share fallback"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 7.373102,
+        "receiving_yards": 980.678712,
+        "receptions": 100.953831,
+        "targets": 148.610343
+      },
+      "raw_opportunity_inputs": {
+        "00-0038710": 10.3,
+        "00-0040663": 110.8,
+        "00-0041131": 15.627976339354554
+      },
+      "team": "CLE",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0038041": 0.6361855139199953,
+        "00-0038547": 0.1051607581536539,
+        "00-0039530": 0.2586537279263507
+      },
+      "final_target_shares": {
+        "00-0038041": 0.8188414253110148,
+        "00-0038547": 0.0941826088210882,
+        "00-0039530": 0.0869759658678969
+      },
+      "input_hierarchy": {
+        "00-0038041": "established expected-season target prior",
+        "00-0038547": "established expected-season target prior",
+        "00-0039530": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 8.384234,
+        "receiving_yards": 819.691027,
+        "receptions": 97.003197,
+        "targets": 132.94245
+      },
+      "raw_opportunity_inputs": {
+        "00-0038041": 104.0,
+        "00-0038547": 11.0,
+        "00-0039530": 5.3
+      },
+      "team": "DAL",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0033881": 0.610100558587175,
+        "00-0036422": 0.2480483765123372,
+        "00-0038783": 0.10084894403782894,
+        "00-0041133": 0.041002120862658836
+      },
+      "final_target_shares": {
+        "00-0033881": 0.8056386936245254,
+        "00-0036422": 0.10535539657386107,
+        "00-0038783": 0.05537761276844598,
+        "00-0041133": 0.033628297033167456
+      },
+      "input_hierarchy": {
+        "00-0033881": "established expected-season target prior",
+        "00-0036422": "established expected-season target prior",
+        "00-0038783": "established expected-season target prior",
+        "00-0041133": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 3.914038,
+        "receiving_yards": 514.553991,
+        "receptions": 60.987189,
+        "targets": 86.679483
+      },
+      "raw_opportunity_inputs": {
+        "00-0033881": 69.9,
+        "00-0036422": 5.7,
+        "00-0038783": 3.6,
+        "00-0041133": 2.6
+      },
+      "team": "DEN",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0036754": 0.2758695270027832,
+        "00-0039065": 0.6785295468894418,
+        "00-0040390": 0.045600926107775004
+      },
+      "final_target_shares": {
+        "00-0036754": 0.20792991325394722,
+        "00-0039065": 0.7502686900081316,
+        "00-0040390": 0.04180139673792122
+      },
+      "input_hierarchy": {
+        "00-0036754": "established expected-season target prior",
+        "00-0039065": "established expected-season target prior",
+        "00-0040390": "current-depth room share fallback"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 7.64497,
+        "receiving_yards": 927.528692,
+        "receptions": 89.894249,
+        "targets": 121.513897
+      },
+      "raw_opportunity_inputs": {
+        "00-0036754": 25.9,
+        "00-0039065": 104.2,
+        "00-0040390": 5.5411462381647825
+      },
+      "team": "DET",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0033858": 0.2480483765123372,
+        "00-0038589": 0.10084894403782894,
+        "00-0038996": 0.610100558587175,
+        "00-0040598": 0.041002120862658836
+      },
+      "final_target_shares": {
+        "00-0033858": 0.4188932350788838,
+        "00-0038589": 0.022253150875734477,
+        "00-0038996": 0.5298382365614557,
+        "00-0040598": 0.029015377483926068
+      },
+      "input_hierarchy": {
+        "00-0033858": "historical target rate times expected active games (once)",
+        "00-0038589": "established expected-season target prior",
+        "00-0038996": "established expected-season target prior",
+        "00-0040598": "current-depth room share fallback"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 7.152467,
+        "receiving_yards": 753.271129,
+        "receptions": 72.473359,
+        "targets": 97.468517
+      },
+      "raw_opportunity_inputs": {
+        "00-0033858": 70.90146555294118,
+        "00-0038589": 0.4,
+        "00-0038996": 78.3,
+        "00-0040598": 3.9964159143381175
+      },
+      "team": "GB",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0034383": 0.610100558587175,
+        "00-0034981": 0.2480483765123372,
+        "00-0039359": 0.10084894403782894,
+        "00-0041472": 0.041002120862658836
+      },
+      "final_target_shares": {
+        "00-0034383": 0.6915455072211819,
+        "00-0034981": 0.07358969195525678,
+        "00-0039359": 0.056805925360438395,
+        "00-0041472": 0.17805887546312296
+      },
+      "input_hierarchy": {
+        "00-0034383": "established expected-season target prior",
+        "00-0034981": "established expected-season target prior",
+        "00-0039359": "established expected-season target prior",
+        "00-0041472": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 4.469621,
+        "receiving_yards": 717.899609,
+        "receptions": 81.442212,
+        "targets": 115.415376
+      },
+      "raw_opportunity_inputs": {
+        "00-0034383": 85.5,
+        "00-0034981": 3.6,
+        "00-0039359": 5.5,
+        "00-0041472": 25.5
+      },
+      "team": "HOU",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0033217": 0.2586537279263507,
+        "00-0037292": 0.1051607581536539,
+        "00-0040128": 0.6361855139199953
+      },
+      "final_target_shares": {
+        "00-0033217": 0.069250358495284,
+        "00-0037292": 0.10739991909616622,
+        "00-0040128": 0.8233497224085498
+      },
+      "input_hierarchy": {
+        "00-0033217": "established expected-season target prior",
+        "00-0037292": "historical target rate times expected active games (once)",
+        "00-0040128": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 6.178644,
+        "receiving_yards": 821.688621,
+        "receptions": 85.790553,
+        "targets": 122.402769
+      },
+      "raw_opportunity_inputs": {
+        "00-0033217": 3.0,
+        "00-0037292": 14.789328036363637,
+        "00-0040128": 119.2
+      },
+      "team": "IND",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0036590": 0.041002120862658836,
+        "00-0038935": 0.610100558587175,
+        "00-0041084": 0.10084894403782894,
+        "00-0041503": 0.2480483765123372
+      },
+      "final_target_shares": {
+        "00-0036590": 0.10047237011367016,
+        "00-0038935": 0.7140618492474443,
+        "00-0041084": 0.03718248241474996,
+        "00-0041503": 0.14828329822413566
+      },
+      "input_hierarchy": {
+        "00-0036590": "historical target rate times expected active games (once)",
+        "00-0038935": "established expected-season target prior",
+        "00-0041084": "established expected-season target prior",
+        "00-0041503": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 6.443744,
+        "receiving_yards": 818.28499,
+        "receptions": 80.085758,
+        "targets": 116.52069
+      },
+      "raw_opportunity_inputs": {
+        "00-0036590": 13.559279334545456,
+        "00-0038935": 87.0,
+        "00-0041084": 2.5,
+        "00-0041503": 14.5
+      },
+      "team": "JAX",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0030506": 0.610100558587175,
+        "00-0036637": 0.2480483765123372,
+        "00-0039824": 0.10084894403782894,
+        "00-0040081": 0.041002120862658836
+      },
+      "final_target_shares": {
+        "00-0030506": 0.7081737328204928,
+        "00-0036637": 0.2030996178304029,
+        "00-0039824": 0.04686369185590239,
+        "00-0040081": 0.04186295749320195
+      },
+      "input_hierarchy": {
+        "00-0030506": "established expected-season target prior",
+        "00-0036637": "established expected-season target prior",
+        "00-0039824": "established expected-season target prior",
+        "00-0040081": "current-depth room share fallback"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 7.391866,
+        "receiving_yards": 1061.668489,
+        "receptions": 104.204198,
+        "targets": 147.628305
+      },
+      "raw_opportunity_inputs": {
+        "00-0030506": 105.4,
+        "00-0036637": 27.6,
+        "00-0039824": 4.8,
+        "00-0040081": 6.053073604359462
+      },
+      "team": "KC",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0033885": 0.2586537279263507,
+        "00-0038046": 0.6361855139199953,
+        "00-0040189": 0.1051607581536539
+      },
+      "final_target_shares": {
+        "00-0033885": 0.3879348923157327,
+        "00-0038046": 0.1846533707265828,
+        "00-0040189": 0.4274117369576846
+      },
+      "input_hierarchy": {
+        "00-0033885": "established expected-season target prior",
+        "00-0038046": "established expected-season target prior",
+        "00-0040189": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 7.49336,
+        "receiving_yards": 884.396548,
+        "receptions": 84.141069,
+        "targets": 119.116238
+      },
+      "raw_opportunity_inputs": {
+        "00-0033885": 52.7,
+        "00-0038046": 9.0,
+        "00-0040189": 63.7
+      },
+      "team": "LAC",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0033110": 0.2439811573514259,
+        "00-0036244": 0.6000968136852405,
+        "00-0039074": 0.016396878778640146,
+        "00-0040737": 0.0991953361274868,
+        "00-0041510": 0.04032981405720666
+      },
+      "final_target_shares": {
+        "00-0033110": 0.23302158358296127,
+        "00-0036244": 0.3391742923145129,
+        "00-0039074": 0.06412444617826325,
+        "00-0040737": 0.30828977145084946,
+        "00-0041510": 0.05538990647341317
+      },
+      "input_hierarchy": {
+        "00-0033110": "established expected-season target prior",
+        "00-0036244": "established expected-season target prior",
+        "00-0039074": "established expected-season target prior",
+        "00-0040737": "established expected-season target prior",
+        "00-0041510": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 9.672922,
+        "receiving_yards": 949.541053,
+        "receptions": 88.612598,
+        "targets": 129.544974
+      },
+      "raw_opportunity_inputs": {
+        "00-0033110": 32.7,
+        "00-0036244": 38.9,
+        "00-0039074": 10.8,
+        "00-0040737": 51.2,
+        "00-0041510": 8.4
+      },
+      "team": "LAR",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0034365": 0.1051607581536539,
+        "00-0039066": 0.2586537279263507,
+        "00-0039338": 0.6361855139199953
+      },
+      "final_target_shares": {
+        "00-0034365": 0.031836325970816724,
+        "00-0039066": 0.1872740236699847,
+        "00-0039338": 0.7808896503591987
+      },
+      "input_hierarchy": {
+        "00-0034365": "established expected-season target prior",
+        "00-0039066": "established expected-season target prior",
+        "00-0039338": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 7.106424,
+        "receiving_yards": 1073.49154,
+        "receptions": 111.840425,
+        "targets": 156.936757
+      },
+      "raw_opportunity_inputs": {
+        "00-0034365": 2.2,
+        "00-0039066": 27.6,
+        "00-0039338": 133.1
+      },
+      "team": "LV",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0037252": 0.610100558587175,
+        "00-0041077": 0.041002120862658836,
+        "00-0041524": 0.2480483765123372,
+        "00-0041579": 0.10084894403782894
+      },
+      "final_target_shares": {
+        "00-0037252": 0.7112332342689928,
+        "00-0041077": 0.0453798637263186,
+        "00-0041524": 0.2039273978754945,
+        "00-0041579": 0.039459504129194176
+      },
+      "input_hierarchy": {
+        "00-0037252": "established expected-season target prior",
+        "00-0041077": "current-depth room share fallback",
+        "00-0041524": "established expected-season target prior",
+        "00-0041579": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 4.454094,
+        "receiving_yards": 767.390452,
+        "receptions": 73.141506,
+        "targets": 103.417344
+      },
+      "raw_opportunity_inputs": {
+        "00-0037252": 67.2,
+        "00-0041077": 4.2403304379831654,
+        "00-0041524": 17.6,
+        "00-0041579": 2.2
+      },
+      "team": "MIA",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0035229": 0.610100558587175,
+        "00-0035249": 0.2480483765123372,
+        "00-0040215": 0.041002120862658836,
+        "00-0040509": 0.10084894403782894
+      },
+      "final_target_shares": {
+        "00-0035229": 0.6649446016332641,
+        "00-0035249": 0.23709959915340043,
+        "00-0040215": 0.040867145091493376,
+        "00-0040509": 0.057088654121842164
+      },
+      "input_hierarchy": {
+        "00-0035229": "established expected-season target prior",
+        "00-0035249": "established expected-season target prior",
+        "00-0040215": "current-depth room share fallback",
+        "00-0040509": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 5.837147,
+        "receiving_yards": 733.588827,
+        "receptions": 80.049733,
+        "targets": 110.057857
+      },
+      "raw_opportunity_inputs": {
+        "00-0035229": 75.0,
+        "00-0035249": 25.9,
+        "00-0040215": 4.512605554599223,
+        "00-0040509": 5.1
+      },
+      "team": "MIN",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0033090": 0.610100558587175,
+        "00-0038564": 0.10084894403782894,
+        "00-0041314": 0.041002120862658836,
+        "00-0041395": 0.2480483765123372
+      },
+      "final_target_shares": {
+        "00-0033090": 0.6954331995522449,
+        "00-0038564": 0.10422206658616187,
+        "00-0041314": 0.0423735301493979,
+        "00-0041395": 0.1579712037121953
+      },
+      "input_hierarchy": {
+        "00-0033090": "established expected-season target prior",
+        "00-0038564": "current-depth room share fallback",
+        "00-0041314": "current-depth room share fallback",
+        "00-0041395": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 7.303098,
+        "receiving_yards": 853.294801,
+        "receptions": 79.948532,
+        "targets": 110.755551
+      },
+      "raw_opportunity_inputs": {
+        "00-0033090": 76.2,
+        "00-0038564": 11.169580364677909,
+        "00-0041314": 4.541212488312374,
+        "00-0041395": 14.4
+      },
+      "team": "NE",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0035644": 0.2586537279263507,
+        "00-0036040": 0.6361855139199953,
+        "00-0041041": 0.1051607581536539
+      },
+      "final_target_shares": {
+        "00-0035644": 0.2861902050447296,
+        "00-0036040": 0.6434533190002153,
+        "00-0041041": 0.07035647595505509
+      },
+      "input_hierarchy": {
+        "00-0035644": "established expected-season target prior",
+        "00-0036040": "established expected-season target prior",
+        "00-0041041": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 5.400558,
+        "receiving_yards": 928.710093,
+        "receptions": 91.293633,
+        "targets": 125.49327
+      },
+      "raw_opportunity_inputs": {
+        "00-0035644": 34.7,
+        "00-0036040": 76.4,
+        "00-0041041": 7.3
+      },
+      "team": "NO",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0031484": 0.007481389302968061,
+        "00-0037838": 0.6734532031955953,
+        "00-0039847": 0.27380563967444976,
+        "00-0040225": 0.04525976782698686
+      },
+      "final_target_shares": {
+        "00-0031484": 0.0036410499785560786,
+        "00-0037838": 0.7938506048929171,
+        "00-0039847": 0.18273253097331713,
+        "00-0040225": 0.019775814155209705
+      },
+      "input_hierarchy": {
+        "00-0031484": "established expected-season target prior",
+        "00-0037838": "established expected-season target prior",
+        "00-0039847": "established expected-season target prior",
+        "00-0040225": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 6.164973,
+        "receiving_yards": 772.339327,
+        "receptions": 75.271211,
+        "targets": 104.669987
+      },
+      "raw_opportunity_inputs": {
+        "00-0031484": 0.3,
+        "00-0037838": 92.2,
+        "00-0039847": 17.9,
+        "00-0040225": 1.5
+      },
+      "team": "NYG",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0037755": 0.041002120862658836,
+        "00-0037805": 0.10084894403782894,
+        "00-0040736": 0.610100558587175,
+        "00-0041032": 0.2480483765123372
+      },
+      "final_target_shares": {
+        "00-0037755": 0.11331636086741585,
+        "00-0037805": 0.04490295038283263,
+        "00-0040736": 0.42941797701003714,
+        "00-0041032": 0.41236271173971445
+      },
+      "input_hierarchy": {
+        "00-0037755": "historical target rate times expected active games (once)",
+        "00-0037805": "established expected-season target prior",
+        "00-0040736": "established expected-season target prior",
+        "00-0041032": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 4.968508,
+        "receiving_yards": 696.814316,
+        "receptions": 81.326736,
+        "targets": 114.859061
+      },
+      "raw_opportunity_inputs": {
+        "00-0037755": 17.85,
+        "00-0037805": 4.2,
+        "00-0040736": 52.2,
+        "00-0041032": 61.6
+      },
+      "team": "NYJ",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0033246": 0.2480483765123372,
+        "00-0034351": 0.610100558587175,
+        "00-0038498": 0.041002120862658836,
+        "00-0041483": 0.10084894403782894
+      },
+      "final_target_shares": {
+        "00-0033246": 0.05454522669609968,
+        "00-0034351": 0.7763332107589684,
+        "00-0038498": 0.0396645643069374,
+        "00-0041483": 0.12945699823799434
+      },
+      "input_hierarchy": {
+        "00-0033246": "established expected-season target prior",
+        "00-0034351": "established expected-season target prior",
+        "00-0038498": "historical target rate times expected active games (once)",
+        "00-0041483": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 7.455066,
+        "receiving_yards": 778.221254,
+        "receptions": 78.416877,
+        "targets": 106.295198
+      },
+      "raw_opportunity_inputs": {
+        "00-0033246": 0.7,
+        "00-0034351": 92.8,
+        "00-0038498": 4.4624999999999995,
+        "00-0041483": 15.5
+      },
+      "team": "PHI",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0033757": 0.10442276253119764,
+        "00-0036894": 0.631720900573855,
+        "00-0038558": 0.2568385515973371,
+        "00-0041398": 0.0070177852976102675
+      },
+      "final_target_shares": {
+        "00-0033757": 0.021581295433749623,
+        "00-0036894": 0.5799238259238415,
+        "00-0038558": 0.3913782589443928,
+        "00-0041398": 0.007116619698016113
+      },
+      "input_hierarchy": {
+        "00-0033757": "established expected-season target prior",
+        "00-0036894": "established expected-season target prior",
+        "00-0038558": "established expected-season target prior",
+        "00-0041398": "current-depth room share fallback"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 6.383486,
+        "receiving_yards": 819.004665,
+        "receptions": 85.967244,
+        "targets": 116.841289
+      },
+      "raw_opportunity_inputs": {
+        "00-0033757": 0.1,
+        "00-0036894": 65.1,
+        "00-0038558": 48.8,
+        "00-0041398": 0.8199670800980323
+      },
+      "team": "PIT",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0033576": 0.2480483765123372,
+        "00-0039793": 0.610100558587175,
+        "00-0040058": 0.041002120862658836,
+        "00-0040739": 0.10084894403782894
+      },
+      "final_target_shares": {
+        "00-0033576": 0.06524909968476447,
+        "00-0039793": 0.6693999650978314,
+        "00-0040058": 0.03404891724882826,
+        "00-0040739": 0.23130201796857583
+      },
+      "input_hierarchy": {
+        "00-0033576": "established expected-season target prior",
+        "00-0039793": "established expected-season target prior",
+        "00-0040058": "historical target rate times expected active games (once)",
+        "00-0040739": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 7.253238,
+        "receiving_yards": 709.291796,
+        "receptions": 72.594371,
+        "targets": 97.223925
+      },
+      "raw_opportunity_inputs": {
+        "00-0033576": 1.8,
+        "00-0039793": 63.0,
+        "00-0040058": 2.975,
+        "00-0040739": 24.3
+      },
+      "team": "SEA",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0033288": 0.610100558587175,
+        "00-0036887": 0.10084894403782894,
+        "00-0037112": 0.2480483765123372,
+        "00-0038643": 0.041002120862658836
+      },
+      "final_target_shares": {
+        "00-0033288": 0.7075667248221285,
+        "00-0036887": 0.029517169176397837,
+        "00-0037112": 0.23856029275814386,
+        "00-0038643": 0.02435581324332983
+      },
+      "input_hierarchy": {
+        "00-0033288": "established expected-season target prior",
+        "00-0036887": "established expected-season target prior",
+        "00-0037112": "established expected-season target prior",
+        "00-0038643": "historical target rate times expected active games (once)"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 8.235723,
+        "receiving_yards": 1030.732824,
+        "receptions": 90.470644,
+        "targets": 121.383761
+      },
+      "raw_opportunity_inputs": {
+        "00-0033288": 87.7,
+        "00-0036887": 1.4,
+        "00-0037112": 28.3,
+        "00-0038643": 2.4196666666666666
+      },
+      "team": "SF",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0037311": 0.10084894403782894,
+        "00-0038129": 0.610100558587175,
+        "00-0039050": 0.2480483765123372,
+        "00-0041094": 0.041002120862658836
+      },
+      "final_target_shares": {
+        "00-0037311": 0.032782401420178395,
+        "00-0038129": 0.8445426342399575,
+        "00-0039050": 0.07573580142859355,
+        "00-0041094": 0.046939162911270496
+      },
+      "input_hierarchy": {
+        "00-0037311": "established expected-season target prior",
+        "00-0038129": "established expected-season target prior",
+        "00-0039050": "established expected-season target prior",
+        "00-0041094": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 4.96659,
+        "receiving_yards": 617.324754,
+        "receptions": 64.367354,
+        "targets": 92.245808
+      },
+      "raw_opportunity_inputs": {
+        "00-0037311": 1.4,
+        "00-0038129": 80.2,
+        "00-0039050": 2.9,
+        "00-0041094": 4.3
+      },
+      "team": "TB",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0036876": 0.10084894403782894,
+        "00-0038115": 0.2480483765123372,
+        "00-0039648": 0.041002120862658836,
+        "00-0040584": 0.610100558587175
+      },
+      "final_target_shares": {
+        "00-0036876": 0.03499343753107717,
+        "00-0038115": 0.32106774255176956,
+        "00-0039648": 0.06979742213262129,
+        "00-0040584": 0.574141397784532
+      },
+      "input_hierarchy": {
+        "00-0036876": "established expected-season target prior",
+        "00-0038115": "established expected-season target prior",
+        "00-0039648": "historical target rate times expected active games (once)",
+        "00-0040584": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 4.69244,
+        "receiving_yards": 679.88592,
+        "receptions": 69.863801,
+        "targets": 98.805191
+      },
+      "raw_opportunity_inputs": {
+        "00-0036876": 1.6,
+        "00-0038115": 29.3,
+        "00-0039648": 6.648511346590908,
+        "00-0040584": 48.8
+      },
+      "team": "TEN",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    },
+    {
+      "depth_shares": {
+        "00-0036628": 0.2480483765123372,
+        "00-0037809": 0.610100558587175,
+        "00-0039686": 0.041002120862658836,
+        "00-0039912": 0.10084894403782894
+      },
+      "final_target_shares": {
+        "00-0036628": 0.09286224558070455,
+        "00-0037809": 0.7321574328763969,
+        "00-0039686": 0.02873389171153529,
+        "00-0039912": 0.14624642983136332
+      },
+      "input_hierarchy": {
+        "00-0036628": "established expected-season target prior",
+        "00-0037809": "established expected-season target prior",
+        "00-0039686": "historical target rate times expected active games (once)",
+        "00-0039912": "established expected-season target prior"
+      },
+      "preserved_room_budgets": {
+        "receiving_tds": 4.627226,
+        "receiving_yards": 652.721867,
+        "receptions": 65.217343,
+        "targets": 91.48897
+      },
+      "raw_opportunity_inputs": {
+        "00-0036628": 4.7,
+        "00-0037809": 66.3,
+        "00-0039686": 2.2312499999999997,
+        "00-0039912": 13.7
+      },
+      "team": "WAS",
+      "weights": {
+        "current_depth": 0.2,
+        "established_or_historical_opportunity": 0.8,
+        "snap_participation": 0
+      }
+    }
+  ]
+}

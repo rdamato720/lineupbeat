@@ -188,6 +188,11 @@ TEAM_NAMES = {
 
 
 def slug(s: str) -> str:
+    import build_nfl_season_release as final_season
+    if final_season.enabled():
+        found = next((p['canonical_slug'] for p in final_season.load()[0]['players'] if p['name'] == s), None)
+        if found:
+            return found
     s = re.sub(r"[^\w\s-]", "", (s or "").lower())
     return re.sub(r"[\s_]+", "-", s).strip("-")
 
@@ -532,6 +537,10 @@ def load_projections():
     """Whatever the projections page was built from, by slug."""
     global PROJECTION_UPDATED
     PROJECTION_UPDATED = ""
+    import build_nfl_season_release as final_season
+    if final_season.enabled():
+        PROJECTION_UPDATED = final_season.load()[0]['metadata']['cutoff_utc']
+        return final_season.projection_map()
     f = SITE / SPORT / "projections" / "index.html"
     if not f.exists():
         return {}
@@ -812,6 +821,7 @@ def player_page(p, nuggets, base, wire_publications=None):
     c2 = TEAM_C2.get(team, "#C6F24E")
     shot = (f"https://sleepercdn.com/content/nfl/players/thumb/"
             f"{p['id'].replace('nfl-','')}.jpg")
+    shot = meta.get('season_photo') or shot
 
     who = POS_NAMES.get(pos, pos or "Player")
     if team:
@@ -2222,6 +2232,9 @@ def _rank_preview_rows():
     preview. Absent file means an empty block, not a crash -- the hub is
     built on every run and the rankings are not.
     """
+    import build_nfl_season_release as final_season
+    if final_season.enabled():
+        return ''.join(f'<div class="lb-preview-row"><strong>{r["overall_rank"]} &middot; {esc(r["player_name"])}</strong><span>{r["position"]}{r["position_rank"]}</span></div>' for r in final_season.legacy_rank_sets()['half_ppr'][:3])
     f = ROOT / "data" / "nfl_rankings_2026.json"
     if not f.exists():
         return ""
@@ -3737,6 +3750,9 @@ def main():
         for r in csv.DictReader(rp.open()):
             roster[r["id"]] = r
 
+    import build_nfl_season_release as final_season
+    if final_season.enabled():
+        roster = final_season.overlay_roster(roster)
     wire_by_page = wire_impacts_by_page(WIRE_BY_PLAYER, roster)
 
     by_player = defaultdict(list)

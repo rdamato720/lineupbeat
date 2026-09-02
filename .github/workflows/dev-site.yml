@@ -51,53 +51,24 @@ jobs:
           python -m beatwire.cli doctor --sport nfl
           python scripts/sync_home_nav.py --check
 
-      - name: Read the public production feed
+      - name: Validate the frozen v1.5 season release
         run: |
-          if ! curl --fail --silent --show-error --location --retry 3 \
-              https://lineupbeat.com/data/feed.json \
-              --output /tmp/lineupbeat-public-feed.json; then
-            echo "::warning title=Live feed unavailable::Using the committed public rollback snapshot."
-            cp data/rollback/feed.before-replacement.json \
-              /tmp/lineupbeat-public-feed.json
-          fi
+          python scripts/build_nfl_season_final.py
+          python scripts/test_nfl_season_final.py
 
-      - name: Build development artifact without private APIs
+      - name: Build the complete offline development site twice
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
         run: |
-          python scripts/dev_site.py seed \
-            --feed /tmp/lineupbeat-public-feed.json
-          python scripts/dev_site.py hydrate-db \
-            --feed /tmp/lineupbeat-public-feed.json \
-            --db /tmp/lineupbeat-development.db
-          python scripts/schedule_strength.py --season 2026 --quiet || true
-          python scripts/build_projections.py data/projections.xlsx || true
-          python scripts/build_pages.py --base "$DEV_BASE_URL" \
-            --db /tmp/lineupbeat-development.db
-          python scripts/build_rankings.py \
-            || echo "::error title=Development rankings unavailable::Rankings validation failed."
-          python scripts/build_ranking_formats.py \
-            || echo "::error title=Development ranking formats unavailable::Ranking-format validation failed."
-          python scripts/build_comparison_tool.py \
-            || echo "::error title=Development comparison tool unavailable::Comparison validation failed."
-          python scripts/build_sos.py || true
-          python scripts/build_projections.py data/projections.xlsx || true
-          python scripts/build_coaching.py || true
-          python scripts/build_ol_rb.py --season 2025 || true
-          python scripts/build_changes.py || true
-          python scripts/build_draft_value.py || true
-          python scripts/build_college_projections.py
-          python scripts/test_college_week1.py
-          python scripts/build_404.py
-          python scripts/build_wire.py --base "$DEV_BASE_URL"
-          python scripts/wire_homepage_replacement.py --apply
-          python scripts/build_decision_room.py
-          python scripts/build_pages.py --base "$DEV_BASE_URL" \
-            --db /tmp/lineupbeat-development.db
-          python scripts/build_my_team.py
-          python scripts/build_chrome_store_bundle.py
-          python scripts/dev_site.py protect --label "$GITHUB_REF_NAME"
+          python scripts/build_nfl_v15_development.py --development
+          python scripts/verify_nfl_season_release.py site --manifest /tmp/v15-build-one.json
+          python scripts/build_nfl_v15_development.py --development
+          python scripts/verify_nfl_season_release.py site --compare /tmp/v15-build-one.json
+          python scripts/verify_nfl_season_release.py site
           python scripts/verify_deploy_artifact.py site --decision-room
           python scripts/dev_site.py verify
           python scripts/test_site_unification.py site
+          python scripts/test_college_week1.py
 
       - name: Upload development artifact
         uses: actions/upload-artifact@v4

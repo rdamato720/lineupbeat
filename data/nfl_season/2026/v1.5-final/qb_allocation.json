@@ -1,0 +1,681 @@
+{
+  "teams": [
+    {
+      "absence_coverage_share": 0.29999999999999993,
+      "backup_absence_distribution": {
+        "00-0035289": 0.31810696364480034,
+        "00-0041561": 0.6818930363551997
+      },
+      "backup_relief_distribution": {
+        "00-0035289": 1.0,
+        "00-0041561": 0.0
+      },
+      "conditional_limited_relief_share": 0.004856764054907018,
+      "conditional_primary_share": 0.995143235945093,
+      "primary_expected_active_games": 11.9,
+      "primary_id": "00-0033119",
+      "season_shares": {
+        "00-0033119": 0.6966002651615651,
+        "00-0035289": 0.09883182393187499,
+        "00-0041561": 0.20456791090655987
+      },
+      "sole_qb_fallback": false,
+      "team": "ARI"
+    },
+    {
+      "absence_coverage_share": 0.2551925294117646,
+      "backup_absence_distribution": {
+        "00-0033662": 0.03160430314856792,
+        "00-0039917": 0.9652270859610917,
+        "00-0041194": 0.0031686108903403857
+      },
+      "backup_relief_distribution": {
+        "00-0033662": 0.7222222222222222,
+        "00-0039917": 0.2777777777777778,
+        "00-0041194": 0.0
+      },
+      "conditional_limited_relief_share": 0.009607243588392943,
+      "conditional_primary_share": 0.9903927564116071,
+      "primary_expected_active_games": 12.661727,
+      "primary_id": "00-0036212",
+      "season_shares": {
+        "00-0033662": 0.01323307696928746,
+        "00-0036212": 0.7376519237918394,
+        "00-0039917": 0.24830639341104555,
+        "00-0041194": 0.0008086058278276265
+      },
+      "sole_qb_fallback": false,
+      "team": "ATL"
+    },
+    {
+      "absence_coverage_share": 0.2066631176470588,
+      "backup_absence_distribution": {
+        "00-0035993": 0.9088770389851438,
+        "00-0040981": 0.09112296101485615
+      },
+      "backup_relief_distribution": {
+        "00-0035993": 1.0,
+        "00-0040981": 0.0
+      },
+      "conditional_limited_relief_share": 0.0008765794902300624,
+      "conditional_primary_share": 0.99912342050977,
+      "primary_expected_active_games": 13.486727,
+      "primary_id": "00-0034796",
+      "season_shares": {
+        "00-0034796": 0.7926414595130276,
+        "00-0035993": 0.18852678527441086,
+        "00-0040981": 0.018831755212561568
+      },
+      "sole_qb_fallback": false,
+      "team": "BAL"
+    },
+    {
+      "absence_coverage_share": 0.10960429411764705,
+      "backup_absence_distribution": {
+        "00-0034577": 1.0
+      },
+      "backup_relief_distribution": {
+        "00-0034577": 1.0
+      },
+      "conditional_limited_relief_share": 0.0025660099091288848,
+      "conditional_primary_share": 0.9974339900908711,
+      "primary_expected_active_games": 15.136727,
+      "primary_id": "00-0034857",
+      "season_shares": {
+        "00-0034577": 0.11188905832198698,
+        "00-0034857": 0.888110941678013
+      },
+      "sole_qb_fallback": false,
+      "team": "BUF"
+    },
+    {
+      "absence_coverage_share": 0.17840082352941178,
+      "backup_absence_distribution": {
+        "00-0038102": 0.9088770389851438,
+        "00-0041149": 0.09112296101485615
+      },
+      "backup_relief_distribution": {
+        "00-0038102": 1.0,
+        "00-0041149": 0.0
+      },
+      "conditional_limited_relief_share": 0.009914957060916356,
+      "conditional_primary_share": 0.9900850429390836,
+      "primary_expected_active_games": 13.967186,
+      "primary_id": "00-0039150",
+      "season_shares": {
+        "00-0038102": 0.17029053279791306,
+        "00-0039150": 0.813453055914598,
+        "00-0041149": 0.01625641128748882
+      },
+      "sole_qb_fallback": false,
+      "team": "CAR"
+    },
+    {
+      "absence_coverage_share": 0.1437501176470588,
+      "backup_absence_distribution": {
+        "00-0028986": 0.09112296101485615,
+        "00-0038416": 0.9088770389851438
+      },
+      "backup_relief_distribution": {
+        "00-0028986": 0.0,
+        "00-0038416": 1.0
+      },
+      "conditional_limited_relief_share": 0.004450508616192384,
+      "conditional_primary_share": 0.9955494913838077,
+      "primary_expected_active_games": 14.556248,
+      "primary_id": "00-0039918",
+      "season_shares": {
+        "00-0028986": 0.013098936366233924,
+        "00-0038416": 0.13446192875985036,
+        "00-0039918": 0.8524391348739158
+      },
+      "sole_qb_fallback": false,
+      "team": "CHI"
+    },
+    {
+      "absence_coverage_share": 0.29999999999999993,
+      "backup_absence_distribution": {
+        "00-0026158": 1.0
+      },
+      "backup_relief_distribution": {
+        "00-0026158": 1.0
+      },
+      "conditional_limited_relief_share": 0.0049255835368780115,
+      "conditional_primary_share": 0.995074416463122,
+      "primary_expected_active_games": 11.9,
+      "primary_id": "00-0036442",
+      "season_shares": {
+        "00-0026158": 0.30344790847581454,
+        "00-0036442": 0.6965520915241855
+      },
+      "sole_qb_fallback": false,
+      "team": "CIN"
+    },
+    {
+      "absence_coverage_share": 0.29999999999999993,
+      "backup_absence_distribution": {
+        "00-0040668": 0.9681069636448003,
+        "00-0041092": 0.03189303635519965
+      },
+      "backup_relief_distribution": {
+        "00-0040668": 0.5,
+        "00-0041092": 0.5
+      },
+      "conditional_limited_relief_share": 0.0,
+      "conditional_primary_share": 1.0,
+      "primary_expected_active_games": 11.9,
+      "primary_id": "00-0033537",
+      "season_shares": {
+        "00-0033537": 0.7000000000000001,
+        "00-0040668": 0.29043208909344004,
+        "00-0041092": 0.009567910906559892
+      },
+      "sole_qb_fallback": false,
+      "team": "CLE"
+    },
+    {
+      "absence_coverage_share": 0.24217894117647054,
+      "backup_absence_distribution": {
+        "00-0037077": 1.0
+      },
+      "backup_relief_distribution": {
+        "00-0037077": 1.0
+      },
+      "conditional_limited_relief_share": 0.0,
+      "conditional_primary_share": 1.0,
+      "primary_expected_active_games": 12.882958,
+      "primary_id": "00-0033077",
+      "season_shares": {
+        "00-0033077": 0.7578210588235295,
+        "00-0037077": 0.24217894117647054
+      },
+      "sole_qb_fallback": false,
+      "team": "DAL"
+    },
+    {
+      "absence_coverage_share": 0.1437501176470588,
+      "backup_absence_distribution": {
+        "00-0035264": 0.9088770389851438,
+        "00-0036879": 0.09112296101485615
+      },
+      "backup_relief_distribution": {
+        "00-0035264": 0.5,
+        "00-0036879": 0.5
+      },
+      "conditional_limited_relief_share": 0.0,
+      "conditional_primary_share": 1.0,
+      "primary_expected_active_games": 14.556248,
+      "primary_id": "00-0039732",
+      "season_shares": {
+        "00-0035264": 0.13065118128082487,
+        "00-0036879": 0.013098936366233924,
+        "00-0039732": 0.8562498823529412
+      },
+      "sole_qb_fallback": false,
+      "team": "DEN"
+    },
+    {
+      "absence_coverage_share": 0.10960429411764705,
+      "backup_absence_distribution": {
+        "00-0033949": 1.0
+      },
+      "backup_relief_distribution": {
+        "00-0033949": 1.0
+      },
+      "conditional_limited_relief_share": 0.010728729185609976,
+      "conditional_primary_share": 0.98927127081439,
+      "primary_expected_active_games": 15.136727,
+      "primary_id": "00-0033106",
+      "season_shares": {
+        "00-0033106": 0.8808428914859112,
+        "00-0033949": 0.11915710851408884
+      },
+      "sole_qb_fallback": false,
+      "team": "DET"
+    },
+    {
+      "absence_coverage_share": 0.17840082352941178,
+      "backup_absence_distribution": {
+        "00-0028118": 1.0
+      },
+      "backup_relief_distribution": {
+        "00-0028118": 1.0
+      },
+      "conditional_limited_relief_share": 0.006574616988290903,
+      "conditional_primary_share": 0.9934253830117091,
+      "primary_expected_active_games": 13.967186,
+      "primary_id": "00-0036264",
+      "season_shares": {
+        "00-0028118": 0.18380252343260112,
+        "00-0036264": 0.8161974765673989
+      },
+      "sole_qb_fallback": false,
+      "team": "GB"
+    },
+    {
+      "absence_coverage_share": 0.1916361176470588,
+      "backup_absence_distribution": {
+        "00-0036898": 1.0
+      },
+      "backup_relief_distribution": {
+        "00-0036898": 1.0
+      },
+      "conditional_limited_relief_share": 0.00713584374254767,
+      "conditional_primary_share": 0.9928641562574523,
+      "primary_expected_active_games": 13.742186,
+      "primary_id": "00-0039163",
+      "season_shares": {
+        "00-0036898": 0.19740447599864858,
+        "00-0039163": 0.8025955240013514
+      },
+      "sole_qb_fallback": false,
+      "team": "HOU"
+    },
+    {
+      "absence_coverage_share": 0.29999999999999993,
+      "backup_absence_distribution": {
+        "00-0039164": 0.09112296101485615,
+        "00-0040206": 0.9088770389851438
+      },
+      "backup_relief_distribution": {
+        "00-0039164": 0.5238095238095238,
+        "00-0040206": 0.4761904761904762
+      },
+      "conditional_limited_relief_share": 0.00804773624355367,
+      "conditional_primary_share": 0.9919522637564463,
+      "primary_expected_active_games": 11.9,
+      "primary_id": "00-0035710",
+      "season_shares": {
+        "00-0035710": 0.6943665846295125,
+        "00-0039164": 0.030287724927093185,
+        "00-0040206": 0.2753456904433943
+      },
+      "sole_qb_fallback": false,
+      "team": "IND"
+    },
+    {
+      "absence_coverage_share": 0.20928317647058825,
+      "backup_absence_distribution": {
+        "00-0040234": 1.0
+      },
+      "backup_relief_distribution": {
+        "00-0040234": 1.0
+      },
+      "conditional_limited_relief_share": 0.0,
+      "conditional_primary_share": 1.0,
+      "primary_expected_active_games": 13.442186,
+      "primary_id": "00-0036971",
+      "season_shares": {
+        "00-0036971": 0.7907168235294117,
+        "00-0040234": 0.20928317647058825
+      },
+      "sole_qb_fallback": false,
+      "team": "JAX"
+    },
+    {
+      "absence_coverage_share": 0.19783958823529413,
+      "backup_absence_distribution": {
+        "00-0036945": 0.9088770389851438,
+        "00-0040906": 0.09112296101485615
+      },
+      "backup_relief_distribution": {
+        "00-0036945": 1.0,
+        "00-0040906": 0.0
+      },
+      "conditional_limited_relief_share": 0.0005251329588076901,
+      "conditional_primary_share": 0.9994748670411923,
+      "primary_expected_active_games": 13.636727,
+      "primary_id": "00-0033873",
+      "season_shares": {
+        "00-0033873": 0.8017391708942374,
+        "00-0036945": 0.1802331000198026,
+        "00-0040906": 0.018027729085959898
+      },
+      "sole_qb_fallback": false,
+      "team": "KC"
+    },
+    {
+      "absence_coverage_share": 0.16695723529411755,
+      "backup_absence_distribution": {
+        "00-0037012": 1.0
+      },
+      "backup_relief_distribution": {
+        "00-0037012": 1.0
+      },
+      "conditional_limited_relief_share": 0.005110965999023064,
+      "conditional_primary_share": 0.994889034000977,
+      "primary_expected_active_games": 14.161727,
+      "primary_id": "00-0036355",
+      "season_shares": {
+        "00-0036355": 0.8287851114597385,
+        "00-0037012": 0.17121488854026148
+      },
+      "sole_qb_fallback": false,
+      "team": "LAC"
+    },
+    {
+      "absence_coverage_share": 0.15394364705882346,
+      "backup_absence_distribution": {
+        "00-0039107": 0.9088770389851438,
+        "00-0041568": 0.09112296101485615
+      },
+      "backup_relief_distribution": {
+        "00-0039107": 0.5,
+        "00-0041568": 0.5
+      },
+      "conditional_limited_relief_share": 0.0,
+      "conditional_primary_share": 1.0,
+      "primary_expected_active_games": 14.382958,
+      "primary_id": "00-0026498",
+      "season_shares": {
+        "00-0026498": 0.8460563529411765,
+        "00-0039107": 0.1399158461093975,
+        "00-0041568": 0.014027800949425944
+      },
+      "sole_qb_fallback": false,
+      "team": "LAR"
+    },
+    {
+      "absence_coverage_share": 0.29999999999999993,
+      "backup_absence_distribution": {
+        "00-0038579": 0.03189303635519965,
+        "00-0041562": 0.9681069636448003
+      },
+      "backup_relief_distribution": {
+        "00-0038579": 0.5,
+        "00-0041562": 0.5
+      },
+      "conditional_limited_relief_share": 0.0,
+      "conditional_primary_share": 1.0,
+      "primary_expected_active_games": 11.9,
+      "primary_id": "00-0029604",
+      "season_shares": {
+        "00-0029604": 0.7000000000000001,
+        "00-0038579": 0.009567910906559892,
+        "00-0041562": 0.29043208909344004
+      },
+      "sole_qb_fallback": false,
+      "team": "LV"
+    },
+    {
+      "absence_coverage_share": 0.29999999999999993,
+      "backup_absence_distribution": {
+        "00-0040014": 0.9088770389851438,
+        "00-0040398": 0.09112296101485615
+      },
+      "backup_relief_distribution": {
+        "00-0040014": 0.5,
+        "00-0040398": 0.5
+      },
+      "conditional_limited_relief_share": 0.0,
+      "conditional_primary_share": 1.0,
+      "primary_expected_active_games": 11.9,
+      "primary_id": "00-0038128",
+      "season_shares": {
+        "00-0038128": 0.7000000000000001,
+        "00-0040014": 0.2726631116955431,
+        "00-0040398": 0.02733688830445684
+      },
+      "sole_qb_fallback": false,
+      "team": "MIA"
+    },
+    {
+      "absence_coverage_share": 0.29999999999999993,
+      "backup_absence_distribution": {
+        "00-0032950": 0.03189303635519965,
+        "00-0039923": 0.9681069636448003
+      },
+      "backup_relief_distribution": {
+        "00-0032950": 1.0,
+        "00-0039923": 0.0
+      },
+      "conditional_limited_relief_share": 0.0011034890851715196,
+      "conditional_primary_share": 0.9988965109148285,
+      "primary_expected_active_games": 11.9,
+      "primary_id": "00-0035228",
+      "season_shares": {
+        "00-0032950": 0.010340353266179957,
+        "00-0035228": 0.69922755764038,
+        "00-0039923": 0.29043208909344004
+      },
+      "sole_qb_fallback": false,
+      "team": "MIN"
+    },
+    {
+      "absence_coverage_share": 0.20257364705882352,
+      "backup_absence_distribution": {
+        "00-0038476": 0.9088770389851438,
+        "00-0041123": 0.09112296101485615
+      },
+      "backup_relief_distribution": {
+        "00-0038476": 1.0,
+        "00-0041123": 0.0
+      },
+      "conditional_limited_relief_share": 0.0007807031403223665,
+      "conditional_primary_share": 0.9992192968596776,
+      "primary_expected_active_games": 13.556248,
+      "primary_id": "00-0039851",
+      "season_shares": {
+        "00-0038476": 0.1847370897731621,
+        "00-0039851": 0.7968037996832594,
+        "00-0041123": 0.018459110543578405
+      },
+      "sole_qb_fallback": false,
+      "team": "NE"
+    },
+    {
+      "absence_coverage_share": 0.29999999999999993,
+      "backup_absence_distribution": {
+        "00-0037013": 0.09112296101485615,
+        "00-0039376": 0.9088770389851438
+      },
+      "backup_relief_distribution": {
+        "00-0037013": 0.7500000000000001,
+        "00-0039376": 0.25
+      },
+      "conditional_limited_relief_share": 0.003573174379765845,
+      "conditional_primary_share": 0.9964268256202341,
+      "primary_expected_active_games": 11.9,
+      "primary_id": "00-0040743",
+      "season_shares": {
+        "00-0037013": 0.02921280485383391,
+        "00-0039376": 0.2732884172120021,
+        "00-0040743": 0.6974987779341639
+      },
+      "sole_qb_fallback": false,
+      "team": "NO"
+    },
+    {
+      "absence_coverage_share": 0.29999999999999993,
+      "backup_absence_distribution": {
+        "00-0031503": 1.0
+      },
+      "backup_relief_distribution": {
+        "00-0031503": 1.0
+      },
+      "conditional_limited_relief_share": 0.003876783109187846,
+      "conditional_primary_share": 0.9961232168908122,
+      "primary_expected_active_games": 11.9,
+      "primary_id": "00-0040691",
+      "season_shares": {
+        "00-0031503": 0.30271374817643143,
+        "00-0040691": 0.6972862518235686
+      },
+      "sole_qb_fallback": false,
+      "team": "NYG"
+    },
+    {
+      "absence_coverage_share": 0.18482600000000005,
+      "backup_absence_distribution": {
+        "00-0041056": 1.0
+      },
+      "backup_relief_distribution": {
+        "00-0041056": 1.0
+      },
+      "conditional_limited_relief_share": 0.0,
+      "conditional_primary_share": 1.0,
+      "primary_expected_active_games": 13.857958,
+      "primary_id": "00-0030565",
+      "season_shares": {
+        "00-0030565": 0.815174,
+        "00-0041056": 0.18482600000000005
+      },
+      "sole_qb_fallback": false,
+      "team": "NYJ"
+    },
+    {
+      "absence_coverage_share": 0.15813370588235298,
+      "backup_absence_distribution": {
+        "00-0027973": 0.9006488170316905,
+        "00-0038400": 0.09029800899590833,
+        "00-0040891": 0.009053173972401102
+      },
+      "backup_relief_distribution": {
+        "00-0027973": 0.1,
+        "00-0038400": 0.9,
+        "00-0040891": 0.0
+      },
+      "conditional_limited_relief_share": 0.006044820640409213,
+      "conditional_primary_share": 0.9939551793595908,
+      "primary_expected_active_games": 14.311727,
+      "primary_id": "00-0036389",
+      "season_shares": {
+        "00-0027973": 0.14293182821089323,
+        "00-0036389": 0.8367773633664999,
+        "00-0038400": 0.01885919647235348,
+        "00-0040891": 0.001431611950253449
+      },
+      "sole_qb_fallback": false,
+      "team": "PHI"
+    },
+    {
+      "absence_coverage_share": 0.28629658823529414,
+      "backup_absence_distribution": {
+        "00-0034771": 0.9006488170316905,
+        "00-0040203": 0.09029800899590833,
+        "00-0041565": 0.009053173972401102
+      },
+      "backup_relief_distribution": {
+        "00-0034771": 1.0,
+        "00-0040203": 0.0,
+        "00-0041565": 0.0
+      },
+      "conditional_limited_relief_share": 0.005654492546039075,
+      "conditional_primary_share": 0.9943455074539609,
+      "primary_expected_active_games": 12.132958,
+      "primary_id": "00-0023459",
+      "season_shares": {
+        "00-0023459": 0.7096677811427996,
+        "00-0034771": 0.26188831413623287,
+        "00-0040203": 0.02585201189996845,
+        "00-0041565": 0.0025918928209990003
+      },
+      "sole_qb_fallback": false,
+      "team": "PIT"
+    },
+    {
+      "absence_coverage_share": 0.171369,
+      "backup_absence_distribution": {
+        "00-0035704": 0.9088770389851438,
+        "00-0040673": 0.09112296101485615
+      },
+      "backup_relief_distribution": {
+        "00-0035704": 1.0,
+        "00-0040673": 0.0
+      },
+      "conditional_limited_relief_share": 0.0034882511467029744,
+      "conditional_primary_share": 0.9965117488532971,
+      "primary_expected_active_games": 14.086727,
+      "primary_id": "00-0034869",
+      "season_shares": {
+        "00-0034869": 0.8257405269640564,
+        "00-0035704": 0.15864382232978874,
+        "00-0040673": 0.015615650706154883
+      },
+      "sole_qb_fallback": false,
+      "team": "SEA"
+    },
+    {
+      "absence_coverage_share": 0.29999999999999993,
+      "backup_absence_distribution": {
+        "00-0036972": 0.9088770389851438,
+        "00-0040589": 0.09112296101485615
+      },
+      "backup_relief_distribution": {
+        "00-0036972": 1.0,
+        "00-0040589": 0.0
+      },
+      "conditional_limited_relief_share": 0.0005532517323542724,
+      "conditional_primary_share": 0.9994467482676457,
+      "primary_expected_active_games": 11.9,
+      "primary_id": "00-0037834",
+      "season_shares": {
+        "00-0036972": 0.2730503879081911,
+        "00-0037834": 0.6996127237873521,
+        "00-0040589": 0.02733688830445684
+      },
+      "sole_qb_fallback": false,
+      "team": "SF"
+    },
+    {
+      "absence_coverage_share": 0.10960429411764705,
+      "backup_absence_distribution": {
+        "00-0041251": 1.0
+      },
+      "backup_relief_distribution": {
+        "00-0041251": 1.0
+      },
+      "conditional_limited_relief_share": 0.0,
+      "conditional_primary_share": 1.0,
+      "primary_expected_active_games": 15.136727,
+      "primary_id": "00-0034855",
+      "season_shares": {
+        "00-0034855": 0.890395705882353,
+        "00-0041251": 0.10960429411764705
+      },
+      "sole_qb_fallback": false,
+      "team": "TB"
+    },
+    {
+      "absence_coverage_share": 0.2156251764705882,
+      "backup_absence_distribution": {
+        "00-0033869": 1.0
+      },
+      "backup_relief_distribution": {
+        "00-0033869": 1.0
+      },
+      "conditional_limited_relief_share": 0.009431302879396832,
+      "conditional_primary_share": 0.9905686971206031,
+      "primary_expected_active_games": 13.334372,
+      "primary_id": "00-0040676",
+      "season_shares": {
+        "00-0033869": 0.22302285300226754,
+        "00-0040676": 0.7769771469977325
+      },
+      "sole_qb_fallback": false,
+      "team": "TEN"
+    },
+    {
+      "absence_coverage_share": 0.29999999999999993,
+      "backup_absence_distribution": {
+        "00-0032268": 0.9088770389851438,
+        "00-0041117": 0.09112296101485615
+      },
+      "backup_relief_distribution": {
+        "00-0032268": 1.0,
+        "00-0041117": 0.0
+      },
+      "conditional_limited_relief_share": 0.00683002271366985,
+      "conditional_primary_share": 0.9931699772863302,
+      "primary_expected_active_games": 11.9,
+      "primary_id": "00-0039910",
+      "season_shares": {
+        "00-0032268": 0.277444127595112,
+        "00-0039910": 0.6952189841004311,
+        "00-0041117": 0.02733688830445684
+      },
+      "sole_qb_fallback": false,
+      "team": "WAS"
+    }
+  ]
+}

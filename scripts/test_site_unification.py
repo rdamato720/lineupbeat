@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import sys
 from html.parser import HTMLParser
@@ -164,6 +165,13 @@ def audit(root: Path) -> tuple[int, int, int]:
         root / "nfl/data/index.html": ("177-player", "615-player", "216-player"),
         root / "decision-room/college/index.html": ("2,205", "64 teams", "Yahoo"),
     }
+    final_season = root / 'data/nfl-season-v15.json'
+    if final_season.exists():
+        population = len(json.loads(final_season.read_text())['players'])
+        if population != 505:
+            errors.append('v1.5 active season population must be 505')
+        scope_checks[root / 'nfl/who-should-i-draft/index.html'] = (f'{population}-player', '2025 weekly')
+        scope_checks[root / 'nfl/data/index.html'] = ('177-player', f'{population}-player')
     for page, needles in scope_checks.items():
         text = page.read_text() if page.is_file() else ""
         for needle in needles:
