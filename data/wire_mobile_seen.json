@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 766,
+ "count": 783,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -8465,6 +8465,193 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005858
+  },
+  {
+   "candidate_id": "mobile:article:9ec7c65c67a05fce1b3e",
+   "player_id": "00-0034796",
+   "source_url": "https://www.baltimoreravens.com/news/tyler-loop-embraced-kicker-competition-jake-moody-lamar-jackson-completion-rate-zion-young-center-jovaughn-gwyn",
+   "attempted_at": "2026-09-02T22:09:09+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T22:09:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004364
+  },
+  {
+   "candidate_id": "mobile:onsi:bb420656a9e5ff583bb3",
+   "player_id": "00-0033077",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-super-bowl-prediction-unlikely-opponent",
+   "attempted_at": "2026-09-02T22:09:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T22:09:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004364
+  },
+  {
+   "candidate_id": "mobile:onsi:7ce95927125161dae85f",
+   "player_id": "00-0039893",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-sorting-out-pre-week-1-injury-news-what-it-means-for-brian-thomas-jr",
+   "attempted_at": "2026-09-02T22:09:17+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T22:09:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004338
+  },
+  {
+   "candidate_id": "mobile:onsi:d674c8d4ed7a337fb1f7",
+   "player_id": "00-0034960",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-sorting-out-pre-week-1-injury-news-what-it-means-for-brian-thomas-jr",
+   "attempted_at": "2026-09-02T22:09:20+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-02T22:09:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005432
+  },
+  {
+   "candidate_id": "mobile:onsi:3053a9456bf0e997ae85",
+   "player_id": "00-0038611",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-sorting-out-pre-week-1-injury-news-what-it-means-for-brian-thomas-jr",
+   "attempted_at": "2026-09-02T22:09:24+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T22:09:29+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005914
+  },
+  {
+   "candidate_id": "mobile:onsi:1e472943a37fbc92ae5b",
+   "player_id": "00-0040719",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-sorting-out-pre-week-1-injury-news-what-it-means-for-brian-thomas-jr",
+   "attempted_at": "2026-09-02T22:09:29+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T22:09:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004126
+  },
+  {
+   "candidate_id": "mobile:onsi:9b07ae82e4394c86cd53",
+   "player_id": "00-0034857",
+   "source_url": "https://www.si.com/nfl/bills/onsi/injuries-bills-khalil-shakir-ty-johnson-head-list-worrisome",
+   "attempted_at": "2026-09-02T22:09:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T22:09:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003674
+  },
+  {
+   "candidate_id": "mobile:article:4e5d6ddc41dc62c0c371",
+   "player_id": "00-0035640",
+   "source_url": "https://steelersdepot.com/2026/09/hasnt-made-repeat-mistakes-rodgers-says-germie-bernards-acclimation-to-nfl-is-really-encouraging/",
+   "attempted_at": "2026-09-02T22:09:34+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T22:09:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.008738
+  },
+  {
+   "candidate_id": "mobile:article:80f7d6a4ecf59f5eb664",
+   "player_id": "00-0036252",
+   "source_url": "https://steelersdepot.com/2026/09/hasnt-made-repeat-mistakes-rodgers-says-germie-bernards-acclimation-to-nfl-is-really-encouraging/",
+   "attempted_at": "2026-09-02T22:09:41+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T22:09:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004752
+  },
+  {
+   "candidate_id": "mobile:onsi:998f071883d674df1976",
+   "player_id": "00-0040691",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/risky-polarizing-draft-picks-fantasy-football-zach-charbonnet-2026",
+   "attempted_at": "2026-09-02T22:09:44+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T22:09:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004256
+  },
+  {
+   "candidate_id": "mobile:onsi:611f0760686b0dd7bc3a",
+   "player_id": "00-0039384",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/risky-polarizing-draft-picks-fantasy-football-zach-charbonnet-2026",
+   "attempted_at": "2026-09-02T22:09:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T22:09:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004666
+  },
+  {
+   "candidate_id": "mobile:onsi:817cf90a73f38254c09d",
+   "player_id": "00-0033921",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/risky-polarizing-draft-picks-fantasy-football-zach-charbonnet-2026",
+   "attempted_at": "2026-09-02T22:09:50+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T22:09:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004558
+  },
+  {
+   "candidate_id": "mobile:onsi:315904426779fda6c98a",
+   "player_id": "00-0033293",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/risky-polarizing-draft-picks-fantasy-football-zach-charbonnet-2026",
+   "attempted_at": "2026-09-02T22:09:53+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T22:09:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00393
+  },
+  {
+   "candidate_id": "mobile:onsi:f42fe0dea44a79b9e600",
+   "player_id": "00-0036973",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/risky-polarizing-draft-picks-fantasy-football-zach-charbonnet-2026",
+   "attempted_at": "2026-09-02T22:09:57+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T22:10:02+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006368
+  },
+  {
+   "candidate_id": "mobile:onsi:c6fd5e7e9832913dfbe5",
+   "player_id": "00-0038559",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-qb-problem-nowhere-near-as-bad-as-you-think",
+   "attempted_at": "2026-09-02T22:10:02+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T22:10:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00384
+  },
+  {
+   "candidate_id": "mobile:onsi:4b35bb9e63c6769594be",
+   "player_id": "00-0037744",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-qb-problem-nowhere-near-as-bad-as-you-think",
+   "attempted_at": "2026-09-02T22:10:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T22:10:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003976
+  },
+  {
+   "candidate_id": "mobile:onsi:e72f9ce7875b3c7e112c",
+   "player_id": "00-0039163",
+   "source_url": "https://www.si.com/nfl/texans/onsi/3-things-that-stood-out-from-kayshon-boutte-first-texans-presser",
+   "attempted_at": "2026-09-02T22:10:07+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T22:10:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004348
   }
  ]
 }

@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**2 cards** · batch `0cfc6ed54a2b` · 18 draft calls · $0.0834
+**1 cards** · batch `fc01e49be6cb` · 17 draft calls · $0.0816
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,46 +19,24 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Ja'Marr Chase — CIN WR
+## 1. Jakobi Meyers — JAX WR
 
-**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
-
-### What changed
-
-Ja'Marr Chase remained out of Bengals practice with one session left before the team’s scheduled days off ahead of Week 1.
-
-### Lineup Beat impact
-
-Chase’s continued absence is an availability concern entering Week 1. The reason, severity and whether he will return after the break remain unknown; watch his next practice status.
-
-[Russell Heltman · Sports Illustrated -- CIN](https://www.si.com/nfl/bengals/onsi/bengals-edge-rusher-returns-to-practice-following-month-long-injury-01m1hrk7cx9z) · 2026-09-02
-
-<details><summary>Full evidence reviewed</summary>
-
-Both Ja'Marr Chase and Tee Higgins still aren't practicing as Cincinnati has one more practice tomorrow before a few days off ahead of Week 1.
-
-</details>
-
----
-
-## 2. Tee Higgins — CIN WR
-
-**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
+**Worth noting** · INJURY · MEDIUM evidence
 
 ### What changed
 
-Tee Higgins remained out of Bengals practice with one session left before the team takes several days off ahead of Week 1.
+Jakobi Meyers was among four Jaguars players noted with an injury coming out of camp, with a wrist issue listed.
 
 ### Lineup Beat impact
 
-Higgins’ continued absence is a Week 1 availability concern, though the report does not give a reason, diagnosis, or timetable. Watch whether he returns to practice after the break.
+Meyers' wrist is a preseason availability concern worth monitoring, but the report gives no severity, practice status or timetable. His next participation update will clarify any Week 1 impact.
 
-[Russell Heltman · Sports Illustrated -- CIN](https://www.si.com/nfl/bengals/onsi/bengals-edge-rusher-returns-to-practice-following-month-long-injury-01m1hrk7cx9z) · 2026-09-02
+[John Shipley · Sports Illustrated -- JAX](https://www.si.com/nfl/jaguars/onsi/jacksonville-sorting-out-pre-week-1-injury-news-what-it-means-for-brian-thomas-jr) · 2026-09-02
 
 <details><summary>Full evidence reviewed</summary>
 
-Both Ja'Marr Chase and Tee Higgins still aren't practicing as Cincinnati has one more practice tomorrow before a few days off ahead of Week 1.
+Otherwise, the only notable injuries the Jaguars had coming out of camp came down to four key players: wide receivers Brian Thomas Jr. (shoulder) and Jakobi Meyers (wrist), offensive lineman Cole Van Lanen (knee), and running back LeQuint Allen.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrtV9uO2zYQ_RVCL_tQy6u7LPdps-skLrq7geM2D0UgjMShxawkGiJlZxME6G_09_olHVq2d91cUCB5SdAXQ-aQ9Mw5Z85Y750CTFnlkjtTxytFmSCPIwgKkYmg8ESQxmUZJZHnZZAFKMJskvEsSGASRjyK0xQnSRrFiGk28ZyRU0LHtTP9470D63WnNshzMHQ1haA3leroedFrjXXNnmNtGmjtKdU02Bro7il8WYHGv__8S7NStUa2PXIGhca2RCY1g5bBBmQNhaylubebSuxaRuexk-2KvUK8Y_6YLStkHYJW7Yhp3FCQdkPL2bZCU2HHKL6VlEeHpqcLQNAFjCKsoGN3tNyAbFnf3rVq2_7MthYoVlEKLb41bN1BaSTlpA2YXo9PysiP1Rf3Q_WPYqqTK9nS8vXt1ezX_Gpx8XS520EVtCY392u0KM1e3C6W85tnFOJg7FLgBYnrZa4XLP1s6ifTKPzJ86aeBZ7LDikfZe-9mT27WM5_n9nljsrK6WohuUXQmXrj7LBcy0ZS8nTIUuZYwHAz7GNcIRWqDFvJDTLYI8mE6tiOoDN9IMVWPjcPB5AAKWqpK0uVbN_03b0lwBRQ3o0YnR8IOmHR3rG00FqCmSYaazwi7A4Is35tcRg7r0fOIU0q9okyFfsFzq6h26e2I3mJyJ7LFQGtiSFLM3TYnh15s0oBzS5lS48tgcDoKFMtskZ1D7_NjKLvndqyAoUNABO4ZRzuabMQDCoETk8H1TkPueUl5SFtykN3NYpqxSmBLadpnJUh8iANsQQIktIvUzpK_SHf7Sh8-ZzIz5ezxTUtN1hW0ErdUODiycvZzTJ_uri9zl8sLi6X80vLc6M41ntlQZ3_IA1F27DTlVxTFfObq9mLGX3c2GZZ13CP1kxOmD8G9n7muZ4XJtmuQdZKy31_vFrY7516M3RMDsfGub2xYK570m-Z675pBgRP5TXUQSCq3ljqn2C7glo_FLCVJEkrJY1a082sRmEOArJ4GIRmR4guK-R9TXd9SVGn-XzsLYQup5qJQaxpZUlC55Y4Tvjtw5Sv1rkgmvsObbe_tusbiVs6eKzf4js4jlZ9t2uvl2vVGc3mdd1r05GYOXNddjm_sZsM_dLKVNbKZlfz36xWbWlWc7sNfWfzqYxZ6-n5-Xa7HWs5Jm2et6I-LwbYzm1DHL64yFfodr0mObmDjLRrlHu0AqHqWm2pOLchLVdurehxMBnX8xu_6u7S8m32zvkw-ooRtDcOougzLfMpDzs0zogoVv2q2jHdocXvM246YlzCqiVh6p0xGtmg9U4cs1e73njUWHswyI8edPavBvueRpD_hRn0aNTsiTg7gr-FAccBV-TD4PgYZ-sheMTPHEbLYSBZtC06lNEDmQff-QHmSxFESSomiJEQwWQCAcbeyXyZX9uOvVjOvn68fL_N8h_GyyOaPz1cIv9rh8tjJX2b0cIM3BGEuxkN9f-j5VuPltfWKbXJe82tmXn0LhQmI2eFJCdbxjBvTq0yzKZeerTKoZ9KqGsCzJ8ceNj5IHVXTx4MJt85pDOdJKdxXUEQJ482OECvYWmMpZ_5XuhFIkiiCYJIwiL0BIiS89QvIYkFF1ERpryIvTTyC_s2R39AESzg9E-kgZwUowfCtuTm7uAphEKh3rob_8hePrw1DpnQ5higjDPkUEy8LJgIHiZF6mXcE6UfxhHHKA5DeomMYp7wrCwpLEQKGE5EFsYhdz78A96M9Bk:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVttu20YQ_ZUFX-qgos2beNGbG6utHUdOHadpUQTEkDsU1yaXxO5StBrk3ztLSoqN9gsKGII8M5zLOWeG-uoUYMo6F9xZOVXp-RhlBcZlkRU-5xAE0XKZFFCEPI3SFEPupX4aQBqSHb0QvSAqIt8rMcuWvrNwSlBcO6u_vjrQ96rbIc_BUGpywWDqTtH3m66W7GMt-gb39pGubVEaUHvyvcc9Kv0DG5XQhgnNgPUKNYLuJIMdiAYK0QizZ2UnS1SSjZ0yNWs7KUynhNwuWDEYZmpkCnvysa3YoWayYxp3qOjRBaWE0ogSmTZgBs06xYxo0UDR4Dn7lcpKfDasB0VRogcjqPrQczDIRtE0rGxAiWrPQO7ZZ8Qn5jPR9pT0_NVA-QmEYj-D8MJH3W6FtDPfXa1v86v7y58fpghpKCI3-x7Jeb_-cHf_cL35hVy2PpkCL4hdL3O94CHwVlG8CrMfPW_leTZEKCxtuxT3afP2dn15b60KKpNT5kpwJNiclXeeHc2NaIWZRrTEOZuXQHEBW9lpMUOkEIztnnGCSjSajaiOMCO3oz98h513E-qG6R5Li9VYI7Gi2Ewxa4XWyE9ULBg-C8rCEFSzt-WoKD7Ts9ZouimebaFFbQtRlyfGbPCBhAOfI2hmgadpqa0vCwd3x8GdO9vEKDRVtCLpJFWjNqdEQj4OSlDf1nMD2wGo0Ro4ia0labGOlNVVrIS2tx9IQ47SNld1g2JPuGd9A3a6FcmEWyhKJPVRkp-UAMke6q6l1m7UOTvTdTc0HNUbEhGnYk9dIY7YnE3yf7OgYhVKTSlYIyS2lOJtR33-Tl9uQaJkZ08SkQJtDjVIabssoHxit_jbIIiqy6ZBaRE7QpCXFCuslOalb6lugytiX6x4nERlyiPkCYRhUhV-ldCjtLbi74Ok3m3uPm_I1mJZgxS6Jev15ubT_Z_W2HFsDsKGJv_fbTaxTTPQ5ZqGvlp_WNPHxm7tzLs9bi-JPDlmqD3P9bwwymK7qT2t1WFRP9sdJb0-zqubw3GDN3ebtXUNRSPKXA9tO2P5Wi1W7UAwbWcZHnV7kKIVN23QKAhLks0k8f1_CHpxCDkRpAerOn3Y7Nc9_Puw0W0gMedEIjZ2pIk7Kk1VDl4SsNZ5RUQPxDudmi_WvhNIV-T7yBbS-dppGmba2I-WbM2um2bQRoGdxnXZzeUfNoiOktya2gpsfXX96T3ZDIJV5RwwKNtObUyvVxcX4ziea3FO01_Iqrl4nKG6sOKnf8on0uKOVICuppLUuksAuSRTdyQpuL47o-dKHLU71mBcYdwWQWq36pRb2CV3zbTk7qNyvn2x51ybfNDcnlx6d8ZRtHC2SDKyc8zvxpf3PFh5Gf2d7vm8USU0DSHmJ0ceJt3Sfg30ogCTT4fcWaXxa7-uIVjGLwIcSDBNllj6me-FXlQFcZQiVHFYhF4FVcl54pcQLyteRUWY8GLpJZFfVGGWhnTLwCJe1nSIcnvVZsZGeuW48xUhfIru2d35J_ry-efF3In9iYFZEhQcgAepzysvqKooC3hWVWlCNioFEcERZVWWRMusSovlMoziJOZ-RqsTOt_-AZLy9Xw:WIRE_MOBILE_MANIFEST_V1 -->
