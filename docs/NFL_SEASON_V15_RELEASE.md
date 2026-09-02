@@ -32,6 +32,8 @@ Current injuries, refreshed ADP and season sportsbook props/futures are unavaila
 
 The development workflow compares two complete artifact manifests, then validates final numerical payloads, player links, ranking rows, internal links, shared navigation, development protections and deployment artifacts. Source templates are kept outside the deployed directory to prevent protected output becoming the next build's input. Optional historical-database destinations clearly state when their source data is absent from the offline checkout. Superflex and dynasty keep their existing general format transformations using final season values and captured ages, with named-player editorial adjustments removed from this development build.
 
+An explicit development presentation gate disables Week 1 recommendation output and My Team lineup-swap output. The older My Team adapter could otherwise emit swaps from the preserved v1.0 data. The gate leaves weekly models, recommendation formulas, roster connection behavior, adapter source files and the extension unchanged; the public release-gate manifest and browser checks verify the disabled state.
+
 Reader-reaching changes are the development NFL season projection/ranking pages, season sections of canonical player pages, season comparison/draft-value data, and associated public season JSON and metadata. Approved Wire text, publications and identities are unchanged: 86 publications before and after. Raw evidence never enters the new season display payload. Week 1 and My Team recommendation gates remain disabled. College and extension sources, scoring configuration, ADP sources and roster source files are unchanged.
 
 Finalization made zero provider/model/API requests and incurred $0 model/API cost. The earlier separately authorized The Rundown capture remains in its ignored audit cache: 234 terminal-test datapoints + 232 preserved-capture datapoints = 466 cumulative. No additional capture, polling, cursor or WebSocket was used.
@@ -43,6 +45,53 @@ Passed: v1.1, v1.2, v1.3, v1.4 and v1.4 final-validation regressions; 13 v1.5 mo
 The full initial regression run passed 32/33 commands. `test_wire_page.py` has four obsolete homepage-card assertions against the current development Decision Room layout; the separate current deployment verifier confirms the complete 86-card reviewed archive and approved player-page impact wording. The retired interface was not restored.
 
 The workbook has nine sheets, formula-driven three-format scoring and team sums, no formula errors, and completed visual QA. Desktop (1440px) and mobile (390px) automated browser checks cover all three formats, full ranking order, search, scoring values, representative primary/backup/rookie/low-evidence player pages, visible images, overflow, and development protections. Deployment status and final URLs are reported separately after the Action completes.
+
+## Exact validation commands
+
+| Command | Result |
+| --- | --- |
+| `python3 scripts/test_nfl_projection_candidate.py` | PASS |
+| `python3 scripts/test_nfl_projection_candidate_v12.py` | PASS |
+| `python3 scripts/test_nfl_projection_candidate_v13.py` | PASS |
+| `python3 scripts/test_nfl_projection_candidate_v14.py` | PASS |
+| `python3 scripts/test_nfl_projection_v14_final_validation.py` | PASS |
+| `python3 scripts/test_nfl_season_final.py` | PASS |
+| `python3 scripts/test_dev_site.py` | PASS |
+| `python3 scripts/test_resolve.py` | PASS |
+| `python3 scripts/test_player_pages.py` | PASS |
+| `python3 scripts/test_ranking_formats.py` | PASS |
+| `python3 scripts/test_comparison_tool.py` | PASS |
+| `python3 scripts/test_decision_room.py` | PASS |
+| `python3 scripts/test_comparison_engine_v2.py` | PASS |
+| `python3 scripts/test_visual_regressions.py` | PASS |
+| `python3 scripts/test_sport_experiences.py` | PASS |
+| `python3 scripts/test_college_decision_room.py` | PASS |
+| `python3 scripts/test_week1_intelligence.py` | PASS |
+| `python3 scripts/test_my_team.py` | PASS |
+| `python3 scripts/test_chrome_store_bundle.py` | PASS |
+| `python3 scripts/test_feedback.py` | PASS |
+| `python3 scripts/test_wire_review.py` | PASS |
+| `python3 scripts/test_wire_mobile.py` | PASS |
+| `python3 scripts/test_wire.py` | PASS |
+| `python3 scripts/test_wire_page.py` | 4 obsolete homepage-card assertions; current artifact verifier passes |
+| `python3 scripts/test_wire_homepage.py` | PASS |
+| `python3 scripts/test_tapi.py` | PASS |
+| `python3 scripts/wire_fixtures.py` | PASS |
+| `node scripts/test_espn_roster_parser.js` | PASS |
+| `node scripts/test_espn_safe_diagnostics.js` | PASS |
+| `node scripts/test_my_team_browser.js` | PASS |
+| `python3 scripts/wire_health.py --check` | PASS |
+| `python3 -m beatwire.cli doctor --sport nfl` | PASS |
+| `python3 scripts/sync_home_nav.py --check` | PASS |
+| `python scripts/verify_nfl_season_release.py site` | PASS: 505 identities, 3,030 ranking rows, no broken internal links |
+| `python scripts/verify_deploy_artifact.py site --decision-room` | PASS |
+| `python scripts/test_site_unification.py site` | PASS: 890 sitemap routes, 41,624 internal links |
+| `python scripts/test_college_week1.py` | PASS |
+| Complete offline build twice + manifest comparison | PASS: 1,033 files, zero differences |
+| Workbook formula-error scan and nine-sheet visual QA | PASS |
+| Desktop/mobile browser checks at 1440px and 390px | PASS: 50 page checks; explicit disabled recommendation gates |
+
+The Decision Room and extension-bundle tests were rerun after adapting their workflow-order assertions to the offline runner; both pass.
 
 ## Rollback
 

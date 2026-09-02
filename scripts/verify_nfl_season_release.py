@@ -23,6 +23,10 @@ def verify(root):
     published=json.loads((root/'data/nfl-season-v15.json').read_text())
     if len(published['players'])!=505 or {p['gsis_id'] for p in published['players']}!=ids:errors.append('public population')
     source={p['gsis_id']:p for p in model['players']}
+    gates=json.loads((root/'data/nfl-v15-release-gates.json').read_text())
+    if gates.get('week1_recommendations_enabled') is not False or gates.get('my_team_recommendations_enabled') is not False:errors.append('recommendation release gates')
+    if 'my-team-release-gate' not in (root/'my-team/index.html').read_text():errors.append('My Team gate missing')
+    if 'data-weekly-recommendations="disabled"' not in (root/'decision-room/nfl/index.html').read_text():errors.append('Week 1 gate missing')
     for p in published['players']:
         if p['formats']!=source[p['gsis_id']]['formats'] or p['stat_projection']!=source[p['gsis_id']]['stat_projection']:errors.append('public numerical mismatch '+p['name'])
         text=(root/p['url'].strip('/')/'index.html').read_text()

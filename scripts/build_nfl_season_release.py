@@ -113,6 +113,30 @@ def context_pages():
         path='/nfl/'+slug+'/'
         write(path,wrapper(title,path,f'<p class="eyebrow">Development preview</p><h1>{title}</h1><p>The historical database needed for this page is not included in this offline development release.</p><p><a href="/nfl/projections/">View the validated 2026 season projections</a>.</p>'))
 
+def recommendation_gates():
+    """Keep the authorized disabled state at the dev presentation boundary.
+
+    The existing weekly models, engines, adapter sources and extension remain
+    unchanged. Forecast inspection and roster connections still work.
+    """
+    gates={'season_version':'v1.5-final','week1_recommendations_enabled':False,'my_team_recommendations_enabled':False,'reason':'Season-only release; weekly recommendation authorization absent'}
+    (SITE/'data/nfl-v15-release-gates.json').write_text(json.dumps(gates,sort_keys=True)+'\n')
+    notice='<aside class="v15 notice" id="weekly-release-gate"><strong>Week 1 recommendations are disabled.</strong> Forecasts are available for inspection. This season release does not authorize lineup recommendations.</aside>'
+    page=SITE/'decision-room/nfl/index.html';text=page.read_text()
+    marker='function draw(){'
+    if text.count(marker)!=1:raise ValueError('weekly comparison gate insertion is ambiguous')
+    readonly="""function draw(){if(true){let a=P[A.value],b=P[B.value],k=F.value;O.innerHTML='<section class="dr-empty" data-weekly-recommendations="disabled"><h3>No reliable call</h3><p>Week 1 recommendations are disabled for this release.</p>'+(a&&b?'<p>'+safe(a.name)+': '+num(points(a,k))+' projected points · '+safe(b.name)+': '+num(points(b,k))+' projected points</p>':'')+'</section>';return;}"""
+    text=text.replace(marker,readonly,1).replace('<section class="dr-compare"',notice+'<section class="dr-compare"',1)
+    page.write_text(text)
+    page=SITE/'my-team/index.html';text=page.read_text()
+    marker='<script src="/my-team/league-adapter.js"></script>'
+    if text.count(marker)!=1:raise ValueError('My Team recommendation gate insertion is ambiguous')
+    gate='''<script id="my-team-release-gate">Object.defineProperty(LineupBeatLeagueAdapter,'actionableDecisions',{value:()=>[],writable:false,configurable:false});Object.defineProperty(LineupBeatLeagueAdapter,'lineupDecisions',{value:()=>[],writable:false,configurable:false});</script>'''
+    text=text.replace(marker,marker+gate,1)
+    text=text.replace('</head>','<style>#mt-outlook,#mt-decisions,#mt-team .mt-team-block:has(#mt-decisions){display:none!important}</style></head>',1)
+    text=text.replace('<section class="mt-team-card"',notice.replace('id="weekly-release-gate"','id="my-team-recommendations-disabled"')+'<section class="mt-team-card"',1)
+    page.write_text(text)
+
 def player_pages(model,ranking):
     """Reuse approved player-page news; replace only the season panel and identity."""
     import build_pages as bp
@@ -197,6 +221,7 @@ def build():
     required.update('/'+str(p.parent.relative_to(SITE)).rstrip('/')+'/' for folder in ('nfl/projections','nfl/rankings') for p in (SITE/folder).rglob('index.html'))
     urls=sorted(existing|required)
     sitemap.write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'<url><loc>https://lineupbeat-dev.pages.dev{url}</loc></url>\n' for url in urls)+'</urlset>\n')
+    recommendation_gates()
     print('v1.5: 505 canonical season pages; 3 complete scoring formats; frozen model verified')
 
 def main():
