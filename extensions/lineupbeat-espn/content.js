@@ -153,7 +153,31 @@
     };
   }
 
-  function generate({document, location, version, playerSelector}) {
+  function safeRowDiagnostics(value) {
+    const source = value && typeof value === 'object' ? value : {};
+    const rejections = source.rejections && typeof source.rejections === 'object'
+      ? source.rejections : {};
+    const number = key => Number.isFinite(Number(source[key])) ? Number(source[key]) : 0;
+    const rejected = key => Number.isFinite(Number(rejections[key])) ? Number(rejections[key]) : 0;
+    return {
+      tablesScanned: number('tablesScanned'),
+      qualifyingTables: number('qualifyingTables'),
+      rowsScanned: number('rowsScanned'),
+      rowsAccepted: number('rowsAccepted'),
+      legacyFallbackUsed: source.legacyFallbackUsed === true,
+      legacyRowsAccepted: number('legacyRowsAccepted'),
+      rejections: {
+        missingMappedCells: rejected('missingMappedCells'),
+        invalidSlot: rejected('invalidSlot'),
+        invalidIdentityText: rejected('invalidIdentityText'),
+        missingProviderId: rejected('missingProviderId'),
+        unsupportedWithoutProviderId: rejected('unsupportedWithoutProviderId'),
+        duplicateOrAmbiguous: rejected('duplicateOrAmbiguous')
+      }
+    };
+  }
+
+  function generate({document, location, version, playerSelector, rowDiagnostics}) {
     const elements = queryAll(document, '*');
     const exactSlots = elements.filter(node => visible(node) && SLOT_LABELS.has(normalized(node.textContent)));
     const leafSlots = exactSlots.filter(node => !Array.from(node.children || [])
@@ -183,13 +207,14 @@
       },
       headerLabels: headers,
       likelyPlayerAttributes: attributePresence,
+      rowFirst: safeRowDiagnostics(rowDiagnostics),
       slotCandidates: leafSlots.slice(0, 3).map(node =>
         candidateDetails(node, location && location.origin))
     };
   }
 
   function install({button, status, document, location, version, playerSelector, clipboard,
-                    generateDiagnostics}) {
+                    generateDiagnostics, inspectRoster}) {
     let enabled = false;
     const create = generateDiagnostics || generate;
     button.hidden = true;
@@ -197,7 +222,11 @@
     button.addEventListener('click', async () => {
       if (!enabled) return;
       try {
-        const payload = create({document, location, version, playerSelector});
+        const inspected = typeof inspectRoster === 'function' ? inspectRoster(document) : null;
+        const payload = create({
+          document, location, version, playerSelector,
+          rowDiagnostics: inspected && inspected.diagnostics
+        });
         await clipboard.writeText(JSON.stringify(payload, null, 2));
         status.textContent = 'Safe diagnostics copied. Paste the JSON into Codex.';
       } catch (_error) {
@@ -332,6 +361,7 @@
       location,
       version: chrome.runtime.getManifest().version,
       playerSelector: globalThis.LineupBeatEspnRosterParser.PLAYER_SELECTOR,
+      inspectRoster: globalThis.LineupBeatEspnRosterParser.inspect,
       clipboard: navigator.clipboard
     });
     save.addEventListener('click', () => {
@@ -357,7 +387,8 @@
         );
       } catch (error) {
         status.textContent = error.message;
-        if (error.message === globalThis.LineupBeatEspnRosterParser.EMPTY_ERROR) {
+        if (error.message === globalThis.LineupBeatEspnRosterParser.EMPTY_ERROR ||
+            error.message === globalThis.LineupBeatEspnRosterParser.AMBIGUOUS_ERROR) {
           diagnosticController.show();
         }
       }

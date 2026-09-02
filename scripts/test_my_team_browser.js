@@ -8,7 +8,7 @@ async function main(){
   const raw={provider:'espn',league:{id:'1',name:'League',season:2026,scoringSettings:{receptionPoints:.5},cookie:'secret'},team:{id:'2',name:'Team',manager:'private'},sessionToken:'secret',roster:[
     {providerPlayerId:'99',name:'Starter Back',team:'BUF',position:'RB',lineupSlot:'RB'},
     {providerPlayerId:'missing',name:'Travis Etienne',team:'NO',position:'RB',lineupSlot:'BE'},
-    {providerPlayerId:'dst',name:'Bills D/ST',team:'BUF',position:'D/ST',lineupSlot:'D/ST'}
+    {providerPlayerId:'',name:'Bills D/ST',team:'BUF',position:'D/ST',lineupSlot:'D/ST'}
   ]};
   const model={players:[
     {id:'starter',name:'Starter Back',team:'BUF',position:'RB',providerIds:{espn:'99'},formats:{half_ppr:{projectedPoints:10}},expectedOpportunity:{carries:10,targets:2}},
@@ -28,6 +28,9 @@ async function main(){
   assert.equal(decisions[0].classification,'Edge');
   assert.equal(LineupBeatLeagueAdapter.classify(10,9.9),'Toss-Up');
   assert.equal(LineupBeatLeagueAdapter.normalizeName('Travis Etienne Jr.'),'travis etienne');
+  assert.throws(()=>LineupBeatEspnAdapter.adapt({provider:'espn',league:{id:'1',name:'Missing id',season:2026},team:{id:'2',name:'Missing id'},roster:[
+    {providerPlayerId:'',name:'Supported Player',team:'BUF',position:'RB',lineupSlot:'RB'}
+  ]}),/player 0 is incomplete/);
 
   const expectedSlots={FLEX:['RB','WR','TE'],'RB/WR/TE':['RB','WR','TE'],'WR/RB/TE':['RB','WR','TE'],'RB/WR':['RB','WR'],'WR/RB':['RB','WR'],'WR/TE':['WR','TE'],'RB/TE':['RB','TE'],OP:['QB','RB','WR','TE'],SUPERFLEX:['QB','RB','WR','TE']};
   const slotRaw={provider:'espn',league:{id:'1',name:'Slots',season:2026,scoringSettings:{receptionPoints:.5}},team:{id:'2',name:'Slots'},roster:Object.keys(expectedSlots).map((slot,index)=>({providerPlayerId:String(index),name:'Player '+index,team:'BUF',position:'RB',lineupSlot:slot})).concat([{providerPlayerId:'unknown',name:'Unknown Slot',team:'BUF',position:'RB',lineupSlot:'W/R/T'}])};

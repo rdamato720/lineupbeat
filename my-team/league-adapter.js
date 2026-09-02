@@ -24,7 +24,8 @@
     if(!Array.isArray(league.startingLineupSlots))errors.push('startingLineupSlots must be an array');
     GROUPS.forEach(group=>{if(!league.roster||!Array.isArray(league.roster[group]))errors.push('roster.'+group+' must be an array')});
     allPlayers(league).forEach((p,index)=>{
-      if(!clean(p.providerPlayerId)||!clean(p.name)||!clean(p.position)||!clean(p.lineupSlot))errors.push('player '+index+' is incomplete');
+      if(!clean(p.name)||!clean(p.position)||!clean(p.lineupSlot)||
+          (!clean(p.providerPlayerId)&&SUPPORTED.has(clean(p.position).toUpperCase())))errors.push('player '+index+' is incomplete');
       if(!clean(p.matchStatus))errors.push('player '+index+' has no matchStatus');
       if(['unresolved_identity','ambiguous_identity','unsupported_position'].includes(p.matchStatus)&&!clean(p.unresolvedReason))errors.push('player '+index+' has no unresolvedReason');
     });

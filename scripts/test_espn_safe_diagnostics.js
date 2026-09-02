@@ -141,10 +141,19 @@ async function main() {
     configurable: true,
     value: {sendBeacon() { networkCalls += 1; throw new Error('network forbidden'); }}
   });
-  const payload = diagnostics.generate({document, location, version: '0.2.2', playerSelector: parser.PLAYER_SELECTOR});
+  const payload = diagnostics.generate({
+    document, location, version: '0.2.3', playerSelector: parser.PLAYER_SELECTOR,
+    rowDiagnostics: {
+      tablesScanned: 2, qualifyingTables: 1, rowsScanned: 10, rowsAccepted: 0,
+      legacyFallbackUsed: false, legacyRowsAccepted: 0,
+      rejections: {missingMappedCells: 0, invalidSlot: 1, invalidIdentityText: 2,
+        missingProviderId: 7, unsupportedWithoutProviderId: 2, duplicateOrAmbiguous: 0},
+      privatePlayerName: 'Jane Doe', privateAttributeValue: '998877'
+    }
+  });
   const encoded = JSON.stringify(payload);
 
-  assert.equal(payload.extensionVersion, '0.2.2');
+  assert.equal(payload.extensionVersion, '0.2.3');
   assert.equal(payload.pathname, '/football/team');
   assert.equal(payload.counts.roleRow, 1);
   assert.equal(payload.counts.roleTable, 1);
@@ -156,6 +165,12 @@ async function main() {
   assert(payload.likelyPlayerAttributes['data-player-id']);
   assert(payload.slotCandidates[0].anchorPatterns.includes('https://www.espn.com/nfl/player/_/id/#/*'));
   assert(payload.slotCandidates[0].imagePatterns.includes('a.espncdn.com/i/headshots/nfl/players/full/#.png'));
+  assert.deepEqual(payload.rowFirst, {
+    tablesScanned: 2, qualifyingTables: 1, rowsScanned: 10, rowsAccepted: 0,
+    legacyFallbackUsed: false, legacyRowsAccepted: 0,
+    rejections: {missingMappedCells: 0, invalidSlot: 1, invalidIdentityText: 2,
+      missingProviderId: 7, unsupportedWithoutProviderId: 2, duplicateOrAmbiguous: 0}
+  });
   assert.equal(networkCalls, 0);
 
   for (const forbidden of [
@@ -168,36 +183,42 @@ async function main() {
   assert(!encoded.includes('data-private-name\":\"Jane Doe'));
 
   let generated = 0;
+  let inspected = 0;
   let copied = 0;
   const button = new Button();
   const status = {textContent: ''};
   const controller = diagnostics.install({
-    button, status, document, location, version: '0.2.2', playerSelector: parser.PLAYER_SELECTOR,
+    button, status, document, location, version: '0.2.3', playerSelector: parser.PLAYER_SELECTOR,
     clipboard: {writeText(value) { copied += 1; assert.deepEqual(JSON.parse(value), {safe: true}); return Promise.resolve(); }},
-    generateDiagnostics() { generated += 1; return {safe: true}; }
+    generateDiagnostics() { generated += 1; return {safe: true}; },
+    inspectRoster() { inspected += 1; return {diagnostics: {rowsAccepted: 0}}; }
   });
   assert.equal(button.hidden, true);
   assert.equal(button.style.display, 'none');
   assert.equal(generated, 0);
+  assert.equal(inspected, 0);
   assert.equal(copied, 0);
   controller.show();
   assert.equal(button.hidden, false);
   assert.equal(button.style.display, 'inline-block');
   assert.equal(generated, 0);
+  assert.equal(inspected, 0);
   assert.equal(copied, 0);
   await button.click();
   assert.equal(generated, 1);
+  assert.equal(inspected, 1);
   assert.equal(copied, 1);
   assert.equal(status.textContent, 'Safe diagnostics copied. Paste the JSON into Codex.');
   controller.hide();
   await button.click();
   assert.equal(generated, 1);
+  assert.equal(inspected, 1);
   assert.equal(copied, 1);
 
   const failedButton = new Button();
   const failedStatus = {textContent: ''};
   const failed = diagnostics.install({
-    button: failedButton, status: failedStatus, document, location, version: '0.2.2',
+    button: failedButton, status: failedStatus, document, location, version: '0.2.3',
     playerSelector: parser.PLAYER_SELECTOR,
     clipboard: {writeText() { return Promise.reject(new Error('denied')); }}
   });

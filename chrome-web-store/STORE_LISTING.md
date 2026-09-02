@@ -3,15 +3,15 @@
 Prepared for an **Unlisted** beta. This document is paste-ready, but it does
 not authorize an upload, review submission, or publication.
 
-**Release block:** version 0.2.2 is a development diagnostic build.
-Live ESPN roster capture remains unresolved, so Chrome Web Store upload and
-submission remain blocked.
+**Release block:** version 0.2.3 is a development parser-repair build.
+The row-first repair awaits Ralph's live ESPN save test, so Chrome Web Store
+upload and submission remain blocked.
 
 ## Package tab
 
-- Upload file: `lineupbeat-espn-my-team-beta-0.2.2.zip`
+- Upload file: `lineupbeat-espn-my-team-beta-0.2.3.zip`
 - Manifest version: 3
-- Extension version: 0.2.2
+- Extension version: 0.2.3
 - Extension name: `Lineup Beat ESPN My Team BETA`
 - Manifest description (104 characters):
 
@@ -160,8 +160,8 @@ The reviewer demo uses only public NFL player/model data and a generic sample te
 Optional ESPN capture test, if the reviewer already has access to any ESPN Fantasy Football roster:
 1. Open a team roster under https://fantasy.espn.com/football/
 2. Read the prominent local-storage disclosure, select reception scoring, and click Save roster locally for My Team.
-3. Version 0.2.2 is diagnostic only. If the empty-roster error appears, click Copy safe diagnostics.
-4. Confirm the status reports that the JSON was copied, and paste it into Codex for investigation. Do not expect capture to succeed in this blocked release.
+3. Version 0.2.3 uses the validated row-first table parser. Confirm My Team opens and displays the saved roster.
+4. If the empty-roster error still appears, click Copy safe diagnostics, confirm the copy status, and paste the JSON into Codex for investigation.
 
 The extension should never request an ESPN password, cookie, session token or manager identity. No roster request should be sent to a Lineup Beat server.
 ```
@@ -170,32 +170,34 @@ The extension should never request an ESPN password, cookie, session token or ma
 
 This checklist remains outstanding until Ralph runs it in installed Chrome:
 
-1. Install version 0.2.2 with **Load unpacked**, or reload the already installed
-   unpacked extension and confirm the version is 0.2.2.
+1. Install version 0.2.3 with **Load unpacked**, or reload the already installed
+   unpacked extension and confirm the version is 0.2.3.
 2. Open an ESPN Fantasy Football league roster under
    `https://fantasy.espn.com/football/`.
 3. Choose the league's reception scoring and select **Save roster locally for
    My Team**.
-4. Reproduce the empty-roster error.
-5. Select **Copy safe diagnostics** and confirm the copy-success status.
-6. Paste the copied JSON into Codex. Do not paste a screenshot, page source,
-   roster export, cookie, token, or credential.
+4. Confirm My Team opens automatically and displays the captured starters,
+   bench players, and honest unsupported-position labels.
+5. Return to ESPN and confirm the **Open My Team** fallback works.
+6. Use **Disconnect & clear** and confirm the locally stored roster is removed.
+7. If capture still fails, select **Copy safe diagnostics**, confirm the copy
+   status, and paste only that JSON into Codex.
 
 ## Future Chrome Web Store steps — currently blocked
 
-Do not perform these steps while the version 0.2.2 release block is active.
+Do not perform these steps while the version 0.2.3 release block is active.
 
 The successful development workflow publishes two public GitHub Actions
 artifacts containing only the reviewed extension package and store-listing
 materials. They contain no credentials, private roster exports, cookies,
 tokens, API keys or personal member information.
 
-The same version 0.2.2 diagnostic ZIP is also available from the development
+The same version 0.2.3 parser-repair ZIP is also available from the development
 support page for manual installed-extension QA. Its SHA-256 must match the
 inventory below before use.
 
 1. Download the `lineupbeat-espn-cws-submission-<run-id>` artifact and extract
-   its `lineupbeat-espn-my-team-beta-0.2.2.zip` file.
+   its `lineupbeat-espn-my-team-beta-0.2.3.zip` file.
 2. Download the `lineupbeat-espn-cws-listing-<run-id>` artifact and extract its
    listing materials.
 3. Confirm the submission ZIP SHA-256 matches `package-inventory.json` in the
