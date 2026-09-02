@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `c9dafca681ff` · 17 draft calls · $0.0849
+**1 cards** · batch `1fbc761d5e84` · 18 draft calls · $0.0836
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,24 +19,26 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Tee Higgins — CIN WR
+## 1. TreVeyon Henderson — NE RB
 
-**Trending down** · LIMITED_PARTICIPATION · MEDIUM evidence
+**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
 
 ### What changed
 
-Tee Higgins is limited this week with a heel issue, according to Bengals coach Zac Taylor.
+TreVeyon Henderson sustained a right ankle injury in practice and has not returned to practice since.
 
 ### Lineup Beat impact
 
-Higgins' practice limitation creates a short-term availability watch. The report gives no timetable or indication of whether he is in danger of missing the upcoming game; his next participation update is key.
+Henderson's continued absence is a negative availability signal. Monitor his next practice status for clarity on whether he is nearing a return; the evidence gives no timetable.
 
-[Geoff Hobson · CIN official team site](https://www.bengals.com/news/quick-hits-zac-taylor-ja-marr-chase-tee-limited-this-week-but-have-eyes-on-bucs-week-why-jack-endries-and-ke-shawn-williams-made-it) · 2026-09-01
+[Gray Deyo · Fantasy On SI](https://www.si.com/onsi/fantasy/fantasy-impact-ja-marr-chase-treveyon-henderson-and-3-other-injury) · 2026-09-01
 
 <details><summary>Full evidence reviewed</summary>
 
-Bengals head coach Zac Taylor met the media before Tuesday's practice for the first time since they cut the roster to 53 players and said that wide receivers Ja'Marr Chase (knee) and Tee Higgins (heel) are limited this week.
+TreVeyon Henderson on Aug. 24 at practice sustained a right ankle injury.
+
+TreVeyon Henderson on Aug. 24 at practice sustained a right ankle injury. He has yet to practice since then.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVm1z2zYM_is8fWl3ixzKlvXifcoar_WucXKZt95t19NBJGSxkUSVpKy6vf73gZaTtOs_2KeEAAgCz_MA8pegBCfqQslgFYhcQiUgyaKqEqUUSQIiKbNIyFKWMY-qXEQlB54s5ynEHDFa5JlYiBgTIRGT4CIQYKQNVv98CaDvjT6gLMBRanLB4Gpt6P_XqKuKvdGl1Z2_otsWOwfmSL43ar9XnX3BegPCKYGsUa1y4JTumDAIDi0DZimTCx2alsEBVAOlapQ7stE3M2O7GpnBnmLYXh3oRqeZUy06KBtk2jDVSSWmpLpiY42uRsPolrLkYxK6PZ3J1SprVbdn5GdDT6X6wx5a_IXVFNvhJ8d6MFSp6qd8Qy-pSJ_oAY-z7_ornjApjxMm3_i0UdQ5mW9ur9dvi-v7q992p4jOUUThjj2S8359d3u_22xfk8u_Q6Y5nychz0Me7aJ8xfPVcj5LecQ5_5nzFec-UhkUvjoK365fX-02f6292UDlCnqhUhI7Qcn4LI8f7c_Ae0IDj6nVgyFKpD5B6pjtUajqeELH4gGN54BQ8-casSEU7IAehK0-oRZayjhYpgfXaP3gqXjmZQTLPD5UjJwF7y8CPDzWFfyK3R4aS1lBMqFB1OxvEGwHx4ZyUIbTmy1KBazEShtkuwGthOML-6ylyr9HcZUy1p1eZsQuOch4ZGKYshhtSVnMabZcsL6BIxrSXCeZBSUpAhwbqTBSmEBSFzl_hxc3YAx7VYNF9vKhQ_zpdGOHyM6SZi89ImQ2Z02jz0UyGREfPESP3RaCbipP7jSVrSZx4-okMvor0jIRouSiyjmnQ7RMgG7TQKjPJ4L_eEMKKXbr-xsytyhq6JRtyfF2c7PZra-LuytS0KvNHcngdutjtMTmrD9oiv_7POqxI85q1VN7u_XVTXH7bru-JsdEtbc-s_ZknrjgPOR8kcSRn6peW3Ueqnf3_mz0h2nMCniattutn7R-KBslCju07YTrt8Kg0n4QBCnM1QTs8xRdMBBCG3nqXrPHgfjvLMx-eO3HrUO0SeqIWMLG12KwO6WVBM3ZrTq0tqiIysGgn__33n5QONLFp-7u1tvraRdNm4FMrzZb4qki_KFhDqGlCaM1RRGOntm72m-49fXmT69O75_u0GEwvpjaud6uLi_HcZyVU48zovmyw9FefhyUeAhr5Wz4GUToTh2HHyCkPk0o_PSRCDE8wxl6OEMPZ1gOLqzhgCEe0Ya6I4M4u8b6SCkoL6FgFHlp_MIHWlU1jF04qqZR0Fp6QmKoXPD1vV_K1hWDlX5h8izOFxfBHklVJLTz9-77pRwvVnH0tI2neRPQNARslD7ydZIrTd9A2x5ccVrCwSpLvvdTVfNl8k1AAClm6RJFlEd8weNqnsQZQpUsygWv6HsuZRrRR31ZySouF6kslzyNo7Kib_eCNphfHlbU2ELhd9lE7EgfjHBaPKHqSv0pPERPLBfTT4apEgqu4mxelXOeiEjk5RK4zMs0hTzneZakWRaVc1kl8zQDLCGLUwqs8jjLpf_9kCZZ8PVfMFXjIw:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrVVU1z2zYQ_SsYXnqoKYMiKZLqyYllxzO17JHVXBoPZ0EsRbgkoAFBKUom_70L0VaccdpTLz1IorCL_Xj79vFrIMBVTalkMA-iWlTZLJIp5kkRAxRFlBZCpgC8gKioMpHJKEuSNJFCVDUUtZilMI1rTKIsnSbBWVCBlX0w__NrANutNTuUJTgKTSYYXGMsPV9bOLBLPBjvb7oOtQN7IMMH1BJtb_QvPauMdkoPKBmIHnWFTPUMmMYNOLVDBjtQLQjVKndgvdpoaCfs1mjljGUN-Wr87NjWQuUUXe4duKFnNRmrFqy_ZDTbN-gaJP9jdI1k0BvKYtENVv_GyMhwp-Qx_4bSkpNhTnXoQLQ4-aGB8tSxOIwdv7IZqzZK0_Ht3eXi9_JydXG1PnpoRx6lO2yRjKvF_d1qfbO8JpME54-mfDoLeRHyaD2dzqN8nvJfOZ9z7l2URWrP-LjLxfXF-ubjwh9bqF1Joeux8mDOJ8Xs5bxVnSIw6JafU7B-3aI0xw49bsafERRSwUabnuARNDEtPTpq0zgG-q-WYNNPgz14IJbmGbbv-DBC2xrv1W1pDmwPPflsjXUoJ8HjWfCSmOpfW_zoE7ATCfyALobNhE0TBq9HOdAwlcZ_KOWT_qT_s2AUgDVU9QEdc-bVNeXhInpo3_pLG2UFWio_uHGfOkP8xDkhreZ1zGMuC4A0jiKZRBX9o6u0EerLcYAPH2j05XqxuqXjDqsGtOo7Mly8e1gs1-XV6u62vF9dvF_fvPdT7ozE9plX0Jb_-0Uye00lN2pL9d8sLxf3C_pa-iXZtnBA-1OOnKwj4JyHnCc8i70UbYm1z8uxeuf_W_M0rksJp625W3ost4NoVVX2Q9eNAP6EQP_OFPr5jhGx4Mgav0kjAnTrDX0mbxK_VRCLQOlLmg-2Y1lEMEJWElrPZiqp78uahjhY9Cv96M93Cvd08dSoR3PUld4M9rhxV0B06Q_sTrOHG29wFH3jGi9Si8ubPzwPHUJ3FBd6HqwvoXFu28_Pz_f7_aRXE6Lduef3eT1Ge_kNx5UPnyCkzmxIdO4xpAw7D2vYvMAaElZhHBrPnnCEMvj26IWxd-XQS69dPI_T_CzYIBGEduv5jXISxuna62ExT6KTMI67UUHbEiBR_oLzUfVoUwZSXHDlUQ-DeT770d43ME1nrxwCyDDPUqyiIqIlTurpLMkR6lksYl5DXUmZRRXM0lrWiYgzKVKeJZGo4yKPsULw4FYNdlDuqOlxIHvS7nAUCOpbmM_hLjpNpxxfymMl5ExvZIEixiKOOU9llCQ5xHWeRxl9Ci5yUSWJECKOChDTKkuyaJZjzjlCxSVi8O1vtm6r7Q:WIRE_MOBILE_MANIFEST_V1 -->

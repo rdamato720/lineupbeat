@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 694,
+ "count": 712,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -7673,6 +7673,204 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005432
+  },
+  {
+   "candidate_id": "mobile:onsi:5d3f4237a3e1f4516dc7",
+   "player_id": "00-0039732",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/sean-payton-just-put-three-broncos-on-breakout-watch",
+   "attempted_at": "2026-09-02T00:09:41+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:09:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00453
+  },
+  {
+   "candidate_id": "mobile:onsi:2587daa8b5ac0b3e4219",
+   "player_id": "00-0034348",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/sean-payton-just-put-three-broncos-on-breakout-watch",
+   "attempted_at": "2026-09-02T00:09:45+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:09:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005284
+  },
+  {
+   "candidate_id": "mobile:onsi:d5e66b1c3dd447cfec54",
+   "player_id": "00-0036613",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/sean-payton-just-put-three-broncos-on-breakout-watch",
+   "attempted_at": "2026-09-02T00:09:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:09:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004662
+  },
+  {
+   "candidate_id": "mobile:article:5ee036b97a8fe6048f11",
+   "player_id": "00-0036971",
+   "source_url": "https://www.jaguars.com/news/five-takeaways-james-gladstone-on-the-initial-53",
+   "attempted_at": "2026-09-02T00:09:52+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:09:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004784
+  },
+  {
+   "candidate_id": "mobile:onsi:65185621d07aac8cc48a",
+   "player_id": "00-0034827",
+   "source_url": "https://www.si.com/nfl/bills/onsi/injuries-bills-finally-get-some-good-news-on-but-it-wasnt-all-good",
+   "attempted_at": "2026-09-02T00:09:55+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:09:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00386
+  },
+  {
+   "candidate_id": "mobile:onsi:ce8f03fa7c7ba8c4f5d8",
+   "player_id": "00-0033288",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-rookie-power-rankings-heading-week-1",
+   "attempted_at": "2026-09-02T00:09:57+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:10:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004216
+  },
+  {
+   "candidate_id": "mobile:onsi:ae47bc8c1329cce59553",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-rookie-power-rankings-heading-week-1",
+   "attempted_at": "2026-09-02T00:10:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:10:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004418
+  },
+  {
+   "candidate_id": "mobile:onsi:fc88b499e6699d3eed2c",
+   "player_id": "00-0039910",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-53-man-roster-qb-athan-kaliakmanis-adam-peters-sam-hartman",
+   "attempted_at": "2026-09-02T00:10:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:10:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005138
+  },
+  {
+   "candidate_id": "mobile:article:0611db762b864d9ef477",
+   "player_id": "00-0040236",
+   "source_url": "https://www.chicagobears.com/news/ben-johnson-lauds-caleb-williams-for-qb-s-intensity-focus",
+   "attempted_at": "2026-09-02T00:10:06+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T00:10:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004328
+  },
+  {
+   "candidate_id": "mobile:article:017677705076d28acc25",
+   "player_id": "00-0038933",
+   "source_url": "https://www.buffalobills.com/news/feel-really-good-bills-gm-brandon-beane-and-hc-joe-brady-on-the-state-on-buffalo-s-2026-roster",
+   "attempted_at": "2026-09-02T00:10:09+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:10:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004214
+  },
+  {
+   "candidate_id": "mobile:article:3b4a506972ac063a99f3",
+   "player_id": "00-0035689",
+   "source_url": "https://www.buffalobills.com/news/feel-really-good-bills-gm-brandon-beane-and-hc-joe-brady-on-the-state-on-buffalo-s-2026-roster",
+   "attempted_at": "2026-09-02T00:10:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:10:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005184
+  },
+  {
+   "candidate_id": "mobile:article:98151872d4836a2d9629",
+   "player_id": "00-0040194",
+   "source_url": "https://www.buffalobills.com/news/feel-really-good-bills-gm-brandon-beane-and-hc-joe-brady-on-the-state-on-buffalo-s-2026-roster",
+   "attempted_at": "2026-09-02T00:10:15+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:10:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004126
+  },
+  {
+   "candidate_id": "mobile:onsi:7a9818d99c9ee2496597",
+   "player_id": "00-0036900",
+   "source_url": "https://www.si.com/onsi/fantasy/fantasy-impact-ja-marr-chase-treveyon-henderson-and-3-other-injury",
+   "attempted_at": "2026-09-02T00:10:17+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T00:10:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005076
+  },
+  {
+   "candidate_id": "mobile:onsi:f3030d9aa5311d41c30d",
+   "player_id": "00-0040734",
+   "source_url": "https://www.si.com/onsi/fantasy/fantasy-impact-ja-marr-chase-treveyon-henderson-and-3-other-injury",
+   "attempted_at": "2026-09-02T00:10:20+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-02T00:10:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004406
+  },
+  {
+   "candidate_id": "mobile:onsi:d67e96e357debe19d837",
+   "player_id": "00-0036875",
+   "source_url": "https://www.si.com/onsi/fantasy/fantasy-impact-ja-marr-chase-treveyon-henderson-and-3-other-injury",
+   "attempted_at": "2026-09-02T00:10:23+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:10:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004254
+  },
+  {
+   "candidate_id": "mobile:onsi:bd5f17d5101fa0b6f9c1",
+   "player_id": "00-0041027",
+   "source_url": "https://www.si.com/onsi/fantasy/fantasy-impact-ja-marr-chase-treveyon-henderson-and-3-other-injury",
+   "attempted_at": "2026-09-02T00:10:25+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T00:10:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00743
+  },
+  {
+   "candidate_id": "mobile:onsi:c4c684e4a6909ab1aecc",
+   "player_id": "00-0038124",
+   "source_url": "https://www.si.com/nfl/packers/onsi/jonnu-smith-explains-why-he-signed-with-packers-what-he-ll-bring-to-offense",
+   "attempted_at": "2026-09-02T00:10:33+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:10:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003808
+  },
+  {
+   "candidate_id": "mobile:onsi:837e80fc911d111e68f7",
+   "player_id": "00-0036264",
+   "source_url": "https://www.si.com/nfl/packers/onsi/jonnu-smith-explains-why-he-signed-with-packers-what-he-ll-bring-to-offense",
+   "attempted_at": "2026-09-02T00:10:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T00:10:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003862
   }
  ]
 }
