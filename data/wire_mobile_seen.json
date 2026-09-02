@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 735,
+ "count": 748,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -8124,6 +8124,149 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004018
+  },
+  {
+   "candidate_id": "mobile:onsi:ee6f737d98f6c4ef5e69",
+   "player_id": "00-0039337",
+   "source_url": "https://www.si.com/nfl/giants/onsi/grading-every-major-roster-decision-made-by-giants-01m1cczps70m",
+   "attempted_at": "2026-09-02T16:41:23+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T16:41:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006574
+  },
+  {
+   "candidate_id": "mobile:onsi:9824eb9672af533a80c3",
+   "player_id": "00-0036309",
+   "source_url": "https://www.si.com/nfl/giants/onsi/grading-every-major-roster-decision-made-by-giants-01m1cczps70m",
+   "attempted_at": "2026-09-02T16:41:30+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T16:41:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00392
+  },
+  {
+   "candidate_id": "mobile:onsi:9fc17646454218662943",
+   "player_id": "00-0037838",
+   "source_url": "https://www.si.com/nfl/giants/onsi/grading-every-major-roster-decision-made-by-giants-01m1cczps70m",
+   "attempted_at": "2026-09-02T16:41:33+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T16:41:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0042
+  },
+  {
+   "candidate_id": "mobile:onsi:dfaccfe343d526835a3d",
+   "player_id": "00-0036555",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/3-fantasy-football-running-backs-with-rb1-upside-at-an-rb3-draft-price-jk-dobbins-just-needs-to-stay-healthy",
+   "attempted_at": "2026-09-02T16:41:35+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T16:41:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00594
+  },
+  {
+   "candidate_id": "mobile:onsi:03eb934f65560220eb25",
+   "player_id": "00-0036613",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/3-fantasy-football-running-backs-with-rb1-upside-at-an-rb3-draft-price-jk-dobbins-just-needs-to-stay-healthy",
+   "attempted_at": "2026-09-02T16:41:42+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T16:41:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004882
+  },
+  {
+   "candidate_id": "mobile:onsi:ed44da2f4472b24cf4b1",
+   "player_id": "00-0032764",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/3-fantasy-football-running-backs-with-rb1-upside-at-an-rb3-draft-price-jk-dobbins-just-needs-to-stay-healthy",
+   "attempted_at": "2026-09-02T16:41:47+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T16:41:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004154
+  },
+  {
+   "candidate_id": "mobile:onsi:43905489fea82788255f",
+   "player_id": "00-0036875",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/3-fantasy-football-running-backs-with-rb1-upside-at-an-rb3-draft-price-jk-dobbins-just-needs-to-stay-healthy",
+   "attempted_at": "2026-09-02T16:41:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T16:41:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004154
+  },
+  {
+   "candidate_id": "mobile:onsi:d8ad0c48639147401e08",
+   "player_id": "00-0038542",
+   "source_url": "https://www.si.com/nfl/falcons/onsi/bijan-robinson-makes-atlanta-falcons-history-with-latest-ranking",
+   "attempted_at": "2026-09-02T16:41:52+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T16:41:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004404
+  },
+  {
+   "candidate_id": "mobile:onsi:3467e7c85ba5834b7406",
+   "player_id": "00-0034960",
+   "source_url": "https://www.si.com/onsi/fantasy/news/dontayvion-wicks-kaelon-black-and-3-other-elite-late-round-fantasy-draft-picks",
+   "attempted_at": "2026-09-02T16:41:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T16:42:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005856
+  },
+  {
+   "candidate_id": "mobile:onsi:047cc6ab995c698a9676",
+   "player_id": "00-0035676",
+   "source_url": "https://www.si.com/onsi/fantasy/news/dontayvion-wicks-kaelon-black-and-3-other-elite-late-round-fantasy-draft-picks",
+   "attempted_at": "2026-09-02T16:42:01+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T16:42:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00417
+  },
+  {
+   "candidate_id": "mobile:onsi:8b83f393a264200fe3ff",
+   "player_id": "00-0040743",
+   "source_url": "https://www.si.com/onsi/fantasy/news/dontayvion-wicks-kaelon-black-and-3-other-elite-late-round-fantasy-draft-picks",
+   "attempted_at": "2026-09-02T16:42:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T16:42:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004578
+  },
+  {
+   "candidate_id": "mobile:onsi:ebea1a87d4ffe79be14d",
+   "player_id": "00-0036355",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-roster-decisions-define-season",
+   "attempted_at": "2026-09-02T16:42:08+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T16:42:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004286
+  },
+  {
+   "candidate_id": "mobile:onsi:34c5dc873016dc59553e",
+   "player_id": "00-0040122",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-how-thornton-injury-changes-outlook",
+   "attempted_at": "2026-09-02T16:42:10+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T16:42:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00637
   }
  ]
 }
