@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `1fbc761d5e84` · 18 draft calls · $0.0836
+**2 cards** · batch `19e0917ff744` · 16 draft calls · $0.0829
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,26 +19,52 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. TreVeyon Henderson — NE RB
+## 1. Jayden Daniels — WAS QB
 
-**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
+**Trending up** · OTHER · MEDIUM evidence
 
 ### What changed
 
-TreVeyon Henderson sustained a right ankle injury in practice and has not returned to practice since.
+Jayden Daniels logged more than 500 training-camp snaps, Dan Quinn said, while learning David Blough’s offense and building timing with key targets.
 
 ### Lineup Beat impact
 
-Henderson's continued absence is a negative availability signal. Monitor his next practice status for clarity on whether he is nearing a return; the evidence gives no timetable.
+The heavy camp volume suggests Daniels is getting substantial preparation despite limited preseason action. It does not establish regular-season workload or guarantee immediate chemistry; preseason usage and early-season execution remain key checks.
 
-[Gray Deyo · Fantasy On SI](https://www.si.com/onsi/fantasy/fantasy-impact-ja-marr-chase-treveyon-henderson-and-3-other-injury) · 2026-09-01
+[Philip Hughes · Sports Illustrated -- WAS](https://www.si.com/nfl/commanders/onsi/jayden-daniels-training-camp-snaps-dan-quinn-commanders-offense) · 2026-09-02
 
 <details><summary>Full evidence reviewed</summary>
 
-TreVeyon Henderson on Aug. 24 at practice sustained a right ankle injury.
+Jayden Daniels has the unusual distinction of having a heavy training camp workload despite not playing very much in the preseason. Washington Commanders head coach Dan Quinn revealed Monday that Daniels had taken more than 500 snaps during camp, which Quinn said was nearly half a season's worth of work.
 
-TreVeyon Henderson on Aug. 24 at practice sustained a right ankle injury. He has yet to practice since then.
+Jayden Daniels has the unusual distinction of having a heavy training camp workload despite not playing very much in the preseason. Washington Commanders head coach Dan Quinn revealed Monday that Daniels had taken more than 500 snaps during camp, which Quinn said was nearly half a season's worth of work. Quinn added that the volume mattered even more this year as Daniels learned new offensive coordinator David Blough's system and had developed timing with Terry McLaurin, Stefon Diggs, and Chig Okonkwo.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrVVU1z2zYQ_SsYXnqoKYMiKZLqyYllxzO17JHVXBoPZ0EsRbgkoAFBKUom_70L0VaccdpTLz1IorCL_Xj79vFrIMBVTalkMA-iWlTZLJIp5kkRAxRFlBZCpgC8gKioMpHJKEuSNJFCVDUUtZilMI1rTKIsnSbBWVCBlX0w__NrANutNTuUJTgKTSYYXGMsPV9bOLBLPBjvb7oOtQN7IMMH1BJtb_QvPauMdkoPKBmIHnWFTPUMmMYNOLVDBjtQLQjVKndgvdpoaCfs1mjljGUN-Wr87NjWQuUUXe4duKFnNRmrFqy_ZDTbN-gaJP9jdI1k0BvKYtENVv_GyMhwp-Qx_4bSkpNhTnXoQLQ4-aGB8tSxOIwdv7IZqzZK0_Ht3eXi9_JydXG1PnpoRx6lO2yRjKvF_d1qfbO8JpME54-mfDoLeRHyaD2dzqN8nvJfOZ9z7l2URWrP-LjLxfXF-ubjwh9bqF1Joeux8mDOJ8Xs5bxVnSIw6JafU7B-3aI0xw49bsafERRSwUabnuARNDEtPTpq0zgG-q-WYNNPgz14IJbmGbbv-DBC2xrv1W1pDmwPPflsjXUoJ8HjWfCSmOpfW_zoE7ATCfyALobNhE0TBq9HOdAwlcZ_KOWT_qT_s2AUgDVU9QEdc-bVNeXhInpo3_pLG2UFWio_uHGfOkP8xDkhreZ1zGMuC4A0jiKZRBX9o6u0EerLcYAPH2j05XqxuqXjDqsGtOo7Mly8e1gs1-XV6u62vF9dvF_fvPdT7ozE9plX0Jb_-0Uye00lN2pL9d8sLxf3C_pa-iXZtnBA-1OOnKwj4JyHnCc8i70UbYm1z8uxeuf_W_M0rksJp625W3ost4NoVVX2Q9eNAP6EQP_OFPr5jhGx4Mgav0kjAnTrDX0mbxK_VRCLQOlLmg-2Y1lEMEJWElrPZiqp78uahjhY9Cv96M93Cvd08dSoR3PUld4M9rhxV0B06Q_sTrOHG29wFH3jGi9Si8ubPzwPHUJ3FBd6HqwvoXFu28_Pz_f7_aRXE6Lduef3eT1Ge_kNx5UPnyCkzmxIdO4xpAw7D2vYvMAaElZhHBrPnnCEMvj26IWxd-XQS69dPI_T_CzYIBGEduv5jXISxuna62ExT6KTMI67UUHbEiBR_oLzUfVoUwZSXHDlUQ-DeT770d43ME1nrxwCyDDPUqyiIqIlTurpLMkR6lksYl5DXUmZRRXM0lrWiYgzKVKeJZGo4yKPsULw4FYNdlDuqOlxIHvS7nAUCOpbmM_hLjpNpxxfymMl5ExvZIEixiKOOU9llCQ5xHWeRxl9Ci5yUSWJECKOChDTKkuyaJZjzjlCxSVi8O1vtm6r7Q:WIRE_MOBILE_MANIFEST_V1 -->
+---
+
+## 2. Will Sheppard — GB WR
+
+**Worth noting** · TRANSACTION · MEDIUM evidence
+
+### What changed
+
+Will Sheppard signed with Miami's practice squad, Mike Spofford reported.
+
+### Lineup Beat impact
+
+Sheppard is no longer with Green Bay and is a developmental depth option in Miami for now. Monitor whether Miami elevates or signs him to its active roster; practice-squad status alone does not create a fantasy role.
+
+[Mike Spofford · GB official team site](https://www.packers.com/news/inbox-now-another-major-opportunity-awaits-sep-2-2026) · 2026-09-02
+
+<details><summary>Full evidence reviewed</summary>
+
+As of when I'm writing this, I hadn't heard where Perry landed. Simpson and Will Sheppard (to answer several questions) both signed with Miami's practice squad.
+
+As of when I'm writing this, I hadn't heard where Perry landed. Simpson and Will Sheppard (to answer several questions) both signed with Miami's practice squad. Guys are going to go where they feel they have the best opportunity to eventually make an active roster.
+
+Simpson and Will Sheppard (to answer several questions) both signed with Miami's practice squad. Guys are going to go where they feel they have the best opportunity to eventually make an active roster. A cut player returning to his original team's PS is never automatic.
+
+</details>
+
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrtWG1v28gR_isLfUmLmjb1QlFSP9mxmriIX87W1R96gbAkh-LGJJfZXUqnHgLc37i_11_SZ5aSIufS3KUFiuJwQGBLO_sy88wzz4zzQy-RLi2WKuvNev0phdN-nOfxaDSOcxqkk3EcUTjOh3KaR-lU5uFoOJ3GaZoP8qlMZD7O-_F0EtJoPImy3kkvlSazvdnff-jJpjF6TdlSOlwNk2xdoQ0-3xWqVI143a4KsnxGVxXVTpotjIuCREFyvRWprBqx1mVbkbDtakXWWXEpa0WlFcqKFTmn6hVsiXWydkqWojHUSCOd0rXIyDbKkShVhV8Z2yxJC4tMecOpuHIi02RFrZ3A7TIplS2EoVVbShPsNm-0eSq1zIQ2YtXi8toRCQWXMyVxfVpQpawz2z8fvdBauSIh60yQNOV2fxd9T2nrnTNUSVWLJ9ryBemTPX0GxPKAXrLt0DuyaaNWqsby9e3l_M3y8v78Lwu_A57Vbum2DcF4P7-7vV9c3byCKYOjWBqEg3EQToNwsOiPZmF_Nor_FIazMOQtypCHhRN0-3C1uPrbnJeNzN0SV-cqozrFLeHpdL_skfVgc8p96oC_Nkew2oZSlW9FoTeikvVW2Fo2lnNLYqNcIRwO5cpYFziSldB5TrUlRuMl5x_3Wdz25RQ1ZHJtcH1KnKV9xk57b096tN473vur3OLjgUKFtP71tm5tC-5kyKKqPQZwA-Y1s0vu2OgM8sULnpYHUuxJxv41pdzyjjWZrajatBDIML9w4MWpeJS2wB6HN14io2AIGctPZCLVEkfgnfimVTVTZE2yBHGvdZ1JeFBId-R8Jpx8QjiVNsS2WkRhuIM3a83e1ROxKRTu7e60UmVig8Brz0tcU-YIsfPuheW4kBNEzwGefld_V_8O2leCtjskswxe-Oc5mp2OVdI5MjDAzYMX0LItbhbyo7yV-F5jW02bXUmoNaRGa5OpWjqQ_BJIZ-Ki1FBR-GC31lHlFafwCK-p1A17gBpFVL7WFmQA8nX6RnKoJ-LBUQ5ML9VqZU_82ZeFWonbJ10_bTTX4L56limsimWk6xSVTlRJMxS-msnpWEZ5IgejKIvSdDDO5QhHofXqH15OHl5DiJaL-f01litKAbuyFQy3i9fze17TGZU7WZPl8vd-sOsHelOD6IVqgMPVzeX8bo4fN6z1XDVkfqZpB0uXpTAMwhD9us8C32irdvr-zQV_N_pdp_hLuRf-m9sbFv2mReTp0raoNZ-ET0Sg1EA_-6SI9rUe-Dz5kjo5KkwuIl9WJXXs5lQdk_ifP_5k9_LvkUpaVWa865jCDBCYgVx7hJ57-vOuaaARQKOUCZVMJkO1v7JtdkZVk7XLXKqyRbLQxd7y-lrRBscOuDDwXSe1ujW-mTxwn7PiqixbJFsyoYJAPJ4_8CaHd1au4BY9v7z6lnnP3Q3fuw2tYW8K5xo7OzvbbDanVp2C9md1Xp6lB4k74_o6e-fBD7IO_OAZzoHHmW3Be4Y5-Hg42GHZ-3DypWHsWj2RQDA5Omj26TD2UFCD-sm4vGqNvNcrMl0iXhkCIy4gsZwr2OVedPxxdAZqWBUbT29Q-1rJSgm8gps2p6zPinVsUxD00ezMVNIaWFouLqtWNTRbVcJpoYA1pwMqaDSkznB18UJKgX3fohxRr67FJjhJH8s4RZJRlFLkqFNptzhd0v961hrOhjxlfXbWupl_u7g_f_PvRq3JfzBr7bOGttBIHrE0crRDL-jQO8Bw9xxEqEdKHPvnhHDfqlGPfs461OHzMevc-l5YgB5XLyqxMcrLMve5E3HF7al-4VjTwSvsgobc-b5UMm-zU_GgqsarMnj1qMryEI_4g4_EojTRfDEwgGXvW_jHoPxRJBqxMmlQip6inlIMwi5G4WP0U83_u4_iVbsFl_HuSnvHND7sPEG5bEVOVHafMHL5NZHgFdQbc6JFbW35EI8ZDnMappYKg89HHuyqyIPxmwlGnAu0U9G1QJSHa7s2g7M8ZO0HDMFaDDfvHryucWACeqgxnKn0V0w90mAffsdZPo2kjMbjJO-PRulwEse_bvBBxd88nL9cXN3e_ML48xtW4OPpZjE_v17ePt7ML4-Hm2dk_NxsMwrjaPh8tnm8_8rZ5jnjf5nOJ-JZy9ypMETh68eRR_-HA0ACSf_beeTVBQ9PKlU7fiMS9KEvziKvLj47ijQyfUJiunmENvZM1Yn-PgBnAglfQZWgku-0CY7KM5AbCYJgrm2CQcC9r_fhLbdJ65atzbiVhZPBNDrprQhZ53GpG0WO22Q0w79ocmiTXV2kKHgA0R_v4fVNEFXSov9Kt_TtsTebfGK3hRxE46MNPRnTJI4o7WMeHoajfDAeTUjm42EyDHOZp1kW91M5jvIsHyXDOEuiMB71k3w4nQwpJclg8nAvlxAM2yVig04edLIQdDCt-4esLLv_Wus8weZpOs2SfBBHeZzE8WiYUhQm0ZgGg8kon2RpNMHPpJ-NwzSbEuX5FBsBGg3i8WScDnof_gVrQd85:WIRE_MOBILE_MANIFEST_V1 -->

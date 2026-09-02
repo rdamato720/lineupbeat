@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 712,
+ "count": 728,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -7871,6 +7871,182 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003862
+  },
+  {
+   "candidate_id": "mobile:onsi:cf4fbf873085edb19a82",
+   "player_id": "00-0037291",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-3-things-must-achieve-week-1-against-dolphins",
+   "attempted_at": "2026-09-02T15:15:58+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:16:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004792
+  },
+  {
+   "candidate_id": "mobile:onsi:1b618a42e2d12c905341",
+   "player_id": "00-0039338",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-3-things-must-achieve-week-1-against-dolphins",
+   "attempted_at": "2026-09-02T15:16:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:16:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004532
+  },
+  {
+   "candidate_id": "mobile:onsi:eab429a0d587c1a6501f",
+   "player_id": "00-0038563",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-3-things-must-achieve-week-1-against-dolphins",
+   "attempted_at": "2026-09-02T15:16:08+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:16:12+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005074
+  },
+  {
+   "candidate_id": "mobile:onsi:a6bc4c3a5502ede7a94f",
+   "player_id": "00-0034857",
+   "source_url": "https://www.si.com/nfl/bills/onsi/injuries-connor-mcgovern-bills-welcome-key-offensive-starter-back-to-practice-week-1",
+   "attempted_at": "2026-09-02T15:16:12+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:16:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004392
+  },
+  {
+   "candidate_id": "mobile:onsi:99844496d00bc683b9ba",
+   "player_id": "00-0040676",
+   "source_url": "https://www.si.com/nfl/titans/onsi/what-the-titans-final-roster-says-about-the-front-office-s-vision-01m1h62afnff",
+   "attempted_at": "2026-09-02T15:16:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:16:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004464
+  },
+  {
+   "candidate_id": "mobile:onsi:086aefe8b6ea44b9d241",
+   "player_id": "00-0041438",
+   "source_url": "https://www.si.com/nfl/titans/onsi/what-the-titans-final-roster-says-about-the-front-office-s-vision-01m1h62afnff",
+   "attempted_at": "2026-09-02T15:16:19+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:16:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006126
+  },
+  {
+   "candidate_id": "mobile:onsi:50bf31237b0cab9c838d",
+   "player_id": "00-0038117",
+   "source_url": "https://www.si.com/nfl/titans/onsi/what-the-titans-final-roster-says-about-the-front-office-s-vision-01m1h62afnff",
+   "attempted_at": "2026-09-02T15:16:25+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:16:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005128
+  },
+  {
+   "candidate_id": "mobile:onsi:a96a5fba245d5cc26fa4",
+   "player_id": "00-0039910",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/jayden-daniels-training-camp-snaps-dan-quinn-commanders-offense",
+   "attempted_at": "2026-09-02T15:16:28+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-02T15:16:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007448
+  },
+  {
+   "candidate_id": "mobile:onsi:035af1fc9926eb7d41ae",
+   "player_id": "00-0034753",
+   "source_url": "https://www.si.com/nfl/ravens/onsi/the-ravens-futures-markets-with-the-most-appealing-odds-01m1fxttaw2t",
+   "attempted_at": "2026-09-02T15:16:43+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T15:16:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00732
+  },
+  {
+   "candidate_id": "mobile:onsi:d63b89803187588f4040",
+   "player_id": "00-0034796",
+   "source_url": "https://www.si.com/nfl/ravens/onsi/the-ravens-futures-markets-with-the-most-appealing-odds-01m1fxttaw2t",
+   "attempted_at": "2026-09-02T15:16:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:16:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004306
+  },
+  {
+   "candidate_id": "mobile:onsi:3460296d39824d67db8c",
+   "player_id": "00-0034960",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-what-the-final-roster-says-about-the-front-office-vision",
+   "attempted_at": "2026-09-02T15:16:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:16:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003806
+  },
+  {
+   "candidate_id": "mobile:article:558908647b2f853bec04",
+   "player_id": "00-0034855",
+   "source_url": "https://www.pewterreport.com/jason-licht-bucs-jalon-daniels-ayden-garnes/",
+   "attempted_at": "2026-09-02T15:16:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:16:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003916
+  },
+  {
+   "candidate_id": "mobile:article:7df95aa566bf144c3877",
+   "player_id": "00-0040753",
+   "source_url": "https://www.packers.com/news/inbox-now-another-major-opportunity-awaits-sep-2-2026",
+   "attempted_at": "2026-09-02T15:16:59+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-02T15:17:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004814
+  },
+  {
+   "candidate_id": "mobile:onsi:323bbc82e16223b30638",
+   "player_id": "00-0040122",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-4-roster-decisions-that-will-define-2026-season",
+   "attempted_at": "2026-09-02T15:17:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:17:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00528
+  },
+  {
+   "candidate_id": "mobile:onsi:3e35e81fd7fca56ee524",
+   "player_id": "00-0041524",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/how-the-dolphins-could-unlock-the-upside-of-waiver-wire-addition-justin-joly-01m1h3g3p5tb",
+   "attempted_at": "2026-09-02T15:17:07+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-02T15:17:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004468
+  },
+  {
+   "candidate_id": "mobile:onsi:2f9d055e58c4406b179d",
+   "player_id": "00-0033288",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/ranking-best-49ers-practice-squad-options-most-likely-elevated",
+   "attempted_at": "2026-09-02T15:17:11+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-02T15:17:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007084
   }
  ]
 }
