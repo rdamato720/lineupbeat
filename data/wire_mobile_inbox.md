@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `38d470ce28ea` · 17 draft calls · $0.0820
+**2 cards** · batch `7ca925f9375c` · 17 draft calls · $0.0817
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,24 +19,46 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Jonathon Brooks — CAR RB
+## 1. DK Metcalf — PIT WR
 
-**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
+**Trending up** · TRANSACTION · HIGH evidence
 
 ### What changed
 
-Jonathon Brooks has missed both Panthers practices since the team reduced its roster to 53 players, Mike Moraitis reported.
+The Steelers acquired DK Metcalf from Seattle and signed him to a four-year, $132 million extension, per Mike Tomlin.
 
 ### Lineup Beat impact
 
-Brooks' two-practice absence is an availability flag worth monitoring. No reason, injury diagnosis or timetable was provided; his next participation update will clarify whether this is a setback.
+Pittsburgh’s long-term investment makes Metcalf a key receiver to monitor, but the report does not establish his target share, weekly role or usage.
 
-[Mike Moraitis · Sports Illustrated -- CAR](https://www.si.com/nfl/panthers/onsi/jonathon-brooks-responds-critic-panthers-misses-practice) · 2026-09-03
+[Jack Markowski · Sports Illustrated -- PIT](https://www.si.com/nfl/steelers/onsi/mike-tomlin-reveals-one-reason-pittsburgh-steelers-traded-george-pickens) · 2026-09-03
 
 <details><summary>Full evidence reviewed</summary>
 
-In the two practices since the Carolina Panthers cut their roster down to 53 players on Sunday, running back Jonathon Brooks hasn't taken part.
+Furthermore, Tomlin stated that the "leadership responsibilities" that inherently come with signing a big-money deal wasn't exactly in Pickens' "natural wheelhouse", which is partially why they felt comfortable moving on from him after acquiring DK Metcalf from the Seattle Seahawks and signing him to a four-year, $132 million extension.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVcly4zYQ_RUUL3OIKHMTKSonL5qJU7HskpVcUi5WE4uIMQmwAFCyMjX_noYoKePM5Ady0YJuNF-_97r5JajB0aaSLFgE6ZxlRUR5MufAsjQTSULnPBZRXdY5F5mYRTNRl3kC8ayO4yKFiCdFlKRFMhOUx8EkoGCYDRZ_fgmg743ecVaBw9IYgsE12uDvB_nKyYM2IJ20_o7uOq4cmAMGb4zWr_YDcXsd9gaok5QTqC1X-C0tAUVgB7KFWrbSHYhoYUv22riGdFpJp41U2ylZaWI4WK0mRKrPgzkQJmGrtMUS2hAnO-6gbjnZgyUeqGSc_UwaDCv-5kgPBp8se3BSKzL0DBzmyrYltAUjxYHsG-4ajqX8HQ-MWO5qoK_Tdy1VFx7qw8jDNzEEu5XKU_J4t_ytultff9wcM5TDjModeo7B9fLpcb25X33CkMeBR0mU5GFUhlG6ifNFFC2i5Cf_GfkUaTj1sDFvtfx0vbn_Y-mPDQhXYWmBrSKZwSKalun5vJWddMdmvXrBpuHE6sEg50xz5EQ7spU7VOJEKxGexeYijfVd-1t8N5b_5x63nmlpG6_dKMbkzJXXgr_1iJczrOwGo4hv0Vd7Pj5_Qd7ZZUKeexTbkvu2Hawz4C-GIbm9Xk-Dl0lwfjz2fq-OANFI5GwkS6z02Pz5LRjdSgXkCZQX0hI6OB-RhhhtHUrL9B5raDJLSd_Cwedg58-DYoAtmEEp9Bo59vGrVoD2VmT0L2nAqg9YDl65OprJd3QGV1FQTPo-x7nrNJqZL5B7uUjzoowYhxTyGY5bnjJR4lWcHPnXUdLnX9AM1Wa5fsDjjtMGlLQdBq5vnperTfVx_fhQPa2vbzf3t173TjPenpwGbfU_HDZUCaVpZO9FX90tn5b4sfKDNKqGx_-S5xIa-Y-iMIrSMs0yH0DYp-lZ3_j_Rn8e56mCy1g9rjy1_YC-ppUdum7k8wcuIJ20Fj1aayTtYrUfGdJx6JBHNlBMl2jxkwvfGXDyfhww348DZ9Pv4Hy_eFAjhi2jmrzFk43h6EI0sLf5KSwVt7YSKPlguN8EL_58J_keL17a9wSP62jcEd6V_zWVPsnhk7au8XtueXf_uzeubxb_jwmD8Xga53q7uLra7_dTK6do1Csl2qv-xNmVH4-rzyeGw_rIcIgoe62YDalBPmh4zg6PtNuLq4OvL36vWlcNlvnVF83jsphPgi1H83i843vq_WJNk0VUXBbrOEkU2haZiYsz4UfX4lwNuLHBVcd9Gizm-fu4bSCZ5d8kBFDweTHjNC7jKI3wZZtn-N4VeVqnkQBBGStiiltAMJHVacHqWVRkcS3Scp5yysEzSxveQbXDhkdl9rj7w3GdhFLV-i3cxReZqvFVPyLB5LmYz5hgiSjjJKO8ZpwXSQqQRWVWCoG_PMA6zgqEImKaiSjneV3yLOH5nM6Cr38DuPjLQQ:WIRE_MOBILE_MANIFEST_V1 -->
+---
+
+## 2. Jaylen Waddle — DEN WR
+
+**Worth noting** · TRANSACTION · MEDIUM evidence
+
+### What changed
+
+Parr reported that Denver acquired WR Jaylen Waddle this offseason.
+
+### Lineup Beat impact
+
+Waddle's reported move to Denver creates a new fantasy context, but the evidence gives no role, target-share or health details. Monitor his usage with the Broncos.
+
+[Chad Jensen · Sports Illustrated -- DEN](https://www.si.com/nfl/broncos/onsi/broncos-get-the-edge-over-chiefs-in-latest-afc-west-predictions) · 2026-09-03
+
+<details><summary>Full evidence reviewed</summary>
+
+"If not for Bo Nix’s injury, the Broncos might have made the Super Bowl last season. With the acquisition of WR Jaylen Waddle and relatively few significant free-agent losses this offseason, Denver has established itself as the most reliable team in a tough division," Parr wrote.
+
+</details>
+
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrVV9tu20gW_JUGsUAeVrR5EanLmxN7ZpSNZcP2jB8mgdAkD8UeNdna7qZozSDA_sb-3n7JVpOSHCc7QbA3YF5ssa_n1Kk6Rf7mZdzm1UoU3tyb5HwWJeUsniR5UKaUFNOszIskzGdxNqUii7IoGo95MslSivJpXk6ztExzPh1HeRCE3sjLuS6MN__5N49vt1rtqFhxi6MxxVtbKY3fb3m-Yddcb1RnNsJtUnVNjeV6j9lbYa3JWr2u_vG3vxsmVbP2LemaiWZHxrqFrOYbMuyabM5lyTjb0J5pyknsSDOrWK0aYZUesay1zFaEya3SlhUK2xplGQ7imRSmYpUwDDevyTJTcU0j1hFtJM5TkpjSrDV8TWcvolydcsv2Q26fzCkt1qLB8PXN5dW71eXdxXcP_YrGYsXK7reEybur25u7h8Xye0wV3LqhKIhSP5j5QfwQzuZRPE-CPwfBPAjcEoH0rFDu3Nub-8XD4qcrN6x5aVc4uhQFNTlOCc5m8XFcilpY7na5ingPwIF2w8JnJFwiGGMWi5s1K5GxA4znf22FEW6zA4GeELzBgwNiqQ6IjZhp-NbvcXOrCtrays_xaFEtHFX3tzNAfLimOPM-jLxjFEjmu1bjOl0rh_yDqqVoGGpjqUAYfCjee08SL0ibSmxRSbNFQiITEtGRee8NC0WDYwAwKodiEOuErZgR68ZlxVkm1j5YAZ4UxCXruGlegQZPPHc7cOmtyDdI8RVua7httVtUEclKtYbee6BFJfKqTwXpCS6xrav2LsA9K0lady1SdrwiEHDn7kXupVY1SFYzVATk7HHVbu7yLycC92tcpvfErZX9_4p3G8N4U5yScIeA2xw1arW_Jw5-_ymMI1YLKR3ML4p0xHiV4wzhKDZovFZAjuYOwnlI8WxahNOsKKMoSmYZTTNshUrFrz3V7q8u7m-Wq3c3PU9rQmkbYWrMPNxdLO8v3jwsbpZuRhUkD8zncvXH0LPqmoFTCHKxvLy6vcKfpdPqVvI9uU71XKPT6IBiEPhBECfp2IlzqwahYPzxzj1r9cug1hU_inZ5s3SC3baIMl-Ztq4HdJwo7y14hlAO5AD1P-fGkRdHOmDJt7NhxLZA8Vps6CCwsy8C-bKh6V5xK8kzki5MSKtwJGy3h0nRkDGrkgvZQpLoLx_c-E5Qh22ntB2mQ5MzCLNX_L2rnGELKVtjda9032e3Cwc8BqhZ2wrLflh8_wNGLHFHt2G61S6WytqtmZ-fd113ZsQZyHbelPLcHFA8d9Q-r5Gub_t0fYQFzRsf8sdvblTjb0-k9I_7fASDBuWvSYE9WNH3A-_j6GtW9qbiBXuLddR87mOPvCgkvTIHriJNNAVyNbukxvE6RywW_OWsoY6VHBuNa17wiSf7TPVTy15DDY7tPZNHB5I_N98KOaLlFWRRE3PGrgfN9ILoOT-0RHfka62aXJn_v6kF0e-Z2o_LN--uLu5-x9Om0Vc8bctNn96XlqZ5YwYqMtdxjINp8LmDjR2UitoMmHZKb6TixeiFlR313W__pLU4MzgW93Nfe-8tyj4YZ6ivFVuKp779ieaXVu9Hn5YBil1XllUc7Ki5i9v1hNaJ9rXqJJPc4MKet2fs8VjDFwZdssc79pbvJTVs4F3fKjRJQLUj6RyqG4ykFDAEhKWJfKCGn1IZA-SsI4oqy-Gm0ZGlFTfP3RVACWvI9WjTR1ErxIZrRO96TqzOSzlY3q7BRbETfQeCSd9yrVmnlaVvdSe8ZKLBxjPO43GSp3yWFfRfd6c_hkq_wapeVP9fulWahvF_6FZ9EU9I9e9dB5hO1vUFEV_y6t_wnkfcVjktQbf_G_MBli_N5_rqcvHj9bP9DAu-aj_ZUK3BfQ4Pvis9SulTAUdBjhodRVBpfLiSdLSyPi9zv3M_tkBP5ENn-_jB9VZjV60pXP8LpmE6Qw-EXqmPenCil801TudJdGquA-nxCiGBTzg5ot63TkigRdfmdtU3VW8-TV_Og65Rkn6ywOMTmk4SysNZGMTBuIzS8ZR4mcZZHJTIoSgmYc7TpCzKcRZPiiwJJuMwK_GCGeNFjjt884pqvgIKZqhPB8L4g-IBSKae_F14KtZq-C4dInHfpmlWRCUPKYtmcUg8SfDdOQ5LiidRlmfuMnyMJpQFaZGFPMjDKKQkoSQMinFSjr2P_wQagx_A:WIRE_MOBILE_MANIFEST_V1 -->

@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 850,
+ "count": 867,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -9389,6 +9389,193 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004852
+  },
+  {
+   "candidate_id": "mobile:onsi:1e398d18bdf22259be8b",
+   "player_id": "00-0035640",
+   "source_url": "https://www.si.com/nfl/steelers/onsi/mike-tomlin-reveals-one-reason-pittsburgh-steelers-traded-george-pickens",
+   "attempted_at": "2026-09-03T19:36:52+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-03T19:36:58+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006092
+  },
+  {
+   "candidate_id": "mobile:onsi:c56c3ab19403832b7fbb",
+   "player_id": "00-0040730",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/broncos-get-the-edge-over-chiefs-in-latest-afc-west-predictions",
+   "attempted_at": "2026-09-03T19:36:58+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T19:37:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003946
+  },
+  {
+   "candidate_id": "mobile:onsi:e11837957542679167cd",
+   "player_id": "00-0039732",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/broncos-get-the-edge-over-chiefs-in-latest-afc-west-predictions",
+   "attempted_at": "2026-09-03T19:37:01+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-09-03T19:37:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003978
+  },
+  {
+   "candidate_id": "mobile:onsi:7b656439aa345c6a9bde",
+   "player_id": "00-0036613",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/broncos-get-the-edge-over-chiefs-in-latest-afc-west-predictions",
+   "attempted_at": "2026-09-03T19:37:04+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-03T19:37:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00523
+  },
+  {
+   "candidate_id": "mobile:onsi:3e3b512b6ed77b5a4e5d",
+   "player_id": "00-0037740",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-early-round-wide-receiver-debate-tee-higgins-vs-garrett-wilson",
+   "attempted_at": "2026-09-03T19:37:09+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T19:37:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005318
+  },
+  {
+   "candidate_id": "mobile:onsi:98c6b5139e586b37816e",
+   "player_id": "00-0036410",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-early-round-wide-receiver-debate-tee-higgins-vs-garrett-wilson",
+   "attempted_at": "2026-09-03T19:37:14+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T19:37:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.008084
+  },
+  {
+   "candidate_id": "mobile:onsi:2653c1fa70933902cee6",
+   "player_id": "00-0036963",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-early-round-wide-receiver-debate-tee-higgins-vs-garrett-wilson",
+   "attempted_at": "2026-09-03T19:37:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T19:37:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004318
+  },
+  {
+   "candidate_id": "mobile:onsi:91e78a8443868d1fd0cf",
+   "player_id": "00-0035676",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-early-round-wide-receiver-debate-tee-higgins-vs-garrett-wilson",
+   "attempted_at": "2026-09-03T19:37:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T19:37:29+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004602
+  },
+  {
+   "candidate_id": "mobile:onsi:fcd6a45e0070954feb74",
+   "player_id": "00-0039894",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/xavier-worthy-reflects-on-2025-struggles-stresses-discipline-under-eric-bieniemy",
+   "attempted_at": "2026-09-03T19:37:29+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T19:37:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006274
+  },
+  {
+   "candidate_id": "mobile:onsi:771cdb5a979e65f784d3",
+   "player_id": "00-0033873",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/xavier-worthy-reflects-on-2025-struggles-stresses-discipline-under-eric-bieniemy",
+   "attempted_at": "2026-09-03T19:37:34+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T19:37:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00443
+  },
+  {
+   "candidate_id": "mobile:onsi:6c11c3edb65ec22a5f73",
+   "player_id": "00-0036554",
+   "source_url": "https://www.si.com/nfl/texans/onsi/demeco-ryans-latest-comments-makes-kayshon-boutte-s-texans-role-clear",
+   "attempted_at": "2026-09-03T19:37:37+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T19:37:40+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003652
+  },
+  {
+   "candidate_id": "mobile:onsi:9aeb3ea9e0a6c66c45e0",
+   "player_id": "00-0040238",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-2-long-shots-who-fought-their-way-onto-the-roster",
+   "attempted_at": "2026-09-03T19:37:40+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T19:37:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005552
+  },
+  {
+   "candidate_id": "mobile:onsi:13af8311794e7244fae4",
+   "player_id": "00-0039040",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/statistics-upside-value-draft-picks-each-round-fantasy-football-2026",
+   "attempted_at": "2026-09-03T19:37:45+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T19:37:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00468
+  },
+  {
+   "candidate_id": "mobile:onsi:f1261e66d53a3f054d40",
+   "player_id": "00-0036613",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/statistics-upside-value-draft-picks-each-round-fantasy-football-2026",
+   "attempted_at": "2026-09-03T19:37:48+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T19:37:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003944
+  },
+  {
+   "candidate_id": "mobile:onsi:43c037174c93272d301f",
+   "player_id": "00-0035659",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/statistics-upside-value-draft-picks-each-round-fantasy-football-2026",
+   "attempted_at": "2026-09-03T19:37:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T19:37:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004
+  },
+  {
+   "candidate_id": "mobile:onsi:cc382ec810c26716b838",
+   "player_id": "00-0039337",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/statistics-upside-value-draft-picks-each-round-fantasy-football-2026",
+   "attempted_at": "2026-09-03T19:37:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T19:37:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003664
+  },
+  {
+   "candidate_id": "mobile:onsi:c90e146fc63e40f19939",
+   "player_id": "00-0039075",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/statistics-upside-value-draft-picks-each-round-fantasy-football-2026",
+   "attempted_at": "2026-09-03T19:37:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T19:37:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003928
   }
  ]
 }
