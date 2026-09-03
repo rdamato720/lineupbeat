@@ -72,13 +72,9 @@ def main() -> int:
                      "League records", "noindex,nofollow", "ESPN history import",
                      "Save manager matches", "LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST",
                      "Are these the same person?", "Yes, same person",
-                     "No, different people", "Step 1 of 2", "data-demo=",
-                     "Step 2 of 2", "Review team history",
-                     "Did the new manager inherit this franchise?",
-                     "Yes, keep the history", "No, start a new franchise",
-                     "Save team history", "Your league history is ready",
-                     "lineupbeat-history-franchise-review-v1",
-                     "franchiseReview", "buildTeamTransitions",
+                     "No, different people", "One quick step", "data-demo=",
+                     "Your league history is ready",
+                     "Every historical team and season is included automatically.",
                      "document.body.classList.add('has-import')",
                      "canonical[find(row.identityId)]",
                      "headerSeasons.textContent=p.counts.seasons",
@@ -88,6 +84,8 @@ def main() -> int:
     assert "identity.seasons.join(', ')+' · '+identity.teamNames.join(' / ')" not in page
     assert "Merge into " not in page
     assert "MANAGER NAME" not in page
+    assert "Review team history" not in page
+    assert "ownership change" not in page.lower()
     assert "password" not in page.lower()
     assert "cookie" not in page.lower()
     for private_name in ("Adrian Chadzynski", "Ralph Damato", "Bobby Digital"):
