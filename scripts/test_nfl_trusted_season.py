@@ -42,6 +42,13 @@ def main() -> None:
         assert by_name[name]["formats"]["ppr"] == points, (name, by_name[name]["formats"]["ppr"])
     assert "Josh Jacobs" not in by_name
 
+    release_builder = (trusted.ROOT / "scripts/build_nfl_season_release.py").read_text()
+    development_builder = (trusted.ROOT / "scripts/build_nfl_v15_development.py").read_text()
+    assert "build_trusted_half_ppr_rankings(model,formats,ranks)" in development_builder
+    build_body = release_builder.split("def build():", 1)[1]
+    assert "write(path,board_page(model,ranking,path,fmt,pos,'rankings'))" not in build_body
+    assert "write(path,board_page(model,ranking,path,'half_ppr',pos,'rankings'))" not in build_body
+
     for fmt in ("ppr", "half_ppr", "non_ppr"):
         rows = rankings["formats"][fmt]["rows"]
         assert len(rows) == 424

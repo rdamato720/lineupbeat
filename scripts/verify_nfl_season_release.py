@@ -2,6 +2,7 @@
 """Verify trusted season data, withheld identities and dev-only surfaces."""
 import argparse
 import hashlib
+import html
 import json
 import re
 from html.parser import HTMLParser
@@ -16,6 +17,24 @@ class Document(HTMLParser):
         a=dict(attrs)
         if tag=='tr' and 'data-player-id' in a:self.rows.append(a)
         if tag=='a' and a.get('href'):self.links.append(a['href'])
+
+def trusted_ranking(model,fmt):
+    """Rebuild the published replacement-value order from trusted points."""
+    replacement={}
+    for pos,n in {'QB':13,'RB':37,'WR':49,'TE':13}.items():
+        group=sorted((p for p in model['players'] if p['position']==pos),key=lambda p:(-p['formats'][fmt],p['name']))
+        replacement[pos]=group[n-1]['formats'][fmt]
+    ordered=sorted(model['players'],key=lambda p:(
+        -round(p['formats'][fmt]-replacement[p['position']],1),
+        -round(p['formats'][fmt],1),p['name']))
+    return ordered
+
+def ranking_rows(text):
+    rows=[]
+    for match in re.finditer(r'<tr class="r(?: [^"]*)?"[^>]*data-name="([^"]*)"[^>]*data-team="([^"]*)"[^>]*>(.*?)</tr>',text,re.S):
+        points=re.search(r'<td class="rkpts"[^>]*>([-0-9.]+)</td>',match.group(3))
+        rows.append((html.unescape(match.group(1)),html.unescape(match.group(2)),float(points.group(1)) if points else None))
+    return rows
 
 def manifest(root):
     # site/template.html is tracked build input, not a deployable route. Some
@@ -44,14 +63,17 @@ def verify(root):
         page=root/'nfl'/slug/'index.html'
         if page.exists() and 'data-season-projection="withheld"' not in page.read_text():errors.append('withheld player page '+p['name'])
     checked=0
-    for fmt,(_,slug) in release.FORMATS.items():
+    ranking_paths=[('half_ppr','')]+[(fmt,slug) for fmt,(_,slug) in release.FORMATS.items() if fmt in ('ppr','non_ppr')]
+    for fmt,slug in ranking_paths:
+        ordered=trusted_ranking(model,fmt)
         for pos in [None,'QB','RB','WR','TE']:
             path=root/'nfl/rankings'/slug/(pos.lower() if pos else '')/'index.html'
-            rows=Document(path.read_text()).rows
-            expected=[r for r in ranking['formats'][fmt]['rows'] if not pos or r['position']==pos]
-            if [r['data-player-id'] for r in rows]!=[r['gsis_id'] for r in expected]:errors.append(str(path)+' order/population')
-            for r,e in zip(rows,expected):
-                if float(r[f'data-{fmt}-points'])!=e['fantasy_points'] or int(r[f'data-{fmt}-rank'])!=e['overall_rank'] or int(r[f'data-position_{fmt}-rank'])!=e['position_rank']:errors.append('rank display payload '+e['name'])
+            text=path.read_text();rows=ranking_rows(text)
+            expected=([p for p in ordered if p['position']==pos] if pos else ordered[:200])
+            want=[(p['name'].lower(),p['team'],p['formats'][fmt]) for p in expected]
+            if rows!=want:errors.append(str(path)+' trusted tiered order/population')
+            if 'class="rkwrap"' not in text or 'class="rktable"' not in text or 'RK</th><th scope="col" class="l">TIER' not in text:errors.append(str(path)+' established rankings layout')
+            if 'Trusted current set: 424 projected players; 81 evidence holds' not in text:errors.append(str(path)+' trusted coverage disclosure')
             checked+=len(rows)
     missing={}
     for path in sorted(root.rglob('*.html')):

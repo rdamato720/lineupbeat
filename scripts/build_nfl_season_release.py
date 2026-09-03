@@ -204,14 +204,10 @@ def build():
     for pos in [None,'QB','RB','WR','TE']:
         path='/nfl/projections/'+(pos.lower()+'/' if pos else '')
         write(path,board_page(model,ranking,path,pos=pos))
-        for fmt,(_,slug) in FORMATS.items():
-            path='/nfl/rankings/'+slug+'/'+(pos.lower()+'/' if pos else '')
-            write(path,board_page(model,ranking,path,fmt,pos,'rankings'))
-        path='/nfl/rankings/'+(pos.lower()+'/' if pos else '')
-        write(path,board_page(model,ranking,path,'half_ppr',pos,'rankings'))
-    for fmt,(_,slug) in FORMATS.items():
-        path='/nfl/rankings/top-200-'+slug+'/'
-        write(path,board_page(model,ranking,path,fmt,kind='rankings',top=True))
+    # Rankings are deliberately left to build_rankings/build_ranking_formats.
+    # Those builders provide the established tiered board, filters, position
+    # ranks and mobile treatment. Reusing the projection table here caused a
+    # release-only visual regression on every rankings URL.
     public={'metadata':model['metadata'],'players':[{k:p[k] for k in ('gsis_id','player_id','name','team','position','status','url','offensive_role','stat_projection','formats','methodology_version','data_cutoff','evidence_limitation_flags')} for p in model['players']]}
     (SITE/'data').mkdir(exist_ok=True)
     (SITE/'data/nfl-season-trusted.json').write_text(json.dumps(public,sort_keys=True,separators=(',',':'))+'\n')

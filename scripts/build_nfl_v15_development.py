@@ -28,6 +28,45 @@ def run(name,*args):
 def deny_network(event,args):
     if event in ('socket.connect','socket.getaddrinfo'):raise RuntimeError('offline development build prohibits provider/network requests')
 
+def build_trusted_half_ppr_rankings(model, formats, ranks):
+    """Render the established rankings experience from trusted Half-PPR points.
+
+    The format builder already restores the established PPR, Non-PPR,
+    Superflex and dynasty boards. The canonical /nfl/rankings/ route is the
+    Half-PPR board, so render that fifth view with the same table component
+    instead of allowing the season-release projection table to replace it.
+    """
+    rows=[{
+        'player_name':p['name'],
+        'team':p['team'],
+        'position':p['position'],
+        'projected_points':p['formats']['half_ppr'],
+    } for p in model['players']]
+    # PPR is used only as the generic one-QB replacement-value calculation.
+    # The development runner clears PPR adjustments and editorial ordering
+    # before this call, so the retained values and order are Half-PPR only.
+    records,replacement=formats.rank(rows,'ppr')
+    for record in records:record['scoring_format']='half_ppr'
+    css,header,footer=ranks.site_chrome()
+    for pos in [None,*ranks.POSITIONS]:
+        out=ROOT/'site/nfl/rankings'
+        if pos:out/=pos.lower()
+        out/='index.html';out.parent.mkdir(parents=True,exist_ok=True)
+        page=ranks.render(records,pos,CUTOFF,replacement,css,header,footer)
+        out.write_text(ranks.seo.check_page(page,str(out)))
+
+def mark_trusted_ranking_pages():
+    """Disclose trusted coverage without changing the established layout."""
+    note=(
+        '<p class="rkstatus"><a href="/nfl/projections/coverage/">'
+        'Trusted current set: 424 projected players; 81 evidence holds'
+        '</a></p>'
+    )
+    for page in (ROOT/'site/nfl/rankings').rglob('index.html'):
+        text=page.read_text()
+        if note not in text:text=text.replace('</header>',note+'</header>',1)
+        page.write_text(text)
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--development',action='store_true');args=parser.parse_args()
     if not args.development or os.environ.get('DEV_PROJECT')!='lineupbeat-dev':raise SystemExit('isolated development project required')
@@ -71,6 +110,8 @@ def main():
     # Auxiliary formats use the same trusted population. The format builder's
     # lower floor is enabled only by this explicit development release.
     run('build_ranking_formats')
+    build_trusted_half_ppr_rankings(model,formats,ranks)
+    mark_trusted_ranking_pages()
     import build_comparison_tool as comparison
     superflex,_=formats.rank(formats.read_projection_formats(None)['superflex'],'superflex')
     comparison.rank_sets=lambda:{**release.legacy_rank_sets(),'superflex':superflex}
