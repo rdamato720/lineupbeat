@@ -45,6 +45,7 @@ jobs:
           python scripts/test_college_decision_room.py
           python scripts/test_week1_intelligence.py
           python scripts/test_my_team.py
+          python scripts/test_league_history.py
           node scripts/test_espn_roster_parser.js
           node scripts/test_espn_safe_diagnostics.js
           node scripts/test_my_team_browser.js

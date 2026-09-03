@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lineupbeat.com/schemas/league-history-import-v1.json",
+  "title": "LineupBeat League History Import",
+  "type": "object",
+  "required": ["schemaVersion", "league", "managers", "franchises", "seasons", "matchups"],
+  "properties": {
+    "schemaVersion": {"const": "lineupbeat-league-history-v1"},
+    "league": {
+      "type": "object",
+      "required": ["id", "name", "sport", "privacy"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "name": {"type": "string", "minLength": 1},
+        "sport": {"const": "nfl"},
+        "privacy": {"enum": ["private", "unlisted", "public"]}
+      }
+    },
+    "managers": {"type": "array", "items": {"$ref": "#/$defs/manager"}},
+    "franchises": {"type": "array", "items": {"$ref": "#/$defs/franchise"}},
+    "seasons": {"type": "array", "items": {"$ref": "#/$defs/season"}},
+    "matchups": {"type": "array", "items": {"$ref": "#/$defs/matchup"}}
+  },
+  "$defs": {
+    "manager": {
+      "type": "object", "required": ["id", "displayName"],
+      "properties": {"id": {"type": "string"}, "displayName": {"type": "string"}}
+    },
+    "franchise": {
+      "type": "object", "required": ["id", "name", "managerId"],
+      "properties": {"id": {"type": "string"}, "name": {"type": "string"}, "managerId": {"type": "string"}}
+    },
+    "season": {
+      "type": "object", "required": ["year", "platform", "regularSeasonWeeks", "activeFranchiseIds"],
+      "properties": {
+        "year": {"type": "integer", "minimum": 1960},
+        "platform": {"type": "string"},
+        "platformLeagueId": {"type": "string"},
+        "regularSeasonWeeks": {"type": "integer", "minimum": 1},
+        "activeFranchiseIds": {"type": "array", "items": {"type": "string"}},
+        "championFranchiseId": {"type": ["string", "null"]},
+        "runnerUpFranchiseId": {"type": ["string", "null"]},
+        "scoringCrownFranchiseId": {"type": ["string", "null"]},
+        "complete": {"type": "boolean"},
+        "finishes": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 1}}
+      }
+    },
+    "matchup": {
+      "type": "object",
+      "required": ["id", "season", "week", "playoff", "homeFranchiseId", "awayFranchiseId", "homeScore", "awayScore"],
+      "properties": {
+        "id": {"type": "string"}, "season": {"type": "integer"},
+        "week": {"type": "integer", "minimum": 1}, "sequence": {"type": "integer", "minimum": 1},
+        "playoff": {"type": "boolean"},
+        "homeFranchiseId": {"type": "string"}, "awayFranchiseId": {"type": "string"},
+        "homeScore": {"type": "number", "minimum": 0}, "awayScore": {"type": "number", "minimum": 0}
+      }
+    }
+  }
+}

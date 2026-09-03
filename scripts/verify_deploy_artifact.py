@@ -288,6 +288,42 @@ def check_development_repairs(root):
           "ESPN extension detected, but no saved roster was found" in runtime)
 
 
+def check_league_history(root):
+    """The unlisted prototype and its canonical source must survive the build."""
+    page = root / "league-history" / "index.html"
+    text = page.read_text() if page.is_file() else ""
+    check("League History has a dedicated unlisted development route",
+          bool(text) and "League history" in text, str(page))
+    check("League History is noindex and labels its fictional prototype data",
+          bool(re.search(r'name="robots" content="noindex,\s*nofollow(?:,\s*noarchive)?"', text))
+          and "ESPN importer not connected" in text
+          and "Prototype boundary" in text
+          and "fictional league" in text)
+    payload_path = root / "data" / "league-history-demo.json"
+    try:
+        payload = json.loads(payload_path.read_text())
+    except (OSError, ValueError):
+        payload = {}
+    canonical = payload.get("canonical", {})
+    record_book = payload.get("recordBook", {})
+    check("League History ships the provider-neutral canonical archive",
+          canonical.get("schemaVersion") == "lineupbeat-league-history-v1"
+          and len(canonical.get("managers", [])) == 10
+          and len(canonical.get("franchises", [])) == 10
+          and len(canonical.get("matchups", [])) == 96
+          and canonical.get("league", {}).get("sourcePlatform") == "demo")
+    check("League History recomputes the deterministic demo record book",
+          record_book.get("counts") == {"seasons": 2, "franchises": 10, "games": 96}
+          and record_book.get("records", {}).get("highestWeek", {}).get("score") == 170.42)
+    check("League History does not republish BGNCo participant records",
+          all(name not in text for name in
+              ("Adrian Chadzynski", "Ralph Damato", "Bobby Digital")))
+    sitemap = root / "sitemap.xml"
+    sitemap_text = sitemap.read_text() if sitemap.is_file() else ""
+    check("League History remains unlisted while the importer is unfinished",
+          "/league-history/" not in sitemap_text)
+
+
 def check_homepage(root, decision_room=False):
     """The homepage sections the Wire replaced *around*.
 
@@ -601,6 +637,7 @@ def main() -> int:
     if decision_room:
         check_my_team(root)
         check_development_repairs(root)
+        check_league_history(root)
 
     home = root / "index.html"
     if home.is_file():
