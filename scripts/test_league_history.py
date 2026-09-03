@@ -73,7 +73,7 @@ def main() -> int:
 
     page = outputs[0].read_text()
     dashboard = outputs[2].read_text()
-    for required in ("League history", "Trophy case", "All-time table", "Manager files",
+    for required in ("League history", "Trophy case", "All-time leaders", "Managers",
                      "League records", "noindex,nofollow", "ESPN history import",
                      "Save manager matches", "LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST",
                      "Are these the same person?", "Yes, same person",
@@ -85,6 +85,8 @@ def main() -> int:
                      "canonical[find(row.identityId)]",
                      "headerSeasons.textContent=p.counts.seasons",
                      ".has-import .tabs,.has-import .panel,.has-import .lh-footer",
+                     "--history-bg:#080c0b", ".tab[aria-selected=true]::after",
+                     "<th>Record</th><th>Win%</th><th>PPG</th><th>Titles</th>",
                      "96", "Prototype boundary", "fictional"):
         assert required in page, required
     assert "identity.seasons.join(', ')+' · '+identity.teamNames.join(' / ')" not in page
@@ -99,6 +101,8 @@ def main() -> int:
     for required in ("summarize(payload, review)", "renderDashboard",
                      "renderTrophies", "renderAllTime", "renderManagers",
                      "renderSeasons", "renderRecords",
+                     "const labels = ['#', 'Manager', 'Record', 'Win%', 'PPG', 'Titles']",
+                     "element('details', 'team-history')",
                      "Private ESPN history · processed only in this browser."):
         assert required in dashboard, required
     assert "innerHTML" not in dashboard

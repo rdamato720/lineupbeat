@@ -40,10 +40,9 @@ def franchise_rows(summary: dict) -> str:
     for rank, row in enumerate(summary["franchises"], start=1):
         record = f'{row["wins"]}-{row["losses"]}' + (f'-{row["ties"]}' if row["ties"] else "")
         rows.append(f'''<tr><td class="rank">{rank}</td><td><strong>{esc(row["manager"])}</strong>
-          <small>{esc(row["franchise"])}</small></td><td>{record}</td><td>{pct(row["winPct"])}</td>
-          <td>{n(row["pointsFor"], 2)}</td><td>{n(row["pointsPerGame"])}</td>
-          <td>{n(row["expectedWins"])}</td><td class="{'up' if row['luck'] >= 0 else 'down'}">{row['luck']:+.1f}</td>
-          <td>{n(row["elo"])}</td><td>{row["titles"]}</td></tr>''')
+          <small>{esc(row["franchise"])} · {row["seasons"]} seasons</small></td>
+          <td>{record}</td><td>{pct(row["winPct"])}</td>
+          <td>{n(row["pointsPerGame"])}</td><td>{row["titles"]}</td></tr>''')
     return "".join(rows)
 
 
@@ -51,11 +50,11 @@ def manager_cards(summary: dict) -> str:
     cards = []
     for row in summary["franchises"]:
         record = f'{row["wins"]}-{row["losses"]}'
-        cards.append(f'''<article class="manager-card"><div><span>{esc(row["manager"])}</span>
-          <small>{esc(row["franchise"])}</small></div><b>{record}</b>
-          <dl><div><dt>Win pct</dt><dd>{pct(row["winPct"])}</dd></div>
-          <div><dt>Points</dt><dd>{n(row["pointsFor"], 1)}</dd></div>
-          <div><dt>Elo</dt><dd>{n(row["elo"])}</dd></div>
+        cards.append(f'''<article class="manager-card"><div class="manager-card__head"><div><span>{esc(row["manager"])}</span>
+          <small>{esc(row["franchise"])}</small></div><b>{record}</b></div>
+          <dl><div><dt>Seasons</dt><dd>{row["seasons"]}</dd></div>
+          <div><dt>Win pct</dt><dd>{pct(row["winPct"])}</dd></div>
+          <div><dt>Titles</dt><dd>{row["titles"]}</dd></div>
           <div><dt>Best run</dt><dd>{row["longestWinStreak"]}W</dd></div></dl></article>''')
     return "".join(cards)
 
@@ -129,8 +128,53 @@ def build_page(canonical: dict, summary: dict) -> str:
     .season-card{display:grid;grid-template-columns:.4fr 1fr;gap:1rem}.season-card h3{font:900 2.5rem var(--data);margin:.25rem 0}.season-card dl{gap:0 1rem}
     .source-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.source-grid code{color:var(--gold2)}.source-grid ul{color:var(--muted);line-height:1.55;margin:.6rem 0 0;padding-left:1.2rem}
     .lh-footer{margin-top:2rem;padding-top:1rem;border-top:1px solid #2b3338;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:1rem}
-    @media(max-width:760px){.lh-head{grid-template-columns:1fr}.lh-meta{justify-content:space-between}.import-line{align-items:flex-start;flex-direction:column}.review-head{grid-template-columns:1fr}.match-people{grid-template-columns:1fr}.match-or{text-align:center}.choice-actions{grid-template-columns:1fr}.review-footer{align-items:flex-start;flex-direction:column}.dashboard,.source-grid{grid-template-columns:1fr}.record-grid,.manager-grid{grid-template-columns:1fr 1fr}.season-grid{grid-template-columns:1fr}.tabs{top:3.4rem}}
-    @media(max-width:500px){.record-grid,.manager-grid{grid-template-columns:1fr}.lh-meta{gap:.8rem}.lh-meta b{font-size:1.25rem}.lh-footer{display:block}.season-card{grid-template-columns:1fr}}
+
+    /* League History uses the same visual system as the Decision Room. */
+    :root{--history-bg:#080c0b;--history-panel:#111715;--history-panel-2:#0d1210;--history-line:#29312d;--history-muted:#aeb7b0}
+    body{background:var(--history-bg);color:var(--ink);font-family:var(--agate)}
+    .lh{max-width:74rem;padding:1rem 1.25rem 5rem}
+    .lh-status{color:var(--history-muted);font-size:.68rem}
+    .lh-head{position:relative;overflow:hidden;min-height:10rem;padding:2.2rem 1.5rem 1.4rem;margin:1rem 0 0;border:1px solid var(--history-line);background:radial-gradient(circle at 80% 0,#c6f53c16,transparent 38%),linear-gradient(145deg,#111815,#0a0f0d)}
+    .lh-kicker,.eyebrow,.review-step{color:var(--signal)}
+    .lh h1{font:700 clamp(2.5rem,6vw,4.9rem)/.86 var(--display);letter-spacing:-.05em;text-transform:none;max-width:12ch}
+    .lh-meta{align-self:center}.lh-meta div{min-width:5.5rem}.lh-meta b{font:800 1.8rem/1 var(--data)}
+    .import-card,.card,.record-card,.manager-card,.season-card{border-color:var(--history-line);background:var(--history-panel)}
+    .history-ready .import-card{margin:.75rem 0 0;padding:.75rem 1rem;background:#0d1210}
+    .import-copy strong{color:var(--ink);font-size:.9rem}.history-ready .import-copy strong{color:var(--signal)}
+    .import-copy span{font-size:.82rem}.import-actions button{border-radius:0;background:var(--signal)}
+    .import-actions .quiet,.has-import .import-actions .quiet{background:transparent;border:1px solid #39433e;color:var(--history-muted)}
+    .tabs{top:3.65rem;gap:1.4rem;padding:1rem .15rem .65rem;background:#080c0bf2;border-color:var(--history-line)}
+    .tab{position:relative;padding:.55rem 0;border-radius:0;background:transparent;color:var(--history-muted);font-size:.72rem}
+    .tab[aria-selected=true]{background:transparent;color:var(--ink)}
+    .tab[aria-selected=true]::after{content:"";position:absolute;left:0;right:0;bottom:-.68rem;height:3px;background:var(--signal)}
+    .panel{padding-top:2.1rem}.section-head{display:block;margin-bottom:1.1rem}.section-head p{margin:.45rem 0 0;max-width:38rem;font:400 .92rem/1.5 var(--agate)}
+    .card h2,.section-head h2{margin:.35rem 0 0;font:700 clamp(1.7rem,3vw,2.5rem)/1 var(--display);letter-spacing:-.025em;text-transform:none}
+    .dashboard{grid-template-columns:minmax(0,1.35fr) minmax(18rem,.65fr);gap:.8rem}
+    .card{padding:1.25rem}.champ{min-height:13rem;border-top:3px solid var(--signal)}
+    .champ strong{font:700 clamp(2.2rem,5vw,4.1rem)/.92 var(--display);letter-spacing:-.04em;text-transform:none}
+    .champ .season-mark{font-size:3rem;color:#c6f53c1a}.power li{border-color:var(--history-line);font-size:.88rem}
+    .notice{border-left:0;border-top:1px solid var(--history-line);background:transparent;padding:1rem 0;font:400 .85rem/1.5 var(--agate)}
+    .history-snapshot{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:.8rem}
+    .snapshot-card{border:1px solid var(--history-line);background:var(--history-panel-2);padding:1rem}
+    .snapshot-card small{display:block;color:var(--history-muted);font:800 .67rem var(--agate);letter-spacing:.08em;text-transform:uppercase}
+    .snapshot-card strong{display:block;margin-top:.3rem;font:700 1.35rem var(--display)}
+    .snapshot-card span{display:block;margin-top:.2rem;color:var(--history-muted);font-size:.78rem}
+    .table-wrap{border-color:var(--history-line);border-radius:.1rem}.history-table{min-width:42rem;background:var(--history-panel-2)}
+    .history-table th{background:#171e1b;color:var(--history-muted);font-size:.66rem}.history-table td,.history-table th{padding:.85rem .8rem;border-color:var(--history-line)}
+    .history-table td{font-size:.85rem}.history-table td:nth-child(2){font-size:.95rem}.history-table td small{margin-top:.15rem;color:var(--history-muted);font:500 .72rem var(--agate)}
+    .record-grid,.manager-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}.season-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+    .record-card,.manager-card,.season-card{padding:1.1rem}.record-card small,.season-card small{color:var(--signal)}
+    .record-card>b{font-size:2rem;margin:.55rem 0}.record-card h3{font:700 1.15rem var(--display)}.record-card p{font:.82rem/1.4 var(--agate)}
+    .manager-card__head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;min-height:0!important}
+    .manager-card span{font:700 1.3rem var(--display)}.manager-card small{margin-top:.18rem;color:var(--history-muted);font:500 .78rem var(--agate)}
+    .manager-card__head>b{font:800 1.2rem var(--data);white-space:nowrap}.manager-card>b{display:none}
+    .manager-card dl,.season-card dl{gap:0 1rem;margin-top:1rem}.manager-card dl div,.season-card dl div{border-color:var(--history-line)}
+    .manager-card dt,.season-card dt{font-size:.64rem}.manager-card dd,.season-card dd{font-size:.82rem}
+    .team-history{margin-top:.9rem;padding-top:.75rem;border-top:1px solid var(--history-line)}.team-history summary{cursor:pointer;color:var(--signal);font:800 .7rem var(--agate);letter-spacing:.04em;text-transform:uppercase}.team-history p{margin:.6rem 0 0;color:var(--history-muted);font:500 .78rem/1.5 var(--agate)}
+    .season-card{grid-template-columns:6rem 1fr}.season-card h3{font-size:2rem}.source-grid{grid-template-columns:1fr 1fr}.source-grid code{color:var(--signal)}
+    .source-grid ul{font-family:var(--agate)}.lh-footer{border-color:var(--history-line);font:500 .75rem var(--agate)}
+    @media(max-width:760px){.lh{padding-inline:.85rem}.lh-head{grid-template-columns:1fr;min-height:0;padding:1.6rem 1rem}.lh-meta{justify-content:flex-start;gap:1.2rem}.lh-meta div{min-width:auto}.import-line{align-items:flex-start;flex-direction:column}.review-head{grid-template-columns:1fr}.match-people{grid-template-columns:1fr}.match-or{text-align:center}.choice-actions{grid-template-columns:1fr}.review-footer{align-items:flex-start;flex-direction:column}.dashboard,.source-grid{grid-template-columns:1fr}.record-grid,.manager-grid,.season-grid{grid-template-columns:1fr}.tabs{top:3.4rem}.history-snapshot{grid-template-columns:1fr 1fr}.champ{min-height:11rem}}
+    @media(max-width:500px){.lh-meta{gap:.9rem}.lh-meta b{font-size:1.25rem}.lh-meta span{font-size:.6rem}.tabs{gap:1.1rem}.history-snapshot{grid-template-columns:1fr}.lh-footer{display:block}.season-card{grid-template-columns:1fr}.manager-card__head{display:block}.manager-card__head>b{display:block;margin-top:.8rem}}
     '''
     script = r'''
     <script>(function(){
@@ -226,7 +270,7 @@ def build_page(canonical: dict, summary: dict) -> str:
     <meta name="description" content="Development prototype for the LineupBeat fantasy football league history tracker.">
     <style>{seo.SHELL_CSS}{seo.TEAMS_CSS}{seo.NAV_CSS}{styles}</style></head><body>
     {seo.site_nav('data', 'nfl')}
-    <main class="lh"><div class="lh-status"><i></i>Development prototype · private local import</div>
+    <main class="lh"><div class="lh-status"><i></i>Private league history</div>
       <header class="lh-head"><div><span class="lh-kicker">League history</span><h1 id="league-title" data-demo="{title}">{title}</h1></div>
       <div class="lh-meta"><div><b id="header-seasons" data-demo="{summary['counts']['seasons']}">{summary['counts']['seasons']}</b><span>seasons</span></div><div><b id="header-games" data-demo="{summary['counts']['games']}">{summary['counts']['games']}</b><span>matchups</span></div><div><b id="header-teams" data-demo="{summary['counts']['franchises']}">{summary['counts']['franchises']}</b><span>teams</span></div></div></header>
       <section class="import-card" aria-labelledby="import-title"><div class="import-line"><div class="import-copy"><strong id="import-title">ESPN history import</strong><span id="import-status" role="status">Install connector 0.3.0, then import from your ESPN league page.</span></div><div class="import-actions"><button id="check-extension" type="button">Check connector</button><button id="edit-manager-matches" class="quiet" type="button" hidden>Manager matches</button><button id="clear-import" class="quiet" type="button" hidden>Remove import</button></div></div>
@@ -240,15 +284,15 @@ def build_page(canonical: dict, summary: dict) -> str:
         <article class="card champ"><div><span class="eyebrow">Defending champion · {trophy['year']}</span></div><strong>{esc(manager[trophy['championFranchiseId']])}</strong><span class="season-mark">01</span></article>
         <article class="card power"><span class="eyebrow">Preseason Elo</span><h2>Power five</h2><ol>{power_rows}</ol></article></div>
         <div class="notice"><strong>Prototype boundary:</strong> Dashboard results below remain fictional. Imported ESPN history appears only in the private review panel above and stays in this browser.</div></section>
-      <section class="panel" id="trophies"><div class="section-head"><div><span class="eyebrow">Hardware</span><h2>Trophy case</h2></div><p>Championships and regular-season scoring crowns stay separate, preserving both playoff results and season-long dominance.</p></div>
+      <section class="panel" id="trophies"><div class="section-head"><div><span class="eyebrow">Hardware</span><h2>Trophy case</h2></div><p>Champions from every completed season.</p></div>
         <div class="record-grid"><article class="record-card"><small>{trophy['year']} champion</small><b>🏆</b><h3>{esc(manager[trophy['championFranchiseId']])}</h3><p>Final standing: 1</p></article>
         <article class="record-card"><small>{trophy['year']} runner-up</small><b>02</b><h3>{esc(manager[trophy['runnerUpFranchiseId']])}</h3><p>Championship finalist</p></article>
         <article class="record-card"><small>{trophy['year']} scoring crown</small><b>SC</b><h3>{esc(manager[trophy['scoringCrownFranchiseId']])}</h3><p>Regular-season points leader</p></article></div></section>
-      <section class="panel" id="all-time"><div class="section-head"><div><span class="eyebrow">Franchise ledger</span><h2>All-time table</h2></div><p>Every metric is recomputed from canonical matchups. Elo uses K=24, margin weighting, and 30% offseason regression.</p></div>
-        <div class="table-wrap"><table class="history-table"><thead><tr><th>#</th><th>Franchise</th><th>W-L</th><th>Win%</th><th>PF</th><th>PPG</th><th>xW</th><th>Luck</th><th>Elo</th><th>Titles</th></tr></thead><tbody>{franchise_rows(summary)}</tbody></table></div></section>
-      <section class="panel" id="managers"><div class="section-head"><div><span class="eyebrow">Identity</span><h2>Manager files</h2></div><p>Manager identity is permanent; changing a team name never splits the franchise record.</p></div><div class="manager-grid">{manager_cards(summary)}</div></section>
-      <section class="panel" id="seasons"><div class="section-head"><div><span class="eyebrow">Archive</span><h2>Seasons</h2></div><p>Incomplete seasons remain visible as gaps so commissioners can backfill them later by CSV or manual entry.</p></div><div class="season-grid">{season_cards(canonical)}</div></section>
-      <section class="panel" id="records"><div class="section-head"><div><span class="eyebrow">Record book</span><h2>League records</h2></div><p>These marks come directly from {summary['counts']['games']} fictional matchups, including playoff weeks.</p></div><div class="record-grid">{record_cards(summary)}</div>
+      <section class="panel" id="all-time"><div class="section-head"><div><span class="eyebrow">Standings</span><h2>All-time leaders</h2></div><p>Career results across every season and team name.</p></div>
+        <div class="table-wrap"><table class="history-table"><thead><tr><th>#</th><th>Manager</th><th>Record</th><th>Win%</th><th>PPG</th><th>Titles</th></tr></thead><tbody>{franchise_rows(summary)}</tbody></table></div></section>
+      <section class="panel" id="managers"><div class="section-head"><div><span class="eyebrow">Careers</span><h2>Managers</h2></div><p>One career record per manager, across every team name.</p></div><div class="manager-grid">{manager_cards(summary)}</div></section>
+      <section class="panel" id="seasons"><div class="section-head"><div><span class="eyebrow">Archive</span><h2>Seasons</h2></div><p>Every season and team stays in the archive.</p></div><div class="season-grid">{season_cards(canonical)}</div></section>
+      <section class="panel" id="records"><div class="section-head"><div><span class="eyebrow">Record book</span><h2>League records</h2></div><p>Single-game highs, lows, and closest finishes.</p></div><div class="record-grid">{record_cards(summary)}</div>
         <div class="source-grid" style="margin-top:1rem"><article class="card"><span class="eyebrow">Design provenance</span><h2>Public reference</h2><p>Architecture and rating behavior informed by the public BGNCo repository. No participant records are copied into LineupBeat.</p></article>
         <article class="card"><span class="eyebrow">Privacy model</span><h2>League controlled</h2><ul><li>Private, unlisted, or public publishing</li><li>Permanent franchise IDs with alias review</li><li>Ledger records obligations; it never holds money</li></ul></article></div></section>
       <footer class="lh-footer"><span>Fictional demonstration data · prototype calculations by LineupBeat.</span><span>Demo snapshot {esc(captured)}</span></footer>

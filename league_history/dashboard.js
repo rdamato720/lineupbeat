@@ -324,19 +324,42 @@
     });
     power.appendChild(list);
 
+    let snapshot = document.querySelector('#overview .history-snapshot');
+    if (!snapshot) {
+      snapshot = element('div', 'history-snapshot');
+      document.querySelector('#overview .notice').before(snapshot);
+    }
+    snapshot.replaceChildren();
+    const titleLeader = summary.managers.slice().sort((a, b) =>
+      b.titles - a.titles || b.wins - a.wins)[0];
+    [
+      ['Most wins', leaders[0] ? leaders[0].manager : '—',
+        leaders[0] ? leaders[0].wins + ' career wins' : 'No results'],
+      ['Most titles', titleLeader ? titleLeader.manager : '—',
+        titleLeader ? titleLeader.titles + ' championships' : 'No results'],
+      ['League archive', summary.seasons.length + ' seasons',
+        summary.games.length.toLocaleString() + ' matchups']
+    ].forEach(([label, value, detail]) => {
+      const card = element('article', 'snapshot-card');
+      card.append(
+        element('small', '', label),
+        element('strong', '', value),
+        element('span', '', detail)
+      );
+      snapshot.appendChild(card);
+    });
+
     const notice = document.querySelector('#overview .notice');
     notice.replaceChildren();
     notice.append(
-      element('strong', '', 'Your complete ESPN archive. '),
-      document.createTextNode(summary.games.length.toLocaleString() +
-        ' matchups across ' + summary.seasons.length +
-        ' seasons, calculated privately in this browser.')
+      element('strong', '', 'Private by default. '),
+      document.createTextNode('Your ESPN archive is calculated in this browser.')
     );
   }
 
   function renderTrophies(summary) {
     setText('#trophies .section-head p',
-      'Every completed season stays in the trophy case, including teams and managers who later left the league.');
+      'Champions from every completed season.');
     const grid = document.querySelector('#trophies .record-grid');
     grid.replaceChildren();
     summary.seasons.filter(season => season.complete && season.champion)
@@ -358,9 +381,9 @@
 
   function renderAllTime(summary) {
     setText('#all-time .section-head p',
-      'Records follow the matched manager across every team name and season. Playoff matchups are included.');
+      'Career results across every season and team name.');
     const head = document.querySelector('#all-time thead tr');
-    const labels = ['#', 'Manager / teams', 'W-L', 'Win%', 'PF', 'PPG', 'xW', 'Luck', 'Elo', 'Titles'];
+    const labels = ['#', 'Manager', 'Record', 'Win%', 'PPG', 'Titles'];
     head.replaceChildren(...labels.map(label => element('th', '', label)));
     const body = document.querySelector('#all-time tbody');
     body.replaceChildren();
@@ -370,20 +393,15 @@
       const name = element('td');
       name.append(
         element('strong', '', row.manager),
-        element('small', '', Array.from(row.aliases).join(' · ') +
-          ' · ' + row.seasons.size + ' seasons')
+        element('small', '', row.latestTeam + ' · ' + row.seasons.size +
+          ' seasons · ' + row.aliases.size + ' team names')
       );
       tr.appendChild(name);
       [
         record(row),
         winPct(row.winPct),
-        number(row.pointsFor, 2),
-        number(row.pointsPerGame, 1),
-        number(row.expectedWins, 1)
+        number(row.pointsPerGame, 1)
       ].forEach(value => tr.appendChild(element('td', '', value)));
-      tr.appendChild(element('td', row.luck >= 0 ? 'up' : 'down',
-        (row.luck >= 0 ? '+' : '') + number(row.luck, 1)));
-      tr.appendChild(element('td', '', number(row.elo, 1)));
       tr.appendChild(element('td', '', String(row.titles)));
       body.appendChild(tr);
     });
@@ -391,20 +409,22 @@
 
   function renderManagers(summary) {
     setText('#managers .section-head p',
-      'Each manager keeps one career record across team changes. Historical team names remain visible.');
+      'One career record per manager, across every team name.');
     const grid = document.querySelector('#managers .manager-grid');
     grid.replaceChildren();
     summary.managers.forEach(row => {
       const card = element('article', 'manager-card');
+      const head = element('div', 'manager-card__head');
       const identity = element('div');
       identity.append(
         element('span', '', row.manager),
-        element('small', '', Array.from(row.aliases).join(' · '))
+        element('small', '', row.latestTeam)
       );
+      head.append(identity, element('b', '', record(row)));
       const dl = element('dl');
       [
+        ['Seasons', String(row.seasons.size)],
         ['Win pct', winPct(row.winPct)],
-        ['Points', number(row.pointsFor, 1)],
         ['Titles', String(row.titles)],
         ['Best run', row.longestWinStreak + 'W']
       ].forEach(([term, value]) => {
@@ -412,14 +432,22 @@
         group.append(element('dt', '', term), element('dd', '', value));
         dl.appendChild(group);
       });
-      card.append(identity, element('b', '', record(row)), dl);
+      card.append(head, dl);
+      if (row.aliases.size > 1) {
+        const history = element('details', 'team-history');
+        history.append(
+          element('summary', '', 'View ' + row.aliases.size + ' team names'),
+          element('p', '', Array.from(row.aliases).join(' · '))
+        );
+        card.appendChild(history);
+      }
       grid.appendChild(card);
     });
   }
 
   function renderSeasons(summary) {
     setText('#seasons .section-head p',
-      'Every ESPN season and every team from that season remain in the archive.');
+      'Every season and team stays in the archive.');
     const grid = document.querySelector('#seasons .season-grid');
     grid.replaceChildren();
     summary.seasons.forEach(season => {
@@ -467,7 +495,7 @@
 
   function renderRecords(summary) {
     setText('#records .section-head p',
-      'Single-game records are calculated from every imported regular-season and playoff matchup.');
+      'Single-game highs, lows, and closest finishes.');
     const grid = document.querySelector('#records .record-grid');
     grid.replaceChildren();
     if (!summary.records) {
