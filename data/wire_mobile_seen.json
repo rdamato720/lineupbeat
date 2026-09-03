@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 818,
+ "count": 833,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -9037,6 +9037,171 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00712
+  },
+  {
+   "candidate_id": "mobile:onsi:e70f876e9fafb665ac61",
+   "player_id": "00-0039139",
+   "source_url": "https://www.si.com/nfl/lions/onsi/biggest-questions-after-trimming-detroit-lions-2026-roster-to-53",
+   "attempted_at": "2026-09-03T15:22:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:22:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005182
+  },
+  {
+   "candidate_id": "mobile:onsi:7fce665e81138dd5eeaf",
+   "player_id": "00-0037197",
+   "source_url": "https://www.si.com/nfl/lions/onsi/biggest-questions-after-trimming-detroit-lions-2026-roster-to-53",
+   "attempted_at": "2026-09-03T15:22:56+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T15:22:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004518
+  },
+  {
+   "candidate_id": "mobile:onsi:ac2eccd93439158c7ea7",
+   "player_id": "00-0040743",
+   "source_url": "https://www.si.com/nfl/saints/onsi/3-roster-decisions-that-could-define-the-saints-season-01m1knbn5ngd",
+   "attempted_at": "2026-09-03T15:22:59+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:23:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003898
+  },
+  {
+   "candidate_id": "mobile:onsi:70d4fc56b16909ae7142",
+   "player_id": "00-0040691",
+   "source_url": "https://www.si.com/nfl/giants/onsi/giants-cowboys-week-1-underdogs-01m1ezbvnbvt",
+   "attempted_at": "2026-09-03T15:23:02+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:23:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004064
+  },
+  {
+   "candidate_id": "mobile:onsi:a95511166c5c476835f8",
+   "player_id": "00-0039337",
+   "source_url": "https://www.si.com/nfl/giants/onsi/giants-cowboys-week-1-underdogs-01m1ezbvnbvt",
+   "attempted_at": "2026-09-03T15:23:05+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:23:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003872
+  },
+  {
+   "candidate_id": "mobile:onsi:09dff106cf1b0bd266b8",
+   "player_id": "00-0037256",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-running-back-debate-bhayshul-tuten-vs-bucky-irving",
+   "attempted_at": "2026-09-03T15:23:07+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-03T15:23:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005954
+  },
+  {
+   "candidate_id": "mobile:onsi:8b93c8035a439572f9f5",
+   "player_id": "00-0038951",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-running-back-debate-bhayshul-tuten-vs-bucky-irving",
+   "attempted_at": "2026-09-03T15:23:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:23:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003954
+  },
+  {
+   "candidate_id": "mobile:onsi:ec56f1d016256fb11af9",
+   "player_id": "00-0036973",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-running-back-debate-bhayshul-tuten-vs-bucky-irving",
+   "attempted_at": "2026-09-03T15:23:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:23:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003966
+  },
+  {
+   "candidate_id": "mobile:onsi:f4804b06e965b5906c23",
+   "player_id": "00-0038611",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-running-back-debate-bhayshul-tuten-vs-bucky-irving",
+   "attempted_at": "2026-09-03T15:23:18+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T15:23:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005592
+  },
+  {
+   "candidate_id": "mobile:onsi:1ecd0673aa0f43cee20e",
+   "player_id": "00-0040719",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-running-back-debate-bhayshul-tuten-vs-bucky-irving",
+   "attempted_at": "2026-09-03T15:23:23+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:23:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004824
+  },
+  {
+   "candidate_id": "mobile:onsi:b035380218bbb4f4027c",
+   "player_id": "00-0039361",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-running-back-debate-bhayshul-tuten-vs-bucky-irving",
+   "attempted_at": "2026-09-03T15:23:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:23:29+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003678
+  },
+  {
+   "candidate_id": "mobile:onsi:6b84771c312350283597",
+   "player_id": "00-0037228",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/rhamondre-stevenson-vs-jaylen-warren-which-fantasy-football-running-back-has-more-upside-in-2026",
+   "attempted_at": "2026-09-03T15:23:29+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:23:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005458
+  },
+  {
+   "candidate_id": "mobile:onsi:e84788452c1454dbaba4",
+   "player_id": "00-0036875",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/rhamondre-stevenson-vs-jaylen-warren-which-fantasy-football-running-back-has-more-upside-in-2026",
+   "attempted_at": "2026-09-03T15:23:34+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T15:23:40+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007668
+  },
+  {
+   "candidate_id": "mobile:onsi:4ba0757bb0a78231b1f6",
+   "player_id": "00-0036139",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/rhamondre-stevenson-vs-jaylen-warren-which-fantasy-football-running-back-has-more-upside-in-2026",
+   "attempted_at": "2026-09-03T15:23:40+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:23:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004034
+  },
+  {
+   "candidate_id": "mobile:article:2eef348c1e17cd0a032e",
+   "player_id": "00-0040129",
+   "source_url": "https://www.pewterreport.com/emeka-egbuka-bucs-toe-injury-experts-discuss/",
+   "attempted_at": "2026-09-03T15:23:43+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T15:23:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00464
   }
  ]
 }
