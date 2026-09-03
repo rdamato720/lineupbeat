@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**2 cards** · batch `7ca925f9375c` · 17 draft calls · $0.0817
+**1 cards** · batch `a85516b5aad2` · 14 draft calls · $0.0664
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,46 +19,24 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. DK Metcalf — PIT WR
+## 1. Kyle Monangai — CHI RB
 
-**Trending up** · TRANSACTION · HIGH evidence
-
-### What changed
-
-The Steelers acquired DK Metcalf from Seattle and signed him to a four-year, $132 million extension, per Mike Tomlin.
-
-### Lineup Beat impact
-
-Pittsburgh’s long-term investment makes Metcalf a key receiver to monitor, but the report does not establish his target share, weekly role or usage.
-
-[Jack Markowski · Sports Illustrated -- PIT](https://www.si.com/nfl/steelers/onsi/mike-tomlin-reveals-one-reason-pittsburgh-steelers-traded-george-pickens) · 2026-09-03
-
-<details><summary>Full evidence reviewed</summary>
-
-Furthermore, Tomlin stated that the "leadership responsibilities" that inherently come with signing a big-money deal wasn't exactly in Pickens' "natural wheelhouse", which is partially why they felt comfortable moving on from him after acquiring DK Metcalf from the Seattle Seahawks and signing him to a four-year, $132 million extension.
-
-</details>
-
----
-
-## 2. Jaylen Waddle — DEN WR
-
-**Worth noting** · TRANSACTION · MEDIUM evidence
+**Trending down** · ABSENT_FROM_PRACTICE · LOW evidence
 
 ### What changed
 
-Parr reported that Denver acquired WR Jaylen Waddle this offseason.
+Kyle Monangai has been absent from Bears offseason practices, Mike Moraitis reported.
 
 ### Lineup Beat impact
 
-Waddle's reported move to Denver creates a new fantasy context, but the evidence gives no role, target-share or health details. Monitor his usage with the Broncos.
+Monangai’s availability is worth monitoring, but the report gives no reason, timetable or indication of a setback. His return to practice would clarify the situation.
 
-[Chad Jensen · Sports Illustrated -- DEN](https://www.si.com/nfl/broncos/onsi/broncos-get-the-edge-over-chiefs-in-latest-afc-west-predictions) · 2026-09-03
+[Mike Moraitis · Sports Illustrated -- CHI](https://www.si.com/nfl/bears/onsi/rome-odunze-d-andre-swift-chicago-bears-practice-injuries) · 2026-09-03
 
 <details><summary>Full evidence reviewed</summary>
 
-"If not for Bo Nix’s injury, the Broncos might have made the Super Bowl last season. With the acquisition of WR Jaylen Waddle and relatively few significant free-agent losses this offseason, Denver has established itself as the most reliable team in a tough division," Parr wrote.
+In addition to the injuries to Odunze and Swift, the Bears have also been without wide receiver Luther Burden and running back Kyle Monangai at practice during the offseason, although Burden has since returned to action.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrVV9tu20gW_JUGsUAeVrR5EanLmxN7ZpSNZcP2jB8mgdAkD8UeNdna7qZozSDA_sb-3n7JVpOSHCc7QbA3YF5ssa_n1Kk6Rf7mZdzm1UoU3tyb5HwWJeUsniR5UKaUFNOszIskzGdxNqUii7IoGo95MslSivJpXk6ztExzPh1HeRCE3sjLuS6MN__5N49vt1rtqFhxi6MxxVtbKY3fb3m-Yddcb1RnNsJtUnVNjeV6j9lbYa3JWr2u_vG3vxsmVbP2LemaiWZHxrqFrOYbMuyabM5lyTjb0J5pyknsSDOrWK0aYZUesay1zFaEya3SlhUK2xplGQ7imRSmYpUwDDevyTJTcU0j1hFtJM5TkpjSrDV8TWcvolydcsv2Q26fzCkt1qLB8PXN5dW71eXdxXcP_YrGYsXK7reEybur25u7h8Xye0wV3LqhKIhSP5j5QfwQzuZRPE-CPwfBPAjcEoH0rFDu3Nub-8XD4qcrN6x5aVc4uhQFNTlOCc5m8XFcilpY7na5ingPwIF2w8JnJFwiGGMWi5s1K5GxA4znf22FEW6zA4GeELzBgwNiqQ6IjZhp-NbvcXOrCtrays_xaFEtHFX3tzNAfLimOPM-jLxjFEjmu1bjOl0rh_yDqqVoGGpjqUAYfCjee08SL0ibSmxRSbNFQiITEtGRee8NC0WDYwAwKodiEOuErZgR68ZlxVkm1j5YAZ4UxCXruGlegQZPPHc7cOmtyDdI8RVua7httVtUEclKtYbee6BFJfKqTwXpCS6xrav2LsA9K0lady1SdrwiEHDn7kXupVY1SFYzVATk7HHVbu7yLycC92tcpvfErZX9_4p3G8N4U5yScIeA2xw1arW_Jw5-_ymMI1YLKR3ML4p0xHiV4wzhKDZovFZAjuYOwnlI8WxahNOsKKMoSmYZTTNshUrFrz3V7q8u7m-Wq3c3PU9rQmkbYWrMPNxdLO8v3jwsbpZuRhUkD8zncvXH0LPqmoFTCHKxvLy6vcKfpdPqVvI9uU71XKPT6IBiEPhBECfp2IlzqwahYPzxzj1r9cug1hU_inZ5s3SC3baIMl-Ztq4HdJwo7y14hlAO5AD1P-fGkRdHOmDJt7NhxLZA8Vps6CCwsy8C-bKh6V5xK8kzki5MSKtwJGy3h0nRkDGrkgvZQpLoLx_c-E5Qh22ntB2mQ5MzCLNX_L2rnGELKVtjda9032e3Cwc8BqhZ2wrLflh8_wNGLHFHt2G61S6WytqtmZ-fd113ZsQZyHbelPLcHFA8d9Q-r5Gub_t0fYQFzRsf8sdvblTjb0-k9I_7fASDBuWvSYE9WNH3A-_j6GtW9qbiBXuLddR87mOPvCgkvTIHriJNNAVyNbukxvE6RywW_OWsoY6VHBuNa17wiSf7TPVTy15DDY7tPZNHB5I_N98KOaLlFWRRE3PGrgfN9ILoOT-0RHfka62aXJn_v6kF0e-Z2o_LN--uLu5-x9Om0Vc8bctNn96XlqZ5YwYqMtdxjINp8LmDjR2UitoMmHZKb6TixeiFlR313W__pLU4MzgW93Nfe-8tyj4YZ6ivFVuKp779ieaXVu9Hn5YBil1XllUc7Ki5i9v1hNaJ9rXqJJPc4MKet2fs8VjDFwZdssc79pbvJTVs4F3fKjRJQLUj6RyqG4ykFDAEhKWJfKCGn1IZA-SsI4oqy-Gm0ZGlFTfP3RVACWvI9WjTR1ErxIZrRO96TqzOSzlY3q7BRbETfQeCSd9yrVmnlaVvdSe8ZKLBxjPO43GSp3yWFfRfd6c_hkq_wapeVP9fulWahvF_6FZ9EU9I9e9dB5hO1vUFEV_y6t_wnkfcVjktQbf_G_MBli_N5_rqcvHj9bP9DAu-aj_ZUK3BfQ4Pvis9SulTAUdBjhodRVBpfLiSdLSyPi9zv3M_tkBP5ENn-_jB9VZjV60pXP8LpmE6Qw-EXqmPenCil801TudJdGquA-nxCiGBTzg5ot63TkigRdfmdtU3VW8-TV_Og65Rkn6ywOMTmk4SysNZGMTBuIzS8ZR4mcZZHJTIoSgmYc7TpCzKcRZPiiwJJuMwK_GCGeNFjjt884pqvgIKZqhPB8L4g-IBSKae_F14KtZq-C4dInHfpmlWRCUPKYtmcUg8SfDdOQ5LiidRlmfuMnyMJpQFaZGFPMjDKKQkoSQMinFSjr2P_wQagx_A:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrVVduO2zYQ_RVCr7V2qbvtt93ESRZJ7MXGbR6KQBiRI4uJLLokZcUJAvQ3-nv9kg6ltbPbfkFfDIsznMuZc4bfgwqcaEolg2UA8yyL8ioDkLGUPE5FFMVVGi_iOJkX1TxHmVQ8TWIu00jUeRJnBSenZBHxNC4wmAUCjLTB8vfvARwORh9RluAoNJmgd4029P-9-oLsvTagnLL-jt7vsXNgTt6oO-h2oP7-8y_L4AiqhUq1yp2YsmzQxjVsrzvltFHdbsaq3jHXIDN4IBvbqSNa1mn6Bqu7GXNqjw6qFpk2THVSCXBKd0zXDJhFV4H4csXeUGyDrjcdc5odDAinBFK6vpVMtGBUfRrTWOX6McDVs7rLS7PVaWr2iY0q3anOt7Z5uXpXvny4ebUdPTpHHqU7HZCMD6v7zcP2bv2aTBKcP4p5nId8EfJkG0fLOFlm2S-cLzn3Lsqg8IWQ33r1-mZ799vKHxuoXUmhayWxExSFX83j83mr9sqN5fsRBdsRN48Tqwmd58hX1t9nA3g4HfPtUUjp-97-xFtqnOz2gMKD1OiBtbrbMfJp6G6FSGDTkCjB0CBhaLyJ8MavdMWhZH4EzOoJ07X2Q_7SapD-isSDa0LRAOWiriz-0V_KmkrwJX2aBXg8NxzcdQykVOOYaZp-bKr73BtFpdL3RvbdN2TQSfZhULWbjR63CMZSxUeytFZPdQ-KGEu1DxSb0gkkdhn2rh-7uO0NZRzjmL7riI1TJ29PLV6wZOB-0kn2nrNjOl3X9pGh0Poku-Yc0KNmlW9yYiQhRFWDOLPu3GkpKLXyVJnEu9ekE1wSSGoJIHhVFTWPokxUeS4wz-gqyU99Gynz6_rtevNxTWd7JHQ7Zfd0enP7YbXelq8eNu_L-4ebF9u7F55Uey2xfaQxtOX_Va566NDYRh08R9YvV_cr-ll7KR5aOKHfTM9mdzFM-HIecp7yOMm9QVv1qL6HW_9t9OdJjyVcZLlZe_QOfdUqUdp-v58ge06Qi0hGxTlWG71_ZOOFJJcW7Yw9W55PNPDvRP9dSYSxpGZoQNjSydYg4Ut8lATMo1l1aG1Z0xR7g35HfPLnR4UDXbw05oGbFpXVvRk198GXYdld2_bWGfCyDkP24s2dd3KUaecacnu3-UgHDsGzbbL2xhfTOHewy-vrYRiurLoiil13dXtdeRyuPaWvCRYM9ajdUIZEfYOh9fql7UAs2elwdA7PUIVnzQc_Pvlla13ZW-n3Ic_zNJnPgh0SH3yp0wv1dNvGS07bNr5s20kBAtqWQInSM9YjtUgPPa1xcOW4ZIPlPH9utw3EWf7EIYAC50WGIqJ3M-FpHefpHIHe0yrhNdRCyiISkGe1rNMqKWSV8SKNqjpZzBPaQuBBFQ3uoaR9ZKehDPQghNMOoNYr_TU8RpcJldMjP1VCzmlcJRkWmVzEBa9rKATyRIokBiyijCcLnmVxnokkqqtsLgqsKS-VyOWirhf00P_4B_ctyv8:WIRE_MOBILE_MANIFEST_V1 -->
