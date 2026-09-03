@@ -100,6 +100,18 @@ class DevSiteTests(unittest.TestCase):
             self.assertNotIn(needle, text.lower())
         dev_site.verify(self.site)
 
+    def test_protection_preloads_feedback_styles(self):
+        page = self.site / "feedback-test" / "index.html"
+        page.parent.mkdir(parents=True)
+        page.write_text(
+            '<html><head></head><body>'
+            '<script defer src="/feedback.js"></script></body></html>'
+        )
+        dev_site.protect(self.site, "develop")
+        text = page.read_text()
+        self.assertIn('<link rel="stylesheet" href="/feedback.css">', text)
+        self.assertLess(text.index('/feedback.css'), text.index('</head>'))
+
     def test_verify_rejects_tracking_in_a_protected_page(self):
         self.site.mkdir()
         page = self.site / "index.html"

@@ -22,6 +22,7 @@ DATA_PLACEHOLDER = (
     '"sports":{},"players":[]}'
 )
 ROBOTS_META = '<meta name="robots" content="noindex, nofollow, noarchive">'
+FEEDBACK_CSS = '<link rel="stylesheet" href="/feedback.css">'
 TRACKING_NEEDLES = (
     "cloudflareinsights.com/beacon.min.js",
     "data-cf-beacon",
@@ -173,6 +174,11 @@ def _protect_page(path: Path, label: str) -> None:
     )
     if ROBOTS_META not in text:
         text = text.replace("</head>", f"{ROBOTS_META}\n</head>", 1)
+
+    # Load the feedback presentation with the document. Adding it only after
+    # feedback.js executes creates a visible unstyled tab on fast navigation.
+    if '/feedback.js' in text and '/feedback.css' not in text:
+        text = text.replace("</head>", f"{FEEDBACK_CSS}\n</head>", 1)
 
     text = re.sub(
         r'<style id="lb-dev-style">.*?</style>',

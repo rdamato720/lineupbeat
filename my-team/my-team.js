@@ -66,7 +66,7 @@
   async function connect(){
     if(!state.model){setStatus('The public Week 1 model is still loading.','warning');return}
     setStatus('Looking for the Lineup Beat ESPN extension in this browser…');window.postMessage({type:'LB_MY_TEAM_CONNECT_REQUEST',version:1},location.origin);
-    setTimeout(()=>{if(!state.extension&&!state.league)setStatus('ESPN extension not detected. Install the development extension, open your ESPN roster, capture it, then return here.','warning')},1200);
+    setTimeout(()=>{if(!state.league)setStatus(state.extension?'ESPN extension detected, but no saved roster was found. Open your ESPN roster, capture it, then return here.':'ESPN extension not detected. Install the development extension, open your ESPN roster, capture it, then return here.','warning')},1200);
   }
   function disconnect(){state.league=null;window.postMessage({type:'LB_MY_TEAM_CLEAR_REQUEST',version:1},location.origin);$('mt-team').hidden=true;$('mt-connect').hidden=false;$('mt-disconnect').hidden=true;setStatus('Disconnected. The extension was asked to clear its browser-local roster copy.','good')}
   function reviewDemo(){
@@ -81,7 +81,7 @@
   }
   window.addEventListener('message',event=>{
     if(event.source!==window||event.origin!==location.origin||!event.data)return;
-    if(event.data.type==='LB_MY_TEAM_EXTENSION_READY'){state.extension=true;if(event.data.hasRoster)window.postMessage({type:'LB_MY_TEAM_CONNECT_REQUEST',version:1},location.origin)}
+    if(event.data.type==='LB_MY_TEAM_EXTENSION_READY'){state.extension=true;if(event.data.hasRoster)window.postMessage({type:'LB_MY_TEAM_CONNECT_REQUEST',version:1},location.origin);else if(!state.league)setStatus('ESPN extension detected, but no saved roster was found. Open your ESPN roster, capture it, then return here.','warning')}
     if(event.data.type==='LB_MY_TEAM_ESPN_ROSTER'){try{state.extension=true;state.league=LineupBeatLeagueAdapter.match(LineupBeatEspnAdapter.adapt(event.data.payload),state.model);render()}catch(error){setStatus('Roster could not be normalized: '+error.message,'error')}}
     if(event.data.type==='LB_MY_TEAM_CLEAR_COMPLETE')setStatus('Disconnected and cleared from extension-local storage.','good');
   });

@@ -47,6 +47,12 @@ def build_trusted_half_ppr_rankings(model, formats, ranks):
     # before this call, so the retained values and order are Half-PPR only.
     records,replacement=formats.rank(rows,'ppr')
     for record in records:record['scoring_format']='half_ppr'
+    shared=ROOT/'site/data/nfl-half-ppr-rankings.json'
+    shared.parent.mkdir(parents=True,exist_ok=True)
+    shared.write_text(json.dumps({
+        'source':'trusted Half-PPR ranking board',
+        'players':records,
+    },sort_keys=True,separators=(',',':'))+'\n')
     css,header,footer=ranks.site_chrome()
     # Keep both the canonical Half-PPR URL and its explicit scoring-format
     # alias. Projection pages link to /half-ppr/, while the primary Rankings

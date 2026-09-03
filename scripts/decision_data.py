@@ -20,6 +20,15 @@ EDITORIAL = ROOT / "data" / "comparison_editorial_opinions.json"
 ADP_META = ROOT / "rosters" / "adp_meta.json"
 WEEK1 = ROOT / "data" / "week1" / "2026" / "v1.0" / "nfl_week1_projections.json"
 NAME_SUFFIXES = {"jr", "sr", "ii", "iii", "iv", "v"}
+WEEKLY_RECOMMENDATION_STATE = {
+    "enabled": False,
+    "label": "No reliable call",
+    "reason": (
+        "Week 1 recommendations are disabled for this release. Forecasts are "
+        "available for inspection, but the trusted season release does not "
+        "authorize lineup recommendations."
+    ),
+}
 
 
 def normalize_player_name(value: str) -> str:
@@ -68,7 +77,7 @@ def load_weekly(season: int = 2026, week: int = 1) -> dict:
         + population.get("identity_resolved_not_ranked", 0)
     ):
         raise ValueError("NFL resolved projection-source population does not reconcile")
-    return payload
+    return {**payload, "recommendation_state": WEEKLY_RECOMMENDATION_STATE}
 
 
 def slug(text: str) -> str:

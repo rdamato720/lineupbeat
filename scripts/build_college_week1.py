@@ -84,14 +84,14 @@ def table(position, rows):
 
 CSS = COLLEGE_LOGO_CSS + """
 .wwrap{max-width:1180px;margin:auto;padding:1.25rem 1rem 3rem}.whero{max-width:800px}
-.whero h1{font-size:2rem;line-height:1.12;margin:.4rem 0}.whero p{color:var(--quiet);line-height:1.55}
+.whero h1{font-size:clamp(2.4rem,5vw,4.3rem);line-height:1.02;letter-spacing:-.035em;margin:.4rem 0 .7rem}.whero p{color:var(--quiet);line-height:1.55}
 .wmeta{font-family:var(--agate);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
 .wtabs{display:flex;gap:.45rem;flex-wrap:wrap;margin:1rem 0}.wtabs a{border:1px solid var(--rule);border-radius:999px;padding:.4rem .8rem;text-decoration:none;color:var(--quiet);font-family:var(--agate);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}.wtabs a[aria-current=page]{background:var(--signal);color:#081006;border-color:var(--signal)}
-.wtools{display:flex;gap:.6rem;flex-wrap:wrap;margin:.8rem 0}.wtools input,.wtools select{background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:8px;padding:.5rem .7rem}.wnote{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:.75rem;color:var(--quiet);font-size:.84rem;line-height:1.5}.wtable{overflow-x:auto;border:1px solid var(--rule);border-radius:10px;margin-top:.8rem}table{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem}th,td{padding:.52rem .62rem;white-space:nowrap;box-shadow:inset 0 -1px 0 var(--rule)}th{font-family:var(--agate);font-size:.67rem;text-transform:uppercase;letter-spacing:.06em;color:var(--quiet);background:var(--card);position:sticky;top:0}td.num,th.num{text-align:right}td:nth-child(5){color:var(--signal);font-weight:700}th:first-child,td:first-child{position:sticky;left:0;background:var(--card);z-index:2}th:nth-child(2),td:nth-child(2){position:sticky;left:3rem;background:var(--card);z-index:2;box-shadow:inset 0 -1px 0 var(--rule),inset -1px 0 0 var(--rule)}.wsection{margin:1.5rem 0}.wsection h2{font-size:1.15rem}.wmore{color:var(--signal);font-family:var(--agate);font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;text-decoration:none}@media(max-width:640px){.whero h1{font-size:1.5rem}}
+.wtools{display:flex;gap:.6rem;flex-wrap:wrap;margin:.8rem 0}.wtools input,.wtools select{background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:8px;padding:.5rem .7rem}.wnote{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:.75rem;color:var(--quiet);font-size:.84rem;line-height:1.5}.wtable{overflow-x:auto;border:1px solid var(--rule);border-radius:10px;margin-top:.8rem}table{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem}th,td{padding:.52rem .62rem;white-space:nowrap;box-shadow:inset 0 -1px 0 var(--rule)}th{font-family:var(--agate);font-size:.67rem;text-transform:uppercase;letter-spacing:.06em;color:var(--quiet);background:var(--card);position:sticky;top:0}td.num,th.num{text-align:right}td:nth-child(5){color:var(--signal);font-weight:700}th:first-child,td:first-child{position:sticky;left:0;background:var(--card);z-index:2}th:nth-child(2),td:nth-child(2){position:sticky;left:3rem;background:var(--card);z-index:2;box-shadow:inset 0 -1px 0 var(--rule),inset -1px 0 0 var(--rule)}.wsection{margin:1.5rem 0}.wsection h2{font-size:1.5rem}.wmore{color:var(--signal);font-family:var(--agate);font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;text-decoration:none}@media(max-width:640px){.whero h1{font-size:2rem}}
 """
 
 
-def page(position=None):
+def _page(position=None):
     css, header, footer = chrome()
     title = "College Fantasy Football Week 1 Projections and Rankings"
     if position:
@@ -116,6 +116,34 @@ def page(position=None):
     description = "Free 2026 college fantasy football Week 1 projections and rankings for QB, RB, WR and TE using Yahoo scoring, reconciled team totals and current market evidence."
     market = data.get("marketInput", {})
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} | LineupBeat</title><meta name="description" content="{e(description)}"><link rel="canonical" href="https://lineupbeat.com{path}">{seo.social_meta(title + " | LineupBeat", description, "https://lineupbeat.com" + path)}<style>{css}{seo.CRUMB_CSS}{seo.UI_CSS}{CSS}</style></head><body>{header}<main class="wwrap"><nav class="crumbs"><a href="/">Home</a><span>/</span><a href="/college-fantasy-football/projections/">College projections</a><span>/</span><b>Week 1</b></nav><header class="whero"><p class="wmeta">2026 · Week 1 · Updated {updated}</p><h1>{e(title)}</h1><p>Reconciled projections for {data["counts"]["players"]:,} players on 64 modeled teams playing from September 3–7. Rankings are built directly from each projected Yahoo-scoring stat line.</p></header><nav class="wtabs">{"".join(tabs)}</nav><div class="wtools"><input id="search" type="search" placeholder="Search players"><select id="team"><option value="">All teams</option>{"".join(f"<option>{e(t)}</option>" for t in teams)}</select></div><p class="wnote"><strong>How to use this:</strong> Every team’s passing, receiving and touchdown totals reconcile. Current, exact player-market evidence anchors the named statistical component for {market.get("playersWithNumericEvidence", 0)} players; game-level spread and total context covers all 64 teams. Market lines are inputs, not outcomes or guarantees. Confirm late injury and depth-chart news before kickoff.</p>{content}</main>{footer}<script>(()=>{{let s=document.querySelector('#search'),t=document.querySelector('#team');function f(){{let q=s.value.toLowerCase(),tm=t.value;document.querySelectorAll('tbody tr').forEach(r=>r.hidden=!!((q&&!r.dataset.name.includes(q))||(tm&&r.dataset.team!==tm)))}}s.addEventListener('input',f);t.addEventListener('change',f)}})()</script></body></html>'''
+
+
+def page(position=None):
+    """Add full-pool discovery without rendering 2,205 rows on the overview."""
+    document = _page(position)
+    index = [{"name": p["name"], "team": p["team"], "pos": p["pos"]}
+             for p in players] if position is None else []
+    payload = json.dumps(index, separators=(",", ":")).replace("</", "<\\/")
+    datalist = ""
+    if position is None:
+        options = "".join(
+            f'<option value="{e(p["name"])}" label="{e(p["team"])} · {e(p["pos"])}"></option>'
+            for p in players)
+        datalist = f'<datalist id="college-week1-player-list">{options}</datalist>'
+        document = document.replace(
+            '<input id="search" type="search" placeholder="Search players">',
+            '<input id="search" type="search" list="college-week1-player-list" '
+            'placeholder="Search all 2,205 players">' + datalist, 1)
+    script = f'''<script>(()=>{{
+const overview={str(position is None).lower()},index={payload},input=document.getElementById('search');
+const norm=value=>String(value||'').trim().toLowerCase();
+function match(){{const query=norm(input.value);if(!query)return null;return index.find(p=>norm(p.name)===query)||index.find(p=>norm(p.name).startsWith(query))||index.find(p=>norm(p.name).includes(query));}}
+function openMatch(){{if(!overview)return;const hit=match();if(hit)location.href='/college-fantasy-football/week-1/'+hit.pos.toLowerCase()+'/?q='+encodeURIComponent(hit.name);}}
+input.addEventListener('change',()=>{{if(match()&&norm(match().name)===norm(input.value))openMatch();}});
+input.addEventListener('keydown',event=>{{if(event.key==='Enter'&&overview){{event.preventDefault();openMatch();}}}});
+const query=new URLSearchParams(location.search).get('q');if(query&&!overview){{input.value=query;input.dispatchEvent(new Event('input'));}}
+}})()</script>'''
+    return document.replace('</body>', script + '</body>', 1)
 
 
 for position in (None,) + positions:

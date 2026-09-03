@@ -233,6 +233,61 @@ def check_my_team(root):
           f"{len(players)} player(s)")
 
 
+def check_development_repairs(root):
+    """Cross-page consistency and discoverability fixes in the dev release."""
+    hub_path = root / "nfl" / "data" / "index.html"
+    hub = hub_path.read_text() if hub_path.is_file() else ""
+    ranking_path = root / "data" / "nfl-half-ppr-rankings.json"
+    try:
+        ranking = json.loads(ranking_path.read_text()).get("players", [])[:3]
+    except (OSError, ValueError):
+        ranking = []
+    check("the data hub preview matches the published Half-PPR board",
+          len(ranking) == 3 and all(
+              f'{row["overall_rank"]} &middot; {row["player_name"]}' in hub
+              for row in ranking))
+    unavailable = ("durability", "strength-of-schedule",
+                   "offensive-line-rb-performance")
+    check("unavailable historical tools are hidden from the data hub",
+          bool(hub) and all(f'href="/nfl/{route}/"' not in hub
+                            for route in unavailable)
+          and "Only tools backed by validated data are shown here" in hub)
+    check("draft-value preview labels both positional ranks",
+          "MKT · LB · GAP" in hub)
+
+    search_path = root / "data" / "nfl-player-search.json"
+    try:
+        search = json.loads(search_path.read_text()).get("players", [])
+    except (OSError, ValueError):
+        search = []
+    sample_page = root / "nfl" / "josh-allen" / "index.html"
+    sample = sample_page.read_text() if sample_page.is_file() else ""
+    check("persistent NFL search has the trusted player index and Enter handling",
+          len(search) >= 424 and "data-player-search" in sample
+          and "event.key !== 'Enter'" in sample
+          and all(resolve(root, row.get("url", "")) for row in search))
+
+    week = root / "college-fantasy-football" / "week-1" / "index.html"
+    season = root / "college-fantasy-football" / "projections" / "index.html"
+    week_text = week.read_text() if week.is_file() else ""
+    season_text = season.read_text() if season.is_file() else ""
+    check("college overview search covers the full player pools",
+          "Search all 2,205 players" in week_text and "Kevin Sperry" in week_text
+          and "Search all 2,351 players" in season_text and "Kevin Sperry" in season_text)
+
+    projections = root / "nfl" / "projections" / "index.html"
+    projection_text = projections.read_text() if projections.is_file() else ""
+    check("the large NFL projection board starts capped with a full-board control",
+          'data-top="200"' in projection_text and "Show all 424" in projection_text
+          and 'loading="lazy"' in projection_text)
+    check("feedback styles load in the document head",
+          bool(sample) and "/feedback.css" in sample.split("</head>", 1)[0])
+    my_team_js = root / "my-team" / "my-team.js"
+    runtime = my_team_js.read_text() if my_team_js.is_file() else ""
+    check("an installed ESPN extension without a roster gets a terminal status",
+          "ESPN extension detected, but no saved roster was found" in runtime)
+
+
 def check_homepage(root, decision_room=False):
     """The homepage sections the Wire replaced *around*.
 
@@ -356,7 +411,9 @@ def check_homepage(root, decision_room=False):
                   r'<article class="hp-feature[^"]*lb-feature-card[^"]*"', text)) == 2
               and text.count('class="hp-decision-summary"') == 2
               and text.count('class="hp-evidence-grid"') == 2
-              and "Projection, modeled volume, and 2025 opponent context align" in text
+              and "RECOMMENDATION UNAVAILABLE" in text
+              and "No reliable call" in text
+              and "trusted season release does not authorize lineup recommendations" in text
               and "Reconciled projection, modeled workload, game environment, and exact player-component markets" in text
               and "Sportsbook team total" in text
               and "Player market evidence" in text
@@ -540,6 +597,7 @@ def main() -> int:
     check_comparison_tool(root)
     if decision_room:
         check_my_team(root)
+        check_development_repairs(root)
 
     home = root / "index.html"
     if home.is_file():

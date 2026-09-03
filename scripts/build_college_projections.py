@@ -213,7 +213,7 @@ print("  chrome, nav and table renderer ready")
 
 CSS = COLLEGE_LOGO_CSS + """
 .cwrap{max-width:var(--content-wide-table);margin:0 auto;padding:1.2rem 1rem 3rem}
-.chero h1{font-size:1.9rem;line-height:1.15;margin:0 0 .5rem}
+.chero h1{font-size:clamp(2.4rem,5vw,4.3rem);line-height:1.02;margin:0 0 .7rem;letter-spacing:-.035em}
 .chero p.lede{color:var(--quiet);font-size:.95rem;line-height:1.55;
   max-width:52rem;margin:0 0 .3rem}
 .cmeta{font-family:var(--agate);text-transform:uppercase;letter-spacing:.08em;
@@ -277,7 +277,7 @@ table.ctab td:nth-child(4){color:var(--signal);font-weight:600}
   text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;
   color:var(--signal);text-decoration:none}
 .cmore:hover{text-decoration:underline}
-.cposh{font-size:1.05rem;margin:1.4rem 0 .5rem}
+.cposh{font-size:1.5rem;margin:1.6rem 0 .6rem}
 .ccount{font-family:var(--agate);text-transform:uppercase;font-size:.62rem;
   letter-spacing:.08em;color:var(--quiet);margin-left:.5rem}
 .fcollege h3{font-family:var(--agate);text-transform:uppercase;
@@ -294,7 +294,7 @@ table.ctab td:nth-child(4){color:var(--signal);font-weight:600}
 .cfaq details{border-bottom:1px solid var(--rule);padding:.6rem 0}
 .cfaq summary{cursor:pointer;font-weight:600;font-size:.92rem}
 .cfaq p{color:var(--quiet);font-size:.86rem;line-height:1.6;margin:.5rem 0 0}
-@media(max-width:640px){.chero h1{font-size:1.45rem}
+@media(max-width:640px){.chero h1{font-size:2rem}
   table.ctab th:nth-child(2),table.ctab td:nth-child(2){left:2.8rem}}
 """
 
@@ -321,7 +321,7 @@ FAQ = [
 ]
 
 
-def page(pos):
+def _page(pos):
     css, header, footer = chrome()
     title = TITLES[pos]
     url = BASE if pos is None else f"{BASE}{pos.lower()}/"
@@ -471,6 +471,36 @@ def page(pos):
 }})();
 </script>
 </body></html>"""
+
+
+def page(pos):
+    """Search the full player pool while keeping the overview concise."""
+    document = _page(pos)
+    index = ([{"name": player["name"], "team": player["team"],
+               "pos": player["pos"]} for player in P]
+             if pos is None else [])
+    payload = json.dumps(index, separators=(",", ":")).replace("</", "<\\/")
+    if pos is None:
+        options = "".join(
+            f'<option value="{e(player["name"])}" '
+            f'label="{e(player["team"])} · {e(player["pos"])}"></option>'
+            for player in P)
+        document = document.replace(
+            '<input id="csearch" type="search" placeholder="Search players"\n'
+            '           aria-label="Search players">',
+            '<input id="csearch" type="search" list="college-season-player-list" '
+            'placeholder="Search all 2,351 players" aria-label="Search all players">'
+            f'<datalist id="college-season-player-list">{options}</datalist>', 1)
+    script = f'''<script>(()=>{{
+const overview={str(pos is None).lower()},index={payload},input=document.getElementById('csearch');
+const norm=value=>String(value||'').trim().toLowerCase();
+function match(){{const query=norm(input.value);if(!query)return null;return index.find(p=>norm(p.name)===query)||index.find(p=>norm(p.name).startsWith(query))||index.find(p=>norm(p.name).includes(query));}}
+function openMatch(){{if(!overview)return;const hit=match();if(hit)location.href='/college-fantasy-football/projections/'+hit.pos.toLowerCase()+'/?q='+encodeURIComponent(hit.name);}}
+input.addEventListener('change',()=>{{const hit=match();if(hit&&norm(hit.name)===norm(input.value))openMatch();}});
+input.addEventListener('keydown',event=>{{if(event.key==='Enter'&&overview){{event.preventDefault();openMatch();}}}});
+const query=new URLSearchParams(location.search).get('q');if(query&&!overview){{input.value=query;input.dispatchEvent(new Event('input'));}}
+}})()</script>'''
+    return document.replace('</body>', script + '</body>', 1)
 
 
 written = []

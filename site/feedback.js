@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   var API='https://feedback.lineupbeat.com/feedback';
-  var css=document.createElement('link');css.rel='stylesheet';css.href='/feedback.css';document.head.appendChild(css);
+  if(!document.querySelector('link[href="/feedback.css"]')){var css=document.createElement('link');css.rel='stylesheet';css.href='/feedback.css';document.head.appendChild(css);}
   var wrap=document.createElement('div');wrap.className='lb-feedback';wrap.innerHTML='\
 <button class="lb-feedback-tab" type="button" aria-haspopup="dialog">Help us improve</button>\
 <dialog class="lb-feedback-dialog" aria-labelledby="lb-feedback-title">\

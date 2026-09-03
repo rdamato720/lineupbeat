@@ -117,8 +117,11 @@ def site_chrome(section=None):
     # files and the mobile rules could not see it.
     header = seo.site_nav(
         section, SPORT,
-        search='<input id="pfind" type="search" placeholder="Find a player" '
-               'autocomplete="off" aria-label="Find a player">')
+        search='<input id="pfind" type="search" data-player-search '
+               'data-index="/data/nfl-player-search.json" '
+               'list="site-player-list" placeholder="Find a player" '
+               'autocomplete="off" aria-label="Find a player">'
+               '<datalist id="site-player-list"></datalist>')
 
     return (css.group(1) if css else ""), header, seo.site_footer()
 
@@ -1881,7 +1884,7 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
           <div class="lb-preview lb-value-preview" aria-hidden="true">
             <div class="lb-preview-head">
               <span>VALUE PREVIEW</span>
-              <span class="lb-preview-badge">ADP vs LB</span>
+              <span class="lb-preview-badge">MKT · LB · GAP</span>
             </div>
 
             <div class="lb-preview-table">{VALUE_ROWS}</div>
@@ -2233,9 +2236,9 @@ def _rank_preview_rows():
     built on every run and the rankings are not.
     """
     import build_nfl_season_release as final_season
-    if final_season.enabled():
-        return ''.join(f'<div class="lb-preview-row"><strong>{r["overall_rank"]} &middot; {esc(r["player_name"])}</strong><span>{r["position"]}{r["position_rank"]}</span></div>' for r in final_season.legacy_rank_sets()['half_ppr'][:3])
-    f = ROOT / "data" / "nfl_rankings_2026.json"
+    trusted = final_season.enabled()
+    f = (SITE / "data" / "nfl-half-ppr-rankings.json" if trusted else
+         ROOT / "data" / "nfl_rankings_2026.json")
     if not f.exists():
         return ""
     try:
@@ -2262,7 +2265,7 @@ def _preview_rows():
     boards the tools below them link to -- a preview of the projections
     that disagrees with the projections would be worse than no preview.
     """
-    import json, sqlite3
+    import json
 
     # Top projection per position.
     best = {}
@@ -2279,33 +2282,22 @@ def _preview_rows():
         f'{esc(nm)}</strong><span>{v:.1f}</span></div>'
         for pos, (nm, v) in sorted(best.items(), key=lambda x: -x[1][1])[:3])
 
-    # Value: where our rank and the market's disagree most. Positive is a
-    # player we like better than his ADP, which is the number a reader is
-    # actually shopping for.
-    # Read the roster here rather than threading it through: this runs
-    # once per build, from the same file the player pages use, so a second
-    # read cannot disagree with the first.
-    gaps = []
-    rp = ROOT / "rosters" / f"{SPORT}.csv"
-    if rp.exists():
-        for r in csv.DictReader(rp.open()):
-            adp = (r.get("adp") or "").strip()
-            pr = PROJECTIONS.get(slug(r.get("name") or ""))
-            if not adp or not pr or not pr.get("rank"):
-                continue
-            try:
-                adp = float(adp)
-            except (TypeError, ValueError):
-                continue
-            gaps.append((r.get("name"), int(round(adp)), int(pr["rank"]),
-                         int(round(adp)) - int(pr["rank"])))
-    gaps.sort(key=lambda x: -abs(x[3]))
+    # Use the exact positional market and LineupBeat ranks shown on the
+    # dedicated draft-value board. Overall pick number is deliberately not
+    # compared with a positional rank.
+    import build_draft_value as draft
+    adp, _meta, _formats = draft.read_adp()
+    projections = draft.read_projections(ROOT / "data" / "projections.xlsx")
+    gaps = [row for row in draft.build_board(projections, adp, "ppr")
+            if row["gap"] is not None]
+    gaps.sort(key=lambda row: (-abs(row["gap"]), row["adp"], row["name"]))
     value = "".join(
-        f'<div class="lb-preview-row"><span>{esc(nm)}</span>'
-        f'<span>{a}</span><span>{r}</span>'
-        f'<span class="lb-value-{"positive" if d > 0 else "negative"}">'
-        f'{"+" if d > 0 else "\u2212"}{abs(d)}</span></div>'
-        for nm, a, r, d in gaps[:3])
+        f'<div class="lb-preview-row"><span>{esc(row["name"])}</span>'
+        f'<span>{esc(row["pos"])}{row["mkt_rank"]}</span>'
+        f'<span>{esc(row["pos"])}{row["lb_rank"]}</span>'
+        f'<span class="lb-value-{"positive" if row["gap"] > 0 else "negative"}">'
+        f'{"+" if row["gap"] > 0 else "\u2212"}{abs(row["gap"])}</span></div>'
+        for row in gaps[:3])
 
     # Schedule: the Giants' opening four, with difficulty from the same
     # opponent win percentage the strength of schedule page uses.
@@ -2339,12 +2331,23 @@ def data_hub_page(base):
     body = body.replace("{SCHED_ROWS}", sched_rows)
     # Optional boards are linked only when their validated build artifact is
     # present. A failed optional import must not leave a polished broken link.
+    unavailable = []
     for route in ("durability", "strength-of-schedule",
                   "offensive-line-rb-performance"):
-        if not (SITE / SPORT / route / "index.html").is_file():
+        page = SITE / SPORT / route / "index.html"
+        available = (page.is_file() and
+                     'data-tool-available="false"' not in page.read_text())
+        if not available:
+            unavailable.append(route)
             body = re.sub(
                 rf'<a class="lb-tool-card" href="/{SPORT}/{route}/">.*?</a>',
                 "", body, flags=re.S)
+    if unavailable:
+        body = body.replace(
+            "Use schedule, availability, play calling and offensive line context\n"
+            "          to understand what sits underneath a player's fantasy projection.",
+            "Only tools backed by validated data are shown here. Use the available\n"
+            "          coaching context to inspect what sits underneath a projection.")
 
     # Dataset alongside the breadcrumbs. The citation fields are the ones
     # the AI crawlers read, and this is the page they were added for: a
@@ -2353,17 +2356,13 @@ def data_hub_page(base):
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Dataset",
          "name": "LineupBeat NFL fantasy data",
-         "description": ("Season projections, ADP and draft value, "
-                         "durability, strength of schedule, offensive "
-                         "coaching and offensive line and running back "
-                         "performance for the NFL."),
+         "description": ("NFL Decision Room, season projections, rankings, "
+                         "ADP and draft value, and offensive coaching context."),
          "url": f"{base}/{SPORT}/data/",
          "keywords": ["fantasy football", "NFL projections", "ADP",
-                      "strength of schedule", "durability"],
+                      "draft value", "offensive coaching"],
          "variableMeasured": ["Projected fantasy points", "ADP",
-                              "Draft value", "Games missed",
-                              "Opponent win percentage",
-                              "Run block win rate"],
+                              "Draft value", "Offensive tendencies"],
          **seo.dataset_extras(temporal="2026"),
         },
         {"@type": "BreadcrumbList", "itemListElement": [
@@ -3771,6 +3770,36 @@ def main():
         print(f"  {len(PROJECTIONS)} projections available for player pages")
     print(f"  {sum(len(v) for v in WIRE_BY_PLAYER.values())} approved Wire "
           f"impact(s) available for player pages")
+
+    # One small, shared player index powers the persistent header search on
+    # player, team and data pages. Keeping it outside the HTML avoids copying
+    # hundreds of options into every generated player page.
+    search_rows = []
+    seen_search_urls = set()
+    searchable = list(players.values()) + [
+        {"name": row.get("name"), "team": row.get("team"),
+         "pos": row.get("position")}
+        for row in roster.values()
+        if slug(row.get("name") or "") in PROJECTIONS
+    ]
+    for row in searchable:
+        name = (row.get("name") or "").strip()
+        position = (row.get("pos") or row.get("position") or "").upper()
+        team = (row.get("team") or "").upper()
+        player_slug = slug(name)
+        if not name or position not in PUBLISHED_POSITIONS or not team:
+            continue
+        url = f"/{args.sport}/{player_slug}/"
+        if url in seen_search_urls:
+            continue
+        seen_search_urls.add(url)
+        search_rows.append({"name": name, "team": team,
+                            "position": position, "url": url})
+    search_rows.sort(key=lambda row: (row["name"], row["team"], row["position"]))
+    (SITE / "data").mkdir(parents=True, exist_ok=True)
+    (SITE / "data" / "nfl-player-search.json").write_text(json.dumps(
+        {"sport": args.sport, "players": search_rows},
+        separators=(",", ":")) + "\n")
 
     RELATED_BY_TEAM = defaultdict(list)
     for row in roster.values():

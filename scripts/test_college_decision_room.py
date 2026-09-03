@@ -125,6 +125,11 @@ class CollegeDecisionRenderingTests(unittest.TestCase):
         self.assertIn("cdr-crest", college_decision_room.JS)
         self.assertIn("@media(max-width:780px)", build_decision_room.CSS)
 
+    def test_sub_tenth_gaps_do_not_round_to_a_false_tie(self):
+        self.assertIn("gapText=v=>Number(v)<.1?'&lt;0.1':num(v)",
+                      college_decision_room.JS)
+        self.assertIn("gapText(x.gap)", college_decision_room.JS)
+
     def test_college_payload_is_not_in_initial_nfl_markup(self):
         nfl = decision_data.load_season()
         rendered = build_decision_room.render(nfl)

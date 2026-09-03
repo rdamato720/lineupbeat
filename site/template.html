@@ -3664,14 +3664,58 @@ twq('config','reect');
       }
     });
   }
-  var sitePlayer = bar.querySelector('#site-player-search');
-  var siteList = bar.querySelector('#site-player-list');
+  var sitePlayer = bar.querySelector('[data-player-search], #site-player-search');
+  var siteList = sitePlayer && document.getElementById(sitePlayer.getAttribute('list'));
   if (sitePlayer && siteList){
-    sitePlayer.addEventListener('change', function(){
+    var loaded = siteList.options.length > 0;
+    var loading = null;
+    function loadPlayers(){
+      if (loaded || !sitePlayer.dataset.index) return Promise.resolve();
+      if (loading) return loading;
+      loading = fetch(sitePlayer.dataset.index, {credentials:'same-origin'})
+        .then(function(response){ if (!response.ok) throw new Error(); return response.json(); })
+        .then(function(data){
+          (data.players || []).forEach(function(player){
+            var option = document.createElement('option');
+            option.value = player.name + ' · ' + player.team + ' ' + player.position;
+            option.dataset.url = player.url;
+            siteList.appendChild(option);
+          });
+          loaded = true;
+        }).catch(function(){ loaded = true; });
+      return loading;
+    }
+    function normalized(value){ return String(value || '').trim().toLowerCase(); }
+    function findPlayer(allowPartial){
+      var query = normalized(sitePlayer.value);
       var options = Array.prototype.slice.call(siteList.options || []);
-      var hit = options.find(function(o){ return o.value === sitePlayer.value; });
-      if (hit && hit.dataset.id)
-        location.href = '/decision-room/nfl/?a=' + encodeURIComponent(hit.dataset.id);
+      var exact = options.find(function(option){
+        var value = normalized(option.value), name = value.split(' · ')[0];
+        return value === query || name === query;
+      });
+      if (exact || !allowPartial || !query) return exact;
+      return options.find(function(option){
+        var value = normalized(option.value), name = value.split(' · ')[0];
+        return name.indexOf(query) === 0;
+      }) || options.find(function(option){ return normalized(option.value).indexOf(query) >= 0; });
+    }
+    function openPlayer(option){
+      if (!option) return false;
+      if (option.dataset.url) location.href = option.dataset.url;
+      else if (option.dataset.id)
+        location.href = '/decision-room/nfl/?a=' + encodeURIComponent(option.dataset.id);
+      else return false;
+      return true;
+    }
+    sitePlayer.addEventListener('focus', loadPlayers);
+    sitePlayer.addEventListener('input', loadPlayers);
+    sitePlayer.addEventListener('change', function(){
+      loadPlayers().then(function(){ openPlayer(findPlayer(false)); });
+    });
+    sitePlayer.addEventListener('keydown', function(event){
+      if (event.key !== 'Enter') return;
+      event.preventDefault();
+      loadPlayers().then(function(){ openPlayer(findPlayer(true)); });
     });
   }
 

@@ -16,7 +16,7 @@ import college_decision_room
 import decision_data
 import seo
 from decision_engine import (FORMAT_LABELS, DecisionContext, closest_calls,
-                             confidence, scoring_movers,
+                             compare, confidence, scoring_movers,
                              strongest_projection_edges, value_signals)
 
 START = "<!-- LB DECISION ROOM START -->"
@@ -36,6 +36,19 @@ def player_label(player: dict) -> str:
     return f"{player['name']} · {player['team']} {player['position']}"
 
 
+def gap_label(value: float) -> str:
+    """Keep sub-tenth closest calls from looking like exact zeroes."""
+    return "&lt;0.1" if abs(float(value)) < 0.1 else f"{float(value):.1f}"
+
+
+def opportunity_value(player: dict, reception_key: str) -> float:
+    opportunity = player.get("expected_opportunity", {})
+    if player.get("position") == "QB":
+        return float(opportunity.get("pass_attempts") or 0)
+    return float(opportunity.get("carries") or 0) + float(
+        opportunity.get(reception_key) or 0)
+
+
 def call_card(result: dict) -> str:
     if result["no_clear_edge"]:
         w, r = result["player_a"], result["player_b"]
@@ -48,7 +61,7 @@ def call_card(result: dict) -> str:
     return f'''<article class="dr-mini">
       <div class="dr-mini-pair"><span>{esc(w['name'])}</span><i>{relation}</i><span>{esc(r['name'])}</span></div>
       <p>{esc(w['position'])}{wf['position_rank']} vs {esc(r['position'])}{rf['position_rank']}
-        · {result['gap']:.1f}-point gap · {esc(result['confidence'])}</p>
+        · {gap_label(result['gap'])}-point gap · {esc(result['confidence'])}</p>
       <p class="dr-recommendation">{esc(recommendation)}</p>
       <p class="dr-market">ADP {esc(w['adp'] if w['adp'] is not None else '—')} / {esc(r['adp'] if r['adp'] is not None else '—')}</p>
       <button type="button" class="dr-open" data-a="{esc(w['id'])}" data-b="{esc(r['id'])}">Compare</button>
@@ -108,7 +121,7 @@ def board_call(result: dict) -> str:
     recommendation = f"{a['name']} over {b['name']}" if result["winner"] else "No clear edge"
     return f'''<a class="hp-board-card" href="{esc(room_url(a, b))}"><small>Closest call</small>
       <h3>{esc(a['name'])} <i>vs.</i> {esc(b['name'])}</h3>
-      <p>{esc(recommendation)} · {result['gap']:.1f}-point edge · {esc(result['confidence'])}</p></a>'''
+      <p>{esc(recommendation)} · {gap_label(result['gap'])}-point edge · {esc(result['confidence'])}</p></a>'''
 
 
 def board_signal(row: dict, stance: str) -> str:
@@ -136,6 +149,7 @@ def sport_header(sport: str, activity: str, players: list[dict] | None = None) -
         options = "".join(f'<option value="{esc(player_label(p))}" data-id="{esc(p["id"])}"></option>'
                           for p in (players or []))
         search = (f'<input id="site-player-search" type="search" list="site-player-list" '
+                  f'data-player-search '
                   f'placeholder="Search NFL players" aria-label="Search NFL players">'
                   f'<datalist id="site-player-list">{options}</datalist>')
     return seo.site_nav(activity if activity != "home" else None, sport, search)
@@ -194,8 +208,9 @@ def render_home(payload: dict, college_payload: dict) -> str:
         raise ValueError("homepage feature art is incomplete")
     featured_a_format = featured_a["formats"]["half_ppr"]
     featured_b_format = featured_b["formats"]["half_ppr"]
-    feature_gap = abs(featured_a_format["projected_points"]
-                      - featured_b_format["projected_points"])
+    nfl_result = compare(featured_a, featured_b, DecisionContext(
+        "weekly", payload["season"], "half_ppr", payload["week"]))
+    recommendation_state = payload.get("recommendation_state", {})
     cp = {p["id"]: p for p in college_payload["players"]}
     college_feature = next(
         r for r in college_payload["strongest_edges"]
@@ -219,14 +234,10 @@ def render_home(payload: dict, college_payload: dict) -> str:
             return "difficult"
         return "near neutral"
 
-    a_volume = sum(featured_a["expected_opportunity"][key]
-                   for key in ("carries", "targets"))
-    b_volume = sum(featured_b["expected_opportunity"][key]
-                   for key in ("carries", "targets"))
-    college_a_volume = (cw["expected_opportunity"]["carries"]
-                        + cw["expected_opportunity"]["receptions"])
-    college_b_volume = (cr["expected_opportunity"]["carries"]
-                        + cr["expected_opportunity"]["receptions"])
+    a_volume = opportunity_value(featured_a, "targets")
+    b_volume = opportunity_value(featured_b, "targets")
+    college_a_volume = opportunity_value(cw, "receptions")
+    college_b_volume = opportunity_value(cr, "receptions")
     college_a_market = college_payload["market_context_by_team"][cw["team_id"]]
     college_b_market = college_payload["market_context_by_team"][cr["team_id"]]
 
@@ -234,7 +245,28 @@ def render_home(payload: dict, college_payload: dict) -> str:
         return f"+{value:.1f}" if value > 0 else f"{value:.1f}"
     def component_label(value: str) -> str:
         return value.replace("_", " ")
-    nfl_feature = f'''<article class="hp-feature lb-feature-card hp-nfl-feature" style="--c:{esc(featured_a['team_color'])}"><small>NFL evidence case · Week 1 · Half-PPR</small><div class="hp-feature-players"><div><img src="{esc(featured_a['photo'])}" alt="{esc(featured_a['name'])}"><img class="hp-team-mark" src="{esc(featured_a['team_logo'])}" alt=""><span>{esc(featured_a['position'])} · {esc(featured_a['team'])} · {"vs." if featured_a.get("home") else "at"} {esc(featured_a.get("opponent"))}</span><b>{esc(featured_a['name'])}</b><em>{featured_a_format['projected_points']:.1f} pts</em></div><i>VS</i><div><img src="{esc(featured_b['photo'])}" alt="{esc(featured_b['name'])}"><img class="hp-team-mark" src="{esc(featured_b['team_logo'])}" alt=""><span>{esc(featured_b['position'])} · {esc(featured_b['team'])} · {"vs." if featured_b.get("home") else "at"} {esc(featured_b.get("opponent"))}</span><b>{esc(featured_b['name'])}</b><em>{featured_b_format['projected_points']:.1f} pts</em></div></div><h2>Tony Pollard vs. Rico Dowdle</h2><div class="hp-decision-summary"><small>EVIDENCE LEAN</small><strong>Tony Pollard</strong><p>Projection, modeled volume, and 2025 opponent context align in Pollard’s favor.</p></div><div class="hp-evidence-grid"><div><span>Projection</span><b>{featured_a_format['projected_points']:.1f} vs. {featured_b_format['projected_points']:.1f}</b></div><div><span>Modeled opportunity</span><b>{a_volume:.1f} vs. {b_volume:.1f}</b></div><div><span>Opponent context</span><b>{esc(featured_a['opponent'])} {matchup_tone(featured_a)}</b></div><div><span>Missing evidence</span><b>Injury + sportsbook</b></div></div><div class="hp-boundary"><strong>What changes the call?</strong> The lean holds only while the modeled workload and matchup assumptions hold. Current injury reporting and sportsbook evidence remain unavailable.</div><a class="hp-card-cta" href="{esc(room_url(featured_a, featured_b))}">Compare the NFL evidence →</a></article>'''
+    if recommendation_state.get("enabled") is False:
+        nfl_badge = "RECOMMENDATION UNAVAILABLE"
+        nfl_call = recommendation_state.get("label", "No reliable call")
+        nfl_summary = recommendation_state.get("reason", "Week 1 recommendations are disabled.")
+        nfl_boundary = ("The comparison remains available for evidence inspection. "
+                        "A player call requires an explicitly enabled weekly release, "
+                        "plus current injury and sportsbook evidence where available.")
+    elif nfl_result["no_clear_edge"]:
+        nfl_badge = "NO CLEAR EDGE"
+        nfl_call = "No clear edge"
+        nfl_summary = (f"The {nfl_result['gap']:.1f}-point projection difference is "
+                       "inside the deterministic weekly no-call band.")
+        nfl_boundary = (f"A displayed gap above {nfl_result['meaningful_gap_to_call'] - .1:.1f} "
+                        "points is required before this becomes a Lean.")
+    else:
+        nfl_badge = f"EVIDENCE {nfl_result['confidence'].upper()}"
+        nfl_call = nfl_result["winner"]["name"]
+        nfl_summary = (f"The validated projection is {nfl_result['gap']:.1f} points "
+                       f"higher for {nfl_call}; supporting context remains visible below.")
+        nfl_boundary = (f"A {nfl_result['runner_up_gain_to_flip']:.1f}-point projection swing "
+                        f"moves {nfl_result['runner_up']['name']} ahead.")
+    nfl_feature = f'''<article class="hp-feature lb-feature-card hp-nfl-feature" style="--c:{esc(featured_a['team_color'])}"><small>NFL evidence case · Week 1 · Half-PPR</small><div class="hp-feature-players"><div><img src="{esc(featured_a['photo'])}" alt="{esc(featured_a['name'])}"><img class="hp-team-mark" src="{esc(featured_a['team_logo'])}" alt=""><span>{esc(featured_a['position'])} · {esc(featured_a['team'])} · {"vs." if featured_a.get("home") else "at"} {esc(featured_a.get("opponent"))}</span><b>{esc(featured_a['name'])}</b><em>{featured_a_format['projected_points']:.1f} pts</em></div><i>VS</i><div><img src="{esc(featured_b['photo'])}" alt="{esc(featured_b['name'])}"><img class="hp-team-mark" src="{esc(featured_b['team_logo'])}" alt=""><span>{esc(featured_b['position'])} · {esc(featured_b['team'])} · {"vs." if featured_b.get("home") else "at"} {esc(featured_b.get("opponent"))}</span><b>{esc(featured_b['name'])}</b><em>{featured_b_format['projected_points']:.1f} pts</em></div></div><h2>Tony Pollard vs. Rico Dowdle</h2><div class="hp-decision-summary"><small>{esc(nfl_badge)}</small><strong>{esc(nfl_call)}</strong><p>{esc(nfl_summary)}</p></div><div class="hp-evidence-grid"><div><span>Projection</span><b>{featured_a_format['projected_points']:.1f} vs. {featured_b_format['projected_points']:.1f}</b></div><div><span>Modeled opportunity</span><b>{a_volume:.1f} vs. {b_volume:.1f}</b></div><div><span>Opponent context</span><b>{esc(featured_a['opponent'])} {matchup_tone(featured_a)}</b></div><div><span>Missing evidence</span><b>Injury + sportsbook</b></div></div><div class="hp-boundary"><strong>What changes the call?</strong> {esc(nfl_boundary)}</div><a class="hp-card-cta" href="{esc(room_url(featured_a, featured_b))}">Compare the NFL evidence →</a></article>'''
     college_feature_html = f'''<article class="hp-feature hp-college-feature lb-feature-card" style="--c:{esc(cw['team_color'])}"><small>College evidence case · Week 1 · Yahoo scoring</small><div class="hp-feature-players"><div><img src="{esc(cw['team_logo'])}" alt="{esc(cw['team'])}"><span>{esc(cw['position'])} · {esc(cw['team'])}</span><b>{esc(cw['name'])}</b><em>{cf['projected_points']:.1f} pts</em></div><i>VS</i><div><img src="{esc(cr['team_logo'])}" alt="{esc(cr['team'])}"><span>{esc(cr['position'])} · {esc(cr['team'])}</span><b>{esc(cr['name'])}</b><em>{crf['projected_points']:.1f} pts</em></div></div><h2>{esc(cw['name'])} vs. {esc(cr['name'])}</h2><div class="hp-decision-summary"><small>EVIDENCE LEAN</small><strong>{esc(cw['name'])}</strong><p>Reconciled projection, modeled workload, game environment, and exact player-component markets form the current case.</p></div><div class="hp-evidence-grid"><div><span>Projection</span><b>{cf['projected_points']:.1f} vs. {crf['projected_points']:.1f}</b></div><div><span>Modeled opportunity</span><b>{college_a_volume:.1f} vs. {college_b_volume:.1f}</b></div><div><span>Player market evidence</span><b>{esc(', '.join(map(component_label, cw['player_market']['components'])))} vs. {esc(', '.join(map(component_label, cr['player_market']['components'])))}</b></div><div><span>Sportsbook team total</span><b>{college_a_market['team_implied_total']:.1f} vs. {college_b_market['team_implied_total']:.1f}</b></div></div><div class="hp-boundary"><strong>What changes the call?</strong> A material role or availability change, a player-market move, or a +{college_feature['gap'] + .1:.1f}-point projection swing moves {esc(cr['name'])} ahead. Market inputs are evidence, not outcomes or guarantees.</div><a class="hp-card-cta" href="{COLLEGE_ROOM_PATH}?a={esc(cw['id'])}&amp;b={esc(cr['id'])}">Compare the College evidence →</a></article>'''
 
     ambient = f'''<div class="hp-ambient-data" aria-hidden="true"><div class="hp-ambient-card hp-ambient-trend"><span>PROJECTION GAP</span><svg viewBox="0 0 210 82" focusable="false"><polyline points="5,67 28,49 49,56 70,31 91,43 115,18 139,36 162,14 184,25 205,9"/></svg></div><div class="hp-ambient-card hp-ambient-formats"><span>SCORING FORMATS</span><ol><li>PPR <b>01</b></li><li>HALF-PPR <b>02</b></li><li>NON-PPR <b>03</b></li></ol></div><div class="hp-ambient-card hp-ambient-share"><span>OPPORTUNITY SHARE</span><div class="hp-ambient-ring"><b>63%</b></div></div><div class="hp-ambient-card hp-ambient-status"><span>AVAILABILITY</span><p><b>Q</b> QUESTIONABLE</p><p><b>D</b> DOUBTFUL</p><p><b>O</b> OUT</p></div><div class="hp-ambient-card hp-ambient-volume"><span>MODELED VOLUME</span><i style="--w:82%"></i><i style="--w:66%"></i><i style="--w:54%"></i><i style="--w:38%"></i></div><div class="hp-ambient-card hp-ambient-market"><span>COLLEGE MARKET</span><ol><li>SPREAD <b>{spread_label(college_a_market['team_spread'])}</b></li><li>TOTAL <b>{college_a_market['game_total']:.1f}</b></li><li>PROPS <b>LIVE</b></li></ol></div></div>'''

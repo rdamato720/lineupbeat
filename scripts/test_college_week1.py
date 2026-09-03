@@ -86,6 +86,16 @@ class CollegeWeek1Tests(unittest.TestCase):
         season = (ROOT / "site/college-fantasy-football/projections/index.html").read_text()
         self.assertIn('/college-fantasy-football/week-1/', season)
 
+    def test_overview_search_reaches_players_beyond_preview_rows(self):
+        week = (ROOT / "site/college-fantasy-football/week-1/index.html").read_text()
+        season = (ROOT / "site/college-fantasy-football/projections/index.html").read_text()
+        self.assertIn("Search all 2,205 players", week)
+        self.assertIn("Search all 2,351 players", season)
+        self.assertIn("Kevin Sperry", week)
+        self.assertIn("Kevin Sperry", season)
+        self.assertIn("event.key==='Enter'", week)
+        self.assertIn("event.key==='Enter'", season)
+
 
 if __name__ == "__main__":
     unittest.main()

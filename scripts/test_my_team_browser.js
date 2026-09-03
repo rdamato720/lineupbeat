@@ -157,6 +157,7 @@ async function main(){
   assert(myTeam.includes('Open full player comparison'));
   assert(myTeam.includes('Your strongest lineup is already set'));
   assert(myTeam.includes('LineupBeatLeagueAdapter.actionableDecisions'));
+  assert(myTeam.includes('ESPN extension detected, but no saved roster was found'));
   assert(!myTeam.includes('matched identity'));
   assert(!myTeam.includes('<h3>${escape(player.name)}</h3>'));
 
