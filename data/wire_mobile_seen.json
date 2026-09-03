@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 833,
+ "count": 850,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -9202,6 +9202,193 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00464
+  },
+  {
+   "candidate_id": "mobile:onsi:b6341044bface29c2eed",
+   "player_id": "00-0039338",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/printable-cheat-sheet-september-auction-value-draft-fantasy-football",
+   "attempted_at": "2026-09-03T16:32:07+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T16:32:12+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004744
+  },
+  {
+   "candidate_id": "mobile:onsi:a9d688c67a95d1ead37f",
+   "player_id": "00-0035228",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/printable-cheat-sheet-september-auction-value-draft-fantasy-football",
+   "attempted_at": "2026-09-03T16:32:12+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T16:32:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005228
+  },
+  {
+   "candidate_id": "mobile:onsi:359b7e3d9fd238704d8b",
+   "player_id": "00-0036355",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/printable-cheat-sheet-september-auction-value-draft-fantasy-football",
+   "attempted_at": "2026-09-03T16:32:16+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T16:32:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006024
+  },
+  {
+   "candidate_id": "mobile:onsi:7e37467c6f636b753198",
+   "player_id": "00-0039738",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/printable-cheat-sheet-september-auction-value-draft-fantasy-football",
+   "attempted_at": "2026-09-03T16:32:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T16:32:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004
+  },
+  {
+   "candidate_id": "mobile:onsi:4ffecee41d77b401a765",
+   "player_id": "00-0036322",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/printable-cheat-sheet-september-auction-value-draft-fantasy-football",
+   "attempted_at": "2026-09-03T16:32:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T16:32:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005544
+  },
+  {
+   "candidate_id": "mobile:onsi:21f1a469919aee4a097d",
+   "player_id": "00-0034857",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/printable-cheat-sheet-september-auction-value-draft-fantasy-football",
+   "attempted_at": "2026-09-03T16:32:33+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T16:32:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005284
+  },
+  {
+   "candidate_id": "mobile:onsi:b96b70d0051042f5b2fb",
+   "player_id": "00-0040735",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/printable-cheat-sheet-september-auction-value-draft-fantasy-football",
+   "attempted_at": "2026-09-03T16:32:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T16:32:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003874
+  },
+  {
+   "candidate_id": "mobile:onsi:9ddd3a6d4edb86784967",
+   "player_id": "00-0038542",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/printable-cheat-sheet-september-auction-value-draft-fantasy-football",
+   "attempted_at": "2026-09-03T16:32:42+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T16:32:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003772
+  },
+  {
+   "candidate_id": "mobile:onsi:7ab208e4c63d927ebe7d",
+   "player_id": "00-0039139",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/printable-cheat-sheet-september-auction-value-draft-fantasy-football",
+   "attempted_at": "2026-09-03T16:32:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T16:32:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003932
+  },
+  {
+   "candidate_id": "mobile:onsi:9a1a8dc789121b31c23d",
+   "player_id": "00-0040663",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/printable-cheat-sheet-september-auction-value-draft-fantasy-football",
+   "attempted_at": "2026-09-03T16:32:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T16:32:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003828
+  },
+  {
+   "candidate_id": "mobile:onsi:39966236f330b84b26e5",
+   "player_id": "00-0038996",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/printable-cheat-sheet-september-auction-value-draft-fantasy-football",
+   "attempted_at": "2026-09-03T16:32:51+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T16:32:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005696
+  },
+  {
+   "candidate_id": "mobile:onsi:99c8952295f5a4466e9d",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-football-last-minute-deep-sleepers-is-marshawn-lloyd-the-wrong-packers-running-back-to-target",
+   "attempted_at": "2026-09-03T16:32:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T16:33:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004776
+  },
+  {
+   "candidate_id": "mobile:onsi:36790dea3a6550563df9",
+   "player_id": "00-0039344",
+   "source_url": "https://www.si.com/nfl/panthers/onsi/jonathon-brooks-responds-critic-panthers-misses-practice",
+   "attempted_at": "2026-09-03T16:33:00+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-03T16:33:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006108
+  },
+  {
+   "candidate_id": "mobile:onsi:e8e049abeeb55fba0f1e",
+   "player_id": "00-0036555",
+   "source_url": "https://www.si.com/nfl/panthers/onsi/jonathon-brooks-responds-critic-panthers-misses-practice",
+   "attempted_at": "2026-09-03T16:33:05+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T16:33:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004932
+  },
+  {
+   "candidate_id": "mobile:onsi:99409220b1358d8b6fa6",
+   "player_id": "00-0039163",
+   "source_url": "https://www.si.com/nfl/texans/onsi/every-position-where-the-texans-could-still-add-help-before-week-1",
+   "attempted_at": "2026-09-03T16:33:10+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T16:33:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00536
+  },
+  {
+   "candidate_id": "mobile:onsi:2f045a36d2d34bbef8d1",
+   "player_id": "00-0036358",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/cowboys-2027-mock-draft-adds-dangerous-national-champion-wr",
+   "attempted_at": "2026-09-03T16:33:14+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T16:33:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004024
+  },
+  {
+   "candidate_id": "mobile:onsi:f00e4b009d6b48c00bbf",
+   "player_id": "00-0037247",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/cowboys-2027-mock-draft-adds-dangerous-national-champion-wr",
+   "attempted_at": "2026-09-03T16:33:16+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T16:33:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004852
   }
  ]
 }

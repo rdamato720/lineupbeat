@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `9011c8b3b132` · 15 draft calls · $0.0713
+**1 cards** · batch `38d470ce28ea` · 17 draft calls · $0.0820
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,24 +19,24 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Rachaad White — WAS RB
+## 1. Jonathon Brooks — CAR RB
 
-**Worth noting** · TRANSACTION · MEDIUM evidence
+**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
 
 ### What changed
 
-Rachaad White has left Tampa Bay to join the Washington Commanders, according to Fantasy On SI.
+Jonathon Brooks has missed both Panthers practices since the team reduced its roster to 53 players, Mike Moraitis reported.
 
 ### Lineup Beat impact
 
-White's team change is worth monitoring because his role and workload in Washington are not stated here. His usage with the Commanders will determine the fantasy impact.
+Brooks' two-practice absence is an availability flag worth monitoring. No reason, injury diagnosis or timetable was provided; his next participation update will clarify whether this is a setback.
 
-[Skyler Carlin · Fantasy On SI](https://www.si.com/onsi/fantasy/news/fantasy-football-running-back-debate-bhayshul-tuten-vs-bucky-irving) · 2026-09-03
+[Mike Moraitis · Sports Illustrated -- CAR](https://www.si.com/nfl/panthers/onsi/jonathon-brooks-responds-critic-panthers-misses-practice) · 2026-09-03
 
 <details><summary>Full evidence reviewed</summary>
 
-Sadly, due to shoulder and foot injuries last season, Irving was limited to 10 games and finished as the RB18 in fantasy points per game (12.3), despite being a popular breakout pick in the early rounds. While Rachaad White has left the Tampa Bay Buccaneers for the Washington Commanders, Kenneth Gainwell now figures to have a receiving role out of Tampa Bay’s backfield in 2026.
+In the two practices since the Carolina Panthers cut their roster down to 53 players on Sunday, running back Jonathon Brooks hasn't taken part.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrVVtuO2zYQ_RVCL21Ry0tKtiz7bS9OuujGDrwO8lAEwkikVsxKpEFSdt0gQH-jv9cv6Yy83uwiyAf0ZbHWDIdnzpw50peohFA1hZbRIppzIaq8TEuRJrNEzoSaiZyXMM9n6WRaiclkorIJVCIvSz6dldMasiQT82meVwnISTSKKnDSR4s_vkSw2zm7V7KAgKUxBH1orMP_7x-PrXLsGlyrDZ2xXadMAHfE4MdGB_WTZ0FBx6oGzINi2rODdaFhnTU6WKfNAytVBb1XrMGgs61iYCRlPbYWJNOGfQTfYGKwhoFTzNjAfICgJGuUU2P2Gx7sPWD5g8bSoVHsGoFgGeXwPt22TKqgXKeNGqI1IEZ_ZLrbQRXGr4AXz92Wx1O3L2II-AEbXUTv1jfLu-Jmc_lmO2SYgBlFOO4UBjfL9-vN9nb1FkMSceKjhCdZzOcxT7dispjOF1z8yvmCc0rRTlVBW6r7YXV9t7zc0FMHdSiwcq2lMhUW4eN8dn7e6k4jBXiIRhRtsSm1PyUyaZU_kbRTla6PQ8vUvmfWsYAnkXRbs_N8OuyWOFjZl0zTJEbPYxghg7vQxDhGF9jOek13j6igNp97h1ya2rpugERTJg4RjxxHn0bRGRopBmR7xGo9QrLMN7ZvcUrDyGuLmIdqGhtowWMHCjxdc-v2BPoA-Jw6x9HjacHZA3SYO5zWRvsGA5hDDW-uRE7iOc96Z7UJiAsvo0PsZ5GM01-oL7_DgqhCugEwb9e34FjpFDzaHpvV1SMVoqIKhX5Eanoj_ZgIRLVuAElBoQ50soYgqjoM6VtAgbErOLKrvqrAKNJjTUPA4Auuv6l1xH5XxihU8VvQ5qBQusYesLmH3mGj2HQDe9wQhpJReiBlWBkCiiN9vvDfv__xrITqsdaqHZaIFEhTPs-iQDxSkzxPjtHZErtZoKD0gs9lXQueVbUoeSmTLCtzPIo7r_8aZHq_vLxfr4q79aDxTtF2a99hZLu5XN1fXm9v1yuKWKnap62Btvjf2oM9GMxt9A5x365ulu-X-GdFq79r4ajICl_J4Dlw4pbzmPN0lkwzCjwtD525ot_Ofj7tfwFnG1itV0sK9WWrq8L3iHbg7Ada-6YzFMhn-yTWHwgMqso6Scxi8punVteG3d-Ov7vyezPErcAyRQulammIw7SQcqz3FEUWvS9q0C1JFt3pEz3fa3XAc88dEoMnh_S2d4M1vMJCgeAUwm_Ibpc3tx_e4TMSC117eY8_ekcQmhB2fnFxcTgcxl6PUWMXJOKLpyleGHXw5x8xeUwJbRu73hjEHNOOxFLhq1PFZQNH3_RtHHq083jv47KvHo-xHtwn-vqJnN6HoveS3JjPRMqTUfSgUBykt9P78aXVTxdJsph-s_rTPlQIAIkR0zPdg2vidvT4DoFQDBYfLfLsddw3gAp6kRDBTOWzqarEXPCUT-okm-QK6iwtU15DXUl88VeQTWtZT8p0Jsspn01EWafzPEX_ACK5alQHxR6lcRrMAd9G8ckMYm1K-2e8F89TKk6fGCckmDzLRQlpns2lwskjBEjx6yHLRCITUaZoH-gjKQg1V4InIkmTRAogCdUpfojw6Ot_AGjxlw:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVcly4zYQ_RUUL3OIKHMTKSonL5qJU7HskpVcUi5WE4uIMQmwAFCyMjX_noYoKePM5Ady0YJuNF-_97r5JajB0aaSLFgE6ZxlRUR5MufAsjQTSULnPBZRXdY5F5mYRTNRl3kC8ayO4yKFiCdFlKRFMhOUx8EkoGCYDRZ_fgmg743ecVaBw9IYgsE12uDvB_nKyYM2IJ20_o7uOq4cmAMGb4zWr_YDcXsd9gaok5QTqC1X-C0tAUVgB7KFWrbSHYhoYUv22riGdFpJp41U2ylZaWI4WK0mRKrPgzkQJmGrtMUS2hAnO-6gbjnZgyUeqGSc_UwaDCv-5kgPBp8se3BSKzL0DBzmyrYltAUjxYHsG-4ajqX8HQ-MWO5qoK_Tdy1VFx7qw8jDNzEEu5XKU_J4t_ytultff9wcM5TDjModeo7B9fLpcb25X33CkMeBR0mU5GFUhlG6ifNFFC2i5Cf_GfkUaTj1sDFvtfx0vbn_Y-mPDQhXYWmBrSKZwSKalun5vJWddMdmvXrBpuHE6sEg50xz5EQ7spU7VOJEKxGexeYijfVd-1t8N5b_5x63nmlpG6_dKMbkzJXXgr_1iJczrOwGo4hv0Vd7Pj5_Qd7ZZUKeexTbkvu2Hawz4C-GIbm9Xk-Dl0lwfjz2fq-OANFI5GwkS6z02Pz5LRjdSgXkCZQX0hI6OB-RhhhtHUrL9B5raDJLSd_Cwedg58-DYoAtmEEp9Bo59vGrVoD2VmT0L2nAqg9YDl65OprJd3QGV1FQTPo-x7nrNJqZL5B7uUjzoowYhxTyGY5bnjJR4lWcHPnXUdLnX9AM1Wa5fsDjjtMGlLQdBq5vnperTfVx_fhQPa2vbzf3t173TjPenpwGbfU_HDZUCaVpZO9FX90tn5b4sfKDNKqGx_-S5xIa-Y-iMIrSMs0yH0DYp-lZ3_j_Rn8e56mCy1g9rjy1_YC-ppUdum7k8wcuIJ20Fj1aayTtYrUfGdJx6JBHNlBMl2jxkwvfGXDyfhww348DZ9Pv4Hy_eFAjhi2jmrzFk43h6EI0sLf5KSwVt7YSKPlguN8EL_58J_keL17a9wSP62jcEd6V_zWVPsnhk7au8XtueXf_uzeubxb_jwmD8Xga53q7uLra7_dTK6do1Csl2qv-xNmVH4-rzyeGw_rIcIgoe62YDalBPmh4zg6PtNuLq4OvL36vWlcNlvnVF83jsphPgi1H83i843vq_WJNk0VUXBbrOEkU2haZiYsz4UfX4lwNuLHBVcd9Gizm-fu4bSCZ5d8kBFDweTHjNC7jKI3wZZtn-N4VeVqnkQBBGStiiltAMJHVacHqWVRkcS3Scp5yysEzSxveQbXDhkdl9rj7w3GdhFLV-i3cxReZqvFVPyLB5LmYz5hgiSjjJKO8ZpwXSQqQRWVWCoG_PMA6zgqEImKaiSjneV3yLOH5nM6Cr38DuPjLQQ:WIRE_MOBILE_MANIFEST_V1 -->
