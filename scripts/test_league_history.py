@@ -61,13 +61,18 @@ def main() -> int:
 
     command = [sys.executable, str(ROOT / "scripts/build_league_history.py")]
     subprocess.run(command, cwd=ROOT, check=True, capture_output=True, text=True)
-    outputs = [ROOT / "site/league-history/index.html", ROOT / "site/data/league-history-demo.json"]
+    outputs = [
+        ROOT / "site/league-history/index.html",
+        ROOT / "site/data/league-history-demo.json",
+        ROOT / "site/assets/league-history-dashboard.js",
+    ]
     first = [hashlib.sha256(path.read_bytes()).hexdigest() for path in outputs]
     subprocess.run(command, cwd=ROOT, check=True, capture_output=True, text=True)
     second = [hashlib.sha256(path.read_bytes()).hexdigest() for path in outputs]
     assert first == second
 
     page = outputs[0].read_text()
+    dashboard = outputs[2].read_text()
     for required in ("League history", "Trophy case", "All-time table", "Manager files",
                      "League records", "noindex,nofollow", "ESPN history import",
                      "Save manager matches", "LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST",
@@ -75,6 +80,7 @@ def main() -> int:
                      "No, different people", "One quick step", "data-demo=",
                      "Your league history is ready",
                      "Every historical team and season is included automatically.",
+                     "/assets/league-history-dashboard.js",
                      "document.body.classList.add('has-import')",
                      "canonical[find(row.identityId)]",
                      "headerSeasons.textContent=p.counts.seasons",
@@ -90,6 +96,15 @@ def main() -> int:
     assert "cookie" not in page.lower()
     for private_name in ("Adrian Chadzynski", "Ralph Damato", "Bobby Digital"):
         assert private_name not in page
+    for required in ("summarize(payload, review)", "renderDashboard",
+                     "renderTrophies", "renderAllTime", "renderManagers",
+                     "renderSeasons", "renderRecords",
+                     "Private ESPN history · processed only in this browser."):
+        assert required in dashboard, required
+    assert "innerHTML" not in dashboard
+    subprocess.run(["node", "--check", str(outputs[2])], cwd=ROOT, check=True)
+    subprocess.run(["node", str(ROOT / "scripts/test_league_history_dashboard.js")],
+                   cwd=ROOT, check=True)
     print("league history calculations, identity, records, privacy and deterministic page: ok")
     return 0
 

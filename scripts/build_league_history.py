@@ -19,6 +19,8 @@ from league_history.engine import summarize_history
 
 DATA_OUT = ROOT / "site/data/league-history-demo.json"
 PAGE_OUT = ROOT / "site/league-history/index.html"
+DASHBOARD_SOURCE = ROOT / "league_history/dashboard.js"
+DASHBOARD_OUT = ROOT / "site/assets/league-history-dashboard.js"
 
 
 def esc(value: object) -> str:
@@ -112,7 +114,8 @@ def build_page(canonical: dict, summary: dict) -> str:
     .tabs{display:flex;gap:.2rem;overflow:auto;padding:.9rem 0;border-bottom:1px solid #252b2f;position:sticky;top:3.8rem;background:#08090bf2;z-index:12}
     .tab{border:0;background:transparent;color:var(--muted);padding:.65rem .85rem;font:800 .78rem var(--agate);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap;border-radius:.2rem}
     .tab[aria-selected=true]{background:var(--gold);color:#0b0c0d}.panel{display:none;padding-top:1.4rem}.panel.active{display:block}
-    .has-import .tabs,.has-import .panel,.has-import .lh-footer{display:none!important}
+    .has-import:not(.history-ready) .tabs,.has-import:not(.history-ready) .panel,.has-import:not(.history-ready) .lh-footer{display:none!important}
+    .history-ready .import-card{max-width:none;margin:1rem 0;padding:.75rem 1rem}.history-ready .import-summary{display:none}.history-ready .tabs{display:flex}.history-ready .panel{display:none}.history-ready .panel.active{display:block}.history-ready .lh-footer{display:flex}
     .import-copy span,.review-head p,.review-result{font-family:var(--agate)}
     .dashboard{display:grid;grid-template-columns:1.25fr .75fr;gap:1rem}.card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid #2b3338;padding:1.15rem}
     .card h2,.section-head h2{margin:.25rem 0;font:700 1.8rem/1 var(--agate);text-transform:uppercase}.card p{color:var(--muted);margin:.45rem 0 0;line-height:1.45}
@@ -166,7 +169,7 @@ def build_page(canonical: dict, summary: dict) -> str:
       function fillPerson(prefix,row){document.getElementById(prefix+'-name').textContent=row.displayName;document.getElementById(prefix+'-meta').textContent=yearsText(row);document.getElementById(prefix+'-teams-summary').textContent=row.teamNames.length+' team name'+(row.teamNames.length===1?'':'s');document.getElementById(prefix+'-teams').textContent=row.teamNames.join(' · ');}
       function savedChoice(pair){if(!state.review)return null;var links={};(state.review.identities||[]).forEach(function(row){links[row.identityId]=links[row.identityId]||[];if(row.mergeInto){links[row.mergeInto]=links[row.mergeInto]||[];links[row.identityId].push(row.mergeInto);links[row.mergeInto].push(row.identityId);}});var queue=[pair.a],seen={};while(queue.length){var id=queue.shift();if(id===pair.b)return 'same';if(seen[id])continue;seen[id]=true;(links[id]||[]).forEach(function(next){if(!seen[next])queue.push(next);});}return 'different';}
       function allAnswered(){return state.pairs.every(function(pair){return Boolean(state.choices[pairKey(pair)]);});}
-      function updateSave(){var ready=allAnswered();approve.disabled=!ready||!state.dirty;approve.textContent=!state.dirty&&state.review?'Saved':'Save manager matches';}
+      function updateSave(){var ready=allAnswered();approve.disabled=!ready||(!state.dirty&&Boolean(state.review));approve.textContent=!state.dirty&&state.review?'Saved':'Save manager matches';}
       function showComplete(){matchCard.hidden=true;complete.hidden=false;decisions.replaceChildren();if(!state.pairs.length){document.getElementById('complete-title').textContent='Manager list looks good';document.getElementById('complete-copy').textContent='ESPN did not find any likely duplicate accounts.';}else{document.getElementById('complete-title').textContent='Manager matches complete';document.getElementById('complete-copy').textContent='You can change any answer before saving.';state.pairs.forEach(function(pair){var a=identity(pair.a),b=identity(pair.b);var row=document.createElement('div');row.className='decision-row';var names=document.createElement('span');names.textContent=a.displayName+' + '+b.displayName;var answer=document.createElement('b');answer.textContent=state.choices[pairKey(pair)]==='same'?'Same person':'Different people';row.append(names,answer);decisions.appendChild(row);});}updateSave();}
       function showPair(index){state.pairIndex=index;complete.hidden=true;matchCard.hidden=false;var pair=state.pairs[index],a=identity(pair.a),b=identity(pair.b);progress.textContent='Match '+(index+1)+' of '+state.pairs.length;fillPerson('person-a',a);fillPerson('person-b',b);var choice=state.choices[pairKey(pair)]||'';document.getElementById('same-person').setAttribute('aria-pressed',String(choice==='same'));document.getElementById('different-people').setAttribute('aria-pressed',String(choice==='different'));}
       function choose(value){var pair=state.pairs[state.pairIndex];state.choices[pairKey(pair)]=value;state.dirty=true;result.textContent='';for(var offset=1;offset<=state.pairs.length;offset+=1){var index=(state.pairIndex+offset)%state.pairs.length;if(!state.choices[pairKey(state.pairs[index])]){showPair(index);updateSave();return;}}showComplete();}
@@ -226,7 +229,7 @@ def build_page(canonical: dict, summary: dict) -> str:
     <main class="lh"><div class="lh-status"><i></i>Development prototype · private local import</div>
       <header class="lh-head"><div><span class="lh-kicker">League history</span><h1 id="league-title" data-demo="{title}">{title}</h1></div>
       <div class="lh-meta"><div><b id="header-seasons" data-demo="{summary['counts']['seasons']}">{summary['counts']['seasons']}</b><span>seasons</span></div><div><b id="header-games" data-demo="{summary['counts']['games']}">{summary['counts']['games']}</b><span>matchups</span></div><div><b id="header-teams" data-demo="{summary['counts']['franchises']}">{summary['counts']['franchises']}</b><span>teams</span></div></div></header>
-      <section class="import-card" aria-labelledby="import-title"><div class="import-line"><div class="import-copy"><strong id="import-title">ESPN history import</strong><span id="import-status" role="status">Install connector 0.3.0, then import from your ESPN league page.</span></div><div class="import-actions"><button id="check-extension" type="button">Check connector</button><button id="clear-import" class="quiet" type="button" hidden>Remove import</button></div></div>
+      <section class="import-card" aria-labelledby="import-title"><div class="import-line"><div class="import-copy"><strong id="import-title">ESPN history import</strong><span id="import-status" role="status">Install connector 0.3.0, then import from your ESPN league page.</span></div><div class="import-actions"><button id="check-extension" type="button">Check connector</button><button id="edit-manager-matches" class="quiet" type="button" hidden>Manager matches</button><button id="clear-import" class="quiet" type="button" hidden>Remove import</button></div></div>
         <div class="import-summary" id="import-summary"><div class="capture-stats" id="capture-stats" hidden></div><section class="manager-review" id="manager-review"><div class="review-head"><div><span class="review-step" id="manager-step">One quick step</span><h2 id="manager-title">Match managers</h2><p id="manager-copy">ESPN found accounts with similar names. Tell us whether each pair belongs to the same person.</p></div><button class="quiet" id="review-managers" type="button" hidden>Review</button></div><div class="match-flow" id="match-flow" hidden><section class="match-card" id="match-card"><div class="match-progress"><span id="match-progress">Match 1</span><span>Possible duplicate</span></div><div class="match-people"><article class="person-card"><small>ESPN account A</small><strong id="person-a-name"></strong><div class="person-meta" id="person-a-meta"></div><details class="person-aliases"><summary id="person-a-teams-summary"></summary><p id="person-a-teams"></p></details></article><span class="match-or">and</span><article class="person-card"><small>ESPN account B</small><strong id="person-b-name"></strong><div class="person-meta" id="person-b-meta"></div><details class="person-aliases"><summary id="person-b-teams-summary"></summary><p id="person-b-teams"></p></details></article></div><p class="match-question">Are these the same person?</p><div class="choice-actions"><button id="same-person" type="button" aria-pressed="false">Yes, same person</button><button id="different-people" type="button" aria-pressed="false">No, different people</button></div></section><section class="match-complete" id="match-complete" hidden><h3 id="complete-title">Manager matches complete</h3><p id="complete-copy">You can change any answer before saving.</p><div class="decision-summary" id="decision-summary"></div><div class="import-actions"><button class="quiet" id="change-answers" type="button">Change answers</button></div></section></div><div class="review-footer"><p id="other-manager-count">Other managers already look distinct.</p><div class="import-actions"><button id="save-manager-matches" type="button" disabled>Save manager matches</button></div></div><p class="review-result" id="review-result" role="status"></p></section><section class="setup-ready" id="setup-ready" hidden><small>Setup complete</small><h2>Your league history is ready</h2><p>Every historical team and season is included automatically. Manager matches are saved on this device.</p></section></div></section>
       <nav class="tabs" aria-label="League history sections">
         <button class="tab" data-tab="overview" aria-selected="true">Overview</button><button class="tab" data-tab="trophies" aria-selected="false">Trophy case</button>
@@ -249,7 +252,7 @@ def build_page(canonical: dict, summary: dict) -> str:
         <div class="source-grid" style="margin-top:1rem"><article class="card"><span class="eyebrow">Design provenance</span><h2>Public reference</h2><p>Architecture and rating behavior informed by the public BGNCo repository. No participant records are copied into LineupBeat.</p></article>
         <article class="card"><span class="eyebrow">Privacy model</span><h2>League controlled</h2><ul><li>Private, unlisted, or public publishing</li><li>Permanent franchise IDs with alias review</li><li>Ledger records obligations; it never holds money</li></ul></article></div></section>
       <footer class="lh-footer"><span>Fictional demonstration data · prototype calculations by LineupBeat.</span><span>Demo snapshot {esc(captured)}</span></footer>
-    </main>{script}</body></html>'''
+    </main>{script}<script src="/assets/league-history-dashboard.js"></script></body></html>'''
 
 
 def main() -> int:
@@ -258,8 +261,10 @@ def main() -> int:
     payload = {"canonical": canonical, "recordBook": summary}
     DATA_OUT.parent.mkdir(parents=True, exist_ok=True)
     PAGE_OUT.parent.mkdir(parents=True, exist_ok=True)
+    DASHBOARD_OUT.parent.mkdir(parents=True, exist_ok=True)
     DATA_OUT.write_text(json.dumps(payload, sort_keys=True, separators=(",", ":")) + "\n")
     PAGE_OUT.write_text(build_page(canonical, summary))
+    DASHBOARD_OUT.write_text(DASHBOARD_SOURCE.read_text())
     print(f"Built {PAGE_OUT.relative_to(ROOT)} from {summary['counts']['games']} matchups")
     return 0
 
