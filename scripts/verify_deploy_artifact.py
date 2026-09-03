@@ -354,7 +354,10 @@ def check_homepage(root, decision_room=False):
               and "Jadan Baugh vs. Kewan Lacy" in text
               and len(re.findall(
                   r'<article class="hp-feature[^"]*lb-feature-card[^"]*"', text)) == 2
-              and "A projection gap is not a start/sit recommendation" in text
+              and text.count('class="hp-decision-summary"') == 2
+              and text.count('class="hp-evidence-grid"') == 2
+              and "Projection, modeled volume, and 2025 opponent context align" in text
+              and "Projection, modeled workload, and team scoring environment align" in text
               and "Projection edge: Tony Pollard" not in text)
         check("the homepage describes market evidence without overstating it",
               "Market evidence appears only when it is validated" in text
