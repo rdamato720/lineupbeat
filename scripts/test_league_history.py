@@ -69,7 +69,7 @@ def main() -> int:
 
     page = outputs[0].read_text()
     for required in ("League history", "Trophy case", "All-time table", "Manager files",
-                     "League records", "noindex,nofollow", "ESPN import",
+                     "League records", "noindex,nofollow", "ESPN history import",
                      "Save manager matches", "LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST",
                      "Are these the same person?", "Yes, same person",
                      "No, different people", "Step 1 of 2", "data-demo=",
