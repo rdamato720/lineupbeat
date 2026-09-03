@@ -87,6 +87,8 @@ def main() -> int:
                      ".has-import .tabs,.has-import .panel,.has-import .lh-footer",
                      "--history-bg:#080c0b", ".tab[aria-selected=true]::after",
                      "<th>Record</th><th>Win%</th><th>PPG</th><th>Titles</th>",
+                     'id="trophy-ledger"', 'id="head-to-head"',
+                     'id="manager-detail"', 'id="record-book"', 'id="top-weeks"',
                      "96", "Prototype boundary", "fictional"):
         assert required in page, required
     assert "identity.seasons.join(', ')+' · '+identity.teamNames.join(' / ')" not in page
@@ -102,7 +104,10 @@ def main() -> int:
                      "renderTrophies", "renderAllTime", "renderManagers",
                      "renderSeasons", "renderRecords",
                      "const labels = ['#', 'Manager', 'Record', 'Win%', 'PPG', 'Titles']",
-                     "element('details', 'team-history')",
+                     "element('details', 'team-history career-aliases')",
+                     "renderHeadToHead", "renderManagerDetail", "renderTopWeeks",
+                     "Most championships", "Best regular season",
+                     "headToHead: series", "titleYears", "seasonStats",
                      "Private ESPN history · processed only in this browser."):
         assert required in dashboard, required
     assert "innerHTML" not in dashboard

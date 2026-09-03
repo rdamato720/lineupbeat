@@ -88,5 +88,18 @@ assert.deepEqual(Array.from(alex.aliases), ['Alpha Team', 'Renamed Team']);
 assert.equal(summary.seasons[0].champion.team.teamName, 'New Team');
 assert.equal(summary.records.highestWeek.score, 120);
 assert.equal(summary.records.lowestWeek.score, 80);
+assert.equal(summary.records.bestRegularSeason.manager.manager, 'Casey Fixture');
+assert.equal(summary.records.bestRegularSeason.season.regWins, 1);
+assert.deepEqual(summary.headToHead['old-a']['b'], {
+  wins: 1,
+  losses: 0,
+  ties: 0,
+  pointsFor: 100,
+  pointsAgainst: 90
+});
+assert.equal(alex.seasonStats.get(2024).wins, 1);
+assert.equal(alex.seasonStats.get(2025).losses, 1);
+assert.deepEqual(alex.titleYears, [2024]);
+assert.equal(alex.longestWinStreak, 1);
 
 console.log('league history dashboard calculations passed');
