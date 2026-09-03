@@ -336,34 +336,37 @@ def check_homepage(root, decision_room=False):
               str(college_room))
         check("the root is a decision-first Lineup Beat homepage, not the full tool",
               'id="lineup-beat-home"' in text and 'id="decision-room"' not in text)
-        check("the homepage has complete primary navigation",
+        check("the homepage has neutral primary navigation",
               all(f'>{label}<' in text for label in
-                  ("NFL", "COLLEGE", "Decision", "Rankings", "Projections"))
+                  ("NFL", "College", "My Team", "About"))
+              and 'class="vbtn sport-pill"' not in text
               and "The Beat" not in text)
-        check("the context-aware NFL player search remains available",
-              'id="site-player-search"' in text
-              and 'placeholder="Search NFL players"' in text)
         check("the homepage has the required decision sections",
               all(label in text for label in
-                  ("WHAT LINEUPBEAT OFFERS", "WHERE WE SEE IT DIFFERENTLY",
-                   "CLOSEST CALLS", "WHY LINEUPBEAT",
+                  ("WHAT LINEUPBEAT OFFERS", "CHOOSE YOUR GAME",
+                   "TWO GAMES · ONE STANDARD", "WHY LINEUPBEAT",
                    "Fantasy football decisions, explained."))
               and "NFL or College" not in text
               and "Today’s Decision Board" not in text
               and "The latest from The Beat" not in text)
-        check("the homepage uses a credible neutral featured decision",
+        check("the homepage presents equal NFL and College featured decisions",
               "Tony Pollard vs. Rico Dowdle" in text
+              and "Jadan Baugh vs. Kewan Lacy" in text
+              and len(re.findall(
+                  r'<article class="hp-feature[^"]*lb-feature-card[^"]*"', text)) == 2
               and "A projection gap is not a start/sit recommendation" in text
               and "Projection edge: Tony Pollard" not in text)
         check("the homepage describes market evidence without overstating it",
               "Market evidence appears only when it is validated" in text
               and "Sportsbook context is never presented as player certainty" in text)
-        check("legacy sport query states have compatibility routing",
-              "new URLSearchParams(location.search).get" in text
-              and "pushState" in text and "popstate" in text)
+        check("the homepage is not a hidden sport-switching experience",
+              "data-home-sport" not in text
+              and "pushState" not in text and "?sport=college" not in text)
         college_payload = root / "data" / "decision-room-college.json"
         check("the College Decision Room payload is isolated from the homepage",
-              college_payload.is_file() and '"CFP_' not in text,
+              college_payload.is_file()
+              and 'id="college-decision-room"' not in text
+              and 'id="college-dr-data"' not in text,
               str(college_payload))
         if college_payload.is_file():
             college = json.loads(college_payload.read_text())

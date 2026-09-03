@@ -212,16 +212,20 @@ class DecisionRoomRenderingTests(unittest.TestCase):
     def test_homepage_navigation_sections_and_mobile_structure(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
         for label in ("NFL", "College", "Decision", "Rankings", "Projections",
-                      "WHAT LINEUPBEAT OFFERS", "START WITH THE EVIDENCE",
-                      "CLOSEST CALLS", "SCORING FORMAT MOVERS",
-                      "Make the call with the", "Find the Week 1 edge",
+                      "WHAT LINEUPBEAT OFFERS", "CHOOSE YOUR GAME",
+                      "TWO GAMES · ONE STANDARD", "Today’s featured decisions.",
+                      "Make the call with the", "NFL + COLLEGE FANTASY FOOTBALL",
                       "Fantasy football decisions, explained.",
-                      "Tony Pollard vs. Rico Dowdle"):
+                      "Tony Pollard vs. Rico Dowdle",
+                      "Jadan Baugh vs. Kewan Lacy"):
             self.assertIn(label, home)
         self.assertNotIn("NFL or College", home)
         self.assertNotIn("Today’s Decision Board", home)
         self.assertNotIn("Choose your context", home)
-        self.assertIn('class="topbar"', home)
+        self.assertNotIn('data-home-sport=', home)
+        self.assertNotIn('class="vbtn sport-pill"', home)
+        self.assertEqual(home.count("<h1>"), 1)
+        self.assertIn('class="topbar home-topbar"', home)
         self.assertIn('aria-controls="navdrawer"', home)
         self.assertIn("@media(max-width:780px)", page.CSS)
 
@@ -240,22 +244,19 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertIn('href="/decision-room/nfl/"', home)
         self.assertIn('href="/decision-room/college/"', home)
         self.assertNotIn('href="/decision-room/reviewed-wire/"', home)
-        self.assertEqual(home.count('data-home-sport="nfl"'), 1)
-        self.assertEqual(home.count('data-home-sport="college"'), 1)
-        self.assertEqual(home.count('class="hp-call-card"'), 6)
-        self.assertEqual(home.count('class="hp-mover-card"'), 3)
-        self.assertEqual(home.count('class="hp-action"'), 9)
+        self.assertEqual(home.count('data-home-sport='), 0)
+        self.assertEqual(home.count('lb-feature-card'), 2)
+        self.assertEqual(home.count('class="hp-action"'), 6)
+        self.assertEqual(home.count('class="hp-sport-card'), 2)
         self.assertIn('href="/my-team/"', home)
-        self.assertEqual(home.count('class="hp-identity hp-college-identity"'), 10)
-        self.assertEqual(home.count('class="hp-id-logo"'), 10)
         self.assertIn("Yahoo scoring", home)
-        self.assertNotIn("College ADP", home.replace("College ADP is not available", ""))
         self.assertIn('href="/about/"', home)
         self.assertIn("A projection gap is not a start/sit recommendation", home)
         self.assertIn("Market evidence appears only when it is validated", home)
         self.assertNotIn("Projection edge: Tony Pollard", home)
-        self.assertIn("pushState", home)
-        self.assertIn("popstate", home)
+        self.assertNotIn("pushState", home)
+        self.assertNotIn("popstate", home)
+        self.assertNotIn("?sport=college", home)
 
     def test_sport_navigation_uses_canonical_context_routes(self):
         nfl = page.sport_header("nfl", "rankings", self.payload["players"])
@@ -270,9 +271,9 @@ class DecisionRoomRenderingTests(unittest.TestCase):
 
     def test_home_has_production_visual_language_without_public_news(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
-        for marker in ("lb-decision-hero", "hp-action-grid", "hp-signal-grid",
-                       "hp-call-grid", "hp-method-grid", "hp-trust",
-                       "lb-feature-card", "What changes the pick?"):
+        for marker in ("hp-home-hero", "hp-dual-feature", "hp-action-grid",
+                       "hp-sport-grid", "hp-method-grid", "hp-trust",
+                       "lb-feature-card", "What changes the call?"):
             self.assertIn(marker, home)
         for removed in ("Reviewed Updates", "The latest from The Beat",
                         "RECENT NEWS", "NEWS UPDATED"):
