@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `fc01e49be6cb` · 17 draft calls · $0.0816
+**2 cards** · batch `6b44945c4f2d` · 16 draft calls · $0.0827
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,24 +19,50 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Jakobi Meyers — JAX WR
+## 1. Alec Pierce — IND WR
 
-**Worth noting** · INJURY · MEDIUM evidence
+**Trending down** · INJURY · LOW evidence
 
 ### What changed
 
-Jakobi Meyers was among four Jaguars players noted with an injury coming out of camp, with a wrist issue listed.
+Alec Pierce has dealt with an ankle issue, according to Fantasy On SI.
 
 ### Lineup Beat impact
 
-Meyers' wrist is a preseason availability concern worth monitoring, but the report gives no severity, practice status or timetable. His next participation update will clarify any Week 1 impact.
+This is an availability concern worth monitoring, but the report provides no severity, practice status, setback indication or timetable.
 
-[John Shipley · Sports Illustrated -- JAX](https://www.si.com/nfl/jaguars/onsi/jacksonville-sorting-out-pre-week-1-injury-news-what-it-means-for-brian-thomas-jr) · 2026-09-02
+[Daniel Outerbridge · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/tyler-warren-injury-update-gives-fantasy-football-managers-reason-to-relax) · 2026-09-02
 
 <details><summary>Full evidence reviewed</summary>
 
-Otherwise, the only notable injuries the Jaguars had coming out of camp came down to four key players: wide receivers Brian Thomas Jr. (shoulder) and Jakobi Meyers (wrist), offensive lineman Cole Van Lanen (knee), and running back LeQuint Allen.
+More importantly, the Colts have plenty of reason to expand Warren's role in Year 2. Indianapolis moved on from Pittman Jr. this offseason, while Alec Pierce has dealt with an ankle issue.
+
+More importantly, the Colts have plenty of reason to expand Warren's role in Year 2. Indianapolis moved on from Pittman Jr. this offseason, while Alec Pierce has dealt with an ankle issue. Keenan Allen was recently added to the receiving corps as extra insurance which creates an opportunity for Warren to become one of the most important pieces in the Colt's passing game.
+
+Indianapolis moved on from Pittman Jr. this offseason, while Alec Pierce has dealt with an ankle issue. Keenan Allen was recently added to the receiving corps as extra insurance which creates an opportunity for Warren to become one of the most important pieces in the Colt's passing game.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVttu20YQ_ZUFX-qgos2beNGbG6utHUdOHadpUQTEkDsU1yaXxO5StBrk3ztLSoqN9gsKGII8M5zLOWeG-uoUYMo6F9xZOVXp-RhlBcZlkRU-5xAE0XKZFFCEPI3SFEPupX4aQBqSHb0QvSAqIt8rMcuWvrNwSlBcO6u_vjrQ96rbIc_BUGpywWDqTtH3m66W7GMt-gb39pGubVEaUHvyvcc9Kv0DG5XQhgnNgPUKNYLuJIMdiAYK0QizZ2UnS1SSjZ0yNWs7KUynhNwuWDEYZmpkCnvysa3YoWayYxp3qOjRBaWE0ogSmTZgBs06xYxo0UDR4Dn7lcpKfDasB0VRogcjqPrQczDIRtE0rGxAiWrPQO7ZZ8Qn5jPR9pT0_NVA-QmEYj-D8MJH3W6FtDPfXa1v86v7y58fpghpKCI3-x7Jeb_-cHf_cL35hVy2PpkCL4hdL3O94CHwVlG8CrMfPW_leTZEKCxtuxT3afP2dn15b60KKpNT5kpwJNiclXeeHc2NaIWZRrTEOZuXQHEBW9lpMUOkEIztnnGCSjSajaiOMCO3oz98h513E-qG6R5Li9VYI7Gi2Ewxa4XWyE9ULBg-C8rCEFSzt-WoKD7Ts9ZouimebaFFbQtRlyfGbPCBhAOfI2hmgadpqa0vCwd3x8GdO9vEKDRVtCLpJFWjNqdEQj4OSlDf1nMD2wGo0Ro4ia0labGOlNVVrIS2tx9IQ47SNld1g2JPuGd9A3a6FcmEWyhKJPVRkp-UAMke6q6l1m7UOTvTdTc0HNUbEhGnYk9dIY7YnE3yf7OgYhVKTSlYIyS2lOJtR33-Tl9uQaJkZ08SkQJtDjVIabssoHxit_jbIIiqy6ZBaRE7QpCXFCuslOalb6lugytiX6x4nERlyiPkCYRhUhV-ldCjtLbi74Ok3m3uPm_I1mJZgxS6Jev15ubT_Z_W2HFsDsKGJv_fbTaxTTPQ5ZqGvlp_WNPHxm7tzLs9bi-JPDlmqD3P9bwwymK7qT2t1WFRP9sdJb0-zqubw3GDN3ebtXUNRSPKXA9tO2P5Wi1W7UAwbWcZHnV7kKIVN23QKAhLks0k8f1_CHpxCDkRpAerOn3Y7Nc9_Puw0W0gMedEIjZ2pIk7Kk1VDl4SsNZ5RUQPxDudmi_WvhNIV-T7yBbS-dppGmba2I-WbM2um2bQRoGdxnXZzeUfNoiOktya2gpsfXX96T3ZDIJV5RwwKNtObUyvVxcX4ziea3FO01_Iqrl4nKG6sOKnf8on0uKOVICuppLUuksAuSRTdyQpuL47o-dKHLU71mBcYdwWQWq36pRb2CV3zbTk7qNyvn2x51ybfNDcnlx6d8ZRtHC2SDKyc8zvxpf3PFh5Gf2d7vm8USU0DSHmJ0ceJt3Sfg30ogCTT4fcWaXxa7-uIVjGLwIcSDBNllj6me-FXlQFcZQiVHFYhF4FVcl54pcQLyteRUWY8GLpJZFfVGGWhnTLwCJe1nSIcnvVZsZGeuW48xUhfIru2d35J_ry-efF3In9iYFZEhQcgAepzysvqKooC3hWVWlCNioFEcERZVWWRMusSovlMoziJOZ-RqsTOt_-AZLy9Xw:WIRE_MOBILE_MANIFEST_V1 -->
+---
+
+## 2. Tyler Warren — IND TE
+
+**Trending down** · INJURY · MEDIUM evidence
+
+### What changed
+
+Tyler Warren pulled up while clutching his groin during a joint practice with Atlanta.
+
+### Lineup Beat impact
+
+This is an availability concern for Warren until Indianapolis clarifies whether he was evaluated, returned to practice or has a groin injury. No diagnosis or timetable was reported.
+
+[Daniel Outerbridge · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/tyler-warren-injury-update-gives-fantasy-football-managers-reason-to-relax) · 2026-09-02
+
+<details><summary>Full evidence reviewed</summary>
+
+When Indianapolis Colts tight end Tyler Warren pulled up clutching his groin during a joint practice with the Atlanta Falcons, fantasy football managers everywhere held their collective breath. Soft-tissue injuries, particularly groin strains, carry a notorious reputation for lingering and recurring at the worst possible moments.
+
+</details>
+
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrtWNtu4zYQ_RXCL32o7ehiy7LfgiYt0nadRTbboGgXBkVSFnclUiApe91F_71nJNtJesPuQ4stUCAwoqE4nDlz5gztD6OCB1FttBytRlkxmy1nczErE6mybFnkcRrJMhI8kXOp0vlSRlEuo6SIIhVzvpwto3K-nJfLNC3zmI_GI8Gd9KPVTx9GvG2d3Sm54QGuscS7UFmH_6-40apmt11QrnBabhVttE2jTODugDfuK-0Z_rhhfMd1zQtd63BgwhqhnGF760LFGmt0sE6b7ZgVXWChUsypFmuMjtZSeWYs82qnHHaPYeUiaKGYDzx0foylUHDxjmkjteBBW8OsY0E3KvCiVtNncW3OGRWHIaMnawhjqw3ML26vrr_fXN1dfn3fv2EC3tiEQ6uweHf98vbu_mb9DZYkD2RKoiSbRMtJlNwn6SqKVlH8JX1G9Ip2SlBUeG99_c3l_c0P12R2vAwbuC6RIgAZraLpIjvZa93o0OdCdQCUSNd2DllL2wMSmG-V0OWB7StletS4eVcrAO47xawQnXNKUvJry6TmW2O97tE6A8kdcNTtAFkNe03AORU6VOeMH9tzfypF7-8mUFU7I2rFHR2Pw10fwXA2Fq3ZWlR0OnozHqndKcHRC-uw3FBxuQk1YqBdX9k6eFbxnWJtDZwPzJaIgntEFSxT71tuJHvgyMd84ZmzlKVhP9LpyZTdoOzc8NbWOLih0uJ4VjrbsJc6hAb0-9ZNcRLFVZa-dzxG3Bp-Lmsl8JoiZCvkKRWvA9trEJNo-4jo9Gfzs_kvx8--U8rAdlkjxr6moKWiLBiXqCyFOvSeUHqH4qFPXYvu9cggOI6Qfec4CklHi4oJpBhU3962JUg6Q91dgkJDruSxUGgv0NEoAoX8N9aHRwxZq3GeJzxOUAKilntPEWx5MwD_P0Z_j9Hosc02AmzTpEvDOGgsZFetICR6NU9VkYt4EReSZ4nIuUpibIWg6196fXq9_m59-7CGrVGigsL7Btab9bev734ko5WqPqokrzefq9rbvVHOV7rtY7-6fnmNjzUpeVvzg6Lp9YQTZ_OAVxRNoihdZNmMFqCZR-l-uKNnZ98OYr7hZ02_XZOet11Ra7HxXdMMgHw07caMC_BIUjVBh69Rcu4P7NawVzfTP3j-4wADxySiB-KqpkKAVr0vCRyOy9oo7zclytI5RRPlDdl3Wu2x8ZwJ4TSMtWHWwPQsGFoI8L4NFZa-v32AISg-UOQKD52jAKoQWr-6uNjv91Ovp2DJBbHvohx8XWjztnNa-YtwqJWb7PtGmPTWw6RribqTrd4pPznumJTWouh1PUGj8y1qOxnkdRIs_qv5-9Gv43_2rvKkYzsTdP1ctUXNnS6R0nkaVsPYVDted8hHjo9jddCQM6nhlajB2dZhXrIBgyl7OrGfsfuoSdQvwyz-j1xslvEnXGyOesAfMaBM__QKxA9nxI_V-SuYG7QarJDxvqF53YNKjl8dBeWkOYym9SPiHCO_M-8Mmun315kHunk9I8JwFQh6WwWGLmT3xPBTaG2HsSJZ14IvHa7r1KNEu6H2siNVRNZv8RQeY-8Fg2TyMtTUDtCHGuBCCY_dwU7dwU7dwSiTA4BB6JWqJW3XDlzG-XCKe0pBc6masle2DJNwvLYd2_J0MexAagy-ITr0Pdd0KL4aOEBE8INUtuvp2A0V7bukRhZqSAUAgCG4h_ZPg9hjDGC2QVe9JnQbSxT1HzvAyrkUUSbneZ7NyrRMZ8XiXxtgn6sEfMS0e0rDPxt3syhO8ufj7v76E8fdX1B9uIJ9MuGPZP-Mx9-L66ub1y8-own4hvTch03nJUlulCcZvk5uFdhB9Bum4lnP03vIeDxbzfOzng_NIXAKIIqzE_J9a6NVQHr42PQyPlrlv1v3FU_m2ZMXRnyh8sVciXgZR2k0K5NsliteZmmRRiUvhZSLWPBsXspyVqQLWcyjxSwuynSZp7jv0u8QXlSq4RuomR9KtMfImQyCALgK-36yi8_12gw_ggyR0A8hCzHjxSIXCmereS4W8SyT8L2USiUKYYgyWURxulS5TONFlmQJL5NCyTwv4sVs9Otv4UIIfQ:WIRE_MOBILE_MANIFEST_V1 -->
