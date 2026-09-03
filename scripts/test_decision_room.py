@@ -273,7 +273,8 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
         for marker in ("hp-home-hero", "hp-dual-feature", "hp-action-grid",
                        "hp-sport-grid", "hp-method-grid", "hp-trust",
-                       "lb-feature-card", "What changes the call?"):
+                       "lb-feature-card", "hp-ambient-data", "hp-ambient-trend",
+                       "hp-ambient-volume", "What changes the call?"):
             self.assertIn(marker, home)
         for removed in ("Reviewed Updates", "The latest from The Beat",
                         "RECENT NEWS", "NEWS UPDATED"):
