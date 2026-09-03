@@ -270,7 +270,7 @@ def build_page(canonical: dict, summary: dict) -> str:
     <meta name="description" content="Development prototype for the LineupBeat fantasy football league history tracker.">
     <style>{seo.SHELL_CSS}{seo.TEAMS_CSS}{seo.NAV_CSS}{styles}</style></head><body>
     {seo.site_nav('data', 'nfl')}
-    <main class="lh"><div class="lh-status"><i></i>Private league history</div>
+    <main class="lh"><div class="lh-status"><i></i>private local import</div>
       <header class="lh-head"><div><span class="lh-kicker">League history</span><h1 id="league-title" data-demo="{title}">{title}</h1></div>
       <div class="lh-meta"><div><b id="header-seasons" data-demo="{summary['counts']['seasons']}">{summary['counts']['seasons']}</b><span>seasons</span></div><div><b id="header-games" data-demo="{summary['counts']['games']}">{summary['counts']['games']}</b><span>matchups</span></div><div><b id="header-teams" data-demo="{summary['counts']['franchises']}">{summary['counts']['franchises']}</b><span>teams</span></div></div></header>
       <section class="import-card" aria-labelledby="import-title"><div class="import-line"><div class="import-copy"><strong id="import-title">ESPN history import</strong><span id="import-status" role="status">Install connector 0.3.0, then import from your ESPN league page.</span></div><div class="import-actions"><button id="check-extension" type="button">Check connector</button><button id="edit-manager-matches" class="quiet" type="button" hidden>Manager matches</button><button id="clear-import" class="quiet" type="button" hidden>Remove import</button></div></div>
