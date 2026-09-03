@@ -61,6 +61,30 @@ class CollegeDecisionDataTests(unittest.TestCase):
             DecisionContext("weekly", 2026, "yahoo", week=1))["format_flips"]
                             for i in range(3)))
 
+    def test_delayed_market_context_covers_every_modeled_team(self):
+        market = self.data["market"]
+        contexts = self.data["market_context_by_team"]
+        self.assertEqual(market["state"], "available_delayed_consensus")
+        self.assertEqual(market["data_delay_seconds"], 30)
+        self.assertEqual(len(contexts), 64)
+        self.assertTrue(all(row["state"] == "available"
+                            and row["spread_book_count"] >= 1
+                            and row["total_book_count"] >= 1
+                            for row in contexts.values()))
+
+    def test_featured_college_market_context_is_exact(self):
+        contexts = self.data["market_context_by_team"]
+        florida = contexts["CFF_FLA"]
+        ole_miss = contexts["CFF_MISS"]
+        self.assertEqual((florida["team_spread"], florida["game_total"],
+                          florida["team_implied_total"]), (-26.5, 59.5, 43.0))
+        self.assertEqual((ole_miss["team_spread"], ole_miss["game_total"],
+                          ole_miss["team_implied_total"]), (-6.5, 55.0, 30.75))
+        self.assertTrue(florida["blowout_risk"])
+        self.assertFalse(ole_miss["blowout_risk"])
+        self.assertEqual(florida["consensus_books"],
+                         ["Pinnacle", "DraftKings", "FanDuel"])
+
 
 class CollegeDecisionRenderingTests(unittest.TestCase):
     def test_url_state_and_honest_labels(self):
@@ -75,6 +99,15 @@ class CollegeDecisionRenderingTests(unittest.TestCase):
         self.assertIn("validated college adp is not available", text)
         for forbidden in ("win probability", "% chance", "floor", "ceiling"):
             self.assertNotIn(forbidden, text)
+
+    def test_decision_combines_market_and_workload_without_overclaiming(self):
+        text = college_decision_room.SHELL + college_decision_room.JS
+        self.assertIn("Sportsbook environment", text)
+        self.assertIn("Expected opportunity", text)
+        self.assertIn("Blowout risk", text)
+        self.assertIn("not a player prop or a projection input", text)
+        self.assertIn("30-second-delayed", text)
+        self.assertNotIn("The recommendation follows the higher validated projection", text)
 
     def test_fallback_branding_and_mobile_layout(self):
         self.assertIn("cdr-crest", college_decision_room.JS)

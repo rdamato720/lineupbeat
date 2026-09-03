@@ -153,10 +153,15 @@ class CollegeWeek1EnrichmentTests(unittest.TestCase):
             self.assertEqual(player["expected_opportunity"]["receptions"], row["rec"])
             self.assertEqual(player["implied_total"], row["impliedTotal"])
 
-    def test_college_market_copy_is_single_frozen_observation(self):
+    def test_college_market_copy_is_delayed_consensus_context(self):
         payload = college_decision_data.load_weekly()
-        self.assertEqual(payload["market"]["state"], "frozen_single_observation")
-        self.assertIn("not multi-book consensus", build_decision_room.college_decision_room.JS)
+        self.assertEqual(payload["market"]["state"],
+                         "available_delayed_consensus")
+        self.assertEqual(payload["market"]["data_delay_seconds"], 30)
+        self.assertIn("Sportsbook environment",
+                      build_decision_room.college_decision_room.JS)
+        self.assertIn("not a player prop or a projection input",
+                      build_decision_room.college_decision_room.SHELL)
         self.assertIn("Expected opportunity", build_decision_room.college_decision_room.JS)
 
 

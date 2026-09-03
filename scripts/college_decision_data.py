@@ -13,6 +13,8 @@ from college_team_logos import load_registry
 
 ROOT = Path(__file__).resolve().parent.parent
 COLLEGE = ROOT / "data" / "college"
+MARKET_RELEASE = COLLEGE / "2026" / "week-1" / "market-context"
+MARKET_SOURCE = MARKET_RELEASE / "therundown-2026-09-03.json"
 
 
 def _digest(path: Path) -> str:
@@ -35,12 +37,33 @@ def load_weekly() -> dict:
             _digest(schedule) != schedule_expected["sha256"]):
         raise ValueError("college weekly schedule artifact does not match its manifest")
     schedule_payload = json.loads(schedule.read_text())
+    market_manifest = json.loads((MARKET_RELEASE / "manifest.json").read_text())
+    market_expected = market_manifest["files"][MARKET_SOURCE.name]
+    if (MARKET_SOURCE.stat().st_size != market_expected["bytes"]
+            or _digest(MARKET_SOURCE) != market_expected["sha256"]):
+        raise ValueError("college market-context artifact does not match its manifest")
+    market_payload = json.loads(MARKET_SOURCE.read_text())
+    if (market_payload.get("schemaVersion")
+            != "lineupbeat-college-week1-market-context-v1"
+            or market_payload.get("season") != 2026
+            or market_payload.get("week") != 1
+            or market_payload.get("coverage", {}).get("modeled_teams") != 64
+            or market_payload.get("coverage", {}).get(
+                "teams_with_spread_and_total") != 64):
+        raise ValueError("college market-context scope is incomplete")
+    market_teams = market_payload["teams"]
     raw = json.loads(source.read_text())
     if raw.get("season") != 2026 or raw.get("week") != 1:
         raise ValueError("unexpected college weekly horizon")
     logos = load_registry()
     players = []
     for row in raw["players"]:
+        market = market_teams.get(row["teamId"])
+        if (not market or market.get("state") != "available"
+                or market.get("team") != row["team"]
+                or market.get("opponent") != row.get("opponent")
+                or market.get("home") != row.get("home")):
+            raise ValueError(f"college market context does not match {row['team']}")
         players.append({
             "id": row["id"], "name": row["name"], "team": row["team"],
             "team_id": row["teamId"], "position": row["pos"],
@@ -76,9 +99,18 @@ def load_weekly() -> dict:
         "projection_horizon": "Week 1 projections",
         "scoring_format": "yahoo", "scoring_label": raw["scoring"],
         "updated_at": raw["generatedAt"], "adp_available": False,
-        "market": {"state": "frozen_single_observation",
-                   "label": "Frozen ESPN lines captured 2026-08-30; not multi-book consensus"},
+        "market": {
+            "state": "available_delayed_consensus",
+            "label": ("TheRundown Pro main-line consensus from Pinnacle, DraftKings, "
+                      "and FanDuel; 30-second plan delay"),
+            "captured_on": market_payload["captured_on"],
+            "latest_market_update_at": market_payload["source"][
+                "latest_market_update_at"],
+            "data_delay_seconds": market_payload["source"]["data_delay_seconds"],
+            "coverage": market_payload["coverage"],
+        },
         "conference_available": False, "counts": raw["counts"],
+        "market_context_by_team": market_teams,
         "identity_coverage": {"resolved": len(ids), "total": len(players)},
         "players": players,
         "closest_calls": [_summary(r) for r in closest_calls(
@@ -102,8 +134,14 @@ def load_weekly() -> dict:
             "editorial": {"label": "Lineup Beat college editorial opinion", "updated_at": None},
             "schedule_sos": {"label": schedule_payload["source"],
                              "updated_at": schedule_payload["generated_at"]},
-            "market": {"label": "Frozen ESPN line; single observation, not consensus",
-                       "updated_at": schedule_payload["generated_at"]},
+            "market": {
+                "label": ("TheRundown delayed main-line consensus: Pinnacle, "
+                          "DraftKings, FanDuel"),
+                "updated_at": market_payload["source"]["latest_market_update_at"],
+                "captured_on": market_payload["captured_on"],
+                "data_delay_seconds": market_payload["source"]["data_delay_seconds"],
+                "note": market_payload["source"]["note"],
+            },
         },
     }
 

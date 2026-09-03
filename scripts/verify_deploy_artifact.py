@@ -357,7 +357,9 @@ def check_homepage(root, decision_room=False):
               and text.count('class="hp-decision-summary"') == 2
               and text.count('class="hp-evidence-grid"') == 2
               and "Projection, modeled volume, and 2025 opponent context align" in text
-              and "Projection, modeled workload, and team scoring environment align" in text
+              and "Projection, modeled workload, and delayed sportsbook scoring environment align" in text
+              and "Sportsbook team total" in text
+              and "Florida’s -26.5 spread also creates late-game workload risk" in text
               and "Projection edge: Tony Pollard" not in text)
         check("the homepage describes market evidence without overstating it",
               "Market evidence appears only when it is validated" in text
@@ -380,6 +382,19 @@ def check_homepage(root, decision_room=False):
             check("the deployed college identity and player counts reconcile",
                   len(players) == 2205 and
                   len({p.get("id") for p in players}) == len(players))
+            market_teams = college.get("market_context_by_team", {})
+            check("the delayed College sportsbook context covers every modeled team",
+                  college.get("market", {}).get("state")
+                  == "available_delayed_consensus"
+                  and college.get("market", {}).get("data_delay_seconds") == 30
+                  and len(market_teams) == 64
+                  and all(row.get("state") == "available"
+                          for row in market_teams.values()))
+            check("the College sportsbook context remains game-level evidence",
+                  all("player" not in key.lower()
+                      for row in market_teams.values() for key in row)
+                  and "not a projection input" in
+                  college.get("sources", {}).get("market", {}).get("note", ""))
             check("the homepage exposes separate NFL and College routes",
                   '/decision-room/nfl/' in text and '/decision-room/college/' in text)
     if "<!-- LB WIRE REPLACEMENT START" in wire_text:
