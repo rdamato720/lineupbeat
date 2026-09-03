@@ -153,7 +153,7 @@ async function main() {
     value: {sendBeacon() { networkCalls += 1; throw new Error('network forbidden'); }}
   });
   const payload = diagnostics.generate({
-    document, location, version: '0.2.6', playerSelector: parser.PLAYER_SELECTOR,
+    document, location, version: '0.3.0', playerSelector: parser.PLAYER_SELECTOR,
     rowDiagnostics: {
       tablesScanned: 2, qualifyingTables: 1, rowsScanned: 10, rowsAccepted: 0,
       legacyFallbackUsed: false, legacyRowsAccepted: 0,
@@ -165,7 +165,7 @@ async function main() {
   const encoded = JSON.stringify(payload);
   const labels = diagnostics.pageLabels(document, '998877', '3');
 
-  assert.equal(payload.extensionVersion, '0.2.6');
+  assert.equal(payload.extensionVersion, '0.3.0');
   assert.equal(payload.pathname, '/football/team');
   assert.equal(payload.counts.roleRow, 1);
   assert.equal(payload.counts.roleTable, 1);
@@ -224,7 +224,7 @@ async function main() {
   const button = new Button();
   const status = {textContent: ''};
   const controller = diagnostics.install({
-    button, status, document, location, version: '0.2.6', playerSelector: parser.PLAYER_SELECTOR,
+    button, status, document, location, version: '0.3.0', playerSelector: parser.PLAYER_SELECTOR,
     clipboard: {writeText(value) { copied += 1; assert.deepEqual(JSON.parse(value), {safe: true}); return Promise.resolve(); }},
     generateDiagnostics() { generated += 1; return {safe: true}; },
     inspectRoster() { inspected += 1; return {diagnostics: {rowsAccepted: 0}}; }
@@ -254,7 +254,7 @@ async function main() {
   const failedButton = new Button();
   const failedStatus = {textContent: ''};
   const failed = diagnostics.install({
-    button: failedButton, status: failedStatus, document, location, version: '0.2.6',
+    button: failedButton, status: failedStatus, document, location, version: '0.3.0',
     playerSelector: parser.PLAYER_SELECTOR,
     clipboard: {writeText() { return Promise.reject(new Error('denied')); }}
   });

@@ -19,6 +19,7 @@ RUNTIME_FILES = (
     "manifest.json",
     "background.js",
     "espn-roster-parser.js",
+    "espn-history-parser.js",
     "content.js",
     "icons/icon-16.png",
     "icons/icon-32.png",

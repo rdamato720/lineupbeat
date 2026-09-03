@@ -107,6 +107,7 @@ def build_page(canonical: dict, summary: dict) -> str:
     .lh-kicker,.eyebrow{font:800 .76rem/1 var(--agate);letter-spacing:.12em;text-transform:uppercase;color:var(--gold2)}
     .lh h1{margin:.35rem 0 0;font:700 clamp(2.5rem,7vw,5.6rem)/.9 var(--agate);letter-spacing:-.035em;text-transform:uppercase}
     .lh-meta{display:flex;gap:1.7rem}.lh-meta div{display:grid;gap:.15rem}.lh-meta b{font:800 1.65rem/1 var(--data)}.lh-meta span{color:var(--muted);font:.72rem var(--agate);text-transform:uppercase;letter-spacing:.08em}
+    .import-card{margin:1rem 0;border:1px solid #3b454a;background:#101417;padding:1rem}.import-line{display:flex;align-items:center;justify-content:space-between;gap:1rem}.import-copy{display:grid;gap:.18rem}.import-copy strong{font:750 1.05rem var(--agate)}.import-copy span{color:var(--muted);font-size:.86rem}.import-actions{display:flex;flex-wrap:wrap;gap:.5rem}.import-actions button{border:0;border-radius:.2rem;padding:.62rem .8rem;background:var(--signal);color:#09100d;font:800 .72rem var(--agate);letter-spacing:.03em;text-transform:uppercase;cursor:pointer}.import-actions .quiet{background:#242c30;color:var(--ink)}.import-actions button[hidden]{display:none}.import-summary{display:none;margin-top:1rem;border-top:1px solid #2c3438;padding-top:1rem}.import-summary.open{display:block}.capture-stats{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:.8rem}.capture-stats span{border:1px solid #343d42;padding:.45rem .62rem;color:var(--muted);font:.76rem var(--data)}.review-head{display:flex;justify-content:space-between;gap:1rem;align-items:end;margin-bottom:.55rem}.review-head h2{margin:0;font:700 1.25rem var(--agate);text-transform:uppercase}.review-head p{margin:0;color:var(--muted);font-size:.82rem}.identity-list{display:grid;gap:.45rem}.identity-row{display:grid;grid-template-columns:minmax(10rem,1fr) minmax(9rem,.7fr) minmax(10rem,1fr);gap:.55rem;align-items:center;border-top:1px solid #283034;padding-top:.55rem}.identity-row label{display:grid;gap:.2rem;color:var(--muted);font:700 .65rem var(--agate);letter-spacing:.06em;text-transform:uppercase}.identity-row input,.identity-row select{min-width:0;border:1px solid #465157;background:#090c0e;color:var(--ink);padding:.55rem;font:inherit}.identity-meta{font-size:.78rem;color:var(--muted)}.identity-row.suggested{border-left:3px solid var(--gold);padding-left:.55rem}.review-result{min-height:1.2em;color:var(--gold2);font-size:.82rem;margin:.65rem 0 0}
     .tabs{display:flex;gap:.2rem;overflow:auto;padding:.9rem 0;border-bottom:1px solid #252b2f;position:sticky;top:3.8rem;background:#08090bf2;z-index:12}
     .tab{border:0;background:transparent;color:var(--muted);padding:.65rem .85rem;font:800 .78rem var(--agate);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap;border-radius:.2rem}
     .tab[aria-selected=true]{background:var(--gold);color:#0b0c0d}.panel{display:none;padding-top:1.4rem}.panel.active{display:block}
@@ -122,7 +123,7 @@ def build_page(canonical: dict, summary: dict) -> str:
     .season-card{display:grid;grid-template-columns:.4fr 1fr;gap:1rem}.season-card h3{font:900 2.5rem var(--data);margin:.25rem 0}.season-card dl{gap:0 1rem}
     .source-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.source-grid code{color:var(--gold2)}.source-grid ul{color:var(--muted);line-height:1.55;margin:.6rem 0 0;padding-left:1.2rem}
     .lh-footer{margin-top:2rem;padding-top:1rem;border-top:1px solid #2b3338;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:1rem}
-    @media(max-width:760px){.lh-head{grid-template-columns:1fr}.lh-meta{justify-content:space-between}.dashboard,.source-grid{grid-template-columns:1fr}.record-grid,.manager-grid{grid-template-columns:1fr 1fr}.season-grid{grid-template-columns:1fr}.tabs{top:3.4rem}}
+    @media(max-width:760px){.lh-head{grid-template-columns:1fr}.lh-meta{justify-content:space-between}.import-line,.review-head{align-items:flex-start;flex-direction:column}.identity-row{grid-template-columns:1fr}.dashboard,.source-grid{grid-template-columns:1fr}.record-grid,.manager-grid{grid-template-columns:1fr 1fr}.season-grid{grid-template-columns:1fr}.tabs{top:3.4rem}}
     @media(max-width:500px){.record-grid,.manager-grid{grid-template-columns:1fr}.lh-meta{gap:.8rem}.lh-meta b{font-size:1.25rem}.lh-footer{display:block}.season-card{grid-template-columns:1fr}}
     '''
     script = r'''
@@ -132,15 +133,66 @@ def build_page(canonical: dict, summary: dict) -> str:
       function select(id){tabs.forEach(function(t){var on=t.dataset.tab===id;t.setAttribute('aria-selected',String(on));});panels.forEach(function(p){p.classList.toggle('active',p.id===id);});}
       tabs.forEach(function(t){t.addEventListener('click',function(){select(t.dataset.tab);history.replaceState(null,'','#'+t.dataset.tab);});});
       var initial=location.hash.slice(1);if(document.getElementById(initial))select(initial);
+      var state={capture:null,review:null};
+      var status=document.getElementById('import-status');
+      var detail=document.getElementById('import-summary');
+      var stats=document.getElementById('capture-stats');
+      var list=document.getElementById('identity-list');
+      var approve=document.getElementById('approve-identities');
+      var clear=document.getElementById('clear-import');
+      var result=document.getElementById('review-result');
+      function say(text){status.textContent=text;}
+      function option(value,text){var node=document.createElement('option');node.value=value;node.textContent=text;return node;}
+      function render(record){
+        state.capture=record.payload;state.review=record.review||null;
+        var p=state.capture;detail.classList.add('open');clear.hidden=false;
+        stats.replaceChildren();
+        [['Seasons',p.counts.seasons],['Teams',p.counts.teams],['Games',p.counts.matchups],['Managers',p.counts.identities]].forEach(function(row){var x=document.createElement('span');x.textContent=row[0]+': '+row[1];stats.appendChild(x);});
+        if(p.incomplete&&p.incomplete.length){var gap=document.createElement('span');gap.textContent='Unavailable: '+p.incomplete.map(function(x){return x.year;}).join(', ');stats.appendChild(gap);}
+        list.replaceChildren();
+        var identities=p.identityReview.identities||[];
+        var suggested={};(p.identityReview.suggestions||[]).forEach(function(x){suggested[x.a]=true;suggested[x.b]=true;});
+        identities.forEach(function(identity){
+          var row=document.createElement('div');row.className='identity-row'+(suggested[identity.identityId]?' suggested':'');row.dataset.identityId=identity.identityId;
+          var nameLabel=document.createElement('label');nameLabel.textContent='Manager name';var input=document.createElement('input');input.value=identity.displayName;input.dataset.name='';nameLabel.appendChild(input);
+          var meta=document.createElement('div');meta.className='identity-meta';meta.textContent=identity.seasons.join(', ')+' · '+identity.teamNames.join(' / ');
+          var mergeLabel=document.createElement('label');mergeLabel.textContent='Identity';var merge=document.createElement('select');merge.dataset.merge='';merge.appendChild(option('','Keep separate'));
+          identities.forEach(function(target){if(target.identityId!==identity.identityId)merge.appendChild(option(target.identityId,'Merge into '+target.displayName));});mergeLabel.appendChild(merge);
+          row.append(nameLabel,meta,mergeLabel);list.appendChild(row);
+        });
+        if(state.review){
+          (state.review.identities||[]).forEach(function(saved){var row=list.querySelector('[data-identity-id="'+CSS.escape(saved.identityId)+'"]');if(row){row.querySelector('[data-name]').value=saved.displayName;row.querySelector('[data-merge]').value=saved.mergeInto||'';}});
+          result.textContent='Identity review approved locally '+new Date(state.review.approvedAt).toLocaleString()+'.';
+        }else result.textContent='Review possible duplicate names, then approve this local snapshot.';
+        say(p.league.name+' is ready for commissioner review.');
+      }
+      document.getElementById('check-extension').addEventListener('click',function(){say('Checking for a local ESPN import…');window.postMessage({type:'LB_LEAGUE_HISTORY_CONNECT_REQUEST',version:1},location.origin);});
+      clear.addEventListener('click',function(){window.postMessage({type:'LB_LEAGUE_HISTORY_CLEAR_REQUEST',version:1},location.origin);});
+      approve.addEventListener('click',function(){
+        if(!state.capture)return;
+        var identities=[].slice.call(list.querySelectorAll('.identity-row')).map(function(row){return {identityId:row.dataset.identityId,displayName:row.querySelector('[data-name]').value.trim(),mergeInto:row.querySelector('[data-merge]').value||null};});
+        if(identities.some(function(x){return !x.displayName;})){result.textContent='Every manager needs a display name.';return;}
+        var review={schemaVersion:'lineupbeat-history-identity-review-v1',capturedAt:state.capture.capturedAt,approvedAt:new Date().toISOString(),leagueId:state.capture.league.id,identities:identities};
+        window.postMessage({type:'LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST',version:1,review:review},location.origin);result.textContent='Saving approval locally…';
+      });
+      window.addEventListener('message',function(event){
+        if(event.source!==window||event.origin!==location.origin||!event.data||event.data.version!==1)return;
+        if(event.data.type==='LB_LEAGUE_HISTORY_EXTENSION_READY'){say(event.data.hasHistory?'ESPN import found. Loading review…':'Connector ready. Import from an ESPN league page.');clear.hidden=!event.data.hasHistory;}
+        if(event.data.type==='LB_LEAGUE_HISTORY_CAPTURE')render({payload:event.data.payload,review:event.data.review});
+        if(event.data.type==='LB_LEAGUE_HISTORY_REVIEW_COMPLETE')result.textContent=event.data.ok?'Identity review approved and stored locally.':'Approval could not be saved.';
+        if(event.data.type==='LB_LEAGUE_HISTORY_CLEAR_COMPLETE'){state.capture=null;state.review=null;detail.classList.remove('open');clear.hidden=true;say('Local ESPN import cleared.');}
+      });
     }());</script>'''
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{title} League History | LineupBeat</title><meta name="robots" content="noindex,nofollow">
     <meta name="description" content="Development prototype for the LineupBeat fantasy football league history tracker.">
     <style>{seo.SHELL_CSS}{seo.TEAMS_CSS}{seo.NAV_CSS}{styles}</style></head><body>
     {seo.site_nav('data', 'nfl')}
-    <main class="lh"><div class="lh-status"><i></i>Development prototype · fictional league · ESPN importer not connected</div>
+    <main class="lh"><div class="lh-status"><i></i>Development prototype · private local import</div>
       <header class="lh-head"><div><span class="lh-kicker">League history</span><h1>{title}</h1></div>
       <div class="lh-meta"><div><b>{summary['counts']['seasons']}</b><span>seasons found</span></div><div><b>{summary['counts']['games']}</b><span>games</span></div><div><b>{summary['counts']['franchises']}</b><span>franchises</span></div></div></header>
+      <section class="import-card" aria-labelledby="import-title"><div class="import-line"><div class="import-copy"><strong id="import-title">ESPN history import</strong><span id="import-status" role="status">Install connector 0.3.0, then import from your ESPN league page.</span></div><div class="import-actions"><button id="check-extension" type="button">Check connector</button><button id="clear-import" class="quiet" type="button" hidden>Clear local import</button></div></div>
+        <div class="import-summary" id="import-summary"><div class="capture-stats" id="capture-stats"></div><div class="review-head"><div><h2>Manager identity review</h2><p>Rename managers or merge duplicate ESPN identities before any future upload.</p></div><div class="import-actions"><button id="approve-identities" type="button">Approve identities</button></div></div><div class="identity-list" id="identity-list"></div><p class="review-result" id="review-result" role="status"></p></div></section>
       <nav class="tabs" aria-label="League history sections">
         <button class="tab" data-tab="overview" aria-selected="true">Overview</button><button class="tab" data-tab="trophies" aria-selected="false">Trophy case</button>
         <button class="tab" data-tab="all-time" aria-selected="false">All-time</button><button class="tab" data-tab="managers" aria-selected="false">Managers</button>
@@ -149,7 +201,7 @@ def build_page(canonical: dict, summary: dict) -> str:
       <section class="panel active" id="overview"><div class="dashboard">
         <article class="card champ"><div><span class="eyebrow">Defending champion · {trophy['year']}</span></div><strong>{esc(manager[trophy['championFranchiseId']])}</strong><span class="season-mark">01</span></article>
         <article class="card power"><span class="eyebrow">Preseason Elo</span><h2>Power five</h2><ol>{power_rows}</ol></article></div>
-        <div class="notice"><strong>Prototype boundary:</strong> Every name, team and score on this page is fictional. The live ESPN importer and commissioner identity review are the next build phase.</div></section>
+        <div class="notice"><strong>Prototype boundary:</strong> Dashboard results below remain fictional. Imported ESPN history appears only in the private review panel above and stays in this browser.</div></section>
       <section class="panel" id="trophies"><div class="section-head"><div><span class="eyebrow">Hardware</span><h2>Trophy case</h2></div><p>Championships and regular-season scoring crowns stay separate, preserving both playoff results and season-long dominance.</p></div>
         <div class="record-grid"><article class="record-card"><small>{trophy['year']} champion</small><b>🏆</b><h3>{esc(manager[trophy['championFranchiseId']])}</h3><p>Final standing: 1</p></article>
         <article class="record-card"><small>{trophy['year']} runner-up</small><b>02</b><h3>{esc(manager[trophy['runnerUpFranchiseId']])}</h3><p>Championship finalist</p></article>

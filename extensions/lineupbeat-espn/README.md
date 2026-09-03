@@ -1,12 +1,13 @@
-# Lineup Beat ESPN My Team BETA
+# Lineup Beat ESPN Connector BETA
 
-This unpacked Manifest V3 extension reads only the roster rows visible on an
-ESPN Fantasy Football team page. It does not request cookie access, read or
-store passwords or session tokens, collect manager identities, or send a
-roster to a Lineup Beat server.
+This unpacked Manifest V3 extension supports two explicit, browser-local ESPN
+flows: saving the roster visible on an ESPN Fantasy Football team page for My
+Team, and importing available league seasons for commissioner review in League
+History. It does not request cookie permission, read or store passwords,
+cookies, or session tokens, or upload either dataset to a Lineup Beat server.
 
 1. Download the submission artifact from the successful development workflow,
-   or download product-polish version 0.2.6 from the development support page, and unzip the
+   or download beta version 0.3.0 from the development support page, and unzip the
    store package.
 2. Open `chrome://extensions`, enable Developer mode, choose **Load unpacked**,
    and select the unzipped directory.
@@ -15,19 +16,24 @@ roster to a Lineup Beat server.
 4. After the save completes, My Team opens automatically. If the browser
    prevents that, choose the prominent **Open My Team** action.
 5. Use **Disconnect & clear** on My Team to delete the extension-local copy.
+6. To test history, choose **Import league history** on an ESPN league page.
+   The extension requests that league's available seasons directly from ESPN
+   using the ESPN session already active in the browser, then opens the private
+   League History review. Approve manager names and possible identity merges or
+   clear the local snapshot there.
 
-Version 0.2.6 preserves the proven row-first parser and local handoff, improves
-unambiguous visible league/team label capture, and adds Week 1 roster outlook,
-projection, opponent, opportunity, status, and actionable lineup evidence.
-Installed-extension QA remains blocked until Ralph verifies a live save. If
-the empty-roster error appears, choose **Copy safe diagnostics** and paste the
-JSON into Codex. The diagnostic is created only by that click, copied only to
-the local clipboard, excludes roster and identity content, and makes no
-network request.
+Version 0.3.0 preserves the roster flow and adds a bounded ESPN history import,
+local snapshot storage, incomplete-season reporting, and commissioner identity
+review. The history importer handles up to 25 seasons and captures league/team
+labels, manager labels, standings, and matchup scores. If the empty-roster
+error appears, choose **Copy safe diagnostics** and paste the JSON into Codex.
+The diagnostic is created only by that click, copied only to the local
+clipboard, excludes roster and identity content, and makes no network request.
 
-The extension is host-limited to ESPN Fantasy Football, the isolated Lineup
-Beat development My Team route. It cannot run on other development routes,
-localhost, loopback addresses, or production.
+The extension is host-limited to ESPN Fantasy Football, ESPN's fantasy read API,
+and the isolated Lineup Beat development My Team and League History routes. It
+cannot run on other development routes, localhost, loopback addresses, or
+production.
 
 Privacy policy:
 `https://lineupbeat-dev.pages.dev/my-team/extension/privacy/`

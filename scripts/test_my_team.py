@@ -135,8 +135,8 @@ class MyTeamArtifactTests(unittest.TestCase):
             self.assertTrue(package.exists())
             with zipfile.ZipFile(package) as archive:
                 packaged = json.loads(archive.read("manifest.json"))
-                self.assertEqual(packaged["version"], "0.2.6")
-                self.assertEqual(len(archive.namelist()), 8)
+                self.assertEqual(packaged["version"], "0.3.0")
+                self.assertEqual(len(archive.namelist()), 9)
                 self.assertEqual(
                     archive.namelist(),
                     list(build_my_team.build_chrome_store_bundle.RUNTIME_FILES),
@@ -144,19 +144,22 @@ class MyTeamArtifactTests(unittest.TestCase):
             model = json.loads((site / "data" / "my-team-week1.json").read_text())
             self.assertEqual(model["schemaVersion"], "lineupbeat-my-team-week1-v1")
             self.assertIn("chrome.storage.local", privacy.read_text())
-            self.assertIn("No roster upload", privacy.read_text())
+            self.assertIn("No private-data upload", privacy.read_text())
 
     def test_extension_has_no_secret_permissions_or_production_access(self):
         manifest = json.loads((ROOT / "extensions" / "lineupbeat-espn" / "manifest.json").read_text())
         self.assertEqual(manifest["permissions"], ["storage"])
-        self.assertNotIn("host_permissions", manifest)
+        self.assertEqual(manifest["host_permissions"],
+                         ["https://lm-api-reads.fantasy.espn.com/*"])
         self.assertEqual(manifest["content_scripts"][0]["matches"],
                          ["https://fantasy.espn.com/football/*"])
         self.assertEqual(manifest["content_scripts"][0]["js"],
-                         ["espn-roster-parser.js", "content.js"])
+                         ["espn-roster-parser.js", "espn-history-parser.js", "content.js"])
         self.assertEqual(manifest["content_scripts"][1]["matches"],
                          ["https://lineupbeat-dev.pages.dev/my-team/*"])
         self.assertEqual(manifest["content_scripts"][1]["js"], ["content.js"])
+        self.assertEqual(manifest["content_scripts"][2]["matches"],
+                         ["https://lineupbeat-dev.pages.dev/league-history/*"])
         encoded = json.dumps(manifest)
         self.assertNotIn("cookies", encoded)
         self.assertNotIn("lineupbeat.com", encoded)
@@ -179,11 +182,11 @@ class MyTeamArtifactTests(unittest.TestCase):
         for text in (guide, readme):
             self.assertIn("Save roster locally for My Team", text)
             self.assertNotIn("Send roster to Lineup Beat", text)
-        self.assertIn("Download version 0.2.6", guide)
+        self.assertIn("Download version 0.3.0", guide)
         self.assertIn("chrome.storage.local", privacy)
-        self.assertIn("No ESPN password, cookie, session token", privacy)
-        self.assertIn("not placed in a URL or sent to a Lineup Beat server", privacy)
-        self.assertIn("Disconnect &amp; clear", privacy)
+        self.assertIn("No ESPN password, cookie value, session token", privacy)
+        self.assertIn("Neither flow uploads private ESPN data", privacy)
+        self.assertIn("Clear each copy", privacy)
 
     def test_suffix_terminal_punctuation_regression(self):
         source = (ROOT / "scripts" / "build_decision_room.py").read_text()

@@ -69,7 +69,8 @@ def main() -> int:
 
     page = outputs[0].read_text()
     for required in ("League history", "Trophy case", "All-time table", "Manager files",
-                     "League records", "noindex,nofollow", "ESPN importer not connected",
+                     "League records", "noindex,nofollow", "ESPN history import",
+                     "Approve identities", "LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST",
                      "96", "Prototype boundary", "fictional"):
         assert required in page, required
     assert "password" not in page.lower()

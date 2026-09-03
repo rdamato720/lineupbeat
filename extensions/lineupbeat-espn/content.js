@@ -360,6 +360,8 @@
   const MY_TEAM_ORIGIN = 'https://lineupbeat-dev.pages.dev';
   const MY_TEAM_PATH = '/my-team/';
   const MY_TEAM_URL = `${MY_TEAM_ORIGIN}${MY_TEAM_PATH}`;
+  const HISTORY_PATH = '/league-history/';
+  const HISTORY_URL = `${MY_TEAM_ORIGIN}${HISTORY_PATH}`;
   const PRIVACY_URL = `${MY_TEAM_URL}extension/privacy/`;
 
   function onExpectedPage(origin, path) {
@@ -394,7 +396,7 @@
     };
   }
 
-  function stylePanel(panel, select, save, open, diagnostics) {
+  function stylePanel(panel, select, buttons) {
     Object.assign(panel.style, {
       position: 'fixed', right: '18px', bottom: '18px', zIndex: '2147483647',
       width: 'min(380px, calc(100vw - 36px))', padding: '14px', borderRadius: '8px',
@@ -402,7 +404,7 @@
       font: '14px/1.35 Arial,sans-serif'
     });
     Object.assign(select.style, {padding: '10px', background: '#fff', color: '#0b100f'});
-    for (const node of [save, open, diagnostics]) {
+    for (const node of buttons) {
       Object.assign(node.style, {
         display: 'inline-block', padding: '12px 16px', border: '0', borderRadius: '4px',
         background: '#c6f53c', color: '#0b100f', fontWeight: '800', cursor: 'pointer',
@@ -420,11 +422,13 @@
     const select = document.createElement('select');
     const save = document.createElement('button');
     const open = document.createElement('a');
+    const history = document.createElement('button');
+    const openHistory = document.createElement('a');
     const diagnostics = document.createElement('button');
     const status = document.createElement('p');
 
-    heading.textContent = 'Lineup Beat My Team BETA';
-    disclosure.textContent = 'Reads visible roster and league labels and saves them only in this browser. No passwords, cookies, tokens, or server upload.';
+    heading.textContent = 'Lineup Beat ESPN Connector BETA';
+    disclosure.textContent = 'Save your roster or import league history. Data stays in this browser for review; passwords and session values are never read or stored.';
     privacy.href = PRIVACY_URL;
     privacy.target = '_blank';
     privacy.rel = 'noopener';
@@ -440,6 +444,14 @@
     open.rel = 'noopener';
     open.textContent = 'Open My Team';
     open.hidden = true;
+    history.type = 'button';
+    history.textContent = 'Import league history';
+    history.setAttribute('aria-label', 'Import ESPN league history locally for commissioner review');
+    openHistory.href = HISTORY_URL;
+    openHistory.target = '_blank';
+    openHistory.rel = 'noopener';
+    openHistory.textContent = 'Review history';
+    openHistory.hidden = true;
     diagnostics.type = 'button';
     diagnostics.textContent = 'Copy safe diagnostics';
     diagnostics.setAttribute('aria-label', 'Copy safe roster-discovery diagnostics');
@@ -448,7 +460,7 @@
     controls.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:12px';
     disclosure.style.margin = '8px 0 4px';
 
-    stylePanel(panel, select, save, open, diagnostics);
+    stylePanel(panel, select, [save, open, history, openHistory, diagnostics]);
     const diagnosticController = globalThis.LineupBeatSafeDiagnostics.install({
       button: diagnostics,
       status,
@@ -489,7 +501,33 @@
       }
     });
 
-    controls.append(select, save, open, diagnostics);
+    history.addEventListener('click', () => {
+      const leagueId = queryValue('leagueId');
+      const season = Number(queryValue('seasonId') || new Date().getFullYear());
+      if (!/^\d+$/.test(leagueId)) {
+        status.textContent = 'Open an ESPN league page before importing history.';
+        return;
+      }
+      diagnosticController.hide();
+      history.disabled = true;
+      status.textContent = 'Importing available seasons from ESPN…';
+      chrome.runtime.sendMessage({
+        type: 'LB_CAPTURE_ESPN_HISTORY', version: 1, leagueId, season
+      }, response => {
+        history.disabled = false;
+        if (!response || !response.ok) {
+          status.textContent = response && response.error === 'espn_session_required'
+            ? 'ESPN did not authorize the import. Sign in to ESPN, reload, and try again.'
+            : 'League history could not be imported. Try again from this league page.';
+          return;
+        }
+        openHistory.hidden = false;
+        const count = response.counts && response.counts.seasons || 0;
+        status.textContent = `${count} season${count === 1 ? '' : 's'} saved locally for review.`;
+      });
+    });
+
+    controls.append(select, save, open, history, openHistory, diagnostics);
     panel.append(heading, disclosure, privacy, controls, status);
     document.documentElement.appendChild(panel);
   }
@@ -541,6 +579,58 @@
     }
   }
 
+  function postHistory(response) {
+    if (response && response.record) {
+      window.postMessage({
+        type: 'LB_LEAGUE_HISTORY_CAPTURE', version: 1,
+        payload: response.record.payload, review: response.record.review || null
+      }, location.origin);
+    }
+  }
+
+  function historyReady() {
+    chrome.runtime.sendMessage({type: 'LB_GET_ESPN_HISTORY', version: 1}, response => {
+      window.postMessage({
+        type: 'LB_LEAGUE_HISTORY_EXTENSION_READY', version: 1,
+        hasHistory: Boolean(response && response.record)
+      }, location.origin);
+      postHistory(response);
+    });
+  }
+
+  function installHistoryBridge() {
+    window.addEventListener('message', event => {
+      if (event.source !== window || event.origin !== location.origin ||
+          !event.data || event.data.version !== 1) return;
+      if (event.data.type === 'LB_LEAGUE_HISTORY_CONNECT_REQUEST') {
+        chrome.runtime.sendMessage({type: 'LB_GET_ESPN_HISTORY', version: 1}, postHistory);
+      }
+      if (event.data.type === 'LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST') {
+        chrome.runtime.sendMessage({
+          type: 'LB_SAVE_ESPN_HISTORY_REVIEW', version: 1, review: event.data.review
+        }, response => {
+          window.postMessage({
+            type: 'LB_LEAGUE_HISTORY_REVIEW_COMPLETE', version: 1,
+            ok: Boolean(response && response.ok)
+          }, location.origin);
+        });
+      }
+      if (event.data.type === 'LB_LEAGUE_HISTORY_CLEAR_REQUEST') {
+        chrome.runtime.sendMessage({type: 'LB_CLEAR_ESPN_HISTORY', version: 1}, response => {
+          if (response && response.ok) {
+            window.postMessage({type: 'LB_LEAGUE_HISTORY_CLEAR_COMPLETE', version: 1}, location.origin);
+          }
+        });
+      }
+    });
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', historyReady, {once: true});
+    } else {
+      historyReady();
+    }
+  }
+
   if (onExpectedPage(ESPN_ORIGIN, ESPN_PATH)) installEspnCapture();
   if (onExpectedPage(MY_TEAM_ORIGIN, MY_TEAM_PATH)) installMyTeamBridge();
+  if (onExpectedPage(MY_TEAM_ORIGIN, HISTORY_PATH)) installHistoryBridge();
 })();

@@ -188,20 +188,20 @@ def check_my_team(root):
         manifest, worker, package_files = {}, "", []
     scripts = manifest.get("content_scripts") or [{}, {}]
     matches = scripts[1].get("matches") if len(scripts) > 1 else None
-    check("the development download is the restricted eight-file version 0.2.6 package",
-          manifest.get("version") == "0.2.6"
-          and len(package_files) == 8
+    check("the development download is the restricted nine-file version 0.3.0 package",
+          manifest.get("version") == "0.3.0"
+          and len(package_files) == 9
           and matches == ["https://lineupbeat-dev.pages.dev/my-team/*"]
           and "localhost" not in json.dumps(manifest)
           and "127.0.0.1" not in json.dumps(manifest)
           and "https://lineupbeat.com" not in json.dumps(manifest)
-          and package_files[:4] == ["manifest.json", "background.js", "espn-roster-parser.js", "content.js"])
+          and package_files[:5] == ["manifest.json", "background.js", "espn-roster-parser.js", "espn-history-parser.js", "content.js"])
     check("the development download validates capture, retrieval, and clear senders",
           "ESPN_ORIGIN = 'https://fantasy.espn.com'" in worker
           and "ESPN_PATH = '/football/'" in worker
           and "MY_TEAM_ORIGIN = 'https://lineupbeat-dev.pages.dev'" in worker
           and "MY_TEAM_PATH = '/my-team/'" in worker
-          and worker.count("return reject(sendResponse)") == 4)
+          and worker.count("return reject(sendResponse)") == 8)
     support = root / "my-team" / "extension" / "index.html"
     privacy = root / "my-team" / "extension" / "privacy" / "index.html"
     support_text = support.read_text() if support.is_file() else ""
@@ -210,13 +210,13 @@ def check_my_team(root):
           bool(support_text) and bool(privacy_text))
     check("extension privacy accurately describes local storage and deletion",
           "chrome.storage.local" in privacy_text
-          and "not placed in a URL or sent to a Lineup Beat server" in privacy_text
-          and "Disconnect &amp; clear" in privacy_text
-          and "No ESPN password, cookie, session token" in privacy_text)
+          and "Neither flow uploads private ESPN data" in privacy_text
+          and "Clear each copy" in privacy_text
+          and "No ESPN password, cookie value, session token" in privacy_text)
     check("extension support exposes the labeled development package",
           'href="/my-team/lineupbeat-espn-extension.zip"' in support_text
-          and "Download version 0.2.6" in support_text
-          and "Development product-polish package" in support_text)
+          and "Download version 0.3.0" in support_text
+          and "Development package" in support_text)
     model_path = root / "data" / "my-team-week1.json"
     try:
         model = json.loads(model_path.read_text())
@@ -296,9 +296,10 @@ def check_league_history(root):
           bool(text) and "League history" in text, str(page))
     check("League History is noindex and labels its fictional prototype data",
           bool(re.search(r'name="robots" content="noindex,\s*nofollow(?:,\s*noarchive)?"', text))
-          and "ESPN importer not connected" in text
+          and "private local import" in text
+          and "ESPN history import" in text
           and "Prototype boundary" in text
-          and "fictional league" in text)
+          and "fictional" in text)
     payload_path = root / "data" / "league-history-demo.json"
     try:
         payload = json.loads(payload_path.read_text())
