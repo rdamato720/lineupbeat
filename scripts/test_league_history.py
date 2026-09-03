@@ -69,16 +69,19 @@ def main() -> int:
 
     page = outputs[0].read_text()
     for required in ("League history", "Trophy case", "All-time table", "Manager files",
-                     "League records", "noindex,nofollow", "ESPN history import",
-                     "Approve identities", "LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST",
-                     "Possible duplicates", "Review other managers", "data-demo=",
+                     "League records", "noindex,nofollow", "ESPN import",
+                     "Save manager matches", "LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST",
+                     "Are these the same person?", "Yes, same person",
+                     "No, different people", "Step 1 of 2", "data-demo=",
                      "document.body.classList.add('has-import')",
-                     "detail.querySelectorAll('.identity-row')",
+                     "canonical[find(row.identityId)]",
                      "headerSeasons.textContent=p.counts.seasons",
                      ".has-import .tabs,.has-import .panel,.has-import .lh-footer",
                      "96", "Prototype boundary", "fictional"):
         assert required in page, required
     assert "identity.seasons.join(', ')+' · '+identity.teamNames.join(' / ')" not in page
+    assert "Merge into " not in page
+    assert "MANAGER NAME" not in page
     assert "password" not in page.lower()
     assert "cookie" not in page.lower()
     for private_name in ("Adrian Chadzynski", "Ralph Damato", "Bobby Digital"):
