@@ -63,7 +63,7 @@ def verify(root):
         page=root/'nfl'/slug/'index.html'
         if page.exists() and 'data-season-projection="withheld"' not in page.read_text():errors.append('withheld player page '+p['name'])
     checked=0
-    ranking_paths=[('half_ppr','')]+[(fmt,slug) for fmt,(_,slug) in release.FORMATS.items() if fmt in ('ppr','non_ppr')]
+    ranking_paths=[('half_ppr',''),('half_ppr','half-ppr')]+[(fmt,slug) for fmt,(_,slug) in release.FORMATS.items() if fmt in ('ppr','non_ppr')]
     for fmt,slug in ranking_paths:
         ordered=trusted_ranking(model,fmt)
         for pos in [None,'QB','RB','WR','TE']:

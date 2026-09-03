@@ -48,12 +48,16 @@ def build_trusted_half_ppr_rankings(model, formats, ranks):
     records,replacement=formats.rank(rows,'ppr')
     for record in records:record['scoring_format']='half_ppr'
     css,header,footer=ranks.site_chrome()
-    for pos in [None,*ranks.POSITIONS]:
-        out=ROOT/'site/nfl/rankings'
-        if pos:out/=pos.lower()
-        out/='index.html';out.parent.mkdir(parents=True,exist_ok=True)
-        page=ranks.render(records,pos,CUTOFF,replacement,css,header,footer)
-        out.write_text(ranks.seo.check_page(page,str(out)))
+    # Keep both the canonical Half-PPR URL and its explicit scoring-format
+    # alias. Projection pages link to /half-ppr/, while the primary Rankings
+    # navigation uses /nfl/rankings/.
+    for base in (ROOT/'site/nfl/rankings',ROOT/'site/nfl/rankings/half-ppr'):
+        for pos in [None,*ranks.POSITIONS]:
+            out=base
+            if pos:out/=pos.lower()
+            out/='index.html';out.parent.mkdir(parents=True,exist_ok=True)
+            page=ranks.render(records,pos,CUTOFF,replacement,css,header,footer)
+            out.write_text(ranks.seo.check_page(page,str(out)))
 
 def mark_trusted_ranking_pages():
     """Disclose trusted coverage without changing the established layout."""
