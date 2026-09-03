@@ -216,10 +216,13 @@ class DecisionRoomRenderingTests(unittest.TestCase):
                       "TWO GAMES · ONE STANDARD", "Today’s featured decisions.",
                       "Make the call with the", "NFL + COLLEGE FANTASY FOOTBALL",
                       "Fantasy football decisions, explained.",
+                      "NFL or College?", "Rankings, projections &amp; decisions",
+                      "Week 1 rankings &amp; projections",
                       "Tony Pollard vs. Rico Dowdle",
                       "Devon Dampier vs. Byrum Brown"):
             self.assertIn(label, home)
-        self.assertNotIn("NFL or College", home)
+        self.assertNotIn("NFL and College have their own dedicated experiences.", home)
+        self.assertNotIn("Compare 2,205 players using validated Yahoo scoring", home)
         self.assertNotIn("Today’s Decision Board", home)
         self.assertNotIn("Choose your context", home)
         self.assertNotIn('data-home-sport=', home)

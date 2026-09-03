@@ -400,8 +400,11 @@ def check_homepage(root, decision_room=False):
               all(label in text for label in
                   ("WHAT LINEUPBEAT OFFERS", "CHOOSE YOUR GAME",
                    "TWO GAMES · ONE STANDARD", "WHY LINEUPBEAT",
-                   "Fantasy football decisions, explained."))
-              and "NFL or College" not in text
+                   "Fantasy football decisions, explained.",
+                   "NFL or College?", "Rankings, projections &amp; decisions",
+                   "Week 1 rankings &amp; projections"))
+              and "NFL and College have their own dedicated experiences." not in text
+              and "Compare 2,205 players using validated Yahoo scoring" not in text
               and "Today’s Decision Board" not in text
               and "The latest from The Beat" not in text)
         check("the homepage presents equal NFL and College featured decisions",
