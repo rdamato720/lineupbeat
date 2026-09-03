@@ -228,6 +228,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertIn('class="topbar home-topbar"', home)
         self.assertIn('aria-controls="navdrawer"', home)
         self.assertIn("@media(max-width:780px)", page.CSS)
+        self.assertIn(".hp-home-hero:before{display:none}", page.CSS)
 
     def test_featured_decision_is_close_non_tie_with_complete_art(self):
         result = page.featured_decision(
