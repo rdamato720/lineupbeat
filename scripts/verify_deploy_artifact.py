@@ -345,11 +345,19 @@ def check_homepage(root, decision_room=False):
               and 'placeholder="Search NFL players"' in text)
         check("the homepage has the required decision sections",
               all(label in text for label in
-                  ("MAKE YOUR NEXT MOVE", "WHERE WE SEE IT DIFFERENTLY",
-                   "CLOSEST CALLS"))
+                  ("WHAT LINEUPBEAT OFFERS", "WHERE WE SEE IT DIFFERENTLY",
+                   "CLOSEST CALLS", "WHY LINEUPBEAT",
+                   "Fantasy football decisions, explained."))
               and "NFL or College" not in text
               and "Today’s Decision Board" not in text
               and "The latest from The Beat" not in text)
+        check("the homepage uses a credible neutral featured decision",
+              "Tony Pollard vs. Rico Dowdle" in text
+              and "A projection gap is not a start/sit recommendation" in text
+              and "Projection edge: Tony Pollard" not in text)
+        check("the homepage describes market evidence without overstating it",
+              "Market evidence appears only when it is validated" in text
+              and "Sportsbook context is never presented as player certainty" in text)
         check("legacy sport query states have compatibility routing",
               "new URLSearchParams(location.search).get" in text
               and "pushState" in text and "popstate" in text)

@@ -200,7 +200,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
             self.assertNotIn('const oldNav', rendered)
             self.assertNotIn('My Roster', rendered)
             self.assertEqual(rendered.count('class="tile wire"'), 0)
-            self.assertIn("Fantasy Football Decisions for NFL &amp; College | Lineup Beat", rendered)
+            self.assertIn("Fantasy Football Rankings, Projections &amp; Decisions | LineupBeat", rendered)
             dedicated = Path(tmp) / "decision-room" / "reviewed-wire" / "index.html"
             self.assertEqual(dedicated.read_text().count('class="tile wire"'), 6)
             nfl = Path(tmp) / "decision-room" / "nfl" / "index.html"
@@ -212,9 +212,11 @@ class DecisionRoomRenderingTests(unittest.TestCase):
     def test_homepage_navigation_sections_and_mobile_structure(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
         for label in ("NFL", "College", "Decision", "Rankings", "Projections",
-                      "MAKE YOUR NEXT MOVE", "START WITH THE EVIDENCE",
+                      "WHAT LINEUPBEAT OFFERS", "START WITH THE EVIDENCE",
                       "CLOSEST CALLS", "SCORING FORMAT MOVERS",
-                      "Make the Week 1 call", "Find the Week 1 edge"):
+                      "Make the call with the", "Find the Week 1 edge",
+                      "Fantasy football decisions, explained.",
+                      "Tony Pollard vs. Rico Dowdle"):
             self.assertIn(label, home)
         self.assertNotIn("NFL or College", home)
         self.assertNotIn("Today’s Decision Board", home)
@@ -248,6 +250,10 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertEqual(home.count('class="hp-id-logo"'), 10)
         self.assertIn("Yahoo scoring", home)
         self.assertNotIn("College ADP", home.replace("College ADP is not available", ""))
+        self.assertIn('href="/about/"', home)
+        self.assertIn("A projection gap is not a start/sit recommendation", home)
+        self.assertIn("Market evidence appears only when it is validated", home)
+        self.assertNotIn("Projection edge: Tony Pollard", home)
         self.assertIn("pushState", home)
         self.assertIn("popstate", home)
 
@@ -265,7 +271,8 @@ class DecisionRoomRenderingTests(unittest.TestCase):
     def test_home_has_production_visual_language_without_public_news(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
         for marker in ("lb-decision-hero", "hp-action-grid", "hp-signal-grid",
-                       "hp-call-grid", "lb-feature-card", "What changes the pick?"):
+                       "hp-call-grid", "hp-method-grid", "hp-trust",
+                       "lb-feature-card", "What changes the pick?"):
             self.assertIn(marker, home)
         for removed in ("Reviewed Updates", "The latest from The Beat",
                         "RECENT NEWS", "NEWS UPDATED"):
