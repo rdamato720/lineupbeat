@@ -24,11 +24,10 @@ class CollegeWeek1Tests(unittest.TestCase):
         with (REL / "provenance/college_week1_player_projections_2026_v1.0.csv").open(newline="") as handle:
             cls.rows = list(csv.DictReader(handle))
 
-    def test_release_is_active_and_pinned(self):
-        config = json.loads((ROOT / "data/college/config.json").read_text())
-        self.assertEqual(config["activeCollegeWeeklyProjectionVersion"], "2026/week-1/v1.0")
-        builder = (ROOT / "scripts/build_college_week1.py").read_text()
-        self.assertIn(digest(REL / "manifest.json"), builder)
+    def test_release_remains_an_immutable_source_archive(self):
+        self.assertEqual(self.manifest["version"], "college_week1_2026_v1.0")
+        self.assertEqual(digest(REL / "manifest.json"),
+                         "9b3436d1df2869c9b02b1e6bb905f5a430ee331dd2625cd62264ee79f216fca2")
 
     def test_source_release_and_file_hashes(self):
         self.assertEqual(self.manifest["source_release"], "2026/v1.1")

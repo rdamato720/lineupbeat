@@ -64,7 +64,7 @@ class CollegeDecisionDataTests(unittest.TestCase):
     def test_delayed_market_context_covers_every_modeled_team(self):
         market = self.data["market"]
         contexts = self.data["market_context_by_team"]
-        self.assertEqual(market["state"], "available_delayed_consensus")
+        self.assertEqual(market["state"], "available_delayed_market_context")
         self.assertEqual(market["data_delay_seconds"], 30)
         self.assertEqual(len(contexts), 64)
         self.assertTrue(all(row["state"] == "available"
@@ -84,6 +84,17 @@ class CollegeDecisionDataTests(unittest.TestCase):
         self.assertFalse(ole_miss["blowout_risk"])
         self.assertEqual(florida["consensus_books"],
                          ["Pinnacle", "DraftKings", "FanDuel"])
+
+    def test_player_market_evidence_is_exact_and_bounded(self):
+        players = {(p["name"], p["team"]): p for p in self.data["players"]}
+        self.assertEqual(players[("Keelon Russell", "Alabama")]["player_market"]["components"],
+                         ["passing_touchdowns", "passing_yards"])
+        self.assertEqual(players[("Cam Coleman", "Texas")]["player_market"]["components"],
+                         ["receiving_yards"])
+        self.assertEqual(players[("Jadan Baugh", "Florida")]["player_market"]["state"],
+                         "unavailable")
+        self.assertEqual(self.data["market"]["player_coverage"][
+            "playersWithNumericEvidence"], 112)
 
 
 class CollegeDecisionRenderingTests(unittest.TestCase):
@@ -105,7 +116,8 @@ class CollegeDecisionRenderingTests(unittest.TestCase):
         self.assertIn("Sportsbook environment", text)
         self.assertIn("Expected opportunity", text)
         self.assertIn("Blowout risk", text)
-        self.assertIn("not a player prop or a projection input", text)
+        self.assertIn("exact player-component markets", text)
+        self.assertIn("market input is not an outcome or guarantee", text)
         self.assertIn("30-second-delayed", text)
         self.assertNotIn("The recommendation follows the higher validated projection", text)
 
@@ -124,6 +136,11 @@ class CollegeDecisionRenderingTests(unittest.TestCase):
         encoded = json.dumps(college_decision_data.load_weekly(),
                              separators=(",", ":")).encode()
         self.assertLess(len(encoded), 1_500_000)
+
+    def test_home_feature_requires_two_player_market_records(self):
+        source = (Path(__file__).with_name("build_decision_room.py")).read_text()
+        self.assertIn('cp[r["a"]].get("player_market", {}).get("components")', source)
+        self.assertIn("Player market evidence", source)
 
 
 if __name__ == "__main__":

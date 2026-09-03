@@ -140,10 +140,13 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
 
 
 class CollegeWeek1EnrichmentTests(unittest.TestCase):
-    def test_all_approved_projections_and_components_are_preserved(self):
+    def test_all_active_reconciled_projections_and_components_are_preserved(self):
         payload = college_decision_data.load_weekly()
         self.assertEqual(len(payload["players"]), 2205)
-        source = ROOT / "data" / "college" / "2026" / "week-1" / "v1.0" / "college_week1_site_projections_2026.json"
+        config = json.loads((ROOT / "data" / "college" / "config.json").read_text())
+        source = (ROOT / "data" / "college" /
+                  config["activeCollegeWeeklyProjectionVersion"] /
+                  "college_week1_site_projections_2026.json")
         raw = json.loads(source.read_text())
         by_id = {p["id"]: p for p in payload["players"]}
         for row in raw["players"]:
@@ -156,11 +159,12 @@ class CollegeWeek1EnrichmentTests(unittest.TestCase):
     def test_college_market_copy_is_delayed_consensus_context(self):
         payload = college_decision_data.load_weekly()
         self.assertEqual(payload["market"]["state"],
-                         "available_delayed_consensus")
+                         "available_delayed_market_context")
         self.assertEqual(payload["market"]["data_delay_seconds"], 30)
+        self.assertEqual(payload["market"]["player_coverage"]["playersWithNumericEvidence"], 112)
         self.assertIn("Sportsbook environment",
                       build_decision_room.college_decision_room.JS)
-        self.assertIn("not a player prop or a projection input",
+        self.assertIn("exact player-component markets for 112 players",
                       build_decision_room.college_decision_room.SHELL)
         self.assertIn("Expected opportunity", build_decision_room.college_decision_room.JS)
 

@@ -81,6 +81,14 @@ def load_weekly() -> dict:
                 "receptions": row.get("rec"),
             },
             "projection_confidence": row.get("confidence"),
+            "player_market": {
+                "state": ("available" if row.get("marketEvidence")
+                          else "role_only" if row.get("marketRoleEvidence")
+                          else "unavailable"),
+                "components": row.get("marketEvidence") or [],
+                "role_evidence": bool(row.get("marketRoleEvidence")),
+                "is_projection_input": bool(row.get("marketEvidence")),
+            },
             "history": {}, "history_season": None,
             "formats": {"yahoo": {
                 "projected_points": row["pts"], "overall_rank": row["overallRank"],
@@ -100,7 +108,7 @@ def load_weekly() -> dict:
         "scoring_format": "yahoo", "scoring_label": raw["scoring"],
         "updated_at": raw["generatedAt"], "adp_available": False,
         "market": {
-            "state": "available_delayed_consensus",
+            "state": "available_delayed_market_context",
             "label": ("TheRundown Pro main-line consensus from Pinnacle, DraftKings, "
                       "and FanDuel; 30-second plan delay"),
             "captured_on": market_payload["captured_on"],
@@ -108,6 +116,7 @@ def load_weekly() -> dict:
                 "latest_market_update_at"],
             "data_delay_seconds": market_payload["source"]["data_delay_seconds"],
             "coverage": market_payload["coverage"],
+            "player_coverage": raw.get("marketInput", {}),
         },
         "conference_available": False, "counts": raw["counts"],
         "market_context_by_team": market_teams,
@@ -135,12 +144,14 @@ def load_weekly() -> dict:
             "schedule_sos": {"label": schedule_payload["source"],
                              "updated_at": schedule_payload["generated_at"]},
             "market": {
-                "label": ("TheRundown delayed main-line consensus: Pinnacle, "
-                          "DraftKings, FanDuel"),
+                "label": ("TheRundown delayed game consensus plus exact, "
+                          "team-bounded player component markets"),
                 "updated_at": market_payload["source"]["latest_market_update_at"],
                 "captured_on": market_payload["captured_on"],
                 "data_delay_seconds": market_payload["source"]["data_delay_seconds"],
-                "note": market_payload["source"]["note"],
+                "note": ("Game markets describe the scoring environment. Exact "
+                         "player markets anchor only their named component; coverage "
+                         "varies and market inputs are not outcomes or guarantees."),
             },
         },
     }

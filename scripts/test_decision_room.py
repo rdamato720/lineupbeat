@@ -217,7 +217,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
                       "Make the call with the", "NFL + COLLEGE FANTASY FOOTBALL",
                       "Fantasy football decisions, explained.",
                       "Tony Pollard vs. Rico Dowdle",
-                      "Jadan Baugh vs. Kewan Lacy"):
+                      "Devon Dampier vs. Byrum Brown"):
             self.assertIn(label, home)
         self.assertNotIn("NFL or College", home)
         self.assertNotIn("Today’s Decision Board", home)
@@ -255,9 +255,10 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertEqual(home.count('class="hp-decision-summary"'), 2)
         self.assertEqual(home.count('class="hp-evidence-grid"'), 2)
         self.assertIn("Projection, modeled volume, and 2025 opponent context align", home)
-        self.assertIn("Projection, modeled workload, and delayed sportsbook scoring environment align", home)
+        self.assertIn("Reconciled projection, modeled workload, game environment, and exact player-component markets", home)
         self.assertIn("Sportsbook team total", home)
-        self.assertIn("Florida’s -26.5 spread also creates late-game workload risk", home)
+        self.assertIn("Player market evidence", home)
+        self.assertIn("Market inputs are evidence, not outcomes or guarantees", home)
         self.assertIn("Current injury reporting and sportsbook evidence remain unavailable", home)
         self.assertIn("Market evidence appears only when it is validated", home)
         self.assertNotIn("Projection edge: Tony Pollard", home)

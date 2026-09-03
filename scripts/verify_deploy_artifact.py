@@ -351,15 +351,16 @@ def check_homepage(root, decision_room=False):
               and "The latest from The Beat" not in text)
         check("the homepage presents equal NFL and College featured decisions",
               "Tony Pollard vs. Rico Dowdle" in text
-              and "Jadan Baugh vs. Kewan Lacy" in text
+              and "Devon Dampier vs. Byrum Brown" in text
               and len(re.findall(
                   r'<article class="hp-feature[^"]*lb-feature-card[^"]*"', text)) == 2
               and text.count('class="hp-decision-summary"') == 2
               and text.count('class="hp-evidence-grid"') == 2
               and "Projection, modeled volume, and 2025 opponent context align" in text
-              and "Projection, modeled workload, and delayed sportsbook scoring environment align" in text
+              and "Reconciled projection, modeled workload, game environment, and exact player-component markets" in text
               and "Sportsbook team total" in text
-              and "Florida’s -26.5 spread also creates late-game workload risk" in text
+              and "Player market evidence" in text
+              and "Market inputs are evidence, not outcomes or guarantees" in text
               and "Projection edge: Tony Pollard" not in text)
         check("the homepage describes market evidence without overstating it",
               "Market evidence appears only when it is validated" in text
@@ -385,15 +386,18 @@ def check_homepage(root, decision_room=False):
             market_teams = college.get("market_context_by_team", {})
             check("the delayed College sportsbook context covers every modeled team",
                   college.get("market", {}).get("state")
-                  == "available_delayed_consensus"
+                  == "available_delayed_market_context"
                   and college.get("market", {}).get("data_delay_seconds") == 30
                   and len(market_teams) == 64
                   and all(row.get("state") == "available"
                           for row in market_teams.values()))
-            check("the College sportsbook context remains game-level evidence",
+            player_market = college.get("market", {}).get("player_coverage", {})
+            check("the College sportsbook context separates game and player evidence",
                   all("player" not in key.lower()
                       for row in market_teams.values() for key in row)
-                  and "not a projection input" in
+                  and player_market.get("playersWithNumericEvidence") == 112
+                  and player_market.get("playersWithEvidence") == 345
+                  and "Exact player markets anchor only their named component" in
                   college.get("sources", {}).get("market", {}).get("note", ""))
             check("the homepage exposes separate NFL and College routes",
                   '/decision-room/nfl/' in text and '/decision-room/college/' in text)

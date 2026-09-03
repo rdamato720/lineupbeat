@@ -1,0 +1,41 @@
+{
+ "version": "college_week1_2026_v1.1",
+ "status": "DEVELOPMENT",
+ "generated_at": "2026-09-03T14:55:27Z",
+ "source_release": "2026/week-1/v1.0",
+ "source_manifest_sha256": "9b3436d1df2869c9b02b1e6bb905f5a430ee331dd2625cd62264ee79f216fca2",
+ "qa_status": "PASS",
+ "scoring": "Yahoo scoring rules",
+ "counts": {
+  "players": 2205,
+  "teams": 64,
+  "positions": {
+   "QB": 339,
+   "RB": 462,
+   "WR": 924,
+   "TE": 480
+  }
+ },
+ "files": {
+  "college_week1_player_projections_2026_v1.1.csv": {
+   "bytes": 820126,
+   "sha256": "174ce819d96f10463f55c01fb20e883be3eedf22fc387d0b37687f27acafaf6e"
+  },
+  "college_week1_schedule_2026.json": {
+   "bytes": 28505,
+   "sha256": "b6acddcfed8d27606ade912576a483b150c35d70e240e76013b50ded2fec9b1e"
+  },
+  "projection_repair_audit.json": {
+   "bytes": 279136,
+   "sha256": "154a54dd6bd02c0f843f0f7c62d80cd2a919a352c1d80b46808b2b3d3c4bcbe4"
+  },
+  "college_week1_site_projections_2026.json": {
+   "bytes": 1113359,
+   "sha256": "18f393da86fed4b48eaea6d6816a59ccd5be44d0996adf325ca3e914074938c8"
+  },
+  "README.md": {
+   "bytes": 521,
+   "sha256": "e72f966736907986d1321356227f030cb5844dba7c53c0a8abfb62aaa10b44ef"
+  }
+ }
+}

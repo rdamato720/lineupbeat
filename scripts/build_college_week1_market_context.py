@@ -18,8 +18,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent.parent
-WEEKLY = (ROOT / "data/college/2026/week-1/v1.0/"
-          "college_week1_site_projections_2026.json")
+CONFIG = ROOT / "data/college/config.json"
 DEFAULT_OUTPUT = (ROOT / "data/college/2026/week-1/market-context/"
                   "therundown-2026-09-03.json")
 BOOKS = {"3": "Pinnacle", "19": "DraftKings", "23": "FanDuel"}
@@ -135,7 +134,10 @@ def load_capture(path: Path) -> tuple[dict, list[dict], dict[str, str]]:
 
 
 def modeled_schedule() -> dict[str, dict]:
-    raw = json.loads(WEEKLY.read_text())
+    config = json.loads(CONFIG.read_text())
+    weekly = (ROOT / "data/college" / config["activeCollegeWeeklyProjectionVersion"]
+              / "college_week1_site_projections_2026.json")
+    raw = json.loads(weekly.read_text())
     schedules: dict[str, dict] = {}
     for player in raw["players"]:
         row = {
