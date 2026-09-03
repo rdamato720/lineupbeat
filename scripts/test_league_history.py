@@ -71,8 +71,14 @@ def main() -> int:
     for required in ("League history", "Trophy case", "All-time table", "Manager files",
                      "League records", "noindex,nofollow", "ESPN history import",
                      "Approve identities", "LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST",
+                     "Possible duplicates", "Review other managers", "data-demo=",
+                     "document.body.classList.add('has-import')",
+                     "detail.querySelectorAll('.identity-row')",
+                     "headerSeasons.textContent=p.counts.seasons",
+                     ".has-import .tabs,.has-import .panel,.has-import .lh-footer",
                      "96", "Prototype boundary", "fictional"):
         assert required in page, required
+    assert "identity.seasons.join(', ')+' · '+identity.teamNames.join(' / ')" not in page
     assert "password" not in page.lower()
     assert "cookie" not in page.lower()
     for private_name in ("Adrian Chadzynski", "Ralph Damato", "Bobby Digital"):
