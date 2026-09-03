@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 800,
+ "count": 818,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -8839,6 +8839,204 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003904
+  },
+  {
+   "candidate_id": "mobile:article:6ecdbff06cfa4fe82fc8",
+   "player_id": "00-0035640",
+   "source_url": "https://steelersdepot.com/2026/09/christian-kuntz-excited-about-steelers-young-receivers-offenses-potential/",
+   "attempted_at": "2026-09-03T15:09:45+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:09:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003948
+  },
+  {
+   "candidate_id": "mobile:article:e460ca80c78f42588463",
+   "player_id": "00-0036252",
+   "source_url": "https://steelersdepot.com/2026/09/christian-kuntz-excited-about-steelers-young-receivers-offenses-potential/",
+   "attempted_at": "2026-09-03T15:09:51+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-03T15:09:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006346
+  },
+  {
+   "candidate_id": "mobile:onsi:4296171c050522028e8c",
+   "player_id": "00-0036971",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-mailbag-judging-past-drafts-branson-combs-vs-ventrell-miller-and-more",
+   "attempted_at": "2026-09-03T15:09:57+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T15:10:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005762
+  },
+  {
+   "candidate_id": "mobile:onsi:dce08208b76d8373c2fe",
+   "player_id": "00-0038606",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-mailbag-judging-past-drafts-branson-combs-vs-ventrell-miller-and-more",
+   "attempted_at": "2026-09-03T15:10:01+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T15:10:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00469
+  },
+  {
+   "candidate_id": "mobile:onsi:a981231c94bddc807713",
+   "player_id": "00-0038611",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-mailbag-judging-past-drafts-branson-combs-vs-ventrell-miller-and-more",
+   "attempted_at": "2026-09-03T15:10:05+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:10:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003878
+  },
+  {
+   "candidate_id": "mobile:article:68baa55e0c15b53ca23f",
+   "player_id": "00-0041511",
+   "source_url": "https://jetsxfactor.com/2026/09/03/ny-jets-depth-chart-ways-looks-better-now-star-camp/",
+   "attempted_at": "2026-09-03T15:10:09+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-03T15:10:12+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004654
+  },
+  {
+   "candidate_id": "mobile:article:c5f8e74316d350b96d4d",
+   "player_id": "00-0039890",
+   "source_url": "https://jetsxfactor.com/2026/09/03/ny-jets-depth-chart-ways-looks-better-now-star-camp/",
+   "attempted_at": "2026-09-03T15:10:12+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:10:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004994
+  },
+  {
+   "candidate_id": "mobile:article:16e1e2240e24eb63c2c7",
+   "player_id": "00-0037740",
+   "source_url": "https://jetsxfactor.com/2026/09/03/ny-jets-depth-chart-ways-looks-better-now-star-camp/",
+   "attempted_at": "2026-09-03T15:10:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:10:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004638
+  },
+  {
+   "candidate_id": "mobile:onsi:651efab56972cf22a11d",
+   "player_id": "00-0034857",
+   "source_url": "https://www.si.com/nfl/bills/onsi/greg-dortch-bills-wr-grateful-unique-nfl-path-led-him-back-home",
+   "attempted_at": "2026-09-03T15:10:19+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:10:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003796
+  },
+  {
+   "candidate_id": "mobile:article:d3de542f3522b2f3d9e9",
+   "player_id": "00-0034351",
+   "source_url": "https://www.phillyvoice.com/eagles-mailbag-lots-offensive-line-talk-present-future-landon-dickerson-drew-kendall-micah-morris-willie-lampkin/",
+   "attempted_at": "2026-09-03T15:10:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:10:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004474
+  },
+  {
+   "candidate_id": "mobile:onsi:818317184eb45b4dda9d",
+   "player_id": "00-0039338",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-3-milestones-can-accomplish-2026",
+   "attempted_at": "2026-09-03T15:10:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:10:29+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004374
+  },
+  {
+   "candidate_id": "mobile:onsi:9900f9f3e7c9d31b7f0f",
+   "player_id": "00-0039849",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/deep-dive-why-michael-wilson-arizona-cardinals-playing-dangerous-game",
+   "attempted_at": "2026-09-03T15:10:29+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:10:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00459
+  },
+  {
+   "candidate_id": "mobile:onsi:b2ca3e20831f193c25be",
+   "player_id": "00-0037744",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/deep-dive-why-michael-wilson-arizona-cardinals-playing-dangerous-game",
+   "attempted_at": "2026-09-03T15:10:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:10:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003882
+  },
+  {
+   "candidate_id": "mobile:onsi:dc5d106b86f1a05ffa13",
+   "player_id": "00-0038559",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/deep-dive-why-michael-wilson-arizona-cardinals-playing-dangerous-game",
+   "attempted_at": "2026-09-03T15:10:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:10:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004332
+  },
+  {
+   "candidate_id": "mobile:onsi:e423be2a8d510ab72c79",
+   "player_id": "00-0040676",
+   "source_url": "https://www.si.com/nfl/titans/onsi/nfl-network-predicts-a-titans-loss-in-week-1-that-robert-saleh-must-avoid-01m1kpma9p9f",
+   "attempted_at": "2026-09-03T15:10:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:10:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004716
+  },
+  {
+   "candidate_id": "mobile:article:3bdca665f5890b2692f3",
+   "player_id": "00-0040753",
+   "source_url": "https://www.packers.com/news/inbox-it-s-worth-it-in-the-end-sept-3-2026",
+   "attempted_at": "2026-09-03T15:10:42+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-03T15:10:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00518
+  },
+  {
+   "candidate_id": "mobile:article:36699ea26bc8ef2730f7",
+   "player_id": "00-0039275",
+   "source_url": "https://www.packers.com/news/inbox-it-s-worth-it-in-the-end-sept-3-2026",
+   "attempted_at": "2026-09-03T15:10:46+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-03T15:10:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00554
+  },
+  {
+   "candidate_id": "mobile:onsi:3b24a94662b50820dfa0",
+   "player_id": "00-0041013",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/updated-chiefs-depth-chart-after-roster-cuts-whos-starting-in-week-1",
+   "attempted_at": "2026-09-03T15:10:51+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-03T15:10:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00712
   }
  ]
 }
