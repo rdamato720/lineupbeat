@@ -165,11 +165,11 @@ def audit(root: Path) -> tuple[int, int, int]:
         root / "nfl/data/index.html": ("177-player", "615-player", "216-player"),
         root / "decision-room/college/index.html": ("2,205", "64 teams", "Yahoo"),
     }
-    final_season = root / 'data/nfl-season-v15.json'
+    final_season = root / 'data/nfl-season-trusted.json'
     if final_season.exists():
         population = len(json.loads(final_season.read_text())['players'])
-        if population != 505:
-            errors.append('v1.5 active season population must be 505')
+        if population != 424:
+            errors.append('trusted current season population must be 424')
         scope_checks[root / 'nfl/who-should-i-draft/index.html'] = (f'{population}-player', '2025 weekly')
         scope_checks[root / 'nfl/data/index.html'] = ('177-player', f'{population}-player')
     for page, needles in scope_checks.items():

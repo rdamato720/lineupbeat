@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Complete offline development build, with explicit frozen-season adapters.
+"""Complete offline development build with trusted-current season adapters.
 
 Run in a disposable checkout. No provider requests or production data writes.
 The deployment workflow calls this twice and compares every output byte.
 """
 from __future__ import annotations
 import argparse
+import atexit
 import importlib
 import json
 import os
@@ -30,17 +31,20 @@ def deny_network(event,args):
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--development',action='store_true');args=parser.parse_args()
     if not args.development or os.environ.get('DEV_PROJECT')!='lineupbeat-dev':raise SystemExit('isolated development project required')
-    os.environ['LINEUPBEAT_NFL_SEASON']='v1.5-final'
+    os.environ['LINEUPBEAT_NFL_SEASON']='v1.6-trusted-current'
     sys.addaudithook(deny_network)
     import build_nfl_season_release as release
     global CUTOFF
     model,ranking=release.load();CUTOFF=datetime.fromisoformat(model['metadata']['cutoff_utc'].replace('Z','+00:00'))
     import dev_site
     feed=ROOT/'data/rollback/feed.before-replacement.json'
-    db=ROOT/'audit/nfl-v15-build.db';db.parent.mkdir(exist_ok=True)
-    template=ROOT/'site/template.html';saved_template=ROOT/'audit/nfl-v15-source-template.html'
+    db=ROOT/'audit/nfl-trusted-build.db';db.parent.mkdir(exist_ok=True)
+    template=ROOT/'site/template.html';saved_template=ROOT/'audit/nfl-trusted-source-template.html'
+    atexit.register(lambda: template.unlink(missing_ok=True))
     if template.exists():shutil.copyfile(template,saved_template)
-    else:shutil.copyfile(saved_template,template)
+    # Builders read site/template.html directly, so recreate the same pristine
+    # input for every pass and remove it from the deployable artifact at end.
+    shutil.copyfile(saved_template,template)
     dev_site.seed(feed,template,ROOT/'site')
     dev_site.hydrate_db(feed,db)
     release.context_pages()
@@ -64,8 +68,8 @@ def main():
         return result
     formats.read_roster_ages=captured_ages
     formats.PPR_ADJUSTMENTS={};formats.NON_PPR_ADJUSTMENTS={};formats.PPR_ORDER=();formats.DYNASTY_EDITORIAL={}
-    # Auxiliary Superflex/dynasty retain their general format transformations;
-    # the three requested scoring boards are replaced by exact point ranks.
+    # Auxiliary formats use the same trusted population. The format builder's
+    # lower floor is enabled only by this explicit development release.
     run('build_ranking_formats')
     import build_comparison_tool as comparison
     superflex,_=formats.rank(formats.read_projection_formats(None)['superflex'],'superflex')
@@ -94,8 +98,12 @@ def main():
     dev_site.protect(ROOT/'site','develop')
     # A source template is not a public route. Keep its pristine copy outside
     # the artifact, so protections cannot feed back into the next build.
-    template.unlink()
+    template.unlink(missing_ok=True)
     dev_site.verify(ROOT/'site')
-    print('Complete offline v1.5 development site built; no provider requests')
+    # Verification may restore the tracked template while resolving site
+    # provenance. It is still build input, not a deployable route.
+    template.unlink(missing_ok=True)
+    if template.exists():raise RuntimeError('source template leaked into development artifact')
+    print('Complete offline trusted-current development site built; no provider requests')
 
 if __name__=='__main__':main()

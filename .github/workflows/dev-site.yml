@@ -51,19 +51,19 @@ jobs:
           python -m beatwire.cli doctor --sport nfl
           python scripts/sync_home_nav.py --check
 
-      - name: Validate the frozen v1.5 season release
+      - name: Validate the trusted-current season release
         run: |
-          python scripts/build_nfl_season_final.py
-          python scripts/test_nfl_season_final.py
+          python scripts/build_nfl_trusted_season.py
+          python scripts/test_nfl_trusted_season.py
 
       - name: Build the complete offline development site twice
         env:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
           python scripts/build_nfl_v15_development.py --development
-          python scripts/verify_nfl_season_release.py site --manifest /tmp/v15-build-one.json
+          python scripts/verify_nfl_season_release.py site --manifest /tmp/trusted-build-one.json
           python scripts/build_nfl_v15_development.py --development
-          python scripts/verify_nfl_season_release.py site --compare /tmp/v15-build-one.json
+          python scripts/verify_nfl_season_release.py site --compare /tmp/trusted-build-one.json
           python scripts/verify_nfl_season_release.py site
           python scripts/verify_deploy_artifact.py site --decision-room
           python scripts/dev_site.py verify
