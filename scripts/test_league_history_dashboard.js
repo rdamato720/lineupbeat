@@ -102,4 +102,20 @@ assert.equal(alex.seasonStats.get(2025).losses, 1);
 assert.deepEqual(alex.titleYears, [2024]);
 assert.equal(alex.longestWinStreak, 1);
 
+assert.equal(dashboard.comparisonText({changed: false}), 'Shared page is up to date.');
+const refreshMessage = dashboard.comparisonText({
+  changed: true,
+  counts: {
+    seasons: {before: 20, after: 21},
+    matchups: {before: 1694, after: 1706},
+    teams: {before: 12, after: 12},
+    identities: {before: 14, after: 14}
+  },
+  seasonYears: {added: [2026], removed: []},
+  managerMatchesChanged: false,
+  detailsChanged: false
+});
+assert.equal(refreshMessage,
+  'New ESPN data: 2026 season added · +12 matchups. Update the shared page when ready.');
+
 console.log('league history dashboard calculations passed');

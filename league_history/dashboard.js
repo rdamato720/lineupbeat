@@ -1026,7 +1026,7 @@
     if (key) key.textContent = value.manageToken || '';
     if (restore) restore.hidden = true;
     result.hidden = false;
-    button.textContent = 'Update shared league';
+    button.textContent = 'Update shared page';
   }
 
   function clearPublication() {
@@ -1061,6 +1061,61 @@
     }
   }
 
+  function comparisonText(comparison) {
+    if (!comparison) return 'Commissioner access connected.';
+    if (!comparison.changed) return 'Shared page is up to date.';
+    const labels = {seasons: 'season', matchups: 'matchup', teams: 'team',
+      identities: 'manager'};
+    const changes = [];
+    Object.keys(labels).forEach(key => {
+      const row = comparison.counts && comparison.counts[key];
+      if (!row || row.before === row.after) return;
+      if (key === 'seasons' && comparison.seasonYears) {
+        (comparison.seasonYears.added || []).forEach(year =>
+          changes.push(year + ' season added'));
+        (comparison.seasonYears.removed || []).forEach(year =>
+          changes.push(year + ' season removed'));
+        if ((comparison.seasonYears.added || []).length ||
+            (comparison.seasonYears.removed || []).length) return;
+      }
+      const delta = row.after - row.before;
+      if (delta > 0) {
+        changes.push('+' + delta + ' ' + labels[key] + (delta === 1 ? '' : 's'));
+      } else {
+        changes.push(String(delta) + ' ' + labels[key] + (delta === -1 ? '' : 's'));
+      }
+    });
+    if (comparison.managerMatchesChanged) changes.push('manager matches changed');
+    if (comparison.detailsChanged) changes.push('scores or season details changed');
+    return 'New ESPN data: ' + (changes.length ? changes.join(' · ') :
+      'league details changed') + '. Update the shared page when ready.';
+  }
+
+  async function checkPublication(saved) {
+    const status = document.getElementById('publish-status');
+    if (!status || !capture || !activeReview) return;
+    status.textContent = 'Checking the shared page…';
+    try {
+      const response = await fetch('/api/leagues/' + encodeURIComponent(saved.slug), {
+        method: 'PATCH',
+        headers: {'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + saved.manageToken},
+        body: JSON.stringify({archive: capture, review: activeReview})
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || 'Shared page status is unavailable.');
+      saved.visibility = result.visibility;
+      localStorage.setItem(publicationKey(), JSON.stringify(saved));
+      const option = document.querySelector(
+        'input[name="league-visibility"][value="' + saved.visibility + '"]');
+      if (option) option.checked = true;
+      status.textContent = comparisonText(result.comparison);
+    } catch (error) {
+      status.textContent = error && error.message ? error.message :
+        'Shared page status is unavailable.';
+    }
+  }
+
   function restorePublication() {
     const saved = savedPublication();
     if (!saved) return;
@@ -1068,6 +1123,7 @@
       'input[name="league-visibility"][value="' + saved.visibility + '"]');
     if (option) option.checked = true;
     showPublication(saved);
+    checkPublication(saved);
   }
 
   async function publishLeague() {
@@ -1102,7 +1158,10 @@
       localStorage.setItem(publicationKey(), JSON.stringify(stored));
       showPublication(stored);
       status.textContent = updating ?
-        'Shared league updated. The link stays the same.' :
+        'Shared page updated: ' + capture.seasons.length + ' seasons · ' +
+          capture.seasons.reduce((total, season) =>
+            total + (season.matchups || []).length, 0).toLocaleString() +
+          ' matchups. The link stays the same.' :
         'Share link ready. Save the key under Recovery key.';
     } catch (error) {
       status.textContent = error && error.message ? error.message :
@@ -1129,7 +1188,9 @@
     try {
       const response = await fetch('/api/leagues/' + encodeURIComponent(slug), {
         method: 'PATCH',
-        headers: {Authorization: 'Bearer ' + manageToken}
+        headers: {'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + manageToken},
+        body: JSON.stringify({archive: capture, review: activeReview})
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || 'Access could not be restored.');
@@ -1141,7 +1202,8 @@
       key.value = '';
       share.value = '';
       showPublication(stored);
-      status.textContent = 'Commissioner access restored on this browser.';
+      status.textContent = 'Commissioner access restored. ' +
+        comparisonText(result.comparison);
     } catch (error) {
       status.textContent = error && error.message ? error.message :
         'Access could not be restored.';
@@ -1245,7 +1307,7 @@
     if (publishPanel) publishPanel.hidden = true;
   }
 
-  globalThis.LineupBeatLeagueHistoryDashboard = {summarize};
+  globalThis.LineupBeatLeagueHistoryDashboard = {summarize, comparisonText};
   if (typeof document === 'undefined') return;
 
   const edit = document.getElementById('edit-manager-matches');

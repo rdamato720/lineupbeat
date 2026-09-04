@@ -293,6 +293,35 @@ function authorization(request) {
   return header.startsWith('Bearer ') ? header.slice(7) : '';
 }
 
+function publicationComparison(currentEncoded, proposed) {
+  const current = JSON.parse(currentEncoded);
+  const currentArchive = {...current.archive, capturedAt: null};
+  const proposedArchive = {...proposed.archive, capturedAt: null};
+  const archiveChanged = JSON.stringify(currentArchive) !== JSON.stringify(proposedArchive);
+  const managerMatchesChanged =
+    JSON.stringify(current.review) !== JSON.stringify(proposed.review);
+  const before = current.archive.counts;
+  const after = proposed.archive.counts;
+  const beforeYears = new Set(current.archive.seasons.map(row => row.year));
+  const afterYears = new Set(proposed.archive.seasons.map(row => row.year));
+  const counts = {};
+  let countsChanged = false;
+  for (const key of ['seasons', 'matchups', 'teams', 'identities']) {
+    counts[key] = {before: Number(before[key] || 0), after: Number(after[key] || 0)};
+    if (counts[key].before !== counts[key].after) countsChanged = true;
+  }
+  return {
+    changed: archiveChanged || managerMatchesChanged,
+    counts,
+    seasonYears: {
+      added: [...afterYears].filter(year => !beforeYears.has(year)).sort(),
+      removed: [...beforeYears].filter(year => !afterYears.has(year)).sort()
+    },
+    managerMatchesChanged,
+    detailsChanged: archiveChanged && !countsChanged
+  };
+}
+
 async function ensureSchema(env) {
   if (!env || !env.LEAGUE_HISTORY_DB ||
       typeof env.LEAGUE_HISTORY_DB.prepare !== 'function') {
@@ -366,7 +395,7 @@ async function authorizePublication(request, env, slug) {
     return {response: json({error: 'Publishing access is required.'}, 401)};
   }
   const current = await env.LEAGUE_HISTORY_DB.prepare(
-    `SELECT slug, league_name, visibility, manage_token_hash, updated_at
+    `SELECT slug, league_name, visibility, archive_json, manage_token_hash, updated_at
      FROM league_history_publications WHERE slug = ?`
   ).bind(slug).first();
   if (!current || current.manage_token_hash !== await hashToken(token)) {
@@ -380,9 +409,15 @@ async function recoverPublication(request, env, slug) {
   if (authorized.response) return authorized.response;
   const row = authorized.current;
   const origin = new URL(request.url).origin;
+  let comparison = null;
+  if ((request.headers.get('Content-Type') || '').toLowerCase().includes('application/json')) {
+    const raw = await body(request);
+    comparison = publicationComparison(row.archive_json,
+      sanitizePublication(raw.archive, raw.review).value);
+  }
   return json({ok: true, slug: row.slug, name: row.league_name,
     url: `${origin}/leagues/${row.slug}`, visibility: row.visibility,
-    updatedAt: row.updated_at}, 200, {'Cache-Control': 'no-store'});
+    updatedAt: row.updated_at, comparison}, 200, {'Cache-Control': 'no-store'});
 }
 
 async function deletePublication(request, env, slug) {

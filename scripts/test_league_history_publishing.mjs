@@ -183,6 +183,50 @@ assert.deepEqual({slug: recovered.slug, name: recovered.name,
   slug: created.slug, name: 'BG-N-Co.', visibility: 'unlisted'
 });
 assert(!('manageToken' in recovered));
+assert.equal(recovered.comparison, null);
+
+const recaptured = structuredClone(archive);
+recaptured.capturedAt = '2026-09-04T13:00:00.000Z';
+const unchangedCheck = await onRequestPatch(context(new Request(
+  origin + '/api/leagues/' + created.slug, {
+    method: 'PATCH',
+    headers: {'Content-Type': 'application/json', Origin: origin,
+      Authorization: 'Bearer ' + created.manageToken},
+    body: JSON.stringify({archive: recaptured, review})
+  })));
+assert.equal(unchangedCheck.status, 200);
+assert.equal((await unchangedCheck.json()).comparison.changed, false);
+
+const corrected = structuredClone(recaptured);
+corrected.seasons[0].matchups[0].awayScore = -2.5;
+const detailCheck = await onRequestPatch(context(new Request(
+  origin + '/api/leagues/' + created.slug, {
+    method: 'PATCH',
+    headers: {'Content-Type': 'application/json', Origin: origin,
+      Authorization: 'Bearer ' + created.manageToken},
+    body: JSON.stringify({archive: corrected, review})
+  })));
+const detailComparison = (await detailCheck.json()).comparison;
+assert.equal(detailComparison.changed, true);
+assert.equal(detailComparison.detailsChanged, true);
+assert.equal(detailComparison.counts.matchups.before, 1);
+assert.equal(detailComparison.counts.matchups.after, 1);
+
+const expanded = structuredClone(recaptured);
+expanded.seasons[0].matchups.push({id: 'espn-matchup-2', week: 2, playoff: false,
+  homeTeamId: 'espn-team-2', awayTeamId: 'espn-team-1',
+  homeScore: 95.5, awayScore: 101.25});
+const countCheck = await onRequestPatch(context(new Request(
+  origin + '/api/leagues/' + created.slug, {
+    method: 'PATCH',
+    headers: {'Content-Type': 'application/json', Origin: origin,
+      Authorization: 'Bearer ' + created.manageToken},
+    body: JSON.stringify({archive: expanded, review})
+  })));
+const countComparison = (await countCheck.json()).comparison;
+assert.equal(countComparison.changed, true);
+assert.equal(countComparison.detailsChanged, false);
+assert.deepEqual(countComparison.counts.matchups, {before: 1, after: 2});
 
 const forbidden = await onRequestPut(context(new Request(
   origin + '/api/leagues/' + created.slug, {
