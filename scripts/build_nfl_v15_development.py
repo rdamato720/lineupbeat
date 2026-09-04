@@ -6,7 +6,6 @@ The deployment workflow calls this twice and compares every output byte.
 """
 from __future__ import annotations
 import argparse
-import atexit
 import importlib
 import json
 import os
@@ -89,10 +88,13 @@ def main():
     feed=ROOT/'data/rollback/feed.before-replacement.json'
     db=ROOT/'audit/nfl-trusted-build.db';db.parent.mkdir(exist_ok=True)
     template=ROOT/'site/template.html';saved_template=ROOT/'audit/nfl-trusted-source-template.html'
-    atexit.register(lambda: template.unlink(missing_ok=True))
-    if template.exists():shutil.copyfile(template,saved_template)
+    if template.exists() and 'id="lb-dev-style"' not in template.read_text():
+        shutil.copyfile(template,saved_template)
+    if not saved_template.exists():
+        raise RuntimeError('pristine source template is unavailable')
     # Builders read site/template.html directly, so recreate the same pristine
-    # input for every pass and remove it from the deployable artifact at end.
+    # input for every pass. The final protection pass also makes the tracked
+    # template safe if a worktree manager restores it into the upload folder.
     shutil.copyfile(saved_template,template)
     dev_site.seed(feed,template,ROOT/'site')
     dev_site.hydrate_db(feed,db)
@@ -148,14 +150,9 @@ def main():
     run('build_chrome_store_bundle')
     release.build()
     dev_site.protect(ROOT/'site','develop')
-    # A source template is not a public route. Keep its pristine copy outside
-    # the artifact, so protections cannot feed back into the next build.
-    template.unlink(missing_ok=True)
     dev_site.verify(ROOT/'site')
-    # Verification may restore the tracked template while resolving site
-    # provenance. It is still build input, not a deployable route.
-    template.unlink(missing_ok=True)
-    if template.exists():raise RuntimeError('source template leaked into development artifact')
+    if 'id="lb-dev-style"' not in template.read_text():
+        raise RuntimeError('source template was not protected for development')
     print('Complete offline trusted-current development site built; no provider requests')
 
 if __name__=='__main__':main()

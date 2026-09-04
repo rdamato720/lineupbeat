@@ -11,4 +11,14 @@ CREATE TABLE IF NOT EXISTS league_history_publications (
 CREATE INDEX IF NOT EXISTS idx_league_history_visibility_updated
 ON league_history_publications (visibility, updated_at DESC);
 
+CREATE TABLE IF NOT EXISTS league_history_rate_limits (
+  scope TEXT PRIMARY KEY,
+  window_start INTEGER NOT NULL,
+  requests INTEGER NOT NULL,
+  expires_at INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_league_history_rate_limit_expiry
+ON league_history_rate_limits (expires_at);
+
 PRAGMA optimize;

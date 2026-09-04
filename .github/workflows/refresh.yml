@@ -822,6 +822,11 @@ jobs:
               --production-branch=main || true
           echo "::endgroup::"
 
+          # The production Pages project owns a separate, automatically
+          # provisioned D1 database. Never reuse the explicit development
+          # binding: published league data must stay isolated by environment.
+          cp cloudflare/lineupbeat-production.wrangler.toml wrangler.toml
+
           # The deploy itself gets three attempts.
           #
           # It failed with "A fetch request failed, likely due to a
@@ -833,8 +838,8 @@ jobs:
           # A Pages deploy creates a new deployment each time, so a retry
           # after a failed upload costs a deployment slot and nothing else.
           for attempt in 1 2 3; do
-            if npx --yes wrangler@latest pages deploy site \
-                 --project-name=lineupbeat --branch=main --commit-dirty=true; then
+            if npx --yes wrangler@latest pages deploy \
+                 --branch=main --commit-dirty=true; then
               echo "  deployed on attempt $attempt"
               exit 0
             fi

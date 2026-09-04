@@ -96,8 +96,11 @@ def main() -> int:
                      'id="published-url"', 'name="league-visibility"',
                      'id="unpublish-league"', 'id="recovery-key-value"',
                      'id="restore-publication-access"',
+                     'id="retry-shared-league"',
                      "Already published? Restore commissioner access",
                      ".shared-history.history-ready .import-card",
+                     ".shared-history-error #retry-shared-league",
+                     ".visibility-options{grid-template-columns:1fr}",
                      "96", "Prototype boundary", "fictional"):
         assert required in page, required
     assert "identity.seasons.join(', ')+' · '+identity.teamNames.join(' / ')" not in page
@@ -120,11 +123,13 @@ def main() -> int:
                      "Private ESPN history · processed only in this browser.",
                      "publishLeague", "loadSharedLeague", "/api/leagues/",
                      "recoverPublicationAccess", "unpublishLeague",
+                     "storePublication", "retryShared",
                      "checkPublication", "comparisonText",
                      "method: 'PATCH'", "method: 'DELETE'",
                      "Shared page is up to date.", "New ESPN data:",
                      "Update the shared page when ready.",
                      "Save the key under Recovery key.",
+                     "This browser could not save access",
                      "Shared league history · view only.",
                      "Shared by your commissioner.",
                      "ESPN credentials and private league access are not included."):

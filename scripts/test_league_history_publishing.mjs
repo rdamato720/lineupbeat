@@ -18,12 +18,27 @@ import {
 
 const devWorkflow = readFileSync(new URL('../.github/workflows/dev-site.yml', import.meta.url),
   'utf8');
+const productionWorkflow = readFileSync(
+  new URL('../.github/workflows/refresh.yml', import.meta.url), 'utf8');
+const devConfig = readFileSync(
+  new URL('../cloudflare/lineupbeat-dev.wrangler.toml', import.meta.url), 'utf8');
+const productionConfig = readFileSync(
+  new URL('../cloudflare/lineupbeat-production.wrangler.toml', import.meta.url), 'utf8');
 assert(devWorkflow.includes('cp cloudflare/lineupbeat-dev.wrangler.toml wrangler.toml'));
 assert(devWorkflow.includes('wrangler@latest pages deploy \\'));
 assert(!devWorkflow.includes('wrangler@latest pages deploy site'));
 assert(!devWorkflow.includes('--project-name="$DEV_PROJECT"'));
 assert(devWorkflow.includes('Verify league publishing storage'));
 assert(devWorkflow.includes('/api/leagues/deployment-health-check'));
+assert(productionWorkflow.includes(
+  'cp cloudflare/lineupbeat-production.wrangler.toml wrangler.toml'));
+assert(!productionWorkflow.includes('wrangler@latest pages deploy site'));
+assert(productionConfig.includes('name = "lineupbeat"'));
+assert(productionConfig.includes('binding = "LEAGUE_HISTORY_DB"'));
+assert(!/^database_id\s*=/m.test(productionConfig));
+assert(devConfig.includes('name = "lineupbeat-dev"'));
+assert(devConfig.includes('database_id ='));
+assert.notEqual(devConfig, productionConfig);
 
 const archive = {
   schemaVersion: 'lineupbeat-espn-history-capture-v1',
@@ -78,6 +93,63 @@ assert.deepEqual(publication.archive.seasons[0].teams.map(row => row.teamId), ['
 assert.equal(publication.archive.seasons[0].matchups[0].awayScore, -1.25);
 assert.equal(publication.review.identities[1].mergeInto, 'm1');
 
+const largeArchive = structuredClone(archive);
+largeArchive.identityReview.identities = Array.from({length: 32}, (_, index) => ({
+  identityId: `owner-${index + 1}`,
+  displayName: `Manager ${index + 1}`
+}));
+largeArchive.seasons = Array.from({length: 50}, (_, seasonIndex) => {
+  const year = 2000 + seasonIndex;
+  const teams = Array.from({length: 32}, (_, teamIndex) => ({
+    teamId: `team-${seasonIndex + 1}-${teamIndex + 1}`,
+    teamName: `Team ${teamIndex + 1}`,
+    ownerIds: [`owner-${teamIndex + 1}`],
+    wins: 7,
+    losses: 7,
+    ties: 0,
+    pointsFor: 1500.25,
+    pointsAgainst: 1499.75,
+    playoffSeed: teamIndex + 1,
+    finalStanding: teamIndex + 1
+  }));
+  const matchups = Array.from({length: 120}, (_, matchupIndex) => {
+    const homeIndex = matchupIndex % 32;
+    const awayIndex = (homeIndex + 1 + Math.floor(matchupIndex / 32)) % 32;
+    return {
+      id: `game-${seasonIndex + 1}-${matchupIndex + 1}`,
+      week: (matchupIndex % 18) + 1,
+      playoff: matchupIndex >= 96,
+      homeTeamId: teams[homeIndex].teamId,
+      awayTeamId: teams[awayIndex].teamId,
+      homeScore: 101.25,
+      awayScore: 99.75
+    };
+  });
+  return {year, leagueName: 'Large League', regularSeasonWeeks: 14,
+    complete: true, teams, matchups};
+});
+largeArchive.incomplete = [];
+const largeReview = {
+  schemaVersion: 'lineupbeat-history-identity-review-v1',
+  identities: largeArchive.identityReview.identities.map(row => ({
+    identityId: row.identityId,
+    displayName: row.displayName,
+    mergeInto: null
+  }))
+};
+const largePublication = sanitizePublication(largeArchive, largeReview);
+assert.equal(largePublication.value.archive.counts.seasons, 50);
+assert.equal(largePublication.value.archive.counts.teams, 32);
+assert.equal(largePublication.value.archive.counts.matchups, 6000);
+assert(largePublication.encoded.length < 1_800_000);
+const tooManyMatchups = structuredClone(largeArchive);
+tooManyMatchups.seasons[0].matchups.push({
+  id: 'one-too-many', week: 1, playoff: false,
+  homeTeamId: 'team-1-1', awayTeamId: 'team-1-2',
+  homeScore: 100, awayScore: 90
+});
+assert.throws(() => sanitizePublication(tooManyMatchups, largeReview), /too many matchups/);
+
 const encoded = JSON.stringify(publication).toLowerCase();
 for (const privateValue of [
   '987654', 'espn-owner-a', 'espn-owner-b', 'espn-team-1', 'espn-matchup-1',
@@ -105,13 +177,21 @@ assert.throws(() => sanitizePublication(archive, {...review, identities: review.
   /Every manager/);
 
 class MemoryD1 {
-  constructor() { this.rows = new Map(); this.schemaRuns = 0; }
+  constructor() { this.rows = new Map(); this.limits = new Map(); this.schemaRuns = 0; }
   prepare(sql) {
     const db = this;
     return {
       values: [],
       bind(...values) { this.values = values; return this; },
       async first() {
+        if (sql.includes('INSERT INTO league_history_rate_limits')) {
+          const [scope, windowStart, expiresAt] = this.values;
+          const current = db.limits.get(scope);
+          const requests = current && current.windowStart === windowStart
+            ? current.requests + 1 : 1;
+          db.limits.set(scope, {windowStart, requests, expiresAt});
+          return {requests};
+        }
         const slug = this.values[0];
         const row = db.rows.get(slug);
         if (!row) return null;
@@ -124,6 +204,11 @@ class MemoryD1 {
       async run() {
         if (sql.includes('CREATE TABLE') || sql.includes('CREATE INDEX')) {
           db.schemaRuns += 1;
+        } else if (sql.includes('DELETE FROM league_history_rate_limits')) {
+          const now = this.values[0];
+          for (const [scope, row] of db.limits) {
+            if (row.expiresAt < now) db.limits.delete(scope);
+          }
         } else if (sql.includes('INSERT INTO')) {
           const [slug, league_name, visibility, archive_json, manage_token_hash,
             created_at, updated_at] = this.values;
@@ -153,7 +238,7 @@ assert.equal(post.status, 201);
 const created = await post.json();
 assert(created.slug && created.manageToken && created.url.endsWith('/leagues/' + created.slug));
 assert.equal(db.rows.size, 1);
-assert.equal(db.schemaRuns, 2);
+assert.equal(db.schemaRuns, 4);
 assert(!db.rows.values().next().value.archive_json.includes('987654'));
 
 const read = await onRequestGet(context(new Request(
@@ -277,4 +362,27 @@ assert.equal(missing.status, 404);
 const options = onRequestOptions();
 assert.equal(options.headers.get('Allow'), 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
 
-console.log('league history publishing privacy, tokens and routing passed');
+const limitedDb = new MemoryD1();
+const limitedContext = request => ({request, env: {LEAGUE_HISTORY_DB: limitedDb}});
+let rateLimited;
+for (let index = 0; index < 11; index += 1) {
+  rateLimited = await onRequestPost(limitedContext(new Request(origin + '/api/leagues', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', Origin: origin,
+      'CF-Connecting-IP': '203.0.113.10'},
+    body: JSON.stringify({visibility: 'unlisted', archive, review})
+  })));
+}
+assert.equal(rateLimited.status, 429);
+assert.match(rateLimited.headers.get('Retry-After'), /^\d+$/);
+assert.equal((await rateLimited.json()).error, 'Too many requests. Try again shortly.');
+
+const otherClient = await onRequestPost(limitedContext(new Request(origin + '/api/leagues', {
+  method: 'POST',
+  headers: {'Content-Type': 'application/json', Origin: origin,
+    'CF-Connecting-IP': '203.0.113.11'},
+  body: JSON.stringify({visibility: 'unlisted', archive, review})
+})));
+assert.equal(otherClient.status, 201);
+
+console.log('league history publishing privacy, scale, limits, tokens and routing passed');

@@ -3,6 +3,8 @@ const MAX_SEASONS = 50;
 const MAX_TEAMS_PER_SEASON = 32;
 const MAX_MATCHUPS = 6_000;
 const MAX_IDENTITIES = 128;
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const RATE_LIMITS = {read: 300, create: 10, mutate: 60};
 const SLUG = /^[a-z0-9](?:[a-z0-9-]{1,61}[a-z0-9])?$/;
 const PUBLICATION_SCHEMA = [
   `CREATE TABLE IF NOT EXISTS league_history_publications (
@@ -15,9 +17,17 @@ const PUBLICATION_SCHEMA = [
     updated_at TEXT NOT NULL
   )`,
   `CREATE INDEX IF NOT EXISTS idx_league_history_visibility_updated
-   ON league_history_publications (visibility, updated_at DESC)`
+   ON league_history_publications (visibility, updated_at DESC)`,
+  `CREATE TABLE IF NOT EXISTS league_history_rate_limits (
+    scope TEXT PRIMARY KEY,
+    window_start INTEGER NOT NULL,
+    requests INTEGER NOT NULL,
+    expires_at INTEGER NOT NULL
+  )`,
+  `CREATE INDEX IF NOT EXISTS idx_league_history_rate_limit_expiry
+   ON league_history_rate_limits (expires_at)`
 ];
-let schemaPromise = null;
+let schemaPromises = new WeakMap();
 
 function fail(message, status = 422) {
   const error = new Error(message);
@@ -327,18 +337,57 @@ async function ensureSchema(env) {
       typeof env.LEAGUE_HISTORY_DB.prepare !== 'function') {
     fail('League publishing storage is unavailable.', 503);
   }
-  if (!schemaPromise) {
-    schemaPromise = (async () => {
+  const database = env.LEAGUE_HISTORY_DB;
+  if (!schemaPromises.has(database)) {
+    const promise = (async () => {
       for (const statement of PUBLICATION_SCHEMA) {
-        await env.LEAGUE_HISTORY_DB.prepare(statement).run();
+        await database.prepare(statement).run();
       }
     })()
       .catch(error => {
-        schemaPromise = null;
+        schemaPromises.delete(database);
         throw error;
       });
+    schemaPromises.set(database, promise);
   }
-  await schemaPromise;
+  await schemaPromises.get(database);
+}
+
+function rateLimitResponse(retryAfter) {
+  return json({error: 'Too many requests. Try again shortly.'}, 429, {
+    'Cache-Control': 'no-store',
+    'Retry-After': String(retryAfter)
+  });
+}
+
+async function checkRateLimit(request, env, action) {
+  await ensureSchema(env);
+  const now = Date.now();
+  const windowStart = Math.floor(now / RATE_LIMIT_WINDOW_MS) * RATE_LIMIT_WINDOW_MS;
+  const expiresAt = windowStart + RATE_LIMIT_WINDOW_MS;
+  const client = request.headers.get('CF-Connecting-IP') ||
+    request.headers.get('User-Agent') || 'anonymous';
+  const clientHash = await hashToken(client);
+  const scope = `${action}:${clientHash}`;
+  await env.LEAGUE_HISTORY_DB.prepare(
+    'DELETE FROM league_history_rate_limits WHERE expires_at < ?'
+  ).bind(now).run();
+  const result = await env.LEAGUE_HISTORY_DB.prepare(
+    `INSERT INTO league_history_rate_limits (scope, window_start, requests, expires_at)
+     VALUES (?, ?, 1, ?)
+     ON CONFLICT(scope) DO UPDATE SET
+       requests = CASE
+         WHEN window_start = excluded.window_start THEN requests + 1
+         ELSE 1
+       END,
+       window_start = excluded.window_start,
+       expires_at = excluded.expires_at
+     RETURNING requests`
+  ).bind(scope, windowStart, expiresAt).first();
+  if (Number(result && result.requests || 0) > RATE_LIMITS[action]) {
+    return rateLimitResponse(Math.max(1, Math.ceil((expiresAt - now) / 1000)));
+  }
+  return null;
 }
 
 async function createPublication(request, env) {
@@ -436,7 +485,10 @@ export async function onRequestPost(context) {
   if (!sameOrigin(context.request)) return json({error: 'Origin not allowed.'}, 403);
   const path = new URL(context.request.url).pathname;
   if (!/^\/api\/leagues\/?$/.test(path)) return json({error: 'Not found.'}, 404);
-  try { return await createPublication(context.request, context.env); }
+  try {
+    const limited = await checkRateLimit(context.request, context.env, 'create');
+    return limited || await createPublication(context.request, context.env);
+  }
   catch (error) {
     console.error('League publication failed.', error && error.message);
     return json({error: error && error.status ? error.message :
@@ -448,7 +500,10 @@ export async function onRequestPut(context) {
   if (!sameOrigin(context.request)) return json({error: 'Origin not allowed.'}, 403);
   const slug = pathSlug(context.request);
   if (!slug) return json({error: 'Not found.'}, 404);
-  try { return await updatePublication(context.request, context.env, slug); }
+  try {
+    const limited = await checkRateLimit(context.request, context.env, 'mutate');
+    return limited || await updatePublication(context.request, context.env, slug);
+  }
   catch (error) {
     console.error('League update failed.', error && error.message);
     return json({error: error && error.status ? error.message :
@@ -460,7 +515,10 @@ export async function onRequestPatch(context) {
   if (!sameOrigin(context.request)) return json({error: 'Origin not allowed.'}, 403);
   const slug = pathSlug(context.request);
   if (!slug) return json({error: 'Not found.'}, 404);
-  try { return await recoverPublication(context.request, context.env, slug); }
+  try {
+    const limited = await checkRateLimit(context.request, context.env, 'mutate');
+    return limited || await recoverPublication(context.request, context.env, slug);
+  }
   catch (error) {
     console.error('League recovery failed.', error && error.message);
     return json({error: error && error.status ? error.message :
@@ -472,7 +530,10 @@ export async function onRequestDelete(context) {
   if (!sameOrigin(context.request)) return json({error: 'Origin not allowed.'}, 403);
   const slug = pathSlug(context.request);
   if (!slug) return json({error: 'Not found.'}, 404);
-  try { return await deletePublication(context.request, context.env, slug); }
+  try {
+    const limited = await checkRateLimit(context.request, context.env, 'mutate');
+    return limited || await deletePublication(context.request, context.env, slug);
+  }
   catch (error) {
     console.error('League unpublish failed.', error && error.message);
     return json({error: error && error.status ? error.message :
@@ -484,6 +545,8 @@ export async function onRequestGet(context) {
   const slug = pathSlug(context.request);
   if (!slug) return json({error: 'League not found.'}, 404);
   try {
+    const limited = await checkRateLimit(context.request, context.env, 'read');
+    if (limited) return limited;
     await ensureSchema(context.env);
     const row = await context.env.LEAGUE_HISTORY_DB.prepare(
       `SELECT slug, league_name, visibility, archive_json, created_at, updated_at

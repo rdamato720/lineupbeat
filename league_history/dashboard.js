@@ -1013,6 +1013,17 @@
     }
   }
 
+  function storePublication(value) {
+    const key = publicationKey();
+    if (!key) return false;
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   function showPublication(value) {
     const result = document.getElementById('publish-result');
     const link = document.getElementById('published-url');
@@ -1105,7 +1116,7 @@
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || 'Shared page status is unavailable.');
       saved.visibility = result.visibility;
-      localStorage.setItem(publicationKey(), JSON.stringify(saved));
+      storePublication(saved);
       const option = document.querySelector(
         'input[name="league-visibility"][value="' + saved.visibility + '"]');
       if (option) option.checked = true;
@@ -1155,14 +1166,15 @@
         manageToken: updating ? saved.manageToken : result.manageToken,
         visibility: result.visibility
       };
-      localStorage.setItem(publicationKey(), JSON.stringify(stored));
       showPublication(stored);
+      const storedLocally = storePublication(stored);
       status.textContent = updating ?
         'Shared page updated: ' + capture.seasons.length + ' seasons · ' +
           capture.seasons.reduce((total, season) =>
             total + (season.matchups || []).length, 0).toLocaleString() +
-          ' matchups. The link stays the same.' :
-        'Share link ready. Save the key under Recovery key.';
+          ' matchups. The link stays the same.' : storedLocally ?
+        'Share link ready. Save the key under Recovery key.' :
+        'Share link ready. This browser could not save access, so copy the recovery key now.';
     } catch (error) {
       status.textContent = error && error.message ? error.message :
         'Publishing is temporarily unavailable.';
@@ -1195,15 +1207,16 @@
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || 'Access could not be restored.');
       const stored = {slug: result.slug, manageToken, visibility: result.visibility};
-      localStorage.setItem(publicationKey(), JSON.stringify(stored));
+      const storedLocally = storePublication(stored);
       const option = document.querySelector(
         'input[name="league-visibility"][value="' + stored.visibility + '"]');
       if (option) option.checked = true;
       key.value = '';
       share.value = '';
       showPublication(stored);
-      status.textContent = 'Commissioner access restored. ' +
-        comparisonText(result.comparison);
+      status.textContent = storedLocally ? 'Commissioner access restored. ' +
+        comparisonText(result.comparison) :
+        'Access works, but this browser could not save it. Keep the recovery key.';
     } catch (error) {
       status.textContent = error && error.message ? error.message :
         'Access could not be restored.';
@@ -1230,7 +1243,7 @@
       const result = response.status === 204 ? {} :
         await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || 'The shared league could not be removed.');
-      localStorage.removeItem(publicationKey());
+      try { localStorage.removeItem(publicationKey()); } catch (_) {}
       clearPublication();
       status.textContent = 'Shared page removed. Your local league history is unchanged.';
     } catch (error) {
@@ -1244,6 +1257,8 @@
   async function loadSharedLeague(slug) {
     document.body.classList.add('shared-history');
     const statusLine = document.querySelector('.lh-status');
+    const retry = document.getElementById('retry-shared-league');
+    if (retry) retry.hidden = true;
     if (statusLine) statusLine.lastChild.textContent = ' loading shared league';
     setText('#import-status', 'Loading shared league history…');
     try {
@@ -1264,6 +1279,7 @@
       setText('#import-status', error && error.message ? error.message :
         'League history is temporarily unavailable.');
       if (statusLine) statusLine.lastChild.textContent = ' shared league unavailable';
+      if (retry) retry.hidden = false;
     }
   }
 
@@ -1361,6 +1377,8 @@
   if (unpublish) unpublish.addEventListener('click', unpublishLeague);
 
   const sharedSlug = new URLSearchParams(location.search).get('league');
+  const retryShared = document.getElementById('retry-shared-league');
+  if (retryShared) retryShared.addEventListener('click', () => loadSharedLeague(sharedSlug));
   if (sharedSlug) loadSharedLeague(sharedSlug);
 
   window.addEventListener('message', event => {
