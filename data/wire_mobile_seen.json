@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 897,
+ "count": 898,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -9906,6 +9906,17 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003918
+  },
+  {
+   "candidate_id": "mobile:onsi:b42aad105068ce659bdd",
+   "player_id": "00-0039910",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/burgundy-roundup-adam-peters-udfa-jayden-daniels-o-line-injuries",
+   "attempted_at": "2026-09-04T04:32:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T04:32:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005856
   }
  ]
 }
