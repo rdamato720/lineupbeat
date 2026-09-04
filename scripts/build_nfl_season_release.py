@@ -119,21 +119,20 @@ def context_pages():
         write(path,wrapper(title,path,f'<section id="release-placeholder" data-tool-available="false"><p class="eyebrow">Development preview</p><h1>{title}</h1><p>The historical database needed for this page is not included in this offline development release.</p><p><a href="/nfl/projections/">View the validated 2026 season projections</a>.</p></section>',section='data'))
 
 def recommendation_gates():
-    """Keep the authorized disabled state at the dev presentation boundary.
+    """Keep recommendations disabled without hiding the comparison product.
 
-    The existing weekly models, engines, adapter sources and extension remain
-    unchanged. Forecast inspection and roster connections still work.
+    Forecast inspection and roster connections remain useful. The rendered
+    Decision Room owns the qualified comparison copy; this release boundary
+    only records the authorization state and gates automated lineup swaps.
     """
     import decision_data
     state=decision_data.WEEKLY_RECOMMENDATION_STATE
     gates={'season_version':'v1.6-trusted-current','week1_recommendations_enabled':state['enabled'],'my_team_recommendations_enabled':state['enabled'],'reason':state['reason']}
     (SITE/'data/nfl-trusted-release-gates.json').write_text(json.dumps(gates,sort_keys=True)+'\n')
-    notice=f'<aside class="v15 notice" id="weekly-release-gate"><strong>{esc(state["label"])}.</strong> {esc(state["reason"])}</aside>'
+    notice=f'<aside class="v15 notice" id="weekly-release-gate" data-weekly-recommendations="disabled"><strong>{esc(state["label"])}.</strong> {esc(state["reason"])}</aside>'
     page=SITE/'decision-room/nfl/index.html';text=page.read_text()
-    marker='function draw(){'
-    if text.count(marker)!=1:raise ValueError('weekly comparison gate insertion is ambiguous')
-    readonly="""function draw(){if(true){let a=P[A.value],b=P[B.value],k=F.value;O.innerHTML='<section class="dr-empty" data-weekly-recommendations="disabled"><h3>No reliable call</h3><p>Week 1 recommendations are disabled for this release.</p>'+(a&&b?'<p>'+safe(a.name)+': '+num(points(a,k))+' projected points · '+safe(b.name)+': '+num(points(b,k))+' projected points</p>':'')+'</section>';return;}"""
-    text=text.replace(marker,readonly,1).replace('<section class="dr-compare"',notice+'<section class="dr-compare"',1)
+    if text.count('<section class="dr-compare"')!=1:raise ValueError('weekly comparison notice insertion is ambiguous')
+    text=text.replace('<section class="dr-compare"',notice+'<section class="dr-compare"',1)
     page.write_text(text)
     page=SITE/'my-team/index.html';text=page.read_text()
     marker='<script src="/my-team/league-adapter.js"></script>'

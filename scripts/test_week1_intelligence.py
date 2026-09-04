@@ -137,6 +137,9 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
         html = build_decision_room.render(self.payload)
         self.assertIn('if(weekly){if(g<=.5||q<=3)return"Toss-Up"', html)
         self.assertIn('boundary=weekly?Math.max(.5,reference*.03)', html)
+        self.assertIn("recommendationsAuthorized=D.recommendation_state?.enabled===true", html)
+        self.assertIn("No lineup recommendation is issued.", html)
+        self.assertIn("Projection favors ${safe(w.name)}", html)
 
 
 class CollegeWeek1EnrichmentTests(unittest.TestCase):

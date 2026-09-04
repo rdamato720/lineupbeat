@@ -451,9 +451,10 @@ def check_homepage(root, decision_room=False):
                   r'<article class="hp-feature[^"]*lb-feature-card[^"]*"', text)) == 2
               and text.count('class="hp-decision-summary"') == 2
               and text.count('class="hp-evidence-grid"') == 2
-              and "RECOMMENDATION UNAVAILABLE" in text
-              and "No reliable call" in text
-              and "trusted season release does not authorize lineup recommendations" in text
+              and "PROJECTION COMPARISON" in text
+              and "Projection favors Tony Pollard" in text
+              and "does not issue a lineup recommendation" in text
+              and "RECOMMENDATION UNAVAILABLE" not in text
               and "Reconciled projection, modeled workload, game environment, and exact player-component markets" in text
               and "Sportsbook team total" in text
               and "Player market evidence" in text

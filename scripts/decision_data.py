@@ -22,11 +22,12 @@ WEEK1 = ROOT / "data" / "week1" / "2026" / "v1.0" / "nfl_week1_projections.json"
 NAME_SUFFIXES = {"jr", "sr", "ii", "iii", "iv", "v"}
 WEEKLY_RECOMMENDATION_STATE = {
     "enabled": False,
-    "label": "No reliable call",
+    "label": "Projection comparison only",
     "reason": (
-        "Week 1 recommendations are disabled for this release. Forecasts are "
-        "available for inspection, but the trusted season release does not "
-        "authorize lineup recommendations."
+        "Compare the complete Week 1 forecast and supporting context. This "
+        "release does not issue a lineup recommendation because current injury "
+        "reports are unavailable and the deployed formula lacks a qualifying "
+        "out-of-sample validation result."
     ),
 }
 
