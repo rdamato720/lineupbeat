@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 978,
+ "count": 995,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -10797,6 +10797,193 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004926
+  },
+  {
+   "candidate_id": "mobile:onsi:8b021a61534abaa374ed",
+   "player_id": "00-0038542",
+   "source_url": "https://www.si.com/nfl/falcons/onsi/falcons-rb-bijan-robinson-response-to-criticism-shows-why-hes-different",
+   "attempted_at": "2026-09-04T23:25:57+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T23:26:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004026
+  },
+  {
+   "candidate_id": "mobile:onsi:2d4f4d4785da59972a4e",
+   "player_id": "00-0034844",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/the-one-number-the-eagles-have-to-fix-this-season-involving-saquon-barkley-01m1ppdyt6bs",
+   "attempted_at": "2026-09-04T23:26:01+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T23:26:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003716
+  },
+  {
+   "candidate_id": "mobile:onsi:a5d9a094863e803ea365",
+   "player_id": "00-0039451",
+   "source_url": "https://www.si.com/nfl/jets/onsi/no-time-waste-tim-patrick-s-jets-future-hinge-september-performance-01m1pp9vcst7",
+   "attempted_at": "2026-09-04T23:26:04+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T23:26:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004484
+  },
+  {
+   "candidate_id": "mobile:onsi:e91b1b58f49af57602a5",
+   "player_id": "00-0039890",
+   "source_url": "https://www.si.com/nfl/jets/onsi/no-time-waste-tim-patrick-s-jets-future-hinge-september-performance-01m1pp9vcst7",
+   "attempted_at": "2026-09-04T23:26:06+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T23:26:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0065
+  },
+  {
+   "candidate_id": "mobile:onsi:c962b8c62ba084dd9066",
+   "player_id": "00-0037740",
+   "source_url": "https://www.si.com/nfl/jets/onsi/no-time-waste-tim-patrick-s-jets-future-hinge-september-performance-01m1pp9vcst7",
+   "attempted_at": "2026-09-04T23:26:10+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T23:26:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004494
+  },
+  {
+   "candidate_id": "mobile:onsi:9be8b098bec75f8e0a34",
+   "player_id": "00-0034827",
+   "source_url": "https://www.si.com/nfl/bills/onsi/players-dalton-kincaid-identified-as-key-to-bills-super-bowl-run-in-2026",
+   "attempted_at": "2026-09-04T23:26:13+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-04T23:26:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005784
+  },
+  {
+   "candidate_id": "mobile:onsi:9cffbf3078a049310f63",
+   "player_id": "00-0038933",
+   "source_url": "https://www.si.com/nfl/bills/onsi/players-dalton-kincaid-identified-as-key-to-bills-super-bowl-run-in-2026",
+   "attempted_at": "2026-09-04T23:26:17+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T23:26:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005208
+  },
+  {
+   "candidate_id": "mobile:onsi:119bd1b993352f50f4da",
+   "player_id": "00-0034857",
+   "source_url": "https://www.si.com/nfl/bills/onsi/players-dalton-kincaid-identified-as-key-to-bills-super-bowl-run-in-2026",
+   "attempted_at": "2026-09-04T23:26:20+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T23:26:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00401
+  },
+  {
+   "candidate_id": "mobile:onsi:10c8c79c931b66953a17",
+   "player_id": "00-0037240",
+   "source_url": "https://www.si.com/nfl/lions/onsi/richard-sherman-shares-major-detroit-lions-concern-makes-bold-prediction",
+   "attempted_at": "2026-09-04T23:26:23+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T23:26:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005442
+  },
+  {
+   "candidate_id": "mobile:onsi:df76f33ee138352e3c44",
+   "player_id": "00-0039065",
+   "source_url": "https://www.si.com/nfl/lions/onsi/richard-sherman-shares-major-detroit-lions-concern-makes-bold-prediction",
+   "attempted_at": "2026-09-04T23:26:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T23:26:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0047
+  },
+  {
+   "candidate_id": "mobile:onsi:11c86c5441cebf00c77a",
+   "player_id": "00-0033106",
+   "source_url": "https://www.si.com/nfl/lions/onsi/richard-sherman-shares-major-detroit-lions-concern-makes-bold-prediction",
+   "attempted_at": "2026-09-04T23:26:28+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-09-04T23:26:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00511
+  },
+  {
+   "candidate_id": "mobile:onsi:96d5f5074af190d07c6e",
+   "player_id": "00-0034960",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-5-things-we-learned-about-the-this-week-parker-washington-s-situation",
+   "attempted_at": "2026-09-04T23:26:32+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T23:26:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005786
+  },
+  {
+   "candidate_id": "mobile:onsi:3438b3cbe132e82d26f6",
+   "player_id": "00-0036971",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-5-things-we-learned-about-the-this-week-parker-washington-s-situation",
+   "attempted_at": "2026-09-04T23:26:36+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T23:26:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0049
+  },
+  {
+   "candidate_id": "mobile:onsi:86df3d43a08a0caa2196",
+   "player_id": "00-0039893",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-5-things-we-learned-about-the-this-week-parker-washington-s-situation",
+   "attempted_at": "2026-09-04T23:26:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T23:26:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003998
+  },
+  {
+   "candidate_id": "mobile:onsi:998baca71886b949c3e3",
+   "player_id": "00-0038606",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-5-things-we-learned-about-the-this-week-parker-washington-s-situation",
+   "attempted_at": "2026-09-04T23:26:41+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T23:26:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00444
+  },
+  {
+   "candidate_id": "mobile:onsi:5a927d57b44eeb0fb20f",
+   "player_id": "00-0041512",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/seahawks-secure-surprising-spot-nfl-head-coach-qb-duo-ranking",
+   "attempted_at": "2026-09-04T23:26:44+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T23:26:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006334
+  },
+  {
+   "candidate_id": "mobile:onsi:d329557297864b20c03c",
+   "player_id": "00-0037834",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-brock-purdy-makes-feelings-clear-playing-mike-evans",
+   "attempted_at": "2026-09-04T23:26:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T23:26:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003986
   }
  ]
 }
