@@ -391,9 +391,11 @@
     }
     if (CBS_HOST.test(location.hostname) ||
         (location.hostname === 'www.cbssports.com' && location.pathname.startsWith('/fantasy/football/'))) {
+      const cbsLeagueId=queryValue('leagueId')||queryValue('league_id')||
+        `${location.hostname}:${location.pathname.split('/').filter(Boolean).slice(0,3).join('/')}`;
       return {id:'cbs',label:'CBS',parser:globalThis.LineupBeatCbsRosterParser,
-        leagueId:location.hostname.split('.')[0]||'unknown',teamId:queryValue('teamId')||'my-team',
-        season:Number(queryValue('season')||new Date().getFullYear()),history:false};
+        leagueId:cbsLeagueId||'cbs-league',teamId:queryValue('teamId')||'my-team',
+        season:Number(queryValue('season')||new Date().getFullYear()),history:true};
     }
     return null;
   }
@@ -461,7 +463,9 @@
 
     heading.textContent = `Lineup Beat ${config.label} Connector`;
     disclosure.textContent = config.history
-      ? 'Save your roster or import league history. Data stays in this browser for review; passwords and session values are never read or stored.'
+      ? (config.id === 'cbs'
+        ? 'Save your roster or add the CBS history season visible on this page. Repeat for each season; data stays in this browser.'
+        : 'Save your roster or import league history. Data stays in this browser for review; passwords and session values are never read or stored.')
       : 'Save the visible roster for My Team. Data stays in this browser; passwords, cookies, and session values are never read or stored.';
     privacy.href = PRIVACY_URL;
     privacy.target = '_blank';
@@ -479,8 +483,8 @@
     open.textContent = 'Open My Team';
     open.hidden = true;
     history.type = 'button';
-    history.textContent = 'Import league history';
-    history.setAttribute('aria-label', 'Import ESPN league history locally for commissioner review');
+    history.textContent = config.id === 'cbs' ? 'Add this history season' : 'Import league history';
+    history.setAttribute('aria-label', `Import ${config.label} league history locally for commissioner review`);
     history.hidden = !config.history;
     openHistory.href = HISTORY_URL;
     openHistory.target = '_blank';
@@ -537,6 +541,36 @@
     });
 
     history.addEventListener('click', () => {
+      if (config.id === 'cbs') {
+        diagnosticController.hide();
+        history.disabled = true;
+        status.textContent = 'Reading the visible CBS history season…';
+        try {
+          const parser = globalThis.LineupBeatCbsHistoryParser;
+          const season = parser.fromDocument(document, {leagueId: config.leagueId});
+          const snapshot = {
+            year: season.year, leagueId: config.leagueId, leagueName: season.leagueName,
+            regularSeasonWeeks: season.regularSeasonWeeks, complete: season.complete,
+            teams: season.teams, matchups: season.matchups
+          };
+          chrome.runtime.sendMessage({
+            type: 'LB_CAPTURE_CBS_HISTORY', version: 1, leagueId: config.leagueId, snapshot
+          }, response => {
+            history.disabled = false;
+            if (!response || !response.ok) {
+              status.textContent = response && response.error || parser.EMPTY_ERROR;
+              return;
+            }
+            openHistory.hidden = false;
+            const count = response.counts && response.counts.seasons || 0;
+            status.textContent = `CBS season saved. ${count} season${count === 1 ? '' : 's'} now in the local archive.`;
+          });
+        } catch (error) {
+          history.disabled = false;
+          status.textContent = error.message;
+        }
+        return;
+      }
       const leagueId = queryValue('leagueId');
       const season = Number(queryValue('seasonId') || new Date().getFullYear());
       if (!/^\d+$/.test(leagueId)) {
@@ -623,10 +657,15 @@
     }
   }
 
+  function requestHistory(provider, callback) {
+    chrome.runtime.sendMessage({type: 'LB_GET_HISTORY', version: 1, provider}, callback);
+  }
+
   function historyReady() {
-    chrome.runtime.sendMessage({type: 'LB_GET_ESPN_HISTORY', version: 1}, response => {
+    requestHistory(null, response => {
       window.postMessage({
         type: 'LB_LEAGUE_HISTORY_EXTENSION_READY', version: 1,
+        provider: response && response.provider,
         hasHistory: Boolean(response && response.record)
       }, location.origin);
       postHistory(response);
@@ -638,11 +677,12 @@
       if (event.source !== window || event.origin !== location.origin ||
           !event.data || event.data.version !== 1) return;
       if (event.data.type === 'LB_LEAGUE_HISTORY_CONNECT_REQUEST') {
-        chrome.runtime.sendMessage({type: 'LB_GET_ESPN_HISTORY', version: 1}, postHistory);
+        requestHistory(event.data.provider, postHistory);
       }
       if (event.data.type === 'LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST') {
         chrome.runtime.sendMessage({
-          type: 'LB_SAVE_ESPN_HISTORY_REVIEW', version: 1, review: event.data.review
+          type: 'LB_SAVE_HISTORY_REVIEW', version: 1, provider:event.data.provider,
+          review: event.data.review
         }, response => {
           window.postMessage({
             type: 'LB_LEAGUE_HISTORY_REVIEW_COMPLETE', version: 1,
@@ -651,7 +691,8 @@
         });
       }
       if (event.data.type === 'LB_LEAGUE_HISTORY_CLEAR_REQUEST') {
-        chrome.runtime.sendMessage({type: 'LB_CLEAR_ESPN_HISTORY', version: 1}, response => {
+        chrome.runtime.sendMessage({type: 'LB_CLEAR_HISTORY', version: 1,
+          provider:event.data.provider}, response => {
           if (response && response.ok) {
             window.postMessage({type: 'LB_LEAGUE_HISTORY_CLEAR_COMPLETE', version: 1}, location.origin);
           }

@@ -201,9 +201,9 @@ def check_my_team(root):
         for match in (script.get("matches") or [])
         if "lineupbeat" in match
     }
-    check("the download is the restricted eleven-file version 0.4.0 package",
-          manifest.get("version") == "0.4.0"
-          and len(package_files) == 11
+    check("the download is the restricted twelve-file version 0.5.0 package",
+          manifest.get("version") == "0.5.0"
+          and len(package_files) == 12
           and actual_site_matches == expected_site_matches
           and any("https://football.fantasysports.yahoo.com/f1/*" in (script.get("matches") or []) for script in scripts)
           and any("https://*.football.cbssports.com/*" in (script.get("matches") or []) for script in scripts)
@@ -211,7 +211,7 @@ def check_my_team(root):
           and "https://www.lineupbeat.com/*" not in encoded_manifest
           and "localhost" not in encoded_manifest
           and "127.0.0.1" not in encoded_manifest
-          and package_files[:6] == ["manifest.json", "background.js", "espn-roster-parser.js", "espn-history-parser.js", "yahoo-roster-parser.js", "cbs-roster-parser.js"])
+          and package_files[:7] == ["manifest.json", "background.js", "espn-roster-parser.js", "espn-history-parser.js", "yahoo-roster-parser.js", "cbs-roster-parser.js", "cbs-history-parser.js"])
     check("the development download validates capture, retrieval, and clear senders",
           "ESPN_ORIGIN = 'https://fantasy.espn.com'" in worker
           and "ESPN_PATH = '/football/'" in worker
@@ -219,7 +219,7 @@ def check_my_team(root):
           and "'https://lineupbeat-dev.pages.dev'" in worker
           and "'https://www.lineupbeat.com'" in worker
           and "MY_TEAM_PATH = '/my-team/'" in worker
-          and worker.count("return reject(sendResponse)") >= 10)
+          and worker.count("return reject(sendResponse)") >= 13)
     support = root / "my-team" / "extension" / "index.html"
     privacy = root / "my-team" / "extension" / "privacy" / "index.html"
     support_text = support.read_text() if support.is_file() else ""
@@ -228,12 +228,12 @@ def check_my_team(root):
           bool(support_text) and bool(privacy_text))
     check("extension privacy accurately describes local storage and deletion",
           "chrome.storage.local" in privacy_text
-          and "Neither flow uploads private provider data" in privacy_text
+          and "Private provider data is not uploaded" in privacy_text
           and "Clear each copy" in privacy_text
           and "No provider password, cookie value, session token" in privacy_text)
     check("extension support exposes the labeled direct download",
           'href="/my-team/lineupbeat-espn-extension.zip"' in support_text
-          and "Download version 0.4.0" in support_text
+          and "Download version 0.5.0" in support_text
           and "Direct download" in support_text)
     model_path = root / "data" / "my-team-week1.json"
     try:

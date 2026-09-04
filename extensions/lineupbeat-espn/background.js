@@ -1,8 +1,10 @@
-if (typeof importScripts === 'function') importScripts('espn-history-parser.js');
+if (typeof importScripts === 'function') importScripts('espn-history-parser.js', 'cbs-history-parser.js');
 
 const ROSTER_KEY = 'lineupBeatRosterV1';
 const LEGACY_ROSTER_KEY = 'lineupBeatEspnRosterV1';
 const HISTORY_KEY = 'lineupBeatEspnHistoryV1';
+const CBS_HISTORY_KEY = 'lineupBeatCbsHistoryV1';
+const HISTORY_PROVIDER_KEY = 'lineupBeatHistoryProviderV1';
 const ESPN_ORIGIN = 'https://fantasy.espn.com';
 const ESPN_PATH = '/football/';
 const MY_TEAM_ORIGIN = 'https://lineupbeat.com';
@@ -113,13 +115,33 @@ async function captureHistory(message) {
   }
   const payload = parser.combine(seasons, incomplete, leagueId);
   const record = {payload, review: null};
-  await chrome.storage.local.set({[HISTORY_KEY]: record});
+  await chrome.storage.local.set({[HISTORY_KEY]: record, [HISTORY_PROVIDER_KEY]: 'espn'});
   let opened = false;
   try {
     await chrome.tabs.create({url: HISTORY_URL});
     opened = true;
   } catch (_error) {}
   return {ok: true, opened, counts: payload.counts};
+}
+
+async function captureCbsHistory(message) {
+  const parser = globalThis.LineupBeatCbsHistoryParser;
+  const season = parser.parseSnapshot(message.snapshot);
+  const stored = await chrome.storage.local.get(CBS_HISTORY_KEY);
+  const prior = stored[CBS_HISTORY_KEY] && stored[CBS_HISTORY_KEY].payload;
+  const payload = parser.combine(prior, season, message.leagueId);
+  const record = {payload, review: null};
+  await chrome.storage.local.set({[CBS_HISTORY_KEY]: record, [HISTORY_PROVIDER_KEY]: 'cbs'});
+  let opened = false;
+  try {
+    await chrome.tabs.create({url: HISTORY_URL});
+    opened = true;
+  } catch (_error) {}
+  return {ok: true, opened, counts: payload.counts};
+}
+
+function historyKey(provider) {
+  return provider === 'cbs' ? CBS_HISTORY_KEY : HISTORY_KEY;
 }
 
 function validReview(review, record) {
@@ -205,6 +227,51 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     captureHistory(message)
       .then(sendResponse)
       .catch(error => sendResponse({ok: false, error: error.message || 'history_capture_failed'}));
+    return true;
+  }
+
+  if (message.type === 'LB_CAPTURE_CBS_HISTORY') {
+    if (!rosterSenderMatches(sender, 'cbs')) return reject(sendResponse);
+    captureCbsHistory(message)
+      .then(sendResponse)
+      .catch(error => sendResponse({ok: false, error: error.message || 'history_capture_failed'}));
+    return true;
+  }
+
+  if (message.type === 'LB_GET_HISTORY') {
+    if (!senderMatches(sender, SITE_ORIGINS, HISTORY_PATH)) return reject(sendResponse);
+    chrome.storage.local.get([HISTORY_KEY, CBS_HISTORY_KEY, HISTORY_PROVIDER_KEY])
+      .then(result => {
+        const provider = message.provider === 'cbs' || message.provider === 'espn'
+          ? message.provider : result[HISTORY_PROVIDER_KEY] || 'espn';
+        sendResponse({ok: true, provider, record: result[historyKey(provider)] || null});
+      })
+      .catch(() => sendResponse({ok: false, error: 'local_storage_failed'}));
+    return true;
+  }
+
+  if (message.type === 'LB_SAVE_HISTORY_REVIEW') {
+    if (!senderMatches(sender, SITE_ORIGINS, HISTORY_PATH)) return reject(sendResponse);
+    const key = historyKey(message.provider);
+    chrome.storage.local.get(key).then(async result => {
+      const record = result[key];
+      if (!record || !validReview(message.review, record)) {
+        sendResponse({ok: false, error: 'invalid_review'});
+        return;
+      }
+      record.review = message.review;
+      await chrome.storage.local.set({[key]: record});
+      sendResponse({ok: true});
+    }).catch(() => sendResponse({ok: false, error: 'local_storage_failed'}));
+    return true;
+  }
+
+  if (message.type === 'LB_CLEAR_HISTORY') {
+    if (!senderMatches(sender, SITE_ORIGINS, HISTORY_PATH)) return reject(sendResponse);
+    const key = historyKey(message.provider);
+    chrome.storage.local.remove(key)
+      .then(() => sendResponse({ok: true}))
+      .catch(() => sendResponse({ok: false, error: 'local_storage_failed'}));
     return true;
   }
 

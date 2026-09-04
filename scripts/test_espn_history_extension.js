@@ -5,16 +5,19 @@ const manifest = JSON.parse(fs.readFileSync('extensions/lineupbeat-espn/manifest
 const worker = fs.readFileSync('extensions/lineupbeat-espn/background.js', 'utf8');
 const content = fs.readFileSync('extensions/lineupbeat-espn/content.js', 'utf8');
 
-assert.equal(manifest.version, '0.4.0');
+assert.equal(manifest.version, '0.5.0');
 assert.deepEqual(manifest.permissions, ['storage']);
 assert.deepEqual(manifest.host_permissions, ['https://lm-api-reads.fantasy.espn.com/*']);
 assert(manifest.content_scripts.some(row => row.matches.includes('https://lineupbeat-dev.pages.dev/league-history/*')));
 assert(manifest.content_scripts.some(row => row.matches.includes('https://lineupbeat.com/league-history/*')));
 assert(manifest.content_scripts[0].js.includes('espn-history-parser.js'));
+assert(manifest.content_scripts.some(row => row.js.includes('cbs-history-parser.js')));
 assert(worker.includes("credentials: 'include'"));
 assert(worker.includes("const HISTORY_KEY = 'lineupBeatEspnHistoryV1'"));
 assert(worker.includes("parser.MAX_SEASONS"));
 assert(worker.includes("LB_SAVE_ESPN_HISTORY_REVIEW"));
+assert(worker.includes("LB_CAPTURE_CBS_HISTORY"));
+assert(worker.includes("LB_SAVE_HISTORY_REVIEW"));
 assert(worker.includes("senderMatches(sender, SITE_ORIGINS, HISTORY_PATH)"));
 assert(!manifest.permissions.includes('cookies'));
 assert(!worker.includes('chrome.cookies'));

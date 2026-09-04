@@ -135,8 +135,8 @@ class MyTeamArtifactTests(unittest.TestCase):
             self.assertTrue(package.exists())
             with zipfile.ZipFile(package) as archive:
                 packaged = json.loads(archive.read("manifest.json"))
-                self.assertEqual(packaged["version"], "0.4.0")
-                self.assertEqual(len(archive.namelist()), 11)
+                self.assertEqual(packaged["version"], "0.5.0")
+                self.assertEqual(len(archive.namelist()), 12)
                 self.assertEqual(
                     archive.namelist(),
                     list(build_my_team.build_chrome_store_bundle.RUNTIME_FILES),
@@ -144,7 +144,7 @@ class MyTeamArtifactTests(unittest.TestCase):
             model = json.loads((site / "data" / "my-team-week1.json").read_text())
             self.assertEqual(model["schemaVersion"], "lineupbeat-my-team-week1-v1")
             self.assertIn("chrome.storage.local", privacy.read_text())
-            self.assertIn("No private-data upload", privacy.read_text())
+            self.assertIn("No automatic private-data upload", privacy.read_text())
 
     def test_extension_has_minimal_permissions_and_exact_site_access(self):
         manifest = json.loads((ROOT / "extensions" / "lineupbeat-espn" / "manifest.json").read_text())
@@ -192,10 +192,10 @@ class MyTeamArtifactTests(unittest.TestCase):
         for text in (guide, readme):
             self.assertIn("roster", text.lower())
             self.assertNotIn("Send roster to Lineup Beat", text)
-        self.assertIn("Download version 0.4.0", guide)
+        self.assertIn("Download version 0.5.0", guide)
         self.assertIn("chrome.storage.local", privacy)
         self.assertIn("No provider password, cookie value, session token", privacy)
-        self.assertIn("Neither flow uploads private provider data", privacy)
+        self.assertIn("Private provider data is not uploaded", privacy)
         self.assertIn("Clear each copy", privacy)
 
     def test_suffix_terminal_punctuation_regression(self):

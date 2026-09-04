@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Lineup Beat Fantasy Connector",
-  "version": "0.4.0",
-  "description": "Saves ESPN, Yahoo, and CBS fantasy roster data locally for Lineup Beat.",
+  "version": "0.5.0",
+  "description": "Saves ESPN, Yahoo, and CBS fantasy roster and league-history data locally for Lineup Beat.",
   "icons": {
     "16": "icons/icon-16.png",
     "32": "icons/icon-32.png",
@@ -25,7 +25,7 @@
     },
     {
       "matches": ["https://*.football.cbssports.com/*", "https://www.cbssports.com/fantasy/football/*"],
-      "js": ["cbs-roster-parser.js", "content.js"],
+      "js": ["cbs-roster-parser.js", "cbs-history-parser.js", "content.js"],
       "run_at": "document_idle"
     },
     {

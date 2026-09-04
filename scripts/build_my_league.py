@@ -41,7 +41,7 @@ def structured_data() -> str:
                 "name": "What is LineupBeat My League?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "My League turns an ESPN or Yahoo fantasy football league archive into all-time standings, trophy history, records, manager pages, season summaries, and a shareable view-only page.",
+                    "text": "My League turns an ESPN, Yahoo, or CBS fantasy football league archive into all-time standings, trophy history, records, manager pages, season summaries, and a shareable view-only page.",
                 },
             },
             {
@@ -49,7 +49,7 @@ def structured_data() -> str:
                 "name": "Which fantasy football platforms can connect?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "ESPN and Yahoo support multi-season league-history import. CBS currently supports roster capture for My Team; CBS league-history import is not yet available.",
+                    "text": "ESPN and Yahoo can collect connected seasons automatically. CBS history is added one visible season at a time from its History area with the browser connector.",
                 },
             },
             {
@@ -99,13 +99,13 @@ def build_page() -> str:
     """
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Fantasy Football League History &amp; Record Book | LineupBeat</title>
-    <meta name="description" content="Turn your ESPN or Yahoo fantasy football league history into all-time standings, records, trophies, manager pages, and one shareable league record book.">
+    <meta name="description" content="Turn your ESPN, Yahoo, or CBS fantasy football league history into all-time standings, records, trophies, manager pages, and one shareable league record book.">
     <meta name="robots" content="index,follow"><link rel="canonical" href="https://lineupbeat.com/my-league/">
     <script type="application/ld+json">{structured_data()}</script>
     <style>{seo.SHELL_CSS}{seo.TEAMS_CSS}{seo.NAV_CSS}{styles}</style></head><body>
     {seo.site_nav('league_history', 'nfl')}
     <main class="ml-shell">
-      <section class="ml-hero"><div><span class="ml-kicker">My League</span><h1>Your league has a history. Keep all of it.</h1><p>Turn every ESPN or Yahoo fantasy football season into a living league record book—complete with all-time standings, trophies, rivalries, records, and every team name your league has used.</p><div class="ml-actions"><a class="ml-button" href="/league-history/">Connect your league</a><a class="ml-button secondary" href="#how-it-works">See how it works</a></div></div>
+      <section class="ml-hero"><div><span class="ml-kicker">My League</span><h1>Your league has a history. Keep all of it.</h1><p>Turn ESPN, Yahoo, or CBS fantasy football seasons into a living league record book—complete with all-time standings, trophies, rivalries, records, and every team name your league has used.</p><div class="ml-actions"><a class="ml-button" href="/league-history/">Connect your league</a><a class="ml-button secondary" href="#how-it-works">See how it works</a></div></div>
       <dl class="ml-proof"><div><dt>Every</dt><dd>available season</dd></div><div><dt>All</dt><dd>historical team names</dd></div><div><dt>One</dt><dd>permanent share link</dd></div></dl></section>
 
       <section class="ml-section"><div class="ml-section-head"><div><span class="ml-eyebrow">Your record book</span><h2>More than a list of champions.</h2></div><p>My League rebuilds the story your fantasy platform leaves scattered across individual seasons. Manager identities follow the person, while team names stay attached to the seasons where they were used.</p></div><div class="ml-feature-grid">
@@ -115,18 +115,18 @@ def build_page() -> str:
         <article class="ml-card"><span>04</span><h3>Manager pages</h3><p>Every season, team name, matchup, high, low, and rivalry in one career view.</p></article>
       </div></section>
 
-      <section class="ml-section" id="how-it-works"><div class="ml-section-head"><div><span class="ml-eyebrow">How to connect</span><h2>One import. One quick review.</h2></div><p>Choose ESPN or Yahoo. LineupBeat collects the available seasons, then keeps the private record book on your device until you decide to share it.</p></div><div class="ml-steps">
-        <article class="ml-step"><h3>Choose your platform</h3><p>Use the browser connector for ESPN or authorize read-only access to Yahoo Fantasy Football.</p></article>
+      <section class="ml-section" id="how-it-works"><div class="ml-section-head"><div><span class="ml-eyebrow">How to connect</span><h2>One archive. One quick review.</h2></div><p>Choose ESPN, Yahoo, or CBS. LineupBeat keeps the private record book on your device until you decide to share it.</p></div><div class="ml-steps">
+        <article class="ml-step"><h3>Choose your platform</h3><p>Use the browser connector for ESPN or CBS, or authorize read-only access to Yahoo Fantasy Football.</p></article>
         <article class="ml-step"><h3>Select your league</h3><p>LineupBeat finds the connected seasons and imports the complete matchup history.</p></article>
         <article class="ml-step"><h3>Match manager names</h3><p>Confirm only possible duplicates, such as nicknames or changed platform accounts.</p></article>
         <article class="ml-step"><h3>Review the record book</h3><p>Every historical team remains in its original season, including teams that left the league.</p></article>
         <article class="ml-step"><h3>Share when ready</h3><p>Create one permanent, view-only link for league mates. Future imports update that same page.</p></article>
-      </div><div class="ml-actions"><a class="ml-button" href="/league-history/">Connect a league</a><a class="ml-button secondary" href="/my-team/extension/">ESPN connector</a></div></section>
+      </div><div class="ml-actions"><a class="ml-button" href="/league-history/">Connect a league</a><a class="ml-button secondary" href="/my-team/extension/">Browser connector</a></div></section>
 
       <section class="ml-section"><div class="ml-section-head"><div><span class="ml-eyebrow">Platform support</span><h2>What connects today.</h2></div><p>League-history support and roster support are different features. This page makes that boundary explicit.</p></div><div class="ml-platforms">
         <article class="ml-platform live"><small>League history + My Team</small><h3>ESPN</h3><p>Import up to 25 available seasons and capture the current roster locally.</p></article>
         <article class="ml-platform live"><small>League history + My Team</small><h3>Yahoo</h3><p>Authorize your account to import connected seasons, plus capture a current roster locally.</p></article>
-        <article class="ml-platform"><small>My Team roster</small><h3>CBS</h3><p>Current roster capture is available. Multi-season league history is not available yet.</p></article>
+        <article class="ml-platform live"><small>League history + My Team</small><h3>CBS</h3><p>Capture the current roster and add visible CBS history seasons to one local archive.</p></article>
       </div></section>
 
       <section class="ml-section"><div class="ml-privacy"><div><span class="ml-eyebrow">Private by default</span><h2>Your league is not published unless you publish it.</h2><p>The private archive stays in your browser. LineupBeat never receives your provider password. Yahoo access stays in an encrypted, secure browser cookie and is not stored in the league-history database. Sharing creates a separate view-only page that you can unpublish.</p></div><a class="ml-button" href="/league-history/">Build your record book</a></div></section>
@@ -135,7 +135,7 @@ def build_page() -> str:
         <details><summary>What happens when an owner changes the team name?</summary><p>Each team name stays attached to its original season. The manager's career totals still follow the same person.</p></details>
         <details><summary>What happens when someone leaves the league?</summary><p>Their teams, seasons, records, and trophies remain part of the archive. Nothing historical disappears.</p></details>
         <details><summary>Can people outside the league see it?</summary><p>Not by default. An unlisted page is available only to people with the link. A commissioner may also choose public visibility.</p></details>
-        <details><summary>Does LineupBeat need my provider password?</summary><p>No. ESPN uses the session already open in your browser. Yahoo sends you through its own authorization page, so your password is never shared with LineupBeat.</p></details>
+        <details><summary>Does LineupBeat need my provider password?</summary><p>No. ESPN and CBS use pages already open in your browser. Yahoo sends you through its own authorization page, so your password is never shared with LineupBeat.</p></details>
       </div></section>
     </main>{seo.site_footer()}</body></html>'''
 

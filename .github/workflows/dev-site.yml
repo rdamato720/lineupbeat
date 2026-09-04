@@ -53,6 +53,7 @@ jobs:
           node scripts/test_espn_history_parser.js
           node scripts/test_espn_history_extension.js
           node scripts/test_provider_roster_parsers.js
+          node scripts/test_cbs_history_extension.js
           node scripts/test_my_team_browser.js
           python scripts/test_chrome_store_bundle.py
           python scripts/test_feedback.py
@@ -90,7 +91,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: lineupbeat-espn-cws-submission-${{ github.run_id }}
-          path: build/chrome-web-store/lineupbeat-espn-connector-0.4.0.zip
+          path: build/chrome-web-store/lineupbeat-espn-connector-0.5.0.zip
           if-no-files-found: error
           retention-days: 14
 

@@ -22,6 +22,7 @@ RUNTIME_FILES = (
     "espn-history-parser.js",
     "yahoo-roster-parser.js",
     "cbs-roster-parser.js",
+    "cbs-history-parser.js",
     "content.js",
     "icons/icon-16.png",
     "icons/icon-32.png",

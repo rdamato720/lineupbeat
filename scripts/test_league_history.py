@@ -112,6 +112,7 @@ def main() -> int:
                      ".visibility-options{grid-template-columns:1fr}",
                      'body class="history-empty"', "Set up connector",
                      'id="connect-yahoo"', 'data-history-source="yahoo"',
+                     'data-history-source="cbs"', 'id="check-cbs"',
                      '/assets/yahoo-history.js',
                      "private by default", "96"):
         assert required in page, required
@@ -130,7 +131,8 @@ def main() -> int:
     assert "League records" in landing
     assert "Manager pages" in landing
     assert "Yahoo" in landing and "CBS" in landing
-    assert "ESPN and Yahoo support multi-season league-history import" in landing
+    assert "ESPN and Yahoo can collect connected seasons automatically" in landing
+    assert "CBS history is added one visible season at a time" in landing
     assert "Every historical team remains in its original season" in landing
     assert 'href="/league-history/"' in landing
     assert 'href="/my-team/extension/"' in landing

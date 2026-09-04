@@ -3,30 +3,30 @@
 Prepared for an **Unlisted** release. This document does not authorize upload,
 review submission, or publication.
 
-**Release block:** version 0.4.0 needs live ESPN, Yahoo, and CBS capture tests. Chrome Web Store
+**Release block:** version 0.5.0 needs live ESPN, Yahoo, and CBS capture tests. Chrome Web Store
 upload and submission remain blocked.
 
 ## Package tab
 
-- Upload file: `lineupbeat-espn-connector-0.4.0.zip`
+- Upload file: `lineupbeat-espn-connector-0.5.0.zip`
 - Manifest version: 3
-- Extension version: 0.4.0
+- Extension version: 0.5.0
 - Extension name: `Lineup Beat Fantasy Connector`
 
 ## Store listing tab
 
 ### Short summary
 
-`Save ESPN, Yahoo, or CBS rosters locally for Lineup Beat; ESPN league history is also supported.`
+`Save ESPN, Yahoo, or CBS rosters and requested league history locally for Lineup Beat.`
 
 ### Detailed description
 
 ```text
-Lineup Beat Fantasy Connector captures visible ESPN, Yahoo, and CBS rosters for My Team. ESPN also supports browser-local league-history import.
+Lineup Beat Fantasy Connector captures visible ESPN, Yahoo, and CBS rosters for My Team. ESPN and CBS also support browser-local league-history capture.
 
-Save roster locally for My Team reads the roster visible on the open ESPN team page and passes it locally to Lineup Beat My Team. Import league history requests up to 25 available seasons for the open ESPN league, stores the normalized snapshot locally, and opens a commissioner review for manager names and possible identity merges.
+Save roster locally for My Team reads the roster visible on the open provider page and passes it locally to Lineup Beat My Team. ESPN history requests up to 25 available seasons for the open league. CBS history reads only the completed season scoreboard or schedule the user has opened and adds that season to the local archive. Both open a commissioner review for manager names and possible identity merges.
 
-League history includes league/team names, seasons, manager labels and IDs, standings, records, matchup weeks, and scores. The extension does not request cookie permission and never reads or stores ESPN passwords, cookie values, session tokens, or authentication tokens. It contains no analytics or advertising code. Private roster and history data is not uploaded to Lineup Beat.
+League history includes league/team names, seasons, manager labels and IDs, standings, records, matchup weeks, and scores. The extension does not request cookie permission and never reads or stores provider passwords, cookie values, session tokens, or authentication tokens. It contains no analytics or advertising code. Private roster and history data is not uploaded to Lineup Beat unless the commissioner separately chooses to publish a view-only page.
 
 Users can clear each local dataset from its destination page. Uninstalling the extension also removes extension-local storage.
 
@@ -35,7 +35,7 @@ The connector is limited to ESPN, Yahoo, and CBS Fantasy Football, ESPN's fantas
 
 ### Single purpose
 
-Save user-requested fantasy roster data, plus ESPN league-history data, in browser-local
+Save user-requested fantasy roster data, plus ESPN and CBS league-history data, in browser-local
 storage and pass it to the matching Lineup Beat experience.
 
 ### Links
@@ -62,11 +62,12 @@ Requests only the selected league's available seasons after Import league
 history is selected. The active ESPN session authorizes the request; the
 extension does not inspect or store the session value.
 
-### Yahoo and CBS roster routes
+### Yahoo and CBS routes
 
 Shows the capture panel on the provider's Fantasy Football pages and reads only
-the visible roster after the user selects Save. No provider credential or
-session value is inspected or stored.
+the visible roster after the user selects Save. On CBS, Add this history season
+reads the visible completed season table and fails closed if required fields are
+missing or ambiguous. No provider credential or session value is inspected or stored.
 
 ### Lineup Beat routes
 
@@ -98,7 +99,7 @@ No. All executable code is included in the package.
 
 No credentials are required for the deterministic My Team reviewer path.
 
-1. Install version 0.4.0.
+1. Install version 0.5.0.
 2. Open `https://lineupbeat-dev.pages.dev/my-team/?reviewer=1`.
 3. Choose Load reviewer demo roster and confirm the sample roster renders.
 4. Choose Disconnect & clear and confirm the roster disappears.
@@ -106,7 +107,7 @@ No credentials are required for the deterministic My Team reviewer path.
 ### Live installed-extension QA
 
 1. Sign in to ESPN, Yahoo, or CBS and verify visible-roster capture on each provider.
-2. Choose Import league history.
+2. On ESPN choose Import league history. On CBS open History and choose Add this history season.
 3. Confirm League History opens with season, game, team, and manager counts.
 4. Review names, test one merge choice, and choose Approve identities.
 5. Reload and confirm the approval remains local.
@@ -114,8 +115,9 @@ No credentials are required for the deterministic My Team reviewer path.
 7. Return to ESPN, select scoring, and test Save roster locally for My Team and
    Open My Team.
 
-If history authorization fails, reload the signed-in ESPN league page and try
-again. Never send ESPN passwords, cookie values, session tokens, or private
+If ESPN history authorization fails, reload the signed-in league page and try
+again. If CBS cannot recognize a completed season table, stop and report safe
+diagnostics rather than entering data manually. Never send provider passwords, cookie values, session tokens, or private
 exports for troubleshooting.
 
 ## Graphics
