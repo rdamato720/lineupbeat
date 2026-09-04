@@ -342,15 +342,8 @@ async function createPublication(request, env) {
 }
 
 async function updatePublication(request, env, slug) {
-  await ensureSchema(env);
-  const token = authorization(request);
-  if (!token || token.length > 200) return json({error: 'Publishing access is required.'}, 401);
-  const current = await env.LEAGUE_HISTORY_DB.prepare(
-    'SELECT manage_token_hash FROM league_history_publications WHERE slug = ?'
-  ).bind(slug).first();
-  if (!current || current.manage_token_hash !== await hashToken(token)) {
-    return json({error: 'This browser cannot update that league link.'}, 403);
-  }
+  const authorized = await authorizePublication(request, env, slug);
+  if (authorized.response) return authorized.response;
   const raw = await body(request);
   const access = visibility(raw.visibility);
   const publication = sanitizePublication(raw.archive, raw.review);
@@ -364,6 +357,44 @@ async function updatePublication(request, env, slug) {
   const origin = new URL(request.url).origin;
   return json({ok: true, slug, url: `${origin}/leagues/${slug}`,
     visibility: access, updatedAt: now}, 200, {'Cache-Control': 'no-store'});
+}
+
+async function authorizePublication(request, env, slug) {
+  await ensureSchema(env);
+  const token = authorization(request);
+  if (!token || token.length > 200) {
+    return {response: json({error: 'Publishing access is required.'}, 401)};
+  }
+  const current = await env.LEAGUE_HISTORY_DB.prepare(
+    `SELECT slug, league_name, visibility, manage_token_hash, updated_at
+     FROM league_history_publications WHERE slug = ?`
+  ).bind(slug).first();
+  if (!current || current.manage_token_hash !== await hashToken(token)) {
+    return {response: json({error: 'That share link and recovery key do not match.'}, 403)};
+  }
+  return {current};
+}
+
+async function recoverPublication(request, env, slug) {
+  const authorized = await authorizePublication(request, env, slug);
+  if (authorized.response) return authorized.response;
+  const row = authorized.current;
+  const origin = new URL(request.url).origin;
+  return json({ok: true, slug: row.slug, name: row.league_name,
+    url: `${origin}/leagues/${row.slug}`, visibility: row.visibility,
+    updatedAt: row.updated_at}, 200, {'Cache-Control': 'no-store'});
+}
+
+async function deletePublication(request, env, slug) {
+  const authorized = await authorizePublication(request, env, slug);
+  if (authorized.response) return authorized.response;
+  await env.LEAGUE_HISTORY_DB.prepare(
+    'DELETE FROM league_history_publications WHERE slug = ?'
+  ).bind(slug).run();
+  return new Response(null, {
+    status: 204,
+    headers: {'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff'}
+  });
 }
 
 export async function onRequestPost(context) {
@@ -390,6 +421,30 @@ export async function onRequestPut(context) {
   }
 }
 
+export async function onRequestPatch(context) {
+  if (!sameOrigin(context.request)) return json({error: 'Origin not allowed.'}, 403);
+  const slug = pathSlug(context.request);
+  if (!slug) return json({error: 'Not found.'}, 404);
+  try { return await recoverPublication(context.request, context.env, slug); }
+  catch (error) {
+    console.error('League recovery failed.', error && error.message);
+    return json({error: error && error.status ? error.message :
+      'League publishing is temporarily unavailable.'}, error && error.status || 503);
+  }
+}
+
+export async function onRequestDelete(context) {
+  if (!sameOrigin(context.request)) return json({error: 'Origin not allowed.'}, 403);
+  const slug = pathSlug(context.request);
+  if (!slug) return json({error: 'Not found.'}, 404);
+  try { return await deletePublication(context.request, context.env, slug); }
+  catch (error) {
+    console.error('League unpublish failed.', error && error.message);
+    return json({error: error && error.status ? error.message :
+      'League publishing is temporarily unavailable.'}, error && error.status || 503);
+  }
+}
+
 export async function onRequestGet(context) {
   const slug = pathSlug(context.request);
   if (!slug) return json({error: 'League not found.'}, 404);
@@ -405,7 +460,7 @@ export async function onRequestGet(context) {
     return json({slug: row.slug, name: row.league_name,
       visibility: row.visibility, createdAt: row.created_at,
       updatedAt: row.updated_at, ...publication}, 200,
-    {'Cache-Control': 'public, max-age=60, stale-while-revalidate=300'});
+    {'Cache-Control': 'no-store'});
   } catch (error) {
     console.error('League read failed.', error && error.message);
     return json({error: 'League history is temporarily unavailable.'}, 503,
@@ -416,7 +471,8 @@ export async function onRequestGet(context) {
 export function onRequestOptions() {
   return new Response(null, {
     status: 204,
-    headers: {'Allow': 'GET, POST, PUT, OPTIONS', 'Cache-Control': 'no-store'}
+    headers: {'Allow': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
+      'Cache-Control': 'no-store'}
   });
 }
 

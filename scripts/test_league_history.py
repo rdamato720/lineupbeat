@@ -94,6 +94,9 @@ def main() -> int:
                      'id="ambient-games"', "background-size:72px 72px",
                      'id="publish-panel"', 'id="publish-league"',
                      'id="published-url"', 'name="league-visibility"',
+                     'id="unpublish-league"', 'id="recovery-key-value"',
+                     'id="restore-publication-access"',
+                     "Already published? Restore commissioner access",
                      ".shared-history.history-ready .import-card",
                      "96", "Prototype boundary", "fictional"):
         assert required in page, required
@@ -102,7 +105,7 @@ def main() -> int:
     assert "MANAGER NAME" not in page
     assert "Review team history" not in page
     assert "ownership change" not in page.lower()
-    assert "password" not in page.lower()
+    assert "password" not in page.lower().replace('type="password"', '')
     assert "cookie" not in page.lower()
     for private_name in ("Adrian Chadzynski", "Ralph Damato", "Bobby Digital"):
         assert private_name not in page
@@ -116,6 +119,9 @@ def main() -> int:
                      "headToHead: series", "titleYears", "seasonStats",
                      "Private ESPN history · processed only in this browser.",
                      "publishLeague", "loadSharedLeague", "/api/leagues/",
+                     "recoverPublicationAccess", "unpublishLeague",
+                     "method: 'PATCH'", "method: 'DELETE'",
+                     "Save the key under Recovery key.",
                      "Shared league history · view only.",
                      "Shared by your commissioner.",
                      "ESPN credentials and private league access are not included."):

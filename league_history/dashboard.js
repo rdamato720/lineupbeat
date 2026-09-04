@@ -1017,12 +1017,48 @@
     const result = document.getElementById('publish-result');
     const link = document.getElementById('published-url');
     const button = document.getElementById('publish-league');
+    const key = document.getElementById('recovery-key-value');
+    const restore = document.getElementById('restore-publication');
     if (!result || !link || !button || !value || !value.slug) return;
     const url = new URL('/leagues/' + value.slug, location.origin).toString();
     link.href = url;
     link.textContent = url;
+    if (key) key.textContent = value.manageToken || '';
+    if (restore) restore.hidden = true;
     result.hidden = false;
     button.textContent = 'Update shared league';
+  }
+
+  function clearPublication() {
+    const result = document.getElementById('publish-result');
+    const link = document.getElementById('published-url');
+    const button = document.getElementById('publish-league');
+    const key = document.getElementById('recovery-key-value');
+    const restore = document.getElementById('restore-publication');
+    if (result) result.hidden = true;
+    if (link) { link.href = '#'; link.textContent = ''; }
+    if (key) key.textContent = '';
+    if (restore) { restore.hidden = false; restore.open = false; }
+    if (button) button.textContent = 'Create share link';
+  }
+
+  function publicationSlug(value) {
+    const cleaned = String(value || '').trim();
+    const valid = candidate =>
+      /^[a-z0-9](?:[a-z0-9-]{1,61}[a-z0-9])?$/.test(candidate) ? candidate : '';
+    if (valid(cleaned)) return cleaned;
+    try {
+      const url = new URL(cleaned, location.origin);
+      if (url.origin !== location.origin) return '';
+      const match = url.pathname.match(/^\/leagues\/([^/]+)\/?$/);
+      if (match) return valid(decodeURIComponent(match[1]));
+      if (/^\/league-history\/?$/.test(url.pathname)) {
+        return valid(url.searchParams.get('league') || '');
+      }
+      return '';
+    } catch (_) {
+      return '';
+    }
   }
 
   function restorePublication() {
@@ -1067,10 +1103,77 @@
       showPublication(stored);
       status.textContent = updating ?
         'Shared league updated. The link stays the same.' :
-        'Share link ready. Anyone with the link can view it.';
+        'Share link ready. Save the key under Recovery key.';
     } catch (error) {
       status.textContent = error && error.message ? error.message :
         'Publishing is temporarily unavailable.';
+    } finally {
+      button.disabled = false;
+    }
+  }
+
+  async function recoverPublicationAccess() {
+    const share = document.getElementById('restore-share-link');
+    const key = document.getElementById('restore-recovery-key');
+    const button = document.getElementById('restore-publication-access');
+    const status = document.getElementById('publish-status');
+    if (!share || !key || !button || !status || !capture) return;
+    const slug = publicationSlug(share.value);
+    const manageToken = key.value.trim();
+    if (!slug || !manageToken) {
+      status.textContent = 'Enter the share link and recovery key.';
+      return;
+    }
+    button.disabled = true;
+    status.textContent = 'Checking commissioner access…';
+    try {
+      const response = await fetch('/api/leagues/' + encodeURIComponent(slug), {
+        method: 'PATCH',
+        headers: {Authorization: 'Bearer ' + manageToken}
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || 'Access could not be restored.');
+      const stored = {slug: result.slug, manageToken, visibility: result.visibility};
+      localStorage.setItem(publicationKey(), JSON.stringify(stored));
+      const option = document.querySelector(
+        'input[name="league-visibility"][value="' + stored.visibility + '"]');
+      if (option) option.checked = true;
+      key.value = '';
+      share.value = '';
+      showPublication(stored);
+      status.textContent = 'Commissioner access restored on this browser.';
+    } catch (error) {
+      status.textContent = error && error.message ? error.message :
+        'Access could not be restored.';
+    } finally {
+      button.disabled = false;
+    }
+  }
+
+  async function unpublishLeague() {
+    const saved = savedPublication();
+    const button = document.getElementById('unpublish-league');
+    const status = document.getElementById('publish-status');
+    if (!saved || !button || !status) return;
+    if (!window.confirm('Unpublish this league history? The shared link will stop working.')) {
+      return;
+    }
+    button.disabled = true;
+    status.textContent = 'Removing shared league…';
+    try {
+      const response = await fetch('/api/leagues/' + encodeURIComponent(saved.slug), {
+        method: 'DELETE',
+        headers: {Authorization: 'Bearer ' + saved.manageToken}
+      });
+      const result = response.status === 204 ? {} :
+        await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || 'The shared league could not be removed.');
+      localStorage.removeItem(publicationKey());
+      clearPublication();
+      status.textContent = 'Shared page removed. Your local league history is unchanged.';
+    } catch (error) {
+      status.textContent = error && error.message ? error.message :
+        'The shared league could not be removed.';
     } finally {
       button.disabled = false;
     }
@@ -1175,6 +1278,25 @@
       }
     });
   }
+  const copyRecovery = document.getElementById('copy-recovery-key');
+  if (copyRecovery) {
+    copyRecovery.addEventListener('click', async () => {
+      const saved = savedPublication();
+      const status = document.getElementById('publish-status');
+      if (!saved) return;
+      try {
+        await navigator.clipboard.writeText(saved.manageToken);
+        copyRecovery.textContent = 'Copied';
+        if (status) status.textContent = 'Recovery key copied. Keep it private.';
+      } catch (_) {
+        if (status) status.textContent = 'Copy the recovery key above and keep it private.';
+      }
+    });
+  }
+  const recover = document.getElementById('restore-publication-access');
+  if (recover) recover.addEventListener('click', recoverPublicationAccess);
+  const unpublish = document.getElementById('unpublish-league');
+  if (unpublish) unpublish.addEventListener('click', unpublishLeague);
 
   const sharedSlug = new URLSearchParams(location.search).get('league');
   if (sharedSlug) loadSharedLeague(sharedSlug);

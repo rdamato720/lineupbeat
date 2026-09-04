@@ -5,8 +5,11 @@ import {
   createManageToken,
   createSlug,
   hashToken,
+  onRequestDelete,
   onRequestGet,
+  onRequestOptions,
   onRequestPost,
+  onRequestPatch,
   onRequestPut,
   sanitizePublication,
   sharedLeagueRedirect,
@@ -129,6 +132,8 @@ class MemoryD1 {
         } else if (sql.includes('UPDATE league_history_publications')) {
           const [league_name, visibility, archive_json, updated_at, slug] = this.values;
           Object.assign(db.rows.get(slug), {league_name, visibility, archive_json, updated_at});
+        } else if (sql.includes('DELETE FROM league_history_publications')) {
+          db.rows.delete(this.values[0]);
         }
         return {success: true};
       }
@@ -157,6 +162,27 @@ assert.equal(read.status, 200);
 const shared = await read.json();
 assert.equal(shared.archive.league.name, 'BG-N-Co.');
 assert(!('manageToken' in shared));
+assert.equal(read.headers.get('Cache-Control'), 'no-store');
+
+const invalidRecovery = await onRequestPatch(context(new Request(
+  origin + '/api/leagues/' + created.slug, {
+    method: 'PATCH',
+    headers: {Origin: origin, Authorization: 'Bearer wrong'}
+  })));
+assert.equal(invalidRecovery.status, 403);
+
+const recovery = await onRequestPatch(context(new Request(
+  origin + '/api/leagues/' + created.slug, {
+    method: 'PATCH',
+    headers: {Origin: origin, Authorization: 'Bearer ' + created.manageToken}
+  })));
+assert.equal(recovery.status, 200);
+const recovered = await recovery.json();
+assert.deepEqual({slug: recovered.slug, name: recovered.name,
+  visibility: recovered.visibility}, {
+  slug: created.slug, name: 'BG-N-Co.', visibility: 'unlisted'
+});
+assert(!('manageToken' in recovered));
 
 const forbidden = await onRequestPut(context(new Request(
   origin + '/api/leagues/' + created.slug, {
@@ -178,11 +204,33 @@ assert.equal(updated.status, 200);
 assert.equal((await updated.json()).slug, created.slug);
 assert.equal(db.rows.get(created.slug).visibility, 'public');
 
+const forbiddenDelete = await onRequestDelete(context(new Request(
+  origin + '/api/leagues/' + created.slug, {
+    method: 'DELETE',
+    headers: {Origin: origin, Authorization: 'Bearer wrong'}
+  })));
+assert.equal(forbiddenDelete.status, 403);
+assert.equal(db.rows.size, 1);
+
 const crossOrigin = await onRequestPost(context(new Request(origin + '/api/leagues', {
   method: 'POST',
   headers: {'Content-Type': 'application/json', Origin: 'https://attacker.example'},
   body: JSON.stringify({visibility: 'unlisted', archive, review})
 })));
 assert.equal(crossOrigin.status, 403);
+
+const deleted = await onRequestDelete(context(new Request(
+  origin + '/api/leagues/' + created.slug, {
+    method: 'DELETE',
+    headers: {Origin: origin, Authorization: 'Bearer ' + created.manageToken}
+  })));
+assert.equal(deleted.status, 204);
+assert.equal(db.rows.size, 0);
+const missing = await onRequestGet(context(new Request(
+  origin + '/api/leagues/' + created.slug)));
+assert.equal(missing.status, 404);
+
+const options = onRequestOptions();
+assert.equal(options.headers.get('Allow'), 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
 
 console.log('league history publishing privacy, tokens and routing passed');
