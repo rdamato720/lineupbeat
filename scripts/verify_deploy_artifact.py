@@ -328,6 +328,13 @@ def check_league_history(root):
           and "Prototype boundary" not in text
           and "Fictional demonstration data" not in text
           and '<footer class="global-footer">' in text)
+    check("League History connector checks end with recovery guidance",
+          "No local '+name+' import found." in text
+          and "Install the connector, import from your '+name+' league page" in text)
+    dashboard_path = root / "assets" / "league-history-dashboard.js"
+    dashboard = dashboard_path.read_text() if dashboard_path.is_file() else ""
+    check("League History preserves CBS provider labels",
+          dashboard.count("=== 'cbs' ? 'CBS' : 'ESPN'") >= 2)
     payload_path = root / "data" / "league-history-demo.json"
     try:
         payload = json.loads(payload_path.read_text())

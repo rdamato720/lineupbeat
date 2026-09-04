@@ -120,6 +120,8 @@ def main() -> int:
                      '.history-empty .lh-meta{display:none}',
                      'aria-selected="false"><span class="provider-mark">ESPN',
                      "We only show services LineupBeat can connect today.",
+                     "No local '+name+' import found.",
+                     "clearConnectTimer()",
                      '/assets/yahoo-history.js',
                      "private by default", "96"):
         assert required in page, required
@@ -165,6 +167,7 @@ def main() -> int:
                      "Most championships", "Best regular season",
                      "headToHead: series", "titleYears", "seasonStats",
                      "Private ' + provider + ' history · processed only in this browser.",
+                     "payload.provider === 'cbs' ? 'CBS' : 'ESPN'",
                      "publishLeague", "loadSharedLeague", "/api/leagues/",
                      "recoverPublicationAccess", "unpublishLeague",
                      "storePublication", "retryShared",

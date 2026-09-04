@@ -259,6 +259,7 @@ def build_page(canonical: dict, summary: dict) -> str:
       var connectionStage=document.getElementById('connection-stage');
       var connectionTitle=document.getElementById('connection-title');
       var selectedProvider='';
+      var connectTimer=0;
       var clear=document.getElementById('clear-import');
       var check=document.getElementById('check-extension');
       var result=document.getElementById('review-result');
@@ -269,6 +270,12 @@ def build_page(canonical: dict, summary: dict) -> str:
       var ambientSeasons=document.getElementById('ambient-seasons');
       var ambientGames=document.getElementById('ambient-games');
       function say(text){status.textContent=text;}
+      function clearConnectTimer(){if(connectTimer){clearTimeout(connectTimer);connectTimer=0;}}
+      function requestProvider(provider){
+        clearConnectTimer();say('Checking for a local '+(provider==='cbs'?'CBS':'ESPN')+' import…');
+        window.postMessage({type:'LB_LEAGUE_HISTORY_CONNECT_REQUEST',version:1,provider:provider},location.origin);
+        connectTimer=setTimeout(function(){var name=provider==='cbs'?'CBS':'ESPN';say('No local '+name+' import found. Install the connector, import from your '+name+' league page, then try again.');connectTimer=0;},1800);
+      }
       function setSetupStep(step){setupSteps.forEach(function(item){var value=Number(item.dataset.setupStep);item.classList.toggle('current',value===step);item.classList.toggle('complete',value<step);});}
       function providerName(){var provider=(state.capture&&state.capture.provider)||selectedProvider;return provider==='yahoo'?'Yahoo':provider==='cbs'?'CBS':'ESPN';}
       function pairKey(pair){return [pair.a,pair.b].sort().join('::');}
@@ -284,6 +291,7 @@ def build_page(canonical: dict, summary: dict) -> str:
       function compactManagerReview(){managerReview.classList.add('is-complete');managerStep.textContent='Step 3 of 4 · Complete';managerTitle.textContent='Managers matched';managerCopy.textContent=state.pairs.length+' manager match'+(state.pairs.length===1?'':'es')+' saved.';reviewManagers.hidden=false;}
       function finishSetup(){compactManagerReview();setupReady.hidden=false;setSetupStep(4);}
       function render(record){
+        clearConnectTimer();
         state.capture=record.payload;state.review=record.review||null;selectedProvider=state.capture.provider||selectedProvider;setSetupStep(3);
         var p=state.capture;detail.classList.add('open');clear.hidden=false;check.hidden=true;document.body.classList.add('has-import');
         leagueTitle.textContent=p.league.name;
@@ -305,9 +313,9 @@ def build_page(canonical: dict, summary: dict) -> str:
         if(state.review)finishSetup();
         say(providerName()+' import connected');
       }
-      document.getElementById('check-extension').addEventListener('click',function(){say('Checking for a local ESPN import…');window.postMessage({type:'LB_LEAGUE_HISTORY_CONNECT_REQUEST',version:1,provider:'espn'},location.origin);});
-      document.getElementById('check-cbs').addEventListener('click',function(){say('Checking for a local CBS import…');window.postMessage({type:'LB_LEAGUE_HISTORY_CONNECT_REQUEST',version:1,provider:'cbs'},location.origin);});
-      window.addEventListener('lb:history-source',function(event){selectedProvider=event.detail&&event.detail.provider||'';if(!selectedProvider)return;connectionStage.hidden=false;connectionTitle.textContent='Connect '+providerName()+'.';setSetupStep(2);say(providerName()+' selected. Follow the connection step below.');});
+      document.getElementById('check-extension').addEventListener('click',function(){requestProvider('espn');});
+      document.getElementById('check-cbs').addEventListener('click',function(){requestProvider('cbs');});
+      window.addEventListener('lb:history-source',function(event){clearConnectTimer();selectedProvider=event.detail&&event.detail.provider||'';if(!selectedProvider)return;connectionStage.hidden=false;connectionTitle.textContent='Connect '+providerName()+'.';setSetupStep(2);say(providerName()+' selected. Follow the connection step below.');});
       clear.addEventListener('click',function(){if(state.capture&&state.capture.provider==='yahoo'){try{localStorage.removeItem('lineupBeatYahooHistoryV1');}catch(_){}window.postMessage({type:'LB_LEAGUE_HISTORY_CLEAR_COMPLETE',version:1},location.origin);}else{window.postMessage({type:'LB_LEAGUE_HISTORY_CLEAR_REQUEST',version:1,provider:state.capture&&state.capture.provider},location.origin);}});
       document.getElementById('same-person').addEventListener('click',function(){choose('same');});
       document.getElementById('different-people').addEventListener('click',function(){choose('different');});
@@ -327,7 +335,7 @@ def build_page(canonical: dict, summary: dict) -> str:
       });
       window.addEventListener('message',function(event){
         if(event.source!==window||event.origin!==location.origin||!event.data||event.data.version!==1)return;
-        if(event.data.type==='LB_LEAGUE_HISTORY_EXTENSION_READY'){var readyProvider=event.data.provider==='cbs'?'CBS':'ESPN';say(event.data.hasHistory?readyProvider+' import found. Loading review…':'Connector ready. Import from a '+readyProvider+' league page.');clear.hidden=!event.data.hasHistory;}
+        if(event.data.type==='LB_LEAGUE_HISTORY_EXTENSION_READY'){clearConnectTimer();var readyProvider=event.data.provider==='cbs'?'CBS':'ESPN';say(event.data.hasHistory?readyProvider+' import found. Loading review…':'Connector ready. Import from a '+readyProvider+' league page.');clear.hidden=!event.data.hasHistory;}
         if(event.data.type==='LB_LEAGUE_HISTORY_CAPTURE')render({payload:event.data.payload,review:event.data.review});
         if(event.data.type==='LB_LEAGUE_HISTORY_REVIEW_COMPLETE'){if(event.data.ok){state.dirty=false;updateSave();result.textContent='Manager matches saved.';finishSetup();}else result.textContent='Manager matches could not be saved.';}
         if(event.data.type==='LB_LEAGUE_HISTORY_CLEAR_COMPLETE'){var oldProvider=providerName();state.capture=null;state.review=null;state.identities=[];state.pairs=[];state.choices={};selectedProvider='';detail.classList.remove('open');managerReview.classList.remove('is-complete');setupReady.hidden=true;clear.hidden=true;check.hidden=false;document.body.classList.remove('has-import');document.querySelectorAll('[data-history-source]').forEach(function(button){button.setAttribute('aria-selected','false');});document.querySelectorAll('[data-source-panel]').forEach(function(panel){panel.hidden=true;});connectionStage.hidden=true;setSetupStep(1);leagueTitle.textContent=leagueTitle.dataset.demo;headerSeasons.textContent=headerSeasons.dataset.demo;headerGames.textContent=headerGames.dataset.demo;headerTeams.textContent=headerTeams.dataset.demo;ambientSeasons.textContent=ambientSeasons.dataset.demo;ambientGames.textContent=ambientGames.dataset.demo;document.title='League History | LineupBeat';say('Local '+oldProvider+' import cleared. Choose a platform to start again.');}

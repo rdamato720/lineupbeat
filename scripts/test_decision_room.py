@@ -222,6 +222,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
                       "Fantasy football decisions, explained.",
                       "NFL or College?", "Rankings, projections &amp; decisions",
                       "Week 1 rankings &amp; projections",
+                      "Turn an ESPN, Yahoo, or CBS league archive",
                       "Tony Pollard vs. Rico Dowdle",
                       "Devon Dampier vs. Byrum Brown"):
             self.assertIn(label, home)

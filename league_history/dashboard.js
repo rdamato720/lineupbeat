@@ -494,7 +494,8 @@
         document.createTextNode('Provider credentials and private league access are not included.')
       );
     } else {
-      const provider = capture && capture.provider === 'yahoo' ? 'Yahoo' : 'ESPN';
+      const provider = capture && capture.provider === 'yahoo' ? 'Yahoo' :
+        capture && capture.provider === 'cbs' ? 'CBS' : 'ESPN';
       notice.append(
         element('strong', '', 'Private by default. '),
         document.createTextNode('Your ' + provider + ' archive is calculated in this browser.')
@@ -1309,7 +1310,8 @@
         element('span', '', 'Updated ' + String(sharedPublication.updatedAt || '').slice(0, 10))
       );
     } else {
-      const provider = payload.provider === 'yahoo' ? 'Yahoo' : 'ESPN';
+      const provider = payload.provider === 'yahoo' ? 'Yahoo' :
+        payload.provider === 'cbs' ? 'CBS' : 'ESPN';
       footer.replaceChildren(
         element('span', '', 'Private ' + provider + ' history · processed only in this browser.'),
         element('span', '', 'Imported ' + String(payload.capturedAt || '').slice(0, 10))
