@@ -119,6 +119,10 @@ class DecisionEngineTests(unittest.TestCase):
             dev_site._protect_page(path, "develop")
             self.assertEqual(first, path.read_text())
 
+    def test_home_header_exposes_league_history_on_desktop_and_mobile(self):
+        header = page.home_header()
+        self.assertEqual(header.count('href="/league-history/"'), 2)
+
     def test_weekly_context_requires_a_validated_week(self):
         with self.assertRaises(ValueError):
             DecisionContext("weekly", 2026, "ppr")
@@ -250,9 +254,11 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertNotIn('href="/decision-room/reviewed-wire/"', home)
         self.assertEqual(home.count('data-home-sport='), 0)
         self.assertEqual(home.count('lb-feature-card'), 2)
-        self.assertEqual(home.count('class="hp-action"'), 6)
+        self.assertEqual(home.count('class="hp-action"'), 7)
         self.assertEqual(home.count('class="hp-sport-card'), 2)
         self.assertIn('href="/my-team/"', home)
+        self.assertIn('href="/league-history/"', home)
+        self.assertIn("Import an ESPN league archive", home)
         self.assertIn("Yahoo scoring", home)
         self.assertIn('href="/about/"', home)
         self.assertEqual(home.count('class="hp-decision-summary"'), 2)

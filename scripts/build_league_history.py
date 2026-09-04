@@ -309,7 +309,7 @@ def build_page(canonical: dict, summary: dict) -> str:
     <title>{title} League History | LineupBeat</title><meta name="robots" content="noindex,nofollow">
     <meta name="description" content="Development prototype for the LineupBeat fantasy football league history tracker.">
     <style>{seo.SHELL_CSS}{seo.TEAMS_CSS}{seo.NAV_CSS}{styles}</style></head><body>
-    {seo.site_nav('data', 'nfl')}
+    {seo.site_nav('league_history', 'nfl')}
     <div class="lh-atmosphere" aria-hidden="true">
       <div class="lh-ambient-card lh-ambient-seasons"><span>Season archive</span><strong id="ambient-seasons" data-demo="{summary['counts']['seasons']}">{summary['counts']['seasons']}</strong><small>Seasons indexed</small><svg class="lh-ambient-trace" viewBox="0 0 180 52" focusable="false"><polyline points="2,43 24,31 47,36 70,18 94,28 119,11 145,21 178,5"/></svg></div>
       <div class="lh-ambient-card lh-ambient-games"><span>Matchup ledger</span><strong id="ambient-games" data-demo="{summary['counts']['games']}">{summary['counts']['games']}</strong><small>Games preserved</small><div class="lh-ambient-bars"><i style="--w:91%"></i><i style="--w:73%"></i><i style="--w:58%"></i><i style="--w:42%"></i></div></div>
