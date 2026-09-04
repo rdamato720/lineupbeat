@@ -106,10 +106,23 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           test "$DEV_PROJECT" = "lineupbeat-dev"
-          npx --yes wrangler@latest pages project create "$DEV_PROJECT" \
-            --production-branch=develop || true
           branch=$(printf '%s' "$GITHUB_REF_NAME" | tr '/_' '--')
           cp cloudflare/lineupbeat-dev.wrangler.toml wrangler.toml
           npx --yes wrangler@latest pages deploy \
-            --project-name="$DEV_PROJECT" --branch="$branch" \
-            --commit-dirty=true
+            --branch="$branch" --commit-dirty=true
+
+      - name: Verify league publishing storage
+        run: |
+          for attempt in $(seq 1 12); do
+            status=$(curl --silent --show-error --output /tmp/league-publish-health.json \
+              --write-out '%{http_code}' \
+              "$DEV_BASE_URL/api/leagues/deployment-health-check")
+            if [ "$status" = "404" ]; then
+              jq --exit-status '.error == "League not found."' \
+                /tmp/league-publish-health.json
+              exit 0
+            fi
+            sleep 5
+          done
+          cat /tmp/league-publish-health.json
+          exit 1
