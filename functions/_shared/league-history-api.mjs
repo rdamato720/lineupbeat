@@ -4,8 +4,8 @@ const MAX_TEAMS_PER_SEASON = 32;
 const MAX_MATCHUPS = 6_000;
 const MAX_IDENTITIES = 128;
 const SLUG = /^[a-z0-9](?:[a-z0-9-]{1,61}[a-z0-9])?$/;
-const PUBLICATION_SCHEMA = `
-  CREATE TABLE IF NOT EXISTS league_history_publications (
+const PUBLICATION_SCHEMA = [
+  `CREATE TABLE IF NOT EXISTS league_history_publications (
     slug TEXT PRIMARY KEY,
     league_name TEXT NOT NULL,
     visibility TEXT NOT NULL CHECK (visibility IN ('unlisted', 'public')),
@@ -13,10 +13,10 @@ const PUBLICATION_SCHEMA = `
     manage_token_hash TEXT NOT NULL,
     created_at TEXT NOT NULL,
     updated_at TEXT NOT NULL
-  );
-  CREATE INDEX IF NOT EXISTS idx_league_history_visibility_updated
-  ON league_history_publications (visibility, updated_at DESC);
-`;
+  )`,
+  `CREATE INDEX IF NOT EXISTS idx_league_history_visibility_updated
+   ON league_history_publications (visibility, updated_at DESC)`
+];
 let schemaPromise = null;
 
 function fail(message, status = 422) {
@@ -293,11 +293,15 @@ function authorization(request) {
 
 async function ensureSchema(env) {
   if (!env || !env.LEAGUE_HISTORY_DB ||
-      typeof env.LEAGUE_HISTORY_DB.exec !== 'function') {
+      typeof env.LEAGUE_HISTORY_DB.prepare !== 'function') {
     fail('League publishing storage is unavailable.', 503);
   }
   if (!schemaPromise) {
-    schemaPromise = env.LEAGUE_HISTORY_DB.exec(PUBLICATION_SCHEMA)
+    schemaPromise = (async () => {
+      for (const statement of PUBLICATION_SCHEMA) {
+        await env.LEAGUE_HISTORY_DB.prepare(statement).run();
+      }
+    })()
       .catch(error => {
         schemaPromise = null;
         throw error;
