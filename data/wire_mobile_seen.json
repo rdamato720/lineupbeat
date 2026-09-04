@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 929,
+ "count": 945,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -10258,6 +10258,182 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.007718
+  },
+  {
+   "candidate_id": "mobile:article:09cefd13f1615ef8ae50",
+   "player_id": "00-0039910",
+   "source_url": "https://www.commanders.com/news/nick-allegretti-jayden-daniels-commanders-silent-counts-eagles",
+   "attempted_at": "2026-09-04T16:27:16+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T16:27:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004978
+  },
+  {
+   "candidate_id": "mobile:onsi:dcfd9320fe31bb6f0182",
+   "player_id": "00-0035228",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/vikings-friday-mailbag-9-4-how-brian-flores-use-caleb-banks-jordan-addison-s-future-01m1nd0ypn57",
+   "attempted_at": "2026-09-04T16:27:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T16:27:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004374
+  },
+  {
+   "candidate_id": "mobile:onsi:60c1309be1c713be91b8",
+   "player_id": "00-0035710",
+   "source_url": "https://www.si.com/nfl/colts/onsi/indianapolis-colts-head-coach-explains-how-anthony-richardson-won-qb2-job",
+   "attempted_at": "2026-09-04T16:27:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T16:27:29+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003942
+  },
+  {
+   "candidate_id": "mobile:onsi:87c0ac3631683d36dfcb",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/nfl/packers/onsi/why-will-kaleb-johnson-be-successful-with-packers-watch-this-iowa-oc-says",
+   "attempted_at": "2026-09-04T16:27:29+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-09-04T16:27:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00421
+  },
+  {
+   "candidate_id": "mobile:onsi:c05e6e4895f1bc1e955b",
+   "player_id": "00-0036442",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/joe-burrow-breaks-down-processing-plays-details-ability-to-read-defense-01m1hjr0s4ad",
+   "attempted_at": "2026-09-04T16:27:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T16:27:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004556
+  },
+  {
+   "candidate_id": "mobile:onsi:3df203cfa5bbcb565185",
+   "player_id": "00-0033077",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-already-making-change-practice-squad-tight-ends",
+   "attempted_at": "2026-09-04T16:27:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T16:27:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004556
+  },
+  {
+   "candidate_id": "mobile:onsi:6793cd4b1081cad98961",
+   "player_id": "00-0039890",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/2026-fantasy-football-all-rookie-team",
+   "attempted_at": "2026-09-04T16:27:42+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T16:27:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005234
+  },
+  {
+   "candidate_id": "mobile:onsi:274ebbd5fab35273ec03",
+   "player_id": "00-0039299",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/2026-fantasy-football-all-rookie-team",
+   "attempted_at": "2026-09-04T16:27:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T16:27:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004564
+  },
+  {
+   "candidate_id": "mobile:onsi:04e2430f2d749dc39986",
+   "player_id": "00-0039337",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/2026-fantasy-football-all-rookie-team",
+   "attempted_at": "2026-09-04T16:27:50+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T16:27:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004982
+  },
+  {
+   "candidate_id": "mobile:onsi:63b1f62f5324e82a2f2f",
+   "player_id": "00-0029604",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/2026-fantasy-football-all-rookie-team",
+   "attempted_at": "2026-09-04T16:27:53+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T16:27:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004054
+  },
+  {
+   "candidate_id": "mobile:onsi:14488d41c4df6031094c",
+   "player_id": "00-0041568",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/2026-fantasy-football-all-rookie-team",
+   "attempted_at": "2026-09-04T16:27:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T16:27:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004328
+  },
+  {
+   "candidate_id": "mobile:onsi:d1e505a808a10ba781ee",
+   "player_id": "00-0041056",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/2026-fantasy-football-all-rookie-team",
+   "attempted_at": "2026-09-04T16:27:59+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T16:28:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003824
+  },
+  {
+   "candidate_id": "mobile:onsi:dd92e71e3e9e6a21378c",
+   "player_id": "00-0041565",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/2026-fantasy-football-all-rookie-team",
+   "attempted_at": "2026-09-04T16:28:01+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T16:28:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0041
+  },
+  {
+   "candidate_id": "mobile:onsi:c42751ebc8676f100142",
+   "player_id": "00-0039165",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/2026-fantasy-football-all-rookie-team",
+   "attempted_at": "2026-09-04T16:28:05+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T16:28:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006236
+  },
+  {
+   "candidate_id": "mobile:onsi:45a2decf17d00673e8b0",
+   "player_id": "00-0039163",
+   "source_url": "https://www.si.com/nfl/texans/onsi/grading-every-major-roster-decision-the-texans-made-to-get-from-90-to-53",
+   "attempted_at": "2026-09-04T16:28:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T16:28:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004958
+  },
+  {
+   "candidate_id": "mobile:onsi:88ae0fe38b733b35bc64",
+   "player_id": "00-0040130",
+   "source_url": "https://www.si.com/nfl/texans/onsi/grading-every-major-roster-decision-the-texans-made-to-get-from-90-to-53",
+   "attempted_at": "2026-09-04T16:28:18+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T16:28:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004612
   }
  ]
 }
