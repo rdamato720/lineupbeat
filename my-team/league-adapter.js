@@ -34,18 +34,18 @@
     });
     return errors;
   }
-  function modelIndex(model){
+  function modelIndex(model,providerName){
     const provider=new Map(), identity=new Map(), ambiguous=new Set();
     (model.players||[]).forEach(p=>{
-      const espn=clean(p.providerIds&&p.providerIds.espn);
-      if(espn){if(provider.has(espn))throw new Error('ambiguous ESPN provider id '+espn);provider.set(espn,p)}
+      const providerId=clean(p.providerIds&&p.providerIds[providerName]);
+      if(providerId){if(provider.has(providerId))throw new Error('ambiguous '+providerName+' provider id '+providerId);provider.set(providerId,p)}
       const key=[normalizeName(p.name),normalizeTeam(p.team),clean(p.position).toUpperCase()].join('|');
       if(identity.has(key))ambiguous.add(key); else identity.set(key,p);
     });
     return {provider,identity,ambiguous};
   }
   function match(league,model){
-    const index=modelIndex(model);
+    const index=modelIndex(model,league.provider);
     allPlayers(league).forEach(p=>{
       p.identity=null;
       const position=clean(p.position).toUpperCase();
@@ -57,7 +57,7 @@
       let hit=index.provider.get(clean(p.providerPlayerId));
       let status='matched_provider_id';
       if(!hit){
-        if(!validPlayerName(p.name)){p.matchStatus='unresolved_identity';p.unresolvedReason='The captured ESPN player label is a status designation, not a valid player name.';return}
+        if(!validPlayerName(p.name)){p.matchStatus='unresolved_identity';p.unresolvedReason='The captured player label is a status designation, not a valid player name.';return}
         const key=[normalizeName(p.name),normalizeTeam(p.providerTeam),position].join('|');
         if(index.ambiguous.has(key)){
           p.matchStatus='ambiguous_identity';p.unresolvedReason='More than one Lineup Beat identity has this exact normalized name, team, and position.';return;

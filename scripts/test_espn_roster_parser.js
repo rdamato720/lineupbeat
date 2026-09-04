@@ -239,7 +239,7 @@ async function main() {
   assert(normalized.roster.starters.find(row => row.position === 'D/ST').unresolvedReason.includes('not supported'));
   assert(normalized.roster.starters.find(row => row.position === 'K').unresolvedReason.includes('not supported'));
   assert.deepEqual(normalized.startingLineupSlots.find(row => row.slotId === 'FLEX').allowedPositions, ['RB', 'WR', 'TE']);
-  assert.deepEqual(normalized.roster.starters.slice(0, 4).map(row => row.espnStatus), ['Q', 'Q', 'Q', 'Q']);
+  assert.deepEqual(normalized.roster.starters.slice(0, 4).map(row => row.providerStatus), ['Q', 'Q', 'Q', 'Q']);
   const matched = LineupBeatLeagueAdapter.match(normalized, {players: [
     {id: 'canonical-provider', name: "Canonical O'Brien-Jones II", team: 'BUF', position: 'QB', providerIds: {espn: '920001'}},
     {id: 'canonical-exact', name: 'Sanitized Runner Jr.', team: 'ATL', position: 'RB', providerIds: {}}

@@ -86,8 +86,8 @@ class ChromeStoreManifestTests(unittest.TestCase):
 
     def test_exact_hosts_minimal_permissions_and_release_version(self):
         self.assertEqual(self.manifest["manifest_version"], 3)
-        self.assertEqual(self.manifest["version"], "0.3.0")
-        self.assertEqual(self.manifest["name"], "Lineup Beat ESPN Connector")
+        self.assertEqual(self.manifest["version"], "0.4.0")
+        self.assertEqual(self.manifest["name"], "Lineup Beat Fantasy Connector")
         self.assertLessEqual(len(self.manifest["description"]), 132)
         self.assertNotIn("BETA", self.manifest["description"])
         self.assertEqual(self.manifest["permissions"], ["storage"])
@@ -96,6 +96,8 @@ class ChromeStoreManifestTests(unittest.TestCase):
         self.assertEqual(
             [script["matches"] for script in self.manifest["content_scripts"]],
             [["https://fantasy.espn.com/football/*"],
+             ["https://football.fantasysports.yahoo.com/f1/*"],
+             ["https://*.football.cbssports.com/*", "https://www.cbssports.com/fantasy/football/*"],
              ["https://lineupbeat-dev.pages.dev/my-team/*"],
              ["https://lineupbeat-dev.pages.dev/league-history/*"],
              ["https://lineupbeat.com/my-team/*",
@@ -106,6 +108,8 @@ class ChromeStoreManifestTests(unittest.TestCase):
         self.assertEqual(
             [script["js"] for script in self.manifest["content_scripts"]],
             [["espn-roster-parser.js", "espn-history-parser.js", "content.js"],
+             ["yahoo-roster-parser.js", "content.js"],
+             ["cbs-roster-parser.js", "content.js"],
              ["content.js"], ["content.js"], ["content.js"]],
         )
         encoded = json.dumps(self.manifest)
@@ -147,8 +151,8 @@ class ChromeStoreManifestTests(unittest.TestCase):
         self.assertIn("Privacy details", content)
         self.assertIn("Copy safe diagnostics", content)
         self.assertIn("Safe diagnostics copied. Paste the JSON into Codex.", content)
-        self.assertIn("error.message === globalThis.LineupBeatEspnRosterParser.EMPTY_ERROR", content)
-        self.assertIn("error.message === globalThis.LineupBeatEspnRosterParser.AMBIGUOUS_ERROR", content)
+        self.assertIn("error.message === config.parser.EMPTY_ERROR", content)
+        self.assertIn("error.message === config.parser.AMBIGUOUS_ERROR", content)
 
 
 class ChromeStoreBundleTests(unittest.TestCase):
@@ -164,7 +168,7 @@ class ChromeStoreBundleTests(unittest.TestCase):
             with zipfile.ZipFile(package_a) as archive:
                 names = archive.namelist()
                 self.assertEqual(names, list(build_chrome_store_bundle.RUNTIME_FILES))
-                self.assertEqual(len(names), 9)
+                self.assertEqual(len(names), 11)
                 self.assertIn("manifest.json", names)
                 self.assertFalse(any(name.startswith("lineupbeat-espn/") for name in names))
                 manifest = json.loads(archive.read("manifest.json"))
@@ -181,7 +185,7 @@ class ChromeStoreBundleTests(unittest.TestCase):
             self.assertIsNone(re.search(r"(?i)(api[_-]?key|secret|token)\s*[:=]\s*['\"][A-Za-z0-9_-]{12,}", decoded))
             inventory = json.loads((Path(first) / "listing-materials" / "package-inventory.json").read_text())
             self.assertEqual(inventory["packageSha256"], report_a["packageSha256"])
-            self.assertEqual(inventory["packageFileCount"], 9)
+            self.assertEqual(inventory["packageFileCount"], 11)
             self.assertEqual(inventory["packageFileCount"], len(inventory["packageFiles"]))
             self.assertEqual([row["path"] for row in inventory["packageFiles"]], names)
 
@@ -200,17 +204,17 @@ class ChromeStoreBundleTests(unittest.TestCase):
     def test_listing_is_complete_and_version_consistent(self):
         listing = (LISTING / "STORE_LISTING.md").read_text()
         for required in (
-            "Lineup Beat ESPN Connector", "0.3.0", "Short summary",
+            "Lineup Beat Fantasy Connector", "0.4.0", "Short summary",
             "Detailed description", "Single purpose", "Permission justification",
             "Data-use selections", "Support URL", "Privacy policy URL",
             "Test instructions", "Unlisted", "Future Chrome Web Store steps — currently blocked",
-            "Live installed-extension QA", "Install version 0.3.0",
+            "Live installed-extension QA", "Install version 0.4.0",
             "Save roster locally for My Team", "Open My Team",
             "Disconnect & clear", "Load reviewer demo roster",
         ):
             self.assertIn(required, listing)
         self.assertIn("No credentials are required", listing)
-        self.assertIn("live ESPN import test", listing)
+        self.assertIn("live ESPN, Yahoo, and CBS capture tests", listing)
         self.assertIn("Chrome Web Store", listing)
         self.assertIn("upload and submission remain blocked", listing)
         self.assertNotIn("Ralph's private", listing)
@@ -227,10 +231,10 @@ class ChromeStoreBundleTests(unittest.TestCase):
             report = build_chrome_store_bundle.build(Path(bundle))
             expected = Path(bundle) / report["package"]
             self.assertEqual(package.read_bytes(), expected.read_bytes())
-            self.assertIn("Download version 0.3.0", support.read_text())
+            self.assertIn("Download version 0.4.0", support.read_text())
             text = privacy.read_text()
             for required in (
-                "chrome.storage.local", "No private-data upload", "No ESPN password, cookie value, session token",
+                "chrome.storage.local", "No private-data upload", "No provider password, cookie value, session token",
                 "Clear each copy", "hello@lineupbeat.com",
                 "fantasy.espn.com", "lm-api-reads.fantasy.espn.com",
             ):
@@ -246,7 +250,7 @@ class ChromeStoreBundleTests(unittest.TestCase):
         self.assertIn("lineupbeat-espn-cws-submission-${{ github.run_id }}", workflow)
         self.assertIn("lineupbeat-espn-cws-listing-${{ github.run_id }}", workflow)
         self.assertIn(
-            "build/chrome-web-store/lineupbeat-espn-connector-0.3.0.zip",
+            "build/chrome-web-store/lineupbeat-espn-connector-0.4.0.zip",
             workflow,
         )
         self.assertIn("build/chrome-web-store/listing-materials", workflow)

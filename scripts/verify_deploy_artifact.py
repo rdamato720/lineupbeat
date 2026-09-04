@@ -163,11 +163,11 @@ def check_my_team(root):
           and "cloudflareinsights" not in text.lower()
           and "data-cf-beacon" not in text.lower())
     check("My Team exposes the browser-local privacy controls",
-          "Connect ESPN extension" in text
+          "Connect Fantasy extension" in text
           and "Disconnect &amp; clear" in text
           and "Roster data never leaves this browser" in text)
-    check("unfinished providers have no active connection controls",
-          "Connect Yahoo" not in text and "Connect CBS" not in text
+    check("My Team exposes only implemented provider connections",
+          all(f"<h3>{provider}</h3>" in text for provider in ("ESPN", "Yahoo", "CBS"))
           and "Connect Sleeper" not in text)
     assets = [
         root / "my-team" / "league-adapter.js",
@@ -187,7 +187,6 @@ def check_my_team(root):
     except (OSError, KeyError, ValueError, zipfile.BadZipFile):
         manifest, worker, package_files = {}, "", []
     scripts = manifest.get("content_scripts") or [{}, {}]
-    matches = scripts[1].get("matches") if len(scripts) > 1 else None
     encoded_manifest = json.dumps(manifest)
     expected_site_matches = {
         "https://lineupbeat-dev.pages.dev/my-team/*",
@@ -198,19 +197,21 @@ def check_my_team(root):
         "https://www.lineupbeat.com/league-history/*",
     }
     actual_site_matches = {
-        match for script in scripts[1:]
+        match for script in scripts
         for match in (script.get("matches") or [])
+        if "lineupbeat" in match
     }
-    check("the download is the restricted nine-file version 0.3.0 package",
-          manifest.get("version") == "0.3.0"
-          and len(package_files) == 9
-          and matches == ["https://lineupbeat-dev.pages.dev/my-team/*"]
+    check("the download is the restricted eleven-file version 0.4.0 package",
+          manifest.get("version") == "0.4.0"
+          and len(package_files) == 11
           and actual_site_matches == expected_site_matches
+          and any("https://football.fantasysports.yahoo.com/f1/*" in (script.get("matches") or []) for script in scripts)
+          and any("https://*.football.cbssports.com/*" in (script.get("matches") or []) for script in scripts)
           and "https://lineupbeat.com/*" not in encoded_manifest
           and "https://www.lineupbeat.com/*" not in encoded_manifest
           and "localhost" not in encoded_manifest
           and "127.0.0.1" not in encoded_manifest
-          and package_files[:5] == ["manifest.json", "background.js", "espn-roster-parser.js", "espn-history-parser.js", "content.js"])
+          and package_files[:6] == ["manifest.json", "background.js", "espn-roster-parser.js", "espn-history-parser.js", "yahoo-roster-parser.js", "cbs-roster-parser.js"])
     check("the development download validates capture, retrieval, and clear senders",
           "ESPN_ORIGIN = 'https://fantasy.espn.com'" in worker
           and "ESPN_PATH = '/football/'" in worker
@@ -218,7 +219,7 @@ def check_my_team(root):
           and "'https://lineupbeat-dev.pages.dev'" in worker
           and "'https://www.lineupbeat.com'" in worker
           and "MY_TEAM_PATH = '/my-team/'" in worker
-          and worker.count("return reject(sendResponse)") == 8)
+          and worker.count("return reject(sendResponse)") >= 10)
     support = root / "my-team" / "extension" / "index.html"
     privacy = root / "my-team" / "extension" / "privacy" / "index.html"
     support_text = support.read_text() if support.is_file() else ""
@@ -227,12 +228,12 @@ def check_my_team(root):
           bool(support_text) and bool(privacy_text))
     check("extension privacy accurately describes local storage and deletion",
           "chrome.storage.local" in privacy_text
-          and "Neither flow uploads private ESPN data" in privacy_text
+          and "Neither flow uploads private provider data" in privacy_text
           and "Clear each copy" in privacy_text
-          and "No ESPN password, cookie value, session token" in privacy_text)
+          and "No provider password, cookie value, session token" in privacy_text)
     check("extension support exposes the labeled direct download",
           'href="/my-team/lineupbeat-espn-extension.zip"' in support_text
-          and "Download version 0.3.0" in support_text
+          and "Download version 0.4.0" in support_text
           and "Direct download" in support_text)
     model_path = root / "data" / "my-team-week1.json"
     try:
@@ -301,8 +302,8 @@ def check_development_repairs(root):
           bool(sample) and "/feedback.css" in sample.split("</head>", 1)[0])
     my_team_js = root / "my-team" / "my-team.js"
     runtime = my_team_js.read_text() if my_team_js.is_file() else ""
-    check("an installed ESPN extension without a roster gets a terminal status",
-          "ESPN extension detected, but no saved roster was found" in runtime)
+    check("an installed Fantasy extension without a roster gets a terminal status",
+          "Fantasy extension detected, but no saved roster was found" in runtime)
 
 
 def check_league_history(root):

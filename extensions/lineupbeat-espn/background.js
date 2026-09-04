@@ -1,6 +1,7 @@
 if (typeof importScripts === 'function') importScripts('espn-history-parser.js');
 
-const ROSTER_KEY = 'lineupBeatEspnRosterV1';
+const ROSTER_KEY = 'lineupBeatRosterV1';
+const LEGACY_ROSTER_KEY = 'lineupBeatEspnRosterV1';
 const HISTORY_KEY = 'lineupBeatEspnHistoryV1';
 const ESPN_ORIGIN = 'https://fantasy.espn.com';
 const ESPN_PATH = '/football/';
@@ -26,6 +27,20 @@ function senderMatches(sender, origins, path) {
 
 function reject(sendResponse) {
   sendResponse({ok: false, error: 'unexpected_sender'});
+  return false;
+}
+
+function rosterSenderMatches(sender, provider) {
+  if (provider === 'espn') return senderMatches(sender, ESPN_ORIGIN, ESPN_PATH);
+  if (provider === 'yahoo') return senderMatches(sender,
+    'https://football.fantasysports.yahoo.com', '/f1/');
+  if (provider === 'cbs') {
+    try {
+      const url=new URL((sender&&sender.url)||'');
+      return (/(?:^|\.)football\.cbssports\.com$/.test(url.hostname) ||
+        (url.hostname==='www.cbssports.com'&&url.pathname.startsWith('/fantasy/football/')));
+    } catch (_error) { return false; }
+  }
   return false;
 }
 
@@ -128,6 +143,15 @@ function validReview(review, record) {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (!message || message.version !== 1) return;
 
+  if (message.type === 'LB_CAPTURE_ROSTER') {
+    if (!rosterSenderMatches(sender, message.provider) ||
+        !message.payload || message.payload.provider !== message.provider) return reject(sendResponse);
+    saveRoster(message.payload, true)
+      .then(sendResponse)
+      .catch(() => sendResponse({ok: false, error: 'local_storage_failed'}));
+    return true;
+  }
+
   if (message.type === 'LB_CAPTURE_ESPN_ROSTER') {
     if (!senderMatches(sender, ESPN_ORIGIN, ESPN_PATH)) return reject(sendResponse);
     saveRoster(message.payload, true)
@@ -152,9 +176,25 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return true;
   }
 
+  if (message.type === 'LB_GET_ROSTER') {
+    if (!senderMatches(sender, SITE_ORIGINS, MY_TEAM_PATH)) return reject(sendResponse);
+    chrome.storage.local.get([ROSTER_KEY, LEGACY_ROSTER_KEY])
+      .then(result => sendResponse({ok: true, payload: result[ROSTER_KEY] || result[LEGACY_ROSTER_KEY] || null}))
+      .catch(() => sendResponse({ok: false, error: 'local_storage_failed'}));
+    return true;
+  }
+
   if (message.type === 'LB_CLEAR_ESPN_ROSTER') {
     if (!senderMatches(sender, SITE_ORIGINS, MY_TEAM_PATH)) return reject(sendResponse);
     chrome.storage.local.remove(ROSTER_KEY)
+      .then(() => sendResponse({ok: true}))
+      .catch(() => sendResponse({ok: false, error: 'local_storage_failed'}));
+    return true;
+  }
+
+  if (message.type === 'LB_CLEAR_ROSTER') {
+    if (!senderMatches(sender, SITE_ORIGINS, MY_TEAM_PATH)) return reject(sendResponse);
+    chrome.storage.local.remove([ROSTER_KEY, LEGACY_ROSTER_KEY])
       .then(() => sendResponse({ok: true}))
       .catch(() => sendResponse({ok: false, error: 'local_storage_failed'}));
     return true;

@@ -44,7 +44,7 @@ async function main(){
   assert.equal(qLeague.roster.starters[1].matchStatus,'unresolved_identity');
   assert(qLeague.roster.starters[1].unresolvedReason.includes('status designation'));
   assert.equal(qLeague.roster.bench[0].matchStatus,'matched_identity');
-  assert.equal(qLeague.roster.bench[0].espnStatus,'Q');
+  assert.equal(qLeague.roster.bench[0].providerStatus,'Q');
   assert(!LineupBeatLeagueAdapter.validPlayerName('Q'));
   assert(LineupBeatLeagueAdapter.validPlayerName("D'Andre Example Jr."));
   const liveSupported=Array.from({length:15},(_,index)=>({
@@ -112,7 +112,7 @@ async function main(){
   let listener,store={},opened=[];
   const chrome={runtime:{onMessage:{addListener(fn){listener=fn}}},tabs:{create({url}){opened.push(url);return Promise.resolve({id:1,url})}},storage:{local:{set(value){Object.assign(store,value);return Promise.resolve()},get(key){return Promise.resolve({[key]:store[key]})},remove(key){delete store[key];return Promise.resolve()}}}};
   vm.runInNewContext(fs.readFileSync('extensions/lineupbeat-espn/background.js','utf8'),{chrome,URL});
-  const send=(type,url,payload)=>new Promise(resolve=>listener({type,version:1,payload},{url},resolve));
+  const send=(type,url,payload,provider)=>new Promise(resolve=>listener({type,version:1,payload,provider},{url},resolve));
   const roster={private:'browser-local-test'};
   const captured=await send('LB_CAPTURE_ESPN_ROSTER','https://fantasy.espn.com/football/team?leagueId=1',roster);
   assert.equal(captured.ok,true);assert.equal(captured.opened,true);
@@ -121,7 +121,7 @@ async function main(){
     const get=await send('LB_GET_ESPN_ROSTER',url);
     assert.equal(get.ok,false);assert.equal(get.payload,undefined);
     const clear=await send('LB_CLEAR_ESPN_ROSTER',url);
-    assert.equal(clear.ok,false);assert(store.lineupBeatEspnRosterV1);
+    assert.equal(clear.ok,false);assert(store.lineupBeatRosterV1);
   }
   const validGet=await send('LB_GET_ESPN_ROSTER','https://lineupbeat-dev.pages.dev/my-team/?league=1');
   assert.deepEqual(validGet.payload,roster);
@@ -139,6 +139,12 @@ async function main(){
     const badCapture=await send('LB_CAPTURE_ESPN_ROSTER',url,roster);
     assert.equal(badCapture.ok,false);
   }
+  const yahooRoster={provider:'yahoo',league:{id:'101'},roster:[]};
+  assert.equal((await send('LB_CAPTURE_ROSTER','https://football.fantasysports.yahoo.com/f1/101/1/team',yahooRoster,'yahoo')).ok,true);
+  assert.equal((await send('LB_CAPTURE_ROSTER','https://football.fantasysports.yahoo.com.evil.example/f1/101/1/team',yahooRoster,'yahoo')).ok,false);
+  const cbsRoster={provider:'cbs',league:{id:'test'},roster:[]};
+  assert.equal((await send('LB_CAPTURE_ROSTER','https://league.football.cbssports.com/teams/page/1',cbsRoster,'cbs')).ok,true);
+  assert.equal((await send('LB_CAPTURE_ROSTER','https://football.cbssports.com.evil.example/teams/page/1',cbsRoster,'cbs')).ok,false);
 
   let fallbackListener,fallbackStore={};
   const fallbackChrome={runtime:{onMessage:{addListener(fn){fallbackListener=fn}}},tabs:{create(){return Promise.reject(new Error('blocked'))}},storage:{local:{set(value){Object.assign(fallbackStore,value);return Promise.resolve()},get(key){return Promise.resolve({[key]:fallbackStore[key]})},remove(key){delete fallbackStore[key];return Promise.resolve()}}}};
@@ -153,13 +159,13 @@ async function main(){
   const myTeam=fs.readFileSync('my-team/my-team.js','utf8');
   assert(myTeam.includes('display=LineupBeatLeagueAdapter.displayIdentity(player)'));
   assert(myTeam.includes("Q:'Questionable'"));
-  assert(myTeam.includes('aria-label="ESPN status: ${escape(label)}"'));
+  assert(myTeam.includes('aria-label="Provider status: ${escape(label)}"'));
   assert(myTeam.includes('Week 1 ${escape(labels[format])} pts'));
   assert(myTeam.includes('2025 prior-season context'));
   assert(myTeam.includes('Open full player comparison'));
   assert(myTeam.includes('Your strongest lineup is already set'));
   assert(myTeam.includes('LineupBeatLeagueAdapter.actionableDecisions'));
-  assert(myTeam.includes('ESPN extension detected, but no saved roster was found'));
+  assert(myTeam.includes('Fantasy extension detected, but no saved roster was found'));
   assert(!myTeam.includes('matched identity'));
   assert(!myTeam.includes('<h3>${escape(player.name)}</h3>'));
 

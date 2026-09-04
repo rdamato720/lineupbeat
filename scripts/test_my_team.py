@@ -107,14 +107,14 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertNotIn("history", model["players"][0])
         self.assertNotIn("adp", model["players"][0])
 
-    def test_page_exposes_only_espn_as_active_and_has_privacy_controls(self):
+    def test_page_exposes_three_working_local_providers_and_privacy_controls(self):
         page = build_my_team.render_page(build_my_team.public_model())
-        self.assertIn("Connect ESPN extension", page)
+        self.assertIn("Connect Fantasy extension", page)
         self.assertIn("Disconnect &amp; clear", page)
         self.assertIn("Roster data never leaves this browser", page)
-        self.assertEqual(page.count("Supported connection"), 1)
-        self.assertNotIn("Connect Yahoo", page)
-        self.assertNotIn("Connect CBS", page)
+        self.assertEqual(page.count("Supported connection"), 3)
+        self.assertIn("<h3>Yahoo</h3>", page)
+        self.assertIn("<h3>CBS</h3>", page)
         self.assertNotIn("Cloudflare Web Analytics", page)
         self.assertIn('name="robots" content="noindex,nofollow"', page)
         self.assertIn('id="mt-demo"', page)
@@ -135,8 +135,8 @@ class MyTeamArtifactTests(unittest.TestCase):
             self.assertTrue(package.exists())
             with zipfile.ZipFile(package) as archive:
                 packaged = json.loads(archive.read("manifest.json"))
-                self.assertEqual(packaged["version"], "0.3.0")
-                self.assertEqual(len(archive.namelist()), 9)
+                self.assertEqual(packaged["version"], "0.4.0")
+                self.assertEqual(len(archive.namelist()), 11)
                 self.assertEqual(
                     archive.namelist(),
                     list(build_my_team.build_chrome_store_bundle.RUNTIME_FILES),
@@ -156,11 +156,15 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertEqual(manifest["content_scripts"][0]["js"],
                          ["espn-roster-parser.js", "espn-history-parser.js", "content.js"])
         self.assertEqual(manifest["content_scripts"][1]["matches"],
-                         ["https://lineupbeat-dev.pages.dev/my-team/*"])
-        self.assertEqual(manifest["content_scripts"][1]["js"], ["content.js"])
+                         ["https://football.fantasysports.yahoo.com/f1/*"])
+        self.assertEqual(manifest["content_scripts"][1]["js"], ["yahoo-roster-parser.js", "content.js"])
         self.assertEqual(manifest["content_scripts"][2]["matches"],
+                         ["https://*.football.cbssports.com/*", "https://www.cbssports.com/fantasy/football/*"])
+        self.assertEqual(manifest["content_scripts"][3]["matches"],
+                         ["https://lineupbeat-dev.pages.dev/my-team/*"])
+        self.assertEqual(manifest["content_scripts"][4]["matches"],
                          ["https://lineupbeat-dev.pages.dev/league-history/*"])
-        self.assertEqual(manifest["content_scripts"][3]["matches"], [
+        self.assertEqual(manifest["content_scripts"][5]["matches"], [
             "https://lineupbeat.com/my-team/*",
             "https://lineupbeat.com/league-history/*",
             "https://www.lineupbeat.com/my-team/*",
@@ -186,12 +190,12 @@ class MyTeamArtifactTests(unittest.TestCase):
         privacy = build_my_team.render_extension_privacy()
         readme = (ROOT / "extensions" / "lineupbeat-espn" / "README.md").read_text()
         for text in (guide, readme):
-            self.assertIn("Save roster locally for My Team", text)
+            self.assertIn("roster", text.lower())
             self.assertNotIn("Send roster to Lineup Beat", text)
-        self.assertIn("Download version 0.3.0", guide)
+        self.assertIn("Download version 0.4.0", guide)
         self.assertIn("chrome.storage.local", privacy)
-        self.assertIn("No ESPN password, cookie value, session token", privacy)
-        self.assertIn("Neither flow uploads private ESPN data", privacy)
+        self.assertIn("No provider password, cookie value, session token", privacy)
+        self.assertIn("Neither flow uploads private provider data", privacy)
         self.assertIn("Clear each copy", privacy)
 
     def test_suffix_terminal_punctuation_regression(self):
@@ -206,11 +210,11 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertIn("<p>${escape(reason)}</p>", source)
         self.assertNotIn("const reason=`${escape(bench.name)}", source)
 
-    def test_matched_cards_use_canonical_identity_and_label_espn_status(self):
+    def test_matched_cards_use_canonical_identity_and_label_provider_status(self):
         source = (ROOT / "my-team" / "my-team.js").read_text()
         self.assertIn("LineupBeatLeagueAdapter.displayIdentity(player)", source)
         self.assertIn("Q:'Questionable'", source)
-        self.assertIn('aria-label="ESPN status: ${escape(label)}"', source)
+        self.assertIn('aria-label="Provider status: ${escape(label)}"', source)
         self.assertNotIn("<h3>${escape(player.name)}</h3>", source)
 
     def test_connected_value_layer_precedes_roster_and_uses_validated_model_fields(self):

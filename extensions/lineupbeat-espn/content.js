@@ -357,7 +357,12 @@
 
   const ESPN_ORIGIN = 'https://fantasy.espn.com';
   const ESPN_PATH = '/football/';
-  const MY_TEAM_ORIGIN = 'https://lineupbeat-dev.pages.dev';
+  const YAHOO_ORIGIN = 'https://football.fantasysports.yahoo.com';
+  const CBS_HOST = /(?:^|\.)football\.cbssports\.com$/;
+  const SITE_ORIGINS = ['https://lineupbeat.com', 'https://www.lineupbeat.com',
+    'https://lineupbeat-dev.pages.dev'];
+  const MY_TEAM_ORIGIN = location.origin === 'https://lineupbeat-dev.pages.dev'
+    ? location.origin : 'https://lineupbeat.com';
   const MY_TEAM_PATH = '/my-team/';
   const MY_TEAM_URL = `${MY_TEAM_ORIGIN}${MY_TEAM_PATH}`;
   const HISTORY_PATH = '/league-history/';
@@ -372,24 +377,51 @@
     return new URL(location.href).searchParams.get(key) || '';
   }
 
-  function capture(receptionPoints) {
-    const parser = globalThis.LineupBeatEspnRosterParser;
-    if (!parser) throw new Error('The ESPN roster parser did not load. Reload the extension and try again.');
+  function providerConfig() {
+    if (onExpectedPage(ESPN_ORIGIN, ESPN_PATH)) return {
+      id:'espn', label:'ESPN', parser:globalThis.LineupBeatEspnRosterParser,
+      leagueId:queryValue('leagueId') || 'unknown', teamId:queryValue('teamId') || 'unknown',
+      season:Number(queryValue('seasonId') || new Date().getFullYear()), history:true
+    };
+    if (location.origin === YAHOO_ORIGIN && location.pathname.startsWith('/f1/')) {
+      const ids=location.pathname.match(/^\/f1\/(\d+)(?:\/(\d+))?/);
+      return {id:'yahoo',label:'Yahoo',parser:globalThis.LineupBeatYahooRosterParser,
+        leagueId:ids&&ids[1]||'unknown',teamId:ids&&ids[2]||'unknown',
+        season:Number(queryValue('season') || new Date().getFullYear()),history:false};
+    }
+    if (CBS_HOST.test(location.hostname) ||
+        (location.hostname === 'www.cbssports.com' && location.pathname.startsWith('/fantasy/football/'))) {
+      return {id:'cbs',label:'CBS',parser:globalThis.LineupBeatCbsRosterParser,
+        leagueId:location.hostname.split('.')[0]||'unknown',teamId:queryValue('teamId')||'my-team',
+        season:Number(queryValue('season')||new Date().getFullYear()),history:false};
+    }
+    return null;
+  }
+
+  function pageLabels(config) {
+    if (config.id === 'yahoo') {
+      const title=String(document.title||'').split('|')[0].trim(),parts=title.split(/\s+-\s+/);
+      return {leagueName:parts[0]||'Yahoo league',teamName:parts[1]||'My Yahoo team'};
+    }
+    return globalThis.LineupBeatSafeDiagnostics.pageLabels(document, config.leagueId, config.teamId);
+  }
+
+  function capture(config, receptionPoints) {
+    const parser = config.parser;
+    if (!parser) throw new Error(`The ${config.label} roster parser did not load. Reload the extension and try again.`);
     const roster = parser.requireRoster(document);
-    const leagueId = queryValue('leagueId') || 'unknown';
-    const teamId = queryValue('teamId') || 'unknown';
-    const labels = globalThis.LineupBeatSafeDiagnostics.pageLabels(document, leagueId, teamId);
+    const labels = pageLabels(config);
     return {
-      provider: 'espn',
+      provider: config.id,
       connectionType: 'browser_extension',
       league: {
-        id: leagueId,
+        id: config.leagueId,
         name: labels.leagueName,
-        season: Number(queryValue('seasonId') || new Date().getFullYear()),
+        season: config.season,
         scoringSettings: {receptionPoints: Number(receptionPoints)}
       },
       team: {
-        id: teamId,
+        id: config.teamId,
         name: labels.teamName
       },
       roster
@@ -413,7 +445,7 @@
     }
   }
 
-  function installEspnCapture() {
+  function installProviderCapture(config) {
     const panel = document.createElement('section');
     const heading = document.createElement('strong');
     const disclosure = document.createElement('p');
@@ -427,8 +459,10 @@
     const diagnostics = document.createElement('button');
     const status = document.createElement('p');
 
-    heading.textContent = 'Lineup Beat ESPN Connector';
-    disclosure.textContent = 'Save your roster or import league history. Data stays in this browser for review; passwords and session values are never read or stored.';
+    heading.textContent = `Lineup Beat ${config.label} Connector`;
+    disclosure.textContent = config.history
+      ? 'Save your roster or import league history. Data stays in this browser for review; passwords and session values are never read or stored.'
+      : 'Save the visible roster for My Team. Data stays in this browser; passwords, cookies, and session values are never read or stored.';
     privacy.href = PRIVACY_URL;
     privacy.target = '_blank';
     privacy.rel = 'noopener';
@@ -438,7 +472,7 @@
     select.innerHTML = '<option value="">Choose scoring</option><option value="1">PPR</option><option value="0.5">Half-PPR</option><option value="0">Non-PPR</option>';
     save.type = 'button';
     save.textContent = 'Save roster locally for My Team';
-    save.setAttribute('aria-label', 'Save visible ESPN roster locally for My Team');
+    save.setAttribute('aria-label', `Save visible ${config.label} roster locally for My Team`);
     open.href = MY_TEAM_URL;
     open.target = '_blank';
     open.rel = 'noopener';
@@ -447,6 +481,7 @@
     history.type = 'button';
     history.textContent = 'Import league history';
     history.setAttribute('aria-label', 'Import ESPN league history locally for commissioner review');
+    history.hidden = !config.history;
     openHistory.href = HISTORY_URL;
     openHistory.target = '_blank';
     openHistory.rel = 'noopener';
@@ -467,8 +502,8 @@
       document,
       location,
       version: chrome.runtime.getManifest().version,
-      playerSelector: globalThis.LineupBeatEspnRosterParser.PLAYER_SELECTOR,
-      inspectRoster: globalThis.LineupBeatEspnRosterParser.inspect,
+      playerSelector: config.parser.PLAYER_SELECTOR,
+      inspectRoster: config.parser.inspect,
       clipboard: navigator.clipboard
     });
     save.addEventListener('click', () => {
@@ -478,9 +513,9 @@
         return;
       }
       try {
-        const payload = capture(select.value);
+        const payload = capture(config, select.value);
         chrome.runtime.sendMessage(
-          {type: 'LB_CAPTURE_ESPN_ROSTER', version: 1, payload},
+          {type: 'LB_CAPTURE_ROSTER', version: 1, provider:config.id, payload},
           response => {
             if (!response || !response.ok) {
               status.textContent = 'Roster could not be saved locally. Try again.';
@@ -494,8 +529,8 @@
         );
       } catch (error) {
         status.textContent = error.message;
-        if (error.message === globalThis.LineupBeatEspnRosterParser.EMPTY_ERROR ||
-            error.message === globalThis.LineupBeatEspnRosterParser.AMBIGUOUS_ERROR) {
+        if (error.message === config.parser.EMPTY_ERROR ||
+            error.message === config.parser.AMBIGUOUS_ERROR) {
           diagnosticController.show();
         }
       }
@@ -535,13 +570,13 @@
   function postRoster(response) {
     if (response && response.payload) {
       window.postMessage({
-        type: 'LB_MY_TEAM_ESPN_ROSTER', version: 1, payload: response.payload
+        type: 'LB_MY_TEAM_ROSTER', version: 1, payload: response.payload
       }, location.origin);
     }
   }
 
   function ready() {
-    chrome.runtime.sendMessage({type: 'LB_GET_ESPN_ROSTER', version: 1}, response => {
+    chrome.runtime.sendMessage({type: 'LB_GET_ROSTER', version: 1}, response => {
       window.postMessage({
         type: 'LB_MY_TEAM_EXTENSION_READY',
         version: 1,
@@ -555,7 +590,7 @@
       if (event.source !== window || event.origin !== location.origin ||
           !event.data || event.data.version !== 1) return;
       if (event.data.type === 'LB_MY_TEAM_CONNECT_REQUEST') {
-        chrome.runtime.sendMessage({type: 'LB_GET_ESPN_ROSTER', version: 1}, postRoster);
+        chrome.runtime.sendMessage({type: 'LB_GET_ROSTER', version: 1}, postRoster);
       }
       if (event.data.type === 'LB_MY_TEAM_REVIEW_DEMO_REQUEST') {
         chrome.runtime.sendMessage({
@@ -565,7 +600,7 @@
         });
       }
       if (event.data.type === 'LB_MY_TEAM_CLEAR_REQUEST') {
-        chrome.runtime.sendMessage({type: 'LB_CLEAR_ESPN_ROSTER', version: 1}, response => {
+        chrome.runtime.sendMessage({type: 'LB_CLEAR_ROSTER', version: 1}, response => {
           if (response && response.ok) {
             window.postMessage({type: 'LB_MY_TEAM_CLEAR_COMPLETE', version: 1}, location.origin);
           }
@@ -630,7 +665,8 @@
     }
   }
 
-  if (onExpectedPage(ESPN_ORIGIN, ESPN_PATH)) installEspnCapture();
-  if (onExpectedPage(MY_TEAM_ORIGIN, MY_TEAM_PATH)) installMyTeamBridge();
-  if (onExpectedPage(MY_TEAM_ORIGIN, HISTORY_PATH)) installHistoryBridge();
+  const config=providerConfig();
+  if (config) installProviderCapture(config);
+  if (SITE_ORIGINS.includes(location.origin) && location.pathname.startsWith(MY_TEAM_PATH)) installMyTeamBridge();
+  if (SITE_ORIGINS.includes(location.origin) && location.pathname.startsWith(HISTORY_PATH)) installHistoryBridge();
 })();

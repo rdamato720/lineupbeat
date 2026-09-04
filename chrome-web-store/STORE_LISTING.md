@@ -1,28 +1,28 @@
-# Lineup Beat ESPN Connector — Chrome Web Store submission sheet
+# Lineup Beat Fantasy Connector — Chrome Web Store submission sheet
 
 Prepared for an **Unlisted** release. This document does not authorize upload,
 review submission, or publication.
 
-**Release block:** version 0.3.0 needs a live ESPN import test. Chrome Web Store
+**Release block:** version 0.4.0 needs live ESPN, Yahoo, and CBS capture tests. Chrome Web Store
 upload and submission remain blocked.
 
 ## Package tab
 
-- Upload file: `lineupbeat-espn-connector-0.3.0.zip`
+- Upload file: `lineupbeat-espn-connector-0.4.0.zip`
 - Manifest version: 3
-- Extension version: 0.3.0
-- Extension name: `Lineup Beat ESPN Connector`
+- Extension version: 0.4.0
+- Extension name: `Lineup Beat Fantasy Connector`
 
 ## Store listing tab
 
 ### Short summary
 
-`Save an ESPN roster or import league history locally for review in Lineup Beat, without uploading private league data.`
+`Save ESPN, Yahoo, or CBS rosters locally for Lineup Beat; ESPN league history is also supported.`
 
 ### Detailed description
 
 ```text
-Lineup Beat ESPN Connector supports two explicit, browser-local flows.
+Lineup Beat Fantasy Connector captures visible ESPN, Yahoo, and CBS rosters for My Team. ESPN also supports browser-local league-history import.
 
 Save roster locally for My Team reads the roster visible on the open ESPN team page and passes it locally to Lineup Beat My Team. Import league history requests up to 25 available seasons for the open ESPN league, stores the normalized snapshot locally, and opens a commissioner review for manager names and possible identity merges.
 
@@ -30,12 +30,12 @@ League history includes league/team names, seasons, manager labels and IDs, stan
 
 Users can clear each local dataset from its destination page. Uninstalling the extension also removes extension-local storage.
 
-The connector is limited to ESPN Fantasy Football, ESPN's fantasy read API, and the exact Lineup Beat production and development My Team and League History routes. It has no localhost, loopback, or broad website access.
+The connector is limited to ESPN, Yahoo, and CBS Fantasy Football, ESPN's fantasy read API, and the exact Lineup Beat production and development My Team and League History routes. It has no localhost, loopback, or broad website access.
 ```
 
 ### Single purpose
 
-Save user-requested ESPN fantasy roster or league-history data in browser-local
+Save user-requested fantasy roster data, plus ESPN league-history data, in browser-local
 storage and pass it to the matching Lineup Beat experience.
 
 ### Links
@@ -61,6 +61,12 @@ only after Save roster locally for My Team is selected.
 Requests only the selected league's available seasons after Import league
 history is selected. The active ESPN session authorizes the request; the
 extension does not inspect or store the session value.
+
+### Yahoo and CBS roster routes
+
+Shows the capture panel on the provider's Fantasy Football pages and reads only
+the visible roster after the user selects Save. No provider credential or
+session value is inspected or stored.
 
 ### Lineup Beat routes
 
@@ -92,14 +98,14 @@ No. All executable code is included in the package.
 
 No credentials are required for the deterministic My Team reviewer path.
 
-1. Install version 0.3.0.
+1. Install version 0.4.0.
 2. Open `https://lineupbeat-dev.pages.dev/my-team/?reviewer=1`.
 3. Choose Load reviewer demo roster and confirm the sample roster renders.
 4. Choose Disconnect & clear and confirm the roster disappears.
 
 ### Live installed-extension QA
 
-1. Sign in to ESPN and open a fantasy football league page.
+1. Sign in to ESPN, Yahoo, or CBS and verify visible-roster capture on each provider.
 2. Choose Import league history.
 3. Confirm League History opens with season, game, team, and manager counts.
 4. Review names, test one merge choice, and choose Approve identities.
@@ -123,7 +129,7 @@ screenshots before Store submission; do not use private league data.
 
 ## Future Chrome Web Store steps — currently blocked
 
-Upload and submission remain blocked until the live ESPN import test and updated
+Upload and submission remain blocked until live provider tests and updated
 fictional screenshots pass review. After that, compare the ZIP SHA-256 with
 `package-inventory.json`, complete the dashboard fields, keep visibility
 Unlisted, and obtain explicit approval before Submit for Review.
