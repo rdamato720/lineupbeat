@@ -31,25 +31,40 @@ class SportExperienceTests(unittest.TestCase):
         college = seo.site_nav("rankings", "college")
         nfl_views = re.search(r'<nav class="views".*?</nav>', nfl, re.S).group(0)
         college_views = re.search(r'<nav class="views".*?</nav>', college, re.S).group(0)
-        self.assertIn('href="/nfl/data/" aria-current="page">Fantasy Data</a>', nfl)
+        self.assertIn('data-nav-group="nfl" data-current="true"', nfl_views)
+        self.assertIn('href="/nfl/data/" aria-current="page">Fantasy Data</a>', nfl_views)
         self.assertIn('href="/my-league/">My League</a>', nfl_views)
         self.assertIn("Search NFL players", nfl)
-        self.assertNotIn("Week 1 Rankings", nfl_views)
-        self.assertNotIn("Fantasy Data", college_views)
-        self.assertNotIn("My League", college_views)
+        self.assertIn("Week 1 Rankings", nfl_views)
+        self.assertIn('data-nav-group="college" data-current="true"', college_views)
+        self.assertIn("Fantasy Data", college_views)
+        self.assertIn("My League", college_views)
         self.assertIn('href="/college-fantasy-football/week-1/" aria-current="page">Week 1 Rankings</a>', college)
         self.assertIn('href="/college-fantasy-football/projections/">Season Projections</a>', college)
-        self.assertNotIn('href="/nfl/rankings/"', college_views)
-        self.assertNotIn('href="/nfl/projections/"', college_views)
+        self.assertIn('href="/nfl/rankings/"', college_views)
+        self.assertIn('href="/nfl/projections/"', college_views)
 
     def test_switching_keeps_activity_and_search_context(self):
         nfl = seo.site_nav("rankings", "nfl")
         college = seo.site_nav("projections", "college")
-        self.assertIn('href="/college-fantasy-football/week-1/" aria-pressed="false">COLLEGE</a>', nfl)
-        self.assertIn('href="/nfl/projections/" aria-pressed="false">NFL</a>', college)
+        self.assertIn('href="/nfl/rankings/" aria-current="page">Rankings</a>', nfl)
+        self.assertNotIn('href="/college-fantasy-football/week-1/" aria-current="page"', nfl)
+        self.assertIn('href="/college-fantasy-football/projections/" aria-current="page">Season Projections</a>', college)
+        self.assertNotIn('href="/nfl/projections/" aria-current="page"', college)
         self.assertIn("Search 2,205 College players", college)
         header = college.split("</header>", 1)[0]
         self.assertNotIn('id="site-player-list"', header)
+
+    def test_dropdowns_group_the_complete_site_without_cross_sport_routes(self):
+        header = seo.site_nav("decision", "college")
+        self.assertEqual(header.count('class="navgroup"'), 3)
+        self.assertEqual(header.count('class="navsection"'), 3)
+        for label in ("NFL", "College", "My Fantasy", "About"):
+            self.assertIn(label, header)
+        self.assertEqual(header.count('href="/decision-room/nfl/"'), 2)
+        self.assertEqual(header.count('href="/decision-room/college/"'), 3)
+        self.assertEqual(header.count('href="/my-team/"'), 2)
+        self.assertEqual(header.count('href="/my-league/"'), 2)
 
     def test_every_college_team_has_verified_local_png(self):
         self.assertEqual(len(self.registry), 68)
@@ -87,6 +102,7 @@ class SportExperienceTests(unittest.TestCase):
             'href="/my-league/" aria-current="page">My League</a>',
             header,
         )
+        self.assertIn('data-nav-group="fantasy" data-current="true"', header)
 
 
 if __name__ == "__main__":

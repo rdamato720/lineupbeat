@@ -378,14 +378,23 @@ SPORT_ROUTES = {
         "landing": "/decision-room/college/",
     },
 }
-SPORT_NAV_ITEMS = {
-    "nfl": (("my_team", "My Team"), ("league_history", "My League"),
-            ("decision", "Decision"), ("rankings", "Rankings"),
-            ("projections", "Projections"), ("data", "Fantasy Data")),
-    "college": (("decision", "Decision"),
-                ("rankings", "Week 1 Rankings"),
-                ("projections", "Season Projections")),
-}
+NAV_GROUPS = (
+    ("nfl", "NFL", (
+        ("decision", "Decision Room", "/decision-room/nfl/"),
+        ("rankings", "Rankings", "/nfl/rankings/"),
+        ("projections", "Projections", "/nfl/projections/"),
+        ("data", "Fantasy Data", "/nfl/data/"),
+    )),
+    ("college", "College", (
+        ("decision", "Decision Room", "/decision-room/college/"),
+        ("rankings", "Week 1 Rankings", "/college-fantasy-football/week-1/"),
+        ("projections", "Season Projections", "/college-fantasy-football/projections/"),
+    )),
+    ("fantasy", "My Fantasy", (
+        ("my_team", "My Team", "/my-team/"),
+        ("league_history", "My League", "/my-league/"),
+    )),
+)
 
 
 # The shell must be complete wherever its markup is used. Most legacy page
@@ -402,14 +411,14 @@ body{overflow-x:clip}.wrap{max-width:64rem;margin:0 auto;padding:0 1rem}
 .topbar{position:sticky;top:0;z-index:40;max-width:100%;
   background:rgba(8,9,11,.96);backdrop-filter:blur(10px);
   border-bottom:1px solid var(--rule);color:var(--ink);font-family:var(--agate)}
-.topbar .tbrow{display:flex;align-items:center;gap:1.1rem;min-width:0;padding:.6rem 1rem}
+.topbar .tbrow{display:flex;align-items:center;gap:.7rem;min-width:0;max-width:78rem;padding:.6rem 1rem}
 .topbar .logo{display:inline-flex;align-items:center;min-height:44px;flex:0 0 auto;
   padding:0;border:0;background:none;color:var(--ink);text-decoration:none;
   font:600 1.15rem/1 var(--agate);letter-spacing:.16em;text-transform:uppercase}
 .topbar .logo em{color:var(--signal);font-style:normal}
-.topbar .views{display:flex;align-items:center;gap:.15rem;flex:0 0 auto}
+.topbar .views{display:flex;align-items:center;gap:.1rem;flex:0 0 auto}
 .topbar .vbtn{display:inline-flex;align-items:center;min-height:38px;padding:.5rem .75rem;
-  border:1px solid transparent;border-radius:999px;background:none;color:var(--quiet);
+  border:1px solid transparent;border-radius:4px;background:none;color:var(--quiet);
   text-decoration:none;white-space:nowrap;font:600 .74rem/1 var(--agate);
   letter-spacing:.1em;text-transform:uppercase}.topbar .vbtn:hover{color:var(--ink)}
 .topbar .finder{position:relative;flex:1;min-width:0;max-width:26rem;margin-left:auto}
@@ -452,10 +461,24 @@ NAV_CSS = """
 .topbar{max-width:100%}
 .tbrow{min-width:0}
 .tbrow .logo{flex:0 0 auto; white-space:nowrap}
-.sport-switch{display:flex; gap:.25rem; align-items:center}
-.sport-pill,.views .vbtn{border-radius:999px; padding:.55rem .75rem}
-.sport-pill[aria-pressed="true"],.views .vbtn[aria-current="page"]{
-  background:var(--signal); color:#0a0c08}
+.navgroup{position:relative}
+.navgroup>summary{list-style:none;cursor:pointer;gap:.42rem}
+.navgroup>summary::-webkit-details-marker{display:none}
+.navgroup>summary::marker{content:""}
+.navgroup>summary svg{width:.72rem;height:.72rem;transition:transform .16s ease}
+.navgroup[open]>summary svg{transform:rotate(180deg)}
+.navgroup[open]>summary,.navgroup[data-current="true"]>summary{
+  border-color:#465148;color:var(--ink)}
+.navgroup[data-current="true"]>summary{box-shadow:inset 0 -2px 0 var(--signal)}
+.navmenu{position:absolute;top:calc(100% + .65rem);left:0;z-index:70;
+  display:grid;min-width:13rem;padding:.45rem;border:1px solid #354039;
+  border-radius:5px;background:#0b0f0d;box-shadow:0 20px 45px rgba(0,0,0,.55)}
+.navmenu a{display:flex;align-items:center;min-height:42px;padding:.55rem .7rem;
+  border-radius:3px;color:var(--ink);text-decoration:none;white-space:nowrap;
+  font:600 .9rem/1.2 var(--agate)}
+.navmenu a:hover,.navmenu a:focus-visible{background:#171e1a;color:var(--signal)}
+.navmenu a[aria-current="page"]{background:var(--signal);color:#09100d}
+.nav-about[aria-current="page"]{box-shadow:inset 0 -2px 0 var(--signal);color:var(--ink)}
 .college-search-entry{color:var(--signal); text-decoration:none;
   font-family:var(--agate); font-size:.78rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.05em}
@@ -493,6 +516,17 @@ NAV_CSS = """
   -webkit-overflow-scrolling:touch; overscroll-behavior:contain}
 .navdrawer[hidden]{display:none}
 .navlinks{display:flex; flex-direction:column; padding:.4rem 0 .2rem}
+.navsection{border-bottom:1px solid var(--rule)}
+.navsection>summary{list-style:none}
+.navsection>summary::-webkit-details-marker{display:none}
+.navsection>summary::marker{content:""}
+.navsection>summary svg{width:.8rem;height:.8rem;margin-left:auto;transition:transform .16s}
+.navsection[open]>summary{color:var(--signal)}
+.navsection[open]>summary svg{transform:rotate(180deg)}
+.navsection-links{display:grid;padding:0 1rem .55rem}
+.navsection-links .navlink{min-height:44px;padding-left:1rem;border-left:1px solid #354039;
+  border-bottom:0;color:var(--muted);font-size:.86rem;letter-spacing:.06em}
+.navsection-links .navlink[aria-current="page"]{color:var(--signal)}
 /* An in-app view is a button and a real page is a link, so this styles
    both. Without the reset the buttons kept the browser's grey face and My
    Roster sat in the drawer looking like a pressed key. */
@@ -588,6 +622,7 @@ NAV_JS = """
   var drawer = bar.querySelector('.navdrawer');
   var sbtn = bar.querySelector('.navsearch');
   var find = bar.querySelector('.finder');
+  var groups = Array.prototype.slice.call(bar.querySelectorAll('.navgroup,.navsection'));
 
   function setDrawer(open){
     if (!toggle || !drawer) return;
@@ -602,7 +637,16 @@ NAV_JS = """
     bar.classList.toggle('searchopen', open);
     sbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
-  function closeAll(){ setDrawer(false); setSearch(false); }
+  function closeGroups(except){
+    groups.forEach(function(group){ if (group !== except) group.open = false; });
+  }
+  function closeAll(){ setDrawer(false); setSearch(false); closeGroups(); }
+
+  groups.forEach(function(group){
+    group.addEventListener('toggle', function(){
+      if (group.open) closeGroups(group);
+    });
+  });
 
   if (toggle && drawer){
     toggle.addEventListener('click', function(e){
@@ -681,8 +725,9 @@ NAV_JS = """
     });
   }
 
-  // A tap outside closes, the same as the teams menu.
+  // A tap outside closes dropdowns, the drawer and search.
   document.addEventListener('click', function(e){
+    if (!e.target.closest || !e.target.closest('.navgroup,.navsection')) closeGroups();
     if (bar.contains(e.target)) return;
     closeAll();
   });
@@ -690,7 +735,9 @@ NAV_JS = """
   // otherwise the next tab starts from the top of the document.
   document.addEventListener('keydown', function(e){
     if (e.key !== 'Escape') return;
-    if (drawer && !drawer.hidden && toggle) toggle.focus();
+    var openGroup = groups.find(function(group){ return group.open; });
+    if (openGroup && openGroup.querySelector('summary')) openGroup.querySelector('summary').focus();
+    else if (drawer && !drawer.hidden && toggle) toggle.focus();
     else if (bar.classList.contains('searchopen') && sbtn) sbtn.focus();
     closeAll();
   });
@@ -720,27 +767,42 @@ def site_footer():
     return GLOBAL_FOOTER
 
 
-def _nav_drawer(active, sport, search):
-    """Mobile form of the same sport-aware global navigation."""
-    cur = lambda k: ' aria-current="page"' if active == k else ""
-    routes = SPORT_ROUTES[sport]
+def _group_is_current(group, active, sport):
+    if group == "fantasy":
+        return active in {"my_team", "league_history"}
+    return group == sport and active in {"decision", "rankings", "projections", "data"}
+
+
+def _group_links(group, items, active, sport, mobile=False):
     links = "".join(
-        f'<a class="navlink" href="{routes[key]}"{cur(key)}>'
+        f'<a class="navlink" href="{href}"'
+        f'{" aria-current=\"page\"" if ((group == sport or group == "fantasy") and active == key) else ""}>'
         f'{label}</a>'
-        for key, label in SPORT_NAV_ITEMS[sport])
-    sport_links = ''.join(
-        f'<a class="navlink" href="{SPORT_ROUTES[s][active] if active in SPORT_ROUTES[s] else SPORT_ROUTES[s]["landing"]}" '
-        f'aria-current="{"page" if s == sport else "false"}">{s.upper()}</a>'
-        for s in ("nfl", "college"))
-    player_entry = (f'<a class="navlink" href="{routes["decision"]}">'
-                    f'Search {"College" if sport == "college" else "NFL"} players</a>')
+        for key, label, href in items)
+    if mobile:
+        return f'<div class="navsection-links">{links}</div>'
+    return f'<div class="navmenu">{links}</div>'
+
+
+def _nav_drawer(active, sport):
+    """Mobile accordions use the exact same information architecture."""
+    groups = "".join(
+        f'<details class="navsection" data-nav-group="{group}"'
+        f'{" open" if _group_is_current(group, active, sport) else ""}>'
+        f'<summary class="navlink">{label}'
+        '<svg viewBox="0 0 12 8" fill="none" stroke="currentColor" aria-hidden="true">'
+        '<path d="m1 1 5 5 5-5"></path></svg></summary>'
+        f'{_group_links(group, items, active, sport, True)}</details>'
+        for group, label, items in NAV_GROUPS)
+    about_current = ' aria-current="page"' if active == "about" else ""
     return (
         '  <div class="navdrawer" id="navdrawer" hidden>\n'
-        f'    <nav class="navlinks" aria-label="All sections">{sport_links}{links}{player_entry}</nav>\n'
+        f'    <nav class="navlinks" aria-label="All sections">{groups}'
+        f'<a class="navlink" href="/about/"{about_current}>About</a></nav>\n'
         '  </div>\n')
 
 
-def site_nav(active=None, sport="nfl", search=""):
+def site_nav(active=None, sport="nfl", search="", home=False):
     """The site header, defined once, mobile first.
 
     Eight builders each carried their own copy of this markup, identical
@@ -754,24 +816,27 @@ def site_nav(active=None, sport="nfl", search=""):
     a menu is markup plus rules plus a listener, and shipping one third of
     it silently is worse than shipping none.
 
-    `active` takes the key of the current section: wire, roster, data,
-    college or about. Anything else leaves no item marked. `search` takes
+    `active` takes the key of the current section. Anything else leaves no
+    item marked. `search` takes
     the markup for a search field, which appears in the row on a laptop and
     behind the search button on a phone; pages without one pass nothing.
     """
     sport = sport if sport in SPORT_ROUTES else "nfl"
     active = {"college": "projections",
               "wire": None, "roster": None}.get(active, active)
-    cur = lambda k: ' aria-current="page"' if active == k else ""
-    routes = SPORT_ROUTES[sport]
-    views = "".join(
-        f'<a class="vbtn" href="{routes[key]}"{cur(key)}>{label}</a>'
-        for key, label in SPORT_NAV_ITEMS[sport])
-    switch = "".join(
-        f'<a class="vbtn sport-pill" href="{SPORT_ROUTES[s][active] if active in SPORT_ROUTES[s] else SPORT_ROUTES[s]["landing"]}" '
-        f'aria-pressed="{str(s == sport).lower()}">{s.upper()}</a>'
-        for s in ("nfl", "college"))
-    if sport == "college":
+    groups = "".join(
+        f'<details class="navgroup" data-nav-group="{group}" '
+        f'data-current="{str(_group_is_current(group, active, sport)).lower()}">'
+        f'<summary class="vbtn">{label}'
+        '<svg viewBox="0 0 12 8" fill="none" stroke="currentColor" aria-hidden="true">'
+        '<path d="m1 1 5 5 5-5"></path></svg></summary>'
+        f'{_group_links(group, items, active, sport)}</details>'
+        for group, label, items in NAV_GROUPS)
+    about_current = ' aria-current="page"' if active == "about" else ""
+    views = groups + f'<a class="vbtn nav-about" href="/about/"{about_current}>About</a>'
+    if search is False:
+        search = ""
+    elif sport == "college":
         search = ('<a class="college-search-entry" href="/decision-room/college/">'
                   'Search 2,205 College players</a>')
     elif not search:
@@ -779,11 +844,10 @@ def site_nav(active=None, sport="nfl", search=""):
                   'Search NFL players</a>')
     return (
         f'<style id="shared-shell-css">{SHELL_CSS}{TEAMS_CSS}{NAV_CSS}</style>\n'
-        '<header class="topbar">\n'
+        f'<header class="topbar{" home-topbar" if home else ""}">\n'
         '  <div class="wrap tbrow">\n'
-        '    <a class="logo" href="/">Lineup<em>Beat</em></a>\n'
-        f'    <nav class="sport-switch" aria-label="Sport">{switch}</nav>\n'
-        f'    <nav class="views" aria-label="Sections">{views}</nav>\n'
+        f'    <a class="logo" href="/"{" aria-current=\"page\"" if home else ""}>Lineup<em>Beat</em></a>\n'
+        f'    <nav class="views" aria-label="Explore LineupBeat">{views}</nav>\n'
         + (f'    <div class="finder" id="navfind">{search}</div>\n'
            if search else '')
         + ('    <button class="navbtn navsearch" type="button" '
@@ -794,6 +858,8 @@ def site_nav(active=None, sport="nfl", search=""):
            '<circle cx="11" cy="11" r="7"></circle>'
            '<path d="M20 20l-3.5-3.5"></path></svg>'
            '</button>\n' if search else '')
+        + ('    <a class="home-nav-cta" href="#featured-decisions">Today\'s decisions</a>\n'
+           if home else '')
         + '    <button class="navbtn navtoggle" type="button" '
           'aria-expanded="false" aria-controls="navdrawer">'
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" '
@@ -803,7 +869,7 @@ def site_nav(active=None, sport="nfl", search=""):
           '<path class="bar bar3" d="M3 17h18"></path></svg>'
           'Menu</button>\n'
           '  </div>\n'
-        + _nav_drawer(active, sport, search)
+        + _nav_drawer(active, sport)
         + '</header>'
         # Both listeners ship with the markup. Builders must not add
         # TEAMS_JS on top: these are delegated, so a second copy sees the

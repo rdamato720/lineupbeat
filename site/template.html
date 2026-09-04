@@ -1128,10 +1128,24 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 .topbar{max-width:100%}
 .tbrow{min-width:0}
 .tbrow .logo{flex:0 0 auto; white-space:nowrap}
-.sport-switch{display:flex; gap:.25rem; align-items:center}
-.sport-pill,.views .vbtn{border-radius:999px; padding:.55rem .75rem}
-.sport-pill[aria-pressed="true"],.views .vbtn[aria-current="page"]{
-  background:var(--signal); color:#0a0c08}
+.navgroup{position:relative}
+.navgroup>summary{list-style:none;cursor:pointer;gap:.42rem}
+.navgroup>summary::-webkit-details-marker{display:none}
+.navgroup>summary::marker{content:""}
+.navgroup>summary svg{width:.72rem;height:.72rem;transition:transform .16s ease}
+.navgroup[open]>summary svg{transform:rotate(180deg)}
+.navgroup[open]>summary,.navgroup[data-current="true"]>summary{
+  border-color:#465148;color:var(--ink)}
+.navgroup[data-current="true"]>summary{box-shadow:inset 0 -2px 0 var(--signal)}
+.navmenu{position:absolute;top:calc(100% + .65rem);left:0;z-index:70;
+  display:grid;min-width:13rem;padding:.45rem;border:1px solid #354039;
+  border-radius:5px;background:#0b0f0d;box-shadow:0 20px 45px rgba(0,0,0,.55)}
+.navmenu a{display:flex;align-items:center;min-height:42px;padding:.55rem .7rem;
+  border-radius:3px;color:var(--ink);text-decoration:none;white-space:nowrap;
+  font:600 .9rem/1.2 var(--agate)}
+.navmenu a:hover,.navmenu a:focus-visible{background:#171e1a;color:var(--signal)}
+.navmenu a[aria-current="page"]{background:var(--signal);color:#09100d}
+.nav-about[aria-current="page"]{box-shadow:inset 0 -2px 0 var(--signal);color:var(--ink)}
 .college-search-entry{color:var(--signal); text-decoration:none;
   font-family:var(--agate); font-size:.78rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.05em}
@@ -1169,6 +1183,17 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
   -webkit-overflow-scrolling:touch; overscroll-behavior:contain}
 .navdrawer[hidden]{display:none}
 .navlinks{display:flex; flex-direction:column; padding:.4rem 0 .2rem}
+.navsection{border-bottom:1px solid var(--rule)}
+.navsection>summary{list-style:none}
+.navsection>summary::-webkit-details-marker{display:none}
+.navsection>summary::marker{content:""}
+.navsection>summary svg{width:.8rem;height:.8rem;margin-left:auto;transition:transform .16s}
+.navsection[open]>summary{color:var(--signal)}
+.navsection[open]>summary svg{transform:rotate(180deg)}
+.navsection-links{display:grid;padding:0 1rem .55rem}
+.navsection-links .navlink{min-height:44px;padding-left:1rem;border-left:1px solid #354039;
+  border-bottom:0;color:var(--muted);font-size:.86rem;letter-spacing:.06em}
+.navsection-links .navlink[aria-current="page"]{color:var(--signal)}
 /* An in-app view is a button and a real page is a link, so this styles
    both. Without the reset the buttons kept the browser's grey face and My
    Roster sat in the drawer looking like a pressed key. */
@@ -1677,8 +1702,18 @@ footer .fbase{display:flex; flex-wrap:wrap; gap:.6rem 1.5rem;
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="stylesheet" href="/feedback.css">
+<style id="lb-dev-style">
+#lb-dev-banner{position:fixed;top:0;left:0;right:0;z-index:2147483647;
+background:#facc15;color:#111827;border-bottom:2px solid #111827;
+font:800 12px/30px system-ui,-apple-system,sans-serif;letter-spacing:.08em;
+text-align:center;text-transform:uppercase;pointer-events:none}
+body{padding-top:30px!important}
+</style>
 </head>
 <body>
+<div id="lb-dev-banner" role="status">Development preview · develop · not live</div>
 
 <header class="topbar">
   <div class="wrap tbrow">
@@ -3453,84 +3488,16 @@ function toggle(id, key){
   render();
 })();
 </script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "351a7f1ca5a14571859dcf22cb395b89"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics --><!-- End Cloudflare Web Analytics -->
 <!-- Reddit Pixel -->
-<script>
-!function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?
-p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};
-p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js";
-t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);
-rdt('init','a2_jhraddsbuel0');
-rdt('track','PageVisit');
-</script>
+
 <!-- End Reddit Pixel -->
 
 <!-- X conversion tracking base code -->
-<script>
-!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
-a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
-twq('config','reect');
-</script>
+
 <!-- End X conversion tracking base code -->
 
-<script>
-(function(){
-  var sent = {};
-  // One of each per page. A filter used once is the signal; used twenty
-  // times it is the same signal, more expensively.
-  window.lbTrack = function(name, meta){
-    try {
-      if (sent[name]) return;
-      sent[name] = 1;
-      if (typeof rdt !== "function") return;   // blocked, or not loaded yet
-      rdt("track", name, meta || {});
-    } catch (e) { /* never break a page to measure it */ }
-  };
 
-  // How many pages this visit has seen. sessionStorage rather than a
-  // cookie: it dies with the tab, which is the right lifetime for "did
-  // they look at a second thing".
-  try {
-    var n = (parseInt(sessionStorage.getItem("lb_pv") || "0", 10) || 0) + 1;
-    sessionStorage.setItem("lb_pv", String(n));
-    if (n >= 2) window.lbTrack("second_page_view", {pages: n});
-  } catch (e) {}
-
-  // Search, debounced. A keystroke is not a search; a pause is.
-  var timer;
-  document.addEventListener("input", function(e){
-    var el = e.target;
-    if (!el || el.type !== "search") return;
-    clearTimeout(timer);
-    timer = setTimeout(function(){
-      if ((el.value || "").trim().length >= 2) window.lbTrack("Search");
-    }, 900);
-  }, true);
-
-  // Filters, sorting and row expansion, from the attributes the pages
-  // already use. Catching them here rather than in five builders means a
-  // new control is measured the day it ships.
-  document.addEventListener("click", function(e){
-    var b = e.target && e.target.closest &&
-            e.target.closest("button, [role=button]");
-    if (!b) return;
-    var d = b.dataset || {};
-    if ("sort" in d) return window.lbTrack("sort_use", {sort: d.sort});
-    if ("pos" in d || "val" in d || "fmt" in d || "p" in d || "s" in d ||
-        "w" in d || "f" in d)
-      return window.lbTrack("filter_use");
-    if (b.classList.contains("follow") || /follow/i.test(b.textContent || ""))
-      return window.lbTrack("follow_player");
-  }, true);
-
-  // An expanded row: the point somebody stops scanning and starts reading.
-  document.addEventListener("click", function(e){
-    var tr = e.target && e.target.closest && e.target.closest("tr.r, tr.tr");
-    if (tr) window.lbTrack("player_expand");
-  }, true);
-})();
-</script>
 <template id="tmsrc"><!--__TEAMS_MENU__-->
 <div class="tmwrap"><button class="vbtn tmbtn" aria-expanded="false" aria-controls="tmmenu">Teams<span class="tmcar">&#9662;</span></button><div class="tmmenu" id="tmmenu" hidden><div class="tmcol"><h3>AFC East</h3><a href="/nfl/team/buf/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bills</span></a><a href="/nfl/team/mia/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Dolphins</span></a><a href="/nfl/team/ne/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Patriots</span></a><a href="/nfl/team/nyj/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Jets</span></a></div><div class="tmcol"><h3>AFC North</h3><a href="/nfl/team/bal/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Ravens</span></a><a href="/nfl/team/cin/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bengals</span></a><a href="/nfl/team/cle/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Browns</span></a><a href="/nfl/team/pit/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Steelers</span></a></div><div class="tmcol"><h3>AFC South</h3><a href="/nfl/team/hou/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Texans</span></a><a href="/nfl/team/ind/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Colts</span></a><a href="/nfl/team/jax/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Jaguars</span></a><a href="/nfl/team/ten/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Titans</span></a></div><div class="tmcol"><h3>AFC West</h3><a href="/nfl/team/den/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Broncos</span></a><a href="/nfl/team/kc/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Chiefs</span></a><a href="/nfl/team/lv/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Raiders</span></a><a href="/nfl/team/lac/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Chargers</span></a></div><div class="tmcol"><h3>NFC East</h3><a href="/nfl/team/dal/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Cowboys</span></a><a href="/nfl/team/nyg/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Giants</span></a><a href="/nfl/team/phi/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Eagles</span></a><a href="/nfl/team/was/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/was.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Commanders</span></a></div><div class="tmcol"><h3>NFC North</h3><a href="/nfl/team/chi/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Bears</span></a><a href="/nfl/team/det/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Lions</span></a><a href="/nfl/team/gb/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Packers</span></a><a href="/nfl/team/min/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/min.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Vikings</span></a></div><div class="tmcol"><h3>NFC South</h3><a href="/nfl/team/atl/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Falcons</span></a><a href="/nfl/team/car/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/car.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Panthers</span></a><a href="/nfl/team/no/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Saints</span></a><a href="/nfl/team/tb/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Buccaneers</span></a></div><div class="tmcol"><h3>NFC West</h3><a href="/nfl/team/ari/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Cardinals</span></a><a href="/nfl/team/lar/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Rams</span></a><a href="/nfl/team/sf/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>49ers</span></a><a href="/nfl/team/sea/"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;"><span>Seahawks</span></a></div></div></div>
 <!--__END_TEAMS_MENU__--></template>
@@ -3626,6 +3593,7 @@ twq('config','reect');
   var drawer = bar.querySelector('.navdrawer');
   var sbtn = bar.querySelector('.navsearch');
   var find = bar.querySelector('.finder');
+  var groups = Array.prototype.slice.call(bar.querySelectorAll('.navgroup,.navsection'));
 
   function setDrawer(open){
     if (!toggle || !drawer) return;
@@ -3640,7 +3608,16 @@ twq('config','reect');
     bar.classList.toggle('searchopen', open);
     sbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
-  function closeAll(){ setDrawer(false); setSearch(false); }
+  function closeGroups(except){
+    groups.forEach(function(group){ if (group !== except) group.open = false; });
+  }
+  function closeAll(){ setDrawer(false); setSearch(false); closeGroups(); }
+
+  groups.forEach(function(group){
+    group.addEventListener('toggle', function(){
+      if (group.open) closeGroups(group);
+    });
+  });
 
   if (toggle && drawer){
     toggle.addEventListener('click', function(e){
@@ -3719,8 +3696,9 @@ twq('config','reect');
     });
   }
 
-  // A tap outside closes, the same as the teams menu.
+  // A tap outside closes dropdowns, the drawer and search.
   document.addEventListener('click', function(e){
+    if (!e.target.closest || !e.target.closest('.navgroup,.navsection')) closeGroups();
     if (bar.contains(e.target)) return;
     closeAll();
   });
@@ -3728,7 +3706,9 @@ twq('config','reect');
   // otherwise the next tab starts from the top of the document.
   document.addEventListener('keydown', function(e){
     if (e.key !== 'Escape') return;
-    if (drawer && !drawer.hidden && toggle) toggle.focus();
+    var openGroup = groups.find(function(group){ return group.open; });
+    if (openGroup && openGroup.querySelector('summary')) openGroup.querySelector('summary').focus();
+    else if (drawer && !drawer.hidden && toggle) toggle.focus();
     else if (bar.classList.contains('searchopen') && sbtn) sbtn.focus();
     closeAll();
   });

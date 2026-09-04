@@ -38,8 +38,8 @@ class VisualRegressionTests(unittest.TestCase):
         self.assertNotIn("--agate:Arial", build_decision_room.CSS)
         self.assertNotIn("--text:Arial", build_decision_room.CSS)
         header = build_decision_room.sport_header("college", "decision")
-        self.assertIn('aria-current="page">Decision</a>', header)
-        self.assertIn('aria-pressed="true">COLLEGE</a>', header)
+        self.assertIn('aria-current="page">Decision Room</a>', header)
+        self.assertIn('data-nav-group="college" data-current="true"', header)
         self.assertIn("font-family:var(--text)", build_decision_room.CSS)
 
     def test_homepage_uses_lineupbeat_accent_for_both_sports(self):
@@ -72,6 +72,13 @@ class VisualRegressionTests(unittest.TestCase):
         self.assertIn("overflow-x:clip", seo.SHELL_CSS)
         self.assertIn("max-width:100%", seo.SHELL_CSS)
         self.assertIn("min-width:0", seo.SHELL_CSS)
+
+    def test_shared_header_uses_accessible_grouped_dropdowns(self):
+        markup = seo.site_nav("rankings", "nfl")
+        self.assertEqual(markup.count('class="navgroup"'), 3)
+        self.assertIn(".navmenu{position:absolute", markup)
+        self.assertIn("group.addEventListener('toggle'", markup)
+        self.assertIn("openGroup.querySelector('summary').focus()", markup)
 
 
 if __name__ == "__main__":

@@ -156,41 +156,8 @@ def sport_header(sport: str, activity: str, players: list[dict] | None = None) -
 
 
 def home_header() -> str:
-    """A neutral root header: the homepage belongs to the brand, not a sport."""
-    desktop = "".join((
-        '<a class="vbtn" href="/nfl/data/">NFL</a>',
-        '<a class="vbtn" href="/decision-room/college/">College</a>',
-        '<a class="vbtn" href="/my-team/">My Team</a>',
-        '<a class="vbtn" href="/my-league/">My League</a>',
-        '<a class="vbtn" href="/about/">About</a>',
-    ))
-    mobile = "".join((
-        '<a class="navlink" href="/nfl/data/">NFL</a>',
-        '<a class="navlink" href="/decision-room/college/">College</a>',
-        '<a class="navlink" href="/decision-room/nfl/">NFL Decision Room</a>',
-        '<a class="navlink" href="/decision-room/college/">College Decision Room</a>',
-        '<a class="navlink" href="/my-team/">My Team</a>',
-        '<a class="navlink" href="/my-league/">My League</a>',
-        '<a class="navlink" href="/about/">About</a>',
-    ))
-    return (
-        f'<style id="shared-shell-css">{seo.SHELL_CSS}{seo.TEAMS_CSS}{seo.NAV_CSS}</style>\n'
-        '<header class="topbar home-topbar">\n'
-        '  <div class="wrap tbrow">\n'
-        '    <a class="logo" href="/" aria-current="page">Lineup<em>Beat</em></a>\n'
-        f'    <nav class="views" aria-label="Explore LineupBeat">{desktop}</nav>\n'
-        '    <a class="home-nav-cta" href="#featured-decisions">Today\'s decisions</a>\n'
-        '    <button class="navbtn navtoggle" type="button" aria-expanded="false" '
-        'aria-controls="navdrawer"><svg viewBox="0 0 24 24" fill="none" '
-        'stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">'
-        '<path class="bar bar1" d="M3 7h18"></path><path class="bar bar2" d="M3 12h18"></path>'
-        '<path class="bar bar3" d="M3 17h18"></path></svg>Menu</button>\n'
-        '  </div>\n'
-        '  <div class="navdrawer" id="navdrawer" hidden>\n'
-        f'    <nav class="navlinks" aria-label="All sections">{mobile}</nav>\n'
-        '  </div>\n'
-        '</header>' + seo.NAV_JS + '<script defer src="/feedback.js"></script>'
-    )
+    """The homepage uses the same grouped navigation as every other page."""
+    return seo.site_nav(None, "nfl", False, home=True)
 
 
 def render_home(payload: dict, college_payload: dict) -> str:
