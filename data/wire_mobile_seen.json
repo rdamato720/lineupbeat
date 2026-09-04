@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 945,
+ "count": 962,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -10434,6 +10434,193 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004612
+  },
+  {
+   "candidate_id": "mobile:onsi:4aba33eb7f812df08bca",
+   "player_id": "00-0033293",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/vikings-good-reason-limit-aaron-jones-sr-s-week-1-snap-count-01m1mmr7tf34",
+   "attempted_at": "2026-09-04T19:15:50+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:15:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00402
+  },
+  {
+   "candidate_id": "mobile:onsi:4b8e45e8c6e4e558052d",
+   "player_id": "00-0038440",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/vikings-good-reason-limit-aaron-jones-sr-s-week-1-snap-count-01m1mmr7tf34",
+   "attempted_at": "2026-09-04T19:15:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:15:58+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005628
+  },
+  {
+   "candidate_id": "mobile:onsi:4c529289ff33454dbf8b",
+   "player_id": "00-0040735",
+   "source_url": "https://www.si.com/nfl/bears/onsi/caleb-williams-names-chicago-bears-teammate-who-never-shuts-up",
+   "attempted_at": "2026-09-04T19:15:58+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:16:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004982
+  },
+  {
+   "candidate_id": "mobile:onsi:50140eceebf36aba8f30",
+   "player_id": "00-0041051",
+   "source_url": "https://www.si.com/nfl/bears/onsi/caleb-williams-names-chicago-bears-teammate-who-never-shuts-up",
+   "attempted_at": "2026-09-04T19:16:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:16:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003938
+  },
+  {
+   "candidate_id": "mobile:onsi:d31d0a8940fa2745c265",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/caleb-williams-names-chicago-bears-teammate-who-never-shuts-up",
+   "attempted_at": "2026-09-04T19:16:06+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:16:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004566
+  },
+  {
+   "candidate_id": "mobile:onsi:11582831aac3b6220c88",
+   "player_id": "00-0033077",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-dak-prescott-brian-schottenheimer-snubbed-top-10-qb-coach-duos",
+   "attempted_at": "2026-09-04T19:16:09+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:16:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005452
+  },
+  {
+   "candidate_id": "mobile:onsi:88641590cc762a075a3f",
+   "player_id": "00-0035140",
+   "source_url": "https://www.si.com/nfl/bills/onsi/where-all-34-buffalo-bills-roster-cuts-have-landed-following-nfl-deadline",
+   "attempted_at": "2026-09-04T19:16:14+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-04T19:16:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004638
+  },
+  {
+   "candidate_id": "mobile:onsi:08fac842560d002db74b",
+   "player_id": "00-0041129",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/treveyon-henderson-day-to-day-ahead-of-patriots-season-opener-vs-seahawks",
+   "attempted_at": "2026-09-04T19:16:17+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:16:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004148
+  },
+  {
+   "candidate_id": "mobile:onsi:c6091329ee2410ac0fa6",
+   "player_id": "00-0036875",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/treveyon-henderson-day-to-day-ahead-of-patriots-season-opener-vs-seahawks",
+   "attempted_at": "2026-09-04T19:16:19+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:16:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00406
+  },
+  {
+   "candidate_id": "mobile:onsi:246f2063e6f61aabfd5d",
+   "player_id": "00-0034855",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-football-rankings-debate-tetairoa-mcmillan-vs-emeka-egbuka",
+   "attempted_at": "2026-09-04T19:16:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:16:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004976
+  },
+  {
+   "candidate_id": "mobile:onsi:94131bb184a5efaed6ee",
+   "player_id": "00-0040129",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-football-rankings-debate-tetairoa-mcmillan-vs-emeka-egbuka",
+   "attempted_at": "2026-09-04T19:16:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:16:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00495
+  },
+  {
+   "candidate_id": "mobile:onsi:a977d10bf4a5be496ceb",
+   "player_id": "00-0040124",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-football-rankings-debate-tetairoa-mcmillan-vs-emeka-egbuka",
+   "attempted_at": "2026-09-04T19:16:30+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:16:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004374
+  },
+  {
+   "candidate_id": "mobile:onsi:5b7a2e7cbcf03aeb8e9a",
+   "player_id": "00-0033921",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-football-rankings-debate-tetairoa-mcmillan-vs-emeka-egbuka",
+   "attempted_at": "2026-09-04T19:16:33+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:16:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00521
+  },
+  {
+   "candidate_id": "mobile:onsi:5c340028c153f1a5a49e",
+   "player_id": "00-0040666",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-rodney-shelley-nfl-rise-undrafted-free-agent",
+   "attempted_at": "2026-09-04T19:16:36+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:16:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005094
+  },
+  {
+   "candidate_id": "mobile:onsi:dfd675681475834f04c3",
+   "player_id": "00-0036442",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/nfl-executives-barely-rank-bengals-as-nfl-playoff-contender-despite-2026-offseason-overhaul-01m1p125tm7t",
+   "attempted_at": "2026-09-04T19:16:41+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:16:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003846
+  },
+  {
+   "candidate_id": "mobile:onsi:0ba0cafced92bc695c86",
+   "player_id": "00-0039732",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/10-bold-predictions-for-the-broncos-2026-season",
+   "attempted_at": "2026-09-04T19:16:43+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T19:16:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004158
+  },
+  {
+   "candidate_id": "mobile:onsi:d8cd1737bbdc67da45f6",
+   "player_id": "00-0034348",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/10-bold-predictions-for-the-broncos-2026-season",
+   "attempted_at": "2026-09-04T19:16:46+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T19:16:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006346
   }
  ]
 }

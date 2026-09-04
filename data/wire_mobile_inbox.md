@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**2 cards** · batch `85a9da17e09a` · 14 draft calls · $0.0683
+**1 cards** · batch `7117ef48f492` · 17 draft calls · $0.0804
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,50 +19,28 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Jakobi Meyers — JAX WR
+## 1. Mecole Hardman — BUF WR
 
-**Worth noting** · TRANSACTION · MEDIUM evidence
-
-### What changed
-
-Jakobi Meyers was acquired by the Jaguars at the trade deadline, according to John Shipley.
-
-### Lineup Beat impact
-
-Meyers' Jaguars acquisition is relevant to his team context, but this passage does not establish his current role, target share, or placement on the depth chart.
-
-[John Shipley · Sports Illustrated -- JAX](https://www.si.com/nfl/jaguars/onsi/jacksonville-there-is-only-1-way-can-get-the-most-out-of-travis-hunter-2nd-act) · 2026-09-04
-
-<details><summary>Full evidence reviewed</summary>
-
-Brown's struggles and Hunter's injury led to the Jaguars hitting reset at wide receiver, with Washington getting promoted to a starting role and the Jaguars trading for Jakobi Meyers at the trade deadline. The passing game then took off over the next several weeks, and has brought us to 2026.
-
-</details>
-
----
-
-## 2. Josh Jacobs — GB RB
-
-**Trending down** · OTHER · MEDIUM evidence
+**Trending down** · TRANSACTION · HIGH evidence
 
 ### What changed
 
-Josh Jacobs is absent entering Week 1, according to Bill Huber, while MarShawn Lloyd is ascending.
+Mecole Hardman remains unsigned after being cut by the Bills, according to Ralph Ventre.
 
 ### Lineup Beat impact
 
-Jacobs' availability is the key fantasy concern heading into Week 1, and Lloyd could benefit if the absence carries into game action. The reason, duration and official game status are not provided.
+Hardman is off Buffalo's roster and without a new team, leaving no current fantasy role to project. Monitor whether he signs into a role with offensive snaps.
 
-[Bill Huber · Packers On SI](https://www.si.com/nfl/packers/onsi/make-or-break-for-packers-here-s-what-history-says-about-week-1) · 2026-09-04
+[Ralph Ventre · Sports Illustrated -- BUF](https://www.si.com/nfl/bills/onsi/where-all-34-buffalo-bills-roster-cuts-have-landed-following-nfl-deadline) · 2026-09-04
 
 <details><summary>Full evidence reviewed</summary>
 
-The first game of the season is all about unscouted looks. Flores will have tricks up his sleeve to combat what the Jordan Love-led passing attack does best and perhaps take advantage of the absence of Josh Jacobs and the ascension of MarShawn Lloyd.
+Of the seven vested veterans cut by the Bills, only three remain without a team. Two of the veteran free agents are punt return specialists Mecole Hardman and Dante Pettis.
 
-The first game of the season is all about unscouted looks. Flores will have tricks up his sleeve to combat what the Jordan Love-led passing attack does best and perhaps take advantage of the absence of Josh Jacobs and the ascension of MarShawn Lloyd. Similarly, LaFleur and Love will hope to have answers for Flores’ bread-and-butter pressures.
+Of the seven vested veterans cut by the Bills, only three remain without a team. Two of the veteran free agents are punt return specialists Mecole Hardman and Dante Pettis. Punter Mitch Wishnowsky signed with the New England Patriots' practice squad.
 
-Flores will have tricks up his sleeve to combat what the Jordan Love-led passing attack does best and perhaps take advantage of the absence of Josh Jacobs and the ascension of MarShawn Lloyd. Similarly, LaFleur and Love will hope to have answers for Flores’ bread-and-butter pressures.
+Two of the veteran free agents are punt return specialists Mecole Hardman and Dante Pettis. Punter Mitch Wishnowsky signed with the New England Patriots' practice squad.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrtWNuO28gR_ZWGXvYh4gwpUZSot3Ese2cw1hgz2jhA1hCa7KLYHoqt7W5KVhYG8hv5vXxJTpGSrLHX3hsQIMkCtsd9rzp16lRxfuxl0uflUqvetDcZyVTJaExhKsfZiNI0poQiNUwmYTIZjzIah4mimAZJFubhIJdFkg1GKgzHyVBNxr1-L5dWud70bz_25GZjzZbUUnpcjSXZ-NJY_P_GlLV4KPWmoj0fMes11V7aPdZe0Z6s-0bcyFUjrRMy_6HRTnttaqGdsFTRVtZeeCNKjD3JtchN7em974uswQJPb6RzckVCGXKiNl6Q8zKrtCvbU3ljLV4U1lTUF3h5RV64UlqMjBWbSubEJgk86ktcQxtfihwb_MUTg5cnJ7N95-TZmrF6pWv26e757Hb5_P7qxaLdAWtrv_T7DWHxfvb67n5xPX-JJSU9Tw3CQRKEaRDGi2g4HY7w509hOA1D3qIt5YwG9s1n3y3ur2551srCL3FzoRXVOS4JL9LjdKXX2ks-w4HpLeCQpY2x_iM8bkO5Lvats95KBZdhCvs6Nye0dsY-VkaqvgCY1pPln75xLWYHEHVdGLuWx3AxOLBIXfTe9nu0PRrXe2bNrv7G4QLbrFYVrJC1Et82QMZiWtfvGrsXFSmOMxt1pEOpvdf1Cg44vCZhFO7EKCe9JdvHEIF6I12JTR42wKZ2PwxZG9_dJzv722tAgPbp8zcYAF6EJ5h7NJkWHSv5vTOESKpK13QhGFFmHB9ayTXxJhDHmEdhikKAH7Y9V4OkwhGGshI7okdAx4-X0onMmmZVetE4NpEZwOgfIVvm2Kc5Jl2irmFURVNEVE8HKclJGI1TKlQSxoNEjVIcRarpv7c0eZhdPdzNl7d3LcfWBB7X2q2xAvbMH67-vLi-m_OKUVQdWCur5X9dWoJSsBGyAnuv589nr2f4Z84ph5Mwn5XnPJynhQ7TMAzCcBinCafZxnTOYf7NPY-tedfl3VKe0u9uPuOlBh7kS9es1x1WTzmzkwe0LNiX7Z8w7Sf5BE7kubEtBQHnuVhefPbc5wJkcQ1cqmRGFVuPPC8Za1x3WMUbzi0LqasGaQRJeMvzW007nDt5x-h1quRMY9usfWDRcOK6qhokruR0CgJxc_VX3uQRupUvmSuz59ffvcIcs4DxaDc0ls0pvd-46eXlbre7cPoCHLusi-ryXQfIJRMag_zRmXqrq4oC4GMp0C4wdbUPomAn9wGSIQA1eC1YG-cD0-BvEcCmLXaWrYwEg1oF8Kb3of-1WvQMr0B4MtDjk0p0I3OTgfJyC6Qk8k37PXOdI_ZIe1GA79LtmeY52VqU1MmGrhG1N8huEXXpfVuZvcK2pgIBqKZCQyeL9h6ZOU5vgappNbnubCshXRw6bUHQgEdfqMZ2ysq3Qll0riEk7fZOiQVSpc2rj7r7n65Wg3Aah1-oVi-vFtd_mX2hXI1_TbnCOolduRddkDgsLZT-ULJO4BwqiSKnV3V7KYRFr4llh1hUjkXty5Wr32sDiLJE7xGVrmbo87qpPy9wbHWhrfNdeEwXbtcGsrUWrJMZeCua2oEanEsVCoa7EC8qg7REJcOWUm5ZHjQSQjSbViRdRcSTqMtmnXEFLA8ycgPRkLW4RYQDLp3HkiS9R0Z16GVQ3JY-G7Kl3IDN8hFkUyzerMzmKS8xvDFQ5wPMx0opXU7IVLiCDa-kfSjlru54fvF9_X39_-u9eAB7K2mrfV_cyhcVNbbTAJh1cMpsWvtb52TtdlwkuNXoPP_XP_6JXgBSEuBYgMrJfdYGC47FukX3D4i-CtEvbJuGkyiUg0mRjhTl8TAuhoqetE3Xr7iQXS1mnzRNd4tvZ_c_0y79r9SOX9JSfQz_TzZUo3H4SUN1_-zXNlRnDDspvSCu8gzaCa_ztuljXcdHQYmof0LD9iJmKR_4DX3VwnZHkTW7-vc2Vq-RfszxO3R6119vpl4--7leatNd1vVSa2RvYGzA-fIYIIeCw3LQ9lUuYHEIIBve2H3g5N4FrTAH_HkSRL0Pb7kFcH7ZOMVVOkwmA3xYrkDFtgHsGqrzFmA0jVJ0AacWoEuTHJIPRKL4CHRLRiQNejXcsWxLf286SZ6uo_kfjJKzDT05psl4RHmURuEwjItBEk9IFskwG4aFLHKlxlEuk1GhijgbjlU2CsdxlBXDdDLEV6JkdPOS1nKJzzDXRWSHLiXotCHQdWbeB9voFJ5l9_uRzhL-HQlRFiWjUUhjFYV5lsaDwWQ8HBQqk7GK8jhJo2QyimU0luMoTicyU8NUxVFaDMIsznsf_g0mYgJn:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrVVs1y2zYQfhUMLznUlEGR4o9udq04nqllj6MmhybDAYGFiQYCVACUomby7l2QtqPUT5ALh8T-YPfb3W_5LelY4H2rRLJMqiyrQBa1LJp5Xuc58JxWDc_FomjKopzLYg40L2iRCcH5vCkYrRbzOqtryiGX8-Qs4cwJnyz_-paw3c7ZPYiWBXSNIjaE3jp8f2B615MPYIKDaGK3W3xn7oiyd2i_ZYYoT6yU5HKQkmn7xhNnfQBHmBHkoNDREAgjBg4kANueEQ1sr8wjMZbwwTn0RyRDp_6IlhpIsATD-Rt4mJFba1Swjhx6CD367IF49Wg8UQbV2GQQL4khgPFqjwqG7fzsp2jblwy745Thicw69agMHt_eXa3-aK8eLt5uRg0TUKMNxx1EJFb3dw-bm_U1igQL8WhO52VKm5QWm6xeLuZLSn-jFJ9RRTlMQNnod726vtjcfFjFY8dkaNG1VAIMRy901lTP51ptVWDRKtYl2WC2DnbWBRK1g5IKPHmGnXnMfzeYkDoIgzPE74ArppUPI_TCorKxgQjw3KkO8PQEpYhcBGlto0JQZrz3jMS0HeMBi-W2WFlH4Cs6DoDFtO6LtkwQ5p4DAzFLPp8lsH9OJ7mTJMQqwR4M2aNnNNwDOmNYNY6t0B1HhUultT8j1uj47SB63DJlTlomtsuMbA4Wwx5tnvwQGdXZI0Lix1giCuQVCp7cAo_98YIYonKFnQbkHkJQfvbJfDK_UrzkHg1xCm4V8gD5qHxv7MF_OY4zAdO0jRevcdhW5lFHD_csOGWDf4NThXVVHJP9Z2BizP6XCTb50WQtR00VZ3Ciwq3tlIYlDo1a1nVZZIuGcl6V80h5LJdoimSm_h1n8f07nOJ2s3q4xeMt8J4Z5bco2DxcrN9f_L65uVtHiRWgn5iB6fbX4j17MOB8r3YY7M36anW_wsc6ctpOsyNEXv-5eC-SCVBKU0rzRVZEIttZr5547OND_J5CxJOWvRDc3TqS227otOKtH7bbCan_tcg0MJ4M5qkFkPMwtw4iKq9HjXFunYgyTPl0Ec1e3fWa3x0wgflo1oGO1UW4R1cCwXkSKwPet5IpPTiIhPs5nu8VHNDwJbcI3sT63g5upLj3kfk8udF68MiVkTHSlFz--TYqYXzmMfSxT26u3-FJLD5-TeLBxWj6EHZ-eX5-OBxmXs2wu86N1OddzPs89vE51t1ByrRO8yLtpg5LR3k6dVmKePm0Z3tI4-CASKXV2h4wxxR9pQIT1Jhh8v1zXGU-tIMXcdvQmuZ1eZbggMMY-7T0T3dZs8wWy8WPXTYNA8doEKWsegZ_XBg4Gjjm6KMdV1iyjL5P5b5n80V5opCwCupqATxrMprTQs7LogYmy7zLqWSSC1FlnJULKWTR5ZXoFrQqsk7mTY2_OcAiyrzHXmr32OZTlQ64btOJCFJlOvs13WcvJWun_6YpElTmsmGAlxU5L8umrhelKBnP82oOEhqABS_rnGZclHmZZbTJK4Z_VpxinIxT3iXf_wMkI0G7:WIRE_MOBILE_MANIFEST_V1 -->
