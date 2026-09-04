@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 881,
+ "count": 897,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -9730,6 +9730,182 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004282
+  },
+  {
+   "candidate_id": "mobile:onsi:9dcebfce5e7deb8cf720",
+   "player_id": "00-0038996",
+   "source_url": "https://www.si.com/nfl/packers/onsi/packers-are-new-and-improved-but-are-they-improved-enough",
+   "attempted_at": "2026-09-04T00:07:15+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T00:07:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004568
+  },
+  {
+   "candidate_id": "mobile:onsi:5bbf1125481a6bd3696f",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/nfl/packers/onsi/packers-are-new-and-improved-but-are-they-improved-enough",
+   "attempted_at": "2026-09-04T00:07:20+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T00:07:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006602
+  },
+  {
+   "candidate_id": "mobile:onsi:43c3bcebe7902a15d2bf",
+   "player_id": "00-0039910",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-jayden-daniels-year-3-readiness-10-quotes-coaches-teammates",
+   "attempted_at": "2026-09-04T00:07:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T00:07:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004654
+  },
+  {
+   "candidate_id": "mobile:onsi:1a0ad37b9e6003aba130",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/bears-offense-may-need-a-reality-check-after-summer-of-hype",
+   "attempted_at": "2026-09-04T00:07:30+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T00:07:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004558
+  },
+  {
+   "candidate_id": "mobile:onsi:1c2d4aeed8bc050e1ae7",
+   "player_id": "00-0035659",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/commanders-jayden-daniels-year-3-readiness-10-quotes-coaches-teammates",
+   "attempted_at": "2026-09-04T00:07:34+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T00:07:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004066
+  },
+  {
+   "candidate_id": "mobile:article:e8c80e8ca3cd0593dc84",
+   "player_id": "00-0039021",
+   "source_url": "https://www.chicagobears.com/news/bond-between-caleb-williams-kalif-raymond-evident-in-practice",
+   "attempted_at": "2026-09-04T00:07:37+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-04T00:07:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00635
+  },
+  {
+   "candidate_id": "mobile:article:0aad8063dec399799eca",
+   "player_id": "00-0040236",
+   "source_url": "https://www.chicagobears.com/news/bond-between-caleb-williams-kalif-raymond-evident-in-practice",
+   "attempted_at": "2026-09-04T00:07:41+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-04T00:07:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005922
+  },
+  {
+   "candidate_id": "mobile:article:6e9a5f85de45943574b0",
+   "player_id": "00-0039918",
+   "source_url": "https://www.chicagobears.com/news/bond-between-caleb-williams-kalif-raymond-evident-in-practice",
+   "attempted_at": "2026-09-04T00:07:47+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T00:07:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003914
+  },
+  {
+   "candidate_id": "mobile:onsi:c4f33ef2a5005e8a12d4",
+   "player_id": "00-0038994",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/5-vikings-with-most-riding-on-line-2026-including-t-j-hockenson-01m1mfb3vhzb",
+   "attempted_at": "2026-09-04T00:07:50+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T00:07:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004488
+  },
+  {
+   "candidate_id": "mobile:onsi:1c8d06256682bfc0cbf1",
+   "player_id": "00-0033293",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/5-vikings-with-most-riding-on-line-2026-including-t-j-hockenson-01m1mfb3vhzb",
+   "attempted_at": "2026-09-04T00:07:53+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T00:07:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004476
+  },
+  {
+   "candidate_id": "mobile:onsi:c0bf02da7e7ead62fe88",
+   "player_id": "00-0035228",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/5-vikings-with-most-riding-on-line-2026-including-t-j-hockenson-01m1mfb3vhzb",
+   "attempted_at": "2026-09-04T00:07:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T00:08:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005552
+  },
+  {
+   "candidate_id": "mobile:onsi:a1d7965db1bf88487e73",
+   "player_id": "00-0035229",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/5-vikings-with-most-riding-on-line-2026-including-t-j-hockenson-01m1mfb3vhzb",
+   "attempted_at": "2026-09-04T00:08:01+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T00:08:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004104
+  },
+  {
+   "candidate_id": "mobile:onsi:aba76f2867c82b53ccac",
+   "player_id": "00-0034827",
+   "source_url": "https://www.si.com/nfl/bills/onsi/starters-bills-projected-week-1-lineup-for-september-13-road-test-vs-texans",
+   "attempted_at": "2026-09-04T00:08:04+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T00:08:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00643
+  },
+  {
+   "candidate_id": "mobile:onsi:756bbbdcd390f7662e0e",
+   "player_id": "00-0039901",
+   "source_url": "https://www.si.com/nfl/bills/onsi/starters-bills-projected-week-1-lineup-for-september-13-road-test-vs-texans",
+   "attempted_at": "2026-09-04T00:08:09+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T00:08:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.008076
+  },
+  {
+   "candidate_id": "mobile:onsi:8815156a07caf20b4dca",
+   "player_id": "00-0034857",
+   "source_url": "https://www.si.com/nfl/bills/onsi/starters-bills-projected-week-1-lineup-for-september-13-road-test-vs-texans",
+   "attempted_at": "2026-09-04T00:08:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T00:08:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00437
+  },
+  {
+   "candidate_id": "mobile:onsi:d68c022b36bec653f6d9",
+   "player_id": "00-0039732",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/zach-allen-says-one-bo-nix-trait-is-second-to-none-difference-maker",
+   "attempted_at": "2026-09-04T00:08:18+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T00:08:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003918
   }
  ]
 }
