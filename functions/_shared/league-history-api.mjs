@@ -4,6 +4,20 @@ const MAX_TEAMS_PER_SEASON = 32;
 const MAX_MATCHUPS = 6_000;
 const MAX_IDENTITIES = 128;
 const SLUG = /^[a-z0-9](?:[a-z0-9-]{1,61}[a-z0-9])?$/;
+const PUBLICATION_SCHEMA = `
+  CREATE TABLE IF NOT EXISTS league_history_publications (
+    slug TEXT PRIMARY KEY,
+    league_name TEXT NOT NULL,
+    visibility TEXT NOT NULL CHECK (visibility IN ('unlisted', 'public')),
+    archive_json TEXT NOT NULL,
+    manage_token_hash TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+  );
+  CREATE INDEX IF NOT EXISTS idx_league_history_visibility_updated
+  ON league_history_publications (visibility, updated_at DESC);
+`;
+let schemaPromise = null;
 
 function fail(message, status = 422) {
   const error = new Error(message);
@@ -277,7 +291,23 @@ function authorization(request) {
   return header.startsWith('Bearer ') ? header.slice(7) : '';
 }
 
+async function ensureSchema(env) {
+  if (!env || !env.LEAGUE_HISTORY_DB ||
+      typeof env.LEAGUE_HISTORY_DB.exec !== 'function') {
+    fail('League publishing storage is unavailable.', 503);
+  }
+  if (!schemaPromise) {
+    schemaPromise = env.LEAGUE_HISTORY_DB.exec(PUBLICATION_SCHEMA)
+      .catch(error => {
+        schemaPromise = null;
+        throw error;
+      });
+  }
+  await schemaPromise;
+}
+
 async function createPublication(request, env) {
+  await ensureSchema(env);
   const raw = await body(request);
   const access = visibility(raw.visibility);
   const publication = sanitizePublication(raw.archive, raw.review);
@@ -306,6 +336,7 @@ async function createPublication(request, env) {
 }
 
 async function updatePublication(request, env, slug) {
+  await ensureSchema(env);
   const token = authorization(request);
   if (!token || token.length > 200) return json({error: 'Publishing access is required.'}, 401);
   const current = await env.LEAGUE_HISTORY_DB.prepare(
@@ -357,6 +388,7 @@ export async function onRequestGet(context) {
   const slug = pathSlug(context.request);
   if (!slug) return json({error: 'League not found.'}, 404);
   try {
+    await ensureSchema(context.env);
     const row = await context.env.LEAGUE_HISTORY_DB.prepare(
       `SELECT slug, league_name, visibility, archive_json, created_at, updated_at
        FROM league_history_publications WHERE slug = ?`
