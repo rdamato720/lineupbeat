@@ -116,7 +116,9 @@ def main() -> int:
                      "headToHead: series", "titleYears", "seasonStats",
                      "Private ESPN history · processed only in this browser.",
                      "publishLeague", "loadSharedLeague", "/api/leagues/",
-                     "Shared league history · view only."):
+                     "Shared league history · view only.",
+                     "Shared by your commissioner.",
+                     "ESPN credentials and private league access are not included."):
         assert required in dashboard, required
     assert "innerHTML" not in dashboard
     subprocess.run(["node", "--check", str(outputs[2])], cwd=ROOT, check=True)

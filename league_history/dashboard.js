@@ -488,10 +488,17 @@
 
     const notice = document.querySelector('#overview .notice');
     notice.replaceChildren();
-    notice.append(
-      element('strong', '', 'Private by default. '),
-      document.createTextNode('Your ESPN archive is calculated in this browser.')
-    );
+    if (sharedPublication) {
+      notice.append(
+        element('strong', '', 'Shared by your commissioner. '),
+        document.createTextNode('ESPN credentials and private league access are not included.')
+      );
+    } else {
+      notice.append(
+        element('strong', '', 'Private by default. '),
+        document.createTextNode('Your ESPN archive is calculated in this browser.')
+      );
+    }
   }
 
   function renderTrophies(summary) {
