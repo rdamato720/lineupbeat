@@ -85,6 +85,9 @@ const review = {
 };
 
 const publication = sanitizePublication(archive, review).value;
+const yahooArchive = {...structuredClone(archive),
+  schemaVersion: 'lineupbeat-history-capture-v1', provider: 'yahoo'};
+assert.doesNotThrow(() => sanitizePublication(yahooArchive, review));
 assert.equal(publication.archive.schemaVersion, 'lineupbeat-public-history-v1');
 assert.equal(publication.review.schemaVersion, 'lineupbeat-public-history-review-v1');
 assert.deepEqual(publication.archive.counts, {seasons: 1, teams: 2, matchups: 1, identities: 2});

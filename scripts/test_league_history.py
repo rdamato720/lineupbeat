@@ -69,6 +69,7 @@ def main() -> int:
         ROOT / "site/league-history/index.html",
         ROOT / "site/data/league-history-demo.json",
         ROOT / "site/assets/league-history-dashboard.js",
+        ROOT / "site/assets/yahoo-history.js",
         ROOT / "site/my-league/index.html",
     ]
     first = [hashlib.sha256(path.read_bytes()).hexdigest() for path in outputs]
@@ -79,7 +80,8 @@ def main() -> int:
 
     page = outputs[0].read_text()
     dashboard = outputs[2].read_text()
-    landing = outputs[3].read_text()
+    yahoo = outputs[3].read_text()
+    landing = outputs[4].read_text()
     for required in ("League history", "Trophy case", "All-time leaders", "Managers",
                      "League records", "noindex,nofollow,noarchive", "Build your league archive",
                      "Save manager matches", "LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST",
@@ -108,7 +110,9 @@ def main() -> int:
                      ".shared-history.history-ready .import-card",
                      ".shared-history-error #retry-shared-league",
                      ".visibility-options{grid-template-columns:1fr}",
-                     'body class="history-empty"', "Set up ESPN connector",
+                     'body class="history-empty"', "Set up connector",
+                     'id="connect-yahoo"', 'data-history-source="yahoo"',
+                     '/assets/yahoo-history.js',
                      "private by default", "96"):
         assert required in page, required
     assert "Prototype boundary" not in page
@@ -120,13 +124,13 @@ def main() -> int:
     assert '<link rel="canonical" href="https://lineupbeat.com/my-league/">' in landing
     assert 'name="robots" content="index,follow"' in landing
     assert "Fantasy Football League History &amp; Record Book" in landing
-    assert "Connect your ESPN league" in landing
+    assert "Connect your league" in landing
     assert "All-time standings" in landing
     assert "Trophy case" in landing
     assert "League records" in landing
     assert "Manager pages" in landing
     assert "Yahoo" in landing and "CBS" in landing
-    assert "Multi-season league history is not available yet." in landing
+    assert "ESPN and Yahoo support multi-season league-history import" in landing
     assert "Every historical team remains in its original season" in landing
     assert 'href="/league-history/"' in landing
     assert 'href="/my-team/extension/"' in landing
@@ -151,13 +155,13 @@ def main() -> int:
                      "renderHeadToHead", "renderManagerDetail", "renderTopWeeks",
                      "Most championships", "Best regular season",
                      "headToHead: series", "titleYears", "seasonStats",
-                     "Private ESPN history · processed only in this browser.",
+                     "Private ' + provider + ' history · processed only in this browser.",
                      "publishLeague", "loadSharedLeague", "/api/leagues/",
                      "recoverPublicationAccess", "unpublishLeague",
                      "storePublication", "retryShared",
                      "checkPublication", "comparisonText",
                      "method: 'PATCH'", "method: 'DELETE'",
-                     "Shared page is up to date.", "New ESPN data:",
+                     "Shared page is up to date.", "New import data:",
                      "Update the shared page when ready.",
                      "Save the key under Recovery key.",
                      "This browser could not save access",
@@ -165,10 +169,15 @@ def main() -> int:
                      "document.body.classList.remove('history-empty')",
                      "document.body.classList.add('history-empty')",
                      "Shared by your commissioner.",
-                     "ESPN credentials and private league access are not included."):
+                     "Provider credentials and private league access are not included."):
         assert required in dashboard, required
     assert "innerHTML" not in dashboard
     subprocess.run(["node", "--check", str(outputs[2])], cwd=ROOT, check=True)
+    for required in ("/api/yahoo/status", "/api/yahoo/leagues", "/api/yahoo/season",
+                     "lineupbeat-history-capture-v1", "lineupBeatYahooHistoryV1",
+                     "Nothing was saved."):
+        assert required in yahoo, required
+    subprocess.run(["node", "--check", str(outputs[3])], cwd=ROOT, check=True)
     subprocess.run(["node", str(ROOT / "scripts/test_league_history_dashboard.js")],
                    cwd=ROOT, check=True)
     print("league history calculations, identity, records, privacy and deterministic page: ok")

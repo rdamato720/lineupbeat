@@ -85,7 +85,8 @@ function byteLength(value) {
 export function sanitizePublication(rawArchive, rawReview) {
   const archive = object(rawArchive, 'League history');
   const review = object(rawReview, 'Manager review');
-  if (archive.schemaVersion !== 'lineupbeat-espn-history-capture-v1') {
+  if (!['lineupbeat-espn-history-capture-v1',
+    'lineupbeat-history-capture-v1'].includes(archive.schemaVersion)) {
     fail('This league-history format is not supported.');
   }
   if (review.schemaVersion !== 'lineupbeat-history-identity-review-v1') {

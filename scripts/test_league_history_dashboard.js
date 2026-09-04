@@ -116,6 +116,6 @@ const refreshMessage = dashboard.comparisonText({
   detailsChanged: false
 });
 assert.equal(refreshMessage,
-  'New ESPN data: 2026 season added · +12 matchups. Update the shared page when ready.');
+  'New import data: 2026 season added · +12 matchups. Update the shared page when ready.');
 
 console.log('league history dashboard calculations passed');

@@ -47,6 +47,7 @@ jobs:
           python scripts/test_my_team.py
           python scripts/test_league_history.py
           node scripts/test_league_history_publishing.mjs
+          node scripts/test_yahoo_history_api.mjs
           node scripts/test_espn_roster_parser.js
           node scripts/test_espn_safe_diagnostics.js
           node scripts/test_espn_history_parser.js
@@ -105,10 +106,18 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          YAHOO_CLIENT_ID: ${{ secrets.YAHOO_CLIENT_ID }}
+          YAHOO_CLIENT_SECRET: ${{ secrets.YAHOO_CLIENT_SECRET }}
+          YAHOO_SESSION_SECRET: ${{ secrets.YAHOO_SESSION_SECRET }}
         run: |
           test "$DEV_PROJECT" = "lineupbeat-dev"
           branch=$(printf '%s' "$GITHUB_REF_NAME" | tr '/_' '--')
           cp cloudflare/lineupbeat-dev.wrangler.toml wrangler.toml
+          if [ -n "$YAHOO_CLIENT_ID" ] && [ -n "$YAHOO_CLIENT_SECRET" ] && [ -n "$YAHOO_SESSION_SECRET" ]; then
+            printf '%s' "$YAHOO_CLIENT_ID" | npx --yes wrangler@latest pages secret put YAHOO_CLIENT_ID --project-name=lineupbeat-dev
+            printf '%s' "$YAHOO_CLIENT_SECRET" | npx --yes wrangler@latest pages secret put YAHOO_CLIENT_SECRET --project-name=lineupbeat-dev
+            printf '%s' "$YAHOO_SESSION_SECRET" | npx --yes wrangler@latest pages secret put YAHOO_SESSION_SECRET --project-name=lineupbeat-dev
+          fi
           npx --yes wrangler@latest pages deploy \
             --branch="$branch" --commit-dirty=true
 

@@ -317,7 +317,8 @@ def check_league_history(root):
           and 'body class="history-empty"' in text
           and "private by default" in text
           and "Build your league archive" in text
-          and "Set up ESPN connector" in text
+          and "Set up connector" in text
+          and 'id="connect-yahoo"' in text
           and "Prototype boundary" not in text
           and "Fictional demonstration data" not in text
           and '<footer class="global-footer">' in text)
@@ -349,7 +350,7 @@ def check_league_history(root):
           and bool(re.search(r'name="robots" content="noindex,\s*nofollow,\s*noarchive"', landing_text))
           and 'href="https://lineupbeat.com/my-league/"' in landing_text
           and "Fantasy Football League History &amp; Record Book" in landing_text
-          and "Connect your ESPN league" in landing_text
+          and "Connect your league" in landing_text
           and "All-time standings" in landing_text
           and "Yahoo" in landing_text and "CBS" in landing_text,
           str(landing))
