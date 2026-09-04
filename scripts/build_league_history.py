@@ -176,11 +176,14 @@ def build_page(canonical: dict, summary: dict) -> str:
 
     .history-subsection{margin-top:2.5rem}.history-subsection>.section-head{margin-bottom:1rem}
     #records .record-grid,#trophies .record-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .trophy-card{border-top:3px solid #3b4540}.trophy-card.has-title{border-top-color:var(--signal)}
-    .trophy-card .hardware{min-height:1.25rem;color:var(--signal);font:800 .875rem var(--data);letter-spacing:.12em}
-    .trophy-card .hardware.empty{color:#68726c;font-family:var(--agate);letter-spacing:.06em;text-transform:uppercase}
-    .trophy-card dl{display:grid;gap:.5rem;margin:1rem 0 0;padding-top:.85rem;border-top:1px solid var(--history-line)}
-    .trophy-card dl div{display:flex;justify-content:space-between;gap:1rem}.trophy-card dt{color:var(--history-muted);font:800 .75rem var(--agate);text-transform:uppercase}.trophy-card dd{margin:0;font:700 .875rem var(--data);text-align:right}
+    .trophy-card{display:grid;gap:1rem;border-top:1px solid var(--history-line);padding:1rem 1.1rem}
+    .trophy-card__identity h3{margin:0;font:700 1.15rem var(--display)}
+    .trophy-card__identity p{margin:.2rem 0 0;color:var(--history-muted);font:500 .82rem/1.35 var(--agate);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .trophy-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--history-line);padding-top:.85rem}
+    .trophy-stat{min-width:0;padding:0 .75rem;border-right:1px solid var(--history-line)}
+    .trophy-stat:first-child{padding-left:0}.trophy-stat:last-child{padding-right:0;border-right:0}
+    .trophy-stat strong{display:block;font:800 1.35rem/1 var(--data)}.trophy-stat.is-title strong{color:var(--signal)}
+    .trophy-stat span{display:block;margin-top:.35rem;color:var(--history-muted);font:800 .7rem/1.25 var(--agate);letter-spacing:.03em;text-transform:uppercase}
     .trophy-ledger{min-width:48rem}.trophy-ledger th:first-child,.trophy-ledger td:first-child{text-align:left}
     .h2h-table{min-width:max-content}.h2h-table th,.h2h-table td{min-width:4.5rem;text-align:center!important;font-size:.875rem}.h2h-table th:first-child,.h2h-table td:first-child{position:sticky;left:0;min-width:10rem;text-align:left!important;z-index:2}.h2h-table th:first-child{background:#171e1b}.h2h-table td:first-child{background:var(--history-panel-2);font-family:var(--display);font-weight:700}.h2h-table .self{background:repeating-linear-gradient(135deg,#151b19,#151b19 6px,#101513 6px,#101513 12px)}.h2h-table .empty{color:#68726c}
     .rivalry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:.8rem}.rivalry-card{border:1px solid var(--history-line);background:var(--history-panel);padding:1rem}.rivalry-card small{color:var(--signal);font:800 .75rem var(--agate);text-transform:uppercase}.rivalry-card strong{display:block;margin:.45rem 0 .15rem;font:700 1.1rem var(--display)}.rivalry-card span{color:var(--history-muted);font-size:.875rem}

@@ -494,31 +494,33 @@
 
   function renderTrophies(summary) {
     setText('#trophies .section-head p',
-      'Titles, scoring crowns, and runner-up finishes.');
+      'Career hardware by manager.');
     const grid = document.getElementById('trophy-cabinet');
     grid.replaceChildren();
     summary.managers.slice().sort((a, b) =>
       b.titles - a.titles || b.scoringCrowns - a.scoringCrowns ||
       b.runnerUps - a.runnerUps || a.manager.localeCompare(b.manager))
       .forEach(row => {
-        const hasHardware = row.titles || row.scoringCrowns;
-        const card = element('article', 'record-card trophy-card' +
-          (row.titles ? ' has-title' : ''));
-        card.append(
-          element('div', 'hardware' + (hasHardware ? '' : ' empty'),
-            hasHardware ? '◆'.repeat(row.titles) + ' ▲'.repeat(row.scoringCrowns) :
-              'No hardware yet'),
+        const card = element('article', 'record-card trophy-card');
+        const identity = element('div', 'trophy-card__identity');
+        identity.append(
           element('h3', '', row.manager),
           element('p', '', row.latestTeam)
         );
-        const dl = element('dl');
-        appendDefinition(dl, 'Titles', row.titleYears.length ?
-          row.titleYears.join(', ') : '—');
-        appendDefinition(dl, 'Scoring crowns', row.crownYears.length ?
-          row.crownYears.join(', ') : '—');
-        appendDefinition(dl, 'Runner-up', row.runnerUpYears.length ?
-          row.runnerUpYears.join(', ') : '—');
-        card.appendChild(dl);
+        const stats = element('div', 'trophy-stats');
+        [
+          ['Championships', row.titles, 'is-title'],
+          ['Scoring crowns', row.scoringCrowns, ''],
+          ['Runner-up', row.runnerUps, '']
+        ].forEach(([label, value, className]) => {
+          const stat = element('div', 'trophy-stat ' + className);
+          stat.append(
+            element('strong', '', String(value)),
+            element('span', '', label)
+          );
+          stats.appendChild(stat);
+        });
+        card.append(identity, stats);
         grid.appendChild(card);
       });
     if (!grid.children.length) {

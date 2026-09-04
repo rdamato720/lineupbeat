@@ -89,6 +89,7 @@ def main() -> int:
                      "<th>Record</th><th>Win%</th><th>PPG</th><th>Titles</th>",
                      'id="trophy-ledger"', 'id="head-to-head"',
                      'id="manager-detail"', 'id="record-book"', 'id="top-weeks"',
+                     "trophy-stats", "trophy-stat.is-title strong",
                      "96", "Prototype boundary", "fictional"):
         assert required in page, required
     assert "identity.seasons.join(', ')+' · '+identity.teamNames.join(' / ')" not in page
