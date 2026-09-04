@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 962,
+ "count": 978,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -10621,6 +10621,182 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.006346
+  },
+  {
+   "candidate_id": "mobile:onsi:2312ac9997eb4ee219df",
+   "player_id": "00-0041510",
+   "source_url": "https://www.si.com/nfl/rams/onsi/rams-week-1-depth-chart-breakdown",
+   "attempted_at": "2026-09-04T21:34:14+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T21:34:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00583
+  },
+  {
+   "candidate_id": "mobile:onsi:6f0b960849a8ff5b582c",
+   "player_id": "00-0039144",
+   "source_url": "https://www.si.com/nfl/packers/onsi/the-one-position-where-packers-could-still-add-help-but-apparently-wont",
+   "attempted_at": "2026-09-04T21:34:20+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-04T21:34:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00622
+  },
+  {
+   "candidate_id": "mobile:onsi:f16a4bcc37e0001b0970",
+   "player_id": "00-0038996",
+   "source_url": "https://www.si.com/nfl/packers/onsi/the-one-position-where-packers-could-still-add-help-but-apparently-wont",
+   "attempted_at": "2026-09-04T21:34:25+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-04T21:34:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005788
+  },
+  {
+   "candidate_id": "mobile:onsi:2debe6a7ca93ea74367b",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/nfl/packers/onsi/the-one-position-where-packers-could-still-add-help-but-apparently-wont",
+   "attempted_at": "2026-09-04T21:34:30+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-04T21:34:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005756
+  },
+  {
+   "candidate_id": "mobile:onsi:d269d346a39d0a8a8e49",
+   "player_id": "00-0036264",
+   "source_url": "https://www.si.com/nfl/packers/onsi/the-one-position-where-packers-could-still-add-help-but-apparently-wont",
+   "attempted_at": "2026-09-04T21:34:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T21:34:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004128
+  },
+  {
+   "candidate_id": "mobile:onsi:8ace141a79f56fdeab64",
+   "player_id": "00-0039337",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/creative-and-fun-fantasy-punishments-your-league-should-steal",
+   "attempted_at": "2026-09-04T21:34:37+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T21:34:40+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004436
+  },
+  {
+   "candidate_id": "mobile:onsi:97d5e7840b58672bdcc6",
+   "player_id": "00-0038606",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-which-practice-squad-member-is-most-likely-to-make-an-impact-in-2026",
+   "attempted_at": "2026-09-04T21:34:40+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T21:34:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004404
+  },
+  {
+   "candidate_id": "mobile:onsi:b5d102ea1d56b79ec552",
+   "player_id": "00-0036497",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-which-practice-squad-member-is-most-likely-to-make-an-impact-in-2026",
+   "attempted_at": "2026-09-04T21:34:43+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T21:34:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005262
+  },
+  {
+   "candidate_id": "mobile:onsi:f4b780247161c8a2ac7e",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/what-expect-mike-evans-49ers-debut-rams",
+   "attempted_at": "2026-09-04T21:34:48+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-04T21:34:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005946
+  },
+  {
+   "candidate_id": "mobile:onsi:c397561816eca52d7e15",
+   "player_id": "00-0041035",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/what-expect-mike-evans-49ers-debut-rams",
+   "attempted_at": "2026-09-04T21:34:52+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T21:34:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00392
+  },
+  {
+   "candidate_id": "mobile:onsi:652d5168feffd1049deb",
+   "player_id": "00-0033280",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/what-expect-mike-evans-49ers-debut-rams",
+   "attempted_at": "2026-09-04T21:34:55+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T21:35:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006152
+  },
+  {
+   "candidate_id": "mobile:onsi:ff5330ba33c355285a24",
+   "player_id": "00-0033288",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/what-expect-mike-evans-49ers-debut-rams",
+   "attempted_at": "2026-09-04T21:35:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T21:35:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004864
+  },
+  {
+   "candidate_id": "mobile:onsi:02731cfcfded1637d040",
+   "player_id": "00-0039067",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/the-latest-josh-jacobs-news-should-make-marshawn-lloyd-fantasy-football-owners-very-nervous",
+   "attempted_at": "2026-09-04T21:35:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T21:35:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004686
+  },
+  {
+   "candidate_id": "mobile:onsi:23b8ebef4a3c3f118cbd",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/the-latest-josh-jacobs-news-should-make-marshawn-lloyd-fantasy-football-owners-very-nervous",
+   "attempted_at": "2026-09-04T21:35:09+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-04T21:35:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005458
+  },
+  {
+   "candidate_id": "mobile:onsi:b0c5b24423e5195f65b4",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/2026-fantasy-football-all-breakout-team-undervalued-sleepers",
+   "attempted_at": "2026-09-04T21:35:13+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T21:35:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005864
+  },
+  {
+   "candidate_id": "mobile:onsi:897c53a03ce25db53997",
+   "player_id": "00-0039910",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/2026-fantasy-football-all-breakout-team-undervalued-sleepers",
+   "attempted_at": "2026-09-04T21:35:17+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T21:35:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004926
   }
  ]
 }
