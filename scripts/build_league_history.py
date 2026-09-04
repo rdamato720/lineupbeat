@@ -322,7 +322,7 @@ def build_page(canonical: dict, summary: dict) -> str:
       });
     }());</script>'''
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>League History | LineupBeat</title><meta name="robots" content="index,follow"><link rel="canonical" href="https://lineupbeat.com/league-history/">
+    <title>League History | LineupBeat</title><meta name="robots" content="noindex,nofollow,noarchive"><link rel="canonical" href="https://lineupbeat.com/league-history/">
     <meta name="description" content="Import, review, and share your ESPN fantasy football league history with LineupBeat.">
     <style>{seo.SHELL_CSS}{seo.TEAMS_CSS}{seo.NAV_CSS}{styles}</style></head><body class="history-empty">
     {seo.site_nav('league_history', 'nfl')}
@@ -373,7 +373,6 @@ def main() -> int:
     DATA_OUT.write_text(json.dumps(payload, sort_keys=True, separators=(",", ":")) + "\n")
     PAGE_OUT.write_text(build_page(canonical, summary))
     DASHBOARD_OUT.write_text(DASHBOARD_SOURCE.read_text())
-    append_sitemap()
     print(f"Built {PAGE_OUT.relative_to(ROOT)} from {summary['counts']['games']} matchups")
     return 0
 

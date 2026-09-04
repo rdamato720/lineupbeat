@@ -147,6 +147,7 @@ def main():
     run('build_pages','--base','https://lineupbeat-dev.pages.dev','--db',str(db))
     run('build_my_team')
     run('build_league_history')
+    run('build_my_league')
     run('build_chrome_store_bundle')
     release.build()
     dev_site.protect(ROOT/'site','develop')

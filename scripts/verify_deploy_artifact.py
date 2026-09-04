@@ -342,8 +342,21 @@ def check_league_history(root):
               ("Adrian Chadzynski", "Ralph Damato", "Bobby Digital")))
     sitemap = root / "sitemap.xml"
     sitemap_text = sitemap.read_text() if sitemap.is_file() else ""
-    check("League History landing is discoverable without listing shared leagues",
-          "/league-history/" in sitemap_text and "/leagues/" not in sitemap_text)
+    landing = root / "my-league" / "index.html"
+    landing_text = landing.read_text() if landing.is_file() else ""
+    check("My League has a public SEO landing page",
+          bool(landing_text)
+          and bool(re.search(r'name="robots" content="noindex,\s*nofollow,\s*noarchive"', landing_text))
+          and 'href="https://lineupbeat.com/my-league/"' in landing_text
+          and "Fantasy Football League History &amp; Record Book" in landing_text
+          and "Connect your ESPN league" in landing_text
+          and "All-time standings" in landing_text
+          and "Yahoo" in landing_text and "CBS" in landing_text,
+          str(landing))
+    check("My League landing is discoverable without indexing private workspaces",
+          "/my-league/" in sitemap_text
+          and "/league-history/" not in sitemap_text
+          and "/leagues/" not in sitemap_text)
 
 
 def check_homepage(root, decision_room=False):

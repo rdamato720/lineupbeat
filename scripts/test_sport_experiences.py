@@ -32,11 +32,11 @@ class SportExperienceTests(unittest.TestCase):
         nfl_views = re.search(r'<nav class="views".*?</nav>', nfl, re.S).group(0)
         college_views = re.search(r'<nav class="views".*?</nav>', college, re.S).group(0)
         self.assertIn('href="/nfl/data/" aria-current="page">Fantasy Data</a>', nfl)
-        self.assertIn('href="/league-history/">League History</a>', nfl_views)
+        self.assertIn('href="/my-league/">My League</a>', nfl_views)
         self.assertIn("Search NFL players", nfl)
         self.assertNotIn("Week 1 Rankings", nfl_views)
         self.assertNotIn("Fantasy Data", college_views)
-        self.assertNotIn("League History", college_views)
+        self.assertNotIn("My League", college_views)
         self.assertIn('href="/college-fantasy-football/week-1/" aria-current="page">Week 1 Rankings</a>', college)
         self.assertIn('href="/college-fantasy-football/projections/">Season Projections</a>', college)
         self.assertNotIn('href="/nfl/rankings/"', college_views)
@@ -84,7 +84,7 @@ class SportExperienceTests(unittest.TestCase):
     def test_league_history_has_a_first_class_navigation_state(self):
         header = seo.site_nav("league_history", "nfl")
         self.assertIn(
-            'href="/league-history/" aria-current="page">League History</a>',
+            'href="/my-league/" aria-current="page">My League</a>',
             header,
         )
 

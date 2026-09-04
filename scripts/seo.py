@@ -364,7 +364,7 @@ SPORT = "nfl"
 SPORT_ROUTES = {
     "nfl": {
         "my_team": "/my-team/",
-        "league_history": "/league-history/",
+        "league_history": "/my-league/",
         "decision": "/decision-room/nfl/",
         "rankings": "/nfl/rankings/",
         "projections": "/nfl/projections/",
@@ -379,7 +379,7 @@ SPORT_ROUTES = {
     },
 }
 SPORT_NAV_ITEMS = {
-    "nfl": (("my_team", "My Team"), ("league_history", "League History"),
+    "nfl": (("my_team", "My Team"), ("league_history", "My League"),
             ("decision", "Decision"), ("rankings", "Rankings"),
             ("projections", "Projections"), ("data", "Fantasy Data")),
     "college": (("decision", "Decision"),
@@ -707,7 +707,7 @@ NAV_JS = """
 GLOBAL_FOOTER = """<footer class="global-footer"><div class="wrap">
   <div class="fbrand"><span class="flogo">Lineup<em>Beat</em></span>
     <p class="ftag">NFL and College fantasy projections, comparisons, decision boundaries, rankings, and accountable recommendations.</p></div>
-  <div class="frow"><div class="fcol"><h3>Decision tools</h3><p><a href="/my-team/">My Team</a><br><a href="/league-history/">League History</a><br><a href="/decision-room/nfl/">NFL Decision Room</a><br><a href="/decision-room/college/">College Decision Room</a><br><a href="/nfl/data/">NFL Fantasy Data</a><br><a href="/nfl/who-should-i-draft/">Advanced Draft Comparison</a></p></div>
+  <div class="frow"><div class="fcol"><h3>Decision tools</h3><p><a href="/my-team/">My Team</a><br><a href="/my-league/">My League</a><br><a href="/decision-room/nfl/">NFL Decision Room</a><br><a href="/decision-room/college/">College Decision Room</a><br><a href="/nfl/data/">NFL Fantasy Data</a><br><a href="/nfl/who-should-i-draft/">Advanced Draft Comparison</a></p></div>
   <div class="fcol"><h3>Validated data</h3><p><a href="/nfl/rankings/">NFL rankings</a><br><a href="/nfl/projections/">NFL projections</a><br><a href="/college-fantasy-football/week-1/">College Week 1</a><br><a href="/college-fantasy-football/projections/">College season projections</a></p></div>
   <div class="fcol"><h3>Methodology &amp; accountability</h3><p><a href="/about/">How Lineup Beat makes and preserves decisions</a></p></div>
   <div class="fcol"><h3>Contact</h3><p><a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a></p></div></div>

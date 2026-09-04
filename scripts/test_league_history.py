@@ -59,22 +59,29 @@ def main() -> int:
     else:
         raise AssertionError("invalid franchise identity passed validation")
 
-    command = [sys.executable, str(ROOT / "scripts/build_league_history.py")]
-    subprocess.run(command, cwd=ROOT, check=True, capture_output=True, text=True)
+    commands = [
+        [sys.executable, str(ROOT / "scripts/build_league_history.py")],
+        [sys.executable, str(ROOT / "scripts/build_my_league.py")],
+    ]
+    for command in commands:
+        subprocess.run(command, cwd=ROOT, check=True, capture_output=True, text=True)
     outputs = [
         ROOT / "site/league-history/index.html",
         ROOT / "site/data/league-history-demo.json",
         ROOT / "site/assets/league-history-dashboard.js",
+        ROOT / "site/my-league/index.html",
     ]
     first = [hashlib.sha256(path.read_bytes()).hexdigest() for path in outputs]
-    subprocess.run(command, cwd=ROOT, check=True, capture_output=True, text=True)
+    for command in commands:
+        subprocess.run(command, cwd=ROOT, check=True, capture_output=True, text=True)
     second = [hashlib.sha256(path.read_bytes()).hexdigest() for path in outputs]
     assert first == second
 
     page = outputs[0].read_text()
     dashboard = outputs[2].read_text()
+    landing = outputs[3].read_text()
     for required in ("League history", "Trophy case", "All-time leaders", "Managers",
-                     "League records", "index,follow", "Build your league archive",
+                     "League records", "noindex,nofollow,noarchive", "Build your league archive",
                      "Save manager matches", "LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST",
                      "Are these the same person?", "Yes, same person",
                      "No, different people", "One quick step", "data-demo=",
@@ -110,6 +117,22 @@ def main() -> int:
     assert "#f4d88a" not in page
     assert '<footer class="global-footer">' in page
     assert '<link rel="canonical" href="https://lineupbeat.com/league-history/">' in page
+    assert '<link rel="canonical" href="https://lineupbeat.com/my-league/">' in landing
+    assert 'name="robots" content="index,follow"' in landing
+    assert "Fantasy Football League History &amp; Record Book" in landing
+    assert "Connect your ESPN league" in landing
+    assert "All-time standings" in landing
+    assert "Trophy case" in landing
+    assert "League records" in landing
+    assert "Manager pages" in landing
+    assert "Yahoo" in landing and "CBS" in landing
+    assert "Multi-season league history is not available yet." in landing
+    assert "Every historical team remains in its original season" in landing
+    assert 'href="/league-history/"' in landing
+    assert 'href="/my-team/extension/"' in landing
+    assert '"@type":"FAQPage"' in landing
+    assert '<footer class="global-footer">' in landing
+    assert "#d6ad55" not in landing and "#f4d88a" not in landing
     assert "identity.seasons.join(', ')+' · '+identity.teamNames.join(' / ')" not in page
     assert "Merge into " not in page
     assert "MANAGER NAME" not in page
@@ -119,6 +142,7 @@ def main() -> int:
     assert "cookie" not in page.lower()
     for private_name in ("Adrian Chadzynski", "Ralph Damato", "Bobby Digital"):
         assert private_name not in page
+        assert private_name not in landing
     for required in ("summarize(payload, review)", "renderDashboard",
                      "renderTrophies", "renderAllTime", "renderManagers",
                      "renderSeasons", "renderRecords",

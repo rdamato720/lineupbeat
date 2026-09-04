@@ -40,7 +40,7 @@ storage and pass it to the matching Lineup Beat experience.
 
 ### Links
 
-- Homepage: `https://lineupbeat.com/league-history/`
+- Homepage: `https://lineupbeat.com/my-league/`
 - Support URL: `https://lineupbeat.com/my-team/extension/`
 - Privacy policy URL: `https://lineupbeat.com/my-team/extension/privacy/`
 
