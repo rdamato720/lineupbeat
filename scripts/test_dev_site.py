@@ -42,6 +42,21 @@ class DevSiteTests(unittest.TestCase):
             "nfl-1",
         )
 
+    def test_preserve_source_template_accepts_protected_dev_source(self):
+        saved = self.root / "audit" / "source-template.html"
+        protected = TEMPLATE.replace(
+            "</head>", f'{dev_site.BANNER_STYLE}</head>', 1
+        )
+        self.template.write_text(protected)
+        dev_site.preserve_source_template(self.template, saved)
+        self.assertEqual(saved.read_text(), protected)
+
+    def test_preserve_source_template_rejects_seeded_homepage(self):
+        saved = self.root / "audit" / "source-template.html"
+        self.template.write_text(TEMPLATE.replace(dev_site.DATA_PLACEHOLDER, "{}"))
+        with self.assertRaises(RuntimeError):
+            dev_site.preserve_source_template(self.template, saved)
+
     def test_seed_rejects_wrong_feed_shape(self):
         self.feed.write_text('{"sports": [], "players": []}')
         with self.assertRaises(SystemExit):

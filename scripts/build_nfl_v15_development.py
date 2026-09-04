@@ -88,13 +88,10 @@ def main():
     feed=ROOT/'data/rollback/feed.before-replacement.json'
     db=ROOT/'audit/nfl-trusted-build.db';db.parent.mkdir(exist_ok=True)
     template=ROOT/'site/template.html';saved_template=ROOT/'audit/nfl-trusted-source-template.html'
-    if template.exists() and 'id="lb-dev-style"' not in template.read_text():
-        shutil.copyfile(template,saved_template)
-    if not saved_template.exists():
-        raise RuntimeError('pristine source template is unavailable')
-    # Builders read site/template.html directly, so recreate the same pristine
-    # input for every pass. The final protection pass also makes the tracked
-    # template safe if a worktree manager restores it into the upload folder.
+    dev_site.preserve_source_template(template,saved_template)
+    # Builders read site/template.html directly, so recreate the same stable
+    # input for every pass. The committed source may already carry development
+    # protection; protect() is deliberately idempotent and analytics-free.
     shutil.copyfile(saved_template,template)
     dev_site.seed(feed,template,ROOT/'site')
     dev_site.hydrate_db(feed,db)

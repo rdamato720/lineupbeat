@@ -13,6 +13,7 @@ import argparse
 import html
 import json
 import re
+import shutil
 import sqlite3
 from pathlib import Path
 
@@ -40,6 +41,22 @@ font:800 12px/30px system-ui,-apple-system,sans-serif;letter-spacing:.08em;
 text-align:center;text-transform:uppercase;pointer-events:none}
 body{padding-top:30px!important}
 </style>"""
+
+
+def preserve_source_template(template_path: Path, saved_path: Path) -> None:
+    """Save a reusable homepage source, including an already-safe dev copy.
+
+    Development checkouts intentionally keep the tracked template protected
+    and analytics-free.  The placeholder, rather than the absence of the
+    development banner, is what makes that file a valid build source.
+    """
+    if not template_path.is_file():
+        raise RuntimeError("development source template is unavailable")
+    template = template_path.read_text()
+    if DATA_PLACEHOLDER not in template or "<body" not in template or "</html>" not in template:
+        raise RuntimeError("development source template is malformed")
+    saved_path.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(template_path, saved_path)
 
 
 def load_feed(path: Path) -> dict:
