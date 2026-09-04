@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 915,
+ "count": 929,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -10104,6 +10104,160 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.006242
+  },
+  {
+   "candidate_id": "mobile:onsi:74a3747315dbb289379c",
+   "player_id": "00-0026498",
+   "source_url": "https://www.si.com/nfl/rams/onsi/rams-depth-chart-backup-quarterback-decision",
+   "attempted_at": "2026-09-04T15:19:21+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:19:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004268
+  },
+  {
+   "candidate_id": "mobile:onsi:27bd4012c82166d60525",
+   "player_id": "00-0034827",
+   "source_url": "https://www.si.com/nfl/bills/onsi/rumors-hypothetical-bills-49ers-trade-sees-buffalo-and-san-francisco-swap-player-for-pick",
+   "attempted_at": "2026-09-04T15:19:24+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:19:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00386
+  },
+  {
+   "candidate_id": "mobile:onsi:b72b4e4529bee354958c",
+   "player_id": "00-0037740",
+   "source_url": "https://www.si.com/nfl/jets/onsi/jets-confidence-meters-how-i-feel-2026-draft-pick-s-chances-start-week-1-01m1mcrbbyba",
+   "attempted_at": "2026-09-04T15:19:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:19:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00432
+  },
+  {
+   "candidate_id": "mobile:onsi:dd2270df032e532ccf68",
+   "player_id": "00-0041511",
+   "source_url": "https://www.si.com/nfl/jets/onsi/jets-confidence-meters-how-i-feel-2026-draft-pick-s-chances-start-week-1-01m1mcrbbyba",
+   "attempted_at": "2026-09-04T15:19:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:19:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00456
+  },
+  {
+   "candidate_id": "mobile:onsi:f510ada5e889043cc920",
+   "player_id": "00-0029604",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-how-can-expedite-rebuild-enter-different-conversation-2027",
+   "attempted_at": "2026-09-04T15:19:35+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T15:19:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005868
+  },
+  {
+   "candidate_id": "mobile:onsi:53d288c321c123a9ac17",
+   "player_id": "00-0039890",
+   "source_url": "https://www.si.com/nfl/jets/onsi/jets-confidence-meters-how-i-feel-2026-draft-pick-s-chances-start-week-1-01m1mcrbbyba",
+   "attempted_at": "2026-09-04T15:19:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:19:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00404
+  },
+  {
+   "candidate_id": "mobile:onsi:23b18afbe1c88d2cb053",
+   "player_id": "00-0030506",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-quarterback-debate-bo-nix-vs-patrick-mahomes",
+   "attempted_at": "2026-09-04T15:19:42+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T15:19:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00657
+  },
+  {
+   "candidate_id": "mobile:onsi:c4ffa04f853afbb397c9",
+   "player_id": "00-0039732",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-quarterback-debate-bo-nix-vs-patrick-mahomes",
+   "attempted_at": "2026-09-04T15:19:48+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:19:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003818
+  },
+  {
+   "candidate_id": "mobile:onsi:93f02f9e4a6dff4ac26a",
+   "player_id": "00-0033873",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-quarterback-debate-bo-nix-vs-patrick-mahomes",
+   "attempted_at": "2026-09-04T15:19:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:19:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003782
+  },
+  {
+   "candidate_id": "mobile:onsi:29ea80179efd60426d59",
+   "player_id": "00-0034960",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-there-is-only-1-way-can-get-the-most-out-of-travis-hunter-2nd-act",
+   "attempted_at": "2026-09-04T15:19:53+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-04T15:20:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00655
+  },
+  {
+   "candidate_id": "mobile:onsi:8f35ee5aaccef175f2e7",
+   "player_id": "00-0039893",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-there-is-only-1-way-can-get-the-most-out-of-travis-hunter-2nd-act",
+   "attempted_at": "2026-09-04T15:20:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:20:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0053
+  },
+  {
+   "candidate_id": "mobile:onsi:7ee6eaea4b1b0c60675e",
+   "player_id": "00-0038606",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-there-is-only-1-way-can-get-the-most-out-of-travis-hunter-2nd-act",
+   "attempted_at": "2026-09-04T15:20:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:20:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004046
+  },
+  {
+   "candidate_id": "mobile:onsi:e1f134fa4042c553c524",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/caleb-williams-sporting-new-look-and-bears-teammate-had-jokes-about-it",
+   "attempted_at": "2026-09-04T15:20:06+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:20:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00359
+  },
+  {
+   "candidate_id": "mobile:onsi:3810a28f95dec434f3de",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/nfl/packers/onsi/make-or-break-for-packers-here-s-what-history-says-about-week-1",
+   "attempted_at": "2026-09-04T15:20:08+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-04T15:20:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007718
   }
  ]
 }
