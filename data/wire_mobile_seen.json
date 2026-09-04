@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 898,
+ "count": 915,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -9917,6 +9917,193 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005856
+  },
+  {
+   "candidate_id": "mobile:onsi:1296044317dd20c63646",
+   "player_id": "00-0036389",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/eagles-announce-weeks-kelly-green-and-alternate-uniforms-will-be-worn-this-season-01m1pcm5rtfg",
+   "attempted_at": "2026-09-04T15:07:18+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:07:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003684
+  },
+  {
+   "candidate_id": "mobile:onsi:b4c71ded8266b2fe31ea",
+   "player_id": "00-0039851",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/printable-fantasy-football-ppr-cheat-sheet-to-bring-to-drafts-updated-d-andre-swift-moves-in-the-rankings",
+   "attempted_at": "2026-09-04T15:07:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:07:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003944
+  },
+  {
+   "candidate_id": "mobile:onsi:c3bb0fb82bef9a0aec99",
+   "player_id": "00-0033077",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-captain-2026-nfl-season",
+   "attempted_at": "2026-09-04T15:07:25+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:07:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003776
+  },
+  {
+   "candidate_id": "mobile:onsi:0731a2037de6ee1d8444",
+   "player_id": "00-0040676",
+   "source_url": "https://www.si.com/nfl/titans/onsi/titans-must-overcome-historic-week-1-failures-with-win-vs-jets-01m1panfk7ba",
+   "attempted_at": "2026-09-04T15:07:28+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:07:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003644
+  },
+  {
+   "candidate_id": "mobile:onsi:4386880b7cf0edbe1a56",
+   "player_id": "00-0039065",
+   "source_url": "https://www.si.com/nfl/lions/onsi/players-detroit-lions-must-scout-college-football-week-one-2026",
+   "attempted_at": "2026-09-04T15:07:30+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T15:07:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00691
+  },
+  {
+   "candidate_id": "mobile:onsi:066f7b0af304eaac72fd",
+   "player_id": "00-0039139",
+   "source_url": "https://www.si.com/nfl/lions/onsi/players-detroit-lions-must-scout-college-football-week-one-2026",
+   "attempted_at": "2026-09-04T15:07:37+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:07:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005478
+  },
+  {
+   "candidate_id": "mobile:onsi:78789bf86e99ab204ea4",
+   "player_id": "00-0035228",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/limitless-leadership-grading-vikings-captain-choices-2026-season-01m1mqekt5zn",
+   "attempted_at": "2026-09-04T15:07:43+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:07:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003824
+  },
+  {
+   "candidate_id": "mobile:onsi:820abfd89865c237c5ea",
+   "player_id": "00-0035229",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/limitless-leadership-grading-vikings-captain-choices-2026-season-01m1mqekt5zn",
+   "attempted_at": "2026-09-04T15:07:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:07:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005084
+  },
+  {
+   "candidate_id": "mobile:onsi:5fedd2bb8962862037f3",
+   "player_id": "00-0033293",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/limitless-leadership-grading-vikings-captain-choices-2026-season-01m1mqekt5zn",
+   "attempted_at": "2026-09-04T15:07:50+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:07:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004176
+  },
+  {
+   "candidate_id": "mobile:article:f969d3e92ddcbc5eb31e",
+   "player_id": "00-0041489",
+   "source_url": "https://steelersdepot.com/2026/09/vince-williams-pretty-confident-roman-wilson-will-have-breakout-year/",
+   "attempted_at": "2026-09-04T15:07:53+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:07:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003834
+  },
+  {
+   "candidate_id": "mobile:article:eca42988c68afa66e082",
+   "player_id": "00-0039361",
+   "source_url": "https://www.pewterreport.com/bucs-2026-pewter-predictions-sr-fab-5/",
+   "attempted_at": "2026-09-04T15:07:55+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T15:08:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006482
+  },
+  {
+   "candidate_id": "mobile:article:b720cbe320ec54d1153e",
+   "player_id": "00-0034855",
+   "source_url": "https://www.pewterreport.com/bucs-2026-pewter-predictions-sr-fab-5/",
+   "attempted_at": "2026-09-04T15:08:01+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-04T15:08:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006082
+  },
+  {
+   "candidate_id": "mobile:onsi:a75f39ae90e954fe5b6f",
+   "player_id": "00-0040124",
+   "source_url": "https://www.si.com/nfl/panthers/onsi/grading-carolina-panthers-final-roster-surprise-cuts",
+   "attempted_at": "2026-09-04T15:08:07+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:08:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003976
+  },
+  {
+   "candidate_id": "mobile:onsi:ef4e85c8910adf0ff5b4",
+   "player_id": "00-0038563",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-mailbag-understanding-roster-through-rebuild",
+   "attempted_at": "2026-09-04T15:08:10+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:08:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004178
+  },
+  {
+   "candidate_id": "mobile:onsi:0ebf84293fccc1189772",
+   "player_id": "00-0039851",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-quarterback-debate-bo-nix-vs-patrick-mahomes",
+   "attempted_at": "2026-09-04T15:08:14+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:08:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004984
+  },
+  {
+   "candidate_id": "mobile:onsi:ab2bbd6fbba9082bfb29",
+   "player_id": "00-0026498",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-quarterback-debate-bo-nix-vs-patrick-mahomes",
+   "attempted_at": "2026-09-04T15:08:18+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-04T15:08:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004718
+  },
+  {
+   "candidate_id": "mobile:onsi:46e4b38dfe215a946d20",
+   "player_id": "00-0036613",
+   "source_url": "https://www.si.com/onsi/fantasy/news/fantasy-football-quarterback-debate-bo-nix-vs-patrick-mahomes",
+   "attempted_at": "2026-09-04T15:08:22+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-04T15:08:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006242
   }
  ]
 }
