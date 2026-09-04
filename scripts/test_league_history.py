@@ -92,6 +92,9 @@ def main() -> int:
                      "trophy-stats", "trophy-stat.is-title strong",
                      'class="lh-atmosphere"', 'id="ambient-seasons"',
                      'id="ambient-games"', "background-size:72px 72px",
+                     'id="publish-panel"', 'id="publish-league"',
+                     'id="published-url"', 'name="league-visibility"',
+                     ".shared-history.history-ready .import-card",
                      "96", "Prototype boundary", "fictional"):
         assert required in page, required
     assert "identity.seasons.join(', ')+' · '+identity.teamNames.join(' / ')" not in page
@@ -111,7 +114,9 @@ def main() -> int:
                      "renderHeadToHead", "renderManagerDetail", "renderTopWeeks",
                      "Most championships", "Best regular season",
                      "headToHead: series", "titleYears", "seasonStats",
-                     "Private ESPN history · processed only in this browser."):
+                     "Private ESPN history · processed only in this browser.",
+                     "publishLeague", "loadSharedLeague", "/api/leagues/",
+                     "Shared league history · view only."):
         assert required in dashboard, required
     assert "innerHTML" not in dashboard
     subprocess.run(["node", "--check", str(outputs[2])], cwd=ROOT, check=True)

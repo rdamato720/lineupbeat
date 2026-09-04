@@ -1,0 +1,8 @@
+name = "lineupbeat-dev"
+pages_build_output_dir = "../site"
+compatibility_date = "2026-09-04"
+
+[[d1_databases]]
+binding = "LEAGUE_HISTORY_DB"
+database_name = "lineupbeat-feedback"
+database_id = "ca58d282-f90d-4c89-b207-de60614adc57"
