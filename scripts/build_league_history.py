@@ -131,8 +131,16 @@ def build_page(canonical: dict, summary: dict) -> str:
 
     /* League History uses the same visual system as the Decision Room. */
     :root{--history-bg:#080c0b;--history-panel:#111715;--history-panel-2:#0d1210;--history-line:#29312d;--history-muted:#aeb7b0}
-    body{background:var(--history-bg);color:var(--ink);font-family:var(--agate)}
-    .lh{max-width:74rem;padding:1rem 1.25rem 5rem}
+    body{position:relative;isolation:isolate;background:radial-gradient(circle at 50% 9rem,rgba(29,40,37,.52),transparent 34rem),var(--history-bg);color:var(--ink);font-family:var(--agate)}
+    .lh{position:relative;z-index:2;max-width:74rem;padding:1rem 1.25rem 5rem}
+    .lh-atmosphere{position:absolute;z-index:0;inset:3.8rem 0 auto;height:52rem;overflow:hidden;pointer-events:none}
+    .lh-atmosphere::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,#000 0,rgba(0,0,0,.38) 62%,transparent 100%)}
+    .lh-ambient-card{position:absolute;width:11.5rem;padding:1rem;border:1px solid #8c9a922e;border-radius:.25rem;background:#080d0c8f;color:#9aa39c;opacity:.15;font:700 .7rem/1.2 var(--agate);letter-spacing:.08em;text-transform:uppercase}
+    .lh-ambient-card>span{display:block;margin-bottom:.7rem}.lh-ambient-card strong{display:block;color:var(--signal);font:800 2rem/1 var(--data);letter-spacing:-.04em}
+    .lh-ambient-card small{display:block;margin-top:.35rem;color:#9aa39c;font:700 .65rem/1.3 var(--agate);letter-spacing:.07em}
+    .lh-ambient-seasons{left:1rem;top:9rem}.lh-ambient-games{right:1rem;top:20rem}
+    .lh-ambient-trace{display:block;width:100%;height:3.2rem;margin-top:.9rem}.lh-ambient-trace polyline{fill:none;stroke:var(--signal);stroke-width:2.5}
+    .lh-ambient-bars{display:grid;gap:.55rem;margin-top:1rem}.lh-ambient-bars i{display:block;width:var(--w);height:.35rem;background:linear-gradient(90deg,var(--signal),#52621c)}
     .lh-status{color:var(--history-muted);font-size:.68rem}
     .lh-head{position:relative;overflow:hidden;min-height:10rem;padding:2.2rem 1.5rem 1.4rem;margin:1rem 0 0;border:1px solid var(--history-line);background:radial-gradient(circle at 80% 0,#c6f53c16,transparent 38%),linear-gradient(145deg,#111815,#0a0f0d)}
     .lh-kicker,.eyebrow,.review-step{color:var(--signal)}
@@ -192,6 +200,7 @@ def build_page(canonical: dict, summary: dict) -> str:
     .career-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--history-line);background:var(--history-panel);margin-bottom:1rem}.career-stat{padding:1rem;border-right:1px solid var(--history-line);border-bottom:1px solid var(--history-line)}.career-stat:nth-child(4n){border-right:0}.career-stat:nth-last-child(-n+4){border-bottom:0}.career-stat strong{display:block;font:800 1.3rem var(--data)}.career-stat span{display:block;margin-top:.25rem;color:var(--history-muted);font:800 .68rem var(--agate);letter-spacing:.06em;text-transform:uppercase}
     .career-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(17rem,.8fr);gap:.8rem}.career-panel{border:1px solid var(--history-line);background:var(--history-panel);padding:1rem}.career-panel h4{margin:0 0 .75rem;font:700 1.15rem var(--display)}.career-panel+.career-panel{margin-top:.8rem}.career-table{min-width:34rem}.career-table th:first-child,.career-table td:first-child{text-align:left}.career-note{display:flex;justify-content:space-between;gap:1rem;padding:.65rem 0;border-top:1px solid var(--history-line);font-size:.875rem}.career-note span{color:var(--history-muted);text-align:right}.career-aliases{margin:0 0 1rem}
     .weeks-head{display:flex;align-items:end;justify-content:space-between;gap:1rem}.segmented{display:flex;border:1px solid var(--history-line)}.segmented button{border:0;background:transparent;color:var(--history-muted);padding:.6rem .8rem;font:800 .75rem var(--agate);text-transform:uppercase;cursor:pointer}.segmented button[aria-pressed=true]{background:var(--signal);color:#08100c}.top-weeks{min-width:46rem}.top-weeks th:first-child,.top-weeks td:first-child{text-align:left}
+    @media(max-width:1450px){.lh-ambient-card{display:none}}
     @media(max-width:900px){#records .record-grid,#trophies .record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.career-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.career-stat:nth-child(2n){border-right:0}.career-stat:nth-last-child(-n+4){border-bottom:1px solid var(--history-line)}.career-stat:nth-last-child(-n+2){border-bottom:0}.career-grid{grid-template-columns:1fr}.rivalry-grid{grid-template-columns:1fr}}
     @media(max-width:760px){.lh{padding-inline:.85rem}.lh-head{grid-template-columns:1fr;min-height:0;padding:1.6rem 1rem}.lh-meta{justify-content:flex-start;gap:1.2rem}.lh-meta div{min-width:auto}.import-line{align-items:flex-start;flex-direction:column}.review-head{grid-template-columns:1fr}.match-people{grid-template-columns:1fr}.match-or{text-align:center}.choice-actions{grid-template-columns:1fr}.review-footer{align-items:flex-start;flex-direction:column}.dashboard,.source-grid{grid-template-columns:1fr}.record-grid,.manager-grid,.season-grid{grid-template-columns:1fr}.tabs{top:3.4rem}.history-snapshot{grid-template-columns:1fr 1fr}.champ{min-height:11rem}.manager-browser{grid-template-columns:1fr}.manager-list{display:flex;overflow:auto}.manager-list button{min-width:10rem;border-bottom:0;border-right:1px solid var(--history-line)}.manager-list button[aria-selected=true]{box-shadow:inset 0 -3px 0 var(--signal)}.weeks-head{align-items:flex-start;flex-direction:column}}
     @media(max-width:500px){.lh-meta{gap:.9rem}.lh-meta b{font-size:1.25rem}.lh-meta span{font-size:.6rem}.tabs{gap:1.1rem}.history-snapshot{grid-template-columns:1fr}.lh-footer{display:block}.season-card{grid-template-columns:1fr}.manager-card__head{display:block}.manager-card__head>b{display:block;margin-top:.8rem}#records .record-grid,#trophies .record-grid{grid-template-columns:1fr}.career-stats{grid-template-columns:1fr}.career-stat,.career-stat:nth-child(n){border-right:0;border-bottom:1px solid var(--history-line)}.career-stat:last-child{border-bottom:0}}
@@ -226,6 +235,8 @@ def build_page(canonical: dict, summary: dict) -> str:
       var headerSeasons=document.getElementById('header-seasons');
       var headerGames=document.getElementById('header-games');
       var headerTeams=document.getElementById('header-teams');
+      var ambientSeasons=document.getElementById('ambient-seasons');
+      var ambientGames=document.getElementById('ambient-games');
       function say(text){status.textContent=text;}
       function pairKey(pair){return [pair.a,pair.b].sort().join('::');}
       function identity(id){return state.identities.find(function(row){return row.identityId===id;});}
@@ -247,6 +258,8 @@ def build_page(canonical: dict, summary: dict) -> str:
         headerSeasons.textContent=p.counts.seasons;
         headerGames.textContent=p.counts.matchups;
         headerTeams.textContent=p.counts.teams;
+        ambientSeasons.textContent=p.counts.seasons;
+        ambientGames.textContent=p.counts.matchups;
         stats.replaceChildren();stats.hidden=true;
         if(p.incomplete&&p.incomplete.length){var gap=document.createElement('span');gap.textContent='Unavailable seasons: '+p.incomplete.map(function(x){return x.year;}).join(', ');stats.appendChild(gap);stats.hidden=false;}
         state.identities=p.identityReview.identities||[];state.pairs=[];state.choices={};state.dirty=false;
@@ -282,7 +295,7 @@ def build_page(canonical: dict, summary: dict) -> str:
         if(event.data.type==='LB_LEAGUE_HISTORY_EXTENSION_READY'){say(event.data.hasHistory?'ESPN import found. Loading review…':'Connector ready. Import from an ESPN league page.');clear.hidden=!event.data.hasHistory;}
         if(event.data.type==='LB_LEAGUE_HISTORY_CAPTURE')render({payload:event.data.payload,review:event.data.review});
         if(event.data.type==='LB_LEAGUE_HISTORY_REVIEW_COMPLETE'){if(event.data.ok){state.dirty=false;updateSave();result.textContent='Manager matches saved.';finishSetup();}else result.textContent='Manager matches could not be saved.';}
-        if(event.data.type==='LB_LEAGUE_HISTORY_CLEAR_COMPLETE'){state.capture=null;state.review=null;state.identities=[];state.pairs=[];state.choices={};detail.classList.remove('open');managerReview.classList.remove('is-complete');setupReady.hidden=true;clear.hidden=true;check.hidden=false;document.body.classList.remove('has-import');leagueTitle.textContent=leagueTitle.dataset.demo;headerSeasons.textContent=headerSeasons.dataset.demo;headerGames.textContent=headerGames.dataset.demo;headerTeams.textContent=headerTeams.dataset.demo;document.title=leagueTitle.dataset.demo+' League History | LineupBeat';say('Local ESPN import cleared.');}
+        if(event.data.type==='LB_LEAGUE_HISTORY_CLEAR_COMPLETE'){state.capture=null;state.review=null;state.identities=[];state.pairs=[];state.choices={};detail.classList.remove('open');managerReview.classList.remove('is-complete');setupReady.hidden=true;clear.hidden=true;check.hidden=false;document.body.classList.remove('has-import');leagueTitle.textContent=leagueTitle.dataset.demo;headerSeasons.textContent=headerSeasons.dataset.demo;headerGames.textContent=headerGames.dataset.demo;headerTeams.textContent=headerTeams.dataset.demo;ambientSeasons.textContent=ambientSeasons.dataset.demo;ambientGames.textContent=ambientGames.dataset.demo;document.title=leagueTitle.dataset.demo+' League History | LineupBeat';say('Local ESPN import cleared.');}
       });
     }());</script>'''
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -290,6 +303,10 @@ def build_page(canonical: dict, summary: dict) -> str:
     <meta name="description" content="Development prototype for the LineupBeat fantasy football league history tracker.">
     <style>{seo.SHELL_CSS}{seo.TEAMS_CSS}{seo.NAV_CSS}{styles}</style></head><body>
     {seo.site_nav('data', 'nfl')}
+    <div class="lh-atmosphere" aria-hidden="true">
+      <div class="lh-ambient-card lh-ambient-seasons"><span>Season archive</span><strong id="ambient-seasons" data-demo="{summary['counts']['seasons']}">{summary['counts']['seasons']}</strong><small>Seasons indexed</small><svg class="lh-ambient-trace" viewBox="0 0 180 52" focusable="false"><polyline points="2,43 24,31 47,36 70,18 94,28 119,11 145,21 178,5"/></svg></div>
+      <div class="lh-ambient-card lh-ambient-games"><span>Matchup ledger</span><strong id="ambient-games" data-demo="{summary['counts']['games']}">{summary['counts']['games']}</strong><small>Games preserved</small><div class="lh-ambient-bars"><i style="--w:91%"></i><i style="--w:73%"></i><i style="--w:58%"></i><i style="--w:42%"></i></div></div>
+    </div>
     <main class="lh"><div class="lh-status"><i></i>private local import</div>
       <header class="lh-head"><div><span class="lh-kicker">League history</span><h1 id="league-title" data-demo="{title}">{title}</h1></div>
       <div class="lh-meta"><div><b id="header-seasons" data-demo="{summary['counts']['seasons']}">{summary['counts']['seasons']}</b><span>seasons</span></div><div><b id="header-games" data-demo="{summary['counts']['games']}">{summary['counts']['games']}</b><span>matchups</span></div><div><b id="header-teams" data-demo="{summary['counts']['franchises']}">{summary['counts']['franchises']}</b><span>teams</span></div></div></header>

@@ -90,6 +90,8 @@ def main() -> int:
                      'id="trophy-ledger"', 'id="head-to-head"',
                      'id="manager-detail"', 'id="record-book"', 'id="top-weeks"',
                      "trophy-stats", "trophy-stat.is-title strong",
+                     'class="lh-atmosphere"', 'id="ambient-seasons"',
+                     'id="ambient-games"', "background-size:72px 72px",
                      "96", "Prototype boundary", "fictional"):
         assert required in page, required
     assert "identity.seasons.join(', ')+' · '+identity.teamNames.join(' / ')" not in page
