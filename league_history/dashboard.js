@@ -1284,6 +1284,7 @@
   }
 
   function renderDashboard(payload, review) {
+    document.body.classList.remove('history-empty');
     updateHeader(payload);
     const summary = summarize(payload, review);
     renderOverview(summary);
@@ -1316,6 +1317,7 @@
   }
 
   function clearReady() {
+    document.body.classList.add('history-empty');
     document.body.classList.remove('history-ready');
     const edit = document.getElementById('edit-manager-matches');
     if (edit) edit.hidden = true;

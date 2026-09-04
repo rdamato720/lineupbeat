@@ -255,7 +255,7 @@ async function main() {
   const capture = await harness.send('LB_CAPTURE_ESPN_ROSTER', 'https://fantasy.espn.com/football/team?leagueId=sanitized&teamId=3', raw);
   assert.equal(capture.ok, true);
   assert.equal(capture.opened, true);
-  assert.deepEqual(harness.opened, ['https://lineupbeat-dev.pages.dev/my-team/']);
+  assert.deepEqual(harness.opened, ['https://lineupbeat.com/my-team/']);
   const retrieval = await harness.send('LB_GET_ESPN_ROSTER', 'https://lineupbeat-dev.pages.dev/my-team/');
   assert.deepEqual(retrieval.payload, raw);
   assert.equal((await harness.send('LB_CLEAR_ESPN_ROSTER', 'https://lineupbeat-dev.pages.dev/my-team/')).ok, true);

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Lineup Beat ESPN Connector BETA",
+  "name": "Lineup Beat ESPN Connector",
   "version": "0.3.0",
-  "description": "THIS EXTENSION IS FOR BETA TESTING. Saves ESPN roster and league-history data locally for Lineup Beat.",
+  "description": "Saves ESPN roster and league-history data locally for Lineup Beat.",
   "icons": {
     "16": "icons/icon-16.png",
     "32": "icons/icon-32.png",
@@ -25,6 +25,11 @@
     },
     {
       "matches": ["https://lineupbeat-dev.pages.dev/league-history/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://lineupbeat.com/my-team/*", "https://lineupbeat.com/league-history/*", "https://www.lineupbeat.com/my-team/*", "https://www.lineupbeat.com/league-history/*"],
       "js": ["content.js"],
       "run_at": "document_start"
     }

@@ -1,6 +1,6 @@
-# Lineup Beat ESPN Connector BETA — Chrome Web Store submission sheet
+# Lineup Beat ESPN Connector — Chrome Web Store submission sheet
 
-Prepared for an **Unlisted** beta. This document does not authorize upload,
+Prepared for an **Unlisted** release. This document does not authorize upload,
 review submission, or publication.
 
 **Release block:** version 0.3.0 needs a live ESPN import test. Chrome Web Store
@@ -8,10 +8,10 @@ upload and submission remain blocked.
 
 ## Package tab
 
-- Upload file: `lineupbeat-espn-my-team-beta-0.3.0.zip`
+- Upload file: `lineupbeat-espn-connector-0.3.0.zip`
 - Manifest version: 3
 - Extension version: 0.3.0
-- Extension name: `Lineup Beat ESPN Connector BETA`
+- Extension name: `Lineup Beat ESPN Connector`
 
 ## Store listing tab
 
@@ -22,9 +22,7 @@ upload and submission remain blocked.
 ### Detailed description
 
 ```text
-THIS EXTENSION IS FOR BETA TESTING.
-
-Lineup Beat ESPN Connector BETA supports two explicit, browser-local flows.
+Lineup Beat ESPN Connector supports two explicit, browser-local flows.
 
 Save roster locally for My Team reads the roster visible on the open ESPN team page and passes it locally to Lineup Beat My Team. Import league history requests up to 25 available seasons for the open ESPN league, stores the normalized snapshot locally, and opens a commissioner review for manager names and possible identity merges.
 
@@ -32,19 +30,19 @@ League history includes league/team names, seasons, manager labels and IDs, stan
 
 Users can clear each local dataset from its destination page. Uninstalling the extension also removes extension-local storage.
 
-This beta is limited to ESPN Fantasy Football, ESPN's fantasy read API, and the exact Lineup Beat development My Team and League History routes. It has no production, localhost, loopback, or broad website access.
+The connector is limited to ESPN Fantasy Football, ESPN's fantasy read API, and the exact Lineup Beat production and development My Team and League History routes. It has no localhost, loopback, or broad website access.
 ```
 
 ### Single purpose
 
 Save user-requested ESPN fantasy roster or league-history data in browser-local
-storage and pass it to the matching Lineup Beat development review experience.
+storage and pass it to the matching Lineup Beat experience.
 
 ### Links
 
-- Homepage: `https://lineupbeat-dev.pages.dev/league-history/`
-- Support URL: `https://lineupbeat-dev.pages.dev/my-team/extension/`
-- Privacy policy URL: `https://lineupbeat-dev.pages.dev/my-team/extension/privacy/`
+- Homepage: `https://lineupbeat.com/league-history/`
+- Support URL: `https://lineupbeat.com/my-team/extension/`
+- Privacy policy URL: `https://lineupbeat.com/my-team/extension/privacy/`
 
 ## Permission justification
 
@@ -64,11 +62,11 @@ Requests only the selected league's available seasons after Import league
 history is selected. The active ESPN session authorizes the request; the
 extension does not inspect or store the session value.
 
-### Lineup Beat development routes
+### Lineup Beat routes
 
 `/my-team/*` receives the local roster. `/league-history/*` receives the local
 history snapshot, stores commissioner identity approval, and honors clear
-requests. Other Lineup Beat routes and production are excluded.
+requests. Other Lineup Beat routes are excluded.
 
 ### Remote code
 

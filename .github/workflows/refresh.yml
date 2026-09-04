@@ -511,6 +511,20 @@ jobs:
           # publish exactly 200 overall ranks and keep sequential position ranks.
           python scripts/test_ranking_formats.py
           python scripts/test_comparison_tool.py
+          python scripts/test_decision_room.py
+          python scripts/test_visual_regressions.py
+          python scripts/test_sport_experiences.py
+          python scripts/test_college_decision_room.py
+          python scripts/test_week1_intelligence.py
+          python scripts/test_my_team.py
+          python scripts/test_league_history.py
+          node scripts/test_league_history_publishing.mjs
+          node scripts/test_espn_roster_parser.js
+          node scripts/test_espn_safe_diagnostics.js
+          node scripts/test_espn_history_parser.js
+          node scripts/test_espn_history_extension.js
+          node scripts/test_my_team_browser.js
+          python scripts/test_chrome_store_bundle.py
           python scripts/test_feedback.py
           node --test feedback-worker/test/*.test.js
           python -m beatwire.cli doctor --sport nfl
@@ -711,10 +725,18 @@ jobs:
           # rollback restores it.
           python scripts/wire_homepage_replacement.py --apply
 
+          # Product experiences layered over the approved public model. These
+          # are the same builders and gates used by the isolated development
+          # site so promotion cannot silently drop Decision Room, My Team, or
+          # League History.
+          python scripts/build_decision_room.py
+
           # Again, so the projection chips read the board that
           # was just rebuilt. Last, so the sitemap it writes includes
           # the college URLs added above.
           python scripts/build_pages.py --base https://lineupbeat.com
+          python scripts/build_my_team.py
+          python scripts/build_league_history.py
 
           # Last, and against the directory wrangler uploads rather than the
           # build that produced it.

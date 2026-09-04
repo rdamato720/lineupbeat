@@ -88,7 +88,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: lineupbeat-espn-cws-submission-${{ github.run_id }}
-          path: build/chrome-web-store/lineupbeat-espn-my-team-beta-0.3.0.zip
+          path: build/chrome-web-store/lineupbeat-espn-connector-0.3.0.zip
           if-no-files-found: error
           retention-days: 14
 

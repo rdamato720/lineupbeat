@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build deterministic Chrome Web Store beta artifacts."""
+"""Build deterministic Chrome Web Store release artifacts."""
 
 from __future__ import annotations
 
@@ -59,7 +59,7 @@ def build(output: Path) -> dict:
     manifest = json.loads((EXTENSION / "manifest.json").read_text())
     version = manifest["version"]
     output.mkdir(parents=True, exist_ok=True)
-    package = output / f"lineupbeat-espn-my-team-beta-{version}.zip"
+    package = output / f"lineupbeat-espn-connector-{version}.zip"
     write_package(package)
 
     listing = output / "listing-materials"

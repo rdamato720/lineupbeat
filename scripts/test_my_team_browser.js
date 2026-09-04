@@ -116,8 +116,8 @@ async function main(){
   const roster={private:'browser-local-test'};
   const captured=await send('LB_CAPTURE_ESPN_ROSTER','https://fantasy.espn.com/football/team?leagueId=1',roster);
   assert.equal(captured.ok,true);assert.equal(captured.opened,true);
-  assert.deepEqual(opened,['https://lineupbeat-dev.pages.dev/my-team/']);
-  for(const url of ['https://lineupbeat-dev.pages.dev/','https://lineupbeat-dev.pages.dev/decision-room/nfl/','https://lineupbeat.com/my-team/','http://localhost/my-team/','http://127.0.0.1/my-team/']){
+  assert.deepEqual(opened,['https://lineupbeat.com/my-team/']);
+  for(const url of ['https://lineupbeat-dev.pages.dev/','https://lineupbeat-dev.pages.dev/decision-room/nfl/','https://lineupbeat.com/','https://lineupbeat.com/decision-room/nfl/','http://localhost/my-team/','http://127.0.0.1/my-team/']){
     const get=await send('LB_GET_ESPN_ROSTER',url);
     assert.equal(get.ok,false);assert.equal(get.payload,undefined);
     const clear=await send('LB_CLEAR_ESPN_ROSTER',url);
@@ -125,6 +125,8 @@ async function main(){
   }
   const validGet=await send('LB_GET_ESPN_ROSTER','https://lineupbeat-dev.pages.dev/my-team/?league=1');
   assert.deepEqual(validGet.payload,roster);
+  assert.deepEqual((await send('LB_GET_ESPN_ROSTER','https://lineupbeat.com/my-team/')).payload,roster);
+  assert.deepEqual((await send('LB_GET_ESPN_ROSTER','https://www.lineupbeat.com/my-team/')).payload,roster);
   assert.equal((await send('LB_CLEAR_ESPN_ROSTER','https://lineupbeat-dev.pages.dev/my-team/')).ok,true);
   assert.equal((await send('LB_GET_ESPN_ROSTER','https://lineupbeat-dev.pages.dev/my-team/')).payload,null);
   const reviewRoster={provider:'espn',league:{id:'review'},roster:[]};

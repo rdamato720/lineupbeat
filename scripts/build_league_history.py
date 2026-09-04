@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Build the unlisted league-history development prototype."""
+"""Build the LineupBeat league-history experience."""
 
 from __future__ import annotations
 
 import html
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -21,6 +22,21 @@ DATA_OUT = ROOT / "site/data/league-history-demo.json"
 PAGE_OUT = ROOT / "site/league-history/index.html"
 DASHBOARD_SOURCE = ROOT / "league_history/dashboard.js"
 DASHBOARD_OUT = ROOT / "site/assets/league-history-dashboard.js"
+
+
+def append_sitemap() -> None:
+    path = ROOT / "site/sitemap.xml"
+    if not path.exists():
+        return
+    text = path.read_text()
+    if "/league-history/" in text:
+        return
+    origin_match = re.search(r"<loc>(https://[^/<]+)", text)
+    origin = origin_match.group(1) if origin_match else "https://lineupbeat.com"
+    url = origin + "/league-history/"
+    path.write_text(text.replace(
+        "</urlset>", f"<url><loc>{html.escape(url)}</loc></url></urlset>"
+    ))
 
 
 def esc(value: object) -> str:
@@ -99,7 +115,7 @@ def build_page(canonical: dict, summary: dict) -> str:
     captured = canonical["import"].get("capturedAt", "")[:10]
     title = esc(summary["league"]["name"])
     styles = r'''
-    :root{--gold:#d6ad55;--gold2:#f4d88a;--panel:#111518;--panel2:#161b1f}
+    :root{--gold:var(--signal);--gold2:var(--signal);--panel:#111518;--panel2:#161b1f}
     body{margin:0;background:#08090b;color:#f2f1ec;font-family:var(--text);font-size:16px}
     a{color:inherit}.lh{max-width:76rem;margin:0 auto;padding:1.4rem 1rem 5rem}
     .lh-status{display:flex;gap:.65rem;align-items:center;color:var(--muted);font:700 .72rem/1.2 var(--agate);letter-spacing:.08em;text-transform:uppercase}
@@ -131,7 +147,7 @@ def build_page(canonical: dict, summary: dict) -> str:
 
     /* League History uses the same visual system as the Decision Room. */
     :root{--history-bg:#080c0b;--history-panel:#111715;--history-panel-2:#0d1210;--history-line:#29312d;--history-muted:#aeb7b0}
-    body{position:relative;isolation:isolate;background:radial-gradient(circle at 50% 9rem,rgba(29,40,37,.52),transparent 34rem),var(--history-bg);color:var(--ink);font-family:var(--agate)}
+    body{position:relative;isolation:isolate;background:radial-gradient(circle at 50% 9rem,rgba(29,40,37,.52),transparent 34rem),var(--history-bg);color:var(--ink);font-family:var(--text)}
     .lh{position:relative;z-index:2;max-width:74rem;padding:1rem 1.25rem 5rem}
     .lh-atmosphere{position:absolute;z-index:0;inset:3.8rem 0 auto;height:52rem;overflow:hidden;pointer-events:none}
     .lh-atmosphere::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,#000 0,rgba(0,0,0,.38) 62%,transparent 100%)}
@@ -149,7 +165,7 @@ def build_page(canonical: dict, summary: dict) -> str:
     .import-card,.card,.record-card,.manager-card,.season-card{border-color:var(--history-line);background:var(--history-panel)}
     .history-ready .import-card{margin:.75rem 0 0;padding:.75rem 1rem;background:#0d1210}
     .import-copy strong{color:var(--ink);font-size:.9rem}.history-ready .import-copy strong{color:var(--signal)}
-    .import-copy span{font-size:.82rem}.import-actions button{border-radius:0;background:var(--signal)}
+    .import-copy span{font-size:.82rem}.import-actions button,.import-actions a{display:inline-flex;align-items:center;justify-content:center;border-radius:0;background:var(--signal);color:#08100c;padding:.72rem .95rem;font:800 .78rem var(--agate);letter-spacing:.03em;text-transform:uppercase;text-decoration:none}.has-import #install-connector{display:none}
     .import-actions .quiet,.has-import .import-actions .quiet{background:transparent;border:1px solid #39433e;color:var(--history-muted)}
     .tabs{top:3.65rem;gap:1.4rem;padding:1rem .15rem .65rem;background:#080c0bf2;border-color:var(--history-line)}
     .tab{position:relative;padding:.55rem 0;border-radius:0;background:transparent;color:var(--history-muted);font-size:.72rem}
@@ -187,7 +203,7 @@ def build_page(canonical: dict, summary: dict) -> str:
     .publish-controls{display:grid;gap:.7rem;min-width:20rem}.visibility-options{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}.visibility-option{position:relative;display:grid;gap:.15rem;padding:.7rem .8rem;border:1px solid #39433e;background:#0a0e0c;cursor:pointer}.visibility-option:has(input:checked){border-color:var(--signal);background:#141b0d}.visibility-option input{position:absolute;opacity:0}.visibility-option strong{font:800 .82rem var(--agate)}.visibility-option span{color:var(--history-muted);font:500 .75rem/1.35 var(--agate)}
     .publish-action{display:flex;justify-content:flex-end}.publish-action button,.publish-result button,.restore-publication button{border:0;border-radius:0;background:var(--signal);color:#08100c;padding:.72rem .9rem;font:800 .78rem var(--agate);letter-spacing:.03em;text-transform:uppercase;cursor:pointer}.publish-action button:disabled,.publish-result button:disabled,.restore-publication button:disabled{opacity:.45;cursor:wait}.publish-status{grid-column:1/-1;min-height:1.3rem;margin:0;color:var(--gold2);font:500 .85rem/1.4 var(--agate)}
     .publish-result{grid-column:1/-1;display:grid;gap:.7rem;padding-top:.8rem;border-top:1px solid var(--history-line)}.published-link{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.6rem;align-items:center}.publish-result a{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--signal);font:600 .9rem var(--agate)}.publish-result-actions{display:flex;gap:.45rem}.publish-result button,.restore-publication button{background:transparent;color:var(--ink);border:1px solid #39433e}.publish-result button.danger{color:#ff9a90;border-color:#7b423d}.publication-management,.restore-publication{grid-column:1/-1;border-top:1px solid var(--history-line);padding-top:.65rem}.publication-management summary,.restore-publication summary{cursor:pointer;color:var(--history-muted);font:800 .72rem var(--agate);letter-spacing:.04em;text-transform:uppercase}.publication-management p,.restore-publication p{margin:.6rem 0;color:var(--history-muted);font:500 .8rem/1.45 var(--agate)}.recovery-key-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.45rem}.recovery-key-row code{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border:1px solid #39433e;background:#080c0b;padding:.7rem;color:var(--ink);font:.78rem var(--data)}.restore-fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:.45rem;align-items:end}.restore-fields label{display:grid;gap:.25rem;color:var(--history-muted);font:800 .66rem var(--agate);letter-spacing:.04em;text-transform:uppercase}.restore-fields input{min-width:0;border:1px solid #39433e;background:#080c0b;color:var(--ink);padding:.7rem;font:500 .8rem var(--agate)}
-    .shared-history.history-ready .import-card,.shared-history .publish-panel{display:none}.shared-history:not(.history-ready) .tabs,.shared-history:not(.history-ready) .panel,.shared-history:not(.history-ready) .lh-footer{display:none!important}.shared-history-error .import-card{display:block}.shared-history .import-actions button{display:none}.shared-history-error #retry-shared-league{display:inline-flex}
+    .history-empty .tabs,.history-empty .panel,.history-empty .lh-footer{display:none!important}.history-ready .tabs,.history-ready .lh-footer{display:flex!important}.shared-history.history-ready .import-card,.shared-history .publish-panel{display:none}.shared-history:not(.history-ready) .tabs,.shared-history:not(.history-ready) .panel,.shared-history:not(.history-ready) .lh-footer{display:none!important}.shared-history-error .import-card{display:block}.shared-history .import-actions button,.shared-history .import-actions a{display:none}.shared-history-error #retry-shared-league{display:inline-flex}
 
     .history-subsection{margin-top:2.5rem}.history-subsection>.section-head{margin-bottom:1rem}
     #records .record-grid,#trophies .record-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -302,22 +318,22 @@ def build_page(canonical: dict, summary: dict) -> str:
         if(event.data.type==='LB_LEAGUE_HISTORY_EXTENSION_READY'){say(event.data.hasHistory?'ESPN import found. Loading review…':'Connector ready. Import from an ESPN league page.');clear.hidden=!event.data.hasHistory;}
         if(event.data.type==='LB_LEAGUE_HISTORY_CAPTURE')render({payload:event.data.payload,review:event.data.review});
         if(event.data.type==='LB_LEAGUE_HISTORY_REVIEW_COMPLETE'){if(event.data.ok){state.dirty=false;updateSave();result.textContent='Manager matches saved.';finishSetup();}else result.textContent='Manager matches could not be saved.';}
-        if(event.data.type==='LB_LEAGUE_HISTORY_CLEAR_COMPLETE'){state.capture=null;state.review=null;state.identities=[];state.pairs=[];state.choices={};detail.classList.remove('open');managerReview.classList.remove('is-complete');setupReady.hidden=true;clear.hidden=true;check.hidden=false;document.body.classList.remove('has-import');leagueTitle.textContent=leagueTitle.dataset.demo;headerSeasons.textContent=headerSeasons.dataset.demo;headerGames.textContent=headerGames.dataset.demo;headerTeams.textContent=headerTeams.dataset.demo;ambientSeasons.textContent=ambientSeasons.dataset.demo;ambientGames.textContent=ambientGames.dataset.demo;document.title=leagueTitle.dataset.demo+' League History | LineupBeat';say('Local ESPN import cleared.');}
+        if(event.data.type==='LB_LEAGUE_HISTORY_CLEAR_COMPLETE'){state.capture=null;state.review=null;state.identities=[];state.pairs=[];state.choices={};detail.classList.remove('open');managerReview.classList.remove('is-complete');setupReady.hidden=true;clear.hidden=true;check.hidden=false;document.body.classList.remove('has-import');leagueTitle.textContent=leagueTitle.dataset.demo;headerSeasons.textContent=headerSeasons.dataset.demo;headerGames.textContent=headerGames.dataset.demo;headerTeams.textContent=headerTeams.dataset.demo;ambientSeasons.textContent=ambientSeasons.dataset.demo;ambientGames.textContent=ambientGames.dataset.demo;document.title='League History | LineupBeat';say('Local ESPN import cleared.');}
       });
     }());</script>'''
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>{title} League History | LineupBeat</title><meta name="robots" content="noindex,nofollow">
-    <meta name="description" content="Development prototype for the LineupBeat fantasy football league history tracker.">
-    <style>{seo.SHELL_CSS}{seo.TEAMS_CSS}{seo.NAV_CSS}{styles}</style></head><body>
+    <title>League History | LineupBeat</title><meta name="robots" content="index,follow"><link rel="canonical" href="https://lineupbeat.com/league-history/">
+    <meta name="description" content="Import, review, and share your ESPN fantasy football league history with LineupBeat.">
+    <style>{seo.SHELL_CSS}{seo.TEAMS_CSS}{seo.NAV_CSS}{styles}</style></head><body class="history-empty">
     {seo.site_nav('league_history', 'nfl')}
     <div class="lh-atmosphere" aria-hidden="true">
-      <div class="lh-ambient-card lh-ambient-seasons"><span>Season archive</span><strong id="ambient-seasons" data-demo="{summary['counts']['seasons']}">{summary['counts']['seasons']}</strong><small>Seasons indexed</small><svg class="lh-ambient-trace" viewBox="0 0 180 52" focusable="false"><polyline points="2,43 24,31 47,36 70,18 94,28 119,11 145,21 178,5"/></svg></div>
-      <div class="lh-ambient-card lh-ambient-games"><span>Matchup ledger</span><strong id="ambient-games" data-demo="{summary['counts']['games']}">{summary['counts']['games']}</strong><small>Games preserved</small><div class="lh-ambient-bars"><i style="--w:91%"></i><i style="--w:73%"></i><i style="--w:58%"></i><i style="--w:42%"></i></div></div>
+      <div class="lh-ambient-card lh-ambient-seasons"><span>Season archive</span><strong id="ambient-seasons" data-demo="—">—</strong><small>Seasons indexed</small><svg class="lh-ambient-trace" viewBox="0 0 180 52" focusable="false"><polyline points="2,43 24,31 47,36 70,18 94,28 119,11 145,21 178,5"/></svg></div>
+      <div class="lh-ambient-card lh-ambient-games"><span>Matchup ledger</span><strong id="ambient-games" data-demo="—">—</strong><small>Games preserved</small><div class="lh-ambient-bars"><i style="--w:91%"></i><i style="--w:73%"></i><i style="--w:58%"></i><i style="--w:42%"></i></div></div>
     </div>
-    <main class="lh"><div class="lh-status"><i></i>private local import</div>
-      <header class="lh-head"><div><span class="lh-kicker">League history</span><h1 id="league-title" data-demo="{title}">{title}</h1></div>
-      <div class="lh-meta"><div><b id="header-seasons" data-demo="{summary['counts']['seasons']}">{summary['counts']['seasons']}</b><span>seasons</span></div><div><b id="header-games" data-demo="{summary['counts']['games']}">{summary['counts']['games']}</b><span>matchups</span></div><div><b id="header-teams" data-demo="{summary['counts']['franchises']}">{summary['counts']['franchises']}</b><span>teams</span></div></div></header>
-      <section class="import-card" aria-labelledby="import-title"><div class="import-line"><div class="import-copy"><strong id="import-title">ESPN history import</strong><span id="import-status" role="status">Install connector 0.3.0, then import from your ESPN league page.</span></div><div class="import-actions"><button id="check-extension" type="button">Check connector</button><button id="edit-manager-matches" class="quiet" type="button" hidden>Manager matches</button><button id="clear-import" class="quiet" type="button" hidden>Remove import</button><button id="retry-shared-league" type="button" hidden>Try again</button></div></div>
+    <main class="lh"><div class="lh-status"><i></i>private by default</div>
+      <header class="lh-head"><div><span class="lh-kicker">League history</span><h1 id="league-title" data-demo="Your league history">Your league history</h1></div>
+      <div class="lh-meta"><div><b id="header-seasons" data-demo="—">—</b><span>seasons</span></div><div><b id="header-games" data-demo="—">—</b><span>matchups</span></div><div><b id="header-teams" data-demo="—">—</b><span>teams</span></div></div></header>
+      <section class="import-card" aria-labelledby="import-title"><div class="import-line"><div class="import-copy"><strong id="import-title">Build your league archive</strong><span id="import-status" role="status">Connect ESPN once to collect every available season, matchup, manager, and team name.</span></div><div class="import-actions"><a id="install-connector" href="/my-team/extension/">Set up ESPN connector</a><button id="check-extension" class="quiet" type="button">Check connection</button><button id="edit-manager-matches" class="quiet" type="button" hidden>Manager matches</button><button id="clear-import" class="quiet" type="button" hidden>Remove import</button><button id="retry-shared-league" type="button" hidden>Try again</button></div></div>
         <div class="import-summary" id="import-summary"><div class="capture-stats" id="capture-stats" hidden></div><section class="manager-review" id="manager-review"><div class="review-head"><div><span class="review-step" id="manager-step">One quick step</span><h2 id="manager-title">Match managers</h2><p id="manager-copy">ESPN found accounts with similar names. Tell us whether each pair belongs to the same person.</p></div><button class="quiet" id="review-managers" type="button" hidden>Review</button></div><div class="match-flow" id="match-flow" hidden><section class="match-card" id="match-card"><div class="match-progress"><span id="match-progress">Match 1</span><span>Possible duplicate</span></div><div class="match-people"><article class="person-card"><small>ESPN account A</small><strong id="person-a-name"></strong><div class="person-meta" id="person-a-meta"></div><details class="person-aliases"><summary id="person-a-teams-summary"></summary><p id="person-a-teams"></p></details></article><span class="match-or">and</span><article class="person-card"><small>ESPN account B</small><strong id="person-b-name"></strong><div class="person-meta" id="person-b-meta"></div><details class="person-aliases"><summary id="person-b-teams-summary"></summary><p id="person-b-teams"></p></details></article></div><p class="match-question">Are these the same person?</p><div class="choice-actions"><button id="same-person" type="button" aria-pressed="false">Yes, same person</button><button id="different-people" type="button" aria-pressed="false">No, different people</button></div></section><section class="match-complete" id="match-complete" hidden><h3 id="complete-title">Manager matches complete</h3><p id="complete-copy">You can change any answer before saving.</p><div class="decision-summary" id="decision-summary"></div><div class="import-actions"><button class="quiet" id="change-answers" type="button">Change answers</button></div></section></div><div class="review-footer"><p id="other-manager-count">Other managers already look distinct.</p><div class="import-actions"><button id="save-manager-matches" type="button" disabled>Save manager matches</button></div></div><p class="review-result" id="review-result" role="status"></p></section><section class="setup-ready" id="setup-ready" hidden><small>Setup complete</small><h2>Your league history is ready</h2><p>Every historical team and season is included automatically. Manager matches are saved on this device.</p></section></div></section>
       <section class="publish-panel" id="publish-panel" aria-labelledby="publish-title" hidden><div class="publish-copy"><span class="eyebrow">Share with your league</span><h2 id="publish-title">Publish league history</h2><p>Create one permanent, view-only link. Future imports update the same page.</p></div><div class="publish-controls"><div class="visibility-options"><label class="visibility-option"><input type="radio" name="league-visibility" value="unlisted" checked><strong>Unlisted</strong><span>Only people with the link</span></label><label class="visibility-option"><input type="radio" name="league-visibility" value="public"><strong>Public</strong><span>Ready for future discovery</span></label></div><div class="publish-action"><button id="publish-league" type="button">Create share link</button></div></div><div class="publish-result" id="publish-result" hidden><div class="published-link"><a id="published-url" href="#" target="_blank" rel="noopener"></a><div class="publish-result-actions"><button id="copy-published-url" type="button">Copy link</button><button id="unpublish-league" class="danger" type="button">Unpublish</button></div></div><details class="publication-management" id="publication-management"><summary>Recovery key</summary><p>Save this key somewhere private. It restores commissioner access on another browser.</p><div class="recovery-key-row"><code id="recovery-key-value"></code><button id="copy-recovery-key" type="button">Copy key</button></div></details></div><details class="restore-publication" id="restore-publication"><summary>Already published? Restore commissioner access</summary><p>Enter the share link and recovery key. They stay in this browser.</p><div class="restore-fields"><label>Share link<input id="restore-share-link" type="url" inputmode="url" autocomplete="off" placeholder="https://lineupbeat.com/leagues/..."></label><label>Recovery key<input id="restore-recovery-key" type="password" autocomplete="off"></label><button id="restore-publication-access" type="button">Restore access</button></div></details><p class="publish-status" id="publish-status" role="status"></p></section>
       <nav class="tabs" aria-label="League history sections">
@@ -328,7 +344,7 @@ def build_page(canonical: dict, summary: dict) -> str:
       <section class="panel active" id="overview"><div class="dashboard">
         <article class="card champ"><div><span class="eyebrow">Defending champion · {trophy['year']}</span></div><strong>{esc(manager[trophy['championFranchiseId']])}</strong><span class="season-mark">01</span></article>
         <article class="card power"><span class="eyebrow">Preseason Elo</span><h2>Power five</h2><ol>{power_rows}</ol></article></div>
-        <div class="notice"><strong>Prototype boundary:</strong> Dashboard results below remain fictional. Imported ESPN history appears only in the private review panel above and stays in this browser.</div></section>
+        <div class="notice"><strong>Private by default. </strong>Your ESPN archive is calculated in this browser.</div></section>
       <section class="panel" id="trophies"><div class="section-head"><div><span class="eyebrow">Hardware</span><h2>Trophy case</h2></div><p>Titles, scoring crowns, and runner-up finishes.</p></div>
         <div class="record-grid" id="trophy-cabinet"><article class="record-card"><small>{trophy['year']} champion</small><b>🏆</b><h3>{esc(manager[trophy['championFranchiseId']])}</h3><p>Final standing: 1</p></article>
         <article class="record-card"><small>{trophy['year']} runner-up</small><b>02</b><h3>{esc(manager[trophy['runnerUpFranchiseId']])}</h3><p>Championship finalist</p></article>
@@ -343,8 +359,8 @@ def build_page(canonical: dict, summary: dict) -> str:
         <div class="history-subsection"><div class="section-head weeks-head"><div><span class="eyebrow">Single weeks</span><h2 id="weeks-title">Biggest weeks ever</h2></div><div class="segmented" id="weeks-toggle"><button type="button" data-kind="best" aria-pressed="true">Highest</button><button type="button" data-kind="worst" aria-pressed="false">Lowest</button></div></div><div class="table-wrap"><table class="history-table top-weeks" id="top-weeks"></table></div></div>
         <div class="source-grid" style="margin-top:1rem"><article class="card"><span class="eyebrow">Design provenance</span><h2>Public reference</h2><p>Architecture and rating behavior informed by the public BGNCo repository. No participant records are copied into LineupBeat.</p></article>
         <article class="card"><span class="eyebrow">Privacy model</span><h2>League controlled</h2><ul><li>Private, unlisted, or public publishing</li><li>Permanent franchise IDs with alias review</li><li>Ledger records obligations; it never holds money</li></ul></article></div></section>
-      <footer class="lh-footer"><span>Fictional demonstration data · prototype calculations by LineupBeat.</span><span>Demo snapshot {esc(captured)}</span></footer>
-    </main>{script}<script src="/assets/league-history-dashboard.js"></script></body></html>'''
+      <footer class="lh-footer"><span>League history by LineupBeat.</span><span>Private until you publish.</span></footer>
+    </main>{seo.site_footer()}{script}<script src="/assets/league-history-dashboard.js"></script></body></html>'''
 
 
 def main() -> int:
@@ -357,6 +373,7 @@ def main() -> int:
     DATA_OUT.write_text(json.dumps(payload, sort_keys=True, separators=(",", ":")) + "\n")
     PAGE_OUT.write_text(build_page(canonical, summary))
     DASHBOARD_OUT.write_text(DASHBOARD_SOURCE.read_text())
+    append_sitemap()
     print(f"Built {PAGE_OUT.relative_to(ROOT)} from {summary['counts']['games']} matchups")
     return 0
 

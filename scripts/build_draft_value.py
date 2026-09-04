@@ -575,7 +575,7 @@ def site_chrome():
         return "", "", ""
     src = tpl.read_text()
     css = re.search(r"<style>(.*?)</style>", src, re.S)
-    header = seo.site_nav(None)
+    header = seo.site_nav("data")
     return (css.group(1) if css else ""), header, seo.site_footer()
 
 

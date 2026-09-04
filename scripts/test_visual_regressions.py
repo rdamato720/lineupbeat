@@ -40,6 +40,12 @@ class VisualRegressionTests(unittest.TestCase):
         header = build_decision_room.sport_header("college", "decision")
         self.assertIn('aria-current="page">Decision</a>', header)
         self.assertIn('aria-pressed="true">COLLEGE</a>', header)
+        self.assertIn("font-family:var(--text)", build_decision_room.CSS)
+
+    def test_homepage_uses_lineupbeat_accent_for_both_sports(self):
+        self.assertNotIn("#6de0bd", build_decision_room.CSS.lower())
+        self.assertIn(".hp-college", build_decision_room.CSS)
+        self.assertIn("border-top-color:var(--lime)", build_decision_room.CSS)
 
     def test_reviewed_archive_card_palette_has_accessible_contrast(self):
         css = build_decision_room.WIRE_PAGE_CSS

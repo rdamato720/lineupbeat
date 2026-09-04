@@ -84,12 +84,12 @@ class ChromeStoreManifestTests(unittest.TestCase):
     def setUp(self):
         self.manifest = json.loads((EXTENSION / "manifest.json").read_text())
 
-    def test_exact_hosts_minimal_permissions_and_beta_version(self):
+    def test_exact_hosts_minimal_permissions_and_release_version(self):
         self.assertEqual(self.manifest["manifest_version"], 3)
         self.assertEqual(self.manifest["version"], "0.3.0")
-        self.assertTrue(self.manifest["name"].endswith("BETA"))
+        self.assertEqual(self.manifest["name"], "Lineup Beat ESPN Connector")
         self.assertLessEqual(len(self.manifest["description"]), 132)
-        self.assertIn("THIS EXTENSION IS FOR BETA TESTING", self.manifest["description"])
+        self.assertNotIn("BETA", self.manifest["description"])
         self.assertEqual(self.manifest["permissions"], ["storage"])
         self.assertEqual(self.manifest["host_permissions"],
                          ["https://lm-api-reads.fantasy.espn.com/*"])
@@ -97,15 +97,20 @@ class ChromeStoreManifestTests(unittest.TestCase):
             [script["matches"] for script in self.manifest["content_scripts"]],
             [["https://fantasy.espn.com/football/*"],
              ["https://lineupbeat-dev.pages.dev/my-team/*"],
-             ["https://lineupbeat-dev.pages.dev/league-history/*"]],
+             ["https://lineupbeat-dev.pages.dev/league-history/*"],
+             ["https://lineupbeat.com/my-team/*",
+              "https://lineupbeat.com/league-history/*",
+              "https://www.lineupbeat.com/my-team/*",
+              "https://www.lineupbeat.com/league-history/*"]],
         )
         self.assertEqual(
             [script["js"] for script in self.manifest["content_scripts"]],
             [["espn-roster-parser.js", "espn-history-parser.js", "content.js"],
-             ["content.js"], ["content.js"]],
+             ["content.js"], ["content.js"], ["content.js"]],
         )
         encoded = json.dumps(self.manifest)
-        for forbidden in ("lineupbeat.com", "localhost", "127.0.0.1", "<all_urls>", '"cookies"', '"tabs"'):
+        for forbidden in ("https://lineupbeat.com/*", "https://www.lineupbeat.com/*",
+                          "localhost", "127.0.0.1", "<all_urls>", '"cookies"', '"tabs"'):
             self.assertNotIn(forbidden, encoded)
 
     def test_icons_are_required_png_dimensions_with_store_padding(self):
@@ -195,7 +200,7 @@ class ChromeStoreBundleTests(unittest.TestCase):
     def test_listing_is_complete_and_version_consistent(self):
         listing = (LISTING / "STORE_LISTING.md").read_text()
         for required in (
-            "Lineup Beat ESPN Connector BETA", "0.3.0", "Short summary",
+            "Lineup Beat ESPN Connector", "0.3.0", "Short summary",
             "Detailed description", "Single purpose", "Permission justification",
             "Data-use selections", "Support URL", "Privacy policy URL",
             "Test instructions", "Unlisted", "Future Chrome Web Store steps — currently blocked",
@@ -241,7 +246,7 @@ class ChromeStoreBundleTests(unittest.TestCase):
         self.assertIn("lineupbeat-espn-cws-submission-${{ github.run_id }}", workflow)
         self.assertIn("lineupbeat-espn-cws-listing-${{ github.run_id }}", workflow)
         self.assertIn(
-            "build/chrome-web-store/lineupbeat-espn-my-team-beta-0.3.0.zip",
+            "build/chrome-web-store/lineupbeat-espn-connector-0.3.0.zip",
             workflow,
         )
         self.assertIn("build/chrome-web-store/listing-materials", workflow)

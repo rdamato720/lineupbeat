@@ -1,4 +1,4 @@
-# Lineup Beat ESPN Connector BETA
+# Lineup Beat ESPN Connector
 
 This unpacked Manifest V3 extension supports two explicit, browser-local ESPN
 flows: saving the roster visible on an ESPN Fantasy Football team page for My
@@ -7,7 +7,7 @@ History. It does not request cookie permission, read or store passwords,
 cookies, or session tokens, or upload either dataset to a Lineup Beat server.
 
 1. Download the submission artifact from the successful development workflow,
-   or download beta version 0.3.0 from the development support page, and unzip the
+   or download version 0.3.0 from the support page, and unzip the
    store package.
 2. Open `chrome://extensions`, enable Developer mode, choose **Load unpacked**,
    and select the unzipped directory.
@@ -31,9 +31,8 @@ The diagnostic is created only by that click, copied only to the local
 clipboard, excludes roster and identity content, and makes no network request.
 
 The extension is host-limited to ESPN Fantasy Football, ESPN's fantasy read API,
-and the isolated Lineup Beat development My Team and League History routes. It
-cannot run on other development routes, localhost, loopback addresses, or
-production.
+and the exact Lineup Beat production and development My Team and League History
+routes. It cannot run on other Lineup Beat routes, localhost, or loopback addresses.
 
 Privacy policy:
-`https://lineupbeat-dev.pages.dev/my-team/extension/privacy/`
+`https://lineupbeat.com/my-team/extension/privacy/`

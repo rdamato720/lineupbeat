@@ -4,7 +4,9 @@ const ROSTER_KEY = 'lineupBeatEspnRosterV1';
 const HISTORY_KEY = 'lineupBeatEspnHistoryV1';
 const ESPN_ORIGIN = 'https://fantasy.espn.com';
 const ESPN_PATH = '/football/';
-const MY_TEAM_ORIGIN = 'https://lineupbeat-dev.pages.dev';
+const MY_TEAM_ORIGIN = 'https://lineupbeat.com';
+const SITE_ORIGINS = [MY_TEAM_ORIGIN, 'https://www.lineupbeat.com',
+  'https://lineupbeat-dev.pages.dev'];
 const MY_TEAM_PATH = '/my-team/';
 const MY_TEAM_URL = `${MY_TEAM_ORIGIN}${MY_TEAM_PATH}`;
 const HISTORY_PATH = '/league-history/';
@@ -12,10 +14,11 @@ const HISTORY_URL = `${MY_TEAM_ORIGIN}${HISTORY_PATH}`;
 const ESPN_API_ORIGIN = 'https://lm-api-reads.fantasy.espn.com';
 const ESPN_VIEWS = ['mTeam', 'mRoster', 'mMatchup', 'mSettings', 'mStandings'];
 
-function senderMatches(sender, origin, path) {
+function senderMatches(sender, origins, path) {
   try {
     const url = new URL((sender && sender.url) || '');
-    return url.origin === origin && url.pathname.startsWith(path);
+    const allowed = Array.isArray(origins) ? origins : [origins];
+    return allowed.includes(url.origin) && url.pathname.startsWith(path);
   } catch (_error) {
     return false;
   }
@@ -134,7 +137,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 
   if (message.type === 'LB_SAVE_REVIEW_DEMO_ROSTER') {
-    if (!senderMatches(sender, MY_TEAM_ORIGIN, MY_TEAM_PATH)) return reject(sendResponse);
+    if (!senderMatches(sender, SITE_ORIGINS, MY_TEAM_PATH)) return reject(sendResponse);
     saveRoster(message.payload, false)
       .then(sendResponse)
       .catch(() => sendResponse({ok: false, error: 'local_storage_failed'}));
@@ -142,7 +145,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 
   if (message.type === 'LB_GET_ESPN_ROSTER') {
-    if (!senderMatches(sender, MY_TEAM_ORIGIN, MY_TEAM_PATH)) return reject(sendResponse);
+    if (!senderMatches(sender, SITE_ORIGINS, MY_TEAM_PATH)) return reject(sendResponse);
     chrome.storage.local.get(ROSTER_KEY)
       .then(result => sendResponse({ok: true, payload: result[ROSTER_KEY] || null}))
       .catch(() => sendResponse({ok: false, error: 'local_storage_failed'}));
@@ -150,7 +153,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 
   if (message.type === 'LB_CLEAR_ESPN_ROSTER') {
-    if (!senderMatches(sender, MY_TEAM_ORIGIN, MY_TEAM_PATH)) return reject(sendResponse);
+    if (!senderMatches(sender, SITE_ORIGINS, MY_TEAM_PATH)) return reject(sendResponse);
     chrome.storage.local.remove(ROSTER_KEY)
       .then(() => sendResponse({ok: true}))
       .catch(() => sendResponse({ok: false, error: 'local_storage_failed'}));
@@ -166,7 +169,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 
   if (message.type === 'LB_GET_ESPN_HISTORY') {
-    if (!senderMatches(sender, MY_TEAM_ORIGIN, HISTORY_PATH)) return reject(sendResponse);
+    if (!senderMatches(sender, SITE_ORIGINS, HISTORY_PATH)) return reject(sendResponse);
     chrome.storage.local.get(HISTORY_KEY)
       .then(result => sendResponse({ok: true, record: result[HISTORY_KEY] || null}))
       .catch(() => sendResponse({ok: false, error: 'local_storage_failed'}));
@@ -174,7 +177,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 
   if (message.type === 'LB_SAVE_ESPN_HISTORY_REVIEW') {
-    if (!senderMatches(sender, MY_TEAM_ORIGIN, HISTORY_PATH)) return reject(sendResponse);
+    if (!senderMatches(sender, SITE_ORIGINS, HISTORY_PATH)) return reject(sendResponse);
     chrome.storage.local.get(HISTORY_KEY).then(async result => {
       const record = result[HISTORY_KEY];
       if (!record || !validReview(message.review, record)) {
@@ -189,7 +192,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 
   if (message.type === 'LB_CLEAR_ESPN_HISTORY') {
-    if (!senderMatches(sender, MY_TEAM_ORIGIN, HISTORY_PATH)) return reject(sendResponse);
+    if (!senderMatches(sender, SITE_ORIGINS, HISTORY_PATH)) return reject(sendResponse);
     chrome.storage.local.remove(HISTORY_KEY)
       .then(() => sendResponse({ok: true}))
       .catch(() => sendResponse({ok: false, error: 'local_storage_failed'}));

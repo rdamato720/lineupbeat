@@ -188,18 +188,35 @@ def check_my_team(root):
         manifest, worker, package_files = {}, "", []
     scripts = manifest.get("content_scripts") or [{}, {}]
     matches = scripts[1].get("matches") if len(scripts) > 1 else None
-    check("the development download is the restricted nine-file version 0.3.0 package",
+    encoded_manifest = json.dumps(manifest)
+    expected_site_matches = {
+        "https://lineupbeat-dev.pages.dev/my-team/*",
+        "https://lineupbeat-dev.pages.dev/league-history/*",
+        "https://lineupbeat.com/my-team/*",
+        "https://lineupbeat.com/league-history/*",
+        "https://www.lineupbeat.com/my-team/*",
+        "https://www.lineupbeat.com/league-history/*",
+    }
+    actual_site_matches = {
+        match for script in scripts[1:]
+        for match in (script.get("matches") or [])
+    }
+    check("the download is the restricted nine-file version 0.3.0 package",
           manifest.get("version") == "0.3.0"
           and len(package_files) == 9
           and matches == ["https://lineupbeat-dev.pages.dev/my-team/*"]
-          and "localhost" not in json.dumps(manifest)
-          and "127.0.0.1" not in json.dumps(manifest)
-          and "https://lineupbeat.com" not in json.dumps(manifest)
+          and actual_site_matches == expected_site_matches
+          and "https://lineupbeat.com/*" not in encoded_manifest
+          and "https://www.lineupbeat.com/*" not in encoded_manifest
+          and "localhost" not in encoded_manifest
+          and "127.0.0.1" not in encoded_manifest
           and package_files[:5] == ["manifest.json", "background.js", "espn-roster-parser.js", "espn-history-parser.js", "content.js"])
     check("the development download validates capture, retrieval, and clear senders",
           "ESPN_ORIGIN = 'https://fantasy.espn.com'" in worker
           and "ESPN_PATH = '/football/'" in worker
-          and "MY_TEAM_ORIGIN = 'https://lineupbeat-dev.pages.dev'" in worker
+          and "MY_TEAM_ORIGIN = 'https://lineupbeat.com'" in worker
+          and "'https://lineupbeat-dev.pages.dev'" in worker
+          and "'https://www.lineupbeat.com'" in worker
           and "MY_TEAM_PATH = '/my-team/'" in worker
           and worker.count("return reject(sendResponse)") == 8)
     support = root / "my-team" / "extension" / "index.html"
@@ -213,10 +230,10 @@ def check_my_team(root):
           and "Neither flow uploads private ESPN data" in privacy_text
           and "Clear each copy" in privacy_text
           and "No ESPN password, cookie value, session token" in privacy_text)
-    check("extension support exposes the labeled development package",
+    check("extension support exposes the labeled direct download",
           'href="/my-team/lineupbeat-espn-extension.zip"' in support_text
           and "Download version 0.3.0" in support_text
-          and "Development package" in support_text)
+          and "Direct download" in support_text)
     model_path = root / "data" / "my-team-week1.json"
     try:
         model = json.loads(model_path.read_text())
@@ -289,17 +306,20 @@ def check_development_repairs(root):
 
 
 def check_league_history(root):
-    """The unlisted prototype and its canonical source must survive the build."""
+    """The private-first experience and its canonical source must survive the build."""
     page = root / "league-history" / "index.html"
     text = page.read_text() if page.is_file() else ""
-    check("League History has a dedicated unlisted development route",
+    check("League History has a dedicated route",
           bool(text) and "League history" in text, str(page))
-    check("League History is noindex and labels its fictional prototype data",
+    check("League History opens in a clear private setup state",
           bool(re.search(r'name="robots" content="noindex,\s*nofollow(?:,\s*noarchive)?"', text))
-          and "private local import" in text
-          and "ESPN history import" in text
-          and "Prototype boundary" in text
-          and "fictional" in text)
+          and 'body class="history-empty"' in text
+          and "private by default" in text
+          and "Build your league archive" in text
+          and "Set up ESPN connector" in text
+          and "Prototype boundary" not in text
+          and "Fictional demonstration data" not in text
+          and '<footer class="global-footer">' in text)
     payload_path = root / "data" / "league-history-demo.json"
     try:
         payload = json.loads(payload_path.read_text())
@@ -321,8 +341,8 @@ def check_league_history(root):
               ("Adrian Chadzynski", "Ralph Damato", "Bobby Digital")))
     sitemap = root / "sitemap.xml"
     sitemap_text = sitemap.read_text() if sitemap.is_file() else ""
-    check("League History remains unlisted while the importer is unfinished",
-          "/league-history/" not in sitemap_text)
+    check("League History landing is discoverable without listing shared leagues",
+          "/league-history/" in sitemap_text and "/leagues/" not in sitemap_text)
 
 
 def check_homepage(root, decision_room=False):

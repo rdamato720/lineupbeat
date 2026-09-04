@@ -112,7 +112,7 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertIn("Connect ESPN extension", page)
         self.assertIn("Disconnect &amp; clear", page)
         self.assertIn("Roster data never leaves this browser", page)
-        self.assertEqual(page.count("Available in this development release"), 1)
+        self.assertEqual(page.count("Supported connection"), 1)
         self.assertNotIn("Connect Yahoo", page)
         self.assertNotIn("Connect CBS", page)
         self.assertNotIn("Cloudflare Web Analytics", page)
@@ -146,7 +146,7 @@ class MyTeamArtifactTests(unittest.TestCase):
             self.assertIn("chrome.storage.local", privacy.read_text())
             self.assertIn("No private-data upload", privacy.read_text())
 
-    def test_extension_has_no_secret_permissions_or_production_access(self):
+    def test_extension_has_minimal_permissions_and_exact_site_access(self):
         manifest = json.loads((ROOT / "extensions" / "lineupbeat-espn" / "manifest.json").read_text())
         self.assertEqual(manifest["permissions"], ["storage"])
         self.assertEqual(manifest["host_permissions"],
@@ -160,10 +160,16 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertEqual(manifest["content_scripts"][1]["js"], ["content.js"])
         self.assertEqual(manifest["content_scripts"][2]["matches"],
                          ["https://lineupbeat-dev.pages.dev/league-history/*"])
+        self.assertEqual(manifest["content_scripts"][3]["matches"], [
+            "https://lineupbeat.com/my-team/*",
+            "https://lineupbeat.com/league-history/*",
+            "https://www.lineupbeat.com/my-team/*",
+            "https://www.lineupbeat.com/league-history/*",
+        ])
         encoded = json.dumps(manifest)
         self.assertNotIn("cookies", encoded)
-        self.assertNotIn("lineupbeat.com", encoded)
-        for forbidden in ("https://lineupbeat-dev.pages.dev/*", "localhost", "127.0.0.1"):
+        for forbidden in ("https://lineupbeat-dev.pages.dev/*", "https://lineupbeat.com/*",
+                          "https://www.lineupbeat.com/*", "localhost", "127.0.0.1"):
             self.assertNotIn(forbidden, encoded)
         content = (ROOT / "extensions" / "lineupbeat-espn" / "content.js").read_text()
         self.assertNotIn("fetch(", content)

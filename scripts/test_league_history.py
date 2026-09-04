@@ -74,7 +74,7 @@ def main() -> int:
     page = outputs[0].read_text()
     dashboard = outputs[2].read_text()
     for required in ("League history", "Trophy case", "All-time leaders", "Managers",
-                     "League records", "noindex,nofollow", "ESPN history import",
+                     "League records", "index,follow", "Build your league archive",
                      "Save manager matches", "LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST",
                      "Are these the same person?", "Yes, same person",
                      "No, different people", "One quick step", "data-demo=",
@@ -101,8 +101,15 @@ def main() -> int:
                      ".shared-history.history-ready .import-card",
                      ".shared-history-error #retry-shared-league",
                      ".visibility-options{grid-template-columns:1fr}",
-                     "96", "Prototype boundary", "fictional"):
+                     'body class="history-empty"', "Set up ESPN connector",
+                     "private by default", "96"):
         assert required in page, required
+    assert "Prototype boundary" not in page
+    assert "Fictional demonstration data" not in page
+    assert "#d6ad55" not in page
+    assert "#f4d88a" not in page
+    assert '<footer class="global-footer">' in page
+    assert '<link rel="canonical" href="https://lineupbeat.com/league-history/">' in page
     assert "identity.seasons.join(', ')+' · '+identity.teamNames.join(' / ')" not in page
     assert "Merge into " not in page
     assert "MANAGER NAME" not in page
@@ -131,6 +138,8 @@ def main() -> int:
                      "Save the key under Recovery key.",
                      "This browser could not save access",
                      "Shared league history · view only.",
+                     "document.body.classList.remove('history-empty')",
+                     "document.body.classList.add('history-empty')",
                      "Shared by your commissioner.",
                      "ESPN credentials and private league access are not included."):
         assert required in dashboard, required

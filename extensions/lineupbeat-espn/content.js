@@ -427,7 +427,7 @@
     const diagnostics = document.createElement('button');
     const status = document.createElement('p');
 
-    heading.textContent = 'Lineup Beat ESPN Connector BETA';
+    heading.textContent = 'Lineup Beat ESPN Connector';
     disclosure.textContent = 'Save your roster or import league history. Data stays in this browser for review; passwords and session values are never read or stored.';
     privacy.href = PRIVACY_URL;
     privacy.target = '_blank';
