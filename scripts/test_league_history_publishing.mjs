@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 
 import {
   createManageToken,
@@ -11,6 +12,12 @@ import {
   sharedLeagueRedirect,
   slugBase
 } from '../functions/_shared/league-history-api.mjs';
+
+const devWorkflow = readFileSync(new URL('../.github/workflows/dev-site.yml', import.meta.url),
+  'utf8');
+assert(devWorkflow.includes('cp cloudflare/lineupbeat-dev.wrangler.toml wrangler.toml'));
+assert(devWorkflow.includes('wrangler@latest pages deploy \\'));
+assert(!devWorkflow.includes('wrangler@latest pages deploy site'));
 
 const archive = {
   schemaVersion: 'lineupbeat-espn-history-capture-v1',
