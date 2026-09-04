@@ -91,7 +91,12 @@ assert.throws(() => sanitizePublication(archive, {...review, identities: review.
   /Every manager/);
 
 class MemoryD1 {
-  constructor() { this.rows = new Map(); }
+  constructor() { this.rows = new Map(); this.schemaRuns = 0; }
+  async exec(sql) {
+    assert(sql.includes('CREATE TABLE IF NOT EXISTS league_history_publications'));
+    this.schemaRuns += 1;
+    return {count: 2, duration: 0};
+  }
   prepare(sql) {
     const db = this;
     return {
@@ -135,6 +140,7 @@ assert.equal(post.status, 201);
 const created = await post.json();
 assert(created.slug && created.manageToken && created.url.endsWith('/leagues/' + created.slug));
 assert.equal(db.rows.size, 1);
+assert.equal(db.schemaRuns, 1);
 assert(!db.rows.values().next().value.archive_json.includes('987654'));
 
 const read = await onRequestGet(context(new Request(

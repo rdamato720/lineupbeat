@@ -106,9 +106,6 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           test "$DEV_PROJECT" = "lineupbeat-dev"
-          npx --yes wrangler@latest d1 execute lineupbeat-feedback --remote \
-            --file=cloudflare/league-history-schema.sql \
-            --config=cloudflare/lineupbeat-dev.wrangler.toml
           npx --yes wrangler@latest pages project create "$DEV_PROJECT" \
             --production-branch=develop || true
           branch=$(printf '%s' "$GITHUB_REF_NAME" | tr '/_' '--')
