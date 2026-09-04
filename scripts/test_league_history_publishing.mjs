@@ -49,7 +49,7 @@ const archive = {
     ],
     matchups: [{id: 'espn-matchup-1', week: 1, playoff: false,
       homeTeamId: 'espn-team-1', awayTeamId: 'espn-team-2',
-      homeScore: 111.25, awayScore: 103.5}]
+      homeScore: 111.25, awayScore: -1.25}]
   }],
   incomplete: [{year: 2024, reason: 'Private league'}],
   counts: {seasons: 99, teams: 99, matchups: 99, identities: 99}
@@ -72,6 +72,7 @@ assert.equal(publication.review.schemaVersion, 'lineupbeat-public-history-review
 assert.deepEqual(publication.archive.counts, {seasons: 1, teams: 2, matchups: 1, identities: 2});
 assert.deepEqual(publication.archive.identityReview.identities.map(row => row.identityId), ['m1', 'm2']);
 assert.deepEqual(publication.archive.seasons[0].teams.map(row => row.teamId), ['s1t1', 's1t2']);
+assert.equal(publication.archive.seasons[0].matchups[0].awayScore, -1.25);
 assert.equal(publication.review.identities[1].mergeInto, 'm1');
 
 const encoded = JSON.stringify(publication).toLowerCase();

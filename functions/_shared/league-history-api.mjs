@@ -184,8 +184,10 @@ export function sanitizePublication(rawArchive, rawReview) {
         playoff: Boolean(matchup.playoff),
         homeTeamId,
         awayTeamId,
-        homeScore: finite(matchup.homeScore, 'Home score', 0, 1000),
-        awayScore: finite(matchup.awayScore, 'Away score', 0, 1000)
+        // Custom fantasy scoring can produce a legitimate negative weekly total.
+        // Keep the bound finite and defensive without rejecting valid history.
+        homeScore: finite(matchup.homeScore, 'Home score', -1000, 1000),
+        awayScore: finite(matchup.awayScore, 'Away score', -1000, 1000)
       };
     });
     return {

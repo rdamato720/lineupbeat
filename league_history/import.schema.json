@@ -53,7 +53,8 @@
         "week": {"type": "integer", "minimum": 1}, "sequence": {"type": "integer", "minimum": 1},
         "playoff": {"type": "boolean"},
         "homeFranchiseId": {"type": "string"}, "awayFranchiseId": {"type": "string"},
-        "homeScore": {"type": "number", "minimum": 0}, "awayScore": {"type": "number", "minimum": 0}
+        "homeScore": {"type": "number", "minimum": -1000, "maximum": 1000},
+        "awayScore": {"type": "number", "minimum": -1000, "maximum": 1000}
       }
     }
   }
