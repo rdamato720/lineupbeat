@@ -18,6 +18,9 @@ const devWorkflow = readFileSync(new URL('../.github/workflows/dev-site.yml', im
 assert(devWorkflow.includes('cp cloudflare/lineupbeat-dev.wrangler.toml wrangler.toml'));
 assert(devWorkflow.includes('wrangler@latest pages deploy \\'));
 assert(!devWorkflow.includes('wrangler@latest pages deploy site'));
+assert(!devWorkflow.includes('--project-name="$DEV_PROJECT"'));
+assert(devWorkflow.includes('Verify league publishing storage'));
+assert(devWorkflow.includes('/api/leagues/deployment-health-check'));
 
 const archive = {
   schemaVersion: 'lineupbeat-espn-history-capture-v1',
