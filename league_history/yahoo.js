@@ -25,6 +25,7 @@
     sourcePanels.forEach(panel => {
       panel.hidden = panel.dataset.sourcePanel !== provider;
     });
+    window.dispatchEvent(new CustomEvent('lb:history-source', {detail: {provider}}));
   }
 
   function storedRecord() {

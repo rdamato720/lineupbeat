@@ -83,10 +83,10 @@ def main() -> int:
     yahoo = outputs[3].read_text()
     landing = outputs[4].read_text()
     for required in ("League history", "Trophy case", "All-time leaders", "Managers",
-                     "League records", "noindex,nofollow,noarchive", "Build your league archive",
+                     "League records", "noindex,nofollow,noarchive", "Set up your league history",
                      "Save manager matches", "LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST",
                      "Are these the same person?", "Yes, same person",
-                     "No, different people", "One quick step", "data-demo=",
+                     "No, different people", "Step 3 of 4", "data-demo=",
                      "Your league history is ready",
                      "Every historical team and season is included automatically.",
                      "/assets/league-history-dashboard.js",
@@ -110,9 +110,16 @@ def main() -> int:
                      ".shared-history.history-ready .import-card",
                      ".shared-history-error #retry-shared-league",
                      ".visibility-options{grid-template-columns:1fr}",
-                     'body class="history-empty"', "Set up connector",
+                     'body class="history-empty"', "Install connector",
                      'id="connect-yahoo"', 'data-history-source="yahoo"',
                      'data-history-source="cbs"', 'id="check-cbs"',
+                     'class="setup-layout"', 'class="setup-rail"',
+                     "Choose your fantasy platform.", "Connect and import",
+                     "Match managers", "View and share",
+                     'id="connection-stage" hidden',
+                     '.history-empty .lh-meta{display:none}',
+                     'aria-selected="false"><span class="provider-mark">ESPN',
+                     "We only show services LineupBeat can connect today.",
                      '/assets/yahoo-history.js',
                      "private by default", "96"):
         assert required in page, required
@@ -177,7 +184,7 @@ def main() -> int:
     subprocess.run(["node", "--check", str(outputs[2])], cwd=ROOT, check=True)
     for required in ("/api/yahoo/status", "/api/yahoo/leagues", "/api/yahoo/season",
                      "lineupbeat-history-capture-v1", "lineupBeatYahooHistoryV1",
-                     "Nothing was saved."):
+                     "Nothing was saved.", "lb:history-source"):
         assert required in yahoo, required
     subprocess.run(["node", "--check", str(outputs[3])], cwd=ROOT, check=True)
     subprocess.run(["node", str(ROOT / "scripts/test_league_history_dashboard.js")],

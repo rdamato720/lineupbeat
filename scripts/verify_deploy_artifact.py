@@ -316,8 +316,14 @@ def check_league_history(root):
           bool(re.search(r'name="robots" content="noindex,\s*nofollow(?:,\s*noarchive)?"', text))
           and 'body class="history-empty"' in text
           and "private by default" in text
-          and "Build your league archive" in text
-          and "Set up connector" in text
+          and "Set up your league history" in text
+          and "Choose your fantasy platform" in text
+          and "Choose platform" in text
+          and "Connect and import" in text
+          and "Match managers" in text
+          and "View and share" in text
+          and 'id="connection-stage" hidden' in text
+          and "Install connector" in text
           and 'id="connect-yahoo"' in text
           and "Prototype boundary" not in text
           and "Fictional demonstration data" not in text
