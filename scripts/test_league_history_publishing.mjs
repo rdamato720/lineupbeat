@@ -102,11 +102,6 @@ assert.throws(() => sanitizePublication(archive, {...review, identities: review.
 
 class MemoryD1 {
   constructor() { this.rows = new Map(); this.schemaRuns = 0; }
-  async exec(sql) {
-    assert(sql.includes('CREATE TABLE IF NOT EXISTS league_history_publications'));
-    this.schemaRuns += 1;
-    return {count: 2, duration: 0};
-  }
   prepare(sql) {
     const db = this;
     return {
@@ -123,7 +118,9 @@ class MemoryD1 {
         return {...row};
       },
       async run() {
-        if (sql.includes('INSERT INTO')) {
+        if (sql.includes('CREATE TABLE') || sql.includes('CREATE INDEX')) {
+          db.schemaRuns += 1;
+        } else if (sql.includes('INSERT INTO')) {
           const [slug, league_name, visibility, archive_json, manage_token_hash,
             created_at, updated_at] = this.values;
           db.rows.set(slug, {slug, league_name, visibility, archive_json,
@@ -150,7 +147,7 @@ assert.equal(post.status, 201);
 const created = await post.json();
 assert(created.slug && created.manageToken && created.url.endsWith('/leagues/' + created.slug));
 assert.equal(db.rows.size, 1);
-assert.equal(db.schemaRuns, 1);
+assert.equal(db.schemaRuns, 2);
 assert(!db.rows.values().next().value.archive_json.includes('987654'));
 
 const read = await onRequestGet(context(new Request(
