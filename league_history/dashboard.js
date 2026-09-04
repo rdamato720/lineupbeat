@@ -6,7 +6,9 @@
   const SEASON_REGRESSION = 0.30;
   let capture = null;
   let pendingReview = null;
+  let activeReview = null;
   let activeManagerId = null;
+  let sharedPublication = null;
 
   function element(tag, className, text) {
     const node = document.createElement(tag);
@@ -976,7 +978,125 @@
     table.appendChild(body);
   }
 
+  function updateHeader(payload) {
+    const counts = payload.counts || {};
+    const leagueName = payload.league && payload.league.name || 'League history';
+    setText('#league-title', leagueName);
+    setText('#header-seasons', String(counts.seasons || 0));
+    setText('#header-games', Number(counts.matchups || 0).toLocaleString());
+    setText('#header-teams', String(counts.teams || 0));
+    setText('#ambient-seasons', String(counts.seasons || 0));
+    setText('#ambient-games', Number(counts.matchups || 0).toLocaleString());
+    document.title = leagueName + ' League History | LineupBeat';
+  }
+
+  function publicationKey() {
+    const league = capture && capture.league;
+    return league && league.id ? 'lb-league-publication:' + league.id : '';
+  }
+
+  function savedPublication() {
+    const key = publicationKey();
+    if (!key) return null;
+    try {
+      const value = JSON.parse(localStorage.getItem(key) || 'null');
+      return value && value.slug && value.manageToken ? value : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function showPublication(value) {
+    const result = document.getElementById('publish-result');
+    const link = document.getElementById('published-url');
+    const button = document.getElementById('publish-league');
+    if (!result || !link || !button || !value || !value.slug) return;
+    const url = new URL('/leagues/' + value.slug, location.origin).toString();
+    link.href = url;
+    link.textContent = url;
+    result.hidden = false;
+    button.textContent = 'Update shared league';
+  }
+
+  function restorePublication() {
+    const saved = savedPublication();
+    if (!saved) return;
+    const option = document.querySelector(
+      'input[name="league-visibility"][value="' + saved.visibility + '"]');
+    if (option) option.checked = true;
+    showPublication(saved);
+  }
+
+  async function publishLeague() {
+    const button = document.getElementById('publish-league');
+    const status = document.getElementById('publish-status');
+    const selected = document.querySelector('input[name="league-visibility"]:checked');
+    if (!button || !status || !capture || !activeReview || !selected) return;
+    const saved = savedPublication();
+    const updating = Boolean(saved);
+    const endpoint = updating ? '/api/leagues/' + saved.slug : '/api/leagues';
+    button.disabled = true;
+    status.textContent = updating ? 'Updating your share link…' : 'Creating your share link…';
+    try {
+      const headers = {'Content-Type': 'application/json'};
+      if (updating) headers.Authorization = 'Bearer ' + saved.manageToken;
+      const response = await fetch(endpoint, {
+        method: updating ? 'PUT' : 'POST',
+        headers,
+        body: JSON.stringify({
+          visibility: selected.value,
+          archive: capture,
+          review: activeReview
+        })
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || 'Publishing failed. Try again.');
+      const stored = {
+        slug: result.slug,
+        manageToken: updating ? saved.manageToken : result.manageToken,
+        visibility: result.visibility
+      };
+      localStorage.setItem(publicationKey(), JSON.stringify(stored));
+      showPublication(stored);
+      status.textContent = updating ?
+        'Shared league updated. The link stays the same.' :
+        'Share link ready. Anyone with the link can view it.';
+    } catch (error) {
+      status.textContent = error && error.message ? error.message :
+        'Publishing is temporarily unavailable.';
+    } finally {
+      button.disabled = false;
+    }
+  }
+
+  async function loadSharedLeague(slug) {
+    document.body.classList.add('shared-history');
+    const statusLine = document.querySelector('.lh-status');
+    if (statusLine) statusLine.lastChild.textContent = ' loading shared league';
+    setText('#import-status', 'Loading shared league history…');
+    try {
+      const response = await fetch('/api/leagues/' + encodeURIComponent(slug), {
+        headers: {Accept: 'application/json'}
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || 'League not found.');
+      sharedPublication = result;
+      capture = result.archive;
+      activeReview = result.review;
+      updateHeader(capture);
+      renderDashboard(capture, activeReview);
+      if (statusLine) statusLine.lastChild.textContent = result.visibility === 'public' ?
+        ' public league history' : ' shared league history';
+    } catch (error) {
+      document.body.classList.add('shared-history-error');
+      setText('#import-status', error && error.message ? error.message :
+        'League history is temporarily unavailable.');
+      if (statusLine) statusLine.lastChild.textContent = ' shared league unavailable';
+    }
+  }
+
   function renderDashboard(payload, review) {
+    updateHeader(payload);
     const summary = summarize(payload, review);
     renderOverview(summary);
     renderTrophies(summary);
@@ -987,20 +1107,32 @@
     document.body.classList.add('history-ready');
     document.getElementById('import-summary').classList.remove('open');
     const edit = document.getElementById('edit-manager-matches');
-    if (edit) edit.hidden = false;
+    if (edit) edit.hidden = Boolean(sharedPublication);
+    const publishPanel = document.getElementById('publish-panel');
+    if (publishPanel) publishPanel.hidden = Boolean(sharedPublication);
     setText('#import-status', payload.counts.seasons + ' seasons · ' +
       payload.counts.matchups.toLocaleString() + ' matchups loaded');
     const footer = document.querySelector('.lh-footer');
-    footer.replaceChildren(
-      element('span', '', 'Private ESPN history · processed only in this browser.'),
-      element('span', '', 'Imported ' + String(payload.capturedAt || '').slice(0, 10))
-    );
+    if (sharedPublication) {
+      footer.replaceChildren(
+        element('span', '', 'Shared league history · view only.'),
+        element('span', '', 'Updated ' + String(sharedPublication.updatedAt || '').slice(0, 10))
+      );
+    } else {
+      footer.replaceChildren(
+        element('span', '', 'Private ESPN history · processed only in this browser.'),
+        element('span', '', 'Imported ' + String(payload.capturedAt || '').slice(0, 10))
+      );
+      restorePublication();
+    }
   }
 
   function clearReady() {
     document.body.classList.remove('history-ready');
     const edit = document.getElementById('edit-manager-matches');
     if (edit) edit.hidden = true;
+    const publishPanel = document.getElementById('publish-panel');
+    if (publishPanel) publishPanel.hidden = true;
   }
 
   globalThis.LineupBeatLeagueHistoryDashboard = {summarize};
@@ -1019,13 +1151,36 @@
     });
   }
 
+  const publish = document.getElementById('publish-league');
+  if (publish) publish.addEventListener('click', publishLeague);
+  const copy = document.getElementById('copy-published-url');
+  if (copy) {
+    copy.addEventListener('click', async () => {
+      const link = document.getElementById('published-url');
+      const status = document.getElementById('publish-status');
+      if (!link) return;
+      try {
+        await navigator.clipboard.writeText(link.href);
+        copy.textContent = 'Copied';
+        if (status) status.textContent = 'Share link copied.';
+      } catch (_) {
+        if (status) status.textContent = 'Copy the link above to share it.';
+      }
+    });
+  }
+
+  const sharedSlug = new URLSearchParams(location.search).get('league');
+  if (sharedSlug) loadSharedLeague(sharedSlug);
+
   window.addEventListener('message', event => {
     if (event.source !== window || event.origin !== location.origin ||
         !event.data || event.data.version !== 1) return;
     if (event.data.type === 'LB_LEAGUE_HISTORY_CAPTURE') {
       capture = event.data.payload;
       pendingReview = null;
-      if (event.data.review) renderDashboard(capture, event.data.review);
+      activeReview = event.data.review || null;
+      sharedPublication = null;
+      if (activeReview) renderDashboard(capture, activeReview);
       else clearReady();
     }
     if (event.data.type === 'LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST') {
@@ -1033,7 +1188,8 @@
     }
     if (event.data.type === 'LB_LEAGUE_HISTORY_REVIEW_COMPLETE' &&
         event.data.ok && capture && pendingReview) {
-      renderDashboard(capture, pendingReview);
+      activeReview = pendingReview;
+      renderDashboard(capture, activeReview);
     }
     if (event.data.type === 'LB_LEAGUE_HISTORY_CLEAR_COMPLETE') {
       clearReady();
