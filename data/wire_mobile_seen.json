@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1018,
+ "count": 1036,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -11237,6 +11237,204 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005304
+  },
+  {
+   "candidate_id": "mobile:onsi:e30e7bcdda1642f349f9",
+   "player_id": "00-0036963",
+   "source_url": "https://www.si.com/nfl/lions/onsi/three-bold-predictions-for-detroit-lions-2026-season",
+   "attempted_at": "2026-09-05T15:13:48+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T15:13:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003744
+  },
+  {
+   "candidate_id": "mobile:onsi:9f2b59008c91b6fa26db",
+   "player_id": "00-0033106",
+   "source_url": "https://www.si.com/nfl/lions/onsi/three-bold-predictions-for-detroit-lions-2026-season",
+   "attempted_at": "2026-09-05T15:13:52+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T15:13:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003858
+  },
+  {
+   "candidate_id": "mobile:onsi:56ee8068378cb9e193ca",
+   "player_id": "00-0040691",
+   "source_url": "https://www.si.com/nfl/giants/onsi/giants-nfc-rankings-execs-poll-2026-01m1hjhfrjtc",
+   "attempted_at": "2026-09-05T15:13:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T15:13:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00519
+  },
+  {
+   "candidate_id": "mobile:onsi:ebb0549e3cceee32b35f",
+   "player_id": "00-0036275",
+   "source_url": "https://www.si.com/nfl/bears/onsi/chicago-bears-rb-d-andre-swift-could-be-ready-to-explode-in-contract-year",
+   "attempted_at": "2026-09-05T15:13:57+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T15:14:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005014
+  },
+  {
+   "candidate_id": "mobile:onsi:81c863e2ba1eddfaeae7",
+   "player_id": "00-0040236",
+   "source_url": "https://www.si.com/nfl/bears/onsi/chicago-bears-rb-d-andre-swift-could-be-ready-to-explode-in-contract-year",
+   "attempted_at": "2026-09-05T15:14:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T15:14:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004594
+  },
+  {
+   "candidate_id": "mobile:onsi:a343f469fd4daf44d50a",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/chicago-bears-rb-d-andre-swift-could-be-ready-to-explode-in-contract-year",
+   "attempted_at": "2026-09-05T15:14:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T15:14:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005214
+  },
+  {
+   "candidate_id": "mobile:onsi:7f54e37e1bd2fbd72e2c",
+   "player_id": "00-0035228",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/3-vikings-lineup-decisions-i-d-make-if-i-were-kevin-o-connell-week-1-01m1pv2974yj",
+   "attempted_at": "2026-09-05T15:14:06+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T15:14:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004082
+  },
+  {
+   "candidate_id": "mobile:onsi:bf370f4fa80c1a98ed96",
+   "player_id": "00-0033293",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/3-vikings-lineup-decisions-i-d-make-if-i-were-kevin-o-connell-week-1-01m1pv2974yj",
+   "attempted_at": "2026-09-05T15:14:08+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T15:14:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004134
+  },
+  {
+   "candidate_id": "mobile:onsi:d00615202eca7d15f9e8",
+   "player_id": "00-0037525",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/3-vikings-lineup-decisions-i-d-make-if-i-were-kevin-o-connell-week-1-01m1pv2974yj",
+   "attempted_at": "2026-09-05T15:14:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T15:14:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00393
+  },
+  {
+   "candidate_id": "mobile:onsi:e598c11f92f44fddd6d1",
+   "player_id": "00-0030565",
+   "source_url": "https://www.si.com/nfl/jets/onsi/5-jets-hot-takes-2026-season-bailey-challenges-history-records-broken-predictions-more-01m1q5redpfr",
+   "attempted_at": "2026-09-05T15:14:13+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-05T15:14:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00597
+  },
+  {
+   "candidate_id": "mobile:onsi:0c4ad36d96a67636d186",
+   "player_id": "00-0040667",
+   "source_url": "https://www.si.com/nfl/packers/onsi/grading-all-26-major-roster-decisions-made-by-packers-this-year",
+   "attempted_at": "2026-09-05T15:14:18+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-05T15:14:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005276
+  },
+  {
+   "candidate_id": "mobile:onsi:3e92c0693c39904cae3b",
+   "player_id": "00-0039144",
+   "source_url": "https://www.si.com/nfl/packers/onsi/grading-all-26-major-roster-decisions-made-by-packers-this-year",
+   "attempted_at": "2026-09-05T15:14:22+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-05T15:14:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004228
+  },
+  {
+   "candidate_id": "mobile:onsi:142bf34f0b5ea19afc4b",
+   "player_id": "00-0036264",
+   "source_url": "https://www.si.com/nfl/packers/onsi/grading-all-26-major-roster-decisions-made-by-packers-this-year",
+   "attempted_at": "2026-09-05T15:14:25+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T15:14:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003708
+  },
+  {
+   "candidate_id": "mobile:onsi:2bc3db7815d8d5999921",
+   "player_id": "00-0034348",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/predicting-broncos-2026-mvp-rookie-of-the-year-more",
+   "attempted_at": "2026-09-05T15:14:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T15:14:29+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004
+  },
+  {
+   "candidate_id": "mobile:onsi:9d5d0e93a435c542cb4a",
+   "player_id": "00-0038611",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-5-draft-prospects-for-to-watch-in-cfb-week-1-jadan-baugh-showcase",
+   "attempted_at": "2026-09-05T15:14:29+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T15:14:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005372
+  },
+  {
+   "candidate_id": "mobile:onsi:b822aa4ac23aa2114edf",
+   "player_id": "00-0039337",
+   "source_url": "https://www.si.com/nfl/giants/onsi/giants-week-1-inactives-predictions-tracy-slayton-01m1rzfrcpmp",
+   "attempted_at": "2026-09-05T15:14:34+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-09-05T15:14:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004046
+  },
+  {
+   "candidate_id": "mobile:onsi:02ee693f8f4f2b4fa1b5",
+   "player_id": "00-0040663",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/final-fantasy-football-tight-end-draft-rankings-travis-kelce-knocked-out-of-the-top-10-by-a-breakout-candidate",
+   "attempted_at": "2026-09-05T15:14:36+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T15:14:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003822
+  },
+  {
+   "candidate_id": "mobile:onsi:d0322e9465a3f4928d6f",
+   "player_id": "00-0041512",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/3-free-agents-seahawks-could-sign-bolster-roster-entering-2026-season",
+   "attempted_at": "2026-09-05T15:14:39+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-05T15:14:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007828
   }
  ]
 }
