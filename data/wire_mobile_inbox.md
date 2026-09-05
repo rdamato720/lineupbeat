@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `3277bbf46393` · 6 draft calls · $0.0304
+**2 cards** · batch `f9e8a80e3206` · 16 draft calls · $0.0788
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,24 +19,48 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Jadarian Price — SEA RB
+## 1. Isiah Pacheco — DET RB
 
-**Trending up** · TRANSACTION · HIGH evidence
+**Trending down** · TRANSACTION · HIGH evidence
 
 ### What changed
 
-The Seahawks used a first-round pick on Jadarian Price to replace Kenneth Walker III after Walker left in free agency.
+Isiah Pacheco was placed on injured reserve after the Lions finalized their initial 53-man roster.
 
 ### Lineup Beat impact
 
-Price's draft investment signals a meaningful path to Seattle's post-Walker backfield, but this report does not establish a starting role, workload or camp usage. Monitor depth-chart and first-team-rep updates.
+Pacheco is off Detroit's active roster for now, removing him from immediate lineup consideration. The report does not identify the injury or provide a return timetable.
 
-[Randy Gurzi · Sports Illustrated -- SEA](https://www.si.com/nfl/seahawks/onsi/3-seattle-seahawks-under-most-pressure-entering-week-1-2026-season) · 2026-09-05
+[Christian Booher · Sports Illustrated -- DET](https://www.si.com/nfl/lions/onsi/grading-every-major-roster-decision-detroit-lions-made-2026) · 2026-09-05
 
 <details><summary>Full evidence reviewed</summary>
 
-Kenneth Walker III won the Super Bowl MVP but then left in free agency. Walker signed a three-year deal with the Kansas City Chiefs, and Seattle decided to replace him by using their first-round pick on Notre Dame's Jadarian Price.
+The Lions kept five running backs on their initial 53-man roster, then placed Isiah Pacheco on injured reserve and waived Jabari Small. As a result, there's Jahmyr Gibbs, Jacob Saylors and Sione Vaki as the team's options currently on the active roster.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVm1v2zYQ_iuEvuzDrETvsvwtTbLUa2sHsdF9GAqBIo8RF4kUSCqeW_S_7yjZWbL2FwwwBOneePfcc0d_CxrqWFtLHqyCNCnLphFZkVZpxZuUR5HI0rxiTR7BsozLIo6TqsmypkppxdKCsgpKlpVxVC1pmQaLgFHDbbD681tAh8HoZ-A1dRgaVXR0rTb4_kAVP5K70XyV3kP3PShHzRFV90Yy-MUSbqhwRKpnsM5riZWPinaWUNIDVVI9irEjA3UtcZrsgDrXeb9BWxf-QbsnMKSh7ElI6PiCNKMjrpWWGBi0cYRrsERpRzA8bTppWwyMr8ZhZGJ0Bwty0Oap05QTbQij_UBGSx_hgnzSSjqUcRhcG7IWnQgWRIQ0eLYD2od4ChkHTh3YizcV1i-gNMcZlFc6beSjVCj-tL25_VjfPFz9tp8slEOL2h0H8ODd3m8f9uvNHar8CShKoqQIoyqM8n0Ur6IIf79OT28iDTAntY97v92t9-vPt17s8a0xtJAcFMMo0UVVnuWd7KWj3su3Mti3QOB5NvwXOkV7IFO_EFqY0QPj693oF_AWxCo6hBZRAg_kYChmw2CCSCqhTT-dQ7A3Hhk8hPsQ_kjfDdbBWe5PJU724Ds2BXvdAY5i2SHcXxbBOVcs-QMoBUiSEyXW6zWmpqaEd-OAknf60JFPn-9PFAFFOpiYR4QBzOERAx0vzv6ehcCRK65FbXgE6rOgHTlIz0SM-oEqSy25lu5IrlsJwi4mdpwoitbM1-hZixB0FNFrZU-aI9LLcw9jSHPiktEjeg6SPRHMeaMdYniDqCPPf6ecGknV3ACP2LnomuFx0jNjnuleN7KDFbZSriKWxBHP0zwSkCdVUYpiia44lfLrxJDd7dVuu6k_bid69YDYKml71Owfrja7q-v9ervxGs2hOxGWdvX_f4T1QYGxrRywwPXm5vb-Fh8bP57YwyP4rfa2JS-auQtRFEZRFudx4hXaytNIPrzz30b_NQ9pTc-zutlu_JwOI5bGajv2_YyuHwzEqqWHJ4vlTGT8GVveZvOabj8ZCWwUvp0EP-P_D5n8uMgMUI7VdrSBzudpAGmInRiHk1IqsLYWOKWjAb9Xvnj5s4QDur3U7YGdl5vVo5lmeOf7bcm660brDHaEkzAkSFVvhDOhHl2LZu_Xd-9R4rs3Mxk_RuNzaZ0b7Ory8nA4XFh5gWy9VKK7tCcYL_1sXKahnSkYnuUh4gkm7D0fB0zZYt4hEhkM1hUeAJ7COJx2L3pYzP77F7-tratHy_1CjdIoLbJFgBjClPd8Fb5d12myioqXdT0PFqNdhwgVZ9SnFYlTNuI1QF09TVawWv5Hj0s2yYtXBgEt8dbOgcVVjLlkIimyJVBRpE0aCSoY52XMaJELLrImLTle82UWNyKtlikwoB5g1kJP62dk_9ygA14o4bxUQqka_Xf4HL90q57_TMyZoDHLGx87K3HjJKyMYrFkUFUlLWAZJYJVZZUsm1yUKS3zKs-bhGaiWYooZwnLlzz4_g_y0Ohe:WIRE_MOBILE_MANIFEST_V1 -->
+---
+
+## 2. Jawhar Jordan — HOU RB
+
+**Trending down** · TRANSACTION · MEDIUM evidence
+
+### What changed
+
+Jawhar Jordan was placed on Houston's practice squad despite being viewed as a candidate for the RB3 job.
+
+### Lineup Beat impact
+
+Jordan is off the active roster for now, limiting his immediate fantasy utility. With Houston carrying three backs, monitor whether he earns a practice-squad elevation; the report does not establish a role or timetable.
+
+[Jared Koch · Sports Illustrated -- HOU](https://www.si.com/nfl/texans/onsi/3-texans-who-are-bound-to-see-practice-squad-elevations-this-season) · 2026-09-05
+
+<details><summary>Full evidence reviewed</summary>
+
+The Texans did two eye-catching moves to their running back room. For one, they have just three backs rostered heading into Week 1, which felt like a less likely outcome as opposed to four. But Houston also sent Jawhar Jordan to the practice squad after he felt like the leading candidate to fill their RB3 spot on the depth chart.
+
+For one, they have just three backs rostered heading into Week 1, which felt like a less likely outcome as opposed to four. But Houston also sent Jawhar Jordan to the practice squad after he felt like the leading candidate to fill their RB3 spot on the depth chart.
+
+</details>
+
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrtWN1z0zgQ_1c0ebmHi1M7Tmwn91RooC2QMm2Bh4PxyNK6VmtbOUlOCAz_--3abtoU6DDcw33MvWRsrbTa_e1vP5zPg4w7UaRKDuaDfAYJT3wIx37kiyzxg0ngJ1EWJPEU_HAcxGGSySz2ZyLiYiIkCifjaJb5mYzDIBkMB4IbaQfz3z8P-Gpl9Bpkyh2qRhFvXKENPj8tjLJO8Zo90boAQ8d0VUHtuNmi_DUXBQjNlGU6z9kROKOV-8UyLpxaAzPaOjAs14bVejNkBiq9VvUVK1TFcqMrplCbVNwBK1UNzYoJXVslwXCndD1ilwVqgZU2jkkNFtU4huLaqXzLHApVfd2YLcMbyAkUMY4HXGNq5lQFjmcljPbsTnf-ZtvO33sybdSVqnH51dnR4mV6dH747LLdUTvckbrtClB4vnh9dn55snyOIonG49LYH0eeP_P86WUQz4NoHia_-v7c92mLMiDIH9y3XDw_vDx5u6Blw3OXouqcPBKoxR_Nktv1UlXKtShQlAYdENzquoVz5zpIz4AFg2ivSi6AHGEb3iHVIQeSAFjqr3Ah1KBEhzNVKrdlEpdVadkGDNzCiWc_DAewvjWxNeQlWcVuYOVY3sa5qWsKa8bFDVKhJvOUQQMVkqdk09CrkEMdG4YkrDtjJTuxihfslkd4sneK3TrFa4nu4CWSnfKMG8UuKl6WI3Zo20jbpnStSgPIu1NeVFvDnqsss0N8EzpjF3xbamNbTRdoOLC3_EYxhIhAdMArPKhXLdJMNMYgguW292KfyYTjLRSpQIWKot-lZKURRZgTfed8mosojkQoZoJnUTLxp8QDTCr1qWXBm-WL5dm7Ja5VIApeK1sRtOeHy4vDp5cnZ61ESyh7QvIy_bcmnt7UYGyhVmj2yfJo8XqBP0tKKqTAFqjM7JFgJ-hg9X3P98M4mMUk0Fb1eXT-hN6Nvu4yK-W7BDtbUnKtmqxUIrVNVXWQ7TONMqSn4LdIlxN6bsf0nCKgPuGOR4g9-urWrysNZjBCnJY8g5ICjlyTFBaJKPVijIa1aY6JiCZR6n-g9bUCzMo7LwnFrv5Y3Zg2MS8oWJadlGVjHYYRrfU8drQgqHEB6itX4Lbjk-fHuEK8x7dO3BiypnBuZecHB5vNZmTVCAl3UOflQUkQHBA7Dq4M2XflwRrMFl2_1sbrnPckCGVxJz60XPTaY7hHgke1cfBl-FinOeWE_wstioc95lQbiRj3TP8qJe843hbMjuP2Hr1zjprsljWuLXIj9k65gh1rBAkjj13QbOmQKwxAV8CGrNIYYNS7KYAqC8NLgZuaKs7K0PUCPPtHwyWWT1i3GfNba9rDjAFLeaBsQcmhu4r7t7Wl6TycYmf6qbYUPtqWvlMmutBhVYKPCBpDLDq2Z1AoLMZ9DO5VrftthNB5_R2wGV9jfvC-bVFh5_W2bwakYKPNTanxBLKKNfUN8qP-Vh-7RMMwqljGmdtoBlvwBA1ZpAMLJvrjdJ_y923DUOpqxJ5hMLGdtN1nywqOHlyjR_ep1JMUqV20qX2FpQNVvgO4YcEQ-aVEwXIoHbL3hipoicnfPlMHahxSAKhT6RWWPio_GvnemBF70rgdh3lpNbPU90_5puCmx723fcdY1oHY1TZcv7uWdpW9fbuu1t6lyrL3__xJyOwKo9v3RYnNv2DYu4wbva_f1_-D0YPxgyNClGQzmUy5SEQk4mkYTfL9EeHiGHM5vVycv_rpKeG_XTp_YLDYo8A3B4sZjmZ_cbDY59n-YHFX4h4QT4JdKYQ4A0Kw7e6SuM3vce52zie2XevsnzlfHJ-92Z8vXi2OTt68upswug2PThiuLcPdiBF63Zu3KbSH5dvLdFNLz2nPAnj7FPJ2FLKeQ-riFvpAGnz5QK3RurSxkrqXHyfJZDwcXEENreHd_LH_yTaOsT3uemOXVgK_NBCiILpFvr0Mk6zBpstd2rbEwTx5ILcFH0-jexsGPAb6MhfBLPBDf5KPo0kCPI_CLPRzngsp40DwaJrLfJKFscymfjwJsjycJSEI4AQxDq4VT3Hysl2INti-va6keKrO9EdvHezilXZ_FnSWENshnvh8OvGzOArkLIj9PJgl0yyQPAnCSTweJ7HkeRbOYhnTPwmTcIpWBD4aFmUhH3z5Ez37q74:WIRE_MOBILE_MANIFEST_V1 -->

@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1036,
+ "count": 1052,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -11435,6 +11435,182 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.007828
+  },
+  {
+   "candidate_id": "mobile:onsi:a5fc676c3c9cab684050",
+   "player_id": "00-0037197",
+   "source_url": "https://www.si.com/nfl/lions/onsi/grading-every-major-roster-decision-detroit-lions-made-2026",
+   "attempted_at": "2026-09-05T17:27:36+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-05T17:27:40+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004934
+  },
+  {
+   "candidate_id": "mobile:onsi:9c491e7f52d02c96d748",
+   "player_id": "00-0033106",
+   "source_url": "https://www.si.com/nfl/lions/onsi/grading-every-major-roster-decision-detroit-lions-made-2026",
+   "attempted_at": "2026-09-05T17:27:40+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T17:27:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004748
+  },
+  {
+   "candidate_id": "mobile:onsi:67827c73687eebff194d",
+   "player_id": "00-0039065",
+   "source_url": "https://www.si.com/nfl/lions/onsi/grading-every-major-roster-decision-detroit-lions-made-2026",
+   "attempted_at": "2026-09-05T17:27:43+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T17:27:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00462
+  },
+  {
+   "candidate_id": "mobile:onsi:bcbf82e35dd0ff2ea443",
+   "player_id": "00-0036963",
+   "source_url": "https://www.si.com/nfl/lions/onsi/grading-every-major-roster-decision-detroit-lions-made-2026",
+   "attempted_at": "2026-09-05T17:27:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T17:27:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004726
+  },
+  {
+   "candidate_id": "mobile:onsi:8312c9753e6e9ee71eb8",
+   "player_id": "00-0037240",
+   "source_url": "https://www.si.com/nfl/lions/onsi/grading-every-major-roster-decision-detroit-lions-made-2026",
+   "attempted_at": "2026-09-05T17:27:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T17:27:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003854
+  },
+  {
+   "candidate_id": "mobile:onsi:bd7c1d4b729b95dbbca2",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/dolphins-saturday-mailbag-sullivan-proctor-biggers-and-more-01m1rm503x2r",
+   "attempted_at": "2026-09-05T17:27:51+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-05T17:27:58+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.008114
+  },
+  {
+   "candidate_id": "mobile:onsi:c858ed5293346881fea3",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/de-zhaun-stribling-could-lead-49ers-receiving",
+   "attempted_at": "2026-09-05T17:27:58+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T17:28:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005012
+  },
+  {
+   "candidate_id": "mobile:onsi:62e49bc85c8489a07df6",
+   "player_id": "00-0036442",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/bengals-primed-to-achieve-top-regular-season-nfl-goal-across-2026-campaign-01m1kf2fdg47",
+   "attempted_at": "2026-09-05T17:28:01+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T17:28:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004324
+  },
+  {
+   "candidate_id": "mobile:onsi:91253d16af3274f7db21",
+   "player_id": "00-0040126",
+   "source_url": "https://www.si.com/nfl/bears/onsi/colston-loveland-s-tireless-work-ethic-even-on-off-days-impressing-bears-teammates",
+   "attempted_at": "2026-09-05T17:28:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T17:28:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00456
+  },
+  {
+   "candidate_id": "mobile:onsi:48727613a9547048d0e5",
+   "player_id": "00-0036970",
+   "source_url": "https://www.si.com/nfl/falcons/onsi/atlanta-falcons-kevin-stefanski-share-one-curse-to-break-vs-steelers",
+   "attempted_at": "2026-09-05T17:28:06+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T17:28:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003716
+  },
+  {
+   "candidate_id": "mobile:onsi:e398a9597f63f5f65557",
+   "player_id": "00-0026498",
+   "source_url": "https://www.si.com/nfl/rams/onsi/rams-week-1-history-sean-mcvay-49ers",
+   "attempted_at": "2026-09-05T17:28:08+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T17:28:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003852
+  },
+  {
+   "candidate_id": "mobile:onsi:a3ba46b115700508f7dc",
+   "player_id": "00-0039893",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-ranking-every-rookie-by-projected-week-1-impact-where-nate-boerkircher-lands",
+   "attempted_at": "2026-09-05T17:28:11+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-05T17:28:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006232
+  },
+  {
+   "candidate_id": "mobile:onsi:d9afffccb7acf672ad59",
+   "player_id": "00-0034960",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-ranking-every-rookie-by-projected-week-1-impact-where-nate-boerkircher-lands",
+   "attempted_at": "2026-09-05T17:28:15+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-05T17:28:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00501
+  },
+  {
+   "candidate_id": "mobile:onsi:8f9d00c61136c1434ac3",
+   "player_id": "00-0038935",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-ranking-every-rookie-by-projected-week-1-impact-where-nate-boerkircher-lands",
+   "attempted_at": "2026-09-05T17:28:18+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T17:28:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005214
+  },
+  {
+   "candidate_id": "mobile:onsi:2f8e6be4818988f0e594",
+   "player_id": "00-0036355",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-have-ian-rapoport-attention-heres-why",
+   "attempted_at": "2026-09-05T17:28:21+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T17:28:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004426
+  },
+  {
+   "candidate_id": "mobile:onsi:68b9d85ac8c6c75364f0",
+   "player_id": "00-0039405",
+   "source_url": "https://www.si.com/nfl/texans/onsi/3-texans-who-are-bound-to-see-practice-squad-elevations-this-season",
+   "attempted_at": "2026-09-05T17:28:23+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-05T17:28:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0055
   }
  ]
 }
