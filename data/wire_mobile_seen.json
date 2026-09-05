@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1052,
+ "count": 1066,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -11611,6 +11611,160 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.0055
+  },
+  {
+   "candidate_id": "mobile:onsi:ac75f5695585e3e43b61",
+   "player_id": "00-0035640",
+   "source_url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-most-overlooked-running-back-room-nfl",
+   "attempted_at": "2026-09-05T19:34:42+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:34:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004604
+  },
+  {
+   "candidate_id": "mobile:onsi:b933460f84e9458adaf9",
+   "player_id": "00-0036252",
+   "source_url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-most-overlooked-running-back-room-nfl",
+   "attempted_at": "2026-09-05T19:34:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:34:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003822
+  },
+  {
+   "candidate_id": "mobile:onsi:e1d1061f3f8995b64226",
+   "player_id": "00-0037228",
+   "source_url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-most-overlooked-running-back-room-nfl",
+   "attempted_at": "2026-09-05T19:34:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:34:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004186
+  },
+  {
+   "candidate_id": "mobile:onsi:3e9b9305a880d8017715",
+   "player_id": "00-0036139",
+   "source_url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-most-overlooked-running-back-room-nfl",
+   "attempted_at": "2026-09-05T19:34:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:34:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003926
+  },
+  {
+   "candidate_id": "mobile:onsi:3aa86ecafef776459267",
+   "player_id": "00-0036355",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-biggest-questions-amplified-nfl-execs-commentary",
+   "attempted_at": "2026-09-05T19:34:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:34:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004076
+  },
+  {
+   "candidate_id": "mobile:onsi:5b016aebcf5d11410c26",
+   "player_id": "00-0033293",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/one-potential-weakness-vikings-can-t-allow-packers-exploit-week-1-01m1qhv4vx30",
+   "attempted_at": "2026-09-05T19:34:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:34:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003824
+  },
+  {
+   "candidate_id": "mobile:onsi:43a7fce6028ee7bb1f23",
+   "player_id": "00-0038621",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/patriots-have-been-impressed-with-a-j-brown-s-growth-leadership",
+   "attempted_at": "2026-09-05T19:34:59+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:35:02+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004528
+  },
+  {
+   "candidate_id": "mobile:onsi:bb90b6d24f5a199579aa",
+   "player_id": "00-0040563",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/patriots-have-been-impressed-with-a-j-brown-s-growth-leadership",
+   "attempted_at": "2026-09-05T19:35:02+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:35:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0038
+  },
+  {
+   "candidate_id": "mobile:onsi:303ef61e057c2e68c5db",
+   "player_id": "00-0035676",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/patriots-have-been-impressed-with-a-j-brown-s-growth-leadership",
+   "attempted_at": "2026-09-05T19:35:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:35:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004538
+  },
+  {
+   "candidate_id": "mobile:onsi:2ce65044c2e120a924ec",
+   "player_id": "00-0037744",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/michael-wilson-arizona-cardinals-extension-full-contract-breakdown-easy-out",
+   "attempted_at": "2026-09-05T19:35:08+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:35:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003884
+  },
+  {
+   "candidate_id": "mobile:onsi:d8fdef8629242c0c1829",
+   "player_id": "00-0040784",
+   "source_url": "https://www.si.com/nfl/browns/onsi/which-browns-practice-squad-member-is-most-likely-to-make-an-impact-in-2026-01m1sbgcr0vg",
+   "attempted_at": "2026-09-05T19:35:10+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:35:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004512
+  },
+  {
+   "candidate_id": "mobile:onsi:9f36a9636e7be8d992de",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/a-rebooted-2026-chicago-bears-game-by-game-prediction-after-camp",
+   "attempted_at": "2026-09-05T19:35:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:35:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004002
+  },
+  {
+   "candidate_id": "mobile:onsi:5d9e1cfce1dd77cfc339",
+   "player_id": "00-0038120",
+   "source_url": "https://www.si.com/nfl/jets/onsi/3-free-agents-jets-can-still-sign-help-before-week-1-including-will-levis-01m1s269hs88",
+   "attempted_at": "2026-09-05T19:35:14+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:35:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003902
+  },
+  {
+   "candidate_id": "mobile:onsi:146daaddd5ff378e2b7b",
+   "player_id": "00-0034753",
+   "source_url": "https://www.si.com/nfl/ravens/onsi/the-5-ravens-practice-squad-players-closest-to-making-an-nfl-immpact-01m1s9r9s3tz",
+   "attempted_at": "2026-09-05T19:35:17+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T19:35:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004946
   }
  ]
 }
