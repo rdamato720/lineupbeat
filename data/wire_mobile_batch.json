@@ -1,54 +1,97 @@
 {
  "schema_version": "wire-mobile-batch-v1",
- "generated_at": "2026-09-05T21:48:15+00:00",
+ "generated_at": "2026-09-05T23:56:45+00:00",
  "window": {
-  "from": "2026-09-05T19:48:15.131255+00:00",
-  "to": "2026-09-05T21:48:15.131255+00:00",
+  "from": "2026-09-05T21:56:45.061314+00:00",
+  "to": "2026-09-05T23:56:45.061314+00:00",
   "hours": 2.0
  },
  "published": false,
  "model": "gpt-5.6-terra",
- "model_calls": 5,
- "cost_usd": 0.022566,
+ "model_calls": 9,
+ "cost_usd": 0.05288,
  "limits": {
   "max_calls": 20,
   "cap_usd": 0.08,
   "max_cards": 10
  },
- "raw_candidate_count": 5,
- "candidate_count": 5,
- "cards": [],
+ "raw_candidate_count": 9,
+ "candidate_count": 9,
+ "cards": [
+  {
+   "player": "Jadarian Price",
+   "player_id": "00-0041512",
+   "team": "SEA",
+   "position": "RB",
+   "content_type": "REPORTING",
+   "direction": "POSITIVE",
+   "mechanism": "ROLE_EXPANSION",
+   "strength": "MEDIUM",
+   "horizon": "IMMEDIATE",
+   "projection_action": "NONE",
+   "reader_label": "Trending up",
+   "public_summary": "Jadarian Price will make his NFL debut against New England after playing little or not at all during Seattle's preseason.",
+   "evidence": "Throughout three preseason games, many of Seattle's starters and players who will be getting significant reps during the regular season didn't play at all or played very little. Seahawks 2026 first-round draft pick running back Jadarian Price is one of those players.\n\nThroughout three preseason games, many of Seattle's starters and players who will be getting significant reps during the regular season didn't play at all or played very little. Seahawks 2026 first-round draft pick running back Jadarian Price is one of those players. When the Seahawks take on the New England Patriots on Wednesday, Price will play in his first NFL game in front of a crowd that includes his mom.",
+   "commentary": "Price's debut confirms Seattle plans to get its first-round rookie on the field in Week 1, but the report does not define his workload or place in the backfield rotation. Watch his usage.",
+   "source": "SEA official team site",
+   "author": "Ari Horton",
+   "date": "2026-09-05T22:43:25.635000+00:00",
+   "url": "https://www.seahawks.com/news/jadarian-price-to-get-first-nfl-action-in-week-1",
+   "ownership": "TEAM_OWNED",
+   "evidence_candidate_id": "mobile:article:df3310d888d52346b0a3",
+   "reviewer_action": "PENDING",
+   "public_summary_approved_by": "",
+   "commentary_approved_by": "",
+   "approved_at": "",
+   "commentary_origin": "MODEL_DRAFT",
+   "model_original_commentary": "Price's debut confirms Seattle plans to get its first-round rookie on the field in Week 1, but the report does not define his workload or place in the backfield rotation. Watch his usage.",
+   "draft_limitations": [
+    "The source does not specify Price's expected snap share, carries or role.",
+    "Limited preseason action alone does not establish a depth-chart position."
+   ],
+   "draft_confidence": 0.94,
+   "readiness_failures": []
+  }
+ ],
  "precall_duplicate_count": 0,
  "precall_duplicates": [],
  "unreviewed_count": 0,
- "relevance_suppressed": 10,
- "validation_failed": 0,
+ "relevance_suppressed": 9,
+ "validation_failed": 4,
  "outcome_counts": {
-  "IGNORE": 5
+  "CARD": 1,
+  "IGNORE": 4,
+  "VALIDATION_FAILED": 4
  },
  "coverage": {
   "source_candidate_counts": {
    "official_sea": 1,
+   "si_49ers": 1,
    "si_bears": 2,
-   "si_lions": 2
+   "si_bills": 1,
+   "si_falcons": 2,
+   "si_steelers": 1,
+   "si_texans": 1
   },
   "team_candidate_counts": {
+   "ATL": 2,
+   "BUF": 1,
    "CHI": 2,
-   "DET": 2,
-   "SEA": 1
+   "HOU": 1,
+   "PIT": 1,
+   "SEA": 1,
+   "SF": 1
   },
   "teams_without_candidates": [
    "ARI",
-   "ATL",
    "BAL",
-   "BUF",
    "CAR",
    "CIN",
    "CLE",
    "DAL",
    "DEN",
+   "DET",
    "GB",
-   "HOU",
    "IND",
    "JAX",
    "KC",
@@ -62,8 +105,6 @@
    "NYG",
    "NYJ",
    "PHI",
-   "PIT",
-   "SF",
    "TB",
    "TEN",
    "WAS"
@@ -147,8 +188,12 @@
   ],
   "article_sources_with_candidates": [
    "official_sea",
+   "si_49ers",
    "si_bears",
-   "si_lions"
+   "si_bills",
+   "si_falcons",
+   "si_steelers",
+   "si_texans"
   ],
   "article_sources_without_candidates": [
    "arizona_sports_tyler_drake",
@@ -191,9 +236,7 @@
    "phillyvoice_jimmy_kempski",
    "pressbox_baltimore",
    "purple_insider_matthew_coller",
-   "si_49ers",
    "si_bengals",
-   "si_bills",
    "si_broncos",
    "si_browns",
    "si_buccaneers",
@@ -205,11 +248,11 @@
    "si_cowboys",
    "si_dolphins",
    "si_eagles",
-   "si_falcons",
    "si_fantasy",
    "si_giants",
    "si_jaguars",
    "si_jets",
+   "si_lions",
    "si_packers",
    "si_panthers",
    "si_patriots",
@@ -218,8 +261,6 @@
    "si_ravens",
    "si_saints",
    "si_seahawks",
-   "si_steelers",
-   "si_texans",
    "si_titans",
    "si_vikings",
    "steelers_depot"
@@ -228,74 +269,166 @@
  "event_duplicates": 0,
  "outcomes": [
   {
-   "candidate_id": "mobile:article:0bff1c7185a884489a57",
-   "player": "Rashid Shaheed",
-   "player_id": "00-0037545",
+   "candidate_id": "mobile:onsi:665b2983c24ee750fa32",
+   "player": "Michael Penix Jr.",
+   "player_id": "00-0039917",
+   "team": "ATL",
+   "origin": "ARTICLE",
+   "source_id": "si_falcons",
+   "source_name": "Sports Illustrated -- ATL",
+   "source_url": "https://www.si.com/nfl/falcons/onsi/falcons-starting-qb-decision-could-come-down-to-one-factor",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The evidence reports that Penix is not ready for game action and that Atlanta is waiting for him to be ready, a meaningful availability factor in an unresolved starting-quarterback decision.",
+   "validation_failures": [
+    "mechanism INJURY is not supported by the evidence passage"
+   ],
+   "cost_usd": 0.007206,
+   "held_for_review": {
+    "evidence": "With all 31 other NFL teams having already named their starting quarterback, Atlanta remains the lone exception heading into Week 1, leaving Tua Tagovailoa and Michael Penix Jr. at the center of one of the league’s biggest unresolved storylines.\n\nRapoport has alluded to Tagovailoa potentially being on a “short leash” if he is named the starter for next Sunday's matchup against the Pittsburgh Steelers, in part based on the health of Michael Penix Jr. That would give the Falcons an interesting dynamic entering the season, with Penix potentially positioned to take over if Tagovailoa struggles.\n\n\"This is a decision where you would have hoped for the Atlanta Falcons that this one would be easy,\" Rapoport said on NFL Network. \"Tua would have played totally fine, very solid, veteran presence. Go out there, hold it down until Michael Penix Jr. is ready.\n\n\"Tua would have played totally fine, very solid, veteran presence. Go out there, hold it down until Michael Penix Jr. is ready.\n\n\"The Falcons are left in a little bit of limbo right here. You have Tua, who again, played OK. Michael Penix Jr. is just kinda getting started.\n\nYou have Tua, who again, played OK. Michael Penix Jr. is just kinda getting started. If he felt like he was ready to go, if he could get out there and be in a game situation, then it's pretty clear to me, he would be the starter.\n\nMichael Penix Jr. is just kinda getting started. If he felt like he was ready to go, if he could get out there and be in a game situation, then it's pretty clear to me, he would be the starter.\n\n\"He's not there yet, and they are in a holding pattern for when Michael Penix Jr. will be ready.\"",
+    "public_summary": "Michael Penix Jr. is not yet ready for game action, leaving Atlanta’s Week 1 starting quarterback decision unresolved, NFL Network’s Ian Rapoport said.",
+    "lineupbeat_impact": "Penix appears unlikely to open as Atlanta’s starter unless his readiness changes quickly. Monitor the Falcons’ official Week 1 starter announcement and any update on his return to game action; the report provides no diagnosis or timetable.",
+    "direction": "NEGATIVE",
+    "mechanism": "INJURY"
+   }
+  },
+  {
+   "candidate_id": "mobile:onsi:7a5e3c7bf347f14f3619",
+   "player": "Tua Tagovailoa",
+   "player_id": "00-0036212",
+   "team": "ATL",
+   "origin": "ARTICLE",
+   "source_id": "si_falcons",
+   "source_name": "Sports Illustrated -- ATL",
+   "source_url": "https://www.si.com/nfl/falcons/onsi/falcons-starting-qb-decision-could-come-down-to-one-factor",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The source explicitly reports that Atlanta has not named a starting quarterback and identifies Tagovailoa and Penix as the unresolved candidates.",
+   "validation_failures": [
+    "depth-chart card has no explicit starter or pecking-order change"
+   ],
+   "cost_usd": 0.00526,
+   "held_for_review": {
+    "evidence": "With all 31 other NFL teams having already named their starting quarterback, Atlanta remains the lone exception heading into Week 1, leaving Tua Tagovailoa and Michael Penix Jr. at the center of one of the league’s biggest unresolved storylines.",
+    "public_summary": "Tua Tagovailoa remains in an unresolved Atlanta quarterback competition with Michael Penix Jr. entering Week 1.",
+    "lineupbeat_impact": "Tagovailoa’s Week 1 starting status is not settled, making him a risky lineup option until Atlanta names a starter. The next key update is an official decision or first-team designation.",
+    "direction": "UNCLEAR",
+    "mechanism": "DEPTH_CHART"
+   }
+  },
+  {
+   "candidate_id": "mobile:onsi:430f3880242a44b95ec0",
+   "player": "Rome Odunze",
+   "player_id": "00-0039919",
+   "team": "CHI",
+   "origin": "ARTICLE",
+   "source_id": "si_bears",
+   "source_name": "Sports Illustrated -- CHI",
+   "source_url": "https://www.si.com/nfl/bears/onsi/figuring-out-zavion-thomas-bears-role-amid-so-many-weapons",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The author specifically identifies Odunze as a receiver who could gain reps after DJ Moore's departure, although the expected increase is speculative and Burden is projected to receive most of the vacated work.",
+   "validation_failures": [
+    "fantasy analysis is not explicitly attributed"
+   ],
+   "cost_usd": 0.009776,
+   "held_for_review": {
+    "evidence": "Thomas, however, is unlikely to change the overall dynamic of the Bears' receiver usage. It is Luther Burden and not Thomas, Rome Odunze or even Kalif Raymond, who figures to take up the majority of the plays that went to DJ Moore last season.\n\nThomas, however, is unlikely to change the overall dynamic of the Bears' receiver usage. It is Luther Burden and not Thomas, Rome Odunze or even Kalif Raymond, who figures to take up the majority of the plays that went to DJ Moore last season. Moore led all receivers with 979 reps and last year Burden had only 402 plays, or 40% of plays when he was available.\n\nIt is Luther Burden and not Thomas, Rome Odunze or even Kalif Raymond, who figures to take up the majority of the plays that went to DJ Moore last season. Moore led all receivers with 979 reps and last year Burden had only 402 plays, or 40% of plays when he was available. He started 5-of-15 games.\n\nJust because Burden will get more reps doesn't mean other receivers will lose them. Moore was used so often, other receivers might actually gain some over last year. Rome Odunze is one.\n\nMoore was used so often, other receivers might actually gain some over last year. Rome Odunze is one. Although he played 88% of the plays when he was available, he missed five games and still had 733 reps.\n\nRome Odunze is one. Although he played 88% of the plays when he was available, he missed five games and still had 733 reps. Last year Burden actually had fewer reps than Olamide Zaccheaus, whose plays figure to be absorbed by Kalif Raymond and Thomas, as well.",
+    "public_summary": "Gene Chamberlain projects Rome Odunze could gain snaps, even with Luther Burden expected to absorb most of DJ Moore's former workload.",
+    "lineupbeat_impact": "This is a modestly positive playing-time projection for Odunze, not a confirmed role change. Watch for preseason usage or an official depth-chart decision to validate it.",
+    "direction": "POSITIVE",
+    "mechanism": "ROLE_EXPANSION"
+   }
+  },
+  {
+   "candidate_id": "mobile:onsi:77086897bf164a6ec01b",
+   "player": "Luther Burden III",
+   "player_id": "00-0040735",
+   "team": "CHI",
+   "origin": "ARTICLE",
+   "source_id": "si_bears",
+   "source_name": "Sports Illustrated -- CHI",
+   "source_url": "https://www.si.com/nfl/bears/onsi/figuring-out-zavion-thomas-bears-role-amid-so-many-weapons",
+   "decision": "VALIDATION_FAILED",
+   "reason": "The author specifically projects Burden, rather than other Bears receivers, to take the majority of the plays previously handled by DJ Moore.",
+   "validation_failures": [
+    "fantasy analysis is not explicitly attributed"
+   ],
+   "cost_usd": 0.00641,
+   "held_for_review": {
+    "evidence": "Thomas, however, is unlikely to change the overall dynamic of the Bears' receiver usage. It is Luther Burden and not Thomas, Rome Odunze or even Kalif Raymond, who figures to take up the majority of the plays that went to DJ Moore last season.\n\nThomas, however, is unlikely to change the overall dynamic of the Bears' receiver usage. It is Luther Burden and not Thomas, Rome Odunze or even Kalif Raymond, who figures to take up the majority of the plays that went to DJ Moore last season. Moore led all receivers with 979 reps and last year Burden had only 402 plays, or 40% of plays when he was available.\n\nIt is Luther Burden and not Thomas, Rome Odunze or even Kalif Raymond, who figures to take up the majority of the plays that went to DJ Moore last season. Moore led all receivers with 979 reps and last year Burden had only 402 plays, or 40% of plays when he was available. He started 5-of-15 games.",
+    "public_summary": "Gene Chamberlain expects Luther Burden III to absorb most of the receiver snaps previously handled by DJ Moore.",
+    "lineupbeat_impact": "If that projection proves accurate, Burden could see a major role increase from his prior 40% participation rate. Monitor early-season snap usage; this is an author projection, not a confirmed depth-chart decision.",
+    "direction": "POSITIVE",
+    "mechanism": "ROLE_EXPANSION"
+   }
+  },
+  {
+   "candidate_id": "mobile:onsi:09d45abe01ada8dd0c62",
+   "player": "Josh Allen",
+   "player_id": "00-0034857",
+   "team": "BUF",
+   "origin": "ARTICLE",
+   "source_id": "si_bills",
+   "source_name": "Sports Illustrated -- BUF",
+   "source_url": "https://www.si.com/nfl/bills/onsi/joe-brady-josh-allen-not-mentioned-among-top-nfl-coach-qb-tandems",
+   "decision": "IGNORE",
+   "reason": "The passage is generic retrospective praise and does not establish a meaningful new fantasy-relevant development.",
+   "validation_failures": [],
+   "cost_usd": 0.00445
+  },
+  {
+   "candidate_id": "mobile:article:df3310d888d52346b0a3",
+   "player": "Jadarian Price",
+   "player_id": "00-0041512",
    "team": "SEA",
    "origin": "ARTICLE",
    "source_id": "official_sea",
    "source_name": "SEA official team site",
-   "source_url": "https://www.seahawks.com/news/montorie-foster-jr-knew-the-sky-was-the-limit-after-making-53-man-roster",
-   "decision": "IGNORE",
-   "reason": "The passage does not report a fantasy-relevant change involving Rashid Shaheed.",
+   "source_url": "https://www.seahawks.com/news/jadarian-price-to-get-first-nfl-action-in-week-1",
+   "decision": "CARD",
+   "reason": "Seattle's official site explicitly says Price will play his first NFL game after little or no preseason action, creating an immediate availability and role-development update.",
    "validation_failures": [],
-   "cost_usd": 0.004384
+   "cost_usd": 0.004816
   },
   {
-   "candidate_id": "mobile:onsi:d397b26a00137a132c19",
-   "player": "Jahdae Walker",
-   "player_id": "00-0040277",
-   "team": "CHI",
+   "candidate_id": "mobile:onsi:ee3979bfe2f859bff7e0",
+   "player": "Roman Wilson",
+   "player_id": "00-0039739",
+   "team": "PIT",
    "origin": "ARTICLE",
-   "source_id": "si_bears",
-   "source_name": "Sports Illustrated -- CHI",
-   "source_url": "https://www.si.com/nfl/bears/onsi/press-taylor-admits-hurdle-for-zavion-thomas-early-season-role-with-bears",
+   "source_id": "si_steelers",
+   "source_name": "Sports Illustrated -- PIT",
+   "source_url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-superstar-potential-rookie-germie-bernard",
    "decision": "IGNORE",
-   "reason": "Walker is mentioned incidentally in Thomas's depth-chart context; the evidence does not provide a fantasy-relevant new development for Walker.",
+   "reason": "The evidence describes an ongoing battle and speculative edge, not a confirmed promotion, starter decision, or material role change.",
    "validation_failures": [],
-   "cost_usd": 0.004652
+   "cost_usd": 0.0066
   },
   {
-   "candidate_id": "mobile:onsi:83f42542811e75feb3c2",
-   "player": "Kalif Raymond",
-   "player_id": "00-0032464",
-   "team": "CHI",
+   "candidate_id": "mobile:onsi:3ab68d1f682061a2a43f",
+   "player": "Mike Evans",
+   "player_id": "00-0031408",
+   "team": "SF",
    "origin": "ARTICLE",
-   "source_id": "si_bears",
-   "source_name": "Sports Illustrated -- CHI",
-   "source_url": "https://www.si.com/nfl/bears/onsi/press-taylor-admits-hurdle-for-zavion-thomas-early-season-role-with-bears",
+   "source_id": "si_49ers",
+   "source_name": "Sports Illustrated -- SF",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/5-49ers-set-disappoint-2026",
    "decision": "IGNORE",
-   "reason": "No meaningful new fantasy development for Kalif Raymond.",
+   "reason": "The evidence is a generalized negative opinion and does not identify a concrete fantasy-relevant change to monitor.",
    "validation_failures": [],
-   "cost_usd": 0.00447
+   "cost_usd": 0.004284
   },
   {
-   "candidate_id": "mobile:onsi:73f3d2788e7c3f6a69db",
-   "player": "Jahmyr Gibbs",
-   "player_id": "00-0039139",
-   "team": "DET",
+   "candidate_id": "mobile:onsi:42d2b6dea6cfbf84819b",
+   "player": "C.J. Stroud",
+   "player_id": "00-0039163",
+   "team": "HOU",
    "origin": "ARTICLE",
-   "source_id": "si_lions",
-   "source_name": "Sports Illustrated -- DET",
-   "source_url": "https://www.si.com/nfl/lions/onsi/most-important-thing-that-happened-lions-offseason-2026",
+   "source_id": "si_texans",
+   "source_name": "Sports Illustrated -- HOU",
+   "source_url": "https://www.si.com/nfl/texans/onsi/texans-biggest-roster-questions-entering-week-1-after-cuts",
    "decision": "IGNORE",
-   "reason": "The extension is not a meaningful new fantasy-football development without an accompanying role, availability or workload change.",
+   "reason": "The evidence is a roster-count update with no meaningful fantasy-relevant development for Stroud.",
    "validation_failures": [],
-   "cost_usd": 0.004706
-  },
-  {
-   "candidate_id": "mobile:onsi:803ec67952ce0c3cfa8c",
-   "player": "Amon-Ra St. Brown",
-   "player_id": "00-0036963",
-   "team": "DET",
-   "origin": "ARTICLE",
-   "source_id": "si_lions",
-   "source_name": "Sports Illustrated -- DET",
-   "source_url": "https://www.si.com/nfl/lions/onsi/most-important-thing-that-happened-lions-offseason-2026",
-   "decision": "IGNORE",
-   "reason": "The passage only mentions St. Brown as an established star and does not provide a fantasy-relevant change to monitor.",
-   "validation_failures": [],
-   "cost_usd": 0.004354
+   "cost_usd": 0.004078
   }
  ]
 }

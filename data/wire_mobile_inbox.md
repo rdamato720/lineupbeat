@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**2 cards** · batch `f9e8a80e3206` · 16 draft calls · $0.0788
+**1 cards** · batch `fbd64943e900` · 9 draft calls · $0.0529
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,48 +19,26 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Isiah Pacheco — DET RB
+## 1. Jadarian Price — SEA RB
 
-**Trending down** · TRANSACTION · HIGH evidence
-
-### What changed
-
-Isiah Pacheco was placed on injured reserve after the Lions finalized their initial 53-man roster.
-
-### Lineup Beat impact
-
-Pacheco is off Detroit's active roster for now, removing him from immediate lineup consideration. The report does not identify the injury or provide a return timetable.
-
-[Christian Booher · Sports Illustrated -- DET](https://www.si.com/nfl/lions/onsi/grading-every-major-roster-decision-detroit-lions-made-2026) · 2026-09-05
-
-<details><summary>Full evidence reviewed</summary>
-
-The Lions kept five running backs on their initial 53-man roster, then placed Isiah Pacheco on injured reserve and waived Jabari Small. As a result, there's Jahmyr Gibbs, Jacob Saylors and Sione Vaki as the team's options currently on the active roster.
-
-</details>
-
----
-
-## 2. Jawhar Jordan — HOU RB
-
-**Trending down** · TRANSACTION · MEDIUM evidence
+**Trending up** · ROLE_EXPANSION · MEDIUM evidence
 
 ### What changed
 
-Jawhar Jordan was placed on Houston's practice squad despite being viewed as a candidate for the RB3 job.
+Jadarian Price will make his NFL debut against New England after playing little or not at all during Seattle's preseason.
 
 ### Lineup Beat impact
 
-Jordan is off the active roster for now, limiting his immediate fantasy utility. With Houston carrying three backs, monitor whether he earns a practice-squad elevation; the report does not establish a role or timetable.
+Price's debut confirms Seattle plans to get its first-round rookie on the field in Week 1, but the report does not define his workload or place in the backfield rotation. Watch his usage.
 
-[Jared Koch · Sports Illustrated -- HOU](https://www.si.com/nfl/texans/onsi/3-texans-who-are-bound-to-see-practice-squad-elevations-this-season) · 2026-09-05
+[Ari Horton · SEA official team site](https://www.seahawks.com/news/jadarian-price-to-get-first-nfl-action-in-week-1) · 2026-09-05
 
 <details><summary>Full evidence reviewed</summary>
 
-The Texans did two eye-catching moves to their running back room. For one, they have just three backs rostered heading into Week 1, which felt like a less likely outcome as opposed to four. But Houston also sent Jawhar Jordan to the practice squad after he felt like the leading candidate to fill their RB3 spot on the depth chart.
+Throughout three preseason games, many of Seattle's starters and players who will be getting significant reps during the regular season didn't play at all or played very little. Seahawks 2026 first-round draft pick running back Jadarian Price is one of those players.
 
-For one, they have just three backs rostered heading into Week 1, which felt like a less likely outcome as opposed to four. But Houston also sent Jawhar Jordan to the practice squad after he felt like the leading candidate to fill their RB3 spot on the depth chart.
+Throughout three preseason games, many of Seattle's starters and players who will be getting significant reps during the regular season didn't play at all or played very little. Seahawks 2026 first-round draft pick running back Jadarian Price is one of those players. When the Seahawks take on the New England Patriots on Wednesday, Price will play in his first NFL game in front of a crowd that includes his mom.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrtWN1z0zgQ_1c0ebmHi1M7Tmwn91RooC2QMm2Bh4PxyNK6VmtbOUlOCAz_--3abtoU6DDcw33MvWRsrbTa_e1vP5zPg4w7UaRKDuaDfAYJT3wIx37kiyzxg0ngJ1EWJPEU_HAcxGGSySz2ZyLiYiIkCifjaJb5mYzDIBkMB4IbaQfz3z8P-Gpl9Bpkyh2qRhFvXKENPj8tjLJO8Zo90boAQ8d0VUHtuNmi_DUXBQjNlGU6z9kROKOV-8UyLpxaAzPaOjAs14bVejNkBiq9VvUVK1TFcqMrplCbVNwBK1UNzYoJXVslwXCndD1ilwVqgZU2jkkNFtU4huLaqXzLHApVfd2YLcMbyAkUMY4HXGNq5lQFjmcljPbsTnf-ZtvO33sybdSVqnH51dnR4mV6dH747LLdUTvckbrtClB4vnh9dn55snyOIonG49LYH0eeP_P86WUQz4NoHia_-v7c92mLMiDIH9y3XDw_vDx5u6Blw3OXouqcPBKoxR_Nktv1UlXKtShQlAYdENzquoVz5zpIz4AFg2ivSi6AHGEb3iHVIQeSAFjqr3Ah1KBEhzNVKrdlEpdVadkGDNzCiWc_DAewvjWxNeQlWcVuYOVY3sa5qWsKa8bFDVKhJvOUQQMVkqdk09CrkEMdG4YkrDtjJTuxihfslkd4sneK3TrFa4nu4CWSnfKMG8UuKl6WI3Zo20jbpnStSgPIu1NeVFvDnqsss0N8EzpjF3xbamNbTRdoOLC3_EYxhIhAdMArPKhXLdJMNMYgguW292KfyYTjLRSpQIWKot-lZKURRZgTfed8mosojkQoZoJnUTLxp8QDTCr1qWXBm-WL5dm7Ja5VIApeK1sRtOeHy4vDp5cnZ61ESyh7QvIy_bcmnt7UYGyhVmj2yfJo8XqBP0tKKqTAFqjM7JFgJ-hg9X3P98M4mMUk0Fb1eXT-hN6Nvu4yK-W7BDtbUnKtmqxUIrVNVXWQ7TONMqSn4LdIlxN6bsf0nCKgPuGOR4g9-urWrysNZjBCnJY8g5ICjlyTFBaJKPVijIa1aY6JiCZR6n-g9bUCzMo7LwnFrv5Y3Zg2MS8oWJadlGVjHYYRrfU8drQgqHEB6itX4Lbjk-fHuEK8x7dO3BiypnBuZecHB5vNZmTVCAl3UOflQUkQHBA7Dq4M2XflwRrMFl2_1sbrnPckCGVxJz60XPTaY7hHgke1cfBl-FinOeWE_wstioc95lQbiRj3TP8qJe843hbMjuP2Hr1zjprsljWuLXIj9k65gh1rBAkjj13QbOmQKwxAV8CGrNIYYNS7KYAqC8NLgZuaKs7K0PUCPPtHwyWWT1i3GfNba9rDjAFLeaBsQcmhu4r7t7Wl6TycYmf6qbYUPtqWvlMmutBhVYKPCBpDLDq2Z1AoLMZ9DO5VrftthNB5_R2wGV9jfvC-bVFh5_W2bwakYKPNTanxBLKKNfUN8qP-Vh-7RMMwqljGmdtoBlvwBA1ZpAMLJvrjdJ_y923DUOpqxJ5hMLGdtN1nywqOHlyjR_ep1JMUqV20qX2FpQNVvgO4YcEQ-aVEwXIoHbL3hipoicnfPlMHahxSAKhT6RWWPio_GvnemBF70rgdh3lpNbPU90_5puCmx723fcdY1oHY1TZcv7uWdpW9fbuu1t6lyrL3__xJyOwKo9v3RYnNv2DYu4wbva_f1_-D0YPxgyNClGQzmUy5SEQk4mkYTfL9EeHiGHM5vVycv_rpKeG_XTp_YLDYo8A3B4sZjmZ_cbDY59n-YHFX4h4QT4JdKYQ4A0Kw7e6SuM3vce52zie2XevsnzlfHJ-92Z8vXi2OTt68upswug2PThiuLcPdiBF63Zu3KbSH5dvLdFNLz2nPAnj7FPJ2FLKeQ-riFvpAGnz5QK3RurSxkrqXHyfJZDwcXEENreHd_LH_yTaOsT3uemOXVgK_NBCiILpFvr0Mk6zBpstd2rbEwTx5ILcFH0-jexsGPAb6MhfBLPBDf5KPo0kCPI_CLPRzngsp40DwaJrLfJKFscymfjwJsjycJSEI4AQxDq4VT3Hysl2INti-va6keKrO9EdvHezilXZ_FnSWENshnvh8OvGzOArkLIj9PJgl0yyQPAnCSTweJ7HkeRbOYhnTPwmTcIpWBD4aFmUhH3z5Ez37q74:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrtVtty2zYQ_RUMX_JQUQZJ8SK9uWOldceWPLFbd6bJcEBgKSIiAQ4AWlEy-fcuSEm1mz_o9EnULrCXs2d38S2omONNKUWwCupKZIvlIoElpcuoiAWwNE1ZHQlasyzPRJrmOS0qLuJlGgHnNa3iIq4KJnhCF3kwCzgzwgarv74FrO-NfgFRMoemUcUG12iD39dGkl-1cVr5C7rrQDlmjqh5MJLDO0sEVIMjXKtams6SR2DOtUD6lilLnCY7cEQ6S1BtXWj0oAQxWu8lEK2IawA10AoiFXkG2JNoRrxBrzDQo2siNFiiNH5ALRWQRlpy0GbfaiaINt4VB3_f36kY308GjXbMSa3m5NnDNl4bLNvB_E0q5SX56jgl_0qnjdxJheL77c36rrz5cP3-aTyhHJ4o3bEHVH5YP2w_PN1ufkGVYM6LYhpnIV2GNH2K49UiWcXpPEtSSulPlK4o9SelAe4D9GBuH2-fbv9Ye7FhtStHPAUojsbofLk4y1vZySktX7ngCTO2ejCY_wUl2wOX9ZGcCwRfUOBAEKtYT2zDDMwI1t5IvIDwGd2OkNx503isN2CBWSwOG8MjrNXqlX2wjlWttA1hWJHeNSFHm4702soR7-DTLICXc_QYIxZ91-ixqAbglYMd68DOSMfUkej6zB2MGV0YB8YShmzB-h7996HR5CDbllTgWeWk2hErd0rWkjPlPF2QjoPx8ok-u6FlhpycCSnUOzdaI8xhVu2JPEdM-gXMkbTSu5_7OBp22Fviq_iGuGMRSC_5nphBKe_JE478xgQzkqkJdIJM85BhSthGFs4ZzD-qj-p_OC5wkOcGpq69uHBsf5kLGziQtdq1PukH5ozUzhvCMSEUWMGOs5P9EYUxERwCvs3HGMnm_d0IqZfWBlvWR8AIN_og0AEmLRVvB4G89pc63fk2ODO3RBARI2znaeB2upItrLAQkuOvqJMkoqIoCpHGySKrKEvwNk5N-XVs6dv7-_XN7fWT7-kOsEWUtJ0fFtu7dbn-8-F683i73XilFtCeJg1ry__QkNUHhWVuZO-nwPr6vtw-b9Y3qJgIgNK3RLloJsQpDSldRGkUe8VpungEf_b_jf48jc-SnafoZrvxaPcDjide2qHrJhT_RceRLp0nmo_Ws2SCl-2YVJ43r3iH_IapKzy5p47wcHikTl1zarF_uvXS0PMfgvlx2RhgAhNuWQWth8kAsg7NDf1JicWwtqyZbAe0i0P_k5e_SDjgtUvqD-vNzbSApnWAosf1NRIeh4FkLXHAOpwOzmNsHTrZucavNaTo7_co8_rpDv4ZjA-lca63q6urw-Ewt6f-nCM7rxQc7NXnE6Zh7zENnQ6Rg-HEP1W34RRZKFV4QMKFUfD9k9-b1pWDFX6n0TQuilmwA-QINtnp7fF6byarNFst0svCnBqFI-YIw_IM7Ug_7JoB9zFz5TiSglWRvdXj2ovT7NWBgOVQ5CnwaBlRfBDVcbYogNVZUiX4gqq5EHnEWZbWol5USS6qlOaLqKqTZZEAB-aB5A10rMRhaacqHHClh9OgwMwr_SV8iS4lKafX2xSJf8HRIqtTGhUFjXJeszSuaQx5niYYVZ5iXEXNAXi65EuRxSxbxMs4yWMMM14uoAq-_w2HUm3R:WIRE_MOBILE_MANIFEST_V1 -->

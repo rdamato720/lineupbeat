@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1071,
+ "count": 1080,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -11820,6 +11820,105 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004354
+  },
+  {
+   "candidate_id": "mobile:onsi:665b2983c24ee750fa32",
+   "player_id": "00-0039917",
+   "source_url": "https://www.si.com/nfl/falcons/onsi/falcons-starting-qb-decision-could-come-down-to-one-factor",
+   "attempted_at": "2026-09-05T23:56:45+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-05T23:56:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007206
+  },
+  {
+   "candidate_id": "mobile:onsi:7a5e3c7bf347f14f3619",
+   "player_id": "00-0036212",
+   "source_url": "https://www.si.com/nfl/falcons/onsi/falcons-starting-qb-decision-could-come-down-to-one-factor",
+   "attempted_at": "2026-09-05T23:56:50+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-05T23:56:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00526
+  },
+  {
+   "candidate_id": "mobile:onsi:430f3880242a44b95ec0",
+   "player_id": "00-0039919",
+   "source_url": "https://www.si.com/nfl/bears/onsi/figuring-out-zavion-thomas-bears-role-amid-so-many-weapons",
+   "attempted_at": "2026-09-05T23:56:53+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-05T23:57:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.009776
+  },
+  {
+   "candidate_id": "mobile:onsi:77086897bf164a6ec01b",
+   "player_id": "00-0040735",
+   "source_url": "https://www.si.com/nfl/bears/onsi/figuring-out-zavion-thomas-bears-role-amid-so-many-weapons",
+   "attempted_at": "2026-09-05T23:57:00+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-05T23:57:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00641
+  },
+  {
+   "candidate_id": "mobile:onsi:09d45abe01ada8dd0c62",
+   "player_id": "00-0034857",
+   "source_url": "https://www.si.com/nfl/bills/onsi/joe-brady-josh-allen-not-mentioned-among-top-nfl-coach-qb-tandems",
+   "attempted_at": "2026-09-05T23:57:05+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T23:57:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00445
+  },
+  {
+   "candidate_id": "mobile:article:df3310d888d52346b0a3",
+   "player_id": "00-0041512",
+   "source_url": "https://www.seahawks.com/news/jadarian-price-to-get-first-nfl-action-in-week-1",
+   "attempted_at": "2026-09-05T23:57:07+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-05T23:57:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004816
+  },
+  {
+   "candidate_id": "mobile:onsi:ee3979bfe2f859bff7e0",
+   "player_id": "00-0039739",
+   "source_url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-superstar-potential-rookie-germie-bernard",
+   "attempted_at": "2026-09-05T23:57:09+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T23:57:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0066
+  },
+  {
+   "candidate_id": "mobile:onsi:3ab68d1f682061a2a43f",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/5-49ers-set-disappoint-2026",
+   "attempted_at": "2026-09-05T23:57:14+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T23:57:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004284
+  },
+  {
+   "candidate_id": "mobile:onsi:42d2b6dea6cfbf84819b",
+   "player_id": "00-0039163",
+   "source_url": "https://www.si.com/nfl/texans/onsi/texans-biggest-roster-questions-entering-week-1-after-cuts",
+   "attempted_at": "2026-09-05T23:57:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T23:57:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004078
   }
  ]
 }
