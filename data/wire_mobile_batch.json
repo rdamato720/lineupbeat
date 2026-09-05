@@ -1,88 +1,39 @@
 {
  "schema_version": "wire-mobile-batch-v1",
- "generated_at": "2026-09-05T01:32:06+00:00",
+ "generated_at": "2026-09-05T04:30:52+00:00",
  "window": {
-  "from": "2026-09-04T23:32:06.000369+00:00",
-  "to": "2026-09-05T01:32:06.000369+00:00",
+  "from": "2026-09-05T02:30:52.400650+00:00",
+  "to": "2026-09-05T04:30:52.400650+00:00",
   "hours": 2.0
  },
  "published": false,
  "model": "gpt-5.6-terra",
- "model_calls": 6,
- "cost_usd": 0.030364,
+ "model_calls": 0,
+ "cost_usd": 0.0,
  "limits": {
   "max_calls": 20,
   "cap_usd": 0.08,
   "max_cards": 10
  },
- "raw_candidate_count": 6,
- "candidate_count": 6,
- "cards": [
-  {
-   "player": "Jadarian Price",
-   "player_id": "00-0041512",
-   "team": "SEA",
-   "position": "RB",
-   "content_type": "REPORTING",
-   "direction": "POSITIVE",
-   "mechanism": "TRANSACTION",
-   "strength": "HIGH",
-   "horizon": "SEASON_LONG",
-   "projection_action": "NONE",
-   "reader_label": "Trending up",
-   "public_summary": "The Seahawks used a first-round pick on Jadarian Price to replace Kenneth Walker III after Walker left in free agency.",
-   "evidence": "Kenneth Walker III won the Super Bowl MVP but then left in free agency. Walker signed a three-year deal with the Kansas City Chiefs, and Seattle decided to replace him by using their first-round pick on Notre Dame's Jadarian Price.",
-   "commentary": "Price's draft investment signals a meaningful path to Seattle's post-Walker backfield, but this report does not establish a starting role, workload or camp usage. Monitor depth-chart and first-team-rep updates.",
-   "source": "Sports Illustrated -- SEA",
-   "author": "Randy Gurzi",
-   "date": "2026-09-05T01:00:00+00:00",
-   "url": "https://www.si.com/nfl/seahawks/onsi/3-seattle-seahawks-under-most-pressure-entering-week-1-2026-season",
-   "ownership": "INDEPENDENT",
-   "evidence_candidate_id": "mobile:onsi:0c210d5350fe52967f68",
-   "reviewer_action": "PENDING",
-   "public_summary_approved_by": "",
-   "commentary_approved_by": "",
-   "approved_at": "",
-   "commentary_origin": "MODEL_DRAFT",
-   "model_original_commentary": "Price's draft investment signals a meaningful path to Seattle's post-Walker backfield, but this report does not establish a starting role, workload or camp usage. Monitor depth-chart and first-team-rep updates.",
-   "draft_limitations": [
-    "The evidence does not name Price the starter.",
-    "No workload, snap-share or practice-rep information is provided.",
-    "The article provides no timetable or depth-chart details."
-   ],
-   "draft_confidence": 0.97,
-   "readiness_failures": []
-  }
- ],
+ "raw_candidate_count": 0,
+ "candidate_count": 0,
+ "cards": [],
  "precall_duplicate_count": 0,
  "precall_duplicates": [],
  "unreviewed_count": 0,
- "relevance_suppressed": 6,
- "validation_failed": 2,
- "outcome_counts": {
-  "CARD": 1,
-  "IGNORE": 3,
-  "VALIDATION_FAILED": 2
- },
+ "relevance_suppressed": 0,
+ "validation_failed": 0,
+ "outcome_counts": {},
  "coverage": {
-  "source_candidate_counts": {
-   "si_49ers": 1,
-   "si_bears": 2,
-   "si_seahawks": 2,
-   "si_titans": 1
-  },
-  "team_candidate_counts": {
-   "CHI": 2,
-   "SEA": 2,
-   "SF": 1,
-   "TEN": 1
-  },
+  "source_candidate_counts": {},
+  "team_candidate_counts": {},
   "teams_without_candidates": [
    "ARI",
    "ATL",
    "BAL",
    "BUF",
    "CAR",
+   "CHI",
    "CIN",
    "CLE",
    "DAL",
@@ -104,7 +55,10 @@
    "NYJ",
    "PHI",
    "PIT",
+   "SEA",
+   "SF",
    "TB",
+   "TEN",
    "WAS"
   ],
   "eligible_article_sources": [
@@ -184,12 +138,7 @@
    "si_vikings",
    "steelers_depot"
   ],
-  "article_sources_with_candidates": [
-   "si_49ers",
-   "si_bears",
-   "si_seahawks",
-   "si_titans"
-  ],
+  "article_sources_with_candidates": [],
   "article_sources_without_candidates": [
    "arizona_sports_tyler_drake",
    "atoz_network_ne",
@@ -232,6 +181,8 @@
    "phillyvoice_jimmy_kempski",
    "pressbox_baltimore",
    "purple_insider_matthew_coller",
+   "si_49ers",
+   "si_bears",
    "si_bengals",
    "si_bills",
    "si_broncos",
@@ -258,116 +209,14 @@
    "si_rams",
    "si_ravens",
    "si_saints",
+   "si_seahawks",
    "si_steelers",
    "si_texans",
+   "si_titans",
    "si_vikings",
    "steelers_depot"
   ]
  },
  "event_duplicates": 0,
- "outcomes": [
-  {
-   "candidate_id": "mobile:onsi:0c210d5350fe52967f68",
-   "player": "Jadarian Price",
-   "player_id": "00-0041512",
-   "team": "SEA",
-   "origin": "ARTICLE",
-   "source_id": "si_seahawks",
-   "source_name": "Sports Illustrated -- SEA",
-   "source_url": "https://www.si.com/nfl/seahawks/onsi/3-seattle-seahawks-under-most-pressure-entering-week-1-2026-season",
-   "decision": "CARD",
-   "reason": "The evidence reports a major roster change: Seattle selected Price in the first round specifically after Walker departed in free agency.",
-   "validation_failures": [],
-   "cost_usd": 0.004642
-  },
-  {
-   "candidate_id": "mobile:onsi:2b4f8d78d3e5e5ae1020",
-   "player": "Cam Ward",
-   "player_id": "00-0040676",
-   "team": "TEN",
-   "origin": "ARTICLE",
-   "source_id": "si_titans",
-   "source_name": "Sports Illustrated -- TEN",
-   "source_url": "https://www.si.com/nfl/titans/onsi/titans-given-tank-designation-1-reason-everyone-is-wrong-about-robert-saleh-s-first-year-01m1qb1j7r8j",
-   "decision": "IGNORE",
-   "reason": "The evidence offers only a general, conditional evaluation of Ward and does not establish a fantasy-relevant new development.",
-   "validation_failures": [],
-   "cost_usd": 0.005214
-  },
-  {
-   "candidate_id": "mobile:onsi:73826131abe1541e6e46",
-   "player": "Zach Charbonnet",
-   "player_id": "00-0039165",
-   "team": "SEA",
-   "origin": "ARTICLE",
-   "source_id": "si_seahawks",
-   "source_name": "Sports Illustrated -- SEA",
-   "source_url": "https://www.si.com/nfl/seahawks/onsi/3-seattle-seahawks-under-most-pressure-entering-week-1-2026-season",
-   "decision": "VALIDATION_FAILED",
-   "reason": "The source reports a concrete PUP placement and minimum four-game absence, a material availability change.",
-   "validation_failures": [
-    "mechanism INJURY is not supported by the evidence passage"
-   ],
-   "cost_usd": 0.004678,
-   "held_for_review": {
-    "evidence": "They have Zach Charbonnet as well, but he's on the PUP to start the season and will miss at least the first four games, and probably more. That means the ground game will be dependent on Price, who didn't take a snap during the preseason.",
-    "public_summary": "Zach Charbonnet is on the PUP list to open the season and will miss at least four games, Randy Gurzi reported.",
-    "lineupbeat_impact": "Charbonnet cannot play in the first four games, making him unavailable for early-season lineups. Monitor whether he is cleared after that minimum absence; the source suggests the absence could last longer but gives no timetable.",
-    "direction": "NEGATIVE",
-    "mechanism": "INJURY"
-   }
-  },
-  {
-   "candidate_id": "mobile:onsi:8f0ad5cddf61ad3c5439",
-   "player": "Caleb Williams",
-   "player_id": "00-0039918",
-   "team": "CHI",
-   "origin": "ARTICLE",
-   "source_id": "si_bears",
-   "source_name": "Sports Illustrated -- CHI",
-   "source_url": "https://www.si.com/nfl/bears/onsi/biggest-winners-and-losers-from-bears-2026-offseason-includes-both-playcallers",
-   "decision": "IGNORE",
-   "reason": "The evidence is offseason praise and ranking-style analysis, not a fantasy-actionable change for Williams.",
-   "validation_failures": [],
-   "cost_usd": 0.0048
-  },
-  {
-   "candidate_id": "mobile:onsi:b1dda3c82850f349ff53",
-   "player": "Kyle Monangai",
-   "player_id": "00-0040236",
-   "team": "CHI",
-   "origin": "ARTICLE",
-   "source_id": "si_bears",
-   "source_name": "Sports Illustrated -- CHI",
-   "source_url": "https://www.si.com/nfl/bears/onsi/biggest-winners-and-losers-from-bears-2026-offseason-includes-both-playcallers",
-   "decision": "VALIDATION_FAILED",
-   "reason": "The report describes multiple injury-related absences, including no practices since a subsequent injury on Aug. 16.",
-   "validation_failures": [
-    "availability item omits the temporary context (which practice, and that no timetable was given)",
-    "mechanism INJURY is not supported by the evidence passage"
-   ],
-   "cost_usd": 0.00545,
-   "held_for_review": {
-    "evidence": "The Bears are counting on Kyle Monangai to once again play the part of thunder to D'Andre Swift's lightning in the running game this year, but that plan has already gone off the rails. After participating in the first practice of training camp, Monangai missed the next three with an injury.\n\nThe Bears are counting on Kyle Monangai to once again play the part of thunder to D'Andre Swift's lightning in the running game this year, but that plan has already gone off the rails. After participating in the first practice of training camp, Monangai missed the next three with an injury. Then, he went down with another injury on August 16th and hasn't practiced since.",
-    "public_summary": "Kyle Monangai missed three early camp practices with an injury, then suffered another injury and has not practiced since Aug. 16.",
-    "lineupbeat_impact": "Monangai’s availability is a concern after repeated missed practices. His role and timetable are unclear; monitor for a return to practice and any update on the injuries.",
-    "direction": "NEGATIVE",
-    "mechanism": "INJURY"
-   }
-  },
-  {
-   "candidate_id": "mobile:onsi:15410aa80ecb4665d013",
-   "player": "Christian McCaffrey",
-   "player_id": "00-0033280",
-   "team": "SF",
-   "origin": "ARTICLE",
-   "source_id": "si_49ers",
-   "source_name": "Sports Illustrated -- SF",
-   "source_url": "https://www.si.com/nfl/49ers/onsi/5-49ers-need-step-up-2026",
-   "decision": "IGNORE",
-   "reason": "The author argues that McCaffrey's workload should be reduced, particularly on between-the-tackles carries, but the evidence does not establish that the team has made or announced such a change.",
-   "validation_failures": [],
-   "cost_usd": 0.00558
-  }
- ]
+ "outcomes": []
 }
