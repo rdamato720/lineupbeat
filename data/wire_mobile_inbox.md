@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `3ab447f6769f` · 17 draft calls · $0.0829
+**1 cards** · batch `3277bbf46393` · 6 draft calls · $0.0304
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,30 +19,24 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. DJ Moore — BUF WR
+## 1. Jadarian Price — SEA RB
 
-**Worth noting** · TRANSACTION · HIGH evidence
+**Trending up** · TRANSACTION · HIGH evidence
 
 ### What changed
 
-The Bills acquired DJ Moore from Chicago for the 60th pick in the 2026 draft, according to Randy Gurzi.
+The Seahawks used a first-round pick on Jadarian Price to replace Kenneth Walker III after Walker left in free agency.
 
 ### Lineup Beat impact
 
-Moore's move to Buffalo gives him a new offense and quarterback context to monitor. The report notes early rapport with Josh Allen but provides no role, target-share or workload details.
+Price's draft investment signals a meaningful path to Seattle's post-Walker backfield, but this report does not establish a starting role, workload or camp usage. Monitor depth-chart and first-team-rep updates.
 
-[Randy Gurzi · Sports Illustrated -- BUF](https://www.si.com/nfl/bills/onsi/players-dalton-kincaid-identified-as-key-to-bills-super-bowl-run-in-2026) · 2026-09-04
+[Randy Gurzi · Sports Illustrated -- SEA](https://www.si.com/nfl/seahawks/onsi/3-seattle-seahawks-under-most-pressure-entering-week-1-2026-season) · 2026-09-05
 
 <details><summary>Full evidence reviewed</summary>
 
-In an effort to open things up, the Bills sent the 60th overall pick in the 2026 NFL draft to the Chicago Bears in exchange for wideout DJ Moore. His early rapport with Josh Allen has hopes soaring, but he's not the only player who can help the offense improve this season.
-
-"If the Bills finally make a run this year, it'll be thanks to a league-leading offense that has become more dangerous on downfield throws. DJ Moore is a key contributor to that effect, but sometimes the louder call comes from inside the house.
-
-"If the Bills finally make a run this year, it'll be thanks to a league-leading offense that has become more dangerous on downfield throws. DJ Moore is a key contributor to that effect, but sometimes the louder call comes from inside the house. A healthy Kincaid season elevates this group even before Moore takes his first snap as a Bill."
-
-DJ Moore is a key contributor to that effect, but sometimes the louder call comes from inside the house. A healthy Kincaid season elevates this group even before Moore takes his first snap as a Bill."
+Kenneth Walker III won the Super Bowl MVP but then left in free agency. Walker signed a three-year deal with the Kansas City Chiefs, and Seattle decided to replace him by using their first-round pick on Notre Dame's Jadarian Price.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrlVk1z2zgM_SscXXpYy9GHLdm-pY3bppt1Okk6e9h2NJAIWtxIokpScd3O_vcFpMRNp4e9d8czcUyCIN7DA8BvQQm-qgstg02QQrlY5CrLs7WKYLlcJMt1vFim-aKMszSuMIrUapUrMsqTpJJlViaYSpWoDOJ4nQezoAIrXbD561sAfW_NA8oCPLmmLRh8bSz9fwOdPIo3g_2q-YRpW-w82CNt_WGMxRdOtHRSeCNeDkpBY8ReP6ATtW4FiA4PwiiFnUNBnsTnAaxHW0J1LyrTefzi-WhrOu2NnYu7GoXF3lgvOuPJDYJtjsJSgLx20L4W74yrxXnTYCfKwQuOXEsy7YywpsGZoPj26ENXg0VhrDgYe98YkEKiB924-Q9IihP48jiBf7ZnrN7rjsFeX2yvioub89d3owWF3vnCH3tkkrbvr2_uLndvaEuC56UkSrIwWofR4i5JNst0s1j-FkWbKGITbbHy2rDfD7tXV9vzG161oHxBnhWh6SpyEs3X66f1RrfaAx_ijAXMEz5MhkKaEb0XrsdKq6N4ykzfAG2bTngyl9gTeRWR4pkUwvw3RYHykS7xYJqhReZm-wPnmjJMWOlmsuUEmJF0IAR890QpewThBke_2K5Hq4xtgcPzFjs5Dz7NgqeICfdlR3oQqBRfQQowPXKYuts7MfSzMeKXuiHPji4ff2YRxU-JstA0otekID0hY67F7vWVGKlib7z6qtYV7EmWJCHHpviFwHd7FIo1QZEwkIt3E1tz8Vb_l9pqIFlToBSTAUuhzkYB1kw108-3mo4cEO9HpDtqIypCWWPTT5uPlaDbUXGMl_GBM938Y0ef4FI9Q650R1CPooV7qh5hh246caQwZ0L7F8RDyV6gu3cMG0SDsB8wpC9J8Z0uJBM_hl8iiRup3qgyJJNhzeBYIdIcSHjYkBxqaw5ufmKGBQDiHo9jwVpNkIm_kWRyShkkFU1EOHLtdUv8MIbGDJJIqDhbfCnhsaalRDiifrQgJTn8_wIX56QMaHx9FL_rrgItH7UgsMEH8KM7imFPofZU7dzvUHFgU3ie2OE-y3xZR1F00AvgmJnF-ceAmf1lwATf20dBRSU1N9ppFLam1A1uqDXqzbrEVRmtV5TvfKlWGEG6oKM0zPTXseHebs9vr3fF1fXYrVvknqBdSzt3N-e72_NXd5fXO94xEpvH_g9N8etMPtI7Wlfrnrvw7mL7fkt_djzVprZFy0-iOa1NPEdRGEXpYpXw46E3Tj_OsD95fD3OE1op4Gm47a53W94aykZXhRvaduLv7lTpUH0eaBrK70U3yuupd3OnPrX-n1r-2O5n5KMydqx64vPZe2X-09U_j3pL_YLgNVBiw0iI6pr5J2-PuzTOnCsUsTdY5Nn7idcfNB7o3AkpkzjNf2cGO064W86bE5dNQ1PRAk_aMBQvP7xmI56Je1-T2dvLN29pxSOwBqftwXIwtfe925ydHQ6HudNzUuBZp5qzkok7Y7GfTclxoaTCM114PxVeyFXiNTU1GYILqeZDb8LxWOgGmsxhaQ5NSF011F3ITAb_fOI3jfPF4CS_O6JVso5Xs2CPpBUOfXoYPn_UpJtkuVnmp0fNVC_cJ4ikOH-ifnyyUPUM9FoCX4wpCzar7Md9EmyyzJ4ZBJDjKl9iFa_jKI0WKskWKwSVpWUaKVCVlHlcQbZUUi3KNJflMsoXcanS9SrFCoFJrmpsoaAHg5uSdCClhVOzIOSl-RI-xKeMFdPbeoqEjNdZhFEel9Eyj6pkFUnI0xKirMIqzai_ZDnIpIxVXsZQLbKS3tflMk0l5uWqWgBx-i-aogDa:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVm1v2zYQ_iuEvuzDrETvsvwtTbLUa2sHsdF9GAqBIo8RF4kUSCqeW_S_7yjZWbL2FwwwBOneePfcc0d_CxrqWFtLHqyCNCnLphFZkVZpxZuUR5HI0rxiTR7BsozLIo6TqsmypkppxdKCsgpKlpVxVC1pmQaLgFHDbbD681tAh8HoZ-A1dRgaVXR0rTb4_kAVP5K70XyV3kP3PShHzRFV90Yy-MUSbqhwRKpnsM5riZWPinaWUNIDVVI9irEjA3UtcZrsgDrXeb9BWxf-QbsnMKSh7ElI6PiCNKMjrpWWGBi0cYRrsERpRzA8bTppWwyMr8ZhZGJ0Bwty0Oap05QTbQij_UBGSx_hgnzSSjqUcRhcG7IWnQgWRIQ0eLYD2od4ChkHTh3YizcV1i-gNMcZlFc6beSjVCj-tL25_VjfPFz9tp8slEOL2h0H8ODd3m8f9uvNHar8CShKoqQIoyqM8n0Ur6IIf79OT28iDTAntY97v92t9-vPt17s8a0xtJAcFMMo0UVVnuWd7KWj3su3Mti3QOB5NvwXOkV7IFO_EFqY0QPj693oF_AWxCo6hBZRAg_kYChmw2CCSCqhTT-dQ7A3Hhk8hPsQ_kjfDdbBWe5PJU724Ds2BXvdAY5i2SHcXxbBOVcs-QMoBUiSEyXW6zWmpqaEd-OAknf60JFPn-9PFAFFOpiYR4QBzOERAx0vzv6ehcCRK65FbXgE6rOgHTlIz0SM-oEqSy25lu5IrlsJwi4mdpwoitbM1-hZixB0FNFrZU-aI9LLcw9jSHPiktEjeg6SPRHMeaMdYniDqCPPf6ecGknV3ACP2LnomuFx0jNjnuleN7KDFbZSriKWxBHP0zwSkCdVUYpiia44lfLrxJDd7dVuu6k_bid69YDYKml71Owfrja7q-v9ervxGs2hOxGWdvX_f4T1QYGxrRywwPXm5vb-Fh8bP57YwyP4rfa2JS-auQtRFEZRFudx4hXaytNIPrzz30b_NQ9pTc-zutlu_JwOI5bGajv2_YyuHwzEqqWHJ4vlTGT8GVveZvOabj8ZCWwUvp0EP-P_D5n8uMgMUI7VdrSBzudpAGmInRiHk1IqsLYWOKWjAb9Xvnj5s4QDur3U7YGdl5vVo5lmeOf7bcm660brDHaEkzAkSFVvhDOhHl2LZu_Xd-9R4rs3Mxk_RuNzaZ0b7Ory8nA4XFh5gWy9VKK7tCcYL_1sXKahnSkYnuUh4gkm7D0fB0zZYt4hEhkM1hUeAJ7COJx2L3pYzP77F7-tratHy_1CjdIoLbJFgBjClPd8Fb5d12myioqXdT0PFqNdhwgVZ9SnFYlTNuI1QF09TVawWv5Hj0s2yYtXBgEt8dbOgcVVjLlkIimyJVBRpE0aCSoY52XMaJELLrImLTle82UWNyKtlikwoB5g1kJP62dk_9ygA14o4bxUQqka_Xf4HL90q57_TMyZoDHLGx87K3HjJKyMYrFkUFUlLWAZJYJVZZUsm1yUKS3zKs-bhGaiWYooZwnLlzz4_g_y0Ohe:WIRE_MOBILE_MANIFEST_V1 -->
