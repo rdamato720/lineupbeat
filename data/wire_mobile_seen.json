@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1066,
+ "count": 1071,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -11765,6 +11765,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004946
+  },
+  {
+   "candidate_id": "mobile:article:0bff1c7185a884489a57",
+   "player_id": "00-0037545",
+   "source_url": "https://www.seahawks.com/news/montorie-foster-jr-knew-the-sky-was-the-limit-after-making-53-man-roster",
+   "attempted_at": "2026-09-05T21:48:15+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T21:48:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004384
+  },
+  {
+   "candidate_id": "mobile:onsi:d397b26a00137a132c19",
+   "player_id": "00-0040277",
+   "source_url": "https://www.si.com/nfl/bears/onsi/press-taylor-admits-hurdle-for-zavion-thomas-early-season-role-with-bears",
+   "attempted_at": "2026-09-05T21:48:19+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T21:48:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004652
+  },
+  {
+   "candidate_id": "mobile:onsi:83f42542811e75feb3c2",
+   "player_id": "00-0032464",
+   "source_url": "https://www.si.com/nfl/bears/onsi/press-taylor-admits-hurdle-for-zavion-thomas-early-season-role-with-bears",
+   "attempted_at": "2026-09-05T21:48:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T21:48:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00447
+  },
+  {
+   "candidate_id": "mobile:onsi:73f3d2788e7c3f6a69db",
+   "player_id": "00-0039139",
+   "source_url": "https://www.si.com/nfl/lions/onsi/most-important-thing-that-happened-lions-offseason-2026",
+   "attempted_at": "2026-09-05T21:48:24+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T21:48:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004706
+  },
+  {
+   "candidate_id": "mobile:onsi:803ec67952ce0c3cfa8c",
+   "player_id": "00-0036963",
+   "source_url": "https://www.si.com/nfl/lions/onsi/most-important-thing-that-happened-lions-offseason-2026",
+   "attempted_at": "2026-09-05T21:48:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T21:48:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004354
   }
  ]
 }
