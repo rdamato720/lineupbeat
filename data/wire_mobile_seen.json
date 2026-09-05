@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1001,
+ "count": 1018,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -11050,6 +11050,193 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00558
+  },
+  {
+   "candidate_id": "mobile:onsi:d5602d7297da54e12173",
+   "player_id": "00-0033106",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/last-minute-fantasy-football-quarterback-draft-rankings-jaxson-dart-clings-to-a-spot-in-the-top-10",
+   "attempted_at": "2026-09-05T14:01:40+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-05T14:01:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004876
+  },
+  {
+   "candidate_id": "mobile:onsi:38c8cdde3224d4ad7fdd",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/last-minute-fantasy-football-quarterback-draft-rankings-jaxson-dart-clings-to-a-spot-in-the-top-10",
+   "attempted_at": "2026-09-05T14:01:44+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:01:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005728
+  },
+  {
+   "candidate_id": "mobile:onsi:8892840ddba88c9ad691",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/predicting-2026-nfc-north-standings-bears-face-a-long-road-to-a-second-title",
+   "attempted_at": "2026-09-05T14:01:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:01:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003698
+  },
+  {
+   "candidate_id": "mobile:onsi:ea185e81411e65a2ad42",
+   "player_id": "00-0033873",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/ranking-the-biggest-afc-threats-to-chiefs-in-2026-which-teams-are-scariest",
+   "attempted_at": "2026-09-05T14:01:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:01:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004624
+  },
+  {
+   "candidate_id": "mobile:onsi:1cc8917c2c6abb900eb3",
+   "player_id": "00-0039893",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-3-roster-strategies-that-could-define-the-season",
+   "attempted_at": "2026-09-05T14:01:54+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:01:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004452
+  },
+  {
+   "candidate_id": "mobile:onsi:d6fe8e3150b376337303",
+   "player_id": "00-0038606",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-3-roster-strategies-that-could-define-the-season",
+   "attempted_at": "2026-09-05T14:01:57+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:02:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004548
+  },
+  {
+   "candidate_id": "mobile:article:0a0f76b49d25caae2cce",
+   "player_id": "00-0034796",
+   "source_url": "https://www.baltimoreravens.com/news/thoughts-as-regular-season-nears-50-words-declan-doyle-open-playbook-offense-lamar-jackson-under-center",
+   "attempted_at": "2026-09-05T14:02:01+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:02:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004934
+  },
+  {
+   "candidate_id": "mobile:onsi:70014d169488a47d45af",
+   "player_id": "00-0033280",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-rookie-dezhaun-stribling-has-raised-expecations-himself",
+   "attempted_at": "2026-09-05T14:02:05+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:02:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004684
+  },
+  {
+   "candidate_id": "mobile:onsi:1de1c43f3514139877fb",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-rookie-dezhaun-stribling-has-raised-expecations-himself",
+   "attempted_at": "2026-09-05T14:02:08+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:02:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007848
+  },
+  {
+   "candidate_id": "mobile:onsi:23fb3189695d8851f32f",
+   "player_id": "00-0037834",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-rookie-dezhaun-stribling-has-raised-expecations-himself",
+   "attempted_at": "2026-09-05T14:02:15+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:02:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004694
+  },
+  {
+   "candidate_id": "mobile:article:965475a16d834052a5b8",
+   "player_id": "00-0040743",
+   "source_url": "https://www.neworleanssaints.com/news/morning-break-saints-rookies-generate-buzz-as-season-opener-approaches-new-orleans-news-headlines-9-5-2026",
+   "attempted_at": "2026-09-05T14:02:18+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:02:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005058
+  },
+  {
+   "candidate_id": "mobile:onsi:55385ace6889983b4242",
+   "player_id": "00-0039338",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-3-players-who-could-sway-fortunes-this-season",
+   "attempted_at": "2026-09-05T14:02:21+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:02:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003818
+  },
+  {
+   "candidate_id": "mobile:onsi:4b4be9e45f2e445d83d6",
+   "player_id": "00-0040122",
+   "source_url": "https://www.si.com/nfl/raiders/onsi/las-vegas-3-players-who-could-sway-fortunes-this-season",
+   "attempted_at": "2026-09-05T14:02:24+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:02:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004004
+  },
+  {
+   "candidate_id": "mobile:article:4231f64a6e26edabb86e",
+   "player_id": "00-0039146",
+   "source_url": "https://www.packers.com/news/inbox-it-s-gonna-be-a-real-chess-match-sept-5-2026",
+   "attempted_at": "2026-09-05T14:02:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:02:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005368
+  },
+  {
+   "candidate_id": "mobile:article:3bc90c57431698644c2e",
+   "player_id": "00-0038996",
+   "source_url": "https://www.packers.com/news/inbox-it-s-gonna-be-a-real-chess-match-sept-5-2026",
+   "attempted_at": "2026-09-05T14:02:30+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:02:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004852
+  },
+  {
+   "candidate_id": "mobile:onsi:d5c3eb2528d6b44faa06",
+   "player_id": "00-0041217",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-3-most-underrated-moves-made-this-week-james-gladstone-savvy-decisions",
+   "attempted_at": "2026-09-05T14:02:33+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:02:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005836
+  },
+  {
+   "candidate_id": "mobile:onsi:ffce20e9a4d2d69225f2",
+   "player_id": "00-0032104",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-3-most-underrated-moves-made-this-week-james-gladstone-savvy-decisions",
+   "attempted_at": "2026-09-05T14:02:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-05T14:02:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005304
   }
  ]
 }
