@@ -162,66 +162,14 @@ def home_header() -> str:
 
 def render_home(payload: dict, college_payload: dict) -> str:
     """Render the sport-neutral Lineup Beat homepage."""
-    players = payload["players"]
-    for p in players:
-        p["team_color"] = build_comparison_tool.TEAM_COLORS.get(
-            p["team"], ("#263238", "#c6f53c"))[0]
-    by_name = {p["name"]: p for p in players}
-    try:
-        featured_a = by_name["Tony Pollard"]
-        featured_b = by_name["Rico Dowdle"]
-    except KeyError as exc:
-        raise ValueError(f"homepage feature identity is unavailable: {exc}") from exc
-    if not all(p.get("photo") and p.get("team_logo")
-               for p in (featured_a, featured_b)):
-        raise ValueError("homepage feature art is incomplete")
-    featured_a_format = featured_a["formats"]["half_ppr"]
-    featured_b_format = featured_b["formats"]["half_ppr"]
-    nfl_result = compare(featured_a, featured_b, DecisionContext(
-        "weekly", payload["season"], "half_ppr", payload["week"]))
-    recommendation_state = payload.get("recommendation_state", {})
-    cp = {p["id"]: p for p in college_payload["players"]}
-    college_feature = next(
-        r for r in college_payload["strongest_edges"]
-        if r["confidence"] in {"Lean", "Edge"}
-        and cp[r["a"]].get("player_market", {}).get("components")
-        and cp[r["b"]].get("player_market", {}).get("components"))
-    cw = cp[college_feature["winner"]]
-    cr_id = college_feature["b"] if college_feature["winner"] == college_feature["a"] else college_feature["a"]
-    cr = cp[cr_id]
-    cf = cw["formats"]["yahoo"]
-    crf = cr["formats"]["yahoo"]
-
     def action(href: str, icon: str, title: str, copy: str) -> str:
         return (f'<a class="hp-action" href="{href}"><span class="hp-action-icon" aria-hidden="true">{icon}</span>'
                 f'<div><h3>{title}</h3><p>{copy}</p><b>Open →</b></div></a>')
-    def matchup_tone(player: dict) -> str:
-        factor = player["matchup"]["projection_factor"]
-        if factor >= 1.05:
-            return "favorable"
-        if factor <= .95:
-            return "difficult"
-        return "near neutral"
-
-    college_a_market = college_payload["market_context_by_team"][cw["team_id"]]
-
-    def spread_label(value: float) -> str:
-        return f"+{value:.1f}" if value > 0 else f"{value:.1f}"
-    if recommendation_state.get("enabled") is False:
-        nfl_call = ("Too close to call" if nfl_result["no_clear_edge"] else
-                    nfl_result["winner"]["name"])
-    elif nfl_result["no_clear_edge"]:
-        nfl_call = "Too close to call"
-    else:
-        nfl_call = nfl_result["winner"]["name"]
-    nfl_feature = f'''<article class="hp-feature lb-feature-card hp-nfl-feature" style="--c:{esc(featured_a['team_color'])}"><small>NFL · Week 1 · Half-PPR</small><div class="hp-feature-players"><div><img src="{esc(featured_a['photo'])}" alt="{esc(featured_a['name'])}"><img class="hp-team-mark" src="{esc(featured_a['team_logo'])}" alt=""><span>{esc(featured_a['team'])} · {esc(featured_a['position'])}</span><b>{esc(featured_a['name'])}</b><em>{featured_a_format['projected_points']:.1f} pts</em></div><i>VS</i><div><img src="{esc(featured_b['photo'])}" alt="{esc(featured_b['name'])}"><img class="hp-team-mark" src="{esc(featured_b['team_logo'])}" alt=""><span>{esc(featured_b['team'])} · {esc(featured_b['position'])}</span><b>{esc(featured_b['name'])}</b><em>{featured_b_format['projected_points']:.1f} pts</em></div></div><div class="hp-decision-summary"><small>MODEL PICK</small><strong>{esc(nfl_call)}</strong><p>Current injuries are not included.</p></div><a class="hp-card-cta" href="{esc(room_url(featured_a, featured_b))}">See the full comparison →</a></article>'''
-    college_feature_html = f'''<article class="hp-feature hp-college-feature lb-feature-card" style="--c:{esc(cw['team_color'])}"><small>College · Week 1 · Yahoo</small><div class="hp-feature-players"><div><img src="{esc(cw['team_logo'])}" alt="{esc(cw['team'])}"><span>{esc(cw['team'])} · {esc(cw['position'])}</span><b>{esc(cw['name'])}</b><em>{cf['projected_points']:.1f} pts</em></div><i>VS</i><div><img src="{esc(cr['team_logo'])}" alt="{esc(cr['team'])}"><span>{esc(cr['team'])} · {esc(cr['position'])}</span><b>{esc(cr['name'])}</b><em>{crf['projected_points']:.1f} pts</em></div></div><div class="hp-decision-summary"><small>LINEUPBEAT PICK</small><strong>{esc(cw['name'])}</strong><p>{college_feature['gap']:.1f}-point projection edge.</p></div><a class="hp-card-cta" href="{COLLEGE_ROOM_PATH}?a={esc(cw['id'])}&amp;b={esc(cr['id'])}">See the full comparison →</a></article>'''
-
-    ambient = f'''<div class="hp-ambient-data" aria-hidden="true"><div class="hp-ambient-card hp-ambient-trend"><span>PROJECTION GAP</span><svg viewBox="0 0 210 82" focusable="false"><polyline points="5,67 28,49 49,56 70,31 91,43 115,18 139,36 162,14 184,25 205,9"/></svg></div><div class="hp-ambient-card hp-ambient-formats"><span>SCORING FORMATS</span><ol><li>PPR <b>01</b></li><li>HALF-PPR <b>02</b></li><li>NON-PPR <b>03</b></li></ol></div><div class="hp-ambient-card hp-ambient-share"><span>OPPORTUNITY SHARE</span><div class="hp-ambient-ring"><b>63%</b></div></div><div class="hp-ambient-card hp-ambient-status"><span>AVAILABILITY</span><p><b>Q</b> QUESTIONABLE</p><p><b>D</b> DOUBTFUL</p><p><b>O</b> OUT</p></div><div class="hp-ambient-card hp-ambient-volume"><span>MODELED VOLUME</span><i style="--w:82%"></i><i style="--w:66%"></i><i style="--w:54%"></i><i style="--w:38%"></i></div><div class="hp-ambient-card hp-ambient-market"><span>COLLEGE MARKET</span><ol><li>SPREAD <b>{spread_label(college_a_market['team_spread'])}</b></li><li>TOTAL <b>{college_a_market['game_total']:.1f}</b></li><li>PROPS <b>LIVE</b></li></ol></div></div>'''
-    hero = f'''<section class="hp-home-hero">{ambient}<div class="hp-home-copy"><div class="lb-eyebrow">INDEPENDENT FANTASY FOOTBALL RESEARCH</div><h1>A clearer answer to <span>who should I choose?</span></h1><p>LineupBeat turns projections, expected opportunity, matchup, and market context into simple NFL and college fantasy decisions.</p><div class="lb-hero-actions"><a class="lb-btn lb-btn-primary" href="{NFL_ROOM_PATH}">Compare NFL players <b>→</b></a><a class="lb-btn lb-btn-secondary" href="{COLLEGE_ROOM_PATH}">Compare College players <b>→</b></a></div></div><aside class="hp-who"><small>WHO WE ARE</small><h2>Fantasy research built for the actual decision.</h2><p>We build our own projections and explain the pick in plain language. We show uncertainty and never treat betting lines as guarantees.</p><a href="/about/">More about LineupBeat →</a></aside><div class="hp-feature-intro" id="featured-decisions"><small>QUICK EXAMPLES</small><h2>See the answer first.</h2></div><div class="hp-dual-feature">{nfl_feature}{college_feature_html}</div></section>'''
-    tools = f'''<section class="hp-section" id="tools"><div class="hp-section-head"><small>WHAT DO YOU WANT TO DO?</small><h2>Start here.</h2></div><div class="hp-action-grid">{action('/decision-room/nfl/','VS','Compare NFL players','Get a clear model pick, then open the supporting evidence.')}{action('/nfl/rankings/','#','Browse NFL rankings','See rankings and projections by position and scoring format.')}{action('/my-team/','MY','Analyze my team','Connect an ESPN, Yahoo, or CBS roster privately.')}{action('/my-league/','LH','Build my league history','Create a shareable fantasy league record book.')}</div></section>'''
-    sport_body = f'''<section class="hp-section hp-sports"><div class="hp-section-head"><small>CHOOSE YOUR GAME</small><h2>NFL or College?</h2></div><div class="hp-sport-grid"><a class="hp-sport-card" href="{NFL_ROOM_PATH}"><span class="hp-sport-code" aria-hidden="true">NFL</span><div class="hp-sport-copy"><h3>Compare NFL players</h3><b>Open NFL →</b></div></a><a class="hp-sport-card hp-college" href="{COLLEGE_ROOM_PATH}"><span class="hp-sport-code" aria-hidden="true">CFB</span><div class="hp-sport-copy"><h3>Compare College players</h3><b>Open College →</b></div></a></div></section>'''
-    return f'''{START}{home_header()}<main id="lineup-beat-home" class="hp-shell">{hero}{tools}{sport_body}</main>{END}'''
+    hero = '''<section class="hp-home-hero"><div class="hp-home-copy"><div class="lb-eyebrow">NFL + COLLEGE FANTASY FOOTBALL</div><h1>Fantasy football, <span>brought into focus.</span></h1><p>LineupBeat is an independent fantasy football platform for rankings, projections, player research, roster analysis, league history, and better decisions.</p><div class="lb-hero-actions"><a class="lb-btn lb-btn-primary" href="/nfl/rankings/">Explore NFL <b>→</b></a><a class="lb-btn lb-btn-secondary" href="/college-fantasy-football/week-1/">Explore College <b>→</b></a></div></div><aside class="hp-who"><small>WHO WE ARE</small><h2>Independent research for fantasy players.</h2><p>We build our own projections and explain what the data supports—and what it doesn’t.</p><a href="/about/">About LineupBeat →</a></aside></section>'''
+    tools = f'''<section class="hp-section" id="tools"><div class="hp-section-head"><small>EXPLORE LINEUPBEAT</small><h2>Everything in one place.</h2><p>Start with the part of your season you’re working on now.</p></div><div class="hp-action-grid">{action('/nfl/rankings/','#','NFL rankings','Rank players by position and scoring format.')}{action('/nfl/projections/','PR','NFL projections','See the numbers behind our player outlooks.')}{action('/college-fantasy-football/week-1/','CFB','College fantasy','Explore weekly rankings and season projections.')}{action('/my-team/','MY','My Team','Bring in your roster for private team analysis.')}{action('/my-league/','LH','My League','Build a shareable fantasy league record book.')}{action('/decision-room/nfl/','VS','Decision Room','Compare two players when you need a second opinion.')}</div></section>'''
+    sport_body = '''<section class="hp-section hp-sports"><div class="hp-section-head"><small>CHOOSE YOUR GAME</small><h2>NFL or College?</h2></div><div class="hp-sport-grid"><a class="hp-sport-card" href="/nfl/rankings/"><span class="hp-sport-code" aria-hidden="true">NFL</span><div class="hp-sport-copy"><h3>NFL fantasy football</h3><p>Rankings, projections, player pages, draft tools, and roster analysis.</p><b>Explore NFL →</b></div></a><a class="hp-sport-card hp-college" href="/college-fantasy-football/week-1/"><span class="hp-sport-code" aria-hidden="true">CFB</span><div class="hp-sport-copy"><h3>College fantasy football</h3><p>Weekly rankings, season projections, team context, and player comparisons.</p><b>Explore College →</b></div></a></div></section>'''
+    decision = f'''<section class="hp-section hp-decision-tool"><div><small>ONE TOOL, WHEN YOU NEED IT</small><h2>Stuck between two players?</h2><p>The Decision Room compares them and puts the model’s answer first.</p></div><div class="lb-hero-actions"><a class="lb-btn lb-btn-primary" href="{NFL_ROOM_PATH}">NFL Decision Room <b>→</b></a><a class="lb-btn lb-btn-secondary" href="{COLLEGE_ROOM_PATH}">College Decision Room <b>→</b></a></div></section>'''
+    return f'''{START}{home_header()}<main id="lineup-beat-home" class="hp-shell">{hero}{tools}{sport_body}{decision}</main>{END}'''
 
 
 def render(payload: dict) -> str:
@@ -379,6 +327,7 @@ body{margin:0;--display:"Source Serif 4",Georgia,serif;font-family:var(--text)}.
 @media(max-width:430px){.dr-boundary-grid,.dr-player-grid dl,.dr-why-grid{grid-template-columns:1fr}.dr-hero>h1{font-size:clamp(2.65rem,15vw,3.35rem)}.dr-person{height:115px}.dr-photo{height:110px}}
 @media(max-width:520px){.hp-sport-card{grid-template-columns:72px minmax(0,1fr);gap:.8rem;min-height:0}.hp-sport-code{min-width:72px;font-size:2.8rem}.hp-sport-card h3{font-size:1.5rem}}
 .hp-action-grid{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.hp-sport-copy p{max-width:440px;margin:.55rem 0 0;color:#b8c2ba;font:1rem/1.5 var(--agate)}.hp-decision-tool{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2rem}.hp-decision-tool small{color:var(--lime);font:800 .7rem var(--agate);letter-spacing:.12em}.hp-decision-tool p{margin:.7rem 0 0;color:#bfc8c1;font:1.05rem/1.5 var(--agate)}.hp-decision-tool .lb-hero-actions{display:flex;gap:.75rem}.hp-decision-tool .lb-btn{display:inline-flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:54px;padding:0 1.1rem;border:1px solid #727b76;color:#fff;text-decoration:none;font:800 .72rem var(--agate);letter-spacing:.04em;text-transform:uppercase}.hp-decision-tool .lb-btn-primary{background:var(--lime);border-color:var(--lime);color:#080b09}@media(max-width:780px){.hp-decision-tool{grid-template-columns:1fr}.hp-decision-tool .lb-hero-actions{flex-direction:column}.hp-decision-tool .lb-btn{width:100%}}
 .dr-empty-link{display:inline-block;margin-top:1.2rem;padding:.8rem;border:1px solid var(--dr-lime);color:var(--dr-lime);font:800 .72rem var(--agate);text-transform:uppercase}
 '''
 

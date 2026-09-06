@@ -474,39 +474,37 @@ def check_homepage(root, decision_room=False):
               str(nfl_room))
         check("the full College Decision Room has a dedicated route", college_room.is_file(),
               str(college_room))
-        check("the root is a decision-first Lineup Beat homepage, not the full tool",
+        check("the root is the LineupBeat platform homepage, not the full tool",
               'id="lineup-beat-home"' in text and 'id="decision-room"' not in text)
         check("the homepage has neutral primary navigation",
               all(f'>{label}<' in text for label in
                   ("NFL", "College", "My Team", "About"))
               and 'class="vbtn sport-pill"' not in text
               and "The Beat" not in text)
-        check("the homepage has the required decision sections",
+        check("the homepage introduces the full LineupBeat platform",
               all(label in text for label in
-                  ("INDEPENDENT FANTASY FOOTBALL RESEARCH", "WHO WE ARE",
-                   "WHAT DO YOU WANT TO DO?", "QUICK EXAMPLES",
-                   "Fantasy research built for the actual decision.",
-                   "NFL or College?", "Compare NFL players",
-                   "Compare College players"))
+                  ("NFL + COLLEGE FANTASY FOOTBALL", "WHO WE ARE",
+                   "EXPLORE LINEUPBEAT", "Everything in one place.",
+                   "Independent research for fantasy players.",
+                   "NFL or College?", "NFL fantasy football",
+                   "College fantasy football", "My Team", "My League"))
               and "NFL and College have their own dedicated experiences." not in text
               and "Compare 2,205 players using validated Yahoo scoring" not in text
               and "Today’s Decision Board" not in text
               and "The latest from The Beat" not in text)
-        check("the homepage presents equal NFL and College featured decisions",
-              all(name in text for name in
-                  ("Tony Pollard", "Rico Dowdle", "Devon Dampier", "Byrum Brown"))
-              and len(re.findall(
-                  r'<article class="hp-feature[^"]*lb-feature-card[^"]*"', text)) == 2
-              and text.count('class="hp-decision-summary"') == 2
-              and text.count('class="hp-evidence-grid"') == 0
-              and "MODEL PICK" in text
-              and "LINEUPBEAT PICK" in text
-              and text.count("See the full comparison") == 2
-              and "Current injuries are not included." in text
-              and "RECOMMENDATION UNAVAILABLE" not in text
-              and "Projection edge: Tony Pollard" not in text)
-        check("the homepage describes market evidence without overstating it",
-              "never treat betting lines as guarantees." in text)
+        check("the Decision Room is presented as one tool, not the brand identity",
+              "ONE TOOL, WHEN YOU NEED IT" in text
+              and text.count('class="hp-decision-summary"') == 0
+              and "QUICK EXAMPLES" not in text
+              and "Tony Pollard" not in text
+              and 'href="/decision-room/nfl/"' in text
+              and 'href="/decision-room/college/"' in text)
+        check("the homepage links the complete product paths",
+              all(route in text for route in
+                  ('href="/nfl/rankings/"', 'href="/nfl/projections/"',
+                   'href="/college-fantasy-football/week-1/"',
+                   'href="/my-team/"', 'href="/my-league/"',
+                   'href="/about/"')))
         check("the homepage is not a hidden sport-switching experience",
               "data-home-sport" not in text
               and "pushState" not in text and "?sport=college" not in text)

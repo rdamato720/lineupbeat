@@ -858,7 +858,7 @@ def site_nav(active=None, sport="nfl", search="", home=False):
            '<circle cx="11" cy="11" r="7"></circle>'
            '<path d="M20 20l-3.5-3.5"></path></svg>'
            '</button>\n' if search else '')
-        + ('    <a class="home-nav-cta" href="#featured-decisions">Compare players</a>\n'
+        + ('    <a class="home-nav-cta" href="#tools">Explore LineupBeat</a>\n'
            if home else '')
         + '    <button class="navbtn navtoggle" type="button" '
           'aria-expanded="false" aria-controls="navdrawer">'

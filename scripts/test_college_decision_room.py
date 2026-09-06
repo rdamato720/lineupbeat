@@ -142,10 +142,12 @@ class CollegeDecisionRenderingTests(unittest.TestCase):
                              separators=(",", ":")).encode()
         self.assertLess(len(encoded), 1_500_000)
 
-    def test_home_feature_requires_two_player_market_records(self):
+    def test_homepage_does_not_depend_on_college_market_records(self):
         source = (Path(__file__).with_name("build_decision_room.py")).read_text()
-        self.assertIn('cp[r["a"]].get("player_market", {}).get("components")', source)
-        self.assertIn("college_feature", source)
+        home_source = source.split("def render_home", 1)[1].split("def render(", 1)[0]
+        self.assertNotIn("player_market", home_source)
+        self.assertNotIn("strongest_edges", home_source)
+        self.assertIn("College fantasy", home_source)
 
 
 if __name__ == "__main__":

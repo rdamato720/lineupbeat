@@ -216,12 +216,11 @@ class DecisionRoomRenderingTests(unittest.TestCase):
     def test_homepage_navigation_sections_and_mobile_structure(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
         for label in ("NFL", "College", "Compare Players", "Rankings", "Projections",
-                      "INDEPENDENT FANTASY FOOTBALL RESEARCH", "WHO WE ARE",
-                      "A clearer answer to", "Fantasy research built for the actual decision.",
-                      "WHAT DO YOU WANT TO DO?", "Start here.", "QUICK EXAMPLES",
-                      "See the answer first.", "NFL or College?",
-                      "Compare NFL players", "Compare College players",
-                      "Tony Pollard", "Rico Dowdle", "Devon Dampier", "Byrum Brown"):
+                      "NFL + COLLEGE FANTASY FOOTBALL", "WHO WE ARE",
+                      "Fantasy football,", "Independent research for fantasy players.",
+                      "EXPLORE LINEUPBEAT", "Everything in one place.",
+                      "NFL or College?", "NFL fantasy football",
+                      "College fantasy football", "Decision Room"):
             self.assertIn(label, home)
         self.assertNotIn("NFL and College have their own dedicated experiences.", home)
         self.assertNotIn("Compare 2,205 players using validated Yahoo scoring", home)
@@ -251,21 +250,22 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertIn('href="/decision-room/college/"', home)
         self.assertNotIn('href="/decision-room/reviewed-wire/"', home)
         self.assertEqual(home.count('data-home-sport='), 0)
-        self.assertEqual(home.count('lb-feature-card'), 2)
-        self.assertEqual(home.count('class="hp-action"'), 4)
+        self.assertEqual(home.count('lb-feature-card'), 0)
+        self.assertEqual(home.count('class="hp-action"'), 6)
         self.assertEqual(home.count('class="hp-sport-card'), 2)
         self.assertIn('href="/my-team/"', home)
         self.assertIn('href="/my-league/"', home)
         self.assertIn("shareable fantasy league record book", home)
-        self.assertIn("College · Week 1 · Yahoo", home)
+        self.assertIn('href="/nfl/projections/"', home)
+        self.assertIn('href="/college-fantasy-football/week-1/"', home)
         self.assertIn('href="/about/"', home)
-        self.assertEqual(home.count('class="hp-decision-summary"'), 2)
+        self.assertEqual(home.count('class="hp-decision-summary"'), 0)
         self.assertEqual(home.count('class="hp-evidence-grid"'), 0)
-        self.assertIn("MODEL PICK", home)
-        self.assertIn("Tony Pollard", home)
         self.assertIn("WHO WE ARE", home)
         self.assertIn("We build our own projections", home)
-        self.assertIn("Current injuries are not included.", home)
+        self.assertIn("ONE TOOL, WHEN YOU NEED IT", home)
+        self.assertNotIn("Tony Pollard", home)
+        self.assertNotIn("QUICK EXAMPLES", home)
         self.assertNotIn("RECOMMENDATION UNAVAILABLE", home)
         self.assertNotIn("A lineup recommendation requires a qualifying validation result", home)
         self.assertNotIn("Projection edge: Tony Pollard", home)
@@ -286,11 +286,11 @@ class DecisionRoomRenderingTests(unittest.TestCase):
 
     def test_home_has_production_visual_language_without_public_news(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
-        for marker in ("hp-home-hero", "hp-who", "hp-dual-feature",
-                       "hp-action-grid", "hp-sport-grid", "lb-feature-card",
-                       "hp-ambient-data", "hp-ambient-trend", "hp-ambient-volume"):
+        for marker in ("hp-home-hero", "hp-who", "hp-action-grid",
+                       "hp-sport-grid", "hp-decision-tool"):
             self.assertIn(marker, home)
-        for removed in ("hp-method-grid", "hp-trust", "What changes the call?"):
+        for removed in ("hp-method-grid", "hp-trust", "What changes the call?",
+                        "hp-dual-feature", "lb-feature-card", "hp-ambient-data"):
             self.assertNotIn(removed, home)
         for removed in ("Reviewed Updates", "The latest from The Beat",
                         "RECENT NEWS", "NEWS UPDATED"):
