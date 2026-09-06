@@ -35,7 +35,16 @@ assert(productionWorkflow.includes(
 assert(!productionWorkflow.includes('wrangler@latest pages deploy site'));
 assert(productionConfig.includes('name = "lineupbeat"'));
 assert(productionConfig.includes('binding = "LEAGUE_HISTORY_DB"'));
-assert(!/^database_id\s*=/m.test(productionConfig));
+assert(productionConfig.includes('database_name = "lineupbeat-league-history-production"'));
+assert(productionConfig.includes(
+  'database_id = "__PRODUCTION_LEAGUE_HISTORY_DB_ID__"'));
+assert(productionWorkflow.includes('wrangler@latest d1 list --json'));
+assert(productionWorkflow.includes('wrangler@latest d1 create'));
+assert(productionWorkflow.includes('wrangler@latest d1 execute'));
+assert(productionWorkflow.includes('--file=cloudflare/league-history-schema.sql'));
+assert(productionWorkflow.includes('Refusing to bind production to the development database.'));
+assert(productionWorkflow.includes('Verify production league publishing storage'));
+assert(productionWorkflow.includes('https://lineupbeat.com/api/leagues/deployment-health-check'));
 assert(devConfig.includes('name = "lineupbeat-dev"'));
 assert(devConfig.includes('database_id ='));
 assert.notEqual(devConfig, productionConfig);
@@ -180,13 +189,29 @@ assert.throws(() => sanitizePublication(archive, {...review, identities: review.
   /Every manager/);
 
 class MemoryD1 {
-  constructor() { this.rows = new Map(); this.limits = new Map(); this.schemaRuns = 0; }
+  constructor() {
+    this.rows = new Map();
+    this.limits = new Map();
+    this.guards = new Map();
+    this.schemaRuns = 0;
+  }
   prepare(sql) {
     const db = this;
     return {
       values: [],
       bind(...values) { this.values = values; return this; },
       async first() {
+        if (sql.includes('INSERT INTO league_history_create_guards')) {
+          const [scope, expiresAt, now] = this.values;
+          const current = db.guards.get(scope);
+          if (current && (sql.includes('DO NOTHING') || current.expiresAt > now)) return null;
+          db.guards.set(scope, {expiresAt});
+          return {scope};
+        }
+        if (sql.includes('SELECT expires_at FROM league_history_create_guards')) {
+          const row = db.guards.get(this.values[0]);
+          return row ? {expires_at: row.expiresAt} : null;
+        }
         if (sql.includes('INSERT INTO league_history_rate_limits')) {
           const [scope, windowStart, expiresAt] = this.values;
           const current = db.limits.get(scope);
@@ -211,6 +236,15 @@ class MemoryD1 {
           const now = this.values[0];
           for (const [scope, row] of db.limits) {
             if (row.expiresAt < now) db.limits.delete(scope);
+          }
+        } else if (sql.includes('DELETE FROM league_history_create_guards')) {
+          if (sql.includes('WHERE expires_at')) {
+            const now = this.values[0];
+            for (const [scope, row] of db.guards) {
+              if (row.expiresAt < now) db.guards.delete(scope);
+            }
+          } else {
+            db.guards.delete(this.values[0]);
           }
         } else if (sql.includes('INSERT INTO')) {
           const [slug, league_name, visibility, archive_json, manage_token_hash,
@@ -241,7 +275,7 @@ assert.equal(post.status, 201);
 const created = await post.json();
 assert(created.slug && created.manageToken && created.url.endsWith('/leagues/' + created.slug));
 assert.equal(db.rows.size, 1);
-assert.equal(db.schemaRuns, 4);
+assert.equal(db.schemaRuns, 6);
 assert(!db.rows.values().next().value.archive_json.includes('987654'));
 
 const read = await onRequestGet(context(new Request(
@@ -373,7 +407,8 @@ for (let index = 0; index < 11; index += 1) {
     method: 'POST',
     headers: {'Content-Type': 'application/json', Origin: origin,
       'CF-Connecting-IP': '203.0.113.10'},
-    body: JSON.stringify({visibility: 'unlisted', archive, review})
+    body: JSON.stringify({visibility: 'unlisted',
+      archive: {...archive, schemaVersion: 'unsupported'}, review})
   })));
 }
 assert.equal(rateLimited.status, 429);
@@ -387,5 +422,46 @@ const otherClient = await onRequestPost(limitedContext(new Request(origin + '/ap
   body: JSON.stringify({visibility: 'unlisted', archive, review})
 })));
 assert.equal(otherClient.status, 201);
+
+const guardDb = new MemoryD1();
+const guardContext = request => ({request, env: {LEAGUE_HISTORY_DB: guardDb}});
+const originalNow = Date.now;
+let fakeNow = 1_800_000_000_000;
+Date.now = () => fakeNow;
+try {
+  const firstGuarded = await onRequestPost(guardContext(new Request(origin + '/api/leagues', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', Origin: origin,
+      'CF-Connecting-IP': '203.0.113.20'},
+    body: JSON.stringify({visibility: 'unlisted', archive, review})
+  })));
+  assert.equal(firstGuarded.status, 201);
+
+  const differentArchive = structuredClone(archive);
+  differentArchive.seasons[0].matchups[0].homeScore = 112.25;
+  const cooldown = await onRequestPost(guardContext(new Request(origin + '/api/leagues', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', Origin: origin,
+      'CF-Connecting-IP': '203.0.113.20'},
+    body: JSON.stringify({visibility: 'unlisted', archive: differentArchive, review})
+  })));
+  assert.equal(cooldown.status, 429);
+  assert.equal(cooldown.headers.get('Retry-After'), '30');
+
+  fakeNow += 31_000;
+  const recapturedArchive = structuredClone(archive);
+  recapturedArchive.capturedAt = '2026-09-05T12:00:00.000Z';
+  const duplicate = await onRequestPost(guardContext(new Request(origin + '/api/leagues', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', Origin: origin,
+      'CF-Connecting-IP': '203.0.113.20'},
+    body: JSON.stringify({visibility: 'unlisted', archive: recapturedArchive, review})
+  })));
+  assert.equal(duplicate.status, 409);
+  assert.match((await duplicate.json()).error, /already published recently/);
+  assert.equal(guardDb.rows.size, 1);
+} finally {
+  Date.now = originalNow;
+}
 
 console.log('league history publishing privacy, scale, limits, tokens and routing passed');

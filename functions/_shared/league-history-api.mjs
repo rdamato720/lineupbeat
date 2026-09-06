@@ -5,6 +5,8 @@ const MAX_MATCHUPS = 6_000;
 const MAX_IDENTITIES = 128;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMITS = {read: 300, create: 10, mutate: 60};
+const CREATE_COOLDOWN_MS = 30 * 1000;
+const DUPLICATE_GUARD_MS = 24 * 60 * 60 * 1000;
 const SLUG = /^[a-z0-9](?:[a-z0-9-]{1,61}[a-z0-9])?$/;
 const PUBLICATION_SCHEMA = [
   `CREATE TABLE IF NOT EXISTS league_history_publications (
@@ -25,7 +27,13 @@ const PUBLICATION_SCHEMA = [
     expires_at INTEGER NOT NULL
   )`,
   `CREATE INDEX IF NOT EXISTS idx_league_history_rate_limit_expiry
-   ON league_history_rate_limits (expires_at)`
+   ON league_history_rate_limits (expires_at)`,
+  `CREATE TABLE IF NOT EXISTS league_history_create_guards (
+    scope TEXT PRIMARY KEY,
+    expires_at INTEGER NOT NULL
+  )`,
+  `CREATE INDEX IF NOT EXISTS idx_league_history_create_guard_expiry
+   ON league_history_create_guards (expires_at)`
 ];
 let schemaPromises = new WeakMap();
 
@@ -391,11 +399,68 @@ async function checkRateLimit(request, env, action) {
   return null;
 }
 
+function publicationFingerprint(publication) {
+  const archive = {...publication.archive, capturedAt: null};
+  return JSON.stringify({archive, review: publication.review});
+}
+
+async function acquireCreateGuard(request, env, publication) {
+  const now = Date.now();
+  const client = request.headers.get('CF-Connecting-IP') ||
+    request.headers.get('User-Agent') || 'anonymous';
+  const clientHash = await hashToken(client);
+  const fingerprint = await hashToken(publicationFingerprint(publication.value));
+  await env.LEAGUE_HISTORY_DB.prepare(
+    'DELETE FROM league_history_create_guards WHERE expires_at < ?'
+  ).bind(now).run();
+
+  const cooldownScope = `cooldown:${clientHash}`;
+  const cooldown = await env.LEAGUE_HISTORY_DB.prepare(
+    `INSERT INTO league_history_create_guards (scope, expires_at)
+     VALUES (?, ?)
+     ON CONFLICT(scope) DO UPDATE SET expires_at = excluded.expires_at
+       WHERE league_history_create_guards.expires_at <= ?
+     RETURNING scope`
+  ).bind(cooldownScope, now + CREATE_COOLDOWN_MS, now).first();
+  if (!cooldown) {
+    const current = await env.LEAGUE_HISTORY_DB.prepare(
+      'SELECT expires_at FROM league_history_create_guards WHERE scope = ?'
+    ).bind(cooldownScope).first();
+    const retryAfter = Math.max(1,
+      Math.ceil((Number(current && current.expires_at || now) - now) / 1000));
+    return {response: rateLimitResponse(retryAfter)};
+  }
+
+  const duplicateScope = `duplicate:${clientHash}:${fingerprint}`;
+  const duplicate = await env.LEAGUE_HISTORY_DB.prepare(
+    `INSERT INTO league_history_create_guards (scope, expires_at)
+     VALUES (?, ?)
+     ON CONFLICT(scope) DO NOTHING
+     RETURNING scope`
+  ).bind(duplicateScope, now + DUPLICATE_GUARD_MS).first();
+  if (!duplicate) {
+    return {response: json({error:
+      'This league archive was already published recently. Use the existing share link or update it.'
+    }, 409, {'Cache-Control': 'no-store'})};
+  }
+  return {scopes: [cooldownScope, duplicateScope]};
+}
+
+async function releaseCreateGuard(env, scopes) {
+  for (const scope of scopes || []) {
+    await env.LEAGUE_HISTORY_DB.prepare(
+      'DELETE FROM league_history_create_guards WHERE scope = ?'
+    ).bind(scope).run();
+  }
+}
+
 async function createPublication(request, env) {
   await ensureSchema(env);
   const raw = await body(request);
   const access = visibility(raw.visibility);
   const publication = sanitizePublication(raw.archive, raw.review);
+  const guard = await acquireCreateGuard(request, env, publication);
+  if (guard.response) return guard.response;
   const leagueName = publication.value.archive.league.name;
   const token = createManageToken();
   const tokenHash = await hashToken(token);
@@ -408,12 +473,20 @@ async function createPublication(request, env) {
     ).bind(candidate).first();
     if (!found) { slug = candidate; break; }
   }
-  if (!slug) fail('A share link could not be created. Try again.', 503);
-  await env.LEAGUE_HISTORY_DB.prepare(
-    `INSERT INTO league_history_publications
-     (slug, league_name, visibility, archive_json, manage_token_hash, created_at, updated_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?)`
-  ).bind(slug, leagueName, access, publication.encoded, tokenHash, now, now).run();
+  if (!slug) {
+    await releaseCreateGuard(env, guard.scopes);
+    fail('A share link could not be created. Try again.', 503);
+  }
+  try {
+    await env.LEAGUE_HISTORY_DB.prepare(
+      `INSERT INTO league_history_publications
+       (slug, league_name, visibility, archive_json, manage_token_hash, created_at, updated_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?)`
+    ).bind(slug, leagueName, access, publication.encoded, tokenHash, now, now).run();
+  } catch (error) {
+    await releaseCreateGuard(env, guard.scopes);
+    throw error;
+  }
   const origin = new URL(request.url).origin;
   return json({ok: true, slug, url: `${origin}/leagues/${slug}`,
     visibility: access, manageToken: token, updatedAt: now}, 201,

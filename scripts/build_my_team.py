@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import html
 import json
 import re
 import shutil
@@ -106,7 +105,7 @@ def render_page(model: dict) -> str:
 
 
 def render_extension_guide() -> str:
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><title>Fantasy connector support | Lineup Beat</title><link rel="stylesheet" href="/my-team/my-team.css"></head><body>{seo.site_nav("my_team", "nfl")}<main class="mt-shell"><section class="mt-hero"><div class="mt-kicker">Fantasy connector</div><h1>Connect without sharing credentials.</h1><p>Version 0.5.0 supports My Team roster capture from ESPN, Yahoo, and CBS. ESPN and CBS also support private league-history capture; Yahoo history uses provider authorization. Data stays local unless you explicitly publish a view-only league page.</p><div class="mt-actions"><a class="mt-button" href="/my-team/lineupbeat-espn-extension.zip" download>Download version 0.5.0</a><a class="mt-button secondary" href="/league-history/">Open League History</a><a class="mt-button secondary" href="/my-team/extension/privacy/">Privacy</a></div></section><section class="mt-section"><div class="mt-section-head"><div><small>Manual installation</small><h2>Install once, choose a provider</h2></div></div><div class="mt-proof"><article><h3>1 · Install</h3><p>Unzip the download. In chrome://extensions, enable Developer mode and choose Load unpacked.</p></article><article><h3>2 · Open your roster</h3><p>Sign in to ESPN, Yahoo, or CBS, open the team roster page, and refresh after loading version 0.5.0.</p></article><article><h3>3 · Choose scoring</h3><p>Select PPR, Half-PPR, or Non-PPR, then save the visible roster locally.</p></article><article><h3>4 · Open My Team</h3><p>The extension opens My Team after a successful capture. Matching and comparisons run locally.</p></article><article><h3>5 · Import history</h3><p>ESPN collects available seasons automatically. On CBS, open each season in History and choose Add this history season.</p></article><article><h3>6 · Clear</h3><p>Each destination page can delete its own extension-local data.</p></article></div></section><section class="mt-section"><div class="mt-section-head"><div><small>Distribution</small><h2>Direct download</h2></div><p>The connector is currently installed manually from this versioned package. Chrome Web Store distribution can replace this step without changing either feature.</p></div></section></main>{seo.site_footer()}</body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="description" content="Install and use the Lineup Beat Fantasy connector with ESPN, Yahoo, or CBS without sharing provider credentials."><title>Fantasy connector support | Lineup Beat</title><link rel="stylesheet" href="/my-team/my-team.css"></head><body>{seo.site_nav("my_team", "nfl")}<main class="mt-shell"><section class="mt-hero"><div class="mt-kicker">Fantasy connector</div><h1>Connect without sharing credentials.</h1><p>Version 0.5.0 supports My Team roster capture from ESPN, Yahoo, and CBS. ESPN and CBS also support private league-history capture; Yahoo history uses provider authorization. Data stays local unless you explicitly publish a view-only league page.</p><div class="mt-actions"><a class="mt-button" href="/my-team/lineupbeat-espn-extension.zip" download>Download version 0.5.0</a><a class="mt-button secondary" href="/league-history/">Open League History</a><a class="mt-button secondary" href="/my-team/extension/privacy/">Privacy</a></div></section><section class="mt-section"><div class="mt-section-head"><div><small>Manual installation</small><h2>Install once, choose a provider</h2></div></div><div class="mt-proof"><article><h3>1 · Install</h3><p>Unzip the download. In chrome://extensions, enable Developer mode and choose Load unpacked.</p></article><article><h3>2 · Open your roster</h3><p>Sign in to ESPN, Yahoo, or CBS, open the team roster page, and refresh after loading version 0.5.0.</p></article><article><h3>3 · Choose scoring</h3><p>Select PPR, Half-PPR, or Non-PPR, then save the visible roster locally.</p></article><article><h3>4 · Open My Team</h3><p>The extension opens My Team after a successful capture. Matching and comparisons run locally.</p></article><article><h3>5 · Import history</h3><p>ESPN collects available seasons automatically. On CBS, open each season in History and choose Add this history season.</p></article><article><h3>6 · Clear</h3><p>Each destination page can delete its own extension-local data.</p></article></div></section><section class="mt-section"><div class="mt-section-head"><div><small>Distribution</small><h2>Direct download</h2></div><p>The connector is currently installed manually from this versioned package. Chrome Web Store distribution can replace this step without changing either feature.</p></div></section></main>{seo.site_footer()}</body></html>'''
 
 
 def render_extension_privacy() -> str:
@@ -118,11 +117,12 @@ def append_sitemap(site: Path) -> None:
     if not path.exists():
         return
     text = path.read_text()
-    origin_match = re.search(r"<loc>(https://[^/<]+)", text)
-    origin = origin_match.group(1) if origin_match else "https://lineupbeat.com"
-    url = origin + "/my-team/"
-    if url not in text:
-        text = text.replace("</urlset>", f"<url><loc>{html.escape(url)}</loc></url></urlset>")
+    # My Team contains private, browser-local roster data and is deliberately
+    # noindex. Keep it out of the public sitemap, including stale entries from
+    # an older generated artifact.
+    updated = re.sub(r"<url><loc>https://[^/<]+/my-team/</loc></url>", "", text)
+    if updated != text:
+        text = updated
         path.write_text(text)
 
 

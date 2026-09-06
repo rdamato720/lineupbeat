@@ -21,4 +21,12 @@ CREATE TABLE IF NOT EXISTS league_history_rate_limits (
 CREATE INDEX IF NOT EXISTS idx_league_history_rate_limit_expiry
 ON league_history_rate_limits (expires_at);
 
+CREATE TABLE IF NOT EXISTS league_history_create_guards (
+  scope TEXT PRIMARY KEY,
+  expires_at INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_league_history_create_guard_expiry
+ON league_history_create_guards (expires_at);
+
 PRAGMA optimize;

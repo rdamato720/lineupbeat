@@ -483,34 +483,30 @@ def check_homepage(root, decision_room=False):
               and "The Beat" not in text)
         check("the homepage has the required decision sections",
               all(label in text for label in
-                  ("WHAT LINEUPBEAT OFFERS", "CHOOSE YOUR GAME",
-                   "TWO GAMES · ONE STANDARD", "WHY LINEUPBEAT",
-                   "Fantasy football decisions, explained.",
-                   "NFL or College?", "Rankings, projections &amp; decisions",
-                   "Week 1 rankings &amp; projections"))
+                  ("INDEPENDENT FANTASY FOOTBALL RESEARCH", "WHO WE ARE",
+                   "WHAT DO YOU WANT TO DO?", "QUICK EXAMPLES",
+                   "Fantasy research built for the actual decision.",
+                   "NFL or College?", "Compare NFL players",
+                   "Compare College players"))
               and "NFL and College have their own dedicated experiences." not in text
               and "Compare 2,205 players using validated Yahoo scoring" not in text
               and "Today’s Decision Board" not in text
               and "The latest from The Beat" not in text)
         check("the homepage presents equal NFL and College featured decisions",
-              "Tony Pollard vs. Rico Dowdle" in text
-              and "Devon Dampier vs. Byrum Brown" in text
+              all(name in text for name in
+                  ("Tony Pollard", "Rico Dowdle", "Devon Dampier", "Byrum Brown"))
               and len(re.findall(
                   r'<article class="hp-feature[^"]*lb-feature-card[^"]*"', text)) == 2
               and text.count('class="hp-decision-summary"') == 2
-              and text.count('class="hp-evidence-grid"') == 2
-              and "PROJECTION COMPARISON" in text
-              and "Projection favors Tony Pollard" in text
-              and "does not issue a lineup recommendation" in text
+              and text.count('class="hp-evidence-grid"') == 0
+              and "MODEL PICK" in text
+              and "LINEUPBEAT PICK" in text
+              and text.count("See the full comparison") == 2
+              and "Current injuries are not included." in text
               and "RECOMMENDATION UNAVAILABLE" not in text
-              and "Reconciled projection, modeled workload, game environment, and exact player-component markets" in text
-              and "Sportsbook team total" in text
-              and "Player market evidence" in text
-              and "Market inputs are evidence, not outcomes or guarantees" in text
               and "Projection edge: Tony Pollard" not in text)
         check("the homepage describes market evidence without overstating it",
-              "Market evidence appears only when it is validated" in text
-              and "Sportsbook context is never presented as player certainty" in text)
+              "never treat betting lines as guarantees." in text)
         check("the homepage is not a hidden sport-switching experience",
               "data-home-sport" not in text
               and "pushState" not in text and "?sport=college" not in text)

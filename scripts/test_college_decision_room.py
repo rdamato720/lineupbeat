@@ -145,7 +145,7 @@ class CollegeDecisionRenderingTests(unittest.TestCase):
     def test_home_feature_requires_two_player_market_records(self):
         source = (Path(__file__).with_name("build_decision_room.py")).read_text()
         self.assertIn('cp[r["a"]].get("player_market", {}).get("components")', source)
-        self.assertIn("Player market evidence", source)
+        self.assertIn("college_feature", source)
 
 
 if __name__ == "__main__":

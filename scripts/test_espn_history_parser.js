@@ -46,4 +46,27 @@ assert.equal(capture.counts.matchups, 2);
 assert(capture.identityReview.suggestions.some(row => row.a === 'a' && row.b === 'old-a' || row.a === 'old-a' && row.b === 'a'));
 const serialized = JSON.stringify(capture).toLowerCase();
 ['espn_s2', 'swid', 'cookie', 'token', 'password'].forEach(secret => assert(!serialized.includes(secret)));
+
+const scaleOwners = Array.from({length: 32}, (_, index) => ({
+  id: `owner-${index + 1}`, first: `Manager${index + 1}`, last: 'Fixture'
+}));
+const scaleSeasons = Array.from({length: parser.MAX_SEASONS}, (_, seasonIndex) => {
+  const year = 2000 + seasonIndex;
+  const rawGames = Array.from({length: 120}, (_, gameIndex) => {
+    const home = gameIndex % 32;
+    const away = (home + 1 + Math.floor(gameIndex / 32)) % 32;
+    return {id: `${year}-${gameIndex + 1}`, matchupPeriodId: gameIndex % 18 + 1,
+      home: {teamId: home + 1, totalPoints: 101.25},
+      away: {teamId: away + 1, totalPoints: 99.75}};
+  });
+  return parser.normalizeSeason(season(year, scaleOwners, rawGames), 1234, year);
+});
+const scaleCapture = parser.combine(scaleSeasons, [], 1234, '2026-09-05T00:00:00.000Z');
+assert.equal(scaleCapture.counts.seasons, 25);
+assert.equal(scaleCapture.counts.teams, 32);
+assert.equal(scaleCapture.counts.matchups, 3000);
+assert.equal(scaleCapture.counts.identities, 32);
+assert.deepEqual(parser.discoverYears({status: {previousSeasons:
+  Array.from({length: 40}, (_, index) => 1980 + index)}}, 2025),
+Array.from({length: 25}, (_, index) => 1995 + index).concat([2025]).slice(-25));
 console.log('ESPN history parser tests passed');

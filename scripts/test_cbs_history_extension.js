@@ -47,4 +47,36 @@ assert.equal(combined.identityReview.identities.find(row => row.displayName === 
 assert.throws(() => parser.parseSnapshot({year: 2025, teams: [], matchups: []}),
   new RegExp(parser.EMPTY_ERROR.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
 
+const largeTeams = Array.from({length: 32}, (_, index) => ({
+  teamName: `Team ${index + 1}`, ownerName: `Manager ${index + 1}`,
+  wins: 7, losses: 7, pointsFor: 1500 + index
+}));
+function largeSeason(year, scoreOffset = 0) {
+  return parser.parseSnapshot({year, leagueId: 'fixture-league', leagueName: 'Large League',
+    regularSeasonWeeks: 14, teams: largeTeams,
+    matchups: Array.from({length: 120}, (_, gameIndex) => {
+      const home = gameIndex % 32;
+      const away = (home + 1 + Math.floor(gameIndex / 32)) % 32;
+      return {week: gameIndex % 18 + 1, homeTeamName: `Team ${home + 1}`,
+        awayTeamName: `Team ${away + 1}`, homeScore: 101.25 + scoreOffset,
+        awayScore: 99.75};
+    })});
+}
+let scaleCapture = null;
+for (let year = 1995; year <= 2025; year += 1) {
+  scaleCapture = parser.combine(scaleCapture, largeSeason(year), 'fixture-league',
+    '2026-09-05T00:00:00.000Z');
+}
+assert.equal(scaleCapture.counts.seasons, parser.MAX_SEASONS);
+assert.deepEqual(scaleCapture.seasons.map(row => row.year),
+  Array.from({length: 25}, (_, index) => 2001 + index));
+assert.equal(scaleCapture.counts.teams, 32);
+assert.equal(scaleCapture.counts.matchups, 3000);
+assert.equal(scaleCapture.counts.identities, 32);
+const refreshed = parser.combine(scaleCapture, largeSeason(2025, 10), 'fixture-league',
+  '2026-09-05T01:00:00.000Z');
+assert.equal(refreshed.seasons.length, 25);
+assert.equal(refreshed.seasons.find(row => row.year === 2025).matchups[0].homeScore, 111.25);
+assert.equal(refreshed.counts.matchups, 3000);
+
 console.log('CBS history parser and local multi-season merge tests passed.');

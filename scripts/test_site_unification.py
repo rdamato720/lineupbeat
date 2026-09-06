@@ -77,6 +77,8 @@ def audit(root: Path) -> tuple[int, int, int]:
         errors.append("sitemap missing: " + ", ".join(missing))
     if "/decision-room/reviewed-wire/" in routes:
         errors.append("unlisted reviewed Wire archive appears in sitemap")
+    if "/my-team/" in routes:
+        errors.append("private My Team route appears in sitemap")
 
     route_files: list[Path] = []
     for route in routes:
@@ -92,11 +94,12 @@ def audit(root: Path) -> tuple[int, int, int]:
     elif archive.read_text().count('class="tile wire"') != 86:
         errors.append("reviewed Wire archive does not render exactly 86 cards")
 
-    # Audit every canonical rendered route plus the intentional unlisted
-    # archive and the platform 404. Source templates are build inputs, not
-    # routes, and must not be mistaken for rendered pages.
-    extras = [path for path in (archive, root / "404.html") if path.is_file()]
-    pages = sorted(set(route_files + extras))
+    # Audit every rendered HTML route, including private/unlisted tools that
+    # correctly stay out of the sitemap. Source templates are build inputs,
+    # not routes, and must not be mistaken for rendered pages.
+    pages = sorted(path for path in root.rglob("*.html")
+                   if path != root / "template.html")
+    indexed_pages = set(route_files)
     parsed: dict[Path, PageParser] = {}
     links_checked = 0
     for page in pages:
@@ -116,6 +119,14 @@ def audit(root: Path) -> tuple[int, int, int]:
             if legacy in shell:
                 errors.append(f"{rel}: legacy shell text {legacy!r}")
         text = page.read_text(errors="replace")
+        if not re.search(r"<title>[^<]+</title>", text, flags=re.I):
+            errors.append(f"{rel}: missing document title")
+        if not re.search(r'<meta\s+name=["\']description["\'][^>]+content=',
+                         text, flags=re.I):
+            errors.append(f"{rel}: missing meta description")
+        if page in indexed_pages and not re.search(
+                r'<link\s+rel=["\']canonical["\'][^>]+href=', text, flags=re.I):
+            errors.append(f"{rel}: indexed route is missing a canonical URL")
         if 'class="dr-sports"' in text:
             errors.append(f"{rel}: redundant Decision Room sport navigation")
         if '<meta name="viewport"' not in text:

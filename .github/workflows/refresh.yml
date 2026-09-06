@@ -740,6 +740,11 @@ jobs:
           python scripts/build_my_team.py
           python scripts/build_league_history.py
 
+          # Crawl every public and unlisted HTML artifact after all builders
+          # have run. This catches sitemap/indexing contradictions, missing
+          # metadata, broken internal links, and incomplete shared chrome.
+          python scripts/test_site_unification.py site
+
           # Last, and against the directory wrangler uploads rather than the
           # build that produced it.
           #
@@ -827,6 +832,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PRODUCTION_LEAGUE_HISTORY_DB: lineupbeat-league-history-production
         # Cloudflare Pages rather than Netlify. Netlify moved to credit
         # billing and ten deploys a day exhausted them, most shipping a
         # rebuilt page where nothing had changed. Pages allows 500 builds a
@@ -846,10 +852,38 @@ jobs:
               --production-branch=main || true
           echo "::endgroup::"
 
-          # The production Pages project owns a separate, automatically
-          # provisioned D1 database. Never reuse the explicit development
-          # binding: published league data must stay isolated by environment.
+          # Resolve one named production database before preparing Wrangler.
+          # The explicit ID is required by Wrangler. Refuse the known
+          # development database even if the account response is malformed.
+          production_db_id=$(npx --yes wrangler@latest d1 list --json |
+            jq -r --arg name "$PRODUCTION_LEAGUE_HISTORY_DB" \
+              '.[] | select(.name == $name) | (.uuid // .id)' | head -n 1)
+          if [ -z "$production_db_id" ]; then
+            npx --yes wrangler@latest d1 create \
+              "$PRODUCTION_LEAGUE_HISTORY_DB" --json > /tmp/production-d1.json
+            production_db_id=$(jq -r '.uuid // .id // .d1_databases[0].database_id // empty' \
+              /tmp/production-d1.json)
+          fi
+          if ! printf '%s' "$production_db_id" | grep -Eq \
+              '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'; then
+            echo "Production league database could not be resolved."
+            exit 1
+          fi
+          if [ "$production_db_id" = "ca58d282-f90d-4c89-b207-de60614adc57" ]; then
+            echo "Refusing to bind production to the development database."
+            exit 1
+          fi
           cp cloudflare/lineupbeat-production.wrangler.toml wrangler.toml
+          sed -i "s/__PRODUCTION_LEAGUE_HISTORY_DB_ID__/$production_db_id/" wrangler.toml
+          grep -Eq '^database_id = "[0-9a-f-]{36}"$' wrangler.toml
+
+          # The schema is additive and idempotent. Apply it before switching
+          # traffic so a new database and an existing production database
+          # both have every table/index required by the deployed Functions.
+          npx --yes wrangler@latest d1 execute \
+            "$PRODUCTION_LEAGUE_HISTORY_DB" --remote \
+            --file=cloudflare/league-history-schema.sql \
+            --config=wrangler.toml
 
           # The deploy itself gets three attempts.
           #
@@ -875,4 +909,20 @@ jobs:
           done
           echo "  three attempts failed. The build is fine; the Cloudflare"
           echo "  API was not reachable. Re-run the job."
+          exit 1
+
+      - name: Verify production league publishing storage
+        run: |
+          for attempt in $(seq 1 12); do
+            status=$(curl --silent --show-error --output /tmp/league-publish-health.json \
+              --write-out '%{http_code}' \
+              "https://lineupbeat.com/api/leagues/deployment-health-check")
+            if [ "$status" = "404" ]; then
+              jq --exit-status '.error == "League not found."' \
+                /tmp/league-publish-health.json
+              exit 0
+            fi
+            sleep 5
+          done
+          cat /tmp/league-publish-health.json
           exit 1

@@ -143,7 +143,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
     def test_required_weekly_labels_and_empty_states_render(self):
         for text in ("2026 NFL Week 1 Decision Room",
                      "Lineup Beat-owned weekly projections",
-                     "Odds and current injury reports are unavailable",
+                     "Week 1 · Half-PPR default · Current injuries are not included.",
                      "Connect an ESPN roster locally to see supported Week 1 starter and bench decisions.",
                      'href="/my-team/"',
                      "No decisions have been recorded"):
@@ -164,7 +164,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
 
     def test_no_probability_floor_or_ceiling_claims(self):
         lowered = self.html.split('</main>', 1)[0].lower()
-        self.assertIn("week 1 projection", lowered)
+        self.assertIn("weekly projections", lowered)
         self.assertNotIn("win probability", lowered)
         self.assertNotIn("% chance", lowered)
         self.assertNotIn("floor", lowered)
@@ -215,16 +215,13 @@ class DecisionRoomRenderingTests(unittest.TestCase):
 
     def test_homepage_navigation_sections_and_mobile_structure(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
-        for label in ("NFL", "College", "Decision", "Rankings", "Projections",
-                      "WHAT LINEUPBEAT OFFERS", "CHOOSE YOUR GAME",
-                      "TWO GAMES · ONE STANDARD", "Today’s featured decisions.",
-                      "Make the call with the", "NFL + COLLEGE FANTASY FOOTBALL",
-                      "Fantasy football decisions, explained.",
-                      "NFL or College?", "Rankings, projections &amp; decisions",
-                      "Week 1 rankings &amp; projections",
-                      "Turn an ESPN, Yahoo, or CBS league archive",
-                      "Tony Pollard vs. Rico Dowdle",
-                      "Devon Dampier vs. Byrum Brown"):
+        for label in ("NFL", "College", "Compare Players", "Rankings", "Projections",
+                      "INDEPENDENT FANTASY FOOTBALL RESEARCH", "WHO WE ARE",
+                      "A clearer answer to", "Fantasy research built for the actual decision.",
+                      "WHAT DO YOU WANT TO DO?", "Start here.", "QUICK EXAMPLES",
+                      "See the answer first.", "NFL or College?",
+                      "Compare NFL players", "Compare College players",
+                      "Tony Pollard", "Rico Dowdle", "Devon Dampier", "Byrum Brown"):
             self.assertIn(label, home)
         self.assertNotIn("NFL and College have their own dedicated experiences.", home)
         self.assertNotIn("Compare 2,205 players using validated Yahoo scoring", home)
@@ -255,26 +252,22 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertNotIn('href="/decision-room/reviewed-wire/"', home)
         self.assertEqual(home.count('data-home-sport='), 0)
         self.assertEqual(home.count('lb-feature-card'), 2)
-        self.assertEqual(home.count('class="hp-action"'), 7)
+        self.assertEqual(home.count('class="hp-action"'), 4)
         self.assertEqual(home.count('class="hp-sport-card'), 2)
         self.assertIn('href="/my-team/"', home)
         self.assertIn('href="/my-league/"', home)
-        self.assertIn("shareable fantasy football record book", home)
-        self.assertIn("Yahoo scoring", home)
+        self.assertIn("shareable fantasy league record book", home)
+        self.assertIn("College · Week 1 · Yahoo", home)
         self.assertIn('href="/about/"', home)
         self.assertEqual(home.count('class="hp-decision-summary"'), 2)
-        self.assertEqual(home.count('class="hp-evidence-grid"'), 2)
-        self.assertIn("PROJECTION COMPARISON", home)
-        self.assertIn("Projection favors Tony Pollard", home)
+        self.assertEqual(home.count('class="hp-evidence-grid"'), 0)
+        self.assertIn("MODEL PICK", home)
+        self.assertIn("Tony Pollard", home)
+        self.assertIn("WHO WE ARE", home)
+        self.assertIn("We build our own projections", home)
+        self.assertIn("Current injuries are not included.", home)
         self.assertNotIn("RECOMMENDATION UNAVAILABLE", home)
-        self.assertIn("does not issue a lineup recommendation", home)
-        self.assertIn("Reconciled projection, modeled workload, game environment, and exact player-component markets", home)
-        self.assertIn("Sportsbook team total", home)
-        self.assertIn("Player market evidence", home)
-        self.assertIn("Market inputs are evidence, not outcomes or guarantees", home)
-        self.assertIn("A lineup recommendation requires a qualifying validation result", home)
-        self.assertIn("25.2 vs. 30.0", home)
-        self.assertIn("Market evidence appears only when it is validated", home)
+        self.assertNotIn("A lineup recommendation requires a qualifying validation result", home)
         self.assertNotIn("Projection edge: Tony Pollard", home)
         self.assertNotIn("pushState", home)
         self.assertNotIn("popstate", home)
@@ -293,11 +286,12 @@ class DecisionRoomRenderingTests(unittest.TestCase):
 
     def test_home_has_production_visual_language_without_public_news(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
-        for marker in ("hp-home-hero", "hp-dual-feature", "hp-action-grid",
-                       "hp-sport-grid", "hp-method-grid", "hp-trust",
-                       "lb-feature-card", "hp-ambient-data", "hp-ambient-trend",
-                       "hp-ambient-volume", "What changes the call?"):
+        for marker in ("hp-home-hero", "hp-who", "hp-dual-feature",
+                       "hp-action-grid", "hp-sport-grid", "lb-feature-card",
+                       "hp-ambient-data", "hp-ambient-trend", "hp-ambient-volume"):
             self.assertIn(marker, home)
+        for removed in ("hp-method-grid", "hp-trust", "What changes the call?"):
+            self.assertNotIn(removed, home)
         for removed in ("Reviewed Updates", "The latest from The Beat",
                         "RECENT NEWS", "NEWS UPDATED"):
             self.assertNotIn(removed, home)

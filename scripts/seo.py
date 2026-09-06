@@ -380,13 +380,13 @@ SPORT_ROUTES = {
 }
 NAV_GROUPS = (
     ("nfl", "NFL", (
-        ("decision", "Decision Room", "/decision-room/nfl/"),
+        ("decision", "Compare Players", "/decision-room/nfl/"),
         ("rankings", "Rankings", "/nfl/rankings/"),
         ("projections", "Projections", "/nfl/projections/"),
-        ("data", "Fantasy Data", "/nfl/data/"),
+        ("data", "More NFL Tools", "/nfl/data/"),
     )),
     ("college", "College", (
-        ("decision", "Decision Room", "/decision-room/college/"),
+        ("decision", "Compare Players", "/decision-room/college/"),
         ("rankings", "Week 1 Rankings", "/college-fantasy-football/week-1/"),
         ("projections", "Season Projections", "/college-fantasy-football/projections/"),
     )),
@@ -858,7 +858,7 @@ def site_nav(active=None, sport="nfl", search="", home=False):
            '<circle cx="11" cy="11" r="7"></circle>'
            '<path d="M20 20l-3.5-3.5"></path></svg>'
            '</button>\n' if search else '')
-        + ('    <a class="home-nav-cta" href="#featured-decisions">Today\'s decisions</a>\n'
+        + ('    <a class="home-nav-cta" href="#featured-decisions">Compare players</a>\n'
            if home else '')
         + '    <button class="navbtn navtoggle" type="button" '
           'aria-expanded="false" aria-controls="navdrawer">'

@@ -81,6 +81,13 @@ def main():
     if not args.development or os.environ.get('DEV_PROJECT')!='lineupbeat-dev':raise SystemExit('isolated development project required')
     os.environ['LINEUPBEAT_NFL_SEASON']='v1.6-trusted-current'
     sys.addaudithook(deny_network)
+    # This is a complete artifact build, not an incremental page refresh.
+    # Starting with the previous generated NFL tree lets a page that no
+    # longer qualifies reappear later in the multi-pass builder and makes the
+    # second artifact differ from the first.  The directory is generated and
+    # untracked; clear only that bounded output before rebuilding it.
+    generated_nfl=ROOT/'site/nfl'
+    if generated_nfl.exists():shutil.rmtree(generated_nfl)
     import build_nfl_season_release as release
     global CUTOFF
     model,ranking=release.load();CUTOFF=datetime.fromisoformat(model['metadata']['cutoff_utc'].replace('Z','+00:00'))

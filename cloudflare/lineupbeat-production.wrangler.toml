@@ -2,8 +2,9 @@ name = "lineupbeat"
 pages_build_output_dir = "site"
 compatibility_date = "2026-09-04"
 
-# Intentionally omit database_id. Wrangler auto-provisions a D1 resource for
-# this production project on its first deployment. This prevents production
-# from ever sharing the explicitly configured development database.
 [[d1_databases]]
 binding = "LEAGUE_HISTORY_DB"
+database_name = "lineupbeat-league-history-production"
+# The production workflow resolves or creates this database, verifies that it
+# is not the development database, and replaces this placeholder before deploy.
+database_id = "__PRODUCTION_LEAGUE_HISTORY_DB_ID__"
