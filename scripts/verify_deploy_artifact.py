@@ -491,6 +491,12 @@ def check_homepage(root, decision_room=False):
               and "Compare 2,205 players using validated Yahoo scoring" not in text
               and "Today’s Decision Board" not in text
               and "The latest from The Beat" not in text)
+        check("the homepage uses one contained product panel without floating cards",
+              'class="hp-product-window"' in text
+              and 'class="hp-window-grid"' in text
+              and 'class="hp-wordmark-field"' not in text
+              and 'class="hp-product-stage"' not in text
+              and 'class="hp-stage-card' not in text)
         check("the Decision Room is presented as one tool, not the brand identity",
               "ONE TOOL, WHEN YOU NEED IT" in text
               and text.count('class="hp-decision-summary"') == 0

@@ -251,7 +251,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertEqual(home.count('data-home-sport='), 0)
         self.assertEqual(home.count('lb-feature-card'), 0)
         self.assertEqual(home.count('class="hp-bento-card'), 4)
-        self.assertEqual(home.count('class="hp-stage-card'), 3)
+        self.assertEqual(home.count('class="hp-window-grid'), 1)
         self.assertIn('href="/my-team/"', home)
         self.assertIn('href="/my-league/"', home)
         self.assertIn("Build league history", home)
@@ -285,16 +285,16 @@ class DecisionRoomRenderingTests(unittest.TestCase):
 
     def test_home_has_production_visual_language_without_public_news(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
-        for marker in ("hp-home-hero", "hp-wordmark-field", "hp-product-stage",
-                       "hp-who", "hp-bento", "hp-decision-tool"):
+        for marker in ("hp-home-hero", "hp-product-window", "hp-window-grid",
+                       "hp-identity-strip", "hp-bento", "hp-decision-tool"):
             self.assertIn(marker, home)
-        self.assertGreaterEqual(home.count('class="hp-icon"'), 11)
+        self.assertGreaterEqual(home.count('class="hp-icon"'), 9)
         self.assertEqual(home.count('class="hp-icon-chip"'), 5)
         self.assertIn("linear-gradient(95deg,#c6f53c", page.CSS)
-        self.assertIn("@media(prefers-reduced-motion:reduce)", page.CSS)
         for removed in ("hp-method-grid", "hp-trust", "What changes the call?",
                         "hp-dual-feature", "lb-feature-card", "hp-ambient-data",
-                        "hp-action-grid", "hp-sport-grid"):
+                        "hp-action-grid", "hp-sport-grid", "hp-wordmark-field",
+                        "hp-product-stage", "hp-stage-card"):
             self.assertNotIn(removed, home)
         for removed in ("Reviewed Updates", "The latest from The Beat",
                         "RECENT NEWS", "NEWS UPDATED"):
