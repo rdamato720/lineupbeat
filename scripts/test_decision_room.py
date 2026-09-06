@@ -218,7 +218,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         for label in ("NFL", "College", "Compare Players", "Rankings", "Projections",
                       "NFL + COLLEGE FANTASY FOOTBALL", "WHO WE ARE",
                       "YOUR SEASON.", "Fantasy research without the noise.",
-                      "EXPLORE LINEUPBEAT", "Everything your season needs.",
+                      "EXPLORE LINEUPBEAT", "Everything you need. All season.",
                       "NFL FANTASY", "COLLEGE FANTASY", "Decision Room"):
             self.assertIn(label, home)
         self.assertNotIn("NFL and College have their own dedicated experiences.", home)

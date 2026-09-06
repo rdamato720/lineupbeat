@@ -484,7 +484,7 @@ def check_homepage(root, decision_room=False):
         check("the homepage introduces the full LineupBeat platform",
               all(label in text for label in
                   ("NFL + COLLEGE FANTASY FOOTBALL", "WHO WE ARE",
-                   "EXPLORE LINEUPBEAT", "Everything your season needs.",
+                   "EXPLORE LINEUPBEAT", "Everything you need. All season.",
                    "Fantasy research without the noise.",
                    "NFL FANTASY", "COLLEGE FANTASY", "MY TEAM", "MY LEAGUE"))
               and "NFL and College have their own dedicated experiences." not in text
