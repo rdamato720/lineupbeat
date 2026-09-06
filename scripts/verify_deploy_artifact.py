@@ -510,6 +510,9 @@ def check_homepage(root, decision_room=False):
               and "Tony Pollard" not in text
               and 'href="/decision-room/nfl/"' in text
               and 'href="/decision-room/college/"' in text)
+        check("the homepage tools are isolated in their own full-width section",
+              'class="hp-tools-band" id="tools"' in text
+              and 'class="hp-section hp-platform"' not in text)
         faq_markup = (text.split('class="hp-faq-list">', 1)[1].split("</div></section><script", 1)[0]
                       if 'class="hp-faq-list">' in text else "")
         check("the homepage FAQ is visible and has matching structured data",
