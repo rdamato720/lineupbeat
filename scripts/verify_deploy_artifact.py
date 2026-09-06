@@ -510,6 +510,14 @@ def check_homepage(root, decision_room=False):
               and "Tony Pollard" not in text
               and 'href="/decision-room/nfl/"' in text
               and 'href="/decision-room/college/"' in text)
+        faq_markup = (text.split('class="hp-faq-list">', 1)[1].split("</div></section><script", 1)[0]
+                      if 'class="hp-faq-list">' in text else "")
+        check("the homepage FAQ is visible and has matching structured data",
+              'class="hp-section hp-faq"' in text
+              and faq_markup.count("<details>") == 6
+              and '"@type":"FAQPage"' in text
+              and "Is the Decision Room the whole product?" in text
+              and "Roster data stays in your browser." in text)
         check("the homepage links the complete product paths",
               all(route in text for route in
                   ('href="/nfl/rankings/"', 'href="/nfl/projections/"',

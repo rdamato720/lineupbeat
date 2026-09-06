@@ -263,6 +263,12 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertIn("WHO WE ARE", home)
         self.assertIn("Our projections. Clear explanations. Honest limits.", home)
         self.assertIn("ONE TOOL, WHEN YOU NEED IT", home)
+        self.assertIn('class="hp-section hp-faq"', home)
+        faq_markup = home.split('class="hp-faq-list">', 1)[1].split("</div></section><script", 1)[0]
+        self.assertEqual(faq_markup.count("<details>"), 6)
+        self.assertIn('"@type":"FAQPage"', home)
+        self.assertIn("Is the Decision Room the whole product?", home)
+        self.assertIn("Roster data stays in your browser.", home)
         self.assertNotIn("Tony Pollard", home)
         self.assertNotIn("QUICK EXAMPLES", home)
         self.assertNotIn("RECOMMENDATION UNAVAILABLE", home)
@@ -286,7 +292,8 @@ class DecisionRoomRenderingTests(unittest.TestCase):
     def test_home_has_production_visual_language_without_public_news(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
         for marker in ("hp-home-hero", "hp-product-window", "hp-window-grid",
-                       "hp-identity-strip", "hp-bento", "hp-decision-tool"):
+                       "hp-identity-strip", "hp-bento", "hp-decision-tool",
+                       "hp-faq", "hp-faq-list"):
             self.assertIn(marker, home)
         self.assertEqual(home.count('class="hp-3d-icon"'), 8)
         self.assertEqual(home.count('class="hp-icon-chip'), 5)
