@@ -497,6 +497,12 @@ def check_homepage(root, decision_room=False):
               and 'class="hp-wordmark-field"' not in text
               and 'class="hp-product-stage"' not in text
               and 'class="hp-stage-card' not in text)
+        icon_assets = [root / "assets" / "homepage" / f"{name}-3d.png"
+                       for name in ("rankings", "college", "team", "league")]
+        check("the homepage 3D navigation icons are deployed",
+              text.count('class="hp-3d-icon"') == 8
+              and all(asset.is_file() for asset in icon_assets),
+              "; ".join(str(asset) for asset in icon_assets if not asset.is_file()))
         check("the Decision Room is presented as one tool, not the brand identity",
               "ONE TOOL, WHEN YOU NEED IT" in text
               and text.count('class="hp-decision-summary"') == 0
