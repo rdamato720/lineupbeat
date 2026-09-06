@@ -484,10 +484,9 @@ def check_homepage(root, decision_room=False):
         check("the homepage introduces the full LineupBeat platform",
               all(label in text for label in
                   ("NFL + COLLEGE FANTASY FOOTBALL", "WHO WE ARE",
-                   "EXPLORE LINEUPBEAT", "Everything in one place.",
-                   "Independent research for fantasy players.",
-                   "NFL or College?", "NFL fantasy football",
-                   "College fantasy football", "My Team", "My League"))
+                   "EXPLORE LINEUPBEAT", "Everything your season needs.",
+                   "Fantasy research without the noise.",
+                   "NFL FANTASY", "COLLEGE FANTASY", "MY TEAM", "MY LEAGUE"))
               and "NFL and College have their own dedicated experiences." not in text
               and "Compare 2,205 players using validated Yahoo scoring" not in text
               and "Today’s Decision Board" not in text

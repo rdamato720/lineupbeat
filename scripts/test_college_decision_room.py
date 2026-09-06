@@ -147,7 +147,7 @@ class CollegeDecisionRenderingTests(unittest.TestCase):
         home_source = source.split("def render_home", 1)[1].split("def render(", 1)[0]
         self.assertNotIn("player_market", home_source)
         self.assertNotIn("strongest_edges", home_source)
-        self.assertIn("College fantasy", home_source)
+        self.assertIn("COLLEGE FANTASY", home_source)
 
 
 if __name__ == "__main__":

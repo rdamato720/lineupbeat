@@ -217,10 +217,9 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
         for label in ("NFL", "College", "Compare Players", "Rankings", "Projections",
                       "NFL + COLLEGE FANTASY FOOTBALL", "WHO WE ARE",
-                      "Fantasy football,", "Independent research for fantasy players.",
-                      "EXPLORE LINEUPBEAT", "Everything in one place.",
-                      "NFL or College?", "NFL fantasy football",
-                      "College fantasy football", "Decision Room"):
+                      "YOUR SEASON.", "Fantasy research without the noise.",
+                      "EXPLORE LINEUPBEAT", "Everything your season needs.",
+                      "NFL FANTASY", "COLLEGE FANTASY", "Decision Room"):
             self.assertIn(label, home)
         self.assertNotIn("NFL and College have their own dedicated experiences.", home)
         self.assertNotIn("Compare 2,205 players using validated Yahoo scoring", home)
@@ -251,18 +250,18 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertNotIn('href="/decision-room/reviewed-wire/"', home)
         self.assertEqual(home.count('data-home-sport='), 0)
         self.assertEqual(home.count('lb-feature-card'), 0)
-        self.assertEqual(home.count('class="hp-action"'), 6)
-        self.assertEqual(home.count('class="hp-sport-card'), 2)
+        self.assertEqual(home.count('class="hp-bento-card'), 4)
+        self.assertEqual(home.count('class="hp-stage-card'), 3)
         self.assertIn('href="/my-team/"', home)
         self.assertIn('href="/my-league/"', home)
-        self.assertIn("shareable fantasy league record book", home)
+        self.assertIn("Build league history", home)
         self.assertIn('href="/nfl/projections/"', home)
         self.assertIn('href="/college-fantasy-football/week-1/"', home)
         self.assertIn('href="/about/"', home)
         self.assertEqual(home.count('class="hp-decision-summary"'), 0)
         self.assertEqual(home.count('class="hp-evidence-grid"'), 0)
         self.assertIn("WHO WE ARE", home)
-        self.assertIn("We build our own projections", home)
+        self.assertIn("Our projections. Clear explanations. Honest limits.", home)
         self.assertIn("ONE TOOL, WHEN YOU NEED IT", home)
         self.assertNotIn("Tony Pollard", home)
         self.assertNotIn("QUICK EXAMPLES", home)
@@ -286,11 +285,12 @@ class DecisionRoomRenderingTests(unittest.TestCase):
 
     def test_home_has_production_visual_language_without_public_news(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
-        for marker in ("hp-home-hero", "hp-who", "hp-action-grid",
-                       "hp-sport-grid", "hp-decision-tool"):
+        for marker in ("hp-home-hero", "hp-wordmark-field", "hp-product-stage",
+                       "hp-who", "hp-bento", "hp-decision-tool"):
             self.assertIn(marker, home)
         for removed in ("hp-method-grid", "hp-trust", "What changes the call?",
-                        "hp-dual-feature", "lb-feature-card", "hp-ambient-data"):
+                        "hp-dual-feature", "lb-feature-card", "hp-ambient-data",
+                        "hp-action-grid", "hp-sport-grid"):
             self.assertNotIn(removed, home)
         for removed in ("Reviewed Updates", "The latest from The Beat",
                         "RECENT NEWS", "NEWS UPDATED"):
