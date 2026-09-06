@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `fbd64943e900` · 9 draft calls · $0.0529
+**1 cards** · batch `da79ecd0b88f` · 16 draft calls · $0.0741
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,26 +19,26 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Jadarian Price — SEA RB
+## 1. Isiah Pacheco — DET RB
 
-**Trending up** · ROLE_EXPANSION · MEDIUM evidence
+**Trending down** · TRANSACTION · HIGH evidence
 
 ### What changed
 
-Jadarian Price will make his NFL debut against New England after playing little or not at all during Seattle's preseason.
+Isiah Pacheco was placed on injured reserve after final cuts, leaving Detroit thinner behind Gibbs at running back.
 
 ### Lineup Beat impact
 
-Price's debut confirms Seattle plans to get its first-round rookie on the field in Week 1, but the report does not define his workload or place in the backfield rotation. Watch his usage.
+Pacheco is off the immediate fantasy radar while on injured reserve. The report does not provide an injury diagnosis or return timetable; monitor for a designation change or activation news.
 
-[Ari Horton · SEA official team site](https://www.seahawks.com/news/jadarian-price-to-get-first-nfl-action-in-week-1) · 2026-09-05
+[Christian Booher · Sports Illustrated -- DET](https://www.si.com/nfl/lions/onsi/detroit-lions-2026-updated-offensive-depth-chart-after-roster-cuts) · 2026-09-06
 
 <details><summary>Full evidence reviewed</summary>
 
-Throughout three preseason games, many of Seattle's starters and players who will be getting significant reps during the regular season didn't play at all or played very little. Seahawks 2026 first-round draft pick running back Jadarian Price is one of those players.
+Injured: Isiah Pacheco (Injured reserve). With Pacheco going on injured reserve after final cuts, the Lions will have to rely on a group that is suddenly light on depth behind Gibbs.
 
-Throughout three preseason games, many of Seattle's starters and players who will be getting significant reps during the regular season didn't play at all or played very little. Seahawks 2026 first-round draft pick running back Jadarian Price is one of those players. When the Seahawks take on the New England Patriots on Wednesday, Price will play in his first NFL game in front of a crowd that includes his mom.
+Injured: Isiah Pacheco (Injured reserve). With Pacheco going on injured reserve after final cuts, the Lions will have to rely on a group that is suddenly light on depth behind Gibbs. In the Alabama product, the Lions have one of the league's most explosive playmakers, but he's entering the season as the predominant option for the first time in his career.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrtVtty2zYQ_RUMX_JQUQZJ8SK9uWOldceWPLFbd6bJcEBgKSIiAQ4AWlEy-fcuSEm1mz_o9EnULrCXs2d38S2omONNKUWwCupKZIvlIoElpcuoiAWwNE1ZHQlasyzPRJrmOS0qLuJlGgHnNa3iIq4KJnhCF3kwCzgzwgarv74FrO-NfgFRMoemUcUG12iD39dGkl-1cVr5C7rrQDlmjqh5MJLDO0sEVIMjXKtams6SR2DOtUD6lilLnCY7cEQ6S1BtXWj0oAQxWu8lEK2IawA10AoiFXkG2JNoRrxBrzDQo2siNFiiNH5ALRWQRlpy0GbfaiaINt4VB3_f36kY308GjXbMSa3m5NnDNl4bLNvB_E0q5SX56jgl_0qnjdxJheL77c36rrz5cP3-aTyhHJ4o3bEHVH5YP2w_PN1ufkGVYM6LYhpnIV2GNH2K49UiWcXpPEtSSulPlK4o9SelAe4D9GBuH2-fbv9Ye7FhtStHPAUojsbofLk4y1vZySktX7ngCTO2ejCY_wUl2wOX9ZGcCwRfUOBAEKtYT2zDDMwI1t5IvIDwGd2OkNx503isN2CBWSwOG8MjrNXqlX2wjlWttA1hWJHeNSFHm4702soR7-DTLICXc_QYIxZ91-ixqAbglYMd68DOSMfUkej6zB2MGV0YB8YShmzB-h7996HR5CDbllTgWeWk2hErd0rWkjPlPF2QjoPx8ok-u6FlhpycCSnUOzdaI8xhVu2JPEdM-gXMkbTSu5_7OBp22Fviq_iGuGMRSC_5nphBKe_JE478xgQzkqkJdIJM85BhSthGFs4ZzD-qj-p_OC5wkOcGpq69uHBsf5kLGziQtdq1PukH5ozUzhvCMSEUWMGOs5P9EYUxERwCvs3HGMnm_d0IqZfWBlvWR8AIN_og0AEmLRVvB4G89pc63fk2ODO3RBARI2znaeB2upItrLAQkuOvqJMkoqIoCpHGySKrKEvwNk5N-XVs6dv7-_XN7fWT7-kOsEWUtJ0fFtu7dbn-8-F683i73XilFtCeJg1ry__QkNUHhWVuZO-nwPr6vtw-b9Y3qJgIgNK3RLloJsQpDSldRGkUe8VpungEf_b_jf48jc-SnafoZrvxaPcDjide2qHrJhT_RceRLp0nmo_Ws2SCl-2YVJ43r3iH_IapKzy5p47wcHikTl1zarF_uvXS0PMfgvlx2RhgAhNuWQWth8kAsg7NDf1JicWwtqyZbAe0i0P_k5e_SDjgtUvqD-vNzbSApnWAosf1NRIeh4FkLXHAOpwOzmNsHTrZucavNaTo7_co8_rpDv4ZjA-lca63q6urw-Ewt6f-nCM7rxQc7NXnE6Zh7zENnQ6Rg-HEP1W34RRZKFV4QMKFUfD9k9-b1pWDFX6n0TQuilmwA-QINtnp7fF6byarNFst0svCnBqFI-YIw_IM7Ug_7JoB9zFz5TiSglWRvdXj2ovT7NWBgOVQ5CnwaBlRfBDVcbYogNVZUiX4gqq5EHnEWZbWol5USS6qlOaLqKqTZZEAB-aB5A10rMRhaacqHHClh9OgwMwr_SV8iS4lKafX2xSJf8HRIqtTGhUFjXJeszSuaQx5niYYVZ5iXEXNAXi65EuRxSxbxMs4yWMMM14uoAq-_w2HUm3R:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrdVk1z2zYQ_SsYXtpOTZkiKX6oJyd2HU1T2eOozaHJcJbEUkRCghwAlKJm8t-7S9qO3fTQa3uQRO0HsPvw3oKfvRJc1RRKemtPQppjJYMyy2pIIFxhnQRY5lkexqssC0sZJ5DnqxLrNMVVjcEqTSUsg2Uax6sEvDOvAiOtt_7jswfDYPoDygIcLU0uGF3TG3p-2RhlnQItXvR9g4bT-q5D7cCcyH8LVYNVL5QVfV0L16BQ5JYKHIoaKMyehAEJRhwb1aLotVD6w2hQCoMWzQEXYkdZBofeOCF7tEL3TnBBSqKA-_iToDX3ure8k6FwNxotnOrQQdniT6LrtXLkqekDQqJVew1O0X5VA3qPnAWVU4fZqPFoF8-6KR5RKE8zCk98vVF7pcn8683l1evi8u7i590UoR1FFO40IDnvrm5v7nab7TW5JCFApjAIEz_I_SDZLeN1FKyD4MeAvzlEGay4GorbXl1f7Da_X7HZQO0KWromAHRFqwSLPHuwt6pTbuqBz85j7Gw_mgq_YsdpTtUncX8639l7DLnhJwl7dZgyvkGTscKWOi5VqxxBT2bVEl7vzzw8PFTlbeaDXIuNVdA87Ca-3zw_4B8W4q1yX_37Xun9PxBBUHtIB6g0tKIanT2b-PSaWxVH1baiAYpyXG974gVA7E0_DhQGjiloR0m1kY9qbxxHSBxo5xIbpaW4VmVpF-_0O_3frFxs9LTuRQsldMAakWPlnm427dNr-sxibBH2IxIBut46gZ-GlhREIUMLpw4-oqFSy9GJhmOINWi4Q860CJYLtdO_gbrtO-pPU3HDpCAWGrtqZWhp5g7BIhpqhgYLomGyPZClqEBLxZKYp1fXE7NwTRWrdSwhiSSGJWZ1UmVhUoUZpdL8UX9O0vht-8v25u2WbB2ylpXtyLq7u9i-uXi529xMnl5ie69SaIv_14zqj5oOqlEDa257eXV7RV9bnj98jMhz-hmPHx0z2EHgB0GULvOUHVTd_ci5e8H_Tf9hHkIFPM6imy3PoWEsW1UVduy6GcjnYjkSNWibilD6V4ogKh6YXJfoTK-IMcRs6usZxQWpwYxac1wJ1cfFN2V8O6UNgqRWSRPYMi8MEtUoXxJs926l0dqiphlGNfLYfM_2g8IjJT62zbDOs3uej2R6wwduxaZtR-sM8UUK3xeXV4w9GVDvXUNhrzbXr8jiEJiZs3s0XE3j3GDX5-fH43Fh1YJ4ea7r9rxlsZ4z_c_lDIc_mfzpuhgHVor0ia2oWa7-NAx8Iolx_oSsb0jP9MPQel_e801kXTFayZdFkMbLZXjm7ZHw5ZXme_3pVbRaR8k6jB6volk_FbQtwbNMHlCfeEhqGumOA1dMN5C3zv7mtw29fyRPAjxIMUtXWC3zZRAFcR0mcYZQJ1EZBTXUlZTpsoJkVcs6LqNUliuuuayjPIuwQn47scSyDooDMX8-niPdlv48OHyly_6Tf1g-nlUxvxrNlTDnK9oxzjEPwmWchLRnFEO0hDwgwmaAGAGUcUSPYSLDNE5WENd5VMZxjVmVBt6XvwArJjjf:WIRE_MOBILE_MANIFEST_V1 -->
