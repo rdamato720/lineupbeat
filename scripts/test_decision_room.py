@@ -262,6 +262,8 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertEqual(home.count('class="hp-evidence-grid"'), 0)
         self.assertIn("WHO WE ARE", home)
         self.assertIn("Our projections. Clear explanations. Honest limits.", home)
+        self.assertIn('class="hp-about-band"', home)
+        self.assertNotIn('class="hp-identity-strip"', home)
         self.assertIn("ONE TOOL, WHEN YOU NEED IT", home)
         self.assertIn('class="hp-tools-band" id="tools"', home)
         self.assertNotIn('class="hp-section hp-platform"', home)
@@ -294,7 +296,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
     def test_home_has_production_visual_language_without_public_news(self):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
         for marker in ("hp-home-hero", "hp-product-window", "hp-window-grid",
-                       "hp-identity-strip", "hp-bento", "hp-decision-tool",
+                       "hp-about-band", "hp-about-inner", "hp-bento", "hp-decision-tool",
                        "hp-tools-band", "hp-faq", "hp-faq-list"):
             self.assertIn(marker, home)
         self.assertEqual(home.count('class="hp-3d-icon"'), 8)
