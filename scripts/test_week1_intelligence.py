@@ -138,8 +138,8 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
         self.assertIn('if(weekly){if(g<=.5||q<=3)return"Toss-Up"', html)
         self.assertIn('boundary=weekly?Math.max(.5,reference*.03)', html)
         self.assertIn("recommendationsAuthorized=D.recommendation_state?.enabled===true", html)
-        self.assertIn("No lineup recommendation is issued.", html)
-        self.assertIn("Projection favors ${safe(w.name)}", html)
+        self.assertIn("This model pick is not a validated lineup recommendation.", html)
+        self.assertIn("Model pick: ${safe(w.name)}", html)
 
 
 class CollegeWeek1EnrichmentTests(unittest.TestCase):
@@ -168,7 +168,7 @@ class CollegeWeek1EnrichmentTests(unittest.TestCase):
         self.assertIn("Sportsbook environment",
                       build_decision_room.college_decision_room.JS)
         self.assertIn("exact player-component markets for 112 players",
-                      build_decision_room.college_decision_room.SHELL)
+                      build_decision_room.college_decision_room.JS)
         self.assertIn("Expected opportunity", build_decision_room.college_decision_room.JS)
 
 
