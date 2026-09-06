@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1150,
+ "count": 1159,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -12689,6 +12689,105 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005724
+  },
+  {
+   "candidate_id": "mobile:onsi:b44332086e08d500b1aa",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/5-biggest-questions-facing-49ers-offense-2026",
+   "attempted_at": "2026-09-06T22:28:15+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T22:28:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005206
+  },
+  {
+   "candidate_id": "mobile:onsi:611e2bcd68f081dabece",
+   "player_id": "00-0037834",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/5-biggest-questions-facing-49ers-offense-2026",
+   "attempted_at": "2026-09-06T22:28:20+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T22:28:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004646
+  },
+  {
+   "candidate_id": "mobile:onsi:f9316546e83c7253c17a",
+   "player_id": "00-0037197",
+   "source_url": "https://www.si.com/nfl/lions/onsi/lions-could-face-saints-team-without-key-players-in-opener",
+   "attempted_at": "2026-09-06T22:28:23+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-06T22:28:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004194
+  },
+  {
+   "candidate_id": "mobile:onsi:3f05c41fd0b909614d7e",
+   "player_id": "00-0039064",
+   "source_url": "https://www.si.com/nfl/ravens/onsi/five-top-ravens-starters-could-be-in-their-final-year-with-the-club-who-s-most-likely-gone-01m1w0c2t8rf",
+   "attempted_at": "2026-09-06T22:28:25+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T22:28:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00436
+  },
+  {
+   "candidate_id": "mobile:onsi:1c85dfe2cbbba3001a06",
+   "player_id": "00-0033280",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/5-bold-predictions-49ers-2026-season",
+   "attempted_at": "2026-09-06T22:28:28+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-06T22:28:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005558
+  },
+  {
+   "candidate_id": "mobile:onsi:57f9b24d9585d2971ee8",
+   "player_id": "00-0041035",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/5-bold-predictions-49ers-2026-season",
+   "attempted_at": "2026-09-06T22:28:31+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-06T22:28:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006976
+  },
+  {
+   "candidate_id": "mobile:onsi:815ca48c81fad32f29fe",
+   "player_id": "00-0032775",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/5-bold-predictions-49ers-2026-season",
+   "attempted_at": "2026-09-06T22:28:36+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T22:28:40+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005516
+  },
+  {
+   "candidate_id": "mobile:onsi:58a846a49b17536b5273",
+   "player_id": "00-0041438",
+   "source_url": "https://www.si.com/nfl/titans/onsi/titans-2026-outlook-the-debate-between-winning-now-and-drafting-winners-later-01m1vyqehpdr",
+   "attempted_at": "2026-09-06T22:28:40+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T22:28:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003642
+  },
+  {
+   "candidate_id": "mobile:onsi:828fb91daa681bbea21e",
+   "player_id": "00-0040676",
+   "source_url": "https://www.si.com/nfl/titans/onsi/titans-2026-outlook-the-debate-between-winning-now-and-drafting-winners-later-01m1vyqehpdr",
+   "attempted_at": "2026-09-06T22:28:42+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T22:28:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0037
   }
  ]
 }
