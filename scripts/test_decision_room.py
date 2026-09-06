@@ -288,6 +288,10 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         for marker in ("hp-home-hero", "hp-wordmark-field", "hp-product-stage",
                        "hp-who", "hp-bento", "hp-decision-tool"):
             self.assertIn(marker, home)
+        self.assertGreaterEqual(home.count('class="hp-icon"'), 11)
+        self.assertEqual(home.count('class="hp-icon-chip"'), 5)
+        self.assertIn("linear-gradient(95deg,#c6f53c", page.CSS)
+        self.assertIn("@media(prefers-reduced-motion:reduce)", page.CSS)
         for removed in ("hp-method-grid", "hp-trust", "What changes the call?",
                         "hp-dual-feature", "lb-feature-card", "hp-ambient-data",
                         "hp-action-grid", "hp-sport-grid"):
