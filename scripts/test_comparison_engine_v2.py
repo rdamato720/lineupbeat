@@ -177,11 +177,14 @@ class EvidenceTests(unittest.TestCase):
 class LayoutContracts(unittest.TestCase):
     def test_v2_stack_and_responsive_layouts_are_rendered(self):
         nfl = build_decision_room.render(decision_data.load_season())
-        for label in ("Lineup Beat call", "Why", "Case for each player",
-                      "What changes the call",
+        for label in ("Why", "Case for each player", "What changes the call",
                       "Data coverage and evidence agreement"):
             self.assertIn(label, nfl)
             self.assertIn(label, college_decision_room.JS)
+        self.assertIn("Projection-based answer", nfl)
+        self.assertIn("LineupBeat pick", college_decision_room.JS)
+        self.assertIn("See full comparison", nfl)
+        self.assertIn("See full comparison", college_decision_room.JS)
         for selector in (".dr-why-grid", ".dr-case-grid", ".dr-quality-grid",
                          "@media(max-width:780px)", "@media(max-width:430px)"):
             self.assertIn(selector, build_decision_room.CSS)
@@ -193,11 +196,12 @@ class LayoutContracts(unittest.TestCase):
         self.assertIn("No clear edge", nfl)
         self.assertIn("No clear edge", college_decision_room.JS)
 
-    def test_renderers_separate_projection_edge_from_overall_call(self):
+    def test_renderers_put_the_answer_before_supporting_evidence(self):
         nfl = build_decision_room.render(decision_data.load_season())
-        self.assertIn("Lineup Beat call", nfl)
-        self.assertIn("Projection edge", nfl)
-        self.assertIn("Split case", nfl)
+        self.assertIn("Model pick:", nfl)
+        self.assertIn("Too close to call", nfl)
+        self.assertIn('<details class="dr-full">', nfl)
+        self.assertIn("The supporting evidence is split.", nfl)
         self.assertIn("Evidence agreement", nfl)
         self.assertNotIn("Confidence and data quality", nfl)
 
