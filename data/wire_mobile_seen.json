@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1140,
+ "count": 1150,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -12579,6 +12579,116 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003966
+  },
+  {
+   "candidate_id": "mobile:onsi:7af73fef6567128434f9",
+   "player_id": "00-0040691",
+   "source_url": "https://www.si.com/nfl/giants/onsi/giants-jameis-winston-contract-extension-2028-01m1w564phwj",
+   "attempted_at": "2026-09-06T20:31:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T20:31:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003748
+  },
+  {
+   "candidate_id": "mobile:onsi:b77fced30b1e2b280673",
+   "player_id": "00-0037545",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/john-schneider-best-worst-move-of-seattle-seahawks-offseason",
+   "attempted_at": "2026-09-06T20:31:53+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T20:31:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003674
+  },
+  {
+   "candidate_id": "mobile:onsi:d71d6d03776b9b5f0a21",
+   "player_id": "00-0041512",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/john-schneider-best-worst-move-of-seattle-seahawks-offseason",
+   "attempted_at": "2026-09-06T20:31:55+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T20:31:58+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004896
+  },
+  {
+   "candidate_id": "mobile:onsi:491f7f9d24a8331587f4",
+   "player_id": "00-0040691",
+   "source_url": "https://www.si.com/nfl/giants/onsi/giants-2026-breakout-candidates-dart-likely-carter-01m1qq4s5qys",
+   "attempted_at": "2026-09-06T20:31:58+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T20:32:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004626
+  },
+  {
+   "candidate_id": "mobile:onsi:c43e4c10b300177015ae",
+   "player_id": "00-0039337",
+   "source_url": "https://www.si.com/nfl/giants/onsi/giants-2026-breakout-candidates-dart-likely-carter-01m1qq4s5qys",
+   "attempted_at": "2026-09-06T20:32:01+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-09-06T20:32:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004152
+  },
+  {
+   "candidate_id": "mobile:onsi:1ab75166534e91e92193",
+   "player_id": "00-0037838",
+   "source_url": "https://www.si.com/nfl/giants/onsi/giants-2026-breakout-candidates-dart-likely-carter-01m1qq4s5qys",
+   "attempted_at": "2026-09-06T20:32:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T20:32:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00443
+  },
+  {
+   "candidate_id": "mobile:onsi:a8696094dd036f8b12d4",
+   "player_id": "00-0036971",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-predicting-the-2026-mvp-offensive-player-of-the-year-and-more",
+   "attempted_at": "2026-09-06T20:32:08+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T20:32:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00507
+  },
+  {
+   "candidate_id": "mobile:onsi:e5ff87e0669222b2ce5e",
+   "player_id": "00-0039893",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-predicting-the-2026-mvp-offensive-player-of-the-year-and-more",
+   "attempted_at": "2026-09-06T20:32:10+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T20:32:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004742
+  },
+  {
+   "candidate_id": "mobile:onsi:42484b9966596843d7bf",
+   "player_id": "00-0034960",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-predicting-the-2026-mvp-offensive-player-of-the-year-and-more",
+   "attempted_at": "2026-09-06T20:32:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-06T20:32:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004336
+  },
+  {
+   "candidate_id": "mobile:onsi:d49a951cf411064f0c30",
+   "player_id": "00-0038606",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-predicting-the-2026-mvp-offensive-player-of-the-year-and-more",
+   "attempted_at": "2026-09-06T20:32:15+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-06T20:32:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005724
   }
  ]
 }
