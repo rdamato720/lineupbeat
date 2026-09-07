@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1206,
+ "count": 1222,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -13305,6 +13305,182 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.01016
+  },
+  {
+   "candidate_id": "mobile:onsi:80060052ece40ccb10d9",
+   "player_id": "00-0036410",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/ja-marr-chase-tee-higgins-back-in-action-at-bengals-practice-ahead-of-2026-season-opener-01m1ek5ysdpy",
+   "attempted_at": "2026-09-07T17:53:06+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T17:53:12+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005678
+  },
+  {
+   "candidate_id": "mobile:onsi:9a641e92f5f9f2fda7b2",
+   "player_id": "00-0036442",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/ja-marr-chase-tee-higgins-back-in-action-at-bengals-practice-ahead-of-2026-season-opener-01m1ek5ysdpy",
+   "attempted_at": "2026-09-07T17:53:12+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T17:53:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00443
+  },
+  {
+   "candidate_id": "mobile:onsi:b22b8142499db539d4df",
+   "player_id": "00-0036900",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/ja-marr-chase-tee-higgins-back-in-action-at-bengals-practice-ahead-of-2026-season-opener-01m1ek5ysdpy",
+   "attempted_at": "2026-09-07T17:53:15+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T17:53:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005264
+  },
+  {
+   "candidate_id": "mobile:onsi:939f3cc3b80331157944",
+   "player_id": "00-0036555",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/can-fantasy-football-owners-trust-jonathon-brooks-in-week-1-with-chuba-hubbard-healthy",
+   "attempted_at": "2026-09-07T17:53:19+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T17:53:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005592
+  },
+  {
+   "candidate_id": "mobile:onsi:917635ae6a19421e9a82",
+   "player_id": "00-0039344",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/can-fantasy-football-owners-trust-jonathon-brooks-in-week-1-with-chuba-hubbard-healthy",
+   "attempted_at": "2026-09-07T17:53:24+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-07T17:53:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00462
+  },
+  {
+   "candidate_id": "mobile:onsi:0488b5acef73f986a8fc",
+   "player_id": "00-0036158",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/can-fantasy-football-owners-trust-jonathon-brooks-in-week-1-with-chuba-hubbard-healthy",
+   "attempted_at": "2026-09-07T17:53:27+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T17:53:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004714
+  },
+  {
+   "candidate_id": "mobile:onsi:5b177271e5471a0f335a",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/qb-index-misses-point-caleb-williams",
+   "attempted_at": "2026-09-07T17:53:30+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T17:53:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005506
+  },
+  {
+   "candidate_id": "mobile:onsi:195ffee16ab99eaaac98",
+   "player_id": "00-0035640",
+   "source_url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-could-get-crazy-one-move",
+   "attempted_at": "2026-09-07T17:53:33+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T17:53:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004228
+  },
+  {
+   "candidate_id": "mobile:onsi:7282234fb63cf7c69ebf",
+   "player_id": "00-0036252",
+   "source_url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-could-get-crazy-one-move",
+   "attempted_at": "2026-09-07T17:53:36+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T17:53:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003878
+  },
+  {
+   "candidate_id": "mobile:onsi:51d56f3269d39aa0fa74",
+   "player_id": "00-0041512",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/4-bold-predictions-for-seattle-seahawks-vs-new-england-patriots-in-week-1",
+   "attempted_at": "2026-09-07T17:53:38+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T17:53:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007324
+  },
+  {
+   "candidate_id": "mobile:onsi:b77b86cfb7c56cc72493",
+   "player_id": "00-0036355",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-dropping-bills-chiefs-nfl-simulations-sign-things-come",
+   "attempted_at": "2026-09-07T17:53:44+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T17:53:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005146
+  },
+  {
+   "candidate_id": "mobile:onsi:015cda047168c870b3d4",
+   "player_id": "00-0038543",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/4-bold-predictions-for-seattle-seahawks-vs-new-england-patriots-in-week-1",
+   "attempted_at": "2026-09-07T17:53:48+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T17:53:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004848
+  },
+  {
+   "candidate_id": "mobile:onsi:3ac4209c4f4db8d3c6ce",
+   "player_id": "00-0040129",
+   "source_url": "https://www.si.com/nfl/buccaneers/onsi/will-emeka-egbuka-jalen-mcmillan-play-week-1-what-we-saw-at-bucs-practice-2026",
+   "attempted_at": "2026-09-07T17:53:52+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-07T17:54:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004632
+  },
+  {
+   "candidate_id": "mobile:onsi:e8696bd075eef7525452",
+   "player_id": "00-0037746",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/final-printable-2026-fantasy-football-projections-rankings-ppr-standard-half",
+   "attempted_at": "2026-09-07T17:54:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T17:54:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00383
+  },
+  {
+   "candidate_id": "mobile:onsi:1ea026b9878c1c7553a6",
+   "player_id": "00-0037197",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/final-printable-2026-fantasy-football-projections-rankings-ppr-standard-half",
+   "attempted_at": "2026-09-07T17:54:05+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T17:54:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007002
+  },
+  {
+   "candidate_id": "mobile:onsi:1177c28b823300807fda",
+   "player_id": "00-0039139",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/final-printable-2026-fantasy-football-projections-rankings-ppr-standard-half",
+   "attempted_at": "2026-09-07T17:54:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T17:54:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007104
   }
  ]
 }
