@@ -142,7 +142,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
 
     def test_required_weekly_labels_and_empty_states_render(self):
         for text in ("NFL WEEK 1 DECISION ROOM",
-                     "Who should you <span>start?</span>",
+                     "Who should you start?",
                      "Weekly projections for Week 1 · Current injuries are not included.",
                      "Other close Week 1 calls",
                      "Decision Room questions"):
@@ -152,18 +152,26 @@ class DecisionRoomRenderingTests(unittest.TestCase):
 
     def test_searchable_accessible_selectors_and_market_sections_render(self):
         for text in ('role="combobox"', 'role="listbox"',
-                     'Compare across positions', "See full comparison",
+                     'Compare across positions', "See full analysis",
                      "What the market says"):
             self.assertIn(text, self.html)
         self.assertNotIn("Lineup Beat Convictions", self.html)
 
     def test_decision_room_uses_homepage_product_visual_language(self):
-        self.assertIn("Who should you <span>start?</span>", self.html)
+        self.assertIn('id="dr-matchup-title"', self.html)
+        self.assertIn(" <em>or</em> ", self.html)
         self.assertIn('class="dr-console-bar"', self.html)
         self.assertNotIn('class="dr-readout"', self.html)
-        self.assertEqual(self.html.count('/assets/homepage/team-3d.png'), 1)
+        self.assertNotIn('/assets/homepage/team-3d.png', self.html)
         for control_id in ("dr-a-search", "dr-b-search", "dr-format", "dr-result"):
             self.assertEqual(self.html.count(f'id="{control_id}"'), 1)
+
+    def test_selected_players_lead_the_dynamic_result(self):
+        self.assertIn('H=document.getElementById("dr-matchup-title")', self.html)
+        self.assertIn('H.innerHTML=`<span>${safe(a.name)}</span> <em>or</em>', self.html)
+        self.assertIn('O.innerHTML=`${playerCards(a,b,k)}<section class="dr-verdict">', self.html)
+        details = self.html.split('<details class="dr-full">', 1)[1]
+        self.assertNotIn('${playerCards(a,b,k)}', details)
 
     def test_decision_room_keeps_compact_seo_support(self):
         self.assertIn('class="dr-section dr-faq"', self.html)
