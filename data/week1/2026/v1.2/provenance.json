@@ -1,7 +1,7 @@
 {
   "assets": [
     {
-      "bytes": 512116,
+      "bytes": 512111,
       "filename": "games.csv.gz",
       "license": {
         "attribution_required": true,
@@ -13,14 +13,14 @@
       },
       "provenance": "nflverse/nflverse-data release asset; schedules are maintained by Lee Sharpe's nfldata project and accessed through nflreadr",
       "release": "schedules",
-      "release_sha256": "663e69b30e508f73959194f9c7910ca78cea3817c8659f7d8c231904a83575fe",
+      "release_sha256": "c07274a2dbf54c4def5074429499a913d26c89f2d44dc58cc86e43e7aca5b328",
       "response_headers": {
         "content-type": "application/octet-stream",
-        "etag": "\"0x8DF0D2DA56E417D\"",
-        "last-modified": "Mon, 07 Sep 2026 22:16:21 GMT"
+        "etag": "\"0x8DF0D360FD20DE4\"",
+        "last-modified": "Mon, 07 Sep 2026 23:16:35 GMT"
       },
-      "response_sha256": "663e69b30e508f73959194f9c7910ca78cea3817c8659f7d8c231904a83575fe",
-      "retrieved_at": "2026-09-07T22:17:01.589810+00:00",
+      "response_sha256": "c07274a2dbf54c4def5074429499a913d26c89f2d44dc58cc86e43e7aca5b328",
+      "retrieved_at": "2026-09-07T23:25:38.989934+00:00",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv.gz",
       "validated_rows": 7548
     },
@@ -44,7 +44,7 @@
         "last-modified": "Thu, 13 Aug 2026 16:49:10 GMT"
       },
       "response_sha256": "61fc9a44706522218a4448001706e3fec65ebbb97c1d9c5746ceef364989125d",
-      "retrieved_at": "2026-09-07T22:17:01.867717+00:00",
+      "retrieved_at": "2026-09-07T23:25:39.383530+00:00",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2024.csv.gz",
       "validated_rows": null
     },
@@ -68,7 +68,7 @@
         "last-modified": "Thu, 13 Aug 2026 16:51:22 GMT"
       },
       "response_sha256": "c7401e321bdb369443f3280b9acd74ba6e16d82e710383bf1c01acabfebeac0b",
-      "retrieved_at": "2026-09-07T22:17:02.182189+00:00",
+      "retrieved_at": "2026-09-07T23:25:39.793641+00:00",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2025.csv.gz",
       "validated_rows": null
     },
@@ -92,7 +92,7 @@
         "last-modified": "Thu, 13 Aug 2026 16:49:13 GMT"
       },
       "response_sha256": "6f27957fd1d3a759a7160586bf0558cea010a83f9cb3ee68a9bda04e35674c14",
-      "retrieved_at": "2026-09-07T22:17:02.427563+00:00",
+      "retrieved_at": "2026-09-07T23:25:40.222241+00:00",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_week_2024.csv.gz",
       "validated_rows": null
     },
@@ -116,7 +116,7 @@
         "last-modified": "Thu, 13 Aug 2026 16:51:24 GMT"
       },
       "response_sha256": "5348409f099b285877641446e869dcda3179464584dd71f73becc087219b0383",
-      "retrieved_at": "2026-09-07T22:17:02.681890+00:00",
+      "retrieved_at": "2026-09-07T23:25:40.549691+00:00",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_week_2025.csv.gz",
       "validated_rows": null
     },
@@ -140,7 +140,7 @@
         "last-modified": "Mon, 06 Oct 2025 06:51:20 GMT"
       },
       "response_sha256": "fe1d819db55d6e333057a8efcec52e8506ef111c7961b0e0411310393bb912bb",
-      "retrieved_at": "2026-09-07T22:17:02.934199+00:00",
+      "retrieved_at": "2026-09-07T23:25:40.865918+00:00",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2024.csv.gz",
       "validated_rows": null
     },
@@ -164,7 +164,7 @@
         "last-modified": "Mon, 09 Feb 2026 13:39:50 GMT"
       },
       "response_sha256": "700bef40cc5db8917b49e2eca93d7091dbd4a3cd740b2fd4dfa1795f7b9187db",
-      "retrieved_at": "2026-09-07T22:17:03.210531+00:00",
+      "retrieved_at": "2026-09-07T23:25:41.163483+00:00",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2025.csv.gz",
       "validated_rows": null
     },
@@ -188,7 +188,7 @@
         "last-modified": "Mon, 07 Sep 2026 13:10:29 GMT"
       },
       "response_sha256": "e356efc0f9ff9b8d50d82e2524312bda3ebb6598cf487eee69ba339b90f6230a",
-      "retrieved_at": "2026-09-07T22:17:03.517424+00:00",
+      "retrieved_at": "2026-09-07T23:25:41.588563+00:00",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2026.csv.gz",
       "validated_rows": 2954
     },
@@ -212,7 +212,7 @@
         "last-modified": "Mon, 07 Sep 2026 13:13:33 GMT"
       },
       "response_sha256": "92ced698838f0d3208ebfefc935c0eb260b82bbcc9f2040133e9181367761c23",
-      "retrieved_at": "2026-09-07T22:17:05.254550+00:00",
+      "retrieved_at": "2026-09-07T23:25:43.483953+00:00",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv.gz",
       "validated_rows": 503245
     },
@@ -236,7 +236,7 @@
         "last-modified": "Thu, 13 Aug 2026 12:26:27 GMT"
       },
       "response_sha256": "23370d5d10f8104d80d46a1fc5e61f4f6f5a3263fe96fe2dd629913cfcb08c06",
-      "retrieved_at": "2026-09-07T22:17:05.722636+00:00",
+      "retrieved_at": "2026-09-07T23:25:43.959674+00:00",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2024.csv.gz",
       "validated_rows": null
     },
@@ -260,12 +260,19 @@
         "last-modified": "Thu, 13 Aug 2026 12:26:09 GMT"
       },
       "response_sha256": "2f135887790a013fd004e609e37096bb4816d5cc80b9f19122e1bad478961978",
-      "retrieved_at": "2026-09-07T22:17:06.159765+00:00",
+      "retrieved_at": "2026-09-07T23:25:44.480160+00:00",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2025.csv.gz",
       "validated_rows": null
     }
   ],
-  "generated_at": "2026-09-07T22:16:59.864523+00:00",
+  "availability_coverage": {
+    "captured_at": "2026-09-07T23:25:31Z",
+    "captured_status_rows": 123,
+    "confirmed_unavailable_players": 1,
+    "matched_projected_players": 61,
+    "teams": 32
+  },
+  "generated_at": "2026-09-07T23:25:37.444836+00:00",
   "license_review": {
     "attribution_required": true,
     "derived_use_permitted": true,
@@ -275,7 +282,7 @@
     "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
   },
   "market_coverage": {
-    "captured_at": "2026-09-07T22:16:59.864523+00:00",
+    "captured_at": "2026-09-07T23:25:37.444836+00:00",
     "captured_prop_rows": 557,
     "games": 16,
     "qualified_player_projections": 58,
@@ -283,16 +290,17 @@
   },
   "provider_requests": {
     "cost_usd": null,
+    "injuries": 1,
     "model_api": 0,
     "odds": 1,
     "player_props": 16,
-    "provider_credits_remaining": 353,
-    "provider_credits_used": 147,
+    "provider_credits_remaining": 347,
+    "provider_credits_used": 153,
     "raw_market_data_public": false
   },
   "schema_version": "lineupbeat-week1-provenance-v1.1",
   "unavailable": {
-    "current_injuries": "No injuries_2026 release asset was available in nflverse-data at capture time.",
-    "odds": "available privately; raw market data is intentionally not published"
+    "odds": "available privately; raw market data is intentionally not published",
+    "official_final_game_statuses": "Official final Week 1 game designations are not yet available for every game; the current ESPN status layer is captured separately."
   }
 }
