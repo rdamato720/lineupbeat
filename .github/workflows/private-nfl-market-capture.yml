@@ -1,0 +1,117 @@
+name: private NFL market capture
+
+on:
+  push:
+    branches:
+      - codex/private-nfl-market-capture-2026-09-07
+    paths:
+      - ".github/workflows/private-nfl-market-capture.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate collector
+        run: python scripts/test_odds_inputs.py
+
+      - name: Capture bounded NFL consensus
+        run: |
+          python scripts/odds_inputs.py --db nfl-market-private.db \
+            --sports nfl --include-props --force \
+            --max-prop-events-per-sport 16 --credit-reserve 75
+
+      - name: Export consensus-only artifact
+        run: |
+          python - <<'PY'
+          import json
+          import sqlite3
+          from pathlib import Path
+
+          db = sqlite3.connect("nfl-market-private.db")
+          db.row_factory = sqlite3.Row
+          run = db.execute(
+              """
+              SELECT snapshot_id, fetched_at, event_count, prop_event_count,
+                     credits_used, credits_remaining, status
+              FROM odds_fetch_runs
+              WHERE sport_key='americanfootball_nfl'
+              ORDER BY snapshot_id DESC LIMIT 1
+              """
+          ).fetchone()
+          if not run or run["status"] != "complete":
+              raise SystemExit("NFL market capture did not complete")
+
+          events = [
+              dict(row) for row in db.execute(
+                  """
+                  SELECT event_id, commence_time, home_team, away_team,
+                         game_total, home_spread, home_win_probability,
+                         home_implied_total, away_implied_total,
+                         total_book_count, spread_book_count,
+                         moneyline_book_count, quality
+                  FROM odds_events
+                  WHERE snapshot_id=?
+                  ORDER BY commence_time, event_id
+                  """,
+                  (run["snapshot_id"],),
+              )
+          ]
+          props = [
+              dict(row) for row in db.execute(
+                  """
+                  SELECT p.event_id, e.commence_time, e.home_team, e.away_team,
+                         p.market_key, p.player_name, p.consensus_line,
+                         p.fair_over_probability, p.book_count,
+                         p.line_dispersion, p.quality
+                  FROM odds_player_props p
+                  JOIN odds_events e USING (snapshot_id, event_id)
+                  WHERE p.snapshot_id=?
+                  ORDER BY e.commence_time, p.player_name, p.market_key
+                  """,
+                  (run["snapshot_id"],),
+              )
+          ]
+          payload = {
+              "schema": "lineupbeat-private-nfl-market-consensus-v1",
+              "fetched_at": run["fetched_at"],
+              "event_count": run["event_count"],
+              "prop_event_count": run["prop_event_count"],
+              "credits_used": run["credits_used"],
+              "credits_remaining": run["credits_remaining"],
+              "events": events,
+              "props": props,
+          }
+          encoded = json.dumps(payload, indent=2, sort_keys=True) + "\n"
+          forbidden = ("bookmaker_key", "american_price", "apiKey", "THE_ODDS_API_KEY")
+          if any(term in encoded for term in forbidden):
+              raise SystemExit("private quote detail leaked into consensus artifact")
+          if len(events) < 13:
+              raise SystemExit(f"insufficient NFL game coverage: {len(events)}")
+          if not props:
+              raise SystemExit("no NFL player props returned")
+          Path("nfl-market-consensus.json").write_text(encoded)
+          print(
+              f"consensus artifact: {len(events)} games, {len(props)} prop rows, "
+              f"{len({row['player_name'] for row in props})} players"
+          )
+          PY
+
+      - name: Upload private consensus
+        uses: actions/upload-artifact@v4
+        with:
+          name: private-nfl-market-consensus
+          path: nfl-market-consensus.json
+          retention-days: 1
+          if-no-files-found: error
