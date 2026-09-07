@@ -141,29 +141,36 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertGreaterEqual(len(self.payload["players"]), 150)
 
     def test_required_weekly_labels_and_empty_states_render(self):
-        for text in ("2026 NFL Week 1 Decision Room",
-                     "Lineup Beat-owned weekly projections",
-                     "Week 1 · Half-PPR default · Current injuries are not included.",
-                     "Connect an ESPN roster locally to see supported Week 1 starter and bench decisions.",
-                     'href="/my-team/"',
-                     "No decisions have been recorded"):
+        for text in ("NFL WEEK 1 DECISION ROOM",
+                     "Who should you <span>start?</span>",
+                     "Weekly projections for Week 1 · Current injuries are not included.",
+                     "Other close Week 1 calls",
+                     "Decision Room questions"):
             self.assertIn(text, self.html)
+        self.assertNotIn("No decisions have been recorded", self.html)
+        self.assertNotIn('href="/my-team/"', self.html)
 
     def test_searchable_accessible_selectors_and_market_sections_render(self):
         for text in ('role="combobox"', 'role="listbox"',
-                     'Compare across positions', "Opportunity and opponent context",
+                     'Compare across positions', "See full comparison",
                      "What the market says"):
             self.assertIn(text, self.html)
         self.assertNotIn("Lineup Beat Convictions", self.html)
 
     def test_decision_room_uses_homepage_product_visual_language(self):
-        self.assertIn("START THE <span>RIGHT PLAYER.</span>", self.html)
+        self.assertIn("Who should you <span>start?</span>", self.html)
         self.assertIn('class="dr-console-bar"', self.html)
-        self.assertIn('class="dr-readout"', self.html)
-        for name in ("rankings", "team", "league"):
-            self.assertIn(f'/assets/homepage/{name}-3d.png', self.html)
+        self.assertNotIn('class="dr-readout"', self.html)
+        self.assertEqual(self.html.count('/assets/homepage/team-3d.png'), 1)
         for control_id in ("dr-a-search", "dr-b-search", "dr-format", "dr-result"):
             self.assertEqual(self.html.count(f'id="{control_id}"'), 1)
+
+    def test_decision_room_keeps_compact_seo_support(self):
+        self.assertIn('class="dr-section dr-faq"', self.html)
+        self.assertEqual(self.html.count('<details><summary>'), 4)
+        self.assertIn('"@type":"FAQPage"', self.html)
+        self.assertNotIn("Opportunity and opponent context", self.html)
+        self.assertNotIn("Scoring-format movers", self.html)
 
     def test_tie_copy_is_present_and_does_not_claim_a_higher_projection(self):
         self.assertIn("No clear edge", self.html)
