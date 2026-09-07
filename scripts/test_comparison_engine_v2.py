@@ -183,7 +183,7 @@ class LayoutContracts(unittest.TestCase):
             self.assertIn(label, college_decision_room.JS)
         self.assertIn("Projection-based answer", nfl)
         self.assertIn("LineupBeat pick", college_decision_room.JS)
-        self.assertIn("See full comparison", nfl)
+        self.assertIn("See full analysis", nfl)
         self.assertIn("See full comparison", college_decision_room.JS)
         for selector in (".dr-why-grid", ".dr-case-grid", ".dr-quality-grid",
                          "@media(max-width:780px)", "@media(max-width:430px)"):
