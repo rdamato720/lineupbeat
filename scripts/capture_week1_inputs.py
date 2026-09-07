@@ -34,15 +34,15 @@ BASE = "https://github.com/nflverse/nflverse-data/releases/download"
 # injury snapshots are deliberately omitted: snap and weekly-stat inputs are
 # sufficient for the backtest, while nflverse has no 2026 injury asset.
 CATALOG = (
-    ("schedules", "games.csv.gz", "5aa0054db97cd25185d09ab3a97375bdda316c08b3d18dc9785bfb7cbd2a2a62"),
+    ("schedules", "games.csv.gz", "91beff306b6b5dfa8143074a4287202314d6901d304f4f86fff7584c796d8e61"),
     ("stats_player", "stats_player_week_2024.csv.gz", "61fc9a44706522218a4448001706e3fec65ebbb97c1d9c5746ceef364989125d"),
     ("stats_player", "stats_player_week_2025.csv.gz", "c7401e321bdb369443f3280b9acd74ba6e16d82e710383bf1c01acabfebeac0b"),
     ("stats_team", "stats_team_week_2024.csv.gz", "6f27957fd1d3a759a7160586bf0558cea010a83f9cb3ee68a9bda04e35674c14"),
     ("stats_team", "stats_team_week_2025.csv.gz", "5348409f099b285877641446e869dcda3179464584dd71f73becc087219b0383"),
     ("snap_counts", "snap_counts_2024.csv.gz", "fe1d819db55d6e333057a8efcec52e8506ef111c7961b0e0411310393bb912bb"),
     ("snap_counts", "snap_counts_2025.csv.gz", "700bef40cc5db8917b49e2eca93d7091dbd4a3cd740b2fd4dfa1795f7b9187db"),
-    ("rosters", "roster_2026.csv.gz", "bf492c7e4111b66591e4ed4c9605ca2822037437f5dffbb331a142548c3d164a"),
-    ("depth_charts", "depth_charts_2026.csv.gz", "9905db95882cbbb190adb823630262f12909a16a3bd363f5d5fd3e4fa406a27a"),
+    ("rosters", "roster_2026.csv.gz", "fd8f7ac630b3c60f66512328134eb1823a2aad2a45dd392cdefbd719b4a5fe30"),
+    ("depth_charts", "depth_charts_2026.csv.gz", "219b5ff0d7954632f3f5aabdefab49e444cc0129a94c1dd49a0b342de07de765"),
     ("pbp", "play_by_play_2024.csv.gz", "23370d5d10f8104d80d46a1fc5e61f4f6f5a3263fe96fe2dd629913cfcb08c06"),
     ("pbp", "play_by_play_2025.csv.gz", "2f135887790a013fd004e609e37096bb4816d5cc80b9f19122e1bad478961978"),
 )

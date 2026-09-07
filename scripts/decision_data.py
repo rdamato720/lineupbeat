@@ -18,7 +18,7 @@ DISPLAY = ROOT / "data" / "wire_display_fantasy.json"
 HISTORY = ROOT / "data" / "nfl_player_consistency_2025.json"
 EDITORIAL = ROOT / "data" / "comparison_editorial_opinions.json"
 ADP_META = ROOT / "rosters" / "adp_meta.json"
-WEEK1 = ROOT / "data" / "week1" / "2026" / "v1.0" / "nfl_week1_projections.json"
+WEEK1 = ROOT / "data" / "week1" / "2026" / "v1.1" / "nfl_week1_projections.json"
 NAME_SUFFIXES = {"jr", "sr", "ii", "iii", "iv", "v"}
 WEEKLY_RECOMMENDATION_STATE = {
     "enabled": False,

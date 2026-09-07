@@ -98,7 +98,7 @@ class ESPNAdapterTests(unittest.TestCase):
 class MyTeamArtifactTests(unittest.TestCase):
     def test_public_model_is_redacted_and_has_honest_limits(self):
         model = build_my_team.public_model()
-        self.assertEqual(len(model["players"]), 182)
+        self.assertEqual(len(model["players"]), 424)
         self.assertEqual(model["supportedPositions"], ["QB", "RB", "WR", "TE"])
         self.assertEqual(model["limitations"]["dstModel"], "unsupported; no projection is guessed")
         self.assertFalse(model["limitations"]["predictiveLiftClaim"])

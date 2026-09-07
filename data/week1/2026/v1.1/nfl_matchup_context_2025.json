@@ -1,0 +1,1230 @@
+{
+  "definitions": {
+    "opponent_adjustment": "game-level position PPR allowed divided by that offense's 2025 position average, then rescaled to league average",
+    "pass_explosive": "completed pass gaining 20+ yards",
+    "red_zone": "scrimmage play at or inside opponent 20",
+    "rush_explosive": "10+ rushing yards",
+    "success": "nflverse play-level success field"
+  },
+  "label": "2025 prior-season defensive context",
+  "schema_version": "lineupbeat-nfl-matchup-2025-v1",
+  "season": 2025,
+  "teams": {
+    "ARI": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0837,
+        "plays": 621,
+        "success_rate_allowed": 0.5185
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 16.68,
+          "ppr_points_allowed_per_game": 16.95
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 25.56,
+          "ppr_points_allowed_per_game": 26.22
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 16.69,
+          "ppr_points_allowed_per_game": 16.94
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 27.58,
+          "ppr_points_allowed_per_game": 30.16
+        }
+      },
+      "red_zone_plays": 207,
+      "red_zone_td_rate_allowed": 0.2126,
+      "rushing": {
+        "explosive_rate_allowed": 0.136,
+        "plays": 456,
+        "success_rate_allowed": 0.4496
+      },
+      "season": 2025
+    },
+    "ATL": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0778,
+        "plays": 630,
+        "success_rate_allowed": 0.454
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 17.47,
+          "ppr_points_allowed_per_game": 16.32
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 21.33,
+          "ppr_points_allowed_per_game": 21.39
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 9.97,
+          "ppr_points_allowed_per_game": 10.19
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 33.21,
+          "ppr_points_allowed_per_game": 33.51
+        }
+      },
+      "red_zone_plays": 174,
+      "red_zone_td_rate_allowed": 0.1609,
+      "rushing": {
+        "explosive_rate_allowed": 0.1116,
+        "plays": 457,
+        "success_rate_allowed": 0.4508
+      },
+      "season": 2025
+    },
+    "BAL": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0918,
+        "plays": 697,
+        "success_rate_allowed": 0.4591
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 17.73,
+          "ppr_points_allowed_per_game": 17.71
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 22.15,
+          "ppr_points_allowed_per_game": 23.12
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 10.27,
+          "ppr_points_allowed_per_game": 10.92
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 37.55,
+          "ppr_points_allowed_per_game": 35.84
+        }
+      },
+      "red_zone_plays": 198,
+      "red_zone_td_rate_allowed": 0.1667,
+      "rushing": {
+        "explosive_rate_allowed": 0.1122,
+        "plays": 419,
+        "success_rate_allowed": 0.4224
+      },
+      "season": 2025
+    },
+    "BUF": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.071,
+        "plays": 535,
+        "success_rate_allowed": 0.4187
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 14.06,
+          "ppr_points_allowed_per_game": 13.09
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 23.44,
+          "ppr_points_allowed_per_game": 23.92
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 7.74,
+          "ppr_points_allowed_per_game": 7.57
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 28.38,
+          "ppr_points_allowed_per_game": 26.46
+        }
+      },
+      "red_zone_plays": 155,
+      "red_zone_td_rate_allowed": 0.1806,
+      "rushing": {
+        "explosive_rate_allowed": 0.1461,
+        "plays": 445,
+        "success_rate_allowed": 0.4584
+      },
+      "season": 2025
+    },
+    "CAR": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0746,
+        "plays": 563,
+        "success_rate_allowed": 0.476
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 13.6,
+          "ppr_points_allowed_per_game": 13.82
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 23.41,
+          "ppr_points_allowed_per_game": 24.15
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 14.16,
+          "ppr_points_allowed_per_game": 13.71
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 26.28,
+          "ppr_points_allowed_per_game": 26.58
+        }
+      },
+      "red_zone_plays": 163,
+      "red_zone_td_rate_allowed": 0.1963,
+      "rushing": {
+        "explosive_rate_allowed": 0.1015,
+        "plays": 463,
+        "success_rate_allowed": 0.4104
+      },
+      "season": 2025
+    },
+    "CHI": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.1022,
+        "plays": 597,
+        "success_rate_allowed": 0.4841
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 18.26,
+          "ppr_points_allowed_per_game": 18.13
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 21.0,
+          "ppr_points_allowed_per_game": 21.16
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 13.3,
+          "ppr_points_allowed_per_game": 13.06
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 35.65,
+          "ppr_points_allowed_per_game": 36.21
+        }
+      },
+      "red_zone_plays": 163,
+      "red_zone_td_rate_allowed": 0.1963,
+      "rushing": {
+        "explosive_rate_allowed": 0.1305,
+        "plays": 452,
+        "success_rate_allowed": 0.4558
+      },
+      "season": 2025
+    },
+    "CIN": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0984,
+        "plays": 610,
+        "success_rate_allowed": 0.5016
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 18.46,
+          "ppr_points_allowed_per_game": 18.42
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 27.37,
+          "ppr_points_allowed_per_game": 28.3
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 20.52,
+          "ppr_points_allowed_per_game": 20.86
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 28.31,
+          "ppr_points_allowed_per_game": 25.29
+        }
+      },
+      "red_zone_plays": 188,
+      "red_zone_td_rate_allowed": 0.2128,
+      "rushing": {
+        "explosive_rate_allowed": 0.1336,
+        "plays": 464,
+        "success_rate_allowed": 0.4612
+      },
+      "season": 2025
+    },
+    "CLE": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0762,
+        "plays": 564,
+        "success_rate_allowed": 0.4238
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 13.87,
+          "ppr_points_allowed_per_game": 13.31
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 21.52,
+          "ppr_points_allowed_per_game": 21.85
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 11.75,
+          "ppr_points_allowed_per_game": 12.11
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 28.52,
+          "ppr_points_allowed_per_game": 26.68
+        }
+      },
+      "red_zone_plays": 143,
+      "red_zone_td_rate_allowed": 0.2028,
+      "rushing": {
+        "explosive_rate_allowed": 0.1013,
+        "plays": 454,
+        "success_rate_allowed": 0.3789
+      },
+      "season": 2025
+    },
+    "DAL": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0913,
+        "plays": 635,
+        "success_rate_allowed": 0.5102
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 23.09,
+          "ppr_points_allowed_per_game": 23.33
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 25.93,
+          "ppr_points_allowed_per_game": 24.89
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 13.39,
+          "ppr_points_allowed_per_game": 12.35
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 39.88,
+          "ppr_points_allowed_per_game": 39.19
+        }
+      },
+      "red_zone_plays": 196,
+      "red_zone_td_rate_allowed": 0.2245,
+      "rushing": {
+        "explosive_rate_allowed": 0.1475,
+        "plays": 434,
+        "success_rate_allowed": 0.4724
+      },
+      "season": 2025
+    },
+    "DEN": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0576,
+        "plays": 695,
+        "success_rate_allowed": 0.3698
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 13.84,
+          "ppr_points_allowed_per_game": 14.2
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 18.82,
+          "ppr_points_allowed_per_game": 16.95
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 14.63,
+          "ppr_points_allowed_per_game": 13.65
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 26.51,
+          "ppr_points_allowed_per_game": 26.91
+        }
+      },
+      "red_zone_plays": 148,
+      "red_zone_td_rate_allowed": 0.1419,
+      "rushing": {
+        "explosive_rate_allowed": 0.0756,
+        "plays": 397,
+        "success_rate_allowed": 0.3829
+      },
+      "season": 2025
+    },
+    "DET": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0906,
+        "plays": 640,
+        "success_rate_allowed": 0.4219
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 17.63,
+          "ppr_points_allowed_per_game": 18.23
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 19.67,
+          "ppr_points_allowed_per_game": 19.37
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 13.82,
+          "ppr_points_allowed_per_game": 13.67
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 34.94,
+          "ppr_points_allowed_per_game": 35.7
+        }
+      },
+      "red_zone_plays": 171,
+      "red_zone_td_rate_allowed": 0.1813,
+      "rushing": {
+        "explosive_rate_allowed": 0.1253,
+        "plays": 431,
+        "success_rate_allowed": 0.4176
+      },
+      "season": 2025
+    },
+    "GB": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0669,
+        "plays": 613,
+        "success_rate_allowed": 0.447
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 14.4,
+          "ppr_points_allowed_per_game": 15.01
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 20.91,
+          "ppr_points_allowed_per_game": 21.46
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 11.9,
+          "ppr_points_allowed_per_game": 12.11
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 30.35,
+          "ppr_points_allowed_per_game": 31.14
+        }
+      },
+      "red_zone_plays": 176,
+      "red_zone_td_rate_allowed": 0.1818,
+      "rushing": {
+        "explosive_rate_allowed": 0.0846,
+        "plays": 473,
+        "success_rate_allowed": 0.4567
+      },
+      "season": 2025
+    },
+    "HOU": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0754,
+        "plays": 623,
+        "success_rate_allowed": 0.3884
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 12.7,
+          "ppr_points_allowed_per_game": 12.7
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 20.45,
+          "ppr_points_allowed_per_game": 19.97
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 11.4,
+          "ppr_points_allowed_per_game": 12.28
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 25.37,
+          "ppr_points_allowed_per_game": 25.7
+        }
+      },
+      "red_zone_plays": 121,
+      "red_zone_td_rate_allowed": 0.2231,
+      "rushing": {
+        "explosive_rate_allowed": 0.0888,
+        "plays": 394,
+        "success_rate_allowed": 0.401
+      },
+      "season": 2025
+    },
+    "IND": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0821,
+        "plays": 694,
+        "success_rate_allowed": 0.4755
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 16.92,
+          "ppr_points_allowed_per_game": 16.9
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 20.67,
+          "ppr_points_allowed_per_game": 19.94
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 14.85,
+          "ppr_points_allowed_per_game": 15.24
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 36.18,
+          "ppr_points_allowed_per_game": 36.13
+        }
+      },
+      "red_zone_plays": 206,
+      "red_zone_td_rate_allowed": 0.1748,
+      "rushing": {
+        "explosive_rate_allowed": 0.0984,
+        "plays": 437,
+        "success_rate_allowed": 0.4416
+      },
+      "season": 2025
+    },
+    "JAX": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0652,
+        "plays": 706,
+        "success_rate_allowed": 0.432
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 16.57,
+          "ppr_points_allowed_per_game": 15.86
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 20.01,
+          "ppr_points_allowed_per_game": 18.32
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 13.75,
+          "ppr_points_allowed_per_game": 14.78
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 29.8,
+          "ppr_points_allowed_per_game": 31.12
+        }
+      },
+      "red_zone_plays": 152,
+      "red_zone_td_rate_allowed": 0.1908,
+      "rushing": {
+        "explosive_rate_allowed": 0.0947,
+        "plays": 359,
+        "success_rate_allowed": 0.3928
+      },
+      "season": 2025
+    },
+    "KC": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0772,
+        "plays": 583,
+        "success_rate_allowed": 0.4631
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 14.26,
+          "ppr_points_allowed_per_game": 15.08
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 19.78,
+          "ppr_points_allowed_per_game": 19.08
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 11.84,
+          "ppr_points_allowed_per_game": 11.01
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 25.82,
+          "ppr_points_allowed_per_game": 27.34
+        }
+      },
+      "red_zone_plays": 145,
+      "red_zone_td_rate_allowed": 0.1862,
+      "rushing": {
+        "explosive_rate_allowed": 0.0947,
+        "plays": 433,
+        "success_rate_allowed": 0.4226
+      },
+      "season": 2025
+    },
+    "LAC": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0629,
+        "plays": 588,
+        "success_rate_allowed": 0.4252
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 12.65,
+          "ppr_points_allowed_per_game": 12.46
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 19.59,
+          "ppr_points_allowed_per_game": 18.52
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 10.46,
+          "ppr_points_allowed_per_game": 10.45
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 27.57,
+          "ppr_points_allowed_per_game": 27.3
+        }
+      },
+      "red_zone_plays": 149,
+      "red_zone_td_rate_allowed": 0.1544,
+      "rushing": {
+        "explosive_rate_allowed": 0.1281,
+        "plays": 406,
+        "success_rate_allowed": 0.4113
+      },
+      "season": 2025
+    },
+    "LAR": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0801,
+        "plays": 662,
+        "success_rate_allowed": 0.4411
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 15.22,
+          "ppr_points_allowed_per_game": 15.16
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 18.74,
+          "ppr_points_allowed_per_game": 20.16
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 12.2,
+          "ppr_points_allowed_per_game": 13.13
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 31.65,
+          "ppr_points_allowed_per_game": 31.71
+        }
+      },
+      "red_zone_plays": 161,
+      "red_zone_td_rate_allowed": 0.1491,
+      "rushing": {
+        "explosive_rate_allowed": 0.0903,
+        "plays": 432,
+        "success_rate_allowed": 0.3981
+      },
+      "season": 2025
+    },
+    "LV": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0623,
+        "plays": 594,
+        "success_rate_allowed": 0.4781
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 15.06,
+          "ppr_points_allowed_per_game": 16.09
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 24.79,
+          "ppr_points_allowed_per_game": 22.95
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 10.35,
+          "ppr_points_allowed_per_game": 10.06
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 31.48,
+          "ppr_points_allowed_per_game": 33.51
+        }
+      },
+      "red_zone_plays": 213,
+      "red_zone_td_rate_allowed": 0.1737,
+      "rushing": {
+        "explosive_rate_allowed": 0.1016,
+        "plays": 492,
+        "success_rate_allowed": 0.4248
+      },
+      "season": 2025
+    },
+    "MIA": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0843,
+        "plays": 593,
+        "success_rate_allowed": 0.5228
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 17.7,
+          "ppr_points_allowed_per_game": 18.16
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 24.52,
+          "ppr_points_allowed_per_game": 24.86
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 16.71,
+          "ppr_points_allowed_per_game": 16.28
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 30.91,
+          "ppr_points_allowed_per_game": 29.75
+        }
+      },
+      "red_zone_plays": 167,
+      "red_zone_td_rate_allowed": 0.2335,
+      "rushing": {
+        "explosive_rate_allowed": 0.1302,
+        "plays": 461,
+        "success_rate_allowed": 0.4555
+      },
+      "season": 2025
+    },
+    "MIN": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0608,
+        "plays": 526,
+        "success_rate_allowed": 0.3992
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 11.12,
+          "ppr_points_allowed_per_game": 11.12
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 18.53,
+          "ppr_points_allowed_per_game": 19.58
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 11.06,
+          "ppr_points_allowed_per_game": 10.65
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 22.8,
+          "ppr_points_allowed_per_game": 23.6
+        }
+      },
+      "red_zone_plays": 162,
+      "red_zone_td_rate_allowed": 0.1296,
+      "rushing": {
+        "explosive_rate_allowed": 0.1056,
+        "plays": 521,
+        "success_rate_allowed": 0.4319
+      },
+      "season": 2025
+    },
+    "NE": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0711,
+        "plays": 591,
+        "success_rate_allowed": 0.4518
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 16.55,
+          "ppr_points_allowed_per_game": 14.7
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 18.75,
+          "ppr_points_allowed_per_game": 18.76
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 14.25,
+          "ppr_points_allowed_per_game": 13.81
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 34.4,
+          "ppr_points_allowed_per_game": 29.08
+        }
+      },
+      "red_zone_plays": 118,
+      "red_zone_td_rate_allowed": 0.2288,
+      "rushing": {
+        "explosive_rate_allowed": 0.104,
+        "plays": 404,
+        "success_rate_allowed": 0.448
+      },
+      "season": 2025
+    },
+    "NO": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0779,
+        "plays": 565,
+        "success_rate_allowed": 0.4336
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 13.85,
+          "ppr_points_allowed_per_game": 14.0
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 19.84,
+          "ppr_points_allowed_per_game": 20.72
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 12.75,
+          "ppr_points_allowed_per_game": 12.48
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 29.11,
+          "ppr_points_allowed_per_game": 27.78
+        }
+      },
+      "red_zone_plays": 131,
+      "red_zone_td_rate_allowed": 0.1985,
+      "rushing": {
+        "explosive_rate_allowed": 0.1044,
+        "plays": 498,
+        "success_rate_allowed": 0.4076
+      },
+      "season": 2025
+    },
+    "NYG": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0785,
+        "plays": 624,
+        "success_rate_allowed": 0.4631
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 17.32,
+          "ppr_points_allowed_per_game": 18.25
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 26.25,
+          "ppr_points_allowed_per_game": 25.7
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 11.74,
+          "ppr_points_allowed_per_game": 11.36
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 31.77,
+          "ppr_points_allowed_per_game": 33.78
+        }
+      },
+      "red_zone_plays": 158,
+      "red_zone_td_rate_allowed": 0.2278,
+      "rushing": {
+        "explosive_rate_allowed": 0.1693,
+        "plays": 443,
+        "success_rate_allowed": 0.4944
+      },
+      "season": 2025
+    },
+    "NYJ": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0984,
+        "plays": 579,
+        "success_rate_allowed": 0.487
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 19.6,
+          "ppr_points_allowed_per_game": 19.95
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 25.39,
+          "ppr_points_allowed_per_game": 27.98
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 14.6,
+          "ppr_points_allowed_per_game": 15.23
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 31.63,
+          "ppr_points_allowed_per_game": 30.23
+        }
+      },
+      "red_zone_plays": 190,
+      "red_zone_td_rate_allowed": 0.2368,
+      "rushing": {
+        "explosive_rate_allowed": 0.1272,
+        "plays": 511,
+        "success_rate_allowed": 0.4344
+      },
+      "season": 2025
+    },
+    "PHI": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0732,
+        "plays": 628,
+        "success_rate_allowed": 0.4156
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 13.18,
+          "ppr_points_allowed_per_game": 14.53
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 23.0,
+          "ppr_points_allowed_per_game": 22.75
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 9.02,
+          "ppr_points_allowed_per_game": 8.34
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 24.75,
+          "ppr_points_allowed_per_game": 26.78
+        }
+      },
+      "red_zone_plays": 158,
+      "red_zone_td_rate_allowed": 0.1709,
+      "rushing": {
+        "explosive_rate_allowed": 0.1136,
+        "plays": 484,
+        "success_rate_allowed": 0.4442
+      },
+      "season": 2025
+    },
+    "PIT": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.077,
+        "plays": 688,
+        "success_rate_allowed": 0.4535
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 19.78,
+          "ppr_points_allowed_per_game": 18.79
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 19.1,
+          "ppr_points_allowed_per_game": 19.46
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 16.98,
+          "ppr_points_allowed_per_game": 16.61
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 35.48,
+          "ppr_points_allowed_per_game": 35.0
+        }
+      },
+      "red_zone_plays": 175,
+      "red_zone_td_rate_allowed": 0.1657,
+      "rushing": {
+        "explosive_rate_allowed": 0.1061,
+        "plays": 443,
+        "success_rate_allowed": 0.4063
+      },
+      "season": 2025
+    },
+    "SEA": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0635,
+        "plays": 693,
+        "success_rate_allowed": 0.4156
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 13.87,
+          "ppr_points_allowed_per_game": 14.0
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 18.71,
+          "ppr_points_allowed_per_game": 18.48
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 13.42,
+          "ppr_points_allowed_per_game": 14.68
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 25.65,
+          "ppr_points_allowed_per_game": 26.15
+        }
+      },
+      "red_zone_plays": 168,
+      "red_zone_td_rate_allowed": 0.1607,
+      "rushing": {
+        "explosive_rate_allowed": 0.0681,
+        "plays": 411,
+        "success_rate_allowed": 0.3723
+      },
+      "season": 2025
+    },
+    "SF": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0711,
+        "plays": 633,
+        "success_rate_allowed": 0.4913
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 16.93,
+          "ppr_points_allowed_per_game": 17.11
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 24.39,
+          "ppr_points_allowed_per_game": 23.46
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 13.44,
+          "ppr_points_allowed_per_game": 14.82
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 30.78,
+          "ppr_points_allowed_per_game": 32.04
+        }
+      },
+      "red_zone_plays": 143,
+      "red_zone_td_rate_allowed": 0.2028,
+      "rushing": {
+        "explosive_rate_allowed": 0.0889,
+        "plays": 416,
+        "success_rate_allowed": 0.488
+      },
+      "season": 2025
+    },
+    "TB": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0854,
+        "plays": 644,
+        "success_rate_allowed": 0.4938
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 19.99,
+          "ppr_points_allowed_per_game": 19.45
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 21.08,
+          "ppr_points_allowed_per_game": 22.06
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 15.82,
+          "ppr_points_allowed_per_game": 15.81
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 31.75,
+          "ppr_points_allowed_per_game": 31.23
+        }
+      },
+      "red_zone_plays": 122,
+      "red_zone_td_rate_allowed": 0.2459,
+      "rushing": {
+        "explosive_rate_allowed": 0.101,
+        "plays": 386,
+        "success_rate_allowed": 0.3886
+      },
+      "season": 2025
+    },
+    "TEN": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.097,
+        "plays": 598,
+        "success_rate_allowed": 0.4883
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 19.12,
+          "ppr_points_allowed_per_game": 19.05
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 22.63,
+          "ppr_points_allowed_per_game": 21.41
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 13.62,
+          "ppr_points_allowed_per_game": 14.16
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 33.97,
+          "ppr_points_allowed_per_game": 35.46
+        }
+      },
+      "red_zone_plays": 155,
+      "red_zone_td_rate_allowed": 0.2516,
+      "rushing": {
+        "explosive_rate_allowed": 0.1129,
+        "plays": 434,
+        "success_rate_allowed": 0.4078
+      },
+      "season": 2025
+    },
+    "WAS": {
+      "games": 17,
+      "passing": {
+        "explosive_rate_allowed": 0.0858,
+        "plays": 618,
+        "success_rate_allowed": 0.4984
+      },
+      "position_fantasy_allowed": {
+        "QB": {
+          "league_average": 16.3,
+          "opponent_adjusted_ppr_allowed": 19.97,
+          "ppr_points_allowed_per_game": 19.56
+        },
+        "RB": {
+          "league_average": 21.95,
+          "opponent_adjusted_ppr_allowed": 24.99,
+          "ppr_points_allowed_per_game": 25.34
+        },
+        "TE": {
+          "league_average": 13.3,
+          "opponent_adjusted_ppr_allowed": 17.51,
+          "ppr_points_allowed_per_game": 15.89
+        },
+        "WR": {
+          "league_average": 30.7,
+          "opponent_adjusted_ppr_allowed": 34.22,
+          "ppr_points_allowed_per_game": 34.91
+        }
+      },
+      "red_zone_plays": 193,
+      "red_zone_td_rate_allowed": 0.2176,
+      "rushing": {
+        "explosive_rate_allowed": 0.1327,
+        "plays": 490,
+        "success_rate_allowed": 0.4653
+      },
+      "season": 2025
+    }
+  }
+}

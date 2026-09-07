@@ -39,22 +39,23 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
         cls.provenance = json.loads((model.OUTPUT / "provenance.json").read_text())
 
     def test_schedule_and_identity_stop_conditions_pass(self):
-        self.assertEqual(len(self.payload["players"]), 182)
-        self.assertEqual(len(self.payload["excluded_players"]), 6)
-        self.assertEqual(len({p["id"] for p in self.payload["players"]}), 182)
+        self.assertEqual(len(self.payload["players"]), 424)
+        self.assertEqual(len(self.payload["excluded_players"]), 0)
+        self.assertEqual(len({p["id"] for p in self.payload["players"]}), 424)
         self.assertEqual(len({p["team"] for p in self.payload["players"]}), 32)
         self.assertTrue(all(p["opponent"] and p["kickoff"] for p in self.payload["players"]))
 
     def test_full_projection_source_population_is_reported_honestly(self):
         population = self.payload["population"]
-        self.assertEqual(population["projection_source"], 615)
-        self.assertEqual(population["identity_resolved"], 581)
-        self.assertEqual(population["identity_unresolved"], 34)
-        self.assertEqual(population["ranked_production"], 188)
-        self.assertEqual(population["identity_resolved_not_ranked"], 393)
-        self.assertEqual(population["ranked_active_projected"], 182)
-        self.assertEqual(population["ranked_excluded"], 6)
-        self.assertEqual(len(self.payload["unresolved_players"]), 34)
+        self.assertEqual(population["projection_source"], 503)
+        self.assertEqual(population["identity_resolved"], 503)
+        self.assertEqual(population["identity_unresolved"], 0)
+        self.assertEqual(population["ranked_production"], 424)
+        self.assertEqual(population["identity_resolved_not_ranked"], 79)
+        self.assertEqual(population["ranked_active_projected"], 424)
+        self.assertEqual(population["ranked_excluded"], 0)
+        self.assertEqual(len(self.payload["unresolved_players"]), 0)
+        self.assertEqual(len(self.payload["withheld_players"]), 79)
 
     def test_all_documented_identity_variants_resolve_deterministically(self):
         players = {player["name"]: player for player in self.payload["players"]}
@@ -88,12 +89,23 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
                 )
 
     def test_weekly_values_are_not_season_values_divided_by_constant(self):
-        season = {p["id"]: p for p in decision_data.load_season()["players"]}
+        season = model.trusted_season.workbook_rows()
         ratios = [p["formats"]["half_ppr"]["projected_points"] /
-                  season[p["id"]]["formats"]["half_ppr"]["projected_points"]
+                  max(.1, season[model.trusted_season.identity_key(
+                      p["name"], p["team"], p["position"]
+                  )]["formats"]["half_ppr"])
                   for p in self.payload["players"]]
         self.assertGreater(statistics.pstdev(ratios), .005)
         self.assertIsNone(self.payload["methodology"]["season_total_divisor"])
+
+    def test_current_offensive_depth_is_used_in_workload(self):
+        players = {p["name"]: p for p in self.payload["players"]}
+        self.assertEqual(players["Jalen Hurts"]["role"]["depth_rank"], 1)
+        self.assertEqual(players["Jalen Hurts"]["role"]["workload_factor"], 1.0)
+        backups = [p for p in self.payload["players"]
+                   if (p["role"]["depth_rank"] or 0) > 1]
+        self.assertTrue(backups)
+        self.assertTrue(all(0 < p["role"]["workload_factor"] < 1 for p in backups))
 
     def test_backtest_is_leakage_safe_and_reports_baseline_by_position(self):
         self.assertEqual(self.backtest["future_rows_used"], 0)

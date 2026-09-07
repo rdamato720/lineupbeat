@@ -23,9 +23,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import build_projections  # noqa: E402
 import decision_data  # noqa: E402
+import build_nfl_trusted_season as trusted_season  # noqa: E402
 
 CACHE = ROOT / ".cache" / "week1-intelligence"
-OUTPUT = ROOT / "data" / "week1" / "2026" / "v1.0"
+OUTPUT = ROOT / "data" / "week1" / "2026" / "v1.1"
 POSITIONS = ("QB", "RB", "WR", "TE")
 TEAM_ALIASES = {"LA": "LAR", "JAC": "JAX", "WSH": "WAS", "OAK": "LV",
                 "SD": "LAC", "STL": "LAR"}
@@ -84,9 +85,89 @@ def clamp(value: float, low: float, high: float) -> float:
     return max(low, min(high, value))
 
 
+def depth_workload_factor(position: str, rank: int | None) -> float:
+    """Bound the season-prior workload with the current offensive depth rank."""
+    if not rank or rank <= 1:
+        return 1.0
+    by_position = {
+        "QB": {2: .18, 3: .05},
+        "RB": {2: .72, 3: .42, 4: .22},
+        "WR": {2: .82, 3: .62, 4: .40, 5: .25},
+        "TE": {2: .65, 3: .38, 4: .22},
+    }
+    table = by_position[position]
+    return table.get(rank, min(table.values()))
+
+
 def season_prior_rows() -> list[dict]:
     sheets = build_projections.read_sheet(ROOT / "data" / "projections.xlsx")
     return [row for position in POSITIONS for row in sheets[position]]
+
+
+def current_week1_base(roster_rows: list[dict]) -> dict:
+    """Resolve the reviewed season baseline against the current Week 1 roster.
+
+    The old adapter inherited the preseason Decision Room's much smaller
+    three-format intersection.  Weekly projections instead start from every
+    current active QB/RB/WR/TE with one exact reviewed workbook match.
+    """
+    trusted = trusted_season.workbook_rows()
+    display = json.loads(decision_data.DISPLAY.read_text())["players"]
+    history_payload = json.loads(decision_data.HISTORY.read_text())
+    history = {row["player_id"]: row["formats"] for row in history_payload["players"]}
+    identities = json.loads(decision_data.IDENTITIES.read_text())["players"]
+    editorial = decision_data._editorial(decision_data.identity_index(identities))
+    active = [row for row in roster_rows
+              if row.get("status") == "ACT" and row.get("position") in POSITIONS]
+    players = []
+    withheld = []
+    for row in active:
+        club, position = team(row.get("team")), row["position"]
+        key = trusted_season.identity_key(row.get("full_name", ""), club, position)
+        source = trusted.get(key)
+        if source is None:
+            withheld.append({
+                "player_id": row.get("gsis_id"), "name": row.get("full_name"),
+                "team": club, "position": position,
+                "reason": "No single exact current name + team + position match in the reviewed baseline",
+            })
+            continue
+        pid = row.get("gsis_id")
+        if not pid:
+            raise ValueError(f"current active player lacks a stable GSIS id: {row.get('full_name')}")
+        show = display.get(pid, {})
+        photo = row.get("headshot_url") or (
+            f"https://a.espncdn.com/i/headshots/nfl/players/full/{row['espn_id']}.png"
+            if row.get("espn_id") else decision_data._photo(show)
+        )
+        players.append({
+            "id": pid, "slug": decision_data.slug(source["name"]),
+            "name": source["name"], "team": club, "position": position,
+            "adp": show.get("adp"), "photo": photo,
+            "team_logo": f"https://a.espncdn.com/i/teamlogos/nfl/500/{club.lower()}.png",
+            "history": history.get(pid, {}),
+            "history_season": history_payload["season"] if pid in history else None,
+            "formats": {fmt: {"projected_points": points}
+                        for fmt, points in source["formats"].items()},
+        })
+    players.sort(key=lambda p: (p["position"], p["name"], p["id"]))
+    return {
+        "players": players,
+        "withheld_players": sorted(withheld, key=lambda p: (p["position"], p["team"], p["name"])),
+        "unresolved_players": [],
+        "editorial_opinions": editorial,
+        "population": {
+            "projection_source": len(active), "identity_resolved": len(active),
+            "identity_unresolved": 0, "ranked_production": len(players),
+            "identity_resolved_not_ranked": len(withheld),
+        },
+        "sources": {
+            "projections": {
+                "label": "Lineup Beat reviewed 2026 season baseline",
+                "updated_at": "2026-08-30T16:00:00Z",
+            }
+        },
+    }
 
 
 def projected_component(row: dict, key: str) -> float:
@@ -306,16 +387,16 @@ def build() -> tuple[dict, dict, dict, dict]:
     matchup = defense_context(p25, pbp25, schedule)
     backtest_result = backtest(p24, p25, schedule)
 
-    base = decision_data.load_season()
+    base = current_week1_base(roster_rows)
     history = player_history(p24 + p25)
     roster = {row["gsis_id"]: row for row in roster_rows if row.get("gsis_id")}
     if any(player["id"] not in roster for player in base["players"]):
         raise ValueError("current projection identity failed stable GSIS roster reconciliation")
-    latest_depth = {}
+    depth_by_player = defaultdict(list)
     for row in depth_rows:
         pid = row.get("gsis_id")
-        if pid and (pid not in latest_depth or row.get("dt", "") > latest_depth[pid].get("dt", "")):
-            latest_depth[pid] = row
+        if pid:
+            depth_by_player[pid].append(row)
     pfr_to_id = {row.get("pfr_id"): row.get("gsis_id") for row in roster_rows if row.get("pfr_id") and row.get("gsis_id")}
     snaps = defaultdict(list)
     for row in snap24 + snap25:
@@ -345,6 +426,11 @@ def build() -> tuple[dict, dict, dict, dict]:
         prior = prior_by_key.get((player["name"], club, pos))
         if not prior:
             raise ValueError(f"missing season-prior stat line for {player['name']}")
+        offensive_depth = [row for row in depth_by_player.get(pid, [])
+                           if row.get("pos_abb") == pos]
+        depth = max(offensive_depth, key=lambda row: row.get("dt", ""), default={})
+        depth_rank = int(float(depth["pos_rank"])) if depth.get("pos_rank") else None
+        role_factor = depth_workload_factor(pos, depth_rank)
         hist25 = history[pid].get(2025, [])
         hist24 = history[pid].get(2024, [])
         current_team_history = [r for r in hist25 if team(r.get("team")) == club]
@@ -358,7 +444,7 @@ def build() -> tuple[dict, dict, dict, dict]:
             hist_share = hist_total / team_total if team_total and len(current_team_history) >= 4 else None
             share = .6 * hist_share + .4 * season_share if hist_share is not None else season_share
             shares[key] = share
-            stat[key] = max(0.0, base_volume * share)
+            stat[key] = max(0.0, base_volume * share * role_factor)
 
         def efficiency(numerator: str, denominator: str, prior_num: str, prior_den: str) -> float:
             historical = hist25 + hist24
@@ -380,7 +466,7 @@ def build() -> tuple[dict, dict, dict, dict]:
             team_total = sum(num(r, td_key) for r in t25 if team(r.get("team")) == club and r.get("season_type") == "REG")
             hist_share = hist_total / team_total if team_total and len(current_team_history) >= 4 else None
             share = .6 * hist_share + .4 * prior_share if hist_share is not None else prior_share
-            stat[td_key] = max(0.0, team_volume * share)
+            stat[td_key] = max(0.0, team_volume * share * role_factor)
         opportunities = stat["attempts"] + stat["carries"] + stat["targets"]
         historical = hist25 + hist24
         hist_opp = sum(num(r, "attempts") + num(r, "carries") + num(r, "targets") for r in historical)
@@ -406,11 +492,10 @@ def build() -> tuple[dict, dict, dict, dict]:
         coverage = {
             "historical_weekly": bool(hist25 or hist24), "opportunity": True,
             "team_volume": True, "current_roster": True,
-            "depth_chart": pid in latest_depth, "snap_participation": bool(snaps[pid]),
+            "depth_chart": bool(depth), "snap_participation": bool(snaps[pid]),
             "opponent_matchup": opponent in matchup, "current_injury_report": False,
             "betting_market": False,
         }
-        depth = latest_depth.get(pid, {})
         players.append({**{k: player[k] for k in ("id", "slug", "name", "team", "position", "adp", "photo", "team_logo", "history", "history_season")},
                         "formats": formats, "opponent": opponent,
                         "home": slate_by_team[club]["home"], "kickoff": slate_by_team[club]["kickoff"],
@@ -421,7 +506,8 @@ def build() -> tuple[dict, dict, dict, dict]:
                                                  "targets": round(stat["targets"], 1)},
                         "role": {"roster_status": roster_row.get("status"),
                                  "depth_position": depth.get("pos_abb"),
-                                 "depth_rank": int(float(depth["pos_rank"])) if depth.get("pos_rank") else None,
+                                 "depth_rank": depth_rank,
+                                 "workload_factor": role_factor,
                                  "2025_average_offense_snap_pct": round(mean(snaps[pid]), 3) if snaps[pid] else None},
                         "availability": {"state": "active_roster", "injury_report": "unavailable"},
                         "identity_resolution": {
@@ -456,7 +542,7 @@ def build() -> tuple[dict, dict, dict, dict]:
             if abs(player["formats"][fmt]["projected_points"] - round(score(player["stat_projection"], reception_value), 1)) > .01:
                 raise ValueError(f"scoring reconciliation failed for {player['name']} {fmt}")
 
-    payload = {"schema_version": "lineupbeat-nfl-week1-v1", "mode": "weekly", "season": 2026, "week": 1,
+    payload = {"schema_version": "lineupbeat-nfl-week1-v1.1", "mode": "weekly", "season": 2026, "week": 1,
                "updated_at": manifest["captured_at"], "players": players, "excluded_players": excluded,
                "population": {
                    **base["population"],
@@ -464,7 +550,8 @@ def build() -> tuple[dict, dict, dict, dict]:
                    "ranked_excluded": len(excluded),
                },
                "unresolved_players": base["unresolved_players"],
-               "identity_method": base["identity_method"],
+               "withheld_players": base["withheld_players"],
+               "identity_method": "stable GSIS id plus exact normalized name, current team and position; no fuzzy matching",
                "limitations": {
                    "sportsbook_evidence": "unavailable; zero provider requests",
                    "current_injury_report": "unavailable",
@@ -482,7 +569,7 @@ def build() -> tuple[dict, dict, dict, dict]:
                            "market": {"label": "Unavailable — zero provider requests", "updated_at": None},
                            "injuries": {"label": "2026 injury report unavailable", "updated_at": None}},
                "methodology": {"season_total_divisor": None,
-                               "summary": "Historical team weekly volume × blended historical/current-team and season-prior player shares; historical and season-prior efficiencies; bounded 2025 opponent and venue adjustments.",
+                               "summary": "Current Week 1 roster and offensive depth chart × historical team weekly volume × blended historical/current-team and reviewed season-prior player shares; historical and season-prior efficiencies; bounded 2025 opponent and venue adjustments.",
                                "scoring": "0.04/pass yard, 4/pass TD, -2/interception, 0.1/rush or receiving yard, 6/rush or receiving TD, -2/fumble lost, plus format reception points.",
                                "recommendation_guardrail": "A point difference alone cannot create an unqualified recommendation."}}
     matchup_payload = {"schema_version": "lineupbeat-nfl-matchup-2025-v1", "season": 2025,

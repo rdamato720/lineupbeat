@@ -243,7 +243,7 @@ def check_my_team(root):
     players = model.get("players") or []
     check("My Team ships only the redacted public Week 1 model",
           model.get("schemaVersion") == "lineupbeat-my-team-week1-v1"
-          and len(players) == 182
+          and len(players) == 424
           and all(player.get("position") in {"QB", "RB", "WR", "TE"}
                   for player in players)
           and all("history" not in player and "adp" not in player
