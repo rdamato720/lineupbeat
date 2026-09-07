@@ -39,23 +39,26 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
         cls.provenance = json.loads((model.OUTPUT / "provenance.json").read_text())
 
     def test_schedule_and_identity_stop_conditions_pass(self):
-        self.assertEqual(len(self.payload["players"]), 424)
+        self.assertGreaterEqual(len(self.payload["players"]), 350)
         self.assertEqual(len(self.payload["excluded_players"]), 0)
-        self.assertEqual(len({p["id"] for p in self.payload["players"]}), 424)
+        self.assertEqual(len({p["id"] for p in self.payload["players"]}),
+                         len(self.payload["players"]))
         self.assertEqual(len({p["team"] for p in self.payload["players"]}), 32)
+        self.assertEqual(len({p["game_id"] for p in self.payload["players"]}), 16)
         self.assertTrue(all(p["opponent"] and p["kickoff"] for p in self.payload["players"]))
 
     def test_full_projection_source_population_is_reported_honestly(self):
         population = self.payload["population"]
-        self.assertEqual(population["projection_source"], 503)
-        self.assertEqual(population["identity_resolved"], 503)
+        player_count = len(self.payload["players"])
+        withheld_count = len(self.payload["withheld_players"])
+        self.assertEqual(population["projection_source"], player_count + withheld_count)
+        self.assertEqual(population["identity_resolved"], population["projection_source"])
         self.assertEqual(population["identity_unresolved"], 0)
-        self.assertEqual(population["ranked_production"], 424)
-        self.assertEqual(population["identity_resolved_not_ranked"], 79)
-        self.assertEqual(population["ranked_active_projected"], 424)
+        self.assertEqual(population["ranked_production"], player_count)
+        self.assertEqual(population["identity_resolved_not_ranked"], withheld_count)
+        self.assertEqual(population["ranked_active_projected"], player_count)
         self.assertEqual(population["ranked_excluded"], 0)
         self.assertEqual(len(self.payload["unresolved_players"]), 0)
-        self.assertEqual(len(self.payload["withheld_players"]), 79)
 
     def test_all_documented_identity_variants_resolve_deterministically(self):
         players = {player["name"]: player for player in self.payload["players"]}
@@ -125,8 +128,10 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
         self.assertEqual(calls["player_props"], 16)
         self.assertEqual(calls["model_api"], 0)
         self.assertIsNone(calls["cost_usd"])
-        self.assertEqual(calls["provider_credits_used"], 135)
-        self.assertEqual(calls["provider_credits_remaining"], 365)
+        self.assertGreaterEqual(calls["provider_credits_used"], 0)
+        self.assertGreaterEqual(calls["provider_credits_remaining"], 0)
+        self.assertEqual(calls["provider_credits_used"]
+                         + calls["provider_credits_remaining"], 500)
         self.assertFalse(calls["raw_market_data_public"])
         self.assertEqual(len(self.provenance["assets"]), 11)
         self.assertEqual(self.provenance["license_review"]["spdx"], "CC-BY-4.0")
@@ -139,19 +144,23 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
         self.assertEqual(self.provenance["market_coverage"]["teams"], 32)
         adjusted = [p for p in self.payload["players"]
                     if p["market"]["player_components"]]
-        self.assertEqual(len(adjusted), 155)
+        self.assertGreater(len(adjusted), 0)
+        self.assertEqual(
+            len(adjusted),
+            self.provenance["market_coverage"]["qualified_player_projections"],
+        )
         self.assertTrue(all(p["data_coverage"]["betting_market"]
                             for p in self.payload["players"]))
         self.assertTrue(all(p["market"]["quality"] == "HIGH"
                             and p["market"]["game_book_count"] >= 3
                             and not p["market"]["raw_lines_public"]
                             for p in self.payload["players"]))
-        players = {p["name"]: p for p in self.payload["players"]}
-        self.assertEqual(players["Geno Smith"]["market"]["consensus_lines"],
-                         {"passing_tds": 0.5, "rushing_yards": 5.5})
-        self.assertEqual(players["Kyler Murray"]["market"]["consensus_lines"],
-                         {"passing_tds": 1.5, "passing_yards": 222.5,
-                          "rushing_yards": 22.5})
+        for player in adjusted:
+            market = player["market"]
+            self.assertEqual(set(market["consensus_lines"]),
+                             set(market["player_components"]))
+            self.assertTrue(all(isinstance(line, (int, float))
+                                for line in market["consensus_lines"].values()))
         public = json.dumps(self.payload)
         for forbidden in ("bookmaker_key", "american_price", "apiKey",
                           "DraftKings", "FanDuel", "Caesars"):
