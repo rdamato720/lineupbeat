@@ -74,7 +74,8 @@ class DailyFantasyRefreshTests(unittest.TestCase):
         self.assertIn("ref: ${{ env.FANTASY_DATA_BRANCH }}", workflow)
         self.assertIn('git push origin "HEAD:$FANTASY_DATA_BRANCH"', workflow)
         self.assertNotIn('git push origin "HEAD:$GITHUB_REF_NAME"', workflow)
-        self.assertNotIn("gh workflow run dev-site.yml", workflow)
+        self.assertEqual(workflow.count("gh workflow run dev-site.yml"), 1)
+        self.assertIn('if: steps.publish.outputs.changed == \'true\'', workflow)
 
 
 if __name__ == "__main__":

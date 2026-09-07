@@ -14,12 +14,14 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write
 
 env:
   # GitHub loads scheduled workflows from the default branch. Keep this file
   # there as the scheduler while the product remains in development, but
-  # refresh and publish only the protected development source. That push
-  # triggers dev-site.yml exactly once.
+  # refresh and publish only the protected development source. GitHub does
+  # not emit a second workflow from its own token's push, so the final step
+  # explicitly dispatches the registered development deployment once.
   FANTASY_DATA_BRANCH: develop
 
 jobs:
@@ -103,5 +105,8 @@ jobs:
           git push origin "HEAD:$FANTASY_DATA_BRANCH"
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
-      # No explicit dispatch is needed. The validated push to develop starts
-      # the existing development build and deployment workflow.
+      - name: Rebuild and deploy the changed development site
+        if: steps.publish.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run dev-site.yml --ref "$FANTASY_DATA_BRANCH"
