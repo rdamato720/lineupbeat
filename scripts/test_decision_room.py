@@ -156,6 +156,15 @@ class DecisionRoomRenderingTests(unittest.TestCase):
             self.assertIn(text, self.html)
         self.assertNotIn("Lineup Beat Convictions", self.html)
 
+    def test_decision_room_uses_homepage_product_visual_language(self):
+        self.assertIn("START THE <span>RIGHT PLAYER.</span>", self.html)
+        self.assertIn('class="dr-console-bar"', self.html)
+        self.assertIn('class="dr-readout"', self.html)
+        for name in ("rankings", "team", "league"):
+            self.assertIn(f'/assets/homepage/{name}-3d.png', self.html)
+        for control_id in ("dr-a-search", "dr-b-search", "dr-format", "dr-result"):
+            self.assertEqual(self.html.count(f'id="{control_id}"'), 1)
+
     def test_tie_copy_is_present_and_does_not_claim_a_higher_projection(self):
         self.assertIn("No clear edge", self.html)
         self.assertIn("Toss-Up", self.html)
