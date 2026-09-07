@@ -9,6 +9,8 @@ The public build never invokes this script or makes network requests.
 from __future__ import annotations
 
 import argparse
+import csv
+import gzip
 import hashlib
 import json
 import os
@@ -47,6 +49,18 @@ CATALOG = (
     ("pbp", "play_by_play_2025.csv.gz", "2f135887790a013fd004e609e37096bb4816d5cc80b9f19122e1bad478961978"),
 )
 
+CURRENT_FILES = {"games.csv.gz", "roster_2026.csv.gz", "depth_charts_2026.csv.gz"}
+CURRENT_REQUIRED_COLUMNS = {
+    "games.csv.gz": {"season", "week", "game_type", "away_team", "home_team"},
+    "roster_2026.csv.gz": {"gsis_id", "full_name", "team", "position", "status"},
+    "depth_charts_2026.csv.gz": {"gsis_id", "pos_abb", "pos_rank", "dt"},
+}
+CURRENT_MINIMUM_ROWS = {
+    "games.csv.gz": 250,
+    "roster_2026.csv.gz": 1500,
+    "depth_charts_2026.csv.gz": 1000,
+}
+
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
@@ -69,13 +83,34 @@ def atomic_json(path: Path, payload: dict) -> None:
             os.unlink(name)
 
 
-def capture(cache: Path) -> dict:
+def validate_current_asset(path: Path) -> int:
+    required = CURRENT_REQUIRED_COLUMNS[path.name]
+    try:
+        with gzip.open(path, "rt", encoding="utf-8-sig", newline="") as handle:
+            reader = csv.DictReader(handle)
+            fields = set(reader.fieldnames or [])
+            missing = required - fields
+            if missing:
+                raise RuntimeError(
+                    f"{path.name} is missing required columns: {sorted(missing)}")
+            count = sum(1 for _ in reader)
+    except (OSError, UnicodeError, csv.Error) as exc:
+        raise RuntimeError(f"{path.name} is not a valid gzip CSV: {exc}") from None
+    minimum = CURRENT_MINIMUM_ROWS[path.name]
+    if count < minimum:
+        raise RuntimeError(f"{path.name} has {count} rows; expected at least {minimum}")
+    return count
+
+
+def capture(cache: Path, refresh_current: bool = False) -> dict:
     cache.mkdir(parents=True, exist_ok=True)
     assets = []
     for release, filename, expected in CATALOG:
         url = f"{BASE}/{release}/{filename}"
         target = cache / filename
         response_headers: dict[str, str] = {}
+        if refresh_current and filename in CURRENT_FILES and target.exists():
+            target.unlink()
         if not target.exists() or sha256(target) != expected:
             request = urllib.request.Request(
                 url, headers={"User-Agent": "LineupBeat-Week1-Capture/1.0"}
@@ -92,7 +127,8 @@ def capture(cache: Path) -> dict:
                         while chunk := response.read(1024 * 1024):
                             handle.write(chunk)
                     actual = sha256(Path(temp_name))
-                    if actual != expected:
+                    if actual != expected and not (
+                            refresh_current and filename in CURRENT_FILES):
                         raise RuntimeError(
                             f"Digest mismatch for {filename}: {actual} != {expected}"
                         )
@@ -101,8 +137,11 @@ def capture(cache: Path) -> dict:
                     if os.path.exists(temp_name):
                         os.unlink(temp_name)
         actual = sha256(target)
-        if actual != expected:
+        if actual != expected and not (
+                refresh_current and filename in CURRENT_FILES):
             raise RuntimeError(f"Cached digest mismatch for {filename}")
+        current_rows = (validate_current_asset(target)
+                        if refresh_current and filename in CURRENT_FILES else None)
         assets.append(
             {
                 "filename": filename,
@@ -110,9 +149,10 @@ def capture(cache: Path) -> dict:
                 "source_url": url,
                 "retrieved_at": datetime.now(timezone.utc).isoformat(),
                 "response_sha256": actual,
-                "release_sha256": expected,
+                "release_sha256": actual if current_rows is not None else expected,
                 "bytes": target.stat().st_size,
                 "response_headers": response_headers,
+                "validated_rows": current_rows,
                 "license": LICENSE,
                 "provenance": (
                     "nflverse/nflverse-data release asset; schedules are maintained "
@@ -145,9 +185,13 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--cache", type=Path, default=DEFAULT_CACHE)
     parser.add_argument("--manifest", type=Path)
+    parser.add_argument(
+        "--refresh-current", action="store_true",
+        help="refresh and structurally validate schedule, roster and depth assets",
+    )
     args = parser.parse_args()
     manifest = args.manifest or args.cache / "capture_manifest.json"
-    atomic_json(manifest, capture(args.cache))
+    atomic_json(manifest, capture(args.cache, args.refresh_current))
     print(f"manifest: {manifest}")
 
 

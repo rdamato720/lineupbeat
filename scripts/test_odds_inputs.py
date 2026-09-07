@@ -4,6 +4,7 @@ import importlib.util
 import sqlite3
 import tempfile
 import unittest
+import json
 from pathlib import Path
 
 
@@ -101,6 +102,50 @@ class ConsensusTests(unittest.TestCase):
             "https://example.test?apiKey=super-secret-value failed")
         self.assertNotIn("super-secret-value", message)
         self.assertIn("[redacted]", message)
+
+    def test_weekly_consensus_export_contains_numbers_but_no_books(self):
+        with tempfile.TemporaryDirectory() as directory:
+            db = Path(directory) / "runtime.db"
+            out = Path(directory) / "nfl_market_consensus.json"
+            conn = odds.connect(db)
+            client = type("Client", (), {
+                "credits_used": 9, "credits_remaining": 491})()
+            odds.store_snapshot(
+                conn, "americanfootball_nfl", [fixture()], [fixture()], client)
+            odds.export_weekly_consensus(
+                conn, "americanfootball_nfl", out)
+            payload = json.loads(out.read_text())
+            self.assertEqual(payload["prop_event_count"], 1)
+            self.assertEqual(payload["events"][0]["game_total"], 47.5)
+            passing = next(row for row in payload["props"]
+                           if row["market_key"] == "player_pass_yds")
+            self.assertEqual(passing["consensus_line"], 274.5)
+            serialized = out.read_text()
+            for forbidden in ("draftkings", "fanduel", "caesars",
+                              "bookmaker_key", "american_price", "apiKey"):
+                self.assertNotIn(forbidden, serialized)
+
+    def test_export_keeps_earlier_props_when_later_game_lines_refresh(self):
+        with tempfile.TemporaryDirectory() as directory:
+            db = Path(directory) / "runtime.db"
+            conn = odds.connect(db)
+            first = type("Client", (), {
+                "credits_used": 9, "credits_remaining": 491})()
+            odds.store_snapshot(
+                conn, "americanfootball_nfl", [fixture()], [fixture()], first)
+            updated = fixture()
+            updated["bookmakers"][0]["markets"][0]["outcomes"][0]["point"] = 49.5
+            updated["bookmakers"][1]["markets"][0]["outcomes"][0]["point"] = 49.5
+            updated["bookmakers"][2]["markets"][0]["outcomes"][0]["point"] = 49.5
+            second = type("Client", (), {
+                "credits_used": 12, "credits_remaining": 488})()
+            odds.store_snapshot(
+                conn, "americanfootball_nfl", [updated], [], second)
+            payload = odds.weekly_consensus_payload(
+                conn, "americanfootball_nfl")
+            self.assertEqual(payload["events"][0]["game_total"], 49.5)
+            self.assertEqual(payload["prop_event_count"], 1)
+            self.assertTrue(payload["props"])
 
 
 if __name__ == "__main__":

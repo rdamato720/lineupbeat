@@ -130,8 +130,8 @@ def load_market_input(path: Path) -> dict:
     payload = json.loads(path.read_text())
     if payload.get("schema") != "lineupbeat-private-nfl-market-consensus-v1":
         raise ValueError("unexpected private NFL market schema")
-    if payload.get("prop_event_count") != 16:
-        raise ValueError("private NFL market capture does not cover all 16 Week 1 games")
+    if not 1 <= int(payload.get("prop_event_count") or 0) <= 16:
+        raise ValueError("private NFL market capture has no usable Week 1 prop events")
     if not payload.get("events") or not payload.get("props"):
         raise ValueError("private NFL market capture is empty")
     return payload

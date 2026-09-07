@@ -9,6 +9,7 @@ Examples:
     python scripts/odds_inputs.py --sports nfl,ncaaf
     python scripts/odds_inputs.py --sports nfl --include-props --force
     python scripts/odds_inputs.py --report
+    python scripts/odds_inputs.py --export-nfl-consensus .cache/week1-intelligence/nfl_market_consensus.json
 
 The API key must be supplied as ``THE_ODDS_API_KEY``.  It is never written to
 SQLite or included in an error message.
@@ -436,8 +437,85 @@ def latest_player_inputs(conn, sport_key: str) -> list[dict]:
     )]
 
 
+def weekly_consensus_payload(conn, sport_key: str) -> dict:
+    """Return one redacted, projection-ready snapshot.
+
+    The raw quote table deliberately stays private.  This export contains only
+    multi-book consensus values and coverage counts, which is the exact input
+    contract consumed by the weekly projection builder.
+    """
+    run = conn.execute(
+        """SELECT snapshot_id, fetched_at, prop_event_count, credits_used,
+                  credits_remaining
+           FROM odds_fetch_runs
+           WHERE sport_key=? AND status='complete'
+           ORDER BY fetched_at DESC, snapshot_id DESC LIMIT 1""",
+        (sport_key,),
+    ).fetchone()
+    if not run:
+        raise ValueError(f"no complete snapshot for {sport_key}")
+    cutoff = iso(utcnow() - timedelta(days=8))
+    events = [dict(row) for row in conn.execute(
+        """WITH ranked AS (
+             SELECT e.*, ROW_NUMBER() OVER (
+               PARTITION BY e.event_id
+               ORDER BY r.fetched_at DESC, e.snapshot_id DESC
+             ) AS recency
+             FROM odds_events e
+             JOIN odds_fetch_runs r USING (snapshot_id)
+             WHERE r.sport_key=? AND r.status='complete' AND r.fetched_at>=?
+           )
+           SELECT event_id, commence_time, home_team, away_team, game_total,
+                  home_spread, home_win_probability, home_implied_total,
+                  away_implied_total, total_book_count, spread_book_count,
+                  moneyline_book_count, quality
+           FROM ranked WHERE recency=1 ORDER BY commence_time, event_id""",
+        (sport_key, cutoff),
+    )]
+    props = [dict(row) for row in conn.execute(
+        """WITH ranked AS (
+             SELECT p.*, ROW_NUMBER() OVER (
+               PARTITION BY p.event_id, p.market_key, p.player_name
+               ORDER BY r.fetched_at DESC, p.snapshot_id DESC
+             ) AS recency
+             FROM odds_player_props p
+             JOIN odds_fetch_runs r USING (snapshot_id)
+             WHERE r.sport_key=? AND r.status='complete' AND r.fetched_at>=?
+           )
+           SELECT event_id, market_key, player_name, consensus_line,
+                  fair_over_probability, book_count, line_dispersion, quality
+           FROM ranked WHERE recency=1
+           ORDER BY event_id, player_name, market_key""",
+        (sport_key, cutoff),
+    )]
+    prop_event_count = len({row["event_id"] for row in props})
+    payload = {
+        "schema": "lineupbeat-private-nfl-market-consensus-v1",
+        "fetched_at": run["fetched_at"],
+        "prop_event_count": prop_event_count,
+        "credits_used": run["credits_used"],
+        "credits_remaining": run["credits_remaining"],
+        "events": events,
+        "props": props,
+    }
+    serialized = json.dumps(payload, sort_keys=True)
+    for forbidden in ("bookmaker_key", "american_price", "apiKey"):
+        if forbidden in serialized:
+            raise ValueError(f"private quote field reached consensus export: {forbidden}")
+    return payload
+
+
+def export_weekly_consensus(conn, sport_key: str, path: Path) -> None:
+    payload = weekly_consensus_payload(conn, sport_key)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.tmp")
+    temporary.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+    temporary.replace(path)
+
+
 def fetch_sport(conn, client: OddsClient, sport: str, include_props: bool,
-                max_prop_events: int, credit_reserve: int):
+                max_prop_events: int, credit_reserve: int,
+                prop_horizon_hours: float | None = None):
     sport_key = SPORT_KEYS[sport]
     events = client.get(
         f"sports/{sport_key}/odds",
@@ -452,6 +530,9 @@ def fetch_sport(conn, client: OddsClient, sport: str, include_props: bool,
     prop_events = []
     if include_props:
         upcoming = sorted(events, key=lambda event: event.get("commence_time") or "")
+        if prop_horizon_hours is not None:
+            horizon = utcnow() + timedelta(hours=prop_horizon_hours)
+            upcoming = [event for event in upcoming if _event_time(event) <= horizon]
         affordable = max_prop_events
         if client.credits_remaining is not None:
             affordable = min(
@@ -473,6 +554,15 @@ def fetch_sport(conn, client: OddsClient, sport: str, include_props: bool,
 
     snapshot_id = store_snapshot(conn, sport_key, events, prop_events, client)
     return snapshot_id, len(events), len(prop_events)
+
+
+def _event_time(event: dict) -> datetime:
+    value = str(event.get("commence_time") or "")
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        return parsed.astimezone(timezone.utc)
+    except ValueError:
+        return datetime.max.replace(tzinfo=timezone.utc)
 
 
 def report(conn):
@@ -506,9 +596,14 @@ def main(argv=None):
     parser.add_argument("--include-props", action="store_true")
     parser.add_argument("--max-prop-events-per-sport", type=int, default=16)
     parser.add_argument("--credit-reserve", type=int, default=75)
+    parser.add_argument(
+        "--prop-horizon-hours", type=float,
+        help="fetch props only for games kicking off within this window",
+    )
     parser.add_argument("--max-age-hours", type=float, default=20)
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--report", action="store_true")
+    parser.add_argument("--export-nfl-consensus", type=Path)
     args = parser.parse_args(argv)
 
     conn = connect(args.db)
@@ -520,7 +615,9 @@ def main(argv=None):
     bad = sorted(set(sports) - set(SPORT_KEYS))
     if bad:
         parser.error(f"unsupported sports: {', '.join(bad)}")
-    if args.max_prop_events_per_sport < 0 or args.credit_reserve < 0:
+    if (args.max_prop_events_per_sport < 0 or args.credit_reserve < 0
+            or (args.prop_horizon_hours is not None
+                and args.prop_horizon_hours < 0)):
         parser.error("credit limits cannot be negative")
 
     key = os.environ.get("THE_ODDS_API_KEY", "")
@@ -538,6 +635,7 @@ def main(argv=None):
             snapshot_id, events, prop_events = fetch_sport(
                 conn, client, sport, args.include_props,
                 args.max_prop_events_per_sport, args.credit_reserve,
+                args.prop_horizon_hours,
             )
             print(
                 f"  {sport}: snapshot {snapshot_id}, {events} games, "
@@ -548,6 +646,14 @@ def main(argv=None):
             failures.append(f"{sport}: {safe}")
             store_snapshot(conn, sport_key, [], [], client, error=safe)
             print(f"  {sport}: private odds refresh failed: {safe}", file=sys.stderr)
+    if args.export_nfl_consensus and not failures:
+        try:
+            export_weekly_consensus(
+                conn, SPORT_KEYS["nfl"], args.export_nfl_consensus)
+            print(f"  redacted NFL consensus: {args.export_nfl_consensus}")
+        except Exception as exc:
+            failures.append(f"nfl consensus export: {exc}")
+            print(f"  nfl consensus export failed: {exc}", file=sys.stderr)
     return 1 if failures else 0
 
 
