@@ -1,144 +1,77 @@
 #!/usr/bin/env python3
 """Build the public, indexable My League product landing page."""
-
 from __future__ import annotations
-
-import html
-import json
-import re
-import sys
+import html, json, re, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-
 import seo
-
-
 OUT = ROOT / "site/my-league/index.html"
-
 
 def append_sitemap() -> None:
     path = ROOT / "site/sitemap.xml"
-    if not path.exists():
-        return
+    if not path.exists(): return
     text = path.read_text()
-    if "/my-league/" in text:
-        return
-    origin_match = re.search(r"<loc>(https://[^/<]+)", text)
-    origin = origin_match.group(1) if origin_match else "https://lineupbeat.com"
-    url = html.escape(origin + "/my-league/")
-    path.write_text(text.replace("</urlset>", f"<url><loc>{url}</loc></url></urlset>"))
-
+    if "/my-league/" in text: return
+    match = re.search(r"<loc>(https://[^/<]+)", text)
+    origin = match.group(1) if match else "https://lineupbeat.com"
+    path.write_text(text.replace("</urlset>", f"<url><loc>{html.escape(origin + '/my-league/')}</loc></url></urlset>"))
 
 def structured_data() -> str:
-    faq = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is LineupBeat My League?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "My League turns an ESPN, Yahoo, or CBS fantasy football league archive into all-time standings, trophy history, records, manager pages, season summaries, and a shareable view-only page.",
-                },
-            },
-            {
-                "@type": "Question",
-                "name": "Which fantasy football platforms can connect?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "ESPN and Yahoo can collect connected seasons automatically. CBS history is added one visible season at a time from its History area with the browser connector.",
-                },
-            },
-            {
-                "@type": "Question",
-                "name": "Is my fantasy league history private?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. The imported archive stays in the browser by default. A commissioner can explicitly create an unlisted or public view-only link when the league is ready to share.",
-                },
-            },
-        ],
-    }
+    faq = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What is LineupBeat My League?","acceptedAnswer":{"@type":"Answer","text":"My League turns an ESPN, Yahoo, or CBS fantasy football league archive into all-time standings, trophy history, records, manager pages, season summaries, and a shareable view-only page."}},
+        {"@type":"Question","name":"Which fantasy football platforms can connect?","acceptedAnswer":{"@type":"Answer","text":"ESPN and Yahoo can collect connected seasons automatically. CBS history is added one visible season at a time from its History area with the browser connector."}},
+        {"@type":"Question","name":"Is my fantasy league history private?","acceptedAnswer":{"@type":"Answer","text":"Yes. The imported archive stays in the browser by default. A commissioner can explicitly create an unlisted or public view-only link when the league is ready to share."}}]}
     return json.dumps(faq, separators=(",", ":"), ensure_ascii=False)
 
+def leader(rank, art, name, note, record):
+    return f'<div class="ml-leader"><em>{rank}</em><img src="/assets/homepage/{art}-3d.png" alt=""><span><strong>{name}</strong><small>{note}</small></span><b>{record}</b></div>'
+
+def feature(art, title, copy):
+    return f'<article class="ml-card"><img src="/assets/homepage/{art}-3d.png" alt=""><h3>{title}</h3><p>{copy}</p></article>'
+
+def step(title, copy):
+    return f'<article class="ml-step"><h3>{title}</h3><p>{copy}</p></article>'
+
+def standings_demo():
+    rows = (("1","Fourth &amp; Long","68–41",".624","3"),("2","Sunday Scaries","64–45",".587","2"),("3","Waiver Wire","57–39",".594","1"),("4","Goal Line Stand","53–56",".486","1"))
+    body = ''.join(f'<div class="ml-row"><span>{r}</span><strong>{n}</strong><span>{w}</span><span>{p}</span><em>{t}</em></div>' for r,n,w,p,t in rows)
+    return f'<div class="ml-demo"><div class="ml-demo-head"><span>ALL-TIME STANDINGS</span><b>8 SEASONS</b></div><div class="ml-table"><div class="ml-row head"><span>#</span><span>MANAGER</span><span>RECORD</span><span>WIN%</span><span>TITLES</span></div>{body}</div></div>'
+
+def trophy_demo():
+    awards = (("league","2026 CHAMPION","Fourth &amp; Long"),("rankings","SCORING CROWN","Sunday Scaries"),("college","BIGGEST BLOWOUT","74.8 points"),("team","LONGEST STREAK","11 wins"))
+    body = ''.join(f'<div class="ml-trophy"><img src="/assets/homepage/{art}-3d.png" alt=""><span><small>{label}</small><strong>{value}</strong></span></div>' for art,label,value in awards)
+    return f'<div class="ml-demo"><div class="ml-demo-head"><span>TROPHY ROOM</span><b>THE SUNDAY LEAGUE</b></div><div class="ml-trophy-room">{body}</div></div>'
+
+def rivalry_demo():
+    return '<div class="ml-demo"><div class="ml-demo-head"><span>RIVALRY REPORT</span><b>21 MATCHUPS</b></div><div class="ml-rivalry"><div class="ml-rivalry-score"><div class="ml-rivalry-team"><img src="/assets/homepage/league-3d.png" alt=""><strong>Fourth &amp; Long</strong><small>1,984.6 points</small></div><strong>12–9</strong><div class="ml-rivalry-team"><img src="/assets/homepage/team-3d.png" alt=""><strong>Sunday Scaries</strong><small>1,947.2 points</small></div></div><div class="ml-rivalry-foot"><span>BIGGEST WIN · 48.6</span><span>CURRENT STREAK · 3</span></div></div></div>'
 
 def build_page() -> str:
     styles = r"""
-    :root{--ml-bg:#080c0b;--ml-panel:#101613;--ml-panel2:#0c110f;--ml-line:#29332e;--ml-muted:#aeb7b0}
-    body{margin:0;background:radial-gradient(circle at 50% 11rem,rgba(35,51,43,.54),transparent 35rem),var(--ml-bg);color:var(--ink);font-family:var(--text)}
-    body::before{content:"";position:absolute;z-index:-1;inset:3.8rem 0 auto;height:46rem;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,#000,transparent 92%);pointer-events:none}
-    .ml-shell{max-width:74rem;margin:0 auto;padding:clamp(1.6rem,4vw,4rem) 1.25rem 5rem}
-    .ml-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(18rem,.7fr);gap:clamp(2rem,6vw,6rem);align-items:end;padding:clamp(2rem,5vw,5.5rem) 0 3rem;border-bottom:1px solid var(--ml-line)}
-    .ml-kicker,.ml-eyebrow{display:block;margin:0 0 .8rem;color:var(--signal);font:800 .78rem/1.2 var(--agate);letter-spacing:.13em;text-transform:uppercase}
-    .ml-hero h1{max-width:12ch;margin:0;font:700 clamp(3.2rem,8vw,6.9rem)/.88 var(--text);letter-spacing:-.055em}
-    .ml-hero p{max-width:38rem;margin:1.4rem 0 0;color:#c4cac5;font:400 1.08rem/1.65 var(--agate)}
-    .ml-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}
-    .ml-button{display:inline-flex;align-items:center;justify-content:center;min-height:3.25rem;padding:.8rem 1.2rem;border:1px solid var(--signal);background:var(--signal);color:#071008;text-decoration:none;font:800 .82rem/1 var(--agate);letter-spacing:.05em;text-transform:uppercase}
-    .ml-button.secondary{border-color:#52605a;background:transparent;color:var(--ink)}
-    .ml-proof{display:grid;gap:.7rem;margin:0}
-    .ml-proof div{display:grid;grid-template-columns:4.8rem 1fr;gap:1rem;align-items:center;padding:1rem;border:1px solid var(--ml-line);background:#0b100ed9}
-    .ml-proof dt{color:var(--signal);font:800 1.35rem/1 var(--data)}.ml-proof dd{margin:0;color:var(--ml-muted);font:700 .78rem/1.35 var(--agate);letter-spacing:.04em;text-transform:uppercase}
-    .ml-section{padding:clamp(3rem,7vw,5.5rem) 0;border-bottom:1px solid var(--ml-line)}
-    .ml-section-head{display:grid;grid-template-columns:minmax(0,.75fr) minmax(18rem,1.25fr);gap:2rem;align-items:end;margin-bottom:1.6rem}
-    .ml-section h2{max-width:14ch;margin:0;font:700 clamp(2.1rem,5vw,4rem)/.96 var(--text);letter-spacing:-.04em}.ml-section-head>p{max-width:42rem;margin:0;color:var(--ml-muted);font:400 1rem/1.6 var(--agate)}
-    .ml-feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
-    .ml-card{min-width:0;padding:1.25rem;border:1px solid var(--ml-line);border-top:3px solid var(--signal);background:linear-gradient(145deg,var(--ml-panel),var(--ml-panel2))}
-    .ml-card span{color:#67716b;font:800 1.8rem/1 var(--data)}.ml-card h3{margin:2rem 0 .4rem;font:700 1.25rem/1.1 var(--agate)}.ml-card p{margin:0;color:var(--ml-muted);font:400 .92rem/1.5 var(--agate)}
-    .ml-steps{counter-reset:steps;display:grid;border-top:1px solid var(--ml-line)}
-    .ml-step{counter-increment:steps;display:grid;grid-template-columns:3.5rem minmax(10rem,.55fr) minmax(0,1.45fr);gap:1.25rem;align-items:center;padding:1.2rem .25rem;border-bottom:1px solid var(--ml-line)}
-    .ml-step::before{content:"0" counter(steps);color:var(--signal);font:800 1rem/1 var(--data)}.ml-step h3{margin:0;font:700 1.08rem/1.2 var(--agate)}.ml-step p{margin:0;color:var(--ml-muted);font:400 .92rem/1.5 var(--agate)}
-    .ml-platforms{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:.75rem}.ml-platform{padding:1.25rem;border:1px solid var(--ml-line);background:var(--ml-panel2)}.ml-platform.live{border-top:3px solid var(--signal)}
-    .ml-platform small{color:var(--signal);font:800 .72rem/1 var(--agate);letter-spacing:.1em;text-transform:uppercase}.ml-platform h3{margin:1.4rem 0 .35rem;font:700 1.5rem/1 var(--agate)}.ml-platform p{margin:0;color:var(--ml-muted);font:400 .92rem/1.5 var(--agate)}
-    .ml-privacy{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:center;padding:clamp(1.5rem,4vw,2.5rem);border:1px solid #45534c;background:radial-gradient(circle at 100% 0,#c6f53c15,transparent 35%),var(--ml-panel)}.ml-privacy h2{max-width:18ch}.ml-privacy p{max-width:45rem;margin:.8rem 0 0;color:var(--ml-muted);font:400 1rem/1.6 var(--agate)}
-    .ml-faq{display:grid;grid-template-columns:.6fr 1.4fr;gap:2rem}.ml-faq-list{border-top:1px solid var(--ml-line)}.ml-faq details{padding:1rem 0;border-bottom:1px solid var(--ml-line)}.ml-faq summary{cursor:pointer;color:var(--ink);font:700 1rem/1.3 var(--agate)}.ml-faq details p{max-width:46rem;margin:.7rem 0 0;color:var(--ml-muted);font:400 .92rem/1.55 var(--agate)}
-    @media(max-width:900px){.ml-hero,.ml-section-head,.ml-faq{grid-template-columns:1fr}.ml-proof{grid-template-columns:repeat(3,1fr)}.ml-proof div{display:block}.ml-proof dt{margin-bottom:.45rem}.ml-feature-grid{grid-template-columns:1fr 1fr}.ml-platforms{grid-template-columns:1fr}.ml-privacy{grid-template-columns:1fr}.ml-step{grid-template-columns:2.5rem 1fr}.ml-step p{grid-column:2}}
-    @media(max-width:600px){.ml-shell{padding-inline:1rem}.ml-hero{padding-top:2.5rem}.ml-hero h1{font-size:clamp(3rem,16vw,4.6rem)}.ml-proof{grid-template-columns:1fr}.ml-feature-grid{grid-template-columns:1fr}.ml-card h3{margin-top:1.2rem}.ml-actions,.ml-button{width:100%}.ml-step{gap:.75rem}.ml-section{padding:3.25rem 0}}
+    :root{--ml-bg:#070b09;--ml-panel:#0d1511;--ml-panel2:#101914;--ml-line:#354239;--ml-muted:#aeb8b0;--ml-lime:#c6f53c}body{margin:0;background:var(--ml-bg);color:var(--ink);font-family:var(--agate);overflow-x:hidden}.ml-shell{width:min(calc(100% - 2rem),1180px);margin:auto;padding-bottom:6rem}
+    .ml-hero{position:relative;display:grid;grid-template-columns:minmax(330px,.88fr) minmax(520px,1.12fr);gap:clamp(2.5rem,5vw,5rem);align-items:center;min-height:650px;padding:clamp(4rem,8vw,7rem) 0}.ml-hero:before{content:"";position:absolute;z-index:-1;inset:0 -30vw;background:radial-gradient(circle at 72% 38%,rgba(198,245,60,.08),transparent 26rem),linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,72px 72px,72px 72px;mask-image:linear-gradient(to bottom,#000 65%,transparent)}
+    .ml-kicker,.ml-eyebrow{display:block;margin:0 0 1rem;color:var(--ml-lime);font:850 .76rem/1.2 var(--agate);letter-spacing:.13em;text-transform:uppercase}.ml-hero h1{margin:0;color:#f5f7f4;font:900 clamp(4.2rem,7vw,6.9rem)/.86 var(--agate);letter-spacing:-.065em;text-transform:uppercase}.ml-hero h1 span{background:linear-gradient(90deg,#c6f53c,#6ff0a0 75%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}.ml-hero p{max-width:35rem;margin:1.5rem 0 0;color:#c7cec8;font:400 1.08rem/1.58 var(--agate)}
+    .ml-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}.ml-button{display:inline-flex;align-items:center;justify-content:space-between;gap:2.5rem;min-height:3.55rem;padding:.8rem 1.25rem;border:1px solid var(--ml-lime);background:var(--ml-lime);color:#071008;text-decoration:none;font:850 .8rem/1 var(--agate);letter-spacing:.05em;text-transform:uppercase}.ml-button:after{content:"→";font-size:1.1rem}.ml-button.secondary{border-color:#52605a;background:transparent;color:var(--ink)}
+    .ml-window,.ml-demo{overflow:hidden;border:1px solid #46544c;border-radius:22px;background:#0b120e;box-shadow:0 38px 90px #0009,0 0 70px rgba(198,245,60,.06)}.ml-window-bar,.ml-demo-head{display:flex;align-items:center;justify-content:space-between;min-height:60px;padding:0 1.35rem;border-bottom:1px solid var(--ml-line);color:#e7ece8;font:850 .68rem var(--agate);letter-spacing:.11em}.ml-window-bar span{display:flex;align-items:center;gap:.65rem}.ml-window-bar i{width:9px;height:9px;border-radius:50%;background:var(--ml-lime);box-shadow:0 0 14px var(--ml-lime)}.ml-window-bar b{color:#7f8c83}.ml-window-body{padding:1.6rem}.ml-window-body>small,.ml-demo-head b{color:var(--ml-lime);font:850 .68rem var(--agate);letter-spacing:.11em}.ml-window-body h2{margin:.65rem 0 1.35rem;color:#f3f6f3;font:900 clamp(2rem,4vw,3.15rem)/.95 var(--agate);letter-spacing:-.045em}
+    .ml-season-tabs{display:flex;gap:.45rem;margin-bottom:1rem}.ml-season-tabs span{padding:.45rem .7rem;border:1px solid var(--ml-line);color:#8b978f;font:800 .66rem var(--agate)}.ml-season-tabs span:first-child{border-color:var(--ml-lime);background:var(--ml-lime);color:#071008}.ml-leaders{border:1px solid var(--ml-line)}.ml-leader{display:grid;grid-template-columns:2rem 2.5rem minmax(0,1fr) auto;gap:.75rem;align-items:center;min-height:62px;padding:.2rem .9rem;border-bottom:1px solid #2a352f}.ml-leader:last-child{border-bottom:0}.ml-leader>em{color:#708077;font:900 .88rem var(--agate);font-style:normal}.ml-leader img{width:40px;height:40px;object-fit:contain}.ml-leader span strong,.ml-leader span small{display:block}.ml-leader span strong{color:#edf2ee;font:850 .86rem var(--agate)}.ml-leader span small{margin-top:.22rem;color:#7f8c84;font:700 .67rem var(--agate)}.ml-leader>b{color:var(--ml-lime);font:900 .88rem var(--agate)}.ml-stat-strip{display:grid;grid-template-columns:repeat(3,1fr);margin-top:1rem;border:1px solid var(--ml-line)}.ml-stat-strip div{padding:.85rem;border-right:1px solid var(--ml-line)}.ml-stat-strip div:last-child{border:0}.ml-stat-strip strong,.ml-stat-strip small{display:block}.ml-stat-strip strong{color:#f2f5f2;font:900 .92rem var(--agate)}.ml-stat-strip small{margin-top:.2rem;color:#7e8a82;font:750 .6rem var(--agate);text-transform:uppercase}
+    .ml-section{padding:clamp(4.5rem,8vw,7rem) 0;border-top:1px solid var(--ml-line)}.ml-section-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:end;margin-bottom:2rem}.ml-section h2{max-width:14ch;margin:0;color:#f4f7f3;font:900 clamp(2.7rem,5vw,4.8rem)/.92 var(--agate);letter-spacing:-.055em}.ml-section-head>p{max-width:31rem;margin:0 0 .35rem;color:var(--ml-muted);font:400 1rem/1.55 var(--agate)}
+    .ml-feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}.ml-card{min-width:0;padding:1.3rem;border:1px solid var(--ml-line);background:linear-gradient(145deg,var(--ml-panel2),#0a100d)}.ml-card img{display:block;width:92px;height:92px;object-fit:contain;filter:drop-shadow(0 14px 20px #0008)}.ml-card h3{margin:.75rem 0 .4rem;color:#f1f5f1;font:850 1.2rem/1.1 var(--agate)}.ml-card p{margin:0;color:var(--ml-muted);font:400 .9rem/1.5 var(--agate)}
+    .ml-examples{padding-bottom:0}.ml-example{display:grid;grid-template-columns:minmax(260px,.72fr) minmax(480px,1.28fr);gap:clamp(2rem,6vw,5rem);align-items:center;min-height:470px;padding:clamp(3rem,6vw,5rem) 0;border-top:1px solid var(--ml-line)}.ml-example.reverse{grid-template-columns:minmax(480px,1.28fr) minmax(260px,.72fr)}.ml-example.reverse .ml-example-copy{order:2}.ml-example-copy h3{margin:.65rem 0 1rem;color:#f4f7f3;font:900 clamp(2.3rem,4vw,3.8rem)/.94 var(--agate);letter-spacing:-.05em}.ml-example-copy p{color:#b9c2bb;font:1rem/1.55 var(--agate)}.ml-example-copy a{display:inline-block;margin-top:1.1rem;color:var(--ml-lime);font:850 .76rem var(--agate);letter-spacing:.05em;text-decoration:none;text-transform:uppercase}.ml-demo{border-radius:18px}.ml-demo-head{min-height:54px;padding:0 1.2rem}
+    .ml-table{padding:.7rem}.ml-row{display:grid;grid-template-columns:2rem minmax(0,1fr) repeat(3,4rem);gap:.65rem;align-items:center;min-height:56px;padding:0 .65rem;border-bottom:1px solid #2a352f;color:#cfd7d1;font:750 .76rem var(--agate)}.ml-row.head{min-height:38px;color:#718078;font-size:.64rem;text-transform:uppercase}.ml-row:last-child{border:0}.ml-row strong{color:#f1f5f1}.ml-row em{color:var(--ml-lime);font-style:normal;font-weight:900}.ml-trophy-room{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;padding:1rem}.ml-trophy{display:grid;grid-template-columns:72px 1fr;gap:.8rem;align-items:center;padding:1rem;border:1px solid var(--ml-line);background:#101914}.ml-trophy img{width:72px;height:72px;object-fit:contain}.ml-trophy small,.ml-trophy strong{display:block}.ml-trophy small{color:#7e8b82;font:750 .63rem var(--agate);text-transform:uppercase}.ml-trophy strong{margin-top:.25rem;color:#f0f4f0;font:850 .92rem var(--agate)}
+    .ml-rivalry{padding:1.25rem}.ml-rivalry-score{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;padding:1.5rem;border:1px solid var(--ml-line);text-align:center}.ml-rivalry-team img{display:block;width:78px;height:78px;margin:0 auto .5rem;object-fit:contain}.ml-rivalry-team strong,.ml-rivalry-team small{display:block}.ml-rivalry-team strong{color:#f0f4f1;font:850 .82rem var(--agate)}.ml-rivalry-team small{margin-top:.2rem;color:#7d8a82;font:700 .65rem var(--agate)}.ml-rivalry-score>strong{color:var(--ml-lime);font:900 2.4rem var(--agate)}.ml-rivalry-foot{display:flex;justify-content:space-between;padding:1rem .25rem 0;color:#849087;font:750 .68rem var(--agate)}
+    .ml-connect{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(2rem,6vw,5rem)}.ml-connect>div>p{max-width:29rem;color:var(--ml-muted);font:1rem/1.55 var(--agate)}.ml-steps{counter-reset:steps;border-top:1px solid var(--ml-line)}.ml-step{counter-increment:steps;display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--ml-line)}.ml-step:before{content:"0" counter(steps);color:var(--ml-lime);font:850 .82rem var(--agate)}.ml-step h3{margin:0;color:#f1f4f1;font:850 1rem var(--agate)}.ml-step p{grid-column:2;margin:.25rem 0 0;color:var(--ml-muted);font:.9rem/1.5 var(--agate)}
+    .ml-platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}.ml-platform{padding:1.3rem;border:1px solid var(--ml-line);background:var(--ml-panel2)}.ml-platform small{color:var(--ml-lime);font:850 .68rem var(--agate);letter-spacing:.1em;text-transform:uppercase}.ml-platform h3{margin:1.4rem 0 .35rem;color:#f3f6f3;font:900 1.7rem var(--agate)}.ml-platform p{margin:0;color:var(--ml-muted);font:.9rem/1.5 var(--agate)}.ml-privacy{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:center;padding:clamp(1.8rem,4vw,3rem);border:1px solid #46544c;background:radial-gradient(circle at 95% 0,rgba(198,245,60,.12),transparent 30%),var(--ml-panel)}.ml-privacy h2{max-width:18ch}.ml-privacy p{max-width:45rem;margin:.8rem 0 0;color:var(--ml-muted);font:1rem/1.6 var(--agate)}.ml-faq{display:grid;grid-template-columns:.62fr 1.38fr;gap:3rem}.ml-faq-list{border-top:1px solid var(--ml-line)}.ml-faq details{padding:1.15rem 0;border-bottom:1px solid var(--ml-line)}.ml-faq summary{cursor:pointer;color:var(--ink);font:800 1rem/1.3 var(--agate)}.ml-faq details p{max-width:46rem;margin:.75rem 0 0;color:var(--ml-muted);font:.92rem/1.55 var(--agate)}
+    @media(max-width:920px){.ml-hero,.ml-section-head,.ml-faq,.ml-connect{grid-template-columns:1fr}.ml-hero{min-height:0}.ml-feature-grid{grid-template-columns:1fr 1fr}.ml-example,.ml-example.reverse{grid-template-columns:1fr;min-height:0}.ml-example.reverse .ml-example-copy{order:0}.ml-platforms{grid-template-columns:1fr}.ml-privacy{grid-template-columns:1fr}}@media(max-width:600px){.ml-hero{padding:3.5rem 0}.ml-hero h1{font-size:clamp(3.6rem,17vw,5rem)}.ml-actions,.ml-button{width:100%;box-sizing:border-box}.ml-window-body{padding:1rem}.ml-feature-grid{grid-template-columns:1fr}.ml-stat-strip{grid-template-columns:1fr}.ml-stat-strip div{border-right:0;border-bottom:1px solid var(--ml-line)}.ml-section{padding:4rem 0}.ml-section-head{display:block}.ml-section-head>p{margin-top:1rem}.ml-row{grid-template-columns:1.5rem minmax(0,1fr) 3rem}.ml-row>*:nth-child(4),.ml-row>*:nth-child(5){display:none}.ml-trophy-room{grid-template-columns:1fr}.ml-rivalry-score{gap:.45rem;padding:1rem .5rem}.ml-rivalry-team img{width:58px;height:58px}.ml-rivalry-score>strong{font-size:1.6rem}}
     """
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Fantasy Football League History &amp; Record Book | LineupBeat</title>
-    <meta name="description" content="Turn your ESPN, Yahoo, or CBS fantasy football league history into all-time standings, records, trophies, manager pages, and one shareable league record book.">
-    <meta name="robots" content="index,follow"><link rel="canonical" href="https://lineupbeat.com/my-league/">
-    <script type="application/ld+json">{structured_data()}</script>
-    <style>{seo.SHELL_CSS}{seo.TEAMS_CSS}{seo.NAV_CSS}{styles}</style></head><body>
-    {seo.site_nav('league_history', 'nfl')}
-    <main class="ml-shell">
-      <section class="ml-hero"><div><span class="ml-kicker">My League</span><h1>Your league has a history. Keep all of it.</h1><p>Turn ESPN, Yahoo, or CBS fantasy football seasons into a living league record book—complete with all-time standings, trophies, rivalries, records, and every team name your league has used.</p><div class="ml-actions"><a class="ml-button" href="/league-history/">Connect your league</a><a class="ml-button secondary" href="#how-it-works">See how it works</a></div></div>
-      <dl class="ml-proof"><div><dt>Every</dt><dd>available season</dd></div><div><dt>All</dt><dd>historical team names</dd></div><div><dt>One</dt><dd>permanent share link</dd></div></dl></section>
-
-      <section class="ml-section"><div class="ml-section-head"><div><span class="ml-eyebrow">Your record book</span><h2>More than a list of champions.</h2></div><p>My League rebuilds the story your fantasy platform leaves scattered across individual seasons. Manager identities follow the person, while team names stay attached to the seasons where they were used.</p></div><div class="ml-feature-grid">
-        <article class="ml-card"><span>01</span><h3>All-time standings</h3><p>Career records, win percentage, scoring, and titles across every season.</p></article>
-        <article class="ml-card"><span>02</span><h3>Trophy case</h3><p>Championships, scoring crowns, runner-up finishes, and season winners.</p></article>
-        <article class="ml-card"><span>03</span><h3>League records</h3><p>Best weeks, biggest blowouts, closest games, streaks, and head-to-head results.</p></article>
-        <article class="ml-card"><span>04</span><h3>Manager pages</h3><p>Every season, team name, matchup, high, low, and rivalry in one career view.</p></article>
-      </div></section>
-
-      <section class="ml-section" id="how-it-works"><div class="ml-section-head"><div><span class="ml-eyebrow">How to connect</span><h2>One archive. One quick review.</h2></div><p>Choose ESPN, Yahoo, or CBS. LineupBeat keeps the private record book on your device until you decide to share it.</p></div><div class="ml-steps">
-        <article class="ml-step"><h3>Choose your platform</h3><p>Use the browser connector for ESPN or CBS, or authorize read-only access to Yahoo Fantasy Football.</p></article>
-        <article class="ml-step"><h3>Select your league</h3><p>LineupBeat finds the connected seasons and imports the complete matchup history.</p></article>
-        <article class="ml-step"><h3>Match manager names</h3><p>Confirm only possible duplicates, such as nicknames or changed platform accounts.</p></article>
-        <article class="ml-step"><h3>Review the record book</h3><p>Every historical team remains in its original season, including teams that left the league.</p></article>
-        <article class="ml-step"><h3>Share when ready</h3><p>Create one permanent, view-only link for league mates. Future imports update that same page.</p></article>
-      </div><div class="ml-actions"><a class="ml-button" href="/league-history/">Connect a league</a><a class="ml-button secondary" href="/my-team/extension/">Browser connector</a></div></section>
-
-      <section class="ml-section"><div class="ml-section-head"><div><span class="ml-eyebrow">Platform support</span><h2>What connects today.</h2></div><p>League-history support and roster support are different features. This page makes that boundary explicit.</p></div><div class="ml-platforms">
-        <article class="ml-platform live"><small>League history + My Team</small><h3>ESPN</h3><p>Import up to 25 available seasons and capture the current roster locally.</p></article>
-        <article class="ml-platform live"><small>League history + My Team</small><h3>Yahoo</h3><p>Authorize your account to import connected seasons, plus capture a current roster locally.</p></article>
-        <article class="ml-platform live"><small>League history + My Team</small><h3>CBS</h3><p>Capture the current roster and add visible CBS history seasons to one local archive.</p></article>
-      </div></section>
-
-      <section class="ml-section"><div class="ml-privacy"><div><span class="ml-eyebrow">Private by default</span><h2>Your league is not published unless you publish it.</h2><p>The private archive stays in your browser. LineupBeat never receives your provider password. Yahoo access stays in an encrypted, secure browser cookie and is not stored in the league-history database. Sharing creates a separate view-only page that you can unpublish.</p></div><a class="ml-button" href="/league-history/">Build your record book</a></div></section>
-
-      <section class="ml-section ml-faq"><div><span class="ml-eyebrow">Common questions</span><h2>Before you connect.</h2></div><div class="ml-faq-list">
-        <details><summary>What happens when an owner changes the team name?</summary><p>Each team name stays attached to its original season. The manager's career totals still follow the same person.</p></details>
-        <details><summary>What happens when someone leaves the league?</summary><p>Their teams, seasons, records, and trophies remain part of the archive. Nothing historical disappears.</p></details>
-        <details><summary>Can people outside the league see it?</summary><p>Not by default. An unlisted page is available only to people with the link. A commissioner may also choose public visibility.</p></details>
-        <details><summary>Does LineupBeat need my provider password?</summary><p>No. ESPN and CBS use pages already open in your browser. Yahoo sends you through its own authorization page, so your password is never shared with LineupBeat.</p></details>
-      </div></section>
-    </main>{seo.site_footer()}</body></html>'''
-
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fantasy Football League History &amp; Record Book | LineupBeat</title><meta name="description" content="Turn your ESPN, Yahoo, or CBS fantasy football league history into all-time standings, records, trophies, manager pages, and one shareable league record book."><meta name="robots" content="index,follow"><link rel="canonical" href="https://lineupbeat.com/my-league/"><script type="application/ld+json">{structured_data()}</script><style>{seo.SHELL_CSS}{seo.TEAMS_CSS}{seo.NAV_CSS}{styles}</style></head><body>{seo.site_nav('league_history','nfl')}<main class="ml-shell">
+    <section class="ml-hero"><div><span class="ml-kicker">YOUR FANTASY RECORD BOOK</span><h1>YOUR LEAGUE.<br><span>FOREVER.</span></h1><p>Every season, champion, rivalry, and record—rebuilt from ESPN, Yahoo, or CBS and ready to share with the league.</p><div class="ml-actions"><a class="ml-button" href="/league-history/">Connect your league</a><a class="ml-button secondary" href="#examples">See examples</a></div></div><div class="ml-window"><div class="ml-window-bar"><span><i></i> THE SUNDAY LEAGUE</span><b>ALL-TIME</b></div><div class="ml-window-body"><small>LEAGUE COMMAND CENTER</small><h2>The story behind every season.</h2><div class="ml-season-tabs"><span>ALL-TIME</span><span>2026</span><span>RECORDS</span></div><div class="ml-leaders">{leader(1,'league','Fourth &amp; Long','3 championships · 8 seasons','68–41')}{leader(2,'team','Sunday Scaries','2 championships · 8 seasons','64–45')}{leader(3,'rankings','Waiver Wire','1 championship · 7 seasons','57–39')}</div><div class="ml-stat-strip"><div><strong>8 seasons</strong><small>Complete history</small></div><div><strong>1,072 games</strong><small>Every matchup</small></div><div><strong>One link</strong><small>Share it</small></div></div></div></div></section>
+    <section class="ml-section"><div class="ml-section-head"><div><span class="ml-eyebrow">YOUR RECORD BOOK</span><h2>More than a list of champions.</h2></div><p>See the league your platform only shows one season at a time.</p></div><div class="ml-feature-grid">{feature('rankings','All-time standings','Career records, scoring, win percentage, and titles.')}{feature('league','Trophy case','Champions, scoring crowns, and season winners.')}{feature('college','League records','Best weeks, blowouts, close calls, and streaks.')}{feature('team','Manager pages','Every team name, season, matchup, high, and low.')}</div></section>
+    <section class="ml-section ml-examples" id="examples"><div class="ml-section-head"><div><span class="ml-eyebrow">SEE IT IN ACTION</span><h2>Your league, finally connected.</h2></div><p>Examples of what LineupBeat builds from your imported seasons.</p></div><article class="ml-example"><div class="ml-example-copy"><span class="ml-eyebrow">ALL-TIME STANDINGS</span><h3>Settle the greatest-manager debate.</h3><p>Compare every manager by record, win rate, scoring, playoff appearances, and championships.</p><a href="/league-history/">Build your standings →</a></div>{standings_demo()}</article><article class="ml-example reverse"><div class="ml-example-copy"><span class="ml-eyebrow">TROPHY ROOM</span><h3>Every title gets its place.</h3><p>Keep championships, scoring crowns, runner-up finishes, and regular-season awards together.</p><a href="/league-history/">See every season →</a></div>{trophy_demo()}</article><article class="ml-example"><div class="ml-example-copy"><span class="ml-eyebrow">HEAD TO HEAD</span><h3>Put every rivalry on the record.</h3><p>See the full series, total points, biggest win, and current streak between any two managers.</p><a href="/league-history/">Find your rival →</a></div>{rivalry_demo()}</article></section>
+    <section class="ml-section" id="how-it-works"><div class="ml-connect"><div><span class="ml-eyebrow">HOW TO CONNECT</span><h2>From platform to record book.</h2><p>Choose ESPN, Yahoo, or CBS. Your private archive stays on your device until you share it.</p><div class="ml-actions"><a class="ml-button" href="/league-history/">Connect a league</a><a class="ml-button secondary" href="/my-team/extension/">Browser connector</a></div></div><div class="ml-steps">{step('Choose your platform','Use the browser connector for ESPN or CBS, or authorize read-only access to Yahoo Fantasy Football.')}{step('Select your league','LineupBeat finds the connected seasons and imports the complete matchup history.')}{step('Match manager names','Confirm only possible duplicates, such as nicknames or changed platform accounts.')}{step('Review the record book','Every historical team remains in its original season, including teams that left the league.')}{step('Share when ready','Create one permanent, view-only link for league mates. Future imports update that same page.')}</div></div></section>
+    <section class="ml-section"><div class="ml-section-head"><div><span class="ml-eyebrow">PLATFORM SUPPORT</span><h2>What connects today.</h2></div><p>League history and current-roster tools work together, while staying private by default.</p></div><div class="ml-platforms"><article class="ml-platform"><small>LEAGUE HISTORY + MY TEAM</small><h3>ESPN</h3><p>Import up to 25 available seasons and capture the current roster locally.</p></article><article class="ml-platform"><small>LEAGUE HISTORY + MY TEAM</small><h3>Yahoo</h3><p>Authorize your account to import connected seasons and capture your current roster.</p></article><article class="ml-platform"><small>LEAGUE HISTORY + MY TEAM</small><h3>CBS</h3><p>Capture the current roster and add visible history seasons to one local archive.</p></article></div></section>
+    <section class="ml-section"><div class="ml-privacy"><div><span class="ml-eyebrow">PRIVATE BY DEFAULT</span><h2>Your league stays yours.</h2><p>The archive stays in your browser. Sharing creates a separate view-only page only when you choose to publish it.</p></div><a class="ml-button" href="/league-history/">Build your record book</a></div></section>
+    <section class="ml-section ml-faq"><div><span class="ml-eyebrow">COMMON QUESTIONS</span><h2>Before you connect.</h2></div><div class="ml-faq-list"><details><summary>What happens when an owner changes the team name?</summary><p>Each team name stays attached to its original season. The manager's career totals still follow the same person.</p></details><details><summary>What happens when someone leaves the league?</summary><p>Their teams, seasons, records, and trophies remain part of the archive.</p></details><details><summary>Can people outside the league see it?</summary><p>Not by default. An unlisted page is available only to people with the link.</p></details><details><summary>Does LineupBeat need my provider password?</summary><p>No. ESPN and CBS use pages already open in your browser. Yahoo sends you through its own authorization page.</p></details></div></section></main>{seo.site_footer()}</body></html>'''
 
 def main() -> int:
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -147,6 +80,4 @@ def main() -> int:
     print(f"Built {OUT.relative_to(ROOT)}")
     return 0
 
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+if __name__ == "__main__": raise SystemExit(main())

@@ -139,6 +139,14 @@ def main() -> int:
     assert "Trophy case" in landing
     assert "League records" in landing
     assert "Manager pages" in landing
+    assert "YOUR LEAGUE." in landing and "FOREVER." in landing
+    assert 'id="examples"' in landing
+    assert "Settle the greatest-manager debate." in landing
+    assert "Every title gets its place." in landing
+    assert "Put every rivalry on the record." in landing
+    assert landing.count("/assets/homepage/") >= 12
+    assert 'class="ml-window"' in landing
+    assert landing.count('class="ml-example') >= 3
     assert "Yahoo" in landing and "CBS" in landing
     assert "ESPN and Yahoo can collect connected seasons automatically" in landing
     assert "CBS history is added one visible season at a time" in landing
