@@ -267,6 +267,12 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertIn("ONE TOOL, WHEN YOU NEED IT", home)
         self.assertIn('class="hp-tools-band" id="tools"', home)
         self.assertNotIn('class="hp-section hp-platform"', home)
+        self.assertIn('class="hp-examples"', home)
+        self.assertEqual(home.count('<article class="hp-example'), 3)
+        self.assertIn("Know what you’re getting.", home)
+        self.assertIn("RANKINGS + PROJECTIONS", home)
+        self.assertIn("ROSTER SNAPSHOT", home)
+        self.assertIn("LINEUPBEAT CALL", home)
         self.assertIn('class="hp-section hp-faq"', home)
         faq_markup = home.split('class="hp-faq-list">', 1)[1].split("</div></section><script", 1)[0]
         self.assertEqual(faq_markup.count("<details>"), 6)
@@ -297,7 +303,8 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         home = page.render_home(self.payload, page.college_decision_data.load_weekly())
         for marker in ("hp-home-hero", "hp-product-window", "hp-window-grid",
                        "hp-about-band", "hp-about-inner", "hp-bento", "hp-decision-tool",
-                       "hp-tools-band", "hp-faq", "hp-faq-list"):
+                       "hp-tools-band", "hp-examples", "hp-demo-window",
+                       "hp-faq", "hp-faq-list"):
             self.assertIn(marker, home)
         self.assertEqual(home.count('class="hp-3d-icon"'), 8)
         self.assertEqual(home.count('class="hp-icon-chip'), 5)
