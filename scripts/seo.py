@@ -610,6 +610,100 @@ NAV_CSS = """
 """
 
 
+PRODUCT_SYSTEM_CSS = """
+/* ---- LineupBeat product system v2 ----
+   The homepage established the product language: condensed display type,
+   dark framed surfaces, lime signals, visible data and generous section
+   boundaries. These rules carry that system through every generated tool
+   without changing the tool's data, controls or document structure. */
+body{margin:0;background:radial-gradient(circle at 78% 0,#17241d 0,transparent 28%),#080c0b;color:var(--ink)}
+.topbar .tbrow{width:min(100%,1180px);min-height:64px;margin:0 auto;padding:.6rem 1rem}
+.topbar .logo{font-weight:900;letter-spacing:.13em}.topbar .vbtn{font-weight:800}
+.topbar .navmenu{border-color:#3b4941;background:#0c120f}
+.global-footer{background:#0c120f}.global-footer .wrap{max-width:1180px}
+
+/* One content rail everywhere. Working surfaces can still scroll within it. */
+.rkwrap,.v15,.dvwrap,.cowrap,.sswrap,.olwrap,.pbwrap,.cwrap,.wwrap,.cmpwrap,
+.mt-shell,.ml-shell,.lh,.ppage,.nf,.chwrap{
+  width:min(calc(100% - 2rem),1180px)!important;max-width:1180px!important;
+  margin-left:auto!important;margin-right:auto!important}
+
+/* Product headers: short framing followed immediately by the useful surface. */
+.rkhead,.dvhero,.cohead,.sshead,.olhead,.pbhead,.chero,.whero,.cmphead,
+.mt-hero,.ml-hero,.lh-head,.lb-about-hero{
+  position:relative;overflow:hidden;margin-top:1.5rem;padding:clamp(2rem,4vw,3.5rem)!important;
+  border:1px solid #3a4740!important;border-radius:18px!important;
+  background:radial-gradient(circle at 88% 8%,#c6f53c12,transparent 30%),linear-gradient(145deg,#111a16,#0b110e)!important;
+  box-shadow:0 30px 70px #0006}
+.rkhead:before,.dvhero:before,.cohead:before,.chero:before,.whero:before,
+.cmphead:before,.mt-hero:before,.ml-hero:before,.lh-head:before,.lb-about-hero:before{
+  content:"";position:absolute;left:0;top:0;width:88px;height:4px;background:var(--signal)}
+.rkhead h1,.dvhead h1,.cohead h1,.sshead h1,.olhead h1,.pbhead h1,
+.chero h1,.whero h1,.cmphead h1,.mt-hero h1,.ml-hero h1,.lh-head h1,
+.lb-about-hero h1,.v15 h1{
+  max-width:900px;margin:.55rem 0 0!important;padding:0 .08em .08em 0;
+  color:#f5f7f3!important;font:900 clamp(2.75rem,5.5vw,5.5rem)/.92 var(--agate)!important;
+  letter-spacing:-.055em!important;text-transform:none!important;overflow:visible}
+.rkeyebrow,.dveyebrow,.coeyebrow,.sseyebrow,.oleyebrow,.pbeyebrow,.cmeta,.wmeta,
+.mt-kicker,.ml-kicker,.lh-kicker,.lb-about-kicker,.eyebrow{
+  color:var(--signal)!important;font:850 .76rem/1.2 var(--agate)!important;
+  letter-spacing:.12em!important;text-transform:uppercase}
+.rkintro,.dvsub,.cosub,.sssub,.olsub,.pbsub,.chero .lede,.whero>p:not(.wmeta),
+.cmphead>p:not(.rkeyebrow),.mt-hero>p,.ml-hero>p,.lh-head>p,.lb-about-lead{
+  max-width:760px;color:#bdc7bf!important;font:1rem/1.62 var(--agate)!important}
+
+/* Filters and actions read like controls from the homepage product window. */
+button,.btn,.mt-button,.ml-button,.cmpbox select,.rkctl select,.rkctl input,
+.rkfilters select,.rkfilters input,.wtools select,.wtools input,.cctl select,.cctl input{
+  border-radius:8px!important;font-family:var(--agate)!important}
+.btn,.mt-button,.ml-button{display:inline-flex;align-items:center;justify-content:center;
+  min-height:52px;padding:0 1.15rem!important;border:1px solid var(--signal)!important;
+  background:var(--signal)!important;color:#081008!important;font-weight:850!important;
+  letter-spacing:.04em;text-decoration:none;text-transform:uppercase}
+.btn.ghost,.mt-button.secondary,.ml-button.secondary{background:transparent!important;
+  border-color:#5a685f!important;color:#f0f4f0!important}
+input,select{min-height:46px;border:1px solid #46534b!important;background:#0d1511!important;
+  color:var(--ink)!important}input:focus,select:focus{outline:2px solid var(--signal)!important;outline-offset:1px}
+
+/* Real product data is the example: frame it like an interface, not an article appendix. */
+.rkformats,.rkfilters,.v15filters,.dvleaders,.cocards,.cctl,.ctabs,.wtools,.wtabs,
+.cmpbox,.mt-section,.ml-section,.setup-workspace,.source-setup,.lb-about-section{
+  border-color:#354239!important}
+.cmpbox,.setup-workspace,.source-setup{border:1px solid #3b4941!important;border-radius:16px!important;
+  background:#0d1511!important;box-shadow:0 24px 60px #0005}
+.dvleader,.cocard,.sscard,.olcard,.pbcard,.ml-card,.mt-proof article,.ml-proof article,
+.lb-about-do-card,.relcard{border:1px solid #354239!important;border-radius:14px!important;
+  background:linear-gradient(145deg,#111a16,#0d1310)!important;box-shadow:0 18px 42px #0003;
+  transition:transform .18s,border-color .18s}
+.dvleader:hover,.cocard:hover,.ml-card:hover,.lb-about-do-card:hover,.relcard:hover{
+  transform:translateY(-3px);border-color:var(--signal)!important}
+table{border-color:#354239!important;background:#0c130f!important}
+thead th{background:#121b16!important;color:#aeb9b0!important;font-family:var(--agate)!important;
+  font-weight:850!important;letter-spacing:.06em;text-transform:uppercase}
+tbody td{border-color:#28342d!important}tbody tr:hover td{background:#141f19!important}
+.related,.faq,.cfaq{border-color:#354239!important}.relh,.faqh{color:var(--signal)!important}
+.relcard h3{font-size:.9rem!important}.relcard p{font-size:.86rem!important;line-height:1.55!important}
+
+/* Section rhythm and display hierarchy. */
+.dvsectionhead h2,.cposh h2,.mt-section-head h2,.ml-section-head h2,.lb-about-section-head h2,
+.related h2,.faq h2,.method h2,.popular h2{
+  color:#f3f6f2;font-family:var(--agate)!important;font-weight:900!important;
+  letter-spacing:-.035em!important}
+.mt-section,.ml-section,.lb-about-section{margin-top:clamp(2.5rem,5vw,4.5rem)!important;
+  padding-top:clamp(2rem,4vw,3.5rem)!important}
+
+@media(max-width:760px){
+  .topbar .tbrow{min-height:60px}.rkwrap,.v15,.dvwrap,.cowrap,.sswrap,.olwrap,.pbwrap,
+  .cwrap,.wwrap,.cmpwrap,.mt-shell,.ml-shell,.lh,.ppage,.nf,.chwrap{width:min(calc(100% - 1.25rem),1180px)!important}
+  .rkhead,.dvhero,.cohead,.sshead,.olhead,.pbhead,.chero,.whero,.cmphead,
+  .mt-hero,.ml-hero,.lh-head,.lb-about-hero{margin-top:.75rem;padding:1.5rem!important;border-radius:14px!important}
+  .rkhead h1,.dvhead h1,.cohead h1,.chero h1,.whero h1,.cmphead h1,.mt-hero h1,
+  .ml-hero h1,.lh-head h1,.lb-about-hero h1,.v15 h1{font-size:clamp(2.45rem,12vw,4rem)!important;line-height:.94!important}
+  .btn,.mt-button,.ml-button{min-height:48px}
+}
+"""
+
+
 NAV_JS = """
 <script>
 // One button, one drawer, one search row -- on every page, from
@@ -843,7 +937,7 @@ def site_nav(active=None, sport="nfl", search="", home=False):
         search = ('<a class="college-search-entry" href="/decision-room/nfl/">'
                   'Search NFL players</a>')
     return (
-        f'<style id="shared-shell-css">{SHELL_CSS}{TEAMS_CSS}{NAV_CSS}</style>\n'
+        f'<style id="shared-shell-css">{SHELL_CSS}{TEAMS_CSS}{NAV_CSS}{PRODUCT_SYSTEM_CSS}</style>\n'
         f'<header class="topbar{" home-topbar" if home else ""}">\n'
         '  <div class="wrap tbrow">\n'
         f'    <a class="logo" href="/"{" aria-current=\"page\"" if home else ""}>Lineup<em>Beat</em></a>\n'

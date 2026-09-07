@@ -34,6 +34,14 @@ class VisualRegressionTests(unittest.TestCase):
                      ".global-footer{margin-top:3rem", "html{-webkit-text-size-adjust"):
             self.assertIn(rule, markup)
 
+    def test_shared_shell_carries_homepage_product_language_to_every_tool(self):
+        markup = seo.site_nav("rankings", "nfl")
+        for rule in ("LineupBeat product system v2", ".rkwrap,.v15,.dvwrap",
+                     ".rkhead,.dvhero,.cohead", "linear-gradient(145deg,#111a16,#0b110e)",
+                     "tbody tr:hover td{background:#141f19"):
+            self.assertIn(rule, markup)
+        self.assertIn("PRODUCT_SYSTEM_CSS", inspect.getsource(seo.site_nav))
+
     def test_decision_rooms_do_not_override_shell_typography(self):
         self.assertNotIn("--agate:Arial", build_decision_room.CSS)
         self.assertNotIn("--text:Arial", build_decision_room.CSS)
