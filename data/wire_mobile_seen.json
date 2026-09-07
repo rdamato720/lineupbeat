@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1174,
+ "count": 1190,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -12953,6 +12953,182 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.003764
+  },
+  {
+   "candidate_id": "mobile:article:17e0e3176fd8e94a9dc8",
+   "player_id": "00-0038120",
+   "source_url": "https://jetsxfactor.com/2026/09/07/ny-jets-offense-breece-hall-target-titans-weakness/",
+   "attempted_at": "2026-09-07T16:36:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:36:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004144
+  },
+  {
+   "candidate_id": "mobile:onsi:ba1af8764c5623d3f9a6",
+   "player_id": "00-0035710",
+   "source_url": "https://www.si.com/nfl/colts/onsi/colts-ease-schedule-presents-even-more-pressure",
+   "attempted_at": "2026-09-07T16:36:31+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:36:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00408
+  },
+  {
+   "candidate_id": "mobile:onsi:36f8722af70cd0c4ac8a",
+   "player_id": "00-0036223",
+   "source_url": "https://www.si.com/nfl/colts/onsi/colts-ease-schedule-presents-even-more-pressure",
+   "attempted_at": "2026-09-07T16:36:34+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:36:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004296
+  },
+  {
+   "candidate_id": "mobile:onsi:f3c5b5ac086c2094c47f",
+   "player_id": "00-0036264",
+   "source_url": "https://www.si.com/nfl/packers/onsi/six-days-until-week-1-six-reasons-why-season-could-be-dumpster-fire",
+   "attempted_at": "2026-09-07T16:36:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:36:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00437
+  },
+  {
+   "candidate_id": "mobile:onsi:7ee525588eff4fad8158",
+   "player_id": "00-0039146",
+   "source_url": "https://www.si.com/nfl/packers/onsi/six-days-until-week-1-six-reasons-why-season-could-be-dumpster-fire",
+   "attempted_at": "2026-09-07T16:36:41+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:36:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004818
+  },
+  {
+   "candidate_id": "mobile:onsi:164e590730b1d8c41b26",
+   "player_id": "00-0040667",
+   "source_url": "https://www.si.com/nfl/packers/onsi/six-days-until-week-1-six-reasons-why-season-could-be-dumpster-fire",
+   "attempted_at": "2026-09-07T16:36:44+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:36:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0043
+  },
+  {
+   "candidate_id": "mobile:onsi:90af2ebd4ee4f307188b",
+   "player_id": "00-0038996",
+   "source_url": "https://www.si.com/nfl/packers/onsi/six-days-until-week-1-six-reasons-why-season-could-be-dumpster-fire",
+   "attempted_at": "2026-09-07T16:36:47+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:36:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003776
+  },
+  {
+   "candidate_id": "mobile:onsi:daa98eaec38bb83e06e8",
+   "player_id": "00-0039917",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-impact-how-tua-tagovailoa-being-named-the-falcons-starter-impacts-their-fantasy-football-weapons",
+   "attempted_at": "2026-09-07T16:36:49+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T16:36:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00678
+  },
+  {
+   "candidate_id": "mobile:onsi:4fa1a49121b22b9a0853",
+   "player_id": "00-0036212",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/fantasy-impact-how-tua-tagovailoa-being-named-the-falcons-starter-impacts-their-fantasy-football-weapons",
+   "attempted_at": "2026-09-07T16:36:54+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T16:36:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004588
+  },
+  {
+   "candidate_id": "mobile:onsi:e07a46c4388d38c3c2c5",
+   "player_id": "00-0038559",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/clock-ticking-3-things-arizona-cardinals-must-do-before-2026-season",
+   "attempted_at": "2026-09-07T16:36:57+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:37:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003902
+  },
+  {
+   "candidate_id": "mobile:onsi:2853890eeea9d26eafc3",
+   "player_id": "00-0034960",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-7-bold-predictions-for-the-2026-season-from-trevor-lawrence-to-bhayshul-tuten",
+   "attempted_at": "2026-09-07T16:37:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:37:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005926
+  },
+  {
+   "candidate_id": "mobile:onsi:cdb722adf2ccad17b392",
+   "player_id": "00-0039893",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-7-bold-predictions-for-the-2026-season-from-trevor-lawrence-to-bhayshul-tuten",
+   "attempted_at": "2026-09-07T16:37:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:37:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005576
+  },
+  {
+   "candidate_id": "mobile:onsi:f4ad47f0df2344f22112",
+   "player_id": "00-0038606",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-7-bold-predictions-for-the-2026-season-from-trevor-lawrence-to-bhayshul-tuten",
+   "attempted_at": "2026-09-07T16:37:07+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T16:37:12+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006006
+  },
+  {
+   "candidate_id": "mobile:onsi:3a518f8b02d7db6d3a22",
+   "player_id": "00-0040719",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-7-bold-predictions-for-the-2026-season-from-trevor-lawrence-to-bhayshul-tuten",
+   "attempted_at": "2026-09-07T16:37:12+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T16:37:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006128
+  },
+  {
+   "candidate_id": "mobile:onsi:0135625ee6ed759f7779",
+   "player_id": "00-0038611",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-7-bold-predictions-for-the-2026-season-from-trevor-lawrence-to-bhayshul-tuten",
+   "attempted_at": "2026-09-07T16:37:17+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T16:37:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.008116
+  },
+  {
+   "candidate_id": "mobile:article:92c0e3f06607cc4c0017",
+   "player_id": "00-0038544",
+   "source_url": "https://www.chargers.com/news/cardinals-week-1-what-to-know",
+   "attempted_at": "2026-09-07T16:37:24+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:37:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00406
   }
  ]
 }
