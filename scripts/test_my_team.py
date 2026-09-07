@@ -226,7 +226,8 @@ class MyTeamArtifactTests(unittest.TestCase):
         source = (ROOT / "my-team" / "my-team.js").read_text()
         self.assertIn("LineupBeatLeagueAdapter.displayIdentity(player)", source)
         self.assertIn("Q:'Questionable'", source)
-        self.assertIn('aria-label="Provider status: ${escape(label)}"', source)
+        self.assertIn("modelTag||player&&player.providerStatus", source)
+        self.assertIn("modelTag?'Current injury status':'Provider status'", source)
         self.assertNotIn("<h3>${escape(player.name)}</h3>", source)
 
     def test_connected_value_layer_precedes_roster_and_uses_validated_model_fields(self):

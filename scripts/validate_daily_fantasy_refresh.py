@@ -20,6 +20,8 @@ FORBIDDEN = (
     "bookmaker_key", "american_price", "apiKey",
     "DraftKings", "FanDuel", "Caesars",
 )
+VISIBLE_INJURY_STATUSES = {"Active", "Questionable", "Doubtful"}
+UNAVAILABLE_INJURY_STATUSES = {"Out", "Injured Reserve", "Suspension"}
 
 
 def points(stat: dict, reception_value: float) -> float:
@@ -41,7 +43,7 @@ def points(stat: dict, reception_value: float) -> float:
 
 
 def validate(candidate: dict, previous: dict | None = None,
-             now: datetime | None = None) -> dict:
+             now: datetime | None = None, require_injuries: bool = True) -> dict:
     problems = []
     now = now or datetime.now(timezone.utc)
     try:
@@ -51,6 +53,21 @@ def validate(candidate: dict, previous: dict | None = None,
             problems.append(f"market snapshot age is {age_hours:.1f} hours")
     except (KeyError, TypeError, ValueError) as exc:
         problems.append(f"invalid updated_at: {exc}")
+    injury_updated_at = ((candidate.get("sources") or {}).get("injuries") or {}).get(
+        "updated_at"
+    )
+    if require_injuries or injury_updated_at:
+        try:
+            injury_updated = datetime.fromisoformat(
+                injury_updated_at.replace("Z", "+00:00")
+            )
+            injury_age = (
+                now - injury_updated.astimezone(timezone.utc)
+            ).total_seconds() / 3600
+            if injury_age < -1 or injury_age > 30:
+                problems.append(f"injury status age is {injury_age:.1f} hours")
+        except (AttributeError, TypeError, ValueError) as exc:
+            problems.append(f"invalid injury updated_at: {exc}")
 
     players = candidate.get("players") or []
     ids = [row.get("id") for row in players]
@@ -68,17 +85,39 @@ def validate(candidate: dict, previous: dict | None = None,
     position_ranks = {fmt: defaultdict(list) for fmt in FORMATS}
     overall_ranks = {fmt: [] for fmt in FORMATS}
     prop_players = 0
+    tagged_players = 0
+    unavailable_players = 0
     for player in players:
         market = player.get("market") or {}
         if market.get("quality") != "HIGH" or int(market.get("game_book_count") or 0) < 3:
             problems.append(f"{player.get('name')}: unqualified game consensus")
         if market.get("player_components"):
             prop_players += 1
+        availability = player.get("availability") or {}
+        injury_status = availability.get("status")
+        if require_injuries or injury_updated_at:
+            if injury_status not in VISIBLE_INJURY_STATUSES | UNAVAILABLE_INJURY_STATUSES:
+                problems.append(f"{player.get('name')}: invalid injury status")
+            if injury_status != "Active":
+                tagged_players += 1
+            if injury_status in VISIBLE_INJURY_STATUSES:
+                if (availability.get("projection_adjusted")
+                        or availability.get("projection_factor") != 1.0):
+                    problems.append(
+                        f"{player.get('name')}: {injury_status} changed the projection")
+            elif injury_status in UNAVAILABLE_INJURY_STATUSES:
+                unavailable_players += 1
+                if (not availability.get("projection_adjusted")
+                        or availability.get("projection_factor") != 0.0):
+                    problems.append(
+                        f"{player.get('name')}: unavailable status was not applied")
         for fmt, reception_value in FORMATS.items():
             record = (player.get("formats") or {}).get(fmt) or {}
             expected = round(points(player.get("stat_projection") or {}, reception_value), 1)
             if record.get("projected_points") != expected:
                 problems.append(f"{player.get('name')} {fmt}: scoring does not reconcile")
+            if injury_status in UNAVAILABLE_INJURY_STATUSES and record.get("projected_points") != 0.0:
+                problems.append(f"{player.get('name')} {fmt}: unavailable player is not zero")
             overall_ranks[fmt].append(record.get("overall_rank"))
             position_ranks[fmt][player.get("position")].append(record.get("position_rank"))
     if prop_players < 1:
@@ -98,7 +137,9 @@ def validate(candidate: dict, previous: dict | None = None,
         for player in common:
             before = old[player["id"]]["formats"]["half_ppr"]["projected_points"]
             after = player["formats"]["half_ppr"]["projected_points"]
-            if abs(after - before) > 8:
+            current_unavailable = (player.get("availability") or {}).get("status") in UNAVAILABLE_INJURY_STATUSES
+            previous_unavailable = (old[player["id"]].get("availability") or {}).get("status") in UNAVAILABLE_INJURY_STATUSES
+            if abs(after - before) > 8 and not (current_unavailable or previous_unavailable):
                 problems.append(
                     f"{player['name']}: Half-PPR moved {before:.1f} to {after:.1f}")
 
@@ -111,7 +152,8 @@ def validate(candidate: dict, previous: dict | None = None,
         raise ValueError(f"daily fantasy refresh rejected:\n  - {sample}")
     return {
         "players": len(players), "teams": len(teams), "games": len(games),
-        "players_with_props": prop_players,
+        "players_with_props": prop_players, "players_with_injury_tags": tagged_players,
+        "confirmed_unavailable_players": unavailable_players,
     }
 
 

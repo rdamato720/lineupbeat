@@ -141,10 +141,16 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertGreaterEqual(len(self.payload["players"]), 150)
 
     def test_required_weekly_labels_and_empty_states_render(self):
-        for text in ("NFL WEEK 1 DECISION ROOM",
-                     "Who should you start?",
-                     "Weekly projections for Week 1 · Current injuries are not included.",
-                     "Other close Week 1 calls",
+        injuries_ready = bool(
+            self.payload.get("sources", {}).get("injuries", {}).get("updated_at")
+        )
+        injury_copy = (
+            "Weekly projections for Week 1 · Current injury tags included."
+            if injuries_ready else
+            "Weekly projections for Week 1 · Current injuries are not included."
+        )
+        for text in ("NFL WEEK 1 DECISION ROOM", "Who should you start?",
+                     injury_copy, "Other close Week 1 calls",
                      "Decision Room questions"):
             self.assertIn(text, self.html)
         self.assertNotIn("No decisions have been recorded", self.html)

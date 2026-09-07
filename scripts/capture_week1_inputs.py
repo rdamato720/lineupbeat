@@ -32,9 +32,8 @@ LICENSE = {
 }
 BASE = "https://github.com/nflverse/nflverse-data/releases/download"
 
-# The schedule asset contains both requested seasons.  Historical depth and
-# injury snapshots are deliberately omitted: snap and weekly-stat inputs are
-# sufficient for the backtest, while nflverse has no 2026 injury asset.
+# The schedule asset contains both requested seasons. Historical injury data
+# is not needed here; the current ESPN status layer is captured separately.
 CATALOG = (
     ("schedules", "games.csv.gz", "91beff306b6b5dfa8143074a4287202314d6901d304f4f86fff7584c796d8e61"),
     ("stats_player", "stats_player_week_2024.csv.gz", "61fc9a44706522218a4448001706e3fec65ebbb97c1d9c5746ceef364989125d"),
@@ -170,8 +169,9 @@ def capture(cache: Path, refresh_current: bool = False) -> dict:
         "license_review": LICENSE,
         "assets": assets,
         "unavailable": {
-            "current_injuries": (
-                "No injuries_2026 release asset was available in nflverse-data at capture time."
+            "official_final_game_statuses": (
+                "Official final Week 1 game designations are not yet available for every game; "
+                "the current ESPN status layer is captured separately."
             ),
             "odds": (
                 "THE_ODDS_API_KEY was unavailable in every normal local/development environment; "

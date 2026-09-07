@@ -29,6 +29,7 @@ import build_nfl_trusted_season as trusted_season  # noqa: E402
 CACHE = ROOT / ".cache" / "week1-intelligence"
 OUTPUT = ROOT / "data" / "week1" / "2026" / "v1.2"
 DEFAULT_MARKET_INPUT = CACHE / "nfl_market_consensus.json"
+DEFAULT_INJURY_INPUT = CACHE / "espn_injuries.json"
 POSITIONS = ("QB", "RB", "WR", "TE")
 TEAM_ALIASES = {"LA": "LAR", "JAC": "JAX", "WSH": "WAS", "OAK": "LV",
                 "SD": "LAC", "STL": "LAR"}
@@ -135,6 +136,31 @@ def load_market_input(path: Path) -> dict:
     if not payload.get("events") or not payload.get("props"):
         raise ValueError("private NFL market capture is empty")
     return payload
+
+
+def load_injury_input(path: Path) -> dict:
+    payload = json.loads(path.read_text())
+    if payload.get("schema") != "lineupbeat-private-espn-injury-status-v1":
+        raise ValueError("unexpected private ESPN injury schema")
+    if payload.get("season") != 2026 or payload.get("team_count") != 32:
+        raise ValueError("private ESPN injury capture lacks full-league coverage")
+    if len(payload.get("records") or []) < 20:
+        raise ValueError("private ESPN injury capture is unexpectedly small")
+    return payload
+
+
+def injury_index(payload: dict) -> dict[tuple[str, str, str], dict]:
+    index = {}
+    for row in payload["records"]:
+        key = (
+            decision_data.normalize_player_name(row["name"]),
+            team(row["team"]),
+            row["position"],
+        )
+        if key in index:
+            raise ValueError(f"duplicate normalized injury identity: {key}")
+        index[key] = row
+    return index
 
 
 def market_indexes(payload: dict, slate_by_team: dict[str, dict]) -> tuple[dict, dict, dict]:
@@ -469,7 +495,8 @@ def backtest(player24: list[dict], player25: list[dict], schedule: list[dict]) -
             "failure_cases": sorted(failures, key=lambda x: -x["absolute_error"])[:10]}
 
 
-def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
+def build(market_path: Path | None = None,
+          injury_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
     manifest = json.loads((CACHE / "capture_manifest.json").read_text())
     schedule = rows("games.csv.gz")
     slate, slate_by_team = validate_schedule(schedule)
@@ -477,6 +504,11 @@ def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
         os.environ.get("LINEUPBEAT_NFL_MARKET_CONSENSUS", DEFAULT_MARKET_INPUT)
     )
     market_payload = load_market_input(market_path)
+    injury_path = injury_path or Path(
+        os.environ.get("LINEUPBEAT_ESPN_INJURIES", DEFAULT_INJURY_INPUT)
+    )
+    injury_payload = load_injury_input(injury_path)
+    injuries = injury_index(injury_payload)
     market_by_team, props_by_name, event_teams = market_indexes(
         market_payload, slate_by_team
     )
@@ -523,6 +555,9 @@ def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
     excluded = []
     for player in base["players"]:
         club, pid, pos = team(player["team"]), player["id"], player["position"]
+        injury = injuries.get((
+            decision_data.normalize_player_name(player["name"]), club, pos
+        ))
         roster_row = roster[pid]
         if team(roster_row.get("team")) != club:
             raise ValueError(f"team identity mismatch for {player['name']}")
@@ -619,6 +654,14 @@ def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
             applied_prop_lines[component] = round(float(market_row["consensus_line"]), 1)
             prop_book_counts.append(int(market_row["book_count"]))
         stat["receptions"] = min(stat["receptions"], stat["targets"])
+        confirmed_unavailable = bool(
+            injury and injury.get("confirmed_unavailable")
+        )
+        # Q and D are visibility signals, not projection multipliers. Only a
+        # confirmed unavailable status zeroes the player's Week 1 stat line.
+        if confirmed_unavailable:
+            for key in stat:
+                stat[key] = 0.0
         rounded_stat = {key: round(value, 3) for key, value in stat.items()}
         formats = {}
         for fmt, reception_value in (("ppr", 1.0), ("half_ppr", .5), ("non_ppr", 0.0)):
@@ -627,7 +670,7 @@ def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
             "historical_weekly": bool(hist25 or hist24), "opportunity": True,
             "team_volume": True, "current_roster": True,
             "depth_chart": bool(depth), "snap_participation": bool(snaps[pid]),
-            "opponent_matchup": opponent in matchup, "current_injury_report": False,
+            "opponent_matchup": opponent in matchup, "current_injury_report": True,
             "betting_market": True,
         }
         players.append({**{k: player[k] for k in ("id", "slug", "name", "team", "position", "adp", "photo", "team_logo", "history", "history_season")},
@@ -643,7 +686,22 @@ def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
                                  "depth_rank": depth_rank,
                                  "workload_factor": role_factor,
                                  "2025_average_offense_snap_pct": round(mean(snaps[pid]), 3) if snaps[pid] else None},
-                        "availability": {"state": "active_roster", "injury_report": "unavailable"},
+                        "availability": {
+                            "state": ((injury or {}).get("status") or "Active").lower().replace(" ", "_"),
+                            "status": (injury or {}).get("status") or "Active",
+                            "tag": (injury or {}).get("abbreviation"),
+                            "injury_type": (injury or {}).get("injury_type"),
+                            "updated_at": (injury or {}).get("updated_at") or injury_payload["fetched_at"],
+                            "source": "ESPN injury status",
+                            "source_url": injury_payload["source_url"],
+                            "projection_adjusted": confirmed_unavailable,
+                            "projection_factor": 0.0 if confirmed_unavailable else 1.0,
+                            "policy": (
+                                "confirmed unavailable; Week 1 projection set to zero"
+                                if confirmed_unavailable else
+                                "status displayed; Questionable and Doubtful do not change the projection"
+                            ),
+                        },
                         "identity_resolution": {
                             "method": "normalized name plus exact team and position",
                             "stable_gsis_id": pid,
@@ -689,6 +747,10 @@ def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
     market_player_count = sum(
         bool(player["market"]["player_components"]) for player in players
     )
+    injury_player_count = sum(player["availability"]["status"] != "Active"
+                              for player in players)
+    unavailable_player_count = sum(player["availability"]["projection_adjusted"]
+                                   for player in players)
     payload = {"schema_version": "lineupbeat-nfl-week1-v1.2", "mode": "weekly", "season": 2026, "week": 1,
                "updated_at": market_payload["fetched_at"], "players": players, "excluded_players": excluded,
                "population": {
@@ -704,7 +766,10 @@ def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
                        f"private multi-book consensus covers 16 games; qualified exact-player "
                        f"components adjusted {market_player_count} projections; raw quotes and lines are not public"
                    ),
-                   "current_injury_report": "unavailable",
+                   "current_injury_report": (
+                       "current ESPN status tags included; Questionable and Doubtful do not change "
+                       "projections; confirmed Out, IR, or suspended statuses set Week 1 to zero"
+                   ),
                    "dst_model": "unavailable; model population is QB/RB/WR/TE only",
                    "predictive_lift_claim": False,
                    "matchup_context": "2025 prior-season context",
@@ -718,10 +783,13 @@ def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
                            "matchup": {"label": "nflverse 2025 prior-season defensive context", "updated_at": manifest["captured_at"]},
                            "market": {"label": "Private multi-book consensus; aggregate adjustments only",
                                       "updated_at": market_payload["fetched_at"]},
-                           "injuries": {"label": "2026 injury report unavailable", "updated_at": None}},
+                           "injuries": {"label": "ESPN current injury status",
+                                        "updated_at": injury_payload["fetched_at"],
+                                        "url": injury_payload["source_url"]}},
                "methodology": {"season_total_divisor": None,
                                "summary": "Current Week 1 roster and offensive depth chart × historical team weekly volume × blended historical/current-team and reviewed season-prior player shares; historical and season-prior efficiencies; bounded 2025 opponent and venue adjustments; conservatively shrunk private multi-book game and exact-player consensus inputs.",
                                "market_policy": "High-quality consensus requires at least three books. Team implied-total effects are capped and shrunk to 25%; exact player components are capped to within 25% of the independent model and blended at 25%. Anytime-touchdown prices do not move projections because a one-sided price cannot be safely de-vigged. Raw quotes, prices, lines, and sportsbook identities are never published.",
+                               "injury_policy": "Current status tags are displayed for context. Questionable and Doubtful carry a 1.0 projection factor. Only confirmed Out, Injured Reserve, or suspended statuses set the Week 1 projection to zero.",
                                "scoring": "0.04/pass yard, 4/pass TD, -2/interception, 0.1/rush or receiving yard, 6/rush or receiving TD, -2/fumble lost, plus format reception points.",
                                "recommendation_guardrail": "A point difference alone cannot create an unqualified recommendation."}}
     matchup_payload = {"schema_version": "lineupbeat-nfl-matchup-2025-v1", "season": 2025,
@@ -734,7 +802,7 @@ def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
                   "license_review": manifest["license_review"], "assets": manifest["assets"],
                   "provider_requests": {
                       "odds": 1, "player_props": int(market_payload["prop_event_count"]),
-                      "model_api": 0, "cost_usd": None,
+                      "injuries": 1, "model_api": 0, "cost_usd": None,
                       "provider_credits_used": market_payload.get("credits_used"),
                       "provider_credits_remaining": market_payload.get("credits_remaining"),
                       "raw_market_data_public": False,
@@ -744,6 +812,13 @@ def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
                       "captured_prop_rows": len(market_payload["props"]),
                       "qualified_player_projections": market_player_count,
                       "captured_at": market_payload["fetched_at"],
+                  },
+                  "availability_coverage": {
+                      "teams": injury_payload["team_count"],
+                      "captured_status_rows": len(injury_payload["records"]),
+                      "matched_projected_players": injury_player_count,
+                      "confirmed_unavailable_players": unavailable_player_count,
+                      "captured_at": injury_payload["fetched_at"],
                   },
                   "unavailable": {**manifest["unavailable"],
                                   "odds": "available privately; raw market data is intentionally not published"}}
@@ -759,8 +834,11 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=OUTPUT)
     parser.add_argument("--market-input", type=Path, default=None)
+    parser.add_argument("--injury-input", type=Path, default=None)
     args = parser.parse_args()
-    projection, matchup, backtest_result, provenance = build(args.market_input)
+    projection, matchup, backtest_result, provenance = build(
+        args.market_input, args.injury_input
+    )
     write_json(args.output / "nfl_week1_projections.json", projection)
     write_json(args.output / "nfl_matchup_context_2025.json", matchup)
     write_json(args.output / "nfl_backtest_2025.json", backtest_result)

@@ -66,7 +66,7 @@ def public_model() -> dict:
             "marketState": player["market"]["state"],
             "marketAdjustedComponents": player["market"]["player_components"],
             "marketConsensus": player["market"]["consensus_lines"],
-            "availability": "Current injury report unavailable",
+            "availability": player["availability"],
             "photo": player.get("photo"),
             "teamLogo": player["team_logo"],
         })
@@ -80,7 +80,7 @@ def public_model() -> dict:
         "players": players,
         "limitations": {
             "sportsbookEvidence": source["limitations"]["sportsbook_evidence"],
-            "currentInjuryReport": "unavailable",
+            "currentInjuryReport": source["limitations"]["current_injury_report"],
             "dstModel": "unsupported; no projection is guessed",
             "matchupContext": "2025 prior-season context",
             "predictiveLiftClaim": False,
@@ -91,6 +91,7 @@ def public_model() -> dict:
             "matchup": source["sources"]["matchup"],
             "seasonPrior": source["sources"]["season_prior"],
             "market": source["sources"]["market"],
+            "injuries": source["sources"]["injuries"],
         },
     }
 
@@ -102,6 +103,14 @@ def render_page(model: dict) -> str:
     chase_ppr = chase["formats"]["ppr"]
     nacua_ppr = nacua["formats"]["ppr"]
     edge = chase_ppr["projectedPoints"] - nacua_ppr["projectedPoints"]
+    injuries_available = bool(model.get("sources", {}).get("injuries", {}).get("updated_at"))
+    injury_guardrail = (
+        "Questionable and Doubtful tags do not lower projections. Only a confirmed "
+        "unavailable status sets a Week 1 projection to zero. D/ST remains unsupported."
+        if injuries_available else
+        "Current injury status is not loaded yet. Check player status before kickoff. "
+        "D/ST remains unsupported."
+    )
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
@@ -121,7 +130,7 @@ def render_page(model: dict) -> str:
 <section class="mt-team-card" id="mt-team" hidden><div class="mt-team-title"><div><small>Connected league</small><h3 id="mt-team-name"></h3><p id="mt-league-name"></p></div><p id="mt-league-meta"></p></div><div id="mt-outlook"></div><div class="mt-team-block"><div class="mt-team-block-head"><small>Lineup decisions</small><h3>Changes that clear the bar</h3></div><div class="mt-decisions" id="mt-decisions"></div></div><div class="mt-team-block"><div class="mt-team-block-head"><small>Roster intelligence</small><h3>Week 1 evidence by player</h3></div><div id="mt-roster"></div></div></section>
 <div class="mt-provider-grid"><article class="mt-provider active"><small>Supported connection</small><h3>ESPN</h3><p>Roster capture plus multi-season league-history import.</p><strong>Browser-local</strong></article><article class="mt-provider active"><small>Supported connection</small><h3>Yahoo</h3><p>Roster capture plus authorized multi-season league-history import.</p><strong>Browser-local</strong></article><article class="mt-provider active"><small>Supported connection</small><h3>CBS</h3><p>Roster capture plus one-visible-season-at-a-time league-history import.</p><strong>Browser-local</strong></article></div>
 </section>
-<section class="mt-section"><div class="mt-section-head"><div><small>Guardrails 02</small><h2>What this model does not claim</h2></div></div><div class="mt-proof"><article><h3>No predictive-lift claim</h3><p>This model has not established improvement over a validated baseline.</p></article><article><h3>No independent corroboration</h3><p>Projection, opportunity and matchup context come from the same Lineup Beat Week 1 model.</p></article><article><h3>No invented availability</h3><p>Current injury and sportsbook evidence are unavailable. D/ST is unsupported rather than guessed.</p></article></div></section></main>
+<section class="mt-section"><div class="mt-section-head"><div><small>Guardrails 02</small><h2>What this model does not claim</h2></div></div><div class="mt-proof"><article><h3>No predictive-lift claim</h3><p>This model has not established improvement over a validated baseline.</p></article><article><h3>No independent corroboration</h3><p>Projection, opportunity and matchup context come from the same Lineup Beat Week 1 model.</p></article><article><h3>Conservative injury handling</h3><p>{injury_guardrail}</p></article></div></section></main>
 {seo.site_footer()}
 <script src="/my-team/league-adapter.js"></script><script src="/my-team/espn-adapter.js"></script><script src="/my-team/my-team.js"></script>
 </body></html>'''

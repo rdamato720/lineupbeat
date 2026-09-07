@@ -133,6 +133,8 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
         self.assertEqual(calls["provider_credits_used"]
                          + calls["provider_credits_remaining"], 500)
         self.assertFalse(calls["raw_market_data_public"])
+        if self.payload.get("sources", {}).get("injuries", {}).get("updated_at"):
+            self.assertEqual(calls["injuries"], 1)
         self.assertEqual(len(self.provenance["assets"]), 11)
         self.assertEqual(self.provenance["license_review"]["spdx"], "CC-BY-4.0")
         self.assertTrue(self.provenance["license_review"]["attribution_required"])
@@ -170,9 +172,17 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
         html = build_decision_room.render(self.payload)
         for text in ("Our Week 1 projection", "What the market says", "Opponent matchup",
                      "Expected opportunity", "Availability", "Data coverage",
-                     "Evidence agreement", "current injury reports are unavailable",
-                     "private consensus included", "Pass TDs", "Rush yards"):
+                     "Evidence agreement", "private consensus included", "Pass TDs",
+                     "Rush yards"):
             self.assertIn(text, html)
+        injuries_ready = bool(
+            self.payload.get("sources", {}).get("injuries", {}).get("updated_at")
+        )
+        self.assertIn(
+            "Q and D tags do not lower projections" if injuries_ready
+            else "Current Week 1 injury status is unavailable",
+            html,
+        )
         self.assertNotIn("Signals are capped and blended at 25%", html)
         self.assertNotIn("zero odds requests were made", html)
         self.assertNotIn("Odds were not requested", html)
@@ -187,6 +197,28 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
                       self.payload["limitations"]["sportsbook_evidence"])
         self.assertEqual(self.payload["limitations"]["matchup_context"],
                          "2025 prior-season context")
+
+    def test_current_injury_policy_is_conservative_when_available(self):
+        if not self.payload.get("sources", {}).get("injuries", {}).get("updated_at"):
+            self.skipTest("the committed release predates current injury capture")
+        tagged = []
+        unavailable = []
+        for player in self.payload["players"]:
+            availability = player["availability"]
+            self.assertNotIn("comment", availability)
+            if availability["status"] in {"Questionable", "Doubtful"}:
+                tagged.append(player)
+                self.assertEqual(availability["projection_factor"], 1.0)
+                self.assertFalse(availability["projection_adjusted"])
+            if availability["status"] in {"Out", "Injured Reserve", "Suspension"}:
+                unavailable.append(player)
+                self.assertEqual(availability["projection_factor"], 0.0)
+                self.assertTrue(availability["projection_adjusted"])
+                self.assertTrue(all(
+                    row["projected_points"] == 0.0
+                    for row in player["formats"].values()
+                ))
+        self.assertTrue(tagged)
 
     def test_browser_engine_uses_weekly_call_and_flip_boundaries(self):
         html = build_decision_room.render(self.payload)

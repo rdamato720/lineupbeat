@@ -24,7 +24,12 @@ class DailyFantasyRefreshTests(unittest.TestCase):
     def test_current_release_satisfies_publication_contract(self):
         updated = validator.datetime.fromisoformat(
             self.payload["updated_at"].replace("Z", "+00:00"))
-        result = validator.validate(self.payload, self.payload, now=updated)
+        result = validator.validate(
+            self.payload, self.payload, now=updated,
+            require_injuries=bool(
+                self.payload.get("sources", {}).get("injuries", {}).get("updated_at")
+            ),
+        )
         self.assertEqual(result["teams"], 32)
         self.assertEqual(result["games"], 16)
         self.assertGreaterEqual(result["players_with_props"], 50)
@@ -36,7 +41,8 @@ class DailyFantasyRefreshTests(unittest.TestCase):
         updated = validator.datetime.fromisoformat(
             candidate["updated_at"].replace("Z", "+00:00"))
         with self.assertRaisesRegex(ValueError, "31 NFL teams"):
-            validator.validate(candidate, self.payload, now=updated)
+            validator.validate(candidate, self.payload, now=updated,
+                               require_injuries=False)
 
     def test_private_sportsbook_identity_is_rejected(self):
         candidate = copy.deepcopy(self.payload)
@@ -44,7 +50,8 @@ class DailyFantasyRefreshTests(unittest.TestCase):
         updated = validator.datetime.fromisoformat(
             candidate["updated_at"].replace("Z", "+00:00"))
         with self.assertRaisesRegex(ValueError, "private sportsbook detail"):
-            validator.validate(candidate, self.payload, now=updated)
+            validator.validate(candidate, self.payload, now=updated,
+                               require_injuries=False)
 
     def test_current_asset_requires_expected_schema_and_population(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -76,6 +83,7 @@ class DailyFantasyRefreshTests(unittest.TestCase):
         self.assertNotIn('git push origin "HEAD:$GITHUB_REF_NAME"', workflow)
         self.assertEqual(workflow.count("gh workflow run dev-site.yml"), 1)
         self.assertIn('if: steps.publish.outputs.changed == \'true\'', workflow)
+        self.assertIn("python scripts/espn_injury_inputs.py", workflow)
 
 
 if __name__ == "__main__":

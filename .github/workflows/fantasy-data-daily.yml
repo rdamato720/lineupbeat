@@ -52,6 +52,7 @@ jobs:
           python scripts/test_odds_inputs.py
           python scripts/test_daily_fantasy_refresh.py
           python scripts/test_week1_intelligence.py
+          python scripts/test_espn_injury_inputs.py
 
       - name: Refresh private markets and build candidate
         env:
@@ -65,6 +66,7 @@ jobs:
             --prop-horizon-hours 36 \
             --export-nfl-consensus \
               .cache/week1-intelligence/nfl_market_consensus.json
+          python scripts/espn_injury_inputs.py
           python scripts/capture_week1_inputs.py --refresh-current
           cp data/week1/2026/v1.2/nfl_week1_projections.json \
             /tmp/nfl-weekly-last-good.json

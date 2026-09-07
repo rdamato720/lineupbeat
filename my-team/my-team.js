@@ -22,9 +22,18 @@
     const change=Math.round((Number(player.matchupFactor)-1)*100),factor=change===0?'neutral':`${change>0?'+':'−'}${Math.abs(change)}% model factor`;
     return `${player.matchupLabel||'2025 prior-season context'} · ${factor}`;
   }
-  function statusBadge(player){
-    const raw=String(player&&player.providerStatus||'').toUpperCase(),label=statusLabels[raw];
-    return label?`<span class="mt-status-badge" aria-label="Provider status: ${escape(label)}">${escape(label)}</span>`:'';
+  function statusBadge(player,model){
+    const modelTag=model&&model.availability&&model.availability.tag;
+    const raw=String(modelTag||player&&player.providerStatus||'').toUpperCase(),label=statusLabels[raw]||raw;
+    if(!label)return'';
+    const injury=modelTag&&model.availability.injury_type?` · ${model.availability.injury_type}`:'',source=modelTag?'Current injury status':'Provider status';
+    return `<span class="mt-status-badge" aria-label="${escape(source)}: ${escape(label+injury)}">${escape(label)}</span>`;
+  }
+  function availability(player){
+    const a=player&&player.availability||{},status=a.status||'Active';
+    if(status==='Active')return`${player.name}: no current injury tag.`;
+    const injury=a.injury_type?` (${a.injury_type})`:'';
+    return`${player.name}: ${status}${injury}. ${a.projection_adjusted?'Confirmed unavailable; Week 1 projection is zero.':'Projection unchanged.'}`;
   }
   function comparisonUrl(a,b,format){
     const query=new URLSearchParams({a:a.id,format});if(b)query.set('b',b.id);
@@ -34,16 +43,16 @@
     const model=modelPlayer(player),display=LineupBeatLeagueAdapter.displayIdentity(player),role=player.lineupGroup==='starter'?'Starter':player.lineupGroup==='bench'?'Bench':'Reserve';
     if(!model){
       const reason=player.unresolvedReason||'Validated Week 1 evidence is unavailable.';
-      return `<article class="mt-player mt-player-unavailable"><div class="mt-player-art"></div><div><div class="mt-player-top"><small>${escape(role)} · ${escape(player.lineupSlot)} · ${escape(display.position||'Unknown')}</small>${statusBadge(player)}</div><h3>${escape(display.name)}</h3><p class="mt-player-projection">Projection unavailable</p><p>${escape(reason)}</p></div></article>`;
+      return `<article class="mt-player mt-player-unavailable"><div class="mt-player-art"></div><div><div class="mt-player-top"><small>${escape(role)} · ${escape(player.lineupSlot)} · ${escape(display.position||'Unknown')}</small>${statusBadge(player,null)}</div><h3>${escape(display.name)}</h3><p class="mt-player-projection">Projection unavailable</p><p>${escape(reason)}</p></div></article>`;
     }
     const points=projection(model,format),usage=opportunity(model),context=matchup(model);
-    return `<article class="mt-player"><div class="mt-player-art"><img src="${escape(model.photo||model.teamLogo)}" alt="" onerror="this.src='${escape(model.teamLogo)}'"><img class="mt-logo" src="${escape(model.teamLogo)}" alt=""></div><div><div class="mt-player-top"><small>${escape(role)} · ${escape(player.lineupSlot)} · ${escape(display.position)}</small>${statusBadge(player)}</div><h3>${escape(display.name)}</h3><div class="mt-player-projection"><strong>${points==null?'—':points.toFixed(1)}</strong><span>Week 1 ${escape(labels[format])} pts</span></div><p class="mt-player-context"><b>${escape(opponent(model))}</b>${context?`<span>${escape(context)}</span>`:''}</p>${usage?`<p class="mt-player-usage">${escape(usage)}</p>`:''}<a class="mt-player-link" href="${escape(comparisonUrl(model,null,format))}">Open full player comparison</a></div></article>`;
+    return `<article class="mt-player"><div class="mt-player-art"><img src="${escape(model.photo||model.teamLogo)}" alt="" onerror="this.src='${escape(model.teamLogo)}'"><img class="mt-logo" src="${escape(model.teamLogo)}" alt=""></div><div><div class="mt-player-top"><small>${escape(role)} · ${escape(player.lineupSlot)} · ${escape(display.position)}</small>${statusBadge(player,model)}</div><h3>${escape(display.name)}</h3><div class="mt-player-projection"><strong>${points==null?'—':points.toFixed(1)}</strong><span>Week 1 ${escape(labels[format])} pts</span></div><p class="mt-player-context"><b>${escape(opponent(model))}</b>${context?`<span>${escape(context)}</span>`:''}</p>${usage?`<p class="mt-player-usage">${escape(usage)}</p>`:''}<a class="mt-player-link" href="${escape(comparisonUrl(model,null,format))}">Open full player comparison</a></div></article>`;
   }
   function decisionCard(row,format){
     const bench=modelPlayer(row.bench),starter=modelPlayer(row.starter),gap=Math.abs(row.gap).toFixed(1),slot=row.starter.lineupSlot;
     const reason=`${bench.name} is eligible for the ${slot} slot and projects ${gap} points higher (${row.benchPoints.toFixed(1)} to ${row.starterPoints.toFixed(1)}), clearing the ${row.classification} threshold.`;
     const benchUsage=opportunity(bench),starterUsage=opportunity(starter);
-    return `<article class="mt-decision"><div class="mt-decision-head"><small>Actionable ${escape(row.classification)} · ${escape(labels[format])}</small><h3>Start ${escape(bench.name)} over ${escape(starter.name)}</h3><p>${escape(reason)}</p></div><div class="mt-versus"><div><img src="${escape(bench.photo||bench.teamLogo)}" alt=""><b>${escape(bench.name)}</b><span>Bench · ${row.benchPoints.toFixed(1)} pts ${statusBadge(row.bench)}</span></div><i>over</i><div><img src="${escape(starter.photo||starter.teamLogo)}" alt=""><b>${escape(starter.name)}</b><span>Starter · ${row.starterPoints.toFixed(1)} pts ${statusBadge(row.starter)}</span></div></div><div class="mt-evidence"><p><b>Why change</b>${escape(reason)}</p><p><b>Week 1 opponents</b>${escape(bench.name)} ${escape(opponent(bench))}; ${escape(starter.name)} ${escape(opponent(starter))}.</p>${benchUsage||starterUsage?`<p><b>Modeled opportunity</b>${escape(bench.name)}: ${escape(benchUsage||'unavailable')}. ${escape(starter.name)}: ${escape(starterUsage||'unavailable')}.</p>`:''}<p><b>Matchup context</b>${escape(matchup(bench)||'Unavailable')}; ${escape(matchup(starter)||'Unavailable')}.</p><p><b>Availability limits</b>Current injury reports and sportsbook evidence are unavailable.</p></div><a class="mt-button secondary mt-compare" href="${escape(comparisonUrl(bench,starter,format))}">Open full comparison</a><p class="mt-caution">One Lineup Beat model supplies these projection, opportunity and 2025 context signals. They are not independent corroboration, predictive lift or certainty.</p></article>`;
+    return `<article class="mt-decision"><div class="mt-decision-head"><small>Actionable ${escape(row.classification)} · ${escape(labels[format])}</small><h3>Start ${escape(bench.name)} over ${escape(starter.name)}</h3><p>${escape(reason)}</p></div><div class="mt-versus"><div><img src="${escape(bench.photo||bench.teamLogo)}" alt=""><b>${escape(bench.name)}</b><span>Bench · ${row.benchPoints.toFixed(1)} pts ${statusBadge(row.bench,bench)}</span></div><i>over</i><div><img src="${escape(starter.photo||starter.teamLogo)}" alt=""><b>${escape(starter.name)}</b><span>Starter · ${row.starterPoints.toFixed(1)} pts ${statusBadge(row.starter,starter)}</span></div></div><div class="mt-evidence"><p><b>Why change</b>${escape(reason)}</p><p><b>Week 1 opponents</b>${escape(bench.name)} ${escape(opponent(bench))}; ${escape(starter.name)} ${escape(opponent(starter))}.</p>${benchUsage||starterUsage?`<p><b>Modeled opportunity</b>${escape(bench.name)}: ${escape(benchUsage||'unavailable')}. ${escape(starter.name)}: ${escape(starterUsage||'unavailable')}.</p>`:''}<p><b>Matchup context</b>${escape(matchup(bench)||'Unavailable')}; ${escape(matchup(starter)||'Unavailable')}.</p><p><b>Availability</b>${escape(availability(bench))} ${escape(availability(starter))} Questionable and Doubtful tags do not lower projections.</p></div><a class="mt-button secondary mt-compare" href="${escape(comparisonUrl(bench,starter,format))}">Open full comparison</a><p class="mt-caution">One Lineup Beat model supplies these projection, opportunity and 2025 context signals. They are not independent corroboration, predictive lift or certainty.</p></article>`;
   }
   function teamOutlook(league,format,actions){
     const starters=league.roster.starters.map(player=>({player,model:modelPlayer(player)})).filter(row=>row.model&&projection(row.model,format)!=null);

@@ -44,6 +44,7 @@ jobs:
           python scripts/test_college_week1_market_context.py
           python scripts/test_college_decision_room.py
           python scripts/test_week1_intelligence.py
+          python scripts/test_espn_injury_inputs.py
           python scripts/test_my_team.py
           python scripts/test_league_history.py
           node scripts/test_league_history_publishing.mjs

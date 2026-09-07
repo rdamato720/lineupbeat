@@ -25,9 +25,8 @@ WEEKLY_RECOMMENDATION_STATE = {
     "label": "Projection comparison only",
     "reason": (
         "Compare the complete Week 1 forecast and supporting context. This "
-        "release does not issue a lineup recommendation because current injury "
-        "reports are unavailable and the deployed formula lacks a qualifying "
-        "out-of-sample validation result."
+        "release does not issue a lineup recommendation because the deployed "
+        "formula lacks a qualifying out-of-sample validation result."
     ),
 }
 

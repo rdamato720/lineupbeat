@@ -159,7 +159,8 @@ async function main(){
   const myTeam=fs.readFileSync('my-team/my-team.js','utf8');
   assert(myTeam.includes('display=LineupBeatLeagueAdapter.displayIdentity(player)'));
   assert(myTeam.includes("Q:'Questionable'"));
-  assert(myTeam.includes('aria-label="Provider status: ${escape(label)}"'));
+  assert(myTeam.includes('modelTag||player&&player.providerStatus'));
+  assert(myTeam.includes("modelTag?'Current injury status':'Provider status'"));
   assert(myTeam.includes('Week 1 ${escape(labels[format])} pts'));
   assert(myTeam.includes('2025 prior-season context'));
   assert(myTeam.includes('Open full player comparison'));
