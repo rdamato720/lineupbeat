@@ -1,0 +1,107 @@
+name: daily fantasy data refresh
+
+on:
+  schedule:
+    # 6:00 a.m. Eastern during daylight-saving time; 5:00 a.m. in winter.
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+
+concurrency:
+  # The odds history lives in beatwire.db, which is also used by refresh.yml.
+  # Queue rather than cancel so a paid pull is always saved before another run.
+  group: wire-runtime
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  # GitHub loads scheduled workflows from the default branch. Keep this file
+  # there as the scheduler while the product remains in development, but
+  # refresh and publish only the protected development source. That push
+  # triggers dev-site.yml exactly once.
+  FANTASY_DATA_BRANCH: develop
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ env.FANTASY_DATA_BRANCH }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - uses: actions/cache/restore@v4
+        with:
+          path: beatwire.db
+          key: beatwire-db-${{ github.run_id }}
+          restore-keys: beatwire-db-
+
+      - name: Validate the daily refresh boundary
+        run: |
+          python scripts/test_odds_inputs.py
+          python scripts/test_daily_fantasy_refresh.py
+          python scripts/test_week1_intelligence.py
+
+      - name: Refresh private markets and build candidate
+        env:
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+        run: |
+          test -n "$THE_ODDS_API_KEY"
+          python scripts/odds_inputs.py --sports ncaaf \
+            --max-age-hours 23 --max-prop-events-per-sport 0
+          python scripts/odds_inputs.py --sports nfl --include-props \
+            --max-age-hours 23 --max-prop-events-per-sport 16 \
+            --prop-horizon-hours 36 \
+            --export-nfl-consensus \
+              .cache/week1-intelligence/nfl_market_consensus.json
+          python scripts/capture_week1_inputs.py --refresh-current
+          cp data/week1/2026/v1.2/nfl_week1_projections.json \
+            /tmp/nfl-weekly-last-good.json
+          python scripts/build_week1_intelligence.py
+          python scripts/validate_daily_fantasy_refresh.py \
+            data/week1/2026/v1.2/nfl_week1_projections.json \
+            --previous /tmp/nfl-weekly-last-good.json
+
+      - name: Verify generated readers
+        run: |
+          python scripts/test_decision_room.py
+          python scripts/test_my_team.py
+          python scripts/test_comparison_tool.py
+          python scripts/test_odds_inputs.py
+          python scripts/test_daily_fantasy_refresh.py
+
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: beatwire.db
+          key: beatwire-db-${{ github.run_id }}
+
+      - name: Publish validated data release
+        id: publish
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/week1/2026/v1.2/nfl_week1_projections.json \
+            data/week1/2026/v1.2/nfl_matchup_context_2025.json \
+            data/week1/2026/v1.2/nfl_backtest_2025.json \
+            data/week1/2026/v1.2/provenance.json
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "Refresh daily fantasy projections and ranks"
+          git pull --rebase origin "$FANTASY_DATA_BRANCH"
+          git push origin "HEAD:$FANTASY_DATA_BRANCH"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # No explicit dispatch is needed. The validated push to develop starts
+      # the existing development build and deployment workflow.
