@@ -14,7 +14,13 @@ concurrency:
 
 permissions:
   contents: write
-  actions: write
+
+env:
+  # GitHub loads scheduled workflows from the default branch. Keep this file
+  # there as the scheduler while the product remains in development, but
+  # refresh and publish only the protected development source. That push
+  # triggers dev-site.yml exactly once.
+  FANTASY_DATA_BRANCH: develop
 
 jobs:
   refresh:
@@ -24,6 +30,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ env.FANTASY_DATA_BRANCH }}
 
       - uses: actions/setup-python@v5
         with:
@@ -92,17 +99,9 @@ jobs:
             exit 0
           fi
           git commit -m "Refresh daily fantasy projections and ranks"
-          git pull --rebase origin "$GITHUB_REF_NAME"
-          git push origin "HEAD:$GITHUB_REF_NAME"
+          git pull --rebase origin "$FANTASY_DATA_BRANCH"
+          git push origin "HEAD:$FANTASY_DATA_BRANCH"
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
-      - name: Rebuild and deploy the changed site
-        if: steps.publish.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          if [ "$GITHUB_REF_NAME" = "main" ]; then
-            gh workflow run refresh.yml --ref main -f skip_fetch=true
-          else
-            gh workflow run dev-site.yml --ref "$GITHUB_REF_NAME"
-          fi
+      # No explicit dispatch is needed. The validated push to develop starts
+      # the existing development build and deployment workflow.
