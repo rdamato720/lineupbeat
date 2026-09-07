@@ -14,6 +14,7 @@ import gzip
 import hashlib
 import json
 import math
+import os
 import statistics
 import sys
 from collections import defaultdict
@@ -26,10 +27,36 @@ import decision_data  # noqa: E402
 import build_nfl_trusted_season as trusted_season  # noqa: E402
 
 CACHE = ROOT / ".cache" / "week1-intelligence"
-OUTPUT = ROOT / "data" / "week1" / "2026" / "v1.1"
+OUTPUT = ROOT / "data" / "week1" / "2026" / "v1.2"
+DEFAULT_MARKET_INPUT = CACHE / "nfl_market_consensus.json"
 POSITIONS = ("QB", "RB", "WR", "TE")
 TEAM_ALIASES = {"LA": "LAR", "JAC": "JAX", "WSH": "WAS", "OAK": "LV",
                 "SD": "LAC", "STL": "LAR"}
+NFL_TEAM_NAMES = {
+    "Arizona Cardinals": "ARI", "Atlanta Falcons": "ATL",
+    "Baltimore Ravens": "BAL", "Buffalo Bills": "BUF",
+    "Carolina Panthers": "CAR", "Chicago Bears": "CHI",
+    "Cincinnati Bengals": "CIN", "Cleveland Browns": "CLE",
+    "Dallas Cowboys": "DAL", "Denver Broncos": "DEN",
+    "Detroit Lions": "DET", "Green Bay Packers": "GB",
+    "Houston Texans": "HOU", "Indianapolis Colts": "IND",
+    "Jacksonville Jaguars": "JAX", "Kansas City Chiefs": "KC",
+    "Las Vegas Raiders": "LV", "Los Angeles Chargers": "LAC",
+    "Los Angeles Rams": "LAR", "Miami Dolphins": "MIA",
+    "Minnesota Vikings": "MIN", "New England Patriots": "NE",
+    "New Orleans Saints": "NO", "New York Giants": "NYG",
+    "New York Jets": "NYJ", "Philadelphia Eagles": "PHI",
+    "Pittsburgh Steelers": "PIT", "San Francisco 49ers": "SF",
+    "Seattle Seahawks": "SEA", "Tampa Bay Buccaneers": "TB",
+    "Tennessee Titans": "TEN", "Washington Commanders": "WAS",
+}
+PROP_COMPONENTS = {
+    "player_pass_yds": "passing_yards",
+    "player_pass_tds": "passing_tds",
+    "player_rush_yds": "rushing_yards",
+    "player_receptions": "receptions",
+    "player_reception_yds": "receiving_yards",
+}
 STAT_KEYS = ("attempts", "passing_yards", "passing_tds", "passing_interceptions",
              "carries", "rushing_yards", "rushing_tds", "receptions", "targets",
              "receiving_yards", "receiving_tds", "fumbles_lost_total")
@@ -97,6 +124,75 @@ def depth_workload_factor(position: str, rank: int | None) -> float:
     }
     table = by_position[position]
     return table.get(rank, min(table.values()))
+
+
+def load_market_input(path: Path) -> dict:
+    payload = json.loads(path.read_text())
+    if payload.get("schema") != "lineupbeat-private-nfl-market-consensus-v1":
+        raise ValueError("unexpected private NFL market schema")
+    if payload.get("prop_event_count") != 16:
+        raise ValueError("private NFL market capture does not cover all 16 Week 1 games")
+    if not payload.get("events") or not payload.get("props"):
+        raise ValueError("private NFL market capture is empty")
+    return payload
+
+
+def market_indexes(payload: dict, slate_by_team: dict[str, dict]) -> tuple[dict, dict, dict]:
+    """Resolve Week 1 market rows without exposing raw quotes or fuzzy identity."""
+    by_team = {}
+    event_teams = {}
+    for row in payload["events"]:
+        home = NFL_TEAM_NAMES.get(row.get("home_team"))
+        away = NFL_TEAM_NAMES.get(row.get("away_team"))
+        if not home or not away:
+            continue
+        if (home not in slate_by_team or away not in slate_by_team
+                or slate_by_team[home]["opponent"] != away
+                or slate_by_team[away]["opponent"] != home):
+            continue
+        if row.get("quality") != "HIGH" or min(
+                int(row.get("total_book_count") or 0),
+                int(row.get("spread_book_count") or 0)) < 3:
+            continue
+        event_teams[row["event_id"]] = {home, away}
+        by_team[home] = {
+            "event_id": row["event_id"], "game_total": row.get("game_total"),
+            "team_spread": row.get("home_spread"),
+            "team_implied_total": row.get("home_implied_total"),
+            "book_count": min(row["total_book_count"], row["spread_book_count"]),
+            "quality": row["quality"],
+        }
+        by_team[away] = {
+            "event_id": row["event_id"], "game_total": row.get("game_total"),
+            "team_spread": -float(row["home_spread"]) if row.get("home_spread") is not None else None,
+            "team_implied_total": row.get("away_implied_total"),
+            "book_count": min(row["total_book_count"], row["spread_book_count"]),
+            "quality": row["quality"],
+        }
+    if len(by_team) != 32 or len(event_teams) != 16:
+        raise ValueError(f"private market Week 1 coverage is {len(event_teams)} games/{len(by_team)} teams")
+
+    props = defaultdict(list)
+    for row in payload["props"]:
+        if row.get("event_id") not in event_teams:
+            continue
+        if (row.get("market_key") not in PROP_COMPONENTS
+                or row.get("consensus_line") is None
+                or row.get("quality") != "HIGH"
+                or int(row.get("book_count") or 0) < 3):
+            continue
+        key = decision_data.normalize_player_name(row.get("player_name") or "")
+        if key:
+            props[key].append(row)
+    return by_team, props, event_teams
+
+
+def blend_market_component(model_value: float, market_line: float) -> float:
+    """Apply a conservative 25% blend after bounding the market anchor."""
+    if model_value <= 0 or market_line < 0:
+        return model_value
+    bounded = clamp(float(market_line), model_value * .75, model_value * 1.25)
+    return model_value * .75 + bounded * .25
 
 
 def season_prior_rows() -> list[dict]:
@@ -373,10 +469,21 @@ def backtest(player24: list[dict], player25: list[dict], schedule: list[dict]) -
             "failure_cases": sorted(failures, key=lambda x: -x["absolute_error"])[:10]}
 
 
-def build() -> tuple[dict, dict, dict, dict]:
+def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
     manifest = json.loads((CACHE / "capture_manifest.json").read_text())
     schedule = rows("games.csv.gz")
     slate, slate_by_team = validate_schedule(schedule)
+    market_path = market_path or Path(
+        os.environ.get("LINEUPBEAT_NFL_MARKET_CONSENSUS", DEFAULT_MARKET_INPUT)
+    )
+    market_payload = load_market_input(market_path)
+    market_by_team, props_by_name, event_teams = market_indexes(
+        market_payload, slate_by_team
+    )
+    implied_median = statistics.median(
+        float(row["team_implied_total"]) for row in market_by_team.values()
+        if row.get("team_implied_total") is not None
+    )
     p24, p25 = rows("stats_player_week_2024.csv.gz"), rows("stats_player_week_2025.csv.gz")
     t24, t25 = rows("stats_team_week_2024.csv.gz"), rows("stats_team_week_2025.csv.gz")
     roster_rows, depth_rows = rows("roster_2026.csv.gz"), rows("depth_charts_2026.csv.gz")
@@ -485,6 +592,31 @@ def build() -> tuple[dict, dict, dict, dict]:
         for key in ("passing_yards", "passing_tds", "rushing_yards", "rushing_tds",
                     "receiving_yards", "receiving_tds"):
             stat[key] *= matchup_factor * venue_factor
+        game_market = market_by_team[club]
+        # Team scoring environment is informative but noisy. Shrink its
+        # implied-total signal to 25% and apply it only to touchdown rates.
+        raw_team_factor = float(game_market["team_implied_total"]) / implied_median
+        team_market_factor = 1 + (clamp(raw_team_factor, .85, 1.15) - 1) * .25
+        for key in ("passing_tds", "rushing_tds", "receiving_tds"):
+            stat[key] *= team_market_factor
+
+        applied_props = []
+        prop_book_counts = []
+        seen_components = set()
+        for market_row in props_by_name.get(
+                decision_data.normalize_player_name(player["name"]), []):
+            if club not in event_teams.get(market_row["event_id"], set()):
+                continue
+            component = PROP_COMPONENTS[market_row["market_key"]]
+            if component in seen_components:
+                raise ValueError(f"duplicate qualified prop component for {player['name']}: {component}")
+            seen_components.add(component)
+            stat[component] = blend_market_component(
+                stat[component], float(market_row["consensus_line"])
+            )
+            applied_props.append(component)
+            prop_book_counts.append(int(market_row["book_count"]))
+        stat["receptions"] = min(stat["receptions"], stat["targets"])
         rounded_stat = {key: round(value, 3) for key, value in stat.items()}
         formats = {}
         for fmt, reception_value in (("ppr", 1.0), ("half_ppr", .5), ("non_ppr", 0.0)):
@@ -494,7 +626,7 @@ def build() -> tuple[dict, dict, dict, dict]:
             "team_volume": True, "current_roster": True,
             "depth_chart": bool(depth), "snap_participation": bool(snaps[pid]),
             "opponent_matchup": opponent in matchup, "current_injury_report": False,
-            "betting_market": False,
+            "betting_market": True,
         }
         players.append({**{k: player[k] for k in ("id", "slug", "name", "team", "position", "adp", "photo", "team_logo", "history", "history_season")},
                         "formats": formats, "opponent": opponent,
@@ -521,7 +653,16 @@ def build() -> tuple[dict, dict, dict, dict]:
                                     **pos_match, "rushing": matchup[opponent]["rushing"],
                                     "passing": matchup[opponent]["passing"],
                                     "red_zone_td_rate_allowed": matchup[opponent]["red_zone_td_rate_allowed"]},
-                        "market": {"state": "unavailable", "reason": "THE_ODDS_API_KEY unavailable; zero requests made"},
+                        "market": {
+                            "state": "player_and_game_consensus" if applied_props else "game_consensus",
+                            "quality": "HIGH",
+                            "game_book_count": int(game_market["book_count"]),
+                            "player_book_count": min(prop_book_counts) if prop_book_counts else None,
+                            "player_components": sorted(applied_props),
+                            "team_environment_factor": round(team_market_factor, 3),
+                            "updated_at": market_payload["fetched_at"],
+                            "raw_lines_public": False,
+                        },
                         "data_coverage": coverage})
 
     for fmt in ("ppr", "half_ppr", "non_ppr"):
@@ -542,8 +683,11 @@ def build() -> tuple[dict, dict, dict, dict]:
             if abs(player["formats"][fmt]["projected_points"] - round(score(player["stat_projection"], reception_value), 1)) > .01:
                 raise ValueError(f"scoring reconciliation failed for {player['name']} {fmt}")
 
-    payload = {"schema_version": "lineupbeat-nfl-week1-v1.1", "mode": "weekly", "season": 2026, "week": 1,
-               "updated_at": manifest["captured_at"], "players": players, "excluded_players": excluded,
+    market_player_count = sum(
+        bool(player["market"]["player_components"]) for player in players
+    )
+    payload = {"schema_version": "lineupbeat-nfl-week1-v1.2", "mode": "weekly", "season": 2026, "week": 1,
+               "updated_at": market_payload["fetched_at"], "players": players, "excluded_players": excluded,
                "population": {
                    **base["population"],
                    "ranked_active_projected": len(players),
@@ -553,7 +697,10 @@ def build() -> tuple[dict, dict, dict, dict]:
                "withheld_players": base["withheld_players"],
                "identity_method": "stable GSIS id plus exact normalized name, current team and position; no fuzzy matching",
                "limitations": {
-                   "sportsbook_evidence": "unavailable; zero provider requests",
+                   "sportsbook_evidence": (
+                       f"private multi-book consensus covers 16 games; qualified exact-player "
+                       f"components adjusted {market_player_count} projections; raw quotes and lines are not public"
+                   ),
                    "current_injury_report": "unavailable",
                    "dst_model": "unavailable; model population is QB/RB/WR/TE only",
                    "predictive_lift_claim": False,
@@ -562,14 +709,16 @@ def build() -> tuple[dict, dict, dict, dict]:
                "available_formats": ["ppr", "half_ppr", "non_ppr"],
                "editorial_opinions": base["editorial_opinions"],
                "schedule_sos_available": True,
-               "sources": {"model": {"label": "Lineup Beat-owned Week 1 model", "updated_at": manifest["captured_at"]},
+               "sources": {"model": {"label": "Lineup Beat-owned Week 1 model", "updated_at": market_payload["fetched_at"]},
                            "season_prior": base["sources"]["projections"],
                            "history": {"label": "nflverse weekly player/team statistics", "updated_at": "2025 regular season"},
                            "matchup": {"label": "nflverse 2025 prior-season defensive context", "updated_at": manifest["captured_at"]},
-                           "market": {"label": "Unavailable — zero provider requests", "updated_at": None},
+                           "market": {"label": "Private multi-book consensus; aggregate adjustments only",
+                                      "updated_at": market_payload["fetched_at"]},
                            "injuries": {"label": "2026 injury report unavailable", "updated_at": None}},
                "methodology": {"season_total_divisor": None,
-                               "summary": "Current Week 1 roster and offensive depth chart × historical team weekly volume × blended historical/current-team and reviewed season-prior player shares; historical and season-prior efficiencies; bounded 2025 opponent and venue adjustments.",
+                               "summary": "Current Week 1 roster and offensive depth chart × historical team weekly volume × blended historical/current-team and reviewed season-prior player shares; historical and season-prior efficiencies; bounded 2025 opponent and venue adjustments; conservatively shrunk private multi-book game and exact-player consensus inputs.",
+                               "market_policy": "High-quality consensus requires at least three books. Team implied-total effects are capped and shrunk to 25%; exact player components are capped to within 25% of the independent model and blended at 25%. Anytime-touchdown prices do not move projections because a one-sided price cannot be safely de-vigged. Raw quotes, prices, lines, and sportsbook identities are never published.",
                                "scoring": "0.04/pass yard, 4/pass TD, -2/interception, 0.1/rush or receiving yard, 6/rush or receiving TD, -2/fumble lost, plus format reception points.",
                                "recommendation_guardrail": "A point difference alone cannot create an unqualified recommendation."}}
     matchup_payload = {"schema_version": "lineupbeat-nfl-matchup-2025-v1", "season": 2025,
@@ -578,11 +727,23 @@ def build() -> tuple[dict, dict, dict, dict]:
                                        "success": "nflverse play-level success field", "red_zone": "scrimmage play at or inside opponent 20",
                                        "opponent_adjustment": "game-level position PPR allowed divided by that offense's 2025 position average, then rescaled to league average"},
                        "teams": matchup}
-    provenance = {"schema_version": "lineupbeat-week1-provenance-v1", "generated_at": manifest["captured_at"],
+    provenance = {"schema_version": "lineupbeat-week1-provenance-v1.1", "generated_at": market_payload["fetched_at"],
                   "license_review": manifest["license_review"], "assets": manifest["assets"],
-                  "provider_requests": {"odds": 0, "player_props": 0, "model_api": 0, "cost_usd": 0,
-                                        "quota_headers": {}, "blocker": manifest["unavailable"]["odds"]},
-                  "unavailable": manifest["unavailable"]}
+                  "provider_requests": {
+                      "odds": 1, "player_props": int(market_payload["prop_event_count"]),
+                      "model_api": 0, "cost_usd": None,
+                      "provider_credits_used": market_payload.get("credits_used"),
+                      "provider_credits_remaining": market_payload.get("credits_remaining"),
+                      "raw_market_data_public": False,
+                  },
+                  "market_coverage": {
+                      "games": len(event_teams), "teams": len(market_by_team),
+                      "captured_prop_rows": len(market_payload["props"]),
+                      "qualified_player_projections": market_player_count,
+                      "captured_at": market_payload["fetched_at"],
+                  },
+                  "unavailable": {**manifest["unavailable"],
+                                  "odds": "available privately; raw market data is intentionally not published"}}
     return payload, matchup_payload, backtest_result, provenance
 
 
@@ -594,8 +755,9 @@ def write_json(path: Path, payload: dict) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=OUTPUT)
+    parser.add_argument("--market-input", type=Path, default=None)
     args = parser.parse_args()
-    projection, matchup, backtest_result, provenance = build()
+    projection, matchup, backtest_result, provenance = build(args.market_input)
     write_json(args.output / "nfl_week1_projections.json", projection)
     write_json(args.output / "nfl_matchup_context_2025.json", matchup)
     write_json(args.output / "nfl_backtest_2025.json", backtest_result)

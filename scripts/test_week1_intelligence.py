@@ -121,27 +121,52 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
 
     def test_private_provider_and_license_record_are_honest(self):
         calls = self.provenance["provider_requests"]
-        self.assertEqual(calls["odds"], 0)
-        self.assertEqual(calls["player_props"], 0)
+        self.assertEqual(calls["odds"], 1)
+        self.assertEqual(calls["player_props"], 16)
         self.assertEqual(calls["model_api"], 0)
-        self.assertEqual(calls["cost_usd"], 0)
+        self.assertIsNone(calls["cost_usd"])
+        self.assertEqual(calls["provider_credits_used"], 135)
+        self.assertEqual(calls["provider_credits_remaining"], 365)
+        self.assertFalse(calls["raw_market_data_public"])
         self.assertEqual(len(self.provenance["assets"]), 11)
         self.assertEqual(self.provenance["license_review"]["spdx"], "CC-BY-4.0")
         self.assertTrue(self.provenance["license_review"]["attribution_required"])
         self.assertFalse(self.provenance["license_review"]["share_alike"])
 
+    def test_private_market_consensus_is_bounded_and_redacted(self):
+        self.assertEqual(self.payload["schema_version"], "lineupbeat-nfl-week1-v1.2")
+        self.assertEqual(self.provenance["market_coverage"]["games"], 16)
+        self.assertEqual(self.provenance["market_coverage"]["teams"], 32)
+        adjusted = [p for p in self.payload["players"]
+                    if p["market"]["player_components"]]
+        self.assertEqual(len(adjusted), 155)
+        self.assertTrue(all(p["data_coverage"]["betting_market"]
+                            for p in self.payload["players"]))
+        self.assertTrue(all(p["market"]["quality"] == "HIGH"
+                            and p["market"]["game_book_count"] >= 3
+                            and not p["market"]["raw_lines_public"]
+                            for p in self.payload["players"]))
+        public = json.dumps(self.payload)
+        for forbidden in ("bookmaker_key", "american_price", "apiKey",
+                          "DraftKings", "FanDuel", "Caesars"):
+            self.assertNotIn(forbidden, public)
+
     def test_nfl_product_surfaces_weekly_evidence_and_missing_inputs(self):
         html = build_decision_room.render(self.payload)
         for text in ("Our Week 1 projection", "What the market says", "Opponent matchup",
                      "Expected opportunity", "Availability", "Data coverage",
-                     "Evidence agreement", "current injury reports are unavailable"):
+                     "Evidence agreement", "current injury reports are unavailable",
+                     "private consensus included", "Signals are capped and blended at 25%"):
             self.assertIn(text, html)
+        self.assertNotIn("zero odds requests were made", html)
         self.assertNotIn("Weekly lineup decisions will become available", html)
         self.assertNotIn("D.sources.projections", html)
         self.assertIn("no D/ST projection is included", html)
         self.assertEqual(self.payload["limitations"]["dst_model"],
                          "unavailable; model population is QB/RB/WR/TE only")
         self.assertFalse(self.payload["limitations"]["predictive_lift_claim"])
+        self.assertIn("private multi-book consensus covers 16 games",
+                      self.payload["limitations"]["sportsbook_evidence"])
         self.assertEqual(self.payload["limitations"]["matchup_context"],
                          "2025 prior-season context")
 

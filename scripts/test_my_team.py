@@ -243,8 +243,8 @@ class MyTeamArtifactTests(unittest.TestCase):
         players = {row["name"]: row for row in build_my_team.public_model()["players"]}
         pollard = players["Tony Pollard"]
         tuten = players["Bhayshul Tuten"]
-        self.assertEqual(pollard["formats"]["half_ppr"]["projectedPoints"], 9.6)
-        self.assertEqual(tuten["formats"]["half_ppr"]["projectedPoints"], 6.4)
+        self.assertEqual(pollard["formats"]["half_ppr"]["projectedPoints"], 9.4)
+        self.assertEqual(tuten["formats"]["half_ppr"]["projectedPoints"], 6.6)
         self.assertGreater(pollard["formats"]["half_ppr"]["projectedPoints"] -
                            tuten["formats"]["half_ppr"]["projectedPoints"], 2)
 

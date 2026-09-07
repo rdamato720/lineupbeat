@@ -63,6 +63,8 @@ def public_model() -> dict:
             "home": player["home"],
             "matchupFactor": player["matchup"].get("projection_factor", 1),
             "matchupLabel": "2025 prior-season context",
+            "marketState": player["market"]["state"],
+            "marketAdjustedComponents": player["market"]["player_components"],
             "availability": "Current injury report unavailable",
             "photo": player.get("photo"),
             "teamLogo": player["team_logo"],
@@ -76,7 +78,7 @@ def public_model() -> dict:
         "supportedPositions": ["QB", "RB", "WR", "TE"],
         "players": players,
         "limitations": {
-            "sportsbookEvidence": "unavailable; zero provider requests",
+            "sportsbookEvidence": source["limitations"]["sportsbook_evidence"],
             "currentInjuryReport": "unavailable",
             "dstModel": "unsupported; no projection is guessed",
             "matchupContext": "2025 prior-season context",
@@ -87,6 +89,7 @@ def public_model() -> dict:
             "model": source["sources"]["model"],
             "matchup": source["sources"]["matchup"],
             "seasonPrior": source["sources"]["season_prior"],
+            "market": source["sources"]["market"],
         },
     }
 
