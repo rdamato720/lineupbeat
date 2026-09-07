@@ -159,6 +159,8 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
                      "private consensus included", "Signals are capped and blended at 25%"):
             self.assertIn(text, html)
         self.assertNotIn("zero odds requests were made", html)
+        self.assertNotIn("Odds were not requested", html)
+        self.assertIn("Market included", html)
         self.assertNotIn("Weekly lineup decisions will become available", html)
         self.assertNotIn("D.sources.projections", html)
         self.assertIn("no D/ST projection is included", html)
