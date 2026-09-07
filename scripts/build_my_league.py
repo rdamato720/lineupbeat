@@ -20,8 +20,8 @@ def append_sitemap() -> None:
 
 def structured_data() -> str:
     faq = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-        {"@type":"Question","name":"What is LineupBeat My League?","acceptedAnswer":{"@type":"Answer","text":"My League turns an ESPN, Yahoo, or CBS fantasy football league archive into all-time standings, trophy history, records, manager pages, season summaries, and a shareable view-only page."}},
-        {"@type":"Question","name":"Which fantasy football platforms can connect?","acceptedAnswer":{"@type":"Answer","text":"ESPN and Yahoo can collect connected seasons automatically. CBS history is added one visible season at a time from its History area with the browser connector."}},
+        {"@type":"Question","name":"What is LineupBeat My League?","acceptedAnswer":{"@type":"Answer","text":"My League turns an ESPN, Yahoo, CBS, or Sleeper fantasy football league archive into all-time standings, trophy history, records, manager pages, season summaries, and a shareable view-only page."}},
+        {"@type":"Question","name":"Which fantasy football platforms can connect?","acceptedAnswer":{"@type":"Answer","text":"ESPN, Yahoo, and Sleeper can collect connected seasons automatically. CBS history is added one visible season at a time from its History area with the browser connector."}},
         {"@type":"Question","name":"Is my fantasy league history private?","acceptedAnswer":{"@type":"Answer","text":"Yes. The imported archive stays in the browser by default. A commissioner can explicitly create an unlisted or public view-only link when the league is ready to share."}}]}
     return json.dumps(faq, separators=(",", ":"), ensure_ascii=False)
 
@@ -75,7 +75,21 @@ def build_page() -> str:
 
 def main() -> int:
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(build_page())
+    page = build_page()
+    page = page.replace("ESPN, Yahoo, or CBS", "ESPN, Yahoo, CBS, or Sleeper")
+    page = page.replace(
+        "ESPN and Yahoo can collect connected seasons automatically",
+        "ESPN, Yahoo, and Sleeper can collect connected seasons automatically")
+    page = page.replace(
+        "Use the browser connector for ESPN or CBS, or authorize read-only access to Yahoo Fantasy Football.",
+        "Use the browser connector for ESPN or CBS, authorize Yahoo, or enter a Sleeper username.")
+    page = page.replace('.ml-platforms{display:grid;grid-template-columns:repeat(3,1fr)',
+                        '.ml-platforms{display:grid;grid-template-columns:repeat(4,1fr)')
+    sleeper_card = ('<article class="ml-platform"><small>LEAGUE HISTORY</small><h3>Sleeper</h3>'
+                    '<p>Enter a username and import every connected league season automatically.</p></article>')
+    page = page.replace('</div></section>\n    <section class="ml-section"><div class="ml-privacy">',
+                        sleeper_card + '</div></section>\n    <section class="ml-section"><div class="ml-privacy">')
+    OUT.write_text(page)
     append_sitemap()
     print(f"Built {OUT.relative_to(ROOT)}")
     return 0

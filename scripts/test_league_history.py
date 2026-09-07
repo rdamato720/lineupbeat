@@ -70,6 +70,8 @@ def main() -> int:
         ROOT / "site/data/league-history-demo.json",
         ROOT / "site/assets/league-history-dashboard.js",
         ROOT / "site/assets/yahoo-history.js",
+        ROOT / "site/assets/sleeper-history.js",
+        ROOT / "site/assets/sleeper-history-client.js",
         ROOT / "site/my-league/index.html",
     ]
     first = [hashlib.sha256(path.read_bytes()).hexdigest() for path in outputs]
@@ -81,7 +83,9 @@ def main() -> int:
     page = outputs[0].read_text()
     dashboard = outputs[2].read_text()
     yahoo = outputs[3].read_text()
-    landing = outputs[4].read_text()
+    sleeper = outputs[4].read_text()
+    sleeper_client = outputs[5].read_text()
+    landing = outputs[6].read_text()
     for required in ("League history", "Trophy case", "All-time leaders", "Managers",
                      "League records", "noindex,nofollow,noarchive", "Set up your league history",
                      "Save manager matches", "LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST",
@@ -113,6 +117,8 @@ def main() -> int:
                      'body class="history-empty"', "Install connector",
                      'id="connect-yahoo"', 'data-history-source="yahoo"',
                      'data-history-source="cbs"', 'id="check-cbs"',
+                     "'data-history-source':'sleeper'", 'id:\'sleeper-username\'',
+                     '/assets/sleeper-history.js', '/assets/sleeper-history-client.js',
                      'class="setup-layout"', 'class="setup-rail"',
                      "Choose your fantasy platform.", "Connect and import",
                      "Match managers", "View and share",
@@ -147,8 +153,8 @@ def main() -> int:
     assert landing.count("/assets/homepage/") >= 12
     assert 'class="ml-window"' in landing
     assert landing.count('class="ml-example') >= 3
-    assert "Yahoo" in landing and "CBS" in landing
-    assert "ESPN and Yahoo can collect connected seasons automatically" in landing
+    assert "Yahoo" in landing and "CBS" in landing and "Sleeper" in landing
+    assert "ESPN, Yahoo, and Sleeper can collect connected seasons automatically" in landing
     assert "CBS history is added one visible season at a time" in landing
     assert "Every historical team remains in its original season" in landing
     assert 'href="/league-history/"' in landing
@@ -175,7 +181,7 @@ def main() -> int:
                      "Most championships", "Best regular season",
                      "headToHead: series", "titleYears", "seasonStats",
                      "Private ' + provider + ' history · processed only in this browser.",
-                     "payload.provider === 'cbs' ? 'CBS' : 'ESPN'",
+                     "payload.provider === 'sleeper' ? 'Sleeper' : 'ESPN'",
                      "publishLeague", "loadSharedLeague", "/api/leagues/",
                      "recoverPublicationAccess", "unpublishLeague",
                      "storePublication", "retryShared",
@@ -198,6 +204,14 @@ def main() -> int:
                      "Nothing was saved.", "lb:history-source"):
         assert required in yahoo, required
     subprocess.run(["node", "--check", str(outputs[3])], cwd=ROOT, check=True)
+    for required in ("normalizeSeason", "buildIdentityReview", "provider: 'sleeper'",
+                     "MAX_SEASONS = 25"):
+        assert required in sleeper, required
+    for required in ("previous_league_id", "/leagues/nfl/", "/matchups/",
+                     "lineupBeatSleeperHistoryV1", "Nothing was saved."):
+        assert required in sleeper_client, required
+    subprocess.run(["node", "--check", str(outputs[4])], cwd=ROOT, check=True)
+    subprocess.run(["node", "--check", str(outputs[5])], cwd=ROOT, check=True)
     subprocess.run(["node", str(ROOT / "scripts/test_league_history_dashboard.js")],
                    cwd=ROOT, check=True)
     print("league history calculations, identity, records, privacy and deterministic page: ok")

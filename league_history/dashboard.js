@@ -495,7 +495,8 @@
       );
     } else {
       const provider = capture && capture.provider === 'yahoo' ? 'Yahoo' :
-        capture && capture.provider === 'cbs' ? 'CBS' : 'ESPN';
+        capture && capture.provider === 'cbs' ? 'CBS' :
+          capture && capture.provider === 'sleeper' ? 'Sleeper' : 'ESPN';
       notice.append(
         element('strong', '', 'Private by default. '),
         document.createTextNode('Your ' + provider + ' archive is calculated in this browser.')
@@ -1311,7 +1312,8 @@
       );
     } else {
       const provider = payload.provider === 'yahoo' ? 'Yahoo' :
-        payload.provider === 'cbs' ? 'CBS' : 'ESPN';
+        payload.provider === 'cbs' ? 'CBS' :
+          payload.provider === 'sleeper' ? 'Sleeper' : 'ESPN';
       footer.replaceChildren(
         element('span', '', 'Private ' + provider + ' history · processed only in this browser.'),
         element('span', '', 'Imported ' + String(payload.capturedAt || '').slice(0, 10))

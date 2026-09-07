@@ -333,8 +333,9 @@ def check_league_history(root):
           and "Install the connector, import from your '+name+' league page" in text)
     dashboard_path = root / "assets" / "league-history-dashboard.js"
     dashboard = dashboard_path.read_text() if dashboard_path.is_file() else ""
-    check("League History preserves CBS provider labels",
-          dashboard.count("=== 'cbs' ? 'CBS' : 'ESPN'") >= 2)
+    check("League History preserves CBS and Sleeper provider labels",
+          dashboard.count("=== 'cbs' ? 'CBS' :") >= 2
+          and dashboard.count("=== 'sleeper' ? 'Sleeper' : 'ESPN'") >= 2)
     payload_path = root / "data" / "league-history-demo.json"
     try:
         payload = json.loads(payload_path.read_text())

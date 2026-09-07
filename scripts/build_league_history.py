@@ -24,6 +24,10 @@ DASHBOARD_SOURCE = ROOT / "league_history/dashboard.js"
 DASHBOARD_OUT = ROOT / "site/assets/league-history-dashboard.js"
 YAHOO_SOURCE = ROOT / "league_history/yahoo.js"
 YAHOO_OUT = ROOT / "site/assets/yahoo-history.js"
+SLEEPER_PARSER_SOURCE = ROOT / "league_history/sleeper.js"
+SLEEPER_PARSER_OUT = ROOT / "site/assets/sleeper-history.js"
+SLEEPER_CLIENT_SOURCE = ROOT / "league_history/sleeper-client.js"
+SLEEPER_CLIENT_OUT = ROOT / "site/assets/sleeper-history-client.js"
 
 
 def append_sitemap() -> None:
@@ -227,7 +231,11 @@ def build_page(canonical: dict, summary: dict) -> str:
     .career-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--history-line);background:var(--history-panel);margin-bottom:1rem}.career-stat{padding:1rem;border-right:1px solid var(--history-line);border-bottom:1px solid var(--history-line)}.career-stat:nth-child(4n){border-right:0}.career-stat:nth-last-child(-n+4){border-bottom:0}.career-stat strong{display:block;font:800 1.3rem var(--data)}.career-stat span{display:block;margin-top:.25rem;color:var(--history-muted);font:800 .68rem var(--agate);letter-spacing:.06em;text-transform:uppercase}
     .career-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(17rem,.8fr);gap:.8rem}.career-panel{border:1px solid var(--history-line);background:var(--history-panel);padding:1rem}.career-panel h4{margin:0 0 .75rem;font:700 1.15rem var(--display)}.career-panel+.career-panel{margin-top:.8rem}.career-table{min-width:34rem}.career-table th:first-child,.career-table td:first-child{text-align:left}.career-note{display:flex;justify-content:space-between;gap:1rem;padding:.65rem 0;border-top:1px solid var(--history-line);font-size:.875rem}.career-note span{color:var(--history-muted);text-align:right}.career-aliases{margin:0 0 1rem}
     .weeks-head{display:flex;align-items:end;justify-content:space-between;gap:1rem}.segmented{display:flex;border:1px solid var(--history-line)}.segmented button{border:0;background:transparent;color:var(--history-muted);padding:.6rem .8rem;font:800 .75rem var(--agate);text-transform:uppercase;cursor:pointer}.segmented button[aria-pressed=true]{background:var(--signal);color:#08100c}.top-weeks{min-width:46rem}.top-weeks th:first-child,.top-weeks td:first-child{text-align:left}
+    .source-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .history-picker[hidden],.history-progress[hidden]{display:none}.history-picker{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.6rem;align-items:end;border-top:1px solid var(--history-line);padding-top:.8rem}.history-picker label,.sleeper-fields label{display:grid;gap:.3rem;color:var(--history-muted);font:800 .7rem var(--agate);letter-spacing:.05em;text-transform:uppercase}.history-picker select,.sleeper-fields input{min-width:0;border:1px solid #39433e;background:#080c0b;color:var(--ink);padding:.72rem;font:600 .9rem var(--agate)}.history-progress{grid-column:1/-1;margin:0;color:var(--signal);font:600 .85rem var(--agate)}.sleeper-fields{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) 8rem auto;gap:.6rem;align-items:end;border-top:1px solid var(--history-line);padding-top:.8rem}
     @media(max-width:1450px){.lh-ambient-card{display:none}}
+    @media(max-width:980px) and (min-width:761px){.source-tabs{grid-template-columns:1fr 1fr}}
+    @media(max-width:760px){.history-picker,.sleeper-fields{grid-template-columns:1fr}}
     @media(max-width:900px){#records .record-grid,#trophies .record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.career-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.career-stat:nth-child(2n){border-right:0}.career-stat:nth-last-child(-n+4){border-bottom:1px solid var(--history-line)}.career-stat:nth-last-child(-n+2){border-bottom:0}.career-grid{grid-template-columns:1fr}.rivalry-grid{grid-template-columns:1fr}}
     @media(max-width:760px){.lh{padding-inline:.85rem}.lh-head{grid-template-columns:1fr;min-height:0;padding:1.6rem 1rem}.lh-meta{justify-content:flex-start;gap:1.2rem}.lh-meta div{min-width:auto}.import-line{align-items:flex-start;flex-direction:column}.setup-layout,.has-import .setup-layout{grid-template-columns:1fr}.setup-rail{display:block;border-right:0;border-bottom:1px solid var(--history-line);padding:1rem}.setup-rail ol{grid-template-columns:repeat(4,1fr);gap:.35rem;margin:.8rem 0 0}.setup-rail li{display:block;border-top:3px solid #303934;padding-top:.5rem;font-size:.68rem}.setup-rail li b{display:none}.setup-rail li.current{border-color:var(--signal)}.setup-rail li.complete{border-color:#637734}.setup-rail>small{display:none}.setup-workspace{padding:1.2rem 1rem}.source-tabs{grid-template-columns:1fr}.source-tabs button{grid-template-columns:3rem 1fr;grid-template-rows:auto auto;min-height:0;align-items:center}.source-tabs button .provider-mark{grid-row:1/3}.connection-stage{padding:.9rem}.source-panel,.yahoo-picker{grid-template-columns:1fr}.publish-panel{grid-template-columns:1fr}.publish-controls{min-width:0}.publish-action{justify-content:flex-start}.published-link,.recovery-key-row,.restore-fields{grid-template-columns:1fr}.publish-result-actions{flex-wrap:wrap}.review-head{grid-template-columns:1fr}.match-people{grid-template-columns:1fr}.match-or{text-align:center}.choice-actions{grid-template-columns:1fr}.review-footer{align-items:flex-start;flex-direction:column}.dashboard,.source-grid{grid-template-columns:1fr}.record-grid,.manager-grid,.season-grid{grid-template-columns:1fr}.tabs{top:3.4rem}.history-snapshot{grid-template-columns:1fr 1fr}.champ{min-height:11rem}.manager-browser{grid-template-columns:1fr}.manager-list{display:flex;overflow:auto}.manager-list button{min-width:10rem;border-bottom:0;border-right:1px solid var(--history-line)}.manager-list button[aria-selected=true]{box-shadow:inset 0 -3px 0 var(--signal)}.weeks-head{align-items:flex-start;flex-direction:column}}
     @media(max-width:500px){.lh-meta{gap:.9rem}.lh-meta b{font-size:1.25rem}.lh-meta span{font-size:.6rem}.tabs{gap:1.1rem}.history-snapshot{grid-template-columns:1fr}.lh-footer{display:block}.season-card{grid-template-columns:1fr}.manager-card__head{display:block}.manager-card__head>b{display:block;margin-top:.8rem}#records .record-grid,#trophies .record-grid{grid-template-columns:1fr}.career-stats{grid-template-columns:1fr}.career-stat,.career-stat:nth-child(n){border-right:0;border-bottom:1px solid var(--history-line)}.career-stat:last-child{border-bottom:0}.publish-controls,.publish-action,.publish-action button,.publish-result-actions,.publish-result-actions button,.restore-publication button{width:100%}.visibility-options{grid-template-columns:1fr}.publish-result-actions{display:grid}.published-link{gap:.8rem}}
@@ -277,7 +285,7 @@ def build_page(canonical: dict, summary: dict) -> str:
         connectTimer=setTimeout(function(){var name=provider==='cbs'?'CBS':'ESPN';say('No local '+name+' import found. Install the connector, import from your '+name+' league page, then try again.');connectTimer=0;},1800);
       }
       function setSetupStep(step){setupSteps.forEach(function(item){var value=Number(item.dataset.setupStep);item.classList.toggle('current',value===step);item.classList.toggle('complete',value<step);});}
-      function providerName(){var provider=(state.capture&&state.capture.provider)||selectedProvider;return provider==='yahoo'?'Yahoo':provider==='cbs'?'CBS':'ESPN';}
+      function providerName(){var provider=(state.capture&&state.capture.provider)||selectedProvider;return provider==='yahoo'?'Yahoo':provider==='cbs'?'CBS':provider==='sleeper'?'Sleeper':'ESPN';}
       function pairKey(pair){return [pair.a,pair.b].sort().join('::');}
       function identity(id){return state.identities.find(function(row){return row.identityId===id;});}
       function yearsText(row){var years=row.seasons.slice().sort(function(a,b){return a-b;});var range=years.length===1?String(years[0]):years[0]+'–'+years[years.length-1];return range+' · '+years.length+' season'+(years.length===1?'':'s');}
@@ -316,7 +324,7 @@ def build_page(canonical: dict, summary: dict) -> str:
       document.getElementById('check-extension').addEventListener('click',function(){requestProvider('espn');});
       document.getElementById('check-cbs').addEventListener('click',function(){requestProvider('cbs');});
       window.addEventListener('lb:history-source',function(event){clearConnectTimer();selectedProvider=event.detail&&event.detail.provider||'';if(!selectedProvider)return;connectionStage.hidden=false;connectionTitle.textContent='Connect '+providerName()+'.';setSetupStep(2);say(providerName()+' selected. Follow the connection step below.');});
-      clear.addEventListener('click',function(){if(state.capture&&state.capture.provider==='yahoo'){try{localStorage.removeItem('lineupBeatYahooHistoryV1');}catch(_){}window.postMessage({type:'LB_LEAGUE_HISTORY_CLEAR_COMPLETE',version:1},location.origin);}else{window.postMessage({type:'LB_LEAGUE_HISTORY_CLEAR_REQUEST',version:1,provider:state.capture&&state.capture.provider},location.origin);}});
+      clear.addEventListener('click',function(){var provider=state.capture&&state.capture.provider;if(provider==='yahoo'||provider==='sleeper'){try{localStorage.removeItem(provider==='yahoo'?'lineupBeatYahooHistoryV1':'lineupBeatSleeperHistoryV1');}catch(_){}window.postMessage({type:'LB_LEAGUE_HISTORY_CLEAR_COMPLETE',version:1},location.origin);}else{window.postMessage({type:'LB_LEAGUE_HISTORY_CLEAR_REQUEST',version:1,provider:provider},location.origin);}});
       document.getElementById('same-person').addEventListener('click',function(){choose('same');});
       document.getElementById('different-people').addEventListener('click',function(){choose('different');});
       document.getElementById('change-answers').addEventListener('click',function(){if(state.pairs.length)showPair(0);});
@@ -331,7 +339,7 @@ def build_page(canonical: dict, summary: dict) -> str:
         var canonical={};Object.keys(groups).forEach(function(root){groups[root].sort(function(a,b){var ay=Math.min.apply(null,a.seasons),by=Math.min.apply(null,b.seasons);return ay-by||b.seasons.length-a.seasons.length||a.identityId.localeCompare(b.identityId);});canonical[root]=groups[root][0].identityId;});
         var identities=state.identities.map(function(row){var master=canonical[find(row.identityId)];return {identityId:row.identityId,displayName:row.displayName,mergeInto:master===row.identityId?null:master};});
         var review={schemaVersion:'lineupbeat-history-identity-review-v1',capturedAt:state.capture.capturedAt,approvedAt:new Date().toISOString(),leagueId:state.capture.league.id,identities:identities};
-        state.review=review;if(state.capture.provider==='yahoo'){try{localStorage.setItem('lineupBeatYahooHistoryV1',JSON.stringify({payload:state.capture,review:review}));window.postMessage({type:'LB_LEAGUE_HISTORY_CAPTURE',version:1,payload:state.capture,review:review},location.origin);}catch(_){result.textContent='Manager matches could not be saved.';}}else{window.postMessage({type:'LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST',version:1,provider:state.capture.provider,review:review},location.origin);}result.textContent='Saving…';
+        state.review=review;if(state.capture.provider==='yahoo'||state.capture.provider==='sleeper'){try{localStorage.setItem(state.capture.provider==='yahoo'?'lineupBeatYahooHistoryV1':'lineupBeatSleeperHistoryV1',JSON.stringify({payload:state.capture,review:review}));window.postMessage({type:'LB_LEAGUE_HISTORY_CAPTURE',version:1,payload:state.capture,review:review},location.origin);}catch(_){result.textContent='Manager matches could not be saved.';}}else{window.postMessage({type:'LB_LEAGUE_HISTORY_SAVE_REVIEW_REQUEST',version:1,provider:state.capture.provider,review:review},location.origin);}result.textContent='Saving…';
       });
       window.addEventListener('message',function(event){
         if(event.source!==window||event.origin!==location.origin||!event.data||event.data.version!==1)return;
@@ -340,7 +348,25 @@ def build_page(canonical: dict, summary: dict) -> str:
         if(event.data.type==='LB_LEAGUE_HISTORY_REVIEW_COMPLETE'){if(event.data.ok){state.dirty=false;updateSave();result.textContent='Manager matches saved.';finishSetup();}else result.textContent='Manager matches could not be saved.';}
         if(event.data.type==='LB_LEAGUE_HISTORY_CLEAR_COMPLETE'){var oldProvider=providerName();state.capture=null;state.review=null;state.identities=[];state.pairs=[];state.choices={};selectedProvider='';detail.classList.remove('open');managerReview.classList.remove('is-complete');setupReady.hidden=true;clear.hidden=true;check.hidden=false;document.body.classList.remove('has-import');document.querySelectorAll('[data-history-source]').forEach(function(button){button.setAttribute('aria-selected','false');});document.querySelectorAll('[data-source-panel]').forEach(function(panel){panel.hidden=true;});connectionStage.hidden=true;setSetupStep(1);leagueTitle.textContent=leagueTitle.dataset.demo;headerSeasons.textContent=headerSeasons.dataset.demo;headerGames.textContent=headerGames.dataset.demo;headerTeams.textContent=headerTeams.dataset.demo;ambientSeasons.textContent=ambientSeasons.dataset.demo;ambientGames.textContent=ambientGames.dataset.demo;document.title='League History | LineupBeat';say('Local '+oldProvider+' import cleared. Choose a platform to start again.');}
       });
+    }());
+    (function(){
+      var tabs=document.querySelector('.source-tabs');
+      var stage=document.getElementById('connection-stage');
+      if(!tabs||!stage)return;
+      function node(tag,attrs,text){var element=document.createElement(tag);Object.keys(attrs||{}).forEach(function(key){if(key==='class')element.className=attrs[key];else element.setAttribute(key,attrs[key]);});if(text!==undefined)element.textContent=text;return element;}
+      var tab=node('button',{type:'button',role:'tab','data-history-source':'sleeper','aria-selected':'false'});
+      tab.append(node('span',{class:'provider-mark'},'S'),node('strong',{},'Sleeper'),node('small',{},'Automatic public import'));
+      tabs.appendChild(tab);
+      var panel=node('div',{class:'source-panel','data-source-panel':'sleeper',hidden:''});
+      var copy=node('div');copy.append(node('strong',{},'Import from Sleeper'),node('p',{},'Enter your Sleeper username, choose a league, and import every connected season automatically.'));
+      var fields=node('div',{class:'sleeper-fields'});
+      var userLabel=node('label',{},'Sleeper username');userLabel.appendChild(node('input',{id:'sleeper-username',type:'text',autocomplete:'username',maxlength:'40',placeholder:'Username'}));
+      var seasonLabel=node('label',{},'League season');var seasonInput=node('input',{id:'sleeper-season',type:'number',min:'2017'});seasonInput.value=String(new Date().getFullYear());seasonLabel.appendChild(seasonInput);
+      fields.append(userLabel,seasonLabel,node('button',{id:'find-sleeper-leagues',type:'button'},'Find leagues'));
+      var picker=node('div',{class:'history-picker',id:'sleeper-picker',hidden:''});var leagueLabel=node('label',{},'League history');leagueLabel.appendChild(node('select',{id:'sleeper-league'}));var actions=node('div',{class:'import-actions'});actions.appendChild(node('button',{id:'import-sleeper-history',type:'button'},'Import full history'));picker.append(leagueLabel,actions,node('p',{id:'sleeper-progress',class:'history-progress',role:'status',hidden:''}));
+      panel.append(copy,fields,picker);stage.appendChild(panel);
     }());</script>'''
+    script += '<script src="/assets/sleeper-history.js"></script><script src="/assets/sleeper-history-client.js"></script>'
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
     <title>League History | LineupBeat</title><meta name="robots" content="noindex,nofollow,noarchive"><link rel="canonical" href="https://lineupbeat.com/league-history/">
     <meta name="description" content="Import, review, and share your ESPN, Yahoo, or CBS fantasy football league history with LineupBeat.">
@@ -391,9 +417,14 @@ def main() -> int:
     PAGE_OUT.parent.mkdir(parents=True, exist_ok=True)
     DASHBOARD_OUT.parent.mkdir(parents=True, exist_ok=True)
     DATA_OUT.write_text(json.dumps(payload, sort_keys=True, separators=(",", ":")) + "\n")
-    PAGE_OUT.write_text(build_page(canonical, summary))
+    page = build_page(canonical, summary).replace(
+        "ESPN, Yahoo, or CBS fantasy football league history",
+        "ESPN, Yahoo, CBS, or Sleeper fantasy football league history")
+    PAGE_OUT.write_text(page)
     DASHBOARD_OUT.write_text(DASHBOARD_SOURCE.read_text())
     YAHOO_OUT.write_text(YAHOO_SOURCE.read_text())
+    SLEEPER_PARSER_OUT.write_text(SLEEPER_PARSER_SOURCE.read_text())
+    SLEEPER_CLIENT_OUT.write_text(SLEEPER_CLIENT_SOURCE.read_text())
     print(f"Built {PAGE_OUT.relative_to(ROOT)} from {summary['counts']['games']} matchups")
     return 0
 
