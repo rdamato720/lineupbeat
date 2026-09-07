@@ -20,6 +20,20 @@ DISPLAY = ROOT / "data" / "wire_display_fantasy.json"
 DEFAULT_SITE = ROOT / "site"
 
 
+def example_player(model: dict, name: str) -> dict:
+    return next(player for player in model["players"] if player["name"] == name)
+
+
+def example_row(model: dict, name: str, slot: str) -> str:
+    player = example_player(model, name)
+    ppr = player["formats"]["ppr"]
+    return f'''<div class="mt-preview-player"><span class="mt-preview-slot">{slot}</span><img src="{player['photo']}" alt=""><span><strong>{player['name']}</strong><small>{player['position']} · {player['team']} · {player['opponent']}</small></span><b>{ppr['projectedPoints']:.1f}<small>PTS</small></b></div>'''
+
+
+def example_card(player: dict, projection: dict, label: str) -> str:
+    return f'''<span class="mt-example-label">{label}</span><img src="{player['photo']}" alt=""><strong>{player['name']}</strong><small>{player['position']} · {player['team']} · {projection['projectedPoints']:.1f} PTS</small>'''
+
+
 def public_model() -> dict:
     source = decision_data.load_weekly()
     display = json.loads(DISPLAY.read_text())["players"]
@@ -79,6 +93,11 @@ def public_model() -> dict:
 
 def render_page(model: dict) -> str:
     nav = seo.site_nav("my_team", "nfl")
+    chase = example_player(model, "Ja'Marr Chase")
+    nacua = example_player(model, "Puka Nacua")
+    chase_ppr = chase["formats"]["ppr"]
+    nacua_ppr = nacua["formats"]["ppr"]
+    edge = chase_ppr["projectedPoints"] - nacua_ppr["projectedPoints"]
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
@@ -88,13 +107,13 @@ def render_page(model: dict) -> str:
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/my-team/my-team.css"></head><body>
 {nav}
-<main class="mt-shell"><section class="mt-hero"><div class="mt-kicker">NFL · My Team</div>
-<h1>Your roster stays in your browser.</h1>
-<p>Connect the Lineup Beat Fantasy extension to compare supported starters and bench players from ESPN, Yahoo, or CBS against the public Week 1 model. Roster matching and every lineup calculation happen locally on this page.</p>
-<div class="mt-actions"><button class="mt-button" id="mt-connect" type="button">Connect Fantasy extension</button><button class="mt-button secondary" id="mt-disconnect" type="button" hidden>Disconnect &amp; clear</button><button class="mt-button secondary" id="mt-demo" type="button" hidden>Load reviewer demo roster</button><a class="mt-button secondary" href="/my-team/extension/">Extension support</a></div>
-<p class="mt-status" id="mt-status" role="status" aria-live="polite">Loading the public Week 1 model…</p></section>
-<section class="mt-privacy" aria-label="Privacy model"><article><small>What stays local</small><h2>Roster data never leaves this browser</h2><p>The extension keeps its captured roster in extension-local storage. The My Team page holds the normalized roster in memory only. It is never placed in a URL or sent to a Lineup Beat server.</p></article><article><small>What is never collected</small><h2>No provider secrets or manager identity</h2><ul><li>No password, cookie, session token, or manager identity.</li><li>No roster analytics or server persistence.</li><li>Disconnect &amp; clear removes the extension-local roster copy.</li></ul></article></section>
-<section class="mt-section"><div class="mt-section-head"><div><small>Connection 01</small><h2>Choose your fantasy platform.</h2></div><p>Open your roster on the provider site and use the same browser-local extension. Every provider produces the same validated roster structure before Lineup Beat makes a comparison.</p></div>
+<main class="mt-shell"><section class="mt-hero mt-product-hero"><div class="mt-hero-grid"><div class="mt-hero-copy"><div class="mt-kicker">YOUR FANTASY COMMAND CENTER</div><h1>YOUR ROSTER.<br><span>IN FOCUS.</span></h1><p>Connect ESPN, Yahoo, or CBS. See your best lineup, the closest calls, and the reasoning behind every recommendation.</p><div class="mt-actions"><button class="mt-button" id="mt-connect" type="button">Connect Fantasy extension</button><button class="mt-button secondary" id="mt-disconnect" type="button" hidden>Disconnect &amp; clear</button><button class="mt-button secondary" id="mt-demo" type="button" hidden>Load reviewer demo roster</button><a class="mt-button secondary" href="/my-team/extension/">Extension support</a></div><p class="mt-status" id="mt-status" role="status" aria-live="polite">Loading the public Week 1 model…</p></div>
+<div class="mt-preview-window"><div class="mt-preview-bar"><span><i></i> FOURTH &amp; LONG</span><b>WEEK 1 · PPR</b></div><div class="mt-preview-body"><small>STARTING LINEUP</small><h2>Every decision, in one view.</h2><div class="mt-preview-roster">{example_row(model,'Josh Allen','QB')}{example_row(model,'Bijan Robinson','RB')}{example_row(model,"Ja'Marr Chase",'WR')}{example_row(model,'Brock Bowers','TE')}</div><div class="mt-preview-call"><span><small>CLOSEST CALL</small><strong>{chase['name']} over {nacua['name']}</strong></span><b>+{edge:.1f}<small>PT EDGE</small></b></div></div></div></div></section>
+<section class="mt-value-section"><div class="mt-section-head"><div><small>WHAT YOU GET</small><h2>Your lineup, explained.</h2></div><p>Not another roster list. My Team turns projections into clear weekly decisions.</p></div><div class="mt-value-grid"><article><img src="/assets/homepage/rankings-3d.png" alt=""><h3>Best lineup</h3><p>See which supported players give you the strongest weekly projection.</p></article><article><img src="/assets/homepage/league-3d.png" alt=""><h3>Closest calls</h3><p>Focus on the decisions where the difference is actually small.</p></article><article><img src="/assets/homepage/team-3d.png" alt=""><h3>Roster outlook</h3><p>Understand your strengths, weak spots, and available depth.</p></article><article><img src="/assets/homepage/college-3d.png" alt=""><h3>Clear reasoning</h3><p>See projections, opportunity, matchup context, and honest limits.</p></article></div></section>
+<section class="mt-showcase" id="examples"><div class="mt-section-head"><div><small>SEE IT IN ACTION</small><h2>From roster to decision.</h2></div><p>My Team puts the answer next to the evidence that supports it.</p></div><article class="mt-example"><div class="mt-example-copy"><small>LINEUP DECISION</small><h3>Know when the edge is real.</h3><p>The strongest recommendation leads. The projection gap and player context show how much confidence to place in it.</p><a href="#connect-team">Connect your roster →</a></div><div class="mt-example-window"><div class="mt-example-head"><span>WIDE RECEIVER · CLOSE CALL</span><b>WEEK 1</b></div><div class="mt-example-decision"><div>{example_card(chase,chase_ppr,'START')}</div><strong>+{edge:.1f}</strong><div>{example_card(nacua,nacua_ppr,'BENCH')}</div></div><div class="mt-example-reason"><span><b>THE CALL</b>{chase['name']} carries the narrow projection edge.</span><span><b>THE LIMIT</b>This is a close call, not a must-make change.</span></div></div></article>
+<article class="mt-example reverse"><div class="mt-example-copy"><small>ROSTER OUTLOOK</small><h3>See the whole team—not just one swap.</h3><p>Scan projected starters, bench depth, position strength, and the lineup decisions worth your attention.</p><a href="#connect-team">Open My Team →</a></div><div class="mt-example-window"><div class="mt-example-head"><span>ROSTER OUTLOOK</span><b>4 STARTERS</b></div><div class="mt-outlook-preview"><div><strong>72.8</strong><small>PROJECTED POINTS</small></div><div><strong>1</strong><small>LINEUP CALL</small></div><div><strong>WR</strong><small>DEEPEST POSITION</small></div></div><div class="mt-mini-roster">{example_row(model,'Josh Allen','QB')}{example_row(model,'Bijan Robinson','RB')}{example_row(model,"Ja'Marr Chase",'WR')}</div></div></article></section>
+<section class="mt-privacy" aria-label="Privacy model"><article><img src="/assets/homepage/team-3d.png" alt=""><small>Private by default</small><h2>Your roster stays in this browser.</h2><p>Roster data never leaves this browser. No provider password, session token, manager identity, or roster analytics are sent to Lineup Beat.</p></article><article><small>Your control</small><h2>Connect. Review. Clear.</h2><ul><li>Your normalized roster lives in memory only.</li><li>Disconnect &amp; clear removes the local copy.</li><li>D/ST stays unsupported rather than guessed.</li></ul></article></section>
+<section class="mt-section" id="connect-team"><div class="mt-section-head"><div><small>CONNECT YOUR TEAM</small><h2>Choose your fantasy platform.</h2></div><p>Open your roster on the provider site and use the browser-local connector.</p></div>
 <section class="mt-team-card" id="mt-team" hidden><div class="mt-team-title"><div><small>Connected league</small><h3 id="mt-team-name"></h3><p id="mt-league-name"></p></div><p id="mt-league-meta"></p></div><div id="mt-outlook"></div><div class="mt-team-block"><div class="mt-team-block-head"><small>Lineup decisions</small><h3>Changes that clear the bar</h3></div><div class="mt-decisions" id="mt-decisions"></div></div><div class="mt-team-block"><div class="mt-team-block-head"><small>Roster intelligence</small><h3>Week 1 evidence by player</h3></div><div id="mt-roster"></div></div></section>
 <div class="mt-provider-grid"><article class="mt-provider active"><small>Supported connection</small><h3>ESPN</h3><p>Roster capture plus multi-season league-history import.</p><strong>Browser-local</strong></article><article class="mt-provider active"><small>Supported connection</small><h3>Yahoo</h3><p>Roster capture plus authorized multi-season league-history import.</p><strong>Browser-local</strong></article><article class="mt-provider active"><small>Supported connection</small><h3>CBS</h3><p>Roster capture plus one-visible-season-at-a-time league-history import.</p><strong>Browser-local</strong></article></div>
 </section>

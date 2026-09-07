@@ -120,6 +120,17 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertIn('id="mt-demo"', page)
         self.assertIn("hidden>Load reviewer demo roster", page)
 
+    def test_page_uses_homepage_product_examples_and_3d_art(self):
+        page = build_my_team.render_page(build_my_team.public_model())
+        self.assertIn("YOUR ROSTER.", page)
+        self.assertIn("IN FOCUS.", page)
+        self.assertIn('class="mt-preview-window"', page)
+        self.assertIn('id="examples"', page)
+        self.assertIn("Know when the edge is real.", page)
+        self.assertIn("See the whole team—not just one swap.", page)
+        self.assertGreaterEqual(page.count("/assets/homepage/"), 5)
+        self.assertEqual(page.count('id="mt-connect"'), 1)
+
     def test_build_writes_public_model_support_and_validated_development_zip(self):
         with tempfile.TemporaryDirectory() as directory:
             site = Path(directory)
