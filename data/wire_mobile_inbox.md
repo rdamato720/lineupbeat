@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**3 cards** · batch `5af752d57949` · 15 draft calls · $0.0705
+**4 cards** · batch `38a160955568` · 16 draft calls · $0.0847
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,68 +19,98 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Javonte Williams — DAL RB
+## 1. Christian McCaffrey — SF RB
 
-**Trending up** · DEPTH_CHART · MEDIUM evidence
+**Trending down** · ABSENT_FROM_PRACTICE · HIGH evidence
 
 ### What changed
 
-Mike Moraitis reported Malik Davis secured Dallas’ backup RB job behind Javonte Williams.
+Christian McCaffrey missed practice ahead of Thursday’s opener after the 49ers had managed reported tightness.
 
 ### Lineup Beat impact
 
-Williams appears to be ahead of Davis on Dallas’ RB depth chart. That supports monitoring Williams as the lead option, though this report does not define his workload or snap share.
+This makes McCaffrey’s availability for the opener worth monitoring. The report does not establish the severity of the tightness or whether he will miss game time; his next participation update is the key signal.
 
-[Mike Moraitis · Sports Illustrated -- DAL](https://www.si.com/nfl/cowboys/onsi/cowboys-malik-davis-punishment-preseason-infraction-cardinals) · 2026-09-06
+[Mark Morales-Smith · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/another-scary-christian-mccaffrey-injury-update-should-have-fantasy-football-owners-adding-his-rookie-handcuff) · 2026-09-07
 
 <details><summary>Full evidence reviewed</summary>
 
-While it looked like Blue might secure the job or at least a roster spot, the Cowboys ended up cutting him, along with Mafah, and Davis secured the backup job behind Javonte Williams. Blue's inability to make the cut was one of the bigger surprises on cutdown day for Dallas.
+And so it begins. San Francisco 49ers running back Christian McCaffrey was forced to miss practice today before the team's season opener on Thursday Night Football in Melbourne, Australia, against the Los Angeles Rams.
+
+And so it begins. San Francisco 49ers running back Christian McCaffrey was forced to miss practice today before the team's season opener on Thursday Night Football in Melbourne, Australia, against the Los Angeles Rams. He has been dealing with "tightness," which was downplayed as the team being cautious for weeks now.
+
+San Francisco 49ers running back Christian McCaffrey was forced to miss practice today before the team's season opener on Thursday Night Football in Melbourne, Australia, against the Los Angeles Rams. He has been dealing with "tightness," which was downplayed as the team being cautious for weeks now.
 
 </details>
 
 ---
 
-## 2. TreVeyon Henderson — NE RB
+## 2. Tua Tagovailoa — ATL QB
 
-**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
+**Trending up** · DEPTH_CHART · HIGH evidence
 
 ### What changed
 
-TreVeyon Henderson did not participate because of an ankle injury.
+Tua Tagovailoa was named the Falcons' starting quarterback to open the 2026 season, Kevin Stefanski announced.
 
 ### Lineup Beat impact
 
-Henderson's Week 1 availability is now a concern after the missed practice. Watch for his next participation status and any game designation before setting expectations.
+Tagovailoa has secured the opening-starting job, making him the Atlanta QB to evaluate in fantasy formats. His workload and supporting cast remain unknown from this report.
 
-[New England Patriots · NE official team site](https://www.patriots.com/news/week-1-injury-report-patriots-at-seahawks) · 2026-09-06
+[Darius Hayes · Sports Illustrated -- ATL](https://www.si.com/nfl/falcons/onsi/stefanski-explains-why-falcons-qb-tua-tagovailoa-will-start-vs-steelers) · 2026-09-07
 
 <details><summary>Full evidence reviewed</summary>
 
-DID NOT PARTICIPATE DT Christian Barmore - Knee OL Ben Brown - Knee RB TreVeyon Henderson - Ankle
+After being the only NFL team without a named starter entering the final days of the preseason, Falcons head coach Kevin Stefanski announced Monday that Tua Tagovailoa will open the 2026 season as Atlanta’s starting quarterback.
 
 </details>
 
 ---
 
-## 3. Jaylen Waddle — DEN WR
+## 3. Jonathon Brooks — CAR RB
 
-**Worth noting** · TRANSACTION · HIGH evidence
+**Trending down** · LIMITED_PARTICIPATION · MEDIUM evidence
 
 ### What changed
 
-The Broncos acquired wide receiver Jaylen Waddle in a blockbuster trade, according to Chad Jensen.
+Jonathon Brooks missed practice last week with soreness and was again working off to the side with trainers Monday.
 
 ### Lineup Beat impact
 
-Waddle's move to Denver is a major fantasy-context change worth monitoring. His target share, quarterback fit and place in the Broncos' receiving hierarchy remain unreported.
+Brooks’ practice status is worth monitoring entering Week 1. The report does not establish a setback or absence, but another limited day would raise short-term workload uncertainty.
 
-[Chad Jensen · Sports Illustrated -- DEN](https://www.si.com/nfl/broncos/onsi/5-reasons-2026-broncos-actually-better-than-last-years-afccg-squad) · 2026-09-06
+[Mark Morales-Smith · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/the-latest-jonathon-brooks-injury-update-could-make-chuba-hubbard-an-interesting-fantasy-football-option-in-week-1) · 2026-09-07
 
 <details><summary>Full evidence reviewed</summary>
 
-The Broncos already had one of the NFL's best rosters entering the 2026 offseason, so the front office prioritized retaining its 14-win roster. The Broncos made few outside moves when the new league year rolled around, one of which was the blockbuster trade acquisition of wide receiver Jaylen Waddle.
+Carolina Panthers running back Jonathon Brooks missed practice last week with what is just being called "soreness", but it is starting to look like it could be a bit of a lingering issue, as he is once again off to the side with trainers today at practice. We do not yet believe he is in danger of missing Week 1, but it is something to monitor for a running back coming off back-to-back ACL injuries in the same knee.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrdWNtu20gS_ZWGXuZhRZsURd3eZEuJlbUlQ9aMHwaB0CSbYsckm8NuWtEMAsxv7O_tl-wptiTLccbJbLADzAKGJfe9Tp06VeXfWiE3UbqWcWvUCnjSDzpx0B92h17A-6E3EMHA7Q6Grtfp8WEYiH4cRZ2B5w6SoRt3_WTQ73R7nZ7vdTu-aLVbEa9i3Rr9_FuLl2WlHkW85gZHY4rXJlUVvt_IB8FuVMWlkZr2qDwXheHVDpP3MsskzzXDfsErzYxioWA8FTxmKmET_ig1UwW-ZBnX__79X2x5wWJRmpRFKa_MGVul3DBdl6WqjGa5KqRRlSw27OlsHJsKljVnlkaqoo0BVW9SfOD4StBeFiuhWaHwRSSyEIymtqp6yBTtq5gueMk0LhVnz8xYH20Pd9b2kzk8ZSMLgmExmV6vJ8vxm1WzojBYsTa7UmByOb1dLFez-VtMxdzQUMft9Bx36Li9Vccf-d2RN_iH645cl5bISkRkB9bdLu5mq9lPUxqueGLWODqRsSginOKeDQ_Dmcyl4bSJHNZaAZC93bTYyETCegv3Hq-QRw91ycL6BBoyFOuP2JJDMPYBzxExAx0qHAN0ebUR8MYL1GYnZ_E4roTGIlxWkVsrlQm7R5q6eSrPWK35Blvft1vi8WBW6z6VmWDSsEypB1ycEccuslqwXG5S0EFEdSUaKz6okI4ER-B_jVtxjTa4UJfKtJsll2obqp1moohxFkyOamOIQanM24xnCl-3Eoy74QlPMVLEe6TsPfEpXHRfKFKJNe_4I7n5CNZZ88QfNJMFD2UmzY7onvMH-1Lcyrac2C6I-s2ZcrOhp9ZVWUktmkjAslhtCxbzHUtgmY0MAvcA0DrCCyXxyAZ6rnCbGMHzcuTHXtDzRb8fJ_1hxwv6XtTHVoSq_LXh0-zmZjqZjVdEqFwgxgqpc4xPprerq_Xl1XhJ_M1VLLI9uXm2_j-JacAqKp3KknCYw-Ipfs3J3jLjO0Fq9rlPj3MWatd1XNfvDYcEaqlAZBulywv62wYKRtb8EL7zxZyQLuswk9Fa13luQXymmntrQLQbDqp_Rr4nGPcUBJqvsfDFdS8FrAKsMCnjocgwsqoQGgR_Xe4ngaXW64TLDE8gQXlP449SbLHtaBzhZ0VNq7pqIvfOunSWZbU2FSebHIdNxte0yOCejUnJfHDwxxuMGcEb9jUL6opekxpT6tH5-Xa7PdPyDNw7L5LsPLJRfE40P_zh5ISXExNeTlmDyinx1CnxaKiBKhxZJJV9r0PJjNisW5_aryW0udiyabHJSAZuuamkMi_y2hVpSYULEO33Qjwwj_FHoHWIe0ms3EKMoNaRqAoGiUagE6VzqTVQKZtnReKM3VPKbkKd2FuIj5BhRImMZNmIJNPQ9Vo3ssSLHdvwXIDvWm4KOx8KbBbgi1U18bEEC20q-OszGX5c94uZbD59O34tkw2-nsqO4a4hjttUFBTjKYAmYHnxQElDa6QJFSF2EDxk_1wxI3NheJiJ9hF3RmSM23QAAersQT7FlcR6nxDjzzPUZDZh88WK3UIvZ5ezWwgqm6zYZQodN5IX7IJXOXnFYf8shGCLa3aB515UJO37McQxIu8nscNdR0JhckyGfF3vG47gU3A36MWDvici6FI36vJk8E2SP764g_qt3ywXN-vb5fgShky_ov1_J96fqv1qOr5ZL-7n08mp2L9E_0ty33X7fvc75f4LfoZHbcl1tBn1gIh4rZvyABTaE7r4UFe771F1Kie-V9fnUzwqwTtRspFmUw0nXtf0BomXkl7uJdUKu9jq8y2I5HiONdSxoe4cljncONDylG8fvibclymS_jtRaFG86ENQjGZUmuXYSgXLRBSPICZVw6jQPoCECcdivXMawQMXKU42gqoJ1C1PJcoZu8ImWwDbyqLNfqnhQ1FRemYJqlZiLGgUkfMa7iPsi0jpH6BjkZCPtvYUFa-idIexnGNdXRyqgL9etL1g1PmyaP84v7yejpd_pNmvtR8H-XpS7X0nsmNHd9iYhSxQb3DoK9ijymrEOpxiUVQWxdMScq_rokKtuC-mUW7EzaZEZZnaOqiUjmKPMkBVuZUNuOwPZX315Cw0BhQxO0asOqnZ52-u8fBQoNewnQY1Fvggp9I8IUuxYguQNtOqGU5wqrExRNdLeM7IX8lyZCZZ0G6JwsnrOluQwZ5MhfLTe3IyL0FxomqjqUkjLmubBukGxBLVyxukvx3qcoI0w_m8UnWT6KwJ21RCdbeHHjBT0UNYNw2TxY9Hv9TSCl2znC6yrMWSd3yX4Tbrvm9tSQIeDzpIUiKO_YjHQ9cNnuenu-n4bjFfXy8agp5mqNVyPL-jxLSYf60p-bsF-Df1Iidof7kR6Xn-88x0v_yzmemU8eR7ajle8TpZzF_yBl1zFKmqyTdA_0SK_4vMdd-4BIqB0_5HDcl0_jx5Xc3eXp20I830q-1IaDGz7UiArEXRrp1GV_dzDt5Vo3nbOSFKFFE5Boxz0MsZhwIU80kUbRwNdsWtT-9JtrVZ1zomaXX7brfXbbc2AjyhZ9t8d9Tt_gpy3RmM_OFRt218RLgRAHnBAfZG9RAtNRICN-tGr1ujQe_5PJjeCXonC1q8Lwb9QETe0HN9t5t0et2B4EnPD303wdPjuO9FvBckcdIN_X4cBm6_64WJPxz4oA4ngKMU3F-DRNo6aAt6OVYckO9D9dF59I7eWtt_XtqXEMd93-sGwvM6PPbDXtgNEi8aeIMuBGWQuEm_Fw3DXtLxgmjo9gM38rnni67gnAduN-q1Pv0H72w4bQ:WIRE_MOBILE_MANIFEST_V1 -->
+---
+
+## 4. Hunter Long — JAX TE
+
+**Worth noting** · TRANSACTION · MEDIUM evidence
+
+### What changed
+
+Hunter Long was traded from the Jaguars to the Cardinals last week, according to John Shipley.
+
+### Lineup Beat impact
+
+Long is no longer part of Jacksonville's tight end depth, but his Arizona role and fantasy relevance are unknown until usage or a depth-chart position is reported.
+
+[John Shipley · Sports Illustrated -- JAX](https://www.si.com/nfl/jaguars/onsi/jacksonville-3-major-differences-with-the-offense-entering-2026) · 2026-09-07
+
+<details><summary>Full evidence reviewed</summary>
+
+No position on the Jaguars' depth chart on offense looks more different this year than the tight end room. The Jaguars entered 2025 with Johnny Mundt and Hunter Long as the top backup tight ends behind Brenton Strange, and now neither one of those players is on the roster with Mundt being released in March and Long being traded to the Arizona Cardinals last week.
+
+No position on the Jaguars' depth chart on offense looks more different this year than the tight end room. The Jaguars entered 2025 with Johnny Mundt and Hunter Long as the top backup tight ends behind Brenton Strange, and now neither one of those players is on the roster with Mundt being released in March and Long being traded to the Arizona Cardinals last week. Taking their places this year are rookie tight ends Nate Boerkircher and Tanner Koziol, who will be making their official NFL debuts against the Browns in Week 1.
+
+The Jaguars entered 2025 with Johnny Mundt and Hunter Long as the top backup tight ends behind Brenton Strange, and now neither one of those players is on the roster with Mundt being released in March and Long being traded to the Arizona Cardinals last week. Taking their places this year are rookie tight ends Nate Boerkircher and Tanner Koziol, who will be making their official NFL debuts against the Browns in Week 1.
+
+</details>
+
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrtWttu20gS_ZWGXuZhRYcUJVLSPimOPVbGlj22ZmeBTSA0yZbYNsnWsEkpmkGA-Y39vf2SPdVNXew4sTPBBpvdAYJAIlvV1VWnzqnq5LdWxKs4ncmkNWz5fe4F7qDX6wX9pNvt9ELf9xOe9INBEs2DwA8H3UEYeN0k6UQx97x-x3VjvzOIB7FI-oNWuxXzMtGt4T9-a_HlslQrkcx4BdN4xesqVSU-X_Dyjl2okmdCOze5rFL6ocpzUVS83GDFNJWa5fxOaHYRH_P5vBSbf_3-T834isuMRzKT1YbNVcmqVDC1FIUo2VqVVcpyVchKlbJYHLEpXpZiiecsUbBVqIoJXfEokzo1P9ViJUqypebmeyUXaVUIrRlsr1OBZyXD87XMMpZLPF_wnJbl4q-MnCzEu4oteVnJWC55JVXB6mXCK8HwkizeiQ3TclHw7OjeKWe7-EQbG5-Dd_B_IQsK1eWrk_PZq-vR6dSsKCqsmFWbpcDL65Ory-vpePI9XtGWeNRxO4HjDhw3nHrB0A-Hbucvrjt0XVoiSxGTh1g3Ofl-NB3_7YQel3xezWB6LhNRxLDiHg362-eZRH7MuSirLYqoWNmF-5jS90rON-bAkUo2jJeCUwg_Gl8KxkSZaDrISFVrlggTJ9qrbSJMiRJtMmO8K3MbX5jiMFxFPL5ja64ZxREuJEett-3W1jscclQkTCsmKxYJhFMfsRtesNOSF7HUsWLdgSg1K-uiAFqYMXecllJXEst2uDNbAGpAOKuUBcGy5IgkQlCphG9gHu-FPaDg-Xca7nFNrlpk4tM0rUtNaycUAXaqFPwHpiR2Elmk6rLAUUe1rlAWkrcZX3C4XBmj50qzUbEQqBd2zXN99KZ4U_zvno6dCZbCrUiIAqjAL3CANWiCvWntANR-00KByjg1J0jUulhmfINTcL1zFRbopzGYR6ranJOthbgj1K5NEP8M2WeFrLWvr1nMi0QS7VjtyBVYWQzBE3LY8fqhG_fdIHaDMHJ7oRCkDWB_-auhn_HFxcmr8WhK_JOLOOWF1DlV7Mubk8l0dnp9eTG7uh4dT8fHZolKRNaQIs9m_x9SgfQAjalcUrwmr06uTvDXhGTAZI2E9BFw7l7brLiu47q-3-mTACyVlg3_X7-k76W6tYow4zthuJxQxJc1Dh7PdJ3nNsyP1QEdEujZYZ-ngicUni22TR6akENMhM2BrbIUS3Ne8AUs2MBTOR3Kw30fPtRLSEyCcyLHIiMglAKABHYJ2M1rSbZmcwChLgUJ2Ft6vpJijR_uzkyRtSqqUXZGOk458KU37LJgN2N6UcH6Ao3KsHU2_v4MT6hY8O3mFJ_rkhxIq2qphy9erNfrIy2PgNIXVA0v5tbWC1nc1qUU-gUHuAAWR6NZ2jjxNrJOHsc2so5ZunEsPBydqjpLnJSvhNMYc-YNXzgWJg5P6OwOcOaUSt1JgeVFEtfzeet9-1PN2CteStT5GTCjP2jD-EJRFSluyEWLGGFMdoVEG6JEAGhE_VZFbapD-pzK3CwaVRm5y358SUQpVjyrDdwL1hyD6hKqTvyFGkBV3mEv8BFJW70kUFgyAu2VIgf_sbq4AxHBQKloD_zKgudrN1e9YTcY9vqPNldXlzfjTzVXg080Vw85qOltwOkVEqGZ6X_mArhaYbGi_uhhpEBHSIbNFvFVJDaqSBoOO1ChD9olU6GW_02KiwzqdHpudYHERNUVWq8CtIb8UOKxHiET5fYnc-JnhsrXW5Zcou7Mpm12yjMEApVPLBErDh36AdujwioBPOg7icQXqi5IWC_gMqeGkldsWnN2AEVDsHQEswElZXsuYLSBnGGeHTZ_qY2vJOjPlbDAj0LewRgkAjcRodf1vf6zJAxEPT2bHZ-NrqdPKde3VV3P0KP7iXpUioKO17kvRT9-rhQ9hANiZyFJQWlA9t2jyac4PQac9seB-CVCVC-_VIZuKPiajbPM9IEkkY7DRtPzT0mSff1RTSrmGSTJRMnqk96e2hHvkDA0mc46hcLYNc4vkVPV3Kl2EXeoAC00nZXGB4E-tNRP6MzTQ_9LEi6Nyt13FM1kaNF7r2Pb887P6E6Z91QHt58YQY880lT_bRYRoVk1ZoaMEWCinTUJLiu51PAB_lcONsv3JUTQKEHIRbX5-sLj40__D031T-oO8ToGF9PVEidRDO1IIfmiUNrWA623EN1HWiNqNoEHDbBNzcEAv0_DQ_E55hAzcCS7AnelH4xhr1XBAaRiu8fD1jMjEqM5xQ49a5INoOYWZbObaLIMv3jT2h7wTcvmX5qVO7oARWTYAnC4E_QuNlCI0N2yCF_N5QNNVxZ8cKMGjjipGplRdC9iJjWSaTJmZJcU3DiGIpZEo82cyKvdEY4QLYTTBHMjyOtMYuJo7MJewmlTcoAOv0f-vVOoHHNIc4ymWMzsw--HE6Ckz-QifXcq5Zjno-Nztm1TaU_jPE0xd4UQz5XObhR2Bm7QDdxIhJ0wCHshvyedN2cA-Gx6cn3xQDvPxxfj6cmr2RXEc3w8vgKYLydPqOi3yxrPENQHsH9UUQd-t_uFw91nVteOIqiTIPm1gKdzblH1ceDbxu6_eL6jtu6ni72cHo-uP3_Ew-GdDNWhK-e2Ca4TmeA-mO0MvTh0f4FBsI64g78iXiYO5kFJYIUJ6gQ_nPuWdDqscSgxjveE_L5WKY4KsGXmjuBeCZ0rw2TAPqjPkAzdUhDTvAb00R-twOjiO23Hc9QQ4C6WVWorgbrEkSltbgYSg4ptB1qiNVhxQ4ql2LWXdVHJjNUaw78pLGsOAaBtt0Bmu-7Tqs7XFVmv-zGR_WlyfH5iMPGoxnY_6-acqEpYudrGcIExH61jm1FaEHQTU1tDMAGdTIgEtbkXp9ijaYNvVK6gBkP9MhdbmbZ00VzQYxYEq6GfPExrm64EM3tX2RChpvmNbrLoXrBEEZp7zsa_h8I9UfuMKasYr_kCPTd6cJNWZtO6G1yF0VeQDN2QJhLPUHqVnTY2gtMdES_2N2wGbqic3HJ1Y9sSORxD1no2OoTwYsMu6iKpDAbPalpjwri74VRLI3j1cm-cLk0hmQnID0YVTQElSW3bGAFeWSGk4XpVCDvWohFqIqut6NvoKU37GWesF7bzoBrgxKd0tctLjL1k2LjVDNu7GJuxrsHBLtN7-jVX1n8G_CsGHIPmXXO5IUtyIRb6IHJEava67fB4E6rpl0pADrE53X1i-ylGSnz8Qf0qVUZFp2yjjM4yP9wDOZOx5Jm5eUkEGFbfu_qHRK8L05w1LQxh4s9EfQOJemb7HM39btLh8zgIQz8O572-7z3r5ml6PZrc0L-ZPNkzfxuC_4z--ADIj_bGoes-6I1N1D6nNz6slQNBbG7I9mXXYPQRbKJc4liVSTOWHXZif6AN_tmMNOgdpDnzf-B66fXo75_uiO2CT14w3dqo2O749gBUjo9m91aVzlaIUKcOEYNDLXMjWM52THOoKWu9f0v9m65mtU6ox3L73SDot1sLusUmr227e___PnT7w463a-BsNdAdAOLjBduom_YMtYEcw8bMNG6tYf_Be53yTi84WNDioeiHPRF7A8_13e68E3T7gs8DP_LdOUo3SUIv5kFvnsy7kR8mUc8Nux4qe9D3RSxoHNYgnJzPVoC4zc8aPaZjiQBdfaTeOStvl6yZ_V861hM6q9_jftL1k0GPB24v7AdhHERe0Hd56IWiJwbxPOl6Pu-HcMvrwIVO3-3hZ27CvWjQev9vBRKIdw:WIRE_MOBILE_MANIFEST_V1 -->

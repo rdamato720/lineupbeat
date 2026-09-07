@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1190,
+ "count": 1206,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -13129,6 +13129,182 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00406
+  },
+  {
+   "candidate_id": "mobile:onsi:21870c806c067b057ee9",
+   "player_id": "00-0033280",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/another-scary-christian-mccaffrey-injury-update-should-have-fantasy-football-owners-adding-his-rookie-handcuff",
+   "attempted_at": "2026-09-07T16:48:21+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-07T16:48:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006018
+  },
+  {
+   "candidate_id": "mobile:onsi:e557d703c13ab500f75e",
+   "player_id": "00-0034827",
+   "source_url": "https://www.si.com/nfl/bills/onsi/players-keon-coleman-unexpected-projection-signals-career-year-from-bills-wr",
+   "attempted_at": "2026-09-07T16:48:28+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:48:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004486
+  },
+  {
+   "candidate_id": "mobile:onsi:42bc5360177a870f659d",
+   "player_id": "00-0036875",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/if-treveyon-henderson-can-t-go-meet-the-patriots-rb-who-ll-need-to-step-up-corey-kiner",
+   "attempted_at": "2026-09-07T16:48:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:48:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003758
+  },
+  {
+   "candidate_id": "mobile:onsi:992d2b53f4bbf4f09579",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/ranking-the-nine-latest-dolphins-newcomers-in-terms-of-impact-01m1ww4jz7s7",
+   "attempted_at": "2026-09-07T16:48:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:48:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004294
+  },
+  {
+   "candidate_id": "mobile:onsi:e562fd5ab1aea0246f9a",
+   "player_id": "00-0036912",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/7-eagles-in-key-roles-in-starting-lineup-that-must-step-up-in-2026-season-01m1y3x7ev7x",
+   "attempted_at": "2026-09-07T16:48:38+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-09-07T16:48:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005526
+  },
+  {
+   "candidate_id": "mobile:onsi:63b7a268de60de714318",
+   "player_id": "00-0036212",
+   "source_url": "https://www.si.com/nfl/falcons/onsi/stefanski-explains-why-falcons-qb-tua-tagovailoa-will-start-vs-steelers",
+   "attempted_at": "2026-09-07T16:48:43+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-07T16:48:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004428
+  },
+  {
+   "candidate_id": "mobile:onsi:f3e5b466abc131b76b87",
+   "player_id": "00-0038041",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/cowboys-predicted-draft-huge-explosive-te-make-offense-downright-frightening",
+   "attempted_at": "2026-09-07T16:48:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:48:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005032
+  },
+  {
+   "candidate_id": "mobile:onsi:a65b7d0664dfa400e0b2",
+   "player_id": "00-0037247",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/cowboys-predicted-draft-huge-explosive-te-make-offense-downright-frightening",
+   "attempted_at": "2026-09-07T16:48:50+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T16:48:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004584
+  },
+  {
+   "candidate_id": "mobile:onsi:4b72906460be7276757a",
+   "player_id": "00-0039344",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/the-latest-jonathon-brooks-injury-update-could-make-chuba-hubbard-an-interesting-fantasy-football-option-in-week-1",
+   "attempted_at": "2026-09-07T16:48:56+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-07T16:49:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006234
+  },
+  {
+   "candidate_id": "mobile:onsi:102b0c6679ee310ee80f",
+   "player_id": "00-0036555",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/the-latest-jonathon-brooks-injury-update-could-make-chuba-hubbard-an-interesting-fantasy-football-option-in-week-1",
+   "attempted_at": "2026-09-07T16:49:01+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T16:49:06+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006582
+  },
+  {
+   "candidate_id": "mobile:onsi:d6713e4a7928d28eec45",
+   "player_id": "00-0036158",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/the-latest-jonathon-brooks-injury-update-could-make-chuba-hubbard-an-interesting-fantasy-football-option-in-week-1",
+   "attempted_at": "2026-09-07T16:49:06+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-09-07T16:49:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00416
+  },
+  {
+   "candidate_id": "mobile:onsi:df9fa8f6e494b6ff4164",
+   "player_id": "00-0036875",
+   "source_url": "https://www.si.com/onsi/fantasy/news/treveyon-henderson-vs-rhamondre-stevenson-is-it-stevenson-season-in-fantasy-football-with-henderson-injured",
+   "attempted_at": "2026-09-07T16:49:08+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:49:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004436
+  },
+  {
+   "candidate_id": "mobile:onsi:0e7181db1d804f1a5f55",
+   "player_id": "00-0040734",
+   "source_url": "https://www.si.com/onsi/fantasy/news/treveyon-henderson-vs-rhamondre-stevenson-is-it-stevenson-season-in-fantasy-football-with-henderson-injured",
+   "attempted_at": "2026-09-07T16:49:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T16:49:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004208
+  },
+  {
+   "candidate_id": "mobile:article:9537a6bb208ac503b46a",
+   "player_id": "00-0036212",
+   "source_url": "https://www.atlantafalcons.com/news/kevin-stefanski-details-plan-for-quarterback-position-michael-penix-tua-tagovailoa",
+   "attempted_at": "2026-09-07T16:49:13+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T16:49:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00447
+  },
+  {
+   "candidate_id": "mobile:onsi:bf34d2afc6773c7f5831",
+   "player_id": "00-0037004",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-3-major-differences-with-the-offense-entering-2026",
+   "attempted_at": "2026-09-07T16:49:16+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-07T16:49:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006292
+  },
+  {
+   "candidate_id": "mobile:onsi:a8fbceef8b836d27c02a",
+   "player_id": "00-0041503",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-3-major-differences-with-the-offense-entering-2026",
+   "attempted_at": "2026-09-07T16:49:21+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T16:49:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.01016
   }
  ]
 }
