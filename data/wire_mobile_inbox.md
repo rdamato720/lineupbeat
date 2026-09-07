@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**2 cards** · batch `471105cd0390` · 16 draft calls · $0.0838
+**1 cards** · batch `54ac95d22b38` · 18 draft calls · $0.0802
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,46 +19,24 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Jonathon Brooks — CAR RB
+## 1. DJ Moore — BUF WR
 
-**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
-
-### What changed
-
-Jonathon Brooks has missed practice with soreness as Chuba Hubbard returned from injury, Mark Morales-Smith reported.
-
-### Lineup Beat impact
-
-Brooks' soreness-related practice absence is a negative availability flag entering Week 1, while Hubbard's return adds backfield competition. Monitor Brooks' next participation update; the severity and timetable are unknown.
-
-[Mark Morales-Smith · Fantasy On SI](https://www.si.com/onsi/fantasy/nfl/can-fantasy-football-owners-trust-jonathon-brooks-in-week-1-with-chuba-hubbard-healthy) · 2026-09-07
-
-<details><summary>Full evidence reviewed</summary>
-
-For a while, it looked like all the momentum in the Carolina Panthers' backfield was behind Jonathon Brooks. However, there has been a shift over the past week, as Chuba Hubbard has returned from injury and Brooks is now missing practice due to soreness.
-
-</details>
-
----
-
-## 2. Emeka Egbuka — TB WR
-
-**Trending down** · INJURY · MEDIUM evidence
+**Worth noting** · TRANSACTION · HIGH evidence
 
 ### What changed
 
-Emeka Egbuka is dealing with a toe sprain suffered during a joint practice against the Jets, River Wells reported.
+DJ Moore joined the Bills via trade from the Bears as the team sought to add a pass-catching option for Josh Allen.
 
 ### Lineup Beat impact
 
-Egbuka's toe issue is worth monitoring entering Week 1, but this excerpt provides no practice status, severity update or timetable. His next participation report will clarify any availability risk.
+Moore's trade to Buffalo is a meaningful change of team context and puts him in the Bills' receiver mix. His exact role, target share and usage remain unreported.
 
-[River Wells · Sports Illustrated -- TB](https://www.si.com/nfl/buccaneers/onsi/will-emeka-egbuka-jalen-mcmillan-play-week-1-what-we-saw-at-bucs-practice-2026) · 2026-09-07
+[Randy Gurzi · Sports Illustrated -- BUF](https://www.si.com/nfl/bills/onsi/full-season-projection-has-bills-falling-short-in-frustrating-playoff-loss) · 2026-09-07
 
 <details><summary>Full evidence reviewed</summary>
 
-The Bucs are generally healthy heading into their first true game week of practice, but there were a few questions heading into Week 1. Two of the biggest questions were about two of their wide receivers, Emeka Egbuka and Jalen McMillan — Egbuka suffered a toe sprain during joint practice against the New York Jets and McMillan injured his knee at some point during training camp.
+In the past, Allen has had struggles with turnovers during the playoffs, but that has typically had a lot to do with a lack of pass-catchers. The Bills added DJ Moore this year in a trade with the Chicago Bears in an effort to take some of the pressure off of Allen.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrlV91u47gVfhVCN3tRK5EsWf7pVZLx7GRQOwPH28GiGAhHImUxlkSVpOLxLgbYh9gn7JP0HMp2nGR2dtuLomiBILZF6ujwO9-P_bOXgc3LVHJv5sXjMAxGOQ-iaRBORkE-nk6icRIN4yDIQ-DBCEZBkYx5NAwnMAIRRpFI4iEfiSiZjqfewMtBc-PN_vazB22r1aPgKVgsjUvQ2VJpfL8AvWULpaESxr-vpS3pRlXXorGg97jjWiu1Nd8xo7RohDG-FhVYwVmrIbcyFwwyIxp8lYYBa8QGrHzEq48gK8hkJe2eFRVsGJYUWjYb9lGILQsHbFfKSrB3XZZhp98ZpoXtdMOAc8MyyLeFFBVn2E0rrLRSNRfYaiOt0uzYVSM-W9aCxkZkC7SHdS3H_v7MbCmYEY_4SGwAGs6srIWFDB8JWrCu2TZq11w8O296Qirb90idrSktN7Ih0O7ezP-SvlldvV27HXiuxqZ23wpcXM0_3K3Wt8vvcYkawUvDYJj4wdQPxutwPMO_KPhTEMyCgLZILXLqG_ct599frW__OqfLGgqbYulCcgLXmwUX0_B4vZI4KXdamq-3ppOqTuMMuBKGNcoy04pcFvsehcPoWKVyd9fgCRjEUnzGvTTRA_4nnAibr9UmiLAtvBEZ8MQDOq2hgs_nwbGYrMyF92ngicfjcby3uBF6CgyYtNib2mIPldzifKrKNV4rwr6rmWzc5xvQqpINsA_Q4GeNBHjiyQ6QNaKUOOn3qgEkeHOgyQV7p3Z04AFVwdmXbqtAqjFTysIyHLl2T2jBWLZDfg4Y7rkpuwyOBHV39RBhn4VW1NZDp3ty9U8iDSCrWC2NIaY_YdMJZtVpEoTsEYs0x_slgdcrv1YoGjHD2crZNETJo7gTCKfxMBRTmAzxVtSu_MlR5naxmL-5vVoTZ2qRl9BIU-P1q-v7-XKdvl3dLdIPq6ub9e2N26K4qA5Ehir9fxM6viBpStkScss38w9z_LckEbcV7AUZ4gvqnJb62QSBH6AjR3FMC8rIg3JX1_RZq4deyymcJH23JNzbLqtknpqurnuwXzzGcYtIcw73Dt34Sbuv6Pg1Kg7Ya0PHja3SOMiLV428tjstgONhcZ6iwitrfDinSXKE7rAsqZ20wKF3WpD_fKLrj1Ls8MbTwQna3gR79yDFo2jB7Nldw-5vacFi9Q0mDjoqkviHBV6zAoi-N1cr_NBp6qG0tjWzy8vdbndh5AWy5JK0cVn05S6borpECfmHz36hlM3QQfx-2r7VnbH-wwFwP3OA-7LxSeZ-6BPMfk7Q-mUPrV8KqGy5974MvpWdK0mu8VFUlXkZmvNN1m0BmW4VycV0TjQ7HEOJpuaYTai-EkrWWaQzbhWfc6Hbk9WSqzwRw6D3d-bMxHslkPU-eTd7R170WjU9G5Bc6LF5BZpCApr9cxlrabb_6WRMZqPJLIz_rWSMv5GMR589y0ZLaO1KQWnA-lmd0OUDlySuEIoLMXVQkTjZBmrhvHupTuBjpqAqLEFxjDq66WWWuqKHafKXWUhtXne5cX61Qb2jfKs9O9CQXp0IZYMRgj1LzQqpMaiQ2sI15SKLqeJ0iiOVKO129A9YIXbs750wDpznNXv6XbD1TlERMtRMbja49-yOvkymqO5pnyR48KsAjkqQHJCV81ognAdUyY7foxc1bJEvEEdo2D9--fW4arqiwKocuyOhGOwek553ThMPCns7C58Nrhl3JrbEo_yo0OjeC2vcM07VnQ9iRRLRthF4H84bv0aw1pU71Lb0IHqTQ93-0TCOII-HwTSPi5hnEx7lCQ7vPIzv3yG_0_V8tXiRxrfL9z-sfvyd_P1f8Yw_ELLnFPlawsZBOJw-T9iPq38xYZ_REI_FUUwEm0vVZ3w7sfBADvgW9YhxA3Zm_f818XpPbRh2W1WYd9p9c_N9tr7-dtK69d8MWsrWrMtRFAJn2ucuscAXhK4vHLr-Awncr_PaSdCncZ7CtQSL730DOx_fYS3jH3H1yf29L58oKIxNO8PJywP8mTtNBl5vg_YYvM9_Q42iWZCckqJXVQ4UxLMwOY7BcRc11mEEgU1dQHizyYt1U8JwlJxt8GAsJuORyMNpGERBXAyTeCKgSKIsCgoocs7HYQ7JqOBFnEVjno2CcRxmRYS_0NEGidEmL0UNKRliP68dhpnfmwl-9cjUZ_8xPA0v7X_3953g5mk-LUajLBBRxvMiFsMRxx5CzKZsGIzHQRLmUQGQiCKGqAiLccb5KEtCHiWcwwi8L_8EptSgcA:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrVVttu20gM_ZWBX_qwVqKbdfFb2rhtiq5TJC72YVEI1FysaUcaY2YUxy367yWlOGmxX7AvhkVyOOTh4ZF-LFoIvGu0WKwXqxx4vRJp2maVLOKc10XdxqrieVEkqpKqLPK45SopQLUqhTzPskTlK7la1WXN48VywcEJv1j_-2MBh4OzD1I0EDA1umAMnXX4_w4GcWLvRvdd0wnb93II4E7o-ttaJ195FhwIyYJlr0elwFimPQPWSxj0sFejYbyDYS-ZVSxI6Bm3Q5CPgWFmdhiDZ53umR5Y6CR7rY3xr5iTXOoH6VivHy_Ye0woH4EH5qyRS4b372VgvgMnpyyjB8zvZA-YZhycPFgXpLj4o-Lmucn2NDf5m886vdcDNXV7vfnYXN9dvd1NEVjqEJpwOkgCY_Pp9m53s32HLgGBTGmcFlFcR3G5S9N1Xq6z4q84XseEr9DYR9CW8n7evvm4ubojqwMVGsystJADxyTxRV2c7Ub3OgAdosksdoiJfJgDmbDSs8Fi5wfJtTqdkccjw36JuPYHOfjp8HJC2RFmHtONnlnHzgM7GMBsdkZcyEPoaEQuEF5byxClr1i3FOxo3TdjQZwhn7LQDPBUAG08O0pHwJ_x_rJcnKvFnm_mGw7gw5JdGSMH1gGOGwQW5cb93mA_R43Xh9ENOBrnmRgdNjOfM3CySvkla8eAFgjTcZyF5mDMaUoEzCAgSD5h51RoAP6NyIb3-ojTxmDiC7Y704uBENjc9YcZEMyM_DpJcERCeAJ1LguPvOnwtj2SGwP8FDEwqRQ2TLcG-CaZt_3MbiraSe9HR8-KbFPbBOwZl4YjYzWxZ97j3rbayDXOW6-TkhfAcwWFKqHERY1B4lHcRP19YtH95ur-dtt8vJ0o2EvaLO179Ozurrb3V292N7db8lghzROpwTT_v7W1xwGH1ukD0Wh7vfm0wZ8trSSxQpIynef3bJvxjOMojrO8SktyWK-fFvAf2r0naqOlgfNmbm-3G3KNrdG88WPfzzg98-Or1QPy5blP9qDPLFHO9rNjYgexEx8muLwd993EEaQbAvvCRuK3PdDtDGnEPljfvdDkzzL-q1lO4r2uMdBKQ10hYh1pAiZ98mKx3jcK1xNpSCLyhewPWuKuvnRNgM5ChoW6aV3vCX7PbowZcT2BBCCK2OvPbykoODnsQ4dh72_evUcLNYlPs3t0VEwXwsGvLy-Px-OF1xfIustBmcuWQLskgl8irUzkJXg7RC-ziHCtoykqQiIabCXyyPkQ6SFSbi6GjE-CEBnr_eLnF5JnH5rRC5LQuIoTktG9ROZQ8fO77Hd9ztardL2qn_V53hLSEoQpqc7gTwKKOzOi8ENoJl1erKviTz_SOF0VvwUsoJRVuZI8qZM4i3OVFnklQRVZm8UKFBeiTDgUKyVU3malaFdxmSetyuoqw8UBghm1qoeGlHAe0xFfIdEsEYhGax-jh-R5Zs38OTBXgsFJIeu0KHkis7KN8zoHEedVkhaJzKuqVBxqvsqKomyToha5kDyLs1LWK0jjCr8TFj9_AaP60QQ:WIRE_MOBILE_MANIFEST_V1 -->
