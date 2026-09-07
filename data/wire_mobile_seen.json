@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1159,
+ "count": 1174,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -12788,6 +12788,171 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.0037
+  },
+  {
+   "candidate_id": "mobile:onsi:8a7ab5df57cd4097d523",
+   "player_id": "00-0038933",
+   "source_url": "https://www.si.com/nfl/bills/onsi/roster-surprising-buffalo-bills-te-makes-life-a-little-bit-easier-for-joe-brady",
+   "attempted_at": "2026-09-07T00:28:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T00:28:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003838
+  },
+  {
+   "candidate_id": "mobile:onsi:9d1057e4a95a262f0be0",
+   "player_id": "00-0034857",
+   "source_url": "https://www.si.com/nfl/bills/onsi/roster-surprising-buffalo-bills-te-makes-life-a-little-bit-easier-for-joe-brady",
+   "attempted_at": "2026-09-07T00:28:42+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T00:28:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004562
+  },
+  {
+   "candidate_id": "mobile:onsi:3d1563e77df7921571c7",
+   "player_id": "00-0036997",
+   "source_url": "https://www.si.com/nfl/cowboys/onsi/cowboys-malik-davis-punishment-preseason-infraction-cardinals",
+   "attempted_at": "2026-09-07T00:28:45+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-07T00:28:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00683
+  },
+  {
+   "candidate_id": "mobile:onsi:43d1968ca79bcb7a33a5",
+   "player_id": "00-0036875",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/patriots-week-1-injury-report-could-treveyon-henderson-end-up-sidelined-01m1mc8z1s0y",
+   "attempted_at": "2026-09-07T00:28:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T00:28:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00366
+  },
+  {
+   "candidate_id": "mobile:article:ea056d871ec9974c4af8",
+   "player_id": "00-0040734",
+   "source_url": "https://www.patriots.com/news/week-1-injury-report-patriots-at-seahawks",
+   "attempted_at": "2026-09-07T00:28:53+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-07T00:28:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004316
+  },
+  {
+   "candidate_id": "mobile:onsi:5ad82ea0edd3cad90058",
+   "player_id": "00-0036613",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/5-reasons-2026-broncos-actually-better-than-last-years-afccg-squad",
+   "attempted_at": "2026-09-07T00:28:57+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-07T00:29:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004492
+  },
+  {
+   "candidate_id": "mobile:onsi:4418bed614a54c430203",
+   "player_id": "00-0034348",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/5-reasons-2026-broncos-actually-better-than-last-years-afccg-squad",
+   "attempted_at": "2026-09-07T00:29:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T00:29:05+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006432
+  },
+  {
+   "candidate_id": "mobile:onsi:89d1ee672430828b5d8a",
+   "player_id": "00-0036158",
+   "source_url": "https://www.si.com/nfl/broncos/onsi/5-reasons-2026-broncos-actually-better-than-last-years-afccg-squad",
+   "attempted_at": "2026-09-07T00:29:05+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T00:29:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004518
+  },
+  {
+   "candidate_id": "mobile:onsi:c806088d72a925e33216",
+   "player_id": "00-0038544",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-fantasy-football-favorites-omarion-hampton-ladd-mcconkey",
+   "attempted_at": "2026-09-07T00:29:08+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T00:29:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003994
+  },
+  {
+   "candidate_id": "mobile:onsi:a9e0305d6e15baaf5f86",
+   "player_id": "00-0033885",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-fantasy-football-favorites-omarion-hampton-ladd-mcconkey",
+   "attempted_at": "2026-09-07T00:29:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T00:29:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005566
+  },
+  {
+   "candidate_id": "mobile:onsi:391997ccbba92b4f772d",
+   "player_id": "00-0040189",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-fantasy-football-favorites-omarion-hampton-ladd-mcconkey",
+   "attempted_at": "2026-09-07T00:29:14+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-09-07T00:29:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004372
+  },
+  {
+   "candidate_id": "mobile:onsi:f89375c8eda5e7fe91d8",
+   "player_id": "00-0040727",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-fantasy-football-favorites-omarion-hampton-ladd-mcconkey",
+   "attempted_at": "2026-09-07T00:29:17+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T00:29:20+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00497
+  },
+  {
+   "candidate_id": "mobile:onsi:bc109601e2cb852efc62",
+   "player_id": "00-0039915",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-fantasy-football-favorites-omarion-hampton-ladd-mcconkey",
+   "attempted_at": "2026-09-07T00:29:20+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T00:29:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004694
+  },
+  {
+   "candidate_id": "mobile:onsi:a5b35d10a313343037b7",
+   "player_id": "00-0036355",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-fantasy-football-favorites-omarion-hampton-ladd-mcconkey",
+   "attempted_at": "2026-09-07T00:29:23+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-07T00:29:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004456
+  },
+  {
+   "candidate_id": "mobile:onsi:d46bcfb3f57e997b192c",
+   "player_id": "00-0040666",
+   "source_url": "https://www.si.com/nfl/chargers/onsi/chargers-fantasy-football-favorites-omarion-hampton-ladd-mcconkey",
+   "attempted_at": "2026-09-07T00:29:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-07T00:29:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003764
   }
  ]
 }
