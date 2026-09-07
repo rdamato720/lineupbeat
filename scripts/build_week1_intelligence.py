@@ -601,6 +601,7 @@ def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
             stat[key] *= team_market_factor
 
         applied_props = []
+        applied_prop_lines = {}
         prop_book_counts = []
         seen_components = set()
         for market_row in props_by_name.get(
@@ -615,6 +616,7 @@ def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
                 stat[component], float(market_row["consensus_line"])
             )
             applied_props.append(component)
+            applied_prop_lines[component] = round(float(market_row["consensus_line"]), 1)
             prop_book_counts.append(int(market_row["book_count"]))
         stat["receptions"] = min(stat["receptions"], stat["targets"])
         rounded_stat = {key: round(value, 3) for key, value in stat.items()}
@@ -659,6 +661,7 @@ def build(market_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
                             "game_book_count": int(game_market["book_count"]),
                             "player_book_count": min(prop_book_counts) if prop_book_counts else None,
                             "player_components": sorted(applied_props),
+                            "consensus_lines": dict(sorted(applied_prop_lines.items())),
                             "team_environment_factor": round(team_market_factor, 3),
                             "updated_at": market_payload["fetched_at"],
                             "raw_lines_public": False,

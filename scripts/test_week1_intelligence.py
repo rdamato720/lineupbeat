@@ -146,6 +146,12 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
                             and p["market"]["game_book_count"] >= 3
                             and not p["market"]["raw_lines_public"]
                             for p in self.payload["players"]))
+        players = {p["name"]: p for p in self.payload["players"]}
+        self.assertEqual(players["Geno Smith"]["market"]["consensus_lines"],
+                         {"passing_tds": 0.5, "rushing_yards": 5.5})
+        self.assertEqual(players["Kyler Murray"]["market"]["consensus_lines"],
+                         {"passing_tds": 1.5, "passing_yards": 222.5,
+                          "rushing_yards": 22.5})
         public = json.dumps(self.payload)
         for forbidden in ("bookmaker_key", "american_price", "apiKey",
                           "DraftKings", "FanDuel", "Caesars"):
@@ -156,8 +162,9 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
         for text in ("Our Week 1 projection", "What the market says", "Opponent matchup",
                      "Expected opportunity", "Availability", "Data coverage",
                      "Evidence agreement", "current injury reports are unavailable",
-                     "private consensus included", "Signals are capped and blended at 25%"):
+                     "private consensus included", "Pass TDs", "Rush yards"):
             self.assertIn(text, html)
+        self.assertNotIn("Signals are capped and blended at 25%", html)
         self.assertNotIn("zero odds requests were made", html)
         self.assertNotIn("Odds were not requested", html)
         self.assertIn("Market included", html)

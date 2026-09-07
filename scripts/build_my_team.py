@@ -65,6 +65,7 @@ def public_model() -> dict:
             "matchupLabel": "2025 prior-season context",
             "marketState": player["market"]["state"],
             "marketAdjustedComponents": player["market"]["player_components"],
+            "marketConsensus": player["market"]["consensus_lines"],
             "availability": "Current injury report unavailable",
             "photo": player.get("photo"),
             "teamLogo": player["team_logo"],
