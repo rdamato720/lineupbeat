@@ -141,6 +141,8 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertIn('id="mt-team"', dashboard)
         self.assertIn('id="mt-roster"', dashboard)
         self.assertIn('href="/my-team/"', dashboard)
+        self.assertIn('class="mt-dashboard-visual"', dashboard)
+        self.assertGreaterEqual(dashboard.count('/assets/homepage/team-3d.png'), 2)
         self.assertIn("location.replace('/my-team/team/')", runtime)
         self.assertIn("if(!dashboard){openDashboard();return}", runtime)
 
