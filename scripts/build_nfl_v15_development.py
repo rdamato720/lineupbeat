@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Complete offline development build with trusted-current season adapters.
+"""Complete trusted-current release build with explicit target adapters.
 
-Run in a disposable checkout. No provider requests or production data writes.
-The deployment workflow calls this twice and compares every output byte.
+Development starts from the frozen public feed and is byte-reproducible.
+Production starts from the already-built current artifact so fresh approved
+Wire and historical-data pages are preserved. Neither path makes provider
+requests or changes the frozen numerical source.
 """
 from __future__ import annotations
 import argparse
@@ -77,9 +79,21 @@ def mark_trusted_ranking_pages():
         page.write_text(text)
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--development',action='store_true');args=parser.parse_args()
-    if not args.development or os.environ.get('DEV_PROJECT')!='lineupbeat-dev':raise SystemExit('isolated development project required')
+    parser=argparse.ArgumentParser()
+    target=parser.add_mutually_exclusive_group(required=True)
+    target.add_argument('--development',action='store_true')
+    target.add_argument('--production',action='store_true')
+    parser.add_argument('--db',type=Path,default=ROOT/'beatwire.db')
+    args=parser.parse_args()
+    release_target='production' if args.production else 'development'
+    if args.development and os.environ.get('DEV_PROJECT')!='lineupbeat-dev':
+        raise SystemExit('isolated development project required')
+    if args.production and os.environ.get('PRODUCTION_PROJECT')!='lineupbeat':
+        raise SystemExit('production project required')
     os.environ['LINEUPBEAT_NFL_SEASON']='v1.6-trusted-current'
+    os.environ['LINEUPBEAT_RELEASE_TARGET']=release_target
+    base=('https://lineupbeat.com' if args.production
+          else 'https://lineupbeat-dev.pages.dev')
     sys.addaudithook(deny_network)
     # This is a complete artifact build, not an incremental page refresh.
     # Starting with the previous generated NFL tree lets a page that no
@@ -87,24 +101,30 @@ def main():
     # second artifact differ from the first.  The directory is generated and
     # untracked; clear only that bounded output before rebuilding it.
     generated_nfl=ROOT/'site/nfl'
-    if generated_nfl.exists():shutil.rmtree(generated_nfl)
+    if args.development and generated_nfl.exists():shutil.rmtree(generated_nfl)
     import build_nfl_season_release as release
     global CUTOFF
     model,ranking=release.load();CUTOFF=datetime.fromisoformat(model['metadata']['cutoff_utc'].replace('Z','+00:00'))
     import dev_site
-    feed=ROOT/'data/rollback/feed.before-replacement.json'
-    db=ROOT/'audit/nfl-trusted-build.db';db.parent.mkdir(exist_ok=True)
-    template=ROOT/'site/template.html';saved_template=ROOT/'audit/nfl-trusted-source-template.html'
-    dev_site.preserve_source_template(template,saved_template)
-    # Builders read site/template.html directly, so recreate the same stable
-    # input for every pass. The committed source may already carry development
-    # protection; protect() is deliberately idempotent and analytics-free.
-    shutil.copyfile(saved_template,template)
-    dev_site.seed(feed,template,ROOT/'site')
-    dev_site.hydrate_db(feed,db)
-    release.context_pages()
+    template=ROOT/'site/template.html'
+    if args.development:
+        feed=ROOT/'data/rollback/feed.before-replacement.json'
+        db=ROOT/'audit/nfl-trusted-build.db';db.parent.mkdir(exist_ok=True)
+        saved_template=ROOT/'audit/nfl-trusted-source-template.html'
+        dev_site.preserve_source_template(template,saved_template)
+        # Builders read site/template.html directly, so recreate the same
+        # stable input for every pass. protect() is deliberately idempotent.
+        shutil.copyfile(saved_template,template)
+        dev_site.seed(feed,template,ROOT/'site')
+        dev_site.hydrate_db(feed,db)
+        release.context_pages()
+    else:
+        db=args.db
+        required=(ROOT/'site/index.html',ROOT/'site/data/feed.json',db)
+        missing=[str(path) for path in required if not path.exists()]
+        if missing:raise RuntimeError('production trusted release requires the current built artifact: '+', '.join(missing))
     # Identity pages must exist before ranking renderers test whether to link.
-    run('build_pages','--base','https://lineupbeat-dev.pages.dev','--db',str(db))
+    run('build_pages','--base',base,'--db',str(db))
     # Season ranking consumers receive the frozen rankings. This does not
     # modify the production workbook, ranking JSON, or recommendation inputs.
     import build_ranking_formats as formats
@@ -141,23 +161,28 @@ def main():
     comparison.roster_data=current_roster
     import build_draft_value as draft
     draft.read_projections=lambda _:[{'name':p['name'],'pos':p['position'],'team':p['team'],'ppr':p['formats']['ppr'],'half':p['formats']['half_ppr'],'std':p['formats']['non_ppr']} for p in model['players']]
-    run('build_pages','--base','https://lineupbeat-dev.pages.dev','--db',str(db))
+    run('build_pages','--base',base,'--db',str(db))
     run('build_comparison_tool')
     for name in ('build_coaching','build_draft_value','build_college_projections','build_404'):
         run(name)
-    run('build_wire','--base','https://lineupbeat-dev.pages.dev')
+    run('build_wire','--base',base)
     run('wire_homepage_replacement','--apply')
     run('build_decision_room')
-    run('build_pages','--base','https://lineupbeat-dev.pages.dev','--db',str(db))
-    run('build_my_team','--extension-origin','https://lineupbeat-dev.pages.dev')
+    run('build_pages','--base',base,'--db',str(db))
+    run('build_my_team','--extension-origin',base)
     run('build_league_history')
     run('build_my_league')
     run('build_chrome_store_bundle')
     release.build()
-    dev_site.protect(ROOT/'site','develop')
-    dev_site.verify(ROOT/'site')
-    if 'id="lb-dev-style"' not in template.read_text():
-        raise RuntimeError('source template was not protected for development')
-    print('Complete offline trusted-current development site built; no provider requests')
+    if args.development:
+        dev_site.protect(ROOT/'site','develop')
+        dev_site.verify(ROOT/'site')
+        if 'id="lb-dev-style"' not in template.read_text():
+            raise RuntimeError('source template was not protected for development')
+    else:
+        home=(ROOT/'site/index.html').read_text()
+        if 'DEVELOPMENT PREVIEW' in home or 'lineupbeat-dev.pages.dev' in home:
+            raise RuntimeError('development-only markup reached production artifact')
+    print(f'Complete trusted-current {release_target} site built; no provider requests')
 
 if __name__=='__main__':main()

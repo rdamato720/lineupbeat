@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**3 cards** · batch `7d9b5a9a2afa` · 15 draft calls · $0.0852
+**2 cards** · batch `471105cd0390` · 16 draft calls · $0.0838
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,78 +19,46 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Ameer Abdullah — JAX RB
+## 1. Jonathon Brooks — CAR RB
 
-**Trending up** · TRANSACTION · MEDIUM evidence
+**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
 
 ### What changed
 
-Ameer Abdullah made Jacksonville’s final roster after a strong training camp and preseason, John Shipley reported.
+Jonathon Brooks has missed practice with soreness as Chuba Hubbard returned from injury, Mark Morales-Smith reported.
 
 ### Lineup Beat impact
 
-Abdullah’s roster spot gives him a path to early-season utility if Allen misses game time, but the report does not define Abdullah’s workload or Allen’s status.
+Brooks' soreness-related practice absence is a negative availability flag entering Week 1, while Hubbard's return adds backfield competition. Monitor Brooks' next participation update; the severity and timetable are unknown.
 
-[John Shipley · Sports Illustrated -- JAX](https://www.si.com/nfl/jaguars/onsi/jacksonville-7-winners-6-losers-from-53-man-decisions-james-gladstone-draft-picks) · 2026-08-31
+[Mark Morales-Smith · Fantasy On SI](https://www.si.com/onsi/fantasy/nfl/can-fantasy-football-owners-trust-jonathon-brooks-in-week-1-with-chuba-hubbard-healthy) · 2026-09-07
 
 <details><summary>Full evidence reviewed</summary>
 
-It was hardly a surprise to see veteran running back Ameer Abdullah make the final roster, but that does not take away from just how good of a story he is. The 12th-year veteran signed with the Jaguars as a relative afterthought during the spring, but he shined during training camp and then had a standout performance in the second week of the preseason against the Carolina Panthers.
-
-It was hardly a surprise to see veteran running back Ameer Abdullah make the final roster, but that does not take away from just how good of a story he is. The 12th-year veteran signed with the Jaguars as a relative afterthought during the spring, but he shined during training camp and then had a standout performance in the second week of the preseason against the Carolina Panthers. Abdullah has earned his spot and then some, and he could be helpful early on if Allen has to miss any actual game time.
+For a while, it looked like all the momentum in the Carolina Panthers' backfield was behind Jonathon Brooks. However, there has been a shift over the past week, as Chuba Hubbard has returned from injury and Brooks is now missing practice due to soreness.
 
 </details>
 
 ---
 
-## 2. George Kittle — SF TE
+## 2. Emeka Egbuka — TB WR
 
-**Trending down** · INJURY · HIGH evidence
-
-### What changed
-
-George Kittle is recovering from a torn Achilles, and his return timeline and post-return effectiveness are uncertain, Grant Cohn reported.
-
-### Lineup Beat impact
-
-Kittle's availability is uncertain entering the season, making him a riskier fantasy option until the 49ers provide a return timetable or confirm his practice status. The report does not establish a setback or projected return date.
-
-[Grant Cohn · Sports Illustrated -- SF](https://www.si.com/nfl/49ers/onsi/grading-every-major-roster-decision-made-by-49ers-cutdown-day) · 2026-08-30
-
-<details><summary>Full evidence reviewed</summary>
-
-Last year, they kept only three. This year, they kept a fourth (Brayden Willis) because George Kittle is recovering from a torn Achilles and they don't know exactly when he will return or how good he'll be when he finally makes it back.
-
-Last year, they kept only three. This year, they kept a fourth (Brayden Willis) because George Kittle is recovering from a torn Achilles and they don't know exactly when he will return or how good he'll be when he finally makes it back. In addition, they might want to use three-tight-end formations occassionally this season, which means they need to keep a fourth tight end in case one of them gets injured during a game.
-
-This year, they kept a fourth (Brayden Willis) because George Kittle is recovering from a torn Achilles and they don't know exactly when he will return or how good he'll be when he finally makes it back. In addition, they might want to use three-tight-end formations occassionally this season, which means they need to keep a fourth tight end in case one of them gets injured during a game.
-
-</details>
-
----
-
-## 3. Jimmy Horn Jr. — CAR WR
-
-**Worth noting** · TRANSACTION · MEDIUM evidence
+**Trending down** · INJURY · MEDIUM evidence
 
 ### What changed
 
-Jimmy Horn Jr. made Carolina's final 53-man roster despite a crowded competition for the last wide receiver spots.
+Emeka Egbuka is dealing with a toe sprain suffered during a joint practice against the Jets, River Wells reported.
 
 ### Lineup Beat impact
 
-Horn cleared a crowded cutdown, keeping him on the active roster, but the report does not establish a meaningful offensive role or depth-chart standing. Watch for usage or first-team work.
+Egbuka's toe issue is worth monitoring entering Week 1, but this excerpt provides no practice status, severity update or timetable. His next participation report will clarify any availability risk.
 
-[Zach Roberts · Sports Illustrated -- CAR](https://www.si.com/nfl/panthers/onsi/biggest-winners-and-losers-from-carolina-panthers-final-53-man-roster-decision) · 2026-08-30
+[River Wells · Sports Illustrated -- TB](https://www.si.com/nfl/buccaneers/onsi/will-emeka-egbuka-jalen-mcmillan-play-week-1-what-we-saw-at-bucs-practice-2026) · 2026-09-07
 
 <details><summary>Full evidence reviewed</summary>
 
-The back end of the wide receiver depth chart was pretty crowded, to say the least. The Panthers seemed to have multiple players deserving of those final couple of spots, so it's a big win for John Metchie and Jimmy Horn Jr. to make it.
-
-The back end of the wide receiver depth chart was pretty crowded, to say the least. The Panthers seemed to have multiple players deserving of those final couple of spots, so it's a big win for John Metchie and Jimmy Horn Jr. to make it. This also makes Ja'seem Reed an unfortunate loser.
-
-The Panthers seemed to have multiple players deserving of those final couple of spots, so it's a big win for John Metchie and Jimmy Horn Jr. to make it. This also makes Ja'seem Reed an unfortunate loser.
+The Bucs are generally healthy heading into their first true game week of practice, but there were a few questions heading into Week 1. Two of the biggest questions were about two of their wide receivers, Emeka Egbuka and Jalen McMillan — Egbuka suffered a toe sprain during joint practice against the New York Jets and McMillan injured his knee at some point during training camp.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrtWety27gVfhWM_ridig4lipTkf9rEm9ibyBnbaXrZjAYkQRE2SXAAUIq6k5m-Rl-vT9LvgJRkKZdNdna33Wb_eCgSODjX73w4_qEXc5vkC5n2znrjdBqHfMqHPONByINxmk38LBY8CPwwGPtxMJrwME3jQZQM-SCbioAP_SgV4ymfBjzp9XsJ16npnf39hx6va61WIl1wC9H4xBubK43nS5VX7CaXdSE2tEWVpags1xt8m8VpUxQ8__c__2WYVsYKzUytLFvKlTAslyXjrOY2Z1YxwXWx8YzgRlWssbKQdsNkxmZFISpWSmOwZclLwawsRZ_FjWU2F0yLWmnLUoXPFWSnIpOVYAdnr5W-LxRPmdKtPPfWWG4bc3qg9WJnabxpLX3wTWm5lBVev7h6cv588eR69u2tW1FZrFjYTS3w8fr85dX17cX8KT6l3NKroT-MPH_iBYNb3z8bBmf--E948H1aIrVIrFQk9-XVzcXtxZ_P6bXmmV1AdCZTUSWQ4p9Ot68LWUooj00Unt4t3GBUoxOxd4OpRSKzzaEf6oJjDfxLjktFDc8nOYf34BfxFjusSBGLJsnZShVNKcg5s2pzGBytCsEkpGlhYDe2cMOgaSpJI17QAfuoyWq5D9tp702_J1Zbk3oXlq2xGTqkxQbJYBpda2kEJYQRgq0EcobjyKaqSFDMk3s2KwUSaWsYK_m9cAYh7ji8zbNtfvAHmWFpIV_zDcu0KtldYyzL1ZotlUJmZHS8VXrDcrLulJFXB0ObextYv9PEyGUFi9eSshYrLvmy4dqQCzhysUBUVjglw2pUSLPMoUCjSXdabWp6bJWjn7kkYdsFmktnZcLLmvEqpS0VnJM61fBCYVstdKZ0yeFAJttIGkHeZ2sh7skOeuVi46LFl5Bq2lp5zBE7eIm95BV-a3P6ffV99XsQ_stB2LsxhwUwlPTJUWEOLHc6GEW4Rz8hJVFNkbJY4Lmos6ZoS5RKb4eZJAwhpCLELkQ2sQ1i86AY97W4SCBXEly13aNUsSzEGQBGno3GwXiQjSZRFEzSyVRM_UmKrcB_-Q8HWzfns5ur-eL5lcO8UgBTKmlKfLm9ns1vZo9vL67m9EWlouhQlBeL32avUOsKMUPDI_iaPzl_eY4_c-oDQNeNoJ54WBu7L61nfd_z_WA48Ef0QRnZYf_1N_Rbq7u2Gyz4tinMr-bUEOomLmSyME1Zdh47rsCUCiG5h09WEoo7vR-WY1sQLo21-mCq7xK2zx729c5vIj19T4_3-6UWUEQvCh6LgjJACyQWDmnq7iM8bswi47JocBz61xt6v5JijW07q8mtbQ9tOxulGSlh2EVRADQ0p8bjeexy9hdaZHHO0ubUnM-fXLx6gXdWcMrBdkGjSZvc2tqcPXq0Xq9PjTxFBj6qsuLRXYsfjyjd8WPvQ2_srWVFAfcir1CGHgi3vDDwUP1eiiZrqA17d8g24y0LngK_KuG5Ru3VErJ67_qfYlBPgWiWPYa_j_nTd9LaQpygelfwFo-7PDesQcVqi-gx6r97YOtiBzCmV23NAMnvJcKe4RRugBA1eRgiUDZu12gKqxhpByhw-GkbXbnKsTxGq0chOB6iSwdKtaYgAfi6mnAYfVxZwtBeaXJKN2Fdy4CcLr8Rue4UQpxflYH5t6Bf4fgsiD7IwObnT2c_kYFtoXTvhI_7lEz-8B6DzrjOBTUG1sbf4bhpskxoolqsEuutS0nMS9S218l_2JagOJKkQvLotjO3CXfyIHvspu_O5KwUqUwAFNB4WQGTzDFRe87RvagH90nWht2DPKLZoOPYXAtBSYDUOF7AWYbiBWb_4RvNN5DFXqOqpPkjGlfCG1CMp0LppdhaChEIBYLvUtoRBA68h2WzJKd6NNtuuIHHqhPL7itwB_EWGVk4v1XUG9dYunU5km5HL3Jxgg_omduFDh2xkdiLYdI6auM40ddkL7sAQUlb9t5ZU0riTGsCJrRbUtyZ7Vl67wHRmcszl_9MJQk3xlF_5x8iLh0SrXOJu0QpOJY5wZVwNwy4S9R7dzmxjMQC0iCM7iiiY1ElWwqgvqzuGr2nady1dxeq3yPxvxCJz-SSSRJMB8nIj5LIn0zTMA784QGXfDX_bn71en7EIy_ml6-u__ojFPIrapefQUIP8vuDHDQYTiaHHPT2_As56JcWUXd9cQt3biuIgzv6-aCVCfS7hK5xxBZdD9tFsc_2lOlnoaYp3PnLkNObbw-56bOLp8_2zNR9_SQxdcnW0tKlJu2WnoB7NyCfd0p7La_fsVCP7gBevPHcNi9pLFnmpXzzIxT0bxzYcK1i-Ncck9BnFL-kAL469pFotU7x1AnvO_zYlk83WeIucEdDgE8nPQETpNBFViHyMNgJaMvJTaq8dlLlruBYecpe06yT0A-oyJduIYoOGUTedde4X59YBuOzcPgRYvkKl-HnH-OVwRcRS_ptabpHwTnp5gTvj_XI_rk6cmifmYrXzGABnuE02A9c7-Z_7mQ3DtoX1iETJI0cPlGT6AYda4JC2CpwiD4YLJIk3CotgLjLnL4bK_GN24i0MraFxO00hEZOZduacg6dy6awdAtlLYAZiMc1bEUp507Hpay75SaqoXV4S_4A1hiFzkr9gMVyCSUrly3uZvtCIHlkCzuXsixbV7JLfepGJjSkkrajF1-PvS2r5YVRHTG55CekHrsmssCpDUKibSrkPnPX4Z2L_k_M-UwaE014Ek6GYeL7aSQmYRKMg599JPYbR97P4CiHofsQSRn5w8ERSXl9_YUk5ShB3KBsO4Q92Y7I2oHOdlKGJK2lFQ-9rspaWKeDs9xVM10SD7HApe5P4CKvFbFvxAYO_mWoyOPZ9afnZO2CT9KRuivylpGgKpfIpN2EDOlxMCNLOh97222ec_V2dnZEXnrv3lC_NXbRmJR6oj8Jh37U7y1BAZ0VLW85_F8aGu5oumu4bTUluP3AX4NwGwXX1FBbIPGQsXCNtnc2iQ6_oyMOw-jBgh4fi8k4FMlgOvADf5QNo9FE8CwKcGvJeJak6XiQ8CjM0mwUB-M0Dv3xaBBnwXQSICE4-TvBvYkvkBqmjdcanMBrocSTVazeeqvBLniL9v-3rSZYHIVJKkQW8yAa-QMxHoyzYJCFWTzwx0E0GIcJh1ppNIwmg9APs8mQB2EcjYM4FdNBwHvv_gPh73-K:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrlV91u47gVfhVCN3tRK5EsWf7pVZLx7GRQOwPH28GiGAhHImUxlkSVpOLxLgbYh9gn7JP0HMp2nGR2dtuLomiBILZF6ujwO9-P_bOXgc3LVHJv5sXjMAxGOQ-iaRBORkE-nk6icRIN4yDIQ-DBCEZBkYx5NAwnMAIRRpFI4iEfiSiZjqfewMtBc-PN_vazB22r1aPgKVgsjUvQ2VJpfL8AvWULpaESxr-vpS3pRlXXorGg97jjWiu1Nd8xo7RohDG-FhVYwVmrIbcyFwwyIxp8lYYBa8QGrHzEq48gK8hkJe2eFRVsGJYUWjYb9lGILQsHbFfKSrB3XZZhp98ZpoXtdMOAc8MyyLeFFBVn2E0rrLRSNRfYaiOt0uzYVSM-W9aCxkZkC7SHdS3H_v7MbCmYEY_4SGwAGs6srIWFDB8JWrCu2TZq11w8O296Qirb90idrSktN7Ih0O7ezP-SvlldvV27HXiuxqZ23wpcXM0_3K3Wt8vvcYkawUvDYJj4wdQPxutwPMO_KPhTEMyCgLZILXLqG_ct599frW__OqfLGgqbYulCcgLXmwUX0_B4vZI4KXdamq-3ppOqTuMMuBKGNcoy04pcFvsehcPoWKVyd9fgCRjEUnzGvTTRA_4nnAibr9UmiLAtvBEZ8MQDOq2hgs_nwbGYrMyF92ngicfjcby3uBF6CgyYtNib2mIPldzifKrKNV4rwr6rmWzc5xvQqpINsA_Q4GeNBHjiyQ6QNaKUOOn3qgEkeHOgyQV7p3Z04AFVwdmXbqtAqjFTysIyHLl2T2jBWLZDfg4Y7rkpuwyOBHV39RBhn4VW1NZDp3ty9U8iDSCrWC2NIaY_YdMJZtVpEoTsEYs0x_slgdcrv1YoGjHD2crZNETJo7gTCKfxMBRTmAzxVtSu_MlR5naxmL-5vVoTZ2qRl9BIU-P1q-v7-XKdvl3dLdIPq6ub9e2N26K4qA5Ehir9fxM6viBpStkScss38w9z_LckEbcV7AUZ4gvqnJb62QSBH6AjR3FMC8rIg3JX1_RZq4deyymcJH23JNzbLqtknpqurnuwXzzGcYtIcw73Dt34Sbuv6Pg1Kg7Ya0PHja3SOMiLV428tjstgONhcZ6iwitrfDinSXKE7rAsqZ20wKF3WpD_fKLrj1Ls8MbTwQna3gR79yDFo2jB7Nldw-5vacFi9Q0mDjoqkviHBV6zAoi-N1cr_NBp6qG0tjWzy8vdbndh5AWy5JK0cVn05S6borpECfmHz36hlM3QQfx-2r7VnbH-wwFwP3OA-7LxSeZ-6BPMfk7Q-mUPrV8KqGy5974MvpWdK0mu8VFUlXkZmvNN1m0BmW4VycV0TjQ7HEOJpuaYTai-EkrWWaQzbhWfc6Hbk9WSqzwRw6D3d-bMxHslkPU-eTd7R170WjU9G5Bc6LF5BZpCApr9cxlrabb_6WRMZqPJLIz_rWSMv5GMR589y0ZLaO1KQWnA-lmd0OUDlySuEIoLMXVQkTjZBmrhvHupTuBjpqAqLEFxjDq66WWWuqKHafKXWUhtXne5cX61Qb2jfKs9O9CQXp0IZYMRgj1LzQqpMaiQ2sI15SKLqeJ0iiOVKO129A9YIXbs750wDpznNXv6XbD1TlERMtRMbja49-yOvkymqO5pnyR48KsAjkqQHJCV81ognAdUyY7foxc1bJEvEEdo2D9--fW4arqiwKocuyOhGOwek553ThMPCns7C58Nrhl3JrbEo_yo0OjeC2vcM07VnQ9iRRLRthF4H84bv0aw1pU71Lb0IHqTQ93-0TCOII-HwTSPi5hnEx7lCQ7vPIzv3yG_0_V8tXiRxrfL9z-sfvyd_P1f8Yw_ELLnFPlawsZBOJw-T9iPq38xYZ_REI_FUUwEm0vVZ3w7sfBADvgW9YhxA3Zm_f818XpPbRh2W1WYd9p9c_N9tr7-dtK69d8MWsrWrMtRFAJn2ucuscAXhK4vHLr-Awncr_PaSdCncZ7CtQSL730DOx_fYS3jH3H1yf29L58oKIxNO8PJywP8mTtNBl5vg_YYvM9_Q42iWZCckqJXVQ4UxLMwOY7BcRc11mEEgU1dQHizyYt1U8JwlJxt8GAsJuORyMNpGERBXAyTeCKgSKIsCgoocs7HYQ7JqOBFnEVjno2CcRxmRYS_0NEGidEmL0UNKRliP68dhpnfmwl-9cjUZ_8xPA0v7X_3953g5mk-LUajLBBRxvMiFsMRxx5CzKZsGIzHQRLmUQGQiCKGqAiLccb5KEtCHiWcwwi8L_8EptSgcA:WIRE_MOBILE_MANIFEST_V1 -->

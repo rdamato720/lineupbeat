@@ -114,15 +114,28 @@ jobs:
           YAHOO_SESSION_SECRET: ${{ secrets.YAHOO_SESSION_SECRET }}
         run: |
           test "$DEV_PROJECT" = "lineupbeat-dev"
+          test -n "$YAHOO_CLIENT_ID"
+          test -n "$YAHOO_CLIENT_SECRET"
+          test -n "$YAHOO_SESSION_SECRET"
           branch=$(printf '%s' "$GITHUB_REF_NAME" | tr '/_' '--')
           cp cloudflare/lineupbeat-dev.wrangler.toml wrangler.toml
-          if [ -n "$YAHOO_CLIENT_ID" ] && [ -n "$YAHOO_CLIENT_SECRET" ] && [ -n "$YAHOO_SESSION_SECRET" ]; then
-            printf '%s' "$YAHOO_CLIENT_ID" | npx --yes wrangler@latest pages secret put YAHOO_CLIENT_ID --project-name=lineupbeat-dev
-            printf '%s' "$YAHOO_CLIENT_SECRET" | npx --yes wrangler@latest pages secret put YAHOO_CLIENT_SECRET --project-name=lineupbeat-dev
-            printf '%s' "$YAHOO_SESSION_SECRET" | npx --yes wrangler@latest pages secret put YAHOO_SESSION_SECRET --project-name=lineupbeat-dev
-          fi
+          printf '%s' "$YAHOO_CLIENT_ID" | npx --yes wrangler@latest pages secret put YAHOO_CLIENT_ID --project-name=lineupbeat-dev
+          printf '%s' "$YAHOO_CLIENT_SECRET" | npx --yes wrangler@latest pages secret put YAHOO_CLIENT_SECRET --project-name=lineupbeat-dev
+          printf '%s' "$YAHOO_SESSION_SECRET" | npx --yes wrangler@latest pages secret put YAHOO_SESSION_SECRET --project-name=lineupbeat-dev
           npx --yes wrangler@latest pages deploy \
             --branch="$branch" --commit-dirty=true
+
+      - name: Verify Yahoo connector configuration
+        run: |
+          for attempt in $(seq 1 12); do
+            if curl --fail --silent --show-error "$DEV_BASE_URL/api/yahoo/status" \
+              | jq --exit-status '.configured == true' >/dev/null; then
+              exit 0
+            fi
+            sleep 5
+          done
+          curl --fail --silent --show-error "$DEV_BASE_URL/api/yahoo/status" | jq .
+          exit 1
 
       - name: Verify league publishing storage
         run: |

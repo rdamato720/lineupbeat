@@ -302,7 +302,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertIn("Know what you’re getting.", home)
         self.assertIn("RANKINGS + PROJECTIONS", home)
         self.assertIn("ROSTER SNAPSHOT", home)
-        self.assertIn("LINEUPBEAT CALL", home)
+        self.assertIn("PROJECTED EDGE", home)
         self.assertIn('class="hp-section hp-faq"', home)
         faq_markup = home.split('class="hp-faq-list">', 1)[1].split("</div></section><script", 1)[0]
         self.assertEqual(faq_markup.count("<details>"), 6)

@@ -153,11 +153,11 @@ def check_comparison_tool(root):
           "/nfl/who-should-i-draft/</loc>" in sitemap)
 
 
-def check_my_team(root):
-    """The development-only My Team surface must ship as a complete local app."""
+def check_my_team(root, development=True):
+    """My Team must ship as a complete browser-local app."""
     page = root / "my-team" / "index.html"
     text = page.read_text() if page.is_file() else ""
-    check("My Team has a dedicated development route", bool(text), str(page))
+    check("My Team has a dedicated route", bool(text), str(page))
     check("My Team is noindex and analytics-free",
           bool(re.search(r'name="robots" content="noindex,\s*nofollow(?:,\s*noarchive)?"', text))
           and "cloudflareinsights" not in text.lower()
@@ -227,10 +227,12 @@ def check_my_team(root):
           and "localhost" not in encoded_manifest
           and "127.0.0.1" not in encoded_manifest
           and package_files[:7] == ["manifest.json", "background.js", "espn-roster-parser.js", "espn-history-parser.js", "yahoo-roster-parser.js", "cbs-roster-parser.js", "cbs-history-parser.js"])
-    check("the development download validates capture, retrieval, and clear senders",
+    expected_origin = ('https://lineupbeat-dev.pages.dev' if development
+                       else 'https://lineupbeat.com')
+    check("the connector download validates capture, retrieval, and clear senders",
           "ESPN_ORIGIN = 'https://fantasy.espn.com'" in worker
           and "ESPN_PATH = '/football/'" in worker
-          and "MY_TEAM_ORIGIN = 'https://lineupbeat-dev.pages.dev'" in worker
+          and f"MY_TEAM_ORIGIN = '{expected_origin}'" in worker
           and "'https://lineupbeat-dev.pages.dev'" in worker
           and "'https://www.lineupbeat.com'" in worker
           and "MY_TEAM_PATH = '/my-team/'" in worker
@@ -268,7 +270,7 @@ def check_my_team(root):
           f"{len(players)} player(s)")
 
 
-def check_development_repairs(root):
+def check_development_repairs(root, development=True):
     """Cross-page consistency and discoverability fixes in the dev release."""
     hub_path = root / "nfl" / "data" / "index.html"
     hub = hub_path.read_text() if hub_path.is_file() else ""
@@ -323,7 +325,7 @@ def check_development_repairs(root):
           "Fantasy extension detected, but no saved roster was found" in runtime)
 
 
-def check_league_history(root):
+def check_league_history(root, development=True):
     """The private-first experience and its canonical source must survive the build."""
     page = root / "league-history" / "index.html"
     text = page.read_text() if page.is_file() else ""
@@ -376,9 +378,10 @@ def check_league_history(root):
     sitemap_text = sitemap.read_text() if sitemap.is_file() else ""
     landing = root / "my-league" / "index.html"
     landing_text = landing.read_text() if landing.is_file() else ""
+    robots = ('noindex,nofollow,noarchive' if development else 'index,follow')
     check("My League has a public SEO landing page",
           bool(landing_text)
-          and bool(re.search(r'name="robots" content="noindex,\s*nofollow,\s*noarchive"', landing_text))
+          and f'name="robots" content="{robots}"' in landing_text
           and 'href="https://lineupbeat.com/my-league/"' in landing_text
           and "Fantasy Football League History &amp; Record Book" in landing_text
           and "Connect your league" in landing_text
@@ -540,7 +543,7 @@ def check_homepage(root, decision_room=False):
               and text.count('<article class="hp-example') == 3
               and "RANKINGS + PROJECTIONS" in text
               and "ROSTER SNAPSHOT" in text
-              and "LINEUPBEAT CALL" in text)
+              and "PROJECTED EDGE" in text)
         faq_markup = (text.split('class="hp-faq-list">', 1)[1].split("</div></section><script", 1)[0]
                       if 'class="hp-faq-list">' in text else "")
         check("the homepage FAQ is visible and has matching structured data",
@@ -729,9 +732,10 @@ def main() -> int:
     check_ranking_formats(root)
     check_comparison_tool(root)
     if decision_room:
-        check_my_team(root)
-        check_development_repairs(root)
-        check_league_history(root)
+        development = (root / "_headers").is_file()
+        check_my_team(root, development=development)
+        check_development_repairs(root, development=development)
+        check_league_history(root, development=development)
 
     home = root / "index.html"
     if home.is_file():

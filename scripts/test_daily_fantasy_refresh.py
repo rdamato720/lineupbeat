@@ -74,14 +74,15 @@ class DailyFantasyRefreshTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, "missing required columns"):
                 capture.validate_current_asset(path)
 
-    def test_default_branch_schedule_targets_development_once(self):
+    def test_default_branch_schedule_targets_production_once(self):
         workflow = (ROOT / ".github/workflows/fantasy-data-daily.yml").read_text()
         self.assertIn('cron: "0 10 * * *"', workflow)
-        self.assertIn("FANTASY_DATA_BRANCH: develop", workflow)
+        self.assertIn("FANTASY_DATA_BRANCH: main", workflow)
         self.assertIn("ref: ${{ env.FANTASY_DATA_BRANCH }}", workflow)
         self.assertIn('git push origin "HEAD:$FANTASY_DATA_BRANCH"', workflow)
         self.assertNotIn('git push origin "HEAD:$GITHUB_REF_NAME"', workflow)
-        self.assertEqual(workflow.count("gh workflow run dev-site.yml"), 1)
+        self.assertEqual(workflow.count("gh workflow run refresh.yml"), 1)
+        self.assertIn("-f skip_fetch=true", workflow)
         self.assertIn('if: steps.publish.outputs.changed == \'true\'', workflow)
         self.assertIn("python scripts/espn_injury_inputs.py", workflow)
 

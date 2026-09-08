@@ -109,19 +109,32 @@ def weighted(v25: float | None, v24: float | None) -> float:
     return v25 if v25 is not None else (v24 if v24 is not None else 0.0)
 
 
+def blended_player_share(historical_share: float | None,
+                         season_share: float) -> float:
+    """Anchor current weekly roles to the reviewed current-season baseline.
+
+    Prior-season usage is useful shrinkage, but it must not outweigh the
+    reviewed role for rookies, players on new teams, or players whose role has
+    materially changed.
+    """
+    if historical_share is None:
+        return season_share
+    return .25 * historical_share + .75 * season_share
+
+
 def clamp(value: float, low: float, high: float) -> float:
     return max(low, min(high, value))
 
 
 def depth_workload_factor(position: str, rank: int | None) -> float:
-    """Bound the season-prior workload with the current offensive depth rank."""
+    """Discount uncertain reserve roles without re-cutting listed starters."""
     if not rank or rank <= 1:
         return 1.0
     by_position = {
         "QB": {2: .18, 3: .05},
-        "RB": {2: .72, 3: .42, 4: .22},
-        "WR": {2: .82, 3: .62, 4: .40, 5: .25},
-        "TE": {2: .65, 3: .38, 4: .22},
+        "RB": {2: 1.0, 3: .42, 4: .22},
+        "WR": {2: 1.0, 3: .62, 4: .40, 5: .25},
+        "TE": {2: 1.0, 3: .38, 4: .22},
     }
     table = by_position[position]
     return table.get(rank, min(table.values()))
@@ -584,7 +597,7 @@ def build(market_path: Path | None = None,
             hist_total = sum(num(r, key) for r in current_team_history)
             team_total = sum(num(r, key) for r in t25 if team(r.get("team")) == club and r.get("season_type") == "REG")
             hist_share = hist_total / team_total if team_total and len(current_team_history) >= 4 else None
-            share = .6 * hist_share + .4 * season_share if hist_share is not None else season_share
+            share = blended_player_share(hist_share, season_share)
             shares[key] = share
             stat[key] = max(0.0, base_volume * share * role_factor)
 
@@ -607,7 +620,7 @@ def build(market_path: Path | None = None,
             hist_total = sum(num(r, td_key) for r in current_team_history)
             team_total = sum(num(r, td_key) for r in t25 if team(r.get("team")) == club and r.get("season_type") == "REG")
             hist_share = hist_total / team_total if team_total and len(current_team_history) >= 4 else None
-            share = .6 * hist_share + .4 * prior_share if hist_share is not None else prior_share
+            share = blended_player_share(hist_share, prior_share)
             stat[td_key] = max(0.0, team_volume * share * role_factor)
         opportunities = stat["attempts"] + stat["carries"] + stat["targets"]
         historical = hist25 + hist24
@@ -787,7 +800,8 @@ def build(market_path: Path | None = None,
                                         "updated_at": injury_payload["fetched_at"],
                                         "url": injury_payload["source_url"]}},
                "methodology": {"season_total_divisor": None,
-                               "summary": "Current Week 1 roster and offensive depth chart × historical team weekly volume × blended historical/current-team and reviewed season-prior player shares; historical and season-prior efficiencies; bounded 2025 opponent and venue adjustments; conservatively shrunk private multi-book game and exact-player consensus inputs.",
+                               "summary": "Current Week 1 roster and offensive depth chart × historical team weekly volume × reviewed season-prior player shares with 25% prior-season usage shrinkage; historical and season-prior efficiencies; bounded 2025 opponent and venue adjustments; conservatively shrunk private multi-book game and exact-player consensus inputs.",
+                               "role_policy": "The reviewed 2026 role supplies 75% of a player's opportunity share when usable 2025 current-team history exists, with that history limited to 25% shrinkage. Listed QB backups and players below the second RB, WR, or TE depth slot receive an additional reserve-role discount; RB2, WR2, and TE2 do not receive a duplicate workload cut.",
                                "market_policy": "High-quality consensus requires at least three books. Team implied-total effects are capped and shrunk to 25%; exact player components are capped to within 25% of the independent model and blended at 25%. Anytime-touchdown prices do not move projections because a one-sided price cannot be safely de-vigged. Raw quotes, prices, lines, and sportsbook identities are never published.",
                                "injury_policy": "Current status tags are displayed for context. Questionable and Doubtful carry a 1.0 projection factor. Only confirmed Out, Injured Reserve, or suspended statuses set the Week 1 projection to zero.",
                                "scoring": "0.04/pass yard, 4/pass TD, -2/interception, 0.1/rush or receiving yard, 6/rush or receiving TD, -2/fumble lost, plus format reception points.",

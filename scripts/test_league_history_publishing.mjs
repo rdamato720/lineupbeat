@@ -30,6 +30,11 @@ assert(!devWorkflow.includes('wrangler@latest pages deploy site'));
 assert(!devWorkflow.includes('--project-name="$DEV_PROJECT"'));
 assert(devWorkflow.includes('Verify league publishing storage'));
 assert(devWorkflow.includes('/api/leagues/deployment-health-check'));
+assert(devWorkflow.includes('Verify Yahoo connector configuration'));
+for (const secret of ['YAHOO_CLIENT_ID', 'YAHOO_CLIENT_SECRET', 'YAHOO_SESSION_SECRET']) {
+  assert(devWorkflow.includes(`test -n "$${secret}"`));
+  assert(devWorkflow.includes(`pages secret put ${secret} --project-name=lineupbeat-dev`));
+}
 assert(productionWorkflow.includes(
   'cp cloudflare/lineupbeat-production.wrangler.toml wrangler.toml'));
 assert(!productionWorkflow.includes('wrangler@latest pages deploy site'));
@@ -43,6 +48,12 @@ assert(productionWorkflow.includes('wrangler@latest d1 create'));
 assert(productionWorkflow.includes('wrangler@latest d1 execute'));
 assert(productionWorkflow.includes('--file=cloudflare/league-history-schema.sql'));
 assert(productionWorkflow.includes('Refusing to bind production to the development database.'));
+assert(productionWorkflow.includes('Verify production Yahoo connector configuration'));
+assert(productionWorkflow.includes('/api/yahoo/status'));
+for (const secret of ['YAHOO_CLIENT_ID', 'YAHOO_CLIENT_SECRET', 'YAHOO_SESSION_SECRET']) {
+  assert(productionWorkflow.includes(`test -n "$${secret}"`));
+  assert(productionWorkflow.includes(`pages secret put ${secret} --project-name=lineupbeat`));
+}
 assert(productionWorkflow.includes('Verify production league publishing storage'));
 assert(productionWorkflow.includes('https://lineupbeat.com/api/leagues/deployment-health-check'));
 assert(devConfig.includes('name = "lineupbeat-dev"'));

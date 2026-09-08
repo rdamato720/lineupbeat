@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Render the trusted-current season release in the isolated development build.
+"""Render the trusted-current season release for development or production.
 
-This module never changes the model, production workbook, or recommendation
-inputs. It consumes the freeze manifest and writes public season display files.
+This module never changes the frozen model, workbook, or recommendation
+inputs. It consumes the freeze manifest and writes public display files only
+under an explicit release target.
 """
 from __future__ import annotations
 import argparse
@@ -36,9 +37,28 @@ if(showAll)showAll.addEventListener('click',()=>{delete document.body.dataset.to
 '''
 
 def esc(value): return html.escape(str(value), quote=True)
+
+
+def release_target():
+    return os.environ.get('LINEUPBEAT_RELEASE_TARGET', 'development')
+
+
+def site_origin():
+    return ('https://lineupbeat.com' if release_target() == 'production'
+            else 'https://lineupbeat-dev.pages.dev')
+
+
 def enabled():
     if os.environ.get('LINEUPBEAT_NFL_SEASON') != 'v1.6-trusted-current':return False
-    if os.environ.get('DEV_PROJECT') != 'lineupbeat-dev':raise ValueError('trusted-current release requires isolated development project')
+    target = release_target()
+    if target == 'development':
+        if os.environ.get('DEV_PROJECT') != 'lineupbeat-dev':
+            raise ValueError('trusted-current development release requires isolated development project')
+    elif target == 'production':
+        if os.environ.get('PRODUCTION_PROJECT') != 'lineupbeat':
+            raise ValueError('trusted-current production release requires the production project')
+    else:
+        raise ValueError(f'unsupported trusted-current release target: {target}')
     return True
 
 @lru_cache(maxsize=1)
@@ -75,7 +95,8 @@ def wrapper(title,path,body,position='',script='',section='projections'):
     import seo
     css,_header,footer=bp.site_chrome()
     header=seo.site_nav(section, 'nfl')
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Lineup Beat</title><meta name="description" content="Trusted 2026 NFL season projections and scoring rankings for 424 current players, reviewed for the redesigned development site."><link rel="canonical" href="https://lineupbeat-dev.pages.dev{path}"><style>{css}{seo.UI_CSS}{CSS}</style></head><body data-position="{position}">{header}<main class="v15">{body}</main>{footer}<script>{script}</script></body></html>'''
+    description = "Trusted 2026 NFL season projections and scoring rankings for 424 current players."
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Lineup Beat</title><meta name="description" content="{description}"><link rel="canonical" href="{site_origin()}{path}"><style>{css}{seo.UI_CSS}{CSS}</style></head><body data-position="{position}">{header}<main class="v15">{body}</main>{footer}<script>{script}</script></body></html>'''
 
 def identity(p):
     return f'''<div class="identity"><img src="{esc(photo(p))}" alt="" loading="lazy" onerror="this.onerror=null;this.src='/assets/player-placeholder.svg'"><div><a href="{p['url']}">{esc(p['name'])}</a><small><img class="logo" src="https://a.espncdn.com/i/teamlogos/nfl/500/{p['team'].lower()}.png" alt="" loading="lazy"> {p['team']} · {p['position']} · {esc(p['offensive_role'] or 'Depth unavailable')}</small></div></div>'''
@@ -158,7 +179,7 @@ def player_pages(model,ranking):
         if not legacy:
             prior=bp.PROJECTIONS;bp.PROJECTIONS={}
             row={'id':p['player_id'],'name':p['name'],'team':p['team'],'pos':p['position'],'meta':{'years_exp':p['years_exp']}}
-            legacy=bp.player_page(row,[],'https://lineupbeat-dev.pages.dev',bp.load_wire_impacts().get(p['gsis_id'],[]))
+            legacy=bp.player_page(row,[],site_origin(),bp.load_wire_impacts().get(p['gsis_id'],[]))
             bp.PROJECTIONS=prior
         stats=''.join(f'<div><span>{label}</span><b>{p["stat_projection"][m]:.1f}</b></div>' for m,label in FIELDS if p['stat_projection'][m] or (p['position']=='QB' and m in ('attempts','completions')))
         pts=''.join(f'<div><span>{label} · {p["position"]}{next(r["position_rank"] for r in ranking["formats"][fmt]["rows"] if r["gsis_id"]==p["gsis_id"])}</span><strong>{p["formats"][fmt]:.1f}</strong></div>' for fmt,(label,_) in FORMATS.items())
@@ -168,8 +189,11 @@ def player_pages(model,ranking):
         else:legacy=legacy.replace('</main>',panel+'</main>',1)
         # Remove outdated current injury/ADP assertions from this season view.
         legacy=re.sub(r'<span class="chip">(?:Current ADP|Status).*?</span>','',legacy,flags=re.S)
-        legacy=legacy.replace('</head>','<style>'+CSS+'</style></head>',1)
-        legacy=re.sub(r'<link rel="canonical" href="[^"]+">',f'<link rel="canonical" href="https://lineupbeat-dev.pages.dev{p["url"]}">',legacy)
+        head_assets='<style>'+CSS+'</style>'
+        if '/feedback.css' not in legacy.split('</head>',1)[0]:
+            head_assets='<link rel="stylesheet" href="/feedback.css">'+head_assets
+        legacy=legacy.replace('</head>',head_assets+'</head>',1)
+        legacy=re.sub(r'<link rel="canonical" href="[^"]+">',f'<link rel="canonical" href="{site_origin()}{p["url"]}">',legacy)
         # The canonical heading retains approved prose below, with current identity.
         legacy=re.sub(r'(class="shot"[^>]*src=")[^"]+',lambda m:m[1]+esc(photo(p)),legacy)
         legacy=re.sub(r'(<img class="shot"[^>]*)(>)',r'\1 onerror="this.onerror=null;this.src=\'/assets/player-placeholder.svg\'"\2',legacy,count=1)
@@ -211,7 +235,11 @@ def build():
     # Those builders provide the established tiered board, filters, position
     # ranks and mobile treatment. Reusing the projection table here caused a
     # release-only visual regression on every rankings URL.
-    public={'metadata':model['metadata'],'players':[{k:p[k] for k in ('gsis_id','player_id','name','team','position','status','url','offensive_role','stat_projection','formats','methodology_version','data_cutoff','evidence_limitation_flags')} for p in model['players']]}
+    metadata = dict(model['metadata'])
+    if release_target() == 'production':
+        metadata.update(status='PRODUCTION_RELEASE',
+                        production_deployment_authorized=True)
+    public={'metadata':metadata,'players':[{k:p[k] for k in ('gsis_id','player_id','name','team','position','status','url','offensive_role','stat_projection','formats','methodology_version','data_cutoff','evidence_limitation_flags')} for p in model['players']]}
     (SITE/'data').mkdir(exist_ok=True)
     (SITE/'data/nfl-season-trusted.json').write_text(json.dumps(public,sort_keys=True,separators=(',',':'))+'\n')
     (SITE/'data/nfl-season-rankings-trusted.json').write_text(json.dumps(ranking,sort_keys=True,separators=(',',':'))+'\n')
@@ -219,7 +247,8 @@ def build():
     withheld_player_pages()
     # These legacy destinations need database evidence absent from the offline
     # checkout. Keep the links honest and usable without fetching new inputs.
-    context_pages()
+    if release_target() == 'development':
+        context_pages()
     withheld=json.loads((SOURCE/'withheld_players.json').read_text())
     rows=''.join(f'<tr><td>{esc(p["name"])}</td><td>{p["team"]}</td><td>{p["position"]}</td><td>{esc(p["offensive_role"] or "Role unavailable")}</td></tr>' for p in withheld['players'])
     path='/nfl/projections/coverage/'
@@ -239,13 +268,20 @@ def build():
     required={p['url'] for p in model['players']}
     required.update('/'+str(p.parent.relative_to(SITE)).rstrip('/')+'/' for folder in ('nfl/projections','nfl/rankings') for p in (SITE/folder).rglob('index.html'))
     urls=sorted(existing|required)
-    sitemap.write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'<url><loc>https://lineupbeat-dev.pages.dev{url}</loc></url>\n' for url in urls)+'</urlset>\n')
+    sitemap.write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'<url><loc>{site_origin()}{url}</loc></url>\n' for url in urls)+'</urlset>\n')
     recommendation_gates()
     print('v1.6 trusted-current: 424 projection pages; 81 evidence holds; 3 scoring formats verified')
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--development',action='store_true');args=ap.parse_args()
-    if not args.development:raise SystemExit('explicit --development required')
+    ap=argparse.ArgumentParser()
+    target=ap.add_mutually_exclusive_group(required=True)
+    target.add_argument('--development',action='store_true')
+    target.add_argument('--production',action='store_true')
+    args=ap.parse_args()
+    expected = 'production' if args.production else 'development'
+    if release_target() != expected:
+        raise SystemExit(f'LINEUPBEAT_RELEASE_TARGET must be {expected}')
+    enabled()
     build()
 
 if __name__=='__main__':main()

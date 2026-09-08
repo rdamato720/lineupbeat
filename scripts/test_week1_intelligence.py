@@ -105,10 +105,20 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
         players = {p["name"]: p for p in self.payload["players"]}
         self.assertEqual(players["Jalen Hurts"]["role"]["depth_rank"], 1)
         self.assertEqual(players["Jalen Hurts"]["role"]["workload_factor"], 1.0)
-        backups = [p for p in self.payload["players"]
-                   if (p["role"]["depth_rank"] or 0) > 1]
-        self.assertTrue(backups)
-        self.assertTrue(all(0 < p["role"]["workload_factor"] < 1 for p in backups))
+        self.assertEqual(model.depth_workload_factor("QB", 2), .18)
+        for position in ("RB", "WR", "TE"):
+            self.assertEqual(model.depth_workload_factor(position, 2), 1.0)
+            self.assertLess(model.depth_workload_factor(position, 3), 1.0)
+
+    def test_reviewed_current_season_role_outweighs_prior_usage(self):
+        season_share = .30
+        historical_share = .10
+        blended = model.blended_player_share(historical_share, season_share)
+        self.assertAlmostEqual(blended, .25)
+        self.assertLess(abs(blended - season_share),
+                        abs(blended - historical_share))
+        self.assertEqual(model.blended_player_share(None, season_share),
+                         season_share)
 
     def test_backtest_is_leakage_safe_and_reports_baseline_by_position(self):
         self.assertEqual(self.backtest["future_rows_used"], 0)

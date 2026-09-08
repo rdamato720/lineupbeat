@@ -38,9 +38,20 @@ The collector reserves API credits, limits prop games per sport and reports
 provider quota headers without printing the secret. Missing credentials skip
 the private refresh and do not stop the public site build.
 
+Prop candidates are ordered by bookmaker coverage, then kickoff time. Empty
+event responses do not consume the 16-game success cap; the collector may try
+up to twice that many events, checking the credit reserve before every request.
+
 `generate_college_week1.py --odds-db beatwire.db` consumes the latest private
 NCAAF snapshot when preparing the next reviewed candidate. Qualified consensus
 game lines replace the single scoreboard line. High-quality props receive a
 30% blend, medium-quality props an 18% blend, and one-book props no adjustment;
 stat-specific caps prevent the market from becoming the projection. The
 command refuses to overwrite the published immutable v1.0 release.
+
+A manual refresh with `fetch_odds_props` enabled builds a `v1.1` candidate and
+uploads only its derived projections and deterministic QA report. The database,
+bookmaker names, raw lines, prices, probabilities and consensus values are not
+included. Branch runs cannot deploy. Promotion requires reviewing the candidate,
+copying it into a new immutable release directory, pinning its manifest hash and
+rerunning the weekly publication tests.
