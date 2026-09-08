@@ -39,10 +39,31 @@ class PublicReleaseTests(unittest.TestCase):
             self.assertTrue(all(not (root / route).exists()
                                 for route in prepare_public_release.HIDDEN_ROUTES))
 
-            (root / "about.html").write_text('<a href="/my-team/">Hidden</a>')
+            (root / "connector.js").write_text("fetch('/api/leagues/history')")
             with patch.dict(os.environ, {"LINEUPBEAT_RELEASE_TARGET": "production"}):
                 with self.assertRaisesRegex(RuntimeError, "connector references"):
                     prepare_public_release.prepare(root)
+
+    def test_pruner_scrubs_connector_links_from_retained_pages(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            page = root / "nfl" / "durability" / "index.html"
+            page.parent.mkdir(parents=True)
+            (root / "index.html").write_text("<html>public</html>")
+            page.write_text(
+                '<details class="navgroup"><summary>My Fantasy</summary>'
+                '<div><a href="/my-team/">My Team</a>'
+                '<a href="/my-league/">My League</a></div></details>'
+                '<footer><a href="/my-team/">My Team</a><br>'
+                '<a href="/decision-room/nfl/">NFL Decision Room</a></footer>'
+            )
+            with patch.dict(os.environ, {"LINEUPBEAT_RELEASE_TARGET": "production"}):
+                prepare_public_release.prepare(root)
+            rendered = page.read_text()
+            self.assertNotIn("My Fantasy", rendered)
+            self.assertNotIn("/my-team/", rendered)
+            self.assertNotIn("/my-league/", rendered)
+            self.assertIn("/decision-room/nfl/", rendered)
 
 
 if __name__ == "__main__":

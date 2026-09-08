@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**2 cards** · batch `471105cd0390` · 16 draft calls · $0.0838
+**1 cards** · batch `f230d35e99c6` · 17 draft calls · $0.0826
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,46 +19,26 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Jonathon Brooks — CAR RB
+## 1. Makai Lemon — PHI WR
 
-**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
-
-### What changed
-
-Jonathon Brooks has missed practice with soreness as Chuba Hubbard returned from injury, Mark Morales-Smith reported.
-
-### Lineup Beat impact
-
-Brooks' soreness-related practice absence is a negative availability flag entering Week 1, while Hubbard's return adds backfield competition. Monitor Brooks' next participation update; the severity and timetable are unknown.
-
-[Mark Morales-Smith · Fantasy On SI](https://www.si.com/onsi/fantasy/nfl/can-fantasy-football-owners-trust-jonathon-brooks-in-week-1-with-chuba-hubbard-healthy) · 2026-09-07
-
-<details><summary>Full evidence reviewed</summary>
-
-For a while, it looked like all the momentum in the Carolina Panthers' backfield was behind Jonathon Brooks. However, there has been a shift over the past week, as Chuba Hubbard has returned from injury and Brooks is now missing practice due to soreness.
-
-</details>
-
----
-
-## 2. Emeka Egbuka — TB WR
-
-**Trending down** · INJURY · MEDIUM evidence
+**Trending up** · DEPTH_CHART · MEDIUM evidence
 
 ### What changed
 
-Emeka Egbuka is dealing with a toe sprain suffered during a joint practice against the Jets, River Wells reported.
+Makai Lemon is listed to open the season as Philadelphia’s slot receiver after returning from the hamstring issue that sidelined him most of the summer.
 
 ### Lineup Beat impact
 
-Egbuka's toe issue is worth monitoring entering Week 1, but this excerpt provides no practice status, severity update or timetable. His next participation report will clarify any availability risk.
+Lemon’s projected slot-starting role puts him on the fantasy radar in deeper formats, but the evidence does not establish his snap share or target volume. Watch Week 1 usage.
 
-[River Wells · Sports Illustrated -- TB](https://www.si.com/nfl/buccaneers/onsi/will-emeka-egbuka-jalen-mcmillan-play-week-1-what-we-saw-at-bucs-practice-2026) · 2026-09-07
+[Jeff Kerr · Sports Illustrated -- PHI](https://www.si.com/nfl/eagles/onsi/eagles-depth-chart-takeaways-ahead-of-week-1-showdown-with-commanders-was-qb2-winner-leaked-01m20rf3nxxq) · 2026-09-08
 
 <details><summary>Full evidence reviewed</summary>
 
-The Bucs are generally healthy heading into their first true game week of practice, but there were a few questions heading into Week 1. Two of the biggest questions were about two of their wide receivers, Emeka Egbuka and Jalen McMillan — Egbuka suffered a toe sprain during joint practice against the New York Jets and McMillan injured his knee at some point during training camp.
+-- Makai Lemon will get the first crack at punt returner, assuming Britain Covey isn't the practice squad elevation come Week 1. If it's not Covey, Lemon gets the shot based on the depth chart.
+
+-- Makai Lemon starting in the slot isn't a surprise, considering the Eagles have been preparing Lemon to start since he's returned from the hamstring injury that kept him out most of the summer. By the looks of the depth chart, Lemon is strictly going to play the slot to start the season -- which is his biggest strength.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrlV91u47gVfhVCN3tRK5EsWf7pVZLx7GRQOwPH28GiGAhHImUxlkSVpOLxLgbYh9gn7JP0HMp2nGR2dtuLomiBILZF6ujwO9-P_bOXgc3LVHJv5sXjMAxGOQ-iaRBORkE-nk6icRIN4yDIQ-DBCEZBkYx5NAwnMAIRRpFI4iEfiSiZjqfewMtBc-PN_vazB22r1aPgKVgsjUvQ2VJpfL8AvWULpaESxr-vpS3pRlXXorGg97jjWiu1Nd8xo7RohDG-FhVYwVmrIbcyFwwyIxp8lYYBa8QGrHzEq48gK8hkJe2eFRVsGJYUWjYb9lGILQsHbFfKSrB3XZZhp98ZpoXtdMOAc8MyyLeFFBVn2E0rrLRSNRfYaiOt0uzYVSM-W9aCxkZkC7SHdS3H_v7MbCmYEY_4SGwAGs6srIWFDB8JWrCu2TZq11w8O296Qirb90idrSktN7Ih0O7ezP-SvlldvV27HXiuxqZ23wpcXM0_3K3Wt8vvcYkawUvDYJj4wdQPxutwPMO_KPhTEMyCgLZILXLqG_ct599frW__OqfLGgqbYulCcgLXmwUX0_B4vZI4KXdamq-3ppOqTuMMuBKGNcoy04pcFvsehcPoWKVyd9fgCRjEUnzGvTTRA_4nnAibr9UmiLAtvBEZ8MQDOq2hgs_nwbGYrMyF92ngicfjcby3uBF6CgyYtNib2mIPldzifKrKNV4rwr6rmWzc5xvQqpINsA_Q4GeNBHjiyQ6QNaKUOOn3qgEkeHOgyQV7p3Z04AFVwdmXbqtAqjFTysIyHLl2T2jBWLZDfg4Y7rkpuwyOBHV39RBhn4VW1NZDp3ty9U8iDSCrWC2NIaY_YdMJZtVpEoTsEYs0x_slgdcrv1YoGjHD2crZNETJo7gTCKfxMBRTmAzxVtSu_MlR5naxmL-5vVoTZ2qRl9BIU-P1q-v7-XKdvl3dLdIPq6ub9e2N26K4qA5Ehir9fxM6viBpStkScss38w9z_LckEbcV7AUZ4gvqnJb62QSBH6AjR3FMC8rIg3JX1_RZq4deyymcJH23JNzbLqtknpqurnuwXzzGcYtIcw73Dt34Sbuv6Pg1Kg7Ya0PHja3SOMiLV428tjstgONhcZ6iwitrfDinSXKE7rAsqZ20wKF3WpD_fKLrj1Ls8MbTwQna3gR79yDFo2jB7Nldw-5vacFi9Q0mDjoqkviHBV6zAoi-N1cr_NBp6qG0tjWzy8vdbndh5AWy5JK0cVn05S6borpECfmHz36hlM3QQfx-2r7VnbH-wwFwP3OA-7LxSeZ-6BPMfk7Q-mUPrV8KqGy5974MvpWdK0mu8VFUlXkZmvNN1m0BmW4VycV0TjQ7HEOJpuaYTai-EkrWWaQzbhWfc6Hbk9WSqzwRw6D3d-bMxHslkPU-eTd7R170WjU9G5Bc6LF5BZpCApr9cxlrabb_6WRMZqPJLIz_rWSMv5GMR589y0ZLaO1KQWnA-lmd0OUDlySuEIoLMXVQkTjZBmrhvHupTuBjpqAqLEFxjDq66WWWuqKHafKXWUhtXne5cX61Qb2jfKs9O9CQXp0IZYMRgj1LzQqpMaiQ2sI15SKLqeJ0iiOVKO129A9YIXbs750wDpznNXv6XbD1TlERMtRMbja49-yOvkymqO5pnyR48KsAjkqQHJCV81ognAdUyY7foxc1bJEvEEdo2D9--fW4arqiwKocuyOhGOwek553ThMPCns7C58Nrhl3JrbEo_yo0OjeC2vcM07VnQ9iRRLRthF4H84bv0aw1pU71Lb0IHqTQ93-0TCOII-HwTSPi5hnEx7lCQ7vPIzv3yG_0_V8tXiRxrfL9z-sfvyd_P1f8Yw_ELLnFPlawsZBOJw-T9iPq38xYZ_REI_FUUwEm0vVZ3w7sfBADvgW9YhxA3Zm_f818XpPbRh2W1WYd9p9c_N9tr7-dtK69d8MWsrWrMtRFAJn2ucuscAXhK4vHLr-Awncr_PaSdCncZ7CtQSL730DOx_fYS3jH3H1yf29L58oKIxNO8PJywP8mTtNBl5vg_YYvM9_Q42iWZCckqJXVQ4UxLMwOY7BcRc11mEEgU1dQHizyYt1U8JwlJxt8GAsJuORyMNpGERBXAyTeCKgSKIsCgoocs7HYQ7JqOBFnEVjno2CcRxmRYS_0NEGidEmL0UNKRliP68dhpnfmwl-9cjUZ_8xPA0v7X_3953g5mk-LUajLBBRxvMiFsMRxx5CzKZsGIzHQRLmUQGQiCKGqAiLccb5KEtCHiWcwwi8L_8EptSgcA:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrVVtuS2zYM_RWOXvLQlZe6WJL9lmS3Xbfdy2zc5qHJaCARspiVRIWk7HUzmelv9Pf6JQUl23Ga_EBfPBYIQMDBOaA-eQXYss6l8JZeFUZcRHNcLMoEw0hUCx4nEPEiDdIgEyjSBURBFYp5GiTVIs0WokSeplBxDmmK3oVXghbGW_7xyYO-12qLIgdLqekIBlsrTf9_xqpiv6DWzl-1LXYW9J4OfsVWdf_89bdhFPoBS4uCmUZZ35CDld2GadUg6wdrWC1bpjpma2QVUAKzZxoEaCY7JhB71KxSugVrLlgx2NERt1JgVyITCg3rlGVImYtGmpryGWY66JmpQSNTmtE7N2jZVjVDizP21uHE3iI-sYANBjY4-6r-_NRwsZ8aPjtTWm5kR-bb-6vrX_Orx5c_rkePzpJHbvc90uHj9cP943p19xMdCbDOFPIw8fnC59k6mC_jYBmlP3C-5Ny5SE0YSeXyPty_Wa1Xv187s4bK5pS6mrr1lnyWxUd7I1tpwUW5MXlrgkVjr7T9Aoprg0IZPveHGZxwuaAJDJb8vsGHXuxyuXFNUyI8CzAUfZhSP4xAk0Fgb2tWUj7LoBOsVEMj3HM3YXpDoTW0xupx5FgSqnrPaFR2oKS4VxTk5qXRDrpzb3JlC7QgGxQz7_2Fdxw1QeP77BaeQLKRXmwnm4a5wkfqSG0sKzWUTwyo86Gzh6yoLxgYM7SuhleaMCNivaZK9vS-7sUU3lOglUQo83EAwbDB7QgttdTigSsztqqYtC-mIscMF4dSqAoz5jE1HX2F1hlGs3fdu-4_TZwEISf3EfapLmBm0L2WhoZFJDCEw4ijc7uGTYMO3C0SjthRA9jDeDzltWpKzYx0OqnxxRFlKq3Sqh3TfBmO7D4MNBpbE3hPVPIkS5JbqwhXVU3FDaQDPWOv9uNjo9STOZ6d9XlExQmRspe22bONGktXrG9g_6XTU5mjBcFQGCG0qyVJ1LHHkU9uNiRvlwu7ja0ds46syEvinXQSmxZfqwpiztKhtQwAIS54yLO4ynDBIQgDCqXVJf8cpba6vb2-Wr1cO6216GgrTUv2q-uH9U3--ublo5N2qwQ2B91Dk__f95zakSJMLXsHwB21ek0_d65RNxl0a_2MnyfzBC_nPucxz5LUHSgjD0vr7aN7niAgSw7HbXZ3f-fQHVdGmTv-TMCdS4D6oIYcdMQG1WN3TgYw7KGWDdAM-lrCiPW0mrBESeuE0S6k34nbDvHvkZvkjxO3nYoa6UTg5vEdcn9T7bfXgUYqR-cNFNiQZU20FO41Q384pPzG5BUtsUGj287vnX0rcUdhJ2wc8tMVYdSgxw33xu1vw1ZNM1Dp4DAhNTzcrJzTgf4OPaLtb7dkswiOsJPDoF01tbW9WV5e7na7mZEzoutlVzWXOC6MSyeMw39_VKw_Kta38ISwg73xoaYGfFX5OyKOH_i00XaCSOPvpPMm9pPiiEH-Doz_sQjJ3hGj_AYphfB50IZcV1H3_PzR-_ze3YzG5oMR7vLiWThPkwtvgxThups-Kc6vxmQZR8soPl2Nk_pKaBrCMUiPwxmXM2mR1jzlyMcb0VtmydfnpIxwnpw5eJBils6xDBYBj3hchUmcIVRJVES8gqoUIg1KSOaVqOIiSkUx52kcFFW0yCIiHLg5lDW2kBP1zDTHHd3e_rR4fNkV6tnfBqeh5tNX2VQJOWNYBMVikcZlBFkYZ8l8Maf0VVGIDIskLsso41WMGcT07QZZnIh0vgiLEIIAyN_7_C8CNmPP:WIRE_MOBILE_MANIFEST_V1 -->

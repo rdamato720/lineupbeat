@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import os
+import re
 import shutil
 import sys
 import xml.etree.ElementTree as ET
@@ -29,6 +30,28 @@ FORBIDDEN_REFERENCES = (
     "/api/leagues/",
 )
 TEXT_SUFFIXES = {".html", ".css", ".js", ".json", ".xml", ".txt"}
+
+
+def scrub_connector_navigation(text: str) -> str:
+    """Remove connector links from retained pages built with older chrome."""
+    routes = "|".join(re.escape(f"/{route}/") for route in HIDDEN_ROUTES)
+    text = re.sub(
+        rf'<a\b[^>]*\bhref=["\'](?:{routes})["\'][^>]*>.*?</a>(?:<br\s*/?>)?',
+        "",
+        text,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
+    # Older pages group these links under a My Fantasy disclosure. Once its
+    # only links are removed, do not leave an empty menu in production.
+    for class_name in ("navgroup", "navsection"):
+        pattern = rf'<details\b[^>]*class=["\'][^"\']*\b{class_name}\b[^"\']*["\'][^>]*>.*?</details>'
+        text = re.sub(
+            pattern,
+            lambda match: "" if "<a " not in match.group(0).lower() else match.group(0),
+            text,
+            flags=re.DOTALL | re.IGNORECASE,
+        )
+    return text
 
 
 def prepare(root: Path) -> None:
@@ -59,6 +82,14 @@ def prepare(root: Path) -> None:
                     f"/{route}/" in (loc.text or "") for route in HIDDEN_ROUTES):
                 document.remove(entry)
         tree.write(sitemap, encoding="unicode", xml_declaration=True)
+
+    # Some evergreen pages are retained rather than rebuilt on every release.
+    # Their chrome may predate the production-only navigation switch.
+    for path in root.rglob("*.html"):
+        text = path.read_text(errors="replace")
+        scrubbed = scrub_connector_navigation(text)
+        if scrubbed != text:
+            path.write_text(scrubbed)
 
     leaks: list[str] = []
     for path in root.rglob("*"):
