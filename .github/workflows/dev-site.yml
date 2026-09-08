@@ -106,6 +106,7 @@ jobs:
           retention-days: 14
 
       - name: Deploy only to the isolated development project
+        id: deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -114,18 +115,22 @@ jobs:
           YAHOO_SESSION_SECRET: ${{ secrets.YAHOO_SESSION_SECRET }}
         run: |
           test "$DEV_PROJECT" = "lineupbeat-dev"
-          test -n "$YAHOO_CLIENT_ID"
-          test -n "$YAHOO_CLIENT_SECRET"
-          test -n "$YAHOO_SESSION_SECRET"
           branch=$(printf '%s' "$GITHUB_REF_NAME" | tr '/_' '--')
           cp cloudflare/lineupbeat-dev.wrangler.toml wrangler.toml
-          printf '%s' "$YAHOO_CLIENT_ID" | npx --yes wrangler@latest pages secret put YAHOO_CLIENT_ID --project-name=lineupbeat-dev
-          printf '%s' "$YAHOO_CLIENT_SECRET" | npx --yes wrangler@latest pages secret put YAHOO_CLIENT_SECRET --project-name=lineupbeat-dev
-          printf '%s' "$YAHOO_SESSION_SECRET" | npx --yes wrangler@latest pages secret put YAHOO_SESSION_SECRET --project-name=lineupbeat-dev
+          if [ -n "$YAHOO_CLIENT_ID" ] && [ -n "$YAHOO_CLIENT_SECRET" ] && [ -n "$YAHOO_SESSION_SECRET" ]; then
+            printf '%s' "$YAHOO_CLIENT_ID" | npx --yes wrangler@latest pages secret put YAHOO_CLIENT_ID --project-name=lineupbeat-dev
+            printf '%s' "$YAHOO_CLIENT_SECRET" | npx --yes wrangler@latest pages secret put YAHOO_CLIENT_SECRET --project-name=lineupbeat-dev
+            printf '%s' "$YAHOO_SESSION_SECRET" | npx --yes wrangler@latest pages secret put YAHOO_SESSION_SECRET --project-name=lineupbeat-dev
+            echo "yahoo_configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning title=Yahoo connector unavailable::Add YAHOO_CLIENT_ID, YAHOO_CLIENT_SECRET, and YAHOO_SESSION_SECRET repository secrets."
+            echo "yahoo_configured=false" >> "$GITHUB_OUTPUT"
+          fi
           npx --yes wrangler@latest pages deploy \
             --branch="$branch" --commit-dirty=true
 
       - name: Verify Yahoo connector configuration
+        if: steps.deploy.outputs.yahoo_configured == 'true'
         run: |
           for attempt in $(seq 1 12); do
             if curl --fail --silent --show-error "$DEV_BASE_URL/api/yahoo/status" \

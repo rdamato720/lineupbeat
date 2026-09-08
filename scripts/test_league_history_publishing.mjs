@@ -31,8 +31,9 @@ assert(!devWorkflow.includes('--project-name="$DEV_PROJECT"'));
 assert(devWorkflow.includes('Verify league publishing storage'));
 assert(devWorkflow.includes('/api/leagues/deployment-health-check'));
 assert(devWorkflow.includes('Verify Yahoo connector configuration'));
+assert(devWorkflow.includes("if: steps.deploy.outputs.yahoo_configured == 'true'"));
+assert(devWorkflow.includes('yahoo_configured=false'));
 for (const secret of ['YAHOO_CLIENT_ID', 'YAHOO_CLIENT_SECRET', 'YAHOO_SESSION_SECRET']) {
-  assert(devWorkflow.includes(`test -n "$${secret}"`));
   assert(devWorkflow.includes(`pages secret put ${secret} --project-name=lineupbeat-dev`));
 }
 assert(productionWorkflow.includes(
