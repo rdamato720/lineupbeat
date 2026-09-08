@@ -37,26 +37,29 @@ for (const secret of ['YAHOO_CLIENT_ID', 'YAHOO_CLIENT_SECRET', 'YAHOO_SESSION_S
   assert(devWorkflow.includes(`pages secret put ${secret} --project-name=lineupbeat-dev`));
 }
 assert(productionWorkflow.includes(
-  'cp cloudflare/lineupbeat-production.wrangler.toml wrangler.toml'));
+  'python scripts/prepare_public_release.py site'));
+assert(productionWorkflow.includes(
+  'verify_deploy_artifact.py site --decision-room --public-only'));
+assert(productionWorkflow.includes(
+  '(cd site && npx --yes wrangler@latest pages deploy .'));
 assert(!productionWorkflow.includes('wrangler@latest pages deploy site'));
 assert(productionConfig.includes('name = "lineupbeat"'));
 assert(productionConfig.includes('binding = "LEAGUE_HISTORY_DB"'));
 assert(productionConfig.includes('database_name = "lineupbeat-league-history-production"'));
 assert(productionConfig.includes(
   'database_id = "__PRODUCTION_LEAGUE_HISTORY_DB_ID__"'));
-assert(productionWorkflow.includes('wrangler@latest d1 list --json'));
-assert(productionWorkflow.includes('wrangler@latest d1 create'));
-assert(productionWorkflow.includes('wrangler@latest d1 execute'));
-assert(productionWorkflow.includes('--file=cloudflare/league-history-schema.sql'));
-assert(productionWorkflow.includes('Refusing to bind production to the development database.'));
-assert(productionWorkflow.includes('Verify production Yahoo connector configuration'));
+assert(!productionWorkflow.includes('wrangler@latest d1 list --json'));
+assert(!productionWorkflow.includes('wrangler@latest d1 create'));
+assert(!productionWorkflow.includes('wrangler@latest d1 execute'));
+assert(!productionWorkflow.includes('--file=cloudflare/league-history-schema.sql'));
+assert(!productionWorkflow.includes('Verify production Yahoo connector configuration'));
 assert(productionWorkflow.includes('/api/yahoo/status'));
 for (const secret of ['YAHOO_CLIENT_ID', 'YAHOO_CLIENT_SECRET', 'YAHOO_SESSION_SECRET']) {
-  assert(productionWorkflow.includes(`test -n "$${secret}"`));
-  assert(productionWorkflow.includes(`pages secret put ${secret} --project-name=lineupbeat`));
+  assert(!productionWorkflow.includes(`test -n "$${secret}"`));
+  assert(!productionWorkflow.includes(`pages secret put ${secret} --project-name=lineupbeat`));
 }
-assert(productionWorkflow.includes('Verify production league publishing storage'));
-assert(productionWorkflow.includes('https://lineupbeat.com/api/leagues/deployment-health-check'));
+assert(productionWorkflow.includes('Verify released production routes'));
+assert(productionWorkflow.includes('/api/leagues/deployment-health-check'));
 assert(devConfig.includes('name = "lineupbeat-dev"'));
 assert(devConfig.includes('database_id ='));
 assert.notEqual(devConfig, productionConfig);

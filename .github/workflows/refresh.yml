@@ -748,6 +748,7 @@ jobs:
           # above while replacing the legacy season projection path.
           python scripts/build_nfl_v15_development.py \
             --production --db beatwire.db
+          python scripts/prepare_public_release.py site
 
           # Crawl every public and unlisted HTML artifact after all builders
           # have run. This catches sitemap/indexing contradictions, missing
