@@ -59,8 +59,8 @@
   function teamOutlook(league,format,actions){
     const starters=league.roster.starters.map(player=>({player,model:modelPlayer(player)})).filter(row=>row.model&&projection(row.model,format)!=null);
     const total=starters.reduce((sum,row)=>sum+projection(row.model,format),0),matched=LineupBeatLeagueAdapter.allPlayers(league).filter(player=>player.identity).length;
-    const call=actions.length?`${actions.length} eligible lineup change${actions.length===1?'':'s'} clear${actions.length===1?'s':''} the meaningful-decision threshold. The strongest is ${modelPlayer(actions[0].bench).name} over ${modelPlayer(actions[0].starter).name} by ${actions[0].gap.toFixed(1)} points.`:'Your strongest lineup is already set. No eligible bench player projects far enough ahead to clear the meaningful-decision threshold.';
-    return `<article class="mt-outlook-card"><div><small>Week ${state.model.week} team outlook</small><h3>${escape(league.team.name)}</h3><p>${escape(call)}</p></div><div class="mt-outlook-metrics"><span><strong>${total.toFixed(1)}</strong>supported starter points</span><span><strong>${matched}</strong>matched skill players</span><span><strong>${actions.length}</strong>actionable changes</span></div></article>`;
+    const call=actions.length?`${actions.length} lineup change${actions.length===1?'':'s'} worth reviewing. Strongest: ${modelPlayer(actions[0].bench).name} over ${modelPlayer(actions[0].starter).name} by ${actions[0].gap.toFixed(1)} points.`:'No bench player projects far enough ahead to recommend a lineup change.';
+    return `<article class="mt-outlook-card"><div><small>Week ${state.model.week} outlook</small><p>${escape(call)}</p></div><div class="mt-outlook-metrics"><span><strong>${total.toFixed(1)}</strong>starter points</span><span><strong>${matched}</strong>matched players</span><span><strong>${actions.length}</strong>lineup changes</span></div></article>`;
   }
   function render(){
     const league=state.league,format=league.league.scoring.format;
