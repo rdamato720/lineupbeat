@@ -12,6 +12,7 @@ from pathlib import Path
 
 import college_decision_data
 import college_team_logos
+import build_pages
 import seo
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -95,6 +96,18 @@ class SportExperienceTests(unittest.TestCase):
             self.assertIn('--agate:"Barlow Condensed"', header)
             self.assertIn('--text:"Source Serif 4"', header)
             self.assertIn("--signal:#C6F53C", header)
+
+    def test_nfl_data_hub_uses_the_current_platform_design(self):
+        body = build_pages._released_data_page_html(build_pages.DATA_PAGE_HTML)
+        css = build_pages.DATA_PAGE_CSS
+        self.assertIn("Every number.", body)
+        self.assertIn("In context.", body)
+        self.assertIn('class="lb-data-command-card"', body)
+        self.assertIn("The full decision stack.", body)
+        self.assertIn("font-family: var(--agate)", css)
+        self.assertIn("text-transform: uppercase", css)
+        self.assertNotIn("FUTURE TOOL ROADMAP", body)
+        self.assertNotIn("Suggested route:", body)
 
     def test_league_history_has_a_first_class_navigation_state(self):
         header = seo.site_nav("league_history", "nfl")

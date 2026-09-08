@@ -1718,6 +1718,132 @@ a.lb-tool-card:hover {
   .lb-philosophy,
   .lb-wire-strip { padding: 58px 0; }
 }
+
+/* 2026 platform system: match the new homepage, rankings and projections. */
+.lb-data-page {
+  padding-top: 28px;
+  background:
+    radial-gradient(circle at 82% 7%, rgba(198,245,60,.07), transparent 26%),
+    linear-gradient(180deg, #07100b 0, #050807 42%, #07100b 100%);
+}
+.lb-data-hero { padding: 0 0 56px; border: 0; }
+.lb-data-hero .lb-container {
+  padding: clamp(34px, 5vw, 58px);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 22px;
+  background: linear-gradient(118deg, rgba(11,22,16,.96), rgba(7,12,9,.94));
+  box-shadow: inset 0 1px 0 rgba(198,245,60,.15);
+}
+.lb-data-hero .lb-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: clamp(34px, 5vw, 58px);
+  width: 86px;
+  height: 3px;
+  background: var(--lb-green);
+}
+.lb-data-hero-grid {
+  grid-template-columns: minmax(0,.9fr) minmax(360px,1.1fr);
+  gap: clamp(42px,6vw,86px);
+  align-items: center;
+}
+.lb-data-page .lb-data-title {
+  max-width: 9ch;
+  margin: 18px 0 25px;
+  color: var(--lb-text);
+  font-family: var(--agate), "Barlow Condensed", Arial, sans-serif;
+  font-size: clamp(62px,7.2vw,100px);
+  font-weight: 600;
+  line-height: .82;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+}
+.lb-data-title .accent { display: block; color: var(--lb-green); }
+.lb-data-intro,
+.lb-section-heading p,
+.lb-card-deck,
+.lb-philosophy-copy,
+.lb-wire-strip p {
+  font-family: Arial, sans-serif;
+}
+.lb-data-intro { max-width: 590px; font-size: 18px; line-height: 1.55; }
+.lb-data-actions { margin-top: 30px; }
+.lb-button {
+  min-height: 60px;
+  border-radius: 8px;
+  font-family: var(--agate), "Barlow Condensed", Arial, sans-serif;
+}
+.lb-data-command-card {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 18px;
+  background: rgba(10,18,13,.82);
+}
+.lb-command-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--lb-line);
+  color: var(--lb-muted);
+  font: 600 12px/1 var(--agate), "Barlow Condensed", sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.lb-command-top span:first-child { color: var(--lb-green); }
+.lb-data-command-card h2 {
+  margin: 0;
+  padding: 34px 30px 26px;
+  font: 600 clamp(34px,4vw,52px)/.92 var(--agate), "Barlow Condensed", sans-serif;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+.lb-command-links { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+.lb-command-link {
+  min-height: 112px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid var(--lb-line);
+  text-decoration: none;
+}
+.lb-command-link:nth-child(even) { border-left: 1px solid var(--lb-line); }
+.lb-command-link strong {
+  font: 600 17px/1 var(--agate), "Barlow Condensed", sans-serif;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.lb-command-link span { margin-top: 7px; color: var(--lb-muted); font: 14px/1.35 Arial,sans-serif; }
+.lb-command-link:hover strong { color: var(--lb-green); }
+.lb-section-heading h2,
+.lb-philosophy h2,
+.lb-wire-strip h2,
+.lb-feature-card h3,
+.lb-tool-card h3 {
+  font-family: var(--agate), "Barlow Condensed", Arial, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.lb-section-heading h2 { font-size: clamp(46px,5vw,68px); line-height: .9; }
+.lb-feature-card h3 { font-size: clamp(34px,3.5vw,48px); line-height: .94; }
+.lb-tool-card h3 { font-size: 34px; line-height: .96; }
+.lb-feature-card { min-height: 470px; }
+.lb-philosophy h2 { font-size: clamp(44px,5vw,68px); line-height: .9; }
+
+@media (max-width: 900px) {
+  .lb-data-hero-grid { grid-template-columns: 1fr; }
+  .lb-data-command-card { max-width: 680px; }
+}
+@media (max-width: 620px) {
+  .lb-data-page { padding-top: 15px; }
+  .lb-data-hero { padding-bottom: 36px; }
+  .lb-data-hero .lb-container { padding: 34px 22px 24px; border-radius: 15px; }
+  .lb-data-page .lb-data-title { font-size: clamp(58px,20vw,78px); }
+  .lb-command-links { grid-template-columns: 1fr; }
+  .lb-command-link:nth-child(even) { border-left: 0; }
+}
 """
 
 DATA_PAGE_HTML = """<main class="lb-data-page">
@@ -1726,16 +1852,12 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
     <div class="lb-container">
       <div class="lb-data-hero-grid">
 
-        <div>
+        <div class="lb-data-hero-copy">
           <div class="lb-eyebrow">NFL FANTASY DATA</div>
 
           <h1 class="lb-data-title">
-            NFL <span class="accent">Fantasy Data</span>
+            Every number.<span class="accent">In context.</span>
           </h1>
-
-          <p class="lb-data-hook">
-            Start with the decision. Inspect the data behind it.
-          </p>
 
           <p class="lb-data-intro">
             The 177-player Decision Room, 615-player projection set, rankings,
@@ -1763,6 +1885,17 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
             </a>
           </div>
         </div>
+
+        <aside class="lb-data-command-card" aria-label="NFL data tools">
+          <div class="lb-command-top"><span>LINEUPBEAT</span><span>2026 NFL</span></div>
+          <h2>The full decision stack.</h2>
+          <div class="lb-command-links">
+            <a class="lb-command-link" href="/nfl/rankings/"><strong>Rankings</strong><span>Set your draft board</span></a>
+            <a class="lb-command-link" href="/nfl/projections/"><strong>Projections</strong><span>Inspect every stat line</span></a>
+            <a class="lb-command-link" href="/nfl/draft-value/"><strong>Draft value</strong><span>Find the market gap</span></a>
+            <a class="lb-command-link" href="/decision-room/nfl/"><strong>Decision Room</strong><span>Read the full evidence</span></a>
+          </div>
+        </aside>
 
       </div>
     </div>
@@ -2321,10 +2454,18 @@ def _preview_rows():
     return proj, value, sched
 
 
+def _released_data_page_html(body):
+    """Ship live tools only; product-roadmap mockups do not belong in the hub."""
+    return re.sub(
+        r'\s*<!-- FUTURE TOOL ROADMAP -->.*?(?=\s*<!-- PHILOSOPHY -->)',
+        "\n\n", body, flags=re.S)
+
+
 def data_hub_page(base):
     """The supplied design, with the previews reading live data."""
     proj_rows, value_rows, sched_rows = _preview_rows()
-    body = DATA_PAGE_HTML.replace("{RANK_ROWS}", _rank_preview_rows())
+    body = _released_data_page_html(DATA_PAGE_HTML)
+    body = body.replace("{RANK_ROWS}", _rank_preview_rows())
     body = body.replace("{PROJ_ROWS}", proj_rows)
     body = body.replace("{VALUE_ROWS}", value_rows)
     body = body.replace("{SCHED_ROWS}", sched_rows)
