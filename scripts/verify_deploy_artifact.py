@@ -396,7 +396,7 @@ def check_league_history(root, development=True):
           and "/leagues/" not in sitemap_text)
 
 
-def check_homepage(root, decision_room=False):
+def check_homepage(root, decision_room=False, public_only=False):
     """The homepage sections the Wire replaced *around*.
 
     The Wire replaces one renderer -- All reports -- and nothing else. It
@@ -499,17 +499,22 @@ def check_homepage(root, decision_room=False):
               str(college_room))
         check("the root is the LineupBeat platform homepage, not the full tool",
               'id="lineup-beat-home"' in text and 'id="decision-room"' not in text)
+        expected_nav = (("NFL", "College", "About") if public_only
+                        else ("NFL", "College", "My Team", "About"))
         check("the homepage has neutral primary navigation",
-              all(f'>{label}<' in text for label in
-                  ("NFL", "College", "My Team", "About"))
+              all(f'>{label}<' in text for label in expected_nav)
+              and ("My Team" not in text if public_only else True)
               and 'class="vbtn sport-pill"' not in text
               and "The Beat" not in text)
+        expected_products = (
+            "NFL + COLLEGE FANTASY FOOTBALL", "WHO WE ARE",
+            "EXPLORE LINEUPBEAT", "Everything you need. All season.",
+            "Fantasy research without the noise.", "NFL FANTASY", "COLLEGE FANTASY",
+        ) + (() if public_only else ("MY TEAM", "MY LEAGUE"))
         check("the homepage introduces the full LineupBeat platform",
-              all(label in text for label in
-                  ("NFL + COLLEGE FANTASY FOOTBALL", "WHO WE ARE",
-                   "EXPLORE LINEUPBEAT", "Everything you need. All season.",
-                   "Fantasy research without the noise.",
-                   "NFL FANTASY", "COLLEGE FANTASY", "MY TEAM", "MY LEAGUE"))
+              all(label in text for label in expected_products)
+              and ("MY TEAM" not in text and "MY LEAGUE" not in text
+                   if public_only else True)
               and "NFL and College have their own dedicated experiences." not in text
               and "Compare 2,205 players using validated Yahoo scoring" not in text
               and "Today’s Decision Board" not in text
@@ -520,10 +525,12 @@ def check_homepage(root, decision_room=False):
               and 'class="hp-wordmark-field"' not in text
               and 'class="hp-product-stage"' not in text
               and 'class="hp-stage-card' not in text)
+        icon_names = (("rankings", "college") if public_only
+                      else ("rankings", "college", "team", "league"))
         icon_assets = [root / "assets" / "homepage" / f"{name}-3d.png"
-                       for name in ("rankings", "college", "team", "league")]
+                       for name in icon_names]
         check("the homepage 3D navigation icons are deployed",
-              text.count('class="hp-3d-icon"') == 8
+              text.count('class="hp-3d-icon"') == (4 if public_only else 8)
               and all(asset.is_file() for asset in icon_assets),
               "; ".join(str(asset) for asset in icon_assets if not asset.is_file()))
         check("the Decision Room is presented as one tool, not the brand identity",
@@ -540,26 +547,31 @@ def check_homepage(root, decision_room=False):
               'class="hp-about-band"' in text
               and 'class="hp-about-inner"' in text
               and 'class="hp-identity-strip"' not in text)
-        check("the homepage shows three concrete product examples",
+        check("the homepage shows concrete product examples",
               'class="hp-examples"' in text
-              and text.count('<article class="hp-example') == 3
+              and text.count('<article class="hp-example') == (2 if public_only else 3)
               and "RANKINGS + PROJECTIONS" in text
-              and "ROSTER SNAPSHOT" in text
+              and ("ROSTER SNAPSHOT" not in text if public_only
+                   else "ROSTER SNAPSHOT" in text)
               and "PROJECTED EDGE" in text)
         faq_markup = (text.split('class="hp-faq-list">', 1)[1].split("</div></section><script", 1)[0]
                       if 'class="hp-faq-list">' in text else "")
         check("the homepage FAQ is visible and has matching structured data",
               'class="hp-section hp-faq"' in text
-              and faq_markup.count("<details>") == 6
+              and faq_markup.count("<details>") == (4 if public_only else 6)
               and '"@type":"FAQPage"' in text
               and "Is the Decision Room the whole product?" in text
-              and "Roster data stays in your browser." in text)
-        check("the homepage links the complete product paths",
-              all(route in text for route in
-                  ('href="/nfl/rankings/"', 'href="/nfl/projections/"',
-                   'href="/college-fantasy-football/week-1/"',
-                   'href="/my-team/"', 'href="/my-league/"',
-                   'href="/about/"')))
+              and ("Roster data stays in your browser." not in text
+                   if public_only else "Roster data stays in your browser." in text))
+        expected_links = (
+            'href="/nfl/rankings/"', 'href="/nfl/projections/"',
+            'href="/college-fantasy-football/week-1/"', 'href="/about/"',
+        )
+        check("the homepage links the released product paths",
+              all(route in text for route in expected_links)
+              and ('href="/my-team/"' not in text and 'href="/my-league/"' not in text
+                   if public_only else
+                   'href="/my-team/"' in text and 'href="/my-league/"' in text))
         check("the homepage is not a hidden sport-switching experience",
               "data-home-sport" not in text
               and "pushState" not in text and "?sport=college" not in text)
@@ -691,8 +703,10 @@ def check_homepage(root, decision_room=False):
 
 
 def main() -> int:
-    args = [arg for arg in sys.argv[1:] if arg != "--decision-room"]
+    args = [arg for arg in sys.argv[1:]
+            if arg not in {"--decision-room", "--public-only"}]
     decision_room = "--decision-room" in sys.argv[1:]
+    public_only = "--public-only" in sys.argv[1:]
     root = Path(args[0] if args else "site")
     print(f"  artifact: {root.resolve()}")
     if not root.is_dir():
@@ -729,15 +743,33 @@ def main() -> int:
         check("the sitemap does not list /nfl/wire/",
               "/nfl/wire/" not in sm.read_text())
 
-    check_homepage(root, decision_room=decision_room)
+    check_homepage(root, decision_room=decision_room, public_only=public_only)
     check_player_page_impacts(root)
     check_ranking_formats(root)
     check_comparison_tool(root)
-    if decision_room:
+    if decision_room and not public_only:
         development = (root / "_headers").is_file()
         check_my_team(root, development=development)
         check_development_repairs(root, development=development)
         check_league_history(root, development=development)
+    if public_only:
+        hidden = [root / route for route in
+                  ("my-team", "my-league", "league-history")]
+        check("development-only fantasy routes are absent from production",
+              all(not path.exists() for path in hidden),
+              "; ".join(str(path) for path in hidden if path.exists()))
+        leaks = []
+        for path in root.rglob("*"):
+            if not path.is_file() or path.suffix.lower() not in {
+                    ".html", ".css", ".js", ".json", ".xml", ".txt"}:
+                continue
+            page_text = path.read_text(errors="replace")
+            if any(route in page_text for route in (
+                    "/my-team/", "/my-league/", "/league-history/",
+                    "/api/yahoo/", "/api/leagues/")):
+                leaks.append(str(path.relative_to(root)))
+        check("production contains no connector links or API references",
+              not leaks, "; ".join(leaks[:5]))
 
     home = root / "index.html"
     if home.is_file():

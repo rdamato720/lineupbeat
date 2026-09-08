@@ -31,6 +31,7 @@ from __future__ import annotations
 
 import html
 import json
+import os
 
 SITE_URL = "https://lineupbeat.com"
 
@@ -395,6 +396,16 @@ NAV_GROUPS = (
         ("league_history", "My League", "/my-league/"),
     )),
 )
+
+
+def connectors_public():
+    """Keep My Team/My League on development until the extension ships."""
+    return os.environ.get("LINEUPBEAT_RELEASE_TARGET") != "production"
+
+
+def nav_groups():
+    return NAV_GROUPS if connectors_public() else tuple(
+        row for row in NAV_GROUPS if row[0] != "fantasy")
 
 
 # The shell must be complete wherever its markup is used. Most legacy page
@@ -858,7 +869,12 @@ GLOBAL_FOOTER = """<footer class="global-footer"><div class="wrap">
 
 def site_footer():
     """One decision-first footer for every generated public page."""
-    return GLOBAL_FOOTER
+    if connectors_public():
+        return GLOBAL_FOOTER
+    return GLOBAL_FOOTER.replace(
+        '<a href="/my-team/">My Team</a><br><a href="/my-league/">My League</a><br>',
+        '',
+    )
 
 
 def _group_is_current(group, active, sport):
@@ -887,7 +903,7 @@ def _nav_drawer(active, sport):
         '<svg viewBox="0 0 12 8" fill="none" stroke="currentColor" aria-hidden="true">'
         '<path d="m1 1 5 5 5-5"></path></svg></summary>'
         f'{_group_links(group, items, active, sport, True)}</details>'
-        for group, label, items in NAV_GROUPS)
+        for group, label, items in nav_groups())
     about_current = ' aria-current="page"' if active == "about" else ""
     return (
         '  <div class="navdrawer" id="navdrawer" hidden>\n'
@@ -925,7 +941,7 @@ def site_nav(active=None, sport="nfl", search="", home=False):
         '<svg viewBox="0 0 12 8" fill="none" stroke="currentColor" aria-hidden="true">'
         '<path d="m1 1 5 5 5-5"></path></svg></summary>'
         f'{_group_links(group, items, active, sport)}</details>'
-        for group, label, items in NAV_GROUPS)
+        for group, label, items in nav_groups())
     about_current = ' aria-current="page"' if active == "about" else ""
     views = groups + f'<a class="vbtn nav-about" href="/about/"{about_current}>About</a>'
     if search is False:

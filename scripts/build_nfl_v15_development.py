@@ -180,6 +180,7 @@ def main():
         if 'id="lb-dev-style"' not in template.read_text():
             raise RuntimeError('source template was not protected for development')
     else:
+        run('prepare_public_release',str(ROOT/'site'))
         home=(ROOT/'site/index.html').read_text()
         if 'DEVELOPMENT PREVIEW' in home or 'lineupbeat-dev.pages.dev' in home:
             raise RuntimeError('development-only markup reached production artifact')

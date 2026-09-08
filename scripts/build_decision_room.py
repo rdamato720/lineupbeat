@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import os
 import re
 import shutil
 from pathlib import Path
@@ -174,11 +175,22 @@ def render_home(payload: dict, college_payload: dict) -> str:
     }
     art = {name: f'<img class="hp-3d-icon" src="/assets/homepage/{name}-3d.png" alt="" aria-hidden="true">' for name in ("rankings", "college", "team", "league")}
     hero = f'''<section class="hp-home-hero"><div class="hp-hero-grid"><div class="hp-home-copy"><div class="lb-eyebrow">NFL + COLLEGE FANTASY FOOTBALL</div><h1>YOUR SEASON.<br><span>IN FOCUS.</span></h1><p>Independent rankings, projections, roster tools, league history, and decision support—all in one place.</p><div class="lb-hero-actions"><a class="lb-btn lb-btn-primary" href="/nfl/rankings/">Explore NFL <b>→</b></a><a class="lb-btn lb-btn-secondary" href="/college-fantasy-football/week-1/">Explore College <b>→</b></a></div></div><div class="hp-product-window" aria-label="Explore LineupBeat products"><div class="hp-window-bar"><span><i></i> LINEUPBEAT</span><b>{payload['season']} FANTASY</b></div><div class="hp-window-body"><small>YOUR FANTASY COMMAND CENTER</small><h2>One place. Every edge.</h2><div class="hp-window-grid"><a href="/nfl/rankings/">{art['rankings']}<span><b>NFL Rankings</b><small>Set your weekly board</small></span><em>→</em></a><a href="/college-fantasy-football/week-1/">{art['college']}<span><b>College Fantasy</b><small>{len(college_payload['players']):,} Week 1 players</small></span><em>→</em></a><a href="/my-team/">{art['team']}<span><b>My Team</b><small>Understand your roster</small></span><em>→</em></a><a href="/my-league/">{art['league']}<span><b>My League</b><small>Build your record book</small></span><em>→</em></a></div></div></div></div></section><aside class="hp-identity-strip"><small>WHO WE ARE</small><h2>Fantasy research without the noise.</h2><p>Our projections. Clear explanations. Honest limits.</p><a href="/about/">Meet LineupBeat →</a></aside>'''
+    if not seo.connectors_public():
+        hero = hero.replace(
+            "Independent rankings, projections, roster tools, league history, and decision support—all in one place.",
+            "Independent rankings, projections, and decision support—all in one place.",
+        )
+        hero = re.sub(r'<a href="/my-team/">.*?</a><a href="/my-league/">.*?</a>', '', hero)
     hero = hero.replace(
         '<aside class="hp-identity-strip"><small>WHO WE ARE</small><h2>Fantasy research without the noise.</h2><p>Our projections. Clear explanations. Honest limits.</p><a href="/about/">Meet LineupBeat →</a></aside>',
         '<section class="hp-about-band" aria-labelledby="hp-about-title"><div class="hp-about-inner"><small>WHO WE ARE</small><div><h2 id="hp-about-title">Fantasy research without the noise.</h2><p>Our projections. Clear explanations. Honest limits.</p></div><a href="/about/">Meet LineupBeat →</a></div></section>',
     )
     tools = f'''<section class="hp-tools-band" id="tools"><div class="hp-platform"><div class="hp-section-head"><small>EXPLORE LINEUPBEAT</small><h2>Everything you need. All season.</h2></div><div class="hp-bento"><a class="hp-bento-card hp-bento-nfl" href="/nfl/rankings/"><span class="hp-icon-chip hp-icon-art">{art['rankings']}</span><small>NFL FANTASY</small><h3>Rankings.<br>Projections.<br>Draft tools.</h3><span>Explore NFL →</span></a><a class="hp-bento-card hp-bento-college" href="/college-fantasy-football/week-1/"><span class="hp-icon-chip hp-icon-art">{art['college']}</span><small>COLLEGE FANTASY</small><h3>Go deeper than the Saturday box score.</h3><span>Explore College →</span></a><a class="hp-bento-card hp-bento-team" href="/my-team/"><span class="hp-icon-chip hp-icon-art">{art['team']}</span><small>MY TEAM</small><h3>See your roster clearly.</h3><span>Analyze my team →</span></a><a class="hp-bento-card hp-bento-league" href="/my-league/"><span class="hp-icon-chip hp-icon-art">{art['league']}</span><small>MY LEAGUE</small><h3>Every season. Every champion.</h3><span>Build league history →</span></a></div></div></section>'''
+    if not seo.connectors_public():
+        tools = re.sub(
+            r'<a class="hp-bento-card hp-bento-team".*?</a><a class="hp-bento-card hp-bento-league".*?</a>',
+            '', tools,
+        )
     ranked_players = sorted(
         (player for player in payload["players"] if player.get("formats", {}).get("half_ppr", {}).get("overall_rank")),
         key=lambda player: player["formats"]["half_ppr"]["overall_rank"],
@@ -195,6 +207,11 @@ def render_home(payload: dict, college_payload: dict) -> str:
     decision_a, decision_b = [player for player in ranked_players if player["position"] == "QB"][:2]
     decision_gap = decision_a["formats"]["half_ppr"]["projected_points"] - decision_b["formats"]["half_ppr"]["projected_points"]
     examples = f'''<section class="hp-examples" aria-labelledby="hp-examples-title"><header><small>SEE LINEUPBEAT IN ACTION</small><h2 id="hp-examples-title">Know what you’re getting.</h2><p>Real Week 1 data. Clear tools. No mystery.</p></header><article class="hp-example"><div class="hp-example-copy"><small>01 · RANKINGS + PROJECTIONS</small><h3>Build your board with context.</h3><ul><li>Every format in one place</li><li>Weekly points beside every rank</li><li>Matchups visible at a glance</li></ul><a href="/nfl/rankings/">Open NFL rankings →</a></div><div class="hp-demo-window"><div class="hp-demo-bar"><span>WEEK 1 · HALF-PPR</span><b>PROJECTED</b></div><div class="hp-rank-list">{ranking_rows}</div></div></article><article class="hp-example hp-example-reverse"><div class="hp-example-copy"><small>02 · MY TEAM</small><h3>Your roster, explained.</h3><ul><li>See projected starters clearly</li><li>Find weak spots by position</li><li>Keep private data in your browser</li></ul><a href="/my-team/">Analyze my team →</a></div><div class="hp-demo-window"><div class="hp-demo-bar"><span>ROSTER SNAPSHOT</span><b>WEEK 1</b></div><div class="hp-roster-list">{roster_rows}</div></div></article><article class="hp-example"><div class="hp-example-copy"><small>03 · DECISION ROOM</small><h3>Compare the projections.</h3><ul><li>Compare two players directly</li><li>See the projected edge</li><li>Know what could change the outlook</li></ul><a href="{NFL_ROOM_PATH}">Try the Decision Room →</a></div><div class="hp-demo-window hp-decision-demo"><div class="hp-demo-bar"><span>PLAYER COMPARISON · HALF-PPR</span><b>PROJECTED EDGE</b></div><div class="hp-demo-call"><small>HIGHER</small><h4>{esc(decision_a["name"])}</h4><p>Projected {decision_a["formats"]["half_ppr"]["projected_points"]:.1f} points</p><strong>+{decision_gap:.1f}</strong><span>point edge over {esc(decision_b["name"])}</span></div><div class="hp-demo-compare"><span><img src="{esc(decision_a["photo"])}" alt="">{esc(decision_a["team"])} · {esc(decision_a["position"])}</span><b>VS</b><span><img src="{esc(decision_b["photo"])}" alt="">{esc(decision_b["team"])} · {esc(decision_b["position"])}</span></div></div></article></section>'''
+    if not seo.connectors_public():
+        examples = re.sub(
+            r'<article class="hp-example hp-example-reverse">.*?</article>',
+            '', examples, flags=re.S,
+        ).replace('03 · DECISION ROOM', '02 · DECISION ROOM')
     decision = f'''<section class="hp-section hp-decision-tool"><span class="hp-icon-chip">{icons['decision']}</span><div><small>ONE TOOL, WHEN YOU NEED IT</small><h2>Stuck between two players?</h2><p>The Decision Room compares their projections and shows the model’s edge first.</p></div><div class="lb-hero-actions"><a class="lb-btn lb-btn-primary" href="{NFL_ROOM_PATH}">NFL Decision Room <b>→</b></a><a class="lb-btn lb-btn-secondary" href="{COLLEGE_ROOM_PATH}">College Decision Room <b>→</b></a></div></section>'''
     faq_items = [
         ("What is LineupBeat?", "LineupBeat is an independent fantasy football research platform for NFL and college players, built around rankings, projections, roster analysis, and league history."),
@@ -204,6 +221,13 @@ def render_home(payload: dict, college_payload: dict) -> str:
         ("Does LineupBeat store my private roster data?", "Roster data stays in your browser. You can disconnect and clear it whenever you want."),
         ("Are projections guaranteed?", "No. Projections are model-based estimates, not promises. We show the projected edge, the evidence behind it, and what could change the outlook."),
     ]
+    if not seo.connectors_public():
+        faq_items = [
+            ("What is LineupBeat?", "LineupBeat is an independent fantasy football research platform for NFL and college players, built around rankings, projections, and player comparisons."),
+            ("Is the Decision Room the whole product?", "No. The Decision Room is one tool for close player calls. LineupBeat also includes rankings, projections, and draft tools."),
+            ("What can I use for NFL and college fantasy?", "NFL players get rankings, projections, and draft comparisons. College fantasy includes dedicated weekly projections and rankings."),
+            ("Are projections guaranteed?", "No. Projections are model-based estimates, not promises. We show the projected edge, the evidence behind it, and what could change the outlook."),
+        ]
     faq_rows = "".join(f'<details><summary>{esc(question)}<span aria-hidden="true">+</span></summary><p>{esc(answer)}</p></details>' for question, answer in faq_items)
     faq_schema = json.dumps({
         "@context": "https://schema.org",
@@ -471,8 +495,7 @@ def write_decision_pages(homepage: Path, payload: dict, source_page: str) -> tup
 def update_metadata(page: str) -> str:
     title = "Fantasy Football Rankings, Projections &amp; Decisions | LineupBeat"
     description = ("LineupBeat provides 2026 fantasy football rankings, NFL and college "
-                   "projections, player comparisons, roster analysis, and clearly labeled "
-                   "market context.")
+                   "projections, player comparisons, and clearly labeled market context.")
     page = re.sub(r'<title>.*?</title>', f'<title>{title}</title>', page, count=1, flags=re.S)
     if re.search(r'<meta\s+name="description"[^>]*>', page, re.I):
         page = re.sub(r'<meta\s+name="description"[^>]*>',

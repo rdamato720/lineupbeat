@@ -22,6 +22,7 @@ on:
       - main
     paths:
       - "data/wire_publications.json"
+      - ".github/workflows/refresh.yml"
   workflow_dispatch:
     inputs:
       skip_fetch:
@@ -731,18 +732,15 @@ jobs:
           # rollback restores it.
           python scripts/wire_homepage_replacement.py --apply
 
-          # Product experiences layered over the approved public model. These
-          # are the same builders and gates used by the isolated development
-          # site so promotion cannot silently drop Decision Room, My Team, or
-          # League History.
+          # Public product experiences layered over the approved model.
+          # My Team and My League remain development-only until the browser
+          # extension is submitted and approved.
           python scripts/build_decision_room.py
 
           # Again, so the projection chips read the board that
           # was just rebuilt. Last, so the sitemap it writes includes
           # the college URLs added above.
           python scripts/build_pages.py --base https://lineupbeat.com
-          python scripts/build_my_team.py
-          python scripts/build_league_history.py
 
           # Apply the exact trusted season data and product adapters reviewed
           # on development to the current production artifact. This preserves
@@ -765,7 +763,7 @@ jobs:
           # the builder's output and passed; the homepage shipped with three
           # links to a page that no longer existed on disk. A build-time
           # check cannot see that. This one reads the artifact.
-          python scripts/verify_deploy_artifact.py site
+          python scripts/verify_deploy_artifact.py site --decision-room --public-only
 
       # The database, banked whatever happened above.
       #
@@ -843,10 +841,6 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          YAHOO_CLIENT_ID: ${{ secrets.YAHOO_CLIENT_ID }}
-          YAHOO_CLIENT_SECRET: ${{ secrets.YAHOO_CLIENT_SECRET }}
-          YAHOO_SESSION_SECRET: ${{ secrets.YAHOO_SESSION_SECRET }}
-          PRODUCTION_LEAGUE_HISTORY_DB: lineupbeat-league-history-production
         # Cloudflare Pages rather than Netlify. Netlify moved to credit
         # billing and ten deploys a day exhausted them, most shipping a
         # rebuilt page where nothing had changed. Pages allows 500 builds a
@@ -856,9 +850,6 @@ jobs:
         # creating one that exists is a harmless failure, so this is a
         # no-op on every run after the first.
         run: |
-          test -n "$YAHOO_CLIENT_ID"
-          test -n "$YAHOO_CLIENT_SECRET"
-          test -n "$YAHOO_SESSION_SECRET"
           # Folded and labelled, because it fails on every run after the
           # first with "A project with this name already exists" and prints
           # a full ERROR block to do it. That block is the loudest thing in
@@ -868,42 +859,6 @@ jobs:
           npx --yes wrangler@latest pages project create lineupbeat \
               --production-branch=main || true
           echo "::endgroup::"
-
-          # Resolve one named production database before preparing Wrangler.
-          # The explicit ID is required by Wrangler. Refuse the known
-          # development database even if the account response is malformed.
-          production_db_id=$(npx --yes wrangler@latest d1 list --json |
-            jq -r --arg name "$PRODUCTION_LEAGUE_HISTORY_DB" \
-              '.[] | select(.name == $name) | (.uuid // .id)' | head -n 1)
-          if [ -z "$production_db_id" ]; then
-            npx --yes wrangler@latest d1 create \
-              "$PRODUCTION_LEAGUE_HISTORY_DB" --json > /tmp/production-d1.json
-            production_db_id=$(jq -r '.uuid // .id // .d1_databases[0].database_id // empty' \
-              /tmp/production-d1.json)
-          fi
-          if ! printf '%s' "$production_db_id" | grep -Eq \
-              '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'; then
-            echo "Production league database could not be resolved."
-            exit 1
-          fi
-          if [ "$production_db_id" = "ca58d282-f90d-4c89-b207-de60614adc57" ]; then
-            echo "Refusing to bind production to the development database."
-            exit 1
-          fi
-          cp cloudflare/lineupbeat-production.wrangler.toml wrangler.toml
-          sed -i "s/__PRODUCTION_LEAGUE_HISTORY_DB_ID__/$production_db_id/" wrangler.toml
-          grep -Eq '^database_id = "[0-9a-f-]{36}"$' wrangler.toml
-          printf '%s' "$YAHOO_CLIENT_ID" | npx --yes wrangler@latest pages secret put YAHOO_CLIENT_ID --project-name=lineupbeat
-          printf '%s' "$YAHOO_CLIENT_SECRET" | npx --yes wrangler@latest pages secret put YAHOO_CLIENT_SECRET --project-name=lineupbeat
-          printf '%s' "$YAHOO_SESSION_SECRET" | npx --yes wrangler@latest pages secret put YAHOO_SESSION_SECRET --project-name=lineupbeat
-
-          # The schema is additive and idempotent. Apply it before switching
-          # traffic so a new database and an existing production database
-          # both have every table/index required by the deployed Functions.
-          npx --yes wrangler@latest d1 execute \
-            "$PRODUCTION_LEAGUE_HISTORY_DB" --remote \
-            --file=cloudflare/league-history-schema.sql \
-            --config=wrangler.toml
 
           # The deploy itself gets three attempts.
           #
@@ -916,8 +871,8 @@ jobs:
           # A Pages deploy creates a new deployment each time, so a retry
           # after a failed upload costs a deployment slot and nothing else.
           for attempt in 1 2 3; do
-            if npx --yes wrangler@latest pages deploy \
-                 --branch=main --commit-dirty=true; then
+            if (cd site && npx --yes wrangler@latest pages deploy . \
+                 --project-name=lineupbeat --branch=main --commit-dirty=true); then
               echo "  deployed on attempt $attempt"
               exit 0
             fi
@@ -931,34 +886,16 @@ jobs:
           echo "  API was not reachable. Re-run the job."
           exit 1
 
-      - name: Verify production league publishing storage
+      - name: Verify released production routes
         if: github.ref == 'refs/heads/main'
         run: |
-          for attempt in $(seq 1 12); do
-            status=$(curl --silent --show-error --output /tmp/league-publish-health.json \
-              --write-out '%{http_code}' \
-              "https://lineupbeat.com/api/leagues/deployment-health-check")
-            if [ "$status" = "404" ]; then
-              jq --exit-status '.error == "League not found."' \
-                /tmp/league-publish-health.json
-              exit 0
-            fi
-            sleep 5
+          for route in / /nfl/rankings/ /nfl/projections/ /decision-room/nfl/ \
+                       /college-fantasy-football/week-1/ /decision-room/college/; do
+            curl --fail --silent --show-error "https://lineupbeat.com$route" >/dev/null
           done
-          cat /tmp/league-publish-health.json
-          exit 1
-
-      - name: Verify production Yahoo connector configuration
-        if: github.ref == 'refs/heads/main'
-        run: |
-          for attempt in $(seq 1 12); do
-            if curl --fail --silent --show-error \
-              "https://lineupbeat.com/api/yahoo/status" \
-              | jq --exit-status '.configured == true' >/dev/null; then
-              exit 0
-            fi
-            sleep 5
+          for route in /my-team/ /my-league/ /league-history/ \
+                       /api/yahoo/status /api/leagues/deployment-health-check; do
+            status=$(curl --silent --show-error --output /dev/null \
+              --write-out '%{http_code}' "https://lineupbeat.com$route")
+            test "$status" = "404"
           done
-          curl --fail --silent --show-error \
-            "https://lineupbeat.com/api/yahoo/status" | jq .
-          exit 1
