@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `54ac95d22b38` · 18 draft calls · $0.0802
+**1 cards** · batch `a905169e964a` · 15 draft calls · $0.0806
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,24 +19,26 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. DJ Moore — BUF WR
+## 1. Chris Rodriguez Jr. — JAX RB
 
-**Worth noting** · TRANSACTION · HIGH evidence
+**Trending up** · ROLE_EXPANSION · MEDIUM evidence
 
 ### What changed
 
-DJ Moore joined the Bills via trade from the Bears as the team sought to add a pass-catching option for Josh Allen.
+Chris Rodriguez Jr. is part of a new Jaguars running game that John Shipley reported will be led by Rodriguez and Tuten.
 
 ### Lineup Beat impact
 
-Moore's trade to Buffalo is a meaningful change of team context and puts him in the Bills' receiver mix. His exact role, target share and usage remain unreported.
+Rodriguez appears to be in the Jaguars' initial lead-back mix alongside Tuten, making him worth monitoring in early usage reports. The report does not define a starter, snap split, or workload.
 
-[Randy Gurzi · Sports Illustrated -- BUF](https://www.si.com/nfl/bills/onsi/full-season-projection-has-bills-falling-short-in-frustrating-playoff-loss) · 2026-09-07
+[John Shipley · Sports Illustrated -- JAX](https://www.si.com/nfl/jaguars/onsi/jacksonville-why-all-eyes-will-be-on-emmanuel-pregnon-when-take-on-browns-in-week-1) · 2026-09-08
 
 <details><summary>Full evidence reviewed</summary>
 
-In the past, Allen has had struggles with turnovers during the playoffs, but that has typically had a lot to do with a lack of pass-catchers. The Bills added DJ Moore this year in a trade with the Chicago Bears in an effort to take some of the pressure off of Allen.
+Running at Pregnon could serve to be bountiful for the Jaguars, especially as they introduce a new running game led by Tuten and free-agent signing Chris Rodriguez Jr. The Jaguars' rushing attacked started off strong a year ago before tailing off over the course of the season, but they believe they have the running backs to make the system flourish.
+
+Running at Pregnon could serve to be bountiful for the Jaguars, especially as they introduce a new running game led by Tuten and free-agent signing Chris Rodriguez Jr. The Jaguars' rushing attacked started off strong a year ago before tailing off over the course of the season, but they believe they have the running backs to make the system flourish. With Pregnon in the lineup, they believe they have a guard who can blast open holes in the process.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrVVttu20gM_ZWBX_qwVqKbdfFb2rhtiq5TJC72YVEI1FysaUcaY2YUxy367yWlOGmxX7AvhkVyOOTh4ZF-LFoIvGu0WKwXqxx4vRJp2maVLOKc10XdxqrieVEkqpKqLPK45SopQLUqhTzPskTlK7la1WXN48VywcEJv1j_-2MBh4OzD1I0EDA1umAMnXX4_w4GcWLvRvdd0wnb93II4E7o-ttaJ195FhwIyYJlr0elwFimPQPWSxj0sFejYbyDYS-ZVSxI6Bm3Q5CPgWFmdhiDZ53umR5Y6CR7rY3xr5iTXOoH6VivHy_Ye0woH4EH5qyRS4b372VgvgMnpyyjB8zvZA-YZhycPFgXpLj4o-Lmucn2NDf5m886vdcDNXV7vfnYXN9dvd1NEVjqEJpwOkgCY_Pp9m53s32HLgGBTGmcFlFcR3G5S9N1Xq6z4q84XseEr9DYR9CW8n7evvm4ubojqwMVGsystJADxyTxRV2c7Ub3OgAdosksdoiJfJgDmbDSs8Fi5wfJtTqdkccjw36JuPYHOfjp8HJC2RFmHtONnlnHzgM7GMBsdkZcyEPoaEQuEF5byxClr1i3FOxo3TdjQZwhn7LQDPBUAG08O0pHwJ_x_rJcnKvFnm_mGw7gw5JdGSMH1gGOGwQW5cb93mA_R43Xh9ENOBrnmRgdNjOfM3CySvkla8eAFgjTcZyF5mDMaUoEzCAgSD5h51RoAP6NyIb3-ojTxmDiC7Y704uBENjc9YcZEMyM_DpJcERCeAJ1LguPvOnwtj2SGwP8FDEwqRQ2TLcG-CaZt_3MbiraSe9HR8-KbFPbBOwZl4YjYzWxZ97j3rbayDXOW6-TkhfAcwWFKqHERY1B4lHcRP19YtH95ur-dtt8vJ0o2EvaLO179Ozurrb3V292N7db8lghzROpwTT_v7W1xwGH1ukD0Wh7vfm0wZ8trSSxQpIynef3bJvxjOMojrO8SktyWK-fFvAf2r0naqOlgfNmbm-3G3KNrdG88WPfzzg98-Or1QPy5blP9qDPLFHO9rNjYgexEx8muLwd993EEaQbAvvCRuK3PdDtDGnEPljfvdDkzzL-q1lO4r2uMdBKQ10hYh1pAiZ98mKx3jcK1xNpSCLyhewPWuKuvnRNgM5ChoW6aV3vCX7PbowZcT2BBCCK2OvPbykoODnsQ4dh72_evUcLNYlPs3t0VEwXwsGvLy-Px-OF1xfIustBmcuWQLskgl8irUzkJXg7RC-ziHCtoykqQiIabCXyyPkQ6SFSbi6GjE-CEBnr_eLnF5JnH5rRC5LQuIoTktG9ROZQ8fO77Hd9ztardL2qn_V53hLSEoQpqc7gTwKKOzOi8ENoJl1erKviTz_SOF0VvwUsoJRVuZI8qZM4i3OVFnklQRVZm8UKFBeiTDgUKyVU3malaFdxmSetyuoqw8UBghm1qoeGlHAe0xFfIdEsEYhGax-jh-R5Zs38OTBXgsFJIeu0KHkis7KN8zoHEedVkhaJzKuqVBxqvsqKomyToha5kDyLs1LWK0jjCr8TFj9_AaP60QQ:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrtVk2P20YM_SsDXXqotSvZ-vRt23ULLxJ7seu2AZpAGGkoa7IjjTAzWscJ8t9DSrazQdJjL0UvtkRyOOQjH6lPXsld1RRSeEuP50EcJjnkScTntajyJM4XeZRFYRmkXMRzEGmORklQ8jSqy7DKoyiPgngRJRBXC2_mVdwI6y3__uTxvjf6GUTBHbpGFR9cow0-3-mmY4-N7BUc6YhuW-gcN0fUPWhh5H6AjwzPAzeWOc1KYLJjrgF2x_cDCn_Cd-kkV0wBF37JqyfWyg-MK93trRTAdoODbsZa_iS7PWtkyw7auIa1Gg9qQ0J0iReoIxss3wMz0KOFvWK75vzChAbLOo0PUMsOGGcW43RgZsx2vGe2V9LNmDbk_UlpLq6-Sai4gFAeJxBe6DCKvexQ_Hp7u3pV3D7c_LYbLToM3RXu2AMBsrrfPuzWm99RJbgj0TyYJ36Q-0G2C6NllC4X6c9BsAwCMpEGKic1-b3fPq536z9XJDa8dgW6rhGcrkIvwVU6P8uVbKXjdIpK5xEAVg-mgq8A0DEn6-NXCChr20NFQqy6kWAnVPAPLfbg7IgMZ5SzdA5gwosgoit6bkfgL3cQVFQ7zpxsQRHgNUHbABVfWma0AnbglgHGUCppG0DA3808eD6n5T0MXUfV5Y7dG9h3usP7ByWYBfMMp24q9UDZDGq84EVjzdA15cQV9gVehKojNoozWgwVRdbBgZnTFXveAjagYOVx6jfGO8FqA-BjXp1jVu5Hw18bg9F_be07M3XZpZvNYJspaIetjB4njAXTdY3PRpOOHbFdGd9TBhg25sKlolNkhE02JYLJGgsoG98scKuRB-XgplxKxBUIB3pp-PR0yYiINDIOeTNp7NE6aFmt0C3iffW2e9v9D_G_CjH7S-KgOiN7GnzEhqGf_dMNnFGaArmikYwdKxW3jukeAWuQNPbsBilWgbVEwTNnCrQXkkbLtARaXUoFS5wFchmmC6jzIMvyORdZGsWByPEojnH5cRwxj6ubx-2meLUd51MLVcM7aVvi4fbVqli9ub_ZPK63G1JqAeo09Lgq_nNTXx86MNhjPeaz3tyu7lf4s6GJ3it-BFp8P2jSi3oCPwj8IFhkSRiSQlt5GuUPv9C70e-n4V7w84zfbDc03_sBx2FV2KFtJ0R_xAcU9JgHNe7EshOu37LNNcjrlyv6BAtS5SCVorKcCPmiakjKEfur72L5fgUaLB7mqzi2MUp2BrD_8PahPykRc2uLGqk3GKCN9I7kzxIOeOySOeE7rcVpV1E3jrVka6UGZDSnkH2f3d28ISOH9-xdQ_t2dbv-4zXKHHBq1clgMBRN41xvl9fXh8Physor7NLrrlbX7yekrokV-IIU1t0zogH-oTn6OMp8OIL1CSC_BF93PmD23QDK7yci-7TGfIekJ21psF2sL1EM8OSH3ud3tPmtKwYraDkHWRDTgsYhB2Mm02fUy9UfL8MEGXpZ_RPBKgwGMQvjcyHGvY50w3GMPopx43vLLPlWbxs-j5MXBh5PIUtjqMI8DBZBVM-TKANeJ4tyEdS8roRIw4oncS3qqFykooyDFD8U60WeLaACTphXDbS8wLlpp5od8OvEnwYM5l7qD_5zeClgMX2JTpGgcRKEYVoFmYhqwBhKSOuMB1mMYYRJssjCOsIQc15GYcrTPK7jqkLbeVbPozhJwfv8BViQudc:WIRE_MOBILE_MANIFEST_V1 -->

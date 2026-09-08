@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1254,
+ "count": 1269,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -13833,6 +13833,171 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00368
+  },
+  {
+   "candidate_id": "mobile:onsi:2c6afc638d84d1d2cf6d",
+   "player_id": "00-0038134",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/fantasy-football-week-1-start-em-sit-em-rhamondre-stevenson-vs-jadarian-price",
+   "attempted_at": "2026-09-08T15:16:17+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T15:16:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005412
+  },
+  {
+   "candidate_id": "mobile:onsi:8a331d429445faab43f6",
+   "player_id": "00-0041512",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/fantasy-football-week-1-start-em-sit-em-rhamondre-stevenson-vs-jadarian-price",
+   "attempted_at": "2026-09-08T15:16:30+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T15:16:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00575
+  },
+  {
+   "candidate_id": "mobile:onsi:5a06073ceb400ac3de8a",
+   "player_id": "00-0036875",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/fantasy-football-week-1-start-em-sit-em-rhamondre-stevenson-vs-jadarian-price",
+   "attempted_at": "2026-09-08T15:16:35+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T15:16:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005296
+  },
+  {
+   "candidate_id": "mobile:onsi:d2f35097096d24363ebb",
+   "player_id": "00-0041027",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/fantasy-football-week-1-start-em-sit-em-rhamondre-stevenson-vs-jadarian-price",
+   "attempted_at": "2026-09-08T15:16:41+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T15:16:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00436
+  },
+  {
+   "candidate_id": "mobile:onsi:ad248ed91bbd6f137bd2",
+   "player_id": "00-0039165",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/fantasy-football-week-1-start-em-sit-em-rhamondre-stevenson-vs-jadarian-price",
+   "attempted_at": "2026-09-08T15:16:44+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T15:16:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00502
+  },
+  {
+   "candidate_id": "mobile:article:85482e4b5fe11096dab9",
+   "player_id": "00-0036264",
+   "source_url": "https://www.packers.com/news/this-is-my-burden-sept-8-2026",
+   "attempted_at": "2026-09-08T15:16:48+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T15:16:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004176
+  },
+  {
+   "candidate_id": "mobile:onsi:56d2f7486280fea3725f",
+   "player_id": "00-0040734",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/ethan-hurwitz-patriots-locked-christian-gonzalez-down-but-not-without-drama",
+   "attempted_at": "2026-09-08T15:16:51+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T15:16:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005332
+  },
+  {
+   "candidate_id": "mobile:onsi:6cb0ba7bcf5ded85fe2c",
+   "player_id": "00-0040734",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/fantasy-football-running-back-starts-week-1-wheels-up-for-rhamondre-stevenson-with-treveyon-henderson-injured",
+   "attempted_at": "2026-09-08T15:16:55+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T15:17:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004716
+  },
+  {
+   "candidate_id": "mobile:onsi:3c23d50c62c2a88ace87",
+   "player_id": "00-0040236",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/fantasy-football-running-back-starts-week-1-wheels-up-for-rhamondre-stevenson-with-treveyon-henderson-injured",
+   "attempted_at": "2026-09-08T15:17:00+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T15:17:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005346
+  },
+  {
+   "candidate_id": "mobile:onsi:173ef908892ad87450d9",
+   "player_id": "00-0038611",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-why-all-eyes-will-be-on-emmanuel-pregnon-when-take-on-browns-in-week-1",
+   "attempted_at": "2026-09-08T15:17:04+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-08T15:17:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00859
+  },
+  {
+   "candidate_id": "mobile:onsi:e7fc94cb9ed89dc962b8",
+   "player_id": "00-0040719",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-why-all-eyes-will-be-on-emmanuel-pregnon-when-take-on-browns-in-week-1",
+   "attempted_at": "2026-09-08T15:17:13+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T15:17:23+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004352
+  },
+  {
+   "candidate_id": "mobile:onsi:38814ff2ac241b3ebea6",
+   "player_id": "00-0040129",
+   "source_url": "https://www.si.com/nfl/buccaneers/onsi/predicting-buccaneers-2026-mvp-rookie-of-the-year-more-2026",
+   "attempted_at": "2026-09-08T15:17:23+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T15:17:26+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004252
+  },
+  {
+   "candidate_id": "mobile:onsi:82ae2fbee48e48509fec",
+   "player_id": "00-0034855",
+   "source_url": "https://www.si.com/nfl/buccaneers/onsi/predicting-buccaneers-2026-mvp-rookie-of-the-year-more-2026",
+   "attempted_at": "2026-09-08T15:17:26+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T15:17:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004208
+  },
+  {
+   "candidate_id": "mobile:onsi:10181682cee7fc3f1554",
+   "player_id": "00-0038608",
+   "source_url": "https://www.si.com/onsi/fantasy/waiver-wire/juwan-johnson-headlines-week-1-fantasy-football-tight-end-waiver-wire-pickups",
+   "attempted_at": "2026-09-08T15:17:28+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T15:17:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007698
+  },
+  {
+   "candidate_id": "mobile:onsi:a83fffa369225d9047db",
+   "player_id": "00-0036554",
+   "source_url": "https://www.si.com/onsi/fantasy/waiver-wire/juwan-johnson-headlines-week-1-fantasy-football-tight-end-waiver-wire-pickups",
+   "attempted_at": "2026-09-08T15:17:36+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T15:17:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006064
   }
  ]
 }
