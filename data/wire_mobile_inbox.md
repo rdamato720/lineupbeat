@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `f230d35e99c6` · 17 draft calls · $0.0826
+**1 cards** · batch `f6da62d82512` · 15 draft calls · $0.0830
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,26 +19,28 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Makai Lemon — PHI WR
+## 1. Jalen Hurts — PHI QB
 
-**Trending up** · DEPTH_CHART · MEDIUM evidence
+**Worth noting** · OTHER · MEDIUM evidence
 
 ### What changed
 
-Makai Lemon is listed to open the season as Philadelphia’s slot receiver after returning from the hamstring issue that sidelined him most of the summer.
+Jalen Hurts operated from under center on about 35% of the Eagles’ training-camp snaps, a notable increase from the prior rates cited by PhillyVoice.
 
 ### Lineup Beat impact
 
-Lemon’s projected slot-starting role puts him on the fantasy radar in deeper formats, but the evidence does not establish his snap share or target volume. Watch Week 1 usage.
+The heavier under-center usage points to a meaningful scheme shift worth monitoring for Hurts, but formation data alone does not establish a change in his passing or rushing workload. Week 1 deployment will be more telling.
 
-[Jeff Kerr · Sports Illustrated -- PHI](https://www.si.com/nfl/eagles/onsi/eagles-depth-chart-takeaways-ahead-of-week-1-showdown-with-commanders-was-qb2-winner-leaked-01m20rf3nxxq) · 2026-09-08
+[Jimmy Kempski · PhillyVoice](https://www.phillyvoice.com/eagles-power-ranking-roundup-week-1-2026/) · 2026-09-08
 
 <details><summary>Full evidence reviewed</summary>
 
--- Makai Lemon will get the first crack at punt returner, assuming Britain Covey isn't the practice squad elevation come Week 1. If it's not Covey, Lemon gets the shot based on the depth chart.
+The Eagles were under center for about 35% of their training camp snaps, according to PhillyVoice.com, which is a big change for Jalen Hurts. The Eagles were at 21.8% snaps under center and 15.6% in 2024, PhillyVoice.com said.
 
--- Makai Lemon starting in the slot isn't a surprise, considering the Eagles have been preparing Lemon to start since he's returned from the hamstring injury that kept him out most of the summer. By the looks of the depth chart, Lemon is strictly going to play the slot to start the season -- which is his biggest strength.
+The Eagles were under center for about 35% of their training camp snaps, according to PhillyVoice.com, which is a big change for Jalen Hurts. The Eagles were at 21.8% snaps under center and 15.6% in 2024, PhillyVoice.com said. The change to offensive coordinator Sean Mannion, who has never called plays in the NFL, and a much different scheme makes the Eagles tough to project going into the season.
+
+#JimmySays: Jalen Hurts has 82 career regular season starts (57-25), 10 in the playoffs (6-4), two Super Bowl appearances (1-1), and 42 starts in college (38-4); and we're zeroing in on two joint practices in mid-August when he was missing two starting WRs as some kind of big picture analysis of the upcoming season? Lol really?
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrVVtuS2zYM_RWOXvLQlZe6WJL9lmS3Xbfdy2zc5qHJaCARspiVRIWk7HUzmelv9Pf6JQUl23Ga_EBfPBYIQMDBOaA-eQXYss6l8JZeFUZcRHNcLMoEw0hUCx4nEPEiDdIgEyjSBURBFYp5GiTVIs0WokSeplBxDmmK3oVXghbGW_7xyYO-12qLIgdLqekIBlsrTf9_xqpiv6DWzl-1LXYW9J4OfsVWdf_89bdhFPoBS4uCmUZZ35CDld2GadUg6wdrWC1bpjpma2QVUAKzZxoEaCY7JhB71KxSugVrLlgx2NERt1JgVyITCg3rlGVImYtGmpryGWY66JmpQSNTmtE7N2jZVjVDizP21uHE3iI-sYANBjY4-6r-_NRwsZ8aPjtTWm5kR-bb-6vrX_Orx5c_rkePzpJHbvc90uHj9cP943p19xMdCbDOFPIw8fnC59k6mC_jYBmlP3C-5Ny5SE0YSeXyPty_Wa1Xv187s4bK5pS6mrr1lnyWxUd7I1tpwUW5MXlrgkVjr7T9Aoprg0IZPveHGZxwuaAJDJb8vsGHXuxyuXFNUyI8CzAUfZhSP4xAk0Fgb2tWUj7LoBOsVEMj3HM3YXpDoTW0xupx5FgSqnrPaFR2oKS4VxTk5qXRDrpzb3JlC7QgGxQz7_2Fdxw1QeP77BaeQLKRXmwnm4a5wkfqSG0sKzWUTwyo86Gzh6yoLxgYM7SuhleaMCNivaZK9vS-7sUU3lOglUQo83EAwbDB7QgttdTigSsztqqYtC-mIscMF4dSqAoz5jE1HX2F1hlGs3fdu-4_TZwEISf3EfapLmBm0L2WhoZFJDCEw4ijc7uGTYMO3C0SjthRA9jDeDzltWpKzYx0OqnxxRFlKq3Sqh3TfBmO7D4MNBpbE3hPVPIkS5JbqwhXVU3FDaQDPWOv9uNjo9STOZ6d9XlExQmRspe22bONGktXrG9g_6XTU5mjBcFQGCG0qyVJ1LHHkU9uNiRvlwu7ja0ds46syEvinXQSmxZfqwpiztKhtQwAIS54yLO4ynDBIQgDCqXVJf8cpba6vb2-Wr1cO6216GgrTUv2q-uH9U3--ublo5N2qwQ2B91Dk__f95zakSJMLXsHwB21ek0_d65RNxl0a_2MnyfzBC_nPucxz5LUHSgjD0vr7aN7niAgSw7HbXZ3f-fQHVdGmTv-TMCdS4D6oIYcdMQG1WN3TgYw7KGWDdAM-lrCiPW0mrBESeuE0S6k34nbDvHvkZvkjxO3nYoa6UTg5vEdcn9T7bfXgUYqR-cNFNiQZU20FO41Q384pPzG5BUtsUGj287vnX0rcUdhJ2wc8tMVYdSgxw33xu1vw1ZNM1Dp4DAhNTzcrJzTgf4OPaLtb7dkswiOsJPDoF01tbW9WV5e7na7mZEzoutlVzWXOC6MSyeMw39_VKw_Kta38ISwg73xoaYGfFX5OyKOH_i00XaCSOPvpPMm9pPiiEH-Doz_sQjJ3hGj_AYphfB50IZcV1H3_PzR-_ze3YzG5oMR7vLiWThPkwtvgxThups-Kc6vxmQZR8soPl2Nk_pKaBrCMUiPwxmXM2mR1jzlyMcb0VtmydfnpIxwnpw5eJBils6xDBYBj3hchUmcIVRJVES8gqoUIg1KSOaVqOIiSkUx52kcFFW0yCIiHLg5lDW2kBP1zDTHHd3e_rR4fNkV6tnfBqeh5tNX2VQJOWNYBMVikcZlBFkYZ8l8Maf0VVGIDIskLsso41WMGcT07QZZnIh0vgiLEIIAyN_7_C8CNmPP:WIRE_MOBILE_MANIFEST_V1 -->
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrlVttu20YQ_ZWFiqAJKsokJV6kPgRJrTRJHTm1neahCYghuRQ3JrkEd2lVCQL0N_p7_ZKeIaXYTvoF7Yts7pBzOXPmzH6apGSzMlH5ZDUpwpxCP4_9wPOjxTLy5WIeBkVYBIsocn2_IJJ5ELtBHsdZPs_TyI-L0F16kRfLZZFPppOMutxMVr9_mlDbdvpG5glZuIaJelvqDv-_VHW9F7_IujXXir_RdS0bS90exqtSilLSjZKd6Jtcdk4GGz8Y2krRatVYI6wWJGpJjWq2RV8Jk5WylsKUqrBipztbilo3yuoOL4hCd-J531kzFWlv-bEmq3QjcrIkqNKNFLmWRjTaCmkspZUyJSJkJTUIqhpRKiNaMobdwVvXIxT-RajrSlM-E2-lvBaeyGVb6T2XI3aqqkQqkUgnhZVVhQ9m98pNvmCU7keM7tiQ-lY1OH51fro-S04vnjy7Gt4AGo1N7L6VMF6sX59fXL3Y_AwTquEj3_VDx106bnzlxasgWrnuD66LX35FdTLj0vHem81PZ-snF3zaUWETeC5ULpsMTtxZ7B_PK1UrO-DFjZ1cdaQYdiejur2D5difmvYDiuBBtxeojbs4wphz1yza28ltX1EnjCSjG4aEmy5vxuD_2olmf-wFfAyt_PvPvwRZCxJxW4_9uNFVX8spt2irqXKAOeLpSs4m76eTY4gDzda0rRBqJ9GfgWriQDXmC6UaVJkHD4QuOGvVCXuoXAyVm4ZaRKYs013Op8jsdYme73_TKpMztHIqdqXKSgHukEjV9lgD-39JlWzGUmbi62zICt-bxQ_GIPeToyYXXjALHzAt0evF9OuwwpDKZ--ad81_v8rB6S01dFHIxqgbnOkhYYIEiEsIhXhFTQOecrZalASKSWZnRlUFarYV7Q3HYoJunp1NhwygMT0qyxXcdjzTB52p6RpF2Nt6rO63JSeAef6ACQP7GCxo1Uj5A9W5J98N8neJcKu78AwpxT4PjkRa92dEYBL4nYdB5PjBo6nw3GOunDiqhi10FrDYnRaXfQsXT_WuElAYSR2B9HjDc7xHY2EL_-gSbjINCIDfw3kMFz8OL-zk9-jQR9kd6hBIgl1_YP1FlQQVYZ-w1Cp3nvTb3kDySpSDpHaopVajWvJXQyx-eHsBkhhhNEC8VogD2jFlWpXZninRULU3YNJIR9G36DR_OOLwWJzpCtigZ_vHk9uBTjLkrFj_xkVW61RVcsVBM_yN0mWaBWEaZeS5YeSlBTRgOsE2Uh8HKbxcP7k83yRn54OO1pIJpUwNy_nV8zVLZK1zWR00markf7ay9K6RHT5vUe2Lzen69Ro_G15HTD85LPVbKn85Hpvhuo7rzsN5vGSDNuqwf359ys_jvOAkoeNi2pxv1mzqUVOWmL6uR5zvTosGw9HuXBQdpOCedACkr2XtMKa8M-y99XWUN4YREDJuGehl5Oh3GLBOMXoIZkSmOGS6v6dF36T67VqHSySYVJTKCidvh24jJPI4WLGnjEkKUhXGgPfsez4HpaCUt8gw7uOuN7rvhkV2JxM-tpCprS352rA-ffHmFc6sJGby6-cv8NB3nEBpbWtWJye73W7WDg5ujrJ6IgeonFYjsgPluGawOg2I-9bZgTKO5_AV42Ty-T1fR4xNepPzlcGN_eUS14atbMbmjFe_u_eR5WoxX_nxl_vIOFaswajZC45IDlTHkPW46JBNhnvIZBWH9-2mJD8I77wwoUjGUSAzb-m5c3dR-OEillSE83TuFlRkeR55GeFKmxeLdB7laeBGC8jBfBnPZSaJEeSxpASrwYyY73BlckZBcVST6j-cG-9LA5Lx9jxmgpdDr8i9KEawZYR4aZAVS_KlF83nlEax58VxtERmYZDFqUswBmksw2XsLuMoDuaTz_8A2aPu-g:WIRE_MOBILE_MANIFEST_V1 -->

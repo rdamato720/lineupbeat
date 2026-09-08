@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1303,
+ "count": 1318,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -14372,6 +14372,171 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004798
+  },
+  {
+   "candidate_id": "mobile:article:662fe022c9089b049c69",
+   "player_id": "00-0037228",
+   "source_url": "https://steelersdepot.com/2026/09/eli-heidenreich-gives-unexpected-answer-to-most-surprising-part-of-nfl-game/",
+   "attempted_at": "2026-09-08T19:43:28+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T19:43:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004076
+  },
+  {
+   "candidate_id": "mobile:article:73bc60e28e71f6ac0758",
+   "player_id": "00-0036139",
+   "source_url": "https://steelersdepot.com/2026/09/eli-heidenreich-gives-unexpected-answer-to-most-surprising-part-of-nfl-game/",
+   "attempted_at": "2026-09-08T19:43:33+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T19:43:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004356
+  },
+  {
+   "candidate_id": "mobile:article:7adaf1a6466b4e2764c7",
+   "player_id": "00-0038124",
+   "source_url": "https://www.packers.com/news/packers-open-season-at-the-vikings-week-1-2026",
+   "attempted_at": "2026-09-08T19:43:36+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T19:43:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006898
+  },
+  {
+   "candidate_id": "mobile:onsi:bb59a36623e4e01ff678",
+   "player_id": "00-0036442",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/bengals-again-ditching-orange-pants-for-3rd-installment-of-open-in-orange-01m20xk48nnx",
+   "attempted_at": "2026-09-08T19:43:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T19:43:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00406
+  },
+  {
+   "candidate_id": "mobile:article:84ea907955cda63c39ed",
+   "player_id": "00-0038120",
+   "source_url": "https://www.newyorkjets.com/news/breece-hall-trending-towards-playing-jets-vs-titans-09-08-2026",
+   "attempted_at": "2026-09-08T19:43:42+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T19:43:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005492
+  },
+  {
+   "candidate_id": "mobile:onsi:13887fc810bb685f7993",
+   "player_id": "00-0039337",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/fantasy-football-tight-end-rankings-week-1-isaiah-likely-is-an-elite-starting-option-while-sam-laporta-falls",
+   "attempted_at": "2026-09-08T19:43:46+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T19:43:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007434
+  },
+  {
+   "candidate_id": "mobile:onsi:c7c61d64b26c8947eb6c",
+   "player_id": "00-0039910",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/fantasy-football-tight-end-rankings-week-1-isaiah-likely-is-an-elite-starting-option-while-sam-laporta-falls",
+   "attempted_at": "2026-09-08T19:43:53+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T19:43:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005164
+  },
+  {
+   "candidate_id": "mobile:onsi:6a45c9e427ecf2fb53d1",
+   "player_id": "00-0036554",
+   "source_url": "https://www.si.com/onsi/fantasy/waiver-wire/week-1-fantasy-football-waiver-wire-debate-tank-dell-vs-kayshon-boutte",
+   "attempted_at": "2026-09-08T19:43:57+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T19:44:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004622
+  },
+  {
+   "candidate_id": "mobile:article:7b9bc56b7ca10671bfce",
+   "player_id": "00-0036389",
+   "source_url": "https://www.phillyvoice.com/eagles-power-ranking-roundup-week-1-2026/",
+   "attempted_at": "2026-09-08T19:44:00+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-08T19:44:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.01048
+  },
+  {
+   "candidate_id": "mobile:article:6acb5c846d09e8f0769e",
+   "player_id": "00-0037744",
+   "source_url": "https://www.azcardinals.com/news/you-ve-got-mail-charging-into-week-1-of-the-season",
+   "attempted_at": "2026-09-08T19:44:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T19:44:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004398
+  },
+  {
+   "candidate_id": "mobile:onsi:fb72f289a03cf6126fbb",
+   "player_id": "00-0039040",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/dolphins-week-1-power-rankings-roundup-how-low-can-they-go-01m20yy3xjt6",
+   "attempted_at": "2026-09-08T19:44:14+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T19:44:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005714
+  },
+  {
+   "candidate_id": "mobile:onsi:7e07b1d15a1f917c59a3",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/dolphins-week-1-power-rankings-roundup-how-low-can-they-go-01m20yy3xjt6",
+   "attempted_at": "2026-09-08T19:44:19+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T19:44:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004946
+  },
+  {
+   "candidate_id": "mobile:onsi:f70c5a645fcd8352a052",
+   "player_id": "00-0037291",
+   "source_url": "https://www.si.com/onsi/fantasy/waiver-wire/streamers-tragets-wide-receivers-week-1-fantasy-football-tre-tucker",
+   "attempted_at": "2026-09-08T19:44:24+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T19:44:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006668
+  },
+  {
+   "candidate_id": "mobile:onsi:2d4030f02baf100437c4",
+   "player_id": "00-0038994",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/travis-kelce-headlines-fantasy-football-week-1-te-sits-players-to-keep-on-the-bench",
+   "attempted_at": "2026-09-08T19:44:30+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T19:44:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004438
+  },
+  {
+   "candidate_id": "mobile:onsi:a3bde2ee32802491044a",
+   "player_id": "00-0036322",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/travis-kelce-headlines-fantasy-football-week-1-te-sits-players-to-keep-on-the-bench",
+   "attempted_at": "2026-09-08T19:44:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T19:44:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004246
   }
  ]
 }
