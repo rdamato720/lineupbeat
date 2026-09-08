@@ -1792,6 +1792,7 @@ a.lb-tool-card:hover {
   text-transform: uppercase;
 }
 .lb-command-top span:first-child { color: var(--lb-green); }
+.ppage .lb-data-command-card h2,
 .lb-data-command-card h2 {
   margin: 0;
   padding: 34px 30px 26px;
