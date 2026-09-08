@@ -149,7 +149,7 @@ def main():
     run('wire_homepage_replacement','--apply')
     run('build_decision_room')
     run('build_pages','--base','https://lineupbeat-dev.pages.dev','--db',str(db))
-    run('build_my_team')
+    run('build_my_team','--extension-origin','https://lineupbeat-dev.pages.dev')
     run('build_league_history')
     run('build_my_league')
     run('build_chrome_store_bundle')

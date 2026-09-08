@@ -14,6 +14,9 @@ ROOT = Path(__file__).resolve().parents[1]
 EXTENSION = ROOT / "extensions" / "lineupbeat-espn"
 LISTING = ROOT / "chrome-web-store"
 DEFAULT_OUTPUT = ROOT / "build" / "chrome-web-store"
+PRODUCTION_ORIGIN = "https://lineupbeat.com"
+DEVELOPMENT_ORIGIN = "https://lineupbeat-dev.pages.dev"
+ALLOWED_APP_ORIGINS = {PRODUCTION_ORIGIN, DEVELOPMENT_ORIGIN}
 FIXED_TIME = (2026, 9, 1, 0, 0, 0)
 RUNTIME_FILES = (
     "manifest.json",
@@ -51,11 +54,36 @@ def write_member(archive: zipfile.ZipFile, name: str, data: bytes) -> None:
     archive.writestr(info, data, compresslevel=9)
 
 
-def write_package(package: Path) -> None:
+def runtime_bytes(name: str, target_origin: str) -> bytes:
+    if target_origin not in ALLOWED_APP_ORIGINS:
+        raise ValueError(f"unsupported extension target origin: {target_origin}")
+    data = (EXTENSION / name).read_bytes()
+    if target_origin == PRODUCTION_ORIGIN:
+        return data
+    replacements = {
+        "background.js": (
+            b"const MY_TEAM_ORIGIN = 'https://lineupbeat.com';",
+            b"const MY_TEAM_ORIGIN = 'https://lineupbeat-dev.pages.dev';",
+        ),
+        "content.js": (
+            b"const MY_TEAM_ORIGIN = location.origin === 'https://lineupbeat-dev.pages.dev'\n"
+            b"    ? location.origin : 'https://lineupbeat.com';",
+            b"const MY_TEAM_ORIGIN = 'https://lineupbeat-dev.pages.dev';",
+        ),
+    }
+    if name not in replacements:
+        return data
+    old, new = replacements[name]
+    if data.count(old) != 1:
+        raise ValueError(f"could not safely target {name} at development")
+    return data.replace(old, new)
+
+
+def write_package(package: Path, target_origin: str = PRODUCTION_ORIGIN) -> None:
     package.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(package, "w") as archive:
         for name in RUNTIME_FILES:
-            write_member(archive, name, (EXTENSION / name).read_bytes())
+            write_member(archive, name, runtime_bytes(name, target_origin))
 
 
 def build(output: Path) -> dict:

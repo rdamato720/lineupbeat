@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import build_chrome_store_bundle
 import build_my_team
 from espn_my_team_adapter import FLEX_ALLOWED, adapt_espn_payload
 from my_team_adapter import classify_projection_gap, validate_normalized_league
@@ -138,7 +139,9 @@ class MyTeamArtifactTests(unittest.TestCase):
             stale = site / "my-team" / "lineupbeat-espn-extension.zip"
             stale.parent.mkdir(parents=True)
             stale.write_bytes(b"obsolete public package")
-            build_my_team.build(site)
+            build_my_team.build(
+                site, build_chrome_store_bundle.DEVELOPMENT_ORIGIN
+            )
             self.assertTrue((site / "my-team" / "index.html").exists())
             self.assertTrue((site / "my-team" / "extension" / "index.html").exists())
             privacy = site / "my-team" / "extension" / "privacy" / "index.html"
@@ -147,11 +150,19 @@ class MyTeamArtifactTests(unittest.TestCase):
             self.assertTrue(package.exists())
             with zipfile.ZipFile(package) as archive:
                 packaged = json.loads(archive.read("manifest.json"))
+                worker = archive.read("background.js").decode()
+                content = archive.read("content.js").decode()
                 self.assertEqual(packaged["version"], "0.5.0")
                 self.assertEqual(len(archive.namelist()), 12)
                 self.assertEqual(
                     archive.namelist(),
                     list(build_my_team.build_chrome_store_bundle.RUNTIME_FILES),
+                )
+                self.assertIn(
+                    "MY_TEAM_ORIGIN = 'https://lineupbeat-dev.pages.dev'", worker
+                )
+                self.assertIn(
+                    "MY_TEAM_ORIGIN = 'https://lineupbeat-dev.pages.dev'", content
                 )
             model = json.loads((site / "data" / "my-team-week1.json").read_text())
             self.assertEqual(model["schemaVersion"], "lineupbeat-my-team-week1-v1")

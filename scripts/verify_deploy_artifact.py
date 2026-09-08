@@ -215,7 +215,7 @@ def check_my_team(root):
     check("the development download validates capture, retrieval, and clear senders",
           "ESPN_ORIGIN = 'https://fantasy.espn.com'" in worker
           and "ESPN_PATH = '/football/'" in worker
-          and "MY_TEAM_ORIGIN = 'https://lineupbeat.com'" in worker
+          and "MY_TEAM_ORIGIN = 'https://lineupbeat-dev.pages.dev'" in worker
           and "'https://lineupbeat-dev.pages.dev'" in worker
           and "'https://www.lineupbeat.com'" in worker
           and "MY_TEAM_PATH = '/my-team/'" in worker

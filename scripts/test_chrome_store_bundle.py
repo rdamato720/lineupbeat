@@ -156,6 +156,20 @@ class ChromeStoreManifestTests(unittest.TestCase):
 
 
 class ChromeStoreBundleTests(unittest.TestCase):
+    def test_development_package_opens_only_the_development_app(self):
+        with tempfile.TemporaryDirectory() as directory:
+            package = Path(directory) / "development.zip"
+            build_chrome_store_bundle.write_package(
+                package, build_chrome_store_bundle.DEVELOPMENT_ORIGIN
+            )
+            with zipfile.ZipFile(package) as archive:
+                worker = archive.read("background.js").decode()
+                content = archive.read("content.js").decode()
+            expected = "MY_TEAM_ORIGIN = 'https://lineupbeat-dev.pages.dev'"
+            self.assertIn(expected, worker)
+            self.assertIn(expected, content)
+            self.assertNotIn("MY_TEAM_ORIGIN = 'https://lineupbeat.com'", worker)
+
     def test_store_package_is_rooted_minimal_deterministic_and_inventoried(self):
         with tempfile.TemporaryDirectory() as first, tempfile.TemporaryDirectory() as second:
             report_a = build_chrome_store_bundle.build(Path(first))
