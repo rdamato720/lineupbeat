@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1286,
+ "count": 1303,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -14185,6 +14185,193 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.005684
+  },
+  {
+   "candidate_id": "mobile:onsi:71cefe23287077d5d53e",
+   "player_id": "00-0038558",
+   "source_url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-release-week-1-depth-chart-falcons",
+   "attempted_at": "2026-09-08T16:43:34+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T16:43:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005738
+  },
+  {
+   "candidate_id": "mobile:onsi:0bccd3dc3005ca9546bb",
+   "player_id": "00-0036894",
+   "source_url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-release-week-1-depth-chart-falcons",
+   "attempted_at": "2026-09-08T16:43:41+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T16:43:46+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005704
+  },
+  {
+   "candidate_id": "mobile:onsi:f9dea9b8c3f39e504db2",
+   "player_id": "00-0037744",
+   "source_url": "https://www.si.com/nfl/cardinals/onsi/jacoby-brissett-arizona-cardinals-teammates-just-sent-clear-message",
+   "attempted_at": "2026-09-08T16:43:46+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T16:43:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004178
+  },
+  {
+   "candidate_id": "mobile:article:cf6e370325dfc32fa974",
+   "player_id": "00-0033921",
+   "source_url": "https://www.buccaneers.com/news/bucs-release-week-one-depth-chart-two-rookie-starters-defense-2026",
+   "attempted_at": "2026-09-08T16:43:50+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T16:43:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003962
+  },
+  {
+   "candidate_id": "mobile:article:dac3a5a71ad5046ddfb3",
+   "player_id": "00-0040129",
+   "source_url": "https://www.buccaneers.com/news/bucs-release-week-one-depth-chart-two-rookie-starters-defense-2026",
+   "attempted_at": "2026-09-08T16:43:53+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T16:44:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0061
+  },
+  {
+   "candidate_id": "mobile:article:4addfc3499f8f58fea7c",
+   "player_id": "00-0037228",
+   "source_url": "https://steelersdepot.com/2026/09/steelers-release-first-depth-chart-of-2026-regular-season/",
+   "attempted_at": "2026-09-08T16:44:07+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T16:44:10+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004192
+  },
+  {
+   "candidate_id": "mobile:article:b0104ff3936553de06fe",
+   "player_id": "00-0036139",
+   "source_url": "https://steelersdepot.com/2026/09/steelers-release-first-depth-chart-of-2026-regular-season/",
+   "attempted_at": "2026-09-08T16:44:10+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T16:44:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004568
+  },
+  {
+   "candidate_id": "mobile:article:a136a3a5f0bbae359669",
+   "player_id": "00-0036894",
+   "source_url": "https://steelersdepot.com/2026/09/steelers-release-first-depth-chart-of-2026-regular-season/",
+   "attempted_at": "2026-09-08T16:44:13+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T16:44:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005156
+  },
+  {
+   "candidate_id": "mobile:onsi:6dc68ae8155c286e26b9",
+   "player_id": "00-0039067",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/malik-nabers-injury-update-fantasy-football-managers-get-positive-week-1-news",
+   "attempted_at": "2026-09-08T16:44:17+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T16:44:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004924
+  },
+  {
+   "candidate_id": "mobile:onsi:9941a793c0392f4f3d35",
+   "player_id": "00-0039337",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/malik-nabers-injury-update-fantasy-football-managers-get-positive-week-1-news",
+   "attempted_at": "2026-09-08T16:44:22+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T16:44:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00625
+  },
+  {
+   "candidate_id": "mobile:article:75cb15f52646f9bd2353",
+   "player_id": "00-0036355",
+   "source_url": "https://www.chargers.com/news/top-storylines-2026-afc-west",
+   "attempted_at": "2026-09-08T16:44:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T16:44:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00448
+  },
+  {
+   "candidate_id": "mobile:onsi:42cc6ee7a963758646b9",
+   "player_id": "00-0035228",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/jefferson-price-predicting-every-vikings-wr-s-usage-packers-week-1-01m1zjcxpcey",
+   "attempted_at": "2026-09-08T16:44:31+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T16:44:34+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004048
+  },
+  {
+   "candidate_id": "mobile:onsi:9a63a0fcd6496275dbca",
+   "player_id": "00-0038994",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/jefferson-price-predicting-every-vikings-wr-s-usage-packers-week-1-01m1zjcxpcey",
+   "attempted_at": "2026-09-08T16:44:34+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T16:44:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003638
+  },
+  {
+   "candidate_id": "mobile:onsi:9abbbfbb7ec316cd6a98",
+   "player_id": "00-0036322",
+   "source_url": "https://www.si.com/nfl/vikings/onsi/jefferson-price-predicting-every-vikings-wr-s-usage-packers-week-1-01m1zjcxpcey",
+   "attempted_at": "2026-09-08T16:44:36+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T16:44:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004172
+  },
+  {
+   "candidate_id": "mobile:onsi:3a68179f9ab8ee91f8d2",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/dolphins-motto-march-for-arch-mess-up-for-mensah-how-about-win-with-willis-01m20qaf4bmj",
+   "attempted_at": "2026-09-08T16:44:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T16:44:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004758
+  },
+  {
+   "candidate_id": "mobile:onsi:1aea4b02084f8e90a121",
+   "player_id": "00-0040867",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/eagles-depth-chart-takeaways-ahead-of-week-1-showdown-with-commanders-was-qb2-winner-leaked-01m20rf3nxxq",
+   "attempted_at": "2026-09-08T16:44:43+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-08T16:44:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00591
+  },
+  {
+   "candidate_id": "mobile:onsi:7ed71b99cabfc1f6392b",
+   "player_id": "00-0036389",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/eagles-depth-chart-takeaways-ahead-of-week-1-showdown-with-commanders-was-qb2-winner-leaked-01m20rf3nxxq",
+   "attempted_at": "2026-09-08T16:44:48+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T16:44:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004798
   }
  ]
 }
