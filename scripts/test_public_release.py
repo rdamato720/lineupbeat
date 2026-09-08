@@ -26,6 +26,11 @@ class PublicReleaseTests(unittest.TestCase):
         self.assertIn("/my-team/", shell)
         self.assertIn("/my-league/", shell)
 
+    def test_public_page_builder_changes_trigger_production_deploy(self):
+        workflow = (Path(__file__).resolve().parents[1]
+                    / ".github" / "workflows" / "refresh.yml").read_text()
+        self.assertIn('- "scripts/build_pages.py"', workflow)
+
     def test_pruner_removes_routes_and_rejects_leaks(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

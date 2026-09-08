@@ -22,6 +22,7 @@ on:
       - main
     paths:
       - "data/wire_publications.json"
+      - "scripts/build_pages.py"
       - ".github/workflows/refresh.yml"
   workflow_dispatch:
     inputs:
