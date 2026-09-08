@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1318,
+ "count": 1336,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -14537,6 +14537,204 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004246
+  },
+  {
+   "candidate_id": "mobile:onsi:b8d382ec7a07610ff8a0",
+   "player_id": "00-0036912",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/eagles-who-need-a-big-week-1-vs-commanders-who-must-show-up-to-ensure-the-win-01m20tfr65va",
+   "attempted_at": "2026-09-08T22:11:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:11:30+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006456
+  },
+  {
+   "candidate_id": "mobile:onsi:a75acdb103392cc4e18b",
+   "player_id": "00-0034844",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/eagles-who-need-a-big-week-1-vs-commanders-who-must-show-up-to-ensure-the-win-01m20tfr65va",
+   "attempted_at": "2026-09-08T22:11:30+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:11:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003842
+  },
+  {
+   "candidate_id": "mobile:article:f4d232eb664e2a1cf6fb",
+   "player_id": "00-0036389",
+   "source_url": "https://www.philadelphiaeagles.com/news/what-is-the-common-theme-in-the-eagles-season-openers-nick-sirianni",
+   "attempted_at": "2026-09-08T22:11:33+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:11:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005226
+  },
+  {
+   "candidate_id": "mobile:article:7a961d52a9895a47c9b3",
+   "player_id": "00-0036912",
+   "source_url": "https://www.philadelphiaeagles.com/news/what-is-the-common-theme-in-the-eagles-season-openers-nick-sirianni",
+   "attempted_at": "2026-09-08T22:11:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:11:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004284
+  },
+  {
+   "candidate_id": "mobile:onsi:be5bea039307a57715a3",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/49ers-coach-sounds-off-mike-evans-2026-season",
+   "attempted_at": "2026-09-08T22:11:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:11:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003948
+  },
+  {
+   "candidate_id": "mobile:article:486aeef1f504c0d10dda",
+   "player_id": "00-0034855",
+   "source_url": "https://www.buccaneers.com/news/locked-long-term-baker-mayfield-bucs-agree-extension-through-2029",
+   "attempted_at": "2026-09-08T22:11:41+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-08T22:11:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00446
+  },
+  {
+   "candidate_id": "mobile:onsi:96c731b21d4d5415ab8e",
+   "player_id": "00-0034855",
+   "source_url": "https://www.si.com/nfl/buccaneers/onsi/why-the-buccaneers-finally-got-the-baker-mayfield-deal-done-2026",
+   "attempted_at": "2026-09-08T22:11:44+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-08T22:11:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004924
+  },
+  {
+   "candidate_id": "mobile:article:fe8dd65b4ef77577dd6d",
+   "player_id": "00-0034796",
+   "source_url": "https://www.baltimoreravens.com/news/jovaughn-gwyn-grateful-ready-for-first-nfl-start-against-colts-2026-week-1",
+   "attempted_at": "2026-09-08T22:11:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:11:51+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003984
+  },
+  {
+   "candidate_id": "mobile:onsi:b62db8c8a04766f25c6a",
+   "player_id": "00-0036442",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/new-york-giants-and-3-other-must-sit-defenses-for-fantasy-football-in-week-1",
+   "attempted_at": "2026-09-08T22:11:51+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:11:54+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003932
+  },
+  {
+   "candidate_id": "mobile:onsi:fb21f767aeb33d85a1f4",
+   "player_id": "00-0036355",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/new-york-giants-and-3-other-must-sit-defenses-for-fantasy-football-in-week-1",
+   "attempted_at": "2026-09-08T22:11:54+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-08T22:11:58+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004334
+  },
+  {
+   "candidate_id": "mobile:onsi:cbe83b66555ec62dd77d",
+   "player_id": "00-0038120",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/breece-hall-injury-update-star-rb-returns-to-practice",
+   "attempted_at": "2026-09-08T22:11:58+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:12:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00411
+  },
+  {
+   "candidate_id": "mobile:onsi:3948af441245055fcc58",
+   "player_id": "00-0039163",
+   "source_url": "https://www.si.com/nfl/texans/onsi/texans-plan-to-get-kayshon-boutte-involved-early-and-it-s-the-right-call",
+   "attempted_at": "2026-09-08T22:12:00+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-09-08T22:12:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004886
+  },
+  {
+   "candidate_id": "mobile:onsi:ee55d1a2f55cef4409bf",
+   "player_id": "00-0040138",
+   "source_url": "https://www.si.com/nfl/texans/onsi/texans-plan-to-get-kayshon-boutte-involved-early-and-it-s-the-right-call",
+   "attempted_at": "2026-09-08T22:12:03+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:12:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00486
+  },
+  {
+   "candidate_id": "mobile:onsi:6f0ffe51cd54dfb39676",
+   "player_id": "00-0036900",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/joe-burrow-sends-strong-message-about-his-future-ahead-of-bengals-opener-01m03ar67d5h",
+   "attempted_at": "2026-09-08T22:12:07+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:12:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004266
+  },
+  {
+   "candidate_id": "mobile:onsi:0f2d1b430f4346d1243b",
+   "player_id": "00-0039910",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/sit-bench-quarterbacks-week-1-fantasy-football-jaxson-dart",
+   "attempted_at": "2026-09-08T22:12:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:12:14+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00425
+  },
+  {
+   "candidate_id": "mobile:onsi:3e0a96e3e3b60c425fbe",
+   "player_id": "00-0034796",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/sit-bench-quarterbacks-week-1-fantasy-football-jaxson-dart",
+   "attempted_at": "2026-09-08T22:12:14+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:12:16+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004056
+  },
+  {
+   "candidate_id": "mobile:onsi:2cc2dd4ac6c08bc3153c",
+   "player_id": "00-0034857",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/sit-bench-quarterbacks-week-1-fantasy-football-jaxson-dart",
+   "attempted_at": "2026-09-08T22:12:16+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:12:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004008
+  },
+  {
+   "candidate_id": "mobile:onsi:8d27eb7226c23d973435",
+   "player_id": "00-0039337",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/sit-bench-quarterbacks-week-1-fantasy-football-jaxson-dart",
+   "attempted_at": "2026-09-08T22:12:18+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-08T22:12:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004528
   }
  ]
 }
