@@ -378,10 +378,12 @@ def check_league_history(root, development=True):
     sitemap_text = sitemap.read_text() if sitemap.is_file() else ""
     landing = root / "my-league" / "index.html"
     landing_text = landing.read_text() if landing.is_file() else ""
-    robots = ('noindex,nofollow,noarchive' if development else 'index,follow')
+    robots_ok = (bool(re.search(
+        r'name="robots" content="noindex,\s*nofollow,\s*noarchive"', landing_text
+    )) if development else 'name="robots" content="index,follow"' in landing_text)
     check("My League has a public SEO landing page",
           bool(landing_text)
-          and f'name="robots" content="{robots}"' in landing_text
+          and robots_ok
           and 'href="https://lineupbeat.com/my-league/"' in landing_text
           and "Fantasy Football League History &amp; Record Book" in landing_text
           and "Connect your league" in landing_text
