@@ -142,12 +142,14 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertIn('id="mt-roster"', dashboard)
         self.assertIn('href="/my-team/"', dashboard)
         self.assertIn('class="mt-dashboard-header"', dashboard)
+        self.assertIn('class="mt-dashboard-window"', dashboard)
+        self.assertIn('class="mt-dashboard-bar"', dashboard)
         self.assertIn('class="mt-dashboard-actions"', dashboard)
+        self.assertIn('/assets/homepage/team-3d.png', dashboard)
         self.assertIn('<h2>Lineup decisions</h2>', dashboard)
         self.assertIn('<h2>Roster</h2>', dashboard)
         self.assertNotIn('ROSTER COMMAND CENTER', dashboard)
         self.assertNotIn('mt-dashboard-visual', dashboard)
-        self.assertNotIn('/assets/homepage/team-3d.png', dashboard)
         self.assertIn("location.replace('/my-team/team/')", runtime)
         self.assertIn("if(!dashboard){openDashboard();return}", runtime)
 
@@ -248,8 +250,8 @@ class MyTeamArtifactTests(unittest.TestCase):
 
     def test_decision_copy_escapes_names_once(self):
         source = (ROOT / "my-team" / "my-team.js").read_text()
-        self.assertIn("const reason=`${bench.name} is eligible", source)
-        self.assertIn("<p>${escape(reason)}</p>", source)
+        self.assertIn("const reason=`${bench.name} projects", source)
+        self.assertIn("${escape(reason)}</p>", source)
         self.assertNotIn("const reason=`${escape(bench.name)}", source)
 
     def test_matched_cards_use_canonical_identity_and_label_provider_status(self):
@@ -266,7 +268,7 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertLess(page.index('id="mt-outlook"'), page.index('id="mt-roster"'))
         self.assertLess(page.index('id="mt-decisions"'), page.index('id="mt-roster"'))
         for value in ("projectedPoints", "expectedOpportunity", "opponent",
-                      "matchupFactor", "Open full player comparison",
+                      "matchupFactor", "Player details →",
                       "Your strongest lineup is already set"):
             self.assertIn(value, source)
         self.assertNotIn("matched identity", source)

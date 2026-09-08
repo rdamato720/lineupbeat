@@ -163,7 +163,8 @@ async function main(){
   assert(myTeam.includes("modelTag?'Current injury status':'Provider status'"));
   assert(myTeam.includes('Week 1 ${escape(labels[format])} pts'));
   assert(myTeam.includes('2025 prior-season context'));
-  assert(myTeam.includes('Open full player comparison'));
+  assert(myTeam.includes('Player details →'));
+  assert(myTeam.includes('Compare players →'));
   assert(myTeam.includes('Your strongest lineup is already set'));
   assert(myTeam.includes('LineupBeatLeagueAdapter.actionableDecisions'));
   assert(myTeam.includes('Fantasy extension detected, but no saved roster was found'));
