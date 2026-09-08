@@ -1,10 +1,12 @@
 (function(){
   'use strict';
   const $=id=>document.getElementById(id),escape=value=>String(value==null?'':value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-  const state={model:null,league:null,extension:false};
+  const dashboard=document.body.dataset.myTeamView==='dashboard';
+  const state={model:null,league:null,extension:false,pendingPayload:null};
   const labels={ppr:'PPR',half_ppr:'Half-PPR',non_ppr:'Non-PPR'};
   const statusLabels={Q:'Questionable',O:'Out',D:'Doubtful',IR:'Injured reserve',PUP:'PUP',SUS:'Suspended',EXE:'Exempt',NFI:'NFI',COVID:'COVID list',NA:'Not active',OUT:'Out',DOUBTFUL:'Doubtful',QUESTIONABLE:'Questionable',PROBABLE:'Probable'};
-  function setStatus(message,tone){const node=$('mt-status');node.textContent=message;node.dataset.tone=tone||'neutral'}
+  function setStatus(message,tone){const node=$('mt-status');if(!node)return;node.textContent=message;node.dataset.tone=tone||'neutral'}
+  function openDashboard(){location.replace('/my-team/team/')}
   function modelPlayer(rosterPlayer){return state.model.players.find(p=>rosterPlayer.identity&&p.id===rosterPlayer.identity.playerId)}
   function projection(player,format){const row=player&&player.formats&&player.formats[format];return row&&Number.isFinite(Number(row.projectedPoints))?Number(row.projectedPoints):null}
   function opportunity(player){
@@ -63,6 +65,7 @@
   function render(){
     const league=state.league,format=league.league.scoring.format;
     $('mt-connect').hidden=true;$('mt-disconnect').hidden=false;$('mt-team').hidden=false;
+    if($('mt-dashboard-empty'))$('mt-dashboard-empty').hidden=true;
     $('mt-league-name').textContent=league.league.name;$('mt-team-name').textContent=league.team.name;
     const provider={espn:'ESPN',yahoo:'Yahoo',cbs:'CBS'}[league.provider]||league.provider;
     $('mt-league-meta').textContent=`${provider} · ${league.league.season} · ${labels[format]} · browser-local extension`;
@@ -78,7 +81,7 @@
     setStatus('Looking for the Lineup Beat Fantasy extension in this browser…');window.postMessage({type:'LB_MY_TEAM_CONNECT_REQUEST',version:1},location.origin);
     setTimeout(()=>{if(!state.league)setStatus(state.extension?'Fantasy extension detected, but no saved roster was found. Open your provider roster, capture it, then return here.':'Fantasy extension not detected. Install it, open your ESPN, Yahoo, or CBS roster, capture it, then return here.','warning')},1200);
   }
-  function disconnect(){state.league=null;window.postMessage({type:'LB_MY_TEAM_CLEAR_REQUEST',version:1},location.origin);$('mt-team').hidden=true;$('mt-connect').hidden=false;$('mt-disconnect').hidden=true;setStatus('Disconnected. The extension was asked to clear its browser-local roster copy.','good')}
+  function disconnect(){state.league=null;window.postMessage({type:'LB_MY_TEAM_CLEAR_REQUEST',version:1},location.origin);if($('mt-team'))$('mt-team').hidden=true;if($('mt-connect'))$('mt-connect').hidden=false;if($('mt-disconnect'))$('mt-disconnect').hidden=true;setStatus('Disconnecting and clearing the browser-local roster copy…','good')}
   function reviewDemo(){
     const wanted=[['00-0034857','QB'],['00-0040719','RB'],['00-0037744','TE'],['00-0035261','BE']];
     const roster=wanted.map(([id,lineupSlot])=>{const player=state.model.players.find(row=>row.id===id);if(!player)throw new Error('The public reviewer fixture is unavailable.');return{providerPlayerId:String(player.providerIds.espn||`review-${id}`),name:player.name,team:player.team,position:player.position,lineupSlot,espnStatus:id==='00-0035261'?'Q':''}});
@@ -89,13 +92,20 @@
     if(!state.model){setStatus('The public Week 1 model is still loading.','warning');return}
     try{setStatus('Loading the public reviewer demo into extension-local storage…');window.postMessage({type:'LB_MY_TEAM_REVIEW_DEMO_REQUEST',version:1,payload:reviewDemo()},location.origin);setTimeout(()=>{if(!state.league)setStatus('Reviewer demo handoff was not detected. Confirm the beta extension is installed, then try again.','warning')},1500)}catch(error){setStatus(error.message,'error')}
   }
+  function receiveRoster(payload){
+    if(!dashboard){openDashboard();return}
+    if(!state.model){state.pendingPayload=payload;setStatus('Roster found. Loading the public Week 1 model…');return}
+    try{state.extension=true;state.league=LineupBeatFantasyAdapter.adapt(payload);state.league=LineupBeatLeagueAdapter.match(state.league,state.model);render()}catch(error){setStatus('Roster could not be normalized: '+error.message,'error')}
+  }
   window.addEventListener('message',event=>{
     if(event.source!==window||event.origin!==location.origin||!event.data)return;
-    if(event.data.type==='LB_MY_TEAM_EXTENSION_READY'){state.extension=true;if(event.data.hasRoster)window.postMessage({type:'LB_MY_TEAM_CONNECT_REQUEST',version:1},location.origin);else if(!state.league)setStatus('Fantasy extension detected, but no saved roster was found. Open your provider roster, capture it, then return here.','warning')}
-    if(event.data.type==='LB_MY_TEAM_ROSTER'||event.data.type==='LB_MY_TEAM_ESPN_ROSTER'){try{state.extension=true;state.league=LineupBeatFantasyAdapter.adapt(event.data.payload);state.league=LineupBeatLeagueAdapter.match(state.league,state.model);render()}catch(error){setStatus('Roster could not be normalized: '+error.message,'error')}}
-    if(event.data.type==='LB_MY_TEAM_CLEAR_COMPLETE')setStatus('Disconnected and cleared from extension-local storage.','good');
+    if(event.data.type==='LB_MY_TEAM_EXTENSION_READY'){state.extension=true;if(event.data.hasRoster){if(dashboard)window.postMessage({type:'LB_MY_TEAM_CONNECT_REQUEST',version:1},location.origin);else openDashboard()}else if(!state.league)setStatus('Fantasy extension detected, but no saved roster was found. Open your provider roster, capture it, then return here.','warning')}
+    if(event.data.type==='LB_MY_TEAM_ROSTER'||event.data.type==='LB_MY_TEAM_ESPN_ROSTER')receiveRoster(event.data.payload);
+    if(event.data.type==='LB_MY_TEAM_CLEAR_COMPLETE'){if(dashboard)location.replace('/my-team/');else setStatus('Disconnected and cleared from extension-local storage.','good')}
   });
-  $('mt-connect').addEventListener('click',connect);$('mt-disconnect').addEventListener('click',disconnect);$('mt-demo').addEventListener('click',loadReviewDemo);
-  if(new URLSearchParams(location.search).get('reviewer')==='1')$('mt-demo').hidden=false;
-  fetch('/data/my-team-week1.json',{credentials:'omit',cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('public model unavailable');return response.json()}).then(model=>{state.model=model;setStatus('Public Week 1 model ready. Connect the Fantasy extension after capturing an ESPN, Yahoo, or CBS roster.','good')}).catch(error=>setStatus('My Team cannot load the public Week 1 model: '+error.message,'error'));
+  if($('mt-connect'))$('mt-connect').addEventListener('click',connect);
+  if($('mt-disconnect'))$('mt-disconnect').addEventListener('click',disconnect);
+  if($('mt-demo'))$('mt-demo').addEventListener('click',loadReviewDemo);
+  if($('mt-demo')&&new URLSearchParams(location.search).get('reviewer')==='1')$('mt-demo').hidden=false;
+  fetch('/data/my-team-week1.json',{credentials:'omit',cache:'no-store'}).then(response=>{if(!response.ok)throw new Error('public model unavailable');return response.json()}).then(model=>{state.model=model;if(state.pendingPayload){const payload=state.pendingPayload;state.pendingPayload=null;receiveRoster(payload);return}setStatus(dashboard?'Looking for your saved browser-local roster…':'Public Week 1 model ready. Connect the Fantasy extension after capturing an ESPN, Yahoo, or CBS roster.','good');window.postMessage({type:'LB_MY_TEAM_CONNECT_REQUEST',version:1},location.origin)}).catch(error=>setStatus('My Team cannot load the public Week 1 model: '+error.message,'error'));
 })();

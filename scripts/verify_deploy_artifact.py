@@ -169,6 +169,21 @@ def check_my_team(root):
     check("My Team exposes only implemented provider connections",
           all(f"<h3>{provider}</h3>" in text for provider in ("ESPN", "Yahoo", "CBS"))
           and "Connect Sleeper" not in text)
+    team_page = root / "my-team" / "team" / "index.html"
+    team_text = team_page.read_text() if team_page.is_file() else ""
+    check("the connected roster has a separate private team dashboard",
+          bool(team_text)
+          and 'data-my-team-view="dashboard"' in team_text
+          and 'id="mt-team"' in team_text
+          and 'id="mt-roster"' in team_text
+          and 'id="mt-team"' not in text,
+          str(team_page))
+    runtime_text = (root / "my-team" / "my-team.js").read_text() if (
+        root / "my-team" / "my-team.js"
+    ).is_file() else ""
+    check("saved rosters move from the landing page to the team dashboard",
+          "location.replace('/my-team/team/')" in runtime_text
+          and "if(!dashboard){openDashboard();return}" in runtime_text)
     assets = [
         root / "my-team" / "league-adapter.js",
         root / "my-team" / "espn-adapter.js",

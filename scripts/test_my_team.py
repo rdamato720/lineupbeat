@@ -132,6 +132,17 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertIn("See the whole team—not just one swap.", page)
         self.assertGreaterEqual(page.count("/assets/homepage/"), 5)
         self.assertEqual(page.count('id="mt-connect"'), 1)
+        self.assertNotIn('id="mt-team"', page)
+
+    def test_private_team_dashboard_is_separate_from_the_landing_page(self):
+        dashboard = build_my_team.render_team_page()
+        runtime = (ROOT / "my-team" / "my-team.js").read_text()
+        self.assertIn('data-my-team-view="dashboard"', dashboard)
+        self.assertIn('id="mt-team"', dashboard)
+        self.assertIn('id="mt-roster"', dashboard)
+        self.assertIn('href="/my-team/"', dashboard)
+        self.assertIn("location.replace('/my-team/team/')", runtime)
+        self.assertIn("if(!dashboard){openDashboard();return}", runtime)
 
     def test_build_writes_public_model_support_and_validated_development_zip(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -143,6 +154,7 @@ class MyTeamArtifactTests(unittest.TestCase):
                 site, build_chrome_store_bundle.DEVELOPMENT_ORIGIN
             )
             self.assertTrue((site / "my-team" / "index.html").exists())
+            self.assertTrue((site / "my-team" / "team" / "index.html").exists())
             self.assertTrue((site / "my-team" / "extension" / "index.html").exists())
             privacy = site / "my-team" / "extension" / "privacy" / "index.html"
             self.assertTrue(privacy.exists())
@@ -242,7 +254,7 @@ class MyTeamArtifactTests(unittest.TestCase):
         self.assertNotIn("<h3>${escape(player.name)}</h3>", source)
 
     def test_connected_value_layer_precedes_roster_and_uses_validated_model_fields(self):
-        page = build_my_team.render_page(build_my_team.public_model())
+        page = build_my_team.render_team_page()
         source = (ROOT / "my-team" / "my-team.js").read_text()
         self.assertLess(page.index('id="mt-outlook"'), page.index('id="mt-roster"'))
         self.assertLess(page.index('id="mt-decisions"'), page.index('id="mt-roster"'))

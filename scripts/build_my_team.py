@@ -127,10 +127,28 @@ def render_page(model: dict) -> str:
 <article class="mt-example reverse"><div class="mt-example-copy"><small>ROSTER OUTLOOK</small><h3>See the whole team—not just one swap.</h3><p>Scan projected starters, bench depth, position strength, and the lineup decisions worth your attention.</p><a href="#connect-team">Open My Team →</a></div><div class="mt-example-window"><div class="mt-example-head"><span>ROSTER OUTLOOK</span><b>4 STARTERS</b></div><div class="mt-outlook-preview"><div><strong>72.8</strong><small>PROJECTED POINTS</small></div><div><strong>1</strong><small>LINEUP CALL</small></div><div><strong>WR</strong><small>DEEPEST POSITION</small></div></div><div class="mt-mini-roster">{example_row(model,'Josh Allen','QB')}{example_row(model,'Bijan Robinson','RB')}{example_row(model,"Ja'Marr Chase",'WR')}</div></div></article></section>
 <section class="mt-privacy" aria-label="Privacy model"><article><img src="/assets/homepage/team-3d.png" alt=""><small>Private by default</small><h2>Your roster stays in this browser.</h2><p>Roster data never leaves this browser. No provider password, session token, manager identity, or roster analytics are sent to Lineup Beat.</p></article><article><small>Your control</small><h2>Connect. Review. Clear.</h2><ul><li>Your normalized roster lives in memory only.</li><li>Disconnect &amp; clear removes the local copy.</li><li>D/ST stays unsupported rather than guessed.</li></ul></article></section>
 <section class="mt-section" id="connect-team"><div class="mt-section-head"><div><small>CONNECT YOUR TEAM</small><h2>Choose your fantasy platform.</h2></div><p>Open your roster on the provider site and use the browser-local connector.</p></div>
-<section class="mt-team-card" id="mt-team" hidden><div class="mt-team-title"><div><small>Connected league</small><h3 id="mt-team-name"></h3><p id="mt-league-name"></p></div><p id="mt-league-meta"></p></div><div id="mt-outlook"></div><div class="mt-team-block"><div class="mt-team-block-head"><small>Lineup decisions</small><h3>Changes that clear the bar</h3></div><div class="mt-decisions" id="mt-decisions"></div></div><div class="mt-team-block"><div class="mt-team-block-head"><small>Roster intelligence</small><h3>Week 1 evidence by player</h3></div><div id="mt-roster"></div></div></section>
 <div class="mt-provider-grid"><article class="mt-provider active"><small>Supported connection</small><h3>ESPN</h3><p>Roster capture plus multi-season league-history import.</p><strong>Browser-local</strong></article><article class="mt-provider active"><small>Supported connection</small><h3>Yahoo</h3><p>Roster capture plus authorized multi-season league-history import.</p><strong>Browser-local</strong></article><article class="mt-provider active"><small>Supported connection</small><h3>CBS</h3><p>Roster capture plus one-visible-season-at-a-time league-history import.</p><strong>Browser-local</strong></article></div>
 </section>
 <section class="mt-section"><div class="mt-section-head"><div><small>Guardrails 02</small><h2>What this model does not claim</h2></div></div><div class="mt-proof"><article><h3>No predictive-lift claim</h3><p>This model has not established improvement over a validated baseline.</p></article><article><h3>No independent corroboration</h3><p>Projection, opportunity and matchup context come from the same Lineup Beat Week 1 model.</p></article><article><h3>Conservative injury handling</h3><p>{injury_guardrail}</p></article></div></section></main>
+{seo.site_footer()}
+<script src="/my-team/league-adapter.js"></script><script src="/my-team/espn-adapter.js"></script><script src="/my-team/my-team.js"></script>
+</body></html>'''
+
+
+def render_team_page() -> str:
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="Review your private browser-local fantasy roster, Week 1 outlook, and lineup decisions.">
+<title>Your team · My Team | Lineup Beat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/my-team/my-team.css"></head><body data-my-team-view="dashboard">
+{seo.site_nav("my_team", "nfl")}
+<main class="mt-shell mt-dashboard-shell"><header class="mt-dashboard-header"><div><div class="mt-kicker">MY TEAM · PRIVATE IN THIS BROWSER</div><h1 id="mt-team-name">Loading your team…</h1><p id="mt-league-name">Checking the Fantasy connector for your saved roster.</p><p class="mt-dashboard-meta" id="mt-league-meta"></p></div><div class="mt-dashboard-actions"><a class="mt-button secondary" href="/my-team/">My Team home</a><button class="mt-button secondary" id="mt-connect" type="button">Retry connection</button><button class="mt-button secondary" id="mt-disconnect" type="button" hidden>Disconnect &amp; clear</button></div></header>
+<p class="mt-status" id="mt-status" role="status" aria-live="polite">Loading the public Week 1 model…</p>
+<section class="mt-team-card mt-dashboard-team" id="mt-team" hidden><div id="mt-outlook"></div><div class="mt-team-block"><div class="mt-team-block-head"><small>Lineup decisions</small><h2>Changes that clear the bar</h2></div><div class="mt-decisions" id="mt-decisions"></div></div><div class="mt-team-block"><div class="mt-team-block-head"><small>Roster intelligence</small><h2>Week 1 evidence by player</h2></div><div id="mt-roster"></div></div></section>
+<section class="mt-dashboard-empty" id="mt-dashboard-empty"><h2>No team loaded yet.</h2><p>Capture your roster with the Fantasy connector, then return here. Your roster remains in this browser.</p><a class="mt-button" href="/my-team/#connect-team">Connect a team</a></section></main>
 {seo.site_footer()}
 <script src="/my-team/league-adapter.js"></script><script src="/my-team/espn-adapter.js"></script><script src="/my-team/my-team.js"></script>
 </body></html>'''
@@ -172,6 +190,9 @@ def build(site: Path, extension_origin: str = build_chrome_store_bundle.PRODUCTI
         target / "lineupbeat-espn-extension.zip", target_origin=extension_origin
     )
     (target / "index.html").write_text(render_page(model))
+    team = target / "team"
+    team.mkdir(exist_ok=True)
+    (team / "index.html").write_text(render_team_page())
     guide = target / "extension"
     guide.mkdir(exist_ok=True)
     (guide / "index.html").write_text(render_extension_guide(extension_origin))
