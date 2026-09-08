@@ -30,6 +30,21 @@ FORBIDDEN_REFERENCES = (
     "/api/leagues/",
 )
 TEXT_SUFFIXES = {".html", ".css", ".js", ".json", ".xml", ".txt"}
+DEV_MARKERS = ("lb-dev-banner", "lb-dev-style", "development preview")
+
+
+def scrub_development_protection(text: str) -> str:
+    """Remove protection added to a development artifact before production."""
+    protected = any(marker in text.lower() for marker in DEV_MARKERS)
+    text = re.sub(r'<style id=["\']lb-dev-style["\']>.*?</style>\s*', "", text,
+                  flags=re.DOTALL | re.IGNORECASE)
+    text = re.sub(r'<div id=["\']lb-dev-banner["\'][^>]*>.*?</div>\s*', "", text,
+                  flags=re.DOTALL | re.IGNORECASE)
+    if protected:
+        text = re.sub(
+            r'<meta\s+name=["\']robots["\']\s+content=["\']noindex,\s*nofollow,\s*noarchive["\']\s*/?>\s*',
+            "", text, flags=re.IGNORECASE)
+    return text
 
 
 def scrub_connector_navigation(text: str) -> str:
@@ -67,6 +82,10 @@ def prepare(root: Path) -> None:
             shutil.rmtree(target)
     for relative in HIDDEN_ASSETS:
         (root / relative).unlink(missing_ok=True)
+    # Development protection is global. It must never follow a promoted
+    # artifact into production, where it would add both a visible banner and
+    # an HTTP-level noindex directive to every route.
+    (root / "_headers").unlink(missing_ok=True)
 
     sitemap = root / "sitemap.xml"
     if sitemap.is_file():
@@ -87,7 +106,8 @@ def prepare(root: Path) -> None:
     # Their chrome may predate the production-only navigation switch.
     for path in root.rglob("*.html"):
         text = path.read_text(errors="replace")
-        scrubbed = scrub_connector_navigation(text)
+        scrubbed = scrub_development_protection(
+            scrub_connector_navigation(text))
         if scrubbed != text:
             path.write_text(scrubbed)
 
@@ -104,6 +124,13 @@ def prepare(root: Path) -> None:
             "development-only connector references reached production:\n"
             + "\n".join(leaks[:20])
         )
+    home = (root / "index.html").read_text(errors="replace").lower()
+    if any(marker in home for marker in DEV_MARKERS) or re.search(
+            r'<meta\s+name=["\']robots["\'][^>]*\bnoindex\b', home):
+        raise RuntimeError("development protection reached the production homepage")
+    headers = root / "_headers"
+    if headers.is_file() and "x-robots-tag: noindex" in headers.read_text().lower():
+        raise RuntimeError("development noindex header reached production")
     print("production artifact excludes My Team, My League, League History, and connector APIs")
 
 

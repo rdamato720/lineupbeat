@@ -70,6 +70,27 @@ class PublicReleaseTests(unittest.TestCase):
             self.assertNotIn("/my-league/", rendered)
             self.assertIn("/decision-room/nfl/", rendered)
 
+    def test_pruner_removes_development_banner_and_noindex(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / "index.html").write_text(
+                '<html><head><meta name="robots" content="noindex, nofollow, noarchive">'
+                '<style id="lb-dev-style">body{padding-top:30px!important}</style>'
+                '</head><body><div id="lb-dev-banner" role="status">'
+                'Development preview · develop · not live</div><main>Public</main>'
+                '</body></html>'
+            )
+            (root / "_headers").write_text(
+                "/*\n  X-Robots-Tag: noindex, nofollow, noarchive\n")
+            with patch.dict(os.environ, {"LINEUPBEAT_RELEASE_TARGET": "production"}):
+                prepare_public_release.prepare(root)
+            rendered = (root / "index.html").read_text().lower()
+            self.assertNotIn("development preview", rendered)
+            self.assertNotIn("lb-dev-banner", rendered)
+            self.assertNotIn("lb-dev-style", rendered)
+            self.assertNotIn("noindex", rendered)
+            self.assertFalse((root / "_headers").exists())
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -770,6 +770,17 @@ def main() -> int:
                 leaks.append(str(path.relative_to(root)))
         check("production contains no connector links or API references",
               not leaks, "; ".join(leaks[:5]))
+        home_text = (root / "index.html").read_text(errors="replace").lower()
+        dev_markers = ("development preview", "lb-dev-banner", "lb-dev-style",
+                       "lineupbeat-dev.pages.dev")
+        check("production homepage has no development preview protection",
+              not any(marker in home_text for marker in dev_markers)
+              and not re.search(
+                  r'<meta\s+name=["\']robots["\'][^>]*\bnoindex\b', home_text))
+        headers = root / "_headers"
+        headers_text = headers.read_text(errors="replace").lower() if headers.is_file() else ""
+        check("production has no global noindex response header",
+              "x-robots-tag: noindex" not in headers_text)
 
     home = root / "index.html"
     if home.is_file():

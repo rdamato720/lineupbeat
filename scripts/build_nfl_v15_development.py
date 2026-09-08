@@ -11,6 +11,7 @@ import argparse
 import importlib
 import json
 import os
+import re
 import shutil
 import sys
 from datetime import datetime
@@ -182,7 +183,11 @@ def main():
     else:
         run('prepare_public_release',str(ROOT/'site'))
         home=(ROOT/'site/index.html').read_text()
-        if 'DEVELOPMENT PREVIEW' in home or 'lineupbeat-dev.pages.dev' in home:
+        lowered=home.lower()
+        if any(marker in lowered for marker in (
+                'development preview','lineupbeat-dev.pages.dev',
+                'lb-dev-banner','lb-dev-style')) or re.search(
+                    r'<meta\s+name=["\']robots["\'][^>]*\bnoindex\b', lowered):
             raise RuntimeError('development-only markup reached production artifact')
     print(f'Complete trusted-current {release_target} site built; no provider requests')
 
