@@ -23,6 +23,10 @@ on:
     paths:
       - "data/wire_publications.json"
       - "scripts/build_pages.py"
+      - "scripts/build_decision_room.py"
+      - "scripts/build_nfl_v15_development.py"
+      - "scripts/prepare_public_release.py"
+      - "scripts/verify_deploy_artifact.py"
       - ".github/workflows/refresh.yml"
   workflow_dispatch:
     inputs:
