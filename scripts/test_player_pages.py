@@ -53,12 +53,13 @@ class PlayerPageTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "may never render"):
                 pages.load_wire_impacts(path)
 
-    def test_fantasy_analysis_is_labelled_as_analysis(self):
-        publication = pages.load_wire_impacts()["00-0041562"][0]
-        self.assertEqual(publication["content_type"], "FANTASY_ANALYSIS")
-        rendered = pages.wire_impact_block([publication])
-        self.assertIn("Fantasy analysis", rendered)
-        self.assertNotIn(">What changed<", rendered)
+    def test_retained_player_card_is_removed_by_release_cleanup(self):
+        import public_copy
+        page = '<main><section class="lbimpact" aria-labelledby="latest-impact"><div><h2>Latest approved decision context</h2><p>Old impact</p></div></section><section class="projection">335.2</section></main>'
+        cleaned = public_copy.clean_page(page)
+        self.assertNotIn('lbimpact', cleaned)
+        self.assertIn('<section class="projection">335.2</section>', cleaned)
+        self.assertEqual(public_copy.clean_page(cleaned), cleaned)
 
     def test_gsis_wire_identity_maps_strictly_to_sleeper_page(self):
         publication = pages.load_wire_impacts()["00-0036389"][0]
@@ -85,9 +86,9 @@ class PlayerPageTests(unittest.TestCase):
         pages.PROJECTION_UPDATED = "2026-08-30"
         modified = pages.player_last_updated(
             "Jalen Hurts", [], [publication])
-        self.assertEqual(modified.isoformat(), publication["updated_at"])
+        self.assertIsNone(modified)
 
-    def test_player_page_shows_latest_impact_context_and_related_links(self):
+    def test_player_page_omits_impact_card_and_keeps_news_and_related_links(self):
         publication = pages.load_wire_impacts()["00-0036389"][0]
         pages.PROJECTION_UPDATED = "2026-08-22"
         pages.PROJECTIONS = {
@@ -121,19 +122,19 @@ class PlayerPageTests(unittest.TestCase):
         rendered = pages.player_page(
             player, nuggets, "https://lineupbeat.com", [publication])
 
-        self.assertIn("Latest approved decision context", rendered)
-        self.assertIn(html.escape(publication["public_evidence_summary"]),
+        self.assertNotIn("Latest approved decision context", rendered)
+        self.assertNotIn(html.escape(publication["public_evidence_summary"]),
                       rendered)
-        self.assertIn(html.escape(publication["lineupbeat_impact"]), rendered)
+        self.assertNotIn(html.escape(publication["lineupbeat_impact"]), rendered)
         self.assertNotIn(publication["reporter_found"], rendered)
         self.assertIn("Current ADP", rendered)
         self.assertIn("QB3", rendered)
         self.assertIn('/nfl/rankings/qb/', rendered)
         self.assertIn('/nfl/devonta-smith/', rendered)
-        self.assertIn("Additional approved decision context", rendered)
+        self.assertIn("Latest news", rendered)
+        self.assertIn("Hurts led team drills.", rendered)
         self.assertIn("Last updated", rendered)
-        expected_date = (publication.get("updated_at") or
-                         publication["published_at"])[:10]
+        expected_date = "2026-08-24"
         self.assertIn(f'datetime="{expected_date}', rendered)
         self.assertIn(f'"dateModified": "{expected_date}', rendered)
 

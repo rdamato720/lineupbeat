@@ -730,16 +730,12 @@ def player_last_updated(name, nuggets, wire_publications):
     """Newest real input shown on this player's page.
 
     A daily build is not itself new information, so it does not refresh this
-    date. The timestamp moves only when the projection board, a report, or an
-    approved Wire publication shown on the page moves.
+    date. The timestamp moves only when a projection or news report shown
+    on the page moves.
     """
     values = ([_as_datetime(PROJECTION_UPDATED)]
               if PROJECTIONS.get(slug(name)) else [])
     values.extend(_as_datetime(n.get("published_at")) for n in nuggets)
-    for publication in wire_publications:
-        values.extend((_as_datetime(publication.get("updated_at")),
-                       _as_datetime(publication.get("published_at")),
-                       _as_datetime(publication.get("published_date"))))
     return max((value for value in values if value), default=None)
 
 
@@ -750,46 +746,6 @@ def updated_block(name, nuggets, wire_publications):
     return (f'  <p class="pupdated">Last updated '
             f'<time datetime="{esc(updated.isoformat())}">'
             f'{esc(updated.strftime("%B %-d, %Y"))}</time></p>\n')
-
-
-def wire_impact_block(publications):
-    """The newest final, human-approved Lineup Beat reading for a player."""
-    if not publications:
-        return ""
-    publication = publications[0]
-    content_label = ("Fantasy analysis"
-                     if publication.get("content_type") == "FANTASY_ANALYSIS"
-                     else "What changed")
-    direction = str(publication.get("direction") or "").upper()
-    direction_class = {"POSITIVE": "up", "NEGATIVE": "down"}.get(
-        direction, "note")
-    source_bits = [publication.get("author"), publication.get("source")]
-    source_bits = [esc(bit) for bit in source_bits if str(bit or "").strip()]
-    source_meta = " &middot; ".join(source_bits)
-    event_date = when(publication.get("published_date")
-                      or publication.get("published_at"))
-    if event_date:
-        source_meta += (" &middot; " if source_meta else "") + esc(event_date)
-    return (
-        '  <section class="lbimpact" aria-labelledby="latest-impact">\n'
-        '    <div class="lbimpact-head">\n'
-        '      <h2 id="latest-impact">Latest approved decision context</h2>\n'
-        f'      <span class="lbtrend {direction_class}">'
-        f'{esc(publication.get("reader_label"))}</span>\n'
-        '    </div>\n'
-        '    <div class="lbchanged">\n'
-        f'      <span>{esc(content_label)}</span>\n'
-        f'      <p>{esc(publication.get("public_evidence_summary"))}</p>\n'
-        '    </div>\n'
-        '    <div class="lbreading">\n'
-        '      <span>Lineup Beat impact</span>\n'
-        f'      <p>{esc(publication.get("lineupbeat_impact"))}</p>\n'
-        '    </div>\n'
-        f'    <p class="meta">{source_meta}'
-        + (f' &middot; <a href="{esc(publication.get("url"))}" '
-           'rel="nofollow noopener">Read report</a>'
-           if publication.get("url") else "")
-        + '</p>\n  </section>\n')
 
 
 def related_players_block(player):
@@ -923,9 +879,8 @@ def player_page(p, nuggets, base, wire_publications=None):
             + f'{esc(who)}</p>\n    </div>\n  </div>\n'
             + (f'  <div class="chips">{"".join(chips)}</div>\n' if chips else "")
             + updated_block(name, nuggets, wire_publications)
-            + wire_impact_block(wire_publications)
             + projection_block(name, pos)
-            + (f'  <h2>Additional approved decision context &middot; '
+            + (f'  <h2>Latest news &middot; '
                f'{len(nuggets)} report'
                f'{"s" if len(nuggets) != 1 else ""}</h2>\n'
                if nuggets else

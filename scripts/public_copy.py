@@ -58,6 +58,8 @@ def visible_text(page):
     return ' '.join(' '.join(parser.parts).split())
 
 def clean_page(page):
+    page=re.sub(r'<section class="lbimpact"[^>]*>.*?</section>\s*', "", page, flags=re.S)
+    page=page.replace("Additional approved decision context &middot;", "Latest news &middot;")
     page=re.sub(r'<section class="v15method" id="methodology">.*?</section>',
                 lambda m:SEASON_NOTE if 'experimental v1.5' in m[0] else m[0],page,flags=re.S)
     page=re.sub(r'<p class="notice">Published only after exact current active identity.*?</p>', '',page,flags=re.S)

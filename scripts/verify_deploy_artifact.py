@@ -63,46 +63,12 @@ def slug(value: str) -> str:
 
 
 def check_player_page_impacts(root):
-    """Prove the final artifact reused only final publication wording.
-
-    Player pages show the newest publication per stable player id. This runs
-    after every page-pruning and homepage-replacement step, so a successful
-    intermediate build cannot hide a missing or stale deployed module.
-    """
-    publications = Path("data/wire_publications.json")
-    if not publications.is_file():
-        check("approved Wire publications are available for artifact checks",
-              False, str(publications))
-        return
-    records = json.loads(publications.read_text()).get("publications", [])
-    records.sort(key=lambda item: (
-        str(item.get("published_date", "")),
-        str(item.get("publication_id", ""))), reverse=True)
-    latest = {}
-    for publication in records:
-        latest.setdefault(publication.get("player_id"), publication)
-
-    for player_id, publication in latest.items():
-        who = publication.get("player_name") or player_id
-        page = root / "nfl" / slug(who) / "index.html"
-        check(f"{who}'s canonical page is in the artifact", page.is_file(),
-              str(page))
-        if not page.is_file():
-            continue
-        text = unescape(page.read_text())
-        match = re.search(
-            r'<section class="lbimpact".*?</section>', text, re.S)
-        module = match.group(0) if match else ""
-        check(f"{who}'s approved impact module is deployed", bool(module))
-        summary = str(publication.get("public_evidence_summary") or "").strip()
-        impact = str(publication.get("lineupbeat_impact") or "").strip()
-        evidence = str(publication.get("reporter_found") or "").strip()
-        check(f"{who}'s approved summary is on the player page",
-              bool(summary) and summary in module)
-        check(f"{who}'s approved analysis is on the player page",
-              bool(impact) and impact in module)
-        check(f"{who}'s raw evidence is absent from the impact module",
-              not evidence or evidence[:80] not in module)
+    """Retired player impact cards must stay absent after every build step."""
+    pages = list((root / "nfl").rglob("*.html"))
+    remaining = [str(p.relative_to(root)) for p in pages
+                 if re.search(r'<section class="lbimpact"|id="latest-impact"', p.read_text())]
+    check("NFL pages do not display retired decision-context cards",
+          not remaining, "; ".join(remaining[:5]))
 
 
 def check_ranking_formats(root):
