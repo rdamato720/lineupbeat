@@ -32,7 +32,33 @@ class DailyFantasyRefreshTests(unittest.TestCase):
         )
         self.assertEqual(result["teams"], 32)
         self.assertEqual(result["games"], 16)
-        self.assertGreaterEqual(result["players_with_props"], 50)
+        self.assertEqual(result["players_with_props"], sum(
+            bool(row.get("market", {}).get("player_components"))
+            for row in self.payload["players"]))
+        self.assertGreater(result["players_with_props"], 0)
+
+    def test_near_kickoff_prop_window_accepts_thirteen_qualified_players(self):
+        candidate = copy.deepcopy(self.payload)
+        kept = 0
+        for player in candidate["players"]:
+            market = player["market"]
+            if market.get("player_components"):
+                kept += 1
+                if kept > 13:
+                    market.update(player_components=[], consensus_lines={},
+                                  player_book_count=None, state="game_consensus")
+        updated = validator.datetime.fromisoformat(candidate["updated_at"].replace("Z", "+00:00"))
+        result = validator.validate(candidate, self.payload, now=updated)
+        self.assertEqual(result["players_with_props"], 13)
+
+    def test_zero_prop_coverage_still_fails(self):
+        candidate = copy.deepcopy(self.payload)
+        for player in candidate["players"]:
+            player["market"].update(player_components=[], consensus_lines={},
+                                    player_book_count=None, state="game_consensus")
+        updated = validator.datetime.fromisoformat(candidate["updated_at"].replace("Z", "+00:00"))
+        with self.assertRaisesRegex(ValueError, "0 players have qualified prop"):
+            validator.validate(candidate, self.payload, now=updated)
 
     def test_partial_refresh_is_rejected(self):
         candidate = copy.deepcopy(self.payload)
