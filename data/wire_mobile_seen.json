@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1391,
+ "count": 1405,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -15340,6 +15340,160 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00442
+  },
+  {
+   "candidate_id": "mobile:onsi:4566509bdf1c0cb65523",
+   "player_id": "00-0034827",
+   "source_url": "https://www.si.com/nfl/bills/onsi/week-1-injuries-khalil-shakir-and-more-buffalo-bills-injury-updates-wednesday",
+   "attempted_at": "2026-09-09T19:37:31+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T19:37:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006288
+  },
+  {
+   "candidate_id": "mobile:onsi:65e419121a6e7f3577b2",
+   "player_id": "00-0038543",
+   "source_url": "https://www.si.com/nfl/seahawks/onsi/seattle-seahawks-confidence-meter-how-i-feel-about-super-bowl-hangover-against-patriots",
+   "attempted_at": "2026-09-09T19:37:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T19:37:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004974
+  },
+  {
+   "candidate_id": "mobile:onsi:e9ffacc047b1089e6f84",
+   "player_id": "00-0033288",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/6-49ers-watch-week-1-rams",
+   "attempted_at": "2026-09-09T19:37:42+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T19:37:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.009162
+  },
+  {
+   "candidate_id": "mobile:onsi:570be0cfd90b77d93896",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/6-49ers-watch-week-1-rams",
+   "attempted_at": "2026-09-09T19:37:52+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T19:37:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004716
+  },
+  {
+   "candidate_id": "mobile:onsi:ebcff78182a4dd824909",
+   "player_id": "00-0037834",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/6-49ers-watch-week-1-rams",
+   "attempted_at": "2026-09-09T19:37:55+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T19:37:59+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004994
+  },
+  {
+   "candidate_id": "mobile:onsi:2c1ae6113f158ceebaa1",
+   "player_id": "00-0040122",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-football-injury-news-ashton-jeanty-and-jonathon-brooks-return-to-practice",
+   "attempted_at": "2026-09-09T19:38:00+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-09T19:38:03+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005154
+  },
+  {
+   "candidate_id": "mobile:onsi:5a9534835eaaad11f0cc",
+   "player_id": "00-0039344",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-football-injury-news-ashton-jeanty-and-jonathon-brooks-return-to-practice",
+   "attempted_at": "2026-09-09T19:38:03+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-09T19:38:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005718
+  },
+  {
+   "candidate_id": "mobile:onsi:a7ead74f0d031783667b",
+   "player_id": "00-0040878",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-football-injury-news-ashton-jeanty-and-jonathon-brooks-return-to-practice",
+   "attempted_at": "2026-09-09T19:38:09+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T19:38:13+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005124
+  },
+  {
+   "candidate_id": "mobile:article:91053a24735b961166c7",
+   "player_id": "00-0036900",
+   "source_url": "https://www.bengals.com/news/ja-marr-chase-tee-higgins-on-track-for-opener-as-zac-taylor-supplies-injury-update",
+   "attempted_at": "2026-09-09T19:38:13+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T19:38:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004458
+  },
+  {
+   "candidate_id": "mobile:article:d8ad9dc2366a69444564",
+   "player_id": "00-0036410",
+   "source_url": "https://www.bengals.com/news/ja-marr-chase-tee-higgins-on-track-for-opener-as-zac-taylor-supplies-injury-update",
+   "attempted_at": "2026-09-09T19:38:17+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T19:38:21+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004684
+  },
+  {
+   "candidate_id": "mobile:onsi:e4409447beb2b2bad26e",
+   "player_id": "00-0035676",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/draftkings-showdown-captain-slot-breakdown-should-fantasy-managers-pick-a-j-brown-or-jaxon-smith-njigba",
+   "attempted_at": "2026-09-09T19:38:21+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T19:38:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007242
+  },
+  {
+   "candidate_id": "mobile:onsi:740cc3943335559ef258",
+   "player_id": "00-0038543",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/draftkings-showdown-captain-slot-breakdown-should-fantasy-managers-pick-a-j-brown-or-jaxon-smith-njigba",
+   "attempted_at": "2026-09-09T19:38:28+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T19:38:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007446
+  },
+  {
+   "candidate_id": "mobile:onsi:fa896e3957a851673e98",
+   "player_id": "00-0039851",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/draftkings-showdown-captain-slot-breakdown-should-fantasy-managers-pick-a-j-brown-or-jaxon-smith-njigba",
+   "attempted_at": "2026-09-09T19:38:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T19:38:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005882
+  },
+  {
+   "candidate_id": "mobile:onsi:0c3a79721b11f26e71a4",
+   "player_id": "00-0037545",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/draftkings-showdown-captain-slot-breakdown-should-fantasy-managers-pick-a-j-brown-or-jaxon-smith-njigba",
+   "attempted_at": "2026-09-09T19:38:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T19:38:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004204
   }
  ]
 }

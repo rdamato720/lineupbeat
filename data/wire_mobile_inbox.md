@@ -1,6 +1,6 @@
 # Lineup Beat Wire approval
 
-**1 cards** · batch `ad7e6841d3cf` · 17 draft calls · $0.0822
+**2 cards** · batch `4d93b536db89` · 14 draft calls · $0.0800
 
 Review the exact wording below. Nothing is live yet.
 
@@ -19,24 +19,52 @@ Only comments from `rdamato720` can publish.
 
 ---
 
-## 1. Rico Dowdle — PIT RB
+## 1. Ashton Jeanty — LV RB
 
-**Worth noting** · TRANSACTION · MEDIUM evidence
+**Trending down** · ABSENT_FROM_PRACTICE · HIGH evidence
 
 ### What changed
 
-Rico Dowdle joined Pittsburgh on a two-year, $12.25 million contract after Kenneth Gainwell left in free agency.
+Ashton Jeanty has not participated in Raiders practices since Aug. 23 because of an ankle injury.
 
 ### Lineup Beat impact
 
-Dowdle's move to Pittsburgh puts him in a new backfield to monitor, but this report does not establish his depth-chart spot or expected workload.
+Jeanty’s extended practice absence makes his availability worth monitoring. The report does not provide a severity update, treatment details or a return timetable.
 
-[Jack Markowski · Sports Illustrated -- PIT](https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-week-1-joey-porter-jr-3-other-storylines) · 2026-09-09
+[Gray Deyo · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/fantasy-football-injury-news-ashton-jeanty-and-jonathon-brooks-return-to-practice) · 2026-09-09
 
 <details><summary>Full evidence reviewed</summary>
 
-After 2025 team MVP Kenneth Gainwell inked a two-year, $14 million deal with the Tampa Bay Buccaneers in free agency, Pittsburgh pivoted and brought in Rico Dowdle on a two-year, $12.25 million contract.
+Carolina Panthers RB Jonathon Brooks has been a non-participant in the Panthers’ last several practices with general soreness. While Las Vegas Raiders RB Ashton Jeanty has been a non-participant at their practices since Aug.
+
+Carolina Panthers RB Jonathon Brooks has been a non-participant in the Panthers’ last several practices with general soreness. While Las Vegas Raiders RB Ashton Jeanty has been a non-participant at their practices since Aug. 23 with an ankle injury.
+
+While Las Vegas Raiders RB Ashton Jeanty has been a non-participant at their practices since Aug. 23 with an ankle injury.
 
 </details>
 
-<!-- WIRE_MOBILE_MANIFEST_V1:eNrNVU1v4zYQ_SuEUKCHRo4-Lcm3ZOMu0iZO4HjbQxEIFDmymFCiQFLRehf73zuUYiPZXHosYBjSfPHxzczTd6-iljWl4N7KozyDZZ6EPGZ1GOQ8D4sljcI4SFkR0iSM4pTRIszSgEEESR7RjEZBXMQ8zCGHpXfmMaq58Vb_fPdo32v1ArykFkujiw62URqf_6DsmdxS_axG8yxckmpb6CzVB_ReqZFL-NWQFrOJVeReWGuqQe8b0g_WkEa0RHSEkg5GUmGtWoDkLrJVnbBKn5FqsMQ2whANvdKWcAWGdMoSMJZWUpiGOC-H3jY-ayiGmB7dShP42gOzwMmo9LNUlC_eASxP16oO87Xe-JQWe9Gh-fbuan1TXm0vft9NEZ3FiNIeekDndn1_t91dbz6ji1PrTFEQLf2gwN8uXK7CcBWFvwXBKghciNAISChX98vm0836Yuusmta2xMq14NAxLBIsivBol6IVlrok1wtv1wCBlzmQOPj46PggWkk4I8iJtqCRDiP23ZSGxo72vkFqwLFyJAOJr5VupxhHzLvKJ5bduxX1gSjbYN03DdRD14luP7XNuMKnbveSMnBEYs8k1p97j_ntwns8846HIAkXtQOLlKXEAm3J7V_35E_oOrAN-UxFN4KUiPMZe0iJHZV_AIoz8UuYkFZIicjxplSSUWACHkB2tO0puaQHcjkwRjsAbdyE1RqA0D0eezh7N4XiRbkJoR0nlVbDvrEufCuYer0PUd1PZ0cLhHs83g2Epsw6Bo8XK_FgLtw8zLvYqkpIWGEHxYrxKA1ZQhkrUpZBlOV5hKm4TeLbNBcP64uHu015czcNVQs40p0wLXp224vNw8Wn3fXdxnkUB_k6plSW__u9U2OHvWhEj_iuN1fr-zX-bdxO4bgcwInJG9ZP5pnBIPCDIF6GceEcyojXJdpeunetnua1KulxuzZ3m7VzDYiUlWZo25mZt419UqJDkG-4-W-tJnSa2g9zKqG2P83a4gOGj6KjgXK8p6QVSLT8jWQ3jmjcrVcvwjSmrKmQgwanAo_O_iJgxLzTlR2hsxIZNehpvR5c5wy5lnIwCN21xPfJ_bVjHQ3Q7W3jJG59df3lFm1uB12lKWDQDk5jbW9W5-fjOC6MWOCYnXe1PDcWQGI_z91Qn_cnCv2jwx8Bnv3Qf1Jw8B0M0P6T9mN_0hEMU_og3cW8H49OVo0tB8Od9AV5FCX5mYcEwoR5_uq819UkWCXFSVfnXWBUSmQnzI6cT9KGmzGgYFNbTnrqrfLlez8KY5Qu3wR4NIM8S4GFRRjEQVJHyyQHWi_jKg5qWjPOs5DRZVrzOqnijFdpkCVhVcdFHgMD6thlqHa0fEEm5u6MKP3-LAS-6Cr11X8JT60q5w_3jASDqxwCmqYRS_CLneZZkAXJMk4LqKsqjSNWVDyr8OteZGFOecqzGKCu4zyowyqKotj78S8WWbMI:WIRE_MOBILE_MANIFEST_V1 -->
+---
+
+## 2. Jonathon Brooks — CAR RB
+
+**Trending down** · ABSENT_FROM_PRACTICE · MEDIUM evidence
+
+### What changed
+
+Jonathon Brooks has missed Carolina's last several practices because of general soreness, Gray Deyo reported.
+
+### Lineup Beat impact
+
+Brooks' recent practice absence puts his availability worth monitoring. The report gives no timetable or indication of whether the soreness will affect his role once he returns.
+
+[Gray Deyo · Fantasy On SI](https://www.si.com/onsi/fantasy/injuries/fantasy-football-injury-news-ashton-jeanty-and-jonathon-brooks-return-to-practice) · 2026-09-09
+
+<details><summary>Full evidence reviewed</summary>
+
+Carolina Panthers RB Jonathon Brooks has been a non-participant in the Panthers’ last several practices with general soreness. While Las Vegas Raiders RB Ashton Jeanty has been a non-participant at their practices since Aug.
+
+Carolina Panthers RB Jonathon Brooks has been a non-participant in the Panthers’ last several practices with general soreness. While Las Vegas Raiders RB Ashton Jeanty has been a non-participant at their practices since Aug. 23 with an ankle injury.
+
+</details>
+
+<!-- WIRE_MOBILE_MANIFEST_V1:eNrtWNFu2zYU_RVCL31Y5EiiJMt-cxI3TdE4geN1D2shXEmUxUQiDZKy6xUF9hv7vX3JLqXYddpk6DYMa7cBgeOQuuS95557jp33TgYmr1JeOGMnLEY0i2hcZMkoAuqBl4QQxzErg7goS-pDVAxDGlOgURH4EIc-o-BHJWU0LzLPOXJyUIV2xj--d2C1UnLNihQMHo1b0JpKKnx_rmBLzthW2udl0zBhQG1x4yUDYba__vyLJuydYaJgBVkpyA3PGYFMM4G_G7hjmlRcE1gDryHjNTdbspHKVKSRghupuFgOyKJiRLEVrpNCYoiQhtiUeIGHEc3WTNnAdlWAYUfEKAbG5kIKZvBgTaTC5xQzrRLE8AZXs5oNHiSd7qvMtn2VB3uYx5ILXL68Opu-Ss_mk-eL7gmBtZnUbFcMN-fT66v54mJ2jls2E1wKvCB2vRH-LPxkHHljP_nO88aeBbjgiiEg0p47m55PFhevp3ZZQWlSPLrE8hAmZ-wNRuFuveYNN2CjbG-cmSRc3LZqu0fhifI_LZ5sQO8wLCwSFmO27q_8iLLGu_DZipmKKdJ3lVQYqphuG2wqiC0ppTQZ1DWx_V1jDgPn7ZGzOwyrOwUlay6AXGM8HqTJ_IS8lAKQRoKcKCnvdHdqxpjATgkp3BUoJAtfYQSWSDBsH420IjVo09cM9Z5Zmmw4UmfJRLespcJ3Wg_IDxXHkl_hDa_ZEl_ngLn1aUx0ZTCJg9KeSAKMTYKrg9s0t2BN2uXgjXgj_v1VkoD2dwOGiju8rCdfV_4_d7vzkWxpDqLgdvh6HWwkigob47TwcZD7wGLfp6UfJTljGYCPoahk_KduCG9e4Pimi-n8EpcbllcguG5wY3JyM50t0ufzq8v0ej45XVyc2kltZMHqe22AOv0mBVBukEW64ivM-WJ2Nr2e4svMituqhi2zIv-ge_uNHl_Pcz0v9PwgsBtS83s9m5_Yv5W87RUuhb3QXc0sdKs2q3meooY0PV6fU6SrcccNg_DhfOw49RQ9MpZDqxmR5WMkeXjp54KPqOHpKfaB1biywLkqEH6EfCPut7mdtLRETFtUQFTgt3Z9zdkGA_dFWhB7G9CyVZ0EPse6QG_JlSA3F3YDeySWpsKtFxfnL3DFMLBce_Ua37fKJlAZs9Lj4-PNZjPQfID8OrZEPi77s467yjjTuwV3J8RuX7Mr2Ea70CHr3nbIujge7u29JrlZp0luzwvXSHeHq_Ph6E_Zfi9yz5BpuWXfZ4RfteaP8n3J1x3hD6wLycyxM3lng7bXO3-y8rmTQ5QK60hliQzsrkRxxlCbRXe4LVl_Sx8B6BMfAX5fGx6beRux1wyE7wFsSJDO1FmP3N65ntk23dUScFsx0oo7gWPxv9P_x5z-C702glFEw4RGDAAK3y-9PP_bvPZbVJ0v8N1PCPWY89IRDcO_6LyP8bbhWqPj7nj-TD_FzwPD_ZSlR2RvE_eo9l80vlIXvpyeXXx_-dGHTyfzr8KI31qP0SZtdWFtwEvw81Z85PRom507H5rMaEyHY-rtTaYfnRzTQaj8cNeBjsc4SC26F5i08xZnnMQP93UFQRQfPODAkCXDiOX-yPeoF5ZBHCYMyphm1CuhzIti6OcQR2VRhhkdFlnkDUM_K-kooTigYGHPK9ZAimTSfas26INurx8IWSbfuWt_37e0_79Gnwk-nCSoLIVHsygIfRpGoT-Ko4CGXux7cRb7ZYwYQUDzJBlCjDnEECV0BJhrFuR56Hz4DWW79jY:WIRE_MOBILE_MANIFEST_V1 -->
