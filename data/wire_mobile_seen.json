@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1336,
+ "count": 1352,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -14735,6 +14735,182 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004528
+  },
+  {
+   "candidate_id": "mobile:onsi:0718faba1ed43325dd26",
+   "player_id": "00-0034351",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/10-bold-eagles-predictions-for-2026-season-best-player-biggest-surprise-disappointment-01m215s0tbgr",
+   "attempted_at": "2026-09-09T00:13:44+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T00:13:49+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004286
+  },
+  {
+   "candidate_id": "mobile:onsi:c0ac2b68f24a3eb58fd7",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/ben-johnson-takes-aim-at-his-and-bears-real-2025-problem-area",
+   "attempted_at": "2026-09-09T00:13:49+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T00:13:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004992
+  },
+  {
+   "candidate_id": "mobile:onsi:ad0260c2627671c55cdb",
+   "player_id": "00-0036912",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/10-bold-eagles-predictions-for-2026-season-best-player-biggest-surprise-disappointment-01m215s0tbgr",
+   "attempted_at": "2026-09-09T00:13:53+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T00:13:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0053
+  },
+  {
+   "candidate_id": "mobile:onsi:38e64519c877d906667d",
+   "player_id": "00-0034844",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/10-bold-eagles-predictions-for-2026-season-best-player-biggest-surprise-disappointment-01m215s0tbgr",
+   "attempted_at": "2026-09-09T00:13:56+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-09-09T00:14:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006606
+  },
+  {
+   "candidate_id": "mobile:onsi:c3299599e305cb10a44b",
+   "player_id": "00-0033288",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/5-biggest-issues-could-derail-49ers-2026",
+   "attempted_at": "2026-09-09T00:14:01+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T00:14:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004202
+  },
+  {
+   "candidate_id": "mobile:onsi:80d30be5187dcb983659",
+   "player_id": "00-0033280",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/5-biggest-issues-could-derail-49ers-2026",
+   "attempted_at": "2026-09-09T00:14:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T00:14:07+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004966
+  },
+  {
+   "candidate_id": "mobile:onsi:ca0777a4405f29c68f54",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/nfl/49ers/onsi/5-biggest-issues-could-derail-49ers-2026",
+   "attempted_at": "2026-09-09T00:14:07+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T00:14:11+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005758
+  },
+  {
+   "candidate_id": "mobile:onsi:36314c4944bc30d38dfc",
+   "player_id": "00-0041547",
+   "source_url": "https://www.si.com/nfl/browns/onsi/3-cleveland-browns-lineup-decisions-todd-monken-should-make-in-week-1-01m2167nep9y",
+   "attempted_at": "2026-09-09T00:14:11+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T00:14:17+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.007254
+  },
+  {
+   "candidate_id": "mobile:onsi:66f01ab6e08e81dff9b8",
+   "player_id": "00-0035700",
+   "source_url": "https://www.si.com/nfl/packers/onsi/given-second-chance-packers-complete-practice-squad-with-running-back",
+   "attempted_at": "2026-09-09T00:14:17+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T00:14:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003968
+  },
+  {
+   "candidate_id": "mobile:onsi:65b8b35b1c38498b943c",
+   "player_id": "00-0037261",
+   "source_url": "https://www.si.com/nfl/bills/onsi/depth-chart-week-1-buffalo-bills-answer-eight-questions-heading-into-sunday-opener",
+   "attempted_at": "2026-09-09T00:14:19+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T00:14:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004456
+  },
+  {
+   "candidate_id": "mobile:onsi:c8ec0df0aac582ead82b",
+   "player_id": "00-0038933",
+   "source_url": "https://www.si.com/nfl/bills/onsi/depth-chart-week-1-buffalo-bills-answer-eight-questions-heading-into-sunday-opener",
+   "attempted_at": "2026-09-09T00:14:22+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T00:14:28+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006726
+  },
+  {
+   "candidate_id": "mobile:onsi:3bdbcfa9b9d78623f361",
+   "player_id": "00-0039851",
+   "source_url": "https://www.si.com/nfl/patriots/onsi/predicting-how-patriots-fare-against-seahawks-in-week-1-will-drake-maye-shine",
+   "attempted_at": "2026-09-09T00:14:28+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T00:14:33+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00603
+  },
+  {
+   "candidate_id": "mobile:article:16c42e507de05c7d429f",
+   "player_id": "00-0035640",
+   "source_url": "https://steelersdepot.com/2026/09/ben-roethlisberger-adjusts-his-steelers-record-prediction-after-preseason/",
+   "attempted_at": "2026-09-09T00:14:33+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T00:14:36+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00433
+  },
+  {
+   "candidate_id": "mobile:onsi:313a0ba55dc9a1258c13",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/caleb-williams-predicted-to-be-best-qb-in-the-nfc-north-in-2026",
+   "attempted_at": "2026-09-09T00:14:36+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T00:14:38+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004636
+  },
+  {
+   "candidate_id": "mobile:onsi:137781946c8d8a242f09",
+   "player_id": "00-0036264",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/must-start-wide-receivers-week-1-fantasy-football-odunze-sutton-downs",
+   "attempted_at": "2026-09-09T00:14:38+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T00:14:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004636
+  },
+  {
+   "candidate_id": "mobile:onsi:6e2a67a6714aa1974564",
+   "player_id": "00-0037664",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/must-start-wide-receivers-week-1-fantasy-football-odunze-sutton-downs",
+   "attempted_at": "2026-09-09T00:14:41+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T00:14:45+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00552
   }
  ]
 }
