@@ -40,7 +40,7 @@ class SportExperienceTests(unittest.TestCase):
         self.assertIn('data-nav-group="college" data-current="true"', college_views)
         self.assertIn("More NFL Tools", college_views)
         self.assertIn("My League", college_views)
-        self.assertIn('href="/college-fantasy-football/week-1/" aria-current="page">Week 1 Rankings</a>', college)
+        self.assertIn('href="/college-fantasy-football/week-2/" aria-current="page">Week 2 Rankings</a>', college)
         self.assertIn('href="/college-fantasy-football/projections/">Season Projections</a>', college)
         self.assertIn('href="/nfl/rankings/"', college_views)
         self.assertIn('href="/nfl/projections/"', college_views)
@@ -49,10 +49,10 @@ class SportExperienceTests(unittest.TestCase):
         nfl = seo.site_nav("rankings", "nfl")
         college = seo.site_nav("projections", "college")
         self.assertIn('href="/nfl/rankings/" aria-current="page">Season Rankings</a>', nfl)
-        self.assertNotIn('href="/college-fantasy-football/week-1/" aria-current="page"', nfl)
+        self.assertNotIn('href="/college-fantasy-football/week-2/" aria-current="page"', nfl)
         self.assertIn('href="/college-fantasy-football/projections/" aria-current="page">Season Projections</a>', college)
         self.assertNotIn('href="/nfl/projections/" aria-current="page"', college)
-        self.assertIn("Search 2,205 College players", college)
+        self.assertIn("Search College players", college)
         header = college.split("</header>", 1)[0]
         self.assertNotIn('id="site-player-list"', header)
 
@@ -91,7 +91,7 @@ class SportExperienceTests(unittest.TestCase):
 
     def test_college_payload_uses_only_local_college_logos(self):
         payload = college_decision_data.load_weekly()
-        self.assertEqual(len(payload["players"]), 2205)
+        self.assertEqual(len(payload["players"]), 2071)
         for player in payload["players"]:
             self.assertTrue(player["team_logo"].startswith("/assets/college-teams/CFF_"))
             self.assertNotIn("/nfl/", player["team_logo"])

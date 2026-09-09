@@ -84,7 +84,7 @@ class CollegeWeek1Tests(unittest.TestCase):
             self.assertIn("Week 1", text)
             self.assertIn("Yahoo scoring", text)
         season = (ROOT / "site/college-fantasy-football/projections/index.html").read_text()
-        self.assertIn('/college-fantasy-football/week-1/', season)
+        self.assertIn('/college-fantasy-football/week-2/', season)
 
     def test_overview_search_reaches_players_beyond_preview_rows(self):
         week = (ROOT / "site/college-fantasy-football/week-1/index.html").read_text()

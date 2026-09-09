@@ -374,7 +374,7 @@ SPORT_ROUTES = {
     },
     "college": {
         "decision": "/decision-room/college/",
-        "rankings": "/college-fantasy-football/week-1/",
+        "rankings": "/college-fantasy-football/week-2/",
         "projections": "/college-fantasy-football/projections/",
         "landing": "/decision-room/college/",
     },
@@ -390,7 +390,7 @@ NAV_GROUPS = (
     )),
     ("college", "College", (
         ("decision", "Compare Players", "/decision-room/college/"),
-        ("rankings", "Week 1 Rankings", "/college-fantasy-football/week-1/"),
+        ("rankings", "Week 2 Rankings", "/college-fantasy-football/week-2/"),
         ("projections", "Season Projections", "/college-fantasy-football/projections/"),
     )),
     ("fantasy", "My Fantasy", (
@@ -862,7 +862,7 @@ GLOBAL_FOOTER = """<footer class="global-footer"><div class="wrap">
   <div class="fbrand"><span class="flogo">Lineup<em>Beat</em></span>
     <p class="ftag">NFL and College fantasy rankings, projections, and player comparisons.</p></div>
   <div class="frow"><div class="fcol"><h3>Decision tools</h3><p><a href="/my-team/">My Team</a><br><a href="/my-league/">My League</a><br><a href="/decision-room/nfl/">NFL Decision Room</a><br><a href="/decision-room/college/">College Decision Room</a><br><a href="/nfl/data/">NFL Fantasy Data</a><br><a href="/nfl/who-should-i-draft/">Advanced Draft Comparison</a></p></div>
-  <div class="fcol"><h3>Rankings &amp; projections</h3><p><a href="/nfl/rankings/">NFL rankings</a><br><a href="/nfl/projections/">NFL projections</a><br><a href="/college-fantasy-football/week-1/">College Week 1</a><br><a href="/college-fantasy-football/projections/">College season projections</a></p></div>
+  <div class="fcol"><h3>Rankings &amp; projections</h3><p><a href="/nfl/rankings/">NFL rankings</a><br><a href="/nfl/projections/">NFL projections</a><br><a href="/college-fantasy-football/week-2/">College Week 2</a><br><a href="/college-fantasy-football/projections/">College season projections</a></p></div>
   <div class="fcol"><h3>About LineupBeat</h3><p><a href="/about/">How LineupBeat works</a></p></div>
   <div class="fcol"><h3>Contact</h3><p><a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a></p></div></div>
   <div class="fbase"><span>&copy; 2026 LineupBeat</span><span>Decision tools for NFL and College fantasy football.</span></div>
@@ -950,7 +950,7 @@ def site_nav(active=None, sport="nfl", search="", home=False):
         search = ""
     elif sport == "college":
         search = ('<a class="college-search-entry" href="/decision-room/college/">'
-                  'Search 2,205 College players</a>')
+                  'Search College players</a>')
     elif not search:
         search = ('<a class="college-search-entry" href="/decision-room/nfl/">'
                   'Search NFL players</a>')

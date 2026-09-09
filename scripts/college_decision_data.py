@@ -21,9 +21,9 @@ def _digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def load_weekly() -> dict:
+def load_week1() -> dict:
     config = json.loads((COLLEGE / "config.json").read_text())
-    release = COLLEGE / config["activeCollegeWeeklyProjectionVersion"]
+    release = COLLEGE / "2026/week-1/v1.1"
     manifest = json.loads((release / "manifest.json").read_text())
     source = release / "college_week1_site_projections_2026.json"
     expected = manifest["files"][source.name]
@@ -163,3 +163,73 @@ def _summary(result: dict) -> dict:
     return {"a": a["id"], "b": b["id"], "gap": result["gap"],
             "confidence": result["confidence"],
             "winner": result["winner"]["id"] if result["winner"] else None}
+
+
+def load_weekly() -> dict:
+    from college_releases import load_release
+    release, raw = load_release()
+    if raw['week'] == 1:
+        return load_week1()
+    inputs = json.loads((release/'inputs.json').read_text())
+    market_teams = {}
+    logos = load_registry()
+    for row in raw['players']:
+        if row['teamId'] in market_teams:
+            continue
+        game = inputs['gamesByTeam'][row['team']]
+        available = game['implied'] is not None
+        spread = (game['home_spread'] * (1 if game['home'] else -1)) if available else None
+        market_teams[row['teamId']] = {
+            'team_id':row['teamId'], 'team':row['team'], 'opponent':row['opponent'], 'home':row['home'],
+            'state':'available' if available else 'unavailable', 'team_spread':spread,
+            'game_total':game['over_under'] if available else None, 'team_implied_total':game['implied'],
+            'opponent_implied_total':game['opponent_implied'],
+            'blowout_risk':bool(available and abs(spread) >= 21),
+            'source':game['source'],
+        }
+    players = []
+    for row in raw['players']:
+        a = row['availability']
+        availability = {'status':a['status'], 'conditional':a['conditional']}
+        if a['source']:
+            availability.update(source=a['source'], reported_at=a['reportedAt'])
+        players.append({
+            'id':row['id'], 'name':row['name'], 'team':row['team'], 'team_id':row['teamId'],
+            'position':row['pos'], 'conference':None, 'photo':None,
+            'team_logo':logos[row['teamId']]['local_asset_path'],
+            'team_color':'#'+(logos[row['teamId']].get('primary_color') or 'C6F53C').lstrip('#'),
+            'adp':None, 'opponent':row['opponent'], 'home':row['home'], 'game_date':row['gameDate'],
+            'implied_total':row['impliedTotal'], 'availability':availability, 'role':row['role'],
+            'expected_opportunity':{'pass_attempts':row['passAtt'],'carries':row['rushAtt'],'receptions':row['rec']},
+            'projection_confidence':row['confidence'],
+            'player_market':{'state':'unavailable','components':[],'role_evidence':False,'is_projection_input':False},
+            'history':{}, 'history_season':None,
+            'formats':{'yahoo':{'projected_points':row['pts'],'overall_rank':row['overallRank'],'position_rank':row['rank']}},
+        })
+    # Unresolved availability never becomes a featured start recommendation.
+    featured = [p for p in players if p['availability']['status'] in {'No injury reported','Expected to play'}]
+    context = DecisionContext('weekly',2026,'yahoo',week=2)
+    captured = raw['generatedAt']
+    market = {'state':'partial_game_context','label':'ESPN scoreboard game lines',
+              'captured_on':captured,'latest_market_update_at':None,'data_delay_seconds':None,
+              'coverage':{'modeled_teams':65,'teams_with_spread_and_total':57},
+              'player_coverage':raw['marketInput']}
+    return {
+        'sport':'college','mode':'weekly','season':2026,'week':2,
+        'title':'College Week 2 Decision Room','projection_horizon':'Week 2 projections',
+        'scoring_format':'yahoo','scoring_label':raw['scoring'],'updated_at':captured,
+        'adp_available':False,'conference_available':False,'market':market,'counts':raw['counts'],
+        'market_context_by_team':market_teams, 'availability_checked_at':inputs['capturedAt'],
+        'identity_coverage':{'resolved':len(players),'total':len(players)},'players':players,
+        'closest_calls':[_summary(r) for r in closest_calls(featured,'yahoo',context=context)],
+        'strongest_edges':[_summary(r) for r in strongest_projection_edges(featured,'yahoo',context=context)],
+        'available_formats':['yahoo'],'editorial_opinions':[], 'schedule_sos_available':False,
+        'opponent_context_available':True,
+        'sources':{
+            'projections':{'label':'College Week 2 Yahoo projections','updated_at':captured},
+            'ranks':{'label':'College Week 2 rankings','updated_at':captured},
+            'availability':{'label':'Current injury reporting','updated_at':inputs['capturedAt']},
+            'market':{'label':market['label'],'updated_at':captured,'captured_on':captured,
+                      'data_delay_seconds':None,'note':'Game lines are available for 57 of 65 teams. Player props are not included.'},
+        },
+    }

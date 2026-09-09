@@ -4079,6 +4079,11 @@ def main():
             ("/college-fantasy-football/week-1/rb/", "daily", "0.8"),
             ("/college-fantasy-football/week-1/wr/", "daily", "0.8"),
             ("/college-fantasy-football/week-1/te/", "daily", "0.8"),
+            ("/college-fantasy-football/week-2/", "daily", "0.8"),
+            ("/college-fantasy-football/week-2/qb/", "daily", "0.8"),
+            ("/college-fantasy-football/week-2/rb/", "daily", "0.8"),
+            ("/college-fantasy-football/week-2/wr/", "daily", "0.8"),
+            ("/college-fantasy-football/week-2/te/", "daily", "0.8"),
             # The editorial Wire. Included only when it exists, like every
             # other entry here, so a build with no reviewed publications
             # does not advertise a page it did not write.

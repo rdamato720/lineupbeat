@@ -25,11 +25,9 @@ class CollegeWeek1V11Tests(unittest.TestCase):
         with (REL / "provenance/college_week1_player_projections_2026_v1.1.csv").open(newline="") as handle:
             cls.rows = list(csv.DictReader(handle))
 
-    def test_release_is_active_and_pinned(self):
-        config = json.loads((ROOT / "data/college/config.json").read_text())
-        self.assertEqual(config["activeCollegeWeeklyProjectionVersion"], "2026/week-1/v1.1")
+    def test_archive_remains_pinned(self):
         self.assertIn(digest(REL / "manifest.json"),
-                      (ROOT / "scripts/build_college_week1.py").read_text())
+                      (ROOT / "scripts/college_releases.py").read_text())
 
     def test_manifest_and_counts(self):
         self.assertEqual(self.manifest["qa_status"], "PASS")

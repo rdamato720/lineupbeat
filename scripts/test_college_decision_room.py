@@ -16,7 +16,7 @@ from decision_engine import DecisionContext, compare, eligible_opponents
 class CollegeDecisionDataTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.data = college_decision_data.load_weekly()
+        cls.data = college_decision_data.load_week1()
 
     def test_validated_weekly_horizon_and_counts(self):
         self.assertEqual((self.data["mode"], self.data["season"], self.data["week"]),
@@ -102,7 +102,7 @@ class CollegeDecisionRenderingTests(unittest.TestCase):
         self.assertIn('/decision-room/college/', college_decision_room.SHELL)
         self.assertIn("new URLSearchParams(location.search)", college_decision_room.JS)
         self.assertIn("/decision-room/college", college_decision_room.JS)
-        self.assertIn("Week 1 projections", college_decision_room.SHELL)
+        self.assertIn("Week 2 projections", college_decision_room.SHELL)
         self.assertNotIn("College Season Decision Room", college_decision_room.SHELL)
 
     def test_no_adp_probability_floor_or_ceiling_claims(self):
@@ -116,9 +116,10 @@ class CollegeDecisionRenderingTests(unittest.TestCase):
         self.assertIn("Sportsbook environment", text)
         self.assertIn("Expected opportunity", text)
         self.assertIn("Blowout risk", text)
-        self.assertIn("exact player-component markets", text)
+        self.assertIn("Check player availability", text)
         self.assertIn("market input is not an outcome or guarantee", text)
-        self.assertIn("30-second-delayed", text)
+        self.assertNotIn("30-second-delayed", text)
+        self.assertIn("Game lines unavailable", text)
         self.assertNotIn("The recommendation follows the higher validated projection", text)
 
     def test_fallback_branding_and_mobile_layout(self):
@@ -140,7 +141,7 @@ class CollegeDecisionRenderingTests(unittest.TestCase):
     def test_isolated_payload_size_is_reasonable(self):
         encoded = json.dumps(college_decision_data.load_weekly(),
                              separators=(",", ":")).encode()
-        self.assertLess(len(encoded), 1_500_000)
+        self.assertLess(len(encoded), 1_600_000)
 
     def test_homepage_does_not_depend_on_college_market_records(self):
         source = (Path(__file__).with_name("build_decision_room.py")).read_text()

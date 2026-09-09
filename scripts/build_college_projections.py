@@ -418,7 +418,7 @@ def _page(pos):
       projected stat line is shown behind the ranking.</p>
     {f'<p class="cintro">{e(INTROS[pos])}</p>' if pos else ''}
     <p class="cmeta">Updated {longdate(DATA['generatedAt'])}</p>
-    <a class="cweekly" href="/college-fantasy-football/week-1/">View Week 1 projections &amp; rankings &rarr;</a>
+    <a class="cweekly" href="/college-fantasy-football/week-2/">View Week 2 projections &amp; rankings &rarr;</a>
   </div>
   {tabs(pos)}
   <div class="cctl">
