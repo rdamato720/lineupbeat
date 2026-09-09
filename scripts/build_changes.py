@@ -56,6 +56,138 @@ DECISION_NOTE = {
     "WATCH, NO CHANGE": "Looked at, nothing moved yet.",
 }
 
+
+# Reader-facing wording for dated historical entries. Original reasons and
+# all projection values remain unchanged in the source workbook.
+PUBLIC_REASONS = {
+    'Cousins remains the Raiders starter while Mendoza works as QB2. Reallocated the existing Raiders QB budget toward Cousins without changing team-level totals.':
+        'Cousins remains the Raiders starter while Mendoza works as QB2.',
+    'Minnesota named Murray the starter. Reallocated the existing Vikings QB passing and rushing budget toward Murray without changing the team-level totals.':
+        'Minnesota named Murray the starter.',
+    'Brooks is healthy and sharing first-team work. Increased his expected role modestly while preserving Carolina backfield opportunity totals.':
+        'Brooks is healthy and sharing first-team work.',
+    'Tracy is handling most two-minute work and the backfield is trending toward a 1A/1B split. Narrowed the workload gap modestly.':
+        'Tracy is handling most two-minute work and the backfield is trending toward a 1A/1B split.',
+    'Tuten and Rodriguez are listed as co-starters on the initial unofficial depth chart. Made only a small workload shift because the depth chart is preliminary.':
+        'Tuten and Rodriguez are listed as co-starters on the initial unofficial depth chart.',
+    'Pearsall is out for the 2026 season. His projected receiving opportunity was removed and redistributed across the remaining San Francisco pass catchers.':
+        'Pearsall is out for the 2026 season.',
+    'Brazzell is out for the 2026 season. His receiving opportunity was removed and redistributed within the Carolina receiver room.':
+        'Brazzell is out for the 2026 season.',
+    'Boston has generated strong first-team camp buzz and growing trust. Increased his target share modestly and reconciled the Browns receiving totals.':
+        'Boston has generated strong first-team camp buzz and growing trust.',
+    'Douglas is listed with the first unit on Miami’s current depth chart. Applied a conservative target-share increase, not a full breakout projection.':
+        'Douglas is listed with the first unit on Miami’s current depth chart.',
+    'Golden has continued to earn a larger first-team role in camp. Shifted a modest share of Green Bay receiver opportunity toward him.':
+        'Golden has continued to earn a larger first-team role in camp.',
+    'Seattle camp reports point to Shaheed as a major factor and frequent two-TE personnel. Shifted modest opportunity toward Shaheed and Barner while leaving JSN unchanged.':
+        'Seattle camp reports point to Shaheed as a major factor and frequent two-TE personnel.',
+    'Boston has generated strong first-team camp buzz and growing trust. Increased his target share modestly and reconciled the Browns receiving totals. Also corrected an invalid negative rushing-yard value.':
+        'Boston has generated strong first-team camp buzz and growing trust.',
+    'Ferguson has been heavily involved throughout Cowboys camp. Added a modest target bump and reconciled the Dallas receiving totals.':
+        'Ferguson has been heavily involved throughout Cowboys camp.',
+    'Brazzell is out for the 2026 season. His receiving opportunity was removed and redistributed within the Carolina receiver room. Also corrected an invalid negative rushing-yard value.':
+        'Brazzell is out for the 2026 season.',
+    'Groin soreness is being monitored, and possible discipline remains unresolved. No regular-season absence is established, so no games or targets were deducted.':
+        'Groin soreness is being monitored, and possible discipline remains unresolved. No regular-season absence has been established.',
+    'Groin injury is expected to keep him out of camp work at least this week, but no regular-season absence is established. Possible discipline is also unresolved, so the baseline remains unchanged.':
+        'Groin injury is expected to keep him out of camp work at least this week, but no regular-season absence is established. Possible discipline remains unresolved.',
+    'Expected to miss the preseason with a groin injury, but current reporting still points toward regular-season availability. No games deducted.':
+        'Expected to miss the preseason with a groin injury, but current reporting still points toward regular-season availability.',
+    'Hubbard is week-to-week with a legitimate hamstring injury. Carolina remains confident he will be ready for Week 1, so no games were deducted; a modest share of existing backfield opportunity moved to Brooks while team totals stayed unchanged.':
+        'Hubbard is week-to-week with a hamstring injury. Carolina remains confident he will be ready for Week 1.',
+    'Hubbard is week-to-week and Brooks is expected to receive significant preseason work. Increased Brooks modestly without adding Carolina team opportunity or assuming Hubbard misses regular-season games.':
+        'Hubbard is week-to-week and Brooks is expected to receive significant preseason work.',
+    'Lemon continues to miss practice with a hamstring issue after repeated spring and camp absences. Reduced his season-long target share modestly for early-role risk, without projecting missed regular-season games.':
+        'Lemon continues to miss practice with a hamstring issue after repeated spring and camp absences.',
+    "Lemon's modest target reduction was redistributed within the Eagles receiver room. Wicks received the largest share because he has already taken advantage of additional camp reps.":
+        'Wicks is expected to benefit from Lemon’s reduced role after taking advantage of additional camp reps.',
+    'Received a small share of the Eagles targets removed from Lemon. No independent breakout adjustment was applied.':
+        'Expected to receive a small increase in targets as Lemon’s projected role decreases.',
+    'Received a small share of the Eagles targets removed from Lemon. Cooper has continued to impress in camp and Nick Sirianni acknowledged the possibility of offensive playing time.':
+        'Expected to receive a small increase in targets as Lemon’s projected role decreases. Cooper has continued to impress in camp, and Nick Sirianni acknowledged the possibility of offensive playing time.',
+    'Toe injury may cost preseason time, but the exact severity and regular-season impact are not established. No games or targets deducted yet.':
+        'Toe injury may cost preseason time, but the exact severity and regular-season impact are not established.',
+    'Rehab is progressing and he could begin 7-on-7/11-on-11 work soon, but he has not yet completed full team work. Current recovery discount remains unchanged.':
+        'Rehab is progressing and he could begin 7-on-7/11-on-11 work soon, but he has not yet completed full team work.',
+    "Watson will start preseason Game 1, while Sanders will start Game 2. Todd Monken says the competition remains open, so Cleveland's existing QB allocation is unchanged.":
+        'Watson will start preseason Game 1, while Sanders will start Game 2. Todd Monken says the competition remains open.',
+    "Sanders will start preseason Game 2 after Watson starts Game 1. The coach says the competition remains open, so Cleveland's existing QB allocation is unchanged.":
+        'Sanders will start preseason Game 2 after Watson starts Game 1. The coach says the competition remains open.',
+    'Indianapolis signed Allen to a one-year deal to stabilize a thin receiver room. Added an 80-target, 52-catch possession-role projection and redistributed only existing Colts WR receiving volume; team WR totals remain unchanged.':
+        'Indianapolis signed Allen to a one-year deal to stabilize a thin receiver room.',
+    "Allen's projected role was funded entirely from the existing Colts receiver room. This is a reconciliation adjustment, not an independent downgrade; Indianapolis WR targets, catches, yards and TDs remain unchanged in aggregate.":
+        'Allen’s arrival reduces the projected workload for other Colts receivers.',
+    'Tyson is expected to miss up to roughly two months with a hamstring injury. Modeled 12.5 of 17 games of baseline opportunity, less than the maximum reported five-game absence, and redistributed the removed Saints WR volume without increasing team totals.':
+        'Tyson is expected to miss up to roughly two months with a hamstring injury.',
+    'Received a share of the opportunity removed from Tyson because of his expected early-season absence. No independent breakout adjustment was applied; the Saints WR room remains fully reconciled to its prior team totals.':
+        'Expected to receive more opportunities during Tyson’s early-season absence.',
+    'Love has a high ankle sprain and is expected to miss the rest of the preseason, though Arizona remains hopeful for Week 1. Applied only a modest season-long risk adjustment, shifting 6 carries and 1.5 targets within the existing Cardinals backfield.':
+        'Love has a high ankle sprain and is expected to miss the rest of the preseason, though Arizona remains hopeful for Week 1.',
+    'Received the modest opportunity shifted from Love for high-ankle-sprain risk. Arizona RB targets, receptions, receiving yards/TDs, carries, rushing yards/TDs and fumbles lost remain unchanged in aggregate.':
+        'Love’s ankle injury leads to a small increase in expected opportunities for his backfield teammates.',
+    'Nabers participated in live 11-on-11 and 7-on-7 team work for the first time in his ACL/meniscus recovery, but remained in a no-contact jersey and was not yet full speed. The existing recovery discount stays in place until medical clearance is firmer.':
+        'Nabers participated in live 11-on-11 and 7-on-7 team work for the first time in his ACL/meniscus recovery, but remained in a no-contact jersey and was not yet full speed.',
+    "Hall's groin strain is expected to sideline him for a few weeks, but current reporting says he is on track for Week 1. No regular-season games or touches were deducted.":
+        "Hall's groin strain is expected to sideline him for a few weeks, but current reporting says he is on track for Week 1.",
+    "Nacua's psoas/hip issue has kept him out longer than initially expected and his practice return was pushed to at least next week. No regular-season absence is established, so the baseline remains unchanged.":
+        'Nacua’s psoas/hip issue has delayed his practice return. No regular-season absence has been established, so his season projection is unchanged.',
+    'Specialist evaluation identified a stable toe sprain and Tampa Bay remains optimistic about Week 1. No regular-season absence is established, so the baseline remains unchanged.':
+        'Specialist evaluation identified a stable toe sprain and Tampa Bay remains optimistic about Week 1.',
+    "Price returned as a full participant and worked with Seattle's starting offense after missing time with leg soreness. The existing projection is retained with no injury discount.":
+        "Price returned as a full participant and worked with Seattle's starting offense after missing time with leg soreness.",
+    'Cleveland named Watson the Week 1 starter. Assigned him 75% of the existing Browns QB budget while retaining a meaningful Sanders share for performance and durability risk; team totals remain unchanged.':
+        'Cleveland named Watson the Week 1 starter.',
+    'Cleveland named Watson the Week 1 starter. Reduced Sanders to 25% of the existing Browns QB budget; team passing and rushing totals remain unchanged.':
+        'Cleveland named Watson the Week 1 starter.',
+    'Kamara is expected to miss at least a month with a sprained MCL. Applied an early-season availability discount within the existing Saints backfield budget.':
+        'Kamara is expected to miss at least a month with a sprained MCL.',
+    "Etienne is expected to receive the bulk of New Orleans' work while Kamara is sidelined. Increased his share without adding team opportunity.":
+        "Etienne is expected to receive the bulk of New Orleans' work while Kamara is sidelined.",
+    "New Orleans acquired White after Kamara's injury. Added a modest depth role funded entirely from the existing Saints RB room.":
+        "New Orleans acquired White after Kamara's injury.",
+    'Retained a small complementary role in the rebalanced Saints backfield; New Orleans RB totals remain unchanged.':
+        'A small complementary role is expected in the Saints backfield.',
+    "White's arrival and Etienne's lead role reduce Chandler's projected share; New Orleans RB totals remain unchanged.":
+        'White’s arrival and Etienne’s lead role reduce Chandler’s projected share of the workload.',
+    "Rebalanced the depth chart after Kamara's injury and White's arrival without changing New Orleans team opportunity.":
+        'Expected roles in the Saints backfield changed after Kamara’s injury and White’s arrival.',
+    'Higgins tore his ACL and was placed on injured reserve, ending his 2026 season. Removed his full projection.':
+        'Higgins tore his ACL and was placed on injured reserve, ending his 2026 season.',
+    "Received the largest share of Higgins' vacated opportunity. Houston WR targets, catches, yards, TDs, rushing stats and fumbles remain unchanged in aggregate.":
+        'Expected to receive the largest increase in opportunities following Higgins’ season-ending injury.',
+    "Received a measured share of Higgins' vacated opportunity while preserving all Houston WR team totals.":
+        'Expected to receive more opportunities following Higgins’ season-ending injury.',
+    "Received a modest share of Higgins' vacated opportunity while preserving all Houston WR team totals.":
+        'Expected to receive a small increase in opportunities following Higgins’ season-ending injury.',
+    "Houston signed Jones after Higgins' injury. Added a conservative role funded only from Higgins' removed projection.":
+        "Houston signed Jones after Higgins' injury.",
+    "Houston signed Shepard after Higgins' injury. Added a conservative role funded only from Higgins' removed projection.":
+        "Houston signed Shepard after Higgins' injury.",
+    'Kittle was activated from PUP, avoiding a mandatory absence through Week 4 and giving him a chance to play Week 1. Restored 15 targets conservatively.':
+        'Kittle was activated from PUP, avoiding a mandatory absence through Week 4 and giving him a chance to play Week 1.',
+    "Kittle's restored availability reduces Tonges' replacement-role volume; San Francisco receiving totals remain unchanged.":
+        'Kittle’s return reduces Tonges’ expected workload.',
+    "Funded a small share of Kittle's restored volume from the existing San Francisco receiver room; team receiving totals remain unchanged.":
+        'Kittle’s return slightly reduces the expected workload for other San Francisco receivers.',
+    'Jeanty is believed to have a sprained ankle, but reporting says the injury is not considered long term and the team has not established a regular-season absence. No games or touches deducted.':
+        'Jeanty is believed to have a sprained ankle, but reporting says the injury is not considered long term and the team has not established a regular-season absence.',
+    'McCaffrey returned to practice after planned management of tightness. The existing projection is retained with no injury discount.':
+        'McCaffrey returned to practice after planned management of tightness.',
+    "Warren's groin injury is considered minor and there is no concern about Week 1. No regular-season volume deducted.":
+        "Warren's groin injury is considered minor and there is no concern about Week 1.",
+    "Detroit described LaPorta's hip issue as a long-term non-concern. No regular-season absence is established, so the baseline remains unchanged.":
+        "Detroit described LaPorta's hip issue as a long-term non-concern.",
+    'Team updated after Houston officially acquired Boutte from New England; workload projection is unchanged pending role evidence.':
+        'Houston acquired Boutte from New England. His workload projection is unchanged while his role becomes clearer.',
+    'Team updated after the Rams officially reacquired Atwell from Miami; workload projection is unchanged pending role evidence.':
+        'The Rams reacquired Atwell from Miami. His workload projection is unchanged while his role becomes clearer.',
+    'Cleveland waived Tillman, so his active-team workload is removed until he signs elsewhere and a new role is established.':
+        'Cleveland waived Tillman. No workload is projected until he signs elsewhere and establishes a role.',
+}
+
+DECISION_LABELS = {"RECONCILED": "Related workload change", "OUT, ZEROED": "Out for season"}
+
 EVIDENCE_ORDER = {"High": 0, "Medium": 1, "Medium-Low": 2, "Uncertain": 3}
 
 
@@ -281,7 +413,7 @@ def move_html(r, links):
     name = (f'<a href="/{SPORT}/{r["slug"]}/">{esc(r["name"])}</a>'
             if r["slug"] in links else esc(r["name"]))
     dec = ("" if r["decision"] == "UPDATED"
-           else f'<span class="chdec">{esc(r["decision"].lower())}</span>')
+           else f'<span class="chdec">{esc(DECISION_LABELS.get(r["decision"], r["decision"].lower()))}</span>')
     return (f'<div class="chmove">'
             f'<span class="chpos">{esc(r["pos"])}</span>'
             f'<span class="chname">{name}</span>'
@@ -308,7 +440,7 @@ def build_html(rows, meta, links, css, header, footer, built):
         blocks.append(
             f'<article class="chgroup" data-pos="{esc(",".join(posns))}" '
             f'data-ev="{esc(ev)}">\n'
-            f'  <p class="chwhy">{esc(g["reason"])}</p>\n'
+            f'  <p class="chwhy">{esc(PUBLIC_REASONS.get(g["reason"], g["reason"]))}</p>\n'
             f'  <div class="chmeta">'
             f'{f_ev(ev, evcls)}{src}</div>\n'
             f'  <div class="chmoves">'
@@ -324,8 +456,7 @@ def build_html(rows, meta, links, css, header, footer, built):
 
   <div class="chhead">
     <h1>What changed in our projections</h1>
-    <p class="chsub">Every projection we moved this week, what moved it, and
-      what we looked at and left alone.
+    <p class="chsub">A dated record of season projection changes and the reports behind them.
       <span class="chdate">{esc(updated)}</span></p>
   </div>
 
@@ -355,10 +486,10 @@ def build_html(rows, meta, links, css, header, footer, built):
     <dl>
       <div><dt>Updated</dt>
         <dd>The projection moved on this evidence.</dd></div>
-      <div><dt>Reconciled</dt>
+      <div><dt>Related workload change</dt>
         <dd>Moved to stay consistent with another change. A backfield only
             has so many carries, so raising one back lowers another.</dd></div>
-      <div><dt>Out, zeroed</dt>
+      <div><dt>Out for season</dt>
         <dd>Ruled out for the season. The projection is set to zero and his
             opportunity is redistributed.</dd></div>
       <div><dt>Watch, no change</dt>
@@ -424,7 +555,7 @@ CHANGES_FAQ = [
      "Because something happened to a team-mate. A backfield has a fixed "
      "number of carries and a passing game a fixed number of targets, so "
      "raising one player lowers another. Those changes are marked "
-     "Reconciled and grouped with the decision that caused them."),
+     "Related workload change and grouped with the news that caused them."),
     ("Does a camp report automatically change a projection?",
      "No. A confirmed starting change or a season-ending injury moves a "
      "projection. A report that somebody looks good in camp is weaker "

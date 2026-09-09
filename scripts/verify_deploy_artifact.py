@@ -781,7 +781,7 @@ def main() -> int:
     if public_only:
         import public_copy
         page_count, copy_failures = public_copy.audit(root)
-        check("all public pages are free of engineering notes", not copy_failures,
+        check("all public pages and change-history notes are free of engineering copy", not copy_failures,
               f"{page_count} pages; " + "; ".join(copy_failures[:5]))
         hidden = [root / route for route in
                   ("my-team", "my-league", "league-history")]
