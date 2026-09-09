@@ -288,7 +288,7 @@ def check_development_repairs(root, development=True):
     check("unavailable historical tools are hidden from the data hub",
           bool(hub) and all(f'href="/nfl/{route}/"' not in hub
                             for route in unavailable)
-          and "Only tools backed by validated data are shown here" in hub)
+          and "Explore the available tools. Use" in hub)
     check("draft-value preview labels both positional ranks",
           "MKT · LB · GAP" in hub)
 
@@ -779,6 +779,10 @@ def main() -> int:
         check_development_repairs(root, development=development)
         check_league_history(root, development=development)
     if public_only:
+        import public_copy
+        page_count, copy_failures = public_copy.audit(root)
+        check("all public pages are free of engineering notes", not copy_failures,
+              f"{page_count} pages; " + "; ".join(copy_failures[:5]))
         hidden = [root / route for route in
                   ("my-team", "my-league", "league-history")]
         check("development-only fantasy routes are absent from production",

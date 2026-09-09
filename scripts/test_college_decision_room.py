@@ -107,7 +107,7 @@ class CollegeDecisionRenderingTests(unittest.TestCase):
 
     def test_no_adp_probability_floor_or_ceiling_claims(self):
         text = (college_decision_room.SHELL + college_decision_room.JS).lower()
-        self.assertIn("validated college adp is not available", text)
+        self.assertIn("college adp is not available", text)
         for forbidden in ("win probability", "% chance", "floor", "ceiling"):
             self.assertNotIn(forbidden, text)
 

@@ -1449,12 +1449,8 @@ METHODOLOGY = """
      security, durability risk or evidence that the median projection may not
      fully represent the player's draft value. Every adjustment must include
      a published reason.</p>
-  <p class="rkdisc">ADP is not currently included in these rankings.
-     Market-value labels will be added only after a verified and consistently
-     updated ADP source is available.</p>
-  <p class="rknote">Projected points stay frozen. A documented ranking
-     adjustment can move a player's draft order without changing the
-     projection it was applied to.</p>
+  <p class="rkdisc">ADP is not included on this board.</p>
+  <p class="rknote">Draft rankings can differ from projected-point order.</p>
 </section>
 """
 

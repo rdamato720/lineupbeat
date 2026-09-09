@@ -247,7 +247,7 @@ for(const r of rows){let p=source.players.find(p=>p.id===r.dataset.id);assert.eq
         html = build_decision_room.render(self.payload)
         for text in ("Our Week 1 projection", "What the market says", "Opponent matchup",
                      "Expected opportunity", "Availability", "Data coverage",
-                     "Evidence agreement", "private consensus included", "Pass TDs",
+                     "Evidence agreement", "Betting-market context included", "Pass TDs",
                      "Rush yards"):
             self.assertIn(text, html)
         injuries_ready = bool(
@@ -300,8 +300,8 @@ for(const r of rows){let p=source.players.find(p=>p.id===r.dataset.id);assert.eq
         self.assertIn('if(weekly){if(g<=.5||q<=3)return"Toss-Up"', html)
         self.assertIn('boundary=weekly?Math.max(.5,reference*.03)', html)
         self.assertIn("recommendationsAuthorized=D.recommendation_state?.enabled===true", html)
-        self.assertIn("This model pick is not a validated lineup recommendation.", html)
-        self.assertIn("Model pick: ${safe(w.name)}", html)
+        self.assertIn("This compares projected points; it is not a start/sit recommendation.", html)
+        self.assertIn("Higher projection: ${safe(w.name)}", html)
 
 
 class CollegeWeek1EnrichmentTests(unittest.TestCase):
