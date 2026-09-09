@@ -720,6 +720,10 @@ def check_week1_boards(root):
               bool(expected) and found == expected
               and payload.get("updated_at") == reference.get("updated_at"))
         check(f"Week 1 {kind} is in the sitemap", route in sitemap)
+        check(f"Week 1 {kind} has distinct weekly and season navigation",
+              f'href="{route}" aria-current="page">Week 1 {kind.title()}</a>' in text
+              and 'href="/nfl/rankings/">Season Rankings</a>' in text
+              and 'href="/nfl/projections/">Season Projections</a>' in text)
 
 
 def main() -> int:

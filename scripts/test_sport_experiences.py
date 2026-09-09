@@ -48,13 +48,21 @@ class SportExperienceTests(unittest.TestCase):
     def test_switching_keeps_activity_and_search_context(self):
         nfl = seo.site_nav("rankings", "nfl")
         college = seo.site_nav("projections", "college")
-        self.assertIn('href="/nfl/rankings/" aria-current="page">Rankings</a>', nfl)
+        self.assertIn('href="/nfl/rankings/" aria-current="page">Season Rankings</a>', nfl)
         self.assertNotIn('href="/college-fantasy-football/week-1/" aria-current="page"', nfl)
         self.assertIn('href="/college-fantasy-football/projections/" aria-current="page">Season Projections</a>', college)
         self.assertNotIn('href="/nfl/projections/" aria-current="page"', college)
         self.assertIn("Search 2,205 College players", college)
         header = college.split("</header>", 1)[0]
         self.assertNotIn('id="site-player-list"', header)
+
+    def test_week1_boards_have_distinct_current_navigation(self):
+        for kind in ("rankings", "projections"):
+            header = seo.site_nav("week1_" + kind, "nfl")
+            expected = f'href="/nfl/week-1/{kind}/" aria-current="page">Week 1 {kind.title()}</a>'
+            self.assertEqual(header.count(expected), 2)
+            self.assertNotIn(f'href="/nfl/{kind}/" aria-current="page"', header)
+            self.assertIn('data-nav-group="nfl" data-current="true"', header)
 
     def test_dropdowns_group_the_complete_site_without_cross_sport_routes(self):
         header = seo.site_nav("decision", "college")
