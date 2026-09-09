@@ -5,7 +5,7 @@
 only the last successful snapshot; --refresh failures preserve that snapshot.
 """
 from __future__ import annotations
-import argparse, concurrent.futures, hashlib, html, json, re, subprocess, sys
+import argparse, concurrent.futures, hashlib, html, json, os, re, subprocess, sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
@@ -19,6 +19,44 @@ from wire.capture import _matches, _entry_time
 from wire.registry import load as load_sources
 SNAPSHOT = ROOT/'data/news_wire.json'
 PATH = '/nfl/wire/'
+
+def check_health(path=SNAPSHOT, now=None, max_age_hours=6):
+    """Report capture freshness separately from whether new headlines exist."""
+    now = now or datetime.now(timezone.utc)
+    problems = []
+    warnings = []
+    try:
+        data = validated(json.loads(path.read_text()))
+        stamp = datetime.fromisoformat(data['updated_at'])
+        if stamp.tzinfo is None:
+            raise ValueError('Missing capture timezone')
+        age = (now - stamp).total_seconds() / 3600
+        if age < -5/60 or age > max_age_hours:
+            problems.append('News snapshot is stale or has a future capture time')
+        health = data.get('sources', [])
+        responding = sum(h.get('ok') is True for h in health)
+        if not health or not responding:
+            problems.append('No successful source checks recorded')
+        elif responding < len(health):
+            warnings.append(f'{len(health)-responding} of {len(health)} source checks failed')
+        if not data['items']:
+            warnings.append('No eligible recent headlines; capture freshness is separate from coverage')
+        summary = (f"Last successful capture: {stamp.isoformat()} ({age:.1f} hours ago). "
+                   f"Sources: {responding}/{len(health)} responding. "
+                   f"Headlines: {len(data['items'])}. Zero model calls.")
+    except (OSError, ValueError, KeyError, TypeError):
+        problems.append('News snapshot is missing or invalid')
+        summary = 'No validated news snapshot available.'
+    for message in warnings:
+        print(f'::warning title=News coverage::{message}')
+    for message in problems:
+        print(f'::error title=News freshness::{message}')
+    print(summary)
+    if os.environ.get('GITHUB_STEP_SUMMARY'):
+        with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as report:
+            report.write('\n## News freshness\n' + summary + '\n' +
+                         ''.join(f'- {m}\n' for m in problems + warnings))
+    return not problems
 
 def normalized(value):
     return ' '.join(re.sub(r'[^a-z0-9 ]', '', value.lower()).split())
@@ -82,6 +120,7 @@ def refresh(path=SNAPSHOT):
             rows.setdefault(row['url'],row)
     data={'updated_at':now.isoformat(),'sources':health,
           'items':sorted(rows.values(),key=lambda x:(x['published_at'],x['id']),reverse=True)[:150]}
+    validated(data)
     temp=path.with_suffix('.tmp');temp.write_text(json.dumps(data,indent=2)+'\n');temp.replace(path)
     print(f"News feeds: {sum(h['ok'] for h in health)}/{len(health)} responding; {len(data['items'])} headlines; zero model calls")
     return data
@@ -133,7 +172,9 @@ def build(base='https://lineupbeat.com', out=None):
     return target
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--refresh',action='store_true');ap.add_argument('--refresh-only',action='store_true');ap.add_argument('--base',default='https://lineupbeat.com');args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--refresh',action='store_true');ap.add_argument('--refresh-only',action='store_true');ap.add_argument('--check-health',action='store_true');ap.add_argument('--base',default='https://lineupbeat.com');args=ap.parse_args()
+    if args.check_health:
+        raise SystemExit(0 if check_health() else 1)
     if args.refresh or args.refresh_only:refresh()
     if not args.refresh_only:build(args.base)
 if __name__=='__main__':main()

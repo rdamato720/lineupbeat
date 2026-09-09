@@ -33,7 +33,7 @@ from beatwire import cli as beat_cli
 
 
 class ReviewRepairTests(unittest.TestCase):
-    def test_refresh_uses_openai_for_recent_news(self):
+    def test_recurring_refresh_no_longer_receives_paid_news_credentials(self):
         workflow = (ROOT / ".github" / "workflows" / "refresh.yml").read_text()
         refresh = workflow.split("\n  refresh:", 1)[1]
         pipeline = refresh.split("      - name: Run pipeline", 1)[1].split(
@@ -41,9 +41,9 @@ class ReviewRepairTests(unittest.TestCase):
         preflight = refresh.split("      - name: Preflight", 1)[1].split(
             "      - name: Deploy", 1)[0]
         for step in (pipeline, preflight):
-            self.assertIn(
-                "OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}", step
-            )
+            self.assertNotIn("OPENAI_API_KEY", step)
+            self.assertNotIn("TWITTERAPI_IO_KEY", step)
+            self.assertNotIn("SORSA_API_KEY", step)
             self.assertNotIn("ANTHROPIC_API_KEY", step)
 
     def test_recent_news_extractor_uses_openai_structured_outputs(self):

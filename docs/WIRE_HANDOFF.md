@@ -30,6 +30,24 @@ The 86 approved commentary publications, evidence, reviews and numerical
 fantasy data are untouched. Their approval requirements below still apply.
 Run `scripts/test_news_wire.py` in addition to the established Wire gates.
 
+## 2026-09-09 recurring news retirement and freshness
+
+The owner authorized retirement of obsolete paid news processing. The old
+`wire-monitor.yml` has no schedule and its historical job is unconditionally
+disabled. Normal `refresh.yml` runs no longer fetch X or run model news
+extraction. Historical evidence, approvals and publications are preserved;
+explicit review tooling remains separate from recurring production runs.
+
+The RSS-only workflow also runs when its capture code/workflow changes, so a
+release verifies capture, snapshot banking and page-only deployment end to
+end. Normal externally scheduled site refreshes capture and bank the same
+news-only snapshot as a backup. `skip_fetch=true` still means page-only.
+Freshness checks fail for missing/invalid snapshots, future capture times,
+no successful source checks or a capture over six hours old. Partial source
+failures and zero eligible headlines produce warnings, not false freshness
+failures. Run summaries include capture age, responding sources and headline
+count. Failure annotations do not send email or change notification settings.
+
 ## 2026-08-29 player-card restoration
 
 The curated digest experiment is retired. The homepage again renders the

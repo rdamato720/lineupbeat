@@ -155,7 +155,8 @@ check("publication changes on main trigger a replacement deployment",
       and '- "data/wire_publications.json"' in _refresh)
 check("publication-triggered deployments skip provider and roster refreshes",
       _refresh.count('if [ "$GITHUB_EVENT_NAME" != "push" ]') >= 2
-      and 'if [ "$GITHUB_EVENT_NAME" = "push" ]' in _refresh)
+      and 'python -m beatwire.cli run' not in _refresh
+      and 'inputs.skip_fetch != true' in _refresh)
 # The verifier reads the published file rather than naming players, so a
 # retraction cannot fail the deploy.
 for _need, _label in [('"nfl" / "wire"', "that no separate page ships"),

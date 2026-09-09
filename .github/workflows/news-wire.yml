@@ -3,6 +3,12 @@ on:
   schedule:
     - cron: '17,47 * * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/news-wire.yml'
+      - 'scripts/build_news_wire.py'
+      - 'scripts/test_news_wire.py'
 permissions:
   contents: write
   actions: write
@@ -22,6 +28,9 @@ jobs:
       - run: python scripts/test_news_wire.py
       - name: Refresh publisher headlines without model calls
         run: python scripts/build_news_wire.py --refresh-only
+      - name: Report news freshness
+        if: always()
+        run: python scripts/build_news_wire.py --check-health
       - name: Bank the news snapshot
         run: |
           git config user.name 'github-actions[bot]'
@@ -35,3 +44,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run refresh.yml --ref main -f skip_fetch=true
+      - name: Flag failed news refresh
+        if: failure()
+        run: |
+          echo "::error title=News refresh failed::The news capture, snapshot commit or site rebuild dispatch failed. Review this run."
+          echo "## News refresh failed — previous successful data is retained" >> "$GITHUB_STEP_SUMMARY"

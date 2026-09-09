@@ -49,4 +49,37 @@ class NewsWireTests(unittest.TestCase):
         pubs=n.ROOT/'data/wire_publications.json';before=hashlib.sha256(pubs.read_bytes()).hexdigest()
         with tempfile.TemporaryDirectory() as d:n.build(out=Path(d)/'index.html')
         self.assertEqual(before,hashlib.sha256(pubs.read_bytes()).hexdigest())
+    @patch.dict(n.os.environ, {}, clear=True)
+    @patch("builtins.print")
+    def test_health_distinguishes_quiet_feed_from_stale_or_failed_capture(self, _print):
+        with tempfile.TemporaryDirectory() as d:
+            path=Path(d)/'news.json'
+            data={'updated_at':self.now.isoformat(),'items':[],
+                  'sources':[{'source_id':'pewter_report','ok':True}]}
+            path.write_text(json.dumps(data))
+            self.assertTrue(n.check_health(path,self.now))
+            data['updated_at']='2026-09-08T17:00:00+00:00'
+            path.write_text(json.dumps(data))
+            self.assertFalse(n.check_health(path,self.now))
+            data['updated_at']=self.now.isoformat();data['sources'][0]['ok']=False
+            path.write_text(json.dumps(data))
+            self.assertFalse(n.check_health(path,self.now))
+            path.write_text('invalid')
+            self.assertFalse(n.check_health(path,self.now))
+    def test_recurring_workflows_cannot_run_legacy_paid_news(self):
+        import yaml
+        workflows=n.ROOT/'.github/workflows'
+        monitor=yaml.load((workflows/'wire-monitor.yml').read_text(),Loader=yaml.BaseLoader)
+        self.assertNotIn('schedule',monitor['on'])
+        self.assertEqual(monitor['jobs']['monitor']['if'],'${{ false }}')
+        refresh=yaml.load((workflows/'refresh.yml').read_text(),Loader=yaml.BaseLoader)
+        steps=refresh['jobs']['refresh']['steps']
+        commands='\n'.join(s.get('run','') for s in steps)
+        self.assertNotIn('beatwire.cli run',commands)
+        self.assertNotIn('wire_mobile_draft.py',commands)
+        self.assertIn('build_news_wire.py --refresh-only',commands)
+        self.assertIn('build_news_wire.py --check-health',commands)
+        pipeline=next(s for s in steps if s.get('name')=='Run pipeline')
+        self.assertNotIn('OPENAI_API_KEY',pipeline['env'])
+        self.assertNotIn('TWITTERAPI_IO_KEY',pipeline['env'])
 if __name__=='__main__':unittest.main()
