@@ -198,7 +198,7 @@ class LayoutContracts(unittest.TestCase):
 
     def test_renderers_put_the_answer_before_supporting_evidence(self):
         nfl = build_decision_room.render(decision_data.load_season())
-        self.assertIn("Model pick:", nfl)
+        self.assertIn("Higher projection:", nfl)
         self.assertIn("Too close to call", nfl)
         self.assertIn('<details class="dr-full">', nfl)
         self.assertIn("The supporting evidence is split.", nfl)

@@ -860,10 +860,10 @@ NAV_JS = """
 
 GLOBAL_FOOTER = """<footer class="global-footer"><div class="wrap">
   <div class="fbrand"><span class="flogo">Lineup<em>Beat</em></span>
-    <p class="ftag">NFL and College fantasy projections, comparisons, decision boundaries, rankings, and accountable recommendations.</p></div>
+    <p class="ftag">NFL and College fantasy rankings, projections, and player comparisons.</p></div>
   <div class="frow"><div class="fcol"><h3>Decision tools</h3><p><a href="/my-team/">My Team</a><br><a href="/my-league/">My League</a><br><a href="/decision-room/nfl/">NFL Decision Room</a><br><a href="/decision-room/college/">College Decision Room</a><br><a href="/nfl/data/">NFL Fantasy Data</a><br><a href="/nfl/who-should-i-draft/">Advanced Draft Comparison</a></p></div>
-  <div class="fcol"><h3>Validated data</h3><p><a href="/nfl/rankings/">NFL rankings</a><br><a href="/nfl/projections/">NFL projections</a><br><a href="/college-fantasy-football/week-1/">College Week 1</a><br><a href="/college-fantasy-football/projections/">College season projections</a></p></div>
-  <div class="fcol"><h3>Methodology &amp; accountability</h3><p><a href="/about/">How Lineup Beat makes and preserves decisions</a></p></div>
+  <div class="fcol"><h3>Rankings &amp; projections</h3><p><a href="/nfl/rankings/">NFL rankings</a><br><a href="/nfl/projections/">NFL projections</a><br><a href="/college-fantasy-football/week-1/">College Week 1</a><br><a href="/college-fantasy-football/projections/">College season projections</a></p></div>
+  <div class="fcol"><h3>About LineupBeat</h3><p><a href="/about/">How LineupBeat works</a></p></div>
   <div class="fcol"><h3>Contact</h3><p><a href="mailto:hello@lineupbeat.com">hello@lineupbeat.com</a></p></div></div>
   <div class="fbase"><span>&copy; 2026 LineupBeat</span><span>Decision tools for NFL and College fantasy football.</span></div>
 </div></footer>"""
@@ -1316,7 +1316,7 @@ DATA_PAGES = [
      "PPR, Non-PPR, Half-PPR and Superflex draft rankings, overall and by "
      "position, with tiers and transparent methodology."),
     ("compare", f"/{SPORT}/who-should-i-draft/", "Who Should I Draft?",
-     "Compare rankings, projections, ADP, and validated historical weekly "
+     "Compare rankings, projections, ADP, and historical weekly "
      "consistency, floor, and ceiling."),
     ("projections", f"/{SPORT}/projections/", "Projections",
      "Full-season points in three scoring formats, with the stat line "

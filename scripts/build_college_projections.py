@@ -304,20 +304,16 @@ FAQ = [
      "school roster listings and have not been checked against Yahoo or any "
      "other platform's eligibility."),
     ("How are the projections built?",
-     DATA["methodology"]),
+     "Season estimates combine expected team production with player roles and projected usage."),
     ("Why do some receivers and tight ends show carries?",
      "Twenty-two players take enough carries that rushing materially "
      "decides their fantasy value. One tight end's ranking rests mostly on "
      "his rushing. Their carries and rushing yards are shown so the "
      "ranking explains itself rather than looking like an error."),
     ("Why are there no target projections?",
-     "Receptions are allocated directly by the underlying models. No target "
-     "layer has been built, so targets would have to be invented here, and "
-     "an invented column would weaken numbers that are otherwise exact."),
-    ("How accurate are the team totals?",
-     "Player projections aggregate exactly to the corresponding frozen "
-     "team totals, to twelve decimal places, across fifteen "
-     "reconciliation checks."),
+     "This board includes projected receptions and receiving yards; target estimates are not available."),
+    ("How do player and team projections relate?",
+     "Player estimates add up to the projected team totals. Actual results may differ."),
 ]
 
 
@@ -375,7 +371,7 @@ def _page(pos):
             "creditText": "LineupBeat",
             "inLanguage": "en-US",
             "spatialCoverage": "United States",
-            "measurementTechnique": DATA["methodology"],
+            "measurementTechnique": "Season estimates based on expected team production, player roles and projected usage.",
             "variableMeasured": [
                 {"@type": "PropertyValue", "name": n_, "description": d_}
                 for n_, d_ in (
@@ -421,8 +417,7 @@ def _page(pos):
       {len(DATA['teams'])} teams, using Yahoo scoring. Every player's
       projected stat line is shown behind the ranking.</p>
     {f'<p class="cintro">{e(INTROS[pos])}</p>' if pos else ''}
-    <p class="cmeta">Updated {longdate(DATA['generatedAt'])} &middot;
-      Model {DATA['modelVersion']}</p>
+    <p class="cmeta">Updated {longdate(DATA['generatedAt'])}</p>
     <a class="cweekly" href="/college-fantasy-football/week-1/">View Week 1 projections &amp; rankings &rarr;</a>
   </div>
   {tabs(pos)}

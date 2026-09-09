@@ -92,5 +92,28 @@ class PublicReleaseTests(unittest.TestCase):
             self.assertFalse((root / "_headers").exists())
 
 
+class PublicCopyTests(unittest.TestCase):
+    def test_historical_copy_is_removed_without_changing_values_or_news(self):
+        import public_copy
+        page = '<main><p class="notice">Published only after exact current active identity, team and position reconciliation Projection values retained from the reviewed August 30 baseline Current injury reporting is not incorporated No v1.5 fallback, benchmark copying or sportsbook adjustment</p><p>Player projection: 20.7</p><p>A developmental quarterback joined the roster.</p><script type="application/json">{"version":"v1.5","points":20.7}</script></main>'
+        cleaned = public_copy.clean_page(page)
+        self.assertNotIn('Published only after', cleaned)
+        self.assertIn('Player projection: 20.7', cleaned)
+        self.assertIn('A developmental quarterback joined the roster.', cleaned)
+        self.assertIn('{"version":"v1.5","points":20.7}', cleaned)
+        self.assertEqual(public_copy.clean_page(cleaned), cleaned)
+        old = '<p class="eyebrow">2026 season · evidence hold</p><h2>Season projection withheld</h2><p>Example Player is on the current NYJ roster, but does not have one exact current name, team and position match in the reviewed projection baseline. Lineup Beat will not fill that gap with a lower-confidence estimate.</p>'
+        cleaned = public_copy.clean_page(old)
+        self.assertIn('A season projection is not yet available for Example Player.', cleaned)
+        self.assertIsNone(public_copy.PROHIBITED.search(public_copy.visible_text(cleaned)))
+
+    def test_copy_gate_scans_nested_reader_text_but_not_script_metadata(self):
+        import public_copy
+        page = '<p>Published only after <b>exact current active identity</b></p>'
+        self.assertIsNotNone(public_copy.PROHIBITED.search(public_copy.visible_text(page)))
+        page = '<p>Season projections updated August 30, 2026.</p><script>{"reason":"qualifying out-of-sample validation"}</script>'
+        self.assertIsNone(public_copy.PROHIBITED.search(public_copy.visible_text(page)))
+
+
 if __name__ == "__main__":
     unittest.main()

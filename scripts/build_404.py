@@ -35,8 +35,7 @@ html = f"""<!doctype html>
 <main class="nf">
   <h1>That page isn't here</h1>
   <p>The address may be mistyped, or the player may not have a page yet.
-     Player Decision Profiles are published only when validated profile data
-     is available, so a deep roster name may not have a page of his own.</p>
+     Try the player search or explore the rankings and projections below.</p>
   <div class="links">
     <a href="/">Home</a>
     <a href="/decision-room/nfl/">Decision Room</a>

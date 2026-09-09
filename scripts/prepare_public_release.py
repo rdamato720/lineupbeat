@@ -11,6 +11,8 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import urlsplit
 
+import public_copy
+
 
 HIDDEN_ROUTES = ("my-team", "my-league", "league-history")
 HIDDEN_ASSETS = (
@@ -141,7 +143,7 @@ def prepare(root: Path) -> None:
     for path in root.rglob("*.html"):
         text = path.read_text(errors="replace")
         scrubbed = scrub_development_protection(
-            scrub_connector_navigation(text))
+            scrub_connector_navigation(public_copy.clean_page(text)))
         if scrubbed != text:
             path.write_text(scrubbed)
 

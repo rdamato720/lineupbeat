@@ -149,7 +149,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
             if injuries_ready else
             "Weekly projections for Week 1 · Current injuries are not included."
         )
-        for text in ("NFL WEEK 1 DECISION ROOM", "Who should you start?",
+        for text in ("NFL WEEK 1 DECISION ROOM", "Compare Week 1 projected points",
                      injury_copy, "Other close Week 1 calls",
                      "Decision Room questions"):
             self.assertIn(text, self.html)
@@ -189,7 +189,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
     def test_tie_copy_is_present_and_does_not_claim_a_higher_projection(self):
         self.assertIn("No clear edge", self.html)
         self.assertIn("Toss-Up", self.html)
-        self.assertIn("inside the deterministic no-call band", self.html)
+        self.assertIn("too small to show a clear edge", self.html)
         self.assertNotIn("Recommend ${w.name}", self.html)
 
     def test_no_probability_floor_or_ceiling_claims(self):

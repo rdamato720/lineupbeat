@@ -21,7 +21,8 @@ SOURCE = ROOT / 'data/nfl_season/2026/v1.6-trusted-current'
 SITE = ROOT / 'site'
 FORMATS = {'ppr': ('PPR', 'ppr'), 'half_ppr': ('Half-PPR', 'half-ppr'), 'non_ppr': ('Non-PPR', 'non-ppr')}
 FIELDS = [('attempts','Pass attempts'),('completions','Completions'),('passing_yards','Passing yards'),('passing_tds','Passing TD'),('passing_interceptions','Interceptions'),('carries','Carries'),('rushing_yards','Rushing yards'),('rushing_tds','Rushing TD'),('targets','Targets'),('receptions','Receptions'),('receiving_yards','Receiving yards'),('receiving_tds','Receiving TD'),('fumbles_lost_total','Fumbles lost')]
-DISCLOSURE = '''<section class="v15method" id="methodology"><h2>Why this is the trusted set</h2><p>These projections retain Lineup Beat's reviewed August 30 season stat lines only where a player also has one exact, current active roster match by normalized name, NFL team and position. There is no fuzzy matching. Eighty-one current players without that level of support are withheld instead of receiving a lower-confidence estimate.</p><p>The experimental v1.5 values are not used. FantasyGuru remains a private quality-control benchmark: its values are not copied, blended or used to tune individual players. Rankings are calculated directly from the retained stat lines for PPR, Half-PPR and Non-PPR scoring.</p><p>Current injuries and season sportsbook props are not incorporated. Available 60-second-delayed Week 1 markets are not season-projection inputs. These are projections, not guarantees; Week 1 and My Team recommendations remain disabled.</p></section>'''
+from public_copy import SEASON_NOTE as DISCLOSURE
+
 CSS = '''
 .v15{max-width:1120px;margin:auto;padding:32px 16px 60px;color:#e9ece7;font:16px/1.55 var(--text,Georgia,serif)}.v15 h1{font:700 clamp(30px,5vw,56px)/1.04 var(--text,Georgia,serif);letter-spacing:-.035em;margin:8px 0 16px}.v15 h2{font:600 23px/1.2 var(--text,Georgia,serif)}.v15 a{color:#c6f24e}.v15 .eyebrow{font-size:12px;letter-spacing:.12em;color:#c6f24e;text-transform:uppercase}.v15 .meta{color:#bac2ba}.v15 .eyebrow,.v15 .meta,.v15nav,.v15filters,.v15 th,.v15 .caption{font-family:var(--agate,Arial,sans-serif)}.v15nav,.v15filters{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.v15nav a{padding:7px 12px;border:1px solid #3a4437;border-radius:4px;text-decoration:none}.v15nav a[aria-current=page]{background:#c6f24e;color:#142008}.v15 label{display:block;font-size:13px}.v15 input,.v15 select,.v15 button{max-width:100%;min-height:44px;background:#111a12;color:#f1f5ed;border:1px solid #536047;border-radius:4px;padding:9px;font:inherit}.v15 input{width:270px}.v15 button{align-self:end;cursor:pointer}.v15 table{width:100%;border-collapse:collapse;table-layout:fixed}.v15 tbody tr{content-visibility:auto;contain-intrinsic-size:68px}.v15 th{font-size:12px;text-align:left;color:#bdc9b1;padding:10px 5px}.v15 td{padding:12px 5px;border-top:1px solid #30392e;vertical-align:top}.v15 .rank{width:52px}.v15 .points{width:88px;text-align:right;font-variant-numeric:tabular-nums}.v15 .identity{display:flex;gap:10px;align-items:center;min-width:0}.v15 .identity img{width:42px;height:42px;object-fit:contain;flex-shrink:0}.v15 .identity a{font-weight:700;overflow-wrap:anywhere}.v15 .identity small{display:block;color:#b6c0b0;font-size:12px}.v15 .identity .logo{width:20px;height:20px;vertical-align:middle}.v15 details{margin:8px 0;color:#b8c3b1;font-size:13px}.v15 summary{cursor:pointer}.v15 .statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:14px 0}.v15 .statgrid div{padding:10px;background:#162016}.v15 .statgrid b{display:block;font-size:20px;color:#edf4e7}.v15 .statgrid span{font-size:12px;color:#bac9ad}.v15method{margin-top:32px;border-top:2px solid #829d4b;padding-top:14px}.v15 [hidden]{display:none!important}.v15 .notice{border-left:3px solid #c6f24e;background:#17200d;padding:10px 14px}.v15.notice,.v15 .notice,.v15method,.v15method p{white-space:normal!important;overflow-wrap:anywhere;max-width:100%}.v15 .points span{display:block;font-size:11px;color:#bcc9b1}.v15 .caption{font-size:12px;color:#bdc9b1;margin:8px 0}.v15 .empty{padding:16px}.v15 .formatpts{display:flex;gap:18px;flex-wrap:wrap}.v15 .formatpts strong{font-size:28px;display:block}.v15 .formatpts span{font-size:13px}@media(max-width:480px){.v15{padding:24px 12px}.v15 .rank{width:35px}.v15 .points{width:62px}.v15 .identity{gap:5px}.v15 .identity img{width:30px;height:30px}.v15 .identity a{font-size:14px}.v15 .identity small{font-size:11px}.v15 th{font-size:11px}.v15 td{padding:10px 3px}.v15nav{gap:6px}.v15nav a{font-size:13px;padding:7px}.v15 details{font-size:12px}}
 '''
@@ -95,7 +96,7 @@ def wrapper(title,path,body,position='',script='',section='projections'):
     import seo
     css,_header,footer=bp.site_chrome()
     header=seo.site_nav(section, 'nfl')
-    description = "Trusted 2026 NFL season projections and scoring rankings for 424 current players."
+    description = "2026 NFL season projections and fantasy rankings for QB, RB, WR and TE."
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Lineup Beat</title><meta name="description" content="{description}"><link rel="canonical" href="{site_origin()}{path}"><style>{css}{seo.UI_CSS}{CSS}</style></head><body data-position="{position}">{header}<main class="v15">{body}</main>{footer}<script>{script}</script></body></html>'''
 
 def identity(p):
@@ -113,9 +114,9 @@ def table(model,ranking,fmt='ppr',pos=None,kind='projections',top=False):
         details=''
         if kind=='projections':
             stats=' · '.join(f'{label}: {p["stat_projection"][m]:.1f}' for m,label in FIELDS if p['stat_projection'][m])
-            details=f'<details><summary>Projected season stat line</summary><p>{stats}</p><p>Reviewed August 30 stat line; current injury adjustments are unavailable.</p></details>'
+            details=f'<details><summary>Projected season stat line</summary><p>{stats}</p></details>'
         parts.append(f'''<tr data-player-id="{pid}" data-name="{esc(p['name'].lower())}" data-team="{p['team']}" data-position="{p['position']}" {' '.join(attrs)}><td class="rank">{r['position_rank'] if pos else r['overall_rank']}</td><td>{identity(p)}{details}</td><td class="points"><b class="pointvalue">{p['formats'][fmt]:.1f}</b><span class="pointlabel">{FORMATS[fmt][0]}</span></td></tr>''')
-    return '<table><caption class="caption">Descending projected points; stable player ID breaks ties.</caption><thead><tr><th class="rank">Rank</th><th>Player / team / role</th><th class="points">Points</th></tr></thead><tbody>'+''.join(parts)+'</tbody></table>'
+    return '<table><caption class="caption">Ranked by projected season points.</caption><thead><tr><th class="rank">Rank</th><th>Player / team / role</th><th class="points">Points</th></tr></thead><tbody>'+''.join(parts)+'</tbody></table>'
 
 def board_page(model,ranking,path,fmt='ppr',pos=None,kind='projections',top=False):
     label=FORMATS[fmt][0];title=f'2026 NFL {pos+" " if pos else ""}{label+" " if kind=="rankings" else ""}{kind.title()}'
@@ -127,7 +128,7 @@ def board_page(model,ranking,path,fmt='ppr',pos=None,kind='projections',top=Fals
         nav+='<details><summary>More ranking views</summary><nav class="v15nav">'+''.join(f'<a href="{url}">{label}</a>' for label,url,live in more.FORMAT_NAV if live)+'</nav></details>'
     controls='<div class="v15filters"><label>Search player<input id="season-search" type="search" placeholder="Name"></label><label>Scoring<select id="season-format">'+''.join(f'<option value="{f}"'+(' selected' if f==fmt else '')+f'>{lab}</option>' for f,(lab,_) in FORMATS.items())+'</select></label><label>Position<select id="season-position"><option value="">All positions</option>'+''.join(f'<option value="{p}"'+(' selected' if pos==p else '')+f'>{p}</option>' for p in ('QB','RB','WR','TE'))+'</select></label><label>Team<select id="season-team"><option value="">All teams</option>'+''.join(f'<option>{t}</option>' for t in sorted({p['team'] for p in model['players']}))+'</select></label>'+('<button id="season-show-all" type="button">Show all 424</button>' if top else '')+'</div>'
     counts=model['metadata']['position_counts']
-    body=f'<p class="eyebrow">NFL · 2026 season · trusted current set</p><h1>{title}</h1><p class="meta">{model["metadata"]["trusted_population"]} trusted current players · QB {counts["QB"]} / RB {counts["RB"]} / WR {counts["WR"]} / TE {counts["TE"]}<br>Projection values reviewed August 30 · current roster matched September 2</p>{nav}{controls}<p id="season-count" aria-live="polite"></p>'+table(model,ranking,fmt,pos,kind,top)+'<p class="empty" id="season-empty" hidden>No matching players.</p>'+DISCLOSURE
+    body=f'<p class="eyebrow">NFL · 2026 season</p><h1>{title}</h1><p class="meta">{model["metadata"]["trusted_population"]} players · QB {counts["QB"]} / RB {counts["RB"]} / WR {counts["WR"]} / TE {counts["TE"]}<br>Season projections updated August 30, 2026</p>{nav}{controls}<p id="season-count" aria-live="polite"></p>'+table(model,ranking,fmt,pos,kind,top)+'<p class="empty" id="season-empty" hidden>No matching players.</p>'+DISCLOSURE
     page=wrapper(title,path,body,pos or '',JS)
     return page.replace('<body data-position=', '<body data-top="200" data-position=',1) if top else page
 
@@ -150,7 +151,7 @@ def recommendation_gates():
     state=decision_data.WEEKLY_RECOMMENDATION_STATE
     gates={'season_version':'v1.6-trusted-current','week1_recommendations_enabled':state['enabled'],'my_team_recommendations_enabled':state['enabled'],'reason':state['reason']}
     (SITE/'data/nfl-trusted-release-gates.json').write_text(json.dumps(gates,sort_keys=True)+'\n')
-    notice=f'<aside class="v15 notice" id="weekly-release-gate" data-weekly-recommendations="disabled"><strong>{esc(state["label"])}.</strong> {esc(state["reason"])}</aside>'
+    notice=f'<aside class="v15 notice" id="weekly-release-gate" data-weekly-recommendations="disabled"><strong>{esc(state["label"])}.</strong> Compare projected Week 1 points, matchups and player status.</aside>'
     page=SITE/'decision-room/nfl/index.html';text=page.read_text()
     if text.count('<section class="dr-compare"')!=1:raise ValueError('weekly comparison notice insertion is ambiguous')
     text=text.replace('<section class="dr-compare"',notice+'<section class="dr-compare"',1)
@@ -183,8 +184,7 @@ def player_pages(model,ranking):
             bp.PROJECTIONS=prior
         stats=''.join(f'<div><span>{label}</span><b>{p["stat_projection"][m]:.1f}</b></div>' for m,label in FIELDS if p['stat_projection'][m] or (p['position']=='QB' and m in ('attempts','completions')))
         pts=''.join(f'<div><span>{label} · {p["position"]}{next(r["position_rank"] for r in ranking["formats"][fmt]["rows"] if r["gsis_id"]==p["gsis_id"])}</span><strong>{p["formats"][fmt]:.1f}</strong></div>' for fmt,(label,_) in FORMATS.items())
-        flags=' '.join(p['evidence_limitation_flags'])
-        panel=f'<section class="proj v15" data-season-player-id="{p["gsis_id"]}"><p class="eyebrow">2026 season · trusted current set</p><h2>Season projection</h2><div class="formatpts">{pts}</div><p>{p["team"]} · {p["position"]} · {esc(p["offensive_role"] or "Depth unavailable")} · current active exact match</p><p class="meta">Projection values reviewed August 30 · current roster matched September 2</p>'+ (f'<p class="notice">{esc(flags)}</p>' if flags else '')+f'<div class="statgrid">{stats}</div><a href="/nfl/projections/{p["position"].lower()}/">All {p["position"]} projections</a> · <a href="/nfl/rankings/ppr/{p["position"].lower()}/">PPR rankings</a>{DISCLOSURE}</section>'
+        panel=f'<section class="proj v15" data-season-player-id="{p["gsis_id"]}"><p class="eyebrow">2026 season</p><h2>Season projection</h2><div class="formatpts">{pts}</div><p>{p["team"]} · {p["position"]} · {esc(p["offensive_role"] or "Depth unavailable")}</p><p class="meta">Season projections updated August 30, 2026</p>'+f'<div class="statgrid">{stats}</div><a href="/nfl/projections/{p["position"].lower()}/">All {p["position"]} projections</a> · <a href="/nfl/rankings/ppr/{p["position"].lower()}/">PPR rankings</a>{DISCLOSURE}</section>'
         if re.search(r'<section class="proj[" ]',legacy):legacy=re.sub(r'<section class="proj[" ].*?</section>',lambda _:panel,legacy,count=1,flags=re.S)
         else:legacy=legacy.replace('</main>',panel+'</main>',1)
         # Remove outdated current injury/ADP assertions from this season view.
@@ -216,7 +216,7 @@ def withheld_player_pages():
         path=SITE/'nfl'/re.sub(r'[\s_]+','-',re.sub(r'[^\w\s-]','',p['name'].lower())).strip('-')/'index.html'
         if not path.exists():continue
         text=path.read_text()
-        panel=f'''<section class="proj v15" data-season-projection="withheld"><p class="eyebrow">2026 season · evidence hold</p><h2>Season projection withheld</h2><p>{esc(p['name'])} is on the current {p['team']} roster, but does not have one exact current name, team and position match in the reviewed projection baseline. Lineup Beat will not fill that gap with a lower-confidence estimate.</p><p><a href="/nfl/projections/coverage/">See trusted-set coverage</a></p></section>'''
+        panel=f'''<section class="proj v15" data-season-projection="withheld"><p class="eyebrow">2026 season</p><h2>Season projection unavailable</h2><p>A season projection is not yet available for {esc(p['name'])}.</p><p><a href="/nfl/projections/coverage/">See projection coverage</a></p></section>'''
         if re.search(r'<section class="proj[" ]',text):
             text=re.sub(r'<section class="proj[" ].*?</section>',lambda _:panel,text,count=1,flags=re.S)
         elif '</main>' in text:text=text.replace('</main>',panel+'</main>',1)
@@ -252,10 +252,10 @@ def build():
     withheld=json.loads((SOURCE/'withheld_players.json').read_text())
     rows=''.join(f'<tr><td>{esc(p["name"])}</td><td>{p["team"]}</td><td>{p["position"]}</td><td>{esc(p["offensive_role"] or "Role unavailable")}</td></tr>' for p in withheld['players'])
     path='/nfl/projections/coverage/'
-    write(path,wrapper('Trusted projection coverage',path,f'<p class="eyebrow">2026 season · evidence policy</p><h1>Trusted projection coverage</h1><p>{model["metadata"]["trusted_population"]} current players have a reviewed projection and one exact current identity, team and position match. The {withheld["withheld_population"]} players below are deliberately withheld; no v1.5 fallback or fabricated estimate is shown.</p><table><thead><tr><th>Player</th><th>Team</th><th>Position</th><th>Current role</th></tr></thead><tbody>'+rows+'</tbody></table>'+DISCLOSURE))
+    write(path,wrapper('Season projection coverage',path,f'<p class="eyebrow">2026 season · evidence policy</p><h1>Season projection coverage</h1><p>Season projections are available for {model["metadata"]["trusted_population"]} players. The {withheld["withheld_population"]} players below do not yet have a season projection.</p><table><thead><tr><th>Player</th><th>Team</th><th>Position</th><th>Current role</th></tr></thead><tbody>'+rows+'</tbody></table>'+DISCLOSURE))
     for page in list((SITE/'nfl/who-should-i-draft').rglob('index.html'))+[SITE/'nfl/draft-value/index.html']:
         if page.exists():
-            text=page.read_text().replace('</main>','<div class="v15"><p class="eyebrow">Season source: trusted current set · September 2, 2026</p>'+DISCLOSURE+'</div></main>')
+            text=page.read_text().replace('</main>','<div class="v15"><p class="eyebrow">2026 season projections</p>'+DISCLOSURE+'</div></main>')
             page.write_text(text.replace('</head>','<style>'+CSS+'</style></head>'))
     hub=SITE/'nfl/data/index.html'
     hub.write_text(hub.read_text().replace('615-player','424-player').replace('505-player','424-player').replace('216-player','424-player'))

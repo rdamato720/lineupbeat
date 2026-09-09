@@ -71,7 +71,7 @@ def mark_trusted_ranking_pages():
     """Disclose trusted coverage without changing the established layout."""
     note=(
         '<p class="rkstatus"><a href="/nfl/projections/coverage/">'
-        'Trusted current set: 424 projected players; 81 evidence holds'
+        '424 players · Season projection coverage'
         '</a></p>'
     )
     for page in (ROOT/'site/nfl/rankings').rglob('index.html'):

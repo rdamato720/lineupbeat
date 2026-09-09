@@ -518,7 +518,7 @@ def page_description(name, who, nuggets, wire_publications=None):
     if not n:
         # A projected player with nothing filed yet. Describe what the page
         # actually holds rather than promising reports it does not have.
-        return f"{who}. A Player Decision Profile; validated projection data is not currently available."
+        return f"{who}. A Player Decision Profile; a projection is not currently available."
     lead = (nuggets[0]["claim"] or "").rstrip(".")
     tail = (f"{n} beat reports on {name}, newest first, each linked to the "
             f"reporter who filed it.")
@@ -929,7 +929,7 @@ def player_page(p, nuggets, base, wire_publications=None):
                f'{len(nuggets)} report'
                f'{"s" if len(nuggets) != 1 else ""}</h2>\n'
                if nuggets else
-               '  <p class="dlede decision-empty">No additional validated decision context is available; the projection panel above remains the current Lineup Beat view.</p>\n')
+               '  <p class="dlede decision-empty">See the season projection above and visit the Week 1 boards for weekly matchups.</p>\n')
             + "\n".join(arts)
             + related_players_block(p))
 
@@ -958,7 +958,7 @@ def team_page(team, players, count, base):
     for n, _ in board_players:
         pr = PROJECTIONS.get(slug(n))
         context = (f'{pr["pos"]}{pr["rank"]} · {pr["ppr"]:.1f} PPR points'
-                   if pr else 'Validated projection unavailable')
+                   if pr else 'Projection unavailable')
         label = f'{esc(n)}<span>{esc(context)}</span>'
         target = SITE / SPORT / slug(n) / "index.html"
         cards.append((f'<a href="/{SPORT}/{slug(n)}/">{label}</a>'
@@ -980,7 +980,7 @@ def team_page(team, players, count, base):
             f'alt="{esc(full)}" loading="lazy" width="84" height="84" '
             f'style="border-radius:0;object-fit:contain">\n'
             f'    <div>\n      <h1>{esc(full)}</h1>\n'
-            f'      <p class="who">Team Decision Board · validated player profiles and projection context</p>\n    </div>\n  </div>\n'
+            f'      <p class="who">Team Decision Board · player profiles and fantasy projections</p>\n    </div>\n  </div>\n'
             f'  <h2>Player decision profiles</h2>\n'
             f'  <div class="grid">\n{cards}\n  </div>')
     return _render(PAGE.format(
@@ -991,7 +991,7 @@ def team_page(team, players, count, base):
         # Was 90 characters, which leaves half a search snippet empty.
         # Naming what a reader gets is both longer and more useful, and it
         # has to stay under 158 or the end is cut off anyway.
-        description=esc(f"{full} fantasy decision profiles with validated projections and rankings where available."),
+        description=esc(f"{full} fantasy decision profiles with projections and rankings where available."),
         canonical=esc(url), og_type="website",
         og_image=f'<meta property="og:image" content="{esc(logo)}">',
         structured=(f'<script type="application/ld+json">{json.dumps(ld)}</script>'
@@ -1863,7 +1863,7 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
           <p class="lb-data-intro">
             The 177-player Decision Room, 615-player projection set, rankings,
             and a separate 216-player advanced Draft Comparison serve different
-            validated scopes. Choose the tool that fits the question.
+            scoring formats. Choose the tool that fits your league.
           </p>
 
           <div class="lb-data-actions">
@@ -1929,7 +1929,7 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
 
           <p class="lb-card-deck">
             Use the advanced 216-player comparison pool for current projections
-            plus validated 2025 weekly consistency, floor and ceiling context.
+            plus 2025 weekly consistency, floor and ceiling context.
           </p>
 
           <div class="lb-preview" aria-hidden="true">
@@ -2487,7 +2487,7 @@ def data_hub_page(base):
         body = body.replace(
             "Use schedule, availability, play calling and offensive line context\n"
             "          to understand what sits underneath a player's fantasy projection.",
-            "Only tools backed by validated data are shown here. Use the available\n"
+            "Explore the available tools. Use\n"
             "          coaching context to inspect what sits underneath a projection.")
 
     # Dataset alongside the breadcrumbs. The citation fields are the ones
@@ -2516,8 +2516,8 @@ def data_hub_page(base):
         fonts=PAGE_FONTS,
         title="NFL Fantasy Data | LineupBeat",
         description=("NFL Decision Room, rankings, projections and advanced "
-                     "Draft Comparison, with each validated dataset scope "
-                     "identified clearly."),
+                     "Draft Comparison, with scoring formats "
+                     "and player matchups."),
         canonical=f"{base}/{SPORT}/data/",
         og_type="website",
         og_image=f'<meta property="og:image" content="{base}/og.png">',
@@ -3818,7 +3818,7 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
 
 </main>"""
 
-    body = '''<main class="lb-about-page"><section class="lb-about-hero"><div class="lb-about-wrap"><div class="lb-about-kicker">ABOUT LINEUPBEAT</div><h1>Understand the call.<br><span>Know what changes it.</span></h1><p class="lb-about-lead">Lineup Beat helps fantasy players compare validated outcomes, see the recommendation, understand its uncertainty, and identify the boundary that would change the pick.</p><div class="lb-about-actions"><a class="lb-about-btn lb-about-btn-primary" href="/decision-room/nfl/">OPEN NFL DECISION ROOM</a><a class="lb-about-btn lb-about-btn-secondary" href="/decision-room/college/">EXPLORE COLLEGE</a></div></div></section><section class="lb-about-section"><div class="lb-about-wrap"><div class="lb-about-section-head"><div class="lb-about-kicker">WHAT WE BUILD</div><h2>Evidence, forecast, boundary, record.</h2><p>Validated projections and rankings establish the current view. Decision boundaries show how much an input must move before the recommendation changes. Future timestamped records are designed to preserve calls instead of silently rewriting them.</p></div><div class="lb-about-do-grid"><article class="lb-about-do-card"><div class="lb-about-card-kicker">01 · COMPARE</div><h3>Put two outcomes side by side.</h3><p>NFL season comparisons support PPR, Half-PPR, and Non-PPR. College Week 1 currently supports Yahoo scoring only.</p></article><article class="lb-about-do-card"><div class="lb-about-card-kicker">02 · EXPLAIN</div><h3>Show what changes the pick.</h3><p>A recommendation is more useful when its threshold and scoring-format sensitivity are visible.</p></article><article class="lb-about-do-card"><div class="lb-about-card-kicker">03 · ACCOUNT</div><h3>Preserve the recommendation.</h3><p>Lineup Beat is building a decision record that retains inputs, timestamps, and eventual outcomes.</p></article></div></div></section><section class="lb-about-section"><div class="lb-about-wrap"><div class="lb-about-section-head"><div class="lb-about-kicker">HONEST COVERAGE</div><h2>NFL and College are separate validated datasets.</h2><p>The NFL Decision Room contains 177 identity-resolved players. Advanced Draft Comparison contains 216. NFL projection pages cover 615. College Week 1 contains 2,205 players across 64 teams; College season projections contain 2,351 across 68 teams. Those pools have different eligibility, horizons, formats, and identity coverage.</p></div></div></section><section class="lb-about-belief"><div class="lb-about-wrap"><blockquote>Recommendations can change.<br><span>The reason should remain visible.</span></blockquote></div></section></main>'''
+    body = '''<main class="lb-about-page"><section class="lb-about-hero"><div class="lb-about-wrap"><div class="lb-about-kicker">ABOUT LINEUPBEAT</div><h1>Fantasy football.<br><span>With the numbers in view.</span></h1><p class="lb-about-lead">NFL and College rankings, projections and player comparisons to help you plan your lineup.</p><div class="lb-about-actions"><a class="lb-about-btn lb-about-btn-primary" href="/decision-room/nfl/">COMPARE NFL PLAYERS</a><a class="lb-about-btn lb-about-btn-secondary" href="/decision-room/college/">COMPARE COLLEGE PLAYERS</a></div></div></section><section class="lb-about-section"><div class="lb-about-wrap"><div class="lb-about-section-head"><div class="lb-about-kicker">WHAT YOU CAN DO</div><h2>Compare players. Explore the numbers.</h2><p>Find weekly matchups, projected points and season-long rankings in one place.</p></div><div class="lb-about-do-grid"><article class="lb-about-do-card"><div class="lb-about-card-kicker">01 · COMPARE</div><h3>Two players, side by side.</h3><p>Compare projected points, expected workload and matchup context.</p></article><article class="lb-about-do-card"><div class="lb-about-card-kicker">02 · RANKINGS</div><h3>Find your next starter.</h3><p>Browse NFL Week 1 rankings by position, team and scoring format.</p></article><article class="lb-about-do-card"><div class="lb-about-card-kicker">03 · PROJECTIONS</div><h3>See the full stat line.</h3><p>Explore passing, rushing and receiving estimates for NFL and College players.</p></article></div></div></section><section class="lb-about-section"><div class="lb-about-wrap"><div class="lb-about-section-head"><div class="lb-about-kicker">SCORING &amp; AVAILABILITY</div><h2>Choose the right board for your league.</h2><p>NFL projections support PPR, Half-PPR and Non-PPR. College projections use Yahoo scoring. Weekly and season-long projections are separate; check each page’s update date and confirm player availability before kickoff.</p></div></div></section></main>'''
     body = ('<style>.lb-about-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}'
             '.lb-about-actions .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}'
             '.lb-about-actions .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule)}'
@@ -3826,7 +3826,7 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
             '</style>' + body.replace('lb-about-btn lb-about-btn-primary', 'btn')
             .replace('lb-about-btn lb-about-btn-secondary', 'btn ghost'))
     title = "About LineupBeat | Fantasy Decisions With Accountability"
-    desc = ("How Lineup Beat uses validated NFL and College projections, "
+    desc = ("NFL and College fantasy rankings, projections, "
             "decision boundaries, uncertainty, and accountable recommendations.")
     schema = {
         "@type": "AboutPage",
