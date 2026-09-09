@@ -270,12 +270,12 @@ def check_development_repairs(root, development=True):
           and "event.key !== 'Enter'" in sample
           and all(resolve(root, row.get("url", "")) for row in search))
 
-    week = root / "college-fantasy-football" / "week-1" / "index.html"
+    week = root / "college-fantasy-football" / "week-2" / "index.html"
     season = root / "college-fantasy-football" / "projections" / "index.html"
     week_text = week.read_text() if week.is_file() else ""
     season_text = season.read_text() if season.is_file() else ""
     check("college overview search covers the full player pools",
-          "Search all 2,205 players" in week_text and "Kevin Sperry" in week_text
+          "Search all 2,071 players" in week_text and "Michael Hawkins" in week_text
           and "Search all 2,351 players" in season_text and "Kevin Sperry" in season_text)
 
     projections = root / "nfl" / "projections" / "index.html"
@@ -531,7 +531,7 @@ def check_homepage(root, decision_room=False, public_only=False):
                    if public_only else "Roster data stays in your browser." in text))
         expected_links = (
             'href="/nfl/rankings/"', 'href="/nfl/projections/"',
-            'href="/college-fantasy-football/week-1/"', 'href="/about/"',
+            'href="/college-fantasy-football/week-2/"', 'href="/about/"',
         )
         check("the homepage links the released product paths",
               all(route in text for route in expected_links)
@@ -550,28 +550,37 @@ def check_homepage(root, decision_room=False, public_only=False):
         if college_payload.is_file():
             college = json.loads(college_payload.read_text())
             players = college.get("players", [])
-            check("the deployed College Decision Room uses validated Week 1 metadata",
-                  college.get("mode") == "weekly" and college.get("season") == 2026
-                  and college.get("week") == 1)
+            from college_decision_data import load_weekly
+            expected_college = load_weekly()
+            check("the deployed College Decision Room matches the pinned Week 2 release",
+                  college == expected_college and college.get("week") == 2)
             check("the deployed college identity and player counts reconcile",
-                  len(players) == 2205 and
+                  len(players) == 2071 and
                   len({p.get("id") for p in players}) == len(players))
             market_teams = college.get("market_context_by_team", {})
-            check("the delayed College sportsbook context covers every modeled team",
-                  college.get("market", {}).get("state")
-                  == "available_delayed_market_context"
-                  and college.get("market", {}).get("data_delay_seconds") == 30
-                  and len(market_teams) == 64
-                  and all(row.get("state") == "available"
-                          for row in market_teams.values()))
-            player_market = college.get("market", {}).get("player_coverage", {})
-            check("the College sportsbook context separates game and player evidence",
-                  all("player" not in key.lower()
-                      for row in market_teams.values() for key in row)
-                  and player_market.get("playersWithNumericEvidence") == 112
-                  and player_market.get("playersWithEvidence") == 345
-                  and "Exact player markets anchor only their named component" in
-                  college.get("sources", {}).get("market", {}).get("note", ""))
+            check("College game-line coverage is complete and honestly labeled",
+                  len(market_teams) == 65
+                  and sum(m.get("state") == "available" for m in market_teams.values()) == 57
+                  and all(m.get("team_implied_total") is None for m in market_teams.values()
+                          if m.get("state") == "unavailable")
+                  and college.get("market", {}).get("data_delay_seconds") is None)
+            check("College Week 2 does not reuse Week 1 player props",
+                  college.get("market", {}).get("player_coverage", {}).get("playersWithNumericEvidence") == 0
+                  and all(not p.get("player_market", {}).get("components") for p in players))
+            check("unavailable college players have no normal workload",
+                  all(p["formats"]["yahoo"]["projected_points"] == 0
+                      and not any(p["expected_opportunity"].values())
+                      for p in players if p.get("availability", {}).get("status") in {"Out", "Emergency only"}))
+            for suffix in ("", "qb/", "rb/", "wr/", "te/"):
+                route = "/college-fantasy-football/week-2/" + suffix
+                page_path = root / route.strip("/") / "index.html"
+                page_text = page_path.read_text() if page_path.is_file() else ""
+                check(f"College Week 2 board survives final pruning: {suffix or 'overview'}",
+                      "Week 2" in page_text and "Status" in page_text
+                      and "Questionable players are projected assuming they play" in page_text)
+            archive = root / "college-fantasy-football/week-1/index.html"
+            check("College Week 1 remains an explicitly dated archive",
+                  archive.is_file() and "Archived Week 1 projections" in archive.read_text())
             check("the homepage exposes separate NFL and College routes",
                   '/decision-room/nfl/' in text and '/decision-room/college/' in text)
     if "<!-- LB WIRE REPLACEMENT START" in wire_text:

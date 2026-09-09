@@ -1,0 +1,31 @@
+{
+  "version": "college_week2_2026_v1.0",
+  "status": "PUBLISHED",
+  "generated_at": "2026-09-09T16:04:46.447713+00:00",
+  "source_release": "2026/v1.1",
+  "source_manifest_sha256": "4c2f35fec2eaa3d43d2e18a2956d3118a20a17805ff1d4c74989a5cc069d6eb0",
+  "qa_status": "PASS",
+  "counts": {
+    "players": 2071,
+    "teams": 65,
+    "games": 49
+  },
+  "files": {
+    "inputs.json": {
+      "bytes": 724615,
+      "sha256": "71a3a881437154e2740de76ff7788309d416f51b17b6a0723463185d39a1b546"
+    },
+    "model_audit.json": {
+      "bytes": 37581,
+      "sha256": "04237214e9ee6728ade1b5645a5e6b552b5d3892bffdf797437d8b9b723157d5"
+    },
+    "college_week2_site_projections_2026.json": {
+      "bytes": 1301968,
+      "sha256": "a4321896029a0d9a468b9e52e3a45ad69a8ec70c056448d72b5cc00aa0d07f63"
+    },
+    "college_week2_schedule_2026.json": {
+      "bytes": 12754,
+      "sha256": "d272140e50e14af2090f7ccb946bb0aa80b1349eab6a49e6ffa0465bef3cee61"
+    }
+  }
+}

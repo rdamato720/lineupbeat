@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Build the 2026 college fantasy Week 1 projections and rankings."""
-import hashlib
+"""Build frozen college weekly boards, including the Week 1 archive."""
 import html
 import json
 import re
@@ -10,23 +9,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
-OUT = SITE / "college-fantasy-football" / "week-1"
-EXPECTED_SHA = "0553346e90791eed1ae593521753a121f9deffe1e79df917d07d79ba150ea3ce"
 sys.path.insert(0, str(ROOT / "scripts"))
 import seo
 from college_team_logos import CSS as COLLEGE_LOGO_CSS, logo_html
+from college_releases import load_release, active_release
 
-cfg = json.loads((ROOT / "data/college/config.json").read_text())
-release = ROOT / "data/college" / cfg["activeCollegeWeeklyProjectionVersion"]
-manifest_bytes = (release / "manifest.json").read_bytes()
-found = hashlib.sha256(manifest_bytes).hexdigest()
-if found != EXPECTED_SHA:
-    raise SystemExit(f"Week 1 manifest SHA mismatch: {found}")
-manifest = json.loads(manifest_bytes)
-data = json.loads((release / "college_week1_site_projections_2026.json").read_text())
-players = data["players"]
-if data["counts"] != {"players": 2205, "teams": 64, "games": 55}:
-    raise SystemExit(f"unexpected Week 1 totals: {data['counts']}")
+week = 1
+data = {}
+players = []
 
 e = lambda value: html.escape(str(value), quote=True)
 positions = ("QB", "RB", "WR", "TE")
@@ -58,6 +48,11 @@ def matchup(player):
 
 
 def value(player, key):
+    if key == "availability":
+        status = player.get('availability', {}).get('status', 'Not tracked')
+        source = player.get('availability', {}).get('source')
+        label = status + (' · if active' if player.get('availability', {}).get('conditional') else '')
+        return f'<a href="{e(source)}" target="_blank" rel="noopener">{e(label)}</a>' if source else e(label)
     if key == "matchup":
         return matchup(player)
     raw = player.get(key, 0)
@@ -71,6 +66,8 @@ def value(player, key):
 
 def table(position, rows):
     cols = columns[position]
+    if week > 1:
+        cols = cols[:5] + (("availability", "Status"),) + cols[5:]
     head = "".join(f'<th class="{"num" if key in numeric else ""}">{e(label)}</th>'
                    for key, label in cols)
     body = []
@@ -93,16 +90,16 @@ CSS = COLLEGE_LOGO_CSS + """
 
 def _page(position=None):
     css, header, footer = chrome()
-    title = "College Fantasy Football Week 1 Projections and Rankings"
+    title = f"College Fantasy Football Week {week} Projections and Rankings"
     if position:
-        title = f"College Fantasy Football Week 1 {position} Rankings"
-    path = "/college-fantasy-football/week-1/" + (f"{position.lower()}/" if position else "")
+        title = f"College Fantasy Football Week {week} {position} Rankings"
+    path = f"/college-fantasy-football/week-{week}/" + (f"{position.lower()}/" if position else "")
     selected = [p for p in players if not position or p["pos"] == position]
     selected.sort(key=lambda p: p["rank"] if position else p["overallRank"])
     teams = sorted({p["team"] for p in selected})
     tabs = []
     for pos in (None,) + positions:
-        href = "/college-fantasy-football/week-1/" + (f"{pos.lower()}/" if pos else "")
+        href = f"/college-fantasy-football/week-{week}/" + (f"{pos.lower()}/" if pos else "")
         tabs.append(f'<a href="{href}"{" aria-current=page" if pos == position else ""}>{pos or "All"}</a>')
     if position:
         content = table(position, selected)
@@ -113,9 +110,13 @@ def _page(position=None):
             sections.append(f'<section class="wsection"><h2>{pos} rankings</h2>{table(pos, top)}<p><a class="wmore" href="{path}{pos.lower()}/">View every {pos} &rarr;</a></p></section>')
         content = "".join(sections)
     updated = datetime.fromisoformat(data["generatedAt"]).strftime("%B %-d, %Y")
-    description = "Free 2026 college fantasy football Week 1 projections and rankings for QB, RB, WR and TE using Yahoo scoring, with player stats and matchups."
-    market = data.get("marketInput", {})
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} | LineupBeat</title><meta name="description" content="{e(description)}"><link rel="canonical" href="https://lineupbeat.com{path}">{seo.social_meta(title + " | LineupBeat", description, "https://lineupbeat.com" + path)}<style>{css}{seo.CRUMB_CSS}{seo.UI_CSS}{CSS}</style></head><body>{header}<main class="wwrap"><nav class="crumbs"><a href="/">Home</a><span>/</span><a href="/college-fantasy-football/projections/">College projections</a><span>/</span><b>Week 1</b></nav><header class="whero"><p class="wmeta">2026 · Week 1 · Updated {updated}</p><h1>{e(title)}</h1><p>Week 1 projections for {data["counts"]["players"]:,} players on 64 teams playing from September 3–7. Rankings are built directly from each projected Yahoo-scoring stat line.</p></header><nav class="wtabs">{"".join(tabs)}</nav><div class="wtools"><input id="search" type="search" placeholder="Search players"><select id="team"><option value="">All teams</option>{"".join(f"<option>{e(t)}</option>" for t in teams)}</select></div><p class="wnote"><strong>How to use this:</strong> Projections use Yahoo scoring and include matchup and betting-market context. Check injury news and player eligibility before setting your lineup.</p>{content}</main>{footer}<script>(()=>{{let s=document.querySelector('#search'),t=document.querySelector('#team');function f(){{let q=s.value.toLowerCase(),tm=t.value;document.querySelectorAll('tbody tr').forEach(r=>r.hidden=!!((q&&!r.dataset.name.includes(q))||(tm&&r.dataset.team!==tm)))}}s.addEventListener('input',f);t.addEventListener('change',f)}})()</script></body></html>'''
+    description = f"Free 2026 college fantasy football Week {week} projections and rankings for QB, RB, WR and TE using Yahoo scoring, with player stats and matchups."
+    dates = "September 3–7" if week == 1 else "September 10–14"
+    note = ("Archived Week 1 projections, saved before kickoff. "
+            '<a href="/college-fantasy-football/week-2/">View Week 2 rankings</a>.' if week == 1 else
+            'Injury reports checked September 9. Questionable players are projected assuming they play; ruled-out players have zero projected points. '
+            '<a href="/college-fantasy-football/week-1/">Week 1 archive</a>.')
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} | LineupBeat</title><meta name="description" content="{e(description)}"><link rel="canonical" href="https://lineupbeat.com{path}">{seo.social_meta(title + " | LineupBeat", description, "https://lineupbeat.com" + path)}<style>{css}{seo.CRUMB_CSS}{seo.UI_CSS}{CSS}</style></head><body>{header}<main class="wwrap"><nav class="crumbs"><a href="/">Home</a><span>/</span><a href="/college-fantasy-football/projections/">College projections</a><span>/</span><b>Week {week}</b></nav><header class="whero"><p class="wmeta">2026 · Week {week} · Updated {updated}</p><h1>{e(title)}</h1><p>Week {week} projections for {data["counts"]["players"]:,} players on {data["counts"]["teams"]} teams playing from {dates}. Rankings are built directly from each projected Yahoo-scoring stat line.</p></header><nav class="wtabs">{"".join(tabs)}</nav><div class="wtools"><input id="search" type="search" placeholder="Search players"><select id="team"><option value="">All teams</option>{"".join(f"<option>{e(t)}</option>" for t in teams)}</select></div><p class="wnote">{note}</p>{content}</main>{footer}<script>(()=>{{let s=document.querySelector('#search'),t=document.querySelector('#team');function f(){{let q=s.value.toLowerCase(),tm=t.value;document.querySelectorAll('tbody tr').forEach(r=>r.hidden=!!((q&&!r.dataset.name.includes(q))||(tm&&r.dataset.team!==tm)))}}s.addEventListener('input',f);t.addEventListener('change',f)}})()</script></body></html>'''
 
 
 def page(position=None):
@@ -129,16 +130,16 @@ def page(position=None):
         options = "".join(
             f'<option value="{e(p["name"])}" label="{e(p["team"])} · {e(p["pos"])}"></option>'
             for p in players)
-        datalist = f'<datalist id="college-week1-player-list">{options}</datalist>'
+        datalist = f'<datalist id="college-weekly-player-list">{options}</datalist>'
         document = document.replace(
             '<input id="search" type="search" placeholder="Search players">',
-            '<input id="search" type="search" list="college-week1-player-list" '
-            'placeholder="Search all 2,205 players">' + datalist, 1)
+            '<input id="search" type="search" list="college-weekly-player-list" '
+            f'placeholder="Search all {len(players):,} players">' + datalist, 1)
     script = f'''<script>(()=>{{
 const overview={str(position is None).lower()},index={payload},input=document.getElementById('search');
 const norm=value=>String(value||'').trim().toLowerCase();
 function match(){{const query=norm(input.value);if(!query)return null;return index.find(p=>norm(p.name)===query)||index.find(p=>norm(p.name).startsWith(query))||index.find(p=>norm(p.name).includes(query));}}
-function openMatch(){{if(!overview)return;const hit=match();if(hit)location.href='/college-fantasy-football/week-1/'+hit.pos.toLowerCase()+'/?q='+encodeURIComponent(hit.name);}}
+function openMatch(){{if(!overview)return;const hit=match();if(hit)location.href='/college-fantasy-football/week-{week}/'+hit.pos.toLowerCase()+'/?q='+encodeURIComponent(hit.name);}}
 input.addEventListener('change',()=>{{if(match()&&norm(match().name)===norm(input.value))openMatch();}});
 input.addEventListener('keydown',event=>{{if(event.key==='Enter'&&overview){{event.preventDefault();openMatch();}}}});
 const query=new URLSearchParams(location.search).get('q');if(query&&!overview){{input.value=query;input.dispatchEvent(new Event('input'));}}
@@ -146,8 +147,12 @@ const query=new URLSearchParams(location.search).get('q');if(query&&!overview){{
     return document.replace('</body>', script + '</body>', 1)
 
 
-for position in (None,) + positions:
-    target = OUT if position is None else OUT / position.lower()
-    target.mkdir(parents=True, exist_ok=True)
-    (target / "index.html").write_text(page(position))
-print(f"  Week 1 college: {len(players)} players, manifest verified")
+for version in dict.fromkeys(('2026/week-1/v1.1', active_release())):
+    release, data = load_release(version)
+    week, players = data['week'], data['players']
+    out = SITE / 'college-fantasy-football' / f'week-{week}'
+    for position in (None,) + positions:
+        target = out if position is None else out / position.lower()
+        target.mkdir(parents=True, exist_ok=True)
+        (target / 'index.html').write_text(page(position))
+    print(f'  Week {week} college: {len(players)} players, manifest verified')

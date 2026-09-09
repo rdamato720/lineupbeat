@@ -306,11 +306,11 @@ for(const r of rows){let p=source.players.find(p=>p.id===r.dataset.id);assert.eq
 
 class CollegeWeek1EnrichmentTests(unittest.TestCase):
     def test_all_active_reconciled_projections_and_components_are_preserved(self):
-        payload = college_decision_data.load_weekly()
+        payload = college_decision_data.load_week1()
         self.assertEqual(len(payload["players"]), 2205)
         config = json.loads((ROOT / "data" / "college" / "config.json").read_text())
         source = (ROOT / "data" / "college" /
-                  config["activeCollegeWeeklyProjectionVersion"] /
+                  "2026/week-1/v1.1" /
                   "college_week1_site_projections_2026.json")
         raw = json.loads(source.read_text())
         by_id = {p["id"]: p for p in payload["players"]}
@@ -322,14 +322,14 @@ class CollegeWeek1EnrichmentTests(unittest.TestCase):
             self.assertEqual(player["implied_total"], row["impliedTotal"])
 
     def test_college_market_copy_is_delayed_consensus_context(self):
-        payload = college_decision_data.load_weekly()
+        payload = college_decision_data.load_week1()
         self.assertEqual(payload["market"]["state"],
                          "available_delayed_market_context")
         self.assertEqual(payload["market"]["data_delay_seconds"], 30)
         self.assertEqual(payload["market"]["player_coverage"]["playersWithNumericEvidence"], 112)
         self.assertIn("Sportsbook environment",
                       build_decision_room.college_decision_room.JS)
-        self.assertIn("exact player-component markets for 112 players",
+        self.assertIn("57 of 65 teams",
                       build_decision_room.college_decision_room.JS)
         self.assertIn("Expected opportunity", build_decision_room.college_decision_room.JS)
 

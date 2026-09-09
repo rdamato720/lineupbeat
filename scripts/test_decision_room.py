@@ -286,7 +286,7 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         self.assertIn('href="/my-league/"', home)
         self.assertIn("Build league history", home)
         self.assertIn('href="/nfl/projections/"', home)
-        self.assertIn('href="/college-fantasy-football/week-1/"', home)
+        self.assertIn('href="/college-fantasy-football/week-2/"', home)
         self.assertIn('href="/about/"', home)
         self.assertEqual(home.count('class="hp-decision-summary"'), 0)
         self.assertEqual(home.count('class="hp-evidence-grid"'), 0)
@@ -322,11 +322,11 @@ class DecisionRoomRenderingTests(unittest.TestCase):
         nfl = page.sport_header("nfl", "rankings", self.payload["players"])
         college = page.sport_header("college", "projections")
         self.assertIn('href="/nfl/rankings/" aria-current="page"', nfl)
-        self.assertIn('href="/college-fantasy-football/week-1/"', nfl)
+        self.assertIn('href="/college-fantasy-football/week-2/"', nfl)
         self.assertIn('aria-label="Search NFL players"', nfl)
         self.assertIn('href="/college-fantasy-football/projections/" aria-current="page"', college)
         self.assertIn('href="/nfl/projections/"', college)
-        self.assertIn("Search 2,205 College players", college)
+        self.assertIn("Search College players", college)
         self.assertNotIn("The Beat", nfl + college)
 
     def test_home_has_production_visual_language_without_public_news(self):
