@@ -714,6 +714,7 @@ tbody td{border-color:#28342d!important}tbody tr:hover td{background:#141f19!imp
   .rkhead h1,.dvhead h1,.cohead h1,.chero h1,.whero h1,.cmphead h1,.mt-hero h1,
   .ml-hero h1,.lh-head h1,.lb-about-hero h1,.v15 h1{font-size:clamp(2.45rem,12vw,4rem)!important;line-height:.94!important}
   .btn,.mt-button,.ml-button{min-height:48px}
+  body input:not([type="checkbox"]):not([type="radio"]),body select,body textarea{font-size:16px!important}
 }
 """
 
