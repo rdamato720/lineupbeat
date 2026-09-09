@@ -11,6 +11,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlparse
 
+from college_releases import load_release
+
 
 DEV_HOST = "lineupbeat-dev.pages.dev"
 PROD_HOSTS = {"lineupbeat.com", "www.lineupbeat.com"}
@@ -170,11 +172,15 @@ def audit(root: Path) -> tuple[int, int, int]:
             if not target.is_file():
                 errors.append(f"{route}: missing local image {src}")
 
+    _, college_week = load_release()
+    college_scope = (f"Week {college_week['week']}",
+                     f"{college_week['counts']['players']:,}",
+                     f"{college_week['counts']['teams']} teams", "Yahoo")
     scope_checks = {
         root / "decision-room/nfl/index.html": ("177", "2026"),
         root / "nfl/who-should-i-draft/index.html": ("216-player", "2025 weekly"),
         root / "nfl/data/index.html": ("177-player", "615-player", "216-player"),
-        root / "decision-room/college/index.html": ("2,205", "64 teams", "Yahoo"),
+        root / "decision-room/college/index.html": college_scope,
     }
     final_season = root / 'data/nfl-season-trusted.json'
     if final_season.exists():
