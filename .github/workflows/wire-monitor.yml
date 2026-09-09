@@ -1,15 +1,7 @@
 name: Wire 30-minute monitor
 
+# Retired: news-only RSS replaces paid recurring capture and drafting.
 on:
-  schedule:
-    # GitHub cron is UTC. These windows run twice hourly from roughly
-    # 7:00 a.m. through 11:59 p.m. Eastern during daylight-saving time
-    # (6:00 a.m. through 10:59 p.m. Eastern during standard time).
-    - cron: "7,37 0-3 * * *"
-    # Split the first morning run so it can safely catch the overnight gap.
-    - cron: "7 11 * * *"
-    - cron: "37 11 * * *"
-    - cron: "7,37 12-23 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -18,10 +10,9 @@ concurrency:
 
 jobs:
   monitor:
-    # No recurring provider spend is authorized merely by merging this file.
-    # The owner must deliberately set this repository variable to true and
-    # configure all three independent ceilings below.
-    if: vars.WIRE_MOBILE_AUTODRAFT == 'true'
+    # Retired by the owner. Keep historical implementation and ledgers;
+    # restoring execution requires a separately reviewed code change.
+    if: ${{ false }} # Historical job retained for audit; cannot spend or open issues.
     runs-on: ubuntu-latest
     timeout-minutes: 25
     permissions:

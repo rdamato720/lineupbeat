@@ -325,12 +325,8 @@ class MobileWireTests(unittest.TestCase):
     def test_workflows_are_capped_and_human_gated(self):
         monitor = (ROOT / ".github/workflows/wire-monitor.yml").read_text()
         approval = (ROOT / ".github/workflows/wire-mobile-approve.yml").read_text()
-        self.assertIn("WIRE_MOBILE_AUTODRAFT == 'true'", monitor)
-        self.assertNotIn('cron: "7,37 * * * *"', monitor)
-        self.assertIn('cron: "7,37 0-3 * * *"', monitor)
-        self.assertIn('cron: "7 11 * * *"', monitor)
-        self.assertIn('cron: "37 11 * * *"', monitor)
-        self.assertIn('cron: "7,37 12-23 * * *"', monitor)
+        self.assertIn("if: ${{ false }}", monitor)
+        self.assertNotIn("  schedule:", monitor)
         self.assertIn("--max-calls \"$MOBILE_MAX_CALLS\"", monitor)
         self.assertIn("MOBILE_MAX_CALLS: 20", monitor)
         self.assertIn("--cap \"$MOBILE_RUN_CAP\"", monitor)
@@ -390,10 +386,10 @@ class MobileWireTests(unittest.TestCase):
         self.assertIn('"held_for_review"', script)
         self.assertIn('"article_sources_without_candidates"', script)
 
-    def test_first_morning_run_catches_the_overnight_gap(self):
+    def test_retired_monitor_preserves_historical_overnight_window(self):
         workflow = (ROOT / ".github" / "workflows" /
                     "wire-monitor.yml").read_text()
-        self.assertIn('- cron: "7 11 * * *"', workflow)
+        self.assertNotIn('  schedule:', workflow)
         self.assertIn('if [ "$SCHEDULE" = "7 11 * * *" ]; then', workflow)
         self.assertIn("hours=8", workflow)
         self.assertGreaterEqual(

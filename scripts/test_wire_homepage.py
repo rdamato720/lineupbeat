@@ -197,8 +197,8 @@ check("the card uses the simple Analysis label",
       and "What the reporter found" not in section)
 
 # --- one destination -----------------------------------------------------
-check("the homepage does not link to a separate Wire page",
-      "/nfl/wire/" not in html)
+check("historical commentary cards stay separate from the news-only Wire",
+      "/nfl/wire/" not in section)
 check("the Wire section is the #wire anchor", 'id="wire"' in html)
 check("no 'View the full Wire' link remains", "View the full Wire" not in html)
 
