@@ -512,6 +512,7 @@ def page_body(records: list[dict], key: str, slug: str,
   generated from the same player projections used throughout the site.</p>
   <p class="rkstatus">Updated {built:%B %d, %Y} &middot; {base.esc(label)}
   &middot; {'12-team Superflex' if key == 'superflex' else '12-team, one-QB'}</p>
+  <p><a href="/nfl/week-1/rankings/">View NFL Week 1 rankings</a></p>
  </header>
  {format_nav(root if not pos else '')}
  <div class="rkctl">{tabs}<div class="rkfilters">
@@ -523,6 +524,7 @@ def page_body(records: list[dict], key: str, slug: str,
  </div><p class="rkcount" id="rkcount">{len(shown)} players</p></div>
  <table class="rktable" id="rktable"><caption class="visually-hidden">{base.esc(h1)}</caption>
   <thead>{base.head_row(pos)}</thead><tbody>{body_rows}</tbody></table>
+ {seo.research_links(pos)}
  {methodology(label, key == 'superflex')}
  {editorial_notes(key)}
  {seo.faq_html(FAQ[key])}
@@ -541,6 +543,11 @@ def render(records: list[dict], key: str, slug: str, built: datetime,
              f"2026 Fantasy {pos + ' ' if pos else 'Football '}{label} Rankings | LineupBeat")
     desc = (f"LineupBeat's updated 2026 {label} fantasy football rankings, "
             f"built from full-season projections and positional replacement value.")
+    if key == "ppr" and pos == "QB":
+        title = "2026 Fantasy Football QB Rankings (PPR) | LineupBeat"
+        desc = ("Compare 2026 quarterback draft rankings for one-QB PPR leagues, "
+                "with season projected points, tiers and team filters. "
+                "View weekly rankings separately.")
     css, header, footer = base.site_chrome()
     body = page_body(records, key, slug, built, pos, top_only)
     shown = ([r for r in records if r["overall_rank"] is not None] if not pos

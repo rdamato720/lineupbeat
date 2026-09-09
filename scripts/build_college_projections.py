@@ -90,6 +90,9 @@ print("  columns set; no Targets column, none exists in the artifact")
 import re
 sys.path.insert(0, str(ROOT / "scripts"))
 import seo
+from college_releases import load_release
+_, WEEKLY = load_release()
+ACTIVE_WEEK = WEEKLY["week"]
 from college_team_logos import CSS as COLLEGE_LOGO_CSS, logo_html
 
 POSITIONS = ["QB", "RB", "WR", "TE"]
@@ -418,7 +421,7 @@ def _page(pos):
       projected stat line is shown behind the ranking.</p>
     {f'<p class="cintro">{e(INTROS[pos])}</p>' if pos else ''}
     <p class="cmeta">Updated {longdate(DATA['generatedAt'])}</p>
-    <a class="cweekly" href="/college-fantasy-football/week-2/">View Week 2 projections &amp; rankings &rarr;</a>
+    <a class="cweekly" href="/college-fantasy-football/week-{ACTIVE_WEEK}/{pos.lower() + '/' if pos else ''}">View Week {ACTIVE_WEEK} {pos + ' ' if pos else ''}projections &amp; rankings &rarr;</a>
   </div>
   {tabs(pos)}
   <div class="cctl">

@@ -44,6 +44,40 @@ class ComparisonToolTests(unittest.TestCase):
         self.assertIn("bijan-robinson-vs-jahmyr-gibbs", pair)
         self.assertIn("Lineup Beat PPR pick", pair)
 
+    def test_published_routes_survive_ranking_changes(self):
+        players = tool.player_payload()
+        # Move every player outside the adjacent-pair generation boundary.
+        for player in players:
+            if "ppr" in player["formats"]:
+                player["formats"]["ppr"]["position_rank"] = 999
+        paths = {row["path"] for row, a, b in tool.preserved_pairs(players)}
+        expected = {row["path"] for row in json.loads((tool.ROOT / "data/comparison_routes.json").read_text())}
+        self.assertEqual(paths, expected)
+        self.assertEqual(len(paths), 161)
+        # A removed player must not silently regain a recommendation.
+        subset = [p for p in players if p["name"] != "Josh Jacobs"]
+        missing = [(row, a, b) for row, a, b in tool.preserved_pairs(subset) if not a or not b]
+        self.assertTrue(missing)
+        self.assertIn("comparison is unavailable", tool.unavailable_pair_html(missing[0][0]))
+
+    def test_weekly_link_matches_both_players(self):
+        from html import unescape
+        from urllib.parse import urlsplit, parse_qs
+        import re
+        from decision_data import load_weekly
+        by = {p["slug"]: p for p in tool.player_payload()}
+        a, b = by["bijan-robinson"], by["jahmyr-gibbs"]
+        page = tool.html([a, b], tool.formats.source_updated(tool.formats.SOURCE), a, b)
+        href = unescape(re.search(r'id="cmpweekly" href="([^"]+)"', page)[1])
+        params = parse_qs(urlsplit(href).query)
+        weekly = {p["id"]: p for p in load_weekly()["players"]}
+        self.assertEqual(weekly[params["a"][0]]["name"], a["name"])
+        self.assertEqual(weekly[params["b"][0]]["name"], b["name"])
+        self.assertEqual(params["format"], ["ppr"])
+        a["weekly_id"] = None
+        page = tool.html([a, b], tool.formats.source_updated(tool.formats.SOURCE), a, b)
+        self.assertIn('id="cmpweekly" href="/decision-room/nfl/"', page)
+
     def test_comparison_tool_is_discoverable(self):
         template = (tool.ROOT / "site" / "template.html").read_text()
         pages = (tool.ROOT / "scripts" / "build_pages.py").read_text()

@@ -1393,9 +1393,22 @@ CRUMB_CSS = """
 /* Nothing may push the page sideways. A single wide table or an absolutely
    positioned decoration is enough to give every page a horizontal
    scrollbar on a phone, and the reader blames the page, not the element. */
+.research-links{line-height:1.8;margin:1.2rem 0}.research-links a{display:inline-block;padding:.3rem 0}
 html,body{max-width:100%;overflow-x:hidden}
 img,svg,video,table{max-width:100%}
 """
+
+def research_links(position=None):
+    """Small, position-relevant research paths alongside rankings and profiles."""
+    links = [("/nfl/strength-of-schedule/", "Strength of schedule"),
+             ("/nfl/durability/", "Player durability")]
+    if position == "RB":
+        links.append(("/nfl/offensive-line-rb-performance/", "Offensive lines & running backs"))
+    else:
+        links.append(("/nfl/coaching/", "Offensive coaching"))
+    return '<p class="research-links">Research: ' + ' &middot; '.join(
+        f'<a href="{href}">{esc(label)}</a>' for href, label in links) + '</p>'
+
 
 def related_html(current: str) -> str:
     """A strip of links to the other data pages.

@@ -880,6 +880,7 @@ def player_page(p, nuggets, base, wire_publications=None):
             + (f'  <div class="chips">{"".join(chips)}</div>\n' if chips else "")
             + updated_block(name, nuggets, wire_publications)
             + projection_block(name, pos)
+            + seo.research_links(pos)
             + (f'  <h2>Latest news &middot; '
                f'{len(nuggets)} report'
                f'{"s" if len(nuggets) != 1 else ""}</h2>\n'
