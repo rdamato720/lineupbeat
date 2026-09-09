@@ -555,7 +555,7 @@ def check_homepage(root, decision_room=False, public_only=False):
             check("the deployed College Decision Room matches the pinned Week 2 release",
                   college == expected_college and college.get("week") == 2)
             check("the deployed college identity and player counts reconcile",
-                  len(players) == 2071 and
+                  len(players) == expected_college["counts"]["players"] and
                   len({p.get("id") for p in players}) == len(players))
             market_teams = college.get("market_context_by_team", {})
             check("College game-line coverage is complete and honestly labeled",
