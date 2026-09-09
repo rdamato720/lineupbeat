@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1352,
+ "count": 1357,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -14911,6 +14911,61 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.00552
+  },
+  {
+   "candidate_id": "mobile:onsi:329bbd579d7edf059dc4",
+   "player_id": "00-0037834",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-impact-christian-mccaffrey-and-mike-evans-get-encouraging-week-1-injury-news",
+   "attempted_at": "2026-09-09T04:43:30+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T04:43:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005076
+  },
+  {
+   "candidate_id": "mobile:onsi:9d0c2163826e56905d00",
+   "player_id": "00-0031408",
+   "source_url": "https://www.si.com/onsi/fantasy/injuries/fantasy-impact-christian-mccaffrey-and-mike-evans-get-encouraging-week-1-injury-news",
+   "attempted_at": "2026-09-09T04:43:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T04:43:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004728
+  },
+  {
+   "candidate_id": "mobile:onsi:2a42235f6d5de4943ca1",
+   "player_id": "00-0032764",
+   "source_url": "https://www.si.com/nfl/ravens/onsi/jovaughn-gwyn-isn-t-the-worst-case-scenario-at-center-01m2203pxbed",
+   "attempted_at": "2026-09-09T04:43:39+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T04:43:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003882
+  },
+  {
+   "candidate_id": "mobile:onsi:13e164e2b3e7fc0b8d19",
+   "player_id": "00-0034796",
+   "source_url": "https://www.si.com/nfl/ravens/onsi/jovaughn-gwyn-isn-t-the-worst-case-scenario-at-center-01m2203pxbed",
+   "attempted_at": "2026-09-09T04:43:41+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T04:43:43+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004278
+  },
+  {
+   "candidate_id": "mobile:onsi:c126b42c2b89716093b1",
+   "player_id": "00-0033288",
+   "source_url": "https://www.si.com/onsi/fantasy/nfl/the-latest-george-kittle-injury-update-might-be-the-worst-case-scenario-for-fantasy-football",
+   "attempted_at": "2026-09-09T04:43:43+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T04:43:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004738
   }
  ]
 }
