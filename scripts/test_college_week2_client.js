@@ -37,5 +37,10 @@ async function run(a,b){
  ({node}=await run('Ahmad Hardy','Kewan Lacy'));
  assert(node('cdr-result').innerHTML.includes('Check player availability'));
  assert(node('cdr-result').innerHTML.includes('Out'));
+ assert(node('cdr-result').innerHTML.includes('Mon, Sep 7'));
+ assert(!node('cdr-result').innerHTML.includes('2001'));
+ const lacy=D.players.find(p=>p.name==='Kewan Lacy');lacy.availability.reported_at='2026-09-07';
+ ({node}=await run('Ahmad Hardy','Kewan Lacy'));
+ assert(node('cdr-result').innerHTML.includes('September 7, 2026'));
  console.log('PASS: shipped client renders injury and missing-market cases, filters teams, and rejects invalid selections');
 })();
