@@ -50,16 +50,13 @@ def build(pubs_json: str, out: Path) -> subprocess.CompletedProcess:
 
 REDIRECTS = ROOT / "site" / "_redirects"
 
-check("no separate Wire page is built",
-      not (ROOT / "site" / "nfl" / "wire").exists())
+check("news-only Wire page is built", PAGE.is_file())
 check("the redirect file was written", REDIRECTS.exists())
 _rd = REDIRECTS.read_text() if REDIRECTS.exists() else ""
-check("/nfl/wire/ redirects to the homepage Wire",
-      bool(re.search(r"^/nfl/wire/\*?\s+/#wire\s+30[12]\s*$", _rd, re.M)))
-check("the bare /nfl/wire redirects too",
-      bool(re.search(r"^/nfl/wire\s+/#wire\s+30[12]\s*$", _rd, re.M)))
-check("the rules do not multiply however often the build runs",
-      _rd.count("/nfl/wire") == 2, f"{_rd.count('/nfl/wire')} rule(s)")
+check("old Wire links lead to the news feed", "/wire/ /nfl/wire/ 301" in _rd)
+check("news Wire does not redirect to the removed homepage section",
+      not re.search(r"^/nfl/wire[^\n]*?/#wire", _rd, re.M))
+check("legacy rules do not multiply", _rd.count("/wire/ /nfl/wire/ 301") == 1)
 
 pubs = json.loads(PUBS.read_text())["publications"]
 names = [p["player_name"] for p in pubs]
@@ -86,29 +83,12 @@ if HOME_BEFORE is not None:
     # every card twice.
     check("the temporary Wire module is retired",
           "WIRE MODULE START" not in home)
-    check("the Wire section is present", 'id="wire"' in home)
-    _mod = home.split('id="wire"')[1].split("<main id=\"feed\">")[0] \
-        if 'id="wire"' in home else ""
-    check("no retracted player is in the replacement section",
-          "Anthony Richardson" not in _mod)
-    check("the Wire section shows every approved publication",
-          all(f'data-publication-id="{p["publication_id"]}"' in _mod
-              for p in pubs))
-    # The consolidation: one destination, and it is this page.
-    check("the homepage links to no separate Wire page",
-          "/nfl/wire/" not in home,
-          f'{home.count("/nfl/wire/")} link(s)')
-    check("the calls to action point at the homepage anchor",
-          home.count('href="#wire"') >= 2)
-    # The replacement section carries every approved report, not a
-    # three-card teaser, so the old cap no longer applies. What matters is
-    # that the count shown equals the cards rendered.
-    import re as _re
-    _cards = len(_re.findall(r'<article class="tile wire"', home))
-    check("the replacement renders one card per publication",
-          _cards == len(pubs), f"{_cards} cards, {len(pubs)} published")
-    check("no 'View the full Wire' link remains",
-          "View the full Wire" not in home)
+    archive = ROOT / "site/decision-room/reviewed-wire/index.html"
+    reviewed = archive.read_text() if archive.exists() else home
+    check("approved reports remain in the reviewed archive",
+          all(f'data-publication-id="{p["publication_id"]}"' in reviewed for p in pubs))
+    check("news page ships no reviewed commentary cards",
+          'data-publication-id=' not in PAGE.read_text())
 
 with tempfile.TemporaryDirectory() as tmp:
     out = Path(tmp) / "p.html"
@@ -154,8 +134,8 @@ with tempfile.TemporaryDirectory() as tmp:
 # passed.
 _bp = (ROOT / "scripts" / "build_pages.py").read_text()
 _prot = re.search(r"protected = \{(.+?)\}", _bp, re.S)
-check("build_pages no longer protects a wire directory it does not build",
-      bool(_prot) and '"wire"' not in _prot.group(1),
+check("build_pages protects the news Wire directory",
+      bool(_prot) and '"wire"' in _prot.group(1),
       _prot.group(1)[:70] if _prot else "protected set not found")
 
 # The artifact check must exist, run against the deploy directory, and be
@@ -192,8 +172,8 @@ check("the artifact check names no player",
       "Chris Blair" not in _va and "Anthony Richardson" not in _va)
 check("the artifact check asserts the redirect",
       "/#wire" in _va and "_redirects" in _va)
-check("the artifact check asserts nothing links to the retired page",
-      "no page in the artifact links to /nfl/wire/" in _va)
+check("the artifact check verifies the news feed survives pruning",
+      "news-only Wire page survives the final build" in _va)
 
 # Nothing about this page may touch the fantasy inputs.
 src = (ROOT / "scripts" / "build_wire.py").read_text()

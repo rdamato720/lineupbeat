@@ -395,8 +395,9 @@ def _page(pos):
                      "differ from fantasy-platform eligibility"))],
             "size": f"{len(P):,} players across {len(DATA['teams'])} teams",
         }, separators=(",", ":"))
-    crumb_schema = seo.breadcrumbs(
-        [(t, h) for t, h in trail if h] or [("LineupBeat", "/")])
+    crumb_schema = json.dumps(seo.breadcrumbs(
+        [(t, h) for t, h in trail if h] or [("LineupBeat", "/")]),
+        ensure_ascii=False).replace("</", "<\\/")
     faq = "".join(
         f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>"
         for q, a in FAQ)

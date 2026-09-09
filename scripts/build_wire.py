@@ -318,20 +318,12 @@ def inject_homepage(pubs: list[dict], index: Path) -> bool:
 
 
 REDIRECTS = Path("site/_redirects")
-# Two rules, because they match different things. The splat covers
-# /nfl/wire/ and anything under it; it does NOT cover the bare /nfl/wire,
-# which 404'd in production while its trailing-slash twin redirected. Both
-# forms were linked and both may be indexed.
-WIRE_RULES = ["/nfl/wire /#wire 301", "/nfl/wire/* /#wire 301"]
+# Legacy aliases now lead to the news-only feed. /nfl/wire/ is a real page.
+WIRE_RULES = ["/wire /nfl/wire/ 301", "/wire/ /nfl/wire/ 301"]
 
 
 def write_redirect() -> None:
-    """Keep /nfl/wire/ working, at the edge, without a page behind it.
-
-    Cloudflare Pages reads site/_redirects. The rule is written idempotently
-    into whatever else the file holds, because the deploy uploads the whole
-    directory and a second build must not append a duplicate.
-    """
+    """Remove obsolete homepage redirects and preserve unrelated rules."""
     # Rebuilt, not appended to. Filtering only the rule left its comment
     # behind, so a second build added a second copy of the comment and a
     # third added a third -- the file grew by two lines every run.
@@ -342,10 +334,10 @@ def write_redirect() -> None:
         for ln in REDIRECTS.read_text().splitlines():
             if not ln.strip():
                 continue
-            if ln.startswith("/nfl/wire") or ln.strip() in NOTE.splitlines():
+            if ln.startswith(("/nfl/wire", "/wire ", "/wire/ ")) or ln.strip() in NOTE.splitlines():
                 continue
             keep.append(ln)
-    REDIRECTS.write_text("\n".join(keep + [NOTE] + WIRE_RULES) + "\n")
+    REDIRECTS.write_text("\n".join(keep + WIRE_RULES) + "\n")
     print(f"  wrote {REDIRECTS} ({len(WIRE_RULES)} rules)")
 
 
@@ -371,18 +363,13 @@ def main():
     for p in pubs:
         print(f"    {p['publication_id']}  {p['player_name']:<20}"
               f"{p['team']} {p['position']:<4}{p['reader_label']}")
-    # The Wire has no page of its own any more; it is the homepage.
-    #
-    # This step stays because it is the gate, not the renderer: every record
-    # must carry a reviewer approval, an approved one-sentence public
-    # summary, a fantasy position, a direction whose reader label agrees with
-    # it, an https source link, and evidence and commentary in separate
-    # fields. Failing here stops the job before Deploy. What it writes now is
-    # the redirect that keeps the old URL working.
+    # Validate the separate reviewed archive before rendering news-only links.
     if args.validate_only:
         return 0
     if not args.preview_backfill:
         write_redirect()
+        from build_news_wire import build as build_news
+        build_news(args.base)
         return 0
 
     # A preview may show what unapproved candidates would look like. The

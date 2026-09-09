@@ -492,6 +492,12 @@ def _render(page, accent, c2="#C6F24E", section=None):
     css = ("<style>" + (APP_CSS or "") + seo.CRUMB_CSS + seo.UI_CSS + seo.SCROLLTABLE_CSS
            + PAGE_CSS.replace("__ACCENT__", accent).replace("__C2__", c2)
            + "</style>")
+    # Close the content wrapper before the global footer. Pages with their
+    # own main retain it; player/team pages receive a semantic main landmark.
+    wrapper = "div" if "<main" in page else "main"
+    page = page.replace('<div class="wrap ppage">',
+                        f'<{wrapper} class="wrap ppage">', 1)
+    page = page.replace("__FOOTER__", f"</{wrapper}>\n__FOOTER__", 1)
     return (page
             .replace("__CSS__", css)
             .replace("__HEADER__",
@@ -778,7 +784,8 @@ def player_page(p, nuggets, base, wire_publications=None):
     accent = TEAM_COLORS.get(team, "#C6F24E")
     c2 = TEAM_C2.get(team, "#C6F24E")
     shot = (f"https://sleepercdn.com/content/nfl/players/thumb/"
-            f"{p['id'].replace('nfl-','')}.jpg")
+            f"{p['id'].replace('nfl-','')}.jpg"
+            if p['id'].replace('nfl-','').isdigit() else "/assets/player-placeholder.svg")
     shot = meta.get('season_photo') or shot
 
     who = POS_NAMES.get(pos, pos or "Player")
@@ -1817,9 +1824,9 @@ DATA_PAGE_HTML = """<main class="lb-data-page">
           </h1>
 
           <p class="lb-data-intro">
-            The 177-player Decision Room, 615-player projection set, rankings,
-            and a separate 216-player advanced Draft Comparison serve different
-            scoring formats. Choose the tool that fits your league.
+            Weekly rankings and matchups help you set your lineup. Season projections,
+            draft comparisons and research tools help you plan ahead.
+            Choose the board and scoring format that fit your league.
           </p>
 
           <div class="lb-data-actions">
@@ -3534,13 +3541,12 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
           <div class="lb-about-kicker">ABOUT LINEUPBEAT</div>
           <h1>Fantasy decisions start with <span>better information.</span></h1>
           <p class="lb-about-lead">
-            LineupBeat follows an average of 3 beat reporters for every NFL team,
-            connects their reporting to the players it affects, and pairs it with
-            fantasy data built to help you make better decisions.
+            LineupBeat brings together NFL and College rankings, projections,
+            player comparisons and news to help you make better fantasy decisions.
           </p>
 
           <div class="lb-about-actions">
-            <a class="lb-about-btn lb-about-btn-primary" href="/#wire">
+            <a class="lb-about-btn lb-about-btn-primary" href="/nfl/wire/">
               OPEN THE WIRE
               <svg class="lb-about-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
             </a>
@@ -3550,16 +3556,16 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
 
         <aside class="lb-about-wire" aria-label="How the LineupBeat Wire works">
           <div class="lb-about-wire-head">
-            <div class="lb-about-live"><span class="lb-about-dot"></span>LIVE ON THE WIRE</div>
-            <span>ALL 32 NFL TEAMS</span>
+            <div class="lb-about-live"><span class="lb-about-dot"></span>ON THE WIRE</div>
+            <span>NFL PLAYER NEWS</span>
           </div>
 
           <div class="lb-about-wire-body">
             <div class="lb-about-wire-item">
               <div class="lb-about-marker">NFL</div>
               <div>
-                <div class="lb-about-wire-title"><strong>Player role changes</strong><time>minutes ago</time></div>
-                <p>Local reporting surfaces a meaningful shift in first team work, health or opportunity.</p>
+                <div class="lb-about-wire-title"><strong>Player headlines</strong></div>
+                <p>Browse headlines from trusted sources, with a date and link to each original report.</p>
                 <div class="lb-about-source">Original reporter credited</div>
               </div>
             </div>
@@ -3569,15 +3575,15 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
               <div>
                 <div class="lb-about-wire-title"><strong>Matched to the player</strong><time>then</time></div>
                 <p>The report is connected directly to the fantasy relevant player so you do not have to hunt across dozens of feeds.</p>
-                <div class="lb-about-source">Reporting stays separate from model opinion</div>
+                <div class="lb-about-source">Filter by player or team</div>
               </div>
             </div>
 
             <div class="lb-about-wire-item">
               <div class="lb-about-marker">FP</div>
               <div>
-                <div class="lb-about-wire-title"><strong>Put in fantasy context</strong><time>when warranted</time></div>
-                <p>The Wire and the data work together without turning every headline into an automatic projection change.</p>
+                <div class="lb-about-wire-title"><strong>Read the original report</strong></div>
+                <p>Follow the source link for the full story. The Wire contains news links, without LineupBeat commentary.</p>
                 <div class="lb-about-source">Evidence first</div>
               </div>
             </div>
@@ -3592,11 +3598,11 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
       <div class="lb-about-proof-grid">
         <div class="lb-about-proof">
           <svg viewBox="0 0 48 48"><path d="M7 34c6-13 13-20 20-20 5 0 9 2 14 6"/><circle cx="10" cy="34" r="3"/><circle cx="28" cy="14" r="3"/><circle cx="41" cy="20" r="3"/></svg>
-          <div><strong>32</strong><span>NFL teams covered</span></div>
+          <div><strong>NFL + College</strong><span>Fantasy football research</span></div>
         </div>
         <div class="lb-about-proof">
           <svg viewBox="0 0 48 48"><circle cx="16" cy="15" r="7"/><circle cx="32" cy="16" r="6"/><path d="M5 39c1-9 5-14 12-14s11 5 12 14"/><path d="M26 39c1-7 4-11 10-11 3 0 6 1 8 4"/></svg>
-          <div><strong>3</strong><span>Beat reporters per team, avg.</span></div>
+          <div><strong>Weekly</strong><span>Rankings and projections</span></div>
         </div>
         <div class="lb-about-proof">
           <svg viewBox="0 0 48 48"><path d="M28 4 9 28h13l-3 16 20-26H26z"/></svg>
@@ -3622,7 +3628,7 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
           <svg viewBox="0 0 48 48"><path d="M8 10h32v24H20l-9 8v-8H8z"/><path d="M14 17h20M14 23h16M14 29h11"/></svg>
           <div class="lb-about-card-kicker">01 · THE WIRE</div>
           <h3>Follow the people closest to the teams.</h3>
-          <p>We follow local beat reporting across every NFL team, surface the fantasy relevant updates, and credit the original reporter and source.</p>
+          <p>The Wire brings together player headlines from trusted sources, with timestamps and links to the original reports.</p>
         </article>
 
         <article class="lb-about-do-card">
@@ -3647,7 +3653,7 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
       <div class="lb-about-split">
         <div>
           <div class="lb-about-kicker">HOW THE WIRE WORKS</div>
-          <h2>Dozens of local feeds, one fantasy view.</h2>
+          <h2>Player news in one place.</h2>
           <p class="lb-about-split-copy">
             NFL news rarely arrives in one clean place. It shows up in practice observations,
             press conferences, local reporting, injury updates and depth chart changes.
@@ -3762,7 +3768,7 @@ a.lb-about-btn-primary, .lb-about-btn-primary{color:#070907 !important;
         </div>
 
         <div class="lb-about-final-actions">
-          <a class="lb-about-btn lb-about-btn-primary" href="/#wire">
+          <a class="lb-about-btn lb-about-btn-primary" href="/nfl/wire/">
             OPEN THE WIRE
             <svg class="lb-about-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
           </a>
@@ -4088,6 +4094,7 @@ def main():
             # The editorial Wire. Included only when it exists, like every
             # other entry here, so a build with no reviewed publications
             # does not advertise a page it did not write.
+            ("/nfl/wire/", "hourly", "0.7"),
             ("/about/", "monthly", "0.6")):
         if (SITE / path.lstrip("/") / "index.html").exists():
             urls.append((f"{base}{path}", now, freq, prio))
@@ -4246,7 +4253,7 @@ def main():
         protected = {"team", "data", "projections", "draft-value",
                      "durability", "coaching", "strength-of-schedule",
                      "offensive-line-rb-performance", "rankings",
-                     "who-should-i-draft", "week-1"}
+                     "who-should-i-draft", "week-1", "wire"}
         for d in (SITE / args.sport).glob("*"):
             if not d.is_dir() or d.name in protected:
                 continue

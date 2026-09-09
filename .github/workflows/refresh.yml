@@ -22,6 +22,9 @@ on:
       - main
     paths:
       - "data/wire_publications.json"
+      - "data/news_wire.json"
+      - "scripts/build_news_wire.py"
+      - "scripts/seo.py"
       - "scripts/build_pages.py"
       - "scripts/build_decision_room.py"
       - "scripts/build_nfl_v15_development.py"

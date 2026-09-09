@@ -2,6 +2,34 @@
 
 Last verified: 2026-08-24
 
+## 2026-09-09 news-only Wire restoration
+
+Ralph requested a dedicated news-only `/nfl/wire/`, replacing the historical
+homepage-only product described below. NFL navigation now links to The Wire;
+`/wire` and `/wire/` redirect there. The homepage remains the Decision Room
+experience. The approved commentary store is unchanged and stays separate in
+the unlisted reviewed archive; player-page commentary remains removed.
+
+`scripts/build_news_wire.py` reads publisher headline, original URL and source
+timestamp from the existing AUTO_READY RSS sources. It matches a complete
+registered skill-player name and the registered source team. It reads no
+article bodies, pending evidence, model output or projections. Source dates
+must be within seven days at capture; missing or future dates are excluded.
+The public renderer emits only headline, player/team, image, source/date/link.
+Image metadata is joined after selection. No generated commentary is involved.
+
+`data/news_wire.json` is the independent news snapshot. The news-only workflow
+checks feeds twice hourly, retains recent headlines through partial failures,
+and preserves the snapshot and fails visibly when every feed fails. It commits
+only this snapshot and dispatches a page-only refresh with `skip_fetch=true`.
+No model or paid-provider calls are made. This feed does not promise all-team
+coverage: the first capture had four of five eligible sources responding and
+three matching headlines. Data coverage must never be overstated.
+
+The 86 approved commentary publications, evidence, reviews and numerical
+fantasy data are untouched. Their approval requirements below still apply.
+Run `scripts/test_news_wire.py` in addition to the established Wire gates.
+
 ## 2026-08-29 player-card restoration
 
 The curated digest experiment is retired. The homepage again renders the

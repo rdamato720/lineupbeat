@@ -466,7 +466,7 @@ def render_dynasty(records: list[dict], built: datetime, pos: str | None = None)
     css, header, footer = base.site_chrome()
     body = f'''<main class="rkwrap"><nav class="crumbs"><a href="/">Home</a><span>/</span><a href="/nfl/rankings/">Rankings</a><span>/</span><b>Dynasty</b></nav>
 <header class="rkhead"><p class="rkeyebrow">2026 FANTASY FOOTBALL</p><h1>{base.esc(title.removesuffix(' | LineupBeat'))}</h1><p class="rkintro">Current production and long-term value, ranked together.</p><p class="rkstatus">Updated {built:%B %d, %Y} &middot; PPR dynasty &middot; Current NFL players</p></header>
-{format_nav(root if not pos else '')}<div class="rkctl">{tabs}<div class="rkfilters"><input id="rkq" type="search" placeholder="Search players"><select id="rkteam"><option value="">All teams</option>{opts}</select><button class="rkclear" id="rkclear" type="button">Clear filters</button></div><p class="rkcount" id="rkcount">{len(shown)} players</p></div>
+{format_nav(root if not pos else '')}<div class="rkctl">{tabs}<div class="rkfilters"><input id="rkq" type="search" aria-label="Search players" placeholder="Search players"><select id="rkteam" aria-label="Filter by team"><option value="">All teams</option>{opts}</select><button class="rkclear" id="rkclear" type="button">Clear filters</button></div><p class="rkcount" id="rkcount">{len(shown)} players</p></div>
 <table class="rktable" id="rktable"><thead>{head_row}</thead><tbody>{body_rows}</tbody></table>{methodology_html}{seo.faq_html(FAQ['dynasty'])}{seo.related_html('rankings')}</main>'''
     items = [(r["overall_rank"] if not pos else r["position_rank"],
               f'{r["player_name"]} ({r["team"]}, {r["position"]})', None) for r in shown]

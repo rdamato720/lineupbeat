@@ -117,7 +117,7 @@ class CollegeDecisionRenderingTests(unittest.TestCase):
         self.assertIn("Expected opportunity", text)
         self.assertIn("Blowout risk", text)
         self.assertIn("Check player availability", text)
-        self.assertIn("market input is not an outcome or guarantee", text)
+        self.assertIn("Projections and game lines are estimates, not guarantees.", text)
         self.assertNotIn("30-second-delayed", text)
         self.assertIn("Game lines unavailable", text)
         self.assertNotIn("The recommendation follows the higher validated projection", text)

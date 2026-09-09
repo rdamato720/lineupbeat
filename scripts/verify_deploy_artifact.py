@@ -712,35 +712,23 @@ def main() -> int:
         print("  the deploy directory does not exist")
         return 1
 
-    # There must be no separate destination, and the old one must still
-    # answer. Cloudflare Pages reads _redirects from the artifact root.
-    wire_dir = root / "nfl" / "wire"
-    check("there is no separate /nfl/wire/ page in the artifact",
-          not wire_dir.exists(), str(wire_dir))
-
-    rules = (root / "_redirects")
+    # The public news-only page and the reviewed archive are separate products.
+    wire_page = root / "nfl" / "wire" / "index.html"
+    check("news-only Wire page survives the final build", wire_page.is_file())
+    news = wire_page.read_text() if wire_page.is_file() else ""
+    check("Wire has accessible player and team filters",
+          'id="news-player"' in news and 'for="news-player"' in news
+          and 'id="news-team"' in news and 'for="news-team"' in news)
+    check("Wire contains no Lineup Beat commentary",
+          'lineupbeat_impact' not in news and 'class="wimp"' not in news
+          and 'data-publication-id=' not in news)
+    rules = root / "_redirects"
     text = rules.read_text() if rules.is_file() else ""
-    check("_redirects is in the artifact", bool(text))
-    # Both forms. The bare path is not covered by the splat and 404'd in
-    # production while the trailing-slash form redirected.
-    for form, pat in (("/nfl/wire/", r"^/nfl/wire/\*?\s+/#wire\s+30[12]\s*$"),
-                      ("/nfl/wire", r"^/nfl/wire\s+/#wire\s+30[12]\s*$")):
-        check(f"{form} redirects to the homepage Wire",
-              bool(re.search(pat, text, re.M)))
-
-    # No page may still send a reader to the retired destination.
-    dangling = []
-    for page in root.rglob("*.html"):
-        for href in set(re.findall(r'href="([^"]*?/nfl/wire/[^"]*)"',
-                                   page.read_text())):
-            dangling.append(f"{page.relative_to(root)} -> {href}")
-    check("no page in the artifact links to /nfl/wire/",
-          not dangling, "; ".join(dangling[:3]))
-
+    check("Wire is not redirected to the missing homepage section",
+          not re.search(r"^/nfl/wire[^\n]*?/#wire", text, re.M))
+    check("old /wire/ links reach the news feed", "/wire/ /nfl/wire/ 301" in text)
     sm = root / "sitemap.xml"
-    if sm.is_file():
-        check("the sitemap does not list /nfl/wire/",
-              "/nfl/wire/" not in sm.read_text())
+    check("news Wire is in the sitemap", sm.is_file() and "/nfl/wire/" in sm.read_text())
 
     check_homepage(root, decision_room=decision_room, public_only=public_only)
     if decision_room:
