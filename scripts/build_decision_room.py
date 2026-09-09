@@ -314,7 +314,7 @@ def render(payload: dict) -> str:
 
   <section class="dr-section dr-faq" id="faq"><div class="dr-section-head"><div><small>FAQ</small><h2>Decision Room questions</h2></div></div><div class="dr-faq-list">{faq_rows}</div></section>
 
-  <nav class="dr-tools" aria-label="More Lineup Beat tools"><span>Keep exploring</span><a href="/nfl/rankings/">Rankings</a><a href="/nfl/projections/">Projections</a><a href="/nfl/who-should-i-draft/">Draft comparison</a></nav>
+  <nav class="dr-tools" aria-label="More Lineup Beat tools"><span>Keep exploring</span><a href="/nfl/week-1/rankings/">Week 1 rankings</a><a href="/nfl/week-1/projections/">Week 1 projections</a><a href="/nfl/who-should-i-draft/">Draft comparison</a></nav>
 </main>
 <script type="application/ld+json">{faq_schema}</script>
 <script id="dr-data" type="application/json">{data}</script>

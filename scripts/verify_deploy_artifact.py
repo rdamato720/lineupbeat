@@ -702,6 +702,26 @@ def check_homepage(root, decision_room=False, public_only=False):
               "Reporters / team" not in text)
 
 
+def check_week1_boards(root):
+    reference_path = root / "decision-room/nfl/index.html"
+    reference_text = reference_path.read_text() if reference_path.is_file() else ""
+    match = re.search(r'<script id="dr-data" type="application/json">(.*?)</script>', reference_text, re.S)
+    reference = json.loads(match.group(1)) if match else {}
+    expected = {p["id"]: p["formats"] for p in reference.get("players", [])}
+    sitemap = (root / "sitemap.xml").read_text()
+    for kind in ("rankings", "projections"):
+        route = f"/nfl/week-1/{kind}/"
+        page = root / route.lstrip("/") / "index.html"
+        text = page.read_text() if page.is_file() else ""
+        match = re.search(r'<script id="week1-data" type="application/json">(.*?)</script>', text, re.S)
+        payload = json.loads(match.group(1)) if match else {}
+        found = {p["id"]: p["formats"] for p in payload.get("players", [])}
+        check(f"Week 1 {kind} survives final pruning and matches Decision Room",
+              bool(expected) and found == expected
+              and payload.get("updated_at") == reference.get("updated_at"))
+        check(f"Week 1 {kind} is in the sitemap", route in sitemap)
+
+
 def main() -> int:
     args = [arg for arg in sys.argv[1:]
             if arg not in {"--decision-room", "--public-only"}]
@@ -744,6 +764,8 @@ def main() -> int:
               "/nfl/wire/" not in sm.read_text())
 
     check_homepage(root, decision_room=decision_room, public_only=public_only)
+    if decision_room:
+        check_week1_boards(root)
     check_player_page_impacts(root)
     check_ranking_formats(root)
     check_comparison_tool(root)

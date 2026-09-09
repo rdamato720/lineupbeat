@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import json
 import statistics
+import re
+import subprocess
 import sys
 import unittest
 from pathlib import Path
@@ -131,6 +133,64 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
             self.assertGreater(row["predictions"], 0)
             self.assertGreater(row["proxy_mae"], 0)
             self.assertGreater(row["baseline_mae"], 0)
+
+    def test_week1_boards_publish_same_ranks_and_projection_components(self):
+        import build_nfl_week1_boards as boards
+        for kind in ("rankings", "projections"):
+            page = boards.render(self.payload, kind, ROOT / "site")
+            self.assertIn(f'https://lineupbeat.com/nfl/week-1/{kind}/', page)
+            embedded = json.loads(re.search(
+                r'<script id="week1-data" type="application/json">(.*?)</script>',
+                page, re.S).group(1))
+            self.assertEqual(embedded["updated_at"], self.payload["updated_at"])
+            by_id = {p["id"]: p for p in embedded["players"]}
+            for player in self.payload["players"]:
+                self.assertEqual(by_id[player["id"]]["formats"], player["formats"])
+                row = re.search(r'<tr data-id="' + re.escape(player["id"]) +
+                                r'">(.*?)</tr>', page, re.S).group(1)
+                if kind == "projections":
+                    values = re.findall(r'<td>(-?[0-9.]+)</td>', row)
+                    self.assertEqual(values, [f'{player["stat_projection"][k]:.1f}'
+                                              for k, _ in boards.STATS])
+            self.assertEqual(len(by_id), len(self.payload["players"]))
+            self.assertNotIn('bookmaker_key', page)
+
+    def test_week1_board_filters_keep_source_ranks_and_switch_scoring(self):
+        import build_nfl_week1_boards as boards
+        # Execute the shipped controller with a small DOM adapter. No browser
+        # dependency or network; assertions use the actual weekly source.
+        harness = r"""
+const vm=require('node:vm'),assert=require('node:assert/strict');
+const source=JSON.parse(require('node:fs').readFileSync(0,'utf8'));
+const els={};
+for(const id of ['wb-format','wb-position','wb-team','wb-search','wb-count','wb-caption','wb-empty'])
+ els[id]={value:id==='wb-format'?'half_ppr':'',listeners:{},addEventListener(n,f){this.listeners[n]=f;}};
+const rows=source.players.map(p=>({dataset:{id:p.id},hidden:false,cells:{},querySelector(s){return this.cells[s]??={textContent:''};}}));
+els['wb-rows']={rows:[...rows],appendChild(r){this.rows=this.rows.filter(x=>x!==r);this.rows.push(r);}};
+els['week1-data']={textContent:JSON.stringify(source)};
+vm.runInNewContext(process.argv[1],{document:{getElementById:id=>els[id]}});
+const set=(id,value,event='change')=>{els[id].value=value;els[id].listeners[event]();};
+set('wb-format','ppr');
+let top=[...source.players].sort((a,b)=>a.formats.ppr.overall_rank-b.formats.ppr.overall_rank)[0];
+assert.equal(els['wb-rows'].rows[0].dataset.id,top.id);
+set('wb-position','RB');set('wb-team','NE');
+let visible=rows.filter(r=>!r.hidden);
+assert.equal(visible.length,source.players.filter(p=>p.position==='RB'&&p.team==='NE').length);
+assert.ok(visible.length>0);
+for(const r of visible){let p=source.players.find(p=>p.id===r.dataset.id);assert.equal(r.cells['[data-col=rank]'].textContent,p.formats.ppr.position_rank);}
+set('wb-search','TreVeyon Henderson','input');
+assert.equal(rows.filter(r=>!r.hidden).length,1);
+assert.equal(rows.find(r=>!r.hidden).cells['[data-col=points]'].textContent,source.players.find(p=>p.name==='TreVeyon Henderson').formats.ppr.projected_points.toFixed(1));
+set('wb-search','no such player','input');assert.equal(rows.filter(r=>!r.hidden).length,0);assert.equal(els['wb-empty'].hidden,false);
+set('wb-search','','input');set('wb-position','');set('wb-team','');set('wb-format','non_ppr');
+assert.equal(rows.filter(r=>!r.hidden).length,source.players.length);
+for(const r of rows){let p=source.players.find(p=>p.id===r.dataset.id);assert.equal(r.cells['[data-col=points]'].textContent,p.formats.non_ppr.projected_points.toFixed(1));}
+"""
+        source = {"players": [{k:p[k] for k in ("id", "name", "team", "position", "formats")}
+                              for p in self.payload["players"]]}
+        result = subprocess.run(["node", "-e", harness, boards.JS], input=json.dumps(source),
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_private_provider_and_license_record_are_honest(self):
         calls = self.provenance["provider_requests"]

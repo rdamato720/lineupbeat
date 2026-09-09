@@ -169,6 +169,7 @@ def main():
     run('build_wire','--base',base)
     run('wire_homepage_replacement','--apply')
     run('build_decision_room')
+    run('build_nfl_week1_boards')
     run('build_pages','--base',base,'--db',str(db))
     run('build_my_team','--extension-origin',base)
     run('build_league_history')
