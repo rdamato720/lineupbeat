@@ -1545,6 +1545,7 @@ def page_html(records, pos, built, replacement):
   </table>
 {more_button}
 
+{seo.research_links(pos)}
 {METHODOLOGY}
 {seo.related_html('rankings')}
 </main>
