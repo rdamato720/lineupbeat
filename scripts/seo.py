@@ -720,10 +720,15 @@ tbody td{border-color:#28342d!important}tbody tr:hover td{background:#141f19!imp
 
 NAV_JS = """
 <script>
+// Recover old bookmarks and browser-cached homepage Wire redirects.
+if(location.pathname==='/'&&location.hash==='#wire'){
+  location.replace('/nfl/wire/?from=homepage');
+}
+
 (function(){
   function fallback(img){
     if(!img || img.tagName!=='IMG' || img.dataset.photoFallback) return;
-    if(!/^(https:\/\/a\.espncdn\.com\/i\/headshots\/|https:\/\/sleepercdn\.com\/content\/nfl\/players\/)/.test(img.src)) return;
+    if(!img.src.startsWith('https://a.espncdn.com/i/headshots/')&&!img.src.startsWith('https://sleepercdn.com/content/nfl/players/')) return;
     img.dataset.photoFallback='true';img.onerror=null;
     img.src='/assets/player-placeholder.svg';img.style.visibility='visible';
   }

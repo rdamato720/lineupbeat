@@ -34,7 +34,7 @@ fetch('/data/decision-room-college.json',{credentials:'same-origin'}).then(r=>{i
 if(D.sport!=='college'||D.mode!=='weekly'||D.week!==2)throw Error();
 root.setAttribute('aria-busy','false');
 const safe=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const dateLabel=value=>{const d=new Date(value);return Number.isNaN(d.getTime())?'Date unavailable':new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'}).format(d)};
+const dateLabel=value=>{const text=String(value??'');if(!/^\d{4}-\d{2}-\d{2}(T|$)/.test(text))return safe(text)||'Date unavailable';const d=new Date(text.length===10?text+'T12:00:00Z':text);return Number.isNaN(d.getTime())?'Date unavailable':new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'}).format(d)};
 const P=Object.fromEntries(D.players.map(p=>[p.id,p])),label=p=>`${p.name} · ${p.team} ${p.position}`,byLabel=Object.fromEntries(D.players.map(p=>[label(p),p]));
 const A=document.getElementById('cdr-a'),B=document.getElementById('cdr-b'),AL=document.getElementById('cdr-a-list'),BL=document.getElementById('cdr-b-list'),POS=document.getElementById('cdr-position'),TEAM=document.getElementById('cdr-team'),X=document.getElementById('cdr-cross-position'),O=document.getElementById('cdr-result');
     const shown=p=>+Number(p.formats.yahoo.projected_points).toFixed(1),num=v=>v==null?'—':Number(v).toFixed(1),gapText=v=>Number(v)<.1?'&lt;0.1':num(v),pct=(g,r)=>+(g/Math.max(Math.abs(r),.1)*100).toFixed(1),market=p=>D.market_context_by_team[p.team_id];
