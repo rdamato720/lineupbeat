@@ -37,7 +37,8 @@ PROHIBITED = re.compile(
     r'page build: current release|frozen team(?:-level| totals)|'
     r'twelve decimal places|reconciliation checks|no target layer has been built|'
     r'identity-resolved players|exact current name, team and position match|'
-    r'published only when validated profile data', re.I)
+    r'published only when validated profile data|'
+    r'reconciliation adjustment|baseline remains unchanged|invalid negative rushing-yard|games of baseline opportunity', re.I)
 
 class ReaderText(HTMLParser):
     def __init__(self):
