@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1405,
+ "count": 1420,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -15494,6 +15494,171 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004204
+  },
+  {
+   "candidate_id": "mobile:onsi:92a8042de710c02625f6",
+   "player_id": "00-0036442",
+   "source_url": "https://www.si.com/nfl/bengals/onsi/joe-burrow-praises-bengals-ownership-doubles-down-on-future-01m241bcg4wm",
+   "attempted_at": "2026-09-09T22:06:28+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T22:06:31+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003766
+  },
+  {
+   "candidate_id": "mobile:onsi:41c67a06d2772eb17b89",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/which-2025-dolphins-starter-now-gone-will-be-missed-the-most-01m23twre9qm",
+   "attempted_at": "2026-09-09T22:06:31+00:00",
+   "status": "ABSTAIN",
+   "completed_at": "2026-09-09T22:06:37+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006886
+  },
+  {
+   "candidate_id": "mobile:onsi:294ef19d09f2c64f1808",
+   "player_id": "00-0037239",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/projections-wide-receivers-nfl-week-1-start-sit-tre-tucker",
+   "attempted_at": "2026-09-09T22:06:37+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T22:06:41+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004896
+  },
+  {
+   "candidate_id": "mobile:onsi:71bb68e2e3eb18b5159b",
+   "player_id": "00-0034348",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/projections-wide-receivers-nfl-week-1-start-sit-tre-tucker",
+   "attempted_at": "2026-09-09T22:06:41+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T22:06:44+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003892
+  },
+  {
+   "candidate_id": "mobile:onsi:8230a1c821d412e69d8d",
+   "player_id": "00-0039338",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/projections-wide-receivers-nfl-week-1-start-sit-tre-tucker",
+   "attempted_at": "2026-09-09T22:06:44+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T22:06:48+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00535
+  },
+  {
+   "candidate_id": "mobile:onsi:bc5540ce2a3068cef6d9",
+   "player_id": "00-0038563",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/projections-wide-receivers-nfl-week-1-start-sit-tre-tucker",
+   "attempted_at": "2026-09-09T22:06:48+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T22:06:52+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006092
+  },
+  {
+   "candidate_id": "mobile:onsi:9bd868e66e5afdcd71dc",
+   "player_id": "00-0036613",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/projections-wide-receivers-nfl-week-1-start-sit-tre-tucker",
+   "attempted_at": "2026-09-09T22:06:52+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T22:06:56+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00501
+  },
+  {
+   "candidate_id": "mobile:onsi:bf0e66fad8ad35acd119",
+   "player_id": "00-0039066",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/projections-wide-receivers-nfl-week-1-start-sit-tre-tucker",
+   "attempted_at": "2026-09-09T22:06:56+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T22:07:01+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.006034
+  },
+  {
+   "candidate_id": "mobile:onsi:9a3e8f5fc1ae3ef3c02a",
+   "player_id": "00-0041037",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/projections-wide-receivers-nfl-week-1-start-sit-tre-tucker",
+   "attempted_at": "2026-09-09T22:07:01+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T22:07:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004758
+  },
+  {
+   "candidate_id": "mobile:onsi:42abcd30035f49af3b16",
+   "player_id": "00-0034827",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/projections-wide-receivers-nfl-week-1-start-sit-tre-tucker",
+   "attempted_at": "2026-09-09T22:07:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T22:07:08+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004486
+  },
+  {
+   "candidate_id": "mobile:onsi:a96066d80d0cd083c4b6",
+   "player_id": "00-0036358",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/projections-wide-receivers-nfl-week-1-start-sit-tre-tucker",
+   "attempted_at": "2026-09-09T22:07:08+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T22:07:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.008138
+  },
+  {
+   "candidate_id": "mobile:onsi:da3a9d3f6c50714d94f7",
+   "player_id": "00-0037247",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/projections-wide-receivers-nfl-week-1-start-sit-tre-tucker",
+   "attempted_at": "2026-09-09T22:07:15+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T22:07:18+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00415
+  },
+  {
+   "candidate_id": "mobile:onsi:2ec26b463e2fe9fa4e4b",
+   "player_id": "00-0039075",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/projections-wide-receivers-nfl-week-1-start-sit-tre-tucker",
+   "attempted_at": "2026-09-09T22:07:18+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T22:07:22+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005494
+  },
+  {
+   "candidate_id": "mobile:onsi:61c25bf98ac2455a8d22",
+   "player_id": "00-0034796",
+   "source_url": "https://www.si.com/nfl/ravens/onsi/ravens-wr-ja-kobi-lane-will-be-called-on-quite-a-bit-in-his-first-nfl-game-he-seems-up-for-it-01m23zp6hcjd",
+   "attempted_at": "2026-09-09T22:07:22+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T22:07:25+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00447
+  },
+  {
+   "candidate_id": "mobile:onsi:5a43be5e6a3c1bdaf1cf",
+   "player_id": "00-0039361",
+   "source_url": "https://www.si.com/onsi/fantasy/rankings/projections-start-sit-running-backs-week-1-fantasy-football-travis-etienne",
+   "attempted_at": "2026-09-09T22:07:25+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T22:07:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00727
   }
  ]
 }
