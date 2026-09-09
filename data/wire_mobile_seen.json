@@ -1,6 +1,6 @@
 {
  "schema_version": "wire-mobile-seen-v1",
- "count": 1374,
+ "count": 1391,
  "attempts": [
   {
    "candidate_id": "mobile:x:47ddf35d3c4472d55880",
@@ -15153,6 +15153,193 @@
    "provider": "openai",
    "model": "gpt-5.6-terra",
    "cost_usd": 0.004888
+  },
+  {
+   "candidate_id": "mobile:onsi:2ce8757406010d0a81f6",
+   "player_id": "00-0040890",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/news/why-chiefs-fans-shouldnt-panic-over-cyrus-allen-depth-chart-listing",
+   "attempted_at": "2026-09-09T16:40:49+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T16:40:55+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005138
+  },
+  {
+   "candidate_id": "mobile:onsi:00706a029763762dbc2e",
+   "player_id": "00-0038104",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/news/why-chiefs-fans-shouldnt-panic-over-cyrus-allen-depth-chart-listing",
+   "attempted_at": "2026-09-09T16:40:55+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T16:41:00+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005854
+  },
+  {
+   "candidate_id": "mobile:onsi:088e55625cd280bb71a9",
+   "player_id": "00-0039067",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/news/why-chiefs-fans-shouldnt-panic-over-cyrus-allen-depth-chart-listing",
+   "attempted_at": "2026-09-09T16:41:00+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T16:41:04+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.005036
+  },
+  {
+   "candidate_id": "mobile:onsi:6dd88a7d9c59571f2896",
+   "player_id": "00-0039894",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/news/why-chiefs-fans-shouldnt-panic-over-cyrus-allen-depth-chart-listing",
+   "attempted_at": "2026-09-09T16:41:04+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T16:41:09+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00506
+  },
+  {
+   "candidate_id": "mobile:onsi:a8712aa6bc2a6c3621b6",
+   "player_id": "00-0040646",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/news/why-chiefs-fans-shouldnt-panic-over-cyrus-allen-depth-chart-listing",
+   "attempted_at": "2026-09-09T16:41:09+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T16:41:12+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.003936
+  },
+  {
+   "candidate_id": "mobile:onsi:d7f957a089906cf48211",
+   "player_id": "00-0033873",
+   "source_url": "https://www.si.com/nfl/chiefs/onsi/news/why-chiefs-fans-shouldnt-panic-over-cyrus-allen-depth-chart-listing",
+   "attempted_at": "2026-09-09T16:41:12+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T16:41:15+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00437
+  },
+  {
+   "candidate_id": "mobile:onsi:cd251c4acc95c7e27882",
+   "player_id": "00-0036139",
+   "source_url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-week-1-joey-porter-jr-3-other-storylines",
+   "attempted_at": "2026-09-09T16:41:15+00:00",
+   "status": "CARD",
+   "completed_at": "2026-09-09T16:41:19+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00457
+  },
+  {
+   "candidate_id": "mobile:onsi:070f6e60ef973ce3e566",
+   "player_id": "00-0036389",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/philadelphia-eagles-week-1-will-jonathan-greenard-play-and-three-other-storylines-01m23c8vxm87",
+   "attempted_at": "2026-09-09T16:41:19+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T16:41:24+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004634
+  },
+  {
+   "candidate_id": "mobile:onsi:a1b9ddcba54fe67210f9",
+   "player_id": "00-0036912",
+   "source_url": "https://www.si.com/nfl/eagles/onsi/philadelphia-eagles-week-1-will-jonathan-greenard-play-and-three-other-storylines-01m23c8vxm87",
+   "attempted_at": "2026-09-09T16:41:24+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T16:41:27+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004234
+  },
+  {
+   "candidate_id": "mobile:onsi:0279f636f888ddf6f946",
+   "player_id": "00-0037545",
+   "source_url": "https://www.si.com/onsi/fantasy/start-em-sit-em/fantasy-football-week-1-start-em-sit-em-romeo-doubs-vs-rashid-shaheed",
+   "attempted_at": "2026-09-09T16:41:27+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T16:41:32+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00585
+  },
+  {
+   "candidate_id": "mobile:onsi:73b31ccfb0386de7e0b0",
+   "player_id": "00-0039918",
+   "source_url": "https://www.si.com/nfl/bears/onsi/nfl-insider-confirms-caleb-williams-had-2025-playoff-team-scared-to-face-bears",
+   "attempted_at": "2026-09-09T16:41:32+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T16:41:35+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004738
+  },
+  {
+   "candidate_id": "mobile:onsi:66796843c41b29dab724",
+   "player_id": "00-0038128",
+   "source_url": "https://www.si.com/nfl/dolphins/onsi/three-key-areas-where-the-dolphins-have-an-advantage-over-the-raiders-in-week-1-01m239wkecrh",
+   "attempted_at": "2026-09-09T16:41:35+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T16:41:39+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00443
+  },
+  {
+   "candidate_id": "mobile:onsi:898d8985894ac97af8bf",
+   "player_id": "00-0036971",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-7-who-will-define-the-2026-season-trevor-lawrence-sets-the-tone",
+   "attempted_at": "2026-09-09T16:41:39+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T16:41:42+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004836
+  },
+  {
+   "candidate_id": "mobile:onsi:5df73516a7cb3450afb8",
+   "player_id": "00-0038606",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-7-who-will-define-the-2026-season-trevor-lawrence-sets-the-tone",
+   "attempted_at": "2026-09-09T16:41:42+00:00",
+   "status": "VALIDATION_FAILED",
+   "completed_at": "2026-09-09T16:41:47+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.0062
+  },
+  {
+   "candidate_id": "mobile:onsi:d7efc423b64b8a4522c3",
+   "player_id": "00-0039893",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-7-who-will-define-the-2026-season-trevor-lawrence-sets-the-tone",
+   "attempted_at": "2026-09-09T16:41:47+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T16:41:50+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.004392
+  },
+  {
+   "candidate_id": "mobile:onsi:7af38c7c6d3639a0714e",
+   "player_id": "00-0034960",
+   "source_url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-7-who-will-define-the-2026-season-trevor-lawrence-sets-the-tone",
+   "attempted_at": "2026-09-09T16:41:50+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T16:41:53+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00455
+  },
+  {
+   "candidate_id": "mobile:onsi:7dd63d1690bb5c5da2f4",
+   "player_id": "00-0039910",
+   "source_url": "https://www.si.com/nfl/commanders/onsi/whats-changed-eagles-offseason-recap-commanders-week-1-matchup",
+   "attempted_at": "2026-09-09T16:41:53+00:00",
+   "status": "IGNORE",
+   "completed_at": "2026-09-09T16:41:57+00:00",
+   "provider": "openai",
+   "model": "gpt-5.6-terra",
+   "cost_usd": 0.00442
   }
  ]
 }
