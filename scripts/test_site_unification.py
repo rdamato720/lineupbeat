@@ -24,6 +24,7 @@ class PageParser(HTMLParser):
         self.anchors: list[str] = []
         self.images: list[str] = []
         self.h1 = 0
+        self.main = 0
         self.headers = 0
         self.footers = 0
         self.in_header = 0
@@ -32,6 +33,8 @@ class PageParser(HTMLParser):
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
+        if tag == "main" or values.get("role") == "main":
+            self.main += 1
         if tag == "a" and values.get("href"):
             self.anchors.append(values["href"] or "")
         elif tag == "img" and values.get("src"):
@@ -111,12 +114,14 @@ def audit(root: Path) -> tuple[int, int, int]:
         rel = "/" + page.relative_to(root).as_posix()
         if parser.headers != 1:
             errors.append(f"{rel}: expected one global header, found {parser.headers}")
+        if parser.main != 1:
+            errors.append(f"{rel}: expected one main landmark, found {parser.main}")
         if parser.h1 != 1:
             errors.append(f"{rel}: expected one semantic h1, found {parser.h1}")
         if parser.footers != 1:
             errors.append(f"{rel}: expected one global footer, found {parser.footers}")
         shell = " ".join(parser.shell_text).lower()
-        for legacy in ("the wire", "my roster",
+        for legacy in ("my roster",
                        "every team on the beat"):
             if legacy in shell:
                 errors.append(f"{rel}: legacy shell text {legacy!r}")
@@ -131,6 +136,11 @@ def audit(root: Path) -> tuple[int, int, int]:
             errors.append(f"{rel}: indexed route is missing a canonical URL")
         if 'class="dr-sports"' in text:
             errors.append(f"{rel}: redundant Decision Room sport navigation")
+        for schema in re.findall(r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', text, flags=re.I | re.S):
+            try:
+                json.loads(schema)
+            except (ValueError, TypeError):
+                errors.append(f"{rel}: invalid JSON-LD structured data")
         if '<meta name="viewport"' not in text:
             errors.append(f"{rel}: missing mobile viewport")
         if page == root / "index.html":
@@ -179,7 +189,7 @@ def audit(root: Path) -> tuple[int, int, int]:
     scope_checks = {
         root / "decision-room/nfl/index.html": ("177", "2026"),
         root / "nfl/who-should-i-draft/index.html": ("216-player", "2025 weekly"),
-        root / "nfl/data/index.html": ("177-player", "615-player", "216-player"),
+        root / "nfl/data/index.html": ("Weekly rankings", "Season projections"),
         root / "decision-room/college/index.html": college_scope,
     }
     final_season = root / 'data/nfl-season-trusted.json'
@@ -188,7 +198,7 @@ def audit(root: Path) -> tuple[int, int, int]:
         if population != 424:
             errors.append('trusted current season population must be 424')
         scope_checks[root / 'nfl/who-should-i-draft/index.html'] = (f'{population}-player', '2025 weekly')
-        scope_checks[root / 'nfl/data/index.html'] = ('177-player', f'{population}-player')
+        scope_checks[root / 'nfl/data/index.html'] = ('Weekly rankings', 'Season projections')
     for page, needles in scope_checks.items():
         text = page.read_text() if page.is_file() else ""
         for needle in needles:

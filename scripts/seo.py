@@ -386,6 +386,7 @@ NAV_GROUPS = (
         ("week1_projections", "Week 1 Projections", "/nfl/week-1/projections/"),
         ("rankings", "Season Rankings", "/nfl/rankings/"),
         ("projections", "Season Projections", "/nfl/projections/"),
+        ("wire", "The Wire", "/nfl/wire/"),
         ("data", "More NFL Tools", "/nfl/data/"),
     )),
     ("college", "College", (
@@ -719,6 +720,16 @@ tbody td{border-color:#28342d!important}tbody tr:hover td{background:#141f19!imp
 
 NAV_JS = """
 <script>
+(function(){
+  function fallback(img){
+    if(!img || img.tagName!=='IMG' || img.dataset.photoFallback) return;
+    if(!/^(https:\/\/a\.espncdn\.com\/i\/headshots\/|https:\/\/sleepercdn\.com\/content\/nfl\/players\/)/.test(img.src)) return;
+    img.dataset.photoFallback='true';img.onerror=null;
+    img.src='/assets/player-placeholder.svg';img.style.visibility='visible';
+  }
+  document.addEventListener('error',function(e){fallback(e.target);},true);
+  document.querySelectorAll('img').forEach(function(img){if(img.complete&&!img.naturalWidth)fallback(img);});
+})();
 // One button, one drawer, one search row -- on every page, from
 // seo.site_nav(). Written to no-op where the markup is absent so a page
 // that has not been rebuilt yet does not throw.
@@ -935,7 +946,7 @@ def site_nav(active=None, sport="nfl", search="", home=False):
     """
     sport = sport if sport in SPORT_ROUTES else "nfl"
     active = {"college": "projections",
-              "wire": None, "roster": None}.get(active, active)
+              "wire": "wire", "roster": None}.get(active, active)
     groups = "".join(
         f'<details class="navgroup" data-nav-group="{group}" '
         f'data-current="{str(_group_is_current(group, active, sport)).lower()}">'

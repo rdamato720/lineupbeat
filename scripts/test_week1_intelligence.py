@@ -246,15 +246,15 @@ for(const r of rows){let p=source.players.find(p=>p.id===r.dataset.id);assert.eq
     def test_nfl_product_surfaces_weekly_evidence_and_missing_inputs(self):
         html = build_decision_room.render(self.payload)
         for text in ("Our Week 1 projection", "What the market says", "Opponent matchup",
-                     "Expected opportunity", "Availability", "Data coverage",
-                     "Evidence agreement", "Betting-market context included", "Pass TDs",
+                     "Expected opportunity", "Availability", "Available sources",
+                     "How the numbers compare", "Betting-market context included", "Pass TDs",
                      "Rush yards"):
             self.assertIn(text, html)
         injuries_ready = bool(
             self.payload.get("sources", {}).get("injuries", {}).get("updated_at")
         )
         self.assertIn(
-            "Q and D tags do not lower projections" if injuries_ready
+            "Questionable and doubtful players keep their projected points unless confirmed unavailable" if injuries_ready
             else "Current Week 1 injury status is unavailable",
             html,
         )

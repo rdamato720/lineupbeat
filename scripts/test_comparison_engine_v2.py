@@ -178,7 +178,7 @@ class LayoutContracts(unittest.TestCase):
     def test_v2_stack_and_responsive_layouts_are_rendered(self):
         nfl = build_decision_room.render(decision_data.load_season())
         for label in ("Why", "Case for each player", "What changes the call",
-                      "Data coverage and evidence agreement"):
+                      "Available information"):
             self.assertIn(label, nfl)
             self.assertIn(label, college_decision_room.JS)
         self.assertIn("Projection-based answer", nfl)
@@ -202,7 +202,7 @@ class LayoutContracts(unittest.TestCase):
         self.assertIn("Too close to call", nfl)
         self.assertIn('<details class="dr-full">', nfl)
         self.assertIn("The supporting evidence is split.", nfl)
-        self.assertIn("Evidence agreement", nfl)
+        self.assertIn("How the numbers compare", nfl)
         self.assertNotIn("Confidence and data quality", nfl)
 
     def test_dynamic_agreement_summary_starts_with_a_capital_letter(self):
@@ -220,8 +220,8 @@ class LayoutContracts(unittest.TestCase):
         nfl = build_decision_room.render(decision_data.load_season())
         self.assertIn("one-missing", nfl)
         self.assertIn("both-missing", nfl)
-        self.assertIn("validated ADP is unavailable for ${terminalName(x.missing[0])}", nfl)
-        self.assertIn("validated ADP is unavailable for both", nfl)
+        self.assertIn("ADP is not available for ${terminalName(x.missing[0])}", nfl)
+        self.assertIn("ADP is not available for both", nfl)
 
     def test_nfl_terminal_name_does_not_add_duplicate_suffix_punctuation(self):
         nfl = build_decision_room.render(decision_data.load_weekly())

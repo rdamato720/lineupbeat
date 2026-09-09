@@ -12,6 +12,8 @@ async function run(a,b){
  await new Promise(resolve=>setImmediate(resolve));
  assert.equal(node('college-decision-room').attrs['aria-busy'],'false');
  assert(!node('cdr-meta').textContent.includes('could not be loaded'));
+ assert(!/sportsbook capture|T\d\d:/.test(node('cdr-meta').textContent));
+ assert(node('cdr-meta').textContent.includes('Updated September 9, 2026'));
  return {nodes,node};
 }
 (async()=>{
@@ -26,6 +28,10 @@ async function run(a,b){
  node('cdr-team').value='Rutgers';node('cdr-team').events.change();
  assert(node('cdr-a-list').innerHTML.includes('AJ Surace'));
  assert(!node('cdr-a-list').innerHTML.includes('Aaron Philo'));
+ assert(node('cdr-a').value.includes('Rutgers'));
+ node('cdr-team').value='';node('cdr-position').value='RB';node('cdr-position').events.change();
+ assert(node('cdr-a').value.endsWith(' RB'));
+ assert(node('cdr-b').value.endsWith(' RB'));
  node('cdr-a').value='Not a player';node('cdr-a').events.change();
  assert(node('cdr-result').innerHTML.includes('Choose two different college players'));
  ({node}=await run('Ahmad Hardy','Kewan Lacy'));

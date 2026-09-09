@@ -461,7 +461,7 @@ def main():
     <button data-f="POSITIVE">Trending up</button>
     <button data-f="NEGATIVE">Trending down</button>
     <button data-f="NEUTRAL">Worth noting</button>
-    <select id="wteam"><option value="">Team</option>
+    <select aria-label="Filter reviewed reports by team" id="wteam"><option value="">Team</option>
       {''.join(f'<option>{esc(t)}</option>' for t in teams)}</select>
     <button data-p="QB">QB</button><button data-p="RB">RB</button>
     <button data-p="WR">WR</button><button data-p="TE">TE</button>
