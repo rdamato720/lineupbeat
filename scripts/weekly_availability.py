@@ -37,6 +37,9 @@ def apply_reports(payload, reports=None):
             p['formats'][fmt].update(overall_rank=overall,position_rank=counts[p['position']])
     payload['players'].sort(key=lambda p:(p['position'],p['formats']['half_ppr']['position_rank'],p['name']))
     payload['reviewed_availability_reports']=applied
+    if payload.get('team_workload_budgets'):
+        from nfl_workload_allocation import finalize
+        finalize(payload)
     return payload
 
 

@@ -82,6 +82,9 @@ def validate(candidate: dict, previous: dict | None = None,
     if len(games) != 16:
         problems.append(f"coverage is {len(games)} NFL games, expected 16")
 
+    from nfl_workload_allocation import problems as workload_problems
+    problems.extend(workload_problems(players, candidate.get("team_workload_budgets") or {}))
+
     position_ranks = {fmt: defaultdict(list) for fmt in FORMATS}
     overall_ranks = {fmt: [] for fmt in FORMATS}
     prop_players = 0
