@@ -1,0 +1,17 @@
+name: Check existing scores access
+on:
+  push:
+    branches: [codex/odds-score-ticker]
+    paths: [scores-worker/check-access.py, .github/workflows/scores-access.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify NFL and college access (at most four credits)
+        env:
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+        run: python scores-worker/check-access.py
