@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T00:22:24.382906+00:00",
+  "updated_at": "2026-09-10T01:05:55.866287+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T00:00:37+00:00",
+      "latest_entry_at": "2026-09-10T00:37:55+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-09T23:31:54+00:00",
+      "latest_entry_at": "2026-09-10T00:55:37+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-09T23:07:26+00:00",
+      "latest_entry_at": "2026-09-10T00:53:00+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T00:14:52+00:00",
+      "latest_entry_at": "2026-09-10T00:21:19+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-09T21:52:20+00:00",
+      "latest_entry_at": "2026-09-10T01:00:00+00:00",
       "stale": false
     },
     {
@@ -252,9 +252,9 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-09T23:33:24+00:00",
+      "latest_entry_at": "2026-09-10T00:43:25+00:00",
       "stale": false
     },
     {
@@ -284,21 +284,101 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 7,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-10T00:00:37+00:00",
+      "latest_entry_at": "2026-09-10T00:37:55+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-09T23:31:54+00:00",
+      "latest_entry_at": "2026-09-10T00:55:37+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "1b0b1001f95c78e4ccb1",
+      "headline": "Seattle Seahawks\u2019 2026 NFL season takes a disastrous turn just six plays into Week 1 tilt against New England Patriots",
+      "url": "https://atozsports.com/nfl/seattle-seahawks-news/seahawks-2026-season-disastrous-turn-sam-darnold-injury-patriots-week-1/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Seattle Seahawks QB Sam Darnold was injured just six plays into the 2026 NFL season. He's currently questionable to return with a hip injury.",
+      "published_at": "2026-09-10T00:55:37+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "ee0b94b4252e7fb2acc1",
+      "headline": "Now QB1, Jacoby Brissett Rich With Respect From Teammates",
+      "url": "https://www.azcardinals.com/news/cardinals-qb-jacoby-brissett-rich-with-teammate-currency-2026-season",
+      "source_id": "news_official_ari",
+      "source": "Arizona Cardinals (official)",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "Cardinals veteran enters season as starter for fourth time in career",
+      "published_at": "2026-09-10T00:53:00+00:00",
+      "players": [
+        {
+          "id": "00-0033119",
+          "name": "Jacoby Brissett",
+          "team": "ARI",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "dfd86aadcfbe9ab3043c",
+      "headline": "Chargers vs. Cardinals Injury Report: Tuli Tuipulotu & Keaton Mitchell Among 4 Limited on Wednesday",
+      "url": "https://www.chargers.com/news/injury-report-cardinals-week-1-tuli-tuipulotu",
+      "source_id": "news_official_lac",
+      "source": "Los Angeles Chargers (official)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "Take a look at the Chargers Injury Report ahead of Week 1 against the Cardinals",
+      "published_at": "2026-09-10T00:50:00+00:00",
+      "players": [
+        {
+          "id": "00-0038454",
+          "name": "Keaton Mitchell",
+          "team": "LAC",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "e9cf03d4d09750503d4c",
+      "headline": "Seahawks vs. Patriots In-Game Injury Updates: Sam Darnold Questionable To Return",
+      "url": "https://www.seahawks.com/news/2026-week-1-seahawks-vs-patriots-injury-updates",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "In-Game Injury News From The Week 1 Matchup Between Seattle and New England",
+      "published_at": "2026-09-10T00:43:25+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "6dda4ec3cd55932a519b",
       "headline": "'I can't wait': Broncos QB Bo Nix ready for return to regular-season action in prime-time matchup vs. Chiefs",
@@ -375,26 +455,6 @@
           "name": "Rashod Bateman",
           "team": "BAL",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "ee0b94b4252e7fb2acc1",
-      "headline": "Now QB1, Jacoby Brissett Rich With Respect From Teammates",
-      "url": "https://www.azcardinals.com/news/cardinals-qb-jacoby-brissett-rich-with-teammate-currency-2026-season",
-      "source_id": "news_official_ari",
-      "source": "Arizona Cardinals (official)",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "Cardinals veteran enters season as starter for fourth time in career",
-      "published_at": "2026-09-09T23:07:26+00:00",
-      "players": [
-        {
-          "id": "00-0033119",
-          "name": "Jacoby Brissett",
-          "team": "ARI",
-          "position": "QB"
         }
       ]
     },
@@ -666,26 +726,6 @@
           "name": "Bryce Young",
           "team": "CAR",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "dfd86aadcfbe9ab3043c",
-      "headline": "Chargers vs. Cardinals Injury Report: Tuli Tuipulotu & Keaton Mitchell Among 4 Limited on Wednesday",
-      "url": "https://www.chargers.com/news/injury-report-cardinals-week-1-tuli-tuipulotu",
-      "source_id": "news_official_lac",
-      "source": "Los Angeles Chargers (official)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "Take a look at the Chargers Injury Report ahead of Week 1 against the Cardinals",
-      "published_at": "2026-09-09T21:52:20+00:00",
-      "players": [
-        {
-          "id": "00-0038454",
-          "name": "Keaton Mitchell",
-          "team": "LAC",
-          "position": "RB"
         }
       ]
     },
