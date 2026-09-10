@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T01:05:55.866287+00:00",
+  "updated_at": "2026-09-10T02:00:46.464825+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T00:37:55+00:00",
+      "latest_entry_at": "2026-09-10T02:00:18+00:00",
       "stale": false
     },
     {
@@ -164,7 +164,7 @@
     {
       "source_id": "news_official_lac",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
       "latest_entry_at": "2026-09-10T01:00:00+00:00",
       "stale": false
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 12,
       "error": "",
-      "latest_entry_at": "2026-09-10T00:37:55+00:00",
+      "latest_entry_at": "2026-09-10T02:00:18+00:00",
       "stale": false
     },
     {
@@ -299,6 +299,125 @@
     }
   ],
   "items": [
+    {
+      "id": "4171258e8d138a8ac92d",
+      "headline": "Jeremiyah Love Headlines Loaded Cardinals-Chargers Week 1 Injury Report",
+      "url": "https://www.si.com/nfl/cardinals/onsi/jeremiyah-love-headlines-loaded-arizona-cardinals-los-angeles-chargers-week-1-injury-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "The Arizona Cardinals and Los Angeles Chargers both revealed their respective injury reports ahead of Week 1.",
+      "published_at": "2026-09-10T01:44:46+00:00",
+      "players": [
+        {
+          "id": "00-0041027",
+          "name": "Jeremiyah Love",
+          "team": "ARI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "2ab2526980e392dcd626",
+      "headline": "Bills' Official Week 1 Injury Report: RB Concern Worsens, Khalil Shakir Progresses",
+      "url": "https://www.si.com/nfl/bills/onsi/injury-report-week-1-bills-rb-concern-worsens-khalil-shakir-progresses-wednesday",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills listed three players on their first official injury report ahead of Sunday's season opener in Houston.",
+      "published_at": "2026-09-10T01:17:12+00:00",
+      "players": [
+        {
+          "id": "00-0037261",
+          "name": "Khalil Shakir",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "3a0b74fa4dbfe252a765",
+      "headline": "Packers-Vikings Wednesday Injury Report: One Unit Is Healthy; One Is Not",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-vikings-wednesday-injury-report-one-unit-is-healthy-one-is-not",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Here\u2019s the first injury report for Sunday\u2019s Packers-Vikings season-opening showdown.",
+      "published_at": "2026-09-10T01:12:44+00:00",
+      "players": []
+    },
+    {
+      "id": "31e7c2d210dfc3be02b1",
+      "headline": "Seahawks' Drew Lock Gets First Meaningful Snaps in Over a Year vs. Patriots",
+      "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-drew-lock-gets-first-meaningful-snap-vs-patriots-in-over-a-year-01m24d8g9abj",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks arleady see Sam Darnold hurt, but they now they have to take a chance on Drew Lock in the Week 1 game versus the New England Patriots.",
+      "published_at": "2026-09-10T01:04:04+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035704",
+          "name": "Drew Lock",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "f1a114aadc2ac69f5c56",
+      "headline": "RB Derrick Henry Is Backing Ravens Reworked OL, Won't Shy Away From 300 Carries Again",
+      "url": "https://www.si.com/nfl/ravens/onsi/rb-derrick-henry-is-backing-ravens-reworked-ol-won-t-shy-away-from-300-carries-again-01m24cjz0m34",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The future Hall of Fame back tends to be a man of few words, but his historic play continues to say so much as he enters his age 32 season",
+      "published_at": "2026-09-10T01:02:46+00:00",
+      "players": [
+        {
+          "id": "00-0032764",
+          "name": "Derrick Henry",
+          "team": "BAL",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "f6744689153c5a246d56",
+      "headline": "John Harbaugh Explains Why Cutting Darius Slayton Wasn't Personal",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-harbaugh-explains-darius-slayton-cut-01m247keyfgb",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Harbaugh says the decision to release the Giants' longest-tenured player was purely about building the right team \u2014 and insists Slayton \"is going to be fine.\"",
+      "published_at": "2026-09-10T01:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0035535",
+          "name": "Darius Slayton",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "1b0b1001f95c78e4ccb1",
       "headline": "Seattle Seahawks\u2019 2026 NFL season takes a disastrous turn just six plays into Week 1 tilt against New England Patriots",
@@ -320,6 +439,19 @@
       ]
     },
     {
+      "id": "30ad26a0cb7b6fb5a314",
+      "headline": "Several Key Names on Atlanta Falcons 1st Injury Report ahead of Steelers Game",
+      "url": "https://www.si.com/nfl/falcons/onsi/several-key-names-atlanta-falcons-injury-report-steelers-game",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "The Atlanta Falcons are relatively healthy heading into their Week 1 matchup against the Pittsburgh Steelers, but several key names were listed on their injury report.",
+      "published_at": "2026-09-10T00:54:00+00:00",
+      "players": []
+    },
+    {
       "id": "ee0b94b4252e7fb2acc1",
       "headline": "Now QB1, Jacoby Brissett Rich With Respect From Teammates",
       "url": "https://www.azcardinals.com/news/cardinals-qb-jacoby-brissett-rich-with-teammate-currency-2026-season",
@@ -335,6 +467,26 @@
           "id": "00-0033119",
           "name": "Jacoby Brissett",
           "team": "ARI",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "bf970869502af6d45ac6",
+      "headline": "Saints Name Tyler Shough, Cam Jordan Among 9 Captains for 2026",
+      "url": "https://www.si.com/nfl/saints/onsi/saints-name-tyler-shough-cam-jordan-among-9-captains-for-2026-01m246f48byz",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "The Saints named nine captains for the 2026 season, including Tyler Shough, Cam Jordan and Chase Young, with Shough calling the honor especially meaningful.",
+      "published_at": "2026-09-10T00:50:39+00:00",
+      "players": [
+        {
+          "id": "00-0040743",
+          "name": "Tyler Shough",
+          "team": "NO",
           "position": "QB"
         }
       ]
@@ -361,7 +513,7 @@
     },
     {
       "id": "e9cf03d4d09750503d4c",
-      "headline": "Seahawks vs. Patriots In-Game Injury Updates: Sam Darnold Questionable To Return",
+      "headline": "Seahawks vs. Patriots In-Game Injury Updates: Sam Darnold Out With A Hip Injury",
       "url": "https://www.seahawks.com/news/2026-week-1-seahawks-vs-patriots-injury-updates",
       "source_id": "news_official_sea",
       "source": "Seattle Seahawks (official)",
@@ -370,6 +522,26 @@
       ],
       "feed_description": "In-Game Injury News From The Week 1 Matchup Between Seattle and New England",
       "published_at": "2026-09-10T00:43:25+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "f5e832abc249444548aa",
+      "headline": "Sam Darnold Injury Update: Seahawks QB Will Not Return After Leaving With Hip Injury",
+      "url": "https://www.si.com/nfl/seahawks/onsi/sam-darnold-injury-update-seahawks-qb-limps-off-field-in-first-quarter",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks saw their star QB suffer an injury with Sam Darnold limping off the field following one drive.",
+      "published_at": "2026-09-10T00:42:58+00:00",
       "players": [
         {
           "id": "00-0034869",
@@ -1758,26 +1930,6 @@
           "name": "Jabari Small",
           "team": "DET",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "8af1f6cd32996d3b12b5",
-      "headline": "Why Ladd McConkey is 'Grateful' to Be Named Chargers Captain For 1st Time",
-      "url": "https://www.chargers.com/news/ladd-mcconkey-captain-depth-chart",
-      "source_id": "news_official_lac",
-      "source": "Los Angeles Chargers (official)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "The Chargers wide receiver was among 10 captains announced on Tuesday",
-      "published_at": "2026-09-03T02:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039915",
-          "name": "Ladd McConkey",
-          "team": "LAC",
-          "position": "WR"
         }
       ]
     }
