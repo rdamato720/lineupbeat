@@ -32,9 +32,11 @@ export class ScoreCache {
     let response;
     try {
       response=await fetch('https://therundown.io/api/v2'+path,{headers:{'X-TheRundown-Key':this.env.THERUNDOWN_API_KEY},redirect:'error',signal:AbortSignal.timeout(15000)});
-    } catch {
+    } catch (error) {
+      await storage.put('diagnostic',{at:new Date(now).toISOString(),kind:['TimeoutError','AbortError'].includes(error?.name)?'timeout':'network_error'});
       await storage.put('block',{until:now+15*60000,reason:'Provider temporarily unavailable'}); throw Error('Provider temporarily unavailable');
     }
+    await storage.put('diagnostic',{at:new Date(now).toISOString(),kind:'http',status:response.status});
     const billed=response.headers.get('x-datapoints');
     if (billed!==null && /^\d+$/.test(billed)) {entry.points=Number(billed); await storage.put('usage',usage);}
     if ([401,403].includes(response.status)) {
@@ -61,7 +63,7 @@ export class ScoreCache {
   }
   async handle(path) {
     const now=Date.now(), s=this.ctx.storage;
-    if (path==='/health') return json({configured:!!this.env.THERUNDOWN_API_KEY,block:await s.get('block')||null});
+    if (path==='/health') return json({configured:!!this.env.THERUNDOWN_API_KEY,block:await s.get('block')||null,diagnostic:await s.get('diagnostic')||null});
     const sport=path.slice(1), days=dates(now);
     await this.alarm();
     let failure=null, fbs=[];

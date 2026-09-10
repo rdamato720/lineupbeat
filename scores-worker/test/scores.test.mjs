@@ -33,3 +33,13 @@ test('ticker budget blocks calls before exhaustion',async()=>{
  const c=cache();await c.ctx.storage.put('usage',[{at:Date.now(),points:999999}]);
  await assert.rejects(c.provider('/sports/2/teams'),/budget/);
 });
+
+test('health reports sanitized upstream status without making another provider call',async()=>{
+ const original=global.fetch;let calls=0;
+ global.fetch=async()=>{calls++;return new Response('private upstream details',{status:502});};
+ try {const c=cache();await c.fetch(new Request('https://scores.lineupbeat.com/nfl'));
+ const r=await(await c.fetch(new Request('https://scores.lineupbeat.com/health'))).json();
+ assert.equal(r.diagnostic.status,502);assert.equal(calls,1);
+ assert.equal(JSON.stringify(r).includes('private upstream'),false);
+ }finally{global.fetch=original;}
+});
