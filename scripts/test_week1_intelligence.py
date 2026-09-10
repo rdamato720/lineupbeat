@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import html
 import json
 import statistics
 import re
@@ -154,6 +155,19 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
                                               for k, _ in boards.STATS])
             self.assertEqual(len(by_id), len(self.payload["players"]))
             self.assertNotIn('bookmaker_key', page)
+
+    def test_week1_player_images_and_pending_results(self):
+        import build_nfl_week1_boards as boards
+        for kind in ('rankings','projections'):
+            page=boards.render(self.payload,kind,ROOT/'site')
+            self.assertEqual(page.count('class="wb-photo"'),len(self.payload['players']))
+            for player in self.payload['players']:
+                row=re.search(r'<tr data-id="'+re.escape(player['id'])+r'">(.*?)</tr>',page,re.S).group(1)
+                self.assertIn(html.escape(player.get('photo') or '/assets/player-placeholder.svg',quote=True),row)
+            self.assertIn('COMING AFTER WEEK 1',page)
+            self.assertIn('Barlow+Condensed',page)
+            self.assertIn('this.onerror=null',page)
+            self.assertNotIn('7.6',boards.PENDING_RESULTS)
 
     def test_week1_board_filters_keep_source_ranks_and_switch_scoring(self):
         import build_nfl_week1_boards as boards
