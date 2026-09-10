@@ -178,9 +178,10 @@ let visible=rows.filter(r=>!r.hidden);
 assert.equal(visible.length,source.players.filter(p=>p.position==='RB'&&p.team==='NE').length);
 assert.ok(visible.length>0);
 for(const r of visible){let p=source.players.find(p=>p.id===r.dataset.id);assert.equal(r.cells['[data-col=rank]'].textContent,p.formats.ppr.position_rank);}
-set('wb-search','TreVeyon Henderson','input');
+const selected=source.players.find(p=>p.id===visible[0].dataset.id);
+set('wb-search',selected.name,'input');
 assert.equal(rows.filter(r=>!r.hidden).length,1);
-assert.equal(rows.find(r=>!r.hidden).cells['[data-col=points]'].textContent,source.players.find(p=>p.name==='TreVeyon Henderson').formats.ppr.projected_points.toFixed(1));
+assert.equal(rows.find(r=>!r.hidden).cells['[data-col=points]'].textContent,selected.formats.ppr.projected_points.toFixed(1));
 set('wb-search','no such player','input');assert.equal(rows.filter(r=>!r.hidden).length,0);assert.equal(els['wb-empty'].hidden,false);
 set('wb-search','','input');set('wb-position','');set('wb-team','');set('wb-format','non_ppr');
 assert.equal(rows.filter(r=>!r.hidden).length,source.players.length);
