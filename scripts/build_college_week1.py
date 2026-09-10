@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import seo
 from college_team_logos import CSS as COLLEGE_LOGO_CSS, logo_html
 from college_releases import load_release, active_release
+import college_projection_results as results
 
 week = 1
 data = {}
@@ -116,7 +117,7 @@ def _page(position=None):
             '<a href="/college-fantasy-football/week-2/">View Week 2 rankings</a>.' if week == 1 else
             'Injury reports checked September 9. Questionable players are projected assuming they play; ruled-out players have zero projected points. '
             '<a href="/college-fantasy-football/week-1/">Week 1 archive</a>.')
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} | LineupBeat</title><meta name="description" content="{e(description)}"><link rel="canonical" href="https://lineupbeat.com{path}">{seo.social_meta(title + " | LineupBeat", description, "https://lineupbeat.com" + path)}<style>{css}{seo.CRUMB_CSS}{seo.UI_CSS}{CSS}</style></head><body>{header}<main class="wwrap"><nav class="crumbs"><a href="/">Home</a><span>/</span><a href="/college-fantasy-football/projections/">College projections</a><span>/</span><b>Week {week}</b></nav><header class="whero"><p class="wmeta">2026 · Week {week} · Updated {updated}</p><h1>{e(title)}</h1><p>Week {week} projections for {data["counts"]["players"]:,} players on {data["counts"]["teams"]} teams playing from {dates}. Rankings are built directly from each projected Yahoo-scoring stat line.</p></header><nav class="wtabs">{"".join(tabs)}</nav><div class="wtools"><input id="search" type="search" aria-label="Search players" placeholder="Search players"><select id="team" aria-label="Filter by team"><option value="">All teams</option>{"".join(f"<option>{e(t)}</option>" for t in teams)}</select></div><p class="wnote">{note}</p>{content}</main>{footer}<script>(()=>{{let s=document.querySelector('#search'),t=document.querySelector('#team');function f(){{let q=s.value.toLowerCase(),tm=t.value;document.querySelectorAll('tbody tr').forEach(r=>r.hidden=!!((q&&!r.dataset.name.includes(q))||(tm&&r.dataset.team!==tm)))}}s.addEventListener('input',f);t.addEventListener('change',f)}})()</script></body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} | LineupBeat</title><meta name="description" content="{e(description)}"><link rel="canonical" href="https://lineupbeat.com{path}">{seo.social_meta(title + " | LineupBeat", description, "https://lineupbeat.com" + path)}<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;display=swap" rel="stylesheet"><style>{css}{seo.CRUMB_CSS}{seo.UI_CSS}{CSS}{results.CSS}</style></head><body>{header}<main class="wwrap"><nav class="crumbs"><a href="/">Home</a><span>/</span><a href="/college-fantasy-football/projections/">College projections</a><span>/</span><b>Week {week}</b></nav><header class="whero"><p class="wmeta">2026 · Week {week} · Updated {updated}</p><h1>{e(title)}</h1><p>Week {week} projections for {data["counts"]["players"]:,} players on {data["counts"]["teams"]} teams playing from {dates}. Rankings are built directly from each projected Yahoo-scoring stat line.</p></header>{results.strip() if week == 2 else ""}<nav class="wtabs">{"".join(tabs)}</nav><div class="wtools"><input id="search" type="search" aria-label="Search players" placeholder="Search players"><select id="team" aria-label="Filter by team"><option value="">All teams</option>{"".join(f"<option>{e(t)}</option>" for t in teams)}</select></div><p class="wnote">{note}</p>{content}</main>{footer}<script>(()=>{{let s=document.querySelector('#search'),t=document.querySelector('#team');function f(){{let q=s.value.toLowerCase(),tm=t.value;document.querySelectorAll('tbody tr').forEach(r=>r.hidden=!!((q&&!r.dataset.name.includes(q))||(tm&&r.dataset.team!==tm)))}}s.addEventListener('input',f);t.addEventListener('change',f)}})()</script></body></html>'''
 
 
 def page(position=None):
@@ -156,3 +157,5 @@ for version in dict.fromkeys(('2026/week-1/v1.1', active_release())):
         target.mkdir(parents=True, exist_ok=True)
         (target / 'index.html').write_text(page(position))
     print(f'  Week {week} college: {len(players)} players, manifest verified')
+
+results.build_report(chrome()[0], seo.site_nav("rankings", "college"), seo.site_footer())
