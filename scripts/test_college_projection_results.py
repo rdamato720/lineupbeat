@@ -1,6 +1,8 @@
 import copy
 import json
 import tempfile
+import subprocess
+import sys
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -36,6 +38,7 @@ class ResultsTests(unittest.TestCase):
                 p=Path(d)/'actuals.json';p.write_text(json.dumps(data))
                 with patch.object(r,'ACTUALS',p),self.assertRaises(ValueError):r.evaluate()
     def test_results_link_and_week_scope(self):
+        subprocess.run([sys.executable,str(r.ROOT/"scripts/build_college_week1.py")],check=True,capture_output=True)
         for pos in ('','qb/','rb/','wr/','te/'):
             text=(r.ROOT/'site/college-fantasy-football/week-2'/pos/'index.html').read_text()
             self.assertIn('110 of 120 players graded',text)

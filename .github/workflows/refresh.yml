@@ -26,6 +26,9 @@ on:
       - "scripts/build_news_wire.py"
       - "scripts/seo.py"
       - "scripts/build_pages.py"
+      - "scripts/build_college_week1.py"
+      - "scripts/college_projection_results.py"
+      - "data/college/2026/week-*/results/**"
       - "scripts/build_decision_room.py"
       - "scripts/build_nfl_v15_development.py"
       - "scripts/prepare_public_release.py"
@@ -528,6 +531,7 @@ jobs:
           python scripts/test_sport_experiences.py
           python scripts/test_college_decision_room.py
           python scripts/test_week1_intelligence.py
+          python scripts/test_college_projection_results.py
           python scripts/test_my_team.py
           python scripts/test_league_history.py
           node scripts/test_league_history_publishing.mjs
