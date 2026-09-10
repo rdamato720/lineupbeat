@@ -1,0 +1,40 @@
+name: Verify Rundown football scores
+on:
+  push:
+    branches: [codex/odds-score-ticker]
+    paths: [.github/workflows/rundown-score-probe.yml]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Two narrow football snapshots
+        env:
+          THERUNDOWN_API_KEY: ${{ secrets.THERUNDOWN_API_KEY }}
+        run: |
+          python - <<'PY'
+          import os, json, urllib.request, urllib.error
+          key = os.environ.get('THERUNDOWN_API_KEY')
+          if not key: raise SystemExit('Missing Rundown key; zero requests')
+          total = 0
+          for sport, date in [(2, '2026-09-10'), (1, '2026-09-05')]:
+              url = f'https://therundown.io/api/v2/sports/{sport}/events/{date}?market_ids=1&affiliate_ids=3&main_line=true&hide_closed=true&hide_no_markets=false&offset=300'
+              req = urllib.request.Request(url, headers={'X-TheRundown-Key':key})
+              try:
+                  with urllib.request.urlopen(req, timeout=25) as response:
+                      payload = json.load(response)
+                      headers = {n:response.headers.get(n) for n in ['X-Tier','X-Datapoints','X-Datapoints-Remaining','X-Datapoints-Limit','X-Datapoints-Period','X-Data-Delay-Seconds','X-Websocket-Access']}
+              except urllib.error.HTTPError as error:
+                  raise SystemExit(f'Provider HTTP {error.code}; credentials and response suppressed') from None
+              except Exception:
+                  raise SystemExit('Provider request failed; details suppressed') from None
+              events = payload.get('events')
+              if not isinstance(events,list): raise SystemExit('Unexpected score schema')
+              cost = headers['X-Datapoints']
+              print(json.dumps({'sport_id':sport,'date':date,'headers':headers,'event_count':len(events),'score_count':sum(bool(e.get('score')) for e in events),'statuses':sorted({str((e.get('score') or {}).get('event_status')) for e in events}),'sample':[{'event_id':e.get('event_id'),'event_date':e.get('event_date'),'teams':e.get('teams'),'score':e.get('score')} for e in events[:2]]}))
+              if cost is None: raise SystemExit('No usage header; stopping after one request')
+              total += int(cost)
+              if total > 1000: raise SystemExit('Probe budget reached; no more requests')
+          print(json.dumps({'total_datapoints':total,'requests':2}))
+          PY
