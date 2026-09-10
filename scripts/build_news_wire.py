@@ -81,6 +81,16 @@ ROUNDUP=re.compile(r'\b(injury report|practice (report|notebook|updates?|notes|o
 NON_NEWS=re.compile(r'\b(mock draft|predict\w*|rankings?|fantasy (advice|football|outlook)|betting|best bets|trade proposal|opinion|analysis|quiz|how to watch|tickets|sweepstakes|giveaway|radiothon|cheerleader|sponsored|mural|inspire change|hypothetical|foreshadowing|top 100|swing factors|reasons to be optimistic|ex-\w+|former)\b',re.I)
 NEWS_EVENT=re.compile(r'\b(practice|injur\w*|inactives?|limited|questionable|doubtful|ruled out|full participant|contract|extension|signs?|signed|waiv\w*|releas\w*|activat\w*|promot\w*|elevat\w*|return\w*|starting|starter|depth chart|roster|workload|snaps?|carries|targets?|captains?|press conference|arrest|plea)\b',re.I)
 
+# Mixed SB Nation communities explicitly label editorial and discussion content.
+# An excluded category wins even when the same item also carries "News".
+EDITORIAL_CATEGORY=re.compile(r'\b(analysis|opinion|commentary|discussion\w*|threads?|podcasts?|predictions?|picks|odds|gambling|betting|rankings?|fantasy|rumors?|history|previews?|reacts|sponsored)\b',re.I)
+NEWS_CATEGORY=re.compile(r'\b(news|injuries|injury reports?|roster|depth chart|transactions?|free agency|salary cap)\b',re.I)
+
+def news_categories_allowed(source, categories):
+    return not source.news_categories_only or (
+        any(NEWS_CATEGORY.search(c) for c in categories) and
+        not any(EDITORIAL_CATEGORY.search(c) for c in categories))
+
 def plain(value):
     return ' '.join(html.unescape(re.sub('<[^>]*>',' ',value or '')).split())
 
@@ -90,7 +100,10 @@ def row_teams(row):
 def normalize_entry(source, entry, players, now):
     url = clean_url(entry.get('link',''))
     if not url or not source.owns(url) or not _matches(source,entry): return None
+    categories=[plain(t.get('term','')) for t in entry.get('tags',[])]
+    if not news_categories_allowed(source,categories): return None
     title = plain(entry.get('title',''))
+    if source.news_categories_only and ('?' in title or re.search(r'\b(preview|should|could|would|might)\b',title,re.I)): return None
     stamp = _entry_time(entry)
     if not title or len(title)>300 or not stamp or NON_NEWS.search(title): return None
     date = datetime.fromisoformat(stamp)
@@ -108,7 +121,7 @@ def normalize_entry(source, entry, players, now):
     if not matched and not ROUNDUP.search(title): return None
     return {'id':hashlib.sha256(url.encode()).hexdigest()[:20], 'headline':title,
             'url':url, 'source_id':source.source_id, 'source':source.source_name,
-            'teams':teams, 'feed_description':description,
+            'teams':teams, 'feed_description':description, 'categories':categories,
             'published_at':stamp, 'players':[{'id':p['player_id'],'name':p['full_name'],
             'team':p['team'],'position':p['position']} for p in matched]}
 
@@ -170,6 +183,7 @@ def validated(data):
         if not s or not s.owns(row['url']) or not clean_url(row['url']): raise ValueError('Unregistered news link')
         if row['url'] in seen: raise ValueError('Duplicate news URL')
         seen.add(row['url']);datetime.fromisoformat(row['published_at'])
+        if not news_categories_allowed(s,row.get('categories',[])): raise ValueError('Non-news publisher category')
         if not row['headline'] or len(row['headline'])>300: raise ValueError('Incomplete news headline')
         scoped=s.teams_for(row['url'])
         if not scoped or not set(row_teams(row))<=set(scoped): raise ValueError('News team scope mismatch')
