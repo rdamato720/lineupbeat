@@ -76,6 +76,29 @@ class NewsWireTests(unittest.TestCase):
     def test_possessive_player_name_matches_without_fuzzy_names(self):
         e=copy.deepcopy(self.entry);e['title']="Baker Mayfield’s practice status updated"
         self.assertEqual(self.normalize(e)['players'][0]['name'],'Baker Mayfield')
+    def test_sbn_mixed_categories_fail_closed(self):
+        source=next(s for s in n.sources() if s.source_id=='news_sbn_tb')
+        entry=copy.deepcopy(self.entry);entry['link']='https://www.bucsnation.com/baker-practice'
+        for categories in ([], ['General'], ['Buccaneers News','Buccaneers Analysis'],
+                           ['Buccaneers News','Open Threads'], ['Buccaneers News','Buccaneers Opinion'],
+                           ['Buccaneers News','Buccaneers NFL picks and predictions']):
+            entry['tags']=[{'term':c} for c in categories]
+            self.assertIsNone(n.normalize_entry(source,entry,self.players,self.now))
+        entry['tags']=[{'term':'Tampa Bay Buccaneers Injuries'}]
+        for title in ('Should the Buccaneers extend Baker Mayfield?', 'Buccaneers preview: Baker Mayfield returns'):
+            opinion=copy.deepcopy(entry);opinion['title']=title
+            self.assertIsNone(n.normalize_entry(source,opinion,self.players,self.now))
+        row=n.normalize_entry(source,entry,self.players,self.now)
+        self.assertEqual(row['players'][0]['name'],'Baker Mayfield')
+        data={'updated_at':self.now.isoformat(),'items':[row]};n.validated(data)
+        row['categories'].append('Tampa Bay Buccaneers Analysis')
+        with self.assertRaises(ValueError):n.validated(data)
+    def test_sbn_has_32_unique_team_feeds(self):
+        sources=[s for s in n.sources() if s.source_id.startswith('news_sbn_')]
+        self.assertEqual(len(sources),32)
+        self.assertEqual(len({s.teams[0] for s in sources}),32)
+        self.assertTrue(all(s.news_categories_only and len(s.teams)==1 for s in sources))
+
     def test_robots_refusal_does_not_fetch_feed(self):
         response=type('Result',(),{'returncode':0,'stdout':b'User-agent: *\nDisallow: /'})()
         with tempfile.TemporaryDirectory() as d, patch.object(n,'sources',return_value=[self.source]), patch.object(n.subprocess,'run',return_value=response) as get:

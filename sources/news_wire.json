@@ -553,6 +553,390 @@
         "/nfl/tennessee-titans-news/": "TEN",
         "/nfl/washington-commanders-news/": "WAS"
       }
+    },
+    {
+      "source_id": "news_sbn_buf",
+      "source_name": "Buffalo Rumblings (SB Nation)",
+      "teams": [
+        "BUF"
+      ],
+      "domains": [
+        "buffalorumblings.com"
+      ],
+      "feed_url": "https://www.buffalorumblings.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_mia",
+      "source_name": "The Phinsider (SB Nation)",
+      "teams": [
+        "MIA"
+      ],
+      "domains": [
+        "thephinsider.com"
+      ],
+      "feed_url": "https://www.thephinsider.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_ne",
+      "source_name": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "domains": [
+        "patspulpit.com"
+      ],
+      "feed_url": "https://www.patspulpit.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_nyj",
+      "source_name": "Gang Green Nation (SB Nation)",
+      "teams": [
+        "NYJ"
+      ],
+      "domains": [
+        "ganggreennation.com"
+      ],
+      "feed_url": "https://www.ganggreennation.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_bal",
+      "source_name": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "domains": [
+        "baltimorebeatdown.com"
+      ],
+      "feed_url": "https://www.baltimorebeatdown.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_cin",
+      "source_name": "Cincy Jungle (SB Nation)",
+      "teams": [
+        "CIN"
+      ],
+      "domains": [
+        "cincyjungle.com"
+      ],
+      "feed_url": "https://www.cincyjungle.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_cle",
+      "source_name": "Dawgs By Nature (SB Nation)",
+      "teams": [
+        "CLE"
+      ],
+      "domains": [
+        "dawgsbynature.com"
+      ],
+      "feed_url": "https://www.dawgsbynature.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_pit",
+      "source_name": "Behind the Steel Curtain (SB Nation)",
+      "teams": [
+        "PIT"
+      ],
+      "domains": [
+        "behindthesteelcurtain.com"
+      ],
+      "feed_url": "https://www.behindthesteelcurtain.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_hou",
+      "source_name": "Battle Red Blog (SB Nation)",
+      "teams": [
+        "HOU"
+      ],
+      "domains": [
+        "battleredblog.com"
+      ],
+      "feed_url": "https://www.battleredblog.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_ind",
+      "source_name": "Stampede Blue (SB Nation)",
+      "teams": [
+        "IND"
+      ],
+      "domains": [
+        "stampedeblue.com"
+      ],
+      "feed_url": "https://www.stampedeblue.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_jax",
+      "source_name": "Big Cat Country (SB Nation)",
+      "teams": [
+        "JAX"
+      ],
+      "domains": [
+        "bigcatcountry.com"
+      ],
+      "feed_url": "https://www.bigcatcountry.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_ten",
+      "source_name": "Music City Miracles (SB Nation)",
+      "teams": [
+        "TEN"
+      ],
+      "domains": [
+        "musiccitymiracles.com"
+      ],
+      "feed_url": "https://www.musiccitymiracles.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_den",
+      "source_name": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "domains": [
+        "milehighreport.com"
+      ],
+      "feed_url": "https://www.milehighreport.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_kc",
+      "source_name": "Arrowhead Pride (SB Nation)",
+      "teams": [
+        "KC"
+      ],
+      "domains": [
+        "arrowheadpride.com"
+      ],
+      "feed_url": "https://www.arrowheadpride.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_lv",
+      "source_name": "Silver And Black Pride (SB Nation)",
+      "teams": [
+        "LV"
+      ],
+      "domains": [
+        "silverandblackpride.com"
+      ],
+      "feed_url": "https://www.silverandblackpride.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_lac",
+      "source_name": "Bolts From The Blue (SB Nation)",
+      "teams": [
+        "LAC"
+      ],
+      "domains": [
+        "boltsfromtheblue.com"
+      ],
+      "feed_url": "https://www.boltsfromtheblue.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_dal",
+      "source_name": "Blogging The Boys (SB Nation)",
+      "teams": [
+        "DAL"
+      ],
+      "domains": [
+        "bloggingtheboys.com"
+      ],
+      "feed_url": "https://www.bloggingtheboys.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_nyg",
+      "source_name": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "domains": [
+        "bigblueview.com"
+      ],
+      "feed_url": "https://www.bigblueview.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_phi",
+      "source_name": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "domains": [
+        "bleedinggreennation.com"
+      ],
+      "feed_url": "https://www.bleedinggreennation.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_was",
+      "source_name": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "domains": [
+        "hogshaven.com"
+      ],
+      "feed_url": "https://www.hogshaven.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_chi",
+      "source_name": "Windy City Gridiron (SB Nation)",
+      "teams": [
+        "CHI"
+      ],
+      "domains": [
+        "windycitygridiron.com"
+      ],
+      "feed_url": "https://www.windycitygridiron.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_det",
+      "source_name": "Pride Of Detroit (SB Nation)",
+      "teams": [
+        "DET"
+      ],
+      "domains": [
+        "prideofdetroit.com"
+      ],
+      "feed_url": "https://www.prideofdetroit.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_gb",
+      "source_name": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "domains": [
+        "acmepackingcompany.com"
+      ],
+      "feed_url": "https://www.acmepackingcompany.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_min",
+      "source_name": "Daily Norseman (SB Nation)",
+      "teams": [
+        "MIN"
+      ],
+      "domains": [
+        "dailynorseman.com"
+      ],
+      "feed_url": "https://www.dailynorseman.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_atl",
+      "source_name": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "domains": [
+        "thefalcoholic.com"
+      ],
+      "feed_url": "https://www.thefalcoholic.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_car",
+      "source_name": "Cat Scratch Reader (SB Nation)",
+      "teams": [
+        "CAR"
+      ],
+      "domains": [
+        "catscratchreader.com"
+      ],
+      "feed_url": "https://www.catscratchreader.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_no",
+      "source_name": "Canal Street Chronicles (SB Nation)",
+      "teams": [
+        "NO"
+      ],
+      "domains": [
+        "canalstreetchronicles.com"
+      ],
+      "feed_url": "https://www.canalstreetchronicles.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_tb",
+      "source_name": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "domains": [
+        "bucsnation.com"
+      ],
+      "feed_url": "https://www.bucsnation.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_ari",
+      "source_name": "Revenge of the Birds (SB Nation)",
+      "teams": [
+        "ARI"
+      ],
+      "domains": [
+        "revengeofthebirds.com"
+      ],
+      "feed_url": "https://www.revengeofthebirds.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_lar",
+      "source_name": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "domains": [
+        "turfshowtimes.com"
+      ],
+      "feed_url": "https://www.turfshowtimes.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_sf",
+      "source_name": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "domains": [
+        "ninersnation.com"
+      ],
+      "feed_url": "https://www.ninersnation.com/rss/index.xml",
+      "news_categories_only": true
+    },
+    {
+      "source_id": "news_sbn_sea",
+      "source_name": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "domains": [
+        "fieldgulls.com"
+      ],
+      "feed_url": "https://www.fieldgulls.com/rss/index.xml",
+      "news_categories_only": true
     }
   ]
 }

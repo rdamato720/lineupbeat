@@ -20,6 +20,7 @@ class NewsSource:
     filter_categories: list = field(default_factory=list)
     path_teams: dict = field(default_factory=dict)
     team_owned: bool = False
+    news_categories_only: bool = False
 
     def owns(self, url):
         host = urlsplit(url).hostname or ''

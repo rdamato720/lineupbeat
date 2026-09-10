@@ -2,6 +2,23 @@
 
 Last verified: 2026-08-24
 
+## 2026-09-10 SB Nation news feeds
+
+The owner authorized adding all 32 NFL SB Nation communities to the separate
+news-only registry. All 32 Atom feeds responded with current entries during
+September 10 verification. Capture uses the existing bounded, robots-aware
+RSS path; no article bodies, models or paid APIs are called.
+
+These mixed feeds require a news/injury/roster/transaction category. Editorial,
+opinion, analysis, discussion, predictions, betting, fantasy, rumors and similar
+categories exclude an item even when it also has a News tag. Category metadata
+is retained for validation but not rendered. Existing date, event, team and
+exact-player checks still apply. All-team sources do not promise that each team
+has an eligible headline at every capture. The existing page styling is reused.
+Historical commentary records and fantasy source data remain untouched.
+Rollback the four source/code/test changes together and remove SB Nation rows
+from the news snapshot, or restore its preceding snapshot.
+
 ## 2026-09-10 free news coverage expansion
 
 The owner authorized broader free publisher feeds and official practice-report
