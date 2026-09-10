@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T11:19:09.231173+00:00",
+  "updated_at": "2026-09-10T12:00:42.263934+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T11:17:29+00:00",
+      "latest_entry_at": "2026-09-10T11:45:34+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T11:00:00+00:00",
+      "latest_entry_at": "2026-09-10T12:00:00+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-09T20:00:02+00:00",
+      "latest_entry_at": "2026-09-10T11:00:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-10T11:17:29+00:00",
+      "latest_entry_at": "2026-09-10T11:45:34+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T11:00:00+00:00",
+      "latest_entry_at": "2026-09-10T12:00:00+00:00",
       "stale": false
     }
   ],
