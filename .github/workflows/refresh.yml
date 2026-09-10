@@ -27,6 +27,7 @@ on:
       - "scripts/seo.py"
       - "scripts/build_pages.py"
       - "scripts/build_college_week1.py"
+      - "scripts/build_nfl_week1_boards.py"
       - "scripts/college_projection_results.py"
       - "data/college/2026/week-*/results/**"
       - "scripts/build_decision_room.py"
