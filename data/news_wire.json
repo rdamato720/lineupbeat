@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T10:00:48.594159+00:00",
+  "updated_at": "2026-09-10T11:19:09.231173+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T10:00:08+00:00",
+      "latest_entry_at": "2026-09-10T11:17:29+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T10:00:00+00:00",
+      "latest_entry_at": "2026-09-10T11:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T09:00:00+00:00",
+      "latest_entry_at": "2026-09-10T11:14:16+00:00",
       "stale": false
     },
     {
@@ -134,7 +134,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-09T21:33:38+00:00",
+      "latest_entry_at": "2026-09-10T11:00:11+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-09T21:18:00+00:00",
+      "latest_entry_at": "2026-09-10T10:05:00+00:00",
       "stale": false
     },
     {
@@ -284,21 +284,61 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 14,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-10T10:00:08+00:00",
+      "latest_entry_at": "2026-09-10T11:17:29+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-10T10:00:00+00:00",
+      "latest_entry_at": "2026-09-10T11:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "3faa9bd5b2d73e79efad",
+      "headline": "Rams Enter Week 1 at Nearly Full Strength After Final Injury Report",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-injury-report-myles-garrett-week-1-49ers",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Rams enter Week 1 against the 49ers nearly fully healthy as Myles Garrett and Puka Nacua are ready to go.",
+      "published_at": "2026-09-10T11:00:05+00:00",
+      "players": [
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "ed62429d0080d645fb88",
+      "headline": "Baker Mayfield\u2019s Frustration With The Buccaneers Defense Is A Great Sign",
+      "url": "https://www.si.com/nfl/buccaneers/onsi/baker-mayfield-s-frustration-with-the-buccaneers-defense-is-a-great-sign-2026",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Bucs' defense has been a hassle to deal with, certainly for QB1.",
+      "published_at": "2026-09-10T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "31391cab41c4a6594fee",
       "headline": "Alfred Collins OUT, James Thompson Jr. Questionable vs. Rams; Injury Report Ahead of #SFvsLAR",
