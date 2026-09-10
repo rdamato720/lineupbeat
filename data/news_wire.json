@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T02:00:46.464825+00:00",
+  "updated_at": "2026-09-10T04:00:43.289013+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T02:00:18+00:00",
+      "latest_entry_at": "2026-09-10T03:52:08+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T00:55:37+00:00",
+      "latest_entry_at": "2026-09-10T03:01:22+00:00",
       "stale": false
     },
     {
@@ -206,7 +206,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-09T22:50:36+00:00",
+      "latest_entry_at": "2026-09-10T03:35:57+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-10T00:43:25+00:00",
+      "latest_entry_at": "2026-09-10T03:40:15+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 12,
+      "eligible": 11,
       "error": "",
-      "latest_entry_at": "2026-09-10T02:00:18+00:00",
+      "latest_entry_at": "2026-09-10T03:52:08+00:00",
       "stale": false
     },
     {
@@ -294,11 +294,83 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-10T00:55:37+00:00",
+      "latest_entry_at": "2026-09-10T03:01:22+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "c2ee916281b0d9b8175b",
+      "headline": "3 Quarterbacks Seahawks Can Target via Trade Following Sam Darnold Injury",
+      "url": "https://www.si.com/nfl/seahawks/onsi/sam-darnold-injury-trade-options-jj-mccarthy",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "If the Seattle Seahawks want to add depth at quarterback following the Sam Darnold injury, these three names should be on their radar.",
+      "published_at": "2026-09-10T03:17:45+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "1e30bceadf05c8b52712",
+      "headline": "A.J. Brown\u2019s Patriots debut starts on a sour note after an injury ruins the night for Drake Maye and New England\u2019s offense",
+      "url": "https://atozsports.com/nfl/new-england-patriots-news/aj-brown-ruled-out-patriots-seahawks-season-opener-ankle-injury-romeo-doubs-struggles/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The highly anticipated debut of New England Patriots wide receiver A.J. Brown just got cut short, and it was evident that the Patriots' offense missed him immediately against the Seattle Seahawks on Wednesday.",
+      "published_at": "2026-09-10T03:01:22+00:00",
+      "players": [
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039851",
+          "name": "Drake Maye",
+          "team": "NE",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "b2420122a85c7faf545d",
+      "headline": "Sam Darnold\u2019s injury and Drew Lock\u2019s snaps could create an unexpected financial dilemma for the Seahawks",
+      "url": "https://atozsports.com/nfl/seattle-seahawks-news/drew-lock-contract-incentives-sam-darnold-injury/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Darnold left the first game of the regular season in the first quarter with a hip injury and did not return.",
+      "published_at": "2026-09-10T02:13:04+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035704",
+          "name": "Drew Lock",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "4171258e8d138a8ac92d",
       "headline": "Jeremiyah Love Headlines Loaded Cardinals-Chargers Week 1 Injury Report",
