@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T04:00:43.289013+00:00",
+  "updated_at": "2026-09-10T05:58:57.311767+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T03:52:08+00:00",
+      "latest_entry_at": "2026-09-10T05:39:48+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T03:01:22+00:00",
+      "latest_entry_at": "2026-09-10T04:18:05+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T00:09:42+00:00",
+      "latest_entry_at": "2026-09-10T03:51:07+00:00",
       "stale": false
     },
     {
@@ -204,9 +204,9 @@
     {
       "source_id": "news_official_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T03:35:57+00:00",
+      "latest_entry_at": "2026-09-10T05:23:03+00:00",
       "stale": false
     },
     {
@@ -252,9 +252,9 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-10T03:40:15+00:00",
+      "latest_entry_at": "2026-09-10T04:54:00+00:00",
       "stale": false
     },
     {
@@ -284,21 +284,121 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 11,
+      "eligible": 15,
       "error": "",
-      "latest_entry_at": "2026-09-10T03:52:08+00:00",
+      "latest_entry_at": "2026-09-10T05:39:48+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-10T03:01:22+00:00",
+      "latest_entry_at": "2026-09-10T04:18:05+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "634795c0cf34b28f0de4",
+      "headline": "Seahawks Get 'Great News' On Sam Darnold's Hip Injury",
+      "url": "https://www.seahawks.com/news/seahawks-get-great-news-on-sam-darnold-s-hip-injury",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Seahawks Head Coach Mike Macdonald Had A Positive Update On Quarterback Sam Darnold's Hip Injury Following Wednesday Night\u2019s Win Over The Patriots.",
+      "published_at": "2026-09-10T04:54:00+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "42a9264e75a3e27ff70a",
+      "headline": "Patriots WR A.J. Brown 'In Good Spirits' After Week 1 Ankle Injury",
+      "url": "https://www.si.com/nfl/patriots/onsi/patriots-wr-a-j-brown-in-good-spirits-after-week-1-ankle-injury",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots wide receiver was ruled out after the third quarter in Wednesday's loss.",
+      "published_at": "2026-09-10T04:52:29+00:00",
+      "players": [
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "211e748c5807b8f4b134",
+      "headline": "Drew Lock Deserves to Be the Seahawks' Starting Quarterback After Patriots Win",
+      "url": "https://www.si.com/nfl/seahawks/onsi/drew-lock-deserves-to-be-the-seahawks-starting-quarterback-after-patriots-win",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Quarterback Drew Lock had a big Week 1 game for the Seattle Seahawks in the win over the New England Patriots despite so many obstacles against him.",
+      "published_at": "2026-09-10T04:45:13+00:00",
+      "players": [
+        {
+          "id": "00-0035704",
+          "name": "Drew Lock",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "7b68065f6ac31b748b92",
+      "headline": "Mike Macdonald provides major update on Sam Darnold\u2019s injury following Seattle Seahawks win",
+      "url": "https://atozsports.com/nfl/seattle-seahawks-news/mike-macdonald-sam-darnold-update/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks won the game against the New England Patriots but now all eyes turn to Sam Darnold's injury status.",
+      "published_at": "2026-09-10T04:18:05+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "b6926a5e905b329eccf5",
+      "headline": "Seahawks HC Mike Macdonald Delivers 'Great News' on Sam Darnold Injury",
+      "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-hc-mike-macdonald-delivers-great-news-sam-darnold-injury",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "While initially seeming possibly season-ending, the Seahawks have received good signs from early tests.",
+      "published_at": "2026-09-10T04:01:18+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "c2ee916281b0d9b8175b",
       "headline": "3 Quarterbacks Seahawks Can Target via Trade Following Sam Darnold Injury",
