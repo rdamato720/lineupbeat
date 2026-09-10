@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T00:17:01.633607+00:00",
+  "updated_at": "2026-09-10T00:22:24.382906+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T00:14:31+00:00",
+      "latest_entry_at": "2026-09-10T00:00:37+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-09T21:28:18+00:00",
+      "latest_entry_at": "2026-09-09T23:56:51+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-09T23:15:50+00:00",
+      "latest_entry_at": "2026-09-10T00:09:42+00:00",
       "stale": false
     },
     {
@@ -108,9 +108,9 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-09T21:16:57+00:00",
+      "latest_entry_at": "2026-09-10T00:14:52+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-10T00:14:31+00:00",
+      "latest_entry_at": "2026-09-10T00:00:37+00:00",
       "stale": false
     },
     {
@@ -299,6 +299,45 @@
     }
   ],
   "items": [
+    {
+      "id": "6dda4ec3cd55932a519b",
+      "headline": "'I can't wait': Broncos QB Bo Nix ready for return to regular-season action in prime-time matchup vs. Chiefs",
+      "url": "https://www.denverbroncos.com/news/i-can-t-wait-broncos-qb-bo-nix-ready-for-return-to-regular-season-action-in-prime-time-matchup-vs-chiefs",
+      "source_id": "news_official_den",
+      "source": "Denver Broncos (official)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "\u201cMentally, you can tell that he\u2019s like, \u2018I\u2019m ready to go do this,\u2019\u201d wide receiver Courtland Sutton said Wednesday.",
+      "published_at": "2026-09-10T00:14:52+00:00",
+      "players": [
+        {
+          "id": "00-0034348",
+          "name": "Courtland Sutton",
+          "team": "DEN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039732",
+          "name": "Bo Nix",
+          "team": "DEN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "2cdb3c8e949e3a7b7b05",
+      "headline": "Bucs RB Did Not Participate In First Injury Report Of The Season",
+      "url": "https://www.pewterreport.com/bucs-rb-not-participate-first-injury-report/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "After a year where the Bucs continually battled against injury, they are starting off their season looking relatively robust. With only one player not participating at practice, the team is trending towards a healthy start this Sunday against the Cincinnati Bengals. Having that level of availability on the roster gives the Bucs much more",
+      "published_at": "2026-09-09T23:56:51+00:00",
+      "players": []
+    },
     {
       "id": "e647b9a2365b3eb89f35",
       "headline": "Browns QB Deshaun Watson enters not guilty plea in Cleveland days before first start in nearly two years",
