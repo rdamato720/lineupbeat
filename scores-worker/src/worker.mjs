@@ -31,7 +31,7 @@ export class ScoreCache {
     const entry={at:now,points:RESERVE}; usage.push(entry); await storage.put('usage',usage);
     let response;
     try {
-      response=await fetch('https://therundown.io/api/v2'+path,{headers:{'X-TheRundown-Key':this.env.THERUNDOWN_API_KEY},redirect:'error',signal:AbortSignal.timeout(15000)});
+      response=await fetch('https://therundown.io/api/v2'+path,{headers:{'X-TheRundown-Key':this.env.THERUNDOWN_API_KEY},redirect:'manual',signal:AbortSignal.timeout(15000)});
     } catch (error) {
       await storage.put('diagnostic',{at:new Date(now).toISOString(),kind:['TimeoutError','AbortError'].includes(error?.name)?'timeout':'network_error'});
       await storage.put('block',{until:now+15*60000,reason:'Provider temporarily unavailable'}); throw Error('Provider temporarily unavailable');
