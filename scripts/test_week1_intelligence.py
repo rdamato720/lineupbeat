@@ -17,6 +17,7 @@ import build_decision_room
 import build_week1_intelligence as model
 import college_decision_data
 import decision_data
+from test_nfl_workload_allocation import NFLWorkloadAllocationTests
 
 
 IDENTITY_VARIANTS = {
@@ -111,7 +112,7 @@ class NFLWeek1ArtifactTests(unittest.TestCase):
         self.assertEqual(model.depth_workload_factor("QB", 2), .18)
         for position in ("RB", "WR", "TE"):
             self.assertEqual(model.depth_workload_factor(position, 2), 1.0)
-            self.assertLess(model.depth_workload_factor(position, 3), 1.0)
+            self.assertEqual(model.depth_workload_factor(position, 3), 1.0)
 
     def test_reviewed_current_season_role_outweighs_prior_usage(self):
         season_share = .30

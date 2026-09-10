@@ -109,6 +109,23 @@ def weighted(v25: float | None, v24: float | None) -> float:
     return v25 if v25 is not None else (v24 if v24 is not None else 0.0)
 
 
+def efficiency_rate(historical_value: float | None, prior_value: float | None,
+                    sample_opportunities: float, denominator: str) -> float:
+    """Shrink tiny player samples toward the reviewed current efficiency.
+
+    Retain the existing 70% history ceiling only with at least 200 pass
+    attempts or 100 carries/targets. These are explicit model thresholds,
+    not a claim of backtested optimality.
+    """
+    if historical_value is None:
+        return max(0.0, prior_value or 0.0)
+    if prior_value is None:
+        return max(0.0, historical_value)
+    threshold = 200 if denominator == "attempts" else 100
+    weight = .7 * min(1.0, max(0.0, sample_opportunities) / threshold)
+    return max(0.0, weight * historical_value + (1 - weight) * prior_value)
+
+
 def blended_player_share(historical_share: float | None,
                          season_share: float) -> float:
     """Anchor current weekly roles to the reviewed current-season baseline.
@@ -127,17 +144,10 @@ def clamp(value: float, low: float, high: float) -> float:
 
 
 def depth_workload_factor(position: str, rank: int | None) -> float:
-    """Discount uncertain reserve roles without re-cutting listed starters."""
+    """QB reserves get a relative weight; other roles already live in shares."""
     if not rank or rank <= 1:
         return 1.0
-    by_position = {
-        "QB": {2: .18, 3: .05},
-        "RB": {2: 1.0, 3: .42, 4: .22},
-        "WR": {2: 1.0, 3: .62, 4: .40, 5: .25},
-        "TE": {2: 1.0, 3: .38, 4: .22},
-    }
-    table = by_position[position]
-    return table.get(rank, min(table.values()))
+    return {2: .18, 3: .05}.get(rank, .05) if position == "QB" else 1.0
 
 
 def load_market_input(path: Path) -> dict:
@@ -607,7 +617,7 @@ def build(market_path: Path | None = None,
             hval = sum(num(r, numerator) for r in historical) / hden if hden else None
             pden = projected_component(prior, prior_den)
             pval = projected_component(prior, prior_num) / pden if pden else None
-            return weighted(hval, pval)
+            return efficiency_rate(hval, pval, hden, denominator)
 
         stat["passing_yards"] = stat["attempts"] * efficiency("passing_yards", "attempts", "passing_yards", "attempts")
         stat["passing_interceptions"] = stat["attempts"] * efficiency("passing_interceptions", "attempts", "passing_interceptions", "attempts")
@@ -801,9 +811,10 @@ def build(market_path: Path | None = None,
                                         "url": injury_payload["source_url"]}},
                "methodology": {"season_total_divisor": None,
                                "summary": "Current Week 1 roster and offensive depth chart × historical team weekly volume × reviewed season-prior player shares with 25% prior-season usage shrinkage; historical and season-prior efficiencies; bounded 2025 opponent and venue adjustments; conservatively shrunk private multi-book game and exact-player consensus inputs.",
-                               "role_policy": "The reviewed 2026 role supplies 75% of a player's opportunity share when usable 2025 current-team history exists, with that history limited to 25% shrinkage. Listed QB backups and players below the second RB, WR, or TE depth slot receive an additional reserve-role discount; RB2, WR2, and TE2 do not receive a duplicate workload cut.",
+                               "role_policy": "The reviewed 2026 role supplies 75% of a player's opportunity weight when usable 2025 current-team history exists. Weights are normalized across available players to conserve team volume. Non-QB depth positions do not apply a second role discount; QB reserve weights remain relative shares.",
                                "market_policy": "High-quality consensus requires at least three books. Team implied-total effects are capped and shrunk to 25%; exact player components are capped to within 25% of the independent model and blended at 25%. Anytime-touchdown prices do not move projections because a one-sided price cannot be safely de-vigged. Raw quotes, prices, lines, and sportsbook identities are never published.",
                                "injury_policy": "Current status tags are displayed for context. Questionable and Doubtful carry a 1.0 projection factor. Only confirmed Out, Injured Reserve, or suspended statuses set the Week 1 projection to zero.",
+                               "efficiency_policy": "Historical efficiency weight grows with sample size to the existing 70% ceiling at 200 pass attempts or 100 carries/targets; otherwise favor the reviewed prior. Thresholds are modeling assumptions, not backtested optimal values.",
                                "scoring": "0.04/pass yard, 4/pass TD, -2/interception, 0.1/rush or receiving yard, 6/rush or receiving TD, -2/fumble lost, plus format reception points.",
                                "recommendation_guardrail": "A point difference alone cannot create an unqualified recommendation."}}
     matchup_payload = {"schema_version": "lineupbeat-nfl-matchup-2025-v1", "season": 2025,
@@ -838,6 +849,11 @@ def build(market_path: Path | None = None,
                                   "odds": "available privately; raw market data is intentionally not published"}}
     from weekly_availability import apply_reports
     apply_reports(payload)
+    from nfl_workload_allocation import finalize, historical_role_priors
+    budgets = {club: {key: weighted(team25[club].get(key), team24[club].get(key))
+                      for key in ("attempts", "carries", "targets")}
+               for club in slate_by_team}
+    finalize(payload, budgets, historical_role_priors(p24, p25))
     provenance["reviewed_availability_reports"] = payload.get("reviewed_availability_reports", [])
     provenance["availability_coverage"]["confirmed_unavailable_players"] = sum(p["availability"]["projection_adjusted"] for p in payload["players"])
     return payload, matchup_payload, backtest_result, provenance
