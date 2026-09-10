@@ -1,0 +1,558 @@
+{
+  "scope": "Publisher headlines and feed descriptions only. Not commentary approval or firsthand authority.",
+  "verified_at": "2026-09-10",
+  "excluded": [
+    {
+      "source": "Dallas Cowboys official RSS",
+      "reason": "Responds but newest entry is May 2018"
+    },
+    {
+      "source": "Washington Commanders official RSS",
+      "reason": "Responds but newest entry is April 2022"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "news_official_ari",
+      "source_name": "Arizona Cardinals (official)",
+      "teams": [
+        "ARI"
+      ],
+      "domains": [
+        "azcardinals.com"
+      ],
+      "feed_url": "https://www.azcardinals.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_atl",
+      "source_name": "Atlanta Falcons (official)",
+      "teams": [
+        "ATL"
+      ],
+      "domains": [
+        "atlantafalcons.com"
+      ],
+      "feed_url": "https://www.atlantafalcons.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_bal",
+      "source_name": "Baltimore Ravens (official)",
+      "teams": [
+        "BAL"
+      ],
+      "domains": [
+        "baltimoreravens.com"
+      ],
+      "feed_url": "https://www.baltimoreravens.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_buf",
+      "source_name": "Buffalo Bills (official)",
+      "teams": [
+        "BUF"
+      ],
+      "domains": [
+        "buffalobills.com"
+      ],
+      "feed_url": "https://www.buffalobills.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_car",
+      "source_name": "Carolina Panthers (official)",
+      "teams": [
+        "CAR"
+      ],
+      "domains": [
+        "panthers.com"
+      ],
+      "feed_url": "https://www.panthers.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_chi",
+      "source_name": "Chicago Bears (official)",
+      "teams": [
+        "CHI"
+      ],
+      "domains": [
+        "chicagobears.com"
+      ],
+      "feed_url": "https://www.chicagobears.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_cin",
+      "source_name": "Cincinnati Bengals (official)",
+      "teams": [
+        "CIN"
+      ],
+      "domains": [
+        "bengals.com"
+      ],
+      "feed_url": "https://www.bengals.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_cle",
+      "source_name": "Cleveland Browns (official)",
+      "teams": [
+        "CLE"
+      ],
+      "domains": [
+        "clevelandbrowns.com"
+      ],
+      "feed_url": "https://www.clevelandbrowns.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_den",
+      "source_name": "Denver Broncos (official)",
+      "teams": [
+        "DEN"
+      ],
+      "domains": [
+        "denverbroncos.com"
+      ],
+      "feed_url": "https://www.denverbroncos.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_det",
+      "source_name": "Detroit Lions (official)",
+      "teams": [
+        "DET"
+      ],
+      "domains": [
+        "detroitlions.com"
+      ],
+      "feed_url": "https://www.detroitlions.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_gb",
+      "source_name": "Green Bay Packers (official)",
+      "teams": [
+        "GB"
+      ],
+      "domains": [
+        "packers.com"
+      ],
+      "feed_url": "https://www.packers.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_hou",
+      "source_name": "Houston Texans (official)",
+      "teams": [
+        "HOU"
+      ],
+      "domains": [
+        "houstontexans.com"
+      ],
+      "feed_url": "https://www.houstontexans.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_ind",
+      "source_name": "Indianapolis Colts (official)",
+      "teams": [
+        "IND"
+      ],
+      "domains": [
+        "colts.com"
+      ],
+      "feed_url": "https://www.colts.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_jax",
+      "source_name": "Jacksonville Jaguars (official)",
+      "teams": [
+        "JAX"
+      ],
+      "domains": [
+        "jaguars.com"
+      ],
+      "feed_url": "https://www.jaguars.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_kc",
+      "source_name": "Kansas City Chiefs (official)",
+      "teams": [
+        "KC"
+      ],
+      "domains": [
+        "chiefs.com"
+      ],
+      "feed_url": "https://www.chiefs.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_lac",
+      "source_name": "Los Angeles Chargers (official)",
+      "teams": [
+        "LAC"
+      ],
+      "domains": [
+        "chargers.com"
+      ],
+      "feed_url": "https://www.chargers.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_lar",
+      "source_name": "Los Angeles Rams (official)",
+      "teams": [
+        "LAR"
+      ],
+      "domains": [
+        "therams.com"
+      ],
+      "feed_url": "https://www.therams.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_lv",
+      "source_name": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "domains": [
+        "raiders.com"
+      ],
+      "feed_url": "https://www.raiders.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_mia",
+      "source_name": "Miami Dolphins (official)",
+      "teams": [
+        "MIA"
+      ],
+      "domains": [
+        "miamidolphins.com"
+      ],
+      "feed_url": "https://www.miamidolphins.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_min",
+      "source_name": "Minnesota Vikings (official)",
+      "teams": [
+        "MIN"
+      ],
+      "domains": [
+        "vikings.com"
+      ],
+      "feed_url": "https://www.vikings.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_ne",
+      "source_name": "New England Patriots (official)",
+      "teams": [
+        "NE"
+      ],
+      "domains": [
+        "patriots.com"
+      ],
+      "feed_url": "https://www.patriots.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_no",
+      "source_name": "New Orleans Saints (official)",
+      "teams": [
+        "NO"
+      ],
+      "domains": [
+        "neworleanssaints.com"
+      ],
+      "feed_url": "https://www.neworleanssaints.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_nyg",
+      "source_name": "New York Giants (official)",
+      "teams": [
+        "NYG"
+      ],
+      "domains": [
+        "giants.com"
+      ],
+      "feed_url": "https://www.giants.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_nyj",
+      "source_name": "New York Jets (official)",
+      "teams": [
+        "NYJ"
+      ],
+      "domains": [
+        "newyorkjets.com"
+      ],
+      "feed_url": "https://www.newyorkjets.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_phi",
+      "source_name": "Philadelphia Eagles (official)",
+      "teams": [
+        "PHI"
+      ],
+      "domains": [
+        "philadelphiaeagles.com"
+      ],
+      "feed_url": "https://www.philadelphiaeagles.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_pit",
+      "source_name": "Pittsburgh Steelers (official)",
+      "teams": [
+        "PIT"
+      ],
+      "domains": [
+        "steelers.com"
+      ],
+      "feed_url": "https://www.steelers.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_sea",
+      "source_name": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "domains": [
+        "seahawks.com"
+      ],
+      "feed_url": "https://www.seahawks.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_sf",
+      "source_name": "San Francisco 49ers (official)",
+      "teams": [
+        "SF"
+      ],
+      "domains": [
+        "49ers.com"
+      ],
+      "feed_url": "https://www.49ers.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_tb",
+      "source_name": "Tampa Bay Buccaneers (official)",
+      "teams": [
+        "TB"
+      ],
+      "domains": [
+        "buccaneers.com"
+      ],
+      "feed_url": "https://www.buccaneers.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_official_ten",
+      "source_name": "Tennessee Titans (official)",
+      "teams": [
+        "TEN"
+      ],
+      "domains": [
+        "tennesseetitans.com"
+      ],
+      "feed_url": "https://www.tennesseetitans.com/rss/news",
+      "filter_url_pattern": "^/news/",
+      "team_owned": true
+    },
+    {
+      "source_id": "news_si_nfl",
+      "source_name": "Sports Illustrated",
+      "teams": [
+        "ARI",
+        "ATL",
+        "BAL",
+        "BUF",
+        "CAR",
+        "CHI",
+        "CIN",
+        "CLE",
+        "DAL",
+        "DEN",
+        "DET",
+        "GB",
+        "HOU",
+        "IND",
+        "JAX",
+        "KC",
+        "LAC",
+        "LAR",
+        "LV",
+        "MIA",
+        "MIN",
+        "NE",
+        "NO",
+        "NYG",
+        "NYJ",
+        "PHI",
+        "PIT",
+        "SEA",
+        "SF",
+        "TB",
+        "TEN",
+        "WAS"
+      ],
+      "domains": [
+        "si.com"
+      ],
+      "feed_url": "https://www.si.com/feed",
+      "path_teams": {
+        "/nfl/cardinals/onsi/": "ARI",
+        "/nfl/falcons/onsi/": "ATL",
+        "/nfl/ravens/onsi/": "BAL",
+        "/nfl/bills/onsi/": "BUF",
+        "/nfl/panthers/onsi/": "CAR",
+        "/nfl/bears/onsi/": "CHI",
+        "/nfl/bengals/onsi/": "CIN",
+        "/nfl/browns/onsi/": "CLE",
+        "/nfl/cowboys/onsi/": "DAL",
+        "/nfl/broncos/onsi/": "DEN",
+        "/nfl/lions/onsi/": "DET",
+        "/nfl/packers/onsi/": "GB",
+        "/nfl/texans/onsi/": "HOU",
+        "/nfl/colts/onsi/": "IND",
+        "/nfl/jaguars/onsi/": "JAX",
+        "/nfl/chiefs/onsi/": "KC",
+        "/nfl/chargers/onsi/": "LAC",
+        "/nfl/rams/onsi/": "LAR",
+        "/nfl/raiders/onsi/": "LV",
+        "/nfl/dolphins/onsi/": "MIA",
+        "/nfl/vikings/onsi/": "MIN",
+        "/nfl/patriots/onsi/": "NE",
+        "/nfl/saints/onsi/": "NO",
+        "/nfl/giants/onsi/": "NYG",
+        "/nfl/jets/onsi/": "NYJ",
+        "/nfl/eagles/onsi/": "PHI",
+        "/nfl/steelers/onsi/": "PIT",
+        "/nfl/seahawks/onsi/": "SEA",
+        "/nfl/49ers/onsi/": "SF",
+        "/nfl/buccaneers/onsi/": "TB",
+        "/nfl/titans/onsi/": "TEN",
+        "/nfl/commanders/onsi/": "WAS"
+      }
+    },
+    {
+      "source_id": "news_atoz_nfl",
+      "source_name": "A to Z Sports",
+      "teams": [
+        "ARI",
+        "ATL",
+        "BAL",
+        "BUF",
+        "CAR",
+        "CHI",
+        "CIN",
+        "CLE",
+        "DAL",
+        "DEN",
+        "DET",
+        "GB",
+        "HOU",
+        "IND",
+        "JAX",
+        "KC",
+        "LAC",
+        "LAR",
+        "LV",
+        "MIA",
+        "MIN",
+        "NE",
+        "NO",
+        "NYG",
+        "NYJ",
+        "PHI",
+        "PIT",
+        "SEA",
+        "SF",
+        "TB",
+        "TEN",
+        "WAS"
+      ],
+      "domains": [
+        "atozsports.com"
+      ],
+      "feed_url": "https://atozsports.com/feed",
+      "path_teams": {
+        "/nfl/arizona-cardinals-news/": "ARI",
+        "/nfl/atlanta-falcons-news/": "ATL",
+        "/nfl/baltimore-ravens-news/": "BAL",
+        "/nfl/buffalo-bills-news/": "BUF",
+        "/nfl/carolina-panthers-news/": "CAR",
+        "/nfl/chicago-bears-news/": "CHI",
+        "/nfl/cincinnati-bengals-news/": "CIN",
+        "/nfl/cleveland-browns-news/": "CLE",
+        "/nfl/dallas-cowboys-news/": "DAL",
+        "/nfl/denver-broncos-news/": "DEN",
+        "/nfl/detroit-lions-news/": "DET",
+        "/nfl/green-bay-packers-news/": "GB",
+        "/nfl/houston-texans-news/": "HOU",
+        "/nfl/indianapolis-colts-news/": "IND",
+        "/nfl/jacksonville-jaguars-news/": "JAX",
+        "/nfl/kansas-city-chiefs-news/": "KC",
+        "/nfl/los-angeles-chargers-news/": "LAC",
+        "/nfl/los-angeles-rams-news/": "LAR",
+        "/nfl/las-vegas-raiders-news/": "LV",
+        "/nfl/miami-dolphins-news/": "MIA",
+        "/nfl/minnesota-vikings-news/": "MIN",
+        "/nfl/new-england-patriots-news/": "NE",
+        "/nfl/new-orleans-saints-news/": "NO",
+        "/nfl/new-york-giants-news/": "NYG",
+        "/nfl/new-york-jets-news/": "NYJ",
+        "/nfl/philadelphia-eagles-news/": "PHI",
+        "/nfl/pittsburgh-steelers-news/": "PIT",
+        "/nfl/seattle-seahawks-news/": "SEA",
+        "/nfl/san-francisco-49ers-news/": "SF",
+        "/nfl/tampa-bay-buccaneers-news/": "TB",
+        "/nfl/tennessee-titans-news/": "TEN",
+        "/nfl/washington-commanders-news/": "WAS"
+      }
+    }
+  ]
+}

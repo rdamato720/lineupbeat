@@ -2,6 +2,30 @@
 
 Last verified: 2026-08-24
 
+## 2026-09-10 free news coverage expansion
+
+The owner authorized broader free publisher feeds and official practice-report
+links, with no paid calls or LineupBeat commentary. `sources/news_wire.json`
+is a news-metadata registry, separate from historical interpretation authority.
+It adds 30 current official club RSS feeds and exact team-path filtering of
+Sports Illustrated and A to Z Sports. Dallas and Washington official feeds
+were excluded because their newest entries were from 2018 and 2022.
+
+Capture checks robots.txt, refuses disallowed/unavailable feeds, uses bounded
+HTTPS requests, and reads no linked article bodies or content:encoded fields.
+A feed description of at most 2,000 characters can supply an exact full-name
+player tag; it is never rendered. Tracking parameters are removed before URL
+deduplication. A dated practice/injury/inactives roundup can carry a team tag
+without guessed player identities. Team-owned sources are labelled official.
+Obvious analysis, predictions, rankings, promotions and unrelated items are
+excluded. Feed descriptions are metadata, not approved public commentary.
+
+Snapshots record latest entry times and flag stale responding feeds. Historical
+commentary approvals and source-access classifications remain unchanged. The
+existing commentary test corpus still applies only to that separate pipeline;
+no semantic provider was added or called. Roll back this release's code and
+news-source config together, restoring the previous news snapshot if necessary.
+
 ## 2026-09-09 news-only Wire restoration
 
 Ralph requested a dedicated news-only `/nfl/wire/`, replacing the historical

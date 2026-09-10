@@ -9,6 +9,8 @@ on:
       - '.github/workflows/news-wire.yml'
       - 'scripts/build_news_wire.py'
       - 'scripts/test_news_wire.py'
+      - 'scripts/news_wire_sources.py'
+      - 'sources/news_wire.json'
 permissions:
   contents: write
   actions: write

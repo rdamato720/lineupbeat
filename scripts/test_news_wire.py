@@ -38,6 +38,49 @@ class NewsWireTests(unittest.TestCase):
         with self.assertRaises(ValueError):n.validated(data)
         data['items']=[copy.deepcopy(row)];data['items'][0]['players'][0]['team']='KC'
         with self.assertRaises(ValueError):n.validated(data)
+    def test_roundup_uses_description_without_rendering_it(self):
+        e=copy.deepcopy(self.entry);e['title']='Wednesday practice report'
+        e['summary']='Baker Mayfield returned. DESCRIPTION_SENTINEL'
+        row=self.normalize(e);self.assertEqual(row['players'][0]['name'],'Baker Mayfield')
+        data={'updated_at':self.now.isoformat(),'items':[row]};n.validated(data)
+        with tempfile.TemporaryDirectory() as d:
+            snapshot=Path(d)/'data.json';snapshot.write_text(json.dumps(data))
+            with patch.object(n,'SNAPSHOT',snapshot):p=n.build(out=Path(d)/'index.html')
+            self.assertNotIn('DESCRIPTION_SENTINEL',p.read_text())
+    def test_team_report_does_not_invent_player_tags(self):
+        e=copy.deepcopy(self.entry);e['title']='Wednesday injury report';e['summary']='Three players limited.'
+        row=self.normalize(e);self.assertEqual(row['players'],[]);self.assertEqual(row['teams'],['TB'])
+        data={'updated_at':self.now.isoformat(),'items':[row]};n.validated(data)
+        with tempfile.TemporaryDirectory() as d:
+            snapshot=Path(d)/'data.json';snapshot.write_text(json.dumps(data))
+            with patch.object(n,'SNAPSHOT',snapshot):p=n.build(out=Path(d)/'index.html')
+            self.assertIn('TB · Team report',p.read_text());self.assertIn('value="TB"',p.read_text())
+        row['teams']=['KC']
+        with self.assertRaises(ValueError):n.validated(data)
+    def test_news_network_paths_are_exact_team_scopes(self):
+        source=next(s for s in n.sources() if s.source_id=='news_si_nfl')
+        e=copy.deepcopy(self.entry);e['link']='https://www.si.com/nfl/buccaneers/onsi/baker-mayfield-practice?utm_source=RSS'
+        row=n.normalize_entry(source,e,self.players,self.now)
+        self.assertEqual(row['teams'],['TB']);self.assertNotIn('utm_',row['url'])
+        for path in ('/nfl/chiefs/onsi/test','/college/test','/nfl/buccaneers-other/onsi/test'):
+            e['link']='https://www.si.com'+path
+            self.assertIsNone(n.normalize_entry(source,e,self.players,self.now))
+    def test_full_article_content_and_unrelated_news_do_not_match(self):
+        e=copy.deepcopy(self.entry);e['title']='Team announces community event'
+        e['content']=[{'value':'Baker Mayfield returned to practice.'}]
+        self.assertIsNone(self.normalize(e))
+        for title in ('Baker Mayfield fantasy football rankings','Baker Mayfield mural unveiled','Baker Mayfield Super Bowl prediction'):
+            e['title']=title;self.assertIsNone(self.normalize(e))
+        e['title']='Wednesday practice report';e['summary']='Patrick Mahomes returned.'
+        self.assertEqual(self.normalize(e)['players'],[])
+    def test_possessive_player_name_matches_without_fuzzy_names(self):
+        e=copy.deepcopy(self.entry);e['title']="Baker Mayfield’s practice status updated"
+        self.assertEqual(self.normalize(e)['players'][0]['name'],'Baker Mayfield')
+    def test_robots_refusal_does_not_fetch_feed(self):
+        response=type('Result',(),{'returncode':0,'stdout':b'User-agent: *\nDisallow: /'})()
+        with tempfile.TemporaryDirectory() as d, patch.object(n,'sources',return_value=[self.source]), patch.object(n.subprocess,'run',return_value=response) as get:
+            with self.assertRaises(RuntimeError):n.refresh(Path(d)/'data.json')
+            self.assertEqual(get.call_count,1);self.assertTrue(get.call_args.args[0][-1].endswith('/robots.txt'))
     def test_failed_refresh_preserves_snapshot(self):
         with tempfile.TemporaryDirectory() as d:
             snapshot=Path(d)/'news.json';snapshot.write_text('{"items":[]}')
