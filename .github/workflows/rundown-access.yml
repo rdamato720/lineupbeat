@@ -1,0 +1,23 @@
+name: Check Rundown configuration
+on:
+  push:
+    branches: [codex/odds-score-ticker]
+    paths: [.github/workflows/rundown-access.yml]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check configured credential names (no provider requests)
+        env:
+          THERUNDOWN_API_KEY: ${{ secrets.THERUNDOWN_API_KEY }}
+          RUNDOWN_API_KEY: ${{ secrets.RUNDOWN_API_KEY }}
+          THERUNDOWN_KEY: ${{ secrets.THERUNDOWN_KEY }}
+          RUNDOWN_KEY: ${{ secrets.RUNDOWN_KEY }}
+        run: |
+          python - <<'PY'
+          import os, json
+          names = ['THERUNDOWN_API_KEY', 'RUNDOWN_API_KEY', 'THERUNDOWN_KEY', 'RUNDOWN_KEY']
+          print(json.dumps({'configured_names': [name for name in names if os.environ.get(name)], 'provider_requests': 0}))
+          PY
