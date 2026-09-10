@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T12:00:42.263934+00:00",
+  "updated_at": "2026-09-10T13:21:38.862941+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T11:45:34+00:00",
+      "latest_entry_at": "2026-09-10T13:06:54+00:00",
       "stale": false
     },
     {
@@ -22,7 +22,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-09T23:56:51+00:00",
+      "latest_entry_at": "2026-09-10T11:30:19+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T12:00:00+00:00",
+      "latest_entry_at": "2026-09-10T13:05:18+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T11:14:16+00:00",
+      "latest_entry_at": "2026-09-10T12:48:46+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-09T22:10:08+00:00",
+      "latest_entry_at": "2026-09-10T13:14:26+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-09T21:11:07+00:00",
+      "latest_entry_at": "2026-09-10T13:08:32+00:00",
       "stale": false
     },
     {
@@ -212,9 +212,9 @@
     {
       "source_id": "news_official_no",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-09T23:33:30+00:00",
+      "latest_entry_at": "2026-09-10T13:00:27+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-10T07:23:26+00:00",
+      "latest_entry_at": "2026-09-10T13:00:00+00:00",
       "stale": false
     },
     {
@@ -270,7 +270,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-09T21:33:53+00:00",
+      "latest_entry_at": "2026-09-10T12:00:10+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-10T11:45:34+00:00",
+      "latest_entry_at": "2026-09-10T13:06:54+00:00",
       "stale": false
     },
     {
@@ -294,11 +294,405 @@
       "ok": true,
       "eligible": 1,
       "error": "",
+      "latest_entry_at": "2026-09-10T13:05:18+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_buf",
+      "ok": true,
+      "eligible": 0,
+      "error": "",
       "latest_entry_at": "2026-09-10T12:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_mia",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-10T13:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_ne",
+      "ok": true,
+      "eligible": 3,
+      "error": "",
+      "latest_entry_at": "2026-09-10T11:00:58+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_nyj",
+      "ok": true,
+      "eligible": 0,
+      "error": "",
+      "latest_entry_at": "2026-09-10T11:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_bal",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-10T10:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_cin",
+      "ok": true,
+      "eligible": 0,
+      "error": "",
+      "latest_entry_at": "2026-09-10T02:28:27+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_cle",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-10T10:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_pit",
+      "ok": true,
+      "eligible": 2,
+      "error": "",
+      "latest_entry_at": "2026-09-10T12:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_hou",
+      "ok": true,
+      "eligible": 2,
+      "error": "",
+      "latest_entry_at": "2026-09-10T12:15:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_ind",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-10T11:15:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_jax",
+      "ok": true,
+      "eligible": 0,
+      "error": "",
+      "latest_entry_at": "2026-09-10T13:04:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_ten",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-09T19:44:48+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_den",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-10T12:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_kc",
+      "ok": true,
+      "eligible": 0,
+      "error": "",
+      "latest_entry_at": "2026-09-09T17:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_lv",
+      "ok": true,
+      "eligible": 2,
+      "error": "",
+      "latest_entry_at": "2026-09-09T21:43:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_lac",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-09T22:27:58+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_dal",
+      "ok": true,
+      "eligible": 0,
+      "error": "",
+      "latest_entry_at": "2026-09-10T11:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_nyg",
+      "ok": true,
+      "eligible": 2,
+      "error": "",
+      "latest_entry_at": "2026-09-10T12:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_phi",
+      "ok": true,
+      "eligible": 2,
+      "error": "",
+      "latest_entry_at": "2026-09-10T03:39:42+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_was",
+      "ok": true,
+      "eligible": 2,
+      "error": "",
+      "latest_entry_at": "2026-09-10T11:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_chi",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-10T10:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_det",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-10T10:31:46+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_gb",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-10T12:21:53+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_min",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-09T22:25:20+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_atl",
+      "ok": true,
+      "eligible": 4,
+      "error": "",
+      "latest_entry_at": "2026-09-10T01:58:23+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_car",
+      "ok": true,
+      "eligible": 0,
+      "error": "",
+      "latest_entry_at": "2026-09-09T12:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_no",
+      "ok": true,
+      "eligible": 3,
+      "error": "",
+      "latest_entry_at": "2026-09-10T13:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_tb",
+      "ok": true,
+      "eligible": 3,
+      "error": "",
+      "latest_entry_at": "2026-09-10T00:57:29+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_ari",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-10T12:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_lar",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-10T06:53:42+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_sf",
+      "ok": true,
+      "eligible": 1,
+      "error": "",
+      "latest_entry_at": "2026-09-10T09:00:00+00:00",
+      "stale": false
+    },
+    {
+      "source_id": "news_sbn_sea",
+      "ok": true,
+      "eligible": 3,
+      "error": "",
+      "latest_entry_at": "2026-09-10T06:25:35+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "81a331224e18e5e19e7b",
+      "headline": "Joe Burrow gives two reasons why he\u2019s excited for the Bengals\u2019 season and they\u2019re both extremely valid",
+      "url": "https://atozsports.com/nfl/cincinnati-bengals-news/joe-burrow-gives-two-reasons-why-hes-excited-for-the-bengals-season-and-theyre-both-extremely-valid/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "While he's been serious about promoting urgency for the last several months, Cincinnati Bengals quarterback Joe Burrow is also quite pumped for the upcoming season. Two reasons stand out to him specifically.",
+      "categories": [
+        "Cincinnati Bengals News",
+        "Cincinnati Bengals",
+        "Joe Burrow"
+      ],
+      "published_at": "2026-09-10T13:01:00+00:00",
+      "players": [
+        {
+          "id": "00-0036442",
+          "name": "Joe Burrow",
+          "team": "CIN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "b739d69b4c37a2265021",
+      "headline": "Morning Break: Tyler Shough reflects on captain honor, Saints prepare for Detroit",
+      "url": "https://www.neworleanssaints.com/news/morning-break-tyler-shough-reflects-on-captain-honor-saints-prepare-for-detroit-new-orleans-news-headlines-9-10-2026",
+      "source_id": "news_official_no",
+      "source": "New Orleans Saints (official)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "A collection of headlines and news about the Saints and the NFL for Thursday, September 10",
+      "categories": [
+        "Morning Break",
+        "Latest News"
+      ],
+      "published_at": "2026-09-10T13:00:27+00:00",
+      "players": [
+        {
+          "id": "00-0040743",
+          "name": "Tyler Shough",
+          "team": "NO",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "a99ac7c6efdce2aa0161",
+      "headline": "No snap count restrictions for Chris Bell in Dolphins opener",
+      "url": "https://www.thephinsider.com/miami-dolphins-injuries/122336/no-snap-count-restrictions-for-chris-bell-in-dolphins-opener",
+      "source_id": "news_sbn_mia",
+      "source": "The Phinsider (SB Nation)",
+      "teams": [
+        "MIA"
+      ],
+      "feed_description": "The Miami Dolphins may have struck gold when they nabbed wide receiver Chris Bell from Louisville in the third round of the 2026 NFL Draft. After all, the player was projected to be a late first round pick prior to his ACL tear in November of last year. Due to that injury, many thought that [\u2026]",
+      "categories": [
+        "Miami Dolphins Injuries"
+      ],
+      "published_at": "2026-09-10T12:57:11+00:00",
+      "players": [
+        {
+          "id": "00-0041525",
+          "name": "Chris Bell",
+          "team": "MIA",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "7223fd8433077537cdc2",
+      "headline": "With Bowers Out, Mayer's Opportunity Arrives Once More",
+      "url": "https://www.si.com/nfl/raiders/onsi/las-vegas-bowers-out-mayer-opportunity-arrives-once-more",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "The Las Vegas Raiders' fourth-year tight end is expected to be the starter, with star Brock Bowers unlikely to be available. In a contract year, it is time to make the most of an opportunity.",
+      "categories": [],
+      "published_at": "2026-09-10T12:00:03+00:00",
+      "players": [
+        {
+          "id": "00-0039338",
+          "name": "Brock Bowers",
+          "team": "LV",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "5f1150ba63dc4a0e09cc",
+      "headline": "How the Patriots Offense Changed After A.J. Brown Got Injured",
+      "url": "https://www.si.com/nfl/patriots/onsi/how-the-patriots-offense-changed-after-a-j-brown-got-injured",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots offense struggled after their star wide receiver suffered an ankle injury.",
+      "categories": [],
+      "published_at": "2026-09-10T12:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "0a0f1f85d9bbf0b9f7bf",
+      "headline": "New Orleans Saints News: Saints give some news regarding their injured players",
+      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-news/114404/new-orleans-saints-news-saints-give-some-news-regarding-their-injured-players",
+      "source_id": "news_sbn_no",
+      "source": "Canal Street Chronicles (SB Nation)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "Welcome to today\u2019s roundup of New Orleans Saints and NFL news. Wednesday\u2019s Saints vs. Lions injury report: Alvin Kamara returns Kamara is back! Edge rusher Chase Young prepared to wreak havoc for New Orleans Saints How many sacks will Young have this season? Cameron Jordan will miss the third game of his 15-year Saints career [\u2026]",
+      "categories": [
+        "Fleur-de-Links",
+        "New Orleans Saints News"
+      ],
+      "published_at": "2026-09-10T12:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0033906",
+          "name": "Alvin Kamara",
+          "team": "NO",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "3faa9bd5b2d73e79efad",
       "headline": "Rams Enter Week 1 at Nearly Full Strength After Final Injury Report",
@@ -340,6 +734,66 @@
       ]
     },
     {
+      "id": "d10e93e9588baa8a860c",
+      "headline": "Houston Texans News: Thursday September 10, 2026",
+      "url": "https://www.battleredblog.com/houston-texans-news/77350/houston-texans-news-thursday-september-10-2026",
+      "source_id": "news_sbn_hou",
+      "source": "Battle Red Blog (SB Nation)",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "Houston Texans News C.J. Stroud is ready to rewrite his story. Inside his offseason transformation (Houston Chronicle) Former Dolphins QB lands deal with Houston Texans (Dolphins Wire) \u2018An AFC championship matchup.\u2019 How Texans view opening game against Bills (Houston Chronicle) $58 Million Failed Former Texans Starter Signs With Cowboys (Heavy.com) NFL News Seahawks QB Darnold [\u2026]",
+      "categories": [
+        "Battle Red Newswire",
+        "Houston Texans News"
+      ],
+      "published_at": "2026-09-10T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039163",
+          "name": "C.J. Stroud",
+          "team": "HOU",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "8eaf1fd0e0cfdce4a3f2",
+      "headline": "Zay Flowers, Devontez Walker pop up on Ravens\u2019 1st 2026 injury report",
+      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-injuries/84838/zay-flowers-devontez-walker-pop-up-on-ravens-1st-2026-injury-report",
+      "source_id": "news_sbn_bal",
+      "source": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Baltimore Ravens are starting the 2026 season in relatively good health. Cornerback Bilhal Kone and running back Adam Randall, the team\u2019s injured reserve placements during roster cuts, are more like stashes who were not expected to contribute early in the year, if at all. Losing Danny Pinter, who was leading the starting center competition, [\u2026]",
+      "categories": [
+        "Baltimore Ravens Injuries",
+        "Baltimore Ravens News"
+      ],
+      "published_at": "2026-09-10T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039064",
+          "name": "Zay Flowers",
+          "team": "BAL",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039792",
+          "name": "Devontez Walker",
+          "team": "BAL",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040888",
+          "name": "Adam Randall",
+          "team": "BAL",
+          "position": "RB"
+        }
+      ]
+    },
+    {
       "id": "31391cab41c4a6594fee",
       "headline": "Alfred Collins OUT, James Thompson Jr. Questionable vs. Rams; Injury Report Ahead of #SFvsLAR",
       "url": "https://www.49ers.com/news/alfred-collins-out-james-thomas-jr-questionable-vs-rams-injury-report-ahead-of-sfvslar",
@@ -349,6 +803,19 @@
         "SF"
       ],
       "feed_description": "The San Francisco 49ers released their latest injury updates headed into the season opener contest against the Los Angeles Rams.",
+      "categories": [
+        "Injury Report",
+        "Latest App",
+        "News",
+        "English",
+        "English Articles",
+        "Breaking News",
+        "Australia",
+        "Australia 2026",
+        "Australia News",
+        "Brooke Evans",
+        "San Francisco 49ers at Los Angeles Rams (2026-REG-1)"
+      ],
       "published_at": "2026-09-10T07:23:26+00:00",
       "players": []
     },
@@ -362,6 +829,18 @@
         "LAR"
       ],
       "feed_description": "The final injury report for the Rams' Week 1 game against the 49ers in Australia.",
+      "categories": [
+        "Injury Report - Cedars Sinai",
+        "Football",
+        "San Francisco 49ers at Los Angeles Rams (2026-REG-1)",
+        "Aaron Donald",
+        "Myles Garrett",
+        "Grant Stuard",
+        "Jaylen Watson",
+        "Tyler Higbee",
+        "Alaric Jackson",
+        "Byron Young"
+      ],
       "published_at": "2026-09-10T06:47:14+00:00",
       "players": []
     },
@@ -375,6 +854,13 @@
         "SEA"
       ],
       "feed_description": "Taking Over For An Injured Sam Darnold, Drew Lock Had A Strong Outing To Help Lead The Seahawks To A 13-10 Week 1 Win Over The Patriots.",
+      "categories": [
+        "News: Stories",
+        "News: National Feature",
+        "Drew Lock",
+        "Homepage Hero",
+        "New England Patriots at Seattle Seahawks (2026-REG-1)"
+      ],
       "published_at": "2026-09-10T06:43:00+00:00",
       "players": [
         {
@@ -401,6 +887,13 @@
         "SEA"
       ],
       "feed_description": "Seahawks Head Coach Mike Macdonald Had A Positive Update On Quarterback Sam Darnold's Hip Injury Following Wednesday Night\u2019s Win Over The Patriots.",
+      "categories": [
+        "News: Stories",
+        "News: National Feature",
+        "New England Patriots at Seattle Seahawks (2026-REG-1)",
+        "Sam Darnold",
+        "Homepage Hero"
+      ],
       "published_at": "2026-09-10T04:54:00+00:00",
       "players": [
         {
@@ -472,6 +965,30 @@
       ]
     },
     {
+      "id": "68d2b125f2d1a0996f62",
+      "headline": "Sam Darnold injury update: Seahawks get \u2018good news\u2019, hip fracture ruled out",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/174385/sam-darnold-injury-update-seahawks-good-news-hip-fracture-ruled-out",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The worst case scenario for the Seattle Seahawks occurred on the first drive of the NFL Kickoff game Wednesday night when quarterback Sam Darnold exited the game with a hip injury, but it might not be as severe as originally expected. ESPN\u2019s Adam Schefter reported Darnold underwent a CT scan on his hip that produced [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-09-10T04:17:55+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
       "id": "b6926a5e905b329eccf5",
       "headline": "Seahawks HC Mike Macdonald Delivers 'Great News' on Sam Darnold Injury",
       "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-hc-mike-macdonald-delivers-great-news-sam-darnold-injury",
@@ -488,6 +1005,30 @@
           "name": "Sam Darnold",
           "team": "SEA",
           "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "ac8d835d32497626d954",
+      "headline": "A.J. Brown spotted in walking boot after suffering ankle injury",
+      "url": "https://www.patspulpit.com/new-england-patriots-injuries/136746/a-j-brown-leaving-seahawks-game-with-ankle-injury",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "Update 9/9/2026: A.J. Brown spotted in walking boot after suffering ankle injury A.J. Brown departed the Patriots locker room in a walking boot on his right foot Wednesday night. The receiver previously was ruled out with an ankle injury he suffered in the third quarter. Head coach Mike Vrabel had no update on Brown in [\u2026]",
+      "categories": [
+        "New England Patriots Injuries",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-09-10T03:55:31+00:00",
+      "players": [
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
         }
       ]
     },
@@ -580,6 +1121,30 @@
           "name": "Jeremiyah Love",
           "team": "ARI",
           "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "70e7f42183f74c32ee31",
+      "headline": "Sam Darnold injury update: Seahawks quarterback ruled out, will have \u2018off-site\u2019 hip testing",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/174350/sam-darnold-injury-update-seahawks-quarterback-ruled-out-hip-off-site-testing-nfl-news",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks\u2019 season-opening rematch hasn\u2019t gone as many fans had planned after their starting quarterback, Sam Darnold, went down on the team\u2019s first drive when he was sacked by former Seahawks defensive end, Dre\u2019Mont Jones. Darnold was officially ruled questionable with a hip injury in the first quarter before the team announced he would [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-09-10T01:43:49+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
         }
       ]
     },
@@ -683,6 +1248,29 @@
       ]
     },
     {
+      "id": "474cd6460a4485bbb2ec",
+      "headline": "Buccaneers at Bengals: Initial injury report for Week 1",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/68425/buccaneers-bengals-initial-injury-report-nfl-week-1",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers opened Week 1 preparations Wednesday with five players limited or sidelined ahead of Sunday\u2019s matchup against the Cincinnati Bengals. Running back Sean Tucker was the only Buccaneer who did not participate, sitting out with a hamstring injury. Tampa Bay also had four players limited: outside linebacker Rueben Bain Jr. with a [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers Injuries"
+      ],
+      "published_at": "2026-09-10T00:57:29+00:00",
+      "players": [
+        {
+          "id": "00-0038951",
+          "name": "Sean Tucker",
+          "team": "TB",
+          "position": "RB"
+        }
+      ]
+    },
+    {
       "id": "1b0b1001f95c78e4ccb1",
       "headline": "Seattle Seahawks\u2019 2026 NFL season takes a disastrous turn just six plays into Week 1 tilt against New England Patriots",
       "url": "https://atozsports.com/nfl/seattle-seahawks-news/seahawks-2026-season-disastrous-turn-sam-darnold-injury-patriots-week-1/",
@@ -725,6 +1313,17 @@
         "ARI"
       ],
       "feed_description": "Cardinals veteran enters season as starter for fourth time in career",
+      "categories": [
+        "News",
+        "Featured Articles",
+        "Features",
+        "Mega Feed",
+        "Darren Urban",
+        "Arizona Cardinals at Los Angeles Chargers (2026-REG-1)",
+        "Red Sea Member HQ Content",
+        "Jacoby Brissett",
+        "Home Page - News Headlines"
+      ],
       "published_at": "2026-09-10T00:53:00+00:00",
       "players": [
         {
@@ -765,6 +1364,14 @@
         "LAC"
       ],
       "feed_description": "Take a look at the Chargers Injury Report ahead of Week 1 against the Cardinals",
+      "categories": [
+        "Articles: Injury Report",
+        "Homepage: CP",
+        "Homepage: Headlines",
+        "App: Homepage",
+        "Arizona Cardinals at Los Angeles Chargers (2026-REG-1)",
+        "2026-REG-1-Editorial"
+      ],
       "published_at": "2026-09-10T00:50:00+00:00",
       "players": [
         {
@@ -772,6 +1379,30 @@
           "name": "Keaton Mitchell",
           "team": "LAC",
           "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "e31506f7ffcbed98004f",
+      "headline": "Seahawks quarterback Sam Darnold injured on opening series, taken to locker room",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/174340/seahawks-quarterback-sam-darnold-injured-hip-drew-lock-nfl-news",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Worst case scenario has hit the Super Bowl champions after one possession of t he 2026 season. Seattle Seahawks quarterback Sam Darnold was sacked by former Seahawk Dre\u2019Mont Jones to end Seattle\u2019s opening drive. It was a coverage sack with Darnold pulling the ball down and looking to escape the pocket. Jones dropped him and [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-09-10T00:44:11+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
         }
       ]
     },
@@ -785,6 +1416,12 @@
         "SEA"
       ],
       "feed_description": "In-Game Injury News From The Week 1 Matchup Between Seattle and New England",
+      "categories": [
+        "News: Stories",
+        "News: Gameday",
+        "New England Patriots at Seattle Seahawks (2026-REG-1)",
+        "Homepage Hero"
+      ],
       "published_at": "2026-09-10T00:43:25+00:00",
       "players": [
         {
@@ -816,6 +1453,30 @@
       ]
     },
     {
+      "id": "7603feb4fae18948f393",
+      "headline": "Malik Nabers looks ready as NY Giants open practice for Week 1 game vs. Dallas Cowboys",
+      "url": "https://www.bigblueview.com/new-york-giants-injuries/170415/malik-nabers-status-week-1-injury-report-dallas-cowboys",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Wide receiver Malik Nabers was on the field Wednesday with teammates from the beginning of practice and moving well as the New York Giants began practice for Sunday\u2019s season-opening game against the Dallas Cowboys. Neither the Giants nor Nabers have committed to the 2024 first-round pick playing on Sunday. The signs, though, point toward that [\u2026]",
+      "categories": [
+        "New York Giants injuries",
+        "New York Giants News"
+      ],
+      "published_at": "2026-09-10T00:36:29+00:00",
+      "players": [
+        {
+          "id": "00-0039337",
+          "name": "Malik Nabers",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
       "id": "6dda4ec3cd55932a519b",
       "headline": "'I can't wait': Broncos QB Bo Nix ready for return to regular-season action in prime-time matchup vs. Chiefs",
       "url": "https://www.denverbroncos.com/news/i-can-t-wait-broncos-qb-bo-nix-ready-for-return-to-regular-season-action-in-prime-time-matchup-vs-chiefs",
@@ -825,6 +1486,12 @@
         "DEN"
       ],
       "feed_description": "\u201cMentally, you can tell that he\u2019s like, \u2018I\u2019m ready to go do this,\u2019\u201d wide receiver Courtland Sutton said Wednesday.",
+      "categories": [
+        "Top Stories",
+        "Aric DiLalla",
+        "Denver Broncos at Kansas City Chiefs (2026-REG-1)",
+        "Bo Nix"
+      ],
       "published_at": "2026-09-10T00:14:52+00:00",
       "players": [
         {
@@ -851,8 +1518,35 @@
         "TB"
       ],
       "feed_description": "After a year where the Bucs continually battled against injury, they are starting off their season looking relatively robust. With only one player not participating at practice, the team is trending towards a healthy start this Sunday against the Cincinnati Bengals. Having that level of availability on the roster gives the Bucs much more",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
       "published_at": "2026-09-09T23:56:51+00:00",
       "players": []
+    },
+    {
+      "id": "dbc8adacc1a1eb2e3214",
+      "headline": "Patriots game day roster for Week 1 vs. Seahawks",
+      "url": "https://www.patspulpit.com/new-england-patriots-roster/136684/patriots-vs-seahawks-game-day-roster-for-nfl-week-1",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots are going big against the Seattle Seahawks. As a look at their game day roster for the Week 1 contest shows, the team of head coach Mike Vrabel opted to make all four of its tight ends plus fullback Reggie Gilliam active for the Wednesday night showdown. There could be a [\u2026]",
+      "categories": [
+        "New England Patriots Roster"
+      ],
+      "published_at": "2026-09-09T23:32:50+00:00",
+      "players": [
+        {
+          "id": "00-0036187",
+          "name": "Reggie Gilliam",
+          "team": "NE",
+          "position": "RB"
+        }
+      ]
     },
     {
       "id": "e647b9a2365b3eb89f35",
@@ -893,6 +1587,40 @@
           "position": "WR"
         }
       ]
+    },
+    {
+      "id": "4858617dd8173e63730c",
+      "headline": "Browns Week 1: Wednesday injury report is promising",
+      "url": "https://www.dawgsbynature.com/cleveland-browns-injuries/132327/browns-wednesday-injury-carson-schwesinger-teven-jenkins-maliek-collins-parker-brailsford",
+      "source_id": "news_sbn_cle",
+      "source": "Dawgs By Nature (SB Nation)",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "The Cleveland Browns open up the 2026 NFL season on Sunday when they take on the Jacksonville Jaguars at EverBank Stadium. Life on the road against the Jaguars has generally been good to the Browns over the past 20-plus years, as Cleveland has won five of their last seven road games against Jacksonville, including two [\u2026]",
+      "categories": [
+        "Cleveland Browns Injuries"
+      ],
+      "published_at": "2026-09-09T23:09:27+00:00",
+      "players": []
+    },
+    {
+      "id": "c9facf4bcdc15d7a7fc9",
+      "headline": "Patriots inactives for NFL Week 1 vs. Seahawks",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/136677/patriots-vs-seahawks-inactives-for-nfl-week-1",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots will not be using their entire wide receiver depth to kick off their 2026 season. Efton Chism has been deemed a healthy scratch for the Wednesday night opener against the Seattle Seahawks. The second-year man spent the summer as the last option among New England\u2019s roster-caliber wideouts. While he still saw [\u2026]",
+      "categories": [
+        "New England Patriots Injuries",
+        "New England Patriots News",
+        "New England Patriots Roster"
+      ],
+      "published_at": "2026-09-09T23:06:34+00:00",
+      "players": []
     },
     {
       "id": "40a2eeab9aa482c6f105",
@@ -954,6 +1682,30 @@
       ]
     },
     {
+      "id": "5291d5ae4386ad14a9b7",
+      "headline": "Falcons vs. Steelers Week 1 injuries: Michael Penix Jr. logs full practice",
+      "url": "https://www.thefalcoholic.com/atlanta-falcons-injuries/95956/week-1-injuries-michael-penix-jr-zachariah-branch",
+      "source_id": "news_sbn_atl",
+      "source": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "Welcome back, folks! The first official Atlanta Falcons practice report for the regular season is here. If you\u2019re new here, every week we bring the practice reports to you, giving you insight into who is or is not practicing, usually due to injuries. In Week 1 the Falcons will be taking on the Pittsburgh Steelers, [\u2026]",
+      "categories": [
+        "Atlanta Falcons game information",
+        "Atlanta Falcons injuries"
+      ],
+      "published_at": "2026-09-09T22:57:50+00:00",
+      "players": [
+        {
+          "id": "00-0039917",
+          "name": "Michael Penix Jr.",
+          "team": "ATL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
       "id": "3954f37e329bb527f986",
       "headline": "Commanders Injury Report: Jacory Croskey-Merritt Among 3 Limited Before Eagles Game",
       "url": "https://www.si.com/nfl/commanders/onsi/commanders-injury-report-week-1-eagles-jacory-croskey-merritt-limited",
@@ -983,6 +1735,7 @@
         "SEA"
       ],
       "feed_description": "The Seahawks will be without both players who were listed as questionable for Wednesday\u2019s opener against the New England Patriots.",
+      "categories": [],
       "published_at": "2026-09-09T22:51:26+00:00",
       "players": [
         {
@@ -990,6 +1743,29 @@
           "name": "Tory Horton",
           "team": "SEA",
           "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "620f21c080db2f505f93",
+      "headline": "Eagles Injury Report: Jonathan Greenard and Eli Stowers limited",
+      "url": "https://www.bleedinggreennation.com/news/182210/eagles-injury-report-jonathan-greenard-and-eli-stowers-limited",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Philadelphia Eagles issued their first official injury report of the week (and first of the 2026 NFL season!) on Wednesday in advance of their Week 1 game against the Washington Commanders. The Eagles listed ZERO players under DID NOT PARTICIPATE. Always a good thing to have every player on the roster (and practice squad) [\u2026]",
+      "categories": [
+        "Philadelphia Eagles News"
+      ],
+      "published_at": "2026-09-09T22:50:10+00:00",
+      "players": [
+        {
+          "id": "00-0041483",
+          "name": "Eli Stowers",
+          "team": "PHI",
+          "position": "TE"
         }
       ]
     },
@@ -1016,6 +1792,12 @@
         "PHI"
       ],
       "feed_description": "Not a single active player on either team missed practice on Wednesday.",
+      "categories": [
+        "All News-archived",
+        "NFL.com Feature",
+        "Injury Report",
+        "2026 Week 1 vs. Commanders"
+      ],
       "published_at": "2026-09-09T22:49:38+00:00",
       "players": []
     },
@@ -1029,6 +1811,15 @@
         "CIN"
       ],
       "feed_description": "For the first time in its 27 seasons Sunday, Paycor Stadium hosts an Opening Day (1 p.m.-Cincinnati\u2019s FOX19) where the starting quarterbacks are both overall No. 1 draft picks when the Bengals\u2019 Joe Burrow opposes the Buccaneers\u2019 Baker Mayfield.",
+      "categories": [
+        "Tampa Bay Buccaneers at Cincinnati Bengals (2026-REG-1)",
+        "hobson",
+        "centerpiece",
+        "latest news",
+        "latest stories",
+        "Quick Hits",
+        "2026"
+      ],
       "published_at": "2026-09-09T22:43:08+00:00",
       "players": [
         {
@@ -1050,6 +1841,46 @@
       ],
       "feed_description": "Things are looking great for the Minnesota Vikings going into Week 1, and the Green Bay Packers aren't nearly as healthy.",
       "published_at": "2026-09-09T22:37:07+00:00",
+      "players": []
+    },
+    {
+      "id": "68062ae060cc928605b7",
+      "headline": "Chargers vs. Cardinals Injury Report: Keaton Mitchell, Tuli Tuipulotu limited to start Week 1",
+      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/65358/chargers-vs-cardinals-injury-report-keaton-mitchell-tuli-tuipulotu-limited",
+      "source_id": "news_sbn_lac",
+      "source": "Bolts From The Blue (SB Nation)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "The Chargers are in the midst of prep for their season opener against the Cardinals on Sunday and with Wednesday\u2019s practice done, we have our first official injury report of the 2026 season. It\u2019s a fairly clean report to start the year with just six players. Cornerback Deane Leonard is the only player to sit [\u2026]",
+      "categories": [
+        "Chargers Injury Reports",
+        "Los Angeles Chargers Injuries"
+      ],
+      "published_at": "2026-09-09T22:27:58+00:00",
+      "players": [
+        {
+          "id": "00-0038454",
+          "name": "Keaton Mitchell",
+          "team": "LAC",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "596a74a7b8fdc9c82d1c",
+      "headline": "Vikings-Packers Wednesday Injury Report",
+      "url": "https://www.dailynorseman.com/minnesota-vikings-injuries/98829/vikings-packers-wednesday-injury-report",
+      "source_id": "news_sbn_min",
+      "source": "Daily Norseman (SB Nation)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "The Minnesota Vikings and Green Bay Packers released their first official injury reports of the season in advance of their Sunday afternoon matchup at US Bank stadium. Here they are. Minnesota Vikings Green Bay Packers Injury Report Terms and Glossary Injury designation definitions: Probable = the league defines a Probable injury designation as a 75% [\u2026]",
+      "categories": [
+        "Minnesota Vikings Injuries"
+      ],
+      "published_at": "2026-09-09T22:25:20+00:00",
       "players": []
     },
     {
@@ -1102,12 +1933,40 @@
         "MIA"
       ],
       "feed_description": "Read the full transcript from Malik Willis 's media availability on September 9, 2026",
+      "categories": [
+        "Written Content - Latest Stories",
+        "Written Content - Transcript",
+        "2026 Training Camp Transcripts"
+      ],
       "published_at": "2026-09-09T22:22:59+00:00",
       "players": [
         {
           "id": "00-0038128",
           "name": "Malik Willis",
           "team": "MIA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "fc7290cc6550e6794a8c",
+      "headline": "Broncos announce they have named 9 team captains",
+      "url": "https://www.milehighreport.com/denver-broncos-news/184539/broncos-announce-they-have-named-9-team-captains",
+      "source_id": "news_sbn_den",
+      "source": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "Denver Broncos head coach Sean Payton met with the media today and announced that they have named a total of 9 team captains. These captains were voted on by the players and feature veterans and leaders from the offense, defense, and special teams. The Broncos 9 team captains are quarterback Bo Nix, cornerback Bo Nix, [\u2026]",
+      "categories": [
+        "Denver Broncos News"
+      ],
+      "published_at": "2026-09-09T22:18:38+00:00",
+      "players": [
+        {
+          "id": "00-0039732",
+          "name": "Bo Nix",
+          "team": "DEN",
           "position": "QB"
         }
       ]
@@ -1133,6 +1992,23 @@
       ]
     },
     {
+      "id": "f1bffb3ec989f7dc29b5",
+      "headline": "Packers Injury Report: Updates on the offensive line",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/86121/packers-injury-report-updates-on-the-offensive-line",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "There were only two non-participants for the Green Bay Packers during their Wednesday practice: defensive lineman Warren Brinson (calf) and linebacker Ty\u2019Ron Hopper (Achilles). Brinson\u2019s injury stems from a pre-game issue he had going into Week 2 of the preseason, while Hopper\u2019s injury appears to be a new issue. Even if Brinson and Hopper both [\u2026]",
+      "categories": [
+        "Green Bay Packers injuries",
+        "Green Bay Packers News"
+      ],
+      "published_at": "2026-09-09T22:04:10+00:00",
+      "players": []
+    },
+    {
       "id": "c8cd8ea9cd7d0685b7ff",
       "headline": "Raiders-Dolphins Week 1 Injury Report",
       "url": "https://www.raiders.com/news/las-vegas-raiders-miami-dolphins-nfl-week-1-2026-injury-report",
@@ -1142,6 +2018,12 @@
         "LV"
       ],
       "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the Miami Dolphins.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Injury Report",
+        "Miami Dolphins at Las Vegas Raiders (2026-REG-1)"
+      ],
       "published_at": "2026-09-09T21:57:47+00:00",
       "players": []
     },
@@ -1155,6 +2037,10 @@
         "CAR"
       ],
       "feed_description": "The Panthers owner met with reporters during Wednesday's practice, and reiterated his belief in his current football staff, as well as quarterback Bryce Young as they head into the regular season opener.",
+      "categories": [
+        "Latest News",
+        "App News"
+      ],
       "published_at": "2026-09-09T21:53:18+00:00",
       "players": [
         {
@@ -1175,6 +2061,10 @@
         "CAR"
       ],
       "feed_description": "The Panthers quarterback is trying to turn around a string of Week 1 losses. But he's doing it by working on very specific aspects of his game, drilling down into the details. And his coach sees it working.",
+      "categories": [
+        "Latest News",
+        "App News"
+      ],
       "published_at": "2026-09-09T21:45:51+00:00",
       "players": [
         {
@@ -1195,7 +2085,30 @@
         "MIN"
       ],
       "feed_description": "",
+      "categories": [
+        "News - Injury Report",
+        "Injury Report",
+        "News - Index",
+        "packers-at-vikings-2026-reg-1",
+        "News - Team"
+      ],
       "published_at": "2026-09-09T21:45:23+00:00",
+      "players": []
+    },
+    {
+      "id": "0cba8332bc3e966032a2",
+      "headline": "Commanders vs Eagles Wednesday Injury Report: Three players limited",
+      "url": "https://www.hogshaven.com/washington-commanders-injuries/437013/commanders-eagles-wednesday-injury-report-odafe-oweh-croskey-merritt-klavon-chaisson",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Washington Commanders enter their season opener against the Philadelphia Eagles with several players dealing with injuries from the preseason. There were eight players on the first injury report of the season. The Commanders had three players that were limited on Wednesday. OLBs Odafe Oweh (calf) and K\u2019Lavon Chaisson (knee) have been sidelined due to [\u2026]",
+      "categories": [
+        "Washington Commanders Injuries"
+      ],
+      "published_at": "2026-09-09T21:45:18+00:00",
       "players": []
     },
     {
@@ -1208,6 +2121,13 @@
         "GB"
       ],
       "feed_description": "",
+      "categories": [
+        "News: Injury Report",
+        "News: National Feature",
+        "Homepage CP",
+        "News: All News",
+        "Green Bay Packers at Minnesota Vikings (2026-REG-1)"
+      ],
       "published_at": "2026-09-09T21:38:02+00:00",
       "players": []
     },
@@ -1241,6 +2161,11 @@
         "TB"
       ],
       "feed_description": "With a \"life-changing\" deal in hand, Bucs QB Baker Mayfield insisted he still has a lot to prove on the field and that he remains motivated by such goals as winning the Super Bowl",
+      "categories": [
+        "Featured",
+        "Week 1 2026 Bengals",
+        "Baker Mayfield"
+      ],
       "published_at": "2026-09-09T21:33:53+00:00",
       "players": [
         {
@@ -1261,7 +2186,57 @@
         "HOU"
       ],
       "feed_description": "Week 1 injury updates for the Houston Texans versus Buffalo Bills game.",
+      "categories": [
+        "Homepage CP",
+        "Gameday",
+        "Buffalo Bills at Houston Texans (2026-REG-1)",
+        "2026 REG1 - Bills",
+        "buffalo bills"
+      ],
       "published_at": "2026-09-09T21:33:38+00:00",
+      "players": []
+    },
+    {
+      "id": "61d44f657773d99c72e3",
+      "headline": "Wednesday\u2019s Saints vs. Lions injury report: Alvin Kamara returns",
+      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-injuries/114106/wednesdays-saints-vs-lions-injury-report-alvin-kamara-is-back",
+      "source_id": "news_sbn_no",
+      "source": "Canal Street Chronicles (SB Nation)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "The New Orleans Saints have wrapped up their first practice ahead of the 2026 regular-season opener on the road against the Detroit Lions on Sunday, Sept. 13. New Orleans has dealt with a rash of injuries over the past few weeks, particularly during the preseason, making the health of several key players something to keep [\u2026]",
+      "categories": [
+        "New Orleans Saints Game Information",
+        "New Orleans Saints Injuries",
+        "New Orleans Saints News"
+      ],
+      "published_at": "2026-09-09T21:13:36+00:00",
+      "players": [
+        {
+          "id": "00-0033906",
+          "name": "Alvin Kamara",
+          "team": "NO",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "e40ce51cd2a067a39b4b",
+      "headline": "Bears vs. Panthers Injury Report: Odunze Listed As Limited",
+      "url": "https://www.windycitygridiron.com/chicago-bears-injuries/122252/chicago-bears-vs-carolina-panthers-injury-report-odunze-listed-as-limited",
+      "source_id": "news_sbn_chi",
+      "source": "Windy City Gridiron (SB Nation)",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "As the Chicago Bears prepare for their first regular season game of the year against the Carolina Panthers on Sunday, the first official team injury reports for week 1 have been released. The Bears did not practice on Wednesday, so player participation listed on the injury report is an estimation. Just one player was listed [\u2026]",
+      "categories": [
+        "Chicago Bears Game Information",
+        "Chicago Bears Injuries",
+        "Chicago Bears News"
+      ],
+      "published_at": "2026-09-09T21:13:27+00:00",
       "players": []
     },
     {
@@ -1274,6 +2249,14 @@
         "BAL"
       ],
       "feed_description": "The Ravens had four players limited in Wednesday\u2019s practice before facing the Colts.",
+      "categories": [
+        "General",
+        "Ryan Mink",
+        "Zay Flowers",
+        "Justin Madubuike",
+        "inline-news",
+        "Homepage Latest Headlines"
+      ],
       "published_at": "2026-09-09T21:11:07+00:00",
       "players": [
         {
@@ -1294,6 +2277,12 @@
         "TEN"
       ],
       "feed_description": "The Titans host the New York Jets this week to open the 2026 regular season.",
+      "categories": [
+        "Team/Football News",
+        "homepage-centerpiece",
+        "New York Jets at Tennessee Titans (2026-REG-1)",
+        "2026-09-13-PREgame-STORIES-jets-at-titans"
+      ],
       "published_at": "2026-09-09T21:05:00+00:00",
       "players": []
     },
@@ -1307,6 +2296,13 @@
         "IND"
       ],
       "feed_description": "The Colts on Wednesday conducted their first true game week practice ahead of Sunday's season opener against the Baltimore Ravens at Lucas Oil Stadium.",
+      "categories": [
+        "Practice Notebook",
+        "Featured",
+        "Featured News",
+        "Alec Pierce",
+        "A.J. Haulcy"
+      ],
       "published_at": "2026-09-09T20:55:00+00:00",
       "players": [
         {
@@ -1327,6 +2323,11 @@
         "NO"
       ],
       "feed_description": "4 Saints listed on Wednesday's Saints Injury Report for Week 1 against the Lions",
+      "categories": [
+        "Saints Injury Report",
+        "Latest News",
+        "2026-reg-week1"
+      ],
       "published_at": "2026-09-09T20:40:51+00:00",
       "players": []
     },
@@ -1340,6 +2341,11 @@
         "TB"
       ],
       "feed_description": "A look at Wednesday's injury report ahead of the Week 1 matchup",
+      "categories": [
+        "Featured",
+        "Injury Report",
+        "Week 1 2026 Bengals"
+      ],
       "published_at": "2026-09-09T20:32:03+00:00",
       "players": []
     },
@@ -1353,6 +2359,13 @@
         "CIN"
       ],
       "feed_description": "Take a look at the injury reports of the Cincinnati Bengals and the Tampa Bay Buccaneers for Week 1 of the 2026 season.",
+      "categories": [
+        "latest news",
+        "centerpiece",
+        "Injury Report",
+        "latest stories",
+        "Tampa Bay Buccaneers at Cincinnati Bengals (2026-REG-1)"
+      ],
       "published_at": "2026-09-09T20:30:00+00:00",
       "players": []
     },
@@ -1366,6 +2379,10 @@
         "TB"
       ],
       "feed_description": "With smiles on their faces, Bucs general manager Jason Licht and quarterback Baker Mayfield, the new $165-million man, sat together at a press conference on Wednesday and buried the proverbial hatchet. Over a month ago, Mayfield was miffed at the Tampa Bay organization for not getting a new contract extension in place prior to the",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
       "published_at": "2026-09-09T20:24:15+00:00",
       "players": [
         {
@@ -1386,6 +2403,12 @@
         "ATL"
       ],
       "feed_description": "The Falcons had a total of five players limited during Wednesday's practice session.",
+      "categories": [
+        "News",
+        "Emory Injury Report",
+        "Will McFadden",
+        "Atlanta Falcons at Pittsburgh Steelers (2026-REG-1)"
+      ],
       "published_at": "2026-09-09T20:23:20+00:00",
       "players": [
         {
@@ -1397,6 +2420,40 @@
       ]
     },
     {
+      "id": "917d19785e064befed21",
+      "headline": "Lions, Saints injury report: Only 3 players limited on Wednesday",
+      "url": "https://www.prideofdetroit.com/detroit-lions-injuries/172009/lions-saints-injury-report-initial-statuses-for-week-1",
+      "source_id": "news_sbn_det",
+      "source": "Pride Of Detroit (SB Nation)",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "The Detroit Lions will kick off the new year inside the comfy confines of Ford Field, taking on the New Orleans Saints in Week 1 of the 2026 season. Both teams are dealing with some early-season injuries, and that\u2019s reflected in their initial injury reports. As is the case with most beginning-of-the-year schedules, the Lions [\u2026]",
+      "categories": [
+        "Detroit Lions Injuries",
+        "Detroit Lions News"
+      ],
+      "published_at": "2026-09-09T20:16:25+00:00",
+      "players": []
+    },
+    {
+      "id": "d1cbd48a67990886af97",
+      "headline": "Joey Porter Jr. lone name on Steelers-Falcons injury report",
+      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-injuries/174375/joey-porter-jr-lone-name-on-steelers-falcons-injury-report-health-update-news-roster",
+      "source_id": "news_sbn_pit",
+      "source": "Behind the Steel Curtain (SB Nation)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "Steelers cornerback Joey Porter Jr. was the only name listed on the Wednesday injury report for both the Steelers and Falcons ahead of the two teams\u2019 season-opening matchup this Sunday. Porter was listed as limited with a back injury. He also spent most of the summer on the physically unable to perform list with a [\u2026]",
+      "categories": [
+        "Pittsburgh Steelers Injuries",
+        "Pittsburgh Steelers News"
+      ],
+      "published_at": "2026-09-09T20:12:36+00:00",
+      "players": []
+    },
+    {
       "id": "c802b418d71430f331dd",
       "headline": "Lions vs. Saints practice report: Sept. 9",
       "url": "https://www.detroitlions.com/news/lions-vs-saints-practice-report-sept-9-rolder-rakestraw-moore",
@@ -1406,6 +2463,10 @@
         "DET"
       ],
       "feed_description": "Lions vs. Saints practice report for Wednesday, September 9.",
+      "categories": [
+        "Homepage - Centerpiece Package",
+        "NEWS - Practice Report"
+      ],
       "published_at": "2026-09-09T20:00:02+00:00",
       "players": []
     },
@@ -1439,6 +2500,13 @@
         "PIT"
       ],
       "feed_description": "A look at player injuries and practice participation for Week 1",
+      "categories": [
+        "Injury Report",
+        "UPMC",
+        "Featured",
+        "Sights and Sounds",
+        "Atlanta Falcons at Pittsburgh Steelers (2026-REG-1)"
+      ],
       "published_at": "2026-09-09T20:00:00+00:00",
       "players": []
     },
@@ -1452,6 +2520,11 @@
         "NYJ"
       ],
       "feed_description": "RB Breece Hall & TE Kenyon Sadiq Full Participants",
+      "categories": [
+        "Injury Report",
+        "News",
+        "Latest Headlines"
+      ],
       "published_at": "2026-09-09T20:00:00+00:00",
       "players": [
         {
@@ -1478,8 +2551,38 @@
         "CAR"
       ],
       "feed_description": "The Panthers were without outside linebacker Patrick Jones II in practice as they prepare for the Bears, and two other players were limited in the first practice of the regular season calendar.",
+      "categories": [
+        "Injury Reports",
+        "Latest News",
+        "App News",
+        "Chicago Bears at Carolina Panthers (2026-REG-1)"
+      ],
       "published_at": "2026-09-09T19:29:55+00:00",
       "players": []
+    },
+    {
+      "id": "f9b36e63faa9db21caa3",
+      "headline": "Commanders\u2019 Dan Quinn, Jayden Daniels talk Eagles entering Week 1",
+      "url": "https://www.hogshaven.com/washington-commanders-news/438404/commanders-dan-quinn-jayden-daniels-press-conference-philadelphia-eagles-week-1",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Commanders have entering a game week. It\u2019s finally here, with Sunday\u2019s regular-season opener against the host Philadelphia Eagles just days away. Washington head coach Dan Quinn started his Wednesday press conference by telling reporter there was a different \u201cenergy\u201d in the Commanders training complex, with a game that counts on the immediate horizon. Quinn [\u2026]",
+      "categories": [
+        "Pressers",
+        "Washington Commanders News"
+      ],
+      "published_at": "2026-09-09T19:12:36+00:00",
+      "players": [
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
     },
     {
       "id": "d23bb496420f9ed7bbe3",
@@ -1491,6 +2594,12 @@
         "TEN"
       ],
       "feed_description": "The team's three captains for the upcoming season: QB Cam Ward, DT Jeffery Simmons and long snapper Morgan Cox.",
+      "categories": [
+        "Team/Football News",
+        "homepage-centerpiece",
+        "New York Jets at Tennessee Titans (2026-REG-1)",
+        "2026-09-13-PREgame-STORIES-jets-at-titans"
+      ],
       "published_at": "2026-09-09T19:10:03+00:00",
       "players": [
         {
@@ -1511,6 +2620,14 @@
         "BAL"
       ],
       "feed_description": "Doyle\u2019s younger brother is a defensive quality control coach for the Colts. Calais Campbell\u2019s snap count will be monitored.",
+      "categories": [
+        "News & Notes",
+        "General",
+        "Ryan Mink",
+        "Lamar Jackson",
+        "Declan Doyle",
+        "Homepage Latest Headlines"
+      ],
       "published_at": "2026-09-09T18:59:46+00:00",
       "players": [
         {
@@ -1531,6 +2648,10 @@
         "NYG"
       ],
       "feed_description": "View the injury report for the Sunday night matchup between the New York Giants and Dallas Cowboys.",
+      "categories": [
+        "Injury Report",
+        "homepage"
+      ],
       "published_at": "2026-09-09T18:50:00+00:00",
       "players": []
     },
@@ -1544,6 +2665,15 @@
         "CIN"
       ],
       "feed_description": "Before Wednesday afternoon\u2019s practice, Bengals head coach Zac Taylor said wide receivers Ja\u2019Marr Chase (knee) and Tee Higgins (heel) are on track to play in Sunday\u2019s opener (1 p.m.-Cincinnati\u2019s FOX19, and he won\u2019t rule out defensive end Shemar Stewart (knee) from being full go against Tampa Bay at Paycor Stadium.",
+      "categories": [
+        "hobson",
+        "centerpiece",
+        "latest news",
+        "latest stories",
+        "Tampa Bay Buccaneers at Cincinnati Bengals (2026-REG-1)",
+        "Quick Hits",
+        "2026"
+      ],
       "published_at": "2026-09-09T18:37:35+00:00",
       "players": [
         {
@@ -1561,6 +2691,119 @@
       ]
     },
     {
+      "id": "dfd17af8ef0a4c0e83f1",
+      "headline": "Raiders injury news: Ashton Jeanty practices fully Wednesday",
+      "url": "https://www.silverandblackpride.com/las-vegas-raiders-injuries/139220/raiders-news-ashton-jeanty-practicing-wednesday",
+      "source_id": "news_sbn_lv",
+      "source": "Silver And Black Pride (SB Nation)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "The Las Vegas Raiders\u2019 optimism that starting running back Ashton Jeanty will be ready to play Sunday in the Week 1 season opener against Miami Dolphins took a big step forward Wednesday when head coach Klint Kubiak said the No. 6 overall pick in the 2025 draft will practice. It\u2019s Jeanty first practice since he [\u2026]",
+      "categories": [
+        "Las Vegas Raiders Injuries",
+        "Las Vegas Raiders News"
+      ],
+      "published_at": "2026-09-09T18:34:16+00:00",
+      "players": [
+        {
+          "id": "00-0040122",
+          "name": "Ashton Jeanty",
+          "team": "LV",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "73c58ffe7018edabd085",
+      "headline": "Nick Sirianni says Sean Mannion is likely to call plays from the booth",
+      "url": "https://www.bleedinggreennation.com/news/182164/nick-sirianni-says-sean-mannion-is-likely-to-call-plays-from-the-booth",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Eagles are just days away from their first game of the 2026 NFL regular season, and head coach Nick Sirianni spoke to reporters before practice on Wednesday. He talked about DeVonta Smith as a captain, what he likes from OL coach Chris Kuper and what advice he gave to OC Sean Mannion. He is [\u2026]",
+      "categories": [
+        "Philadelphia Eagles interviews",
+        "Philadelphia Eagles News"
+      ],
+      "published_at": "2026-09-09T17:57:10+00:00",
+      "players": [
+        {
+          "id": "00-0036912",
+          "name": "DeVonta Smith",
+          "team": "PHI",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "3fde95f553288714f074",
+      "headline": "Raiders News: Fernando Mendoza ahead of Aidan O\u2019Connell on Week 1 unofficial depth chart",
+      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/139149/las-vegas-raiders-news-depth-chart-fernando-mendoza-aidan-oconnell",
+      "source_id": "news_sbn_lv",
+      "source": "Silver And Black Pride (SB Nation)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Heading into the Las Vegas Raiders\u2019 Week 1 matchup against the Miami Dolphins, there\u2019s been some discussion about whether Fernando Mendoza or Aidan O\u2019Connell will be the backup quarterback behind starter Kirk Cousins while the other serves as the emergency/third QB. Meanwhile, the Raiders released their unofficial depth chart before Sunday\u2019s season opener, where Mendoza [\u2026]",
+      "categories": [
+        "Las Vegas Raiders Depth Chart",
+        "Las Vegas Raiders News"
+      ],
+      "published_at": "2026-09-09T14:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0029604",
+          "name": "Kirk Cousins",
+          "team": "LV",
+          "position": "QB"
+        },
+        {
+          "id": "00-0038579",
+          "name": "Aidan O'Connell",
+          "team": "LV",
+          "position": "QB"
+        },
+        {
+          "id": "00-0041562",
+          "name": "Fernando Mendoza",
+          "team": "LV",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "b227ec474736da5a9ce3",
+      "headline": "Arizona Cardinals news: Jeremiyah Love behind Tyler Allgeier on 1st unofficial depth chart",
+      "url": "https://www.revengeofthebirds.com/arizona-cardinals-news/94367/arizona-cardinals-news-jeremiyah-love-depth-chart-vs-chargers",
+      "source_id": "news_sbn_ari",
+      "source": "Revenge of the Birds (SB Nation)",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "The Cardinals have unveiled their first unofficial depth chart for Week One\u2019s matchup with the Chargers and the biggest surprise may be that third-overall pick Jeremiyah Love currently sits behind veteran Tyler Allgeier as the team\u2019s RB2. Team\u2019s don\u2019t often use a top-three pick on a running back to watch him play second fiddle to [\u2026]",
+      "categories": [
+        "Arizona Cardinals News"
+      ],
+      "published_at": "2026-09-09T13:15:51+00:00",
+      "players": [
+        {
+          "id": "00-0037263",
+          "name": "Tyler Allgeier",
+          "team": "ARI",
+          "position": "RB"
+        },
+        {
+          "id": "00-0041027",
+          "name": "Jeremiyah Love",
+          "team": "ARI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
       "id": "e3f1edef2eaccea4b709",
       "headline": "Locked In Long Term! Baker Mayfield, Bucs Agree on Extension Through 2029",
       "url": "https://www.buccaneers.com/news/locked-long-term-baker-mayfield-bucs-agree-extension-through-2029",
@@ -1570,6 +2813,12 @@
         "TB"
       ],
       "feed_description": "On the eve of the 2026 season, which would have been the final year on his existing contract, QB Baker Mayfield has agreed to a new deal with the Bucs that extends through the 2029 season and is the largest in franchise history",
+      "categories": [
+        "Featured",
+        "Roster Moves",
+        "Week 1 2026 Bengals",
+        "Baker Mayfield"
+      ],
       "published_at": "2026-09-09T12:20:00+00:00",
       "players": [
         {
@@ -1590,6 +2839,13 @@
         "TB"
       ],
       "feed_description": "In the NFL, Cover 4 refers to a defensive coverage that aims to cover four deep zones on the field. Following that lead, I\u2019m going to provide you with the same coverage of the Bucs \u2013 your favorite football team. Each Wednesday morning I\u2019ll cover four areas as they apply to Tampa Bay: 1.",
+      "categories": [
+        "Articles",
+        "Alex Anzalone",
+        "Baker Mayfield",
+        "Josiah Trotter",
+        "Yaya Diaby"
+      ],
       "published_at": "2026-09-09T11:30:00+00:00",
       "players": [
         {
@@ -1597,6 +2853,74 @@
           "name": "Baker Mayfield",
           "team": "TB",
           "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "22d3f78c9dd871bee40d",
+      "headline": "NY Giants news: Darius Slayton cut fallout, Tae Banks a Week 1 starter, more news",
+      "url": "https://www.bigblueview.com/new-york-giants-news/170362/darius-slayton-cut-fallout-tae-banks-depth-chart-paulson-adebo-more",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Good morning, New York Giants fans! Here are the stories you need to know as the Giants prepare for Week 1 faceoff against the Dallas Cowboys. NFC East: Sizing up the Cowboys, Eagles, Giants and Commanders | ESPN.com The Giants surprise some good teams. They might not be a perfect team, but there is enough [\u2026]",
+      "categories": [
+        "New York Giants News"
+      ],
+      "published_at": "2026-09-09T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0035535",
+          "name": "Darius Slayton",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "a928e7385b693135f098",
+      "headline": "Surprising name added to Rams injury report",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/148197/rams-injury-report-jaylen-watson",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Rams have not expressed any concerns about Myles Garrett\u2019s knee injury keeping him out of Week 1, despite the reigning Defensive Player of the Year missing so many practices already, but suddenly Jaylen Watson\u2019s name is on the injury report just two days before L.A.\u2018s opening game against the San Francisco 49ers. Watson and [\u2026]",
+      "categories": [
+        "Los Angeles Rams Injuries"
+      ],
+      "published_at": "2026-09-08T23:08:10+00:00",
+      "players": []
+    },
+    {
+      "id": "3ad486f3a8d01519b3a8",
+      "headline": "A new starter pops up on the 49ers injury report",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/162295/a-new-starter-pops-up-on-the-49ers-injury-report",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers released their first injury report of the season. Christian McCaffrey (tightness) and Mike Evans (adductor) were not listed. However, defensive tackle Alfred Collins popped up on the injury report for the first time with a knee injury. Here\u2019s the complete report: Limited: Edge Nick Bosa (knee)DT Alfred Collins (knee)LB Luke Gifford [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries"
+      ],
+      "published_at": "2026-09-08T22:32:12+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0033280",
+          "name": "Christian McCaffrey",
+          "team": "SF",
+          "position": "RB"
         }
       ]
     },
@@ -1610,8 +2934,62 @@
         "SEA"
       ],
       "feed_description": "Details on the Seahawks\u2019 injury situation heading into their season opener against the New England Patriots.",
+      "categories": [
+        "News: Injury Report",
+        "News: Stories",
+        "News: National Feature",
+        "Homepage Hero",
+        "New England Patriots at Seattle Seahawks (2026-REG-1)"
+      ],
       "published_at": "2026-09-08T22:00:00+00:00",
       "players": []
+    },
+    {
+      "id": "6d18b07ee63251f87ab5",
+      "headline": "Buccaneers, Mayfield agree to 3-year extension",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-news/68403/breaking-buccaneers-mayfield-agree-to-3-year-extension",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers came to terms with QB Baker Mayfield on a 3-year contract extension Monday, solidifying the 31-year-old\u2019s place as the team\u2019s franchise signal caller for this season and beyond. ESPN\u2019s Adam Schefter initially reported on the deal, with Ian Rapoport adding the baseline figures stand at $165 million total \u2014 working out [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers News"
+      ],
+      "published_at": "2026-09-08T21:36:03+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "b1e8e3b7fd7332e8c3a4",
+      "headline": "Saints reveal 2026 team captains",
+      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-roster/114304/saints-reveal-2026-team-captains",
+      "source_id": "news_sbn_no",
+      "source": "Canal Street Chronicles (SB Nation)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "The New Orleans Saints have officially released their team captains ahead of the 2026 NFL season. The Saints named 9 players as captains. New Orleans named quarterback Tyler Shough, center Erik McCoy, Guard David Edwards, EDGE Cameron Jordan, EDGE Chase Young, linebacker Chris Rumph II, linebacker Kaden Ellis, safety Justin Reid, and long snapper Zach [\u2026]",
+      "categories": [
+        "New Orleans Saints News",
+        "New Orleans Saints Roster"
+      ],
+      "published_at": "2026-09-08T21:28:14+00:00",
+      "players": [
+        {
+          "id": "00-0040743",
+          "name": "Tyler Shough",
+          "team": "NO",
+          "position": "QB"
+        }
+      ]
     },
     {
       "id": "8a45a4a89cf3670b47b8",
@@ -1623,6 +3001,11 @@
         "TB"
       ],
       "feed_description": "With less than a week until the first game of the Bucs' season, quarterback Baker Mayfield and the team have found common ground. The two sides have agreed to a three-year, $165 million contract extension. The deal tacks on to 2026, the final year of Mayfield's current contract, and it will keep the charismatic signal-caller",
+      "categories": [
+        "Articles",
+        "Featured",
+        "Baker Mayfield"
+      ],
       "published_at": "2026-09-08T21:27:03+00:00",
       "players": [
         {
@@ -1643,12 +3026,41 @@
         "NYJ"
       ],
       "feed_description": "Success For Smith & The Jets This Season Looks Like Wins",
+      "categories": [
+        "Latest Headlines",
+        "News",
+        "Geno Smith"
+      ],
       "published_at": "2026-09-08T21:15:00+00:00",
       "players": [
         {
           "id": "00-0030565",
           "name": "Geno Smith",
           "team": "NYJ",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "be7c576ca84cb4c72ad3",
+      "headline": "Falcons depth chart: Rookies Kendal Daniels, Avieon Terrell listed as starters for Week 1",
+      "url": "https://www.thefalcoholic.com/atlanta-falcons-news/95917/falcons-depth-chart-rookies-kendal-daniels-avieon-terrell-listed-as-starters-for-week-1",
+      "source_id": "news_sbn_atl",
+      "source": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "The release of the depth chart in a given week is only noteworthy when it contains new information that was not previously known to us, and that doesn\u2019t happen all that often. For Week 1, most of the depth chart drama figured to be out of the way with the announcement that Tua Tagovailoa is [\u2026]",
+      "categories": [
+        "Atlanta Falcons news",
+        "Atlanta Falcons roster"
+      ],
+      "published_at": "2026-09-08T20:36:18+00:00",
+      "players": [
+        {
+          "id": "00-0036212",
+          "name": "Tua Tagovailoa",
+          "team": "ATL",
           "position": "QB"
         }
       ]
@@ -1663,6 +3075,14 @@
         "CHI"
       ],
       "feed_description": "Bears players have chosen five season-long captains: quarterback Caleb Williams and left guard Joe Thuney on offense; defensive tackle Grady Jarrett and linebacker T.J. Edwards on defense; and kicker Cairo Santos on special teams.",
+      "categories": [
+        "Non-gameday football/game-related news",
+        "T.J. Edwards",
+        "Cairo Santos",
+        "Caleb Williams",
+        "Grady Jarrett",
+        "Joe Thuney"
+      ],
       "published_at": "2026-09-08T20:09:39+00:00",
       "players": [
         {
@@ -1683,6 +3103,15 @@
         "BUF"
       ],
       "feed_description": "Josh Allen, Bradley Chubb, Reid Ferguson among six players named 2026 team captains",
+      "categories": [
+        "NEWS ANNOUNCEMENTS",
+        "Josh Allen",
+        "Dawson Knox",
+        "Reid Ferguson",
+        "Sam Franklin Jr.",
+        "Bradley Chubb",
+        "Terrel Bernard"
+      ],
       "published_at": "2026-09-08T18:59:45+00:00",
       "players": [
         {
@@ -1703,6 +3132,14 @@
         "BAL"
       ],
       "feed_description": "The Ravens\u2019 first regular-season depth chart has an interesting wrinkle. Ravens defense is up for the challenge of tackling Jonathan Taylor.",
+      "categories": [
+        "News & Notes",
+        "General",
+        "Ryan Mink",
+        "Lamar Jackson",
+        "inline-news",
+        "Homepage Latest Headlines"
+      ],
       "published_at": "2026-09-08T18:45:09+00:00",
       "players": [
         {
@@ -1710,6 +3147,30 @@
           "name": "Lamar Jackson",
           "team": "BAL",
           "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "1debf6a8711ca1f75903",
+      "headline": "Steelers release first depth chart of regular season",
+      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-roster/174292/steelers-release-first-depth-chart-of-regular-season-nick-herbig-joey-porter",
+      "source_id": "news_sbn_pit",
+      "source": "Behind the Steel Curtain (SB Nation)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "The Pittsburgh Steelers have officially released their initial depth chart of the regular season ahead of their Week 1 matchup with the Atlanta Falcons. The notable listings include Dylan Cook being listed as RT1 over Max Iheanachor, which would indicate Cook will start against the Falcons. Roman Wilson is listed as WR3, and Jaquan Brisker [\u2026]",
+      "categories": [
+        "Pittsburgh Steelers Depth Chart",
+        "Pittsburgh Steelers Roster"
+      ],
+      "published_at": "2026-09-08T17:21:40+00:00",
+      "players": [
+        {
+          "id": "00-0039739",
+          "name": "Roman Wilson",
+          "team": "PIT",
+          "position": "WR"
         }
       ]
     },
@@ -1723,6 +3184,17 @@
         "ARI"
       ],
       "feed_description": "Cardinals expected to give running back help with workload",
+      "categories": [
+        "Darren's Blog - V2",
+        "Featured Articles",
+        "Training Camp 2026",
+        "Mega Feed",
+        "Home Page - News Headlines",
+        "Jeremiyah Love",
+        "Tyler Allgeier",
+        "James Conner",
+        "Trey Benson"
+      ],
       "published_at": "2026-09-08T16:15:17+00:00",
       "players": [
         {
@@ -1743,6 +3215,10 @@
         "TB"
       ],
       "feed_description": "Tampa Bay players voted for their team captains on Monday morning and chose QB Baker Mayfield, T Tristan Wirfs, WR Chris Godwin Jr., NT Vita Vea, LB Alex Anzalone and S Antoine Winfield Jr.",
+      "categories": [
+        "Featured",
+        "Week 1 2026 Bengals"
+      ],
       "published_at": "2026-09-08T14:46:00+00:00",
       "players": [
         {
@@ -1776,6 +3252,29 @@
       ]
     },
     {
+      "id": "548442a1e98ff845f2f7",
+      "headline": "Colts WR Alec Pierce expected to be ready for regular season opener against Ravens",
+      "url": "https://www.stampedeblue.com/indianapolis-colts-news/127175/colts-wr-alec-pierce-expected-to-be-ready-for-regular-season-opener-against-ravens",
+      "source_id": "news_sbn_ind",
+      "source": "Stampede Blue (SB Nation)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "According to head coach Shane Steichen, Indianapolis Colts lead wideout Alec Pierce is expected to be ready for the team\u2019s regular season opener against the Baltimore Ravens this weekend (via ESPN\u2019s Stephen Holder): Having been activated off PUP, Pierce has recently been participating with his teammates in practice since last week, and the recovery timeline [\u2026]",
+      "categories": [
+        "Indianapolis Colts News"
+      ],
+      "published_at": "2026-09-07T23:30:54+00:00",
+      "players": [
+        {
+          "id": "00-0037664",
+          "name": "Alec Pierce",
+          "team": "IND",
+          "position": "WR"
+        }
+      ]
+    },
+    {
       "id": "e8086f374ed74f27dd01",
       "headline": "Jacoby Brissett One Of 5 Cardinals Captains Chosen For 2026",
       "url": "https://www.azcardinals.com/news/jacoby-brissett-one-of-5-cardinals-captains-chosen-for-2026",
@@ -1785,6 +3284,19 @@
         "ARI"
       ],
       "feed_description": "Baker, Froholdt, Wilson repeat in wearing 'C'",
+      "categories": [
+        "News",
+        "Featured Articles",
+        "Home Page - News Headlines",
+        "Mega Feed",
+        "Red Sea Member HQ Content",
+        "Darren Urban",
+        "Jacoby Brissett",
+        "Hjalte Froholdt",
+        "Casey Kreiter",
+        "Mack Wilson",
+        "Budda Baker"
+      ],
       "published_at": "2026-09-07T21:49:19+00:00",
       "players": [
         {
@@ -1805,6 +3317,11 @@
         "IND"
       ],
       "feed_description": "The wide receiver was activated from PUP August 27.",
+      "categories": [
+        "Featured",
+        "Featured News",
+        "Alec Pierce"
+      ],
       "published_at": "2026-09-07T19:51:37+00:00",
       "players": [
         {
@@ -1812,6 +3329,29 @@
           "name": "Alec Pierce",
           "team": "IND",
           "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "e012cd2a2c41a69352f1",
+      "headline": "Buccaneers name captains for the 2026 season",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-news/68395/tampa-bay-buccaneers-name-captains-for-the-2026-nfl-season",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers have selected their team captains for the 2026 season, with six veterans earning the honor through a vote by their teammates. Quarterback Baker Mayfield, tackle Tristan Wirfs, wide receiver Chris Godwin, nose tackle Vita Vea, linebacker Alex Anzalone and safety Antoine Winfield Jr. will wear the captain\u2019s \u201cC\u201d this season. Mayfield, [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers News"
+      ],
+      "published_at": "2026-09-07T18:32:23+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
         }
       ]
     },
@@ -1825,6 +3365,14 @@
         "ATL"
       ],
       "feed_description": "Penix provided an update on his health and mindset after the Falcons named Tua Tagovailoa their starting quarterback for Week 1",
+      "categories": [
+        "News",
+        "Will McFadden",
+        "Michael Penix Jr.",
+        "Kevin Stefanski",
+        "kevin stefanski",
+        "Tua Tagovailoa"
+      ],
       "published_at": "2026-09-07T18:11:32+00:00",
       "players": [
         {
@@ -1851,6 +3399,21 @@
         "JAX"
       ],
       "feed_description": "The Jaguars on Monday announced eight \u201cpermanent\u201d captains for the 2026 season: QB Trevor Lawrence, C Robert Hainsey, WR Jakobi Meyers, DE Josh Hines-Allen, CB Jourdan Lewis, LB Foye Oluokun, LS Ross Matiscik and P Logan Cooke",
+      "categories": [
+        "News - Front Page Headline",
+        "Front Page Headline",
+        "News - Jaguars News",
+        "Cleveland Browns at Jacksonville Jaguars (2026-REG-1)",
+        "Liam Coen",
+        "Trevor Lawrence",
+        "Robert Hainsey",
+        "Jakobi Meyers",
+        "Josh Allen",
+        "Foye Oluokun",
+        "Jourdan Lewis",
+        "Ross Matiscik",
+        "Logan Cooke"
+      ],
       "published_at": "2026-09-07T17:58:02+00:00",
       "players": [
         {
@@ -1868,6 +3431,36 @@
       ]
     },
     {
+      "id": "04a5927602f1f59efb57",
+      "headline": "Michael Penix Jr. injury update: Falcons QB is \u2018very close,\u2019 but not 100%",
+      "url": "https://www.thefalcoholic.com/atlanta-falcons-depth-chart/95903/tua-tagovailoa-starter-kevin-stefanski-michael-penix-jr-updates",
+      "source_id": "news_sbn_atl",
+      "source": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "Whether you like it or not \u2014 and I know a great many of you do NOT like it \u2014 Tua Tagovailoa is the Falcons\u2019 starting quarterback for Week 1 against the Steelers. But that doesn\u2019t necessarily mean it\u2019s Tua\u2019s job to lose. Michael Penix Jr. is expected to take over the starting job at [\u2026]",
+      "categories": [
+        "Atlanta Falcons depth chart",
+        "Atlanta Falcons roster"
+      ],
+      "published_at": "2026-09-07T17:41:41+00:00",
+      "players": [
+        {
+          "id": "00-0036212",
+          "name": "Tua Tagovailoa",
+          "team": "ATL",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039917",
+          "name": "Michael Penix Jr.",
+          "team": "ATL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
       "id": "d4ab8879574d74c37db7",
       "headline": "QB Jameis Winston, OL Jon Runyan Jr. sign 2-year extensions",
       "url": "https://www.giants.com/news/jameis-winston-jon-runyan-jr-contract-extension-details-signed-2026-week-1-regular-season",
@@ -1877,6 +3470,10 @@
         "NYG"
       ],
       "feed_description": "The Giants signed the veteran quarterback and left guard to two-year extensions, keeping them under contract through 2028.",
+      "categories": [
+        "Roster Transactions",
+        "homepage"
+      ],
       "published_at": "2026-09-07T16:35:00+00:00",
       "players": [
         {
@@ -1897,6 +3494,12 @@
         "ATL"
       ],
       "feed_description": "The organization named Tua Tagovailoa the starter for the team's Week 1 game against the Pittsburgh Steelers.",
+      "categories": [
+        "News",
+        "Michael Penix Jr.",
+        "Tua Tagovailoa",
+        "Kevin Stefanski"
+      ],
       "published_at": "2026-09-07T15:30:46+00:00",
       "players": [
         {
@@ -1914,6 +3517,30 @@
       ]
     },
     {
+      "id": "a81170346e6bf00d6637",
+      "headline": "Tua Tagovailoa named Falcons\u2019 starting QB for Week 1 vs. Steelers",
+      "url": "https://www.thefalcoholic.com/atlanta-falcons-news/95800/tua-tagovailoa-starting-qb-michael-penix-jack-strand-week-1-pittsburgh-steelers",
+      "source_id": "news_sbn_atl",
+      "source": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "The biggest question facing the 2026 Atlanta Falcons has been answered. On Monday, the Falcons announced that Tua Tagovailoa, who signed with the Falcons this offseason after being released by the Miami Dolphins, has been named the starter for Week 1 against the Steelers in Pittsburgh. The Falcons\u2019 quarterback situation has been a roller-coaster ride [\u2026]",
+      "categories": [
+        "Atlanta Falcons depth chart",
+        "Atlanta Falcons news"
+      ],
+      "published_at": "2026-09-07T12:18:40+00:00",
+      "players": [
+        {
+          "id": "00-0036212",
+          "name": "Tua Tagovailoa",
+          "team": "ATL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
       "id": "aad512cd3116e8419845",
       "headline": "Atlanta Falcons name Tua Tagovailoa starting quarterback for Week 1",
       "url": "https://www.atlantafalcons.com/news/falcons-name-tua-tagovailoa-starting-quarterback-week-1",
@@ -1923,6 +3550,15 @@
         "ATL"
       ],
       "feed_description": "After a training camp competition that lasted past roster cutdowns, the Atlanta Falcons have named Tagovailoa the starting quarterback for their Week 1 matchup against the Pittsburgh Steelers.",
+      "categories": [
+        "News",
+        "Will McFadden",
+        "Tori McElhaney",
+        "Tua Tagovailoa",
+        "Michael Penix Jr.",
+        "Jack Strand",
+        "Cooper Rush"
+      ],
       "published_at": "2026-09-07T12:11:15+00:00",
       "players": [
         {
@@ -1943,6 +3579,22 @@
         "SF"
       ],
       "feed_description": "The San Francisco 49ers announce George Kittle, Fred Warner, Brock Purdy, and five other veterans to serve as 49ers team captains for the 2026 NFL season.",
+      "categories": [
+        "Player Siders",
+        "News",
+        "English",
+        "Latest App",
+        "Fred Warner",
+        "Trent Williams",
+        "George Kittle",
+        "Brock Purdy",
+        "English Articles",
+        "Christian McCaffrey",
+        "Deommodore Lenoir",
+        "Kyle Juszczyk",
+        "Briana McDonald",
+        "Briana Jeannel"
+      ],
       "published_at": "2026-09-07T02:04:19+00:00",
       "players": [
         {
@@ -1969,6 +3621,14 @@
         "SF"
       ],
       "feed_description": "The 49ers announced they have promoted LS Jon Weeks to the active roster from the team\u2019s practice squad. In order to make room on the roster, the team waived TE Brayden Willis.",
+      "categories": [
+        "Roster Moves",
+        "Latest App",
+        "News - Roster",
+        "English",
+        "English Articles",
+        "News"
+      ],
       "published_at": "2026-09-05T22:00:23+00:00",
       "players": [
         {
@@ -1989,6 +3649,12 @@
         "SEA"
       ],
       "feed_description": "Seahawks receiver Montorie Foster Jr. made the 53-man roster for the first time after becoming a standout during training camp and preseason.",
+      "categories": [
+        "News: Stories",
+        "News: National Feature",
+        "Homepage Hero",
+        "Montorie Foster Jr"
+      ],
       "published_at": "2026-09-05T21:31:33+00:00",
       "players": [
         {
@@ -2009,6 +3675,15 @@
         "ARI"
       ],
       "feed_description": "Running back makes quick impression after reuniting with LaFleur",
+      "categories": [
+        "News",
+        "Featured Articles",
+        "Home Page - News Headlines",
+        "Mega Feed",
+        "Zach Gershman",
+        "Red Sea Member HQ Content",
+        "Bam Knight"
+      ],
       "published_at": "2026-09-04T19:58:54+00:00",
       "players": [
         {
@@ -2029,6 +3704,13 @@
         "LAR"
       ],
       "feed_description": "Stetson Bennett IV and Ty Simpson are QB2 and QB3 respectively on the Rams' depth chart, but it's not necessarily how head coach Sean McVay views it.",
+      "categories": [
+        "Football",
+        "San Francisco 49ers at Los Angeles Rams (2026-REG-1)",
+        "Stetson Bennett",
+        "Ty Simpson",
+        "Sean McVay"
+      ],
       "published_at": "2026-09-04T19:50:49+00:00",
       "players": [
         {
@@ -2055,6 +3737,15 @@
         "CIN"
       ],
       "feed_description": "A look at Ke'Shawn Williams' journey to the Bengals roster.",
+      "categories": [
+        "hobson",
+        "centerpiece",
+        "latest news",
+        "Tampa Bay Buccaneers at Cincinnati Bengals (2026-REG-1)",
+        "2026",
+        "latest stories",
+        "Ke'Shawn Williams"
+      ],
       "published_at": "2026-09-04T16:07:32+00:00",
       "players": [
         {
@@ -2062,6 +3753,30 @@
           "name": "Ke'Shawn Williams",
           "team": "CIN",
           "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "033713ce3d0ee066c650",
+      "headline": "Houston Texans News: Friday September 4, 2026",
+      "url": "https://www.battleredblog.com/houston-texans-news/77285/houston-texans-news-friday-september-4-2026",
+      "source_id": "news_sbn_hou",
+      "source": "Battle Red Blog (SB Nation)",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "Houston Texans News DeMeco Ryans\u2019 Latest Comments Makes Kayshon Boutte\u2019s Texans Role Clear (Sports Illustrated) Texans won\u2019t have extension talks with C.J. Stroud during season (NBC Sports) Texans\u2019 Kayshon Boutte and C.J. Stroud building chemistry on the fly after trade (Houston Chronicle) Who Are the Houston Texans\u2019 Ten Most Important Players? (Houston Press) NFL News [\u2026]",
+      "categories": [
+        "Battle Red Newswire",
+        "Houston Texans News"
+      ],
+      "published_at": "2026-09-04T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039163",
+          "name": "C.J. Stroud",
+          "team": "HOU",
+          "position": "QB"
         }
       ]
     },
@@ -2075,6 +3790,10 @@
         "CHI"
       ],
       "feed_description": "Bears quarterback Caleb Williams and receiver Kalif Raymond showed their cohesiveness in Thursday\u2019s padded practice, teaming up to produce an impact play that required perfect timing.",
+      "categories": [
+        "Kalif Raymond",
+        "Caleb Williams"
+      ],
       "published_at": "2026-09-03T23:19:00+00:00",
       "players": [
         {
@@ -2101,6 +3820,15 @@
         "ARI"
       ],
       "feed_description": "Wide receiver coming off breakout season in Arizona",
+      "categories": [
+        "News",
+        "Featured Articles",
+        "Mega Feed",
+        "Home Page - News Headlines",
+        "Red Sea Member HQ Content",
+        "Michael Wilson",
+        "Transactions"
+      ],
       "published_at": "2026-09-03T21:45:00+00:00",
       "players": [
         {
@@ -2121,6 +3849,12 @@
         "CHI"
       ],
       "feed_description": "Tight end Sam Roush \u2014 a third-round selection from Stanford \u2014 and defensive tackle Neville Gallimore \u2014 a seven-year veteran who signed with the Bears in free agency \u2014 share their training camp experiences from rookie and veteran perspectives exclusively on ChicagoBears.com. This series will feature both players giving first-person accounts once a week throughout training camp.",
+      "categories": [
+        "Minicamp / OTAs / Training Camp",
+        "Article - Training Camp Diaries",
+        "Sam Roush",
+        "Neville Gallimore"
+      ],
       "published_at": "2026-09-03T21:00:00+00:00",
       "players": [
         {
@@ -2141,6 +3875,10 @@
         "CAR"
       ],
       "feed_description": "Bryce Young, Chuba Hubbard, Derrick Brown, Devin Lloyd, and JJ Jansen were chosen captains for the year in voting by their teammates earlier this week.",
+      "categories": [
+        "Latest News",
+        "App News"
+      ],
       "published_at": "2026-09-03T20:53:31+00:00",
       "players": [
         {
@@ -2158,6 +3896,29 @@
       ]
     },
     {
+      "id": "fb755bd2faaf32f4ba1b",
+      "headline": "Will Levis works out for the New York Jets",
+      "url": "https://www.musiccitymiracles.com/tennessee-titans-news/66563/will-levis-works-out-for-new-york-jets",
+      "source_id": "news_sbn_ten",
+      "source": "Music City Miracles (SB Nation)",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "The news around Will Levis has been surprisingly quiet since he was cut by the Tennessee Titans. While Levis is certainly not ready to be a starting quarterback in the NFL, he has a lot of the tools needed for success. It really surprises me that their is not a coach in the league that [\u2026]",
+      "categories": [
+        "Tennessee Titans News"
+      ],
+      "published_at": "2026-09-03T19:59:24+00:00",
+      "players": [
+        {
+          "id": "00-0039152",
+          "name": "Will Levis",
+          "team": "TEN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
       "id": "66cb2b726f65bcd77e44",
       "headline": "Zay Flowers Returns to Ravens Practice",
       "url": "https://www.baltimoreravens.com/news/zay-flowers-returns-ravens-practice-wide-receiver-injury",
@@ -2167,6 +3928,13 @@
         "BAL"
       ],
       "feed_description": "The Ravens\u2019 star wide receiver is practicing for the first time since the Minnesota joint practices.",
+      "categories": [
+        "General",
+        "Ryan Mink",
+        "Zay Flowers",
+        "inline-news",
+        "Homepage Latest Headlines"
+      ],
       "published_at": "2026-09-03T17:03:22+00:00",
       "players": [
         {
@@ -2187,6 +3955,9 @@
         "DET"
       ],
       "feed_description": "",
+      "categories": [
+        "NEWS - The Daily Drive"
+      ],
       "published_at": "2026-09-03T13:30:00+00:00",
       "players": [
         {
