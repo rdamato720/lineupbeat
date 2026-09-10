@@ -836,6 +836,10 @@ def build(market_path: Path | None = None,
                   },
                   "unavailable": {**manifest["unavailable"],
                                   "odds": "available privately; raw market data is intentionally not published"}}
+    from weekly_availability import apply_reports
+    apply_reports(payload)
+    provenance["reviewed_availability_reports"] = payload.get("reviewed_availability_reports", [])
+    provenance["availability_coverage"]["confirmed_unavailable_players"] = sum(p["availability"]["projection_adjusted"] for p in payload["players"])
     return payload, matchup_payload, backtest_result, provenance
 
 
