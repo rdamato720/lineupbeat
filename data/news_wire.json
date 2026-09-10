@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T05:58:57.311767+00:00",
+  "updated_at": "2026-09-10T10:00:48.594159+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T05:39:48+00:00",
+      "latest_entry_at": "2026-09-10T10:00:08+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T04:18:05+00:00",
+      "latest_entry_at": "2026-09-10T10:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T03:51:07+00:00",
+      "latest_entry_at": "2026-09-10T09:00:00+00:00",
       "stale": false
     },
     {
@@ -172,9 +172,9 @@
     {
       "source_id": "news_official_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-09T19:00:00+00:00",
+      "latest_entry_at": "2026-09-10T06:47:14+00:00",
       "stale": false
     },
     {
@@ -252,17 +252,17 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-10T04:54:00+00:00",
+      "latest_entry_at": "2026-09-10T07:00:26+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-09T17:00:00+00:00",
+      "latest_entry_at": "2026-09-10T07:23:26+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 15,
+      "eligible": 14,
       "error": "",
-      "latest_entry_at": "2026-09-10T05:39:48+00:00",
+      "latest_entry_at": "2026-09-10T10:00:08+00:00",
       "stale": false
     },
     {
@@ -294,11 +294,63 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-10T04:18:05+00:00",
+      "latest_entry_at": "2026-09-10T10:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "31391cab41c4a6594fee",
+      "headline": "Alfred Collins OUT, James Thompson Jr. Questionable vs. Rams; Injury Report Ahead of #SFvsLAR",
+      "url": "https://www.49ers.com/news/alfred-collins-out-james-thomas-jr-questionable-vs-rams-injury-report-ahead-of-sfvslar",
+      "source_id": "news_official_sf",
+      "source": "San Francisco 49ers (official)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers released their latest injury updates headed into the season opener contest against the Los Angeles Rams.",
+      "published_at": "2026-09-10T07:23:26+00:00",
+      "players": []
+    },
+    {
+      "id": "8d100c96e88840995aec",
+      "headline": "Rams Injury Report, Week 1 vs. 49ers: Aaron Donald only player ruled out among those listed; no designation for Myles Garrett",
+      "url": "https://www.therams.com/news/rams-injury-report-week-1-vs-49ers-2026-aaron-donald-only-player-ruled-out-among-those-listed-no-designation-for-myles-garrett",
+      "source_id": "news_official_lar",
+      "source": "Los Angeles Rams (official)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The final injury report for the Rams' Week 1 game against the 49ers in Australia.",
+      "published_at": "2026-09-10T06:47:14+00:00",
+      "players": []
+    },
+    {
+      "id": "d5a8a811c9c46ad0f337",
+      "headline": "Drew Lock 'Did A Phenomenal Job' Leading Seahawks Offense In Week 1 Win",
+      "url": "https://www.seahawks.com/news/drew-lock-did-a-phenomenal-job-leading-seahawks-offense-in-week-1-win",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Taking Over For An Injured Sam Darnold, Drew Lock Had A Strong Outing To Help Lead The Seahawks To A 13-10 Week 1 Win Over The Patriots.",
+      "published_at": "2026-09-10T06:43:00+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035704",
+          "name": "Drew Lock",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "634795c0cf34b28f0de4",
       "headline": "Seahawks Get 'Great News' On Sam Darnold's Hip Injury",
