@@ -26,7 +26,14 @@ jobs:
                       payload = json.load(response)
                       headers = {n:response.headers.get(n) for n in ['X-Tier','X-Datapoints','X-Datapoints-Remaining','X-Datapoints-Limit','X-Datapoints-Period','X-Data-Delay-Seconds','X-Websocket-Access']}
               except urllib.error.HTTPError as error:
-                  raise SystemExit(f'Provider HTTP {error.code}; credentials and response suppressed') from None
+                  body = error.read(8192).decode('utf-8', errors='replace')
+                  try:
+                      failure = json.loads(body)
+                      message = str(failure.get('message') or failure.get('error') or '')[:500].replace(key, '[REDACTED]')
+                  except Exception:
+                      message = 'Non-JSON error; body suppressed'
+                  print(json.dumps({'http_status':error.code,'message':message,'content_type':error.headers.get('Content-Type'),'server':error.headers.get('Server'),'cf_mitigated':error.headers.get('cf-mitigated'),'tier':error.headers.get('X-Tier'),'remaining':error.headers.get('X-Datapoints-Remaining')}))
+                  raise SystemExit('Score access check stopped') from None
               except Exception:
                   raise SystemExit('Provider request failed; details suppressed') from None
               events = payload.get('events')
