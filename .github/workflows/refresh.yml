@@ -28,6 +28,8 @@ on:
       - "scripts/build_pages.py"
       - "scripts/build_college_week1.py"
       - "scripts/build_nfl_week1_boards.py"
+      - "scripts/weekly_availability.py"
+      - "data/weekly_availability_reports.json"
       - "scripts/college_projection_results.py"
       - "data/college/2026/week-*/results/**"
       - "scripts/build_decision_room.py"
@@ -532,6 +534,7 @@ jobs:
           python scripts/test_sport_experiences.py
           python scripts/test_college_decision_room.py
           python scripts/test_week1_intelligence.py
+          python scripts/test_weekly_availability.py
           python scripts/test_college_projection_results.py
           python scripts/test_my_team.py
           python scripts/test_league_history.py
