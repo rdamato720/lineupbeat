@@ -239,7 +239,8 @@ def render_home(payload: dict, college_payload: dict) -> str:
         ],
     }, separators=(",", ":"))
     faq = f'''<section class="hp-section hp-faq" id="faq"><div class="hp-faq-head"><small>FAQ</small><h2>Questions, answered.</h2></div><div class="hp-faq-list">{faq_rows}</div></section><script type="application/ld+json">{faq_schema}</script>'''
-    return f'''{START}{home_header()}<main id="lineup-beat-home" class="hp-shell">{hero}{tools}{examples}{decision}{faq}</main>{END}'''
+    from home_score_ticker import render as render_score_ticker
+    return f'''{START}{home_header()}{render_score_ticker()}<main id="lineup-beat-home" class="hp-shell">{hero}{tools}{examples}{decision}{faq}</main>{END}'''
 
 
 def render(payload: dict) -> str:
