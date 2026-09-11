@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T02:00:48.787302+00:00",
+  "updated_at": "2026-09-11T04:00:50.311590+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T01:47:33+00:00",
+      "latest_entry_at": "2026-09-11T03:41:24+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T23:43:18+00:00",
+      "latest_entry_at": "2026-09-11T03:35:43+00:00",
       "stale": false
     },
     {
@@ -166,15 +166,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T23:45:00+00:00",
+      "latest_entry_at": "2026-09-11T02:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_lar",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-10T16:00:14+00:00",
+      "latest_entry_at": "2026-09-11T03:27:05+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-11T01:14:00+00:00",
+      "latest_entry_at": "2026-09-10T23:37:43+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-11T01:47:33+00:00",
+      "latest_entry_at": "2026-09-11T03:41:24+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-10T23:43:18+00:00",
+      "latest_entry_at": "2026-09-11T03:35:43+00:00",
       "stale": false
     },
     {
@@ -308,7 +308,7 @@
     {
       "source_id": "news_sbn_mia",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
       "latest_entry_at": "2026-09-11T00:00:00+00:00",
       "stale": false
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T00:22:52+00:00",
+      "latest_entry_at": "2026-09-11T03:40:27+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T20:00:00+00:00",
+      "latest_entry_at": "2026-09-11T02:34:52+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T00:05:00+00:00",
+      "latest_entry_at": "2026-09-11T03:52:28+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T00:05:00+00:00",
+      "latest_entry_at": "2026-09-11T03:51:36+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,63 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T23:54:33+00:00",
+      "latest_entry_at": "2026-09-11T03:25:05+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "d91257f01a57fac90e6a",
+      "headline": "49ers receive some good news about De\u2019Zhaun Stribling\u2019s injury",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/162470/49ers-rookie-dezhaun-stribling-ruled-out-after-being-carted-off",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers\u2019 injury luck couldn\u2019t have been worse coming into the season. It\u2019s a team that consistently has been among the worst in the NFL in adjusted games lost. Unfortunately, that trend is continuing in 2026. De\u2019Zhaun Stribling left the game early on, but shortly returned. When he did come back, Stribling was [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries"
+      ],
+      "published_at": "2026-09-11T03:51:36+00:00",
+      "players": [
+        {
+          "id": "00-0041035",
+          "name": "De'Zhaun Stribling",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "d81aa43b8e3d0a555110",
+      "headline": "Cowboys, WR Ryan Flournoy agree on 1-year extension worth up to $6M",
+      "url": "https://www.bloggingtheboys.com/dallas-cowboys-roster/217428/ryan-flournoy-extension-1-year",
+      "source_id": "news_sbn_dal",
+      "source": "Blogging The Boys (SB Nation)",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys were rather busy on Thursday evening. Just before the league\u2019s second game of the season kicked off in Australia, it was reported that Dallas agreed to a 3-year extension with tight end Brevyn Spann-Ford. That was great to see. About 5 minutes after the San Francisco 49ers polished off the Los Angeles [\u2026]",
+      "categories": [
+        "Dallas Cowboys Roster"
+      ],
+      "published_at": "2026-09-11T03:40:27+00:00",
+      "players": [
+        {
+          "id": "00-0039410",
+          "name": "Ryan Flournoy",
+          "team": "DAL",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039530",
+          "name": "Brevyn Spann-Ford",
+          "team": "DAL",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "155aa7e9f2579574c0f0",
       "headline": "Eagles Injury Report: Jonathan Greenard limited again",
@@ -778,6 +830,42 @@
           "name": "Jordan Watkins",
           "team": "SF",
           "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "0f4f62e08b0a848ee6ea",
+      "headline": "Ty Simpson, Tutu Atwell and CJ Daniels among Rams' inactives for Week 1 vs. 49ers in Australia",
+      "url": "https://www.therams.com/news/ty-simpson-tutu-atwell-and-cj-daniels-among-rams-inactives-for-week-1-vs-49ers-in-australia-2026",
+      "source_id": "news_official_lar",
+      "source": "Los Angeles Rams (official)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Inactives for Thursday night's Week 1 regular season game between the Rams and the 49ers at Melbourne Cricket Ground in Australia.",
+      "categories": [
+        "Football",
+        "Inactives",
+        "San Francisco 49ers at Los Angeles Rams (2026-REG-1)",
+        "CJ Daniels",
+        "Tutu Atwell",
+        "Ty Simpson",
+        "Bill Murray",
+        "Max Klare"
+      ],
+      "published_at": "2026-09-10T23:36:43+00:00",
+      "players": [
+        {
+          "id": "00-0041399",
+          "name": "C.J. Daniels",
+          "team": "LAR",
+          "position": "WR"
+        },
+        {
+          "id": "00-0041568",
+          "name": "Ty Simpson",
+          "team": "LAR",
+          "position": "QB"
         }
       ]
     },
@@ -2648,6 +2736,30 @@
       ]
     },
     {
+      "id": "0af4e3c2b2e4542b2251",
+      "headline": "Miami Dolphins news: Kevin Coleman\u2019s heartfelt number change, Bobby Slowik\u2019s offense, more",
+      "url": "https://www.thephinsider.com/miami-dolphins-news/122313/miami-dolphins-week-1-preview-vs-raiders-2026-rookie-update-caleb-douglas-chris-bell-starting",
+      "source_id": "news_sbn_mia",
+      "source": "The Phinsider (SB Nation)",
+      "teams": [
+        "MIA"
+      ],
+      "feed_description": "Jersey number changes between the end of the preseason and the start of the regular season are fairly common in the NFL, especially when it involves rookies or late free-agent additions who can move to a number freed up after a roster cut. For Dolphins rookie Kevin Coleman, Jr., the opportunity to make a change [\u2026]",
+      "categories": [
+        "Miami Dolphins News",
+        "The Splash Zone"
+      ],
+      "published_at": "2026-09-10T09:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0041529",
+          "name": "Kevin Coleman",
+          "team": "MIA",
+          "position": "WR"
+        }
+      ]
+    },
+    {
       "id": "31391cab41c4a6594fee",
       "headline": "Alfred Collins OUT, James Thompson Jr. Questionable vs. Rams; Injury Report Ahead of #SFvsLAR",
       "url": "https://www.49ers.com/news/alfred-collins-out-james-thomas-jr-questionable-vs-rams-injury-report-ahead-of-sfvslar",
@@ -3705,94 +3817,6 @@
           "name": "Brock Bowers",
           "team": "LV",
           "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "c615422fcfd9547afe5b",
-      "headline": "Giants Receiver Malik Nabers Full Practice Participant as He Inches Closer Toward Return From Torn ACL",
-      "url": "https://www.si.com/nfl/giants/onsi/giants-malik-nabers-injury-update-week-1-cowboys-01m23m9wyyb7",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "The Giants' top receiver continues to fuel optimism that he could play Sunday against Dallas.",
-      "published_at": "2026-09-09T22:23:11+00:00",
-      "players": [
-        {
-          "id": "00-0039337",
-          "name": "Malik Nabers",
-          "team": "NYG",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "36ab31358e8877681639",
-      "headline": "Transcript: QB Malik Willis Press Conference - September 9",
-      "url": "https://www.miamidolphins.com/news/transcript-qb-malik-willis-press-conference-september-9",
-      "source_id": "news_official_mia",
-      "source": "Miami Dolphins (official)",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "Read the full transcript from Malik Willis 's media availability on September 9, 2026",
-      "categories": [
-        "Written Content - Latest Stories",
-        "Written Content - Transcript",
-        "2026 Training Camp Transcripts"
-      ],
-      "published_at": "2026-09-09T22:22:59+00:00",
-      "players": [
-        {
-          "id": "00-0038128",
-          "name": "Malik Willis",
-          "team": "MIA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "fc7290cc6550e6794a8c",
-      "headline": "Broncos announce they have named 9 team captains",
-      "url": "https://www.milehighreport.com/denver-broncos-news/184539/broncos-announce-they-have-named-9-team-captains",
-      "source_id": "news_sbn_den",
-      "source": "Mile High Report (SB Nation)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "Denver Broncos head coach Sean Payton met with the media today and announced that they have named a total of 9 team captains. These captains were voted on by the players and feature veterans and leaders from the offense, defense, and special teams. The Broncos 9 team captains are quarterback Bo Nix, cornerback Bo Nix, [\u2026]",
-      "categories": [
-        "Denver Broncos News"
-      ],
-      "published_at": "2026-09-09T22:18:38+00:00",
-      "players": [
-        {
-          "id": "00-0039732",
-          "name": "Bo Nix",
-          "team": "DEN",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "c5cffaf5b13265656a41",
-      "headline": "Las Vegas Raiders get Ashton Jeanty news they want to hear as practice for Week 1 vs. Miami Dolphins kicks off",
-      "url": "https://atozsports.com/nfl/las-vegas-raiders-news/ashton-jeanty-news-they-want-practice-for-week-1-vs-miami-dolphins-kicks-off/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "The Las Vegas Raiders hope to get Ashton Jeanty going this week as they prepare for Week 1 against the Miami Dolphins.",
-      "published_at": "2026-09-09T22:08:09+00:00",
-      "players": [
-        {
-          "id": "00-0040122",
-          "name": "Ashton Jeanty",
-          "team": "LV",
-          "position": "RB"
         }
       ]
     }
