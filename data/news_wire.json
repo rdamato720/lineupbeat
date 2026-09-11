@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T00:00:54.642087+00:00",
+  "updated_at": "2026-09-11T01:05:43.527730+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T23:43:01+00:00",
+      "latest_entry_at": "2026-09-11T01:02:18+00:00",
       "stale": false
     },
     {
@@ -22,7 +22,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-10T16:00:34+00:00",
+      "latest_entry_at": "2026-09-11T00:12:30+00:00",
       "stale": false
     },
     {
@@ -108,9 +108,9 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-10T23:04:00+00:00",
+      "latest_entry_at": "2026-09-11T00:28:20+00:00",
       "stale": false
     },
     {
@@ -134,7 +134,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T19:00:14+00:00",
+      "latest_entry_at": "2026-09-10T23:58:58+00:00",
       "stale": false
     },
     {
@@ -190,7 +190,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T15:05:43+00:00",
+      "latest_entry_at": "2026-09-11T00:48:39+00:00",
       "stale": false
     },
     {
@@ -246,15 +246,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T20:45:00+00:00",
+      "latest_entry_at": "2026-09-10T21:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-10T22:58:16+00:00",
+      "latest_entry_at": "2026-09-11T00:21:04+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-10T23:43:01+00:00",
+      "latest_entry_at": "2026-09-11T01:02:18+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T18:10:10+00:00",
+      "latest_entry_at": "2026-09-10T14:00:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T21:45:00+00:00",
+      "latest_entry_at": "2026-09-10T20:01:00+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T22:00:00+00:00",
+      "latest_entry_at": "2026-09-11T00:22:52+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-10T21:39:36+00:00",
+      "latest_entry_at": "2026-09-10T17:06:34+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T21:28:38+00:00",
+      "latest_entry_at": "2026-09-10T16:20:18+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T19:00:00+00:00",
+      "latest_entry_at": "2026-09-10T13:30:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,139 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T23:54:33+00:00",
+      "latest_entry_at": "2026-09-10T21:06:54+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "302d75e3438feb0ce09a",
+      "headline": "Bills' Week 1 Updated Injury Report: Defensive Starter Downgraded, RB Still Out",
+      "url": "https://www.si.com/nfl/bills/onsi/injury-report-bills-week-1-update-defensive-starter-downgraded-rb-still-out",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills will likely be without two key pieces when they visit the Houston Texans for Sunday's season opener on CBS.",
+      "categories": [],
+      "published_at": "2026-09-11T01:02:18+00:00",
+      "players": []
+    },
+    {
+      "id": "09a7b2daa02a15ab28f9",
+      "headline": "Broncos Notebook: In return to field, RB J.K. Dobbins eager to contribute 'whatever it takes to win the game' vs. Chiefs",
+      "url": "https://www.denverbroncos.com/news/broncos-notebook-in-return-to-field-rb-j-k-dobbins-eager-to-contribute-whatever-it-takes-to-win-the-game-vs-chiefs",
+      "source_id": "news_official_den",
+      "source": "Denver Broncos (official)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "\u201cI think it\u2019s going to be a great night for us,\" Dobbins said. \"\u2026 It\u2019ll be a great way to start a season.\"",
+      "categories": [
+        "Top Stories",
+        "Aric DiLalla",
+        "Broncos Notebook",
+        "Denver Broncos at Kansas City Chiefs (2026-REG-1)",
+        "J.K. Dobbins"
+      ],
+      "published_at": "2026-09-11T00:28:20+00:00",
+      "players": [
+        {
+          "id": "00-0036158",
+          "name": "J.K. Dobbins",
+          "team": "DEN",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "57b902be479cbfd670c6",
+      "headline": "Cowboys agree to 3-year extension worth $18M with TE Brevyn Spann-Ford",
+      "url": "https://www.bloggingtheboys.com/dallas-cowboys-roster/217399/brevyn-spann-ford-extension",
+      "source_id": "news_sbn_dal",
+      "source": "Blogging The Boys (SB Nation)",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys are not done with extensions just yet. Thursday evening brought with it news that tight end Brevyn Spann-Ford is the latest player to be locked up by the franchise for the foreseeable future. His agent reported that BSF and the Cowboys agreed to a 3-year extension. ESPN\u2019s Todd Archer followed that up [\u2026]",
+      "categories": [
+        "Dallas Cowboys Roster"
+      ],
+      "published_at": "2026-09-11T00:22:52+00:00",
+      "players": [
+        {
+          "id": "00-0039530",
+          "name": "Brevyn Spann-Ford",
+          "team": "DAL",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "c560ceb23b2cb59bedc3",
+      "headline": "The Latest On Sam Darnold, & Other Takeaways From HC Mike Macdonald's Thursday Press Conference",
+      "url": "https://www.seahawks.com/news/the-latest-on-sam-darnold-other-takeaways-from-hc-mike-macdonald-s-thursday-press-conference",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Head coach Mike Macdonald met with the media on Thursday after Wednesday\u2019s 13-10 win over the Patriots.",
+      "categories": [
+        "News: Stories",
+        "News: National Feature",
+        "Homepage Hero",
+        "New England Patriots at Seattle Seahawks (2026-REG-1)"
+      ],
+      "published_at": "2026-09-11T00:13:35+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "8a45f2dc49a12bee8284",
+      "headline": "Broncos-Chiefs First Injury Report Reveals a Striking Week 1 Contrast",
+      "url": "https://www.si.com/nfl/broncos/onsi/broncos-chiefs-first-injury-report-striking-week-1-contrast-simmons-mims",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The first injury report of Broncos-Chiefs just dropped.",
+      "categories": [],
+      "published_at": "2026-09-10T23:53:26+00:00",
+      "players": []
+    },
+    {
+      "id": "67f3b533d97b668f5e1e",
+      "headline": "Bucs Get Good News On Thursday\u2019s Injury Report",
+      "url": "https://www.pewterreport.com/bucs-get-good-news-on-thursdays-injury-report/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The second injury report of the season comes with some pleasant news for Bucs fans. Every player on the 53-man roster participated in Thursday's practice, with only a few being limited. This is a promising sign that the Bucs are leaning towards a fully healthy Week 1 start. Bucs QB Jalon Daniels and",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-09-10T23:43:25+00:00",
+      "players": [
+        {
+          "id": "00-0041251",
+          "name": "Jalon Daniels",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "e6a9b96a8d9691a8150a",
       "headline": "Tatum Bethune, Jordan Watkins OUT vs. Rams; Inactives for Week 1 #SFvsLAR",
@@ -1358,7 +1486,7 @@
     },
     {
       "id": "abed5aea8925982dfb62",
-      "headline": "Thursday\u2019s Saints vs. Lions injury report:",
+      "headline": "Thursday\u2019s Saints vs. Lions injury report",
       "url": "https://www.canalstreetchronicles.com/new-orleans-saints-injuries/114418/thursdays-saints-vs-lions-injury-report",
       "source_id": "news_sbn_no",
       "source": "Canal Street Chronicles (SB Nation)",
@@ -3662,132 +3790,6 @@
           "name": "Bryce Young",
           "team": "CAR",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "0cba8332bc3e966032a2",
-      "headline": "Commanders vs Eagles Wednesday Injury Report: Three players limited",
-      "url": "https://www.hogshaven.com/washington-commanders-injuries/437013/commanders-eagles-wednesday-injury-report-odafe-oweh-croskey-merritt-klavon-chaisson",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Washington Commanders enter their season opener against the Philadelphia Eagles with several players dealing with injuries from the preseason. There were eight players on the first injury report of the season. The Commanders had three players that were limited on Wednesday. OLBs Odafe Oweh (calf) and K\u2019Lavon Chaisson (knee) have been sidelined due to [\u2026]",
-      "categories": [
-        "Washington Commanders Injuries"
-      ],
-      "published_at": "2026-09-09T21:45:18+00:00",
-      "players": []
-    },
-    {
-      "id": "def134f8eb33bb216266",
-      "headline": "Packers-Vikings Injury Report | Sept. 9, 2026",
-      "url": "https://www.packers.com/news/packers-vikings-injury-report-sept-9-2026",
-      "source_id": "news_official_gb",
-      "source": "Green Bay Packers (official)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "",
-      "categories": [
-        "News: Injury Report",
-        "News: National Feature",
-        "Homepage CP",
-        "News: All News",
-        "Green Bay Packers at Minnesota Vikings (2026-REG-1)"
-      ],
-      "published_at": "2026-09-09T21:38:02+00:00",
-      "players": []
-    },
-    {
-      "id": "d752aaa1f3cb258e08e6",
-      "headline": "Jordan Love gets exactly what he wanted as Packers receive a major injury boost ahead of Week 1 against the Vikings",
-      "url": "https://atozsports.com/nfl/green-bay-packers-news/zach-bako-bewele-week-1-injury-update/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Right tackle Zach Bako-Bewele expects to play on Sunday, and this is a hugely impactful update for Green Bay.",
-      "published_at": "2026-09-09T21:34:30+00:00",
-      "players": [
-        {
-          "id": "00-0036264",
-          "name": "Jordan Love",
-          "team": "GB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "e60ea55b57ea51682f98",
-      "headline": "Baker Mayfield: New Contract Doesn't Mean I Have Made It",
-      "url": "https://www.buccaneers.com/news/baker-mayfield-new-contract-doesnt-mean-i-have-made-it",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "With a \"life-changing\" deal in hand, Bucs QB Baker Mayfield insisted he still has a lot to prove on the field and that he remains motivated by such goals as winning the Super Bowl",
-      "categories": [
-        "Featured",
-        "Week 1 2026 Bengals",
-        "Baker Mayfield"
-      ],
-      "published_at": "2026-09-09T21:33:53+00:00",
-      "players": [
-        {
-          "id": "00-0034855",
-          "name": "Baker Mayfield",
-          "team": "TB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "a4db74a5ef491a49b6ea",
-      "headline": "Week 1 Injury Report | Texans vs. Bills",
-      "url": "https://www.houstontexans.com/news/week-1-injury-report-texans-vs-bills",
-      "source_id": "news_official_hou",
-      "source": "Houston Texans (official)",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "Week 1 injury updates for the Houston Texans versus Buffalo Bills game.",
-      "categories": [
-        "Homepage CP",
-        "Gameday",
-        "Buffalo Bills at Houston Texans (2026-REG-1)",
-        "2026 REG1 - Bills",
-        "buffalo bills"
-      ],
-      "published_at": "2026-09-09T21:33:38+00:00",
-      "players": []
-    },
-    {
-      "id": "61d44f657773d99c72e3",
-      "headline": "Wednesday\u2019s Saints vs. Lions injury report: Alvin Kamara returns",
-      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-injuries/114106/wednesdays-saints-vs-lions-injury-report-alvin-kamara-is-back",
-      "source_id": "news_sbn_no",
-      "source": "Canal Street Chronicles (SB Nation)",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "The New Orleans Saints have wrapped up their first practice ahead of the 2026 regular-season opener on the road against the Detroit Lions on Sunday, Sept. 13. New Orleans has dealt with a rash of injuries over the past few weeks, particularly during the preseason, making the health of several key players something to keep [\u2026]",
-      "categories": [
-        "New Orleans Saints Game Information",
-        "New Orleans Saints Injuries",
-        "New Orleans Saints News"
-      ],
-      "published_at": "2026-09-09T21:13:36+00:00",
-      "players": [
-        {
-          "id": "00-0033906",
-          "name": "Alvin Kamara",
-          "team": "NO",
-          "position": "RB"
         }
       ]
     }
