@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T04:00:50.311590+00:00",
+  "updated_at": "2026-09-11T05:59:17.058203+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T03:41:24+00:00",
+      "latest_entry_at": "2026-09-11T05:40:31+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T03:35:43+00:00",
+      "latest_entry_at": "2026-09-11T04:52:28+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-11T03:27:05+00:00",
+      "latest_entry_at": "2026-09-11T04:49:39+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-11T03:41:24+00:00",
+      "latest_entry_at": "2026-09-11T05:40:31+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T03:35:43+00:00",
+      "latest_entry_at": "2026-09-11T04:52:28+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T20:16:17+00:00",
+      "latest_entry_at": "2026-09-10T15:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T11:05:00+00:00",
+      "latest_entry_at": "2026-09-10T02:28:27+00:00",
       "stale": false
     },
     {
@@ -356,9 +356,9 @@
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T19:48:12+00:00",
+      "latest_entry_at": "2026-09-10T17:10:12+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T01:53:20+00:00",
+      "latest_entry_at": "2026-09-10T19:52:59+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T02:34:52+00:00",
+      "latest_entry_at": "2026-09-10T20:00:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T14:27:02+00:00",
+      "latest_entry_at": "2026-09-09T14:51:29+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T03:52:28+00:00",
+      "latest_entry_at": "2026-09-11T00:05:00+00:00",
       "stale": false
     },
     {
@@ -542,38 +542,91 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T03:51:36+00:00",
+      "latest_entry_at": "2026-09-11T03:26:46+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T03:25:05+00:00",
+      "latest_entry_at": "2026-09-11T05:40:01+00:00",
       "stale": false
     }
   ],
   "items": [
     {
-      "id": "d91257f01a57fac90e6a",
-      "headline": "49ers receive some good news about De\u2019Zhaun Stribling\u2019s injury",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/162470/49ers-rookie-dezhaun-stribling-ruled-out-after-being-carted-off",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
+      "id": "f925dcef3dd481e52a9c",
+      "headline": "\u2018No consideration of IR at this point\u2019 for Sam Darnold, says Tom Pelissero",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/174544/seahawks-injury-update-sam-darnold-no-consideration-ir-at-this-point",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks will likely not have quarterback Sam Darnold available for at least Week 2 against the Arizona Cardinals. Darnold was sacked by Dre\u2019Mont Jones on the opening drive of Seattle\u2019s 13-10 win over the New England Patriots, leaving the game with what was described as a hip injury. Thankfully for Darnold and the [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-09-11T05:40:01+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "5b3b5fd7e5cdaeaadcd2",
+      "headline": "San Francisco 49ers\u2019 rookie WR De\u2019Zhaun Stribling suffered an ankle injury in the season opener but seems to have avoided the worst-case scenario",
+      "url": "https://atozsports.com/nfl/san-francisco-49ers-news/san-francisco-49ers-rookie-wr-dezhaun-stribling-suffered-ankle-injury-in-season-opener-but-seems-to-have-avoided-worst-case-scenario/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
       "teams": [
         "SF"
       ],
-      "feed_description": "The San Francisco 49ers\u2019 injury luck couldn\u2019t have been worse coming into the season. It\u2019s a team that consistently has been among the worst in the NFL in adjusted games lost. Unfortunately, that trend is continuing in 2026. De\u2019Zhaun Stribling left the game early on, but shortly returned. When he did come back, Stribling was [\u2026]",
+      "feed_description": "The San Francisco 49ers' rookie sensation in 2nd-round pick De'Zhaun Stribling had to leave the season opener against the Los Angeles Rams early with an ankle injury. The good news, an early diagnosis disproved what was feared to have happened in real time.",
       "categories": [
-        "San Francisco 49ers Injuries"
+        "San Francisco 49ers News",
+        "49ers-Rams",
+        "American Football",
+        "De'Zhaun Stribling",
+        "Deebo Samuel",
+        "Kyle Shanahan",
+        "Mike evans"
       ],
-      "published_at": "2026-09-11T03:51:36+00:00",
+      "published_at": "2026-09-11T04:52:28+00:00",
       "players": [
         {
           "id": "00-0041035",
           "name": "De'Zhaun Stribling",
           "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "889e53ee57b78aee40e0",
+      "headline": "The Dallas Cowboys just made a savvy $6 million involving a starter largely expected to break out in 2026",
+      "url": "https://atozsports.com/nfl/dallas-cowboys-news/savvy-6-million-move-rising-player-ryan-flournoy/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys are playing it smart with WR Ryan Flournoy before he breaks out in 2026 with a move that's as risk free as it gets in the NFL.",
+      "categories": [
+        "Dallas Cowboys News"
+      ],
+      "published_at": "2026-09-11T04:01:25+00:00",
+      "players": [
+        {
+          "id": "00-0039410",
+          "name": "Ryan Flournoy",
+          "team": "DAL",
           "position": "WR"
         }
       ]
@@ -604,6 +657,29 @@
           "name": "Brevyn Spann-Ford",
           "team": "DAL",
           "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "d91257f01a57fac90e6a",
+      "headline": "49ers rookie De\u2019Zhaun Stribling ruled out after being carted off",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/162470/49ers-rookie-dezhaun-stribling-ruled-out-after-being-carted-off",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers\u2019 injury luck couldn\u2019t have been worse coming into the season. It\u2019s a team that consistently has been among the worst in the NFL in adjusted games lost. Unfortunately, that trend is continuing in 2026. De\u2019Zhaun Stribling left the game early on, but shortly returned. When he did come back, Stribling was [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries"
+      ],
+      "published_at": "2026-09-11T02:07:22+00:00",
+      "players": [
+        {
+          "id": "00-0041035",
+          "name": "De'Zhaun Stribling",
+          "team": "SF",
+          "position": "WR"
         }
       ]
     },
@@ -3758,67 +3834,6 @@
       "feed_description": "Things are looking great for the Minnesota Vikings going into Week 1, and the Green Bay Packers aren't nearly as healthy.",
       "published_at": "2026-09-09T22:37:07+00:00",
       "players": []
-    },
-    {
-      "id": "68062ae060cc928605b7",
-      "headline": "Chargers vs. Cardinals Injury Report: Keaton Mitchell, Tuli Tuipulotu limited to start Week 1",
-      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/65358/chargers-vs-cardinals-injury-report-keaton-mitchell-tuli-tuipulotu-limited",
-      "source_id": "news_sbn_lac",
-      "source": "Bolts From The Blue (SB Nation)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "The Chargers are in the midst of prep for their season opener against the Cardinals on Sunday and with Wednesday\u2019s practice done, we have our first official injury report of the 2026 season. It\u2019s a fairly clean report to start the year with just six players. Cornerback Deane Leonard is the only player to sit [\u2026]",
-      "categories": [
-        "Chargers Injury Reports",
-        "Los Angeles Chargers Injuries"
-      ],
-      "published_at": "2026-09-09T22:27:58+00:00",
-      "players": [
-        {
-          "id": "00-0038454",
-          "name": "Keaton Mitchell",
-          "team": "LAC",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "596a74a7b8fdc9c82d1c",
-      "headline": "Vikings-Packers Wednesday Injury Report",
-      "url": "https://www.dailynorseman.com/minnesota-vikings-injuries/98829/vikings-packers-wednesday-injury-report",
-      "source_id": "news_sbn_min",
-      "source": "Daily Norseman (SB Nation)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Minnesota Vikings and Green Bay Packers released their first official injury reports of the season in advance of their Sunday afternoon matchup at US Bank stadium. Here they are. Minnesota Vikings Green Bay Packers Injury Report Terms and Glossary Injury designation definitions: Probable = the league defines a Probable injury designation as a 75% [\u2026]",
-      "categories": [
-        "Minnesota Vikings Injuries"
-      ],
-      "published_at": "2026-09-09T22:25:20+00:00",
-      "players": []
-    },
-    {
-      "id": "6f626e4875de3cd6be3c",
-      "headline": "Raiders\u2019 Brock Bowers Injury: What No One Is Talking About",
-      "url": "https://www.si.com/nfl/raiders/onsi/las-vegas-brock-bowers-injury-what-no-one-talking-about",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "Raiders 2026: Insider analysis\u2014what you haven\u2019t heard about Brock Bowers\u2019 injury and its true impact on Vegas\u2019s season.",
-      "categories": [],
-      "published_at": "2026-09-09T22:25:00+00:00",
-      "players": [
-        {
-          "id": "00-0039338",
-          "name": "Brock Bowers",
-          "team": "LV",
-          "position": "TE"
-        }
-      ]
     }
   ]
 }
