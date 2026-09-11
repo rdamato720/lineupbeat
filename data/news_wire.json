@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T21:19:02.590359+00:00",
+  "updated_at": "2026-09-11T23:32:15.685237+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,17 +12,17 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:04:04+00:00",
+      "latest_entry_at": "2026-09-11T23:30:38+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T17:30:12+00:00",
+      "latest_entry_at": "2026-09-11T22:37:50+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:05:56+00:00",
+      "latest_entry_at": "2026-09-11T22:41:35+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:13:53+00:00",
+      "latest_entry_at": "2026-09-11T22:10:18+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-11T12:58:36+00:00",
+      "latest_entry_at": "2026-09-11T21:50:08+00:00",
       "stale": false
     },
     {
@@ -94,7 +94,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-11T18:50:00+00:00",
+      "latest_entry_at": "2026-09-11T22:00:28+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-11T19:38:31+00:00",
+      "latest_entry_at": "2026-09-11T21:24:50+00:00",
       "stale": false
     },
     {
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T20:24:06+00:00",
+      "latest_entry_at": "2026-09-11T21:34:18+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T20:46:12+00:00",
+      "latest_entry_at": "2026-09-11T21:00:00+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T04:49:39+00:00",
+      "latest_entry_at": "2026-09-11T15:00:00+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:10:00+00:00",
+      "latest_entry_at": "2026-09-11T21:42:00+00:00",
       "stale": false
     },
     {
@@ -278,7 +278,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T20:00:00+00:00",
+      "latest_entry_at": "2026-09-11T21:41:00+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:04:04+00:00",
+      "latest_entry_at": "2026-09-11T23:30:38+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:05:56+00:00",
+      "latest_entry_at": "2026-09-11T22:41:35+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T19:43:15+00:00",
+      "latest_entry_at": "2026-09-11T20:52:34+00:00",
       "stale": false
     },
     {
@@ -350,15 +350,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T19:43:12+00:00",
+      "latest_entry_at": "2026-09-11T21:52:35+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T19:47:21+00:00",
+      "latest_entry_at": "2026-09-11T22:30:00+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T14:00:00+00:00",
+      "latest_entry_at": "2026-09-11T23:21:34+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T19:10:36+00:00",
+      "latest_entry_at": "2026-09-11T21:45:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T15:00:00+00:00",
+      "latest_entry_at": "2026-09-11T21:47:39+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:00:00+00:00",
+      "latest_entry_at": "2026-09-11T22:00:00+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-11T16:00:00+00:00",
+      "latest_entry_at": "2026-09-11T22:10:37+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:00:00+00:00",
+      "latest_entry_at": "2026-09-11T22:00:00+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-11T00:30:00+00:00",
+      "latest_entry_at": "2026-09-11T22:21:17+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,244 @@
     }
   ],
   "items": [
+    {
+      "id": "c36e2cc344e1f3441ab4",
+      "headline": "What D'Andre Swift's Extension Means for the Next Bears Waiting in Line",
+      "url": "https://www.si.com/nfl/bears/onsi/what-d-andre-swift-s-extension-means-for-the-next-bears-waiting-in-line",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "There are a few other Bears who could get extensions but it's probably going to be a case where they must improve production to get offers later.",
+      "categories": [],
+      "published_at": "2026-09-11T23:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0036275",
+          "name": "D'Andre Swift",
+          "team": "CHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "8fb4dae57419d5ac46c9",
+      "headline": "Buccaneers at Bengals: Final Injury Report for Week 1",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/68458/buccaneers-bengals-final-injury-report-nfl-week-1",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers will enter Sunday\u2019s season opener against the Cincinnati Bengals with three players listed as doubtful and another questionable on the final injury report. Wide receiver Jalen McMillan (knee), offensive tackle Justin Skule (oblique) and running back Sean Tucker (hamstring) are doubtful after all three were limited during Friday\u2019s practice. Linebacker Christian [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers Injuries"
+      ],
+      "published_at": "2026-09-11T22:21:17+00:00",
+      "players": [
+        {
+          "id": "00-0038951",
+          "name": "Sean Tucker",
+          "team": "TB",
+          "position": "RB"
+        },
+        {
+          "id": "00-0039855",
+          "name": "Jalen McMillan",
+          "team": "TB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "c8e69b72336c19e067bb",
+      "headline": "Broncos on Alert as Chris Jones Pops Up on Chiefs' Injury Report Suddenly",
+      "url": "https://www.si.com/nfl/broncos/onsi/broncos-on-alert-chris-jones-pops-up-on-chiefs-injury-report-suddenly",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Broncos will be monitoring this situation closely as the practice week concludes ahead of Monday night's tilt with the Chiefs.",
+      "categories": [],
+      "published_at": "2026-09-11T22:17:00+00:00",
+      "players": []
+    },
+    {
+      "id": "440dd001c958c20464b9",
+      "headline": "Jeremiyah Love Headlines Final Cardinals vs Chargers Week 1 Injury Report",
+      "url": "https://www.si.com/nfl/cardinals/onsi/jeremiyah-love-headlines-final-arizona-cardinals-la-chargers-week-1-injury-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "The Arizona Cardinals move into the season opener with their star rookie questionable.",
+      "categories": [],
+      "published_at": "2026-09-11T22:16:46+00:00",
+      "players": [
+        {
+          "id": "00-0041027",
+          "name": "Jeremiyah Love",
+          "team": "ARI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "26c8bf3f5254e555d0e2",
+      "headline": "Falcons vs. Steelers Week 1 injuries: Tua Tagovailoa ruled out for Sunday",
+      "url": "https://www.thefalcoholic.com/atlanta-falcons-injuries/96049/falcons-vs-steelers-week-1-injuries-tua-tagovailoa-ruled-out-for-sunday",
+      "source_id": "news_sbn_atl",
+      "source": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "The final practice leading up to Week 1 games is in the books. Both the Atlanta Falcons and Pittsburgh Steelers have been prepping all week to face off in their season debuts, and we have been closely monitoring the health of both teams. We learned quite a bit on Friday, so let\u2019s dive into the [\u2026]",
+      "categories": [
+        "Atlanta Falcons game information",
+        "Atlanta Falcons injuries"
+      ],
+      "published_at": "2026-09-11T22:10:37+00:00",
+      "players": [
+        {
+          "id": "00-0036212",
+          "name": "Tua Tagovailoa",
+          "team": "ATL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "5c3dece49f215bbe1952",
+      "headline": "Joe Brady Gets Two Positive Injury Updates Entering First Game as Bills' Head Coach",
+      "url": "https://www.si.com/nfl/bills/onsi/injuries-week-1-joe-brady-gets-two-positive-updates-entering-first-game-as-bills-head-coach",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "There's a chance the Buffalo Bills will have the services of first-team DL TJ Sanders and third-down RB Ty Johnson when visiting the Houston Texans on Sunday.",
+      "categories": [],
+      "published_at": "2026-09-11T22:00:50+00:00",
+      "players": [
+        {
+          "id": "00-0035537",
+          "name": "Ty Johnson",
+          "team": "BUF",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "2ad636b7022a75319fab",
+      "headline": "What\u2019s Going on With Chargers\u2019 Keaton Mitchell, Brenen Thompson?",
+      "url": "https://www.si.com/nfl/chargers/onsi/chargers-keaton-mitchell-brenen-thompson-injury-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "Key Chargers Keaton Mitchell and Brenen Thompson popped up on the injury report this week.",
+      "categories": [],
+      "published_at": "2026-09-11T22:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0038454",
+          "name": "Keaton Mitchell",
+          "team": "LAC",
+          "position": "RB"
+        },
+        {
+          "id": "00-0041550",
+          "name": "Brenen Thompson",
+          "team": "LAC",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "2bd5baaf3ad7ab8f6aba",
+      "headline": "Saints Wrap Up Week 1 Prep With Alvin Kamara\u2019s Status Still Uncertain",
+      "url": "https://www.si.com/nfl/saints/onsi/saints-wrap-up-week-1-prep-with-alvin-kamara-s-status-still-uncertain-01m295dn7zgc",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "Alvin Kamara is questionable for the Saints\u2019 Week 1 matchup with Detroit after practicing fully Friday, while three New Orleans players have been ruled out.",
+      "categories": [],
+      "published_at": "2026-09-11T21:58:57+00:00",
+      "players": [
+        {
+          "id": "00-0033906",
+          "name": "Alvin Kamara",
+          "team": "NO",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "421acbccd82e2e390ef3",
+      "headline": "Denver Broncos vs. Kansas City Chiefs practice report: Friday",
+      "url": "https://www.milehighreport.com/denver-broncos-injuries/184638/denver-broncos-vs-kansas-city-chiefs-practice-report-friday",
+      "source_id": "news_sbn_den",
+      "source": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "There was a single change on either team\u2019s practice participation report on Friday with Kansas City Chiefs\u2019 defensive lineman Chris Jones getting limited by a calf issue. We\u2019ll have to see what they do with him on Saturday\u2019s practice and official game status. For the Denver Broncos, having Jones limited inside would certainly be helpful [\u2026]",
+      "categories": [
+        "Denver Broncos Injuries"
+      ],
+      "published_at": "2026-09-11T21:49:41+00:00",
+      "players": []
+    },
+    {
+      "id": "ae0e04c71fda1be5eec7",
+      "headline": "Malik Nabers questionable for NY Giants vs. Cowboys on Sunday",
+      "url": "https://www.bigblueview.com/new-york-giants-injuries/170651/malik-nabers-questionable-injury-report-week-1-giants-cowboys",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Malik Nabers is listed as questionable by the New York Giants for Sunday night\u2019s season-opening game against the Dallas Cowboys. Nabers, working his way back from a Week 4 torn ACL last season, was a full practice participant all three days this week. No other Giant carries an injury designation heading into the game. For [\u2026]",
+      "categories": [
+        "New York Giants injuries"
+      ],
+      "published_at": "2026-09-11T21:47:39+00:00",
+      "players": [
+        {
+          "id": "00-0039337",
+          "name": "Malik Nabers",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "7c082d5597e7639fd3ac",
+      "headline": "Dallas Cowboys' Immediate Plan For Malik Davis Replacement Is Clear",
+      "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-immediate-plan-malik-davis-replacement-clear",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys running back room took a hit on Friday afternoon, after RB2 Malik Davis went down with what appears to be a serious hip injury.",
+      "categories": [],
+      "published_at": "2026-09-11T21:41:19+00:00",
+      "players": [
+        {
+          "id": "00-0037563",
+          "name": "Malik Davis",
+          "team": "DAL",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "ad022f939331406feca1",
       "headline": "'Now it's time to go' | Both sides of the ball have reasons to be excited ahead of Week 1 matchup with Houston Texans",
@@ -612,6 +850,27 @@
           "position": "WR"
         }
       ]
+    },
+    {
+      "id": "dfd86aadcfbe9ab3043c",
+      "headline": "Chargers vs. Cardinals Injury Report: Tuli Tuipulotu Questionable for Week 1",
+      "url": "https://www.chargers.com/news/injury-report-cardinals-week-1-tuli-tuipulotu",
+      "source_id": "news_official_lac",
+      "source": "Los Angeles Chargers (official)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "Take a look at the Chargers Injury Report ahead of Week 1 against the Cardinals",
+      "categories": [
+        "Articles: Injury Report",
+        "Homepage: CP",
+        "Homepage: Headlines",
+        "App: Homepage",
+        "Arizona Cardinals at Los Angeles Chargers (2026-REG-1)",
+        "2026-REG-1-Editorial"
+      ],
+      "published_at": "2026-09-11T21:00:00+00:00",
+      "players": []
     },
     {
       "id": "25e415e4aa54ab455394",
@@ -969,27 +1228,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "dfd86aadcfbe9ab3043c",
-      "headline": "Chargers vs. Cardinals Injury Report: Tuli Tuipulotu Questionable for Week 1",
-      "url": "https://www.chargers.com/news/injury-report-cardinals-week-1-tuli-tuipulotu",
-      "source_id": "news_official_lac",
-      "source": "Los Angeles Chargers (official)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "Take a look at the Chargers Injury Report ahead of Week 1 against the Cardinals",
-      "categories": [
-        "Articles: Injury Report",
-        "Homepage: CP",
-        "Homepage: Headlines",
-        "App: Homepage",
-        "Arizona Cardinals at Los Angeles Chargers (2026-REG-1)",
-        "2026-REG-1-Editorial"
-      ],
-      "published_at": "2026-09-11T20:05:00+00:00",
-      "players": []
     },
     {
       "id": "c8cd8ea9cd7d0685b7ff",
@@ -1742,6 +1980,27 @@
           "name": "Jonathon Brooks",
           "team": "CAR",
           "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "659bab57629951b6d82a",
+      "headline": "Raiders\u2019 Youth Movement Has Surprising Secret Weapon for Years To Come",
+      "url": "https://www.si.com/nfl/raiders/onsi/las-vegas-youth-movement-has-surprising-secret-weapon-years-come",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Raiders 2026: Insider analysis\u2014what no one\u2019s saying about Brock Bowers\u2019 injury and its real impact on Vegas\u2019s season.",
+      "categories": [],
+      "published_at": "2026-09-11T16:15:00+00:00",
+      "players": [
+        {
+          "id": "00-0039338",
+          "name": "Brock Bowers",
+          "team": "LV",
+          "position": "TE"
         }
       ]
     },
@@ -3573,299 +3832,6 @@
           "name": "Rome Odunze",
           "team": "CHI",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "02b71a1494873e4ed3e5",
-      "headline": "Tua Tagovailoa, Atlanta Falcons Suffer Injury Scare as Steelers Loom",
-      "url": "https://www.si.com/nfl/falcons/onsi/tua-tagovailoa-atlanta-falcons-suffer-injury-scare-as-steelers-loom",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "The Atlanta Falcons named Tua Tagovailoa the starting quarterback for the season opener against the Pittsburgh Steelers.",
-      "categories": [],
-      "published_at": "2026-09-10T18:11:20+00:00",
-      "players": [
-        {
-          "id": "00-0036212",
-          "name": "Tua Tagovailoa",
-          "team": "ATL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "97a83e579b13c8c81dde",
-      "headline": "Chiefs' Patrick Mahomes Maintaining Relentless Mindset for Week 1 Return: 'Be Yourself'",
-      "url": "https://www.si.com/nfl/chiefs/onsi/chiefs-patrick-mahomes-maintaining-relentless-mindset-week-1-return-be-yourself",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Ahead of his return from an ACL and LCL tear, KC Chiefs QB Patrick Mahomes is attacking his 2026 debut like he did the entire rehab process: without fear.",
-      "categories": [],
-      "published_at": "2026-09-10T18:00:36+00:00",
-      "players": [
-        {
-          "id": "00-0033873",
-          "name": "Patrick Mahomes",
-          "team": "KC",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "b8bd628dff66121caa20",
-      "headline": "Three Rivers Report: Which trend from 2025 needs to change for the Steelers",
-      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-news/174424/three-rivers-report-which-trend-from-2025-needs-to-change-for-the-steelers-aaron-rodgers",
-      "source_id": "news_sbn_pit",
-      "source": "Behind the Steel Curtain (SB Nation)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "The Pittsburgh Steelers begin the 2026 season in a familiar place. Playoff contenders with a roster filled with veterans ready to win now. New head coach Mike McCarthy is the biggest change, but the team added offensive firepower in Michael Pittman Jr and Rico Dowdle. Aaron Rodgers is set for one last run at a [\u2026]",
-      "categories": [
-        "Pittsburgh Steelers News"
-      ],
-      "published_at": "2026-09-10T17:46:13+00:00",
-      "players": [
-        {
-          "id": "00-0023459",
-          "name": "Aaron Rodgers",
-          "team": "PIT",
-          "position": "QB"
-        },
-        {
-          "id": "00-0036139",
-          "name": "Rico Dowdle",
-          "team": "PIT",
-          "position": "RB"
-        },
-        {
-          "id": "00-0036252",
-          "name": "Michael Pittman",
-          "team": "PIT",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "036f49a1904fc51ec925",
-      "headline": "Xavier Legette\u2019s renewed focus has the Panthers looking for more ways to get the ball in his hands",
-      "url": "https://atozsports.com/nfl/carolina-panthers-news/panthers-xavier-legettes-renewed-focus-2026-special-teams-returner-dave-canales/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "Carolina Panthers wide receiver Xavier Legette is entering into a critical Year 3 starting on Sunday and his new sense of focus as encouraged the Panthers compared to what they saw last season.",
-      "categories": [
-        "Carolina Panthers News",
-        "NFL",
-        "Dave Canales",
-        "Fantasy Football",
-        "Panthers News",
-        "Xavier Legette"
-      ],
-      "published_at": "2026-09-10T17:11:37+00:00",
-      "players": [
-        {
-          "id": "00-0039342",
-          "name": "Xavier Legette",
-          "team": "CAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "b703bcc9ff9b33892d19",
-      "headline": "Seahawks injury update: Sam Darnold expected to miss Week 2 vs. Cardinals",
-      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/174470/seahawks-injury-update-sam-darnold-expected-miss-week-2-vs-cardinals",
-      "source_id": "news_sbn_sea",
-      "source": "Field Gulls (SB Nation)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "The Seattle Seahawks may have won their opening game against the New England Patriots, but the Super Bowl champions did lose starting quarterback Sam Darnold on the opening drive of the season with a hip injury. When it\u2019s anything to do with the hip, the fear is a fracture or something that could indicate a [\u2026]",
-      "categories": [
-        "Seattle Seahawks Injuries",
-        "Seattle Seahawks News"
-      ],
-      "published_at": "2026-09-10T17:09:20+00:00",
-      "players": [
-        {
-          "id": "00-0034869",
-          "name": "Sam Darnold",
-          "team": "SEA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "9261b7ef38ce3b82d366",
-      "headline": "49ers WR Mike Evans Downplays Severity of Preseason Injuries",
-      "url": "https://www.si.com/nfl/49ers/onsi/49ers-wr-mike-evans-downplays-severity-preseason-injuries",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "San Francisco 49ers wide receiver Mike Evans downplays the severity of his preseason injuries.",
-      "categories": [],
-      "published_at": "2026-09-10T17:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "4907769425dc4d5eefac",
-      "headline": "Chiefs Injury Report: Status of Josh Simmons, Patrick Mahomes, Chamarri Conner vs. Broncos",
-      "url": "https://www.si.com/nfl/chiefs/onsi/chiefs-injury-report-status-of-josh-simmons-patrick-mahomes-chamarri-conner-vs-broncos",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Head coach Andy Reid delivered updates regarding Josh Simmons, Patrick Mahomes and Chamarri Conner ahead of the Kansas City Chiefs' first game of the season.",
-      "categories": [],
-      "published_at": "2026-09-10T16:55:32+00:00",
-      "players": [
-        {
-          "id": "00-0033873",
-          "name": "Patrick Mahomes",
-          "team": "KC",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "807a842bf552501c022d",
-      "headline": "Lunchbreak: Why Justin Jefferson Avoids 'Poodle' Approach; Vikings Returning for College Bout",
-      "url": "https://www.vikings.com/news/lunchbreak-justin-jefferson-legends-college-football",
-      "source_id": "news_official_min",
-      "source": "Minnesota Vikings (official)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "",
-      "categories": [
-        "Lunch Break",
-        "News - Lunch Break",
-        "News - Index",
-        "Justin Jefferson"
-      ],
-      "published_at": "2026-09-10T16:36:20+00:00",
-      "players": [
-        {
-          "id": "00-0036322",
-          "name": "Justin Jefferson",
-          "team": "MIN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "9f8c72ea519ca9512b4e",
-      "headline": "Indianapolis Colts Injury Report: Wednesday Week 1",
-      "url": "https://www.stampedeblue.com/indianapolis-colts-injuries/127236/indianapolis-colts-injury-report-wednesday-week-1",
-      "source_id": "news_sbn_ind",
-      "source": "Stampede Blue (SB Nation)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The Indianapolis Colts released their Wednesday practice report for their Week 1 game against the Baltimore Favens. the Indianapolis Colts had every member of the 53 man roster practice during their first game week practice this week. Safety AJ Haulcy (ankle) was limited at practice. Haulcy was was named a starter on the Colts latest [\u2026]",
-      "categories": [
-        "Indianapolis Colts Injuries",
-        "Indianapolis Colts News",
-        "Indianapolis Colts Roster"
-      ],
-      "published_at": "2026-09-10T16:21:53+00:00",
-      "players": []
-    },
-    {
-      "id": "132dc25c1a08d859adfb",
-      "headline": "Todd Bowles Confident In Bucs\u2019 Defense Ahead Of Week 1 vs. Bengals",
-      "url": "https://www.pewterreport.com/todd-bowles-confident-bucs-defense-vs-bengals/",
-      "source_id": "pewter_report",
-      "source": "Pewter Report",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "The biggest news about the Bucs is quarterback Baker Mayfield getting paid, but the team's Week 1 game is just a couple of days away on Sunday afternoon against the Bengals. Head coach Todd Bowles answered a few questions about Mayfield's extension on Wednesday, but he is focused more on preventing Cincinnati's offense from",
-      "categories": [
-        "Articles",
-        "Featured"
-      ],
-      "published_at": "2026-09-10T16:00:34+00:00",
-      "players": [
-        {
-          "id": "00-0034855",
-          "name": "Baker Mayfield",
-          "team": "TB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "07738f8089d0e6f1626d",
-      "headline": "How Lamar Jackson Could Become Even More Lethal in Ravens' New Offense",
-      "url": "https://www.baltimoreravens.com/news/lamar-jackson-declan-doyle-more-lethal-mvp-israel-woolfork-week-1-ravens-colts-2026",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Players and coaches are optimistic that Jackson can return to (and potentially surpass) his old self.",
-      "categories": [
-        "General",
-        "Clifton Brown",
-        "Lamar Jackson",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-09-10T15:55:07+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "0ceb5cad6b29333f495d",
-      "headline": "One major issue is likely holding up the Packers and Tucker Kraft, and it\u2019s not an easy problem to solve",
-      "url": "https://atozsports.com/nfl/green-bay-packers-news/major-issue-holding-up-tucker-kraft-contract-extension/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "The rising tight end is entering the final year of his rookie deal, and both sides want a new contract in place before the season.",
-      "categories": [
-        "Green Bay Packers News",
-        "NFL",
-        "American Football",
-        "Contract Extension",
-        "Tucker Kraft"
-      ],
-      "published_at": "2026-09-10T15:51:51+00:00",
-      "players": [
-        {
-          "id": "00-0038996",
-          "name": "Tucker Kraft",
-          "team": "GB",
-          "position": "TE"
         }
       ]
     }
