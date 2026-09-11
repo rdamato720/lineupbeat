@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T01:05:43.527730+00:00",
+  "updated_at": "2026-09-11T02:00:48.787302+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T01:02:18+00:00",
+      "latest_entry_at": "2026-09-11T01:47:33+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-10T23:37:43+00:00",
+      "latest_entry_at": "2026-09-11T01:14:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 7,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-11T01:02:18+00:00",
+      "latest_entry_at": "2026-09-11T01:47:33+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T21:42:56+00:00",
+      "latest_entry_at": "2026-09-11T00:53:06+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T14:00:00+00:00",
+      "latest_entry_at": "2026-09-11T00:00:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-10T20:55:08+00:00",
+      "latest_entry_at": "2026-09-10T23:53:05+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T20:01:00+00:00",
+      "latest_entry_at": "2026-09-10T21:45:00+00:00",
       "stale": false
     },
     {
@@ -444,17 +444,17 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-10T19:52:59+00:00",
+      "latest_entry_at": "2026-09-11T01:53:20+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-10T17:06:34+00:00",
+      "latest_entry_at": "2026-09-10T21:39:36+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-10T16:20:18+00:00",
+      "latest_entry_at": "2026-09-10T21:28:38+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-10T00:57:29+00:00",
+      "latest_entry_at": "2026-09-11T00:30:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T13:30:00+00:00",
+      "latest_entry_at": "2026-09-11T00:05:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-10T23:48:09+00:00",
+      "latest_entry_at": "2026-09-11T00:05:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,56 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T21:06:54+00:00",
+      "latest_entry_at": "2026-09-10T23:54:33+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "155aa7e9f2579574c0f0",
+      "headline": "Eagles Injury Report: Jonathan Greenard limited again",
+      "url": "https://www.bleedinggreennation.com/news/182325/eagles-injury-report-jonathan-greenard-limited-again",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Philadelphia Eagles issued their second official injury report of the week on Thursday in advance of their Week 1 game against the Washington Commanders. The Eagles listed two players under LIMITED PARTICIPATION: Jonathan Greenard and Eli Stowers. The Eagles are said to be determining Greenard\u2019s availability based on how he fares in practice this [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries",
+        "Philadelphia Eagles News"
+      ],
+      "published_at": "2026-09-11T01:53:20+00:00",
+      "players": [
+        {
+          "id": "00-0041483",
+          "name": "Eli Stowers",
+          "team": "PHI",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "10f85e4f095e317d31ea",
+      "headline": "Dallas Cowboys Secure Future at Tight End With Brevyn Spann-Ford Contract Extension",
+      "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-secure-future-at-tight-end-with-brevyn-spann-ford-contract-extension",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys are locking down their future with Brevyn Spann-Ford.",
+      "categories": [],
+      "published_at": "2026-09-11T01:08:00+00:00",
+      "players": [
+        {
+          "id": "00-0039530",
+          "name": "Brevyn Spann-Ford",
+          "team": "DAL",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "302d75e3438feb0ce09a",
       "headline": "Bills' Week 1 Updated Injury Report: Defensive Starter Downgraded, RB Still Out",
@@ -646,6 +691,29 @@
       ]
     },
     {
+      "id": "298ced3edf2134760a58",
+      "headline": "Buccaneers at Bengals: Thursday Injury Report for Week 1",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/68443/buccaneers-bengals-thursday-injury-report-nfl-week-1",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers saw some encouraging movement on Thursday\u2019s injury report as they continued preparations for Sunday\u2019s season opener against the Cincinnati Bengals. Running back Sean Tucker returned to practice on a limited basis after sitting out Wednesday with a hamstring injury. Rookie outside linebacker Rueben Bain Jr. also improved, moving from limited participation [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers Injuries"
+      ],
+      "published_at": "2026-09-10T23:57:59+00:00",
+      "players": [
+        {
+          "id": "00-0038951",
+          "name": "Sean Tucker",
+          "team": "TB",
+          "position": "RB"
+        }
+      ]
+    },
+    {
       "id": "8a45f2dc49a12bee8284",
       "headline": "Broncos-Chiefs First Injury Report Reveals a Striking Week 1 Contrast",
       "url": "https://www.si.com/nfl/broncos/onsi/broncos-chiefs-first-injury-report-striking-week-1-contrast-simmons-mims",
@@ -729,6 +797,30 @@
       ],
       "published_at": "2026-09-10T23:33:01+00:00",
       "players": []
+    },
+    {
+      "id": "023dbacb7ea9608c63ee",
+      "headline": "A.J. Brown injury update: Patriots WR expected to miss at least 3 weeks",
+      "url": "https://www.patspulpit.com/new-england-patriots-injuries/136921/aj-brown-injury-update-high-ankle-sprain-seahawks",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "Update 9/10/2026: A.J. Brown to miss at least 3 weeks with reported high-ankle sprain New England Patriots wide receiver A.J. Brown did indeed suffer a high-ankle sprain on Wednesday night against the Seattle Seahawks. An MRI taken on Thursday confirmed the initial diagnosis and according to a report by NFL Network\u2019s Ian Rapoport suggests that [\u2026]",
+      "categories": [
+        "New England Patriots Injuries",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-09-10T23:32:46+00:00",
+      "players": [
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
+        }
+      ]
     },
     {
       "id": "7934d01f892b4e54538a",
@@ -2244,30 +2336,6 @@
       ]
     },
     {
-      "id": "023dbacb7ea9608c63ee",
-      "headline": "A.J. Brown injury update: Patriots WR dealing with high-ankle sprain",
-      "url": "https://www.patspulpit.com/new-england-patriots-injuries/136921/aj-brown-injury-update-high-ankle-sprain-seahawks",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots will be without their No. 1 wide receiver for the foreseeable future. A.J. Brown, who exited Wednesday\u2019s loss to the Seattle Seahawks in the third quarter, is believed to have suffered a high-ankle sprain. According to a report by NFL Network\u2019s Ian Rapoport and Mike Garafolo, how much time he will [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-09-10T14:01:48+00:00",
-      "players": [
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
       "id": "60eb264c8f0686ebb50b",
       "headline": "Bucs at Bengals: Pewter Preview For Week 1",
       "url": "https://www.pewterreport.com/bucs-at-bengals-pewter-preview-week-1/",
@@ -3725,71 +3793,6 @@
           "name": "Ashton Jeanty",
           "team": "LV",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "f1bffb3ec989f7dc29b5",
-      "headline": "Packers Injury Report: Updates on the offensive line",
-      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/86121/packers-injury-report-updates-on-the-offensive-line",
-      "source_id": "news_sbn_gb",
-      "source": "Acme Packing Company (SB Nation)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "There were only two non-participants for the Green Bay Packers during their Wednesday practice: defensive lineman Warren Brinson (calf) and linebacker Ty\u2019Ron Hopper (Achilles). Brinson\u2019s injury stems from a pre-game issue he had going into Week 2 of the preseason, while Hopper\u2019s injury appears to be a new issue. Even if Brinson and Hopper both [\u2026]",
-      "categories": [
-        "Green Bay Packers injuries",
-        "Green Bay Packers News"
-      ],
-      "published_at": "2026-09-09T22:04:10+00:00",
-      "players": []
-    },
-    {
-      "id": "4b89ca37286df7586d3e",
-      "headline": "David Tepper: \"I think the pieces are there\"",
-      "url": "https://www.panthers.com/news/david-tepper-i-think-the-pieces-are-there-playoffs-bryce-young-dan-morgan-dave-canales-brandt-tilis-keep-pounding",
-      "source_id": "news_official_car",
-      "source": "Carolina Panthers (official)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Panthers owner met with reporters during Wednesday's practice, and reiterated his belief in his current football staff, as well as quarterback Bryce Young as they head into the regular season opener.",
-      "categories": [
-        "Latest News",
-        "App News"
-      ],
-      "published_at": "2026-09-09T21:53:18+00:00",
-      "players": [
-        {
-          "id": "00-0039150",
-          "name": "Bryce Young",
-          "team": "CAR",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "86f239089f13690a7fd8",
-      "headline": "For Bryce Young, getting off to a faster start begins before the snap",
-      "url": "https://www.panthers.com/news/for-bryce-young-getting-off-to-a-faster-start-begins-before-the-snap-regular-season-opener",
-      "source_id": "news_official_car",
-      "source": "Carolina Panthers (official)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Panthers quarterback is trying to turn around a string of Week 1 losses. But he's doing it by working on very specific aspects of his game, drilling down into the details. And his coach sees it working.",
-      "categories": [
-        "Latest News",
-        "App News"
-      ],
-      "published_at": "2026-09-09T21:45:51+00:00",
-      "players": [
-        {
-          "id": "00-0039150",
-          "name": "Bryce Young",
-          "team": "CAR",
-          "position": "QB"
         }
       ]
     }
