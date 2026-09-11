@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T10:00:49.072130+00:00",
+  "updated_at": "2026-09-11T11:20:54.164673+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T09:30:00+00:00",
+      "latest_entry_at": "2026-09-11T11:02:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T04:52:28+00:00",
+      "latest_entry_at": "2026-09-11T11:00:00+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-10T20:30:00+00:00",
+      "latest_entry_at": "2026-09-11T11:00:10+00:00",
       "stale": false
     },
     {
@@ -134,7 +134,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T23:58:58+00:00",
+      "latest_entry_at": "2026-09-11T11:00:18+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T09:30:00+00:00",
+      "latest_entry_at": "2026-09-11T11:02:00+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T04:52:28+00:00",
+      "latest_entry_at": "2026-09-11T11:00:00+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T10:00:00+00:00",
+      "latest_entry_at": "2026-09-11T11:00:00+00:00",
       "stale": false
     },
     {
@@ -318,23 +318,23 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-10T23:53:05+00:00",
+      "latest_entry_at": "2026-09-11T11:08:40+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T20:16:17+00:00",
+      "latest_entry_at": "2026-09-11T11:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-10T18:26:51+00:00",
+      "latest_entry_at": "2026-09-11T11:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T10:00:00+00:00",
+      "latest_entry_at": "2026-09-11T11:05:00+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T21:55:48+00:00",
+      "latest_entry_at": "2026-09-11T11:16:26+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-11T03:40:27+00:00",
+      "latest_entry_at": "2026-09-11T11:00:00+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T10:00:00+00:00",
+      "latest_entry_at": "2026-09-11T11:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-10T20:07:24+00:00",
+      "latest_entry_at": "2026-09-11T11:00:00+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-11T10:00:00+00:00",
+      "latest_entry_at": "2026-09-11T11:00:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T14:00:00+00:00",
+      "latest_entry_at": "2026-09-11T11:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,97 @@
     }
   ],
   "items": [
+    {
+      "id": "36918f014e6aa43f20d2",
+      "headline": "Vikings Are Nearing Point of No Return With J.J. McCarthy After QB3 News",
+      "url": "https://www.si.com/nfl/vikings/onsi/vikings-nearing-point-no-returnj-j-mccarthy-qb3-news-01m26bwrcf2c",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "J.J. McCarthy has been in the news since the Vikings named him as the QB3 this week. Perhaps it's time to consider that his time in Minnesota is ending.",
+      "categories": [],
+      "published_at": "2026-09-11T11:00:04+00:00",
+      "players": [
+        {
+          "id": "00-0039923",
+          "name": "J.J. McCarthy",
+          "team": "MIN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "f8ed75d803eb4059d908",
+      "headline": "Zay Flowers upgraded on Ravens\u2019 Week 1 injury report",
+      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/84864/zay-flowers-upgraded-on-ravens-week-1-injury-report",
+      "source_id": "news_sbn_bal",
+      "source": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Baltimore Ravens upgraded star wide receiver Zay Flowers to full participation on their second injury report of the 2026 NFL season. Flowers, 25, was listed as as a limited participant on Wednesday with a hamstring injury. He previously dealt with a minor groin injury during training camp but was quickly back on the field. [\u2026]",
+      "categories": [
+        "Baltimore Ravens Injuries",
+        "Baltimore Ravens News"
+      ],
+      "published_at": "2026-09-11T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039064",
+          "name": "Zay Flowers",
+          "team": "BAL",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "962aed183f0ab85dcdf2",
+      "headline": "Cowboys news: Rising stars get new contracts before start of the season",
+      "url": "https://www.bloggingtheboys.com/dallas-cowboys-news/217413/brevyn-spann-ford-new-contract-malik-nabers-caleb-downs",
+      "source_id": "news_sbn_dal",
+      "source": "Blogging The Boys (SB Nation)",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "We are just days away from the Dallas Cowboys kicking off their 2026 season on the road, taking on a division rival, the New York Giants. Before the Cowboys go wheels up to New York, they took care of some business, inking tight end Brevyn Spann-Ford to a three-year contract extension to remain in Dallas. [\u2026]",
+      "categories": [
+        "Dallas Cowboys News"
+      ],
+      "published_at": "2026-09-11T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039530",
+          "name": "Brevyn Spann-Ford",
+          "team": "DAL",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "51b62f9efc44a5049228",
+      "headline": "New York Jets Flight Connections 09/11/26",
+      "url": "https://www.ganggreennation.com/new-york-jets-news/96313/new-york-jets-flight-connections-09-11-26",
+      "source_id": "news_sbn_nyj",
+      "source": "Gang Green Nation (SB Nation)",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "Breece Hall is ready for takeoff. We all held our collective breath when Hall went down with a non-contact injury back in August. Now we can breathe a sigh of relief. The talented tailback has been a full participant for the last two days of practice. \u201cI feel great,\u201d Hall told the media on Thursday, September 10. [\u2026]",
+      "categories": [
+        "New York Jets News"
+      ],
+      "published_at": "2026-09-11T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0038120",
+          "name": "Breece Hall",
+          "team": "NYJ",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "5c0c4530dff003d47fce",
       "headline": "Miami Dolphins news: Kevin Coleman\u2019s heartfelt number change, Bobby Slowik\u2019s offense, more",
@@ -3759,94 +3850,6 @@
           "name": "Tyler Shough",
           "team": "NO",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "5291d5ae4386ad14a9b7",
-      "headline": "Falcons vs. Steelers Week 1 injuries: Michael Penix Jr. logs full practice",
-      "url": "https://www.thefalcoholic.com/atlanta-falcons-injuries/95956/week-1-injuries-michael-penix-jr-zachariah-branch",
-      "source_id": "news_sbn_atl",
-      "source": "The Falcoholic (SB Nation)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "Welcome back, folks! The first official Atlanta Falcons practice report for the regular season is here. If you\u2019re new here, every week we bring the practice reports to you, giving you insight into who is or is not practicing, usually due to injuries. In Week 1 the Falcons will be taking on the Pittsburgh Steelers, [\u2026]",
-      "categories": [
-        "Atlanta Falcons game information",
-        "Atlanta Falcons injuries"
-      ],
-      "published_at": "2026-09-09T22:57:50+00:00",
-      "players": [
-        {
-          "id": "00-0039917",
-          "name": "Michael Penix Jr.",
-          "team": "ATL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "3954f37e329bb527f986",
-      "headline": "Commanders Injury Report: Jacory Croskey-Merritt Among 3 Limited Before Eagles Game",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-injury-report-week-1-eagles-jacory-croskey-merritt-limited",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Jacory Croskey-Merritt, Odafe Oweh, and K'Lavon Chaisson are limited on the Commanders' first injury report ahead of Week 1 against the Eagles.",
-      "published_at": "2026-09-09T22:57:17+00:00",
-      "players": [
-        {
-          "id": "00-0040242",
-          "name": "Jacory Croskey-Merritt",
-          "team": "WAS",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "4119d19c366a3c3b4175",
-      "headline": "Nick Emmanwori & Tory Horton Inactive For Seahawks' Opener vs. Patriots",
-      "url": "https://www.seahawks.com/news/nick-emmanwori-tory-horton-inactive-for-seahawks-opener-vs-patriots",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "The Seahawks will be without both players who were listed as questionable for Wednesday\u2019s opener against the New England Patriots.",
-      "categories": [],
-      "published_at": "2026-09-09T22:51:26+00:00",
-      "players": [
-        {
-          "id": "00-0040648",
-          "name": "Tory Horton",
-          "team": "SEA",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "620f21c080db2f505f93",
-      "headline": "Eagles Injury Report: Jonathan Greenard and Eli Stowers limited",
-      "url": "https://www.bleedinggreennation.com/news/182210/eagles-injury-report-jonathan-greenard-and-eli-stowers-limited",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Philadelphia Eagles issued their first official injury report of the week (and first of the 2026 NFL season!) on Wednesday in advance of their Week 1 game against the Washington Commanders. The Eagles listed ZERO players under DID NOT PARTICIPATE. Always a good thing to have every player on the roster (and practice squad) [\u2026]",
-      "categories": [
-        "Philadelphia Eagles News"
-      ],
-      "published_at": "2026-09-09T22:50:10+00:00",
-      "players": [
-        {
-          "id": "00-0041483",
-          "name": "Eli Stowers",
-          "team": "PHI",
-          "position": "TE"
         }
       ]
     }
