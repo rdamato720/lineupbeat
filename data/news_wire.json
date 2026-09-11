@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T23:11:10.464656+00:00",
+  "updated_at": "2026-09-11T00:00:54.642087+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T22:55:00+00:00",
+      "latest_entry_at": "2026-09-10T23:43:01+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T22:25:01+00:00",
+      "latest_entry_at": "2026-09-10T23:43:18+00:00",
       "stale": false
     },
     {
@@ -44,9 +44,9 @@
     {
       "source_id": "news_official_ari",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-10T21:12:21+00:00",
+      "latest_entry_at": "2026-09-10T23:19:17+00:00",
       "stale": false
     },
     {
@@ -78,13 +78,13 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-10T21:49:57+00:00",
+      "latest_entry_at": "2026-09-10T23:52:39+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_chi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
       "latest_entry_at": "2026-09-10T19:24:23+00:00",
       "stale": false
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T21:40:00+00:00",
+      "latest_entry_at": "2026-09-10T23:45:00+00:00",
       "stale": false
     },
     {
@@ -260,9 +260,9 @@
     {
       "source_id": "news_official_sf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-10T20:53:00+00:00",
+      "latest_entry_at": "2026-09-10T23:37:43+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 7,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-10T22:55:00+00:00",
+      "latest_entry_at": "2026-09-10T23:43:01+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-10T22:25:01+00:00",
+      "latest_entry_at": "2026-09-10T23:43:18+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T20:51:04+00:00",
+      "latest_entry_at": "2026-09-10T21:42:56+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T15:00:00+00:00",
+      "latest_entry_at": "2026-09-10T20:16:17+00:00",
       "stale": false
     },
     {
@@ -390,15 +390,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-09T19:44:48+00:00",
+      "latest_entry_at": "2026-09-10T13:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-10T14:00:00+00:00",
+      "latest_entry_at": "2026-09-10T22:49:58+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-10T12:00:00+00:00",
+      "latest_entry_at": "2026-09-10T14:00:00+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-10T21:16:23+00:00",
+      "latest_entry_at": "2026-09-10T23:48:09+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,168 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-10T21:06:54+00:00",
+      "latest_entry_at": "2026-09-10T23:54:33+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "e6a9b96a8d9691a8150a",
+      "headline": "Tatum Bethune, Jordan Watkins OUT vs. Rams; Inactives for Week 1 #SFvsLAR",
+      "url": "https://www.49ers.com/news/tatum-bethune-jordan-watkins-out-vs-rams-inactives-for-week-1-sfvslar",
+      "source_id": "news_official_sf",
+      "source": "San Francisco 49ers (official)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Take a look at players who have been ruled out for the San Francisco 49ers Week 1 matchup versus the Los Angeles Rams.",
+      "categories": [
+        "Inactives",
+        "Latest App",
+        "English",
+        "English Articles",
+        "News",
+        "Sutter Health",
+        "Brooke Evans",
+        "San Francisco 49ers at Los Angeles Rams (2026-REG-1)"
+      ],
+      "published_at": "2026-09-10T23:37:43+00:00",
+      "players": [
+        {
+          "id": "00-0040172",
+          "name": "Jordan Watkins",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "380db6b0abb5fbddc149",
+      "headline": "49ers inactives: 6 players on their rookie contracts won\u2019t suit up vs. Rams",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/162455/49ers-inactives-6-players-on-their-rookie-contracts-wont-suit-up-vs-rams",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers\u2019 first inactive list of the season is out. They\u2019ll lean into the veterans on the roster tonight, as every player on the inactive list is on a rookie contract: QB Kurtis RourkeCB Ephesians PrysockRB Jordan JamesWR Jordan WatkinsLB Tatum BethuneOT Enrique Cruz The 49ers having only two running backs active suggests [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries",
+        "San Francisco 49ers Roster"
+      ],
+      "published_at": "2026-09-10T23:33:01+00:00",
+      "players": []
+    },
+    {
+      "id": "7934d01f892b4e54538a",
+      "headline": "How Tua Tagovailoa's Injury Could Change Everything for Falcons",
+      "url": "https://www.si.com/nfl/falcons/onsi/how-tua-tagovailoa-s-injury-could-change-everything-for-falcons",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "An option for quarterback who planned to stick around for just a week of training camp could emerge as the Atlanta Falcons' starter",
+      "categories": [],
+      "published_at": "2026-09-10T23:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0036212",
+          "name": "Tua Tagovailoa",
+          "team": "ATL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "55743976b1e59e187883",
+      "headline": "Jeremiyah Love Itching To Play In Opener, But Waiting For Coach's Call",
+      "url": "https://www.azcardinals.com/news/cardinals-rb-jeremiyah-love-itching-to-play-but-waiting-for-coach-s-call",
+      "source_id": "news_official_ari",
+      "source": "Arizona Cardinals (official)",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "Rookie running back still limited in practice with ankle injury",
+      "categories": [
+        "News",
+        "Featured Articles",
+        "Home Page - News Headlines",
+        "Red Sea Member HQ Content",
+        "Mega Feed",
+        "Darren Urban",
+        "Arizona Cardinals at Los Angeles Chargers (2026-REG-1)",
+        "Jeremiyah Love",
+        "Evan Hull",
+        "Bam Knight",
+        "Tyler Allgeier"
+      ],
+      "published_at": "2026-09-10T23:19:17+00:00",
+      "players": [
+        {
+          "id": "00-0041027",
+          "name": "Jeremiyah Love",
+          "team": "ARI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "4592ccd0b4ad135cd3e4",
+      "headline": "Malik Nabers Won't Rush His Return, Even With Week 1 Looming",
+      "url": "https://www.si.com/nfl/giants/onsi/malik-nabers-giants-week-1-status-return-decision-01m26rxmcng7",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The Giants receiver says he's \"trending in the right direction\" after his ACL tear, but insists the call on whether he plays Sunday is his to make.",
+      "categories": [],
+      "published_at": "2026-09-10T23:04:59+00:00",
+      "players": [
+        {
+          "id": "00-0039337",
+          "name": "Malik Nabers",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "020aceaf16ed0f511bf4",
+      "headline": "Saints Injury Report: Kamara Practices Again, 4 Players Sit Out",
+      "url": "https://www.si.com/nfl/saints/onsi/saints-injury-report-kamara-practices-again-4-players-sit-out-01m26pcb74zm",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "Alvin Kamara remained limited at Saints practice Thursday, while Cam Jordan and three others sat out ahead of the Week 1 matchup against the Lions.",
+      "categories": [],
+      "published_at": "2026-09-10T23:02:01+00:00",
+      "players": [
+        {
+          "id": "00-0033906",
+          "name": "Alvin Kamara",
+          "team": "NO",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "de167a5a959ae98efcbe",
+      "headline": "Commanders Injury Report: Daron Payne Added as 4 Players Limited Before Eagles Game",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-injury-report-thursday-daron-payne-knee-eagles",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Washington Commanders DT Daron Payne was added to the Thursday injury report with a knee issue. Here is the latest on K'Lavon Chaisson, Odafe Oweh, and more.",
+      "categories": [],
+      "published_at": "2026-09-10T22:56:11+00:00",
+      "players": []
+    },
     {
       "id": "ec1a4eb188fabab1b0b8",
       "headline": "Injury Report: Cardinals Trending Toward Losing Starter for Week 1 vs Chargers",
@@ -568,6 +725,29 @@
       "categories": [],
       "published_at": "2026-09-10T22:52:13+00:00",
       "players": []
+    },
+    {
+      "id": "3bfcf03205a5ca2f6759",
+      "headline": "Denver Broncos vs. Kansas City Chiefs practice report: Thursday",
+      "url": "https://www.milehighreport.com/denver-broncos-injuries/184590/denver-broncos-vs-kansas-city-chiefs-practice-report-thursday",
+      "source_id": "news_sbn_den",
+      "source": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Denver Broncos and Kansas City Chiefs are now just days away from facing off on Monday Night Football in Week 1. Denver has stayed surprisingly healthy all through training camp and preseason with only wide receiver Marvin Mims Jr. listed on their practice participation report. Meanwhile, the Chiefs have quite a few players though [\u2026]",
+      "categories": [
+        "Denver Broncos Injuries"
+      ],
+      "published_at": "2026-09-10T22:33:07+00:00",
+      "players": [
+        {
+          "id": "00-0038976",
+          "name": "Marvin Mims Jr.",
+          "team": "DEN",
+          "position": "WR"
+        }
+      ]
     },
     {
       "id": "fc6fe61fbe7d8fa9f10f",
@@ -669,7 +849,7 @@
       "teams": [
         "MIN"
       ],
-      "feed_description": "The Minnesota Vikings and Green Bay Packers released the first update of their injury reports this week after Thursday\u2019s practice in advance of their Sunday afternoon matchup at US Bank stadium. Here they are. Minnesota Vikings Green Bay Packers Injury Report Terms and Glossary Injury designation definitions: Probable = the league defines a Probable injury [\u2026]",
+      "feed_description": "The Minnesota Vikings and Green Bay Packers released the first update of their injury reports this week after Thursday\u2019s practice in advance of their Sunday afternoon matchup at US Bank Stadium. Here they are. Minnesota Vikings Green Bay Packers Injury Report Terms and Glossary Injury designation definitions: Probable = the league defines a Probable injury [\u2026]",
       "categories": [
         "Minnesota Vikings Injuries"
       ],
@@ -2288,9 +2468,6 @@
         "English",
         "English Articles",
         "Breaking News",
-        "Australia",
-        "Australia 2026",
-        "Australia News",
         "Brooke Evans",
         "San Francisco 49ers at Los Angeles Rams (2026-REG-1)"
       ],
@@ -3613,182 +3790,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "e40ce51cd2a067a39b4b",
-      "headline": "Bears vs. Panthers Injury Report: Odunze Listed As Limited",
-      "url": "https://www.windycitygridiron.com/chicago-bears-injuries/122252/chicago-bears-vs-carolina-panthers-injury-report-odunze-listed-as-limited",
-      "source_id": "news_sbn_chi",
-      "source": "Windy City Gridiron (SB Nation)",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "As the Chicago Bears prepare for their first regular season game of the year against the Carolina Panthers on Sunday, the first official team injury reports for week 1 have been released. The Bears did not practice on Wednesday, so player participation listed on the injury report is an estimation. Just one player was listed [\u2026]",
-      "categories": [
-        "Chicago Bears Game Information",
-        "Chicago Bears Injuries",
-        "Chicago Bears News"
-      ],
-      "published_at": "2026-09-09T21:13:27+00:00",
-      "players": []
-    },
-    {
-      "id": "c572428fc9b3873265af",
-      "headline": "Zay Flowers, Nnamdi Madubuike Limited on First Injury Report",
-      "url": "https://www.baltimoreravens.com/news/injury-report-zay-flowers-nnamdi-madubuike-ravens-colts-practice",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Ravens had four players limited in Wednesday\u2019s practice before facing the Colts.",
-      "categories": [
-        "General",
-        "Ryan Mink",
-        "Zay Flowers",
-        "Justin Madubuike",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-09-09T21:11:07+00:00",
-      "players": [
-        {
-          "id": "00-0039064",
-          "name": "Zay Flowers",
-          "team": "BAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "1e1289984be8f836a3dc",
-      "headline": "Practice Notebook: Colts Week 1 injury updates on WR Alec Pierce, S AJ Haulcy",
-      "url": "https://www.colts.com/news/practice-notebook-colts-week-1-injury-updates-on-wr-alec-pierce-s-aj-haulcy",
-      "source_id": "news_official_ind",
-      "source": "Indianapolis Colts (official)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The Colts on Wednesday conducted their first true game week practice ahead of Sunday's season opener against the Baltimore Ravens at Lucas Oil Stadium.",
-      "categories": [
-        "Practice Notebook",
-        "Featured",
-        "Featured News",
-        "Alec Pierce",
-        "A.J. Haulcy"
-      ],
-      "published_at": "2026-09-09T20:55:00+00:00",
-      "players": [
-        {
-          "id": "00-0037664",
-          "name": "Alec Pierce",
-          "team": "IND",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "9c10e0a76115f7b77eef",
-      "headline": "Saints Wednesday Injury Report: 2026 Week 1 vs. Detroit Lions",
-      "url": "https://www.neworleanssaints.com/news/injury-report-detroit-lions-vs-new-orleans-saints-2026-nfl-week-1-wednesday",
-      "source_id": "news_official_no",
-      "source": "New Orleans Saints (official)",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "4 Saints listed on Wednesday's Saints Injury Report for Week 1 against the Lions",
-      "categories": [
-        "Saints Injury Report",
-        "Latest News",
-        "2026-reg-week1"
-      ],
-      "published_at": "2026-09-09T20:40:51+00:00",
-      "players": []
-    },
-    {
-      "id": "40870a122036ab09d48b",
-      "headline": "Buccaneers-Bengals Injury Report Sept.9: Tucker Did Not Participate, McMillan and Bain Jr. Limited",
-      "url": "https://www.buccaneers.com/news/buccaneers-bengals-injury-report-sept-9-week-1-2026",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "A look at Wednesday's injury report ahead of the Week 1 matchup",
-      "categories": [
-        "Featured",
-        "Injury Report",
-        "Week 1 2026 Bengals"
-      ],
-      "published_at": "2026-09-09T20:32:03+00:00",
-      "players": []
-    },
-    {
-      "id": "939e132af2202be913ee",
-      "headline": "With A New Contract, Baker Mayfield\u2019s Quest For A Super Bowl Continues",
-      "url": "https://www.pewterreport.com/new-contract-baker-mayfield-quest-super-bowl/",
-      "source_id": "pewter_report",
-      "source": "Pewter Report",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "With smiles on their faces, Bucs general manager Jason Licht and quarterback Baker Mayfield, the new $165-million man, sat together at a press conference on Wednesday and buried the proverbial hatchet. Over a month ago, Mayfield was miffed at the Tampa Bay organization for not getting a new contract extension in place prior to the",
-      "categories": [
-        "Articles",
-        "Featured"
-      ],
-      "published_at": "2026-09-09T20:24:15+00:00",
-      "players": [
-        {
-          "id": "00-0034855",
-          "name": "Baker Mayfield",
-          "team": "TB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "0d83533da3d2706f00a7",
-      "headline": "Falcons injury report: Zachariah Branch, Brandon Dorlus limited as Steelers prep begins",
-      "url": "https://www.atlantafalcons.com/news/falcons-injury-report-zachariah-branch-brandon-dorlus-limited-pittsburgh-steelers",
-      "source_id": "news_official_atl",
-      "source": "Atlanta Falcons (official)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "The Falcons had a total of five players limited during Wednesday's practice session.",
-      "categories": [
-        "News",
-        "Emory Injury Report",
-        "Will McFadden",
-        "Atlanta Falcons at Pittsburgh Steelers (2026-REG-1)"
-      ],
-      "published_at": "2026-09-09T20:23:20+00:00",
-      "players": [
-        {
-          "id": "00-0041044",
-          "name": "Zachariah Branch",
-          "team": "ATL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "917d19785e064befed21",
-      "headline": "Lions, Saints injury report: Only 3 players limited on Wednesday",
-      "url": "https://www.prideofdetroit.com/detroit-lions-injuries/172009/lions-saints-injury-report-initial-statuses-for-week-1",
-      "source_id": "news_sbn_det",
-      "source": "Pride Of Detroit (SB Nation)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "The Detroit Lions will kick off the new year inside the comfy confines of Ford Field, taking on the New Orleans Saints in Week 1 of the 2026 season. Both teams are dealing with some early-season injuries, and that\u2019s reflected in their initial injury reports. As is the case with most beginning-of-the-year schedules, the Lions [\u2026]",
-      "categories": [
-        "Detroit Lions Injuries",
-        "Detroit Lions News"
-      ],
-      "published_at": "2026-09-09T20:16:25+00:00",
-      "players": []
     }
   ]
 }
