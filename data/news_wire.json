@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-12T21:40:26.217172+00:00",
+  "updated_at": "2026-09-12T23:23:19.925713+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T21:26:00+00:00",
+      "latest_entry_at": "2026-09-12T23:07:39+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T14:45:35+00:00",
+      "latest_entry_at": "2026-09-12T22:13:50+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T21:20:49+00:00",
+      "latest_entry_at": "2026-09-12T23:22:57+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T23:00:00+00:00",
+      "latest_entry_at": "2026-09-12T22:00:00+00:00",
       "stale": false
     },
     {
@@ -260,7 +260,7 @@
     {
       "source_id": "news_official_sf",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
       "latest_entry_at": "2026-09-11T16:03:36+00:00",
       "stale": false
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T21:26:00+00:00",
+      "latest_entry_at": "2026-09-12T23:07:39+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T21:20:49+00:00",
+      "latest_entry_at": "2026-09-12T23:22:57+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T16:58:25+00:00",
+      "latest_entry_at": "2026-09-11T12:31:24+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-12T20:30:00+00:00",
+      "latest_entry_at": "2026-09-12T22:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T16:51:40+00:00",
+      "latest_entry_at": "2026-09-12T22:54:50+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T19:00:00+00:00",
+      "latest_entry_at": "2026-09-12T22:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T16:50:58+00:00",
+      "latest_entry_at": "2026-09-12T22:27:31+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,66 @@
     }
   ],
   "items": [
+    {
+      "id": "0a86c37cda506e84eb02",
+      "headline": "NY Giants complete 53-man roster by adding receiver/special teams depth",
+      "url": "https://www.bigblueview.com/new-york-giants-roster/170727/dalen-cambre-signing-practice-squad-darius-slayton-roster-spot",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The New York Giants are completing their 53-man roster by signing wide recever/special teamer Dalen Cambre to the active roster from their practice squad, a source confirms. The move was initially reported by Art Stapleton. The Giants had been carrying just 52 players after releasing wide receiver Darius Slayton earlier in the week. Cambre, a [\u2026]",
+      "categories": [
+        "New York Giants roster"
+      ],
+      "published_at": "2026-09-12T22:54:50+00:00",
+      "players": [
+        {
+          "id": "00-0035535",
+          "name": "Darius Slayton",
+          "team": "NYG",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040431",
+          "name": "Dalen Cambre",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "c48fde71271fe0a42995",
+      "headline": "Bucs Make Practice Squad Elevations For Week 1 vs. Bengals",
+      "url": "https://www.pewterreport.com/bucs-make-practice-squad-elevations/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Bucs, one sleep away from kicking off the 2026 regular season on the road against the Cincinnati Bengals, are entering the new campaign a remarkably healthy bunch. Just three players -- running back Sean Tucker (hamstring), wide receiver Jalen McMillan (knee), and offensive tackle Justin Skule (oblique) -- were listed as doubtful on",
+      "categories": [
+        "Articles",
+        "Featured",
+        "Bucs"
+      ],
+      "published_at": "2026-09-12T22:13:50+00:00",
+      "players": [
+        {
+          "id": "00-0038951",
+          "name": "Sean Tucker",
+          "team": "TB",
+          "position": "RB"
+        },
+        {
+          "id": "00-0039855",
+          "name": "Jalen McMillan",
+          "team": "TB",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "074c7aa234c246759a22",
       "headline": "3 Positive Bears Repercussions After D'Andre Swift's Re-Signing (And 2 Negatives)",
@@ -630,7 +690,7 @@
     },
     {
       "id": "a9d8d988dadb9970793e",
-      "headline": "Eli Stowers Headed To IR With Quad Injury; PR Britain Covey Elevated For Commanders",
+      "headline": "Eli Stowers Headed To IR With Quad Injury; Eagles Make Practice Squad Elevation",
       "url": "https://www.si.com/nfl/eagles/onsi/eli-stowers-headed-to-ir-with-quad-injury-pr-britain-covey-elevated-for-commanders-01m2bmfxe5jg",
       "source_id": "news_si_nfl",
       "source": "Sports Illustrated",
@@ -641,12 +701,6 @@
       "categories": [],
       "published_at": "2026-09-12T20:45:23+00:00",
       "players": [
-        {
-          "id": "00-0037132",
-          "name": "Britain Covey",
-          "team": "PHI",
-          "position": "WR"
-        },
         {
           "id": "00-0041483",
           "name": "Eli Stowers",
@@ -1322,35 +1376,6 @@
           "name": "Miller Moss",
           "team": "CHI",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "0a86c37cda506e84eb02",
-      "headline": "NY Giants complete 53-man roster by adding receiver/special teams depth",
-      "url": "https://www.bigblueview.com/new-york-giants-roster/170727/dalen-cambre-signing-practice-squad-darius-slayton-roster-spot",
-      "source_id": "news_sbn_nyg",
-      "source": "Big Blue View (SB Nation)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "The New York Giants are completing their 53-man roster by signing wide recever/special teamer Dalen Cambre to the active roster from their practice squad, a source confirms. The move was initially reported by Art Stapleton. The Giants had been carrying just 52 players after releasing wide receiver Darius Slayton earlier in the week. Cambre, a [\u2026]",
-      "categories": [
-        "New York Giants roster"
-      ],
-      "published_at": "2026-09-12T16:51:40+00:00",
-      "players": [
-        {
-          "id": "00-0035535",
-          "name": "Darius Slayton",
-          "team": "NYG",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040431",
-          "name": "Dalen Cambre",
-          "team": "NYG",
-          "position": "WR"
         }
       ]
     },
@@ -4030,29 +4055,6 @@
           "name": "Sam Darnold",
           "team": "SEA",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "298ced3edf2134760a58",
-      "headline": "Buccaneers at Bengals: Thursday Injury Report for Week 1",
-      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/68443/buccaneers-bengals-thursday-injury-report-nfl-week-1",
-      "source_id": "news_sbn_tb",
-      "source": "Bucs Nation (SB Nation)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "The Tampa Bay Buccaneers saw some encouraging movement on Thursday\u2019s injury report as they continued preparations for Sunday\u2019s season opener against the Cincinnati Bengals. Running back Sean Tucker returned to practice on a limited basis after sitting out Wednesday with a hamstring injury. Rookie outside linebacker Rueben Bain Jr. also improved, moving from limited participation [\u2026]",
-      "categories": [
-        "Tampa Bay Buccaneers Injuries"
-      ],
-      "published_at": "2026-09-10T23:57:59+00:00",
-      "players": [
-        {
-          "id": "00-0038951",
-          "name": "Sean Tucker",
-          "team": "TB",
-          "position": "RB"
         }
       ]
     }
