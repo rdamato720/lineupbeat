@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-12T14:11:47.612342+00:00",
+  "updated_at": "2026-09-12T17:09:32.375001+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,17 +12,17 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T14:09:04+00:00",
+      "latest_entry_at": "2026-09-12T16:56:33+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T12:30:23+00:00",
+      "latest_entry_at": "2026-09-12T14:45:35+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T14:00:00+00:00",
+      "latest_entry_at": "2026-09-12T17:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T12:42:11+00:00",
+      "latest_entry_at": "2026-09-12T14:29:14+00:00",
       "stale": false
     },
     {
@@ -70,7 +70,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:06:13+00:00",
+      "latest_entry_at": "2026-09-12T13:01:00+00:00",
       "stale": false
     },
     {
@@ -84,9 +84,9 @@
     {
       "source_id": "news_official_chi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-11T20:28:00+00:00",
+      "latest_entry_at": "2026-09-12T14:30:00+00:00",
       "stale": false
     },
     {
@@ -102,7 +102,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T13:00:30+00:00",
+      "latest_entry_at": "2026-09-12T16:35:11+00:00",
       "stale": false
     },
     {
@@ -118,15 +118,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-12T11:00:14+00:00",
+      "latest_entry_at": "2026-09-12T15:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_gb",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-12T13:30:00+00:00",
+      "latest_entry_at": "2026-09-12T16:09:28+00:00",
       "stale": false
     },
     {
@@ -134,7 +134,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T00:00:21+00:00",
+      "latest_entry_at": "2026-09-12T15:30:25+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-12T13:00:02+00:00",
+      "latest_entry_at": "2026-09-12T15:53:31+00:00",
       "stale": false
     },
     {
@@ -158,7 +158,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T17:57:30+00:00",
+      "latest_entry_at": "2026-09-12T15:45:37+00:00",
       "stale": false
     },
     {
@@ -180,9 +180,9 @@
     {
       "source_id": "news_official_lv",
       "ok": true,
-      "eligible": 2,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:42:00+00:00",
+      "latest_entry_at": "2026-09-12T16:31:47+00:00",
       "stale": false
     },
     {
@@ -190,7 +190,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T18:57:39+00:00",
+      "latest_entry_at": "2026-09-12T16:16:49+00:00",
       "stale": false
     },
     {
@@ -230,7 +230,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-11T20:50:00+00:00",
+      "latest_entry_at": "2026-09-12T21:00:00+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T20:19:00+00:00",
+      "latest_entry_at": "2026-09-12T16:00:00+00:00",
       "stale": false
     },
     {
@@ -278,23 +278,23 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:41:00+00:00",
+      "latest_entry_at": "2026-09-12T14:14:55+00:00",
       "stale": false
     },
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-12T14:09:04+00:00",
+      "latest_entry_at": "2026-09-12T16:56:33+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T14:00:00+00:00",
+      "latest_entry_at": "2026-09-12T17:00:00+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T13:22:57+00:00",
+      "latest_entry_at": "2026-09-12T15:17:46+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T00:00:00+00:00",
+      "latest_entry_at": "2026-09-12T14:42:41+00:00",
       "stale": false
     },
     {
@@ -334,15 +334,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T02:49:35+00:00",
+      "latest_entry_at": "2026-09-12T16:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T12:30:00+00:00",
+      "latest_entry_at": "2026-09-12T15:36:50+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T11:52:41+00:00",
+      "latest_entry_at": "2026-09-12T16:58:25+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T10:00:00+00:00",
+      "latest_entry_at": "2026-09-12T16:50:56+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T12:21:31+00:00",
+      "latest_entry_at": "2026-09-11T15:03:26+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:02:34+00:00",
+      "latest_entry_at": "2026-09-12T14:31:27+00:00",
       "stale": false
     },
     {
@@ -406,15 +406,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T13:24:17+00:00",
+      "latest_entry_at": "2026-09-12T16:15:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T23:25:00+00:00",
+      "latest_entry_at": "2026-09-12T17:08:00+00:00",
       "stale": false
     },
     {
@@ -428,25 +428,25 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-12T13:00:00+00:00",
+      "latest_entry_at": "2026-09-12T16:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T12:00:00+00:00",
+      "latest_entry_at": "2026-09-12T16:51:40+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T20:11:19+00:00",
+      "latest_entry_at": "2026-09-12T16:34:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T10:00:00+00:00",
+      "latest_entry_at": "2026-09-12T16:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T12:00:00+00:00",
+      "latest_entry_at": "2026-09-12T16:00:00+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T23:34:11+00:00",
+      "latest_entry_at": "2026-09-12T14:59:10+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T03:56:52+00:00",
+      "latest_entry_at": "2026-09-12T15:43:43+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-12T11:00:00+00:00",
+      "latest_entry_at": "2026-09-12T16:08:35+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T11:00:00+00:00",
+      "latest_entry_at": "2026-09-12T15:00:00+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T14:00:00+00:00",
+      "latest_entry_at": "2026-09-12T15:00:00+00:00",
       "stale": false
     },
     {
@@ -534,15 +534,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T12:02:00+00:00",
+      "latest_entry_at": "2026-09-12T16:50:58+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-12T13:00:00+00:00",
+      "latest_entry_at": "2026-09-12T15:11:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,381 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-11T20:38:39+00:00",
+      "latest_entry_at": "2026-09-12T14:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "0a86c37cda506e84eb02",
+      "headline": "NY Giants complete 53-man roster by adding receiver/special teams depth",
+      "url": "https://www.bigblueview.com/new-york-giants-roster/170727/dalen-cambre-signing-practice-squad-darius-slayton-roster-spot",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The New York Giants are completing their 53-man roster by signing wide recever/special teamer Dalen Cambre to the active roster from their practice squad, a source confirms. The move was initially reported by Art Stapleton. The Giants had been carrying just 52 players after releasing wide receiver Darius Slayton earlier in the week. Cambre, a [\u2026]",
+      "categories": [
+        "New York Giants roster"
+      ],
+      "published_at": "2026-09-12T16:51:40+00:00",
+      "players": [
+        {
+          "id": "00-0035535",
+          "name": "Darius Slayton",
+          "team": "NYG",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040431",
+          "name": "Dalen Cambre",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "6a23ff15777883147584",
+      "headline": "Ben Johnson, Ryan Poles Explain Bears' Decision to Sign D'Andre Swift to Contract Extension",
+      "url": "https://www.si.com/nfl/bears/onsi/ben-johnson-ryan-poles-explain-bears-decision-to-sign-d-andre-swift-to-contract-extension",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Chicago Bears general manager Ryan Poles and head coach Ben Johnson explained why the team decided to extend running back D'Andre Swift on Friday.",
+      "categories": [],
+      "published_at": "2026-09-12T16:49:20+00:00",
+      "players": [
+        {
+          "id": "00-0036275",
+          "name": "D'Andre Swift",
+          "team": "CHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "8befcea594553d6f57c5",
+      "headline": "Grading Packers\u2019 Contract Extension for Final Domino, Tucker Kraft",
+      "url": "https://www.si.com/nfl/packers/onsi/grading-packers-contract-extension-for-final-domino-tucker-kraft",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The Green Bay Packers got done what needed to get done with a contract extension for premier tight end Tucker Kraft.",
+      "categories": [],
+      "published_at": "2026-09-12T16:32:35+00:00",
+      "players": [
+        {
+          "id": "00-0038996",
+          "name": "Tucker Kraft",
+          "team": "GB",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "8465ab120ff9c44129b8",
+      "headline": "'I love this place': Michael Mayer's journey with the Raiders continues with contract extension",
+      "url": "https://www.raiders.com/news/i-love-this-place-michael-mayer-s-journey-with-the-raiders-continues-with-contract-extension",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Mayer signs the contract extension the day before his first game of a potential breakout fourth NFL season.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "Michael Mayer"
+      ],
+      "published_at": "2026-09-12T16:31:47+00:00",
+      "players": [
+        {
+          "id": "00-0039066",
+          "name": "Michael Mayer",
+          "team": "LV",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "6302fa42f7f0dca04da4",
+      "headline": "Packers sign TE Tucker Kraft to contract extension",
+      "url": "https://www.packers.com/news/packers-sign-te-tucker-kraft-to-contract-extension-sept-12-2026",
+      "source_id": "news_official_gb",
+      "source": "Green Bay Packers (official)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "General Manager Brian Gutekunst announced the transaction Saturday",
+      "categories": [
+        "News: Press Releases",
+        "News: National Feature",
+        "News: Transactions",
+        "Homepage CP",
+        "Tucker Kraft"
+      ],
+      "published_at": "2026-09-12T16:09:28+00:00",
+      "players": [
+        {
+          "id": "00-0038996",
+          "name": "Tucker Kraft",
+          "team": "GB",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "4d32defd0908ce86d259",
+      "headline": "Packers' Tucker Kraft Contract Highlights Cowboys' Massive Brevyn Spann-Ford Steal",
+      "url": "https://www.si.com/nfl/cowboys/onsi/packers-tucker-kraft-contract-highlights-dallas-cowboys-brevyn-spann-ford-steal",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys' sneaky move to lock up Brevyn Spann-Ford came at an incredible value, as highlighted by the Packers' extension of Tucker Kraft.",
+      "categories": [],
+      "published_at": "2026-09-12T16:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039530",
+          "name": "Brevyn Spann-Ford",
+          "team": "DAL",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "38c3800db092615c495a",
+      "headline": "Malik Davis injury opens the door for Emari Demercado",
+      "url": "https://www.bloggingtheboys.com/dallas-cowboys-roster/217618/malik-davis-injury-emari-demercado-klayton-adams",
+      "source_id": "news_sbn_dal",
+      "source": "Blogging The Boys (SB Nation)",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "Javonte Williams had a very good season for the Dallas Cowboys in 2025 under offensive coordinator Klayton Adams. His 1,201 rushing yards ranked ninth in the NFL. However, he did start to wear down a bit towards the end of the season. That was due to carrying the ball 252 times as the next closest [\u2026]",
+      "categories": [
+        "Dallas Cowboys Injuries",
+        "Dallas Cowboys Roster"
+      ],
+      "published_at": "2026-09-12T16:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0036997",
+          "name": "Javonte Williams",
+          "team": "DAL",
+          "position": "RB"
+        },
+        {
+          "id": "00-0037563",
+          "name": "Malik Davis",
+          "team": "DAL",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "ecd7fae38fbf02f92d27",
+      "headline": "Bengals News: Marvin Lewis Reveals his AFC North Favorite",
+      "url": "https://www.cincyjungle.com/cincinnati-bengals-news/198618/bengals-news-marvin-lewis-reveals-his-afc-north-favorite",
+      "source_id": "news_sbn_cin",
+      "source": "Cincy Jungle (SB Nation)",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "Bengals News Quick Hits | With DJ Turner II A Go, Here\u2019s Why Marvin Lewis Says Bengals Favored To Win His Old Stomping Grounds In AFC North As on Thursday, Turner went limited Friday. Everyone knows Joe Burrow, but do you remember these Bengals QBs? The first player the Bengals signed for their inaugural season [\u2026]",
+      "categories": [
+        "AFC North news",
+        "Cincinnati Bengals News",
+        "NFL"
+      ],
+      "published_at": "2026-09-12T15:36:50+00:00",
+      "players": [
+        {
+          "id": "00-0036442",
+          "name": "Joe Burrow",
+          "team": "CIN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "e5b0bd723c536ef0a02f",
+      "headline": "What Two Recent Contract Extensions Mean For Lions TE Sam LaPorta",
+      "url": "https://www.si.com/nfl/lions/onsi/what-two-recent-contract-extensions-mean-lions-sam-laporta",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "Analyzing what new contract extensions mean for Detroit Lions and Sam LaPorta.",
+      "categories": [],
+      "published_at": "2026-09-12T15:35:51+00:00",
+      "players": [
+        {
+          "id": "00-0039065",
+          "name": "Sam LaPorta",
+          "team": "DET",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "ed21f139eb70bb278bd7",
+      "headline": "Raiders news: Tight end gets paid",
+      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/139472/raiders-news-michael-mayer-contract-extension-tight-end",
+      "source_id": "news_sbn_lv",
+      "source": "Silver And Black Pride (SB Nation)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Michael Mayer will have one less thing to worry about as he begins the season as the Las Vegas Raiders starting tight end. His contract status is no longer a quesiton. Saturday morning, in a bit of a surprising move, the Raiders gave the prospective 2027 free agent a three-year contract extension worth a total [\u2026]",
+      "categories": [
+        "Las Vegas Raiders News",
+        "Las Vegas Raiders Salary Cap"
+      ],
+      "published_at": "2026-09-12T15:33:35+00:00",
+      "players": [
+        {
+          "id": "00-0039066",
+          "name": "Michael Mayer",
+          "team": "LV",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "b0e892551f60dd8feb82",
+      "headline": "Packers sign Tucker Kraft to 4-year contract extension on eve of season opener",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/86059/packers-sign-tucker-kraft-to-4-year-contract-extension-on-eve-of-season-opener",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The Green Bay Packers wanted a deal done. Tucker Kraft wanted a deal done. And so, just ahead of the start of the 2026 NFL regular season, a deal is indeed done, and it appears to be a great deal for both sides. Tucker Kraft is now under contract with the Packers through the 2030 [\u2026]",
+      "categories": [
+        "Green Bay Packers News",
+        "Green Bay Packers roster"
+      ],
+      "published_at": "2026-09-12T14:59:10+00:00",
+      "players": [
+        {
+          "id": "00-0038996",
+          "name": "Tucker Kraft",
+          "team": "GB",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "fd64f8ca7c7ed609261a",
+      "headline": "Tucker Kraft\u2019s contract extension quietly says something much bigger about the Packers\u2019 future",
+      "url": "https://atozsports.com/nfl/green-bay-packers-news/tucker-kraft-contract-extension-future/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The tight end\u2019s new deal reveals the Packers' championship window stretches well beyond 2026, and it\u2019s staying as a consistent competitor.",
+      "categories": [
+        "Green Bay Packers News",
+        "NFL",
+        "American Football",
+        "Contract Extension",
+        "Tucker Kraft"
+      ],
+      "published_at": "2026-09-12T14:52:32+00:00",
+      "players": [
+        {
+          "id": "00-0038996",
+          "name": "Tucker Kraft",
+          "team": "GB",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "bf146a3b3556b3307480",
+      "headline": "Raiders sign TE Michael Mayer to multi-year extension",
+      "url": "https://www.raiders.com/news/raiders-sign-te-michael-mayer-to-multi-year-extension-2026-nfl-transactions",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Mayer has totaled 83 receptions for 788 receiving yards (9.5 avg.) and three touchdowns over 38 games (32 starts) in his first three NFL seasons.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Transactions",
+        "News - Press Release",
+        "Michael Mayer"
+      ],
+      "published_at": "2026-09-12T14:52:00+00:00",
+      "players": [
+        {
+          "id": "00-0039066",
+          "name": "Michael Mayer",
+          "team": "LV",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "05af5c991ffaaa395617",
+      "headline": "JP\u2019s Pewter Punch: The Impact Of Baker Mayfield\u2019s Contract",
+      "url": "https://www.pewterreport.com/baker-mayfield-contract-impact-jp-pewterpunch/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "There is a new episode in JP's Pewter Punch video series on Pewter Report's YouTube channel, PewterReportTV. These short videos \u2013 typically seven to 12 minutes in length \u2013 give long-time Tampa Bay sports commentator JP Peterson the platform to deliver his own unique brand of analysis and expertise on any Bucs or NFL",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-09-12T14:45:35+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "8a79971207e084f4f2af",
+      "headline": "Roster Moves: Chicago Bears sign RB D'Andre Swift to three-year extension",
+      "url": "https://www.chicagobears.com/news/roster-moves-chicago-bears-sign-rb-d-andre-swift-to-three-year-extension",
+      "source_id": "news_official_chi",
+      "source": "Chicago Bears (official)",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "The Chicago Bears have announced that the club has signed running back D\u2019Andre Swift to a three-year extension through 2029.",
+      "categories": [
+        "Article - Roster Moves",
+        "D'Andre Swift"
+      ],
+      "published_at": "2026-09-12T14:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0036275",
+          "name": "D'Andre Swift",
+          "team": "CHI",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "3f8028a4adefe0a9b486",
       "headline": "Vikings Eve of Week 1 Mailbag: Run Game Worries, Jauan Jennings, Devon Achane Trade?",
@@ -588,6 +958,30 @@
       "feed_description": "The Seattle Seahawks have refrained from offering up specifics about Darnold\u2019s expected return, but we have enough information to map it out.",
       "categories": [],
       "published_at": "2026-09-12T13:00:03+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "72da991e43a66ea765ca",
+      "headline": "Seahawks News: Thoughts on the new Seahawks O after week one",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-news/174614/seahawks-news-thoughts-on-the-new-seahawks-o-after-week-one",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Happy Saturday! Hit that snooze button, if you are permitted. With that being said, let\u2019s dive into the links and discuss the Brian Fleury offense and your thoughts, at first blush. Knowing full well that Sam Darnold obviously did not play but four snaps, how were you feeling about the play-calling? Did you like the [\u2026]",
+      "categories": [
+        "Pre-Snap Reads",
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-09-12T13:00:00+00:00",
       "players": [
         {
           "id": "00-0034869",
@@ -3527,333 +3921,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "a6c9285f0eb7f09f47e8",
-      "headline": "Detroit Lions Sign WR Tom Kennedy, Add DB to Practice Squad",
-      "url": "https://www.si.com/nfl/lions/onsi/detroit-lions-sign-tom-kennedy-add-db-to-practice-squad",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Detroit Lions sign Tom Kennedy to active roster ahead of 2026 NFL season opener.",
-      "categories": [],
-      "published_at": "2026-09-10T21:07:22+00:00",
-      "players": [
-        {
-          "id": "00-0035544",
-          "name": "Tom Kennedy",
-          "team": "DET",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "08cf47eb457948a780a3",
-      "headline": "\u2018That\u2019s the beauty of football\u2019 \u2014 Andy Reid and Patrick Mahomes are embracing one of the KC Chiefs\u2019 biggest Week 1 challenges",
-      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-andy-reid-patrick-mahomes-week-1-josh-simmons-kahlil-benson-challenge/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs expect to be without starting left tackle Josh Simmons in Week 1. Both Andy Reid and Patrick Mahomes spoke about UDFA OT Kahlil Benson and why they believe he can fill in.",
-      "categories": [
-        "Kansas City Chiefs News",
-        "American Football",
-        "Andy Reid",
-        "Josh Simmons",
-        "Kahlil Benson",
-        "Kansas City Chiefs",
-        "Patrick Mahomes"
-      ],
-      "published_at": "2026-09-10T21:03:30+00:00",
-      "players": [
-        {
-          "id": "00-0033873",
-          "name": "Patrick Mahomes",
-          "team": "KC",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "ea4fba1ab4dd8de600b9",
-      "headline": "Chiefs-Broncos Week 1 Thursday injury report: Two starters miss practice",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-injuries/209839/chiefs-broncos-week-1-thursday-injury-report-two-starters-miss-practice",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Each practice day of the season, the Kansas City Chiefs release an official injury report leading up to the next game. In the NFL\u2019s Week 1, the Chiefs will host the Denver Broncos for \u201cMonday Night Football\u201d at Arrowhead Stadium. Here is the Chiefs\u2019 first official injury report of the week, courtesy of the team\u2019s official [\u2026]",
-      "categories": [
-        "Kansas City Chiefs Injuries",
-        "Kansas City Chiefs News"
-      ],
-      "published_at": "2026-09-10T21:00:00+00:00",
-      "players": []
-    },
-    {
-      "id": "1ce024c77f762fcab98f",
-      "headline": "Jaguars Thursday: Hunter Getting His Groove Back",
-      "url": "https://www.jaguars.com/news/jaguars-thursday-hunter-getting-his-groove-back",
-      "source_id": "news_official_jax",
-      "source": "Jacksonville Jaguars (official)",
-      "teams": [
-        "JAX"
-      ],
-      "feed_description": "Jaguars WR/CB Travis Hunter, who missed the last 10 games of his 2025 rookie season with a knee injury, as Sunday\u2019s 2026 regular-season opener against the Cleveland Browns approaches: \u201cI'm really happy to be able to go back out there and play football again\u2026\u201d",
-      "categories": [
-        "News - Front Page Headline",
-        "Front Page Headline",
-        "News - Jaguars News",
-        "Cleveland Browns at Jacksonville Jaguars (2026-REG-1)",
-        "Travis Hunter"
-      ],
-      "published_at": "2026-09-10T20:56:33+00:00",
-      "players": [
-        {
-          "id": "00-0040718",
-          "name": "Travis Hunter",
-          "team": "JAX",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "1bfec799c0a652ea2d08",
-      "headline": "Lan Larison, Mitch Wishnowsky revert to Patriots\u2019 practice squad following season opener",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/136957/lan-larison-mitch-wishnowsky-revert-patriots-practice-squad-nfl-week-1-seahawks",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Lan Larison and Mitch Wishnowsky reverted to the New England Patriots\u2019 practice squad on Thursday after having a hand in the 2026 season opener. The running back and punter served as standard elevations for what became a 13-10 loss to the Seattle Seahawks at Lumen Field. Larison, 24, made his NFL debut as part of [\u2026]",
-      "categories": [
-        "New England Patriots News",
-        "New England Patriots Roster"
-      ],
-      "published_at": "2026-09-10T20:55:08+00:00",
-      "players": [
-        {
-          "id": "00-0040568",
-          "name": "Lan Larison",
-          "team": "NE",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "e9862d4917d80130f201",
-      "headline": "Week 1 Injury Report | Broncos vs. Chiefs",
-      "url": "https://www.chiefs.com/news/week-1-injury-report-broncos-vs-chiefs-2026",
-      "source_id": "news_official_kc",
-      "source": "Kansas City Chiefs (official)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Injuries for the Chiefs Week 1 matchup against the Denver Broncos",
-      "categories": [
-        "Injury Report",
-        "all-content",
-        "Denver Broncos at Kansas City Chiefs (2026-REG-1)"
-      ],
-      "published_at": "2026-09-10T20:50:03+00:00",
-      "players": []
-    },
-    {
-      "id": "865485c916c88cc66d02",
-      "headline": "Bears' Thursday Injury Report Features Concerning New Addition",
-      "url": "https://www.si.com/nfl/bears/onsi/bears-thursday-injury-report-concerning-new-addition",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "An already shorthanded unit is at risk of losing an expected starter for the season opener.",
-      "categories": [],
-      "published_at": "2026-09-10T20:41:05+00:00",
-      "players": []
-    },
-    {
-      "id": "16725ec2ba805e603389",
-      "headline": "Cooper Rush takes first-team reps in wake of Tua Tagovailoa's oblique injury",
-      "url": "https://www.atlantafalcons.com/news/cooper-rush-takes-first-team-reps-in-wake-of-tua-tagovailoa-s-oblique-injury",
-      "source_id": "news_official_atl",
-      "source": "Atlanta Falcons (official)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "Tagovailoa was limited in Thursday's practice with an oblique injury.",
-      "categories": [
-        "News",
-        "Tua Tagovailoa",
-        "Cooper Rush",
-        "Michael Penix Jr."
-      ],
-      "published_at": "2026-09-10T20:32:07+00:00",
-      "players": [
-        {
-          "id": "00-0036212",
-          "name": "Tua Tagovailoa",
-          "team": "ATL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "e4c59f417b129299f268",
-      "headline": "Why Thursday's Injury Report Offers Week 1 Optimism for Jaguars' RB LeQuint Allen",
-      "url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-why-thursday-injury-report-offers-week-1-optimism-for-rb-lequint-allen",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "JAX"
-      ],
-      "feed_description": "The Jacksonville Jaguars' second-year running back is dealing with a hip injury, but he did take a step forward in Thursday's practice.",
-      "categories": [],
-      "published_at": "2026-09-10T20:29:37+00:00",
-      "players": []
-    },
-    {
-      "id": "fcac61518161f6d29df0",
-      "headline": "Bengals Injury Report: New Star Pops up With Thursday Injury Ahead of Buccaneers Game",
-      "url": "https://www.si.com/nfl/bengals/onsi/bengals-injury-report-new-star-pops-up-with-thursday-injury-ahead-of-buccaneers-game-01m25yxn19s3",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "Bengals Injury Report: New Star DJ Turner II Pops up With Thursday Injury Ahead of Buccaneers Game",
-      "categories": [],
-      "published_at": "2026-09-10T20:28:41+00:00",
-      "players": []
-    },
-    {
-      "id": "abed5aea8925982dfb62",
-      "headline": "Thursday\u2019s Saints vs. Lions injury report",
-      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-injuries/114418/thursdays-saints-vs-lions-injury-report",
-      "source_id": "news_sbn_no",
-      "source": "Canal Street Chronicles (SB Nation)",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "The New Orleans Saints have just wrapped up their second practice ahead of Sunday\u2019s regular-season opener on the road against the Detroit Lions. Fans got some encouraging news on yesterday as star running back Alvin Kamara returned to practice after missing the last few weeks with a knee injury. Unfortunately Cam Jordan, who is dealing [\u2026]",
-      "categories": [
-        "New Orleans Saints Game Information",
-        "New Orleans Saints Injuries",
-        "New Orleans Saints News"
-      ],
-      "published_at": "2026-09-10T20:27:44+00:00",
-      "players": [
-        {
-          "id": "00-0033906",
-          "name": "Alvin Kamara",
-          "team": "NO",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "ee2bb28ef8c6b3590651",
-      "headline": "Tua Tagovailoa Lands on Atlanta Falcons Injury Report after Thursday's Practice",
-      "url": "https://www.si.com/nfl/falcons/onsi/tua-tagovailoa-lands-on-atlanta-falcons-injury-report-after-thursday-practice",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "The Atlanta Falcons still don't have a definitive answer at quarterback with their season opener against the Pittsburgh Steelers just three days away.",
-      "categories": [],
-      "published_at": "2026-09-10T20:26:22+00:00",
-      "players": [
-        {
-          "id": "00-0036212",
-          "name": "Tua Tagovailoa",
-          "team": "ATL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "858e89db7a972dbe10d0",
-      "headline": "Buccaneers-Bengals Injury Report Sept.10: McMillan, Tucker Among Limited Participants",
-      "url": "https://www.buccaneers.com/news/buccaneers-bengals-injury-report-sept-10-week-1-2026",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "A look at Thursday's injury report ahead of the Week 1 matchup",
-      "categories": [
-        "Featured",
-        "Injury Report",
-        "Week 1 2026 Bengals"
-      ],
-      "published_at": "2026-09-10T20:23:43+00:00",
-      "players": []
-    },
-    {
-      "id": "08543b71ebc18c17764b",
-      "headline": "Saints Thursday Injury Report: 2026 Week 1 vs. Detroit Lions",
-      "url": "https://www.neworleanssaints.com/news/injury-report-detroit-lions-vs-new-orleans-saints-2026-nfl-week-1-thursday",
-      "source_id": "news_official_no",
-      "source": "New Orleans Saints (official)",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "5 Saints listed on Thursday's Saints Injury Report for Week 1 against the Lions",
-      "categories": [
-        "Saints Injury Report",
-        "Latest News",
-        "2026-reg-week1"
-      ],
-      "published_at": "2026-09-10T20:15:18+00:00",
-      "players": []
-    },
-    {
-      "id": "677a1cecb9f1a178c76b",
-      "headline": "Detroit Lions sign Tom Kennedy to 53-man roster, add new defensive back",
-      "url": "https://www.prideofdetroit.com/detroit-lions-news/172303/detroit-lions-sign-tom-kennedy-to-53-man-roster-add-new-defensive-back",
-      "source_id": "news_sbn_det",
-      "source": "Pride Of Detroit (SB Nation)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "The Detroit Lions finally filled the last spot on their 53-man roster, signing wide receiver Tom Kennedy from the practice squad to the active roster. To backfill Kennedy\u2019s spot on the practice squad, Detroit added defensive back Natrone Brooks. Kennedy\u2019s addition to the 53-man roster was expected, even if the delay was a bit odd. [\u2026]",
-      "categories": [
-        "Detroit Lions News",
-        "Detroit Lions Transactions"
-      ],
-      "published_at": "2026-09-10T20:07:24+00:00",
-      "players": [
-        {
-          "id": "00-0035544",
-          "name": "Tom Kennedy",
-          "team": "DET",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "894960b80f2e925bd5ae",
-      "headline": "Lions, Saints injury report: 3 limited on Thursday",
-      "url": "https://www.prideofdetroit.com/detroit-lions-injuries/172172/lions-saints-injury-report-3-limited-on-thursday",
-      "source_id": "news_sbn_det",
-      "source": "Pride Of Detroit (SB Nation)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "The Detroit Lions and New Orleans Saints were back on the practice field on Thursday as they prepare for their Sunday afternoon showdown at Ford Field in Detroit. The Lions last practiced on Tuesday and provided an estimated injury report on Wednesday, but Thursday will be a true reflection of where players stand with their [\u2026]",
-      "categories": [
-        "Detroit Lions Injuries",
-        "Detroit Lions News"
-      ],
-      "published_at": "2026-09-10T20:07:07+00:00",
-      "players": []
     }
   ]
 }
