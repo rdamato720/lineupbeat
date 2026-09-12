@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T23:32:15.685237+00:00",
+  "updated_at": "2026-09-12T01:34:19.668115+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T23:30:38+00:00",
+      "latest_entry_at": "2026-09-12T01:24:51+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T22:41:35+00:00",
+      "latest_entry_at": "2026-09-12T00:25:27+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T22:10:18+00:00",
+      "latest_entry_at": "2026-09-12T00:18:16+00:00",
       "stale": false
     },
     {
@@ -102,7 +102,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T17:43:45+00:00",
+      "latest_entry_at": "2026-09-11T23:38:01+00:00",
       "stale": false
     },
     {
@@ -134,7 +134,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T20:33:00+00:00",
+      "latest_entry_at": "2026-09-12T00:00:21+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:00:00+00:00",
+      "latest_entry_at": "2026-09-11T23:33:52+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 8,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-11T23:30:38+00:00",
+      "latest_entry_at": "2026-09-12T01:24:51+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T22:41:35+00:00",
+      "latest_entry_at": "2026-09-12T00:25:27+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T18:21:37+00:00",
+      "latest_entry_at": "2026-09-12T00:00:00+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T11:00:00+00:00",
+      "latest_entry_at": "2026-09-12T01:18:56+00:00",
       "stale": false
     },
     {
@@ -414,23 +414,23 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:45:00+00:00",
+      "latest_entry_at": "2026-09-11T23:25:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-11T17:38:51+00:00",
+      "latest_entry_at": "2026-09-12T00:33:46+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-11T20:26:36+00:00",
+      "latest_entry_at": "2026-09-11T22:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T22:00:00+00:00",
+      "latest_entry_at": "2026-09-12T00:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T20:06:35+00:00",
+      "latest_entry_at": "2026-09-11T23:34:11+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,44 @@
     }
   ],
   "items": [
+    {
+      "id": "6a579c8a0196a3d73b05",
+      "headline": "Dallas Cowboys' Malik Davis Headed For Surgery, IR After Serious Hip Injury",
+      "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-malik-davis-surgery-injured-reserve-serious-hip-injury",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "Dallas Cowboys running back Malik Davis is heading for surgery and injured reserve, after suffering a serious hip injury in practice on Friday.",
+      "categories": [],
+      "published_at": "2026-09-12T01:20:04+00:00",
+      "players": [
+        {
+          "id": "00-0037563",
+          "name": "Malik Davis",
+          "team": "DAL",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "548a3a0850c1c7d20c1f",
+      "headline": "Chargers-Cardinals injury report: Deane Leonard OUT, Tuli Tuipulotu questionable",
+      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/65402/chargers-cardinals-injury-report-deane-leonard-tuli-tuipulotu",
+      "source_id": "news_sbn_lac",
+      "source": "Bolts From The Blue (SB Nation)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "The Chargers dropped their final injury report of Week One and it\u2019s about as clean as you could ask for. Edge rusher Tuli Tuipulotu (hip) is listed as questionable after being a limited participant at practice for most of the week. He dealt with a lower-body injury to begin training camp and it looks like [\u2026]",
+      "categories": [
+        "Chargers Injury Reports",
+        "Los Angeles Chargers Injuries"
+      ],
+      "published_at": "2026-09-12T00:33:46+00:00",
+      "players": []
+    },
     {
       "id": "c36e2cc344e1f3441ab4",
       "headline": "What D'Andre Swift's Extension Means for the Next Bears Waiting in Line",
@@ -3785,55 +3823,6 @@
       ],
       "published_at": "2026-09-10T19:28:26+00:00",
       "players": []
-    },
-    {
-      "id": "10ce1af62cb58903c0d4",
-      "headline": "Las Vegas Raiders RB Ashton Jeanty finally speaks out after his ankle injury as he looks set to play Week 1 vs. the Miami Dolphins",
-      "url": "https://atozsports.com/nfl/las-vegas-raiders-news/running-back-ashton-jeanty-speaks-after-his-ankle-injury-play-week-1-vs-miami-dolphins/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "The Las Vegas Raiders have to be excited about their star running back Ashton Jeanty being available to play.",
-      "categories": [
-        "Las Vegas Raiders News",
-        "NFL",
-        "Ankle Injury",
-        "Ashton Jeanty",
-        "Miami Dolphins",
-        "Week 1"
-      ],
-      "published_at": "2026-09-10T19:27:08+00:00",
-      "players": [
-        {
-          "id": "00-0040122",
-          "name": "Ashton Jeanty",
-          "team": "LV",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "08cd82cbc36d52e2ecf5",
-      "headline": "Rome Odunze Injury Update From Thursday Practice Puts Bears WR on Track For Week 1",
-      "url": "https://www.si.com/nfl/bears/onsi/rome-odunze-injury-update-thursday-practice-bears-week-1",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears wide receiver Rome Odunze showed a clear sign of progress in his return to practice from a calf injury that has hampered him since last week.",
-      "categories": [],
-      "published_at": "2026-09-10T18:29:35+00:00",
-      "players": [
-        {
-          "id": "00-0039919",
-          "name": "Rome Odunze",
-          "team": "CHI",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
