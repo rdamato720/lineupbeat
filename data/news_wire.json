@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-12T01:34:19.668115+00:00",
+  "updated_at": "2026-09-12T06:31:19.240483+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T01:24:51+00:00",
+      "latest_entry_at": "2026-09-12T06:14:24+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T00:18:16+00:00",
+      "latest_entry_at": "2026-09-12T02:00:25+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-11T20:28:02+00:00",
+      "latest_entry_at": "2026-09-12T04:35:00+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-11T21:00:00+00:00",
+      "latest_entry_at": "2026-09-11T23:00:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T01:24:51+00:00",
+      "latest_entry_at": "2026-09-12T06:14:24+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T00:00:00+00:00",
+      "latest_entry_at": "2026-09-11T18:21:37+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T01:18:56+00:00",
+      "latest_entry_at": "2026-09-12T02:49:35+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T19:57:49+00:00",
+      "latest_entry_at": "2026-09-12T01:34:50+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T14:00:00+00:00",
+      "latest_entry_at": "2026-09-12T01:39:42+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-11T22:00:00+00:00",
+      "latest_entry_at": "2026-09-11T19:30:04+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-11T20:55:32+00:00",
+      "latest_entry_at": "2026-09-12T03:56:52+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "4a6afffa162a5593b548",
+      "headline": "Commanders News: All Key Starters Cleared, Managing Jayden Daniels, and LB Flexibility | Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/burgundy-roundup-injury-report-cleared-jayden-daniels-leo-chenal",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Today's Commanders digest: The final injury report is cleared for Week 1, managing Jayden Daniels' running risk, and Leo Chenal's flexible linebacker role.",
+      "categories": [],
+      "published_at": "2026-09-12T02:18:49+00:00",
+      "players": [
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "6a579c8a0196a3d73b05",
       "headline": "Dallas Cowboys' Malik Davis Headed For Surgery, IR After Serious Hip Injury",
@@ -3804,25 +3825,6 @@
           "position": "QB"
         }
       ]
-    },
-    {
-      "id": "a39a0805f0eecd91daf5",
-      "headline": "Week 1 Thursday Injury Report: Bobby Brown a full participant",
-      "url": "https://www.panthers.com/news/week-1-thursday-injury-report-bobby-brown-a-full-participant-home-opener-bears",
-      "source_id": "news_official_car",
-      "source": "Carolina Panthers (official)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Panthers were without outside linebacker Patrick Jones II again in practice as they prepare for the Bears, but they got veteran defensive tackle Bobby Brown back to full participation.",
-      "categories": [
-        "Injury Reports",
-        "Latest News",
-        "App News",
-        "Chicago Bears at Carolina Panthers (2026-REG-1)"
-      ],
-      "published_at": "2026-09-10T19:28:26+00:00",
-      "players": []
     }
   ]
 }
