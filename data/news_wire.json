@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-12T23:23:19.925713+00:00",
+  "updated_at": "2026-09-13T01:25:47.540148+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T23:07:39+00:00",
+      "latest_entry_at": "2026-09-13T01:22:51+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T23:22:57+00:00",
+      "latest_entry_at": "2026-09-13T01:17:30+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-12T23:07:39+00:00",
+      "latest_entry_at": "2026-09-13T01:22:51+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T23:22:57+00:00",
+      "latest_entry_at": "2026-09-13T01:17:30+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T18:20:53+00:00",
+      "latest_entry_at": "2026-09-13T00:00:00+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T11:00:00+00:00",
+      "latest_entry_at": "2026-09-13T00:30:37+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T12:31:24+00:00",
+      "latest_entry_at": "2026-09-12T16:58:25+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-12T15:46:29+00:00",
+      "latest_entry_at": "2026-09-13T00:56:56+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T14:00:00+00:00",
+      "latest_entry_at": "2026-09-12T23:38:56+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-12T22:00:00+00:00",
+      "latest_entry_at": "2026-09-12T23:30:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T20:06:30+00:00",
+      "latest_entry_at": "2026-09-12T23:30:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T21:00:00+00:00",
+      "latest_entry_at": "2026-09-13T00:00:00+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T20:39:14+00:00",
+      "latest_entry_at": "2026-09-12T23:49:21+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-12T22:00:00+00:00",
+      "latest_entry_at": "2026-09-13T01:00:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T18:55:08+00:00",
+      "latest_entry_at": "2026-09-13T00:00:28+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,85 @@
     }
   ],
   "items": [
+    {
+      "id": "03f18b734b083a09ad16",
+      "headline": "Trent Williams' Praise for Brock Purdy Before Week 1 Vindicated After Win",
+      "url": "https://www.si.com/nfl/49ers/onsi/trent-williams-praise-brock-purdy-before-week-1-vindicated-after-win",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Brock Purdy showed once again why he's one of the best players on the San Francisco 49ers roster. Trent Williams' comments pre-Week 1 are now vindicated.",
+      "categories": [],
+      "published_at": "2026-09-13T01:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0037834",
+          "name": "Brock Purdy",
+          "team": "SF",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "9b7cd3621bbfe603c0fa",
+      "headline": "Jaguars' Elevation of Nick Mullens Offers Some QB2 Intrigue Before Week 1",
+      "url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-elevation-of-nick-mullens-offers-some-qb2-intrigue-before-week-1",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "JAX"
+      ],
+      "feed_description": "Who will be the Jacksonville Jaguars' No. 2 quarterback in Week 1 against the Cleveland Browns?",
+      "categories": [],
+      "published_at": "2026-09-13T00:17:41+00:00",
+      "players": [
+        {
+          "id": "00-0033319",
+          "name": "Nick Mullens",
+          "team": "JAX",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "5630bd241921ae8afa9c",
+      "headline": "4 Tight Ends Eagles Need to Look At Following Eli Stowers Injury",
+      "url": "https://www.si.com/nfl/eagles/onsi/4-tight-ends-eagles-need-to-look-at-following-eli-stowers-injury-01m2btaf44bw",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Eagles are short at tight end, following Stowers' injury, a position they are already thin at.",
+      "categories": [],
+      "published_at": "2026-09-13T00:08:26+00:00",
+      "players": [
+        {
+          "id": "00-0041483",
+          "name": "Eli Stowers",
+          "team": "PHI",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "cf3806e6c2ed5a3f4474",
+      "headline": "Denver Broncos vs. Kansas City Chiefs practice report: Saturday",
+      "url": "https://www.milehighreport.com/denver-broncos-injuries/184680/denver-broncos-vs-kansas-city-chiefs-practice-report-saturday",
+      "source_id": "news_sbn_den",
+      "source": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Denver Broncos and Kansas City Chiefs have released their final injury update before their Monday Night Football showdown in Week 1. The big news is that defensive lineman Chris Jones did not practice on Saturday, but is not listed with any status so he is good to go for this game. Here is your [\u2026]",
+      "categories": [
+        "Denver Broncos Injuries"
+      ],
+      "published_at": "2026-09-12T23:38:56+00:00",
+      "players": []
+    },
     {
       "id": "0a86c37cda506e84eb02",
       "headline": "NY Giants complete 53-man roster by adding receiver/special teams depth",
@@ -3965,96 +4044,6 @@
           "name": "Brevyn Spann-Ford",
           "team": "DAL",
           "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "302d75e3438feb0ce09a",
-      "headline": "Bills' Week 1 Updated Injury Report: Defensive Starter Downgraded, RB Still Out",
-      "url": "https://www.si.com/nfl/bills/onsi/injury-report-bills-week-1-update-defensive-starter-downgraded-rb-still-out",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "The Buffalo Bills will likely be without two key pieces when they visit the Houston Texans for Sunday's season opener on CBS.",
-      "categories": [],
-      "published_at": "2026-09-11T01:02:18+00:00",
-      "players": []
-    },
-    {
-      "id": "09a7b2daa02a15ab28f9",
-      "headline": "Broncos Notebook: In return to field, RB J.K. Dobbins eager to contribute 'whatever it takes to win the game' vs. Chiefs",
-      "url": "https://www.denverbroncos.com/news/broncos-notebook-in-return-to-field-rb-j-k-dobbins-eager-to-contribute-whatever-it-takes-to-win-the-game-vs-chiefs",
-      "source_id": "news_official_den",
-      "source": "Denver Broncos (official)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "\u201cI think it\u2019s going to be a great night for us,\" Dobbins said. \"\u2026 It\u2019ll be a great way to start a season.\"",
-      "categories": [
-        "Top Stories",
-        "Aric DiLalla",
-        "Broncos Notebook",
-        "Denver Broncos at Kansas City Chiefs (2026-REG-1)",
-        "J.K. Dobbins"
-      ],
-      "published_at": "2026-09-11T00:28:20+00:00",
-      "players": [
-        {
-          "id": "00-0036158",
-          "name": "J.K. Dobbins",
-          "team": "DEN",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "57b902be479cbfd670c6",
-      "headline": "Cowboys agree to 3-year extension worth $18M with TE Brevyn Spann-Ford",
-      "url": "https://www.bloggingtheboys.com/dallas-cowboys-roster/217399/brevyn-spann-ford-extension",
-      "source_id": "news_sbn_dal",
-      "source": "Blogging The Boys (SB Nation)",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys are not done with extensions just yet. Thursday evening brought with it news that tight end Brevyn Spann-Ford is the latest player to be locked up by the franchise for the foreseeable future. His agent reported that BSF and the Cowboys agreed to a 3-year extension. ESPN\u2019s Todd Archer followed that up [\u2026]",
-      "categories": [
-        "Dallas Cowboys Roster"
-      ],
-      "published_at": "2026-09-11T00:22:52+00:00",
-      "players": [
-        {
-          "id": "00-0039530",
-          "name": "Brevyn Spann-Ford",
-          "team": "DAL",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "c560ceb23b2cb59bedc3",
-      "headline": "The Latest On Sam Darnold, & Other Takeaways From HC Mike Macdonald's Thursday Press Conference",
-      "url": "https://www.seahawks.com/news/the-latest-on-sam-darnold-other-takeaways-from-hc-mike-macdonald-s-thursday-press-conference",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Head coach Mike Macdonald met with the media on Thursday after Wednesday\u2019s 13-10 win over the Patriots.",
-      "categories": [
-        "News: Stories",
-        "News: National Feature",
-        "Homepage Hero",
-        "New England Patriots at Seattle Seahawks (2026-REG-1)"
-      ],
-      "published_at": "2026-09-11T00:13:35+00:00",
-      "players": [
-        {
-          "id": "00-0034869",
-          "name": "Sam Darnold",
-          "team": "SEA",
-          "position": "QB"
         }
       ]
     }
