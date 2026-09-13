@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-13T01:25:47.540148+00:00",
+  "updated_at": "2026-09-13T06:46:39.678432+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-13T01:22:51+00:00",
+      "latest_entry_at": "2026-09-13T06:33:54+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-13T01:17:30+00:00",
+      "latest_entry_at": "2026-09-13T05:15:01+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T20:33:32+00:00",
+      "latest_entry_at": "2026-09-13T01:14:56+00:00",
       "stale": false
     },
     {
@@ -94,7 +94,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-12T19:59:08+00:00",
+      "latest_entry_at": "2026-09-13T04:00:19+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-12T15:53:31+00:00",
+      "latest_entry_at": "2026-09-13T12:00:00+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-12T20:00:00+00:00",
+      "latest_entry_at": "2026-09-13T04:01:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-13T01:22:51+00:00",
+      "latest_entry_at": "2026-09-13T06:33:54+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-13T01:17:30+00:00",
+      "latest_entry_at": "2026-09-13T05:15:01+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-12T16:58:25+00:00",
+      "latest_entry_at": "2026-09-13T02:14:24+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T14:31:27+00:00",
+      "latest_entry_at": "2026-09-13T02:17:25+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-11T14:00:00+00:00",
+      "latest_entry_at": "2026-09-13T02:29:57+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-13T00:00:00+00:00",
+      "latest_entry_at": "2026-09-13T03:51:46+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T21:11:22+00:00",
+      "latest_entry_at": "2026-09-13T03:34:35+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-12T23:49:21+00:00",
+      "latest_entry_at": "2026-09-13T06:00:00+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-13T01:00:00+00:00",
+      "latest_entry_at": "2026-09-13T02:32:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "a72e06b193e82245b6f9",
+      "headline": "4 Players Eagles Could Promote From Practice Squad To Replace Eli Stowers",
+      "url": "https://www.si.com/nfl/eagles/onsi/4-players-eagles-could-promote-from-practice-squad-to-replace-eli-stowers-01m2c3q2gkvr",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "These Eagles could get a promotion from the practice squad in the coming days.",
+      "categories": [],
+      "published_at": "2026-09-13T02:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0041483",
+          "name": "Eli Stowers",
+          "team": "PHI",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "03f18b734b083a09ad16",
       "headline": "Trent Williams' Praise for Brock Purdy Before Week 1 Vindicated After Win",
@@ -4022,27 +4043,6 @@
           "id": "00-0041483",
           "name": "Eli Stowers",
           "team": "PHI",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "10f85e4f095e317d31ea",
-      "headline": "Dallas Cowboys Secure Future at Tight End With Brevyn Spann-Ford Contract Extension",
-      "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-secure-future-at-tight-end-with-brevyn-spann-ford-contract-extension",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys are locking down their future with Brevyn Spann-Ford.",
-      "categories": [],
-      "published_at": "2026-09-11T01:08:00+00:00",
-      "players": [
-        {
-          "id": "00-0039530",
-          "name": "Brevyn Spann-Ford",
-          "team": "DAL",
           "position": "TE"
         }
       ]
