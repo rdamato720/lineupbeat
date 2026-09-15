@@ -4,7 +4,7 @@ import re
 from html.parser import HTMLParser
 from pathlib import Path
 
-SEASON_NOTE = '<section class="v15method" id="methodology"><h2>About these projections</h2><p>These are full-season estimates, last updated August 30, 2026. For this week’s matchups and injury status, see <a href="/nfl/week-1/projections/">Week 1 projections</a>.</p></section>'
+SEASON_NOTE = '<section class="v15method" id="methodology"><h2>About these projections</h2><p>These are full-season estimates, last updated August 30, 2026. For this week’s matchups and injury status, see <a href="/nfl/week-2/projections/">Week 2 projections</a>.</p></section>'
 # Exact historical template copy only; never rewrite news or numerical data.
 REPLACEMENTS = {
     'Trusted current set: 424 projected players; 81 evidence holds': '424 players · Season projection coverage',
@@ -21,9 +21,9 @@ REPLACEMENTS = {
     'NFL and College fantasy projections, comparisons, decision boundaries, rankings, and accountable recommendations.': 'NFL and College fantasy rankings, projections, and player comparisons.',
     'Methodology &amp; accountability': 'About LineupBeat',
     'How Lineup Beat makes and preserves decisions': 'How LineupBeat works',
-    'No additional validated decision context is available; the projection panel above remains the current Lineup Beat view.': 'See the season projection above and visit the Week 1 boards for weekly matchups.',
+    'No additional validated decision context is available; the projection panel above remains the current Lineup Beat view.': 'See the season projection above and visit the Week 2 boards for weekly matchups.',
     'Team Decision Board · validated player profiles and projection context': 'Team Decision Board · player profiles and fantasy projections',
-    'The historical database needed for this page is not included in this offline development release.': 'This tool is currently unavailable. Explore the Week 1 rankings and projections for current matchups.',
+    'The historical database needed for this page is not included in this offline development release.': 'This tool is currently unavailable. Explore the Week 2 rankings and projections for current matchups.',
     '<p class="eyebrow">Development preview</p>': '<p class="eyebrow">Fantasy tools</p>',
     'View the validated 2026 season projections': 'View the 2026 season projections',
 }

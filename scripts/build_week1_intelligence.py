@@ -326,9 +326,9 @@ def projected_component(row: dict, key: str) -> float:
     return float(row.get(mapping[key]) or 0.0)
 
 
-def validate_schedule(schedule: list[dict]) -> tuple[list[dict], dict[str, dict]]:
+def validate_schedule(schedule: list[dict], week: int = 1) -> tuple[list[dict], dict[str, dict]]:
     slate = [row for row in schedule if row.get("season") == "2026"
-             and row.get("week") == "1" and row.get("game_type") == "REG"]
+             and row.get("week") == str(week) and row.get("game_type") == "REG"]
     clubs = [team(row[side]) for row in slate for side in ("away_team", "home_team")]
     if len(slate) != 16 or len(clubs) != 32 or len(set(clubs)) != 32:
         raise ValueError(f"invalid 2026 Week 1 schedule: {len(slate)} games/{len(set(clubs))} teams")
@@ -519,35 +519,38 @@ def backtest(player24: list[dict], player25: list[dict], schedule: list[dict]) -
 
 
 def build(market_path: Path | None = None,
-          injury_path: Path | None = None) -> tuple[dict, dict, dict, dict]:
+          injury_path: Path | None = None, *, week: int = 1,
+          independent: bool = False) -> tuple[dict, dict, dict, dict]:
     manifest = json.loads((CACHE / "capture_manifest.json").read_text())
     schedule = rows("games.csv.gz")
-    slate, slate_by_team = validate_schedule(schedule)
+    slate, slate_by_team = validate_schedule(schedule, week)
     market_path = market_path or Path(
         os.environ.get("LINEUPBEAT_NFL_MARKET_CONSENSUS", DEFAULT_MARKET_INPUT)
     )
-    market_payload = load_market_input(market_path)
+    market_payload = (None if independent else load_market_input(market_path))
     injury_path = injury_path or Path(
         os.environ.get("LINEUPBEAT_ESPN_INJURIES", DEFAULT_INJURY_INPUT)
     )
     injury_payload = load_injury_input(injury_path)
     injuries = injury_index(injury_payload)
-    market_by_team, props_by_name, event_teams = market_indexes(
-        market_payload, slate_by_team
-    )
-    implied_median = statistics.median(
-        float(row["team_implied_total"]) for row in market_by_team.values()
-        if row.get("team_implied_total") is not None
-    )
+    if independent:
+        market_payload = {"fetched_at": injury_payload["fetched_at"], "prop_event_count": 0, "props": []}
+        market_by_team = {club: {"team_implied_total": 1.0, "book_count": 0} for club in slate_by_team}
+        props_by_name, event_teams, implied_median = {}, {}, 1.0
+    else:
+        market_by_team, props_by_name, event_teams = market_indexes(market_payload, slate_by_team)
+        implied_median = statistics.median(float(r["team_implied_total"]) for r in market_by_team.values())
     p24, p25 = rows("stats_player_week_2024.csv.gz"), rows("stats_player_week_2025.csv.gz")
     t24, t25 = rows("stats_team_week_2024.csv.gz"), rows("stats_team_week_2025.csv.gz")
     roster_rows, depth_rows = rows("roster_2026.csv.gz"), rows("depth_charts_2026.csv.gz")
     snap24, snap25 = rows("snap_counts_2024.csv.gz"), rows("snap_counts_2025.csv.gz")
-    pbp25 = rows("play_by_play_2025.csv.gz")
-    # The 2024 PBP asset is captured and licensed for the backtest audit; the
-    # current matchup artifact intentionally uses only the labeled 2025 prior.
-    matchup = defense_context(p25, pbp25, schedule)
-    backtest_result = backtest(p24, p25, schedule)
+    if independent:
+        matchup = json.loads((OUTPUT / "nfl_matchup_context_2025.json").read_text())["teams"]
+        backtest_result = json.loads((OUTPUT / "nfl_backtest_2025.json").read_text())
+    else:
+        pbp25 = rows("play_by_play_2025.csv.gz")
+        matchup = defense_context(p25, pbp25, schedule)
+        backtest_result = backtest(p24, p25, schedule)
 
     base = current_week1_base(roster_rows)
     history = player_history(p24 + p25)
@@ -574,6 +577,13 @@ def build(market_path: Path | None = None,
         for key in STAT_KEYS:
             team_prior_totals[team(row["team"])][key] += projected_component(row, key)
 
+    recent = [r for r in rows("stats_player_week_2026.csv.gz")
+              if r.get("season_type") == "REG" and int(r["week"]) < week] if week > 1 else []
+    recent_by_id = {r["player_id"]: r for r in recent}
+    recent_totals = defaultdict(lambda: defaultdict(float))
+    for r in recent:
+        for key in ("attempts", "carries", "targets"):
+            recent_totals[team(r["team"])][key] += num(r, key)
     players = []
     excluded = []
     for player in base["players"]:
@@ -608,6 +618,15 @@ def build(market_path: Path | None = None,
             team_total = sum(num(r, key) for r in t25 if team(r.get("team")) == club and r.get("season_type") == "REG")
             hist_share = hist_total / team_total if team_total and len(current_team_history) >= 4 else None
             share = blended_player_share(hist_share, season_share)
+            observed = recent_by_id.get(pid)
+            if observed and team(observed["team"]) == club and recent_totals[club][key] > 0:
+                share = .8 * share + .2 * num(observed, key) / recent_totals[club][key]
+            if week > 1 and pos == "QB" and key == "attempts" and depth_rank in (1, 2, 3):
+                # Current depth owns the starting role; a demoted starter's old season share cannot dominate.
+                share = {1: .95, 2: .045, 3: .005}[depth_rank]
+                stat[key] = max(0.0, base_volume * share)
+                shares[key] = share
+                continue
             shares[key] = share
             stat[key] = max(0.0, base_volume * share * role_factor)
 
@@ -631,7 +650,10 @@ def build(market_path: Path | None = None,
             team_total = sum(num(r, td_key) for r in t25 if team(r.get("team")) == club and r.get("season_type") == "REG")
             hist_share = hist_total / team_total if team_total and len(current_team_history) >= 4 else None
             share = blended_player_share(hist_share, prior_share)
-            stat[td_key] = max(0.0, team_volume * share * role_factor)
+            if week > 1 and td_key == "passing_tds" and pos == "QB" and depth_rank in (1, 2, 3):
+                stat[td_key] = max(0.0, team_volume * shares["attempts"])
+            else:
+                stat[td_key] = max(0.0, team_volume * share * role_factor)
         opportunities = stat["attempts"] + stat["carries"] + stat["targets"]
         historical = hist25 + hist24
         hist_opp = sum(num(r, "attempts") + num(r, "carries") + num(r, "targets") for r in historical)
@@ -774,7 +796,7 @@ def build(market_path: Path | None = None,
                               for player in players)
     unavailable_player_count = sum(player["availability"]["projection_adjusted"]
                                    for player in players)
-    payload = {"schema_version": "lineupbeat-nfl-week1-v1.2", "mode": "weekly", "season": 2026, "week": 1,
+    payload = {"schema_version": "lineupbeat-nfl-week1-v1.2", "mode": "weekly", "season": 2026, "week": week,
                "updated_at": market_payload["fetched_at"], "players": players, "excluded_players": excluded,
                "population": {
                    **base["population"],
@@ -856,6 +878,21 @@ def build(market_path: Path | None = None,
     finalize(payload, budgets, historical_role_priors(p24, p25))
     provenance["reviewed_availability_reports"] = payload.get("reviewed_availability_reports", [])
     provenance["availability_coverage"]["confirmed_unavailable_players"] = sum(p["availability"]["projection_adjusted"] for p in payload["players"])
+    if independent:
+        payload["schema_version"] = f"lineupbeat-nfl-week{week}-v1.0"
+        payload["sources"]["model"] = {"label": f"LineupBeat Week {week} model", "updated_at": injury_payload["fetched_at"]}
+        payload["sources"]["market"] = {"label": "Not included in this release", "updated_at": None}
+        payload["methodology"]["summary"] = "Current roster and depth chart, historical team volume, reviewed player roles and efficiencies, and bounded prior-season opponent context. Matched Week 1 opportunity shares receive 20% weight; prior role shares retain 80%. Missing stat lines do not imply zero usage. Current QB depth allocates 95%/4.5%/0.5% of passing opportunities across the first three depth positions before normalization; these are explicit modeling assumptions, not fitted accuracy claims. No sportsbook inputs in this release."
+        payload["methodology"]["market_policy"] = "No current qualified TheRundown snapshot available; no prior-week market inputs reused."
+        payload["limitations"]["sportsbook_evidence"] = "Not included in this release"
+        for p in payload["players"]:
+            p["market"] = {"state": "unavailable", "quality": "UNAVAILABLE", "player_components": [], "updated_at": None}
+            p["data_coverage"]["betting_market"] = False
+        provenance["provider_requests"] = {"model_api": 0, "paid_api": 0, "cost_usd": 0}
+        provenance["market_coverage"] = {"games": 0, "teams": 0}
+        provenance["unavailable"] = {"markets": "Not included; no current qualified TheRundown capture"}
+        # Correct text inherited from the opening-week model without changing Week 1 artifacts.
+        payload = json.loads(json.dumps(payload).replace("Week 1 projection", f"Week {week} projection").replace("set Week 1 to zero", f"set Week {week} to zero"))
     return payload, matchup_payload, backtest_result, provenance
 
 

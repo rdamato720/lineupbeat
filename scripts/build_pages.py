@@ -4037,6 +4037,9 @@ def main():
             ("/decision-room/nfl/", "daily", "0.9"),
             ("/nfl/week-1/rankings/", "daily", "0.9"),
             ("/nfl/week-1/projections/", "daily", "0.9"),
+            ("/nfl/week-1/results/", "weekly", "0.8"),
+            ("/nfl/week-2/rankings/", "daily", "0.9"),
+            ("/nfl/week-2/projections/", "daily", "0.9"),
             ("/decision-room/college/", "daily", "0.9"),
             (f"/{args.sport}/rankings/", "daily", "0.9"),
             (f"/{args.sport}/rankings/qb/", "daily", "0.8"),
@@ -4254,7 +4257,7 @@ def main():
         protected = {"team", "data", "projections", "draft-value",
                      "durability", "coaching", "strength-of-schedule",
                      "offensive-line-rb-performance", "rankings",
-                     "who-should-i-draft", "week-1", "wire"}
+                     "who-should-i-draft", "week-1", "week-2", "wire"}
         for d in (SITE / args.sport).glob("*"):
             if not d.is_dir() or d.name in protected:
                 continue

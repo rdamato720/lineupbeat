@@ -110,7 +110,10 @@ class DailyFantasyRefreshTests(unittest.TestCase):
         self.assertEqual(workflow.count("gh workflow run refresh.yml"), 1)
         self.assertIn("-f skip_fetch=true", workflow)
         self.assertIn('if: steps.publish.outputs.changed == \'true\'', workflow)
-        self.assertIn("python scripts/espn_injury_inputs.py", workflow)
+        self.assertIn("python scripts/capture_nfl_week2.py", workflow)
+        self.assertIn("python scripts/build_nfl_week2.py", workflow)
+        self.assertNotIn("THE_ODDS_API_KEY", workflow)
+        self.assertNotIn("git add data/week1/", workflow)
 
 
 if __name__ == "__main__":

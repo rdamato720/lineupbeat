@@ -58,9 +58,10 @@ def identity_index(players: list[dict]) -> dict[tuple[str, str, str], dict]:
 
 def load_weekly(season: int = 2026, week: int = 1) -> dict:
     """Load the immutable Lineup Beat-owned weekly projection artifact."""
-    if (season, week) != (2026, 1):
+    if season != 2026 or week not in (1, 2):
         raise ValueError("only the validated 2026 Week 1 artifact is available")
-    payload = json.loads(WEEK1.read_text())
+    source = WEEK1 if week == 1 else ROOT / "data/nfl_weekly/2026/week-2/v1.0/projections.json"
+    payload = json.loads(source.read_text())
     if (payload.get("mode"), payload.get("season"), payload.get("week")) != ("weekly", season, week):
         raise ValueError("unexpected NFL weekly projection identity")
     population = payload.get("population", {})
@@ -77,7 +78,7 @@ def load_weekly(season: int = 2026, week: int = 1) -> dict:
         + population.get("identity_resolved_not_ranked", 0)
     ):
         raise ValueError("NFL resolved projection-source population does not reconcile")
-    return {**payload, "recommendation_state": WEEKLY_RECOMMENDATION_STATE}
+    return {**payload, "recommendation_state": {**WEEKLY_RECOMMENDATION_STATE, "reason": WEEKLY_RECOMMENDATION_STATE["reason"].replace("Week 1", f"Week {week}")}}
 
 
 def slug(text: str) -> str:

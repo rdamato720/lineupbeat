@@ -382,8 +382,8 @@ SPORT_ROUTES = {
 NAV_GROUPS = (
     ("nfl", "NFL", (
         ("decision", "Compare Players", "/decision-room/nfl/"),
-        ("week1_rankings", "Week 1 Rankings", "/nfl/week-1/rankings/"),
-        ("week1_projections", "Week 1 Projections", "/nfl/week-1/projections/"),
+        ("week2_rankings", "Week 2 Rankings", "/nfl/week-2/rankings/"),
+        ("week2_projections", "Week 2 Projections", "/nfl/week-2/projections/"),
         ("rankings", "Season Rankings", "/nfl/rankings/"),
         ("projections", "Season Projections", "/nfl/projections/"),
         ("wire", "The Wire", "/nfl/wire/"),
@@ -899,7 +899,7 @@ def site_footer():
 def _group_is_current(group, active, sport):
     if group == "fantasy":
         return active in {"my_team", "league_history"}
-    return group == sport and active in {"decision", "rankings", "projections", "week1_rankings", "week1_projections", "data"}
+    return group == sport and active in {"decision", "rankings", "projections", "week1_rankings", "week1_projections", "week2_rankings", "week2_projections", "data"}
 
 
 def _group_links(group, items, active, sport, mobile=False):

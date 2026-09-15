@@ -36,7 +36,8 @@ class SportExperienceTests(unittest.TestCase):
         self.assertIn('href="/nfl/data/" aria-current="page">More NFL Tools</a>', nfl_views)
         self.assertIn('href="/my-league/">My League</a>', nfl_views)
         self.assertIn("Search NFL players", nfl)
-        self.assertIn("Week 1 Rankings", nfl_views)
+        self.assertIn('href="/nfl/week-2/rankings/">Week 2 Rankings</a>', nfl_views)
+        self.assertIn('href="/nfl/week-2/projections/">Week 2 Projections</a>', nfl_views)
         self.assertIn('data-nav-group="college" data-current="true"', college_views)
         self.assertIn("More NFL Tools", college_views)
         self.assertIn("My League", college_views)
@@ -56,10 +57,10 @@ class SportExperienceTests(unittest.TestCase):
         header = college.split("</header>", 1)[0]
         self.assertNotIn('id="site-player-list"', header)
 
-    def test_week1_boards_have_distinct_current_navigation(self):
+    def test_week2_boards_have_distinct_current_navigation(self):
         for kind in ("rankings", "projections"):
-            header = seo.site_nav("week1_" + kind, "nfl")
-            expected = f'href="/nfl/week-1/{kind}/" aria-current="page">Week 1 {kind.title()}</a>'
+            header = seo.site_nav("week2_" + kind, "nfl")
+            expected = f'href="/nfl/week-2/{kind}/" aria-current="page">Week 2 {kind.title()}</a>'
             self.assertEqual(header.count(expected), 2)
             self.assertNotIn(f'href="/nfl/{kind}/" aria-current="page"', header)
             self.assertIn('data-nav-group="nfl" data-current="true"', header)

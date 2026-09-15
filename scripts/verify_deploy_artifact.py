@@ -677,28 +677,48 @@ def check_homepage(root, decision_room=False, public_only=False):
               "Reporters / team" not in text)
 
 
-def check_week1_boards(root):
+def check_weekly_boards(root):
+    from decision_data import load_weekly
     reference_path = root / "decision-room/nfl/index.html"
     reference_text = reference_path.read_text() if reference_path.is_file() else ""
     match = re.search(r'<script id="dr-data" type="application/json">(.*?)</script>', reference_text, re.S)
     reference = json.loads(match.group(1)) if match else {}
-    expected = {p["id"]: p["formats"] for p in reference.get("players", [])}
+    current = load_weekly(week=2)
+    expected = {p["id"]: p["formats"] for p in current["players"]}
+    check("NFL Decision Room matches the current Week 2 source",
+          reference.get("week") == 2
+          and reference.get("updated_at") == current["updated_at"]
+          and {p["id"]: p["formats"] for p in reference.get("players", [])} == expected)
     sitemap = (root / "sitemap.xml").read_text()
-    for kind in ("rankings", "projections"):
-        route = f"/nfl/week-1/{kind}/"
-        page = root / route.lstrip("/") / "index.html"
-        text = page.read_text() if page.is_file() else ""
-        match = re.search(r'<script id="week1-data" type="application/json">(.*?)</script>', text, re.S)
-        payload = json.loads(match.group(1)) if match else {}
-        found = {p["id"]: p["formats"] for p in payload.get("players", [])}
-        check(f"Week 1 {kind} survives final pruning and matches Decision Room",
-              bool(expected) and found == expected
-              and payload.get("updated_at") == reference.get("updated_at"))
-        check(f"Week 1 {kind} is in the sitemap", route in sitemap)
-        check(f"Week 1 {kind} has distinct weekly and season navigation",
-              f'href="{route}" aria-current="page">Week 1 {kind.title()}</a>' in text
-              and 'href="/nfl/rankings/">Season Rankings</a>' in text
-              and 'href="/nfl/projections/">Season Projections</a>' in text)
+    for week in (1, 2):
+        source = load_weekly(week=week)
+        expected = {p["id"]: p["formats"] for p in source["players"]}
+        for kind in ("rankings", "projections"):
+            route = f"/nfl/week-{week}/{kind}/"
+            page = root / route.lstrip("/") / "index.html"
+            text = page.read_text() if page.is_file() else ""
+            match = re.search(r'<script id="week1-data" type="application/json">(.*?)</script>', text, re.S)
+            payload = json.loads(match.group(1)) if match else {}
+            found = {p["id"]: p["formats"] for p in payload.get("players", [])}
+            check(f"Week {week} {kind} survives final pruning and matches its source",
+                  bool(expected) and found == expected
+                  and payload.get("updated_at") == source["updated_at"])
+            check(f"Week {week} {kind} is in the sitemap", route in sitemap)
+            check(f"Week {week} {kind} has distinct weekly and season navigation",
+                  f'href="{route}" aria-current="page">Week {week} {kind.title()}</a>' in text
+                  and 'href="/nfl/rankings/">Season Rankings</a>' in text
+                  and 'href="/nfl/projections/">Season Projections</a>' in text)
+            check(f"Week {week} {kind} has the correct table and results link",
+                  ('>Pass Yds</th>' in text) == (kind == "projections")
+                  and 'href="/nfl/week-1/results/"' in text)
+    from nfl_results_page import load as load_results
+    route = "/nfl/week-1/results/"
+    page = root / route.lstrip("/") / "index.html"
+    text = page.read_text() if page.is_file() else ""
+    match = re.search(r'<script id="results-data" type="application/json">(.*?)</script>', text, re.S)
+    found = json.loads(match.group(1)) if match else {}
+    check("Week 1 results survives final pruning and matches the graded archive",
+          found == load_results() and route in sitemap)
 
 
 def main() -> int:
@@ -732,7 +752,7 @@ def main() -> int:
 
     check_homepage(root, decision_room=decision_room, public_only=public_only)
     if decision_room:
-        check_week1_boards(root)
+        check_weekly_boards(root)
     check_player_page_impacts(root)
     check_ranking_formats(root)
     check_comparison_tool(root)
