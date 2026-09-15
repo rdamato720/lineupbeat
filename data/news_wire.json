@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T06:10:11.279683+00:00",
+  "updated_at": "2026-09-15T11:43:39.588570+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T05:23:30+00:00",
+      "latest_entry_at": "2026-09-15T11:43:31+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T06:00:31+00:00",
+      "latest_entry_at": "2026-09-15T11:43:17+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-14T23:36:19+00:00",
+      "latest_entry_at": "2026-09-15T09:00:00+00:00",
       "stale": false
     },
     {
@@ -68,9 +68,9 @@
     {
       "source_id": "news_official_buf",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-14T19:59:21+00:00",
+      "latest_entry_at": "2026-09-15T10:00:00+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-15T00:08:34+00:00",
+      "latest_entry_at": "2026-09-15T06:35:21+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-14T23:05:44+00:00",
+      "latest_entry_at": "2026-09-15T11:00:28+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-14T20:50:41+00:00",
+      "latest_entry_at": "2026-09-15T10:05:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-15T05:23:30+00:00",
+      "latest_entry_at": "2026-09-15T11:43:31+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T06:00:31+00:00",
+      "latest_entry_at": "2026-09-15T11:43:17+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-14T23:46:02+00:00",
+      "latest_entry_at": "2026-09-15T11:00:00+00:00",
       "stale": false
     },
     {
@@ -332,17 +332,17 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-14T14:00:00+00:00",
+      "latest_entry_at": "2026-09-13T23:56:52+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T01:16:28+00:00",
+      "latest_entry_at": "2026-09-14T19:03:01+00:00",
       "stale": false
     },
     {
@@ -358,15 +358,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T02:12:35+00:00",
+      "latest_entry_at": "2026-09-15T11:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_hou",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-15T03:27:24+00:00",
+      "latest_entry_at": "2026-09-13T20:32:20+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-15T04:00:00+00:00",
+      "latest_entry_at": "2026-09-14T20:27:01+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-15T05:00:00+00:00",
+      "latest_entry_at": "2026-09-15T00:03:40+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-14T23:00:00+00:00",
+      "latest_entry_at": "2026-09-14T21:49:01+00:00",
       "stale": false
     },
     {
@@ -452,17 +452,17 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-15T04:01:00+00:00",
+      "latest_entry_at": "2026-09-14T01:44:47+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-15T00:00:00+00:00",
+      "latest_entry_at": "2026-09-14T13:30:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-14T21:13:59+00:00",
+      "latest_entry_at": "2026-09-15T10:25:00+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-14T17:57:24+00:00",
+      "latest_entry_at": "2026-09-15T07:19:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-14T21:35:46+00:00",
+      "latest_entry_at": "2026-09-15T08:56:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,155 @@
     }
   ],
   "items": [
+    {
+      "id": "8607b7a395cd2d189c65",
+      "headline": "Dylan Sampson Injury Update Casts Dark Cloud Over Browns Running Back Room",
+      "url": "https://www.si.com/nfl/browns/onsi/dylan-sampson-injury-update-casts-dark-cloud-over-browns-running-back-room-01m2gz93kwn2",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "Quinshon Judkins couldn't get going and the rest of the Cleveland Browns' offense fell flat in a 34-10 road loss to the Jacksonville Jaguars. With Dylan Sampson out with injury, the Browns are going to need Judkins and Raheim Sanders to step up.",
+      "categories": [],
+      "published_at": "2026-09-15T11:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0040162",
+          "name": "Dylan Sampson",
+          "team": "CLE",
+          "position": "RB"
+        },
+        {
+          "id": "00-0040466",
+          "name": "Raheim Sanders",
+          "team": "CLE",
+          "position": "RB"
+        },
+        {
+          "id": "00-0040784",
+          "name": "Quinshon Judkins",
+          "team": "CLE",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "dc5941bb2056c9bb7452",
+      "headline": "Kyle Williams among Patriots ready to step up after A.J. Brown injury",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/137222/kyle-williams-ready-to-step-up-aj-brown-injury",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots are set to be without star wide receiver A.J. Brown for at least the next month after he landed on injured reserve with a high-ankle sprain. It\u2019s a significant loss for the Patriots\u2019 passing attack, but one that will not force the team to overhaul its offensive approach. Instead, New England [\u2026]",
+      "categories": [
+        "New England Patriots First Read",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-09-15T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040131",
+          "name": "Kyle Williams",
+          "team": "NE",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "e7d808e804587e230a3b",
+      "headline": "Bills' Week 2 Injury Report: Three Starters Added on Short Week With Lions Looming",
+      "url": "https://www.si.com/nfl/bills/onsi/injury-report-week-2-bills-three-starters-added-short-week-lions-looming",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills have six players listed on their first Week 2 injury report with another game on Thursday.",
+      "categories": [],
+      "published_at": "2026-09-15T10:22:30+00:00",
+      "players": []
+    },
+    {
+      "id": "71a7d0457ce7eb390832",
+      "headline": "Why the Vikings Could Be Forced to Grind Out Wins If Carson Wentz Remains Under Center",
+      "url": "https://www.si.com/nfl/vikings/onsi/why-vikings-could-be-forced-grind-out-wins-carson-wentz-remains-under-center-01m2gxv0dhjk",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "The Vikings may need plenty of patience if Carson Wentz remains their starting QB with Kyler Murray still in concussion protocol.",
+      "categories": [],
+      "published_at": "2026-09-15T10:00:01+00:00",
+      "players": [
+        {
+          "id": "00-0032950",
+          "name": "Carson Wentz",
+          "team": "MIN",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035228",
+          "name": "Kyler Murray",
+          "team": "MIN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "61e7f280d88efefdd7bf",
+      "headline": "New Patriots DT DaQuan Jones \u2018still has some good snaps ahead of him\u2019",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/137192/daquan-jones-signed-explained-mike-vrabel",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "A.J. Brown\u2019s high-ankle sprain and subsequent trip to injured reserve created an open spot on the New England Patriots\u2019 53-man roster. They could have opted for another wide receiver to fill it, but instead chose to bring in a veteran defensive lineman: DaQuan Jones was signed to a one-year contract over the weekend. Jones has [\u2026]",
+      "categories": [
+        "New England Patriots First Read",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-09-15T09:58:03+00:00",
+      "players": [
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "7bdddef3faf19f8dd014",
+      "headline": "No Raven Was Asked To Do More On Offense Than TE Durham Smythe Week 1",
+      "url": "https://www.si.com/nfl/ravens/onsi/no-raven-was-asked-to-do-more-on-offense-than-te-durham-smythe-week-1-01m2h62gqwsf",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The snap counts always tell a story in an NFL game. And of all the things the Ravens did with player deployment, it\u2019s how rookie offensive coordinator Declan Do",
+      "categories": [],
+      "published_at": "2026-09-15T09:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0034798",
+          "name": "Durham Smythe",
+          "team": "BAL",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "dd4ad5a79d4db72c933d",
       "headline": "Patrick Mahomes Critical of Performance in Return From ACL Tear: 'I've Got to Be Better'",
@@ -1314,8 +1463,8 @@
         "Zay Flowers",
         "Ja'Kobi Lane",
         "inline-news",
-        "Homepage Centerpiece",
-        "Clifton Brown"
+        "Clifton Brown",
+        "Homepage Latest Headlines"
       ],
       "published_at": "2026-09-14T19:54:32+00:00",
       "players": [
@@ -4025,142 +4174,6 @@
           "id": "00-0040429",
           "name": "Josh Williams",
           "team": "TB",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "5e3a496f63352d7c1b9a",
-      "headline": "Joe Giles-Harris, Tanner Hudson Elevated | BENGALS ROSTER UPDATE",
-      "url": "https://www.bengals.com/news/joe-giles-harris-tanner-hudson-elevated-week-1-2026",
-      "source_id": "news_official_cin",
-      "source": "Cincinnati Bengals (official)",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "The Bengals today elevated LB Joe Giles-Harris and TE Tanner Hudson from the practice squad to the active roster for tomorrow\u2019s game against Tampa Bay.",
-      "categories": [
-        "latest news",
-        "Press Release",
-        "Transactions",
-        "roster moves",
-        "2026",
-        "Joe Giles-Harris",
-        "Tanner Hudson",
-        "Tampa Bay Buccaneers at Cincinnati Bengals (2026-REG-1)"
-      ],
-      "published_at": "2026-09-12T19:59:08+00:00",
-      "players": [
-        {
-          "id": "00-0034613",
-          "name": "Tanner Hudson",
-          "team": "CIN",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "09e1e13f8d47c6d22b41",
-      "headline": "Bills elevate WR Greg Dortch and RB Frank Gore Jr. for Week 1 at Texans",
-      "url": "https://www.buffalobills.com/news/bills-elevate-wr-greg-dortch-and-rb-frank-gore-jr-for-week-1-at-texans",
-      "source_id": "news_official_buf",
-      "source": "Buffalo Bills (official)",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "Two offensive players elevated from Bills practice squad Week 1",
-      "categories": [
-        "TRANSACTIONS"
-      ],
-      "published_at": "2026-09-12T19:59:00+00:00",
-      "players": [
-        {
-          "id": "00-0039471",
-          "name": "Frank Gore Jr.",
-          "team": "BUF",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "79b3778c40bde9c90875",
-      "headline": "Kansas City Chiefs\u2019 final injury report for Week 1 tilt vs. Denver Broncos rules out 2 injured players for Monday night",
-      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-final-injury-report-week-1-broncos-josh-simmons-chamarri-conner-chris-jones/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs have released their final injury report for Week 1 vs. the Denver Broncos, ruling out two players for the game.",
-      "categories": [
-        "Kansas City Chiefs News",
-        "Ashton Gillotte",
-        "Chamarri Conner",
-        "Chiefs Injuries",
-        "Chris Jones",
-        "Denver Broncos",
-        "Josh Simmons",
-        "Kansas City Chiefs"
-      ],
-      "published_at": "2026-09-12T19:36:43+00:00",
-      "players": []
-    },
-    {
-      "id": "6af30f48798078518ee9",
-      "headline": "Chiefs-Broncos Week 1 final injury report: Chris Jones has clear status",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-injuries/210004/chiefs-broncos-week-1-final-injury-report-chris-jones-clear-status",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Each practice day of the season, the Kansas City Chiefs release an official injury report leading up to the next game. In the NFL\u2019s Week 1, the Chiefs will host the Denver Broncos for \u201cMonday Night Football\u201d at Arrowhead Stadium. Here is the Chiefs\u2019 final official injury report of the week, courtesy of the team\u2019s official [\u2026]",
-      "categories": [
-        "Kansas City Chiefs Injuries",
-        "Kansas City Chiefs News"
-      ],
-      "published_at": "2026-09-12T19:15:00+00:00",
-      "players": []
-    },
-    {
-      "id": "e9862d4917d80130f201",
-      "headline": "Week 1 Injury Report | Broncos vs. Chiefs",
-      "url": "https://www.chiefs.com/news/week-1-injury-report-broncos-vs-chiefs-2026",
-      "source_id": "news_official_kc",
-      "source": "Kansas City Chiefs (official)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Injuries for the Chiefs Week 1 matchup against the Denver Broncos",
-      "categories": [
-        "Injury Report",
-        "all-content",
-        "Denver Broncos at Kansas City Chiefs (2026-REG-1)"
-      ],
-      "published_at": "2026-09-12T19:14:00+00:00",
-      "players": []
-    },
-    {
-      "id": "3e6cc70c5eeaba513cd0",
-      "headline": "Dallas Cowboys forced to make a roster move involving preseason darling following teammate\u2019s season-ending injury news",
-      "url": "https://atozsports.com/nfl/dallas-cowboys-news/week-1-malik-davis-israel-abanikanda-roster-moves/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys are giving this preseason standout a chance to shine following the unfortunate season-ending injury of RB Malik Davis ahead of Week 1 versus the New York Giants.",
-      "categories": [
-        "Dallas Cowboys News",
-        "Dallas Cowboys",
-        "Practice Squad Elevation"
-      ],
-      "published_at": "2026-09-12T19:08:33+00:00",
-      "players": [
-        {
-          "id": "00-0037563",
-          "name": "Malik Davis",
-          "team": "DAL",
           "position": "RB"
         }
       ]
