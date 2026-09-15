@@ -60,7 +60,7 @@ def load_weekly(season: int = 2026, week: int = 1) -> dict:
     """Load the immutable Lineup Beat-owned weekly projection artifact."""
     if season != 2026 or week not in (1, 2):
         raise ValueError("only the validated 2026 Week 1 artifact is available")
-    source = WEEK1 if week == 1 else ROOT / "data/nfl_weekly/2026/week-2/v1.0/projections.json"
+    source = WEEK1 if week == 1 else ROOT / "data/nfl_weekly/2026/week-2/v2.0/projections.json"
     payload = json.loads(source.read_text())
     if (payload.get("mode"), payload.get("season"), payload.get("week")) != ("weekly", season, week):
         raise ValueError("unexpected NFL weekly projection identity")
@@ -78,7 +78,19 @@ def load_weekly(season: int = 2026, week: int = 1) -> dict:
         + population.get("identity_resolved_not_ranked", 0)
     ):
         raise ValueError("NFL resolved projection-source population does not reconcile")
-    return {**payload, "recommendation_state": {**WEEKLY_RECOMMENDATION_STATE, "reason": WEEKLY_RECOMMENDATION_STATE["reason"].replace("Week 1", f"Week {week}")}}
+    if week == 2:
+        import nfl_weekly_rankings
+        rank_path = source.with_name('rankings.json')
+        rank_data = json.loads(rank_path.read_text())
+        nfl_weekly_rankings.validate(payload, rank_data, hashlib.sha256(source.read_bytes()).hexdigest())
+        provenance = json.loads(source.with_name('provenance.json').read_text())
+        if provenance['ranking_sha256'] != hashlib.sha256(rank_path.read_bytes()).hexdigest():
+            raise ValueError('Incomplete weekly ranking release')
+        payload['rankings'] = rank_data
+    state = {**WEEKLY_RECOMMENDATION_STATE, "reason": WEEKLY_RECOMMENDATION_STATE["reason"].replace("Week 1", f"Week {week}")}
+    if week == 2:
+        state['reason'] = 'Compare the current forecast and supporting context. The historical component-model test does not validate this tool’s lineup recommendation thresholds.'
+    return {**payload, "recommendation_state": state}
 
 
 def slug(text: str) -> str:

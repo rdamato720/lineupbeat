@@ -322,7 +322,10 @@ def render(payload: dict) -> str:
 <script id="dr-data" type="application/json">{data}</script>
 <script>{comparison_v2_javascript((first['winner'] or first['player_a'])['id'], (first['runner_up'] or first['player_b'])['id'], updated)}</script>
 {END}'''
-    return block.replace(data, "__NFL_PAYLOAD__").replace("Week 1", f"Week {payload.get("week", 1)}").replace("/nfl/week-1/", f"/nfl/week-{payload.get("week", 1)}/").replace("__NFL_PAYLOAD__", data)
+    result = block.replace(data, "__NFL_PAYLOAD__").replace("Week 1", f"Week {payload.get('week', 1)}").replace("/nfl/week-1/", f"/nfl/week-{payload.get('week', 1)}/")
+    if payload.get('week') == 2:
+        result = result.replace('Matchup: 2025 context', 'Matchup: current schedule; no defensive adjustment')
+    return result.replace("__NFL_PAYLOAD__", data)
 
 
 def _legacy_javascript(default_a: str, default_b: str, updated: str) -> str:

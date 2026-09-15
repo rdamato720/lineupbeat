@@ -1,0 +1,1308 @@
+{
+  "availability_limitation": "Historical evaluation uses prior-week active roster status and final matched stat lines. It does not reconstruct every pregame injury report. Missing actual rows remain ungraded.",
+  "baseline": "Mean scoring-format points over up to eight prior recorded appearances.",
+  "depth_limitation": "2024 depth uses the preceding weekly snapshot; 2025 uses the latest timestamp strictly before the first kickoff of that week.",
+  "evaluation_note": "Parameters retained after the first holdout review; replay repeated after correcting fumble counts to use reconciled opportunities. No parameter was chosen from 2025 results.",
+  "future_game_rows_used": 0,
+  "holdout": {
+    "formats": {
+      "half_ppr": {
+        "overall": {
+          "baseline": {
+            "bias_actual_minus_projected": -1.0025,
+            "mae": 5.9427,
+            "n": 1816,
+            "rmse": 7.5201
+          },
+          "model": {
+            "bias_actual_minus_projected": -0.1357,
+            "mae": 5.6046,
+            "n": 1816,
+            "rmse": 7.2066
+          }
+        },
+        "positions": {
+          "QB": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.1754,
+              "mae": 6.9304,
+              "n": 403,
+              "rmse": 8.627
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.1069,
+              "mae": 6.2699,
+              "n": 403,
+              "rmse": 8.0112
+            }
+          },
+          "RB": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.0654,
+              "mae": 6.3011,
+              "n": 488,
+              "rmse": 7.968
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.722,
+              "mae": 6.0832,
+              "n": 488,
+              "rmse": 7.7234
+            }
+          },
+          "TE": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.3137,
+              "mae": 4.5337,
+              "n": 452,
+              "rmse": 5.8687
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.3707,
+              "mae": 4.3188,
+              "n": 452,
+              "rmse": 5.7258
+            }
+          },
+          "WR": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.4486,
+              "mae": 6.0779,
+              "n": 473,
+              "rmse": 7.4362
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.2215,
+              "mae": 5.7728,
+              "n": 473,
+              "rmse": 7.2001
+            }
+          }
+        }
+      },
+      "non_ppr": {
+        "overall": {
+          "baseline": {
+            "bias_actual_minus_projected": -0.8899,
+            "mae": 5.5746,
+            "n": 1816,
+            "rmse": 7.1075
+          },
+          "model": {
+            "bias_actual_minus_projected": -0.0863,
+            "mae": 5.2383,
+            "n": 1816,
+            "rmse": 6.7969
+          }
+        },
+        "positions": {
+          "QB": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.1687,
+              "mae": 6.9173,
+              "n": 403,
+              "rmse": 8.6143
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.1086,
+              "mae": 6.2676,
+              "n": 403,
+              "rmse": 8.0036
+            }
+          },
+          "RB": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.9886,
+              "mae": 6.1371,
+              "n": 488,
+              "rmse": 7.7563
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.6603,
+              "mae": 5.8991,
+              "n": 488,
+              "rmse": 7.5262
+            }
+          },
+          "TE": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.1893,
+              "mae": 3.9572,
+              "n": 452,
+              "rmse": 5.1596
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.3919,
+              "mae": 3.7387,
+              "n": 452,
+              "rmse": 5.0109
+            }
+          },
+          "WR": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.22,
+              "mae": 5.3957,
+              "n": 473,
+              "rmse": 6.5741
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.1171,
+              "mae": 5.1126,
+              "n": 473,
+              "rmse": 6.3526
+            }
+          }
+        }
+      },
+      "ppr": {
+        "overall": {
+          "baseline": {
+            "bias_actual_minus_projected": -1.1151,
+            "mae": 6.3643,
+            "n": 1816,
+            "rmse": 8.0233
+          },
+          "model": {
+            "bias_actual_minus_projected": -0.1852,
+            "mae": 6.0274,
+            "n": 1816,
+            "rmse": 7.7039
+          }
+        },
+        "positions": {
+          "QB": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.182,
+              "mae": 6.9436,
+              "n": 403,
+              "rmse": 8.6417
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.1052,
+              "mae": 6.2737,
+              "n": 403,
+              "rmse": 8.0202
+            }
+          },
+          "RB": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.1422,
+              "mae": 6.5419,
+              "n": 488,
+              "rmse": 8.2787
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.7837,
+              "mae": 6.3362,
+              "n": 488,
+              "rmse": 8.0117
+            }
+          },
+          "TE": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.4381,
+              "mae": 5.1661,
+              "n": 452,
+              "rmse": 6.6625
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.3494,
+              "mae": 4.9592,
+              "n": 452,
+              "rmse": 6.5212
+            }
+          },
+          "WR": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.6772,
+              "mae": 6.8327,
+              "n": 473,
+              "rmse": 8.39
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.3259,
+              "mae": 6.5199,
+              "n": 473,
+              "rmse": 8.1365
+            }
+          }
+        }
+      }
+    },
+    "matched": 1816,
+    "population": 2040,
+    "ungraded": 224
+  },
+  "holdout_season": 2025,
+  "holdout_weeks": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "model_sha256": "789f75256c3f00d0aa61780af7b1ba6dc9a5be208c48599021a8061bf4774a2f",
+  "population": "Top 30 per position by strictly prior last-eight-appearance Half-PPR baseline; same players for all candidate comparisons and scoring formats.",
+  "production_component_engine_reproduced": true,
+  "provider_calls": {
+    "cost_usd": 0,
+    "model_api": 0,
+    "paid_api": 0
+  },
+  "ranking_holdout": {
+    "half_ppr": {
+      "projection_order_accuracy": 0.6124196090123089,
+      "ranking_order_accuracy": 0.6151028578729929,
+      "unequal_actual_pairs": 23479
+    },
+    "non_ppr": {
+      "projection_order_accuracy": 0.606466473298072,
+      "ranking_order_accuracy": 0.6096229312404027,
+      "unequal_actual_pairs": 23444
+    },
+    "ppr": {
+      "projection_order_accuracy": 0.6167873881550916,
+      "ranking_order_accuracy": 0.6177673625905411,
+      "unequal_actual_pairs": 23470
+    }
+  },
+  "ranking_training_trials": [
+    {
+      "accuracy": 0.6248640137417693,
+      "correct_pairs": 43653,
+      "history_weight": 0,
+      "total_pairs": 69860,
+      "weight": 0
+    },
+    {
+      "accuracy": 0.62625250501002,
+      "correct_pairs": 43750,
+      "history_weight": 0.15,
+      "total_pairs": 69860,
+      "weight": 0
+    },
+    {
+      "accuracy": 0.6259662181505868,
+      "correct_pairs": 43730,
+      "history_weight": 0.3,
+      "total_pairs": 69860,
+      "weight": 0
+    },
+    {
+      "accuracy": 0.6221371314056685,
+      "correct_pairs": 43462.5,
+      "history_weight": 0.5,
+      "total_pairs": 69860,
+      "weight": 0
+    },
+    {
+      "accuracy": 0.6248353850558259,
+      "correct_pairs": 43651,
+      "history_weight": 0,
+      "total_pairs": 69860,
+      "weight": 0.5
+    },
+    {
+      "accuracy": 0.6264099627827082,
+      "correct_pairs": 43761,
+      "history_weight": 0.15,
+      "total_pairs": 69860,
+      "weight": 0.5
+    },
+    {
+      "accuracy": 0.6260234755224735,
+      "correct_pairs": 43734,
+      "history_weight": 0.3,
+      "total_pairs": 69860,
+      "weight": 0.5
+    },
+    {
+      "accuracy": 0.6221586029201259,
+      "correct_pairs": 43464,
+      "history_weight": 0.5,
+      "total_pairs": 69860,
+      "weight": 0.5
+    },
+    {
+      "accuracy": 0.6246922416261094,
+      "correct_pairs": 43641,
+      "history_weight": 0,
+      "total_pairs": 69860,
+      "weight": 1
+    },
+    {
+      "accuracy": 0.6265674205553965,
+      "correct_pairs": 43772,
+      "history_weight": 0.15,
+      "total_pairs": 69860,
+      "weight": 1
+    },
+    {
+      "accuracy": 0.6259232751216719,
+      "correct_pairs": 43727,
+      "history_weight": 0.3,
+      "total_pairs": 69860,
+      "weight": 1
+    },
+    {
+      "accuracy": 0.621986830804466,
+      "correct_pairs": 43452,
+      "history_weight": 0.5,
+      "total_pairs": 69860,
+      "weight": 1
+    }
+  ],
+  "ranking_validation_note": "Ranking weights selected separately from projection parameters using only 2024 pairwise outcomes; 2025 used for reporting, never for weight selection.",
+  "sources": [
+    {
+      "file": "depth_charts_2023.csv.gz",
+      "sha256": "1d1378573164271d5f9f34880065f48b23d7969c3b15ee117824064f6df005a5"
+    },
+    {
+      "file": "depth_charts_2024.csv.gz",
+      "sha256": "fd915fd5a0f85a195eada8d2d2e2ce68aa1902d11d22b8c0918cf16ae5a59ef0"
+    },
+    {
+      "file": "depth_charts_2025.csv.gz",
+      "sha256": "5cbc4d088a05c1c7b047ebdd2bacb480c97aac5849d46fc631fa041d09dd8ef7"
+    },
+    {
+      "file": "games.csv.gz",
+      "sha256": "fa7f023c1737f6c9d6d3579e1b83780ebd18866db57ac7e539889bc8d394cd65"
+    },
+    {
+      "file": "play_by_play_2023.csv.gz",
+      "sha256": "4649804ee0f0a40b41e51ec75a1ce921949d7fab5459213488656b92f78560e8"
+    },
+    {
+      "file": "play_by_play_2024.csv.gz",
+      "sha256": "23370d5d10f8104d80d46a1fc5e61f4f6f5a3263fe96fe2dd629913cfcb08c06"
+    },
+    {
+      "file": "play_by_play_2025.csv.gz",
+      "sha256": "2f135887790a013fd004e609e37096bb4816d5cc80b9f19122e1bad478961978"
+    },
+    {
+      "file": "roster_weekly_2023.csv.gz",
+      "sha256": "b03687940ad713ff8834de3ff38902a9dc93397d92d96fbe4e63a7b03d6fe121"
+    },
+    {
+      "file": "roster_weekly_2024.csv.gz",
+      "sha256": "330b9e00241091958d1667e6df02f57d4a7049530865aacbb7859b4db114cd72"
+    },
+    {
+      "file": "roster_weekly_2025.csv.gz",
+      "sha256": "f3fbe6bb1b56a0f51c4b6d5793f8bc3b46da2d54c070572144b8771912eeaaec"
+    },
+    {
+      "file": "snap_counts_2023.csv.gz",
+      "sha256": "63a648820b2eda6807f8a8ae4f95d2703bbb5e3e92ed418b402df8aa1a114901"
+    },
+    {
+      "file": "snap_counts_2024.csv.gz",
+      "sha256": "fe1d819db55d6e333057a8efcec52e8506ef111c7961b0e0411310393bb912bb"
+    },
+    {
+      "file": "snap_counts_2025.csv.gz",
+      "sha256": "700bef40cc5db8917b49e2eca93d7091dbd4a3cd740b2fd4dfa1795f7b9187db"
+    },
+    {
+      "file": "stats_player_week_2023.csv.gz",
+      "sha256": "6c2258cf5d90cb918dfca093b20dba2e062b1eca54f5d2d348f15a0045d86113"
+    },
+    {
+      "file": "stats_player_week_2024.csv.gz",
+      "sha256": "61fc9a44706522218a4448001706e3fec65ebbb97c1d9c5746ceef364989125d"
+    },
+    {
+      "file": "stats_player_week_2025.csv.gz",
+      "sha256": "c7401e321bdb369443f3280b9acd74ba6e16d82e710383bf1c01acabfebeac0b"
+    },
+    {
+      "file": "stats_team_week_2023.csv.gz",
+      "sha256": "28cac8bbbdf32c341d54c5aecbbe8bd1294a8093d290a7e02d144ec63bc6546f"
+    },
+    {
+      "file": "stats_team_week_2024.csv.gz",
+      "sha256": "6f27957fd1d3a759a7160586bf0558cea010a83f9cb3ee68a9bda04e35674c14"
+    },
+    {
+      "file": "stats_team_week_2025.csv.gz",
+      "sha256": "5348409f099b285877641446e869dcda3179464584dd71f73becc087219b0383"
+    }
+  ],
+  "training": {
+    "formats": {
+      "half_ppr": {
+        "overall": {
+          "baseline": {
+            "bias_actual_minus_projected": -0.4371,
+            "mae": 5.7847,
+            "n": 1812,
+            "rmse": 7.3746
+          },
+          "model": {
+            "bias_actual_minus_projected": 0.9295,
+            "mae": 5.5958,
+            "n": 1812,
+            "rmse": 7.3538
+          }
+        },
+        "positions": {
+          "QB": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.3052,
+              "mae": 6.6652,
+              "n": 405,
+              "rmse": 8.3396
+            },
+            "model": {
+              "bias_actual_minus_projected": 1.7426,
+              "mae": 6.8225,
+              "n": 405,
+              "rmse": 8.8143
+            }
+          },
+          "RB": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.805,
+              "mae": 6.0773,
+              "n": 470,
+              "rmse": 7.4777
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.0497,
+              "mae": 5.7872,
+              "n": 470,
+              "rmse": 7.2351
+            }
+          },
+          "TE": {
+            "baseline": {
+              "bias_actual_minus_projected": 0.2568,
+              "mae": 4.2205,
+              "n": 459,
+              "rmse": 5.5301
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.9177,
+              "mae": 4.0068,
+              "n": 459,
+              "rmse": 5.4013
+            }
+          },
+          "WR": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.8534,
+              "mae": 6.2531,
+              "n": 478,
+              "rmse": 7.9302
+            },
+            "model": {
+              "bias_actual_minus_projected": 1.1169,
+              "mae": 5.8942,
+              "n": 478,
+              "rmse": 7.7259
+            }
+          }
+        }
+      },
+      "non_ppr": {
+        "overall": {
+          "baseline": {
+            "bias_actual_minus_projected": -0.4379,
+            "mae": 5.3965,
+            "n": 1812,
+            "rmse": 6.9342
+          },
+          "model": {
+            "bias_actual_minus_projected": 0.8166,
+            "mae": 5.1929,
+            "n": 1812,
+            "rmse": 6.9135
+          }
+        },
+        "positions": {
+          "QB": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.3039,
+              "mae": 6.6624,
+              "n": 405,
+              "rmse": 8.3378
+            },
+            "model": {
+              "bias_actual_minus_projected": 1.7446,
+              "mae": 6.82,
+              "n": 405,
+              "rmse": 8.8128
+            }
+          },
+          "RB": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.7533,
+              "mae": 5.8715,
+              "n": 470,
+              "rmse": 7.2416
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.0264,
+              "mae": 5.5831,
+              "n": 470,
+              "rmse": 7.02
+            }
+          },
+          "TE": {
+            "baseline": {
+              "bias_actual_minus_projected": 0.2004,
+              "mae": 3.5569,
+              "n": 459,
+              "rmse": 4.7574
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.7125,
+              "mae": 3.3772,
+              "n": 459,
+              "rmse": 4.6239
+            }
+          },
+          "WR": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.8542,
+              "mae": 5.6233,
+              "n": 478,
+              "rmse": 7.0764
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.9074,
+              "mae": 5.174,
+              "n": 478,
+              "rmse": 6.8115
+            }
+          }
+        }
+      },
+      "ppr": {
+        "overall": {
+          "baseline": {
+            "bias_actual_minus_projected": -0.4363,
+            "mae": 6.2418,
+            "n": 1812,
+            "rmse": 7.9111
+          },
+          "model": {
+            "bias_actual_minus_projected": 1.0423,
+            "mae": 6.0646,
+            "n": 1812,
+            "rmse": 7.8917
+          }
+        },
+        "positions": {
+          "QB": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.3064,
+              "mae": 6.668,
+              "n": 405,
+              "rmse": 8.3416
+            },
+            "model": {
+              "bias_actual_minus_projected": 1.7405,
+              "mae": 6.825,
+              "n": 405,
+              "rmse": 8.816
+            }
+          },
+          "RB": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.8567,
+              "mae": 6.363,
+              "n": 470,
+              "rmse": 7.8118
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.0731,
+              "mae": 6.0878,
+              "n": 470,
+              "rmse": 7.5514
+            }
+          },
+          "TE": {
+            "baseline": {
+              "bias_actual_minus_projected": 0.3132,
+              "mae": 4.9581,
+              "n": 459,
+              "rmse": 6.4055
+            },
+            "model": {
+              "bias_actual_minus_projected": 1.123,
+              "mae": 4.6985,
+              "n": 459,
+              "rmse": 6.2778
+            }
+          },
+          "WR": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.8526,
+              "mae": 6.994,
+              "n": 478,
+              "rmse": 8.8821
+            },
+            "model": {
+              "bias_actual_minus_projected": 1.3264,
+              "mae": 6.7095,
+              "n": 478,
+              "rmse": 8.7361
+            }
+          }
+        }
+      }
+    },
+    "matched": 1812,
+    "population": 2040,
+    "ungraded": 228
+  },
+  "training_trials": [
+    {
+      "config": {
+        "efficiency_prior": 60,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0.15,
+        "player_prior_games": 1,
+        "scoring_opportunity_weight": 0.5,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.715008,
+      "parameter": "player_prior_games",
+      "value": 1
+    },
+    {
+      "config": {
+        "efficiency_prior": 60,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0.15,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.5,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.5674,
+      "parameter": "player_prior_games",
+      "value": 3
+    },
+    {
+      "config": {
+        "efficiency_prior": 60,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0.15,
+        "player_prior_games": 6,
+        "scoring_opportunity_weight": 0.5,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.874935,
+      "parameter": "player_prior_games",
+      "value": 6
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0.15,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.5,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.436327,
+      "parameter": "efficiency_prior",
+      "value": 30
+    },
+    {
+      "config": {
+        "efficiency_prior": 60,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0.15,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.5,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.5674,
+      "parameter": "efficiency_prior",
+      "value": 60
+    },
+    {
+      "config": {
+        "efficiency_prior": 120,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0.15,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.5,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.779526,
+      "parameter": "efficiency_prior",
+      "value": 120
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0.15,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.460132,
+      "parameter": "scoring_opportunity_weight",
+      "value": 0
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0.15,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.416279,
+      "parameter": "scoring_opportunity_weight",
+      "value": 0.25
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0.15,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.5,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.436327,
+      "parameter": "scoring_opportunity_weight",
+      "value": 0.5
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.385174,
+      "parameter": "opponent_weight",
+      "value": 0
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0.15,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.416279,
+      "parameter": "opponent_weight",
+      "value": 0.15
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0.3,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.490991,
+      "parameter": "opponent_weight",
+      "value": 0.3
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.388308,
+      "parameter": "snap_weight",
+      "value": 0
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.385174,
+      "parameter": "snap_weight",
+      "value": 0.2
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.4,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.533339,
+      "parameter": "snap_weight",
+      "value": 0.4
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.381119,
+      "parameter": "neutral_weight",
+      "value": 0
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.385174,
+      "parameter": "neutral_weight",
+      "value": 0.15
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.3,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.409125,
+      "parameter": "neutral_weight",
+      "value": 0.3
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 2
+      },
+      "cycle": 1,
+      "mse": 55.512241,
+      "parameter": "team_prior_games",
+      "value": 2
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 4
+      },
+      "cycle": 1,
+      "mse": 55.381119,
+      "parameter": "team_prior_games",
+      "value": 4
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 1,
+      "mse": 55.357546,
+      "parameter": "team_prior_games",
+      "value": 8
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 1,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.50456,
+      "parameter": "player_prior_games",
+      "value": 1
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.357546,
+      "parameter": "player_prior_games",
+      "value": 3
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 6,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.655211,
+      "parameter": "player_prior_games",
+      "value": 6
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.357546,
+      "parameter": "efficiency_prior",
+      "value": 30
+    },
+    {
+      "config": {
+        "efficiency_prior": 60,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.478157,
+      "parameter": "efficiency_prior",
+      "value": 60
+    },
+    {
+      "config": {
+        "efficiency_prior": 120,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.678081,
+      "parameter": "efficiency_prior",
+      "value": 120
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.399553,
+      "parameter": "scoring_opportunity_weight",
+      "value": 0
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.357546,
+      "parameter": "scoring_opportunity_weight",
+      "value": 0.25
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.5,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.377204,
+      "parameter": "scoring_opportunity_weight",
+      "value": 0.5
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.357546,
+      "parameter": "opponent_weight",
+      "value": 0
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0.15,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.411289,
+      "parameter": "opponent_weight",
+      "value": 0.15
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0.3,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.503346,
+      "parameter": "opponent_weight",
+      "value": 0.3
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.356837,
+      "parameter": "snap_weight",
+      "value": 0
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.2,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.357546,
+      "parameter": "snap_weight",
+      "value": 0.2
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0.4,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.510204,
+      "parameter": "snap_weight",
+      "value": 0.4
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.356837,
+      "parameter": "neutral_weight",
+      "value": 0
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.355589,
+      "parameter": "neutral_weight",
+      "value": 0.15
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.3,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.370885,
+      "parameter": "neutral_weight",
+      "value": 0.3
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0,
+        "team_prior_games": 2
+      },
+      "cycle": 2,
+      "mse": 55.532846,
+      "parameter": "team_prior_games",
+      "value": 2
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0,
+        "team_prior_games": 4
+      },
+      "cycle": 2,
+      "mse": 55.388308,
+      "parameter": "team_prior_games",
+      "value": 4
+    },
+    {
+      "config": {
+        "efficiency_prior": 30,
+        "neutral_weight": 0.15,
+        "opponent_weight": 0,
+        "player_prior_games": 3,
+        "scoring_opportunity_weight": 0.25,
+        "snap_weight": 0,
+        "team_prior_games": 8
+      },
+      "cycle": 2,
+      "mse": 55.355589,
+      "parameter": "team_prior_games",
+      "value": 8
+    }
+  ],
+  "version": "nfl-usage-v2"
+}

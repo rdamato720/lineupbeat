@@ -1,0 +1,104 @@
+{
+  "code_sha256": "518bf1e67667c506cf75f4417cccdbfe076fac11d5f61bf8db58bce5d383a73b",
+  "parameters": {
+    "efficiency_prior": 30,
+    "neutral_weight": 0.15,
+    "opponent_weight": 0,
+    "player_prior_games": 3,
+    "scoring_opportunity_weight": 0.25,
+    "snap_weight": 0,
+    "team_prior_games": 8
+  },
+  "ranking_code_sha256": "e59832bf1b30e2ba15a9aec8c06deba5ecdf747ddeadb90d5527d759ff9b2048",
+  "ranking_dispersion": {
+    "half_ppr": {
+      "QB": {
+        "training_rows": 405,
+        "variance_intercept": 19.4372,
+        "variance_per_point": 0
+      },
+      "RB": {
+        "training_rows": 470,
+        "variance_intercept": 3.808177,
+        "variance_per_point": 1.80299
+      },
+      "TE": {
+        "training_rows": 459,
+        "variance_intercept": 3.84337,
+        "variance_per_point": 1.949448
+      },
+      "WR": {
+        "training_rows": 478,
+        "variance_intercept": 14.19262,
+        "variance_per_point": 1.318707
+      }
+    },
+    "non_ppr": {
+      "QB": {
+        "training_rows": 405,
+        "variance_intercept": 19.420593,
+        "variance_per_point": 0
+      },
+      "RB": {
+        "training_rows": 470,
+        "variance_intercept": 1.266435,
+        "variance_per_point": 2.040288
+      },
+      "TE": {
+        "training_rows": 459,
+        "variance_intercept": 2.160227,
+        "variance_per_point": 1.567506
+      },
+      "WR": {
+        "training_rows": 478,
+        "variance_intercept": 8.133791,
+        "variance_per_point": 1.272235
+      }
+    },
+    "ppr": {
+      "QB": {
+        "training_rows": 405,
+        "variance_intercept": 19.456718,
+        "variance_per_point": 0
+      },
+      "RB": {
+        "training_rows": 470,
+        "variance_intercept": 7.324719,
+        "variance_per_point": 1.685986
+      },
+      "TE": {
+        "training_rows": 459,
+        "variance_intercept": 5.76364,
+        "variance_per_point": 2.485241
+      },
+      "WR": {
+        "training_rows": 478,
+        "variance_intercept": 22.820908,
+        "variance_per_point": 1.415641
+      }
+    }
+  },
+  "ranking_history_weight": 0.15,
+  "ranking_typical_weight": 1,
+  "training_season": 2024,
+  "training_weeks": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "version": "nfl-usage-v2"
+}

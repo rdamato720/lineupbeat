@@ -61,24 +61,20 @@ class WeeklyTests(unittest.TestCase):
         embedded=json.loads(re.search(r'<script id="dr-data" type="application/json">(.*?)</script>',page,re.S).group(1).replace('\\/', '/'))
         self.assertEqual(embedded['sources'],self.p['sources'])
     def test_refresh_locks_started_games(self):
-        import copy,tempfile
-        from unittest.mock import patch
+        import copy
         import build_nfl_week2 as builder
         old=copy.deepcopy(self.p);candidate=copy.deepcopy(self.p)
         for p in candidate['players']:
             p['stat_projection']['rushing_yards']+=1
-        with tempfile.TemporaryDirectory() as folder:
-            path=Path(folder);(path/'projections.json').write_text(json.dumps(old))
-            (path/'capture_manifest.json').write_text(json.dumps({'captured_at':'2026-09-18T10:00:00Z','assets':[]}))
-            with patch.object(builder,'OUT',path),patch.object(builder.model,'build',return_value=(candidate,{}, {}, {})):
-                refreshed=builder.build(path)
-            old_by_id={p['id']:p for p in old['players']}
-            self.assertEqual(set(refreshed['locked_teams']),{'BUF','DET'})
-            for p in refreshed['players']:
-                prior=old_by_id[p['id']]
-                if p['team'] in ('BUF','DET'):
-                    self.assertEqual(p['stat_projection'],prior['stat_projection'])
-                else:self.assertEqual(p['stat_projection']['rushing_yards'],prior['stat_projection']['rushing_yards']+1)
+        refreshed=builder.lock_started(candidate,old,datetime.fromisoformat('2026-09-18T10:00:00+00:00'))
+        old_by_id={p['id']:p for p in old['players']}
+        self.assertEqual(set(refreshed['locked_teams']),{'BUF','DET'})
+        for p in refreshed['players']:
+            prior=old_by_id[p['id']]
+            if p['team'] in ('BUF','DET'):
+                self.assertEqual(p['stat_projection'],prior['stat_projection'])
+                self.assertEqual(p['forecast_updated_at'],prior['forecast_updated_at'])
+            else:self.assertEqual(p['stat_projection']['rushing_yards'],prior['stat_projection']['rushing_yards']+1)
     def test_week1_archive_not_rebuilt(self):
         old=decision_data.load_weekly(week=1)
         self.assertEqual(old['updated_at'],'2026-09-11T14:03:45.253593+00:00')
