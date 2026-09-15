@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T00:57:10.199631+00:00",
+  "updated_at": "2026-09-15T06:10:11.279683+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-15T00:56:30+00:00",
+      "latest_entry_at": "2026-09-15T05:23:30+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T00:56:10+00:00",
+      "latest_entry_at": "2026-09-15T06:00:31+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-15T00:56:30+00:00",
+      "latest_entry_at": "2026-09-15T05:23:30+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T00:56:10+00:00",
+      "latest_entry_at": "2026-09-15T06:00:31+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-14T23:06:36+00:00",
+      "latest_entry_at": "2026-09-15T01:08:27+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-14T20:12:15+00:00",
+      "latest_entry_at": "2026-09-14T23:46:02+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-14T22:14:49+00:00",
+      "latest_entry_at": "2026-09-15T01:16:28+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-14T22:00:00+00:00",
+      "latest_entry_at": "2026-09-15T02:12:35+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-14T21:32:15+00:00",
+      "latest_entry_at": "2026-09-15T03:27:24+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-14T20:03:53+00:00",
+      "latest_entry_at": "2026-09-15T01:18:28+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-15T00:51:31+00:00",
+      "latest_entry_at": "2026-09-15T04:00:00+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-14T23:04:18+00:00",
+      "latest_entry_at": "2026-09-15T05:00:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-14T22:00:00+00:00",
+      "latest_entry_at": "2026-09-15T04:01:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-14T22:00:00+00:00",
+      "latest_entry_at": "2026-09-15T00:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-14T21:32:38+00:00",
+      "latest_entry_at": "2026-09-15T00:40:57+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-14T16:00:00+00:00",
+      "latest_entry_at": "2026-09-14T19:00:00+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,152 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-14T23:11:37+00:00",
+      "latest_entry_at": "2026-09-15T03:20:31+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "dd4ad5a79d4db72c933d",
+      "headline": "Patrick Mahomes Critical of Performance in Return From ACL Tear: 'I've Got to Be Better'",
+      "url": "https://www.si.com/nfl/chiefs/onsi/patrick-mahomes-critical-of-performance-in-return-from-acl-tear",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "Despite winning his first game back from knee surgery, QB Patrick Mahomes thinks he must step his game up for the Kansas City Chiefs to succeed moving forward.",
+      "categories": [],
+      "published_at": "2026-09-15T04:37:49+00:00",
+      "players": [
+        {
+          "id": "00-0033873",
+          "name": "Patrick Mahomes",
+          "team": "KC",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "95236e48fc41548ff394",
+      "headline": "Seahawks Super Bowl MVP Kenneth Walker III has career-high game in Chiefs debut",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-news/174795/seahawks-super-bowl-mvp-kenneth-walker-iii-career-high-game-chiefs-debut-mnf",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Kenneth Walker III wanted to prove he was a lead back when he left the Seattle Seahawks to sign with the Kansas City Chiefs in a huge free agent move. The Super Bowl MVP spent 2025 sharing lead back duties with Zach Charbonnet, but the Chiefs made it clear that Walker was going to be [\u2026]",
+      "categories": [
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-09-15T03:20:31+00:00",
+      "players": [
+        {
+          "id": "00-0039165",
+          "name": "Zach Charbonnet",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "5e573c63af064be7fc7f",
+      "headline": "Seahawks Line Opens at -10 Against Major Underdog Cardinals, Should it Be That High?",
+      "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-cardinals-nfl-week-2-betting-line",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Analyze if oddsmakers are overvaluing the defending champion Seahawks as Drew Lock steps in for an injured Sam Darnold against a resilient Cardinals team.",
+      "categories": [],
+      "published_at": "2026-09-15T01:06:51+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035704",
+          "name": "Drew Lock",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "7f08e5365c7aebe986a3",
+      "headline": "Packers TE Tucker Kraft Had Snap Count (Sort of) and New Role vs. Vikings",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-te-tucker-kraft-had-snap-count-sort-of-and-new-role-vs-vikings",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Green Bay Packers tight end Tucker Kraft caught three passes during a noteworthy debut game against the Vikings.",
+      "categories": [],
+      "published_at": "2026-09-15T01:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0038996",
+          "name": "Tucker Kraft",
+          "team": "GB",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "e50f036b03729e32a035",
+      "headline": "Marvin Mims Jr. exits Monday Night Football matchup versus Chiefs due to hip injury",
+      "url": "https://www.milehighreport.com/denver-broncos-news/184948/marvin-mims-jr-exits-monday-night-football-matchup-versus-chiefs-due-to-hip-injury",
+      "source_id": "news_sbn_den",
+      "source": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Denver Broncos are currently battling the Kansas City Chiefs on Monday Night Football. Unfortunately, they may be without All-Pro punt returner and wide receiver Marvin Mims Jr. for the remainder of the game. According to Susie Wargin, Mims was injured on the second drive of the game. Mims has been ruled as questionable to [\u2026]",
+      "categories": [
+        "Denver Broncos News"
+      ],
+      "published_at": "2026-09-15T00:55:19+00:00",
+      "players": [
+        {
+          "id": "00-0038976",
+          "name": "Marvin Mims Jr.",
+          "team": "DEN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "c6b171657e50652743b9",
+      "headline": "Seahawks say Sam Darnold has \u2018very unique soft-tissue\u2019 but \u2018short-term\u2019 injury",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-news/174781/nfl-news-seahawks-sam-darnold-very-unique-soft-tissue-short-term-injury-update",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "After several contradicting reports on Seattle Seahawks quarterback Sam Darnold\u2019s injury, confirmation on exactly what he\u2019s dealing with has come to light. According to ESPN\u2019s Brady Henderson, a team spokesperson confirmed Darnold is dealing with a \u201cvery unique\u201d soft tissue injury, but it is considered short-term. The medical staff is reportedly working to see how [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-09-15T00:38:47+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "eb054a2bdc7cdf973fd6",
       "headline": "Broncos Tried to Lure Drew Brees Out of Retirement After Bo Nix Injury",
@@ -4022,168 +4161,6 @@
           "id": "00-0037563",
           "name": "Malik Davis",
           "team": "DAL",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "b0679c6da070fc6e32e1",
-      "headline": "Dallas Cowboys Sign Practice Squad RB To Replace Malik Davis On 53-Man Roster",
-      "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-sign-practice-squad-rb-replace-malik-davis-53-man-roster",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "Malik Davis was officially signed to the IR and the Dallas Cowboys added Israel Abanikanda to the active roster.",
-      "categories": [],
-      "published_at": "2026-09-12T18:59:21+00:00",
-      "players": [
-        {
-          "id": "00-0037563",
-          "name": "Malik Davis",
-          "team": "DAL",
-          "position": "RB"
-        },
-        {
-          "id": "00-0038389",
-          "name": "Israel Abanikanda",
-          "team": "DAL",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "87e250494c37e9c07d8b",
-      "headline": "Cowboys sign RB Israel Abanikanda to the active roster",
-      "url": "https://www.bloggingtheboys.com/dallas-cowboys-roster/217665/sign-rb-israel-abanikanda-active-practice-squad",
-      "source_id": "news_sbn_dal",
-      "source": "Blogging The Boys (SB Nation)",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys will have another running back on the active roster to go along with Javonte Williams, Emari Demercado, and Hunter Luepke. They have signed Israel Abanikanda from the practice squad as a counter move to Malik Davis going on injured reserve with a hip injury. Sources indicate it could be season-ending. (Confirmed by [\u2026]",
-      "categories": [
-        "Dallas Cowboys News",
-        "Dallas Cowboys Roster"
-      ],
-      "published_at": "2026-09-12T18:41:50+00:00",
-      "players": [
-        {
-          "id": "00-0036997",
-          "name": "Javonte Williams",
-          "team": "DAL",
-          "position": "RB"
-        },
-        {
-          "id": "00-0037563",
-          "name": "Malik Davis",
-          "team": "DAL",
-          "position": "RB"
-        },
-        {
-          "id": "00-0038389",
-          "name": "Israel Abanikanda",
-          "team": "DAL",
-          "position": "RB"
-        },
-        {
-          "id": "00-0038738",
-          "name": "Hunter Luepke",
-          "team": "DAL",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "025c4589187d51632e40",
-      "headline": "Bears Roster Moves Could Be Bad Sign for Rome Odunze's & Tyson Bagent's Week 1 Statuses",
-      "url": "https://www.si.com/nfl/bears/onsi/bears-roster-rome-odunze-status",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Chicago Bears have elevated both a quarterback and wide receiver ahead of the Week 1 game, which might be bad news for the statuses of Rome Odunze and Tyson Bagent.",
-      "categories": [],
-      "published_at": "2026-09-12T17:51:21+00:00",
-      "players": [
-        {
-          "id": "00-0038416",
-          "name": "Tyson Bagent",
-          "team": "CHI",
-          "position": "QB"
-        },
-        {
-          "id": "00-0039919",
-          "name": "Rome Odunze",
-          "team": "CHI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "d917cbbeb81aea4f1359",
-      "headline": "Cowboys and Seahawks Are Ideal Match For Trade After Malik Davis Injury",
-      "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-seahawks-ideal-match-trade-after-malik-davis-injury",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys have lost running back Malik Davis to injury. In order to replace him, the Cowboys should put in a call to the Seattle Seahawks about a trade.",
-      "categories": [],
-      "published_at": "2026-09-12T17:40:00+00:00",
-      "players": [
-        {
-          "id": "00-0037563",
-          "name": "Malik Davis",
-          "team": "DAL",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "8878237f3c877d44dea7",
-      "headline": "Chicago Bears announce roster moves",
-      "url": "https://www.chicagobears.com/news/chicago-bears-announce-roster-moves-september-12-2026",
-      "source_id": "news_official_chi",
-      "source": "Chicago Bears (official)",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Chicago Bears have announced that the club has signed quarterback Miller Moss to the Practice Squad and has elevated Moss and wide receiver Kaden Davis from the practice squad for Sunday\u2019s game against the Carolina Panthers.",
-      "categories": [
-        "Article - Roster Moves",
-        "Non-gameday football/game-related news"
-      ],
-      "published_at": "2026-09-12T17:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0041172",
-          "name": "Miller Moss",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "6a23ff15777883147584",
-      "headline": "Ben Johnson, Ryan Poles Explain Bears' Decision to Sign D'Andre Swift to Contract Extension",
-      "url": "https://www.si.com/nfl/bears/onsi/ben-johnson-ryan-poles-explain-bears-decision-to-sign-d-andre-swift-to-contract-extension",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears general manager Ryan Poles and head coach Ben Johnson explained why the team decided to extend running back D'Andre Swift on Friday.",
-      "categories": [],
-      "published_at": "2026-09-12T16:49:20+00:00",
-      "players": [
-        {
-          "id": "00-0036275",
-          "name": "D'Andre Swift",
-          "team": "CHI",
           "position": "RB"
         }
       ]
