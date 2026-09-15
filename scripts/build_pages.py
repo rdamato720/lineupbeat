@@ -4040,6 +4040,7 @@ def main():
             ("/nfl/week-1/results/", "weekly", "0.8"),
             ("/nfl/week-2/rankings/", "daily", "0.9"),
             ("/nfl/week-2/projections/", "daily", "0.9"),
+            ("/nfl/week-2/methodology/", "weekly", "0.6"),
             ("/decision-room/college/", "daily", "0.9"),
             (f"/{args.sport}/rankings/", "daily", "0.9"),
             (f"/{args.sport}/rankings/qb/", "daily", "0.8"),

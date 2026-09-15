@@ -56,6 +56,7 @@ jobs:
           python scripts/capture_nfl_week2.py
           python scripts/build_nfl_week2.py --cache .cache/nfl-week2
           python scripts/test_nfl_week2.py
+          python scripts/test_nfl_usage_model.py
 
       - name: Verify generated readers
         run: |
@@ -76,8 +77,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/nfl_weekly/2026/week-2/v1.0/projections.json \
-            data/nfl_weekly/2026/week-2/v1.0/provenance.json
+          git add data/nfl_weekly/2026/week-2/v2.0/projections.json \
+            data/nfl_weekly/2026/week-2/v2.0/rankings.json \
+            data/nfl_weekly/2026/week-2/v2.0/provenance.json
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0

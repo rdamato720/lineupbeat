@@ -56,6 +56,9 @@ render();
 
 def render(payload, kind, site, scorecard=None):
     week = payload["week"]
+    if week == 2:
+        from nfl_week2_pages import render as render_current
+        return render_current(payload, kind, site, scorecard)
     title = f'2026 NFL Week {week} {kind.title()}'
     path = f'/nfl/week-{week}/{kind}/'
     updated = datetime.fromisoformat(payload['updated_at'].replace('Z', '+00:00')).astimezone(ZoneInfo('America/New_York'))
@@ -110,6 +113,8 @@ def build(site=ROOT/'site'):
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(render(current, kind, site, scorecard()))
     build_results(site)
+    from nfl_week2_pages import build_methodology
+    build_methodology(current, site)
     print(f'Built NFL Week 2 rankings and projections: {len(current["players"])} players; {current["updated_at"]}. Week 1 archive and results retained.')
 
 

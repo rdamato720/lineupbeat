@@ -705,12 +705,21 @@ def check_weekly_boards(root):
                   and payload.get("updated_at") == source["updated_at"])
             check(f"Week {week} {kind} is in the sitemap", route in sitemap)
             check(f"Week {week} {kind} has distinct weekly and season navigation",
-                  f'href="{route}" aria-current="page">Week {week} {kind.title()}</a>' in text
+                  (f'href="{route}" aria-current="page">Week {week} {kind.title()}</a>' in text
+                   or (week == 2 and f'href="{route}" aria-current="page">{kind.title()}</a>' in text))
                   and 'href="/nfl/rankings/">Season Rankings</a>' in text
                   and 'href="/nfl/projections/">Season Projections</a>' in text)
             check(f"Week {week} {kind} has the correct table and results link",
                   ('>Pass Yds</th>' in text) == (kind == "projections")
                   and 'href="/nfl/week-1/results/"' in text)
+            if week == 2 and kind == 'rankings':
+                check('Week 2 independent ranking data survives final pruning',payload.get('rankings')==source['rankings'])
+                check('Week 2 offers all six scoring and league combinations',
+                      all(f'value="{key}"' in text for key in ('ppr','half_ppr','non_ppr','one_qb','superflex')))
+            if week == 2 and kind == 'projections':
+                check('Week 2 projections present stats without a ranking column','>Rank</th>' not in text and '>Targets</th>' in text)
+    check('Week 2 methodology survives final pruning and is indexed',
+          (root/'nfl/week-2/methodology/index.html').is_file() and '/nfl/week-2/methodology/' in sitemap)
     from nfl_results_page import load as load_results
     route = "/nfl/week-1/results/"
     page = root / route.lstrip("/") / "index.html"

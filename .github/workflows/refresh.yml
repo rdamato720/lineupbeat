@@ -534,6 +534,8 @@ jobs:
           python scripts/test_sport_experiences.py
           python scripts/test_college_decision_room.py
           python scripts/test_week1_intelligence.py
+          python scripts/test_nfl_week2.py
+          python scripts/test_nfl_usage_model.py
           python scripts/test_weekly_availability.py
           python scripts/test_college_projection_results.py
           python scripts/test_my_team.py
