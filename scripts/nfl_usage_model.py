@@ -15,7 +15,7 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-VERSION = 'nfl-usage-v2'
+VERSION = 'nfl-usage-v2.1'
 POSITIONS = ('QB', 'RB', 'WR', 'TE')
 FORMATS = {'ppr': 1.0, 'half_ppr': .5, 'non_ppr': 0.0}
 STATS = ('attempts', 'completions', 'passing_yards', 'passing_tds',
@@ -156,13 +156,21 @@ class History:
                 if not pid:
                     continue
                 key = (pid,r['game_id'])
-                self.snap[key] = {'offense_pct':num(r,'offense_pct'),'offense_snaps':num(r,'offense_snaps')}
+                self.snap[key] = {'offense_pct':num(r,'offense_pct'),'offense_snaps':num(r,'offense_snaps'),
+                                  'team':team(r['team'])}
                 if key not in year_stats and num(r,'offense_snaps') > 0 and r.get('position') in POSITIONS:
                     year_stats[key] = {k:0.0 for k in STATS}
                     year_stats[key].update(season=year,week=int(r['week']),team=team(r['team']),
                         opponent=team(r['opponent']),game_id=r['game_id'],id=pid,
                         position=r['position'],name=r['player'],recorded_stats=False)
                 if key in year_stats:
+                    if year_stats[key]['team'] != self.snap[key]['team']:
+                        if year_stats[key]['position'] in POSITIONS or r.get('position') in POSITIONS:
+                            raise ValueError(f'Snap/stat team identity conflict for {key}')
+                        # A known OL/defender name collision is outside this
+                        # model's positions. Do not join or overwrite its team.
+                        self.snap.pop(key)
+                        continue
                     year_stats[key].update(self.snap[key])
             for (pid,_),item in year_stats.items():
                 self.player[pid].append(item)
@@ -352,6 +360,8 @@ class History:
                             ratios.append(r.get(key,0)/den)
                     shares[period][key]=weighted_average(ratios) if ratios else None
             item['shares']=shares
+            from nfl_workload_model import observations
+            item['workload_observations']=observations(self,p,season,week)
             features.append(item)
         result={'season':season,'week':week,'asof':asof,'slate':slate,'players':features,'teams':teams,
                 'league':league,'rates':league_rates,'role_priors':role_priors,'depth_asof':depth_stamp}
@@ -363,6 +373,8 @@ def predict(features, config):
     """Predict counts and efficiencies, then reconcile the complete offense."""
     league=features['league'];teams=features['teams'];slate=features['slate']
     result=[];groups=defaultdict(list);budgets={}
+    from nfl_workload_model import estimate
+    learned_shares=estimate(features,config)
     qb_roles={}
     for club in teams:
         available=[p for p in features['players'] if p['team']==club and p['position']=='QB' and not p.get('unavailable')]
@@ -414,6 +426,7 @@ def predict(features, config):
                 ratio=clamp(p['recent']['offense_pct']/p['prior']['offense_pct'],.5,1.75)
                 share*=ratio**config['snap_weight']
             shares[key]=max(0,share)
+        shares.update(learned_shares.get(p['id'],{}))
         stat['carries']=b['carries']*shares['carries']
         stat['targets']=b['targets']*shares['targets']
         if pos=='QB':

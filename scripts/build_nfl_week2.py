@@ -137,8 +137,12 @@ def build(cache, now=None):
         raise ValueError('Model settings do not match the tested component engine')
     if model.get('ranking_code_sha256') != digest((ROOT/'scripts/nfl_weekly_rankings.py').read_bytes()):
         raise ValueError('Ranking settings do not match the tested ranking engine')
+    if model.get('workload_code_sha256') != digest((ROOT/'scripts/nfl_workload_model.py').read_bytes()):
+        raise ValueError('Workload settings do not match the tested feature and inference code')
     if validation['model_sha256'] != digest(MODEL.read_bytes()) or not validation['production_component_engine_reproduced']:
         raise ValueError('Model has no matching historical validation')
+    if not validation.get('gates_passed'):
+        raise ValueError('Workload revision has not passed its regression gates')
     history = History(cache, years=(2024,2025,2026))
     features = history.features(2026,2,current=True,asof=manifest['captured_at'])
     indexed = injury_index(injuries)
@@ -180,7 +184,7 @@ def build(cache, now=None):
                **result,'excluded_players':[],'withheld_players':[],'unresolved_players':[],
                'editorial_opinions':[],'schedule_sos_available':False,
                'identity_method':'Stable GSIS roster ID; historical game and team identity; exact injury name/team/position, no fuzzy joins.',
-               'sources':{'model':{'label':'LineupBeat current-usage model v2','updated_at':stamp},
+               'sources':{'model':{'label':'LineupBeat current-usage model v2.1','updated_at':stamp},
                           'history':{'label':'nflverse player and team statistics through 2026 Week 1','updated_at':stamp},
                           'week1_usage':{'label':'2026 Week 1 player/team stats, offensive snaps and play-by-play','updated_at':stamp},
                           'depth':{'label':'Current nflverse depth chart','updated_at':features['depth_asof']},
@@ -188,17 +192,20 @@ def build(cache, now=None):
                           'ranks':{'label':'Independent weekly 1QB and Superflex rankings','updated_at':stamp},
                           'market':{'label':'No qualified current TheRundown snapshot','updated_at':None},
                           'matchup':{'label':'Current schedule; defensive weighting not selected in training','updated_at':stamp}},
-               'methodology':{'summary':'Current roster identities and strictly earlier team/player usage, with historical efficiency and scoring-area opportunities. Parameters chosen on 2024, then evaluated on 2025.',
-                              'version':VERSION,'parameters':model['parameters'],
+               'methodology':{'summary':'Current roster identities and strictly earlier team/player usage, with learned target allocation, historical efficiency and scoring-area opportunities. Workload models trained on 2023–2024; checked against previously inspected 2025 results.',
+                              'version':VERSION,'parameters':{k:v for k,v in model['parameters'].items() if k != 'workload_model'},
+                              'learned_workload':{'weights':model['parameters']['workload_model']['weights'],
+                                                  'inputs':'Recorded offensive snaps, target/carry shares, pregame depth and teammate competition; no routes inferred.',
+                                                  'missing_inputs':'Retain prior role when the previous team-game appearance is unobserved; QB allocation remains separate.'},
                               'injury_policy':'Questionable and Doubtful keep full projections. Confirmed Out, IR and suspended players receive zero; available teammates share the opportunity.',
                               'scoring':'4/pass TD, 0.04/pass yard, -2/interception, 0.1/rush or receiving yard, 6/rush or receiving TD, -2/fumble lost, 2/two-point conversion, 6/return TD, plus 1/0.5/0 per reception.',
                               'rankings':'Separate artifact; mean/typical-outcome score and reference lineup replacement value. Superflex changes ranks, not points.',
                               'season_total_divisor':None,'market_policy':'No betting adjustment or external expert projections.',
                               'allocation_policy':'Team attempts, carries, targets and TDs are conserved. Receiving yards, completions and TDs reconcile to the passing offense.'},
-               'limitations':['Only one completed 2026 week; role changes are shrunk toward prior appearances.',
+               'limitations':['Only one completed 2026 week; current roles remain uncertain.',
                               'Rookies and players without history use observed historical workload-slot priors and position efficiency.',
                               'No live route participation, weather or qualified betting snapshot is included.',
-                              'Historical validation is against a recent-average baseline, not a head-to-head test against an expert site.']}
+                              'The previously inspected 2025 replay is a regression check, not a fresh independent holdout or a head-to-head expert-site test.']}
     if previous:
         payload = lock_started(payload, previous, now)
     n = len(payload['players'])

@@ -1,10 +1,886 @@
 {
-  "availability_limitation": "Historical evaluation uses prior-week active roster status and final matched stat lines. It does not reconstruct every pregame injury report. Missing actual rows remain ungraded.",
-  "baseline": "Mean scoring-format points over up to eight prior recorded appearances.",
-  "depth_limitation": "2024 depth uses the preceding weekly snapshot; 2025 uses the latest timestamp strictly before the first kickoff of that week.",
-  "evaluation_note": "Parameters retained after the first holdout review; replay repeated after correcting fumble counts to use reconciled opportunities. No parameter was chosen from 2025 results.",
+  "availability_limitation": "Historical pregame injury designations are not completely reconstructed.",
+  "deployment_gates": [
+    {
+      "after": 5.9908,
+      "before": 6.0274,
+      "format": "ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "overall"
+    },
+    {
+      "after": 7.6761,
+      "before": 7.7039,
+      "format": "ppr",
+      "metric": "rmse",
+      "passed": true,
+      "scope": "overall"
+    },
+    {
+      "after": 6.2732,
+      "before": 6.2737,
+      "format": "ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "QB",
+      "tolerance": 0.15
+    },
+    {
+      "after": 6.3214,
+      "before": 6.3362,
+      "format": "ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "RB",
+      "tolerance": 0.15
+    },
+    {
+      "after": 6.4544,
+      "before": 6.5199,
+      "format": "ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "WR",
+      "tolerance": 0.15
+    },
+    {
+      "after": 4.8969,
+      "before": 4.9592,
+      "format": "ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "TE",
+      "tolerance": 0.15
+    },
+    {
+      "after": 5.5761,
+      "before": 5.6046,
+      "format": "half_ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "overall"
+    },
+    {
+      "after": 7.188,
+      "before": 7.2066,
+      "format": "half_ppr",
+      "metric": "rmse",
+      "passed": true,
+      "scope": "overall"
+    },
+    {
+      "after": 6.2701,
+      "before": 6.2699,
+      "format": "half_ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "QB",
+      "tolerance": 0.15
+    },
+    {
+      "after": 6.0727,
+      "before": 6.0832,
+      "format": "half_ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "RB",
+      "tolerance": 0.15
+    },
+    {
+      "after": 5.7219,
+      "before": 5.7728,
+      "format": "half_ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "WR",
+      "tolerance": 0.15
+    },
+    {
+      "after": 4.2687,
+      "before": 4.3188,
+      "format": "half_ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "TE",
+      "tolerance": 0.15
+    },
+    {
+      "after": 5.2192,
+      "before": 5.2383,
+      "format": "non_ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "overall"
+    },
+    {
+      "after": 6.786,
+      "before": 6.7969,
+      "format": "non_ppr",
+      "metric": "rmse",
+      "passed": true,
+      "scope": "overall"
+    },
+    {
+      "after": 6.2677,
+      "before": 6.2676,
+      "format": "non_ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "QB",
+      "tolerance": 0.15
+    },
+    {
+      "after": 5.8949,
+      "before": 5.8991,
+      "format": "non_ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "RB",
+      "tolerance": 0.15
+    },
+    {
+      "after": 5.0687,
+      "before": 5.1126,
+      "format": "non_ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "WR",
+      "tolerance": 0.15
+    },
+    {
+      "after": 3.7124,
+      "before": 3.7387,
+      "format": "non_ppr",
+      "metric": "mae",
+      "passed": true,
+      "scope": "TE",
+      "tolerance": 0.15
+    }
+  ],
+  "early_season_regression": {
+    "candidate": {
+      "formats": {
+        "half_ppr": {
+          "overall": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.7739,
+              "mae": 5.9394,
+              "n": 329,
+              "rmse": 7.3459
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.2656,
+              "mae": 5.1236,
+              "n": 329,
+              "rmse": 6.4584
+            }
+          },
+          "positions": {
+            "QB": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.7187,
+                "mae": 6.8422,
+                "n": 76,
+                "rmse": 8.6602
+              },
+              "model": {
+                "bias_actual_minus_projected": 0.3483,
+                "mae": 5.4187,
+                "n": 76,
+                "rmse": 6.9955
+              }
+            },
+            "RB": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.3445,
+                "mae": 5.8349,
+                "n": 85,
+                "rmse": 7.1517
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.757,
+                "mae": 5.2562,
+                "n": 85,
+                "rmse": 6.3934
+              }
+            },
+            "TE": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.509,
+                "mae": 4.6171,
+                "n": 82,
+                "rmse": 5.6566
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.5396,
+                "mae": 4.09,
+                "n": 82,
+                "rmse": 5.3339
+              }
+            },
+            "WR": {
+              "baseline": {
+                "bias_actual_minus_projected": -2.4998,
+                "mae": 6.5058,
+                "n": 86,
+                "rmse": 7.6873
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.0609,
+                "mae": 5.7171,
+                "n": 86,
+                "rmse": 6.9853
+              }
+            }
+          }
+        },
+        "non_ppr": {
+          "overall": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.5431,
+              "mae": 5.5276,
+              "n": 329,
+              "rmse": 6.9023
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.2231,
+              "mae": 4.7909,
+              "n": 329,
+              "rmse": 6.0728
+            }
+          },
+          "positions": {
+            "QB": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.7154,
+                "mae": 6.8438,
+                "n": 76,
+                "rmse": 8.6611
+              },
+              "model": {
+                "bias_actual_minus_projected": 0.3511,
+                "mae": 5.4199,
+                "n": 76,
+                "rmse": 6.9973
+              }
+            },
+            "RB": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.3296,
+                "mae": 5.7033,
+                "n": 85,
+                "rmse": 6.9714
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.8176,
+                "mae": 5.1476,
+                "n": 85,
+                "rmse": 6.3045
+              }
+            },
+            "TE": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.1147,
+                "mae": 3.9922,
+                "n": 82,
+                "rmse": 4.9213
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.4254,
+                "mae": 3.5989,
+                "n": 82,
+                "rmse": 4.7047
+              }
+            },
+            "WR": {
+              "baseline": {
+                "bias_actual_minus_projected": -2.0104,
+                "mae": 5.6547,
+                "n": 86,
+                "rmse": 6.696
+              },
+              "model": {
+                "bias_actual_minus_projected": 0.0499,
+                "mae": 5.0191,
+                "n": 86,
+                "rmse": 6.1174
+              }
+            }
+          }
+        },
+        "ppr": {
+          "overall": {
+            "baseline": {
+              "bias_actual_minus_projected": -2.0047,
+              "mae": 6.4244,
+              "n": 329,
+              "rmse": 7.8877
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.308,
+              "mae": 5.5037,
+              "n": 329,
+              "rmse": 6.9303
+            }
+          },
+          "positions": {
+            "QB": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.722,
+                "mae": 6.8405,
+                "n": 76,
+                "rmse": 8.6594
+              },
+              "model": {
+                "bias_actual_minus_projected": 0.3454,
+                "mae": 5.4175,
+                "n": 76,
+                "rmse": 6.9936
+              }
+            },
+            "RB": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.3595,
+                "mae": 6.1347,
+                "n": 85,
+                "rmse": 7.4626
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.6965,
+                "mae": 5.4591,
+                "n": 85,
+                "rmse": 6.5934
+              }
+            },
+            "TE": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.9033,
+                "mae": 5.3262,
+                "n": 82,
+                "rmse": 6.4771
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.6539,
+                "mae": 4.6708,
+                "n": 82,
+                "rmse": 6.025
+              }
+            },
+            "WR": {
+              "baseline": {
+                "bias_actual_minus_projected": -2.9891,
+                "mae": 7.39,
+                "n": 86,
+                "rmse": 8.7581
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.1716,
+                "mae": 6.4181,
+                "n": 86,
+                "rmse": 7.9332
+              }
+            }
+          }
+        }
+      },
+      "matched": 329,
+      "population": 360,
+      "ungraded": 31
+    },
+    "published": {
+      "formats": {
+        "half_ppr": {
+          "overall": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.7739,
+              "mae": 5.9394,
+              "n": 329,
+              "rmse": 7.3459
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.3387,
+              "mae": 5.1602,
+              "n": 329,
+              "rmse": 6.4894
+            }
+          },
+          "positions": {
+            "QB": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.7187,
+                "mae": 6.8422,
+                "n": 76,
+                "rmse": 8.6602
+              },
+              "model": {
+                "bias_actual_minus_projected": 0.348,
+                "mae": 5.4186,
+                "n": 76,
+                "rmse": 6.9953
+              }
+            },
+            "RB": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.3445,
+                "mae": 5.8349,
+                "n": 85,
+                "rmse": 7.1517
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.8336,
+                "mae": 5.2501,
+                "n": 85,
+                "rmse": 6.4016
+              }
+            },
+            "TE": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.509,
+                "mae": 4.6171,
+                "n": 82,
+                "rmse": 5.6566
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.5047,
+                "mae": 4.1868,
+                "n": 82,
+                "rmse": 5.4682
+              }
+            },
+            "WR": {
+              "baseline": {
+                "bias_actual_minus_projected": -2.4998,
+                "mae": 6.5058,
+                "n": 86,
+                "rmse": 7.6873
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.2981,
+                "mae": 5.7712,
+                "n": 86,
+                "rmse": 6.989
+              }
+            }
+          }
+        },
+        "non_ppr": {
+          "overall": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.5431,
+              "mae": 5.5276,
+              "n": 329,
+              "rmse": 6.9023
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.2766,
+              "mae": 4.8181,
+              "n": 329,
+              "rmse": 6.0919
+            }
+          },
+          "positions": {
+            "QB": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.7154,
+                "mae": 6.8438,
+                "n": 76,
+                "rmse": 8.6611
+              },
+              "model": {
+                "bias_actual_minus_projected": 0.351,
+                "mae": 5.4199,
+                "n": 76,
+                "rmse": 6.9973
+              }
+            },
+            "RB": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.3296,
+                "mae": 5.7033,
+                "n": 85,
+                "rmse": 6.9714
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.8697,
+                "mae": 5.1415,
+                "n": 85,
+                "rmse": 6.3069
+              }
+            },
+            "TE": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.1147,
+                "mae": 3.9922,
+                "n": 82,
+                "rmse": 4.9213
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.3994,
+                "mae": 3.6501,
+                "n": 82,
+                "rmse": 4.7977
+              }
+            },
+            "WR": {
+              "baseline": {
+                "bias_actual_minus_projected": -2.0104,
+                "mae": 5.6547,
+                "n": 86,
+                "rmse": 6.696
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.1281,
+                "mae": 5.0803,
+                "n": 86,
+                "rmse": 6.1188
+              }
+            }
+          }
+        },
+        "ppr": {
+          "overall": {
+            "baseline": {
+              "bias_actual_minus_projected": -2.0047,
+              "mae": 6.4244,
+              "n": 329,
+              "rmse": 7.8877
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.4007,
+              "mae": 5.5539,
+              "n": 329,
+              "rmse": 6.9746
+            }
+          },
+          "positions": {
+            "QB": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.722,
+                "mae": 6.8405,
+                "n": 76,
+                "rmse": 8.6594
+              },
+              "model": {
+                "bias_actual_minus_projected": 0.345,
+                "mae": 5.4173,
+                "n": 76,
+                "rmse": 6.9933
+              }
+            },
+            "RB": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.3595,
+                "mae": 6.1347,
+                "n": 85,
+                "rmse": 7.4626
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.7974,
+                "mae": 5.4631,
+                "n": 85,
+                "rmse": 6.6089
+              }
+            },
+            "TE": {
+              "baseline": {
+                "bias_actual_minus_projected": -1.9033,
+                "mae": 5.3262,
+                "n": 82,
+                "rmse": 6.4771
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.61,
+                "mae": 4.7916,
+                "n": 82,
+                "rmse": 6.2009
+              }
+            },
+            "WR": {
+              "baseline": {
+                "bias_actual_minus_projected": -2.9891,
+                "mae": 7.39,
+                "n": 86,
+                "rmse": 8.7581
+              },
+              "model": {
+                "bias_actual_minus_projected": -0.4681,
+                "mae": 6.4913,
+                "n": 86,
+                "rmse": 7.9399
+              }
+            }
+          }
+        }
+      },
+      "matched": 329,
+      "population": 360,
+      "ungraded": 31
+    }
+  },
+  "evaluation_note": "2025 is a previously inspected regression replay, not a new independent holdout. An initial candidate was inspected, then a missing-input fallback and a QB role boundary were added after reviewing current forecasts; settings were again selected on 2024 only before replaying 2025.",
+  "external_reference_rows_used": 0,
+  "frozen_integration_replay_identical": true,
   "future_game_rows_used": 0,
+  "gates_passed": true,
   "holdout": {
+    "formats": {
+      "half_ppr": {
+        "overall": {
+          "baseline": {
+            "bias_actual_minus_projected": -1.0025,
+            "mae": 5.9427,
+            "n": 1816,
+            "rmse": 7.5201
+          },
+          "model": {
+            "bias_actual_minus_projected": -0.0606,
+            "mae": 5.5761,
+            "n": 1816,
+            "rmse": 7.188
+          }
+        },
+        "positions": {
+          "QB": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.1754,
+              "mae": 6.9304,
+              "n": 403,
+              "rmse": 8.627
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.1084,
+              "mae": 6.2701,
+              "n": 403,
+              "rmse": 8.0113
+            }
+          },
+          "RB": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.0654,
+              "mae": 6.3011,
+              "n": 488,
+              "rmse": 7.968
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.6595,
+              "mae": 6.0727,
+              "n": 488,
+              "rmse": 7.7218
+            }
+          },
+          "TE": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.3137,
+              "mae": 4.5337,
+              "n": 452,
+              "rmse": 5.8687
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.363,
+              "mae": 4.2687,
+              "n": 452,
+              "rmse": 5.6795
+            }
+          },
+          "WR": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.4486,
+              "mae": 6.0779,
+              "n": 473,
+              "rmse": 7.4362
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.0085,
+              "mae": 5.7219,
+              "n": 473,
+              "rmse": 7.1653
+            }
+          }
+        }
+      },
+      "non_ppr": {
+        "overall": {
+          "baseline": {
+            "bias_actual_minus_projected": -0.8899,
+            "mae": 5.5746,
+            "n": 1816,
+            "rmse": 7.1075
+          },
+          "model": {
+            "bias_actual_minus_projected": -0.0318,
+            "mae": 5.2192,
+            "n": 1816,
+            "rmse": 6.786
+          }
+        },
+        "positions": {
+          "QB": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.1687,
+              "mae": 6.9173,
+              "n": 403,
+              "rmse": 8.6143
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.1095,
+              "mae": 6.2677,
+              "n": 403,
+              "rmse": 8.0037
+            }
+          },
+          "RB": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.9886,
+              "mae": 6.1371,
+              "n": 488,
+              "rmse": 7.7563
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.618,
+              "mae": 5.8949,
+              "n": 488,
+              "rmse": 7.5274
+            }
+          },
+          "TE": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.1893,
+              "mae": 3.9572,
+              "n": 452,
+              "rmse": 5.1596
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.385,
+              "mae": 3.7124,
+              "n": 452,
+              "rmse": 4.9808
+            }
+          },
+          "WR": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.22,
+              "mae": 5.3957,
+              "n": 473,
+              "rmse": 6.5741
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.0544,
+              "mae": 5.0687,
+              "n": 473,
+              "rmse": 6.3289
+            }
+          }
+        }
+      },
+      "ppr": {
+        "overall": {
+          "baseline": {
+            "bias_actual_minus_projected": -1.1151,
+            "mae": 6.3643,
+            "n": 1816,
+            "rmse": 8.0233
+          },
+          "model": {
+            "bias_actual_minus_projected": -0.0894,
+            "mae": 5.9908,
+            "n": 1816,
+            "rmse": 7.6761
+          }
+        },
+        "positions": {
+          "QB": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.182,
+              "mae": 6.9436,
+              "n": 403,
+              "rmse": 8.6417
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.1073,
+              "mae": 6.2732,
+              "n": 403,
+              "rmse": 8.0202
+            }
+          },
+          "RB": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.1422,
+              "mae": 6.5419,
+              "n": 488,
+              "rmse": 8.2787
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.7009,
+              "mae": 6.3214,
+              "n": 488,
+              "rmse": 8.0053
+            }
+          },
+          "TE": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.4381,
+              "mae": 5.1661,
+              "n": 452,
+              "rmse": 6.6625
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.341,
+              "mae": 4.8969,
+              "n": 452,
+              "rmse": 6.4578
+            }
+          },
+          "WR": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.6772,
+              "mae": 6.8327,
+              "n": 473,
+              "rmse": 8.39
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.0373,
+              "mae": 6.4544,
+              "n": 473,
+              "rmse": 8.09
+            }
+          }
+        }
+      }
+    },
+    "matched": 1816,
+    "population": 2040,
+    "ungraded": 224
+  },
+  "holdout_season": 2025,
+  "holdout_weeks": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "model_sha256": "b4b4b25e0d6c0b878f01bc0d0c0ef603937010e71a3edd44b39e18fc4b54684e",
+  "population": "Fixed top 30 per position by prior eight-appearance Half-PPR average; missing actual stat rows ungraded.",
+  "production_component_engine_reproduced": true,
+  "provider_calls": {
+    "cost_usd": 0,
+    "model_api": 0,
+    "paid_api": 0
+  },
+  "published_regression": {
     "formats": {
       "half_ppr": {
         "overall": {
@@ -233,138 +1109,345 @@
     "population": 2040,
     "ungraded": 224
   },
-  "holdout_season": 2025,
-  "holdout_weeks": [
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18
-  ],
-  "model_sha256": "789f75256c3f00d0aa61780af7b1ba6dc9a5be208c48599021a8061bf4774a2f",
-  "population": "Top 30 per position by strictly prior last-eight-appearance Half-PPR baseline; same players for all candidate comparisons and scoring formats.",
-  "production_component_engine_reproduced": true,
-  "provider_calls": {
-    "cost_usd": 0,
-    "model_api": 0,
-    "paid_api": 0
+  "published_selection": {
+    "formats": {
+      "half_ppr": {
+        "overall": {
+          "baseline": {
+            "bias_actual_minus_projected": -0.2802,
+            "mae": 5.9661,
+            "n": 961,
+            "rmse": 7.714
+          },
+          "model": {
+            "bias_actual_minus_projected": 1.1929,
+            "mae": 5.8844,
+            "n": 961,
+            "rmse": 7.7918
+          }
+        },
+        "positions": {
+          "QB": {
+            "baseline": {
+              "bias_actual_minus_projected": 0.0324,
+              "mae": 7.1363,
+              "n": 211,
+              "rmse": 8.9726
+            },
+            "model": {
+              "bias_actual_minus_projected": 2.4994,
+              "mae": 7.4619,
+              "n": 211,
+              "rmse": 9.6553
+            }
+          },
+          "RB": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.2291,
+              "mae": 6.3813,
+              "n": 246,
+              "rmse": 7.6946
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.3477,
+              "mae": 5.9461,
+              "n": 246,
+              "rmse": 7.3124
+            }
+          },
+          "TE": {
+            "baseline": {
+              "bias_actual_minus_projected": 0.1474,
+              "mae": 4.1667,
+              "n": 244,
+              "rmse": 5.5318
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.957,
+              "mae": 4.1778,
+              "n": 244,
+              "rmse": 5.5728
+            }
+          },
+          "WR": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.0375,
+              "mae": 6.3122,
+              "n": 260,
+              "rmse": 8.3588
+            },
+            "model": {
+              "bias_actual_minus_projected": 1.8116,
+              "mae": 6.1473,
+              "n": 260,
+              "rmse": 8.3071
+            }
+          }
+        }
+      },
+      "non_ppr": {
+        "overall": {
+          "baseline": {
+            "bias_actual_minus_projected": -0.2821,
+            "mae": 5.5739,
+            "n": 961,
+            "rmse": 7.2609
+          },
+          "model": {
+            "bias_actual_minus_projected": 1.0706,
+            "mae": 5.4628,
+            "n": 961,
+            "rmse": 7.3345
+          }
+        },
+        "positions": {
+          "QB": {
+            "baseline": {
+              "bias_actual_minus_projected": 0.0366,
+              "mae": 7.1363,
+              "n": 211,
+              "rmse": 8.973
+            },
+            "model": {
+              "bias_actual_minus_projected": 2.5043,
+              "mae": 7.4626,
+              "n": 211,
+              "rmse": 9.6559
+            }
+          },
+          "RB": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.1057,
+              "mae": 6.1391,
+              "n": 246,
+              "rmse": 7.4499
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.2947,
+              "mae": 5.7017,
+              "n": 246,
+              "rmse": 7.088
+            }
+          },
+          "TE": {
+            "baseline": {
+              "bias_actual_minus_projected": 0.1218,
+              "mae": 3.5358,
+              "n": 244,
+              "rmse": 4.7749
+            },
+            "model": {
+              "bias_actual_minus_projected": 0.775,
+              "mae": 3.521,
+              "n": 244,
+              "rmse": 4.7695
+            }
+          },
+          "WR": {
+            "baseline": {
+              "bias_actual_minus_projected": -0.1404,
+              "mae": 5.6838,
+              "n": 260,
+              "rmse": 7.4573
+            },
+            "model": {
+              "bias_actual_minus_projected": 1.4763,
+              "mae": 5.4361,
+              "n": 260,
+              "rmse": 7.3679
+            }
+          }
+        }
+      },
+      "ppr": {
+        "overall": {
+          "baseline": {
+            "bias_actual_minus_projected": -0.2784,
+            "mae": 6.4363,
+            "n": 961,
+            "rmse": 8.2598
+          },
+          "model": {
+            "bias_actual_minus_projected": 1.3152,
+            "mae": 6.3626,
+            "n": 961,
+            "rmse": 8.3412
+          }
+        },
+        "positions": {
+          "QB": {
+            "baseline": {
+              "bias_actual_minus_projected": 0.0283,
+              "mae": 7.1363,
+              "n": 211,
+              "rmse": 8.9722
+            },
+            "model": {
+              "bias_actual_minus_projected": 2.4944,
+              "mae": 7.4613,
+              "n": 211,
+              "rmse": 9.6548
+            }
+          },
+          "RB": {
+            "baseline": {
+              "bias_actual_minus_projected": -1.3525,
+              "mae": 6.6926,
+              "n": 246,
+              "rmse": 8.0305
+            },
+            "model": {
+              "bias_actual_minus_projected": -0.4006,
+              "mae": 6.257,
+              "n": 246,
+              "rmse": 7.6287
+            }
+          },
+          "TE": {
+            "baseline": {
+              "bias_actual_minus_projected": 0.173,
+              "mae": 4.8909,
+              "n": 244,
+              "rmse": 6.3899
+            },
+            "model": {
+              "bias_actual_minus_projected": 1.139,
+              "mae": 4.8958,
+              "n": 244,
+              "rmse": 6.4686
+            }
+          },
+          "WR": {
+            "baseline": {
+              "bias_actual_minus_projected": 0.0653,
+              "mae": 7.0759,
+              "n": 260,
+              "rmse": 9.3541
+            },
+            "model": {
+              "bias_actual_minus_projected": 2.1469,
+              "mae": 6.9473,
+              "n": 260,
+              "rmse": 9.3372
+            }
+          }
+        }
+      }
+    },
+    "matched": 961,
+    "population": 1080,
+    "ungraded": 119
   },
   "ranking_holdout": {
     "half_ppr": {
-      "projection_order_accuracy": 0.6124196090123089,
-      "ranking_order_accuracy": 0.6151028578729929,
+      "projection_order_accuracy": 0.615060266621236,
+      "ranking_order_accuracy": 0.6184249755100303,
       "unequal_actual_pairs": 23479
     },
     "non_ppr": {
-      "projection_order_accuracy": 0.606466473298072,
-      "ranking_order_accuracy": 0.6096229312404027,
+      "projection_order_accuracy": 0.6082366490360007,
+      "ranking_order_accuracy": 0.6117130182562702,
       "unequal_actual_pairs": 23444
     },
     "ppr": {
-      "projection_order_accuracy": 0.6167873881550916,
-      "ranking_order_accuracy": 0.6177673625905411,
+      "projection_order_accuracy": 0.6189603749467405,
+      "ranking_order_accuracy": 0.6210907541542394,
       "unequal_actual_pairs": 23470
     }
   },
   "ranking_training_trials": [
     {
-      "accuracy": 0.6248640137417693,
-      "correct_pairs": 43653,
+      "accuracy": 0.6295877469224163,
+      "correct_pairs": 43983,
       "history_weight": 0,
       "total_pairs": 69860,
       "weight": 0
     },
     {
-      "accuracy": 0.62625250501002,
-      "correct_pairs": 43750,
+      "accuracy": 0.6298310907529344,
+      "correct_pairs": 44000,
       "history_weight": 0.15,
       "total_pairs": 69860,
       "weight": 0
     },
     {
-      "accuracy": 0.6259662181505868,
-      "correct_pairs": 43730,
+      "accuracy": 0.6288147724019467,
+      "correct_pairs": 43929,
       "history_weight": 0.3,
       "total_pairs": 69860,
       "weight": 0
     },
     {
-      "accuracy": 0.6221371314056685,
-      "correct_pairs": 43462.5,
+      "accuracy": 0.6246421414257085,
+      "correct_pairs": 43637.5,
       "history_weight": 0.5,
       "total_pairs": 69860,
       "weight": 0
     },
     {
-      "accuracy": 0.6248353850558259,
-      "correct_pairs": 43651,
+      "accuracy": 0.629387346120813,
+      "correct_pairs": 43969,
       "history_weight": 0,
       "total_pairs": 69860,
       "weight": 0.5
     },
     {
-      "accuracy": 0.6264099627827082,
-      "correct_pairs": 43761,
+      "accuracy": 0.6297022616661895,
+      "correct_pairs": 43991,
       "history_weight": 0.15,
       "total_pairs": 69860,
       "weight": 0.5
     },
     {
-      "accuracy": 0.6260234755224735,
-      "correct_pairs": 43734,
+      "accuracy": 0.6287432006870884,
+      "correct_pairs": 43924,
       "history_weight": 0.3,
-      "total_pairs": 69860,
-      "weight": 0.5
-    },
-    {
-      "accuracy": 0.6221586029201259,
-      "correct_pairs": 43464,
-      "history_weight": 0.5,
       "total_pairs": 69860,
       "weight": 0.5
     },
     {
       "accuracy": 0.6246922416261094,
       "correct_pairs": 43641,
+      "history_weight": 0.5,
+      "total_pairs": 69860,
+      "weight": 0.5
+    },
+    {
+      "accuracy": 0.6296020612653879,
+      "correct_pairs": 43984,
       "history_weight": 0,
       "total_pairs": 69860,
       "weight": 1
     },
     {
-      "accuracy": 0.6265674205553965,
-      "correct_pairs": 43772,
+      "accuracy": 0.6296163756083596,
+      "correct_pairs": 43985,
       "history_weight": 0.15,
       "total_pairs": 69860,
       "weight": 1
     },
     {
-      "accuracy": 0.6259232751216719,
-      "correct_pairs": 43727,
+      "accuracy": 0.6286286859433152,
+      "correct_pairs": 43916,
       "history_weight": 0.3,
       "total_pairs": 69860,
       "weight": 1
     },
     {
-      "accuracy": 0.621986830804466,
-      "correct_pairs": 43452,
+      "accuracy": 0.6245347838534211,
+      "correct_pairs": 43630,
       "history_weight": 0.5,
       "total_pairs": 69860,
       "weight": 1
     }
   ],
-  "ranking_validation_note": "Ranking weights selected separately from projection parameters using only 2024 pairwise outcomes; 2025 used for reporting, never for weight selection.",
+  "selection": {
+    "depth": 3,
+    "weights": {
+      "carries": 0,
+      "targets": 0.5
+    }
+  },
   "sources": [
     {
       "file": "depth_charts_2023.csv.gz",
@@ -380,7 +1463,7 @@
     },
     {
       "file": "games.csv.gz",
-      "sha256": "fa7f023c1737f6c9d6d3579e1b83780ebd18866db57ac7e539889bc8d394cd65"
+      "sha256": "534276d556493e0ac7a6cffdf0601613236b75638d758e581b33ac59e3796406"
     },
     {
       "file": "play_by_play_2023.csv.gz",
@@ -454,10 +1537,10 @@
             "rmse": 7.3746
           },
           "model": {
-            "bias_actual_minus_projected": 0.9295,
-            "mae": 5.5958,
+            "bias_actual_minus_projected": 0.8961,
+            "mae": 5.5616,
             "n": 1812,
-            "rmse": 7.3538
+            "rmse": 7.313
           }
         },
         "positions": {
@@ -470,9 +1553,9 @@
             },
             "model": {
               "bias_actual_minus_projected": 1.7426,
-              "mae": 6.8225,
+              "mae": 6.8226,
               "n": 405,
-              "rmse": 8.8143
+              "rmse": 8.8144
             }
           },
           "RB": {
@@ -483,10 +1566,10 @@
               "rmse": 7.4777
             },
             "model": {
-              "bias_actual_minus_projected": 0.0497,
-              "mae": 5.7872,
+              "bias_actual_minus_projected": 0.0325,
+              "mae": 5.7593,
               "n": 470,
-              "rmse": 7.2351
+              "rmse": 7.2027
             }
           },
           "TE": {
@@ -497,10 +1580,10 @@
               "rmse": 5.5301
             },
             "model": {
-              "bias_actual_minus_projected": 0.9177,
-              "mae": 4.0068,
+              "bias_actual_minus_projected": 0.7928,
+              "mae": 3.9705,
               "n": 459,
-              "rmse": 5.4013
+              "rmse": 5.3443
             }
           },
           "WR": {
@@ -511,10 +1594,10 @@
               "rmse": 7.9302
             },
             "model": {
-              "bias_actual_minus_projected": 1.1169,
-              "mae": 5.8942,
+              "bias_actual_minus_projected": 1.127,
+              "mae": 5.8266,
               "n": 478,
-              "rmse": 7.7259
+              "rmse": 7.6463
             }
           }
         }
@@ -528,10 +1611,10 @@
             "rmse": 6.9342
           },
           "model": {
-            "bias_actual_minus_projected": 0.8166,
-            "mae": 5.1929,
+            "bias_actual_minus_projected": 0.7911,
+            "mae": 5.1731,
             "n": 1812,
-            "rmse": 6.9135
+            "rmse": 6.8885
           }
         },
         "positions": {
@@ -543,8 +1626,8 @@
               "rmse": 8.3378
             },
             "model": {
-              "bias_actual_minus_projected": 1.7446,
-              "mae": 6.82,
+              "bias_actual_minus_projected": 1.7447,
+              "mae": 6.8201,
               "n": 405,
               "rmse": 8.8128
             }
@@ -557,10 +1640,10 @@
               "rmse": 7.2416
             },
             "model": {
-              "bias_actual_minus_projected": 0.0264,
-              "mae": 5.5831,
+              "bias_actual_minus_projected": 0.0151,
+              "mae": 5.5713,
               "n": 470,
-              "rmse": 7.02
+              "rmse": 7.0051
             }
           },
           "TE": {
@@ -571,10 +1654,10 @@
               "rmse": 4.7574
             },
             "model": {
-              "bias_actual_minus_projected": 0.7125,
-              "mae": 3.3772,
+              "bias_actual_minus_projected": 0.6205,
+              "mae": 3.3584,
               "n": 459,
-              "rmse": 4.6239
+              "rmse": 4.5844
             }
           },
           "WR": {
@@ -585,10 +1668,10 @@
               "rmse": 7.0764
             },
             "model": {
-              "bias_actual_minus_projected": 0.9074,
-              "mae": 5.174,
+              "bias_actual_minus_projected": 0.9099,
+              "mae": 5.1287,
               "n": 478,
-              "rmse": 6.8115
+              "rmse": 6.7558
             }
           }
         }
@@ -602,10 +1685,10 @@
             "rmse": 7.9111
           },
           "model": {
-            "bias_actual_minus_projected": 1.0423,
-            "mae": 6.0646,
+            "bias_actual_minus_projected": 1.001,
+            "mae": 6.0179,
             "n": 1812,
-            "rmse": 7.8917
+            "rmse": 7.8327
           }
         },
         "positions": {
@@ -617,10 +1700,10 @@
               "rmse": 8.3416
             },
             "model": {
-              "bias_actual_minus_projected": 1.7405,
-              "mae": 6.825,
+              "bias_actual_minus_projected": 1.7406,
+              "mae": 6.8251,
               "n": 405,
-              "rmse": 8.816
+              "rmse": 8.8161
             }
           },
           "RB": {
@@ -631,10 +1714,10 @@
               "rmse": 7.8118
             },
             "model": {
-              "bias_actual_minus_projected": 0.0731,
-              "mae": 6.0878,
+              "bias_actual_minus_projected": 0.05,
+              "mae": 6.0386,
               "n": 470,
-              "rmse": 7.5514
+              "rmse": 7.4964
             }
           },
           "TE": {
@@ -645,10 +1728,10 @@
               "rmse": 6.4055
             },
             "model": {
-              "bias_actual_minus_projected": 1.123,
-              "mae": 4.6985,
+              "bias_actual_minus_projected": 0.9651,
+              "mae": 4.6497,
               "n": 459,
-              "rmse": 6.2778
+              "rmse": 6.2036
             }
           },
           "WR": {
@@ -659,10 +1742,10 @@
               "rmse": 8.8821
             },
             "model": {
-              "bias_actual_minus_projected": 1.3264,
-              "mae": 6.7095,
+              "bias_actual_minus_projected": 1.344,
+              "mae": 6.6275,
               "n": 478,
-              "rmse": 8.7361
+              "rmse": 8.6318
             }
           }
         }
@@ -672,637 +1755,3801 @@
     "population": 2040,
     "ungraded": 228
   },
+  "training_code_sha256": "8d8a7e547c4e988f971214b358946d5ec5f5868535b20c44acb02b3aefe223f9",
   "training_trials": [
     {
-      "config": {
-        "efficiency_prior": 60,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0.15,
-        "player_prior_games": 1,
-        "scoring_opportunity_weight": 0.5,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 2,
+      "objective": 62.334648081287305,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1877,
+                "mae": 5.8772,
+                "n": 961,
+                "rmse": 7.794
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.4994,
+                  "mae": 7.462,
+                  "n": 211,
+                  "rmse": 9.6555
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.4268,
+                  "mae": 5.9443,
+                  "n": 246,
+                  "rmse": 7.2999
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.8534,
+                  "mae": 4.1496,
+                  "n": 244,
+                  "rmse": 5.5547
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.9646,
+                  "mae": 6.149,
+                  "n": 260,
+                  "rmse": 8.3362
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0662,
+                "mae": 5.4603,
+                "n": 961,
+                "rmse": 7.3354
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5043,
+                  "mae": 7.4627,
+                  "n": 211,
+                  "rmse": 9.656
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.3479,
+                  "mae": 5.7098,
+                  "n": 246,
+                  "rmse": 7.0833
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.697,
+                  "mae": 3.5154,
+                  "n": 244,
+                  "rmse": 4.7553
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.5834,
+                  "mae": 5.4246,
+                  "n": 260,
+                  "rmse": 7.384
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.3093,
+                "mae": 6.3504,
+                "n": 961,
+                "rmse": 8.3445
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.4945,
+                  "mae": 7.4615,
+                  "n": 211,
+                  "rmse": 9.655
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.5056,
+                  "mae": 6.2434,
+                  "n": 246,
+                  "rmse": 7.6052
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.0097,
+                  "mae": 4.8482,
+                  "n": 244,
+                  "rmse": 6.4474
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.3458,
+                  "mae": 6.9597,
+                  "n": 260,
+                  "rmse": 9.3796
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.715008,
-      "parameter": "player_prior_games",
-      "value": 1
+      "weights": {
+        "carries": 0,
+        "targets": 0.5
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 60,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0.15,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.5,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 2,
+      "objective": 62.57599162702919,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1854,
+                "mae": 5.8845,
+                "n": 961,
+                "rmse": 7.8099
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.4995,
+                  "mae": 7.4622,
+                  "n": 211,
+                  "rmse": 9.6556
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.5008,
+                  "mae": 5.9517,
+                  "n": 246,
+                  "rmse": 7.3009
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.756,
+                  "mae": 4.1489,
+                  "n": 244,
+                  "rmse": 5.5597
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.1172,
+                  "mae": 6.1693,
+                  "n": 260,
+                  "rmse": 8.3873
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0638,
+                "mae": 5.4663,
+                "n": 961,
+                "rmse": 7.3442
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5043,
+                  "mae": 7.4628,
+                  "n": 211,
+                  "rmse": 9.656
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.3982,
+                  "mae": 5.7195,
+                  "n": 246,
+                  "rmse": 7.0852
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.6235,
+                  "mae": 3.522,
+                  "n": 244,
+                  "rmse": 4.7554
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.6912,
+                  "mae": 5.4311,
+                  "n": 260,
+                  "rmse": 7.4144
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.3069,
+                "mae": 6.3649,
+                "n": 961,
+                "rmse": 8.3685
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.4946,
+                  "mae": 7.4617,
+                  "n": 211,
+                  "rmse": 9.6551
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.6035,
+                  "mae": 6.2516,
+                  "n": 246,
+                  "rmse": 7.6042
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.8885,
+                  "mae": 4.8379,
+                  "n": 244,
+                  "rmse": 6.4583
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5433,
+                  "mae": 7.0152,
+                  "n": 260,
+                  "rmse": 9.452
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.5674,
-      "parameter": "player_prior_games",
-      "value": 3
+      "weights": {
+        "carries": 0,
+        "targets": 1
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 60,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0.15,
-        "player_prior_games": 6,
-        "scoring_opportunity_weight": 0.5,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 2,
+      "objective": 62.42629037631423,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1767,
+                "mae": 5.8918,
+                "n": 961,
+                "rmse": 7.7989
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5606,
+                  "mae": 7.475,
+                  "n": 211,
+                  "rmse": 9.6687
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.4663,
+                  "mae": 5.9574,
+                  "n": 246,
+                  "rmse": 7.3212
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.9393,
+                  "mae": 4.181,
+                  "n": 244,
+                  "rmse": 5.5762
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.8309,
+                  "mae": 6.1504,
+                  "n": 260,
+                  "rmse": 8.3097
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0544,
+                "mae": 5.4707,
+                "n": 961,
+                "rmse": 7.342
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5655,
+                  "mae": 7.4757,
+                  "n": 211,
+                  "rmse": 9.6693
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.4133,
+                  "mae": 5.7144,
+                  "n": 246,
+                  "rmse": 7.0976
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.7573,
+                  "mae": 3.5264,
+                  "n": 244,
+                  "rmse": 4.7736
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.4955,
+                  "mae": 5.4379,
+                  "n": 260,
+                  "rmse": 7.37
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.299,
+                "mae": 6.3699,
+                "n": 961,
+                "rmse": 8.3479
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5557,
+                  "mae": 7.4742,
+                  "n": 211,
+                  "rmse": 9.6681
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.5193,
+                  "mae": 6.2668,
+                  "n": 246,
+                  "rmse": 7.6367
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.1213,
+                  "mae": 4.8984,
+                  "n": 244,
+                  "rmse": 6.4716
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.1662,
+                  "mae": 6.9521,
+                  "n": 260,
+                  "rmse": 9.3402
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.874935,
-      "parameter": "player_prior_games",
-      "value": 6
+      "weights": {
+        "carries": 0.5,
+        "targets": 0
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0.15,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.5,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 2,
+      "objective": 62.493026683985164,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1715,
+                "mae": 5.8862,
+                "n": 961,
+                "rmse": 7.8038
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5607,
+                  "mae": 7.4751,
+                  "n": 211,
+                  "rmse": 9.6688
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.5454,
+                  "mae": 5.9609,
+                  "n": 246,
+                  "rmse": 7.3186
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.8357,
+                  "mae": 4.1532,
+                  "n": 244,
+                  "rmse": 5.5586
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.9839,
+                  "mae": 6.1524,
+                  "n": 260,
+                  "rmse": 8.3397
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0499,
+                "mae": 5.4692,
+                "n": 961,
+                "rmse": 7.3448
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5656,
+                  "mae": 7.4758,
+                  "n": 211,
+                  "rmse": 9.6694
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.4666,
+                  "mae": 5.727,
+                  "n": 246,
+                  "rmse": 7.0997
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.6793,
+                  "mae": 3.5204,
+                  "n": 244,
+                  "rmse": 4.7597
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.6027,
+                  "mae": 5.4256,
+                  "n": 260,
+                  "rmse": 7.3867
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.2931,
+                "mae": 6.3599,
+                "n": 961,
+                "rmse": 8.3546
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5558,
+                  "mae": 7.4745,
+                  "n": 211,
+                  "rmse": 9.6683
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.6243,
+                  "mae": 6.262,
+                  "n": 246,
+                  "rmse": 7.626
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.992,
+                  "mae": 4.8514,
+                  "n": 244,
+                  "rmse": 6.4508
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.365,
+                  "mae": 6.9636,
+                  "n": 260,
+                  "rmse": 9.3837
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.436327,
-      "parameter": "efficiency_prior",
-      "value": 30
+      "weights": {
+        "carries": 0.5,
+        "targets": 0.5
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 60,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0.15,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.5,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 2,
+      "objective": 62.773831511621324,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1691,
+                "mae": 5.8955,
+                "n": 961,
+                "rmse": 7.8224
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5607,
+                  "mae": 7.4753,
+                  "n": 211,
+                  "rmse": 9.6689
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.6195,
+                  "mae": 5.9747,
+                  "n": 246,
+                  "rmse": 7.3291
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.7383,
+                  "mae": 4.1538,
+                  "n": 244,
+                  "rmse": 5.5639
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.1365,
+                  "mae": 6.1733,
+                  "n": 260,
+                  "rmse": 8.3916
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0476,
+                "mae": 5.4764,
+                "n": 961,
+                "rmse": 7.3554
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5656,
+                  "mae": 7.4758,
+                  "n": 211,
+                  "rmse": 9.6694
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.5169,
+                  "mae": 5.7405,
+                  "n": 246,
+                  "rmse": 7.108
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.6058,
+                  "mae": 3.5271,
+                  "n": 244,
+                  "rmse": 4.7601
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.7104,
+                  "mae": 5.4333,
+                  "n": 260,
+                  "rmse": 7.4179
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.2907,
+                "mae": 6.3761,
+                "n": 961,
+                "rmse": 8.3818
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5559,
+                  "mae": 7.4747,
+                  "n": 211,
+                  "rmse": 9.6685
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.7221,
+                  "mae": 6.2745,
+                  "n": 246,
+                  "rmse": 7.6371
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.8708,
+                  "mae": 4.842,
+                  "n": 244,
+                  "rmse": 6.4621
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5625,
+                  "mae": 7.0203,
+                  "n": 260,
+                  "rmse": 9.457
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.5674,
-      "parameter": "efficiency_prior",
-      "value": 60
+      "weights": {
+        "carries": 0.5,
+        "targets": 1
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 120,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0.15,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.5,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 2,
+      "objective": 62.65256148009456,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1602,
+                "mae": 5.9017,
+                "n": 961,
+                "rmse": 7.8132
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.6147,
+                  "mae": 7.4879,
+                  "n": 211,
+                  "rmse": 9.6821
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.5799,
+                  "mae": 5.978,
+                  "n": 246,
+                  "rmse": 7.3587
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.9226,
+                  "mae": 4.1842,
+                  "n": 244,
+                  "rmse": 5.5803
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.8493,
+                  "mae": 6.1541,
+                  "n": 260,
+                  "rmse": 8.3127
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0379,
+                "mae": 5.4811,
+                "n": 961,
+                "rmse": 7.3571
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.6197,
+                  "mae": 7.4887,
+                  "n": 211,
+                  "rmse": 9.6827
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.527,
+                  "mae": 5.7362,
+                  "n": 246,
+                  "rmse": 7.1369
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.7406,
+                  "mae": 3.5316,
+                  "n": 244,
+                  "rmse": 4.7784
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.514,
+                  "mae": 5.4401,
+                  "n": 260,
+                  "rmse": 7.3725
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.2825,
+                "mae": 6.38,
+                "n": 961,
+                "rmse": 8.3613
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.6098,
+                  "mae": 7.4871,
+                  "n": 211,
+                  "rmse": 9.6815
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.6329,
+                  "mae": 6.2875,
+                  "n": 246,
+                  "rmse": 7.672
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.1046,
+                  "mae": 4.901,
+                  "n": 244,
+                  "rmse": 6.4751
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.1847,
+                  "mae": 6.9572,
+                  "n": 260,
+                  "rmse": 9.3435
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.779526,
-      "parameter": "efficiency_prior",
-      "value": 120
+      "weights": {
+        "carries": 1,
+        "targets": 0
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0.15,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 2,
+      "objective": 62.759069741154455,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1551,
+                "mae": 5.8962,
+                "n": 961,
+                "rmse": 7.8207
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.6148,
+                  "mae": 7.4881,
+                  "n": 211,
+                  "rmse": 9.6822
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.6591,
+                  "mae": 5.981,
+                  "n": 246,
+                  "rmse": 7.3656
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.8189,
+                  "mae": 4.157,
+                  "n": 244,
+                  "rmse": 5.563
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.0023,
+                  "mae": 6.1564,
+                  "n": 260,
+                  "rmse": 8.3436
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0335,
+                "mae": 5.4804,
+                "n": 961,
+                "rmse": 7.3618
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.6197,
+                  "mae": 7.4888,
+                  "n": 211,
+                  "rmse": 9.6828
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.5802,
+                  "mae": 5.7521,
+                  "n": 246,
+                  "rmse": 7.1455
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.6626,
+                  "mae": 3.5253,
+                  "n": 244,
+                  "rmse": 4.7649
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.6212,
+                  "mae": 5.428,
+                  "n": 260,
+                  "rmse": 7.39
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.2766,
+                "mae": 6.3723,
+                "n": 961,
+                "rmse": 8.3712
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.6099,
+                  "mae": 7.4873,
+                  "n": 211,
+                  "rmse": 9.6817
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.7379,
+                  "mae": 6.2918,
+                  "n": 246,
+                  "rmse": 7.6735
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.9753,
+                  "mae": 4.8544,
+                  "n": 244,
+                  "rmse": 6.4547
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.3835,
+                  "mae": 6.9681,
+                  "n": 260,
+                  "rmse": 9.388
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.460132,
-      "parameter": "scoring_opportunity_weight",
-      "value": 0
+      "weights": {
+        "carries": 1,
+        "targets": 0.5
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0.15,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 2,
+      "objective": 63.078059613903285,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1527,
+                "mae": 5.9063,
+                "n": 961,
+                "rmse": 7.8417
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.6149,
+                  "mae": 7.4882,
+                  "n": 211,
+                  "rmse": 9.6824
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.7331,
+                  "mae": 5.9961,
+                  "n": 246,
+                  "rmse": 7.3851
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.7215,
+                  "mae": 4.1586,
+                  "n": 244,
+                  "rmse": 5.5688
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.1549,
+                  "mae": 6.1777,
+                  "n": 260,
+                  "rmse": 8.3964
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0311,
+                "mae": 5.4892,
+                "n": 961,
+                "rmse": 7.3741
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.6197,
+                  "mae": 7.4889,
+                  "n": 211,
+                  "rmse": 9.6829
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.6305,
+                  "mae": 5.7716,
+                  "n": 246,
+                  "rmse": 7.16
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.5891,
+                  "mae": 3.5319,
+                  "n": 244,
+                  "rmse": 4.7655
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.7289,
+                  "mae": 5.4361,
+                  "n": 260,
+                  "rmse": 7.4218
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.2742,
+                "mae": 6.3894,
+                "n": 961,
+                "rmse": 8.4015
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.61,
+                  "mae": 7.4876,
+                  "n": 211,
+                  "rmse": 9.6819
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.8358,
+                  "mae": 6.3057,
+                  "n": 246,
+                  "rmse": 7.6962
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.854,
+                  "mae": 4.8462,
+                  "n": 244,
+                  "rmse": 6.4665
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.581,
+                  "mae": 7.0256,
+                  "n": 260,
+                  "rmse": 9.4624
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.416279,
-      "parameter": "scoring_opportunity_weight",
-      "value": 0.25
+      "weights": {
+        "carries": 1,
+        "targets": 1
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0.15,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.5,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 3,
+      "objective": 62.273909256808984,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1847,
+                "mae": 5.875,
+                "n": 961,
+                "rmse": 7.79
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.4994,
+                  "mae": 7.462,
+                  "n": 211,
+                  "rmse": 9.6555
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.4107,
+                  "mae": 5.9436,
+                  "n": 246,
+                  "rmse": 7.2967
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.8467,
+                  "mae": 4.1503,
+                  "n": 244,
+                  "rmse": 5.5484
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.9447,
+                  "mae": 6.1407,
+                  "n": 260,
+                  "rmse": 8.3291
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.064,
+                "mae": 5.4592,
+                "n": 961,
+                "rmse": 7.3328
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5043,
+                  "mae": 7.4627,
+                  "n": 211,
+                  "rmse": 9.656
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.3366,
+                  "mae": 5.7096,
+                  "n": 246,
+                  "rmse": 7.0812
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.6926,
+                  "mae": 3.5153,
+                  "n": 244,
+                  "rmse": 4.7508
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.569,
+                  "mae": 5.4205,
+                  "n": 260,
+                  "rmse": 7.3792
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.3054,
+                "mae": 6.3462,
+                "n": 961,
+                "rmse": 8.339
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.4945,
+                  "mae": 7.4615,
+                  "n": 211,
+                  "rmse": 9.655
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.4849,
+                  "mae": 6.2403,
+                  "n": 246,
+                  "rmse": 7.601
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.0007,
+                  "mae": 4.8492,
+                  "n": 244,
+                  "rmse": 6.4394
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.3203,
+                  "mae": 6.9463,
+                  "n": 260,
+                  "rmse": 9.3699
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.436327,
-      "parameter": "scoring_opportunity_weight",
-      "value": 0.5
+      "weights": {
+        "carries": 0,
+        "targets": 0.5
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 3,
+      "objective": 62.47281817952814,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1799,
+                "mae": 5.8803,
+                "n": 961,
+                "rmse": 7.8032
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.4995,
+                  "mae": 7.4622,
+                  "n": 211,
+                  "rmse": 9.6556
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.4688,
+                  "mae": 5.9491,
+                  "n": 246,
+                  "rmse": 7.2947
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.7432,
+                  "mae": 4.149,
+                  "n": 244,
+                  "rmse": 5.5496
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.0788,
+                  "mae": 6.1561,
+                  "n": 260,
+                  "rmse": 8.3754
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0599,
+                "mae": 5.4636,
+                "n": 961,
+                "rmse": 7.3397
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5043,
+                  "mae": 7.4628,
+                  "n": 211,
+                  "rmse": 9.656
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.3756,
+                  "mae": 5.7197,
+                  "n": 246,
+                  "rmse": 7.0811
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.6151,
+                  "mae": 3.5183,
+                  "n": 244,
+                  "rmse": 4.7478
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.6633,
+                  "mae": 5.4245,
+                  "n": 260,
+                  "rmse": 7.4064
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.2999,
+                "mae": 6.3582,
+                "n": 961,
+                "rmse": 8.3592
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.4946,
+                  "mae": 7.4617,
+                  "n": 211,
+                  "rmse": 9.6551
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.5621,
+                  "mae": 6.2485,
+                  "n": 246,
+                  "rmse": 7.596
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.8713,
+                  "mae": 4.8405,
+                  "n": 244,
+                  "rmse": 6.446
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.4943,
+                  "mae": 6.9908,
+                  "n": 260,
+                  "rmse": 9.4359
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.385174,
-      "parameter": "opponent_weight",
-      "value": 0
+      "weights": {
+        "carries": 0,
+        "targets": 1
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0.15,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 3,
+      "objective": 62.433976001046744,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1739,
+                "mae": 5.8938,
+                "n": 961,
+                "rmse": 7.7994
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5714,
+                  "mae": 7.4755,
+                  "n": 211,
+                  "rmse": 9.6702
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.4978,
+                  "mae": 5.9659,
+                  "n": 246,
+                  "rmse": 7.3233
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.9427,
+                  "mae": 4.1799,
+                  "n": 244,
+                  "rmse": 5.5729
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.8386,
+                  "mae": 6.1503,
+                  "n": 260,
+                  "rmse": 8.3102
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0516,
+                "mae": 5.4711,
+                "n": 961,
+                "rmse": 7.3424
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5764,
+                  "mae": 7.4762,
+                  "n": 211,
+                  "rmse": 9.6708
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.4449,
+                  "mae": 5.7192,
+                  "n": 246,
+                  "rmse": 7.0998
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.7607,
+                  "mae": 3.5249,
+                  "n": 244,
+                  "rmse": 4.7699
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.5033,
+                  "mae": 5.4356,
+                  "n": 260,
+                  "rmse": 7.37
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.2962,
+                "mae": 6.372,
+                "n": 961,
+                "rmse": 8.3484
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5665,
+                  "mae": 7.4748,
+                  "n": 211,
+                  "rmse": 9.6697
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.5508,
+                  "mae": 6.2759,
+                  "n": 246,
+                  "rmse": 7.6386
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.1247,
+                  "mae": 4.8976,
+                  "n": 244,
+                  "rmse": 6.4685
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.1739,
+                  "mae": 6.9517,
+                  "n": 260,
+                  "rmse": 9.3409
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.416279,
-      "parameter": "opponent_weight",
-      "value": 0.15
+      "weights": {
+        "carries": 0.5,
+        "targets": 0
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0.3,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 3,
+      "objective": 62.44087152869789,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1658,
+                "mae": 5.8851,
+                "n": 961,
+                "rmse": 7.8003
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5715,
+                  "mae": 7.4757,
+                  "n": 211,
+                  "rmse": 9.6704
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.5609,
+                  "mae": 5.9647,
+                  "n": 246,
+                  "rmse": 7.3177
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.8323,
+                  "mae": 4.153,
+                  "n": 244,
+                  "rmse": 5.5488
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.9717,
+                  "mae": 6.1446,
+                  "n": 260,
+                  "rmse": 8.3332
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0451,
+                "mae": 5.4689,
+                "n": 961,
+                "rmse": 7.3427
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5764,
+                  "mae": 7.4763,
+                  "n": 211,
+                  "rmse": 9.6709
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.4868,
+                  "mae": 5.7319,
+                  "n": 246,
+                  "rmse": 7.0999
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.6782,
+                  "mae": 3.5186,
+                  "n": 244,
+                  "rmse": 4.7514
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.596,
+                  "mae": 5.4212,
+                  "n": 260,
+                  "rmse": 7.3822
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.2865,
+                "mae": 6.3585,
+                "n": 961,
+                "rmse": 8.3496
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5666,
+                  "mae": 7.475,
+                  "n": 211,
+                  "rmse": 9.6698
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.6351,
+                  "mae": 6.2701,
+                  "n": 246,
+                  "rmse": 7.6239
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.9863,
+                  "mae": 4.8512,
+                  "n": 244,
+                  "rmse": 6.4396
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.3473,
+                  "mae": 6.9505,
+                  "n": 260,
+                  "rmse": 9.3749
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.490991,
-      "parameter": "opponent_weight",
-      "value": 0.3
+      "weights": {
+        "carries": 0.5,
+        "targets": 0.5
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0,
-        "team_prior_games": 4
+      "depth": 3,
+      "objective": 62.6801247107065,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1609,
+                "mae": 5.8921,
+                "n": 961,
+                "rmse": 7.8162
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5716,
+                  "mae": 7.4758,
+                  "n": 211,
+                  "rmse": 9.6705
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.619,
+                  "mae": 5.9761,
+                  "n": 246,
+                  "rmse": 7.3254
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.7288,
+                  "mae": 4.1523,
+                  "n": 244,
+                  "rmse": 5.5502
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.1058,
+                  "mae": 6.1601,
+                  "n": 260,
+                  "rmse": 8.3805
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0409,
+                "mae": 5.4744,
+                "n": 961,
+                "rmse": 7.3515
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5764,
+                  "mae": 7.4764,
+                  "n": 211,
+                  "rmse": 9.671
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.5258,
+                  "mae": 5.7447,
+                  "n": 246,
+                  "rmse": 7.1064
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.6007,
+                  "mae": 3.5218,
+                  "n": 244,
+                  "rmse": 4.7486
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.6903,
+                  "mae": 5.4262,
+                  "n": 260,
+                  "rmse": 7.4103
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.2809,
+                "mae": 6.3714,
+                "n": 961,
+                "rmse": 8.3732
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5667,
+                  "mae": 7.4752,
+                  "n": 211,
+                  "rmse": 9.67
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.7123,
+                  "mae": 6.2804,
+                  "n": 246,
+                  "rmse": 7.6312
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.8569,
+                  "mae": 4.843,
+                  "n": 244,
+                  "rmse": 6.4465
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5213,
+                  "mae": 6.9962,
+                  "n": 260,
+                  "rmse": 9.4421
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.388308,
-      "parameter": "snap_weight",
-      "value": 0
+      "weights": {
+        "carries": 0.5,
+        "targets": 1
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 3,
+      "objective": 62.67013472773107,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1543,
+                "mae": 5.9046,
+                "n": 961,
+                "rmse": 7.8142
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.634,
+                  "mae": 7.4893,
+                  "n": 211,
+                  "rmse": 9.6855
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.642,
+                  "mae": 5.9905,
+                  "n": 246,
+                  "rmse": 7.3635
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.9292,
+                  "mae": 4.182,
+                  "n": 244,
+                  "rmse": 5.5733
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.8644,
+                  "mae": 6.1541,
+                  "n": 260,
+                  "rmse": 8.3134
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0321,
+                "mae": 5.4832,
+                "n": 961,
+                "rmse": 7.358
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.639,
+                  "mae": 7.4901,
+                  "n": 211,
+                  "rmse": 9.6861
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.589,
+                  "mae": 5.7508,
+                  "n": 246,
+                  "rmse": 7.142
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.7472,
+                  "mae": 3.5286,
+                  "n": 244,
+                  "rmse": 4.7707
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.5291,
+                  "mae": 5.4355,
+                  "n": 260,
+                  "rmse": 7.3725
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.2766,
+                "mae": 6.3835,
+                "n": 961,
+                "rmse": 8.3624
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.6291,
+                  "mae": 7.4885,
+                  "n": 211,
+                  "rmse": 9.6849
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.6949,
+                  "mae": 6.3024,
+                  "n": 246,
+                  "rmse": 7.6765
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.1112,
+                  "mae": 4.8993,
+                  "n": 244,
+                  "rmse": 6.4687
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.1998,
+                  "mae": 6.9563,
+                  "n": 260,
+                  "rmse": 9.3448
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.385174,
-      "parameter": "snap_weight",
-      "value": 0.2
+      "weights": {
+        "carries": 1,
+        "targets": 0
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.4,
-        "team_prior_games": 4
+      "depth": 3,
+      "objective": 62.71786895596452,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1462,
+                "mae": 5.8974,
+                "n": 961,
+                "rmse": 7.8179
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.6341,
+                  "mae": 7.4895,
+                  "n": 211,
+                  "rmse": 9.6856
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.7051,
+                  "mae": 5.9941,
+                  "n": 246,
+                  "rmse": 7.3676
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.8188,
+                  "mae": 4.1557,
+                  "n": 244,
+                  "rmse": 5.5494
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.9975,
+                  "mae": 6.1485,
+                  "n": 260,
+                  "rmse": 8.3375
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0255,
+                "mae": 5.4813,
+                "n": 961,
+                "rmse": 7.3603
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.639,
+                  "mae": 7.4902,
+                  "n": 211,
+                  "rmse": 9.6862
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.6309,
+                  "mae": 5.7646,
+                  "n": 246,
+                  "rmse": 7.1487
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.6647,
+                  "mae": 3.5219,
+                  "n": 244,
+                  "rmse": 4.7524
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.6218,
+                  "mae": 5.4219,
+                  "n": 260,
+                  "rmse": 7.3855
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.2669,
+                "mae": 6.3709,
+                "n": 961,
+                "rmse": 8.3669
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.6292,
+                  "mae": 7.4887,
+                  "n": 211,
+                  "rmse": 9.6851
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.7792,
+                  "mae": 6.2997,
+                  "n": 246,
+                  "rmse": 7.6743
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.9728,
+                  "mae": 4.8533,
+                  "n": 244,
+                  "rmse": 6.4401
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.3732,
+                  "mae": 6.9552,
+                  "n": 260,
+                  "rmse": 9.38
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.533339,
-      "parameter": "snap_weight",
-      "value": 0.4
+      "weights": {
+        "carries": 1,
+        "targets": 0.5
+      }
     },
     {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
+      "depth": 3,
+      "objective": 62.99632443640175,
+      "report": {
+        "formats": {
+          "half_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2802,
+                "mae": 5.9661,
+                "n": 961,
+                "rmse": 7.714
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.1413,
+                "mae": 5.9042,
+                "n": 961,
+                "rmse": 7.8363
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0324,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9726
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.6342,
+                  "mae": 7.4896,
+                  "n": 211,
+                  "rmse": 9.6857
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.2291,
+                  "mae": 6.3813,
+                  "n": 246,
+                  "rmse": 7.6946
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.7632,
+                  "mae": 6.004,
+                  "n": 246,
+                  "rmse": 7.3845
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1474,
+                  "mae": 4.1667,
+                  "n": 244,
+                  "rmse": 5.5318
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.7153,
+                  "mae": 4.1555,
+                  "n": 244,
+                  "rmse": 5.5511
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.0375,
+                  "mae": 6.3122,
+                  "n": 260,
+                  "rmse": 8.3588
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.1316,
+                  "mae": 6.1641,
+                  "n": 260,
+                  "rmse": 8.3859
+                }
+              }
+            }
+          },
+          "non_ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2821,
+                "mae": 5.5739,
+                "n": 961,
+                "rmse": 7.2609
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.0213,
+                "mae": 5.4883,
+                "n": 961,
+                "rmse": 7.3709
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0366,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.973
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.639,
+                  "mae": 7.4903,
+                  "n": 211,
+                  "rmse": 9.6862
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.1057,
+                  "mae": 6.1391,
+                  "n": 246,
+                  "rmse": 7.4499
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.6699,
+                  "mae": 5.7821,
+                  "n": 246,
+                  "rmse": 7.1616
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.1218,
+                  "mae": 3.5358,
+                  "n": 244,
+                  "rmse": 4.7749
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.5872,
+                  "mae": 3.5252,
+                  "n": 244,
+                  "rmse": 4.7498
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": -0.1404,
+                  "mae": 5.6838,
+                  "n": 260,
+                  "rmse": 7.4573
+                },
+                "model": {
+                  "bias_actual_minus_projected": 1.7161,
+                  "mae": 5.4281,
+                  "n": 260,
+                  "rmse": 7.4144
+                }
+              }
+            }
+          },
+          "ppr": {
+            "overall": {
+              "baseline": {
+                "bias_actual_minus_projected": -0.2784,
+                "mae": 6.4363,
+                "n": 961,
+                "rmse": 8.2598
+              },
+              "model": {
+                "bias_actual_minus_projected": 1.2613,
+                "mae": 6.3851,
+                "n": 961,
+                "rmse": 8.3936
+              }
+            },
+            "positions": {
+              "QB": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0283,
+                  "mae": 7.1363,
+                  "n": 211,
+                  "rmse": 8.9722
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.6293,
+                  "mae": 7.489,
+                  "n": 211,
+                  "rmse": 9.6852
+                }
+              },
+              "RB": {
+                "baseline": {
+                  "bias_actual_minus_projected": -1.3525,
+                  "mae": 6.6926,
+                  "n": 246,
+                  "rmse": 8.0305
+                },
+                "model": {
+                  "bias_actual_minus_projected": -0.8564,
+                  "mae": 6.3137,
+                  "n": 246,
+                  "rmse": 7.6934
+                }
+              },
+              "TE": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.173,
+                  "mae": 4.8909,
+                  "n": 244,
+                  "rmse": 6.3899
+                },
+                "model": {
+                  "bias_actual_minus_projected": 0.8434,
+                  "mae": 4.8456,
+                  "n": 244,
+                  "rmse": 6.4471
+                }
+              },
+              "WR": {
+                "baseline": {
+                  "bias_actual_minus_projected": 0.0653,
+                  "mae": 7.0759,
+                  "n": 260,
+                  "rmse": 9.3541
+                },
+                "model": {
+                  "bias_actual_minus_projected": 2.5471,
+                  "mae": 7.0015,
+                  "n": 260,
+                  "rmse": 9.4483
+                }
+              }
+            }
+          }
+        },
+        "matched": 961,
+        "population": 1080,
+        "ungraded": 119
       },
-      "cycle": 1,
-      "mse": 55.381119,
-      "parameter": "neutral_weight",
-      "value": 0
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
-      },
-      "cycle": 1,
-      "mse": 55.385174,
-      "parameter": "neutral_weight",
-      "value": 0.15
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.3,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
-      },
-      "cycle": 1,
-      "mse": 55.409125,
-      "parameter": "neutral_weight",
-      "value": 0.3
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 2
-      },
-      "cycle": 1,
-      "mse": 55.512241,
-      "parameter": "team_prior_games",
-      "value": 2
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 4
-      },
-      "cycle": 1,
-      "mse": 55.381119,
-      "parameter": "team_prior_games",
-      "value": 4
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 1,
-      "mse": 55.357546,
-      "parameter": "team_prior_games",
-      "value": 8
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 1,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.50456,
-      "parameter": "player_prior_games",
-      "value": 1
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.357546,
-      "parameter": "player_prior_games",
-      "value": 3
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 6,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.655211,
-      "parameter": "player_prior_games",
-      "value": 6
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.357546,
-      "parameter": "efficiency_prior",
-      "value": 30
-    },
-    {
-      "config": {
-        "efficiency_prior": 60,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.478157,
-      "parameter": "efficiency_prior",
-      "value": 60
-    },
-    {
-      "config": {
-        "efficiency_prior": 120,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.678081,
-      "parameter": "efficiency_prior",
-      "value": 120
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.399553,
-      "parameter": "scoring_opportunity_weight",
-      "value": 0
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.357546,
-      "parameter": "scoring_opportunity_weight",
-      "value": 0.25
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.5,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.377204,
-      "parameter": "scoring_opportunity_weight",
-      "value": 0.5
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.357546,
-      "parameter": "opponent_weight",
-      "value": 0
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0.15,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.411289,
-      "parameter": "opponent_weight",
-      "value": 0.15
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0.3,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.503346,
-      "parameter": "opponent_weight",
-      "value": 0.3
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.356837,
-      "parameter": "snap_weight",
-      "value": 0
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.2,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.357546,
-      "parameter": "snap_weight",
-      "value": 0.2
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0.4,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.510204,
-      "parameter": "snap_weight",
-      "value": 0.4
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.356837,
-      "parameter": "neutral_weight",
-      "value": 0
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.355589,
-      "parameter": "neutral_weight",
-      "value": 0.15
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.3,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.370885,
-      "parameter": "neutral_weight",
-      "value": 0.3
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0,
-        "team_prior_games": 2
-      },
-      "cycle": 2,
-      "mse": 55.532846,
-      "parameter": "team_prior_games",
-      "value": 2
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0,
-        "team_prior_games": 4
-      },
-      "cycle": 2,
-      "mse": 55.388308,
-      "parameter": "team_prior_games",
-      "value": 4
-    },
-    {
-      "config": {
-        "efficiency_prior": 30,
-        "neutral_weight": 0.15,
-        "opponent_weight": 0,
-        "player_prior_games": 3,
-        "scoring_opportunity_weight": 0.25,
-        "snap_weight": 0,
-        "team_prior_games": 8
-      },
-      "cycle": 2,
-      "mse": 55.355589,
-      "parameter": "team_prior_games",
-      "value": 8
+      "weights": {
+        "carries": 1,
+        "targets": 1
+      }
     }
   ],
-  "version": "nfl-usage-v2"
+  "version": "nfl-usage-v2.1",
+  "workload_fit_population": "RB/WR/TE with a recorded previous team-game appearance, prior active roster and matched target-game stats or snaps, including recorded zero offensive involvement. No absent player is assigned an assumed zero. Other players retain the prior allocation."
 }
