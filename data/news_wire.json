@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T22:00:59.931173+00:00",
+  "updated_at": "2026-09-15T22:14:18.577446+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T22:00:42+00:00",
+      "latest_entry_at": "2026-09-15T22:13:57+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-15T21:22:47+00:00",
+      "latest_entry_at": "2026-09-15T21:35:16+00:00",
       "stale": false
     },
     {
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-09-15T20:20:28+00:00",
+      "latest_entry_at": "2026-09-15T22:02:27+00:00",
       "stale": false
     },
     {
@@ -94,7 +94,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-15T17:56:07+00:00",
+      "latest_entry_at": "2026-09-15T22:00:21+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-15T22:00:42+00:00",
+      "latest_entry_at": "2026-09-15T22:13:57+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-15T20:31:04+00:00",
+      "latest_entry_at": "2026-09-15T19:44:37+00:00",
       "stale": false
     },
     {
@@ -332,9 +332,9 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-15T21:46:25+00:00",
+      "latest_entry_at": "2026-09-15T17:03:03+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T18:37:49+00:00",
+      "latest_entry_at": "2026-09-15T19:16:32+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T19:54:23+00:00",
+      "latest_entry_at": "2026-09-15T13:15:00+00:00",
       "stale": false
     },
     {
@@ -414,15 +414,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T21:40:00+00:00",
+      "latest_entry_at": "2026-09-15T18:31:59+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-15T20:07:28+00:00",
+      "latest_entry_at": "2026-09-15T18:03:54+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-15T22:00:19+00:00",
+      "latest_entry_at": "2026-09-15T18:43:10+00:00",
       "stale": false
     },
     {
@@ -468,9 +468,9 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-15T20:55:39+00:00",
+      "latest_entry_at": "2026-09-15T16:00:14+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T18:19:24+00:00",
+      "latest_entry_at": "2026-09-15T21:56:51+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T20:48:43+00:00",
+      "latest_entry_at": "2026-09-15T14:12:05+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T20:05:03+00:00",
+      "latest_entry_at": "2026-09-15T15:05:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-15T21:24:04+00:00",
+      "latest_entry_at": "2026-09-15T18:19:20+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "cbf4df6d97fee4ec83b5",
+      "headline": "Why Eagles Have 7 WR On Active Roster And What They Could Plan With Open Spot",
+      "url": "https://www.si.com/nfl/eagles/onsi/why-eagles-have-7-wr-on-active-roster-and-what-they-could-plan-with-open-spot-01m2kdvb5vd8",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Eagles promoted Britain Covey to the active roster and moved Landon Dickerson to IR. What's the next move?",
+      "categories": [],
+      "published_at": "2026-09-15T22:06:43+00:00",
+      "players": [
+        {
+          "id": "00-0037132",
+          "name": "Britain Covey",
+          "team": "PHI",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "641b08ad117717df2a30",
       "headline": "Browns\u2019 Starting Safety Contradicts Team\u2019s Narrative on Deshaun Watson\u2019s Locker Room Support",
@@ -4155,37 +4176,6 @@
           "name": "Kene Nwangwu",
           "team": "NYJ",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "591b08df667a347f2efa",
-      "headline": "Bucs-Bengals Inactives | Christian Rozeboom Cleared to Play",
-      "url": "https://www.buccaneers.com/news/bucs-bengals-inactives-christian-rozeboom-cleared-to-play",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "LB Christian Rozeboom, the only player considered questionable on the Bucs' Friday injury report, is active on Sunday in Cincinnati but WR Jalen McMillan and RB Sean Tucker will not play",
-      "categories": [
-        "Featured",
-        "Inactives Report",
-        "Week 1 2026 Bengals"
-      ],
-      "published_at": "2026-09-13T15:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0038951",
-          "name": "Sean Tucker",
-          "team": "TB",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039855",
-          "name": "Jalen McMillan",
-          "team": "TB",
-          "position": "WR"
         }
       ]
     }
