@@ -7,8 +7,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  # The odds history lives in beatwire.db, which is also used by refresh.yml.
-  # Queue rather than cancel so a paid pull is always saved before another run.
+  # Serialize source updates with the site refresh. No paid providers are called.
   group: wire-runtime
   cancel-in-progress: false
 
@@ -41,9 +40,9 @@ jobs:
 
       - uses: actions/cache/restore@v4
         with:
-          path: beatwire.db
-          key: beatwire-db-${{ github.run_id }}
-          restore-keys: beatwire-db-
+          path: .cache/nfl-week2
+          key: nfl-week2-${{ github.run_id }}
+          restore-keys: nfl-week2-
 
       - name: Validate the daily refresh boundary
         run: |
@@ -52,26 +51,11 @@ jobs:
           python scripts/test_week1_intelligence.py
           python scripts/test_espn_injury_inputs.py
 
-      - name: Refresh private markets and build candidate
-        env:
-          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+      - name: Refresh Week 2 inputs and build candidate
         run: |
-          test -n "$THE_ODDS_API_KEY"
-          python scripts/odds_inputs.py --sports ncaaf \
-            --max-age-hours 23 --max-prop-events-per-sport 0
-          python scripts/odds_inputs.py --sports nfl --include-props \
-            --max-age-hours 23 --max-prop-events-per-sport 16 \
-            --prop-horizon-hours 36 \
-            --export-nfl-consensus \
-              .cache/week1-intelligence/nfl_market_consensus.json
-          python scripts/espn_injury_inputs.py
-          python scripts/capture_week1_inputs.py --refresh-current
-          cp data/week1/2026/v1.2/nfl_week1_projections.json \
-            /tmp/nfl-weekly-last-good.json
-          python scripts/build_week1_intelligence.py
-          python scripts/validate_daily_fantasy_refresh.py \
-            data/week1/2026/v1.2/nfl_week1_projections.json \
-            --previous /tmp/nfl-weekly-last-good.json
+          python scripts/capture_nfl_week2.py
+          python scripts/build_nfl_week2.py --cache .cache/nfl-week2
+          python scripts/test_nfl_week2.py
 
       - name: Verify generated readers
         run: |
@@ -84,18 +68,16 @@ jobs:
       - uses: actions/cache/save@v4
         if: always()
         with:
-          path: beatwire.db
-          key: beatwire-db-${{ github.run_id }}
+          path: .cache/nfl-week2
+          key: nfl-week2-${{ github.run_id }}
 
       - name: Publish validated data release
         id: publish
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/week1/2026/v1.2/nfl_week1_projections.json \
-            data/week1/2026/v1.2/nfl_matchup_context_2025.json \
-            data/week1/2026/v1.2/nfl_backtest_2025.json \
-            data/week1/2026/v1.2/provenance.json
+          git add data/nfl_weekly/2026/week-2/v1.0/projections.json \
+            data/nfl_weekly/2026/week-2/v1.0/provenance.json
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0

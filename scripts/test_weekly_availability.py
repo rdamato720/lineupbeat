@@ -27,8 +27,16 @@ class AvailabilityTests(unittest.TestCase):
             reports=copy.deepcopy(self.reports);reports[0][field]=value
             with self.assertRaises(ValueError):apply_reports(copy.deepcopy(self.data),reports)
     def test_stale_feed_cannot_restore_reported_out_player(self):
-        p=next(p for p in self.data['players'] if p['id']==self.reports[0]['player_id']);p['availability']['status']='Doubtful'
+        p=next(p for p in self.data['players'] if p['id']==self.reports[0]['player_id'])
+        # Simulate a new raw feed before any reviewed report is applied. The
+        # committed snapshot may already carry an earlier report's provenance.
+        p['availability'].pop('feed_status_before_report',None)
+        p['availability'].update(status='Doubtful',projection_adjusted=False,projection_factor=1.0)
+        p['stat_projection'].update(receiving_yards=70.0,receptions=6.0,receiving_tds=1.0)
+        for fmt in p['formats']:p['formats'][fmt]['projected_points']=15.0
         result=apply_reports(self.data,self.reports);p=next(p for p in result['players'] if p['id']==self.reports[0]['player_id'])
         self.assertEqual(p['availability']['status'],'Out');self.assertEqual(p['availability']['feed_status_before_report'],'Doubtful')
+        self.assertFalse(any(p['stat_projection'].values()))
+        self.assertTrue(all(v['projected_points']==0 for v in p['formats'].values()))
 
 if __name__=='__main__':unittest.main()

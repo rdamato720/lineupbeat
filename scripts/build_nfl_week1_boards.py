@@ -54,9 +54,10 @@ render();
 '''
 
 
-def render(payload, kind, site):
-    title = f'2026 NFL Week 1 {kind.title()}'
-    path = f'/nfl/week-1/{kind}/'
+def render(payload, kind, site, scorecard=None):
+    week = payload["week"]
+    title = f'2026 NFL Week {week} {kind.title()}'
+    path = f'/nfl/week-{week}/{kind}/'
     updated = datetime.fromisoformat(payload['updated_at'].replace('Z', '+00:00')).astimezone(ZoneInfo('America/New_York'))
     stamp = updated.strftime('%B %d, %Y · %I:%M %p ET')
     players = sorted(payload['players'], key=lambda p: p['formats']['half_ppr']['overall_rank'])
@@ -75,30 +76,41 @@ def render(payload, kind, site):
     stats_head = ''.join(f'<th scope="col">{label}</th>' for _, label in STATS) if kind == 'projections' else ''
     data = {'updated_at': payload['updated_at'], 'players': [{k:p[k] for k in ('id','name','team','position','formats')} for p in players]}
     encoded = json.dumps(data, separators=(',', ':')).replace('<', '\\u003c')
-    links = ''.join(f'<a href="/nfl/week-1/{k}/"'+(' aria-current="page"' if k==kind else '')+f'>Week 1 {k.title()}</a>' for k in ('rankings','projections'))
+    links = ''.join(f'<a href="/nfl/week-{week}/{k}/"'+(' aria-current="page"' if k==kind else '')+f'>Week {week} {k.title()}</a>' for k in ('rankings','projections'))
     options = ''.join(f'<option value="{k}">{label}</option>' for k,label in FORMATS.items())
     teams = ''.join(f'<option>{e(t)}</option>' for t in sorted({p['team'] for p in players}))
-    description = f'2026 NFL Week 1 fantasy {kind} for QB, RB, WR and TE, with PPR, Half-PPR and Non-PPR scoring, matchups and injury status.'
+    description = f'2026 NFL Week {week} fantasy {kind} for QB, RB, WR and TE, with PPR, Half-PPR and Non-PPR scoring, matchups and injury status.'
+    intro = ('See the player order overall or by position. Choose your scoring and find your starters.'
+             if kind == 'rankings' else
+             'See projected fantasy points, yards, touchdowns and receptions. Choose your scoring and compare the numbers.')
     return seo.check_page(f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title} | LineupBeat</title><meta name="description" content="{e(description)}"><link rel="canonical" href="https://lineupbeat.com{path}"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;display=swap" rel="stylesheet"><style>{CSS}</style></head><body>
-{seo.site_nav('week1_'+kind, 'nfl')}
-<main class="wb"><header class="wb-hero"><p class="wb-meta wb-eyebrow">2026 FANTASY FOOTBALL · WEEK 1</p><h1>NFL Week 1 <span>{kind.title()}</span></h1><p class="wb-intro">Your opening-week board. Find your players, choose your scoring, and get ready for kickoff.</p><p class="wb-meta">Updated <time datetime="{e(payload['updated_at'])}">{stamp}</time></p></header>
-<nav class="wb-links" aria-label="Week 1 boards">{links}<a href="/decision-room/nfl/">Compare players</a></nav>
-{PENDING_RESULTS}
+{seo.site_nav('week'+str(week)+'_'+kind, 'nfl')}
+<main class="wb"><header class="wb-hero"><p class="wb-meta wb-eyebrow">2026 FANTASY FOOTBALL · WEEK {week}</p><h1>NFL Week {week} <span>{kind.title()}</span></h1><p class="wb-intro">{intro}</p><p class="wb-meta">Updated <time datetime="{e(payload['updated_at'])}">{stamp}</time></p></header>
+<nav class="wb-links" aria-label="Week {week} boards">{links}<a href="/decision-room/nfl/">Compare players</a></nav>
+{scorecard if scorecard is not None else PENDING_RESULTS}
 <div class="wb-controls"><label>Scoring<select id="wb-format">{options}</select></label><label>Position<select id="wb-position"><option value="">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option></select></label><label>Team<select id="wb-team"><option value="">All teams</option>{teams}</select></label><label>Player<input id="wb-search" type="search" placeholder="Search players" autocomplete="off"></label></div>
 <p id="wb-count" class="wb-meta" role="status">{len(players)} players · Half-PPR</p>
-<div class="wb-table" tabindex="0" role="region" aria-label="Week 1 {kind} table"><table><caption id="wb-caption">Half-PPR · All positions</caption><thead><tr><th scope="col">Rank</th><th scope="col" class="player">Player</th><th scope="col">Pos rank</th><th scope="col">Matchup</th><th scope="col">Proj. pts</th><th scope="col">Status</th>{stats_head}</tr></thead><tbody id="wb-rows">{''.join(rows)}</tbody></table><p class="wb-empty" id="wb-empty" hidden>No players match these filters.</p></div>
-<p class="wb-note">Ranked by projected Week 1 points. QB, RB, WR and TE only. Confirmed unavailable players project for zero; Questionable and Doubtful tags do not reduce projections.</p>
+<div class="wb-table" tabindex="0" role="region" aria-label="Week {week} {kind} table"><table><caption id="wb-caption">Half-PPR · All positions</caption><thead><tr><th scope="col">Rank</th><th scope="col" class="player">Player</th><th scope="col">Pos rank</th><th scope="col">Matchup</th><th scope="col">Proj. pts</th><th scope="col">Status</th>{stats_head}</tr></thead><tbody id="wb-rows">{''.join(rows)}</tbody></table><p class="wb-empty" id="wb-empty" hidden>No players match these filters.</p></div>
+<p class="wb-note">{("Independent model; no betting adjustments in this release. " if week == 2 else "")}Ranked by projected Week {week} points. QB, RB, WR and TE only. Confirmed unavailable players project for zero; Questionable and Doubtful tags do not reduce projections.</p>
+<p class="wb-note">Statistics: <a href="https://github.com/nflverse/nflverse-data">nflverse · CC BY 4.0</a>. Status: <a href="https://www.espn.com/nfl/injuries">ESPN</a>.</p>
 <nav class="wb-links wb-footer" aria-label="Season-long boards"><a href="/nfl/rankings/">Season rankings</a><a href="/nfl/projections/">Season projections</a></nav></main>
 {seo.site_footer()}<script id="week1-data" type="application/json">{encoded}</script><script>{JS}</script></body></html>''', path)
 
 
 def build(site=ROOT/'site'):
-    payload = decision_data.load_weekly()
+    from nfl_results_page import scorecard, build_results
+    payload = decision_data.load_weekly(week=1)
     for kind in ('rankings','projections'):
         out = site/'nfl/week-1'/kind/'index.html'
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(render(payload, kind, site))
-    print(f'Built NFL Week 1 rankings and projections: {len(payload["players"])} players; {payload["updated_at"]}')
+        out.write_text(render(payload, kind, site, scorecard()))
+    current = decision_data.load_weekly(week=2)
+    for kind in ('rankings','projections'):
+        out = site/'nfl/week-2'/kind/'index.html'
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(render(current, kind, site, scorecard()))
+    build_results(site)
+    print(f'Built NFL Week 2 rankings and projections: {len(current["players"])} players; {current["updated_at"]}. Week 1 archive and results retained.')
 
 
 def main():

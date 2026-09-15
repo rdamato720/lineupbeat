@@ -1,0 +1,101 @@
+{
+  "assets": [
+    {
+      "file": "depth_charts_2026.csv.gz",
+      "sha256": "1153de7952d5ff131ed8a4e9fb7ac4cc494dd8adce26f1086f3a7d326ebd210f",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv.gz"
+    },
+    {
+      "file": "games.csv.gz",
+      "sha256": "fa7f023c1737f6c9d6d3579e1b83780ebd18866db57ac7e539889bc8d394cd65",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv.gz"
+    },
+    {
+      "file": "roster_2026.csv.gz",
+      "sha256": "1266de134710cc9d1547bee043a6817b8da8dcfeb02878b9798b58f63ac98921",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2026.csv.gz"
+    },
+    {
+      "file": "snap_counts_2024.csv.gz",
+      "sha256": "fe1d819db55d6e333057a8efcec52e8506ef111c7961b0e0411310393bb912bb",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2024.csv.gz"
+    },
+    {
+      "file": "snap_counts_2025.csv.gz",
+      "sha256": "700bef40cc5db8917b49e2eca93d7091dbd4a3cd740b2fd4dfa1795f7b9187db",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2025.csv.gz"
+    },
+    {
+      "file": "stats_player_week_2024.csv.gz",
+      "sha256": "61fc9a44706522218a4448001706e3fec65ebbb97c1d9c5746ceef364989125d",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2024.csv.gz"
+    },
+    {
+      "file": "stats_player_week_2025.csv.gz",
+      "sha256": "c7401e321bdb369443f3280b9acd74ba6e16d82e710383bf1c01acabfebeac0b",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2025.csv.gz"
+    },
+    {
+      "file": "stats_player_week_2026.csv.gz",
+      "sha256": "52cabb0ac18be66a6ecea112ffc5b377618ab4523999745c710213802207ba04",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv.gz"
+    },
+    {
+      "file": "stats_team_week_2024.csv.gz",
+      "sha256": "6f27957fd1d3a759a7160586bf0558cea010a83f9cb3ee68a9bda04e35674c14",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_week_2024.csv.gz"
+    },
+    {
+      "file": "stats_team_week_2025.csv.gz",
+      "sha256": "5348409f099b285877641446e869dcda3179464584dd71f73becc087219b0383",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_week_2025.csv.gz"
+    },
+    {
+      "file": "espn_injuries.json",
+      "sha256": "08aecd0b3fa95de7659f63063dd7e4d3db24f725162551d4c959a36e75bf6e43",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/injuries"
+    }
+  ],
+  "availability_coverage": {
+    "captured_at": "2026-09-15T15:54:32Z",
+    "captured_status_rows": 54,
+    "confirmed_unavailable_players": 1,
+    "matched_projected_players": 29,
+    "teams": 32
+  },
+  "generated_at": "2026-09-15T15:54:32Z",
+  "license_review": {
+    "attribution_required": true,
+    "derived_use_permitted": true,
+    "name": "Creative Commons Attribution 4.0 International",
+    "share_alike": false,
+    "spdx": "CC-BY-4.0",
+    "url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md"
+  },
+  "market_coverage": {
+    "games": 0,
+    "teams": 0
+  },
+  "methodology": {
+    "allocation_policy": "Historical team attempts, carries and targets are fully allocated among available players. Reviewed relative role shares are retained without an additional non-QB depth discount. QB reserve weights remain relative shares. Per-opportunity rates and bounded market blends are applied before team allocation. Final receiving yards and TDs reconcile to the team's passing yards and TDs; reconciliation can change the final market-adjusted component. Confirmed unavailable players receive zero and their opportunity returns to the team pool.",
+    "efficiency_policy": "Historical efficiency weight grows with sample size to the existing 70% ceiling at 200 pass attempts or 100 carries/targets; otherwise favor the reviewed prior. Thresholds are modeling assumptions, not backtested optimal values.",
+    "injury_policy": "Current status tags are displayed for context. Questionable and Doubtful carry a 1.0 projection factor. Only confirmed Out, Injured Reserve, or suspended statuses set the Week 2 projection to zero.",
+    "market_policy": "No current qualified TheRundown snapshot available; no prior-week market inputs reused.",
+    "recommendation_guardrail": "A point difference alone cannot create an unqualified recommendation.",
+    "role_policy": "The reviewed 2026 role supplies 75% of a player's opportunity weight when usable 2025 current-team history exists. Weights are normalized across available players to conserve team volume. Non-QB depth positions do not apply a second role discount; QB reserve weights remain relative shares.",
+    "scoring": "0.04/pass yard, 4/pass TD, -2/interception, 0.1/rush or receiving yard, 6/rush or receiving TD, -2/fumble lost, plus format reception points.",
+    "season_total_divisor": null,
+    "summary": "Current roster and depth chart, historical team volume, reviewed player roles and efficiencies, and bounded prior-season opponent context. Matched Week 1 opportunity shares receive 20% weight; prior role shares retain 80%. Missing stat lines do not imply zero usage. Current QB depth allocates 95%/4.5%/0.5% of passing opportunities across the first three depth positions before normalization; these are explicit modeling assumptions, not fitted accuracy claims. No sportsbook inputs in this release.",
+    "workload_allocation": "team-workload-v1"
+  },
+  "provider_requests": {
+    "cost_usd": 0,
+    "model_api": 0,
+    "paid_api": 0
+  },
+  "reviewed_availability_reports": [],
+  "schema_version": "lineupbeat-week1-provenance-v1.1",
+  "unavailable": {
+    "markets": "Not included; no current qualified TheRundown capture"
+  }
+}
