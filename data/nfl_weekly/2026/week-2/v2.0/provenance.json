@@ -133,6 +133,14 @@
   "methodology": {
     "allocation_policy": "Team attempts, carries, targets and TDs are conserved. Receiving yards, completions and TDs reconcile to the passing offense.",
     "injury_policy": "Questionable and Doubtful keep full projections. Confirmed Out, IR and suspended players receive zero; available teammates share the opportunity.",
+    "learned_workload": {
+      "inputs": "Recorded offensive snaps, target/carry shares, pregame depth and teammate competition; no routes inferred.",
+      "missing_inputs": "Retain prior role when the previous team-game appearance is unobserved; QB allocation remains separate.",
+      "weights": {
+        "carries": 0,
+        "targets": 0.5
+      }
+    },
     "market_policy": "No betting adjustment or external expert projections.",
     "parameters": {
       "efficiency_prior": 30,
@@ -146,16 +154,16 @@
     "rankings": "Separate artifact; mean/typical-outcome score and reference lineup replacement value. Superflex changes ranks, not points.",
     "scoring": "4/pass TD, 0.04/pass yard, -2/interception, 0.1/rush or receiving yard, 6/rush or receiving TD, -2/fumble lost, 2/two-point conversion, 6/return TD, plus 1/0.5/0 per reception.",
     "season_total_divisor": null,
-    "summary": "Current roster identities and strictly earlier team/player usage, with historical efficiency and scoring-area opportunities. Parameters chosen on 2024, then evaluated on 2025.",
-    "version": "nfl-usage-v2"
+    "summary": "Current roster identities and strictly earlier team/player usage, with learned target allocation, historical efficiency and scoring-area opportunities. Workload models trained on 2023\u20132024; checked against previously inspected 2025 results.",
+    "version": "nfl-usage-v2.1"
   },
   "model_api_calls": 0,
-  "model_sha256": "789f75256c3f00d0aa61780af7b1ba6dc9a5be208c48599021a8061bf4774a2f",
+  "model_sha256": "b4b4b25e0d6c0b878f01bc0d0c0ef603937010e71a3edd44b39e18fc4b54684e",
   "paid_provider_calls": 0,
-  "projection_sha256": "d6a5d45878d8c67ebf31585559d13e83bf22a52ec8ef42bc5ffc18ed2b86c94a",
-  "ranking_sha256": "1da72e1657e4d73299efd7d6feb70d10c5f8fe9b9f12dc653a3989badbf66100",
+  "projection_sha256": "67a709a0f39be4f3d762c01193d13b512139ccfb090d3b8de29e097be093a40d",
+  "ranking_sha256": "84b1f93b4a442ef6aa9d88486327464456d5ec1c68ad2a21bf35b5fe2a473d2e",
   "season": 2026,
   "updated_at": "2026-09-15T18:12:13.829833+00:00",
-  "validation_sha256": "d5d9faaa50b2c9fc0545e3c0a83b400f8dbcc76eb9fc49944bdb5f5c9022f2f5",
+  "validation_sha256": "baf404ca571a126821914d49279b833cb9b0b83ad506816463ae7b076d2dd6e8",
   "week": 2
 }

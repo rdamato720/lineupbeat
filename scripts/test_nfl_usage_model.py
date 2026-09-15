@@ -67,6 +67,9 @@ class ModelTests(unittest.TestCase):
     def test_training_matches_published_code_and_has_separate_season(self):
         self.assertEqual(self.model['code_sha256'],builder.digest((ROOT/'scripts/nfl_usage_model.py').read_bytes()))
         self.assertEqual(self.model['ranking_code_sha256'],builder.digest((ROOT/'scripts/nfl_weekly_rankings.py').read_bytes()))
+        self.assertEqual(self.model['workload_code_sha256'],builder.digest((ROOT/'scripts/nfl_workload_model.py').read_bytes()))
+        self.assertTrue(self.validation['gates_passed'])
+        self.assertTrue(self.validation['frozen_integration_replay_identical'])
         self.assertEqual(self.validation['model_sha256'],builder.digest(builder.MODEL.read_bytes()))
         self.assertEqual(self.model['training_season'],2024)
         self.assertEqual(self.validation['holdout_season'],2025)

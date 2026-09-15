@@ -1,5 +1,9 @@
 # NFL Week 2: independent projections and rankings
 
+This describes the archived v2.0 release. For the current fitted target model
+and reproduction commands, see [v2.1](NFL_WEEK2_WORKLOAD_V21.md). The original
+reproduction commands below require checkout of the original v2.0 commit.
+
 The old Week 2 release admitted players through the preseason workbook and
 sorted its rankings by projected points. Version 2 forecasts the current active
 QB/RB/WR/TE roster directly from stable identities and football data. It publishes

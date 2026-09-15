@@ -57,6 +57,7 @@ jobs:
           python scripts/build_nfl_week2.py --cache .cache/nfl-week2
           python scripts/test_nfl_week2.py
           python scripts/test_nfl_usage_model.py
+          python scripts/test_nfl_workload_model.py
 
       - name: Verify generated readers
         run: |
