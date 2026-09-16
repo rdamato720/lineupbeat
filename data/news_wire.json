@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T20:00:52.589867+00:00",
+  "updated_at": "2026-09-16T22:00:53.315210+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-16T20:00:49+00:00",
+      "latest_entry_at": "2026-09-16T22:00:55+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-16T20:00:00+00:00",
+      "latest_entry_at": "2026-09-16T21:55:13+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-16T19:10:37+00:00",
+      "latest_entry_at": "2026-09-16T20:48:58+00:00",
       "stale": false
     },
     {
@@ -52,7 +52,7 @@
     {
       "source_id": "news_official_atl",
       "ok": true,
-      "eligible": 7,
+      "eligible": 6,
       "error": "",
       "latest_entry_at": "2026-09-16T19:51:47+00:00",
       "stale": false
@@ -60,9 +60,9 @@
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 12,
+      "eligible": 11,
       "error": "",
-      "latest_entry_at": "2026-09-16T19:24:09+00:00",
+      "latest_entry_at": "2026-09-16T21:29:01+00:00",
       "stale": false
     },
     {
@@ -76,9 +76,9 @@
     {
       "source_id": "news_official_car",
       "ok": true,
-      "eligible": 8,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-16T19:32:25+00:00",
+      "latest_entry_at": "2026-09-16T21:57:57+00:00",
       "stale": false
     },
     {
@@ -108,9 +108,9 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 7,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-09-15T21:49:41+00:00",
+      "latest_entry_at": "2026-09-16T20:52:39+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-16T18:00:00+00:00",
+      "latest_entry_at": "2026-09-16T20:36:20+00:00",
       "stale": false
     },
     {
@@ -134,7 +134,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-16T18:30:58+00:00",
+      "latest_entry_at": "2026-09-16T21:00:00+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-16T17:39:58+00:00",
+      "latest_entry_at": "2026-09-16T20:51:33+00:00",
       "stale": false
     },
     {
@@ -156,9 +156,9 @@
     {
       "source_id": "news_official_kc",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-16T18:30:07+00:00",
+      "latest_entry_at": "2026-09-16T20:06:34+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-16T19:00:00+00:00",
+      "latest_entry_at": "2026-09-16T20:15:26+00:00",
       "stale": false
     },
     {
@@ -196,17 +196,17 @@
     {
       "source_id": "news_official_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-16T18:45:36+00:00",
+      "latest_entry_at": "2026-09-16T21:30:17+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_ne",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-16T14:47:05+00:00",
+      "latest_entry_at": "2026-09-16T20:19:00+00:00",
       "stale": false
     },
     {
@@ -214,23 +214,23 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-16T15:25:32+00:00",
+      "latest_entry_at": "2026-09-16T20:41:53+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_nyg",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-16T18:53:00+00:00",
+      "latest_entry_at": "2026-09-16T19:45:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_nyj",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-16T19:21:10+00:00",
+      "latest_entry_at": "2026-09-16T20:06:00+00:00",
       "stale": false
     },
     {
@@ -238,23 +238,23 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-16T19:30:00+00:00",
+      "latest_entry_at": "2026-09-16T20:55:01+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_pit",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-16T18:00:00+00:00",
+      "latest_entry_at": "2026-09-16T21:20:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 7,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-09-16T19:02:20+00:00",
+      "latest_entry_at": "2026-09-16T20:35:50+00:00",
       "stale": false
     },
     {
@@ -268,9 +268,9 @@
     {
       "source_id": "news_official_tb",
       "ok": true,
-      "eligible": 12,
+      "eligible": 11,
       "error": "",
-      "latest_entry_at": "2026-09-16T20:00:00+00:00",
+      "latest_entry_at": "2026-09-16T22:00:00+00:00",
       "stale": false
     },
     {
@@ -278,15 +278,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-16T17:51:55+00:00",
+      "latest_entry_at": "2026-09-16T20:35:51+00:00",
       "stale": false
     },
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-09-16T20:00:49+00:00",
+      "latest_entry_at": "2026-09-16T22:00:55+00:00",
       "stale": false
     },
     {
@@ -294,15 +294,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-16T20:00:00+00:00",
+      "latest_entry_at": "2026-09-16T21:55:13+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T10:00:00+00:00",
+      "latest_entry_at": "2026-09-16T18:37:17+00:00",
       "stale": false
     },
     {
@@ -310,15 +310,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-16T11:04:19+00:00",
+      "latest_entry_at": "2026-09-16T15:32:19+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-15T20:31:04+00:00",
+      "latest_entry_at": "2026-09-16T14:54:59+00:00",
       "stale": false
     },
     {
@@ -342,15 +342,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-16T11:05:00+00:00",
+      "latest_entry_at": "2026-09-16T17:47:55+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-16T13:57:09+00:00",
+      "latest_entry_at": "2026-09-16T18:14:01+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T22:30:09+00:00",
+      "latest_entry_at": "2026-09-16T17:09:46+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-14T21:32:15+00:00",
+      "latest_entry_at": "2026-09-16T15:00:00+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-14T21:03:13+00:00",
+      "latest_entry_at": "2026-09-15T19:02:46+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-16T13:15:00+00:00",
+      "latest_entry_at": "2026-09-15T19:54:23+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-16T13:00:00+00:00",
+      "latest_entry_at": "2026-09-16T15:13:59+00:00",
       "stale": false
     },
     {
@@ -406,15 +406,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-16T12:00:00+00:00",
+      "latest_entry_at": "2026-09-16T17:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-16T15:03:00+00:00",
+      "latest_entry_at": "2026-09-16T21:44:00+00:00",
       "stale": false
     },
     {
@@ -430,15 +430,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-16T19:30:00+00:00",
+      "latest_entry_at": "2026-09-16T20:53:09+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-16T15:17:13+00:00",
+      "latest_entry_at": "2026-09-16T20:53:08+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-15T22:00:00+00:00",
+      "latest_entry_at": "2026-09-16T21:00:00+00:00",
       "stale": false
     },
     {
@@ -468,25 +468,25 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-16T12:00:00+00:00",
+      "latest_entry_at": "2026-09-15T20:55:39+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-16T15:00:00+00:00",
+      "latest_entry_at": "2026-09-16T21:21:07+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T23:40:00+00:00",
+      "latest_entry_at": "2026-09-16T17:04:44+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-16T13:25:45+00:00",
+      "latest_entry_at": "2026-09-16T17:17:20+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T16:00:00+00:00",
+      "latest_entry_at": "2026-09-16T18:00:00+00:00",
       "stale": false
     },
     {
@@ -534,15 +534,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-15T22:05:00+00:00",
+      "latest_entry_at": "2026-09-16T17:13:18+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-16T18:01:00+00:00",
+      "latest_entry_at": "2026-09-16T20:11:03+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,565 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-16T18:59:30+00:00",
+      "latest_entry_at": "2026-09-16T15:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "8fa118dc4f5810412b8f",
+      "headline": "Projecting the Seahawks' Record for Sam Darnold Injury Timeline",
+      "url": "https://www.si.com/nfl/seahawks/onsi/projecting-seahawks-record-sam-darnold-injury-timeline",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Will the Seahawks still be undefeated when their starting quarterback returns?",
+      "categories": [],
+      "published_at": "2026-09-16T22:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "3027fa56471512cc70f5",
+      "headline": "Kyler Murray Injury Update: Vikings quarterback sees progress in concussion protocol, and it could prove costly for one reason",
+      "url": "https://atozsports.com/nfl/minnesota-vikings-news/vikings-kyler-murray-injury-update-concussion-protocol-concerns/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "The good news is that Kyler Murray is healing from his concussion, but will it end up being a bad thing for the 2026 season?",
+      "categories": [
+        "Minnesota Vikings News",
+        "NFL",
+        "Concussion Protocol",
+        "Kevin O'Connell",
+        "Kyler Murray",
+        "Minnesota Vikings",
+        "Vikings Injuries"
+      ],
+      "published_at": "2026-09-16T21:55:13+00:00",
+      "players": [
+        {
+          "id": "00-0035228",
+          "name": "Kyler Murray",
+          "team": "MIN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "3da8c59761af9be4afbd",
+      "headline": "Packers-Jets Wednesday Injury Report: Big Problem at Key Position",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-jets-wednesday-injury-report-big-problem-at-key-position",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The Green Bay Packers will play at the New York Jets on Sunday. Here\u2019s the key news from the first injury report of the week.",
+      "categories": [],
+      "published_at": "2026-09-16T21:51:55+00:00",
+      "players": []
+    },
+    {
+      "id": "98b6c25e45d2388a9a0e",
+      "headline": "Why Bengals Fans Should and Shouldn't Be Concerned About Joe Burrow\u2019s Back Injury",
+      "url": "https://www.si.com/nfl/bengals/onsi/why-bengals-fans-should-and-shouldnt-be-concerned-about-joe-burrow-back-injury",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "Why Bengals Fans Should Be Concerned About Joe Burrow\u2019s Back Injury\u2014and Why They Shouldn\u2019t",
+      "categories": [],
+      "published_at": "2026-09-16T21:48:22+00:00",
+      "players": [
+        {
+          "id": "00-0036442",
+          "name": "Joe Burrow",
+          "team": "CIN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "609ec3d51f6df4ee98d9",
+      "headline": "Commanders Injury Report: Frankie Luvu Sits Out as 8 Players Limited or DNP",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-week-2-injury-report-frankie-luvu-chig-okonkwo-dnp",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Commanders' Week 2 injury report lists LB Frankie Luvu and TE Chig Okonkwo as DNP on Wednesday. Here is how Washington is handling the soft-tissue issues.",
+      "categories": [],
+      "published_at": "2026-09-16T21:35:18+00:00",
+      "players": [
+        {
+          "id": "00-0037809",
+          "name": "Chig Okonkwo",
+          "team": "WAS",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "17a4c03c1b08a7353ae3",
+      "headline": "Initial Vikings at Bears Injury Report for Week 2 of 2026",
+      "url": "https://www.vikings.com/news/injury-report-week-2-chicago-bears-2026",
+      "source_id": "news_official_min",
+      "source": "Minnesota Vikings (official)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "",
+      "categories": [
+        "Injury Report",
+        "News - Injury Report",
+        "News - Team",
+        "News - Index",
+        "vikings-at-bears-2026-reg-2"
+      ],
+      "published_at": "2026-09-16T21:30:17+00:00",
+      "players": []
+    },
+    {
+      "id": "1565b9de30e45c41079b",
+      "headline": "Dallas Cowboys' Wednesday Injury Report Includes Three New Additions",
+      "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-wednesday-injury-report-three-additions",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys have three new additions on this week's injury report, but two of them were expected.",
+      "categories": [],
+      "published_at": "2026-09-16T21:12:40+00:00",
+      "players": []
+    },
+    {
+      "id": "3059a3ef0dcf82df50a1",
+      "headline": "RJ Harvey Pops Up on Broncos' Estimated Week 2 Injury Report",
+      "url": "https://www.si.com/nfl/broncos/onsi/rj-harvey-hamstring-week-2-injury-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Broncos did not practice Wednesday.",
+      "categories": [],
+      "published_at": "2026-09-16T21:07:10+00:00",
+      "players": [
+        {
+          "id": "00-0040730",
+          "name": "RJ Harvey",
+          "team": "DEN",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "0a3fdd11c177eee7e20e",
+      "headline": "Packers Injury Report: Lukas Van Ness and Javon Hargrave have concussions",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/86566/packers-injury-report-lukas-van-ness-and-javon-hargrave-have-concussions",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "A couple of new injuries popped up on the Green Bay Packers\u2019 first injury report of the week, despite head coach Matt LaFleur stating that there were no long-term injuries sustained in the Packers\u2019 loss to the Minnesota Vikings on Sunday. Beyond what was reported during the game, like cornerback Brandon Cisse\u2019s cramps, both defensive [\u2026]",
+      "categories": [
+        "Green Bay Packers injuries",
+        "Green Bay Packers News"
+      ],
+      "published_at": "2026-09-16T20:53:28+00:00",
+      "players": []
+    },
+    {
+      "id": "98c6830f559bfc807921",
+      "headline": "NY Giants add DL to 53-man roster, re-sign Dalen Cambre to practice squad",
+      "url": "https://www.bigblueview.com/new-york-giants-roster/171551/josh-tupou-added-53-man-roster-re-sign-dalen-cambre-practice-squad",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The New York Giants juggled their roster on Wednesday, adding defensive line depth to their active roster. The Giants signed veteran defensive tackle Josh Tupou to their 53-man roster from the practice squad. Wide receiver/special teamer Dalen Cambre, who was waived on Monday, has been re-signed to the practice squad. Cambre was signed from the [\u2026]",
+      "categories": [
+        "New York Giants roster"
+      ],
+      "published_at": "2026-09-16T20:53:08+00:00",
+      "players": [
+        {
+          "id": "00-0040431",
+          "name": "Dalen Cambre",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "4e283d928fd56bfffe49",
+      "headline": "Practice Notebook: WR Alec Pierce a full participant in Wednesday's practice",
+      "url": "https://www.colts.com/news/practice-notebook-wr-alec-pierce-a-full-participant-in-wednesday-s-practice",
+      "source_id": "news_official_ind",
+      "source": "Indianapolis Colts (official)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "Pierce was limited all of last week as he continued to ramp up football activity.",
+      "categories": [
+        "Practice Notebook",
+        "Featured",
+        "Featured News"
+      ],
+      "published_at": "2026-09-16T20:51:33+00:00",
+      "players": [
+        {
+          "id": "00-0037664",
+          "name": "Alec Pierce",
+          "team": "IND",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "892e344464ab4c1b006b",
+      "headline": "Kansas City Chiefs\u2019 first injury report for Week 2 vs. Indianapolis Colts previews familiar challenges to overcome on Sunday night",
+      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-first-injury-week-2-colts-mansoor-delane-chris-jones/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "The Kansas City Chiefs don't have many new injuries heading into Week 2 against the Indianapolis Colts. In fact, they're getting a bit healthier after Week 1 against the Denver Broncos.",
+      "categories": [
+        "Kansas City Chiefs News",
+        "Ashton Gillotte",
+        "Chamarri Conner",
+        "Chiefs Injuries",
+        "Chris Jones",
+        "Indianapolis Colts",
+        "Josh Simmons",
+        "Kansas City Chiefs",
+        "Mansoor Delane"
+      ],
+      "published_at": "2026-09-16T20:50:54+00:00",
+      "players": []
+    },
+    {
+      "id": "7c95d1553c29a0c82f8b",
+      "headline": "Saints Wednesday Injury Report: 2026 Week 2 vs. Baltimore Ravens",
+      "url": "https://www.neworleanssaints.com/news/injury-report-baltimore-ravens-vs-new-orleans-saints-2026-nfl-week-2-wednesday",
+      "source_id": "news_official_no",
+      "source": "New Orleans Saints (official)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "Five Saints listed on Wednesday's Saints Injury Report for Week 2 against the Ravens",
+      "categories": [
+        "Saints Injury Report",
+        "Latest News",
+        "2026-reg-week2"
+      ],
+      "published_at": "2026-09-16T20:41:53+00:00",
+      "players": []
+    },
+    {
+      "id": "a9c7c3f471267a79fae3",
+      "headline": "Packers-Jets Injury Report | Sept. 16, 2026",
+      "url": "https://www.packers.com/news/packers-jets-injury-report-sept-16-2026",
+      "source_id": "news_official_gb",
+      "source": "Green Bay Packers (official)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "",
+      "categories": [
+        "News: Injury Report",
+        "News: National Feature",
+        "Homepage CP",
+        "News: All News",
+        "Green Bay Packers at New York Jets (2026-REG-2)"
+      ],
+      "published_at": "2026-09-16T20:36:20+00:00",
+      "players": []
+    },
+    {
+      "id": "0c56052fd54f4baaf833",
+      "headline": "Sam Darnold Ruled Out For Seahawks' Week 2 Game At Arizona; Drew Lock Will Start",
+      "url": "https://www.seahawks.com/news/sam-darnold-ruled-out-for-seahawks-week-2-game-at-arizona-drew-lock-will-start",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Seahawks coach Mike Macdonald confirmed that quarterback Sam Darnold will not play in Seattle\u2019s Week 2 game at Arizona.",
+      "categories": [
+        "Homepage Hero"
+      ],
+      "published_at": "2026-09-16T20:34:00+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035704",
+          "name": "Drew Lock",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "a97c32f2f118dbcf2009",
+      "headline": "D'Andre Swift, Kyle Monangai, Darnell Wright Among New Additions to Bears' Injury Report",
+      "url": "https://www.si.com/nfl/bears/onsi/d-andre-swift-kyle-monangai-darnell-wright-bears-injury-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "The Chicago Bears have released their first injury report of the week and it includes Darnell Wright, D'Andre Swift and Kyle Monangai.",
+      "categories": [],
+      "published_at": "2026-09-16T20:33:47+00:00",
+      "players": [
+        {
+          "id": "00-0036275",
+          "name": "D'Andre Swift",
+          "team": "CHI",
+          "position": "RB"
+        },
+        {
+          "id": "00-0040236",
+          "name": "Kyle Monangai",
+          "team": "CHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "3ebf88ca2a8e13e44517",
+      "headline": "Lions projected depth chart vs. Bills: Blake Miller sits, the RB rotation changes, and two young defenders could get their shot",
+      "url": "https://atozsports.com/nfl/detroit-lions-news/lions-projected-depth-chart-vs-bills-blake-miller-sits-the-rb-rotation-changes-and-two-young-defenders-could-get-their-shot/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "Detroit's short week could lead to a new starter up front, a different backup behind Jahmyr Gibbs and opportunities for several young defenders who barely played in Week 1.",
+      "categories": [
+        "Detroit Lions News",
+        "NFL",
+        "Detroit Lions"
+      ],
+      "published_at": "2026-09-16T20:30:29+00:00",
+      "players": [
+        {
+          "id": "00-0039139",
+          "name": "Jahmyr Gibbs",
+          "team": "DET",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "d807ac8ae94c83899f55",
+      "headline": "Patriots Week 2 Injury Report: TreVeyon Henderson Trending Upwards",
+      "url": "https://www.si.com/nfl/patriots/onsi/patriots-week-2-injury-report-treveyon-henderson-trending-upwards",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "Here's the New England Patriots' first injury report for their matchup against the Pittsburgh Steelers.",
+      "categories": [],
+      "published_at": "2026-09-16T20:28:30+00:00",
+      "players": [
+        {
+          "id": "00-0040734",
+          "name": "TreVeyon Henderson",
+          "team": "NE",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "0db63a0254b60caba712",
+      "headline": "Commanders vs. Cowboys Wednesday injury report: Chig Okonkwo held out",
+      "url": "https://www.hogshaven.com/washington-commanders-injuries/439605/commanders-vs-cowboys-wednesday-injury-report-chig-okonkwo-frankie-luvu-tyler-owens",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Commanders emerged from training camp in solid shape. While they put a few key players on injured reserve, all 53 members of the active roster were available for the regular season opener against the Philadelphia Eagles. They won\u2019t enter Week 2 that way. A few key Commanders got banged up in that 24-22 loss [\u2026]",
+      "categories": [
+        "Washington Commanders Injuries"
+      ],
+      "published_at": "2026-09-16T20:23:42+00:00",
+      "players": [
+        {
+          "id": "00-0037809",
+          "name": "Chig Okonkwo",
+          "team": "WAS",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "2c420d7bd2af0f9da9f5",
+      "headline": "Week 2 Injury Report: Patriots vs. Steelers",
+      "url": "https://www.patriots.com/news/week-2-injury-report-patriots-vs-steelers",
+      "source_id": "news_official_ne",
+      "source": "New England Patriots (official)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots and the Pittsburgh Steelers announce the following player injuries and practice participation ahead of their Week 2 game.",
+      "categories": [
+        "Injury Report",
+        "hp-article",
+        "hp-featured",
+        "Pittsburgh Steelers at New England Patriots (2026-REG-2)"
+      ],
+      "published_at": "2026-09-16T20:19:00+00:00",
+      "players": []
+    },
+    {
+      "id": "0b5e110b829d8572a10a",
+      "headline": "Buccaneers-Browns Injury Report Sept.16: Parrish, Killebrew Limited Participants",
+      "url": "https://www.buccaneers.com/news/buccaneers-browns-injury-report-sept-16-week-2-2026",
+      "source_id": "news_official_tb",
+      "source": "Tampa Bay Buccaneers (official)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "A look at Wednesday's injury report ahead of the Week 2 matchup",
+      "categories": [
+        "Featured",
+        "Injury Report",
+        "Week 2 2026 Browns"
+      ],
+      "published_at": "2026-09-16T20:13:00+00:00",
+      "players": []
+    },
+    {
+      "id": "7a13d07545cb212667e8",
+      "headline": "49ers injury update: De\u2019Zhaun Stribling will miss \u2018close to 10 weeks\u2019",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-news/162786/49ers-injury-update-dezhaun-stribling-will-miss-close-to-10-weeks",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "San Francisco 49ers head coach Kyle Shanahan provided injury updates ahead of Wednesday\u2019s practice. The following players won\u2019t practice today: K Eddy Pineiro (sick)WR De\u2019Zhaun Stribling (ankle)Nick Bosa (rest)Dre Greenlaw (rest)Christian McCaffrey (rest) These players will be limited:Kyle Juszczyk (finger)George Kittle (Achilles)Khalid Kareem (shoulder) Shanahan said the team will place Stribling on the Injured Reserve [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries",
+        "San Francisco 49ers News"
+      ],
+      "published_at": "2026-09-16T20:11:03+00:00",
+      "players": [
+        {
+          "id": "00-0041035",
+          "name": "De'Zhaun Stribling",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "c2592f9be79320b80dc0",
+      "headline": "Jalen McMillan, Full Practice Participant, Adds \"Different Dynamic\" to Bucs' Offense | Updates",
+      "url": "https://www.buccaneers.com/news/september-2026-updates",
+      "source_id": "news_official_tb",
+      "source": "Tampa Bay Buccaneers (official)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "Keep informed with our daily updates: News, notes and more throughout the month of September",
+      "categories": [
+        "Updates",
+        "Featuerd"
+      ],
+      "published_at": "2026-09-16T20:10:00+00:00",
+      "players": [
+        {
+          "id": "00-0039855",
+          "name": "Jalen McMillan",
+          "team": "TB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "8c3cfaff28d87cfebc49",
+      "headline": "Week 2 Injury Report | Colts vs. Chiefs",
+      "url": "https://www.chiefs.com/news/2026-week-2-injury-report-colts-vs-chiefs",
+      "source_id": "news_official_kc",
+      "source": "Kansas City Chiefs (official)",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "Injuries for the Chiefs Week 2 matchup against the Indianapolis Colts",
+      "categories": [
+        "Injury Report",
+        "all-content",
+        "Indianapolis Colts at Kansas City Chiefs (2026-REG-2)"
+      ],
+      "published_at": "2026-09-16T20:06:34+00:00",
+      "players": []
+    },
+    {
+      "id": "782d48cb76bb2693bbb0",
+      "headline": "Injury Report: Pair of Broncos estimated as nonparticipants ahead of Week 2 game vs. Jaguars",
+      "url": "https://www.denverbroncos.com/news/injury-report-pair-of-broncos-estimated-as-nonparticipants-ahead-of-week-2-game-vs-jaguars",
+      "source_id": "news_official_den",
+      "source": "Denver Broncos (official)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Broncos did not practice on Wednesday, which makes the injury report an estimation of their participation levels if the team held a practice.",
+      "categories": [
+        "Top Stories",
+        "Aric DiLalla",
+        "RJ Harvey",
+        "Jacksonville Jaguars at Denver Broncos (2026-REG-2)"
+      ],
+      "published_at": "2026-09-16T20:04:43+00:00",
+      "players": []
+    },
+    {
+      "id": "3ebc7d0134b774d6cc75",
+      "headline": "Week 2 Injury Report | Titans vs Eagles",
+      "url": "https://www.tennesseetitans.com/news/week-2-injury-report-titans-vs-eagles",
+      "source_id": "news_official_ten",
+      "source": "Tennessee Titans (official)",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Who's in, who's out for the Titans in Week 2 vs the Philadelphia Eagles",
+      "categories": [
+        "Team/Football News",
+        "homepage-centerpiece",
+        "Philadelphia Eagles at Tennessee Titans (2026-REG-2)",
+        "2026-09-20-PREgame-STORIES-eagles-at-titans"
+      ],
+      "published_at": "2026-09-16T20:00:44+00:00",
+      "players": []
+    },
     {
       "id": "42ce4788b93f4ef18f43",
       "headline": "Jalen Coker Injury Update From Carolina Panthers Bodes Well For WR's Week 2 Status",
@@ -575,6 +1129,44 @@
           "position": "WR"
         }
       ]
+    },
+    {
+      "id": "f554535ce74c5d8c9011",
+      "headline": "Week 2 Injury Report (Patriots)",
+      "url": "https://www.steelers.com/news/week-2-injury-report-patriots-x4998",
+      "source_id": "news_official_pit",
+      "source": "Pittsburgh Steelers (official)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "A look at player injuries and practice participation for Week 2",
+      "categories": [
+        "Injury Report",
+        "UPMC",
+        "Featured",
+        "Sights and Sounds",
+        "Pittsburgh Steelers at New England Patriots (2026-REG-2)"
+      ],
+      "published_at": "2026-09-16T20:00:00+00:00",
+      "players": []
+    },
+    {
+      "id": "f0a60a8fa94031a695cd",
+      "headline": "Jets Injury Report | Week 2 vs. Packers - Wednesday",
+      "url": "https://www.newyorkjets.com/news/jets-injury-report-week-2-vs-packers-wednesday-09-16-2026",
+      "source_id": "news_official_nyj",
+      "source": "New York Jets (official)",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "CB D'Angelo Ponds (Calf) & LB Jamien Sherwood (Knee) Limited Participants",
+      "categories": [
+        "Injury Report",
+        "News",
+        "Latest Headlines"
+      ],
+      "published_at": "2026-09-16T20:00:00+00:00",
+      "players": []
     },
     {
       "id": "0c2a5a16c0447279ccee",
@@ -689,6 +1281,30 @@
       ]
     },
     {
+      "id": "640e1feb77fbe532dec3",
+      "headline": "Giants sign DL Josh Tupou to active roster, WR Dalen Cambre to practice squad",
+      "url": "https://www.giants.com/news/giants-sign-dl-josh-tupou-to-active-roster-wr-dalen-cambre-to-practice-squad-roster-moves-week-2",
+      "source_id": "news_official_nyg",
+      "source": "New York Giants (official)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The New York Giants made a series of roster moves Wednesday ahead of their Week 2 matchup against the Los Angeles Rams on Monday Night Football.",
+      "categories": [
+        "Roster Transactions",
+        "homepage"
+      ],
+      "published_at": "2026-09-16T19:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0040431",
+          "name": "Dalen Cambre",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
       "id": "8dddd51dd3dd26484fa8",
       "headline": "Sam Darnold Injury Update: Seahawks Rule Out QB vs. Cardinals",
       "url": "https://www.si.com/nfl/seahawks/onsi/sam-darnold-injury-update-seattle-seahawks-rule-out-qb-vs-cardinals",
@@ -730,7 +1346,7 @@
         "Ryan Mink",
         "Ja'Kobi Lane",
         "inline-news",
-        "Homepage Centerpiece"
+        "Homepage Latest Headlines"
       ],
       "published_at": "2026-09-16T19:24:09+00:00",
       "players": [
@@ -1306,30 +1922,6 @@
           "name": "D'Andre Swift",
           "team": "CHI",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "c2592f9be79320b80dc0",
-      "headline": "Jalen McMillan, Full Practice Participant, Adds \"Different Dynamic\" to Bucs' Offense | Updates",
-      "url": "https://www.buccaneers.com/news/september-2026-updates",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "Keep informed with our daily updates: News, notes and more throughout the month of September",
-      "categories": [
-        "Updates",
-        "Featuerd"
-      ],
-      "published_at": "2026-09-16T14:15:00+00:00",
-      "players": [
-        {
-          "id": "00-0039855",
-          "name": "Jalen McMillan",
-          "team": "TB",
-          "position": "WR"
         }
       ]
     },
@@ -3517,719 +4109,6 @@
           "name": "Ja'Kobi Lane",
           "team": "BAL",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "e85f701d7e9ca2ca0437",
-      "headline": "HC Todd Monken changes tune, not about Deshaun Watson but about team\u2019s buy-in with the QB",
-      "url": "https://www.dawgsbynature.com/cleveland-browns-news/132688/hc-todd-monken-changes-tune-deshaun-watson-team-starting-qb",
-      "source_id": "news_sbn_cle",
-      "source": "Dawgs By Nature (SB Nation)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "If Cleveland Browns HC Todd Monken was expecting a honeymoon phase in his first time leading an NFL team, Week 1\u2019s performance all but shut the door on that. The Browns performance versus the Jacksonville Jaguars was so bad that it was hard to tell if the problem was scheme/coaching or talent on the roster. [\u2026]",
-      "categories": [
-        "Cleveland Browns Coaching Staff",
-        "Cleveland Browns News"
-      ],
-      "published_at": "2026-09-14T19:50:58+00:00",
-      "players": [
-        {
-          "id": "00-0033537",
-          "name": "Deshaun Watson",
-          "team": "CLE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "91a1cdaca6d5de596b69",
-      "headline": "AAA Official Review: A Jalen Hurts appreciation post",
-      "url": "https://www.philadelphiaeagles.com/news/aaa-official-review-a-jalen-hurts-appreciation-post-2026-week-1-commanders",
-      "source_id": "news_official_phi",
-      "source": "Philadelphia Eagles (official)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "Driven by AAA, the Official Review presents the aspects of Sunday's win that you might have missed, from the quarterback's outstanding performance to the lockdown coverage by the starting outside cornerbacks.",
-      "categories": [
-        "AAA Official Review",
-        "All News-archived",
-        "NFL.com Feature",
-        "2026 Week 2 @ Titans",
-        "Partner Zone",
-        "Team Roster Content"
-      ],
-      "published_at": "2026-09-14T19:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0036389",
-          "name": "Jalen Hurts",
-          "team": "PHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "7346f449e22f3f244968",
-      "headline": "Ravens Open To Return From Top WR Zay Flowers Sunday, While Rookie Ja'Kobi Lane Is Out",
-      "url": "https://www.si.com/nfl/ravens/onsi/ravens-open-to-return-from-top-wr-zay-flowers-return-sunday-while-rookie-ja-kobi-lane-is-out-01m2gjhd88qd",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Flowers exploded for 150 yards in one half before departing with a hamstring issue, but Lane suffered a more serious wrist injury",
-      "categories": [],
-      "published_at": "2026-09-14T19:11:41+00:00",
-      "players": [
-        {
-          "id": "00-0039064",
-          "name": "Zay Flowers",
-          "team": "BAL",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040870",
-          "name": "Ja'Kobi Lane",
-          "team": "BAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "99e22bb07b1ab9abb09c",
-      "headline": "How Broncos FB Adam Prentice Figures Into Week 1 After Elevation",
-      "url": "https://www.si.com/nfl/broncos/onsi/broncos-fullback-adam-prentice-roster-elevation-chiefs",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "Prentice will be on the field for Denver's opener at Kansas City.",
-      "categories": [],
-      "published_at": "2026-09-14T19:01:57+00:00",
-      "players": [
-        {
-          "id": "00-0036727",
-          "name": "Adam Prentice",
-          "team": "DEN",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "dabe0ee61f25dc8cef61",
-      "headline": "Bucky Irving Returns to Form in Zac Robinson's Offense",
-      "url": "https://www.buccaneers.com/news/bucky-irving-returns-form-zac-robinsons-offense",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "Bucky Irving's first start of 2026 is a sign of good things to come",
-      "categories": [
-        "Featured",
-        "Week 1 2026 Bengals",
-        "Bucky Irving"
-      ],
-      "published_at": "2026-09-14T18:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0039361",
-          "name": "Bucky Irving",
-          "team": "TB",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "12d4dd368edbff6e068a",
-      "headline": "Steelers\u2019 Week 1 snap counts show that rookie wide receiver has an uphill climb to crack the starting lineup in Pittsburgh",
-      "url": "https://atozsports.com/nfl/pittsburgh-steelers-news/steelers-week-1-snap-counts-roman-wilson-outsnaps-germie-bernard-37-3/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "The Pittsburgh Steelers offense struggled mightily against the Atlanta Falcons, leading many to wonder where rookie WR Germie Bernard was. Well, the snap count totals tell a very important story after Sunday.",
-      "categories": [
-        "NFL",
-        "Pittsburgh Steelers News",
-        "American Football",
-        "Germie Bernard",
-        "Pittsburgh Steelers",
-        "Roman Wilson",
-        "Steelers News"
-      ],
-      "published_at": "2026-09-14T18:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0041489",
-          "name": "Germie Bernard",
-          "team": "PIT",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "0abfb77d437de66510fb",
-      "headline": "Patriots practice report: TreVeyon Henderson makes return",
-      "url": "https://www.patspulpit.com/new-england-patriots-injuries/137206/patriots-practice-report-treveyon-henderson-makes-returns",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Following a weekend off, the New England Patriots were back on the practice fields on Monday for a bonus day of work ahead of Week 2. For the first time since Aug. 24, when he suffered an ankle injury, running back TreVeyon Henderson returned to the practice field. He was joined by offensive lineman Ben [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-09-14T18:00:37+00:00",
-      "players": [
-        {
-          "id": "00-0040734",
-          "name": "TreVeyon Henderson",
-          "team": "NE",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "5723f724527b5ce0508d",
-      "headline": "Injury Updates: McVay confirms Myles Garrett will undergo knee surgery and be placed on Injured Reserve; latest on Kam Curl, Nate Landman, Davis Allen and Omar Speights",
-      "url": "https://www.therams.com/news/rams-injury-updates-week-2-2026-giants-myles-garrett-kam-curl-davis-allen-nate-landman-omar-speights-monday-night-football",
-      "source_id": "news_official_lar",
-      "source": "Los Angeles Rams (official)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "Rams head coach Sean McVay provides injury updates on outside linebacker Myles Garrett and others coming out of their Week 1 game against the 49ers and heading into Week 2 against the Giants.",
-      "categories": [
-        "Football",
-        "Injury Update",
-        "New York Giants at Los Angeles Rams (2026-REG-2)",
-        "Myles Garrett",
-        "Nate Landman",
-        "Davis Allen",
-        "Omar Speights",
-        "Kamren Curl"
-      ],
-      "published_at": "2026-09-14T17:50:04+00:00",
-      "players": [
-        {
-          "id": "00-0039074",
-          "name": "Davis Allen",
-          "team": "LAR",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "96febd61f43371e6bb7a",
-      "headline": "5 Colts Things: Alec Pierce's return, blitzing Lamar Jackson a double-edged sword, snap counts from Week 1 loss to Ravens",
-      "url": "https://www.colts.com/news/5-colts-things-alec-pierce-s-return-blitzing-lamar-jackson-a-double-edged-sword-snap-counts-from-week-1-loss-to-ravens",
-      "source_id": "news_official_ind",
-      "source": "Indianapolis Colts (official)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The Colts opened the 2026 season with a 41-23 loss to the Baltimore Ravens on Sunday at Lucas Oil Stadium.",
-      "categories": [
-        "Five Things Learned",
-        "Featured News",
-        "Featured",
-        "Alec Pierce"
-      ],
-      "published_at": "2026-09-14T16:50:20+00:00",
-      "players": [
-        {
-          "id": "00-0037664",
-          "name": "Alec Pierce",
-          "team": "IND",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "4a11757e6ef94bf07cc7",
-      "headline": "Schefter: Kyler Murray Not Likely To Play Against Bears",
-      "url": "https://www.dailynorseman.com/minnesota-vikings-news/99109/kyler-murray-not-likely-to-play-chicago-bears-minnesota-vikings",
-      "source_id": "news_sbn_min",
-      "source": "Daily Norseman (SB Nation)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "Minnesota Vikings starting quarterback Kyler Murray will start Week 2 in the league\u2019s concussion protocol, and according to at least one NFL insider, the initial indications for his availability for the team\u2019s matchup against the Chicago Bears on Sunday are not positive. On ESPN\u2019s Get Up morning program on Monday, Adam Schefter reported that it [\u2026]",
-      "categories": [
-        "Minnesota Vikings Injuries",
-        "Minnesota Vikings News"
-      ],
-      "published_at": "2026-09-14T16:31:35+00:00",
-      "players": [
-        {
-          "id": "00-0035228",
-          "name": "Kyler Murray",
-          "team": "MIN",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "bec1e429c0d0339b969c",
-      "headline": "11 Winners from the 49ers\u2019 blowout win over the Rams",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-scores-results/162617/11-winners-from-the-49ers-blowout-win-over-the-rams",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "When you outclass your opponent in the way that the San Francisco 49ers did to the Los Angeles Rams, it\u2019s difficult to come up with multiple \u201closers.\u201d The Niners won by 20, but it felt like the margin was greater. Brock Purdy\u2019s QBR was 50 points higher than the other starter. The running game averaged [\u2026]",
-      "categories": [
-        "San Francisco 49ers Roster",
-        "San Francisco 49ers Scores and Results"
-      ],
-      "published_at": "2026-09-14T16:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0037834",
-          "name": "Brock Purdy",
-          "team": "SF",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "ddf3a7e0c96273286d9b",
-      "headline": "Eagles-Commander snap counts: Dontayvion Wicks flashes as WR2",
-      "url": "https://www.bleedinggreennation.com/news/182839/eagles-commander-snap-counts-dontayvion-wicks-flashes-as-wr2",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The official snap counts from the Philadelphia Eagles\u2019 Week 1 win over the Washington Commanders are in! Let\u2019s take a look and run through some analysis. OFFENSE DEFENSE SPECIAL TEAMS DID NOT PLAY ACTIVE: Andy Dalton, Hollywood Brown INACTIVE: Tanner McKee, Cole Payton, Elijah Moore, Jonathan Greenard, Micah Morris",
-      "categories": [
-        "Philadelphia Eagles News"
-      ],
-      "published_at": "2026-09-14T16:17:56+00:00",
-      "players": [
-        {
-          "id": "00-0027973",
-          "name": "Andy Dalton",
-          "team": "PHI",
-          "position": "QB"
-        },
-        {
-          "id": "00-0036980",
-          "name": "Elijah Moore",
-          "team": "PHI",
-          "position": "WR"
-        },
-        {
-          "id": "00-0038393",
-          "name": "Dontayvion Wicks",
-          "team": "PHI",
-          "position": "WR"
-        },
-        {
-          "id": "00-0038400",
-          "name": "Tanner McKee",
-          "team": "PHI",
-          "position": "QB"
-        },
-        {
-          "id": "00-0040891",
-          "name": "Cole Payton",
-          "team": "PHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "4d895f071fe22720f182",
-      "headline": "Breece Hall, Back from 'Vacation,' Staged Triumphant Performance in Opener",
-      "url": "https://www.newyorkjets.com/news/breece-hall-dominant-in-return-from-injury-week-one-win-09-14-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Jets RB Returned from Groin Injury to Climb Several Team Lists While Pounding Titans' Defense",
-      "categories": [
-        "Latest Headlines",
-        "News",
-        "Breece Hall"
-      ],
-      "published_at": "2026-09-14T15:28:15+00:00",
-      "players": [
-        {
-          "id": "00-0038120",
-          "name": "Breece Hall",
-          "team": "NYJ",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "832e3653f846206f759d",
-      "headline": "Examining the 'questionable' Dallas Goedert touchdown reception",
-      "url": "https://www.phillyvoice.com/examining-questionable-dallas-goedert-touchdown-reception/",
-      "source_id": "phillyvoice_jimmy_kempski",
-      "source": "PhillyVoice",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The biggest play of the game during the Philadelphia Eagles' 24-22 Week 1 win over the Washington Commanders was a 43-yard catch-and-run by Dallas Goedert for a touchdown. It was a weird play that the Commanders complained about in-game, and the Washington Post called \"questionable\" after it.",
-      "categories": [
-        "Sports",
-        "Eagles",
-        "NFL",
-        "Philadelphia",
-        "Dallas Goedert"
-      ],
-      "published_at": "2026-09-14T14:44:59+00:00",
-      "players": [
-        {
-          "id": "00-0034351",
-          "name": "Dallas Goedert",
-          "team": "PHI",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "130c86d1d426eb2d9223",
-      "headline": "Late for Work: Jesse Minter, Declan Doyle Get Rave Reviews As New Era Begins With a Win",
-      "url": "https://www.baltimoreravens.com/news/jesse-minter-declan-doyle-rave-reviews-new-era-win-ravens-colts-derrick-henry-trey-hendrickson-lamar-jackson",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Will the Ravens sign a veteran wide receiver? Derrick Henry is named Week 1\u2019s biggest winner. Trey Hendrickson showed why he\u2019s worth every penny. Lamar Jackson and Doyle reportedly \u2018meet every day for hours.\u2019",
-      "categories": [
-        "Late For Work",
-        "General",
-        "2026 Week 1",
-        "2026 Week 1 News",
-        "Baltimore Ravens at Indianapolis Colts (2026-REG-1)",
-        "Jesse Minter",
-        "Declan Doyle",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-09-14T13:45:48+00:00",
-      "players": [
-        {
-          "id": "00-0032764",
-          "name": "Derrick Henry",
-          "team": "BAL",
-          "position": "RB"
-        },
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "dfd79df5991f7b62fa28",
-      "headline": "49ers\u2019 New RB Split Could Be Great News for Christian McCaffrey",
-      "url": "https://www.si.com/nfl/49ers/onsi/49ers-new-rb-split-could-great-news-christian-mccaffrey",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "San Francisco 49ers rookie Kaelon Black took carries from Christian McCaffrey in Week 1, but the surprising split could benefit the star",
-      "categories": [],
-      "published_at": "2026-09-14T13:00:01+00:00",
-      "players": [
-        {
-          "id": "00-0033280",
-          "name": "Christian McCaffrey",
-          "team": "SF",
-          "position": "RB"
-        },
-        {
-          "id": "00-0041052",
-          "name": "Kaelon Black",
-          "team": "SF",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "dfc1fc2ccae1b615d457",
-      "headline": "Breaking Down the Miami Dolphins 2026 Week 1 Snap Counts",
-      "url": "https://www.si.com/nfl/dolphins/onsi/breaking-down-the-miami-dolphins-2026-week-1-snap-counts-01m2fqhd4aht",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "Diving into the playing time against the Las Vegas Raiders and the implications for Chris Bell, Greg Dulcich, Dante Trader Jr., and others",
-      "categories": [],
-      "published_at": "2026-09-14T12:58:05+00:00",
-      "players": [
-        {
-          "id": "00-0037252",
-          "name": "Greg Dulcich",
-          "team": "MIA",
-          "position": "TE"
-        },
-        {
-          "id": "00-0041525",
-          "name": "Chris Bell",
-          "team": "MIA",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "ccda37336d670fc99272",
-      "headline": "Detroit Lions not worried about heavy workload for Jahmyr Gibbs",
-      "url": "https://www.prideofdetroit.com/detroit-lions-news/172965/detroit-lions-jahmyr-gibbs-heavy-workload-not-concerned",
-      "source_id": "news_sbn_det",
-      "source": "Pride Of Detroit (SB Nation)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "This offseason, Detroit Lions coach Dan Campbell promised that Jahmyr Gibbs was taking the next step this year and becoming the team\u2019s bell-cow back. The Lions followed by putting their money where their mouth is, making Gibbs the highest-paid running back in football. On Sunday, with former RB2 David Montgomery in Houston and current RB2 [\u2026]",
-      "categories": [
-        "Detroit Lions News",
-        "Detroit Lions Quotes"
-      ],
-      "published_at": "2026-09-14T12:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039139",
-          "name": "Jahmyr Gibbs",
-          "team": "DET",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "1ef689a4f09e589ea0af",
-      "headline": "Buccaneers' Next Game: Cleveland Browns Visit for 2026 Home Opener",
-      "url": "https://www.buccaneers.com/news/next-game-cleveland-browns-vs-tampa-bay-buccaneers-nfl-season-week-2-2026",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "After a season-opening loss in Cincinnati, the Bucs return home to play another AFC North team, in this case a Cleveland Browns franchise that has some connection to Tampa Bay QB Baker Mayfield",
-      "categories": [
-        "Featured",
-        "What's Next",
-        "Week 2 2026 Browns"
-      ],
-      "published_at": "2026-09-14T11:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0034855",
-          "name": "Baker Mayfield",
-          "team": "TB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "b8e336b4e8a2b9022fd0",
-      "headline": "Packers Snap Counts, Week 1: Kaleb Johnson absent on offense",
-      "url": "https://www.acmepackingcompany.com/green-bay-packers-depth-chart/86329/packers-snap-counts-week-1-kaleb-johnson-absent-on-offense",
-      "source_id": "news_sbn_gb",
-      "source": "Acme Packing Company (SB Nation)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Below are the snap counts from the Green Bay Packers\u2019 season-opening loss to the Minnesota Vikings, position-by-position. These numbers only count contributions to the offensive and defensive sides of the ball. Let\u2019s dig into what the Packers showed in Week 1. Quarterback Jordan Love played every single snap of the game, but if the offensive [\u2026]",
-      "categories": [
-        "Green Bay Packers depth chart",
-        "Green Bay Packers roster"
-      ],
-      "published_at": "2026-09-14T02:49:10+00:00",
-      "players": [
-        {
-          "id": "00-0036264",
-          "name": "Jordan Love",
-          "team": "GB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "a69b2b2eedcd861d56db",
-      "headline": "Seahawks and Rams' Injury Woes May Have Upended NFC West After Week 1",
-      "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-rams-injury-woes-upended-nfc-west-week-1",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Major Week 1 injuries to Seattle Seahawks quarterback Sam Darnold and Los Angeles Rams star defensive end Myles Garrett have sent shockwaves through the division.",
-      "categories": [],
-      "published_at": "2026-09-14T02:33:24+00:00",
-      "players": [
-        {
-          "id": "00-0034869",
-          "name": "Sam Darnold",
-          "team": "SEA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "6c93466cd7906e378ead",
-      "headline": "Why Kalif Raymond's Big Game Against the Panthers Could be a Sign of Things to Come",
-      "url": "https://www.si.com/nfl/bears/onsi/why-kalif-raymond-s-big-game-against-the-panthers-could-be-a-sign-of-things-to-come",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Bears' 32-year-old pass-catcher led the team in receiving in their season opener blowout victory. What are his odds of building off the performance?",
-      "categories": [],
-      "published_at": "2026-09-14T01:15:00+00:00",
-      "players": [
-        {
-          "id": "00-0032464",
-          "name": "Kalif Raymond",
-          "team": "CHI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "b8aced89ab3ed114c606",
-      "headline": "Todd Monken Defends Sloppy Performance from Deshaun Watson",
-      "url": "https://www.si.com/nfl/browns/onsi/todd-monken-defends-sloppy-performance-from-deshaun-watson-01m2eehbg578",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "After Sunday's week one loss to Jacksonville, head coach Todd Monken was quick to defend his starting quarterback after his disappointing performance.",
-      "categories": [],
-      "published_at": "2026-09-14T00:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0033537",
-          "name": "Deshaun Watson",
-          "team": "CLE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "27c0b3e2434d8fab1bc5",
-      "headline": "Newly Signed RB, Exciting Rookie Among Cowboys Week 1 Inactives vs. Giants",
-      "url": "https://www.si.com/nfl/cowboys/onsi/newly-signed-rb-exciting-rookie-among-cowboys-week-1-inactives-vs-giants",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "Which five players on the Dallas Cowboys' 53-man roster won't dress for their Week 1 showdown with the New York Giants?",
-      "categories": [],
-      "published_at": "2026-09-13T23:49:51+00:00",
-      "players": []
-    },
-    {
-      "id": "db5defe3c3889d605c6e",
-      "headline": "49ers Training Staff Bears Responsibilty for De'Zhaun Stribling's Injury",
-      "url": "https://www.si.com/nfl/49ers/onsi/49ers-training-staff-bears-responsibilty-dezhaun-striblings-injury",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The 49ers need to seriously consider firing their training staff.",
-      "categories": [],
-      "published_at": "2026-09-13T23:03:27+00:00",
-      "players": [
-        {
-          "id": "00-0041035",
-          "name": "De'Zhaun Stribling",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "232e74f151f50d4fa5f6",
-      "headline": "Malik Nabers will play for Giants vs. Dallas Cowboys",
-      "url": "https://www.bigblueview.com/new-york-giants-roster/170798/malik-nabers-will-play-for-giants-vs-dallas-cowboys",
-      "source_id": "news_sbn_nyg",
-      "source": "Big Blue View (SB Nation)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "EAST RUTHERFORD, N.J. \u2014 Malik Nabers will play for the New York Giants on Sunday night against the Dallas Cowboys. Nabers has not played since tearing the ACL in his right knee in Week 4 of the 2025 season. Nabers worked out under the supervision of return to play coordinator Allison Boudreau before kickoff. Nabers [\u2026]",
-      "categories": [
-        "New York Giants roster"
-      ],
-      "published_at": "2026-09-13T22:57:53+00:00",
-      "players": [
-        {
-          "id": "00-0039337",
-          "name": "Malik Nabers",
-          "team": "NYG",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "99d663bd21b835074d7b",
-      "headline": "Sunday Night Football Inactives: WR Malik Nabers is active for Giants vs. Cowboys",
-      "url": "https://www.giants.com/news/sunday-night-football-inactives-nfl-week-1-malik-nabers-injury-status-update",
-      "source_id": "news_official_nyg",
-      "source": "New York Giants (official)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "The following players will be inactive for Sunday Night Football between the New York Giants and Dallas Cowboys at MetLife Stadium.",
-      "categories": [
-        "2026 Giants vs Cowboys Wk1",
-        "homepage"
-      ],
-      "published_at": "2026-09-13T22:50:00+00:00",
-      "players": [
-        {
-          "id": "00-0039337",
-          "name": "Malik Nabers",
-          "team": "NYG",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "af915f9258e35262aa06",
-      "headline": "Kyler Murray Injured Against Packers",
-      "url": "https://www.dailynorseman.com/minnesota-vikings-news/99025/kyler-murray-injured-against-packers",
-      "source_id": "news_sbn_min",
-      "source": "Daily Norseman (SB Nation)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "UPDATE: Murray has officially been downgraded to OUT for the remainder of today\u2019s game with a concussion. The 2026 season opener didn\u2019t get off to a great start for the Minnesota Vikings, and it didn\u2019t get much better midway through the first quarter with a very scary moment involving the Vikings\u2019 starting quarterback. Midway through [\u2026]",
-      "categories": [
-        "Minnesota Vikings News"
-      ],
-      "published_at": "2026-09-13T21:17:53+00:00",
-      "players": [
-        {
-          "id": "00-0035228",
-          "name": "Kyler Murray",
-          "team": "MIN",
-          "position": "QB"
         }
       ]
     }
