@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T00:00:52.070225+00:00",
+  "updated_at": "2026-09-17T00:32:15.840643+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-16T23:53:44+00:00",
+      "latest_entry_at": "2026-09-17T00:24:28+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-16T19:30:00+00:00",
+      "latest_entry_at": "2026-09-16T22:48:18+00:00",
       "stale": false
     },
     {
@@ -108,7 +108,7 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 8,
+      "eligible": 7,
       "error": "",
       "latest_entry_at": "2026-09-16T20:52:39+00:00",
       "stale": false
@@ -214,7 +214,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-16T20:41:53+00:00",
+      "latest_entry_at": "2026-09-16T23:58:19+00:00",
       "stale": false
     },
     {
@@ -252,9 +252,9 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 7,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-09-16T23:29:50+00:00",
+      "latest_entry_at": "2026-09-17T00:14:39+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-16T18:02:00+00:00",
+      "latest_entry_at": "2026-09-17T00:19:33+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 7,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-16T23:53:44+00:00",
+      "latest_entry_at": "2026-09-17T00:24:28+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-16T23:23:45+00:00",
+      "latest_entry_at": "2026-09-17T00:15:03+00:00",
       "stale": false
     },
     {
@@ -556,6 +556,68 @@
   ],
   "items": [
     {
+      "id": "4dff680a798dc783e509",
+      "headline": "Drake Maye Feels Obligated to Elevate Patriots Offense This Week (And Every Week)",
+      "url": "https://www.si.com/nfl/patriots/onsi/drake-maye-feels-obligated-to-elevate-patriots-offense-this-week-and-every-week",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots quarterback is attacking a chance to bounce back this week, and wants to lead his offense against the Pittsburgh Steelers.",
+      "categories": [],
+      "published_at": "2026-09-17T00:15:00+00:00",
+      "players": [
+        {
+          "id": "00-0039851",
+          "name": "Drake Maye",
+          "team": "NE",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "ebd368daca507953e4a4",
+      "headline": "Week 2 Injury Report: Seahawks vs. Cardinals",
+      "url": "https://www.seahawks.com/news/week-2-injury-report-seahawks-vs-cardinals",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Details on the Seahawks\u2019 injury situation heading into their Week 2 game at Arizona.",
+      "categories": [
+        "News: Injury Report",
+        "News: Stories",
+        "News: National Feature",
+        "Homepage Hero",
+        "Seattle Seahawks at Arizona Cardinals (2026-REG-2)"
+      ],
+      "published_at": "2026-09-17T00:14:39+00:00",
+      "players": []
+    },
+    {
+      "id": "e5692982d6a7e51474a8",
+      "headline": "Trey McBride, Budda Baker Headline First Seahawks-Cardinals Week 2 Injury Report",
+      "url": "https://www.si.com/nfl/cardinals/onsi/trey-mcbride-budda-baker-headline-first-seattle-seahawks-arizona-cardinals-week-2-injury-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "The Arizona Cardinals and Seattle Seahawks hit the practice field for the first time in Week 2.",
+      "categories": [],
+      "published_at": "2026-09-17T00:12:08+00:00",
+      "players": [
+        {
+          "id": "00-0037744",
+          "name": "Trey McBride",
+          "team": "ARI",
+          "position": "TE"
+        }
+      ]
+    },
+    {
       "id": "785775104e530cb390e6",
       "headline": "Dolphins\u2019 Chop Robinson in concussion protocol; Malik Willis dealing with toe injury",
       "url": "https://www.thephinsider.com/miami-dolphins-injuries/122626/dolphins-chop-robinson-in-concussion-protocol-malik-willis-dealing-with-toe-injury",
@@ -575,6 +637,33 @@
           "name": "Malik Willis",
           "team": "MIA",
           "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "7c86a65e95b0ac0d385b",
+      "headline": "Giants Are Getting Their Smashmouth Identity Back, Says Henry Hynoski",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-henry-hynoski-smashmouth-identity-ricard-01m2ktq3fbr9",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The former Giants fullback broke down how Patrick Ricard's blocking on Cam Skattebo's Week 1 touchdown signals a return to New York's ground-and-pound roots.",
+      "categories": [],
+      "published_at": "2026-09-16T23:55:00+00:00",
+      "players": [
+        {
+          "id": "00-0033376",
+          "name": "Patrick Ricard",
+          "team": "NYG",
+          "position": "RB"
+        },
+        {
+          "id": "00-0040715",
+          "name": "Cam Skattebo",
+          "team": "NYG",
+          "position": "RB"
         }
       ]
     },
@@ -3907,101 +3996,6 @@
           "name": "Zach Charbonnet",
           "team": "SEA",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "5e573c63af064be7fc7f",
-      "headline": "Seahawks Line Opens at -10 Against Major Underdog Cardinals, Should it Be That High?",
-      "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-cardinals-nfl-week-2-betting-line",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Analyze if oddsmakers are overvaluing the defending champion Seahawks as Drew Lock steps in for an injured Sam Darnold against a resilient Cardinals team.",
-      "categories": [],
-      "published_at": "2026-09-15T01:06:51+00:00",
-      "players": [
-        {
-          "id": "00-0034869",
-          "name": "Sam Darnold",
-          "team": "SEA",
-          "position": "QB"
-        },
-        {
-          "id": "00-0035704",
-          "name": "Drew Lock",
-          "team": "SEA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "7f08e5365c7aebe986a3",
-      "headline": "Packers TE Tucker Kraft Had Snap Count (Sort of) and New Role vs. Vikings",
-      "url": "https://www.si.com/nfl/packers/onsi/packers-te-tucker-kraft-had-snap-count-sort-of-and-new-role-vs-vikings",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Green Bay Packers tight end Tucker Kraft caught three passes during a noteworthy debut game against the Vikings.",
-      "categories": [],
-      "published_at": "2026-09-15T01:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0038996",
-          "name": "Tucker Kraft",
-          "team": "GB",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "e50f036b03729e32a035",
-      "headline": "Marvin Mims Jr. exits Monday Night Football matchup versus Chiefs due to hip injury",
-      "url": "https://www.milehighreport.com/denver-broncos-news/184948/marvin-mims-jr-exits-monday-night-football-matchup-versus-chiefs-due-to-hip-injury",
-      "source_id": "news_sbn_den",
-      "source": "Mile High Report (SB Nation)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "The Denver Broncos are currently battling the Kansas City Chiefs on Monday Night Football. Unfortunately, they may be without All-Pro punt returner and wide receiver Marvin Mims Jr. for the remainder of the game. According to Susie Wargin, Mims was injured on the second drive of the game. Mims has been ruled as questionable to [\u2026]",
-      "categories": [
-        "Denver Broncos News"
-      ],
-      "published_at": "2026-09-15T00:55:19+00:00",
-      "players": [
-        {
-          "id": "00-0038976",
-          "name": "Marvin Mims Jr.",
-          "team": "DEN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "c6b171657e50652743b9",
-      "headline": "Seahawks say Sam Darnold has \u2018very unique soft-tissue\u2019 but \u2018short-term\u2019 injury",
-      "url": "https://www.fieldgulls.com/seattle-seahawks-news/174781/nfl-news-seahawks-sam-darnold-very-unique-soft-tissue-short-term-injury-update",
-      "source_id": "news_sbn_sea",
-      "source": "Field Gulls (SB Nation)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "After several contradicting reports on Seattle Seahawks quarterback Sam Darnold\u2019s injury, confirmation on exactly what he\u2019s dealing with has come to light. According to ESPN\u2019s Brady Henderson, a team spokesperson confirmed Darnold is dealing with a \u201cvery unique\u201d soft tissue injury, but it is considered short-term. The medical staff is reportedly working to see how [\u2026]",
-      "categories": [
-        "Seattle Seahawks Injuries",
-        "Seattle Seahawks News"
-      ],
-      "published_at": "2026-09-15T00:38:47+00:00",
-      "players": [
-        {
-          "id": "00-0034869",
-          "name": "Sam Darnold",
-          "team": "SEA",
-          "position": "QB"
         }
       ]
     }
