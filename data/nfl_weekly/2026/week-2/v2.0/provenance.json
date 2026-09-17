@@ -3,7 +3,7 @@
     {
       "current_capture": true,
       "file": "games.csv.gz",
-      "sha256": "ed00d86e8b882dc2797f9366786f4f43b97b2555624a27987649bd2806973ef6",
+      "sha256": "8ef2fd39b59852bed117b212c044fdea598a4ed9be2a402c34eb41c9251b3a39",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv.gz"
     },
     {
@@ -99,25 +99,25 @@
     {
       "current_capture": true,
       "file": "play_by_play_2026.csv.gz",
-      "sha256": "f53e36793c1f61b4fc99e08f6c45923cf35bc6b8d2992852d3d86e4a6ecd6643",
+      "sha256": "b69f55a172965e16c2ac9104dc96e268dd56dc357ebdfd8ac2c68151afe9da59",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2026.csv.gz"
     },
     {
       "current_capture": true,
       "file": "depth_charts_2026.csv.gz",
-      "sha256": "579c4606d242addcc34c61d045c7fff572084f8653a7ddfa9e653cf1ba599285",
+      "sha256": "1cbac7ce2488a1dd74200d4e11f10446a9966a89487d00b8b206709d8b8732d3",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv.gz"
     },
     {
       "current_capture": true,
       "file": "roster_2026.csv.gz",
-      "sha256": "bdd8b87b9bd691d09eb01e90b32cb4295c0f0c986387d606591d096553542500",
+      "sha256": "a8ad9655dddef187937d115b48465c17848f9649b2d8f51042a9a87dbcb31c82",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2026.csv.gz"
     },
     {
       "current_capture": true,
       "file": "espn_injuries.json",
-      "sha256": "27104413c1b34f7152dd992c70c37e386241b0b4d5912f2b38152611f027805b",
+      "sha256": "858bd88733d5c51bf96d470f245337977d6304bfcb1a4bf9257197c697f8974b",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/injuries"
     }
   ],
@@ -160,10 +160,10 @@
   "model_api_calls": 0,
   "model_sha256": "b4b4b25e0d6c0b878f01bc0d0c0ef603937010e71a3edd44b39e18fc4b54684e",
   "paid_provider_calls": 0,
-  "projection_sha256": "a25d08078eca33a84886fa9a289c10bf556e9cb6c47ca9a3b32723ab6dea2526",
-  "ranking_sha256": "c7094facda500572df7d1d0e5f0c7bc8c91196abe9b0a5a934fb2798538aa00d",
+  "projection_sha256": "9fcc8f8fbc5b00536621dd29b95ebcf7980d559d1365169dc84732e49d8dcff9",
+  "ranking_sha256": "8478c7fdb45deb30b4f652e192be52fee9576648fdd14a90507777cbaf643453",
   "season": 2026,
-  "updated_at": "2026-09-16T14:35:00.644740+00:00",
+  "updated_at": "2026-09-17T14:41:01.987854+00:00",
   "validation_sha256": "baf404ca571a126821914d49279b833cb9b0b83ad506816463ae7b076d2dd6e8",
   "week": 2
 }
