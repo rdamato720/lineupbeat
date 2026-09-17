@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T00:32:15.840643+00:00",
+  "updated_at": "2026-09-17T02:00:57.798041+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-17T00:24:28+00:00",
+      "latest_entry_at": "2026-09-17T01:47:48+00:00",
       "stale": false
     },
     {
@@ -22,7 +22,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-16T17:04:37+00:00",
+      "latest_entry_at": "2026-09-17T00:58:15+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-16T23:31:19+00:00",
+      "latest_entry_at": "2026-09-17T01:35:15+00:00",
       "stale": false
     },
     {
@@ -44,7 +44,7 @@
     {
       "source_id": "news_official_ari",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
       "latest_entry_at": "2026-09-16T17:33:30+00:00",
       "stale": false
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-16T22:48:18+00:00",
+      "latest_entry_at": "2026-09-17T00:54:00+00:00",
       "stale": false
     },
     {
@@ -252,7 +252,7 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 8,
+      "eligible": 7,
       "error": "",
       "latest_entry_at": "2026-09-17T00:14:39+00:00",
       "stale": false
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-17T00:24:28+00:00",
+      "latest_entry_at": "2026-09-17T01:47:48+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-16T23:31:19+00:00",
+      "latest_entry_at": "2026-09-17T01:35:15+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-16T23:04:21+00:00",
+      "latest_entry_at": "2026-09-16T18:14:01+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-16T22:00:00+00:00",
+      "latest_entry_at": "2026-09-17T00:44:54+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-16T22:34:49+00:00",
+      "latest_entry_at": "2026-09-16T11:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-16T20:15:00+00:00",
+      "latest_entry_at": "2026-09-17T00:35:15+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,92 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-16T21:39:42+00:00",
+      "latest_entry_at": "2026-09-17T01:08:18+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "5e6c5f6cb10d3fa45144",
+      "headline": "Buffalo Bills' Final Week 2 Injury Report: Three Cleared, Three Questionable for Thursday",
+      "url": "https://www.si.com/nfl/bills/onsi/injury-report-week-2-final-buffalo-bills-three-cleared-three-questionable-for-thursday-vs-lions",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills could be without three key players when they host the Detroit Lions in the inaugural Highmark Stadium game on September 17 vs. the Detroit Lions.",
+      "categories": [],
+      "published_at": "2026-09-17T01:32:02+00:00",
+      "players": []
+    },
+    {
+      "id": "ce2c7c5c285a7b17ffed",
+      "headline": "Seahawks Week 2 Wednesday injury report: Tory Horton practices, Nick Emmanwori has new injury",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/174928/seahawks-cardinals-injury-report-tory-horton-practices-nick-emmanwori-new-injury",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks are preparing to do something they haven\u2019t done in 318 days: play a snap of football with Tory Horton on the field. That\u2019s after the second-year wideout was a full participant in the Seahawks\u2019 Wednesday practice ahead of their game against NFC West rival Arizona Cardinals. Horton hasn\u2019t played for Seattle since [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries"
+      ],
+      "published_at": "2026-09-17T01:08:18+00:00",
+      "players": [
+        {
+          "id": "00-0040648",
+          "name": "Tory Horton",
+          "team": "SEA",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "216534f8fdd091b76bee",
+      "headline": "Seahawks Provide Injury Update on Nick Emmanwori, Tory Horton, and More",
+      "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-provide-injury-update-nick-emmanwori-tory-horton-more",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The first injury report of the week is out, and the Seattle Seahawks seem fairly well-defined as they head into their first division game of the season.",
+      "categories": [],
+      "published_at": "2026-09-17T01:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040648",
+          "name": "Tory Horton",
+          "team": "SEA",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "80bd3c6567431307775b",
+      "headline": "LS Wood Out with Calf Strain, but Saints Get Major Injury Boost Ahead of Week 2",
+      "url": "https://www.si.com/nfl/saints/onsi/ls-wood-out-with-calf-strain-but-saints-get-major-injury-boost-ahead-of-week-2-01m2p8hg72xe",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "The Saints and Ravens released their first Week 2 injury reports, with Alvin Kamara practicing fully while Zay Flowers and five other Ravens sat out.",
+      "categories": [],
+      "published_at": "2026-09-17T00:55:14+00:00",
+      "players": [
+        {
+          "id": "00-0033906",
+          "name": "Alvin Kamara",
+          "team": "NO",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "4dff680a798dc783e509",
       "headline": "Drake Maye Feels Obligated to Elevate Patriots Offense This Week (And Every Week)",
@@ -3907,95 +3986,6 @@
           "name": "Deshaun Watson",
           "team": "CLE",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "61e7f280d88efefdd7bf",
-      "headline": "New Patriots DT DaQuan Jones \u2018still has some good snaps ahead of him\u2019",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/137192/daquan-jones-signed-explained-mike-vrabel",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "A.J. Brown\u2019s high-ankle sprain and subsequent trip to injured reserve created an open spot on the New England Patriots\u2019 53-man roster. They could have opted for another wide receiver to fill it, but instead chose to bring in a veteran defensive lineman: DaQuan Jones was signed to a one-year contract over the weekend. Jones has [\u2026]",
-      "categories": [
-        "New England Patriots First Read",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-09-15T09:58:03+00:00",
-      "players": [
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "7bdddef3faf19f8dd014",
-      "headline": "No Raven Was Asked To Do More On Offense Than TE Durham Smythe Week 1",
-      "url": "https://www.si.com/nfl/ravens/onsi/no-raven-was-asked-to-do-more-on-offense-than-te-durham-smythe-week-1-01m2h62gqwsf",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The snap counts always tell a story in an NFL game. And of all the things the Ravens did with player deployment, it\u2019s how rookie offensive coordinator Declan Do",
-      "categories": [],
-      "published_at": "2026-09-15T09:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0034798",
-          "name": "Durham Smythe",
-          "team": "BAL",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "dd4ad5a79d4db72c933d",
-      "headline": "Patrick Mahomes Critical of Performance in Return From ACL Tear: 'I've Got to Be Better'",
-      "url": "https://www.si.com/nfl/chiefs/onsi/patrick-mahomes-critical-of-performance-in-return-from-acl-tear",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Despite winning his first game back from knee surgery, QB Patrick Mahomes thinks he must step his game up for the Kansas City Chiefs to succeed moving forward.",
-      "categories": [],
-      "published_at": "2026-09-15T04:37:49+00:00",
-      "players": [
-        {
-          "id": "00-0033873",
-          "name": "Patrick Mahomes",
-          "team": "KC",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "95236e48fc41548ff394",
-      "headline": "Seahawks Super Bowl MVP Kenneth Walker III has career-high game in Chiefs debut",
-      "url": "https://www.fieldgulls.com/seattle-seahawks-news/174795/seahawks-super-bowl-mvp-kenneth-walker-iii-career-high-game-chiefs-debut-mnf",
-      "source_id": "news_sbn_sea",
-      "source": "Field Gulls (SB Nation)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Kenneth Walker III wanted to prove he was a lead back when he left the Seattle Seahawks to sign with the Kansas City Chiefs in a huge free agent move. The Super Bowl MVP spent 2025 sharing lead back duties with Zach Charbonnet, but the Chiefs made it clear that Walker was going to be [\u2026]",
-      "categories": [
-        "Seattle Seahawks News"
-      ],
-      "published_at": "2026-09-15T03:20:31+00:00",
-      "players": [
-        {
-          "id": "00-0039165",
-          "name": "Zach Charbonnet",
-          "team": "SEA",
-          "position": "RB"
         }
       ]
     }
