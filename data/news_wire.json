@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T22:00:51.479378+00:00",
+  "updated_at": "2026-09-17T22:14:26.402683+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T21:46:36+00:00",
+      "latest_entry_at": "2026-09-17T22:08:00+00:00",
       "stale": false
     },
     {
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-17T19:34:44+00:00",
+      "latest_entry_at": "2026-09-17T22:04:01+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-17T21:45:03+00:00",
+      "latest_entry_at": "2026-09-17T22:02:00+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-17T11:00:08+00:00",
+      "latest_entry_at": "2026-09-17T22:00:00+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-17T15:00:21+00:00",
+      "latest_entry_at": "2026-09-17T22:00:00+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-17T20:02:00+00:00",
+      "latest_entry_at": "2026-09-17T22:05:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 10,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-09-17T21:46:36+00:00",
+      "latest_entry_at": "2026-09-17T22:08:00+00:00",
       "stale": false
     },
     {
@@ -300,9 +300,9 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-17T21:41:42+00:00",
+      "latest_entry_at": "2026-09-17T17:51:37+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T21:54:00+00:00",
+      "latest_entry_at": "2026-09-17T20:09:00+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T16:00:00+00:00",
+      "latest_entry_at": "2026-09-16T20:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-17T20:29:17+00:00",
+      "latest_entry_at": "2026-09-17T18:00:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-17T18:36:48+00:00",
+      "latest_entry_at": "2026-09-17T22:06:12+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,89 @@
     }
   ],
   "items": [
+    {
+      "id": "59bcc8e4ff86bea11346",
+      "headline": "Kaelon Black was added to the 49ers\u2019 injury report",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/162823/kaelon-black-was-added-to-the-49ers-injury-report",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers\u2019 injury report saw a couple of changes Thursday. The players who rested on Wednesday, Christian McCaffrey, Dre Greenlaw, and Trent Williams, were all upgraded to full participants during Thursday\u2019s session. Edge rusher Khalid Kareem was also upgraded to a full participant after sitting out Wednesday with a shoulder injury. Kicker Eddy [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries"
+      ],
+      "published_at": "2026-09-17T22:06:12+00:00",
+      "players": [
+        {
+          "id": "00-0033280",
+          "name": "Christian McCaffrey",
+          "team": "SF",
+          "position": "RB"
+        },
+        {
+          "id": "00-0041052",
+          "name": "Kaelon Black",
+          "team": "SF",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "fa4f261d58e22ca20c4b",
+      "headline": "Raiders-Chargers Week 2 Injury Report",
+      "url": "https://www.raiders.com/news/las-vegas-raiders-los-angeles-chargers-nfl-week-2-injury-report-2026-season",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the Los Angeles Chargers.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Injury Report",
+        "Las Vegas Raiders at Los Angeles Chargers (2026-REG-2)"
+      ],
+      "published_at": "2026-09-17T22:05:00+00:00",
+      "players": []
+    },
+    {
+      "id": "b17e456c3d3db6e0829d",
+      "headline": "Thursday's Injury Report Provides Jets' Defense With Mixed News (What It Means for Week 2)",
+      "url": "https://www.si.com/nfl/jets/onsi/thursday-s-injury-report-provides-jets-defense-with-mixed-news-what-it-means-for-week-2-01m2rhagm7ts",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "Thursday's injury report has left the New York Jets' defense with a mix of positive and concerning news ahead of Sunday's Week 2 matchup with the Green Bay Packers.",
+      "categories": [],
+      "published_at": "2026-09-17T22:00:03+00:00",
+      "players": []
+    },
+    {
+      "id": "cc713f284917b8875e89",
+      "headline": "Chargers vs. Raiders Injury Report: McConkey & Molden Don't Practice, Tart Limited on THursday",
+      "url": "https://www.chargers.com/news/raiders-injury-report-ladd-mcconkey-fantasy",
+      "source_id": "news_official_lac",
+      "source": "Los Angeles Chargers (official)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "Take a look at the Chargers Injury Report ahead of Week 2 against the Raiders",
+      "categories": [
+        "Articles: Injury Report",
+        "Homepage: CP",
+        "Homepage: Headlines",
+        "App: Homepage",
+        "2026-REG-2-EDITORIAL",
+        "Las Vegas Raiders at Los Angeles Chargers (2026-REG-2)"
+      ],
+      "published_at": "2026-09-17T22:00:00+00:00",
+      "players": []
+    },
     {
       "id": "9e344691138e241f6887",
       "headline": "Vikings Injury Report: Kyler Murray continues progress in being ready for Week 2 vs. Bears",
@@ -2515,53 +2598,6 @@
       "players": []
     },
     {
-      "id": "cc713f284917b8875e89",
-      "headline": "Chargers vs. Raiders Injury Report: Ladd McConkey Among 5 Who Don't Practice Wednesday",
-      "url": "https://www.chargers.com/news/raiders-injury-report-ladd-mcconkey-fantasy",
-      "source_id": "news_official_lac",
-      "source": "Los Angeles Chargers (official)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "Take a look at the Chargers Injury Report ahead of Week 2 against the Raiders",
-      "categories": [
-        "Articles: Injury Report",
-        "Homepage: CP",
-        "Homepage: Headlines",
-        "App: Homepage",
-        "2026-REG-2-EDITORIAL",
-        "Las Vegas Raiders at Los Angeles Chargers (2026-REG-2)"
-      ],
-      "published_at": "2026-09-16T22:32:56+00:00",
-      "players": [
-        {
-          "id": "00-0039915",
-          "name": "Ladd McConkey",
-          "team": "LAC",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "fa4f261d58e22ca20c4b",
-      "headline": "Raiders-Chargers Week 2 Injury Report",
-      "url": "https://www.raiders.com/news/las-vegas-raiders-los-angeles-chargers-nfl-week-2-injury-report-2026-season",
-      "source_id": "news_official_lv",
-      "source": "Las Vegas Raiders (official)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the Los Angeles Chargers.",
-      "categories": [
-        "Home Centerpiece",
-        "Home Latest Stories",
-        "News - Injury Report",
-        "Las Vegas Raiders at Los Angeles Chargers (2026-REG-2)"
-      ],
-      "published_at": "2026-09-16T22:30:26+00:00",
-      "players": []
-    },
-    {
       "id": "99dee7d70a77f1340b95",
       "headline": "Texans Wednesday Injury Report Week 2 vs. Bengals: 3 Players Miss Practice",
       "url": "https://www.si.com/nfl/texans/onsi/texans-wednesday-injury-report-week-2-vs-bengals-3-players-miss-practice",
@@ -3750,58 +3786,6 @@
           "name": "Jordan Mason",
           "team": "MIN",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "8bf0735f012edbe56ba7",
-      "headline": "Brock Bowers, Darien Porter not practicing Wednesday",
-      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/139973/raiders-news-brock-bowers-darien-porter-not-practicing-injury",
-      "source_id": "news_sbn_lv",
-      "source": "Silver And Black Pride (SB Nation)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "While the team still has hope, the Las Vegas Raiders\u2019 practice week began Wednesday without starting tight end Brock Bowers and conerback Darien Porter working on the practice field. Before practice began, Las Vegas coach Klint Kubiak said neither Bowers nor Porter will practice. However, he said he is hopeful they could practice this week [\u2026]",
-      "categories": [
-        "Las Vegas Raiders Injuries",
-        "Las Vegas Raiders News"
-      ],
-      "published_at": "2026-09-16T18:16:32+00:00",
-      "players": [
-        {
-          "id": "00-0039338",
-          "name": "Brock Bowers",
-          "team": "LV",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "70e6dd99ca8b98582373",
-      "headline": "49ers Promote WR Hodge to Active Roster; Sign TE Stoll; Place TE Tonges on Injured Reserve",
-      "url": "https://www.49ers.com/news/49ers-promote-wr-khadarel-hodge-to-active-roster-sign-te-jack-stoll-place-te-jake-tonges-on-ir",
-      "source_id": "news_official_sf",
-      "source": "San Francisco 49ers (official)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The 49ers announced they have promoted WR KhaDarel Hodge to Active Roster, sign TE Jack Stoll to the team\u2019s practice squad, and placed TE Jake Tonges on the Injured Reserve List.",
-      "categories": [
-        "Roster Moves",
-        "Latest App",
-        "News - Roster",
-        "English",
-        "English Articles",
-        "News"
-      ],
-      "published_at": "2026-09-16T18:02:00+00:00",
-      "players": [
-        {
-          "id": "00-0037112",
-          "name": "Jake Tonges",
-          "team": "SF",
-          "position": "TE"
         }
       ]
     }
