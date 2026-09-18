@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T22:00:46.759134+00:00",
+  "updated_at": "2026-09-18T22:34:34.128119+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T21:48:18+00:00",
+      "latest_entry_at": "2026-09-18T22:25:49+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T21:32:57+00:00",
+      "latest_entry_at": "2026-09-18T22:17:25+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T20:43:14+00:00",
+      "latest_entry_at": "2026-09-18T21:35:10+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-18T19:31:19+00:00",
+      "latest_entry_at": "2026-09-18T22:26:10+00:00",
       "stale": false
     },
     {
@@ -252,7 +252,7 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
       "latest_entry_at": "2026-09-18T22:14:00+00:00",
       "stale": false
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 8,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-18T21:48:18+00:00",
+      "latest_entry_at": "2026-09-18T22:25:49+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-18T21:32:57+00:00",
+      "latest_entry_at": "2026-09-18T22:17:25+00:00",
       "stale": false
     },
     {
@@ -324,9 +324,9 @@
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-18T20:02:27+00:00",
+      "latest_entry_at": "2026-09-18T15:24:18+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-18T19:36:02+00:00",
+      "latest_entry_at": "2026-09-18T22:30:00+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-18T06:48:49+00:00",
+      "latest_entry_at": "2026-09-18T21:48:55+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T14:30:00+00:00",
+      "latest_entry_at": "2026-09-18T13:04:00+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T21:39:00+00:00",
+      "latest_entry_at": "2026-09-18T16:01:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T20:25:36+00:00",
+      "latest_entry_at": "2026-09-18T22:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T14:00:00+00:00",
+      "latest_entry_at": "2026-09-18T20:31:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,59 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-18T21:21:06+00:00",
+      "latest_entry_at": "2026-09-18T14:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "5dc1a3655af9a655f296",
+      "headline": "Saints Injury Report Deepens, Baltimore Walking Wounded",
+      "url": "https://www.si.com/nfl/saints/onsi/saints-injury-report-deepens-baltimore-walking-wounded-01m2v6z37ak1",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "A trio listed as questionable, another as doubtful, and another Out for the Saints.",
+      "categories": [],
+      "published_at": "2026-09-18T22:23:55+00:00",
+      "players": []
+    },
+    {
+      "id": "a2922196d30f25953e5e",
+      "headline": "One Loser Possible from Chain Reaction With Bears' Wildly Positive Injury Report",
+      "url": "https://www.si.com/nfl/bears/onsi/only-one-loser-from-chain-reaction-caused-by-bears-wildly-positive-injury-report-expected",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Everyone on the Bears roster was healthy Friday, and it's going to mean someone eventually gets bumped from a starting role. But who?",
+      "categories": [],
+      "published_at": "2026-09-18T22:15:00+00:00",
+      "players": []
+    },
+    {
+      "id": "ebd368daca507953e4a4",
+      "headline": "Week 2 Injury Report: Seahawks vs. Cardinals",
+      "url": "https://www.seahawks.com/news/week-2-injury-report-seahawks-vs-cardinals",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Details on the Seahawks\u2019 injury situation heading into their Week 2 game at Arizona.",
+      "categories": [
+        "News: Injury Report",
+        "News: Stories",
+        "News: National Feature",
+        "Homepage Hero",
+        "Seattle Seahawks at Arizona Cardinals (2026-REG-2)"
+      ],
+      "published_at": "2026-09-18T22:14:00+00:00",
+      "players": []
+    },
     {
       "id": "35be4e28c45afb2d06f5",
       "headline": "Updates From Mike Macdonald On Sam Darnold, Zach Charbonnet & Other Seahawks Injuries",
@@ -585,6 +633,30 @@
           "name": "Zach Charbonnet",
           "team": "SEA",
           "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "fbb4b10f4109663cdb69",
+      "headline": "Indianapolis Colts Injury Report: Week 2 Who\u2019s In and Out",
+      "url": "https://www.stampedeblue.com/indianapolis-colts-injuries/127535/indianapolis-colts-injury-report-week-2-whos-in-and-out",
+      "source_id": "news_sbn_ind",
+      "source": "Stampede Blue (SB Nation)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Indianapolis Colts released their Friday injury report ahead of their week 2 prime time game against the Kansas City Chiefs. Wide receiver Ashton Dulin (ankle) has been designated as OUT for Sundays game against the Chiefs. Dulin has missed practice all week with an ankle injury so it isn\u2019t surprising to seem him end [\u2026]",
+      "categories": [
+        "Indianapolis Colts Injuries",
+        "Indianapolis Colts News"
+      ],
+      "published_at": "2026-09-18T21:48:55+00:00",
+      "players": [
+        {
+          "id": "00-0035021",
+          "name": "Ashton Dulin",
+          "team": "IND",
+          "position": "WR"
         }
       ]
     },
@@ -2334,26 +2406,6 @@
       "players": []
     },
     {
-      "id": "ebd368daca507953e4a4",
-      "headline": "Week 2 Injury Report: Seahawks vs. Cardinals",
-      "url": "https://www.seahawks.com/news/week-2-injury-report-seahawks-vs-cardinals",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Details on the Seahawks\u2019 injury situation heading into their Week 2 game at Arizona.",
-      "categories": [
-        "News: Injury Report",
-        "News: Stories",
-        "News: National Feature",
-        "Homepage Hero",
-        "Seattle Seahawks at Arizona Cardinals (2026-REG-2)"
-      ],
-      "published_at": "2026-09-18T00:14:00+00:00",
-      "players": []
-    },
-    {
       "id": "de31a42e8d9e4196b5e5",
       "headline": "Rams Injury Report: Several Defenders Dealing With Injuries Ahead of Week 2",
       "url": "https://www.si.com/nfl/rams/onsi/rams-week-2-injury-report-kam-kinchens-nate-landman",
@@ -3740,84 +3792,6 @@
           "name": "Kaelon Black",
           "team": "SF",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "78a76697b1d7845e707d",
-      "headline": "How 49ers Rookie Kaelon Black Earned His Role in the Offense",
-      "url": "https://www.si.com/nfl/49ers/onsi/how-49ers-rookie-kaelon-black-earned-role",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "Alleviating Christian McCaffrey's workload isn't the main reason the 49ers gave rookie Kaelon Black a role in the offense.",
-      "categories": [],
-      "published_at": "2026-09-17T17:00:02+00:00",
-      "players": [
-        {
-          "id": "00-0033280",
-          "name": "Christian McCaffrey",
-          "team": "SF",
-          "position": "RB"
-        },
-        {
-          "id": "00-0041052",
-          "name": "Kaelon Black",
-          "team": "SF",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "13fb0b8f9e3b82bd8d0d",
-      "headline": "Joe Burrow\u2019s back injury shouldn\u2019t prevent Bengals from exploiting key weakness in Texans\u2019 defense",
-      "url": "https://atozsports.com/nfl/cincinnati-bengals-news/joe-burrow-back-injury-shouldnt-prevent-bengals-from-exploiting-key-weakness-texans-defense/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "While quarterback Joe Burrow is expected to play on Sunday against the Houston Texans despite his \u201cback tightness,\u201d the Cincinnati Bengals may need to move the ball and put up points without relying so heavily on Burrow\u2019s right arm.",
-      "categories": [
-        "Cincinnati Bengals News",
-        "American Football",
-        "Chase Brown",
-        "Cincinnati Bengals",
-        "Houston Texans",
-        "Joe Burrow Injury"
-      ],
-      "published_at": "2026-09-17T16:00:09+00:00",
-      "players": [
-        {
-          "id": "00-0036442",
-          "name": "Joe Burrow",
-          "team": "CIN",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "f42072bd0e39076bf955",
-      "headline": "Three Rivers Report: Aaron Rodgers doesn\u2019t care about target distribution",
-      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-news/174797/three-rivers-report-aaron-rodgers-doesnt-care-about-target-distribution-pittsburgh-steelers",
-      "source_id": "news_sbn_pit",
-      "source": "Behind the Steel Curtain (SB Nation)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "The Pittsburgh Steelers are preparing for Week 2 against the New England Patriots, and while the offense took some deep shots against Atlanta, the media wants to discuss the target distribution between the Steelers receivers. Steelers quarterback Aaron Rodgers wants no part of that discussion and says it is never discussed in the locker room. [\u2026]",
-      "categories": [
-        "Pittsburgh Steelers News"
-      ],
-      "published_at": "2026-09-17T15:36:12+00:00",
-      "players": [
-        {
-          "id": "00-0023459",
-          "name": "Aaron Rodgers",
-          "team": "PIT",
-          "position": "QB"
         }
       ]
     }
