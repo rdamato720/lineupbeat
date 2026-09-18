@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T05:13:41.799686+00:00",
+  "updated_at": "2026-09-18T09:47:03.152519+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T04:59:44+00:00",
+      "latest_entry_at": "2026-09-18T09:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T04:03:54+00:00",
+      "latest_entry_at": "2026-09-18T09:00:00+00:00",
       "stale": false
     },
     {
@@ -70,7 +70,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-18T04:05:54+00:00",
+      "latest_entry_at": "2026-09-18T06:26:47+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-18T03:56:14+00:00",
+      "latest_entry_at": "2026-09-18T05:52:43+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-18T04:59:44+00:00",
+      "latest_entry_at": "2026-09-18T09:00:00+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-18T03:38:42+00:00",
+      "latest_entry_at": "2026-09-18T05:16:15+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-17T20:31:26+00:00",
+      "latest_entry_at": "2026-09-18T06:48:49+00:00",
       "stale": false
     },
     {
@@ -438,15 +438,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-17T20:52:23+00:00",
+      "latest_entry_at": "2026-09-18T00:18:23+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-17T17:55:33+00:00",
+      "latest_entry_at": "2026-09-18T02:16:08+00:00",
       "stale": false
     },
     {
@@ -454,15 +454,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-17T22:00:00+00:00",
+      "latest_entry_at": "2026-09-18T04:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-17T19:36:09+00:00",
+      "latest_entry_at": "2026-09-18T03:23:09+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-18T03:21:14+00:00",
+      "latest_entry_at": "2026-09-18T06:28:00+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-17T00:51:15+00:00",
+      "latest_entry_at": "2026-09-17T23:42:09+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-17T22:06:12+00:00",
+      "latest_entry_at": "2026-09-18T09:01:12+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,30 @@
     }
   ],
   "items": [
+    {
+      "id": "7e5a7551a9bc80f30bff",
+      "headline": "Indianapolis Colts Injury Report: Thursday Week 2",
+      "url": "https://www.stampedeblue.com/indianapolis-colts-injuries/127524/indianapolis-colts-injury-report-thursday-week-2",
+      "source_id": "news_sbn_ind",
+      "source": "Stampede Blue (SB Nation)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Indianapolis Colts released their Thursday injury report for Week 2 of the NFL season against the Kansas City Chiefs. Wide receiver Alec Pierce (heel() missed practice Thursday. Pierce had been a full participant the day before. Pierce could be resting and trying to manage the workload on his heel or the worst case scenario [\u2026]",
+      "categories": [
+        "Indianapolis Colts Injuries",
+        "Indianapolis Colts News"
+      ],
+      "published_at": "2026-09-18T06:48:49+00:00",
+      "players": [
+        {
+          "id": "00-0037664",
+          "name": "Alec Pierce",
+          "team": "IND",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "5bf68de92c751b8ac52d",
       "headline": "Buffalo Bills\u2019 ability to stave off the Detroit Lions just got a lot harder after latest injury update on wide receiver DJ Moore",
@@ -3737,33 +3761,6 @@
       ],
       "published_at": "2026-09-16T20:36:20+00:00",
       "players": []
-    },
-    {
-      "id": "a97c32f2f118dbcf2009",
-      "headline": "D'Andre Swift, Kyle Monangai, Darnell Wright Among New Additions to Bears' Injury Report",
-      "url": "https://www.si.com/nfl/bears/onsi/d-andre-swift-kyle-monangai-darnell-wright-bears-injury-report",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Chicago Bears have released their first injury report of the week and it includes Darnell Wright, D'Andre Swift and Kyle Monangai.",
-      "categories": [],
-      "published_at": "2026-09-16T20:33:47+00:00",
-      "players": [
-        {
-          "id": "00-0036275",
-          "name": "D'Andre Swift",
-          "team": "CHI",
-          "position": "RB"
-        },
-        {
-          "id": "00-0040236",
-          "name": "Kyle Monangai",
-          "team": "CHI",
-          "position": "RB"
-        }
-      ]
     }
   ]
 }
