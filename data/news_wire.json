@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T00:21:35.525462+00:00",
+  "updated_at": "2026-09-18T02:00:59.496443+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T00:06:31+00:00",
+      "latest_entry_at": "2026-09-18T01:46:18+00:00",
       "stale": false
     },
     {
@@ -68,9 +68,9 @@
     {
       "source_id": "news_official_buf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-18T00:00:00+00:00",
+      "latest_entry_at": "2026-09-18T01:33:27+00:00",
       "stale": false
     },
     {
@@ -108,7 +108,7 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 8,
+      "eligible": 7,
       "error": "",
       "latest_entry_at": "2026-09-17T23:33:39+00:00",
       "stale": false
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-18T00:06:31+00:00",
+      "latest_entry_at": "2026-09-18T01:46:18+00:00",
       "stale": false
     },
     {
@@ -300,9 +300,9 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-17T23:15:00+00:00",
+      "latest_entry_at": "2026-09-18T01:26:31+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-17T14:36:25+00:00",
+      "latest_entry_at": "2026-09-17T21:53:41+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-17T22:35:25+00:00",
+      "latest_entry_at": "2026-09-17T22:57:31+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-17T20:52:23+00:00",
+      "latest_entry_at": "2026-09-18T00:18:23+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-17T19:36:09+00:00",
+      "latest_entry_at": "2026-09-18T00:40:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T14:00:00+00:00",
+      "latest_entry_at": "2026-09-17T11:00:00+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-17T11:00:00+00:00",
+      "latest_entry_at": "2026-09-17T23:42:09+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,130 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-17T23:30:00+00:00",
+      "latest_entry_at": "2026-09-18T00:34:24+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "34b444e23df395136d72",
+      "headline": "DJ Moore Injury Update: Latest on Bills WR Following Potential Shoulder Injury",
+      "url": "https://www.si.com/nfl/bills/onsi/dj-moore-injury-update-latest-on-bills-wr-following-shoulder-injury",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Buffalo Bills WR DJ Moore suffered a shoulder injury during their Thursday night showdown with the Detroit Lions.",
+      "categories": [],
+      "published_at": "2026-09-18T01:33:47+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "a7f634c668307e41568c",
+      "headline": "Bills issue injury update on WR DJ Moore",
+      "url": "https://www.buffalobills.com/news/bills-issue-injury-update-on-wr-dj-moore",
+      "source_id": "news_official_buf",
+      "source": "Buffalo Bills (official)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Moore is questionable to return to tonight's contest with a shoulder and stinger injury.",
+      "categories": [
+        "NEWS ANNOUNCEMENTS",
+        "DJ Moore"
+      ],
+      "published_at": "2026-09-18T01:33:27+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "b9240421b4c1fd285d5e",
+      "headline": "DJ Moore injury: Bills WR heads to locker room after hurting shoulder",
+      "url": "https://www.buffalorumblings.com/buffalo-bills-injuries/140586/dj-moore-injury-bills-wr-heads-to-locker-room-after-hurting-shoulder",
+      "source_id": "news_sbn_buf",
+      "source": "Buffalo Rumblings (SB Nation)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Buffalo Bills wide receiver DJ Moore has headed to the locker room with a shoulder injury. He dove for a pass in the back of the end zone and immediately grabbed at the area. The Bills announced he is questionable to return with a shoulder injury and a stinger. He is in for an X-ray. [\u2026]",
+      "categories": [
+        "Buffalo Bills Injuries",
+        "Buffalo Bills News"
+      ],
+      "published_at": "2026-09-18T01:26:31+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "036cd4e486f24a7ad5d3",
+      "headline": "Saints Get Concerning Injury Updates on Two Key Players Before Ravens",
+      "url": "https://www.si.com/nfl/saints/onsi/saints-get-concerning-injury-updates-on-two-key-players-before-ravens-01m2pqgfcsgd",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "Chris Olave and Chase Young were limited Thursday with new injuries, while Alvin Kamara practiced fully again and Juwan Johnson returned ahead of the Saints\u2019 Week 2 matchup with Baltimore.",
+      "categories": [],
+      "published_at": "2026-09-18T01:14:44+00:00",
+      "players": [
+        {
+          "id": "00-0033906",
+          "name": "Alvin Kamara",
+          "team": "NO",
+          "position": "RB"
+        },
+        {
+          "id": "00-0036040",
+          "name": "Juwan Johnson",
+          "team": "NO",
+          "position": "TE"
+        },
+        {
+          "id": "00-0037239",
+          "name": "Chris Olave",
+          "team": "NO",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "ec2bf1629f5de4754371",
+      "headline": "Seahawks Week 2 Thursday injury report: Emmanwori still limited, Bradford adds hip injury",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/174983/seahawks-week-2-thursday-injury-report-nick-emmanwori-still-limited-anthony-bradford-hip-injury",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks are a bit of a walking M.A.S.H. unit right now, particularly in the safety room. Ty Okada and Nick Emmanwori both missed last week\u2019s opener against the New England Patriots, and it may be trending in the same direction for the Week 2 game against the Arizona Cardinals. Ty Okada still isn\u2019t [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-09-18T00:34:24+00:00",
+      "players": []
+    },
     {
       "id": "ebd368daca507953e4a4",
       "headline": "Week 2 Injury Report: Seahawks vs. Cardinals",
@@ -573,6 +692,20 @@
         "Seattle Seahawks at Arizona Cardinals (2026-REG-2)"
       ],
       "published_at": "2026-09-18T00:14:00+00:00",
+      "players": []
+    },
+    {
+      "id": "de31a42e8d9e4196b5e5",
+      "headline": "Rams Injury Report: Several Defenders Dealing With Injuries Ahead of Week 2",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-week-2-injury-report-kam-kinchens-nate-landman",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Kam Kinchens missed practice while Omar Speights, Kam Curl and Nate Landman were limited on the Rams\u2019 first Week 2 injury report.",
+      "categories": [],
+      "published_at": "2026-09-18T00:11:48+00:00",
       "players": []
     },
     {
@@ -615,6 +748,29 @@
       "categories": [],
       "published_at": "2026-09-18T00:06:31+00:00",
       "players": []
+    },
+    {
+      "id": "f539261a95a9caa456bb",
+      "headline": "Buccaneers vs. Browns: Thursday injury report for Week 2",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/68568/buccaneers-browns-thursday-injury-report-nfl-week-2",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers continue to get encouraging news on wide receiver Jalen McMillan ahead of Sunday\u2019s home opener against the Cleveland Browns. McMillan, who missed Tampa Bay\u2019s Week 1 loss to Cincinnati with a knee injury, was a full participant for the second consecutive day Thursday. Safety Miles Killebrew remains limited as he works [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers Injuries"
+      ],
+      "published_at": "2026-09-17T23:42:09+00:00",
+      "players": [
+        {
+          "id": "00-0039855",
+          "name": "Jalen McMillan",
+          "team": "TB",
+          "position": "WR"
+        }
+      ]
     },
     {
       "id": "0072d18f12ab764a13d8",
@@ -842,7 +998,9 @@
         "centerpiece",
         "latest news",
         "latest stories",
-        "Cincinnati Bengals at Houston Texans (2026-REG-2)"
+        "Cincinnati Bengals at Houston Texans (2026-REG-2)",
+        "Quick Hits",
+        "Bryan Cook"
       ],
       "published_at": "2026-09-17T22:45:33+00:00",
       "players": [
@@ -3609,156 +3767,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "0db63a0254b60caba712",
-      "headline": "Commanders vs. Cowboys Wednesday injury report: Chig Okonkwo held out",
-      "url": "https://www.hogshaven.com/washington-commanders-injuries/439605/commanders-vs-cowboys-wednesday-injury-report-chig-okonkwo-frankie-luvu-tyler-owens",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Commanders emerged from training camp in solid shape. While they put a few key players on injured reserve, all 53 members of the active roster were available for the regular season opener against the Philadelphia Eagles. They won\u2019t enter Week 2 that way. A few key Commanders got banged up in that 24-22 loss [\u2026]",
-      "categories": [
-        "Washington Commanders Injuries"
-      ],
-      "published_at": "2026-09-16T20:23:42+00:00",
-      "players": [
-        {
-          "id": "00-0037809",
-          "name": "Chig Okonkwo",
-          "team": "WAS",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "0b5e110b829d8572a10a",
-      "headline": "Buccaneers-Browns Injury Report Sept.16: Parrish, Killebrew Limited Participants",
-      "url": "https://www.buccaneers.com/news/buccaneers-browns-injury-report-sept-16-week-2-2026",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "A look at Wednesday's injury report ahead of the Week 2 matchup",
-      "categories": [
-        "Featured",
-        "Injury Report",
-        "Week 2 2026 Browns"
-      ],
-      "published_at": "2026-09-16T20:13:00+00:00",
-      "players": []
-    },
-    {
-      "id": "480e0f5ff4687dea4fba",
-      "headline": "Steelers\u2019 Troy Fautanu doesn\u2019t practice Wednesday with ankle injury",
-      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-injuries/174754/steelers-troy-fautanu-doesnt-practice-with-ankle-injury-report-joey-porter-michael-pittman-darnell-washington-patriots",
-      "source_id": "news_sbn_pit",
-      "source": "Behind the Steel Curtain (SB Nation)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "Entering Week 2 of the NFL season, the Steelers\u2019 injury report is already growing, and featuring some significant names. According to the team\u2019s official report, starting left tackle Troy Fautanu did not participate in Wednesday\u2019s practice with an ankle injury, while tight end Darnell Washington missed practice for personal reasons. Fautanu briefly missed time in [\u2026]",
-      "categories": [
-        "Pittsburgh Steelers Injuries"
-      ],
-      "published_at": "2026-09-16T20:11:38+00:00",
-      "players": [
-        {
-          "id": "00-0038558",
-          "name": "Darnell Washington",
-          "team": "PIT",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "7a13d07545cb212667e8",
-      "headline": "49ers injury update: De\u2019Zhaun Stribling will miss \u2018close to 10 weeks\u2019",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-news/162786/49ers-injury-update-dezhaun-stribling-will-miss-close-to-10-weeks",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "San Francisco 49ers head coach Kyle Shanahan provided injury updates ahead of Wednesday\u2019s practice. The following players won\u2019t practice today: K Eddy Pineiro (sick)WR De\u2019Zhaun Stribling (ankle)Nick Bosa (rest)Dre Greenlaw (rest)Christian McCaffrey (rest) These players will be limited:Kyle Juszczyk (finger)George Kittle (Achilles)Khalid Kareem (shoulder)Keion White (back) Shanahan said the team will place Stribling on the [\u2026]",
-      "categories": [
-        "San Francisco 49ers Injuries",
-        "San Francisco 49ers News"
-      ],
-      "published_at": "2026-09-16T20:11:03+00:00",
-      "players": [
-        {
-          "id": "00-0041035",
-          "name": "De'Zhaun Stribling",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "c2592f9be79320b80dc0",
-      "headline": "Jalen McMillan, Full Practice Participant, Adds \"Different Dynamic\" to Bucs' Offense | Updates",
-      "url": "https://www.buccaneers.com/news/september-2026-updates",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "Keep informed with our daily updates: News, notes and more throughout the month of September",
-      "categories": [
-        "Updates",
-        "Featuerd"
-      ],
-      "published_at": "2026-09-16T20:10:00+00:00",
-      "players": [
-        {
-          "id": "00-0039855",
-          "name": "Jalen McMillan",
-          "team": "TB",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "782d48cb76bb2693bbb0",
-      "headline": "Injury Report: Pair of Broncos estimated as nonparticipants ahead of Week 2 game vs. Jaguars",
-      "url": "https://www.denverbroncos.com/news/injury-report-pair-of-broncos-estimated-as-nonparticipants-ahead-of-week-2-game-vs-jaguars",
-      "source_id": "news_official_den",
-      "source": "Denver Broncos (official)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "The Broncos did not practice on Wednesday, which makes the injury report an estimation of their participation levels if the team held a practice.",
-      "categories": [
-        "Top Stories",
-        "Aric DiLalla",
-        "RJ Harvey",
-        "Jacksonville Jaguars at Denver Broncos (2026-REG-2)"
-      ],
-      "published_at": "2026-09-16T20:04:43+00:00",
-      "players": []
-    },
-    {
-      "id": "3ebc7d0134b774d6cc75",
-      "headline": "Week 2 Injury Report | Titans vs Eagles",
-      "url": "https://www.tennesseetitans.com/news/week-2-injury-report-titans-vs-eagles",
-      "source_id": "news_official_ten",
-      "source": "Tennessee Titans (official)",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "Who's in, who's out for the Titans in Week 2 vs the Philadelphia Eagles",
-      "categories": [
-        "Team/Football News",
-        "homepage-centerpiece",
-        "Philadelphia Eagles at Tennessee Titans (2026-REG-2)",
-        "2026-09-20-PREgame-STORIES-eagles-at-titans"
-      ],
-      "published_at": "2026-09-16T20:00:44+00:00",
-      "players": []
     }
   ]
 }
