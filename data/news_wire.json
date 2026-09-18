@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T10:00:52.401160+00:00",
+  "updated_at": "2026-09-18T12:00:58.657027+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T09:00:00+00:00",
+      "latest_entry_at": "2026-09-18T12:00:18+00:00",
       "stale": false
     },
     {
@@ -22,7 +22,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T22:40:02+00:00",
+      "latest_entry_at": "2026-09-18T10:35:05+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T03:28:25+00:00",
+      "latest_entry_at": "2026-09-18T11:40:06+00:00",
       "stale": false
     },
     {
@@ -206,7 +206,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T20:08:00+00:00",
+      "latest_entry_at": "2026-09-18T10:00:22+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-17T21:13:00+00:00",
+      "latest_entry_at": "2026-09-18T10:00:00+00:00",
       "stale": false
     },
     {
@@ -270,7 +270,7 @@
       "ok": true,
       "eligible": 11,
       "error": "",
-      "latest_entry_at": "2026-09-18T01:59:00+00:00",
+      "latest_entry_at": "2026-09-18T12:00:02+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T09:00:00+00:00",
+      "latest_entry_at": "2026-09-18T12:00:18+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T03:28:25+00:00",
+      "latest_entry_at": "2026-09-18T11:40:06+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-18T10:00:00+00:00",
+      "latest_entry_at": "2026-09-18T00:01:34+00:00",
       "stale": false
     },
     {
@@ -342,15 +342,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T10:00:00+00:00",
+      "latest_entry_at": "2026-09-17T21:45:24+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-18T10:00:00+00:00",
+      "latest_entry_at": "2026-09-17T21:53:41+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T06:48:49+00:00",
+      "latest_entry_at": "2026-09-18T02:44:21+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T00:30:00+00:00",
+      "latest_entry_at": "2026-09-18T10:30:21+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T04:12:09+00:00",
+      "latest_entry_at": "2026-09-17T23:20:00+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T10:00:00+00:00",
+      "latest_entry_at": "2026-09-17T23:20:13+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-17T23:42:09+00:00",
+      "latest_entry_at": "2026-09-18T11:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,43 @@
     }
   ],
   "items": [
+    {
+      "id": "6014c8e9a88897ee91bc",
+      "headline": "DJ Moore Injury Update Confirms Buffalo Bills' WR Avoided Serious Issue",
+      "url": "https://www.si.com/nfl/bills/onsi/dj-moore-injury-update-buffalo-bills-avoided-serious-issue",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Buffalo Bills wide receiver DJ Moore has dodged a bullet based on the latest injury update after his early exit from the Week 2 win over the Detroit Lions.",
+      "categories": [],
+      "published_at": "2026-09-18T11:36:58+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "e99bfee8ff8681d23108",
+      "headline": "Tampa Bay Buccaneers news: Bucs, Browns see surprising injury report developments",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-news/68560/tampa-bay-buccaneers-news-bucs-browns-see-surprising-injury-report-developments",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers are planning for their Week 2 matchup against the Cleveland Browns at Raymond James Stadium. The Browns and Bucs are both dealing with injuries, but there is hope that each team can find a strong, clean bill of health before taking the field on Sunday. Bucs Nation, what is your big [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers News"
+      ],
+      "published_at": "2026-09-18T11:00:00+00:00",
+      "players": []
+    },
     {
       "id": "cf203624f9f9250354b2",
       "headline": "Cleveland Browns news: Injury report adds big name, Jimmy Horn Jr., Week 2 games of note",
@@ -3697,54 +3734,6 @@
         "Seattle Seahawks News"
       ],
       "published_at": "2026-09-16T20:43:52+00:00",
-      "players": [
-        {
-          "id": "00-0034869",
-          "name": "Sam Darnold",
-          "team": "SEA",
-          "position": "QB"
-        },
-        {
-          "id": "00-0035704",
-          "name": "Drew Lock",
-          "team": "SEA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "7c95d1553c29a0c82f8b",
-      "headline": "Saints Wednesday Injury Report: 2026 Week 2 vs. Baltimore Ravens",
-      "url": "https://www.neworleanssaints.com/news/injury-report-baltimore-ravens-vs-new-orleans-saints-2026-nfl-week-2-wednesday",
-      "source_id": "news_official_no",
-      "source": "New Orleans Saints (official)",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "Five Saints listed on Wednesday's Saints Injury Report for Week 2 against the Ravens",
-      "categories": [
-        "Saints Injury Report",
-        "Latest News",
-        "2026-reg-week2"
-      ],
-      "published_at": "2026-09-16T20:41:53+00:00",
-      "players": []
-    },
-    {
-      "id": "0c56052fd54f4baaf833",
-      "headline": "Sam Darnold Ruled Out For Seahawks' Week 2 Game At Arizona; Drew Lock Will Start",
-      "url": "https://www.seahawks.com/news/sam-darnold-ruled-out-for-seahawks-week-2-game-at-arizona-drew-lock-will-start",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Seahawks coach Mike Macdonald confirmed that quarterback Sam Darnold will not play in Seattle\u2019s Week 2 game at Arizona.",
-      "categories": [
-        "Homepage Hero",
-        "Seattle Seahawks at Arizona Cardinals (2026-REG-2)"
-      ],
-      "published_at": "2026-09-16T20:37:00+00:00",
       "players": [
         {
           "id": "00-0034869",
