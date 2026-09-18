@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T09:47:03.152519+00:00",
+  "updated_at": "2026-09-18T10:00:52.401160+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-18T00:01:34+00:00",
+      "latest_entry_at": "2026-09-18T10:00:00+00:00",
       "stale": false
     },
     {
@@ -342,15 +342,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T21:45:24+00:00",
+      "latest_entry_at": "2026-09-18T10:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-17T21:53:41+00:00",
+      "latest_entry_at": "2026-09-18T10:00:00+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T23:00:00+00:00",
+      "latest_entry_at": "2026-09-18T10:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-18T00:18:23+00:00",
+      "latest_entry_at": "2026-09-18T10:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T03:23:09+00:00",
+      "latest_entry_at": "2026-09-18T10:00:00+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T23:20:13+00:00",
+      "latest_entry_at": "2026-09-18T10:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,24 @@
     }
   ],
   "items": [
+    {
+      "id": "cf203624f9f9250354b2",
+      "headline": "Cleveland Browns news: Injury report adds big name, Jimmy Horn Jr., Week 2 games of note",
+      "url": "https://www.dawgsbynature.com/cleveland-browns-news/132824/cleveland-browns-news-injury-report-adds-big-name-jimmy-horn-jr-week-2-games-of-note",
+      "source_id": "news_sbn_cle",
+      "source": "Dawgs By Nature (SB Nation)",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "After spending time on Wednesday mostly about the offense, Thursday for the Cleveland Browns was all about the defense. DC Mike Rutenberg spoke, as did DE Jared Verse, with a new DNP leading the injury reports from that side of the ball. Browns fans are not expecting much from their team in Week 2 with [\u2026]",
+      "categories": [
+        "Cleveland Browns Injuries",
+        "Cleveland Browns News",
+        "Daily Dawg Chow"
+      ],
+      "published_at": "2026-09-18T10:00:00+00:00",
+      "players": []
+    },
     {
       "id": "7e5a7551a9bc80f30bff",
       "headline": "Indianapolis Colts Injury Report: Thursday Week 2",
@@ -3741,26 +3759,6 @@
           "position": "QB"
         }
       ]
-    },
-    {
-      "id": "a9c7c3f471267a79fae3",
-      "headline": "Packers-Jets Injury Report | Sept. 16, 2026",
-      "url": "https://www.packers.com/news/packers-jets-injury-report-sept-16-2026",
-      "source_id": "news_official_gb",
-      "source": "Green Bay Packers (official)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "",
-      "categories": [
-        "News: Injury Report",
-        "News: National Feature",
-        "Homepage CP",
-        "News: All News",
-        "Green Bay Packers at New York Jets (2026-REG-2)"
-      ],
-      "published_at": "2026-09-16T20:36:20+00:00",
-      "players": []
     }
   ]
 }
