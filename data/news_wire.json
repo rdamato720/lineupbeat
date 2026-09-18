@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T02:00:59.496443+00:00",
+  "updated_at": "2026-09-18T04:00:51.802046+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T01:46:18+00:00",
+      "latest_entry_at": "2026-09-18T04:00:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-17T23:52:09+00:00",
+      "latest_entry_at": "2026-09-18T03:28:25+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-17T22:45:03+00:00",
+      "latest_entry_at": "2026-09-18T03:56:14+00:00",
       "stale": false
     },
     {
@@ -270,7 +270,7 @@
       "ok": true,
       "eligible": 11,
       "error": "",
-      "latest_entry_at": "2026-09-17T20:01:15+00:00",
+      "latest_entry_at": "2026-09-18T01:59:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-18T01:46:18+00:00",
+      "latest_entry_at": "2026-09-18T04:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T23:52:09+00:00",
+      "latest_entry_at": "2026-09-18T03:28:25+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-18T01:26:31+00:00",
+      "latest_entry_at": "2026-09-18T03:38:42+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T20:31:26+00:00",
+      "latest_entry_at": "2026-09-18T02:44:21+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T21:30:00+00:00",
+      "latest_entry_at": "2026-09-18T00:30:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T23:30:00+00:00",
+      "latest_entry_at": "2026-09-18T01:00:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-17T17:55:33+00:00",
+      "latest_entry_at": "2026-09-18T02:16:08+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T00:40:00+00:00",
+      "latest_entry_at": "2026-09-18T03:23:09+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T00:00:00+00:00",
+      "latest_entry_at": "2026-09-18T03:53:55+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-17T21:38:41+00:00",
+      "latest_entry_at": "2026-09-18T03:21:14+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-17T11:00:00+00:00",
+      "latest_entry_at": "2026-09-17T14:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,49 @@
     }
   ],
   "items": [
+    {
+      "id": "5bf68de92c751b8ac52d",
+      "headline": "Buffalo Bills\u2019 ability to stave off the Detroit Lions just got a lot harder after latest injury update on wide receiver DJ Moore",
+      "url": "https://atozsports.com/nfl/buffalo-bills-news/dj-moore-ruled-out-rest-of-game-vs-detroit-lions-shoulder-injury/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills are doing their best to keep a lead on the Detroit Lions, but they're going to have to do it without WR DJ Moore. Here is the latest on his injury and status from Thursday night.",
+      "categories": [
+        "Buffalo Bills News",
+        "American Football",
+        "Bills News",
+        "Buffalo Bills",
+        "DJ Moore"
+      ],
+      "published_at": "2026-09-18T02:29:04+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "d5da189e605c12ac54ce",
+      "headline": "Eagles Injury Report: Andrew Mukuba misses practice",
+      "url": "https://www.bleedinggreennation.com/news/183221/eagles-injury-report-andrew-mukuba-misses-practice",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Philadelphia Eagles issued their second official injury report of the week on Thursday in advance of their Week 2 game against the Tennessee Titans. The Eagles listed one player under DID NOT PARTICIPATE: Andrew Mukuba. Mukuba is a new addition to the injury report. We was seen in the locker room wearing a sleeve [\u2026]",
+      "categories": [
+        "Philadelphia Eagles News"
+      ],
+      "published_at": "2026-09-18T02:16:08+00:00",
+      "players": []
+    },
     {
       "id": "34b444e23df395136d72",
       "headline": "DJ Moore Injury Update: Latest on Bills WR Following Potential Shoulder Injury",
@@ -609,7 +652,7 @@
       "teams": [
         "BUF"
       ],
-      "feed_description": "Buffalo Bills wide receiver DJ Moore has headed to the locker room with a shoulder injury. He dove for a pass in the back of the end zone and immediately grabbed at the area. The Bills announced he is questionable to return with a shoulder injury and a stinger. He is in for an X-ray. [\u2026]",
+      "feed_description": "Buffalo Bills wide receiver DJ Moore has headed to the locker room with a shoulder injury. He dove for a pass in the back of the end zone and immediately grabbed at the area. The Bills announced he is questionable to return with a shoulder injury and a stinger, but he was later downgraded to [\u2026]",
       "categories": [
         "Buffalo Bills Injuries",
         "Buffalo Bills News"
@@ -3718,52 +3761,6 @@
           "id": "00-0040236",
           "name": "Kyle Monangai",
           "team": "CHI",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "3ebf88ca2a8e13e44517",
-      "headline": "Lions projected depth chart vs. Bills: Blake Miller sits, the RB rotation changes, and two young defenders could get their shot",
-      "url": "https://atozsports.com/nfl/detroit-lions-news/lions-projected-depth-chart-vs-bills-blake-miller-sits-the-rb-rotation-changes-and-two-young-defenders-could-get-their-shot/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Detroit's short week could lead to a new starter up front, a different backup behind Jahmyr Gibbs and opportunities for several young defenders who barely played in Week 1.",
-      "categories": [
-        "Detroit Lions News",
-        "NFL",
-        "Detroit Lions"
-      ],
-      "published_at": "2026-09-16T20:30:29+00:00",
-      "players": [
-        {
-          "id": "00-0039139",
-          "name": "Jahmyr Gibbs",
-          "team": "DET",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "d807ac8ae94c83899f55",
-      "headline": "Patriots Week 2 Injury Report: TreVeyon Henderson Trending Upwards",
-      "url": "https://www.si.com/nfl/patriots/onsi/patriots-week-2-injury-report-treveyon-henderson-trending-upwards",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Here's the New England Patriots' first injury report for their matchup against the Pittsburgh Steelers.",
-      "categories": [],
-      "published_at": "2026-09-16T20:28:30+00:00",
-      "players": [
-        {
-          "id": "00-0040734",
-          "name": "TreVeyon Henderson",
-          "team": "NE",
           "position": "RB"
         }
       ]
