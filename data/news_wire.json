@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T19:58:10.992754+00:00",
+  "updated_at": "2026-09-18T20:01:45.399755+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T19:58:07+00:00",
+      "latest_entry_at": "2026-09-18T19:45:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T19:39:49+00:00",
+      "latest_entry_at": "2026-09-18T19:23:00+00:00",
       "stale": false
     },
     {
@@ -180,7 +180,7 @@
     {
       "source_id": "news_official_lv",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
       "latest_entry_at": "2026-09-18T18:05:38+00:00",
       "stale": false
@@ -198,7 +198,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-18T18:40:00+00:00",
+      "latest_entry_at": "2026-09-18T19:56:15+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-18T19:58:07+00:00",
+      "latest_entry_at": "2026-09-18T19:45:00+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-18T13:00:00+00:00",
+      "latest_entry_at": "2026-09-18T19:55:57+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-18T19:23:39+00:00",
+      "latest_entry_at": "2026-09-18T19:36:02+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-16T22:00:58+00:00",
+      "latest_entry_at": "2026-09-18T18:56:57+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T17:30:00+00:00",
+      "latest_entry_at": "2026-09-18T19:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T19:19:24+00:00",
+      "latest_entry_at": "2026-09-18T20:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T12:00:00+00:00",
+      "latest_entry_at": "2026-09-18T19:30:00+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T14:17:11+00:00",
+      "latest_entry_at": "2026-09-18T19:38:07+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-18T18:27:27+00:00",
+      "latest_entry_at": "2026-09-18T19:00:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-18T18:45:00+00:00",
+      "latest_entry_at": "2026-09-18T20:01:00+00:00",
       "stale": false
     },
     {
@@ -605,6 +605,23 @@
         "Steelers News"
       ],
       "published_at": "2026-09-18T19:57:38+00:00",
+      "players": []
+    },
+    {
+      "id": "f5a498c9af9afe5d11ad",
+      "headline": "Patriots vs. Steelers Friday injury report: Carlton Davis III among three questionable",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/137607/patriots-vs-steelers-friday-injury-report-carlton-davis-ben-brown-dremont-jones-questionable",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots will host the Pittsburgh Steelers with uncertainty on the outside. Cornerback Carlton Davis III has been listed as questionable for the 2026 home opener due to a neck injury, as Mike Vrabel previously told reporters during his Friday press conference. \u201cI don\u2019t want to assume, but he\u2019ll be questionable,\u201d New England\u2019s [\u2026]",
+      "categories": [
+        "New England Patriots News",
+        "New England Patriots Roster"
+      ],
+      "published_at": "2026-09-18T19:55:57+00:00",
       "players": []
     },
     {
@@ -934,6 +951,30 @@
       ]
     },
     {
+      "id": "e6bb170f0d40c5c04d3c",
+      "headline": "Raiders\u2019 tight end Brock Bowers is doubtful to play Sunday",
+      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/140168/raiders-newsb-rock-bowers-practicing-knee-injury-tight-end",
+      "source_id": "news_sbn_lv",
+      "source": "Silver And Black Pride (SB Nation)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Las Vegas Raiders superstar tight end Brock Bowers may be making a key step back toward the playing field. According to multiple media reports, Bowers was seen on the practice field as the team started its final work day before playing at the Los Angeles Chargers on Sunday. It is the first time Bowers has [\u2026]",
+      "categories": [
+        "Las Vegas Raiders Injuries",
+        "Las Vegas Raiders News"
+      ],
+      "published_at": "2026-09-18T18:56:57+00:00",
+      "players": [
+        {
+          "id": "00-0039338",
+          "name": "Brock Bowers",
+          "team": "LV",
+          "position": "TE"
+        }
+      ]
+    },
+    {
       "id": "17a4c03c1b08a7353ae3",
       "headline": "Final Vikings at Bears Injury Report for Week 2 of 2026: Kyler Murray & Jauan Jennings Out; Brian O'Neill Questionable",
       "url": "https://www.vikings.com/news/injury-report-week-2-chicago-bears-2026",
@@ -1084,30 +1125,6 @@
       ],
       "published_at": "2026-09-18T17:50:53+00:00",
       "players": []
-    },
-    {
-      "id": "e6bb170f0d40c5c04d3c",
-      "headline": "Raiders\u2019 tight end Brock Bowers is practicing",
-      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/140168/raiders-newsb-rock-bowers-practicing-knee-injury-tight-end",
-      "source_id": "news_sbn_lv",
-      "source": "Silver And Black Pride (SB Nation)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "Las Vegas Raiders superstar tight end Brock Bowers may be making a key step back toward the playing field. According to multiple media reports, Bowers was seen on the practice field as the team started its final work day before playing at the Los Angeles Chargers on Sunday. It is the first time Bowers has [\u2026]",
-      "categories": [
-        "Las Vegas Raiders Injuries",
-        "Las Vegas Raiders News"
-      ],
-      "published_at": "2026-09-18T17:50:17+00:00",
-      "players": [
-        {
-          "id": "00-0039338",
-          "name": "Brock Bowers",
-          "team": "LV",
-          "position": "TE"
-        }
-      ]
     },
     {
       "id": "31e5ff8aa2ab02be73d0",
@@ -3822,22 +3839,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "284bc71343a47ca48b73",
-      "headline": "Buccaneers vs. Browns: Initial injury report for Week 2",
-      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/68556/buccaneers-browns-initial-injury-report-nfl-week-2-jalen-mcmillan",
-      "source_id": "news_sbn_tb",
-      "source": "Bucs Nation (SB Nation)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "The Tampa Bay Buccaneers opened preparations for their Week 2 matchup against the Cleveland Browns with a relatively light injury report Wednesday. Safety Miles Killebrew was limited as he continues to work through the concussion protocol, while cornerback Jacob Parrish was also limited with a back injury. The encouraging news for Tampa Bay came with [\u2026]",
-      "categories": [
-        "Tampa Bay Buccaneers Injuries"
-      ],
-      "published_at": "2026-09-17T00:51:15+00:00",
-      "players": []
     }
   ]
 }
