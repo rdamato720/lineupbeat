@@ -1,0 +1,1 @@
+{"name":"lineupbeat-scores","private":true,"type":"module","scripts":{"test":"node --test test/*.test.mjs","check":"wrangler deploy --dry-run --outdir /tmp/lineupbeat-scores-build"},"devDependencies":{"wrangler":"4.33.1"}}
