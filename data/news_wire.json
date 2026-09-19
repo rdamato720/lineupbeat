@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T10:01:02.643315+00:00",
+  "updated_at": "2026-09-19T12:00:56.076227+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T09:00:00+00:00",
+      "latest_entry_at": "2026-09-19T12:00:55+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T01:29:52+00:00",
+      "latest_entry_at": "2026-09-19T11:20:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T09:00:00+00:00",
+      "latest_entry_at": "2026-09-19T11:10:25+00:00",
       "stale": false
     },
     {
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-18T17:37:08+00:00",
+      "latest_entry_at": "2026-09-19T11:40:23+00:00",
       "stale": false
     },
     {
@@ -284,25 +284,25 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-19T09:00:00+00:00",
+      "latest_entry_at": "2026-09-19T12:00:55+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T01:29:52+00:00",
+      "latest_entry_at": "2026-09-19T11:20:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-18T22:44:43+00:00",
+      "latest_entry_at": "2026-09-18T11:28:14+00:00",
       "stale": false
     },
     {
@@ -310,15 +310,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-19T00:00:00+00:00",
+      "latest_entry_at": "2026-09-18T13:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T09:00:00+00:00",
+      "latest_entry_at": "2026-09-16T15:53:07+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-19T00:19:29+00:00",
+      "latest_entry_at": "2026-09-17T21:53:41+00:00",
       "stale": false
     },
     {
@@ -364,9 +364,9 @@
     {
       "source_id": "news_sbn_hou",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T23:13:51+00:00",
+      "latest_entry_at": "2026-09-18T13:15:00+00:00",
       "stale": false
     },
     {
@@ -390,23 +390,23 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T02:53:24+00:00",
+      "latest_entry_at": "2026-09-18T13:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T00:00:00+00:00",
+      "latest_entry_at": "2026-09-18T13:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_kc",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T19:43:41+00:00",
+      "latest_entry_at": "2026-09-18T21:00:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-18T23:34:00+00:00",
+      "latest_entry_at": "2026-09-18T02:16:08+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T21:30:50+00:00",
+      "latest_entry_at": "2026-09-18T12:45:00+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T02:30:52+00:00",
+      "latest_entry_at": "2026-09-18T19:38:07+00:00",
       "stale": false
     },
     {
@@ -532,17 +532,17 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-18T23:05:14+00:00",
+      "latest_entry_at": "2026-09-18T18:07:27+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T21:06:25+00:00",
+      "latest_entry_at": "2026-09-19T08:56:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,75 @@
     }
   ],
   "items": [
+    {
+      "id": "aba3c50e6bc87f77c4b5",
+      "headline": "Chiefs Rookie Wideout Cyrus Allen Faces Uphill Battle for Playing Time",
+      "url": "https://www.si.com/nfl/chiefs/onsi/chiefs-rookie-wideout-cyrus-allen-faces-uphill-battle-for-playing-time",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "Chiefs rookie WR Cyrus Allen saw just one offensive snap in Week 1 after a strong training camp. Will his role grow as the season continues?",
+      "categories": [],
+      "published_at": "2026-09-19T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040890",
+          "name": "Cyrus Allen",
+          "team": "KC",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "22cbb8672b3e749be2f9",
+      "headline": "Vikings Injury Report Raises 3 Major Questions vs. Bears in Week 2",
+      "url": "https://www.si.com/nfl/vikings/onsi/vikings-injury-report-raises-3-major-questions-vs-bears-in-week-2-01m2vbh2tcn2",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "The Vikings released their final injury report ahead of Sunday's matchup with the Bears, and while Kyler Murray's absence is the headliner, plenty of other conc",
+      "categories": [],
+      "published_at": "2026-09-19T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0035228",
+          "name": "Kyler Murray",
+          "team": "MIN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "482e9bdc6dcd572b163a",
+      "headline": "Washington May Need Treylon Burks One Week After Making Him Inactive \u2014 Commanders Daily",
+      "url": "https://www.si.com/nfl/commanders/onsi/treylon-burks-chig-okonkwo-injury-commanders-roster-cowboys-game",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "With tight end Chig Okonkwo ruled out, the Commanders' game-day roster math shifts. Find out why wide receiver Treylon Burks is poised for a big Week 2.",
+      "categories": [],
+      "published_at": "2026-09-19T10:37:03+00:00",
+      "players": [
+        {
+          "id": "00-0037742",
+          "name": "Treylon Burks",
+          "team": "WAS",
+          "position": "WR"
+        },
+        {
+          "id": "00-0037809",
+          "name": "Chig Okonkwo",
+          "team": "WAS",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "153136e058504cbf80d1",
       "headline": "Falcons vs. Panthers injury report: Michael Penix Jr. to miss second-straight game",
@@ -3722,64 +3791,6 @@
       ],
       "published_at": "2026-09-17T20:01:15+00:00",
       "players": []
-    },
-    {
-      "id": "87d43f4d247c6dc67003",
-      "headline": "Falcons Receive Encouraging News on Potential Starters from Latest Injury Report",
-      "url": "https://www.si.com/nfl/falcons/onsi/falcons-receiver-encouraging-news-on-potential-starters-from-latest-injury-report",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "While all eyes are on the quarterback for the Atlanta Falcons, another potential starter took a step closer to returning to the field.",
-      "categories": [],
-      "published_at": "2026-09-17T20:00:51+00:00",
-      "players": []
-    },
-    {
-      "id": "4efbeb1d8f522c21c24b",
-      "headline": "Jets Injury Report | Week 2 vs. Packers - Thursday",
-      "url": "https://www.newyorkjets.com/news/jets-injury-report-week-2-vs-packers-thursday-09-17-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "",
-      "categories": [
-        "Injury Report",
-        "News",
-        "Latest Headlines"
-      ],
-      "published_at": "2026-09-17T20:00:00+00:00",
-      "players": []
-    },
-    {
-      "id": "d7354e8b9196fbf2a2de",
-      "headline": "Practice Notebook: QB Anthony Richardson Sr. returns to practice",
-      "url": "https://www.colts.com/news/practice-notebook-qb-anthony-richardson-sr-returns-to-practice",
-      "source_id": "news_official_ind",
-      "source": "Indianapolis Colts (official)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The Colts returned to practice on Thursday, where DeForest Buckner (ankle) and Akeem Davis-Gaither (knee) were also full participants.",
-      "categories": [
-        "Practice Notebook",
-        "Featured",
-        "Featured News",
-        "Indianapolis Colts at Kansas City Chiefs (2026-REG-2)"
-      ],
-      "published_at": "2026-09-17T19:44:10+00:00",
-      "players": [
-        {
-          "id": "00-0039164",
-          "name": "Anthony Richardson",
-          "team": "IND",
-          "position": "QB"
-        }
-      ]
     }
   ]
 }
