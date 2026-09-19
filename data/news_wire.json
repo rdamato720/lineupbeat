@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T21:46:18.362509+00:00",
+  "updated_at": "2026-09-19T22:00:55.912907+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T21:42:30+00:00",
+      "latest_entry_at": "2026-09-19T22:00:54+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:53:42+00:00",
+      "latest_entry_at": "2026-09-19T22:00:00+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-19T21:42:30+00:00",
+      "latest_entry_at": "2026-09-19T22:00:54+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:53:42+00:00",
+      "latest_entry_at": "2026-09-19T22:00:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:14:01+00:00",
+      "latest_entry_at": "2026-09-19T10:00:00+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:47:37+00:00",
+      "latest_entry_at": "2026-09-18T20:48:13+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-19T19:59:57+00:00",
+      "latest_entry_at": "2026-09-19T14:49:23+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-19T19:18:13+00:00",
+      "latest_entry_at": "2026-09-19T12:13:32+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T14:00:00+00:00",
+      "latest_entry_at": "2026-09-19T13:00:00+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:45:00+00:00",
+      "latest_entry_at": "2026-09-19T15:00:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:07:00+00:00",
+      "latest_entry_at": "2026-09-18T23:25:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:30:00+00:00",
+      "latest_entry_at": "2026-09-19T19:00:00+00:00",
       "stale": false
     },
     {
@@ -438,15 +438,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:24:16+00:00",
+      "latest_entry_at": "2026-09-19T15:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:42:10+00:00",
+      "latest_entry_at": "2026-09-19T18:00:30+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:40:10+00:00",
+      "latest_entry_at": "2026-09-19T16:00:00+00:00",
       "stale": false
     },
     {
@@ -462,15 +462,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:00:00+00:00",
+      "latest_entry_at": "2026-09-19T18:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:42:01+00:00",
+      "latest_entry_at": "2026-09-18T04:12:09+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T21:45:03+00:00",
+      "latest_entry_at": "2026-09-19T17:42:23+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-18T21:00:00+00:00",
+      "latest_entry_at": "2026-09-19T13:42:50+00:00",
       "stale": false
     },
     {
@@ -532,17 +532,17 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T18:44:03+00:00",
+      "latest_entry_at": "2026-09-19T16:59:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T21:23:13+00:00",
+      "latest_entry_at": "2026-09-19T15:03:40+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,59 @@
     }
   ],
   "items": [
+    {
+      "id": "323292fedc2647df06b8",
+      "headline": "Isaiah Likely Looks Like the Giants' Missing No. 2 Target",
+      "url": "https://www.si.com/nfl/giants/onsi/isaiah-likely-giants-debut-cowboys-01m2sma9mzka",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Isaiah Likely caught all eight of his targets for 78 yards and two touchdowns in Week 1, giving the Giants a legitimate No. 2 option alongside Malik Nabers.",
+      "categories": [],
+      "published_at": "2026-09-19T22:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0037838",
+          "name": "Isaiah Likely",
+          "team": "NYG",
+          "position": "TE"
+        },
+        {
+          "id": "00-0039337",
+          "name": "Malik Nabers",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "31b2b366cd4850ee2023",
+      "headline": "3 areas of improvement Cam Ward must show for the Tennessee Titans\u2019 season to be considered a success",
+      "url": "https://atozsports.com/nfl/tennessee-titans-news/3-areas-of-improvement-cam-ward-must-show-for-tennessee-titans-season-to-be-considered-a-success/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "At this point, it's pretty obvious where Cam Ward needs to improve most and his ability (or inability) to do so weighs heavily into his future as the Titans' starting QB.",
+      "categories": [
+        "NFL",
+        "Tennessee Titans News",
+        "American Football",
+        "Cam Ward"
+      ],
+      "published_at": "2026-09-19T22:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040676",
+          "name": "Cam Ward",
+          "team": "TEN",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "94cea50665fb7a12a512",
       "headline": "Broncos elevate LS Mitchell Fraboni, FB Adam Prentice for Week 2 game vs. Jaguars",
@@ -3863,64 +3916,6 @@
           "id": "00-0040730",
           "name": "RJ Harvey",
           "team": "DEN",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "36706ca1f62a2eb0e063",
-      "headline": "Denver Broncos vs. Jacksonville Jaguars practice report: Thursday",
-      "url": "https://www.milehighreport.com/denver-broncos-injuries/185381/denver-broncos-vs-jacksonville-jaguars-practice-report-thursday",
-      "source_id": "news_sbn_den",
-      "source": "Mile High Report (SB Nation)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "The Denver Broncos offered a bit of good news reporting that running back RJ Harvey was back practicing in a limited way today. The hamstring issue appears to be of the very minor sort. The bigger concern now is that wide receiver Marvin Mims Jr. has been held out of practice with a foot injury. [\u2026]",
-      "categories": [
-        "Denver Broncos Injuries"
-      ],
-      "published_at": "2026-09-17T22:15:06+00:00",
-      "players": [
-        {
-          "id": "00-0038976",
-          "name": "Marvin Mims Jr.",
-          "team": "DEN",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040730",
-          "name": "RJ Harvey",
-          "team": "DEN",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "59bcc8e4ff86bea11346",
-      "headline": "Kaelon Black was added to the 49ers\u2019 injury report",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/162823/kaelon-black-was-added-to-the-49ers-injury-report",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The San Francisco 49ers\u2019 injury report saw a couple of changes Thursday. The players who rested on Wednesday, Christian McCaffrey, Dre Greenlaw, and Trent Williams, were all upgraded to full participants during Thursday\u2019s session. Edge rusher Khalid Kareem was also upgraded to a full participant after sitting out Wednesday with a shoulder injury. Kicker Eddy [\u2026]",
-      "categories": [
-        "San Francisco 49ers Injuries"
-      ],
-      "published_at": "2026-09-17T22:06:12+00:00",
-      "players": [
-        {
-          "id": "00-0033280",
-          "name": "Christian McCaffrey",
-          "team": "SF",
-          "position": "RB"
-        },
-        {
-          "id": "00-0041052",
-          "name": "Kaelon Black",
-          "team": "SF",
           "position": "RB"
         }
       ]
