@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T16:48:56.699213+00:00",
+  "updated_at": "2026-09-19T18:00:51.730931+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T16:43:34+00:00",
+      "latest_entry_at": "2026-09-19T17:47:35+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T16:27:20+00:00",
+      "latest_entry_at": "2026-09-19T17:17:35+00:00",
       "stale": false
     },
     {
@@ -78,13 +78,13 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-19T14:27:30+00:00",
+      "latest_entry_at": "2026-09-19T17:45:02+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_chi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
       "latest_entry_at": "2026-09-19T12:20:31+00:00",
       "stale": false
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-18T23:19:14+00:00",
+      "latest_entry_at": "2026-09-19T17:00:01+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T13:37:00+00:00",
+      "latest_entry_at": "2026-09-19T17:31:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-19T16:43:34+00:00",
+      "latest_entry_at": "2026-09-19T17:47:35+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T16:27:20+00:00",
+      "latest_entry_at": "2026-09-19T17:17:35+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-19T14:08:28+00:00",
+      "latest_entry_at": "2026-09-19T17:00:00+00:00",
       "stale": false
     },
     {
@@ -356,9 +356,9 @@
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-19T11:59:49+00:00",
+      "latest_entry_at": "2026-09-19T17:35:55+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T15:31:00+00:00",
+      "latest_entry_at": "2026-09-19T17:02:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T16:00:00+00:00",
+      "latest_entry_at": "2026-09-19T17:30:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-18T23:34:00+00:00",
+      "latest_entry_at": "2026-09-19T18:00:30+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T16:00:00+00:00",
+      "latest_entry_at": "2026-09-19T18:00:00+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T16:47:20+00:00",
+      "latest_entry_at": "2026-09-19T17:42:23+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-19T02:30:52+00:00",
+      "latest_entry_at": "2026-09-19T17:26:06+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T15:59:00+00:00",
+      "latest_entry_at": "2026-09-19T16:59:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,71 @@
     }
   ],
   "items": [
+    {
+      "id": "d1a0b574f174a1d611de",
+      "headline": "Michael Pittman Jr. OUT vs. Patriots",
+      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-injuries/174912/michael-pittman-jr-out-vs-patriots",
+      "source_id": "news_sbn_pit",
+      "source": "Behind the Steel Curtain (SB Nation)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "The Pittsburgh Steelers will be without one of their top pass-catching options on Sunday, as they have officially declared wide receiver Michael Pittman Jr. out for their Week 2 contest against the New England Patriots. Pittman Jr. initially popped up on the injury report on Wednesday with a foot injury. The wide receiver logged consecutive [\u2026]",
+      "categories": [
+        "Pittsburgh Steelers Injuries",
+        "Pittsburgh Steelers News"
+      ],
+      "published_at": "2026-09-19T17:35:55+00:00",
+      "players": [
+        {
+          "id": "00-0036252",
+          "name": "Michael Pittman",
+          "team": "PIT",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "f554535ce74c5d8c9011",
+      "headline": "UPDATED: Week 2 Injury Report (Patriots)",
+      "url": "https://www.steelers.com/news/week-2-injury-report-patriots-x4998",
+      "source_id": "news_official_pit",
+      "source": "Pittsburgh Steelers (official)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "A look at player injuries and practice participation for Week 2",
+      "categories": [
+        "Injury Report",
+        "UPMC",
+        "Featured",
+        "Sights and Sounds",
+        "Pittsburgh Steelers at New England Patriots (2026-REG-2)"
+      ],
+      "published_at": "2026-09-19T17:31:00+00:00",
+      "players": []
+    },
+    {
+      "id": "f7c8c2528e45a9991bbb",
+      "headline": "Steelers Lose Michael Pittman Jr. for Patriots Game",
+      "url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-lose-michael-pittman-jr-patriots-game",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "The Pittsburgh Steelers shut down their starting wide receiver.",
+      "categories": [],
+      "published_at": "2026-09-19T17:09:47+00:00",
+      "players": [
+        {
+          "id": "00-0036252",
+          "name": "Michael Pittman",
+          "team": "PIT",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "ca32446e6a8b65f84e47",
       "headline": "Latest Weather Report for Bears vs. Vikings in Week 2 Puts D'Andre Swift in Great Position",
@@ -1902,26 +1967,6 @@
         "Kansas City Chiefs News"
       ],
       "published_at": "2026-09-18T19:43:41+00:00",
-      "players": []
-    },
-    {
-      "id": "f554535ce74c5d8c9011",
-      "headline": "Week 2 Injury Report (Patriots)",
-      "url": "https://www.steelers.com/news/week-2-injury-report-patriots-x4998",
-      "source_id": "news_official_pit",
-      "source": "Pittsburgh Steelers (official)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "A look at player injuries and practice participation for Week 2",
-      "categories": [
-        "Injury Report",
-        "UPMC",
-        "Featured",
-        "Sights and Sounds",
-        "Pittsburgh Steelers at New England Patriots (2026-REG-2)"
-      ],
-      "published_at": "2026-09-18T19:41:00+00:00",
       "players": []
     },
     {
@@ -3773,40 +3818,6 @@
           "position": "QB"
         }
       ]
-    },
-    {
-      "id": "2e8e64d3ed5b843f4b66",
-      "headline": "3 of NY Giants\u2019 top 4 cornerbacks on initial Week 2 injury report",
-      "url": "https://www.bigblueview.com/new-york-giants-news/171670/injury-report-cornerbacks-paulson-adebo-tae-banks-greg-newsome",
-      "source_id": "news_sbn_nyg",
-      "source": "Big Blue View (SB Nation)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "Entering a game against a team with a future Hall of Fame quarterback in Matthew Stafford and two superstar wide receivers in Puka Nacua and Davante Adams, the last thing the New York Giants need are injury issues at cornerback. That, though, appears to be what they have. Three of the Giants\u2019 top four cornerbacks [\u2026]",
-      "categories": [
-        "New York Giants News",
-        "New York Giants Transcripts"
-      ],
-      "published_at": "2026-09-17T20:31:14+00:00",
-      "players": []
-    },
-    {
-      "id": "c3650681e81057097df2",
-      "headline": "Chiefs-Colts Week 2 Thursday injury report: Colts\u2019 top wideout misses practice",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-injuries/210564/chiefs-colts-week-2-thursday-injury-report-colts-top-wideout-misses-practice",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Each practice day of the season, the Kansas City Chiefs release an official injury report leading up to the next game. In the NFL\u2019s Week 2, the Chiefs will host the Indianapolis Colts for \u201cSunday Night Football\u201d at Arrowhead Stadium. Here is the latest on the Chiefs\u2019 and Colts\u2019 official injury reports, courtesy of the team\u2019s [\u2026]",
-      "categories": [
-        "Kansas City Chiefs Injuries",
-        "Kansas City Chiefs News"
-      ],
-      "published_at": "2026-09-17T20:30:00+00:00",
-      "players": []
     }
   ]
 }
