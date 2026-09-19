@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T16:00:51.567178+00:00",
+  "updated_at": "2026-09-19T16:48:56.699213+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T15:59:21+00:00",
+      "latest_entry_at": "2026-09-19T16:43:34+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T14:30:08+00:00",
+      "latest_entry_at": "2026-09-19T16:27:20+00:00",
       "stale": false
     },
     {
@@ -102,7 +102,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-19T13:00:12+00:00",
+      "latest_entry_at": "2026-09-19T16:32:06+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-19T00:00:31+00:00",
+      "latest_entry_at": "2026-09-19T16:00:00+00:00",
       "stale": false
     },
     {
@@ -140,9 +140,9 @@
     {
       "source_id": "news_official_ind",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-18T16:44:17+00:00",
+      "latest_entry_at": "2026-09-19T16:09:42+00:00",
       "stale": false
     },
     {
@@ -180,7 +180,7 @@
     {
       "source_id": "news_official_lv",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
       "latest_entry_at": "2026-09-18T21:30:39+00:00",
       "stale": false
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-19T15:59:21+00:00",
+      "latest_entry_at": "2026-09-19T16:43:34+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T14:30:08+00:00",
+      "latest_entry_at": "2026-09-19T16:27:20+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T15:53:58+00:00",
+      "latest_entry_at": "2026-09-19T16:47:20+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,53 @@
     }
   ],
   "items": [
+    {
+      "id": "ca32446e6a8b65f84e47",
+      "headline": "Latest Weather Report for Bears vs. Vikings in Week 2 Puts D'Andre Swift in Great Position",
+      "url": "https://www.si.com/nfl/bears/onsi/latest-weather-report-for-bears-vs-vikings-in-week-2-puts-d-andre-swift-in-great-position",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Chicago Bears RB D'Andre Swift is poised for a massive Week 2 workload against the Vikings as heavy rain and 30 mph winds at Soldier Field shift the game plan to the ground.",
+      "categories": [],
+      "published_at": "2026-09-19T16:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0036275",
+          "name": "D'Andre Swift",
+          "team": "CHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "a2766c5c049f549f98e5",
+      "headline": "Colts elevate WR Anthony Gould from practice squad for Week 2",
+      "url": "https://www.colts.com/news/colts-elevate-wr-anthony-gould-from-practice-squad-for-week-2",
+      "source_id": "news_official_ind",
+      "source": "Indianapolis Colts (official)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The roster move was made Saturday ahead of Sunday's game against the Kansas City Chiefs.",
+      "categories": [
+        "Roster Moves",
+        "Featured",
+        "Featured News",
+        "Indianapolis Colts at Kansas City Chiefs (2026-REG-2)"
+      ],
+      "published_at": "2026-09-19T16:09:42+00:00",
+      "players": [
+        {
+          "id": "00-0039816",
+          "name": "Anthony Gould",
+          "team": "IND",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "cea363ad15e8114f7625",
       "headline": "Max Brosmer Has a Real Chance to Be Promoted From Vikings' Practice Squad in Week 2",
@@ -2323,7 +2370,7 @@
         "2026 Week 2 News",
         "New Orleans Saints at Baltimore Ravens (2026-REG-2)",
         "inline-news",
-        "Homepage Centerpiece"
+        "Homepage Latest Headlines"
       ],
       "published_at": "2026-09-18T16:44:40+00:00",
       "players": [
@@ -3759,45 +3806,6 @@
         "Kansas City Chiefs News"
       ],
       "published_at": "2026-09-17T20:30:00+00:00",
-      "players": []
-    },
-    {
-      "id": "e17134129027000b639c",
-      "headline": "Jalen Coker Injury Update From Panthers Practice Report Leaves WR's Status in Question",
-      "url": "https://www.si.com/nfl/panthers/onsi/jalen-coker-injury-update-panthers-practice-report-status-question",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "Carolina Panthers wide receiver Jalen Coker did not see an upgrade in participation on Thursday, according to the team's official injury report.",
-      "categories": [],
-      "published_at": "2026-09-17T20:29:15+00:00",
-      "players": [
-        {
-          "id": "00-0039491",
-          "name": "Jalen Coker",
-          "team": "CAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "fceff2c16b17b3317338",
-      "headline": "Thursday\u2019s Saints vs. Ravens injury report: Olave limited with hamstring injury",
-      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-injuries/114899/thursdays-saints-vs-ravens-injury-report-olave-limited-with-hamstring-injury",
-      "source_id": "news_sbn_no",
-      "source": "Canal Street Chronicles (SB Nation)",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "The New Orleans Saints have wrapped up their 2nd practice ahead of their Week 2 matchup on the road against the Baltimore Ravens on Sunday, September 20th at M&T Bank Stadium. The news broke yesterday evening that Saints long snapper Zach Wood would be out for a few weeks with a calf injury but there [\u2026]",
-      "categories": [
-        "New Orleans Saints Game Information",
-        "New Orleans Saints Injuries",
-        "New Orleans Saints News"
-      ],
-      "published_at": "2026-09-17T20:27:31+00:00",
       "players": []
     }
   ]
