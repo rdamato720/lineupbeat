@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20T21:33:14.315585+00:00",
+  "updated_at": "2026-09-20T22:00:57.742445+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-20T21:30:06+00:00",
+      "latest_entry_at": "2026-09-20T22:00:41+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-20T21:31:00+00:00",
+      "latest_entry_at": "2026-09-20T21:54:24+00:00",
       "stale": false
     },
     {
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-20T20:06:59+00:00",
+      "latest_entry_at": "2026-09-20T21:40:47+00:00",
       "stale": false
     },
     {
@@ -206,7 +206,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-20T20:06:14+00:00",
+      "latest_entry_at": "2026-09-20T21:57:14+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-20T21:30:06+00:00",
+      "latest_entry_at": "2026-09-20T22:00:41+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-20T21:31:00+00:00",
+      "latest_entry_at": "2026-09-20T21:54:24+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-20T20:48:45+00:00",
+      "latest_entry_at": "2026-09-20T21:33:48+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-20T21:22:07+00:00",
+      "latest_entry_at": "2026-09-20T21:58:29+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-20T16:35:35+00:00",
+      "latest_entry_at": "2026-09-19T21:54:32+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-20T21:26:01+00:00",
+      "latest_entry_at": "2026-09-20T21:58:29+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-20T19:00:00+00:00",
+      "latest_entry_at": "2026-09-20T15:15:00+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-20T20:50:48+00:00",
+      "latest_entry_at": "2026-09-20T21:56:27+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-20T21:33:04+00:00",
+      "latest_entry_at": "2026-09-20T21:55:53+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-20T20:09:54+00:00",
+      "latest_entry_at": "2026-09-20T21:54:50+00:00",
       "stale": false
     },
     {
@@ -556,6 +556,54 @@
   ],
   "items": [
     {
+      "id": "2b08200f3dd126f66dcc",
+      "headline": "Saquon Barkley injury: Eagles running back returns to Titans game",
+      "url": "https://www.bleedinggreennation.com/news/183477/saquon-barkley-leaves-eagles-titans-week-2-game-injury-stinger",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "On the very first play of the Eagles\u2019 first offensive drive against the Titans on Sunday, Saquon Barkley was tackled for a loss, and subsequently suffered a stinger. The running back promptly went to the medical tent on the sideline, where he stayed for awhile before running back to the locker room, before being listed [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries",
+        "Philadelphia Eagles News"
+      ],
+      "published_at": "2026-09-20T21:56:27+00:00",
+      "players": [
+        {
+          "id": "00-0034844",
+          "name": "Saquon Barkley",
+          "team": "PHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "168194566fd3daa9d066",
+      "headline": "Jordan Love says his throwing hand went numb vs. the New York Jets",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-injuries/86761/jordan-love-says-his-throwing-hand-went-numb-vs-the-new-york-jets",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "During the broadcast, CBS\u2019 team highlighted that Green Bay Packers quarterback Jordan Love was favoring his throwing hand, shaking it out and had it worked on while he was on the sideline. In his post-game press conference, Love stated that the issue actually started with a hit to his elbow. On one of the Packers\u2019 [\u2026]",
+      "categories": [
+        "Green Bay Packers injuries",
+        "Green Bay Packers News"
+      ],
+      "published_at": "2026-09-20T21:55:53+00:00",
+      "players": [
+        {
+          "id": "00-0036264",
+          "name": "Jordan Love",
+          "team": "GB",
+          "position": "QB"
+        }
+      ]
+    },
+    {
       "id": "72d5ba17e213c4551e63",
       "headline": "Packers Injury Updates: Matt LaFleur addresses Jayden Reed and Zach Bako-Bewele injuries",
       "url": "https://www.acmepackingcompany.com/green-bay-packers-news/86754/packers-injury-updates-matt-lafleur-addresses-jayden-reed-and-zach-bako-bewele-injuries",
@@ -569,7 +617,7 @@
         "Green Bay Packers injuries",
         "Green Bay Packers News"
       ],
-      "published_at": "2026-09-20T21:33:04+00:00",
+      "published_at": "2026-09-20T21:35:38+00:00",
       "players": [
         {
           "id": "00-0039146",
@@ -873,30 +921,6 @@
           "name": "Eli Raridon",
           "team": "NE",
           "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "2b08200f3dd126f66dcc",
-      "headline": "Saquon Barkley injury: Eagles running back returns to Titans game",
-      "url": "https://www.bleedinggreennation.com/news/183477/saquon-barkley-leaves-eagles-titans-week-2-game-injury-stinger",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "On the very first play of the Eagles\u2019 first offensive drive against the Titans on Sunday, Saquon Barkley was tackled for a loss, and subsequently suffered a stinger. The running back promptly went to the medical tent on the sideline, where he stayed for awhile before running back to the locker room, before being listed [\u2026]",
-      "categories": [
-        "Philadelphia Eagles injuries",
-        "Philadelphia Eagles News"
-      ],
-      "published_at": "2026-09-20T19:35:27+00:00",
-      "players": [
-        {
-          "id": "00-0034844",
-          "name": "Saquon Barkley",
-          "team": "PHI",
-          "position": "RB"
         }
       ]
     },
@@ -3961,23 +3985,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "50bcc214cefaa8852a1c",
-      "headline": "Panthers Injury Report & Transactions \u2013 Week 2",
-      "url": "https://www.catscratchreader.com/carolina-panthers-injuries/60958/panthers-injury-report-transactions-week-1",
-      "source_id": "news_sbn_car",
-      "source": "Cat Scratch Reader (SB Nation)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Carolina Panthers front office is busy throughout the season with transactions, roster moves, and injury updates. Here\u2019s what\u2019s happening at Mint Street this week. Injuries The 0-1 Panthers go on the road to face the Atlanta Falcons in an NFC South rivalry game. Games between the Panthers and the Falcons are almost always bruising, physical affairs, [\u2026]",
-      "categories": [
-        "Carolina Panthers Injuries",
-        "Carolina Panthers Roster"
-      ],
-      "published_at": "2026-09-18T21:00:00+00:00",
-      "players": []
     }
   ]
 }
