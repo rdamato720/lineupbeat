@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20T00:00:58.051736+00:00",
+  "updated_at": "2026-09-20T01:40:18.945765+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T23:45:10+00:00",
+      "latest_entry_at": "2026-09-20T01:35:07+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T23:02:06+00:00",
+      "latest_entry_at": "2026-09-20T01:10:45+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:46:18+00:00",
+      "latest_entry_at": "2026-09-19T23:37:31+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-19T19:30:00+00:00",
+      "latest_entry_at": "2026-09-20T01:00:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T23:45:10+00:00",
+      "latest_entry_at": "2026-09-20T01:35:07+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-19T23:02:06+00:00",
+      "latest_entry_at": "2026-09-20T01:10:45+00:00",
       "stale": false
     },
     {
@@ -340,9 +340,9 @@
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:14:07+00:00",
+      "latest_entry_at": "2026-09-20T00:51:01+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T23:57:39+00:00",
+      "latest_entry_at": "2026-09-20T01:28:48+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-19T23:03:50+00:00",
+      "latest_entry_at": "2026-09-20T01:10:37+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,41 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-19T23:08:52+00:00",
+      "latest_entry_at": "2026-09-20T01:19:34+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "ded0bddc12523bc74b2a",
+      "headline": "Bengals elevate QB Josh Johnson and LB Joe Giles-Harris ahead of Texans game",
+      "url": "https://www.cincyjungle.com/cincinnati-bengals-news/199413/qb-josh-johnson-lb-joe-giles-harris-joe-burrow-injury-emergency-qb",
+      "source_id": "news_sbn_cin",
+      "source": "Cincy Jungle (SB Nation)",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "The Cincinnati Bengals are expecting Joe Burrow to start at quarterback vs. the Houston Texans on Sunday. But just in case, the team is protecting itself in the event another quarterback needs to suit up. On Saturday, the Bengals announced the elevation of quarterback Josh Johnson and linebacker Joe Giles-Harris from the practice squad to [\u2026]",
+      "categories": [
+        "Cincinnati Bengals News",
+        "Cincinnati Bengals roster"
+      ],
+      "published_at": "2026-09-20T00:51:01+00:00",
+      "players": [
+        {
+          "id": "00-0026300",
+          "name": "Josh Johnson",
+          "team": "CIN",
+          "position": "QB"
+        },
+        {
+          "id": "00-0036442",
+          "name": "Joe Burrow",
+          "team": "CIN",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "8a8e046cde5eea546637",
       "headline": "Starting Patriots defender ruled out of Steelers Week 2 matchup",
@@ -3903,22 +3933,6 @@
         "Detroit Lions at Buffalo Bills (2026-REG-2)"
       ],
       "published_at": "2026-09-17T22:45:03+00:00",
-      "players": []
-    },
-    {
-      "id": "4e020941d42101bda733",
-      "headline": "Buffalo Bills inactives vs. Lions | Week 2",
-      "url": "https://www.buffalobills.com/news/buffalo-bills-inactives-vs-lions-week-2",
-      "source_id": "news_official_buf",
-      "source": "Buffalo Bills (official)",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "The Bills are listing 7 players as inactive for Thursday Night Football against the Lions",
-      "categories": [
-        "INACTIVES REPORT"
-      ],
-      "published_at": "2026-09-17T22:44:28+00:00",
       "players": []
     }
   ]
