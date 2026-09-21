@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20T23:32:41.992731+00:00",
+  "updated_at": "2026-09-21T00:00:51.639109+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-20T23:22:17+00:00",
+      "latest_entry_at": "2026-09-21T00:00:11+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-20T22:44:08+00:00",
+      "latest_entry_at": "2026-09-20T23:26:11+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-20T23:19:38+00:00",
+      "latest_entry_at": "2026-09-20T23:57:41+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 11,
       "error": "",
-      "latest_entry_at": "2026-09-20T23:17:50+00:00",
+      "latest_entry_at": "2026-09-20T23:38:44+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-20T20:00:00+00:00",
+      "latest_entry_at": "2026-09-20T23:27:00+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-20T23:21:55+00:00",
+      "latest_entry_at": "2026-09-20T23:52:24+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-20T23:22:17+00:00",
+      "latest_entry_at": "2026-09-21T00:00:11+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-20T23:19:38+00:00",
+      "latest_entry_at": "2026-09-20T23:57:41+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-20T23:14:47+00:00",
+      "latest_entry_at": "2026-09-21T00:00:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-20T23:26:46+00:00",
+      "latest_entry_at": "2026-09-21T00:00:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-20T22:04:58+00:00",
+      "latest_entry_at": "2026-09-20T23:34:14+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-20T20:52:03+00:00",
+      "latest_entry_at": "2026-09-20T23:56:11+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-20T21:55:53+00:00",
+      "latest_entry_at": "2026-09-21T00:00:00+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-20T22:57:13+00:00",
+      "latest_entry_at": "2026-09-21T00:00:00+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-20T23:13:18+00:00",
+      "latest_entry_at": "2026-09-20T23:53:36+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,83 @@
     }
   ],
   "items": [
+    {
+      "id": "dc88f977f3eff1c49f10",
+      "headline": "49ers injury updates: 2 players likely suffered high-ankle sprains",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/162991/49ers-injury-updates-2-players-likely-suffered-high-ankle-sprains",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "San Francisco 49ers head coach Kyle Shanahan provided injury updates on wide receivers Mike Evans and Demarcus Robinson. Evans left Week 2 with a hip injury. Despite leaving, Evans stayed on the sideline with his helmet. That\u2019s usually a sign that a player can return. Shanahan said if the game were different, Evans could have [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries"
+      ],
+      "published_at": "2026-09-20T23:53:36+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0032775",
+          "name": "Demarcus Robinson",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "7e1e65480e56755516f6",
+      "headline": "Chicago Bears React to Losing Caleb Williams in 9-3 defeat by Vikings",
+      "url": "https://www.si.com/nfl/bears/onsi/chicago-bears-react-to-losing-caleb-williams-in-9-3-defeat-by-vikings",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "The hamstring injury suffered by Caleb Williams, numerous penalties and a key goal-line turnover by D'Andre Swift made for a terrible Week 2 loss.",
+      "categories": [],
+      "published_at": "2026-09-20T23:45:00+00:00",
+      "players": [
+        {
+          "id": "00-0036275",
+          "name": "D'Andre Swift",
+          "team": "CHI",
+          "position": "RB"
+        },
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "1277e804732796b97819",
+      "headline": "Deshaun Watson May Have Extended Lifespan as Browns Starting Quarterback",
+      "url": "https://www.si.com/nfl/browns/onsi/deshaun-watson-may-have-extended-lifespan-as-browns-starting-quarterback-01m30eqb685r",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "After Watson's inspiring performance in week two, it's likely he'll continue on as Cleveland's starting quarterback moving forward.",
+      "categories": [],
+      "published_at": "2026-09-20T23:28:42+00:00",
+      "players": [
+        {
+          "id": "00-0033537",
+          "name": "Deshaun Watson",
+          "team": "CLE",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "5e6a6c04265ab8379880",
       "headline": "Jadarian Price Injury Update: Latest News on Seahawks Rookie RB",
@@ -3955,79 +4032,6 @@
           "name": "RJ Harvey",
           "team": "DEN",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "1279f10af1ce0f360137",
-      "headline": "Houston Texans Injury Report: Wide Receiver Ruled OUT",
-      "url": "https://www.battleredblog.com/houston-texans-injuries/77658/houston-texans-injury-report-wide-receiver-ruled-out",
-      "source_id": "news_sbn_hou",
-      "source": "Battle Red Blog (SB Nation)",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "The Houston Texans are coming off a last second loss to the Buffalo Bills, in which the offense played well above what we expected, while the defense played well below what we expected. All offseason, the talk around town was how the offense would bounce back, especially quarterback C.J. Stroud, and he delivered in the [\u2026]",
-      "categories": [
-        "Houston Texans Injuries"
-      ],
-      "published_at": "2026-09-18T23:13:51+00:00",
-      "players": [
-        {
-          "id": "00-0039163",
-          "name": "C.J. Stroud",
-          "team": "HOU",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "c27410af4adcfd880b0c",
-      "headline": "Puka Nacua misses Rams\u2019 practice on Friday",
-      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/149210/puka-nacua-misses-rams-practice-on-friday",
-      "source_id": "news_sbn_lar",
-      "source": "Turf Show Times (SB Nation)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "Puka Nacua\u2019s status for Monday\u2019s game against the New York Giants is in doubt, as the L.A. Rams\u2019 star receiver did not practice on Friday due to a hip injury. It is not clear if the injury is the same as the psoas injury that caused Nacua to miss a string of practices in training [\u2026]",
-      "categories": [
-        "Los Angeles Rams Injuries"
-      ],
-      "published_at": "2026-09-18T23:05:14+00:00",
-      "players": [
-        {
-          "id": "00-0039075",
-          "name": "Puka Nacua",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "1e2138ceef203d8c666b",
-      "headline": "Justin Jefferson Is Biggest Winner for as Long as Carson Wentz Remains Vikings' QB1",
-      "url": "https://www.si.com/nfl/vikings/onsi/justin-jefferson-biggest-winner-as-long-carson-wentz-remains-vikings-qb1-01m2v2g2hve3",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "With Carson Wentz as starting QB for the Vikings in Week 2, Justin Jefferson benefits in a massive way.",
-      "categories": [],
-      "published_at": "2026-09-18T23:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0032950",
-          "name": "Carson Wentz",
-          "team": "MIN",
-          "position": "QB"
-        },
-        {
-          "id": "00-0036322",
-          "name": "Justin Jefferson",
-          "team": "MIN",
-          "position": "WR"
         }
       ]
     }
