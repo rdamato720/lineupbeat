@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T22:00:53.718403+00:00",
+  "updated_at": "2026-09-21T22:49:57.596669+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:45:27+00:00",
+      "latest_entry_at": "2026-09-21T22:49:03+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:35:43+00:00",
+      "latest_entry_at": "2026-09-21T22:46:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:29:43+00:00",
+      "latest_entry_at": "2026-09-21T21:49:43+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-21T01:20:09+00:00",
+      "latest_entry_at": "2026-09-21T22:24:00+00:00",
       "stale": false
     },
     {
@@ -102,13 +102,13 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:48:13+00:00",
+      "latest_entry_at": "2026-09-21T22:22:39+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 7,
+      "eligible": 6,
       "error": "",
       "latest_entry_at": "2026-09-21T21:22:44+00:00",
       "stale": false
@@ -164,7 +164,7 @@
     {
       "source_id": "news_official_lac",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
       "latest_entry_at": "2026-09-21T21:47:08+00:00",
       "stale": false
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:28:00+00:00",
+      "latest_entry_at": "2026-09-21T22:00:00+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:03:54+00:00",
+      "latest_entry_at": "2026-09-22T00:44:00+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-09-21T19:39:00+00:00",
+      "latest_entry_at": "2026-09-21T22:27:40+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:45:27+00:00",
+      "latest_entry_at": "2026-09-21T22:49:03+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:35:43+00:00",
+      "latest_entry_at": "2026-09-21T22:46:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:46:00+00:00",
+      "latest_entry_at": "2026-09-21T22:13:58+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-21T16:00:00+00:00",
+      "latest_entry_at": "2026-09-21T22:08:05+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:27:06+00:00",
+      "latest_entry_at": "2026-09-21T22:41:33+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:39:32+00:00",
+      "latest_entry_at": "2026-09-21T22:30:00+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:28:44+00:00",
+      "latest_entry_at": "2026-09-21T22:05:42+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-21T20:51:22+00:00",
+      "latest_entry_at": "2026-09-21T22:28:27+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,130 @@
     }
   ],
   "items": [
+    {
+      "id": "708d49501d3b9a0e6e68",
+      "headline": "Jayden Daniels\u2019 elbow MRI results in holding pattern as Commanders prepare for Seattle without their franchise QB",
+      "url": "https://atozsports.com/nfl/washington-commanders-news/jayden-daniels-elbow-injury-update-dan-quinn/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Washington is staring down a midweek holding pattern with no concrete answers on Daniels, while a string of other injury updates complicates the Week 3 picture against Seattle.",
+      "categories": [
+        "Washington Commanders News",
+        "Commanders",
+        "Dan Quinn",
+        "Jayden Daniels",
+        "Washington Commanders"
+      ],
+      "published_at": "2026-09-21T22:38:52+00:00",
+      "players": [
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "a2a6e6c710f2bd03341d",
+      "headline": "This Rams Player Could Benefit Most From Puka Nacua Injury",
+      "url": "https://www.si.com/nfl/rams/onsi/puka-nacua-injury-rams-terrance-ferguson",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "With Puka Nacua potentially sidelined, Rams tight end Terrance Ferguson could be in line for a breakout game against the Giants.",
+      "categories": [],
+      "published_at": "2026-09-21T22:10:03+00:00",
+      "players": [
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "54b68829087b074d0ad3",
+      "headline": "Chargers place David Njoku, Charlie Kolar on injured reserve",
+      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/65637/chargers-injuries-david-njoku-charlie-kolar-kayode-awosika",
+      "source_id": "news_sbn_lac",
+      "source": "Bolts From The Blue (SB Nation)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "The Chargers didn\u2019t just get roughed up on the scoreboard against the Raiders on Sunday. They actually ended up leaving the game down nearly half a dozen starters due to various injuries. On Monday, Jim Harbaugh shared the rough injury update with reporters. Per Harbaugh, the Chargers are placing both tight ends David Njoku and [\u2026]",
+      "categories": [
+        "Los Angeles Chargers Injuries"
+      ],
+      "published_at": "2026-09-21T22:08:05+00:00",
+      "players": [
+        {
+          "id": "00-0033885",
+          "name": "David Njoku",
+          "team": "LAC",
+          "position": "TE"
+        },
+        {
+          "id": "00-0038046",
+          "name": "Charlie Kolar",
+          "team": "LAC",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "6fdaf202c01f64257152",
+      "headline": "Packers-Falcons Monday Injury Report: Six \u2018Did Not Practice\u2019",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-falcons-monday-injury-report-six-did-not-practice",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The Green Bay Packers and Atlanta Falcons didn\u2019t practice. If they had, these players would not have practiced.",
+      "categories": [],
+      "published_at": "2026-09-21T21:51:31+00:00",
+      "players": []
+    },
+    {
+      "id": "c767f9811c0c9a60266d",
+      "headline": "Report: Eagles TE Dallas Goedert to miss 'a few weeks' with knee injury",
+      "url": "https://www.phillyvoice.com/report-eagles-te-dallas-goedert-miss-few-weeks-knee-injury/",
+      "source_id": "phillyvoice_jimmy_kempski",
+      "source": "PhillyVoice",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "According to several media reports, the Philadelphia Eagles will be without starting TE Dallas Goedert for \"a few weeks\" with a sprained MCL. Goedert got hurt on a run play, when a Titans defender barreled into the side of his leg and upended him. He left the game and did not return.",
+      "categories": [
+        "Sports",
+        "Eagles",
+        "NFL",
+        "Philadelphia",
+        "Dallas Goedert"
+      ],
+      "published_at": "2026-09-21T21:49:43+00:00",
+      "players": [
+        {
+          "id": "00-0034351",
+          "name": "Dallas Goedert",
+          "team": "PHI",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "124f3ef95a0b55e44311",
       "headline": "Charlie Kolar & David Njoku Headed to Injured Reserve; Awosika & Tomlinson To \"Miss Some Time\" With Injuries",
@@ -658,33 +782,6 @@
           "name": "Michael Penix Jr.",
           "team": "ATL",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "c767f9811c0c9a60266d",
-      "headline": "Report: Eagles TE Dallas Goedert to miss 'a few weeks' with knee injury",
-      "url": "https://www.phillyvoice.com/report-eagles-te-dallas-goedert-miss-few-weeks-knee-injury/",
-      "source_id": "phillyvoice_jimmy_kempski",
-      "source": "PhillyVoice",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "According to several media reports, the Philadelphia Eagles will be without starting TE Dallas Goedert for \"a few weeks\" with a sprained MCL. Goedert got hurt on a run play, when a Titans defender barreled into the side of his leg and upended him. He left the game and did not return.",
-      "categories": [
-        "Sports",
-        "Eagles",
-        "NFL",
-        "Philadelphia",
-        "Dallas Goedert"
-      ],
-      "published_at": "2026-09-21T21:29:43+00:00",
-      "players": [
-        {
-          "id": "00-0034351",
-          "name": "Dallas Goedert",
-          "team": "PHI",
-          "position": "TE"
         }
       ]
     },
@@ -849,7 +946,7 @@
       "teams": [
         "SF"
       ],
-      "feed_description": "San Francisco 49ers head coach Kyle Shanahan provided injury updates Monday afternoon. Wide receiver Mike Evans will be managed throughout the week with a hip injury. Evans pulled himself mid-game in Week 2 after it was evident something had bothered him. The practice reps for Evans were going to be limited regardless. It wouldn\u2019t be [\u2026]",
+      "feed_description": "San Francisco 49ers head coach Kyle Shanahan provided injury updates Monday afternoon. Wide receiver Mike Evans will be managed throughout the week with a hip injury: \u201cMike\u2019s gotten a lot of work here in the last couple weeks. He\u2019s been able to practice each day since us going down to Australia and last week, but [\u2026]",
       "categories": [
         "San Francisco 49ers Depth Chart",
         "San Francisco 49ers Injuries"
@@ -4027,94 +4124,6 @@
       ],
       "published_at": "2026-09-20T15:30:09+00:00",
       "players": []
-    },
-    {
-      "id": "5ed312f7243a42f70f51",
-      "headline": "Texans Inactives: Week 2 vs. Cincinnati Bengals",
-      "url": "https://www.houstontexans.com/news/texans-inactives-week-2-vs-cincinnati-bengals",
-      "source_id": "news_official_hou",
-      "source": "Houston Texans (official)",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "The Houston Texans released their inactives list before their Week 2 matchup against the Cincinnati Bengals.",
-      "categories": [
-        "Gameday",
-        "Inactives",
-        "Homepage CP",
-        "2026 REG1 - Bills",
-        "Buffalo Bills at Houston Texans (2026-REG-1)"
-      ],
-      "published_at": "2026-09-20T15:30:08+00:00",
-      "players": []
-    },
-    {
-      "id": "f475eafe563dc0f32b72",
-      "headline": "Eagles at Titans Inactives",
-      "url": "https://www.philadelphiaeagles.com/news/eagles-at-titans-inactives-week-2-2026-nfl-regular-season",
-      "source_id": "news_official_phi",
-      "source": "Philadelphia Eagles (official)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "S Andrew Mukuba is active against the Titans.",
-      "categories": [
-        "All News-archived",
-        "NFL.com Feature",
-        "2026 Week 2 @ Titans"
-      ],
-      "published_at": "2026-09-20T15:30:00+00:00",
-      "players": []
-    },
-    {
-      "id": "e75bf50fe953b82cc32d",
-      "headline": "Jets List 6 Inactives for Home Opener Against Packers",
-      "url": "https://www.newyorkjets.com/news/jets-vs-packers-game-inactives-09-20-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Minkah Fitzpatrick, Blake Grupe, Kene Nwangwu, Joseph Ossai, D\u2019Angelo Ponds and Trevin Wallace Inactive as Green & White Open MetLife Stadium",
-      "categories": [
-        "Inactives",
-        "Latest Headlines",
-        "News"
-      ],
-      "published_at": "2026-09-20T15:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0036842",
-          "name": "Kene Nwangwu",
-          "team": "NYJ",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "c13604b440bfa22beff9",
-      "headline": "Browns-Bucs Inactives | Jacob Parrish Ruled Out",
-      "url": "https://www.buccaneers.com/news/browns-bucs-inactives-jacob-parrish-ruled-out",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "Second-year CB Jacob Parrish will miss the Bucs' Week Two game against Cleveland due to a back injury, but WR Jalen McMillan is set to make his 2026 debut",
-      "categories": [
-        "Featured",
-        "Inactives Report",
-        "Week 2 2026 Browns"
-      ],
-      "published_at": "2026-09-20T15:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0039855",
-          "name": "Jalen McMillan",
-          "team": "TB",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
