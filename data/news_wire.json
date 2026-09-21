@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T14:00:58.009989+00:00",
+  "updated_at": "2026-09-21T14:08:34.602352+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-21T13:51:06+00:00",
+      "latest_entry_at": "2026-09-21T14:03:39+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-21T13:51:06+00:00",
+      "latest_entry_at": "2026-09-21T14:03:39+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T03:01:44+00:00",
+      "latest_entry_at": "2026-09-21T14:08:16+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-20T23:13:18+00:00",
+      "latest_entry_at": "2026-09-21T09:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,48 @@
     }
   ],
   "items": [
+    {
+      "id": "1ec23666d5ca2db2e11e",
+      "headline": "Falcons QB Play Raises Questions About Michael Penix Jr.\u2019s Return",
+      "url": "https://www.si.com/nfl/falcons/onsi/falcons-qb-play-raises-questions-about-michael-penix-jr-return",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "Can Michael Penix Jr. save the Atlanta Falcons season if and when he returns, or will it be too late?",
+      "categories": [],
+      "published_at": "2026-09-21T14:00:02+00:00",
+      "players": [
+        {
+          "id": "00-0039917",
+          "name": "Michael Penix Jr.",
+          "team": "ATL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "0a96ddd97a1da8ed08eb",
+      "headline": "Jonathon Brooks Injury Update: Panthers Avoid Major Bullet With Injury-Prone RB",
+      "url": "https://www.si.com/nfl/panthers/onsi/jonathon-brooks-injury-update-panthers-avoid-major-bullet-injury-prone-rb",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "The Panthers almost lost their prized running back to injury again.",
+      "categories": [],
+      "published_at": "2026-09-21T14:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039344",
+          "name": "Jonathon Brooks",
+          "team": "CAR",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "cf9822015eac15c51599",
       "headline": "Bears HC Ben Johnson is suddenly faced with the toughest challenge of his coaching career after Caleb Williams\u2019 injury, offensive regression",
@@ -4025,54 +4067,6 @@
       ],
       "published_at": "2026-09-19T19:30:00+00:00",
       "players": []
-    },
-    {
-      "id": "daeafad0dcb22fff6e1e",
-      "headline": "49ers Playing Kaelon Black Goes Beyond Reducing McCaffrey\u2019s Usage",
-      "url": "https://www.si.com/nfl/49ers/onsi/49ers-kaelon-black-christian-mccaffrey-usage",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "Rookie Kaelon Black is being utilized to help alleviate Christian McCaffrey's workload, but that isn't the main reason the 49ers are playing him.",
-      "categories": [],
-      "published_at": "2026-09-19T19:00:02+00:00",
-      "players": [
-        {
-          "id": "00-0033280",
-          "name": "Christian McCaffrey",
-          "team": "SF",
-          "position": "RB"
-        },
-        {
-          "id": "00-0041052",
-          "name": "Kaelon Black",
-          "team": "SF",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "5d57baa8c9bfc1bb0af5",
-      "headline": "Why Isaiah Williams Will Be Jets' X-Factor in Week 2 vs. Packers",
-      "url": "https://www.si.com/nfl/jets/onsi/why-isaiah-williams-be-jets-x-factor-week-2-vs-packers-01m2tj9cwt7r",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "The Jets will need to lean on Isaiah Williams in Week 2 against the Packers with injuries ravaging them.",
-      "categories": [],
-      "published_at": "2026-09-19T19:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039451",
-          "name": "Isaiah Williams",
-          "team": "NYJ",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
