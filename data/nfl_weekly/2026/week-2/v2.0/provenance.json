@@ -3,7 +3,7 @@
     {
       "current_capture": true,
       "file": "games.csv.gz",
-      "sha256": "4a9e8597690bfd60a5a9c07c119baa7a900acdf570317dd2abcfd7b899050cc4",
+      "sha256": "89c51256cf559b71eaecad3373c7bcf27bd5d0989e91a0447e60d558e92735bb",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv.gz"
     },
     {
@@ -81,43 +81,43 @@
     {
       "current_capture": true,
       "file": "stats_player_week_2026.csv.gz",
-      "sha256": "41dc93a3b3ee19082fc907e72b4308dce3045c8b2f83aa4889850114cd780f74",
+      "sha256": "e483646ccd8d0bf14bb5186d614b87c29f143a607be7fe763943aa4e383d1c36",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv.gz"
     },
     {
       "current_capture": true,
       "file": "stats_team_week_2026.csv.gz",
-      "sha256": "810d626d74514b32f8d604e5a4f7b410f5d1c1cde11f3f2700da9f7679901cdd",
+      "sha256": "6fc1b3f7b1214c4a24a2626f077d179402156e2faab79575391398606f148641",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_week_2026.csv.gz"
     },
     {
       "current_capture": true,
       "file": "snap_counts_2026.csv.gz",
-      "sha256": "7cf856731a96bd98ed89df2f5e0b39e8fb77c1f327e44d7fc3a2e24ca3152a19",
+      "sha256": "b43f626ac376b922ee852820af502d278563c96b0d3cf648d9110c1fd52dedf7",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2026.csv.gz"
     },
     {
       "current_capture": true,
       "file": "play_by_play_2026.csv.gz",
-      "sha256": "90e308b753dcd669fa4416ff0d4cb3c2da572f2ca0da1a03040ab86ce8e677f7",
+      "sha256": "f0b6a241fef4dd50a4f1c5dd58b8ac1f7935aee2af6e6daadc3d3796627d68c3",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2026.csv.gz"
     },
     {
       "current_capture": true,
       "file": "depth_charts_2026.csv.gz",
-      "sha256": "5658c706f96234606bb227426f191b0a151fa09a4e999abba3f6b8f3733ff549",
+      "sha256": "9842bf2438322f6c610e23ce7e6a5b56c8f47bcd0d2dbf0e7c7a60767de98131",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv.gz"
     },
     {
       "current_capture": true,
       "file": "roster_2026.csv.gz",
-      "sha256": "a1b5743c557d2bf58c15ba77d0a81a5f89c2abcfe16fd668a47238a7192f2dca",
+      "sha256": "038f3140104fa13810d51d9378c1bcfdfcec766a3e653cf07ccdad2c9bef06d6",
       "source_url": "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2026.csv.gz"
     },
     {
       "current_capture": true,
       "file": "espn_injuries.json",
-      "sha256": "54ca4125466cdc3ae4d81ff9757372943c4cff6201bf56cb1c3ff876afa3b37f",
+      "sha256": "a664df498056323ffc55b0a797be1fc79c04430ca8878eb89fcc361febe2d4a9",
       "source_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/injuries"
     }
   ],
@@ -160,10 +160,10 @@
   "model_api_calls": 0,
   "model_sha256": "b4b4b25e0d6c0b878f01bc0d0c0ef603937010e71a3edd44b39e18fc4b54684e",
   "paid_provider_calls": 0,
-  "projection_sha256": "ab12b01fefd4461dcbe76589aecbaefbbb6cbc97836611c73e264e60f369a676",
-  "ranking_sha256": "d99a74684e57d198014dcea469e39d092b36abc22f43f72c25054c357d0d7df8",
+  "projection_sha256": "58d11d752bad6be6a3c00cee45c6810367fff1f64ba2560be5c1fb4f6d6f48b7",
+  "ranking_sha256": "bdece8f7d20f81f8655c6190e69186b53e3ca293c112fde5cb6618d0cda1f47e",
   "season": 2026,
-  "updated_at": "2026-09-18T14:05:37.168874+00:00",
+  "updated_at": "2026-09-21T16:11:56.302336+00:00",
   "validation_sha256": "baf404ca571a126821914d49279b833cb9b0b83ad506816463ae7b076d2dd6e8",
   "week": 2
 }

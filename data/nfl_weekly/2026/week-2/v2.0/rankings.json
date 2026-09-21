@@ -34,6 +34,2118 @@
       "eligible": true,
       "formats": {
         "half_ppr": {
+          "expected_points": 19.2977,
+          "history_points": 19.1375,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 2.8683,
+              "overall_rank": 32,
+              "position_rank": 3
+            },
+            "superflex": {
+              "lineup_value": 5.6911,
+              "overall_rank": 15,
+              "position_rank": 3
+            }
+          },
+          "ranking_points": 19.2737,
+          "typical_points": 18.8356
+        },
+        "non_ppr": {
+          "expected_points": 19.2977,
+          "history_points": 19.1375,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 2.8683,
+              "overall_rank": 33,
+              "position_rank": 3
+            },
+            "superflex": {
+              "lineup_value": 5.6911,
+              "overall_rank": 14,
+              "position_rank": 3
+            }
+          },
+          "ranking_points": 19.2737,
+          "typical_points": 18.8355
+        },
+        "ppr": {
+          "expected_points": 19.2977,
+          "history_points": 19.1375,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 2.8683,
+              "overall_rank": 41,
+              "position_rank": 3
+            },
+            "superflex": {
+              "lineup_value": 5.6911,
+              "overall_rank": 17,
+              "position_rank": 3
+            }
+          },
+          "ranking_points": 19.2737,
+          "typical_points": 18.8358
+        }
+      },
+      "id": "00-0026498",
+      "name": "Matthew Stafford",
+      "position": "QB",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 0.9286,
+          "history_points": 1.25,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -7.7127,
+              "overall_rank": 389,
+              "position_rank": 141
+            },
+            "superflex": {
+              "lineup_value": -7.7127,
+              "overall_rank": 389,
+              "position_rank": 141
+            }
+          },
+          "ranking_points": 0.9768,
+          "typical_points": 0.8516
+        },
+        "non_ppr": {
+          "expected_points": 0.7045,
+          "history_points": 0.6875,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -6.2557,
+              "overall_rank": 395,
+              "position_rank": 144
+            },
+            "superflex": {
+              "lineup_value": -6.2557,
+              "overall_rank": 396,
+              "position_rank": 144
+            }
+          },
+          "ranking_points": 0.7019,
+          "typical_points": 0.597
+        },
+        "ppr": {
+          "expected_points": 1.1527,
+          "history_points": 1.8125,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -8.7197,
+              "overall_rank": 369,
+              "position_rank": 140
+            },
+            "superflex": {
+              "lineup_value": -8.7197,
+              "overall_rank": 369,
+              "position_rank": 140
+            }
+          },
+          "ranking_points": 1.2517,
+          "typical_points": 1.0982
+        }
+      },
+      "id": "00-0031235",
+      "name": "Odell Beckham Jr.",
+      "position": "WR",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 9.2881,
+          "history_points": 12.8,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 1.1253,
+              "overall_rank": 57,
+              "position_rank": 17
+            },
+            "superflex": {
+              "lineup_value": 1.1253,
+              "overall_rank": 67,
+              "position_rank": 17
+            }
+          },
+          "ranking_points": 9.8149,
+          "typical_points": 8.8109
+        },
+        "non_ppr": {
+          "expected_points": 7.5305,
+          "history_points": 10.8,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 1.0633,
+              "overall_rank": 62,
+              "position_rank": 18
+            },
+            "superflex": {
+              "lineup_value": 1.0633,
+              "overall_rank": 73,
+              "position_rank": 18
+            }
+          },
+          "ranking_points": 8.0209,
+          "typical_points": 6.8986
+        },
+        "ppr": {
+          "expected_points": 11.0457,
+          "history_points": 14.8,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 1.6375,
+              "overall_rank": 53,
+              "position_rank": 18
+            },
+            "superflex": {
+              "lineup_value": 1.6375,
+              "overall_rank": 64,
+              "position_rank": 18
+            }
+          },
+          "ranking_points": 11.6089,
+          "typical_points": 10.6823
+        }
+      },
+      "id": "00-0031381",
+      "name": "Davante Adams",
+      "position": "WR",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 0.4974,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -7.1243,
+              "overall_rank": 334,
+              "position_rank": 95
+            },
+            "superflex": {
+              "lineup_value": -7.1243,
+              "overall_rank": 334,
+              "position_rank": 95
+            }
+          },
+          "ranking_points": 0.4228,
+          "typical_points": 0.4404
+        },
+        "non_ppr": {
+          "expected_points": 0.3639,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -5.5516,
+              "overall_rank": 331,
+              "position_rank": 95
+            },
+            "superflex": {
+              "lineup_value": -5.5516,
+              "overall_rank": 333,
+              "position_rank": 95
+            }
+          },
+          "ranking_points": 0.3093,
+          "typical_points": 0.2964
+        },
+        "ppr": {
+          "expected_points": 0.6308,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -8.5986,
+              "overall_rank": 364,
+              "position_rank": 94
+            },
+            "superflex": {
+              "lineup_value": -8.5986,
+              "overall_rank": 364,
+              "position_rank": 94
+            }
+          },
+          "ranking_points": 0.5362,
+          "typical_points": 0.583
+        }
+      },
+      "id": "00-0031484",
+      "name": "Chris Manhertz",
+      "position": "TE",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 0.3385,
+          "history_points": 16.3425,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -13.6663,
+              "overall_rank": 446,
+              "position_rank": 33
+            },
+            "superflex": {
+              "lineup_value": -10.8435,
+              "overall_rank": 446,
+              "position_rank": 33
+            }
+          },
+          "ranking_points": 2.7391,
+          "typical_points": 0.3186
+        },
+        "non_ppr": {
+          "expected_points": 0.3029,
+          "history_points": 16.28,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -13.7059,
+              "overall_rank": 446,
+              "position_rank": 33
+            },
+            "superflex": {
+              "lineup_value": -10.8831,
+              "overall_rank": 446,
+              "position_rank": 33
+            }
+          },
+          "ranking_points": 2.6995,
+          "typical_points": 0.283
+        },
+        "ppr": {
+          "expected_points": 0.374,
+          "history_points": 16.405,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -13.6267,
+              "overall_rank": 446,
+              "position_rank": 33
+            },
+            "superflex": {
+              "lineup_value": -10.8039,
+              "overall_rank": 446,
+              "position_rank": 33
+            }
+          },
+          "ranking_points": 2.7787,
+          "typical_points": 0.3542
+        }
+      },
+      "id": "00-0031503",
+      "name": "Jameis Winston",
+      "position": "QB",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 3.8266,
+          "history_points": 6.6375,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -3.2989,
+              "overall_rank": 176,
+              "position_rank": 34
+            },
+            "superflex": {
+              "lineup_value": -3.2989,
+              "overall_rank": 179,
+              "position_rank": 34
+            }
+          },
+          "ranking_points": 4.2482,
+          "typical_points": 3.4611
+        },
+        "non_ppr": {
+          "expected_points": 2.8909,
+          "history_points": 5.2,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -2.6236,
+              "overall_rank": 174,
+              "position_rank": 33
+            },
+            "superflex": {
+              "lineup_value": -2.6236,
+              "overall_rank": 180,
+              "position_rank": 33
+            }
+          },
+          "ranking_points": 3.2373,
+          "typical_points": 2.3874
+        },
+        "ppr": {
+          "expected_points": 4.7622,
+          "history_points": 8.075,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -3.8756,
+              "overall_rank": 182,
+              "position_rank": 35
+            },
+            "superflex": {
+              "lineup_value": -3.8756,
+              "overall_rank": 186,
+              "position_rank": 35
+            }
+          },
+          "ranking_points": 5.2591,
+          "typical_points": 4.4949
+        }
+      },
+      "id": "00-0033110",
+      "name": "Tyler Higbee",
+      "position": "TE",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 0.9712,
+          "history_points": 0.4375,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -7.8111,
+              "overall_rank": 397,
+              "position_rank": 99
+            },
+            "superflex": {
+              "lineup_value": -7.8111,
+              "overall_rank": 397,
+              "position_rank": 99
+            }
+          },
+          "ranking_points": 0.8912,
+          "typical_points": 0.8627
+        },
+        "non_ppr": {
+          "expected_points": 0.6676,
+          "history_points": 0.3125,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -6.2868,
+              "overall_rank": 397,
+              "position_rank": 100
+            },
+            "superflex": {
+              "lineup_value": -6.2868,
+              "overall_rank": 398,
+              "position_rank": 100
+            }
+          },
+          "ranking_points": 0.6144,
+          "typical_points": 0.5257
+        },
+        "ppr": {
+          "expected_points": 1.2748,
+          "history_points": 0.5625,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -8.4352,
+              "overall_rank": 353,
+              "position_rank": 96
+            },
+            "superflex": {
+              "lineup_value": -8.4352,
+              "overall_rank": 353,
+              "position_rank": 96
+            }
+          },
+          "ranking_points": 1.168,
+          "typical_points": 1.1939
+        }
+      },
+      "id": "00-0033376",
+      "name": "Patrick Ricard",
+      "position": "RB",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 6.1081,
+          "history_points": 10.5,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -1.9354,
+              "overall_rank": 134,
+              "position_rank": 43
+            },
+            "superflex": {
+              "lineup_value": -1.9354,
+              "overall_rank": 140,
+              "position_rank": 43
+            }
+          },
+          "ranking_points": 6.7669,
+          "typical_points": 5.5858
+        },
+        "non_ppr": {
+          "expected_points": 5.2253,
+          "history_points": 9.625,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -1.0159,
+              "overall_rank": 112,
+              "position_rank": 45
+            },
+            "superflex": {
+              "lineup_value": -1.0159,
+              "overall_rank": 125,
+              "position_rank": 45
+            }
+          },
+          "ranking_points": 5.8852,
+          "typical_points": 4.5798
+        },
+        "ppr": {
+          "expected_points": 6.991,
+          "history_points": 11.375,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -1.9546,
+              "overall_rank": 136,
+              "position_rank": 43
+            },
+            "superflex": {
+              "lineup_value": -1.9546,
+              "overall_rank": 142,
+              "position_rank": 43
+            }
+          },
+          "ranking_points": 7.6486,
+          "typical_points": 6.5712
+        }
+      },
+      "id": "00-0035250",
+      "name": "Devin Singletary",
+      "position": "RB",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 6.5595,
+          "history_points": 9.95,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -0.479,
+              "overall_rank": 95,
+              "position_rank": 16
+            },
+            "superflex": {
+              "lineup_value": -0.479,
+              "overall_rank": 110,
+              "position_rank": 16
+            }
+          },
+          "ranking_points": 7.0681,
+          "typical_points": 6.0422
+        },
+        "non_ppr": {
+          "expected_points": 5.0661,
+          "history_points": 8.1375,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -0.3341,
+              "overall_rank": 95,
+              "position_rank": 16
+            },
+            "superflex": {
+              "lineup_value": -0.3341,
+              "overall_rank": 109,
+              "position_rank": 16
+            }
+          },
+          "ranking_points": 5.5268,
+          "typical_points": 4.3158
+        },
+        "ppr": {
+          "expected_points": 8.0529,
+          "history_points": 11.7625,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -0.5254,
+              "overall_rank": 100,
+              "position_rank": 16
+            },
+            "superflex": {
+              "lineup_value": -0.5254,
+              "overall_rank": 114,
+              "position_rank": 16
+            }
+          },
+          "ranking_points": 8.6093,
+          "typical_points": 7.68
+        }
+      },
+      "id": "00-0036244",
+      "name": "Colby Parkinson",
+      "position": "TE",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 3.6206,
+          "history_points": 4.95,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -4.8695,
+              "overall_rank": 225,
+              "position_rank": 85
+            },
+            "superflex": {
+              "lineup_value": -4.8695,
+              "overall_rank": 228,
+              "position_rank": 85
+            }
+          },
+          "ranking_points": 3.82,
+          "typical_points": 3.4141
+        },
+        "non_ppr": {
+          "expected_points": 2.8641,
+          "history_points": 3.825,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -3.9494,
+              "overall_rank": 231,
+              "position_rank": 86
+            },
+            "superflex": {
+              "lineup_value": -3.9494,
+              "overall_rank": 235,
+              "position_rank": 86
+            }
+          },
+          "ranking_points": 3.0082,
+          "typical_points": 2.5738
+        },
+        "ppr": {
+          "expected_points": 4.3772,
+          "history_points": 6.075,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -5.3395,
+              "overall_rank": 225,
+              "position_rank": 85
+            },
+            "superflex": {
+              "lineup_value": -5.3395,
+              "overall_rank": 227,
+              "position_rank": 85
+            }
+          },
+          "ranking_points": 4.6319,
+          "typical_points": 4.2293
+        }
+      },
+      "id": "00-0036309",
+      "name": "Darnell Mooney",
+      "position": "WR",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 1.9674,
+          "history_points": 3.4125,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -6.5054,
+              "overall_rank": 299,
+              "position_rank": 113
+            },
+            "superflex": {
+              "lineup_value": -6.5054,
+              "overall_rank": 300,
+              "position_rank": 113
+            }
+          },
+          "ranking_points": 2.1841,
+          "typical_points": 1.8377
+        },
+        "non_ppr": {
+          "expected_points": 1.6005,
+          "history_points": 3.1,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -5.1322,
+              "overall_rank": 302,
+              "position_rank": 112
+            },
+            "superflex": {
+              "lineup_value": -5.1322,
+              "overall_rank": 305,
+              "position_rank": 112
+            }
+          },
+          "ranking_points": 1.8254,
+          "typical_points": 1.4199
+        },
+        "ppr": {
+          "expected_points": 2.3343,
+          "history_points": 3.725,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -7.4285,
+              "overall_rank": 301,
+              "position_rank": 116
+            },
+            "superflex": {
+              "lineup_value": -7.4285,
+              "overall_rank": 301,
+              "position_rank": 116
+            }
+          },
+          "ranking_points": 2.5429,
+          "typical_points": 2.2419
+        }
+      },
+      "id": "00-0036849",
+      "name": "Tutu Atwell",
+      "position": "WR",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 5.7249,
+          "history_points": 6.3625,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -2.8817,
+              "overall_rank": 162,
+              "position_rank": 49
+            },
+            "superflex": {
+              "lineup_value": -2.8817,
+              "overall_rank": 166,
+              "position_rank": 49
+            }
+          },
+          "ranking_points": 5.8205,
+          "typical_points": 5.1713
+        },
+        "non_ppr": {
+          "expected_points": 5.185,
+          "history_points": 5.7375,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -1.6332,
+              "overall_rank": 131,
+              "position_rank": 48
+            },
+            "superflex": {
+              "lineup_value": -1.6332,
+              "overall_rank": 140,
+              "position_rank": 48
+            }
+          },
+          "ranking_points": 5.2679,
+          "typical_points": 4.5227
+        },
+        "ppr": {
+          "expected_points": 6.2647,
+          "history_points": 6.9875,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -3.2301,
+              "overall_rank": 168,
+              "position_rank": 49
+            },
+            "superflex": {
+              "lineup_value": -3.2301,
+              "overall_rank": 171,
+              "position_rank": 49
+            }
+          },
+          "ranking_points": 6.3732,
+          "typical_points": 5.8146
+        }
+      },
+      "id": "00-0036893",
+      "name": "Najee Harris",
+      "position": "RB",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 2.3213,
+          "history_points": 0.9375,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -6.5886,
+              "overall_rank": 309,
+              "position_rank": 79
+            },
+            "superflex": {
+              "lineup_value": -6.5886,
+              "overall_rank": 309,
+              "position_rank": 79
+            }
+          },
+          "ranking_points": 2.1137,
+          "typical_points": 2.0488
+        },
+        "non_ppr": {
+          "expected_points": 2.1035,
+          "history_points": 0.875,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -4.9819,
+              "overall_rank": 289,
+              "position_rank": 78
+            },
+            "superflex": {
+              "lineup_value": -4.9819,
+              "overall_rank": 292,
+              "position_rank": 78
+            }
+          },
+          "ranking_points": 1.9192,
+          "typical_points": 1.7668
+        },
+        "ppr": {
+          "expected_points": 2.539,
+          "history_points": 1.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -7.2951,
+              "overall_rank": 291,
+              "position_rank": 80
+            },
+            "superflex": {
+              "lineup_value": -7.2951,
+              "overall_rank": 291,
+              "position_rank": 80
+            }
+          },
+          "ranking_points": 2.3082,
+          "typical_points": 2.3279
+        }
+      },
+      "id": "00-0037557",
+      "name": "Ronnie Rivers",
+      "position": "RB",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 5.1893,
+          "history_points": 6.775,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -2.1199,
+              "overall_rank": 140,
+              "position_rank": 25
+            },
+            "superflex": {
+              "lineup_value": -2.1199,
+              "overall_rank": 146,
+              "position_rank": 25
+            }
+          },
+          "ranking_points": 5.4272,
+          "typical_points": 4.8368
+        },
+        "non_ppr": {
+          "expected_points": 3.8699,
+          "history_points": 5.3375,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -1.7708,
+              "overall_rank": 138,
+              "position_rank": 23
+            },
+            "superflex": {
+              "lineup_value": -1.7708,
+              "overall_rank": 146,
+              "position_rank": 23
+            }
+          },
+          "ranking_points": 4.0901,
+          "typical_points": 3.3663
+        },
+        "ppr": {
+          "expected_points": 6.5087,
+          "history_points": 8.2125,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -2.3705,
+              "overall_rank": 148,
+              "position_rank": 25
+            },
+            "superflex": {
+              "lineup_value": -2.3705,
+              "overall_rank": 153,
+              "position_rank": 25
+            }
+          },
+          "ranking_points": 6.7643,
+          "typical_points": 6.257
+        }
+      },
+      "id": "00-0037838",
+      "name": "Isaiah Likely",
+      "position": "TE",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 13.7307,
+          "history_points": 13.075,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 4.93,
+              "overall_rank": 15,
+              "position_rank": 11
+            },
+            "superflex": {
+              "lineup_value": 4.93,
+              "overall_rank": 21,
+              "position_rank": 11
+            }
+          },
+          "ranking_points": 13.6323,
+          "typical_points": 13.1696
+        },
+        "non_ppr": {
+          "expected_points": 12.6007,
+          "history_points": 12.075,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 5.6207,
+              "overall_rank": 12,
+              "position_rank": 11
+            },
+            "superflex": {
+              "lineup_value": 5.6207,
+              "overall_rank": 15,
+              "position_rank": 11
+            }
+          },
+          "ranking_points": 12.5218,
+          "typical_points": 12.0042
+        },
+        "ppr": {
+          "expected_points": 14.8607,
+          "history_points": 14.075,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 5.1396,
+              "overall_rank": 17,
+              "position_rank": 11
+            },
+            "superflex": {
+              "lineup_value": 5.1396,
+              "overall_rank": 23,
+              "position_rank": 11
+            }
+          },
+          "ranking_points": 14.7428,
+          "typical_points": 14.3503
+        }
+      },
+      "id": "00-0037840",
+      "name": "Kyren Williams",
+      "position": "RB",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 2.1603,
+          "history_points": 3.575,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -6.3171,
+              "overall_rank": 292,
+              "position_rank": 111
+            },
+            "superflex": {
+              "lineup_value": -6.3171,
+              "overall_rank": 293,
+              "position_rank": 111
+            }
+          },
+          "ranking_points": 2.3725,
+          "typical_points": 2.0327
+        },
+        "non_ppr": {
+          "expected_points": 1.7131,
+          "history_points": 2.825,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -5.0777,
+              "overall_rank": 295,
+              "position_rank": 110
+            },
+            "superflex": {
+              "lineup_value": -5.0777,
+              "overall_rank": 298,
+              "position_rank": 110
+            }
+          },
+          "ranking_points": 1.8799,
+          "typical_points": 1.5349
+        },
+        "ppr": {
+          "expected_points": 2.6074,
+          "history_points": 4.325,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -7.1063,
+              "overall_rank": 286,
+              "position_rank": 111
+            },
+            "superflex": {
+              "lineup_value": -7.1063,
+              "overall_rank": 286,
+              "position_rank": 111
+            }
+          },
+          "ranking_points": 2.8651,
+          "typical_points": 2.5166
+        }
+      },
+      "id": "00-0038359",
+      "name": "Xavier Smith",
+      "position": "WR",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 2.1045,
+          "history_points": 2.2125,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -5.4263,
+              "overall_rank": 250,
+              "position_rank": 54
+            },
+            "superflex": {
+              "lineup_value": -5.4263,
+              "overall_rank": 252,
+              "position_rank": 54
+            }
+          },
+          "ranking_points": 2.1207,
+          "typical_points": 1.8533
+        },
+        "non_ppr": {
+          "expected_points": 1.5744,
+          "history_points": 1.4625,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -4.3033,
+              "overall_rank": 250,
+              "position_rank": 55
+            },
+            "superflex": {
+              "lineup_value": -4.3033,
+              "overall_rank": 254,
+              "position_rank": 55
+            }
+          },
+          "ranking_points": 1.5576,
+          "typical_points": 1.2513
+        },
+        "ppr": {
+          "expected_points": 2.6347,
+          "history_points": 2.9625,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -6.4509,
+              "overall_rank": 261,
+              "position_rank": 54
+            },
+            "superflex": {
+              "lineup_value": -6.4509,
+              "overall_rank": 262,
+              "position_rank": 54
+            }
+          },
+          "ranking_points": 2.6839,
+          "typical_points": 2.4413
+        }
+      },
+      "id": "00-0039074",
+      "name": "Davis Allen",
+      "position": "TE",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 15.7383,
+          "history_points": 20.45,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 7.7555,
+              "overall_rank": 7,
+              "position_rank": 1
+            },
+            "superflex": {
+              "lineup_value": 7.7555,
+              "overall_rank": 7,
+              "position_rank": 1
+            }
+          },
+          "ranking_points": 16.445,
+          "typical_points": 15.3295
+        },
+        "non_ppr": {
+          "expected_points": 12.5623,
+          "history_points": 16.6375,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 6.2159,
+              "overall_rank": 10,
+              "position_rank": 1
+            },
+            "superflex": {
+              "lineup_value": 6.2159,
+              "overall_rank": 11,
+              "position_rank": 1
+            }
+          },
+          "ranking_points": 13.1736,
+          "typical_points": 12.0321
+        },
+        "ppr": {
+          "expected_points": 18.9142,
+          "history_points": 24.2625,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 9.7451,
+              "overall_rank": 6,
+              "position_rank": 1
+            },
+            "superflex": {
+              "lineup_value": 9.7451,
+              "overall_rank": 6,
+              "position_rank": 1
+            }
+          },
+          "ranking_points": 19.7164,
+          "typical_points": 18.5986
+        }
+      },
+      "id": "00-0039075",
+      "name": "Puka Nacua",
+      "position": "WR",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 0.3301,
+          "history_points": 1.42,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -15.9118,
+              "overall_rank": 474,
+              "position_rank": 61
+            },
+            "superflex": {
+              "lineup_value": -13.089,
+              "overall_rank": 474,
+              "position_rank": 61
+            }
+          },
+          "ranking_points": 0.4936,
+          "typical_points": 0.3092
+        },
+        "non_ppr": {
+          "expected_points": 0.3301,
+          "history_points": 1.42,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -15.9118,
+              "overall_rank": 474,
+              "position_rank": 61
+            },
+            "superflex": {
+              "lineup_value": -13.089,
+              "overall_rank": 474,
+              "position_rank": 61
+            }
+          },
+          "ranking_points": 0.4936,
+          "typical_points": 0.3091
+        },
+        "ppr": {
+          "expected_points": 0.3301,
+          "history_points": 1.42,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -15.9118,
+              "overall_rank": 474,
+              "position_rank": 61
+            },
+            "superflex": {
+              "lineup_value": -13.089,
+              "overall_rank": 474,
+              "position_rank": 61
+            }
+          },
+          "ranking_points": 0.4936,
+          "typical_points": 0.3092
+        }
+      },
+      "id": "00-0039107",
+      "name": "Stetson Bennett",
+      "position": "QB",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 8.5622,
+          "history_points": 14.475,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 0.7596,
+              "overall_rank": 61,
+              "position_rank": 19
+            },
+            "superflex": {
+              "lineup_value": 0.7596,
+              "overall_rank": 75,
+              "position_rank": 19
+            }
+          },
+          "ranking_points": 9.4491,
+          "typical_points": 8.2422
+        },
+        "non_ppr": {
+          "expected_points": 6.6425,
+          "history_points": 11.7875,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 0.4566,
+              "overall_rank": 74,
+              "position_rank": 20
+            },
+            "superflex": {
+              "lineup_value": 0.4566,
+              "overall_rank": 87,
+              "position_rank": 20
+            }
+          },
+          "ranking_points": 7.4143,
+          "typical_points": 6.1978
+        },
+        "ppr": {
+          "expected_points": 10.4818,
+          "history_points": 17.1625,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 1.5126,
+              "overall_rank": 56,
+              "position_rank": 19
+            },
+            "superflex": {
+              "lineup_value": 1.5126,
+              "overall_rank": 66,
+              "position_rank": 19
+            }
+          },
+          "ranking_points": 11.4839,
+          "typical_points": 10.2468
+        }
+      },
+      "id": "00-0039337",
+      "name": "Malik Nabers",
+      "position": "WR",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 6.2677,
+          "history_points": 11.9625,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -1.5803,
+              "overall_rank": 121,
+              "position_rank": 40
+            },
+            "superflex": {
+              "lineup_value": -1.5803,
+              "overall_rank": 130,
+              "position_rank": 40
+            }
+          },
+          "ranking_points": 7.122,
+          "typical_points": 5.7757
+        },
+        "non_ppr": {
+          "expected_points": 5.7039,
+          "history_points": 10.5875,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -0.4647,
+              "overall_rank": 101,
+              "position_rank": 40
+            },
+            "superflex": {
+              "lineup_value": -0.4647,
+              "overall_rank": 116,
+              "position_rank": 40
+            }
+          },
+          "ranking_points": 6.4365,
+          "typical_points": 5.1299
+        },
+        "ppr": {
+          "expected_points": 6.8315,
+          "history_points": 13.3375,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -1.7958,
+              "overall_rank": 133,
+              "position_rank": 41
+            },
+            "superflex": {
+              "lineup_value": -1.7958,
+              "overall_rank": 139,
+              "position_rank": 41
+            }
+          },
+          "ranking_points": 7.8074,
+          "typical_points": 6.4246
+        }
+      },
+      "id": "00-0039384",
+      "name": "Tyrone Tracy Jr.",
+      "position": "RB",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 7.9794,
+          "history_points": 10.3,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -0.3748,
+              "overall_rank": 92,
+              "position_rank": 34
+            },
+            "superflex": {
+              "lineup_value": -0.3748,
+              "overall_rank": 106,
+              "position_rank": 34
+            }
+          },
+          "ranking_points": 8.3274,
+          "typical_points": 7.4369
+        },
+        "non_ppr": {
+          "expected_points": 7.7462,
+          "history_points": 10.1125,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 1.2,
+              "overall_rank": 58,
+              "position_rank": 31
+            },
+            "superflex": {
+              "lineup_value": 1.2,
+              "overall_rank": 69,
+              "position_rank": 31
+            }
+          },
+          "ranking_points": 8.1011,
+          "typical_points": 7.1613
+        },
+        "ppr": {
+          "expected_points": 8.2125,
+          "history_points": 10.4875,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -1.0495,
+              "overall_rank": 111,
+              "position_rank": 38
+            },
+            "superflex": {
+              "lineup_value": -1.0495,
+              "overall_rank": 124,
+              "position_rank": 38
+            }
+          },
+          "ranking_points": 8.5538,
+          "typical_points": 7.7373
+        }
+      },
+      "id": "00-0039738",
+      "name": "Blake Corum",
+      "position": "RB",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 1.4041,
+          "history_points": 0.9875,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -7.3479,
+              "overall_rank": 353,
+              "position_rank": 132
+            },
+            "superflex": {
+              "lineup_value": -7.3479,
+              "overall_rank": 353,
+              "position_rank": 132
+            }
+          },
+          "ranking_points": 1.3416,
+          "typical_points": 1.307
+        },
+        "non_ppr": {
+          "expected_points": 1.0576,
+          "history_points": 0.6125,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -5.9668,
+              "overall_rank": 377,
+              "position_rank": 133
+            },
+            "superflex": {
+              "lineup_value": -5.9668,
+              "overall_rank": 378,
+              "position_rank": 133
+            }
+          },
+          "ranking_points": 0.9908,
+          "typical_points": 0.9215
+        },
+        "ppr": {
+          "expected_points": 1.7506,
+          "history_points": 1.3625,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -8.2789,
+              "overall_rank": 340,
+              "position_rank": 128
+            },
+            "superflex": {
+              "lineup_value": -8.2789,
+              "overall_rank": 340,
+              "position_rank": 128
+            }
+          },
+          "ranking_points": 1.6924,
+          "typical_points": 1.6819
+        }
+      },
+      "id": "00-0039751",
+      "name": "Jordan Whittington",
+      "position": "WR",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 3.7959,
+          "history_points": 6.25,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -3.383,
+              "overall_rank": 179,
+              "position_rank": 36
+            },
+            "superflex": {
+              "lineup_value": -3.383,
+              "overall_rank": 182,
+              "position_rank": 36
+            }
+          },
+          "ranking_points": 4.1641,
+          "typical_points": 3.4589
+        },
+        "non_ppr": {
+          "expected_points": 2.9159,
+          "history_points": 4.8125,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -2.6605,
+              "overall_rank": 175,
+              "position_rank": 34
+            },
+            "superflex": {
+              "lineup_value": -2.6605,
+              "overall_rank": 181,
+              "position_rank": 34
+            }
+          },
+          "ranking_points": 3.2004,
+          "typical_points": 2.4568
+        },
+        "ppr": {
+          "expected_points": 4.676,
+          "history_points": 7.6875,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -4.0071,
+              "overall_rank": 188,
+              "position_rank": 38
+            },
+            "superflex": {
+              "lineup_value": -4.0071,
+              "overall_rank": 192,
+              "position_rank": 38
+            }
+          },
+          "ranking_points": 5.1277,
+          "typical_points": 4.4276
+        }
+      },
+      "id": "00-0039847",
+      "name": "Theo Johnson",
+      "position": "TE",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 0.0,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -7.5471,
+              "overall_rank": 380,
+              "position_rank": 120
+            },
+            "superflex": {
+              "lineup_value": -7.5471,
+              "overall_rank": 380,
+              "position_rank": 120
+            }
+          },
+          "ranking_points": 0.0,
+          "typical_points": 0.0
+        },
+        "non_ppr": {
+          "expected_points": 0.0,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -5.8609,
+              "overall_rank": 370,
+              "position_rank": 120
+            },
+            "superflex": {
+              "lineup_value": -5.8609,
+              "overall_rank": 371,
+              "position_rank": 120
+            }
+          },
+          "ranking_points": 0.0,
+          "typical_points": 0.0
+        },
+        "ppr": {
+          "expected_points": 0.0,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -9.1348,
+              "overall_rank": 411,
+              "position_rank": 120
+            },
+            "superflex": {
+              "lineup_value": -9.1348,
+              "overall_rank": 411,
+              "position_rank": 120
+            }
+          },
+          "ranking_points": 0.0,
+          "typical_points": 0.0
+        }
+      },
+      "id": "00-0040225",
+      "name": "Thomas Fidone II",
+      "position": "TE",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 1.9702,
+          "history_points": 1.5,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -6.7899,
+              "overall_rank": 321,
+              "position_rank": 119
+            },
+            "superflex": {
+              "lineup_value": -6.7899,
+              "overall_rank": 321,
+              "position_rank": 119
+            }
+          },
+          "ranking_points": 1.8997,
+          "typical_points": 1.8023
+        },
+        "non_ppr": {
+          "expected_points": 1.5486,
+          "history_points": 1.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -5.4913,
+              "overall_rank": 325,
+              "position_rank": 121
+            },
+            "superflex": {
+              "lineup_value": -5.4913,
+              "overall_rank": 327,
+              "position_rank": 121
+            }
+          },
+          "ranking_points": 1.4663,
+          "typical_points": 1.3123
+        },
+        "ppr": {
+          "expected_points": 2.3918,
+          "history_points": 2.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -7.6383,
+              "overall_rank": 306,
+              "position_rank": 118
+            },
+            "superflex": {
+              "lineup_value": -7.6383,
+              "overall_rank": 306,
+              "position_rank": 118
+            }
+          },
+          "ranking_points": 2.333,
+          "typical_points": 2.2727
+        }
+      },
+      "id": "00-0040590",
+      "name": "Konata Mumpfield",
+      "position": "WR",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 15.7419,
+          "history_points": 20.165,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 0.0,
+              "overall_rank": 85,
+              "position_rank": 13
+            },
+            "superflex": {
+              "lineup_value": 2.8228,
+              "overall_rank": 42,
+              "position_rank": 13
+            }
+          },
+          "ranking_points": 16.4054,
+          "typical_points": 15.2906
+        },
+        "non_ppr": {
+          "expected_points": 15.7419,
+          "history_points": 20.165,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 0.0,
+              "overall_rank": 85,
+              "position_rank": 13
+            },
+            "superflex": {
+              "lineup_value": 2.8228,
+              "overall_rank": 43,
+              "position_rank": 13
+            }
+          },
+          "ranking_points": 16.4054,
+          "typical_points": 15.2904
+        },
+        "ppr": {
+          "expected_points": 15.7419,
+          "history_points": 20.165,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 0.0,
+              "overall_rank": 85,
+              "position_rank": 13
+            },
+            "superflex": {
+              "lineup_value": 2.8228,
+              "overall_rank": 51,
+              "position_rank": 13
+            }
+          },
+          "ranking_points": 16.4054,
+          "typical_points": 15.2908
+        }
+      },
+      "id": "00-0040691",
+      "name": "Jaxson Dart",
+      "position": "QB",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 8.0127,
+          "history_points": 15.9875,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 0.5066,
+              "overall_rank": 71,
+              "position_rank": 28
+            },
+            "superflex": {
+              "lineup_value": 0.5066,
+              "overall_rank": 84,
+              "position_rank": 28
+            }
+          },
+          "ranking_points": 9.2089,
+          "typical_points": 7.4129
+        },
+        "non_ppr": {
+          "expected_points": 7.2861,
+          "history_points": 14.6125,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 1.4839,
+              "overall_rank": 52,
+              "position_rank": 29
+            },
+            "superflex": {
+              "lineup_value": 1.4839,
+              "overall_rank": 63,
+              "position_rank": 29
+            }
+          },
+          "ranking_points": 8.3851,
+          "typical_points": 6.6015
+        },
+        "ppr": {
+          "expected_points": 8.7392,
+          "history_points": 17.3625,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": 0.4295,
+              "overall_rank": 80,
+              "position_rank": 30
+            },
+            "superflex": {
+              "lineup_value": 0.4295,
+              "overall_rank": 93,
+              "position_rank": 30
+            }
+          },
+          "ranking_points": 10.0327,
+          "typical_points": 8.2288
+        }
+      },
+      "id": "00-0040715",
+      "name": "Cam Skattebo",
+      "position": "RB",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 2.9873,
+          "history_points": 3.0375,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -4.5522,
+              "overall_rank": 216,
+              "position_rank": 47
+            },
+            "superflex": {
+              "lineup_value": -4.5522,
+              "overall_rank": 220,
+              "position_rank": 47
+            }
+          },
+          "ranking_points": 2.9949,
+          "typical_points": 2.5872
+        },
+        "non_ppr": {
+          "expected_points": 2.4566,
+          "history_points": 2.6625,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -3.3734,
+              "overall_rank": 210,
+              "position_rank": 43
+            },
+            "superflex": {
+              "lineup_value": -3.3734,
+              "overall_rank": 213,
+              "position_rank": 43
+            }
+          },
+          "ranking_points": 2.4875,
+          "typical_points": 1.935
+        },
+        "ppr": {
+          "expected_points": 3.5181,
+          "history_points": 3.4125,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -5.6325,
+              "overall_rank": 237,
+              "position_rank": 47
+            },
+            "superflex": {
+              "lineup_value": -5.6325,
+              "overall_rank": 239,
+              "position_rank": 47
+            }
+          },
+          "ranking_points": 3.5023,
+          "typical_points": 3.2117
+        }
+      },
+      "id": "00-0040737",
+      "name": "Terrance Ferguson",
+      "position": "TE",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 4.7323,
+          "history_points": 3.5,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -4.1421,
+              "overall_rank": 203,
+              "position_rank": 77
+            },
+            "superflex": {
+              "lineup_value": -4.1421,
+              "overall_rank": 207,
+              "position_rank": 77
+            }
+          },
+          "ranking_points": 4.5474,
+          "typical_points": 4.5051
+        },
+        "non_ppr": {
+          "expected_points": 3.6583,
+          "history_points": 2.5,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -3.4731,
+              "overall_rank": 213,
+              "position_rank": 76
+            },
+            "superflex": {
+              "lineup_value": -3.4731,
+              "overall_rank": 216,
+              "position_rank": 76
+            }
+          },
+          "ranking_points": 3.4846,
+          "typical_points": 3.3374
+        },
+        "ppr": {
+          "expected_points": 5.8062,
+          "history_points": 4.5,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -4.361,
+              "overall_rank": 198,
+              "position_rank": 76
+            },
+            "superflex": {
+              "lineup_value": -4.361,
+              "overall_rank": 202,
+              "position_rank": 76
+            }
+          },
+          "ranking_points": 5.6103,
+          "typical_points": 5.6433
+        }
+      },
+      "id": "00-0041042",
+      "name": "Malachi Fields",
+      "position": "WR",
+      "team": "NYG"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 0.0,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -8.6896,
+              "overall_rank": 442,
+              "position_rank": 180
+            },
+            "superflex": {
+              "lineup_value": -8.6896,
+              "overall_rank": 442,
+              "position_rank": 180
+            }
+          },
+          "ranking_points": 0.0,
+          "typical_points": 0.0
+        },
+        "non_ppr": {
+          "expected_points": 0.0,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -6.9576,
+              "overall_rank": 445,
+              "position_rank": 180
+            },
+            "superflex": {
+              "lineup_value": -6.9576,
+              "overall_rank": 445,
+              "position_rank": 180
+            }
+          },
+          "ranking_points": 0.0,
+          "typical_points": 0.0
+        },
+        "ppr": {
+          "expected_points": 0.0,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -9.9713,
+              "overall_rank": 445,
+              "position_rank": 180
+            },
+            "superflex": {
+              "lineup_value": -9.9713,
+              "overall_rank": 445,
+              "position_rank": 180
+            }
+          },
+          "ranking_points": 0.0,
+          "typical_points": 0.0
+        }
+      },
+      "id": "00-0041399",
+      "name": "CJ Daniels",
+      "position": "WR",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 0.0,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -7.5471,
+              "overall_rank": 381,
+              "position_rank": 121
+            },
+            "superflex": {
+              "lineup_value": -7.5471,
+              "overall_rank": 381,
+              "position_rank": 121
+            }
+          },
+          "ranking_points": 0.0,
+          "typical_points": 0.0
+        },
+        "non_ppr": {
+          "expected_points": 0.0,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -5.8609,
+              "overall_rank": 371,
+              "position_rank": 121
+            },
+            "superflex": {
+              "lineup_value": -5.8609,
+              "overall_rank": 372,
+              "position_rank": 121
+            }
+          },
+          "ranking_points": 0.0,
+          "typical_points": 0.0
+        },
+        "ppr": {
+          "expected_points": 0.0,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -9.1348,
+              "overall_rank": 412,
+              "position_rank": 121
+            },
+            "superflex": {
+              "lineup_value": -9.1348,
+              "overall_rank": 412,
+              "position_rank": 121
+            }
+          },
+          "ranking_points": 0.0,
+          "typical_points": 0.0
+        }
+      },
+      "id": "00-0041510",
+      "name": "Max Klare",
+      "position": "TE",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
+          "expected_points": 0.0357,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -16.3697,
+              "overall_rank": 485,
+              "position_rank": 72
+            },
+            "superflex": {
+              "lineup_value": -13.5469,
+              "overall_rank": 485,
+              "position_rank": 72
+            }
+          },
+          "ranking_points": 0.0357,
+          "typical_points": 0.0334
+        },
+        "non_ppr": {
+          "expected_points": 0.0357,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -16.3697,
+              "overall_rank": 485,
+              "position_rank": 72
+            },
+            "superflex": {
+              "lineup_value": -13.5469,
+              "overall_rank": 485,
+              "position_rank": 72
+            }
+          },
+          "ranking_points": 0.0357,
+          "typical_points": 0.0334
+        },
+        "ppr": {
+          "expected_points": 0.0357,
+          "history_points": 0.0,
+          "leagues": {
+            "one_qb": {
+              "lineup_value": -16.3697,
+              "overall_rank": 485,
+              "position_rank": 72
+            },
+            "superflex": {
+              "lineup_value": -13.5469,
+              "overall_rank": 485,
+              "position_rank": 72
+            }
+          },
+          "ranking_points": 0.0357,
+          "typical_points": 0.0334
+        }
+      },
+      "id": "00-0041568",
+      "name": "Ty Simpson",
+      "position": "QB",
+      "team": "LAR"
+    },
+    {
+      "eligibility_reason": "Available roster identity",
+      "eligible": true,
+      "formats": {
+        "half_ppr": {
           "expected_points": 14.4521,
           "history_points": 12.9,
           "leagues": {
@@ -156,70 +2268,6 @@
       "name": "Joe Flacco",
       "position": "QB",
       "team": "CIN"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 19.2977,
-          "history_points": 19.1375,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 2.8683,
-              "overall_rank": 32,
-              "position_rank": 3
-            },
-            "superflex": {
-              "lineup_value": 5.6911,
-              "overall_rank": 15,
-              "position_rank": 3
-            }
-          },
-          "ranking_points": 19.2737,
-          "typical_points": 18.8356
-        },
-        "non_ppr": {
-          "expected_points": 19.2977,
-          "history_points": 19.1375,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 2.8683,
-              "overall_rank": 33,
-              "position_rank": 3
-            },
-            "superflex": {
-              "lineup_value": 5.6911,
-              "overall_rank": 14,
-              "position_rank": 3
-            }
-          },
-          "ranking_points": 19.2737,
-          "typical_points": 18.8355
-        },
-        "ppr": {
-          "expected_points": 19.2977,
-          "history_points": 19.1375,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 2.8683,
-              "overall_rank": 41,
-              "position_rank": 3
-            },
-            "superflex": {
-              "lineup_value": 5.6911,
-              "overall_rank": 17,
-              "position_rank": 3
-            }
-          },
-          "ranking_points": 19.2737,
-          "typical_points": 18.8358
-        }
-      },
-      "id": "00-0026498",
-      "name": "Matthew Stafford",
-      "position": "QB",
-      "team": "LAR"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -738,134 +2786,6 @@
       "eligible": true,
       "formats": {
         "half_ppr": {
-          "expected_points": 0.9286,
-          "history_points": 1.25,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -7.7127,
-              "overall_rank": 389,
-              "position_rank": 141
-            },
-            "superflex": {
-              "lineup_value": -7.7127,
-              "overall_rank": 389,
-              "position_rank": 141
-            }
-          },
-          "ranking_points": 0.9768,
-          "typical_points": 0.8516
-        },
-        "non_ppr": {
-          "expected_points": 0.7045,
-          "history_points": 0.6875,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -6.2557,
-              "overall_rank": 395,
-              "position_rank": 144
-            },
-            "superflex": {
-              "lineup_value": -6.2557,
-              "overall_rank": 396,
-              "position_rank": 144
-            }
-          },
-          "ranking_points": 0.7019,
-          "typical_points": 0.597
-        },
-        "ppr": {
-          "expected_points": 1.1527,
-          "history_points": 1.8125,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -8.7197,
-              "overall_rank": 369,
-              "position_rank": 140
-            },
-            "superflex": {
-              "lineup_value": -8.7197,
-              "overall_rank": 369,
-              "position_rank": 140
-            }
-          },
-          "ranking_points": 1.2517,
-          "typical_points": 1.0982
-        }
-      },
-      "id": "00-0031235",
-      "name": "Odell Beckham Jr.",
-      "position": "WR",
-      "team": "NYG"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 9.2881,
-          "history_points": 12.8,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 1.1253,
-              "overall_rank": 57,
-              "position_rank": 17
-            },
-            "superflex": {
-              "lineup_value": 1.1253,
-              "overall_rank": 67,
-              "position_rank": 17
-            }
-          },
-          "ranking_points": 9.8149,
-          "typical_points": 8.8109
-        },
-        "non_ppr": {
-          "expected_points": 7.5305,
-          "history_points": 10.8,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 1.0633,
-              "overall_rank": 62,
-              "position_rank": 18
-            },
-            "superflex": {
-              "lineup_value": 1.0633,
-              "overall_rank": 73,
-              "position_rank": 18
-            }
-          },
-          "ranking_points": 8.0209,
-          "typical_points": 6.8986
-        },
-        "ppr": {
-          "expected_points": 11.0457,
-          "history_points": 14.8,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 1.6375,
-              "overall_rank": 53,
-              "position_rank": 18
-            },
-            "superflex": {
-              "lineup_value": 1.6375,
-              "overall_rank": 64,
-              "position_rank": 18
-            }
-          },
-          "ranking_points": 11.6089,
-          "typical_points": 10.6823
-        }
-      },
-      "id": "00-0031381",
-      "name": "Davante Adams",
-      "position": "WR",
-      "team": "LAR"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
           "expected_points": 9.0632,
           "history_points": 9.5125,
           "leagues": {
@@ -924,134 +2844,6 @@
       "name": "Mike Evans",
       "position": "WR",
       "team": "SF"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 0.4974,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -7.1243,
-              "overall_rank": 334,
-              "position_rank": 95
-            },
-            "superflex": {
-              "lineup_value": -7.1243,
-              "overall_rank": 334,
-              "position_rank": 95
-            }
-          },
-          "ranking_points": 0.4228,
-          "typical_points": 0.4404
-        },
-        "non_ppr": {
-          "expected_points": 0.3639,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -5.5516,
-              "overall_rank": 331,
-              "position_rank": 95
-            },
-            "superflex": {
-              "lineup_value": -5.5516,
-              "overall_rank": 333,
-              "position_rank": 95
-            }
-          },
-          "ranking_points": 0.3093,
-          "typical_points": 0.2964
-        },
-        "ppr": {
-          "expected_points": 0.6308,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -8.5986,
-              "overall_rank": 364,
-              "position_rank": 94
-            },
-            "superflex": {
-              "lineup_value": -8.5986,
-              "overall_rank": 364,
-              "position_rank": 94
-            }
-          },
-          "ranking_points": 0.5362,
-          "typical_points": 0.583
-        }
-      },
-      "id": "00-0031484",
-      "name": "Chris Manhertz",
-      "position": "TE",
-      "team": "NYG"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 0.3385,
-          "history_points": 16.3425,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -13.6663,
-              "overall_rank": 446,
-              "position_rank": 33
-            },
-            "superflex": {
-              "lineup_value": -10.8435,
-              "overall_rank": 446,
-              "position_rank": 33
-            }
-          },
-          "ranking_points": 2.7391,
-          "typical_points": 0.3186
-        },
-        "non_ppr": {
-          "expected_points": 0.3029,
-          "history_points": 16.28,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -13.7059,
-              "overall_rank": 446,
-              "position_rank": 33
-            },
-            "superflex": {
-              "lineup_value": -10.8831,
-              "overall_rank": 446,
-              "position_rank": 33
-            }
-          },
-          "ranking_points": 2.6995,
-          "typical_points": 0.283
-        },
-        "ppr": {
-          "expected_points": 0.374,
-          "history_points": 16.405,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -13.6267,
-              "overall_rank": 446,
-              "position_rank": 33
-            },
-            "superflex": {
-              "lineup_value": -10.8039,
-              "overall_rank": 446,
-              "position_rank": 33
-            }
-          },
-          "ranking_points": 2.7787,
-          "typical_points": 0.3542
-        }
-      },
-      "id": "00-0031503",
-      "name": "Jameis Winston",
-      "position": "QB",
-      "team": "NYG"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -1954,70 +3746,6 @@
       "eligible": true,
       "formats": {
         "half_ppr": {
-          "expected_points": 3.8266,
-          "history_points": 6.6375,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -3.2989,
-              "overall_rank": 176,
-              "position_rank": 34
-            },
-            "superflex": {
-              "lineup_value": -3.2989,
-              "overall_rank": 179,
-              "position_rank": 34
-            }
-          },
-          "ranking_points": 4.2482,
-          "typical_points": 3.4611
-        },
-        "non_ppr": {
-          "expected_points": 2.8909,
-          "history_points": 5.2,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -2.6236,
-              "overall_rank": 174,
-              "position_rank": 33
-            },
-            "superflex": {
-              "lineup_value": -2.6236,
-              "overall_rank": 180,
-              "position_rank": 33
-            }
-          },
-          "ranking_points": 3.2373,
-          "typical_points": 2.3874
-        },
-        "ppr": {
-          "expected_points": 4.7622,
-          "history_points": 8.075,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -3.8756,
-              "overall_rank": 182,
-              "position_rank": 35
-            },
-            "superflex": {
-              "lineup_value": -3.8756,
-              "overall_rank": 186,
-              "position_rank": 35
-            }
-          },
-          "ranking_points": 5.2591,
-          "typical_points": 4.4949
-        }
-      },
-      "id": "00-0033110",
-      "name": "Tyler Higbee",
-      "position": "TE",
-      "team": "LAR"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
           "expected_points": 17.6098,
           "history_points": 17.14,
           "leagues": {
@@ -2460,70 +4188,6 @@
       "name": "Kendrick Bourne",
       "position": "WR",
       "team": "ARI"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 0.9712,
-          "history_points": 0.4375,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -7.8111,
-              "overall_rank": 397,
-              "position_rank": 99
-            },
-            "superflex": {
-              "lineup_value": -7.8111,
-              "overall_rank": 397,
-              "position_rank": 99
-            }
-          },
-          "ranking_points": 0.8912,
-          "typical_points": 0.8627
-        },
-        "non_ppr": {
-          "expected_points": 0.6676,
-          "history_points": 0.3125,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -6.2868,
-              "overall_rank": 397,
-              "position_rank": 100
-            },
-            "superflex": {
-              "lineup_value": -6.2868,
-              "overall_rank": 398,
-              "position_rank": 100
-            }
-          },
-          "ranking_points": 0.6144,
-          "typical_points": 0.5257
-        },
-        "ppr": {
-          "expected_points": 1.2748,
-          "history_points": 0.5625,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -8.4352,
-              "overall_rank": 353,
-              "position_rank": 96
-            },
-            "superflex": {
-              "lineup_value": -8.4352,
-              "overall_rank": 353,
-              "position_rank": 96
-            }
-          },
-          "ranking_points": 1.168,
-          "typical_points": 1.1939
-        }
-      },
-      "id": "00-0033376",
-      "name": "Patrick Ricard",
-      "position": "RB",
-      "team": "NYG"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -4907,70 +6571,6 @@
       "eligible": true,
       "formats": {
         "half_ppr": {
-          "expected_points": 6.1081,
-          "history_points": 10.5,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -1.9354,
-              "overall_rank": 134,
-              "position_rank": 43
-            },
-            "superflex": {
-              "lineup_value": -1.9354,
-              "overall_rank": 140,
-              "position_rank": 43
-            }
-          },
-          "ranking_points": 6.7669,
-          "typical_points": 5.5858
-        },
-        "non_ppr": {
-          "expected_points": 5.2253,
-          "history_points": 9.625,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -1.0159,
-              "overall_rank": 112,
-              "position_rank": 45
-            },
-            "superflex": {
-              "lineup_value": -1.0159,
-              "overall_rank": 125,
-              "position_rank": 45
-            }
-          },
-          "ranking_points": 5.8852,
-          "typical_points": 4.5798
-        },
-        "ppr": {
-          "expected_points": 6.991,
-          "history_points": 11.375,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -1.9546,
-              "overall_rank": 136,
-              "position_rank": 43
-            },
-            "superflex": {
-              "lineup_value": -1.9546,
-              "overall_rank": 142,
-              "position_rank": 43
-            }
-          },
-          "ranking_points": 7.6486,
-          "typical_points": 6.5712
-        }
-      },
-      "id": "00-0035250",
-      "name": "Devin Singletary",
-      "position": "RB",
-      "team": "NYG"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
           "expected_points": 10.2432,
           "history_points": 11.1625,
           "leagues": {
@@ -6315,70 +7915,6 @@
       "eligible": true,
       "formats": {
         "half_ppr": {
-          "expected_points": 6.5595,
-          "history_points": 9.95,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -0.479,
-              "overall_rank": 95,
-              "position_rank": 16
-            },
-            "superflex": {
-              "lineup_value": -0.479,
-              "overall_rank": 110,
-              "position_rank": 16
-            }
-          },
-          "ranking_points": 7.0681,
-          "typical_points": 6.0422
-        },
-        "non_ppr": {
-          "expected_points": 5.0661,
-          "history_points": 8.1375,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -0.3341,
-              "overall_rank": 95,
-              "position_rank": 16
-            },
-            "superflex": {
-              "lineup_value": -0.3341,
-              "overall_rank": 109,
-              "position_rank": 16
-            }
-          },
-          "ranking_points": 5.5268,
-          "typical_points": 4.3158
-        },
-        "ppr": {
-          "expected_points": 8.0529,
-          "history_points": 11.7625,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -0.5254,
-              "overall_rank": 100,
-              "position_rank": 16
-            },
-            "superflex": {
-              "lineup_value": -0.5254,
-              "overall_rank": 114,
-              "position_rank": 16
-            }
-          },
-          "ranking_points": 8.6093,
-          "typical_points": 7.68
-        }
-      },
-      "id": "00-0036244",
-      "name": "Colby Parkinson",
-      "position": "TE",
-      "team": "LAR"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
           "expected_points": 6.6703,
           "history_points": 5.8375,
           "leagues": {
@@ -6757,70 +8293,6 @@
       "name": "Cole Kmet",
       "position": "TE",
       "team": "CHI"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 3.6206,
-          "history_points": 4.95,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -4.8695,
-              "overall_rank": 225,
-              "position_rank": 85
-            },
-            "superflex": {
-              "lineup_value": -4.8695,
-              "overall_rank": 228,
-              "position_rank": 85
-            }
-          },
-          "ranking_points": 3.82,
-          "typical_points": 3.4141
-        },
-        "non_ppr": {
-          "expected_points": 2.8641,
-          "history_points": 3.825,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -3.9494,
-              "overall_rank": 231,
-              "position_rank": 86
-            },
-            "superflex": {
-              "lineup_value": -3.9494,
-              "overall_rank": 235,
-              "position_rank": 86
-            }
-          },
-          "ranking_points": 3.0082,
-          "typical_points": 2.5738
-        },
-        "ppr": {
-          "expected_points": 4.3772,
-          "history_points": 6.075,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -5.3395,
-              "overall_rank": 225,
-              "position_rank": 85
-            },
-            "superflex": {
-              "lineup_value": -5.3395,
-              "overall_rank": 227,
-              "position_rank": 85
-            }
-          },
-          "ranking_points": 4.6319,
-          "typical_points": 4.2293
-        }
-      },
-      "id": "00-0036309",
-      "name": "Darnell Mooney",
-      "position": "WR",
-      "team": "NYG"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -8427,70 +9899,6 @@
       "eligible": true,
       "formats": {
         "half_ppr": {
-          "expected_points": 1.9674,
-          "history_points": 3.4125,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -6.5054,
-              "overall_rank": 299,
-              "position_rank": 113
-            },
-            "superflex": {
-              "lineup_value": -6.5054,
-              "overall_rank": 300,
-              "position_rank": 113
-            }
-          },
-          "ranking_points": 2.1841,
-          "typical_points": 1.8377
-        },
-        "non_ppr": {
-          "expected_points": 1.6005,
-          "history_points": 3.1,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -5.1322,
-              "overall_rank": 302,
-              "position_rank": 112
-            },
-            "superflex": {
-              "lineup_value": -5.1322,
-              "overall_rank": 305,
-              "position_rank": 112
-            }
-          },
-          "ranking_points": 1.8254,
-          "typical_points": 1.4199
-        },
-        "ppr": {
-          "expected_points": 2.3343,
-          "history_points": 3.725,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -7.4285,
-              "overall_rank": 301,
-              "position_rank": 116
-            },
-            "superflex": {
-              "lineup_value": -7.4285,
-              "overall_rank": 301,
-              "position_rank": 116
-            }
-          },
-          "ranking_points": 2.5429,
-          "typical_points": 2.2419
-        }
-      },
-      "id": "00-0036849",
-      "name": "Tutu Atwell",
-      "position": "WR",
-      "team": "LAR"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
           "expected_points": 0.4447,
           "history_points": 0.55,
           "leagues": {
@@ -8805,70 +10213,6 @@
       "name": "Luke Farrell",
       "position": "TE",
       "team": "SF"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 5.7249,
-          "history_points": 6.3625,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -2.8817,
-              "overall_rank": 162,
-              "position_rank": 49
-            },
-            "superflex": {
-              "lineup_value": -2.8817,
-              "overall_rank": 166,
-              "position_rank": 49
-            }
-          },
-          "ranking_points": 5.8205,
-          "typical_points": 5.1713
-        },
-        "non_ppr": {
-          "expected_points": 5.185,
-          "history_points": 5.7375,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -1.6332,
-              "overall_rank": 131,
-              "position_rank": 48
-            },
-            "superflex": {
-              "lineup_value": -1.6332,
-              "overall_rank": 140,
-              "position_rank": 48
-            }
-          },
-          "ranking_points": 5.2679,
-          "typical_points": 4.5227
-        },
-        "ppr": {
-          "expected_points": 6.2647,
-          "history_points": 6.9875,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -3.2301,
-              "overall_rank": 168,
-              "position_rank": 49
-            },
-            "superflex": {
-              "lineup_value": -3.2301,
-              "overall_rank": 171,
-              "position_rank": 49
-            }
-          },
-          "ranking_points": 6.3732,
-          "typical_points": 5.8146
-        }
-      },
-      "id": "00-0036893",
-      "name": "Najee Harris",
-      "position": "RB",
-      "team": "NYG"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -11179,70 +12523,6 @@
       "eligible": true,
       "formats": {
         "half_ppr": {
-          "expected_points": 2.3213,
-          "history_points": 0.9375,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -6.5886,
-              "overall_rank": 309,
-              "position_rank": 79
-            },
-            "superflex": {
-              "lineup_value": -6.5886,
-              "overall_rank": 309,
-              "position_rank": 79
-            }
-          },
-          "ranking_points": 2.1137,
-          "typical_points": 2.0488
-        },
-        "non_ppr": {
-          "expected_points": 2.1035,
-          "history_points": 0.875,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -4.9819,
-              "overall_rank": 289,
-              "position_rank": 78
-            },
-            "superflex": {
-              "lineup_value": -4.9819,
-              "overall_rank": 292,
-              "position_rank": 78
-            }
-          },
-          "ranking_points": 1.9192,
-          "typical_points": 1.7668
-        },
-        "ppr": {
-          "expected_points": 2.539,
-          "history_points": 1.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -7.2951,
-              "overall_rank": 291,
-              "position_rank": 80
-            },
-            "superflex": {
-              "lineup_value": -7.2951,
-              "overall_rank": 291,
-              "position_rank": 80
-            }
-          },
-          "ranking_points": 2.3082,
-          "typical_points": 2.3279
-        }
-      },
-      "id": "00-0037557",
-      "name": "Ronnie Rivers",
-      "position": "RB",
-      "team": "LAR"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
           "expected_points": 0.2462,
           "history_points": 0.05,
           "leagues": {
@@ -12203,134 +13483,6 @@
       "eligible": true,
       "formats": {
         "half_ppr": {
-          "expected_points": 5.1893,
-          "history_points": 6.775,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -2.1199,
-              "overall_rank": 140,
-              "position_rank": 25
-            },
-            "superflex": {
-              "lineup_value": -2.1199,
-              "overall_rank": 146,
-              "position_rank": 25
-            }
-          },
-          "ranking_points": 5.4272,
-          "typical_points": 4.8368
-        },
-        "non_ppr": {
-          "expected_points": 3.8699,
-          "history_points": 5.3375,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -1.7708,
-              "overall_rank": 138,
-              "position_rank": 23
-            },
-            "superflex": {
-              "lineup_value": -1.7708,
-              "overall_rank": 146,
-              "position_rank": 23
-            }
-          },
-          "ranking_points": 4.0901,
-          "typical_points": 3.3663
-        },
-        "ppr": {
-          "expected_points": 6.5087,
-          "history_points": 8.2125,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -2.3705,
-              "overall_rank": 148,
-              "position_rank": 25
-            },
-            "superflex": {
-              "lineup_value": -2.3705,
-              "overall_rank": 153,
-              "position_rank": 25
-            }
-          },
-          "ranking_points": 6.7643,
-          "typical_points": 6.257
-        }
-      },
-      "id": "00-0037838",
-      "name": "Isaiah Likely",
-      "position": "TE",
-      "team": "NYG"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 13.7307,
-          "history_points": 13.075,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 4.93,
-              "overall_rank": 15,
-              "position_rank": 11
-            },
-            "superflex": {
-              "lineup_value": 4.93,
-              "overall_rank": 21,
-              "position_rank": 11
-            }
-          },
-          "ranking_points": 13.6323,
-          "typical_points": 13.1696
-        },
-        "non_ppr": {
-          "expected_points": 12.6007,
-          "history_points": 12.075,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 5.6207,
-              "overall_rank": 12,
-              "position_rank": 11
-            },
-            "superflex": {
-              "lineup_value": 5.6207,
-              "overall_rank": 15,
-              "position_rank": 11
-            }
-          },
-          "ranking_points": 12.5218,
-          "typical_points": 12.0042
-        },
-        "ppr": {
-          "expected_points": 14.8607,
-          "history_points": 14.075,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 5.1396,
-              "overall_rank": 17,
-              "position_rank": 11
-            },
-            "superflex": {
-              "lineup_value": 5.1396,
-              "overall_rank": 23,
-              "position_rank": 11
-            }
-          },
-          "ranking_points": 14.7428,
-          "typical_points": 14.3503
-        }
-      },
-      "id": "00-0037840",
-      "name": "Kyren Williams",
-      "position": "RB",
-      "team": "LAR"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
           "expected_points": 4.6817,
           "history_points": 4.8375,
           "leagues": {
@@ -13093,70 +14245,6 @@
       "name": "Kenneth Walker III",
       "position": "RB",
       "team": "KC"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 2.1603,
-          "history_points": 3.575,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -6.3171,
-              "overall_rank": 292,
-              "position_rank": 111
-            },
-            "superflex": {
-              "lineup_value": -6.3171,
-              "overall_rank": 293,
-              "position_rank": 111
-            }
-          },
-          "ranking_points": 2.3725,
-          "typical_points": 2.0327
-        },
-        "non_ppr": {
-          "expected_points": 1.7131,
-          "history_points": 2.825,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -5.0777,
-              "overall_rank": 295,
-              "position_rank": 110
-            },
-            "superflex": {
-              "lineup_value": -5.0777,
-              "overall_rank": 298,
-              "position_rank": 110
-            }
-          },
-          "ranking_points": 1.8799,
-          "typical_points": 1.5349
-        },
-        "ppr": {
-          "expected_points": 2.6074,
-          "history_points": 4.325,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -7.1063,
-              "overall_rank": 286,
-              "position_rank": 111
-            },
-            "superflex": {
-              "lineup_value": -7.1063,
-              "overall_rank": 286,
-              "position_rank": 111
-            }
-          },
-          "ranking_points": 2.8651,
-          "typical_points": 2.5166
-        }
-      },
-      "id": "00-0038359",
-      "name": "Xavier Smith",
-      "position": "WR",
-      "team": "LAR"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -16747,198 +17835,6 @@
       "eligible": true,
       "formats": {
         "half_ppr": {
-          "expected_points": 2.1045,
-          "history_points": 2.2125,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -5.4263,
-              "overall_rank": 250,
-              "position_rank": 54
-            },
-            "superflex": {
-              "lineup_value": -5.4263,
-              "overall_rank": 252,
-              "position_rank": 54
-            }
-          },
-          "ranking_points": 2.1207,
-          "typical_points": 1.8533
-        },
-        "non_ppr": {
-          "expected_points": 1.5744,
-          "history_points": 1.4625,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -4.3033,
-              "overall_rank": 250,
-              "position_rank": 55
-            },
-            "superflex": {
-              "lineup_value": -4.3033,
-              "overall_rank": 254,
-              "position_rank": 55
-            }
-          },
-          "ranking_points": 1.5576,
-          "typical_points": 1.2513
-        },
-        "ppr": {
-          "expected_points": 2.6347,
-          "history_points": 2.9625,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -6.4509,
-              "overall_rank": 261,
-              "position_rank": 54
-            },
-            "superflex": {
-              "lineup_value": -6.4509,
-              "overall_rank": 262,
-              "position_rank": 54
-            }
-          },
-          "ranking_points": 2.6839,
-          "typical_points": 2.4413
-        }
-      },
-      "id": "00-0039074",
-      "name": "Davis Allen",
-      "position": "TE",
-      "team": "LAR"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 15.7383,
-          "history_points": 20.45,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 7.7555,
-              "overall_rank": 7,
-              "position_rank": 1
-            },
-            "superflex": {
-              "lineup_value": 7.7555,
-              "overall_rank": 7,
-              "position_rank": 1
-            }
-          },
-          "ranking_points": 16.445,
-          "typical_points": 15.3295
-        },
-        "non_ppr": {
-          "expected_points": 12.5623,
-          "history_points": 16.6375,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 6.2159,
-              "overall_rank": 10,
-              "position_rank": 1
-            },
-            "superflex": {
-              "lineup_value": 6.2159,
-              "overall_rank": 11,
-              "position_rank": 1
-            }
-          },
-          "ranking_points": 13.1736,
-          "typical_points": 12.0321
-        },
-        "ppr": {
-          "expected_points": 18.9142,
-          "history_points": 24.2625,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 9.7451,
-              "overall_rank": 6,
-              "position_rank": 1
-            },
-            "superflex": {
-              "lineup_value": 9.7451,
-              "overall_rank": 6,
-              "position_rank": 1
-            }
-          },
-          "ranking_points": 19.7164,
-          "typical_points": 18.5986
-        }
-      },
-      "id": "00-0039075",
-      "name": "Puka Nacua",
-      "position": "WR",
-      "team": "LAR"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 0.3301,
-          "history_points": 1.42,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -15.9118,
-              "overall_rank": 474,
-              "position_rank": 61
-            },
-            "superflex": {
-              "lineup_value": -13.089,
-              "overall_rank": 474,
-              "position_rank": 61
-            }
-          },
-          "ranking_points": 0.4936,
-          "typical_points": 0.3092
-        },
-        "non_ppr": {
-          "expected_points": 0.3301,
-          "history_points": 1.42,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -15.9118,
-              "overall_rank": 474,
-              "position_rank": 61
-            },
-            "superflex": {
-              "lineup_value": -13.089,
-              "overall_rank": 474,
-              "position_rank": 61
-            }
-          },
-          "ranking_points": 0.4936,
-          "typical_points": 0.3091
-        },
-        "ppr": {
-          "expected_points": 0.3301,
-          "history_points": 1.42,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -15.9118,
-              "overall_rank": 474,
-              "position_rank": 61
-            },
-            "superflex": {
-              "lineup_value": -13.089,
-              "overall_rank": 474,
-              "position_rank": 61
-            }
-          },
-          "ranking_points": 0.4936,
-          "typical_points": 0.3092
-        }
-      },
-      "id": "00-0039107",
-      "name": "Stetson Bennett",
-      "position": "QB",
-      "team": "LAR"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
           "expected_points": 5.19,
           "history_points": 5.3125,
           "leagues": {
@@ -17253,70 +18149,6 @@
       "name": "George Holani",
       "position": "RB",
       "team": "SEA"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 8.5622,
-          "history_points": 14.475,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 0.7596,
-              "overall_rank": 61,
-              "position_rank": 19
-            },
-            "superflex": {
-              "lineup_value": 0.7596,
-              "overall_rank": 75,
-              "position_rank": 19
-            }
-          },
-          "ranking_points": 9.4491,
-          "typical_points": 8.2422
-        },
-        "non_ppr": {
-          "expected_points": 6.6425,
-          "history_points": 11.7875,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 0.4566,
-              "overall_rank": 74,
-              "position_rank": 20
-            },
-            "superflex": {
-              "lineup_value": 0.4566,
-              "overall_rank": 87,
-              "position_rank": 20
-            }
-          },
-          "ranking_points": 7.4143,
-          "typical_points": 6.1978
-        },
-        "ppr": {
-          "expected_points": 10.4818,
-          "history_points": 17.1625,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 1.5126,
-              "overall_rank": 56,
-              "position_rank": 19
-            },
-            "superflex": {
-              "lineup_value": 1.5126,
-              "overall_rank": 66,
-              "position_rank": 19
-            }
-          },
-          "ranking_points": 11.4839,
-          "typical_points": 10.2468
-        }
-      },
-      "id": "00-0039337",
-      "name": "Malik Nabers",
-      "position": "WR",
-      "team": "NYG"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -17893,70 +18725,6 @@
       "name": "Spencer Rattler",
       "position": "QB",
       "team": "NO"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 6.2677,
-          "history_points": 11.9625,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -1.5803,
-              "overall_rank": 121,
-              "position_rank": 40
-            },
-            "superflex": {
-              "lineup_value": -1.5803,
-              "overall_rank": 130,
-              "position_rank": 40
-            }
-          },
-          "ranking_points": 7.122,
-          "typical_points": 5.7757
-        },
-        "non_ppr": {
-          "expected_points": 5.7039,
-          "history_points": 10.5875,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -0.4647,
-              "overall_rank": 101,
-              "position_rank": 40
-            },
-            "superflex": {
-              "lineup_value": -0.4647,
-              "overall_rank": 116,
-              "position_rank": 40
-            }
-          },
-          "ranking_points": 6.4365,
-          "typical_points": 5.1299
-        },
-        "ppr": {
-          "expected_points": 6.8315,
-          "history_points": 13.3375,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -1.7958,
-              "overall_rank": 133,
-              "position_rank": 41
-            },
-            "superflex": {
-              "lineup_value": -1.7958,
-              "overall_rank": 139,
-              "position_rank": 41
-            }
-          },
-          "ranking_points": 7.8074,
-          "typical_points": 6.4246
-        }
-      },
-      "id": "00-0039384",
-      "name": "Tyrone Tracy Jr.",
-      "position": "RB",
-      "team": "NYG"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -18795,70 +19563,6 @@
       "eligible": true,
       "formats": {
         "half_ppr": {
-          "expected_points": 7.9794,
-          "history_points": 10.3,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -0.3748,
-              "overall_rank": 92,
-              "position_rank": 34
-            },
-            "superflex": {
-              "lineup_value": -0.3748,
-              "overall_rank": 106,
-              "position_rank": 34
-            }
-          },
-          "ranking_points": 8.3274,
-          "typical_points": 7.4369
-        },
-        "non_ppr": {
-          "expected_points": 7.7462,
-          "history_points": 10.1125,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 1.2,
-              "overall_rank": 58,
-              "position_rank": 31
-            },
-            "superflex": {
-              "lineup_value": 1.2,
-              "overall_rank": 69,
-              "position_rank": 31
-            }
-          },
-          "ranking_points": 8.1011,
-          "typical_points": 7.1613
-        },
-        "ppr": {
-          "expected_points": 8.2125,
-          "history_points": 10.4875,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -1.0495,
-              "overall_rank": 111,
-              "position_rank": 38
-            },
-            "superflex": {
-              "lineup_value": -1.0495,
-              "overall_rank": 124,
-              "position_rank": 38
-            }
-          },
-          "ranking_points": 8.5538,
-          "typical_points": 7.7373
-        }
-      },
-      "id": "00-0039738",
-      "name": "Blake Corum",
-      "position": "RB",
-      "team": "LAR"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
           "expected_points": 3.9254,
           "history_points": 3.8875,
           "leagues": {
@@ -18981,70 +19685,6 @@
       "name": "Will Shipley",
       "position": "RB",
       "team": "PHI"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 1.4041,
-          "history_points": 0.9875,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -7.3479,
-              "overall_rank": 353,
-              "position_rank": 132
-            },
-            "superflex": {
-              "lineup_value": -7.3479,
-              "overall_rank": 353,
-              "position_rank": 132
-            }
-          },
-          "ranking_points": 1.3416,
-          "typical_points": 1.307
-        },
-        "non_ppr": {
-          "expected_points": 1.0576,
-          "history_points": 0.6125,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -5.9668,
-              "overall_rank": 377,
-              "position_rank": 133
-            },
-            "superflex": {
-              "lineup_value": -5.9668,
-              "overall_rank": 378,
-              "position_rank": 133
-            }
-          },
-          "ranking_points": 0.9908,
-          "typical_points": 0.9215
-        },
-        "ppr": {
-          "expected_points": 1.7506,
-          "history_points": 1.3625,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -8.2789,
-              "overall_rank": 340,
-              "position_rank": 128
-            },
-            "superflex": {
-              "lineup_value": -8.2789,
-              "overall_rank": 340,
-              "position_rank": 128
-            }
-          },
-          "ranking_points": 1.6924,
-          "typical_points": 1.6819
-        }
-      },
-      "id": "00-0039751",
-      "name": "Jordan Whittington",
-      "position": "WR",
-      "team": "LAR"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -19557,70 +20197,6 @@
       "name": "Jared Wiley",
       "position": "TE",
       "team": "KC"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 3.7959,
-          "history_points": 6.25,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -3.383,
-              "overall_rank": 179,
-              "position_rank": 36
-            },
-            "superflex": {
-              "lineup_value": -3.383,
-              "overall_rank": 182,
-              "position_rank": 36
-            }
-          },
-          "ranking_points": 4.1641,
-          "typical_points": 3.4589
-        },
-        "non_ppr": {
-          "expected_points": 2.9159,
-          "history_points": 4.8125,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -2.6605,
-              "overall_rank": 175,
-              "position_rank": 34
-            },
-            "superflex": {
-              "lineup_value": -2.6605,
-              "overall_rank": 181,
-              "position_rank": 34
-            }
-          },
-          "ranking_points": 3.2004,
-          "typical_points": 2.4568
-        },
-        "ppr": {
-          "expected_points": 4.676,
-          "history_points": 7.6875,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -4.0071,
-              "overall_rank": 188,
-              "position_rank": 38
-            },
-            "superflex": {
-              "lineup_value": -4.0071,
-              "overall_rank": 192,
-              "position_rank": 38
-            }
-          },
-          "ranking_points": 5.1277,
-          "typical_points": 4.4276
-        }
-      },
-      "id": "00-0039847",
-      "name": "Theo Johnson",
-      "position": "TE",
-      "team": "NYG"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -22507,70 +23083,6 @@
       "eligible": true,
       "formats": {
         "half_ppr": {
-          "expected_points": 0.0,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -7.5471,
-              "overall_rank": 380,
-              "position_rank": 120
-            },
-            "superflex": {
-              "lineup_value": -7.5471,
-              "overall_rank": 380,
-              "position_rank": 120
-            }
-          },
-          "ranking_points": 0.0,
-          "typical_points": 0.0
-        },
-        "non_ppr": {
-          "expected_points": 0.0,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -5.8609,
-              "overall_rank": 370,
-              "position_rank": 120
-            },
-            "superflex": {
-              "lineup_value": -5.8609,
-              "overall_rank": 371,
-              "position_rank": 120
-            }
-          },
-          "ranking_points": 0.0,
-          "typical_points": 0.0
-        },
-        "ppr": {
-          "expected_points": 0.0,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -9.1348,
-              "overall_rank": 411,
-              "position_rank": 120
-            },
-            "superflex": {
-              "lineup_value": -9.1348,
-              "overall_rank": 411,
-              "position_rank": 120
-            }
-          },
-          "ranking_points": 0.0,
-          "typical_points": 0.0
-        }
-      },
-      "id": "00-0040225",
-      "name": "Thomas Fidone II",
-      "position": "TE",
-      "team": "NYG"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
           "expected_points": 0.7066,
           "history_points": 8.17,
           "leagues": {
@@ -23595,70 +24107,6 @@
       "eligible": true,
       "formats": {
         "half_ppr": {
-          "expected_points": 1.9702,
-          "history_points": 1.5,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -6.7899,
-              "overall_rank": 321,
-              "position_rank": 119
-            },
-            "superflex": {
-              "lineup_value": -6.7899,
-              "overall_rank": 321,
-              "position_rank": 119
-            }
-          },
-          "ranking_points": 1.8997,
-          "typical_points": 1.8023
-        },
-        "non_ppr": {
-          "expected_points": 1.5486,
-          "history_points": 1.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -5.4913,
-              "overall_rank": 325,
-              "position_rank": 121
-            },
-            "superflex": {
-              "lineup_value": -5.4913,
-              "overall_rank": 327,
-              "position_rank": 121
-            }
-          },
-          "ranking_points": 1.4663,
-          "typical_points": 1.3123
-        },
-        "ppr": {
-          "expected_points": 2.3918,
-          "history_points": 2.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -7.6383,
-              "overall_rank": 306,
-              "position_rank": 118
-            },
-            "superflex": {
-              "lineup_value": -7.6383,
-              "overall_rank": 306,
-              "position_rank": 118
-            }
-          },
-          "ranking_points": 2.333,
-          "typical_points": 2.2727
-        }
-      },
-      "id": "00-0040590",
-      "name": "Konata Mumpfield",
-      "position": "WR",
-      "team": "LAR"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
           "expected_points": 0.0333,
           "history_points": 0.0,
           "leagues": {
@@ -24299,70 +24747,6 @@
       "eligible": true,
       "formats": {
         "half_ppr": {
-          "expected_points": 15.7419,
-          "history_points": 20.165,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 0.0,
-              "overall_rank": 85,
-              "position_rank": 13
-            },
-            "superflex": {
-              "lineup_value": 2.8228,
-              "overall_rank": 42,
-              "position_rank": 13
-            }
-          },
-          "ranking_points": 16.4054,
-          "typical_points": 15.2906
-        },
-        "non_ppr": {
-          "expected_points": 15.7419,
-          "history_points": 20.165,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 0.0,
-              "overall_rank": 85,
-              "position_rank": 13
-            },
-            "superflex": {
-              "lineup_value": 2.8228,
-              "overall_rank": 43,
-              "position_rank": 13
-            }
-          },
-          "ranking_points": 16.4054,
-          "typical_points": 15.2904
-        },
-        "ppr": {
-          "expected_points": 15.7419,
-          "history_points": 20.165,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 0.0,
-              "overall_rank": 85,
-              "position_rank": 13
-            },
-            "superflex": {
-              "lineup_value": 2.8228,
-              "overall_rank": 51,
-              "position_rank": 13
-            }
-          },
-          "ranking_points": 16.4054,
-          "typical_points": 15.2908
-        }
-      },
-      "id": "00-0040691",
-      "name": "Jaxson Dart",
-      "position": "QB",
-      "team": "NYG"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
           "expected_points": 2.9933,
           "history_points": 6.9125,
           "leagues": {
@@ -24421,70 +24805,6 @@
       "name": "Chimere Dike",
       "position": "WR",
       "team": "TEN"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 8.0127,
-          "history_points": 15.9875,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 0.5066,
-              "overall_rank": 71,
-              "position_rank": 28
-            },
-            "superflex": {
-              "lineup_value": 0.5066,
-              "overall_rank": 84,
-              "position_rank": 28
-            }
-          },
-          "ranking_points": 9.2089,
-          "typical_points": 7.4129
-        },
-        "non_ppr": {
-          "expected_points": 7.2861,
-          "history_points": 14.6125,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 1.4839,
-              "overall_rank": 52,
-              "position_rank": 29
-            },
-            "superflex": {
-              "lineup_value": 1.4839,
-              "overall_rank": 63,
-              "position_rank": 29
-            }
-          },
-          "ranking_points": 8.3851,
-          "typical_points": 6.6015
-        },
-        "ppr": {
-          "expected_points": 8.7392,
-          "history_points": 17.3625,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": 0.4295,
-              "overall_rank": 80,
-              "position_rank": 30
-            },
-            "superflex": {
-              "lineup_value": 0.4295,
-              "overall_rank": 93,
-              "position_rank": 30
-            }
-          },
-          "ranking_points": 10.0327,
-          "typical_points": 8.2288
-        }
-      },
-      "id": "00-0040715",
-      "name": "Cam Skattebo",
-      "position": "RB",
-      "team": "NYG"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -24997,70 +25317,6 @@
       "name": "Mason Taylor",
       "position": "TE",
       "team": "NYJ"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 2.9873,
-          "history_points": 3.0375,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -4.5522,
-              "overall_rank": 216,
-              "position_rank": 47
-            },
-            "superflex": {
-              "lineup_value": -4.5522,
-              "overall_rank": 220,
-              "position_rank": 47
-            }
-          },
-          "ranking_points": 2.9949,
-          "typical_points": 2.5872
-        },
-        "non_ppr": {
-          "expected_points": 2.4566,
-          "history_points": 2.6625,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -3.3734,
-              "overall_rank": 210,
-              "position_rank": 43
-            },
-            "superflex": {
-              "lineup_value": -3.3734,
-              "overall_rank": 213,
-              "position_rank": 43
-            }
-          },
-          "ranking_points": 2.4875,
-          "typical_points": 1.935
-        },
-        "ppr": {
-          "expected_points": 3.5181,
-          "history_points": 3.4125,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -5.6325,
-              "overall_rank": 237,
-              "position_rank": 47
-            },
-            "superflex": {
-              "lineup_value": -5.6325,
-              "overall_rank": 239,
-              "position_rank": 47
-            }
-          },
-          "ranking_points": 3.5023,
-          "typical_points": 3.2117
-        }
-      },
-      "id": "00-0040737",
-      "name": "Terrance Ferguson",
-      "position": "TE",
-      "team": "LAR"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -26606,70 +26862,6 @@
       "name": "Oscar Delp",
       "position": "TE",
       "team": "NO"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 4.7323,
-          "history_points": 3.5,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -4.1421,
-              "overall_rank": 203,
-              "position_rank": 77
-            },
-            "superflex": {
-              "lineup_value": -4.1421,
-              "overall_rank": 207,
-              "position_rank": 77
-            }
-          },
-          "ranking_points": 4.5474,
-          "typical_points": 4.5051
-        },
-        "non_ppr": {
-          "expected_points": 3.6583,
-          "history_points": 2.5,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -3.4731,
-              "overall_rank": 213,
-              "position_rank": 76
-            },
-            "superflex": {
-              "lineup_value": -3.4731,
-              "overall_rank": 216,
-              "position_rank": 76
-            }
-          },
-          "ranking_points": 3.4846,
-          "typical_points": 3.3374
-        },
-        "ppr": {
-          "expected_points": 5.8062,
-          "history_points": 4.5,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -4.361,
-              "overall_rank": 198,
-              "position_rank": 76
-            },
-            "superflex": {
-              "lineup_value": -4.361,
-              "overall_rank": 202,
-              "position_rank": 76
-            }
-          },
-          "ranking_points": 5.6103,
-          "typical_points": 5.6433
-        }
-      },
-      "id": "00-0041042",
-      "name": "Malachi Fields",
-      "position": "WR",
-      "team": "NYG"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -28728,70 +28920,6 @@
           "history_points": 0.0,
           "leagues": {
             "one_qb": {
-              "lineup_value": -8.6896,
-              "overall_rank": 442,
-              "position_rank": 180
-            },
-            "superflex": {
-              "lineup_value": -8.6896,
-              "overall_rank": 442,
-              "position_rank": 180
-            }
-          },
-          "ranking_points": 0.0,
-          "typical_points": 0.0
-        },
-        "non_ppr": {
-          "expected_points": 0.0,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -6.9576,
-              "overall_rank": 445,
-              "position_rank": 180
-            },
-            "superflex": {
-              "lineup_value": -6.9576,
-              "overall_rank": 445,
-              "position_rank": 180
-            }
-          },
-          "ranking_points": 0.0,
-          "typical_points": 0.0
-        },
-        "ppr": {
-          "expected_points": 0.0,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -9.9713,
-              "overall_rank": 445,
-              "position_rank": 180
-            },
-            "superflex": {
-              "lineup_value": -9.9713,
-              "overall_rank": 445,
-              "position_rank": 180
-            }
-          },
-          "ranking_points": 0.0,
-          "typical_points": 0.0
-        }
-      },
-      "id": "00-0041399",
-      "name": "CJ Daniels",
-      "position": "WR",
-      "team": "LAR"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 0.0,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
               "lineup_value": -8.7023,
               "overall_rank": 445,
               "position_rank": 112
@@ -29230,70 +29358,6 @@
       "name": "Nate Boerkircher",
       "position": "TE",
       "team": "JAX"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 0.0,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -7.5471,
-              "overall_rank": 381,
-              "position_rank": 121
-            },
-            "superflex": {
-              "lineup_value": -7.5471,
-              "overall_rank": 381,
-              "position_rank": 121
-            }
-          },
-          "ranking_points": 0.0,
-          "typical_points": 0.0
-        },
-        "non_ppr": {
-          "expected_points": 0.0,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -5.8609,
-              "overall_rank": 371,
-              "position_rank": 121
-            },
-            "superflex": {
-              "lineup_value": -5.8609,
-              "overall_rank": 372,
-              "position_rank": 121
-            }
-          },
-          "ranking_points": 0.0,
-          "typical_points": 0.0
-        },
-        "ppr": {
-          "expected_points": 0.0,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -9.1348,
-              "overall_rank": 412,
-              "position_rank": 121
-            },
-            "superflex": {
-              "lineup_value": -9.1348,
-              "overall_rank": 412,
-              "position_rank": 121
-            }
-          },
-          "ranking_points": 0.0,
-          "typical_points": 0.0
-        }
-      },
-      "id": "00-0041510",
-      "name": "Max Klare",
-      "position": "TE",
-      "team": "LAR"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -30062,70 +30126,6 @@
       "name": "Drew Allar",
       "position": "QB",
       "team": "PIT"
-    },
-    {
-      "eligibility_reason": "Available roster identity",
-      "eligible": true,
-      "formats": {
-        "half_ppr": {
-          "expected_points": 0.0357,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -16.3697,
-              "overall_rank": 485,
-              "position_rank": 72
-            },
-            "superflex": {
-              "lineup_value": -13.5469,
-              "overall_rank": 485,
-              "position_rank": 72
-            }
-          },
-          "ranking_points": 0.0357,
-          "typical_points": 0.0334
-        },
-        "non_ppr": {
-          "expected_points": 0.0357,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -16.3697,
-              "overall_rank": 485,
-              "position_rank": 72
-            },
-            "superflex": {
-              "lineup_value": -13.5469,
-              "overall_rank": 485,
-              "position_rank": 72
-            }
-          },
-          "ranking_points": 0.0357,
-          "typical_points": 0.0334
-        },
-        "ppr": {
-          "expected_points": 0.0357,
-          "history_points": 0.0,
-          "leagues": {
-            "one_qb": {
-              "lineup_value": -16.3697,
-              "overall_rank": 485,
-              "position_rank": 72
-            },
-            "superflex": {
-              "lineup_value": -13.5469,
-              "overall_rank": 485,
-              "position_rank": 72
-            }
-          },
-          "ranking_points": 0.0357,
-          "typical_points": 0.0334
-        }
-      },
-      "id": "00-0041568",
-      "name": "Ty Simpson",
-      "position": "QB",
-      "team": "LAR"
     },
     {
       "eligibility_reason": "Available roster identity",
@@ -31984,7 +31984,7 @@
       "team": "BUF"
     }
   ],
-  "projection_sha256": "ab12b01fefd4461dcbe76589aecbaefbbb6cbc97836611c73e264e60f369a676",
+  "projection_sha256": "58d11d752bad6be6a3c00cee45c6810367fff1f64ba2560be5c1fb4f6d6f48b7",
   "replacement_levels": {
     "half_ppr": {
       "one_qb": {
@@ -32084,6 +32084,6 @@
     "non_ppr"
   ],
   "season": 2026,
-  "updated_at": "2026-09-18T14:05:37.168874+00:00",
+  "updated_at": "2026-09-21T16:11:56.302336+00:00",
   "week": 2
 }
