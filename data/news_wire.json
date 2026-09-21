@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T07:12:06.584899+00:00",
+  "updated_at": "2026-09-21T10:00:51.189733+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T05:54:49+00:00",
+      "latest_entry_at": "2026-09-21T09:30:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-21T05:34:54+00:00",
+      "latest_entry_at": "2026-09-21T10:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-21T00:57:43+00:00",
+      "latest_entry_at": "2026-09-21T09:00:00+00:00",
       "stale": false
     },
     {
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-21T00:40:07+00:00",
+      "latest_entry_at": "2026-09-21T09:40:46+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-21T05:54:49+00:00",
+      "latest_entry_at": "2026-09-21T09:30:00+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T05:34:54+00:00",
+      "latest_entry_at": "2026-09-21T10:00:00+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T00:19:18+00:00",
+      "latest_entry_at": "2026-09-21T09:00:00+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-20T20:48:40+00:00",
+      "latest_entry_at": "2026-09-21T07:53:49+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-21T02:34:52+00:00",
+      "latest_entry_at": "2026-09-21T10:00:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T01:49:21+00:00",
+      "latest_entry_at": "2026-09-21T10:00:00+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-21T02:38:41+00:00",
+      "latest_entry_at": "2026-09-21T10:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-20T17:26:00+00:00",
+      "latest_entry_at": "2026-09-21T10:00:00+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-20T21:56:27+00:00",
+      "latest_entry_at": "2026-09-21T06:49:50+00:00",
       "stale": false
     },
     {
@@ -454,15 +454,15 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-21T02:46:40+00:00",
+      "latest_entry_at": "2026-09-21T08:00:33+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-21T00:32:44+00:00",
+      "latest_entry_at": "2026-09-21T10:00:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T00:38:54+00:00",
+      "latest_entry_at": "2026-09-21T10:00:00+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-21T00:10:00+00:00",
+      "latest_entry_at": "2026-09-21T09:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,80 @@
     }
   ],
   "items": [
+    {
+      "id": "41ec4a5d8efca192d0db",
+      "headline": "Chicago Bears News: Caleb Williams getting MRI today, O-Line Issues",
+      "url": "https://www.windycitygridiron.com/chicago-bears-news/123312/chicago-bears-news-bear-lost-to-minnesota-vikings-caleb-williams-getting-mri-today",
+      "source_id": "news_sbn_chi",
+      "source": "Windy City Gridiron (SB Nation)",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "The Chicago Bears did not play well against the Minnesota Vikings even before Caleb Williams suffered a hamstring injury. The Vikings outplayed Chicago in the Bears\u2019 home opener, although the Minnesota offense was shut down by the Bears\u2019 defense. That\u2019s not where the problems were for the home team. Share your thoughts here at Windy [\u2026]",
+      "categories": [
+        "Chicago Bears News"
+      ],
+      "published_at": "2026-09-21T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "af638187014335b4a079",
+      "headline": "49ers News: The first of hopefully many Victory Mondays this season",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-news/163023/49ers-news-regular-season-week-2-miami-dolphins-victory-brock-purdy-mvp-week-3-cardinals",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Starting off the week with a Niners victory never. Gets. Old. What a fun win. Brock Purdy is HOOPING. He\u2019s hitting spin moves, he\u2019s letting it rip, he looks really loose yet also dialed in at the same time. It looks like the game\u2019s slowing down for him. What a joy it is to have [\u2026]",
+      "categories": [
+        "Golden Nuggets: San Francisco 49ers daily news roundup",
+        "San Francisco 49ers News"
+      ],
+      "published_at": "2026-09-21T09:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0037834",
+          "name": "Brock Purdy",
+          "team": "SF",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "887845405ee12032d818",
+      "headline": "Ben Johnson, Tyson Bagent Rally Bears After Caleb Williams' Injury in Vikings Loss",
+      "url": "https://www.si.com/nfl/bears/onsi/ben-johnson-tyson-bagent-rally-bears-after-caleb-williams-injury-in-vikings-loss",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Can Ben Johnson and Tyson Bagent save the Bears' season? Explore how Chicago is scrambling to rebuild its offensive identity after losing Caleb Williams to a hamstring injury.",
+      "categories": [],
+      "published_at": "2026-09-21T09:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0038416",
+          "name": "Tyson Bagent",
+          "team": "CHI",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "72d5ba17e213c4551e63",
       "headline": "Packers Injury Updates: Matt LaFleur addresses Jayden Reed and Zach Bako-Bewele injuries",
@@ -4001,74 +4075,6 @@
       ],
       "published_at": "2026-09-19T17:31:00+00:00",
       "players": []
-    },
-    {
-      "id": "f7c8c2528e45a9991bbb",
-      "headline": "Steelers Lose Michael Pittman Jr. for Patriots Game",
-      "url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-lose-michael-pittman-jr-patriots-game",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "The Pittsburgh Steelers shut down their starting wide receiver.",
-      "categories": [],
-      "published_at": "2026-09-19T17:09:47+00:00",
-      "players": [
-        {
-          "id": "00-0036252",
-          "name": "Michael Pittman",
-          "team": "PIT",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "ca32446e6a8b65f84e47",
-      "headline": "Latest Weather Report for Bears vs. Vikings in Week 2 Puts D'Andre Swift in Great Position",
-      "url": "https://www.si.com/nfl/bears/onsi/latest-weather-report-for-bears-vs-vikings-in-week-2-puts-d-andre-swift-in-great-position",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears RB D'Andre Swift is poised for a massive Week 2 workload against the Vikings as heavy rain and 30 mph winds at Soldier Field shift the game plan to the ground.",
-      "categories": [],
-      "published_at": "2026-09-19T16:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0036275",
-          "name": "D'Andre Swift",
-          "team": "CHI",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "a2766c5c049f549f98e5",
-      "headline": "Colts elevate WR Anthony Gould from practice squad for Week 2",
-      "url": "https://www.colts.com/news/colts-elevate-wr-anthony-gould-from-practice-squad-for-week-2",
-      "source_id": "news_official_ind",
-      "source": "Indianapolis Colts (official)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The roster move was made Saturday ahead of Sunday's game against the Kansas City Chiefs.",
-      "categories": [
-        "Roster Moves",
-        "Featured",
-        "Featured News",
-        "Indianapolis Colts at Kansas City Chiefs (2026-REG-2)"
-      ],
-      "published_at": "2026-09-19T16:09:42+00:00",
-      "players": [
-        {
-          "id": "00-0039816",
-          "name": "Anthony Gould",
-          "team": "IND",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
