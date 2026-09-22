@@ -1,0 +1,24 @@
+name: Score ticker checks
+on:
+  pull_request:
+    paths:
+      - 'scores-worker/**'
+      - 'assets/score-ticker.js'
+      - 'scripts/*score*'
+      - '.github/workflows/score-ticker-checks.yml'
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --no-audit --no-fund
+        working-directory: scores-worker
+      - run: npm test && npm run check
+        working-directory: scores-worker
+      - run: node scripts/test_score_ticker.cjs
+      - run: bash -n scripts/deploy_rundown_scores.sh
