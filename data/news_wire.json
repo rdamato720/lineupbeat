@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T02:00:47.896356+00:00",
+  "updated_at": "2026-09-22T04:00:52.784577+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T01:43:54+00:00",
+      "latest_entry_at": "2026-09-22T03:31:58+00:00",
       "stale": false
     },
     {
@@ -22,7 +22,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T22:15:14+00:00",
+      "latest_entry_at": "2026-09-22T02:03:02+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T01:41:01+00:00",
+      "latest_entry_at": "2026-09-22T03:37:54+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:10:20+00:00",
+      "latest_entry_at": "2026-09-21T22:19:45+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-21T23:02:03+00:00",
+      "latest_entry_at": "2026-09-22T03:12:31+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-22T01:08:00+00:00",
+      "latest_entry_at": "2026-09-22T03:13:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-22T01:43:54+00:00",
+      "latest_entry_at": "2026-09-22T03:31:58+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-22T01:41:01+00:00",
+      "latest_entry_at": "2026-09-22T03:37:54+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-19T20:14:01+00:00",
+      "latest_entry_at": "2026-09-22T00:08:06+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-22T01:57:47+00:00",
+      "latest_entry_at": "2026-09-22T03:36:47+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:00:00+00:00",
+      "latest_entry_at": "2026-09-22T04:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T23:45:00+00:00",
+      "latest_entry_at": "2026-09-22T03:11:18+00:00",
       "stale": false
     },
     {
@@ -556,31 +556,123 @@
   ],
   "items": [
     {
+      "id": "cbd56f5b6fe754344ee8",
+      "headline": "2 winners and 5 losers from Giants\u2019 loss on MNF: Jaxson Dart\u2019s injury derails the game before it even began for New York",
+      "url": "https://atozsports.com/nfl/new-york-giants-news/winners-losers-giants-loss-vs-rams-jaxson-dart-sprained-mcl-malik-nabers/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The New York Giants had a rough outing on Monday night against the Rams, and Jaxson Dart's early exit only made things worse. Two defenders stood out, but the list of losers runs long.",
+      "categories": [
+        "New York Giants News",
+        "NFL",
+        "giants news",
+        "New York Giants"
+      ],
+      "published_at": "2026-09-22T03:37:54+00:00",
+      "players": [
+        {
+          "id": "00-0040691",
+          "name": "Jaxson Dart",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
+    {
       "id": "ac6ef274af87debbc585",
-      "headline": "Jaxson Dart injury: NY Giants\u2019 QB appears to suffer left knee injury vs. Rams",
+      "headline": "Jaxson Dart injury: NY Giants\u2019 QB suffers left knee injury vs. Rams",
       "url": "https://www.bigblueview.com/new-york-giants-injuries/172016/jaxson-dart-injury-ny-giants-qb-appears-to-suffer-left-knee-inury-vs-rams",
       "source_id": "news_sbn_nyg",
       "source": "Big Blue View (SB Nation)",
       "teams": [
         "NYG"
       ],
-      "feed_description": "New York Giants quarterback Jaxson Dart went down with what appeared to be a left knee injury on the team\u2019s first drive Monday night against the Los Angeles Rams. Dart was sandwiched between Rams defenders Byron Young and Josaiah Stewer on a third-and-8 incompletion to Theo Johnson from the Rams\u2019 41-yard line. Dart did walk [\u2026]",
+      "feed_description": "New York Giants quarterback Jaxson Dart went down with a left knee injury on the team\u2019s first drive Monday night against the Los Angeles Rams. Initial reports are that the injury is believed to be a sprained MCL. Dart will undergo an MRI on Tuesday. \u201cWe\u2019ll know tomorrow,\u201d head coach John harbaugh said after the [\u2026]",
       "categories": [
         "New York Giants injuries"
       ],
-      "published_at": "2026-09-22T01:57:47+00:00",
+      "published_at": "2026-09-22T03:36:47+00:00",
       "players": [
-        {
-          "id": "00-0039847",
-          "name": "Theo Johnson",
-          "team": "NYG",
-          "position": "TE"
-        },
         {
           "id": "00-0040691",
           "name": "Jaxson Dart",
           "team": "NYG",
           "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "4f8881e01c7622a27b62",
+      "headline": "Giants Unable to Overcome Injury Onslaught, Fall to Rams 28-6",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-unable-to-overcome-injury-onslaught-fall-to-rams-28-6-01m33gr550xp",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The injury to starting quarterback Jaxson Dart proves to be too much for the New York Giants to overcome in their Week 2 loss to the Los Angeles Rams.",
+      "categories": [],
+      "published_at": "2026-09-22T03:28:35+00:00",
+      "players": [
+        {
+          "id": "00-0040691",
+          "name": "Jaxson Dart",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "cd9bb3a86d859e7c3187",
+      "headline": "QB Jaxson Dart exits with knee injury vs. Rams",
+      "url": "https://www.giants.com/news/qb-jaxson-dart-knee-questionable-to-return-vs-rams-injury-update",
+      "source_id": "news_official_nyg",
+      "source": "New York Giants (official)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Quarterback Jaxson Dart suffered a knee injury with 11:20 left in the first quarter of the Giants\u2019 Monday night game against the Rams. He was originally listed as questionable to return and then ruled out at halftime.",
+      "categories": [
+        "homepage",
+        "2026 Giants at Rams WK 2"
+      ],
+      "published_at": "2026-09-22T03:10:00+00:00",
+      "players": [
+        {
+          "id": "00-0040691",
+          "name": "Jaxson Dart",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "b2af033f9810af08dc05",
+      "headline": "Chargers Drop the Most Chargers Injury Update for Charlie Kolar, David Njoku and More",
+      "url": "https://www.si.com/nfl/chargers/onsi/chargers-injury-update-charlie-kolar-david-njoku-news",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "The Chargers drop to 0-2 and the offense looks lost. See how hard the task of righting the ship will become with all the injuries announced by Jim Harbaugh.",
+      "categories": [],
+      "published_at": "2026-09-22T02:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0033885",
+          "name": "David Njoku",
+          "team": "LAC",
+          "position": "TE"
+        },
+        {
+          "id": "00-0038046",
+          "name": "Charlie Kolar",
+          "team": "LAC",
+          "position": "TE"
         }
       ]
     },
@@ -614,7 +706,7 @@
       "teams": [
         "NYG"
       ],
-      "feed_description": "[UPDATE: Nabers returned to the game midway through the second quarter]. Malik Nabers left the New York Giants game against the Los Angeles Rams in obvious pain late in the first quarter after an incomplete pass from backup quarterback Jameis Winston. The Giants, of course, lost starting quarterback Jaxson Dart to a knee injury on [\u2026]",
+      "feed_description": "Malik Nabers left the New York Giants game against the Los Angeles Rams in obvious pain late in the first quarter after an incomplete pass from backup quarterback Jameis Winston. He returned later in the second quarter. The Giants, of course, lost starting quarterback Jaxson Dart to a knee injury on their first possession of [\u2026]",
       "categories": [
         "New York Giants injuries"
       ],
@@ -632,30 +724,6 @@
           "team": "NYG",
           "position": "WR"
         },
-        {
-          "id": "00-0040691",
-          "name": "Jaxson Dart",
-          "team": "NYG",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "cd9bb3a86d859e7c3187",
-      "headline": "QB Jaxson Dart (knee) questionable to return vs. Rams",
-      "url": "https://www.giants.com/news/qb-jaxson-dart-knee-questionable-to-return-vs-rams-injury-update",
-      "source_id": "news_official_nyg",
-      "source": "New York Giants (official)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "Quarterback Jaxson Dart suffered a knee injury with 11:20 left in the first quarter of the Giants\u2019 Monday night game against the Rams and was listed as questionable to return.",
-      "categories": [
-        "homepage",
-        "2026 Giants at Rams WK 2"
-      ],
-      "published_at": "2026-09-22T01:03:00+00:00",
-      "players": [
         {
           "id": "00-0040691",
           "name": "Jaxson Dart",
@@ -4144,71 +4212,6 @@
           "name": "Jalen McMillan",
           "team": "TB",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "b1da14c3a7c69cf762b5",
-      "headline": "Browns Inactives List Provides Positive News Ahead of Week 2 Showdown in Tampa",
-      "url": "https://www.si.com/nfl/browns/onsi/browns-inactives-list-provides-positive-news-ahead-of-week-2-showdown-in-tampa-01m2zqzyfcs1",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "The Cleveland Browns are just a few hours away from taking on the Tampa Bay Buccaneers in a Week 2 clash from James Raymond Stadium in Florida. The official inactives list has dropped, and there seems to be nothing to be concerned about.",
-      "categories": [],
-      "published_at": "2026-09-20T16:02:18+00:00",
-      "players": []
-    },
-    {
-      "id": "8d3f4bd7a6d1b03abf13",
-      "headline": "'I definitely feel more explosive': Blake Corum building on offseason workouts and efficient Week 1 heading into rest of 2026",
-      "url": "https://www.therams.com/news/i-definitely-feel-more-explosive-blake-corum-building-on-offseason-workouts-and-efficient-week-1-heading-into-rest-of-2026",
-      "source_id": "news_official_lar",
-      "source": "Los Angeles Rams (official)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "Rams running back Blake Corum's offseason workouts are already starting to pay off, going for 5.4 yards per carry in Week 1, but he's still looking to do more.",
-      "categories": [
-        "Football",
-        "New York Giants at Los Angeles Rams (2026-REG-2)",
-        "Player Features",
-        "Blake Corum"
-      ],
-      "published_at": "2026-09-20T16:00:05+00:00",
-      "players": [
-        {
-          "id": "00-0039738",
-          "name": "Blake Corum",
-          "team": "LAR",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "83f77f29848b9e7f92c7",
-      "headline": "Patriots inactives for NFL Week 2 vs. Steelers",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/137758/patriots-inactives-nfl-week-2-steelers",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "TreVeyon Henderson is officially back. The second-year running back, who missed the New England Patriots\u2019 season opener in Seattle because of an ankle injury suffered in late August, is part of his team\u2019s game day roster for Week 2: he will make his season debut against the Pittsburgh Steelers on Sunday. Henderson returned to practice [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News",
-        "New England Patriots Roster"
-      ],
-      "published_at": "2026-09-20T15:59:25+00:00",
-      "players": [
-        {
-          "id": "00-0040734",
-          "name": "TreVeyon Henderson",
-          "team": "NE",
-          "position": "RB"
         }
       ]
     }
