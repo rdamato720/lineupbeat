@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T01:36:38.648840+00:00",
+  "updated_at": "2026-09-22T02:00:47.896356+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T01:30:51+00:00",
+      "latest_entry_at": "2026-09-22T01:43:54+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T00:45:21+00:00",
+      "latest_entry_at": "2026-09-22T01:41:01+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-22T01:30:51+00:00",
+      "latest_entry_at": "2026-09-22T01:43:54+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-22T00:45:21+00:00",
+      "latest_entry_at": "2026-09-22T01:41:01+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-22T00:08:06+00:00",
+      "latest_entry_at": "2026-09-19T20:14:01+00:00",
       "stale": false
     },
     {
@@ -372,7 +372,7 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
       "latest_entry_at": "2026-09-22T01:00:15+00:00",
       "stale": false
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-22T01:25:15+00:00",
+      "latest_entry_at": "2026-09-22T01:57:47+00:00",
       "stale": false
     },
     {
@@ -556,6 +556,56 @@
   ],
   "items": [
     {
+      "id": "ac6ef274af87debbc585",
+      "headline": "Jaxson Dart injury: NY Giants\u2019 QB appears to suffer left knee injury vs. Rams",
+      "url": "https://www.bigblueview.com/new-york-giants-injuries/172016/jaxson-dart-injury-ny-giants-qb-appears-to-suffer-left-knee-inury-vs-rams",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "New York Giants quarterback Jaxson Dart went down with what appeared to be a left knee injury on the team\u2019s first drive Monday night against the Los Angeles Rams. Dart was sandwiched between Rams defenders Byron Young and Josaiah Stewer on a third-and-8 incompletion to Theo Johnson from the Rams\u2019 41-yard line. Dart did walk [\u2026]",
+      "categories": [
+        "New York Giants injuries"
+      ],
+      "published_at": "2026-09-22T01:57:47+00:00",
+      "players": [
+        {
+          "id": "00-0039847",
+          "name": "Theo Johnson",
+          "team": "NYG",
+          "position": "TE"
+        },
+        {
+          "id": "00-0040691",
+          "name": "Jaxson Dart",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "9cba4adadc909bb33e57",
+      "headline": "Giants WR Malik Nabers Has an Injury Scare in Week 2 Clash with Rams",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-wr-malik-nabers-has-an-injury-scare-in-week-2-01m339vnwnjq",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Malik Nabers, who has already been plagued with his share of injuries, suffered a right shoulder injury but returned to action.",
+      "categories": [],
+      "published_at": "2026-09-22T01:37:17+00:00",
+      "players": [
+        {
+          "id": "00-0039337",
+          "name": "Malik Nabers",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
       "id": "fe81868d0b4732dbc065",
       "headline": "Malik Nabers injury: NY Giants star WR returns to game after shoulder issue",
       "url": "https://www.bigblueview.com/new-york-giants-injuries/172083/malik-nabers-injury-ny-giants-star-wr-questionable-with-shoulder-issue",
@@ -660,35 +710,6 @@
           "id": "00-0035704",
           "name": "Drew Lock",
           "team": "SEA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "ac6ef274af87debbc585",
-      "headline": "Jaxson Dart injury: NY Giants\u2019 QB appears to suffer left knee injury vs. Rams",
-      "url": "https://www.bigblueview.com/new-york-giants-injuries/172016/jaxson-dart-injury-ny-giants-qb-appears-to-suffer-left-knee-inury-vs-rams",
-      "source_id": "news_sbn_nyg",
-      "source": "Big Blue View (SB Nation)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "New York Giants quarterback Jaxson Dart went down with what appeared to be a left knee injury on the team\u2019s first drive Monday night against the Los Angeles Rams. Dart was sandwiched between Rams defenders Byron Young and Josaiah Stewer on a third-and-8 incompletion to Theo Johnson from the Rams\u2019 41-yard line. Dart did walk [\u2026]",
-      "categories": [
-        "New York Giants injuries"
-      ],
-      "published_at": "2026-09-22T00:46:13+00:00",
-      "players": [
-        {
-          "id": "00-0039847",
-          "name": "Theo Johnson",
-          "team": "NYG",
-          "position": "TE"
-        },
-        {
-          "id": "00-0040691",
-          "name": "Jaxson Dart",
-          "team": "NYG",
           "position": "QB"
         }
       ]
@@ -4190,20 +4211,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "bebae132682392e8d467",
-      "headline": "Saints Inactives vs. Ravens: A Running Back Makes the List",
-      "url": "https://www.si.com/nfl/saints/onsi/saints-inactives-vs-ravens-a-running-back-makes-the-list-01m2zpq3bs4w",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "Comes as a surprise, but not really.",
-      "categories": [],
-      "published_at": "2026-09-20T15:59:00+00:00",
-      "players": []
     }
   ]
 }
