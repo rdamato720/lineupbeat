@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T22:49:57.596669+00:00",
+  "updated_at": "2026-09-22T00:01:22.180638+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-21T22:49:03+00:00",
+      "latest_entry_at": "2026-09-22T00:00:59+00:00",
       "stale": false
     },
     {
@@ -22,7 +22,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T17:29:53+00:00",
+      "latest_entry_at": "2026-09-21T22:15:14+00:00",
       "stale": false
     },
     {
@@ -36,9 +36,9 @@
     {
       "source_id": "phillyvoice_jimmy_kempski",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:49:43+00:00",
+      "latest_entry_at": "2026-09-21T22:50:10+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-21T22:24:00+00:00",
+      "latest_entry_at": "2026-09-21T23:45:43+00:00",
       "stale": false
     },
     {
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T04:00:46+00:00",
+      "latest_entry_at": "2026-09-21T23:39:16+00:00",
       "stale": false
     },
     {
@@ -164,7 +164,7 @@
     {
       "source_id": "news_official_lac",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
       "latest_entry_at": "2026-09-21T21:47:08+00:00",
       "stale": false
@@ -172,9 +172,9 @@
     {
       "source_id": "news_official_lar",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-21T15:00:00+00:00",
+      "latest_entry_at": "2026-09-21T23:02:03+00:00",
       "stale": false
     },
     {
@@ -190,7 +190,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-21T20:00:12+00:00",
+      "latest_entry_at": "2026-09-21T23:17:49+00:00",
       "stale": false
     },
     {
@@ -220,9 +220,9 @@
     {
       "source_id": "news_official_nyg",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-21T22:00:00+00:00",
+      "latest_entry_at": "2026-09-21T23:47:00+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-09-21T22:27:40+00:00",
+      "latest_entry_at": "2026-09-21T23:50:33+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-21T17:35:58+00:00",
+      "latest_entry_at": "2026-09-21T23:56:35+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-21T22:49:03+00:00",
+      "latest_entry_at": "2026-09-22T00:00:59+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T20:14:25+00:00",
+      "latest_entry_at": "2026-09-21T16:00:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-21T22:13:58+00:00",
+      "latest_entry_at": "2026-09-21T21:46:00+00:00",
       "stale": false
     },
     {
@@ -340,9 +340,9 @@
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-21T18:42:00+00:00",
+      "latest_entry_at": "2026-09-21T16:58:24+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:39:00+00:00",
+      "latest_entry_at": "2026-09-21T17:00:00+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-21T22:08:05+00:00",
+      "latest_entry_at": "2026-09-20T21:01:36+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:30:00+00:00",
+      "latest_entry_at": "2026-09-21T19:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:00:21+00:00",
+      "latest_entry_at": "2026-09-21T14:44:45+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:00:00+00:00",
+      "latest_entry_at": "2026-09-21T19:41:15+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-21T22:30:00+00:00",
+      "latest_entry_at": "2026-09-21T21:39:32+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T16:23:58+00:00",
+      "latest_entry_at": "2026-09-20T17:14:28+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-21T18:49:00+00:00",
+      "latest_entry_at": "2026-09-21T00:31:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-21T22:28:27+00:00",
+      "latest_entry_at": "2026-09-21T20:51:22+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,185 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-21T18:52:45+00:00",
+      "latest_entry_at": "2026-09-21T23:30:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "20eb21d7982cee8b0a5b",
+      "headline": "Falcons Injury Report: Penix Set to Start, Concerning Status for Terrell",
+      "url": "https://www.si.com/nfl/falcons/onsi/falcons-injury-report-penix-set-to-start-concerning-status-for-terrell",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "The Atlanta Falcons could be at risk of being without a key member of the defense as they receive positive news for quarterback",
+      "categories": [],
+      "published_at": "2026-09-22T00:00:00+00:00",
+      "players": []
+    },
+    {
+      "id": "1c60d0a6ea4934bca9de",
+      "headline": "Eagles Biggest Fear Comes To Light With Dallas Goedert: Why Zach Ertz Becomes TE1",
+      "url": "https://www.si.com/nfl/eagles/onsi/eagles-biggest-fear-comes-to-light-with-dallas-goedert-why-zach-ertz-becomes-te1-01m331qt30kf",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Eagles lost Goedert to a sprained MCL and Ertz becomes the TE1 on the roster.",
+      "categories": [],
+      "published_at": "2026-09-21T23:27:30+00:00",
+      "players": [
+        {
+          "id": "00-0034351",
+          "name": "Dallas Goedert",
+          "team": "PHI",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "d76916ed6c07a1f2c9b2",
+      "headline": "Seahawks Planning On Sam Darnold Returning To Practice This Week",
+      "url": "https://www.seahawks.com/news/seahawks-planning-on-sam-darnold-returning-to-practice-this-week",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Seahawks coach Mike Macdonald said quarterback Sam Darnold is likely to return to practice this week and gave an update on running back Jadarian Price in his Monday press conference.",
+      "categories": [
+        "Homepage Hero",
+        "News: National Feature",
+        "News: Stories",
+        "News: Fantasy Insider"
+      ],
+      "published_at": "2026-09-21T23:20:32+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        },
+        {
+          "id": "00-0041512",
+          "name": "Jadarian Price",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "dc5778ec3732bb8fd458",
+      "headline": "Puka Nacua, Jordan Whittington and Kam Kinchens among Rams' inactives for Monday Night Football vs. Giants",
+      "url": "https://www.therams.com/news/puka-nacua-among-rams-inactives-for-monday-night-football-vs-giants-week-2-2026",
+      "source_id": "news_official_lar",
+      "source": "Los Angeles Rams (official)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Inactives for Monday Night Football between the Rams and the Giants in Week 2 at SoFi Stadium.",
+      "categories": [
+        "Football",
+        "Inactives",
+        "New York Giants at Los Angeles Rams (2026-REG-2)",
+        "Kamren Kinchens",
+        "CJ Daniels",
+        "Puka Nacua",
+        "Ty Simpson",
+        "Bill Murray",
+        "Jordan Whittington"
+      ],
+      "published_at": "2026-09-21T23:02:03+00:00",
+      "players": [
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039751",
+          "name": "Jordan Whittington",
+          "team": "LAR",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "c3049a043079f39e2180",
+      "headline": "Giants vs. Rams Inactives: Deonte Banks, Puka Nacua Out of Monday Night Football Clash",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-vs-rams-inactives-deonte-banks-puka-nacua-out-of-monday-night-football-clash-01m32shvdxd1",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "With Deonte Banks out, rookie Colton Hood steps in for the Giants, while the Rams are without Puka Nacua and Kamren Kinchens on Monday night.",
+      "categories": [],
+      "published_at": "2026-09-21T22:55:52+00:00",
+      "players": []
+    },
+    {
+      "id": "a703ec5b759e23992dbd",
+      "headline": "Report: Eagles are signing TE Zach Ertz to their practice squad",
+      "url": "https://www.phillyvoice.com/report-eagles-are-signing-te-zach-ertz-their-practice-squad/",
+      "source_id": "phillyvoice_jimmy_kempski",
+      "source": "PhillyVoice",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Eagles are presently extremely thin at tight end, with Dallas Goedert out \"a few weeks\" with an MCL sprain; as well as a pair of backups in rookie Eli Stowers and Grant Calcaterra on injured reserve.",
+      "categories": [
+        "Sports",
+        "Eagles",
+        "NFL",
+        "Philadelphia",
+        "Zach Ertz"
+      ],
+      "published_at": "2026-09-21T22:50:10+00:00",
+      "players": [
+        {
+          "id": "00-0034351",
+          "name": "Dallas Goedert",
+          "team": "PHI",
+          "position": "TE"
+        },
+        {
+          "id": "00-0037086",
+          "name": "Grant Calcaterra",
+          "team": "PHI",
+          "position": "TE"
+        },
+        {
+          "id": "00-0041483",
+          "name": "Eli Stowers",
+          "team": "PHI",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "dd7878e64c624e501428",
+      "headline": "Inactives: Who's in, who's out for Monday Night Football",
+      "url": "https://www.giants.com/news/inactives-who-s-in-who-s-out-for-monday-night-football-deonte-banks-micah-mcfadden-puka-nacua-week-2",
+      "source_id": "news_official_nyg",
+      "source": "New York Giants (official)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The following players will be inactive for Monday Night Football between the New York Giants and Los Angeles Rams.",
+      "categories": [
+        "2026 Giants at Rams WK 2",
+        "homepage"
+      ],
+      "published_at": "2026-09-21T22:45:00+00:00",
+      "players": []
+    },
     {
       "id": "708d49501d3b9a0e6e68",
       "headline": "Jayden Daniels\u2019 elbow MRI results in holding pattern as Commanders prepare for Seattle without their franchise QB",
@@ -3953,176 +4127,6 @@
         "New Orleans Saints Roster"
       ],
       "published_at": "2026-09-20T15:35:14+00:00",
-      "players": []
-    },
-    {
-      "id": "c6ff5d2e75d5acb3bbdc",
-      "headline": "Week 2 Inactives: Steelers at Patriots",
-      "url": "https://www.patriots.com/news/week-2-inactives-steelers-at-patriots",
-      "source_id": "news_official_ne",
-      "source": "New England Patriots (official)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots and Pittsburgh Steelers announce the following inactive players ahead of their NFL Week 2 game on September 20, 2026.",
-      "categories": [
-        "Inactives",
-        "hp-article",
-        "hp-featured",
-        "Pregame-Content",
-        "Pittsburgh Steelers at New England Patriots (2026-REG-2)"
-      ],
-      "published_at": "2026-09-20T15:34:40+00:00",
-      "players": []
-    },
-    {
-      "id": "ad4704abf760b7285d23",
-      "headline": "Packers at last have reason for optimism with huge injury update on offense, and nobody is happier than Jordan Love",
-      "url": "https://atozsports.com/nfl/green-bay-packers-news/week-2-inactive-list/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Two defensive tackles are ruled out, but the real question is whether Green Bay's pass protection can recover from a dismal Week 1. Zach Bako-Bewele and Aaron Banks are both active.",
-      "categories": [
-        "Green Bay Packers News",
-        "NFL",
-        "Aaron Banks",
-        "American Football",
-        "Benjamin St-Juste",
-        "Packers inactives",
-        "Zach Bako-Bewele"
-      ],
-      "published_at": "2026-09-20T15:33:38+00:00",
-      "players": [
-        {
-          "id": "00-0036264",
-          "name": "Jordan Love",
-          "team": "GB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "a2364b53768a94db0cfd",
-      "headline": "Week 2 Inactives at Atlanta: Pat Jones out for Falcons game",
-      "url": "https://www.panthers.com/news/week-2-inactives-at-atlanta-pat-jones-out-for-falcons-game-bobby-brown-panthers-falcons",
-      "source_id": "news_official_car",
-      "source": "Carolina Panthers (official)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Panthers will be without the veteran outside linebacker again this week, after he was able to begin practicing. Defensive tackle Bobby Brown is also out, and here's a look at the full list of inactives.",
-      "categories": [
-        "Latest News",
-        "Gameday",
-        "Inactives",
-        "App News",
-        "Carolina Panthers at Atlanta Falcons (2026-REG-2)"
-      ],
-      "published_at": "2026-09-20T15:33:02+00:00",
-      "players": []
-    },
-    {
-      "id": "dcbe77b8724cb0cefd0a",
-      "headline": "Pregame Quick Hits | Joe Burrow Gets Nod; Shemar Makes Season Debut With B.J. Hill Out",
-      "url": "https://www.bengals.com/news/pregame-quick-hits-joe-burrow-gets-nod-shemar-makes-season-debut-with-b-j-hill-out",
-      "source_id": "news_official_cin",
-      "source": "Cincinnati Bengals (official)",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "HOUSTON _ As he promised last week, Bengals quarterback Joe Burrow (back) went from questionable to starting Sunday\u2019s game here against the Texans (1 p.m.-Cincinnati\u2019s Local 12) at Reliant Stadium with the al-clear coming when third quarterback Josh Johnson went on the inactive list.",
-      "categories": [
-        "centerpiece",
-        "hobson",
-        "latest news",
-        "latest stories",
-        "Cincinnati Bengals at Houston Texans (2026-REG-2)",
-        "Game Preview",
-        "Quick Hits"
-      ],
-      "published_at": "2026-09-20T15:32:11+00:00",
-      "players": [
-        {
-          "id": "00-0026300",
-          "name": "Josh Johnson",
-          "team": "CIN",
-          "position": "QB"
-        },
-        {
-          "id": "00-0036442",
-          "name": "Joe Burrow",
-          "team": "CIN",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "847de6196c43a2fcf4e4",
-      "headline": "New Orleans Saints inactives for Baltimore Ravens game | 2026 NFL Week 2",
-      "url": "https://www.neworleanssaints.com/news/new-orleans-saints-inactives-baltimore-ravens-2026-nfl-week-2-gameday",
-      "source_id": "news_official_no",
-      "source": "New Orleans Saints (official)",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "Christen Miller, Kendre Miller out for Sunday's game vs. Ravens",
-      "categories": [
-        "Inactives List",
-        "Latest News",
-        "Gameday",
-        "2026-reg-week2"
-      ],
-      "published_at": "2026-09-20T15:32:07+00:00",
-      "players": [
-        {
-          "id": "00-0038551",
-          "name": "Kendre Miller",
-          "team": "NO",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "9aaf2592bd55091dd074",
-      "headline": "Browns announce inactives for Week 2 vs. Buccaneers",
-      "url": "https://www.clevelandbrowns.com/news/browns-announce-inactives-for-week-2-vs-buccaneers",
-      "source_id": "news_official_cle",
-      "source": "Cleveland Browns (official)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "Cleveland travels to Tampa to face the Buccaneers at Raymond James Stadium at 1 p.m.",
-      "categories": [
-        "Inactives",
-        "adpartner=inactives_article",
-        "featured",
-        "Cleveland Browns at Tampa Bay Buccaneers (2026-REG-2)"
-      ],
-      "published_at": "2026-09-20T15:30:18+00:00",
-      "players": []
-    },
-    {
-      "id": "d070b6f7cae4d493c10b",
-      "headline": "Game Inactives | Week 2 Titans vs Eagles",
-      "url": "https://www.tennesseetitans.com/news/game-inactives-week-2-titans-vs-eagles",
-      "source_id": "news_official_ten",
-      "source": "Tennessee Titans (official)",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "This week, the Tennessee Titans (0-1) play their second consecutive home game to start the season, welcoming the Philadelphia Eagles (1-0) to Nashville for the first time since 2018.",
-      "categories": [
-        "News: Game Inactives",
-        "Team/Football News",
-        "Philadelphia Eagles at Tennessee Titans (2026-REG-2)",
-        "2026-09-20-PREgame-STORIES-eagles-at-titans",
-        "2026-09-20-POSTgame-STORIES-eagles-at-titans",
-        "homepage-centerpiece"
-      ],
-      "published_at": "2026-09-20T15:30:09+00:00",
       "players": []
     }
   ]
