@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T04:00:52.784577+00:00",
+  "updated_at": "2026-09-22T06:48:09.965777+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T03:31:58+00:00",
+      "latest_entry_at": "2026-09-22T05:10:40+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T03:37:54+00:00",
+      "latest_entry_at": "2026-09-22T05:40:20+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-21T22:50:10+00:00",
+      "latest_entry_at": "2026-09-22T05:00:00+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-22T03:12:31+00:00",
+      "latest_entry_at": "2026-09-22T05:52:55+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-22T03:13:00+00:00",
+      "latest_entry_at": "2026-09-22T04:20:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 7,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-09-22T03:31:58+00:00",
+      "latest_entry_at": "2026-09-22T05:10:40+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-22T03:37:54+00:00",
+      "latest_entry_at": "2026-09-22T05:40:20+00:00",
       "stale": false
     },
     {
@@ -436,9 +436,9 @@
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 3,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-22T03:36:47+00:00",
+      "latest_entry_at": "2026-09-21T23:45:50+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T00:30:00+00:00",
+      "latest_entry_at": "2026-09-20T16:54:32+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-21T16:23:58+00:00",
+      "latest_entry_at": "2026-09-22T05:19:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-21T21:56:59+00:00",
+      "latest_entry_at": "2026-09-21T00:20:51+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-22T03:11:18+00:00",
+      "latest_entry_at": "2026-09-22T04:30:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,61 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-21T23:30:00+00:00",
+      "latest_entry_at": "2026-09-21T18:52:45+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "5401e4071e8d084640f8",
+      "headline": "Grading the signing: Colts bring in proven veteran to bolster the pass-catching unit following injury to star WR Alec Pierce",
+      "url": "https://atozsports.com/nfl/indianapolis-colts-news/grading-darius-slayton-signing-alec-pierce-injures-heel-vs-chiefs-no-surgery/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Indianapolis Colts fell to 0-2 after Monday night's loss to Kansas City, but the bigger concern is the health of their wide receiver and what it means for a passing attack that already looked thin.",
+      "categories": [
+        "Indianapolis Colts News",
+        "NFL",
+        "Colts News",
+        "Indianapolis Colts"
+      ],
+      "published_at": "2026-09-22T04:39:32+00:00",
+      "players": [
+        {
+          "id": "00-0037664",
+          "name": "Alec Pierce",
+          "team": "IND",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "cd9bb3a86d859e7c3187",
+      "headline": "QB Jaxson Dart exits with knee injury vs. Rams",
+      "url": "https://www.giants.com/news/qb-jaxson-dart-knee-questionable-to-return-vs-rams-injury-update",
+      "source_id": "news_official_nyg",
+      "source": "New York Giants (official)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Dart will undergo an MRI on Tuesday after the team returns from the West Coast trip.",
+      "categories": [
+        "homepage",
+        "2026 Giants at Rams WK 2"
+      ],
+      "published_at": "2026-09-22T04:19:00+00:00",
+      "players": [
+        {
+          "id": "00-0040691",
+          "name": "Jaxson Dart",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "cbd56f5b6fe754344ee8",
       "headline": "2 winners and 5 losers from Giants\u2019 loss on MNF: Jaxson Dart\u2019s injury derails the game before it even began for New York",
@@ -626,26 +676,29 @@
       ]
     },
     {
-      "id": "cd9bb3a86d859e7c3187",
-      "headline": "QB Jaxson Dart exits with knee injury vs. Rams",
-      "url": "https://www.giants.com/news/qb-jaxson-dart-knee-questionable-to-return-vs-rams-injury-update",
-      "source_id": "news_official_nyg",
-      "source": "New York Giants (official)",
+      "id": "1e289e1ec65a81440f29",
+      "headline": "Rams Show Signs of the Team Everyone Expected in Win Over Giants",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-bounce-back-in-dominant-fashio-with-win-over-giants",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
       "teams": [
-        "NYG"
+        "LAR"
       ],
-      "feed_description": "Quarterback Jaxson Dart suffered a knee injury with 11:20 left in the first quarter of the Giants\u2019 Monday night game against the Rams. He was originally listed as questionable to return and then ruled out at halftime.",
-      "categories": [
-        "homepage",
-        "2026 Giants at Rams WK 2"
-      ],
-      "published_at": "2026-09-22T03:10:00+00:00",
+      "feed_description": "Matthew Stafford and Davante Adams led the way as the Rams responded to their Week 1 loss with a convincing 28-6 win over the Giants.",
+      "categories": [],
+      "published_at": "2026-09-22T03:27:55+00:00",
       "players": [
         {
-          "id": "00-0040691",
-          "name": "Jaxson Dart",
-          "team": "NYG",
+          "id": "00-0026498",
+          "name": "Matthew Stafford",
+          "team": "LAR",
           "position": "QB"
+        },
+        {
+          "id": "00-0031381",
+          "name": "Davante Adams",
+          "team": "LAR",
+          "position": "WR"
         }
       ]
     },
@@ -1062,23 +1115,6 @@
           "position": "TE"
         }
       ]
-    },
-    {
-      "id": "dd7878e64c624e501428",
-      "headline": "Inactives: Who's in, who's out for Monday Night Football",
-      "url": "https://www.giants.com/news/inactives-who-s-in-who-s-out-for-monday-night-football-deonte-banks-micah-mcfadden-puka-nacua-week-2",
-      "source_id": "news_official_nyg",
-      "source": "New York Giants (official)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "The following players will be inactive for Monday Night Football between the New York Giants and Los Angeles Rams.",
-      "categories": [
-        "2026 Giants at Rams WK 2",
-        "homepage"
-      ],
-      "published_at": "2026-09-21T22:45:00+00:00",
-      "players": []
     },
     {
       "id": "708d49501d3b9a0e6e68",
@@ -1642,6 +1678,23 @@
           "position": "WR"
         }
       ]
+    },
+    {
+      "id": "dd7878e64c624e501428",
+      "headline": "Inactives: Who's in, who's out for Monday Night Football",
+      "url": "https://www.giants.com/news/inactives-who-s-in-who-s-out-for-monday-night-football-deonte-banks-micah-mcfadden-puka-nacua-week-2",
+      "source_id": "news_official_nyg",
+      "source": "New York Giants (official)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The following players will be inactive for Monday Night Football between the New York Giants and Los Angeles Rams.",
+      "categories": [
+        "2026 Giants at Rams WK 2",
+        "homepage"
+      ],
+      "published_at": "2026-09-21T19:45:00+00:00",
+      "players": []
     },
     {
       "id": "8903dc762c760b2aa195",
@@ -4174,43 +4227,6 @@
           "id": "00-0035676",
           "name": "A.J. Brown",
           "team": "NE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "260267931ae2947e8ee4",
-      "headline": "Titans' Week 2 Inactives Against Eagles Delivers Brutal Last-Second News For Defense",
-      "url": "https://www.si.com/nfl/titans/onsi/titans-week-2-inactives-against-eagles-delivers-brutal-last-second-news-for-defense-01m2zqh8zarb",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "The Titans' inactives list for Week 2 bears some especially bad news for Tennessee's weakest defensive unit.",
-      "categories": [],
-      "published_at": "2026-09-20T16:15:00+00:00",
-      "players": []
-    },
-    {
-      "id": "db1706ec4a127f31544d",
-      "headline": "Buccaneers vs. Browns: Inactives for Week 2",
-      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/68604/buccaneers-browns-nfl-inactives-week-2-jalen-mcmillan",
-      "source_id": "news_sbn_tb",
-      "source": "Bucs Nation (SB Nation)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "The Tampa Bay Buccaneers will get an offensive weapon back for Sunday\u2019s Week 2 matchup against the Cleveland Browns. Wide receiver Jalen McMillan is active and will make his 2026 season debut after missing Tampa Bay\u2019s opener with a knee injury. Safety Miles Killebrew, who entered the weekend questionable after dealing with a concussion, is [\u2026]",
-      "categories": [
-        "Tampa Bay Buccaneers Injuries"
-      ],
-      "published_at": "2026-09-20T16:10:55+00:00",
-      "players": [
-        {
-          "id": "00-0039855",
-          "name": "Jalen McMillan",
-          "team": "TB",
           "position": "WR"
         }
       ]
