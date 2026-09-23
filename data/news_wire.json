@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T06:40:47.659133+00:00",
+  "updated_at": "2026-09-23T10:01:01.342377+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-23T05:36:17+00:00",
+      "latest_entry_at": "2026-09-23T09:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-22T23:40:24+00:00",
+      "latest_entry_at": "2026-09-23T09:00:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-23T05:36:17+00:00",
+      "latest_entry_at": "2026-09-23T09:00:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T22:52:29+00:00",
+      "latest_entry_at": "2026-09-23T09:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T22:58:52+00:00",
+      "latest_entry_at": "2026-09-23T10:00:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T15:00:26+00:00",
+      "latest_entry_at": "2026-09-22T19:25:19+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T22:03:50+00:00",
+      "latest_entry_at": "2026-09-23T09:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "6f568aec1c70ded81980",
+      "headline": "Darius Slayton Signs With Colts After Giants Release, Reuniting With Daniel Jones",
+      "url": "https://www.si.com/nfl/giants/onsi/darius-slayton-signs-colts-giants-release-daniel-jones-01m354j1gx6y",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The former Giants wideout, released earlier this month, joins Indianapolis to fill their need at deep threat and reunite with ex-teammate Daniel Jones.",
+      "categories": [],
+      "published_at": "2026-09-23T08:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0035535",
+          "name": "Darius Slayton",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "a61e55d432e21666501b",
       "headline": "Falcons vs. Packers injury report: A.J. Terrell lands on IR",
@@ -4271,38 +4292,6 @@
           "id": "00-0039910",
           "name": "Jayden Daniels",
           "team": "WAS",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "41164b0c8ecec225c458",
-      "headline": "Bears teammates show support for Caleb Williams after Week 2 injury and back Tyson Bagent with uncertainty setting in",
-      "url": "https://atozsports.com/nfl/chicago-bears-news/bears-teammates-show-support-for-caleb-williams-injury-week-2-tyson-bagent/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears quarterback Caleb Williams suffered a hamstring injury during the Week 2 loss and will undergo further imaging on Monday to determine the severity.",
-      "categories": [
-        "Chicago Bears News",
-        "NFL",
-        "Caleb Williams",
-        "Tyson Bagent"
-      ],
-      "published_at": "2026-09-20T22:28:41+00:00",
-      "players": [
-        {
-          "id": "00-0038416",
-          "name": "Tyson Bagent",
-          "team": "CHI",
-          "position": "QB"
-        },
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
           "position": "QB"
         }
       ]
