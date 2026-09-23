@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T00:00:56.099188+00:00",
+  "updated_at": "2026-09-23T01:32:11.208910+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T23:49:31+00:00",
+      "latest_entry_at": "2026-09-23T01:30:00+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-22T21:11:00+00:00",
+      "latest_entry_at": "2026-09-22T23:30:00+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-22T21:18:14+00:00",
+      "latest_entry_at": "2026-09-23T00:23:54+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-22T23:49:31+00:00",
+      "latest_entry_at": "2026-09-23T01:30:00+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T17:07:05+00:00",
+      "latest_entry_at": "2026-09-23T00:00:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T21:31:44+00:00",
+      "latest_entry_at": "2026-09-23T00:41:55+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-22T22:10:00+00:00",
+      "latest_entry_at": "2026-09-23T01:23:10+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-22T21:50:12+00:00",
+      "latest_entry_at": "2026-09-23T01:12:27+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,55 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-21T18:52:45+00:00",
+      "latest_entry_at": "2026-09-22T22:02:30+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "e4d46626907bfa79c027",
+      "headline": "Demarcus Robinson\u2019s Injury Is a Bigger Blow to the 49ers Than You\u2019d Think",
+      "url": "https://www.si.com/nfl/49ers/onsi/demarcus-robinsons-injury-bigger-blow-49ers-youd-think",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Demarcus Robinson\u2019s injury is a bigger blow to the 49ers than you might think.",
+      "categories": [],
+      "published_at": "2026-09-23T01:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0032775",
+          "name": "Demarcus Robinson",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "f973956b7b4fb47d2cdf",
+      "headline": "Chase Young's Resurgence Raises Uncomfortable Question for Commanders",
+      "url": "https://www.si.com/nfl/commanders/onsi/chase-young-saints-resurgence-jayden-daniels-injury-commanders-history",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "As Jayden Daniels battles another elbow injury, former Commanders star Chase Young is thriving with the Saints. What his redemption arc means for Washington.",
+      "categories": [],
+      "published_at": "2026-09-22T23:53:19+00:00",
+      "players": [
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "a649063231f7f53ea515",
       "headline": "Spadaro: Jalen Hurts, Eagles do what it takes to win",
@@ -4270,72 +4312,6 @@
           "name": "Saquon Barkley",
           "team": "PHI",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "168194566fd3daa9d066",
-      "headline": "Jordan Love says his throwing hand went numb vs. the New York Jets",
-      "url": "https://www.acmepackingcompany.com/green-bay-packers-injuries/86761/jordan-love-says-his-throwing-hand-went-numb-vs-the-new-york-jets",
-      "source_id": "news_sbn_gb",
-      "source": "Acme Packing Company (SB Nation)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "During the broadcast, CBS\u2019 team highlighted that Green Bay Packers quarterback Jordan Love was favoring his throwing hand, shaking it out and had it worked on while he was on the sideline. In his post-game press conference, Love stated that the issue actually started with a hit to his elbow. On one of the Packers\u2019 [\u2026]",
-      "categories": [
-        "Green Bay Packers injuries",
-        "Green Bay Packers News"
-      ],
-      "published_at": "2026-09-20T21:55:53+00:00",
-      "players": [
-        {
-          "id": "00-0036264",
-          "name": "Jordan Love",
-          "team": "GB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "39277980395c4271629d",
-      "headline": "49ers lose another receiver as Demarcus Robinson was carted to the locker room",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/162973/49ers-lose-another-receiver-as-demarcus-robinson-was-carted-to-the-locker-room",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "When it rains, it pours. The San Francisco 49ers haven\u2019t been on the right side of any injury luck under Kyle Shanahan. Ricky Pearsall, Christian Kirk, and De\u2019Zhaun Stribling were arguably going to be three of the top four receivers heading into the regular season. Pearsall is out for the year. Kirk is on injured [\u2026]",
-      "categories": [
-        "San Francisco 49ers Depth Chart",
-        "San Francisco 49ers Injuries"
-      ],
-      "published_at": "2026-09-20T21:27:24+00:00",
-      "players": [
-        {
-          "id": "00-0032775",
-          "name": "Demarcus Robinson",
-          "team": "SF",
-          "position": "WR"
-        },
-        {
-          "id": "00-0034775",
-          "name": "Christian Kirk",
-          "team": "SF",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039916",
-          "name": "Ricky Pearsall",
-          "team": "SF",
-          "position": "WR"
-        },
-        {
-          "id": "00-0041035",
-          "name": "De'Zhaun Stribling",
-          "team": "SF",
-          "position": "WR"
         }
       ]
     }
