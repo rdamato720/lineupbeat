@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T10:01:01.342377+00:00",
+  "updated_at": "2026-09-23T12:00:55.908331+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-23T09:00:00+00:00",
+      "latest_entry_at": "2026-09-23T11:45:02+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-23T03:34:51+00:00",
+      "latest_entry_at": "2026-09-23T11:45:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-23T09:00:00+00:00",
+      "latest_entry_at": "2026-09-23T11:32:27+00:00",
       "stale": false
     },
     {
@@ -68,9 +68,9 @@
     {
       "source_id": "news_official_buf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-21T15:53:51+00:00",
+      "latest_entry_at": "2026-09-23T11:00:19+00:00",
       "stale": false
     },
     {
@@ -140,9 +140,9 @@
     {
       "source_id": "news_official_ind",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-22T21:00:00+00:00",
+      "latest_entry_at": "2026-09-23T11:39:58+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T20:05:46+00:00",
+      "latest_entry_at": "2026-09-23T10:30:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-23T09:00:00+00:00",
+      "latest_entry_at": "2026-09-23T11:45:02+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-23T03:34:51+00:00",
+      "latest_entry_at": "2026-09-23T11:45:00+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-23T00:00:00+00:00",
+      "latest_entry_at": "2026-09-23T11:07:03+00:00",
       "stale": false
     },
     {
@@ -318,15 +318,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-23T09:00:00+00:00",
+      "latest_entry_at": "2026-09-22T22:52:29+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T15:45:54+00:00",
+      "latest_entry_at": "2026-09-21T12:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-23T10:00:00+00:00",
+      "latest_entry_at": "2026-09-22T22:58:52+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-23T00:41:55+00:00",
+      "latest_entry_at": "2026-09-22T21:31:44+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-22T23:33:59+00:00",
+      "latest_entry_at": "2026-09-21T21:28:53+00:00",
       "stale": false
     },
     {
@@ -366,15 +366,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-22T13:00:00+00:00",
+      "latest_entry_at": "2026-09-21T13:51:32+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-22T18:24:19+00:00",
+      "latest_entry_at": "2026-09-21T14:13:14+00:00",
       "stale": false
     },
     {
@@ -388,17 +388,17 @@
     {
       "source_id": "news_sbn_ten",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T18:57:49+00:00",
+      "latest_entry_at": "2026-09-21T18:51:37+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-22T23:42:38+00:00",
+      "latest_entry_at": "2026-09-21T23:44:02+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T17:30:00+00:00",
+      "latest_entry_at": "2026-09-23T10:30:00+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-22T19:28:48+00:00",
+      "latest_entry_at": "2026-09-21T22:08:05+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T22:30:00+00:00",
+      "latest_entry_at": "2026-09-22T00:00:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-22T20:13:35+00:00",
+      "latest_entry_at": "2026-09-22T14:34:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-23T01:23:10+00:00",
+      "latest_entry_at": "2026-09-23T10:00:00+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-23T01:12:27+00:00",
+      "latest_entry_at": "2026-09-22T05:19:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,86 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-23T02:09:20+00:00",
+      "latest_entry_at": "2026-09-22T14:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "c34541aaac9c7e018bf9",
+      "headline": "Colts sign WR Eli Pancol to practice squad",
+      "url": "https://www.colts.com/news/colts-sign-wr-eli-pancol-to-practice-squad",
+      "source_id": "news_official_ind",
+      "source": "Indianapolis Colts (official)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Colts made the roster move Wednesday.",
+      "categories": [
+        "Roster Moves",
+        "Featured",
+        "Featured News"
+      ],
+      "published_at": "2026-09-23T11:39:58+00:00",
+      "players": [
+        {
+          "id": "00-0040337",
+          "name": "Eli Pancol",
+          "team": "IND",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "8c06e73fe21191c078c0",
+      "headline": "The Biggest Question That Patrick Mahomes Answered for the Chiefs in Week 2",
+      "url": "https://www.si.com/nfl/chiefs/onsi/the-biggest-question-that-patrick-mahomes-answered-for-the-chiefs-in-week-2",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "Patrick Mahomes is starting to look more comfortable post-ACL surgery as the Chiefs' new-look offense develops.",
+      "categories": [],
+      "published_at": "2026-09-23T11:00:01+00:00",
+      "players": [
+        {
+          "id": "00-0033873",
+          "name": "Patrick Mahomes",
+          "team": "KC",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "b07ea7c22489509626da",
+      "headline": "Chicago Bears News: With Tyson Bagent concussed, eyes turn to Case Keenum",
+      "url": "https://www.windycitygridiron.com/chicago-bears-news/123518/chicago-bears-news-tyson-bagent-concussed-eyes-turn-to-case-keenum",
+      "source_id": "news_sbn_chi",
+      "source": "Windy City Gridiron (SB Nation)",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "The Minnesota Vikings knocked out not one, but two Chciago Bears quarterbacks last Sunday, so odds are it\u2019s Case Keenum time against the Philadelphia Eagles. The Bears also bring back long snapper Scott Daly, snatching him off the New Orleans Saints practice squad. Daly snapped for Chicago in 2024 and 2025. Share your thoughts in [\u2026]",
+      "categories": [
+        "Chicago Bears News"
+      ],
+      "published_at": "2026-09-23T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0028986",
+          "name": "Case Keenum",
+          "team": "CHI",
+          "position": "QB"
+        },
+        {
+          "id": "00-0038416",
+          "name": "Tyson Bagent",
+          "team": "CHI",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "6f568aec1c70ded81980",
       "headline": "Darius Slayton Signs With Colts After Giants Release, Reuniting With Daniel Jones",
@@ -4217,81 +4292,6 @@
           "id": "00-0039150",
           "name": "Bryce Young",
           "team": "CAR",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "8f50c5546701d10af14c",
-      "headline": "Colts announce 6 inactive players for Week 2 game vs. Kansas City Chiefs",
-      "url": "https://www.colts.com/news/colts-announce-6-inactive-players-for-week-2-game-vs-kansas-city-chiefs",
-      "source_id": "news_official_ind",
-      "source": "Indianapolis Colts (official)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The Colts on Friday ruled out wide receiver Ashton Dulin with an ankle injury.",
-      "categories": [
-        "Inactives List",
-        "Featured",
-        "Featured News",
-        "Indianapolis Colts at Kansas City Chiefs (2026-REG-2)"
-      ],
-      "published_at": "2026-09-20T22:52:09+00:00",
-      "players": [
-        {
-          "id": "00-0035021",
-          "name": "Ashton Dulin",
-          "team": "IND",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "d4fe038f16a8659041ac",
-      "headline": "Jayden Daniels carted off field in Dallas after apparent elbow injury against Cowboys",
-      "url": "https://atozsports.com/nfl/washington-commanders-news/jayden-daniels-carted-off-field-in-dallas-after-apparent-elbow-injury-against-cowboys/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Commanders' quarterback went down after being tripped by his own offensive lineman, and Dan Quinn's fourth-down decision will face scrutiny.",
-      "categories": [
-        "Washington Commanders News",
-        "Commanders",
-        "Dallas Cowboys",
-        "Dan Quinn",
-        "Jayden Daniels",
-        "Washington Commanders"
-      ],
-      "published_at": "2026-09-20T22:41:39+00:00",
-      "players": [
-        {
-          "id": "00-0039910",
-          "name": "Jayden Daniels",
-          "team": "WAS",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "539ac184248088650dec",
-      "headline": "Commanders QB Jayden Daniels Carted Off, Ruled Out With Left Elbow Injury vs. Cowboys",
-      "url": "https://www.si.com/nfl/commanders/onsi/jayden-daniels-injury-update-elbow-commanders-cowboys",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Commanders quarterback Jayden Daniels suffered a gruesome injury to his left elbow on the final play of the first half and was carted off against the Cowboys.",
-      "categories": [],
-      "published_at": "2026-09-20T22:28:48+00:00",
-      "players": [
-        {
-          "id": "00-0039910",
-          "name": "Jayden Daniels",
-          "team": "WAS",
           "position": "QB"
         }
       ]
