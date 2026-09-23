@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T23:16:29.951175+00:00",
+  "updated_at": "2026-09-23T00:00:56.099188+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T23:08:24+00:00",
+      "latest_entry_at": "2026-09-22T23:49:31+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T22:38:17+00:00",
+      "latest_entry_at": "2026-09-22T23:58:08+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-22T22:45:15+00:00",
+      "latest_entry_at": "2026-09-22T23:40:24+00:00",
       "stale": false
     },
     {
@@ -236,9 +236,9 @@
     {
       "source_id": "news_official_phi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-22T20:11:29+00:00",
+      "latest_entry_at": "2026-09-22T23:45:00+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-22T23:08:24+00:00",
+      "latest_entry_at": "2026-09-22T23:49:31+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-22T22:38:17+00:00",
+      "latest_entry_at": "2026-09-22T23:58:08+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T23:12:00+00:00",
+      "latest_entry_at": "2026-09-22T17:07:05+00:00",
       "stale": false
     },
     {
@@ -356,9 +356,9 @@
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-22T20:58:43+00:00",
+      "latest_entry_at": "2026-09-22T23:33:59+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-22T01:00:15+00:00",
+      "latest_entry_at": "2026-09-22T18:24:19+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-22T17:30:00+00:00",
+      "latest_entry_at": "2026-09-22T23:42:38+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-22T13:50:00+00:00",
+      "latest_entry_at": "2026-09-22T19:28:48+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-22T20:37:14+00:00",
+      "latest_entry_at": "2026-09-22T23:44:42+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-22T17:16:01+00:00",
+      "latest_entry_at": "2026-09-22T20:23:33+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-22T16:30:00+00:00",
+      "latest_entry_at": "2026-09-22T23:17:50+00:00",
       "stale": false
     },
     {
@@ -532,29 +532,135 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-22T16:01:00+00:00",
+      "latest_entry_at": "2026-09-22T22:35:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-22T19:30:00+00:00",
+      "latest_entry_at": "2026-09-22T22:03:50+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-22T22:02:30+00:00",
+      "latest_entry_at": "2026-09-21T18:52:45+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "a649063231f7f53ea515",
+      "headline": "Spadaro: Jalen Hurts, Eagles do what it takes to win",
+      "url": "https://www.philadelphiaeagles.com/news/jalen-hurts-eagles-do-what-it-takes-to-win",
+      "source_id": "news_official_phi",
+      "source": "Philadelphia Eagles (official)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "New scheme, injuries to key personnel, adversity \u2013 the offense has overcome it all in this 2-0 start with room for growth.",
+      "categories": [
+        "On The Inside",
+        "All News-archived",
+        "NFL.com Feature",
+        "2026 Week 3 at Bears"
+      ],
+      "published_at": "2026-09-22T23:45:00+00:00",
+      "players": [
+        {
+          "id": "00-0036389",
+          "name": "Jalen Hurts",
+          "team": "PHI",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "c7ca37a115d080d161c7",
+      "headline": "Packers say it\u2019s \u2018too soon\u2019 to know if Jayden Reed will be out for the year",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-injuries/86991/packers-say-its-too-soon-to-know-if-jayden-reed-will-be-out-for-the-year",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "In his press conference on Tuesday, Green Bay Packers head coach Matt LaFleur confirmed that receiver Jayden Reed, who was knocked out against the New York Jets and suffered an injury to his neck, stayed overnight on the East Coast to undergo tests, but that he has since returned to Green Bay. He also stated [\u2026]",
+      "categories": [
+        "Green Bay Packers injuries",
+        "Green Bay Packers News"
+      ],
+      "published_at": "2026-09-22T23:44:42+00:00",
+      "players": [
+        {
+          "id": "00-0039146",
+          "name": "Jayden Reed",
+          "team": "GB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "ca2614cac5991bba3dd2",
+      "headline": "A new J.J. McCarthy trade partner has come to light, and this may be what the Vikings were looking for",
+      "url": "https://atozsports.com/nfl/minnesota-vikings-news/j-j-mccarthy-trade-partner-come-to-light-vikings-giants-jaxson-dart-john-harbaugh-joe-schoen/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "The Minnesota Vikings held onto their former first-round quarterback through cutdowns, but a Monday night injury in New York may have created the perfect trade partner.",
+      "categories": [
+        "Minnesota Vikings News",
+        "NFL",
+        "J.J. McCarthy",
+        "J.J. McCarthy Trade",
+        "Jaxson Dart",
+        "Jim Harbaugh",
+        "Joe Schoen",
+        "John Harbaugh",
+        "Minnesota Vikings",
+        "New York Giants"
+      ],
+      "published_at": "2026-09-22T23:32:42+00:00",
+      "players": [
+        {
+          "id": "00-0039923",
+          "name": "J.J. McCarthy",
+          "team": "MIN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "d766b094ed4a3714731c",
+      "headline": "Steelers get positive injury update on Rico Dowdle",
+      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-injuries/175108/steelers-get-positive-injury-update-on-rico-dowdle-nfl-cincinnati-bengals",
+      "source_id": "news_sbn_pit",
+      "source": "Behind the Steel Curtain (SB Nation)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "The Pittsburgh Steelers received good news regarding an injury hampering one of their main offensive weapons. Running back Rico Dowdle left Sunday\u2019s game against the New England Patriots with a toe injury. Tests came back \u201crelatively OK\u201d on Dowdle\u2019s toe after further evaluation, according to NFL Network and ESPN insider Ian Rapoport. Dowdle is considered [\u2026]",
+      "categories": [
+        "Pittsburgh Steelers Injuries",
+        "Pittsburgh Steelers News"
+      ],
+      "published_at": "2026-09-22T23:22:21+00:00",
+      "players": [
+        {
+          "id": "00-0036139",
+          "name": "Rico Dowdle",
+          "team": "PIT",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "d0524c3e9e80242f72b5",
       "headline": "49ers Have an Easy Decision if a Team Calls for Mac Jones",
@@ -631,6 +737,30 @@
           "name": "Jaxson Dart",
           "team": "NYG",
           "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "9e910093a6060d8d88e0",
+      "headline": "Rams snap count review: Terrance Ferguson stakes a claim for TE#1",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-scores-results/149624/rams-snap-counts-terrance-ferguson",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Using a balanced offense and stifling defense, the Los Angeles Rams used the Monday Night Football platform to gain entry to the winning side of the ledger. L.A. knocked off the New York Giants by a 28-6 margin at SoFi Stadium. The Rams not only welcomed back Aaron Donald after a two-year hiatus, but appear [\u2026]",
+      "categories": [
+        "Los Angeles Rams Depth Chart",
+        "Los Angeles Rams Scores and Results"
+      ],
+      "published_at": "2026-09-22T22:35:00+00:00",
+      "players": [
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
         }
       ]
     },
@@ -4206,127 +4336,6 @@
           "name": "De'Zhaun Stribling",
           "team": "SF",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "64150e85e429088cc635",
-      "headline": "Chargers TE David Njoku carted off vs. Raiders",
-      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/65601/chargers-te-david-njoku-carted-off-vs-raiders",
-      "source_id": "news_sbn_lac",
-      "source": "Bolts From The Blue (SB Nation)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "The Los Angeles Chargers offense is taking a hit after tight end David Njoku has been carted off in the first half against the Las Vegas Raiders in Week 2 at SoFi Stadium. Njoku suffered a knee injury in the first play of the second quarter, which could keep him out of the rest of [\u2026]",
-      "categories": [
-        "Los Angeles Chargers Injuries",
-        "Los Angeles Chargers News"
-      ],
-      "published_at": "2026-09-20T21:01:36+00:00",
-      "players": [
-        {
-          "id": "00-0033885",
-          "name": "David Njoku",
-          "team": "LAC",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "6f7e21e39d9119913d07",
-      "headline": "Game Recap: Bears fall to 1-1 with loss to Vikings",
-      "url": "https://www.chicagobears.com/news/game-recap-bears-fall-to-1-1-with-loss-to-vikings",
-      "source_id": "news_official_chi",
-      "source": "Chicago Bears (official)",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Bears lost quarterback Caleb Williams to a hamstring injury and fell to the Vikings 9-3 in an unexpected defensive battle Sunday at Soldier Field.",
-      "categories": [
-        "Article - Game Recap"
-      ],
-      "published_at": "2026-09-20T20:59:00+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "035e0c33198c09883cfa",
-      "headline": "Bears HC Ben Johnson provides injury update on QB Caleb Williams that doesn\u2019t make things any less concerning for this offense",
-      "url": "https://atozsports.com/nfl/chicago-bears-news/bears-ben-johnson-provides-update-on-caleb-williams-chicago-offense-week-2/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears head coach Ben Johnson spoke with reporters after the Week 2 loss and provided a brief update on injured quarterback Caleb Williams.",
-      "categories": [
-        "Chicago Bears News",
-        "NFL",
-        "Ben Johnson",
-        "Caleb Williams",
-        "Tyson Bagent"
-      ],
-      "published_at": "2026-09-20T20:55:17+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "a000353621e17943bbf8",
-      "headline": "David Njoku Injury Update: Chargers TE Carted Off in First Half With Leg Injury",
-      "url": "https://www.si.com/nfl/chargers/onsi/david-njoku-injury-update-chargers-carted-off-raiders",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "Chargers TE David Njoku suffered an injury in Week 2 vs. Raiders.",
-      "categories": [],
-      "published_at": "2026-09-20T20:51:39+00:00",
-      "players": [
-        {
-          "id": "00-0033885",
-          "name": "David Njoku",
-          "team": "LAC",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "343944299ea6c1e702f6",
-      "headline": "Seahawks at Cardinals In-Game Injury Updates: RB Jadarian Price Questionable (Chest), NT Brandon Pili Ruled Out With A Concussion",
-      "url": "https://www.seahawks.com/news/2026-week-2-seahawks-at-cardinals-in-game-injury-updates",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "In-Game Injury News From The Week 2 Matchup Between Seattle and Arizona",
-      "categories": [
-        "News: Stories",
-        "News: Gameday",
-        "Homepage Hero",
-        "Seattle Seahawks at Arizona Cardinals (2026-REG-2)"
-      ],
-      "published_at": "2026-09-20T20:50:36+00:00",
-      "players": [
-        {
-          "id": "00-0041512",
-          "name": "Jadarian Price",
-          "team": "SEA",
-          "position": "RB"
         }
       ]
     }
