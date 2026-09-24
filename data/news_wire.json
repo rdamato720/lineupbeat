@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T06:46:06.706989+00:00",
+  "updated_at": "2026-09-24T10:00:54.461181+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-24T05:48:06+00:00",
+      "latest_entry_at": "2026-09-24T09:00:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-23T22:30:29+00:00",
+      "latest_entry_at": "2026-09-24T09:58:51+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-23T22:18:31+00:00",
+      "latest_entry_at": "2026-09-24T09:00:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-24T05:48:06+00:00",
+      "latest_entry_at": "2026-09-24T09:00:00+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-23T22:30:29+00:00",
+      "latest_entry_at": "2026-09-24T09:58:51+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-23T21:53:51+00:00",
+      "latest_entry_at": "2026-09-24T10:00:00+00:00",
       "stale": false
     },
     {
@@ -342,15 +342,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-23T22:34:31+00:00",
+      "latest_entry_at": "2026-09-24T10:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-24T00:36:59+00:00",
+      "latest_entry_at": "2026-09-24T10:00:00+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-23T11:30:00+00:00",
+      "latest_entry_at": "2026-09-23T21:31:17+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-23T23:00:00+00:00",
+      "latest_entry_at": "2026-09-24T10:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-24T00:51:57+00:00",
+      "latest_entry_at": "2026-09-24T10:00:00+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-23T21:00:00+00:00",
+      "latest_entry_at": "2026-09-24T10:00:00+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-24T01:26:00+00:00",
+      "latest_entry_at": "2026-09-24T08:10:33+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-23T19:51:49+00:00",
+      "latest_entry_at": "2026-09-24T08:57:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,54 @@
     }
   ],
   "items": [
+    {
+      "id": "737c7f1845f7bff8d67f",
+      "headline": "Cleveland Browns news: Roster changes, injury report, Quinshon Judkins breakout, and more",
+      "url": "https://www.dawgsbynature.com/cleveland-browns-news/133288/cleveland-browns-news-roster-changes-injury-report-quinshon-judkins-breakout-and-more",
+      "source_id": "news_sbn_cle",
+      "source": "Dawgs By Nature (SB Nation)",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "Week 3 starts with Thursday Night Football kicking it off, as the Cleveland Browns prepare for the Carolina Panthers to visit. A lot of intrigue around the game as the Browns are coming off a big win and the Panthers\u2019 offense has been dynamite. Cleveland has added a couple of former Carolina players to the [\u2026]",
+      "categories": [
+        "Cleveland Browns News",
+        "Daily Dawg Chow"
+      ],
+      "published_at": "2026-09-24T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040784",
+          "name": "Quinshon Judkins",
+          "team": "CLE",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "ea396b3842191b92369b",
+      "headline": "Rams poach safety Maximus Pulley from Eagles",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-roster/149667/rams-poach-safety-maximus-pulley-from-eagles",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The LA Rams have signed UDFA safety Maximus Pulley to the 53-man roster from the Eagles\u2019 practice squad. To make room, the Rams placed Ronnie Rivers on IR after he was injured in Monday night\u2019s game against the Giants. Pulley played for Wofford College in the NCAA Division I Football Championship Subdivision (FCS). In 34 [\u2026]",
+      "categories": [
+        "Los Angeles Rams Depth Chart",
+        "Los Angeles Rams Roster"
+      ],
+      "published_at": "2026-09-24T08:10:33+00:00",
+      "players": [
+        {
+          "id": "00-0037557",
+          "name": "Ronnie Rivers",
+          "team": "LAR",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "dd1d7cc8b2d0912ba9d9",
       "headline": "Panthers defense features prominently on first injury report of Week 3",
@@ -3991,59 +4039,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "95a73259115821c1ad79",
-      "headline": "Jaxson Dart\u2019s knee injury could force the Giants to explore their market options at quarterback",
-      "url": "https://atozsports.com/nfl/new-york-giants-news/jaxson-dart-knee-injury-will-levis-qb-market/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "The Giants have limited quarterback depth behind Jameis Winston, and one free agent's playing style and coaching connections make him a natural fit.",
-      "categories": [
-        "New York Giants News",
-        "NFL",
-        "American Football",
-        "jameis winston",
-        "Jaxson Dart",
-        "NFL free agency",
-        "Quarterback Market",
-        "Wildcat",
-        "WIll Levis"
-      ],
-      "published_at": "2026-09-22T13:41:32+00:00",
-      "players": [
-        {
-          "id": "00-0031503",
-          "name": "Jameis Winston",
-          "team": "NYG",
-          "position": "QB"
-        },
-        {
-          "id": "00-0040691",
-          "name": "Jaxson Dart",
-          "team": "NYG",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "eee168d9e1fdbb152f67",
-      "headline": "Falcons vs. Packers injury report: A.J. Terrell dealing with groin issue",
-      "url": "https://www.thefalcoholic.com/atlanta-falcons-injuries/96489/falcons-vs-packers-injury-report-a-j-terrell-dealing-with-groin-issue",
-      "source_id": "news_sbn_atl",
-      "source": "The Falcoholic (SB Nation)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "It\u2019s the start of a new week, a short week at that, as the Atlanta Falcons and Green Bay Packers prepare to face off in primetime on Thursday night. The Falcons are now 0-2 and dealing with some injuries, so we will take a look at the first injury report of the week. It\u2019s worth [\u2026]",
-      "categories": [
-        "Atlanta Falcons injuries"
-      ],
-      "published_at": "2026-09-22T13:27:34+00:00",
-      "players": []
     }
   ]
 }
