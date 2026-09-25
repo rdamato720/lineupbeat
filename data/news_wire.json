@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T04:00:53.112590+00:00",
+  "updated_at": "2026-09-25T07:48:10.468218+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-25T03:51:00+00:00",
+      "latest_entry_at": "2026-09-25T07:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T03:59:51+00:00",
+      "latest_entry_at": "2026-09-25T04:50:30+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-25T03:17:20+00:00",
+      "latest_entry_at": "2026-09-25T04:45:09+00:00",
       "stale": false
     },
     {
@@ -52,9 +52,9 @@
     {
       "source_id": "news_official_atl",
       "ok": true,
-      "eligible": 8,
+      "eligible": 9,
       "error": "",
-      "latest_entry_at": "2026-09-25T03:15:37+00:00",
+      "latest_entry_at": "2026-09-25T06:44:28+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-25T03:00:00+00:00",
+      "latest_entry_at": "2026-09-25T05:46:40+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:00:00+00:00",
+      "latest_entry_at": "2026-09-25T02:00:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-25T03:51:00+00:00",
+      "latest_entry_at": "2026-09-25T07:00:00+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-25T03:17:20+00:00",
+      "latest_entry_at": "2026-09-25T04:45:09+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:17:53+00:00",
+      "latest_entry_at": "2026-09-25T04:33:00+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T03:36:25+00:00",
+      "latest_entry_at": "2026-09-25T05:09:33+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-24T10:00:00+00:00",
+      "latest_entry_at": "2026-09-25T04:16:14+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,58 @@
     }
   ],
   "items": [
+    {
+      "id": "6feed90bcf6c92930bf4",
+      "headline": "Michael Penix Jr. embodies 'the definition of resiliency' in Falcons' statement win over Packers",
+      "url": "https://www.atlantafalcons.com/news/michael-penix-jr-resiliency-falcons-win-thursday-night-football-packers",
+      "source_id": "news_official_atl",
+      "source": "Atlanta Falcons (official)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "A difficult recovery, an emotional preseason and an early interception couldn't derail Penix, who helped the Falcons snap the Packers' 13-game home-opener winning streak.",
+      "categories": [
+        "News",
+        "Atlanta Falcons at Green Bay Packers (2026-REG-3)",
+        "Michael Penix Jr.",
+        "Drake London",
+        "Bijan Robinson",
+        "thursday night football"
+      ],
+      "published_at": "2026-09-25T06:44:28+00:00",
+      "players": [
+        {
+          "id": "00-0039917",
+          "name": "Michael Penix Jr.",
+          "team": "ATL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "e4349c19dcc97f317e50",
+      "headline": "Packers Snap Counts, Week 3: MarShawn Lloyd is RB3",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-depth-chart/87117/packers-snap-counts-week-3-marshawn-lloyd-is-rb3",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The Green Bay Packers made a couple of changes to their offensive and defensive lineups for Week 3, as the team is desperately trying to find their first win in regulation since Week 14 last year against the Chicago Bears. The loss to the Atlanta Falcons was gross, and I\u2019m hoping to flush it from [\u2026]",
+      "categories": [
+        "Green Bay Packers depth chart",
+        "Green Bay Packers roster"
+      ],
+      "published_at": "2026-09-25T04:10:54+00:00",
+      "players": [
+        {
+          "id": "00-0039811",
+          "name": "MarShawn Lloyd",
+          "team": "GB",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "1c8b301fd049c66a8735",
       "headline": "Bucs Still Missing Rueben Bain Jr. & Josiah Trotter On Latest Injury Report",
@@ -3804,51 +3856,6 @@
       ],
       "published_at": "2026-09-23T20:00:00+00:00",
       "players": []
-    },
-    {
-      "id": "b8dbaf57445a30a8372c",
-      "headline": "Packers rule out four, list two questionable vs. Falcons | Week 3 Injury Report",
-      "url": "https://www.packers.com/news/packers-rule-out-four-list-two-questionable-vs-falcons-week-3-injury-report-2026",
-      "source_id": "news_official_gb",
-      "source": "Green Bay Packers (official)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "DT Javon Hargrave questionable, G Aaron Banks won\u2019t play Thursday night",
-      "categories": [
-        "News: Injury Report",
-        "News: National Feature",
-        "Homepage CP",
-        "News: All News",
-        "Atlanta Falcons at Green Bay Packers (2026-REG-3)"
-      ],
-      "published_at": "2026-09-23T20:00:00+00:00",
-      "players": []
-    },
-    {
-      "id": "727ecb3451501f58cb6f",
-      "headline": "Jets Injury Report | Week 3 vs. Lions - Wednesday",
-      "url": "https://www.newyorkjets.com/news/jets-injury-report-week-3-vs-lions-wednesday-09-23-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Edge Joseph Ossai a Limited Participant, TE Mason Taylor DNP",
-      "categories": [
-        "Injury Report",
-        "News",
-        "Latest Headlines"
-      ],
-      "published_at": "2026-09-23T20:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0040736",
-          "name": "Mason Taylor",
-          "team": "NYJ",
-          "position": "TE"
-        }
-      ]
     }
   ]
 }
