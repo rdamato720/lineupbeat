@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T02:00:54.266093+00:00",
+  "updated_at": "2026-09-25T04:00:53.112590+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,17 +12,17 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-25T02:00:00+00:00",
+      "latest_entry_at": "2026-09-25T03:51:00+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-24T19:30:58+00:00",
+      "latest_entry_at": "2026-09-25T03:59:51+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:27:50+00:00",
+      "latest_entry_at": "2026-09-25T03:17:20+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-24T22:54:58+00:00",
+      "latest_entry_at": "2026-09-25T02:20:08+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-09-24T22:43:20+00:00",
+      "latest_entry_at": "2026-09-25T03:15:37+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-25T04:00:00+00:00",
+      "latest_entry_at": "2026-09-25T03:00:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-25T02:00:00+00:00",
+      "latest_entry_at": "2026-09-25T03:51:00+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:27:50+00:00",
+      "latest_entry_at": "2026-09-25T03:17:20+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-24T12:00:00+00:00",
+      "latest_entry_at": "2026-09-24T22:28:07+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-24T22:30:12+00:00",
+      "latest_entry_at": "2026-09-24T23:00:08+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-24T20:18:11+00:00",
+      "latest_entry_at": "2026-09-25T00:00:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-24T13:51:12+00:00",
+      "latest_entry_at": "2026-09-24T20:05:07+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-23T22:30:22+00:00",
+      "latest_entry_at": "2026-09-24T22:03:50+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-24T20:04:29+00:00",
+      "latest_entry_at": "2026-09-24T23:00:31+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:30:00+00:00",
+      "latest_entry_at": "2026-09-25T03:36:25+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:30:00+00:00",
+      "latest_entry_at": "2026-09-24T10:00:00+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-24T20:34:25+00:00",
+      "latest_entry_at": "2026-09-24T22:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-24T16:01:00+00:00",
+      "latest_entry_at": "2026-09-25T01:08:45+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,44 @@
     }
   ],
   "items": [
+    {
+      "id": "1c8b301fd049c66a8735",
+      "headline": "Bucs Still Missing Rueben Bain Jr. & Josiah Trotter On Latest Injury Report",
+      "url": "https://www.pewterreport.com/bucs-still-missing-rueben-bain-jr-josiah-trotter-on-latest-injury-report/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "There was some updated news on the Bucs' latest injury report, but it doesn't involve the players that Bucs fans were looking to hear about. Fellow rookies Rueben Bain Jr. and Josiah Trotter did not participate in Thursday's practice. The good news, though, is that outside linebacker Anthony Nelson practiced after missing the day",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-09-25T03:59:51+00:00",
+      "players": []
+    },
+    {
+      "id": "d31e58b591300ae71121",
+      "headline": "Tiki Barber Reacts to Jaxson Dart's Season-Ending Injury: 'It Sucks'",
+      "url": "https://www.si.com/nfl/giants/onsi/tiki-barber-jaxson-dart-injury-reaction-01m3afygafdh",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Jaxson Dart is out for the season with a knee injury, and Tiki Barber says the young QB now faces even more pressure when he returns.",
+      "categories": [],
+      "published_at": "2026-09-25T03:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040691",
+          "name": "Jaxson Dart",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "200632db1e1d01e3d83f",
       "headline": "Commanders\u2019 Injury Report Finally Shows Progress \u2014 But 5 Still Can\u2019t Practice",
@@ -3809,62 +3847,6 @@
           "name": "Mason Taylor",
           "team": "NYJ",
           "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "edd34babd6b8946a44a0",
-      "headline": "Confidence Meter: Packers Will Survive Latest Injuries, Starting vs. Falcons",
-      "url": "https://www.si.com/nfl/packers/onsi/confidence-meter-packers-will-survive-latest-injuries-starting-vs-falcons",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "The Green Bay Packers\u2019 challenging season was hit hard with Sunday\u2019s injuries to Zach Bako-Bewele and Jayden Reed. Can the Packers overcome them?",
-      "categories": [],
-      "published_at": "2026-09-23T19:53:16+00:00",
-      "players": [
-        {
-          "id": "00-0039146",
-          "name": "Jayden Reed",
-          "team": "GB",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "75115eb14c42aa6e18c3",
-      "headline": "Falcons injury report: QB Tua Tagovailoa, DL Brandon Dorlus available for Atlanta in Green Bay",
-      "url": "https://www.atlantafalcons.com/news/falcons-injury-report-qb-tua-tagovailoa-dl-brandon-dorlus-available-for-atlanta-in-green-bay",
-      "source_id": "news_official_atl",
-      "source": "Atlanta Falcons (official)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "The veteran quarterback \u2014 who will act as Michael Penix Jr.'s backup \u2014 did not receive a game designation.",
-      "categories": [
-        "News",
-        "Emory Injury Report",
-        "Atlanta Falcons at Green Bay Packers (2026-REG-3)",
-        "Tua Tagovailoa",
-        "Michael Penix Jr.",
-        "Samson Ebukam",
-        "Billy Bowman Jr."
-      ],
-      "published_at": "2026-09-23T19:52:17+00:00",
-      "players": [
-        {
-          "id": "00-0036212",
-          "name": "Tua Tagovailoa",
-          "team": "ATL",
-          "position": "QB"
-        },
-        {
-          "id": "00-0039917",
-          "name": "Michael Penix Jr.",
-          "team": "ATL",
-          "position": "QB"
         }
       ]
     }
