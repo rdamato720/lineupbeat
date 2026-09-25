@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T00:00:57.791860+00:00",
+  "updated_at": "2026-09-25T01:55:14.005024+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-25T00:01:00+00:00",
+      "latest_entry_at": "2026-09-25T01:49:35+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-24T22:54:58+00:00",
+      "latest_entry_at": "2026-09-25T01:34:06+00:00",
       "stale": false
     },
     {
@@ -94,7 +94,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-24T20:05:45+00:00",
+      "latest_entry_at": "2026-09-25T00:31:09+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:54:24+00:00",
+      "latest_entry_at": "2026-09-25T00:08:05+00:00",
       "stale": false
     },
     {
@@ -252,9 +252,9 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 9,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:40:00+00:00",
+      "latest_entry_at": "2026-09-25T00:59:43+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 7,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-25T00:01:00+00:00",
+      "latest_entry_at": "2026-09-25T01:49:35+00:00",
       "stale": false
     },
     {
@@ -300,9 +300,9 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:06:27+00:00",
+      "latest_entry_at": "2026-09-25T00:04:09+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-24T19:09:29+00:00",
+      "latest_entry_at": "2026-09-25T00:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-24T22:10:08+00:00",
+      "latest_entry_at": "2026-09-25T00:24:09+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:31:31+00:00",
+      "latest_entry_at": "2026-09-25T00:00:00+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-24T22:39:28+00:00",
+      "latest_entry_at": "2026-09-25T01:01:03+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:30:00+00:00",
+      "latest_entry_at": "2026-09-24T19:00:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,32 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:53:48+00:00",
+      "latest_entry_at": "2026-09-25T00:27:40+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "200632db1e1d01e3d83f",
+      "headline": "Commanders\u2019 Injury Report Finally Shows Progress \u2014 But 5 Still Can\u2019t Practice",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-thursday-injury-report-javon-kinlaw-sam-cosmi-week-3",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Washington Commanders' Thursday injury report brought slight improvements. Javon Kinlaw returned to practice, but Sam Cosmi and Jayden Daniels remain out.",
+      "categories": [],
+      "published_at": "2026-09-25T01:09:03+00:00",
+      "players": [
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "5a39fa27a7ae1ad6cfb1",
       "headline": "Analyzing the Vikings' Starting RB Options If Aaron Jones Can't Suit Up in Week 3",
@@ -3844,37 +3865,6 @@
           "name": "Michael Penix Jr.",
           "team": "ATL",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "1e0e120390fb150e2793",
-      "headline": "Practice Notebook: Alec Pierce heading to IR, Charvarius Ward Sr. a nonparticipant in Wednesday's practice",
-      "url": "https://www.colts.com/news/practice-notebook-alec-pierce-heading-to-ir-charvarius-ward-sr-a-nonparticipant-in-wednesday-s-practice",
-      "source_id": "news_official_ind",
-      "source": "Indianapolis Colts (official)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "WR Ashton Dulin (ankle) remained sidelined from practice.",
-      "categories": [
-        "Practice Notebook",
-        "Featured",
-        "Featured News"
-      ],
-      "published_at": "2026-09-23T19:49:23+00:00",
-      "players": [
-        {
-          "id": "00-0035021",
-          "name": "Ashton Dulin",
-          "team": "IND",
-          "position": "WR"
-        },
-        {
-          "id": "00-0037664",
-          "name": "Alec Pierce",
-          "team": "IND",
-          "position": "WR"
         }
       ]
     }
