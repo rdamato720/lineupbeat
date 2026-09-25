@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T21:34:58.157055+00:00",
+  "updated_at": "2026-09-25T22:01:00.593148+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-25T21:24:37+00:00",
+      "latest_entry_at": "2026-09-25T22:00:03+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-25T20:45:20+00:00",
+      "latest_entry_at": "2026-09-25T21:03:31+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:15:04+00:00",
+      "latest_entry_at": "2026-09-25T21:57:52+00:00",
       "stale": false
     },
     {
@@ -252,7 +252,7 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 9,
+      "eligible": 8,
       "error": "",
       "latest_entry_at": "2026-09-25T21:15:47+00:00",
       "stale": false
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 9,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-25T21:24:37+00:00",
+      "latest_entry_at": "2026-09-25T22:00:03+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-25T21:07:15+00:00",
+      "latest_entry_at": "2026-09-25T18:00:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T20:57:51+00:00",
+      "latest_entry_at": "2026-09-25T18:11:36+00:00",
       "stale": false
     },
     {
@@ -340,9 +340,9 @@
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-25T20:29:21+00:00",
+      "latest_entry_at": "2026-09-25T17:38:28+00:00",
       "stale": false
     },
     {
@@ -356,9 +356,9 @@
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 3,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-25T20:15:00+00:00",
+      "latest_entry_at": "2026-09-25T14:56:37+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-25T21:30:52+00:00",
+      "latest_entry_at": "2026-09-25T11:22:46+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-25T20:08:29+00:00",
+      "latest_entry_at": "2026-09-24T13:04:00+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T20:30:00+00:00",
+      "latest_entry_at": "2026-09-25T16:00:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T20:05:00+00:00",
+      "latest_entry_at": "2026-09-25T19:06:14+00:00",
       "stale": false
     },
     {
@@ -446,15 +446,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T21:18:51+00:00",
+      "latest_entry_at": "2026-09-25T14:58:26+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-25T21:06:54+00:00",
+      "latest_entry_at": "2026-09-25T16:32:00+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T19:59:06+00:00",
+      "latest_entry_at": "2026-09-25T19:37:51+00:00",
       "stale": false
     },
     {
@@ -923,30 +923,6 @@
           "name": "DJ Moore",
           "team": "BUF",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "8f465d42ffebdf4b2554",
-      "headline": "Patriots vs. Jaguars Friday injury report: Craig Woodson, Eli Raridon questionable for Week 3",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/138447/patriots-vs-jaguars-friday-injury-report-craig-woodson-eli-raridon-questionable-dremont-jones-quintayvious-hutchins-out",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "As the New England Patriots headed back for a final practice in Foxborough, so did Craig Woodson. The starting safety had been sidelined for the previous two sessions after not finishing the home opener against the Pittsburgh Steelers due to a shoulder injury. He moves forward as questionable to face the Jacksonville Jaguars along with [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-09-25T20:24:12+00:00",
-      "players": [
-        {
-          "id": "00-0041395",
-          "name": "Eli Raridon",
-          "team": "NE",
-          "position": "TE"
         }
       ]
     },
@@ -1531,6 +1507,30 @@
       ],
       "published_at": "2026-09-25T18:12:09+00:00",
       "players": []
+    },
+    {
+      "id": "8f465d42ffebdf4b2554",
+      "headline": "Patriots vs. Jaguars Friday injury report: Craig Woodson, Eli Raridon questionable for Week 3",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/138447/patriots-vs-jaguars-friday-injury-report-craig-woodson-eli-raridon-questionable-dremont-jones-quintayvious-hutchins-out",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "As the New England Patriots headed back for a final practice in Foxborough, so did Craig Woodson. The starting safety had been sidelined for the previous two sessions after not finishing the home opener against the Pittsburgh Steelers due to a shoulder injury. He moves forward as questionable to face the Jacksonville Jaguars along with [\u2026]",
+      "categories": [
+        "New England Patriots Injuries",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-09-25T18:11:36+00:00",
+      "players": [
+        {
+          "id": "00-0041395",
+          "name": "Eli Raridon",
+          "team": "NE",
+          "position": "TE"
+        }
+      ]
     },
     {
       "id": "b1ac7828563e0bcd3268",
