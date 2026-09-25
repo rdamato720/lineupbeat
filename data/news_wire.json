@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T18:00:53.603599+00:00",
+  "updated_at": "2026-09-25T18:06:09.984782+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-25T17:48:41+00:00",
+      "latest_entry_at": "2026-09-25T18:01:46+00:00",
       "stale": false
     },
     {
@@ -22,7 +22,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T13:58:08+00:00",
+      "latest_entry_at": "2026-09-25T17:00:34+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-25T17:56:34+00:00",
+      "latest_entry_at": "2026-09-25T16:20:28+00:00",
       "stale": false
     },
     {
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T15:19:02+00:00",
+      "latest_entry_at": "2026-09-25T17:59:48+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-25T17:48:41+00:00",
+      "latest_entry_at": "2026-09-25T18:01:46+00:00",
       "stale": false
     },
     {
@@ -300,9 +300,9 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T18:00:00+00:00",
+      "latest_entry_at": "2026-09-25T17:00:00+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-25T17:22:55+00:00",
+      "latest_entry_at": "2026-09-25T18:00:49+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,34 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T15:42:15+00:00",
+      "latest_entry_at": "2026-09-25T17:42:47+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "d7b0f47e18c32072004b",
+      "headline": "Commanders vs. Seahawks Friday injury report: Sam Cosmi among those expected out",
+      "url": "https://www.hogshaven.com/washington-commanders-injuries/443424/commanders-seahawks-injury-report-frankie-luvu-chig-okonkwo-sam-cosmi-jayden-daniels-nick-cross",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Commanders ruled safety Nick Cross (internal/illness) and quarterback Jayden Daniels (elbow) out of Sunday\u2019s game against the Seattle Seahawks almost a week ago now. There was at least some hope that more key players could recover in time to face the Super Bowl champs. It\u2019s now a virtual certainty that linebacker Frankie Luvu (groin), [\u2026]",
+      "categories": [
+        "Washington Commanders Injuries"
+      ],
+      "published_at": "2026-09-25T18:00:49+00:00",
+      "players": [
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "f2e03179388b9c6c5e63",
       "headline": "Browns vs Panthers Week 3 injury report: Key guys among 4 ruled out, 4 questionable",
@@ -3990,23 +4013,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "af0e2de26598c2a4f7ba",
-      "headline": "Patriots vs. Jaguars Wednesday injury report: Four non-participants for New England",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/138234/patriots-vs-jaguars-wednesday-injury-report-dremont-jones-quintayvious-hutchins-craig-woodson-sidelined",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots headed back to practice without four members of the active roster. Outside linebackers Dre\u2019Mont Jones and Quintayvious Hutchins as well as safety Craig Woodson all stayed sidelined during Wednesday\u2019s work on the Jacksonville Jaguars. Also not participating was defensive tackle DaQuan Jones, a late addition to the injury report. That was [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-09-23T21:20:31+00:00",
-      "players": []
     }
   ]
 }
