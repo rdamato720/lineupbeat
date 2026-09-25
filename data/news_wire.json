@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T23:32:36.810599+00:00",
+  "updated_at": "2026-09-25T00:00:57.791860+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:22:59+00:00",
+      "latest_entry_at": "2026-09-25T00:01:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-24T22:54:32+00:00",
+      "latest_entry_at": "2026-09-24T22:54:58+00:00",
       "stale": false
     },
     {
@@ -108,7 +108,7 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
       "latest_entry_at": "2026-09-24T23:28:59+00:00",
       "stale": false
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-24T22:45:00+00:00",
+      "latest_entry_at": "2026-09-25T04:00:00+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-24T22:08:26+00:00",
+      "latest_entry_at": "2026-09-24T23:00:00+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-24T00:27:49+00:00",
+      "latest_entry_at": "2026-09-24T23:54:24+00:00",
       "stale": false
     },
     {
@@ -236,9 +236,9 @@
     {
       "source_id": "news_official_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-24T18:30:00+00:00",
+      "latest_entry_at": "2026-09-24T23:40:34+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 9,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:20:00+00:00",
+      "latest_entry_at": "2026-09-24T23:40:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:22:59+00:00",
+      "latest_entry_at": "2026-09-25T00:01:00+00:00",
       "stale": false
     },
     {
@@ -300,9 +300,9 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:24:33+00:00",
+      "latest_entry_at": "2026-09-24T23:06:27+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-24T20:59:52+00:00",
+      "latest_entry_at": "2026-09-24T23:45:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-24T22:30:00+00:00",
+      "latest_entry_at": "2026-09-25T00:00:00+00:00",
       "stale": false
     },
     {
@@ -540,21 +540,176 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-24T20:50:12+00:00",
+      "latest_entry_at": "2026-09-24T23:41:19+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-24T23:30:00+00:00",
+      "latest_entry_at": "2026-09-24T23:53:48+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "5a39fa27a7ae1ad6cfb1",
+      "headline": "Analyzing the Vikings' Starting RB Options If Aaron Jones Can't Suit Up in Week 3",
+      "url": "https://www.si.com/nfl/vikings/onsi/analyzing-vikings-starting-rb-options-if-aaron-jones-can-t-suit-up-week-3-01m3ad4skz2x",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "Sports Illustrated's Trevor Ripley dives into what the Vikings' RB room could look like if Aaron Jones Sr. isn't cleared to face the Buccaneers in Week 3.",
+      "categories": [],
+      "published_at": "2026-09-25T00:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0033293",
+          "name": "Aaron Jones",
+          "team": "MIN",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "3f905c97a0181943aeea",
+      "headline": "Three Players Who Can Help Packers Replace Injured Jayden Reed In Slot",
+      "url": "https://www.si.com/nfl/packers/onsi/three-players-who-can-help-packers-replace-injured-jayden-reed-in-slot",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The Green Bay Packers lost their premier slot receiver Jayden Reed against the Jets. How will the Packers adjust, beginning with Thursday\u2019s game against the Falcons?",
+      "categories": [],
+      "published_at": "2026-09-24T23:57:02+00:00",
+      "players": [
+        {
+          "id": "00-0039146",
+          "name": "Jayden Reed",
+          "team": "GB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "5541a810e049f8403632",
+      "headline": "Seahawks Week 3 injury updates: Sam Darnold poised to start, but Julian Love is a new concern",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/175579/seahawks-commanders-injury-report-sam-darnold-full-participant-julian-love-calf-concern",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks may very well have Sam Darnold ready to return to action after just one game missed. Seattle\u2019s starting quarterback was a full participant in Thursday\u2019s practice, plus he had media availability, which is typically a positive sign toward playing for anyone who\u2019s iffy due to injury. In Darnold\u2019s case, he injured his [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-09-24T23:53:48+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "c8007ad7725ecc9d0fc5",
+      "headline": "Seahawks Get Good Injury News, Sam Darnold, Ernest Jones, Many More",
+      "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-good-injury-news-sam-darnold-ernest-jones-many-more",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "It was mostly positive news for the Seattle Seahawks today with their injury report, but there was one new development that is cause for concern.",
+      "categories": [],
+      "published_at": "2026-09-24T23:51:28+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "93b7c1ab346f3664f4ad",
+      "headline": "Nick Bosa was added to the 49ers\u2019 injury report with a calf issue",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/163207/nick-bosa-was-added-to-the-49ers-injury-report-with-a-calf-issue",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers injury report is out for Thursday. Dre Greenlaw, Christian McCaffrey, and Trent Williams returned after missing Wednesday\u2019s session due to Veterans Day. Romello Height (hand) and Mike Evans (hip) missed the second day in a row. Evans was reportedly working on the side of the field. Despite it being his first [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries"
+      ],
+      "published_at": "2026-09-24T23:41:19+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0033280",
+          "name": "Christian McCaffrey",
+          "team": "SF",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "aa3160c5145c42e9f680",
+      "headline": "Eagles at Bears Injury Report",
+      "url": "https://www.philadelphiaeagles.com/news/eagles-at-bears-injury-report-2026-nfl-week-3-monday-night-football-caleb-williams-saquon-barkley",
+      "source_id": "news_official_phi",
+      "source": "Philadelphia Eagles (official)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "Also, what's the latest on Bears quarterbacks Caleb Williams and Tyson Bagent?",
+      "categories": [
+        "All News-archived",
+        "NFL.com Feature",
+        "Injury Report",
+        "2026 Week 3 at Bears"
+      ],
+      "published_at": "2026-09-24T23:40:34+00:00",
+      "players": []
+    },
+    {
+      "id": "48012ac3c6eeffb2a15b",
+      "headline": "Week 3 Injury Report: Seahawks vs. Commanders",
+      "url": "https://www.seahawks.com/news/week-3-injury-report-seahawks-vs-commanders",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Details on the Seahawks\u2019 injury situation heading into their Week 3 game at Washington.",
+      "categories": [
+        "News: Injury Report",
+        "News: Stories",
+        "Homepage Hero",
+        "News: National Feature",
+        "Seattle Seahawks at Washington Commanders (2026-REG-3)"
+      ],
+      "published_at": "2026-09-24T23:40:00+00:00",
+      "players": []
+    },
     {
       "id": "80f35775cb9a6d3fc303",
       "headline": "Terry McLaurin sends confident message about Jayden Daniels injury that Commanders fans need to hear",
@@ -615,26 +770,6 @@
       "feed_description": "Chase Young, Jonas Sanker and Nathan Shepherd returned to full participation Thursday, while several Saints remained sidelined ahead of Week 3.",
       "categories": [],
       "published_at": "2026-09-24T23:22:59+00:00",
-      "players": []
-    },
-    {
-      "id": "48012ac3c6eeffb2a15b",
-      "headline": "Week 3 Injury Report: Seahawks vs. Commanders",
-      "url": "https://www.seahawks.com/news/week-3-injury-report-seahawks-vs-commanders",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Details on the Seahawks\u2019 injury situation heading into their Week 3 game at Washington.",
-      "categories": [
-        "News: Injury Report",
-        "News: Stories",
-        "Homepage Hero",
-        "News: National Feature",
-        "Seattle Seahawks at Washington Commanders (2026-REG-3)"
-      ],
-      "published_at": "2026-09-24T23:20:00+00:00",
       "players": []
     },
     {
@@ -843,7 +978,7 @@
     },
     {
       "id": "f3db0ad92879e86cad55",
-      "headline": "Packers-Falcons Inactives: Green Bay\u2019s Rolling Dice on Offensive Line",
+      "headline": "Packers-Falcons Inactives: Green Bay\u2019s Rolling Dice on Rookie, Offensive Line",
       "url": "https://www.si.com/nfl/packers/onsi/packers-falcons-inactives-green-bays-rolling-dice-on-offensive-line-",
       "source_id": "news_si_nfl",
       "source": "Sports Illustrated",
@@ -3739,146 +3874,6 @@
           "id": "00-0037664",
           "name": "Alec Pierce",
           "team": "IND",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "2b9ff58ffef58617ffcf",
-      "headline": "'Andrei Did A Lot For Us' - Joe Burrow Dives Into How Bengals Can Replace Injured Andrei Iosivas",
-      "url": "https://www.si.com/nfl/bengals/onsi/andrei-did-a-lot-for-us-joe-burrow-dives-into-how-bengals-can-replace-injured-andrei-iosivas-01m36x5wys60",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "'Andrei Did A Lot For Us' - Joe Burrow Dives Into How Bengals Can Replace Injured Andrei Iosivas",
-      "categories": [],
-      "published_at": "2026-09-23T19:49:18+00:00",
-      "players": [
-        {
-          "id": "00-0036442",
-          "name": "Joe Burrow",
-          "team": "CIN",
-          "position": "QB"
-        },
-        {
-          "id": "00-0038619",
-          "name": "Andrei Iosivas",
-          "team": "CIN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "2de56f82148abc2d7cce",
-      "headline": "How Injury Bug Could Hamper Broncos RB Jonah Coleman in Week 3",
-      "url": "https://www.si.com/nfl/broncos/onsi/jonah-coleman-ankle-sprain-broncos-rb-injuries",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "The Broncos can't have nice things, apparently.",
-      "categories": [],
-      "published_at": "2026-09-23T19:44:15+00:00",
-      "players": [
-        {
-          "id": "00-0041496",
-          "name": "Jonah Coleman",
-          "team": "DEN",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "f07c76457962795db424",
-      "headline": "Los Angeles Chargers Place David Njoku on Injured Reserve; Sign Marquez Valdes-Scantling to Active Roster",
-      "url": "https://www.chargers.com/news/david-njoku-injured-reserve-sign-marquez-valdes-scantling-active-roster-2026",
-      "source_id": "news_official_lac",
-      "source": "Los Angeles Chargers (official)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "The Los Angeles Chargers today placed tight end David Njoku on Reserve/Injured. In corresponding moves, the team signed wide receiver Marquez Valdes-Scantling to the active roster and signed long snapper Spencer Triplett to the practice squad.",
-      "categories": [
-        "Articles: Transactions",
-        "Homepage: CP",
-        "Homepage: Headlines",
-        "App: Homepage",
-        "Transactions - Verizon",
-        "Articles: News Release"
-      ],
-      "published_at": "2026-09-23T19:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0033885",
-          "name": "David Njoku",
-          "team": "LAC",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "4e21511962c7881164ec",
-      "headline": "Week 3 Wednesday Injury Report: Missing some pieces on defense",
-      "url": "https://www.panthers.com/news/week-3-wednesday-injury-report-missing-some-pieces-on-defense-devin-lloyd-nick-scott-jaelan-phillips",
-      "source_id": "news_official_car",
-      "source": "Carolina Panthers (official)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Panthers were without linebacker Devin Lloyd, outside linebacker Jaelan Phillips, and safety Nick Scott on Wednesday, along with reserve linebacker Claudin Cherelus as they began preparations for Sunday's trip to Cleveland.",
-      "categories": [
-        "Injury Reports",
-        "Latest News",
-        "App News",
-        "Carolina Panthers at Cleveland Browns (2026-REG-3)"
-      ],
-      "published_at": "2026-09-23T19:29:56+00:00",
-      "players": []
-    },
-    {
-      "id": "f9b7d9625eb435c85694",
-      "headline": "Giants Week 3 Storylines: Backup QB Plans, Other Injuries, and Brian Daboll's Return",
-      "url": "https://www.si.com/nfl/giants/onsi/giants-week-3-preview-dart-injury-daboll-titans-01m37fkgyzs7",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "With Jaxson Dart facing a lengthy absence, the Giants weigh their quarterback options while dealing with a growing injury list and preparing to face former coach Brian Daboll's Titans offense.",
-      "categories": [],
-      "published_at": "2026-09-23T19:24:14+00:00",
-      "players": [
-        {
-          "id": "00-0040691",
-          "name": "Jaxson Dart",
-          "team": "NYG",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "6c99245386db1622b38b",
-      "headline": "3 Bengals players who must step up following Andrei Iosivas injury news",
-      "url": "https://www.cincyjungle.com/cincinnati-bengals-news/199964/3-players-must-step-up-andrei-iosivas-injury-colbie-young-mike-gesicki",
-      "source_id": "news_sbn_cin",
-      "source": "Cincy Jungle (SB Nation)",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "Cincinnati Bengals wide receiver Andrei Iosivas is going on injured reserve with a torn thumb ligament. Head coach Zac Taylor told the media Wednesday that the injury should not end Iosivas\u2019 season, but he will be sidelined for at least four weeks. As the Bengals offense continues to find its footing, their starting third receiver [\u2026]",
-      "categories": [
-        "Cincinnati Bengals injuries",
-        "Cincinnati Bengals News"
-      ],
-      "published_at": "2026-09-23T19:15:44+00:00",
-      "players": [
-        {
-          "id": "00-0038619",
-          "name": "Andrei Iosivas",
-          "team": "CIN",
           "position": "WR"
         }
       ]
