@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T04:57:30.158555+00:00",
+  "updated_at": "2026-09-26T09:52:00.600885+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T04:32:23+00:00",
+      "latest_entry_at": "2026-09-26T09:49:37+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-26T04:32:23+00:00",
+      "latest_entry_at": "2026-09-26T09:49:37+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-26T03:06:14+00:00",
+      "latest_entry_at": "2026-09-25T20:08:29+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-25T22:00:00+00:00",
+      "latest_entry_at": "2026-09-25T18:00:00+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T12:00:00+00:00",
+      "latest_entry_at": "2026-09-24T15:30:00+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T12:37:56+00:00",
+      "latest_entry_at": "2026-09-24T11:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "bacce31866913ef64aa5",
+      "headline": "New York Ranked No. 5 Most Banged-Up Team in the NFL in New Study",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-injury-report-week-3-most-banged-up-nfl-01m382zyrzmq",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Amid the latest season-ending knee injury to Jaxson Dart, a new report is showing how the Giants roster is taking a huge toll from injuries early in the season.",
+      "categories": [],
+      "published_at": "2026-09-26T08:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040691",
+          "name": "Jaxson Dart",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "72a6068ea5ce60204f62",
       "headline": "Commanders Get Some Good News, But Week 3 Challenge Just Got Harder \u2014 Burgundy Roundup",
@@ -3951,29 +3972,6 @@
           "name": "Jaxson Dart",
           "team": "NYG",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "dbfe8926d9e8a69bb256",
-      "headline": "Robert Saleh reveals 49ers missed out on a top RB target in 2025 NFL Draft",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-news/163182/san-francisco-49ers-news-robert-saleh-reveals-interest-cam-skattebo-2025-nfl-draft-missed-kyle-shanahan",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The San Francisco 49ers have regularly been connected to the running back position in the NFL Draft, and they picked up another rookie this offseason, taking Kaelon Black in the third round. That pick was quite controversial at the time, as Black was expected to go much later on Day 3 and there hadn\u2019t been [\u2026]",
-      "categories": [
-        "San Francisco 49ers News"
-      ],
-      "published_at": "2026-09-24T14:46:24+00:00",
-      "players": [
-        {
-          "id": "00-0041052",
-          "name": "Kaelon Black",
-          "team": "SF",
-          "position": "RB"
         }
       ]
     }
