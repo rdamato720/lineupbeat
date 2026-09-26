@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T10:00:57.915008+00:00",
+  "updated_at": "2026-09-26T12:01:02.665759+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T10:00:41+00:00",
+      "latest_entry_at": "2026-09-26T11:45:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-25T22:53:51+00:00",
+      "latest_entry_at": "2026-09-26T12:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T09:00:00+00:00",
+      "latest_entry_at": "2026-09-26T10:58:42+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-25T19:44:27+00:00",
+      "latest_entry_at": "2026-09-26T11:00:14+00:00",
       "stale": false
     },
     {
@@ -284,25 +284,25 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-26T10:00:41+00:00",
+      "latest_entry_at": "2026-09-26T11:45:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-25T22:53:51+00:00",
+      "latest_entry_at": "2026-09-26T12:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-25T20:08:14+00:00",
+      "latest_entry_at": "2026-09-26T11:00:00+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-25T20:57:51+00:00",
+      "latest_entry_at": "2026-09-26T11:00:00+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T18:00:00+00:00",
+      "latest_entry_at": "2026-09-26T11:00:00+00:00",
       "stale": false
     },
     {
@@ -340,25 +340,25 @@
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-26T00:31:23+00:00",
+      "latest_entry_at": "2026-09-26T11:05:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-26T01:33:34+00:00",
+      "latest_entry_at": "2026-09-26T11:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-25T20:00:00+00:00",
+      "latest_entry_at": "2026-09-25T22:30:00+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-24T13:30:00+00:00",
+      "latest_entry_at": "2026-09-25T14:30:00+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T23:14:00+00:00",
+      "latest_entry_at": "2026-09-26T10:00:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T19:06:14+00:00",
+      "latest_entry_at": "2026-09-25T23:22:00+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-24T22:03:50+00:00",
+      "latest_entry_at": "2026-09-25T18:19:13+00:00",
       "stale": false
     },
     {
@@ -430,15 +430,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T01:00:00+00:00",
+      "latest_entry_at": "2026-09-26T11:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-25T20:13:19+00:00",
+      "latest_entry_at": "2026-09-26T10:00:00+00:00",
       "stale": false
     },
     {
@@ -454,23 +454,23 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-26T04:00:00+00:00",
+      "latest_entry_at": "2026-09-26T09:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T18:00:00+00:00",
+      "latest_entry_at": "2026-09-25T22:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-25T19:51:38+00:00",
+      "latest_entry_at": "2026-09-26T11:00:00+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T19:16:01+00:00",
+      "latest_entry_at": "2026-09-25T21:00:59+00:00",
       "stale": false
     },
     {
@@ -502,15 +502,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-25T22:00:00+00:00",
+      "latest_entry_at": "2026-09-26T11:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-25T22:00:00+00:00",
+      "latest_entry_at": "2026-09-26T11:00:00+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-24T22:31:35+00:00",
+      "latest_entry_at": "2026-09-25T12:37:56+00:00",
       "stale": false
     },
     {
@@ -542,19 +542,200 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-25T16:45:23+00:00",
+      "latest_entry_at": "2026-09-25T22:36:53+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-25T17:42:47+00:00",
+      "latest_entry_at": "2026-09-25T23:36:05+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "254afd3760a719b5e3ad",
+      "headline": "Vikings Keys To Victory: Kyler Murray and T.J. Hockenson are primed to exploit the Buccaneers defense",
+      "url": "https://atozsports.com/nfl/minnesota-vikings-news/vikings-keys-to-victory-buccaneers-kyler-murray-dallas-turner-tj-hockenson-todd-bowles/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "Minnesota's defense is playing at an elite level, Kyler Murray's role is still a mystery after just 11 snaps, and the running back room is teetering on the edge of a full-blown crisis.",
+      "categories": [
+        "Minnesota Vikings News",
+        "NFL",
+        "Aaron Jones",
+        "Dallas Turner",
+        "Kyler Murray",
+        "Minnesota Vikings",
+        "T.J. Hockenson",
+        "Tampa Bay Buccaneers",
+        "Todd Bowles"
+      ],
+      "published_at": "2026-09-26T12:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0035228",
+          "name": "Kyler Murray",
+          "team": "MIN",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035229",
+          "name": "T.J. Hockenson",
+          "team": "MIN",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "56b56924e14ca3410d86",
+      "headline": "Washington\u2019s Captains Made Their Feelings About Marcus Mariota Clear \u2014 Commanders Daily",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-marcus-mariota-sixth-team-captain-dan-quinn",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "With Jayden Daniels out, Washington Commanders players rallied around Marcus Mariota, asking head coach Dan Quinn to name him the team's sixth captain.",
+      "categories": [],
+      "published_at": "2026-09-26T11:35:49+00:00",
+      "players": [
+        {
+          "id": "00-0032268",
+          "name": "Marcus Mariota",
+          "team": "WAS",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "8d0e5af34d43300ecfec",
+      "headline": "Raiders' Week 3 Injury Report: Latest Updates, Practice Statuses",
+      "url": "https://www.si.com/nfl/raiders/onsi/las-vegas-week-3-injury-report-latest-updates-practice-statuses",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "The Las Vegas Raiders are ready to face the New Orleans Saints this Sunday on the road.",
+      "categories": [],
+      "published_at": "2026-09-26T11:00:01+00:00",
+      "players": []
+    },
+    {
+      "id": "f48926be4df3cbe6fb39",
+      "headline": "Packers\u2019 curious Jayden Reed roster decision reveals 2 possible paths for injured wide receiver",
+      "url": "https://atozsports.com/nfl/green-bay-packers-news/jayden-reed-roster-status-injured-reserve/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Green Bay chose not to place Reed on injured reserve before Thursday's game against the Falcons, and the timing of that decision carries significant weight.",
+      "categories": [
+        "Green Bay Packers News",
+        "NFL",
+        "American Football",
+        "Injured Reserve",
+        "Jayden Reed",
+        "Packers Roster"
+      ],
+      "published_at": "2026-09-26T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039146",
+          "name": "Jayden Reed",
+          "team": "GB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "07d7a466900093889b04",
+      "headline": "New York Jets News: Jets deal with injuries to Adonai Mitchell, Mason Taylor ahead of Week 3 game vs. Lions",
+      "url": "https://www.ganggreennation.com/new-york-jets-news/96915/jets-deal-with-injuries-to-adonai-mitchell-mason-taylor-ahead-of-week-3-game-vs-lions",
+      "source_id": "news_sbn_nyj",
+      "source": "Gang Green Nation (SB Nation)",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "Happy Saturday, Jets fans! The Jets try to improve their record to 2-1 tomorrow as they face the Detroit Lions at Ford Field. Detroit has one of the league\u2019s most explosive offenses so it will be the most difficult test for Aaron Glenn\u2019s revamped defense. So far the Jets have held up well against Tennessee [\u2026]",
+      "categories": [
+        "New York Jets News"
+      ],
+      "published_at": "2026-09-26T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039890",
+          "name": "Adonai Mitchell",
+          "team": "NYJ",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040736",
+          "name": "Mason Taylor",
+          "team": "NYJ",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "dc9340ef39d670945691",
+      "headline": "NY Giants news: Andrew Thomas to play, Jaxson Dart surgery, more",
+      "url": "https://www.bigblueview.com/new-york-giants-news/172873/andrew-thomas-to-play-jaxson-dart-surgery-more",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Good morning, New York Giants fans! Here are the stories you need as the Giants get ready to take on the Tennessee Titans tomorrow at 1 p.m. Giants\u2019 season hinges on John Harbaugh after Jaxson Dart injury | The Athletic We\u2019re going to learn a lot about the New York Giants over the next few [\u2026]",
+      "categories": [
+        "New York Giants News"
+      ],
+      "published_at": "2026-09-26T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040691",
+          "name": "Jaxson Dart",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "e010a446d0b80ee5d80b",
+      "headline": "Orlando Brown Jr. believes the 2026 Bengals are a Super Bowl team",
+      "url": "https://www.cincyjungle.com/200238/orlando-brown-jr-2026-bengals-super-bowl-team",
+      "source_id": "news_sbn_cin",
+      "source": "Cincy Jungle (SB Nation)",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "The expectations and pressure were at an all-time high for the Cincinnati Bengals entering the 2026 season after missing the playoffs for three straight years. Although it is still incredibly early, the Bengals\u2019 revamped roster has shown up and executed at a winning level. The Bengals are 2-0 with a healthy Joe Burrow for the [\u2026]",
+      "categories": [
+        "Cincinnati Bengals News"
+      ],
+      "published_at": "2026-09-26T09:45:00+00:00",
+      "players": [
+        {
+          "id": "00-0036442",
+          "name": "Joe Burrow",
+          "team": "CIN",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "bacce31866913ef64aa5",
       "headline": "New York Ranked No. 5 Most Banged-Up Team in the NFL in New Study",
@@ -3793,184 +3974,6 @@
           "id": "00-0034855",
           "name": "Baker Mayfield",
           "team": "TB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "8c7dd93ee69a0d92f768",
-      "headline": "Texans Starter Gets Great Injury Update vs. Colts\u2014 But It's Not Nico Collins",
-      "url": "https://www.si.com/nfl/texans/onsi/texans-starter-gets-great-injury-update-vs-colts-but-it-s-not-nico-collins",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "The Houston Texans could be getting one starter back in time for their Indianapolis Colts game, but it's not Nico Collins.",
-      "categories": [],
-      "published_at": "2026-09-24T16:50:36+00:00",
-      "players": [
-        {
-          "id": "00-0036554",
-          "name": "Nico Collins",
-          "team": "HOU",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "04a297cae3101e701e7b",
-      "headline": "Commanders\u2019 David Blough, Daronte Jones discuss Cowboys loss, Seahawks",
-      "url": "https://www.hogshaven.com/washington-commanders-news/443151/commanders-david-blough-daronte-jones-discuss-cowboys-loss-seahawks",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The injury to Commanders quarterback Jayden Daniels remained front-of-mind on Thursday, as we continue to wait on a formal prognosis on when the third-year pro might return. The Commanders will carry on with Marcus Mariota as their primary quarterback and must find a way to perform better in a Week 3 home game against the [\u2026]",
-      "categories": [
-        "Pressers",
-        "Washington Commanders News"
-      ],
-      "published_at": "2026-09-24T16:45:16+00:00",
-      "players": [
-        {
-          "id": "00-0032268",
-          "name": "Marcus Mariota",
-          "team": "WAS",
-          "position": "QB"
-        },
-        {
-          "id": "00-0039910",
-          "name": "Jayden Daniels",
-          "team": "WAS",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "36db4e56b1b057ac3004",
-      "headline": "Caleb Williams Injury Could Leave Ben Johnson in Uncharted Territory For Bears-Eagles",
-      "url": "https://www.si.com/nfl/bears/onsi/caleb-williams-injury-could-leave-ben-johnson-in-uncharted-territory-for-bears-eagles",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears head coach Ben Johnson will find himself in uncharted territory for the Week 3 game against the Philadelphia Eagles if Caleb Williams doesn't play.",
-      "categories": [],
-      "published_at": "2026-09-24T16:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "0e181cb8f3bcce35de26",
-      "headline": "Dolphins make practice squad moves",
-      "url": "https://www.miamidolphins.com/news/dolphins-make-practice-squad-moves-x1244",
-      "source_id": "news_official_mia",
-      "source": "Miami Dolphins (official)",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "The Miami Dolphins announced today that they have signed wide receiver AJ Henning to the practice squad and released long snapper Luke Basso from the practice squad.",
-      "categories": [
-        "Written Content - Latest Stories",
-        "Content - Feature",
-        "Written Content - Press Release",
-        "Content - Latest Content"
-      ],
-      "published_at": "2026-09-24T15:35:00+00:00",
-      "players": [
-        {
-          "id": "00-0040302",
-          "name": "A.J. Henning",
-          "team": "MIA",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "29bac6c838bc60184261",
-      "headline": "Transcript: RB De'Von Achane Press Conference - September 23",
-      "url": "https://www.miamidolphins.com/news/transcript-rb-de-von-achane-press-conference-september-23",
-      "source_id": "news_official_mia",
-      "source": "Miami Dolphins (official)",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "Read the full transcript from RB De'Von Achane's postgame media availability on September 23, 2026.",
-      "categories": [
-        "Written Content - Latest Stories",
-        "Written Content - Transcript",
-        "Kansas City Chiefs at Miami Dolphins (2026-REG-3)"
-      ],
-      "published_at": "2026-09-24T15:30:21+00:00",
-      "players": [
-        {
-          "id": "00-0039040",
-          "name": "De'Von Achane",
-          "team": "MIA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "8bc551107d39bcdf5591",
-      "headline": "Transcript: QB Malik Willis Press Conference - September 23",
-      "url": "https://www.miamidolphins.com/news/transcript-qb-malik-willis-press-conference-september-23",
-      "source_id": "news_official_mia",
-      "source": "Miami Dolphins (official)",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "Read the full transcript from QB Malik Willis' postgame media availability on September 23, 2026.",
-      "categories": [
-        "Written Content - Latest Stories",
-        "Written Content - Transcript",
-        "Kansas City Chiefs at Miami Dolphins (2026-REG-3)"
-      ],
-      "published_at": "2026-09-24T15:26:09+00:00",
-      "players": [
-        {
-          "id": "00-0038128",
-          "name": "Malik Willis",
-          "team": "MIA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "47d0049007a6a50854a6",
-      "headline": "Storylines: Jameis Winston takes over for Jaxson Dart",
-      "url": "https://www.giants.com/news/week-3-tennessee-titans-jameis-winston-jaxson-dart-john-harbaugh-brian-burns-malik-nabers-cam-ward",
-      "source_id": "news_official_nyg",
-      "source": "New York Giants (official)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "The New York Giants will return to MetLife Stadium in Week 3 for the first of back-to-back home games, starting with a matchup against the Tennessee Titans.",
-      "categories": [
-        "homepage",
-        "Storylines"
-      ],
-      "published_at": "2026-09-24T15:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0031503",
-          "name": "Jameis Winston",
-          "team": "NYG",
-          "position": "QB"
-        },
-        {
-          "id": "00-0040691",
-          "name": "Jaxson Dart",
-          "team": "NYG",
           "position": "QB"
         }
       ]
