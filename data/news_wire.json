@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T21:10:10.688030+00:00",
+  "updated_at": "2026-09-26T22:00:50.884669+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T21:06:17+00:00",
+      "latest_entry_at": "2026-09-26T21:55:17+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T21:06:05+00:00",
+      "latest_entry_at": "2026-09-26T21:42:18+00:00",
       "stale": false
     },
     {
@@ -108,9 +108,9 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-25T23:23:00+00:00",
+      "latest_entry_at": "2026-09-26T21:12:44+00:00",
       "stale": false
     },
     {
@@ -172,7 +172,7 @@
     {
       "source_id": "news_official_lar",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
       "latest_entry_at": "2026-09-26T19:00:23+00:00",
       "stale": false
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-26T20:00:00+00:00",
+      "latest_entry_at": "2026-09-26T21:00:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-26T21:06:17+00:00",
+      "latest_entry_at": "2026-09-26T21:55:17+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-26T21:06:05+00:00",
+      "latest_entry_at": "2026-09-26T21:42:18+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-26T11:05:00+00:00",
+      "latest_entry_at": "2026-09-26T21:29:46+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-26T20:20:22+00:00",
+      "latest_entry_at": "2026-09-26T21:30:00+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-26T20:51:29+00:00",
+      "latest_entry_at": "2026-09-26T21:30:00+00:00",
       "stale": false
     },
     {
@@ -436,9 +436,9 @@
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-26T17:00:00+00:00",
+      "latest_entry_at": "2026-09-26T21:15:09+00:00",
       "stale": false
     },
     {
@@ -446,15 +446,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-26T20:18:59+00:00",
+      "latest_entry_at": "2026-09-26T21:16:10+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-26T20:08:21+00:00",
+      "latest_entry_at": "2026-09-26T21:30:00+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T18:41:48+00:00",
+      "latest_entry_at": "2026-09-26T21:31:16+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T15:50:45+00:00",
+      "latest_entry_at": "2026-09-26T22:00:00+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-26T16:21:28+00:00",
+      "latest_entry_at": "2026-09-26T21:32:16+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,136 @@
     }
   ],
   "items": [
+    {
+      "id": "f65c380d2b3b85137380",
+      "headline": "Broncos Bite the Jonah Coleman Bullet\u2014What it Really Means",
+      "url": "https://www.si.com/nfl/broncos/onsi/broncos-bite-the-jonah-coleman-bullet-what-it-really-means",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Broncos made a flurry of roster moves on Saturday; let's hope this Jonah Coleman gamble pays off.",
+      "categories": [],
+      "published_at": "2026-09-26T21:40:12+00:00",
+      "players": [
+        {
+          "id": "00-0041496",
+          "name": "Jonah Coleman",
+          "team": "DEN",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "e36390b44c131c49f608",
+      "headline": "49ers add 3 defensive linemen from the practice squad; work out 34-year-old Matt Judon",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/163274/49ers-add-3-defensive-linemen-from-the-practice-squad-work-out-34-year-old-matt-judon",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers promoted defensive lineman Viliami Fehoko Jr. from the practice squad and elevated defensive tackle Kevin Givens and Sebastian Valdez. To make room for Fehoko Jr. on the active roster, the 49ers placed wide receiver Demarcus Robinson on injured reserve. He\u2019ll miss at least four games. Fehoko Jr. is listed at 6\u20195\u2033, [\u2026]",
+      "categories": [
+        "San Francisco 49ers Depth Chart",
+        "San Francisco 49ers Injuries"
+      ],
+      "published_at": "2026-09-26T21:32:16+00:00",
+      "players": [
+        {
+          "id": "00-0032775",
+          "name": "Demarcus Robinson",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "8d185048375de62ace21",
+      "headline": "Giants Make Key Roster Moves Ahead of Titans Showdown \u2014 Here's What It Means",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-roster-moves-berrios-harrison-haener-week-3-01m3fqyw1bnn",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "New York made a series of roster moves before Week 3, signing Jake Haener as Jameis Winston's backup and elevating two special-teams contributors for the third time.",
+      "categories": [],
+      "published_at": "2026-09-26T21:20:40+00:00",
+      "players": [
+        {
+          "id": "00-0031503",
+          "name": "Jameis Winston",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "28c5cbce94b4548ff25b",
+      "headline": "NY Giants add backup QB to roster ahead of game vs. Tennessee Titans",
+      "url": "https://www.bigblueview.com/new-york-giants-roster/172932/backup-qb-jake-haener-added-to-roster-ahead-of-game-vs-tennessee-titans",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The New York Giants have signed veteran quarterback Jake Haener from their practice squad. Haener fills the 53-man roster spot vacated when Jaxson Dart was placed on injured reserve. The Giants also elevated wide receiver/kick returner Braxton Berrios and linebacker Malik Harrison from the practice squad for Sunday\u2019s game against the Tennessee Titans. That is [\u2026]",
+      "categories": [
+        "New York Giants roster"
+      ],
+      "published_at": "2026-09-26T21:15:09+00:00",
+      "players": [
+        {
+          "id": "00-0034419",
+          "name": "Braxton Berrios",
+          "team": "NYG",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040691",
+          "name": "Jaxson Dart",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "4e89253563d7192dc083",
+      "headline": "Broncos add LS Mitchell Fraboni to the 53-man roster and elevate FB Adam Prentice and WR/KR Kolbe Katsis from the practice squad",
+      "url": "https://www.milehighreport.com/denver-broncos-news/186375/broncos-add-ls-mitchell-fraboni-to-the-53-man-roster-and-elevate-fb-adam-prentice-and-wr-kr-kolbe-katsis-from-the-practice-squad",
+      "source_id": "news_sbn_den",
+      "source": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "According to 9NEWS Denver\u2019s Mike Klis, the Denver Broncos are signing veteran long snapper Mitchell Fraboni from their practice squad to their 53-man roster. They had an open roster spot available after placing rookie running back Jonah Coleman on the short-term IR due to a high ankle sprain. Klis is also reporting that the Broncos [\u2026]",
+      "categories": [
+        "Denver Broncos News"
+      ],
+      "published_at": "2026-09-26T21:12:25+00:00",
+      "players": [
+        {
+          "id": "00-0036727",
+          "name": "Adam Prentice",
+          "team": "DEN",
+          "position": "RB"
+        },
+        {
+          "id": "00-0041292",
+          "name": "Kolbe Katsis",
+          "team": "DEN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0041496",
+          "name": "Jonah Coleman",
+          "team": "DEN",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "8d769ce6872de6dce459",
       "headline": "Jets Turn to Practice Squad Player to Elevate Disappointing Special Teams",
@@ -3950,110 +4080,6 @@
           "position": "QB"
         }
       ]
-    },
-    {
-      "id": "ecd86d97076ecb9c196a",
-      "headline": "Vikings Thursday Injury Report: Minnesota\u2019s dire position improves with questions remaining about two Buccaneers starters",
-      "url": "https://atozsports.com/nfl/minnesota-vikings-news/vikings-thursday-injury-report-jalen-redmond-aaron-jones-baker-mayfield-rueben-bain-josiah-trotter/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Minnesota Vikings are already dealing with injuries, but things are getting better as the week goes on.",
-      "categories": [
-        "Minnesota Vikings News",
-        "NFL",
-        "Aaron Jones",
-        "Baker Mayfield",
-        "DeeJay Dallas",
-        "Jalen Redmond",
-        "Jordan Mason",
-        "Minnesota Vikings",
-        "Tampa Bay Buccaneers",
-        "Vikings Injury Report"
-      ],
-      "published_at": "2026-09-24T21:43:18+00:00",
-      "players": []
-    },
-    {
-      "id": "758431f2d2f455b76494",
-      "headline": "Dallas Cowboys' Thursday Injury Report Includes 4 Players Ruled Out for Week 3",
-      "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-thursday-injury-report-players-ruled-out-week-3",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys have already ruled out four players ahead of the Week 3 contest against the Baltimore Ravens in Brazil.",
-      "categories": [],
-      "published_at": "2026-09-24T21:42:10+00:00",
-      "players": []
-    },
-    {
-      "id": "b9ce896620228b828ac1",
-      "headline": "5 Intriguing Wide Receiver Trade Targets the Rams Should Consider",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-wide-receiver-trade-targets-puka-nacua-injury",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Rams still need a reliable third wide receiver behind Puka Nacua and Davante Adams. These five potential trades could address that need.",
-      "categories": [],
-      "published_at": "2026-09-24T21:38:44+00:00",
-      "players": [
-        {
-          "id": "00-0031381",
-          "name": "Davante Adams",
-          "team": "LAR",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039075",
-          "name": "Puka Nacua",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "f8e438c8deb482ab87a4",
-      "headline": "Bengals\u2019 latest injury report sparks concern with defensive line ahead of Week 3 game against Steelers",
-      "url": "https://atozsports.com/nfl/cincinnati-bengals-news/bengals-thursday-injury-report-week-3-at-steelers-jonathan-allen-bj-hill-jamel-dean/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "The Cincinnati Bengals continue their week of practice ahead of their first AFC North showdown of the 2026 season against the Pittsburgh Steelers. Two of their top defensive tackles have yet to practice this week.",
-      "categories": [
-        "Cincinnati Bengals News",
-        "B.j. Hill",
-        "Bengals Injury Report",
-        "Cincinnati Bengals",
-        "jonathan allen"
-      ],
-      "published_at": "2026-09-24T21:23:04+00:00",
-      "players": []
-    },
-    {
-      "id": "8f21051d51efa8091e7e",
-      "headline": "Buccaneers-Vikings Injury Report Sept.24: Trotter and Bain Did Not Participate",
-      "url": "https://www.buccaneers.com/news/buccaneers-vikings-injury-report-sept-24-week-3-2026",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "A look at Thursday's injury report ahead of the Week 3 matchup",
-      "categories": [
-        "Featured",
-        "Injury Report",
-        "Week 3 2026 Vikings"
-      ],
-      "published_at": "2026-09-24T21:08:07+00:00",
-      "players": []
     }
   ]
 }
