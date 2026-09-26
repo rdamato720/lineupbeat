@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T22:00:50.884669+00:00",
+  "updated_at": "2026-09-26T23:37:49.835202+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T21:55:17+00:00",
+      "latest_entry_at": "2026-09-26T23:35:48+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T21:42:18+00:00",
+      "latest_entry_at": "2026-09-26T23:27:04+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-26T21:55:17+00:00",
+      "latest_entry_at": "2026-09-26T23:35:48+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T21:42:18+00:00",
+      "latest_entry_at": "2026-09-26T23:27:04+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T14:42:16+00:00",
+      "latest_entry_at": "2026-09-26T22:34:27+00:00",
       "stale": false
     },
     {
@@ -332,17 +332,17 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-25T17:00:00+00:00",
+      "latest_entry_at": "2026-09-26T23:20:16+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-26T21:29:46+00:00",
+      "latest_entry_at": "2026-09-26T22:32:30+00:00",
       "stale": false
     },
     {
@@ -364,9 +364,9 @@
     {
       "source_id": "news_sbn_hou",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-25T13:13:05+00:00",
+      "latest_entry_at": "2026-09-26T22:34:30+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-26T21:30:00+00:00",
+      "latest_entry_at": "2026-09-26T21:12:25+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-26T19:01:00+00:00",
+      "latest_entry_at": "2026-09-26T22:30:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T21:00:00+00:00",
+      "latest_entry_at": "2026-09-26T22:30:00+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-26T20:43:01+00:00",
+      "latest_entry_at": "2026-09-26T23:04:13+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,152 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-26T20:22:14+00:00",
+      "latest_entry_at": "2026-09-26T22:32:11+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "4f60a7612cbb0ba277f3",
+      "headline": "Ravens Week 3 injury report: all eyes on Zay Flowers vs. Cowboys",
+      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-injuries/85481/ravens-week-3-injury-report-all-eyes-on-zay-flowers-vs-cowboys",
+      "source_id": "news_sbn_bal",
+      "source": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Baltimore Ravens confirmed that defensive tackle Nnamdi Madubuike and linebacker Teddye Buchanan would make their long-awaited 2026 debuts on Sunday in Brazil. Both were taken off the team\u2019s final injury report for their Week 3 matchup against the Dallas Cowboys. Wide receiver Zay Flowers, however, is listed as questionable with a lingering hamstring injury [\u2026]",
+      "categories": [
+        "Baltimore Ravens Injuries",
+        "Baltimore Ravens News"
+      ],
+      "published_at": "2026-09-26T23:20:16+00:00",
+      "players": [
+        {
+          "id": "00-0039064",
+          "name": "Zay Flowers",
+          "team": "BAL",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "f31e9e022c66639af594",
+      "headline": "Texans' Nico Collins Injury Creates Huge Opportunity for Dalton Schultz",
+      "url": "https://www.si.com/nfl/texans/onsi/texans-nico-collins-injury-creates-huge-opportunity-for-dalton-schultz",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "Expect another big day for Dalton Schultz for the Houston Texans in Week 3.",
+      "categories": [],
+      "published_at": "2026-09-26T23:14:18+00:00",
+      "players": [
+        {
+          "id": "00-0034383",
+          "name": "Dalton Schultz",
+          "team": "HOU",
+          "position": "TE"
+        },
+        {
+          "id": "00-0036554",
+          "name": "Nico Collins",
+          "team": "HOU",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "a2d0af96e2e9245500a0",
+      "headline": "Rams Elevate Dean Connors as Preseason Standout Faces Biggest Opportunity Yet",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-elevate-dean-connors-broncos-week-3",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Rams elevated Dean Connors and Elias Neal ahead of Week 3 against the Broncos as both look to make an impact on special teams.",
+      "categories": [],
+      "published_at": "2026-09-26T23:08:29+00:00",
+      "players": [
+        {
+          "id": "00-0041415",
+          "name": "Dean Connors",
+          "team": "LAR",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "0f0ecd38a0a82887e8b1",
+      "headline": "Why Dillon Bell Deserves to Be on the Vikings' Active Roster vs. Buccaneers in Week 3",
+      "url": "https://www.si.com/nfl/vikings/onsi/why-dillon-bell-deserves-be-vikings-active-roster-buccaneers-week-3-01m3e7f5cgpz",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "The Vikings' rash of injuries in Week 3 clears the way for wide receiver Dillon Bell to get a chance against the Buccaneers.",
+      "categories": [],
+      "published_at": "2026-09-26T23:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0041342",
+          "name": "Dillon Bell",
+          "team": "MIN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "b17180000117186af146",
+      "headline": "Houston Texans vs. Indianapolis Colts: Injury Report",
+      "url": "https://www.battleredblog.com/houston-texans-injuries/77819/houston-texans-vs-indianapolis-colts-injury-report",
+      "source_id": "news_sbn_hou",
+      "source": "Battle Red Blog (SB Nation)",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "The Houston Texans are coming off another loss, this time to the Cincinnati Bengals. The game was not very close, due to the offense not being able to finish their drives. Stroud was able to move the ball, throwing for over 350 yards, but could not get the ball into the endzone. Their rushing attack [\u2026]",
+      "categories": [
+        "Houston Texans Injuries"
+      ],
+      "published_at": "2026-09-26T22:34:30+00:00",
+      "players": []
+    },
+    {
+      "id": "54239a086e7a155441b8",
+      "headline": "Bengals put Andrei Iosivas on IR, sign Joe Giles-Harris to active roster, and elevate Tanner Hudson",
+      "url": "https://www.cincyjungle.com/cincinnati-bengals-roster/200313/andrei-iosivas-joe-giles-harris-active-roster-tanner-hudson",
+      "source_id": "news_sbn_cin",
+      "source": "Cincy Jungle (SB Nation)",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "Preceding their big matchup against the Steelers on Sunday, the Bengals made a few roster moves. A couple were not surprising, but the Bengals are tweaking things before they hit the field in Pittsburgh Saturday afternoon. Wide Receiver Andrei Iosivas landed on injured reserve after injuring a ligament in his thumb and having surgery. While [\u2026]",
+      "categories": [
+        "AFC North news",
+        "Cincinnati Bengals injuries",
+        "Cincinnati Bengals News",
+        "Cincinnati Bengals roster"
+      ],
+      "published_at": "2026-09-26T22:32:30+00:00",
+      "players": [
+        {
+          "id": "00-0034613",
+          "name": "Tanner Hudson",
+          "team": "CIN",
+          "position": "TE"
+        },
+        {
+          "id": "00-0038619",
+          "name": "Andrei Iosivas",
+          "team": "CIN",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "f65c380d2b3b85137380",
       "headline": "Broncos Bite the Jonah Coleman Bullet\u2014What it Really Means",
@@ -3964,122 +4105,6 @@
       ],
       "published_at": "2026-09-24T22:45:00+00:00",
       "players": []
-    },
-    {
-      "id": "1ad6c8fb039fcc608cb2",
-      "headline": "Atlanta Falcons Week 3 inactives vs. Green Bay Packers",
-      "url": "https://www.atlantafalcons.com/news/atlanta-falcons-week-3-inactives-green-bay-packers",
-      "source_id": "news_official_atl",
-      "source": "Atlanta Falcons (official)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "Cornerback Billy Bowman Jr. will make his debut for the Falcons on Thursday night against the Packers",
-      "categories": [
-        "News",
-        "Inactives",
-        "Michael Penix Jr.",
-        "Billy Bowman Jr.",
-        "Atlanta Falcons at Green Bay Packers (2026-REG-3)"
-      ],
-      "published_at": "2026-09-24T22:43:20+00:00",
-      "players": []
-    },
-    {
-      "id": "d3e2c71300d429221215",
-      "headline": "Vikings-Bucs Second Injury Report",
-      "url": "https://www.dailynorseman.com/minnesota-vikings-injuries/99589/vikings-bucs-second-injury-report",
-      "source_id": "news_sbn_min",
-      "source": "Daily Norseman (SB Nation)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Minnesota Vikings and Tampa Bay Buccaneers released their second injury reports in advance of their Sunday afternoon matchup in Tampa. Here they are. Minnesota Vikings Tampa Bay Buccaneers Injury Report Terms and Glossary Injury designation definitions: Probable = the league defines a Probable injury designation as a 75% or greater chance of playing. Historically, [\u2026]",
-      "categories": [
-        "Minnesota Vikings Injuries"
-      ],
-      "published_at": "2026-09-24T22:39:28+00:00",
-      "players": []
-    },
-    {
-      "id": "db12f5521713edb30e9b",
-      "headline": "Buccaneers vs. Vikings: Thursday injury report for Week 3",
-      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/68684/buccaneers-vikings-thursday-injury-report-nfl-week-3",
-      "source_id": "news_sbn_tb",
-      "source": "Bucs Nation (SB Nation)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "The Buccaneers released their second injury report of the week Thursday as they continue preparations for Sunday\u2019s matchup against the Minnesota Vikings. Tampa Bay rookie outside linebacker Rueben Bain Jr. remained sidelined with a groin injury, marking his second consecutive missed practice. Bain suffered the injury during last week\u2019s loss to Cleveland. There was better news [\u2026]",
-      "categories": [
-        "Tampa Bay Buccaneers Injuries"
-      ],
-      "published_at": "2026-09-24T22:31:35+00:00",
-      "players": []
-    },
-    {
-      "id": "e526b714ce1c016bb56f",
-      "headline": "The Miami Dolphins\u2019 latest injury report sparks concern ahead of Week 3 game against Chiefs\u2014but one rookie plans to push through",
-      "url": "https://atozsports.com/nfl/miami-dolphins-news/the-miami-dolphins-latest-injury-report-sparks-concern-ahead-of-week-3-game-against-chiefs-but-one-rookie-plans-to-push-through/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "One of the Miami Dolphins' least experienced position rooms is also now banged up ahead of Week 3.",
-      "categories": [
-        "Miami Dolphins News",
-        "Caleb Douglas",
-        "Chris Bell",
-        "Dolphins",
-        "Dolphins News",
-        "Miami Dolphins"
-      ],
-      "published_at": "2026-09-24T22:09:37+00:00",
-      "players": []
-    },
-    {
-      "id": "5e0315d24c829acd408d",
-      "headline": "Chargers-Bills Injury Report: Rashawn Slater full participant on Thursday",
-      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/65710/chargers-bills-injury-report-rashawn-slater-kayode-awosika-charlie-kolar",
-      "source_id": "news_sbn_lac",
-      "source": "Bolts From The Blue (SB Nation)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "Some good news came with the Chargers\u2019 second injury report of Week Three. Left tackle Rashawn Slater, who only practiced in a limited capacity on Wednesday, was a full participant on Thursday while being listed with a groin injury. Right guard Cole Strange, who was also limited in the team\u2019s first practice with a pectoral [\u2026]",
-      "categories": [
-        "Chargers Injury Reports",
-        "Los Angeles Chargers Injuries"
-      ],
-      "published_at": "2026-09-24T22:03:50+00:00",
-      "players": []
-    },
-    {
-      "id": "544d2c1713d0b9350406",
-      "headline": "Seahawks quarterback Sam Darnold 'Striving' To Play Sunday, But Taking It 'Day By Day'",
-      "url": "https://www.seahawks.com/news/seahawks-quarterback-sam-darnold-striving-to-play-sunday-but-taking-it-day-by-day",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Seahawks quarterback Sam Darnold returned to practice this week and is hoping to play in Seattle's Week 3 game at Washington.",
-      "categories": [
-        "category/News:",
-        "Sam Darnold",
-        "News: National Feature",
-        "Homepage Hero"
-      ],
-      "published_at": "2026-09-24T21:50:32+00:00",
-      "players": [
-        {
-          "id": "00-0034869",
-          "name": "Sam Darnold",
-          "team": "SEA",
-          "position": "QB"
-        }
-      ]
     }
   ]
 }
