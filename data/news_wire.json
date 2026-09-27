@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T21:37:59.554265+00:00",
+  "updated_at": "2026-09-27T22:00:49.574708+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T21:37:41+00:00",
+      "latest_entry_at": "2026-09-27T21:48:42+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T21:24:16+00:00",
+      "latest_entry_at": "2026-09-27T21:46:01+00:00",
       "stale": false
     },
     {
@@ -76,9 +76,9 @@
     {
       "source_id": "news_official_car",
       "ok": true,
-      "eligible": 10,
+      "eligible": 11,
       "error": "",
-      "latest_entry_at": "2026-09-27T20:32:19+00:00",
+      "latest_entry_at": "2026-09-27T21:48:32+00:00",
       "stale": false
     },
     {
@@ -214,7 +214,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-27T18:55:30+00:00",
+      "latest_entry_at": "2026-09-27T21:54:14+00:00",
       "stale": false
     },
     {
@@ -244,9 +244,9 @@
     {
       "source_id": "news_official_pit",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T20:25:00+00:00",
+      "latest_entry_at": "2026-09-27T21:52:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-27T21:37:41+00:00",
+      "latest_entry_at": "2026-09-27T21:48:42+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-27T21:24:16+00:00",
+      "latest_entry_at": "2026-09-27T21:46:01+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T21:26:01+00:00",
+      "latest_entry_at": "2026-09-27T21:31:45+00:00",
       "stale": false
     },
     {
@@ -318,15 +318,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-27T20:49:38+00:00",
+      "latest_entry_at": "2026-09-27T21:39:08+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T20:04:44+00:00",
+      "latest_entry_at": "2026-09-27T16:30:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T21:08:49+00:00",
+      "latest_entry_at": "2026-09-27T21:25:57+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T20:26:35+00:00",
+      "latest_entry_at": "2026-09-27T21:24:40+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T20:01:08+00:00",
+      "latest_entry_at": "2026-09-27T21:45:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T19:01:26+00:00",
+      "latest_entry_at": "2026-09-27T20:43:06+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-27T21:05:35+00:00",
+      "latest_entry_at": "2026-09-27T16:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,109 @@
     }
   ],
   "items": [
+    {
+      "id": "07fbd8bc81fdf7e581aa",
+      "headline": "Jalen Coker, Jaycee Horn and More Panthers Injury Updates After Week 3 Loss",
+      "url": "https://www.si.com/nfl/panthers/onsi/jalen-coker-jaycee-horn-panthers-injury-updates-week-3-loss",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "The latest injury updates on Carolina Panthers wide receiver Jalen Coker and cornerbacks Jaycee Horn and Mike Jackson following the Week 3 loss to the Cleveland Browns.",
+      "categories": [],
+      "published_at": "2026-09-27T21:48:42+00:00",
+      "players": [
+        {
+          "id": "00-0039491",
+          "name": "Jalen Coker",
+          "team": "CAR",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "f2f21011e893e226e3c1",
+      "headline": "Panthers monitoring a number of injuries after loss to Browns",
+      "url": "https://www.panthers.com/news/panthers-monitoring-a-number-of-injuries-after-loss-to-browns-jaycee-horn-mike-jackson-jalen-coker-bryce-young",
+      "source_id": "news_official_car",
+      "source": "Carolina Panthers (official)",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "They were without both starting cornerbacks and wide receiver Jalen Coker by the end of the game, with other players in and out of the medical tent.",
+      "categories": [
+        "Latest News",
+        "App News",
+        "Carolina Panthers at Cleveland Browns (2026-REG-3)"
+      ],
+      "published_at": "2026-09-27T21:48:32+00:00",
+      "players": [
+        {
+          "id": "00-0039491",
+          "name": "Jalen Coker",
+          "team": "CAR",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "7da700996223851fb73e",
+      "headline": "San Francisco 49ers suffer yet another injury to a key player on their offense as their 2026 nightmare continues",
+      "url": "https://atozsports.com/nfl/san-francisco-49ers-news/san-francisco-49ers-suffer-injury-to-key-player-on-offense/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "49ers Wide Receiver Mike Evans was carted off during the 2nd quarter in the Week 3 contest against the Arizona Cardinals. San Francisco's No. 1 perimeter weapon suffered a vicious hit to his ribs from Budda Baker.",
+      "categories": [
+        "San Francisco 49ers News",
+        "American Football",
+        "Arizona Cardinals",
+        "Brock Purdy",
+        "Deebo Samuel",
+        "Mike evans",
+        "San Francisco 49ers"
+      ],
+      "published_at": "2026-09-27T21:45:21+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "2b0a016d15d88d1ecccc",
+      "headline": "Justin Jefferson Injury: Update on Vikings superstar after concerning play knocked him out vs. Buccaneers",
+      "url": "https://atozsports.com/nfl/minnesota-vikings-news/justin-jefferson-ankle-injury-update-vikings-superstar-concerning-play-knocked-out-buccaneers/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "Jefferson's departure is already affecting the Minnesota Vikings' passing game, and the timeline for his return remains unclear.",
+      "categories": [
+        "Minnesota Vikings News",
+        "NFL",
+        "Justin Jefferson",
+        "Justin Jefferson Injury",
+        "Minnesota Vikings",
+        "Vikings Injury"
+      ],
+      "published_at": "2026-09-27T21:38:29+00:00",
+      "players": [
+        {
+          "id": "00-0036322",
+          "name": "Justin Jefferson",
+          "team": "MIN",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "136a00f750b05d50567e",
       "headline": "Bucs WR Suffers Knee Injury In Week 3 vs. Vikings",
@@ -3956,79 +4059,6 @@
         "Cincinnati Bengals News"
       ],
       "published_at": "2026-09-25T20:29:21+00:00",
-      "players": []
-    },
-    {
-      "id": "d5702c22968857db8928",
-      "headline": "DJ Moore Confirms Two Boxes Must Be Checked Before Injury Clearance for Bills-Chargers",
-      "url": "https://www.si.com/nfl/bills/onsi/week-3-dj-moore-confirms-two-boxes-must-be-checked-before-injury-clearance-for-bills-chargers",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "Buffalo Bills wide receiver DJ Moore is questionable to play and must check two more boxes before he can be cleared for Week 3, he told reporters.",
-      "categories": [],
-      "published_at": "2026-09-25T20:28:00+00:00",
-      "players": [
-        {
-          "id": "00-0034827",
-          "name": "DJ Moore",
-          "team": "BUF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "8f465d42ffebdf4b2554",
-      "headline": "Patriots vs. Jaguars Friday injury report: Craig Woodson, Eli Raridon questionable for Week 3",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/138447/patriots-vs-jaguars-friday-injury-report-craig-woodson-eli-raridon-questionable-dremont-jones-quintayvious-hutchins-out",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "As the New England Patriots headed back for a final practice in Foxborough, so did Craig Woodson. The starting safety had been sidelined for the previous two sessions after not finishing the home opener against the Pittsburgh Steelers due to a shoulder injury. He moves forward as questionable to face the Jacksonville Jaguars along with [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-09-25T20:24:12+00:00",
-      "players": [
-        {
-          "id": "00-0041395",
-          "name": "Eli Raridon",
-          "team": "NE",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "b2c6afaeca1aca0a1377",
-      "headline": "Friday Injury Report: Saints vs Raiders, Two Out for NOLA, One for LV",
-      "url": "https://www.si.com/nfl/saints/onsi/friday-injury-report-saints-vs-raiders-two-out-for-nola-one-for-lv-01m3czyqatmq",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "New Orleans will have two absent on Sunday with another questionable.",
-      "categories": [],
-      "published_at": "2026-09-25T20:21:51+00:00",
-      "players": []
-    },
-    {
-      "id": "0ed84c89668b449f57ca",
-      "headline": "Giants Injury Report: Andrew Thomas Plan to Play, Brian Burns Questionable for Titans",
-      "url": "https://www.si.com/nfl/giants/onsi/giants-injury-report-andrew-thomas-brian-burns-titans-01m3cwtf59n4",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "Andrew Thomas is playing through a groin injury Sunday, but Brian Burns, Deonte Banks, and Tyler Nubin are all questionable for the Giants vs. the Titans.",
-      "categories": [],
-      "published_at": "2026-09-25T20:21:50+00:00",
       "players": []
     }
   ]
