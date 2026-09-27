@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T23:37:49.835202+00:00",
+  "updated_at": "2026-09-27T00:01:00.968115+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T23:35:48+00:00",
+      "latest_entry_at": "2026-09-26T23:49:05+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-26T23:35:48+00:00",
+      "latest_entry_at": "2026-09-26T23:49:05+00:00",
       "stale": false
     },
     {
@@ -332,17 +332,17 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T23:20:16+00:00",
+      "latest_entry_at": "2026-09-25T17:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-26T22:32:30+00:00",
+      "latest_entry_at": "2026-09-26T11:05:00+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-26T21:12:25+00:00",
+      "latest_entry_at": "2026-09-26T14:08:14+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-26T21:30:00+00:00",
+      "latest_entry_at": "2026-09-26T14:00:00+00:00",
       "stale": false
     },
     {
@@ -550,7 +550,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-26T22:32:11+00:00",
+      "latest_entry_at": "2026-09-26T23:34:19+00:00",
       "stale": false
     }
   ],
