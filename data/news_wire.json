@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T18:00:55.252759+00:00",
+  "updated_at": "2026-09-27T18:23:49.754755+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T17:51:09+00:00",
+      "latest_entry_at": "2026-09-27T18:23:10+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T16:58:54+00:00",
+      "latest_entry_at": "2026-09-27T17:49:45+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-27T16:25:00+00:00",
+      "latest_entry_at": "2026-09-27T18:04:29+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 9,
       "error": "",
-      "latest_entry_at": "2026-09-27T15:29:55+00:00",
+      "latest_entry_at": "2026-09-27T18:15:04+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T17:51:09+00:00",
+      "latest_entry_at": "2026-09-27T18:23:10+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-27T17:58:31+00:00",
+      "latest_entry_at": "2026-09-27T18:13:17+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T11:00:00+00:00",
+      "latest_entry_at": "2026-09-27T16:55:23+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-25T11:22:46+00:00",
+      "latest_entry_at": "2026-09-27T16:55:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T17:56:54+00:00",
+      "latest_entry_at": "2026-09-27T18:13:52+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-27T11:00:00+00:00",
+      "latest_entry_at": "2026-09-27T16:00:00+00:00",
       "stale": false
     },
     {
@@ -468,9 +468,9 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T14:15:00+00:00",
+      "latest_entry_at": "2026-09-27T16:45:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "81bdb323c8ff2d347dc0",
+      "headline": "Bengals Offensive Weapons Face BIGGER Depth Test After Latest Injury vs. Steelers",
+      "url": "https://www.si.com/nfl/bengals/onsi/bengals-offensive-weapons-facing-deeper-depth-test-amidst-new-injury-against-steelers-01m3hyvdqqzr",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "Bengals Offensive Weapons Facing Deeper Depth Test Amidst New Colbie Young Injury Against Steelers",
+      "categories": [],
+      "published_at": "2026-09-27T18:01:00+00:00",
+      "players": [
+        {
+          "id": "00-0041069",
+          "name": "Colbie Young",
+          "team": "CIN",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "054ec742f16a4acfab72",
       "headline": "Giants Live Blog: John Harbaugh on Facing Adversity Without Jaxson Dart",
@@ -3938,22 +3959,6 @@
         "2026-REG-3-EDITORIAL"
       ],
       "published_at": "2026-09-25T18:15:00+00:00",
-      "players": []
-    },
-    {
-      "id": "d5aee11a290e8b5116ca",
-      "headline": "Buffalo Bills injury report vs. Chargers | Week 3",
-      "url": "https://www.buffalobills.com/news/buffalo-bills-injury-report-vs-chargers-week-3",
-      "source_id": "news_official_buf",
-      "source": "Buffalo Bills (official)",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "Joe Brady ruled out two players and listed three others as questionable for Sunday\u2019s matchup against the Chargers.",
-      "categories": [
-        "INJURY REPORT"
-      ],
-      "published_at": "2026-09-25T18:12:09+00:00",
       "players": []
     }
   ]
