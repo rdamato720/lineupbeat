@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T18:23:49.754755+00:00",
+  "updated_at": "2026-09-27T20:00:50.137913+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T18:23:10+00:00",
+      "latest_entry_at": "2026-09-27T19:47:05+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T12:00:05+00:00",
+      "latest_entry_at": "2026-09-27T18:50:13+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T17:43:29+00:00",
+      "latest_entry_at": "2026-09-27T19:46:03+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-27T09:00:00+00:00",
+      "latest_entry_at": "2026-09-27T18:59:40+00:00",
       "stale": false
     },
     {
@@ -70,7 +70,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-27T15:29:14+00:00",
+      "latest_entry_at": "2026-09-27T19:15:18+00:00",
       "stale": false
     },
     {
@@ -108,7 +108,7 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
       "latest_entry_at": "2026-09-27T14:00:00+00:00",
       "stale": false
@@ -164,7 +164,7 @@
     {
       "source_id": "news_official_lac",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
       "latest_entry_at": "2026-09-27T18:04:29+00:00",
       "stale": false
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-27T16:00:00+00:00",
+      "latest_entry_at": "2026-09-27T18:55:00+00:00",
       "stale": false
     },
     {
@@ -196,9 +196,9 @@
     {
       "source_id": "news_official_min",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-27T13:00:00+00:00",
+      "latest_entry_at": "2026-09-27T18:35:00+00:00",
       "stale": false
     },
     {
@@ -212,9 +212,9 @@
     {
       "source_id": "news_official_no",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-27T12:50:06+00:00",
+      "latest_entry_at": "2026-09-27T18:55:30+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-27T17:00:00+00:00",
+      "latest_entry_at": "2026-09-27T19:33:00+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-26T20:00:00+00:00",
+      "latest_entry_at": "2026-09-27T19:53:00+00:00",
       "stale": false
     },
     {
@@ -262,13 +262,13 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-25T22:51:13+00:00",
+      "latest_entry_at": "2026-09-27T18:45:09+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_tb",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
       "latest_entry_at": "2026-09-27T20:00:00+00:00",
       "stale": false
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-27T18:23:10+00:00",
+      "latest_entry_at": "2026-09-27T19:47:05+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T17:43:29+00:00",
+      "latest_entry_at": "2026-09-27T19:46:03+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-27T17:20:38+00:00",
+      "latest_entry_at": "2026-09-27T19:49:47+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-27T18:13:17+00:00",
+      "latest_entry_at": "2026-09-27T19:50:42+00:00",
       "stale": false
     },
     {
@@ -332,9 +332,9 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-27T16:55:23+00:00",
+      "latest_entry_at": "2026-09-27T19:53:21+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T16:57:02+00:00",
+      "latest_entry_at": "2026-09-27T20:00:00+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T14:35:00+00:00",
+      "latest_entry_at": "2026-09-27T19:22:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T16:45:00+00:00",
+      "latest_entry_at": "2026-09-27T20:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T18:13:52+00:00",
+      "latest_entry_at": "2026-09-27T19:59:20+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-27T14:00:00+00:00",
+      "latest_entry_at": "2026-09-27T20:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T16:45:00+00:00",
+      "latest_entry_at": "2026-09-27T20:00:44+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T12:00:00+00:00",
+      "latest_entry_at": "2026-09-27T19:30:00+00:00",
       "stale": false
     },
     {
@@ -508,17 +508,17 @@
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T15:44:00+00:00",
+      "latest_entry_at": "2026-09-27T19:06:19+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-27T17:33:03+00:00",
+      "latest_entry_at": "2026-09-27T19:25:11+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T14:00:00+00:00",
+      "latest_entry_at": "2026-09-27T19:18:12+00:00",
       "stale": false
     },
     {
@@ -534,15 +534,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T17:04:18+00:00",
+      "latest_entry_at": "2026-09-27T18:31:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-27T14:55:43+00:00",
+      "latest_entry_at": "2026-09-27T19:06:46+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,378 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-27T16:15:00+00:00",
+      "latest_entry_at": "2026-09-27T20:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "aa3160c5145c42e9f680",
+      "headline": "Eagles at Bears Injury Report",
+      "url": "https://www.philadelphiaeagles.com/news/eagles-at-bears-injury-report-2026-nfl-week-3-monday-night-football-caleb-williams-saquon-barkley",
+      "source_id": "news_official_phi",
+      "source": "Philadelphia Eagles (official)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "Quarterback Tyson Bagent has cleared concussion protocol and is available for Monday night's game. Who will start at quarterback for the Bears?",
+      "categories": [
+        "All News-archived",
+        "NFL.com Feature",
+        "Injury Report",
+        "2026 Week 3 at Bears"
+      ],
+      "published_at": "2026-09-27T19:53:00+00:00",
+      "players": []
+    },
+    {
+      "id": "be81d2b86eb3421e079b",
+      "headline": "Saints, Raiders Announce Inactives: Vegas Tight End to Start",
+      "url": "https://www.si.com/nfl/saints/onsi/saints-raiders-announce-inactives-vegas-tight-end-to-start-01m3j5yzc4z3",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "New Orleans and Las Vegas released their list a few minutes ago.",
+      "categories": [],
+      "published_at": "2026-09-27T19:43:20+00:00",
+      "players": []
+    },
+    {
+      "id": "6f44febd07edaeb92370",
+      "headline": "Chicago Bears Injury Update on Caleb Williams and Tyson Bagent",
+      "url": "https://www.windycitygridiron.com/chicago-bears-injuries/123775/chicago-bears-injury-update-on-caleb-williams-and-tyson-bagent",
+      "source_id": "news_sbn_chi",
+      "source": "Windy City Gridiron (SB Nation)",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "We got some good news and some bad news regarding the Chicago Bears quarterbacks today, so let\u2019s get the bad news out of the way first. ESPN\u2019s Adam Schefter reported that Williams\u2019 hamstring is more severe than initially thought, writing that it\u2019s a \u201cGrade 2 hamstring injury that doctors say could sideline him for three [\u2026]",
+      "categories": [
+        "Chicago Bears Injuries"
+      ],
+      "published_at": "2026-09-27T19:25:00+00:00",
+      "players": [
+        {
+          "id": "00-0038416",
+          "name": "Tyson Bagent",
+          "team": "CHI",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "3fba09fabc2a0d6748d5",
+      "headline": "Dallas Cowboys Week 3 Inactives Raise Major RB Depth Concerns After Shocking Move",
+      "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-week-3-inactives-major-rb-depth-concerns-shocking-move",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys are down a running back entering Sunday's Week 3 showdown against the Baltimore Ravens.",
+      "categories": [],
+      "published_at": "2026-09-27T19:21:04+00:00",
+      "players": []
+    },
+    {
+      "id": "2db4b6a2cef0aa66ed76",
+      "headline": "Jalen Coker Injury Update: Latest News on Panthers WR's Status in Week 3 Game",
+      "url": "https://www.si.com/nfl/panthers/onsi/jalen-coker-injury-update-news-panthers-status-in-week-3",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "Carolina Panthers wide receiver Jalen Coker is questionable to return to the Week 3 game against the Cleveland Browns.",
+      "categories": [],
+      "published_at": "2026-09-27T19:10:31+00:00",
+      "players": [
+        {
+          "id": "00-0039491",
+          "name": "Jalen Coker",
+          "team": "CAR",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "e89e6baebbfbfd03b59e",
+      "headline": "Jordan Watkins is active for the first time this season",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/163301/jordan-watkins-is-active-for-the-first-time-this-season",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers\u2019 inactive list is out. As expected, Mike Evans will play through a hip injury. The offense may lean on Evans even more after the recent injuries to De\u2019Zhaun Stribling and Demarcus Robinson. With the top of the depth chart banged up, second-year wideout Jordan Watkins is active for the first time. [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries",
+        "San Francisco 49ers Roster"
+      ],
+      "published_at": "2026-09-27T19:06:46+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0032775",
+          "name": "Demarcus Robinson",
+          "team": "SF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040172",
+          "name": "Jordan Watkins",
+          "team": "SF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0041035",
+          "name": "De'Zhaun Stribling",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "6724fa15000e8478121e",
+      "headline": "New Orleans Saints vs. Las Vegas Raiders Inactives: Barion Brown is out",
+      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-game-information/115514/new-orleans-saints-vs-las-vegas-raiders-game-inactives-injuries",
+      "source_id": "news_sbn_no",
+      "source": "Canal Street Chronicles (SB Nation)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "Week 3 of the 2026 NFL season is here, and the New Orleans Saints (1-1) are finally back home in the Caesars Superdome as they prepare to take on the Las Vegas Raiders (2-0). With kickoff just minutes away, let\u2019s take a look at today\u2019s inactives. New Orleans Saints: Las Vegas Raiders:",
+      "categories": [
+        "New Orleans Saints Game Information",
+        "New Orleans Saints Injuries",
+        "New Orleans Saints News",
+        "New Orleans Saints Roster"
+      ],
+      "published_at": "2026-09-27T19:06:19+00:00",
+      "players": []
+    },
+    {
+      "id": "bcb007fef0f92edc892e",
+      "headline": "Raiders-Saints inactives: Brock Bowers will play",
+      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/140988/raiders-saints-inactive-brock-bowers-play",
+      "source_id": "news_sbn_lv",
+      "source": "Silver And Black Pride (SB Nation)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "As expected, Las Vegas Raiders superstar tight end Brock Bowers is active and he will make his 2026 regular-season debut Sunday at the New Orleans Saints. He was listed as questionable on the injury report Friday. He didn\u2019t practice Friday, but he was limited in practice both Wednesday and Thursday. Raiders coach Klint Kubiak said [\u2026]",
+      "categories": [
+        "Las Vegas Raiders Injuries",
+        "Las Vegas Raiders News"
+      ],
+      "published_at": "2026-09-27T19:01:26+00:00",
+      "players": [
+        {
+          "id": "00-0039338",
+          "name": "Brock Bowers",
+          "team": "LV",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "4d0ce1bee1561e52fa84",
+      "headline": "Ravens-Cowboys inactives: Zay Flowers ACTIVE in Brazil",
+      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-injuries/85521/ravens-cowboys-inactives-zay-flowers-active-in-brazil",
+      "source_id": "news_sbn_bal",
+      "source": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "Baltimore Ravens wide receiver Zay Flowers is ACTIVE for the team\u2019s Week 3 matchup against the Dallas Cowboys in Brazil following a one-game absence due to a hamstring injury. The 26-year-old wideout was listed as questionable after logging just one limited practice on Friday. Concerns about the playing surface at Maraca\u00f1a Stadium in Rio de [\u2026]",
+      "categories": [
+        "Baltimore Ravens Game Information",
+        "Baltimore Ravens Injuries"
+      ],
+      "published_at": "2026-09-27T18:56:01+00:00",
+      "players": [
+        {
+          "id": "00-0039064",
+          "name": "Zay Flowers",
+          "team": "BAL",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "8f03beefa92f41095710",
+      "headline": "New Orleans Saints inactives for Las Vegas Raiders game | 2026 NFL Week 3",
+      "url": "https://www.neworleanssaints.com/news/new-orleans-saints-inactives-las-vegas-raiders-2026-nfl-week-3-gameday",
+      "source_id": "news_official_no",
+      "source": "New Orleans Saints (official)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "Martin Emerson Jr., Barion Brown out for Sunday's game vs. Raiders",
+      "categories": [
+        "Inactives List",
+        "Latest News",
+        "Gameday",
+        "2026-reg-week3"
+      ],
+      "published_at": "2026-09-27T18:55:30+00:00",
+      "players": []
+    },
+    {
+      "id": "2563a2b18479178960e5",
+      "headline": "Ravens Activate Zay Flowers For Game In Brazil, Nnamdi Madubuike Makes Season Debut",
+      "url": "https://www.si.com/nfl/ravens/onsi/ravens-activate-zay-flowers-for-game-in-brazil-nnamdi-madubuike-makes-season-debut-01m3j1dsyvn5",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Ravens got back several stalwarts ahead of Week 3 game against Dallas from South America",
+      "categories": [],
+      "published_at": "2026-09-27T18:55:23+00:00",
+      "players": [
+        {
+          "id": "00-0039064",
+          "name": "Zay Flowers",
+          "team": "BAL",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "23720b5546c69fc0fe8a",
+      "headline": "Las Vegas Raiders Week 3 Inactives vs. New Orleans Saints",
+      "url": "https://www.raiders.com/news/las-vegas-raiders-week-3-inactives-vs-new-orleans-saints-092726",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Before the Raiders take the field for Week 3, view the inactive players for today's game.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Inactives",
+        "Las Vegas Raiders at New Orleans Saints (2026-REG-3)"
+      ],
+      "published_at": "2026-09-27T18:55:00+00:00",
+      "players": []
+    },
+    {
+      "id": "f0302a41eefabb80c8ab",
+      "headline": "Bucs vs. Vikings: Week 3 Inactives",
+      "url": "https://www.pewterreport.com/bucs-vs-vikings-week-3-inactives/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The 0-2 Bucs will face off against the 2-0 Vikings without two key members of their 2026 NFL Draft class, not to mention their defense. Both inside linebacker Josiah Trotter and outside linebacker Rueben Bain Jr. were ruled out of the game on the team's Friday injury report. Bucs Inactives In addition to those",
+      "categories": [
+        "Articles",
+        "Josiah Trotter",
+        "Rueben Bain Jr."
+      ],
+      "published_at": "2026-09-27T18:50:13+00:00",
+      "players": []
+    },
+    {
+      "id": "155650aa97cd8cbc2404",
+      "headline": "Buccaneers vs. Vikings: Inactives for Week 3",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/68725/buccaneers-vikings-inactives-nfl-week-3",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers will be without a pair of rookie defensive starters as they look for their first win of the season Sunday afternoon against the Minnesota Vikings. Outside linebacker Rueben Bain Jr. and linebacker Josiah Trotter are both inactive after suffering injuries in last week\u2019s loss to Cleveland. Bain is dealing with a [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers Injuries"
+      ],
+      "published_at": "2026-09-27T18:49:10+00:00",
+      "players": []
+    },
+    {
+      "id": "333e074efff5609af53c",
+      "headline": "Romello Height and Nick Bosa OUT; Mike Evans Available vs. Cardinals; Inactives for Week 3 #ARZvsSF",
+      "url": "https://www.49ers.com/news/romello-height-and-nick-bosa-out-mike-evans-available-vs-cardinals-inactives-for-week-3-azvssf",
+      "source_id": "news_official_sf",
+      "source": "San Francisco 49ers (official)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Take a look at players who have been ruled out for the San Francisco 49ers Week 3 matchup versus the Arizona Cardinals",
+      "categories": [
+        "Inactives",
+        "Latest App",
+        "English",
+        "English Articles",
+        "News",
+        "Sutter Health",
+        "Brooke Evans",
+        "Miami Dolphins at San Francisco 49ers (2026-REG-2)"
+      ],
+      "published_at": "2026-09-27T18:45:09+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "1f4ee765f265b1659528",
+      "headline": "Vikings-Bucs Inactives | Rookies Rueben Bain Jr., Josiah Trotter Ruled Out",
+      "url": "https://www.buccaneers.com/news/vikings-bucs-inactives-rookies-rueben-bain-jr-josiah-trotter-ruled-out",
+      "source_id": "news_official_tb",
+      "source": "Tampa Bay Buccaneers (official)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Buccaneers' first two picks in this year's draft are sitting out the Vikings game due to injuries sustained last Sunday against the Browns, but second-year CB Jacob Parrish is returning to action after missing one contest",
+      "categories": [
+        "Featured",
+        "Inactives Report",
+        "Week 3 2026 Vikings"
+      ],
+      "published_at": "2026-09-27T18:35:12+00:00",
+      "players": []
+    },
+    {
+      "id": "838e0fa15e32cdd461e9",
+      "headline": "Vikings at Buccaneers Inactives for Week 3 of 2026",
+      "url": "https://www.vikings.com/news/inactives-buccaneers-week-3-2026",
+      "source_id": "news_official_min",
+      "source": "Minnesota Vikings (official)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "",
+      "categories": [
+        "Inactives",
+        "News - Team",
+        "News - Index",
+        "Minnesota Vikings at Tampa Bay Buccaneers (2026-REG-3)",
+        "vikings-at-buccaneers-2026-reg-3"
+      ],
+      "published_at": "2026-09-27T18:35:00+00:00",
+      "players": []
+    },
     {
       "id": "81bdb323c8ff2d347dc0",
       "headline": "Bengals Offensive Weapons Face BIGGER Depth Test After Latest Injury vs. Steelers",
@@ -2057,7 +2424,7 @@
     },
     {
       "id": "f545fe7e64d209e60e9c",
-      "headline": "Bears vs. Eagles Injury Report: Tyson Bagent is Questionable",
+      "headline": "Updated Bears vs. Eagles Injury Report: Tyson Bagent is Good to Go",
       "url": "https://www.windycitygridiron.com/chicago-bears-injuries/123747/bears-vs-eagles-injury-report-tyson-bagent-is-questionable-saquon-barkley-caleb-williams",
       "source_id": "news_sbn_chi",
       "source": "Windy City Gridiron (SB Nation)",
@@ -2231,25 +2598,6 @@
           "position": "QB"
         }
       ]
-    },
-    {
-      "id": "aa3160c5145c42e9f680",
-      "headline": "Eagles at Bears Injury Report",
-      "url": "https://www.philadelphiaeagles.com/news/eagles-at-bears-injury-report-2026-nfl-week-3-monday-night-football-caleb-williams-saquon-barkley",
-      "source_id": "news_official_phi",
-      "source": "Philadelphia Eagles (official)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Bears ruled out quarterback Caleb Williams, but Tyson Bagent returned to practice on Saturday.",
-      "categories": [
-        "All News-archived",
-        "NFL.com Feature",
-        "Injury Report",
-        "2026 Week 3 at Bears"
-      ],
-      "published_at": "2026-09-26T20:00:00+00:00",
-      "players": []
     },
     {
       "id": "f8803597d50387cceed2",
@@ -3632,333 +3980,6 @@
         "homepage"
       ],
       "published_at": "2026-09-25T20:00:00+00:00",
-      "players": []
-    },
-    {
-      "id": "28e083d4514e19eafd6c",
-      "headline": "Jets Injury Report | Week 3 vs. Lions - Friday",
-      "url": "https://www.newyorkjets.com/news/jets-injury-report-week-3-vs-lions-friday-09-25-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "WR Adonai Mitchell (Finger) & Edge Joseph Ossai (Foot) Questionable for Sunday",
-      "categories": [
-        "Injury Report",
-        "News",
-        "Latest Headlines"
-      ],
-      "published_at": "2026-09-25T20:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039890",
-          "name": "Adonai Mitchell",
-          "team": "NYJ",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "2ccc2380402a035fd26b",
-      "headline": "Week 3 Injury Report | Bengals at Steelers",
-      "url": "https://www.bengals.com/news/steelers-bengals-injury-report-week-3-2026",
-      "source_id": "news_official_cin",
-      "source": "Cincinnati Bengals (official)",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "Take a look at the injury reports of the Cincinnati Bengals and the Pittsburgh Steelers for Week 3 of the 2026 season.",
-      "categories": [
-        "latest news",
-        "centerpiece",
-        "Injury Report",
-        "latest stories",
-        "Cincinnati Bengals at Pittsburgh Steelers (2026-REG-3)"
-      ],
-      "published_at": "2026-09-25T19:55:45+00:00",
-      "players": []
-    },
-    {
-      "id": "0e28829d5d638c9fe4c9",
-      "headline": "Steelers RB Rico Dowdle OUT vs. Bengals",
-      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-injuries/175240/steelers-rb-rico-dowdle-out-vs-bengals-joey-porter-jr-michael-pittman",
-      "source_id": "news_sbn_pit",
-      "source": "Behind the Steel Curtain (SB Nation)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "The Pittsburgh Steelers will be without running back Rico Dowdle in Week 3 against the Cincinnati Bengals. Dowdle has been ruled out of Week 3 due to a toe injury he suffered in Week 2 against the New England Patriots. Rookie offensive lineman Gennings Dunker has also been ruled out with a knee injury that [\u2026]",
-      "categories": [
-        "Pittsburgh Steelers Injuries",
-        "Pittsburgh Steelers News"
-      ],
-      "published_at": "2026-09-25T19:51:19+00:00",
-      "players": [
-        {
-          "id": "00-0036139",
-          "name": "Rico Dowdle",
-          "team": "PIT",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "3675b9b7fcaf223b9161",
-      "headline": "Week 3 Injury Report (Bengals)",
-      "url": "https://www.steelers.com/news/week-3-injury-report-bengals-x2555",
-      "source_id": "news_official_pit",
-      "source": "Pittsburgh Steelers (official)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "A look at player injuries and practice participation for Week 3",
-      "categories": [
-        "Injury Report",
-        "UPMC",
-        "Featured",
-        "Sights and Sounds",
-        "Cincinnati Bengals at Pittsburgh Steelers (2026-REG-3)"
-      ],
-      "published_at": "2026-09-25T19:45:00+00:00",
-      "players": []
-    },
-    {
-      "id": "b4d6e07637229370c960",
-      "headline": "Lions vs. Jets injury report: Sept. 25",
-      "url": "https://www.detroitlions.com/news/lions-vs-jets-injury-report-sept-25-bartch-miller-harper",
-      "source_id": "news_official_det",
-      "source": "Detroit Lions (official)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Lions vs. Jets injury report and game designations for Friday, September 25.",
-      "categories": [
-        "NEWS - Injury Report",
-        "Homepage - Centerpiece Package"
-      ],
-      "published_at": "2026-09-25T19:44:27+00:00",
-      "players": []
-    },
-    {
-      "id": "54d69fc03afe163e7e22",
-      "headline": "Jayden Daniels Saw Multiple Specialists Before Commanders Made Major Injury Decision",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-jayden-daniels-injury-update-surgery",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Washington Commanders QB Jayden Daniels avoided surgery for his dislocated left elbow and was kept off injured reserve. Here's what's next for his recovery.",
-      "categories": [],
-      "published_at": "2026-09-25T19:40:05+00:00",
-      "players": [
-        {
-          "id": "00-0039910",
-          "name": "Jayden Daniels",
-          "team": "WAS",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "75f544c665a669aa7034",
-      "headline": "Ravens Coach Jesse Minter All But Rules Out LT Ronnie Stanley; Nnamdi Madubuike And Zay Flowers Could Play",
-      "url": "https://www.si.com/nfl/ravens/onsi/ravens-coach-jesse-minter-all-but-rules-out-lt-ronnie-stanley-nnamdi-madubuike-and-zay-flowers-could-play-01m3cv0yftwb",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Ravens will release a full injury report later Friday from Brazil, but Minter spoke as if Stanley was not in the plans but other could be back",
-      "categories": [],
-      "published_at": "2026-09-25T19:27:13+00:00",
-      "players": [
-        {
-          "id": "00-0039064",
-          "name": "Zay Flowers",
-          "team": "BAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "f486c89222eb7ef26028",
-      "headline": "Vikings-Bucs Final Injury Report",
-      "url": "https://www.dailynorseman.com/minnesota-vikings-injuries/99654/vikings-bucs-final-injury-report",
-      "source_id": "news_sbn_min",
-      "source": "Daily Norseman (SB Nation)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Minnesota Vikings and Tampa Bay Buccaneers released their final injury reports, along with injury designations, in advance of their Sunday afternoon matchup in Tampa. Here they are. Minnesota Vikings Tampa Bay Buccaneers Injury Report Terms and Glossary Injury designation definitions: Probable = the league defines a Probable injury designation as a 75% or greater [\u2026]",
-      "categories": [
-        "Minnesota Vikings Injuries"
-      ],
-      "published_at": "2026-09-25T19:16:01+00:00",
-      "players": []
-    },
-    {
-      "id": "f10593bd5dec714c81e9",
-      "headline": "Raiders are optimistic Brock Bowers will play Sunday at Saints",
-      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/140977/raiders-news-brock-bowers-questionable-saints-injury-report",
-      "source_id": "news_sbn_lv",
-      "source": "Silver And Black Pride (SB Nation)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "Las Vegas Raiders superstar tight end Brock Bowers didn\u2019t practice Friday, still the team is hopeful he will make his season debut Sunday at the New Orleans Saints. Raiders coach Klint Kubiak said Friday keeping Bowers out of practice Friday was part of the team\u2019s plan and he said he is optimistic Bowers will play [\u2026]",
-      "categories": [
-        "Las Vegas Raiders Injuries",
-        "Las Vegas Raiders News"
-      ],
-      "published_at": "2026-09-25T19:06:14+00:00",
-      "players": [
-        {
-          "id": "00-0039338",
-          "name": "Brock Bowers",
-          "team": "LV",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "9f503771be2ecb3cdeb6",
-      "headline": "Buccaneers-Vikings Injury Report Sept.25: Bain Jr., Trotter Ruled Out",
-      "url": "https://www.buccaneers.com/news/buccaneers-vikings-injury-report-sept-25-week-3-2026",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "A look at Friday's injury report ahead of the Week 3 matchup",
-      "categories": [
-        "Featured",
-        "Injury Report",
-        "Week 3 2026 Vikings"
-      ],
-      "published_at": "2026-09-25T18:56:04+00:00",
-      "players": []
-    },
-    {
-      "id": "00624f7ee6fe3bb1738d",
-      "headline": "Raiders-Saints Week 3 Injury Report: 1 Raider ruled out, 3 questionable",
-      "url": "https://www.raiders.com/news/las-vegas-raiders-new-orleans-saints-week-3-injury-report-2026-season",
-      "source_id": "news_official_lv",
-      "source": "Las Vegas Raiders (official)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the New Orleans Saints.",
-      "categories": [
-        "Home Centerpiece",
-        "Home Latest Stories",
-        "News - Injury Report",
-        "Las Vegas Raiders at New Orleans Saints (2026-REG-3)"
-      ],
-      "published_at": "2026-09-25T18:54:00+00:00",
-      "players": []
-    },
-    {
-      "id": "f4046920805422e00e30",
-      "headline": "Rams Wide Receiver Puka Nacua Officially Doubtful for Week 3 vs. Broncos",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-puka-nacua-doubtful-broncos-week-3",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "Rams wide receiver Puka Nacua is doubtful to play against the Broncos in Week 3 after missing practice again on Friday.",
-      "categories": [],
-      "published_at": "2026-09-25T18:36:39+00:00",
-      "players": [
-        {
-          "id": "00-0039075",
-          "name": "Puka Nacua",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "80115833179dd61a4f77",
-      "headline": "Tyson Campbell questionable for Week 3 vs. Panthers | Injury Report",
-      "url": "https://www.clevelandbrowns.com/news/tyson-campbell-questionable-for-week-3-vs-panthers-injury-report",
-      "source_id": "news_official_cle",
-      "source": "Cleveland Browns (official)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "Teven Jenkins to miss his third consecutive game with a back injury",
-      "categories": [
-        "Injury Report",
-        "adpartner=injury_report",
-        "featured",
-        "Carolina Panthers at Cleveland Browns (2026-REG-3)"
-      ],
-      "published_at": "2026-09-25T18:32:44+00:00",
-      "players": []
-    },
-    {
-      "id": "a2a23153f6991aea121b",
-      "headline": "Panthers Injury Report & Transactions \u2013 Week 3",
-      "url": "https://www.catscratchreader.com/carolina-panthers-injuries/61097/panthers-injury-report-transactions-week-3",
-      "source_id": "news_sbn_car",
-      "source": "Cat Scratch Reader (SB Nation)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Carolina Panthers front office is busy throughout the season with transactions, roster moves, and injury updates. Here\u2019s what\u2019s happening at Mint Street this week. Injuries As the Panthers look to go 2-1 on the season as they prepare to face the Cleveland Browns, health is going to play a major factor. Here\u2019s the summary [\u2026]",
-      "categories": [
-        "Carolina Panthers Injuries",
-        "Carolina Panthers Roster"
-      ],
-      "published_at": "2026-09-25T18:30:00+00:00",
-      "players": []
-    },
-    {
-      "id": "f25dcca65be12bc45155",
-      "headline": "Chargers-Bills Injury Report: Brenen Thompson, Kayode Awosika OUT for Week 3",
-      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/65733/chargers-bills-injury-report-brenen-thompson-kayode-awosika-out-for-week-3",
-      "source_id": "news_sbn_lac",
-      "source": "Bolts From The Blue (SB Nation)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "The Chargers will be without a handful of starters this week as they travel to face the Bills in Buffalo. Six players were ruled out on Friday, most of which were expected given comments from Jim Harbaugh earlier in the week. Offensive guard Kayode Awosika and defensive tackle Dalvin Tomlinson, both of whom were injured [\u2026]",
-      "categories": [
-        "Chargers Injury Reports",
-        "Los Angeles Chargers Injuries"
-      ],
-      "published_at": "2026-09-25T18:19:13+00:00",
-      "players": [
-        {
-          "id": "00-0041550",
-          "name": "Brenen Thompson",
-          "team": "LAC",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "1d4d560cad1a89eb4b0a",
-      "headline": "Chargers vs. Bills Injury Report: Thompson Out, Shelley & Lance Questionable for Week 3",
-      "url": "https://www.chargers.com/news/bills-injury-report-week-3-ladd-mcconkey-fantasy",
-      "source_id": "news_official_lac",
-      "source": "Los Angeles Chargers (official)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "Take a look at the Chargers Injury Report ahead of Week 3 against the Bills",
-      "categories": [
-        "Articles: Injury Report",
-        "Homepage: CP",
-        "Homepage: Headlines",
-        "App: Homepage",
-        "Los Angeles Chargers at Buffalo Bills (2026-REG-3)",
-        "2026-REG-3-EDITORIAL"
-      ],
-      "published_at": "2026-09-25T18:15:00+00:00",
       "players": []
     }
   ]
