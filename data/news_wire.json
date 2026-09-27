@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T13:58:18.453921+00:00",
+  "updated_at": "2026-09-27T14:01:42.299736+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T13:57:33+00:00",
+      "latest_entry_at": "2026-09-27T13:39:14+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T13:20:03+00:00",
+      "latest_entry_at": "2026-09-27T13:11:14+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-27T13:57:33+00:00",
+      "latest_entry_at": "2026-09-27T13:39:14+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T13:00:00+00:00",
+      "latest_entry_at": "2026-09-27T14:00:00+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T13:35:32+00:00",
+      "latest_entry_at": "2026-09-27T14:00:00+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T12:30:00+00:00",
+      "latest_entry_at": "2026-09-27T14:00:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T13:00:00+00:00",
+      "latest_entry_at": "2026-09-27T13:44:50+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T01:45:13+00:00",
+      "latest_entry_at": "2026-09-27T14:00:00+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T22:00:00+00:00",
+      "latest_entry_at": "2026-09-27T12:00:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T12:00:00+00:00",
+      "latest_entry_at": "2026-09-27T14:00:00+00:00",
       "stale": false
     },
     {
@@ -641,6 +641,27 @@
           "name": "Caleb Williams",
           "team": "CHI",
           "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "be93d579d54872b2caa9",
+      "headline": "Is Jalen Coker Playing Today? Latest Injury Update on Carolina Panthers WR For Week 3",
+      "url": "https://www.si.com/nfl/panthers/onsi/is-jalen-coker-playing-today-latest-injury-update-on-carolina-panthers-wr-for-week-3",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "Carolina Panthers wide receiver Jalen Coker is questionable to play in the Week 3 game against the Cleveland Browns. Here's the latest updates on his status.",
+      "categories": [],
+      "published_at": "2026-09-27T12:00:58+00:00",
+      "players": [
+        {
+          "id": "00-0039491",
+          "name": "Jalen Coker",
+          "team": "CAR",
+          "position": "WR"
         }
       ]
     },
@@ -4067,31 +4088,6 @@
           "name": "Jonah Coleman",
           "team": "DEN",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "ea42e20f5be48aa5c976",
-      "headline": "Kyler Murray Excited for Return to Vikings Lineup, Reunion with Baker Mayfield",
-      "url": "https://www.vikings.com/news/kyler-murray-return-to-lineup-reunion-with-baker-mayfield",
-      "source_id": "news_official_min",
-      "source": "Minnesota Vikings (official)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "",
-      "categories": [
-        "Kyler Murray",
-        "News - Index",
-        "vikings-at-buccaneers-2026-reg-3"
-      ],
-      "published_at": "2026-09-24T23:02:00+00:00",
-      "players": [
-        {
-          "id": "00-0035228",
-          "name": "Kyler Murray",
-          "team": "MIN",
-          "position": "QB"
         }
       ]
     }
