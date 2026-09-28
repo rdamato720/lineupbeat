@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T05:23:18.459361+00:00",
+  "updated_at": "2026-09-28T10:00:54.554995+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T05:15:35+00:00",
+      "latest_entry_at": "2026-09-28T09:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-28T01:24:34+00:00",
+      "latest_entry_at": "2026-09-28T08:57:38+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T05:07:45+00:00",
+      "latest_entry_at": "2026-09-28T10:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T22:02:06+00:00",
+      "latest_entry_at": "2026-09-28T09:00:00+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-28T00:03:16+00:00",
+      "latest_entry_at": "2026-09-28T06:48:16+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-28T04:35:00+00:00",
+      "latest_entry_at": "2026-09-28T05:28:30+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T22:45:24+00:00",
+      "latest_entry_at": "2026-09-28T05:36:00+00:00",
       "stale": false
     },
     {
@@ -286,23 +286,23 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-28T05:15:35+00:00",
+      "latest_entry_at": "2026-09-28T09:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-28T05:07:45+00:00",
+      "latest_entry_at": "2026-09-28T10:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T17:20:38+00:00",
+      "latest_entry_at": "2026-09-28T00:09:50+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T22:12:52+00:00",
+      "latest_entry_at": "2026-09-28T10:00:00+00:00",
       "stale": false
     },
     {
@@ -350,15 +350,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T21:25:57+00:00",
+      "latest_entry_at": "2026-09-28T10:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 3,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-26T13:39:51+00:00",
+      "latest_entry_at": "2026-09-27T23:22:24+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-28T04:01:40+00:00",
+      "latest_entry_at": "2026-09-28T05:15:44+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-26T14:01:00+00:00",
+      "latest_entry_at": "2026-09-28T02:30:00+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-27T16:57:16+00:00",
+      "latest_entry_at": "2026-09-28T04:11:36+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-27T14:00:00+00:00",
+      "latest_entry_at": "2026-09-28T10:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T21:30:00+00:00",
+      "latest_entry_at": "2026-09-28T10:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-25T23:20:25+00:00",
+      "latest_entry_at": "2026-09-27T23:59:53+00:00",
       "stale": false
     },
     {
@@ -500,9 +500,9 @@
     {
       "source_id": "news_sbn_car",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T15:25:00+00:00",
+      "latest_entry_at": "2026-09-27T23:12:07+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-27T19:18:12+00:00",
+      "latest_entry_at": "2026-09-28T01:54:30+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-27T18:31:00+00:00",
+      "latest_entry_at": "2026-09-28T06:57:34+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-28T00:30:01+00:00",
+      "latest_entry_at": "2026-09-28T09:01:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,58 @@
     }
   ],
   "items": [
+    {
+      "id": "10a4765195835906caf4",
+      "headline": "Giants could exploit Cowboys\u2019 questionable decision to address quarterback need after Jaxson Dart injury",
+      "url": "https://atozsports.com/nfl/new-york-giants-news/exploit-cowboys-questionable-quarterback-decision-joe-milton/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Joe Milton's strong arm and favorable contract situation make him an intriguing target for a franchise looking to keep its draft capital intact.",
+      "categories": [
+        "New York Giants News",
+        "NFL",
+        "American Football",
+        "Joe Milton",
+        "Quarterback Market",
+        "Wildcat"
+      ],
+      "published_at": "2026-09-28T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040691",
+          "name": "Jaxson Dart",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "b06dd7ef4825ffe17af1",
+      "headline": "Pewter Report Podcast: Bucs 0-3: Baker Mayfield Injured",
+      "url": "https://www.pewterreport.com/pewter-report-podcast-bucs-0-3-baker-mayfield-injured/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Bucs had a disastrous game losing to the Vikings 23-16 and starting the season with an 0-3 record. While the defense showed up to play, the offense struggled all game long. And at the end, Baker Mayfield suffered a hand injury that took him out earlier than expected. So on top of the",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-09-28T08:57:38+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "e38c0d61da83e91c0c62",
       "headline": "Commanders Pressers: Everything Dan Quinn Said After Commanders\u2019 First Win vs. Seahawks",
@@ -3262,7 +3314,7 @@
     },
     {
       "id": "f545fe7e64d209e60e9c",
-      "headline": "Bears vs. Eagles Injury Report: Tyson Bagent is Questionable",
+      "headline": "Updated Bears vs. Eagles Injury Report: Tyson Bagent is Good to Go",
       "url": "https://www.windycitygridiron.com/chicago-bears-injuries/123747/bears-vs-eagles-injury-report-tyson-bagent-is-questionable-saquon-barkley-caleb-williams",
       "source_id": "news_sbn_chi",
       "source": "Windy City Gridiron (SB Nation)",
@@ -4061,54 +4113,6 @@
           "name": "Zay Flowers",
           "team": "BAL",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "57a248c3a9d4b3b8158b",
-      "headline": "Wounded Dallas Cowboys Secondary Gets Bad News In Final Ravens Injury Report",
-      "url": "https://www.si.com/nfl/cowboys/onsi/wounded-dallas-cowboys-secondary-bad-news-final-ravens-injury-report",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys' secondary could be facing a major test in Week 3 againast the Baltimore Ravens.",
-      "categories": [],
-      "published_at": "2026-09-25T23:01:24+00:00",
-      "players": []
-    },
-    {
-      "id": "332a04b3da5a453fe0bd",
-      "headline": "Vikings Final Injury Report: Aaron Jones\u2019 status revealed, while two key Buccaneers defenders are set to miss the game",
-      "url": "https://atozsports.com/nfl/minnesota-vikings-news/vikings-final-injury-report-aaron-jones-status-brett-thorson-rueben-bain-jr-josiah-trotter/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Minnesota Vikings will have two players out on Sunday, but the two out for the Tampa Bay Buccaneers are more important.",
-      "categories": [
-        "Minnesota Vikings News",
-        "NFL",
-        "Aaron Jones",
-        "Baker Mayfield",
-        "DeeJay Dallas",
-        "Jalen Redmond",
-        "Jordan Mason",
-        "Josiah Trotter",
-        "Minnesota Vikings",
-        "Rueben Bain Jr.",
-        "Tampa Bay Buccaneers",
-        "Vikings Injury Report"
-      ],
-      "published_at": "2026-09-25T22:53:51+00:00",
-      "players": [
-        {
-          "id": "00-0033293",
-          "name": "Aaron Jones",
-          "team": "MIN",
-          "position": "RB"
         }
       ]
     }
