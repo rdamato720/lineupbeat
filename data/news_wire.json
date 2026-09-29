@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T21:24:12.988273+00:00",
+  "updated_at": "2026-09-29T22:00:55.004402+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-29T21:07:46+00:00",
+      "latest_entry_at": "2026-09-29T21:46:32+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-29T21:16:15+00:00",
+      "latest_entry_at": "2026-09-29T21:55:34+00:00",
       "stale": false
     },
     {
@@ -134,7 +134,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-29T14:50:20+00:00",
+      "latest_entry_at": "2026-09-29T21:46:35+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-29T21:07:46+00:00",
+      "latest_entry_at": "2026-09-29T21:46:32+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-29T21:16:15+00:00",
+      "latest_entry_at": "2026-09-29T21:55:34+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-29T19:00:00+00:00",
+      "latest_entry_at": "2026-09-29T21:37:22+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-29T20:45:29+00:00",
+      "latest_entry_at": "2026-09-29T22:00:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-28T17:45:08+00:00",
+      "latest_entry_at": "2026-09-29T19:14:57+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-29T15:00:00+00:00",
+      "latest_entry_at": "2026-09-29T21:22:44+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-29T20:51:01+00:00",
+      "latest_entry_at": "2026-09-29T21:45:41+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-29T19:47:43+00:00",
+      "latest_entry_at": "2026-09-29T21:24:50+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-29T12:00:00+00:00",
+      "latest_entry_at": "2026-09-29T21:34:05+00:00",
       "stale": false
     },
     {
@@ -478,15 +478,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-29T21:06:24+00:00",
+      "latest_entry_at": "2026-09-29T21:30:41+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-29T21:14:59+00:00",
+      "latest_entry_at": "2026-09-29T21:48:04+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-29T13:55:56+00:00",
+      "latest_entry_at": "2026-09-29T21:27:08+00:00",
       "stale": false
     },
     {
@@ -542,19 +542,75 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-29T21:09:16+00:00",
+      "latest_entry_at": "2026-09-29T21:45:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-29T20:25:30+00:00",
+      "latest_entry_at": "2026-09-29T21:38:59+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "6f5b720917e33e06f275",
+      "headline": "Vikings sign RB Devin Neal amidst flurry of roster moves",
+      "url": "https://www.dailynorseman.com/99845/vikings-sign-rb-devin-neal-amidst-flurry-of-roster-moves",
+      "source_id": "news_sbn_min",
+      "source": "Daily Norseman (SB Nation)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "The Minnesota Vikings announced a handful of roster moves on Tuesday afternoon: One move announced in this batch was Max Brosmer signing to the active roster, essentially replacing the traded J.J. McCarthy as the inactive third quarterback on game days. Also announced were releases of running backs Jaret Patterson and Jerome Ford from the practice [\u2026]",
+      "categories": [
+        "General",
+        "Minnesota Vikings Injuries",
+        "Minnesota Vikings News",
+        "Minnesota Vikings Roster"
+      ],
+      "published_at": "2026-09-29T21:48:04+00:00",
+      "players": [
+        {
+          "id": "00-0039923",
+          "name": "J.J. McCarthy",
+          "team": "MIN",
+          "position": "QB"
+        },
+        {
+          "id": "00-0040494",
+          "name": "Max Brosmer",
+          "team": "MIN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "c6cd96e7378fae90f5e1",
+      "headline": "Seahawks sign college teammate of Jake Bobo to practice squad",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-news/176051/seattle-seahawks-sign-college-teammate-of-jake-bobo-to-practice-squad-gary-smith-ucla-duke",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Sunday the Seattle Seahawks dropped their first game in more than ten months, falling 33-31 to the Washington Commanders in a game that the team will likely look back on and feel they should have won. Regardless of how the Week 3 contest finished, looking ahead to Week 4, Mike Macdonald will need to get [\u2026]",
+      "categories": [
+        "Seattle Seahawks News",
+        "Seattle Seahawks Roster"
+      ],
+      "published_at": "2026-09-29T21:38:59+00:00",
+      "players": [
+        {
+          "id": "00-0038752",
+          "name": "Jake Bobo",
+          "team": "SEA",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "b10e4b5a8336debcec94",
       "headline": "NY Giants add 2 WRs to roster after releasing Odell Beckham, putting Brian Burns on IR",
@@ -4240,51 +4296,6 @@
           "id": "00-0039910",
           "name": "Jayden Daniels",
           "team": "WAS",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "fa875c9f51739c5a7380",
-      "headline": "Complete Chiefs Inactives for Week 3 vs. Dolphins: Is Chamarri Conner Making 2026 Debut?",
-      "url": "https://www.si.com/nfl/chiefs/onsi/complete-chiefs-inactives-for-week-3-vs-dolphins-is-chamarri-conner-making-2026-debut",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs and Miami Dolphins have decided who is and isn't playing in Sunday's Week 3 clash, including a final call on safety Chamarri Conner.",
-      "categories": [],
-      "published_at": "2026-09-27T15:48:30+00:00",
-      "players": []
-    },
-    {
-      "id": "f2ba7ebee659e1633ed3",
-      "headline": "Chiefs-Dolphins Inactives: Chamarri Conner officially ruled out",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-injuries/211419/chiefs-dolphins-inactives-chamarri-conner-officially-ruled-out",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs have released their list of inactive players for Sunday\u2019s game against the Miami Dolphins. Tackles Josh Simmons and Diego Pounds, safety Chamarri Conner, tight end Jared Wiley and defensive ends Jack Pyburn and Tyreke Smith will not play. Quarterback Garrett Nussmeier has been named the third quarterback, meaning he is eligible [\u2026]",
-      "categories": [
-        "Kansas City Chiefs Injuries",
-        "Kansas City Chiefs News",
-        "Kansas City Chiefs Roster"
-      ],
-      "published_at": "2026-09-27T15:45:00+00:00",
-      "players": [
-        {
-          "id": "00-0039824",
-          "name": "Jared Wiley",
-          "team": "KC",
-          "position": "TE"
-        },
-        {
-          "id": "00-0040906",
-          "name": "Garrett Nussmeier",
-          "team": "KC",
           "position": "QB"
         }
       ]
