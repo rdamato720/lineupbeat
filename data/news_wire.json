@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T10:00:52.907501+00:00",
+  "updated_at": "2026-09-29T11:35:26.351507+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-29T09:50:52+00:00",
+      "latest_entry_at": "2026-09-29T11:34:58+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-29T10:00:00+00:00",
+      "latest_entry_at": "2026-09-29T11:15:00+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-28T21:30:28+00:00",
+      "latest_entry_at": "2026-09-29T11:00:12+00:00",
       "stale": false
     },
     {
@@ -134,7 +134,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-28T21:15:16+00:00",
+      "latest_entry_at": "2026-09-29T10:00:19+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-28T22:29:59+00:00",
+      "latest_entry_at": "2026-09-29T10:05:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-29T09:50:52+00:00",
+      "latest_entry_at": "2026-09-29T11:34:58+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-29T10:00:00+00:00",
+      "latest_entry_at": "2026-09-29T11:15:00+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-28T22:00:00+00:00",
+      "latest_entry_at": "2026-09-29T10:11:17+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-29T09:00:00+00:00",
+      "latest_entry_at": "2026-09-29T10:00:00+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-28T13:00:00+00:00",
+      "latest_entry_at": "2026-09-29T11:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-29T02:35:42+00:00",
+      "latest_entry_at": "2026-09-29T10:00:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T23:47:49+00:00",
+      "latest_entry_at": "2026-09-29T10:00:00+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T22:59:59+00:00",
+      "latest_entry_at": "2026-09-29T11:00:00+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T21:00:00+00:00",
+      "latest_entry_at": "2026-09-29T10:30:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-29T00:00:00+00:00",
+      "latest_entry_at": "2026-09-29T11:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-29T00:01:20+00:00",
+      "latest_entry_at": "2026-09-29T10:00:00+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-29T00:11:00+00:00",
+      "latest_entry_at": "2026-09-29T10:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "e60775f7ec009e1f507b",
+      "headline": "Buccaneers Jalen McMillan Suffers Yet Another Major Injury",
+      "url": "https://www.si.com/nfl/buccaneers/onsi/buccaneers-jalen-mcmillan-suffers-yet-another-major-injury-2026",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The injuries continue to mount for the Bucs.",
+      "categories": [],
+      "published_at": "2026-09-29T11:00:01+00:00",
+      "players": [
+        {
+          "id": "00-0039855",
+          "name": "Jalen McMillan",
+          "team": "TB",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "9ddacecca62909101010",
       "headline": "You can vote for Marcus Mariota as FedEx Air & Ground Player of the Week",
@@ -4047,36 +4068,6 @@
       "categories": [],
       "published_at": "2026-09-27T12:00:03+00:00",
       "players": []
-    },
-    {
-      "id": "c0e6aace064d0422c243",
-      "headline": "For Panthers running backs AJ Dillon and Tre Tyus, today's another step",
-      "url": "https://www.panthers.com/news/for-panthers-running-backs-aj-dillon-and-tre-tyus-today-s-another-step",
-      "source_id": "news_official_car",
-      "source": "Carolina Panthers (official)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The backup backs will have bigger roles today after the injury to Jonathon Brooks, but they also fit right into a running backs room built on intentionality and preparation.",
-      "categories": [
-        "Latest News",
-        "App News"
-      ],
-      "published_at": "2026-09-27T11:56:25+00:00",
-      "players": [
-        {
-          "id": "00-0036265",
-          "name": "AJ Dillon",
-          "team": "CAR",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039344",
-          "name": "Jonathon Brooks",
-          "team": "CAR",
-          "position": "RB"
-        }
-      ]
     }
   ]
 }
