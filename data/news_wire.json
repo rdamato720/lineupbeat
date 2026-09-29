@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T00:00:53.628865+00:00",
+  "updated_at": "2026-09-29T02:00:51.258900+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-29T00:00:45+00:00",
+      "latest_entry_at": "2026-09-29T01:42:54+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-28T19:50:07+00:00",
+      "latest_entry_at": "2026-09-29T00:59:55+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T23:29:18+00:00",
+      "latest_entry_at": "2026-09-29T01:41:18+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T23:46:50+00:00",
+      "latest_entry_at": "2026-09-29T00:28:57+00:00",
       "stale": false
     },
     {
@@ -94,7 +94,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-28T21:03:16+00:00",
+      "latest_entry_at": "2026-09-29T01:17:02+00:00",
       "stale": false
     },
     {
@@ -220,7 +220,7 @@
     {
       "source_id": "news_official_nyg",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
       "latest_entry_at": "2026-09-28T20:14:00+00:00",
       "stale": false
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-28T23:54:45+00:00",
+      "latest_entry_at": "2026-09-29T01:56:00+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-09-28T22:46:07+00:00",
+      "latest_entry_at": "2026-09-28T23:59:33+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-28T20:15:03+00:00",
+      "latest_entry_at": "2026-09-29T00:36:33+00:00",
       "stale": false
     },
     {
@@ -286,23 +286,23 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-09-29T00:00:45+00:00",
+      "latest_entry_at": "2026-09-29T01:42:54+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T23:29:18+00:00",
+      "latest_entry_at": "2026-09-29T01:41:18+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-28T17:00:00+00:00",
+      "latest_entry_at": "2026-09-28T22:00:00+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-28T17:00:00+00:00",
+      "latest_entry_at": "2026-09-29T00:00:00+00:00",
       "stale": false
     },
     {
@@ -334,15 +334,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-28T21:12:53+00:00",
+      "latest_entry_at": "2026-09-28T13:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-28T14:00:00+00:00",
+      "latest_entry_at": "2026-09-29T01:05:18+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T22:09:31+00:00",
+      "latest_entry_at": "2026-09-29T00:00:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-28T00:23:41+00:00",
+      "latest_entry_at": "2026-09-28T17:45:08+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T04:01:40+00:00",
+      "latest_entry_at": "2026-09-28T22:59:59+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-28T17:00:00+00:00",
+      "latest_entry_at": "2026-09-28T21:35:00+00:00",
       "stale": false
     },
     {
@@ -430,23 +430,23 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T22:00:00+00:00",
+      "latest_entry_at": "2026-09-29T00:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-28T19:09:50+00:00",
+      "latest_entry_at": "2026-09-29T00:01:20+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-28T23:16:00+00:00",
+      "latest_entry_at": "2026-09-29T01:53:21+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-28T19:30:00+00:00",
+      "latest_entry_at": "2026-09-29T01:36:35+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T19:00:00+00:00",
+      "latest_entry_at": "2026-09-28T20:44:40+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-28T18:10:00+00:00",
+      "latest_entry_at": "2026-09-28T20:27:42+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-28T17:15:42+00:00",
+      "latest_entry_at": "2026-09-28T22:51:05+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-25T12:37:56+00:00",
+      "latest_entry_at": "2026-09-29T01:36:38+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T18:35:00+00:00",
+      "latest_entry_at": "2026-09-28T23:04:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-28T21:59:06+00:00",
+      "latest_entry_at": "2026-09-29T00:17:33+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,155 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-28T23:53:36+00:00",
+      "latest_entry_at": "2026-09-29T00:23:58+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "6c44b8606c8b3791059d",
+      "headline": "Jalen Hurts evaluated for a concussion, cleared to return against Bears",
+      "url": "https://www.bleedinggreennation.com/news/184583/jalen-hurts-injury-concussion-evaluation-bears-week-3-monday-night-football",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Eagles were finally close to scoring in the second quarter on Monday night against the Bears when quarterback Jalen Hurts took a late hit by D\u2019Marco Jackson. Hurts went flying (further) out of bounds and despite bouncing up and heading back to the huddle, he was ushered off the field to undergo concussion testing [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries",
+        "Philadelphia Eagles News"
+      ],
+      "published_at": "2026-09-29T01:53:21+00:00",
+      "players": [
+        {
+          "id": "00-0036389",
+          "name": "Jalen Hurts",
+          "team": "PHI",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "19d3e2ecaf15e7ca32fb",
+      "headline": "Terrance Ferguson Injury Could Force Rams to Change Their Offensive Identity",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-tight-end-injuries-offensive-changes",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Injuries to Terrance Ferguson and Colby Parkinson could force Sean McVay and the Rams to adjust their offensive approach in Week 4.",
+      "categories": [],
+      "published_at": "2026-09-29T01:16:55+00:00",
+      "players": [
+        {
+          "id": "00-0036244",
+          "name": "Colby Parkinson",
+          "team": "LAR",
+          "position": "TE"
+        },
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "5b7464cb9395865fc061",
+      "headline": "Bucs WR Suffered PCL Sprain",
+      "url": "https://www.pewterreport.com/bucs-wr-suffered-pcl-sprain/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "If the injury news wasn't bad enough for the Bucs with quarterback Baker Mayfield out for the next few weeks, the team suffered another blow as a key offensive player is set to miss an extended period. ESPN's Jenna Laine reported Monday evening that wide receiver Jalen McMillan will miss about 6-8 weeks after leaving",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-09-29T00:59:55+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039855",
+          "name": "Jalen McMillan",
+          "team": "TB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "3458702d65b5b791dc36",
+      "headline": "Lions Bring Back UDFA Tight End, Release CB From Practice Squad",
+      "url": "https://www.si.com/nfl/lions/onsi/lions-bring-back-udfa-tight-end-release-cb-from-practice-squad",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "UDFA TE Miles Kitselman gets another opportunity in Detroit.",
+      "categories": [],
+      "published_at": "2026-09-29T00:51:12+00:00",
+      "players": [
+        {
+          "id": "00-0041457",
+          "name": "Miles Kitselman",
+          "team": "DET",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "9f5117733d4ac5e5b61a",
+      "headline": "Reputable NFL Injury Expert Projects 'Hurt' Josh Allen's Week 4 Availability for Bills",
+      "url": "https://www.si.com/nfl/bills/onsi/josh-allen-reputable-nfl-injury-expert-projects-hurt-qb-week-4-availability-for-bills",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Buffalo Bills' quarterback Josh Allen took a hit to his left knee on Sunday, and Dr. David Chao has a strong opinion on whether he'll play against the Patriots.",
+      "categories": [],
+      "published_at": "2026-09-29T00:29:57+00:00",
+      "players": [
+        {
+          "id": "00-0034857",
+          "name": "Josh Allen",
+          "team": "BUF",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "9463a459d1900ffe3df9",
+      "headline": "When is Caleb Williams Coming Back? Injury Update, Return Timeline For Bears QB",
+      "url": "https://www.si.com/nfl/bears/onsi/when-caleb-williams-coming-back-injury-update-return-timeline-bears",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Here's what we know about the injury Chicago Bears quarterback Caleb Williams suffered in Week 2 and when he might be back under center.",
+      "categories": [],
+      "published_at": "2026-09-29T00:10:00+00:00",
+      "players": [
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "57537aa50a23c70f7045",
       "headline": "Why is Case Keenum Starting Over Tyson Bagent? Explaining Bears' Week 3 Decision",
@@ -3914,144 +4058,6 @@
           "name": "Zay Flowers",
           "team": "BAL",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "f31e9e022c66639af594",
-      "headline": "Texans' Nico Collins Injury Creates Huge Opportunity for Dalton Schultz",
-      "url": "https://www.si.com/nfl/texans/onsi/texans-nico-collins-injury-creates-huge-opportunity-for-dalton-schultz",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "Expect another big day for Dalton Schultz for the Houston Texans in Week 3.",
-      "categories": [],
-      "published_at": "2026-09-26T23:14:18+00:00",
-      "players": [
-        {
-          "id": "00-0034383",
-          "name": "Dalton Schultz",
-          "team": "HOU",
-          "position": "TE"
-        },
-        {
-          "id": "00-0036554",
-          "name": "Nico Collins",
-          "team": "HOU",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "a2d0af96e2e9245500a0",
-      "headline": "Rams Elevate Dean Connors as Preseason Standout Faces Biggest Opportunity Yet",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-elevate-dean-connors-broncos-week-3",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Rams elevated Dean Connors and Elias Neal ahead of Week 3 against the Broncos as both look to make an impact on special teams.",
-      "categories": [],
-      "published_at": "2026-09-26T23:08:29+00:00",
-      "players": [
-        {
-          "id": "00-0041415",
-          "name": "Dean Connors",
-          "team": "LAR",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "0f0ecd38a0a82887e8b1",
-      "headline": "Why Dillon Bell Deserves to Be on the Vikings' Active Roster vs. Buccaneers in Week 3",
-      "url": "https://www.si.com/nfl/vikings/onsi/why-dillon-bell-deserves-be-vikings-active-roster-buccaneers-week-3-01m3e7f5cgpz",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Vikings' rash of injuries in Week 3 clears the way for wide receiver Dillon Bell to get a chance against the Buccaneers.",
-      "categories": [],
-      "published_at": "2026-09-26T23:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0041342",
-          "name": "Dillon Bell",
-          "team": "MIN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "b17180000117186af146",
-      "headline": "Houston Texans vs. Indianapolis Colts: Injury Report",
-      "url": "https://www.battleredblog.com/houston-texans-injuries/77819/houston-texans-vs-indianapolis-colts-injury-report",
-      "source_id": "news_sbn_hou",
-      "source": "Battle Red Blog (SB Nation)",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "The Houston Texans are coming off another loss, this time to the Cincinnati Bengals. The game was not very close, due to the offense not being able to finish their drives. Stroud was able to move the ball, throwing for over 350 yards, but could not get the ball into the endzone. Their rushing attack [\u2026]",
-      "categories": [
-        "Houston Texans Injuries"
-      ],
-      "published_at": "2026-09-26T22:34:30+00:00",
-      "players": []
-    },
-    {
-      "id": "54239a086e7a155441b8",
-      "headline": "Bengals put Andrei Iosivas on IR, sign Joe Giles-Harris to active roster, and elevate Tanner Hudson",
-      "url": "https://www.cincyjungle.com/cincinnati-bengals-roster/200313/andrei-iosivas-joe-giles-harris-active-roster-tanner-hudson",
-      "source_id": "news_sbn_cin",
-      "source": "Cincy Jungle (SB Nation)",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "Preceding their big matchup against the Steelers on Sunday, the Bengals made a few roster moves. A couple were not surprising, but the Bengals are tweaking things before they hit the field in Pittsburgh Saturday afternoon. Wide Receiver Andrei Iosivas landed on injured reserve after injuring a ligament in his thumb and having surgery. While [\u2026]",
-      "categories": [
-        "AFC North news",
-        "Cincinnati Bengals injuries",
-        "Cincinnati Bengals News",
-        "Cincinnati Bengals roster"
-      ],
-      "published_at": "2026-09-26T22:32:30+00:00",
-      "players": [
-        {
-          "id": "00-0034613",
-          "name": "Tanner Hudson",
-          "team": "CIN",
-          "position": "TE"
-        },
-        {
-          "id": "00-0038619",
-          "name": "Andrei Iosivas",
-          "team": "CIN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "f65c380d2b3b85137380",
-      "headline": "Broncos Bite the Jonah Coleman Bullet\u2014What it Really Means",
-      "url": "https://www.si.com/nfl/broncos/onsi/broncos-bite-the-jonah-coleman-bullet-what-it-really-means",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "The Broncos made a flurry of roster moves on Saturday; let's hope this Jonah Coleman gamble pays off.",
-      "categories": [],
-      "published_at": "2026-09-26T21:40:12+00:00",
-      "players": [
-        {
-          "id": "00-0041496",
-          "name": "Jonah Coleman",
-          "team": "DEN",
-          "position": "RB"
         }
       ]
     }
