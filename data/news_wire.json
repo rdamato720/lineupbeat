@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30T22:00:51.288292+00:00",
+  "updated_at": "2026-09-30T22:15:36.301819+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-30T21:49:39+00:00",
+      "latest_entry_at": "2026-09-30T22:03:30+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-30T21:53:23+00:00",
+      "latest_entry_at": "2026-09-30T22:12:07+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-30T21:20:00+00:00",
+      "latest_entry_at": "2026-09-30T22:00:15+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-09-30T21:12:18+00:00",
+      "latest_entry_at": "2026-09-30T22:13:51+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 11,
       "error": "",
-      "latest_entry_at": "2026-09-30T21:49:39+00:00",
+      "latest_entry_at": "2026-09-30T22:03:30+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-30T21:53:23+00:00",
+      "latest_entry_at": "2026-09-30T22:12:07+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-30T19:57:08+00:00",
+      "latest_entry_at": "2026-09-30T22:08:56+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "1e9b858466c1f53cbfb9",
+      "headline": "Zach Charbonnet's Return to Seahawks Practice Now Imminent",
+      "url": "https://www.si.com/nfl/seahawks/onsi/zach-charbonnet-return-seahawks-practice-imminent",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seahawks could have their top rusher back at practice as soon as Thursday.",
+      "categories": [],
+      "published_at": "2026-09-30T22:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039165",
+          "name": "Zach Charbonnet",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "ac237426bf0887327537",
       "headline": "Injury Updates: Sean McVay expects Puka Nacua to play against Eagles in Week 4",
@@ -4209,30 +4230,6 @@
           "name": "Colbie Young",
           "team": "CIN",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "3afb75dce7ebdec77973",
-      "headline": "Dan Quinn: \u201cFelt like a team win\u201d against the Seahawks",
-      "url": "https://www.hogshaven.com/pressers/444419/dan-quinn-felt-team-win-against-seahawks",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Washington Commanders got their first win of the season yesterday, defeating the Seattle Seahawks 33-31 in front of a raucous home crowd. Marcus Mariota led the team, and earned a game ball for the victory. Injuries have unfortunately been a big theme again this season, and that was no different yesterday with LB Leo [\u2026]",
-      "categories": [
-        "Pressers",
-        "Washington Commanders News"
-      ],
-      "published_at": "2026-09-28T19:24:28+00:00",
-      "players": [
-        {
-          "id": "00-0032268",
-          "name": "Marcus Mariota",
-          "team": "WAS",
-          "position": "QB"
         }
       ]
     }
