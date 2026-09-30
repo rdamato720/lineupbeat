@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30T00:46:22.770920+00:00",
+  "updated_at": "2026-09-30T02:00:57.868265+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-30T00:36:58+00:00",
+      "latest_entry_at": "2026-09-30T02:00:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-30T00:32:42+00:00",
+      "latest_entry_at": "2026-09-30T01:42:17+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-09-30T00:36:58+00:00",
+      "latest_entry_at": "2026-09-30T02:00:00+00:00",
       "stale": false
     },
     {
@@ -294,23 +294,23 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-30T00:32:42+00:00",
+      "latest_entry_at": "2026-09-30T01:42:17+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-29T22:02:47+00:00",
+      "latest_entry_at": "2026-09-29T21:37:22+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_mia",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-29T19:26:08+00:00",
+      "latest_entry_at": "2026-09-30T01:01:20+00:00",
       "stale": false
     },
     {
@@ -436,9 +436,9 @@
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-29T23:00:00+00:00",
+      "latest_entry_at": "2026-09-30T01:07:19+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-29T22:29:32+00:00",
+      "latest_entry_at": "2026-09-30T01:04:15+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-29T01:36:38+00:00",
+      "latest_entry_at": "2026-09-30T01:16:34+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "199511ccd86f882f6efb",
+      "headline": "Jerry Jeudy Could Breakout Against the Steelers During Thursday Night Football",
+      "url": "https://www.si.com/nfl/browns/onsi/jerry-jeudy-could-breakout-against-the-steelers-during-thursday-night-football-01m3qj64e9sf",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "So far through the 2026 season, Cleveland Browns wide receiver Jerry Jeudy has only seen a total of five targets through the first three games. His stat line fo",
+      "categories": [],
+      "published_at": "2026-09-30T00:42:55+00:00",
+      "players": [
+        {
+          "id": "00-0036407",
+          "name": "Jerry Jeudy",
+          "team": "CLE",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "6517ab50eef8e4c2345b",
       "headline": "Why the 49ers Should Hold Mike Evans Out Against the Broncos",
@@ -4310,24 +4331,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "1f4ee765f265b1659528",
-      "headline": "Vikings-Bucs Inactives | Rookies Rueben Bain Jr., Josiah Trotter Ruled Out",
-      "url": "https://www.buccaneers.com/news/vikings-bucs-inactives-rookies-rueben-bain-jr-josiah-trotter-ruled-out",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "The Buccaneers' first two picks in this year's draft are sitting out the Vikings game due to injuries sustained last Sunday against the Browns, but second-year CB Jacob Parrish is returning to action after missing one contest",
-      "categories": [
-        "Featured",
-        "Inactives Report",
-        "Week 3 2026 Vikings"
-      ],
-      "published_at": "2026-09-27T18:35:12+00:00",
-      "players": []
     }
   ]
 }
