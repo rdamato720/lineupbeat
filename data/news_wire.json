@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T07:49:05.538799+00:00",
+  "updated_at": "2026-10-01T10:00:58.824678+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-01T06:15:48+00:00",
+      "latest_entry_at": "2026-10-01T09:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-01T05:05:02+00:00",
+      "latest_entry_at": "2026-10-01T09:00:00+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-30T19:05:00+00:00",
+      "latest_entry_at": "2026-10-01T09:00:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-01T06:15:48+00:00",
+      "latest_entry_at": "2026-10-01T09:00:00+00:00",
       "stale": false
     },
     {
@@ -340,17 +340,17 @@
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-30T19:04:13+00:00",
+      "latest_entry_at": "2026-10-01T10:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 2,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-30T23:06:47+00:00",
+      "latest_entry_at": "2026-10-01T10:00:00+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-30T15:30:00+00:00",
+      "latest_entry_at": "2026-10-01T10:00:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-01T04:00:00+00:00",
+      "latest_entry_at": "2026-10-01T10:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-30T21:00:00+00:00",
+      "latest_entry_at": "2026-10-01T07:51:12+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-30T23:39:06+00:00",
+      "latest_entry_at": "2026-10-01T10:00:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-30T22:39:12+00:00",
+      "latest_entry_at": "2026-10-01T09:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,71 @@
     }
   ],
   "items": [
+    {
+      "id": "f636abe4f95a3f1068d7",
+      "headline": "Bengals News: Joe Burrow happy for Mitchell Tinsley return",
+      "url": "https://www.cincyjungle.com/cincinnati-bengals-news/200926/bengals-news-joe-burrow-happy-for-mitchell-tinsley-return",
+      "source_id": "news_sbn_cin",
+      "source": "Cincy Jungle (SB Nation)",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "The Cincinnati Bengals had a problem pop up the last two weeks at what is usually one of their deeper positions. Wide receiver became a little to thin with injuries to Andrei Iosivas and the rookie Colbie Young. Iosivas is on injured reserve, and Young has already been ruled out this week against the Jacksonville [\u2026]",
+      "categories": [
+        "Cincinnati Bengals News"
+      ],
+      "published_at": "2026-10-01T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0036442",
+          "name": "Joe Burrow",
+          "team": "CIN",
+          "position": "QB"
+        },
+        {
+          "id": "00-0038619",
+          "name": "Andrei Iosivas",
+          "team": "CIN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0038839",
+          "name": "Mitchell Tinsley",
+          "team": "CIN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0041069",
+          "name": "Colbie Young",
+          "team": "CIN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "9c3627916c8901e4c710",
+      "headline": "Houston Texans News: Thursday October 1, 2026",
+      "url": "https://www.battleredblog.com/houston-texans-news/77950/houston-texans-news-thursday-october-1-2026",
+      "source_id": "news_sbn_hou",
+      "source": "Battle Red Blog (SB Nation)",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "Houston Texans News Can the 0-3 Texans defy history again to make playoffs? (ESPN.com) Will Anderson, Jadeveon Clowney, Nico Collins are limited practice participants (Pro Football Talk) Why DeMeco Ryans is open to changes in offensive strategy, not personnel (Houston Chronicle) Will Anderson Jr. With Remarkable Performance vs. Colts (HoustonTexans.com) NFL News Steelers to trade [\u2026]",
+      "categories": [
+        "Battle Red Newswire",
+        "Houston Texans News"
+      ],
+      "published_at": "2026-10-01T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0036554",
+          "name": "Nico Collins",
+          "team": "HOU",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "364bf887ae103bbf3f98",
       "headline": "Marcus Mariota voted FedEx Air Player of the Week after clutch performance",
@@ -4125,57 +4190,6 @@
           "name": "Case Keenum",
           "team": "CHI",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "6c44b8606c8b3791059d",
-      "headline": "Jalen Hurts evaluated for a concussion, cleared to return against Bears",
-      "url": "https://www.bleedinggreennation.com/news/184583/jalen-hurts-injury-concussion-evaluation-bears-week-3-monday-night-football",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Eagles were finally close to scoring in the second quarter on Monday night against the Bears when quarterback Jalen Hurts took a late hit by D\u2019Marco Jackson. Hurts went flying (further) out of bounds and despite bouncing up and heading back to the huddle, he was ushered off the field to undergo concussion testing [\u2026]",
-      "categories": [
-        "Philadelphia Eagles injuries",
-        "Philadelphia Eagles News"
-      ],
-      "published_at": "2026-09-29T01:53:21+00:00",
-      "players": [
-        {
-          "id": "00-0036389",
-          "name": "Jalen Hurts",
-          "team": "PHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "19d3e2ecaf15e7ca32fb",
-      "headline": "Terrance Ferguson Injury Could Force Rams to Change Their Offensive Identity",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-tight-end-injuries-offensive-changes",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "Injuries to Terrance Ferguson and Colby Parkinson could force Sean McVay and the Rams to adjust their offensive approach in Week 4.",
-      "categories": [],
-      "published_at": "2026-09-29T01:16:55+00:00",
-      "players": [
-        {
-          "id": "00-0036244",
-          "name": "Colby Parkinson",
-          "team": "LAR",
-          "position": "TE"
-        },
-        {
-          "id": "00-0040737",
-          "name": "Terrance Ferguson",
-          "team": "LAR",
-          "position": "TE"
         }
       ]
     }
