@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T02:00:53.578374+00:00",
+  "updated_at": "2026-10-01T04:00:52.438463+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-01T02:00:00+00:00",
+      "latest_entry_at": "2026-10-01T03:51:46+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-01T01:38:32+00:00",
+      "latest_entry_at": "2026-10-01T03:06:30+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-01T02:00:00+00:00",
+      "latest_entry_at": "2026-10-01T03:51:46+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-01T01:00:00+00:00",
+      "latest_entry_at": "2026-10-01T02:00:00+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-30T23:11:20+00:00",
+      "latest_entry_at": "2026-09-30T23:30:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-30T21:27:36+00:00",
+      "latest_entry_at": "2026-10-01T03:49:04+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-30T21:17:25+00:00",
+      "latest_entry_at": "2026-10-01T02:40:53+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-01T00:24:33+00:00",
+      "latest_entry_at": "2026-10-01T03:49:11+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-09-30T19:40:27+00:00",
+      "latest_entry_at": "2026-10-01T01:22:16+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-30T16:46:48+00:00",
+      "latest_entry_at": "2026-09-30T22:50:27+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-09-30T15:41:11+00:00",
+      "latest_entry_at": "2026-10-01T03:55:00+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-30T11:00:00+00:00",
+      "latest_entry_at": "2026-10-01T01:22:15+00:00",
       "stale": false
     },
     {
@@ -534,27 +534,99 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-30T21:33:38+00:00",
+      "latest_entry_at": "2026-10-01T02:24:33+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-09-30T22:39:12+00:00",
+      "latest_entry_at": "2026-09-30T13:59:07+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-09-30T21:27:45+00:00",
+      "latest_entry_at": "2026-10-01T01:38:15+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "364bf887ae103bbf3f98",
+      "headline": "Marcus Mariota voted FedEx Air Player of the Week after clutch performance",
+      "url": "https://www.hogshaven.com/washington-commanders-news/445285/marcus-mariota-voted-fedex-air-player-of-the-week-after-clutch-performance",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Washington Commanders backup quarterback Marcus Mariota has officially been voted the FedEx Air Player of the Week following his stellar outing in relief of the injured Jayden Daniels. When Daniels went down in Week 2 vs the Cowboys, plenty of burgundy and gold faithful held their breath. While the timeline for Jayden\u2019s return to the [\u2026]",
+      "categories": [
+        "Washington Commanders News"
+      ],
+      "published_at": "2026-10-01T02:40:53+00:00",
+      "players": [
+        {
+          "id": "00-0032268",
+          "name": "Marcus Mariota",
+          "team": "WAS",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "e51e5ebcdb139cbdfd1f",
+      "headline": "London Walkthrough: Jayden Daniels Tests Elbow, Marcus Mariota Earns Honors \u2014 Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-injury-report-london-jayden-daniels-marcus-mariota",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Washington Commanders QB Jayden Daniels was a limited participant in Wednesday's London walkthrough. Plus, Marcus Mariota earns Player of the Week honors.",
+      "categories": [],
+      "published_at": "2026-10-01T02:33:42+00:00",
+      "players": [
+        {
+          "id": "00-0032268",
+          "name": "Marcus Mariota",
+          "team": "WAS",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "0ad27f49fcf45c08c4ac",
+      "headline": "Seahawks Week 4 injury report: Julian Love returns to practice, Ty Okada remains out",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/176147/seahawks-chargers-week-4-injury-report-julian-love-returns-practice-ty-okada-remains-out",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The first Seattle Seahawks practice report of Week 4. The biggest name on the list is star safety Julian Love, who was limited in practice on Wednesday. This is welcome news as Love, who injured his calf in last week\u2019s practice, missed Week 3 against the Washington Commanders. It is still unclear whether Love will [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries"
+      ],
+      "published_at": "2026-10-01T01:38:15+00:00",
+      "players": []
+    },
     {
       "id": "d40af3c693f240c1c620",
       "headline": "Quick Hits | Do-It-All Dax Hill Gets Another Call; Erick All Jr. Wants Ball/Win, Not Praise; Injury Update",
@@ -4104,78 +4176,6 @@
           "name": "Terrance Ferguson",
           "team": "LAR",
           "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "5b7464cb9395865fc061",
-      "headline": "Bucs WR Suffered PCL Sprain",
-      "url": "https://www.pewterreport.com/bucs-wr-suffered-pcl-sprain/",
-      "source_id": "pewter_report",
-      "source": "Pewter Report",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "If the injury news wasn't bad enough for the Bucs with quarterback Baker Mayfield out for the next few weeks, the team suffered another blow as a key offensive player is set to miss an extended period. ESPN's Jenna Laine reported Monday evening that wide receiver Jalen McMillan will miss about 6-8 weeks after leaving",
-      "categories": [
-        "Articles",
-        "Featured"
-      ],
-      "published_at": "2026-09-29T00:59:55+00:00",
-      "players": [
-        {
-          "id": "00-0034855",
-          "name": "Baker Mayfield",
-          "team": "TB",
-          "position": "QB"
-        },
-        {
-          "id": "00-0039855",
-          "name": "Jalen McMillan",
-          "team": "TB",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "3458702d65b5b791dc36",
-      "headline": "Lions Bring Back UDFA Tight End, Release CB From Practice Squad",
-      "url": "https://www.si.com/nfl/lions/onsi/lions-bring-back-udfa-tight-end-release-cb-from-practice-squad",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "UDFA TE Miles Kitselman gets another opportunity in Detroit.",
-      "categories": [],
-      "published_at": "2026-09-29T00:51:12+00:00",
-      "players": [
-        {
-          "id": "00-0041457",
-          "name": "Miles Kitselman",
-          "team": "DET",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "9f5117733d4ac5e5b61a",
-      "headline": "Reputable NFL Injury Expert Projects 'Hurt' Josh Allen's Week 4 Availability for Bills",
-      "url": "https://www.si.com/nfl/bills/onsi/josh-allen-reputable-nfl-injury-expert-projects-hurt-qb-week-4-availability-for-bills",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "Buffalo Bills' quarterback Josh Allen took a hit to his left knee on Sunday, and Dr. David Chao has a strong opinion on whether he'll play against the Patriots.",
-      "categories": [],
-      "published_at": "2026-09-29T00:29:57+00:00",
-      "players": [
-        {
-          "id": "00-0034857",
-          "name": "Josh Allen",
-          "team": "BUF",
-          "position": "QB"
         }
       ]
     }
