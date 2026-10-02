@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T02:01:00.234106+00:00",
+  "updated_at": "2026-10-02T04:00:47.313599+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T02:00:00+00:00",
+      "latest_entry_at": "2026-10-02T03:50:43+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-01T22:13:33+00:00",
+      "latest_entry_at": "2026-10-02T03:53:19+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-01T22:49:13+00:00",
+      "latest_entry_at": "2026-10-02T03:09:18+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-01T19:56:11+00:00",
+      "latest_entry_at": "2026-10-02T01:59:40+00:00",
       "stale": false
     },
     {
@@ -102,7 +102,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-02T01:51:40+00:00",
+      "latest_entry_at": "2026-10-02T03:52:30+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-01T22:47:17+00:00",
+      "latest_entry_at": "2026-10-02T03:40:00+00:00",
       "stale": false
     },
     {
@@ -254,15 +254,15 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-02T00:28:45+00:00",
+      "latest_entry_at": "2026-10-02T00:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_sf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-01T20:17:05+00:00",
+      "latest_entry_at": "2026-10-02T02:04:57+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-02T02:00:00+00:00",
+      "latest_entry_at": "2026-10-02T03:50:43+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-01T22:13:33+00:00",
+      "latest_entry_at": "2026-10-02T03:53:19+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T01:48:00+00:00",
+      "latest_entry_at": "2026-10-01T21:38:46+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-01T23:27:12+00:00",
+      "latest_entry_at": "2026-10-01T19:16:42+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-01T21:48:00+00:00",
+      "latest_entry_at": "2026-10-01T17:07:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T00:00:00+00:00",
+      "latest_entry_at": "2026-10-02T02:34:23+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-01T22:10:19+00:00",
+      "latest_entry_at": "2026-10-01T16:21:12+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,63 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-01T23:30:00+00:00",
+      "latest_entry_at": "2026-10-02T02:25:34+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "d8b94b2d56cfb6105cc3",
+      "headline": "Commanders Get Better Look at Jayden Daniels, But the Biggest Question Remains \u2014 Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-injury-report-thursday-jayden-daniels-rachaad-white",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Washington Commanders QB Jayden Daniels remained limited with an elbow injury Thursday in London, while RB Rachaad White missed practice again.",
+      "categories": [],
+      "published_at": "2026-10-02T03:07:04+00:00",
+      "players": [
+        {
+          "id": "00-0037256",
+          "name": "Rachaad White",
+          "team": "WAS",
+          "position": "RB"
+        },
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "f201b97a9b4645db4533",
+      "headline": "Seahawks injury report: Ty Okada back at practice, but Jadarian Price sits out Thursday",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/176262/seahawks-week-4-injury-report-ty-okada-back-practice-jadarian-price-sits-out",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Thursday injury report entering Week 4 against the Los Angeles Chargers has come out. There are some major updates with this report. Let\u2019s start with the good news. Starting safety Ty Okada is finally back at practice in a limited manner. This is the first time Okada has practiced all season. It will be [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries"
+      ],
+      "published_at": "2026-10-02T02:25:34+00:00",
+      "players": [
+        {
+          "id": "00-0041512",
+          "name": "Jadarian Price",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "afae18cfef2c584e660a",
       "headline": "The Grisak Report: Rams Not Considering a Change at Punt Returner",
@@ -2099,7 +2149,7 @@
       "teams": [
         "NE"
       ],
-      "feed_description": "Andrew Callahan wrote and article today, telling Drake Maye to \u2018steer into the skid at Buffalo\u2019. Because it\u2019s behind a paywall, I\u2019ll share a few excerpts here: \u201cDrake Maye, once the face of everything glowing about this franchise, is now the driver and engine of their failures. Maye needs to, in Mike Vrabel\u2019s words, loosen his grip. [\u2026]",
+      "feed_description": "Andrew Callahan wrote an article today, telling Drake Maye to \u2018steer into the skid at Buffalo\u2019. Because it\u2019s behind a paywall, I\u2019ll share a few excerpts here: \u201cDrake Maye, once the face of everything glowing about this franchise, is now the driver and engine of their failures. Maye needs to, in Mike Vrabel\u2019s words, loosen his grip. [\u2026]",
       "categories": [
         "New England Patriots daily news roundup",
         "New England Patriots News"
@@ -3848,61 +3898,6 @@
       ],
       "published_at": "2026-09-30T19:59:58+00:00",
       "players": []
-    },
-    {
-      "id": "8d617de042ada7e3e592",
-      "headline": "The 49ers have 2 new additions to Wednesday\u2019s injury report",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/163505/the-49ers-have-2-new-additions-to-wednesdays-injury-report",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The following players won\u2019t practice on Wednesday, per San Francisco 49ers head coach Kyle Shanahan DT James Thompson Jr. (ankle)DE Nick Bosa (calf)WR Mike Evans (ribs)LB Dre Greenlaw (quad)LT Trent Williams (neck)DE Keion White (hamstring)RB Christian McCaffrey (vet day)WR KhaDarel Hodge (knee) Limited: DE Romello Height (hand)DE Mykel Williams (knee) Williams must sit out Week [\u2026]",
-      "categories": [
-        "San Francisco 49ers Injuries",
-        "San Francisco 49ers Roster"
-      ],
-      "published_at": "2026-09-30T19:57:08+00:00",
-      "players": [
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
-        },
-        {
-          "id": "00-0033280",
-          "name": "Christian McCaffrey",
-          "team": "SF",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "4b75238c221e9bfabe86",
-      "headline": "Practice Notebook: Spencer Shrader (right groin) a full participant in practice, Ashton Dulin (ankle) remains out",
-      "url": "https://www.colts.com/news/practice-notebook-spencer-shrader-right-groin-a-full-participant-in-practice-ashton-dulin-ankle-remains-out",
-      "source_id": "news_official_ind",
-      "source": "Indianapolis Colts (official)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "Dulin has been out of football activities for a couple of weeks as he heals from an ankle injury.",
-      "categories": [
-        "Practice Notebook",
-        "Featured",
-        "Featured News"
-      ],
-      "published_at": "2026-09-30T19:44:09+00:00",
-      "players": [
-        {
-          "id": "00-0035021",
-          "name": "Ashton Dulin",
-          "team": "IND",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
