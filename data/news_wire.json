@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T10:00:52.270414+00:00",
+  "updated_at": "2026-10-02T11:21:59.863514+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T10:00:04+00:00",
+      "latest_entry_at": "2026-10-02T11:21:29+00:00",
       "stale": false
     },
     {
@@ -30,15 +30,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T10:00:00+00:00",
+      "latest_entry_at": "2026-10-02T11:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "phillyvoice_jimmy_kempski",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T09:00:00+00:00",
+      "latest_entry_at": "2026-10-02T10:51:13+00:00",
       "stale": false
     },
     {
@@ -116,9 +116,9 @@
     {
       "source_id": "news_official_det",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-01T20:19:11+00:00",
+      "latest_entry_at": "2026-10-02T11:00:47+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-01T21:03:00+00:00",
+      "latest_entry_at": "2026-10-02T10:00:00+00:00",
       "stale": false
     },
     {
@@ -284,25 +284,25 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T10:00:04+00:00",
+      "latest_entry_at": "2026-10-02T11:21:29+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-02T10:00:00+00:00",
+      "latest_entry_at": "2026-10-02T11:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T00:04:31+00:00",
+      "latest_entry_at": "2026-10-02T10:30:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-02T09:00:00+00:00",
+      "latest_entry_at": "2026-10-02T11:00:00+00:00",
       "stale": false
     },
     {
@@ -340,9 +340,9 @@
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-01T22:14:46+00:00",
+      "latest_entry_at": "2026-10-02T10:30:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T03:59:08+00:00",
+      "latest_entry_at": "2026-10-02T10:00:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T03:55:48+00:00",
+      "latest_entry_at": "2026-10-02T10:00:00+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-01T16:32:06+00:00",
+      "latest_entry_at": "2026-10-02T11:00:00+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T04:34:41+00:00",
+      "latest_entry_at": "2026-10-02T10:00:00+00:00",
       "stale": false
     },
     {
@@ -430,15 +430,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T00:00:00+00:00",
+      "latest_entry_at": "2026-10-02T11:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-01T23:00:00+00:00",
+      "latest_entry_at": "2026-10-02T10:00:00+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-01T20:05:53+00:00",
+      "latest_entry_at": "2026-10-02T11:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-01T22:30:00+00:00",
+      "latest_entry_at": "2026-10-02T10:30:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-01T14:01:00+00:00",
+      "latest_entry_at": "2026-10-02T11:00:00+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-01T22:38:38+00:00",
+      "latest_entry_at": "2026-10-02T11:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,60 @@
     }
   ],
   "items": [
+    {
+      "id": "2d783ede851ce8087f81",
+      "headline": "Tucker Kraft\u2019s slow return from ACL injury could take a turn in Week 4 as Buccaneers hand Packers a tempting matchup",
+      "url": "https://atozsports.com/nfl/green-bay-packers-news/tucker-kraft-matchup-buccaneers/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Through three weeks, the Packers tight end has been nowhere near his 2025 form, and Green Bay needs more from him soon.",
+      "categories": [
+        "Green Bay Packers News",
+        "NFL",
+        "American Football",
+        "Tucker Kraft"
+      ],
+      "published_at": "2026-10-02T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0038996",
+          "name": "Tucker Kraft",
+          "team": "GB",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "2e82ceddf7462a977c13",
+      "headline": "Report: Eagles WR DeVonta Smith unlikely to play vs. Rams",
+      "url": "https://www.phillyvoice.com/report-eagles-wr-devonta-smith-unlikely-play-vs-rams/",
+      "source_id": "phillyvoice_jimmy_kempski",
+      "source": "PhillyVoice",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "Coming off their embarrassing Week 3 Monday night loss to the Chicago Bears, the Philadelphia Eagles have a lengthy injury report. They will likely be without one of their most irreplaceable players in DeVonta Smith (hamstring) on Sunday against the Los Angeles Rams, according to a report from Tim McManus of ESPN.",
+      "categories": [
+        "Sports",
+        "Eagles",
+        "Sports Injuries",
+        "Philadelphia",
+        "DeVonta Smith",
+        "NFL"
+      ],
+      "published_at": "2026-10-02T10:51:13+00:00",
+      "players": [
+        {
+          "id": "00-0036912",
+          "name": "DeVonta Smith",
+          "team": "PHI",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "4569b0632774c61543d2",
       "headline": "Rams Week 4 injury report: Terrance Ferguson expected to miss Sunday\u2019s game",
@@ -3857,49 +3911,6 @@
         "Detroit Lions News"
       ],
       "published_at": "2026-09-30T20:09:15+00:00",
-      "players": []
-    },
-    {
-      "id": "6e254ff0401907c12865",
-      "headline": "Indianapolis Colts Injury Report: Week 4 Wednesday",
-      "url": "https://www.stampedeblue.com/indianapolis-colts-injuries/128177/indianapolis-colts-injury-report-week-4-wednesday",
-      "source_id": "news_sbn_ind",
-      "source": "Stampede Blue (SB Nation)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The Indianapolis Colts released their Wednesday injury report for week 4 of the NFL season against the Washington Commanders. Tight end Mo Alie-Cox (illness) missed practice today. Players usually miss one practice through illness then bounce back the next day so expect to see Alie-Cox back tomorrow at practice. Wide receiver Keenan Allen (rest), corner [\u2026]",
-      "categories": [
-        "Indianapolis Colts Injuries",
-        "Indianapolis Colts News"
-      ],
-      "published_at": "2026-09-30T20:04:16+00:00",
-      "players": [
-        {
-          "id": "00-0033217",
-          "name": "Mo Alie-Cox",
-          "team": "IND",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "f9a409f6c334da139e58",
-      "headline": "Week 4 Injury Report | Titans at Ravens",
-      "url": "https://www.tennesseetitans.com/news/week-4-injury-report-titans-at-ravens",
-      "source_id": "news_official_ten",
-      "source": "Tennessee Titans (official)",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "Who's in, who's out for the Titans in Week 4 vs the Baltimore Ravens",
-      "categories": [
-        "Team/Football News",
-        "homepage-centerpiece",
-        "Tennessee Titans at Baltimore Ravens (2026-REG-4)",
-        "2026-10-04-PREgame-STORIES-titans-at-ravens"
-      ],
-      "published_at": "2026-09-30T20:00:00+00:00",
       "players": []
     }
   ]
