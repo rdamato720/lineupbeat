@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T00:15:16.836455+00:00",
+  "updated_at": "2026-10-02T02:01:00.234106+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T00:00:45+00:00",
+      "latest_entry_at": "2026-10-02T02:00:00+00:00",
       "stale": false
     },
     {
@@ -70,7 +70,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-01T15:59:37+00:00",
+      "latest_entry_at": "2026-10-01T23:27:00+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-01T15:11:05+00:00",
+      "latest_entry_at": "2026-10-01T22:05:50+00:00",
       "stale": false
     },
     {
@@ -94,15 +94,15 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-01T20:21:17+00:00",
+      "latest_entry_at": "2026-10-02T00:53:31+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_cle",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-01T22:45:31+00:00",
+      "latest_entry_at": "2026-10-02T01:51:40+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-01T23:49:57+00:00",
+      "latest_entry_at": "2026-10-02T00:28:45+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-02T00:00:45+00:00",
+      "latest_entry_at": "2026-10-02T02:00:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-01T22:50:56+00:00",
+      "latest_entry_at": "2026-10-02T01:48:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T00:05:00+00:00",
+      "latest_entry_at": "2026-10-02T00:00:00+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-01T14:00:00+00:00",
+      "latest_entry_at": "2026-10-01T22:38:38+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,53 @@
     }
   ],
   "items": [
+    {
+      "id": "afae18cfef2c584e660a",
+      "headline": "The Grisak Report: Rams Not Considering a Change at Punt Returner",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-not-considering-punt-returner-change-puka-nacua-update",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Rams aren\u2019t considering a change at punt returner despite Xavier Smith\u2019s inconsistent start. Plus, the latest on Puka Nacua, Max Klare and more.",
+      "categories": [],
+      "published_at": "2026-10-02T00:42:49+00:00",
+      "players": [
+        {
+          "id": "00-0038359",
+          "name": "Xavier Smith",
+          "team": "LAR",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        },
+        {
+          "id": "00-0041510",
+          "name": "Max Klare",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "485e0554a53e57d65c1d",
+      "headline": "49ers\u2019 Injury Report Could Be a Game-Changer for Broncos",
+      "url": "https://www.si.com/nfl/broncos/onsi/49ers-injury-report-could-be-a-game-changer-for-broncos",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "Things are looking up for the Broncos on the health front, especially given what the 49ers are dealing with.",
+      "categories": [],
+      "published_at": "2026-10-02T00:03:48+00:00",
+      "players": []
+    },
     {
       "id": "39c5e7d03dc3165919b1",
       "headline": "Seahawks Make Injury Headway, Zach Charbonnet, Julian Love, More",
@@ -3856,49 +3903,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "0721dfc1ae89691eb074",
-      "headline": "Elgton Jenkins out for Week 4 against the Steelers | Injury Report",
-      "url": "https://www.clevelandbrowns.com/news/elgton-jenkins-out-for-week-4-against-the-steelers-injury-report",
-      "source_id": "news_official_cle",
-      "source": "Cleveland Browns (official)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "Teven Jenkins and Tylan Wallace also listed as out for Thursday Night Football",
-      "categories": [
-        "Injury Report",
-        "adpartner=injury_report",
-        "featured",
-        "Pittsburgh Steelers at Cleveland Browns (2026-REG-4)"
-      ],
-      "published_at": "2026-09-30T19:31:34+00:00",
-      "players": [
-        {
-          "id": "00-0036630",
-          "name": "Tylan Wallace",
-          "team": "CLE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "21c0a05c1274aa4b363b",
-      "headline": "Chiefs-Raiders Week 4 Wednesday injury report: L\u2019Jarius Sneed limited",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-injuries/211806/chiefs-raiders-week-4-wednesday-injury-report-ljarius-sneed-limited",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Each practice day this season, the Kansas City Chiefs release an official injury report ahead of the next game. In Week 4, the Chiefs hit the road to play the Las Vegas Raiders on Sunday afternoon. Here is the Chiefs\u2019 first official injury report of the week, courtesy of the team\u2019s official website: Chiefs The following [\u2026]",
-      "categories": [
-        "Kansas City Chiefs Injuries",
-        "Kansas City Chiefs News"
-      ],
-      "published_at": "2026-09-30T19:25:00+00:00",
-      "players": []
     }
   ]
 }
