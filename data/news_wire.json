@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T21:19:53.697073+00:00",
+  "updated_at": "2026-10-02T22:00:52.847525+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,17 +12,17 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:07:12+00:00",
+      "latest_entry_at": "2026-10-02T21:47:56+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-02T16:44:27+00:00",
+      "latest_entry_at": "2026-10-02T20:30:32+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T20:48:40+00:00",
+      "latest_entry_at": "2026-10-02T21:39:34+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T19:59:55+00:00",
+      "latest_entry_at": "2026-10-02T20:47:57+00:00",
       "stale": false
     },
     {
@@ -108,9 +108,9 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-02T14:00:30+00:00",
+      "latest_entry_at": "2026-10-02T21:30:25+00:00",
       "stale": false
     },
     {
@@ -172,9 +172,9 @@
     {
       "source_id": "news_official_lar",
       "ok": true,
-      "eligible": 5,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-02T17:00:00+00:00",
+      "latest_entry_at": "2026-10-02T21:26:29+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-02T19:20:00+00:00",
+      "latest_entry_at": "2026-10-02T21:30:00+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-02T19:35:00+00:00",
+      "latest_entry_at": "2026-10-02T21:43:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 7,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:07:12+00:00",
+      "latest_entry_at": "2026-10-02T21:47:56+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-02T20:48:40+00:00",
+      "latest_entry_at": "2026-10-02T21:39:34+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:10:41+00:00",
+      "latest_entry_at": "2026-10-02T21:37:55+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T20:01:00+00:00",
+      "latest_entry_at": "2026-10-02T21:30:00+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T20:33:25+00:00",
+      "latest_entry_at": "2026-10-02T22:00:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T19:27:12+00:00",
+      "latest_entry_at": "2026-10-02T21:38:13+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-02T20:00:00+00:00",
+      "latest_entry_at": "2026-10-02T21:30:00+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:07:45+00:00",
+      "latest_entry_at": "2026-10-02T18:42:24+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,184 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T20:44:44+00:00",
+      "latest_entry_at": "2026-10-02T15:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "e9d57a640a1867fea90f",
+      "headline": "Week 4 Injury Report: Seahawks vs. Chargers",
+      "url": "https://www.seahawks.com/news/week-4-injury-report-seahawks-vs-chargers",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Details on the Seahawks\u2019 injury situation heading into their Week 4 game vs. the Los Angeles Chargers.",
+      "categories": [
+        "News: Injury Report",
+        "News: Stories",
+        "News: National Feature",
+        "Los Angeles Chargers at Seattle Seahawks (2026-REG-4)",
+        "Homepage Hero"
+      ],
+      "published_at": "2026-10-02T21:43:00+00:00",
+      "players": []
+    },
+    {
+      "id": "70ef7c59b5200098d0d7",
+      "headline": "Eagles-Rams Final Injury Report: DeVonta Smith and Zack Baun among 6 players ruled OUT",
+      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/185156/eagles-rams-final-injury-report-devonta-smith-and-zack-baun-among-6-players-ruled-out",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Philadelphia Eagles issued their third and final official injury report of the week on Friday in advance of their Week 4 game against the Los Angeles Rams. The Eagles ruled six players OUT: DeVonta Smith, Zack Baun, Dallas Goedert, Marcus Epps, Hollywoood Brown, and Fred Johnson. Smith is dealing with a hamstring injury that [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries"
+      ],
+      "published_at": "2026-10-02T21:38:13+00:00",
+      "players": [
+        {
+          "id": "00-0034351",
+          "name": "Dallas Goedert",
+          "team": "PHI",
+          "position": "TE"
+        },
+        {
+          "id": "00-0036912",
+          "name": "DeVonta Smith",
+          "team": "PHI",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "2b65332fb1bc2e4b9163",
+      "headline": "Titans-Ravens final injury report delivers several breaks Tennessee desperately needed for its upset bid",
+      "url": "https://atozsports.com/nfl/tennessee-titans-news/titans-ravens-final-injury-report-week-4-upset-path/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Trey Hendrickson is out, Baltimore will start a rookie at center and Tennessee\u2019s two key veterans are cleared. The final injury report gives the Titans a narrow path toward a massive upset.",
+      "categories": [
+        "Tennessee Titans News",
+        "injury report",
+        "Ravens",
+        "Titans"
+      ],
+      "published_at": "2026-10-02T21:36:29+00:00",
+      "players": []
+    },
+    {
+      "id": "37a63a28c09e2a2e5fa1",
+      "headline": "Injury Report: OLB Dondrea Tillman lone player ruled out for Broncos' Week 4 game vs. 49ers",
+      "url": "https://www.denverbroncos.com/news/injuryreport/injury-report-olb-dondrea-tillman-lone-player-ruled-out-for-broncos-week-4-game-vs-49ers",
+      "source_id": "news_official_den",
+      "source": "Denver Broncos (official)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Broncos will be without just one player for Sunday's matchup against San Francisco.",
+      "categories": [
+        "Injury Report",
+        "Top Stories",
+        "Aric DiLalla",
+        "Denver Broncos at San Francisco 49ers (2026-REG-4)"
+      ],
+      "published_at": "2026-10-02T21:30:25+00:00",
+      "players": []
+    },
+    {
+      "id": "57030427a7be87feceb6",
+      "headline": "Injury Report, Week 4 at Eagles: Puka Nacua and Kamren Kinchens good to go; Colby Parkinson questionable; Terrance Ferguson, Jaylen Watson and Aaron Donald ruled out",
+      "url": "https://www.therams.com/news/rams-injury-report-week-4-2026-at-eagles-puka-nacua-good-to-go-colby-parkinson-questionable-terrance-ferguson-jaylen-watson-and-aaron-donald-ruled-out",
+      "source_id": "news_official_lar",
+      "source": "Los Angeles Rams (official)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The final injury report for Sunday's Week 4 regular season game between the Rams and the Eagles at Lincoln Financial Field in Philadelphia.",
+      "categories": [
+        "Injury Report - Cedars Sinai",
+        "Football",
+        "Los Angeles Rams at Philadelphia Eagles (2026-REG-4)",
+        "Puka Nacua",
+        "Colby Parkinson",
+        "Terrance Ferguson",
+        "Jaylen Watson",
+        "Aaron Donald",
+        "Kamren Kinchens",
+        "Josaiah Stewart"
+      ],
+      "published_at": "2026-10-02T21:26:29+00:00",
+      "players": [
+        {
+          "id": "00-0036244",
+          "name": "Colby Parkinson",
+          "team": "LAR",
+          "position": "TE"
+        },
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "69f1a7f696df61e85558",
+      "headline": "Packers-Buccaneers Final Injury Report: Four Linemen Out But Good News",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-buccaneers-final-injury-report-four-linemen-out-but-good-news",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Here are the final injury reports for Sunday\u2019s Packers-Buccaneers game, with one big piece of good news for Green Bay.",
+      "categories": [],
+      "published_at": "2026-10-02T21:22:52+00:00",
+      "players": []
+    },
+    {
+      "id": "986caff2234d597f6c00",
+      "headline": "'I can't think of anything else but smiling': Puka Nacua back in action for Rams in Week 4 at Eagles",
+      "url": "https://www.therams.com/news/i-can-t-think-of-anything-else-but-smiling-puka-nacua-back-in-action-for-rams-in-week-4-at-eagles",
+      "source_id": "news_official_lar",
+      "source": "Los Angeles Rams (official)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Wide receiver Puka Nacua is set to return to action for the Rams on Sunday against the Eagles after missing the previous two games against the Broncos and the Giants.",
+      "categories": [
+        "Football",
+        "Player Features",
+        "Los Angeles Rams at Philadelphia Eagles (2026-REG-4)",
+        "Puka Nacua"
+      ],
+      "published_at": "2026-10-02T21:21:50+00:00",
+      "players": [
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "d4ae6075ed9293af9c55",
       "headline": "Bills injury report: Christian Benford, Ray Davis questionable vs. Patriots",
@@ -574,6 +745,27 @@
           "id": "00-0039875",
           "name": "Ray Davis",
           "team": "BUF",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "f72a44428613aa71af54",
+      "headline": "Seahawks Injury Report: Jadarian Price Officially Ruled Out",
+      "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-injury-report-jadarian-price-officially-ruled-out",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks will be without rookie running back Jadarian Price, who was ruled out on their Friday injury report.",
+      "categories": [],
+      "published_at": "2026-10-02T21:09:51+00:00",
+      "players": [
+        {
+          "id": "00-0041512",
+          "name": "Jadarian Price",
+          "team": "SEA",
           "position": "RB"
         }
       ]
@@ -2437,26 +2629,6 @@
       ]
     },
     {
-      "id": "e9d57a640a1867fea90f",
-      "headline": "Week 4 Injury Report: Seahawks vs. Chargers",
-      "url": "https://www.seahawks.com/news/week-4-injury-report-seahawks-vs-chargers",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Details on the Seahawks\u2019 injury situation heading into their Week 4 game vs. the Los Angeles Chargers.",
-      "categories": [
-        "News: Injury Report",
-        "News: Stories",
-        "News: National Feature",
-        "Los Angeles Chargers at Seattle Seahawks (2026-REG-4)",
-        "Homepage Hero"
-      ],
-      "published_at": "2026-10-01T23:48:00+00:00",
-      "players": []
-    },
-    {
       "id": "38e66020b5ce8baea9cc",
       "headline": "Denver Broncos vs. San Francisco 49ers practice report: Thursday",
       "url": "https://www.milehighreport.com/denver-broncos-injuries/187237/denver-broncos-vs-san-francisco-49ers-practice-report-thursday",
@@ -3796,163 +3968,6 @@
           "name": "Brenen Thompson",
           "team": "LAC",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "483fcec33971e1fa372e",
-      "headline": "Drake Maye injury: Patriots QB downplays shoulder issue",
-      "url": "https://www.patspulpit.com/new-england-patriots-injuries/139120/drake-maye-reaction-shoulder-injury-report",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots released their first injury report leading up to the Week 4 game with the Buffalo Bills on Wednesday, and besides including multiple starters as absentees it also featured quarterback Drake Maye. The third-year passer was a full practice participant, meaning he took 100% of his typical reps, despite dealing with a [\u2026]",
-      "categories": [
-        "New England Patriots First Read",
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-10-01T14:45:15+00:00",
-      "players": [
-        {
-          "id": "00-0039851",
-          "name": "Drake Maye",
-          "team": "NE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "9cf99aff7e391d4a363a",
-      "headline": "Jets Should Still Feel Confident in RB Room's Outlook Despite Breece Hall Injury",
-      "url": "https://www.si.com/nfl/jets/onsi/jets-should-still-feel-confidentn-rb-room-s-outlook-despite-breece-hall-injury-01m3seefs6rp",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "The Jets have every right to feel confident about their running back situation, even if star rusher Breece Hall remains sidelined with an injury.",
-      "categories": [],
-      "published_at": "2026-10-01T14:28:03+00:00",
-      "players": [
-        {
-          "id": "00-0038120",
-          "name": "Breece Hall",
-          "team": "NYJ",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "9770c4666312831abce4",
-      "headline": "Is Drake Maye's Shoulder Actually Bothering Him? Patriots QB Gives His Thoughts",
-      "url": "https://www.si.com/nfl/patriots/onsi/is-drake-maye-s-shoulder-actually-bothering-him-patriots-qb-gives-his-thoughts",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "After three subpar showings, the New England Patriots quarterback was asked about his injury from last winter.",
-      "categories": [],
-      "published_at": "2026-10-01T14:03:32+00:00",
-      "players": [
-        {
-          "id": "00-0039851",
-          "name": "Drake Maye",
-          "team": "NE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "6c2715d093c19bb1aaae",
-      "headline": "Kyle Shanahan downplays Broncos play caller change, calls talk \u2018overrated\u2019",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-news/163527/san-francisco-49ers-news-kyle-shanahan-denver-broncos-oc-davis-webb-playcaller-sean-payton-week-5",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "Off to a 3-0 start, the San Francisco 49ers are heading back home in Week 4, as they\u2019ll face the Denver Broncos at Levi\u2019s Stadium on Sunday in one of their early tests of the season. San Francisco\u2019s offense has been humming early, despite a bevy of injuries, as Brock Purdy has played at an [\u2026]",
-      "categories": [
-        "San Francisco 49ers News"
-      ],
-      "published_at": "2026-10-01T13:44:30+00:00",
-      "players": [
-        {
-          "id": "00-0037834",
-          "name": "Brock Purdy",
-          "team": "SF",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "a1c809c81bf4af36e7e7",
-      "headline": "Chargers Week 4 Injury Report: Latest Updates, Practice Status and Replacement Options",
-      "url": "https://www.si.com/nfl/chargers/onsi/chargers-injury-report-latest-updates-practice-status-replacement-options",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "The Chargers may have to face the ferocious Seattle defense short-handed on offense. See who is banged up to start week four.",
-      "categories": [],
-      "published_at": "2026-10-01T13:30:00+00:00",
-      "players": []
-    },
-    {
-      "id": "165aa04e1cd933136fb6",
-      "headline": "Bills' Week 4 Injury Report: Josh Allen Not Listed, Four Miss Wednesday Practice",
-      "url": "https://www.si.com/nfl/bills/onsi/injury-report-bills-week-4-josh-allen-not-listed-four-miss-wednesday-practice",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "The Buffalo Bills have 11 players dealing with injuries heading into the October 4 AFC East home game vs. the New England Patriots.",
-      "categories": [],
-      "published_at": "2026-10-01T13:13:58+00:00",
-      "players": [
-        {
-          "id": "00-0034857",
-          "name": "Josh Allen",
-          "team": "BUF",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "3a349adb3e1836c46a77",
-      "headline": "Bucs vs. Packers: Pewter Preview For Week 4",
-      "url": "https://www.pewterreport.com/bucs-vs-packers-pewter-preview-week-4/",
-      "source_id": "pewter_report",
-      "source": "Pewter Report",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "It\u2019s all gone so wrong for the Bucs to start the 2026 season, and now at 0-3, they\u2019ll be starting undrafted rookie Jalon Daniels under center in Week 4 this Sunday when the 1-2 Packers come to Raymond James Stadium in Tampa. With Baker Mayfield out at least three weeks with a dislocated thumb,",
-      "categories": [
-        "Articles",
-        "Featured",
-        "Bucs",
-        "Packers"
-      ],
-      "published_at": "2026-10-01T12:30:32+00:00",
-      "players": [
-        {
-          "id": "00-0034855",
-          "name": "Baker Mayfield",
-          "team": "TB",
-          "position": "QB"
-        },
-        {
-          "id": "00-0041251",
-          "name": "Jalon Daniels",
-          "team": "TB",
-          "position": "QB"
         }
       ]
     }
