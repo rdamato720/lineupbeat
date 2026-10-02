@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T05:41:43.451360+00:00",
+  "updated_at": "2026-10-02T10:00:52.270414+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T05:08:22+00:00",
+      "latest_entry_at": "2026-10-02T10:00:04+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T04:24:32+00:00",
+      "latest_entry_at": "2026-10-02T10:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T03:09:18+00:00",
+      "latest_entry_at": "2026-10-02T09:00:00+00:00",
       "stale": false
     },
     {
@@ -52,7 +52,7 @@
     {
       "source_id": "news_official_atl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
       "latest_entry_at": "2026-10-02T01:59:40+00:00",
       "stale": false
@@ -102,7 +102,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-02T03:52:30+00:00",
+      "latest_entry_at": "2026-10-02T08:38:35+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T04:35:00+00:00",
+      "latest_entry_at": "2026-10-02T09:26:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T05:08:22+00:00",
+      "latest_entry_at": "2026-10-02T10:00:04+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T04:24:32+00:00",
+      "latest_entry_at": "2026-10-02T10:00:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-01T23:45:00+00:00",
+      "latest_entry_at": "2026-10-02T09:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T02:34:23+00:00",
+      "latest_entry_at": "2026-10-02T10:00:00+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-01T20:05:00+00:00",
+      "latest_entry_at": "2026-10-02T05:50:42+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-01T20:23:49+00:00",
+      "latest_entry_at": "2026-10-02T09:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,35 @@
     }
   ],
   "items": [
+    {
+      "id": "4569b0632774c61543d2",
+      "headline": "Rams Week 4 injury report: Terrance Ferguson expected to miss Sunday\u2019s game",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/150404/rams-week-4-injury-report-terrance-ferguson-expected-to-miss-sundays-game",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Terrance Ferguson sustained a medial ankle sprain during Week 3 against the Denver Broncos and is expected to miss the upcoming game against the Philadelphia Eagles, according to Sean McVay. While it is a setback for the second-year tight end, it opens the door for rookie Max Klare. With injuries at the position, does it [\u2026]",
+      "categories": [
+        "Los Angeles Rams Injuries"
+      ],
+      "published_at": "2026-10-02T05:50:42+00:00",
+      "players": [
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
+        },
+        {
+          "id": "00-0041510",
+          "name": "Max Klare",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "569b6678315c312803e7",
       "headline": "Pewter Report Podcast: Bucs To Target Ted Hurst More?",
@@ -3872,45 +3901,6 @@
       ],
       "published_at": "2026-09-30T20:00:00+00:00",
       "players": []
-    },
-    {
-      "id": "c965a87e913400360ada",
-      "headline": "Braelon Allen and Isaiah Davis May Enter the Spotlight After Breece Hall Injury",
-      "url": "https://www.newyorkjets.com/news/braelon-allen-isaiah-davis-may-enter-the-spotlight-after-breece-hall-injury-09-30-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Jets HC Aaron Glenn: \u2018They\u2019ll Go Out There and Make Plays for Us\u2019",
-      "categories": [
-        "Latest Headlines",
-        "News",
-        "Breece Hall",
-        "Isaiah Davis",
-        "Braelon Allen"
-      ],
-      "published_at": "2026-09-30T20:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0038120",
-          "name": "Breece Hall",
-          "team": "NYJ",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039794",
-          "name": "Braelon Allen",
-          "team": "NYJ",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039798",
-          "name": "Isaiah Davis",
-          "team": "NYJ",
-          "position": "RB"
-        }
-      ]
     }
   ]
 }
