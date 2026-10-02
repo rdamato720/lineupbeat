@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T04:00:47.313599+00:00",
+  "updated_at": "2026-10-02T05:41:43.451360+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T03:50:43+00:00",
+      "latest_entry_at": "2026-10-02T05:08:22+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-01T22:44:29+00:00",
+      "latest_entry_at": "2026-10-02T05:12:59+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T03:53:19+00:00",
+      "latest_entry_at": "2026-10-02T04:24:32+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T03:40:00+00:00",
+      "latest_entry_at": "2026-10-02T04:35:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-02T03:50:43+00:00",
+      "latest_entry_at": "2026-10-02T05:08:22+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-02T03:53:19+00:00",
+      "latest_entry_at": "2026-10-02T04:24:32+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-01T21:38:46+00:00",
+      "latest_entry_at": "2026-10-02T03:59:08+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T00:03:37+00:00",
+      "latest_entry_at": "2026-10-02T03:55:48+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-01T19:16:42+00:00",
+      "latest_entry_at": "2026-10-02T04:34:41+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-01T17:07:00+00:00",
+      "latest_entry_at": "2026-10-01T21:48:00+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-01T16:21:12+00:00",
+      "latest_entry_at": "2026-10-01T22:10:19+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,36 @@
     }
   ],
   "items": [
+    {
+      "id": "569b6678315c312803e7",
+      "headline": "Pewter Report Podcast: Bucs To Target Ted Hurst More?",
+      "url": "https://www.pewterreport.com/pewter-report-podcast-bucs-to-target-ted-hurst-more/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Bucs offense has struggled and it doesn't help that Jalen McMillan is in IR. That means more of a role for rookie Ted Hurst, who scored his first career touchdown last week. Does he need more targets? We'll talk about it on the show. The Pewter Report Podcast is",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-10-02T05:12:59+00:00",
+      "players": [
+        {
+          "id": "00-0039855",
+          "name": "Jalen McMillan",
+          "team": "TB",
+          "position": "WR"
+        },
+        {
+          "id": "00-0041048",
+          "name": "Ted Hurst",
+          "team": "TB",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "d8b94b2d56cfb6105cc3",
       "headline": "Commanders Get Better Look at Jayden Daniels, But the Biggest Question Remains \u2014 Burgundy Roundup",
@@ -3881,23 +3911,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "a4ab1c6b68b36100e996",
-      "headline": "Lions at Panthers practice report: Sept. 30",
-      "url": "https://www.detroitlions.com/news/lions-at-panthers-practice-report-sept-30-bartch-wonnum-reed",
-      "source_id": "news_official_det",
-      "source": "Detroit Lions (official)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Lions at Panthers practice report for Wednesday, September 30.",
-      "categories": [
-        "NEWS - Practice Report",
-        "Homepage - Centerpiece Package"
-      ],
-      "published_at": "2026-09-30T19:59:58+00:00",
-      "players": []
     }
   ]
 }
