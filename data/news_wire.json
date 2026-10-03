@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T22:00:52.847525+00:00",
+  "updated_at": "2026-10-03T00:00:50.877835+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:47:56+00:00",
+      "latest_entry_at": "2026-10-02T23:53:08+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:39:34+00:00",
+      "latest_entry_at": "2026-10-02T22:26:21+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T20:47:57+00:00",
+      "latest_entry_at": "2026-10-02T22:20:41+00:00",
       "stale": false
     },
     {
@@ -60,7 +60,7 @@
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 8,
+      "eligible": 7,
       "error": "",
       "latest_entry_at": "2026-10-02T20:11:00+00:00",
       "stale": false
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:30:25+00:00",
+      "latest_entry_at": "2026-10-02T23:30:38+00:00",
       "stale": false
     },
     {
@@ -134,7 +134,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-02T19:07:35+00:00",
+      "latest_entry_at": "2026-10-02T23:08:40+00:00",
       "stale": false
     },
     {
@@ -252,17 +252,17 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:43:00+00:00",
+      "latest_entry_at": "2026-10-02T22:45:49+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:00:35+00:00",
+      "latest_entry_at": "2026-10-02T23:44:05+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 8,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:47:56+00:00",
+      "latest_entry_at": "2026-10-02T23:53:08+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:39:34+00:00",
+      "latest_entry_at": "2026-10-02T22:26:21+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:37:55+00:00",
+      "latest_entry_at": "2026-10-02T10:30:00+00:00",
       "stale": false
     },
     {
@@ -310,15 +310,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T19:21:44+00:00",
+      "latest_entry_at": "2026-10-03T00:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T19:28:14+00:00",
+      "latest_entry_at": "2026-10-02T23:07:35+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-02T20:30:47+00:00",
+      "latest_entry_at": "2026-10-02T22:25:48+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T15:52:34+00:00",
+      "latest_entry_at": "2026-10-02T23:43:06+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:30:00+00:00",
+      "latest_entry_at": "2026-10-02T22:25:00+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:00:00+00:00",
+      "latest_entry_at": "2026-10-02T22:12:32+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T19:49:49+00:00",
+      "latest_entry_at": "2026-10-02T13:30:00+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T18:42:24+00:00",
+      "latest_entry_at": "2026-10-03T00:00:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T19:00:00+00:00",
+      "latest_entry_at": "2026-10-02T22:00:00+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:00:00+00:00",
+      "latest_entry_at": "2026-10-02T22:01:10+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,175 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-02T15:00:00+00:00",
+      "latest_entry_at": "2026-10-02T20:44:44+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "b8ef1ad1096a565924f4",
+      "headline": "Three Players Ruled Out vs. Broncos in Week 4; Mike Evans Questionable Ahead of #DENvsSF",
+      "url": "https://www.49ers.com/news/three-players-ruled-out-vs-broncos-in-week-4-mike-evans-questionable-ahead-of-denvssf",
+      "source_id": "news_official_sf",
+      "source": "San Francisco 49ers (official)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers released their latest injury updates headed into their contest against the Denver Broncos.",
+      "categories": [
+        "Injury Report",
+        "Latest App",
+        "News",
+        "English",
+        "English Articles",
+        "Breaking News",
+        "Brooke Evans",
+        "Sutter Health",
+        "Denver Broncos at San Francisco 49ers (2026-REG-4)"
+      ],
+      "published_at": "2026-10-02T23:44:05+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "067ef278e0e8a34ca84f",
+      "headline": "Jadarian Price Out After Aggravating Chest Injury & Other Seahawks Injury Updates",
+      "url": "https://www.seahawks.com/news/jadarian-price-out-after-aggravating-chest-injury-other-seahawks-injury-updates",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Injury updates from Seahawks coach Mike Macdonald ahead of his team\u2019s Week 4 game against the Chargers.",
+      "categories": [
+        "News: Stories",
+        "News: National Feature",
+        "Jadarian Price",
+        "Los Angeles Chargers at Seattle Seahawks (2026-REG-4)",
+        "Homepage Hero"
+      ],
+      "published_at": "2026-10-02T22:45:49+00:00",
+      "players": [
+        {
+          "id": "00-0041512",
+          "name": "Jadarian Price",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "e5d262b5affc7d2f907f",
+      "headline": "Saints' Friday Injury Report Still Cloudy. Legends Perform, to be Honored Monday Night",
+      "url": "https://www.si.com/nfl/saints/onsi/saints-friday-injury-report-still-cloudy-legends-perform-to-be-honored-monday-night-01m3z8gs3xpb",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "A big night on Monday as the Saints entertain Atlanta in the Caesar's Superdome",
+      "categories": [],
+      "published_at": "2026-10-02T22:23:24+00:00",
+      "players": []
+    },
+    {
+      "id": "349485eb87b07f4ba676",
+      "headline": "Chargers Injury Report: Ladd McConkey, Derwin James questionable vs. Seahawks",
+      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/65947/chargers-injury-report-ladd-mcconkey-derwin-james-seahawks-charlie-kolar",
+      "source_id": "news_sbn_lac",
+      "source": "Bolts From The Blue (SB Nation)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "The Chargers have one of their larger game status lists of the year and it\u2019s unfortunately only Week Four. After sitting out Thursday\u2019s practice with a foot injury, wide receiver Ladd McConkey apparently returned to practice on Friday. However, per ESPN\u2019s Kris Rhim, McConkey did not run routes or warm up with the other receivers [\u2026]",
+      "categories": [
+        "Chargers Injury Reports",
+        "Los Angeles Chargers Injuries"
+      ],
+      "published_at": "2026-10-02T22:12:32+00:00",
+      "players": [
+        {
+          "id": "00-0039915",
+          "name": "Ladd McConkey",
+          "team": "LAC",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "ffdfc252dacc96b655b9",
+      "headline": "Rams place Terrance Ferguson on IR",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/150580/rams-place-terrance-ferguson-on-ir",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Los Angeles Rams entered the season with a plethora of offensive weapons for Matthew Stafford, but now another one of those options is injured: The Rams placed tight end Terrance Ferguson on injured reserve on Friday. Ferguson left Week 3\u2019s loss to the Denver Broncos with an ankle injury. He is third on the [\u2026]",
+      "categories": [
+        "Los Angeles Rams Injuries"
+      ],
+      "published_at": "2026-10-02T22:01:10+00:00",
+      "players": [
+        {
+          "id": "00-0026498",
+          "name": "Matthew Stafford",
+          "team": "LAR",
+          "position": "QB"
+        },
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "4b2f30d3719697abe9fe",
+      "headline": "Denver Broncos vs. San Francisco 49ers practice report: Friday",
+      "url": "https://www.milehighreport.com/denver-broncos-injuries/187332/broncos-vs-49ers-injury-report",
+      "source_id": "news_sbn_den",
+      "source": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "As expected, the Denver Broncos have ruled edge rusher Dondrea Tillman out for their game against the San Francisco 49ers. He wasn\u2019t active in practice all week and that usually points to being ruled out. The good news is that everyone else on the report is a full go for this Week 4 matchup. As [\u2026]",
+      "categories": [
+        "Denver Broncos Injuries"
+      ],
+      "published_at": "2026-10-02T22:00:03+00:00",
+      "players": []
+    },
+    {
+      "id": "a45417581ac498ddc3b6",
+      "headline": "Rams Place TE Terrance Ferguson on Injured Reserve, Add Two Players to Roster",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-terrance-ferguson-injured-reserve-roster-moves",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Rams placed rookie tight end Terrance Ferguson on injured reserve and signed Alex Bachman and Larrell Murchison to the active roster.",
+      "categories": [],
+      "published_at": "2026-10-02T21:53:13+00:00",
+      "players": [
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "e9d57a640a1867fea90f",
       "headline": "Week 4 Injury Report: Seahawks vs. Chargers",
@@ -3806,168 +3968,6 @@
           "name": "James Cook",
           "team": "BUF",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "beb5bf5390ad844dd61e",
-      "headline": "What Commanders QB Jayden Daniels said about quick return from elbow injury",
-      "url": "https://www.hogshaven.com/washington-commanders-news/445482/commanders-qb-jayden-daniels-elbow-injury-update-colts-week-4-london",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Jayden Daniels has been practicing this week with a large brace on his left arm, something he\u2019ll wear all season to avoid yet another elbow dislocation that he suffered last year and again in a Week 2 loss at Dallas. His return to practice and eventually play has been faster than it was last [\u2026]",
-      "categories": [
-        "Washington Commanders News"
-      ],
-      "published_at": "2026-10-01T16:54:48+00:00",
-      "players": [
-        {
-          "id": "00-0039910",
-          "name": "Jayden Daniels",
-          "team": "WAS",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "ad265a6d5072e6de920e",
-      "headline": "Updated: Week 4 Injury Report (Browns)",
-      "url": "https://www.steelers.com/news/week-4-injury-report-browns",
-      "source_id": "news_official_pit",
-      "source": "Pittsburgh Steelers (official)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "A look at player injuries and practice participation for Week 4",
-      "categories": [
-        "Injury Report",
-        "UPMC",
-        "Featured",
-        "Sights and Sounds",
-        "Pittsburgh Steelers at Cleveland Browns (2026-REG-4)"
-      ],
-      "published_at": "2026-10-01T16:35:00+00:00",
-      "players": []
-    },
-    {
-      "id": "5306d3f9b1b6245d94eb",
-      "headline": "Seahawks RB Zach Charbonnet Designated To Return To Practice",
-      "url": "https://www.seahawks.com/news/seahawks-rb-zach-charbonnet-designated-to-return-to-practice",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Seahawks running back Zach Charbonnet will return to practice on Thursday.",
-      "categories": [
-        "News: Roster Moves",
-        "News: Stories",
-        "News: National Feature",
-        "News: Fantasy Insider",
-        "Zach Charbonnet",
-        "Homepage Hero"
-      ],
-      "published_at": "2026-10-01T16:29:33+00:00",
-      "players": [
-        {
-          "id": "00-0039165",
-          "name": "Zach Charbonnet",
-          "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "7c0d8897d6a65d8bda9f",
-      "headline": "Las Vegas Raiders fans actually have some bad news when it comes to their team starting 3-0 in 2026, but they\u2019ll have to live with it",
-      "url": "https://atozsports.com/nfl/las-vegas-raiders-news/bad-news-starting-3-0-in-2026-rookie-quarterback-fernado-mendoza/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "The Las Vegas Raiders are 3-0 and are ready to face the Kansas City Chiefs, who are also undefeated. But a successful start to the season means we have to wait longer for QB Fernando Mendoza.",
-      "categories": [
-        "Las Vegas Raiders News",
-        "NFL",
-        "Fernando Mendoza",
-        "Kirk Cousins"
-      ],
-      "published_at": "2026-10-01T15:27:16+00:00",
-      "players": [
-        {
-          "id": "00-0041562",
-          "name": "Fernando Mendoza",
-          "team": "LV",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "4830d2869dad8dcd7a76",
-      "headline": "Jaguars vs Bengals: Injury Report Ahead of Week 4",
-      "url": "https://www.bigcatcountry.com/jacksonville-jaguars-news/89441/jaguars-vs-bengals-injury-report-ahead-of-week-4",
-      "source_id": "news_sbn_jax",
-      "source": "Big Cat Country (SB Nation)",
-      "teams": [
-        "JAX"
-      ],
-      "feed_description": "The Jaguars (2-1) ride momentum into Cincinnati this weekend after a statement win over the Patriots, looking to keep pace in a crowded AFC field against a Bengals team (2-1) that\u2019s looking to bounce back from a tough divisional loss. Both sides enter with injury designations worth watching, though Jacksonville appears to be trending toward [\u2026]",
-      "categories": [
-        "Jacksonville Jaguars Injuries",
-        "Jacksonville Jaguars News"
-      ],
-      "published_at": "2026-10-01T15:22:46+00:00",
-      "players": []
-    },
-    {
-      "id": "4bfe15b5297c46a2b3d9",
-      "headline": "Patriots News: Pats-Bills keys to victory, jump-starting the McOffense",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/139025/patriots-news-pats-bills-keys-victory-jump-starting-mcoffense",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Andrew Callahan wrote an article today, telling Drake Maye to \u2018steer into the skid at Buffalo\u2019. Because it\u2019s behind a paywall, I\u2019ll share a few excerpts here: \u201cDrake Maye, once the face of everything glowing about this franchise, is now the driver and engine of their failures. Maye needs to, in Mike Vrabel\u2019s words, loosen his grip. [\u2026]",
-      "categories": [
-        "New England Patriots daily news roundup",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-10-01T15:10:39+00:00",
-      "players": [
-        {
-          "id": "00-0039851",
-          "name": "Drake Maye",
-          "team": "NE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "855b6337c412659616d0",
-      "headline": "Chargers Injury Report: Elijah Molden returns to practice",
-      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/65896/chargers-injury-report-elijah-molden-ladd-mcconkey",
-      "source_id": "news_sbn_lac",
-      "source": "Bolts From The Blue (SB Nation)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "The Chargers opened up Week Four with another sizable injury report on Wednesday afternoon. Seven players were DNP, including left guard Kayode Awosika (fibula), defensive lineman Justin Eboigbe (eye), and cornerback Donte Jackson (concussion). Speedy rookie wideout Brenen Thompson was also DNP with a hamstring injury he sustained against the Raiders in Week Two. Safety [\u2026]",
-      "categories": [
-        "Chargers Injury Reports",
-        "Los Angeles Chargers Injuries"
-      ],
-      "published_at": "2026-10-01T15:08:13+00:00",
-      "players": [
-        {
-          "id": "00-0041550",
-          "name": "Brenen Thompson",
-          "team": "LAC",
-          "position": "WR"
         }
       ]
     }
