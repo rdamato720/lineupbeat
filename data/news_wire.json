@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T21:47:28.378401+00:00",
+  "updated_at": "2026-10-03T22:00:56.998231+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-03T21:34:28+00:00",
+      "latest_entry_at": "2026-10-03T22:00:05+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-03T21:34:28+00:00",
+      "latest_entry_at": "2026-10-03T22:00:05+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T19:12:03+00:00",
+      "latest_entry_at": "2026-10-02T21:37:55+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-03T17:00:00+00:00",
+      "latest_entry_at": "2026-10-03T13:00:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-03T21:42:56+00:00",
+      "latest_entry_at": "2026-10-03T00:03:04+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T16:45:44+00:00",
+      "latest_entry_at": "2026-10-02T13:30:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-03T20:00:00+00:00",
+      "latest_entry_at": "2026-10-03T14:02:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T21:00:00+00:00",
+      "latest_entry_at": "2026-10-03T13:00:00+00:00",
       "stale": false
     },
     {
@@ -444,17 +444,17 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-03T20:23:13+00:00",
+      "latest_entry_at": "2026-10-03T14:42:32+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-03T20:00:00+00:00",
+      "latest_entry_at": "2026-10-03T15:21:21+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-03T19:59:18+00:00",
+      "latest_entry_at": "2026-10-03T14:00:00+00:00",
       "stale": false
     },
     {
@@ -486,15 +486,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-03T16:55:00+00:00",
+      "latest_entry_at": "2026-10-03T13:03:29+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T17:43:44+00:00",
+      "latest_entry_at": "2026-10-03T16:00:00+00:00",
       "stale": false
     },
     {
@@ -508,9 +508,9 @@
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-03T18:15:33+00:00",
+      "latest_entry_at": "2026-10-03T14:00:00+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 2,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-03T20:00:00+00:00",
+      "latest_entry_at": "2026-10-02T22:01:10+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,32 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-03T21:16:51+00:00",
+      "latest_entry_at": "2026-10-03T15:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "5c2c038164186e2ba182",
+      "headline": "Jadarian Price Injury Update: The Latest on Seahawks RB",
+      "url": "https://www.si.com/nfl/seahawks/onsi/jadarian-price-injury-update-latest-on-seahawks-rb",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The day before the Seattle Seahawks take on the Los Angeles Chargers, the team announced that Jadarian Price\u2019s injury is significant.",
+      "categories": [],
+      "published_at": "2026-10-03T21:34:59+00:00",
+      "players": [
+        {
+          "id": "00-0041512",
+          "name": "Jadarian Price",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "f78ce775e18cb77283d8",
       "headline": "Jets-Bears Game Preview | Quarterback Certainty and Intrigue in Chicago",
@@ -959,7 +980,7 @@
     },
     {
       "id": "8a4a27d1c0c54bfa061f",
-      "headline": "Commanders injury update: Terry McLaurin reportedly unlikely to play vs. Colts",
+      "headline": "Commanders injury update: Terry McLaurin unlikely to play vs. Colts",
       "url": "https://www.hogshaven.com/washington-commanders-injuries/445984/commanders-injury-update-terry-mclaurin-unlikely-to-play-vs-colts",
       "source_id": "news_sbn_was",
       "source": "Hogs Haven (SB Nation)",
@@ -968,8 +989,7 @@
       ],
       "feed_description": "The Washington Commanders could be without their WR1 on Sunday versus Indianapolis, as Terry McLaurin deals with a new hamstring injury. He showed up on the injury report Friday, and was listed as questionable for the game after being limited in practice. Commanders beat writer Ben Standig reported on Saturday that the injury happened during [\u2026]",
       "categories": [
-        "Washington Commanders Injuries",
-        "Washington Commanders News"
+        "Washington Commanders Injuries"
       ],
       "published_at": "2026-10-03T15:21:21+00:00",
       "players": [
@@ -3978,20 +3998,6 @@
         "Green Bay Packers News"
       ],
       "published_at": "2026-10-01T20:48:10+00:00",
-      "players": []
-    },
-    {
-      "id": "ab97b26f3e49e375d26f",
-      "headline": "Packers-Bucs Thursday Injury Report: Key Developments in Tampa",
-      "url": "https://www.si.com/nfl/packers/onsi/packers-bucs-thursday-injury-report-key-developments-in-tampa",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Here are the injury reports for both teams, which include one addition for the Packers and some significant changes for the Buccaneers.",
-      "categories": [],
-      "published_at": "2026-10-01T20:47:24+00:00",
       "players": []
     }
   ]
