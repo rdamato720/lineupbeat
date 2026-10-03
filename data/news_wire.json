@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T18:01:00.751999+00:00",
+  "updated_at": "2026-10-03T18:41:46.031091+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-03T18:00:35+00:00",
+      "latest_entry_at": "2026-10-03T18:23:57+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T21:09:53+00:00",
+      "latest_entry_at": "2026-10-03T18:30:21+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-03T17:02:19+00:00",
+      "latest_entry_at": "2026-10-03T18:00:23+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-03T14:30:00+00:00",
+      "latest_entry_at": "2026-10-03T18:10:00+00:00",
       "stale": false
     },
     {
@@ -214,7 +214,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-03T13:28:26+00:00",
+      "latest_entry_at": "2026-10-03T18:30:01+00:00",
       "stale": false
     },
     {
@@ -270,7 +270,7 @@
       "ok": true,
       "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-10-02T19:37:10+00:00",
+      "latest_entry_at": "2026-10-04T16:58:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T18:00:35+00:00",
+      "latest_entry_at": "2026-10-03T18:23:57+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T14:46:32+00:00",
+      "latest_entry_at": "2026-10-03T18:38:40+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T13:00:00+00:00",
+      "latest_entry_at": "2026-10-03T14:00:00+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T15:30:00+00:00",
+      "latest_entry_at": "2026-10-03T18:00:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T15:00:00+00:00",
+      "latest_entry_at": "2026-10-03T17:00:00+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-03T16:00:00+00:00",
+      "latest_entry_at": "2026-10-03T17:43:44+00:00",
       "stale": false
     },
     {
@@ -508,9 +508,9 @@
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-03T14:00:00+00:00",
+      "latest_entry_at": "2026-10-03T18:15:33+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,24 @@
     }
   ],
   "items": [
+    {
+      "id": "b386aa6a3cd3a94e2fc4",
+      "headline": "Saturday\u2019s Final Saints vs. Falcons Injury Report: LB Kaden Elliss has been ruled out",
+      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-injuries/115870/saturdays-final-saints-vs-falcons-injury-report-lb-kaden-elliss-has-been-ruled-out",
+      "source_id": "news_sbn_no",
+      "source": "Canal Street Chronicles (SB Nation)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "The New Orleans Saints have wrapped up their 3rd and final practice ahead of their Week 4 primetime matchup at home against the Atlanta Falcons on Monday, October 5th in Caesars Superdome. So, where do things stand following today\u2019s practice? Let\u2019s take a look at which Saints players were ruled out and are questionable for [\u2026]",
+      "categories": [
+        "New Orleans Saints Game Information",
+        "New Orleans Saints Injuries",
+        "New Orleans Saints News"
+      ],
+      "published_at": "2026-10-03T18:15:33+00:00",
+      "players": []
+    },
     {
       "id": "cd15670d3127c837ae63",
       "headline": "Falcons injury report: Two defensive starters questionable ahead of Monday Night Football",
@@ -798,6 +816,22 @@
           "position": "QB"
         }
       ]
+    },
+    {
+      "id": "e215f742b39db46d4d17",
+      "headline": "Falcons vs. Saints injury report: Jawaan Taylor enjoys a rest day",
+      "url": "https://www.thefalcoholic.com/atlanta-falcons-injuries/96896/falcons-vs-saints-injury-report-jawaan-taylor-enjoys-a-rest-day",
+      "source_id": "news_sbn_atl",
+      "source": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "We are moving right along as the Atlanta Falcons and New Orleans Saints both held their second practices of the week before facing off on Monday night. There weren\u2019t any big changes on Friday, but some updates worth mentioning. Let\u2019s take a look! Falcons injury report Full \u2022 N/A Limited \u2022 LB Divine Deablo (hamstring) [\u2026]",
+      "categories": [
+        "Atlanta Falcons injuries"
+      ],
+      "published_at": "2026-10-03T12:00:00+00:00",
+      "players": []
     },
     {
       "id": "77074f14c69a05442f7e",
@@ -3945,40 +3979,6 @@
           "position": "TE"
         }
       ]
-    },
-    {
-      "id": "fb4a27cdb24890f00822",
-      "headline": "Lions, Panthers injury report: DJ Wonnum returns to practice on Thursday",
-      "url": "https://www.prideofdetroit.com/detroit-lions-injuries/175194/lions-panthers-injury-report-dj-wonnum-returns-to-practice-on-thursday",
-      "source_id": "news_sbn_det",
-      "source": "Pride Of Detroit (SB Nation)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "The Detroit Lions (2-1) and Carolina Panthers (1-2) were back on the practice field on Thursday as they prepare for their primetime matchup on Sunday night. The Lions got some good news Thursday as starting EDGE DJ Wonnum returned to practice, a great sign for Detroit\u2019s pass rush. Let\u2019s take a look at Thursday\u2019s injury [\u2026]",
-      "categories": [
-        "Detroit Lions Injuries",
-        "Detroit Lions News"
-      ],
-      "published_at": "2026-10-01T20:04:41+00:00",
-      "players": []
-    },
-    {
-      "id": "e82def4b3d47ea38b9cf",
-      "headline": "Lions at Panthers practice report: Oct. 1",
-      "url": "https://www.detroitlions.com/news/lions-at-panthers-practice-report-oct-1-bartch-wonnum-reed",
-      "source_id": "news_official_det",
-      "source": "Detroit Lions (official)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Lions at Panthers practice report for Thursday, October 1.",
-      "categories": [
-        "NEWS - Practice Report",
-        "Homepage - Centerpiece Package"
-      ],
-      "published_at": "2026-10-01T20:00:01+00:00",
-      "players": []
     }
   ]
 }
