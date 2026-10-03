@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T15:15:51.855838+00:00",
+  "updated_at": "2026-10-03T16:00:47.265014+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-03T15:15:00+00:00",
+      "latest_entry_at": "2026-10-03T15:50:42+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T13:00:00+00:00",
+      "latest_entry_at": "2026-10-03T15:00:47+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-02T20:13:47+00:00",
+      "latest_entry_at": "2026-10-03T15:13:00+00:00",
       "stale": false
     },
     {
@@ -140,7 +140,7 @@
     {
       "source_id": "news_official_ind",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
       "latest_entry_at": "2026-10-03T14:36:05+00:00",
       "stale": false
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T15:15:00+00:00",
+      "latest_entry_at": "2026-10-03T15:50:42+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T00:00:00+00:00",
+      "latest_entry_at": "2026-10-03T15:45:45+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-03T13:00:00+00:00",
+      "latest_entry_at": "2026-10-03T15:30:00+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T14:00:00+00:00",
+      "latest_entry_at": "2026-10-03T15:30:00+00:00",
       "stale": false
     },
     {
@@ -452,17 +452,17 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-03T09:00:00+00:00",
+      "latest_entry_at": "2026-10-03T15:49:08+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T14:00:00+00:00",
+      "latest_entry_at": "2026-10-02T21:00:00+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-03T14:02:00+00:00",
+      "latest_entry_at": "2026-10-02T22:01:10+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,56 @@
     }
   ],
   "items": [
+    {
+      "id": "8a4a27d1c0c54bfa061f",
+      "headline": "Commanders injury update: Terry McLaurin reportedly unlikely to play vs. Colts",
+      "url": "https://www.hogshaven.com/washington-commanders-injuries/445984/commanders-injury-update-terry-mclaurin-unlikely-to-play-vs-colts",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Washington Commanders could be without their WR1 on Sunday versus Indianapolis, as Terry McLaurin deals with a new hamstring injury. He showed up on the injury report Friday, and was listed as questionable for the game after being limited in practice. Commanders beat writer Ben Standig reported on Saturday that the injury happened during [\u2026]",
+      "categories": [
+        "Washington Commanders Injuries"
+      ],
+      "published_at": "2026-10-03T15:21:21+00:00",
+      "players": [
+        {
+          "id": "00-0035659",
+          "name": "Terry McLaurin",
+          "team": "WAS",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "08118a282a6935f25fac",
+      "headline": "Bears Rumor Confirms Chicago's Week 4 QB Decision Between Tyson Bagent, Case Keenum",
+      "url": "https://www.si.com/nfl/bears/onsi/bears-rumor-chicago-week-4-qb-decision-tyson-bagent-case-keenum",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "The Chicago Bears have reportedly decided on who will be their starting quarterback in Week 4 between Case Keenum and Tyson Bagent.",
+      "categories": [],
+      "published_at": "2026-10-03T15:20:37+00:00",
+      "players": [
+        {
+          "id": "00-0028986",
+          "name": "Case Keenum",
+          "team": "CHI",
+          "position": "QB"
+        },
+        {
+          "id": "00-0038416",
+          "name": "Tyson Bagent",
+          "team": "CHI",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "f32aeced84b0059fd0c7",
       "headline": "Colts elevate WR Nick Westbrook-Ikhine to active roster from practice squad",
@@ -3926,53 +3976,6 @@
           "id": "00-0035021",
           "name": "Ashton Dulin",
           "team": "IND",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "0c23ec9a6a80c392c9b3",
-      "headline": "Absurd Travis Hunter Stat Highlights Jaguars' Draft Gamble is Starting to Pay Off",
-      "url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-absurd-travis-hunter-stat-highlights-draft-gamble-is-starting-to-pay-off",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "JAX"
-      ],
-      "feed_description": "The Jacksonville Jaguars' star cornerback is coming into form entering Week 4.",
-      "categories": [],
-      "published_at": "2026-10-01T19:48:28+00:00",
-      "players": [
-        {
-          "id": "00-0040718",
-          "name": "Travis Hunter",
-          "team": "JAX",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "dbdbf7ac84d0a7a3992c",
-      "headline": "Week 4 Thursday Injury Report: Still missing some key pieces",
-      "url": "https://www.panthers.com/news/week-4-thursday-injury-report-still-missing-some-key-pieces-damien-lewis-xavier-legette-jalen-coker-limited",
-      "source_id": "news_official_car",
-      "source": "Carolina Panthers (official)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Panthers were without left guard Damien Lewis and wide receiver Xavier Legette on Thursday, but everyone else was at least a limited participant.",
-      "categories": [
-        "Injury Reports",
-        "Latest News",
-        "App News",
-        "Detroit Lions at Carolina Panthers (2026-REG-4)"
-      ],
-      "published_at": "2026-10-01T19:28:52+00:00",
-      "players": [
-        {
-          "id": "00-0039342",
-          "name": "Xavier Legette",
-          "team": "CAR",
           "position": "WR"
         }
       ]
