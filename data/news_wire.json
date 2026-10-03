@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T00:00:50.877835+00:00",
+  "updated_at": "2026-10-03T00:44:52.081246+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T23:53:08+00:00",
+      "latest_entry_at": "2026-10-03T00:39:15+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T22:26:21+00:00",
+      "latest_entry_at": "2026-10-03T00:23:24+00:00",
       "stale": false
     },
     {
@@ -100,7 +100,7 @@
     {
       "source_id": "news_official_cle",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
       "latest_entry_at": "2026-10-02T20:36:19+00:00",
       "stale": false
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T23:53:08+00:00",
+      "latest_entry_at": "2026-10-03T00:39:15+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-02T22:26:21+00:00",
+      "latest_entry_at": "2026-10-03T00:23:24+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T10:30:00+00:00",
+      "latest_entry_at": "2026-10-02T21:37:55+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-03T00:00:00+00:00",
+      "latest_entry_at": "2026-10-02T19:21:44+00:00",
       "stale": false
     },
     {
@@ -332,9 +332,9 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T20:00:00+00:00",
+      "latest_entry_at": "2026-10-02T19:00:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-02T20:43:38+00:00",
+      "latest_entry_at": "2026-10-03T00:03:04+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T20:30:00+00:00",
+      "latest_entry_at": "2026-10-02T19:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-02T13:30:00+00:00",
+      "latest_entry_at": "2026-10-02T19:49:49+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-02T12:00:00+00:00",
+      "latest_entry_at": "2026-10-03T00:38:09+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,49 @@
     }
   ],
   "items": [
+    {
+      "id": "77074f14c69a05442f7e",
+      "headline": "Buccaneers vs. Packers: Final injury report for Week 4",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/68848/buccaneers-packers-final-injury-report-nfl-week-4",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers released their final injury report Friday ahead of Sunday\u2019s Week 4 matchup against the Green Bay Packers, and four players have officially been ruled out. Quarterback Baker Mayfield will miss the game with the right thumb injury he suffered last week against the Minnesota Vikings, leaving rookie Jalon Daniels in line [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers Injuries"
+      ],
+      "published_at": "2026-10-03T00:38:09+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        },
+        {
+          "id": "00-0041251",
+          "name": "Jalon Daniels",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "7ed7e6ddc49a8875f52b",
+      "headline": "Final Injury Report: Several 49ers Starters in Jeopardy vs. Broncos",
+      "url": "https://www.si.com/nfl/broncos/onsi/final-injury-report-several-49ers-starters-in-jeopardy-broncos",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The 49ers could be without several starters against the Broncos, with one Pro Bowler already ruled out.",
+      "categories": [],
+      "published_at": "2026-10-03T00:30:00+00:00",
+      "players": []
+    },
     {
       "id": "b8ef1ad1096a565924f4",
       "headline": "Three Players Ruled Out vs. Broncos in Week 4; Mike Evans Questionable Ahead of #DENvsSF",
@@ -1661,6 +1704,31 @@
       ],
       "published_at": "2026-10-02T19:00:00+00:00",
       "players": []
+    },
+    {
+      "id": "a14bdc353394ab43e439",
+      "headline": "Browns' offense leans on preparation from practice during game-winning drive",
+      "url": "https://www.clevelandbrowns.com/news/browns-offense-leans-on-preparation-from-practice-during-game-winning-drive",
+      "source_id": "news_official_cle",
+      "source": "Cleveland Browns (official)",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "Deshaun Watson led the Browns 36 yards to set up the game-winning field goal against the Steelers",
+      "categories": [
+        "Team Coverage",
+        "adpartner=team_coverage_article",
+        "featured"
+      ],
+      "published_at": "2026-10-02T19:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0033537",
+          "name": "Deshaun Watson",
+          "team": "CLE",
+          "position": "QB"
+        }
+      ]
     },
     {
       "id": "03cae2e205d3952f7c83",
@@ -3899,75 +3967,6 @@
           "name": "Deshaun Watson",
           "team": "CLE",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "ea36b2213c3978dd7c40",
-      "headline": "Zach Charbonnet injury update: Seahawks running back set to return to practice",
-      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/176240/seahawks-injury-update-zach-charbonnet-designated-return-practice-nfl-news",
-      "source_id": "news_sbn_sea",
-      "source": "Field Gulls (SB Nation)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "After being sidelined for the past eight months while recovering from a torn ACL he suffered in the 2026 Divisional Round, Seattle Seahawks running back Zach Charbonnet is one step closer to returning to game action. The Seahawks designated Charbonnet to return to practice on Thursday morning, meaning they\u2019ll have a 21-day window to activate [\u2026]",
-      "categories": [
-        "Seattle Seahawks Injuries"
-      ],
-      "published_at": "2026-10-01T17:29:05+00:00",
-      "players": [
-        {
-          "id": "00-0039165",
-          "name": "Zach Charbonnet",
-          "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "8df6488e35d6f2f1f227",
-      "headline": "When Will Zach Charbonnet Play for Seahawks? Mike Macdonald Gives Hint",
-      "url": "https://www.si.com/nfl/seahawks/onsi/when-will-zach-charbonnet-play-for-seahawks-mike-macdonald-gives-hint",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Zach Charbonnet is recovering from a torn ACL, but he is nearing his return for the Seattle Seahawks.",
-      "categories": [],
-      "published_at": "2026-10-01T17:11:40+00:00",
-      "players": [
-        {
-          "id": "00-0039165",
-          "name": "Zach Charbonnet",
-          "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "03419c613e7364687c5f",
-      "headline": "A potential James Cook concern from before the season is starting pick up some steam and could become a nightmare for the Buffalo Bills",
-      "url": "https://atozsports.com/nfl/buffalo-bills-news/james-cook-concern-football-steam-and-could-become-nightmare-buffalo-bills/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "The Buffalo Bills could have a problem on their hands with running back James Cook in the not-too-distant future.",
-      "categories": [
-        "Buffalo Bills News",
-        "NFL",
-        "Buffalo Bills"
-      ],
-      "published_at": "2026-10-01T17:04:36+00:00",
-      "players": [
-        {
-          "id": "00-0037248",
-          "name": "James Cook",
-          "team": "BUF",
-          "position": "RB"
         }
       ]
     }
