@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T17:04:11.601725+00:00",
+  "updated_at": "2026-10-04T18:00:52.501199+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:45:00+00:00",
+      "latest_entry_at": "2026-10-04T17:55:40+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:00:03+00:00",
+      "latest_entry_at": "2026-10-04T17:58:23+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:26:36+00:00",
+      "latest_entry_at": "2026-10-04T17:45:42+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-03T20:29:36+00:00",
+      "latest_entry_at": "2026-10-04T17:20:00+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T00:00:00+00:00",
+      "latest_entry_at": "2026-10-04T16:00:00+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:50:00+00:00",
+      "latest_entry_at": "2026-10-04T17:00:00+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:01:00+00:00",
+      "latest_entry_at": "2026-10-04T17:58:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 13,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:45:00+00:00",
+      "latest_entry_at": "2026-10-04T17:55:40+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:00:03+00:00",
+      "latest_entry_at": "2026-10-04T17:58:23+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-04T15:39:00+00:00",
+      "latest_entry_at": "2026-10-04T17:00:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:15:00+00:00",
+      "latest_entry_at": "2026-10-04T17:57:36+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-04T13:25:00+00:00",
+      "latest_entry_at": "2026-10-04T18:00:10+00:00",
       "stale": false
     },
     {
@@ -438,15 +438,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:48:17+00:00",
+      "latest_entry_at": "2026-10-04T17:57:35+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:21:10+00:00",
+      "latest_entry_at": "2026-10-04T17:34:59+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,118 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-04T13:15:00+00:00",
+      "latest_entry_at": "2026-10-04T17:25:29+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "6bf1e6b405f8462f455d",
+      "headline": "Ja\u2019Marr Chase Injury: Update on Bengals star receiver after scary tackle takes him out vs. Jaguars",
+      "url": "https://atozsports.com/nfl/cincinnati-bengals-news/jamarr-chase-injury-update-on-bengals-star-receiver-after-scary-tackle-takes-him-out-vs-jaguars/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "Cincinnati Bengals wide receiver Ja'Marr Chase took a scary hit against the Jacksonville Jaguars.",
+      "categories": [
+        "Cincinnati Bengals News",
+        "Cincinnati Bengals",
+        "Ja'Marr Chase"
+      ],
+      "published_at": "2026-10-04T17:58:23+00:00",
+      "players": [
+        {
+          "id": "00-0036900",
+          "name": "Ja'Marr Chase",
+          "team": "CIN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "57cb988732b3d66c4be9",
+      "headline": "Saquon Barkley Injury: Latest update on Philadelphia Eagles superstar after concerning play against the Los Angeles Rams",
+      "url": "https://atozsports.com/nfl/philadelphia-eagles-news/saquon-barkley-questionable-to-return-vs-los-angeles-rams-hamstring-injury/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "Saquon Barkley came off the field gingerly after a notable run, tried to work through it on the sideline, and eventually headed to the locker room.",
+      "categories": [
+        "NFL",
+        "Philadelphia Eagles News",
+        "Eagles News",
+        "Saquon Barkley"
+      ],
+      "published_at": "2026-10-04T17:43:40+00:00",
+      "players": [
+        {
+          "id": "00-0034844",
+          "name": "Saquon Barkley",
+          "team": "PHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "48e4aa88cd93742fb77f",
+      "headline": "Seahawks bringing in two-time Pro Bowl running back Joe Mixon for visit",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-news/176408/nfl-news-seahawks-bringing-in-joe-mixon-visit",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "It was announced that the Seattle Seahawks are working out two-time Pro Bowl running back, Joe Mixon, according to FOX Sports\u2019 Jay Glazer. Seattle working out a running back is not too surprising considering the injuries that have spread across that position room. Jadarian Price was just placed on injured reserve, Zach Charbonnet is still [\u2026]",
+      "categories": [
+        "Seattle Seahawks News",
+        "Seattle Seahawks Roster"
+      ],
+      "published_at": "2026-10-04T17:25:29+00:00",
+      "players": [
+        {
+          "id": "00-0039165",
+          "name": "Zach Charbonnet",
+          "team": "SEA",
+          "position": "RB"
+        },
+        {
+          "id": "00-0041512",
+          "name": "Jadarian Price",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "6cd3d470be83351ba3b4",
+      "headline": "Saquon Barkley injury: Eagles running back injures hamstring against Rams",
+      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/185411/saquon-barkley-injury-eagles-running-back-injures-hamstring-against-rams",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Eagles already have a long list of injured players, and it may have gotten a little longer early on against the Rams, with Saquon Barkley going down on the first play of their second drive. The running back carried the ball for six yards out of bounds, but appeared to slip or pull up [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries",
+        "Philadelphia Eagles News"
+      ],
+      "published_at": "2026-10-04T17:21:57+00:00",
+      "players": [
+        {
+          "id": "00-0034844",
+          "name": "Saquon Barkley",
+          "team": "PHI",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "c458d2c05e7a03490dcc",
       "headline": "Will Caleb Williams Return in Week 5? Latest Injury Update on Chicago Bears QB",
@@ -3848,113 +3953,6 @@
           "name": "Xavier Legette",
           "team": "CAR",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "df8799f3435c97e1789e",
-      "headline": "3 Jets Who Need to Step Up With Breece Hall, Adonai Mitchell & More Out for Week 4",
-      "url": "https://www.si.com/nfl/jets/onsi/3-jets-need-step-up-breece-hall-adonai-mitchell-more-out-week-4-01m3yjqqw4bh",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "With Breece Hall, Adonai Mitchell and more key players ruled out for Week 4, the Jets desperately need these three players to step up vs. the Bears on Sunday.",
-      "categories": [],
-      "published_at": "2026-10-02T16:05:16+00:00",
-      "players": [
-        {
-          "id": "00-0038120",
-          "name": "Breece Hall",
-          "team": "NYJ",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039890",
-          "name": "Adonai Mitchell",
-          "team": "NYJ",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "3ab2a814a4a4058fab98",
-      "headline": "Rams waive wide receiver Xavier Smith; wide receiver Alex Bachman expected to step into punt returner role",
-      "url": "https://www.therams.com/news/rams-waive-wide-receiver-xavier-smith-week-4-2026-eagles",
-      "source_id": "news_official_lar",
-      "source": "Los Angeles Rams (official)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "Wide receiver Xavier Smith, who primarily served as the Rams' punt returner through the first three weeks of the 2026 season and throughout the 2025 season, has been waived by the team.",
-      "categories": [
-        "Football",
-        "Player Transactions - Bob's Discount Furniture",
-        "Los Angeles Rams at Philadelphia Eagles (2026-REG-4)",
-        "Alex Bachman"
-      ],
-      "published_at": "2026-10-02T16:01:33+00:00",
-      "players": [
-        {
-          "id": "00-0038359",
-          "name": "Xavier Smith",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "3bd74fe0d45ffaf934fa",
-      "headline": "5 Vikings Who Will Likely Be Inactive vs. the Dolphins in Week 4 (Justin Jefferson Remains a Question Mark)",
-      "url": "https://www.si.com/nfl/vikings/onsi/5-vikings-likely-inactive-dolphins-week-4-justin-jefferson-remains-question-mark-01m3xe7czajb",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "Star WR Justin Jefferson is among the potential inactive Vikings players for the Week 4 showdown vs. the Dolphins.",
-      "categories": [],
-      "published_at": "2026-10-02T16:00:02+00:00",
-      "players": [
-        {
-          "id": "00-0036322",
-          "name": "Justin Jefferson",
-          "team": "MIN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "6fa8e4071941008e02a7",
-      "headline": "ESPN lists Tony Pollard among 10 NFL trade candidates, but Cam Ward could determine whether the Titans move him",
-      "url": "https://atozsports.com/nfl/tennessee-titans-news/should-titans-trade-tony-pollard-2026-nfl-deadline/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "ESPN identified Tony Pollard as a player to watch before the Nov. 10 NFL trade deadline. His age and expiring contract make sense for Tennessee, but his value to Cam Ward could exceed anything the Titans receive in return.",
-      "categories": [
-        "Tennessee Titans News",
-        "espn",
-        "NFL Trade Deadline",
-        "Titans",
-        "Tony Pollard"
-      ],
-      "published_at": "2026-10-02T15:56:52+00:00",
-      "players": [
-        {
-          "id": "00-0035261",
-          "name": "Tony Pollard",
-          "team": "TEN",
-          "position": "RB"
-        },
-        {
-          "id": "00-0040676",
-          "name": "Cam Ward",
-          "team": "TEN",
-          "position": "QB"
         }
       ]
     }
