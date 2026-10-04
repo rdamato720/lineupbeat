@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T18:00:52.501199+00:00",
+  "updated_at": "2026-10-04T20:00:42.738448+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:55:40+00:00",
+      "latest_entry_at": "2026-10-04T19:45:55+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:58:23+00:00",
+      "latest_entry_at": "2026-10-04T19:24:50+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:45:42+00:00",
+      "latest_entry_at": "2026-10-04T18:33:10+00:00",
       "stale": false
     },
     {
@@ -60,17 +60,17 @@
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 7,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-10-04T15:31:49+00:00",
+      "latest_entry_at": "2026-10-04T19:39:42+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_buf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-04T15:29:09+00:00",
+      "latest_entry_at": "2026-10-04T19:07:56+00:00",
       "stale": false
     },
     {
@@ -108,9 +108,9 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:20:00+00:00",
+      "latest_entry_at": "2026-10-04T18:55:04+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:40:07+00:00",
+      "latest_entry_at": "2026-10-04T19:38:55+00:00",
       "stale": false
     },
     {
@@ -158,15 +158,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T18:00:00+00:00",
+      "latest_entry_at": "2026-10-04T18:58:54+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_lac",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:00:00+00:00",
+      "latest_entry_at": "2026-10-04T18:55:46+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:00:00+00:00",
+      "latest_entry_at": "2026-10-04T18:55:00+00:00",
       "stale": false
     },
     {
@@ -196,9 +196,9 @@
     {
       "source_id": "news_official_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-02T20:35:18+00:00",
+      "latest_entry_at": "2026-10-04T18:35:07+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:00:00+00:00",
+      "latest_entry_at": "2026-10-04T19:53:00+00:00",
       "stale": false
     },
     {
@@ -236,9 +236,9 @@
     {
       "source_id": "news_official_phi",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:58:00+00:00",
+      "latest_entry_at": "2026-10-04T19:55:00+00:00",
       "stale": false
     },
     {
@@ -246,29 +246,29 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-03T19:00:00+00:00",
+      "latest_entry_at": "2026-10-04T19:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:35:00+00:00",
+      "latest_entry_at": "2026-10-04T18:54:33+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-03T20:19:14+00:00",
+      "latest_entry_at": "2026-10-04T18:54:43+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_tb",
       "ok": true,
-      "eligible": 10,
+      "eligible": 9,
       "error": "",
       "latest_entry_at": "2026-10-04T20:00:00+00:00",
       "stale": false
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:55:40+00:00",
+      "latest_entry_at": "2026-10-04T19:45:55+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:58:23+00:00",
+      "latest_entry_at": "2026-10-04T19:24:50+00:00",
       "stale": false
     },
     {
@@ -302,23 +302,23 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:30:39+00:00",
+      "latest_entry_at": "2026-10-04T18:46:25+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_mia",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:00:00+00:00",
+      "latest_entry_at": "2026-10-04T19:05:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:57:36+00:00",
+      "latest_entry_at": "2026-10-04T19:54:34+00:00",
       "stale": false
     },
     {
@@ -332,9 +332,9 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:09:44+00:00",
+      "latest_entry_at": "2026-10-04T19:28:44+00:00",
       "stale": false
     },
     {
@@ -396,17 +396,17 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T13:47:59+00:00",
+      "latest_entry_at": "2026-10-04T18:59:10+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_kc",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T14:30:00+00:00",
+      "latest_entry_at": "2026-10-04T19:25:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T14:04:42+00:00",
+      "latest_entry_at": "2026-10-04T19:21:00+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-04T15:17:47+00:00",
+      "latest_entry_at": "2026-10-04T19:41:42+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:57:35+00:00",
+      "latest_entry_at": "2026-10-04T19:53:11+00:00",
       "stale": false
     },
     {
@@ -446,15 +446,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:34:59+00:00",
+      "latest_entry_at": "2026-10-04T19:38:48+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:40:44+00:00",
+      "latest_entry_at": "2026-10-04T19:15:59+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:30:00+00:00",
+      "latest_entry_at": "2026-10-04T19:06:52+00:00",
       "stale": false
     },
     {
@@ -542,19 +542,703 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:55:28+00:00",
+      "latest_entry_at": "2026-10-03T20:38:49+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-04T17:25:29+00:00",
+      "latest_entry_at": "2026-10-04T18:55:56+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "e6dc3caabbaa67928dac",
+      "headline": "Broncos Will Face Mike Evans | Full Week 4 Inactives",
+      "url": "https://www.si.com/nfl/broncos/onsi/broncos-will-face-mike-evans-full-week-4-inactives",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "Here's a look at the Broncos-49ers full list of inactives.",
+      "categories": [],
+      "published_at": "2026-10-04T19:35:38+00:00",
+      "players": []
+    },
+    {
+      "id": "2d34edcf0086ada75c8b",
+      "headline": "Ravens QB Lamar Jackson exits game vs. Titans with ankle injury",
+      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-injuries/85910/ravens-qb-lamar-jackson-exits-game-vs-titans-with-ankle-injury",
+      "source_id": "news_sbn_bal",
+      "source": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "Baltimore Ravens quarterback Lamar Jackson is questionable to return to Sunday\u2019s matchup with the Tennessee Titans due to an ankle injury suffered on a sack at the end of the first half. Jackson had been playing brilliantly up to that point, completing 15 of his 20 passes for 222 yards and two touchdowns. Right after [\u2026]",
+      "categories": [
+        "Baltimore Ravens Injuries",
+        "Baltimore Ravens News"
+      ],
+      "published_at": "2026-10-04T19:28:44+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "cea0a26492d284b5bc62",
+      "headline": "Lamar Jackson Injury: Latest update on Baltimore Ravens superstar after concerning play against the Tennessee Titans",
+      "url": "https://atozsports.com/nfl/baltimore-ravens-news/lamar-jackson-questionable-to-return-vs-titans-ankle-injury/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Baltimore Ravens have controlled the Tennessee Titans from the opening kick, but one play just before halftime changed the tone of the afternoon, and Baltimore's spot in the AFC North race could feel the impact",
+      "categories": [
+        "Baltimore Ravens News",
+        "NFL",
+        "American Football",
+        "Balitmore Ravens News",
+        "Baltimore Ravens",
+        "lamar jackson"
+      ],
+      "published_at": "2026-10-04T19:24:50+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "2fcb63d64c13d44edcf5",
+      "headline": "Las Vegas Raiders\u2019 inactives for Week 4 show that the team is unexpectedly going to be without one of their breakout players from a year ago",
+      "url": "https://atozsports.com/nfl/las-vegas-raiders-news/las-vegas-raiders-inactives-for-week-4-show-that-the-team-is-unexpectedly-going-to-be-without-one-of-their-breakout-players-from-a-year-ago/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "The Las Vegas Raiders will be without Jonah Laulu as he was inactive pregame before Week 4 vs. the Chiefs.",
+      "categories": [
+        "Las Vegas Raiders News",
+        "NFL",
+        "Aidan O'Connell",
+        "Jackson Powers-Johnson",
+        "Raiders inactives"
+      ],
+      "published_at": "2026-10-04T19:17:51+00:00",
+      "players": []
+    },
+    {
+      "id": "1e27ccd860dd49e81ee1",
+      "headline": "San Francisco 49ers receive game-changing update on key playmaker ahead of big matchup with Broncos after injury scare",
+      "url": "https://atozsports.com/nfl/san-francisco-49ers-news/san-francisco-49ers-receive-game-changing-update-on-key-playmaker-ahead-of-matchup-with-broncos/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers spent the week sweating out WR Mike Evans' rib injury from the Cardinals game, but their top target just got some good news.",
+      "categories": [
+        "San Francisco 49ers News",
+        "American Football",
+        "Brandin Cooks",
+        "Brock Purdy",
+        "Mike evans",
+        "San Francisco 49ers"
+      ],
+      "published_at": "2026-10-04T19:16:28+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "bb493fb85df60ae751a9",
+      "headline": "Chargers reveal Week 4 inactives vs. Seahawks",
+      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-news/65977/chargers-reveal-week-4-inactives-vs-seahawks",
+      "source_id": "news_sbn_lac",
+      "source": "Bolts From The Blue (SB Nation)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "The Los Angeles Chargers are getting ready for their Week 4 matchup against the Seattle Seahawks at Lumen Field in the Pacific Northwest. While most of the players are getting ready, a few members of the team will be on the inactive list. Defensive back Derwin James (hamstring), quarterback DJ Uiagalelei (emergency third QB), offensive [\u2026]",
+      "categories": [
+        "Los Angeles Chargers Injuries",
+        "Los Angeles Chargers News",
+        "Los Angeles Chargers Roster"
+      ],
+      "published_at": "2026-10-04T19:10:38+00:00",
+      "players": [
+        {
+          "id": "00-0040464",
+          "name": "DJ Uiagalelei",
+          "team": "LAC",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "1adaaa8d2250dca7918f",
+      "headline": "Ravens QB Lamar Jackson Questionable To Return In Second Half With Ankle Injury",
+      "url": "https://www.si.com/nfl/ravens/onsi/ravens-qb-lamar-jackson-questionable-to-return-in-second-half-with-ankle-injury-01m444gymsr5",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "While the Ravens did not rule Jackson out, it would be very surprising if he returned on a rainy day with a big lead. Starters Marlon Humphrey, Andrew Vorhees and Durham Smythe were ruled out",
+      "categories": [],
+      "published_at": "2026-10-04T19:07:43+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        },
+        {
+          "id": "00-0034798",
+          "name": "Durham Smythe",
+          "team": "BAL",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "af9daad37ddb0089bf2d",
+      "headline": "Complete Chiefs Inactives for Week 4 vs. Raiders: Who's In, Who's Out?",
+      "url": "https://www.si.com/nfl/chiefs/onsi/complete-chiefs-inactives-week-4-vs-raiders-whos-in-whos-out",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "The Kansas City Chiefs and Las Vegas Raiders have decided who's playing in Week 4's clash. KC's inactives are headlined by the continued absence of a top starter.",
+      "categories": [],
+      "published_at": "2026-10-04T19:03:14+00:00",
+      "players": []
+    },
+    {
+      "id": "0fa232a5cf751de480a1",
+      "headline": "Patriots leading receiver leaves Bills game with injury",
+      "url": "https://www.patspulpit.com/new-england-patriots-injuries/139432/patriots-leading-receiver-leaves-bills-game-with-injury",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "New England Patriots wide receiver Mack Hollins is questionable to return to Sunday\u2019s game with a calf injury. The injury came on the Patriots opening drive of the second half on an incomplete pass on the opposite side of the field. Hollins was not contacted on the play and hopped to the sideline before departing [\u2026]",
+      "categories": [
+        "New England Patriots Injuries"
+      ],
+      "published_at": "2026-10-04T19:02:58+00:00",
+      "players": [
+        {
+          "id": "00-0033555",
+          "name": "Mack Hollins",
+          "team": "NE",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "76dcca31c3dda1d96b86",
+      "headline": "Chiefs-Raiders Inactives: rookie defensive back Jadon Canady scratched",
+      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-injuries/190707/chiefs-raiders-inactives-rookie-defensive-back-jadon-canady-scratched",
+      "source_id": "news_sbn_kc",
+      "source": "Arrowhead Pride (SB Nation)",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "The Kansas City Chiefs have released their list of inactive players for Sunday\u2019s game against the Las Vegas Raiders. The Chiefs will play without tackles Josh Simmons and Diego Pounds, defensive end Jack Pyburn, tight end Jared Wiley, and cornerback Jadon Canady. Garrett Nussmeier has the third quarterback designation, enabling him to enter the game [\u2026]",
+      "categories": [
+        "Kansas City Chiefs Injuries",
+        "Kansas City Chiefs News",
+        "Kansas City Chiefs Roster"
+      ],
+      "published_at": "2026-10-04T19:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039824",
+          "name": "Jared Wiley",
+          "team": "KC",
+          "position": "TE"
+        },
+        {
+          "id": "00-0040906",
+          "name": "Garrett Nussmeier",
+          "team": "KC",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "1648dca932f530ba2648",
+      "headline": "Dan Quinn: The goal is to have Jayden Daniels start vs the Giants",
+      "url": "https://www.hogshaven.com/pressers/444616/dan-quinn-goal-have-jayden-daniels-start-vs-giants",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Washington Commanders jumped out to a 6-0 lead over the Indianapolis Colts, taking advantage of some early turnovers. The game quickly turned when QB Marcus Mariota left the game with a knee injury. Dan Quinn told Molly McGrath during the broadcast that the team believes Mariota re-injured the MCL he had injured during the [\u2026]",
+      "categories": [
+        "Pressers",
+        "Washington Commanders News"
+      ],
+      "published_at": "2026-10-04T19:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0032268",
+          "name": "Marcus Mariota",
+          "team": "WAS",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "3224f8e48cf4a95fe6cc",
+      "headline": "Broncos vs. 49ers gameday inactives for Week 4",
+      "url": "https://www.milehighreport.com/denver-broncos-injuries/187451/broncos-vs-49ers-gameday-inactives-week-4",
+      "source_id": "news_sbn_den",
+      "source": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Denver Broncos mostly got healthy this week to take on the San Francisco 49ers which makes the inactives list rather straight-forward and a lot like what we say ahead of Week 1. They\u2019ll be without edge rusher Deondrea Tillman, but everyone else are guys that you\u2019d expect to see on the list week-to-week. Big [\u2026]",
+      "categories": [
+        "Denver Broncos Injuries"
+      ],
+      "published_at": "2026-10-04T18:59:10+00:00",
+      "players": []
+    },
+    {
+      "id": "bc30cb9582f826662e53",
+      "headline": "Lamar Jackson Suffers Ankle Injury vs. Titans",
+      "url": "https://www.baltimoreravens.com/news/lamar-jackson-ankle-injury-ravens-titans-tyler-huntley",
+      "source_id": "news_official_bal",
+      "source": "Baltimore Ravens (official)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "Tyler Huntley entered the game at the start of the second half against the Titans.",
+      "categories": [
+        "General",
+        "Ryan Mink",
+        "2026 Week 4",
+        "2026 Week 4 News",
+        "Tennessee Titans at Baltimore Ravens (2026-REG-4)",
+        "inline-news",
+        "Lamar Jackson",
+        "Homepage Latest Headlines"
+      ],
+      "published_at": "2026-10-04T18:56:21+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035993",
+          "name": "Tyler Huntley",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "c4124083970a46cb56a0",
+      "headline": "Ty Okada remains out as Julian Love returns to Seahawks secondary",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-news/176416/ty-okada-remains-out-as-julian-love-returns-to-seattle-seahawks-secondary-chargers-week-4",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks return to the friendly confines of Lumen Field to host the winless Los Angeles Chargers in Week 4 after having fallen to the previously-winless Washington Commanders on the road in Week 3. When Seattle takes to the field they will be without their first round pick Jadarian Price, who landed on injured [\u2026]",
+      "categories": [
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-10-04T18:55:56+00:00",
+      "players": [
+        {
+          "id": "00-0041512",
+          "name": "Jadarian Price",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "ef77abf2aa4985d51861",
+      "headline": "Chargers-Seahawks Week 4 Inactives: Derwin James Out, Ladd McConkey Will Play in Seattle",
+      "url": "https://www.chargers.com/news/seahawks-week-4-inactives-derwin-james",
+      "source_id": "news_official_lac",
+      "source": "Los Angeles Chargers (official)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "Here is who won't play Sunday for the Chargers against Seattle",
+      "categories": [
+        "Articles: Injury Report",
+        "Homepage: CP",
+        "Homepage: Headlines",
+        "App: Homepage",
+        "Los Angeles Chargers at Seattle Seahawks (2026-REG-4)",
+        "2026-REG-4-EDITORIAL"
+      ],
+      "published_at": "2026-10-04T18:55:46+00:00",
+      "players": [
+        {
+          "id": "00-0039915",
+          "name": "Ladd McConkey",
+          "team": "LAC",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "09201153ae9f1361c30d",
+      "headline": "Broncos announce inactives for Week 4 game vs. 49ers",
+      "url": "https://www.denverbroncos.com/news/broncos-announce-inactives-for-week-4-game-vs-49ers",
+      "source_id": "news_official_den",
+      "source": "Denver Broncos (official)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Broncos have released their list of five inactive players ahead of Sunday\u2019s game vs. the 49ers.",
+      "categories": [
+        "Top Stories",
+        "Aric DiLalla",
+        "Game Day",
+        "Inactives",
+        "Denver Broncos at San Francisco 49ers (2026-REG-4)"
+      ],
+      "published_at": "2026-10-04T18:55:04+00:00",
+      "players": []
+    },
+    {
+      "id": "ad545eae283222c3e296",
+      "headline": "Las Vegas Raiders Week 4 Inactives vs. Kansas City Chiefs",
+      "url": "https://www.raiders.com/news/las-vegas-raiders-week-4-inactives-vs-kansas-city-chiefs-100426",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Before the Raiders take the field for Week 4, view the inactive players for today's game.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Inactives",
+        "Kansas City Chiefs at Las Vegas Raiders (2026-REG-4)"
+      ],
+      "published_at": "2026-10-04T18:55:00+00:00",
+      "players": []
+    },
+    {
+      "id": "0ae0c88b1a416a125b6a",
+      "headline": "Romello Height, Mike Evans, and More Available vs. Broncos; Inactives for Week 4 #DENvsSF",
+      "url": "https://www.49ers.com/news/romello-height-mike-evans-and-more-available-vs-broncos-inactives-for-week-4-denvssf",
+      "source_id": "news_official_sf",
+      "source": "San Francisco 49ers (official)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Take a look at players who have been ruled out for the San Francisco 49ers Week 4 matchup versus the Denver Broncos.",
+      "categories": [
+        "Inactives",
+        "Latest App",
+        "English",
+        "English Articles",
+        "News",
+        "Sutter Health",
+        "Brooke Evans",
+        "Denver Broncos at San Francisco 49ers (2026-REG-4)"
+      ],
+      "published_at": "2026-10-04T18:54:43+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "f5775ed6e5b2db03a3a9",
+      "headline": "Seahawks vs. Chargers Week 4 Inactives",
+      "url": "https://www.seahawks.com/news/seahawks-vs-chargers-week-4-inactives",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seahawks will again be without starting safety Ty Okada, as well as linebacker Chazz Surratt, who are inactive after being listed questionable on Friday\u2019s injury report.",
+      "categories": [
+        "News: Stories",
+        "News: National Feature",
+        "Los Angeles Chargers at Seattle Seahawks (2026-REG-4)",
+        "Homepage Hero",
+        "Homepage Top Headlines"
+      ],
+      "published_at": "2026-10-04T18:54:33+00:00",
+      "players": []
+    },
+    {
+      "id": "41353d30bb328e3e29d9",
+      "headline": "Dolphins vs. Vikings inactive players: Justin Jefferson, Caleb Douglas headline unavailable players",
+      "url": "https://www.thephinsider.com/miami-dolphins-injuries/123397/dolphins-vs-vikings-inactive-players-justin-jefferson-caleb-douglas-headline-unavailable-players",
+      "source_id": "news_sbn_mia",
+      "source": "The Phinsider (SB Nation)",
+      "teams": [
+        "MIA"
+      ],
+      "feed_description": "The Miami Dolphins and Minnesota Vikings kick off a Week 4 showdown at 4:05 p.m. Eastern this afternoon. Both teams have released their inactive player lists for the game, dropping down to the league-mandated 48-man gameday roster limit. Miami\u2019s inactives include wide receiver Caleb Douglas and edge rusher Robert Beal Jr., both listed as out [\u2026]",
+      "categories": [
+        "Miami Dolphins game information",
+        "Miami Dolphins Injuries"
+      ],
+      "published_at": "2026-10-04T18:52:54+00:00",
+      "players": [
+        {
+          "id": "00-0041523",
+          "name": "Caleb Douglas",
+          "team": "MIA",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "f44418dc5ba2a26c3a26",
+      "headline": "Dan Quinn delivers concerning Marcus Mariota injury update that leaves Commanders stuck in quarterback limbo",
+      "url": "https://atozsports.com/nfl/washington-commanders-news/dan-quinn-marcus-mariota-injury-update-commanders-week-4-loss/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Washington's quarterback room took another hit in London, and the questions now stretch from Jayden Daniels all the way down to the third-stringer.",
+      "categories": [
+        "Washington Commanders News",
+        "Commanders",
+        "Dan Quinn",
+        "Jayden Daniels",
+        "marcus mariota",
+        "Washington Commanders"
+      ],
+      "published_at": "2026-10-04T18:46:58+00:00",
+      "players": [
+        {
+          "id": "00-0032268",
+          "name": "Marcus Mariota",
+          "team": "WAS",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "5115482a9f3d707c4296",
+      "headline": "DJ Moore injury update: Bills star receiver doubtful to return after aggravating shoulder injury vs. Patriots",
+      "url": "https://atozsports.com/nfl/buffalo-bills-news/dj-moore-injury-update-bills-star-receiver-questionable-to-return-after-aggravating-shoulder-injury-vs-patriots/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills were locked in a tight battle with the New England Patriots when Josh Allen's top target went down on a scramble drill near the sideline. DJ Moore is currently doubtful to return.",
+      "categories": [
+        "Buffalo Bills News",
+        "American Football",
+        "Buffalo Bills",
+        "DJ Moore",
+        "Josh Allen",
+        "New England Patriots"
+      ],
+      "published_at": "2026-10-04T18:46:44+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0034857",
+          "name": "Josh Allen",
+          "team": "BUF",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "d074b724fad4b7aae38d",
+      "headline": "Vikings and Dolphins Inactives for Week 4 of 2026",
+      "url": "https://www.vikings.com/news/vikings-dolphins-inactives-week-4-2026-nfl-season",
+      "source_id": "news_official_min",
+      "source": "Minnesota Vikings (official)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "",
+      "categories": [
+        "News - Index",
+        "News - Team",
+        "Inactives",
+        "Miami Dolphins at Minnesota Vikings (2026-REG-4)",
+        "dolphins-at-vikings-2026-reg-4"
+      ],
+      "published_at": "2026-10-04T18:35:07+00:00",
+      "players": []
+    },
+    {
+      "id": "659ff0e3a62e44a68793",
+      "headline": "Bills issue injury update on WR DJ Moore vs. Patriots Week 4",
+      "url": "https://www.buffalobills.com/news/bills-issue-injury-update-on-wr-dj-moore-vs-patriots-week-4",
+      "source_id": "news_official_buf",
+      "source": "Buffalo Bills (official)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Moore left the game late in the second quarter",
+      "categories": [],
+      "published_at": "2026-10-04T18:22:41+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "0c21e75c423437e8abd8",
+      "headline": "DJ Moore Injury Update: Latest News on Bills WR's Status in Week 4 Game",
+      "url": "https://www.si.com/nfl/bills/onsi/dj-moore-injury-update-news-bills-status-week-4-game",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Buffalo Bills wide receiver DJ Moore was shaken up in the first half of the Week 4 game against the Los Angeles Chargers.",
+      "categories": [],
+      "published_at": "2026-10-04T18:20:13+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "6cd3d470be83351ba3b4",
+      "headline": "Saquon Barkley injury: Eagles running back ruled out against Rams",
+      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/185411/saquon-barkley-injury-eagles-running-back-injures-hamstring-against-rams",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Eagles already have a long list of injured players, and it may have gotten a little longer early on against the Rams, with Saquon Barkley going down on the first play of their second drive. The running back carried the ball for six yards out of bounds, but appeared to slip or pull up [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries",
+        "Philadelphia Eagles News"
+      ],
+      "published_at": "2026-10-04T18:17:23+00:00",
+      "players": [
+        {
+          "id": "00-0034844",
+          "name": "Saquon Barkley",
+          "team": "PHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "04579b7e658242e6453f",
+      "headline": "Commanders injury update: Marcus Mariota dealing with knee injury",
+      "url": "https://www.hogshaven.com/washington-commanders-news/446176/commanders-injury-update-marcus-mariota-knee-colts-jayden-daniels",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Jayden Daniels was formally ruled out of Sunday\u2019s game against the Indianapolis Colts, yet they felt good about their quarterback situation. That was due to veteran backup, Marcus Mariota, a proven commodity capable of winning games at this level. We saw proof of that last week, when he was darn near perfect in a [\u2026]",
+      "categories": [
+        "Washington Commanders News"
+      ],
+      "published_at": "2026-10-04T18:13:03+00:00",
+      "players": [
+        {
+          "id": "00-0032268",
+          "name": "Marcus Mariota",
+          "team": "WAS",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "f146860ca251df64dd64",
+      "headline": "Ja'Marr Chase Leaves Game With Jaguars Due to Injury",
+      "url": "https://www.si.com/nfl/bengals/onsi/ja-marr-chase-suffers-head-injury-against-jaguars-leaves-afc-action-01m440x4ys5v",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "Cincinnati Bengals Star Ja'Marr Chase Suffers Head Injury Against Jaguars, Leaves AFC Action",
+      "categories": [],
+      "published_at": "2026-10-04T18:00:51+00:00",
+      "players": [
+        {
+          "id": "00-0036900",
+          "name": "Ja'Marr Chase",
+          "team": "CIN",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "6bf1e6b405f8462f455d",
       "headline": "Ja\u2019Marr Chase Injury: Update on Bengals star receiver after scary tackle takes him out vs. Jaguars",
@@ -632,30 +1316,6 @@
           "id": "00-0041512",
           "name": "Jadarian Price",
           "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "6cd3d470be83351ba3b4",
-      "headline": "Saquon Barkley injury: Eagles running back injures hamstring against Rams",
-      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/185411/saquon-barkley-injury-eagles-running-back-injures-hamstring-against-rams",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Eagles already have a long list of injured players, and it may have gotten a little longer early on against the Rams, with Saquon Barkley going down on the first play of their second drive. The running back carried the ball for six yards out of bounds, but appeared to slip or pull up [\u2026]",
-      "categories": [
-        "Philadelphia Eagles injuries",
-        "Philadelphia Eagles News"
-      ],
-      "published_at": "2026-10-04T17:21:57+00:00",
-      "players": [
-        {
-          "id": "00-0034844",
-          "name": "Saquon Barkley",
-          "team": "PHI",
           "position": "RB"
         }
       ]
@@ -3328,633 +3988,6 @@
       ],
       "published_at": "2026-10-02T19:45:00+00:00",
       "players": []
-    },
-    {
-      "id": "4c2617efeac1ee8aa04a",
-      "headline": "Buccaneers-Packers Injury Report Oct.2: Morrison, Mayfield, Bain and Kieft Ruled Out",
-      "url": "https://www.buccaneers.com/news/buccaneers-packers-injury-report-oct-2-week-4-2026",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "A look at Friday's injury report ahead of the Week 4 matchup",
-      "categories": [
-        "Featured",
-        "Injury Report",
-        "Week 4 2026 Packers"
-      ],
-      "published_at": "2026-10-02T19:37:10+00:00",
-      "players": []
-    },
-    {
-      "id": "fc38d7d0a57ac5a77646",
-      "headline": "Packers rule out four, list two questionable vs. Buccaneers | Week 4 Injury Report",
-      "url": "https://www.packers.com/news/packers-rule-out-four-list-two-questionable-vs-buccaneers-week-4-injury-report",
-      "source_id": "news_official_gb",
-      "source": "Green Bay Packers (official)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "OL Aaron Banks, Jacob Monk ruled out; LB Edgerrin Cooper questionable for Sunday",
-      "categories": [
-        "News: Injury Report",
-        "News: National Feature",
-        "Homepage CP",
-        "News: All News",
-        "Green Bay Packers at Tampa Bay Buccaneers (2026-REG-4)"
-      ],
-      "published_at": "2026-10-02T19:34:54+00:00",
-      "players": []
-    },
-    {
-      "id": "6d40b449ea76a8bb4bfd",
-      "headline": "Bears vs. Jets Injury Report: Braxton Jones out for Chicago, N.Y. down 4 starters",
-      "url": "https://www.windycitygridiron.com/chicago-bears-injuries/124262/bears-vs-jets-injury-report-braxton-jones-out-for-chicago-n-y-down-4-starters",
-      "source_id": "news_sbn_chi",
-      "source": "Windy City Gridiron (SB Nation)",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Chicago Bears and New York Jets meet on Sunday in the Windy City, and both teams will be without key contributors. No surprise that Caleb Williams will miss his second consecutive game with his hamstring injury, but head coach Ben Johnson did not name a starting quarterback. \u201cI don\u2019t necessarily know there is a [\u2026]",
-      "categories": [
-        "Chicago Bears Injuries"
-      ],
-      "published_at": "2026-10-02T19:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "1656817e547415add7e4",
-      "headline": "Kansas City Chiefs\u2019 final injury report confirms veteran defender will make his 2026 debut in Week 4 vs. Las Vegas Raiders",
-      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-final-injury-report-week-4-raiders-friday-chamarri-conner/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs released their final injury report for Week 4 vs. the Las Vegas Raiders, complete with game status designations.",
-      "categories": [
-        "Kansas City Chiefs News",
-        "Brock Bowers",
-        "Chamarri Conner",
-        "Chiefs Injuries",
-        "Chris Jones",
-        "Jackson Powers-Johnson",
-        "Josh Simmons",
-        "Kansas City Chiefs",
-        "Las Vegas Raiders"
-      ],
-      "published_at": "2026-10-02T19:28:45+00:00",
-      "players": []
-    },
-    {
-      "id": "35ebfdb708c5cc46af7a",
-      "headline": "Patriots vs. Bills Friday injury report: Christian Gonzalez, Christian Barmore out for Week 4",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/139234/patriots-vs-bills-friday-injury-report-christian-gonzalez-christian-barmore-out",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Shoulder injuries will keep the New England Patriots shorthanded in Orchard Park. Cornerback Christian Gonzalez and defensive tackle Christian Barmore have been ruled out for the AFC East opener versus the unbeaten Buffalo Bills, as head coach Mike Vrabel announced during his Friday press conference. Both extended starters remained sidelined for three straight practices in [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-10-02T19:28:14+00:00",
-      "players": []
-    },
-    {
-      "id": "b698f194b620946770aa",
-      "headline": "Raiders-Chiefs Week 4 Injury Report: Jackson Powers-Johnson ruled out for Sunday",
-      "url": "https://www.raiders.com/news/las-vegas-raiders-kansas-city-chiefs-week-4-injury-report-2026-season-nfl",
-      "source_id": "news_official_lv",
-      "source": "Las Vegas Raiders (official)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the Kansas City Chiefs.",
-      "categories": [
-        "Home Centerpiece",
-        "Home Latest Stories",
-        "News - Injury Report",
-        "Kansas City Chiefs at Las Vegas Raiders (2026-REG-4)"
-      ],
-      "published_at": "2026-10-02T19:20:00+00:00",
-      "players": []
-    },
-    {
-      "id": "69a347a6c51be52f22f7",
-      "headline": "Caleb Williams, D'Andre Swift Injury Updates From Bears' Final Week 4 Practice Report",
-      "url": "https://www.si.com/nfl/bears/onsi/caleb-williams-d-andre-swift-injury-updates-bears-final-week-4-practice-report",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Check out the latest injury updates on D'Andre Swift, Caleb Williams and more from the Chicago Bears' final Week 4 practice report.",
-      "categories": [],
-      "published_at": "2026-10-02T19:10:05+00:00",
-      "players": [
-        {
-          "id": "00-0036275",
-          "name": "D'Andre Swift",
-          "team": "CHI",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "3cb04d569209dd356783",
-      "headline": "Panthers Mailbag: Injuries Keep Piling Up, Bryce Young Keeps Improving & What Is This Team?",
-      "url": "https://www.si.com/nfl/panthers/onsi/panthers-mailbag-injuries-keep-piling-bryce-young-keeps-improving-what-team",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "he Panthers' injuries keep piling up, Bryce Young is showing progress and Carolina remains hard to figure out heading into Week 4 against Detroit.",
-      "categories": [],
-      "published_at": "2026-10-02T19:00:02+00:00",
-      "players": [
-        {
-          "id": "00-0039150",
-          "name": "Bryce Young",
-          "team": "CAR",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "f39c84c00bc5b2908f1c",
-      "headline": "Panthers Injury Report & Transactions \u2013 Week 4",
-      "url": "https://www.catscratchreader.com/carolina-panthers-injuries/61316/panthers-injury-report-transactions-week-4",
-      "source_id": "news_sbn_car",
-      "source": "Cat Scratch Reader (SB Nation)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Carolina Panthers front office is busy throughout the season with transactions, roster moves, and injury updates. Here\u2019s what\u2019s happening at Mint Street this week. Injuries While the injuries to cornerbacks Jaycee Horn and Mike Jackson, both of whom have been moved to injured reserve, don\u2019t appear on this week\u2019s formal injury report, there are [\u2026]",
-      "categories": [
-        "Carolina Panthers Injuries",
-        "Carolina Panthers Roster"
-      ],
-      "published_at": "2026-10-02T19:00:00+00:00",
-      "players": []
-    },
-    {
-      "id": "a14bdc353394ab43e439",
-      "headline": "Browns' offense leans on preparation from practice during game-winning drive",
-      "url": "https://www.clevelandbrowns.com/news/browns-offense-leans-on-preparation-from-practice-during-game-winning-drive",
-      "source_id": "news_official_cle",
-      "source": "Cleveland Browns (official)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "Deshaun Watson led the Browns 36 yards to set up the game-winning field goal against the Steelers",
-      "categories": [
-        "Team Coverage",
-        "adpartner=team_coverage_article",
-        "featured"
-      ],
-      "published_at": "2026-10-02T19:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0033537",
-          "name": "Deshaun Watson",
-          "team": "CLE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "03cae2e205d3952f7c83",
-      "headline": "Chiefs-Raiders Week 4 Friday injury report: Raiders starting guard out",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-injuries/211975/chiefs-raiders-week-4-friday-injury-report-raiders-starting-guard-out",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Each practice day this season, the Kansas City Chiefs release an official injury report ahead of the next game. In Week 4, the Chiefs hit the road to play the Las Vegas Raiders on Sunday afternoon. Here is the Chiefs\u2019 final official injury report of the week, courtesy of the team\u2019s official website: Chiefs The following [\u2026]",
-      "categories": [
-        "Kansas City Chiefs Injuries",
-        "Kansas City Chiefs News"
-      ],
-      "published_at": "2026-10-02T19:00:00+00:00",
-      "players": []
-    },
-    {
-      "id": "a4e1224e3bf41593179c",
-      "headline": "Week 4 Injury Report | Chiefs vs. Raiders",
-      "url": "https://www.chiefs.com/news/week-4-injury-report-chiefs-vs-raiders-2026",
-      "source_id": "news_official_kc",
-      "source": "Kansas City Chiefs (official)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Injuries for the Chiefs Week 4 matchup against the Las Vegas Raiders",
-      "categories": [
-        "Injury Report",
-        "all-content",
-        "Kansas City Chiefs at Las Vegas Raiders (2026-REG-4)"
-      ],
-      "published_at": "2026-10-02T18:57:00+00:00",
-      "players": []
-    },
-    {
-      "id": "aff24e97d1172b0dfd36",
-      "headline": "Justin Jefferson Injury Update: Vikings reveal status for Sunday, and here\u2019s what it means",
-      "url": "https://atozsports.com/nfl/minnesota-vikings-news/justin-jefferson-injury-update-vikings-reveal-status-for-sunday-and-heres-what-it-means/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Vikings have ruled Justin Jefferson as out for Sunday's game against the Miami Dolphins, and it's better that they know now.",
-      "categories": [
-        "Minnesota Vikings News",
-        "NFL",
-        "Jordan Addison",
-        "Justin Jefferson",
-        "Justin Jefferson Injury",
-        "Kevin O'Connell",
-        "Minnesota Vikings",
-        "Vikings Injury Report"
-      ],
-      "published_at": "2026-10-02T18:54:56+00:00",
-      "players": [
-        {
-          "id": "00-0036322",
-          "name": "Justin Jefferson",
-          "team": "MIN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "e77de02b3ac84d621a9b",
-      "headline": "Ben Johnson eases concerns about D\u2019Andre Swift\u2019s status, provides minor QB update, and reacts to Kyler Gordon\u2019s return to practice",
-      "url": "https://atozsports.com/nfl/chicago-bears-news/bears-ben-johnson-dandre-swift-kyler-gordon-tyson-bagent/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears head coach Ben Johnson provided multiple key updates heading into the team's Week 4 matchup against the New York Jets.",
-      "categories": [
-        "Chicago Bears News",
-        "NFL",
-        "Ben Johnson",
-        "Caleb Williams",
-        "Case Keenum",
-        "D'Andre Swift",
-        "Kyler Gordon",
-        "Tyson Bagent"
-      ],
-      "published_at": "2026-10-02T18:44:08+00:00",
-      "players": [
-        {
-          "id": "00-0036275",
-          "name": "D'Andre Swift",
-          "team": "CHI",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "28128abe2e445506bb96",
-      "headline": "Aaron Donald ruled out for Week 4 against Eagles",
-      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/150538/aaron-donald-ruled-out-eagles-injury",
-      "source_id": "news_sbn_lar",
-      "source": "Turf Show Times (SB Nation)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Los Angeles Rams have ruled out defensive tackle Aaron Donald for Week 4\u2019s game against the Philadelphia Eagles with a back injury, but they do believe that Puka Nacua will return. Unfortunately, the super duo of Myles Garrett and Donald has yet to actually play together this season and now they won\u2019t have either [\u2026]",
-      "categories": [
-        "Los Angeles Rams Injuries"
-      ],
-      "published_at": "2026-10-02T18:43:06+00:00",
-      "players": [
-        {
-          "id": "00-0039075",
-          "name": "Puka Nacua",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "8dfdf986985d9ea8b600",
-      "headline": "Final Vikings vs. Dolphins Injury Report for Week 4 of 2026: Justin Jefferson Ruled Out",
-      "url": "https://www.vikings.com/news/dolphins-injury-report-week-4-2026-nfl-season",
-      "source_id": "news_official_min",
-      "source": "Minnesota Vikings (official)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "",
-      "categories": [
-        "News - Injury Report",
-        "Injury Report",
-        "News - Team",
-        "News - Index",
-        "dolphins-at-vikings-2026-reg-4",
-        "Miami Dolphins at Minnesota Vikings (2026-REG-4)"
-      ],
-      "published_at": "2026-10-02T18:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0036322",
-          "name": "Justin Jefferson",
-          "team": "MIN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "e9d51e6c4c206d5cf619",
-      "headline": "Buffalo Bills Injury Report vs. Patriots Week 4",
-      "url": "https://www.buffalobills.com/news/buffalo-bills-injury-report-vs-patriots-week-4",
-      "source_id": "news_official_buf",
-      "source": "Buffalo Bills (official)",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "Christian Benford did not practice during the week and is questionable for Week 4",
-      "categories": [
-        "INJURY REPORT"
-      ],
-      "published_at": "2026-10-02T18:08:08+00:00",
-      "players": []
-    },
-    {
-      "id": "f9f3eab8e82bdd5260cf",
-      "headline": "Jalen Coker's Week 4 Game Designation Confirmed on Panthers' Final Injury Report",
-      "url": "https://www.si.com/nfl/panthers/onsi/jalen-coker-week-4-game-designation-panthers-final-injury-report",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "Here's the Carolina Panthers' final Week 4 injury report, complete with designations for wide receiver Jalen Coker and others.",
-      "categories": [],
-      "published_at": "2026-10-02T17:27:38+00:00",
-      "players": [
-        {
-          "id": "00-0039491",
-          "name": "Jalen Coker",
-          "team": "CAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "699c18ac26527a1a7c27",
-      "headline": "Rams Make Major Change on Special Teams, Cut Xavier Smith",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-cut-xavier-smith-special-teams-change",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Los Angeles Rams made a major change on special teams, cutting punt returner Xavier Smith after an inconsistent start to the season.",
-      "categories": [],
-      "published_at": "2026-10-02T17:26:17+00:00",
-      "players": [
-        {
-          "id": "00-0038359",
-          "name": "Xavier Smith",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "5646f3126bb7f23ee80d",
-      "headline": "Game prep a group effort for Bears quarterbacks",
-      "url": "https://www.chicagobears.com/news/game-prep-a-group-effort-for-bears-quarterbacks",
-      "source_id": "news_official_chi",
-      "source": "Chicago Bears (official)",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Bears have not yet announced their starting quarterback for Sunday\u2019s game against the Jets, but both Tyson Bagent and Case Keenum will be ready if called upon because they\u2019re helping each other prepare for the opportunity.",
-      "categories": [
-        "Tyson Bagent",
-        "Case Keenum"
-      ],
-      "published_at": "2026-10-02T17:16:00+00:00",
-      "players": [
-        {
-          "id": "00-0028986",
-          "name": "Case Keenum",
-          "team": "CHI",
-          "position": "QB"
-        },
-        {
-          "id": "00-0038416",
-          "name": "Tyson Bagent",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "5eab9bac7a08bfe81499",
-      "headline": "Commanders vs. Colts injury report: Terry McLaurin questionable",
-      "url": "https://www.hogshaven.com/washington-commanders-injuries/445819/commanders-colts-injury-report-terry-mclaurin-chig-okonkwo-frankie-luvu-jayden-daniels-rachaad-white",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Commanders didn\u2019t even wait for their formal injury report to announce the return of some key starters. Head coach Dan Quinn said that linebacker Frankie Luvu (groin) and tight end Chig Okonkwo (hamstring) will play on Sunday against the Indianapolis Colts at Tottenham Hotspur Stadium in London. That\u2019s a huge win for Washington, getting [\u2026]",
-      "categories": [
-        "Washington Commanders Injuries"
-      ],
-      "published_at": "2026-10-02T17:10:48+00:00",
-      "players": [
-        {
-          "id": "00-0035659",
-          "name": "Terry McLaurin",
-          "team": "WAS",
-          "position": "WR"
-        },
-        {
-          "id": "00-0037809",
-          "name": "Chig Okonkwo",
-          "team": "WAS",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "13256cd74006b991747d",
-      "headline": "Caleb Williams Injury Update From Ben Johnson Confirms Bears QB's Week 4 Status",
-      "url": "https://www.si.com/nfl/bears/onsi/caleb-williams-injury-update-ben-johnson-confirms-bears-week-4-status",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears head coach Ben Johnson has confirmed the Week 4 status of quarterback Caleb Williams.",
-      "categories": [],
-      "published_at": "2026-10-02T17:04:44+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "30f9a90685a938c4646d",
-      "headline": "Carolina Panthers\u2019 final injury report gives Bryce Young concerning news on offense going into a potential shootout vs. the Lions",
-      "url": "https://atozsports.com/nfl/carolina-panthers-news/panthers-final-injury-report-week-4-lions-will-jalen-coker-play-monroe-freeling/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "Carolina Panthers QB Bryce Young shook off a knee injury and cleared the final injury report, but the players around him are facing a different story going into Sunday night's game against the Detroit Lions.",
-      "categories": [
-        "Carolina Panthers News",
-        "NFL",
-        "Bryce Young",
-        "Damien Lewis",
-        "Dave Canales",
-        "Jalen Coker",
-        "Monroe Freeling",
-        "Panthers Injury News",
-        "Panthers News",
-        "Xavier Legette"
-      ],
-      "published_at": "2026-10-02T17:02:26+00:00",
-      "players": [
-        {
-          "id": "00-0039150",
-          "name": "Bryce Young",
-          "team": "CAR",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "b78cc153ce3e31fbd5a4",
-      "headline": "Rams swoop into Philly for Week 4 clash with the Eagles | Game Preview",
-      "url": "https://www.therams.com/news/rams-swoop-into-philly-week-4-clash-with-eagles-game-preview",
-      "source_id": "news_official_lar",
-      "source": "Los Angeles Rams (official)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "J.B. Long explores the latest chapter of the Los Angeles Rams-Philadelphia Eagles rivalry, details how wide receiver Puka Nacua\u2019s return could elevate an already dynamic offense, and takes a closer look at L.A. standout cornerback Trent McDuffie.",
-      "categories": [
-        "Football",
-        "Game Preview",
-        "Los Angeles Rams at Philadelphia Eagles (2026-REG-4)",
-        "J.B. Long"
-      ],
-      "published_at": "2026-10-02T17:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039075",
-          "name": "Puka Nacua",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "9c95ec7057dd0b9fce81",
-      "headline": "Bucs Practice Buzz: Zac Robinson MUST Fix Bucs\u2019 Offense! Plus David Walker DESERVES More Snaps",
-      "url": "https://www.pewterreport.com/bucs-practice-buzz-zac-robinson/",
-      "source_id": "pewter_report",
-      "source": "Pewter Report",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "Bucs Practice Buzz is a weekly segment on Pewter Report's YouTube channel Pewter Report TV where we highlight the biggest moments and clips from the day of practice from the Advent Health Training Center. Thursday's Week 4 attention still had a lot to do about rookie quarterback Jalon Daniels, but this time through the",
-      "categories": [
-        "Articles",
-        "Featured"
-      ],
-      "published_at": "2026-10-02T16:44:27+00:00",
-      "players": [
-        {
-          "id": "00-0041251",
-          "name": "Jalon Daniels",
-          "team": "TB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "93526ccf157e62155050",
-      "headline": "Rams waive Xavier Smith",
-      "url": "https://www.turfshowtimes.com/los-angeles-rams-news/150500/rams-waive-xavier-smith",
-      "source_id": "news_sbn_lar",
-      "source": "Turf Show Times (SB Nation)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Los Angeles Rams waived receiver and punt returner Xavier Smith on Friday, eight months after his muffed punt in the NFC Championship game may have cost the team a trip to the Super Bowl. Smith was retained after the playoffs and kept on the 53-man roster, but Sean McVay has seemingly seen enough and [\u2026]",
-      "categories": [
-        "Los Angeles Rams News",
-        "Los Angeles Rams Roster"
-      ],
-      "published_at": "2026-10-02T16:44:21+00:00",
-      "players": [
-        {
-          "id": "00-0038359",
-          "name": "Xavier Smith",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "fa5249cb3200ca1e8e45",
-      "headline": "Week 4 Friday Injury Report: Two ruled out for Lions game",
-      "url": "https://www.panthers.com/news/week-4-friday-injury-report-two-ruled-out-for-lions-game-xavier-legette-damien-lewis-questionable-jalen-coker",
-      "source_id": "news_official_car",
-      "source": "Carolina Panthers (official)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Panthers will be without wide receiver Xavier Legette and left guard Damien Lewis this week, and they have a lot of questions to answer between now and kickoff against the Lions",
-      "categories": [
-        "Injury Reports",
-        "Latest News",
-        "App News",
-        "Carolina Panthers at Cleveland Browns (2026-REG-3)"
-      ],
-      "published_at": "2026-10-02T16:30:06+00:00",
-      "players": [
-        {
-          "id": "00-0039342",
-          "name": "Xavier Legette",
-          "team": "CAR",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
