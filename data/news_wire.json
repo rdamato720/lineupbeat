@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T12:00:44.927395+00:00",
+  "updated_at": "2026-10-04T12:21:06.023576+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-04T11:45:00+00:00",
+      "latest_entry_at": "2026-10-04T12:21:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-04T11:56:03+00:00",
+      "latest_entry_at": "2026-10-04T12:18:36+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-03T20:16:56+00:00",
+      "latest_entry_at": "2026-10-04T12:00:00+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-04T04:01:00+00:00",
+      "latest_entry_at": "2026-10-04T12:02:05+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T11:45:00+00:00",
+      "latest_entry_at": "2026-10-04T12:21:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-04T11:56:03+00:00",
+      "latest_entry_at": "2026-10-04T12:18:36+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-04T12:00:00+00:00",
+      "latest_entry_at": "2026-10-04T12:13:21+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-04T10:00:00+00:00",
+      "latest_entry_at": "2026-10-04T12:07:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T11:53:43+00:00",
+      "latest_entry_at": "2026-10-04T12:15:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-03T12:00:00+00:00",
+      "latest_entry_at": "2026-10-04T11:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,88 @@
     }
   ],
   "items": [
+    {
+      "id": "74f1dd073fd22f62a8b3",
+      "headline": "Commanders Inactives: Terry McLaurin Joins Jayden Daniels on Sideline vs. Colts",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-inactives-colts-week-4-terry-mclaurin-jayden-daniels",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Washington Commanders will be without Terry McLaurin, Jayden Daniels and several other key players against the Indianapolis Colts in London.",
+      "categories": [],
+      "published_at": "2026-10-04T12:19:14+00:00",
+      "players": [
+        {
+          "id": "00-0035659",
+          "name": "Terry McLaurin",
+          "team": "WAS",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "3df99481f52a2817a00c",
+      "headline": "Washington Commanders suffer brutal blow that makes life even harder against Indianapolis Colts in key Week 4 matchup",
+      "url": "https://atozsports.com/nfl/washington-commanders-news/will-terry-mclaurin-play-against-colts-week-4/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Washington Commanders will officially be without star wide receiver Terry McLaurin, who was ruled out with a hamstring injury heading into the team's Week 4 matchup against the Colts.",
+      "categories": [
+        "Washington Commanders News",
+        "Commanders Injury News",
+        "Commanders-Colts",
+        "Terry McLaurin"
+      ],
+      "published_at": "2026-10-04T12:18:36+00:00",
+      "players": [
+        {
+          "id": "00-0035659",
+          "name": "Terry McLaurin",
+          "team": "WAS",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "5e9a9dbc2974c0fa01d8",
+      "headline": "Washington Commanders vs Indianapolis Colts Inactives: Terry McLaurin out for London game",
+      "url": "https://www.hogshaven.com/washington-commanders-injuries/446085/washington-commanders-vs-indianapolis-colts-inactives-terry-mclaurin-out-london-game",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Washington Commanders released their final injury report for Sunday morning\u2019s game on Friday and then made two roster moves yesterday. LB Ale Kaho and RB Craig Reynolds were elevated from the practice squad. Four players were ruled out on Friday due to injuries. QB Jayden Daniels is out after dislocating his left elbow vs [\u2026]",
+      "categories": [
+        "Washington Commanders Injuries"
+      ],
+      "published_at": "2026-10-04T12:07:00+00:00",
+      "players": [
+        {
+          "id": "00-0035659",
+          "name": "Terry McLaurin",
+          "team": "WAS",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "8660748322afd0bed479",
       "headline": "NFL insider confirms suspicion surrounding Zay Flowers\u2019 injury that had him questionable heading into Titans matchup",
@@ -3935,75 +4017,6 @@
           "id": "00-0037231",
           "name": "Kevin Austin Jr.",
           "team": "NO",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "a7f4208d5739cb24e40c",
-      "headline": "Bills Thursday injury report adds new name",
-      "url": "https://www.buffalorumblings.com/buffalo-bills-injuries/141811/bills-thursday-injury-report-adds-new-name",
-      "source_id": "news_sbn_buf",
-      "source": "Buffalo Rumblings (SB Nation)",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "Today, there was plenty of good news for the Buffalo Bills. Everyone except Christian Benford was back to practice. But even better than that, every one of those players with the exception of one was out of the non-contact jersey today. Here\u2019s what changed since yesterday: Here\u2019s what didn\u2019t change: Here\u2019s what all that most likely means: Christian Benford won\u2019t suit up on [\u2026]",
-      "categories": [
-        "Buffalo Bills Injuries"
-      ],
-      "published_at": "2026-10-01T21:30:34+00:00",
-      "players": []
-    },
-    {
-      "id": "edb022a12da0cd61cd48",
-      "headline": "News & Notes: Zay Flowers Feels His Hamstring Injury Is Behind Him",
-      "url": "https://www.baltimoreravens.com/news/zay-flowers-hamstring-injury-productivity-marlon-humphrey-defensive-connectivity-kyle-hamilton-vega-ioane-help-quarterback-sneak",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Ravens are looking for more defensive \u2018connectivity.\u2019 How Baltimore plans to help Vega Ioane. Declan Doyle shares his outlook on the quarterback sneak.",
-      "categories": [
-        "News & Notes",
-        "General",
-        "Ryan Mink",
-        "Clifton Brown",
-        "Zay Flowers",
-        "2026 Week 4",
-        "2026 Week 4 News",
-        "Tennessee Titans at Baltimore Ravens (2026-REG-4)",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-10-01T21:23:59+00:00",
-      "players": [
-        {
-          "id": "00-0039064",
-          "name": "Zay Flowers",
-          "team": "BAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "3f07a4aeab0d1480d20c",
-      "headline": "What Texans WR Nico Collins Said Ahead of Potential Return vs. Cowboys",
-      "url": "https://www.si.com/nfl/texans/onsi/what-texans-wr-nico-collins-said-ahead-of-potential-return-vs-cowboys",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "Is Nico Collins finally going to be back in the Houston Texans' lineup this weekend?",
-      "categories": [],
-      "published_at": "2026-10-01T21:19:09+00:00",
-      "players": [
-        {
-          "id": "00-0036554",
-          "name": "Nico Collins",
-          "team": "HOU",
           "position": "WR"
         }
       ]
