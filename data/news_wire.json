@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T18:00:45.251754+00:00",
+  "updated_at": "2026-10-05T18:27:30.041846+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T17:41:01+00:00",
+      "latest_entry_at": "2026-10-05T18:14:38+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T17:54:28+00:00",
+      "latest_entry_at": "2026-10-05T18:12:08+00:00",
       "stale": false
     },
     {
@@ -38,15 +38,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-05T17:16:56+00:00",
+      "latest_entry_at": "2026-10-05T17:52:53+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_ari",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T22:17:00+00:00",
+      "latest_entry_at": "2026-10-05T18:08:19+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-05T17:41:01+00:00",
+      "latest_entry_at": "2026-10-05T18:14:38+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T17:54:28+00:00",
+      "latest_entry_at": "2026-10-05T18:12:08+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-05T16:00:00+00:00",
+      "latest_entry_at": "2026-10-05T18:12:17+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-05T13:25:27+00:00",
+      "latest_entry_at": "2026-10-05T17:00:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T15:58:07+00:00",
+      "latest_entry_at": "2026-10-05T18:00:53+00:00",
       "stale": false
     },
     {
@@ -430,15 +430,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T17:30:00+00:00",
+      "latest_entry_at": "2026-10-05T18:16:37+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-05T15:30:11+00:00",
+      "latest_entry_at": "2026-10-05T18:26:40+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-05T17:38:17+00:00",
+      "latest_entry_at": "2026-10-05T18:12:20+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T16:24:48+00:00",
+      "latest_entry_at": "2026-10-05T18:15:53+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T16:31:50+00:00",
+      "latest_entry_at": "2026-10-05T18:07:52+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-05T16:34:58+00:00",
+      "latest_entry_at": "2026-10-05T18:01:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,135 @@
     }
   ],
   "items": [
+    {
+      "id": "18bb653650d73536dd92",
+      "headline": "NY Giants to place KR/WR Braxton Berrios on IR, per report",
+      "url": "https://www.bigblueview.com/new-york-giants-injuries/174453/ny-giants-to-place-kr-wr-braxton-berrios-on-ir-per-report",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Braxton Berrios is being placed on injured reserve by the New York Giants after suffering a foot injury in Sunday\u2019s 36-24 victory over the Arizona Cardinals, according to a report from ESPN NFL insider Adam Schefter. It is unclear when Berrios was injured, though his last play was a late-second quarter punt return on which [\u2026]",
+      "categories": [
+        "New York Giants injuries",
+        "New York Giants News"
+      ],
+      "published_at": "2026-10-05T18:26:40+00:00",
+      "players": [
+        {
+          "id": "00-0034419",
+          "name": "Braxton Berrios",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "9e2a4d752519f4a15e20",
+      "headline": "Texans Open WR Tank Dell's Practice Window: What It Means & What's Next",
+      "url": "https://www.si.com/nfl/texans/onsi/texans-open-wr-tank-dell-s-practice-window-what-it-means-what-s-next",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "The Houston Texans appear to be one step closer to getting Tank Dell back into the lineup.",
+      "categories": [],
+      "published_at": "2026-10-05T18:12:28+00:00",
+      "players": [
+        {
+          "id": "00-0038977",
+          "name": "Tank Dell",
+          "team": "HOU",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "2e08ee5b234b82013a86",
+      "headline": "Jeremiyah Love, Tyler Allgeier, And The Snaps In New York",
+      "url": "https://www.azcardinals.com/news/jeremiyah-love-tyler-allgeier-and-the-snaps-in-new-york",
+      "source_id": "news_official_ari",
+      "source": "Arizona Cardinals (official)",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "Rookie running back 'frustrated with myself'",
+      "categories": [
+        "Darren's Blog - V2",
+        "Featured Articles",
+        "Mega Feed",
+        "Red Sea Member HQ Content",
+        "Home Page - News Headlines",
+        "Darren Urban",
+        "Jeremiyah Love",
+        "Tyler Allgeier"
+      ],
+      "published_at": "2026-10-05T18:08:19+00:00",
+      "players": [
+        {
+          "id": "00-0037263",
+          "name": "Tyler Allgeier",
+          "team": "ARI",
+          "position": "RB"
+        },
+        {
+          "id": "00-0041027",
+          "name": "Jeremiyah Love",
+          "team": "ARI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "9cde3dbd371e59c48520",
+      "headline": "Braxton Berrios Headed to IR With Foot Injury",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-braxton-berrios-injured-reserve-charlie-jones-01m46kka9rrz",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Berrios will miss at least four games with a foot injury, and Charlie Jones is believed to be the next man up as returner.",
+      "categories": [],
+      "published_at": "2026-10-05T18:05:19+00:00",
+      "players": [
+        {
+          "id": "00-0034419",
+          "name": "Braxton Berrios",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "ce55dd44f8b3f347bdc9",
+      "headline": "Commanders QB Marcus Mariota Suffers Second MCL Sprain, Expected to Miss Time",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-marcus-mariota-mcl-sprain-jayden-daniels-quarterback",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Commanders quarterback Marcus Mariota suffered his second MCL sprain of the season, putting more focus on Jayden Daniels\u2019 upcoming practice week.",
+      "categories": [],
+      "published_at": "2026-10-05T17:59:24+00:00",
+      "players": [
+        {
+          "id": "00-0032268",
+          "name": "Marcus Mariota",
+          "team": "WAS",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "de07de2759afd9dc0544",
       "headline": "Ravens Grades & Snap Counts: Trenton Simpson Is Making His Dreams a Reality",
@@ -602,6 +731,37 @@
         {
           "id": "00-0033555",
           "name": "Mack Hollins",
+          "team": "NE",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "b8ae0a5afd642128a575",
+      "headline": "Mack Hollins injury set to open door for more Efton Chism III",
+      "url": "https://www.patspulpit.com/new-england-patriots-injuries/139601/mack-hollins-injury-more-efton-chism",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots saw wide receiver Mack Hollins depart Sunday\u2019s game early with a calf injury. While the Patriots await more information to determine the severity of the injury, head coach Mike Vrabel is preparing to potentially be without the veteran in the short term. \u201cI think we\u2019ll probably know more here in a [\u2026]",
+      "categories": [
+        "New England Patriots First Read",
+        "New England Patriots Injuries",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-10-05T17:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0033555",
+          "name": "Mack Hollins",
+          "team": "NE",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040563",
+          "name": "Efton Chism III",
           "team": "NE",
           "position": "WR"
         }
@@ -4051,161 +4211,6 @@
           "name": "Geno Smith",
           "team": "NYJ",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "4c95e3af23e3bb09b708",
-      "headline": "A Year After Injury, RB Braelon Allen Has Come a Long Way",
-      "url": "https://www.newyorkjets.com/news/braelon-allen-prepared-to-play-in-breece-hall-absence-10-02-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Agent 0 Is Ready to Go If Quad Injury Sidelines Bellcow Breece Hall",
-      "categories": [
-        "Latest Headlines",
-        "News",
-        "Braelon Allen"
-      ],
-      "published_at": "2026-10-03T20:52:00+00:00",
-      "players": [
-        {
-          "id": "00-0038120",
-          "name": "Breece Hall",
-          "team": "NYJ",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039794",
-          "name": "Braelon Allen",
-          "team": "NYJ",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "6bce1a243b864189e4bc",
-      "headline": "Will Titans' Nick Singleton Finally Get His Time to Shine in Week 4?",
-      "url": "https://www.si.com/nfl/titans/onsi/will-titans-nick-singleton-finally-get-his-time-to-shine-in-week-4-01m41nn487cz",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "With Tyjae Spears listed as questionable, Week 4's matchup vs. the Ravens may be the perfect chance for Nick Singleton to finally prove his worth with the Titans.",
-      "categories": [],
-      "published_at": "2026-10-03T20:31:08+00:00",
-      "players": [
-        {
-          "id": "00-0039032",
-          "name": "Tyjae Spears",
-          "team": "TEN",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "453a8e24bcc835bcf2e4",
-      "headline": "Broncos promote FB Adam Prentice to active roster",
-      "url": "https://www.denverbroncos.com/news/broncos-promote-fb-adam-prentice-to-active-roster-x4028",
-      "source_id": "news_official_den",
-      "source": "Denver Broncos (official)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "The Broncos have added a veteran player to their active roster.",
-      "categories": [
-        "Transactions",
-        "Top Stories",
-        "Aric DiLalla",
-        "Adam Prentice",
-        "Denver Broncos at San Francisco 49ers (2026-REG-4)"
-      ],
-      "published_at": "2026-10-03T20:29:36+00:00",
-      "players": [
-        {
-          "id": "00-0036727",
-          "name": "Adam Prentice",
-          "team": "DEN",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "23542eeeb02d27d45eda",
-      "headline": "Jalen Coker Injury Update: Panthers Roster Move Spells Trouble For WR's Week 4 Status",
-      "url": "https://www.si.com/nfl/panthers/onsi/jalen-coker-injury-update-panthers-roster-move-trouble-week-4-status",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Carolina Panthers made three roster moves on Saturday, one of which might signal that wideout Jalen Coker won't play in Week 4.",
-      "categories": [],
-      "published_at": "2026-10-03T20:28:50+00:00",
-      "players": [
-        {
-          "id": "00-0039491",
-          "name": "Jalen Coker",
-          "team": "CAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "d17625c1078f2b93fab2",
-      "headline": "Seahawks sign Velus Jones Jr off practice squad, elevate Trevon Diggs for first time",
-      "url": "https://www.fieldgulls.com/seattle-seahawks-roster/176349/seahawks-sign-velus-jones-jr-off-practice-squad-elevate-trevon-diggs-first-time",
-      "source_id": "news_sbn_sea",
-      "source": "Field Gulls (SB Nation)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "The Seattle Seahawks, still feeling the sting of the 33-31 loss to the Washington Commanders in Week 3 are set to host Jim Harbaugh and the winless Los Angeles Chargers at Lumen Field in Week 4. Seattle is set to have safety Julian Love in action after the Pro Bowl safety missed Week 3, and [\u2026]",
-      "categories": [
-        "Seattle Seahawks News",
-        "Seattle Seahawks Roster"
-      ],
-      "published_at": "2026-10-03T20:25:18+00:00",
-      "players": [
-        {
-          "id": "00-0037745",
-          "name": "Velus Jones Jr.",
-          "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "a5278f45e6dceb8d992a",
-      "headline": "Jadarian Price out until November after landing on injured reserve",
-      "url": "https://www.fieldgulls.com/seattle-seahawks-news/176351/jadarian-price-out-until-november-after-landing-on-injured-reserve",
-      "source_id": "news_sbn_sea",
-      "source": "Field Gulls (SB Nation)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "The Seattle Seahawks had a big hole to fill at running back in the offseason. First, on the way to winning Super Bowl LX in memorable fashion by thumping the New England Patriots 29-13, 2023 second round pick Zach Charbonnet was lost to a torn ACL. Then, in the offseason, 2022 second round pick Kenneth [\u2026]",
-      "categories": [
-        "Seattle Seahawks Injuries",
-        "Seattle Seahawks News",
-        "Seattle Seahawks Roster"
-      ],
-      "published_at": "2026-10-03T20:20:04+00:00",
-      "players": [
-        {
-          "id": "00-0039165",
-          "name": "Zach Charbonnet",
-          "team": "SEA",
-          "position": "RB"
-        },
-        {
-          "id": "00-0041512",
-          "name": "Jadarian Price",
-          "team": "SEA",
-          "position": "RB"
         }
       ]
     }
