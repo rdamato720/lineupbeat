@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T09:03:43.212575+00:00",
+  "updated_at": "2026-10-05T10:00:53.251278+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T09:00:00+00:00",
+      "latest_entry_at": "2026-10-05T09:31:04+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T04:20:15+00:00",
+      "latest_entry_at": "2026-10-05T10:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-05T04:01:00+00:00",
+      "latest_entry_at": "2026-10-05T09:00:00+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-05T09:00:00+00:00",
+      "latest_entry_at": "2026-10-05T09:31:04+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-05T04:20:15+00:00",
+      "latest_entry_at": "2026-10-05T10:00:00+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-04T22:48:23+00:00",
+      "latest_entry_at": "2026-10-05T09:30:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-04T16:30:48+00:00",
+      "latest_entry_at": "2026-10-05T10:00:00+00:00",
       "stale": false
     },
     {
@@ -462,15 +462,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-04T20:27:09+00:00",
+      "latest_entry_at": "2026-10-05T10:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-05T04:15:38+00:00",
+      "latest_entry_at": "2026-10-05T10:00:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-05T03:52:53+00:00",
+      "latest_entry_at": "2026-10-05T10:00:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-05T03:13:24+00:00",
+      "latest_entry_at": "2026-10-05T09:14:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,47 @@
     }
   ],
   "items": [
+    {
+      "id": "525db18217207ba60f8f",
+      "headline": "Heartbreaking revelation from Mike Gesicki makes Tee Higgins\u2019 injury hurt so much more for the Bengals",
+      "url": "https://atozsports.com/nfl/cincinnati-bengals-news/heartbreaking-revelation-from-mike-gesicki-makes-tee-higgins-injury-hurt-so-much-more-for-the-bengals/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "Tee Higgins stepped up in a big way for the Cincinnati Bengals after Ja'Marr Chase went down against the Jacksonville Jaguars. An injury of his own occurred near the end of the game, and his absence was directly felt during a potential game-winning play.",
+      "categories": [
+        "Cincinnati Bengals News",
+        "American Football",
+        "Cincinnati Bengals",
+        "Ja'Marr Chase",
+        "Mike Gesicki",
+        "Tee Higgins",
+        "Tee Higgins Injury"
+      ],
+      "published_at": "2026-10-05T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0034829",
+          "name": "Mike Gesicki",
+          "team": "CIN",
+          "position": "TE"
+        },
+        {
+          "id": "00-0036410",
+          "name": "Tee Higgins",
+          "team": "CIN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0036900",
+          "name": "Ja'Marr Chase",
+          "team": "CIN",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "6e59aca2834df645828a",
       "headline": "Odell Beckham Jr. Disagrees With Harbaugh's Explanation for His Giants Release",
@@ -4131,29 +4172,6 @@
           "name": "Britain Covey",
           "team": "PHI",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "11cbe6797459c7c8a7cb",
-      "headline": "\u2018All signs point to Tyson Bagent\u2019 starting for the Chicago Bears",
-      "url": "https://www.windycitygridiron.com/chicago-bears-news/124296/all-signs-point-to-tyson-bagent-starting-for-the-chicago-bears-case-keenum",
-      "source_id": "news_sbn_chi",
-      "source": "Windy City Gridiron (SB Nation)",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears head coach Ben Johnson may not be tipping his hand on his starting quarterback this Sunday against the New York Jets, but a Friday night report may have shed some light on the situation. Ian Rapoport, ESPN and NFL Network\u2019s national insider, believes he knows what the Bears are doing. \u201cMy understanding is [\u2026]",
-      "categories": [
-        "Chicago Bears News"
-      ],
-      "published_at": "2026-10-03T14:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0038416",
-          "name": "Tyson Bagent",
-          "team": "CHI",
-          "position": "QB"
         }
       ]
     }
