@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T06:52:21.523804+00:00",
+  "updated_at": "2026-10-06T10:00:58.184068+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-06T03:31:05+00:00",
+      "latest_entry_at": "2026-10-06T09:00:00+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-06T02:27:41+00:00",
+      "latest_entry_at": "2026-10-06T10:00:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-06T00:19:31+00:00",
+      "latest_entry_at": "2026-10-06T09:02:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,41 @@
     }
   ],
   "items": [
+    {
+      "id": "5fe84a8629b2ac2d04e5",
+      "headline": "Chicago Bears News: Bagent to start against Green Bay Packers, more news",
+      "url": "https://www.windycitygridiron.com/chicago-bears-news/124482/chicago-bears-news-bagent-to-start-against-green-bay-packers-more-news",
+      "source_id": "news_sbn_chi",
+      "source": "Windy City Gridiron (SB Nation)",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Tyson Bagent had to wait a couple of years between starts, but he will get his opportunity Sunday against the hated Green Bay Packers. Kyle Monangai is day-t0-day with a hand he injured in the fourth quarter of the Bears demolition of the New York Jets, and Caleb Williams (as expected) will not practice this [\u2026]",
+      "categories": [
+        "Chicago Bears News"
+      ],
+      "published_at": "2026-10-06T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0038416",
+          "name": "Tyson Bagent",
+          "team": "CHI",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        },
+        {
+          "id": "00-0040236",
+          "name": "Kyle Monangai",
+          "team": "CHI",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "7befcb6c898667f667e8",
       "headline": "Rams Injury Report: Mumpfield, Forbes suffer minor injuries",
@@ -4211,20 +4246,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "793832513ceb5da202fb",
-      "headline": "Patriots Week 4 Inactives vs. Bills: Several Key Names Won't Be Playing",
-      "url": "https://www.si.com/nfl/patriots/onsi/patriots-week-4-inactives-vs-bills-several-key-names-won-t-be-playing",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Here's which New England Patriots and Buffalo Bills won't be suiting up for their fourth game of the regular season.",
-      "categories": [],
-      "published_at": "2026-10-04T15:33:56+00:00",
-      "players": []
     }
   ]
 }
