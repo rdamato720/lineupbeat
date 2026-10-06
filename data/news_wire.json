@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T04:00:57.028176+00:00",
+  "updated_at": "2026-10-06T06:52:21.523804+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T03:59:45+00:00",
+      "latest_entry_at": "2026-10-06T06:00:44+00:00",
       "stale": false
     },
     {
@@ -214,7 +214,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-06T03:29:55+00:00",
+      "latest_entry_at": "2026-10-06T06:37:07+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T03:59:45+00:00",
+      "latest_entry_at": "2026-10-06T06:00:44+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-05T18:12:17+00:00",
+      "latest_entry_at": "2026-10-06T00:00:00+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T11:00:00+00:00",
+      "latest_entry_at": "2026-10-05T12:37:05+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-04T19:21:00+00:00",
+      "latest_entry_at": "2026-10-05T21:39:00+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-05T15:22:34+00:00",
+      "latest_entry_at": "2026-10-05T18:48:41+00:00",
       "stale": false
     },
     {
@@ -446,23 +446,23 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-05T22:09:55+00:00",
+      "latest_entry_at": "2026-10-06T01:11:41+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-05T22:25:59+00:00",
+      "latest_entry_at": "2026-10-06T04:45:01+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-06T00:11:00+00:00",
+      "latest_entry_at": "2026-10-06T02:27:41+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-05T23:30:00+00:00",
+      "latest_entry_at": "2026-10-06T03:33:18+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-06T00:10:00+00:00",
+      "latest_entry_at": "2026-10-06T03:55:43+00:00",
       "stale": false
     },
     {
@@ -526,15 +526,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T14:11:16+00:00",
+      "latest_entry_at": "2026-10-06T00:49:47+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-06T00:10:00+00:00",
+      "latest_entry_at": "2026-10-06T04:01:27+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,57 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T17:30:38+00:00",
+      "latest_entry_at": "2026-10-06T01:10:42+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "7befcb6c898667f667e8",
+      "headline": "Rams Injury Report: Mumpfield, Forbes suffer minor injuries",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/150940/rams-injury-report-mumpfield-forbes",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Los Angeles Rams left Philadelphia with a much-needed 24-20 victory over the Eagles, but the team did pick up a couple of minor injuries along the way during their east coast trip. Wide receiver Konata Mumpfield suffered a rotator cuff contusion, while cornerback Emmanuel Forbes sustained a knee contusion during Sunday\u2019s victory. Head coach [\u2026]",
+      "categories": [
+        "Los Angeles Rams Injuries"
+      ],
+      "published_at": "2026-10-06T04:01:27+00:00",
+      "players": [
+        {
+          "id": "00-0040590",
+          "name": "Konata Mumpfield",
+          "team": "LAR",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "5e51da5c128e550f7c45",
+      "headline": "Washington Commanders running back signed by the Seattle Seahawks",
+      "url": "https://www.hogshaven.com/washington-commanders-roster/446575/washington-commanders-running-back-robert-henry-seattle-seahawks",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Seattle Seahawks are signing Robert Henry Jr. to their active roster from the Washington Commanders\u2019 practice squad, per NFL insider Jordan Schultz. Seattle\u2019s first-round selection, Jadarian Price, was recently placed on the injured reserve list and the return of Zach Charbonnet is unknown so Seattle was looking for help in the backfield. They signed [\u2026]",
+      "categories": [
+        "Washington Commanders Roster"
+      ],
+      "published_at": "2026-10-06T02:09:13+00:00",
+      "players": [
+        {
+          "id": "00-0041178",
+          "name": "Robert Henry",
+          "team": "WAS",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "f0045424232236f447ab",
       "headline": "\u2018I didn\u2019t think it was possible for him to play\u2019: Kyle Shanahan blown away by 49ers star\u2019s gutsy performance through brutal injury",
@@ -4178,43 +4224,6 @@
       "feed_description": "Here's which New England Patriots and Buffalo Bills won't be suiting up for their fourth game of the regular season.",
       "categories": [],
       "published_at": "2026-10-04T15:33:56+00:00",
-      "players": []
-    },
-    {
-      "id": "fa347243797ae62a68c4",
-      "headline": "Buffalo Bills Week 4 inactives vs. the New England Patriots",
-      "url": "https://www.buffalorumblings.com/buffalo-bills-injuries/142024/buffalo-bills-week-4-inactives-vs-the-new-england-patriots",
-      "source_id": "news_sbn_buf",
-      "source": "Buffalo Rumblings (SB Nation)",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "The Buffalo Bills and New England Patriots are set to kick off in around 90 minutes, which means that each team has officially listed their inactive players for the contest. The Bills did not rule out any players ahead of this one, though they did list a player as doubtful. New England, meanwhile, listed four [\u2026]",
-      "categories": [
-        "Buffalo Bills Injuries",
-        "Buffalo Bills News"
-      ],
-      "published_at": "2026-10-04T15:33:24+00:00",
-      "players": []
-    },
-    {
-      "id": "21ca926f394d37b20a04",
-      "headline": "Week 4 Inactives: Patriots at Bills",
-      "url": "https://www.patriots.com/news/week-4-inactives-patriots-at-bills",
-      "source_id": "news_official_ne",
-      "source": "New England Patriots (official)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots and Buffalo Bills announce the following inactive players ahead of their NFL Week 4 game on October 4, 2026.",
-      "categories": [
-        "Inactives",
-        "hp-article",
-        "hp-featured",
-        "Pregame-Content",
-        "New England Patriots at Buffalo Bills (2026-REG-4)"
-      ],
-      "published_at": "2026-10-04T15:32:12+00:00",
       "players": []
     }
   ]
