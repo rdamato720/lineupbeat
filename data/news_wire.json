@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T00:00:48.936439+00:00",
+  "updated_at": "2026-10-07T02:00:53.373268+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-07T00:00:01+00:00",
+      "latest_entry_at": "2026-10-07T02:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-06T22:00:32+00:00",
+      "latest_entry_at": "2026-10-07T00:57:55+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-05T22:44:12+00:00",
+      "latest_entry_at": "2026-10-07T14:17:00+00:00",
       "stale": false
     },
     {
@@ -94,7 +94,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-06T18:00:00+00:00",
+      "latest_entry_at": "2026-10-07T01:06:13+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-07T00:00:01+00:00",
+      "latest_entry_at": "2026-10-07T02:00:00+00:00",
       "stale": false
     },
     {
@@ -300,17 +300,17 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-06T17:00:00+00:00",
+      "latest_entry_at": "2026-10-06T16:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_mia",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-06T19:32:17+00:00",
+      "latest_entry_at": "2026-10-06T00:00:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-06T21:01:27+00:00",
+      "latest_entry_at": "2026-10-06T12:21:39+00:00",
       "stale": false
     },
     {
@@ -332,9 +332,9 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-06T11:00:00+00:00",
+      "latest_entry_at": "2026-10-06T19:48:47+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T11:00:00+00:00",
+      "latest_entry_at": "2026-10-06T00:52:18+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T22:09:07+00:00",
+      "latest_entry_at": "2026-10-04T13:28:29+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T11:59:00+00:00",
+      "latest_entry_at": "2026-10-06T13:34:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T19:32:50+00:00",
+      "latest_entry_at": "2026-10-06T02:04:04+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-06T12:00:00+00:00",
+      "latest_entry_at": "2026-10-06T23:17:20+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-05T21:39:00+00:00",
+      "latest_entry_at": "2026-10-06T21:48:00+00:00",
       "stale": false
     },
     {
@@ -422,15 +422,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-06T13:52:38+00:00",
+      "latest_entry_at": "2026-10-05T18:48:41+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T19:00:00+00:00",
+      "latest_entry_at": "2026-10-06T23:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-06T22:05:00+00:00",
+      "latest_entry_at": "2026-10-05T18:26:40+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-06T16:57:13+00:00",
+      "latest_entry_at": "2026-10-06T20:47:13+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-06T02:27:41+00:00",
+      "latest_entry_at": "2026-10-07T00:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-06T13:53:49+00:00",
+      "latest_entry_at": "2026-10-06T23:36:54+00:00",
       "stale": false
     },
     {
@@ -486,15 +486,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T19:36:06+00:00",
+      "latest_entry_at": "2026-10-06T13:30:15+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T12:00:00+00:00",
+      "latest_entry_at": "2026-10-06T18:30:29+00:00",
       "stale": false
     },
     {
@@ -502,15 +502,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-06T14:00:00+00:00",
+      "latest_entry_at": "2026-10-05T10:58:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-06T13:30:00+00:00",
+      "latest_entry_at": "2026-10-06T16:30:00+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-06T11:00:00+00:00",
+      "latest_entry_at": "2026-10-06T17:16:55+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T20:45:38+00:00",
+      "latest_entry_at": "2026-10-06T22:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-06T16:01:00+00:00",
+      "latest_entry_at": "2026-10-06T23:05:33+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,30 @@
     }
   ],
   "items": [
+    {
+      "id": "2c8f0e0b9bace3af5a88",
+      "headline": "BUCS PRACTICE BUZZ: Bucs Have NO Time To Prepare Jalon Daniels! Plus A HUGE Defensive Concern",
+      "url": "https://www.pewterreport.com/bucs-practice-buzz-bucs-no-time-jalon-daniels/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "Bucs Practice Buzz is a weekly segment on Pewter Report\u2019s YouTube channel Pewter Report TV where we highlight the biggest moments and clips from the day of practice from the Advent Health Training Center. The Bucs are on a short week as they play on Thursday night football, so everything was condensed into media",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-10-07T00:57:55+00:00",
+      "players": [
+        {
+          "id": "00-0041251",
+          "name": "Jalon Daniels",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "aca03dbcb7e1286b22dc",
       "headline": "Potential Blockbuster Bengals Trade Makes Even More Sense After Ja'Marr Chase, Tee Higgins Injuries",
@@ -4280,27 +4304,6 @@
       ],
       "published_at": "2026-10-04T18:35:07+00:00",
       "players": []
-    },
-    {
-      "id": "659ff0e3a62e44a68793",
-      "headline": "Bills issue injury update on WR DJ Moore vs. Patriots Week 4",
-      "url": "https://www.buffalobills.com/news/bills-issue-injury-update-on-wr-dj-moore-vs-patriots-week-4",
-      "source_id": "news_official_buf",
-      "source": "Buffalo Bills (official)",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "Moore left the game late in the second quarter",
-      "categories": [],
-      "published_at": "2026-10-04T18:22:41+00:00",
-      "players": [
-        {
-          "id": "00-0034827",
-          "name": "DJ Moore",
-          "team": "BUF",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
