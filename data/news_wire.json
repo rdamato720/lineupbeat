@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T04:00:56.512972+00:00",
+  "updated_at": "2026-10-07T09:17:43.802704+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-07T03:51:50+00:00",
+      "latest_entry_at": "2026-10-07T07:38:47+00:00",
       "stale": false
     },
     {
@@ -22,7 +22,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-07T02:01:49+00:00",
+      "latest_entry_at": "2026-10-07T05:10:50+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-07T03:51:50+00:00",
+      "latest_entry_at": "2026-10-07T07:38:47+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T21:50:58+00:00",
+      "latest_entry_at": "2026-10-07T09:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T17:30:00+00:00",
+      "latest_entry_at": "2026-10-06T22:17:24+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-06T21:06:29+00:00",
+      "latest_entry_at": "2026-10-07T04:46:58+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-06T20:47:13+00:00",
+      "latest_entry_at": "2026-10-07T04:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-07T00:00:00+00:00",
+      "latest_entry_at": "2026-10-07T03:59:00+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-07T03:48:55+00:00",
+      "latest_entry_at": "2026-10-07T04:07:33+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-06T23:05:33+00:00",
+      "latest_entry_at": "2026-10-07T06:10:21+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T22:01:00+00:00",
+      "latest_entry_at": "2026-10-07T08:58:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,51 @@
     }
   ],
   "items": [
+    {
+      "id": "cb10b7ff7517bd3d6510",
+      "headline": "Aaron Donald, Jaylen Watson trending upward on injury report",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/151045/rams-aaron-donald-jaylen-watson-injury-report-optimistic",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Los Angeles Rams could be getting two key defensive reinforcements back at exactly the right time. Head coach Sean McVay provided encouraging injury updates Monday on defensive lineman Aaron Donald and cornerback Jaylen Watson, expressing optimism that both players could return for the Rams\u2019 Week 5 matchup against the Buffalo Bills. Both players suffered [\u2026]",
+      "categories": [
+        "Los Angeles Rams Injuries"
+      ],
+      "published_at": "2026-10-07T06:10:21+00:00",
+      "players": []
+    },
+    {
+      "id": "2521d6609647a75a7c8b",
+      "headline": "Eagles roster news: Tank Bigsby to IR, practice squad changes",
+      "url": "https://www.bleedinggreennation.com/news/185833/eagles-roster-news-tank-bigsby-to-ir-practice-squad-changes",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "Four Philadelphia Eagles transactions were included on the official NFL personnel notice from Tuesday, October 6. Here\u2019s an overview: Let\u2019s sort through this news on a player-by-player basis. TANK BIGSBY Bigsby to IR was first reported on Monday evening. With Saquon Barkley dealing with a hamstring injury, Bigsby likely would\u2019ve started at running back in [\u2026]",
+      "categories": [
+        "Philadelphia Eagles News"
+      ],
+      "published_at": "2026-10-07T04:46:58+00:00",
+      "players": [
+        {
+          "id": "00-0034844",
+          "name": "Saquon Barkley",
+          "team": "PHI",
+          "position": "RB"
+        },
+        {
+          "id": "00-0038555",
+          "name": "Tank Bigsby",
+          "team": "PHI",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "0d0240cae72fa959b4b0",
       "headline": "Commanders News: Jayden Daniels Nears Return While Washington\u2019s Roster Keeps Changing | Burgundy Roundup",
@@ -4223,50 +4268,6 @@
           "id": "00-0031408",
           "name": "Mike Evans",
           "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "f5775ed6e5b2db03a3a9",
-      "headline": "Seahawks vs. Chargers Week 4 Inactives",
-      "url": "https://www.seahawks.com/news/seahawks-vs-chargers-week-4-inactives",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "The Seahawks will again be without starting safety Ty Okada, as well as linebacker Chazz Surratt, who are inactive after being listed questionable on Friday\u2019s injury report.",
-      "categories": [
-        "News: Stories",
-        "News: National Feature",
-        "Los Angeles Chargers at Seattle Seahawks (2026-REG-4)",
-        "Homepage Hero",
-        "Homepage Top Headlines"
-      ],
-      "published_at": "2026-10-04T18:54:33+00:00",
-      "players": []
-    },
-    {
-      "id": "41353d30bb328e3e29d9",
-      "headline": "Dolphins vs. Vikings inactive players: Justin Jefferson, Caleb Douglas headline unavailable players",
-      "url": "https://www.thephinsider.com/miami-dolphins-injuries/123397/dolphins-vs-vikings-inactive-players-justin-jefferson-caleb-douglas-headline-unavailable-players",
-      "source_id": "news_sbn_mia",
-      "source": "The Phinsider (SB Nation)",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "The Miami Dolphins and Minnesota Vikings kick off a Week 4 showdown at 4:05 p.m. Eastern this afternoon. Both teams have released their inactive player lists for the game, dropping down to the league-mandated 48-man gameday roster limit. Miami\u2019s inactives include wide receiver Caleb Douglas and edge rusher Robert Beal Jr., both listed as out [\u2026]",
-      "categories": [
-        "Miami Dolphins game information",
-        "Miami Dolphins Injuries"
-      ],
-      "published_at": "2026-10-04T18:52:54+00:00",
-      "players": [
-        {
-          "id": "00-0041523",
-          "name": "Caleb Douglas",
-          "team": "MIA",
           "position": "WR"
         }
       ]
