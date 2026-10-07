@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T02:26:52.452562+00:00",
+  "updated_at": "2026-10-07T04:00:56.512972+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-07T02:26:13+00:00",
+      "latest_entry_at": "2026-10-07T03:51:50+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-07T00:57:55+00:00",
+      "latest_entry_at": "2026-10-07T02:01:49+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-06T23:23:56+00:00",
+      "latest_entry_at": "2026-10-07T03:09:29+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-07T02:26:13+00:00",
+      "latest_entry_at": "2026-10-07T03:51:50+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T22:17:24+00:00",
+      "latest_entry_at": "2026-10-06T17:30:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T19:32:50+00:00",
+      "latest_entry_at": "2026-10-07T03:42:22+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T21:48:00+00:00",
+      "latest_entry_at": "2026-10-07T02:28:36+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-06T18:30:00+00:00",
+      "latest_entry_at": "2026-10-06T20:47:13+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T19:36:06+00:00",
+      "latest_entry_at": "2026-10-07T03:48:55+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,49 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T21:28:11+00:00",
+      "latest_entry_at": "2026-10-07T02:10:15+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "0d0240cae72fa959b4b0",
+      "headline": "Commanders News: Jayden Daniels Nears Return While Washington\u2019s Roster Keeps Changing | Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-news-jayden-daniels-return-roster-changes-burgundy-roundup",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Jayden Daniels nears a return to practice as the Commanders reshuffle their roster, monitor injured players, and prepare for the Giants.",
+      "categories": [],
+      "published_at": "2026-10-07T02:33:32+00:00",
+      "players": [
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "a82ba491057b99fcc3f4",
+      "headline": "Bucs Starter Added To Injury Report In Surprising Reveal",
+      "url": "https://www.pewterreport.com/bucs-starter-added-injury-report-surprising/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "When a walkthrough practice is happening for Thursday night football, there aren't too many new updates. That was not the case for the Bucs on Tuesday as they had a very surprising new addition. Bucs kicker Chase McLaughlin, who's been a bright spot for this team in a season where there hasn't been many",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-10-07T02:01:49+00:00",
+      "players": []
+    },
     {
       "id": "300d02c6f226650e36a9",
       "headline": "Buccaneers at Cowboys: Day 2 injury report for Thursday Night Football",
@@ -4230,74 +4268,6 @@
           "name": "Caleb Douglas",
           "team": "MIA",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "f44418dc5ba2a26c3a26",
-      "headline": "Dan Quinn delivers concerning Marcus Mariota injury update that leaves Commanders stuck in quarterback limbo",
-      "url": "https://atozsports.com/nfl/washington-commanders-news/dan-quinn-marcus-mariota-injury-update-commanders-week-4-loss/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Washington's quarterback room took another hit in London, and the questions now stretch from Jayden Daniels all the way down to the third-stringer.",
-      "categories": [
-        "Washington Commanders News",
-        "Commanders",
-        "Dan Quinn",
-        "Jayden Daniels",
-        "marcus mariota",
-        "Washington Commanders"
-      ],
-      "published_at": "2026-10-04T18:46:58+00:00",
-      "players": [
-        {
-          "id": "00-0032268",
-          "name": "Marcus Mariota",
-          "team": "WAS",
-          "position": "QB"
-        },
-        {
-          "id": "00-0039910",
-          "name": "Jayden Daniels",
-          "team": "WAS",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "5115482a9f3d707c4296",
-      "headline": "DJ Moore injury update: Bills star receiver doubtful to return after aggravating shoulder injury vs. Patriots",
-      "url": "https://atozsports.com/nfl/buffalo-bills-news/dj-moore-injury-update-bills-star-receiver-questionable-to-return-after-aggravating-shoulder-injury-vs-patriots/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "The Buffalo Bills were locked in a tight battle with the New England Patriots when Josh Allen's top target went down on a scramble drill near the sideline. DJ Moore is currently doubtful to return.",
-      "categories": [
-        "Buffalo Bills News",
-        "American Football",
-        "Buffalo Bills",
-        "DJ Moore",
-        "Josh Allen",
-        "New England Patriots"
-      ],
-      "published_at": "2026-10-04T18:46:44+00:00",
-      "players": [
-        {
-          "id": "00-0034827",
-          "name": "DJ Moore",
-          "team": "BUF",
-          "position": "WR"
-        },
-        {
-          "id": "00-0034857",
-          "name": "Josh Allen",
-          "team": "BUF",
-          "position": "QB"
         }
       ]
     }
