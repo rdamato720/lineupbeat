@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T20:00:51.358393+00:00",
+  "updated_at": "2026-10-08T21:30:56.431938+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-08T19:49:45+00:00",
+      "latest_entry_at": "2026-10-08T21:23:14+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-08T19:21:22+00:00",
+      "latest_entry_at": "2026-10-08T20:50:22+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-08T19:04:27+00:00",
+      "latest_entry_at": "2026-10-08T20:34:37+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-08T01:00:45+00:00",
+      "latest_entry_at": "2026-10-08T20:36:26+00:00",
       "stale": false
     },
     {
@@ -54,13 +54,13 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-08T19:29:15+00:00",
+      "latest_entry_at": "2026-10-08T20:44:22+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 9,
+      "eligible": 8,
       "error": "",
       "latest_entry_at": "2026-10-08T17:46:32+00:00",
       "stale": false
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-08T01:20:20+00:00",
+      "latest_entry_at": "2026-10-08T20:43:42+00:00",
       "stale": false
     },
     {
@@ -94,7 +94,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-08T14:14:03+00:00",
+      "latest_entry_at": "2026-10-08T20:15:19+00:00",
       "stale": false
     },
     {
@@ -102,7 +102,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-08T18:07:34+00:00",
+      "latest_entry_at": "2026-10-08T20:07:56+00:00",
       "stale": false
     },
     {
@@ -118,21 +118,21 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-08T19:54:58+00:00",
+      "latest_entry_at": "2026-10-08T20:27:46+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_gb",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-08T14:00:00+00:00",
+      "latest_entry_at": "2026-10-08T21:18:02+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_hou",
       "ok": true,
-      "eligible": 7,
+      "eligible": 6,
       "error": "",
       "latest_entry_at": "2026-10-08T16:31:28+00:00",
       "stale": false
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-08T14:12:11+00:00",
+      "latest_entry_at": "2026-10-08T20:11:30+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-08T17:16:20+00:00",
+      "latest_entry_at": "2026-10-08T21:15:00+00:00",
       "stale": false
     },
     {
@@ -206,15 +206,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-08T16:06:40+00:00",
+      "latest_entry_at": "2026-10-08T21:15:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_no",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-08T13:15:25+00:00",
+      "latest_entry_at": "2026-10-08T20:13:18+00:00",
       "stale": false
     },
     {
@@ -222,15 +222,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-08T19:50:00+00:00",
+      "latest_entry_at": "2026-10-08T20:02:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_nyj",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-08T20:01:00+00:00",
+      "latest_entry_at": "2026-10-08T20:46:27+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-08T19:00:14+00:00",
+      "latest_entry_at": "2026-10-08T20:00:00+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-08T17:30:27+00:00",
+      "latest_entry_at": "2026-10-08T20:25:00+00:00",
       "stale": false
     },
     {
@@ -260,9 +260,9 @@
     {
       "source_id": "news_official_sf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-07T19:05:00+00:00",
+      "latest_entry_at": "2026-10-08T16:00:00+00:00",
       "stale": false
     },
     {
@@ -278,15 +278,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-07T22:06:00+00:00",
+      "latest_entry_at": "2026-10-08T20:13:49+00:00",
       "stale": false
     },
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-10-08T19:49:45+00:00",
+      "latest_entry_at": "2026-10-08T21:23:14+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-08T19:21:22+00:00",
+      "latest_entry_at": "2026-10-08T20:50:22+00:00",
       "stale": false
     },
     {
@@ -316,17 +316,17 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-08T19:12:47+00:00",
+      "latest_entry_at": "2026-10-08T20:42:18+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-08T11:00:00+00:00",
+      "latest_entry_at": "2026-10-08T20:38:50+00:00",
       "stale": false
     },
     {
@@ -356,9 +356,9 @@
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-08T16:13:32+00:00",
+      "latest_entry_at": "2026-10-08T20:20:37+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-08T19:03:00+00:00",
+      "latest_entry_at": "2026-10-08T20:04:00+00:00",
       "stale": false
     },
     {
@@ -430,31 +430,31 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-08T20:00:00+00:00",
+      "latest_entry_at": "2026-10-08T21:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-08T19:07:31+00:00",
+      "latest_entry_at": "2026-10-08T20:36:39+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-08T18:46:19+00:00",
+      "latest_entry_at": "2026-10-08T21:19:53+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-08T17:01:00+00:00",
+      "latest_entry_at": "2026-10-08T20:58:48+00:00",
       "stale": false
     },
     {
@@ -468,17 +468,17 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-08T18:00:00+00:00",
+      "latest_entry_at": "2026-10-08T20:03:44+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-08T17:14:44+00:00",
+      "latest_entry_at": "2026-10-08T20:33:37+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-08T18:45:00+00:00",
+      "latest_entry_at": "2026-10-08T20:15:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,611 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-08T16:00:18+00:00",
+      "latest_entry_at": "2026-10-08T20:20:47+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "2cd4591a5777d1228299",
+      "headline": "Eagles Injury Report: Dontayvion Wicks injures hamstring, Drew Kendall misses practice again",
+      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/186079/eagles-injury-report-dontayvion-wicks-injures-hamstring-drew-kendall-misses-practice-again",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Philadelphia Eagles issued their second official injury report of the week on Thursday in advance of their Week 5 game against the Jacksonville Jaguars in London. The Eagles listed six players under DID NOT PARTICIPATE: Saquon Barkley, DeVonta Smith, Drew Kendall, Jonathan Greenard, Marcus Epps, and Hollywood Brown. Barkley is reportedly \u201cweek-to-week\u201d with a [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries"
+      ],
+      "published_at": "2026-10-08T21:19:53+00:00",
+      "players": [
+        {
+          "id": "00-0034844",
+          "name": "Saquon Barkley",
+          "team": "PHI",
+          "position": "RB"
+        },
+        {
+          "id": "00-0036912",
+          "name": "DeVonta Smith",
+          "team": "PHI",
+          "position": "WR"
+        },
+        {
+          "id": "00-0038393",
+          "name": "Dontayvion Wicks",
+          "team": "PHI",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "42e5e3142e96fb21a2c5",
+      "headline": "Packers sign RB Pierre Strong Jr. to active roster",
+      "url": "https://www.packers.com/news/packers-sign-rb-pierre-strong-jr-to-the-active-roster-oct-8-2026",
+      "source_id": "news_official_gb",
+      "source": "Green Bay Packers (official)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Green Bay also signs LB Jack Dingle to practice squad",
+      "categories": [
+        "News: Press Releases",
+        "News: All News",
+        "News: Transactions",
+        "News: National Feature",
+        "Homepage CP"
+      ],
+      "published_at": "2026-10-08T21:18:02+00:00",
+      "players": [
+        {
+          "id": "00-0038098",
+          "name": "Pierre Strong",
+          "team": "GB",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "ef3efddd0f31c5ccb906",
+      "headline": "Raiders-Patriots Week 5 Injury Report",
+      "url": "https://www.raiders.com/news/las-vegas-raiders-new-england-patriots-week-5-injury-report-2026",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the New England Patriots.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Injury Report",
+        "Las Vegas Raiders at New England Patriots (2026-REG-5)"
+      ],
+      "published_at": "2026-10-08T21:15:00+00:00",
+      "players": []
+    },
+    {
+      "id": "8f9873f8d470bfd850b4",
+      "headline": "Week 5 Injury Report: Patriots vs. Raiders",
+      "url": "https://www.patriots.com/news/week-5-injury-report-patriots-vs-raiders",
+      "source_id": "news_official_ne",
+      "source": "New England Patriots (official)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots and the Las Vegas Raiders announce the following player injuries and practice participation ahead of their Week 5 game.",
+      "categories": [
+        "Injury Report",
+        "hp-article",
+        "hp-featured",
+        "Pregame-Content",
+        "Las Vegas Raiders at New England Patriots (2026-REG-5)"
+      ],
+      "published_at": "2026-10-08T21:15:00+00:00",
+      "players": []
+    },
+    {
+      "id": "c045cd72ee949dba7197",
+      "headline": "Commanders vs. Giants Thursday injury report: Sam Cosmi approaching return",
+      "url": "https://www.hogshaven.com/washington-commanders-injuries/447316/commanders-vs-giants-thursday-injury-report-week-5-terry-mclaurin-stefon-diggs-sam-cosmi",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Commanders right guard Sam Cosmi didn\u2019t make the trip to London for that Week 4 contest against the Indianapolis Colts. He was in the concussion protocol and ruled out early in the week while recovering from a vicious hit delivered by his own teammate, when running back Kaytron Allen inadvertently ran into him. Missing one [\u2026]",
+      "categories": [
+        "Washington Commanders Injuries"
+      ],
+      "published_at": "2026-10-08T20:58:48+00:00",
+      "players": [
+        {
+          "id": "00-0041096",
+          "name": "Kaytron Allen",
+          "team": "WAS",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "80918ac1651d4d0de5a2",
+      "headline": "What The Ravens Thursday Injury Report Reveals About Sunday's Game",
+      "url": "https://www.si.com/nfl/ravens/onsi/what-the-ravens-thursday-injury-report-reveals-about-sunday-s-game-01m4ed7xxy9p",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "Ravens coaches continue to claim two-time MVP Lamar Jackson could face the Falcons Sunday, while execs around the NFL wonder if he will even face the Browns in",
+      "categories": [],
+      "published_at": "2026-10-08T20:48:50+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "6f9b7116b344e1e999c7",
+      "headline": "Giants WR Malik Nabers' Practice Participation Status Upgraded",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-thursday-practice-participation-report-upgraded-week5-01m4ej07y5n3",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Nabers, Andrew Thomas trending upward; Jason Pinnock, Chauncey Golston trending downward.",
+      "categories": [],
+      "published_at": "2026-10-08T20:41:13+00:00",
+      "players": [
+        {
+          "id": "00-0039337",
+          "name": "Malik Nabers",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "d4a4a4e6a919004434e5",
+      "headline": "Jets offensive injury report: Mason Taylor inches toward return when Jets play the Browns, Adonai Mitchell\u2019s status looking shaky",
+      "url": "https://www.ganggreennation.com/new-york-jets-injuries/97372/jets-offensive-injury-report-mason-taylor-inches-toward-return-when-jets-play-the-browns-adonai-mitchells-status-looking-shaky",
+      "source_id": "news_sbn_nyj",
+      "source": "Gang Green Nation (SB Nation)",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "We are approaching an important game for the Jets in Week 5 against the Cleveland Browns. It appears the team is on the verge of getting back one of its top two tight ends. Mason Taylor, who has missed the last two games with a thumb injury, has been a full participant at both days [\u2026]",
+      "categories": [
+        "New York Jets Injuries"
+      ],
+      "published_at": "2026-10-08T20:38:50+00:00",
+      "players": [
+        {
+          "id": "00-0039890",
+          "name": "Adonai Mitchell",
+          "team": "NYJ",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040736",
+          "name": "Mason Taylor",
+          "team": "NYJ",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "a8b790a179a841bca230",
+      "headline": "Bengals get a strong positive sign from Ja\u2019Marr Chase in latest practice ahead of game against Dolphins",
+      "url": "https://atozsports.com/nfl/cincinnati-bengals-news/bengals-get-a-strong-positive-sign-from-jamarr-chase-in-latest-practice-ahead-of-game-against-dolphins/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "The Cincinnati Bengals continue their week of practiced begun practicing ahead of their Week 5 matchup against the Miami Dolphins. Wide receiver Ja'Marr Chase returned to the practice field, still in the concussion protocol.",
+      "categories": [
+        "Cincinnati Bengals News",
+        "B.j. Hill",
+        "Bengals Injury Report",
+        "Bryan Cook",
+        "Cincinnati Bengals",
+        "Colbie Young",
+        "Dalton Risner",
+        "Dexter Lawrence",
+        "Ja'Marr Chase",
+        "Kyle Dugger",
+        "Tee Higgins"
+      ],
+      "published_at": "2026-10-08T20:38:25+00:00",
+      "players": [
+        {
+          "id": "00-0036900",
+          "name": "Ja'Marr Chase",
+          "team": "CIN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "b7b23e0daf00268d995e",
+      "headline": "NY Giants get WR Malik Nabers, OT Andrew Thomas back at practice",
+      "url": "https://www.bigblueview.com/new-york-giants-injuries/174797/injury-report-wr-malik-nabers-ot-andrew-thomas-back-at-practice",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The New York Giants got some good news on the injury front Thursday as they continued to prepare for a Week 5 game against the Washington Commanders. There was, though, some bad news. Safety Jason Pinnock (concussion) did not practice. He would seem unlikely to clear the protocol in time to play on Sunday. Defensive [\u2026]",
+      "categories": [
+        "New York Giants injuries"
+      ],
+      "published_at": "2026-10-08T20:36:39+00:00",
+      "players": [
+        {
+          "id": "00-0039337",
+          "name": "Malik Nabers",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "88a14fafc700ced6b12f",
+      "headline": "Bengals Injury Report: Dexter Lawrence, More Star Injuries Updated Following Thursday Dolphins Practice",
+      "url": "https://www.si.com/nfl/bengals/onsi/bengals-injury-report-dexter-lawrence-more-star-injuries-updated-following-thursday-dolphins-practice-01m4drk2f76d",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "Bengals Injury Report: Dexter Lawrence, More Star Injuries Updated Following Thursday Dolphins Practice",
+      "categories": [],
+      "published_at": "2026-10-08T20:34:27+00:00",
+      "players": []
+    },
+    {
+      "id": "7dccca2f5ba3e490071a",
+      "headline": "Packers-Bears Thursday Injury Report: Chicago Star Out Again",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-bears-thursday-injury-report-chicago-star-out-again",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "There were big changes on the Bears\u2019 injury report and only one for the Packers on Thursday.",
+      "categories": [],
+      "published_at": "2026-10-08T20:34:22+00:00",
+      "players": []
+    },
+    {
+      "id": "52d912f3754cad07e6f1",
+      "headline": "Packers Injury Report: Jager Burton returns on Thursday",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/87788/packers-injury-report-jager-burton-returns-on-thursday",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Green Bay Packers offensive lineman Jager Burton, who, according to head coach Matt LaFleur, is dealing with back spasms, went from a non-participant in Wednesday\u2019s practice to a limited participant in Thursday\u2019s practice. Burton is the only player whose status changed today. Players who remain as non-participants are left guard Aaron Banks (knee/toe), running back [\u2026]",
+      "categories": [
+        "Green Bay Packers injuries",
+        "Green Bay Packers News"
+      ],
+      "published_at": "2026-10-08T20:33:37+00:00",
+      "players": []
+    },
+    {
+      "id": "a1dd7411fa9f81d7bece",
+      "headline": "4 Jets Suddenly Look More Important in Week 5 as Breece Hall and AD Mitchell's Outlook Worsens",
+      "url": "https://www.si.com/nfl/jets/onsi/4-jets-suddenly-look-more-important-in-week-5-as-breece-hall-and-ad-mitchell-s-outlook-worsens-01m4eddh6ex1",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "Injuries could force Breece Hall and Adonai Mitchell to miss Week 5, meaning the New York Jets might have to rely on these four players to beat the Cleveland Browns.",
+      "categories": [],
+      "published_at": "2026-10-08T20:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0038120",
+          "name": "Breece Hall",
+          "team": "NYJ",
+          "position": "RB"
+        },
+        {
+          "id": "00-0039890",
+          "name": "Adonai Mitchell",
+          "team": "NYJ",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "f6c9f1b6546a7dbcc291",
+      "headline": "Packers-Bears Injury Report | Oct. 8, 2026",
+      "url": "https://www.packers.com/news/packers-bears-injury-report-oct-8-2026",
+      "source_id": "news_official_gb",
+      "source": "Green Bay Packers (official)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "",
+      "categories": [
+        "News: Injury Report",
+        "News: National Feature",
+        "Homepage CP",
+        "News: All News",
+        "Chicago Bears at Green Bay Packers (2026-REG-5)"
+      ],
+      "published_at": "2026-10-08T20:29:37+00:00",
+      "players": []
+    },
+    {
+      "id": "f9cc85531bb504fe3c06",
+      "headline": "WR Michael Pittman Jr. downgraded in Steelers injury report",
+      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-injuries/175996/wr-michael-pittman-jr-downgraded-in-steelers-practice-thursday-week-5-injury-report-deshon-elliott-jalen-ramsey-colts",
+      "source_id": "news_sbn_pit",
+      "source": "Behind the Steel Curtain (SB Nation)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "After a limited practice on Wednesday, Steelers wide receiver Michael Pittman Jr. was downgraded to a did-not-participate status in the team\u2019s Thursday injury report. Pittman was seen using a scooter to prop up his foot during the week with what head coach Mike McCarthy said would be a \u201cmultiple-week\u201d injury. Cornerback Jamel Dean (ankle) was [\u2026]",
+      "categories": [
+        "Pittsburgh Steelers Injuries",
+        "Pittsburgh Steelers News"
+      ],
+      "published_at": "2026-10-08T20:20:37+00:00",
+      "players": [
+        {
+          "id": "00-0036252",
+          "name": "Michael Pittman",
+          "team": "PIT",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "bac40eda2be0749613ff",
+      "headline": "Commanders roster moves: Sixth-round NFL draft pick Kaytron Allen waived",
+      "url": "https://www.hogshaven.com/washington-commanders-news/447468/commanders-roster-moves-kaytron-allen-penn-state-nfl-draft",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Commanders have waived rookie running back Kaytron Allen. That was a surprise move even with Jeremy McNichols practicing again (while on IR) and Austin Ekeler now on the roster, considering how much the Commanders liked the Penn State product. The team announced the transaction on Thursday afternoon. The Commanders drafted Allen [\u2026]",
+      "categories": [
+        "Washington Commanders News",
+        "Washington Commanders Roster"
+      ],
+      "published_at": "2026-10-08T20:19:59+00:00",
+      "players": [
+        {
+          "id": "00-0033955",
+          "name": "Jeremy McNichols",
+          "team": "WAS",
+          "position": "RB"
+        },
+        {
+          "id": "00-0041096",
+          "name": "Kaytron Allen",
+          "team": "WAS",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "f1b825403fe676656754",
+      "headline": "Week 5 Injury Report | Bengals at Dolphins",
+      "url": "https://www.bengals.com/news/bengals-dolphins-week-5-2026-injury-report",
+      "source_id": "news_official_cin",
+      "source": "Cincinnati Bengals (official)",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "Take a look at the injury reports of the Cincinnati Bengals and the Miami Dolphins for Week 5 of the 2026 season.",
+      "categories": [
+        "latest news",
+        "centerpiece",
+        "Injury Report",
+        "latest stories",
+        "Cincinnati Bengals at Miami Dolphins (2026-REG-5)"
+      ],
+      "published_at": "2026-10-08T20:15:19+00:00",
+      "players": []
+    },
+    {
+      "id": "21fa5c9b9271c526bae0",
+      "headline": "Saints Thursday Injury Report: 2026 Week 5 vs. Minnesota Vikings",
+      "url": "https://www.neworleanssaints.com/news/injury-report-minnesota-vikings-vs-new-orleans-saints-2026-nfl-week-5-thursday",
+      "source_id": "news_official_no",
+      "source": "New Orleans Saints (official)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "15 Saints listed on Thursday's Saints Injury Report for Week 5 against the Vikings",
+      "categories": [
+        "Saints Injury Report",
+        "Latest News",
+        "2026-reg-week5"
+      ],
+      "published_at": "2026-10-08T20:13:18+00:00",
+      "players": []
+    },
+    {
+      "id": "4c3ae316256643d58634",
+      "headline": "Bears' Thursday Injury Report: Kyle Monangai, D'Andre Swift Trending in Opposite Directions",
+      "url": "https://www.si.com/nfl/bears/onsi/bears-thursday-injury-report-kyle-monangai-d-andre-swift-trending-opposite-directions",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Chicago Bears running backs Kyle Monangai and D'Andre Swift are heading in opposite directions on the team's Week 5 Thursday injury report.",
+      "categories": [],
+      "published_at": "2026-10-08T20:05:45+00:00",
+      "players": [
+        {
+          "id": "00-0036275",
+          "name": "D'Andre Swift",
+          "team": "CHI",
+          "position": "RB"
+        },
+        {
+          "id": "00-0040236",
+          "name": "Kyle Monangai",
+          "team": "CHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "f670da5a4e10838b0c47",
+      "headline": "Lions, Cardinals injury report: DT Tyleik Williams returns to practice on Thursday",
+      "url": "https://www.prideofdetroit.com/detroit-lions-injuries/176189/lions-cardinals-injury-report-dt-tyleik-williams-returns-to-practice-on-thursday",
+      "source_id": "news_sbn_det",
+      "source": "Pride Of Detroit (SB Nation)",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "The Detroit Lions (2-2) and Arizona Cardinals (1-3) were back on their respective practice fields on Thursday in preparation for Sunday\u2019s game, and while the Lions still have a few players unable to practice due to injury, one key starter was able to return. Let\u2019s take a look at Thursday\u2019s injury report and get you [\u2026]",
+      "categories": [
+        "Detroit Lions Injuries",
+        "Detroit Lions News"
+      ],
+      "published_at": "2026-10-08T20:03:44+00:00",
+      "players": []
+    },
+    {
+      "id": "dd73de03ae01798f40db",
+      "headline": "Bills' First Week 5 Injury Update: Status for DJ Moore, Christian Benford, Ed Oliver",
+      "url": "https://www.si.com/nfl/bills/onsi/injuries-week-5-bills-first-update-status-for-dj-moore-christian-benford-ed-oliver",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Preapring to visit the Los Angeles Rams for Monday Night Football, the Buffalo Bills held their first practice of the week. Here's who was in and who was out?",
+      "categories": [],
+      "published_at": "2026-10-08T20:02:17+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "a63a53d9c5ec4e2ce8dc",
+      "headline": "Giants vs. Commanders Week 5 Injury Report: Malik Nabers, Andrew Thomas limited",
+      "url": "https://www.giants.com/news/giants-vs-commanders-week-5-injury-report-malik-nabers-andrew-thomas-cam-skattebo",
+      "source_id": "news_official_nyg",
+      "source": "New York Giants (official)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "View the injury report for the Week 5 matchup between the New York Giants (3-1) and Washington Commanders (1-3).",
+      "categories": [
+        "Injury Report",
+        "2026 Giants at Commanders WK 5",
+        "homepage"
+      ],
+      "published_at": "2026-10-08T20:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039337",
+          "name": "Malik Nabers",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "a3bd58e55f63bf02d43f",
+      "headline": "S J.J. Roberts and QB Easton Stick Elevated for TNF Game in Dallas",
+      "url": "https://www.buccaneers.com/news/s-j-j-roberts-and-qb-easton-stick-elevated-for-tnf-game-in-dallas",
+      "source_id": "news_official_tb",
+      "source": "Tampa Bay Buccaneers (official)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "Safety J.J. Roberts is in line to make his NFL regular season debut on Thursday night while Easton Stick will once again back up rookie quarterback Jalon Daniels in the absence of Baker Mayfield",
+      "categories": [
+        "Featured",
+        "Roster Moves"
+      ],
+      "published_at": "2026-10-08T20:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        },
+        {
+          "id": "00-0041251",
+          "name": "Jalon Daniels",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "46582b27e6a5561d9156",
+      "headline": "Jets Injury Report | Week 5 vs. Browns - Thursday",
+      "url": "https://www.newyorkjets.com/news/jets-injury-report-week-5-vs-browns-thursday-10-07-20268",
+      "source_id": "news_official_nyj",
+      "source": "New York Jets (official)",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "TE Mason Taylor (Thumb) Again a Full Participant",
+      "categories": [
+        "Injury Report",
+        "News",
+        "Latest Headlines"
+      ],
+      "published_at": "2026-10-08T20:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040736",
+          "name": "Mason Taylor",
+          "team": "NYJ",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "2a34606c885c771b8d69",
+      "headline": "Week 5 Injury Report (Colts)",
+      "url": "https://www.steelers.com/news/week-5-injury-report-colts",
+      "source_id": "news_official_pit",
+      "source": "Pittsburgh Steelers (official)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "A look at player injuries and practice participation for Week 5",
+      "categories": [
+        "Injury Report",
+        "UPMC",
+        "Featured",
+        "Sights and Sounds",
+        "Indianapolis Colts at Pittsburgh Steelers (2026-REG-5)"
+      ],
+      "published_at": "2026-10-08T20:00:00+00:00",
+      "players": []
+    },
     {
       "id": "06100c3e9da3969478ca",
       "headline": "Lions at Cardinals practice report: Oct. 8",
@@ -688,7 +1288,7 @@
     },
     {
       "id": "c62c463d12586b310aeb",
-      "headline": "Lamar Jackson Not at Practice, But Other Ravens Return",
+      "headline": "Lamar Jackson Misses Practice Again, But Other Ravens Return",
       "url": "https://www.baltimoreravens.com/news/lamar-jackson-injury-report-ravens-falcons-zay-flowers-ronnie-stanley-trey-hendrickson",
       "source_id": "news_official_bal",
       "source": "Baltimore Ravens (official)",
@@ -1663,6 +2263,20 @@
       ]
     },
     {
+      "id": "5f181940d89f989262a6",
+      "headline": "Patriots Week 5 Injury Report: Offensive Starter Returns, Top CBs Remain Out",
+      "url": "https://www.si.com/nfl/patriots/onsi/patriots-week-5-injury-report-another-missed-practice-for-christian-gonzalez",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots and Las Vegas Raiders announced their second injury reports of the week.",
+      "categories": [],
+      "published_at": "2026-10-07T21:52:21+00:00",
+      "players": []
+    },
+    {
       "id": "eb19d5e6abaa9b526022",
       "headline": "Dallas Cowboys Preseason Star Camden Brown Could Make NFL Debut in Week 5",
       "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-camden-brown-could-make-nfl-debut-week-5",
@@ -1682,25 +2296,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "ef3efddd0f31c5ccb906",
-      "headline": "Raiders-Patriots Week 5 Injury Report",
-      "url": "https://www.raiders.com/news/las-vegas-raiders-new-england-patriots-week-5-injury-report-2026",
-      "source_id": "news_official_lv",
-      "source": "Las Vegas Raiders (official)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the New England Patriots.",
-      "categories": [
-        "Home Centerpiece",
-        "Home Latest Stories",
-        "News - Injury Report",
-        "Las Vegas Raiders at New England Patriots (2026-REG-5)"
-      ],
-      "published_at": "2026-10-07T21:44:32+00:00",
-      "players": []
     },
     {
       "id": "e5d2bfd978c117aa39cb",
@@ -1724,28 +2319,8 @@
       ]
     },
     {
-      "id": "8f9873f8d470bfd850b4",
-      "headline": "Week 5 Injury Report: Patriots vs. Raiders",
-      "url": "https://www.patriots.com/news/week-5-injury-report-patriots-vs-raiders",
-      "source_id": "news_official_ne",
-      "source": "New England Patriots (official)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots and the Las Vegas Raiders announce the following player injuries and practice participation ahead of their Week 5 game.",
-      "categories": [
-        "Injury Report",
-        "hp-article",
-        "hp-featured",
-        "Pregame-Content",
-        "Las Vegas Raiders at New England Patriots (2026-REG-5)"
-      ],
-      "published_at": "2026-10-07T21:38:26+00:00",
-      "players": []
-    },
-    {
       "id": "edfc0395217337862c33",
-      "headline": "Initial Vikings at Saints Injury Report for Week 5 of 2026",
+      "headline": "Updated Vikings at Saints Injury Report for Week 5 of 2026",
       "url": "https://www.vikings.com/news/saints-injury-report-week-5-2026-nfl-season",
       "source_id": "news_official_min",
       "source": "Minnesota Vikings (official)",
@@ -2192,26 +2767,6 @@
       ]
     },
     {
-      "id": "f1b825403fe676656754",
-      "headline": "Week 5 Injury Report | Bengals at Dolphins",
-      "url": "https://www.bengals.com/news/bengals-dolphins-week-5-2026-injury-report",
-      "source_id": "news_official_cin",
-      "source": "Cincinnati Bengals (official)",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "Take a look at the injury reports of the Cincinnati Bengals and the Miami Dolphins for Week 5 of the 2026 season.",
-      "categories": [
-        "latest news",
-        "centerpiece",
-        "Injury Report",
-        "latest stories",
-        "Cincinnati Bengals at Miami Dolphins (2026-REG-5)"
-      ],
-      "published_at": "2026-10-07T20:26:19+00:00",
-      "players": []
-    },
-    {
       "id": "b43deb5891399e0db9a9",
       "headline": "Bengals Injury Report: Star Receivers And More Miss Opening Practice Ahead of Dolphins Battle",
       "url": "https://www.si.com/nfl/bengals/onsi/bengals-injury-report-star-receivers-and-more-miss-opening-practice-ahead-of-dolphins-battle-01m4b09pm58z",
@@ -2337,51 +2892,6 @@
         "homepage-centerpiece",
         "Houston Texans at Tennessee Titans (2026-REG-5)",
         "2026-10-11-PREgame-STORIES-texans-at-titans"
-      ],
-      "published_at": "2026-10-07T20:00:00+00:00",
-      "players": []
-    },
-    {
-      "id": "a63a53d9c5ec4e2ce8dc",
-      "headline": "Giants vs. Commanders Week 5 Injury Report: Malik Nabers, Andrew Thomas DNP",
-      "url": "https://www.giants.com/news/giants-vs-commanders-week-5-injury-report-malik-nabers-andrew-thomas-cam-skattebo",
-      "source_id": "news_official_nyg",
-      "source": "New York Giants (official)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "View the injury report for the Week 5 matchup between the New York Giants (3-1) and Washington Commanders (1-3).",
-      "categories": [
-        "Injury Report",
-        "2026 Giants at Commanders WK 5",
-        "homepage"
-      ],
-      "published_at": "2026-10-07T20:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039337",
-          "name": "Malik Nabers",
-          "team": "NYG",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "2a34606c885c771b8d69",
-      "headline": "Week 5 Injury Report (Colts)",
-      "url": "https://www.steelers.com/news/week-5-injury-report-colts",
-      "source_id": "news_official_pit",
-      "source": "Pittsburgh Steelers (official)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "A look at player injuries and practice participation for Week 5",
-      "categories": [
-        "Injury Report",
-        "UPMC",
-        "Featured",
-        "Sights and Sounds",
-        "Indianapolis Colts at Pittsburgh Steelers (2026-REG-5)"
       ],
       "published_at": "2026-10-07T20:00:00+00:00",
       "players": []
@@ -3545,537 +4055,6 @@
           "id": "00-0038555",
           "name": "Tank Bigsby",
           "team": "PHI",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "02b6ec39ab50982274ad",
-      "headline": "Dallas Cowboys' Week 5 Injury Report Sheds Light On Team Health In Short Week",
-      "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-week-5-injury-report-sheds-light-on-team-health-in-short-week",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys still have multiple names listed on the injury report before Thursday night's matchup with the Tampa Bay Buccaneers.",
-      "categories": [],
-      "published_at": "2026-10-06T22:54:15+00:00",
-      "players": []
-    },
-    {
-      "id": "0c269b884432dfb0d375",
-      "headline": "Broncos sign WR Cam Ross to practice squad",
-      "url": "https://www.denverbroncos.com/news/broncos-sign-wr-cam-ross-to-practice-squad",
-      "source_id": "news_official_den",
-      "source": "Denver Broncos (official)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "Ross, a Virginia product, appeared in all three preseason games in 2026 for the Broncos.",
-      "categories": [
-        "Transactions",
-        "Susanna Weir",
-        "Top Stories"
-      ],
-      "published_at": "2026-10-06T22:51:05+00:00",
-      "players": [
-        {
-          "id": "00-0041299",
-          "name": "Cam Ross",
-          "team": "DEN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "321f9ad2ddbb7dbec6e5",
-      "headline": "Broncos Bring Back WR After Injury to Pat Bryant",
-      "url": "https://www.si.com/nfl/broncos/onsi/broncos-sign-cameron-ross-practice-squad",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "Denver got itself some insurance at receiver.",
-      "categories": [],
-      "published_at": "2026-10-06T22:50:12+00:00",
-      "players": [
-        {
-          "id": "00-0040134",
-          "name": "Pat Bryant",
-          "team": "DEN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "000a95e1cf9cf2d97081",
-      "headline": "Browns Make Major Move With Dillon Gabriel Ahead of Week 5",
-      "url": "https://www.si.com/nfl/browns/onsi/browns-make-major-move-with-dillon-gabriel-ahead-of-week-5-01m49e2gjhrd",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "The Browns started the week off by taking quarterback Dillon Gabriel off injured reserve, in addition to several other moves.",
-      "categories": [],
-      "published_at": "2026-10-06T21:37:56+00:00",
-      "players": [
-        {
-          "id": "00-0040704",
-          "name": "Dillon Gabriel",
-          "team": "CLE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "de96f6899964a12f3639",
-      "headline": "Three Key Changes Coming To Ravens Offense With Lamar Jackson Likely Out",
-      "url": "https://www.si.com/nfl/ravens/onsi/three-key-changes-coming-to-ravens-offense-with-lamar-jackson-likely-out-01m496qeejc7",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Rookie head coach Jesse Minter has faith in backup QB Snoop Huntley as Jackson deals with an ankle injury, but the scope of the offense will change",
-      "categories": [],
-      "published_at": "2026-10-06T21:00:02+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "3a7cba8dee57ae4374a5",
-      "headline": "3 Observations on Flurry of Jaguars Roster Moves: Impacts for Travis Hunter, Caleb Ransaw",
-      "url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-3-observations-on-flurry-of-roster-moves-impacts-for-travis-hunter-caleb-ransaw",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "JAX"
-      ],
-      "feed_description": "The Jacksonville Jaguars have made a few key moves in the secondary after Week 4.",
-      "categories": [],
-      "published_at": "2026-10-06T20:38:17+00:00",
-      "players": [
-        {
-          "id": "00-0040718",
-          "name": "Travis Hunter",
-          "team": "JAX",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "59b5e427f2f915d1b550",
-      "headline": "Buccaneers-Cowboys Injury Report Oct.6: McLaughlin, Winfield Jr. and Morrison Among Non-Participants",
-      "url": "https://www.buccaneers.com/news/buccaneers-cowboys-injury-report-oct-6-week-5",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "A look at Tuesday's injury report ahead of the Week 5 TNF matchup",
-      "categories": [
-        "Featured",
-        "Injury Report",
-        "Week 5 2026 Cowboys"
-      ],
-      "published_at": "2026-10-06T19:47:15+00:00",
-      "players": []
-    },
-    {
-      "id": "14fc202b1f6c1e203777",
-      "headline": "Durham Smythe Suffered Torn Achilles Against Titans, Placed on Injured Reserve",
-      "url": "https://www.baltimoreravens.com/news/durham-smythe-torn-achilles-ravens-tight-end-out-for-season",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Ravens will have to lean on their rookie tight ends and have a veteran they could turn to.",
-      "categories": [
-        "General",
-        "Ryan Mink",
-        "Durham Smythe",
-        "2026 Week 4",
-        "2026 Week 4 News",
-        "Tennessee Titans at Baltimore Ravens (2026-REG-4)",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-10-06T19:40:08+00:00",
-      "players": [
-        {
-          "id": "00-0034798",
-          "name": "Durham Smythe",
-          "team": "BAL",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "1aff98feacc7b92dff47",
-      "headline": "Dillon Gabriel and Kalia Davis eligible to return to practice",
-      "url": "https://www.clevelandbrowns.com/news/dillon-gabriel-and-kalia-davis-eligible-to-return-to-practice",
-      "source_id": "news_official_cle",
-      "source": "Cleveland Browns (official)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "Browns also sign WR James Proche II and DT Chris Williams to the practice squad and make other moves",
-      "categories": [
-        "Transactions",
-        "adpartner=transactions",
-        "featured"
-      ],
-      "published_at": "2026-10-06T19:27:51+00:00",
-      "players": [
-        {
-          "id": "00-0040704",
-          "name": "Dillon Gabriel",
-          "team": "CLE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "a1efb2f8cc5ccd05c033",
-      "headline": "Ravens QB Lamar Jackson has \u2018only an outside chance\u2019 to play in Week 5",
-      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-injuries/86045/ravens-qb-lamar-jackson-has-only-an-outside-chance-to-play-in-week-5",
-      "source_id": "news_sbn_bal",
-      "source": "Baltimore Beatdown (SB Nation)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Score one for the social media injury experts who said that Baltimore Ravens quarterback Lamar Jackson likely suffered a sprained ankle in Sunday\u2019s win over the Tennessee Titans. That is indeed the diagnosis for the two-time MVP, who has \u201conly an outside chance\u201d to take the field in Week 5 against the Atlanta Falcons, per [\u2026]",
-      "categories": [
-        "Baltimore Ravens Injuries",
-        "Baltimore Ravens News"
-      ],
-      "published_at": "2026-10-06T19:22:00+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "30d33e11a02cf67aae30",
-      "headline": "The 49ers are Underutilizing Rookie Running Back Kaelon Black",
-      "url": "https://www.si.com/nfl/49ers/onsi/49ers-underutilizing-rookie-running-back-kaelon-black",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The 49ers desperately need a quality backup running back to split carries with Christian McCaffrey. That's why they drafted Kaelon Black in Round 3 this year. Unfortunately, they're not using him nearly enough.",
-      "categories": [],
-      "published_at": "2026-10-06T18:35:45+00:00",
-      "players": [
-        {
-          "id": "00-0033280",
-          "name": "Christian McCaffrey",
-          "team": "SF",
-          "position": "RB"
-        },
-        {
-          "id": "00-0041052",
-          "name": "Kaelon Black",
-          "team": "SF",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "0b8cfc685c69cbb5b559",
-      "headline": "Ravens TE Durham Smythe suffers season-ending torn Achilles",
-      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/86031/report-ravens-te-durham-smythe-confirmed-to-have-a-season-ending-torn-achilles",
-      "source_id": "news_sbn_bal",
-      "source": "Baltimore Beatdown (SB Nation)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Baltimore Ravens\u2019 tight end Durham Smythe limped off the field Sunday\u2019s win over the Tennessee Titans and was quickly ruled out with an Achilles injury. The sight of Smythe grabbing at his calf and struggled to walk under his own power sparked concerns about a potential tear. Unfortunately, those fears have proven to be accurate. [\u2026]",
-      "categories": [
-        "Baltimore Ravens Injuries",
-        "Baltimore Ravens News"
-      ],
-      "published_at": "2026-10-06T18:24:19+00:00",
-      "players": [
-        {
-          "id": "00-0034798",
-          "name": "Durham Smythe",
-          "team": "BAL",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "66cd1c1564fc68bce030",
-      "headline": "Fernando Mendoza\u2019s starting QB timeline continues to get altered for the Las Vegas Raiders, but that\u2019s a good thing",
-      "url": "https://atozsports.com/nfl/las-vegas-raiders-news/las-vegas-raiders-fernando-mendoza-starting-quarterback-timeline-continues-to-get-altered-kirk-cousins-klint-kubiak/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "The Las Vegas Raiders went toe-to-toe with Kansas City and walked away with plenty of believers. Just how far can this group realistically go?",
-      "categories": [
-        "Las Vegas Raiders News",
-        "NFL",
-        "American Football",
-        "Fernando Mendoza",
-        "Kirk Cousins",
-        "Klint Kubiak",
-        "Las Vegas Raiders"
-      ],
-      "published_at": "2026-10-06T18:21:47+00:00",
-      "players": [
-        {
-          "id": "00-0041562",
-          "name": "Fernando Mendoza",
-          "team": "LV",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "713a2db7bf2972d61461",
-      "headline": "Kansas City Chiefs\u2019 new identity couldn\u2019t have come at a better time to deal with some unfortunate injury news",
-      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/kansas-city-chiefs-new-identity-couldnt-have-come-at-a-better-time-kenneth-walker-tyquan-thornton-rashee-rice/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs held off a pesky Raiders team on a quiet day for Patrick Mahomes. Is this new offensive identity built to last?",
-      "categories": [
-        "Kansas City Chiefs News",
-        "NFL",
-        "American Footballl",
-        "Andy Reid",
-        "Kansas City Chiefs",
-        "Kenneth Walker",
-        "Patrick Mahomes"
-      ],
-      "published_at": "2026-10-06T17:13:57+00:00",
-      "players": [
-        {
-          "id": "00-0033873",
-          "name": "Patrick Mahomes",
-          "team": "KC",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "1684f9be090a548e7350",
-      "headline": "Texans Open Practice Windows for Tank Dell, Braden Smith and Kayden McDonald",
-      "url": "https://www.houstontexans.com/news/texans-open-practice-windows-for-tank-dell-braden-smith-and-kayden-mcdonald",
-      "source_id": "news_official_hou",
-      "source": "Houston Texans (official)",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "DeMeco Ryans said the 21-day windows open this week, and Sunday availability will depend on how each player responds on the practice field.",
-      "categories": [
-        "Homepage CP",
-        "Dallas Cowboys at Houston Texans (2026-REG-4)",
-        "2026 REG4 - Cowboys",
-        "Tank Dell",
-        "Braden Smith",
-        "Kayden McDonald"
-      ],
-      "published_at": "2026-10-06T17:00:16+00:00",
-      "players": [
-        {
-          "id": "00-0038977",
-          "name": "Tank Dell",
-          "team": "HOU",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "9d7c1b5eabec672fbaff",
-      "headline": "Todd Bowles: Bucs Need to Split Backfield Reps Three Ways",
-      "url": "https://www.buccaneers.com/news/todd-bowles-bucs-need-to-split-backfield-reps-three-ways",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "Sean Tucker's touchdown run and fourth-down conversion in limited action against the Packers has reignited the discussion over how the Bucs should be distributing their backfield reps between him, Bucky Irving and Kenny Gainwell",
-      "categories": [
-        "Featuerd",
-        "Week 4 2026 Packers",
-        "Week 5 2026 Cowboys",
-        "Sean Tucker",
-        "Kenneth Gainwell",
-        "Bucky Irving"
-      ],
-      "published_at": "2026-10-06T15:41:00+00:00",
-      "players": [
-        {
-          "id": "00-0038951",
-          "name": "Sean Tucker",
-          "team": "TB",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039361",
-          "name": "Bucky Irving",
-          "team": "TB",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "f1b4fee29e95b1b52874",
-      "headline": "Steelers\u2019 Rico Dowdle Details Gruesome Toe Injury, Return Process",
-      "url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-rico-dowdle-gruesome-toe-injury-return-process",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "Pittsburgh Steelers running back Rico Dowdle offered further details on his toe injury and where he stands in his recovery.",
-      "categories": [],
-      "published_at": "2026-10-06T15:21:53+00:00",
-      "players": [
-        {
-          "id": "00-0036139",
-          "name": "Rico Dowdle",
-          "team": "PIT",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "11cac98689cbcfee89cc",
-      "headline": "Key Observations From Chicago Bears Snap Count in Week 4 Win Over Jets",
-      "url": "https://www.si.com/nfl/bears/onsi/key-observations-from-chicago-bears-snap-count-in-week-4-win-over-jets",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears rookie TE Sam Roush isn't going away anytime soon. His presence isn't the only interesting aspect of the team's Week 4 snap count, though.",
-      "categories": [],
-      "published_at": "2026-10-06T15:00:01+00:00",
-      "players": [
-        {
-          "id": "00-0041558",
-          "name": "Sam Roush",
-          "team": "CHI",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "8d212d65624484ae09f7",
-      "headline": "Josh Allen and the Bills may receive an opportunity they can\u2019t screw up after getting tied to latest Lamar Jackson injury update",
-      "url": "https://atozsports.com/nfl/buffalo-bills-news/bills-ravens-lamar-jackson-injury-update/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "The Bills face a tough stretch of games after a bad loss to the Patriots, but may have been given a reprieve thanks to Lamar Jackson's latest injury update.",
-      "categories": [
-        "Buffalo Bills News",
-        "Josh Allen"
-      ],
-      "published_at": "2026-10-06T14:58:41+00:00",
-      "players": [
-        {
-          "id": "00-0034857",
-          "name": "Josh Allen",
-          "team": "BUF",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "6076586acdc9ef3eb342",
-      "headline": "4 Reasons Why the Browns Should Avoid Trading Shedeur Sanders",
-      "url": "https://www.si.com/nfl/browns/onsi/4-reasons-why-the-browns-should-avoid-trading-shedeur-sanders-01m47ay0bnna",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "Ever since Deshaun Watson began impressing many people as the Cleveland Browns starting quarterback, some have began calling for Cleveland to dish their young q",
-      "categories": [],
-      "published_at": "2026-10-06T14:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0033537",
-          "name": "Deshaun Watson",
-          "team": "CLE",
-          "position": "QB"
-        },
-        {
-          "id": "00-0040668",
-          "name": "Shedeur Sanders",
-          "team": "CLE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "d1fed17ebf69ce012fba",
-      "headline": "There\u2019s a concerning trend lurking underneath Lamar Jackson\u2019s latest injury update even if the Ravens consider it to be good news",
-      "url": "https://atozsports.com/nfl/baltimore-ravens-news/lamar-jackson-ankle-injury-update/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Lamar Jackson's ankle injury isn't deemed serious, but there's still a chance he misses multiple games and it only adds to a growing concern that's popped up over the last few seasons.",
-      "categories": [
-        "Baltimore Ravens News",
-        "lamar jackson",
-        "Lamar Jackson Injury Update",
-        "Ravens Injury News"
-      ],
-      "published_at": "2026-10-06T14:02:28+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "24daecaa197683b38f33",
-      "headline": "D'Andre Swift Served Notice About How Fumblers Will Not Be Tolerated",
-      "url": "https://www.si.com/nfl/bears/onsi/d-andre-swift-served-notice-about-how-fumblers-will-not-be-tolerated",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "It's not clear as to whether Bears RB D'Andre Swift will lose his starting job for his second fumble in three games but certainly Ben Johnson is pondering it.",
-      "categories": [],
-      "published_at": "2026-10-06T13:00:03+00:00",
-      "players": [
-        {
-          "id": "00-0036275",
-          "name": "D'Andre Swift",
-          "team": "CHI",
           "position": "RB"
         }
       ]
