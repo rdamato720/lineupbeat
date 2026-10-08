@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T02:00:53.212361+00:00",
+  "updated_at": "2026-10-08T04:00:51.930244+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-08T02:00:00+00:00",
+      "latest_entry_at": "2026-10-08T03:37:12+00:00",
       "stale": false
     },
     {
@@ -270,7 +270,7 @@
       "ok": true,
       "eligible": 9,
       "error": "",
-      "latest_entry_at": "2026-10-07T23:15:08+00:00",
+      "latest_entry_at": "2026-10-09T00:14:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-08T02:00:00+00:00",
+      "latest_entry_at": "2026-10-08T03:37:12+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-07T16:59:34+00:00",
+      "latest_entry_at": "2026-10-08T02:02:12+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-07T11:34:24+00:00",
+      "latest_entry_at": "2026-10-08T00:00:00+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-06T19:48:47+00:00",
+      "latest_entry_at": "2026-10-07T17:48:53+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-07T16:30:00+00:00",
+      "latest_entry_at": "2026-10-07T20:54:29+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-07T18:21:57+00:00",
+      "latest_entry_at": "2026-10-07T21:39:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-07T22:00:00+00:00",
+      "latest_entry_at": "2026-10-08T01:00:00+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-07T04:00:00+00:00",
+      "latest_entry_at": "2026-10-08T04:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-07T20:30:00+00:00",
+      "latest_entry_at": "2026-10-08T00:54:28+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-07T11:00:00+00:00",
+      "latest_entry_at": "2026-10-08T01:07:57+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-06T00:49:47+00:00",
+      "latest_entry_at": "2026-10-07T13:04:11+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-08T00:17:50+00:00",
+      "latest_entry_at": "2026-10-08T03:46:17+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "bb1c87f47bcd7a59e257",
+      "headline": "Commanders News: Jayden Daniels Takes a Big Step, But Injury Questions Grow | Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-news-jayden-daniels-injury-report-week-5-burgundy-roundup",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Jayden Daniels practiced fully Wednesday, but McLaurin and Diggs sat out. Get the latest Commanders injury updates, roster moves and Giants news.",
+      "categories": [],
+      "published_at": "2026-10-08T03:25:58+00:00",
+      "players": [
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "5b431be7d1fca57e87e8",
       "headline": "Malik Nabers Dismisses \"Breakout\" Label After 112-Yard Game",
@@ -4025,42 +4046,6 @@
           "name": "Tank Bigsby",
           "team": "PHI",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "8653e73d9abb0e9ff43c",
-      "headline": "49ers injury updates: Marques Sigle has the dreaded high ankle sprain",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-news/163787/49ers-injury-updates-marques-sigle-has-the-dreaded-high-ankle-sprain",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "San Francisco 49ers head coach Kyle Shanahan provided injury updates on Monday afternoon. He confirmed Kyle Juszczyk has a hyperextended knee. Juice is expected to miss 2-3 weeks. Shanahan said Luke Farrell and Brayden Willis will take over Juszczyk\u2019s role. \u201cThey\u2019re all pretty interchangeable, but it\u2019ll definitely get Brayden some more ops.\u201d Safety Marques Sigle [\u2026]",
-      "categories": [
-        "San Francisco 49ers Injuries",
-        "San Francisco 49ers News"
-      ],
-      "published_at": "2026-10-05T22:07:29+00:00",
-      "players": [
-        {
-          "id": "00-0029892",
-          "name": "Kyle Juszczyk",
-          "team": "SF",
-          "position": "RB"
-        },
-        {
-          "id": "00-0036887",
-          "name": "Luke Farrell",
-          "team": "SF",
-          "position": "TE"
-        },
-        {
-          "id": "00-0038643",
-          "name": "Brayden Willis",
-          "team": "SF",
-          "position": "TE"
         }
       ]
     }
