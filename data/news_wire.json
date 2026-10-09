@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T02:00:49.017182+00:00",
+  "updated_at": "2026-10-09T04:00:42.077607+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-09T02:00:00+00:00",
+      "latest_entry_at": "2026-10-09T03:50:30+00:00",
       "stale": false
     },
     {
@@ -22,7 +22,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-08T23:10:09+00:00",
+      "latest_entry_at": "2026-10-09T03:34:13+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-08T22:23:39+00:00",
+      "latest_entry_at": "2026-10-09T02:06:32+00:00",
       "stale": false
     },
     {
@@ -270,7 +270,7 @@
       "ok": true,
       "eligible": 10,
       "error": "",
-      "latest_entry_at": "2026-10-09T03:15:00+00:00",
+      "latest_entry_at": "2026-10-09T00:42:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-09T02:00:00+00:00",
+      "latest_entry_at": "2026-10-09T03:50:30+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-08T23:45:00+00:00",
+      "latest_entry_at": "2026-10-09T03:46:11+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-08T18:00:00+00:00",
+      "latest_entry_at": "2026-10-09T02:06:03+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,99 @@
     }
   ],
   "items": [
+    {
+      "id": "8a64bb6ad507c8372926",
+      "headline": "CeeDee Lamb Injury Update: Latest on Cowboys WR After Leaving Week 5 Game",
+      "url": "https://www.si.com/nfl/cowboys/onsi/ceedee-lamb-injury-update-latest-on-cowboys-wr",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "During a tough game against the Tampa Bay Buccaneers, the Dallas Cowboys saw their top wideout, CeeDee Lamb, suffer a quad injury.",
+      "categories": [],
+      "published_at": "2026-10-09T03:07:46+00:00",
+      "players": [
+        {
+          "id": "00-0036358",
+          "name": "CeeDee Lamb",
+          "team": "DAL",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "e1f36378bd414c6a7a95",
+      "headline": "Commanders News: Surprise Rookie Cut as Two Key Receivers Remain Sidelined | Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-news-kaytron-allen-waived-injury-updates-burgundy-roundup",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Commanders waive rookie Kaytron Allen as McLaurin and Diggs miss practice again. Get Thursday's injury updates, Giants news, podcasts and more.",
+      "categories": [],
+      "published_at": "2026-10-09T03:01:19+00:00",
+      "players": [
+        {
+          "id": "00-0041096",
+          "name": "Kaytron Allen",
+          "team": "WAS",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "fc4165bd8368cb12dbf5",
+      "headline": "Broncos Could Catch a Major Break With Chargers' Injury Report",
+      "url": "https://www.si.com/nfl/broncos/onsi/broncos-could-catch-a-major-break-with-chargers-injury-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Chargers are the walking wounded, with several key players unlikely to play against the Broncos.",
+      "categories": [],
+      "published_at": "2026-10-09T02:56:38+00:00",
+      "players": []
+    },
+    {
+      "id": "bd2e7fb26c0b8d98d872",
+      "headline": "Week 5 Injury: Examining Titans\u2019 Chances if Carnell Tate Can\u2019t Play vs. Texans",
+      "url": "https://www.si.com/nfl/titans/onsi/week-5-injury-examining-titans-chances-if-carnell-tate-can-t-play-vs-texans-01m4f379f4rw",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Titans' rookie WR Carnell Tate injured his back during Thursday's practice and has officially been listed as 'limited'.",
+      "categories": [],
+      "published_at": "2026-10-09T02:15:38+00:00",
+      "players": [
+        {
+          "id": "00-0041438",
+          "name": "Carnell Tate",
+          "team": "TEN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "9476482cb21dd70be91d",
+      "headline": "Falcons vs. Ravens injury report: Jake Matthews dealing with groin issue",
+      "url": "https://www.thefalcoholic.com/atlanta-falcons-injuries/97084/falcons-vs-ravens-injury-report-jake-matthews-dealing-with-groin-issue",
+      "source_id": "news_sbn_atl",
+      "source": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "A new week is underway, as the Atlanta Falcons and Baltimore Ravens prepare to face off on Sunday evening. The Falcons have now won back-to-back primetime games, and they look to make it a third. For that, they\u2019re going to need some of their currently banged up players to get healthy. Let\u2019s take a look! [\u2026]",
+      "categories": [
+        "Atlanta Falcons injuries"
+      ],
+      "published_at": "2026-10-09T02:06:03+00:00",
+      "players": []
+    },
     {
       "id": "b34ec7bf98238b228c39",
       "headline": "Justin Herbert is in Trouble: Non-Chargers Fans Wouldn\u2019t Be Able to Name 1 Starting OL",
@@ -3824,143 +3917,6 @@
           "name": "Lamar Jackson",
           "team": "BAL",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "ad4ef2874d2a535e7ebb",
-      "headline": "Jets WR Tim Patrick Designated for Return to Practice",
-      "url": "https://www.newyorkjets.com/news/tim-patrick-designated-for-return-to-practice-jets-10-07-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Veteran Pass Catcher Has 21 Days to Be Added to the Active Roster From Injured Reserve",
-      "categories": [
-        "Latest Headlines",
-        "News",
-        "Tim Patrick"
-      ],
-      "published_at": "2026-10-07T17:52:50+00:00",
-      "players": [
-        {
-          "id": "00-0033375",
-          "name": "Tim Patrick",
-          "team": "NYJ",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "28c7956ba713b93db6b7",
-      "headline": "Packers WR Savion Williams returns to practice Wednesday",
-      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/87754/packers-wr-savion-williams-returns-to-practice-wednesday",
-      "source_id": "news_sbn_gb",
-      "source": "Acme Packing Company (SB Nation)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "One of the two players who the Green Bay Packers placed on injured reserve before the season with a return designation is officially on his way back. On cutdown day in August, the Packers put second-year wide receiver Savion Williams on injured reserve to open up a roster spot; on Wednesday ahead of week five, [\u2026]",
-      "categories": [
-        "Green Bay Packers News",
-        "Green Bay Packers roster"
-      ],
-      "published_at": "2026-10-07T17:41:04+00:00",
-      "players": [
-        {
-          "id": "00-0040009",
-          "name": "Savion Williams",
-          "team": "GB",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "2a64b8ddd1f53d050275",
-      "headline": "Patriots\u2019 Drake Maye earns AFC Offensive Player of the Week",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/139775/patriots-drake-maye-afc-offensive-player-week-4-bills",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Drake Maye has been named AFC Offensive Player of the Week following his resurgence at Highmark Stadium. The New England Patriots captain completed 22-of-37 passes for 269 yards and three touchdowns in last Sunday\u2019s 29-26 AFC East upset against the Buffalo Bills. He added a team-high and season-high 54 rushing yards to lead the conference\u2019s [\u2026]",
-      "categories": [
-        "New England Patriots News"
-      ],
-      "published_at": "2026-10-07T17:23:18+00:00",
-      "players": [
-        {
-          "id": "00-0039851",
-          "name": "Drake Maye",
-          "team": "NE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "31fffae37be41cc22682",
-      "headline": "Dan Quinn: Marcus Mariota\u2019s return expected sooner than later, no need for IR",
-      "url": "https://www.hogshaven.com/pressers/447080/dan-quinn-marcus-mariotas-return-expected-sooner-than-later-need-ir",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Washington Commanders are home from their international game in London against the Indianapolis Colts. They lost the game, and injuries to Marcus Mariota (MCL) and Jaylin Lane (ankle/IR) deflated the team. Dan Quinn has said they plan on having Jayden Daniels back as a full participant with the expectation he can start this week [\u2026]",
-      "categories": [
-        "Pressers",
-        "Washington Commanders News"
-      ],
-      "published_at": "2026-10-07T17:20:16+00:00",
-      "players": [
-        {
-          "id": "00-0032268",
-          "name": "Marcus Mariota",
-          "team": "WAS",
-          "position": "QB"
-        },
-        {
-          "id": "00-0039910",
-          "name": "Jayden Daniels",
-          "team": "WAS",
-          "position": "QB"
-        },
-        {
-          "id": "00-0040164",
-          "name": "Jaylin Lane",
-          "team": "WAS",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "19affc76623744826df7",
-      "headline": "Ravens Sign Tight End Nick Vannett to 53-Man Roster",
-      "url": "https://www.baltimoreravens.com/news/nick-vannett-tight-end-ravens-roster-durham-smythe-injury-2026",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Veteran blocking tight end Nick Vannett will help fill the void of injured Durham Smythe.",
-      "categories": [
-        "Transactions",
-        "General",
-        "Ryan Mink",
-        "Nick Vannett",
-        "Lucas Scott",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-10-07T17:14:07+00:00",
-      "players": [
-        {
-          "id": "00-0034798",
-          "name": "Durham Smythe",
-          "team": "BAL",
-          "position": "TE"
         }
       ]
     }
