@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T01:27:50.732663+00:00",
+  "updated_at": "2026-10-09T02:00:49.017182+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-09T01:27:22+00:00",
+      "latest_entry_at": "2026-10-09T02:00:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-09T01:27:22+00:00",
+      "latest_entry_at": "2026-10-09T02:00:00+00:00",
       "stale": false
     },
     {
@@ -300,9 +300,9 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-06T20:37:33+00:00",
+      "latest_entry_at": "2026-10-09T00:09:52+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-08T20:42:18+00:00",
+      "latest_entry_at": "2026-10-09T00:40:15+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-07T11:05:00+00:00",
+      "latest_entry_at": "2026-10-08T23:02:32+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-08T00:16:46+00:00",
+      "latest_entry_at": "2026-10-08T21:52:54+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-07T12:00:00+00:00",
+      "latest_entry_at": "2026-10-08T23:30:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-07T21:39:00+00:00",
+      "latest_entry_at": "2026-10-08T21:51:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-08T21:30:00+00:00",
+      "latest_entry_at": "2026-10-08T23:45:00+00:00",
       "stale": false
     },
     {
@@ -446,15 +446,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-08T22:05:21+00:00",
+      "latest_entry_at": "2026-10-08T23:45:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 6,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-08T20:58:48+00:00",
+      "latest_entry_at": "2026-10-09T00:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-08T20:00:00+00:00",
+      "latest_entry_at": "2026-10-09T00:11:00+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-08T16:33:19+00:00",
+      "latest_entry_at": "2026-10-08T23:10:37+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-07T22:00:00+00:00",
+      "latest_entry_at": "2026-10-08T18:00:00+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-08T04:51:24+00:00",
+      "latest_entry_at": "2026-10-08T22:30:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-08T18:42:16+00:00",
+      "latest_entry_at": "2026-10-09T00:44:35+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "b34ec7bf98238b228c39",
+      "headline": "Justin Herbert is in Trouble: Non-Chargers Fans Wouldn\u2019t Be Able to Name 1 Starting OL",
+      "url": "https://www.si.com/nfl/chargers/onsi/justin-herbert-trouble-chargers-injuries-starting-line",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "And at this point, Chargers fans might be able to name one or two, tops.",
+      "categories": [],
+      "published_at": "2026-10-09T02:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0036355",
+          "name": "Justin Herbert",
+          "team": "LAC",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "9f1fd74ed131d3c5d6cd",
       "headline": "Rams Injury Report: Aaron Donald Among Three Key Starters Who Could Return vs. Bills",
@@ -611,6 +632,29 @@
       "categories": [],
       "published_at": "2026-10-09T00:10:59+00:00",
       "players": []
+    },
+    {
+      "id": "fb7ed02a67b8f1b3cb9b",
+      "headline": "Buffalo Bills injury report: Christian Benford returns on Thursday",
+      "url": "https://www.buffalorumblings.com/buffalo-bills-injuries/24480799/buffalo-bills-injury-report-christian-benford-returns-on-thursday",
+      "source_id": "news_sbn_buf",
+      "source": "Buffalo Rumblings (SB Nation)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Sunday wasn\u2019t a great day for the Buffalo Bills on many levels. The scoreboard wasn\u2019t friendly, but neither was the fire. We found out that DJ Moore is not Ironman after all, and the Bills ran out of cornerbacks before the game clock ran out of minutes. The result: back up safety Damar Hamlin entered the game at nickel. We have [\u2026]",
+      "categories": [
+        "Buffalo Bills Injuries"
+      ],
+      "published_at": "2026-10-09T00:09:52+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
     },
     {
       "id": "3ed5e4fa63545f8bee74",
@@ -3916,56 +3960,6 @@
           "id": "00-0034798",
           "name": "Durham Smythe",
           "team": "BAL",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "59aa66db6f63a4d2c8f7",
-      "headline": "Zac Taylor Drops Latest Bengals Star Injury Update As Dolphins Practices Begin",
-      "url": "https://www.si.com/nfl/bengals/onsi/zac-taylor-drops-latest-bengals-star-injury-update-as-dolphins-practices-begin-01m4az5eax3z",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "Zac Taylor Drops Latest Cincinnati Bengals Star Injury Updates on Ja'Marr Chase, Tee Higgins As Dolphins Practices Begin",
-      "categories": [],
-      "published_at": "2026-10-07T17:08:47+00:00",
-      "players": [
-        {
-          "id": "00-0036410",
-          "name": "Tee Higgins",
-          "team": "CIN",
-          "position": "WR"
-        },
-        {
-          "id": "00-0036900",
-          "name": "Ja'Marr Chase",
-          "team": "CIN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "371a05ab0474034059c3",
-      "headline": "Colts opening practice day window for promising backup tight end",
-      "url": "https://www.stampedeblue.com/indianapolis-colts-news/128504/colts-open-practice-day-window-for-promising-backup-tight-end",
-      "source_id": "news_sbn_ind",
-      "source": "Stampede Blue (SB Nation)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "According to head coach Shane Steichen, the Indianapolis Colts are opening the 21-day practice window for backup tight end Will Mallory, who\u2019s coming back from a thumb injury (via FOX59/CBS4\u2019s Mike Chappell): It means that Mallory will be eligible to be activated off the team\u2019s injured reserve within the next three weeks. If he\u2019s not [\u2026]",
-      "categories": [
-        "Indianapolis Colts News"
-      ],
-      "published_at": "2026-10-07T17:02:27+00:00",
-      "players": [
-        {
-          "id": "00-0038394",
-          "name": "Will Mallory",
-          "team": "IND",
           "position": "TE"
         }
       ]
