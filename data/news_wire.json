@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T00:00:46.359060+00:00",
+  "updated_at": "2026-10-10T00:19:51.027678+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-09T23:49:53+00:00",
+      "latest_entry_at": "2026-10-10T00:16:53+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-09T23:49:53+00:00",
+      "latest_entry_at": "2026-10-10T00:16:53+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-09T21:43:47+00:00",
+      "latest_entry_at": "2026-10-10T00:00:00+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-09T22:21:21+00:00",
+      "latest_entry_at": "2026-10-09T17:50:42+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-09T23:00:00+00:00",
+      "latest_entry_at": "2026-10-10T00:00:00+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-09T17:37:57+00:00",
+      "latest_entry_at": "2026-10-09T22:39:16+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-09T22:00:00+00:00",
+      "latest_entry_at": "2026-10-10T00:00:00+00:00",
       "stale": false
     },
     {
@@ -534,15 +534,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-09T18:04:00+00:00",
+      "latest_entry_at": "2026-10-09T20:26:38+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-09T19:45:32+00:00",
+      "latest_entry_at": "2026-10-09T21:44:33+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,25 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-09T17:00:00+00:00",
+      "latest_entry_at": "2026-10-09T19:26:27+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "e146b361d6044b3ba66a",
+      "headline": "Broncos Week 5 Injury Report: Final Decisions on Surtain, Moss",
+      "url": "https://www.si.com/nfl/broncos/onsi/broncos-rule-out-surtain-moss-chargers",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Broncos are beat up, but the Chargers have it worse.",
+      "categories": [],
+      "published_at": "2026-10-10T00:02:24+00:00",
+      "players": []
+    },
     {
       "id": "7d4e05b683a8ca818ea8",
       "headline": "Buffalo Bills injury report: Still no DJ Moore or Ed Oliver on Friday",
@@ -594,6 +608,30 @@
       ],
       "published_at": "2026-10-09T23:12:15+00:00",
       "players": []
+    },
+    {
+      "id": "e5ce579b0134a46bf32b",
+      "headline": "Chargers Injury Report: Quentin Johnston, Derwin Hames OUT vs. Broncos",
+      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/66176/chargers-injury-report-quentin-johnston-derwin-hames-broncos",
+      "source_id": "news_sbn_lac",
+      "source": "Bolts From The Blue (SB Nation)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "The Chargers are going to be down even more starters on both sides of the ball in their Week Five matchup with the Broncos. After missing last week\u2019s game in Seattle, safety Derwin James will miss his second consecutive game, leading the way for another Tony Jefferson start in his place. Right tackle Joe Alt [\u2026]",
+      "categories": [
+        "Chargers Injury Reports",
+        "Los Angeles Chargers Injuries"
+      ],
+      "published_at": "2026-10-09T22:39:16+00:00",
+      "players": [
+        {
+          "id": "00-0038544",
+          "name": "Quentin Johnston",
+          "team": "LAC",
+          "position": "WR"
+        }
+      ]
     },
     {
       "id": "3ba31023b0a35e097a22",
@@ -3956,62 +3994,6 @@
           "id": "00-0039915",
           "name": "Ladd McConkey",
           "team": "LAC",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "0c0be538d91a6362f785",
-      "headline": "Bears\u2019 Tyson Bagent looking to build on Jets\u2019 performance against Packers",
-      "url": "https://www.windycitygridiron.com/chicago-bears-news/124719/bears-tyson-bagent-looking-to-build-on-jets-performance-as-bears-face-packers",
-      "source_id": "news_sbn_chi",
-      "source": "Windy City Gridiron (SB Nation)",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Chicago Bears will head to Green Bay this week without their starting quarterback, as Tyson Bagent is set to start in place of Caleb Williams, who continues to work through a hamstring injury. Bagent stepped in for Williams last week against the New York Jets, leading the Bears to a 23-12 victory. He completed [\u2026]",
-      "categories": [
-        "Chicago Bears News"
-      ],
-      "published_at": "2026-10-08T13:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0038416",
-          "name": "Tyson Bagent",
-          "team": "CHI",
-          "position": "QB"
-        },
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "5740a33891a98b012305",
-      "headline": "Jayden Daniels\u2019 Return Could Put Antonio Williams in a Much Bigger Role \u2014 Commanders Daily",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-jayden-daniels-return-antonio-williams-role",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "With Jayden Daniels expected back and injuries affecting Washington's receivers, rookie Antonio Williams could be headed for his biggest opportunity yet.",
-      "categories": [],
-      "published_at": "2026-10-08T11:36:57+00:00",
-      "players": [
-        {
-          "id": "00-0039910",
-          "name": "Jayden Daniels",
-          "team": "WAS",
-          "position": "QB"
-        },
-        {
-          "id": "00-0041040",
-          "name": "Antonio Williams",
-          "team": "WAS",
           "position": "WR"
         }
       ]
