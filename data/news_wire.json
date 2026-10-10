@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T02:00:44.738408+00:00",
+  "updated_at": "2026-10-10T04:00:53.645469+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-10T01:46:01+00:00",
+      "latest_entry_at": "2026-10-10T03:38:32+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-10T01:46:01+00:00",
+      "latest_entry_at": "2026-10-10T03:38:32+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-09T20:17:01+00:00",
+      "latest_entry_at": "2026-10-09T18:04:49+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-09T17:50:42+00:00",
+      "latest_entry_at": "2026-10-09T22:21:21+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-09T13:30:00+00:00",
+      "latest_entry_at": "2026-10-10T03:13:15+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-09T17:05:00+00:00",
+      "latest_entry_at": "2026-10-09T22:34:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-09T20:21:51+00:00",
+      "latest_entry_at": "2026-10-09T22:33:40+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-10T00:00:00+00:00",
+      "latest_entry_at": "2026-10-10T02:13:11+00:00",
       "stale": false
     },
     {
@@ -508,17 +508,17 @@
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 3,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-09T13:00:00+00:00",
+      "latest_entry_at": "2026-10-09T21:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-09T04:19:00+00:00",
+      "latest_entry_at": "2026-10-09T13:00:00+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-09T21:44:33+00:00",
+      "latest_entry_at": "2026-10-09T20:15:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "ac9031c474cca502e492",
+      "headline": "Commanders News: Giants Get Boost Before Sunday, Dolphins Claim Kaytron Allen | Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-news-giants-boost-dolphins-kaytron-allen-burgundy-roundup",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Malik Nabers and Andrew Thomas get encouraging injury news before facing Washington, while Miami claims Kaytron Allen. Plus, Commanders news and updates.",
+      "categories": [],
+      "published_at": "2026-10-10T03:01:52+00:00",
+      "players": [
+        {
+          "id": "00-0041096",
+          "name": "Kaytron Allen",
+          "team": "WAS",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "c9940afe96cb9add9e58",
       "headline": "Here\u2019s Why Pierre Strong Could Secure Critical Role for Packers vs. Bears",
@@ -706,6 +727,29 @@
           "id": "00-0040009",
           "name": "Savion Williams",
           "team": "GB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "74f0aca6f4df67e36a3e",
+      "headline": "Giants at Commanders: Jayden Daniels, Malik Nabers to play",
+      "url": "https://www.bigblueview.com/new-york-giants-injuries/174884/giants-at-commanders-jayden-daniels-malik-nabers-to-play",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The 3-1 New York Giants and the 1-3 Washington Commanders both received good news, and bad news, on the injury front as they prepare for a rainy showdown in Week 5. The story of the week is on the Washington Commanders\u2019 sideline. Third-year quarterback Jayden Daniels is making his return from the dislocated left elbow [\u2026]",
+      "categories": [
+        "New York Giants injuries"
+      ],
+      "published_at": "2026-10-09T22:33:40+00:00",
+      "players": [
+        {
+          "id": "00-0039337",
+          "name": "Malik Nabers",
+          "team": "NYG",
           "position": "WR"
         }
       ]
@@ -1306,29 +1350,6 @@
       ],
       "published_at": "2026-10-09T20:25:00+00:00",
       "players": []
-    },
-    {
-      "id": "74f0aca6f4df67e36a3e",
-      "headline": "Giants at Commanders: Jayden Daniels, Malik Nabers to play",
-      "url": "https://www.bigblueview.com/new-york-giants-injuries/174884/giants-at-commanders-jayden-daniels-malik-nabers-to-play",
-      "source_id": "news_sbn_nyg",
-      "source": "Big Blue View (SB Nation)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "The 3-1 New York Giants and the 1-3 Washington Commanders both received good news, and bad news, on the injury front as they prepare for a rainy showdown in Week 5. The story of the week is on the Washington Commanders\u2019 sideline. Third-year quarterback Jayden Daniels is making his return from the dislocated left elbow [\u2026]",
-      "categories": [
-        "New York Giants injuries"
-      ],
-      "published_at": "2026-10-09T20:21:51+00:00",
-      "players": [
-        {
-          "id": "00-0039337",
-          "name": "Malik Nabers",
-          "team": "NYG",
-          "position": "WR"
-        }
-      ]
     },
     {
       "id": "0a37c43957b0cdd2d713",
@@ -3970,27 +3991,6 @@
           "name": "Jayden Daniels",
           "team": "WAS",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "c1cd62d36d569edce6ee",
-      "headline": "Bills WR Khalil Shakir Surprisingly Leads NFL in Critical Stat",
-      "url": "https://www.si.com/nfl/bills/onsi/khalil-shakir-bills-wr-surprisingly-leads-nfl-in-critical-stat",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "Khalil Shakir continues to be one of the more reliable players on the Bills roster and is leading the NFL in a surprising stat.",
-      "categories": [],
-      "published_at": "2026-10-08T14:42:25+00:00",
-      "players": [
-        {
-          "id": "00-0037261",
-          "name": "Khalil Shakir",
-          "team": "BUF",
-          "position": "WR"
         }
       ]
     }
