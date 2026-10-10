@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T17:51:37.175306+00:00",
+  "updated_at": "2026-10-10T18:00:54.448976+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-10T17:50:58+00:00",
+      "latest_entry_at": "2026-10-10T18:00:39+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-10T17:50:58+00:00",
+      "latest_entry_at": "2026-10-10T18:00:39+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-10T11:30:00+00:00",
+      "latest_entry_at": "2026-10-10T16:24:33+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-10T16:00:00+00:00",
+      "latest_entry_at": "2026-10-08T14:00:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-10T13:00:00+00:00",
+      "latest_entry_at": "2026-10-10T17:50:32+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-10T16:00:00+00:00",
+      "latest_entry_at": "2026-10-10T18:00:00+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-10T16:58:57+00:00",
+      "latest_entry_at": "2026-10-10T18:00:00+00:00",
       "stale": false
     },
     {
@@ -486,15 +486,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-10T15:41:05+00:00",
+      "latest_entry_at": "2026-10-10T17:13:52+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-09T14:00:00+00:00",
+      "latest_entry_at": "2026-10-10T13:34:39+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-10T13:33:00+00:00",
+      "latest_entry_at": "2026-10-10T16:43:01+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,54 @@
     }
   ],
   "items": [
+    {
+      "id": "3c40378c1b8f3682f9ec",
+      "headline": "Packers' Even Worse Injury Luck May Nullify Bears' Kyle Monangai Loss",
+      "url": "https://www.si.com/nfl/bears/onsi/packers-even-worse-injury-luck-may-nullify-bears-kyle-monangai-loss",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Bears RB Kyle Monangai is officially out for Week 5. But does Green Bay's brutal final injury report hand Chicago the ultimate tactical edge anyway? Click to see why.",
+      "categories": [],
+      "published_at": "2026-10-10T18:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040236",
+          "name": "Kyle Monangai",
+          "team": "CHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "08b4956bccc243291d4d",
+      "headline": "Bryce Young Has a Secret Weapon Nobody Is Talking About",
+      "url": "https://www.si.com/nfl/panthers/onsi/bryce-young-has-a-secret-weapon-nobody-is-talking-about",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "Bryce Young has plenty of weapons in Carolina, but one surprising PFF stat shows Chuba Hubbard has quietly become one of his most efficient targets.",
+      "categories": [],
+      "published_at": "2026-10-10T18:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0036555",
+          "name": "Chuba Hubbard",
+          "team": "CAR",
+          "position": "RB"
+        },
+        {
+          "id": "00-0039150",
+          "name": "Bryce Young",
+          "team": "CAR",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "9c85914d5be5f1886e31",
       "headline": "Colts make roster moves ahead of Sunday\u2019s game against Pittsburgh",
@@ -3923,61 +3971,6 @@
           "name": "DJ Moore",
           "team": "BUF",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "a3bd58e55f63bf02d43f",
-      "headline": "S J.J. Roberts and QB Easton Stick Elevated for TNF Game in Dallas",
-      "url": "https://www.buccaneers.com/news/s-j-j-roberts-and-qb-easton-stick-elevated-for-tnf-game-in-dallas",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "Safety J.J. Roberts is in line to make his NFL regular season debut on Thursday night while Easton Stick will once again back up rookie quarterback Jalon Daniels in the absence of Baker Mayfield",
-      "categories": [
-        "Featured",
-        "Roster Moves"
-      ],
-      "published_at": "2026-10-08T20:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0034855",
-          "name": "Baker Mayfield",
-          "team": "TB",
-          "position": "QB"
-        },
-        {
-          "id": "00-0041251",
-          "name": "Jalon Daniels",
-          "team": "TB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "46582b27e6a5561d9156",
-      "headline": "Jets Injury Report | Week 5 vs. Browns - Thursday",
-      "url": "https://www.newyorkjets.com/news/jets-injury-report-week-5-vs-browns-thursday-10-07-20268",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "TE Mason Taylor (Thumb) Again a Full Participant",
-      "categories": [
-        "Injury Report",
-        "News",
-        "Latest Headlines"
-      ],
-      "published_at": "2026-10-08T20:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0040736",
-          "name": "Mason Taylor",
-          "team": "NYJ",
-          "position": "TE"
         }
       ]
     }
