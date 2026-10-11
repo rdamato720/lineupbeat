@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T22:00:50.524241+00:00",
+  "updated_at": "2026-10-11T00:00:59.349367+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-10T21:42:01+00:00",
+      "latest_entry_at": "2026-10-11T00:00:25+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-10T21:17:01+00:00",
+      "latest_entry_at": "2026-10-10T23:53:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-10T19:50:06+00:00",
+      "latest_entry_at": "2026-10-10T22:51:08+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-10T21:42:01+00:00",
+      "latest_entry_at": "2026-10-11T00:00:25+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-10T21:17:01+00:00",
+      "latest_entry_at": "2026-10-10T23:53:00+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-10T19:44:17+00:00",
+      "latest_entry_at": "2026-10-10T22:00:56+00:00",
       "stale": false
     },
     {
@@ -356,9 +356,9 @@
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-10T14:54:01+00:00",
+      "latest_entry_at": "2026-10-10T21:30:00+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-10T21:12:01+00:00",
+      "latest_entry_at": "2026-10-10T22:11:18+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-10T20:00:00+00:00",
+      "latest_entry_at": "2026-10-10T22:07:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-10T20:00:00+00:00",
+      "latest_entry_at": "2026-10-11T00:00:00+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-10T21:00:00+00:00",
+      "latest_entry_at": "2026-10-10T22:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-10T21:01:53+00:00",
+      "latest_entry_at": "2026-10-10T22:00:00+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 3,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-10T12:00:00+00:00",
+      "latest_entry_at": "2026-10-10T21:00:00+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-10T13:34:39+00:00",
+      "latest_entry_at": "2026-10-10T19:00:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-10T14:00:00+00:00",
+      "latest_entry_at": "2026-10-10T15:25:12+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,61 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-10T20:49:18+00:00",
+      "latest_entry_at": "2026-10-08T00:37:33+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "bc8456eb5eb7e5bc6c89",
+      "headline": "EXCLUSIVE: Mason Taylor Dishes on Return to Jets After Injury",
+      "url": "https://www.si.com/nfl/jets/onsi/exclusive-mason-taylor-dishes-return-jets-after-injury-01m4hmdeptfp",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "Mason Taylor discusses his return to the Jets from injury ahead of Week 5.",
+      "categories": [],
+      "published_at": "2026-10-10T23:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0040736",
+          "name": "Mason Taylor",
+          "team": "NYJ",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "b8df966e1c5b7d5956b2",
+      "headline": "Mack Hollins to Injured Reserve: Here's Several WR Options the Patriots May Explore",
+      "url": "https://www.si.com/nfl/patriots/onsi/mack-hollins-to-injured-reserve-here-s-several-wr-options-the-patriots-may-explore",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "With both AJ Brown and Mack Hollins injured, the New England Patriots may look elsewhere to strengthen their receiver room.",
+      "categories": [],
+      "published_at": "2026-10-10T23:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0033555",
+          "name": "Mack Hollins",
+          "team": "NE",
+          "position": "WR"
+        },
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "dfd3d151e0d7fad9ebe8",
       "headline": "Rams Injury Report, Week 5 vs. Bills: Aaron Donald, Colby Parkinson and Jaylen Watson good to go for Monday Night Football; Quentin Lake questionable but 'trending in the right direction'",
@@ -3963,48 +4011,6 @@
           "name": "Kaytron Allen",
           "team": "WAS",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "80918ac1651d4d0de5a2",
-      "headline": "What The Ravens Thursday Injury Report Reveals About Sunday's Game",
-      "url": "https://www.si.com/nfl/ravens/onsi/what-the-ravens-thursday-injury-report-reveals-about-sunday-s-game-01m4ed7xxy9p",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Ravens coaches continue to claim two-time MVP Lamar Jackson could face the Falcons Sunday, while execs around the NFL wonder if he will even face the Browns in",
-      "categories": [],
-      "published_at": "2026-10-08T20:48:50+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "6f9b7116b344e1e999c7",
-      "headline": "Giants WR Malik Nabers' Practice Participation Status Upgraded",
-      "url": "https://www.si.com/nfl/giants/onsi/giants-thursday-practice-participation-report-upgraded-week5-01m4ej07y5n3",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "Nabers, Andrew Thomas trending upward; Jason Pinnock, Chauncey Golston trending downward.",
-      "categories": [],
-      "published_at": "2026-10-08T20:41:13+00:00",
-      "players": [
-        {
-          "id": "00-0039337",
-          "name": "Malik Nabers",
-          "team": "NYG",
-          "position": "WR"
         }
       ]
     }
