@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T00:00:59.349367+00:00",
+  "updated_at": "2026-10-11T00:30:22.894070+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-11T00:00:25+00:00",
+      "latest_entry_at": "2026-10-11T00:30:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-10T23:53:00+00:00",
+      "latest_entry_at": "2026-10-11T00:29:10+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-11T00:00:25+00:00",
+      "latest_entry_at": "2026-10-11T00:30:00+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-10T23:53:00+00:00",
+      "latest_entry_at": "2026-10-11T00:29:10+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-10T14:03:50+00:00",
+      "latest_entry_at": "2026-10-11T00:00:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-10T20:51:35+00:00",
+      "latest_entry_at": "2026-10-11T00:03:29+00:00",
       "stale": false
     },
     {
@@ -414,15 +414,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-10T22:07:00+00:00",
+      "latest_entry_at": "2026-10-10T20:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-10T20:39:08+00:00",
+      "latest_entry_at": "2026-10-09T22:39:16+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-10T22:00:00+00:00",
+      "latest_entry_at": "2026-10-10T20:11:02+00:00",
       "stale": false
     },
     {
@@ -548,9 +548,9 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-08T00:37:33+00:00",
+      "latest_entry_at": "2026-10-10T17:00:00+00:00",
       "stale": false
     }
   ],
