@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T04:00:47.497584+00:00",
+  "updated_at": "2026-10-12T09:11:53.351945+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-12T03:51:53+00:00",
+      "latest_entry_at": "2026-10-12T08:51:54+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-12T01:50:59+00:00",
+      "latest_entry_at": "2026-10-12T05:06:23+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-11T20:27:22+00:00",
+      "latest_entry_at": "2026-10-12T09:00:00+00:00",
       "stale": false
     },
     {
@@ -52,17 +52,17 @@
     {
       "source_id": "news_official_atl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-12T03:46:29+00:00",
+      "latest_entry_at": "2026-10-12T05:10:03+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 10,
+      "eligible": 11,
       "error": "",
-      "latest_entry_at": "2026-10-11T23:14:08+00:00",
+      "latest_entry_at": "2026-10-12T07:31:55+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-12T03:39:54+00:00",
+      "latest_entry_at": "2026-10-12T03:40:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-12T03:51:53+00:00",
+      "latest_entry_at": "2026-10-12T08:51:54+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-12T01:50:59+00:00",
+      "latest_entry_at": "2026-10-12T05:06:23+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-12T01:09:34+00:00",
+      "latest_entry_at": "2026-10-12T09:00:00+00:00",
       "stale": false
     },
     {
@@ -332,9 +332,9 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-11T23:20:00+00:00",
+      "latest_entry_at": "2026-10-12T04:49:12+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-12T01:14:30+00:00",
+      "latest_entry_at": "2026-10-12T09:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-12T00:53:12+00:00",
+      "latest_entry_at": "2026-10-12T04:30:00+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-11T23:45:00+00:00",
+      "latest_entry_at": "2026-10-12T04:05:46+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-12T02:44:33+00:00",
+      "latest_entry_at": "2026-10-12T04:38:52+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,121 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-12T02:07:09+00:00",
+      "latest_entry_at": "2026-10-12T06:02:15+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "7cdf13789f01b85c4943",
+      "headline": "Tyler Huntley Delivers (Again) With the Faith of His Teammates in Atlanta Win",
+      "url": "https://www.baltimoreravens.com/news/tyler-huntley-smile-faith-teammates-atlanta-overtime-win-ravens-falcons-2026",
+      "source_id": "news_official_bal",
+      "source": "Baltimore Ravens (official)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "With Lamar Jackson sidelined by an ankle injury, Tyler Huntley rose to the occasion down the stretch.",
+      "categories": [
+        "General",
+        "Ryan Mink",
+        "2026 Week 5",
+        "2026 Week 5 News",
+        "Baltimore Ravens at Atlanta Falcons (2026-REG-5)",
+        "Tyler Huntley",
+        "inline-news",
+        "Homepage Latest Headlines"
+      ],
+      "published_at": "2026-10-12T06:26:00+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035993",
+          "name": "Tyler Huntley",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "83a3c90172dbf912d2f5",
+      "headline": "Michael Penix Jr.: 'I hated it. I hated that I couldn't get back in that game.'",
+      "url": "https://www.atlantafalcons.com/news/michael-penix-jr-sunday-night-football-rib-injury",
+      "source_id": "news_official_atl",
+      "source": "Atlanta Falcons (official)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "Penix suffered an injury to his ribs in the final moments of regulation in the Falcons' Sunday Night Football loss to the Ravens.",
+      "categories": [
+        "News",
+        "Baltimore Ravens at Atlanta Falcons (2026-REG-5)",
+        "sunday night football",
+        "Michael Penix Jr."
+      ],
+      "published_at": "2026-10-12T05:10:03+00:00",
+      "players": [
+        {
+          "id": "00-0039917",
+          "name": "Michael Penix Jr.",
+          "team": "ATL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "d41c7dee0b6c72c0757c",
+      "headline": "4 winners and 5 losers from Falcons\u2019 late-game collapse against Ravens: QB questions resurface after Michael Penix Jr. injury",
+      "url": "https://atozsports.com/nfl/atlanta-falcons-news/winners-losers-falcons-vs-ravens-michael-penix-jr-tua-tagovailoa-kevin-stefanski/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "The Atlanta Falcons had the Baltimore Ravens on the ropes for three quarters on Sunday Night Football. Here are the players and decisions that defined the loss, from a swarming secondary to a fourth quarter worth forgetting.",
+      "categories": [
+        "Atlanta Falcons News",
+        "NFL",
+        "Atlanta Falcons",
+        "Falcons News",
+        "Michael Penix Jr."
+      ],
+      "published_at": "2026-10-12T05:05:51+00:00",
+      "players": [
+        {
+          "id": "00-0039917",
+          "name": "Michael Penix Jr.",
+          "team": "ATL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "85947f125f2f225c2f80",
+      "headline": "Critical Takeaways From Wild Ravens Comeback, OT Win In Atlanta",
+      "url": "https://www.si.com/nfl/ravens/onsi/ravens-usher-wild-comeback-in-regulation-and-win-30-23-in-overtime-at-atlanta-01m4q19pbhm6",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Ravens overcame a bevvy of injuries, including two-time MVP quarterback Lamar Jackson missing the game, rallied to force overtime with a two-minute drive, w",
+      "categories": [],
+      "published_at": "2026-10-12T03:55:42+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "3775f6bed2cae2d1d6fa",
       "headline": "5 Winners, 5 Losers From the Commanders\u2019 Frustrating 27\u201327 Tie With the Giants",
@@ -3899,84 +4009,6 @@
       "feed_description": "The Miami Dolphins ruled out four players ahead of their home game against the Cincinnati Bengals",
       "categories": [],
       "published_at": "2026-10-09T20:38:45+00:00",
-      "players": []
-    },
-    {
-      "id": "3db5fe26e13032b178d5",
-      "headline": "Giants RB Cam Skattebo Good to Go for Sunday; Can't Wait to Get the Ball",
-      "url": "https://www.si.com/nfl/giants/onsi/giants-week-5-injury-report-01m4gzbhcdf0",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "Here is the Giants' final injury report ahead of their Week 5 game with the Washington Commanders.",
-      "categories": [],
-      "published_at": "2026-10-09T20:38:15+00:00",
-      "players": [
-        {
-          "id": "00-0040715",
-          "name": "Cam Skattebo",
-          "team": "NYG",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "73737312103607d78383",
-      "headline": "Eagles-Jaguars Final Injury Report: Saquon Barkley, DeVonta Smith among players ruled out",
-      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/186172/eagles-jaguars-final-injury-report-saquon-barkley-devonta-smith-among-players-ruled-out",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Philadelphia Eagles issued their third and final official injury report of the week on Friday in advance of their Week 5 game against the Jacksonville Jaguars in London. The Eagles ruled five players OUT: Saquon Barkley, DeVonta Smith, Drew Kendall, Marcus Epps, and Hollywood Brown. Barkley missed practice all week due to a hamstring [\u2026]",
-      "categories": [
-        "Philadelphia Eagles injuries"
-      ],
-      "published_at": "2026-10-09T20:32:12+00:00",
-      "players": [
-        {
-          "id": "00-0034844",
-          "name": "Saquon Barkley",
-          "team": "PHI",
-          "position": "RB"
-        },
-        {
-          "id": "00-0036912",
-          "name": "DeVonta Smith",
-          "team": "PHI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "63a592def36003baab4f",
-      "headline": "Colts-Steelers Final Injury Report: Who\u2019s In and Who\u2019s Out for Week 5?",
-      "url": "https://www.si.com/nfl/colts/onsi/colts-steelers-final-injury-report-who-s-in-and-who-s-out-for-week-5-",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The final injury reports are in ahead of the Colts and Steelers\u2019 Week 5 clash on Sunday. Both teams go into the weekend with different questions they each need",
-      "categories": [],
-      "published_at": "2026-10-09T20:31:42+00:00",
-      "players": []
-    },
-    {
-      "id": "af02cb2d6821503857e8",
-      "headline": "Saints Final Injury Report vs Vikings as Long as Your Arm",
-      "url": "https://www.si.com/nfl/saints/onsi/saints-final-injury-report-vs-vikings-as-long-as-your-arm-01m4h3tvmr3b",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "Fifteen listed by New Orleans on their official list for Sunday's Noon kickoff in the Superdome.",
-      "categories": [],
-      "published_at": "2026-10-09T20:30:58+00:00",
       "players": []
     }
   ]
