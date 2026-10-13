@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T21:33:41.354522+00:00",
+  "updated_at": "2026-10-13T22:01:01.450080+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T21:19:41+00:00",
+      "latest_entry_at": "2026-10-13T22:00:21+00:00",
       "stale": false
     },
     {
@@ -22,7 +22,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T18:00:01+00:00",
+      "latest_entry_at": "2026-10-13T21:16:24+00:00",
       "stale": false
     },
     {
@@ -68,9 +68,9 @@
     {
       "source_id": "news_official_buf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T20:59:00+00:00",
+      "latest_entry_at": "2026-10-13T21:45:24+00:00",
       "stale": false
     },
     {
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T15:25:15+00:00",
+      "latest_entry_at": "2026-10-13T21:56:06+00:00",
       "stale": false
     },
     {
@@ -212,9 +212,9 @@
     {
       "source_id": "news_official_no",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T13:15:46+00:00",
+      "latest_entry_at": "2026-10-13T21:37:35+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T19:30:05+00:00",
+      "latest_entry_at": "2026-10-13T20:40:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T21:19:41+00:00",
+      "latest_entry_at": "2026-10-13T22:00:21+00:00",
       "stale": false
     },
     {
@@ -356,9 +356,9 @@
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-13T21:00:00+00:00",
+      "latest_entry_at": "2026-10-13T20:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T20:30:00+00:00",
+      "latest_entry_at": "2026-10-13T17:02:45+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T21:15:44+00:00",
+      "latest_entry_at": "2026-10-13T17:45:52+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T21:27:06+00:00",
+      "latest_entry_at": "2026-10-13T15:30:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "62a2c97dece3a76e9903",
+      "headline": "Chargers\u2019 Disappointing Ladd McConkey, Joe Alt Injury Updates Just Make Things Worse",
+      "url": "https://www.si.com/nfl/chargers/onsi/chargers-disappointing-ladd-mcconkey-joe-alt-injury-updates-make-things-worse",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "The Chargers provide injury updates and they're not exactly great.",
+      "categories": [],
+      "published_at": "2026-10-13T22:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039915",
+          "name": "Ladd McConkey",
+          "team": "LAC",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "ece1190a82d63fcfa14b",
       "headline": "Updated: Chicago Bears 53-Man Roster for 2026",
@@ -4111,27 +4132,6 @@
         "vikings-at-saints-2026-reg-5"
       ],
       "published_at": "2026-10-11T15:30:26+00:00",
-      "players": []
-    },
-    {
-      "id": "68871f0961b8b21201d9",
-      "headline": "Game Inactives | Week 5 Titans vs Texans",
-      "url": "https://www.tennesseetitans.com/news/game-inactives-week-5-titans-vs-texans",
-      "source_id": "news_official_ten",
-      "source": "Tennessee Titans (official)",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "Who's in, who's out for the Titans and Texans in Week 5 in Nashville",
-      "categories": [
-        "News: Game Inactives",
-        "Team/Football News",
-        "Houston Texans at Tennessee Titans (2026-REG-5)",
-        "2026-10-11-PREgame-STORIES-texans-at-titans",
-        "2026-10-11-POSTgame-STORIES-texans-at-titans",
-        "homepage-centerpiece"
-      ],
-      "published_at": "2026-10-11T15:30:23+00:00",
       "players": []
     }
   ]
