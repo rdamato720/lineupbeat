@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T18:00:58.640553+00:00",
+  "updated_at": "2026-10-13T20:00:52.142589+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T18:00:03+00:00",
+      "latest_entry_at": "2026-10-13T20:00:02+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T14:54:08+00:00",
+      "latest_entry_at": "2026-10-13T18:00:01+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T17:47:09+00:00",
+      "latest_entry_at": "2026-10-13T19:58:06+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T17:31:28+00:00",
+      "latest_entry_at": "2026-10-13T18:52:49+00:00",
       "stale": false
     },
     {
@@ -60,7 +60,7 @@
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 10,
+      "eligible": 9,
       "error": "",
       "latest_entry_at": "2026-10-13T13:30:33+00:00",
       "stale": false
@@ -94,13 +94,13 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-13T00:58:50+00:00",
+      "latest_entry_at": "2026-10-13T18:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_cle",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
       "latest_entry_at": "2026-10-13T16:19:49+00:00",
       "stale": false
@@ -110,15 +110,15 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-13T15:49:27+00:00",
+      "latest_entry_at": "2026-10-13T19:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_det",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-13T14:15:00+00:00",
+      "latest_entry_at": "2026-10-13T20:00:00+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-13T13:30:00+00:00",
+      "latest_entry_at": "2026-10-13T18:48:42+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-13T17:08:26+00:00",
+      "latest_entry_at": "2026-10-13T18:26:59+00:00",
       "stale": false
     },
     {
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T13:29:43+00:00",
+      "latest_entry_at": "2026-10-13T19:00:25+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-13T14:00:00+00:00",
+      "latest_entry_at": "2026-10-13T18:44:11+00:00",
       "stale": false
     },
     {
@@ -206,7 +206,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-12T19:22:00+00:00",
+      "latest_entry_at": "2026-10-13T18:01:10+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T15:51:12+00:00",
+      "latest_entry_at": "2026-10-13T18:41:00+00:00",
       "stale": false
     },
     {
@@ -236,9 +236,9 @@
     {
       "source_id": "news_official_phi",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-12T21:00:00+00:00",
+      "latest_entry_at": "2026-10-13T20:00:00+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T12:21:32+00:00",
+      "latest_entry_at": "2026-10-13T17:05:00+00:00",
       "stale": false
     },
     {
@@ -268,9 +268,9 @@
     {
       "source_id": "news_official_tb",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-13T15:33:40+00:00",
+      "latest_entry_at": "2026-10-13T18:55:09+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-13T18:00:03+00:00",
+      "latest_entry_at": "2026-10-13T20:00:02+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T17:47:09+00:00",
+      "latest_entry_at": "2026-10-13T19:58:06+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-13T15:24:53+00:00",
+      "latest_entry_at": "2026-10-13T16:57:09+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T12:53:31+00:00",
+      "latest_entry_at": "2026-10-13T14:42:49+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T10:00:00+00:00",
+      "latest_entry_at": "2026-10-13T17:00:00+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-13T13:49:33+00:00",
+      "latest_entry_at": "2026-10-13T17:38:49+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T13:00:00+00:00",
+      "latest_entry_at": "2026-10-13T16:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T15:44:54+00:00",
+      "latest_entry_at": "2026-10-12T22:00:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T12:30:00+00:00",
+      "latest_entry_at": "2026-10-13T18:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T14:00:00+00:00",
+      "latest_entry_at": "2026-10-13T19:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-12T22:13:51+00:00",
+      "latest_entry_at": "2026-10-13T17:45:52+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T12:00:00+00:00",
+      "latest_entry_at": "2026-10-13T16:21:47+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T17:29:13+00:00",
+      "latest_entry_at": "2026-10-13T15:30:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T17:33:30+00:00",
+      "latest_entry_at": "2026-10-13T19:01:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,100 @@
     }
   ],
   "items": [
+    {
+      "id": "b59d7855eb87e91dde6a",
+      "headline": "Ravens Head Coach's Words And Actions Indicate This About Lamar Jackson's Status",
+      "url": "https://www.si.com/nfl/ravens/onsi/ravens-head-coach-s-words-and-actions-indicate-this-about-lamar-jackson-s-status-01m4v7gsrzqj",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The two-time MVP quarterback missed Week 5 with an ankle injury and Minter is sending some early signals about what Week 6 could hold",
+      "categories": [],
+      "published_at": "2026-10-13T20:00:02+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "506034bbdad086621436",
+      "headline": "Spadaro: Britain Covey continues to embrace contact",
+      "url": "https://www.philadelphiaeagles.com/news/spadaro-britain-covey-continues-to-embrace-contact",
+      "source_id": "news_official_phi",
+      "source": "Philadelphia Eagles (official)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The crowd knows anything is possible whenever Britain Covey returns a punt.",
+      "categories": [
+        "All News-archived",
+        "NFL.com Feature",
+        "Team Roster Content",
+        "Britain Covey",
+        "On The Inside",
+        "2026 Week 6 vs. Panthers"
+      ],
+      "published_at": "2026-10-13T20:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0037132",
+          "name": "Britain Covey",
+          "team": "PHI",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "9ac77957a28d94df5f74",
+      "headline": "Patriots TE Hunter Henry, IJM Host Annual 'Freedom to Play' Ping Pong Tournament",
+      "url": "https://www.si.com/nfl/patriots/onsi/patriots-te-hunter-henry-ijm-host-annual-freedom-to-play-ping-pong-tournament",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots captain had several of his teammates show up to his annual event in Boston on Monday.",
+      "categories": [],
+      "published_at": "2026-10-13T19:00:02+00:00",
+      "players": [
+        {
+          "id": "00-0033090",
+          "name": "Hunter Henry",
+          "team": "NE",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "21d9cad76075903c7e5b",
+      "headline": "Bucs Open 21-Day Practice Window For WR On IR",
+      "url": "https://www.pewterreport.com/bucs-open-21-day-practice-window-for-wr-on-ir/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Bucs are taking a step toward to getting another wide receiver back on the field, opening the 21-day practice window for David Sills V as he works his way back from a hamstring injury. The Bucs announce the move Monday, allowing Sills to begin practicing with the team when Tampa Bay returns to",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-10-13T18:00:01+00:00",
+      "players": [
+        {
+          "id": "00-0035359",
+          "name": "David Sills",
+          "team": "TB",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "e5d19aa46935837b4617",
       "headline": "Has Patriots WR Efton Chism III Earned More Playing Time?",
@@ -618,6 +712,29 @@
           "name": "Jared Goff",
           "team": "DET",
           "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "22b238dc3b889c397076",
+      "headline": "Will Campbell injury update: Patriots OT receives positive news",
+      "url": "https://www.patspulpit.com/new-england-patriots-injuries/140590/will-campbell-injury-update-patriots-ot-receives-positive-news",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots received positive news in the injury department. Starting left tackle Will Campbell avoided a major injury in his right knee on Sunday. According to The Ringer\u2019s Tom Pelissero, Campbell is now considered week-to-week. Campbell left the game against the Raiders in the second quarter after running back Rhamondre Stevenson was tackled [\u2026]",
+      "categories": [
+        "New England Patriots Injuries"
+      ],
+      "published_at": "2026-10-13T16:57:09+00:00",
+      "players": [
+        {
+          "id": "00-0036875",
+          "name": "Rhamondre Stevenson",
+          "team": "NE",
+          "position": "RB"
         }
       ]
     },
@@ -3969,134 +4086,6 @@
       ],
       "published_at": "2026-10-11T15:30:00+00:00",
       "players": []
-    },
-    {
-      "id": "ecfa27a0a175c56dcfc2",
-      "headline": "Texans Inactives: Week 5 vs. Tennessee Titans",
-      "url": "https://www.houstontexans.com/news/texans-inactives-week-5-vs-tennessee-titans",
-      "source_id": "news_official_hou",
-      "source": "Houston Texans (official)",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "The Houston Texans released their inactives list before their Week 5 matchup against the Tennessee Titans.",
-      "categories": [
-        "Gameday",
-        "Inactives",
-        "Homepage CP",
-        "Houston Texans at Tennessee Titans (2026-REG-5)",
-        "2026 REG5 - Titans"
-      ],
-      "published_at": "2026-10-11T15:30:00+00:00",
-      "players": []
-    },
-    {
-      "id": "53e4cb718a977a892837",
-      "headline": "Jets List 6 Inactives for Home Matchup Against Cleveland Browns",
-      "url": "https://www.newyorkjets.com/news/jets-vs-browns-game-inactives-10-11-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Breece Hall, Nate Lynn, Kiko Mauigoa, Adonai Mitchell, Dylan Parham and Nahshon Wright Inactive for Sunday's Game",
-      "categories": [
-        "Inactives",
-        "Latest Headlines",
-        "News"
-      ],
-      "published_at": "2026-10-11T15:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0038120",
-          "name": "Breece Hall",
-          "team": "NYJ",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039890",
-          "name": "Adonai Mitchell",
-          "team": "NYJ",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "097594310dea43fcaa39",
-      "headline": "Steelers inactives for Week 5 vs. Colts",
-      "url": "https://www.steelers.com/news/steelers-inactives-for-week-5-vs-colts",
-      "source_id": "news_official_pit",
-      "source": "Pittsburgh Steelers (official)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "Find out who won't play today as the Steelers take on the Colts at Acrisure Stadium",
-      "categories": [
-        "Inactives",
-        "UPMC",
-        "Featured",
-        "Sights and Sounds",
-        "Indianapolis Colts at Pittsburgh Steelers (2026-REG-5)"
-      ],
-      "published_at": "2026-10-11T15:30:00+00:00",
-      "players": []
-    },
-    {
-      "id": "3a3d5291363851eeaa79",
-      "headline": "Is Ladd McConkey Playing Today? Broncos vs. Chargers Updates for Week 5",
-      "url": "https://www.si.com/nfl/chargers/onsi/ladd-mcconkey-playing-today-broncos-chargers-updates",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "Ladd McConkey live injury updates before the Chargers play the Broncos.",
-      "categories": [],
-      "published_at": "2026-10-11T15:00:02+00:00",
-      "players": [
-        {
-          "id": "00-0039915",
-          "name": "Ladd McConkey",
-          "team": "LAC",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "57ab0220b9b11d61c0b0",
-      "headline": "Raiders News: Raiders Elevate Roman Hemby and Devyn Thompkins from the practice squad",
-      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/142465/raiders-news-raiders-elevate-roman-hemby-devyn-thompkins",
-      "source_id": "news_sbn_lv",
-      "source": "Silver And Black Pride (SB Nation)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "The Las Vegas Raiders have their first early road start of the season in New England. Fans are excited to see them bounce back after last week\u2019s loss to the Chiefs. Of course, every NFL team is dealing with injuries right now, and the Raiders are no different. Jalen Nailor and Jack Bech are out [\u2026]",
-      "categories": [
-        "Las Vegas Raiders News",
-        "Las Vegas Raiders Roster"
-      ],
-      "published_at": "2026-10-11T14:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0037291",
-          "name": "Jalen Nailor",
-          "team": "LV",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040729",
-          "name": "Jack Bech",
-          "team": "LV",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040998",
-          "name": "Roman Hemby",
-          "team": "LV",
-          "position": "RB"
-        }
-      ]
     }
   ]
 }
