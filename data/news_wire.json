@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T08:27:54.075247+00:00",
+  "updated_at": "2026-10-13T10:00:51.430383+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T07:15:45+00:00",
+      "latest_entry_at": "2026-10-13T10:00:04+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T05:34:52+00:00",
+      "latest_entry_at": "2026-10-13T10:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-12T19:43:17+00:00",
+      "latest_entry_at": "2026-10-13T09:00:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T07:15:45+00:00",
+      "latest_entry_at": "2026-10-13T10:00:04+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T05:34:52+00:00",
+      "latest_entry_at": "2026-10-13T10:00:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-12T22:00:00+00:00",
+      "latest_entry_at": "2026-10-13T07:12:42+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T00:12:59+00:00",
+      "latest_entry_at": "2026-10-13T08:42:59+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "1e8ee445f143c20c7159",
+      "headline": "Steelers Could Get Rico Dowdle Back at Perfect Time",
+      "url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-could-rico-dowdle-back-perfect-time",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "The Pittsburgh Steelers could really use Rico Dowdle, and it appears he's right on the precipice of returning.",
+      "categories": [],
+      "published_at": "2026-10-13T10:00:01+00:00",
+      "players": [
+        {
+          "id": "00-0036139",
+          "name": "Rico Dowdle",
+          "team": "PIT",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "b30be1c0fe0cead15343",
       "headline": "Reports: Michael Penix Jr. rib injury does not seem to be serious, status for Week 6 still up in the air",
@@ -4063,27 +4084,6 @@
           "id": "00-0038614",
           "name": "Scott Matlock",
           "team": "LAC",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "48c4e88a01f9fa56d1fc",
-      "headline": "Saturday\u2019s Packers Roster Moves: What They Mean for Sunday vs. Bears",
-      "url": "https://www.si.com/nfl/packers/onsi/saturdays-packers-roster-moves-what-they-mean-for-sunday-vs-bears",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "The Green Bay Packers placed running back Chris Brooks on injured reserve. Here is our weekly look at the roster moves made on the eve of their big showdown against the Bears.",
-      "categories": [],
-      "published_at": "2026-10-10T20:26:00+00:00",
-      "players": [
-        {
-          "id": "00-0038685",
-          "name": "Chris Brooks",
-          "team": "GB",
           "position": "RB"
         }
       ]
