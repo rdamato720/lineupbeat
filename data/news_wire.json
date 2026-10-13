@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T16:01:00.270954+00:00",
+  "updated_at": "2026-10-13T16:27:17.317121+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T16:00:04+00:00",
+      "latest_entry_at": "2026-10-13T16:18:35+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T15:52:34+00:00",
+      "latest_entry_at": "2026-10-13T16:08:30+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T14:24:28+00:00",
+      "latest_entry_at": "2026-10-13T15:48:04+00:00",
       "stale": false
     },
     {
@@ -102,7 +102,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-12T21:29:20+00:00",
+      "latest_entry_at": "2026-10-13T16:19:49+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-12T20:40:03+00:00",
+      "latest_entry_at": "2026-10-13T16:00:00+00:00",
       "stale": false
     },
     {
@@ -268,7 +268,7 @@
     {
       "source_id": "news_official_tb",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
       "latest_entry_at": "2026-10-13T15:33:40+00:00",
       "stale": false
@@ -278,15 +278,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-12T15:23:03+00:00",
+      "latest_entry_at": "2026-10-13T16:02:42+00:00",
       "stale": false
     },
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T16:00:04+00:00",
+      "latest_entry_at": "2026-10-13T16:18:35+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T15:52:34+00:00",
+      "latest_entry_at": "2026-10-13T16:08:30+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T12:00:00+00:00",
+      "latest_entry_at": "2026-10-13T16:00:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T14:06:00+00:00",
+      "latest_entry_at": "2026-10-13T16:19:46+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T15:00:00+00:00",
+      "latest_entry_at": "2026-10-13T16:00:00+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T15:36:19+00:00",
+      "latest_entry_at": "2026-10-13T16:25:33+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T12:30:00+00:00",
+      "latest_entry_at": "2026-10-13T16:23:30+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T12:00:00+00:00",
+      "latest_entry_at": "2026-10-13T16:21:47+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T14:41:32+00:00",
+      "latest_entry_at": "2026-10-13T16:01:00+00:00",
       "stale": false
     },
     {
@@ -636,6 +636,32 @@
           "name": "TreVeyon Henderson",
           "team": "NE",
           "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "da2cc12f3bd8afe0daaa",
+      "headline": "Bucs' Release Week Six Depth Chart: Tez Johnson Getting More Snaps",
+      "url": "https://www.buccaneers.com/news/bucs-release-week-six-depth-chart-tez-johnson-getting-more-snaps",
+      "source_id": "news_official_tb",
+      "source": "Tampa Bay Buccaneers (official)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "Second-year WR Tez Johnson has seen an uptick of playing time in the past two weeks and in the win over Dallas he produced the Bucs' longest passing play of the season so far",
+      "categories": [
+        "Featured",
+        "Depth Chart",
+        "Depth Chart Story",
+        "Week 5 2026 Cowboys"
+      ],
+      "published_at": "2026-10-13T14:50:00+00:00",
+      "players": [
+        {
+          "id": "00-0040237",
+          "name": "Tez Johnson",
+          "team": "TB",
+          "position": "WR"
         }
       ]
     },
@@ -4069,39 +4095,6 @@
       "categories": [],
       "published_at": "2026-10-11T12:23:15+00:00",
       "players": []
-    },
-    {
-      "id": "af8ad1eac909329585a9",
-      "headline": "Saints legend is expected to give Tyler Shough and Co. the exact shot in the arm they need heading into crucial Vikings game",
-      "url": "https://atozsports.com/nfl/new-orleans-saints-news/will-alvin-kamara-play-against-vikings-week-5/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "Alvin Kamara spent the week nursing a back injury, and the latest news on his status could change how the Saints attack a Vikings defense that has been pretty stout against the run.",
-      "categories": [
-        "New Orleans Saints News",
-        "alvin Kamara",
-        "American Football",
-        "Saints Injury Updates",
-        "Saints-Vikings"
-      ],
-      "published_at": "2026-10-11T12:13:05+00:00",
-      "players": [
-        {
-          "id": "00-0033906",
-          "name": "Alvin Kamara",
-          "team": "NO",
-          "position": "RB"
-        },
-        {
-          "id": "00-0040743",
-          "name": "Tyler Shough",
-          "team": "NO",
-          "position": "QB"
-        }
-      ]
     }
   ]
 }
