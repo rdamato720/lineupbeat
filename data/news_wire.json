@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T20:00:48.691788+00:00",
+  "updated_at": "2026-10-14T22:00:52.644033+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:51:32+00:00",
+      "latest_entry_at": null,
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:33:53+00:00",
+      "latest_entry_at": "2026-10-14T21:31:42+00:00",
       "stale": false
     },
     {
@@ -38,15 +38,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:10:12+00:00",
+      "latest_entry_at": "2026-10-14T21:16:39+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_ari",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:31:11+00:00",
+      "latest_entry_at": "2026-10-14T21:27:01+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-14T16:40:18+00:00",
+      "latest_entry_at": "2026-10-14T20:59:29+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 9,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:05:13+00:00",
+      "latest_entry_at": "2026-10-14T21:46:10+00:00",
       "stale": false
     },
     {
@@ -70,7 +70,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T16:09:15+00:00",
+      "latest_entry_at": "2026-10-14T20:14:15+00:00",
       "stale": false
     },
     {
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:59:44+00:00",
+      "latest_entry_at": "2026-10-14T20:20:34+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-14T14:19:00+00:00",
+      "latest_entry_at": "2026-10-14T20:24:00+00:00",
       "stale": false
     },
     {
@@ -102,7 +102,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-14T15:56:51+00:00",
+      "latest_entry_at": "2026-10-14T20:11:41+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:45:00+00:00",
+      "latest_entry_at": "2026-10-14T21:45:32+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:45:19+00:00",
+      "latest_entry_at": "2026-10-14T20:18:23+00:00",
       "stale": false
     },
     {
@@ -150,15 +150,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:09:44+00:00",
+      "latest_entry_at": "2026-10-14T21:14:03+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_kc",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:15:09+00:00",
+      "latest_entry_at": "2026-10-14T21:45:09+00:00",
       "stale": false
     },
     {
@@ -180,9 +180,9 @@
     {
       "source_id": "news_official_lv",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:17:00+00:00",
+      "latest_entry_at": "2026-10-14T20:24:00+00:00",
       "stale": false
     },
     {
@@ -198,45 +198,45 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T16:00:17+00:00",
+      "latest_entry_at": "2026-10-14T20:49:45+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_ne",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:40:43+00:00",
+      "latest_entry_at": "2026-10-14T21:18:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_no",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-14T17:28:41+00:00",
+      "latest_entry_at": "2026-10-14T21:32:27+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_nyg",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:51:00+00:00",
+      "latest_entry_at": "2026-10-14T21:06:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_nyj",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:53:18+00:00",
+      "latest_entry_at": "2026-10-14T20:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_phi",
       "ok": true,
-      "eligible": 7,
+      "eligible": 6,
       "error": "",
       "latest_entry_at": "2026-10-14T18:32:06+00:00",
       "stale": false
@@ -244,17 +244,17 @@
     {
       "source_id": "news_official_pit",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T17:10:12+00:00",
+      "latest_entry_at": "2026-10-14T21:20:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-14T01:39:14+00:00",
+      "latest_entry_at": "2026-10-14T21:03:48+00:00",
       "stale": false
     },
     {
@@ -268,33 +268,33 @@
     {
       "source_id": "news_official_tb",
       "ok": true,
-      "eligible": 3,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:40:00+00:00",
+      "latest_entry_at": "2026-10-14T21:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_ten",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-14T17:48:23+00:00",
+      "latest_entry_at": "2026-10-14T21:01:33+00:00",
       "stale": false
     },
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:51:32+00:00",
+      "latest_entry_at": null,
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:33:53+00:00",
+      "latest_entry_at": "2026-10-14T21:31:42+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:03:21+00:00",
+      "latest_entry_at": "2026-10-14T21:12:59+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:34:47+00:00",
+      "latest_entry_at": "2026-10-14T21:06:58+00:00",
       "stale": false
     },
     {
@@ -332,9 +332,9 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:19:36+00:00",
+      "latest_entry_at": "2026-10-14T21:28:49+00:00",
       "stale": false
     },
     {
@@ -356,9 +356,9 @@
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:54:43+00:00",
+      "latest_entry_at": "2026-10-14T20:18:35+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T11:00:00+00:00",
+      "latest_entry_at": "2026-10-14T21:14:48+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:00:00+00:00",
+      "latest_entry_at": "2026-10-14T21:15:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:53:20+00:00",
+      "latest_entry_at": "2026-10-14T21:42:00+00:00",
       "stale": false
     },
     {
@@ -430,15 +430,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:00:00+00:00",
+      "latest_entry_at": "2026-10-14T21:11:18+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:49:43+00:00",
+      "latest_entry_at": "2026-10-14T20:28:22+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:03:50+00:00",
+      "latest_entry_at": "2026-10-14T20:09:26+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T15:14:15+00:00",
+      "latest_entry_at": "2026-10-14T21:29:22+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T16:30:00+00:00",
+      "latest_entry_at": "2026-10-14T22:00:00+00:00",
       "stale": false
     },
     {
@@ -478,15 +478,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T17:30:00+00:00",
+      "latest_entry_at": "2026-10-14T20:20:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:16:57+00:00",
+      "latest_entry_at": "2026-10-14T21:03:02+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T17:32:32+00:00",
+      "latest_entry_at": "2026-10-14T20:28:59+00:00",
       "stale": false
     },
     {
@@ -508,9 +508,9 @@
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:39:53+00:00",
+      "latest_entry_at": "2026-10-14T21:16:10+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:30:00+00:00",
+      "latest_entry_at": "2026-10-14T20:34:59+00:00",
       "stale": false
     },
     {
@@ -556,8 +556,543 @@
   ],
   "items": [
     {
+      "id": "a015d1216ff62caaf774",
+      "headline": "Saints announce roster moves",
+      "url": "https://www.neworleanssaints.com/news/kevin-austin-jr-jarquez-hunter-zach-wood-saints-roster-moves-transaction-alert-october-14-2026",
+      "source_id": "news_official_no",
+      "source": "New Orleans Saints (official)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "Shift4 Transaction Alert: Saints sign Kevin Austin Jr., Jarquez Hunter to practice squad",
+      "categories": [
+        "Roster Moves",
+        "Latest News",
+        "Press Releases"
+      ],
+      "published_at": "2026-10-14T21:32:27+00:00",
+      "players": [
+        {
+          "id": "00-0037231",
+          "name": "Kevin Austin Jr.",
+          "team": "NO",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "3500f083b059830b77db",
+      "headline": "Jalon Daniels Points to Pocket Composure for Improvement in Second Start",
+      "url": "https://www.buccaneers.com/news/jalon-daniels-points-pocket-composure-improvement-second-start",
+      "source_id": "news_official_tb",
+      "source": "Tampa Bay Buccaneers (official)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "Jalon Daniels, an undrafted rookie quarterback thrust into action by an injury to Baker Mayfield, got his first win in his second start and pointed to better composure in the pocket for his improvement over his first start",
+      "categories": [
+        "Featured",
+        "Week 6 2026 Steelers",
+        "Jalon Daniels"
+      ],
+      "published_at": "2026-10-14T21:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        },
+        {
+          "id": "00-0041251",
+          "name": "Jalon Daniels",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "35e3971359e1b5a550d4",
+      "headline": "Ravens list 19 players on 1st injury report of Week 6",
+      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-injuries/86464/ravens-list-19-players-on-1st-injury-report-of-week-6",
+      "source_id": "news_sbn_bal",
+      "source": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Baltimore Ravens listed a whopping 19 players on their first injury report of Week 6 ahead of next Sunday\u2019s matchup with the Cleveland Browns. However, only two injured Ravens missed today\u2019s practice entirely: quarterback Lamar Jackson and tight end Matthew Hibner. 12 others were limited, including seven with new injuries presumably picked up during [\u2026]",
+      "categories": [
+        "Baltimore Ravens Injuries",
+        "Baltimore Ravens News"
+      ],
+      "published_at": "2026-10-14T21:28:49+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        },
+        {
+          "id": "00-0040879",
+          "name": "Matthew Hibner",
+          "team": "BAL",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "df582b034e416ba155e3",
+      "headline": "Jeremiyah Love Could Sit Against Rams With Lingering Ankle Issue",
+      "url": "https://www.azcardinals.com/news/jeremiyah-love-could-sit-against-rams-with-lingering-ankle-issue",
+      "source_id": "news_official_ari",
+      "source": "Arizona Cardinals (official)",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "Running back doesn't practice Wednesday",
+      "categories": [
+        "News",
+        "Featured Articles",
+        "Home Page - News Headlines",
+        "Mega Feed",
+        "Red Sea Member HQ Content",
+        "Darren Urban",
+        "Arizona Cardinals at Los Angeles Rams (2026-REG-6)",
+        "Jeremiyah Love"
+      ],
+      "published_at": "2026-10-14T21:27:01+00:00",
+      "players": [
+        {
+          "id": "00-0041027",
+          "name": "Jeremiyah Love",
+          "team": "ARI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "b32fcdec503d76b36543",
+      "headline": "Week 6 Injury Report: Patriots vs. Jets",
+      "url": "https://www.patriots.com/news/week-6-injury-report-patriots-vs-jets",
+      "source_id": "news_official_ne",
+      "source": "New England Patriots (official)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots and the New York Jets announce the following player injuries and practice participation ahead of their Week 6 game.",
+      "categories": [
+        "Injury Report",
+        "hp-article",
+        "hp-featured",
+        "Pregame-Content",
+        "New York Jets at New England Patriots (2026-REG-6)"
+      ],
+      "published_at": "2026-10-14T21:18:00+00:00",
+      "players": []
+    },
+    {
+      "id": "05bff0e3728d0993b713",
+      "headline": "Wednesday\u2019s Saints vs. Giants Injury Report: Chris Olave did not practice",
+      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-injuries/116489/wednesdays-saints-vs-giants-injury-report-chris-olave-did-not-practice",
+      "source_id": "news_sbn_no",
+      "source": "Canal Street Chronicles (SB Nation)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "The New Orleans Saints have just wrapped up their 1st practice ahead of their Week 6 matchup on the road against the New York Giants on Sunday, October 18 at MetLife Stadium. So, where do things stand following Wednesday\u2019s workout? Let\u2019s take a look at which Saints players were limited and did not participate in [\u2026]",
+      "categories": [
+        "New Orleans Saints Game Information",
+        "New Orleans Saints Injuries",
+        "New Orleans Saints News"
+      ],
+      "published_at": "2026-10-14T21:16:10+00:00",
+      "players": [
+        {
+          "id": "00-0037239",
+          "name": "Chris Olave",
+          "team": "NO",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "69a089653b3b56568c07",
+      "headline": "Chiefs-Chargers Week 6 Wednesday injury report: Rashee Rice doesn\u2019t practice",
+      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-injuries/212998/chiefs-chargers-week-6-wednesday-injury-report-rashee-rice-doesnt-practice",
+      "source_id": "news_sbn_kc",
+      "source": "Arrowhead Pride (SB Nation)",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "Each practice day this season, the Kansas City Chiefs release an official injury report ahead of the next game. In Week 6, the Chiefs host the Los Angeles Chargers for a divisional matchup on Sunday afternoon. Here is the Chiefs\u2019 first official injury report of the week, courtesy of the team\u2019s official website: Chiefs Head coach [\u2026]",
+      "categories": [
+        "Kansas City Chiefs Injuries",
+        "Kansas City Chiefs News"
+      ],
+      "published_at": "2026-10-14T21:15:00+00:00",
+      "players": [
+        {
+          "id": "00-0039067",
+          "name": "Rashee Rice",
+          "team": "KC",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "8d8eb052a000ae944593",
+      "headline": "Indianapolis Colts Injury Report: Week 6 Wednesday",
+      "url": "https://www.stampedeblue.com/indianapolis-colts-injuries/128749/indianapolis-colts-injury-report-week-6-wednesday",
+      "source_id": "news_sbn_ind",
+      "source": "Stampede Blue (SB Nation)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Indianapolis Colts today released their Wednesday injury report for Week 6 of the NFL season against the Tennessee Titans. Wide receiver Keenan Allen (rest) did not practice today. While running back Jonathan Taylor (rest) was limited. Both appear to have had veteran rest days. While wide receiver Josh Downs (rest, hamstring) was limited due [\u2026]",
+      "categories": [
+        "Indianapolis Colts Injuries",
+        "Indianapolis Colts News"
+      ],
+      "published_at": "2026-10-14T21:14:48+00:00",
+      "players": [
+        {
+          "id": "00-0036223",
+          "name": "Jonathan Taylor",
+          "team": "IND",
+          "position": "RB"
+        },
+        {
+          "id": "00-0038997",
+          "name": "Josh Downs",
+          "team": "IND",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "9276dcc5cda9bdd06d2e",
+      "headline": "Patriots vs. Jets Wednesday injury report: Christian Gonzalez limited, two cornerbacks absent",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/140684/patriots-vs-jets-wednesday-injury-report-christian-gonzalez-limited-carlton-davis-karon-prunty-absent",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "After six practices and two games gone, Christian Gonzalez made his way back. The New England Patriots All-Pro returned as a limited participant for Wednesday\u2019s work on the New York Jets. A shoulder injury sustained in September had kept No. 0 out for October matchups against the Buffalo Bills and Las Vegas Raiders. \u201cI\u2019ve been [\u2026]",
+      "categories": [
+        "New England Patriots Injuries",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-10-14T21:06:58+00:00",
+      "players": []
+    },
+    {
+      "id": "4b0ad75cfa6ba593efb5",
+      "headline": "Seahawks Sign Velus Jones Jr. To 53-Man Roster, Move Irv Charles To Practice Squad",
+      "url": "https://www.seahawks.com/news/seahawks-sign-velus-jones-jr-to-53-man-roster-move-irv-charles-to-practice-squad",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seahawks moved Velus Jones Jr. back to the 53-man roster and signed Irv Charles to their practice squad ahead of Thursday's game against the Broncos.",
+      "categories": [
+        "News: Roster Moves",
+        "News: Stories",
+        "News: National Feature",
+        "Homepage Hero",
+        "Homepage Top Headlines",
+        "Velus Jones Jr.",
+        "Irvin Charles"
+      ],
+      "published_at": "2026-10-14T21:03:48+00:00",
+      "players": [
+        {
+          "id": "00-0037745",
+          "name": "Velus Jones Jr.",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "21453de402d02fc06575",
+      "headline": "Packers-Cowboys Injury Report | Oct. 14, 2026",
+      "url": "https://www.packers.com/news/packers-cowboys-injury-report-oct-14-2026",
+      "source_id": "news_official_gb",
+      "source": "Green Bay Packers (official)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "",
+      "categories": [
+        "News: Injury Report",
+        "News: National Feature",
+        "Homepage CP",
+        "News: All News",
+        "Dallas Cowboys at Green Bay Packers (2026-REG-6)"
+      ],
+      "published_at": "2026-10-14T21:03:05+00:00",
+      "players": []
+    },
+    {
+      "id": "d074fc082b2915482fc3",
+      "headline": "Falcons injury report: Michael Penix Jr. practices fully in first session before game vs. Chicago Bears",
+      "url": "https://www.atlantafalcons.com/news/falcons-injury-report-michael-penix-jr-chicago-bears",
+      "source_id": "news_official_atl",
+      "source": "Atlanta Falcons (official)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "Atlanta's starting quarterback was back on the practice field after injuring his ribs on Sunday night against the Baltimore Ravens.",
+      "categories": [
+        "News",
+        "Emory Injury Report",
+        "Jake Matthews",
+        "Za'Darius Smith",
+        "michael penix jr.",
+        "C.J. Henderson",
+        "Chicago Bears at Atlanta Falcons (2026-REG-6)"
+      ],
+      "published_at": "2026-10-14T20:59:29+00:00",
+      "players": [
+        {
+          "id": "00-0039917",
+          "name": "Michael Penix Jr.",
+          "team": "ATL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "21413aea7c4086077876",
+      "headline": "Kansas City Chiefs\u2019 first injury report for Week 6 tilt vs. Los Angeles Chargers shows a team on the mend after the bye week",
+      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-first-injury-report-week-6-chargers-rashee-rice-josh-simmons/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "The Kansas City Chiefs released their first injury report for Week 6 vs. the Los Angeles Chargers. It shows several health improvements since the Week 5 bye.",
+      "categories": [
+        "Kansas City Chiefs News",
+        "Chamarri Conner",
+        "Chiefs Injuries",
+        "Josh Simmons",
+        "Kansas City Chiefs",
+        "Los Angeles Chargers",
+        "Rashee Rice"
+      ],
+      "published_at": "2026-10-14T20:57:29+00:00",
+      "players": []
+    },
+    {
+      "id": "ed02e6812d5109ea891b",
+      "headline": "Week 6 Injury Report | Chargers vs. Chiefs",
+      "url": "https://www.chiefs.com/news/week-6-injury-report-chargers-vs-chiefs-2026",
+      "source_id": "news_official_kc",
+      "source": "Kansas City Chiefs (official)",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "Injuries for the Chiefs Week 6 matchup against the Los Angeles Chargers",
+      "categories": [
+        "Injury Report",
+        "all-content",
+        "Los Angeles Chargers at Kansas City Chiefs (2026-REG-6)"
+      ],
+      "published_at": "2026-10-14T20:45:52+00:00",
+      "players": []
+    },
+    {
+      "id": "539068e1a4c335b42f3f",
+      "headline": "Saints Wednesday Injury Report: 2026 Week 6 vs. New York Giants",
+      "url": "https://www.neworleanssaints.com/news/injury-report-new-york-giants-vs-new-orleans-saints-2026-nfl-week-6-wednesday",
+      "source_id": "news_official_no",
+      "source": "New Orleans Saints (official)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "11 Saints listed on Wednesday's Saints Injury Report for Week 6 against the Giants",
+      "categories": [
+        "Saints Injury Report",
+        "Latest News",
+        "2026-reg-week6"
+      ],
+      "published_at": "2026-10-14T20:45:34+00:00",
+      "players": []
+    },
+    {
+      "id": "8ffd0c03e5e69fe33e08",
+      "headline": "NY Giants-Saints injury report: Abdul Carter out of practice with calf issue",
+      "url": "https://www.bigblueview.com/new-york-giants-injuries/175842/injury-report-abdul-carter-out-of-practice-with-calf-issue",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "New York Giants edge defender Abdul Carter, the team\u2019s best pass rusher, did not practice on Wednesday due to a calf injury. His status for Sunday\u2019s game against the New Orleans Saints remains to be seen. Head coach John Harbaugh would only say that Carter is \u201cdoing very well.\u201d The Giants are already without star [\u2026]",
+      "categories": [
+        "New York Giants injuries"
+      ],
+      "published_at": "2026-10-14T20:28:22+00:00",
+      "players": []
+    },
+    {
+      "id": "65de09dc6642180186d0",
+      "headline": "Raiders TE Carter Runyon returns to practice",
+      "url": "https://www.raiders.com/news/raiders-te-carter-runyon-returns-to-practice-2026-nfl",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Runyon was placed on injured reserve on Aug. 30 after suffering an injury during training camp.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Transactions"
+      ],
+      "published_at": "2026-10-14T20:24:00+00:00",
+      "players": [
+        {
+          "id": "00-0040488",
+          "name": "Carter Runyon",
+          "team": "LV",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "6bbd81d48ccbcb6566b6",
+      "headline": "Practice Notebook: Ashton Dulin and Jaylon Carlies remain out, Darius Slayton returns to practice",
+      "url": "https://www.colts.com/news/practice-notebook-ashton-dulin-and-jaylon-carlies-remain-out-darius-slayton-returns-to-practice",
+      "source_id": "news_official_ind",
+      "source": "Indianapolis Colts (official)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "Dulin (hamstring) and Carlies (ribs) both missed Sunday's game in Pittsburgh.",
+      "categories": [
+        "Practice Notebook",
+        "Featured",
+        "Featured News",
+        "Tennessee Titans at Indianapolis Colts (2026-REG-6)"
+      ],
+      "published_at": "2026-10-14T20:18:23+00:00",
+      "players": [
+        {
+          "id": "00-0035021",
+          "name": "Ashton Dulin",
+          "team": "IND",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "b3c245c1c96d9f816309",
+      "headline": "Buccaneers-Steelers Injury Report Oct.14: Winfield Jr., Mayfield and Tucker Among Non-Participants",
+      "url": "https://www.buccaneers.com/news/buccaneers-steelers-injury-report-oct-14-week-6-2026",
+      "source_id": "news_official_tb",
+      "source": "Tampa Bay Buccaneers (official)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "A look at Wednesday's injury report ahead of the Week Six matchup",
+      "categories": [
+        "Featured",
+        "Injury Report",
+        "Week 6 2026 Steelers"
+      ],
+      "published_at": "2026-10-14T20:04:18+00:00",
+      "players": []
+    },
+    {
+      "id": "fb1dcf19178a6ce8c76c",
+      "headline": "Jets Injury Report | Week 6 vs. Patriots - Wednesday",
+      "url": "https://www.newyorkjets.com/news/jets-injury-report-week-6-vs-patriots-wednesday-10-14-2026",
+      "source_id": "news_official_nyj",
+      "source": "New York Jets (official)",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "WR Omar Cooper Jr. a Limited Participant as 21-Day Window Opens",
+      "categories": [
+        "Injury Report",
+        "News",
+        "Latest Headlines"
+      ],
+      "published_at": "2026-10-14T20:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0041511",
+          "name": "Omar Cooper",
+          "team": "NYJ",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "d6e757ea1671f1db7229",
+      "headline": "Week 6 Injury Report (Buccaneers)",
+      "url": "https://www.steelers.com/news/week-6-injury-report-buccaneers-x2319",
+      "source_id": "news_official_pit",
+      "source": "Pittsburgh Steelers (official)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "A look at player injuries and practice participation for Week 6",
+      "categories": [
+        "Injury Report",
+        "UPMC",
+        "Featured",
+        "Sights and Sounds",
+        "Pittsburgh Steelers at Tampa Bay Buccaneers (2026-REG-6)"
+      ],
+      "published_at": "2026-10-14T20:00:00+00:00",
+      "players": []
+    },
+    {
+      "id": "d013116cbc1de738eeed",
+      "headline": "Giants vs. Saints Week 6 Injury Report: Abdul Carter, Jermaine Eluemunor DNP",
+      "url": "https://www.giants.com/news/giants-vs-saints-week-6-injury-report-abdul-carter-jermaine-eluemunor-dnp",
+      "source_id": "news_official_nyg",
+      "source": "New York Giants (official)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "View the injury report for the Week 6 matchup between the New York Giants (3-1-1) and New Orleans Saints (1-4).",
+      "categories": [
+        "homepage",
+        "Injury Report",
+        "2026 Giants vs Saints WK 6"
+      ],
+      "published_at": "2026-10-14T20:00:00+00:00",
+      "players": []
+    },
+    {
+      "id": "76da98e7e5f2fc01ac04",
+      "headline": "Week 6 Injury Report | Titans at Colts",
+      "url": "https://www.tennesseetitans.com/news/week-6-injury-report-titans-at-colts",
+      "source_id": "news_official_ten",
+      "source": "Tennessee Titans (official)",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Who's in, who's out for the Titans in Week 6 vs the Indianapolis Colts",
+      "categories": [
+        "Team/Football News",
+        "homepage-centerpiece",
+        "Tennessee Titans at Indianapolis Colts (2026-REG-6)",
+        "2026-10-18-PREgame-STORIES-titans-at-colts"
+      ],
+      "published_at": "2026-10-14T20:00:00+00:00",
+      "players": []
+    },
+    {
       "id": "d63af4841df9780f4324",
-      "headline": "Week 6 Wednesday Injury Report: Two players listed as out",
+      "headline": "Week 6 Wednesday Injury Report: Two players listed as not participating",
       "url": "https://www.panthers.com/news/week-6-wednesday-injury-report-two-players-listed-as-out-monroe-freeling-aj-dillon",
       "source_id": "news_official_car",
       "source": "Carolina Panthers (official)",
@@ -604,6 +1139,30 @@
           "name": "Adonai Mitchell",
           "team": "NYJ",
           "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "f86ea434da791a68232e",
+      "headline": "Klint Kubiak takes hard stance on Ashton Jeanty\u2019s playing status",
+      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/142866/raiders-news-ashton-jeanty-play-week-6-bills",
+      "source_id": "news_sbn_lv",
+      "source": "Silver And Black Pride (SB Nation)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Earlier Wednesday, ESPN reported that the Las Vegas Raiders are considering giving starting running back Ashton Jeanty a week off to help him recover from ankle and foot injuries. Later Wednesday, Raiders head coach Klint Kubiak swiftly shut down that notion. \u201cHe\u2019s playing,\u201d Kubiak said when asked about that idea. Kubiak also said Jeanty is [\u2026]",
+      "categories": [
+        "Las Vegas Raiders Injuries",
+        "Las Vegas Raiders News"
+      ],
+      "published_at": "2026-10-14T19:30:46+00:00",
+      "players": [
+        {
+          "id": "00-0040122",
+          "name": "Ashton Jeanty",
+          "team": "LV",
+          "position": "RB"
         }
       ]
     },
@@ -742,14 +1301,14 @@
     },
     {
       "id": "351143cebea7c0242ae6",
-      "headline": "Lamar Jackson Not at Practice, But Reportedly Has 'Realistic Chance' to Face Browns",
+      "headline": "Lamar Jackson Not Practicing Yet, But Reportedly Has 'Realistic Chance' to Face Browns",
       "url": "https://www.baltimoreravens.com/news/lamar-jackson-injury-report-ravens-browns-realistic-chance",
       "source_id": "news_official_bal",
       "source": "Baltimore Ravens (official)",
       "teams": [
         "BAL"
       ],
-      "feed_description": "Wide receiver Rashod Bateman and tight end Matt Hibner are not at the start of Wednesday\u2019s practice.",
+      "feed_description": "Ravens OLB Trey Hendrickson is back to full practice participation and new center Cam Jurgens made his Ravens practice debut.",
       "categories": [
         "General",
         "Ryan Mink",
@@ -758,7 +1317,7 @@
         "2026 Week 6 News",
         "Baltimore Ravens at Cleveland Browns (2026-REG-6)",
         "inline-news",
-        "Homepage Centerpiece"
+        "Homepage Latest Headlines"
       ],
       "published_at": "2026-10-14T18:05:13+00:00",
       "players": [
@@ -767,12 +1326,6 @@
           "name": "Lamar Jackson",
           "team": "BAL",
           "position": "QB"
-        },
-        {
-          "id": "00-0036550",
-          "name": "Rashod Bateman",
-          "team": "BAL",
-          "position": "WR"
         }
       ]
     },
@@ -817,7 +1370,7 @@
     },
     {
       "id": "ed61493dcc6090784e61",
-      "headline": "Ja'Kobi Lane, Cam Jurgens Return to Ravens Practice",
+      "headline": "Ja'Kobi Lane Comes Off Injured Reserve, Returns to Full Practice",
       "url": "https://www.baltimoreravens.com/news/injury-report-jakobi-lane-cam-jurgens-ravens-browns-returns-practice-injured-reserve",
       "source_id": "news_official_bal",
       "source": "Baltimore Ravens (official)",
@@ -3697,612 +4250,6 @@
           "position": "QB"
         }
       ]
-    },
-    {
-      "id": "c6493ea2944eb8b3b96c",
-      "headline": "Cam Skattebo Vows to Fix Ball Security After Overtime Fumble Against Commanders",
-      "url": "https://www.si.com/nfl/giants/onsi/cam-skattebo-overtime-fumble-giants-commanders-tie-01m4pmaadp4m",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "Skattebo vows to fix his ball security after an overtime fumble nearly cost the Giants, who survived when Washington failed to snap the ball.",
-      "categories": [],
-      "published_at": "2026-10-12T02:08:20+00:00",
-      "players": [
-        {
-          "id": "00-0040715",
-          "name": "Cam Skattebo",
-          "team": "NYG",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "c5972e4118ffd9fd9c03",
-      "headline": "RB Zach Charbonnet Not Expected To Make Return For Seahawks' Week 6 Game At Denver",
-      "url": "https://www.seahawks.com/news/rb-zach-charbonnet-not-expected-to-make-return-for-seahawks-week-6-game-at-denver",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Seahawks coach Mike Macdonald said Sunday that it\u2019s unlikely running back Zach Charbonnet will return from the physically unable to perform list ahead of Thursday\u2019s game at Denver.",
-      "categories": [
-        "category/News:",
-        "News: National Feature",
-        "Seattle Seahawks at Denver Broncos (2026-REG-6)",
-        "Zach Charbonnet",
-        "Homepage Hero",
-        "Homepage Top Headlines",
-        "News: Fantasy Insider"
-      ],
-      "published_at": "2026-10-12T01:28:08+00:00",
-      "players": [
-        {
-          "id": "00-0039165",
-          "name": "Zach Charbonnet",
-          "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "dc8013d4b987c2641405",
-      "headline": "Seahawks injury update: Zach Charbonnet not expected to play vs Broncos",
-      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/177107/seahawks-injury-update-zach-charbonnet-not-expected-to-play-vs-broncos",
-      "source_id": "news_sbn_sea",
-      "source": "Field Gulls (SB Nation)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "The Seattle Seahawks just lost to the San Francisco 49ers 32-29, with key fumbles from both Emanuel Wilson and George Holani leading to Niners TDs. Seattle has a short week, as they play the Denver Broncos on the road for Thursday Night Football. If you were hoping for an infusion at the RB position with [\u2026]",
-      "categories": [
-        "Seattle Seahawks Injuries",
-        "Seattle Seahawks News"
-      ],
-      "published_at": "2026-10-12T01:25:02+00:00",
-      "players": [
-        {
-          "id": "00-0038797",
-          "name": "Emanuel Wilson",
-          "team": "SEA",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039165",
-          "name": "Zach Charbonnet",
-          "team": "SEA",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039299",
-          "name": "George Holani",
-          "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "75999d9757630ccf416e",
-      "headline": "Winners and Losers from the Denver Broncos\u2019 23-17 victory over the Los Angeles Chargers",
-      "url": "https://www.milehighreport.com/denver-broncos-news/188569/winners-losers-broncos-chargers-bo-nix-justin-herbert-week-5-nfl",
-      "source_id": "news_sbn_den",
-      "source": "Mile High Report (SB Nation)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "The Broncos are back to winning ugly! Ugly is the best way to describe this game. The Chargers played like a 0-4 team that has been decimated by injuries, while the Broncos continued to struggle on offense and had lapses on defense. However, despite the ugliness, the Broncos and quarterback Bo Nix led yet another [\u2026]",
-      "categories": [
-        "Denver Broncos News"
-      ],
-      "published_at": "2026-10-12T00:37:16+00:00",
-      "players": [
-        {
-          "id": "00-0039732",
-          "name": "Bo Nix",
-          "team": "DEN",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "f6f976f3c9fb0197350a",
-      "headline": "Zay Flowers, Marlon Humphrey Active vs. Falcons",
-      "url": "https://www.baltimoreravens.com/news/zay-flowers-marlon-humphrey-active-week-5-falcons-ravens",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Andrew Vorhees (foot) is inactive, putting Emery Jones Jr. in line to start at right guard.",
-      "categories": [
-        "Inactives",
-        "General",
-        "Clifton Brown",
-        "2026 Week 5",
-        "2026 Week 5 News",
-        "Baltimore Ravens at Atlanta Falcons (2026-REG-5)",
-        "Marlon Humphrey",
-        "Zay Flowers",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-10-11T23:14:08+00:00",
-      "players": [
-        {
-          "id": "00-0039064",
-          "name": "Zay Flowers",
-          "team": "BAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "1b2af8c4273aadb24cef",
-      "headline": "Bears Succeed Against Packers Only at Proving Caleb Williams' Value",
-      "url": "https://www.si.com/nfl/bears/onsi/bears-succeed-against-packers-only-at-proving-caleb-williams-value",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Five turnovers and an offense suddenly incapable of ball control made it apparent the Bears really need their starter back from a hamstring injury.",
-      "categories": [],
-      "published_at": "2026-10-11T23:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "14ed77b3ec545a3e4e89",
-      "headline": "Ravens-Falcons inactives: RG Andrew Vorhees out, Emery Jones to start",
-      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-game-information/86250/ravens-falcons-inactives-rg-andrew-vorhees-out-emery-jones-to-start",
-      "source_id": "news_sbn_bal",
-      "source": "Baltimore Beatdown (SB Nation)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Baltimore Ravens guard Andrew Vorhees is inactive for Sunday night\u2019s matchup against the Atlanta Falcons, positioning 2024 third-round pick Emery Jones to make his first career start at right guard. Status updates on wide receiver Zay Flowers and cornerback Marlon Humphrey were reported on Sunday morning, leaving Vorhees as their only true game-time decision. He [\u2026]",
-      "categories": [
-        "Baltimore Ravens Game Information",
-        "Baltimore Ravens News"
-      ],
-      "published_at": "2026-10-11T22:58:09+00:00",
-      "players": [
-        {
-          "id": "00-0039064",
-          "name": "Zay Flowers",
-          "team": "BAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "d8278232dc63e0c3b5cc",
-      "headline": "Ravens Inactives For Sunday Night In Atlanta",
-      "url": "https://www.si.com/nfl/ravens/onsi/ravens-inactives-for-sunday-night-in-atlanta-01m4phcex33p",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Ravens needed to make key game-time decisions on superstar receiver Zay Flowers (hamstring) and $19M/year corner Marlon Humphrey (calf)",
-      "categories": [],
-      "published_at": "2026-10-11T22:57:02+00:00",
-      "players": [
-        {
-          "id": "00-0039064",
-          "name": "Zay Flowers",
-          "team": "BAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "5e5c78da24fc54b8e242",
-      "headline": "Atlanta Falcons Week 5 inactives vs. Baltimore Ravens on Sunday Night Football",
-      "url": "https://www.atlantafalcons.com/news/atlanta-falcons-week-5-inactives-vs-baltimore-ravens-on-sunday-night-football",
-      "source_id": "news_official_atl",
-      "source": "Atlanta Falcons (official)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "Falcons make a decision on LT Jake Matthews, ILB Divine Deablo and DE Samson Ebukam.",
-      "categories": [
-        "News",
-        "Inactives",
-        "Baltimore Ravens at Atlanta Falcons (2026-REG-5)",
-        "Jake Matthews",
-        "Divine Deablo",
-        "Samson Ebukam",
-        "Za'Darius Smith"
-      ],
-      "published_at": "2026-10-11T22:50:30+00:00",
-      "players": []
-    },
-    {
-      "id": "a7e37017475003b489fb",
-      "headline": "The Titans need consequences after their 26-3 embarrassment, and two players should be the first player to feel them",
-      "url": "https://atozsports.com/nfl/tennessee-titans-news/titans-texans-loss-dan-moore-benching-tyjae-spears-consequences/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "Tennessee\u2019s 26-3 loss to Houston demands more than another plea for patience. Dan Moore, Tyjae Spears and Alontae Taylor should face consequences, even if the alternatives aren\u2019t comfortable.",
-      "categories": [
-        "Tennessee Titans News",
-        "Cam Ward",
-        "Dan Moore Jr",
-        "Robert Saleh",
-        "Texans",
-        "Titans",
-        "Tyjae Spears"
-      ],
-      "published_at": "2026-10-11T22:45:49+00:00",
-      "players": [
-        {
-          "id": "00-0039032",
-          "name": "Tyjae Spears",
-          "team": "TEN",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "791e526065e181a4d29b",
-      "headline": "Patriots\u2019 short-handed receiver room delivers in win over Raiders",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/140362/patriots-short-handed-receiver-room-delivers-win-raiders",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots entered Sunday\u2019s game with just four wide receiver on the game-day roster: Romeo Doubs, DeMario Douglas, Efton Chism III, and Kyle Williams. Being without two of their top pass catchers in A.J. Brown and Mack Hollins didn\u2019t slow down New England\u2019s offense. Instead, the remaining group delivered several career-best performances as [\u2026]",
-      "categories": [
-        "New England Patriots First Read",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-10-11T22:32:56+00:00",
-      "players": [
-        {
-          "id": "00-0033555",
-          "name": "Mack Hollins",
-          "team": "NE",
-          "position": "WR"
-        },
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
-          "position": "WR"
-        },
-        {
-          "id": "00-0037816",
-          "name": "Romeo Doubs",
-          "team": "NE",
-          "position": "WR"
-        },
-        {
-          "id": "00-0038621",
-          "name": "DeMario Douglas",
-          "team": "NE",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040131",
-          "name": "Kyle Williams",
-          "team": "NE",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040563",
-          "name": "Efton Chism III",
-          "team": "NE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "49fc080d9e7ea270e0e5",
-      "headline": "Chargers WR Tre\u2019 Harris suffers hamstring injury vs. Broncos",
-      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/66218/chargers-wr-tre-harris-suffers-hamstring-injury-vs-broncos",
-      "source_id": "news_sbn_lac",
-      "source": "Bolts From The Blue (SB Nation)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "The Los Angeles Chargers continued to be stung by the injury bug in Week 5 against the Denver Broncos. Second-year wide receiver Tre\u2019 Harris is questionable to return to the game after suffering a hamstring injury. Before leaving the game, Harris notched two catches for 16 yards on a team-wide four targets. The team is [\u2026]",
-      "categories": [
-        "Los Angeles Chargers Injuries"
-      ],
-      "published_at": "2026-10-11T22:18:14+00:00",
-      "players": [
-        {
-          "id": "00-0040727",
-          "name": "Tre Harris",
-          "team": "LAC",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "6af4893e3f979eac61b4",
-      "headline": "Chicago Bears Injury Update: Caleb Williams is \u2018on track\u2019 and \u2018close\u2019",
-      "url": "https://www.windycitygridiron.com/chicago-bears-injuries/125022/chicago-bears-injury-update-caleb-williams-is-on-track-and-close-ben-johnson",
-      "source_id": "news_sbn_chi",
-      "source": "Windy City Gridiron (SB Nation)",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "At the start of his postgame press conference, Chicago Bears head coach Ben Johnson addressed the three players who exited their 31 to 7 loss to the Green Bay Packers with injuries, linebacker TJ Edwards (hamstring), cornerback Tyrique Stevenson (hamstring), and defensive lineman Dayo Odeyingbo (quad), by saying they\u2019ll know more about them tomorrow. All [\u2026]",
-      "categories": [
-        "Chicago Bears Injuries"
-      ],
-      "published_at": "2026-10-11T22:11:34+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "a1c0684c94319d727fe1",
-      "headline": "Ravens WR Zay Flowers, CB Marlon Humphrey expected to play vs. Falcons",
-      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/86239/ravens-wr-zay-flowers-cb-marlon-humphrey-expected-to-play-vs-falcons",
-      "source_id": "news_sbn_bal",
-      "source": "Baltimore Beatdown (SB Nation)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Baltimore Ravens wide receiver Zay Flowers and cornerback Marlon Humphrey are both expected to play on Sunday night against the Atlanta Falcons. Both were listed as questionable this week\u2019s injury report. Flowers dealt with a hamstring injury in the first four weeks of the season and hurt his foot during last Sunday\u2019s win over the [\u2026]",
-      "categories": [
-        "Baltimore Ravens Injuries",
-        "Baltimore Ravens News"
-      ],
-      "published_at": "2026-10-11T22:11:05+00:00",
-      "players": [
-        {
-          "id": "00-0039064",
-          "name": "Zay Flowers",
-          "team": "BAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "bd79c4116c48300f52e6",
-      "headline": "Ben Johnson Offers Hopeful Caleb Williams Injury Update After Bears' Loss to Packers",
-      "url": "https://www.si.com/nfl/bears/onsi/caleb-williams-injury-update-ben-johnson-bears-hope-week-6-return",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears head coach Ben Johnson offered some hope for quarterback Caleb Williams to return in Week 6 after the team's loss to the Green Bay Packers on Sunday.",
-      "categories": [],
-      "published_at": "2026-10-11T21:52:33+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "e311377819d0f2cbee6b",
-      "headline": "Browns injuries: 4 starters join list of concerns, including 2 key new ones after Week 5 Jets loss",
-      "url": "https://www.dawgsbynature.com/cleveland-browns-news/134963/browns-injuries-concepcion-judkins-schwesinger-howard",
-      "source_id": "news_sbn_cle",
-      "source": "Dawgs By Nature (SB Nation)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "A quick recap of the Cleveland Browns Week 5 experience is anything but a positive one. In the rain, the Browns lost to the New York Jets 17-12. WR KC Concepcion was knocked out of the game early due to a hit by Jets safety Minkah Fitzpatrick. While fans thought it was a dirty play, [\u2026]",
-      "categories": [
-        "Cleveland Browns Injuries",
-        "Cleveland Browns News"
-      ],
-      "published_at": "2026-10-11T21:31:40+00:00",
-      "players": [
-        {
-          "id": "00-0041547",
-          "name": "K.C. Concepcion",
-          "team": "CLE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "839c79b2de78a14ba473",
-      "headline": "Browns KC Concepcion ruled out after Minkah Fitzpatrick head shot; Todd Monken addresses hit after game",
-      "url": "https://www.dawgsbynature.com/cleveland-browns-injuries/134866/browns-wr-kc-concepcion-walks-off-field-ruled-out-after-dirty-minkah-fitzpatrick-hit-in-week-5-vs-jets",
-      "source_id": "news_sbn_cle",
-      "source": "Dawgs By Nature (SB Nation)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "The Cleveland Browns start against the New York Jets in Week 5 was problematic in multiple ways. QB Geno Smith had all the time in the world on the Jets first drive, which ended with a WR Garrett Wilson touchdown. On Cleveland\u2019s second drive on offense, OT Tytus Howard limped off injured but returned a [\u2026]",
-      "categories": [
-        "Cleveland Browns Injuries",
-        "Cleveland Browns News"
-      ],
-      "published_at": "2026-10-11T20:53:09+00:00",
-      "players": [
-        {
-          "id": "00-0041547",
-          "name": "K.C. Concepcion",
-          "team": "CLE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "567ce1a91e5b0fea1b72",
-      "headline": "Raheim Sanders questionable to return vs. the Jets",
-      "url": "https://www.clevelandbrowns.com/news/raheim-sanders-questionable-to-return-vs-the-jets",
-      "source_id": "news_official_cle",
-      "source": "Cleveland Browns (official)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "Tytus Howard questionable to return with a knee injury",
-      "categories": [
-        "In-Game Breaking News Article",
-        "featured",
-        "Cleveland Browns at New York Jets (2026-REG-5)"
-      ],
-      "published_at": "2026-10-11T19:41:25+00:00",
-      "players": [
-        {
-          "id": "00-0040466",
-          "name": "Raheim Sanders",
-          "team": "CLE",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "a66c357e2a8b6ba17d85",
-      "headline": "Quentin Lake questionable against Bills",
-      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/151382/rams-week-5-final-injury-report-quentin-lake-questionable",
-      "source_id": "news_sbn_lar",
-      "source": "Turf Show Times (SB Nation)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "It appears though that the Los Angeles Rams are trending upward with their health as Aaron Donald, Colby Parkinson, and Jaylen Watson are all expected to return for Week 5\u2019s game Monday night against the Buffalo Bills. Quentin Lake may not be as lucky. The Rams have collected their fair share of injuries within the [\u2026]",
-      "categories": [
-        "Los Angeles Rams Injuries"
-      ],
-      "published_at": "2026-10-11T19:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0036244",
-          "name": "Colby Parkinson",
-          "team": "LAR",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "cc3a7d1c064694d99fea",
-      "headline": "TreVeyon Henderson injury: Latest news about Patriots RB",
-      "url": "https://www.patspulpit.com/new-england-patriots-injuries/140244/treveyon-henderson-injury-patriots-rb-leaves-raiders-game-in-first-half",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Update (10/11/26): Patriots RB TreVeyon Henderson exits Raiders game due to ankle injury Running back TreVeyon Henderson (ankle) was downgraded to out for the remainder of the Patriots\u2019 Week 5 matchup. Henderson originally suffered the ankle injury and the second quarter and departed to the locker room before being ruled out in the second half. [\u2026]",
-      "categories": [
-        "New England Patriots Injuries"
-      ],
-      "published_at": "2026-10-11T19:20:18+00:00",
-      "players": [
-        {
-          "id": "00-0040734",
-          "name": "TreVeyon Henderson",
-          "team": "NE",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "9df74d2099380b86bf59",
-      "headline": "The Lions\u2019 inactives tell us something important for today \u2014 and potentially something bigger for after the bye",
-      "url": "https://atozsports.com/nfl/detroit-lions-news/the-lions-inactives-tell-us-something-important-for-today-and-potentially-something-bigger-for-after-the-bye/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Williams will gut it out against Arizona, while Detroit\u2019s choices at tight end and safety offer clues about where the roster could be headed during the bye week.",
-      "categories": [
-        "Detroit Lions News"
-      ],
-      "published_at": "2026-10-11T19:10:45+00:00",
-      "players": []
-    },
-    {
-      "id": "d73a2cfb7d297f0e9d4f",
-      "headline": "49ers inactive list: Ephesians Prysock will make his NFL debut",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/164109/49ers-inactive-list-ephesians-prysock-will-make-his-nfl-debut",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "A report surfaced Sunday morning that San Francisco 49ers tight end George Kittle was ill. It was expected that he\u2019d play, and that\u2019s the case. Kittle is active. Here\u2019s a look at the inactive list: FB Kyle JuszczykDE Nick BosaDT James Thompson Jr.S Marques SigleQB Kurtis Rourke (3rd QB)T Enrique Cruz Jr.LB Tatum Bethune Wide [\u2026]",
-      "categories": [
-        "San Francisco 49ers Injuries",
-        "San Francisco 49ers Roster"
-      ],
-      "published_at": "2026-10-11T19:08:07+00:00",
-      "players": [
-        {
-          "id": "00-0033288",
-          "name": "George Kittle",
-          "team": "SF",
-          "position": "TE"
-        },
-        {
-          "id": "00-0040589",
-          "name": "Kurtis Rourke",
-          "team": "SF",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "407a1929b5698d689ec4",
-      "headline": "Texans RB David Montgomery Leaves vs. Titans With Injury, Ruled Out",
-      "url": "https://www.si.com/nfl/texans/onsi/texans-rb-david-montgomery-leaves-vs-titans-with-injury-ruled-out",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "The Houston Texans lost one of their running backs in Week 5's matchup vs. the Tennessee Titans.",
-      "categories": [],
-      "published_at": "2026-10-11T19:02:59+00:00",
-      "players": [
-        {
-          "id": "00-0035685",
-          "name": "David Montgomery",
-          "team": "HOU",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "14797aa3baeaf83075b3",
-      "headline": "Lions Week 5 injury report: DL Tyleik Williams ACTIVE vs. Cardinals",
-      "url": "https://www.prideofdetroit.com/detroit-lions-news/176698/lions-cardinals-injury-inactives-week-5-tyleik-williams",
-      "source_id": "news_sbn_det",
-      "source": "Pride Of Detroit (SB Nation)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "The Detroit Lions have declared their inactives ahead of their Week 5 matchup with the Arizona Cardinals, and starting defensive tackle Tyleik Williams was NOT among the players listed. Williams exited Week 4 in a walking boot but told the media it was only precautionary. He missed practice on Wednesday\u2014which is common for players injured [\u2026]",
-      "categories": [
-        "Detroit Lions Injuries",
-        "Detroit Lions News"
-      ],
-      "published_at": "2026-10-11T18:57:37+00:00",
-      "players": []
     }
   ]
 }
