@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T22:00:52.644033+00:00",
+  "updated_at": "2026-10-14T22:38:34.276774+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": null,
+      "latest_entry_at": "2026-10-14T22:30:35+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T21:31:42+00:00",
+      "latest_entry_at": "2026-10-14T22:29:28+00:00",
       "stale": false
     },
     {
@@ -84,9 +84,9 @@
     {
       "source_id": "news_official_chi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-14T20:24:00+00:00",
+      "latest_entry_at": "2026-10-14T22:35:00+00:00",
       "stale": false
     },
     {
@@ -108,9 +108,9 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:01:04+00:00",
+      "latest_entry_at": "2026-10-14T22:12:52+00:00",
       "stale": false
     },
     {
@@ -132,9 +132,9 @@
     {
       "source_id": "news_official_hou",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-14T14:45:44+00:00",
+      "latest_entry_at": "2026-10-14T22:10:25+00:00",
       "stale": false
     },
     {
@@ -164,9 +164,9 @@
     {
       "source_id": "news_official_lac",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-14T16:57:00+00:00",
+      "latest_entry_at": "2026-10-14T22:28:34+00:00",
       "stale": false
     },
     {
@@ -236,9 +236,9 @@
     {
       "source_id": "news_official_phi",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:32:06+00:00",
+      "latest_entry_at": "2026-10-14T22:12:06+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-14T21:03:48+00:00",
+      "latest_entry_at": "2026-10-14T22:08:19+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": null,
+      "latest_entry_at": "2026-10-14T22:30:35+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-14T21:31:42+00:00",
+      "latest_entry_at": "2026-10-14T22:29:28+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-14T21:06:58+00:00",
+      "latest_entry_at": "2026-10-14T19:34:47+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T21:11:18+00:00",
+      "latest_entry_at": "2026-10-14T22:30:00+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T20:28:59+00:00",
+      "latest_entry_at": "2026-10-14T22:00:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:00:00+00:00",
+      "latest_entry_at": "2026-10-14T17:30:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,262 @@
     }
   ],
   "items": [
+    {
+      "id": "eaee1434567eab98d0bb",
+      "headline": "Caleb Williams takes another step toward return from hamstring injury",
+      "url": "https://www.chicagobears.com/news/caleb-williams-takes-another-step-toward-return-from-hamstring-injury",
+      "source_id": "news_official_chi",
+      "source": "Chicago Bears (official)",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "The Bears conducted a walk-through Wednesday. But had they held a regular practice, quarterback Caleb Williams would have been a full participant for the first time since injuring his hamstring in a Week 2 game against the Vikings.",
+      "categories": [
+        "Caleb Williams"
+      ],
+      "published_at": "2026-10-14T22:35:00+00:00",
+      "players": [
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "86e02e7b1d6f9e6b6d1e",
+      "headline": "Final Seahawks, Broncos Injury Report Clarifies Situation On Both Sides",
+      "url": "https://www.si.com/nfl/seahawks/onsi/final-seahawks-broncos-injury-report-clarifies-situation-both-sides",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks play a very important game tomorrow evening, so let\u2019s see their health situation heading into it with the latest practice report.",
+      "categories": [],
+      "published_at": "2026-10-14T22:30:35+00:00",
+      "players": []
+    },
+    {
+      "id": "9a145d5bea7d990533f1",
+      "headline": "Commanders have one major advantage over the undefeated 49ers, and it starts with Jayden Daniels vs. Brock Purdy",
+      "url": "https://atozsports.com/nfl/washington-commanders-news/commanders-49ers-jayden-daniels-brock-purdy-quarterback-advantage/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Washington enters Monday Night Football against an unbeaten San Francisco team with disadvantages across the roster, but one quarterback comparison gives the Commanders a reason to believe.",
+      "categories": [
+        "Washington Commanders News",
+        "49ers",
+        "Brock Purdy",
+        "Christian McCaffery",
+        "Commanders",
+        "Dan Quinn",
+        "George Kittle",
+        "Jayden Daniels",
+        "Kyle Shanahan",
+        "San Franciscio 49ers",
+        "Washington Commanders"
+      ],
+      "published_at": "2026-10-14T22:29:28+00:00",
+      "players": [
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "da913b88a68908621219",
+      "headline": "Chargers vs. Chiefs Injury Report: McConkey, Henley & Molden Among 13 Limited Ahead of Week 6",
+      "url": "https://www.chargers.com/news/chiefs-injury-report-ladd-mcconkey-week-6",
+      "source_id": "news_official_lac",
+      "source": "Los Angeles Chargers (official)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "Take a look at the Chargers Injury Report ahead of Week 6 against the Chiefs",
+      "categories": [
+        "Articles: Injury Report",
+        "Homepage: CP",
+        "Homepage: Headlines",
+        "App: Homepage",
+        "Los Angeles Chargers at Kansas City Chiefs (2026-REG-6)",
+        "2026-REG-6-EDITORIALS"
+      ],
+      "published_at": "2026-10-14T22:28:34+00:00",
+      "players": []
+    },
+    {
+      "id": "48d41a14b3024ad69e2d",
+      "headline": "In Week 4, the Kansas City Chiefs lost WR Tyquan Thornton to an ankle dislocation injury; two weeks later, here\u2019s how they plan to replace him",
+      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-tyquan-thornton-ankle-injury-andy-reid-patrick-mahomes-xavier-cyrus-allen-replace/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "The Kansas City Chiefs opened Week 6 practice without WR Tyquan Thornton and WR Rashee Rice. Andy Reid, Patrick Mahomes, and one rookie receiver explained how the offense plans to move forward.",
+      "categories": [
+        "Kansas City Chiefs News",
+        "American Football",
+        "Andy Reid",
+        "Cyrus Allen",
+        "Jalen Royals",
+        "Kansas City Chiefs",
+        "Patrick Mahomes",
+        "Rashee Rice",
+        "Tyquan Thornton",
+        "Xavier Worthy"
+      ],
+      "published_at": "2026-10-14T22:18:26+00:00",
+      "players": [
+        {
+          "id": "00-0033873",
+          "name": "Patrick Mahomes",
+          "team": "KC",
+          "position": "QB"
+        },
+        {
+          "id": "00-0038104",
+          "name": "Tyquan Thornton",
+          "team": "KC",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039067",
+          "name": "Rashee Rice",
+          "team": "KC",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "9612338e394651cdf178",
+      "headline": "Colts Open Week 6 With Several Key Names on Injury Report",
+      "url": "https://www.si.com/nfl/colts/onsi/colts-open-week-6-with-several-key-names-on-injury-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Colts opened Week 6 preparation with key players sidelined, including multiple members of an already thin WR room.",
+      "categories": [],
+      "published_at": "2026-10-14T22:17:52+00:00",
+      "players": []
+    },
+    {
+      "id": "ce1fc262638a78bfbe72",
+      "headline": "Injury Report: CB Riley Moss listed as questionable for 'Thursday Night Football' vs. Seahawks",
+      "url": "https://www.denverbroncos.com/news/injury-report-cb-riley-moss-listed-as-questionable-for-thursday-night-football-vs-seahawks",
+      "source_id": "news_official_den",
+      "source": "Denver Broncos (official)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "Cornerback Riley Moss could make his return to game action on \u201cThursday Night Football.\u201d",
+      "categories": [
+        "Top Stories",
+        "Aric DiLalla",
+        "Riley Moss",
+        "Seattle Seahawks at Denver Broncos (2026-REG-6)"
+      ],
+      "published_at": "2026-10-14T22:12:52+00:00",
+      "players": []
+    },
+    {
+      "id": "4e7d02c96ddc720e015a",
+      "headline": "Panthers vs. Eagles Injury Report",
+      "url": "https://www.philadelphiaeagles.com/news/panthers-vs-eagles-injury-report-2026-nfl-week-6-saquon-barkley-devonta-smith",
+      "source_id": "news_official_phi",
+      "source": "Philadelphia Eagles (official)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Eagles welcomed the return of four players on Injured Reserve back to the practice field, but running back Saquon Barkley remained sidelined.",
+      "categories": [
+        "All News-archived",
+        "NFL.com Feature",
+        "Injury Report",
+        "Team Roster Content",
+        "2026 Week 6 vs. Panthers"
+      ],
+      "published_at": "2026-10-14T22:12:06+00:00",
+      "players": [
+        {
+          "id": "00-0034844",
+          "name": "Saquon Barkley",
+          "team": "PHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "61d328045492cad98f77",
+      "headline": "Week 6 Injury Report | Texans at Jaguars",
+      "url": "https://www.houstontexans.com/news/week-6-injury-report-texans-at-jaguars",
+      "source_id": "news_official_hou",
+      "source": "Houston Texans (official)",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "Week 6 injury updates presented by Shariff Injury Lawyers for the Houston Texans at Jacksonville Jaguars game in London.",
+      "categories": [
+        "Homepage CP",
+        "Gameday",
+        "Houston Texans at Jacksonville Jaguars (2026-REG-6)",
+        "2026 REG6 - Jaguars"
+      ],
+      "published_at": "2026-10-14T22:10:25+00:00",
+      "players": []
+    },
+    {
+      "id": "95f1f2af86802d63bd43",
+      "headline": "Packers-Cowboys Wednesday Injury Report: Two Enormous Problems Emerge",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-cowboys-wednesday-injury-report-two-enormous-problems",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Here are the initial injury reports of the week as the Packers get ready to host the Cowboys on Sunday.",
+      "categories": [],
+      "published_at": "2026-10-14T21:59:43+00:00",
+      "players": []
+    },
+    {
+      "id": "1e96cb6f4870d23c8802",
+      "headline": "Jaguars Injury Report: Updates on Eric Murray, While Rookies Get Dinged Up",
+      "url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-injury-report-updates-on-eric-murray-while-rookies-get-dinged-up",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "JAX"
+      ],
+      "feed_description": "The first injury report for the Jacksonville Jaguars' Week 6 matchup with the Houston Texans is out, with some new names added to it.",
+      "categories": [],
+      "published_at": "2026-10-14T21:56:27+00:00",
+      "players": []
+    },
+    {
+      "id": "7ec7de6d5ed86ead1452",
+      "headline": "Texans Injury Report: 4 Players Miss Practice Before Jaguars London Trip",
+      "url": "https://www.si.com/nfl/texans/onsi/texans-injury-report-4-players-miss-practice-before-jaguars-london-trip",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "The Houston Texans are dealing with some key injuries a few days out from their Week 6 matchup.",
+      "categories": [],
+      "published_at": "2026-10-14T21:51:24+00:00",
+      "players": []
+    },
     {
       "id": "a015d1216ff62caaf774",
       "headline": "Saints announce roster moves",
@@ -672,6 +928,27 @@
       ]
     },
     {
+      "id": "c37d6a3940005dad688f",
+      "headline": "Jeremiyah Love Gets Concerning Injury Update Ahead of Cardinals-Rams",
+      "url": "https://www.si.com/nfl/cardinals/onsi/jeremiyah-love-gets-concerning-injury-update-ahead-arizona-cardinals-los-angeles-rams",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "The star rookie is dealing with his ankle injury still.",
+      "categories": [],
+      "published_at": "2026-10-14T21:25:20+00:00",
+      "players": [
+        {
+          "id": "00-0041027",
+          "name": "Jeremiyah Love",
+          "team": "ARI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
       "id": "b32fcdec503d76b36543",
       "headline": "Week 6 Injury Report: Patriots vs. Jets",
       "url": "https://www.patriots.com/news/week-6-injury-report-patriots-vs-jets",
@@ -769,6 +1046,20 @@
           "position": "WR"
         }
       ]
+    },
+    {
+      "id": "975db7fae0af8adeb94c",
+      "headline": "5 Dallas Cowboys Miss Practice In First Week 6 Injury Report Ahead Of Packers Game",
+      "url": "https://www.si.com/nfl/cowboys/onsi/5-dallas-cowboys-miss-practice-first-nfl-week-6-injury-report-packers",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys dropped their first injury report for Week 6 against the Green Bay Packers.",
+      "categories": [],
+      "published_at": "2026-10-14T21:09:58+00:00",
+      "players": []
     },
     {
       "id": "9276dcc5cda9bdd06d2e",
@@ -3910,344 +4201,6 @@
           "name": "Jake Ferguson",
           "team": "DAL",
           "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "7c8b2c7c806fbf0e0b5d",
-      "headline": "NFL Insider: 'All Signs Point To' Caleb Williams Returning From Injury For Bears in Week 6",
-      "url": "https://www.si.com/nfl/bears/onsi/nfl-insider-all-signs-point-to-caleb-williams-returning-injury-bears-week-6",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "NFL Network's Ian Rapoport believes that all signs are pointing to Caleb Williams making his return from injury for the Chicago Bears in Week 6.",
-      "categories": [],
-      "published_at": "2026-10-12T14:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "09bc8e46d26643458170",
-      "headline": "Snaps, Studs and Duds From Packers\u2019 Statement Win Over Bears",
-      "url": "https://www.si.com/nfl/packers/onsi/snaps-studs-and-duds-from-packers-statement-win-over-bears",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Here\u2019s our weekly analysis of the snap counts along with the studs (Jordan Love, predictably, among them) and duds.",
-      "categories": [],
-      "published_at": "2026-10-12T14:26:00+00:00",
-      "players": [
-        {
-          "id": "00-0036264",
-          "name": "Jordan Love",
-          "team": "GB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "f65ec4250facfba61dde",
-      "headline": "Patriots News: Maye cooks, force-feeds 40-burger to Raiders",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/140406/patriots-news-maye-cooks-force-feeds-40-burger-to-raiders",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "TEAM TALK Post Game Notes, Patriots-Raiders: Drake Maye records five total TDs against the Raiders, Pats snap 3-game losing streak vs. Raiders, Rhamondre Stevenson scored his 30th career rushing TD, Elijah Ponder has at least a half-sack in four straight games; More. Gamebook: Full Raiders at Patriots stats. Evan Lazar\u2019s Game Observations: 8 takeaways from [\u2026]",
-      "categories": [
-        "New England Patriots daily news roundup",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-10-12T13:53:38+00:00",
-      "players": [
-        {
-          "id": "00-0036875",
-          "name": "Rhamondre Stevenson",
-          "team": "NE",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039851",
-          "name": "Drake Maye",
-          "team": "NE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "779e0357729bb1aef6f0",
-      "headline": "Steelers WR Roman Wilson to miss multiple weeks with injury",
-      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-injuries/176134/steelers-wr-roman-wilson-to-miss-multiple-weeks-with-injury-michael-pittman",
-      "source_id": "news_sbn_pit",
-      "source": "Behind the Steel Curtain (SB Nation)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "Pittsburgh Steelers wide receiver Roman Wilson suffered a finger injury in the team\u2019s Week 5 win over the Indianapolis Colts. According to ESPN\u2019s Jeremy Fowler, he\u2019ll miss multiple games because of it. \u201cSteelers WR Roman Wilson is expected to miss a couple of weeks due to a finger injury suffered Sunday, per source,\u201d Fowler reports. [\u2026]",
-      "categories": [
-        "Pittsburgh Steelers Injuries",
-        "Pittsburgh Steelers News"
-      ],
-      "published_at": "2026-10-12T13:03:23+00:00",
-      "players": [
-        {
-          "id": "00-0039739",
-          "name": "Roman Wilson",
-          "team": "PIT",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "c5931870421ea88ab585",
-      "headline": "Drake Maye has found his mojo again",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/140322/drake-maye-found-his-rhythm-again-patriots-vs-raiders",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "After a rough first three games of the 2026 season, in which Drake Maye turned the ball over seven times, the New England Patriots\u2019 quarterback has now delivered back-to-back resurgent performances, resembling the MVP runner-up form he showcased last season. On Sunday, Maye and the Patriots handily defeated the Las Vegas Raiders, 45-17, returning home [\u2026]",
-      "categories": [
-        "New England Patriots First Read",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-10-12T13:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039851",
-          "name": "Drake Maye",
-          "team": "NE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "aaaeed601b267a4b6b9f",
-      "headline": "Caleb Williams' Status Not Bears' Only QB Question After Blowout Loss",
-      "url": "https://www.si.com/nfl/bears/onsi/caleb-williams-status-not-bears-only-qb-question-after-blowout-loss",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The only thing more elusive than Green Bay receivers on Sunday was Bears coach Ben Johnson when talking about whether Caleb Williams would be ready to return ag",
-      "categories": [],
-      "published_at": "2026-10-12T11:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "3c165e3b5c0120f7d2e4",
-      "headline": "Michael Penix Jr. Reveals Why He Couldn't Return for Falcons in Overtime",
-      "url": "https://www.si.com/nfl/falcons/onsi/michael-penix-jr-reveals-why-he-couldnt-return-for-falcons-in-overtime",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "Atlanta Falcons await Michael Penix Jr. injury results after loss to Baltimore Ravens",
-      "categories": [],
-      "published_at": "2026-10-12T11:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0039917",
-          "name": "Michael Penix Jr.",
-          "team": "ATL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "6a7f1dda72536eb293fd",
-      "headline": "Steelers Get Bad News on Roman Wilson's Injury",
-      "url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-bad-news-roman-wilsons-injury",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "The Pittsburgh Steelers got a negative update on Roman Wilson's finger injury, which he suffered against the Indianapolis Colts in Week 5.",
-      "categories": [],
-      "published_at": "2026-10-12T11:24:32+00:00",
-      "players": [
-        {
-          "id": "00-0039739",
-          "name": "Roman Wilson",
-          "team": "PIT",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "604b9ea6731953ba0bfe",
-      "headline": "Houston Texans News: Monday October 12, 2026",
-      "url": "https://www.battleredblog.com/houston-texans-news/78180/houston-texans-news-monday-october-12-2026",
-      "source_id": "news_sbn_hou",
-      "source": "Battle Red Blog (SB Nation)",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "Houston Texans News In beating Titans, C.J. Stroud makes a compelling case for Texans to pay him (Houston Chronicle) Houston Texans snap winless start with 26-3 victory over Tennessee Titans (KRIV Fox 26 Houston) Marvin Harrison Jr. trade: Cardinals send former top-5 pick to Texans for multiple draft choices (CBS Sports) C.J. Stroud: Texans\u2019 trade [\u2026]",
-      "categories": [
-        "Battle Red Newswire",
-        "Houston Texans News"
-      ],
-      "published_at": "2026-10-12T11:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039163",
-          "name": "C.J. Stroud",
-          "team": "HOU",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "7cdf13789f01b85c4943",
-      "headline": "Tyler Huntley Delivers (Again) With the Faith of His Teammates in Atlanta Win",
-      "url": "https://www.baltimoreravens.com/news/tyler-huntley-smile-faith-teammates-atlanta-overtime-win-ravens-falcons-2026",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "With Lamar Jackson sidelined by an ankle injury, Tyler Huntley rose to the occasion down the stretch.",
-      "categories": [
-        "General",
-        "Ryan Mink",
-        "2026 Week 5",
-        "2026 Week 5 News",
-        "Baltimore Ravens at Atlanta Falcons (2026-REG-5)",
-        "Tyler Huntley",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-10-12T06:26:00+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        },
-        {
-          "id": "00-0035993",
-          "name": "Tyler Huntley",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "83a3c90172dbf912d2f5",
-      "headline": "Michael Penix Jr.: 'I hated it. I hated that I couldn't get back in that game.'",
-      "url": "https://www.atlantafalcons.com/news/michael-penix-jr-sunday-night-football-rib-injury",
-      "source_id": "news_official_atl",
-      "source": "Atlanta Falcons (official)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "Penix suffered an injury to his ribs in the final moments of regulation in the Falcons' Sunday Night Football loss to the Ravens.",
-      "categories": [
-        "News",
-        "Baltimore Ravens at Atlanta Falcons (2026-REG-5)",
-        "sunday night football",
-        "Michael Penix Jr."
-      ],
-      "published_at": "2026-10-12T05:10:03+00:00",
-      "players": [
-        {
-          "id": "00-0039917",
-          "name": "Michael Penix Jr.",
-          "team": "ATL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "d41c7dee0b6c72c0757c",
-      "headline": "4 winners and 5 losers from Falcons\u2019 late-game collapse against Ravens: QB questions resurface after Michael Penix Jr. injury",
-      "url": "https://atozsports.com/nfl/atlanta-falcons-news/winners-losers-falcons-vs-ravens-michael-penix-jr-tua-tagovailoa-kevin-stefanski/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "The Atlanta Falcons had the Baltimore Ravens on the ropes for three quarters on Sunday Night Football. Here are the players and decisions that defined the loss, from a swarming secondary to a fourth quarter worth forgetting.",
-      "categories": [
-        "Atlanta Falcons News",
-        "NFL",
-        "Atlanta Falcons",
-        "Falcons News",
-        "Michael Penix Jr."
-      ],
-      "published_at": "2026-10-12T05:05:51+00:00",
-      "players": [
-        {
-          "id": "00-0039917",
-          "name": "Michael Penix Jr.",
-          "team": "ATL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "85947f125f2f225c2f80",
-      "headline": "Critical Takeaways From Wild Ravens Comeback, OT Win In Atlanta",
-      "url": "https://www.si.com/nfl/ravens/onsi/ravens-usher-wild-comeback-in-regulation-and-win-30-23-in-overtime-at-atlanta-01m4q19pbhm6",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Ravens overcame a bevvy of injuries, including two-time MVP quarterback Lamar Jackson missing the game, rallied to force overtime with a two-minute drive, w",
-      "categories": [],
-      "published_at": "2026-10-12T03:55:42+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "3775f6bed2cae2d1d6fa",
-      "headline": "5 Winners, 5 Losers From the Commanders\u2019 Frustrating 27\u201327 Tie With the Giants",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-winners-losers-giants-week-5-tie",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Jayden Daniels delivered in his return, but late mistakes cost Washington a win. Here are five winners and five losers from the Commanders' tie with the Giants.",
-      "categories": [],
-      "published_at": "2026-10-12T02:49:44+00:00",
-      "players": [
-        {
-          "id": "00-0039910",
-          "name": "Jayden Daniels",
-          "team": "WAS",
-          "position": "QB"
         }
       ]
     }
