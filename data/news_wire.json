@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T00:37:21.983277+00:00",
+  "updated_at": "2026-10-14T02:00:45.106971+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T00:31:30+00:00",
+      "latest_entry_at": "2026-10-14T02:00:33+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T22:19:00+00:00",
+      "latest_entry_at": "2026-10-14T00:47:58+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-13T22:03:50+00:00",
+      "latest_entry_at": "2026-10-14T00:37:47+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-13T20:00:16+00:00",
+      "latest_entry_at": "2026-10-14T01:09:37+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-13T23:56:44+00:00",
+      "latest_entry_at": "2026-10-14T01:39:14+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T00:31:30+00:00",
+      "latest_entry_at": "2026-10-14T02:00:33+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T22:19:00+00:00",
+      "latest_entry_at": "2026-10-14T00:47:58+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-12T11:01:00+00:00",
+      "latest_entry_at": "2026-10-13T21:34:32+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T23:23:29+00:00",
+      "latest_entry_at": "2026-10-13T22:45:12+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T22:00:00+00:00",
+      "latest_entry_at": "2026-10-14T01:09:49+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T16:23:30+00:00",
+      "latest_entry_at": "2026-10-13T18:00:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T16:21:47+00:00",
+      "latest_entry_at": "2026-10-13T12:00:00+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,29 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-13T22:28:46+00:00",
+      "latest_entry_at": "2026-10-14T01:18:55+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "0bfa5ec17ebaed5bf708",
+      "headline": "Seahawks-Broncos Tuesday injury report: Drake Thomas still not hypothetically practicing",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/177277/seahawks-vs-broncos-tuesday-injury-report-drake-thomas-still-not-practicing",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks have a short week in which they really won\u2019t have much practice time for their Thursday night game against the Denver Broncos. As such, the Week 6 injury report is all based on estimations off of whether players would be able to practice or not. This means I\u2019m going to concoct a [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries"
+      ],
+      "published_at": "2026-10-14T01:18:55+00:00",
+      "players": []
+    },
     {
       "id": "fd2f7aa662e0b94534fa",
       "headline": "Chiefs On SI Mailbag: Will Cyrus Allen Step Up After Tyquan Thornton's Injury?",
@@ -4166,20 +4182,6 @@
           "position": "QB"
         }
       ]
-    },
-    {
-      "id": "79537e000ca266a9ca20",
-      "headline": "Patriots Week 5 Inactives vs. Raiders: Secondary Taking Hit after Hit",
-      "url": "https://www.si.com/nfl/patriots/onsi/patriots-week-5-inactives-vs-raiders-secondary-taking-hit-after-hit",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Here's which New England Patriots and Las Vegas Raiders won't be suiting up for their fifth game of the regular season.",
-      "categories": [],
-      "published_at": "2026-10-11T15:37:26+00:00",
-      "players": []
     }
   ]
 }
