@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T05:25:22.640003+00:00",
+  "updated_at": "2026-10-14T10:00:53.520564+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T05:10:29+00:00",
+      "latest_entry_at": "2026-10-14T09:36:50+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T04:45:24+00:00",
+      "latest_entry_at": "2026-10-14T09:00:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T05:10:29+00:00",
+      "latest_entry_at": "2026-10-14T09:36:50+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-13T21:43:01+00:00",
+      "latest_entry_at": "2026-10-14T10:00:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T22:52:18+00:00",
+      "latest_entry_at": "2026-10-14T10:00:00+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T23:23:29+00:00",
+      "latest_entry_at": "2026-10-14T10:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T23:04:23+00:00",
+      "latest_entry_at": "2026-10-14T10:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T00:00:00+00:00",
+      "latest_entry_at": "2026-10-14T10:00:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-13T20:30:00+00:00",
+      "latest_entry_at": "2026-10-14T09:14:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "5b9fe28b334c0da39808",
+      "headline": "Joe Brady Puts James Cook on Notice as Bills RB's Fumbling Issues Continue",
+      "url": "https://www.si.com/nfl/bills/onsi/week-6-joe-brady-puts-james-cook-on-notice-as-bills-rb-s-fumbling-issues-continue",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Buffalo Bills head coach Joe Brady is threatening to take carries away from running back James Cook if his fumbling issues continue.",
+      "categories": [],
+      "published_at": "2026-10-14T09:25:27+00:00",
+      "players": [
+        {
+          "id": "00-0037248",
+          "name": "James Cook",
+          "team": "BUF",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "0bfa5ec17ebaed5bf708",
       "headline": "Seahawks-Broncos Tuesday injury report: Drake Thomas still not hypothetically practicing",
@@ -4153,35 +4174,6 @@
       "categories": [],
       "published_at": "2026-10-11T15:38:22+00:00",
       "players": []
-    },
-    {
-      "id": "85f4b2241dc1e599d009",
-      "headline": "Bears make the final call on Caleb Williams\u2019 status against Packers after encouraging pregame workout at Lambeau Field",
-      "url": "https://atozsports.com/nfl/chicago-bears-news/bears-week-5-inactives-caleb-williams-kyler-gordon-ozzy-trapilo/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears quarterback Caleb Williams put his hamstring through a full pregame test at Lambeau Field, and Chicago's inactives list against the Green Bay Packers carries notable decisions on both sides of the ball.",
-      "categories": [
-        "Chicago Bears News",
-        "NFL",
-        "Ben Johnson",
-        "Caleb Williams",
-        "Kyler Gordon",
-        "Ozzy Trapilo",
-        "Shemar Turner"
-      ],
-      "published_at": "2026-10-11T15:38:07+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
     }
   ]
 }
