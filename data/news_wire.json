@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T19:42:08.121406+00:00",
+  "updated_at": "2026-10-14T20:00:48.691788+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:30:53+00:00",
+      "latest_entry_at": "2026-10-14T19:51:32+00:00",
       "stale": false
     },
     {
@@ -76,9 +76,9 @@
     {
       "source_id": "news_official_car",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-14T17:23:10+00:00",
+      "latest_entry_at": "2026-10-14T19:59:44+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-14T13:00:17+00:00",
+      "latest_entry_at": "2026-10-14T19:45:19+00:00",
       "stale": false
     },
     {
@@ -206,7 +206,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T14:21:00+00:00",
+      "latest_entry_at": "2026-10-14T19:40:43+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:17:00+00:00",
+      "latest_entry_at": "2026-10-14T19:51:00+00:00",
       "stale": false
     },
     {
@@ -230,7 +230,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-14T17:30:00+00:00",
+      "latest_entry_at": "2026-10-14T19:53:18+00:00",
       "stale": false
     },
     {
@@ -268,15 +268,15 @@
     {
       "source_id": "news_official_tb",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-14T16:56:00+00:00",
+      "latest_entry_at": "2026-10-14T18:40:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_ten",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
       "latest_entry_at": "2026-10-14T17:48:23+00:00",
       "stale": false
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:30:53+00:00",
+      "latest_entry_at": "2026-10-14T19:51:32+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T11:30:00+00:00",
+      "latest_entry_at": "2026-10-14T19:30:46+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-14T18:02:45+00:00",
+      "latest_entry_at": "2026-10-14T19:34:47+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T16:11:52+00:00",
+      "latest_entry_at": "2026-10-14T19:46:05+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T17:26:44+00:00",
+      "latest_entry_at": "2026-10-14T19:49:43+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T12:00:00+00:00",
+      "latest_entry_at": "2026-10-14T16:30:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T17:00:00+00:00",
+      "latest_entry_at": "2026-10-14T19:47:07+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,58 @@
     }
   ],
   "items": [
+    {
+      "id": "d63af4841df9780f4324",
+      "headline": "Week 6 Wednesday Injury Report: Two players listed as out",
+      "url": "https://www.panthers.com/news/week-6-wednesday-injury-report-two-players-listed-as-out-monroe-freeling-aj-dillon",
+      "source_id": "news_official_car",
+      "source": "Carolina Panthers (official)",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "The Panthers didn't practice on Wednesday, but rookie tackle Monroe Freeling and veteran running back AJ Dillon were listed as not participating. There were four others listed as limited.",
+      "categories": [
+        "Injury Reports",
+        "Latest News",
+        "App News",
+        "Carolina Panthers at Philadelphia Eagles (2026-REG-6)"
+      ],
+      "published_at": "2026-10-14T19:59:44+00:00",
+      "players": [
+        {
+          "id": "00-0036265",
+          "name": "AJ Dillon",
+          "team": "CAR",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "9da1c322ee1b433b5012",
+      "headline": "After Hand Procedure, Jets WR Adonai Mitchell Remains 'Week-to-Week'",
+      "url": "https://www.newyorkjets.com/news/adonai-mitchell-week-to-week-after-hand-procedure-jets-injury-updates-10-14-2026",
+      "source_id": "news_official_nyj",
+      "source": "New York Jets (official)",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "HC Aaron Glenn Provides Injury Updates on Several Players",
+      "categories": [
+        "Latest Headlines",
+        "News",
+        "Eric Allen",
+        "Adonai Mitchell"
+      ],
+      "published_at": "2026-10-14T19:53:18+00:00",
+      "players": [
+        {
+          "id": "00-0039890",
+          "name": "Adonai Mitchell",
+          "team": "NYJ",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "d581170396bdd56df6bf",
       "headline": "Chiefs Preaching 'Trust' Despite Unproven WR Options After Losing Tyquan Thornton",
@@ -3683,7 +3735,8 @@
         "Seattle Seahawks at Denver Broncos (2026-REG-6)",
         "Zach Charbonnet",
         "Homepage Hero",
-        "Homepage Top Headlines"
+        "Homepage Top Headlines",
+        "News: Fantasy Insider"
       ],
       "published_at": "2026-10-12T01:28:08+00:00",
       "players": [
@@ -4249,46 +4302,6 @@
         "Detroit Lions News"
       ],
       "published_at": "2026-10-11T18:57:37+00:00",
-      "players": []
-    },
-    {
-      "id": "6cdd9f2710fef8cd7a24",
-      "headline": "Cardinals Make Official Marvin Harrison Jr. Decision for Lions Game",
-      "url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-make-official-marvin-harrison-jr-decision-detroit-lions-game",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "The Arizona Cardinals are at a point of no return with their former first-round pick.",
-      "categories": [],
-      "published_at": "2026-10-11T18:55:54+00:00",
-      "players": [
-        {
-          "id": "00-0039849",
-          "name": "Marvin Harrison Jr.",
-          "team": "ARI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "0b3edf0d32dea39ed968",
-      "headline": "INACTIVES: Lions at Cardinals",
-      "url": "https://www.detroitlions.com/news/inactives-lions-at-cardinals-williams-branch-mays",
-      "source_id": "news_official_det",
-      "source": "Detroit Lions (official)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Tim Twentyman reports on inactives for Sunday's Lions-Cardinals matchup.",
-      "categories": [
-        "NEWS - Inactives",
-        "NEWS - Twentyman",
-        "Homepage - Centerpiece Package",
-        "Detroit Lions at Arizona Cardinals (2026-REG-5)"
-      ],
-      "published_at": "2026-10-11T18:55:02+00:00",
       "players": []
     }
   ]
