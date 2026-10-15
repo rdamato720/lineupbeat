@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T10:00:54.925365+00:00",
+  "updated_at": "2026-10-15T11:28:15.757423+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-15T09:00:00+00:00",
+      "latest_entry_at": "2026-10-15T11:22:59+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-15T10:00:00+00:00",
+      "latest_entry_at": "2026-10-15T11:00:00+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-14T14:15:00+00:00",
+      "latest_entry_at": "2026-10-15T11:00:23+00:00",
       "stale": false
     },
     {
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-15T00:34:49+00:00",
+      "latest_entry_at": "2026-10-15T11:22:24+00:00",
       "stale": false
     },
     {
@@ -206,7 +206,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-14T22:45:24+00:00",
+      "latest_entry_at": "2026-10-15T10:00:00+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T21:20:00+00:00",
+      "latest_entry_at": "2026-10-15T10:05:00+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-15T09:00:00+00:00",
+      "latest_entry_at": "2026-10-15T11:22:59+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-15T10:00:00+00:00",
+      "latest_entry_at": "2026-10-15T11:00:00+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-15T00:00:00+00:00",
+      "latest_entry_at": "2026-10-14T19:30:46+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-15T10:00:00+00:00",
+      "latest_entry_at": "2026-10-15T10:30:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-15T10:00:00+00:00",
+      "latest_entry_at": "2026-10-15T00:58:27+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T22:30:00+00:00",
+      "latest_entry_at": "2026-10-15T11:00:00+00:00",
       "stale": false
     },
     {
@@ -454,15 +454,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-15T10:00:00+00:00",
+      "latest_entry_at": "2026-10-14T21:29:22+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-15T10:00:00+00:00",
+      "latest_entry_at": "2026-10-15T00:30:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:00:00+00:00",
+      "latest_entry_at": "2026-10-14T17:30:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,48 @@
     }
   ],
   "items": [
+    {
+      "id": "14b6612f773db1c23201",
+      "headline": "Why Omar Cooper Jr.'s Return Is Even More Crucial for the Jets' 2026 Outlook",
+      "url": "https://www.si.com/nfl/jets/onsi/why-omar-cooper-jr-return-even-more-crucial-jets-2026-outlook-01m4y2f5sa4h",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "Looking at how Omar Cooper Jr. could help the Jets this season once he's back from injury.",
+      "categories": [],
+      "published_at": "2026-10-15T10:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0041511",
+          "name": "Omar Cooper",
+          "team": "NYJ",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "f2cb0012692e3d897d7e",
+      "headline": "3 Winners, 4 Losers of A.J. Brown's Potential Return to Patriots Roster",
+      "url": "https://www.si.com/nfl/patriots/onsi/3-winners-4-losers-of-a-j-brown-s-potential-return-to-patriots-roster",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "After being sidelined for four weeks, WR A.J. Brown will rejoin the Patriots \u2014 shaking things up for several groups across the team.",
+      "categories": [],
+      "published_at": "2026-10-15T10:00:01+00:00",
+      "players": [
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "af9f2a48bb430cfe0cab",
       "headline": "Bucs Get Some Returns, But Still Without Key Players On Injury Report",
@@ -4094,54 +4136,6 @@
           "name": "Roman Wilson",
           "team": "PIT",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "2692fbcc6fbde12f1ff4",
-      "headline": "One of Bills' Practice Squad Elevations May Be Bad News For DJ Moore's Week 5 Status",
-      "url": "https://www.si.com/nfl/bills/onsi/bills-practice-squad-elevations-bad-news-dj-moore-week-5-status",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "The Buffalo Bills have made two practice squad elevations for Week 5 and one of them might be bad news for wide receiver DJ Moore.",
-      "categories": [],
-      "published_at": "2026-10-12T21:31:22+00:00",
-      "players": [
-        {
-          "id": "00-0034827",
-          "name": "DJ Moore",
-          "team": "BUF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "a179832a326e5d88bbb2",
-      "headline": "Todd Monken Shares Positive Update on Browns Running Back Injuries",
-      "url": "https://www.si.com/nfl/browns/onsi/todd-monken-shares-positive-update-on-browns-running-back-injuries-01m4rrwn9f8q",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "Already without running back Dylan Sampson due to an injury occurring in the season opener against the Jacksonville Jaguars, the Browns found out starting back Quinshon Judkins was newly banged up as well. He is day-to-day.",
-      "categories": [],
-      "published_at": "2026-10-12T21:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0040162",
-          "name": "Dylan Sampson",
-          "team": "CLE",
-          "position": "RB"
-        },
-        {
-          "id": "00-0040784",
-          "name": "Quinshon Judkins",
-          "team": "CLE",
-          "position": "RB"
         }
       ]
     }
