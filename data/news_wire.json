@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T00:00:57.344600+00:00",
+  "updated_at": "2026-10-15T00:53:41.499034+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-15T00:00:01+00:00",
+      "latest_entry_at": "2026-10-15T00:37:07+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T23:34:10+00:00",
+      "latest_entry_at": "2026-10-15T00:11:38+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T22:56:41+00:00",
+      "latest_entry_at": "2026-10-14T23:51:40+00:00",
       "stale": false
     },
     {
@@ -92,7 +92,7 @@
     {
       "source_id": "news_official_cin",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
       "latest_entry_at": "2026-10-13T18:30:00+00:00",
       "stale": false
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T21:14:03+00:00",
+      "latest_entry_at": "2026-10-15T00:34:49+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-10-15T00:00:01+00:00",
+      "latest_entry_at": "2026-10-15T00:37:07+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-14T23:34:10+00:00",
+      "latest_entry_at": "2026-10-15T00:11:38+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:30:46+00:00",
+      "latest_entry_at": "2026-10-15T00:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T16:00:00+00:00",
+      "latest_entry_at": "2026-10-15T00:04:37+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T22:39:27+00:00",
+      "latest_entry_at": "2026-10-15T00:45:29+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T14:30:00+00:00",
+      "latest_entry_at": "2026-10-14T17:58:08+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T17:23:48+00:00",
+      "latest_entry_at": "2026-10-15T00:46:37+00:00",
       "stale": false
     },
     {
@@ -436,9 +436,9 @@
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:49:43+00:00",
+      "latest_entry_at": "2026-10-14T20:28:22+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-14T23:08:44+00:00",
+      "latest_entry_at": "2026-10-15T00:30:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T13:38:07+00:00",
+      "latest_entry_at": "2026-10-14T16:16:26+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T19:47:07+00:00",
+      "latest_entry_at": "2026-10-14T23:49:01+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,64 @@
     }
   ],
   "items": [
+    {
+      "id": "5ac8be415395c6a01db4",
+      "headline": "Broncos vs. Seahawks injury report for Week 6",
+      "url": "https://www.milehighreport.com/denver-broncos-injuries/188906/broncos-vs-seahawks-injury-report-week-6",
+      "source_id": "news_sbn_den",
+      "source": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Denver Broncos will have some serious holes in the secondary that will need to be plugged when they take on the Seattle Seahawks on Thursday night. With the news that safety Talanoa Hufanga is likely to miss the next 2-3 games and Pat Surtain eyeing the Arizona Cardinals game for his return, Denver really [\u2026]",
+      "categories": [
+        "Denver Broncos Injuries"
+      ],
+      "published_at": "2026-10-15T00:46:37+00:00",
+      "players": []
+    },
+    {
+      "id": "fc9acfac528e8fad288b",
+      "headline": "Jeremiyah Love Headlines Official Cardinals-Rams Injury Report",
+      "url": "https://www.si.com/nfl/cardinals/onsi/jeremiyah-love-headlines-official-arizona-cardinals-los-angeles-rams-injury-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "The star rookie running back was joined by some star-studded names from both sides.",
+      "categories": [],
+      "published_at": "2026-10-15T00:08:03+00:00",
+      "players": [
+        {
+          "id": "00-0041027",
+          "name": "Jeremiyah Love",
+          "team": "ARI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "edb4a4fc6b2dc42cb9fc",
+      "headline": "Browns Should Consider Flipping Jerry Jeudy For This Overshadowed Wideout",
+      "url": "https://www.si.com/nfl/browns/onsi/browns-should-consider-flipping-jerry-jeudy-for-this-overshadowed-wideout-01m4ycwpe8dm",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "Jeudy could be on the way out, but Cleveland could bring in this former Pro-Bowler in return.",
+      "categories": [],
+      "published_at": "2026-10-15T00:02:46+00:00",
+      "players": [
+        {
+          "id": "00-0036407",
+          "name": "Jerry Jeudy",
+          "team": "CLE",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "9022cbf5695aad6c8495",
       "headline": "Seahawks Should Give Velus Jones Jr. Chance to Contribute vs. Broncos",
@@ -4099,68 +4157,6 @@
           "id": "00-0036912",
           "name": "DeVonta Smith",
           "team": "PHI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "e43d9cfde77eb43ba06a",
-      "headline": "Injury Report: CB Riley Moss listed as limited participant on initial practice report ahead of Week 6 game vs. Seahawks",
-      "url": "https://www.denverbroncos.com/news/injuryreport/injury-report-cb-riley-moss-listed-as-limited-participant-on-initial-practice-report-ahead-of-week-6-game-vs-seahawks",
-      "source_id": "news_official_den",
-      "source": "Denver Broncos (official)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "Safety Brandon Jones (foot) and guard Ben Powers (biceps) were both estimated as full participants.",
-      "categories": [
-        "Top Stories",
-        "Injury Report",
-        "Aric DiLalla",
-        "Seattle Seahawks at Denver Broncos (2026-REG-6)",
-        "Riley Moss"
-      ],
-      "published_at": "2026-10-12T20:22:13+00:00",
-      "players": []
-    },
-    {
-      "id": "be4705792dc2760f570f",
-      "headline": "Steelers Make Right Call With Jaylen Warren",
-      "url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-right-call-jaylen-warren",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "PITTSBURGH -- The Pittsburgh Steelers face a mountain of injuries after their Week 5 victory. Despite emerging with the win, the Steelers lost two key players a",
-      "categories": [],
-      "published_at": "2026-10-12T20:00:01+00:00",
-      "players": [
-        {
-          "id": "00-0037228",
-          "name": "Jaylen Warren",
-          "team": "PIT",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "6a6a3cf0cac6b2522f66",
-      "headline": "Key Observations From Bears Snap Count in Their Week 5 Loss Against Packers",
-      "url": "https://www.si.com/nfl/bears/onsi/key-observations-from-bears-snap-count-in-their-week-5-loss-against-packers",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Bears finally got Zavion Thomas involved in the offensive side of the ball in Week 5. What other observations can be gleaned from the team's snap count?",
-      "categories": [],
-      "published_at": "2026-10-12T20:00:01+00:00",
-      "players": [
-        {
-          "id": "00-0041051",
-          "name": "Zavion Thomas",
-          "team": "CHI",
           "position": "WR"
         }
       ]
