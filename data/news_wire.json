@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T02:00:56.266139+00:00",
+  "updated_at": "2026-10-16T04:00:58.527777+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T02:00:18+00:00",
+      "latest_entry_at": "2026-10-16T04:00:00+00:00",
       "stale": false
     },
     {
@@ -70,7 +70,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-14T22:42:35+00:00",
+      "latest_entry_at": "2026-10-16T02:45:07+00:00",
       "stale": false
     },
     {
@@ -84,9 +84,9 @@
     {
       "source_id": "news_official_chi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-14T22:35:00+00:00",
+      "latest_entry_at": "2026-10-15T23:49:21+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-16T01:54:44+00:00",
+      "latest_entry_at": "2026-10-16T02:33:15+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 9,
       "error": "",
-      "latest_entry_at": "2026-10-16T01:29:28+00:00",
+      "latest_entry_at": "2026-10-16T03:44:20+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-16T02:00:18+00:00",
+      "latest_entry_at": "2026-10-16T04:00:00+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-16T01:49:32+00:00",
+      "latest_entry_at": "2026-10-16T03:45:53+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-15T22:30:48+00:00",
+      "latest_entry_at": "2026-10-15T21:02:59+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-15T13:09:07+00:00",
+      "latest_entry_at": "2026-10-16T02:30:19+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-15T17:44:28+00:00",
+      "latest_entry_at": "2026-10-16T02:07:48+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,111 @@
     }
   ],
   "items": [
+    {
+      "id": "5e3c04bd94e7273de148",
+      "headline": "Falcons vs. Bears injury report: C.J. Henderson not practicing",
+      "url": "https://www.thefalcoholic.com/atlanta-falcons-injuries/97316/falcons-vs-bears-injury-report-c-j-henderson-not-practicing",
+      "source_id": "news_sbn_atl",
+      "source": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "Greetings, Falcoholics! Anonymous new week is underway as the Atlanta Falcons prepare to host the Chicago Bears. The Falcons have been pretty banged up lately, so let\u2019s take a look at where they currently are at. Let\u2019s take a look! Falcons injury report Full \u2022 LT Jake Matthews (groin) \u2022 LB Divine Deablo (hamstring) \u2022 [\u2026]",
+      "categories": [
+        "Atlanta Falcons injuries"
+      ],
+      "published_at": "2026-10-16T02:30:19+00:00",
+      "players": []
+    },
+    {
+      "id": "bade9b4a95a912e11534",
+      "headline": "Commanders News: Backfield Concerns Grow; 49ers Await Nick Bosa Update | Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-backfield-injuries-nick-bosa-49ers-burgundy-roundup",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Commanders face new injuries at running back while Nick Bosa's status remains uncertain for Monday night. Plus, Jayden Daniels and the latest team news.",
+      "categories": [],
+      "published_at": "2026-10-16T02:11:30+00:00",
+      "players": [
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "06335b8343671c8b1f56",
+      "headline": "Buccaneers vs. Steelers: Week 6 Thursday Injury Report",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/69132/buccaneers-steelers-nfl-week-6-thursday-injury-report",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers continued preparations Thursday for Sunday\u2019s Week 6 matchup against the Pittsburgh Steelers at Raymond James Stadium, with several players showing progress on the team\u2019s latest injury report. Quarterback Baker Mayfield (right thumb) and safety Antoine Winfield Jr. (rib) remained sidelined for the second consecutive practice, putting their availability for Sunday\u2019s game [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers Injuries"
+      ],
+      "published_at": "2026-10-16T02:07:48+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "0d3f502d5804f62c6a9c",
+      "headline": "Broncos wide receiver Jaylen Waddle questionable to return with shoulder injury",
+      "url": "https://www.milehighreport.com/denver-broncos-injuries/189138/wide-receiver-jaylen-waddle-questionable-to-return-with-shoulder-injury",
+      "source_id": "news_sbn_den",
+      "source": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "At the end of the first half, Denver Broncos wide receiver Jaylen Waddle left the field before the final drive was over in their Thursday Night Football matchup versus the Seattle Seahawks. Waddle was absent from the Broncos\u2019 first drive of the second half. With just a little over nine minutes to play in the [\u2026]",
+      "categories": [
+        "Denver Broncos Injuries",
+        "Denver Broncos News"
+      ],
+      "published_at": "2026-10-16T02:04:45+00:00",
+      "players": [
+        {
+          "id": "00-0036613",
+          "name": "Jaylen Waddle",
+          "team": "DEN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "a683e52d2c3da7299cfe",
+      "headline": "Saints Injury Report: Chris Olave Misses Second Straight Practice Before Giants",
+      "url": "https://www.si.com/nfl/saints/onsi/saints-injury-report-chris-olave-misses-second-straight-practice-before-giants-01m5144w9h1z",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "Injury report for both the Saints and Giants is a lengthy one.",
+      "categories": [],
+      "published_at": "2026-10-16T02:03:07+00:00",
+      "players": [
+        {
+          "id": "00-0037239",
+          "name": "Chris Olave",
+          "team": "NO",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "f2417119e9e73445da77",
       "headline": "Seahawks TE Elijah Arroyo doubtful after shoulder injury",
@@ -741,6 +846,29 @@
       ],
       "published_at": "2026-10-16T00:06:00+00:00",
       "players": []
+    },
+    {
+      "id": "83af209635783149942d",
+      "headline": "Bears QB Caleb Williams practices in full, but game status still uncertain",
+      "url": "https://www.chicagobears.com/news/bears-qb-caleb-williams-practices-in-full-but-game-status-still-uncertain",
+      "source_id": "news_official_chi",
+      "source": "Chicago Bears (official)",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Bears quarterback Caleb Williams was a full participant in practice again Thursday, but it has not yet been determined whether he will start Sunday\u2019s game in Atlanta.",
+      "categories": [
+        "Caleb Williams"
+      ],
+      "published_at": "2026-10-15T23:49:21+00:00",
+      "players": [
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        }
+      ]
     },
     {
       "id": "611288872941a81974b3",
@@ -3846,144 +3974,6 @@
           "id": "00-0041547",
           "name": "K.C. Concepcion",
           "team": "CLE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "f4c5ed8fe3e0cc78a211",
-      "headline": "Kansas City Chiefs HC Andy Reid provides latest injury updates on LT Josh Simmons, WR Rashee Rice ahead of Week 6 vs. Chargers",
-      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-andy-reid-week-6-injury-updates-josh-simmons-rashee-rice-omarr-norman-lott/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Kansas City Chiefs HC Andy Reid provided injury updates as the practice week begins for Week 6's tilt with the Los Angeles Chargers at Arrowhead Stadium.",
-      "categories": [
-        "Kansas City Chiefs News",
-        "Andy Reid",
-        "Chiefs Injuries",
-        "Josh Simmons",
-        "Kansas City Chiefs",
-        "Omarr Norman-Lott",
-        "Rashee Rice"
-      ],
-      "published_at": "2026-10-14T17:33:07+00:00",
-      "players": [
-        {
-          "id": "00-0039067",
-          "name": "Rashee Rice",
-          "team": "KC",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "92b4f4323a6307a1857f",
-      "headline": "Breaking Down Jets' Potential TE Plans vs. Patriots If Kenyon Sadiq Can't Clear Concussion Protocol",
-      "url": "https://www.si.com/nfl/jets/onsi/breaking-down-jets-te-plans-vs-patriots-kenyon-sadiq-injury-01m4trywc8e6",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Breaking down the Jets' tight end options in Week 6 after Kenyon Sadiq's injury.",
-      "categories": [],
-      "published_at": "2026-10-14T17:30:01+00:00",
-      "players": [
-        {
-          "id": "00-0041032",
-          "name": "Kenyon Sadiq",
-          "team": "NYJ",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "59f796baa02a0b0cbfb1",
-      "headline": "Recent Report Shares Controversial Value For Browns WR Jerry Jeudy",
-      "url": "https://www.si.com/nfl/browns/onsi/recent-report-shares-controversial-value-for-browns-wr-jerry-jeudy-01m4xfctj4m8",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "The Browns are expecting a possibly higher return than most think for their veteran pass catcher.",
-      "categories": [],
-      "published_at": "2026-10-14T17:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0036407",
-          "name": "Jerry Jeudy",
-          "team": "CLE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "cd2549a98707ffa3f28b",
-      "headline": "Omar Cooper set to return to practice this week for the Jets",
-      "url": "https://www.ganggreennation.com/new-york-jets-injuries/97578/omar-cooper-set-to-return-to-practice-this-week-for-the-jets",
-      "source_id": "news_sbn_nyj",
-      "source": "Gang Green Nation (SB Nation)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "First round rookie wide receiver Omar Cooper is returning to practice this week per Jets head coach Aaron Glenn. Cooper suffered a high ankle sprain in the team\u2019s Week 1 victory over the Tennessee Titans and was subsequently placed on injured reserve.This forced him to sit out at least four weeks. This is the earliest [\u2026]",
-      "categories": [
-        "New York Jets Injuries",
-        "New York Jets News",
-        "New York Jets Roster"
-      ],
-      "published_at": "2026-10-14T17:22:27+00:00",
-      "players": [
-        {
-          "id": "00-0041511",
-          "name": "Omar Cooper",
-          "team": "NYJ",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "08d9f01d418168e451b0",
-      "headline": "Patriots Make Massive Roster Decision on WR A.J. Brown This Week",
-      "url": "https://www.si.com/nfl/patriots/onsi/patriots-make-massive-roster-decision-on-wr-a-j-brown-this-week",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots are one step closer to getting their star wideout back on the field.",
-      "categories": [],
-      "published_at": "2026-10-14T17:06:21+00:00",
-      "players": [
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "8a562263b9e0295566b4",
-      "headline": "Josh Simmons Returns to Practice, Rashee Rice's Status Uncertain for Week 6",
-      "url": "https://www.si.com/nfl/chiefs/onsi/josh-simmons-returns-to-practice-rashee-rices-status-uncertain-for-week-6",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs had two key starters begin the week with injury questions. Now, Rashee Rice and Josh Simmons' status for Week 6 is coming into focus.",
-      "categories": [],
-      "published_at": "2026-10-14T17:05:55+00:00",
-      "players": [
-        {
-          "id": "00-0039067",
-          "name": "Rashee Rice",
-          "team": "KC",
           "position": "WR"
         }
       ]
