@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T05:07:53.596372+00:00",
+  "updated_at": "2026-10-16T09:48:40.724000+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T05:02:28+00:00",
+      "latest_entry_at": "2026-10-16T09:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-15T23:52:09+00:00",
+      "latest_entry_at": "2026-10-16T01:28:51+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-16T04:07:25+00:00",
+      "latest_entry_at": "2026-10-16T07:43:56+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-15T22:00:00+00:00",
+      "latest_entry_at": "2026-10-16T09:00:00+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 9,
       "error": "",
-      "latest_entry_at": "2026-10-16T03:44:20+00:00",
+      "latest_entry_at": "2026-10-16T07:29:34+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-16T05:02:28+00:00",
+      "latest_entry_at": "2026-10-16T09:00:00+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-16T03:45:53+00:00",
+      "latest_entry_at": "2026-10-16T05:29:08+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-15T22:30:48+00:00",
+      "latest_entry_at": "2026-10-16T04:52:13+00:00",
       "stale": false
     },
     {
@@ -542,19 +542,42 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-16T00:30:47+00:00",
+      "latest_entry_at": "2026-10-16T08:58:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-16T03:39:22+00:00",
+      "latest_entry_at": "2026-10-16T07:18:51+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "7920e4c22a441aaccb15",
+      "headline": "Seahawks coach Mike Macdonald doesn\u2019t sugarcoat Sam Darnold\u2019s performance vs. Broncos",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-news/177547/seahawks-mike-macdonald-doesnt-sugarcoat-sam-darnold-performance-vs-broncos",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks are in crisis mode following another error-filled Sam Darnold performance in defeat. Darnold is 1-3 as a starter since returning from his opening day glute injury, and the context of his interceptions are impossible to ignore and consistently game-damaging. His two interceptions in Seattle\u2019s 17-14 overtime loss to the Denver Broncos were [\u2026]",
+      "categories": [
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-10-16T07:18:51+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "5e3c04bd94e7273de148",
       "headline": "Falcons vs. Bears injury report: C.J. Henderson not practicing",
@@ -1064,6 +1087,30 @@
       ],
       "published_at": "2026-10-15T22:30:48+00:00",
       "players": []
+    },
+    {
+      "id": "1276ec3a7a4977c6da07",
+      "headline": "Bucs Get Better News On Latest Injury Report",
+      "url": "https://www.pewterreport.com/bucs-get-better-news-on-latest-injury-report/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Bucs had two players return to practice on Thursday after missing the previous day. Running back Sean Tucker and cornerback Ayden Garnes were both limited participants in an upgrade to their status. Tucker had more snaps given to him in Tampa Bay's last game, and if he continues to excel there's a chance",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-10-15T22:24:01+00:00",
+      "players": [
+        {
+          "id": "00-0038951",
+          "name": "Sean Tucker",
+          "team": "TB",
+          "position": "RB"
+        }
+      ]
     },
     {
       "id": "73c50f170f1fa4efe12b",
@@ -3923,60 +3970,6 @@
       "categories": [],
       "published_at": "2026-10-14T17:56:20+00:00",
       "players": []
-    },
-    {
-      "id": "ed61493dcc6090784e61",
-      "headline": "Ja'Kobi Lane Comes Off Injured Reserve, Returns to Full Practice",
-      "url": "https://www.baltimoreravens.com/news/injury-report-jakobi-lane-cam-jurgens-ravens-browns-returns-practice-injured-reserve",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Rookie wide receiver Ja\u2019Kobi Lane has been activated off injured reserve.",
-      "categories": [
-        "General",
-        "Ryan Mink",
-        "Ja'Kobi Lane",
-        "2026 Week 6",
-        "2026 Week 6 News",
-        "Baltimore Ravens at Cleveland Browns (2026-REG-6)",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-10-14T17:47:55+00:00",
-      "players": [
-        {
-          "id": "00-0040870",
-          "name": "Ja'Kobi Lane",
-          "team": "BAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "aabeea6ad9c6f0c457aa",
-      "headline": "Browns, Ravens injury updates on Lamar Jackson, KC Concepcion, among others",
-      "url": "https://www.dawgsbynature.com/cleveland-browns-news/135196/browns-ravens-injury-updates-on-lamar-jackson-kc-concepcion-week-6",
-      "source_id": "news_sbn_cle",
-      "source": "Dawgs By Nature (SB Nation)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "The Cleveland Browns head into a big-time AFC North matchup with the Baltimore Ravens in Week 6, with injury concerns aplenty, including WR KC Concepcion. After what many fans believe was a dirty hit from S Minkah Fitzpatrick, Concepcion missed most of Week 5\u2019s game. The Ravens have also been dealing with injury issues, including [\u2026]",
-      "categories": [
-        "Cleveland Browns Injuries",
-        "Cleveland Browns News"
-      ],
-      "published_at": "2026-10-14T17:37:56+00:00",
-      "players": [
-        {
-          "id": "00-0041547",
-          "name": "K.C. Concepcion",
-          "team": "CLE",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
