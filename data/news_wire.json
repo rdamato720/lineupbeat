@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T16:00:44.215861+00:00",
+  "updated_at": "2026-10-17T16:25:18.909098+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T16:00:04+00:00",
+      "latest_entry_at": "2026-10-17T16:24:00+00:00",
       "stale": false
     },
     {
@@ -140,9 +140,9 @@
     {
       "source_id": "news_official_ind",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-17T10:00:00+00:00",
+      "latest_entry_at": "2026-10-17T16:01:46+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-16T21:55:37+00:00",
+      "latest_entry_at": "2026-10-17T16:00:44+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T16:00:04+00:00",
+      "latest_entry_at": "2026-10-17T16:24:00+00:00",
       "stale": false
     },
     {
@@ -356,9 +356,9 @@
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-16T22:30:00+00:00",
+      "latest_entry_at": "2026-10-17T15:58:05+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-17T14:00:00+00:00",
+      "latest_entry_at": "2026-10-17T15:30:00+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-17T14:00:00+00:00",
+      "latest_entry_at": "2026-10-17T15:42:30+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,71 @@
     }
   ],
   "items": [
+    {
+      "id": "4ba8f3473ec8ea9750e0",
+      "headline": "Colts activate tight end Will Mallory from injured reserve",
+      "url": "https://www.colts.com/news/colts-activate-tight-end-will-mallory-from-injured-reserve",
+      "source_id": "news_official_ind",
+      "source": "Indianapolis Colts (official)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Colts announced the move Saturday.",
+      "categories": [
+        "Roster Moves",
+        "Featured",
+        "Featured News",
+        "Tennessee Titans at Indianapolis Colts (2026-REG-6)"
+      ],
+      "published_at": "2026-10-17T16:01:46+00:00",
+      "players": [
+        {
+          "id": "00-0038394",
+          "name": "Will Mallory",
+          "team": "IND",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "a0fb5fa8d62dbfe97a0e",
+      "headline": "Steelers news: The Steelers offense must execute better on early downs",
+      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-news/176446/steelers-news-the-steelers-offense-must-execute-better-on-early-downs",
+      "source_id": "news_sbn_pit",
+      "source": "Behind the Steel Curtain (SB Nation)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "The Pittsburgh Steelers head into a matchup with Tampa Bay, and all eyes are on the offense amid injuries at wide receiver. Will the offense lean into different personnel groupings? Germie Bernard and Pat Friermuth will see an increased role, but regardless of the options at receiver, the Steelers offense must execute better on early [\u2026]",
+      "categories": [
+        "Pittsburgh Steelers News"
+      ],
+      "published_at": "2026-10-17T15:58:05+00:00",
+      "players": [
+        {
+          "id": "00-0041489",
+          "name": "Germie Bernard",
+          "team": "PIT",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "f2379eb5e73b7834be9a",
+      "headline": "Falcons vs. Bears injury report: C.J. Henderson will not play in Week 6",
+      "url": "https://www.thefalcoholic.com/atlanta-falcons-injuries/97362/falcons-vs-bears-injury-report-c-j-henderson-caleb-williams-michael-penix",
+      "source_id": "news_sbn_atl",
+      "source": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "Greetings, Falcoholics! On Friday the Atlanta Falcons and Chicago Bears both held their final practices of the week. Both teams have been fairly banged up this week, and we now know who we can and can\u2019t expect to see out there on Sunday. Let\u2019s take a look! Falcons injury report Full \u2022 QB Michael Penix [\u2026]",
+      "categories": [
+        "Atlanta Falcons injuries"
+      ],
+      "published_at": "2026-10-17T15:42:30+00:00",
+      "players": []
+    },
     {
       "id": "e9b23708a351e586423e",
       "headline": "Injuries Taking Toll on Eagles' RB Room, But 'New' Guys Are Excited for the Moment",
@@ -4025,51 +4090,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "ebb921cfb71273c1a026",
-      "headline": "2 Cowboys Miss Thursday Practice, DeMarvion Overshown Progressing In New Injury Report",
-      "url": "https://www.si.com/nfl/cowboys/onsi/2-dallas-cowboys-miss-thursday-practice-demarvion-overshown-progressing-new-injury-report",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys released their Thursday injury report, with DeMarvion Overshown making progress.",
-      "categories": [],
-      "published_at": "2026-10-15T21:16:39+00:00",
-      "players": []
-    },
-    {
-      "id": "7f7b2be79bd4f703cbed",
-      "headline": "Packers-Cowboys Thursday Injury Report: (Really) Big Help on the Way",
-      "url": "https://www.si.com/nfl/packers/onsi/packers-cowboys-thursday-injury-report-really-big-help-on-the-way",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Here are the Thursday injury reports for the Green Bay Packers and Dallas Cowboys, including Jordon Riley talking about his comeback.",
-      "categories": [],
-      "published_at": "2026-10-15T21:07:27+00:00",
-      "players": []
-    },
-    {
-      "id": "5c7562c853026b0c3e0b",
-      "headline": "Packers Injury Report: Keisean Nixon returns to practice",
-      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/88159/packers-injury-report-keisean-nixon-returns-to-practice",
-      "source_id": "news_sbn_gb",
-      "source": "Acme Packing Company (SB Nation)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "As we wrote earlier today, the Green Bay Packers no longer have the freedom to have players on the 53-man roster miss games with injury without making some sort of corresponding moves to bring in their replacements. Here\u2019s the good news: One player who did not practice on Wednesday, cornerback Keisean Nixon, practiced on Thursday, [\u2026]",
-      "categories": [
-        "Green Bay Packers injuries",
-        "Green Bay Packers News"
-      ],
-      "published_at": "2026-10-15T21:04:24+00:00",
-      "players": []
     }
   ]
 }
