@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T13:13:10.710856+00:00",
+  "updated_at": "2026-10-17T14:00:48.549171+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,13 +14,13 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T13:07:36+00:00",
+      "latest_entry_at": "2026-10-17T13:45:50+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
       "latest_entry_at": "2026-10-17T11:00:19+00:00",
       "stale": false
@@ -30,15 +30,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T13:01:35+00:00",
+      "latest_entry_at": "2026-10-17T13:39:01+00:00",
       "stale": false
     },
     {
       "source_id": "phillyvoice_jimmy_kempski",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-17T12:28:11+00:00",
+      "latest_entry_at": "2026-10-17T13:28:21+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-16T20:38:48+00:00",
+      "latest_entry_at": "2026-10-17T12:19:28+00:00",
       "stale": false
     },
     {
@@ -214,7 +214,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-17T13:00:03+00:00",
+      "latest_entry_at": "2026-10-17T13:15:03+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-17T11:30:00+00:00",
+      "latest_entry_at": "2026-10-17T14:00:00+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-17T13:07:36+00:00",
+      "latest_entry_at": "2026-10-17T13:45:50+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-17T13:01:35+00:00",
+      "latest_entry_at": "2026-10-17T13:39:01+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-17T13:00:00+00:00",
+      "latest_entry_at": "2026-10-17T13:51:57+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T00:00:00+00:00",
+      "latest_entry_at": "2026-10-16T11:33:28+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-17T13:00:00+00:00",
+      "latest_entry_at": "2026-10-17T11:00:00+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-16T22:25:23+00:00",
+      "latest_entry_at": "2026-10-17T13:09:06+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-17T13:00:00+00:00",
+      "latest_entry_at": "2026-10-16T19:21:09+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-17T12:00:00+00:00",
+      "latest_entry_at": "2026-10-17T10:00:00+00:00",
       "stale": false
     },
     {
@@ -532,17 +532,17 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T13:00:00+00:00",
+      "latest_entry_at": "2026-10-16T22:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-17T06:20:52+00:00",
+      "latest_entry_at": "2026-10-17T13:33:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,33 @@
     }
   ],
   "items": [
+    {
+      "id": "94292d46ee9e3ca83745",
+      "headline": "Eagles sign QB Joe Milton",
+      "url": "https://www.phillyvoice.com/eagles-sign-qb-joe-milton/",
+      "source_id": "phillyvoice_jimmy_kempski",
+      "source": "PhillyVoice",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Eagles were in need of quarterback reinforcements with Jalen Hurts now out indefinitely.",
+      "categories": [
+        "Sports",
+        "Eagles",
+        "NFL",
+        "Philadelphia",
+        "Joe Milton"
+      ],
+      "published_at": "2026-10-17T13:23:33+00:00",
+      "players": [
+        {
+          "id": "00-0036389",
+          "name": "Jalen Hurts",
+          "team": "PHI",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "9891616dc92b2a640cf0",
       "headline": "Morning Break: Saints prepare to face Giants, Chris Olave returns to practice",
@@ -4021,23 +4048,6 @@
         "Dallas Cowboys at Green Bay Packers (2026-REG-6)"
       ],
       "published_at": "2026-10-15T20:59:26+00:00",
-      "players": []
-    },
-    {
-      "id": "76e86063709bc09eb900",
-      "headline": "Patriots vs. Jets Thursday injury report: Three sidelined, while Christian Gonzalez goes in full",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/140810/patriots-vs-jets-thursday-injury-report-christian-gonzalez-full-participant-cory-durden-non-participant",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "As the New England Patriots ramped up work on the New York Jets, so did Christian Gonzalez. The extended All-Pro graduated from limited participation to full participation for Thursday\u2019s practice in Foxborough. He had been ruled out for back-to-back games due to a September shoulder injury before returning this week. But the absences of fellow [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-10-15T20:58:21+00:00",
       "players": []
     }
   ]
