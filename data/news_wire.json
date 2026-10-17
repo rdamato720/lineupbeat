@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T00:28:46.506993+00:00",
+  "updated_at": "2026-10-17T02:00:41.441238+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T00:27:35+00:00",
+      "latest_entry_at": "2026-10-17T02:00:00+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 10,
       "error": "",
-      "latest_entry_at": "2026-10-16T23:32:55+00:00",
+      "latest_entry_at": "2026-10-17T01:11:28+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-16T20:03:08+00:00",
+      "latest_entry_at": "2026-10-17T01:29:33+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-17T00:27:35+00:00",
+      "latest_entry_at": "2026-10-17T02:00:00+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T11:33:28+00:00",
+      "latest_entry_at": "2026-10-15T23:15:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T18:52:12+00:00",
+      "latest_entry_at": "2026-10-16T11:55:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-16T22:30:00+00:00",
+      "latest_entry_at": "2026-10-16T19:33:19+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T16:11:23+00:00",
+      "latest_entry_at": "2026-10-16T13:56:30+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T23:00:00+00:00",
+      "latest_entry_at": "2026-10-16T19:44:38+00:00",
       "stale": false
     },
     {
@@ -414,15 +414,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T23:02:00+00:00",
+      "latest_entry_at": "2026-10-16T21:45:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-16T16:57:26+00:00",
+      "latest_entry_at": "2026-10-16T19:21:09+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T22:00:00+00:00",
+      "latest_entry_at": "2026-10-16T23:30:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-16T22:00:00+00:00",
+      "latest_entry_at": "2026-10-17T00:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-17T00:19:28+00:00",
+      "latest_entry_at": "2026-10-16T22:44:33+00:00",
       "stale": false
     },
     {
@@ -500,9 +500,9 @@
     {
       "source_id": "news_sbn_car",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T20:30:00+00:00",
+      "latest_entry_at": "2026-10-16T12:00:00+00:00",
       "stale": false
     },
     {
@@ -516,17 +516,17 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-16T14:10:17+00:00",
+      "latest_entry_at": "2026-10-16T23:10:20+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ari",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-16T15:05:54+00:00",
+      "latest_entry_at": "2026-10-16T18:24:27+00:00",
       "stale": false
     },
     {
@@ -540,21 +540,42 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-16T23:20:03+00:00",
+      "latest_entry_at": "2026-10-16T15:01:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-16T20:33:22+00:00",
+      "latest_entry_at": "2026-10-17T00:23:26+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "07d28b20f24abc0c4aa8",
+      "headline": "Caleb Williams Reposts Electric Hype Video as Possible Hint at Week 6 Return",
+      "url": "https://www.si.com/nfl/bears/onsi/caleb-williams-hype-video-hinting-return-bears-falcons",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Chicago Bears quarterback Caleb Williams reposted a video to social media that seems to hint he's going to return from his injury in Week 6.",
+      "categories": [],
+      "published_at": "2026-10-17T01:25:48+00:00",
+      "players": [
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "4c48af14565d3e0530d6",
       "headline": "Tanner McKee, Cole Payton Unfazed By Eagles QB Depth Chart Shuffling as Joe Milton Joins the Room",
@@ -3982,27 +4003,6 @@
           "name": "Jalon Daniels",
           "team": "TB",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "53a94421ebd81c1e8faf",
-      "headline": "How Audric Estime Could Work His Way Into Legitimate Playing Time With Browns",
-      "url": "https://www.si.com/nfl/browns/onsi/how-audric-estime-could-work-his-way-into-legitimate-playing-time-with-browns-01m505gvgpe2",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "The running back room has been depleted with injuries and ineffectiveness. Backup Dylan Sampson landed on the injured reserve list during the first game of the season and his replacement Reheim Sanders joined him this week.",
-      "categories": [],
-      "published_at": "2026-10-15T19:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0040162",
-          "name": "Dylan Sampson",
-          "team": "CLE",
-          "position": "RB"
         }
       ]
     }
