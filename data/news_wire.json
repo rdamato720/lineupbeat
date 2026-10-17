@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T22:00:57.089246+00:00",
+  "updated_at": "2026-10-17T23:26:37.301894+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T22:00:04+00:00",
+      "latest_entry_at": "2026-10-17T23:26:27+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T22:00:16+00:00",
+      "latest_entry_at": "2026-10-17T22:54:40+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-16T20:02:00+00:00",
+      "latest_entry_at": "2026-10-17T23:17:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-17T22:00:04+00:00",
+      "latest_entry_at": "2026-10-17T23:26:27+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T22:00:16+00:00",
+      "latest_entry_at": "2026-10-17T22:54:40+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-17T16:53:54+00:00",
+      "latest_entry_at": "2026-10-17T17:01:46+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T19:30:00+00:00",
+      "latest_entry_at": "2026-10-17T22:00:00+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-17T21:11:04+00:00",
+      "latest_entry_at": "2026-10-17T22:22:32+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-17T17:00:00+00:00",
+      "latest_entry_at": "2026-10-17T22:00:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-17T21:04:18+00:00",
+      "latest_entry_at": "2026-10-17T22:05:50+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "7f9a39b9c49923724dbe",
+      "headline": "Bears' Caleb Williams Makes Official Return from Injury in Week 6 vs Falcons",
+      "url": "https://www.si.com/nfl/bears/onsi/bears-caleb-williams-will-play-week-6-falcons",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "After missing the last three games, Caleb Williams has been cleared to play and will return to action on Sunday.",
+      "categories": [],
+      "published_at": "2026-10-17T22:34:55+00:00",
+      "players": [
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "631b10c4a2c196a1a6e2",
       "headline": "Kyle Juszczyk Available, Deebo Ruled OUT vs. Commanders in Week 6 #WASvsSF",
@@ -4200,29 +4221,6 @@
           "name": "A.J. Brown",
           "team": "NE",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "b42769189d14a0406d02",
-      "headline": "Chicago Bears News: Caleb Williams practices, speaks about injury",
-      "url": "https://www.windycitygridiron.com/chicago-bears-news/125370/chicago-bears-news-caleb-williams-practices-speaks-about-injury",
-      "source_id": "news_sbn_chi",
-      "source": "Windy City Gridiron (SB Nation)",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Caleb Williams was full-on at practice today, and he met with the press (in the quarterback slot where starters usually are scheduled) to talk about his injury and his near-future prospects. He also discussed being dissed by a lot of people for being upset when he was injured, mentioning he didn\u2019t know if it was [\u2026]",
-      "categories": [
-        "Chicago Bears News"
-      ],
-      "published_at": "2026-10-16T10:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
         }
       ]
     }
