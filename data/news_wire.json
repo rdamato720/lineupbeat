@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T05:00:24.413695+00:00",
+  "updated_at": "2026-10-17T09:20:34.056597+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T04:57:34+00:00",
+      "latest_entry_at": "2026-10-17T09:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-16T19:47:43+00:00",
+      "latest_entry_at": "2026-10-16T22:45:45+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-17T04:57:34+00:00",
+      "latest_entry_at": "2026-10-17T09:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T18:42:51+00:00",
+      "latest_entry_at": "2026-10-16T18:52:12+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-16T20:30:00+00:00",
+      "latest_entry_at": "2026-10-17T09:12:19+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-16T23:20:03+00:00",
+      "latest_entry_at": "2026-10-17T06:20:52+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,36 @@
     }
   ],
   "items": [
+    {
+      "id": "99d8b26e6a3f6a17eea3",
+      "headline": "49ers News: What a sublime Saturday to trade for a pass-rusher",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-news/164395/49ers-news-week-6-washington-commanders-john-lynch-trade-monday-night-football",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "49ers injury updates: Kyle Juszczyk practices in full; 2 rookies miss\u201cWide receiver Mike Evans didn\u2019t practice for the second day in a row. This is likely how it\u2019ll be with Evans this year. Even if he doesn\u2019t practice, he\u2019ll still suit up on game day. Defensive tackle Gracen Halton missed a second straight day with [\u2026]",
+      "categories": [
+        "Golden Nuggets: San Francisco 49ers daily news roundup",
+        "San Francisco 49ers News"
+      ],
+      "published_at": "2026-10-17T06:20:52+00:00",
+      "players": [
+        {
+          "id": "00-0029892",
+          "name": "Kyle Juszczyk",
+          "team": "SF",
+          "position": "RB"
+        },
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "56d7fbab206a65ac82c6",
       "headline": "Mike Macdonald sticking with Sam Darnold as Seahawks starting quarterback",
@@ -828,6 +858,23 @@
       "feed_description": "Friday's Jets practice offered plenty of insight into the upcoming clash with the Patriots, and Sports Illustrated's Nick Faria is here to break it down.",
       "categories": [],
       "published_at": "2026-10-16T23:00:01+00:00",
+      "players": []
+    },
+    {
+      "id": "0fc5675cf593b35e3479",
+      "headline": "Bucs Have Starter Unexpectedly Added To Final Injury Report",
+      "url": "https://www.pewterreport.com/bucs-have-starter-unexpectedly-added-to-final-injury-report/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "There was an unexpected addition to the final Bucs injury report on Friday ahead of their next matchup. Starting rookie inside linebacker Josiah Trotter was added with a knee injury after not being on the list all week. Trotter did practice on a limited basis, but it certainly comes as a surprise and he",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-10-16T22:45:45+00:00",
       "players": []
     },
     {
@@ -3948,63 +3995,6 @@
           "id": "00-0041511",
           "name": "Omar Cooper",
           "team": "NYJ",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "4c01279ce823c527c427",
-      "headline": "Bears Thursday Injury Report: Kyle Monangai in Serious Doubt, Caleb Williams Still on Track",
-      "url": "https://www.si.com/nfl/bears/onsi/bears-thursday-injury-report-kyle-monangai-serious-doubt-caleb-williams-track",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Chicago Bears got more good news on Caleb Williams, but Kyle Monangai remains on track to miss another game.",
-      "categories": [],
-      "published_at": "2026-10-15T19:50:50+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        },
-        {
-          "id": "00-0040236",
-          "name": "Kyle Monangai",
-          "team": "CHI",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "c608ad3f210ded1867be",
-      "headline": "49ers injury updates: Christian Kirk returns; Mike Evans is dealing with a new injury",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/164335/the-49ers-have-opened-christian-kirks-practice-window",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The San Francisco 49ers promoted Ogbo Okoronkwo to the active roster and signed linebacker Eugene Asante to the practice squad. Asante will likely be elevated for Monday Night Football with Dre Greenlaw suspended and Garret Wallow dealing with a hamstring injury. Asante ran a 4.48 40-yard dash and had a 10-yard split in the 96th [\u2026]",
-      "categories": [
-        "San Francisco 49ers Injuries",
-        "San Francisco 49ers Roster"
-      ],
-      "published_at": "2026-10-15T19:49:35+00:00",
-      "players": [
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
-        },
-        {
-          "id": "00-0034775",
-          "name": "Christian Kirk",
-          "team": "SF",
           "position": "WR"
         }
       ]
