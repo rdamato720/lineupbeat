@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T02:00:41.441238+00:00",
+  "updated_at": "2026-10-17T04:00:56.375785+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T02:00:00+00:00",
+      "latest_entry_at": "2026-10-17T03:50:19+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-16T21:13:56+00:00",
+      "latest_entry_at": "2026-10-17T01:40:33+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 10,
       "error": "",
-      "latest_entry_at": "2026-10-17T01:11:28+00:00",
+      "latest_entry_at": "2026-10-17T02:03:41+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-17T02:00:00+00:00",
+      "latest_entry_at": "2026-10-17T03:50:19+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-16T19:26:09+00:00",
+      "latest_entry_at": "2026-10-17T01:57:44+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-15T23:15:00+00:00",
+      "latest_entry_at": "2026-10-17T00:00:00+00:00",
       "stale": false
     },
     {
@@ -324,9 +324,9 @@
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T22:33:05+00:00",
+      "latest_entry_at": "2026-10-17T00:30:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T11:55:00+00:00",
+      "latest_entry_at": "2026-10-16T18:52:12+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-16T22:18:16+00:00",
+      "latest_entry_at": "2026-10-17T01:53:16+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-16T19:33:19+00:00",
+      "latest_entry_at": "2026-10-16T22:30:00+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 4,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-16T23:24:12+00:00",
+      "latest_entry_at": "2026-10-15T21:01:00+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T13:56:30+00:00",
+      "latest_entry_at": "2026-10-16T16:11:23+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T19:44:38+00:00",
+      "latest_entry_at": "2026-10-16T23:00:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T21:45:00+00:00",
+      "latest_entry_at": "2026-10-16T20:01:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-16T21:07:49+00:00",
+      "latest_entry_at": "2026-10-15T22:13:29+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-16T22:44:33+00:00",
+      "latest_entry_at": "2026-10-17T00:19:28+00:00",
       "stale": false
     },
     {
@@ -500,9 +500,9 @@
     {
       "source_id": "news_sbn_car",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-16T12:00:00+00:00",
+      "latest_entry_at": "2026-10-16T20:30:00+00:00",
       "stale": false
     },
     {
@@ -540,21 +540,73 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-16T15:01:00+00:00",
+      "latest_entry_at": "2026-10-16T23:20:03+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-17T00:23:26+00:00",
+      "latest_entry_at": "2026-10-17T02:20:40+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "56d7fbab206a65ac82c6",
+      "headline": "Mike Macdonald sticking with Sam Darnold as Seahawks starting quarterback",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-news/177651/seahawks-mike-macdonald-sticking-with-sam-darnold-quarterback-chiefs",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks, for now, will stick with their Super Bowl winning quarterback amid ongoing struggles with turnovers and accuracy. Seahawks head coach Mike Macdonald told Seattle Sports 710 and later reporters on Friday that there won\u2019t be a pivot to Drew Lock, who started and performed well against the Arizona Cardinals and otherwise doesn\u2019t [\u2026]",
+      "categories": [
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-10-17T02:20:40+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035704",
+          "name": "Drew Lock",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "8d39aa7ed245fdd1e6db",
+      "headline": "Bills vs. Raiders injury designations: Five questionable for Buffalo",
+      "url": "https://www.buffalorumblings.com/buffalo-bills-injuries/143063/bills-vs-raiders-injury-designations-five-questionable-for-buffalo",
+      "source_id": "news_sbn_buf",
+      "source": "Buffalo Rumblings (SB Nation)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills will enter the weekend with five players listed with injury designations \u2013 and none of them are named Spencer Brown The other good news is, no one has been ruled out for Sunday afternoon\u2019s game against the Las Vegas Raiders. Both D.J. Moore and Joshua Palmer are questionable after a limited day [\u2026]",
+      "categories": [
+        "Buffalo Bills Injuries"
+      ],
+      "published_at": "2026-10-17T01:57:44+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "07d28b20f24abc0c4aa8",
       "headline": "Caleb Williams Reposts Electric Hype Video as Possible Hint at Week 6 Return",
@@ -3954,55 +4006,6 @@
           "name": "Christian Kirk",
           "team": "SF",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "ccdeedcd19e1d6aa1917",
-      "headline": "Practice Notebook: Jalen Travis returns to practice; Jaylahn Tuimoloau and Matt Goncalves clear concussion protocol",
-      "url": "https://www.colts.com/news/practice-notebook-jalen-travis-returns-to-practice-jaylahn-tuimoloau-and-matt-goncalves-clear-concussion-protocol",
-      "source_id": "news_official_ind",
-      "source": "Indianapolis Colts (official)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "Tuimoloau and Goncalves were listed as limited participants Wednesday.",
-      "categories": [
-        "Practice Notebook",
-        "Featured",
-        "Featured News",
-        "Tennessee Titans at Indianapolis Colts (2026-REG-6)"
-      ],
-      "published_at": "2026-10-15T19:44:25+00:00",
-      "players": []
-    },
-    {
-      "id": "9d57d100bb7898d0ff17",
-      "headline": "Jalon Daniels Learning Quarterback 101 From Baker Mayfield",
-      "url": "https://www.pewterreport.com/jalon-daniels-quarterback-101-baker-mayfield/",
-      "source_id": "pewter_report",
-      "source": "Pewter Report",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "Bucs quarterback Jalon Daniels has not only learned by starting two NFL games, but also by getting plenty of advice from quarterback Baker Mayfield. Daniels has admirably filled in for Mayfield since Tampa Bay's starting signal-caller suffered a dislocated right thumb against Minnesota in Week 3. The rookie is coming off an impressive performance",
-      "categories": [
-        "Articles",
-        "Featured"
-      ],
-      "published_at": "2026-10-15T19:30:10+00:00",
-      "players": [
-        {
-          "id": "00-0034855",
-          "name": "Baker Mayfield",
-          "team": "TB",
-          "position": "QB"
-        },
-        {
-          "id": "00-0041251",
-          "name": "Jalon Daniels",
-          "team": "TB",
-          "position": "QB"
         }
       ]
     }
