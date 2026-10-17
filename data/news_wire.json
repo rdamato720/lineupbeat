@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T09:20:34.056597+00:00",
+  "updated_at": "2026-10-17T10:00:55.954869+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T09:00:00+00:00",
+      "latest_entry_at": "2026-10-17T09:34:05+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-17T01:40:33+00:00",
+      "latest_entry_at": "2026-10-17T09:00:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-17T09:00:00+00:00",
+      "latest_entry_at": "2026-10-17T09:34:05+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T18:52:12+00:00",
+      "latest_entry_at": "2026-10-17T10:00:00+00:00",
       "stale": false
     },
     {
@@ -436,9 +436,9 @@
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-16T20:11:31+00:00",
+      "latest_entry_at": "2026-10-17T10:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,29 @@
     }
   ],
   "items": [
+    {
+      "id": "b9f105d97472b2480094",
+      "headline": "NY Giants news: Jameis Winston, good injury news, more",
+      "url": "https://www.bigblueview.com/new-york-giants-news/176070/jameis-winston-good-injury-news-more",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Good morning, New York Giants fans! Here are the stories you need to know for the Giants battle with the New Orleans Saints set for 1 p.m. tomorrow at MetLife Stadium. Giants hint at \u2018explosive\u2019 change to offense: \u2018You\u2019ll see a lot more\u2019 | NJ.com Scheme matters, too. And to that end, Tracy and Skattebo [\u2026]",
+      "categories": [
+        "New York Giants News"
+      ],
+      "published_at": "2026-10-17T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0031503",
+          "name": "Jameis Winston",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "99d8b26e6a3f6a17eea3",
       "headline": "49ers News: What a sublime Saturday to trade for a pass-rusher",
@@ -3967,37 +3990,6 @@
       ],
       "published_at": "2026-10-15T20:03:49+00:00",
       "players": []
-    },
-    {
-      "id": "78492bf5c61b36597a1b",
-      "headline": "Jets Injury Report | Week 6 vs. Patriots - Thursday",
-      "url": "https://www.newyorkjets.com/news/jets-injury-report-week-6-vs-patriots-thursday-10-15-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Rookies Kenyon Sadiq & Omar Cooper Jr. Limited Participants",
-      "categories": [
-        "Injury Report",
-        "News",
-        "Latest Headlines"
-      ],
-      "published_at": "2026-10-15T20:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0041032",
-          "name": "Kenyon Sadiq",
-          "team": "NYJ",
-          "position": "TE"
-        },
-        {
-          "id": "00-0041511",
-          "name": "Omar Cooper",
-          "team": "NYJ",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
