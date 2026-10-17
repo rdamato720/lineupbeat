@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T10:00:55.954869+00:00",
+  "updated_at": "2026-10-17T12:00:55.035927+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T09:34:05+00:00",
+      "latest_entry_at": "2026-10-17T12:00:05+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-16T22:45:45+00:00",
+      "latest_entry_at": "2026-10-17T11:00:19+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T00:15:00+00:00",
+      "latest_entry_at": "2026-10-17T12:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-17T09:00:00+00:00",
+      "latest_entry_at": "2026-10-17T10:54:35+00:00",
       "stale": false
     },
     {
@@ -116,7 +116,7 @@
     {
       "source_id": "news_official_det",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
       "latest_entry_at": "2026-10-16T11:30:28+00:00",
       "stale": false
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-16T16:45:32+00:00",
+      "latest_entry_at": "2026-10-17T10:00:00+00:00",
       "stale": false
     },
     {
@@ -236,9 +236,9 @@
     {
       "source_id": "news_official_phi",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-16T22:36:33+00:00",
+      "latest_entry_at": "2026-10-17T11:30:00+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-17T09:34:05+00:00",
+      "latest_entry_at": "2026-10-17T12:00:05+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-17T00:15:00+00:00",
+      "latest_entry_at": "2026-10-17T12:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T10:00:00+00:00",
+      "latest_entry_at": "2026-10-17T10:30:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-17T01:53:16+00:00",
+      "latest_entry_at": "2026-10-17T10:30:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T23:30:00+00:00",
+      "latest_entry_at": "2026-10-17T11:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-17T00:19:28+00:00",
+      "latest_entry_at": "2026-10-17T10:00:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-17T09:12:19+00:00",
+      "latest_entry_at": "2026-10-16T20:30:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-16T18:24:27+00:00",
+      "latest_entry_at": "2026-10-17T11:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,87 @@
     }
   ],
   "items": [
+    {
+      "id": "bd03cb70fa5b55aab49c",
+      "headline": "Giants Mailbag: Run Game Woes, Skattebo\u2019s Fumbles, Deonte Banks\u2019 Contract and More",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-mailbag-run-game-skattebo-deonte-banks-winston-01m4vg33f63b",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Why the ground attack has struggled, whether Thibodeaux should be traded, and how far Jameis Winston can take the Giants.",
+      "categories": [],
+      "published_at": "2026-10-17T12:00:02+00:00",
+      "players": [
+        {
+          "id": "00-0031503",
+          "name": "Jameis Winston",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "d7366d9dc578c8ca4a2a",
+      "headline": "Spadaro: Game Preview vs. Panthers, 6 storylines to follow",
+      "url": "https://www.philadelphiaeagles.com/news/panthers-vs-eagles-game-preview-6-storylines-to-follow-2026-week-6-nfl-regular-season-crucial-catch-tanner-mckee-bryce-young",
+      "source_id": "news_official_phi",
+      "source": "Philadelphia Eagles (official)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "Tanner McKee will start at quarterback, but there is positive news from an injury standpoint going into this home matchup at Lincoln Financial Field.",
+      "categories": [
+        "On The Inside",
+        "All News-archived",
+        "NFL.com Feature",
+        "2026 Week 6 vs. Panthers",
+        "Team Roster Content"
+      ],
+      "published_at": "2026-10-17T11:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0038400",
+          "name": "Tanner McKee",
+          "team": "PHI",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "670adfc8a48c1b3b85d1",
+      "headline": "In 2025, the Bengals gave Tee Higgins $115 million to be their No. 2 target, but a year later, he\u2019s playing like a true top option",
+      "url": "https://atozsports.com/nfl/cincinnati-bengals-news/tee-higgins-great-start-2026-season/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "The Cincinnati Bengals took plenty of heat for paying Tee Higgins alongside Ja'Marr Chase last offseason. A month into the 2026 season, the numbers are telling a very different story about that decision.",
+      "categories": [
+        "Cincinnati Bengals News",
+        "American Football",
+        "Cincinnati Bengals",
+        "Ja'Marr Chase",
+        "Tee Higgins"
+      ],
+      "published_at": "2026-10-17T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0036410",
+          "name": "Tee Higgins",
+          "team": "CIN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0036900",
+          "name": "Ja'Marr Chase",
+          "team": "CIN",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "b9f105d97472b2480094",
       "headline": "NY Giants news: Jameis Winston, good injury news, more",
@@ -3916,80 +3997,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "9948c978d1ef92b668d9",
-      "headline": "Caleb Williams nears a return for the Bears and he may be coming back at the perfect time with a fresh perspective",
-      "url": "https://atozsports.com/nfl/chicago-bears-news/bears-caleb-williams-ready-to-return-hamstring-injury-week-6-falcons/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears quarterback Caleb Williams is getting closer to a potential return in Week 6 and finally spoke to the media for the first time since injuring his hamstring in Week 2.",
-      "categories": [
-        "Chicago Bears News",
-        "NFL",
-        "Ben Johnson",
-        "Caleb Williams"
-      ],
-      "published_at": "2026-10-15T20:17:09+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "864e86875637999605ab",
-      "headline": "Chargers place FB Alec Ingold on IR",
-      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-roster/66308/los-angeles-chargers-alec-ingold-injured-reserve-scott-matlock",
-      "source_id": "news_sbn_lac",
-      "source": "Bolts From The Blue (SB Nation)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "On Thursday afternoon, the Chargers are placed fullback Alec Ingold on injured/reserve. This comes the week after fellow fullback Scott Matlock returned from IR after missing the first four games of the season. Ingold has struggled in his first season with the Chargers after following Mike McDaniel to LA from Miami. The veteran had long [\u2026]",
-      "categories": [
-        "Los Angeles Chargers News",
-        "Los Angeles Chargers Roster"
-      ],
-      "published_at": "2026-10-15T20:17:06+00:00",
-      "players": [
-        {
-          "id": "00-0035125",
-          "name": "Alec Ingold",
-          "team": "LAC",
-          "position": "RB"
-        },
-        {
-          "id": "00-0038614",
-          "name": "Scott Matlock",
-          "team": "LAC",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "49503802410992cc941c",
-      "headline": "Buccaneers-Steelers Injury Report Oct.15: Mayfield, Winfield Jr. Did Not Participate",
-      "url": "https://www.buccaneers.com/news/buccaneers-steelers-injury-report-oct-15-mayfield-winfield-jr-did-not-participate",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "A look at Thursday's injury report ahead of the Week Six matchup",
-      "categories": [
-        "Featured",
-        "Injury Report",
-        "Week 6 2026 Steelers"
-      ],
-      "published_at": "2026-10-15T20:03:49+00:00",
-      "players": []
     }
   ]
 }
