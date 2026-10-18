@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T11:44:25.043020+00:00",
+  "updated_at": "2026-10-18T12:00:55.195879+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-18T11:30:00+00:00",
+      "latest_entry_at": "2026-10-18T12:00:04+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-18T11:05:43+00:00",
+      "latest_entry_at": "2026-10-18T11:50:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-18T09:00:00+00:00",
+      "latest_entry_at": "2026-10-18T11:23:04+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-18T11:30:00+00:00",
+      "latest_entry_at": "2026-10-18T12:00:04+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-18T11:05:43+00:00",
+      "latest_entry_at": "2026-10-18T11:50:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-18T02:17:31+00:00",
+      "latest_entry_at": "2026-10-18T10:30:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-18T00:44:00+00:00",
+      "latest_entry_at": "2026-10-18T11:26:45+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-18T10:45:00+00:00",
+      "latest_entry_at": "2026-10-17T20:49:06+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "7122791d49540eedd75a",
+      "headline": "Chicago Bears Week 6 Keys to Victory: The Return of Caleb Williams",
+      "url": "https://www.si.com/nfl/bears/onsi/chicago-bears-week-6-keys-to-victory-the-return-of-caleb-williams",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "A handful of players, including Caleb Williams, are going to have to step up on Sunday.",
+      "categories": [],
+      "published_at": "2026-10-18T12:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "d7366d9dc578c8ca4a2a",
       "headline": "Spadaro: Game Preview vs. Panthers, 6 storylines to follow",
@@ -4192,33 +4213,6 @@
           "name": "A.J. Brown",
           "team": "NE",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "c822c7a18c36861d9284",
-      "headline": "McMullen: Tanner McKee Could Provide Important Answers About Sean Mannion's Eagles Offense",
-      "url": "https://www.si.com/nfl/eagles/onsi/mcmullen-tanner-mckee-could-provide-important-answers-about-sean-mannion-s-eagles-offense-01m50wtrw2p8",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "As late as Sept. 28, Tanner McKee was the Eagles\u2019 QB3. On Sunday, the fourth-year pro will take over the struggling Eagles offense after Jalen Hurts was ruled out indefinitely with a superficial blood clot in his leg.",
-      "categories": [],
-      "published_at": "2026-10-16T11:00:04+00:00",
-      "players": [
-        {
-          "id": "00-0036389",
-          "name": "Jalen Hurts",
-          "team": "PHI",
-          "position": "QB"
-        },
-        {
-          "id": "00-0038400",
-          "name": "Tanner McKee",
-          "team": "PHI",
-          "position": "QB"
         }
       ]
     }
