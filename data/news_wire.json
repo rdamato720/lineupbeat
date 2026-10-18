@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T00:00:53.007768+00:00",
+  "updated_at": "2026-10-18T01:32:49.699088+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T23:54:58+00:00",
+      "latest_entry_at": "2026-10-18T01:30:14+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-17T14:21:44+00:00",
+      "latest_entry_at": "2026-10-17T23:17:20+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T23:54:01+00:00",
+      "latest_entry_at": "2026-10-18T01:15:44+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-17T20:23:00+00:00",
+      "latest_entry_at": "2026-10-18T00:00:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T23:54:58+00:00",
+      "latest_entry_at": "2026-10-18T01:30:14+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-17T23:54:01+00:00",
+      "latest_entry_at": "2026-10-18T01:15:44+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-17T14:00:00+00:00",
+      "latest_entry_at": "2026-10-17T22:45:17+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-17T20:40:48+00:00",
+      "latest_entry_at": "2026-10-16T21:10:34+00:00",
       "stale": false
     },
     {
@@ -348,17 +348,17 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-17T16:52:53+00:00",
+      "latest_entry_at": "2026-10-17T15:51:05+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-17T21:30:00+00:00",
+      "latest_entry_at": "2026-10-17T18:58:16+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-16T23:24:12+00:00",
+      "latest_entry_at": "2026-10-17T17:01:46+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-16T16:11:23+00:00",
+      "latest_entry_at": "2026-10-17T21:27:04+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-17T20:28:39+00:00",
+      "latest_entry_at": "2026-10-18T00:44:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-17T20:49:06+00:00",
+      "latest_entry_at": "2026-10-16T21:07:49+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,31 @@
     }
   ],
   "items": [
+    {
+      "id": "59a31428e3e2ceda6aea",
+      "headline": "Bucs Elevate Two From Practice Squad For Week 6 vs. Steelers",
+      "url": "https://www.pewterreport.com/bucs-elevate-two-practice-squad-week-6/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "Ahead of their Week 6 home game against the 3-2 Steelers at Raymond James Stadium in Tampa, the 1-4 Bucs have elevated two players from their practice squad to the active gameday roster, the team announced Saturday. Quarterback Easton Stick and running back Josh Williams were both elevated for the game, marking their third and",
+      "categories": [
+        "Articles",
+        "Featured",
+        "Bucs"
+      ],
+      "published_at": "2026-10-17T23:17:20+00:00",
+      "players": [
+        {
+          "id": "00-0040429",
+          "name": "Josh Williams",
+          "team": "TB",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "7f9a39b9c49923724dbe",
       "headline": "Bears' Caleb Williams Makes Official Return from Injury in Week 6 vs Falcons",
@@ -4195,31 +4220,6 @@
           "id": "00-0037239",
           "name": "Chris Olave",
           "team": "NO",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "516cac1c58983877bee7",
-      "headline": "A.J. Brown brings \u2018fresh juice\u2019 to Patriots offense",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/140813/aj-brown-fresh-juice-patriots-offense-josh-mcdaniels",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "After spending the designated four weeks on injured reserve with a high ankle sprain he suffered in Week 1, New England Patriots wide receiver A.J. Brown has been cleared for practice. He did not participate fully on Wednesday or Thursday, though, making his status for Sunday against the New York Jets uncertain. Still, offensive coordinator [\u2026]",
-      "categories": [
-        "New England Patriots First Read",
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-10-16T10:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
           "position": "WR"
         }
       ]
