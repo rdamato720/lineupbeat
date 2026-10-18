@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T18:00:56.852492+00:00",
+  "updated_at": "2026-10-18T18:05:16.853418+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-18T18:00:01+00:00",
+      "latest_entry_at": "2026-10-18T17:46:47+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-18T17:56:00+00:00",
+      "latest_entry_at": "2026-10-18T17:59:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-18T18:00:01+00:00",
+      "latest_entry_at": "2026-10-18T17:46:47+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-18T17:10:12+00:00",
+      "latest_entry_at": "2026-10-18T13:42:46+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-18T14:22:01+00:00",
+      "latest_entry_at": "2026-10-18T18:02:10+00:00",
       "stale": false
     },
     {
@@ -348,17 +348,17 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-18T15:36:05+00:00",
+      "latest_entry_at": "2026-10-18T17:47:35+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 1,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-18T16:50:00+00:00",
+      "latest_entry_at": "2026-10-17T21:30:00+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-18T17:28:10+00:00",
+      "latest_entry_at": "2026-10-18T10:30:00+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-18T17:29:32+00:00",
+      "latest_entry_at": "2026-10-18T12:00:00+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-18T16:00:00+00:00",
+      "latest_entry_at": "2026-10-16T23:54:19+00:00",
       "stale": false
     },
     {
@@ -438,15 +438,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-18T17:19:03+00:00",
+      "latest_entry_at": "2026-10-18T18:04:12+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-18T17:14:07+00:00",
+      "latest_entry_at": "2026-10-18T17:50:00+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-18T17:16:45+00:00",
+      "latest_entry_at": "2026-10-18T04:01:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-18T15:30:00+00:00",
+      "latest_entry_at": "2026-10-18T10:13:17+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-18T16:01:01+00:00",
+      "latest_entry_at": "2026-10-18T16:51:42+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-18T16:00:00+00:00",
+      "latest_entry_at": "2026-10-18T18:03:41+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,83 @@
     }
   ],
   "items": [
+    {
+      "id": "e7ad3b04aff7103d401b",
+      "headline": "Carson Steele injury: Eagles RB questionable to return against Panthers",
+      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/187399/carson-steele-injury-eagles-rb-questionable-to-return-against-panthers",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Eagles running back depth is already thin, to but it lightly, but things appeared to get worse in the first quarter on Sunday against the Panthers. Carson Steele nabbed a short pass by Tanner McKee, was pushed out of bounds, and was injured on the play. After a short evaluation in the medical tent, [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries",
+        "Philadelphia Eagles News"
+      ],
+      "published_at": "2026-10-18T17:50:00+00:00",
+      "players": [
+        {
+          "id": "00-0038400",
+          "name": "Tanner McKee",
+          "team": "PHI",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039325",
+          "name": "Carson Steele",
+          "team": "PHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "0ca2bc40e917ee6be311",
+      "headline": "Browns injury: Lose another starter in Week 6 versus the Ravens",
+      "url": "https://www.dawgsbynature.com/cleveland-browns-news/135470/browns-injury-week-6-ravens-grant-delpit",
+      "source_id": "news_sbn_cle",
+      "source": "Dawgs By Nature (SB Nation)",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "Injuries were a huge story heading into Week 6 for both the Cleveland Browns and Baltimore Ravens. Both teams ruled a variety of key players and starters out on Friday. On Sunday, the Browns placed both DT Mason Graham and RB Quinshon Judkins on the inactive list, adding them to a strong list of players [\u2026]",
+      "categories": [
+        "Cleveland Browns Injuries",
+        "Cleveland Browns News"
+      ],
+      "published_at": "2026-10-18T17:47:35+00:00",
+      "players": [
+        {
+          "id": "00-0040784",
+          "name": "Quinshon Judkins",
+          "team": "CLE",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "75e3c1a4c01f5c15b10b",
+      "headline": "Romeo Doubs injury: Patriots WR suffers injury on touchdown catch vs. Jets",
+      "url": "https://www.patspulpit.com/new-england-patriots-injuries/141104/romeo-doubs-injury-patriots-wr-suffers-injury-on-touchdown-catch-vs-jets",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "New England Patriots wide receiver Romeo Doubs departed Sunday\u2019s game early with a shoulder injury. He is officially questionable to return. Doubs was shaken up on a play in which he scored a 42-yard touchdown in the first quarter and landed on his right shoulder. The receiver spent time in the blue medical tent before [\u2026]",
+      "categories": [
+        "New England Patriots Injuries"
+      ],
+      "published_at": "2026-10-18T17:42:18+00:00",
+      "players": [
+        {
+          "id": "00-0037816",
+          "name": "Romeo Doubs",
+          "team": "NE",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "0e9b9e9607bd21a7df0c",
       "headline": "Eagles vs. Panthers, Week 6: Live updates and open thread",
@@ -3994,93 +4071,6 @@
           "id": "00-0034869",
           "name": "Sam Darnold",
           "team": "SEA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "21345aeeb9426b06e10f",
-      "headline": "Steelers may be without DK Metcalf vs. Buccaneers",
-      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-news/176454/steelers-may-be-without-dk-metcalf-vs-buccaneers-roman-wilson-jalen-ramsey",
-      "source_id": "news_sbn_pit",
-      "source": "Behind the Steel Curtain (SB Nation)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "The Pittsburgh Steelers are already down three wide receivers due to injury, and they may lose another one in Week 6. DK Metcalf has been listed as questionable with an illness, per the team injury report. He did not practice on Friday. This comes after the Steelers lost Roman Wilson and Ben Skowronek in Week [\u2026]",
-      "categories": [
-        "Pittsburgh Steelers Injuries",
-        "Pittsburgh Steelers News"
-      ],
-      "published_at": "2026-10-16T19:33:19+00:00",
-      "players": [
-        {
-          "id": "00-0035640",
-          "name": "DK Metcalf",
-          "team": "PIT",
-          "position": "WR"
-        },
-        {
-          "id": "00-0036862",
-          "name": "Ben Skowronek",
-          "team": "PIT",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039739",
-          "name": "Roman Wilson",
-          "team": "PIT",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "4458829ad975c782298e",
-      "headline": "Jalen Hurts blood clot news leaves Eagles in a bad situation, and one overlooked detail makes it worse for the offense",
-      "url": "https://atozsports.com/nfl/philadelphia-eagles-news/jalen-hurts-blood-clot-tanner-mckee-offense/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "Philly's injury report has never been longer, and the backup quarterback gets two practices to prepare for a 30-point offense.",
-      "categories": [
-        "NFL",
-        "Philadelphia Eagles News",
-        "American Football",
-        "injury report",
-        "jalen hurts",
-        "Tanner Mckee"
-      ],
-      "published_at": "2026-10-16T19:32:02+00:00",
-      "players": [
-        {
-          "id": "00-0036389",
-          "name": "Jalen Hurts",
-          "team": "PHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "705fc27471c6cd9387db",
-      "headline": "Bears vs. Falcons Injury Report: Caleb Williams is Questionable",
-      "url": "https://www.windycitygridiron.com/chicago-bears-injuries/125418/chicago-bears-atlanta-falcons-injury-report-caleb-williams-michael-penix-kyler-gordon",
-      "source_id": "news_sbn_chi",
-      "source": "Windy City Gridiron (SB Nation)",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Chicago Bears and the Atlanta Falcons have released their game-day injury reports, and there\u2019s good news for both starting quarterbacks. Chicago\u2019s Caleb Williams (hamstring) logged a third straight full practice, while Atlanta\u2019s Michael Penix Jr. also practiced fully all week after leaving his last game with a rib injury. However, the Bears list Williams [\u2026]",
-      "categories": [
-        "Chicago Bears Injuries"
-      ],
-      "published_at": "2026-10-16T19:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
           "position": "QB"
         }
       ]
