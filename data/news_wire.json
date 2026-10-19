@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T05:21:08.014188+00:00",
+  "updated_at": "2026-10-19T10:00:54.067891+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-19T05:08:28+00:00",
+      "latest_entry_at": "2026-10-19T10:00:05+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-19T03:50:53+00:00",
+      "latest_entry_at": "2026-10-19T10:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-18T23:35:50+00:00",
+      "latest_entry_at": "2026-10-19T09:00:00+00:00",
       "stale": false
     },
     {
@@ -60,7 +60,7 @@
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 8,
+      "eligible": 7,
       "error": "",
       "latest_entry_at": "2026-10-18T22:53:03+00:00",
       "stale": false
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-19T03:00:00+00:00",
+      "latest_entry_at": "2026-10-19T07:00:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-19T05:08:28+00:00",
+      "latest_entry_at": "2026-10-19T10:00:05+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-19T03:50:53+00:00",
+      "latest_entry_at": "2026-10-19T10:00:00+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-19T01:18:41+00:00",
+      "latest_entry_at": "2026-10-19T00:52:10+00:00",
       "stale": false
     },
     {
@@ -316,17 +316,17 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-18T22:57:13+00:00",
+      "latest_entry_at": "2026-10-18T11:45:25+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-19T02:52:11+00:00",
+      "latest_entry_at": "2026-10-18T20:16:29+00:00",
       "stale": false
     },
     {
@@ -366,15 +366,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-18T17:28:10+00:00",
+      "latest_entry_at": "2026-10-19T00:53:43+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-19T02:54:14+00:00",
+      "latest_entry_at": "2026-10-18T03:55:17+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-18T18:29:35+00:00",
+      "latest_entry_at": "2026-10-18T12:25:00+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-18T21:09:05+00:00",
+      "latest_entry_at": "2026-10-18T20:10:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-19T04:45:00+00:00",
+      "latest_entry_at": "2026-10-18T12:00:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-19T00:25:11+00:00",
+      "latest_entry_at": "2026-10-18T23:55:00+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-19T03:52:58+00:00",
+      "latest_entry_at": "2026-10-17T10:00:00+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-19T04:13:18+00:00",
+      "latest_entry_at": "2026-10-19T00:17:57+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-18T23:48:13+00:00",
+      "latest_entry_at": "2026-10-18T20:33:44+00:00",
       "stale": false
     },
     {
