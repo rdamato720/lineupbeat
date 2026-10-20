@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T10:25:47.125360+00:00",
+  "updated_at": "2026-10-20T12:00:51.651576+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T10:15:00+00:00",
+      "latest_entry_at": "2026-10-20T12:00:05+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T04:48:41+00:00",
+      "latest_entry_at": "2026-10-20T12:00:00+00:00",
       "stale": false
     },
     {
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-19T22:22:00+00:00",
+      "latest_entry_at": "2026-10-20T11:04:07+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-20T10:15:00+00:00",
+      "latest_entry_at": "2026-10-20T12:00:05+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-20T04:48:41+00:00",
+      "latest_entry_at": "2026-10-20T12:00:00+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-19T23:15:00+00:00",
+      "latest_entry_at": "2026-10-20T11:30:03+00:00",
       "stale": false
     },
     {
@@ -324,9 +324,9 @@
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-19T12:38:51+00:00",
+      "latest_entry_at": "2026-10-20T11:00:00+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-19T19:12:47+00:00",
+      "latest_entry_at": "2026-10-20T11:00:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T10:19:52+00:00",
+      "latest_entry_at": "2026-10-20T10:44:11+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T01:33:55+00:00",
+      "latest_entry_at": "2026-10-20T08:59:52+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T01:00:00+00:00",
+      "latest_entry_at": "2026-10-20T11:00:00+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-20T04:06:51+00:00",
+      "latest_entry_at": "2026-10-20T10:00:00+00:00",
       "stale": false
     },
     {
@@ -500,9 +500,9 @@
     {
       "source_id": "news_sbn_car",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-19T11:00:00+00:00",
+      "latest_entry_at": "2026-10-20T11:00:00+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-19T11:00:00+00:00",
+      "latest_entry_at": "2026-10-20T11:00:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-19T23:21:00+00:00",
+      "latest_entry_at": "2026-10-20T11:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,77 @@
     }
   ],
   "items": [
+    {
+      "id": "c39a96cdaea63220cb37",
+      "headline": "San Francisco 49ers are getting great news at the perfect time as key playmakers are set to return from injury",
+      "url": "https://atozsports.com/nfl/san-francisco-49ers-news/san-francisco-49ers-getting-great-news-at-perfect-time-as-key-playmakers-set-to-return-from-injury/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "49ers head coach Kyle Shanahan told reporters that he expects both Deebo Samuel and Christian Kirk to see the field soon. It's perfect for a 49ers receiver room that has been decimated by injury.",
+      "categories": [
+        "San Francisco 49ers News",
+        "American Football",
+        "Christian Kirk",
+        "Deebo Samuel",
+        "Kyle Shanahan",
+        "Mike evans",
+        "San Francisco 49ers"
+      ],
+      "published_at": "2026-10-20T12:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0034775",
+          "name": "Christian Kirk",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "32fb23bafa629b5b38ef",
+      "headline": "Breaking Down Vikings' Injury Report Coming Out of Their Bye (Who's Hurt & Who Could Return in Week 7)",
+      "url": "https://www.si.com/nfl/vikings/onsi/breaking-down-vikings-injury-report-coming-out-bye-who-s-hurt-who-could-return-week-7-01m5amq2kvf3",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "Breaking down the Vikings' injury report as they prepare for a showdown against the Colts in Week 7.",
+      "categories": [],
+      "published_at": "2026-10-20T11:30:00+00:00",
+      "players": []
+    },
+    {
+      "id": "265a2c0e922c06bf1e44",
+      "headline": "Packers have waited long enough, and it\u2019s time to make a change on the offensive line before a huge test against the Lions",
+      "url": "https://atozsports.com/nfl/green-bay-packers-news/time-to-make-change-kevin-zeitler-travis-glover/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Jordan Love was sacked three times against Dallas, and the veteran guard Green Bay signed a few weeks ago has had plenty of time to learn the system.",
+      "categories": [
+        "Green Bay Packers News",
+        "NFL",
+        "American Football",
+        "Kevin Zeitler",
+        "offensive line",
+        "Travis Glover"
+      ],
+      "published_at": "2026-10-20T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0036264",
+          "name": "Jordan Love",
+          "team": "GB",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "9161adbd734cc981c8ae",
       "headline": "Chicago Bears News: Both Bears and New England Patriots have injuries",
@@ -1226,7 +1297,7 @@
         "Clifton Brown",
         "Lamar Jackson",
         "inline-news",
-        "Homepage Centerpiece"
+        "Homepage Latest Headlines"
       ],
       "published_at": "2026-10-19T21:38:31+00:00",
       "players": [
@@ -4061,77 +4132,6 @@
           "name": "Jalen Hurts",
           "team": "PHI",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "3d69162605086fbcadfb",
-      "headline": "Ravens activate Ja\u2019Kobi Lane from IR, rookie WR to play vs. Browns",
-      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/86555/ravens-activate-rookie-wr-jakobi-lane-from-injured-reserve",
-      "source_id": "news_sbn_bal",
-      "source": "Baltimore Beatdown (SB Nation)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Baltimore Ravens activated Ja\u2019Kobi Lane from injured reserve on Saturday, priming the rookie wide receiver to play on Sunday against the Cleveland Browns. Lane, 22, is one of Baltimore\u2019s most-hyped rookies in recent memory. The third round pick (No. 80 overall) dazzled throughout training camp and appeared to carve out the Ravens\u2019 No. 3 [\u2026]",
-      "categories": [
-        "Baltimore Ravens News",
-        "Baltimore Ravens Roster"
-      ],
-      "published_at": "2026-10-17T20:30:19+00:00",
-      "players": [
-        {
-          "id": "00-0040870",
-          "name": "Ja'Kobi Lane",
-          "team": "BAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "8e4d0957d40486ac89e5",
-      "headline": "Jalen Hurts to injured reserve among four Eagles roster moves",
-      "url": "https://www.bleedinggreennation.com/news/187256/jalen-hurts-to-injured-reserve-among-four-eagles-roster-moves",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Philadelphia Eagles officially announced four roster moves ahead of the team\u2019s Week 6 game against the Carolina Panthers. Here\u2019s an overview: Let\u2019s sort through this news on a player-by-player basis. JALEN HURTS On Saturday morning, ESPN reported that the Eagles were NOT going to place Hurts on injured reserve. On Saturday afternoon, ESPN reported [\u2026]",
-      "categories": [
-        "Philadelphia Eagles News"
-      ],
-      "published_at": "2026-10-17T20:28:39+00:00",
-      "players": [
-        {
-          "id": "00-0036389",
-          "name": "Jalen Hurts",
-          "team": "PHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "48687951a6060633cd78",
-      "headline": "Patriots elevate safety Elliott Davison from practice squad, release running back",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/140995/patriots-elevate-elliott-davison-release-hassan-haskins-practice-squad",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Pro Bowl wide receiver A.J. Brown will make his official return versus the New York Jets after spending four games on injured reserve. But the New England Patriots announced an additional two moves on the eve of the AFC East meeting at Gillette Stadium. The organization elevated safety Elliott Davison for Sunday\u2019s 1 p.m. ET [\u2026]",
-      "categories": [
-        "New England Patriots News",
-        "New England Patriots Roster"
-      ],
-      "published_at": "2026-10-17T20:27:42+00:00",
-      "players": [
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
-          "position": "WR"
         }
       ]
     }
