@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T04:00:48.544363+00:00",
+  "updated_at": "2026-10-20T05:20:00.435676+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T03:38:55+00:00",
+      "latest_entry_at": "2026-10-20T05:11:15+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T03:55:54+00:00",
+      "latest_entry_at": "2026-10-20T04:48:41+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-20T01:49:20+00:00",
+      "latest_entry_at": "2026-10-20T04:06:02+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-20T03:38:55+00:00",
+      "latest_entry_at": "2026-10-20T05:11:15+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-20T03:55:54+00:00",
+      "latest_entry_at": "2026-10-20T04:48:41+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-20T00:59:40+00:00",
+      "latest_entry_at": "2026-10-20T03:26:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-19T23:30:00+00:00",
+      "latest_entry_at": "2026-10-20T04:06:51+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-19T23:55:00+00:00",
+      "latest_entry_at": "2026-10-20T03:58:22+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,56 @@
     }
   ],
   "items": [
+    {
+      "id": "23acbeb512cbb02e3324",
+      "headline": "Mike Evans Injury Update: San Francisco 49ers catch a huge break after losing their star wide receiver on Monday Night Football in concerning moment",
+      "url": "https://atozsports.com/nfl/san-francisco-49ers-news/mike-evans-injury-update-san-francisco-49ers-catch-huge-break-after-losing-star-wide-receiver-on-monday-night-football/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Mike Evans led the 49ers with 94 yards receiving against the Commanders, even after leaving the game with an injury late in the first half. What's even better, is that San Francisco's star avoided major injury.",
+      "categories": [
+        "San Francisco 49ers News",
+        "American Football",
+        "Kyle Shanahan",
+        "Mike evans",
+        "San Francisco 49ers"
+      ],
+      "published_at": "2026-10-20T04:48:41+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "5572495e0345029aaa51",
+      "headline": "Kyle Shanahan on Mike Evans\u2019 injury: \u2018We don\u2019t think it\u2019s a long-term thing\u2019",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/164550/kyle-shanahan-on-mike-evans-injury-we-dont-think-its-a-long-term-thing",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers lost multiple players during their victory over the Washington Commanders: WR Mike Evans (Achilles)LB Luke Gifford (groin)CB Upton Stout (shoulder) When asked about the severity of Evans\u2019 Achilles injury, Kyle Shanahan said, \u201cJust the same thing that was bothering him all week. Just acted up during the game; couldn\u2019t go. We\u2019ll [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries"
+      ],
+      "published_at": "2026-10-20T03:58:22+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "1ff6da45dd945365c91c",
       "headline": "Commanders Lose Terry McLaurin to Knee Injury, Carted Off Against 49ers",
@@ -4073,58 +4123,6 @@
         "New England Patriots Roster"
       ],
       "published_at": "2026-10-17T20:06:09+00:00",
-      "players": [
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "c82c19d7935bbbee2f91",
-      "headline": "Jets Add WR Omar Cooper Jr. to Active Roster from Injured Reserve",
-      "url": "https://www.newyorkjets.com/news/omar-cooper-jets-active-roster-from-injured-reserve-10-17-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Green & White Also Elevate LB Jaden Keller From Practice Squad",
-      "categories": [
-        "Transactions",
-        "Latest Headlines",
-        "News",
-        "Omar Cooper Jr.",
-        "Quinton Bell"
-      ],
-      "published_at": "2026-10-17T20:01:00+00:00",
-      "players": [
-        {
-          "id": "00-0041511",
-          "name": "Omar Cooper",
-          "team": "NYJ",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "88f7f5081141ef46690f",
-      "headline": "Patriots Make a Series of Roster Moves",
-      "url": "https://www.patriots.com/news/patriots-make-a-series-of-roster-moves-x0182",
-      "source_id": "news_official_ne",
-      "source": "New England Patriots (official)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots announced today that WR A.J. Brown has been activated to the 53-man roster.",
-      "categories": [
-        "Transactions",
-        "hp-article",
-        "hp-featured"
-      ],
-      "published_at": "2026-10-17T20:00:05+00:00",
       "players": [
         {
           "id": "00-0035676",
