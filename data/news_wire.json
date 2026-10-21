@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T04:00:55.792192+00:00",
+  "updated_at": "2026-10-21T06:01:27.320456+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T03:55:00+00:00",
+      "latest_entry_at": "2026-10-21T05:23:20+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T02:07:54+00:00",
+      "latest_entry_at": "2026-10-21T05:17:57+00:00",
       "stale": false
     },
     {
@@ -252,9 +252,9 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 8,
+      "eligible": 9,
       "error": "",
-      "latest_entry_at": "2026-10-20T19:15:00+00:00",
+      "latest_entry_at": "2026-10-21T04:03:27+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T03:55:00+00:00",
+      "latest_entry_at": "2026-10-21T05:23:20+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T20:07:46+00:00",
+      "latest_entry_at": "2026-10-20T18:00:00+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T00:42:47+00:00",
+      "latest_entry_at": "2026-10-20T22:28:04+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T18:00:00+00:00",
+      "latest_entry_at": "2026-10-20T13:00:00+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T03:47:27+00:00",
+      "latest_entry_at": "2026-10-20T21:15:09+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-20T23:00:00+00:00",
+      "latest_entry_at": "2026-10-21T05:15:40+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T18:00:00+00:00",
+      "latest_entry_at": "2026-10-20T16:42:15+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,33 @@
     }
   ],
   "items": [
+    {
+      "id": "199c01652dcefeacff65",
+      "headline": "Seahawks Mailbag: Zach Charbonnet's Potential Return, Trade Talk & More",
+      "url": "https://www.seahawks.com/news/seahawks-mailbag-zach-charbonnet-s-potential-return-trade-talk-more",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "You had Seahawks questions; we have answers.",
+      "categories": [
+        "News: Mailbag",
+        "News: Stories",
+        "News: National Feature",
+        "Homepage Hero",
+        "Homepage Top Headlines"
+      ],
+      "published_at": "2026-10-21T04:03:27+00:00",
+      "players": [
+        {
+          "id": "00-0039165",
+          "name": "Zach Charbonnet",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "ab7de5b4aa211d3d94b6",
       "headline": "The Biggest Overreaction From 49ers Week 6 Win vs. Commanders",
@@ -4120,27 +4147,6 @@
           "position": "QB"
         }
       ]
-    },
-    {
-      "id": "3649be00d4353d211d4f",
-      "headline": "Game Inactives | Week 6 Titans at Colts",
-      "url": "https://www.tennesseetitans.com/news/game-inactives-week-6-titans-at-colts",
-      "source_id": "news_official_ten",
-      "source": "Tennessee Titans (official)",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "Who's in, who's out for the Titans and Colts in Week 6 in Indianapolis",
-      "categories": [
-        "News: Game Inactives",
-        "Team/Football News",
-        "Tennessee Titans at Indianapolis Colts (2026-REG-6)",
-        "2026-10-18-PREgame-STORIES-titans-at-colts",
-        "2026-10-18-POSTgame-STORIES-titans-at-colts",
-        "homepage-centerpiece"
-      ],
-      "published_at": "2026-10-18T15:30:54+00:00",
-      "players": []
     }
   ]
 }
