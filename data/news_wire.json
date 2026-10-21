@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T00:00:56.152546+00:00",
+  "updated_at": "2026-10-21T00:58:52.716535+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T23:46:56+00:00",
+      "latest_entry_at": "2026-10-21T00:54:10+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-20T23:42:56+00:00",
+      "latest_entry_at": "2026-10-21T00:31:12+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-20T15:00:00+00:00",
+      "latest_entry_at": "2026-10-20T23:49:49+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-20T23:46:56+00:00",
+      "latest_entry_at": "2026-10-21T00:54:10+00:00",
       "stale": false
     },
     {
@@ -310,15 +310,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T19:39:26+00:00",
+      "latest_entry_at": "2026-10-21T00:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-20T22:28:04+00:00",
+      "latest_entry_at": "2026-10-21T00:42:47+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-20T16:47:31+00:00",
+      "latest_entry_at": "2026-10-20T21:55:10+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T23:00:00+00:00",
+      "latest_entry_at": "2026-10-20T21:20:30+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T19:45:00+00:00",
+      "latest_entry_at": "2026-10-20T19:30:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-20T21:02:24+00:00",
+      "latest_entry_at": "2026-10-20T20:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-20T20:47:40+00:00",
+      "latest_entry_at": "2026-10-21T00:30:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,57 @@
     }
   ],
   "items": [
+    {
+      "id": "2220d0344167d91570cd",
+      "headline": "Bills' Bye Week Evaluations: How Have Remade Special Teams Units Fared?",
+      "url": "https://www.si.com/nfl/bills/onsi/bills-bye-week-evaluations-how-have-remade-special-teams-units-fared",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Buffalo's special teams units are producing at some of the best rates in the league, with Tyler Bass, Tommy Doman Jr, Ray Davis, Greg Dortch and Joe Andreessen all playing at an extremely high level on kicks, punts, and returns.",
+      "categories": [],
+      "published_at": "2026-10-21T00:02:00+00:00",
+      "players": [
+        {
+          "id": "00-0039875",
+          "name": "Ray Davis",
+          "team": "BUF",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "b5366f6781adb33b3262",
+      "headline": "A.J. Brown\u2019s recent struggles no cause for concern, says Drake Maye",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/141539/drake-maye-confidence-aj-brown-drops-nfl-week-7-bears",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "A.J. Brown\u2019s return to the field last Sunday did not go as planned. Despite seeing a game-high 10 targets, the star wide receiver hauled in only three for 27 yards while struggling with a handful of drops. Quarterback Drake Maye, however, is not concerned about his top wide receiver moving forward. \u201cIt\u2019s A.J. Brown,\u201d said [\u2026]",
+      "categories": [
+        "New England Patriots First Read",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-10-21T00:01:46+00:00",
+      "players": [
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039851",
+          "name": "Drake Maye",
+          "team": "NE",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "7761de64364bcfccd073",
       "headline": "Patriots vs. Bears Tuesday injury report: Carlton Davis III returns, leaving three non-participants",
@@ -4087,52 +4138,6 @@
         "Baltimore Ravens at Cleveland Browns (2026-REG-6)"
       ],
       "published_at": "2026-10-18T15:30:36+00:00",
-      "players": []
-    },
-    {
-      "id": "9bf6aa9fe94da60c086b",
-      "headline": "Panthers vs. Eagles Inactives",
-      "url": "https://www.philadelphiaeagles.com/news/panthers-vs-eagles-inactives-2026-week-6-nfl-crucial-catch-saquon-barkley-jalen-hurts",
-      "source_id": "news_official_phi",
-      "source": "Philadelphia Eagles (official)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "Outside linebacker Jonathan Greenard and wide receiver DeVonta Smith return to the lineup as the Eagles look to climb back to .500 for the season.",
-      "categories": [
-        "All News-archived",
-        "NFL.com Feature",
-        "2026 Week 6 vs. Panthers",
-        "Team Roster Content"
-      ],
-      "published_at": "2026-10-18T15:30:18+00:00",
-      "players": [
-        {
-          "id": "00-0036912",
-          "name": "DeVonta Smith",
-          "team": "PHI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "98741a0768c7339f221f",
-      "headline": "Steelers inactives for Week 6 at Buccaneers",
-      "url": "https://www.steelers.com/news/steelers-inactives-for-week-6-at-buccaneers",
-      "source_id": "news_official_pit",
-      "source": "Pittsburgh Steelers (official)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "Find out who won't play today as the Steelers take on the Buccaneers at Raymond James Stadium",
-      "categories": [
-        "Inactives",
-        "UPMC",
-        "Featured",
-        "Sights and Sounds",
-        "Pittsburgh Steelers at Tampa Bay Buccaneers (2026-REG-6)"
-      ],
-      "published_at": "2026-10-18T15:30:00+00:00",
       "players": []
     }
   ]
