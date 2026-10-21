@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T22:00:56.697102+00:00",
+  "updated_at": "2026-10-21T23:38:56.603906+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,17 +12,17 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T21:45:46+00:00",
+      "latest_entry_at": "2026-10-21T23:31:26+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T18:00:49+00:00",
+      "latest_entry_at": "2026-10-21T23:08:07+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T21:00:12+00:00",
+      "latest_entry_at": "2026-10-21T23:26:04+00:00",
       "stale": false
     },
     {
@@ -46,15 +46,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T21:27:36+00:00",
+      "latest_entry_at": "2026-10-21T23:20:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_atl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-21T16:06:55+00:00",
+      "latest_entry_at": "2026-10-21T22:44:04+00:00",
       "stale": false
     },
     {
@@ -84,7 +84,7 @@
     {
       "source_id": "news_official_chi",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
       "latest_entry_at": "2026-10-21T20:12:13+00:00",
       "stale": false
@@ -108,9 +108,9 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T15:14:26+00:00",
+      "latest_entry_at": "2026-10-21T23:23:27+00:00",
       "stale": false
     },
     {
@@ -132,7 +132,7 @@
     {
       "source_id": "news_official_hou",
       "ok": true,
-      "eligible": 7,
+      "eligible": 6,
       "error": "",
       "latest_entry_at": "2026-10-21T21:20:00+00:00",
       "stale": false
@@ -156,9 +156,9 @@
     {
       "source_id": "news_official_kc",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T20:00:23+00:00",
+      "latest_entry_at": "2026-10-21T22:38:00+00:00",
       "stale": false
     },
     {
@@ -166,15 +166,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-21T17:11:00+00:00",
+      "latest_entry_at": "2026-10-21T23:05:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_lar",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-21T17:25:49+00:00",
+      "latest_entry_at": "2026-10-21T23:03:49+00:00",
       "stale": false
     },
     {
@@ -246,13 +246,13 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T20:00:00+00:00",
+      "latest_entry_at": "2026-10-21T23:01:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 8,
+      "eligible": 6,
       "error": "",
       "latest_entry_at": "2026-10-21T21:24:43+00:00",
       "stale": false
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-21T21:45:46+00:00",
+      "latest_entry_at": "2026-10-21T23:31:26+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-21T21:00:12+00:00",
+      "latest_entry_at": "2026-10-21T23:26:04+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T11:39:36+00:00",
+      "latest_entry_at": "2026-10-21T22:21:11+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T21:29:16+00:00",
+      "latest_entry_at": "2026-10-21T23:00:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T10:00:00+00:00",
+      "latest_entry_at": "2026-10-21T21:30:31+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T18:00:00+00:00",
+      "latest_entry_at": "2026-10-21T16:30:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T14:00:37+00:00",
+      "latest_entry_at": "2026-10-21T20:51:33+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T13:00:00+00:00",
+      "latest_entry_at": "2026-10-21T22:45:32+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-20T22:13:23+00:00",
+      "latest_entry_at": "2026-10-21T21:46:00+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T19:09:15+00:00",
+      "latest_entry_at": "2026-10-21T22:44:27+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T21:52:22+00:00",
+      "latest_entry_at": "2026-10-21T22:35:32+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T20:20:21+00:00",
+      "latest_entry_at": "2026-10-21T22:00:00+00:00",
       "stale": false
     },
     {
@@ -526,15 +526,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T11:00:00+00:00",
+      "latest_entry_at": "2026-10-21T18:37:03+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T12:36:13+00:00",
+      "latest_entry_at": "2026-10-21T17:05:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,358 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T15:00:00+00:00",
+      "latest_entry_at": "2026-10-21T19:50:40+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "2a8d0f005e2add9ce0ce",
+      "headline": "Seahawks Get Positive Injury News on Zach Charbonnet From Wednesday Report",
+      "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-positive-injury-news-zach-charbonnet-wednesday-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks need some good news right now, and Wednesday\u2019s practice report provided at least some.",
+      "categories": [],
+      "published_at": "2026-10-21T23:31:26+00:00",
+      "players": [
+        {
+          "id": "00-0039165",
+          "name": "Zach Charbonnet",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "86eb1d78f9bb004cb4c3",
+      "headline": "Vikings Initial Injury Report vs. Colts: Kevin O\u2019Connell\u2019s squad is getting healthier, and it\u2019s a crucial week",
+      "url": "https://atozsports.com/nfl/minnesota-vikings-news/vikings-colts-initial-injury-report-justin-jefferson-jordan-addison-jonathan-taylor/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "The Minnesota Vikings are officially coming off of their bye week, with a battered Indianapolis Colts team coming to town.",
+      "categories": [
+        "Minnesota Vikings News",
+        "NFL",
+        "Indianapolis Colts",
+        "Jonathan Taylor",
+        "Jordan Addison",
+        "Justin Jefferson",
+        "Kyler Murray",
+        "Minnesota Vikings",
+        "Tyler Warren",
+        "Vikings Injury Report"
+      ],
+      "published_at": "2026-10-21T23:26:04+00:00",
+      "players": []
+    },
+    {
+      "id": "0b20bebd6574c40acd18",
+      "headline": "Kansas City Chiefs\u2019 first injury report for Week 7 vs. Seattle Seahawks includes a new twist in the ongoing Josh Simmons saga",
+      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-first-injury-report-for-week-7-seahawks/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "The Kansas City Chiefs released their first Week 7 injury report vs. the Seattle Seahawks. Josh Simmons is a non-participant in practice again, this time for a new reason unrelated to injury.",
+      "categories": [
+        "Kansas City Chiefs News",
+        "Chiefs Injuries",
+        "Jaylon Moore",
+        "Josh Simmons",
+        "Kansas City Chiefs",
+        "Los Angeles Chargers",
+        "Rashee Rice"
+      ],
+      "published_at": "2026-10-21T23:19:06+00:00",
+      "players": []
+    },
+    {
+      "id": "1f6f99310212f40f4b4f",
+      "headline": "Injury Report: CB Pat Surtain II returns to practice ahead of Broncos' Week 7 game vs. Cardinals",
+      "url": "https://www.denverbroncos.com/news/injuryreport/injury-report-cb-pat-surtain-ii-returns-to-practice-ahead-of-broncos-week-7-game-vs-cardinals",
+      "source_id": "news_official_den",
+      "source": "Denver Broncos (official)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "An All-Pro player has returned to practice for the Broncos.",
+      "categories": [
+        "Top Stories",
+        "Aric DiLalla",
+        "Injury Report",
+        "Denver Broncos at Arizona Cardinals (2026-REG-7)",
+        "Patrick Surtain II"
+      ],
+      "published_at": "2026-10-21T23:08:34+00:00",
+      "players": []
+    },
+    {
+      "id": "ba36b283d1a809d1a16f",
+      "headline": "Bucs Injury Report: Is Baker Mayfield Fully Back?",
+      "url": "https://www.pewterreport.com/bucs-injury-report-is-baker-mayfield-back/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "After a disappointing loss in overtime against the Pittsburgh Steelers, the Bucs officially sit at the bottom of the NFC South. With two divisional opponents up next on the Bucs schedule, winning these games is an absolute must. Luckily for Tampa Bay, some key pieces may be returning to the lineup. Quarterback Baker Mayfield",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-10-21T23:08:07+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "4ee0e5e4642603e7f8da",
+      "headline": "Here\u2019s Everything Josh Jacobs Said About Return to Packers, Re-Evaluating Life",
+      "url": "https://www.si.com/nfl/packers/onsi/heres-everything-josh-jacobs-said-about-incident-return-to-packers",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Green Bay Packers running back Josh Jacobs is back with the team after missing the first six games following an off-the-field incident. Here is what he said during a 9-minute conversation with reporters.",
+      "categories": [],
+      "published_at": "2026-10-21T23:05:23+00:00",
+      "players": [
+        {
+          "id": "00-0035700",
+          "name": "Josh Jacobs",
+          "team": "GB",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "67c20ff95086ab59e10e",
+      "headline": "From the Podium: Sean McVay and Matthew Stafford on next-man-up mentality and Rams' Week 7 matchup with Raiders",
+      "url": "https://www.therams.com/news/from-the-podium-head-coach-sean-mcvay-quarterback-matthew-stafford-coordinators-wide-receiver-puka-nacua-defensive-end-aaron-donald-preview-rams-week-7-matchup-with-raiders-press-conference-2026",
+      "source_id": "news_official_lar",
+      "source": "Los Angeles Rams (official)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Head coach Sean McVay and quarterback Matthew Stafford talked about turning page to Week 7 at the Raiders and team's mindset in the wake of injuries.",
+      "categories": [
+        "Football",
+        "From the Podium",
+        "Los Angeles Rams at Las Vegas Raiders (2026-REG-7)",
+        "Sean McVay",
+        "Matthew Stafford"
+      ],
+      "published_at": "2026-10-21T23:03:49+00:00",
+      "players": [
+        {
+          "id": "00-0026498",
+          "name": "Matthew Stafford",
+          "team": "LAR",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "be867ac76e6111978d34",
+      "headline": "Broncos have designated rookie running back Jonah Coleman to return from IR",
+      "url": "https://www.milehighreport.com/denver-broncos-news/189671/broncos-have-designated-rookie-running-back-jonah-coleman-to-return-from-ir",
+      "source_id": "news_sbn_den",
+      "source": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Denver Broncos announced on Wednesday evening that they have designated rookie running back Jonah Coleman to return from the injured reserve. The talented rookie suffered and played through a high-ankle sprain during the Broncos\u2019 victory over the Jaguars in Week 2 before being placed on the short-term IR the following week. Coleman returned to [\u2026]",
+      "categories": [
+        "Denver Broncos News"
+      ],
+      "published_at": "2026-10-21T22:45:32+00:00",
+      "players": [
+        {
+          "id": "00-0041496",
+          "name": "Jonah Coleman",
+          "team": "DEN",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "96d4ae7593eb417894b0",
+      "headline": "Commanders injury update: Jaylin Lane reportedly has ankle surgery",
+      "url": "https://www.hogshaven.com/washington-commanders-injuries/450516/commanders-injury-update-jaylin-lane-ankle-surgery",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Commanders receiver and return man Jaylin Lane had surgery to repair a season-ending ankle injury that he suffered during a Week 4 loss to the Indianapolis Colts. He was placed on injured reserve on Oct. 5, after suffering a fracture and dislocation of the ankle. Such an injury normally requires surgery, but The Washington Post\u2019s [\u2026]",
+      "categories": [
+        "Washington Commanders Injuries"
+      ],
+      "published_at": "2026-10-21T22:44:27+00:00",
+      "players": [
+        {
+          "id": "00-0040164",
+          "name": "Jaylin Lane",
+          "team": "WAS",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "0483901e95e679b70a7c",
+      "headline": "Falcons injury report: Kendal Daniels participates fully in first practice after injury",
+      "url": "https://www.atlantafalcons.com/news/falcons-injury-report-kendal-daniels-aj-terrell-practice",
+      "source_id": "news_official_atl",
+      "source": "Atlanta Falcons (official)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "After leaving Sunday's game against the Bears with a neck injury, the rookie linebacker received positive initial medical results and was a full participant on Wednesday.",
+      "categories": [
+        "News",
+        "Emory Injury Report",
+        "Za'Darius Smith",
+        "C.J. Henderson",
+        "Kendal Daniels",
+        "Beaux Collins",
+        "Samson Ebukam",
+        "Michael Jerrell",
+        "Brian Robinson",
+        "A.J. Terrell",
+        "Avieon Terrell",
+        "Olamide Zaccheaus"
+      ],
+      "published_at": "2026-10-21T22:44:04+00:00",
+      "players": []
+    },
+    {
+      "id": "f891c9b67ece591f9e28",
+      "headline": "Week 7 Injury Report | Chiefs vs. Seahawks",
+      "url": "https://www.chiefs.com/news/week-7-injury-report-chiefs-vs-seahawks-2026",
+      "source_id": "news_official_kc",
+      "source": "Kansas City Chiefs (official)",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "Injuries for the Chiefs Week 7 matchup against the Seattle Seahawks",
+      "categories": [
+        "Injury Report",
+        "Kansas City Chiefs at Seattle Seahawks (2026-REG-7)",
+        "all-content"
+      ],
+      "published_at": "2026-10-21T22:38:00+00:00",
+      "players": []
+    },
+    {
+      "id": "f89ec2af0698bcecb177",
+      "headline": "Matt LaFleur, Josh Jacobs speak after running back\u2019s reinstatement",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/88504/matt-lafleur-josh-jacobs-speak-after-running-backs-reinstatement",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Wednesday marked the first day that Green Bay Packers running back Josh Jacobs was able to practice with the Packers since training camp, following his placement on the NFL\u2019s commissioner exempt list for a domestic violence incident that led to Jacobs pleading no contest to charges of battery and criminal damage to property. Jacobs still [\u2026]",
+      "categories": [
+        "Green Bay Packers News"
+      ],
+      "published_at": "2026-10-21T22:35:32+00:00",
+      "players": [
+        {
+          "id": "00-0035700",
+          "name": "Josh Jacobs",
+          "team": "GB",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "0fd13211c3c4d430aa57",
+      "headline": "Packers-Lions Wednesday Injury Report: Here\u2019s What Jordan Love Said About Sore Back",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-lions-wednesday-injury-report-jordan-love-s-ailing-here-s-what-he-said",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Jordan Love is one of 10 players on the injury report as the Packers get ready for Sunday\u2019s game at the Lions.",
+      "categories": [],
+      "published_at": "2026-10-21T22:26:42+00:00",
+      "players": [
+        {
+          "id": "00-0036264",
+          "name": "Jordan Love",
+          "team": "GB",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "6cd362c915ffea8ad649",
+      "headline": "Broncos designate RB Jonah Coleman for return from IR",
+      "url": "https://www.denverbroncos.com/news/broncos-designate-rb-jonah-coleman-for-return-from-ir",
+      "source_id": "news_official_den",
+      "source": "Denver Broncos (official)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "Denver\u2019s rookie running back has taken a step toward a return to game action.",
+      "categories": [
+        "Transactions",
+        "Top Stories",
+        "Susanna Weir",
+        "Jonah Coleman"
+      ],
+      "published_at": "2026-10-21T22:22:40+00:00",
+      "players": [
+        {
+          "id": "00-0041496",
+          "name": "Jonah Coleman",
+          "team": "DEN",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "b010e51032013b42bffc",
+      "headline": "Josh Jacobs breaks silence after arrest with first public comments since legal trouble emerged",
+      "url": "https://atozsports.com/nfl/green-bay-packers-news/josh-jacobs-breaks-silence-back-at-practice/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The running back returned to practice this week after missing the first six games of the season on the NFL Commissioner's Exempt List.",
+      "categories": [
+        "Green Bay Packers News",
+        "NFL",
+        "American Football",
+        "Josh Jacobs"
+      ],
+      "published_at": "2026-10-21T22:01:33+00:00",
+      "players": [
+        {
+          "id": "00-0035700",
+          "name": "Josh Jacobs",
+          "team": "GB",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "49bfe9bb5db5c541b78c",
       "headline": "Packers Injury Report: Jordan Love has a back injury, but it\u2019s not serious",
@@ -3792,342 +4139,6 @@
           "position": "QB"
         }
       ]
-    },
-    {
-      "id": "f1d74a42c3891b2d27c4",
-      "headline": "Chiefs News: Patrick Mahomes matches Tom Brady through 100 career wins",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-news/213505/chiefs-news-patrick-mahomes-matches-tom-brady-100-career-wins",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs keep winning, and the latest in five consecutive victories to start this season put quarterback Patrick Mahomes in rarefied air. He tied all-time quarterback Tom Brady for fastest to reach 100 career wins. When asked during his post-game press conference, Mahomes joked about Brady\u2019s incredible success. \u201cMy honest first reaction is [\u2026]",
-      "categories": [
-        "Arrowheadlines",
-        "Kansas City Chiefs News"
-      ],
-      "published_at": "2026-10-19T10:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0033873",
-          "name": "Patrick Mahomes",
-          "team": "KC",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "e0102e214042f5c0537c",
-      "headline": "Cowboys injury updates: Dee Winters has Achilles strain, KaVontae Turpin rib issue",
-      "url": "https://www.bloggingtheboys.com/dallas-cowboys-injuries/223082/injury-update-dee-winters-kavontae-turpin",
-      "source_id": "news_sbn_dal",
-      "source": "Blogging The Boys (SB Nation)",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys have residual problems coming from Sunday night\u2019s loss. On the field the Cowboys were beaten soundly by the Green Bay Packers, but they are now going to be dealing with problems off of it as well. Head coach Brian Schottenheimer noted after the game that linebacker Dee Winters has an Achilles strain [\u2026]",
-      "categories": [
-        "Dallas Cowboys Injuries"
-      ],
-      "published_at": "2026-10-19T05:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0037801",
-          "name": "KaVontae Turpin",
-          "team": "DAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "873ce8be81c705972aff",
-      "headline": "Dallas Cowboys Lose All-Pro KaVontae Turpin on Opening Play vs Packers",
-      "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-lose-all-pro-kavontae-turpin-opening-play-packers",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys will be without their top return specialist KaVontae Turpin for the rest of Week 6.",
-      "categories": [],
-      "published_at": "2026-10-19T02:15:49+00:00",
-      "players": [
-        {
-          "id": "00-0037801",
-          "name": "KaVontae Turpin",
-          "team": "DAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "7a9b378d83d55495f7dc",
-      "headline": "Kansas City Chiefs HC Andy Reid gives injury updates on Jaylon Moore, Travis Kelce after Week 6 win vs. Los Angeles Chargers",
-      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-andy-reid-injury-updates-week-6-chargers-win-jaylon-moore-travis-kelce/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Several Kansas City Chiefs players battled through bumps and bruises in their Week 6 victory. Andy Reid addressed a handful of them after the game, including one starter who was ruled out.",
-      "categories": [
-        "Kansas City Chiefs News",
-        "Chiefs Injuries",
-        "Jalen Royals",
-        "Jaylon Moore",
-        "Kansas City Chiefs",
-        "Kingsley Suamataia",
-        "Los Angeles Chargers",
-        "Nohl Williams",
-        "Travis Kelce"
-      ],
-      "published_at": "2026-10-19T00:55:44+00:00",
-      "players": [
-        {
-          "id": "00-0030506",
-          "name": "Travis Kelce",
-          "team": "KC",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "adfee9faa06bec810766",
-      "headline": "Cam Skattebo's Lack of Touches Wasn't By Design, Claims John Harbaugh",
-      "url": "https://www.si.com/nfl/giants/onsi/giants-skattebo-benched-harbaugh-saints-01m58src5qk5",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "Skattebo, who has been dealing with fumbling issues, played just six offensive snaps in the 34-27 loss and says he understands the consequences of his mistakes.",
-      "categories": [],
-      "published_at": "2026-10-19T00:45:39+00:00",
-      "players": [
-        {
-          "id": "00-0040715",
-          "name": "Cam Skattebo",
-          "team": "NYG",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "a35b19e3e46e5c89da1a",
-      "headline": "Andy Reid gives 4 Chiefs injury updates after Sunday\u2019s win",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-news/213449/andy-reid-gives-4-chiefs-injury-updates-after-sundays-win",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs stayed unbeaten with a 22-6 Sunday victory over the Los Angeles Chargers. Several Chiefs players were seen getting attention from the trainers, notably tight end Travis Kelce having his ankle taped multiple times. The only player that the team officially gave an update on was right tackle Jaylon Moore, who went [\u2026]",
-      "categories": [
-        "Kansas City Chiefs Injuries",
-        "Kansas City Chiefs News"
-      ],
-      "published_at": "2026-10-19T00:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0030506",
-          "name": "Travis Kelce",
-          "team": "KC",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "8d536b6c4e947aeb8239",
-      "headline": "Who Is Packers Returner Coleman Owen, Who Replaced Skyy Moore, Matthew Golden?",
-      "url": "https://www.si.com/nfl/packers/onsi/who-is-packers-punt-returner-coleman-owen",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "With Skyy Moore out, the Packers are going with Coleman Owen rather than Matthew Golden against the Cowboys.",
-      "categories": [],
-      "published_at": "2026-10-19T00:27:24+00:00",
-      "players": [
-        {
-          "id": "00-0038090",
-          "name": "Skyy Moore",
-          "team": "GB",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040667",
-          "name": "Matthew Golden",
-          "team": "GB",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "98f33b5f8f7a1835da42",
-      "headline": "Eagles reportedly wanted to bring Andy Dalton back but he declined [UPDATE]",
-      "url": "https://www.bleedinggreennation.com/news/187511/eagles-reportedly-wanted-to-bring-andy-dalton-back-but-he-declined",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "With the Philadelphia Eagles looking to add another quarterback in the aftermath of Jalen Hurts\u2019 blood clot situation, the team signed Joe Milton III from the Dallas Cowboys\u2019 practice squad last week. Milton III was not their first choice. The team wanted to bring Andy Dalton back to Philly, according to a report from Pro [\u2026]",
-      "categories": [
-        "Philadelphia Eagles News"
-      ],
-      "published_at": "2026-10-19T00:25:11+00:00",
-      "players": [
-        {
-          "id": "00-0027973",
-          "name": "Andy Dalton",
-          "team": "PHI",
-          "position": "QB"
-        },
-        {
-          "id": "00-0036389",
-          "name": "Jalen Hurts",
-          "team": "PHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "e24f1a944a2a03e95f20",
-      "headline": "Andy Reid Drops Chiefs Injury Updates on Jaylon Moore, Travis Kelce After Week 6 Win",
-      "url": "https://www.si.com/nfl/chiefs/onsi/andy-reid-drops-chiefs-injury-updates-on-jaylon-moore-travis-kelce-after-week-6-win",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Andy Reid provided context to injuries for RT Jaylon Moore, TE Travis Kelce and others following the Kansas City Chiefs' big-time Week 6 win vs. the LA Chargers.",
-      "categories": [],
-      "published_at": "2026-10-19T00:11:50+00:00",
-      "players": [
-        {
-          "id": "00-0030506",
-          "name": "Travis Kelce",
-          "team": "KC",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "2d04d7c4db5d835c7106",
-      "headline": "Packers-Cowboys Inactives: Most of Last Two Free-Agent Classes Are Out",
-      "url": "https://www.si.com/nfl/packers/onsi/packers-cowboys-inactives-most-of-last-two-free-agent-classes-are-out",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Here are the inactives for the Green Bay Packers and Dallas Cowboys. Among the big items: Cornerback Brandon Cisse will play.",
-      "categories": [],
-      "published_at": "2026-10-18T23:12:08+00:00",
-      "players": []
-    },
-    {
-      "id": "f32401f9520a420d1a86",
-      "headline": "Packers announce Week 6 inactives vs. the Cowboys",
-      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/88292/packers-announce-week-6-inactives-vs-the-cowboys",
-      "source_id": "news_sbn_gb",
-      "source": "Acme Packing Company (SB Nation)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "The Green Bay Packers announced on Sunday that, along with cornerback Benjamin St-Juste, who was already ruled out with an injury, the team has ruled out three offensive linemen against the Dallas Cowboys in Week 6: Jager Burton, Aaron Banks and Donovan Jennings. These moves were expected, as the Packers needed to scratch three more [\u2026]",
-      "categories": [
-        "Green Bay Packers injuries",
-        "Green Bay Packers News"
-      ],
-      "published_at": "2026-10-18T22:59:59+00:00",
-      "players": []
-    },
-    {
-      "id": "2678096a50310eb8600a",
-      "headline": "Jets Rookie Omar Cooper Jr. Has First 100-Yard Receiving Day vs. Patriots",
-      "url": "https://www.newyorkjets.com/news/jets-rookie-omar-cooper-jr-has-first-100-yard-receiving-day-vs-patriots",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Back After Ankle Injury, Rookie Grabbed His First NFL TD Pass",
-      "categories": [
-        "Latest Headlines",
-        "News",
-        "Omar Cooper Jr."
-      ],
-      "published_at": "2026-10-18T22:58:00+00:00",
-      "players": [
-        {
-          "id": "00-0041511",
-          "name": "Omar Cooper",
-          "team": "NYJ",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "b1d03c17260612183b39",
-      "headline": "Bills issue injury update on TE Dalton Kincaid",
-      "url": "https://www.buffalobills.com/news/bills-issue-injury-update-on-te-dalton-kincaid",
-      "source_id": "news_official_buf",
-      "source": "Buffalo Bills (official)",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "Kincaid left the game in the second half and went into the blue medical tent",
-      "categories": [
-        "NEWS ANNOUNCEMENTS",
-        "Dalton Kincaid"
-      ],
-      "published_at": "2026-10-18T22:56:27+00:00",
-      "players": [
-        {
-          "id": "00-0038933",
-          "name": "Dalton Kincaid",
-          "team": "BUF",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "8cef27c0fe63a100e2a8",
-      "headline": "Cowboys Week 6 Inactives Reveals Joey Porter Jr.'s Status vs. Packers",
-      "url": "https://www.si.com/nfl/cowboys/onsi/cowboys-week-6-inactives-reveals-joey-porter-jr-s-status-vs-packers",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "Joey Porter Jr. was a game-time decision for the Dallas Cowboys in Week 6, but he will play against the Green Bay Packers.",
-      "categories": [],
-      "published_at": "2026-10-18T22:54:27+00:00",
-      "players": []
-    },
-    {
-      "id": "5f53704f8a5d8665a387",
-      "headline": "CB Brandon Cisse active for Green Bay | Packers-Cowboys inactives",
-      "url": "https://www.packers.com/news/packers-cowboys-week-6-inactives-oct-18-2026",
-      "source_id": "news_official_gb",
-      "source": "Green Bay Packers (official)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "DT Anthony Campbell also back in action for Packers",
-      "categories": [
-        "News: Inactives",
-        "News: All News",
-        "News: Gameday",
-        "News: National Feature",
-        "Homepage CP",
-        "Dallas Cowboys at Green Bay Packers (2026-REG-6)"
-      ],
-      "published_at": "2026-10-18T22:50:00+00:00",
-      "players": []
     }
   ]
 }
