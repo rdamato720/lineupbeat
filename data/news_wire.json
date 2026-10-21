@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T10:00:55.070921+00:00",
+  "updated_at": "2026-10-21T11:48:03.306073+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T09:35:17+00:00",
+      "latest_entry_at": "2026-10-21T11:47:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T02:52:55+00:00",
+      "latest_entry_at": "2026-10-21T11:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T09:00:00+00:00",
+      "latest_entry_at": "2026-10-21T10:50:18+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T21:34:56+00:00",
+      "latest_entry_at": "2026-10-21T11:00:42+00:00",
       "stale": false
     },
     {
@@ -206,7 +206,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-20T21:38:00+00:00",
+      "latest_entry_at": "2026-10-21T10:00:00+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T09:35:17+00:00",
+      "latest_entry_at": "2026-10-21T11:47:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T02:52:55+00:00",
+      "latest_entry_at": "2026-10-21T11:00:00+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T20:07:46+00:00",
+      "latest_entry_at": "2026-10-21T10:15:00+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T00:00:00+00:00",
+      "latest_entry_at": "2026-10-20T19:39:26+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T10:00:00+00:00",
+      "latest_entry_at": "2026-10-20T21:55:10+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T10:00:00+00:00",
+      "latest_entry_at": "2026-10-20T20:27:45+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T19:45:00+00:00",
+      "latest_entry_at": "2026-10-21T10:30:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-20T22:15:38+00:00",
+      "latest_entry_at": "2026-10-21T10:00:00+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-21T09:00:00+00:00",
+      "latest_entry_at": "2026-10-20T22:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T10:00:00+00:00",
+      "latest_entry_at": "2026-10-21T05:15:40+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-20T11:00:00+00:00",
+      "latest_entry_at": "2026-10-21T11:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "d9d39fa1aed0a2646d2c",
+      "headline": "3 Best 2027 Free Agent Quarterbacks the Eagles Could Consider With Jalen Hurts's Cloudy Outlook",
+      "url": "https://www.si.com/nfl/eagles/onsi/3-best-2027-free-agent-quarterbacks-eagles-could-consider-jalen-hurts-s-cloudy-outlook-01m5aq7500m1",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "Jalen Hurts' latest injury update could force Philadelphia to look for free-agent help at the quarterback position in 2027.",
+      "categories": [],
+      "published_at": "2026-10-21T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0036389",
+          "name": "Jalen Hurts",
+          "team": "PHI",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "199c01652dcefeacff65",
       "headline": "Seahawks Mailbag: Zach Charbonnet's Potential Return, Trade Talk & More",
@@ -4117,34 +4138,6 @@
           "name": "Sean Tucker",
           "team": "TB",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "1dc936e4a2b4f6900493",
-      "headline": "Atlanta Falcons Week 6 inactives vs. Chicago Bears",
-      "url": "https://www.atlantafalcons.com/news/atlanta-falcons-inactive-players-chicago-bears",
-      "source_id": "news_official_atl",
-      "source": "Atlanta Falcons (official)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "Michael Penix Jr. is in the lineup for Atlanta and will square off against Caleb Williams, who is back for Chicago.",
-      "categories": [
-        "News",
-        "Inactives",
-        "Za'Darius Smith",
-        "Will McFadden",
-        "C.J. Henderson",
-        "Chicago Bears at Atlanta Falcons (2026-REG-6)"
-      ],
-      "published_at": "2026-10-18T15:31:02+00:00",
-      "players": [
-        {
-          "id": "00-0039917",
-          "name": "Michael Penix Jr.",
-          "team": "ATL",
-          "position": "QB"
         }
       ]
     }
