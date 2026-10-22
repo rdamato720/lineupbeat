@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T01:52:22.592840+00:00",
+  "updated_at": "2026-10-22T02:00:52.926916+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T01:47:31+00:00",
+      "latest_entry_at": "2026-10-22T02:00:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-22T01:47:31+00:00",
+      "latest_entry_at": "2026-10-22T02:00:00+00:00",
       "stale": false
     },
     {
@@ -316,17 +316,17 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T19:49:58+00:00",
+      "latest_entry_at": "2026-10-21T23:30:14+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T11:00:00+00:00",
+      "latest_entry_at": "2026-10-22T00:28:31+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T15:36:42+00:00",
+      "latest_entry_at": "2026-10-21T21:30:31+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T13:00:00+00:00",
+      "latest_entry_at": "2026-10-22T00:10:23+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T21:46:00+00:00",
+      "latest_entry_at": "2026-10-21T23:33:07+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T19:00:00+00:00",
+      "latest_entry_at": "2026-10-21T21:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T20:17:51+00:00",
+      "latest_entry_at": "2026-10-22T00:29:42+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T20:20:48+00:00",
+      "latest_entry_at": "2026-10-21T23:48:16+00:00",
       "stale": false
     },
     {
@@ -470,15 +470,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T15:45:00+00:00",
+      "latest_entry_at": "2026-10-21T20:09:16+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T17:36:25+00:00",
+      "latest_entry_at": "2026-10-21T22:35:32+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T11:00:00+00:00",
+      "latest_entry_at": "2026-10-22T00:20:15+00:00",
       "stale": false
     },
     {
@@ -548,9 +548,9 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T15:00:00+00:00",
+      "latest_entry_at": "2026-10-22T00:13:40+00:00",
       "stale": false
     }
   ],
@@ -633,6 +633,52 @@
           "id": "00-0035700",
           "name": "Josh Jacobs",
           "team": "GB",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "961a392c78e01616a145",
+      "headline": "Buccaneers vs. Panthers: Week 7 Initial Injury Report",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/69242/buccaneers-panthers-nfl-week-7-initial-injury-report",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers returned to the practice field Wednesday as they prepare for Sunday\u2019s Week 7 NFC South matchup against the Carolina Panthers at Bank of America Stadium. Tampa Bay\u2019s initial injury report featured five players who did not participate, including wide receiver Emeka Egbuka (concussion/foot), offensive tackle Luke Goedeke (calf), linebacker Christian Rozeboom [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers Injuries"
+      ],
+      "published_at": "2026-10-22T00:14:14+00:00",
+      "players": [
+        {
+          "id": "00-0040129",
+          "name": "Emeka Egbuka",
+          "team": "TB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "e21c1033e9a9877dc58c",
+      "headline": "Seahawks Week 7 injury report: Zach Charbonnet on track to return vs. Chiefs",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/177921/seahawks-week-7-injury-report-zach-charbonnet-on-track-return-vs-chiefs",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The first Seattle Seahawks injury report since the team\u2019s Thursday night loss to the Denver Broncos brought a mixed bag of news ahead of Seattle\u2019s primetime showdown with the Kansas City Chiefs. On the very positive side, it appears that running back Zach Charbonnet is a lock to return against the Chiefs after he was [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries"
+      ],
+      "published_at": "2026-10-22T00:13:40+00:00",
+      "players": [
+        {
+          "id": "00-0039165",
+          "name": "Zach Charbonnet",
+          "team": "SEA",
           "position": "RB"
         }
       ]
@@ -734,6 +780,23 @@
         "Los Angeles Rams at Las Vegas Raiders (2026-REG-7)"
       ],
       "published_at": "2026-10-21T23:36:41+00:00",
+      "players": []
+    },
+    {
+      "id": "fe08ce7d65f7b4af2199",
+      "headline": "Raiders injury report: Tonka Hemingway is still out",
+      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/143646/raiders-injury-report-tonka-hemingway-concussion-protocol",
+      "source_id": "news_sbn_lv",
+      "source": "Silver And Black Pride (SB Nation)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "The Las Vegas Raiders are beginning he practice week for Sunday\u2019s home game against the Los Angeles Rams without starting defensive tackle Tonka Hemingway. Raiders head coach Klint Kubiak said the 2025 fourth-round is still in the NFL\u2019s concussion protocol. He was hurt in Week 5 and he didn\u2019t play in a Week 6 loss [\u2026]",
+      "categories": [
+        "Las Vegas Raiders Injuries",
+        "Las Vegas Raiders News"
+      ],
+      "published_at": "2026-10-21T23:33:07+00:00",
       "players": []
     },
     {
@@ -1784,23 +1847,6 @@
         "Tampa Bay Buccaneers at Carolina Panthers (2026-REG-7)"
       ],
       "published_at": "2026-10-21T18:46:45+00:00",
-      "players": []
-    },
-    {
-      "id": "fe08ce7d65f7b4af2199",
-      "headline": "Raiders injury report: Tonka Hemingway is still out",
-      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/143646/raiders-injury-report-tonka-hemingway-concussion-protocol",
-      "source_id": "news_sbn_lv",
-      "source": "Silver And Black Pride (SB Nation)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "The Las Vegas Raiders are beginning he practice week for Sunday\u2019s home game against the Los Angeles Rams without starting defensive tackle Tonka Hemingway. Raiders head coach Klint Kubiak said the 2025 fourth-round is still in the NFL\u2019s concussion protocol. He was hurt in Week 5 and he didn\u2019t play in a Week 6 loss [\u2026]",
-      "categories": [
-        "Las Vegas Raiders Injuries",
-        "Las Vegas Raiders News"
-      ],
-      "published_at": "2026-10-21T18:33:41+00:00",
       "players": []
     },
     {
@@ -3997,57 +4043,6 @@
           "name": "Jeremy McNichols",
           "team": "WAS",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "598129f40e94a710e9d8",
-      "headline": "Bucs Will Evaluate Baker Mayfield in Practice on Wednesday for Potential Return",
-      "url": "https://www.buccaneers.com/news/bucs-will-evaluate-baker-mayfield-in-practice-wednesday-potential-return",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "As the Buccaneers prepare for a critical intra-division game against the Panthers this week, they will also be trying to determine if quarterback Baker Mayfield will be able return from action following his thumb injury",
-      "categories": [
-        "Featured",
-        "Week 6 2026 Steelers",
-        "Week 7 2026 Panthers",
-        "Baker Mayfield"
-      ],
-      "published_at": "2026-10-19T20:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0034855",
-          "name": "Baker Mayfield",
-          "team": "TB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "14e4743aa4de5cb284af",
-      "headline": "Patriots Place WR Romeo Doubs on Injured Reserve; Sign DB Elliott Davison to the 53-Man Roster from the Practice Squad; Announce Additional Practice Squad Moves",
-      "url": "https://www.patriots.com/news/patriots-place-wr-romeo-doubs-on-injured-reserve-sign-db-elliott-davison-to-the-53-man-roster-from-the-practice-squad-announce-additional-practice-squad-moves",
-      "source_id": "news_official_ne",
-      "source": "New England Patriots (official)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The Patriots announced today that they have placed WR Romeo Doubs on injured reserve and signed DB Elliott Davison to the 53-man roster from the practice squad. In addition, the Patriots signed WR Ryan Miller, OL Jacob Rizy and G Andrew Rupcich to the practice squad and released CB D\u2019Shawn Jamison from the practice squad.",
-      "categories": [
-        "Transactions",
-        "hp-article",
-        "hp-featured"
-      ],
-      "published_at": "2026-10-19T20:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0037816",
-          "name": "Romeo Doubs",
-          "team": "NE",
-          "position": "WR"
         }
       ]
     }
