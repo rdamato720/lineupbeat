@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T14:01:02.959179+00:00",
+  "updated_at": "2026-10-22T16:01:06.695712+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T14:00:14+00:00",
+      "latest_entry_at": "2026-10-22T16:00:04+00:00",
       "stale": false
     },
     {
@@ -22,7 +22,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T06:04:04+00:00",
+      "latest_entry_at": "2026-10-22T14:45:17+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T13:51:57+00:00",
+      "latest_entry_at": "2026-10-22T15:59:23+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T09:00:00+00:00",
+      "latest_entry_at": "2026-10-22T14:43:46+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-21T22:44:04+00:00",
+      "latest_entry_at": "2026-10-22T14:49:35+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T11:00:00+00:00",
+      "latest_entry_at": "2026-10-22T14:00:00+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-22T13:30:00+00:00",
+      "latest_entry_at": "2026-10-22T14:20:00+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-21T23:05:00+00:00",
+      "latest_entry_at": "2026-10-22T14:00:42+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-21T23:36:41+00:00",
+      "latest_entry_at": "2026-10-22T15:00:00+00:00",
       "stale": false
     },
     {
@@ -190,7 +190,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T13:51:57+00:00",
+      "latest_entry_at": "2026-10-22T14:30:32+00:00",
       "stale": false
     },
     {
@@ -206,7 +206,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T13:51:00+00:00",
+      "latest_entry_at": "2026-10-22T14:06:00+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-21T23:43:00+00:00",
+      "latest_entry_at": "2026-10-22T15:55:00+00:00",
       "stale": false
     },
     {
@@ -230,7 +230,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T13:39:17+00:00",
+      "latest_entry_at": "2026-10-22T15:00:00+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T10:05:00+00:00",
+      "latest_entry_at": "2026-10-22T15:45:03+00:00",
       "stale": false
     },
     {
@@ -260,17 +260,17 @@
     {
       "source_id": "news_official_sf",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T00:36:39+00:00",
+      "latest_entry_at": "2026-10-22T14:08:13+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_tb",
       "ok": true,
-      "eligible": 8,
+      "eligible": 9,
       "error": "",
-      "latest_entry_at": "2026-10-21T20:26:00+00:00",
+      "latest_entry_at": "2026-10-22T14:30:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-22T14:00:14+00:00",
+      "latest_entry_at": "2026-10-22T16:00:04+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T13:51:57+00:00",
+      "latest_entry_at": "2026-10-22T15:59:23+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T12:00:00+00:00",
+      "latest_entry_at": "2026-10-22T15:36:28+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T11:00:00+00:00",
+      "latest_entry_at": "2026-10-22T15:19:03+00:00",
       "stale": false
     },
     {
@@ -334,15 +334,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T11:00:00+00:00",
+      "latest_entry_at": "2026-10-22T14:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T10:30:00+00:00",
+      "latest_entry_at": "2026-10-22T13:55:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T12:00:00+00:00",
+      "latest_entry_at": "2026-10-22T16:00:00+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T16:30:00+00:00",
+      "latest_entry_at": "2026-10-22T14:00:00+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T17:27:09+00:00",
+      "latest_entry_at": "2026-10-22T14:13:14+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T11:00:00+00:00",
+      "latest_entry_at": "2026-10-22T13:30:00+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T12:00:00+00:00",
+      "latest_entry_at": "2026-10-22T14:00:00+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T10:30:00+00:00",
+      "latest_entry_at": "2026-10-22T14:45:00+00:00",
       "stale": false
     },
     {
@@ -414,15 +414,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T23:33:07+00:00",
+      "latest_entry_at": "2026-10-22T15:06:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T15:50:51+00:00",
+      "latest_entry_at": "2026-10-22T13:50:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T11:00:00+00:00",
+      "latest_entry_at": "2026-10-22T15:00:00+00:00",
       "stale": false
     },
     {
@@ -438,23 +438,23 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T10:52:47+00:00",
+      "latest_entry_at": "2026-10-22T15:07:05+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-21T15:51:19+00:00",
+      "latest_entry_at": "2026-10-22T14:55:52+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T11:30:00+00:00",
+      "latest_entry_at": "2026-10-22T13:15:00+00:00",
       "stale": false
     },
     {
@@ -462,15 +462,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T12:00:00+00:00",
+      "latest_entry_at": "2026-10-22T16:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T11:45:00+00:00",
+      "latest_entry_at": "2026-10-22T15:43:29+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T22:35:32+00:00",
+      "latest_entry_at": "2026-10-22T12:40:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T18:00:00+00:00",
+      "latest_entry_at": "2026-10-22T14:00:00+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T12:00:00+00:00",
+      "latest_entry_at": "2026-10-22T15:00:00+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T17:05:00+00:00",
+      "latest_entry_at": "2026-10-22T13:00:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T13:30:00+00:00",
+      "latest_entry_at": "2026-10-22T15:01:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,194 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T13:36:55+00:00",
+      "latest_entry_at": "2026-10-22T15:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "04964c34c84afe86afc9",
+      "headline": "Perfect Vikings WR Trade Target Couldn't Be Clearer as Jauan Jennings Remains an Issue",
+      "url": "https://www.si.com/nfl/vikings/onsi/perfect-vikings-wr-trade-target-couldn-t-be-clearer-jauan-jennings-remains-issue-01m5fwre5crm",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "Jauan Jennings has been a disappointment for the Vikings, which should prompt them to inquire about a potential trade target before the deadline.",
+      "categories": [],
+      "published_at": "2026-10-22T16:00:03+00:00",
+      "players": [
+        {
+          "id": "00-0036259",
+          "name": "Jauan Jennings",
+          "team": "MIN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "0277d79f9cfe6b9533c6",
+      "headline": "Jameis Winston Takes Demotion in Stride as J.J. McCarthy Steps In for Giants",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-winston-benched-mccarthy-starter-01m5g85d82hd",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Four games into his run as the starter, Winston is out, but he says he's not bitter and that he plans to help McCarthy succeed.",
+      "categories": [],
+      "published_at": "2026-10-22T16:00:02+00:00",
+      "players": [
+        {
+          "id": "00-0031503",
+          "name": "Jameis Winston",
+          "team": "NYG",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "33c4f0f0c9d3b791afb6",
+      "headline": "Carolina Panthers Star Is Finally Earning His Spot Atop the Depth Chart",
+      "url": "https://www.si.com/nfl/panthers/onsi/carolina-panthers-star-is-finally-earning-his-spot-01m5d1stqe4q",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "Tommy Tremble scored twice against the Eagles and led Carolina's tight ends in snaps. He's starting to show why the Panthers have him atop the depth chart.",
+      "categories": [],
+      "published_at": "2026-10-22T16:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0037005",
+          "name": "Tommy Tremble",
+          "team": "CAR",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "6ef1359d4c03ca310dd3",
+      "headline": "The Detroit Lions have decided on a punt returner to replace Tom Kennedy",
+      "url": "https://www.prideofdetroit.com/detroit-lions-news/177752/detroit-lions-punt-kick-returner-tom-kennedy-injury-deandre-carter",
+      "source_id": "news_sbn_det",
+      "source": "Pride Of Detroit (SB Nation)",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "The Detroit Lions aren\u2019t hiding their intentions when it comes to their new punter/kick returner. After Tom Kennedy suffered a season-ending injury in their last game against the Arizona Cardinals, the Lions will replace him on both punt and kick return with newly signed receiver DeAndre Carter. Special teams coordinator Dave Fipp said they aren\u2019t [\u2026]",
+      "categories": [
+        "Detroit Lions News"
+      ],
+      "published_at": "2026-10-22T15:43:29+00:00",
+      "players": [
+        {
+          "id": "00-0035544",
+          "name": "Tom Kennedy",
+          "team": "DET",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "c9f68a3640c57ff4fc2c",
+      "headline": "Washington's 2024 Third-Round Pick Faces Make-Or-Break Moment Following Terry McLaurin Injury \u2014 Commanders Daily",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-luke-mccaffrey-terry-mclaurin-injury",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Luke McCaffrey has played eight offensive snaps through six weeks. With Terry McLaurin out for the season, will Washington give him a larger role?",
+      "categories": [],
+      "published_at": "2026-10-22T15:35:00+00:00",
+      "players": [
+        {
+          "id": "00-0035659",
+          "name": "Terry McLaurin",
+          "team": "WAS",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039355",
+          "name": "Luke McCaffrey",
+          "team": "WAS",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "0ed64cb3b26429f2a7e9",
+      "headline": "Everything Texans WR Tank Dell Said Ahead of His Long-Awaited Return",
+      "url": "https://www.si.com/nfl/texans/onsi/everything-texans-wr-tank-dell-said-ahead-of-his-long-awaited-return",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "The Houston Texans are getting Tank Dell back in the mix this weekend for the first time in over 650 days.",
+      "categories": [],
+      "published_at": "2026-10-22T15:15:12+00:00",
+      "players": [
+        {
+          "id": "00-0038977",
+          "name": "Tank Dell",
+          "team": "HOU",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "e63e7aaa38904b7666d5",
+      "headline": "2026 Game Preview: Buccaneers-Panthers, Week 7",
+      "url": "https://www.buccaneers.com/news/2026-game-preview-buccaneers-panthers-week-7",
+      "source_id": "news_official_tb",
+      "source": "Tampa Bay Buccaneers (official)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "As the Buccaneers figure out their own quarterback situation with Baker Mayfield attempting a return, Tampa Bay's defense is preparing to face a Panthers quarterback in Bryce Young who has taken a dramatic step forward in his production in Season Four",
+      "categories": [
+        "Featured",
+        "Game Preview",
+        "Week 7 2026 Panthers"
+      ],
+      "published_at": "2026-10-22T14:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "6982ec5c76ca073b2dde",
+      "headline": "Saquon Barkley update: Eagles running back in line to return for Cowboys game",
+      "url": "https://www.bleedinggreennation.com/news/187850/saquon-barkley-update-eagles-running-back-in-line-to-return-for-cowboys-game",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "In a season filled with bad injury news for the Philadelphia Eagles, here\u2019s a positive development! Saquon Barkley \u201cis in line to play\u201d in the Birds\u2019 Week 7 game against the Dallas Cowboys on Monday Night Football, according to a report from NFL insider Mike Garafolo. He adds that Barkley is expected to return to [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries",
+        "Philadelphia Eagles News"
+      ],
+      "published_at": "2026-10-22T14:10:18+00:00",
+      "players": [
+        {
+          "id": "00-0034844",
+          "name": "Saquon Barkley",
+          "team": "PHI",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "5e43c1f544dc9d7c6c88",
       "headline": "How Return of Josh Jacobs Will Impact Packers\u2019 Running Game, Depth Chart",
@@ -591,7 +774,7 @@
         "General",
         "Trey Hendrickson",
         "inline-news",
-        "Homepage Centerpiece"
+        "Homepage Latest Headlines"
       ],
       "published_at": "2026-10-22T13:39:28+00:00",
       "players": [
@@ -620,6 +803,30 @@
           "id": "00-0031408",
           "name": "Mike Evans",
           "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "a389ba286ffee51a9422",
+      "headline": "Another Rams starter lands on injury report",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-news/152878/rams-nate-landman-injury-update",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Linebacker Nate Landman could miss Week 7 after he entered the concussion protocol on Wednesday. The Los Angeles Rams have already lost several key starters this week, including Davante Adams and Kobie Turner, but now their top linebacker could be held out against the Las Vegas Raiders. What the Rams need is to be healthy, [\u2026]",
+      "categories": [
+        "Los Angeles Rams Injuries",
+        "Los Angeles Rams News"
+      ],
+      "published_at": "2026-10-22T13:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0031381",
+          "name": "Davante Adams",
+          "team": "LAR",
           "position": "WR"
         }
       ]
@@ -3767,250 +3974,6 @@
           "name": "Braelon Allen",
           "team": "NYJ",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "1de3a1dccce33d59a381",
-      "headline": "San Francisco 49ers receive massive last-minute boost ahead of Monday Night Football showdown with Washington Commanders",
-      "url": "https://atozsports.com/nfl/san-francisco-49ers-news/san-francisco-49ers-receive-massive-last-minute-boost-ahead-of-monday-night-football-showdown-with-washington-commanders/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "After missing an entire week of practice while dealing with multiple injuries, Mike Evans has delivered a major boost to the 49ers ahead of their matchup with Washington.",
-      "categories": [
-        "San Francisco 49ers News",
-        "American Football",
-        "Brock Purdy",
-        "Kyle Shanahan",
-        "Mike evans",
-        "San Francisco 49ers"
-      ],
-      "published_at": "2026-10-19T23:12:08+00:00",
-      "players": [
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "3e176cbc7c9218987dac",
-      "headline": "Washington Commanders vs San Francisco 49ers Inactives: Stefon Diggs will play",
-      "url": "https://www.hogshaven.com/washington-commanders-injuries/449600/washington-commanders-vs-san-francisco-49ers-inactives-stefon-diggs-mike-0evans",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Washington Commanders released their final injury report for Sunday\u2019s game on Saturday and then made several roster moves earlier on Monday. CB Trey Amos (ankle) RB Jeremy McNichols (quad), and LB Jordan Magee (hamstring) were activated from injured reserve. RB Bill Croskey-Merritt (groin) and OLB Javontae Jean-Baptiste were placed on injured reserve, taking them [\u2026]",
-      "categories": [
-        "Washington Commanders Injuries"
-      ],
-      "published_at": "2026-10-19T23:04:16+00:00",
-      "players": [
-        {
-          "id": "00-0033955",
-          "name": "Jeremy McNichols",
-          "team": "WAS",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "dcba1d57dcc07456f1e9",
-      "headline": "Injury Updates: Blake Grupe and Poona Ford sustain season-ending injuries vs. Cardinals; Davante Adams out 6-10 weeks after rupturing hamstring; latest on Myles Garrett and Trent McDuffie",
-      "url": "https://www.therams.com/news/rams-injury-updates-cardinals-week-6-2026-blake-grupe-torn-acl-out-for-season-poona-ford-davante-adams-kobie-turner-trent-mcduffie-raiders",
-      "source_id": "news_official_lar",
-      "source": "Los Angeles Rams (official)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "Rams head coach Sean McVay provides injury updates on kicker Blake Grupe, nose tackle Poona Ford, wide receiver Davante Adams, defensive end Kobie Turner, outside linebacker Myles Garrett and cornerback Trent McDuffie heading into Week 7 against the Raiders.",
-      "categories": [
-        "Football",
-        "Injury Update",
-        "Los Angeles Rams at Las Vegas Raiders (2026-REG-7)",
-        "Blake Grupe",
-        "Myles Garrett",
-        "Trent McDuffie",
-        "Davante Adams",
-        "Kobie Turner",
-        "Poona Ford"
-      ],
-      "published_at": "2026-10-19T23:01:06+00:00",
-      "players": [
-        {
-          "id": "00-0031381",
-          "name": "Davante Adams",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "c96c5ca0a60ba54b837b",
-      "headline": "Mike Evans and Kyle Juszczyk are active for the 49ers",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-news/164521/mike-evans-and-kyle-juszczyk-are-active-for-the-49ers",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The San Francisco 49ers released veteran offensive lineman Brett Toth from injured reserve as part of an injury settlement, per Matt Maiocco. That should tell us the team was not expecting Toth to return this season, while acknowledging they may play another player on the injured reserve. As for the inactive list, Mike Evans and [\u2026]",
-      "categories": [
-        "San Francisco 49ers Injuries",
-        "San Francisco 49ers News"
-      ],
-      "published_at": "2026-10-19T22:53:34+00:00",
-      "players": [
-        {
-          "id": "00-0029892",
-          "name": "Kyle Juszczyk",
-          "team": "SF",
-          "position": "RB"
-        },
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "6bd70ff23247e214dd11",
-      "headline": "Mike Evans Active, Kirk OUT vs. Commanders; Inactives Week 6 #WASvsSF",
-      "url": "https://www.49ers.com/news/mike-evans-active-kirk-out-vs-commanders-inactives-week-6-wasvssf",
-      "source_id": "news_official_sf",
-      "source": "San Francisco 49ers (official)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "Take a look at players who have been ruled out for the San Francisco 49ers Week 6 matchup versus the Washington Commanders.",
-      "categories": [
-        "Inactives",
-        "Latest App",
-        "English",
-        "English Articles",
-        "News",
-        "Sutter Health",
-        "Brooke Evans",
-        "Washington Commanders at San Francisco 49ers (2026-REG-6)"
-      ],
-      "published_at": "2026-10-19T22:44:25+00:00",
-      "players": [
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "bbbc9caa67b858140b9a",
-      "headline": "Josh Jacobs will practice with the Packers this week; Micah Parsons won\u2019t",
-      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/88386/josh-jacobs-will-practice-with-the-packers-this-week-micah-parsons-wont",
-      "source_id": "news_sbn_gb",
-      "source": "Acme Packing Company (SB Nation)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Green Bay Packers head coach Matt LaFleur announced during his Monday press conference that the team will have running back Josh Jacobs in practice this week, but that edge defender Micah Parsons will not be practicing, another sign that Parsons has yet to be medically cleared by the training staff. According to LaFleur, Jacobs has [\u2026]",
-      "categories": [
-        "Green Bay Packers injuries",
-        "Green Bay Packers News"
-      ],
-      "published_at": "2026-10-19T22:41:23+00:00",
-      "players": [
-        {
-          "id": "00-0035700",
-          "name": "Josh Jacobs",
-          "team": "GB",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "2bfe5a0bce285eedd3a1",
-      "headline": "Tank Dell Will Return vs. the Giants, DeMeco Ryans Confirms",
-      "url": "https://www.houstontexans.com/news/tank-dell-return-giants-demeco-ryans",
-      "source_id": "news_official_hou",
-      "source": "Houston Texans (official)",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "The Texans head coach said WR Tank Dell will play Sunday for the first time in over two years, and that his speed is already stressing defenders in practice.",
-      "categories": [
-        "Homepage CP",
-        "2026 REG7 - Giants",
-        "New York Giants at Houston Texans (2026-REG-7)",
-        "Tank Dell"
-      ],
-      "published_at": "2026-10-19T22:32:06+00:00",
-      "players": [
-        {
-          "id": "00-0038977",
-          "name": "Tank Dell",
-          "team": "HOU",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "b500a73566184e2395f1",
-      "headline": "Vikings Designate RB Jordan Mason to Return to Practice",
-      "url": "https://www.dailynorseman.com/minnesota-vikings-injuries/100510/minnesota-vikings-designate-jordan-mason-return-to-practice",
-      "source_id": "news_sbn_min",
-      "source": "Daily Norseman (SB Nation)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Minnesota Vikings are beginning their preparations for their Week 7 matchup with the Indianapolis Colts at U.S. Bank Stadium, and they could be getting some reinforcements in the backfield. The team has announced that running back Jordan Mason has been designated to return to practice by the team, opening his 21-day window to return [\u2026]",
-      "categories": [
-        "Minnesota Vikings Injuries",
-        "Minnesota Vikings News"
-      ],
-      "published_at": "2026-10-19T21:46:57+00:00",
-      "players": [
-        {
-          "id": "00-0037525",
-          "name": "Jordan Mason",
-          "team": "MIN",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "5d82aebcbad2e51a2bef",
-      "headline": "News & Notes: Jesse Minter Gives Health Update on Lamar Jackson",
-      "url": "https://www.baltimoreravens.com/news/jesse-minter-lamar-jackson-ankle-still-day-day-monday-week-7-injuries-rashod-bateman-cam-jurgens-trey-hendrickson-tyler-loop-critical-misses",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Minter discusses injuries to other Ravens, breaks down Tyler Loop's missed field goal, and what occurred in coverage on Cleveland's 33-yard pass play that set up the game-winning field goal.",
-      "categories": [
-        "News & Notes",
-        "General",
-        "Clifton Brown",
-        "Lamar Jackson",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-10-19T21:38:31+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
         }
       ]
     }
