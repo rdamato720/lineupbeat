@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T20:01:01.519622+00:00",
+  "updated_at": "2026-10-22T21:35:13.375100+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T20:00:56+00:00",
+      "latest_entry_at": "2026-10-22T21:34:18+00:00",
       "stale": false
     },
     {
@@ -22,7 +22,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T14:45:17+00:00",
+      "latest_entry_at": "2026-10-22T19:57:43+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T19:59:02+00:00",
+      "latest_entry_at": "2026-10-22T21:01:45+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T19:39:22+00:00",
+      "latest_entry_at": "2026-10-22T21:12:13+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T14:49:35+00:00",
+      "latest_entry_at": "2026-10-22T20:03:00+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T13:25:00+00:00",
+      "latest_entry_at": "2026-10-22T20:35:00+00:00",
       "stale": false
     },
     {
@@ -94,7 +94,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-22T14:00:00+00:00",
+      "latest_entry_at": "2026-10-22T20:30:01+00:00",
       "stale": false
     },
     {
@@ -116,9 +116,9 @@
     {
       "source_id": "news_official_det",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T17:43:48+00:00",
+      "latest_entry_at": "2026-10-22T20:57:19+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-22T14:20:00+00:00",
+      "latest_entry_at": "2026-10-22T20:47:11+00:00",
       "stale": false
     },
     {
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T13:49:33+00:00",
+      "latest_entry_at": "2026-10-22T20:00:50+00:00",
       "stale": false
     },
     {
@@ -158,7 +158,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T16:00:02+00:00",
+      "latest_entry_at": "2026-10-22T21:14:00+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-22T15:00:00+00:00",
+      "latest_entry_at": "2026-10-22T21:22:35+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T17:40:57+00:00",
+      "latest_entry_at": "2026-10-22T21:01:34+00:00",
       "stale": false
     },
     {
@@ -198,7 +198,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T18:27:10+00:00",
+      "latest_entry_at": "2026-10-22T21:20:00+00:00",
       "stale": false
     },
     {
@@ -206,7 +206,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T19:11:00+00:00",
+      "latest_entry_at": "2026-10-22T20:00:00+00:00",
       "stale": false
     },
     {
@@ -222,13 +222,13 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T19:41:00+00:00",
+      "latest_entry_at": "2026-10-22T20:05:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_nyj",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
       "latest_entry_at": "2026-10-22T20:30:00+00:00",
       "stale": false
@@ -236,9 +236,9 @@
     {
       "source_id": "news_official_phi",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-22T19:45:31+00:00",
+      "latest_entry_at": "2026-10-22T20:30:00+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T19:25:00+00:00",
+      "latest_entry_at": "2026-10-22T21:07:00+00:00",
       "stale": false
     },
     {
@@ -268,7 +268,7 @@
     {
       "source_id": "news_official_tb",
       "ok": true,
-      "eligible": 9,
+      "eligible": 10,
       "error": "",
       "latest_entry_at": "2026-10-22T21:00:00+00:00",
       "stale": false
@@ -278,23 +278,23 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-21T20:58:18+00:00",
+      "latest_entry_at": "2026-10-22T20:17:11+00:00",
       "stale": false
     },
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-10-22T20:00:56+00:00",
+      "latest_entry_at": "2026-10-22T21:34:18+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T19:59:02+00:00",
+      "latest_entry_at": "2026-10-22T21:01:45+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T15:19:03+00:00",
+      "latest_entry_at": "2026-10-22T19:20:25+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T16:00:00+00:00",
+      "latest_entry_at": "2026-10-22T19:21:54+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T17:12:44+00:00",
+      "latest_entry_at": "2026-10-22T20:22:25+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T18:05:00+00:00",
+      "latest_entry_at": "2026-10-22T20:29:24+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T18:30:00+00:00",
+      "latest_entry_at": "2026-10-22T20:31:14+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T19:13:31+00:00",
+      "latest_entry_at": "2026-10-22T20:58:01+00:00",
       "stale": false
     },
     {
@@ -454,23 +454,23 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T13:15:00+00:00",
+      "latest_entry_at": "2026-10-22T18:53:03+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T16:00:00+00:00",
+      "latest_entry_at": "2026-10-22T18:25:58+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T18:03:22+00:00",
+      "latest_entry_at": "2026-10-22T20:06:24+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T17:00:00+00:00",
+      "latest_entry_at": "2026-10-22T16:00:00+00:00",
       "stale": false
     },
     {
@@ -524,9 +524,9 @@
     {
       "source_id": "news_sbn_ari",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T18:37:03+00:00",
+      "latest_entry_at": "2026-10-22T18:05:53+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T19:15:14+00:00",
+      "latest_entry_at": "2026-10-22T18:32:42+00:00",
       "stale": false
     },
     {
@@ -542,19 +542,468 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T18:12:57+00:00",
+      "latest_entry_at": "2026-10-22T19:30:28+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T17:56:26+00:00",
+      "latest_entry_at": "2026-10-22T19:05:53+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "4f9501b29053c5c8d211",
+      "headline": "Updated Vikings vs. Colts Injury Report for Week 7 of 2026",
+      "url": "https://www.vikings.com/news/colts-injury-report-week-7-2026-nfl-season",
+      "source_id": "news_official_min",
+      "source": "Minnesota Vikings (official)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "",
+      "categories": [
+        "News - Injury Report",
+        "Injury Report",
+        "News - Index",
+        "colts-at-vikings-2026-reg-7",
+        "Indianapolis Colts at Minnesota Vikings (2026-REG-7)"
+      ],
+      "published_at": "2026-10-22T21:20:00+00:00",
+      "players": []
+    },
+    {
+      "id": "f891c9b67ece591f9e28",
+      "headline": "Week 7 Injury Report | Chiefs vs. Seahawks",
+      "url": "https://www.chiefs.com/news/week-7-injury-report-chiefs-vs-seahawks-2026",
+      "source_id": "news_official_kc",
+      "source": "Kansas City Chiefs (official)",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "Injuries for the Chiefs Week 7 matchup against the Seattle Seahawks",
+      "categories": [
+        "Injury Report",
+        "Kansas City Chiefs at Seattle Seahawks (2026-REG-7)",
+        "all-content"
+      ],
+      "published_at": "2026-10-22T21:14:00+00:00",
+      "players": []
+    },
+    {
+      "id": "61443f3b5cb9a6cea654",
+      "headline": "George Pickens among multiple starters on Cowboys\u2019 initial injury report for primetime matchup vs Eagles",
+      "url": "https://atozsports.com/nfl/dallas-cowboys-news/george-pickens-joins-injury-report-week-7-eagles/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys revealed their initial injury report ahead of their Week 7 Monday Night Football matchup against the division rival Philadelphia Eagles.",
+      "categories": [
+        "Dallas Cowboys News",
+        "Dallas Cowboys",
+        "Dallas Cowboys Injury News",
+        "George Pickens",
+        "Tyler Guyton"
+      ],
+      "published_at": "2026-10-22T21:01:45+00:00",
+      "players": [
+        {
+          "id": "00-0037247",
+          "name": "George Pickens",
+          "team": "DAL",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "08d4bc5d4879420aa852",
+      "headline": "Bengals Injury Report: Solid Cincinnati Health Continues as Attention Focuses on Lamar Jackson",
+      "url": "https://www.si.com/nfl/bengals/onsi/bengals-injury-report-solid-cincinnati-health-continues-as-attention-focuses-on-lamar-jackson-01m5hjw4xxxq",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "Bengals Injury Report: Solid Cincinnati Health Continues As Attention Focuses on Lamar Jackson",
+      "categories": [],
+      "published_at": "2026-10-22T21:00:21+00:00",
+      "players": []
+    },
+    {
+      "id": "e63e7aaa38904b7666d5",
+      "headline": "2026 Game Preview: Buccaneers-Panthers, Week 7",
+      "url": "https://www.buccaneers.com/news/2026-game-preview-buccaneers-panthers-week-7",
+      "source_id": "news_official_tb",
+      "source": "Tampa Bay Buccaneers (official)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "As the Buccaneers figure out their own quarterback situation with Baker Mayfield attempting a return, Tampa Bay's defense is preparing to face a Panthers quarterback in Bryce Young who has taken a dramatic step forward in his production in Season Four",
+      "categories": [
+        "Featured",
+        "Game Preview",
+        "Week 7 2026 Panthers"
+      ],
+      "published_at": "2026-10-22T21:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "4ff43dd48d545189c953",
+      "headline": "Bucs Activate WR Sills, Place LB Rozeboom on Injured Reserve",
+      "url": "https://www.buccaneers.com/news/bucs-activate-wr-sills-place-lb-rozeboom-on-injured-reserve",
+      "source_id": "news_official_tb",
+      "source": "Tampa Bay Buccaneers (official)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "WR David Sills has come off injured reserve and is now eligible to play on Sunday against the Panthers, while LB Christian Rozeboom will miss at least four games after a finger injury pushed him to IR",
+      "categories": [
+        "Featured",
+        "Roster Moves",
+        "Week 7 2026 Panthers",
+        "Christian Rozeboom"
+      ],
+      "published_at": "2026-10-22T21:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0035359",
+          "name": "David Sills",
+          "team": "TB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "6b8ab8048b0629ed047a",
+      "headline": "Giants Injury Report: O-line Looking Better, but Two Key Defenders Still Sidelined",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-thursday-injury-report-texans-01m5jnqef9jh",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Andrew Thomas, Jermaine Eluemunor, and Marcus Mbow all practiced on a limited basis, but Tremaine Edmunds and Greg Newsome II missed a second straight day.",
+      "categories": [],
+      "published_at": "2026-10-22T20:56:31+00:00",
+      "players": []
+    },
+    {
+      "id": "67fcd1e7005e6359c9a0",
+      "headline": "Dallas Cowboys Injury Report For Week 7 vs Eagles: George Pickens, 10 Others Listed",
+      "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-injury-report-nfl-week-7-eagles-george-pickens-thursday",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "A total of 11 players were listed on the Dallas Cowboys' first injury report for Week 7 against the Philadelphia Eagles, including star wide receiver George Pickens,.",
+      "categories": [],
+      "published_at": "2026-10-22T20:52:22+00:00",
+      "players": [
+        {
+          "id": "00-0037247",
+          "name": "George Pickens",
+          "team": "DAL",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "fcb9b39445e1e5f29ac4",
+      "headline": "Walter Nolen, Jeremiyah Love and More Cardinals Stars Miss Practice",
+      "url": "https://www.si.com/nfl/cardinals/onsi/walter-nolen-jeremiyah-love-more-arizona-cardinals-stars-miss-practice",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "The Arizona Cardinals could be without several of their top players.",
+      "categories": [],
+      "published_at": "2026-10-22T20:45:17+00:00",
+      "players": [
+        {
+          "id": "00-0041027",
+          "name": "Jeremiyah Love",
+          "team": "ARI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "32bba59033610b59aa10",
+      "headline": "Ravens Injury Report Reveals Major Development For Lamar Jackson",
+      "url": "https://www.si.com/nfl/ravens/onsi/ravens-injury-report-reveals-major-development-for-lamar-jackson-01m5j9cw6hs3",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The NFL is watching everything the Ravens two-time MVP does very closely as he tries to return from an ankle injury to face the Bengals",
+      "categories": [],
+      "published_at": "2026-10-22T20:42:45+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "ce6b0a1e8d17a6e24757",
+      "headline": "Packers-Lions Thursday Injury Report: Three Huge Updates for Green Bay",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-lions-thursday-injury-report-three-huge-updates-for-green-bay",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Here are the latest injury reports for the Green Bay Packers and Detroit Lions as they get ready for Sunday\u2019s game at Ford Field. There were two additions for the Packers.",
+      "categories": [],
+      "published_at": "2026-10-22T20:38:44+00:00",
+      "players": []
+    },
+    {
+      "id": "deee868a1b4aeed6ed81",
+      "headline": "Week 7 Injury Report | Bengals at Ravens",
+      "url": "https://www.bengals.com/news/bengals-ravens-week-7-2026-injury-report",
+      "source_id": "news_official_cin",
+      "source": "Cincinnati Bengals (official)",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "Take a look at the injury reports of the Cincinnati Bengals and the Baltimore Ravens leading into Week 7 of the 2026 season.",
+      "categories": [
+        "latest news",
+        "centerpiece",
+        "Injury Report",
+        "latest stories",
+        "Cincinnati Bengals at Baltimore Ravens (2026-REG-7)"
+      ],
+      "published_at": "2026-10-22T20:30:01+00:00",
+      "players": []
+    },
+    {
+      "id": "cfcc963c681060660922",
+      "headline": "Examining the Complex Blame Share for Titans' Offense Between Cam Ward and Brian Daboll",
+      "url": "https://www.si.com/nfl/titans/onsi/examining-the-complex-blame-share-for-titans-offense-between-cam-ward-and-brian-daboll-01m5jfsxenn0",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Cam Ward's second-season struggles complicate the Titans' rebuild beyond the guys on their roster, and Brian Daboll himself isn't satisfied.",
+      "categories": [],
+      "published_at": "2026-10-22T20:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0040676",
+          "name": "Cam Ward",
+          "team": "TEN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "3deac021565f38819f7c",
+      "headline": "Eagles sign RB Jaydon Blue, G Evan Neal, and LB Anfernee Orji to the practice squad",
+      "url": "https://www.philadelphiaeagles.com/news/eagles-sign-jaydon-blue-evan-neal-anfernee-orji-to-the-practice-squad-2026-nfl-week-7-cowboys",
+      "source_id": "news_official_phi",
+      "source": "Philadelphia Eagles (official)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The team has also waived TE E.J. Jenkins.",
+      "categories": [
+        "All News-archived",
+        "NFL.com Feature",
+        "2026 Week 7 vs. Cowboys",
+        "Team Roster Content",
+        "Jaydon Blue",
+        "Evan Neal",
+        "Anfernee Orji"
+      ],
+      "published_at": "2026-10-22T20:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0038498",
+          "name": "E.J. Jenkins",
+          "team": "PHI",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "e52ec6ffe9d6816e1067",
+      "headline": "Mike Washington Jr. not spotted during Las Vegas Raiders\u2019 Thursday practice ahead of Week 7 Los Angeles Rams\u2019 matchup",
+      "url": "https://www.silverandblackpride.com/las-vegas-raiders-injuries/143784/raiders-injury-report-week-7-rams-mike-washington",
+      "source_id": "news_sbn_lv",
+      "source": "Silver And Black Pride (SB Nation)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Las Vegas Raiders running back Mike Washington Jr. was absent during the media viewing portion of Thursday\u2019s practice ahead of the Week 7 matchup against the Los Angeles Rams, according to The Athletic\u2019s Sam Warren. Washington was listed as a limited participant with foot and back injuries during Wednesday\u2019s session. The Raiders haven\u2019t released Thursday\u2019s [\u2026]",
+      "categories": [
+        "Las Vegas Raiders Injuries",
+        "Las Vegas Raiders News"
+      ],
+      "published_at": "2026-10-22T20:29:24+00:00",
+      "players": [
+        {
+          "id": "00-0040878",
+          "name": "Mike Washington",
+          "team": "LV",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "2a4b825e298dee40b402",
+      "headline": "Indianapolis Colts Injury Report: Week 7 Thursday",
+      "url": "https://www.stampedeblue.com/indianapolis-colts-injuries/129086/indianapolis-colts-injury-report-week-7-thursday",
+      "source_id": "news_sbn_ind",
+      "source": "Stampede Blue (SB Nation)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Indianapolis Colts today released their Thursday injury report ahead of week 7 of the NFL season against the Minnesota Vikings. Wide receiver Keenan Allen, running back Jonathan Taylor and cornerback Charvarius Ward all returned to full participation today after being rested yesterday at practice. Linebacker Bryce Boettcher (groin) and Jaylon Carlies (ribs) were both [\u2026]",
+      "categories": [
+        "Indianapolis Colts Injuries",
+        "Indianapolis Colts News"
+      ],
+      "published_at": "2026-10-22T20:22:25+00:00",
+      "players": [
+        {
+          "id": "00-0036223",
+          "name": "Jonathan Taylor",
+          "team": "IND",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "aff252132e2d8433df80",
+      "headline": "Packers-Lions Injury Report | Oct. 22, 2026",
+      "url": "https://www.packers.com/news/packers-lions-injury-report-oct-22-2026",
+      "source_id": "news_official_gb",
+      "source": "Green Bay Packers (official)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "",
+      "categories": [
+        "News: Injury Report",
+        "News: National Feature",
+        "Homepage CP",
+        "News: All News",
+        "Green Bay Packers at Detroit Lions (2026-REG-7)"
+      ],
+      "published_at": "2026-10-22T20:17:53+00:00",
+      "players": []
+    },
+    {
+      "id": "7ae29bb2aa4ab36b915c",
+      "headline": "Week 7 injury report: Lions healthy; Packers RB Josh Jacobs\u2019 first practice of season",
+      "url": "https://www.prideofdetroit.com/detroit-lions-injuries/177719/week-7-injury-report-lions-healthy-packers-rb-josh-jacobs-first-practice-of-season",
+      "source_id": "news_sbn_det",
+      "source": "Pride Of Detroit (SB Nation)",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "The Detroit Lions (3-2) and Green Bay Packers (4-2) will square off in a division rivalry game in Week 7, and both teams were back on the practice field on Thursday. On the second day this week, the Lions practiced all 51 players on their active roster, as well as the two players expected to [\u2026]",
+      "categories": [
+        "Detroit Lions Injuries",
+        "Detroit Lions News"
+      ],
+      "published_at": "2026-10-22T20:06:24+00:00",
+      "players": []
+    },
+    {
+      "id": "dd6b027b8c3f52bbd79e",
+      "headline": "Detroit Lions 2026 Week 7 Thursday Injury Report",
+      "url": "https://www.si.com/nfl/lions/onsi/detroit-lions-2026-week-seven-thursday-injury-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "Examining the Detroit Lions second released Week 7 injury report ahead of Packers game.",
+      "categories": [],
+      "published_at": "2026-10-22T20:05:19+00:00",
+      "players": []
+    },
+    {
+      "id": "9f661147afcbc2002be3",
+      "headline": "Giants vs. Texans Week 7 Injury Report: Tremaine Edmunds DNP, Andrew Thomas LP",
+      "url": "https://www.giants.com/news/giants-vs-texans-week-7-injury-report-tremaine-edmunds-jevon-holland-jermaine-eluemunor-andrew-thomas",
+      "source_id": "news_official_nyg",
+      "source": "New York Giants (official)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "View the injury report for the Week 7 matchup between the New York Giants (3-2-1) and Houston Texans (2-4).",
+      "categories": [
+        "Injury Report",
+        "homepage"
+      ],
+      "published_at": "2026-10-22T20:00:00+00:00",
+      "players": []
+    },
+    {
+      "id": "4c59dfe93e0710023857",
+      "headline": "Lions vs. Packers practice report: Oct. 22",
+      "url": "https://www.detroitlions.com/news/lions-vs-packers-practice-report-oct-22-yasin-branch-mays",
+      "source_id": "news_official_det",
+      "source": "Detroit Lions (official)",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "Lions vs. Packers practice report for Thursday, October 22.",
+      "categories": [
+        "NEWS - Practice Report",
+        "Homepage - Centerpiece Package"
+      ],
+      "published_at": "2026-10-22T20:00:00+00:00",
+      "players": []
+    },
+    {
+      "id": "2ff7f21e98005c3676df",
+      "headline": "Jets Injury Report | Week 7 vs. Dolphins - Thursday",
+      "url": "https://www.newyorkjets.com/news/jets-injury-report-week-7-vs-dolphins-thursday-10-22-2026",
+      "source_id": "news_official_nyj",
+      "source": "New York Jets (official)",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "RB Breece Hall (Quad) Limited at Practice",
+      "categories": [
+        "Injury Report",
+        "News",
+        "Latest Headlines"
+      ],
+      "published_at": "2026-10-22T20:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0038120",
+          "name": "Breece Hall",
+          "team": "NYJ",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "2e17b20896ccc60e2ee0",
       "headline": "Practice Notebook: Several, including Justin Walley, return to practice",
@@ -693,6 +1142,37 @@
       "players": []
     },
     {
+      "id": "33e4f9b6f910838be644",
+      "headline": "Seahawks TE Elijah Arroyo to undergo season-ending shoulder surgery",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-depth-chart/177967/nfl-news-seahawks-elijah-arroyo-injury-update-season-ending-shoulder-surgery",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seahawks announced a couple of roster transactions ahead of their Week 7 matchup against the Kansas City Chiefs. The happy and expected news was Zach Charbonnet being activated from the PUP list. The bad news is Elijah Arroyo has been placed on injured reserve. ESPN\u2019s Adam Schefter reported on Thursday that Arroyo will have [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News",
+        "Seattle Seahawks Roster"
+      ],
+      "published_at": "2026-10-22T19:05:53+00:00",
+      "players": [
+        {
+          "id": "00-0039165",
+          "name": "Zach Charbonnet",
+          "team": "SEA",
+          "position": "RB"
+        },
+        {
+          "id": "00-0040739",
+          "name": "Elijah Arroyo",
+          "team": "SEA",
+          "position": "TE"
+        }
+      ]
+    },
+    {
       "id": "b538b7efd0fe981ae982",
       "headline": "Eagles reportedly waive E.J. Jenkins",
       "url": "https://www.bleedinggreennation.com/news/187894/eagles-reportedly-waive-e-j-jenkins",
@@ -712,6 +1192,36 @@
           "name": "E.J. Jenkins",
           "team": "PHI",
           "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "e8bcdebb1f49ac6f5e82",
+      "headline": "Jeremiyah Love expected to still be out with ankle injury against Broncos",
+      "url": "https://www.revengeofthebirds.com/arizona-cardinals-news/95935/jeremiyah-love-expected-to-stil-be-out-with-ankle-injury-against-broncos",
+      "source_id": "news_sbn_ari",
+      "source": "Revenge of the Birds (SB Nation)",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "The Arizona Cardinals did not see Jeremiyah Love against the Los Angeles Rams, who are a good defense but we saw maybe the most impressive rushing attack of the season from the Mike LaFleur offense. Led by Bam Knight, the Arizona Cardinals offense seemed to be more inline with what we expected the LaFleur offense [\u2026]",
+      "categories": [
+        "Arizona Cardinals Injuries",
+        "Arizona Cardinals News"
+      ],
+      "published_at": "2026-10-22T18:05:53+00:00",
+      "players": [
+        {
+          "id": "00-0037157",
+          "name": "Bam Knight",
+          "team": "ARI",
+          "position": "RB"
+        },
+        {
+          "id": "00-0041027",
+          "name": "Jeremiyah Love",
+          "team": "ARI",
+          "position": "RB"
         }
       ]
     },
@@ -792,7 +1302,7 @@
     },
     {
       "id": "e1cfee6a33e5029b2925",
-      "headline": "Lamar Jackson Takes the Field at the Start of Practice",
+      "headline": "Lamar Jackson Takes a Step Forward, But Still Limited at Practice",
       "url": "https://www.baltimoreravens.com/news/lamar-jackson-injury-report-ravens-practice-start-ankle-2026",
       "source_id": "news_official_bal",
       "source": "Baltimore Ravens (official)",
@@ -870,31 +1380,6 @@
           "name": "Mitchell Evans",
           "team": "CAR",
           "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "e63e7aaa38904b7666d5",
-      "headline": "2026 Game Preview: Buccaneers-Panthers, Week 7",
-      "url": "https://www.buccaneers.com/news/2026-game-preview-buccaneers-panthers-week-7",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "As the Buccaneers figure out their own quarterback situation with Baker Mayfield attempting a return, Tampa Bay's defense is preparing to face a Panthers quarterback in Bryce Young who has taken a dramatic step forward in his production in Season Four",
-      "categories": [
-        "Featured",
-        "Game Preview",
-        "Week 7 2026 Panthers"
-      ],
-      "published_at": "2026-10-22T16:45:00+00:00",
-      "players": [
-        {
-          "id": "00-0034855",
-          "name": "Baker Mayfield",
-          "team": "TB",
-          "position": "QB"
         }
       ]
     },
@@ -1820,24 +2305,6 @@
       "players": []
     },
     {
-      "id": "f891c9b67ece591f9e28",
-      "headline": "Week 7 Injury Report | Chiefs vs. Seahawks",
-      "url": "https://www.chiefs.com/news/week-7-injury-report-chiefs-vs-seahawks-2026",
-      "source_id": "news_official_kc",
-      "source": "Kansas City Chiefs (official)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Injuries for the Chiefs Week 7 matchup against the Seattle Seahawks",
-      "categories": [
-        "Injury Report",
-        "Kansas City Chiefs at Seattle Seahawks (2026-REG-7)",
-        "all-content"
-      ],
-      "published_at": "2026-10-21T22:38:00+00:00",
-      "players": []
-    },
-    {
       "id": "f89ec2af0698bcecb177",
       "headline": "Matt LaFleur, Josh Jacobs speak after running back\u2019s reinstatement",
       "url": "https://www.acmepackingcompany.com/green-bay-packers-news/88504/matt-lafleur-josh-jacobs-speak-after-running-backs-reinstatement",
@@ -2019,26 +2486,6 @@
       "players": []
     },
     {
-      "id": "4f9501b29053c5c8d211",
-      "headline": "Initial Vikings vs. Colts Injury Report for Week 7 of 2026",
-      "url": "https://www.vikings.com/news/colts-injury-report-week-7-2026-nfl-season",
-      "source_id": "news_official_min",
-      "source": "Minnesota Vikings (official)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "",
-      "categories": [
-        "News - Injury Report",
-        "Injury Report",
-        "News - Index",
-        "colts-at-vikings-2026-reg-7",
-        "Indianapolis Colts at Minnesota Vikings (2026-REG-7)"
-      ],
-      "published_at": "2026-10-21T21:20:12+00:00",
-      "players": []
-    },
-    {
       "id": "b2f12070f76ac6ac1b08",
       "headline": "Week 7 Injury Report | Texans vs Giants",
       "url": "https://www.houstontexans.com/news/week-7-injury-report-texans-vs-giants",
@@ -2069,26 +2516,6 @@
       "feed_description": "Bengals Injury Report: Secondary Piece Working Back to Field, Lamar Jackson's Latest Status Revealed",
       "categories": [],
       "published_at": "2026-10-21T20:54:37+00:00",
-      "players": []
-    },
-    {
-      "id": "deee868a1b4aeed6ed81",
-      "headline": "Week 7 Injury Report | Bengals at Ravens",
-      "url": "https://www.bengals.com/news/bengals-ravens-week-7-2026-injury-report",
-      "source_id": "news_official_cin",
-      "source": "Cincinnati Bengals (official)",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "Take a look at the injury reports of the Cincinnati Bengals and the Baltimore Ravens leading into Week 7 of the 2026 season.",
-      "categories": [
-        "latest news",
-        "centerpiece",
-        "Injury Report",
-        "latest stories",
-        "Cincinnati Bengals at Baltimore Ravens (2026-REG-7)"
-      ],
-      "published_at": "2026-10-21T20:42:01+00:00",
       "players": []
     },
     {
@@ -2273,23 +2700,6 @@
       "feed_description": "Examining the Detroit Lions first released Week 7 injury report ahead of Packers game.",
       "categories": [],
       "published_at": "2026-10-21T20:00:15+00:00",
-      "players": []
-    },
-    {
-      "id": "9f661147afcbc2002be3",
-      "headline": "Giants vs. Texans Week 7 Injury Report: Tremaine Edmunds, Jev\u00f3n Holland DNP",
-      "url": "https://www.giants.com/news/giants-vs-texans-week-7-injury-report-tremaine-edmunds-jevon-holland-jermaine-eluemunor-andrew-thomas",
-      "source_id": "news_official_nyg",
-      "source": "New York Giants (official)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "View the injury report for the Week 7 matchup between the New York Giants (3-2-1) and Houston Texans (2-4).",
-      "categories": [
-        "Injury Report",
-        "homepage"
-      ],
-      "published_at": "2026-10-21T20:00:00+00:00",
       "players": []
     },
     {
@@ -3463,489 +3873,6 @@
           "name": "Caleb Williams",
           "team": "CHI",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "b7dfb670efca864147af",
-      "headline": "Cyrus Allen, Andrew Armstrong proved to be part of the Kansas City Chiefs\u2019 answer at wide receiver after Week 6 win over Chargers",
-      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-cyrus-allen-andrew-armstrong-proved-wide-receiver-answer-week-6-win-chargers/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs leaned on a practice squad call-up and a rookie with Tyquan Thornton on injured reserve and Rashee Rice sidelined. Here's what stood out from their Week 6 snaps.",
-      "categories": [
-        "Kansas City Chiefs News",
-        "American Football",
-        "Andrew Armstrong",
-        "Andy Reid",
-        "Chiefs Injuries",
-        "Cyrus Allen",
-        "Jalen Royals",
-        "Kansas City Chiefs",
-        "Patrick Mahomes",
-        "Rashee Rice",
-        "Tyquan Thornton"
-      ],
-      "published_at": "2026-10-20T17:50:15+00:00",
-      "players": [
-        {
-          "id": "00-0038104",
-          "name": "Tyquan Thornton",
-          "team": "KC",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039067",
-          "name": "Rashee Rice",
-          "team": "KC",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040298",
-          "name": "Andrew Armstrong",
-          "team": "KC",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040890",
-          "name": "Cyrus Allen",
-          "team": "KC",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "d2c830d7fcc85b55b6f5",
-      "headline": "Detroit Lions Week 7 Tuesday Practice Report Sees Full Attendance",
-      "url": "https://www.si.com/nfl/lions/onsi/detroit-lions-week-seven-tuesday-practice-report-sees-full-attendance",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Entire Detroit Lions roster and practice squad is accounted for at Tuesday practice.",
-      "categories": [],
-      "published_at": "2026-10-20T17:45:42+00:00",
-      "players": []
-    },
-    {
-      "id": "c39ebdc90d48d86b6c66",
-      "headline": "Latest update on injured Steelers wide receiver could mean Pittsburgh has no choice but to make a trade before the deadline",
-      "url": "https://atozsports.com/nfl/pittsburgh-steelers-news/michael-pittman-jr-could-miss-rest-of-season-wr-trade-deadline-rumors/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "Bringing back Marquez Valdes-Scantling won't fix the Pittsburgh Steelers' wide receiver room, especially with Michael Pittman Jr.'s status in question. We ran the numbers on our trade simulator, and one struggling AFC team stands out as a partner.",
-      "categories": [
-        "NFL",
-        "Pittsburgh Steelers News",
-        "American Football",
-        "Steelers News"
-      ],
-      "published_at": "2026-10-20T17:11:05+00:00",
-      "players": [
-        {
-          "id": "00-0036252",
-          "name": "Michael Pittman",
-          "team": "PIT",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "094f2cbb5c7513c561af",
-      "headline": "Bengals make 4 roster moves",
-      "url": "https://www.cincyjungle.com/cincinnati-bengals-roster/202706/russ-yeast-emany-johnson-josh-kattus-practice-squad",
-      "source_id": "news_sbn_cin",
-      "source": "Cincy Jungle (SB Nation)",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "The Cincinnati Bengals announced Tuesday that they signed safety Russ Yeast from the practice squad to the active roster. In addition, the team released safety Isaiah Nwokobia from the practice squad. Finally, the Bengals signed linebacker Emany Johnson and tight end Josh Kattus to the practice squad. Yeast, a third-year player, was elevated from the [\u2026]",
-      "categories": [
-        "Cincinnati Bengals News",
-        "Cincinnati Bengals roster"
-      ],
-      "published_at": "2026-10-20T16:53:33+00:00",
-      "players": [
-        {
-          "id": "00-0041246",
-          "name": "Josh Kattus",
-          "team": "CIN",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "d1ba3e07eb4a2a0d4ec3",
-      "headline": "5 Wide Receivers Rams Should Trade For to Replace Davante Adams, Including One Who Could Save Their Season",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-wide-receiver-trade-targets-davante-adams-injury",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Rams need a replacement for Davante Adams. Here are five wide receivers they should target in a trade, including one who could save their season.",
-      "categories": [],
-      "published_at": "2026-10-20T15:56:08+00:00",
-      "players": [
-        {
-          "id": "00-0031381",
-          "name": "Davante Adams",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "9dcb02bbb05d10b01750",
-      "headline": "The 49ers Can Breathe a Sigh of Relief After Mike Evans Injury Update",
-      "url": "https://www.si.com/nfl/49ers/onsi/49ers-breathe-sigh-relief-after-mike-evans-injury-update",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "It could have been much worse.",
-      "categories": [],
-      "published_at": "2026-10-20T15:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "83de035c058c09096dc9",
-      "headline": "Bills' Bye Week Injury Update: Will DJ Moore, Dalton Kincaid Return Next Game?",
-      "url": "https://www.si.com/nfl/bills/onsi/injuries-bills-bye-week-update-will-dj-moore-dalton-kincaid-return-next-game-vs-ravens",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "There are four key players to monitor for injuries when the Buffalo Bills come out of their bye week to host the Baltimore Ravens on November 1.",
-      "categories": [],
-      "published_at": "2026-10-20T14:52:01+00:00",
-      "players": [
-        {
-          "id": "00-0034827",
-          "name": "DJ Moore",
-          "team": "BUF",
-          "position": "WR"
-        },
-        {
-          "id": "00-0038933",
-          "name": "Dalton Kincaid",
-          "team": "BUF",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "90355a3ba5391fb97135",
-      "headline": "Bengals have 2 options to fill Tanner Hudson\u2019s roster spot after season-ending injury, and one makes far more sense",
-      "url": "https://atozsports.com/nfl/cincinnati-bengals-news/tanner-hudson-injured-reserve-jalen-davis-brian-parker/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "The Cincinnati Bengals made it official Monday by placing tight end Tanner Hudson on the Reserve/Injured list with a season-ending pectoral injury. Cincinnati did not make a corresponding move to immediately fill Hudson's spot, and the Bengals will soon have a decision to make.",
-      "categories": [
-        "Cincinnati Bengals News",
-        "American Football",
-        "Cincinnati Bengals"
-      ],
-      "published_at": "2026-10-20T14:34:57+00:00",
-      "players": [
-        {
-          "id": "00-0034613",
-          "name": "Tanner Hudson",
-          "team": "CIN",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "4ae9473410963b9c368b",
-      "headline": "What to Expect From Texans WR Tank Dell in His Return vs. Giants",
-      "url": "https://www.si.com/nfl/texans/onsi/what-to-expect-from-texans-wr-tank-dell-in-his-return-vs-giants",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "What expectations should we have for Tank Dell in his first game back in nearly two years?",
-      "categories": [],
-      "published_at": "2026-10-20T14:23:29+00:00",
-      "players": [
-        {
-          "id": "00-0038977",
-          "name": "Tank Dell",
-          "team": "HOU",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "58aba004d72b88ae89e5",
-      "headline": "Bengals Sign Russ Yeast to Active Roster, Josh Kattus and Emany Johnson Added to Practice Squad | BENGALS ROSTER UPDATE",
-      "url": "https://www.bengals.com/news/russ-yeast-active-roster-josh-kattus-emany-johnson-practice-squad-roster-update",
-      "source_id": "news_official_cin",
-      "source": "Cincinnati Bengals (official)",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "The Bengals today made multiple roster moves.",
-      "categories": [
-        "latest news",
-        "Press Release",
-        "Transactions",
-        "roster moves",
-        "2026",
-        "Cincinnati Bengals at Baltimore Ravens (2026-REG-7)",
-        "Russ Yeast",
-        "Josh Kattus"
-      ],
-      "published_at": "2026-10-20T14:19:29+00:00",
-      "players": [
-        {
-          "id": "00-0041246",
-          "name": "Josh Kattus",
-          "team": "CIN",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "5955fc195a80542f41e0",
-      "headline": "One position room can help the New England Patriots solve two problems at once",
-      "url": "https://atozsports.com/nfl/new-england-patriots-news/one-position-room-can-help-the-new-england-patriots-solve-two-problems-at-once/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots just lost a wide receiver (again), but the answer to the thinning room may already be on the roster. And it isn't AJ Brown.",
-      "categories": [
-        "New England Patriots News",
-        "American Football",
-        "New England Patriots",
-        "Patriots",
-        "Patriots News",
-        "Wildcat"
-      ],
-      "published_at": "2026-10-20T13:58:00+00:00",
-      "players": [
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "d99f6d04e9598379326e",
-      "headline": "3 quick takeaways from the 49ers win over the Commanders: The fast start paid off",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-news/164577/san-francisco-49ers-news-3-quick-takeaways-win-washington-commanders-brock-purdy",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "It wasn\u2019t the prettiest game and, at times, was quite a scary one, but the San Francisco 49ers found a way to edge past the Washington Commanders on Monday night to improve to 6-0 on the season. Heading into the game with injury questions once again, the 49ers lost Mike Evans just before halftime. But [\u2026]",
-      "categories": [
-        "San Francisco 49ers News"
-      ],
-      "published_at": "2026-10-20T12:01:00+00:00",
-      "players": [
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "c39a96cdaea63220cb37",
-      "headline": "San Francisco 49ers are getting great news at the perfect time as key playmakers are set to return from injury",
-      "url": "https://atozsports.com/nfl/san-francisco-49ers-news/san-francisco-49ers-getting-great-news-at-perfect-time-as-key-playmakers-set-to-return-from-injury/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "49ers head coach Kyle Shanahan told reporters that he expects both Deebo Samuel and Christian Kirk to see the field soon. It's perfect for a 49ers receiver room that has been decimated by injury.",
-      "categories": [
-        "San Francisco 49ers News",
-        "American Football",
-        "Christian Kirk",
-        "Deebo Samuel",
-        "Kyle Shanahan",
-        "Mike evans",
-        "San Francisco 49ers"
-      ],
-      "published_at": "2026-10-20T12:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0034775",
-          "name": "Christian Kirk",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "2f0fac51f20832d854d7",
-      "headline": "Eagles QB Jalen Hurts diagnosed with 'deep vein thrombosis'",
-      "url": "https://www.phillyvoice.com/eagles-qb-jalen-hurts-diagnosed-with-deep-vein-thrombosis-team-allowed-him-play-no-sleep/",
-      "source_id": "phillyvoice_jimmy_kempski",
-      "source": "PhillyVoice",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Philadelphia Eagles and Nicole Lynn, the agent for starting quarterback Jalen Hurts, issued a statement on Monday morning that Hurts has been diagnosed with \"deep vein thrombosis,\" or \"DVT.\" His season is almost certainly over.",
-      "categories": [
-        "Sports",
-        "Eagles",
-        "NFL",
-        "Philadelphia",
-        "Jalen Hurts"
-      ],
-      "published_at": "2026-10-20T11:59:02+00:00",
-      "players": [
-        {
-          "id": "00-0036389",
-          "name": "Jalen Hurts",
-          "team": "PHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "32fb23bafa629b5b38ef",
-      "headline": "Breaking Down Vikings' Injury Report Coming Out of Their Bye (Who's Hurt & Who Could Return in Week 7)",
-      "url": "https://www.si.com/nfl/vikings/onsi/breaking-down-vikings-injury-report-coming-out-bye-who-s-hurt-who-could-return-week-7-01m5amq2kvf3",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "Breaking down the Vikings' injury report as they prepare for a showdown against the Colts in Week 7.",
-      "categories": [],
-      "published_at": "2026-10-20T11:30:00+00:00",
-      "players": []
-    },
-    {
-      "id": "265a2c0e922c06bf1e44",
-      "headline": "Packers have waited long enough, and it\u2019s time to make a change on the offensive line before a huge test against the Lions",
-      "url": "https://atozsports.com/nfl/green-bay-packers-news/time-to-make-change-kevin-zeitler-travis-glover/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Jordan Love was sacked three times against Dallas, and the veteran guard Green Bay signed a few weeks ago has had plenty of time to learn the system.",
-      "categories": [
-        "Green Bay Packers News",
-        "NFL",
-        "American Football",
-        "Kevin Zeitler",
-        "offensive line",
-        "Travis Glover"
-      ],
-      "published_at": "2026-10-20T11:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0036264",
-          "name": "Jordan Love",
-          "team": "GB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "9161adbd734cc981c8ae",
-      "headline": "Chicago Bears News: Both Bears and New England Patriots have injuries",
-      "url": "https://www.windycitygridiron.com/chicago-bears-news/125676/chicago-bears-news-both-bears-and-new-england-patriots-have-injuries",
-      "source_id": "news_sbn_chi",
-      "source": "Windy City Gridiron (SB Nation)",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Chicago Bears will be hosting the New England Patriots Thursday night at Soldier Field, and both teams are quite banged up. If anything, the Patriots list is a bit longer than the good guys is. The best news is that Caleb Williams is entirely off the list as of Monday. Unfortunately, some key players [\u2026]",
-      "categories": [
-        "Chicago Bears News"
-      ],
-      "published_at": "2026-10-20T10:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "23acbeb512cbb02e3324",
-      "headline": "Mike Evans Injury Update: San Francisco 49ers catch a huge break after losing their star wide receiver on Monday Night Football in concerning moment",
-      "url": "https://atozsports.com/nfl/san-francisco-49ers-news/mike-evans-injury-update-san-francisco-49ers-catch-huge-break-after-losing-star-wide-receiver-on-monday-night-football/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "Mike Evans led the 49ers with 94 yards receiving against the Commanders, even after leaving the game with an injury late in the first half. What's even better, is that San Francisco's star avoided major injury.",
-      "categories": [
-        "San Francisco 49ers News",
-        "American Football",
-        "Kyle Shanahan",
-        "Mike evans",
-        "San Francisco 49ers"
-      ],
-      "published_at": "2026-10-20T04:48:41+00:00",
-      "players": [
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "84519006fd99efc6213e",
-      "headline": "Washington Commanders WR Terry McLaurin carted off field vs. 49ers",
-      "url": "https://www.hogshaven.com/washington-commanders-news/449921/commanders-terry-mclaurin-injury-san-francisco-49ers-nfl-week6",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "UPDATE: Commanders head coach Dan Quinn said that, while there\u2019s no formal update on Terry McLaurin\u2019s knee injury, there\u2019s fear that his injury is significant. Commanders receiver Terry McLaurin was carted off the field during Monday night\u2019s game against the San Francisco 49ers. Washington\u2019s best wideout went down on a third down play with roughly [\u2026]",
-      "categories": [
-        "Washington Commanders Injuries",
-        "Washington Commanders News"
-      ],
-      "published_at": "2026-10-20T04:42:15+00:00",
-      "players": [
-        {
-          "id": "00-0035659",
-          "name": "Terry McLaurin",
-          "team": "WAS",
-          "position": "WR"
         }
       ]
     }
