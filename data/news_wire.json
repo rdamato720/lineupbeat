@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T02:00:52.926916+00:00",
+  "updated_at": "2026-10-22T04:00:53.715318+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T02:00:00+00:00",
+      "latest_entry_at": "2026-10-22T03:57:40+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T01:09:46+00:00",
+      "latest_entry_at": "2026-10-22T01:50:45+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-22T00:05:11+00:00",
+      "latest_entry_at": "2026-10-22T02:42:39+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T02:00:00+00:00",
+      "latest_entry_at": "2026-10-22T03:57:40+00:00",
       "stale": false
     },
     {
@@ -508,9 +508,9 @@
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T16:32:02+00:00",
+      "latest_entry_at": "2026-10-21T21:43:12+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,20 @@
     }
   ],
   "items": [
+    {
+      "id": "612e0dbd9ee4e2569aaf",
+      "headline": "First Week 7 Injury Report Offers Encouragement to Broncos",
+      "url": "https://www.si.com/nfl/broncos/onsi/broncos-week-7-injury-report-pat-surtain",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "Denver is mostly healthier ahead of Sunday's road tilt at Arizona.",
+      "categories": [],
+      "published_at": "2026-10-22T03:57:40+00:00",
+      "players": []
+    },
     {
       "id": "61ebfef42a792d2fc761",
       "headline": "Texans' First Injury Report vs. Giants Features Several Concerns for Week 7",
@@ -4020,29 +4034,6 @@
           "name": "Malik Turner",
           "team": "SF",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "35e4d0eef7523d0fef31",
-      "headline": "Washington Commanders make several roster moves before 49ers game",
-      "url": "https://www.hogshaven.com/washington-commanders-roster/449584/washington-commanders-make-several-roster-moves-before-49ers-game-bill-croskey-merritt-trey-amos",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Washington Commanders announced a few roster moves before they play the San Francisco 49ers tonight. Three players had their 21-day practice windows opened last week, but only one of them has been activated. DE Deatrich Wise Jr. was activated last week, and now CB Trey Amos (ankle) and RB Jeremy McNichols (quad) have been [\u2026]",
-      "categories": [
-        "Washington Commanders Roster"
-      ],
-      "published_at": "2026-10-19T20:04:53+00:00",
-      "players": [
-        {
-          "id": "00-0033955",
-          "name": "Jeremy McNichols",
-          "team": "WAS",
-          "position": "RB"
         }
       ]
     }
