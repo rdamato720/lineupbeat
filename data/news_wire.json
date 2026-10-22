@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T10:00:57.528494+00:00",
+  "updated_at": "2026-10-22T12:00:59.672939+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T10:00:07+00:00",
+      "latest_entry_at": "2026-10-22T12:00:21+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T10:00:00+00:00",
+      "latest_entry_at": "2026-10-22T12:00:00+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T19:47:16+00:00",
+      "latest_entry_at": "2026-10-22T11:00:00+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T23:01:00+00:00",
+      "latest_entry_at": "2026-10-22T10:05:00+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T10:00:07+00:00",
+      "latest_entry_at": "2026-10-22T12:00:21+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T10:00:00+00:00",
+      "latest_entry_at": "2026-10-22T12:00:00+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T00:00:00+00:00",
+      "latest_entry_at": "2026-10-21T22:21:11+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T09:00:00+00:00",
+      "latest_entry_at": "2026-10-22T11:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T20:29:01+00:00",
+      "latest_entry_at": "2026-10-22T10:30:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T23:00:00+00:00",
+      "latest_entry_at": "2026-10-22T10:00:00+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T04:29:06+00:00",
+      "latest_entry_at": "2026-10-22T11:00:00+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T23:30:00+00:00",
+      "latest_entry_at": "2026-10-22T10:30:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T05:42:01+00:00",
+      "latest_entry_at": "2026-10-22T10:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T20:09:16+00:00",
+      "latest_entry_at": "2026-10-22T10:48:00+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T00:20:15+00:00",
+      "latest_entry_at": "2026-10-22T11:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "fa5323433427b604c87d",
+      "headline": "Ryan Flournoy Reveals Plan To Reignite Dallas Cowboys' Struggling Offense",
+      "url": "https://www.si.com/nfl/cowboys/onsi/ryan-flournoy-reveals-plan-reignite-dallas-cowboys-struggling-offense",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "Dallas Cowboys wide receiver Ryan Flournoy reveals the team's offense is coming together to snap out of its recent skid.",
+      "categories": [],
+      "published_at": "2026-10-22T12:00:07+00:00",
+      "players": [
+        {
+          "id": "00-0039410",
+          "name": "Ryan Flournoy",
+          "team": "DAL",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "612e0dbd9ee4e2569aaf",
       "headline": "First Week 7 Injury Report Offers Encouragement to Broncos",
@@ -4004,32 +4025,6 @@
           "name": "Christian Kirk",
           "team": "SF",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "081c85d1405f8f7ad08c",
-      "headline": "Vikings Announce RB Jordan Mason to Return to Practice in Week 7",
-      "url": "https://www.vikings.com/news/running-back-jordan-mason-return-to-practice-week-7",
-      "source_id": "news_official_min",
-      "source": "Minnesota Vikings (official)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "",
-      "categories": [
-        "Jordan Mason",
-        "News - Press Release",
-        "News - Index",
-        "colts-at-vikings-2026-reg-7"
-      ],
-      "published_at": "2026-10-19T20:30:06+00:00",
-      "players": [
-        {
-          "id": "00-0037525",
-          "name": "Jordan Mason",
-          "team": "MIN",
-          "position": "RB"
         }
       ]
     }
