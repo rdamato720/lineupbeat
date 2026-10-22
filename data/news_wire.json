@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T04:00:53.715318+00:00",
+  "updated_at": "2026-10-22T07:34:41.786072+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T03:57:40+00:00",
+      "latest_entry_at": "2026-10-22T07:29:47+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-21T23:08:07+00:00",
+      "latest_entry_at": "2026-10-22T06:04:04+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T03:57:40+00:00",
+      "latest_entry_at": "2026-10-22T07:29:47+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T00:10:23+00:00",
+      "latest_entry_at": "2026-10-22T04:29:06+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-21T23:48:16+00:00",
+      "latest_entry_at": "2026-10-22T05:42:01+00:00",
       "stale": false
     },
     {
@@ -568,6 +568,30 @@
       "categories": [],
       "published_at": "2026-10-22T03:57:40+00:00",
       "players": []
+    },
+    {
+      "id": "e5ee0ee8a253747ed674",
+      "headline": "BUCS PRACTICE BUZZ: Baker Mayfield Returns To Practice! And He\u2019s Wearing THIS!?",
+      "url": "https://www.pewterreport.com/bucs-practice-buzz-baker-mayfield-returns/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "Bucs Practice Buzz is a weekly segment on Pewter Report\u2019s YouTube channel Pewter Report TV where we highlight the biggest moments and clips from the day of practice from the Advent Health Training Center. All the rage of Wednesday's practice was the return of starting quarterback Baker Mayfield. It was the first time in",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-10-22T03:45:00+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
     },
     {
       "id": "61ebfef42a792d2fc761",
@@ -4006,34 +4030,6 @@
           "name": "Jordan Mason",
           "team": "MIN",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "830ecd61aafe5e5ac74a",
-      "headline": "49ers Activate LB Jalen Graham and WR Malik Turner From Practice Squad; Other Moves",
-      "url": "https://www.49ers.com/news/49ers-activate-lb-jalen-graham-and-wr-malik-turner-from-practice-squad-other-moves",
-      "source_id": "news_official_sf",
-      "source": "San Francisco 49ers (official)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The 49ers announced they have activated LB Jalen Graham and WR Malik Turner from the practice squad.",
-      "categories": [
-        "Roster Moves",
-        "Latest App",
-        "News - Roster",
-        "English",
-        "English Articles",
-        "News"
-      ],
-      "published_at": "2026-10-19T20:08:44+00:00",
-      "players": [
-        {
-          "id": "00-0034867",
-          "name": "Malik Turner",
-          "team": "SF",
-          "position": "WR"
         }
       ]
     }
