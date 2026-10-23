@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T00:00:58.245756+00:00",
+  "updated_at": "2026-10-23T00:10:49.512089+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T23:54:31+00:00",
+      "latest_entry_at": "2026-10-23T00:10:28+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T23:57:29+00:00",
+      "latest_entry_at": "2026-10-23T00:07:15+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T22:57:40+00:00",
+      "latest_entry_at": "2026-10-22T23:32:45+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-22T23:54:31+00:00",
+      "latest_entry_at": "2026-10-23T00:10:28+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-22T23:57:29+00:00",
+      "latest_entry_at": "2026-10-23T00:07:15+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T20:22:25+00:00",
+      "latest_entry_at": "2026-10-22T21:54:52+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T17:49:42+00:00",
+      "latest_entry_at": "2026-10-22T23:45:00+00:00",
       "stale": false
     },
     {
@@ -550,7 +550,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T19:05:53+00:00",
+      "latest_entry_at": "2026-10-22T23:53:15+00:00",
       "stale": false
     }
   ],
@@ -646,6 +646,48 @@
       ],
       "published_at": "2026-10-22T23:39:00+00:00",
       "players": []
+    },
+    {
+      "id": "c276b73be91821c16fa5",
+      "headline": "Eagles Injury Report: Saquon Barkley limited while other key offensive starters miss practice",
+      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/187940/eagles-injury-report-saquon-barkley-limited-while-other-key-offensive-starters-miss-practice",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Philadelphia Eagles issued their first injury report of the week on Thursday in advance of their Week 7 Monday Night Football game against the Dallas Cowboys. The Eagles listed six players under DID NOT PARTICIPATE: DeVonta Smith, Dontayvion Wicks, Dallas Goedert, Nolan Smith, Willie Lampkin, and Michael Carter II. DeVonta also missed the first [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries",
+        "Philadelphia Eagles News"
+      ],
+      "published_at": "2026-10-22T23:32:12+00:00",
+      "players": [
+        {
+          "id": "00-0034351",
+          "name": "Dallas Goedert",
+          "team": "PHI",
+          "position": "TE"
+        },
+        {
+          "id": "00-0034844",
+          "name": "Saquon Barkley",
+          "team": "PHI",
+          "position": "RB"
+        },
+        {
+          "id": "00-0036912",
+          "name": "DeVonta Smith",
+          "team": "PHI",
+          "position": "WR"
+        },
+        {
+          "id": "00-0038393",
+          "name": "Dontayvion Wicks",
+          "team": "PHI",
+          "position": "WR"
+        }
+      ]
     },
     {
       "id": "bc16b337e5ced76f4e5c",
@@ -3802,36 +3844,6 @@
           "name": "Bo Nix",
           "team": "DEN",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "90525ab95f23f5b2dfae",
-      "headline": "Philadelphia Eagles face costly fine print if they want to cash out on Saquon Barkley at the NFL trade deadline",
-      "url": "https://atozsports.com/nfl/philadelphia-eagles-news/philadelphia-eagles-face-costly-fine-print-if-they-want-to-cash-out-on-saquon-barkley-at-the-nfl-trade-deadline/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Philadelphia Eagles' season has gone sideways, and the structure of Saquon Barkley's contract could complicate any plans to sell at the deadline.",
-      "categories": [
-        "Philadelphia Eagles News",
-        "American Football",
-        "Eagles News",
-        "NFL Trade Deadline",
-        "Philadelphia Eagles",
-        "Philadelphia Eagles Football",
-        "Saquon Barkley",
-        "Saquon Barkley Eagles"
-      ],
-      "published_at": "2026-10-21T14:58:51+00:00",
-      "players": [
-        {
-          "id": "00-0034844",
-          "name": "Saquon Barkley",
-          "team": "PHI",
-          "position": "RB"
         }
       ]
     }
