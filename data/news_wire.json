@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T02:00:46.356133+00:00",
+  "updated_at": "2026-10-23T04:00:43.267262+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-23T01:50:27+00:00",
+      "latest_entry_at": "2026-10-23T03:48:57+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-23T01:55:28+00:00",
+      "latest_entry_at": "2026-10-23T03:54:25+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T23:32:45+00:00",
+      "latest_entry_at": "2026-10-23T03:20:35+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T20:35:00+00:00",
+      "latest_entry_at": "2026-10-23T04:13:00+00:00",
       "stale": false
     },
     {
@@ -206,7 +206,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T22:47:41+00:00",
+      "latest_entry_at": "2026-10-23T03:30:37+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-23T01:50:27+00:00",
+      "latest_entry_at": "2026-10-23T03:48:57+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-23T01:55:28+00:00",
+      "latest_entry_at": "2026-10-23T03:54:25+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T17:19:55+00:00",
+      "latest_entry_at": "2026-10-22T23:45:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T23:28:45+00:00",
+      "latest_entry_at": "2026-10-23T03:36:31+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-22T21:34:00+00:00",
+      "latest_entry_at": "2026-10-23T02:45:10+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-23T00:00:00+00:00",
+      "latest_entry_at": "2026-10-23T03:42:08+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-23T00:03:30+00:00",
+      "latest_entry_at": "2026-10-23T03:41:21+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T22:28:32+00:00",
+      "latest_entry_at": "2026-10-23T00:50:46+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T18:32:42+00:00",
+      "latest_entry_at": "2026-10-22T22:47:26+00:00",
       "stale": false
     },
     {
@@ -550,21 +550,42 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T19:05:53+00:00",
+      "latest_entry_at": "2026-10-22T23:53:15+00:00",
       "stale": false
     }
   ],
   "items": [
     {
+      "id": "6e5720a500f8505a1022",
+      "headline": "Cole Kmet Injury Update: Latest News on Bears TE's Status in Week 7 Game",
+      "url": "https://www.si.com/nfl/bears/onsi/cole-kmet-injury-update-news-bears-status-week-7-game",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Chicago Bears tight end Cole Kmet was injured in the fourth quarter of the Week 7 game.",
+      "categories": [],
+      "published_at": "2026-10-23T03:03:13+00:00",
+      "players": [
+        {
+          "id": "00-0036290",
+          "name": "Cole Kmet",
+          "team": "CHI",
+          "position": "TE"
+        }
+      ]
+    },
+    {
       "id": "ae9d18a57f376afb0929",
-      "headline": "Broncos Week 7 Injury Report: RB Tyler Badie Trending Toward Inactive",
+      "headline": "Broncos Week 7 Injury Report: Who\u2019s Trending For the Field\u2014or IR",
       "url": "https://www.si.com/nfl/broncos/onsi/broncos-week-7-injury-tyler-badie-thumb",
       "source_id": "news_si_nfl",
       "source": "Sports Illustrated",
       "teams": [
         "DEN"
       ],
-      "feed_description": "Badie's loss would be offset by the return of Jonah Coleman.",
+      "feed_description": "Tyler Badie's loss would be offset by the return of Jonah Coleman.",
       "categories": [],
       "published_at": "2026-10-23T01:50:27+00:00",
       "players": [
@@ -1614,14 +1635,14 @@
     },
     {
       "id": "e52ec6ffe9d6816e1067",
-      "headline": "Mike Washington Jr. not spotted during Las Vegas Raiders\u2019 Thursday practice ahead of Week 7 Los Angeles Rams\u2019 matchup",
+      "headline": "Mike Washington Jr. misses Las Vegas Raiders\u2019 Thursday practice ahead of Week 7 Los Angeles Rams\u2019 matchup",
       "url": "https://www.silverandblackpride.com/las-vegas-raiders-injuries/143784/raiders-injury-report-week-7-rams-mike-washington",
       "source_id": "news_sbn_lv",
       "source": "Silver And Black Pride (SB Nation)",
       "teams": [
         "LV"
       ],
-      "feed_description": "Las Vegas Raiders running back Mike Washington Jr. was absent during the media viewing portion of Thursday\u2019s practice ahead of the Week 7 matchup against the Los Angeles Rams, according to The Athletic\u2019s Sam Warren. Washington was listed as a limited participant with foot and back injuries during Wednesday\u2019s session. The Raiders haven\u2019t released Thursday\u2019s [\u2026]",
+      "feed_description": "Las Vegas Raiders running back Mike Washington Jr. was absent during the media viewing portion of Thursday\u2019s practice ahead of the Week 7 matchup against the Los Angeles Rams, according to The Athletic\u2019s Sam Warren. Washington was listed as a limited participant with foot and back injuries during Wednesday\u2019s session, but was listed as a [\u2026]",
       "categories": [
         "Las Vegas Raiders Injuries",
         "Las Vegas Raiders News"
@@ -3823,30 +3844,6 @@
           "name": "Baker Mayfield",
           "team": "TB",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "9375cbcc96ecdc1906d2",
-      "headline": "Sam LaPorta just said what he\u2019s been feeling about the Lions, and Detroit should probably take it seriously, because it is not good at all",
-      "url": "https://atozsports.com/nfl/detroit-lions-news/sam-laporta-just-said-what-hes-been-feeling-about-the-lions-and-detroit-should-probably-take-it-seriously-because-it-is-not-good-at-all/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "LaPorta had mostly stayed quiet after extension talks stalled. That changed this week when he openly questioned whether Detroit was \u201cshowing the love\u201d and acknowledged he could get paid somewhere else.",
-      "categories": [
-        "Detroit Lions News",
-        "Detroit Lions"
-      ],
-      "published_at": "2026-10-21T16:47:59+00:00",
-      "players": [
-        {
-          "id": "00-0039065",
-          "name": "Sam LaPorta",
-          "team": "DET",
-          "position": "TE"
         }
       ]
     }
