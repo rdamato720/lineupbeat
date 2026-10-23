@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T04:48:25.463329+00:00",
+  "updated_at": "2026-10-23T10:00:51.430390+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-23T04:45:48+00:00",
+      "latest_entry_at": "2026-10-23T09:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-23T00:01:18+00:00",
+      "latest_entry_at": "2026-10-23T07:44:57+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-23T04:27:02+00:00",
+      "latest_entry_at": "2026-10-23T10:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-23T03:50:08+00:00",
+      "latest_entry_at": "2026-10-23T09:00:00+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-23T04:13:00+00:00",
+      "latest_entry_at": "2026-10-23T04:15:00+00:00",
       "stale": false
     },
     {
@@ -204,9 +204,9 @@
     {
       "source_id": "news_official_ne",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-23T03:30:37+00:00",
+      "latest_entry_at": "2026-10-23T05:23:18+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-10-22T23:26:19+00:00",
+      "latest_entry_at": "2026-10-23T09:00:44+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-23T04:45:48+00:00",
+      "latest_entry_at": "2026-10-23T09:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-23T04:27:02+00:00",
+      "latest_entry_at": "2026-10-23T10:00:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T22:33:58+00:00",
+      "latest_entry_at": "2026-10-23T10:00:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-22T22:30:00+00:00",
+      "latest_entry_at": "2026-10-23T00:00:00+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T23:32:12+00:00",
+      "latest_entry_at": "2026-10-22T23:45:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-23T03:41:21+00:00",
+      "latest_entry_at": "2026-10-23T10:00:00+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-22T20:40:00+00:00",
+      "latest_entry_at": "2026-10-23T00:10:18+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-23T00:01:00+00:00",
+      "latest_entry_at": "2026-10-23T09:09:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,55 @@
     }
   ],
   "items": [
+    {
+      "id": "85f2bd920501549645d5",
+      "headline": "Pewter Report Podcast: Will Bucs Get A Better Baker Mayfield?",
+      "url": "https://www.pewterreport.com/pewter-report-podcast-will-bucs-get-a-better-baker-mayfield/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "It looks like starting quarterback Baker Mayfield is going to return to playing after missing the previous three games. What kind of Mayfield are the Bucs going to get? Hopefully one that can lead them to more wins. The Pewter Report Podcast is presented by PrizePicks. Sign up for PrizePicks with code: HMA then play a",
+      "categories": [
+        "Articles",
+        "Featured",
+        "Podcasts"
+      ],
+      "published_at": "2026-10-23T07:44:57+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "68185d456c92717b0683",
+      "headline": "Bucs Get Better Outcome On Latest Injury Report",
+      "url": "https://www.pewterreport.com/bucs-get-better-outcome-on-injury-report/",
+      "source_id": "pewter_report",
+      "source": "Pewter Report",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Bucs had more players return for Thursday's practice as several players on the team battle through illnesses. Those players consisted of running back Bucky Irving and cornerback Zyon McCollum, who each were upgraded to limited after missing practice the day before. Defensive tackle Calijah Kancey was also an upgrade, moving up to a",
+      "categories": [
+        "Articles",
+        "Featured"
+      ],
+      "published_at": "2026-10-23T03:18:02+00:00",
+      "players": [
+        {
+          "id": "00-0039361",
+          "name": "Bucky Irving",
+          "team": "TB",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "6e5720a500f8505a1022",
       "headline": "Cole Kmet Injury Update: Ben Johnson Fearing the Worst For Bears Tight End",
@@ -3785,65 +3834,6 @@
           "name": "Rashee Rice",
           "team": "KC",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "552372ffe1cac8ca60db",
-      "headline": "Mailbag: What's Lamar Jackson's Timeline for Return?",
-      "url": "https://www.baltimoreravens.com/news/lamar-jackson-injury-timeline-return-jaylinn-hawkins-trade-deadline-elijah-sarratt-ravens-mailbag",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Could the Ravens shake up their safety rotation? Will Eric DeCosta make another trade? Why is Elijah Sarratt a healthy scratch?",
-      "categories": [
-        "Mailbag",
-        "General",
-        "Ryan Mink",
-        "Clifton Brown",
-        "2026 Week 7",
-        "2026 Week 7 News",
-        "Cincinnati Bengals at Baltimore Ravens (2026-REG-7)",
-        "Lamar Jackson",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-10-21T17:03:40+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        },
-        {
-          "id": "00-0040876",
-          "name": "Elijah Sarratt",
-          "team": "BAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "de702208e93960bc5bcd",
-      "headline": "How Baker Mayfield Looked Throwing at Buccaneers Practice Today",
-      "url": "https://www.si.com/nfl/buccaneers/onsi/how-baker-mayfield-looked-throwing-at-buccaneers-practice-today",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "Could we see QB1 return on Sunday for the Bucs? Here\u2019s what we saw.",
-      "categories": [],
-      "published_at": "2026-10-21T17:00:01+00:00",
-      "players": [
-        {
-          "id": "00-0034855",
-          "name": "Baker Mayfield",
-          "team": "TB",
-          "position": "QB"
         }
       ]
     }
