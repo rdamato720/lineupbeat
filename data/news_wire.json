@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T04:00:42.016980+00:00",
+  "updated_at": "2026-10-24T05:02:45.291598+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T03:41:35+00:00",
+      "latest_entry_at": "2026-10-24T04:52:00+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-23T22:39:00+00:00",
+      "latest_entry_at": "2026-10-24T04:26:51+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T03:41:35+00:00",
+      "latest_entry_at": "2026-10-24T04:52:00+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-23T19:44:14+00:00",
+      "latest_entry_at": "2026-10-23T22:35:35+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-23T22:30:00+00:00",
+      "latest_entry_at": "2026-10-23T14:12:33+00:00",
       "stale": false
     },
     {
@@ -396,17 +396,17 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-23T12:00:00+00:00",
+      "latest_entry_at": "2026-10-23T23:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_kc",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-23T22:30:06+00:00",
+      "latest_entry_at": "2026-10-23T19:45:00+00:00",
       "stale": false
     },
     {
@@ -468,9 +468,9 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-23T17:48:04+00:00",
+      "latest_entry_at": "2026-10-23T20:07:35+00:00",
       "stale": false
     },
     {
@@ -478,15 +478,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-23T21:52:57+00:00",
+      "latest_entry_at": "2026-10-23T16:17:32+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-23T15:00:00+00:00",
+      "latest_entry_at": "2026-10-24T04:13:43+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-23T15:00:00+00:00",
+      "latest_entry_at": "2026-10-23T21:56:43+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-23T20:48:04+00:00",
+      "latest_entry_at": "2026-10-23T19:01:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,22 @@
     }
   ],
   "items": [
+    {
+      "id": "d7575c1d8ce9c861df9b",
+      "headline": "Vikings-Colts Final Injury Report",
+      "url": "https://www.dailynorseman.com/minnesota-vikings-injuries/100657/vikings-colts-final-injury-report",
+      "source_id": "news_sbn_min",
+      "source": "Daily Norseman (SB Nation)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "The Minnesota Vikings and Indianapolis Colts released their final injury reports along with injury designations in advance of their Sunday afternoon matchup at U.S. Bank Stadium. Here they are. Minnesota Vikings Indianapolis Colts Injury Report Terms and Glossary Injury designation definitions: Probable = the league defines a Probable injury designation as a 75% or greater [\u2026]",
+      "categories": [
+        "Minnesota Vikings Injuries"
+      ],
+      "published_at": "2026-10-24T04:13:43+00:00",
+      "players": []
+    },
     {
       "id": "bc19fa0840f6fabb5b1d",
       "headline": "Buccaneers vs. Panthers: Baker Mayfield expected back as three Bucs ruled out",
@@ -730,6 +746,30 @@
       ],
       "published_at": "2026-10-23T22:39:00+00:00",
       "players": []
+    },
+    {
+      "id": "0d828aa3949ced86c50e",
+      "headline": "Ravens list QB Lamar Jackson as questionable for Sunday vs. Bengals",
+      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/86901/ravens-list-qb-lamar-jackson-as-questionable-for-sunday-vs-bengals",
+      "source_id": "news_sbn_bal",
+      "source": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Baltimore Ravens listed quarterback Lamar Jackson as questionable for their Week 7 matchup against the Cincinnati Bengals after a full week of limited participation in practice, leaving his status for Sunday\u2019s game up in the air. Jackson, 29, said that he was \u201cheading in the right direction\u201d to return from his two-game absence. The [\u2026]",
+      "categories": [
+        "Baltimore Ravens Injuries",
+        "Baltimore Ravens News"
+      ],
+      "published_at": "2026-10-23T22:35:35+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
     },
     {
       "id": "1fa60957b4112d9cad4c",
@@ -1671,30 +1711,6 @@
       ],
       "published_at": "2026-10-23T19:45:00+00:00",
       "players": []
-    },
-    {
-      "id": "0d828aa3949ced86c50e",
-      "headline": "Ravens list QB Lamar Jackson as questionable for Sunday vs. Bengals",
-      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/86901/ravens-list-qb-lamar-jackson-as-questionable-for-sunday-vs-bengals",
-      "source_id": "news_sbn_bal",
-      "source": "Baltimore Beatdown (SB Nation)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Baltimore Ravens listed quarterback Lamar Jackson as questionable on their final Week 7 injury report, leaving his status up in the air for Sunday\u2019s matchup against the Cincinnati Bengals. Jackson, 29, said that he was \u201cheading in the right direction\u201d to return from his two-game absence. The ninth-year quarterback went down in Week 5 [\u2026]",
-      "categories": [
-        "Baltimore Ravens Injuries",
-        "Baltimore Ravens News"
-      ],
-      "published_at": "2026-10-23T19:44:14+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
     },
     {
       "id": "deee868a1b4aeed6ed81",
@@ -3938,27 +3954,6 @@
       ],
       "published_at": "2026-10-22T19:22:16+00:00",
       "players": []
-    },
-    {
-      "id": "e24ccd92a474711b5ed0",
-      "headline": "Why the 49ers Should Sit Out Mike Evans and Nick Bosa Against the Falcons",
-      "url": "https://www.si.com/nfl/49ers/onsi/why-49ers-should-sit-out-mike-evans-nick-bosa-against-falcons",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The San Francisco 49ers should rest Mike Evans and Nick Bosa against the Atlanta Falcons to avoid risking further injuries.",
-      "categories": [],
-      "published_at": "2026-10-22T19:13:11+00:00",
-      "players": [
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
