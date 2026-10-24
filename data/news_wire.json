@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T16:59:09.326838+00:00",
+  "updated_at": "2026-10-24T18:00:55.980440+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T16:57:30+00:00",
+      "latest_entry_at": "2026-10-24T18:00:04+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T16:09:53+00:00",
+      "latest_entry_at": "2026-10-24T17:47:37+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T13:09:19+00:00",
+      "latest_entry_at": "2026-10-24T17:10:09+00:00",
       "stale": false
     },
     {
@@ -76,9 +76,9 @@
     {
       "source_id": "news_official_car",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-24T12:57:15+00:00",
+      "latest_entry_at": "2026-10-24T17:00:44+00:00",
       "stale": false
     },
     {
@@ -190,7 +190,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:00:06+00:00",
+      "latest_entry_at": "2026-10-24T17:15:07+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-23T20:02:00+00:00",
+      "latest_entry_at": "2026-10-24T16:55:00+00:00",
       "stale": false
     },
     {
@@ -270,23 +270,23 @@
       "ok": true,
       "eligible": 9,
       "error": "",
-      "latest_entry_at": "2026-10-23T16:59:43+00:00",
+      "latest_entry_at": "2026-10-25T16:59:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_ten",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:35:56+00:00",
+      "latest_entry_at": "2026-10-24T17:14:19+00:00",
       "stale": false
     },
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T16:57:30+00:00",
+      "latest_entry_at": "2026-10-24T18:00:04+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T16:09:53+00:00",
+      "latest_entry_at": "2026-10-24T17:47:37+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:47:03+00:00",
+      "latest_entry_at": "2026-10-24T17:00:00+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:17:04+00:00",
+      "latest_entry_at": "2026-10-24T17:20:36+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-23T23:15:00+00:00",
+      "latest_entry_at": "2026-10-24T17:10:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T11:00:00+00:00",
+      "latest_entry_at": "2026-10-24T15:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-24T12:30:00+00:00",
+      "latest_entry_at": "2026-10-24T14:30:00+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:00:00+00:00",
+      "latest_entry_at": "2026-10-24T17:13:23+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,66 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:00:00+00:00",
+      "latest_entry_at": "2026-10-24T18:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "c4ca89ceaddae417c756",
+      "headline": "Browns roster: Dylan Sampson activated among 3 moves; good sign for injured star defenders",
+      "url": "https://www.dawgsbynature.com/cleveland-browns-news/136050/browns-roster-dylan-sampson-denzel-ward-quincy-williams-grant-delpit-injuries",
+      "source_id": "news_sbn_cle",
+      "source": "Dawgs By Nature (SB Nation)",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "For some teams, the Saturday roster moves are a strong indication of what will happen with their questionable players on Sunday. Cleveland Browns fans are hoping that is true, with CB Denzel Ward and LB Quincy Williams being added to the injury report the last two days, but only one practice squad elevation on Saturday. [\u2026]",
+      "categories": [
+        "Cleveland Browns Injuries",
+        "Cleveland Browns News"
+      ],
+      "published_at": "2026-10-24T17:20:36+00:00",
+      "players": [
+        {
+          "id": "00-0040162",
+          "name": "Dylan Sampson",
+          "team": "CLE",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "8b483e7016b991728873",
+      "headline": "Titans Promote DL Timmy Horne to the Team's Active Roster",
+      "url": "https://www.tennesseetitans.com/news/titans-promote-dl-timmy-horne-to-the-team-s-active-roster",
+      "source_id": "news_official_ten",
+      "source": "Tennessee Titans (official)",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "RB Kalel Mullings and WR K.J. Osborn will be gameday elevations for Sunday\u2019s game vs the Browns.",
+      "categories": [
+        "Articles: Roster Moves",
+        "Team/Football News",
+        "homepage-centerpiece"
+      ],
+      "published_at": "2026-10-24T17:14:19+00:00",
+      "players": [
+        {
+          "id": "00-0036345",
+          "name": "K.J. Osborn",
+          "team": "TEN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040205",
+          "name": "Kalel Mullings",
+          "team": "TEN",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "8dacea7800ca683476e7",
       "headline": "Why Waiting on Sam LaPorta Deal Could Be Disaster For Detroit Lions",
@@ -3958,54 +4013,6 @@
           "name": "E.J. Jenkins",
           "team": "PHI",
           "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "e52ec6ffe9d6816e1067",
-      "headline": "Mike Washington Jr. misses Las Vegas Raiders\u2019 Thursday practice ahead of Week 7 Los Angeles Rams\u2019 matchup",
-      "url": "https://www.silverandblackpride.com/las-vegas-raiders-injuries/143784/raiders-injury-report-week-7-rams-mike-washington",
-      "source_id": "news_sbn_lv",
-      "source": "Silver And Black Pride (SB Nation)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "Las Vegas Raiders running back Mike Washington Jr. was absent during the media viewing portion of Thursday\u2019s practice ahead of the Week 7 matchup against the Los Angeles Rams, according to The Athletic\u2019s Sam Warren. Washington was listed as a limited participant with foot and back injuries during Wednesday\u2019s session, but was listed as a [\u2026]",
-      "categories": [
-        "Las Vegas Raiders Injuries",
-        "Las Vegas Raiders News"
-      ],
-      "published_at": "2026-10-22T20:29:24+00:00",
-      "players": [
-        {
-          "id": "00-0040878",
-          "name": "Mike Washington",
-          "team": "LV",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "2a4b825e298dee40b402",
-      "headline": "Indianapolis Colts Injury Report: Week 7 Thursday",
-      "url": "https://www.stampedeblue.com/indianapolis-colts-injuries/129086/indianapolis-colts-injury-report-week-7-thursday",
-      "source_id": "news_sbn_ind",
-      "source": "Stampede Blue (SB Nation)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The Indianapolis Colts today released their Thursday injury report ahead of week 7 of the NFL season against the Minnesota Vikings. Wide receiver Keenan Allen, running back Jonathan Taylor and cornerback Charvarius Ward all returned to full participation today after being rested yesterday at practice. Linebacker Bryce Boettcher (groin) and Jaylon Carlies (ribs) were both [\u2026]",
-      "categories": [
-        "Indianapolis Colts Injuries",
-        "Indianapolis Colts News"
-      ],
-      "published_at": "2026-10-22T20:22:25+00:00",
-      "players": [
-        {
-          "id": "00-0036223",
-          "name": "Jonathan Taylor",
-          "team": "IND",
-          "position": "RB"
         }
       ]
     }
