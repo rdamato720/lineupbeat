@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T21:54:39.776141+00:00",
+  "updated_at": "2026-10-24T22:01:03.300854+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T21:48:45+00:00",
+      "latest_entry_at": "2026-10-24T22:00:15+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-24T21:48:45+00:00",
+      "latest_entry_at": "2026-10-24T22:00:15+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T00:00:00+00:00",
+      "latest_entry_at": "2026-10-24T17:36:57+00:00",
       "stale": false
     },
     {
@@ -324,9 +324,9 @@
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:00:00+00:00",
+      "latest_entry_at": "2026-10-24T03:16:54+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T17:20:36+00:00",
+      "latest_entry_at": "2026-10-24T21:40:02+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:00:00+00:00",
+      "latest_entry_at": "2026-10-24T21:30:00+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:30:00+00:00",
+      "latest_entry_at": "2026-10-24T19:00:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T17:10:00+00:00",
+      "latest_entry_at": "2026-10-24T20:00:00+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T15:00:00+00:00",
+      "latest_entry_at": "2026-10-24T20:36:32+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T15:00:00+00:00",
+      "latest_entry_at": "2026-10-24T21:08:07+00:00",
       "stale": false
     },
     {
@@ -468,9 +468,9 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-24T21:00:00+00:00",
+      "latest_entry_at": "2026-10-24T20:08:56+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T21:30:42+00:00",
+      "latest_entry_at": "2026-10-24T21:41:41+00:00",
       "stale": false
     },
     {
@@ -542,19 +542,40 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T09:00:00+00:00",
+      "latest_entry_at": "2026-10-24T21:43:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T16:00:00+00:00",
+      "latest_entry_at": "2026-10-24T20:32:48+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "edc41b6072652469deff",
+      "headline": "Ravens Make Final Decision On Lamar Jackson's Status For Sunday",
+      "url": "https://www.si.com/nfl/ravens/onsi/ravens-make-final-decision-on-lamar-jackson-s-status-for-sunday-01m5qwzbpt3c",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "Jackson was listed as questionable, the Ravens said it could be a game-time decision Sunday, and their timelines about the injury have been confusing all month",
+      "categories": [],
+      "published_at": "2026-10-24T21:56:49+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "5e9e7bb27449b52c83c1",
       "headline": "Cowboys Struggling Secondary Catches Break With Eagles Injury Report",
@@ -627,6 +648,36 @@
       ]
     },
     {
+      "id": "ae033bcf87c561d280ef",
+      "headline": "49ers activate Christian Kirk; add 2 players from the practice squad to the active roster",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-news/164764/49ers-activate-christian-kirk-add-2-players-from-the-practice-squad-to-the-active-roster",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers announced a few roster moves Saturday afternoon. The team removed Christian Kirk\u2019s questionable status for Sunday\u2019s game against the Atlanta Falcons and officially activated him from the Injured Reserve List. With Mike Evans ruled out, Here\u2019s a look at the wide receiver depth chart heading into Week 7: Brandin CooksJordan WatkinsJacob [\u2026]",
+      "categories": [
+        "San Francisco 49ers News",
+        "San Francisco 49ers Roster"
+      ],
+      "published_at": "2026-10-24T20:52:27+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0034775",
+          "name": "Christian Kirk",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
       "id": "8f7eaa351ddee36b75dd",
       "headline": "Cowboys-Eagles Final Injury Report Is Great News for George Pickens, DeMarvion Overshown",
       "url": "https://www.si.com/nfl/cowboys/onsi/cowboys-eagles-final-injury-report-great-news-george-pickens-demarvion-overshown",
@@ -642,6 +693,29 @@
         {
           "id": "00-0037247",
           "name": "George Pickens",
+          "team": "DAL",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "a896808f8731b830860b",
+      "headline": "Cowboys injuries : DeMarvion Overshown, Cobie Durant to play",
+      "url": "https://www.bloggingtheboys.com/dallas-cowboys-injuries/223758/injuries-demarvion-overshow-cobie-durant-play-eagles-game",
+      "source_id": "news_sbn_dal",
+      "source": "Blogging The Boys (SB Nation)",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Cowboys face a must win game Monday versus the Eagles. It seems as if the Cowboys are getting healthier by the day. Ahead of Monday\u2019s game, here is your final injury report. Drew Shelton (hamstring) has been ruled out as he still is being hampered by a lingering hamstring injury. KaVontae Turpin (ribs) will [\u2026]",
+      "categories": [
+        "Dallas Cowboys Injuries"
+      ],
+      "published_at": "2026-10-24T20:36:32+00:00",
+      "players": [
+        {
+          "id": "00-0037801",
+          "name": "KaVontae Turpin",
           "team": "DAL",
           "position": "WR"
         }
@@ -667,6 +741,31 @@
           "name": "Jonah Coleman",
           "team": "DEN",
           "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "5bf2e996de83db7c4a54",
+      "headline": "Seahawks activate Anthony Bradford off injured reserve; \u2018Hard Knocks\u2019 star waived",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/177811/seahawks-activate-anthony-bradford-off-injured-reserve-montorie-foster-waived-nfl-news",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Help is on the way for the Seattle Seahawks\u2019 offensive line. After right guard Anthony Bradford was designated to return on Monday, the Seahawks activated him off injured reserve ahead of the team\u2019s Week 7 prime-time clash against the Kansas City Chiefs. Wide receiver Montorie Foster Jr, one of the stars and feel-good stories from [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News",
+        "Seattle Seahawks Roster"
+      ],
+      "published_at": "2026-10-24T20:32:48+00:00",
+      "players": [
+        {
+          "id": "00-0040621",
+          "name": "Montorie Foster Jr",
+          "team": "SEA",
+          "position": "WR"
         }
       ]
     },
@@ -3993,97 +4092,6 @@
         "Vikings Injury Report"
       ],
       "published_at": "2026-10-22T22:35:10+00:00",
-      "players": []
-    },
-    {
-      "id": "f5d0bf8f1bff7dd83bb8",
-      "headline": "Buccaneers at Panthers: Thursday injury report for Week 7",
-      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/69258/buccaneers-panthers-thursday-injury-report-nfl-week-7",
-      "source_id": "news_sbn_tb",
-      "source": "Bucs Nation (SB Nation)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "The Tampa Bay Buccaneers received more encouraging news Thursday as quarterback Baker Mayfield participated fully in practice for the second consecutive day ahead of Sunday\u2019s NFC South matchup against the Carolina Panthers. Mayfield, who has missed the last three games after dislocating his right thumb in Week 3, continues to make progress toward a potential [\u2026]",
-      "categories": [
-        "Tampa Bay Buccaneers Injuries"
-      ],
-      "published_at": "2026-10-22T22:28:32+00:00",
-      "players": [
-        {
-          "id": "00-0034855",
-          "name": "Baker Mayfield",
-          "team": "TB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "6ceb2a428c64c2080d1f",
-      "headline": "Another Nick Bosa-less practice for the 49ers",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/164705/another-nick-bosa-less-practice-for-the-49ers",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The San Francisco 49ers injury report is a lengthy one for Thursday afternoon. The following players didn\u2019t practice for the second day in a row: EDGE Nick Bosa (knee, calf)WR Mike Evans (ribs, Achilles)LB Luke Gifford (groin)S Siran Neal (knee)WR Deebo Samuel (hamstring)S Marques Sigle (ankle)CB Upton Stout (shoulder)LB Garret Wallow (hamstring) Bosa wasn\u2019t on [\u2026]",
-      "categories": [
-        "San Francisco 49ers Injuries"
-      ],
-      "published_at": "2026-10-22T22:21:46+00:00",
-      "players": [
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "2e15af873c2b69a4d2b8",
-      "headline": "One Thought on Every Eagles Rookie Six Games Into the Season",
-      "url": "https://www.si.com/nfl/eagles/onsi/one-thought-on-every-eagles-rookie-six-games-into-the-season-01m5db5aqx68",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Philadelphia Eagles are in the midst of a disastrous four-game losing streak. Injuries have been piling up, with star players like quarterback Jalen Hurts a",
-      "categories": [],
-      "published_at": "2026-10-22T22:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0036389",
-          "name": "Jalen Hurts",
-          "team": "PHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "8428f61c84f865adecfe",
-      "headline": "Falcons injury report: Atlanta releases lengthy list as prep for 49ers continues",
-      "url": "https://www.atlantafalcons.com/news/falcons-injury-report-atlanta-releases-lengthy-list-as-prep-for-49ers-continues",
-      "source_id": "news_official_atl",
-      "source": "Atlanta Falcons (official)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "Gervon Dexter Sr. added to Thursday report with hamstring injury. Plus 21-day practice window opens for Cameron Williams.",
-      "categories": [
-        "News",
-        "Emory Injury Report",
-        "Gervon Dexter Sr.",
-        "Brian Robinson",
-        "Cameron Williams",
-        "A.J. Terrell",
-        "Avieon Terrell",
-        "Divine Deablo",
-        "Billy Bowman Jr."
-      ],
-      "published_at": "2026-10-22T21:39:02+00:00",
       "players": []
     }
   ]
