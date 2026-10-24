@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T19:29:10.172255+00:00",
+  "updated_at": "2026-10-24T20:00:57.972030+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T19:28:17+00:00",
+      "latest_entry_at": "2026-10-24T20:00:01+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-23T22:26:11+00:00",
+      "latest_entry_at": "2026-10-24T19:58:53+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-10-24T13:00:09+00:00",
+      "latest_entry_at": "2026-10-24T19:47:00+00:00",
       "stale": false
     },
     {
@@ -124,7 +124,7 @@
     {
       "source_id": "news_official_gb",
       "ok": true,
-      "eligible": 7,
+      "eligible": 6,
       "error": "",
       "latest_entry_at": "2026-10-24T14:00:00+00:00",
       "stale": false
@@ -164,7 +164,7 @@
     {
       "source_id": "news_official_lac",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
       "latest_entry_at": "2026-10-22T14:00:42+00:00",
       "stale": false
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-24T19:00:00+00:00",
+      "latest_entry_at": "2026-10-24T20:00:00+00:00",
       "stale": false
     },
     {
@@ -268,7 +268,7 @@
     {
       "source_id": "news_official_tb",
       "ok": true,
-      "eligible": 9,
+      "eligible": 8,
       "error": "",
       "latest_entry_at": "2026-10-25T16:59:00+00:00",
       "stale": false
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T19:28:17+00:00",
+      "latest_entry_at": "2026-10-24T20:00:01+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T17:00:00+00:00",
+      "latest_entry_at": "2026-10-24T19:00:00+00:00",
       "stale": false
     },
     {
@@ -332,9 +332,9 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-23T22:35:35+00:00",
+      "latest_entry_at": "2026-10-24T19:40:31+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:17:04+00:00",
+      "latest_entry_at": "2026-10-24T00:23:01+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:00:00+00:00",
+      "latest_entry_at": "2026-10-24T12:00:00+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T15:00:00+00:00",
+      "latest_entry_at": "2026-10-23T12:00:00+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T18:30:00+00:00",
+      "latest_entry_at": "2026-10-24T19:00:00+00:00",
       "stale": false
     },
     {
@@ -468,9 +468,9 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:30:00+00:00",
+      "latest_entry_at": "2026-10-23T18:51:48+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-24T15:19:54+00:00",
+      "latest_entry_at": "2026-10-24T02:37:52+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:01:00+00:00",
+      "latest_entry_at": "2026-10-24T16:56:33+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,126 @@
     }
   ],
   "items": [
+    {
+      "id": "bc16b337e5ced76f4e5c",
+      "headline": "Cowboys vs. Eagles Injury Report",
+      "url": "https://www.philadelphiaeagles.com/news/cowboys-vs-eagles-injury-report-2026-nfl-week-7-saquon-barkley-jalyx-hunt",
+      "source_id": "news_official_phi",
+      "source": "Philadelphia Eagles (official)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "Dallas Goedert is good to go for Monday, while Saquon Barkley and Jalyx Hunt inch closer to a potential return.",
+      "categories": [
+        "Injury Report",
+        "All News-archived",
+        "NFL.com Feature",
+        "Team Roster Content",
+        "2026 Week 7 vs. Cowboys"
+      ],
+      "published_at": "2026-10-24T20:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0034351",
+          "name": "Dallas Goedert",
+          "team": "PHI",
+          "position": "TE"
+        },
+        {
+          "id": "00-0034844",
+          "name": "Saquon Barkley",
+          "team": "PHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "948d207b42ff018023e7",
+      "headline": "Lamar Jackson Ruled Out vs. Bengals",
+      "url": "https://www.baltimoreravens.com/news/lamar-jackson-out-against-bengals-week-7-tyler-huntley-third-straight-start",
+      "source_id": "news_official_bal",
+      "source": "Baltimore Ravens (official)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "Tyler Huntley will start his third straight game with Lamar Jackson ruled out Week 7 against the Cincinnati Bengals.",
+      "categories": [
+        "General",
+        "Clifton Brown",
+        "Lamar Jackson",
+        "2026 Week 7",
+        "2026 Week 7 News",
+        "Cincinnati Bengals at Baltimore Ravens (2026-REG-7)",
+        "inline-news",
+        "Homepage Centerpiece"
+      ],
+      "published_at": "2026-10-24T19:47:00+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035993",
+          "name": "Tyler Huntley",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "7f534fc072752baf9598",
+      "headline": "Texans' Latest Roster Decision Sets Woody Marks Up for Huge Week 7",
+      "url": "https://www.si.com/nfl/texans/onsi/texans-latest-roster-decision-sets-woody-marks-up-for-huge-week-7",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "Woody Marks remains one key name to watch for the Houston Texans against the New York Giants.",
+      "categories": [],
+      "published_at": "2026-10-24T19:42:46+00:00",
+      "players": [
+        {
+          "id": "00-0040583",
+          "name": "Woody Marks",
+          "team": "HOU",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "80e9a3cddab2f779386a",
+      "headline": "Ravens rule out Lamar Jackson; Tyler Huntley to start vs. Bengals",
+      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/86921/ravens-rule-out-lamar-jackson-tyler-huntley-to-start-vs-bengals",
+      "source_id": "news_sbn_bal",
+      "source": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Baltimore Ravens downgraded quarterback Lamar Jackson\u2019s status from \u2018questionable\u2019 to \u2018out\u2019 ahead of their Week 7 matchup with the Cincinnati Bengals. Backup Tyler \u2018Snoop\u2019 Huntley will make his third straight start after an overtime win over the Falcons and a disappointing loss to the Browns. This is a breaking story that will be updated [\u2026]",
+      "categories": [
+        "Baltimore Ravens Injuries",
+        "Baltimore Ravens News"
+      ],
+      "published_at": "2026-10-24T19:40:31+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035993",
+          "name": "Tyler Huntley",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "197f0f0d89037c0a6171",
       "headline": "Chiefs Injury Roundup: Brashard Smith Placed on Injured Reserve, Latest on L'Jarius Sneed",
@@ -1377,33 +1497,6 @@
           "id": "00-0039165",
           "name": "Zach Charbonnet",
           "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "bc16b337e5ced76f4e5c",
-      "headline": "Cowboys vs. Eagles Injury Report",
-      "url": "https://www.philadelphiaeagles.com/news/cowboys-vs-eagles-injury-report-2026-nfl-week-7-saquon-barkley-jalyx-hunt",
-      "source_id": "news_official_phi",
-      "source": "Philadelphia Eagles (official)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "Running back Saquon Barkley practiced again on Friday as Monday night's matchup inches closer.",
-      "categories": [
-        "Injury Report",
-        "All News-archived",
-        "NFL.com Feature",
-        "Team Roster Content",
-        "2026 Week 7 vs. Cowboys"
-      ],
-      "published_at": "2026-10-23T21:55:00+00:00",
-      "players": [
-        {
-          "id": "00-0034844",
-          "name": "Saquon Barkley",
-          "team": "PHI",
           "position": "RB"
         }
       ]
@@ -3949,62 +4042,6 @@
           "name": "C.J. Donaldson",
           "team": "NO",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "32bba59033610b59aa10",
-      "headline": "Ravens Injury Report Reveals Major Development For Lamar Jackson",
-      "url": "https://www.si.com/nfl/ravens/onsi/ravens-injury-report-reveals-major-development-for-lamar-jackson-01m5j9cw6hs3",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The NFL is watching everything the Ravens two-time MVP does very closely as he tries to return from an ankle injury to face the Bengals",
-      "categories": [],
-      "published_at": "2026-10-22T20:42:45+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "ce6b0a1e8d17a6e24757",
-      "headline": "Packers-Lions Thursday Injury Report: Three Huge Updates for Green Bay",
-      "url": "https://www.si.com/nfl/packers/onsi/packers-lions-thursday-injury-report-three-huge-updates-for-green-bay",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Here are the latest injury reports for the Green Bay Packers and Detroit Lions as they get ready for Sunday\u2019s game at Ford Field. There were two additions for the Packers.",
-      "categories": [],
-      "published_at": "2026-10-22T20:38:44+00:00",
-      "players": []
-    },
-    {
-      "id": "cfcc963c681060660922",
-      "headline": "Examining the Complex Blame Share for Titans' Offense Between Cam Ward and Brian Daboll",
-      "url": "https://www.si.com/nfl/titans/onsi/examining-the-complex-blame-share-for-titans-offense-between-cam-ward-and-brian-daboll-01m5jfsxenn0",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "Cam Ward's second-season struggles complicate the Titans' rebuild beyond the guys on their roster, but it isn't entirely his fault.",
-      "categories": [],
-      "published_at": "2026-10-22T20:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0040676",
-          "name": "Cam Ward",
-          "team": "TEN",
-          "position": "QB"
         }
       ]
     }
