@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T18:00:55.980440+00:00",
+  "updated_at": "2026-10-24T19:29:10.172255+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T18:00:04+00:00",
+      "latest_entry_at": "2026-10-24T19:28:17+00:00",
       "stale": false
     },
     {
@@ -22,7 +22,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T13:00:44+00:00",
+      "latest_entry_at": "2026-10-24T17:20:24+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T17:47:37+00:00",
+      "latest_entry_at": "2026-10-24T18:41:59+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-23T21:41:48+00:00",
+      "latest_entry_at": "2026-10-24T19:01:06+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-24T16:00:02+00:00",
+      "latest_entry_at": "2026-10-24T18:00:03+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T00:29:07+00:00",
+      "latest_entry_at": "2026-10-24T19:00:00+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-26T04:00:00+00:00",
+      "latest_entry_at": "2026-10-24T19:00:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T18:00:04+00:00",
+      "latest_entry_at": "2026-10-24T19:28:17+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T17:47:37+00:00",
+      "latest_entry_at": "2026-10-24T18:41:59+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T00:00:00+00:00",
+      "latest_entry_at": "2026-10-24T17:36:57+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T17:20:36+00:00",
+      "latest_entry_at": "2026-10-24T14:17:04+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T16:00:00+00:00",
+      "latest_entry_at": "2026-10-24T18:30:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T15:00:00+00:00",
+      "latest_entry_at": "2026-10-24T19:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T15:00:00+00:00",
+      "latest_entry_at": "2026-10-24T18:36:11+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:57:27+00:00",
+      "latest_entry_at": "2026-10-24T19:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T16:56:33+00:00",
+      "latest_entry_at": "2026-10-24T14:01:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "197f0f0d89037c0a6171",
+      "headline": "Chiefs Injury Roundup: Brashard Smith Placed on Injured Reserve, Latest on L'Jarius Sneed",
+      "url": "https://www.si.com/nfl/chiefs/onsi/chiefs-injury-roundup-brashard-smith-placed-on-injured-reserve-latest-on-ljarius-sneed",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "The Kansas City Chiefs shuffled their roster on Saturday, including moving RB Brashard Smith to IR. Additionally, there's an update on CB L'Jarius Sneed for Week 7.",
+      "categories": [],
+      "published_at": "2026-10-24T18:37:14+00:00",
+      "players": [
+        {
+          "id": "00-0040078",
+          "name": "Brashard Smith",
+          "team": "KC",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "c4ca89ceaddae417c756",
       "headline": "Browns roster: Dylan Sampson activated among 3 moves; good sign for injured star defenders",
@@ -3984,35 +4005,6 @@
           "name": "Cam Ward",
           "team": "TEN",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "3deac021565f38819f7c",
-      "headline": "Eagles sign RB Jaydon Blue, G Evan Neal, and LB Anfernee Orji to the practice squad",
-      "url": "https://www.philadelphiaeagles.com/news/eagles-sign-jaydon-blue-evan-neal-anfernee-orji-to-the-practice-squad-2026-nfl-week-7-cowboys",
-      "source_id": "news_official_phi",
-      "source": "Philadelphia Eagles (official)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The team has also waived TE E.J. Jenkins.",
-      "categories": [
-        "All News-archived",
-        "NFL.com Feature",
-        "2026 Week 7 vs. Cowboys",
-        "Team Roster Content",
-        "Jaydon Blue",
-        "Evan Neal",
-        "Anfernee Orji"
-      ],
-      "published_at": "2026-10-22T20:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0038498",
-          "name": "E.J. Jenkins",
-          "team": "PHI",
-          "position": "TE"
         }
       ]
     }
