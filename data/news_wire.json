@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T14:00:54.013840+00:00",
+  "updated_at": "2026-10-25T14:22:15.028466+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T13:49:38+00:00",
+      "latest_entry_at": "2026-10-25T14:07:02+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T13:46:15+00:00",
+      "latest_entry_at": "2026-10-25T14:10:17+00:00",
       "stale": false
     },
     {
@@ -164,7 +164,7 @@
     {
       "source_id": "news_official_lac",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
       "latest_entry_at": "2026-10-22T14:00:42+00:00",
       "stale": false
@@ -278,15 +278,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-24T17:14:19+00:00",
+      "latest_entry_at": "2026-10-25T14:15:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-25T13:49:38+00:00",
+      "latest_entry_at": "2026-10-25T14:07:02+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T13:46:15+00:00",
+      "latest_entry_at": "2026-10-25T14:10:17+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T13:00:00+00:00",
+      "latest_entry_at": "2026-10-25T00:00:00+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T12:05:32+00:00",
+      "latest_entry_at": "2026-10-25T13:58:26+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T13:15:00+00:00",
+      "latest_entry_at": "2026-10-25T10:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-25T13:55:29+00:00",
+      "latest_entry_at": "2026-10-25T10:00:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T11:00:00+00:00",
+      "latest_entry_at": "2026-10-25T13:00:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T11:29:04+00:00",
+      "latest_entry_at": "2026-10-25T11:00:00+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:00:00+00:00",
+      "latest_entry_at": "2026-10-25T13:29:00+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-24T15:19:54+00:00",
+      "latest_entry_at": "2026-10-25T12:13:15+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-25T13:00:00+00:00",
+      "latest_entry_at": "2026-10-25T11:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,33 @@
     }
   ],
   "items": [
+    {
+      "id": "7f09a37de0af60d5e3ee",
+      "headline": "Browns Put Themselves in Unique Position Ahead of Sunday Outing Against Titans",
+      "url": "https://www.si.com/nfl/browns/onsi/browns-put-themselves-in-unique-position-ahead-of-sunday-outing-against-titans-01m5sn1820wd",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "The Cleveland Browns are going to have to navigate a loaded backfield on Sunday, Oct. 25, after the front office activated Dylan Sampson and cleared Quinshon Judkins to play. Audric Estime and Jaleel McLaughlin are both on roster as well.",
+      "categories": [],
+      "published_at": "2026-10-25T14:07:02+00:00",
+      "players": [
+        {
+          "id": "00-0040162",
+          "name": "Dylan Sampson",
+          "team": "CLE",
+          "position": "RB"
+        },
+        {
+          "id": "00-0040784",
+          "name": "Quinshon Judkins",
+          "team": "CLE",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "d8c2838f193226b7aa61",
       "headline": "Are Bills Playing Today? When Is NFL MVP Favorite Josh Allen's Next Game?",
@@ -588,6 +615,25 @@
       "feed_description": "The two teams meet this morning in Paris",
       "categories": [],
       "published_at": "2026-10-25T12:42:19+00:00",
+      "players": []
+    },
+    {
+      "id": "e248dab03f736834ea2f",
+      "headline": "New Orleans Saints vs. Pittsburgh Steelers Inactives: Cesar Ruiz ruled out",
+      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-game-information/116923/new-orleans-saints-vs-pittsburgh-steelers-inactives-cesar-ruiz-out",
+      "source_id": "news_sbn_no",
+      "source": "Canal Street Chronicles (SB Nation)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "Week 7 of the 2026 NFL season is here, and the New Orleans Saints (2-4) are overseas as they prepare to take on the Pittsburgh Steelers (4-2) in a historic matchup in Stade de France. With kickoff just minutes away, let\u2019s take a look at today\u2019s inactives. New Orleans Saints: Pittsburgh Steelers:",
+      "categories": [
+        "New Orleans Saints Game Information",
+        "New Orleans Saints Injuries",
+        "New Orleans Saints News",
+        "New Orleans Saints Roster"
+      ],
+      "published_at": "2026-10-25T12:15:35+00:00",
       "players": []
     },
     {
@@ -4039,57 +4085,6 @@
           "name": "Dontayvion Wicks",
           "team": "PHI",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "b53e56b3ef286d901d4b",
-      "headline": "BUCS PRACTICE BUZZ: Baker Mayfield & Zac Robinson Had A TOUGH TALK!",
-      "url": "https://www.pewterreport.com/bucs-practice-buzz-baker-mayfield-tough-talk/",
-      "source_id": "pewter_report",
-      "source": "Pewter Report",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "Bucs Practice Buzz is a weekly segment on Pewter Report\u2019s YouTube channel Pewter Report TV where we highlight the biggest moments and clips from the day of practice from the Advent Health Training Center. There was a lot of great insight at Thursday's practice for the Bucs. We heard from offensive coordinator Zac Robinson",
-      "categories": [
-        "Articles",
-        "Featured"
-      ],
-      "published_at": "2026-10-22T23:26:42+00:00",
-      "players": [
-        {
-          "id": "00-0034855",
-          "name": "Baker Mayfield",
-          "team": "TB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "14e3c1fafb23375a3323",
-      "headline": "Injury Report: CB Pat Surtain II remains limited practice participant ahead of Week 7 game vs. Cardinals",
-      "url": "https://www.denverbroncos.com/news/injuryreport/injury-report-cb-pat-surtain-ii-remains-limited-practice-participant-ahead-of-week-7-game-vs-cardinals",
-      "source_id": "news_official_den",
-      "source": "Denver Broncos (official)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "Running back Jonah Coleman (ankle), who was designated for return from injured reserve on Wednesday, was a full practice participant for the second consecutive day.",
-      "categories": [
-        "Top Stories",
-        "Injury Report",
-        "Susanna Weir",
-        "Denver Broncos at Arizona Cardinals (2026-REG-7)",
-        "Patrick Surtain II"
-      ],
-      "published_at": "2026-10-22T23:12:20+00:00",
-      "players": [
-        {
-          "id": "00-0041496",
-          "name": "Jonah Coleman",
-          "team": "DEN",
-          "position": "RB"
         }
       ]
     }
