@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T05:19:50.671021+00:00",
+  "updated_at": "2026-10-25T10:00:41.332799+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T05:12:57+00:00",
+      "latest_entry_at": "2026-10-25T09:42:15+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T03:47:39+00:00",
+      "latest_entry_at": "2026-10-25T09:00:00+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-10-24T19:47:00+00:00",
+      "latest_entry_at": "2026-10-25T05:15:00+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:45:00+00:00",
+      "latest_entry_at": "2026-10-25T09:00:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T05:12:57+00:00",
+      "latest_entry_at": "2026-10-25T09:42:15+00:00",
       "stale": false
     },
     {
@@ -324,9 +324,9 @@
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-24T16:00:00+00:00",
+      "latest_entry_at": "2026-10-25T09:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T16:33:00+00:00",
+      "latest_entry_at": "2026-10-25T09:07:00+00:00",
       "stale": false
     },
     {
@@ -540,21 +540,51 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T21:43:00+00:00",
+      "latest_entry_at": "2026-10-25T09:13:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-22T23:53:15+00:00",
+      "latest_entry_at": "2026-10-24T21:57:58+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "206e70f7830c6dd7c18c",
+      "headline": "49ers News: GAME DAY",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-news/164776/49ers-news-week-7-atlanta-falcons-christian-kirk-injured-reserve-game-day",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Never going to overlook at 10 am body clock game in Atlanta. Never going to overlook the absence of Mike Evans and Nick Bosa. Never going to overlook Bijan Robinson, Drake London, and this Falcons pass-rush. However, with Divine Deablo ruled out, Atlanta will be relying on rookie linebackers to cover George Kittle and Christian [\u2026]",
+      "categories": [
+        "Golden Nuggets: San Francisco 49ers daily news roundup",
+        "San Francisco 49ers News"
+      ],
+      "published_at": "2026-10-25T09:13:00+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0033288",
+          "name": "George Kittle",
+          "team": "SF",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "80e9a3cddab2f779386a",
       "headline": "Ravens rule out Lamar Jackson; Tyler Huntley to start vs. Bengals",
@@ -1100,7 +1130,7 @@
         "2026 Week 7 News",
         "Cincinnati Bengals at Baltimore Ravens (2026-REG-7)",
         "inline-news",
-        "Homepage Centerpiece"
+        "Homepage Latest Headlines"
       ],
       "published_at": "2026-10-24T19:47:00+00:00",
       "players": [
@@ -4053,35 +4083,6 @@
       ],
       "published_at": "2026-10-22T22:47:41+00:00",
       "players": []
-    },
-    {
-      "id": "9ea387970f1e04e36efc",
-      "headline": "Puka Nacua injured in Rams\u2019 Thursday practice",
-      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/152938/puka-nacua-injury-thursday-practice",
-      "source_id": "news_sbn_lar",
-      "source": "Turf Show Times (SB Nation)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "Los Angeles Rams star Puka Nacua left Thursday\u2019s practice with a calf injury and will be listed as limited on the injury report. The Rams are already dealing with the loss of Davante Adams for 6-10 weeks, and now Nacua is in danger of missing Sunday\u2019s game against the Las Vegas Raiders. Are the L.A. [\u2026]",
-      "categories": [
-        "Los Angeles Rams Injuries"
-      ],
-      "published_at": "2026-10-22T22:47:26+00:00",
-      "players": [
-        {
-          "id": "00-0031381",
-          "name": "Davante Adams",
-          "team": "LAR",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039075",
-          "name": "Puka Nacua",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
