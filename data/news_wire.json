@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T10:00:41.332799+00:00",
+  "updated_at": "2026-10-25T10:09:30.701616+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T09:42:15+00:00",
+      "latest_entry_at": "2026-10-25T10:00:04+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-25T09:00:00+00:00",
+      "latest_entry_at": "2026-10-25T10:05:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-25T09:42:15+00:00",
+      "latest_entry_at": "2026-10-25T10:00:04+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T22:15:19+00:00",
+      "latest_entry_at": "2026-10-25T10:00:00+00:00",
       "stale": false
     },
     {
@@ -332,9 +332,9 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-25T05:05:25+00:00",
+      "latest_entry_at": "2026-10-25T10:00:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T21:40:02+00:00",
+      "latest_entry_at": "2026-10-25T10:00:00+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T20:49:20+00:00",
+      "latest_entry_at": "2026-10-25T10:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T21:08:07+00:00",
+      "latest_entry_at": "2026-10-25T10:00:00+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T23:00:00+00:00",
+      "latest_entry_at": "2026-10-25T10:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "4d26ee259277d6f1559c",
+      "headline": "Browns' 2027 NFL Draft Plans Could Change Everything for Shedeur Sanders",
+      "url": "https://www.si.com/nfl/browns/onsi/browns-2027-nfl-draft-plans-could-change-everything-for-shedeur-sanders-01m5qytze5eb",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "Coming into the 2026 NFL season, many people thought Shedeur Sanders would be the starting quarterback for the Cleveland Browns by this time, here in week 7.",
+      "categories": [],
+      "published_at": "2026-10-25T10:00:03+00:00",
+      "players": [
+        {
+          "id": "00-0040668",
+          "name": "Shedeur Sanders",
+          "team": "CLE",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "206e70f7830c6dd7c18c",
       "headline": "49ers News: GAME DAY",
@@ -4062,26 +4083,6 @@
       "feed_description": "Here's the full list of inactives for the Chicago Bears and New England Patriots ahead of their Week 7 game on Thursday night.",
       "categories": [],
       "published_at": "2026-10-22T22:48:11+00:00",
-      "players": []
-    },
-    {
-      "id": "37e67731d4cb2ec9777e",
-      "headline": "Week 7 Inactives: Patriots at Bears",
-      "url": "https://www.patriots.com/news/week-7-inactives-patriots-at-bears-x7631",
-      "source_id": "news_official_ne",
-      "source": "New England Patriots (official)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots and Chicago Bears announce the following inactive players ahead of their NFL Week 7 game on October 22, 2026.",
-      "categories": [
-        "Inactives",
-        "hp-article",
-        "hp-featured",
-        "Pregame-Content",
-        "New England Patriots at Chicago Bears (2026-REG-7)"
-      ],
-      "published_at": "2026-10-22T22:47:41+00:00",
       "players": []
     }
   ]
