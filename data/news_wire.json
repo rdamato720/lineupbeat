@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T04:00:55.854693+00:00",
+  "updated_at": "2026-10-25T05:19:50.671021+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T03:43:29+00:00",
+      "latest_entry_at": "2026-10-25T05:12:57+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T02:17:52+00:00",
+      "latest_entry_at": "2026-10-25T03:47:39+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T22:01:00+00:00",
+      "latest_entry_at": "2026-10-25T04:40:48+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-24T15:55:28+00:00",
+      "latest_entry_at": "2026-10-25T12:00:00+00:00",
       "stale": false
     },
     {
@@ -236,7 +236,7 @@
     {
       "source_id": "news_official_phi",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
       "latest_entry_at": "2026-10-24T20:00:00+00:00",
       "stale": false
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T03:43:29+00:00",
+      "latest_entry_at": "2026-10-25T05:12:57+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-23T20:37:58+00:00",
+      "latest_entry_at": "2026-10-24T22:15:19+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-24T20:54:30+00:00",
+      "latest_entry_at": "2026-10-25T05:05:25+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T11:15:00+00:00",
+      "latest_entry_at": "2026-10-24T16:33:00+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T17:00:00+00:00",
+      "latest_entry_at": "2026-10-24T22:00:00+00:00",
       "stale": false
     },
     {
@@ -468,9 +468,9 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:30:00+00:00",
+      "latest_entry_at": "2026-10-24T21:00:00+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,43 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-24T21:57:58+00:00",
+      "latest_entry_at": "2026-10-22T23:53:15+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "80e9a3cddab2f779386a",
+      "headline": "Ravens rule out Lamar Jackson; Tyler Huntley to start vs. Bengals",
+      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/86921/ravens-rule-out-lamar-jackson-tyler-huntley-to-start-vs-bengals",
+      "source_id": "news_sbn_bal",
+      "source": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Baltimore Ravens downgraded quarterback Lamar Jackson\u2019s status from \u2018questionable\u2019 to \u2018out\u2019 ahead of their Week 7 matchup with the Cincinnati Bengals. Backup Tyler \u2018Snoop\u2019 Huntley will make his third straight start after an overtime win over the Falcons and a disappointing loss to the Browns. Jackson\u2019s comments on Friday, as well as his limited [\u2026]",
+      "categories": [
+        "Baltimore Ravens Injuries",
+        "Baltimore Ravens News"
+      ],
+      "published_at": "2026-10-25T05:05:25+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035993",
+          "name": "Tyler Huntley",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "0a27460c05a789e043c6",
       "headline": "Saints vs. Steelers: Full Injury Report, Statistical Comparison and Game Details",
@@ -1106,36 +1136,6 @@
           "name": "Woody Marks",
           "team": "HOU",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "80e9a3cddab2f779386a",
-      "headline": "Ravens rule out Lamar Jackson; Tyler Huntley to start vs. Bengals",
-      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/86921/ravens-rule-out-lamar-jackson-tyler-huntley-to-start-vs-bengals",
-      "source_id": "news_sbn_bal",
-      "source": "Baltimore Beatdown (SB Nation)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Baltimore Ravens downgraded quarterback Lamar Jackson\u2019s status from \u2018questionable\u2019 to \u2018out\u2019 ahead of their Week 7 matchup with the Cincinnati Bengals. Backup Tyler \u2018Snoop\u2019 Huntley will make his third straight start after an overtime win over the Falcons and a disappointing loss to the Browns. This is a breaking story that will be updated [\u2026]",
-      "categories": [
-        "Baltimore Ravens Injuries",
-        "Baltimore Ravens News"
-      ],
-      "published_at": "2026-10-24T19:40:31+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        },
-        {
-          "id": "00-0035993",
-          "name": "Tyler Huntley",
-          "team": "BAL",
-          "position": "QB"
         }
       ]
     },
