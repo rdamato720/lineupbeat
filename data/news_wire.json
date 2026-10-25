@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T12:00:51.287621+00:00",
+  "updated_at": "2026-10-25T14:00:54.013840+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T12:00:04+00:00",
+      "latest_entry_at": "2026-10-25T13:49:38+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
-      "ok": true,
-      "eligible": 2,
-      "error": "",
-      "latest_entry_at": "2026-10-24T21:46:26+00:00",
+      "ok": false,
+      "eligible": 0,
+      "error": "robots_unavailable",
+      "latest_entry_at": null,
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T02:26:07+00:00",
+      "latest_entry_at": "2026-10-25T13:46:15+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T09:00:00+00:00",
+      "latest_entry_at": "2026-10-25T13:29:38+00:00",
       "stale": false
     },
     {
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-24T20:00:36+00:00",
+      "latest_entry_at": "2026-10-25T12:00:02+00:00",
       "stale": false
     },
     {
@@ -212,9 +212,9 @@
     {
       "source_id": "news_official_no",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-25T11:15:06+00:00",
+      "latest_entry_at": "2026-10-25T12:02:05+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-24T23:06:13+00:00",
+      "latest_entry_at": "2026-10-25T12:39:00+00:00",
       "stale": false
     },
     {
@@ -244,9 +244,9 @@
     {
       "source_id": "news_official_pit",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-25T10:05:00+00:00",
+      "latest_entry_at": "2026-10-25T12:00:00+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-24T20:15:06+00:00",
+      "latest_entry_at": "2026-10-25T14:05:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-25T12:00:04+00:00",
+      "latest_entry_at": "2026-10-25T13:49:38+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T02:26:07+00:00",
+      "latest_entry_at": "2026-10-25T13:46:15+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T00:00:00+00:00",
+      "latest_entry_at": "2026-10-25T13:00:00+00:00",
       "stale": false
     },
     {
@@ -318,15 +318,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T10:00:00+00:00",
+      "latest_entry_at": "2026-10-25T12:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-25T11:00:00+00:00",
+      "latest_entry_at": "2026-10-25T12:30:00+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-25T11:50:59+00:00",
+      "latest_entry_at": "2026-10-25T12:05:32+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T10:00:00+00:00",
+      "latest_entry_at": "2026-10-25T13:15:00+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-23T23:08:18+00:00",
+      "latest_entry_at": "2026-10-25T12:00:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-25T03:01:38+00:00",
+      "latest_entry_at": "2026-10-25T12:00:00+00:00",
       "stale": false
     },
     {
@@ -396,17 +396,17 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-25T10:00:00+00:00",
+      "latest_entry_at": "2026-10-25T13:25:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_kc",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T19:00:00+00:00",
+      "latest_entry_at": "2026-10-25T13:30:00+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-25T11:00:00+00:00",
+      "latest_entry_at": "2026-10-25T13:30:00+00:00",
       "stale": false
     },
     {
@@ -438,15 +438,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-25T10:00:00+00:00",
+      "latest_entry_at": "2026-10-25T13:55:29+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-25T11:30:45+00:00",
+      "latest_entry_at": "2026-10-25T13:11:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T14:00:00+00:00",
+      "latest_entry_at": "2026-10-25T13:15:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-25T11:30:00+00:00",
+      "latest_entry_at": "2026-10-25T13:30:00+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T23:00:00+00:00",
+      "latest_entry_at": "2026-10-25T14:00:00+00:00",
       "stale": false
     },
     {
@@ -502,15 +502,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-25T11:00:00+00:00",
+      "latest_entry_at": "2026-10-24T11:29:04+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-25T10:45:00+00:00",
+      "latest_entry_at": "2026-10-24T14:00:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-25T11:00:00+00:00",
+      "latest_entry_at": "2026-10-25T13:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-24T20:00:00+00:00",
+      "latest_entry_at": "2026-10-25T12:42:00+00:00",
       "stale": false
     },
     {
@@ -542,19 +542,95 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-25T09:13:00+00:00",
+      "latest_entry_at": "2026-10-25T12:03:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-24T21:57:58+00:00",
+      "latest_entry_at": "2026-10-25T14:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "d8c2838f193226b7aa61",
+      "headline": "Are Bills Playing Today? When Is NFL MVP Favorite Josh Allen's Next Game?",
+      "url": "https://www.si.com/nfl/bills/onsi/week-bye-are-bills-playing-today-when-is-nfl-mvp-favorite-josh-allen-next-game",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills, who have won five times in their first six games, don't return to the spotlight until a Week 8 home game against the Baltimore Ravens.",
+      "categories": [],
+      "published_at": "2026-10-25T13:01:55+00:00",
+      "players": [
+        {
+          "id": "00-0034857",
+          "name": "Josh Allen",
+          "team": "BUF",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "6b2bc35e9b43792e40c6",
+      "headline": "Saints-Steelers List Inactives: New Orleans Injury List Shortens Drastically",
+      "url": "https://www.si.com/nfl/saints/onsi/saints-steelers-list-inactives-new-orleans-injury-list-shortens-drastically-01m5sg4wkb57",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "The two teams meet this morning in Paris",
+      "categories": [],
+      "published_at": "2026-10-25T12:42:19+00:00",
+      "players": []
+    },
+    {
+      "id": "08293f0450d6518488d3",
+      "headline": "New Orleans Saints inactives for Pittsburgh Steelers game | 2026 NFL Week 7",
+      "url": "https://www.neworleanssaints.com/news/new-orleans-saints-inactives-pittsburgh-steelers-2026-nfl-week-7-gameday",
+      "source_id": "news_official_no",
+      "source": "New Orleans Saints (official)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "Cesar Ruiz, Nathan Shepherd out for Sunday's game vs. Steelers",
+      "categories": [
+        "Inactives List",
+        "Latest News",
+        "Gameday",
+        "2026-reg-week7",
+        "Saints International",
+        "Saints in France"
+      ],
+      "published_at": "2026-10-25T12:02:05+00:00",
+      "players": []
+    },
+    {
+      "id": "edab49a4555f892b00db",
+      "headline": "Steelers inactives for Week 7 at Saints",
+      "url": "https://www.steelers.com/news/steelers-inactives-for-week-7-at-saints",
+      "source_id": "news_official_pit",
+      "source": "Pittsburgh Steelers (official)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "Find out who won't play today as the Steelers take on the Saints at Stade de France in Paris",
+      "categories": [
+        "Inactives",
+        "UPMC",
+        "Featured",
+        "Sights and Sounds",
+        "Pittsburgh Steelers at New Orleans Saints (2026-REG-7)"
+      ],
+      "published_at": "2026-10-25T12:00:00+00:00",
+      "players": []
+    },
     {
       "id": "16d49b8d86b5422e8e11",
       "headline": "Eagles-Cowboys Final Injury Report: DeVonta Smith and Dontayvion Wicks out",
@@ -4016,89 +4092,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "157b7eeea0ebce8d14f9",
-      "headline": "New York Jets receive encouraging Breece Hall injury update ahead of Dolphins matchup as star running back nears long-awaited return",
-      "url": "https://atozsports.com/nfl/new-york-jets-news/new-york-jets-encouraging-breece-hall-injury-update-ahead-of-dolphins-matchup-as-star-running-back-nears-long-awaited-return/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Breece Hall returned to Jets practice for the first time since Week 3, offering hope for a Week 8 return against Miami and a potentially dangerous pairing with Braelon Allen.",
-      "categories": [
-        "New York Jets News",
-        "Aaron Glenn",
-        "American Football",
-        "Braelon Allen",
-        "Breece Hall",
-        "Wildcat"
-      ],
-      "published_at": "2026-10-22T23:10:18+00:00",
-      "players": [
-        {
-          "id": "00-0038120",
-          "name": "Breece Hall",
-          "team": "NYJ",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039794",
-          "name": "Braelon Allen",
-          "team": "NYJ",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "19f3581c8f937a3e818a",
-      "headline": "Patriots inactives for NFL Week 7 vs. Bears",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/141749/patriots-vs-bears-inactives-nfl-week-7-thursday-night-football",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Just 30 minutes before announcing their game-day inactives for their Thursday night game in Chicago, the New England Patriots made an update to their injury report. Cornerback Christian Gonzalez was now questionable with an illness. However, the Pro Bowler has ultimately been cleared for the game and is not listed among the six inactives. Whether [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News",
-        "New England Patriots Roster"
-      ],
-      "published_at": "2026-10-22T22:51:18+00:00",
-      "players": []
-    },
-    {
-      "id": "a44ffbee838bf094fad0",
-      "headline": "Bears-Patriots Inactives: T.J. Edwards is out; Jonah Jackson is in",
-      "url": "https://www.windycitygridiron.com/chicago-bears-game-information/125935/bears-patriots-inactives-t-j-edwards-is-out-jonah-jackson-is-in",
-      "source_id": "news_sbn_chi",
-      "source": "Windy City Gridiron (SB Nation)",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Chicago Bears (4-2) and the New England Patriots (4-2) kick off at 7:15 (CT) at Soldier Field for what should be a fun game in great football weather. Each team has just announced its inactive lists for tonight\u2019s game, and we have those right here. CHICAGO BEARS INACTIVES DT \u2013 Jayden Loving LB \u2013 Jack Sanborn LB \u2013 [\u2026]",
-      "categories": [
-        "Chicago Bears Game Information",
-        "Chicago Bears News"
-      ],
-      "published_at": "2026-10-22T22:50:14+00:00",
-      "players": []
-    },
-    {
-      "id": "d61414994c36b27e7519",
-      "headline": "Patriots Week 7 Inactives vs. Bears: Breaking Down What to Expect at OL Tonight",
-      "url": "https://www.si.com/nfl/patriots/onsi/patriots-week-7-inactives-vs-bears-breaking-down-what-to-expect-at-ol-tonight",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Here are the New England Patriots and Chicago Bears who won't be suiting up for their seventh game of the regular season.",
-      "categories": [],
-      "published_at": "2026-10-22T22:48:14+00:00",
-      "players": []
     }
   ]
 }
