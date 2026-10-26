@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T19:34:31.389789+00:00",
+  "updated_at": "2026-10-26T20:00:56.391458+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T19:30:32+00:00",
+      "latest_entry_at": "2026-10-26T19:52:03+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-26T13:30:00+00:00",
+      "latest_entry_at": "2026-10-26T20:00:00+00:00",
       "stale": false
     },
     {
@@ -252,9 +252,9 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 8,
+      "eligible": 9,
       "error": "",
-      "latest_entry_at": "2026-10-26T07:19:59+00:00",
+      "latest_entry_at": "2026-10-26T19:35:34+00:00",
       "stale": false
     },
     {
@@ -268,7 +268,7 @@
     {
       "source_id": "news_official_tb",
       "ok": true,
-      "eligible": 9,
+      "eligible": 8,
       "error": "",
       "latest_entry_at": "2026-10-26T18:17:51+00:00",
       "stale": false
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-26T19:30:32+00:00",
+      "latest_entry_at": "2026-10-26T19:52:03+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T18:03:04+00:00",
+      "latest_entry_at": "2026-10-26T19:34:13+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T18:27:31+00:00",
+      "latest_entry_at": "2026-10-26T19:36:20+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T15:49:21+00:00",
+      "latest_entry_at": "2026-10-26T19:32:16+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T17:00:00+00:00",
+      "latest_entry_at": "2026-10-26T19:02:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-26T14:00:00+00:00",
+      "latest_entry_at": "2026-10-26T19:11:32+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T19:10:00+00:00",
+      "latest_entry_at": "2026-10-26T18:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,76 @@
     }
   ],
   "items": [
+    {
+      "id": "6c5579b097ba0b0ce31d",
+      "headline": "Bills' Week 8 Injury Outlook: Will DJ Moore, Ed Oliver Be Ready to Face Ravens?",
+      "url": "https://www.si.com/nfl/bills/onsi/injuries-bills-week-8-outlook-will-dj-moore-ed-oliver-be-ready-to-face-ravens",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills will host the Baltimore Ravens on November 1, and there's a chance they can be at, if not close to, full strength.",
+      "categories": [],
+      "published_at": "2026-10-26T19:52:03+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "aa9c2a1a8608580a5f96",
+      "headline": "Were Ravens Surprised Lamar Jackson Missed Week 7? Could He Play Sunday? Head Coach Jesse Minter Explains",
+      "url": "https://www.si.com/nfl/ravens/onsi/were-ravens-surprised-lamar-jackson-missed-week-7-could-he-play-sunday-head-coach-jesse-minter-explains-01m5wv1y25t5",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Ravens saga with the MVP QB's ankle injury, which they maintained was \"day-to-day,\" enters its fourth week",
+      "categories": [],
+      "published_at": "2026-10-26T19:45:20+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "fede53c9bbeb8febbbd2",
+      "headline": "Positive News On Rashid Shaheed & Other Injury Updates From Mike Macdonald On Seattle Sports 710AM",
+      "url": "https://www.seahawks.com/news/positive-news-on-rashid-shaheed-other-injury-updates-from-mike-macdonald-on-seattle-sports-710am",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Injury updates from Seahawks coach Mike Macdonald\u2019s week appearance on Seattle Sports 710AM.",
+      "categories": [
+        "News: Stories",
+        "News: National Feature",
+        "Homepage Hero",
+        "Homepage Top Headlines",
+        "Kansas City Chiefs at Seattle Seahawks (2026-REG-7)",
+        "Chicago Bears at Seattle Seahawks (2026-REG-8)"
+      ],
+      "published_at": "2026-10-26T19:35:34+00:00",
+      "players": [
+        {
+          "id": "00-0037545",
+          "name": "Rashid Shaheed",
+          "team": "SEA",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "6725bec6a7b90b716c3a",
       "headline": "Zac Taylor Updates Injury Timelines For Erick All, Kyle Dugger Entering Titans Week",
@@ -4030,65 +4100,6 @@
           "name": "Jonah Coleman",
           "team": "DEN",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "52aa742d243fa6125c43",
-      "headline": "Rams Week 7 Injury Report: Puka Nacua, Trent McDuffie Questionable vs. Raiders",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-week-7-injury-report-puka-nacua-trent-mcduffie",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Rams' final Week 7 injury report lists Puka Nacua and Trent McDuffie as questionable against the Raiders, while Nate Landman is ruled out.",
-      "categories": [],
-      "published_at": "2026-10-23T20:58:27+00:00",
-      "players": [
-        {
-          "id": "00-0039075",
-          "name": "Puka Nacua",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "80a5e67be8cf6f58ff99",
-      "headline": "Packers Injury Report: Franklin out, 4 questionable vs. Lions",
-      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/88624/packers-injury-report-franklin-out-4-questionable-vs-lions",
-      "source_id": "news_sbn_gb",
-      "source": "Acme Packing Company (SB Nation)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "The big injury news out of Green Bay today: Head coach Matt LaFleur said linebacker Zaire Franklin, who was on the injury report Thursday with a shin issue, will miss Week 7 against the Detroit Lions. With Edgerrin Cooper, the team\u2019s starting Will linebacker, already out, losing Franklin means both of the Packers\u2019 linebackers against [\u2026]",
-      "categories": [
-        "Green Bay Packers injuries",
-        "Green Bay Packers News"
-      ],
-      "published_at": "2026-10-23T20:56:21+00:00",
-      "players": []
-    },
-    {
-      "id": "9483fe93daf8d5e32730",
-      "headline": "Texans Injury Report vs. Giants: 3 Starters Ruled Out, Tank Dell Update",
-      "url": "https://www.si.com/nfl/texans/onsi/texans-injury-report-vs-giants-3-starters-ruled-out-tank-dell-update",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "The Houston Texans and New York Giants have released their final injury reports after Friday's practice.",
-      "categories": [],
-      "published_at": "2026-10-23T20:54:48+00:00",
-      "players": [
-        {
-          "id": "00-0038977",
-          "name": "Tank Dell",
-          "team": "HOU",
-          "position": "WR"
         }
       ]
     }
