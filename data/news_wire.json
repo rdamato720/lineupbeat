@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T13:35:54.683672+00:00",
+  "updated_at": "2026-10-26T14:00:58.535436+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T13:30:01+00:00",
+      "latest_entry_at": "2026-10-26T13:50:28+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T12:00:48+00:00",
+      "latest_entry_at": "2026-10-26T13:12:10+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T13:24:54+00:00",
+      "latest_entry_at": "2026-10-26T13:55:55+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 10,
       "error": "",
-      "latest_entry_at": "2026-10-25T23:35:31+00:00",
+      "latest_entry_at": "2026-10-26T13:35:07+00:00",
       "stale": false
     },
     {
@@ -132,7 +132,7 @@
     {
       "source_id": "news_official_hou",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
       "latest_entry_at": "2026-10-25T22:05:34+00:00",
       "stale": false
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-25T21:26:43+00:00",
+      "latest_entry_at": "2026-10-26T13:50:00+00:00",
       "stale": false
     },
     {
@@ -230,7 +230,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-25T23:00:00+00:00",
+      "latest_entry_at": "2026-10-26T13:30:00+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-26T11:00:00+00:00",
+      "latest_entry_at": "2026-10-26T13:30:00+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-26T13:30:01+00:00",
+      "latest_entry_at": "2026-10-26T13:50:28+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-26T13:24:54+00:00",
+      "latest_entry_at": "2026-10-26T13:55:55+00:00",
       "stale": false
     },
     {
@@ -326,15 +326,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T12:00:00+00:00",
+      "latest_entry_at": "2026-10-26T03:37:46+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T11:00:00+00:00",
+      "latest_entry_at": "2026-10-26T13:30:00+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T13:04:00+00:00",
+      "latest_entry_at": "2026-10-26T13:50:00+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T12:00:00+00:00",
+      "latest_entry_at": "2026-10-26T13:30:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-26T13:15:00+00:00",
+      "latest_entry_at": "2026-10-26T04:00:21+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-26T11:00:00+00:00",
+      "latest_entry_at": "2026-10-26T13:54:27+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,35 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-26T06:36:51+00:00",
+      "latest_entry_at": "2026-10-26T13:38:15+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "1a41e1891797a7956623",
+      "headline": "We graded every Lions player from the Packers win; Jameson Williams was perfect, but one defender hit a brutal low",
+      "url": "https://atozsports.com/nfl/detroit-lions-news/we-graded-every-lions-player-from-the-packers-win-jameson-williams-was-perfect-but-one-defender-hit-a-brutal-low/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "Williams became just the third Lion to earn a perfect 50 in our grading system, while Aidan Hutchinson led the defense and one starter posted the lowest score we\u2019ve handed out yet.",
+      "categories": [
+        "Detroit Lions News",
+        "Detroit Lions"
+      ],
+      "published_at": "2026-10-26T13:45:00+00:00",
+      "players": [
+        {
+          "id": "00-0037240",
+          "name": "Jameson Williams",
+          "team": "DET",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "6a4eddcfc415da66e341",
       "headline": "Miami Dolphins 2026 Week 7 Snap Counts Stories: Tight End Time, Rookie Revelations",
@@ -929,7 +953,7 @@
         "2026 Week 7 News",
         "Cincinnati Bengals at Baltimore Ravens (2026-REG-7)",
         "inline-news",
-        "Homepage Centerpiece"
+        "Homepage Latest Headlines"
       ],
       "published_at": "2026-10-25T23:35:31+00:00",
       "players": [
@@ -4056,35 +4080,6 @@
           "name": "Mike Washington",
           "team": "LV",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "be822fcc482a0c47f5c2",
-      "headline": "Jets get some good injury news on Adonai Mitchell",
-      "url": "https://www.ganggreennation.com/new-york-jets-injuries/97863/jets-get-some-good-injury-news-on-adonai-mitchell",
-      "source_id": "news_sbn_nyj",
-      "source": "Gang Green Nation (SB Nation)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Starting wide receiver Adonai Mitchell hasn\u2019t played for the team since Week 2. He suffered a finger injury prior to the team\u2019s game against the Detroit Lions. Mitchell is set to return to the lineup this Sunday when the Jets take on the Miami Dolphins. Running back Breece Hall and left guard Dylan Parham will [\u2026]",
-      "categories": [
-        "New York Jets Injuries"
-      ],
-      "published_at": "2026-10-23T20:09:50+00:00",
-      "players": [
-        {
-          "id": "00-0038120",
-          "name": "Breece Hall",
-          "team": "NYJ",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039890",
-          "name": "Adonai Mitchell",
-          "team": "NYJ",
-          "position": "WR"
         }
       ]
     }
