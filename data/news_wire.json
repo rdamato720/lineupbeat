@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T20:00:55.573953+00:00",
+  "updated_at": "2026-10-27T20:05:35.849335+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T20:00:02+00:00",
+      "latest_entry_at": "2026-10-27T19:52:58+00:00",
       "stale": false
     },
     {
@@ -70,7 +70,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-21T14:15:00+00:00",
+      "latest_entry_at": "2026-10-27T19:59:04+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-27T19:00:00+00:00",
+      "latest_entry_at": "2026-10-27T20:00:00+00:00",
       "stale": false
     },
     {
@@ -174,15 +174,15 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-27T17:20:19+00:00",
+      "latest_entry_at": "2026-10-27T20:00:25+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_lv",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-27T16:00:00+00:00",
+      "latest_entry_at": "2026-10-27T20:00:00+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 10,
       "error": "",
-      "latest_entry_at": "2026-10-27T18:35:00+00:00",
+      "latest_entry_at": "2026-10-27T20:00:05+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T20:00:02+00:00",
+      "latest_entry_at": "2026-10-27T19:52:58+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T18:27:38+00:00",
+      "latest_entry_at": "2026-10-27T15:15:31+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T18:30:00+00:00",
+      "latest_entry_at": "2026-10-27T20:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T18:00:00+00:00",
+      "latest_entry_at": "2026-10-27T20:00:00+00:00",
       "stale": false
     },
     {
@@ -524,9 +524,9 @@
     {
       "source_id": "news_sbn_ari",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T17:11:17+00:00",
+      "latest_entry_at": "2026-10-27T02:59:39+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T19:45:01+00:00",
+      "latest_entry_at": "2026-10-27T18:30:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,32 @@
     }
   ],
   "items": [
+    {
+      "id": "7264742bab4c6925d1a7",
+      "headline": "Raiders Activate WR Dont'e Thornton Jr. from the Reserve/Injured List",
+      "url": "https://www.raiders.com/news/raiders-activate-wr-dont-e-thornton-jr-from-the-reserve-injured-list",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Thornton was placed on injured reserve on Aug. 31 due to a hamstring injury sustained during camp.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Press Release",
+        "News - Transactions"
+      ],
+      "published_at": "2026-10-27T20:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040581",
+          "name": "Dont'e Thornton Jr.",
+          "team": "LV",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "63e6c11be779c8d1710d",
       "headline": "Bucky Irving should lose some playing time in the future but that\u2019s a good thing for the Buccaneers\u2019 rushing attack",
@@ -4154,34 +4180,6 @@
           "name": "Jordan Mason",
           "team": "MIN",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "b6c25d864bc908094be3",
-      "headline": "49ers Announce Roster Moves Ahead of #SFvsATL",
-      "url": "https://www.49ers.com/news/49ers-announce-roster-moves-ahead-of-sfvsatl",
-      "source_id": "news_official_sf",
-      "source": "San Francisco 49ers (official)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The 49ers activate WR Christian Kirk from the Injured Reserve List, release DL Kevin Givens, elevate LB Jalen Graham, DL Ogbo Okoronkwo from the practice squad.",
-      "categories": [
-        "Roster Moves",
-        "Latest App",
-        "News - Roster",
-        "English",
-        "English Articles",
-        "News"
-      ],
-      "published_at": "2026-10-24T20:28:41+00:00",
-      "players": [
-        {
-          "id": "00-0034775",
-          "name": "Christian Kirk",
-          "team": "SF",
-          "position": "WR"
         }
       ]
     }
