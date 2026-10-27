@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T02:26:08.056471+00:00",
+  "updated_at": "2026-10-27T04:00:54.166630+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T02:06:35+00:00",
+      "latest_entry_at": "2026-10-27T03:44:44+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T00:17:34+00:00",
+      "latest_entry_at": "2026-10-27T03:42:31+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-27T01:13:40+00:00",
+      "latest_entry_at": "2026-10-27T03:36:36+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-27T02:17:00+00:00",
+      "latest_entry_at": "2026-10-27T03:28:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T02:06:35+00:00",
+      "latest_entry_at": "2026-10-27T03:44:44+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T00:17:34+00:00",
+      "latest_entry_at": "2026-10-27T03:42:31+00:00",
       "stale": false
     },
     {
@@ -308,9 +308,9 @@
     {
       "source_id": "news_sbn_mia",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T00:30:12+00:00",
+      "latest_entry_at": "2026-10-26T12:02:43+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T17:30:00+00:00",
+      "latest_entry_at": "2026-10-27T02:18:31+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T22:10:00+00:00",
+      "latest_entry_at": "2026-10-26T13:30:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T00:36:33+00:00",
+      "latest_entry_at": "2026-10-26T23:53:05+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-26T23:45:00+00:00",
+      "latest_entry_at": "2026-10-27T03:46:14+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T02:11:13+00:00",
+      "latest_entry_at": "2026-10-27T02:49:31+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T00:41:24+00:00",
+      "latest_entry_at": "2026-10-26T19:10:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,76 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T00:15:55+00:00",
+      "latest_entry_at": "2026-10-26T20:45:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "14df0a6e72339f524190",
+      "headline": "Eagles 2027 first-round draft pick position tracker",
+      "url": "https://www.phillyvoice.com/eagles-2027-first-round-draft-pick-position-tracker/",
+      "source_id": "phillyvoice_jimmy_kempski",
+      "source": "PhillyVoice",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Philadelphia Eagles' 2026 season is going poorly. Jalen Hurts' season is over, Lane Johnson retired, a whole lot of other players are injured, the offense stinks, and there's little evidence that fixes are on the horizon. BUT... one silver lining if the carnage continues is that there could be a top 10 pick in the 2027 draft in the Eagles' future.",
+      "categories": [
+        "Sports",
+        "Eagles",
+        "NFL",
+        "Philadelphia",
+        "Eagles Draft"
+      ],
+      "published_at": "2026-10-27T03:36:36+00:00",
+      "players": [
+        {
+          "id": "00-0036389",
+          "name": "Jalen Hurts",
+          "team": "PHI",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "c3f6e4be7bd4ca3deef7",
+      "headline": "Packers Injury Report: 7 to start the list on Monday",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/88794/packers-injury-report-7-to-start-the-list-on-monday",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The Green Bay Packers did not have a practice on Monday, but the team did release a practice estimation due to their quick turnaround to prepare for their Thursday Night Football game against the Carolina Panthers. As of now, the Packers\u2019 injury list has seven players, but remember this could be a very aggressive list, [\u2026]",
+      "categories": [
+        "Green Bay Packers injuries",
+        "Green Bay Packers News"
+      ],
+      "published_at": "2026-10-27T02:49:31+00:00",
+      "players": []
+    },
+    {
+      "id": "54e37d89e1a00dfdbe89",
+      "headline": "Commanders News: Quinn Sees Bigger Role for Antonio Williams; Eagles Get Reinforcements | Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-antonio-williams-eagles-reinforcements-burgundy-roundup",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Dan Quinn discusses a bigger role for Antonio Williams and potential offensive line adjustments as the Eagles activate three players ahead of their matchup with Washington.",
+      "categories": [],
+      "published_at": "2026-10-27T02:26:52+00:00",
+      "players": [
+        {
+          "id": "00-0041040",
+          "name": "Antonio Williams",
+          "team": "WAS",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "786712505720cac11a38",
       "headline": "Britain Covey ruled out of Eagles-Cowboys MNF game",
@@ -1508,33 +1573,6 @@
           "id": "00-0040743",
           "name": "Tyler Shough",
           "team": "NO",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "14df0a6e72339f524190",
-      "headline": "Eagles 2027 first-round draft pick position tracker",
-      "url": "https://www.phillyvoice.com/eagles-2027-first-round-draft-pick-position-tracker/",
-      "source_id": "phillyvoice_jimmy_kempski",
-      "source": "PhillyVoice",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Philadelphia Eagles' 2026 season is going poorly. Jalen Hurts' season is over, Lane Johnson retired, a whole lot of other players are injured, the offense stinks, and there's little evidence that fixes are on the horizon. BUT... one silver lining if the carnage continues is that there could be a top 10 pick in the 2027 draft in the Eagles' future.",
-      "categories": [
-        "Sports",
-        "Eagles",
-        "NFL",
-        "Philadelphia",
-        "Eagles Draft"
-      ],
-      "published_at": "2026-10-26T12:50:51+00:00",
-      "players": [
-        {
-          "id": "00-0036389",
-          "name": "Jalen Hurts",
-          "team": "PHI",
           "position": "QB"
         }
       ]
@@ -4107,36 +4145,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "7ac78a59cfc8394018a0",
-      "headline": "Houston Texans vs. New York Giants: Injury Report",
-      "url": "https://www.battleredblog.com/houston-texans-injuries/78547/houston-texans-vs-new-york-giants-injury-report",
-      "source_id": "news_sbn_hou",
-      "source": "Battle Red Blog (SB Nation)",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "The Houston Texans are riding a two-game winning streak after starting the season 0-4. They have the first-place New York Giants up next at home, and they cannot afford to lose this game. Houston is heavily favored to win this matchup, but they still have to go out there and execute against a team that [\u2026]",
-      "categories": [
-        "Houston Texans Injuries"
-      ],
-      "published_at": "2026-10-23T23:08:18+00:00",
-      "players": []
-    },
-    {
-      "id": "7b06a80e035fa10a255b",
-      "headline": "Cowboys Injury Report: Dallas Getting Much-Needed Defensive Reinforcements",
-      "url": "https://www.si.com/nfl/cowboys/onsi/cowboys-injury-report-dallas-getting-much-needed-defensive-reinforcements",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys are beginning to get many of their key defenders back at practice, which could help them as early as Week 7.",
-      "categories": [],
-      "published_at": "2026-10-23T23:01:18+00:00",
-      "players": []
     }
   ]
 }
