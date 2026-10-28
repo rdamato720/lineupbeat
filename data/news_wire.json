@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T12:00:52.480657+00:00",
+  "updated_at": "2026-10-28T14:00:55.618840+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,15 +14,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T12:00:16+00:00",
+      "latest_entry_at": "2026-10-28T13:48:39+00:00",
       "stale": false
     },
     {
       "source_id": "pewter_report",
-      "ok": true,
+      "ok": false,
       "eligible": 0,
-      "error": "",
-      "latest_entry_at": "2026-10-27T21:36:13+00:00",
+      "error": "robots_unavailable",
+      "latest_entry_at": null,
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T12:00:00+00:00",
+      "latest_entry_at": "2026-10-28T13:59:58+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-28T11:49:20+00:00",
+      "latest_entry_at": "2026-10-28T13:14:45+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 10,
       "error": "",
-      "latest_entry_at": "2026-10-27T20:48:49+00:00",
+      "latest_entry_at": "2026-10-28T13:40:05+00:00",
       "stale": false
     },
     {
@@ -70,7 +70,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T11:00:10+00:00",
+      "latest_entry_at": "2026-10-28T12:00:10+00:00",
       "stale": false
     },
     {
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-27T21:46:17+00:00",
+      "latest_entry_at": "2026-10-28T12:14:38+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-27T21:25:22+00:00",
+      "latest_entry_at": "2026-10-28T13:54:00+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-10-27T20:23:01+00:00",
+      "latest_entry_at": "2026-10-28T13:30:00+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-27T21:49:11+00:00",
+      "latest_entry_at": "2026-10-28T13:00:00+00:00",
       "stale": false
     },
     {
@@ -212,9 +212,9 @@
     {
       "source_id": "news_official_no",
       "ok": true,
-      "eligible": 4,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-27T13:15:20+00:00",
+      "latest_entry_at": "2026-10-28T13:15:26+00:00",
       "stale": false
     },
     {
@@ -230,7 +230,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-27T18:25:57+00:00",
+      "latest_entry_at": "2026-10-28T12:00:09+00:00",
       "stale": false
     },
     {
@@ -270,7 +270,7 @@
       "ok": true,
       "eligible": 10,
       "error": "",
-      "latest_entry_at": "2026-10-27T20:45:20+00:00",
+      "latest_entry_at": "2026-10-28T13:10:00+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T12:00:16+00:00",
+      "latest_entry_at": "2026-10-28T13:48:39+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T12:00:00+00:00",
+      "latest_entry_at": "2026-10-28T13:59:58+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T12:00:00+00:00",
+      "latest_entry_at": "2026-10-28T12:22:05+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T12:00:00+00:00",
+      "latest_entry_at": "2026-10-28T11:00:00+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T11:00:00+00:00",
+      "latest_entry_at": "2026-10-28T13:30:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T10:00:00+00:00",
+      "latest_entry_at": "2026-10-28T12:19:50+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T10:30:00+00:00",
+      "latest_entry_at": "2026-10-28T13:30:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T11:00:00+00:00",
+      "latest_entry_at": "2026-10-28T13:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T21:33:48+00:00",
+      "latest_entry_at": "2026-10-28T11:17:17+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T09:00:00+00:00",
+      "latest_entry_at": "2026-10-28T13:30:49+00:00",
       "stale": false
     },
     {
@@ -468,9 +468,9 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T12:00:00+00:00",
+      "latest_entry_at": "2026-10-28T13:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-27T23:04:09+00:00",
+      "latest_entry_at": "2026-10-28T13:14:42+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T16:29:46+00:00",
+      "latest_entry_at": "2026-10-28T14:00:00+00:00",
       "stale": false
     },
     {
@@ -508,9 +508,9 @@
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T12:00:00+00:00",
+      "latest_entry_at": "2026-10-28T13:30:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T00:46:12+00:00",
+      "latest_entry_at": "2026-10-28T14:00:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T09:03:00+00:00",
+      "latest_entry_at": "2026-10-28T13:37:19+00:00",
       "stale": false
     },
     {
@@ -550,7 +550,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T06:12:33+00:00",
+      "latest_entry_at": "2026-10-28T14:00:00+00:00",
       "stale": false
     }
   ],
