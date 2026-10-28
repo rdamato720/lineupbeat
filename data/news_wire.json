@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T04:00:42.958165+00:00",
+  "updated_at": "2026-10-28T08:59:57.655885+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T03:45:25+00:00",
+      "latest_entry_at": "2026-10-28T07:26:39+00:00",
       "stale": false
     },
     {
@@ -252,7 +252,7 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 10,
+      "eligible": 9,
       "error": "",
       "latest_entry_at": "2026-10-28T01:55:42+00:00",
       "stale": false
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-28T03:45:25+00:00",
+      "latest_entry_at": "2026-10-28T07:26:39+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T01:03:24+00:00",
+      "latest_entry_at": "2026-10-27T23:16:08+00:00",
       "stale": false
     },
     {
@@ -404,9 +404,9 @@
     {
       "source_id": "news_sbn_kc",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T15:00:00+00:00",
+      "latest_entry_at": "2026-10-26T17:45:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,32 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T21:02:05+00:00",
+      "latest_entry_at": "2026-10-28T06:12:33+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "e1dfa5219cf138204d88",
+      "headline": "Chargers' Ladd McConkey Could Emerge as Trade Target for AFC Contender",
+      "url": "https://www.si.com/nfl/chargers/onsi/chargers-ladd-mcconkey-emerge-trade-target-steelers",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "The Chargers are 0-6 and will play two more games before the trade deadline. The calls will not stop, see why Ladd McConkey is being floated as a trade target.",
+      "categories": [],
+      "published_at": "2026-10-28T04:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0039915",
+          "name": "Ladd McConkey",
+          "team": "LAC",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "8e79cd12f6c52121fcd3",
       "headline": "Las Vegas Raiders make a few very surprising roster moves and changes as they prepare for the New York Jets",
@@ -4144,36 +4165,6 @@
           "name": "George Kittle",
           "team": "SF",
           "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "80e9a3cddab2f779386a",
-      "headline": "Ravens rule out Lamar Jackson; Tyler Huntley to start vs. Bengals",
-      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/86921/ravens-rule-out-lamar-jackson-tyler-huntley-to-start-vs-bengals",
-      "source_id": "news_sbn_bal",
-      "source": "Baltimore Beatdown (SB Nation)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Baltimore Ravens downgraded quarterback Lamar Jackson\u2019s status from \u2018questionable\u2019 to \u2018out\u2019 ahead of their Week 7 matchup with the Cincinnati Bengals. Backup Tyler \u2018Snoop\u2019 Huntley will make his third straight start after an overtime win over the Falcons and a disappointing loss to the Browns. Jackson\u2019s comments on Friday, as well as his limited [\u2026]",
-      "categories": [
-        "Baltimore Ravens Injuries",
-        "Baltimore Ravens News"
-      ],
-      "published_at": "2026-10-25T05:05:25+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        },
-        {
-          "id": "00-0035993",
-          "name": "Tyler Huntley",
-          "team": "BAL",
-          "position": "QB"
         }
       ]
     }
