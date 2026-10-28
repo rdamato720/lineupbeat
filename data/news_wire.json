@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T21:03:30.146766+00:00",
+  "updated_at": "2026-10-28T22:00:43.644356+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T20:48:20+00:00",
+      "latest_entry_at": "2026-10-28T22:00:03+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T20:48:31+00:00",
+      "latest_entry_at": "2026-10-28T21:14:49+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 11,
       "error": "",
-      "latest_entry_at": "2026-10-28T18:17:52+00:00",
+      "latest_entry_at": "2026-10-28T21:14:00+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-28T13:54:00+00:00",
+      "latest_entry_at": "2026-10-28T21:39:49+00:00",
       "stale": false
     },
     {
@@ -108,9 +108,9 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 7,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-10-28T16:00:15+00:00",
+      "latest_entry_at": "2026-10-28T21:49:06+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-28T20:31:02+00:00",
+      "latest_entry_at": "2026-10-28T21:07:44+00:00",
       "stale": false
     },
     {
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T18:17:00+00:00",
+      "latest_entry_at": "2026-10-28T21:51:30+00:00",
       "stale": false
     },
     {
@@ -180,9 +180,9 @@
     {
       "source_id": "news_official_lv",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-28T19:00:00+00:00",
+      "latest_entry_at": "2026-10-28T21:39:30+00:00",
       "stale": false
     },
     {
@@ -190,15 +190,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-28T14:33:41+00:00",
+      "latest_entry_at": "2026-10-28T21:04:18+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-28T16:42:08+00:00",
+      "latest_entry_at": "2026-10-28T21:30:19+00:00",
       "stale": false
     },
     {
@@ -236,17 +236,17 @@
     {
       "source_id": "news_official_phi",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-28T09:00:00+00:00",
+      "latest_entry_at": "2026-10-28T21:07:46+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_pit",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T20:15:32+00:00",
+      "latest_entry_at": "2026-10-28T21:45:08+00:00",
       "stale": false
     },
     {
@@ -270,31 +270,31 @@
       "ok": true,
       "eligible": 9,
       "error": "",
-      "latest_entry_at": "2026-10-28T20:29:00+00:00",
+      "latest_entry_at": "2026-10-28T21:10:11+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_ten",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-28T20:10:49+00:00",
+      "latest_entry_at": "2026-10-28T21:23:18+00:00",
       "stale": false
     },
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-28T20:48:20+00:00",
+      "latest_entry_at": "2026-10-28T22:00:03+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-28T20:48:31+00:00",
+      "latest_entry_at": "2026-10-28T21:14:49+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T14:41:05+00:00",
+      "latest_entry_at": "2026-10-28T20:00:00+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-28T14:56:31+00:00",
+      "latest_entry_at": "2026-10-28T17:42:58+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T11:00:00+00:00",
+      "latest_entry_at": "2026-10-28T17:00:00+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T15:11:32+00:00",
+      "latest_entry_at": "2026-10-28T19:51:40+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T17:07:00+00:00",
+      "latest_entry_at": "2026-10-28T21:51:01+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T18:12:04+00:00",
+      "latest_entry_at": "2026-10-28T14:51:17+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T13:30:49+00:00",
+      "latest_entry_at": "2026-10-28T16:55:08+00:00",
       "stale": false
     },
     {
@@ -462,23 +462,23 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T19:00:00+00:00",
+      "latest_entry_at": "2026-10-28T14:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T20:51:49+00:00",
+      "latest_entry_at": "2026-10-28T18:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-28T16:15:00+00:00",
+      "latest_entry_at": "2026-10-28T19:50:11+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T11:00:00+00:00",
+      "latest_entry_at": "2026-10-28T16:00:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-28T01:44:02+00:00",
+      "latest_entry_at": "2026-10-28T20:28:01+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T00:46:12+00:00",
+      "latest_entry_at": "2026-10-28T20:30:00+00:00",
       "stale": false
     },
     {
@@ -542,19 +542,196 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T13:37:19+00:00",
+      "latest_entry_at": "2026-10-28T20:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T16:00:00+00:00",
+      "latest_entry_at": "2026-10-28T20:54:24+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "bca11539316396b88034",
+      "headline": "Injury Report: Pat Surtain II improves to full participant, 3 Broncos do not practice ahead of Week 8 game vs. Chiefs",
+      "url": "https://www.denverbroncos.com/news/injuryreport/injury-report-pat-surtain-ii-improves-to-full-participant-3-broncos-do-not-practice-ahead-of-week-8-game-vs-chiefs",
+      "source_id": "news_official_den",
+      "source": "Denver Broncos (official)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Broncos\u2019 All-Pro cornerback has improved to a full participant ahead of Denver\u2019s Week 8 game against the Chiefs.",
+      "categories": [
+        "Top Stories",
+        "Injury Report",
+        "Kansas City Chiefs at Denver Broncos (2026-REG-8)",
+        "Aric DiLalla",
+        "Patrick Surtain II"
+      ],
+      "published_at": "2026-10-28T21:49:06+00:00",
+      "players": []
+    },
+    {
+      "id": "a9a9ce9c7c7b778cc728",
+      "headline": "Raiders-Jets Week 8 Injury Report",
+      "url": "https://www.raiders.com/news/las-vegas-raiders-new-york-jets-week-8-injury-report",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the New York Jets.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Injury Report",
+        "Las Vegas Raiders at New York Jets (2026-REG-8)"
+      ],
+      "published_at": "2026-10-28T21:39:30+00:00",
+      "players": []
+    },
+    {
+      "id": "27386765ab4b4a3bc56a",
+      "headline": "Texans WR Jaylin Noel's Foot Injury Update Is Worst-Case Scenario",
+      "url": "https://www.si.com/nfl/texans/onsi/texans-wr-jaylin-noel-gets-worst-case-scenario-update-on-foot-injury",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "It looks like the Houston Texans' emerging young wideout is due to miss some extended time.",
+      "categories": [],
+      "published_at": "2026-10-28T21:32:51+00:00",
+      "players": [
+        {
+          "id": "00-0040138",
+          "name": "Jaylin Noel",
+          "team": "HOU",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "e628e86c699ca1c8d925",
+      "headline": "Initial Vikings at Lions Injury Report for Week 8 of 2026",
+      "url": "https://www.vikings.com/news/lions-injury-report-week-8-2026-nfl-season",
+      "source_id": "news_official_min",
+      "source": "Minnesota Vikings (official)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "",
+      "categories": [
+        "Injury Report",
+        "News - Injury Report",
+        "News - Index",
+        "vikings-at-lions-2026-reg-8"
+      ],
+      "published_at": "2026-10-28T21:30:19+00:00",
+      "players": []
+    },
+    {
+      "id": "c618e38a2cdaca9ca845",
+      "headline": "Week 8 Injury Report (Browns)",
+      "url": "https://www.steelers.com/news/week-8-injury-report-browns-x7058",
+      "source_id": "news_official_pit",
+      "source": "Pittsburgh Steelers (official)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "A look at player injuries and practice participation for Week 8",
+      "categories": [
+        "Injury Report",
+        "UPMC",
+        "Featured",
+        "Sights and Sounds",
+        "Cleveland Browns at Pittsburgh Steelers (2026-REG-8)"
+      ],
+      "published_at": "2026-10-28T21:20:00+00:00",
+      "players": []
+    },
+    {
+      "id": "8b704fe759b71707282c",
+      "headline": "Bills' First Week 8 Practice Report: Which Injured Players Were Prepping for Ravens?",
+      "url": "https://www.si.com/nfl/bills/onsi/injuries-week-8-practice-report-which-players-were-prepping-for-ravens",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills practiced for the first time coming off their bye week on Wednesday, and multiple important pieces participated on some level in Orchard Park.",
+      "categories": [],
+      "published_at": "2026-10-28T21:17:55+00:00",
+      "players": []
+    },
+    {
+      "id": "dc190cdf2d67d5221e84",
+      "headline": "Kansas City Chiefs\u2019 first injury report for Week 8 vs. Denver Broncos sees some very important players returning to practice",
+      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-first-injury-report-week-8-broncos/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "The Kansas City Chiefs' first injury report ahead of Week 8 vs. the Denver Broncos had some very positive news.",
+      "categories": [
+        "Kansas City Chiefs News",
+        "Chiefs Injuries",
+        "Jaylon Moore",
+        "Kansas City Chiefs",
+        "Omarr Norman-Lott",
+        "Rashee Rice"
+      ],
+      "published_at": "2026-10-28T21:13:35+00:00",
+      "players": []
+    },
+    {
+      "id": "fc3570bfddb2776c4224",
+      "headline": "Patriots Week 8 Injury Report: Great News Across the Board",
+      "url": "https://www.si.com/nfl/patriots/onsi/patriots-week-8-injury-report-great-news-across-the-board",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The Patriots reported their healthiest injury report since Week 1.",
+      "categories": [],
+      "published_at": "2026-10-28T21:13:24+00:00",
+      "players": []
+    },
+    {
+      "id": "b39ba29edac640f5541c",
+      "headline": "Eagles sign RB Jaydon Blue to the active roster, add three to the practice squad",
+      "url": "https://www.philadelphiaeagles.com/news/eagles-sign-rb-jaydon-blue-to-the-active-roster-add-three-to-the-practice-squad-dameon-pierce",
+      "source_id": "news_official_phi",
+      "source": "Philadelphia Eagles (official)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "RB Dameon Pierce has been placed on Injured Reserve",
+      "categories": [
+        "All News-archived",
+        "NFL.com Feature",
+        "Team Roster Content",
+        "2026 Week 8 at Commanders",
+        "Dameon Pierce",
+        "Jaydon Blue",
+        "Shaun Wade"
+      ],
+      "published_at": "2026-10-28T21:07:46+00:00",
+      "players": [
+        {
+          "id": "00-0037258",
+          "name": "Dameon Pierce",
+          "team": "PHI",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "a9ec45be041a96cc5eba",
       "headline": "Lions, Vikings Week 8 injury report: Jahmyr Gibbs sits with shoulder injury",
@@ -578,6 +755,20 @@
           "position": "RB"
         }
       ]
+    },
+    {
+      "id": "0c4b450dc15bd991f01e",
+      "headline": "Jaguars-Colts Wednesday Injury Report: It Is Time to Unleash Jalen Huskey",
+      "url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-colts-wednesday-injury-report-it-is-time-to-unleash-jalen-huskey",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "JAX"
+      ],
+      "feed_description": "The Jacksonville Jaguars have a big question mark at the safety position after Wednesday's injury report.",
+      "categories": [],
+      "published_at": "2026-10-28T20:50:37+00:00",
+      "players": []
     },
     {
       "id": "9f42f186b6b16f310aef",
@@ -623,7 +814,7 @@
       "teams": [
         "KC"
       ],
-      "feed_description": "Each practice day this season, the Kansas City Chiefs release an official injury report ahead of the next game. In Week 8, the Chiefs play the Denver Broncos on \u201cSunday Night Football.\u201d Here is the Chiefs\u2019 first official injury report of the week, courtesy of the team\u2019s official website: Chiefs The following players were full participants [\u2026]",
+      "feed_description": "Each practice day this season, the Kansas City Chiefs release an official injury report ahead of the next game. In Week 8, the Chiefs play the Denver Broncos on Sunday afternoon. Here is the Chiefs\u2019 first official injury report of the week, courtesy of the team\u2019s official website: Chiefs The following players were full participants in [\u2026]",
       "categories": [
         "Kansas City Chiefs Injuries",
         "Kansas City Chiefs News"
@@ -813,6 +1004,25 @@
           "position": "WR"
         }
       ]
+    },
+    {
+      "id": "e32d9388e38f2b5c8cad",
+      "headline": "Week 8 Injury Report | Titans at Bengals",
+      "url": "https://www.tennesseetitans.com/news/week-8-injury-report-titans-at-bengals",
+      "source_id": "news_official_ten",
+      "source": "Tennessee Titans (official)",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Who's in, who's out for the Titans in Week 8 vs the Cincinnati Bengals",
+      "categories": [
+        "Team/Football News",
+        "homepage-centerpiece",
+        "Tennessee Titans at Cincinnati Bengals (2026-REG-8)",
+        "2026-11-01-PREgame-STORIES-titans-at-bengals"
+      ],
+      "published_at": "2026-10-28T20:00:00+00:00",
+      "players": []
     },
     {
       "id": "04214d272d869d2e79a1",
@@ -1076,7 +1286,7 @@
     },
     {
       "id": "6ec6e87d85aebb50d2fb",
-      "headline": "With Lamar Jackson Practicing Again, Teammates Hope for 'Big Boost'",
+      "headline": "Lamar Jackson Returns to Full Practice Participation",
       "url": "https://www.baltimoreravens.com/news/lamar-jackson-injury-practice-report-emotional-boost",
       "source_id": "news_official_bal",
       "source": "Baltimore Ravens (official)",
@@ -1092,7 +1302,7 @@
         "2026 Week 8",
         "2026 Week 8 News",
         "Baltimore Ravens at Buffalo Bills (2026-REG-8)",
-        "Homepage Latest Headlines"
+        "Homepage Centerpiece"
       ],
       "published_at": "2026-10-28T18:17:52+00:00",
       "players": [
@@ -3993,223 +4203,6 @@
       ],
       "published_at": "2026-10-25T19:14:08+00:00",
       "players": []
-    },
-    {
-      "id": "efd630a06725c3ff8467",
-      "headline": "Lions inactives vs. Packers: Brian Branch and Cade Mays are back, while 2 players are beginning to look like 2027 players",
-      "url": "https://atozsports.com/nfl/detroit-lions-news/lions-inactives-vs-packers-brian-branch-and-cade-mays-are-back-while-2-players-are-beginning-to-look-like-2027-players/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Detroit is the healthiest it has been all season, with Branch and Mays making their 2026 debuts and five healthy players left inactive against Green Bay.",
-      "categories": [
-        "Detroit Lions News"
-      ],
-      "published_at": "2026-10-25T19:05:53+00:00",
-      "players": []
-    },
-    {
-      "id": "e4bd7a58fbbad8409922",
-      "headline": "Raiders-Rams inactives: Mike Washington, Quay Walker are playing",
-      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/143878/raiders-rams-inactives-mike-washington-playing",
-      "source_id": "news_sbn_lv",
-      "source": "Silver And Black Pride (SB Nation)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "As expected, Las Vegas Raiders rookie running back Mike Washington will play Sunday against the Los Angeles Rams. Kickoff is at 1:25 p.m. PT. Washington was listed as questionable to play with foot/back injuries. He missed Thursday and Friday\u2019s practices after he was limited Wednesday. Raiders coach Klint Kubiak indicated Friday the team expected Washington [\u2026]",
-      "categories": [
-        "Las Vegas Raiders Injuries",
-        "Las Vegas Raiders News"
-      ],
-      "published_at": "2026-10-25T19:03:13+00:00",
-      "players": [
-        {
-          "id": "00-0040878",
-          "name": "Mike Washington",
-          "team": "LV",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "38dbc900ed33e176be97",
-      "headline": "Puka Nacua active vs Raiders, offense needs to carry Rams to win",
-      "url": "https://www.turfshowtimes.com/los-angeles-rams-news/153090/rams-raiders-matthew-stafford-puka-nacua",
-      "source_id": "news_sbn_lar",
-      "source": "Turf Show Times (SB Nation)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Los Angeles Rams have their backs against the wall on Sunday against the Las Vegas Raiders. LA is in danger of falling to 2-5 and effectively out of playoff contention with a road loss. One development working in their favor: receiver Puka Nacua is active after injuring his calf in Thursday\u2019s practice. We know [\u2026]",
-      "categories": [
-        "Los Angeles Rams News"
-      ],
-      "published_at": "2026-10-25T19:01:27+00:00",
-      "players": [
-        {
-          "id": "00-0039075",
-          "name": "Puka Nacua",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "9272deea3805cbf95237",
-      "headline": "Lions Week 7 inactives: EDGE Ahmed Hassanein OUT vs. Packers",
-      "url": "https://www.prideofdetroit.com/detroit-lions-news/178064/lions-week-7-inactives-edge-ahmed-hassanein-out-vs-packers",
-      "source_id": "news_sbn_det",
-      "source": "Pride Of Detroit (SB Nation)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "The Detroit Lions have declared their inactives ahead of their Week 7 matchup with divisional rival Green Bay Packers. Despite some cryptic social media posts, Ahmed Hassanein will be a healthy scratch for the Lions\u2019 sixth game this season. The preseason fan favorite will have to wait another week to find the field. If you [\u2026]",
-      "categories": [
-        "Detroit Lions Injuries",
-        "Detroit Lions News"
-      ],
-      "published_at": "2026-10-25T18:59:03+00:00",
-      "players": []
-    },
-    {
-      "id": "017b926e94f41e760ffb",
-      "headline": "INACTIVES: Lions vs. Packers",
-      "url": "https://www.detroitlions.com/news/inactives-lions-vs-packers-branch-mays",
-      "source_id": "news_official_det",
-      "source": "Detroit Lions (official)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Tim Twentyman reports on inactives for Sunday's Lions-Packers matchup.",
-      "categories": [
-        "NEWS - Inactives",
-        "NEWS - Twentyman",
-        "Homepage - Centerpiece Package",
-        "Green Bay Packers at Detroit Lions (2026-REG-7)"
-      ],
-      "published_at": "2026-10-25T18:55:29+00:00",
-      "players": []
-    },
-    {
-      "id": "bc6e4b884a19302f8584",
-      "headline": "G Aaron Banks active for Green Bay | Packers-Lions inactives",
-      "url": "https://www.packers.com/news/packers-lions-week-7-inactives-oct-25-2026",
-      "source_id": "news_official_gb",
-      "source": "Green Bay Packers (official)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "G Kevin Zeitler won't play in Detroit",
-      "categories": [
-        "News: Inactives",
-        "News: All News",
-        "News: Gameday",
-        "News: National Feature",
-        "Homepage CP",
-        "Green Bay Packers at Detroit Lions (2026-REG-7)"
-      ],
-      "published_at": "2026-10-25T18:55:00+00:00",
-      "players": []
-    },
-    {
-      "id": "165c411f1f048629c8b6",
-      "headline": "Las Vegas Raiders Week 7 Inactives vs. Los Angeles Rams",
-      "url": "https://www.raiders.com/news/las-vegas-raiders-week-7-inactives-vs-los-angeles-rams",
-      "source_id": "news_official_lv",
-      "source": "Las Vegas Raiders (official)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "Before the Raiders take the field for Week 7, view the inactive players for today's game.",
-      "categories": [
-        "Home Centerpiece",
-        "Home Latest Stories",
-        "News - Inactives",
-        "Los Angeles Rams at Las Vegas Raiders (2026-REG-7)"
-      ],
-      "published_at": "2026-10-25T18:55:00+00:00",
-      "players": []
-    },
-    {
-      "id": "176d577d05f3d97e3749",
-      "headline": "Josh Jacobs Will Play vs. Lions; How Should Packers Run Offense Going Forward?",
-      "url": "https://www.si.com/nfl/packers/onsi/josh-jacobs-will-play-vs-lions-how-should-packers-run-offense-going-forward",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "The Green Bay Packers had been one of the most run-heavy attacks in the league the past two seasons. Now what with the return of Josh Jacobs?",
-      "categories": [],
-      "published_at": "2026-10-25T18:52:11+00:00",
-      "players": [
-        {
-          "id": "00-0035700",
-          "name": "Josh Jacobs",
-          "team": "GB",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "db845c38f3265254cee0",
-      "headline": "Broncos vs. Cardinals gameday inactives for Week 7",
-      "url": "https://www.milehighreport.com/denver-broncos-news/189868/broncos-vs-cardinals-inactives-week-7",
-      "source_id": "news_sbn_den",
-      "source": "Mile High Report (SB Nation)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "The Denver Broncos will be without cornerback Pat Surtain II against this week as they take on the Arizona Cardinals, but reports suggest he will make his return next week in that critical AFC West home game against the Kansas City Chiefs. Still no Talanoa Hufanga either. Hopefully we see him back next week as [\u2026]",
-      "categories": [
-        "Denver Broncos News"
-      ],
-      "published_at": "2026-10-25T18:37:31+00:00",
-      "players": []
-    },
-    {
-      "id": "579ad873789d52aa8d74",
-      "headline": "Cardinals-Broncos Inactives: Budda Baker, Pat Surtain II Final Status Revealed",
-      "url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-denver-broncos-inactives-budda-baker-pat-surtain-ii-final-status-revealed",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "The Arizona Cardinals and Denver Broncos have revealed their final list of inactives for Week 7.",
-      "categories": [],
-      "published_at": "2026-10-25T18:37:30+00:00",
-      "players": []
-    },
-    {
-      "id": "7097c01d981f31a82e43",
-      "headline": "CB Pat Surtain II among Broncos' inactive players for Week 7 game vs. Cardinals",
-      "url": "https://www.denverbroncos.com/news/cb-pat-surtain-ii-among-broncos-inactive-players-for-week-7-game-vs-cardinals",
-      "source_id": "news_official_den",
-      "source": "Denver Broncos (official)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "Running back Jonah Coleman is active and officially available for Week 7 after being activated from injured reserve on Saturday.",
-      "categories": [
-        "Top Stories",
-        "Game Day",
-        "Aric DiLalla",
-        "Inactives",
-        "Denver Broncos at Arizona Cardinals (2026-REG-7)"
-      ],
-      "published_at": "2026-10-25T18:35:00+00:00",
-      "players": [
-        {
-          "id": "00-0041496",
-          "name": "Jonah Coleman",
-          "team": "DEN",
-          "position": "RB"
-        }
-      ]
     }
   ]
 }
