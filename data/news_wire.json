@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T00:00:46.837356+00:00",
+  "updated_at": "2026-10-28T02:00:56.312146+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T23:50:00+00:00",
+      "latest_entry_at": "2026-10-28T01:40:53+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-27T20:00:00+00:00",
+      "latest_entry_at": "2026-10-28T01:54:56+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 10,
       "error": "",
-      "latest_entry_at": "2026-10-28T01:45:00+00:00",
+      "latest_entry_at": "2026-10-28T01:55:42+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-27T23:50:00+00:00",
+      "latest_entry_at": "2026-10-28T01:40:53+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T00:00:00+00:00",
+      "latest_entry_at": "2026-10-27T19:30:52+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T23:16:08+00:00",
+      "latest_entry_at": "2026-10-28T01:03:24+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T18:00:00+00:00",
+      "latest_entry_at": "2026-10-27T23:00:00+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T15:00:00+00:00",
+      "latest_entry_at": "2026-10-27T20:00:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-27T19:01:23+00:00",
+      "latest_entry_at": "2026-10-27T15:40:00+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T21:13:16+00:00",
+      "latest_entry_at": "2026-10-27T16:30:00+00:00",
       "stale": false
     },
     {
@@ -524,9 +524,9 @@
     {
       "source_id": "news_sbn_ari",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-27T17:11:17+00:00",
+      "latest_entry_at": "2026-10-27T20:54:15+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T22:04:09+00:00",
+      "latest_entry_at": "2026-10-28T00:46:12+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,48 @@
     }
   ],
   "items": [
+    {
+      "id": "95b8c657ea09e2122623",
+      "headline": "What Happens to Emanuel Wilson as Seahawks RBs Return from Injury?",
+      "url": "https://www.si.com/nfl/seahawks/onsi/what-happens-to-emanuel-wilson-seattle-seahawks-rbs-return-from-injury",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks backfield is about to get more crowded in the coming weeks.",
+      "categories": [],
+      "published_at": "2026-10-28T01:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0038797",
+          "name": "Emanuel Wilson",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "14420781047922e3a134",
+      "headline": "Tyjae Spears Has Gone Invisible for Titans - Could Unexpected Veteran RB Take His Place?",
+      "url": "https://www.si.com/nfl/titans/onsi/tyjae-spears-has-gone-invisible-for-titans-could-unexpected-veteran-rb-take-his-place-01m5zhe9mynk",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Tyjae Spears slowly dropping in snaps for the Titans could be opening the door for a veteran who nobody expected to be in play prior to the season.",
+      "categories": [],
+      "published_at": "2026-10-28T00:15:00+00:00",
+      "players": [
+        {
+          "id": "00-0039032",
+          "name": "Tyjae Spears",
+          "team": "TEN",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "29f3876b4170ae1f87b8",
       "headline": "Packers-Panthers Tuesday Injury Report: Time Near for Micah Parsons, Kevin Zeitler?",
@@ -4117,41 +4159,6 @@
         "NFC East"
       ],
       "published_at": "2026-10-24T22:24:22+00:00",
-      "players": []
-    },
-    {
-      "id": "edc41b6072652469deff",
-      "headline": "Ravens Make Final Decision On Lamar Jackson's Status For Sunday",
-      "url": "https://www.si.com/nfl/ravens/onsi/ravens-make-final-decision-on-lamar-jackson-s-status-for-sunday-01m5qwzbpt3c",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Jackson was listed as questionable, the Ravens said it could be a game-time decision Sunday, and their timelines about the injury have been confusing all month",
-      "categories": [],
-      "published_at": "2026-10-24T21:56:49+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "5e9e7bb27449b52c83c1",
-      "headline": "Cowboys Struggling Secondary Catches Break With Eagles Injury Report",
-      "url": "https://www.si.com/nfl/cowboys/onsi/cowboys-struggling-secondary-catches-break-with-eagles-injury-report",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys will face the Philadelphia Eagles on Monday Night Football, and their struggling secondary just caught a huge break.",
-      "categories": [],
-      "published_at": "2026-10-24T21:40:00+00:00",
       "players": []
     }
   ]
