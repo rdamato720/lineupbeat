@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T19:52:11.544969+00:00",
+  "updated_at": "2026-10-29T20:00:43.247753+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-29T19:36:19+00:00",
+      "latest_entry_at": "2026-10-29T20:00:05+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-29T19:33:28+00:00",
+      "latest_entry_at": "2026-10-29T19:25:54+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-29T12:17:00+00:00",
+      "latest_entry_at": "2026-10-29T17:51:56+00:00",
       "stale": false
     },
     {
@@ -140,7 +140,7 @@
     {
       "source_id": "news_official_ind",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
       "latest_entry_at": "2026-10-29T18:03:51+00:00",
       "stale": false
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-29T17:00:47+00:00",
+      "latest_entry_at": "2026-10-29T19:45:00+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-29T19:36:19+00:00",
+      "latest_entry_at": "2026-10-29T20:00:05+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-29T16:19:42+00:00",
+      "latest_entry_at": "2026-10-29T11:00:00+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-29T19:00:00+00:00",
+      "latest_entry_at": "2026-10-28T16:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-29T13:16:00+00:00",
+      "latest_entry_at": "2026-10-29T15:00:00+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-29T18:29:19+00:00",
+      "latest_entry_at": "2026-10-29T19:40:09+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-29T17:25:33+00:00",
+      "latest_entry_at": "2026-10-29T19:48:35+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-29T19:00:00+00:00",
+      "latest_entry_at": "2026-10-29T16:37:15+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,26 @@
     }
   ],
   "items": [
+    {
+      "id": "c618e38a2cdaca9ca845",
+      "headline": "Week 8 Injury Report (Browns)",
+      "url": "https://www.steelers.com/news/week-8-injury-report-browns-x7058",
+      "source_id": "news_official_pit",
+      "source": "Pittsburgh Steelers (official)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "A look at player injuries and practice participation for Week 8",
+      "categories": [
+        "Injury Report",
+        "UPMC",
+        "Featured",
+        "Sights and Sounds",
+        "Cleveland Browns at Pittsburgh Steelers (2026-REG-8)"
+      ],
+      "published_at": "2026-10-29T19:45:00+00:00",
+      "players": []
+    },
     {
       "id": "528422ef123c1ecbe7c3",
       "headline": "Falcons injury report: Billy Bowman Jr. among 4 defensive backs limited in practice",
@@ -1720,26 +1740,6 @@
         "vikings-at-lions-2026-reg-8"
       ],
       "published_at": "2026-10-28T21:30:19+00:00",
-      "players": []
-    },
-    {
-      "id": "c618e38a2cdaca9ca845",
-      "headline": "Week 8 Injury Report (Browns)",
-      "url": "https://www.steelers.com/news/week-8-injury-report-browns-x7058",
-      "source_id": "news_official_pit",
-      "source": "Pittsburgh Steelers (official)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "A look at player injuries and practice participation for Week 8",
-      "categories": [
-        "Injury Report",
-        "UPMC",
-        "Featured",
-        "Sights and Sounds",
-        "Cleveland Browns at Pittsburgh Steelers (2026-REG-8)"
-      ],
-      "published_at": "2026-10-28T21:20:00+00:00",
       "players": []
     },
     {
