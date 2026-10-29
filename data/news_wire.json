@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T00:55:39.346945+00:00",
+  "updated_at": "2026-10-29T02:00:47.510662+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-29T00:50:39+00:00",
+      "latest_entry_at": "2026-10-29T01:49:50+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-28T17:52:37+00:00",
+      "latest_entry_at": "2026-10-29T01:07:53+00:00",
       "stale": false
     },
     {
@@ -68,9 +68,9 @@
     {
       "source_id": "news_official_buf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-28T19:11:38+00:00",
+      "latest_entry_at": "2026-10-29T01:10:51+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-29T00:50:39+00:00",
+      "latest_entry_at": "2026-10-29T01:49:50+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-28T16:28:19+00:00",
+      "latest_entry_at": "2026-10-28T21:45:42+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T14:41:05+00:00",
+      "latest_entry_at": "2026-10-28T20:00:00+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T23:33:30+00:00",
+      "latest_entry_at": "2026-10-28T18:10:18+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-27T19:33:41+00:00",
+      "latest_entry_at": "2026-10-28T14:46:21+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T21:51:01+00:00",
+      "latest_entry_at": "2026-10-28T17:07:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T14:51:17+00:00",
+      "latest_entry_at": "2026-10-28T18:12:04+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-28T22:00:00+00:00",
+      "latest_entry_at": "2026-10-28T22:45:34+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T22:30:00+00:00",
+      "latest_entry_at": "2026-10-28T21:00:00+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-29T00:01:25+00:00",
+      "latest_entry_at": "2026-10-29T01:26:35+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T19:35:39+00:00",
+      "latest_entry_at": "2026-10-29T00:38:03+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T20:30:00+00:00",
+      "latest_entry_at": "2026-10-28T21:01:23+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,68 @@
     }
   ],
   "items": [
+    {
+      "id": "6f5b13ac80e4f8803143",
+      "headline": "Falcons vs. Bucs injury report: Billy Bowman Jr., two others not practicing on Wednesday",
+      "url": "https://www.thefalcoholic.com/atlanta-falcons-injuries/97860/falcons-vs-bucs-injury-report-billy-bowman-jr-two-others-not-practicing-on-wednesday",
+      "source_id": "news_sbn_atl",
+      "source": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "Greetings, Falcoholics! It\u2019s the start of a new week as the Atlanta Falcons and Tampa Bay Buccaneers both held their first practices. The Falcons are fresh off an exciting win in Week 7, and they look to remain healthy as they have a divisional contest with the Bucs on Sunday. Let\u2019s take a look at [\u2026]",
+      "categories": [
+        "Atlanta Falcons injuries"
+      ],
+      "published_at": "2026-10-29T01:26:35+00:00",
+      "players": []
+    },
+    {
+      "id": "b9c24132413d04a1ae2e",
+      "headline": "Tre'Davious White's homecoming, Tyrell Shavers' return and Spencer Brown's status",
+      "url": "https://www.buffalobills.com/news/tre-davious-white-s-homecoming-tyrell-shavers-return-and-spencer-brown-s-status",
+      "source_id": "news_official_buf",
+      "source": "Buffalo Bills (official)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Tre'Davious White, Tyrell Shavers and Spencer Brown all garnered major attention on Wednesday",
+      "categories": [
+        "From the Locker Room"
+      ],
+      "published_at": "2026-10-29T01:10:51+00:00",
+      "players": [
+        {
+          "id": "00-0038679",
+          "name": "Tyrell Shavers",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "67977439b58345e93b6e",
+      "headline": "Myles Garrett & Terrance Ferguson won\u2019t return soon",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/153518/myles-garrett-terrance-ferguson-sean-mcvay",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Los Angeles Rams head coach Sean McVay said neither Myles Garrett nor Terrance Ferguson will return to practice this week. Both players are currently on injured reserve. They can re-join practice during a three-week practice window without counting against the 53-man roster. The Rams must move them to the roster within the ramp up period [\u2026]",
+      "categories": [
+        "Los Angeles Rams Injuries"
+      ],
+      "published_at": "2026-10-29T00:38:03+00:00",
+      "players": [
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "40f424f46350ba17cd53",
       "headline": "Injury Updates: Rams will not open 21-day practice windows for Myles Garrett or Terrance Ferguson in Week 8; latest on Trent McDuffie, Nate Landman and Davante Adams",
@@ -860,6 +922,31 @@
       "players": []
     },
     {
+      "id": "af13582162c16fc6517c",
+      "headline": "A.J. Brown not making excuses as he works back from injury",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/142274/aj-brown-excuses-injury-patriots-vs-dolphins",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The production has not been there for A.J. Brown since returning to the field from a high ankle sprain. Through two games, Brown has hauled in just six of 16 targets for 75 yards. That included him dropping multiple passes in his first game back against the Jets. \u201cI\u2019m trying to put my best foot [\u2026]",
+      "categories": [
+        "New England Patriots First Read",
+        "New England Patriots Injuries",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-10-28T21:45:42+00:00",
+      "players": [
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
+        }
+      ]
+    },
+    {
       "id": "d0e86e749ec2d837ce31",
       "headline": "Steelers WR Ben Skowronek returns to practice",
       "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-injuries/177041/steelers-wr-ben-skowronek-returns-to-practice-injury-report-brandin-echols-browns-week-8",
@@ -1062,6 +1149,23 @@
           "position": "RB"
         }
       ]
+    },
+    {
+      "id": "77dbb1701677edbd075d",
+      "headline": "Patriots vs. Dolphins Wednesday injury report: Ben Brown returns, while Carlton Davis III ramps up",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/142261/patriots-vs-dolphins-wednesday-injury-report-ben-brown-returns-while-carlton-davis-iii-ramps-up",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "As the New England Patriots began work on the Miami Dolphins, so did Ben Brown. The starting right guard returned for Wednesday\u2019s practice after missing one week and one game because of a knee injury. Also more than present was starting cornerback Carlton Davis III, who had been limited before being ruled out for a [\u2026]",
+      "categories": [
+        "New England Patriots Injuries",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-10-28T21:03:43+00:00",
+      "players": []
     },
     {
       "id": "a9ec45be041a96cc5eba",
@@ -4032,145 +4136,6 @@
           "id": "00-0041496",
           "name": "Jonah Coleman",
           "team": "DEN",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "cbb255c671af3a723332",
-      "headline": "5 Winners, 1 Loser in Seahawks Big Win vs. Chiefs",
-      "url": "https://www.si.com/nfl/seahawks/onsi/5-winners-1-loser-seattle-seahawks-big-win-vs-kansas-city-chiefs",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "The Seattle Seahawks are back on top thanks to a strong showing from Jaxon Smith-Njigba and the entire roster, beating the undefeated Kansas City Chiefs.",
-      "categories": [],
-      "published_at": "2026-10-26T03:17:23+00:00",
-      "players": [
-        {
-          "id": "00-0038543",
-          "name": "Jaxon Smith-Njigba",
-          "team": "SEA",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "5a6f1ba6ae55d2da8b57",
-      "headline": "Seahawks injury updates: Rashid Shaheed, Velus Jones Jr ruled out",
-      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/178223/seahawks-injury-updates-rashid-shaheed-velus-jones-jr-ruled-out",
-      "source_id": "news_sbn_sea",
-      "source": "Field Gulls (SB Nation)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "The Seattle Seahawks will be down a couple of players for the remainder of their Week 7 game against the Kansas City Chiefs. Wide receiver Rashid Shaheed was ruled out with a knee injury after colliding with Jaxon Smith-Njigba on a Sam Darnold interception just before halftime. Shaheed was not out there for the start [\u2026]",
-      "categories": [
-        "Seattle Seahawks Injuries"
-      ],
-      "published_at": "2026-10-26T02:43:54+00:00",
-      "players": [
-        {
-          "id": "00-0034869",
-          "name": "Sam Darnold",
-          "team": "SEA",
-          "position": "QB"
-        },
-        {
-          "id": "00-0037545",
-          "name": "Rashid Shaheed",
-          "team": "SEA",
-          "position": "WR"
-        },
-        {
-          "id": "00-0037745",
-          "name": "Velus Jones Jr.",
-          "team": "SEA",
-          "position": "RB"
-        },
-        {
-          "id": "00-0038543",
-          "name": "Jaxon Smith-Njigba",
-          "team": "SEA",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "024f3e80ca43932a1ae8",
-      "headline": "Rashid Shaheed Injury Update: Seahawks WR Leaves Early In Third Quarter",
-      "url": "https://www.si.com/nfl/seahawks/onsi/rashid-shaheed-injury-update-seahawks-wr-leaves-early-in-third-quarter-01m5tzgakh5d",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "So far, pretty good for the Seattle Seahawks on Sunday Night Football, with the exception of the first notable injury of the evening to Shaheed.",
-      "categories": [],
-      "published_at": "2026-10-26T02:12:51+00:00",
-      "players": [
-        {
-          "id": "00-0037545",
-          "name": "Rashid Shaheed",
-          "team": "SEA",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "ed393a8b319774844cfc",
-      "headline": "Seahawks vs. Chiefs In-Game Injury Updates: Rashid Shaheed, Velus Jones Jr., Charles Cross Out",
-      "url": "https://www.seahawks.com/news/2026-week-7-seahawks-vs-chiefs-in-game-injury-updates",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "In-Game Injury News From The Week 7 Matchup Between Seattle and Kansas City",
-      "categories": [
-        "News: Stories",
-        "News: Gameday",
-        "Homepage Hero",
-        "Kansas City Chiefs at Seattle Seahawks (2026-REG-7)"
-      ],
-      "published_at": "2026-10-26T02:04:23+00:00",
-      "players": [
-        {
-          "id": "00-0037545",
-          "name": "Rashid Shaheed",
-          "team": "SEA",
-          "position": "WR"
-        },
-        {
-          "id": "00-0037745",
-          "name": "Velus Jones Jr.",
-          "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "66d0bb6395db9b0d11a3",
-      "headline": "Lions injury update: No concern for Jahmyr Gibbs despite awkward slide",
-      "url": "https://www.prideofdetroit.com/detroit-lions-injuries/178276/lions-injury-update-no-concern-for-jahmyr-gibbs-despite-awkward-slide",
-      "source_id": "news_sbn_det",
-      "source": "Pride Of Detroit (SB Nation)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "On the play before the Detroit Lions\u2019 game-winning kick against the Green Bay Packers, Jahmyr Gibbs had a clean path to the end zone, but stopped on a dime after earning the first down. He did that so Detroit could run off any remainder of the clock and kick the field goal as time expired\u2014the [\u2026]",
-      "categories": [
-        "Detroit Lions Injuries",
-        "Detroit Lions News"
-      ],
-      "published_at": "2026-10-26T02:02:58+00:00",
-      "players": [
-        {
-          "id": "00-0039139",
-          "name": "Jahmyr Gibbs",
-          "team": "DET",
           "position": "RB"
         }
       ]
