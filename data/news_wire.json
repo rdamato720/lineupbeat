@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T02:00:47.510662+00:00",
+  "updated_at": "2026-10-29T04:00:55.332311+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-29T01:49:50+00:00",
+      "latest_entry_at": "2026-10-29T03:49:20+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T23:07:05+00:00",
+      "latest_entry_at": "2026-10-29T03:07:03+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T23:26:52+00:00",
+      "latest_entry_at": "2026-10-29T02:00:35+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-29T01:49:50+00:00",
+      "latest_entry_at": "2026-10-29T03:49:20+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T23:07:05+00:00",
+      "latest_entry_at": "2026-10-29T03:07:03+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T18:10:18+00:00",
+      "latest_entry_at": "2026-10-28T23:33:30+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T17:07:00+00:00",
+      "latest_entry_at": "2026-10-28T21:51:01+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T17:27:26+00:00",
+      "latest_entry_at": "2026-10-28T15:35:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T21:00:00+00:00",
+      "latest_entry_at": "2026-10-28T22:30:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-29T00:38:03+00:00",
+      "latest_entry_at": "2026-10-29T02:48:39+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,41 @@
     }
   ],
   "items": [
+    {
+      "id": "629625f9bd8cf608d8ae",
+      "headline": "Commanders News: Van Jefferson Joins the 53; Eagles Lose Another Running Back | Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-van-jefferson-eagles-dameon-pierce",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Washington promotes Van Jefferson, Dan Quinn updates Laremy Tunsil\u2019s recovery, and the Eagles place Dameon Pierce on IR before Sunday\u2019s rematch.",
+      "categories": [],
+      "published_at": "2026-10-29T02:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0036415",
+          "name": "Van Jefferson",
+          "team": "WAS",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "ca0ce38767aea2ec480b",
+      "headline": "Broncos' First Week 8 Injury Report: Updates on Surtain, Hufanga & Waddle",
+      "url": "https://www.si.com/nfl/broncos/onsi/jaylen-waddle-chest-injury-practice-report-chiefs",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "Not a great start to the week for Denver's top receiver.",
+      "categories": [],
+      "published_at": "2026-10-29T02:25:18+00:00",
+      "players": []
+    },
     {
       "id": "6f5b13ac80e4f8803143",
       "headline": "Falcons vs. Bucs injury report: Billy Bowman Jr., two others not practicing on Wednesday",
@@ -596,14 +631,14 @@
     },
     {
       "id": "67977439b58345e93b6e",
-      "headline": "Myles Garrett & Terrance Ferguson won\u2019t return soon",
+      "headline": "Myles Garrett not returning this week either",
       "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/153518/myles-garrett-terrance-ferguson-sean-mcvay",
       "source_id": "news_sbn_lar",
       "source": "Turf Show Times (SB Nation)",
       "teams": [
         "LAR"
       ],
-      "feed_description": "Los Angeles Rams head coach Sean McVay said neither Myles Garrett nor Terrance Ferguson will return to practice this week. Both players are currently on injured reserve. They can re-join practice during a three-week practice window without counting against the 53-man roster. The Rams must move them to the roster within the ramp up period [\u2026]",
+      "feed_description": "Los Angeles Rams head coach Sean McVay said neither Myles Garrett nor Terrance Ferguson will return to practice this week. Both players are currently on injured reserve and hey can re-join practice during a 21-day practice window without counting against the 53-man roster, but that isn\u2019t close to happening. The Rams must move them to [\u2026]",
       "categories": [
         "Los Angeles Rams Injuries"
       ],
@@ -4091,52 +4126,6 @@
           "name": "Tyler Shough",
           "team": "NO",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "318bede063e5c4acaa42",
-      "headline": "Shane Steichen Doubles Down on Daniel Jones Despite Poor Results",
-      "url": "https://www.si.com/nfl/colts/onsi/shane-steichen-doubles-down-on-daniel-jones-despite-poor-results-indianapolis-colts",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "Head coach Shane Steichen's belief in Indianapolis Colts starting quarterback Daniel Jones has become unjustifiable.",
-      "categories": [],
-      "published_at": "2026-10-26T12:00:01+00:00",
-      "players": [
-        {
-          "id": "00-0035710",
-          "name": "Daniel Jones",
-          "team": "IND",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "b613ed1afbfb58cec421",
-      "headline": "'It was one of our more complete games': Broncos find success in all three phases in 30-16 win over Arizona Cardinals",
-      "url": "https://www.denverbroncos.com/news/it-was-one-of-our-more-complete-games-broncos-find-success-in-all-three-phases-in-30-16-win-over-arizona-cardinals",
-      "source_id": "news_official_den",
-      "source": "Denver Broncos (official)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "Running back Jonah Coleman provides \u201cjuice\" in his return to game action.",
-      "categories": [
-        "Top Stories",
-        "Susanna Weir",
-        "Denver Broncos at Arizona Cardinals (2026-REG-7)"
-      ],
-      "published_at": "2026-10-26T03:40:50+00:00",
-      "players": [
-        {
-          "id": "00-0041496",
-          "name": "Jonah Coleman",
-          "team": "DEN",
-          "position": "RB"
         }
       ]
     }
