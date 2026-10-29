@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T04:00:55.332311+00:00",
+  "updated_at": "2026-10-29T07:04:36.458747+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-29T03:49:20+00:00",
+      "latest_entry_at": "2026-10-29T06:57:06+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-29T02:00:35+00:00",
+      "latest_entry_at": "2026-10-29T04:32:07+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-29T03:49:20+00:00",
+      "latest_entry_at": "2026-10-29T06:57:06+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T19:24:03+00:00",
+      "latest_entry_at": "2026-10-28T00:00:00+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T22:42:04+00:00",
+      "latest_entry_at": "2026-10-28T10:00:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T15:35:00+00:00",
+      "latest_entry_at": "2026-10-28T21:48:52+00:00",
       "stale": false
     },
     {
@@ -468,9 +468,9 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T20:51:49+00:00",
+      "latest_entry_at": "2026-10-28T18:30:00+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-29T00:10:57+00:00",
+      "latest_entry_at": "2026-10-29T04:48:21+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-28T14:00:00+00:00",
+      "latest_entry_at": "2026-10-28T12:00:00+00:00",
       "stale": false
     },
     {
@@ -518,15 +518,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T16:00:00+00:00",
+      "latest_entry_at": "2026-10-29T03:04:10+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ari",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T20:28:01+00:00",
+      "latest_entry_at": "2026-10-27T20:54:15+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,22 @@
     }
   ],
   "items": [
+    {
+      "id": "e5d605c0a81e8b230a25",
+      "headline": "Buccaneers vs. Falcons: Initial injury report for Week 8",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/69450/buccaneers-falcons-injury-report-three-bucs-miss-wednesdays-practice",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers released their initial injury report Wednesday ahead of their Week 8 matchup against the Atlanta Falcons, with three players sitting out practice and two others participating on a limited basis. Running back Kenny Gainwell (hip), offensive tackle Luke Goedeke (calf) and linebacker Josiah Trotter (illness) were all listed as non-participants to [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers Injuries"
+      ],
+      "published_at": "2026-10-29T03:04:10+00:00",
+      "players": []
+    },
     {
       "id": "629625f9bd8cf608d8ae",
       "headline": "Commanders News: Van Jefferson Joins the 53; Eagles Lose Another Running Back | Burgundy Roundup",
@@ -4102,30 +4118,6 @@
           "name": "Chris Bell",
           "team": "MIA",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "b3099c68fec456ca6212",
-      "headline": "New Orleans Saints News: Saints enter the bye week with a loss",
-      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-news/117014/new-orleans-saints-news-saints-enter-the-bye-week-with-a-loss",
-      "source_id": "news_sbn_no",
-      "source": "Canal Street Chronicles (SB Nation)",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "Welcome to today\u2019s roundup of New Orleans Saints and NFL news. Saints fall to 2-5 after loss to Steelers in Paris The game ended close, but it never actually felt like it. Tyler Shough\u2019s Saints teammates admit that they\u2019re letting him down The team clearly wants Shough as the starter. The Saints needed to make [\u2026]",
-      "categories": [
-        "Fleur-de-Links",
-        "New Orleans Saints News"
-      ],
-      "published_at": "2026-10-26T13:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0040743",
-          "name": "Tyler Shough",
-          "team": "NO",
-          "position": "QB"
         }
       ]
     }
