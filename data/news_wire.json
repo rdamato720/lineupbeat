@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T02:00:54.487103+00:00",
+  "updated_at": "2026-10-30T04:00:58.142057+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-30T01:41:59+00:00",
+      "latest_entry_at": "2026-10-30T03:59:33+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T01:41:51+00:00",
+      "latest_entry_at": "2026-10-30T04:00:30+00:00",
       "stale": false
     },
     {
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-29T22:48:03+00:00",
+      "latest_entry_at": "2026-10-30T03:25:11+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-30T04:00:00+00:00",
+      "latest_entry_at": "2026-10-30T03:00:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-30T01:41:59+00:00",
+      "latest_entry_at": "2026-10-30T03:59:33+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-30T01:41:51+00:00",
+      "latest_entry_at": "2026-10-30T04:00:30+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-29T18:25:59+00:00",
+      "latest_entry_at": "2026-10-29T21:27:14+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-29T17:01:00+00:00",
+      "latest_entry_at": "2026-10-29T21:20:27+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T00:11:00+00:00",
+      "latest_entry_at": "2026-10-30T02:11:13+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-30T01:30:23+00:00",
+      "latest_entry_at": "2026-10-30T03:39:35+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-29T16:00:00+00:00",
+      "latest_entry_at": "2026-10-30T02:25:51+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T01:48:10+00:00",
+      "latest_entry_at": "2026-10-30T03:25:10+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-29T21:28:00+00:00",
+      "latest_entry_at": "2026-10-30T02:17:05+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,97 @@
     }
   ],
   "items": [
+    {
+      "id": "4df8ee37acef5cbbcbfa",
+      "headline": "Commanders News: Treylon Burks Misses Practice With McLaurin Out Before Eagles Rematch | Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-burks-mclaurin-eagles",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Treylon Burks missed Thursday\u2019s practice with Terry McLaurin on IR. Stefon Diggs returned, and Saquon Barkley missed another Eagles practice.",
+      "categories": [],
+      "published_at": "2026-10-30T03:57:34+00:00",
+      "players": [
+        {
+          "id": "00-0035659",
+          "name": "Terry McLaurin",
+          "team": "WAS",
+          "position": "WR"
+        },
+        {
+          "id": "00-0037742",
+          "name": "Treylon Burks",
+          "team": "WAS",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "31e349211166239445e2",
+      "headline": "Packers Winners and Losers: Christian Watson Goes From Ambulance to Starring vs. Panthers",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-winners-and-losers-christian-watson-steps-out-of-ambulance-to-top-of-list",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Christian Watson left the first half of Thursday's game in an ambulance, but returned to a raucous ovation as the Green Bay Packers held off the Carolina Panthers on Thursday night.",
+      "categories": [],
+      "published_at": "2026-10-30T03:47:42+00:00",
+      "players": [
+        {
+          "id": "00-0038124",
+          "name": "Christian Watson",
+          "team": "GB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "1a54a1b25e840b82a304",
+      "headline": "Christian Watson Returns from Hospital, Packers Beat Panthers",
+      "url": "https://www.si.com/nfl/packers/onsi/christian-watson-returns-from-hospital-packers-beat-panthers",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Jordan Love, Christian Watson and the Green Bay Packers posted a bounce-back victory over the Carolina Panthers on Thursday night.",
+      "categories": [],
+      "published_at": "2026-10-30T03:25:11+00:00",
+      "players": [
+        {
+          "id": "00-0036264",
+          "name": "Jordan Love",
+          "team": "GB",
+          "position": "QB"
+        },
+        {
+          "id": "00-0038124",
+          "name": "Christian Watson",
+          "team": "GB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "90e75f67b1000c57d1b4",
+      "headline": "Falcons vs. Bucs injury report: A.J. Terrell limited on Thursday",
+      "url": "https://www.thefalcoholic.com/atlanta-falcons-injuries/97883/falcons-vs-bucs-injury-report-a-j-terrell-limited-on-thursday",
+      "source_id": "news_sbn_atl",
+      "source": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "Greetings, Falcoholics! We\u2019re moving right along in the week as the Atlanta Falcons and Tampa Bay Buccaneers both held their second practices of the week. The Falcons injury report grew on Thursday, so there\u2019s a lot to cover. Let\u2019s take a look! Falcons injury report Full \u2022 WR Beaux Collins (hip) \u2022 OL Cameron Williams [\u2026]",
+      "categories": [
+        "Atlanta Falcons injuries"
+      ],
+      "published_at": "2026-10-30T02:25:51+00:00",
+      "players": []
+    },
     {
       "id": "4f324232af5677532b5b",
       "headline": "Christian Watson Injury: Update on Packers weapon after big play led to concerning outcome",
@@ -3901,106 +3992,6 @@
           "id": "00-0037247",
           "name": "George Pickens",
           "team": "DAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "d92778e9901911554fb6",
-      "headline": "The Path to Production for Young Patriots WR Kyle Williams",
-      "url": "https://www.si.com/nfl/patriots/onsi/the-path-to-production-for-young-patriots-wr-kyle-williams",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "How a former top-100 draft pick can make an impact on an injury-riddled Patriots offense.",
-      "categories": [],
-      "published_at": "2026-10-27T21:13:03+00:00",
-      "players": [
-        {
-          "id": "00-0040131",
-          "name": "Kyle Williams",
-          "team": "NE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "70be2b4be9d0876a0635",
-      "headline": "Myles Price's Injury Could Open Door for One Vikings Letdown to Save His Roster Spot",
-      "url": "https://www.si.com/nfl/vikings/onsi/myles-price-injury-could-open-door-for-one-vikings-letdown-to-save-his-roster-spot-01m5xc5r1wjw",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "Against the Indianapolis Colts in Week 7, Minnesota Vikings wide receiver and return specialist Myles Price left the game and did not return. He took a big hit",
-      "categories": [],
-      "published_at": "2026-10-27T21:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0040506",
-          "name": "Myles Price",
-          "team": "MIN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "bfdd7cc7da68988b20b3",
-      "headline": "Arizona Cardinals place Jalen Brooks on injured reserve, add two players to practice squad",
-      "url": "https://www.revengeofthebirds.com/arizona-cardinals-roster/96099/arizona-cardinals-place-jalen-brooks-on-injured-reserve-add-two-players-to-practice-squad",
-      "source_id": "news_sbn_ari",
-      "source": "Revenge of the Birds (SB Nation)",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "Unfortunately for the Arizona Cardinals, after moving on from Marvin Harrison Jr. they gave a different wide receiver a shot, and in what can only be described as normal Cardinals luck, that wide receiver has sustained an injury and his done for the season. Jalen Brooks, a fourth year wideout was pacing for a career [\u2026]",
-      "categories": [
-        "Arizona Cardinals News",
-        "Arizona Cardinals Roster"
-      ],
-      "published_at": "2026-10-27T20:54:15+00:00",
-      "players": [
-        {
-          "id": "00-0038640",
-          "name": "Jalen Brooks",
-          "team": "ARI",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039849",
-          "name": "Marvin Harrison Jr.",
-          "team": "ARI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "680ef319f4312d65ac2a",
-      "headline": "49ers Announce Practice Squad Moves",
-      "url": "https://www.49ers.com/news/49ers-announce-practice-squad-moves-x6844",
-      "source_id": "news_official_sf",
-      "source": "San Francisco 49ers (official)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The 49ers announced they have signed DL Kevin Givens to the team's practice squad and released WR Malik Turner from the practice squad.",
-      "categories": [
-        "Roster Moves",
-        "Latest App",
-        "News - Roster",
-        "English",
-        "English Articles",
-        "News"
-      ],
-      "published_at": "2026-10-27T20:43:29+00:00",
-      "players": [
-        {
-          "id": "00-0034867",
-          "name": "Malik Turner",
-          "team": "SF",
           "position": "WR"
         }
       ]
