@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T23:56:47.948669+00:00",
+  "updated_at": "2026-10-30T00:00:42.472988+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-29T22:57:11+00:00",
+      "latest_entry_at": "2026-10-29T23:58:50+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-29T22:45:00+00:00",
+      "latest_entry_at": "2026-10-30T04:00:00+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-29T22:57:11+00:00",
+      "latest_entry_at": "2026-10-29T23:58:50+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-29T20:43:17+00:00",
+      "latest_entry_at": "2026-10-29T23:15:00+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-28T22:42:04+00:00",
+      "latest_entry_at": "2026-10-29T21:27:14+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-29T23:17:27+00:00",
+      "latest_entry_at": "2026-10-29T13:50:24+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-29T22:05:26+00:00",
+      "latest_entry_at": "2026-10-29T23:55:00+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-29T16:01:00+00:00",
+      "latest_entry_at": "2026-10-29T23:53:16+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,27 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-29T21:08:18+00:00",
+      "latest_entry_at": "2026-10-29T23:32:42+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "3acf191670055860ef05",
+      "headline": "Buccaneers vs. Falcons: Thursday injury report for Week 8",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/69470/buccaneers-falcons-thursday-injury-report-nfl-week-8",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers released their second injury report of the week Thursday as preparations continue for Sunday\u2019s NFC South matchup against the Atlanta Falcons. There was some encouraging news for Tampa Bay, as outside linebacker Yaya Diaby (illness) and linebacker Josiah Trotter (illness) were both upgraded to full participation after being limited and sidelined, [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers Injuries"
+      ],
+      "published_at": "2026-10-29T23:53:16+00:00",
+      "players": []
+    },
     {
       "id": "08961ada3281e1fddab8",
       "headline": "Seahawks Injury Report With Updates on Jadarian Price, Charles Cross, More",
@@ -573,6 +589,30 @@
           "name": "Jadarian Price",
           "team": "SEA",
           "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "ef05b24f022b0796cd81",
+      "headline": "Seahawks-Bears Thursday injury report: Cross and Shaheed out, \u2018Big Cat\u2019 limited with Achilles",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/178640/seahawks-bears-thursday-injury-report-cross-shaheed-out-leonard-williams-limited-achilles",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks have a lengthy injury report to start their prep for the showdown with the Chicago Bears on Monday Night Football with a whopping 18(!!) players listed with some sort of designation. The DNP\u2019s for injury included Charles Cross, Rashid Shaheed, and Uchenna Nwosu. Notable limited participants were Tyrice Knight, Drake Thomas, the [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-10-29T23:32:42+00:00",
+      "players": [
+        {
+          "id": "00-0037545",
+          "name": "Rashid Shaheed",
+          "team": "SEA",
+          "position": "WR"
         }
       ]
     },
@@ -3962,59 +4002,6 @@
           "name": "Bucky Irving",
           "team": "TB",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "5c19c3a3bcb07071d3d5",
-      "headline": "Browns make 3 roster moves; have an open spot available along with a Kalia Davis update",
-      "url": "https://www.dawgsbynature.com/cleveland-browns-news/136404/browns-make-3-roster-moves-have-an-open-spot-available-along-with-a-kalia-davis-update",
-      "source_id": "news_sbn_cle",
-      "source": "Dawgs By Nature (SB Nation)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "The Cleveland Browns continue to keep things moving on their roster, as NFL trade rumors and deals start to heat up. On Monday, the Browns activated QB Dillon Gabriel from injured reserve and waived seventh-round TE Carsen Ryan. As of now, as reported previously, Cleveland plans on running with four quarterbacks on their active roster, [\u2026]",
-      "categories": [
-        "Cleveland Browns News",
-        "Cleveland Browns Roster"
-      ],
-      "published_at": "2026-10-27T19:42:25+00:00",
-      "players": [
-        {
-          "id": "00-0040704",
-          "name": "Dillon Gabriel",
-          "team": "CLE",
-          "position": "QB"
-        },
-        {
-          "id": "00-0041131",
-          "name": "Carsen Ryan",
-          "team": "CLE",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "cae3cdd756381ea593fc",
-      "headline": "Caleb Douglas nominated for Rookie of the Week award",
-      "url": "https://www.thephinsider.com/miami-dolphins-news/124219/caleb-douglas-nominated-for-rookie-of-the-week-award",
-      "source_id": "news_sbn_mia",
-      "source": "The Phinsider (SB Nation)",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "Miami Dolphins rookie wide receiver Caleb Douglas returned to action this past Sunday against the New York Jets for the first time since injuring his ankle against the San Francisco 49ers in week two. Douglas\u2019 impact was immediately felt, as the receiver got back to his big play ways \u2014 scoring two touchdowns on just [\u2026]",
-      "categories": [
-        "Miami Dolphins News"
-      ],
-      "published_at": "2026-10-27T19:30:52+00:00",
-      "players": [
-        {
-          "id": "00-0041523",
-          "name": "Caleb Douglas",
-          "team": "MIA",
-          "position": "WR"
         }
       ]
     }
