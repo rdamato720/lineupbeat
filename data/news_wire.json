@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T12:00:55.195679+00:00",
+  "updated_at": "2026-10-30T12:54:59.260192+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T11:45:00+00:00",
+      "latest_entry_at": "2026-10-30T12:23:48+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T09:00:00+00:00",
+      "latest_entry_at": "2026-10-30T12:41:01+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-29T20:00:14+00:00",
+      "latest_entry_at": "2026-10-30T12:30:02+00:00",
       "stale": false
     },
     {
@@ -230,7 +230,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-29T21:06:13+00:00",
+      "latest_entry_at": "2026-10-30T12:10:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-30T11:45:00+00:00",
+      "latest_entry_at": "2026-10-30T12:23:48+00:00",
       "stale": false
     },
     {
@@ -300,9 +300,9 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-30T00:15:15+00:00",
+      "latest_entry_at": "2026-10-30T12:12:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-30T11:00:15+00:00",
+      "latest_entry_at": "2026-10-30T12:46:36+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-30T10:30:00+00:00",
+      "latest_entry_at": "2026-10-30T11:15:00+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-30T00:00:00+00:00",
+      "latest_entry_at": "2026-10-30T11:00:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-29T21:35:54+00:00",
+      "latest_entry_at": "2026-10-30T12:00:00+00:00",
       "stale": false
     },
     {
@@ -468,9 +468,9 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-29T21:30:00+00:00",
+      "latest_entry_at": "2026-10-30T12:00:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T03:25:10+00:00",
+      "latest_entry_at": "2026-10-30T12:00:00+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-29T16:30:00+00:00",
+      "latest_entry_at": "2026-10-30T12:00:00+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-30T11:00:00+00:00",
+      "latest_entry_at": "2026-10-30T12:29:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-29T20:17:22+00:00",
+      "latest_entry_at": "2026-10-30T11:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "574a426311c842add1cf",
+      "headline": "Falcons QB Michael Penix Jr. Ready to Step Into Familiar but Uncharted Territory",
+      "url": "https://www.si.com/nfl/falcons/onsi/falcons-qb-michael-penix-jr-ready-to-step-into-familiar-but-uncharted-territory",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "Atlanta Falcons quarterback Michael Penix Jr. returns to his hometown for the first time as an NFL starter to face the Tampa Bay Buccaneers.",
+      "categories": [],
+      "published_at": "2026-10-30T12:01:00+00:00",
+      "players": [
+        {
+          "id": "00-0039917",
+          "name": "Michael Penix Jr.",
+          "team": "ATL",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "09004599fa2acc2592c0",
       "headline": "Here\u2019s Why Packers WR Christian Watson Returned from Broken Rib",
@@ -1956,7 +1977,7 @@
         "2026 Week 8 News",
         "Baltimore Ravens at Buffalo Bills (2026-REG-8)",
         "inline-news",
-        "Homepage Centerpiece"
+        "Homepage Latest Headlines"
       ],
       "published_at": "2026-10-29T17:28:50+00:00",
       "players": [
@@ -3981,27 +4002,6 @@
           "name": "Jalen Brooks",
           "team": "ARI",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "95b8c657ea09e2122623",
-      "headline": "What Happens to Emanuel Wilson as Seahawks RBs Return from Injury?",
-      "url": "https://www.si.com/nfl/seahawks/onsi/what-happens-to-emanuel-wilson-seattle-seahawks-rbs-return-from-injury",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "The Seattle Seahawks backfield is about to get more crowded in the coming weeks.",
-      "categories": [],
-      "published_at": "2026-10-28T01:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0038797",
-          "name": "Emanuel Wilson",
-          "team": "SEA",
-          "position": "RB"
         }
       ]
     }
