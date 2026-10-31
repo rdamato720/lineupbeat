@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T00:00:57.012735+00:00",
+  "updated_at": "2026-10-31T01:50:08.208533+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T00:00:01+00:00",
+      "latest_entry_at": "2026-10-31T01:42:10+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T21:33:14+00:00",
+      "latest_entry_at": "2026-10-31T01:40:21+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-30T20:44:25+00:00",
+      "latest_entry_at": "2026-10-31T00:45:00+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-30T23:51:19+00:00",
+      "latest_entry_at": "2026-10-31T00:28:00+00:00",
       "stale": false
     },
     {
@@ -284,25 +284,25 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-31T00:00:01+00:00",
+      "latest_entry_at": "2026-10-31T01:42:10+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T21:33:14+00:00",
+      "latest_entry_at": "2026-10-31T01:40:21+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-30T21:00:00+00:00",
+      "latest_entry_at": "2026-10-30T13:04:46+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T20:00:00+00:00",
+      "latest_entry_at": "2026-10-30T11:00:00+00:00",
       "stale": false
     },
     {
@@ -340,9 +340,9 @@
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-30T20:08:42+00:00",
+      "latest_entry_at": "2026-10-30T17:58:41+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T21:26:06+00:00",
+      "latest_entry_at": "2026-10-30T20:48:58+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-30T22:30:00+00:00",
+      "latest_entry_at": "2026-10-30T17:54:33+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-30T11:07:01+00:00",
+      "latest_entry_at": "2026-10-30T13:41:53+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T22:38:00+00:00",
+      "latest_entry_at": "2026-10-30T18:01:00+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-30T20:52:03+00:00",
+      "latest_entry_at": "2026-10-30T16:44:29+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 3,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T23:12:23+00:00",
+      "latest_entry_at": "2026-10-28T16:33:56+00:00",
       "stale": false
     },
     {
@@ -534,27 +534,48 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T20:24:53+00:00",
+      "latest_entry_at": "2026-10-30T18:09:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T16:30:00+00:00",
+      "latest_entry_at": "2026-10-30T15:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-30T23:58:15+00:00",
+      "latest_entry_at": "2026-10-30T21:49:50+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "aeb71a3d6c8b6e080386",
+      "headline": "Week 8 Injury Report: Bears at Seahawks",
+      "url": "https://www.seahawks.com/news/week-8-injury-report-bears-at-seahawks",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Details on the Seahawks\u2019 injury situation heading into their Week 8 game vs. the Bears.",
+      "categories": [
+        "News: Injury Report",
+        "News: Stories",
+        "News: National Feature",
+        "Homepage Hero",
+        "Homepage Top Headlines",
+        "Chicago Bears at Seattle Seahawks (2026-REG-8)"
+      ],
+      "published_at": "2026-10-31T00:28:00+00:00",
+      "players": []
+    },
     {
       "id": "42b88b9c857ef7b6512b",
       "headline": "Seahawks-Bears Friday injury report: Cross and Nwosu sit, Byron Murphy limited by back",
@@ -591,27 +612,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "aeb71a3d6c8b6e080386",
-      "headline": "Week 8 Injury Report: Bears at Seahawks",
-      "url": "https://www.seahawks.com/news/week-8-injury-report-bears-at-seahawks",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Details on the Seahawks\u2019 injury situation heading into their Week 8 game vs. the Bears.",
-      "categories": [
-        "News: Injury Report",
-        "News: Stories",
-        "News: National Feature",
-        "Homepage Hero",
-        "Homepage Top Headlines",
-        "Chicago Bears at Seattle Seahawks (2026-REG-8)"
-      ],
-      "published_at": "2026-10-30T23:28:00+00:00",
-      "players": []
     },
     {
       "id": "8421ca94114480c09054",
