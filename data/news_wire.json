@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T10:00:54.514639+00:00",
+  "updated_at": "2026-10-31T12:00:55.032503+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T10:00:04+00:00",
+      "latest_entry_at": "2026-10-31T11:45:20+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T01:40:21+00:00",
+      "latest_entry_at": "2026-10-31T11:47:24+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T09:00:00+00:00",
+      "latest_entry_at": "2026-10-31T11:17:47+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-10-30T19:30:01+00:00",
+      "latest_entry_at": "2026-10-31T11:00:10+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-31T10:00:04+00:00",
+      "latest_entry_at": "2026-10-31T11:45:20+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-31T01:40:21+00:00",
+      "latest_entry_at": "2026-10-31T11:47:24+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T20:00:00+00:00",
+      "latest_entry_at": "2026-10-31T11:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-31T02:28:19+00:00",
+      "latest_entry_at": "2026-10-31T11:05:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T21:26:06+00:00",
+      "latest_entry_at": "2026-10-31T10:30:00+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-30T18:01:00+00:00",
+      "latest_entry_at": "2026-10-30T22:38:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-30T22:30:00+00:00",
+      "latest_entry_at": "2026-10-31T11:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-30T15:19:21+00:00",
+      "latest_entry_at": "2026-10-31T12:00:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-30T23:06:33+00:00",
+      "latest_entry_at": "2026-10-31T12:00:00+00:00",
       "stale": false
     },
     {
@@ -468,9 +468,9 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-30T19:36:40+00:00",
+      "latest_entry_at": "2026-10-31T11:00:00+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-31T02:55:55+00:00",
+      "latest_entry_at": "2026-10-31T11:00:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-30T21:17:00+00:00",
+      "latest_entry_at": "2026-10-31T11:00:00+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,53 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-30T19:49:20+00:00",
+      "latest_entry_at": "2026-10-30T23:58:15+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "6fa03a227de1051d5cac",
+      "headline": "Bills' Final Injury Report (Week 8): Who's In, Who's Out vs. Ravens",
+      "url": "https://www.si.com/nfl/bills/onsi/bills-final-injury-report-week-8-whos-in-whos-out-vs-ravens",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills have listed six players as questionable to face the Baltimore Ravens on November 1 in Orchard Park.",
+      "categories": [],
+      "published_at": "2026-10-31T11:00:03+00:00",
+      "players": []
+    },
+    {
+      "id": "4c4beba6918e0bc295fc",
+      "headline": "Newly released Josh Jacobs records make Packers\u2019 running back situation even more complicated as NFL discipline lingers",
+      "url": "https://atozsports.com/nfl/green-bay-packers-news/josh-jacobs-new-evidence-police/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Police case file detailed accounts from three more women, and it surfaced only two weeks after the running back returned to the field for Green Bay.",
+      "categories": [
+        "Green Bay Packers News",
+        "NFL",
+        "American Football",
+        "Josh Jacobs"
+      ],
+      "published_at": "2026-10-31T10:10:53+00:00",
+      "players": [
+        {
+          "id": "00-0035700",
+          "name": "Josh Jacobs",
+          "team": "GB",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "aeb71a3d6c8b6e080386",
       "headline": "Week 8 Injury Report: Bears at Seahawks",
@@ -3864,51 +3904,6 @@
           "id": "00-0038679",
           "name": "Tyrell Shavers",
           "team": "BUF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "bca11539316396b88034",
-      "headline": "Injury Report: Pat Surtain II improves to full participant, 3 Broncos do not practice ahead of Week 8 game vs. Chiefs",
-      "url": "https://www.denverbroncos.com/news/injuryreport/injury-report-pat-surtain-ii-improves-to-full-participant-3-broncos-do-not-practice-ahead-of-week-8-game-vs-chiefs",
-      "source_id": "news_official_den",
-      "source": "Denver Broncos (official)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "The Broncos\u2019 All-Pro cornerback has improved to a full participant ahead of Denver\u2019s Week 8 game against the Chiefs.",
-      "categories": [
-        "Top Stories",
-        "Injury Report",
-        "Kansas City Chiefs at Denver Broncos (2026-REG-8)",
-        "Aric DiLalla",
-        "Patrick Surtain II"
-      ],
-      "published_at": "2026-10-28T21:49:06+00:00",
-      "players": []
-    },
-    {
-      "id": "af13582162c16fc6517c",
-      "headline": "A.J. Brown not making excuses as he works back from injury",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/142274/aj-brown-excuses-injury-patriots-vs-dolphins",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The production has not been there for A.J. Brown since returning to the field from a high ankle sprain. Through two games, Brown has hauled in just six of 16 targets for 75 yards. That included him dropping multiple passes in his first game back against the Jets. \u201cI\u2019m trying to put my best foot [\u2026]",
-      "categories": [
-        "New England Patriots First Read",
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-10-28T21:45:42+00:00",
-      "players": [
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
           "position": "WR"
         }
       ]
