@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T22:01:04.694179+00:00",
+  "updated_at": "2026-10-31T22:29:44.988959+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T21:50:00+00:00",
+      "latest_entry_at": "2026-10-31T22:29:38+00:00",
       "stale": false
     },
     {
@@ -252,7 +252,7 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
       "latest_entry_at": "2026-11-01T00:28:00+00:00",
       "stale": false
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-31T21:50:00+00:00",
+      "latest_entry_at": "2026-10-31T22:29:38+00:00",
       "stale": false
     },
     {
@@ -300,17 +300,17 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T19:24:25+00:00",
+      "latest_entry_at": "2026-10-31T20:50:20+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_mia",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-31T15:30:00+00:00",
+      "latest_entry_at": "2026-10-30T00:00:00+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-31T19:01:10+00:00",
+      "latest_entry_at": "2026-10-31T17:45:59+00:00",
       "stale": false
     },
     {
@@ -356,9 +356,9 @@
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-31T21:30:00+00:00",
+      "latest_entry_at": "2026-10-31T20:10:20+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-31T21:04:59+00:00",
+      "latest_entry_at": "2026-10-31T19:00:00+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-31T20:45:50+00:00",
+      "latest_entry_at": "2026-10-31T15:14:37+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T15:00:00+00:00",
+      "latest_entry_at": "2026-10-31T14:34:05+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-31T20:15:16+00:00",
+      "latest_entry_at": "2026-10-31T18:23:18+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-31T21:22:41+00:00",
+      "latest_entry_at": "2026-10-31T20:32:07+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-31T19:41:16+00:00",
+      "latest_entry_at": "2026-10-31T12:51:16+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,63 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-31T21:03:49+00:00",
+      "latest_entry_at": "2026-10-31T14:21:42+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "cd493c56ba697abba58f",
+      "headline": "Zach Charbonnet Is Back & Other Seahawks Injury Updates Ahead Of Monday Night's Game vs. Chicago",
+      "url": "https://www.seahawks.com/news/zach-charbonnet-is-back-other-seahawks-injury-updates-ahead-of-monday-night-s-game-vs-chicago",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Injury updates from Seahawks coach Mike Macdonald ahead of his team\u2019s Week 8 game against the Bears.",
+      "categories": [
+        "News: Stories",
+        "News: National Feature",
+        "Zach Charbonnet",
+        "News: Fantasy Insider",
+        "Homepage Top Headlines",
+        "Homepage Hero",
+        "Chicago Bears at Seattle Seahawks (2026-REG-8)"
+      ],
+      "published_at": "2026-10-31T22:20:29+00:00",
+      "players": [
+        {
+          "id": "00-0039165",
+          "name": "Zach Charbonnet",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "5ecf61ca60ffe6d8f115",
+      "headline": "Notebook: Maxx Crosby Rumors, Lions Roster, Jamo",
+      "url": "https://www.si.com/nfl/lions/onsi/notebook-maxx-crosby-rumors-lions-roster-jamo",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "Detroit Lions Maxx Crosby trade rumors, roster news and Jameson Williams update.",
+      "categories": [],
+      "published_at": "2026-10-31T22:00:10+00:00",
+      "players": [
+        {
+          "id": "00-0037240",
+          "name": "Jameson Williams",
+          "team": "DET",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "7bc9b37ffde031fbeb4e",
       "headline": "Broncos promote S Taylor Rapp to active roster, place RB RJ Harvey on injured reserve",
@@ -3926,53 +3976,6 @@
           "name": "Dillon Gabriel",
           "team": "CLE",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "81e1532df630aadf6f1c",
-      "headline": "Ravens upgrade Lamar Jackson on 1st injury report of Week 8",
-      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/87170/ravens-upgrade-lamar-jackson-on-1st-injury-report-of-week-8",
-      "source_id": "news_sbn_bal",
-      "source": "Baltimore Beatdown (SB Nation)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Baltimore Ravens quarterback Lamar Jackson was a full participant in practice on Wednesday for the first time since suffering a high ankle sprain in Week 4. Jackson, 29, missed the next two games and returned to practice last week in a limited capacity. He participated all three days and was initially listed as questionable for [\u2026]",
-      "categories": [
-        "Baltimore Ravens Injuries",
-        "Baltimore Ravens News"
-      ],
-      "published_at": "2026-10-29T11:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "bdcd693f4a039f87d080",
-      "headline": "Bengals News: Ja\u2019Marr Chase Injury Watch",
-      "url": "https://www.cincyjungle.com/cincinnati-bengals-news/203769/jamarr-chase-injury-watch",
-      "source_id": "news_sbn_cin",
-      "source": "Cincy Jungle (SB Nation)",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "The Cincinnati Bengals are gearing up for their Week 8 game against the Tennessee Titans. The first injury report wasn\u2019t as populated as some of the past few weeks, but when you see Ja\u2019Marr Chase didn\u2019t practice, that sets off alarm bells to any fan. The primary reason for the DNP was rest, but the [\u2026]",
-      "categories": [
-        "Cincinnati Bengals News"
-      ],
-      "published_at": "2026-10-29T10:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0036900",
-          "name": "Ja'Marr Chase",
-          "team": "CIN",
-          "position": "WR"
         }
       ]
     }
