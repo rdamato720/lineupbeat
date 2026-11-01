@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T15:06:56.321730+00:00",
+  "updated_at": "2026-11-01T17:00:52.257994+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T15:05:04+00:00",
+      "latest_entry_at": "2026-11-01T16:51:32+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T15:04:36+00:00",
+      "latest_entry_at": "2026-11-01T16:41:43+00:00",
       "stale": false
     },
     {
@@ -54,13 +54,13 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-31T19:59:10+00:00",
+      "latest_entry_at": "2026-11-01T16:50:18+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 8,
+      "eligible": 7,
       "error": "",
       "latest_entry_at": "2026-11-01T13:00:00+00:00",
       "stale": false
@@ -68,15 +68,15 @@
     {
       "source_id": "news_official_buf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-01T14:00:00+00:00",
+      "latest_entry_at": "2026-11-01T16:29:07+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_car",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
       "latest_entry_at": "2026-11-01T13:00:22+00:00",
       "stale": false
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T19:58:45+00:00",
+      "latest_entry_at": "2026-11-01T16:20:00+00:00",
       "stale": false
     },
     {
@@ -94,7 +94,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-30T21:59:46+00:00",
+      "latest_entry_at": "2026-11-01T16:31:15+00:00",
       "stale": false
     },
     {
@@ -102,7 +102,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-10-31T18:06:01+00:00",
+      "latest_entry_at": "2026-11-01T16:30:09+00:00",
       "stale": false
     },
     {
@@ -116,9 +116,9 @@
     {
       "source_id": "news_official_det",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-01T12:00:14+00:00",
+      "latest_entry_at": "2026-11-01T16:45:00+00:00",
       "stale": false
     },
     {
@@ -132,7 +132,7 @@
     {
       "source_id": "news_official_hou",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
       "latest_entry_at": "2026-10-28T20:56:50+00:00",
       "stale": false
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-01T13:00:00+00:00",
+      "latest_entry_at": "2026-11-01T16:32:24+00:00",
       "stale": false
     },
     {
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T20:00:30+00:00",
+      "latest_entry_at": "2026-11-01T16:30:22+00:00",
       "stale": false
     },
     {
@@ -174,15 +174,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-31T18:00:22+00:00",
+      "latest_entry_at": "2026-11-01T16:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_lv",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-31T19:09:53+00:00",
+      "latest_entry_at": "2026-11-01T16:32:00+00:00",
       "stale": false
     },
     {
@@ -196,17 +196,17 @@
     {
       "source_id": "news_official_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-30T18:00:00+00:00",
+      "latest_entry_at": "2026-11-01T16:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T20:00:34+00:00",
+      "latest_entry_at": "2026-11-01T15:27:00+00:00",
       "stale": false
     },
     {
@@ -220,7 +220,7 @@
     {
       "source_id": "news_official_nyg",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
       "latest_entry_at": "2026-10-30T14:00:00+00:00",
       "stale": false
@@ -230,7 +230,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-10-31T21:00:00+00:00",
+      "latest_entry_at": "2026-11-01T16:30:00+00:00",
       "stale": false
     },
     {
@@ -244,9 +244,9 @@
     {
       "source_id": "news_official_pit",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-01T11:05:00+00:00",
+      "latest_entry_at": "2026-11-01T16:30:00+00:00",
       "stale": false
     },
     {
@@ -260,7 +260,7 @@
     {
       "source_id": "news_official_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
       "latest_entry_at": "2026-10-29T22:00:24+00:00",
       "stale": false
@@ -270,39 +270,39 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-10-30T21:00:00+00:00",
+      "latest_entry_at": "2026-11-01T16:31:30+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_ten",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-01T14:54:00+00:00",
+      "latest_entry_at": "2026-11-01T16:30:31+00:00",
       "stale": false
     },
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-01T15:05:04+00:00",
+      "latest_entry_at": "2026-11-01T16:51:32+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-01T15:04:36+00:00",
+      "latest_entry_at": "2026-11-01T16:41:43+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 0,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-01T12:28:39+00:00",
+      "latest_entry_at": "2026-11-01T16:32:58+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T00:00:00+00:00",
+      "latest_entry_at": "2026-11-01T16:30:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-01T10:00:00+00:00",
+      "latest_entry_at": "2026-11-01T16:00:02+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-31T21:47:07+00:00",
+      "latest_entry_at": "2026-11-01T16:25:09+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-01T12:22:25+00:00",
+      "latest_entry_at": "2026-11-01T16:51:39+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-31T21:04:59+00:00",
+      "latest_entry_at": "2026-11-01T15:51:28+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-31T18:02:53+00:00",
+      "latest_entry_at": "2026-11-01T14:27:55+00:00",
       "stale": false
     },
     {
@@ -390,15 +390,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-01T12:34:25+00:00",
+      "latest_entry_at": "2026-11-01T17:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-10-31T21:11:33+00:00",
+      "latest_entry_at": "2026-11-01T15:58:09+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-01T13:02:00+00:00",
+      "latest_entry_at": "2026-11-01T14:43:17+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-31T01:50:00+00:00",
+      "latest_entry_at": "2026-11-01T13:47:52+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T14:00:00+00:00",
+      "latest_entry_at": "2026-11-01T16:30:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-01T13:11:22+00:00",
+      "latest_entry_at": "2026-11-01T16:47:39+00:00",
       "stale": false
     },
     {
@@ -446,13 +446,13 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-31T20:15:16+00:00",
+      "latest_entry_at": "2026-11-01T16:55:42+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
       "latest_entry_at": "2026-11-01T12:00:00+00:00",
       "stale": false
@@ -462,15 +462,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-31T19:24:55+00:00",
+      "latest_entry_at": "2026-11-01T15:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-01T13:30:00+00:00",
+      "latest_entry_at": "2026-11-01T17:00:00+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T12:00:00+00:00",
+      "latest_entry_at": "2026-11-01T16:39:17+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-01T13:00:00+00:00",
+      "latest_entry_at": "2026-11-01T15:00:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T14:49:15+00:00",
+      "latest_entry_at": "2026-11-01T16:03:11+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-01T13:00:00+00:00",
+      "latest_entry_at": "2026-11-01T15:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T18:03:21+00:00",
+      "latest_entry_at": "2026-11-01T14:41:51+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,518 @@
     }
   ],
   "items": [
+    {
+      "id": "c8a223cedfbb9a4bf1a3",
+      "headline": "Browns, Steelers inactives: Cleveland announces a change at QB",
+      "url": "https://www.dawgsbynature.com/cleveland-browns-injuries/136740/browns-steelers-inactives-cleveland-announces-a-change-at-qb",
+      "source_id": "news_sbn_cle",
+      "source": "Dawgs By Nature (SB Nation)",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "The Cleveland Browns announced their inactives for today\u2019s game against the Pittsburgh Steelers. For much of the week, we thought the team would have to do some maneuvering of moves on the offensive line, since RT Tytus Howard missed practice all week with a concussion. However, on Saturday, the team got some good news on [\u2026]",
+      "categories": [
+        "Cleveland Browns Injuries",
+        "Cleveland Browns Roster"
+      ],
+      "published_at": "2026-11-01T16:51:39+00:00",
+      "players": []
+    },
+    {
+      "id": "0fae65805e5043a6fa8e",
+      "headline": "Atlanta Falcons Week 8 inactives vs. Tampa Bay Buccaneers",
+      "url": "https://www.atlantafalcons.com/news/atlanta-falcons-week-8-inactives-vs-tampa-bay-buccaneers",
+      "source_id": "news_official_atl",
+      "source": "Atlanta Falcons (official)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "Falcons make a final decision on the group of players with questionable designations.",
+      "categories": [
+        "News",
+        "Inactives",
+        "A.J. Terrell",
+        "Avieon Terrell",
+        "Olamide Zaccheaus",
+        "Brian Robinson",
+        "C.J. Henderson",
+        "Andy Dalton",
+        "Kendal Daniels",
+        "Divine Deablo",
+        "Atlanta Falcons at Tampa Bay Buccaneers (2026-REG-8)"
+      ],
+      "published_at": "2026-11-01T16:50:18+00:00",
+      "players": []
+    },
+    {
+      "id": "1a6e14c1647f32808c33",
+      "headline": "Cardinals vs Cowboys Final Injury Report: Who's In, Who's Out?",
+      "url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-dallas-cowboys-final-injury-report-whos-in-whos-out",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "The Arizona Cardinals and Dallas Cowboys both get big boosts on their final injury reports.",
+      "categories": [],
+      "published_at": "2026-11-01T16:47:25+00:00",
+      "players": []
+    },
+    {
+      "id": "e7302bfb1627657fd0e1",
+      "headline": "Buffalo Bills Week 8 Inactives: DJ Moore, Dalton Kincaid Will be in Action",
+      "url": "https://www.si.com/nfl/bills/onsi/buffalo-bills-week-8-inactives-dj-moore-dalton-kincaid-will-be-in-action",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Who will be on the field for the Buffalo Bills in Week 8 as they host the Baltimore Ravens at New Highmark Stadium?",
+      "categories": [],
+      "published_at": "2026-11-01T16:39:36+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0038933",
+          "name": "Dalton Kincaid",
+          "team": "BUF",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "3c64dfb11ba36bad3099",
+      "headline": "Lions inactives vs. Vikings: One usual inactive could find himself in trade conversations ahead of the deadline",
+      "url": "https://atozsports.com/nfl/detroit-lions-news/lions-inactives-vs-vikings-one-usual-inactive-could-find-himself-in-trade-conversations-ahead-of-the-deadline/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "Detroit\u2019s Week 8 inactive list contains few surprises, but another healthy scratch for Hassanein raises an interesting question about his future with the trade deadline approaching.",
+      "categories": [
+        "Detroit Lions News"
+      ],
+      "published_at": "2026-11-01T16:34:15+00:00",
+      "players": []
+    },
+    {
+      "id": "ac030471f05338238446",
+      "headline": "Lions, Vikings Week 8 inactives: Roger McCreary WILL PLAY",
+      "url": "https://www.prideofdetroit.com/detroit-lions-news/179038/lions-vikings-week-8-inactives-roger-mccreary-will-play",
+      "source_id": "news_sbn_det",
+      "source": "Pride Of Detroit (SB Nation)",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "The Detroit Lions have declared their inactives ahead of their Week 8 matchup with divisional rival Minnesota Vikings, and Lions starting corner Roger McCreary is active and will play in this game. McCreary was a late addition to Friday\u2019s injury report, being listed as questionable after having a limited practice with a foot injury, but [\u2026]",
+      "categories": [
+        "Detroit Lions Injuries",
+        "Detroit Lions News"
+      ],
+      "published_at": "2026-11-01T16:33:05+00:00",
+      "players": []
+    },
+    {
+      "id": "ea946d10951e9a20a76e",
+      "headline": "Buffalo Bills Week 8 inactives vs. the Baltimore Ravens",
+      "url": "https://www.buffalorumblings.com/buffalo-bills-roster/144111/buffalo-bills-week-8-inactives-vs-the-baltimore-ravens",
+      "source_id": "news_sbn_buf",
+      "source": "Buffalo Rumblings (SB Nation)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills and the Baltimore Ravens are set to face off in what is a huge AFC matchup. With a win, the Bills move to 6-1 and maintain their edge over the New England Patriots in the AFC East. With a loss, they lose pace not only with New England, but with the Kansas [\u2026]",
+      "categories": [
+        "Buffalo Bills Injuries",
+        "Buffalo Bills Roster"
+      ],
+      "published_at": "2026-11-01T16:32:58+00:00",
+      "players": []
+    },
+    {
+      "id": "b03526f22da9579ee1ea",
+      "headline": "Colts announce 7 inactive players for Week 8 game at Jacksonville Jaguars",
+      "url": "https://www.colts.com/news/colts-announce-7-inactive-players-for-week-8-game-at-jacksonville-jaguars",
+      "source_id": "news_official_ind",
+      "source": "Indianapolis Colts (official)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Colts previously ruled out wide receiver Anthony Gould (concussion) and cornerback Justin Walley (knee).",
+      "categories": [
+        "Inactives List",
+        "Featured",
+        "Featured News",
+        "Indianapolis Colts at Jacksonville Jaguars (2026-REG-8)"
+      ],
+      "published_at": "2026-11-01T16:32:24+00:00",
+      "players": [
+        {
+          "id": "00-0039816",
+          "name": "Anthony Gould",
+          "team": "IND",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "db73d8404737c96ef853",
+      "headline": "Las Vegas Raiders Week 8 Inactives vs. New York Jets",
+      "url": "https://www.raiders.com/news/las-vegas-raiders-week-8-inactives-vs-new-york-jets",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Before the Raiders take the field for Week 8, view the inactive players for today's game.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Inactives",
+        "Las Vegas Raiders at New York Jets (2026-REG-8)"
+      ],
+      "published_at": "2026-11-01T16:32:00+00:00",
+      "players": []
+    },
+    {
+      "id": "d2e08ff9b2f2dd21c994",
+      "headline": "Detroit Lions Week 8 Inactives List: Will CB Play Against Vikings?",
+      "url": "https://www.si.com/nfl/lions/onsi/detroit-lions-week-eight-inactives-list-will-cb-play-against-vikings",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "Detroit Lions release 2026 Week 8 NFL inactives list prior to Vikings game.",
+      "categories": [],
+      "published_at": "2026-11-01T16:31:43+00:00",
+      "players": []
+    },
+    {
+      "id": "ac073602482857d1c41b",
+      "headline": "Falcons-Bucs Inactives | Antoine Winfield Jr. Makes His Return",
+      "url": "https://www.buccaneers.com/news/falcons-bucs-inactives-antoine-winfield-jr-makes-his-return",
+      "source_id": "news_official_tb",
+      "source": "Tampa Bay Buccaneers (official)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "Safety Antoine Winfield Jr. is back in the lineup for the Bucs after missing three games with a rib fracture but wide receiver Emeka Egbuka will miss a second consecutive contest",
+      "categories": [
+        "Featured",
+        "Inactives Report",
+        "Week 8 2026 Falcons"
+      ],
+      "published_at": "2026-11-01T16:31:30+00:00",
+      "players": [
+        {
+          "id": "00-0040129",
+          "name": "Emeka Egbuka",
+          "team": "TB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "a4cb84e44631c783f4d9",
+      "headline": "Game Inactives | Week 8 Titans at Bengals",
+      "url": "https://www.tennesseetitans.com/news/game-inactives-week-8-titans-at-bengals",
+      "source_id": "news_official_ten",
+      "source": "Tennessee Titans (official)",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Who's in, who's out for the Titans and Bengals in Week 8",
+      "categories": [
+        "Team/Football News",
+        "News: Game Inactives",
+        "homepage-centerpiece",
+        "Tennessee Titans at Cincinnati Bengals (2026-REG-8)",
+        "2026-11-01-PREgame-STORIES-titans-at-bengals",
+        "2026-11-01-POSTgame-STORIES-titans-at-bengals"
+      ],
+      "published_at": "2026-11-01T16:30:31+00:00",
+      "players": []
+    },
+    {
+      "id": "eaa0be8d8e33df0b34e2",
+      "headline": "Bengals-Titans Inactives: Five Cincinnati Players Out for Week 8 Against Titans",
+      "url": "https://www.bengals.com/news/bengals-titans-inactives-week-8-2026",
+      "source_id": "news_official_cin",
+      "source": "Cincinnati Bengals (official)",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "The Bengals announced five inactive players for their Week 8 game against the Titans. See Cincinnati and Tennessee's full inactive list.",
+      "categories": [
+        "latest news",
+        "centerpiece",
+        "Injury Report",
+        "Tennessee Titans at Cincinnati Bengals (2026-REG-8)"
+      ],
+      "published_at": "2026-11-01T16:30:17+00:00",
+      "players": []
+    },
+    {
+      "id": "cf75b9f8179e051ed052",
+      "headline": "Browns announce inactives for Week 8 vs. the Steelers",
+      "url": "https://www.clevelandbrowns.com/news/browns-announce-inactives-for-week-8-vs-the-steelers",
+      "source_id": "news_official_cle",
+      "source": "Cleveland Browns (official)",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "Cleveland travels to Pittsburgh to face the Steelers at Acrisure Stadium",
+      "categories": [
+        "Inactives",
+        "adpartner=inactives_article",
+        "featured",
+        "Cleveland Browns at Pittsburgh Steelers (2026-REG-8)"
+      ],
+      "published_at": "2026-11-01T16:30:09+00:00",
+      "players": []
+    },
+    {
+      "id": "66a1a86332ed86b7fafe",
+      "headline": "INACTIVES: Lions vs. Vikings",
+      "url": "https://www.detroitlions.com/news/inactives-lions-vs-vikings-mccreary-branch-meeks",
+      "source_id": "news_official_det",
+      "source": "Detroit Lions (official)",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "Tim Twentyman reports on inactives for Sunday's Lions-Vikings matchup.",
+      "categories": [
+        "NEWS - Inactives",
+        "NEWS - Twentyman",
+        "Homepage - Centerpiece Package",
+        "Minnesota Vikings at Detroit Lions (2026-REG-8)"
+      ],
+      "published_at": "2026-11-01T16:30:09+00:00",
+      "players": []
+    },
+    {
+      "id": "b4f41fb688dd3a98ca40",
+      "headline": "Vikings at Lions Inactives for Week 8 of 2026",
+      "url": "https://www.vikings.com/news/inactives-lions-week-8-2026",
+      "source_id": "news_official_min",
+      "source": "Minnesota Vikings (official)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "",
+      "categories": [
+        "Inactives",
+        "News - Team",
+        "News - Index",
+        "vikings-at-lions-2026-reg-8",
+        "Minnesota Vikings at Detroit Lions (2026-REG-8)"
+      ],
+      "published_at": "2026-11-01T16:30:00+00:00",
+      "players": []
+    },
+    {
+      "id": "9df2cac61597f1c6bff2",
+      "headline": "Jets List 7 Players Inactive Against Las Vegas Raiders",
+      "url": "https://www.newyorkjets.com/news/jets-vs-raiders-nfl-game-inactives-11-1-2026",
+      "source_id": "news_official_nyj",
+      "source": "New York Jets (official)",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "David Bailey, Breece Hall, Kohl Levao, Max Mitchell, Joseph Ossai, Tim Patrick and Nahshon Wright Inactive for Week 8",
+      "categories": [
+        "Inactives",
+        "Latest Headlines",
+        "News"
+      ],
+      "published_at": "2026-11-01T16:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0033375",
+          "name": "Tim Patrick",
+          "team": "NYJ",
+          "position": "WR"
+        },
+        {
+          "id": "00-0038120",
+          "name": "Breece Hall",
+          "team": "NYJ",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "3b83825bc1bda2d1bbc4",
+      "headline": "Steelers inactives for Week 8 vs. Browns",
+      "url": "https://www.steelers.com/news/steelers-inactives-for-week-8-vs-browns-x8237",
+      "source_id": "news_official_pit",
+      "source": "Pittsburgh Steelers (official)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "Find out who won't play today as the Steelers take on the Browns at Acrisure Stadium",
+      "categories": [
+        "Inactives",
+        "UPMC",
+        "Featured",
+        "Sights and Sounds",
+        "Cleveland Browns at Pittsburgh Steelers (2026-REG-8)"
+      ],
+      "published_at": "2026-11-01T16:30:00+00:00",
+      "players": []
+    },
+    {
+      "id": "8db8641fb445720c5e69",
+      "headline": "Buffalo Bills inactives vs. Ravens Week 8",
+      "url": "https://www.buffalobills.com/news/buffalo-bills-inactives-vs-ravens-week-8",
+      "source_id": "news_official_buf",
+      "source": "Buffalo Bills (official)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Bills Week 8 status for DJ Moore, Dalton Kincaid and Spencer Brown revealed",
+      "categories": [],
+      "published_at": "2026-11-01T16:29:07+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0038933",
+          "name": "Dalton Kincaid",
+          "team": "BUF",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "2fbf77b0204fa247090c",
+      "headline": "Buffalo Bills wideout DJ Moore to play this week, per report",
+      "url": "https://www.buffalorumblings.com/buffalo-bills-injuries/144124/buffalo-bills-wideout-dj-moore-to-play-this-week-per-report",
+      "source_id": "news_sbn_buf",
+      "source": "Buffalo Rumblings (SB Nation)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "After missing the team\u2019s last two games thanks to a shoulder injury, it looks as if Buffalo Bills wideout DJ Moore will play this week against the Baltimore Ravens. ESPN\u2019s Adam Schefter reports that the Bills\u2019 No. 1 wideout is \u201cexpected\u201d to play in today\u2019s game. Moore, 29, initially injured his shoulder in the first [\u2026]",
+      "categories": [
+        "Buffalo Bills Injuries"
+      ],
+      "published_at": "2026-11-01T15:58:59+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "3d838489ef0e926be5ca",
+      "headline": "Broncos WR Jaylen Waddle is trending in the right direction to play today vs. the Chiefs",
+      "url": "https://www.milehighreport.com/denver-broncos-news/190630/broncos-wr-jaylen-waddle-is-trending-in-the-right-direction-to-play-today-vs-the-chiefs",
+      "source_id": "news_sbn_den",
+      "source": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "According to NFL Network insider Ian Rapoport, Denver Broncos star wide receiver Jaylen Waddle is \u201ctrending in the right direction\u201d to play in today\u2019s game vs. the Kansas City Chiefs. Waddle is listed as questionable for today\u2019s game, but it appears the Broncos will have their explosive star wide receiver for today\u2019s key divisional matchup. [\u2026]",
+      "categories": [
+        "Denver Broncos News"
+      ],
+      "published_at": "2026-11-01T15:58:09+00:00",
+      "players": [
+        {
+          "id": "00-0036613",
+          "name": "Jaylen Waddle",
+          "team": "DEN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "bdef3dd888581ae0623e",
+      "headline": "Dallas Cowboys make it very clear how they feel about fan favorite rookie after latest roster decision",
+      "url": "https://atozsports.com/nfl/dallas-cowboys-news/practice-squad-elevation-james-mitchell-over-michael-trigg/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys had a chance to let undrafted rookie TE Michael Trigg make his NFL debut in Week 8. But they passed. Why?",
+      "categories": [
+        "Dallas Cowboys News",
+        "Dallas Cowboys",
+        "Practice Squad Elevation"
+      ],
+      "published_at": "2026-11-01T15:18:00+00:00",
+      "players": [
+        {
+          "id": "00-0040939",
+          "name": "Michael Trigg",
+          "team": "DAL",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "6c0670db820d17aab8c0",
+      "headline": "Saquon Barkley trade rumors: Eagles running back to remain in Philly",
+      "url": "https://www.bleedinggreennation.com/news/188942/saquon-barkley-trade-rumors-eagles-running-back-to-remain-in-philly",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Philadelphia Eagles will NOT be trading Saquon Barkley ahead of the NFL trade deadline on Tuesday, November 10, according to reporting from ESPN. Still, Howie Roseman and the Eagles believe they still have plenty of talent on the roster to compete in 2027 and beyond. That\u2019s why, according to sources, they\u2019ve made it clear [\u2026]",
+      "categories": [
+        "Philadelphia Eagles News"
+      ],
+      "published_at": "2026-11-01T14:58:44+00:00",
+      "players": [
+        {
+          "id": "00-0034844",
+          "name": "Saquon Barkley",
+          "team": "PHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "dcfa31e75d9ad5dd1577",
+      "headline": "Raiders News: Jack Bech activated, Patrick Johnson to IR",
+      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/144693/raiders-news-jack-bech-activated-patrick-johnson-injured-reserve",
+      "source_id": "news_sbn_lv",
+      "source": "Silver And Black Pride (SB Nation)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "The Las Vegas Raiders are looking to end their four-game skid this weekend. They will be on the road against the New York Jets, hoping to become 500 after starting 3-0. The Good news for the team is that the wide receiver room is close to full health. On Saturday, the Raiders activated Jack Bech, [\u2026]",
+      "categories": [
+        "Las Vegas Raiders News",
+        "Las Vegas Raiders Roster"
+      ],
+      "published_at": "2026-11-01T14:43:17+00:00",
+      "players": [
+        {
+          "id": "00-0040729",
+          "name": "Jack Bech",
+          "team": "LV",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "709270d94313ae33b5fb",
       "headline": "Giants GM Joe Schoen explains the Jameis Winston extension",
@@ -3364,613 +3876,6 @@
           "name": "Kyle Monangai",
           "team": "CHI",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "71248f41f9303ee985f1",
-      "headline": "Bengals Injury Report: Ja'Marr Chase's Status Upgraded on Thursday as Bengals Continue Titans Preparation",
-      "url": "https://www.si.com/nfl/bengals/onsi/bengals-injury-report-ja-marr-chase-status-upgraded-on-thursday-as-bengals-continue-titans-preparation-01m63whank5t",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "Bengals Injury Report: Ja'Marr Chase's Status Upgraded on Thursday as Bengals Continue Titans Preparation",
-      "categories": [],
-      "published_at": "2026-10-29T20:35:22+00:00",
-      "players": [
-        {
-          "id": "00-0036900",
-          "name": "Ja'Marr Chase",
-          "team": "CIN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "05aa33314a5fd6b5f4b4",
-      "headline": "Detroit Lions Week 8 Thursday Injury Report Sees Encouraging Progress",
-      "url": "https://www.si.com/nfl/lions/onsi/detroit-lions-week-eight-thursday-injury-report-sees-encouraging-progress",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Here is who practiced for Detroit Lions on Thursday ahead of Minnesota Vikings game.",
-      "categories": [],
-      "published_at": "2026-10-29T20:31:22+00:00",
-      "players": []
-    },
-    {
-      "id": "7e3de8f2d1d390f008be",
-      "headline": "Lions, Vikings Week 8 injury report: All 7 starters return to practice on Thursday",
-      "url": "https://www.prideofdetroit.com/detroit-lions-news/178693/lions-vikings-week-8-injury-report-jahmyr-gibbs-amon-ra-st-brown",
-      "source_id": "news_sbn_det",
-      "source": "Pride Of Detroit (SB Nation)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "The Detroit Lions (4-2) and Minnesota Vikings (6-0) were back on the practice field on Thursday as they prepare for their Week 8 NFC North showdown. The Lions returned all seven starters to practice on Thursday, as planned, including Jahmyr Gibbs (shoulder) and Amon-Ra St. Brown (ankle). Let\u2019s take a look at Thursday\u2019s injury report [\u2026]",
-      "categories": [
-        "Detroit Lions Injuries",
-        "Detroit Lions News"
-      ],
-      "published_at": "2026-10-29T20:04:02+00:00",
-      "players": [
-        {
-          "id": "00-0036963",
-          "name": "Amon-Ra St. Brown",
-          "team": "DET",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039139",
-          "name": "Jahmyr Gibbs",
-          "team": "DET",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "ee0e8facda4bae59e66d",
-      "headline": "Buccaneers-Falcons Injury Report Oct.29: Trotter, Diaby Upgraded to Full Participation",
-      "url": "https://www.buccaneers.com/news/buccaneers-falcons-injury-report-oct-29-week-8-2026",
-      "source_id": "news_official_tb",
-      "source": "Tampa Bay Buccaneers (official)",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "A look at Thursday's injury report ahead of the Week Eight matchup",
-      "categories": [
-        "Featured",
-        "Injury Report",
-        "Week 8 2026 Falcons"
-      ],
-      "published_at": "2026-10-29T20:02:17+00:00",
-      "players": []
-    },
-    {
-      "id": "e08c01fd6e27e8f49e71",
-      "headline": "Practice Notebook: Sauce Gardner, Anthony Gould and more return to practice in full",
-      "url": "https://www.colts.com/news/practice-notebook-sauce-gardner-anthony-gould-and-more-return-to-practice-in-full",
-      "source_id": "news_official_ind",
-      "source": "Indianapolis Colts (official)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "",
-      "categories": [
-        "Practice Notebook",
-        "Featured",
-        "Featured News"
-      ],
-      "published_at": "2026-10-29T20:00:14+00:00",
-      "players": [
-        {
-          "id": "00-0039816",
-          "name": "Anthony Gould",
-          "team": "IND",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "b84082c5a6c0cd58af1a",
-      "headline": "Lions vs. Vikings practice report: Oct. 29",
-      "url": "https://www.detroitlions.com/news/lions-vs-vikings-practice-report-oct-29-gibbs-stbrown-joseph",
-      "source_id": "news_official_det",
-      "source": "Detroit Lions (official)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Lions vs. Vikings practice report for Thursday, October 29.",
-      "categories": [
-        "NEWS - Practice Report",
-        "Homepage - Centerpiece Package"
-      ],
-      "published_at": "2026-10-29T20:00:01+00:00",
-      "players": []
-    },
-    {
-      "id": "e270489706fccbaa8cf6",
-      "headline": "Jets Injury Report | Week 8 vs. Raiders - Thursday",
-      "url": "https://www.newyorkjets.com/news/jets-injury-report-week-8-vs-raiders-thursday-10-29-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "RB Breece Hall (Quad) & LG Dylan Parham (Knee) Limited Participants",
-      "categories": [
-        "Injury Report",
-        "News",
-        "Latest Headlines"
-      ],
-      "published_at": "2026-10-29T20:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0038120",
-          "name": "Breece Hall",
-          "team": "NYJ",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "528422ef123c1ecbe7c3",
-      "headline": "Falcons injury report: Billy Bowman Jr. among 4 defensive backs limited in practice",
-      "url": "https://www.atlantafalcons.com/news/falcons-injury-report-billy-bowman-jr-aj-terrell-tampa-bay",
-      "source_id": "news_official_atl",
-      "source": "Atlanta Falcons (official)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "Like Bowman, linebacker Divine Deablo logged his first limited session of practice ahead of Sunday's matchup against the Tampa Bay Buccaneers.",
-      "categories": [
-        "News",
-        "Emory Injury Report",
-        "Brian Robinson",
-        "Divine Deablo",
-        "Avieon Terrell",
-        "Billy Bowman Jr.",
-        "Olamide Zaccheaus",
-        "Kendal Daniels",
-        "A.J. Terrell",
-        "Jawaan Taylor",
-        "Cameron Thomas"
-      ],
-      "published_at": "2026-10-29T19:29:27+00:00",
-      "players": []
-    },
-    {
-      "id": "a399a03ac8078df2fe5a",
-      "headline": "A.J. Brown injury: Patriots WR misses practice with \u2018flared up\u2019 knee issue",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/142329/a-j-brown-injury-patriots-wr-misses-practice-with-flared-up-knee-issue",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Wide receiver A.J. Brown was absent from Patriots practice Thursday after being added to the injury report with a knee injury Wednesday. According to NFL Network, Brown missed practice due to a knee issue that flared up. His status for Sunday is now reportedly up in the air. The 29-year-old has a history of knee [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-10-29T19:14:44+00:00",
-      "players": [
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "95739ac68b8963dd22f9",
-      "headline": "Seahawks open Jadarian Price\u2019s practice window as rookie nears return",
-      "url": "https://www.fieldgulls.com/seattle-seahawks-news/178322/seahawks-open-jadarian-price-practice-window-rookie-nfl-news",
-      "source_id": "news_sbn_sea",
-      "source": "Field Gulls (SB Nation)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Zach Charbonnet was activated off the PUP list ahead of Week 7 and now, more help is on the way for the Seattle Seahawks\u2019 backfield. Rookie first-round pick Jadarian Price has had his three-week practice window to return from injured reserve opened by the Seahawks, the team announced on Thursday. Price initially suffered a chest [\u2026]",
-      "categories": [
-        "Seattle Seahawks Injuries",
-        "Seattle Seahawks News"
-      ],
-      "published_at": "2026-10-29T18:46:07+00:00",
-      "players": [
-        {
-          "id": "00-0039165",
-          "name": "Zach Charbonnet",
-          "team": "SEA",
-          "position": "RB"
-        },
-        {
-          "id": "00-0041512",
-          "name": "Jadarian Price",
-          "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "261edf459073009759d3",
-      "headline": "Seahawks RB Jadarian Price Designated For Return To Practice",
-      "url": "https://www.seahawks.com/news/seahawks-rb-jadarian-price-designated-for-return-to-practice",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Seahawks rookie running back Jadarian Price was designated for return to practice on Thursday.",
-      "categories": [
-        "News: Roster Moves",
-        "News: Stories",
-        "News: National Feature",
-        "Homepage Top Headlines",
-        "Homepage Hero",
-        "Chicago Bears at Seattle Seahawks (2026-REG-8)",
-        "Jadarian Price"
-      ],
-      "published_at": "2026-10-29T18:41:15+00:00",
-      "players": [
-        {
-          "id": "00-0041512",
-          "name": "Jadarian Price",
-          "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "c9a94daf7a8bff4d8e10",
-      "headline": "Commanders\u2019 Depth Faces Three Games in 12 Days With Their Season on the Line",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-depth-three-games-12-days",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Commanders face three games in 12 days at 1-4-1. Dan Quinn must manage returning defenders and define receiver roles with Terry McLaurin out.",
-      "categories": [],
-      "published_at": "2026-10-29T18:14:59+00:00",
-      "players": [
-        {
-          "id": "00-0035659",
-          "name": "Terry McLaurin",
-          "team": "WAS",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "35e24b178a5bd4f8c4f6",
-      "headline": "Vega Ioane Makes Quick Return From Knee Injury; Lamar Jackson Practices Fully Again",
-      "url": "https://www.baltimoreravens.com/news/ravens-injury-report-vega-ioane-kyle-hamilton-roquan-smith-ravens-practice-return-2026",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Ravens got some of their top players back on the field for Thursday\u2019s practice.",
-      "categories": [
-        "General",
-        "Ryan Mink",
-        "Olaivavega Ioane",
-        "Kyle Hamilton",
-        "Roquan Smith",
-        "2026 Week 8",
-        "2026 Week 8 News",
-        "Baltimore Ravens at Buffalo Bills (2026-REG-8)",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-10-29T17:28:50+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "e980993b6bdb68f3726f",
-      "headline": "Caleb Williams\u2019 Rookie Contract Makes Bears\u2019 Trade for Jeffery Simmons a Home Run",
-      "url": "https://www.si.com/nfl/bears/onsi/caleb-williams-rookie-contract-bears-trade-jeffery-simmons-home-run",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The Chicago Bears are afforded the flexibility of making an expensive addition like star defensive tackle Jeffery Simmons because of Caleb Williams' rookie contract.",
-      "categories": [],
-      "published_at": "2026-10-29T16:00:02+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "1eadc1216bdd2f372aa9",
-      "headline": "Titans cash in on Jeffery Simmons in blockbuster Bears trade, and the price signals a massive shift for Cam Ward\u2019s future",
-      "url": "https://atozsports.com/nfl/tennessee-titans-news/jeffery-summons-trade-package-titans-bears-winner/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "The Tennessee Titans shipped away the defensive cornerstone they paid this offseason. A 1-6 start under Robert Saleh opened the door, and the return says plenty about what comes next.",
-      "categories": [
-        "Tennessee Titans News",
-        "chicago bears",
-        "Jeffery Simmons",
-        "NFL Trade Deadline",
-        "NFL Trades",
-        "tennessee titans"
-      ],
-      "published_at": "2026-10-29T15:03:41+00:00",
-      "players": [
-        {
-          "id": "00-0040676",
-          "name": "Cam Ward",
-          "team": "TEN",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "6352f556f550b1a8806c",
-      "headline": "Jets WR Omar Cooper Jr. Named Pepsi Rookie of the Week",
-      "url": "https://www.newyorkjets.com/news/omar-cooper-jr-named-pepsi-rookie-of-the-week-10-29-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "First-Year Target Feels Like He Can Continue to Grow with QB Geno Smith",
-      "categories": [
-        "Latest Headlines",
-        "News",
-        "Omar Cooper Jr."
-      ],
-      "published_at": "2026-10-29T15:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0030565",
-          "name": "Geno Smith",
-          "team": "NYJ",
-          "position": "QB"
-        },
-        {
-          "id": "00-0041511",
-          "name": "Omar Cooper",
-          "team": "NYJ",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "e56757b18f7b0a159256",
-      "headline": "Eagles Injury Report: Saquon Barkley, DeVonta Smith, Dontayvion Wicks DNP",
-      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/188580/eagles-injury-report-saquon-barkley-devonta-smith-dontayvion-wicks-dnp",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Philadelphia Eagles issued their first official injury report of the week on Wednesday in advance of their Week 8 game against the Washington Commanders. Note that this report is an estimation because the team held a walkthrough in lieu of a normal practice. The Eagles listed six players under DID NOT PARTICIPATE: Saquon Barkley, [\u2026]",
-      "categories": [
-        "Philadelphia Eagles injuries"
-      ],
-      "published_at": "2026-10-29T14:46:19+00:00",
-      "players": [
-        {
-          "id": "00-0034844",
-          "name": "Saquon Barkley",
-          "team": "PHI",
-          "position": "RB"
-        },
-        {
-          "id": "00-0036912",
-          "name": "DeVonta Smith",
-          "team": "PHI",
-          "position": "WR"
-        },
-        {
-          "id": "00-0038393",
-          "name": "Dontayvion Wicks",
-          "team": "PHI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "93ae0b61e05998eba1fc",
-      "headline": "Bills' Injury Report (Ravens Week): Dalton Kincaid, DJ Moore Limited Wednesday",
-      "url": "https://www.si.com/nfl/bills/onsi/injury-report-week-8-bills-ravens-dalton-kincaid-dj-moore-limited-wednesday",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "The Buffalo Bills listed 10 players on their first Week 8 injury report as preparations for the Baltimore Ravens kicked off in Orchard Park.",
-      "categories": [],
-      "published_at": "2026-10-29T14:13:34+00:00",
-      "players": [
-        {
-          "id": "00-0034827",
-          "name": "DJ Moore",
-          "team": "BUF",
-          "position": "WR"
-        },
-        {
-          "id": "00-0038933",
-          "name": "Dalton Kincaid",
-          "team": "BUF",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "c8b900fbf012dbbae07a",
-      "headline": "Detroit Lions Mailbag: Is Sam LaPorta another T.J. Hockenson situation, when will Kerby Joseph play, is Cade Mays ready for the Vikings? and more",
-      "url": "https://atozsports.com/nfl/detroit-lions-news/detroit-lions-mailbag-is-sam-laporta-another-t-j-hockenson-situation-when-will-kerby-joseph-play-is-cade-mays-ready-for-the-vikings-and-more/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "LaPorta\u2019s future, Joseph\u2019s return timetable and Detroit\u2019s offensive line lead a six-question mailbag before the Lions face the undefeated Vikings.",
-      "categories": [
-        "Detroit Lions News",
-        "Detroit Lions"
-      ],
-      "published_at": "2026-10-29T13:45:00+00:00",
-      "players": [
-        {
-          "id": "00-0039065",
-          "name": "Sam LaPorta",
-          "team": "DET",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "c8b8d82988a12220bc20",
-      "headline": "Bengals\u2019 tough roster decision from two months ago is now set to pay dividends following brutal injury",
-      "url": "https://atozsports.com/nfl/cincinnati-bengals-news/jack-endries-stepping-up-bengals-tight-end-room-following-injuries/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "The loss of two tight ends for the Cincinnati Bengals with over half a season remaining has all eyes on rookie Jack Endries taking a huge leap in terms of playing time. It's a good thing his draft status didn't prevent him from being here.",
-      "categories": [
-        "Cincinnati Bengals News",
-        "Cincinnati Bengals",
-        "Jack Endries",
-        "Joe Burrow"
-      ],
-      "published_at": "2026-10-29T13:20:11+00:00",
-      "players": [
-        {
-          "id": "00-0041116",
-          "name": "Jack Endries",
-          "team": "CIN",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "36d6f91d4bbbb886a34e",
-      "headline": "Kyle Pitts is ready for his return to Florida: 'It's always fun'",
-      "url": "https://www.atlantafalcons.com/news/kyle-pitts-ready-for-return-tampa-bay-always-fun",
-      "source_id": "news_official_atl",
-      "source": "Atlanta Falcons (official)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "Against Tampa Bay in Week 15 last season, Pitts had one of the best tight-end performances in NFL history, catching 11 passes for 166 yards and three touchdowns.",
-      "categories": [
-        "News",
-        "Will McFadden",
-        "Atlanta Falcons at Tampa Bay Buccaneers (2026-REG-8)",
-        "Kyle Pitts"
-      ],
-      "published_at": "2026-10-29T13:17:16+00:00",
-      "players": [
-        {
-          "id": "00-0036970",
-          "name": "Kyle Pitts",
-          "team": "ATL",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "14dfa316c80a581d0d39",
-      "headline": "NY Giants QB Jaxson Dart still eyeing a return for the playoffs",
-      "url": "https://www.bigblueview.com/new-york-giants-news/178036/ny-giants-qb-jaxson-dart-still-eyeing-a-return-for-the-playoffs",
-      "source_id": "news_sbn_nyg",
-      "source": "Big Blue View (SB Nation)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "When New York Giants quarterback Jaxson Dart suffered his season-ending knee injury in Week 2 against the Los Angeles Rams, head coach John Harbaugh held out hope that Dart would be able to return for the playoffs, should the Giants reach them. General manager Joe Schoen said on Tuesday that remains Dart\u2019s aim. \u201cHe still [\u2026]",
-      "categories": [
-        "New York Giants News"
-      ],
-      "published_at": "2026-10-29T13:16:00+00:00",
-      "players": [
-        {
-          "id": "00-0040691",
-          "name": "Jaxson Dart",
-          "team": "NYG",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "eb0252f492fdc19e849e",
-      "headline": "Packers receive major relief ahead of \u201cThursday Night Football,\u201d and nobody is happier than Jordan Love",
-      "url": "https://atozsports.com/nfl/green-bay-packers-news/matthew-golden-injury-update-panthers/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Wide receiver Matthew Golden carries a questionable tag into the Week 8 game against the Panthers after a short week of walkthroughs.",
-      "categories": [
-        "Green Bay Packers News",
-        "NFL",
-        "American Football",
-        "Matthew Golden",
-        "Packers Injury Updates"
-      ],
-      "published_at": "2026-10-29T13:00:18+00:00",
-      "players": [
-        {
-          "id": "00-0036264",
-          "name": "Jordan Love",
-          "team": "GB",
-          "position": "QB"
-        },
-        {
-          "id": "00-0040667",
-          "name": "Matthew Golden",
-          "team": "GB",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "1ad6f097048974a9c643",
-      "headline": "Jaylin Noel Injury Could Mean Bigger Role for One Texans WR",
-      "url": "https://www.si.com/nfl/texans/onsi/jaylin-noel-injury-could-mean-bigger-role-for-one-texans-wr",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "Keep a close eye on this Houston Texans wideout now that Jaylin Noel is going to miss some time.",
-      "categories": [],
-      "published_at": "2026-10-29T13:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0040138",
-          "name": "Jaylin Noel",
-          "team": "HOU",
-          "position": "WR"
         }
       ]
     }
