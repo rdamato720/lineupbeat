@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T00:00:56.395895+00:00",
+  "updated_at": "2026-11-01T01:28:49.069614+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T00:00:11+00:00",
+      "latest_entry_at": "2026-11-01T01:23:39+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T20:27:43+00:00",
+      "latest_entry_at": "2026-11-01T01:20:30+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T20:31:08+00:00",
+      "latest_entry_at": "2026-11-01T00:49:32+00:00",
       "stale": false
     },
     {
@@ -246,13 +246,13 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-31T19:45:49+00:00",
+      "latest_entry_at": "2026-11-01T00:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 7,
+      "eligible": 8,
       "error": "",
       "latest_entry_at": "2026-11-01T00:28:00+00:00",
       "stale": false
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T00:00:11+00:00",
+      "latest_entry_at": "2026-11-01T01:23:39+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T20:27:43+00:00",
+      "latest_entry_at": "2026-11-01T01:20:30+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T15:30:00+00:00",
+      "latest_entry_at": "2026-11-01T00:00:00+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T15:00:00+00:00",
+      "latest_entry_at": "2026-10-31T11:00:00+00:00",
       "stale": false
     },
     {
@@ -340,9 +340,9 @@
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T12:55:00+00:00",
+      "latest_entry_at": "2026-10-31T17:16:28+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-31T14:00:00+00:00",
+      "latest_entry_at": "2026-10-31T01:50:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-31T23:00:00+00:00",
+      "latest_entry_at": "2026-11-01T01:00:00+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-31T18:55:06+00:00",
+      "latest_entry_at": "2026-11-01T00:02:41+00:00",
       "stale": false
     },
     {
@@ -524,9 +524,9 @@
     {
       "source_id": "news_sbn_ari",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-10-31T11:00:00+00:00",
+      "latest_entry_at": "2026-10-31T15:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-31T18:03:21+00:00",
+      "latest_entry_at": "2026-10-31T14:01:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,32 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-10-31T21:03:49+00:00",
+      "latest_entry_at": "2026-10-31T20:42:15+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "aeb71a3d6c8b6e080386",
+      "headline": "Week 8 Injury Report: Bears at Seahawks",
+      "url": "https://www.seahawks.com/news/week-8-injury-report-bears-at-seahawks",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Details on the Seahawks\u2019 injury situation heading into their Week 8 game vs. the Bears.",
+      "categories": [
+        "News: Injury Report",
+        "News: Stories",
+        "News: National Feature",
+        "Homepage Hero",
+        "Homepage Top Headlines",
+        "Chicago Bears at Seattle Seahawks (2026-REG-8)"
+      ],
+      "published_at": "2026-11-01T00:28:00+00:00",
+      "players": []
+    },
     {
       "id": "8e8fa73d19e8e0bf0110",
       "headline": "Eagles elevate Elijah Mitchell, Mason Reiger for Commanders game",
@@ -1232,27 +1253,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "aeb71a3d6c8b6e080386",
-      "headline": "Week 8 Injury Report: Bears at Seahawks",
-      "url": "https://www.seahawks.com/news/week-8-injury-report-bears-at-seahawks",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Details on the Seahawks\u2019 injury situation heading into their Week 8 game vs. the Bears.",
-      "categories": [
-        "News: Injury Report",
-        "News: Stories",
-        "News: National Feature",
-        "Homepage Hero",
-        "Homepage Top Headlines",
-        "Chicago Bears at Seattle Seahawks (2026-REG-8)"
-      ],
-      "published_at": "2026-10-31T00:28:00+00:00",
-      "players": []
     },
     {
       "id": "146781988480583bf0bc",
