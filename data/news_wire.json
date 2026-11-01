@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T23:00:56.815246+00:00",
+  "updated_at": "2026-11-01T23:05:27.911726+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T22:45:00+00:00",
+      "latest_entry_at": "2026-11-01T22:48:47+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-01T22:06:53+00:00",
+      "latest_entry_at": "2026-11-01T22:19:31+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-01T22:45:00+00:00",
+      "latest_entry_at": "2026-11-01T22:48:47+00:00",
       "stale": false
     },
     {
@@ -300,9 +300,9 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-01T22:46:05+00:00",
+      "latest_entry_at": "2026-11-01T21:33:26+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-01T22:44:53+00:00",
+      "latest_entry_at": "2026-11-01T22:28:06+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-01T22:58:34+00:00",
+      "latest_entry_at": "2026-11-01T22:59:58+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-01T21:14:03+00:00",
+      "latest_entry_at": "2026-11-01T22:24:40+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T21:40:25+00:00",
+      "latest_entry_at": "2026-11-01T22:30:00+00:00",
       "stale": false
     },
     {
@@ -486,15 +486,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T17:30:00+00:00",
+      "latest_entry_at": "2026-11-01T21:12:27+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T20:55:28+00:00",
+      "latest_entry_at": "2026-11-01T21:55:13+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T14:49:15+00:00",
+      "latest_entry_at": "2026-11-01T16:03:11+00:00",
       "stale": false
     },
     {
@@ -651,7 +651,7 @@
     },
     {
       "id": "3c2c354ee2bf4f8025b5",
-      "headline": "Joe Fagnano Takes Over for Injured Tyler Huntley",
+      "headline": "Ravens Turn to Joe Fagnano After Lamar Jackson, Tyler Huntley Injuries",
       "url": "https://www.baltimoreravens.com/news/joe-fagnano-tyler-huntley-injured-toe-questionable-emergency-quarterback",
       "source_id": "news_official_bal",
       "source": "Baltimore Ravens (official)",
@@ -673,6 +673,12 @@
       ],
       "published_at": "2026-11-01T22:27:00+00:00",
       "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        },
         {
           "id": "00-0035993",
           "name": "Tyler Huntley",
@@ -704,7 +710,7 @@
         "Philadelphia",
         "Eagles Draft"
       ],
-      "published_at": "2026-11-01T22:06:53+00:00",
+      "published_at": "2026-11-01T22:19:31+00:00",
       "players": [
         {
           "id": "00-0036389",
