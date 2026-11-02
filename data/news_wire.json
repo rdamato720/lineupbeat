@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T09:58:12.710928+00:00",
+  "updated_at": "2026-11-02T11:00:59.380751+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-02T08:00:00+00:00",
+      "latest_entry_at": "2026-11-02T10:07:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-02T06:06:16+00:00",
+      "latest_entry_at": "2026-11-02T11:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-02T09:00:00+00:00",
+      "latest_entry_at": "2026-11-02T10:00:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-02T08:00:00+00:00",
+      "latest_entry_at": "2026-11-02T10:07:00+00:00",
       "stale": false
     },
     {
@@ -294,15 +294,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-02T06:06:16+00:00",
+      "latest_entry_at": "2026-11-02T11:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T21:33:26+00:00",
+      "latest_entry_at": "2026-11-02T00:46:13+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 3,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-01T22:25:36+00:00",
+      "latest_entry_at": "2026-11-02T03:42:32+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-01T20:55:00+00:00",
+      "latest_entry_at": "2026-11-02T05:31:27+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-02T01:34:51+00:00",
+      "latest_entry_at": "2026-11-02T03:15:56+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T22:35:47+00:00",
+      "latest_entry_at": "2026-11-02T07:27:24+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-10-30T14:49:15+00:00",
+      "latest_entry_at": "2026-11-01T16:03:11+00:00",
       "stale": false
     },
     {
@@ -548,9 +548,9 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-01T14:00:00+00:00",
+      "latest_entry_at": "2026-11-01T23:22:06+00:00",
       "stale": false
     }
   ],
