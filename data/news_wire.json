@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T02:38:59.247349+00:00",
+  "updated_at": "2026-11-03T03:00:52.875271+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T02:38:11+00:00",
+      "latest_entry_at": "2026-11-03T03:00:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-03T02:38:11+00:00",
+      "latest_entry_at": "2026-11-03T03:00:00+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-02T16:00:44+00:00",
+      "latest_entry_at": "2026-11-03T00:49:18+00:00",
       "stale": false
     },
     {
@@ -332,9 +332,9 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-02T21:37:20+00:00",
+      "latest_entry_at": "2026-11-03T02:25:13+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-02T16:58:47+00:00",
+      "latest_entry_at": "2026-11-02T17:56:24+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-02T22:00:00+00:00",
+      "latest_entry_at": "2026-11-03T02:38:59+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-01T22:12:36+00:00",
+      "latest_entry_at": "2026-11-02T16:32:39+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,66 @@
     }
   ],
   "items": [
+    {
+      "id": "44c2fac6c28e9916cf66",
+      "headline": "Commanders injury update: Jeremy McNichols reportedly out for months",
+      "url": "https://www.hogshaven.com/washington-commanders-injuries/452845/commanders-injury-update-jeremy-mcnichols-eagles-foot-austin-ekeler-rachaad-white",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Commanders just got Jeremy McNichols back. Now they\u2019re faced with losing him again. The veteran running back and the team\u2019s best pass protector from that position is reportedly out multiple months with a foot injury, despite the fact he\u2019s still seeking opinions on how best to treat it. That news was broken by [\u2026]",
+      "categories": [
+        "Washington Commanders Injuries",
+        "Washington Commanders News"
+      ],
+      "published_at": "2026-11-03T02:38:59+00:00",
+      "players": [
+        {
+          "id": "00-0033955",
+          "name": "Jeremy McNichols",
+          "team": "WAS",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "88bc38a1df512148c6f5",
+      "headline": "Ravens sign QB Austin Reed to practice squad",
+      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/87363/ravens-sign-qb-austin-reed-to-practice-squad",
+      "source_id": "news_sbn_bal",
+      "source": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Baltimore Ravens signed Austin Reed to their practice squad on Monday, adding some much-needed quarterback depth after injuries to starter Lamar Jackson and backup Tyler Huntley. Undrafted rookie Joe Fagnano is set for his first career start in Week 9, but he will need a backup who knows Declan Doyle\u2019s offense. Enter Reed, who [\u2026]",
+      "categories": [
+        "Baltimore Ravens News",
+        "Baltimore Ravens Roster"
+      ],
+      "published_at": "2026-11-03T02:25:13+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035993",
+          "name": "Tyler Huntley",
+          "team": "BAL",
+          "position": "QB"
+        },
+        {
+          "id": "00-0040981",
+          "name": "Joe Fagnano",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "561759a66ae9eecc447d",
       "headline": "Dan Quinn Fears Serious Injury as Commanders Weigh Running Back Options",
@@ -4015,41 +4075,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "06d203bb9e7b6dcc1b79",
-      "headline": "Rams Injury Report: Multiple Key Starters Questionable vs. Chargers in Week 8",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-injury-report-week-8-chargers-shelton-mcduffie-parkinson",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "Several key Rams players, including Coleman Shelton, Trent McDuffie, and Colby Parkinson, are questionable for Sunday's Week 8 matchup against the Chargers.",
-      "categories": [],
-      "published_at": "2026-10-30T21:09:18+00:00",
-      "players": [
-        {
-          "id": "00-0036244",
-          "name": "Colby Parkinson",
-          "team": "LAR",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "821ba9b27e5565446286",
-      "headline": "Cardinals-Cowboys Injury Report: Who's Officially Out, Questionable?",
-      "url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-dallas-cowboys-injury-report-whos-officially-out-questionable",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "The Arizona Cardinals and Dallas Cowboys have unveiled their final injury reports of Week 8.",
-      "categories": [],
-      "published_at": "2026-10-30T21:07:45+00:00",
-      "players": []
     }
   ]
 }
