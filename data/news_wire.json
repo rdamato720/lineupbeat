@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T23:01:00.493657+00:00",
+  "updated_at": "2026-11-03T23:22:23.932314+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T22:44:00+00:00",
+      "latest_entry_at": "2026-11-03T23:19:57+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T22:14:05+00:00",
+      "latest_entry_at": "2026-11-03T23:15:17+00:00",
       "stale": false
     },
     {
@@ -60,9 +60,9 @@
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 10,
+      "eligible": 11,
       "error": "",
-      "latest_entry_at": "2026-11-03T19:38:24+00:00",
+      "latest_entry_at": "2026-11-03T23:12:00+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-03T22:45:18+00:00",
+      "latest_entry_at": "2026-11-03T22:59:39+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-03T22:44:00+00:00",
+      "latest_entry_at": "2026-11-03T23:19:57+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-03T22:14:05+00:00",
+      "latest_entry_at": "2026-11-03T23:15:17+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T22:39:00+00:00",
+      "latest_entry_at": "2026-11-03T20:01:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T13:00:00+00:00",
+      "latest_entry_at": "2026-11-03T15:00:00+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T21:14:49+00:00",
+      "latest_entry_at": "2026-11-03T20:47:22+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,91 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T22:16:58+00:00",
+      "latest_entry_at": "2026-11-03T23:14:49+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "a9302a0c45ca642d0ccf",
+      "headline": "Commanders lose two defensive tackles to injured reserve in major blow ahead of critical Rams matchup",
+      "url": "https://atozsports.com/nfl/washington-commanders-news/commanders-daron-payne-javon-kinlaw-jeremy-mcnichols-injured-reserve/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Washington placed Daron Payne, Javon Kinlaw and Jeremy McNichols on injured reserve, leaving its defensive line dangerously thin before Sunday's matchup with Los Angeles.",
+      "categories": [
+        "Washington Commanders News",
+        "Commanders",
+        "Daron Payne",
+        "Javon Kinlaw",
+        "Johnny Newton",
+        "Washington Commanders"
+      ],
+      "published_at": "2026-11-03T23:15:17+00:00",
+      "players": [
+        {
+          "id": "00-0033955",
+          "name": "Jeremy McNichols",
+          "team": "WAS",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "71636713e7aab1c2917a",
+      "headline": "News & Notes: Tyler Huntley Could 'Potentially' Be Placed on Injured Reserve",
+      "url": "https://www.baltimoreravens.com/news/tyler-huntley-could-be-headed-for-injured-reserve-kedon-slovis-austin-reed-studying-overtime-marlon-humphrey-ray-lewis-speech",
+      "source_id": "news_official_bal",
+      "source": "Baltimore Ravens (official)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "Quarterbacks Kedon Slovis and Austin Reed are working hard to master the offense. Ray Lewis gave a message last week that players took to heart. Calais Campbell wants The Bank to be boisterous Thursday night.",
+      "categories": [
+        "News & Notes",
+        "General",
+        "Clifton Brown",
+        "Tyler Huntley",
+        "2026 Week 9",
+        "2026 Week 9 News",
+        "Jacksonville Jaguars at Baltimore Ravens (2026-REG-9)",
+        "inline-news",
+        "Homepage Centerpiece"
+      ],
+      "published_at": "2026-11-03T23:12:00+00:00",
+      "players": [
+        {
+          "id": "00-0035993",
+          "name": "Tyler Huntley",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "644fd6af0af855eeed32",
+      "headline": "Cardinals Eying These 3 Free Agents After Jeremiyah Love Injury",
+      "url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-eying-these-3-free-agents-jeremiyah-love-injury",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "The Arizona Cardinals need more RB help \u2014 here's who they tried out.",
+      "categories": [],
+      "published_at": "2026-11-03T22:45:52+00:00",
+      "players": [
+        {
+          "id": "00-0041027",
+          "name": "Jeremiyah Love",
+          "team": "ARI",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "76a7ee2337c5462739fd",
       "headline": "Saints awarded running back Audric Estim\u00e9 from waivers, terminate K Daniel Carlson",
@@ -4153,71 +4233,6 @@
           "name": "Kyle Monangai",
           "team": "CHI",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "daa102a2cc046c199b9f",
-      "headline": "Raiders activate WR Jack Bech from the Reserve/Injured list",
-      "url": "https://www.raiders.com/news/raiders-activate-wr-jack-bech-from-the-reserve-injured-list",
-      "source_id": "news_official_lv",
-      "source": "Las Vegas Raiders (official)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "In a corresponding move, Raiders place DE Patrick Johnson on the Reserve/Injured list.",
-      "categories": [
-        "Home Centerpiece",
-        "Home Latest Stories",
-        "News - Transactions",
-        "Jack Bech"
-      ],
-      "published_at": "2026-10-31T19:09:53+00:00",
-      "players": [
-        {
-          "id": "00-0040729",
-          "name": "Jack Bech",
-          "team": "LV",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "7d9ef68186f5cf4313ac",
-      "headline": "Browns Final Injury Report Reveals a Few Key Concerns Against Steelers",
-      "url": "https://www.si.com/nfl/browns/onsi/browns-final-injury-report-reveals-a-few-key-concerns-against-steelers-01m69cmgdtn2",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "Cleveland will travel to Pittsburgh in a battle for the top spot in the AFC North and are looking for their first regular season win in the steel city since 2003.",
-      "categories": [],
-      "published_at": "2026-10-31T18:23:56+00:00",
-      "players": []
-    },
-    {
-      "id": "c6c8071f079090baa0e5",
-      "headline": "Browns elevate TE Carsen Ryan",
-      "url": "https://www.clevelandbrowns.com/news/browns-elevate-te-carsen-ryan",
-      "source_id": "news_official_cle",
-      "source": "Cleveland Browns (official)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "T Tytus Howard has cleared concussion protocol and has no injury status for Week 8",
-      "categories": [
-        "Transactions",
-        "adpartner=transactions",
-        "featured"
-      ],
-      "published_at": "2026-10-31T18:06:01+00:00",
-      "players": [
-        {
-          "id": "00-0041131",
-          "name": "Carsen Ryan",
-          "team": "CLE",
-          "position": "TE"
         }
       ]
     }
