@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T01:00:56.779386+00:00",
+  "updated_at": "2026-11-03T02:38:59.247349+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T00:51:36+00:00",
+      "latest_entry_at": "2026-11-03T02:38:11+00:00",
       "stale": false
     },
     {
@@ -60,9 +60,9 @@
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 9,
+      "eligible": 10,
       "error": "",
-      "latest_entry_at": "2026-11-03T00:26:36+00:00",
+      "latest_entry_at": "2026-11-03T01:34:13+00:00",
       "stale": false
     },
     {
@@ -92,9 +92,9 @@
     {
       "source_id": "news_official_cin",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-02T17:55:24+00:00",
+      "latest_entry_at": "2026-11-03T01:29:52+00:00",
       "stale": false
     },
     {
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-02T21:06:14+00:00",
+      "latest_entry_at": "2026-11-03T01:00:12+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-03T00:51:36+00:00",
+      "latest_entry_at": "2026-11-03T02:38:11+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T00:49:18+00:00",
+      "latest_entry_at": "2026-11-02T16:00:44+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-02T17:56:24+00:00",
+      "latest_entry_at": "2026-11-02T16:58:47+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-02T20:37:39+00:00",
+      "latest_entry_at": "2026-11-03T01:00:00+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-02T13:43:00+00:00",
+      "latest_entry_at": "2026-11-03T00:20:15+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-02T20:08:00+00:00",
+      "latest_entry_at": "2026-11-02T22:39:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-02T23:00:00+00:00",
+      "latest_entry_at": "2026-11-03T01:00:00+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-02T23:37:02+00:00",
+      "latest_entry_at": "2026-11-03T00:45:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-02T23:50:26+00:00",
+      "latest_entry_at": "2026-11-03T01:02:42+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-02T08:35:55+00:00",
+      "latest_entry_at": "2026-11-02T20:08:18+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-02T16:32:39+00:00",
+      "latest_entry_at": "2026-11-01T22:12:36+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-02T22:42:50+00:00",
+      "latest_entry_at": "2026-11-03T01:53:59+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-02T21:04:26+00:00",
+      "latest_entry_at": "2026-11-03T01:05:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,132 @@
     }
   ],
   "items": [
+    {
+      "id": "561759a66ae9eecc447d",
+      "headline": "Dan Quinn Fears Serious Injury as Commanders Weigh Running Back Options",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-jeremy-mcnichols-midfoot-injury",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Dan Quinn fears Jeremy McNichols' midfoot injury could be serious. With Washington already short at running back, more testing will determine the next step.",
+      "categories": [],
+      "published_at": "2026-11-03T02:07:54+00:00",
+      "players": [
+        {
+          "id": "00-0033955",
+          "name": "Jeremy McNichols",
+          "team": "WAS",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "04382f29051d60def5ed",
+      "headline": "Titans' Snap Count Winners and Losers: Tony Pollard Dominates, Backfield Reserves Unseen in Week 8",
+      "url": "https://www.si.com/nfl/titans/onsi/titans-snap-count-winners-and-losers-tony-pollard-dominates-backfield-reserves-unseen-in-week-8-01m6f494rc09",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "The Tennessee Titans' Week 8 snap count reveals a rising trend in the team's simplified backfield.",
+      "categories": [],
+      "published_at": "2026-11-03T02:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0035261",
+          "name": "Tony Pollard",
+          "team": "TEN",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "ad7fc7996adfb4bcbb5b",
+      "headline": "Matthew Stafford added to Rams injury report",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/154017/rams-injury-updates-matthew-stafford-elbow",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Los Angeles Rams received a mixed bag of injury updates Monday as they begin preparations for their next game, with Matthew Stafford dealing with right elbow soreness while Jaylen Watson and Trent McDuffie received encouraging updates following Sunday\u2019s contest. Stafford\u2019s elbow is an important situation to monitor throughout the week, particularly with the veteran [\u2026]",
+      "categories": [
+        "Los Angeles Rams Injuries"
+      ],
+      "published_at": "2026-11-03T01:53:59+00:00",
+      "players": [
+        {
+          "id": "00-0026498",
+          "name": "Matthew Stafford",
+          "team": "LAR",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "397b24b172606e707fcd",
+      "headline": "News & Notes: Tyler Loop Is Injured, Jake Moody Steps in at Kicker",
+      "url": "https://www.baltimoreravens.com/news/tyler-loop-injury-moves-jake-moody-into-kicker-role-week-9-jacksonville-jaguars-vega-ioane-hopes-to-return",
+      "source_id": "news_official_bal",
+      "source": "Baltimore Ravens (official)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "Baltimore\u2019s offensive line is searching for improvement. Vega Ioane hopes to play against Jacksonville. The Ravens need to find a winning formula without Lamar Jackson.",
+      "categories": [
+        "News & Notes",
+        "General",
+        "Clifton Brown",
+        "Tyler Loop",
+        "Jake Moody",
+        "2026 Week 9",
+        "2026 Week 9 News",
+        "Jacksonville Jaguars at Baltimore Ravens (2026-REG-9)",
+        "inline-news",
+        "Homepage Centerpiece"
+      ],
+      "published_at": "2026-11-03T01:34:13+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "e4a08596b36eafced0f0",
+      "headline": "Quick Hits | Bengals Prep for Madrid; Joe Burrow And Co. Attack NFL Stats; Injury Update",
+      "url": "https://www.bengals.com/news/quick-hits-bengals-prep-for-madrid-joe-burrow-ted-karras-jamarr-chase-tee-higgins-cashius-howell",
+      "source_id": "news_official_cin",
+      "source": "Cincinnati Bengals (official)",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "Notes and quotes from Monday at Paycor.",
+      "categories": [
+        "hobson",
+        "centerpiece",
+        "latest news",
+        "latest stories",
+        "Quick Hits",
+        "Tennessee Titans at Cincinnati Bengals (2026-REG-8)",
+        "Cincinnati Bengals at Atlanta Falcons (2026-REG-9)"
+      ],
+      "published_at": "2026-11-03T01:29:52+00:00",
+      "players": [
+        {
+          "id": "00-0036442",
+          "name": "Joe Burrow",
+          "team": "CIN",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "b04b049cee47698fc38e",
       "headline": "Omar CooperJr.'s Week 8 Disappearing Act Isn't Really That Concerning for Jets",
@@ -3924,110 +4050,6 @@
       "categories": [],
       "published_at": "2026-10-30T21:07:45+00:00",
       "players": []
-    },
-    {
-      "id": "601a8262a1292e3c1f33",
-      "headline": "Eagles-Commanders Final Injury Report: Saquon Barkley WILL play",
-      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/188756/eagles-commanders-final-injury-report-saquon-barkley-will-play",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Philadelphia Eagles issued their third and final injury report of the week on Friday in advance of their Week 8 game against the Washington Commanders. The big news is that Saquon Barkley is listed without a game status. He will play on Sunday night. Barkley returned to practice on Friday \u2014 albeit in a [\u2026]",
-      "categories": [
-        "Philadelphia Eagles injuries"
-      ],
-      "published_at": "2026-10-30T20:52:03+00:00",
-      "players": [
-        {
-          "id": "00-0034844",
-          "name": "Saquon Barkley",
-          "team": "PHI",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "765ff40d40271d93cebb",
-      "headline": "Injury Report: CB Pat Surtain II not assigned game status, 4 Broncos listed as questionable for Week 8 game vs. Chiefs",
-      "url": "https://www.denverbroncos.com/news/injuryreport/injury-report-cb-pat-surtain-ii-not-assigned-game-status-4-broncos-listed-as-questionable-for-week-8-game-vs-chiefs",
-      "source_id": "news_official_den",
-      "source": "Denver Broncos (official)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "Cornerback Pat Surtain II appears poised to return to the field for the Broncos.",
-      "categories": [
-        "Top Stories",
-        "Injury Report",
-        "Aric DiLalla",
-        "Kansas City Chiefs at Denver Broncos (2026-REG-8)"
-      ],
-      "published_at": "2026-10-30T20:44:25+00:00",
-      "players": []
-    },
-    {
-      "id": "c8abcd6b88c9cac6ce8c",
-      "headline": "Patriots vs. Dolphins Friday injury report: A.J. Brown among New England\u2019s questionable for Week 8",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/142405/patriots-vs-dolphins-friday-injury-report-a-j-brown-questionable-week-8",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots will wait for the weekend before making a final call on No. 1. A.J. Brown headlines the team\u2019s questionable to face the Miami Dolphins after going from a limited participant to missing consecutive practices to end AFC East prep. The three-time All-Pro wide receiver is dealing with a knee issue that [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-10-30T20:34:47+00:00",
-      "players": [
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "29fe5494b9d90ac5f428",
-      "headline": "Raiders Injury Report Opens Critical Question Ahead of Jets Clash",
-      "url": "https://www.si.com/nfl/raiders/onsi/las-vegas-injury-report-opens-critical-question-ahead-jets-clash",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "The Las Vegas Raiders will need all hands on deck against the New York Jets on Sunday, as they look to end their four-game losing streak.",
-      "categories": [],
-      "published_at": "2026-10-30T20:34:30+00:00",
-      "players": []
-    },
-    {
-      "id": "781eb2443f84ac91460d",
-      "headline": "Jack Bech\u2019s status for Week 8 against New York Jets unclear on Las Vegas Raiders\u2019 final injury report",
-      "url": "https://www.silverandblackpride.com/las-vegas-raiders-injuries/144639/raiders-jets-week-8-injury-report-jack-bech",
-      "source_id": "news_sbn_lv",
-      "source": "Silver And Black Pride (SB Nation)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "The Las Vegas Raiders opened Jack Bech\u2019s 21-day practice window ahead of the Week 8 matchup against the New York Jets. However, Bech\u2019s game status is still unclear after the Raiders released the final injury report for the week and head coach Klint Kubiak held his Friday press conference. Bech, who has been on injured [\u2026]",
-      "categories": [
-        "Las Vegas Raiders Injuries",
-        "Las Vegas Raiders News"
-      ],
-      "published_at": "2026-10-30T20:32:08+00:00",
-      "players": [
-        {
-          "id": "00-0040729",
-          "name": "Jack Bech",
-          "team": "LV",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
