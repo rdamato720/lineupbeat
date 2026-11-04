@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T05:00:56.607471+00:00",
+  "updated_at": "2026-11-04T11:35:24.296646+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-04T04:59:16+00:00",
+      "latest_entry_at": "2026-11-04T11:30:00+00:00",
       "stale": false
     },
     {
@@ -36,9 +36,9 @@
     {
       "source_id": "phillyvoice_jimmy_kempski",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-04T04:51:29+00:00",
+      "latest_entry_at": "2026-11-04T10:00:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-04T04:59:16+00:00",
+      "latest_entry_at": "2026-11-04T11:30:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T23:06:11+00:00",
+      "latest_entry_at": "2026-11-03T21:44:27+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T16:05:58+00:00",
+      "latest_entry_at": "2026-11-04T11:00:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T22:30:00+00:00",
+      "latest_entry_at": "2026-11-04T01:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-03T19:42:09+00:00",
+      "latest_entry_at": "2026-11-04T11:00:00+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-03T17:48:49+00:00",
+      "latest_entry_at": "2026-11-03T22:13:24+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-03T21:55:45+00:00",
+      "latest_entry_at": "2026-11-04T11:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T16:15:00+00:00",
+      "latest_entry_at": "2026-11-03T21:45:21+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-03T18:00:54+00:00",
+      "latest_entry_at": "2026-11-03T21:14:45+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-03T21:07:00+00:00",
+      "latest_entry_at": "2026-11-04T04:53:35+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,33 @@
     }
   ],
   "items": [
+    {
+      "id": "9fdcd94af469bf1d84c1",
+      "headline": "Commanders News: Both Starting DTs Hit IR as Rams\u2019 Matthew Stafford Deals With Arm Soreness | Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-burgundy-roundup-stafford-arm",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Washington put Daron Payne, Javon Kinlaw, and Jeremy McNichols on IR, then claimed Robert Henry Jr. Rams QB Matthew Stafford has arm soreness before Sunday.",
+      "categories": [],
+      "published_at": "2026-11-04T09:52:47+00:00",
+      "players": [
+        {
+          "id": "00-0033955",
+          "name": "Jeremy McNichols",
+          "team": "WAS",
+          "position": "RB"
+        },
+        {
+          "id": "00-0041178",
+          "name": "Robert Henry",
+          "team": "WAS",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "3bb1d5f7b590732fc2ae",
       "headline": "Under-the-Radar QB Trade Target Is Worth Vikings' Attention Amid Kyler Murray Injury Uncertainty",
@@ -4184,32 +4211,6 @@
       ],
       "published_at": "2026-10-31T20:58:00+00:00",
       "players": []
-    },
-    {
-      "id": "1f6ee1cefb8234437b49",
-      "headline": "Jets Notebook | T'Vondre Sweat Out, Rookie David Bailey Doubtful Against Raiders on Sunday",
-      "url": "https://www.newyorkjets.com/news/notebook-tvondre-sweat-out-rookie-david-bailey-doubtful-against-raiders-on-sunday-10-30-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "RB Breece Hall & LG Dylan Parham Are Questionable for Week 8 Game",
-      "categories": [
-        "Latest Headlines",
-        "News",
-        "T'Vondre Sweat",
-        "David Bailey"
-      ],
-      "published_at": "2026-10-31T20:56:00+00:00",
-      "players": [
-        {
-          "id": "00-0038120",
-          "name": "Breece Hall",
-          "team": "NYJ",
-          "position": "RB"
-        }
-      ]
     }
   ]
 }
