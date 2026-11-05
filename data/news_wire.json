@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T03:00:52.342112+00:00",
+  "updated_at": "2026-11-05T05:00:59.228262+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-05T03:00:00+00:00",
+      "latest_entry_at": "2026-11-05T04:41:02+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-05T01:14:05+00:00",
+      "latest_entry_at": "2026-11-05T04:04:19+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T23:52:03+00:00",
+      "latest_entry_at": "2026-11-05T03:05:14+00:00",
       "stale": false
     },
     {
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T21:17:00+00:00",
+      "latest_entry_at": "2026-11-05T03:47:28+00:00",
       "stale": false
     },
     {
@@ -252,9 +252,9 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 5,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-04T23:37:01+00:00",
+      "latest_entry_at": "2026-11-05T03:37:37+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-05T03:00:00+00:00",
+      "latest_entry_at": "2026-11-05T04:41:02+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T01:14:05+00:00",
+      "latest_entry_at": "2026-11-05T04:04:19+00:00",
       "stale": false
     },
     {
@@ -340,17 +340,17 @@
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-04T23:15:51+00:00",
+      "latest_entry_at": "2026-11-04T12:05:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 3,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T00:22:16+00:00",
+      "latest_entry_at": "2026-11-04T18:00:26+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-04T21:55:49+00:00",
+      "latest_entry_at": "2026-11-05T03:15:12+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,93 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-04T23:57:45+00:00",
+      "latest_entry_at": "2026-11-05T03:08:59+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "c0330e15ff39c0bae301",
+      "headline": "Week 9 Injury Report: Cardinals at Seahawks",
+      "url": "https://www.seahawks.com/news/week-9-injury-report-cardinals-at-seahawks",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Details on the Seahawks\u2019 injury situation heading into their Week 9 game vs. the Cardinals.",
+      "categories": [
+        "News: Injury Report",
+        "News: Stories",
+        "News: National Feature",
+        "Homepage Hero",
+        "Homepage Top Headlines",
+        "Arizona Cardinals at Seattle Seahawks (2026-REG-9)"
+      ],
+      "published_at": "2026-11-05T03:37:37+00:00",
+      "players": []
+    },
+    {
+      "id": "8fcf0dac56ed617a42ac",
+      "headline": "Seahawks-Cardinals injury report: Leonard Williams held out with stinger, Drew Lock still limited",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/179122/seahawks-cardinals-injury-report-leonard-williams-held-out-stinger-drew-lock-limited",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "As the Seattle Seahawks prepare for a pivotal NFC West contest with the Arizona Cardinals, they\u2019ll face a boatload of injuries, according to Wednesday\u2019s estimated injury report. The Seahawks had six players miss practice with injury, including quarterback Sam Darnold, left tackle Charles Cross and star defensive tackle Leonard Williams. \u201cBig Cat\u201d was held out [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-11-05T03:08:59+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035704",
+          "name": "Drew Lock",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "db989d8bd7420fdc2d93",
+      "headline": "Seahawks Mailbag: Sam Darnold's Injury, Trade Deadline & More",
+      "url": "https://www.seahawks.com/news/seahawks-mailbag-sam-darnold-s-injury-trade-deadline-more",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "You had Seahawks questions; we have answers.",
+      "categories": [
+        "News: Mailbag",
+        "News: Stories",
+        "News: National Feature",
+        "Sam Darnold",
+        "Homepage Hero",
+        "Homepage Top Headlines",
+        "Arizona Cardinals at Seattle Seahawks (2026-REG-9)"
+      ],
+      "published_at": "2026-11-05T03:00:38+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "24f507e626ea5e7ed043",
       "headline": "Seahawks Injury Report Updates on Drew Lock, Uchenna Nwosu, More",
@@ -4123,81 +4203,6 @@
           "name": "Carson Beck",
           "team": "ARI",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "df403c3c37bd2373ae8c",
-      "headline": "Jeremiyah Love With New Ankle Issue As Cardinals Offense Catches Injury Bug",
-      "url": "https://www.azcardinals.com/news/jeremiyah-love-with-new-ankle-issue-as-cardinals-offense-catches-injury-bug",
-      "source_id": "news_official_ari",
-      "source": "Arizona Cardinals (official)",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "Bourne reportedly will miss balance of season",
-      "categories": [
-        "News",
-        "Featured Articles",
-        "Mega Feed",
-        "Home Page - News Headlines",
-        "Zach Gershman",
-        "Red Sea Member HQ Content",
-        "Jeremiyah Love",
-        "Kendrick Bourne"
-      ],
-      "published_at": "2026-11-02T22:25:00+00:00",
-      "players": [
-        {
-          "id": "00-0041027",
-          "name": "Jeremiyah Love",
-          "team": "ARI",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "793f44a671f55dcb0e60",
-      "headline": "Patriots Recent Roster Moves Seem to Revolve Around TreVeyon Henderson's Future",
-      "url": "https://www.si.com/nfl/patriots/onsi/patriots-recent-roster-moves-seem-to-revolve-around-treveyon-henderson-s-future",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots have made some changes to the running back position these last few days.",
-      "categories": [],
-      "published_at": "2026-11-02T22:06:52+00:00",
-      "players": [
-        {
-          "id": "00-0040734",
-          "name": "TreVeyon Henderson",
-          "team": "NE",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "08dd88890e088de35578",
-      "headline": "NY Giants add a familiar running back to the practice squad",
-      "url": "https://www.bigblueview.com/new-york-giants-roster/178321/eric-gray-signing-practice-squad",
-      "source_id": "news_sbn_nyg",
-      "source": "Big Blue View (SB Nation)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "The New York Giants made a move at running back coming out of their bye week, but it\u2019s probably not the move everyone was waiting on. The Giants have signed Eric Gray to their practice squad, per reports. The move reunites Gray with the team that drafted him and comes as the Giants are short-handed [\u2026]",
-      "categories": [
-        "New York Giants News",
-        "New York Giants roster"
-      ],
-      "published_at": "2026-11-02T21:57:26+00:00",
-      "players": [
-        {
-          "id": "00-0038396",
-          "name": "Eric Gray",
-          "team": "NYG",
-          "position": "RB"
         }
       ]
     }
