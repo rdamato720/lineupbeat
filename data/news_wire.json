@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T00:22:23.670464+00:00",
+  "updated_at": "2026-11-05T01:00:54.224347+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-05T00:06:53+00:00",
+      "latest_entry_at": "2026-11-05T00:55:44+00:00",
       "stale": false
     },
     {
@@ -102,7 +102,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:26:56+00:00",
+      "latest_entry_at": "2026-11-05T00:34:23+00:00",
       "stale": false
     },
     {
@@ -172,7 +172,7 @@
     {
       "source_id": "news_official_lar",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
       "latest_entry_at": "2026-11-05T00:02:59+00:00",
       "stale": false
@@ -212,9 +212,9 @@
     {
       "source_id": "news_official_no",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:00:25+00:00",
+      "latest_entry_at": "2026-11-05T00:29:59+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 7,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-05T00:06:53+00:00",
+      "latest_entry_at": "2026-11-05T00:55:44+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-04T19:14:31+00:00",
+      "latest_entry_at": "2026-11-05T00:25:49+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-04T21:54:08+00:00",
+      "latest_entry_at": "2026-11-05T01:00:00+00:00",
       "stale": false
     },
     {
@@ -340,17 +340,17 @@
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T12:05:00+00:00",
+      "latest_entry_at": "2026-11-04T23:15:51+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-04T18:00:26+00:00",
+      "latest_entry_at": "2026-11-05T00:22:16+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:17:19+00:00",
+      "latest_entry_at": "2026-11-05T00:38:18+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 0,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-04T13:00:00+00:00",
+      "latest_entry_at": "2026-11-05T00:32:39+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-02T21:12:52+00:00",
+      "latest_entry_at": "2026-11-04T20:55:37+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-04T23:00:00+00:00",
+      "latest_entry_at": "2026-11-04T21:48:21+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-05T00:03:39+00:00",
+      "latest_entry_at": "2026-11-05T00:10:43+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,61 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T19:09:02+00:00",
+      "latest_entry_at": "2026-11-04T23:57:45+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "f7142677c477e053a24d",
+      "headline": "Rookie receiver Jordyn Tyson focused on making NFL debut with New Orleans Saints",
+      "url": "https://www.neworleanssaints.com/news/rookie-receiver-jordyn-tyson-focused-on-making-nfl-debut-with-new-orleans-saints",
+      "source_id": "news_official_no",
+      "source": "New Orleans Saints (official)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "The first-round draft pick appeared in limited practice on Wednesday for the first time since August",
+      "categories": [
+        "Latest News",
+        "News - John DeShazier",
+        "Roster",
+        "Jordyn Tyson"
+      ],
+      "published_at": "2026-11-05T00:29:59+00:00",
+      "players": [
+        {
+          "id": "00-0041029",
+          "name": "Jordyn Tyson",
+          "team": "NO",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "c08c1422ae28e036df87",
+      "headline": "Browns, Saints injuries: NO reinforcements; big CLE weapon added to list (Video)",
+      "url": "https://www.dawgsbynature.com/cleveland-browns-news/137089/browns-saints-injuries-denzel-boston-jordyn-tyson-deshaun-watson-kelvin-banks",
+      "source_id": "news_sbn_cle",
+      "source": "Dawgs By Nature (SB Nation)",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "\u201cOh when the (Cleveland) Browns go marching in\u2026\u201d doesn\u2019t have the right ring to it, but the team from northern Ohio will indeed head down to Louisiana to face the New Orleans Saints in Week 9. All of a sudden on Wednesday, word came that the Browns are preparing to start QB Shedeur Sanders due [\u2026]",
+      "categories": [
+        "Cleveland Browns Injuries",
+        "Cleveland Browns News"
+      ],
+      "published_at": "2026-11-05T00:22:16+00:00",
+      "players": [
+        {
+          "id": "00-0040668",
+          "name": "Shedeur Sanders",
+          "team": "CLE",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "364a259fb18340d8938e",
       "headline": "Raiders-49ers Week 9 Injury Report",
@@ -802,6 +852,46 @@
           "id": "00-0041029",
           "name": "Jordyn Tyson",
           "team": "NO",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "277f40245c1c3ab4e909",
+      "headline": "Bengals vs. Falcons projected injury report has DJ Turner and Cedric Johnson getting DNP",
+      "url": "https://www.cincyjungle.com/cincinnati-bengals-injuries/204602/falcons-projected-injury-report-dj-turner-cedric-johnson-dnp",
+      "source_id": "news_sbn_cin",
+      "source": "Cincy Jungle (SB Nation)",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "The Cincinnati Bengals are across the pond and in Spain right now for their Week 9 international game against the Atlanta Falcons. Sitting at 5-2, the Bengals are primed for a run at the division, and they don\u2019t want to drop a winnable game before they host the Steelers in Week 10. Unfortunately for the [\u2026]",
+      "categories": [
+        "Cincinnati Bengals injuries",
+        "Cincinnati Bengals News"
+      ],
+      "published_at": "2026-11-04T23:15:51+00:00",
+      "players": []
+    },
+    {
+      "id": "34a0239a755dd94fd5db",
+      "headline": "Broncos vs. Panthers practice participation report: Wednesday",
+      "url": "https://www.milehighreport.com/denver-broncos-injuries/191224/broncos-vs-panthers-practice-participation-report-wednesday",
+      "source_id": "news_sbn_den",
+      "source": "Mile High Report (SB Nation)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Denver Broncos got a bit of a boost to start practice this week with wide receiver Pat Bryant being designated to return from injured reserve. He could play as early as this Sunday and was a full participant. There are several players who were held out today: Kris Abrams Draine, Talanoa Hufanga, Brandon Jones, [\u2026]",
+      "categories": [
+        "Denver Broncos Injuries"
+      ],
+      "published_at": "2026-11-04T23:05:49+00:00",
+      "players": [
+        {
+          "id": "00-0040134",
+          "name": "Pat Bryant",
+          "team": "DEN",
           "position": "WR"
         }
       ]
@@ -4131,117 +4221,6 @@
           "id": "00-0033090",
           "name": "Hunter Henry",
           "team": "NE",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "ac58407bef40f271db68",
-      "headline": "Saquon Barkley admits his injuries are holding him back",
-      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/189070/saquon-barkley-admits-his-body-is-holding-him-back",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "After missing several games due to a hamstring injury, Eagles running back Saquon Barkley hurt his back on his first play against the Cowboys in Week 7. He was able to play 10 total snaps that game, and was adamant in the days after that he was committed to playing on Sunday night against the [\u2026]",
-      "categories": [
-        "Philadelphia Eagles injuries",
-        "Philadelphia Eagles News"
-      ],
-      "published_at": "2026-11-02T16:16:48+00:00",
-      "players": [
-        {
-          "id": "00-0034844",
-          "name": "Saquon Barkley",
-          "team": "PHI",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "176eba968cf1b13e5dce",
-      "headline": "Lamar Jackson\u2019s latest injury puts his future with the Ravens in a bind that could cost both sides dearly when it\u2019s all said and done",
-      "url": "https://atozsports.com/nfl/baltimore-ravens-news/lamar-jacksons-latest-injury-puts-his-future-with-the-ravens-in-a-bind-that-could-cost-both-sides-dearly-when-its-all-said-and-done/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Lamar Jackson is one of the best quarterbacks in the NFL when healthy, but the problem is new injuries continue to pop up as he gets older. That element, along with a hefty 2027 salary, creates an intriguing conversation about his future with the Ravens.",
-      "categories": [
-        "Baltimore Ravens News",
-        "Lamar Jackson Contract",
-        "Lamar Jackson Injury"
-      ],
-      "published_at": "2026-11-02T15:56:19+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "fc9fb4e6c4979f28a015",
-      "headline": "Lamar Jackson\u2019s injury update isn\u2019t the only bad news at quarterback for the Baltimore Ravens",
-      "url": "https://atozsports.com/nfl/baltimore-ravens-news/lamar-jacksons-injury-update-isnt-the-only-bad-news-at-quarterback-for-the-baltimore-ravens/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Baltimore Ravens lost two quarterbacks indefinitely in the same game.",
-      "categories": [
-        "Baltimore Ravens News",
-        "Baltimore Ravens",
-        "lamar jackson",
-        "Ravens",
-        "Ravens Injury News",
-        "Ravens News",
-        "Wildcat"
-      ],
-      "published_at": "2026-11-02T14:59:14+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "9e7893ed0bf6b60c4d18",
-      "headline": "Miami Dolphins 2026 Week 8 Snap Counts Stories: Rookie Revelations, Top Guys Emerge",
-      "url": "https://www.si.com/nfl/dolphins/onsi/miami-dolphins-2026-week-8-snap-counts-stories-rookie-revelations-top-guys-emerge-01m6e9t3ah4f",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "Diving into the playing time against the New England Patriots and the implications for Will Kacmarek, Caleb Douglas, Jaylen Wright, Max Llewellyn, and more",
-      "categories": [],
-      "published_at": "2026-11-02T14:43:30+00:00",
-      "players": [
-        {
-          "id": "00-0039874",
-          "name": "Jaylen Wright",
-          "team": "MIA",
-          "position": "RB"
-        },
-        {
-          "id": "00-0041523",
-          "name": "Caleb Douglas",
-          "team": "MIA",
-          "position": "WR"
-        },
-        {
-          "id": "00-0041524",
-          "name": "Will Kacmarek",
-          "team": "MIA",
           "position": "TE"
         }
       ]
