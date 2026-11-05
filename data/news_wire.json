@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T23:00:52.728444+00:00",
+  "updated_at": "2026-11-05T00:22:23.670464+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:50:31+00:00",
+      "latest_entry_at": "2026-11-05T00:06:53+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:42:17+00:00",
+      "latest_entry_at": "2026-11-04T23:38:39+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:37:22+00:00",
+      "latest_entry_at": "2026-11-04T23:52:03+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T21:30:00+00:00",
+      "latest_entry_at": "2026-11-04T23:03:00+00:00",
       "stale": false
     },
     {
@@ -132,9 +132,9 @@
     {
       "source_id": "news_official_hou",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T16:12:02+00:00",
+      "latest_entry_at": "2026-11-04T23:48:00+00:00",
       "stale": false
     },
     {
@@ -164,25 +164,25 @@
     {
       "source_id": "news_official_lac",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-04T17:00:17+00:00",
+      "latest_entry_at": "2026-11-04T23:55:14+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_lar",
       "ok": true,
-      "eligible": 4,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-04T17:00:35+00:00",
+      "latest_entry_at": "2026-11-05T00:02:59+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_lv",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-04T17:00:29+00:00",
+      "latest_entry_at": "2026-11-05T00:07:43+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T21:34:00+00:00",
+      "latest_entry_at": "2026-11-04T23:00:00+00:00",
       "stale": false
     },
     {
@@ -236,9 +236,9 @@
     {
       "source_id": "news_official_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:15:00+00:00",
+      "latest_entry_at": "2026-11-04T23:24:07+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:30:00+00:00",
+      "latest_entry_at": "2026-11-04T23:37:01+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:50:31+00:00",
+      "latest_entry_at": "2026-11-05T00:06:53+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:42:17+00:00",
+      "latest_entry_at": "2026-11-04T23:38:39+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-04T17:00:00+00:00",
+      "latest_entry_at": "2026-11-04T19:14:31+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T18:32:24+00:00",
+      "latest_entry_at": "2026-11-04T18:00:26+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:46:20+00:00",
+      "latest_entry_at": "2026-11-04T13:00:00+00:00",
       "stale": false
     },
     {
@@ -412,17 +412,17 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-04T20:12:30+00:00",
+      "latest_entry_at": "2026-11-04T23:42:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T20:55:37+00:00",
+      "latest_entry_at": "2026-11-02T21:12:52+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:05:30+00:00",
+      "latest_entry_at": "2026-11-04T23:30:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-04T20:18:56+00:00",
+      "latest_entry_at": "2026-11-04T23:43:07+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:09:59+00:00",
+      "latest_entry_at": "2026-11-05T00:17:02+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T12:00:00+00:00",
+      "latest_entry_at": "2026-11-05T00:03:39+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-04T13:00:00+00:00",
+      "latest_entry_at": "2026-11-04T20:45:20+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T20:30:00+00:00",
+      "latest_entry_at": "2026-11-04T22:47:56+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,323 @@
     }
   ],
   "items": [
+    {
+      "id": "364a259fb18340d8938e",
+      "headline": "Raiders-49ers Week 9 Injury Report",
+      "url": "https://www.raiders.com/news/raiders-49ers-week-9-injury-report",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the San Francisco 49ers.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Injury Report",
+        "Las Vegas Raiders at San Francisco 49ers (2026-REG-9)"
+      ],
+      "published_at": "2026-11-05T00:07:43+00:00",
+      "players": []
+    },
+    {
+      "id": "2b37097492a99add1e1d",
+      "headline": "Broncos' Week 9 Injury Report: WR Pat Bryant Gearing Up for Return",
+      "url": "https://www.si.com/nfl/broncos/onsi/pat-bryant-return-ir-injury-report-panthers",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "Bryant has missed the last four games with an ankle injury.",
+      "categories": [],
+      "published_at": "2026-11-05T00:05:59+00:00",
+      "players": [
+        {
+          "id": "00-0040134",
+          "name": "Pat Bryant",
+          "team": "DEN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "0e96fe28b01ddf0a5836",
+      "headline": "From the Podium: Sean McVay and Matthew Stafford speak on impact of injuries heading into Rams' matchup with Commanders",
+      "url": "https://www.therams.com/news/from-the-podium-rams-head-coach-sean-mcvay-quarterback-matthew-stafford-coordinators-wide-receiver-puka-nacua-defensive-end-aaron-donald-preview-matchup-with-commanders",
+      "source_id": "news_official_lar",
+      "source": "Los Angeles Rams (official)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Rams head coach Sean McVay and quarterback Matthew Stafford talked about various players going out and coming back with injuries heading into the Week 9 matchup against the Commanders.",
+      "categories": [
+        "From the Podium",
+        "Football",
+        "Los Angeles Rams at Washington Commanders (2026-REG-9)",
+        "Sean McVay",
+        "Matthew Stafford"
+      ],
+      "published_at": "2026-11-05T00:02:59+00:00",
+      "players": [
+        {
+          "id": "00-0026498",
+          "name": "Matthew Stafford",
+          "team": "LAR",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "694fd3de4710c38148b0",
+      "headline": "Raiders Release Telling Injury Report Ahead of 49ers Matchup",
+      "url": "https://www.si.com/nfl/raiders/onsi/las-vegas-release-telling-injury-report-ahead-49ers-matchup",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "With their Week 9 road matchup against the San Francisco 49ers officially here, the Las Vegas Raiders have turned the page from their Week 8 win over the New York Jets.",
+      "categories": [],
+      "published_at": "2026-11-04T23:55:50+00:00",
+      "players": []
+    },
+    {
+      "id": "d6068c52dff61b5d0522",
+      "headline": "Chargers vs. Texans Injury Report: Njoku, Awosika Among 7 Limited Ahead of Week 9",
+      "url": "https://www.chargers.com/news/texans-injury-report-week-9-david-njoku",
+      "source_id": "news_official_lac",
+      "source": "Los Angeles Chargers (official)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "Take a look at the Chargers Injury Report ahead of Week 9 against the Texans",
+      "categories": [
+        "Articles: Injury Report",
+        "Homepage: CP",
+        "Homepage: Headlines",
+        "App: Homepage",
+        "Houston Texans at Los Angeles Chargers (2026-REG-9)",
+        "2026-REG-9-EDITORIAL"
+      ],
+      "published_at": "2026-11-04T23:55:14+00:00",
+      "players": []
+    },
+    {
+      "id": "b0fbd8a961cdb3eec155",
+      "headline": "Week 9 Injury Report | Texans at Chargers",
+      "url": "https://www.houstontexans.com/news/week-9-injury-report-texans-at-chargers",
+      "source_id": "news_official_hou",
+      "source": "Houston Texans (official)",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "Week 9 injury updates presented by Shariff Injury Lawyers for the Houston Texans at Los Angeles Chargers game.",
+      "categories": [
+        "Homepage CP",
+        "Gameday",
+        "Houston Texans at Los Angeles Chargers (2026-REG-9)",
+        "2026 REG9 - Chargers"
+      ],
+      "published_at": "2026-11-04T23:48:00+00:00",
+      "players": []
+    },
+    {
+      "id": "bfd1c3ecdf0db2ee4994",
+      "headline": "Eagles Injury Report: No practice for DeVonta Smith, Saquon Barkley, Tay Wicks",
+      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/189435/eagles-injury-report-no-practice-for-devonta-smith-saquon-barkley-tay-wicks",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Philadelphia Eagles issued their first official injury report of the week on Wednesday in advance of their Week 9 game against the New York Giants. The Eagles listed seven players under DID NOT PARTICIPATE: Saquon Barkley, DeVonta Smith, Dontayvion Wicks, Jihaad Campbell, Michael Carter II, Britain Covey, and Jonathan Jones. Barkley was listed under [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries"
+      ],
+      "published_at": "2026-11-04T23:43:07+00:00",
+      "players": [
+        {
+          "id": "00-0034844",
+          "name": "Saquon Barkley",
+          "team": "PHI",
+          "position": "RB"
+        },
+        {
+          "id": "00-0036912",
+          "name": "DeVonta Smith",
+          "team": "PHI",
+          "position": "WR"
+        },
+        {
+          "id": "00-0037132",
+          "name": "Britain Covey",
+          "team": "PHI",
+          "position": "WR"
+        },
+        {
+          "id": "00-0038393",
+          "name": "Dontayvion Wicks",
+          "team": "PHI",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "a47f3d16670df5e649fb",
+      "headline": "Injury Updates: Jaylen Watson needs shoulder surgery and will miss rest of 2026 season; Myles Garrett and Terrance Ferguson return to practice",
+      "url": "https://www.therams.com/news/rams-injury-updates-jaylen-watson-shoulder-surgery-out-for-rest-of-2026-season-myles-garrett-terrance-ferguson-return-to-practice-week-9",
+      "source_id": "news_official_lar",
+      "source": "Los Angeles Rams (official)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Rams head coach Sean McVay discusses cornerback Jaylen Watson's season-ending shoulder surgery, as well as outside linebacker Myles Garrett, tight end Terrance Ferguson and running back Ronnie Rivers returning to practice in Week 9.",
+      "categories": [
+        "Football",
+        "Injury Update",
+        "Los Angeles Rams at Washington Commanders (2026-REG-9)",
+        "Myles Garrett",
+        "Terrance Ferguson",
+        "Jaylen Watson",
+        "Ronnie Rivers"
+      ],
+      "published_at": "2026-11-04T23:40:14+00:00",
+      "players": [
+        {
+          "id": "00-0037557",
+          "name": "Ronnie Rivers",
+          "team": "LAR",
+          "position": "RB"
+        },
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "be3f42de478268bfdee3",
+      "headline": "Giants vs. Eagles Injury Report",
+      "url": "https://www.philadelphiaeagles.com/news/giants-vs-eagles-injury-report-saquon-barkley-devonta-smith-cam-skattebo-2026-nfl-week-9",
+      "source_id": "news_official_phi",
+      "source": "Philadelphia Eagles (official)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "Wide receivers DeVonta Smith and Dontayvion Wicks did not participate in Wednesday's practice. The Giants were without a key member of their rushing attack.",
+      "categories": [
+        "Injury Report",
+        "Team Roster Content",
+        "All News-archived",
+        "NFL.com Feature",
+        "2026 Week 9 vs. Giants"
+      ],
+      "published_at": "2026-11-04T23:24:07+00:00",
+      "players": [
+        {
+          "id": "00-0036912",
+          "name": "DeVonta Smith",
+          "team": "PHI",
+          "position": "WR"
+        },
+        {
+          "id": "00-0038393",
+          "name": "Dontayvion Wicks",
+          "team": "PHI",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "4bcada551e96155269d6",
+      "headline": "Saints Get Major Injury Boost as Browns Face Quarterback Uncertainty",
+      "url": "https://www.si.com/nfl/saints/onsi/saints-get-major-injury-boost-as-browns-face-quarterback-uncertainty-01m6ej21kk8b",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "Saints injury updates ahead of the Browns game: Kelvin Banks Jr. and Jordyn Tyson return to practice as Deshaun Watson enters concussion protocol.",
+      "categories": [],
+      "published_at": "2026-11-04T23:18:42+00:00",
+      "players": [
+        {
+          "id": "00-0041029",
+          "name": "Jordyn Tyson",
+          "team": "NO",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "ec64c210129dd119104f",
+      "headline": "3 Logical Breece Hall Trade Destinations to Give Jets the Best Return",
+      "url": "https://www.si.com/nfl/jets/onsi/3-logical-breece-hall-trade-destination-give-jets-best-return-01m6kv1dk20r",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "Should the Jets be open to a Breece Hall trade in the coming days, these potential trade partners make the most sense for Gang Green.",
+      "categories": [],
+      "published_at": "2026-11-04T23:00:02+00:00",
+      "players": [
+        {
+          "id": "00-0038120",
+          "name": "Breece Hall",
+          "team": "NYJ",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "d57187af39f8e3b12511",
+      "headline": "A Deep Dive Into Cam Ward's Career Game vs. Bengals Reveals 3 Key Signs of Life Moving Forward",
+      "url": "https://www.si.com/nfl/titans/onsi/a-deep-dive-into-cam-ward-s-career-game-vs-bengals-reveals-3-key-signs-of-life-moving-forward-01m6kx3b0n45",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Cam Ward accomplished a feat in Week 8 that a Titans quarterback hadn't since 2013, signaling a second breath for Tennessee's franchise QB.",
+      "categories": [],
+      "published_at": "2026-11-04T23:00:01+00:00",
+      "players": [
+        {
+          "id": "00-0040676",
+          "name": "Cam Ward",
+          "team": "TEN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "492b30dca1e1a8f755ad",
+      "headline": "Raiders release early-season TD machine Cody White",
+      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/145185/raiders-news-cody-white-carter-runyon-twide-receiver-tight-end",
+      "source_id": "news_sbn_lv",
+      "source": "Silver And Black Pride (SB Nation)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "A few weeks ago, wide receiver Cody White was the Las Vegas Raiders\u2019 secret weapon. Now, he\u2019s out of a job. The team released the veteran on Wednesday after as they needed room to activate reserve tight end Carter Runyon from the injured reserve. The Raiders had until Wednesday to either put Runyon on the [\u2026]",
+      "categories": [
+        "Las Vegas Raiders News",
+        "Las Vegas Raiders Roster"
+      ],
+      "published_at": "2026-11-04T22:59:51+00:00",
+      "players": [
+        {
+          "id": "00-0040488",
+          "name": "Carter Runyon",
+          "team": "LV",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "a30df6a4c352a2673d18",
       "headline": "Injury Report: WR Pat Bryant listed as full participant, 4 Broncos do not practice ahead of Week 9 game vs. Panthers",
@@ -1163,6 +1480,36 @@
           "id": "00-0040715",
           "name": "Cam Skattebo",
           "team": "NYG",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "b3dc29cd6ebf9eda68be",
+      "headline": "49ers open practice window for a pair of veterans; Nick Bosa returns",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/165245/49ers-open-practice-window-for-a-pair-of-veterans-nick-bosa-returns",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Here is a look at the San Francisco 49ers players who will not practice on Wednesday: RB Christian McCaffrey (hamstring)WR Deebo Samuel (hamstring)WR Mike Evans (Achilles)S Siran Neal (knee/foot) Kyle Shanahan said, \u201cI think we\u2019ve made a lot of progress,\u201d when asked if Evans Achilles soreness has calmed down. \u201cThings go in the right direction. [\u2026]",
+      "categories": [
+        "San Francisco 49ers Depth Chart",
+        "San Francisco 49ers Injuries"
+      ],
+      "published_at": "2026-11-04T21:18:50+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0033280",
+          "name": "Christian McCaffrey",
+          "team": "SF",
           "position": "RB"
         }
       ]
@@ -3896,349 +4243,6 @@
           "name": "Will Kacmarek",
           "team": "MIA",
           "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "7dc69bbf5ed1ec7aa958",
-      "headline": "Late for Work: Pundits Look at Where Ravens Go From Here With Lamar Jackson Headed to Injured Reserve",
-      "url": "https://www.baltimoreravens.com/news/lamar-jackson-injured-reserve-ravens-quarterback-trade-murphys-law-trade-deadline-tyler-loop",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "It\u2019s \u2018Murphy\u2019s Law\u2019 for the Ravens in Buffalo. Which quarterbacks could the Ravens pursue via free agency or trade? Could the Ravens be sellers ahead of the trade deadline? Tyler Loop is again under the microscope after another missed field goal.",
-      "categories": [
-        "Late For Work",
-        "General",
-        "2026 Week 8",
-        "2026 Week 8 News",
-        "Baltimore Ravens at Buffalo Bills (2026-REG-8)",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-11-02T14:39:28+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "9121ee0710996457a392",
-      "headline": "Jonah Coleman makes statement as Broncos RB of the future",
-      "url": "https://www.milehighreport.com/denver-broncos-news/191006/jonah-coleman-makes-statement-as-broncos-rb-of-the-future",
-      "source_id": "news_sbn_den",
-      "source": "Mile High Report (SB Nation)",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "During Sunday\u2019s game against the Kansas City Chiefs, it became clear a shakeup was underway at the running back position. When the game began, JK Dobbins was given plenty of opportunity to lay the ground game foundation on which Bo Nix\u2019s passing attack would be predicated. None of Dobbins 7 carries would go for longer [\u2026]",
-      "categories": [
-        "Denver Broncos News"
-      ],
-      "published_at": "2026-11-02T12:57:26+00:00",
-      "players": [
-        {
-          "id": "00-0036158",
-          "name": "J.K. Dobbins",
-          "team": "DEN",
-          "position": "RB"
-        },
-        {
-          "id": "00-0039732",
-          "name": "Bo Nix",
-          "team": "DEN",
-          "position": "QB"
-        },
-        {
-          "id": "00-0041496",
-          "name": "Jonah Coleman",
-          "team": "DEN",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "8ed48ca6592c5fe3e127",
-      "headline": "Cowboys Injury Updates After Week 8 Loss: Joey Porter Jr., Jake Ferguson, Caleb Downs",
-      "url": "https://www.si.com/nfl/cowboys/onsi/cowboys-injury-updates-week-8-loss-joey-porter-jr-jake-ferguson-caleb-downs",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "Here's the latest injury updates on Dallas Cowboys safety Caleb Downs, cornerback Joey Porter Jr. and tight end Jake Ferguson after the Week 8 loss to the Arizona Cardinals.",
-      "categories": [],
-      "published_at": "2026-11-02T12:16:00+00:00",
-      "players": [
-        {
-          "id": "00-0038041",
-          "name": "Jake Ferguson",
-          "team": "DAL",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "babc29a075df482a381c",
-      "headline": "AFC Playoff Picture: Ravens tumble after third straight loss",
-      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-nfl-playoffs/87318/afc-playoff-picture-baltimore-ravens-wild-card-race",
-      "source_id": "news_sbn_bal",
-      "source": "Baltimore Beatdown (SB Nation)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Baltimore Ravens\u2019 three straight AFC losses have hurt them in a lot of ways, and all three were to teams currently ahead of them in the AFC playoff picture. Now last in the AFC North at 4-4 and starting down the barrel of a long-term Lamar Jackson injury, the Ravens need to pull it [\u2026]",
-      "categories": [
-        "Baltimore Ravens News",
-        "Baltimore Ravens playoffs"
-      ],
-      "published_at": "2026-11-02T12:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "14df0a6e72339f524190",
-      "headline": "Eagles 2027 first-round draft pick position tracker",
-      "url": "https://www.phillyvoice.com/eagles-2027-first-round-draft-pick-position-tracker/",
-      "source_id": "phillyvoice_jimmy_kempski",
-      "source": "PhillyVoice",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Philadelphia Eagles' 2026 season is going poorly. Jalen Hurts' season is over, Lane Johnson retired, a whole lot of other players are injured, the offense stinks, and there's little evidence that fixes are on the horizon. BUT... one silver lining if the carnage continues is that there could be a top 10 pick in the 2027 draft in the Eagles' future.",
-      "categories": [
-        "Sports",
-        "Eagles",
-        "NFL",
-        "Philadelphia",
-        "Eagles Draft"
-      ],
-      "published_at": "2026-11-02T04:27:24+00:00",
-      "players": [
-        {
-          "id": "00-0036389",
-          "name": "Jalen Hurts",
-          "team": "PHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "ae8d924be9a9a659871c",
-      "headline": "Justin Herbert Benched? Chargers Are So Bad The Topic's Starting to Emerge",
-      "url": "https://www.si.com/nfl/chargers/onsi/justin-herbert-benched-chargers-questions",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "The Los Angeles Chargers are now 0-7, with their superstar QB receiving much of the blame. He is now in a benching conversation.",
-      "categories": [],
-      "published_at": "2026-11-02T04:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0036355",
-          "name": "Justin Herbert",
-          "team": "LAC",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "058098328c26bb80c8f6",
-      "headline": "Jaguars-Colts Game Balls: Bhayshul Tuten Has Forced Us Into Asking New Questions",
-      "url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-colts-game-balls-bhayshul-tuten-has-forced-us-into-asking-new-questions",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "JAX"
-      ],
-      "feed_description": "We pass out this week's game balls, starting with the Jacksonville Jaguars' star second-year running back Bhayshul Tuten.",
-      "categories": [],
-      "published_at": "2026-11-02T02:09:42+00:00",
-      "players": [
-        {
-          "id": "00-0040719",
-          "name": "Bhayshul Tuten",
-          "team": "JAX",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "e30a7243c1eaa282af8d",
-      "headline": "Cardinals WR Michael Wilson Reveals Brutal Injury He Played Through vs Cowboys",
-      "url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-wr-michael-wilson-reveals-brutal-injury-he-played-through-dallas-cowboys",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "The Arizona Cardinals saw their highest-paid receiver gut through an eye-opening injury in Dallas.",
-      "categories": [],
-      "published_at": "2026-11-02T01:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0038559",
-          "name": "Michael Wilson",
-          "team": "ARI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "6d88d3a299ede3bfe914",
-      "headline": "Detroit Lions RB Sione Vaki takes \u2018huge step\u2019 vs. Vikings, earns \u2018a lot of trust\u2019",
-      "url": "https://www.prideofdetroit.com/detroit-lions-news/179283/detroit-lions-rb-sione-vaki-takes-huge-step-minnesota-vikings",
-      "source_id": "news_sbn_det",
-      "source": "Pride Of Detroit (SB Nation)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "When a team has a full roster of offensive superstars, sometimes it\u2019s the role players who pave the way to success. Against the Minnesota Vikings\u2019 vaunted defense, the Detroit Lions tried multiple approaches to find success, but ran into several roadblocks. Entering the half, the Lions trailed 7-6, and while they were moving the ball, [\u2026]",
-      "categories": [
-        "Detroit Lions News",
-        "Detroit Lions Quotes"
-      ],
-      "published_at": "2026-11-02T00:37:28+00:00",
-      "players": [
-        {
-          "id": "00-0039364",
-          "name": "Sione Vaki",
-          "team": "DET",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "c37d8d857707402c794e",
-      "headline": "What Jeffery Simmons Trade Can Mean for the Future of Bears Roster",
-      "url": "https://www.si.com/nfl/bears/onsi/what-jeffery-simmons-trade-can-mean-for-the-future-of-bears-roster",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "The cost is high for Simmons and Caleb Williams' coming deal complicates things somewhat but there are reasons the Bears can cope.",
-      "categories": [],
-      "published_at": "2026-11-02T00:10:20+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "9b3a607d51049aea79bc",
-      "headline": "Commanders Make Final Call on Treylon Burks, John Bates for Eagles Rematch",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-eagles-week-8-inactives",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Treylon Burks and John Bates are active for Commanders vs. Eagles. See both teams\u2019 Week 8 inactive lists, including Daron Payne and Javon Kinlaw.",
-      "categories": [],
-      "published_at": "2026-11-02T00:10:03+00:00",
-      "players": [
-        {
-          "id": "00-0036628",
-          "name": "John Bates",
-          "team": "WAS",
-          "position": "TE"
-        },
-        {
-          "id": "00-0037742",
-          "name": "Treylon Burks",
-          "team": "WAS",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "070b5d6a873ab044c15c",
-      "headline": "Ravens Have Initiated Trade Talks For This QB With Lamar Jackson Possibly Out For The Season",
-      "url": "https://www.si.com/nfl/ravens/onsi/ravens-have-initiated-trade-talks-for-a-qb-with-lamar-jackson-possibly-out-for-the-season-01m6cqeravv8",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Ravens are in a dire situation with the quarterback position, getting three passers injured in an ugly loss to Buffalo Sunday including losing Lamar Jackson",
-      "categories": [],
-      "published_at": "2026-11-02T00:00:06+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "731bbd3f26cca1f2829b",
-      "headline": "Washington Commanders vs Philadelphia Eagles Inactives",
-      "url": "https://www.hogshaven.com/washington-commanders-injuries/452234/washington-commanders-vs-philadelphia-eagles-inactives",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Washington Commanders released their final injury report for Sunday\u2019s game against the Eagles on Friday and then made several DL roster moves earlier on Saturday. Daron Payne suffered a season-ending Jones fracture in his left foot during Friday\u2019s practice. The Commanders haven\u2019t placed him on IR, and didn\u2019t activate Jer\u2019Zhan Newton from IR. Veteran [\u2026]",
-      "categories": [
-        "Washington Commanders Injuries"
-      ],
-      "published_at": "2026-11-01T23:57:57+00:00",
-      "players": []
-    },
-    {
-      "id": "f746a796d29e45bcd98e",
-      "headline": "Eagles-Commanders inactives",
-      "url": "https://www.bleedinggreennation.com/news/188995/eagles-commanders-inactives",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Philadelphia Eagles officially announced the inactives list for their Week 8 game against the Washington Commanders. The following Eagles players WILL NOT PLAY: DeVonta Smith, Dontayvion Wicks, Jihaad Campbell, Britain Covey, Jonathan Jones, and Jake Majors. Smith, Wicks, Campbell, Covey, and Jones were all ruled out on the final injury report. Smith, Wicks, and [\u2026]",
-      "categories": [
-        "Philadelphia Eagles News"
-      ],
-      "published_at": "2026-11-01T23:56:23+00:00",
-      "players": [
-        {
-          "id": "00-0036912",
-          "name": "DeVonta Smith",
-          "team": "PHI",
-          "position": "WR"
-        },
-        {
-          "id": "00-0037132",
-          "name": "Britain Covey",
-          "team": "PHI",
-          "position": "WR"
-        },
-        {
-          "id": "00-0038393",
-          "name": "Dontayvion Wicks",
-          "team": "PHI",
-          "position": "WR"
         }
       ]
     }
