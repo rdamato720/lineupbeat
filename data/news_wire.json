@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T21:58:49.127608+00:00",
+  "updated_at": "2026-11-05T23:00:54.785423+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T21:47:47+00:00",
+      "latest_entry_at": "2026-11-05T23:00:28+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-05T21:48:56+00:00",
+      "latest_entry_at": "2026-11-05T22:52:59+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-05T17:58:37+00:00",
+      "latest_entry_at": "2026-11-05T22:04:18+00:00",
       "stale": false
     },
     {
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-05T18:01:41+00:00",
+      "latest_entry_at": "2026-11-05T22:00:16+00:00",
       "stale": false
     },
     {
@@ -102,15 +102,15 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-05T20:58:33+00:00",
+      "latest_entry_at": "2026-11-05T22:16:37+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-05T18:00:00+00:00",
+      "latest_entry_at": "2026-11-05T22:16:22+00:00",
       "stale": false
     },
     {
@@ -124,7 +124,7 @@
     {
       "source_id": "news_official_gb",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
       "latest_entry_at": "2026-11-05T21:46:02+00:00",
       "stale": false
@@ -158,7 +158,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T21:00:17+00:00",
+      "latest_entry_at": "2026-11-05T22:03:17+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-05T00:02:59+00:00",
+      "latest_entry_at": "2026-11-05T22:56:35+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-05T21:00:07+00:00",
+      "latest_entry_at": "2026-11-05T22:40:00+00:00",
       "stale": false
     },
     {
@@ -196,9 +196,9 @@
     {
       "source_id": "news_official_min",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T18:38:11+00:00",
+      "latest_entry_at": "2026-11-05T21:55:51+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-04T23:24:07+00:00",
+      "latest_entry_at": "2026-11-05T22:53:37+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-05T21:47:47+00:00",
+      "latest_entry_at": "2026-11-05T23:00:28+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T21:48:56+00:00",
+      "latest_entry_at": "2026-11-05T22:52:59+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T18:29:43+00:00",
+      "latest_entry_at": "2026-11-05T22:12:52+00:00",
       "stale": false
     },
     {
@@ -332,9 +332,9 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T17:00:00+00:00",
+      "latest_entry_at": "2026-11-05T22:26:56+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-05T21:46:32+00:00",
+      "latest_entry_at": "2026-11-05T21:26:05+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-05T15:30:00+00:00",
+      "latest_entry_at": "2026-11-05T16:42:40+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T12:42:00+00:00",
+      "latest_entry_at": "2026-11-05T21:27:51+00:00",
       "stale": false
     },
     {
@@ -406,15 +406,15 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-05T21:30:00+00:00",
+      "latest_entry_at": "2026-11-05T22:45:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T16:01:00+00:00",
+      "latest_entry_at": "2026-11-05T22:36:00+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-05T20:00:00+00:00",
+      "latest_entry_at": "2026-11-05T22:05:00+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-05T15:00:00+00:00",
+      "latest_entry_at": "2026-11-05T22:00:00+00:00",
       "stale": false
     },
     {
@@ -468,9 +468,9 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-05T11:36:44+00:00",
+      "latest_entry_at": "2026-11-05T21:06:44+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T13:00:00+00:00",
+      "latest_entry_at": "2026-11-05T21:12:23+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T19:15:06+00:00",
+      "latest_entry_at": "2026-11-05T22:34:45+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-04T20:45:20+00:00",
+      "latest_entry_at": "2026-11-05T12:00:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,299 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T16:32:29+00:00",
+      "latest_entry_at": "2026-11-05T22:11:59+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "89bf24fb30be6a41eae6",
+      "headline": "Packers Placed Big Bet on Christian Watson, And Everyone Is Cashing In",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-placed-big-bet-on-christian-watson-and-everyone-is-cashing-in",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Christian Watson is having a huge season following his huge contract extension.",
+      "categories": [],
+      "published_at": "2026-11-05T23:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0038124",
+          "name": "Christian Watson",
+          "team": "GB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "c31896984ca2c309a177",
+      "headline": "Week 9 Injury Report: Colts Could Catch a Break Against Cowboys",
+      "url": "https://www.si.com/nfl/colts/onsi/week-9-injury-report-colts-could-catch-a-break-against-cowboys",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Indianapolis Colts received an encouraging injury report in their second-to-last practice ahead of their Week 9 matchup against the Dallas Cowboys.",
+      "categories": [],
+      "published_at": "2026-11-05T22:58:10+00:00",
+      "players": []
+    },
+    {
+      "id": "c5f34b4bc309d6dfcd61",
+      "headline": "Latest Dallas Cowboys injury report brings worrying news for a banged-up defense ahead of Week 9 matchup with Colts",
+      "url": "https://atozsports.com/nfl/dallas-cowboys-news/latest-injury-report-joey-porter-caleb-downs-vs-colts/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys are running out of healthy bodies in the secondary with the Indianapolis Colts coming to town. And a key defender popped up on the injury report out of nowhere.",
+      "categories": [
+        "Dallas Cowboys News",
+        "Caleb Downs",
+        "Dallas Cowboys",
+        "Dallas Cowboys Injury News",
+        "DeMarvion Overshown",
+        "Joey Porter Jr."
+      ],
+      "published_at": "2026-11-05T22:40:16+00:00",
+      "players": []
+    },
+    {
+      "id": "364a259fb18340d8938e",
+      "headline": "Raiders-49ers Week 9 Injury Report",
+      "url": "https://www.raiders.com/news/raiders-49ers-week-9-injury-report",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the San Francisco 49ers.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Injury Report",
+        "Las Vegas Raiders at San Francisco 49ers (2026-REG-9)"
+      ],
+      "published_at": "2026-11-05T22:40:00+00:00",
+      "players": []
+    },
+    {
+      "id": "2180df2091d5eb03f2d2",
+      "headline": "Commanders Mailbag: Is Luke McCaffrey Being Overlooked? Did Dan Quinn Win Back Trust?",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-mailbag-luke-mccaffrey-dan-quinn",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Why is Luke McCaffrey getting so few offensive snaps with Terry McLaurin out? Did the Eagles' win change the outlook on Dan Quinn?",
+      "categories": [],
+      "published_at": "2026-11-05T22:39:04+00:00",
+      "players": [
+        {
+          "id": "00-0035659",
+          "name": "Terry McLaurin",
+          "team": "WAS",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039355",
+          "name": "Luke McCaffrey",
+          "team": "WAS",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "066ac2fb29dc07c99b4f",
+      "headline": "Ravens place QBs Lamar Jackson, Tyler Huntley on injured reserve",
+      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-roster/87510/ravens-place-qbs-lamar-jackson-tyler-huntley-on-injured-reserve",
+      "source_id": "news_sbn_bal",
+      "source": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Baltimore Ravens placed quarterbacks Lamar Jackson and Tyler Huntley on injured reserve on Thursday ahead of their Week 9 matchup with the Jacksonville Jaguars. Jackson is set to undergo thumb surgery with discouraging reports but no firm timeline from the team regarding his potential return later this year. Huntley\u2019s turf toe is thought to [\u2026]",
+      "categories": [
+        "Baltimore Ravens Injuries",
+        "Baltimore Ravens Roster"
+      ],
+      "published_at": "2026-11-05T22:26:56+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035993",
+          "name": "Tyler Huntley",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "d8adfc5a70326ab1e30e",
+      "headline": "Injury Report: S Talanoa Hufanga returns to practice ahead of Week 9 game vs. Panthers",
+      "url": "https://www.denverbroncos.com/news/injuryreport/injury-report-s-talanoa-hufanga-returns-to-practice-ahead-of-week-9-game-vs-panthers",
+      "source_id": "news_official_den",
+      "source": "Denver Broncos (official)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "Hufanga (ankle) was listed as a limited participant on Thursday.",
+      "categories": [
+        "Top Stories",
+        "Aric DiLalla",
+        "Injury Report",
+        "Denver Broncos at Carolina Panthers (2026-REG-9)"
+      ],
+      "published_at": "2026-11-05T22:16:22+00:00",
+      "players": []
+    },
+    {
+      "id": "492b30dca1e1a8f755ad",
+      "headline": "Raiders bring early-season TD machine Cody White back a day after releasing him",
+      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/145185/raiders-news-cody-white-carter-runyon-twide-receiver-tight-end",
+      "source_id": "news_sbn_lv",
+      "source": "Silver And Black Pride (SB Nation)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "A few weeks ago, wide receiver Cody White was the Las Vegas Raiders\u2019 secret weapon. Now, he\u2019s out of a job. The team released the veteran on Wednesday after as they needed room to activate reserve tight end Carter Runyon from the injured reserve. The Raiders had until Wednesday to either put Runyon on the [\u2026]",
+      "categories": [
+        "Las Vegas Raiders News",
+        "Las Vegas Raiders Roster"
+      ],
+      "published_at": "2026-11-05T22:13:17+00:00",
+      "players": [
+        {
+          "id": "00-0040488",
+          "name": "Carter Runyon",
+          "team": "LV",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "dc4c3ee9f518cebdb144",
+      "headline": "Patriots vs. Packers Thursday injury report: Marcus Jones added to the list of non-participants",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/143132/patriots-vs-packers-thursday-injury-report-marcus-jones-four-non-participants",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots continued Green Bay Packers work without four. While defensive tackle Christian Barmore returned to practice in full on Thursday, cornerback Marcus Jones joined running back TreVeyon Henderson, tight end Hunter Henry and wide receiver A.J. Brown on the list of non-participants in Foxborough. The all-purpose captain was sidelined due to a [\u2026]",
+      "categories": [
+        "New England Patriots Injuries",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-11-05T22:12:52+00:00",
+      "players": [
+        {
+          "id": "00-0033090",
+          "name": "Hunter Henry",
+          "team": "NE",
+          "position": "TE"
+        },
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040734",
+          "name": "TreVeyon Henderson",
+          "team": "NE",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "e025b071006ef2aa7b22",
+      "headline": "Joey Porter Jr. Takes Step Back on Latest Cowboys Injury Report, Caleb Downs Improves",
+      "url": "https://www.si.com/nfl/cowboys/onsi/joey-porter-jr-takes-step-back-latest-dallas-cowboys-injury-report-caleb-downs-improves",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys have released Thursday's practice report for the team's Week 9 showdown with the Indianapolis Colts.",
+      "categories": [],
+      "published_at": "2026-11-05T22:10:22+00:00",
+      "players": []
+    },
+    {
+      "id": "0f462da6801ae9f0c72c",
+      "headline": "Cowboys injuries: Caleb Downs upgraded to limited",
+      "url": "https://www.bloggingtheboys.com/dallas-cowboys-injuries/225383/caleb-downs-upgraded-limited-jake-ferfuson-no-practice",
+      "source_id": "news_sbn_dal",
+      "source": "Blogging The Boys (SB Nation)",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys returned to the practice field on Thursday. They are looking to get healthy before this weekend when they will take on the Indianapolis Colts. Thursday\u2019s injury report yielded some developments. Here\u2019s what we know. The Cowboys mat be down a few starters and rotation players for the game. Jake Ferguson (Ankle) and [\u2026]",
+      "categories": [
+        "Dallas Cowboys Injuries"
+      ],
+      "published_at": "2026-11-05T22:05:00+00:00",
+      "players": [
+        {
+          "id": "00-0038041",
+          "name": "Jake Ferguson",
+          "team": "DAL",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "dd0ec5cf4172b7d2ed6d",
+      "headline": "Week 9 Thursday Injury Report: Five players did not participate",
+      "url": "https://www.panthers.com/news/week-9-thursday-injury-report-five-players-did-not-participate",
+      "source_id": "news_official_car",
+      "source": "Carolina Panthers (official)",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "The Panthers were still without five players in practice, but got a few offensive linemen healthier.",
+      "categories": [
+        "Injury Reports",
+        "Latest News",
+        "App News",
+        "Denver Broncos at Carolina Panthers (2026-REG-9)"
+      ],
+      "published_at": "2026-11-05T22:00:16+00:00",
+      "players": []
+    },
+    {
+      "id": "b9eabcd9891d8e44df0d",
+      "headline": "Initial Vikings vs. Bills Injury Report for Week 9 of 2026",
+      "url": "https://www.vikings.com/news/bills-injury-report-week-9-2026-nfl-season",
+      "source_id": "news_official_min",
+      "source": "Minnesota Vikings (official)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "",
+      "categories": [
+        "News - Index",
+        "News - Team",
+        "bills-at-vikings-2026-reg-9",
+        "Buffalo Bills at Minnesota Vikings (2026-REG-9)",
+        "Injury Report",
+        "News - Injury Report"
+      ],
+      "published_at": "2026-11-05T21:55:51+00:00",
+      "players": []
+    },
     {
       "id": "4da7fe6ea3a231a5be98",
       "headline": "Packers-Patriots Thursday Injury Report: Injuries Impacting Specific Matchup",
@@ -785,6 +1073,30 @@
       "players": []
     },
     {
+      "id": "8c4d769e43e5beafc363",
+      "headline": "Indianapolis Colts Injury Report: Week 9 Thursday",
+      "url": "https://www.stampedeblue.com/indianapolis-colts-injuries/129712/indianapolis-colts-injury-report-week-9-thursday",
+      "source_id": "news_sbn_ind",
+      "source": "Stampede Blue (SB Nation)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Indianapolis Colts today released their Thursday injury report for Week 9 of the NFL season against the Dallas Cowboys. Wide receiver Keenan Allen, running back Jonathan Taylor and cornerback Charvarius Ward were all full participants today after being rested yesterday. Defensive tackle Grover Stewart was rested today at practice. Linebacker Akeem Davis-Gaither (knee) was [\u2026]",
+      "categories": [
+        "Indianapolis Colts Injuries",
+        "Indianapolis Colts News"
+      ],
+      "published_at": "2026-11-05T21:27:51+00:00",
+      "players": [
+        {
+          "id": "00-0036223",
+          "name": "Jonathan Taylor",
+          "team": "IND",
+          "position": "RB"
+        }
+      ]
+    },
+    {
       "id": "631346a63665f3699bdd",
       "headline": "Browns make confusing, interesting roster move on Thursday",
       "url": "https://www.dawgsbynature.com/cleveland-browns-news/137154/browns-carsen-ryan-waived-roster-trade",
@@ -893,6 +1205,30 @@
       ],
       "published_at": "2026-11-05T21:08:00+00:00",
       "players": []
+    },
+    {
+      "id": "aeb7321885015a28db76",
+      "headline": "Lions, Dolphins Week 9 injury report: Amon-Ra St. Brown limited, Brian Branch full",
+      "url": "https://www.prideofdetroit.com/detroit-lions-injuries/179745/lions-dolphins-week-9-injury-report-amon-ra-st-brown-brian-branch",
+      "source_id": "news_sbn_det",
+      "source": "Pride Of Detroit (SB Nation)",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "After holding a walkthrough on Wednesday, the Detroit Lions (5-2) returned to the practice field on Thursday as they prepare to take on the Miami Dolphins (1-6). While Wednesday\u2019s report was just estimates from the coaching staff, Thursday\u2019s practice mirrored the same level of participation for most players, with a couple of upgrades. With that [\u2026]",
+      "categories": [
+        "Detroit Lions Injuries",
+        "Detroit Lions News"
+      ],
+      "published_at": "2026-11-05T21:06:44+00:00",
+      "players": [
+        {
+          "id": "00-0036963",
+          "name": "Amon-Ra St. Brown",
+          "team": "DET",
+          "position": "WR"
+        }
+      ]
     },
     {
       "id": "33eda707727ea5b02611",
@@ -1945,25 +2281,6 @@
       ]
     },
     {
-      "id": "364a259fb18340d8938e",
-      "headline": "Raiders-49ers Week 9 Injury Report",
-      "url": "https://www.raiders.com/news/raiders-49ers-week-9-injury-report",
-      "source_id": "news_official_lv",
-      "source": "Las Vegas Raiders (official)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the San Francisco 49ers.",
-      "categories": [
-        "Home Centerpiece",
-        "Home Latest Stories",
-        "News - Injury Report",
-        "Las Vegas Raiders at San Francisco 49ers (2026-REG-9)"
-      ],
-      "published_at": "2026-11-05T00:07:43+00:00",
-      "players": []
-    },
-    {
       "id": "2b37097492a99add1e1d",
       "headline": "Broncos' Week 9 Injury Report: WR Pat Bryant Gearing Up for Return",
       "url": "https://www.si.com/nfl/broncos/onsi/pat-bryant-return-ir-injury-report-panthers",
@@ -2274,30 +2591,6 @@
           "name": "Cam Ward",
           "team": "TEN",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "492b30dca1e1a8f755ad",
-      "headline": "Raiders release early-season TD machine Cody White",
-      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/145185/raiders-news-cody-white-carter-runyon-twide-receiver-tight-end",
-      "source_id": "news_sbn_lv",
-      "source": "Silver And Black Pride (SB Nation)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "A few weeks ago, wide receiver Cody White was the Las Vegas Raiders\u2019 secret weapon. Now, he\u2019s out of a job. The team released the veteran on Wednesday after as they needed room to activate reserve tight end Carter Runyon from the injured reserve. The Raiders had until Wednesday to either put Runyon on the [\u2026]",
-      "categories": [
-        "Las Vegas Raiders News",
-        "Las Vegas Raiders Roster"
-      ],
-      "published_at": "2026-11-04T22:59:51+00:00",
-      "players": [
-        {
-          "id": "00-0040488",
-          "name": "Carter Runyon",
-          "team": "LV",
-          "position": "TE"
         }
       ]
     },
@@ -3746,332 +4039,6 @@
           "name": "Mack Hollins",
           "team": "NE",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "02d2aafd68abdb32cb21",
-      "headline": "Lions Week 8 Snap Counts Reveal Secret to Countering Vikings Defense",
-      "url": "https://www.si.com/nfl/lions/onsi/lions-week-eight-snap-counts-reveal-secret-countering-vikings-defense",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Detroit Lions snap counts against Minnesota Vikings reveal extra usage of Brock Wright, Tyler Conklin.",
-      "categories": [],
-      "published_at": "2026-11-04T11:43:15+00:00",
-      "players": [
-        {
-          "id": "00-0034270",
-          "name": "Tyler Conklin",
-          "team": "DET",
-          "position": "TE"
-        },
-        {
-          "id": "00-0036754",
-          "name": "Brock Wright",
-          "team": "DET",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "9fdcd94af469bf1d84c1",
-      "headline": "Commanders News: Both Starting DTs Hit IR as Rams\u2019 Matthew Stafford Deals With Arm Soreness | Burgundy Roundup",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-burgundy-roundup-stafford-arm",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Washington put Daron Payne, Javon Kinlaw, and Jeremy McNichols on IR, then claimed Robert Henry Jr. Rams QB Matthew Stafford has arm soreness before Sunday.",
-      "categories": [],
-      "published_at": "2026-11-04T09:52:47+00:00",
-      "players": [
-        {
-          "id": "00-0033955",
-          "name": "Jeremy McNichols",
-          "team": "WAS",
-          "position": "RB"
-        },
-        {
-          "id": "00-0041178",
-          "name": "Robert Henry",
-          "team": "WAS",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "3bb1d5f7b590732fc2ae",
-      "headline": "Under-the-Radar QB Trade Target Is Worth Vikings' Attention Amid Kyler Murray Injury Uncertainty",
-      "url": "https://www.si.com/nfl/vikings/onsi/under-radar-qb-trade-target-worth-vikings-attention-kyler-murray-injury-uncertainty-01m6j433d7gy",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "As the Vikings face questions surrounding Kyler Murray, one possible QB trade target stands out as potential help.",
-      "categories": [],
-      "published_at": "2026-11-04T03:50:27+00:00",
-      "players": [
-        {
-          "id": "00-0035228",
-          "name": "Kyler Murray",
-          "team": "MIN",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "f786e503782532d32e09",
-      "headline": "Breaking Down Jets' Injury Report Heading Into Week 9 (Who's Hurt & Who Could Return vs. Chiefs)",
-      "url": "https://www.si.com/nfl/jets/onsi/breaking-down-jets-injury-report-heading-into-week-9-who-s-hurt-who-could-return-vs-chiefs-01m6hap7qssp",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Which New York Jets are on the mend, and which could miss the Week 9 matchup with Kansas City?",
-      "categories": [],
-      "published_at": "2026-11-04T01:00:01+00:00",
-      "players": []
-    },
-    {
-      "id": "2331fdfb6462a86939ee",
-      "headline": "Texans Cost Themselves Millions by Delaying C.J. Stroud Extension",
-      "url": "https://www.si.com/nfl/texans/onsi/texans-cost-themselves-millions-by-delaying-c-j-stroud-extension",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "The Houston Texans may have messed this one up.",
-      "categories": [],
-      "published_at": "2026-11-04T00:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039163",
-          "name": "C.J. Stroud",
-          "team": "HOU",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "bc1f1269e459f5385664",
-      "headline": "Adam Stenavich explains the Kevin Zeitler situation",
-      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/89170/adam-stenavich-explains-the-kevin-zeitler-situation",
-      "source_id": "news_sbn_gb",
-      "source": "Acme Packing Company (SB Nation)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "The Green Bay Packers signed guard Kevin Zeitler, a former Wisconsin Badger and Pro Bowler, to a one-year, $4 million contract after the team\u2019s poor start to the 2026 season. The team has since been able to protect quarterback Jordan Love better, but the run game hasn\u2019t advanced much, and Zeitler has yet to take [\u2026]",
-      "categories": [
-        "Green Bay Packers News"
-      ],
-      "published_at": "2026-11-03T23:46:20+00:00",
-      "players": [
-        {
-          "id": "00-0036264",
-          "name": "Jordan Love",
-          "team": "GB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "bca2c1e184f7cdf2e093",
-      "headline": "Jaguars-Ravens Injury Report: Bhayshul Tuten's Injury Could Mean Larger Role For 1 Veteran",
-      "url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-ravens-injury-report-bhayshul-tuten-s-injury-could-mean-larger-role-for-1-veteran",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "JAX"
-      ],
-      "feed_description": "The Jacksonville Jaguars have one big name on their injury report entering Thursday Night Football vs. the Baltimore Ravens.",
-      "categories": [],
-      "published_at": "2026-11-03T23:25:40+00:00",
-      "players": [
-        {
-          "id": "00-0040719",
-          "name": "Bhayshul Tuten",
-          "team": "JAX",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "a9302a0c45ca642d0ccf",
-      "headline": "Commanders lose two defensive tackles to injured reserve in major blow ahead of critical Rams matchup",
-      "url": "https://atozsports.com/nfl/washington-commanders-news/commanders-daron-payne-javon-kinlaw-jeremy-mcnichols-injured-reserve/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Washington placed Daron Payne, Javon Kinlaw and Jeremy McNichols on injured reserve, leaving its defensive line dangerously thin before Sunday's matchup with Los Angeles.",
-      "categories": [
-        "Washington Commanders News",
-        "Commanders",
-        "Daron Payne",
-        "Javon Kinlaw",
-        "Johnny Newton",
-        "Washington Commanders"
-      ],
-      "published_at": "2026-11-03T23:15:17+00:00",
-      "players": [
-        {
-          "id": "00-0033955",
-          "name": "Jeremy McNichols",
-          "team": "WAS",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "71636713e7aab1c2917a",
-      "headline": "News & Notes: Tyler Huntley Could 'Potentially' Be Placed on Injured Reserve",
-      "url": "https://www.baltimoreravens.com/news/tyler-huntley-could-be-headed-for-injured-reserve-kedon-slovis-austin-reed-studying-overtime-marlon-humphrey-ray-lewis-speech",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Quarterbacks Kedon Slovis and Austin Reed are working hard to master the offense. Ray Lewis gave a message last week that players took to heart. Calais Campbell wants The Bank to be boisterous Thursday night.",
-      "categories": [
-        "News & Notes",
-        "General",
-        "Clifton Brown",
-        "Tyler Huntley",
-        "2026 Week 9",
-        "2026 Week 9 News",
-        "Jacksonville Jaguars at Baltimore Ravens (2026-REG-9)",
-        "inline-news",
-        "Homepage Centerpiece"
-      ],
-      "published_at": "2026-11-03T23:12:00+00:00",
-      "players": [
-        {
-          "id": "00-0035993",
-          "name": "Tyler Huntley",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "41f301c11110c44bf10d",
-      "headline": "News & Notes: Ray Lewis' Message to Ravens Resonated With Defense",
-      "url": "https://www.baltimoreravens.com/news/marlon-humphrey-ray-lewis-speech-tyler-huntley-injured-reserve-kedon-slovis-austin-reed-studying-overtime",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "Quarterbacks Kedon Slovis and Austin Reed are working hard to master the offense. Tyler Huntley could 'potentially' go to injured reserve. Calais Campbell wants The Bank to be boisterous Thursday night.",
-      "categories": [
-        "News & Notes",
-        "General",
-        "Clifton Brown",
-        "2026 Week 9",
-        "2026 Week 9 News",
-        "Jacksonville Jaguars at Baltimore Ravens (2026-REG-9)",
-        "inline-news",
-        "Homepage Latest Headlines",
-        "Ray Lewis"
-      ],
-      "published_at": "2026-11-03T23:12:00+00:00",
-      "players": [
-        {
-          "id": "00-0035993",
-          "name": "Tyler Huntley",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "644fd6af0af855eeed32",
-      "headline": "Cardinals Eying These 3 Free Agents After Jeremiyah Love Injury",
-      "url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-eying-these-3-free-agents-jeremiyah-love-injury",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "The Arizona Cardinals need more RB help \u2014 here's who they tried out.",
-      "categories": [],
-      "published_at": "2026-11-03T22:45:52+00:00",
-      "players": [
-        {
-          "id": "00-0041027",
-          "name": "Jeremiyah Love",
-          "team": "ARI",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "aea8115e95a22bbc3e25",
-      "headline": "Arizona Cardinals make roster moves after Dallas Cowboys win",
-      "url": "https://www.revengeofthebirds.com/arizona-cardinals-roster/96451/arizona-cardinals-make-roster-moves-after-dallas-cowboys-win",
-      "source_id": "news_sbn_ari",
-      "source": "Revenge of the Birds (SB Nation)",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "We knew the Arizona Cardinals would be down a couple of important pieces, but they made it official today, placing both Jeremiyah Love and Kendrick Bourne on injured reserve. From the team: The Arizona Cardinals Football Club today announced the following roster moves: \u2013 Signed wide receiver Harrison Wallace III to the active roster from [\u2026]",
-      "categories": [
-        "Arizona Cardinals News",
-        "Arizona Cardinals Roster"
-      ],
-      "published_at": "2026-11-03T22:33:24+00:00",
-      "players": [
-        {
-          "id": "00-0033307",
-          "name": "Kendrick Bourne",
-          "team": "ARI",
-          "position": "WR"
-        },
-        {
-          "id": "00-0041027",
-          "name": "Jeremiyah Love",
-          "team": "ARI",
-          "position": "RB"
-        },
-        {
-          "id": "00-0041368",
-          "name": "Harrison Wallace",
-          "team": "ARI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "76a7ee2337c5462739fd",
-      "headline": "Saints awarded running back Audric Estim\u00e9 from waivers, terminate K Daniel Carlson",
-      "url": "https://www.neworleanssaints.com/news/saints-awarded-rb-audric-estime-waivers-terminate-k-daniel-carlson-roster-moves-11-3-2026",
-      "source_id": "news_official_no",
-      "source": "New Orleans Saints (official)",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "Estim\u00e9 rejoins Saints after tallying 301 yards from scrimmage in 2025",
-      "categories": [
-        "Latest News",
-        "Roster",
-        "Audric Estim\u00e9"
-      ],
-      "published_at": "2026-11-03T22:02:07+00:00",
-      "players": [
-        {
-          "id": "00-0039373",
-          "name": "Audric Estim\u00e9",
-          "team": "NO",
-          "position": "RB"
         }
       ]
     }
