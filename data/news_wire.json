@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T01:00:54.224347+00:00",
+  "updated_at": "2026-11-05T03:00:52.342112+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-05T00:55:44+00:00",
+      "latest_entry_at": "2026-11-05T03:00:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-04T23:38:39+00:00",
+      "latest_entry_at": "2026-11-05T01:14:05+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-04T20:22:21+00:00",
+      "latest_entry_at": "2026-11-05T02:46:15+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T23:03:00+00:00",
+      "latest_entry_at": "2026-11-05T00:09:20+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:48:10+00:00",
+      "latest_entry_at": "2026-11-05T01:26:57+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T23:00:00+00:00",
+      "latest_entry_at": "2026-11-05T01:24:00+00:00",
       "stale": false
     },
     {
@@ -268,9 +268,9 @@
     {
       "source_id": "news_official_tb",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:27:52+00:00",
+      "latest_entry_at": "2026-11-05T02:08:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-05T00:55:44+00:00",
+      "latest_entry_at": "2026-11-05T03:00:00+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T23:38:39+00:00",
+      "latest_entry_at": "2026-11-05T01:14:05+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-04T20:57:38+00:00",
+      "latest_entry_at": "2026-11-05T02:46:03+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-04T21:40:25+00:00",
+      "latest_entry_at": "2026-11-05T02:19:16+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-04T18:09:40+00:00",
+      "latest_entry_at": "2026-11-05T00:38:51+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-04T21:48:21+00:00",
+      "latest_entry_at": "2026-11-05T01:02:17+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T00:10:43+00:00",
+      "latest_entry_at": "2026-11-05T02:24:03+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,234 @@
     }
   ],
   "items": [
+    {
+      "id": "24f507e626ea5e7ed043",
+      "headline": "Seahawks Injury Report Updates on Drew Lock, Uchenna Nwosu, More",
+      "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-injury-report-updates-drew-lock-uchenna-nwosu-more",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The first injury report of the week for the Seattle Seahawks and Arizona Cardinals is out, and it paints a pretty banged up picture on both sides.",
+      "categories": [],
+      "published_at": "2026-11-05T02:55:28+00:00",
+      "players": [
+        {
+          "id": "00-0035704",
+          "name": "Drew Lock",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "d0c04948bc31f30e15e4",
+      "headline": "Kyle Monangai Injury Update, Another LT Issue & More From Bears' Wednesday Practice Report",
+      "url": "https://www.si.com/nfl/bears/onsi/kyle-monangai-injury-update-lt-issue-bears-wednesday-practice-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "The Chicago Bears' Wednesday injury report revealed the latest on running back Kyle Monangai's status and another concern for the Bears at left tackle.",
+      "categories": [],
+      "published_at": "2026-11-05T02:28:07+00:00",
+      "players": [
+        {
+          "id": "00-0040236",
+          "name": "Kyle Monangai",
+          "team": "CHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "c39ede7fbc82300daee1",
+      "headline": "Buccaneers at Bears: Initial injury report for Week 9",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/69618/buccaneers-bears-initial-injury-report-nfl-week-9",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers began preparations for their Week 9 matchup against the Chicago Bears on Wednesday, releasing their first injury report ahead of Sunday night\u2019s game at Soldier Field. Tampa Bay listed eight players on the initial report, including three who did not participate in practice. Wide receiver Emeka Egbuka (foot) remained sidelined after [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers Injuries"
+      ],
+      "published_at": "2026-11-05T02:24:03+00:00",
+      "players": [
+        {
+          "id": "00-0040129",
+          "name": "Emeka Egbuka",
+          "team": "TB",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "3b447493d93b9363d2d6",
+      "headline": "Garrett Wilson Injury Will Test if New Jets' Optimism is Deserved",
+      "url": "https://www.si.com/nfl/jets/onsi/garrett-wilson-injury-will-test-if-new-jets-optimism-is-deserved-01m6mm9rq58x",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "Garrett Wilson is the best player on the New York Jets. That has been the case over the last several years now. Whenever the former Ohio State star is off the",
+      "categories": [],
+      "published_at": "2026-11-05T02:15:10+00:00",
+      "players": [
+        {
+          "id": "00-0037740",
+          "name": "Garrett Wilson",
+          "team": "NYJ",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "44fb81d904ad2577abf1",
+      "headline": "How Seahawks' Drew Lock Could Become a Full-Time Starter",
+      "url": "https://www.si.com/nfl/seahawks/onsi/how-seahawks-drew-lock-could-become-a-full-time-starter",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Seattle Seahawks quarterback Drew Lock is, once again, stepping up after another injury to Sam Darnold. This time, Lock should be playing towards a full-time starting role.",
+      "categories": [],
+      "published_at": "2026-11-05T02:14:17+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        },
+        {
+          "id": "00-0035704",
+          "name": "Drew Lock",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "9f39c9bb249be3d37f56",
+      "headline": "25 Players Highlight Cardinals-Seahawks Week 9 Injury Report",
+      "url": "https://www.si.com/nfl/cardinals/onsi/25-players-highlight-arizona-cardinals-seattle-seahawks-week-9-injury-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "Today was the first day of the two team's injury report.",
+      "categories": [],
+      "published_at": "2026-11-05T02:09:20+00:00",
+      "players": []
+    },
+    {
+      "id": "8ecf7b8cb43b72928812",
+      "headline": "Buccaneers-Bears Injury Report Nov.4: Diaby, Egbuka, Roberts Did Not Participate",
+      "url": "https://www.buccaneers.com/news/buccaneers-bears-injury-report-nov-4-diaby-egbuka-roberts-did-not-participate",
+      "source_id": "news_official_tb",
+      "source": "Tampa Bay Buccaneers (official)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "A look at Wednesday's injury report ahead of the Week Nine matchup",
+      "categories": [
+        "Featured",
+        "Injury Report",
+        "Week 9 2026 Bears"
+      ],
+      "published_at": "2026-11-05T02:08:00+00:00",
+      "players": []
+    },
+    {
+      "id": "cc90151c147cfc503575",
+      "headline": "Commanders-Rams Injury Report Raises New Concern on Depleted Defensive Line",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-rams-week-9-injury-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Jer'Zhan Newton practiced fully, Shy Tuttle was limited and Treylon Burks sat out as the Commanders began preparing for the Rams.",
+      "categories": [],
+      "published_at": "2026-11-05T01:32:48+00:00",
+      "players": [
+        {
+          "id": "00-0037742",
+          "name": "Treylon Burks",
+          "team": "WAS",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "033b86af12a7644318a6",
+      "headline": "Rams Injury Report: Myles Garrett Returns, But Bad News Continues to Pile Up",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-injury-report-myles-garrett-jaylen-watson-week-9",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Rams received good news on Myles Garrett and Terrance Ferguson, but Jaylen Watson is out for the season as more injuries pile up ahead of Week 9.",
+      "categories": [],
+      "published_at": "2026-11-05T01:03:21+00:00",
+      "players": [
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "11acfbd8fe53a7fd988c",
+      "headline": "Commanders vs. Rams Wednesday injury report: Treylon Burks held out",
+      "url": "https://www.hogshaven.com/washington-commanders-injuries/453362/commanders-vs-rams-wednesday-injury-report-treylon-burks-held-out",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Commanders need Treylon Burks more than ever. Terry McLaurin is done for the year and Washington needs someone in the X position. Burks is the natural fit. Not having him pushes Dyami Brown to that spot, and that\u2019s not what you want. You also don\u2019t want Antonio Williams out there. You\u2019d rather have him [\u2026]",
+      "categories": [
+        "Washington Commanders Injuries"
+      ],
+      "published_at": "2026-11-05T00:38:51+00:00",
+      "players": [
+        {
+          "id": "00-0035659",
+          "name": "Terry McLaurin",
+          "team": "WAS",
+          "position": "WR"
+        },
+        {
+          "id": "00-0036626",
+          "name": "Dyami Brown",
+          "team": "WAS",
+          "position": "WR"
+        },
+        {
+          "id": "00-0037742",
+          "name": "Treylon Burks",
+          "team": "WAS",
+          "position": "WR"
+        },
+        {
+          "id": "00-0041040",
+          "name": "Antonio Williams",
+          "team": "WAS",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "f7142677c477e053a24d",
       "headline": "Rookie receiver Jordyn Tyson focused on making NFL debut with New Orleans Saints",
@@ -3970,258 +4198,6 @@
           "name": "Eric Gray",
           "team": "NYG",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "5ea9557a817018c0a8ef",
-      "headline": "5 Colts Things: Daniel Jones remains starting quarterback, Shane Steichen sees execution as more an issue than effort, several rookies get valuable experience in Week 8 loss to Jaguars",
-      "url": "https://www.colts.com/news/5-colts-things-daniel-jones-remains-starting-quarterback-shane-steichen-sees-execution-as-more-an-issue-than-effort-several-rookies-get-valuable-experience-in-week-8-loss-to-jaguars",
-      "source_id": "news_official_ind",
-      "source": "Indianapolis Colts (official)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The Colts' 42-7 loss to the Jacksonville Jaguars on Sunday dropped them to 2-6 on the season.",
-      "categories": [
-        "Five Things Learned",
-        "Featured",
-        "Featured News",
-        "Anthony Richardson"
-      ],
-      "published_at": "2026-11-02T21:51:09+00:00",
-      "players": [
-        {
-          "id": "00-0035710",
-          "name": "Daniel Jones",
-          "team": "IND",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "9b0e3f21885bb7aa6887",
-      "headline": "Patriots waive safety Elliott Davison, bring back running back Terrell Jennings on practice squad",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/142796/patriots-waive-elliott-davison-re-sign-terrell-jennings-practice-squad",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots head into November with an opening on the 53-man roster. The organization waived safety Elliott Davison on Monday and also announced the re-signing of running back Terrell Jennings to the practice squad. Davison, 24, had been promoted to the active roster midway through October after twice serving as a standard elevation. [\u2026]",
-      "categories": [
-        "New England Patriots News",
-        "New England Patriots Roster"
-      ],
-      "published_at": "2026-11-02T21:31:43+00:00",
-      "players": [
-        {
-          "id": "00-0039757",
-          "name": "Terrell Jennings",
-          "team": "NE",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "a08773421a843954bcd1",
-      "headline": "4 Realistic QB Trade Targets for Vikings as Kyler Murray Raises Red Flags",
-      "url": "https://www.si.com/nfl/vikings/onsi/4-realistic-qb-trade-targets-vikings-kyler-murray-raises-red-flags-01m6et5qr0bh",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "If the Vikings are already prepared to move on from starting QB Kyler Murray, these four potential trade candidates are the most realistic options.",
-      "categories": [],
-      "published_at": "2026-11-02T21:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0035228",
-          "name": "Kyler Murray",
-          "team": "MIN",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "95b19cb34b8d89696893",
-      "headline": "Seahawks activate Jadarian Price from injured reserve ahead of \u2018Monday Night Football\u2019 vs. Bears",
-      "url": "https://www.fieldgulls.com/seattle-seahawks-roster/178676/seahawks-activate-jadarian-price-injured-reserve-monday-night-football-nfl-news",
-      "source_id": "news_sbn_sea",
-      "source": "Field Gulls (SB Nation)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Jadarian Price is back. After the Seattle Seahawks opened the 21-day practice window for their first-round pick on Thursday, they activated him to the 53-man roster on Monday, ahead of the team\u2019s prime-time clash with the Chicago Bears. Undrafted rookie Robert Henry Jr was waived to make room for Price. Price has been out with [\u2026]",
-      "categories": [
-        "Seattle Seahawks Injuries",
-        "Seattle Seahawks News",
-        "Seattle Seahawks Roster"
-      ],
-      "published_at": "2026-11-02T21:21:52+00:00",
-      "players": [
-        {
-          "id": "00-0041512",
-          "name": "Jadarian Price",
-          "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "62e99a622dc108ca4e82",
-      "headline": "Seahawks Activate RB Jadarian Price From Injured Reserve",
-      "url": "https://www.seahawks.com/news/seahawks-activate-rb-jadarian-price-from-injured-reserve",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "The Seahawks activated rookie running back Jadarian Price from injured reserve ahead of Monday night\u2019s game against the Bears.",
-      "categories": [
-        "News: Roster Moves",
-        "Homepage Hero",
-        "Homepage Top Headlines",
-        "News: National Feature",
-        "Chicago Bears at Seattle Seahawks (2026-REG-8)",
-        "Jadarian Price"
-      ],
-      "published_at": "2026-11-02T21:14:10+00:00",
-      "players": [
-        {
-          "id": "00-0041512",
-          "name": "Jadarian Price",
-          "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "03e00d3a7f4d575412cb",
-      "headline": "Patriots Release S Elliott Davison and Sign RB Terrell Jennings to the Practice Squad",
-      "url": "https://www.patriots.com/news/patriots-release-s-elliott-davison-and-sign-rb-terrell-jennings-to-the-practice-squad",
-      "source_id": "news_official_ne",
-      "source": "New England Patriots (official)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The Patriots announced that they have released S Elliott Davison and signed RB Terrell Jennings to the practice squad.",
-      "categories": [
-        "Transactions",
-        "hp-article",
-        "hp-featured"
-      ],
-      "published_at": "2026-11-02T21:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039757",
-          "name": "Terrell Jennings",
-          "team": "NE",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "72b4e997ea4432b2ed0c",
-      "headline": "Carolina Panthers are expected to get a key reinforcement back at practice this week that can help a major problem on offense",
-      "url": "https://atozsports.com/nfl/carolina-panthers-news/panthers-expected-to-get-brady-christensen-back-week-9-dave-canales/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Carolina Panthers will get a key reinforcement back at practice this week in OL Brady Christensen, but the status of WR Xavier Legette and RB Jonathon Brooks is still up in the air.",
-      "categories": [
-        "Carolina Panthers News",
-        "NFL",
-        "Brady Christensen",
-        "Dave Canales",
-        "Jonathon Brooks",
-        "Panthers News",
-        "Xavier Legette"
-      ],
-      "published_at": "2026-11-02T19:29:05+00:00",
-      "players": [
-        {
-          "id": "00-0039342",
-          "name": "Xavier Legette",
-          "team": "CAR",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039344",
-          "name": "Jonathon Brooks",
-          "team": "CAR",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "25acdc00efe0f01540ba",
-      "headline": "Rams Snap Counts Reveal Rookie Who Should Have Been Playing All Along",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-snap-counts-max-klare-bigger-role-week-8",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "Rams rookie Max Klare made an impact in Week 8, raising questions about why he wasn't playing sooner. Here's what the snap counts revealed.",
-      "categories": [],
-      "published_at": "2026-11-02T19:25:37+00:00",
-      "players": [
-        {
-          "id": "00-0041510",
-          "name": "Max Klare",
-          "team": "LAR",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "702200f1cd93faa5d47f",
-      "headline": "Falcons WR Zachariah Branch, DE Samson Ebukam out vs. Bengals due to injury",
-      "url": "https://www.atlantafalcons.com/news/falcons-zachariah-branch-samson-ebukam-out-vs-bengals-injury",
-      "source_id": "news_official_atl",
-      "source": "Atlanta Falcons (official)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "Both Branch and Ebukam will miss next week's game due to injuries, head coach Kevin Stefanski said Monday.",
-      "categories": [
-        "News",
-        "Will McFadden",
-        "zachariah branch",
-        "Samson Ebukam"
-      ],
-      "published_at": "2026-11-02T18:53:45+00:00",
-      "players": [
-        {
-          "id": "00-0041044",
-          "name": "Zachariah Branch",
-          "team": "ATL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "c311751f4350e51b8ba8",
-      "headline": "Patriots Don't Have Immediate Update on Hunter Henry's Status",
-      "url": "https://www.si.com/nfl/patriots/onsi/patriots-don-t-have-immediate-update-on-hunter-henry-s-status",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots tight end left Sunday's game with a foot injury.",
-      "categories": [],
-      "published_at": "2026-11-02T16:43:15+00:00",
-      "players": [
-        {
-          "id": "00-0033090",
-          "name": "Hunter Henry",
-          "team": "NE",
-          "position": "TE"
         }
       ]
     }
