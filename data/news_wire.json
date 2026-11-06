@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T01:00:55.579084+00:00",
+  "updated_at": "2026-11-06T02:25:02.007660+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-06T00:57:34+00:00",
+      "latest_entry_at": "2026-11-06T02:23:22+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T23:57:37+00:00",
+      "latest_entry_at": "2026-11-06T00:40:02+00:00",
       "stale": false
     },
     {
@@ -70,7 +70,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-05T18:32:37+00:00",
+      "latest_entry_at": "2026-11-06T02:03:32+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-05T22:56:35+00:00",
+      "latest_entry_at": "2026-11-06T01:31:34+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-06T00:37:00+00:00",
+      "latest_entry_at": "2026-11-06T01:22:32+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-06T00:57:34+00:00",
+      "latest_entry_at": "2026-11-06T02:23:22+00:00",
       "stale": false
     },
     {
@@ -300,9 +300,9 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-06T00:55:50+00:00",
+      "latest_entry_at": "2026-11-05T13:56:17+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T17:08:11+00:00",
+      "latest_entry_at": "2026-11-06T00:15:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T22:12:52+00:00",
+      "latest_entry_at": "2026-11-06T01:00:06+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T12:00:00+00:00",
+      "latest_entry_at": "2026-11-05T22:10:41+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-05T15:00:00+00:00",
+      "latest_entry_at": "2026-11-05T12:08:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T21:27:51+00:00",
+      "latest_entry_at": "2026-11-06T01:57:52+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-05T17:00:00+00:00",
+      "latest_entry_at": "2026-11-05T21:00:00+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-05T14:30:00+00:00",
+      "latest_entry_at": "2026-11-04T17:30:09+00:00",
       "stale": false
     },
     {
@@ -404,9 +404,9 @@
     {
       "source_id": "news_sbn_kc",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-05T22:45:00+00:00",
+      "latest_entry_at": "2026-11-06T01:00:00+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T15:00:00+00:00",
+      "latest_entry_at": "2026-11-06T01:17:18+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-05T22:05:00+00:00",
+      "latest_entry_at": "2026-11-06T01:00:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-05T19:51:06+00:00",
+      "latest_entry_at": "2026-11-06T02:05:28+00:00",
       "stale": false
     },
     {
@@ -460,17 +460,17 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T15:00:00+00:00",
+      "latest_entry_at": "2026-11-06T01:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T23:30:00+00:00",
+      "latest_entry_at": "2026-11-05T18:46:34+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T00:23:06+00:00",
+      "latest_entry_at": "2026-11-06T00:54:57+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T00:02:09+00:00",
+      "latest_entry_at": "2026-11-06T00:58:01+00:00",
       "stale": false
     },
     {
@@ -532,17 +532,17 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T19:22:40+00:00",
+      "latest_entry_at": "2026-11-06T00:22:38+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T20:01:00+00:00",
+      "latest_entry_at": "2026-11-05T23:11:13+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,128 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T22:11:59+00:00",
+      "latest_entry_at": "2026-11-06T00:45:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "5e2532149ee0ec39ecaa",
+      "headline": "Eagles Injury Report: Saquon Barkley upgraded to limited",
+      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/189530/eagles-injury-report-saquon-barkley-upgraded-to-limited",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Philadelphia Eagles issued their second official injury report of the week on Thursday in advance of their Week 9 game against the New York Giants. The Eagles listed seven players under DID NOT PARTICIPATE: DeVonta Smith, Dontayvion Wicks, Jihaad Campbell, Michael Carter II, Britain Covey, and Jonathan Jones. Smith and Wicks are both tracking [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries"
+      ],
+      "published_at": "2026-11-06T02:05:28+00:00",
+      "players": [
+        {
+          "id": "00-0034844",
+          "name": "Saquon Barkley",
+          "team": "PHI",
+          "position": "RB"
+        },
+        {
+          "id": "00-0036912",
+          "name": "DeVonta Smith",
+          "team": "PHI",
+          "position": "WR"
+        },
+        {
+          "id": "00-0037132",
+          "name": "Britain Covey",
+          "team": "PHI",
+          "position": "WR"
+        },
+        {
+          "id": "00-0038393",
+          "name": "Dontayvion Wicks",
+          "team": "PHI",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "30d262921014a87fba10",
+      "headline": "Rams Midweek Report: A Concerning Trend on Offense, Matthew Stafford's Elbow, and Trade Buzz",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-midweek-report-offensive-concerns-matthew-stafford-arm-soreness-trade-rumors",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Rams have a concerning offensive trend to fix as Matthew Stafford deals with an elbow injury and the NFL trade deadline approaches.",
+      "categories": [],
+      "published_at": "2026-11-06T01:55:57+00:00",
+      "players": [
+        {
+          "id": "00-0026498",
+          "name": "Matthew Stafford",
+          "team": "LAR",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "c335c1c38f8bd1492f64",
+      "headline": "Chargers Injury Report: Kayode Awosika continues path back to field on Thursday",
+      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/66825/chargers-injury-report-texans-kayode-awosika-brenen-thompson",
+      "source_id": "news_sbn_lac",
+      "source": "Bolts From The Blue (SB Nation)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "Starting left guard Kayode Awosika, who hasn\u2019t played since being injured in Week Two, logged his second limited practice session of the week on Thursday and looks poised to return to the field against the Texans on Sunday. Awosika played well in his 1+ games to begin the season and his presence should be a [\u2026]",
+      "categories": [
+        "Chargers Injury Reports",
+        "Los Angeles Chargers Injuries"
+      ],
+      "published_at": "2026-11-06T01:17:18+00:00",
+      "players": []
+    },
+    {
+      "id": "76e4f789508028dcfb5b",
+      "headline": "17 Seahawks Appear on Second Week 9 Injury Report vs. Cardinals",
+      "url": "https://www.si.com/nfl/seahawks/onsi/17-seahawks-appear-on-second-week-9-injury-report-vs-cardinals",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks have a busy list of players for their injury report ahead of Week 9.",
+      "categories": [],
+      "published_at": "2026-11-06T01:07:24+00:00",
+      "players": []
+    },
+    {
+      "id": "0f185df4031f45c05465",
+      "headline": "Packers Injury Report: Keisean Nixon, MarShawn Lloyd downgraded on Thursday",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/89235/packers-injury-report-keisean-nixon-marshawn-lloyd-downgraded-on-thursday",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The Green Bay Packers held a padded practice inside the Don Hutson Center today, where they were a little more banged up than initially thought. After being a full participant on Wednesday with no injury status, running back MarShawn Lloyd appeared on the injury report on Thursday with a knee and was given \u201climited participant\u201d [\u2026]",
+      "categories": [
+        "Green Bay Packers injuries",
+        "Green Bay Packers News"
+      ],
+      "published_at": "2026-11-06T00:54:57+00:00",
+      "players": [
+        {
+          "id": "00-0039811",
+          "name": "MarShawn Lloyd",
+          "team": "GB",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "c0330e15ff39c0bae301",
       "headline": "Week 9 Injury Report: Cardinals at Seahawks",
@@ -686,7 +803,7 @@
       "teams": [
         "NO"
       ],
-      "feed_description": "The New Orleans Saints have wrapped up their 2nd practice ahead of their Week 9 matchup at home against the Cleveland Browns on Sunday, November 8 in Caesars Superdome. So, where do things stand following Wednesday\u2019s workout? Let\u2019s take a look at which Saints players were limited and did not participate in today\u2019s session. New [\u2026]",
+      "feed_description": "The New Orleans Saints have wrapped up their 2nd practice ahead of their Week 9 matchup at home against the Cleveland Browns on Sunday, November 8 in Caesars Superdome. So, where do things stand following Thursday\u2019s workout? Let\u2019s take a look at which Saints players were limited and did not participate in today\u2019s session. New [\u2026]",
       "categories": [
         "New Orleans Saints Game Information",
         "New Orleans Saints Injuries",
@@ -746,7 +863,7 @@
       "teams": [
         "WAS"
       ],
-      "feed_description": "The Commanders need reinforcements along the defensive line, like, in the worst possible way. Daron Payne is done for the season. Javon Kinlaw\u2019s also on injured reserve. That\u2019s why the fact that Johnny Newton practiced in full for a second straight day. He\u2019s working to come off injured reserve, with his 21-day practice window opened [\u2026]",
+      "feed_description": "The Commanders need reinforcements along the defensive line, like, in the worst possible way. Daron Payne is done for the season. Javon Kinlaw\u2019s also on injured reserve. That\u2019s why the fact that Johnny Newton practiced in full for a second straight day matters so much. He\u2019s working to come off injured reserve, with his 21-day [\u2026]",
       "categories": [
         "Washington Commanders Injuries"
       ],
@@ -825,6 +942,36 @@
           "name": "Kyler Murray",
           "team": "MIN",
           "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "319b6214eab49fc70355",
+      "headline": "49ers injury updates: Christian Kirk doesn\u2019t practice on Thursday",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/165284/49ers-injury-updates-christian-kirk-doesnt-practice-on-thursday",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers injury report is out for Thursday. As usual, Trent Williams returned to practice after a veteran\u2019s day off. Christian McCaffrey participated on a limited basis. McCaffrey didn\u2019t practice Wednesday, but it wasn\u2019t because of a rest day, so it\u2019s good to see McCaffrey return to practice after dealing with a hamstring [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries",
+        "San Francisco 49ers Roster"
+      ],
+      "published_at": "2026-11-05T23:11:13+00:00",
+      "players": [
+        {
+          "id": "00-0033280",
+          "name": "Christian McCaffrey",
+          "team": "SF",
+          "position": "RB"
+        },
+        {
+          "id": "00-0034775",
+          "name": "Christian Kirk",
+          "team": "SF",
+          "position": "WR"
         }
       ]
     },
@@ -2572,20 +2719,24 @@
     },
     {
       "id": "0e96fe28b01ddf0a5836",
-      "headline": "From the Podium: Sean McVay and Matthew Stafford speak on impact of injuries heading into Rams' matchup with Commanders",
+      "headline": "From the Podium: Sean McVay, Matthew Stafford, Aaron Donald, Puka Nacua and coordinators speak on impact of injuries heading into Rams' matchup with Commanders",
       "url": "https://www.therams.com/news/from-the-podium-rams-head-coach-sean-mcvay-quarterback-matthew-stafford-coordinators-wide-receiver-puka-nacua-defensive-end-aaron-donald-preview-matchup-with-commanders",
       "source_id": "news_official_lar",
       "source": "Los Angeles Rams (official)",
       "teams": [
         "LAR"
       ],
-      "feed_description": "Rams head coach Sean McVay and quarterback Matthew Stafford talked about various players going out and coming back with injuries heading into the Week 9 matchup against the Commanders.",
+      "feed_description": "Rams head coach Sean McVay, quarterback Matthew Stafford, defensive end Aaron Donald, wide receiver Puka Nacua and coordinators talked about various players going out and coming back with injuries heading into the Week 9 matchup against the Commanders.",
       "categories": [
         "From the Podium",
         "Football",
         "Los Angeles Rams at Washington Commanders (2026-REG-9)",
         "Sean McVay",
-        "Matthew Stafford"
+        "Matthew Stafford",
+        "Nate Scheelhaase",
+        "Chris Shula",
+        "Aaron Donald",
+        "Puka Nacua"
       ],
       "published_at": "2026-11-05T00:02:59+00:00",
       "players": [
@@ -2594,6 +2745,12 @@
           "name": "Matthew Stafford",
           "team": "LAR",
           "position": "QB"
+        },
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
         }
       ]
     },
@@ -3861,138 +4018,6 @@
           "name": "Antonio Williams",
           "team": "WAS",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "ebed81b325164bf48279",
-      "headline": "Rams May Have Answer to Return Game Struggles in Preseason Standout",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-brennan-presley-return-game-struggles",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Los Angeles Rams need a new punt returner after releasing Alex Bachman. Could preseason standout Brennan Presley be the answer?",
-      "categories": [],
-      "published_at": "2026-11-04T17:53:21+00:00",
-      "players": [
-        {
-          "id": "00-0040597",
-          "name": "Brennan Presley",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "c2a161767057ecb7e0f6",
-      "headline": "Emeka Egbuka Injury Update: Latest on Bucs WR After Missing Another Practice",
-      "url": "https://www.si.com/nfl/buccaneers/onsi/emeka-egbuka-injury-update-latest-on-bucs-wr-after-missing-another-practice-2026",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "TB"
-      ],
-      "feed_description": "The Tampa Bay Buccaneers could be missing a key wideout against the Chicago Bears.",
-      "categories": [],
-      "published_at": "2026-11-04T17:36:23+00:00",
-      "players": [
-        {
-          "id": "00-0040129",
-          "name": "Emeka Egbuka",
-          "team": "TB",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "d405ff8883edf009820b",
-      "headline": "Dylan Laube honored for TD kick return",
-      "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/145062/raiders-news-dylan-laube-afc-special-twams-player-week",
-      "source_id": "news_sbn_lv",
-      "source": "Silver And Black Pride (SB Nation)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "In an expected move, Las Vegas Raiders backup running back and returner Dylan Laube was named the AFC Special Teams Player of the Week for his performance in their 38-33 victory at the New York Jets on Sunday in Week 8. Laube, a third-year player, had a 95 yard kickoff return for a touchdown in [\u2026]",
-      "categories": [
-        "Las Vegas Raiders News"
-      ],
-      "published_at": "2026-11-04T17:09:21+00:00",
-      "players": [
-        {
-          "id": "00-0039407",
-          "name": "Dylan Laube",
-          "team": "LV",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "8a476df9c736842b3fb5",
-      "headline": "RB Dylan Laube named AFC Special Teams Player of the Week",
-      "url": "https://www.raiders.com/news/rb-dylan-laube-named-afc-special-teams-player-of-the-week",
-      "source_id": "news_official_lv",
-      "source": "Las Vegas Raiders (official)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "The Raiders' running back receives the honor following his 95-yard kickoff return for a touchdown against the New York Jets in Week 8.",
-      "categories": [
-        "Home Centerpiece",
-        "Home Latest Stories",
-        "Dylan Laube"
-      ],
-      "published_at": "2026-11-04T17:00:29+00:00",
-      "players": [
-        {
-          "id": "00-0039407",
-          "name": "Dylan Laube",
-          "team": "LV",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "14032cc8c68b21a37ea5",
-      "headline": "Bengals Injury Report: DJ Turner's Opening Projected Practice Status Revealed in Madrid",
-      "url": "https://www.si.com/nfl/bengals/onsi/bengals-injury-report-dj-turner-s-opening-projected-practice-status-revealed-in-madrid-01m6kdtgqv51",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "Bengals Injury Report: DJ Turner's Opening Projected Practice Status Revealed in Madrid",
-      "categories": [],
-      "published_at": "2026-11-04T16:56:08+00:00",
-      "players": []
-    },
-    {
-      "id": "74ebad13c8809ca82c0a",
-      "headline": "Panthers may be preparing to make a bold statement about Bryce Young with rumored extension talks reaching a new level",
-      "url": "https://atozsports.com/nfl/carolina-panthers-news/panthers-bryce-young-extension-talks-heating-up-50-million-per-year/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The extension talks between the Carolina Panthers and quarterback Bryce Young are starting to heat up and reportedly the deal could reach over $50 million per year, putting Young in great company.",
-      "categories": [
-        "Carolina Panthers News",
-        "NFL",
-        "Bryce Young",
-        "Dave Canales",
-        "David Tepper",
-        "Panthers News"
-      ],
-      "published_at": "2026-11-04T16:11:40+00:00",
-      "players": [
-        {
-          "id": "00-0039150",
-          "name": "Bryce Young",
-          "team": "CAR",
-          "position": "QB"
         }
       ]
     }
