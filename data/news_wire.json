@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T02:25:02.007660+00:00",
+  "updated_at": "2026-11-06T03:00:48.713609+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-06T02:23:22+00:00",
+      "latest_entry_at": "2026-11-06T02:46:45+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-06T02:23:22+00:00",
+      "latest_entry_at": "2026-11-06T02:46:45+00:00",
       "stale": false
     },
     {
@@ -300,9 +300,9 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 0,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T13:56:17+00:00",
+      "latest_entry_at": "2026-11-06T01:48:53+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-05T23:39:17+00:00",
+      "latest_entry_at": "2026-11-06T01:00:00+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-05T12:08:00+00:00",
+      "latest_entry_at": "2026-11-05T15:00:00+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-04T17:30:09+00:00",
+      "latest_entry_at": "2026-11-05T14:30:00+00:00",
       "stale": false
     },
     {
@@ -462,15 +462,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T01:00:00+00:00",
+      "latest_entry_at": "2026-11-06T02:58:18+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-05T18:46:34+00:00",
+      "latest_entry_at": "2026-11-05T23:30:00+00:00",
       "stale": false
     },
     {
@@ -556,6 +556,27 @@
   ],
   "items": [
     {
+      "id": "3f24af1eeae9ab4b537b",
+      "headline": "Saints-Browns Injury Report: Key Offensive Players Progressing Ahead of Week 10",
+      "url": "https://www.si.com/nfl/saints/onsi/saints-browns-injury-report-key-offensive-players-progressing-ahead-of-week-10-01m6q3jka3c4",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "Kelvin Banks Jr. and Jordyn Tyson remained limited, and Browns quarterback Deshaun Watson missed another session while in concussion protocol.",
+      "categories": [],
+      "published_at": "2026-11-06T02:31:41+00:00",
+      "players": [
+        {
+          "id": "00-0041029",
+          "name": "Jordyn Tyson",
+          "team": "NO",
+          "position": "WR"
+        }
+      ]
+    },
+    {
       "id": "5e2532149ee0ec39ecaa",
       "headline": "Eagles Injury Report: Saquon Barkley upgraded to limited",
       "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/189530/eagles-injury-report-saquon-barkley-upgraded-to-limited",
@@ -616,6 +637,22 @@
           "position": "QB"
         }
       ]
+    },
+    {
+      "id": "a3441b14078868a1a0dc",
+      "headline": "Buffalo Bills Injury Report: Dee Alford, Spencer Brown Return",
+      "url": "https://www.buffalorumblings.com/buffalo-bills-injuries/144612/buffalo-bills-injury-report-dee-alford-spencer-brown-return",
+      "source_id": "news_sbn_buf",
+      "source": "Buffalo Rumblings (SB Nation)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills got an extra day of rest as they headed into Week 9 coming off a win over the Baltimore Ravens. With Week 9\u2019s game against the Minnesota Vikings scheduled for Monday night, the Bills didn\u2019t have an official on-the-books practice until today. And it may have helped things on the injury [\u2026]",
+      "categories": [
+        "Buffalo Bills Injuries"
+      ],
+      "published_at": "2026-11-06T01:48:53+00:00",
+      "players": []
     },
     {
       "id": "c335c1c38f8bd1492f64",
@@ -782,7 +819,7 @@
         "Jacksonville Jaguars at Baltimore Ravens (2026-REG-9)",
         "Nate Wiggins",
         "inline-news",
-        "Homepage Centerpiece"
+        "Homepage Latest Headlines"
       ],
       "published_at": "2026-11-06T00:08:18+00:00",
       "players": [
@@ -3973,51 +4010,6 @@
           "name": "Tyler Huntley",
           "team": "BAL",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "b9ee246e83f3b4743fb6",
-      "headline": "Jeremiyah Love Joins Troubling Cardinals Trend Among Recent Draft Picks",
-      "url": "https://www.si.com/nfl/cardinals/onsi/jeremiyah-love-joins-troubling-arizona-cardinals-trend-among-recent-draft-picks",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "Jeremiyah Love's latest ankle injury only places him in line with other Arizona Cardinals top picks.",
-      "categories": [],
-      "published_at": "2026-11-04T18:16:13+00:00",
-      "players": [
-        {
-          "id": "00-0041027",
-          "name": "Jeremiyah Love",
-          "team": "ARI",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "bf7c31d2109013299b30",
-      "headline": "Dan Quinn: None of the moments were too big for rookies Antonio Williams, Sonny Styles",
-      "url": "https://www.hogshaven.com/pressers/453231/dan-quinn-none-of-the-moments-were-too-big-for-rookies-antonio-williams-sonny-styles",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Washington Commanders are back at practice after a win, and unfortunately that\u2019s only the second time I\u2019ve been able to write that sentence that season and it\u2019s Week 9. In most other seasons that would mean the mock drafts/coaching searches were weekly features instead of playoff scenarios. This is not most other seasons, and [\u2026]",
-      "categories": [
-        "Pressers",
-        "Washington Commanders News"
-      ],
-      "published_at": "2026-11-04T18:09:40+00:00",
-      "players": [
-        {
-          "id": "00-0041040",
-          "name": "Antonio Williams",
-          "team": "WAS",
-          "position": "WR"
         }
       ]
     }
