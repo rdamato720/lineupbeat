@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T03:00:48.713609+00:00",
+  "updated_at": "2026-11-06T05:00:48.471290+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-06T02:46:45+00:00",
+      "latest_entry_at": "2026-11-06T05:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T00:40:02+00:00",
+      "latest_entry_at": "2026-11-06T04:24:34+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 12,
       "error": "",
-      "latest_entry_at": "2026-11-06T00:08:18+00:00",
+      "latest_entry_at": "2026-11-06T04:16:07+00:00",
       "stale": false
     },
     {
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T23:46:09+00:00",
+      "latest_entry_at": "2026-11-06T04:12:49+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-06T00:00:00+00:00",
+      "latest_entry_at": "2026-11-06T00:05:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-06T02:46:45+00:00",
+      "latest_entry_at": "2026-11-06T05:00:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-06T01:00:00+00:00",
+      "latest_entry_at": "2026-11-06T04:20:07+00:00",
       "stale": false
     },
     {
@@ -420,33 +420,33 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T01:17:18+00:00",
+      "latest_entry_at": "2026-11-05T15:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T01:00:00+00:00",
+      "latest_entry_at": "2026-11-05T18:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T00:01:00+00:00",
+      "latest_entry_at": "2026-11-05T23:34:49+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-06T02:05:28+00:00",
+      "latest_entry_at": "2026-11-05T19:51:06+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T00:22:38+00:00",
+      "latest_entry_at": "2026-11-05T21:30:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T23:11:13+00:00",
+      "latest_entry_at": "2026-11-06T03:17:24+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,62 @@
     }
   ],
   "items": [
+    {
+      "id": "14eb7759f846eac8d626",
+      "headline": "Commanders News: Myles Garrett Could Join Aaron Donald as Washington Fights Costly False Starts | Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-garrett-donald-false-starts",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Myles Garrett could return alongside Aaron Donald as Washington tries to fix its false starts. Treylon Burks missed another practice before the Rams game.",
+      "categories": [],
+      "published_at": "2026-11-06T03:40:45+00:00",
+      "players": [
+        {
+          "id": "00-0037742",
+          "name": "Treylon Burks",
+          "team": "WAS",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "5a3ec39247176b7f3e90",
+      "headline": "How Many Games Could Seahawks QB Sam Darnold Miss Due to Injury?",
+      "url": "https://www.si.com/nfl/seahawks/onsi/how-many-games-could-seahawks-qb-sam-darnold-miss-due-to-injury",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Sam Darnold is on the injury report with a quad and rib injury, ruling him out of the Seattle Seahawks' Week 9 contest against the Arizona Cardinals.",
+      "categories": [],
+      "published_at": "2026-11-06T03:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "92225804a431f4d10acd",
+      "headline": "Broncos' Week 9 Injury Report: S Brandon Jones Trending Toward Inactive",
+      "url": "https://www.si.com/nfl/broncos/onsi/brandon-jones-hamstring-dnp-broncos-injury-report",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Broncos could be without a few defenders on Sunday.",
+      "categories": [],
+      "published_at": "2026-11-06T03:07:54+00:00",
+      "players": []
+    },
     {
       "id": "3f24af1eeae9ab4b537b",
       "headline": "Saints-Browns Injury Report: Key Offensive Players Progressing Ahead of Week 10",
@@ -832,6 +888,27 @@
       ]
     },
     {
+      "id": "d6068c52dff61b5d0522",
+      "headline": "Chargers vs. Texans Injury Report: Njoku & Awosika Limited on Thursday Ahead of Week 9",
+      "url": "https://www.chargers.com/news/texans-injury-report-week-9-david-njoku",
+      "source_id": "news_official_lac",
+      "source": "Los Angeles Chargers (official)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "Take a look at the Chargers Injury Report ahead of Week 9 against the Texans",
+      "categories": [
+        "Articles: Injury Report",
+        "Homepage: CP",
+        "Homepage: Headlines",
+        "App: Homepage",
+        "Houston Texans at Los Angeles Chargers (2026-REG-9)",
+        "2026-REG-9-EDITORIAL"
+      ],
+      "published_at": "2026-11-06T00:05:00+00:00",
+      "players": []
+    },
+    {
       "id": "5218322396d58078a84d",
       "headline": "Thursday\u2019s Saints vs. Browns Injury Report: RB CJ Donaldson did not practice",
       "url": "https://www.canalstreetchronicles.com/new-orleans-saints-injuries/117433/thursdays-saints-vs-browns-injury-report-rb-cj-donaldson-did-not-practice",
@@ -855,27 +932,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "d6068c52dff61b5d0522",
-      "headline": "Chargers vs. Texans Injury Report: Njoku & Awosika Limited on Thursday Ahead of Week 9",
-      "url": "https://www.chargers.com/news/texans-injury-report-week-9-david-njoku",
-      "source_id": "news_official_lac",
-      "source": "Los Angeles Chargers (official)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "Take a look at the Chargers Injury Report ahead of Week 9 against the Texans",
-      "categories": [
-        "Articles: Injury Report",
-        "Homepage: CP",
-        "Homepage: Headlines",
-        "App: Homepage",
-        "Houston Texans at Los Angeles Chargers (2026-REG-9)",
-        "2026-REG-9-EDITORIAL"
-      ],
-      "published_at": "2026-11-05T23:55:00+00:00",
-      "players": []
     },
     {
       "id": "98508d6b60c14a469941",
@@ -3935,81 +3991,6 @@
           "name": "Mack Hollins",
           "team": "NE",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "78bdda803e1739f390c6",
-      "headline": "Sam Darnold ruled out of Week 9 vs. Cardinals, Drew Lock returns to starting lineup",
-      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/179099/seahawks-sam-darnold-ruled-out-week-9-vs-cardinals-drew-lock-returns",
-      "source_id": "news_sbn_sea",
-      "source": "Field Gulls (SB Nation)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Once again, the Seattle Seahawks will be without starting quarterback Sam Darnold before they play the Arizona Cardinals. Back in Week 2, Darnold missed Seattle\u2019s 31-7 win over Arizona with a glute injury. Ahead of their Week 9 rematch at Lumen Field, Darnold will once again be out, but with a new set of injuries. [\u2026]",
-      "categories": [
-        "Seattle Seahawks Injuries",
-        "Seattle Seahawks News"
-      ],
-      "published_at": "2026-11-04T19:09:02+00:00",
-      "players": [
-        {
-          "id": "00-0034869",
-          "name": "Sam Darnold",
-          "team": "SEA",
-          "position": "QB"
-        },
-        {
-          "id": "00-0035704",
-          "name": "Drew Lock",
-          "team": "SEA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "b8466c039edad044cd53",
-      "headline": "Browns fill final 2 roster spots, including adding a running back",
-      "url": "https://www.dawgsbynature.com/cleveland-browns-news/137023/browns-fill-final-2-roster-spots-hassan-haskins-carsen-ryan",
-      "source_id": "news_sbn_cle",
-      "source": "Dawgs By Nature (SB Nation)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "As the Cleveland Browns start practice for Week 9 against the New Orleans Saints, the roster is going to get a lot of attention, especially given QB Deshaun Watson\u2019s concussion protocol. On Tuesday, GM Andrew Berry made seven moves related to the practice squad, along with waiving RB Audric Estime on Monday, which left the [\u2026]",
-      "categories": [
-        "Cleveland Browns News",
-        "Cleveland Browns Roster"
-      ],
-      "published_at": "2026-11-04T18:32:24+00:00",
-      "players": [
-        {
-          "id": "00-0033537",
-          "name": "Deshaun Watson",
-          "team": "CLE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "467af58c5b46078184a8",
-      "headline": "Tests Reveal Ravens QB Tyler Huntley Suffered Season-Ending Toe Injury",
-      "url": "https://www.si.com/nfl/ravens/onsi/tests-reveal-ravens-qb-tyler-huntley-suffered-season-ending-toe-injury-01m6kdq35sw2",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Baltimore Ravens' former Pro Bowl reserve reportedly won't be coming back this season.",
-      "categories": [],
-      "published_at": "2026-11-04T18:31:04+00:00",
-      "players": [
-        {
-          "id": "00-0035993",
-          "name": "Tyler Huntley",
-          "team": "BAL",
-          "position": "QB"
         }
       ]
     }
