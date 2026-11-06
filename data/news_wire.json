@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T22:24:05.093994+00:00",
+  "updated_at": "2026-11-06T23:00:47.536401+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:09:54+00:00",
+      "latest_entry_at": "2026-11-06T22:39:22+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:21:54+00:00",
+      "latest_entry_at": "2026-11-06T22:35:58+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:00:43+00:00",
+      "latest_entry_at": "2026-11-06T22:23:29+00:00",
       "stale": false
     },
     {
@@ -158,7 +158,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:15:11+00:00",
+      "latest_entry_at": "2026-11-06T22:26:57+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:30:00+00:00",
+      "latest_entry_at": "2026-11-06T22:00:00+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:19:26+00:00",
+      "latest_entry_at": "2026-11-06T22:50:00+00:00",
       "stale": false
     },
     {
@@ -286,23 +286,23 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:09:54+00:00",
+      "latest_entry_at": "2026-11-06T22:39:22+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:21:54+00:00",
+      "latest_entry_at": "2026-11-06T22:35:58+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T18:11:36+00:00",
+      "latest_entry_at": "2026-11-06T14:00:00+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-06T20:11:57+00:00",
+      "latest_entry_at": "2026-11-06T21:38:03+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-06T20:38:45+00:00",
+      "latest_entry_at": "2026-11-06T19:21:20+00:00",
       "stale": false
     },
     {
@@ -396,17 +396,17 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 2,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:12:38+00:00",
+      "latest_entry_at": "2026-11-06T13:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_kc",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:00:00+00:00",
+      "latest_entry_at": "2026-11-06T23:00:00+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:35:02+00:00",
+      "latest_entry_at": "2026-11-05T15:00:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:03:45+00:00",
+      "latest_entry_at": "2026-11-06T16:00:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:15:50+00:00",
+      "latest_entry_at": "2026-11-06T02:05:28+00:00",
       "stale": false
     },
     {
@@ -454,15 +454,15 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:08:48+00:00",
+      "latest_entry_at": "2026-11-06T15:35:04+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:40:00+00:00",
+      "latest_entry_at": "2026-11-06T11:00:00+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-06T14:25:54+00:00",
+      "latest_entry_at": "2026-11-06T22:47:32+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:06:07+00:00",
+      "latest_entry_at": "2026-11-06T23:00:00+00:00",
       "stale": false
     },
     {
@@ -518,15 +518,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T11:55:18+00:00",
+      "latest_entry_at": "2026-11-06T22:46:50+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ari",
       "ok": true,
-      "eligible": 2,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-06T19:47:58+00:00",
+      "latest_entry_at": "2026-11-05T20:49:42+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:01:31+00:00",
+      "latest_entry_at": "2026-11-06T10:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,83 @@
     }
   ],
   "items": [
+    {
+      "id": "364a259fb18340d8938e",
+      "headline": "Raiders-49ers Week 9 Injury Report: Thomas Booker ruled Out, Darien Porter questionable for Sunday",
+      "url": "https://www.raiders.com/news/raiders-49ers-week-9-injury-report",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the San Francisco 49ers.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Injury Report",
+        "Las Vegas Raiders at San Francisco 49ers (2026-REG-9)"
+      ],
+      "published_at": "2026-11-06T22:50:00+00:00",
+      "players": []
+    },
+    {
+      "id": "aab11082ab5dcc82416f",
+      "headline": "Vikings-Bills Second Injury Report",
+      "url": "https://www.dailynorseman.com/minnesota-vikings-injuries/101252/vikings-bills-second-injury-report",
+      "source_id": "news_sbn_min",
+      "source": "Daily Norseman (SB Nation)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "The Minnesota Vikings and Buffalo Bills released their second injury reports in advance of their Monday Night Football matchup at U.S. Bank Stadium. Here they are: Minnesota Vikings Buffalo Bills Injury Report Terms and Glossary Injury designation definitions: Probable = the league defines a Probable injury designation as a 75% or greater chance of playing. [\u2026]",
+      "categories": [
+        "Minnesota Vikings Injuries"
+      ],
+      "published_at": "2026-11-06T22:47:32+00:00",
+      "players": []
+    },
+    {
+      "id": "ef5659ac491e87c6ff38",
+      "headline": "Texans Final Injury Report for Week 9 vs. Chargers: Who's In, Who's Out",
+      "url": "https://www.si.com/nfl/texans/onsi/texans-final-injury-report-for-week-9-vs-chargers-who-s-in-who-s-out",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "A look at the latest on the Houston Texans' Week 9 injury report against the LA Chargers.",
+      "categories": [],
+      "published_at": "2026-11-06T22:39:22+00:00",
+      "players": []
+    },
+    {
+      "id": "7293ee5f4d0bdae12a62",
+      "headline": "Seahawks Injury Report Paints a Troubling Picture for Many Players",
+      "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-injury-report-paints-troubling-picture-many-players",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Friday\u2019s injury report made it official, the Seattle Seahawks will be heavily undermanned going into their must-win game against the Arizona Cardinals.",
+      "categories": [],
+      "published_at": "2026-11-06T22:31:52+00:00",
+      "players": []
+    },
+    {
+      "id": "3cd59646cbe736c8d00c",
+      "headline": "Broncos' Week 9 Injury Report: Final Decisions on Jones, Uwazurike",
+      "url": "https://www.si.com/nfl/broncos/onsi/broncos-rule-out-brandon-jones-uwazurike-draine",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The Broncos will be without some defensive firepower against Carolina.",
+      "categories": [],
+      "published_at": "2026-11-06T22:21:56+00:00",
+      "players": []
+    },
     {
       "id": "2810af6713f0113ecc51",
       "headline": "Broncos release S Taylor Rapp, but he will re-sign to the practice squad tomorrow",
@@ -726,6 +803,30 @@
           "name": "Kyle Monangai",
           "team": "CHI",
           "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "f20923c96c0beab0ce67",
+      "headline": "Patriots vs. Packers Friday injury report: Hunter Henry among seven questionable",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/143256/patriots-vs-packers-friday-injury-report-hunter-henry-among-seven-questionable",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots held their final practice on Friday before their Week 9 game against the Green Bay Packers. Inside the Field House, tight end Hunter Henry made his first appearance of the week while cornerback Marcus Jones also returned to the field. Jones will enter Sunday\u2019s game with no game designation in addition [\u2026]",
+      "categories": [
+        "New England Patriots Injuries",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-11-06T21:38:03+00:00",
+      "players": [
+        {
+          "id": "00-0033090",
+          "name": "Hunter Henry",
+          "team": "NE",
+          "position": "TE"
         }
       ]
     },
@@ -2422,25 +2523,6 @@
       "players": []
     },
     {
-      "id": "364a259fb18340d8938e",
-      "headline": "Raiders-49ers Week 9 Injury Report",
-      "url": "https://www.raiders.com/news/raiders-49ers-week-9-injury-report",
-      "source_id": "news_official_lv",
-      "source": "Las Vegas Raiders (official)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the San Francisco 49ers.",
-      "categories": [
-        "Home Centerpiece",
-        "Home Latest Stories",
-        "News - Injury Report",
-        "Las Vegas Raiders at San Francisco 49ers (2026-REG-9)"
-      ],
-      "published_at": "2026-11-05T22:40:00+00:00",
-      "players": []
-    },
-    {
       "id": "2180df2091d5eb03f2d2",
       "headline": "Commanders Mailbag: Is Luke McCaffrey Being Overlooked? Did Dan Quinn Win Back Trust?",
       "url": "https://www.si.com/nfl/commanders/onsi/commanders-mailbag-luke-mccaffrey-dan-quinn",
@@ -3833,139 +3915,6 @@
           "id": "00-0037742",
           "name": "Treylon Burks",
           "team": "WAS",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "033b86af12a7644318a6",
-      "headline": "Rams Injury Report: Myles Garrett Returns, But Bad News Continues to Pile Up",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-injury-report-myles-garrett-jaylen-watson-week-9",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Rams received good news on Myles Garrett and Terrance Ferguson, but Jaylen Watson is out for the season as more injuries pile up ahead of Week 9.",
-      "categories": [],
-      "published_at": "2026-11-05T01:03:21+00:00",
-      "players": [
-        {
-          "id": "00-0040737",
-          "name": "Terrance Ferguson",
-          "team": "LAR",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "11acfbd8fe53a7fd988c",
-      "headline": "Commanders vs. Rams Wednesday injury report: Treylon Burks held out",
-      "url": "https://www.hogshaven.com/washington-commanders-injuries/453362/commanders-vs-rams-wednesday-injury-report-treylon-burks-held-out",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Commanders need Treylon Burks more than ever. Terry McLaurin is done for the year and Washington needs someone in the X position. Burks is the natural fit. Not having him pushes Dyami Brown to that spot, and that\u2019s not what you want. You also don\u2019t want Antonio Williams out there. You\u2019d rather have him [\u2026]",
-      "categories": [
-        "Washington Commanders Injuries"
-      ],
-      "published_at": "2026-11-05T00:38:51+00:00",
-      "players": [
-        {
-          "id": "00-0035659",
-          "name": "Terry McLaurin",
-          "team": "WAS",
-          "position": "WR"
-        },
-        {
-          "id": "00-0036626",
-          "name": "Dyami Brown",
-          "team": "WAS",
-          "position": "WR"
-        },
-        {
-          "id": "00-0037742",
-          "name": "Treylon Burks",
-          "team": "WAS",
-          "position": "WR"
-        },
-        {
-          "id": "00-0041040",
-          "name": "Antonio Williams",
-          "team": "WAS",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "f7142677c477e053a24d",
-      "headline": "Rookie receiver Jordyn Tyson focused on making NFL debut with New Orleans Saints",
-      "url": "https://www.neworleanssaints.com/news/rookie-receiver-jordyn-tyson-focused-on-making-nfl-debut-with-new-orleans-saints",
-      "source_id": "news_official_no",
-      "source": "New Orleans Saints (official)",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "The first-round draft pick appeared in limited practice on Wednesday for the first time since August",
-      "categories": [
-        "Latest News",
-        "News - John DeShazier",
-        "Roster",
-        "Jordyn Tyson"
-      ],
-      "published_at": "2026-11-05T00:29:59+00:00",
-      "players": [
-        {
-          "id": "00-0041029",
-          "name": "Jordyn Tyson",
-          "team": "NO",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "c08c1422ae28e036df87",
-      "headline": "Browns, Saints injuries: NO reinforcements; big CLE weapon added to list (Video)",
-      "url": "https://www.dawgsbynature.com/cleveland-browns-news/137089/browns-saints-injuries-denzel-boston-jordyn-tyson-deshaun-watson-kelvin-banks",
-      "source_id": "news_sbn_cle",
-      "source": "Dawgs By Nature (SB Nation)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "\u201cOh when the (Cleveland) Browns go marching in\u2026\u201d doesn\u2019t have the right ring to it, but the team from northern Ohio will indeed head down to Louisiana to face the New Orleans Saints in Week 9. All of a sudden on Wednesday, word came that the Browns are preparing to start QB Shedeur Sanders due [\u2026]",
-      "categories": [
-        "Cleveland Browns Injuries",
-        "Cleveland Browns News"
-      ],
-      "published_at": "2026-11-05T00:22:16+00:00",
-      "players": [
-        {
-          "id": "00-0040668",
-          "name": "Shedeur Sanders",
-          "team": "CLE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "2b37097492a99add1e1d",
-      "headline": "Broncos' Week 9 Injury Report: WR Pat Bryant Gearing Up for Return",
-      "url": "https://www.si.com/nfl/broncos/onsi/pat-bryant-return-ir-injury-report-panthers",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "Bryant has missed the last four games with an ankle injury.",
-      "categories": [],
-      "published_at": "2026-11-05T00:05:59+00:00",
-      "players": [
-        {
-          "id": "00-0040134",
-          "name": "Pat Bryant",
-          "team": "DEN",
           "position": "WR"
         }
       ]
