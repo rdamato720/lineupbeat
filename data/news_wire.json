@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T03:01:07.142251+00:00",
+  "updated_at": "2026-11-07T05:00:49.559781+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T03:00:00+00:00",
+      "latest_entry_at": "2026-11-07T04:45:08+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T02:38:36+00:00",
+      "latest_entry_at": "2026-11-07T03:14:38+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:38:24+00:00",
+      "latest_entry_at": "2026-11-07T03:18:06+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T03:00:00+00:00",
+      "latest_entry_at": "2026-11-07T04:45:08+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T02:38:36+00:00",
+      "latest_entry_at": "2026-11-07T03:14:38+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T01:00:00+00:00",
+      "latest_entry_at": "2026-11-06T00:15:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T12:05:00+00:00",
+      "latest_entry_at": "2026-11-06T18:38:07+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T02:10:48+00:00",
+      "latest_entry_at": "2026-11-06T04:20:07+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-07T00:21:14+00:00",
+      "latest_entry_at": "2026-11-06T21:45:00+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:12:38+00:00",
+      "latest_entry_at": "2026-11-06T00:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T23:00:00+00:00",
+      "latest_entry_at": "2026-11-05T13:00:00+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T16:34:43+00:00",
+      "latest_entry_at": "2026-11-07T02:34:10+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T23:00:00+00:00",
+      "latest_entry_at": "2026-11-06T21:06:07+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:37:39+00:00",
+      "latest_entry_at": "2026-11-04T22:13:03+00:00",
       "stale": false
     },
     {
@@ -524,9 +524,9 @@
     {
       "source_id": "news_sbn_ari",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-06T19:47:58+00:00",
+      "latest_entry_at": "2026-11-06T16:31:01+00:00",
       "stale": false
     },
     {
@@ -540,21 +540,45 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-07T00:14:06+00:00",
+      "latest_entry_at": "2026-11-06T22:05:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T00:22:03+00:00",
+      "latest_entry_at": "2026-11-07T03:03:36+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "e9eb5af38e3d338385fb",
+      "headline": "Seahawks release RB Velus Jones Jr., clear spot on active roster",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-news/179296/seahawks-release-rb-velus-jones-jr-clear-spot-active-roster",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Although the Seattle Seahawks remain in the midst of an injury crisis ahead of their crucial Week 9 clash against their division rival Arizona Cardinals, they\u2019ll have some some room to work with after Friday\u2019s roster shuffle. The team announced they released running back Velus Jones Jr. and subsequently re-signed him to their practice squad, [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-11-07T03:03:36+00:00",
+      "players": [
+        {
+          "id": "00-0037745",
+          "name": "Velus Jones Jr.",
+          "team": "SEA",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "3fd0f48cad296300a10d",
       "headline": "Vikings Friday Injury Report: Christian Darrisaw improves, while the Bills have two late additions",
@@ -576,6 +600,35 @@
       ],
       "published_at": "2026-11-07T02:38:36+00:00",
       "players": []
+    },
+    {
+      "id": "b04e942c1c153222a4a7",
+      "headline": "Falcons vs. Bengals injury report: Zachariah Branch, Brian Robinson Jr. ruled out",
+      "url": "https://www.thefalcoholic.com/atlanta-falcons-injuries/98149/falcons-vs-bengals-injury-report-zachariah-branch-brian-robinson-jr-ruled-out",
+      "source_id": "news_sbn_atl",
+      "source": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "Greetings, Falcoholics! Friday is upon us as the Atlanta Falcons and Cincinnati Bengals both held their final practices of the week before facing off in Madrid, Spain on Sunday. We have been monitoring the health of both teams all week, and we finally have some game designations to know who will and will not play [\u2026]",
+      "categories": [
+        "Atlanta Falcons injuries"
+      ],
+      "published_at": "2026-11-07T02:34:10+00:00",
+      "players": [
+        {
+          "id": "00-0037746",
+          "name": "Brian Robinson",
+          "team": "ATL",
+          "position": "RB"
+        },
+        {
+          "id": "00-0041044",
+          "name": "Zachariah Branch",
+          "team": "ATL",
+          "position": "WR"
+        }
+      ]
     },
     {
       "id": "c00103f38e5183b42983",
@@ -3887,53 +3940,6 @@
           "name": "Bryce Young",
           "team": "CAR",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "e2f3d9a381cd569adf57",
-      "headline": "Lions vs. Dolphins injury report: Jaylen Wright does not practice; Jack Campbell update",
-      "url": "https://www.thephinsider.com/miami-dolphins-injuries/124516/detroit-lions-vs-miami-dolphins-injury-report-jaylen-wright-jack-campbell-kadyn-proctor",
-      "source_id": "news_sbn_mia",
-      "source": "The Phinsider (SB Nation)",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "The Miami Dolphins host the Detroit Lions this weekend, hoping to bounce back after a disappointing loss to the New England Patriots last week. Both the Dolphins and Lions released their first injury reports for the week on Wednesday. The Lions, who beat the Minnesota Vikings in Week 8, estimated their injury report after holding [\u2026]",
-      "categories": [
-        "Miami Dolphins Injuries"
-      ],
-      "published_at": "2026-11-05T13:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039874",
-          "name": "Jaylen Wright",
-          "team": "MIA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "a1c67ef36c35ae3101f2",
-      "headline": "Chiefs News: Chiefs bring back rookie return man to practice squad",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-news/215233/chiefs-bring-back-rookie-udfa-return-man-practice-squad",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "On Wednesday, the Kansas City Chiefs reunited with a rookie undrafted free agent who spent time with the team this summer and at training camp. Jacob De Jesus, listed at 5 feet 6 inches, is a backup returner who will monitor the injury report for the Chiefs\u2019 starting returner this week. Download the SB Nation app on [\u2026]",
-      "categories": [
-        "Arrowheadlines",
-        "Kansas City Chiefs News"
-      ],
-      "published_at": "2026-11-05T13:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0040967",
-          "name": "Jacob De Jesus",
-          "team": "KC",
-          "position": "WR"
         }
       ]
     }
