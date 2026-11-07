@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T23:00:55.381368+00:00",
+  "updated_at": "2026-11-07T23:03:10.731576+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T23:00:01+00:00",
+      "latest_entry_at": "2026-11-07T22:52:20+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-07T23:00:01+00:00",
+      "latest_entry_at": "2026-11-07T22:52:20+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T02:08:26+00:00",
+      "latest_entry_at": "2026-11-07T22:25:17+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T21:28:06+00:00",
+      "latest_entry_at": "2026-11-07T02:43:21+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T20:00:00+00:00",
+      "latest_entry_at": "2026-11-07T22:45:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T20:00:00+00:00",
+      "latest_entry_at": "2026-11-07T15:14:35+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T22:00:00+00:00",
+      "latest_entry_at": "2026-11-07T00:00:00+00:00",
       "stale": false
     },
     {
@@ -444,25 +444,25 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-07T19:34:00+00:00",
+      "latest_entry_at": "2026-11-06T22:34:46+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-07T19:09:37+00:00",
+      "latest_entry_at": "2026-11-07T21:38:51+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-07T19:00:00+00:00",
+      "latest_entry_at": "2026-11-07T04:08:48+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T21:12:41+00:00",
+      "latest_entry_at": "2026-11-07T14:45:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-07T10:25:00+00:00",
+      "latest_entry_at": "2026-11-07T22:37:11+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-07T21:46:44+00:00",
+      "latest_entry_at": "2026-11-07T13:00:00+00:00",
       "stale": false
     },
     {
@@ -508,9 +508,9 @@
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-07T13:00:00+00:00",
+      "latest_entry_at": "2026-11-07T19:01:19+00:00",
       "stale": false
     },
     {
@@ -534,15 +534,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T13:59:00+00:00",
+      "latest_entry_at": "2026-11-07T19:15:20+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-07T18:47:58+00:00",
+      "latest_entry_at": "2026-11-07T21:37:25+00:00",
       "stale": false
     },
     {
@@ -629,6 +629,36 @@
       ]
     },
     {
+      "id": "d6cfa366fede009ba558",
+      "headline": "49ers activate Demarcus Robinson, place Christian Kirk on Injured Reserve",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/165359/49ers-activate-demarcus-robinson-place-christian-kirk-on-injured-reserve",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers have made their roster moves in preparation for their game against the Las Vegas Raiders on Sunday. The team announced that they have activated wide receiver Demarcus Robinson. They also removed Robinson\u2019s questionable game status for the Raiders. While there\u2019s some help on the way for the wide receivers, the position [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries",
+        "San Francisco 49ers News"
+      ],
+      "published_at": "2026-11-07T21:37:25+00:00",
+      "players": [
+        {
+          "id": "00-0032775",
+          "name": "Demarcus Robinson",
+          "team": "SF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0034775",
+          "name": "Christian Kirk",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
       "id": "e7d8c423cd4bf59e1e38",
       "headline": "Patriots activate Mack Hollins from injured reserve on eve of Week 9",
       "url": "https://www.patspulpit.com/new-england-patriots-news/143351/patriots-activate-mack-hollins-injured-reserve-week-9-packers",
@@ -700,6 +730,56 @@
           "name": "Pat Bryant",
           "team": "DEN",
           "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "95a7f9d1ef595dd605d4",
+      "headline": "Commanders Roster Moves: Jer\u2019Zhan Newton activated, Dyami Brown to IR",
+      "url": "https://www.hogshaven.com/washington-commanders-roster/452423/washington-commanders-roster-moves-jerzhan-newton-activated-from-ir",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "UPDATE: The Commanders made the Jer\u2019Zhan Newton activation from injured reserve on Saturday afternoon, formally making him available for Sunday\u2019s game against the L.A. Rams. That move was expected after he practiced in full all week leading up to this game. As you can see in the Commanders\u2019 tweet above, that wasn\u2019t the only IR [\u2026]",
+      "categories": [
+        "Washington Commanders Roster"
+      ],
+      "published_at": "2026-11-07T21:15:20+00:00",
+      "players": [
+        {
+          "id": "00-0036626",
+          "name": "Dyami Brown",
+          "team": "WAS",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "45b01074b19625a99ca7",
+      "headline": "3 Things Shedeur Sanders Needs To Do To Take the Browns\u2019 Starting Job From Deshaun Watson",
+      "url": "https://www.si.com/nfl/browns/onsi/3-things-shedeur-sanders-needs-to-do-to-take-the-browns-starting-job-from-deshaun-watson-01m6vq6br7b7",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "The second-year passer's odds aren't great, but there is a path for him to reclaim the starting role in Cleveland.",
+      "categories": [],
+      "published_at": "2026-11-07T21:15:00+00:00",
+      "players": [
+        {
+          "id": "00-0033537",
+          "name": "Deshaun Watson",
+          "team": "CLE",
+          "position": "QB"
+        },
+        {
+          "id": "00-0040668",
+          "name": "Shedeur Sanders",
+          "team": "CLE",
+          "position": "QB"
         }
       ]
     },
@@ -1074,6 +1154,30 @@
           "name": "Drake Dabney",
           "team": "GB",
           "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "d5cb1ad3b929a7847d74",
+      "headline": "Saints release RB Kendre Miller",
+      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-news/117631/saints-release-rb-kendre-miller",
+      "source_id": "news_sbn_no",
+      "source": "Canal Street Chronicles (SB Nation)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "The New Orleans Saints have released running back Kendre Miller, per Nick Underhill. Miller is another casualty of the Saints\u2019 2023 draft class, which now only rosters one player (Bryan Bresee) from the four-year-old class. Through his four-year career, Miller has logged 656 rushing yards and 5 touchdowns while adding another 217 yards as a [\u2026]",
+      "categories": [
+        "New Orleans Saints News",
+        "New Orleans Saints Roster"
+      ],
+      "published_at": "2026-11-07T19:01:19+00:00",
+      "players": [
+        {
+          "id": "00-0038551",
+          "name": "Kendre Miller",
+          "team": "NO",
+          "position": "RB"
         }
       ]
     },
@@ -3886,111 +3990,6 @@
           "id": "00-0033537",
           "name": "Deshaun Watson",
           "team": "CLE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "0a92131ac0d206633a65",
-      "headline": "Back in the Backfield | Breece Hall Ready to Make Return",
-      "url": "https://www.newyorkjets.com/news/jets-backfield-breece-hall-ready-to-make-return-11-05-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Jets Running Back a Full Participant in Practice Thursday: 'I'm Ready to Play Sunday'",
-      "categories": [
-        "Latest Headlines",
-        "News",
-        "Breece Hall"
-      ],
-      "published_at": "2026-11-05T21:45:00+00:00",
-      "players": [
-        {
-          "id": "00-0038120",
-          "name": "Breece Hall",
-          "team": "NYJ",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "1c0ff34717b43311f1b9",
-      "headline": "Packers-Patriots Injury Report | Nov. 5, 2026",
-      "url": "https://www.packers.com/news/packers-patriots-injury-report-nov-5-2026",
-      "source_id": "news_official_gb",
-      "source": "Green Bay Packers (official)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "",
-      "categories": [
-        "News: Injury Report",
-        "News: National Feature",
-        "Homepage CP",
-        "News: All News",
-        "Green Bay Packers at New England Patriots (2026-REG-9)"
-      ],
-      "published_at": "2026-11-05T21:36:50+00:00",
-      "players": []
-    },
-    {
-      "id": "6d7395c3010b4f997c82",
-      "headline": "Kansas City Chiefs\u2019 second injury report for Week 9 vs. New York Jets sees slight improvement, but leaves a big question for Sunday",
-      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-thursday-injury-report-week-9-jets/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs' second injury report ahead of Week 9 vs. the New York Jets saw some improvements, but leaves the team with a big question for Sunday.",
-      "categories": [
-        "Kansas City Chiefs News",
-        "Chiefs Injuries",
-        "Kansas City Chiefs",
-        "Mansoor Delane",
-        "Omarr Norman-Lott",
-        "Peter Woods",
-        "Rashee Rice"
-      ],
-      "published_at": "2026-11-05T21:36:46+00:00",
-      "players": []
-    },
-    {
-      "id": "ed45ddb9be831b0db926",
-      "headline": "Ravens Place Lamar Jackson and Tyler Huntley on Injured Reserve",
-      "url": "https://www.baltimoreravens.com/news/lamar-jackson-tyler-huntley-injured-reserve-austin-reed-adisa-isaac-jake-moody",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Ravens have elevated kicker Jake Moody and outside linebacker Adisa Isaac from the practice squad for Thursday\u2019s game.",
-      "categories": [
-        "Transactions",
-        "General",
-        "Ryan Mink",
-        "Lamar Jackson",
-        "Tyler Huntley",
-        "2026 Week 9",
-        "2026 Week 9 News",
-        "Jacksonville Jaguars at Baltimore Ravens (2026-REG-9)",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-11-05T21:35:01+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        },
-        {
-          "id": "00-0035993",
-          "name": "Tyler Huntley",
-          "team": "BAL",
           "position": "QB"
         }
       ]
