@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T11:00:42.303587+00:00",
+  "updated_at": "2026-11-07T13:00:46.680411+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T10:45:35+00:00",
+      "latest_entry_at": "2026-11-07T12:58:30+00:00",
       "stale": false
     },
     {
@@ -30,15 +30,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T03:14:38+00:00",
+      "latest_entry_at": "2026-11-07T13:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "phillyvoice_jimmy_kempski",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T10:00:00+00:00",
+      "latest_entry_at": "2026-11-07T11:19:49+00:00",
       "stale": false
     },
     {
@@ -60,7 +60,7 @@
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 13,
+      "eligible": 12,
       "error": "",
       "latest_entry_at": "2026-11-06T16:57:05+00:00",
       "stale": false
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:00:06+00:00",
+      "latest_entry_at": "2026-11-07T12:55:12+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:00:00+00:00",
+      "latest_entry_at": "2026-11-07T12:00:03+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T10:45:35+00:00",
+      "latest_entry_at": "2026-11-07T12:58:30+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T03:14:38+00:00",
+      "latest_entry_at": "2026-11-07T13:00:00+00:00",
       "stale": false
     },
     {
@@ -340,17 +340,17 @@
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-06T18:38:07+00:00",
+      "latest_entry_at": "2026-11-07T12:19:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 5,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:55:48+00:00",
+      "latest_entry_at": "2026-11-07T13:00:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-07T03:50:32+00:00",
+      "latest_entry_at": "2026-11-07T00:21:14+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:12:38+00:00",
+      "latest_entry_at": "2026-11-07T13:00:00+00:00",
       "stale": false
     },
     {
@@ -430,15 +430,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T00:00:00+00:00",
+      "latest_entry_at": "2026-11-07T12:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:19:00+00:00",
+      "latest_entry_at": "2026-11-07T13:00:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:30:00+00:00",
+      "latest_entry_at": "2026-11-07T12:00:00+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T02:34:10+00:00",
+      "latest_entry_at": "2026-11-06T16:34:43+00:00",
       "stale": false
     },
     {
@@ -508,9 +508,9 @@
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T08:27:00+00:00",
+      "latest_entry_at": "2026-11-07T13:00:00+00:00",
       "stale": false
     },
     {
@@ -526,15 +526,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-07T10:00:00+00:00",
+      "latest_entry_at": "2026-11-06T19:47:58+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T18:30:00+00:00",
+      "latest_entry_at": "2026-11-07T00:22:28+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,50 @@
     }
   ],
   "items": [
+    {
+      "id": "23dd2563975d67d699b5",
+      "headline": "What Browns Head Coach Todd Monken Had To Say About Shedeur Sanders Starting",
+      "url": "https://www.si.com/nfl/browns/onsi/what-browns-head-coach-todd-monken-had-to-say-about-shedeur-sanders-starting-01m6t1tw8p63",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "On Friday, Nov. 6, the Browns officially confirmed that Sanders would start this weekend in an outing against the New Orleans Saints. Head coach Todd Monken praised Sanders and expressed his excitement for the opportunity in front of him.",
+      "categories": [],
+      "published_at": "2026-11-07T12:00:05+00:00",
+      "players": [
+        {
+          "id": "00-0040668",
+          "name": "Shedeur Sanders",
+          "team": "CLE",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "84052a77b21f75378cad",
+      "headline": "NY Giants news: Cam Skattebo doubtful for Sunday, Eagles matchups, more",
+      "url": "https://www.bigblueview.com/new-york-giants-news/178724/cam-skattebo-doubtful-for-sunday-eagles-matchups-more",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Good morning, New York Giants fans! Here are the stories you need to as the first place Giants get ready to face off tomorrow against the Philadelphia Eagles. New York Giants\u2019 playoff fate will be heavily influenced by Eagles game | USAToday.com Based on the analytics and percentages, a Giants win would put them in [\u2026]",
+      "categories": [
+        "New York Giants News"
+      ],
+      "published_at": "2026-11-07T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040715",
+          "name": "Cam Skattebo",
+          "team": "NYG",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "bda46e951be7a18acc89",
       "headline": "Final Saints vs. Browns Injury Report: 4 players are questionable",
@@ -3893,50 +3937,6 @@
           "name": "Jalen Hurts",
           "team": "PHI",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "79ceed28fee0b32d6900",
-      "headline": "Lions, Vikings mic\u2019d up video shows redemption arc for Jameson Williams",
-      "url": "https://www.prideofdetroit.com/detroit-lions-news/179790/lions-vikings-micd-up-video-jameson-williams-redemption-arc",
-      "source_id": "news_sbn_det",
-      "source": "Pride Of Detroit (SB Nation)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "After a win, the Detroit Lions always release their own version of a \u201cmic\u2019d up\u201d compilation from the game. Their \u201cSights and Sounds\u201d videos are always worth your time, as they incorporate unique camera angles along with Dan Miller radio calls and mic\u2019d up moments that you can\u2019t get anywhere else. This week\u2019s episode detailing [\u2026]",
-      "categories": [
-        "Detroit Lions News"
-      ],
-      "published_at": "2026-11-05T14:15:00+00:00",
-      "players": [
-        {
-          "id": "00-0037240",
-          "name": "Jameson Williams",
-          "team": "DET",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "c750314e89594e03746c",
-      "headline": "49ers Have Easy Decision to Make on Mike Evans Against Raiders",
-      "url": "https://www.si.com/nfl/49ers/onsi/49ers-easy-decision-mike-evans-raiders",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "Mike Evans missed the 49ers' first Week 9 practice against the Raiders with Achilles tendinitis, making it an easy decision for his game-day status.",
-      "categories": [],
-      "published_at": "2026-11-05T14:00:03+00:00",
-      "players": [
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
         }
       ]
     }
