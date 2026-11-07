@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T05:00:49.559781+00:00",
+  "updated_at": "2026-11-07T09:15:11.609312+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T04:45:08+00:00",
+      "latest_entry_at": "2026-11-07T09:02:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T03:18:06+00:00",
+      "latest_entry_at": "2026-11-07T05:22:36+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:12:00+00:00",
+      "latest_entry_at": "2026-11-07T05:00:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T04:45:08+00:00",
+      "latest_entry_at": "2026-11-07T09:02:00+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T00:15:00+00:00",
+      "latest_entry_at": "2026-11-07T01:00:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-06T04:20:07+00:00",
+      "latest_entry_at": "2026-11-07T02:43:21+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:45:00+00:00",
+      "latest_entry_at": "2026-11-07T03:50:32+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T00:00:00+00:00",
+      "latest_entry_at": "2026-11-06T22:12:38+00:00",
       "stale": false
     },
     {
@@ -412,9 +412,9 @@
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T23:35:00+00:00",
+      "latest_entry_at": "2026-11-06T20:35:50+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-06T23:45:08+00:00",
+      "latest_entry_at": "2026-11-07T02:50:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-05T13:00:00+00:00",
+      "latest_entry_at": "2026-11-07T04:08:48+00:00",
       "stale": false
     },
     {
@@ -502,15 +502,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:06:07+00:00",
+      "latest_entry_at": "2026-11-06T23:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-04T22:13:03+00:00",
+      "latest_entry_at": "2026-11-07T08:27:00+00:00",
       "stale": false
     },
     {
@@ -524,9 +524,9 @@
     {
       "source_id": "news_sbn_ari",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T16:31:01+00:00",
+      "latest_entry_at": "2026-11-06T19:47:58+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:05:00+00:00",
+      "latest_entry_at": "2026-11-07T00:14:06+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,24 @@
     }
   ],
   "items": [
+    {
+      "id": "bda46e951be7a18acc89",
+      "headline": "Final Saints vs. Browns Injury Report: 4 players are questionable",
+      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-injuries/117587/final-saints-vs-browns-injury-report-questionable-jordyn-tyson-kelvin-banks",
+      "source_id": "news_sbn_no",
+      "source": "Canal Street Chronicles (SB Nation)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "The New Orleans Saints have wrapped up their 3rd and final practice ahead of their Week 9 matchup against the Cleveland Browns in Ceasars Superdome. So, where do things stand following today\u2019s workout? Let\u2019s take a look at who is listed as questionable and who was ruled out for Sunday\u2019s game. R New Orleans Saints: [\u2026]",
+      "categories": [
+        "New Orleans Saints Game Information",
+        "New Orleans Saints Injuries",
+        "New Orleans Saints News"
+      ],
+      "published_at": "2026-11-07T08:27:00+00:00",
+      "players": []
+    },
     {
       "id": "e9eb5af38e3d338385fb",
       "headline": "Seahawks release RB Velus Jones Jr., clear spot on active roster",
@@ -3919,27 +3937,6 @@
           "name": "Mike Evans",
           "team": "SF",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "baeac9e39cfc17908ff0",
-      "headline": "Bryce Young's Reported Extension Update is Bad News for Panthers",
-      "url": "https://www.si.com/nfl/panthers/onsi/bryce-young-s-reported-extension-update-is-bad-news-for-panthers",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "Carolina's QB1 still has work to do before warranting such a high price tag",
-      "categories": [],
-      "published_at": "2026-11-05T13:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0039150",
-          "name": "Bryce Young",
-          "team": "CAR",
-          "position": "QB"
         }
       ]
     }
