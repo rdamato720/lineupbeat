@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T02:22:56.860532+00:00",
+  "updated_at": "2026-11-07T03:01:07.142251+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T02:10:58+00:00",
+      "latest_entry_at": "2026-11-07T03:00:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T00:56:40+00:00",
+      "latest_entry_at": "2026-11-07T02:38:36+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T02:10:58+00:00",
+      "latest_entry_at": "2026-11-07T03:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T00:56:40+00:00",
+      "latest_entry_at": "2026-11-07T02:38:36+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T18:36:04+00:00",
+      "latest_entry_at": "2026-11-07T02:09:27+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T14:30:00+00:00",
+      "latest_entry_at": "2026-11-07T02:08:26+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-06T15:36:04+00:00",
+      "latest_entry_at": "2026-11-07T02:10:48+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T21:15:50+00:00",
+      "latest_entry_at": "2026-11-06T22:34:46+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T19:30:00+00:00",
+      "latest_entry_at": "2026-11-06T21:10:18+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:47:32+00:00",
+      "latest_entry_at": "2026-11-07T01:27:43+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T14:04:32+00:00",
+      "latest_entry_at": "2026-11-06T16:34:43+00:00",
       "stale": false
     },
     {
@@ -518,7 +518,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T11:55:18+00:00",
+      "latest_entry_at": "2026-11-06T22:46:50+00:00",
       "stale": false
     },
     {
@@ -532,17 +532,17 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T18:30:00+00:00",
+      "latest_entry_at": "2026-11-07T00:22:28+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:05:00+00:00",
+      "latest_entry_at": "2026-11-07T00:14:06+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,28 @@
     }
   ],
   "items": [
+    {
+      "id": "3fd0f48cad296300a10d",
+      "headline": "Vikings Friday Injury Report: Christian Darrisaw improves, while the Bills have two late additions",
+      "url": "https://atozsports.com/nfl/minnesota-vikings-news/vikings-friday-injury-report-christian-darrisaw-improves-while-the-bills-have-two-late-additions/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "Both the Minnesota Vikings and Buffalo Bills have extensive injury reports, including one starting quarterback.",
+      "categories": [
+        "Minnesota Vikings News",
+        "NFL",
+        "Buffalo Bills",
+        "Carson Wentz",
+        "Kyler Murray",
+        "Minnesota Vikings",
+        "Vikings Injury Report"
+      ],
+      "published_at": "2026-11-07T02:38:36+00:00",
+      "players": []
+    },
     {
       "id": "c00103f38e5183b42983",
       "headline": "Velus Jones Jr. Released; RB Subsequently Signed to Practice Squad",
@@ -624,6 +646,29 @@
       ],
       "published_at": "2026-11-07T00:50:14+00:00",
       "players": []
+    },
+    {
+      "id": "223b7b8f29dc0f843a71",
+      "headline": "Sounds like Terrance Ferguson had a setback at practice",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-news/154329/rams-terrance-ferguson-myles-garrett-commanders",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Sean McVay gave a press conference on Friday stating that Terrance Ferguson was looking likely to play in Week 9 for the Los Angeles Rams against the Washington Commanders. McVay stated he expected both Myles Garrett and Terrance Ferguson to suit up on Sunday. \u201cDo expect Myes (Garrett) and Terrance (Ferguson) to play barring any [\u2026]",
+      "categories": [
+        "Los Angeles Rams News"
+      ],
+      "published_at": "2026-11-07T00:22:28+00:00",
+      "players": [
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
     },
     {
       "id": "6433443691de25d78831",
@@ -3889,52 +3934,6 @@
           "name": "Jacob De Jesus",
           "team": "KC",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "8fa604f8d6da2b7f2889",
-      "headline": "Cowboys news: The lack of snaps for George Pickens explained",
-      "url": "https://www.bloggingtheboys.com/dallas-cowboys-news/225298/george-pickens-snap-count-brian-schottenheimer-jerry-jones-coaches",
-      "source_id": "news_sbn_dal",
-      "source": "Blogging The Boys (SB Nation)",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "If the Cowboys are going to find themselves in any kind of position to win a bad NFC East division, their defense has got to improve. Multiple players have spoken about the state of the unit, and the solutions don\u2019t seem to be that difficult, but they have to put it all together on the [\u2026]",
-      "categories": [
-        "Dallas Cowboys News"
-      ],
-      "published_at": "2026-11-05T12:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0037247",
-          "name": "George Pickens",
-          "team": "DAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "373a757138e9dde45ced",
-      "headline": "New York Jets News: Geno Smith Fires off \u2018Believe\u2019 Message Before Chiefs Contest",
-      "url": "https://www.ganggreennation.com/new-york-jets-news/98230/geno-smith-fires-off-believe-message-before-chiefs-contest",
-      "source_id": "news_sbn_nyj",
-      "source": "Gang Green Nation (SB Nation)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "The New York Jets are 2-6. Plenty of people have written in permanent marker that the Jets will inevitably be 2-8 if we fast-forward two weeks. Up next is a road game against the Kansas City Chiefs and a home tilt versus the Buffalo Bills. Don\u2019t tell that noise to Jets starting quarterback Geno Smith. [\u2026]",
-      "categories": [
-        "New York Jets News"
-      ],
-      "published_at": "2026-11-05T12:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0030565",
-          "name": "Geno Smith",
-          "team": "NYJ",
-          "position": "QB"
         }
       ]
     }
