@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T17:00:56.308654+00:00",
+  "updated_at": "2026-11-08T19:00:43.653407+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-08T17:00:23+00:00",
+      "latest_entry_at": "2026-11-08T19:00:00+00:00",
       "stale": false
     },
     {
@@ -30,15 +30,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:55:22+00:00",
+      "latest_entry_at": "2026-11-08T18:00:03+00:00",
       "stale": false
     },
     {
       "source_id": "phillyvoice_jimmy_kempski",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:38:20+00:00",
+      "latest_entry_at": "2026-11-08T18:31:08+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-08T13:01:29+00:00",
+      "latest_entry_at": "2026-11-08T17:32:23+00:00",
       "stale": false
     },
     {
@@ -94,15 +94,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-08T13:02:31+00:00",
+      "latest_entry_at": "2026-11-08T17:35:21+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_cle",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:30:36+00:00",
+      "latest_entry_at": "2026-11-08T18:41:41+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:32:00+00:00",
+      "latest_entry_at": "2026-11-08T18:06:20+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:00:00+00:00",
+      "latest_entry_at": "2026-11-08T15:00:00+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-07T18:00:03+00:00",
+      "latest_entry_at": "2026-11-08T17:05:37+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:35:00+00:00",
+      "latest_entry_at": "2026-11-08T18:00:00+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:30:01+00:00",
+      "latest_entry_at": "2026-11-08T18:56:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-08T17:00:23+00:00",
+      "latest_entry_at": "2026-11-08T19:00:00+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:55:22+00:00",
+      "latest_entry_at": "2026-11-08T18:00:03+00:00",
       "stale": false
     },
     {
@@ -302,31 +302,31 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-08T14:45:35+00:00",
+      "latest_entry_at": "2026-11-08T02:17:11+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_mia",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-08T14:37:01+00:00",
+      "latest_entry_at": "2026-11-08T18:00:12+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-08T14:13:20+00:00",
+      "latest_entry_at": "2026-11-07T23:39:47+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-08T13:00:00+00:00",
+      "latest_entry_at": "2026-11-08T01:00:00+00:00",
       "stale": false
     },
     {
@@ -364,9 +364,9 @@
     {
       "source_id": "news_sbn_hou",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-08T11:00:00+00:00",
+      "latest_entry_at": "2026-11-05T15:00:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-07T20:20:30+00:00",
+      "latest_entry_at": "2026-11-08T17:55:00+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-08T13:55:51+00:00",
+      "latest_entry_at": "2026-11-06T21:59:27+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-08T12:58:31+00:00",
+      "latest_entry_at": "2026-11-07T23:22:02+00:00",
       "stale": false
     },
     {
@@ -398,15 +398,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:36:05+00:00",
+      "latest_entry_at": "2026-11-08T18:42:31+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_kc",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:45:00+00:00",
+      "latest_entry_at": "2026-11-08T14:00:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-08T14:28:29+00:00",
+      "latest_entry_at": "2026-11-06T22:45:00+00:00",
       "stale": false
     },
     {
@@ -430,23 +430,23 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:36:25+00:00",
+      "latest_entry_at": "2026-11-08T17:45:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:38:09+00:00",
+      "latest_entry_at": "2026-11-07T16:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:41:27+00:00",
+      "latest_entry_at": "2026-11-08T18:15:00+00:00",
       "stale": false
     },
     {
@@ -454,23 +454,23 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:35:53+00:00",
+      "latest_entry_at": "2026-11-07T21:38:51+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 0,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:22:20+00:00",
+      "latest_entry_at": "2026-11-07T13:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-08T14:45:00+00:00",
+      "latest_entry_at": "2026-11-08T17:53:32+00:00",
       "stale": false
     },
     {
@@ -524,9 +524,9 @@
     {
       "source_id": "news_sbn_ari",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-08T16:00:00+00:00",
+      "latest_entry_at": "2026-11-08T14:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-08T14:47:37+00:00",
+      "latest_entry_at": "2026-11-07T19:15:20+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,103 @@
     }
   ],
   "items": [
+    {
+      "id": "8576142c60280a38776b",
+      "headline": "Michael Burton questionable to return vs. the Saints",
+      "url": "https://www.clevelandbrowns.com/news/michael-burton-questionable-to-return-vs-the-saints",
+      "source_id": "news_official_cle",
+      "source": "Cleveland Browns (official)",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "Burton sustained the calf injury in the first quarter against the Saints",
+      "categories": [
+        "In-Game Breaking News Article",
+        "featured",
+        "Cleveland Browns at New Orleans Saints (2026-REG-9)"
+      ],
+      "published_at": "2026-11-08T18:33:38+00:00",
+      "players": [
+        {
+          "id": "00-0031595",
+          "name": "Michael Burton",
+          "team": "CLE",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "8ade5bfa6ff15565dc1d",
+      "headline": "Eagles vs. Giants, Week 9: Live updates and open thread",
+      "url": "https://www.phillyvoice.com/eagles-vs-giants-week-9-live-updates-and-open-thread-2026/",
+      "source_id": "phillyvoice_jimmy_kempski",
+      "source": "PhillyVoice",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Philadelphia Eagles are losers of six straight games, and now have the worst record in the NFC at 2-6. The offense stinks, the defense stinks, Jalen Hurts is done for the season, and the team listed 19 players on its Friday injury report. The New York Giants lead the NFC East with a 4-2-1 record, which isn't out of reach, in theory.",
+      "categories": [
+        "Sports",
+        "Eagles",
+        "NFL",
+        "Philadelphia",
+        "Eagles open thread"
+      ],
+      "published_at": "2026-11-08T18:31:08+00:00",
+      "players": [
+        {
+          "id": "00-0036389",
+          "name": "Jalen Hurts",
+          "team": "PHI",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "05e8263c6d855abd8e91",
+      "headline": "Will Cowboys Trade George Pickens? Why Dallas WR is Inactive Ahead of Deadline",
+      "url": "https://www.si.com/nfl/cowboys/onsi/will-cowboys-trade-george-pickens-dallas-wr-inactive-ahead-nfl-deadline",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "Dallas Cowboys wide receiver George Pickens is inactive for the Week 9 game on Sunday, which comes just days before the trade deadline. Here's what we know about his chances of being traded.",
+      "categories": [],
+      "published_at": "2026-11-08T17:59:42+00:00",
+      "players": [
+        {
+          "id": "00-0037247",
+          "name": "George Pickens",
+          "team": "DAL",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "1d9b6b5e0791d7b01e55",
+      "headline": "Dolphins without Jaylen Wright as inactive lists for Lions game released",
+      "url": "https://www.thephinsider.com/miami-dolphins-injuries/124626/detroit-lions-vs-miami-dolphins-inactive-list-jaylen-wright-cade-mays",
+      "source_id": "news_sbn_mia",
+      "source": "The Phinsider (SB Nation)",
+      "teams": [
+        "MIA"
+      ],
+      "feed_description": "The Miami Dolphins will be without backup running back Jaylen Wright for their Week 9 game against the Detroit Lions. Listed as questionable on Friday\u2019s injury report with a quadriceps issue, Wright will miss the game after being listed as inactive. While Wright\u2019s impact in the running game has been minimal this year, he has [\u2026]",
+      "categories": [
+        "Miami Dolphins game information",
+        "Miami Dolphins Injuries"
+      ],
+      "published_at": "2026-11-08T16:59:34+00:00",
+      "players": [
+        {
+          "id": "00-0039874",
+          "name": "Jaylen Wright",
+          "team": "MIA",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "677600161a6b5023dd58",
       "headline": "Trent McDuffie and Joe Cardona among Rams' inactives for Week 9 at Commanders",
@@ -813,6 +910,36 @@
           "name": "Dyami Brown",
           "team": "WAS",
           "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "6bd483a496e81d490f6a",
+      "headline": "Lions, Dolphins Week 9 inactives: Sione Vaki, Amon-Ra St. Brown ACTIVE",
+      "url": "https://www.prideofdetroit.com/detroit-lions-news/180074/lions-dolphins-week-9-inactives-sione-vaki-active-jacob-saylors-out",
+      "source_id": "news_sbn_det",
+      "source": "Pride Of Detroit (SB Nation)",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "The Detroit Lions have declared their inactives ahead of their Week 9 matchup with the Miami Dolphins, and Lions top reserve running back and ace special teamer Sione Vaki will play, while running back and kick returner Jacobs Saylors will not be available. Vaki was a late addition to the injury report this week, while [\u2026]",
+      "categories": [
+        "Detroit Lions Injuries",
+        "Detroit Lions News"
+      ],
+      "published_at": "2026-11-08T16:35:38+00:00",
+      "players": [
+        {
+          "id": "00-0036963",
+          "name": "Amon-Ra St. Brown",
+          "team": "DET",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039364",
+          "name": "Sione Vaki",
+          "team": "DET",
+          "position": "RB"
         }
       ]
     },
@@ -3877,123 +4004,6 @@
           "name": "Jacoby Brissett",
           "team": "ARI",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "7e951c0a7cf01952ad40",
-      "headline": "TreVeyon Henderson injury: Patriots RB provides update with new statement",
-      "url": "https://www.patspulpit.com/new-england-patriots-injuries/143225/treveyon-henderson-injury-update-running-back",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "New England Patriots running back TreVeyon Henderson, who had been out since last Thursday due to an illness, took to social media on Friday to provide an update on his medical situation. \u201cRecently, I experienced an unexpected and unusual medical emergency involving a series of unexplained neurological symptoms that required hospitalization for several days,\u201d Henderson [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-11-06T15:59:08+00:00",
-      "players": [
-        {
-          "id": "00-0040734",
-          "name": "TreVeyon Henderson",
-          "team": "NE",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "5f7e4c2bf9a15e90acc2",
-      "headline": "Patriots RB TreVeyon Henderson Releases Statement Regarding 'Unexpected' Medical Emergency",
-      "url": "https://www.si.com/nfl/patriots/onsi/patriots-rb-treveyon-henderson-releases-statement-regarding-unexpected-medical-emergency",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots running back has missed two games this year.",
-      "categories": [],
-      "published_at": "2026-11-06T15:57:44+00:00",
-      "players": [
-        {
-          "id": "00-0040734",
-          "name": "TreVeyon Henderson",
-          "team": "NE",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "68ac56787d5a43b75def",
-      "headline": "Late for Work: Pundits React to Short-Handed Ravens' Fourth Straight Defeat",
-      "url": "https://www.baltimoreravens.com/news/pundits-react-ravens-loss-jaguars-short-handed-defense-late-for-work",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "There were some positive takeaways on both sides of the ball. ESPN says Jacoby Brissett has been told Lamar Jackson could return this season.",
-      "categories": [
-        "Late For Work",
-        "General",
-        "2026 Week 9",
-        "2026 Week 9 News",
-        "Jacksonville Jaguars at Baltimore Ravens (2026-REG-9)",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-11-06T14:45:17+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "a5fee8b01c6cf7dcb07a",
-      "headline": "James Pearce Jr.'s Long-Awaited Return Could Be Longer: Falcons Injury Report",
-      "url": "https://www.si.com/nfl/falcons/onsi/james-pearce-jr-s-long-awaited-return-could-be-longer-falcons-injury-report",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "The Atlanta Falcons' injury report on Friday provided some encouraging news for the defense, but it also raised more questions about the return of James Pearce.",
-      "categories": [],
-      "published_at": "2026-11-06T14:32:03+00:00",
-      "players": []
-    },
-    {
-      "id": "9ce43346a8642ed6187f",
-      "headline": "Commanders GM Adam Peters discusses Jayden Daniels, NFL trade deadline",
-      "url": "https://www.hogshaven.com/washington-commanders-news/453637/commanders-gm-adam-peters-discusses-jayden-daniels-nfl-trade-deadline",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "General manager Adam Peters conducted his weekly interview with the Junkies on 106.7-FM The Fan in Washington on Friday morning, providing updates on quarterback Jayden Daniels, defensive line depth, Antonio Williams, while skating out of a discussion of a certain 49ers receiver that shall not be named. The Commanders suffered more star power injuries, [\u2026]",
-      "categories": [
-        "Washington Commanders News"
-      ],
-      "published_at": "2026-11-06T14:31:45+00:00",
-      "players": [
-        {
-          "id": "00-0039910",
-          "name": "Jayden Daniels",
-          "team": "WAS",
-          "position": "QB"
-        },
-        {
-          "id": "00-0041040",
-          "name": "Antonio Williams",
-          "team": "WAS",
-          "position": "WR"
         }
       ]
     }
