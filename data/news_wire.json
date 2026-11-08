@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T01:00:52.812816+00:00",
+  "updated_at": "2026-11-08T02:29:12.825874+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-08T01:00:20+00:00",
+      "latest_entry_at": "2026-11-08T02:10:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-08T01:00:00+00:00",
+      "latest_entry_at": "2026-11-08T02:05:00+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-08T01:00:20+00:00",
+      "latest_entry_at": "2026-11-08T02:10:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-08T01:00:00+00:00",
+      "latest_entry_at": "2026-11-08T02:05:00+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-07T18:00:14+00:00",
+      "latest_entry_at": "2026-11-08T01:00:00+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-07T23:00:00+00:00",
+      "latest_entry_at": "2026-11-08T01:00:00+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T22:25:17+00:00",
+      "latest_entry_at": "2026-11-08T02:13:59+00:00",
       "stale": false
     },
     {
@@ -364,9 +364,9 @@
     {
       "source_id": "news_sbn_hou",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-05T15:00:00+00:00",
+      "latest_entry_at": "2026-11-07T20:33:02+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-07T21:55:21+00:00",
+      "latest_entry_at": "2026-11-07T22:30:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-07T18:53:23+00:00",
+      "latest_entry_at": "2026-11-07T19:34:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T20:30:00+00:00",
+      "latest_entry_at": "2026-11-08T01:16:43+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-07T13:59:00+00:00",
+      "latest_entry_at": "2026-11-07T19:15:20+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "ef647bdedcafa800dd79",
+      "headline": "Giants Sign WR Jalin Hyatt to 53-Man Roster Ahead of Eagles Game",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-sign-jalin-hyatt-53-man-roster-eagles-01m6wdwwj2ev",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "WR Jalin Hyatt, a 2023 third-round pick, joins the active roster and may return kicks Sunday, while RB Phil Mafah and OLB Dewuane Smoot are elevated.",
+      "categories": [],
+      "published_at": "2026-11-08T01:58:09+00:00",
+      "players": [
+        {
+          "id": "00-0038938",
+          "name": "Jalin Hyatt",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "8a67f85f372f18692cc2",
       "headline": "In a Bad Sign for Kyle Monangai's Status, Bears Elevate Salvon Ahmed From Practice Squad",
@@ -3988,20 +4009,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "e025b071006ef2aa7b22",
-      "headline": "Joey Porter Jr. Takes Step Back on Latest Cowboys Injury Report, Caleb Downs Improves",
-      "url": "https://www.si.com/nfl/cowboys/onsi/joey-porter-jr-takes-step-back-latest-dallas-cowboys-injury-report-caleb-downs-improves",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys have released Thursday's practice report for the team's Week 9 showdown with the Indianapolis Colts.",
-      "categories": [],
-      "published_at": "2026-11-05T22:10:22+00:00",
-      "players": []
     }
   ]
 }
