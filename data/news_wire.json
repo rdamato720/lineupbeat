@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T06:25:47.018585+00:00",
+  "updated_at": "2026-11-09T11:00:57.675477+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-09T06:11:56+00:00",
+      "latest_entry_at": "2026-11-09T08:28:45+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-09T05:37:28+00:00",
+      "latest_entry_at": "2026-11-09T11:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-09T02:35:01+00:00",
+      "latest_entry_at": "2026-11-09T10:00:00+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-08T23:23:20+00:00",
+      "latest_entry_at": "2026-11-09T09:00:00+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-08T11:00:00+00:00",
+      "latest_entry_at": "2026-11-07T14:00:03+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-09T06:11:56+00:00",
+      "latest_entry_at": "2026-11-09T08:28:45+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-09T05:37:28+00:00",
+      "latest_entry_at": "2026-11-09T11:00:00+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-08T20:40:13+00:00",
+      "latest_entry_at": "2026-11-09T10:00:00+00:00",
       "stale": false
     },
     {
@@ -326,15 +326,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-08T17:30:00+00:00",
+      "latest_entry_at": "2026-11-09T01:42:33+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-08T02:13:59+00:00",
+      "latest_entry_at": "2026-11-09T11:00:00+00:00",
       "stale": false
     },
     {
@@ -444,17 +444,17 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-06T22:34:46+00:00",
+      "latest_entry_at": "2026-11-09T02:12:33+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-08T17:00:00+00:00",
+      "latest_entry_at": "2026-11-09T02:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-09T05:00:52+00:00",
+      "latest_entry_at": "2026-11-09T06:00:00+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-09T02:03:22+00:00",
+      "latest_entry_at": "2026-11-09T06:40:41+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-09T04:45:31+00:00",
+      "latest_entry_at": "2026-11-09T11:00:00+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-08T13:00:00+00:00",
+      "latest_entry_at": "2026-11-09T05:49:43+00:00",
       "stale": false
     },
     {
@@ -526,35 +526,111 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-09T00:22:36+00:00",
+      "latest_entry_at": "2026-11-09T10:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-08T21:13:16+00:00",
+      "latest_entry_at": "2026-11-09T03:01:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-09T05:13:03+00:00",
+      "latest_entry_at": "2026-11-09T10:02:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-09T04:05:28+00:00",
+      "latest_entry_at": "2026-11-09T06:32:10+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "8672cdf0b02118bd528a",
+      "headline": "Colts\u2019 chances of fetching anything in return for QB Daniel Jones just went up in flames following report from NFL insider",
+      "url": "https://atozsports.com/nfl/indianapolis-colts-news/colts-not-expected-to-trade-qb-daniel-jones-ahead-of-tuesday-deadline/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "Indianapolis shut down the Daniel Jones trade chatter, and one team that badly needed a quarterback answer just lost its best option.",
+      "categories": [
+        "Indianapolis Colts News",
+        "NFL",
+        "American Football",
+        "Colts News",
+        "Indianapolis Colts",
+        "Wildcat"
+      ],
+      "published_at": "2026-11-09T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0035710",
+          "name": "Daniel Jones",
+          "team": "IND",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "4308088da7bf85f05d6d",
+      "headline": "Report: Ravens QB Lamar Jackson plans to return this season",
+      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/87611/report-ravens-qb-lamar-jackson-plans-to-return-this-season",
+      "source_id": "news_sbn_bal",
+      "source": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "Baltimore Ravens quarterback Lamar Jackson told teammates that he plans to return this season shortly after suffering a right thumb injury against the Buffalo Bills last Sunday, according to a report from ESPN\u2019s Ian Rapoport. Jackson encouraged his team to keep their playoff hopes alive until he comes back. His IR placement will sideline him [\u2026]",
+      "categories": [
+        "Baltimore Ravens Injuries",
+        "Baltimore Ravens News"
+      ],
+      "published_at": "2026-11-09T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "c6ba13d78164c4a825ec",
+      "headline": "49ers News: Nothing sweeter than a Victory Monday",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-news/165437/49ers-news-las-vegas-raiders-victory-gracen-halton-injury-monday-brock-purdy",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Prayers up for all the injured players. Brock Purdy finds a rhythm with 49ers\u2019 unfamiliar and unproven wide receiving crew (paywall)\u201cHe did miss a few, but we scored on all those drives, too,\u201d Shanahan said. \u201cIt was kind of awkward when he comes to the sidelines. I\u2019m telling him what he did wrong, and then [\u2026]",
+      "categories": [
+        "Golden Nuggets: San Francisco 49ers daily news roundup",
+        "San Francisco 49ers News"
+      ],
+      "published_at": "2026-11-09T10:02:00+00:00",
+      "players": [
+        {
+          "id": "00-0037834",
+          "name": "Brock Purdy",
+          "team": "SF",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "20a1c88603b4064e65ba",
       "headline": "Seahawks QB Drew Lock 'Cool As Can Be' Starting In Place Of An Injured Sam Darnold",
@@ -3981,71 +4057,6 @@
       "feed_description": "As their Week 9 matchup against the San Francisco 49ers approaches, the Las Vegas Raiders appear to be the healthiest they have been since the start of the regular season.",
       "categories": [],
       "published_at": "2026-11-06T23:10:45+00:00",
-      "players": []
-    },
-    {
-      "id": "0896ec95a3dcd2bdfdec",
-      "headline": "Browns, Saints final injury report: Deshaun Watson not out, Jordyn Tyson update",
-      "url": "https://www.dawgsbynature.com/cleveland-browns-news/137249/browns-saints-final-injury-deshaun-watson-jordyn-tyson-shedeur-sanders",
-      "source_id": "news_sbn_cle",
-      "source": "Dawgs By Nature (SB Nation)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "Week 9 of the NFL season has more questions than answers for the Cleveland Browns as they head down to the Big Easy to take on the New Orleans Saints. HC Todd Monken announced that QB Shedeur Sanders would be starting against the Saints, but Deshaun Watson has not been ruled out for the game, [\u2026]",
-      "categories": [
-        "Cleveland Browns Injuries",
-        "Cleveland Browns News"
-      ],
-      "published_at": "2026-11-06T22:55:48+00:00",
-      "players": [
-        {
-          "id": "00-0033537",
-          "name": "Deshaun Watson",
-          "team": "CLE",
-          "position": "QB"
-        },
-        {
-          "id": "00-0040668",
-          "name": "Shedeur Sanders",
-          "team": "CLE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "364a259fb18340d8938e",
-      "headline": "Raiders-49ers Week 9 Injury Report: Thomas Booker ruled out, Darien Porter questionable for Sunday",
-      "url": "https://www.raiders.com/news/raiders-49ers-week-9-injury-report",
-      "source_id": "news_official_lv",
-      "source": "Las Vegas Raiders (official)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the San Francisco 49ers.",
-      "categories": [
-        "Home Centerpiece",
-        "Home Latest Stories",
-        "News - Injury Report",
-        "Las Vegas Raiders at San Francisco 49ers (2026-REG-9)"
-      ],
-      "published_at": "2026-11-06T22:50:00+00:00",
-      "players": []
-    },
-    {
-      "id": "aab11082ab5dcc82416f",
-      "headline": "Vikings-Bills Second Injury Report",
-      "url": "https://www.dailynorseman.com/minnesota-vikings-injuries/101252/vikings-bills-second-injury-report",
-      "source_id": "news_sbn_min",
-      "source": "Daily Norseman (SB Nation)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Minnesota Vikings and Buffalo Bills released their second injury reports in advance of their Monday Night Football matchup at U.S. Bank Stadium. Here they are: Minnesota Vikings Buffalo Bills Injury Report Terms and Glossary Injury designation definitions: Probable = the league defines a Probable injury designation as a 75% or greater chance of playing. [\u2026]",
-      "categories": [
-        "Minnesota Vikings Injuries"
-      ],
-      "published_at": "2026-11-06T22:47:32+00:00",
       "players": []
     }
   ]
