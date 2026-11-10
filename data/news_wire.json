@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-10T05:00:44.133595+00:00",
+  "updated_at": "2026-11-10T07:44:58.417604+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T03:30:20+00:00",
+      "latest_entry_at": "2026-11-10T04:52:29+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T04:51:28+00:00",
+      "latest_entry_at": "2026-11-10T07:22:10+00:00",
       "stale": false
     },
     {
@@ -68,9 +68,9 @@
     {
       "source_id": "news_official_buf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-10T00:30:00+00:00",
+      "latest_entry_at": "2026-11-10T07:06:23+00:00",
       "stale": false
     },
     {
@@ -198,7 +198,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T04:54:00+00:00",
+      "latest_entry_at": "2026-11-10T06:16:19+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T04:51:28+00:00",
+      "latest_entry_at": "2026-11-10T07:22:10+00:00",
       "stale": false
     },
     {
@@ -300,17 +300,17 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T03:30:47+00:00",
+      "latest_entry_at": "2026-11-09T15:58:26+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_mia",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T00:15:00+00:00",
+      "latest_entry_at": "2026-11-09T16:39:25+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-09T19:02:56+00:00",
+      "latest_entry_at": "2026-11-09T22:40:14+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-09T21:49:11+00:00",
+      "latest_entry_at": "2026-11-09T15:15:03+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-09T23:00:00+00:00",
+      "latest_entry_at": "2026-11-09T11:32:44+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T00:45:00+00:00",
+      "latest_entry_at": "2026-11-10T04:26:34+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T04:37:31+00:00",
+      "latest_entry_at": "2026-11-10T06:40:02+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-10T02:30:00+00:00",
+      "latest_entry_at": "2026-11-09T22:51:19+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,29 @@
     }
   ],
   "items": [
+    {
+      "id": "a8cc6656d65db7823a07",
+      "headline": "'There's no panic' | The Bills stay strong through early struggles and injuries in MNF win over the Minnesota Vikings",
+      "url": "https://www.buffalobills.com/news/there-s-no-panic-the-bills-stay-strong-through-early-struggles-and-injuries-in-mnf-win-over-the-minnesota-vikings",
+      "source_id": "news_official_buf",
+      "source": "Buffalo Bills (official)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Overall team resiliency and Keleki Latu's first career TD",
+      "categories": [
+        "From the Locker Room"
+      ],
+      "published_at": "2026-11-10T07:06:23+00:00",
+      "players": [
+        {
+          "id": "00-0040363",
+          "name": "Keleki Latu",
+          "team": "BUF",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "66494f7e054d1ebaaeff",
       "headline": "7 winners and 1 loser from Buffalo\u2019s win on MNF: James Cook carries the ball and the Bills to victory in Minnesota",
@@ -4061,27 +4084,6 @@
           "id": "00-0038997",
           "name": "Josh Downs",
           "team": "IND",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "df1826f4c9032e8479df",
-      "headline": "Will George Pickens Play Today? Injury Update, Start-or-Sit Advice for Week 9",
-      "url": "https://www.si.com/nfl/cowboys/onsi/will-george-pickens-play-today-injury-update-start-sit-advice-week-9",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The latest injury and status update on Dallas Cowboys wide receiver George Pickens, who is questionable to play in the Week 9 contest versus the Indianapolis Colts.",
-      "categories": [],
-      "published_at": "2026-11-08T12:45:00+00:00",
-      "players": [
-        {
-          "id": "00-0037247",
-          "name": "George Pickens",
-          "team": "DAL",
           "position": "WR"
         }
       ]
