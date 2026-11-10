@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-10T07:44:58.417604+00:00",
+  "updated_at": "2026-11-10T11:00:58.539709+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T04:52:29+00:00",
+      "latest_entry_at": "2026-11-10T06:01:28+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T07:22:10+00:00",
+      "latest_entry_at": "2026-11-10T11:00:25+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-09T22:52:09+00:00",
+      "latest_entry_at": "2026-11-10T10:00:00+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-09T22:15:00+00:00",
+      "latest_entry_at": "2026-11-10T10:00:10+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T07:22:10+00:00",
+      "latest_entry_at": "2026-11-10T11:00:25+00:00",
       "stale": false
     },
     {
@@ -300,17 +300,17 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-09T15:58:26+00:00",
+      "latest_entry_at": "2026-11-10T06:40:02+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_mia",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-09T16:39:25+00:00",
+      "latest_entry_at": "2026-11-10T00:15:00+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-10T03:49:10+00:00",
+      "latest_entry_at": "2026-11-10T10:00:16+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-09T15:15:03+00:00",
+      "latest_entry_at": "2026-11-09T21:49:11+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-09T11:32:44+00:00",
+      "latest_entry_at": "2026-11-09T23:00:00+00:00",
       "stale": false
     },
     {
@@ -532,17 +532,17 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-09T22:51:19+00:00",
+      "latest_entry_at": "2026-11-10T08:39:52+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T01:05:00+00:00",
+      "latest_entry_at": "2026-11-10T10:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,30 @@
     }
   ],
   "items": [
+    {
+      "id": "432ff7f1d95f4c7a288d",
+      "headline": "49ers News: The trade deadline approaches",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-news/165500/49ers-news-week-10-trade-deadline-draft-picks-jordan-watkins-deebo-samuel",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Deebo Samuel is \u2018on track\u2019 to return; 49ers open to bringing back veteran defensive tackle\u201cStarting cornerbacks Renardo Green (back) and Deommodore Lenoir (foot) are day-to-day. That\u2019s good news, as both avoided serious injuries. Mike Evans is not expected to return this week. The hope is that Deebo Samuel practices this week. As the team gets [\u2026]",
+      "categories": [
+        "Golden Nuggets: San Francisco 49ers daily news roundup",
+        "San Francisco 49ers News"
+      ],
+      "published_at": "2026-11-10T10:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "a8cc6656d65db7823a07",
       "headline": "'There's no panic' | The Bills stay strong through early struggles and injuries in MNF win over the Minnesota Vikings",
@@ -1175,7 +1199,7 @@
       "teams": [
         "WAS"
       ],
-      "feed_description": "Commanders veteran Lucas Patrick has provided stability at the center spot, which was a point of chaos and poor performance before he was signed on Sept. 16. Nick Allegretti and rookie Mutt Gulbin struggled before he got to Washington and when called to action, including Sunday\u2019s loss to the L.A. Rams. That happened because Patrick [\u2026]",
+      "feed_description": "Commanders veteran Lucas Patrick has provided stability at the center spot, which was a point of chaos and poor performance before he was signed on Sept. 16. Nick Allegretti and rookie Matt Gulbin struggled before he got to Washington and when called to action, including Sunday\u2019s loss to the L.A. Rams. That happened because Patrick [\u2026]",
       "categories": [
         "Washington Commanders Injuries"
       ],
@@ -4053,37 +4077,6 @@
           "id": "00-0041044",
           "name": "Zachariah Branch",
           "team": "ATL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "8bc964464e715a44c61f",
-      "headline": "Colts Mock Trade: Indianapolis ships off Josh Downs to a contender ahead of Tuesday\u2019s deadline",
-      "url": "https://atozsports.com/nfl/indianapolis-colts-news/indianapolis-colts-trade-deadline-ships-off-josh-downs-to-contender-los-angeles-rams-puka-nacua/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The Indianapolis Colts have major questions at the top, and Josh Downs' contract is up. What should a deal for the slot receiver actually cost?",
-      "categories": [
-        "Indianapolis Colts News",
-        "NFL",
-        "American Football",
-        "Indianapolis Colts",
-        "Josh Downs",
-        "Los Angeles Rams",
-        "Matthew Stafford",
-        "NFL Trade Deadline",
-        "Puka Nacua"
-      ],
-      "published_at": "2026-11-08T12:55:04+00:00",
-      "players": [
-        {
-          "id": "00-0038997",
-          "name": "Josh Downs",
-          "team": "IND",
           "position": "WR"
         }
       ]
