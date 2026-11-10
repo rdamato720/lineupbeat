@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-10T03:00:58.140530+00:00",
+  "updated_at": "2026-11-10T05:00:44.133595+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T01:51:39+00:00",
+      "latest_entry_at": "2026-11-10T03:30:20+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T02:41:31+00:00",
+      "latest_entry_at": "2026-11-10T04:51:28+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T02:45:11+00:00",
+      "latest_entry_at": "2026-11-10T04:47:16+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-09T18:32:00+00:00",
+      "latest_entry_at": "2026-11-10T00:30:17+00:00",
       "stale": false
     },
     {
@@ -196,9 +196,9 @@
     {
       "source_id": "news_official_min",
       "ok": true,
-      "eligible": 3,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-09T23:45:00+00:00",
+      "latest_entry_at": "2026-11-10T04:54:00+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T02:35:46+00:00",
+      "latest_entry_at": "2026-11-10T03:50:27+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-10T02:41:31+00:00",
+      "latest_entry_at": "2026-11-10T04:51:28+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-10T02:45:11+00:00",
+      "latest_entry_at": "2026-11-10T04:47:16+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-10T00:54:09+00:00",
+      "latest_entry_at": "2026-11-10T03:30:47+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-09T23:12:14+00:00",
+      "latest_entry_at": "2026-11-10T03:49:10+00:00",
       "stale": false
     },
     {
@@ -326,7 +326,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-09T22:40:14+00:00",
+      "latest_entry_at": "2026-11-09T19:02:56+00:00",
       "stale": false
     },
     {
@@ -340,9 +340,9 @@
     {
       "source_id": "news_sbn_cin",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-09T22:25:10+00:00",
+      "latest_entry_at": "2026-11-10T03:29:06+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T00:05:13+00:00",
+      "latest_entry_at": "2026-11-10T04:24:57+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-09T21:53:02+00:00",
+      "latest_entry_at": "2026-11-10T04:14:52+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T01:46:01+00:00",
+      "latest_entry_at": "2026-11-10T04:32:51+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T00:45:00+00:00",
+      "latest_entry_at": "2026-11-10T04:37:31+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,104 @@
     }
   ],
   "items": [
+    {
+      "id": "66494f7e054d1ebaaeff",
+      "headline": "7 winners and 1 loser from Buffalo\u2019s win on MNF: James Cook carries the ball and the Bills to victory in Minnesota",
+      "url": "https://atozsports.com/nfl/buffalo-bills-news/winners-losers-bills-vikings-josh-allen-james-cook-joe-brady-tyler-bass/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills pulled away late against the Minnesota Vikings on Monday Night Football, and plenty of players and coaches earned their keep in a game that was closer than the final score suggests. Here is who stood out.",
+      "categories": [
+        "Buffalo Bills News",
+        "NFL",
+        "American Football",
+        "Bills News",
+        "Buffalo Bills",
+        "James Cook",
+        "Wildcat"
+      ],
+      "published_at": "2026-11-10T04:47:16+00:00",
+      "players": [
+        {
+          "id": "00-0037248",
+          "name": "James Cook",
+          "team": "BUF",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "0c9e8f59becad868e27a",
+      "headline": "Rhamondre Stevenson injury update: Patriots RB set to miss multiple weeks",
+      "url": "https://www.patspulpit.com/new-england-patriots-injuries/143762/rhamondre-stevenson-injury-update-patriots-rb-set-to-miss-multiple-weeks",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The injuries continue to pile up for the New England Patriots, who now are set to be without another key offensive contributor for multiple weeks. Running back Rhamondre Stevenson is dealing with a knee tendon issue that is not expected to require surgery but could sideline him for a short period, according to ESPN\u2019s Adam [\u2026]",
+      "categories": [
+        "New England Patriots First Read",
+        "New England Patriots Injuries",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-11-10T03:49:10+00:00",
+      "players": [
+        {
+          "id": "00-0036875",
+          "name": "Rhamondre Stevenson",
+          "team": "NE",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "1a7706e01edbe38ab9f1",
+      "headline": "Josh Johnson leaving Bengals practice squad to join Arizona Cardinals",
+      "url": "https://www.cincyjungle.com/cincinnati-bengals-roster/205109/josh-johnson-bengals-practice-squad-arizona-cardinals-quarterbacks",
+      "source_id": "news_sbn_cin",
+      "source": "Cincy Jungle (SB Nation)",
+      "teams": [
+        "CIN"
+      ],
+      "feed_description": "Cincinnati Bengals practice squad quarterback Josh Johnson is being signed to the Arizona Cardinals\u2019 53-man roster, according to ESPN\u2019s Adam Schefter. This comes as the Cardinals\u2019 quarterback room has been completely flipped upside down. They started with Jacoby Brissett, who was traded to the Baltimore Ravens. They then turned to Gardner Minshew, who unfortunately went [\u2026]",
+      "categories": [
+        "Cincinnati Bengals roster"
+      ],
+      "published_at": "2026-11-10T03:29:06+00:00",
+      "players": [
+        {
+          "id": "00-0026300",
+          "name": "Josh Johnson",
+          "team": "CIN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "70b6b7b3e84d0497025c",
+      "headline": "Patriots RB Rhamondre Stevenson Dealing with Knee Tendon Issue",
+      "url": "https://www.si.com/nfl/patriots/onsi/patriots-rb-rhamondre-stevenson-dealing-with-knee-tendon-issue",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots' top running back injured his knee in a game against the Green Bay Packers.",
+      "categories": [],
+      "published_at": "2026-11-10T03:25:38+00:00",
+      "players": [
+        {
+          "id": "00-0036875",
+          "name": "Rhamondre Stevenson",
+          "team": "NE",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "a461d4b1eb5c625fb04b",
       "headline": "Giants Injury Report: Cam Skattebo, J.J. McCarthy Trending in Right Direction for Commanders Game",
@@ -3984,91 +4082,6 @@
           "id": "00-0037247",
           "name": "George Pickens",
           "team": "DAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "ef647bdedcafa800dd79",
-      "headline": "Giants Sign WR Jalin Hyatt to 53-Man Roster Ahead of Eagles Game",
-      "url": "https://www.si.com/nfl/giants/onsi/giants-sign-jalin-hyatt-53-man-roster-eagles-01m6wdwwj2ev",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "WR Jalin Hyatt, a 2023 third-round pick, joins the active roster and may return kicks Sunday, while RB Phil Mafah and OLB Dewuane Smoot are elevated.",
-      "categories": [],
-      "published_at": "2026-11-08T01:58:09+00:00",
-      "players": [
-        {
-          "id": "00-0038938",
-          "name": "Jalin Hyatt",
-          "team": "NYG",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "8a67f85f372f18692cc2",
-      "headline": "In a Bad Sign for Kyle Monangai's Status, Bears Elevate Salvon Ahmed From Practice Squad",
-      "url": "https://www.si.com/nfl/bears/onsi/bears-kyle-monangai-status-bears-salvon-ahmed-practice-squad",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Kyle Monangai finally practiced Friday, but the Bears added another running back for Sunday night against Tampa Bay, and the bye week follows right after.",
-      "categories": [],
-      "published_at": "2026-11-07T23:36:11+00:00",
-      "players": [
-        {
-          "id": "00-0036020",
-          "name": "Salvon Ahmed",
-          "team": "CHI",
-          "position": "RB"
-        },
-        {
-          "id": "00-0040236",
-          "name": "Kyle Monangai",
-          "team": "CHI",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "1fdd28253f1a8286f508",
-      "headline": "Vikings-Bills Final Injury Report",
-      "url": "https://www.dailynorseman.com/minnesota-vikings-injuries/101276/vikings-bills-final-injury-report",
-      "source_id": "news_sbn_min",
-      "source": "Daily Norseman (SB Nation)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Minnesota Vikings and Buffalo Bills released their second injury reports in advance of their Monday Night Football matchup at U.S. Bank Stadium. Here they are: Minnesota Vikings Buffalo Bills Injury Report Terms and Glossary Injury designation definitions: Probable = the league defines a Probable injury designation as a 75% or greater chance of playing. [\u2026]",
-      "categories": [
-        "Minnesota Vikings Injuries"
-      ],
-      "published_at": "2026-11-07T23:17:10+00:00",
-      "players": []
-    },
-    {
-      "id": "47e15cbd5993e563bad0",
-      "headline": "Pat Bryant's Return Sparks Unexpected Broncos Roster Shakeup",
-      "url": "https://www.si.com/nfl/broncos/onsi/pat-bryant-return-sparks-unexpected-broncos-roster-shakeup",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DEN"
-      ],
-      "feed_description": "Pat Bryant is back, but the Broncos had to make a flurry of roster moves ahead of Sunday's game against the Panthers.",
-      "categories": [],
-      "published_at": "2026-11-07T22:44:26+00:00",
-      "players": [
-        {
-          "id": "00-0040134",
-          "name": "Pat Bryant",
-          "team": "DEN",
           "position": "WR"
         }
       ]
