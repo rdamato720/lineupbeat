@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-11T19:00:45.465696+00:00",
+  "updated_at": "2026-11-11T21:01:03.416598+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T15:17:27+00:00",
+      "latest_entry_at": "2026-11-11T20:41:15+00:00",
       "stale": false
     },
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:51:21+00:00",
+      "latest_entry_at": "2026-11-11T20:52:49+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:52:26+00:00",
+      "latest_entry_at": "2026-11-11T20:57:39+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:04:17+00:00",
+      "latest_entry_at": "2026-11-11T19:58:09+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-11T15:01:08+00:00",
+      "latest_entry_at": "2026-11-11T19:00:41+00:00",
       "stale": false
     },
     {
@@ -54,13 +54,13 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:50:43+00:00",
+      "latest_entry_at": "2026-11-11T20:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 7,
+      "eligible": 6,
       "error": "",
       "latest_entry_at": "2026-11-11T18:47:35+00:00",
       "stale": false
@@ -68,17 +68,17 @@
     {
       "source_id": "news_official_buf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T16:59:14+00:00",
+      "latest_entry_at": "2026-11-11T20:26:53+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_car",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:29:55+00:00",
+      "latest_entry_at": "2026-11-11T19:37:16+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-10T00:30:17+00:00",
+      "latest_entry_at": "2026-11-11T18:10:19+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:17:09+00:00",
+      "latest_entry_at": "2026-11-11T20:00:00+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-11T15:00:00+00:00",
+      "latest_entry_at": "2026-11-11T20:45:00+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-11T19:00:00+00:00",
+      "latest_entry_at": "2026-11-11T17:00:00+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-11T15:45:01+00:00",
+      "latest_entry_at": "2026-11-11T20:49:02+00:00",
       "stale": false
     },
     {
@@ -158,7 +158,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T17:28:09+00:00",
+      "latest_entry_at": "2026-11-11T19:09:39+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-11T00:30:00+00:00",
+      "latest_entry_at": "2026-11-11T01:00:00+00:00",
       "stale": false
     },
     {
@@ -206,7 +206,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T14:43:00+00:00",
+      "latest_entry_at": "2026-11-11T19:16:00+00:00",
       "stale": false
     },
     {
@@ -214,7 +214,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T17:43:35+00:00",
+      "latest_entry_at": "2026-11-11T19:16:27+00:00",
       "stale": false
     },
     {
@@ -230,7 +230,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:44:30+00:00",
+      "latest_entry_at": "2026-11-11T20:30:00+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T16:30:00+00:00",
+      "latest_entry_at": "2026-11-11T19:53:00+00:00",
       "stale": false
     },
     {
@@ -278,15 +278,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T16:29:13+00:00",
+      "latest_entry_at": "2026-11-11T20:13:02+00:00",
       "stale": false
     },
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:51:21+00:00",
+      "latest_entry_at": "2026-11-11T20:52:49+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:52:26+00:00",
+      "latest_entry_at": "2026-11-11T20:57:39+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T17:00:00+00:00",
+      "latest_entry_at": "2026-11-11T20:40:04+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-11T17:00:00+00:00",
+      "latest_entry_at": "2026-11-11T01:00:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:02:53+00:00",
+      "latest_entry_at": "2026-11-11T19:45:39+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T15:02:42+00:00",
+      "latest_entry_at": "2026-11-11T19:26:48+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:30:00+00:00",
+      "latest_entry_at": "2026-11-11T16:30:00+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T14:50:00+00:00",
+      "latest_entry_at": "2026-11-11T19:45:23+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:29:36+00:00",
+      "latest_entry_at": "2026-11-11T20:30:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T19:00:00+00:00",
+      "latest_entry_at": "2026-11-11T15:30:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:08:03+00:00",
+      "latest_entry_at": "2026-11-11T15:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:52:11+00:00",
+      "latest_entry_at": "2026-11-11T15:15:50+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T14:58:43+00:00",
+      "latest_entry_at": "2026-11-11T18:59:53+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T13:00:00+00:00",
+      "latest_entry_at": "2026-11-11T20:44:40+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:54:15+00:00",
+      "latest_entry_at": "2026-11-11T16:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,147 @@
     }
   ],
   "items": [
+    {
+      "id": "8d01b691d86aa1012d37",
+      "headline": "Practice Notebook: DE Arden Key returns after IR stint",
+      "url": "https://www.colts.com/news/practice-notebook-de-arden-key-returns-after-ir-stint",
+      "source_id": "news_official_ind",
+      "source": "Indianapolis Colts (official)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "Key (hamstring) was placed on IR in October.",
+      "categories": [
+        "Practice Notebook",
+        "Featured",
+        "Featured News"
+      ],
+      "published_at": "2026-11-11T20:49:02+00:00",
+      "players": []
+    },
+    {
+      "id": "a56a0042387be2a1cf27",
+      "headline": "Kansas City Chiefs HC Andy Reid gives injury updates on Patrick Mahomes, Xavier Worthy, Peter Woods, and Jaylon Moore ahead of Week 10 practice",
+      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-andy-reid-injury-updates-patrick-mahomes-xavier-worthy-peter-woods-jaylon-moore-week-10-falcons/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "The Kansas City Chiefs open the practice week for their road trip to Atlanta with several key names in focus on offense and defense. Here's what Andy Reid shared on Wednesday.",
+      "categories": [
+        "Kansas City Chiefs News",
+        "American Football",
+        "Andy Reid",
+        "Chiefs Injuries",
+        "Jaylon Moore",
+        "Mansoor Delane",
+        "Omarr Norman-Lott",
+        "Patrick Mahomes",
+        "Peter Woods",
+        "Xavier Worthy"
+      ],
+      "published_at": "2026-11-11T20:33:41+00:00",
+      "players": [
+        {
+          "id": "00-0033873",
+          "name": "Patrick Mahomes",
+          "team": "KC",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039894",
+          "name": "Xavier Worthy",
+          "team": "KC",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "5f79093b80cfe3b1f158",
+      "headline": "Jets Practice Notebook | WRs Garrett Wilson and Omar Cooper Jr. Limited",
+      "url": "https://www.newyorkjets.com/news/garrett-wilson-omar-cooper-jr-limited-jets-practice-wednesday-bills-week-11-11-2026",
+      "source_id": "news_official_nyj",
+      "source": "New York Jets (official)",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "Musings on a Late Bye Week, NFL Trade Deadline and a Win-Win Trade",
+      "categories": [
+        "Latest Headlines",
+        "News",
+        "Eric Allen"
+      ],
+      "published_at": "2026-11-11T20:21:59+00:00",
+      "players": [
+        {
+          "id": "00-0037740",
+          "name": "Garrett Wilson",
+          "team": "NYJ",
+          "position": "WR"
+        },
+        {
+          "id": "00-0041511",
+          "name": "Omar Cooper",
+          "team": "NYJ",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "6792af45754b8554a186",
+      "headline": "Week 10 Wednesday Injury Report: Many happy returns",
+      "url": "https://www.panthers.com/news/week-10-wednesday-injury-report-many-happy-returns-jaelan-phillips-damien-lewis-will-lee",
+      "source_id": "news_official_car",
+      "source": "Carolina Panthers (official)",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "The Panthers got several key players back on the field for Wednesday's walk-through, including Jaelan Phillips, Damien Lewis, and Will Lee.",
+      "categories": [
+        "Injury Reports",
+        "Latest News",
+        "App News",
+        "Carolina Panthers at New Orleans Saints (2026-REG-10)"
+      ],
+      "published_at": "2026-11-11T19:37:16+00:00",
+      "players": []
+    },
+    {
+      "id": "2b490d0510b06d42834e",
+      "headline": "What We Know (And Just As Importantly Don't Know) About Dolphins QB Malik Willis' Injury and Status",
+      "url": "https://www.si.com/nfl/dolphins/onsi/what-we-know-and-just-as-importantly-don-t-know-about-dolphins-qb-malik-willis-injury-and-status-01m75zphgsvy",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "MIA"
+      ],
+      "feed_description": "Miami Dolphins QB Malik Willis will miss at least the next four games",
+      "categories": [],
+      "published_at": "2026-11-11T19:29:01+00:00",
+      "players": [
+        {
+          "id": "00-0038128",
+          "name": "Malik Willis",
+          "team": "MIA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "594f817c9acc380dbce9",
+      "headline": "Packers Wednesday Practice Update: Walking Fine Line With Blitzing Vikings",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-wednesday-practice-update-walking-fine-line-with-blitzing-vikings",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Vikings Week is here, with the Packers looking to avenge their season-opening loss.",
+      "categories": [],
+      "published_at": "2026-11-11T19:27:17+00:00",
+      "players": []
+    },
     {
       "id": "7795333a40c12e680741",
       "headline": "Packers get more clarity on Josh Jacobs\u2019 injury situation, with the bye week offering an important window to make a decision",
@@ -4088,143 +4229,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "17e5d151a85ecd8abb61",
-      "headline": "Patrick Mahomes Injury Updates: Kansas City Chiefs QB sends message as he battles throwing elbow injury in Week 9 vs. Jets",
-      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-patrick-mahomes-week-9-injury-update-jets/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs had a scare late in the first half of Week 9 when QB Patrick Mahomes came up holding his right elbow against the New York Jets. Here's what happened next on the sideline.",
-      "categories": [
-        "Kansas City Chiefs News",
-        "American Football",
-        "Chiefs Injuries",
-        "Justin Fields",
-        "Kansas City Chiefs",
-        "New York Jets",
-        "Patrick Mahomes"
-      ],
-      "published_at": "2026-11-08T19:41:33+00:00",
-      "players": [
-        {
-          "id": "00-0033873",
-          "name": "Patrick Mahomes",
-          "team": "KC",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "9b744162ae5e215f35e7",
-      "headline": "Chargers reveal Week 9 inactives vs. Texans",
-      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-news/66872/chargers-reveal-week-9-inactives-vs-texans",
-      "source_id": "news_sbn_lac",
-      "source": "Bolts From The Blue (SB Nation)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "The Los Angeles Chargers are getting ready for their Week 9 matchup against the Houston Texans at SoFi Stadium. While most of the players are getting ready, a few members of the team will be on the inactive list. S Kendall Williamson, DB Deane Leonard, G Kayode Awosika, WR Theo Wease and WR Brenen Thompson [\u2026]",
-      "categories": [
-        "Los Angeles Chargers Injuries",
-        "Los Angeles Chargers News",
-        "Los Angeles Chargers Roster"
-      ],
-      "published_at": "2026-11-08T19:41:05+00:00",
-      "players": [
-        {
-          "id": "00-0041550",
-          "name": "Brenen Thompson",
-          "team": "LAC",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "88008d418090c95123ad",
-      "headline": "Texans Inactives: Week 9 vs Los Angeles Chargers",
-      "url": "https://www.houstontexans.com/news/texans-inactives-week-9-vs-los-angeles-chargers",
-      "source_id": "news_official_hou",
-      "source": "Houston Texans (official)",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "The Houston Texans released their inactives list before their Week 9 matchup against the Los Angeles Chargers.",
-      "categories": [
-        "Gameday",
-        "Inactives",
-        "Homepage CP",
-        "Houston Texans at Jacksonville Jaguars (2026-REG-6)",
-        "2026 REG6 - Jaguars"
-      ],
-      "published_at": "2026-11-08T19:35:22+00:00",
-      "players": []
-    },
-    {
-      "id": "78c4274dfc43614f95da",
-      "headline": "Ravens Midseason Report Card: Grading The Front Office, Coaches, Offense, Defense And Special Teams",
-      "url": "https://www.si.com/nfl/ravens/onsi/ravens-midseason-report-card-grading-the-front-office-coaches-offense-defense-and-special-teams-01m6y4qs0tz3",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Ravens brass claimed they'd contend for championships, but even with Lamar Jackson healthy the roster and coaches are below grade",
-      "categories": [],
-      "published_at": "2026-11-08T19:35:05+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "07ed7e772d42d318cc86",
-      "headline": "Chargers-Texans Week 9 Inactives: Awosika & Thompson Won't Play Against Houston",
-      "url": "https://www.chargers.com/news/texans-inactives-week-9-2026",
-      "source_id": "news_official_lac",
-      "source": "Los Angeles Chargers (official)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "Here is who won't play Sunday for the Chargers against the Texans",
-      "categories": [
-        "Homepage: CP",
-        "Homepage: Headlines",
-        "App: Homepage",
-        "Stalwart - Inactives",
-        "Articles: Injury Report",
-        "2026-REG-9-EDITORIAL",
-        "Houston Texans at Los Angeles Chargers (2026-REG-9)"
-      ],
-      "published_at": "2026-11-08T19:35:00+00:00",
-      "players": []
-    },
-    {
-      "id": "3530f93ec356a2e2188c",
-      "headline": "Week 9 Injury Report: Patriots vs. Packers",
-      "url": "https://www.patriots.com/news/week-9-injury-report-patriots-vs-packers",
-      "source_id": "news_official_ne",
-      "source": "New England Patriots (official)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots and the Green Bay Packers announce the following player injuries and practice participation ahead of their Week 9 game.",
-      "categories": [
-        "Injury Report",
-        "hp-article",
-        "hp-featured",
-        "Pregame-Content",
-        "Green Bay Packers at New England Patriots (2026-REG-9)"
-      ],
-      "published_at": "2026-11-08T19:21:00+00:00",
-      "players": []
     }
   ]
 }
