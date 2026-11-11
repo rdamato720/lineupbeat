@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-11T01:00:48.147929+00:00",
+  "updated_at": "2026-11-11T01:55:39.731544+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T22:43:01+00:00",
+      "latest_entry_at": "2026-11-11T00:35:23+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T00:56:02+00:00",
+      "latest_entry_at": "2026-11-11T01:54:31+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T22:09:03+00:00",
+      "latest_entry_at": "2026-11-11T01:15:42+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-11T00:56:02+00:00",
+      "latest_entry_at": "2026-11-11T01:54:31+00:00",
       "stale": false
     },
     {
@@ -324,9 +324,9 @@
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T13:00:00+00:00",
+      "latest_entry_at": "2026-11-10T22:43:04+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T17:36:25+00:00",
+      "latest_entry_at": "2026-11-10T21:18:26+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T20:45:14+00:00",
+      "latest_entry_at": "2026-11-11T00:17:36+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T23:45:00+00:00",
+      "latest_entry_at": "2026-11-10T20:35:00+00:00",
       "stale": false
     },
     {
@@ -438,15 +438,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T23:20:11+00:00",
+      "latest_entry_at": "2026-11-11T00:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T23:05:14+00:00",
+      "latest_entry_at": "2026-11-10T17:52:35+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T23:00:00+00:00",
+      "latest_entry_at": "2026-11-11T01:00:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T12:00:00+00:00",
+      "latest_entry_at": "2026-11-10T15:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T19:00:00+00:00",
+      "latest_entry_at": "2026-11-10T23:40:52+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,53 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T16:50:18+00:00",
+      "latest_entry_at": "2026-11-10T22:17:17+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "4b00a5d69e53b92260f3",
+      "headline": "Rams Trade Deadline Winners and Losers: Les Snead Fails Matthew Stafford",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-nfl-trade-deadline-winners-losers-2026",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Los Angeles Rams stood pat at the NFL trade deadline despite major injuries. Here are the biggest winners and losers from Les Snead's decision.",
+      "categories": [],
+      "published_at": "2026-11-11T01:35:25+00:00",
+      "players": [
+        {
+          "id": "00-0026498",
+          "name": "Matthew Stafford",
+          "team": "LAR",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "bc58a0da2a191dcd384f",
+      "headline": "The Expert Who Helped Lamar Jackson Negotiate His Last Ravens Contract Believes End Could Be Near",
+      "url": "https://www.si.com/nfl/ravens/onsi/the-expert-who-helped-lamar-jackson-negotiate-his-last-ravens-contract-believes-end-could-be-near-01m738ydqs76",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "Ex-NFLPA honcho Mark Levin was a vital resource for the MVP QB a few years back and details the hurdles the Ravens face to keep him",
+      "categories": [],
+      "published_at": "2026-11-11T01:00:02+00:00",
+      "players": [
+        {
+          "id": "00-0034796",
+          "name": "Lamar Jackson",
+          "team": "BAL",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "2e8f688bcb01904d4a92",
       "headline": "Bills' Week 10 Injury Outlook for Dalton Kincaid, Spencer Brown, Christian Benford",
@@ -596,6 +638,42 @@
           "name": "Malik Willis",
           "team": "MIA",
           "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "f8ad12572707aefce464",
+      "headline": "Rams place another WR on injured reserve",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-news/154831/rams-xavier-smith-whittington-trade-deadline",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Los Angeles Rams have placed another receiver on injured reserve this week, as Jordan Whittington will miss at least four games with a back injury. Whittington was in line to have serious reps moving forward with Puka Nacua joining Davante Adams on IR this week, but now that opportunity will go to someone else. [\u2026]",
+      "categories": [
+        "Los Angeles Rams News",
+        "Los Angeles Rams Roster"
+      ],
+      "published_at": "2026-11-10T23:40:52+00:00",
+      "players": [
+        {
+          "id": "00-0031381",
+          "name": "Davante Adams",
+          "team": "LAR",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039751",
+          "name": "Jordan Whittington",
+          "team": "LAR",
+          "position": "WR"
         }
       ]
     },
@@ -4090,66 +4168,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "6bd483a496e81d490f6a",
-      "headline": "Lions, Dolphins Week 9 inactives: Sione Vaki, Amon-Ra St. Brown ACTIVE",
-      "url": "https://www.prideofdetroit.com/detroit-lions-news/180074/lions-dolphins-week-9-inactives-sione-vaki-active-jacob-saylors-out",
-      "source_id": "news_sbn_det",
-      "source": "Pride Of Detroit (SB Nation)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "The Detroit Lions have declared their inactives ahead of their Week 9 matchup with the Miami Dolphins, and Lions top reserve running back and ace special teamer Sione Vaki will play, while running back and kick returner Jacobs Saylors will not be available. Vaki was a late addition to the injury report this week, while [\u2026]",
-      "categories": [
-        "Detroit Lions Injuries",
-        "Detroit Lions News"
-      ],
-      "published_at": "2026-11-08T16:35:38+00:00",
-      "players": [
-        {
-          "id": "00-0036963",
-          "name": "Amon-Ra St. Brown",
-          "team": "DET",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039364",
-          "name": "Sione Vaki",
-          "team": "DET",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "6e5c557e0acdd2876610",
-      "headline": "Detroit Lions Week 9 inactives reveal a surprising decision at defensive end and good news for a key offensive star",
-      "url": "https://atozsports.com/nfl/detroit-lions-news/detroit-lions-week-9-inactives-reveal-a-surprising-decision-at-defensive-end-and-good-news-for-a-key-offensive-star/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "The Lions are dealing with several important injuries ahead of Sunday's matchup with Miami, creating opportunities for younger players and leaving some interesting questions about Detroit's roster decisions.",
-      "categories": [
-        "Detroit Lions News"
-      ],
-      "published_at": "2026-11-08T16:34:13+00:00",
-      "players": []
-    },
-    {
-      "id": "b13bb32f4d7c0aa4d7d0",
-      "headline": "Dallas Cowboys vs. Indianapolis Colts Inactives: Who's In, Who's Out For Week 9",
-      "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-indianapolis-colts-inactives-who-in-out-week-9",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys and Indianapolis Colts have released their list of inactives ahead of the Week 9 game on Sunday. Here's who's in and who's out.",
-      "categories": [],
-      "published_at": "2026-11-08T16:34:03+00:00",
-      "players": []
     }
   ]
 }
