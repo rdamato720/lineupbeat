@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-11T05:00:58.300899+00:00",
+  "updated_at": "2026-11-11T09:24:30.479654+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T01:37:27+00:00",
+      "latest_entry_at": "2026-11-11T06:01:39+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T04:58:47+00:00",
+      "latest_entry_at": "2026-11-11T07:38:05+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T04:58:47+00:00",
+      "latest_entry_at": "2026-11-11T07:38:05+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T00:17:36+00:00",
+      "latest_entry_at": "2026-11-10T17:21:15+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-10T23:00:00+00:00",
+      "latest_entry_at": "2026-11-11T00:30:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T17:52:35+00:00",
+      "latest_entry_at": "2026-11-10T23:05:14+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T04:02:56+00:00",
+      "latest_entry_at": "2026-11-10T13:47:07+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-10T23:40:52+00:00",
+      "latest_entry_at": "2026-11-11T04:07:33+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-10T21:29:07+00:00",
+      "latest_entry_at": "2026-11-10T22:53:50+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,47 @@
     }
   ],
   "items": [
+    {
+      "id": "4f146b7e4adf7bb2d131",
+      "headline": "It\u2019s time to play the rookies",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-depth-chart/154854/rams-max-klare-cj-daniels-depth",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Los Angeles Rams are down Puka Nacua, Davante Adams, Terrance Ferguson, and Jordan Whittington. Those were their top four receiving options atop the depth chart entering the year. The NFL trade deadline passed and the Rams decided to stand pat. There are no reinforcements on the way. They now will be left with Tutu [\u2026]",
+      "categories": [
+        "Los Angeles Rams Depth Chart"
+      ],
+      "published_at": "2026-11-11T04:07:33+00:00",
+      "players": [
+        {
+          "id": "00-0031381",
+          "name": "Davante Adams",
+          "team": "LAR",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039751",
+          "name": "Jordan Whittington",
+          "team": "LAR",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "dbddc3950e3385f4fbf6",
       "headline": "Giants\u2019 Injury Report Looks Good Ahead of Thursday Night vs. Commanders",
@@ -4138,32 +4179,6 @@
           "name": "Cam Skattebo",
           "team": "NYG",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "8a05a916d59723fbd6c0",
-      "headline": "New Orleans Saints vs. Cleveland Browns Game Day Inactives: Jordyn Tyson makes his NFL debut",
-      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-game-information/117586/nfl-week-9-new-orleans-saints-vs-cleveland-browns-inactives-ruled-out",
-      "source_id": "news_sbn_no",
-      "source": "Canal Street Chronicles (SB Nation)",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "Week 9 of the 2026 NFL season is here, and the New Orleans Saints (2-5) are back after their bye to take on the Cleveland Browns (5-3) in Caesars Superdome. With kickoff just minutes away, let\u2019s take a look at today\u2019s inactives. New Orleans Saints: Cleveland Browns: TBA",
-      "categories": [
-        "New Orleans Saints Game Information",
-        "New Orleans Saints Injuries",
-        "New Orleans Saints News",
-        "New Orleans Saints Roster"
-      ],
-      "published_at": "2026-11-08T16:37:04+00:00",
-      "players": [
-        {
-          "id": "00-0041029",
-          "name": "Jordyn Tyson",
-          "team": "NO",
-          "position": "WR"
         }
       ]
     }
