@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T13:00:56.819820+00:00",
+  "updated_at": "2026-11-12T13:16:38.468948+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T13:00:06+00:00",
+      "latest_entry_at": "2026-11-12T13:15:29+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T12:38:40+00:00",
+      "latest_entry_at": "2026-11-12T13:05:04+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-11T22:11:19+00:00",
+      "latest_entry_at": "2026-11-12T13:00:34+00:00",
       "stale": false
     },
     {
@@ -270,7 +270,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:37:03+00:00",
+      "latest_entry_at": "2026-11-12T13:00:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T13:00:06+00:00",
+      "latest_entry_at": "2026-11-12T13:15:29+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T12:38:40+00:00",
+      "latest_entry_at": "2026-11-12T13:05:04+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-12T10:00:00+00:00",
+      "latest_entry_at": "2026-11-12T11:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T12:30:00+00:00",
+      "latest_entry_at": "2026-11-12T02:49:06+00:00",
       "stale": false
     },
     {
@@ -364,9 +364,9 @@
     {
       "source_id": "news_sbn_hou",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T17:30:00+00:00",
+      "latest_entry_at": "2026-11-12T13:00:00+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T12:00:00+00:00",
+      "latest_entry_at": "2026-11-12T05:33:28+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T11:00:00+00:00",
+      "latest_entry_at": "2026-11-12T01:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T12:00:00+00:00",
+      "latest_entry_at": "2026-11-11T21:16:43+00:00",
       "stale": false
     },
     {
@@ -596,30 +596,6 @@
           "name": "Garrett Wilson",
           "team": "NYJ",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "188425230c1d18a6fdcb",
-      "headline": "Lions, Patriots Week 10 injury report: Jared Goff limited; DJ Wonnum returns to practice",
-      "url": "https://www.prideofdetroit.com/detroit-lions-injuries/180416/lions-patriots-week-10-injury-report-jared-goff-limited-dj-wonnum-returns-to-practice",
-      "source_id": "news_sbn_det",
-      "source": "Pride Of Detroit (SB Nation)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "The Detroit Lions (6-2) head to Germany in Week 10 to take on the New England Patriots (5-4), but before they travel overseas, they\u2019ll hold two practices in Allen Park: a walkthrough on Wednesday and a standard practice on Thursday. A walkthrough practice means that all participation levels are estimates from the coaching staff based [\u2026]",
-      "categories": [
-        "Detroit Lions Injuries",
-        "Detroit Lions News"
-      ],
-      "published_at": "2026-11-12T08:08:29+00:00",
-      "players": [
-        {
-          "id": "00-0033106",
-          "name": "Jared Goff",
-          "team": "DET",
-          "position": "QB"
         }
       ]
     },
@@ -1767,6 +1743,30 @@
           "name": "Michael Wilson",
           "team": "ARI",
           "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "188425230c1d18a6fdcb",
+      "headline": "Lions, Patriots Week 10 injury report: Jared Goff limited; DJ Wonnum returns to practice",
+      "url": "https://www.prideofdetroit.com/detroit-lions-injuries/180416/lions-patriots-week-10-injury-report-jared-goff-limited-dj-wonnum-returns-to-practice",
+      "source_id": "news_sbn_det",
+      "source": "Pride Of Detroit (SB Nation)",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "The Detroit Lions (6-2) head to Germany in Week 10 to take on the New England Patriots (5-4), but before they travel overseas, they\u2019ll hold two practices in Allen Park: a walkthrough on Wednesday and a standard practice on Thursday. A walkthrough practice means that all participation levels are estimates from the coaching staff based [\u2026]",
+      "categories": [
+        "Detroit Lions Injuries",
+        "Detroit Lions News"
+      ],
+      "published_at": "2026-11-11T21:16:43+00:00",
+      "players": [
+        {
+          "id": "00-0033106",
+          "name": "Jared Goff",
+          "team": "DET",
+          "position": "QB"
         }
       ]
     },
