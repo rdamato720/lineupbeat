@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T04:18:20.643044+00:00",
+  "updated_at": "2026-11-12T05:00:50.445104+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T04:11:36+00:00",
+      "latest_entry_at": "2026-11-12T05:00:34+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T04:11:36+00:00",
+      "latest_entry_at": "2026-11-12T05:00:34+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-12T02:00:00+00:00",
+      "latest_entry_at": "2026-11-11T21:45:00+00:00",
       "stale": false
     },
     {
@@ -436,9 +436,9 @@
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-12T00:00:00+00:00",
+      "latest_entry_at": "2026-11-11T21:32:39+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T01:00:00+00:00",
+      "latest_entry_at": "2026-11-11T23:00:00+00:00",
       "stale": false
     },
     {
@@ -500,17 +500,17 @@
     {
       "source_id": "news_sbn_car",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T15:33:59+00:00",
+      "latest_entry_at": "2026-11-12T04:47:29+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T22:13:03+00:00",
+      "latest_entry_at": "2026-11-11T18:54:15+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-11T21:06:48+00:00",
+      "latest_entry_at": "2026-11-11T18:55:20+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,23 @@
     }
   ],
   "items": [
+    {
+      "id": "231a9bdfe40327c98a04",
+      "headline": "Panthers injury report is full of reinforcements",
+      "url": "https://www.catscratchreader.com/carolina-panthers-news/62248/carolina-panthers-injury-report-is-full-of-reinforcements",
+      "source_id": "news_sbn_car",
+      "source": "Cat Scratch Reader (SB Nation)",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "The Carolina Panthers are flailing as they try to stay afloat at the top of the ever pitiful NFC South. The team has dropped three straight games with a skeleton crew of a secondary and a revolving door of players on the offensive line. The first injury report of Week 10 brings good news though. [\u2026]",
+      "categories": [
+        "Carolina Panthers Injuries",
+        "Carolina Panthers News"
+      ],
+      "published_at": "2026-11-12T04:47:29+00:00",
+      "players": []
+    },
     {
       "id": "12afeeed1b2034a463ab",
       "headline": "Rams Injury Report: Trent McDuffie Status Uncertain as Rams Face More Injury Troubles",
@@ -4108,31 +4125,6 @@
           "name": "Patrick Mahomes",
           "team": "KC",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "8a6fb3844e8218a4fe37",
-      "headline": "Ben Brown injury forces Patriots to once again adjust their O-line",
-      "url": "https://www.patspulpit.com/new-england-patriots-injuries/143709/ben-brown-injury-update-patriots-vs-lions-nfl-week-10-germany",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "While wide receiver A.J. Brown might be making the trip to Germany this week alongside the rest of the New England Patriots, another member of the team\u2019s starting lineup will not be available for the upcoming game against the Detroit Lions. Guard Ben Brown, who exited Sunday\u2019s loss to the Green Bay Packers with a [\u2026]",
-      "categories": [
-        "New England Patriots First Read",
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-11-09T19:28:56+00:00",
-      "players": [
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
-          "position": "WR"
         }
       ]
     }
