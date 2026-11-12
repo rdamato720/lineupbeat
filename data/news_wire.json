@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-12T01:00:56.932402+00:00",
+  "updated_at": "2026-11-12T03:00:50.188305+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T21:10:10+00:00",
+      "latest_entry_at": "2026-11-12T01:15:00+00:00",
       "stale": false
     },
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T01:01:00+00:00",
+      "latest_entry_at": "2026-11-12T03:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T23:09:53+00:00",
+      "latest_entry_at": "2026-11-12T02:01:00+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-12T00:00:08+00:00",
+      "latest_entry_at": "2026-11-12T01:00:00+00:00",
       "stale": false
     },
     {
@@ -252,7 +252,7 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 11,
+      "eligible": 10,
       "error": "",
       "latest_entry_at": "2026-11-12T00:19:47+00:00",
       "stale": false
@@ -268,7 +268,7 @@
     {
       "source_id": "news_official_tb",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
       "latest_entry_at": "2026-11-11T18:37:03+00:00",
       "stale": false
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-12T01:01:00+00:00",
+      "latest_entry_at": "2026-11-12T03:00:00+00:00",
       "stale": false
     },
     {
@@ -308,9 +308,9 @@
     {
       "source_id": "news_sbn_mia",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-11T18:30:00+00:00",
+      "latest_entry_at": "2026-11-12T01:45:37+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-11T21:45:00+00:00",
+      "latest_entry_at": "2026-11-12T02:00:00+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T23:30:00+00:00",
+      "latest_entry_at": "2026-11-11T19:00:00+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T16:11:00+00:00",
+      "latest_entry_at": "2026-11-12T01:06:49+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T23:08:01+00:00",
+      "latest_entry_at": "2026-11-11T19:17:16+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-11T22:00:00+00:00",
+      "latest_entry_at": "2026-11-11T13:00:00+00:00",
       "stale": false
     },
     {
@@ -524,9 +524,9 @@
     {
       "source_id": "news_sbn_ari",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-11T22:11:31+00:00",
+      "latest_entry_at": "2026-11-11T12:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,85 @@
     }
   ],
   "items": [
+    {
+      "id": "12afeeed1b2034a463ab",
+      "headline": "Rams Injury Report: Trent McDuffie Status Uncertain as Rams Face More Injury Troubles",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-injury-report-puka-nacua-trent-mcduffie-cardinals",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Los Angeles Rams could be without several key starters against the Arizona Cardinals. Here's the latest on Puka Nacua, Trent McDuffie and more.",
+      "categories": [],
+      "published_at": "2026-11-12T01:49:11+00:00",
+      "players": [
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "7967943a568f70921c98",
+      "headline": "Dolphins center Aaron Brewer in concussion protocol",
+      "url": "https://www.thephinsider.com/miami-dolphins-injuries/124832/dolphins-center-aaron-brewer-in-concussion-protocol",
+      "source_id": "news_sbn_mia",
+      "source": "The Phinsider (SB Nation)",
+      "teams": [
+        "MIA"
+      ],
+      "feed_description": "The injury woes keep piling up for the Miami Dolphins. This week, the Dolphins learned that starting defensive tackle Zach Sieler will miss the rest of the 2026 season due to a torn biceps he suffered on the first play of Miami\u2019s defeat against the Detroit Lions last Sunday. Starting quarterback Malik Willis was also [\u2026]",
+      "categories": [
+        "Miami Dolphins Injuries"
+      ],
+      "published_at": "2026-11-12T01:45:37+00:00",
+      "players": [
+        {
+          "id": "00-0038128",
+          "name": "Malik Willis",
+          "team": "MIA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "2b2419ec0efb7aea7ea0",
+      "headline": "Packers-Vikings Wednesday Injury Report: Huge List Filled With Big Names",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-vikings-wednesday-injury-report-huge-list-filled-with-big-names",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The Green Bay Packers have a season-high 16 players on the injury report before this week\u2019s game against the Vikings.",
+      "categories": [],
+      "published_at": "2026-11-12T01:22:14+00:00",
+      "players": []
+    },
+    {
+      "id": "eed8d300b5f6ee6c9c44",
+      "headline": "Dalton Kincaid, Spencer Brown Fighting New Injuries After Bills' Primetime Week 9 Win",
+      "url": "https://www.si.com/nfl/bills/onsi/injuries-dalton-kincaid-spencer-brown-new-issues-after-bills-primetime-week-9-win",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills' offense has two new issues to monitor in the injury department heading into a Week 10 road game against the New York Jets.",
+      "categories": [],
+      "published_at": "2026-11-12T01:03:45+00:00",
+      "players": [
+        {
+          "id": "00-0038933",
+          "name": "Dalton Kincaid",
+          "team": "BUF",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "d8ee10c5b4467ea215b0",
       "headline": "From the Podium: Sean McVay and Matthew Stafford preview Rams' second meeting with Cardinals",
@@ -4054,135 +4133,6 @@
           "name": "A.J. Brown",
           "team": "NE",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "03ff5ca393eacc354845",
-      "headline": "Todd Monken denies report Browns already made Shedeur Sanders, Deshaun Watson starting decision for Week 10",
-      "url": "https://www.dawgsbynature.com/cleveland-browns-news/137587/browns-shedeur-sanders-deshaun-watson-starter-todd-monken-week-10-texans",
-      "source_id": "news_sbn_cle",
-      "source": "Dawgs By Nature (SB Nation)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "Among the conversations surrounding the Cleveland Browns after Week 9\u2019s loss to the New Orleans Saints was whether Shedeur Sanders overtook Deshaun Watson as the team\u2019s starting quarterback: There was also a comparison of the two quarterbacks: HC Todd Monken was non-committal after the game, but his answers were mostly based on the timing of [\u2026]",
-      "categories": [
-        "Cleveland Browns Depth Chart",
-        "Cleveland Browns News"
-      ],
-      "published_at": "2026-11-09T19:06:38+00:00",
-      "players": [
-        {
-          "id": "00-0033537",
-          "name": "Deshaun Watson",
-          "team": "CLE",
-          "position": "QB"
-        },
-        {
-          "id": "00-0040668",
-          "name": "Shedeur Sanders",
-          "team": "CLE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "1e0a3d77d1eae900e13b",
-      "headline": "Kansas City Chiefs HC Andy Reid provides latest injury updates on QB Patrick Mahomes, WR Xavier Worthy, and RT Jaylon Moore",
-      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-andy-reid-injury-updates-patrick-mahomes-xavier-worthy-jaylon-moore-monday/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Kansas City Chiefs HC Andy Reid spoke about the injury situation on Monday after Week 9's win over the New York Jets. Here are the latest updates on QB Patrick Mahomes (elbow), WR Xavier Worthy (hamstring), and RT Jaylon Moore (ankle).",
-      "categories": [
-        "Kansas City Chiefs News",
-        "Andy Reid",
-        "Atlanta Falcons",
-        "Chiefs Injuries",
-        "Jaylon Moore",
-        "Kansas City Chiefs",
-        "New York Jets",
-        "Patrick Mahomes",
-        "Tyquan Thornton",
-        "Xavier Worthy"
-      ],
-      "published_at": "2026-11-09T18:52:12+00:00",
-      "players": [
-        {
-          "id": "00-0033873",
-          "name": "Patrick Mahomes",
-          "team": "KC",
-          "position": "QB"
-        },
-        {
-          "id": "00-0039894",
-          "name": "Xavier Worthy",
-          "team": "KC",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "e354f8a6832f418ef099",
-      "headline": "Mike Macdonald On Seattle Sports 710AM: Drew Lock Expected To Start Again In Week 10",
-      "url": "https://www.seahawks.com/news/mike-macdonald-on-seattle-sports-710am-drew-lock-expected-to-start-again-in-week-10",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Mike Macdonald said quarterback Sam Darnold will miss another game due to quadricep and rib injuries, and that Drew Lock should be able to start again despite an oblique injury.",
-      "categories": [
-        "News: Stories",
-        "News: National Feature",
-        "Drew Lock",
-        "Homepage Top Headlines",
-        "Homepage Hero",
-        "Sam Darnold"
-      ],
-      "published_at": "2026-11-09T18:44:11+00:00",
-      "players": [
-        {
-          "id": "00-0034869",
-          "name": "Sam Darnold",
-          "team": "SEA",
-          "position": "QB"
-        },
-        {
-          "id": "00-0035704",
-          "name": "Drew Lock",
-          "team": "SEA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "a041da7c8692ab388de0",
-      "headline": "There\u2019s a pressing question surrounding the Miami Dolphins that won\u2019t get an answer today",
-      "url": "https://atozsports.com/nfl/miami-dolphins-news/theres-a-pressing-question-surrounding-the-miami-dolphins-that-wont-get-an-answer-today/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "Miami Dolphins quarterback Malik Willis played Week 9 through a groin injury and head coach Jeff Hafley didn't have many helpful answers about it on Monday afternoon.",
-      "categories": [
-        "Miami Dolphins News",
-        "Dolphins",
-        "Dolphins News",
-        "Malik Willis",
-        "Miami Dolphins"
-      ],
-      "published_at": "2026-11-09T18:30:13+00:00",
-      "players": [
-        {
-          "id": "00-0038128",
-          "name": "Malik Willis",
-          "team": "MIA",
-          "position": "QB"
         }
       ]
     }
