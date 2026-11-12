@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T20:52:54.498955+00:00",
+  "updated_at": "2026-11-12T21:00:59.720912+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T20:38:09+00:00",
+      "latest_entry_at": "2026-11-12T20:54:09+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T20:32:36+00:00",
+      "latest_entry_at": "2026-11-12T20:56:26+00:00",
       "stale": false
     },
     {
@@ -100,7 +100,7 @@
     {
       "source_id": "news_official_cle",
       "ok": true,
-      "eligible": 7,
+      "eligible": 6,
       "error": "",
       "latest_entry_at": "2026-11-12T18:06:27+00:00",
       "stale": false
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T20:38:09+00:00",
+      "latest_entry_at": "2026-11-12T20:54:09+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T20:32:36+00:00",
+      "latest_entry_at": "2026-11-12T20:56:26+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T16:35:14+00:00",
+      "latest_entry_at": "2026-11-12T19:30:00+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T20:15:00+00:00",
+      "latest_entry_at": "2026-11-12T15:01:20+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T14:30:00+00:00",
+      "latest_entry_at": "2026-11-12T12:00:00+00:00",
       "stale": false
     },
     {
@@ -406,15 +406,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-12T20:00:00+00:00",
+      "latest_entry_at": "2026-11-12T18:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lv",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-12T16:01:00+00:00",
+      "latest_entry_at": "2026-11-12T18:05:00+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T15:03:42+00:00",
+      "latest_entry_at": "2026-11-12T19:04:11+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T20:49:46+00:00",
+      "latest_entry_at": "2026-11-12T15:17:59+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T19:00:00+00:00",
+      "latest_entry_at": "2026-11-12T21:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-11T23:08:01+00:00",
+      "latest_entry_at": "2026-11-12T19:29:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-12T14:02:54+00:00",
+      "latest_entry_at": "2026-11-12T18:17:04+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T17:30:00+00:00",
+      "latest_entry_at": "2026-11-12T16:01:00+00:00",
       "stale": false
     },
     {
@@ -572,6 +572,27 @@
       ],
       "published_at": "2026-11-12T20:46:32+00:00",
       "players": []
+    },
+    {
+      "id": "4c83f1521ca311eb08bf",
+      "headline": "George Pickens Injury Scare Surfaces After ESPN App Update Despite Practice Progress",
+      "url": "https://www.si.com/nfl/cowboys/onsi/george-pickens-injury-scare-surfaces-espn-app-update-practice-progress",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "Dallas Cowboys fans were given a jump scare during Thursday's practice with an apparent glitch regarding George Pickens' injury.",
+      "categories": [],
+      "published_at": "2026-11-12T20:45:06+00:00",
+      "players": [
+        {
+          "id": "00-0037247",
+          "name": "George Pickens",
+          "team": "DAL",
+          "position": "WR"
+        }
+      ]
     },
     {
       "id": "93d6030a0f63ed50d663",
@@ -4083,27 +4104,6 @@
           "name": "Carson Beck",
           "team": "ARI",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "f277c1a7a8ae4728e6a0",
-      "headline": "Bills Call Up Veteran Safety And Wide Receiver Reinforcements to Face Vikings",
-      "url": "https://www.si.com/nfl/bills/onsi/transactions-bills-call-up-veteran-safety-and-wide-receiver-reinforcements-to-face-vikings",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "The Buffalo Bills placed WR Josh Palmer on Injured Reserve while elevating two proven veterans from the practice squad ahead of their Week 9 primetime matchup.",
-      "categories": [],
-      "published_at": "2026-11-09T22:28:18+00:00",
-      "players": [
-        {
-          "id": "00-0036988",
-          "name": "Josh Palmer",
-          "team": "BUF",
-          "position": "WR"
         }
       ]
     }
