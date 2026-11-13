@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T22:53:37.962642+00:00",
+  "updated_at": "2026-11-13T23:00:51.024679+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-13T21:45:23+00:00",
+      "latest_entry_at": "2026-11-13T21:56:14+00:00",
       "stale": false
     },
     {
@@ -252,9 +252,9 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 8,
+      "eligible": 9,
       "error": "",
-      "latest_entry_at": "2026-11-13T22:05:00+00:00",
+      "latest_entry_at": "2026-11-13T22:56:57+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T21:52:47+00:00",
+      "latest_entry_at": "2026-11-13T22:35:33+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T21:30:00+00:00",
+      "latest_entry_at": "2026-11-13T22:30:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T18:01:00+00:00",
+      "latest_entry_at": "2026-11-13T22:45:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T19:59:31+00:00",
+      "latest_entry_at": "2026-11-13T21:28:28+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T16:02:56+00:00",
+      "latest_entry_at": "2026-11-13T22:26:22+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,35 @@
     }
   ],
   "items": [
+    {
+      "id": "0e4c98f563239fa3ad06",
+      "headline": "Drew Lock 'Confident And Optimistic' Heading Into Sunday's Game & Other Seahawks Updates",
+      "url": "https://www.seahawks.com/news/drew-lock-confident-and-optimistic-heading-into-sunday-s-game-other-seahawks-updates",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Injury updates from Seahawks coach Mike Macdonald heading into Sunday\u2019s game against the Raiders.",
+      "categories": [
+        "category/News:",
+        "News: National Feature",
+        "Seattle Seahawks at Las Vegas Raiders (2026-REG-10)",
+        "Homepage Hero",
+        "Homepage Top Headlines",
+        "Drew Lock",
+        "Jalen Milroe"
+      ],
+      "published_at": "2026-11-13T22:56:57+00:00",
+      "players": [
+        {
+          "id": "00-0035704",
+          "name": "Drew Lock",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "5e5a9dee943cc7d9577c",
       "headline": "Vikings-Packers Final Injury Report",
@@ -828,7 +857,7 @@
     },
     {
       "id": "c0623ae74d7520f95449",
-      "headline": "Bills vs. Jets final injury report and game day designations",
+      "headline": "Bills at Jets Week 10 final injury report and game day designations",
       "url": "https://www.buffalorumblings.com/buffalo-bills-injuries/145232/bills-vs-jets-final-injury-report-and-game-day-designations",
       "source_id": "news_sbn_buf",
       "source": "Buffalo Rumblings (SB Nation)",
@@ -3862,33 +3891,6 @@
           "name": "Carson Beck",
           "team": "ARI",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "b94810a5ddd075f3e839",
-      "headline": "Falcons injury report: Zachariah Branch, Josh Woods, James Pearce Jr. held out of practice",
-      "url": "https://www.atlantafalcons.com/news/falcons-injury-report-zachariah-branch-josh-woods-james-pearce-jr",
-      "source_id": "news_official_atl",
-      "source": "Atlanta Falcons (official)",
-      "teams": [
-        "ATL"
-      ],
-      "feed_description": "Atlanta had only three players miss practice due to injury as it began its week of preparation for the Kansas City Chiefs.",
-      "categories": [
-        "News",
-        "Emory Injury Report",
-        "zachariah branch",
-        "james pearce jr.",
-        "josh woods"
-      ],
-      "published_at": "2026-11-11T22:03:26+00:00",
-      "players": [
-        {
-          "id": "00-0041044",
-          "name": "Zachariah Branch",
-          "team": "ATL",
-          "position": "WR"
         }
       ]
     }
