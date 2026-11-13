@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T01:00:49.960447+00:00",
+  "updated_at": "2026-11-13T01:49:30.657412+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-13T01:00:01+00:00",
+      "latest_entry_at": "2026-11-13T01:43:24+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-12T20:29:02+00:00",
+      "latest_entry_at": "2026-11-13T01:10:17+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-12T22:27:28+00:00",
+      "latest_entry_at": "2026-11-13T01:10:11+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-13T00:28:00+00:00",
+      "latest_entry_at": "2026-11-13T01:15:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-13T01:00:01+00:00",
+      "latest_entry_at": "2026-11-13T01:43:24+00:00",
       "stale": false
     },
     {
@@ -300,9 +300,9 @@
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T14:45:52+00:00",
+      "latest_entry_at": "2026-11-12T21:48:41+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-12T21:41:57+00:00",
+      "latest_entry_at": "2026-11-13T01:07:34+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T20:37:18+00:00",
+      "latest_entry_at": "2026-11-13T00:11:29+00:00",
       "stale": false
     },
     {
@@ -358,23 +358,23 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T16:35:14+00:00",
+      "latest_entry_at": "2026-11-13T01:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_hou",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T15:00:00+00:00",
+      "latest_entry_at": "2026-11-13T00:09:09+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-12T18:35:00+00:00",
+      "latest_entry_at": "2026-11-12T22:30:53+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T19:04:11+00:00",
+      "latest_entry_at": "2026-11-13T00:34:09+00:00",
       "stale": false
     },
     {
@@ -438,15 +438,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T00:02:23+00:00",
+      "latest_entry_at": "2026-11-13T01:38:29+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T15:17:59+00:00",
+      "latest_entry_at": "2026-11-13T00:45:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-12T21:08:28+00:00",
+      "latest_entry_at": "2026-11-13T00:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-12T21:00:00+00:00",
+      "latest_entry_at": "2026-11-13T01:15:00+00:00",
       "stale": false
     },
     {
@@ -470,15 +470,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-12T22:00:00+00:00",
+      "latest_entry_at": "2026-11-13T00:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-11T23:08:01+00:00",
+      "latest_entry_at": "2026-11-13T00:01:40+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-12T16:45:00+00:00",
+      "latest_entry_at": "2026-11-13T00:45:10+00:00",
       "stale": false
     },
     {
@@ -542,19 +542,94 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-12T14:30:00+00:00",
+      "latest_entry_at": "2026-11-12T23:58:08+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-12T18:50:31+00:00",
+      "latest_entry_at": "2026-11-13T01:08:40+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "c0d224695092f3d2d9cd",
+      "headline": "Rams Midweek Report: Are the Playoffs Still Realistic? Puka Nacua to IR, and Trade Deadline Leftovers",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-midweek-report-playoff-chances-puka-nacua-injury-trade-deadline",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Can the Rams still make the playoffs? Breaking down Puka Nacua's injury, a difficult remaining schedule, and the fallout from the NFL trade deadline.",
+      "categories": [],
+      "published_at": "2026-11-13T01:43:24+00:00",
+      "players": [
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "6faeb897e82377bcdf4b",
+      "headline": "Raiders Receive More Fantastic Injury Report News Ahead of Seahawks",
+      "url": "https://www.si.com/nfl/raiders/onsi/las-vegas-receive-more-fantastic-injury-report-news-ahead-seahawks",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "The Las Vegas Raiders continue to get healthier by the day ahead of their Week 10 home matchup against the Seattle Seahawks.",
+      "categories": [],
+      "published_at": "2026-11-13T01:30:56+00:00",
+      "players": []
+    },
+    {
+      "id": "d2dd99b3a2f8a6277376",
+      "headline": "Seahawks-Raiders Thursday injury report: Charles Cross gets back to (limited) work!",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/179750/seahawks-raiders-thursday-injury-report-charles-cross-gets-back-limited-work",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "There\u2019s one more week to go before a much-needed bye week for the Seattle Seahawks with a matchup against the Las Vegas Raiders on the horizon. The injury report is still quite hefty with 15 players listed for Seattle compared to just 4 for the Raiders. However, there was a positive turn as Charles Cross [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-11-13T01:08:40+00:00",
+      "players": []
+    },
+    {
+      "id": "c38daa6503059dc80d3e",
+      "headline": "Rams place Puka Nacua on IR",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/155001/puka-nacua-injury-reserve-rams",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Los Angeles Rams will be without star receiver Puka Nacua for at least four games, as the team placed him on injured reserve on Thursday. Head coach Sean McVay had previously just said on Wednesday that Nacua would avoid going on IR \u2014 mostly for technical roster-related reasons \u2014 but the Rams found a [\u2026]",
+      "categories": [
+        "Los Angeles Rams Injuries"
+      ],
+      "published_at": "2026-11-13T00:45:10+00:00",
+      "players": [
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "e68096a10f5de2a573f3",
       "headline": "Raiders-Seahawks Week 10 Injury Report",
@@ -573,6 +648,30 @@
       ],
       "published_at": "2026-11-13T00:45:00+00:00",
       "players": []
+    },
+    {
+      "id": "a0bd6df23d931133536d",
+      "headline": "Chargers Injury Report: 9 players sit out 1st practice of Week 10",
+      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/67022/chargers-ravens-injury-report-daiyan-henley-david-njoku",
+      "source_id": "news_sbn_lac",
+      "source": "Bolts From The Blue (SB Nation)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "The Chargers began their prep for the Ravens with a whopping 18 players listed on their Thursday injury report. Of those players, over half of them sat out with a DNP tag. That group of nine included wide receiver Ladd McConkey (back), offensive guard/tackle Branson Taylor (ankle), defensive tackle Justin Eboigbe (ankle), and cornerback Isas [\u2026]",
+      "categories": [
+        "Chargers Injury Reports",
+        "Los Angeles Chargers Injuries"
+      ],
+      "published_at": "2026-11-13T00:34:09+00:00",
+      "players": [
+        {
+          "id": "00-0039915",
+          "name": "Ladd McConkey",
+          "team": "LAC",
+          "position": "WR"
+        }
+      ]
     },
     {
       "id": "9344a34bd1af1a912995",
@@ -684,6 +783,39 @@
       ]
     },
     {
+      "id": "5ec2439e196eb9f48bbb",
+      "headline": "2 new starters pop up on the 49ers injury report",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/165664/2-new-starters-pop-up-on-the-49ers-injury-report",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Both starting cornerbacks missed their second practice in a row for the San Francisco 49ers: Deommodore Lenoir (foot) and Renardo Green (back). That leaves Ephesians Prysock, Siran Neal, and Jack Jones from the practice squad as the only healthy corners. Nickel Upton Stout (shoulder) practiced with a blue non-contact jersey. Here\u2019s the injury report for [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries",
+        "San Francisco 49ers Roster"
+      ],
+      "published_at": "2026-11-12T23:58:08+00:00",
+      "players": []
+    },
+    {
+      "id": "253b0dc179b78445155d",
+      "headline": "Washington Commanders vs. New York Giants inactives in NFL Week 10",
+      "url": "https://www.hogshaven.com/washington-commanders-injuries/454574/washington-commanders-vs-new-york-giants-inactives-in-nfl-week-10",
+      "source_id": "news_sbn_was",
+      "source": "Hogs Haven (SB Nation)",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "The Washington Commanders released their final injury report for Thursday night\u2019s game against the Giants on Wesnesday and then made several roster moves earlier in the day. The Commanders elevated C/G Julian Good-Jones from the practice squad and signed LB Ale Kaho to the 53-man roster. Both moves are injury related, with starting center Lucas [\u2026]",
+      "categories": [
+        "Washington Commanders Injuries"
+      ],
+      "published_at": "2026-11-12T23:47:30+00:00",
+      "players": []
+    },
+    {
       "id": "5251220456c619eb152e",
       "headline": "Inactives: Who's in, who's out for Giants vs. Commanders",
       "url": "https://www.giants.com/news/inactives-who-s-in-who-s-out-for-giants-vs-commanders",
@@ -733,6 +865,22 @@
       "feed_description": "Leading up to Sunday's matchup against the Falcons, two key Chiefs have yet to return to practice.",
       "categories": [],
       "published_at": "2026-11-12T23:30:33+00:00",
+      "players": []
+    },
+    {
+      "id": "8f277beb2404e192c912",
+      "headline": "Houston Texans vs. Cleveland Browns: Injury Report",
+      "url": "https://www.battleredblog.com/houston-texans-injuries/78971/houston-texans-vs-cleveland-browns-injury-report",
+      "source_id": "news_sbn_hou",
+      "source": "Battle Red Blog (SB Nation)",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "The Houston Texans defeated the Chargers in Los Angeles in convincing fashion last weekend, and are looking to continue that in a huge matchup against the Browns in Cleveland. This is one of those games where all three phases need to show up in order for them to have a chance at winning, and if [\u2026]",
+      "categories": [
+        "Houston Texans Injuries"
+      ],
+      "published_at": "2026-11-12T23:30:00+00:00",
       "players": []
     },
     {
@@ -922,6 +1070,23 @@
           "position": "WR"
         }
       ]
+    },
+    {
+      "id": "441e45ddedb3b7bfb478",
+      "headline": "Packers Injury Report: Trey Smack was a full participant on Thursday",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/89556/packers-injury-report-trey-smack-was-a-full-participant-on-thursday",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Before Thursday\u2019s practice, Green Bay Packers head coach Matt LaFleur said part of why the team had only a jog-through instead of a full practice on Wednesday was the number of players banged up on the roster. The good news? The team had a full practice on Thursday. The only change in the Packers\u2019 participation [\u2026]",
+      "categories": [
+        "Green Bay Packers injuries",
+        "Green Bay Packers News"
+      ],
+      "published_at": "2026-11-12T22:24:00+00:00",
+      "players": []
     },
     {
       "id": "a3de290e48a6324cf03d",
@@ -1846,20 +2011,23 @@
     },
     {
       "id": "d8ee10c5b4467ea215b0",
-      "headline": "From the Podium: Sean McVay and Matthew Stafford preview Rams' second meeting with Cardinals",
+      "headline": "From the Podium: Sean McVay, Matthew Stafford, coordinators and Aaron Donald preview Rams' second meeting with Cardinals",
       "url": "https://www.therams.com/news/from-the-podium-sean-mcvay-quarterback-matthew-stafford-defensive-end-aaron-donald-coordinators-preview-rams-second-meeting-with-cardinals-press-conference-2026",
       "source_id": "news_official_lar",
       "source": "Los Angeles Rams (official)",
       "teams": [
         "LAR"
       ],
-      "feed_description": "What head coach Sean McVay and quarterback Matthew Stafford had to say about the Rams' offense adapting to injuries to key contributors ahead of Sunday\u2019s game against the Cardinals",
+      "feed_description": "What head coach Sean McVay, quarterback Matthew Stafford, coordinators and defensive end Aaron Donald had to say about the Rams' offense adapting to injuries to key contributors ahead of Sunday\u2019s game against the Cardinals and Los Angeles' preparations for the Arizona offense.",
       "categories": [
         "Football",
         "From the Podium",
         "Los Angeles Rams at Arizona Cardinals (2026-REG-10)",
         "Sean McVay",
-        "Matthew Stafford"
+        "Matthew Stafford",
+        "Nate Scheelhaase",
+        "Chris Shula",
+        "Aaron Donald"
       ],
       "published_at": "2026-11-12T00:56:46+00:00",
       "players": [
@@ -3781,240 +3949,6 @@
           "name": "Malik Willis",
           "team": "MIA",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "3e264639ae9331db59ea",
-      "headline": "Rams Place Another Wide Receiver on Injured Reserve, Bring Back Familiar Face in Xavier Smith",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-place-jordan-whittington-injured-reserve-sign-xavier-smith",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Los Angeles Rams have placed Jordan Whittington on injured reserve, signing Xavier Smith as injuries continue to pile up at the position.",
-      "categories": [],
-      "published_at": "2026-11-10T22:02:04+00:00",
-      "players": [
-        {
-          "id": "00-0038359",
-          "name": "Xavier Smith",
-          "team": "LAR",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039751",
-          "name": "Jordan Whittington",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "83e02c701f0e0dcc1108",
-      "headline": "Ravens Release Blocking Tight End Among Several Roster Moves",
-      "url": "https://www.baltimoreravens.com/news/ravens-roster-moves-nick-vannett-kyle-hergel-michael-jordan-lucas-scott",
-      "source_id": "news_official_bal",
-      "source": "Baltimore Ravens (official)",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The Ravens have released veteran tight end Nick Vannett and brought back fullback Lucas Scott to the practice squad.",
-      "categories": [
-        "Transactions",
-        "General",
-        "Ryan Mink",
-        "Nick Vannett",
-        "inline-news",
-        "Homepage Latest Headlines"
-      ],
-      "published_at": "2026-11-10T21:49:32+00:00",
-      "players": [
-        {
-          "id": "00-0040637",
-          "name": "Lucas Scott",
-          "team": "BAL",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "37cb743655bc96d14839",
-      "headline": "Grading the trade: Colts give in to Josh Downs\u2019 request after sending him to Kansas City for a pair of late-round picks",
-      "url": "https://atozsports.com/nfl/indianapolis-colts-news/grading-the-trade-colts-send-josh-downs-to-chiefs-2027-4th-5th-round-pick/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The Indianapolis Colts sent Josh Downs to the Kansas City Chiefs minutes before the NFL trade deadline, capping a sell-off that left the Colts' roster looking unrecognizable and their deadline plan hard to explain.",
-      "categories": [
-        "Indianapolis Colts News",
-        "NFL",
-        "American Football",
-        "Colts News",
-        "Indianapolis Colts",
-        "Wildcat"
-      ],
-      "published_at": "2026-11-10T21:45:38+00:00",
-      "players": [
-        {
-          "id": "00-0038997",
-          "name": "Josh Downs",
-          "team": "IND",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "779127b50e814c639ff5",
-      "headline": "Instant Grades: Colts Get Strong Return From Josh Downs Trade",
-      "url": "https://www.si.com/nfl/colts/onsi/instant-grades-colts-get-strong-return-from-josh-downs-trade",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "How did the Indianapolis Colts fare in their trade for wide receiver Josh Downs?",
-      "categories": [],
-      "published_at": "2026-11-10T21:41:23+00:00",
-      "players": [
-        {
-          "id": "00-0038997",
-          "name": "Josh Downs",
-          "team": "IND",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "794e18d7e6efc3a40c4f",
-      "headline": "What the Major Malik Willis Update Means for the Dolphins Offense",
-      "url": "https://www.si.com/nfl/dolphins/onsi/what-the-major-malik-willis-update-means-for-the-dolphins-offense-01m73kpmw8ta",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "The Miami Dolphins will be without their starting quarterback for the next four games",
-      "categories": [],
-      "published_at": "2026-11-10T21:17:03+00:00",
-      "players": [
-        {
-          "id": "00-0038128",
-          "name": "Malik Willis",
-          "team": "MIA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "ec19491634bf716502cd",
-      "headline": "What Kirk Cousins Trade Means for Kyler Murray, Carson Wentz and Max Brosmer",
-      "url": "https://www.si.com/nfl/vikings/onsi/what-kirk-cousins-trade-means-kyler-murray-carson-wentz-max-brosmer-01m73jd2ydqv",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "With the Vikings bringing back Kirk Cousins, the futures of the other QBs on the 53-man roster are unclear at the moment.",
-      "categories": [],
-      "published_at": "2026-11-10T21:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0032950",
-          "name": "Carson Wentz",
-          "team": "MIN",
-          "position": "QB"
-        },
-        {
-          "id": "00-0035228",
-          "name": "Kyler Murray",
-          "team": "MIN",
-          "position": "QB"
-        },
-        {
-          "id": "00-0040494",
-          "name": "Max Brosmer",
-          "team": "MIN",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "611ecb56b5aa290f5db7",
-      "headline": "Dolphins make roster moves",
-      "url": "https://www.miamidolphins.com/news/dolphins-make-roster-moves-x8063",
-      "source_id": "news_official_mia",
-      "source": "Miami Dolphins (official)",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "The Miami Dolphins announced today that they have placed defensive lineman Zach Sieler and quarterback Malik Willis on the injured reserve list and waived cornerback Reese Taylor.",
-      "categories": [
-        "Written Content - Latest Stories",
-        "Content - Feature",
-        "Written Content - Press Release",
-        "Content - Latest Content",
-        "Miami Dolphins at Indianapolis Colts (2026-REG-10)"
-      ],
-      "published_at": "2026-11-10T20:59:24+00:00",
-      "players": [
-        {
-          "id": "00-0038128",
-          "name": "Malik Willis",
-          "team": "MIA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "a2d23971994591756382",
-      "headline": "Dolphins move Malik Willis to IR",
-      "url": "https://www.thephinsider.com/miami-dolphins-news/124774/malik-willis-injury-groin-miami-dolphins-news-updates-week-10-2026",
-      "source_id": "news_sbn_mia",
-      "source": "The Phinsider (SB Nation)",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "The Miami Dolphins are placing starting quarterback Malik Willis on injured reserve, The Ringer\u2019s Tom Pelissero reported on Tuesday. The move comes just two days after the quarterback was clearly struggling to scramble during the team\u2019s Week 9 loss to the Detroit Lions. The move will keep Willis out of the lineup for at least [\u2026]",
-      "categories": [
-        "Miami Dolphins Injuries",
-        "Miami Dolphins News"
-      ],
-      "published_at": "2026-11-10T20:58:33+00:00",
-      "players": [
-        {
-          "id": "00-0038128",
-          "name": "Malik Willis",
-          "team": "MIA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "4af6fc123e02415d50b9",
-      "headline": "Colts sign WR Nick Westbrook-Ikhine to 53-man roster from practice squad; sign LS Jacob Bobenmoyer to practice squad",
-      "url": "https://www.colts.com/news/colts-sign-wr-nick-westbrook-ikhine-to-53-man-roster-from-practice-squad-sign-ls-jacob-bobenmoyer-to-practice-squad",
-      "source_id": "news_official_ind",
-      "source": "Indianapolis Colts (official)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The roster moves were made Tuesday.",
-      "categories": [
-        "Roster Moves",
-        "Featured",
-        "Featured News"
-      ],
-      "published_at": "2026-11-10T20:22:31+00:00",
-      "players": [
-        {
-          "id": "00-0036182",
-          "name": "Nick Westbrook-Ikhine",
-          "team": "IND",
-          "position": "WR"
         }
       ]
     }
