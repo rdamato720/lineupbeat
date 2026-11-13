@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T21:00:51.387698+00:00",
+  "updated_at": "2026-11-13T22:53:37.962642+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T21:00:02+00:00",
+      "latest_entry_at": "2026-11-13T22:50:06+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T20:51:52+00:00",
+      "latest_entry_at": "2026-11-13T22:34:18+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-13T19:49:10+00:00",
+      "latest_entry_at": "2026-11-13T21:45:23+00:00",
       "stale": false
     },
     {
@@ -70,7 +70,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T20:03:46+00:00",
+      "latest_entry_at": "2026-11-13T21:05:00+00:00",
       "stale": false
     },
     {
@@ -84,7 +84,7 @@
     {
       "source_id": "news_official_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
       "latest_entry_at": "2026-11-12T17:02:00+00:00",
       "stale": false
@@ -102,13 +102,13 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-13T19:27:34+00:00",
+      "latest_entry_at": "2026-11-13T22:04:15+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
       "latest_entry_at": "2026-11-12T05:22:57+00:00",
       "stale": false
@@ -124,9 +124,9 @@
     {
       "source_id": "news_official_gb",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-13T15:00:00+00:00",
+      "latest_entry_at": "2026-11-13T21:35:05+00:00",
       "stale": false
     },
     {
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-13T20:17:40+00:00",
+      "latest_entry_at": "2026-11-13T22:04:20+00:00",
       "stale": false
     },
     {
@@ -164,7 +164,7 @@
     {
       "source_id": "news_official_lac",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
       "latest_entry_at": "2026-11-13T00:00:00+00:00",
       "stale": false
@@ -172,25 +172,25 @@
     {
       "source_id": "news_official_lar",
       "ok": true,
-      "eligible": 6,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-11-13T19:30:00+00:00",
+      "latest_entry_at": "2026-11-13T22:39:40+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_lv",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-13T18:30:00+00:00",
+      "latest_entry_at": "2026-11-13T22:05:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_mia",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T19:41:20+00:00",
+      "latest_entry_at": "2026-11-13T21:15:39+00:00",
       "stale": false
     },
     {
@@ -198,7 +198,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T00:33:13+00:00",
+      "latest_entry_at": "2026-11-13T22:14:04+00:00",
       "stale": false
     },
     {
@@ -214,7 +214,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-13T19:24:51+00:00",
+      "latest_entry_at": "2026-11-13T22:06:51+00:00",
       "stale": false
     },
     {
@@ -228,7 +228,7 @@
     {
       "source_id": "news_official_nyj",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
       "latest_entry_at": "2026-11-13T21:30:00+00:00",
       "stale": false
@@ -236,9 +236,9 @@
     {
       "source_id": "news_official_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T04:30:00+00:00",
+      "latest_entry_at": "2026-11-13T21:26:42+00:00",
       "stale": false
     },
     {
@@ -252,9 +252,9 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 9,
+      "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-11-13T20:28:35+00:00",
+      "latest_entry_at": "2026-11-13T22:05:00+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T15:06:34+00:00",
+      "latest_entry_at": "2026-11-13T21:47:10+00:00",
       "stale": false
     },
     {
@@ -284,25 +284,25 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-13T21:00:02+00:00",
+      "latest_entry_at": "2026-11-13T22:50:06+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-13T20:51:52+00:00",
+      "latest_entry_at": "2026-11-13T22:34:18+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T17:00:00+00:00",
+      "latest_entry_at": "2026-11-13T21:52:47+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T15:43:05+00:00",
+      "latest_entry_at": "2026-11-13T21:45:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-13T14:48:00+00:00",
+      "latest_entry_at": "2026-11-13T22:08:49+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T20:33:51+00:00",
+      "latest_entry_at": "2026-11-13T21:30:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T20:21:11+00:00",
+      "latest_entry_at": "2026-11-13T18:01:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T20:00:00+00:00",
+      "latest_entry_at": "2026-11-13T22:22:33+00:00",
       "stale": false
     },
     {
@@ -476,17 +476,17 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T20:18:20+00:00",
+      "latest_entry_at": "2026-11-13T22:14:45+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-13T16:45:51+00:00",
+      "latest_entry_at": "2026-11-13T22:46:19+00:00",
       "stale": false
     },
     {
@@ -500,9 +500,9 @@
     {
       "source_id": "news_sbn_car",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T15:00:00+00:00",
+      "latest_entry_at": "2026-11-13T21:30:00+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T20:56:18+00:00",
+      "latest_entry_at": "2026-11-13T22:12:03+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,489 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T18:27:46+00:00",
+      "latest_entry_at": "2026-11-13T22:24:23+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "5e5a9dee943cc7d9577c",
+      "headline": "Vikings-Packers Final Injury Report",
+      "url": "https://www.dailynorseman.com/minnesota-vikings-injuries/101520/vikings-packers-final-injury-report",
+      "source_id": "news_sbn_min",
+      "source": "Daily Norseman (SB Nation)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "The Minnesota Vikings and Green Bay Packers released their final injury reports, along with injury designations, in advance of their matchup on Sunday at Lambeau Field. Here they are: Minnesota Vikings Green Bay Packers Injury Report Terms and Glossary Injury designation definitions: Probable = the league defines a Probable injury designation as a 75% or [\u2026]",
+      "categories": [
+        "Minnesota Vikings Injuries"
+      ],
+      "published_at": "2026-11-13T22:46:19+00:00",
+      "players": []
+    },
+    {
+      "id": "5df26594afbe9c782199",
+      "headline": "Injury Report, Week 10 at Cardinals: Steve Avila and Terrance Ferguson ruled out; Trent McDuffie and Kam Curl questionable",
+      "url": "https://www.therams.com/news/rams-injury-report-week-10-2026-at-cardinals-trent-mcduffie-steve-avila",
+      "source_id": "news_official_lar",
+      "source": "Los Angeles Rams (official)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The final injury report ahead of Sunday's Week 10 regular season game between the Rams and the Cardinals at State Farm Stadium.",
+      "categories": [
+        "Injury Report - Cedars Sinai",
+        "Football",
+        "Los Angeles Rams at Arizona Cardinals (2026-REG-10)",
+        "Matthew Stafford",
+        "Davis Allen",
+        "Colby Parkinson",
+        "Joe Cardona",
+        "Myles Garrett",
+        "Steve Avila",
+        "Trent McDuffie",
+        "Kamren Curl",
+        "Terrance Ferguson",
+        "Tyler Higbee"
+      ],
+      "published_at": "2026-11-13T22:39:40+00:00",
+      "players": [
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "73f88950fed1fd9d4bd9",
+      "headline": "Cowboys injuries: 49ers game status for George Pickens, Joey Porter Jr.",
+      "url": "https://www.bloggingtheboys.com/dallas-cowboys-injuries/226515/final-game-status-george-pickens-joey-porter-jr",
+      "source_id": "news_sbn_dal",
+      "source": "Blogging The Boys (SB Nation)",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "Just when you were out on the Dallas Cowboys, the NFC East pulls back in. The Washington Commanders did the Cowboys a tremendous favor last night by dealing the New York Giants a loss on Thursday Night Football. If Dallas can somehow win at home versus the San Francisco 49ers, they could be right back [\u2026]",
+      "categories": [
+        "Dallas Cowboys Injuries"
+      ],
+      "published_at": "2026-11-13T22:22:33+00:00",
+      "players": [
+        {
+          "id": "00-0037247",
+          "name": "George Pickens",
+          "team": "DAL",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "33d2d74a38d092f827e8",
+      "headline": "Packers add a new concern to the secondary ahead of Week 10 Vikings game as injury report keeps piling up",
+      "url": "https://atozsports.com/nfl/green-bay-packers-news/packers-injury-report-vikings-week-10/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Green Bay ruled out four players, including Josh Jacobs and Micah Parsons, while one starting linebacker's status points in a hopeful direction.",
+      "categories": [
+        "Green Bay Packers News",
+        "NFL",
+        "American Football",
+        "injury report",
+        "Javon Bullard",
+        "Josh Jacobs",
+        "Josh Whyle",
+        "Lukas Van Ness",
+        "Packers Injury Updates",
+        "Sean Rhyan",
+        "Skyy Moore",
+        "Xavier Mckinney",
+        "Zaire Franklin"
+      ],
+      "published_at": "2026-11-13T22:16:40+00:00",
+      "players": [
+        {
+          "id": "00-0035700",
+          "name": "Josh Jacobs",
+          "team": "GB",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "83a35ec904e90d785f40",
+      "headline": "Rams Injury Report: Myles Garrett, Trent McDuffie Questionable vs. Cardinals",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-injury-report-myles-garrett-trent-mcduffie-cardinals-week-10",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Rams have listed Myles Garrett and Trent McDuffie as questionable against the Cardinals, while Steve Avila has been ruled out. Here's the latest injury report.",
+      "categories": [],
+      "published_at": "2026-11-13T22:14:03+00:00",
+      "players": []
+    },
+    {
+      "id": "8f866a92700b000efe23",
+      "headline": "\u2018There\u2019s a chance\u2019 Mike Evans can return to the 49ers next week",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/165708/theres-a-chance-mike-evans-can-return-to-the-49ers-next-week",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The San Francisco 49ers\u2019 final injury report was released. As expected, Mike Evans was ruled out with an Achilles injury. The following players are questionable: CB Renardo Green (back)CB Deommodore Lenoir (foot)CB Upton Stout (shoulder)DT CJ West (ankle)CB Nate HobbsLT Trent Williams (shoulder)LB Dre Greenlaw (knee) Kyle Shanahan said Williams hurt his shoulder and Greenlaw [\u2026]",
+      "categories": [
+        "San Francisco 49ers Injuries",
+        "San Francisco 49ers Roster"
+      ],
+      "published_at": "2026-11-13T22:12:03+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "c358221b70b646544fe0",
+      "headline": "McVay: Rams placed Puka Nacua on IR because they 'needed the roster spot'",
+      "url": "https://www.therams.com/news/mcvay-rams-placed-puka-nacua-on-ir-because-they-needed-the-roster-spot-week-10-2026-cardinals",
+      "source_id": "news_official_lar",
+      "source": "Los Angeles Rams (official)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Initially kept on the active roster, the Rams pivoted Thursday and placed wide receiver Puka Nacua (knee/toe) on Injured Reserve.",
+      "categories": [
+        "Football",
+        "Los Angeles Rams at Arizona Cardinals (2026-REG-10)",
+        "Puka Nacua"
+      ],
+      "published_at": "2026-11-13T22:09:25+00:00",
+      "players": [
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "fdb9b0b735af4749273a",
+      "headline": "Indianapolis Colts Injury Report: Who\u2019s In and Who\u2019s Out",
+      "url": "https://www.stampedeblue.com/indianapolis-colts-injuries/130043/indianapolis-colts-injury-report-whos-in-and-whos-out",
+      "source_id": "news_sbn_ind",
+      "source": "Stampede Blue (SB Nation)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Indianapolis Colts today released their Friday injury report for week 10 of the NFL season against the Miami Dolphins. Tight end Mo Alie-Cox (groin) has been ruled OUT for Sundays game against the Dolphins. The Colts are looking thin at tight end this week. With Alie-Cox out the team will have to lean heavily [\u2026]",
+      "categories": [
+        "Indianapolis Colts Injuries",
+        "Indianapolis Colts News"
+      ],
+      "published_at": "2026-11-13T22:08:49+00:00",
+      "players": [
+        {
+          "id": "00-0033217",
+          "name": "Mo Alie-Cox",
+          "team": "IND",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "e68096a10f5de2a573f3",
+      "headline": "Raiders-Seahawks Week 10 Injury Report: Thomas Booker, Dont'e Thornton ruled questionable",
+      "url": "https://www.raiders.com/news/raiders-seahawks-week-10-injury-report",
+      "source_id": "news_official_lv",
+      "source": "Las Vegas Raiders (official)",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the Seattle Seahawks.",
+      "categories": [
+        "Home Centerpiece",
+        "Home Latest Stories",
+        "News - Injury Report",
+        "Seattle Seahawks at Las Vegas Raiders (2026-REG-10)"
+      ],
+      "published_at": "2026-11-13T22:05:00+00:00",
+      "players": []
+    },
+    {
+      "id": "2f0f6a61900c44cca529",
+      "headline": "Week 10 Injury Report: Seahawks at Raiders",
+      "url": "https://www.seahawks.com/news/week-10-injury-report-seahawks-at-raiders",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Official practice reports and injury designations going into the Seattle Seahawks' Week 10 game at Las Vegas.",
+      "categories": [
+        "News: Injury Report",
+        "category/News:",
+        "News: National Feature",
+        "Seattle Seahawks at Las Vegas Raiders (2026-REG-10)",
+        "Homepage Hero",
+        "Homepage Top Headlines"
+      ],
+      "published_at": "2026-11-13T22:05:00+00:00",
+      "players": []
+    },
+    {
+      "id": "d52382ed6c2deec74209",
+      "headline": "Packers-Vikings Final Injury Report: Seven Starters Out or Questionable",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-vikings-final-injury-report-seven-starters-out-or-questionable",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The Green Bay Packers ruled out several starters for Sunday\u2019s game against the Vikings, who will start Kirk Cousins but be without two key players.",
+      "categories": [],
+      "published_at": "2026-11-13T21:55:40+00:00",
+      "players": []
+    },
+    {
+      "id": "2a9e65bbcef9c775b912",
+      "headline": "Jaguars-Titans Injury Report: Bhayshul Tuten's Full-Go Status Puts Focus on Rushing Attack",
+      "url": "https://www.si.com/nfl/jaguars/onsi/jacksonville-titans-injury-report-bhayshul-tuten-s-full-go-status-puts-focus-on-rushing-attack",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "JAX"
+      ],
+      "feed_description": "The Jacksonville Jaguars will have Bhayshul Tuten in the backfield against the Tennessee Titans in Week 10, and a rebounding run game will be a focus as a result.",
+      "categories": [],
+      "published_at": "2026-11-13T21:54:39+00:00",
+      "players": [
+        {
+          "id": "00-0040719",
+          "name": "Bhayshul Tuten",
+          "team": "JAX",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "c0623ae74d7520f95449",
+      "headline": "Bills vs. Jets final injury report and game day designations",
+      "url": "https://www.buffalorumblings.com/buffalo-bills-injuries/145232/bills-vs-jets-final-injury-report-and-game-day-designations",
+      "source_id": "news_sbn_buf",
+      "source": "Buffalo Rumblings (SB Nation)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "We have officially entered the Week 10 weekend, and with that come game day designations. For the Buffalo Bills that meant one doubtful and two questionable. Yes, I know there are four players listed, but let\u2019s be realistic \u2013 two are not on the 53-man roster and barring someone tripping and ending up with turf [\u2026]",
+      "categories": [
+        "Buffalo Bills Injuries"
+      ],
+      "published_at": "2026-11-13T21:52:47+00:00",
+      "players": []
+    },
+    {
+      "id": "71ed75f62a248a08f76e",
+      "headline": "Packers Injury Report: Green Bay rules out 4 vs. Vikings",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/89636/packers-injury-report-green-bay-rules-out-4-vs-vikings",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The Green Bay Packers have officially ruled out four players on Friday: running back Josh Jacobs (finger), edge defender Micah Parsons (knee/illness-PUP), center Sean Rhyan (ankle) and tight end Josh Whyle. Of those three players, only Jacobs played against the New England Patriots last week, and he did not finish the game. Yesterday, head coach [\u2026]",
+      "categories": [
+        "Green Bay Packers injuries",
+        "Green Bay Packers News"
+      ],
+      "published_at": "2026-11-13T21:52:39+00:00",
+      "players": [
+        {
+          "id": "00-0035700",
+          "name": "Josh Jacobs",
+          "team": "GB",
+          "position": "RB"
+        },
+        {
+          "id": "00-0038589",
+          "name": "Josh Whyle",
+          "team": "GB",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "b3f8bbbeaff1490e9f91",
+      "headline": "Packers list seven questionable, rule out four vs. Vikings | Week 10 Injury Report",
+      "url": "https://www.packers.com/news/packers-list-seven-questionable-rule-out-four-vs-vikings-week-10-injury-report",
+      "source_id": "news_official_gb",
+      "source": "Green Bay Packers (official)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "S Xavier McKinney (foot) added to injury report, questionable for Sunday",
+      "categories": [
+        "News: Injury Report",
+        "News: National Feature",
+        "Homepage CP",
+        "News: All News",
+        "Minnesota Vikings at Green Bay Packers (2026-REG-10)"
+      ],
+      "published_at": "2026-11-13T21:35:05+00:00",
+      "players": []
+    },
+    {
+      "id": "82a58b5cfc591d100081",
+      "headline": "Texans' Final Week 10 Injury Report vs. Browns Brings More Bad News",
+      "url": "https://www.si.com/nfl/texans/onsi/texans-final-injury-report-vs-browns-5-out-6-questionable-1-surprise",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "The Houston Texans' injury report for Week 10 against the Cleveland Browns is a lengthy one.",
+      "categories": [],
+      "published_at": "2026-11-13T21:31:44+00:00",
+      "players": []
+    },
+    {
+      "id": "fdc0f51d54d53b6d7ea1",
+      "headline": "Panthers Injury Report & Transactions \u2013 Week 10",
+      "url": "https://www.catscratchreader.com/carolina-panthers-injuries/62278/panthers-injury-report-transactions-week-10",
+      "source_id": "news_sbn_car",
+      "source": "Cat Scratch Reader (SB Nation)",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "The Carolina Panthers front office is busy throughout the season with transactions, roster moves, and injury updates. Here\u2019s what\u2019s happening at Mint Street this week. Injuries For once, the Panthers got some good news on the injury front heading into their Week 10 showdown against the New Orleans Saints. Offensive lineman Brady Christensen nearly returned [\u2026]",
+      "categories": [
+        "Carolina Panthers Injuries",
+        "Carolina Panthers Roster"
+      ],
+      "published_at": "2026-11-13T21:30:00+00:00",
+      "players": []
+    },
+    {
+      "id": "c0d126da6d2262901683",
+      "headline": "Injury Report: Week 10 Dolphins at Colts",
+      "url": "https://www.miamidolphins.com/news/injury-report-week-10-dolphins-at-colts",
+      "source_id": "news_official_mia",
+      "source": "Miami Dolphins (official)",
+      "teams": [
+        "MIA"
+      ],
+      "feed_description": "Check out the official Week 10 injury report for the Miami Dolphins.",
+      "categories": [
+        "Content - Feature",
+        "Written Content - Latest Stories",
+        "Miami Dolphins at Indianapolis Colts (2026-REG-10)"
+      ],
+      "published_at": "2026-11-13T21:15:39+00:00",
+      "players": []
+    },
+    {
+      "id": "2c028125d26d5190e39e",
+      "headline": "Browns, Texans Week 10 injuries: 3 big players Out for HOU; big names Questionable",
+      "url": "https://www.dawgsbynature.com/cleveland-browns-news/137974/browns-texans-week-10-injuries-denzel-boston-will-anderson-marvin-harrison-danielle-hunter",
+      "source_id": "news_sbn_cle",
+      "source": "Dawgs By Nature (SB Nation)",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "Given the physicality of NFL football, no one should be surprised when injury reports have big names, lots of names, and additions even during practice weeks. All of that happened in the ramp-up to the Week 10 matchup between the Cleveland Browns and Houston Texans. The week started with Browns superstar WR Denzel Boston missing [\u2026]",
+      "categories": [
+        "Cleveland Browns Injuries",
+        "Cleveland Browns News"
+      ],
+      "published_at": "2026-11-13T21:11:44+00:00",
+      "players": [
+        {
+          "id": "00-0041037",
+          "name": "Denzel Boston",
+          "team": "CLE",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "72b64143054cf80401a8",
+      "headline": "Buffalo Bills injury report vs. Jets | Week 10",
+      "url": "https://www.buffalobills.com/news/buffalo-bills-injury-report-vs-jets-week-10",
+      "source_id": "news_official_buf",
+      "source": "Buffalo Bills (official)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Joe Brady said one player will be doubtful and four more will be questionable for Sunday's game at the Jets.",
+      "categories": [
+        "INJURY REPORT"
+      ],
+      "published_at": "2026-11-13T21:05:00+00:00",
+      "players": []
+    },
+    {
+      "id": "ac2d3c39bae9359386e6",
+      "headline": "Jets Injury Report | Week 10 vs. Bills - Friday",
+      "url": "https://www.newyorkjets.com/news/jets-injury-report-week-10-vs-bills-friday-11-13-2026",
+      "source_id": "news_official_nyj",
+      "source": "New York Jets (official)",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "WRs Garrett Wilson (Concussion) & Omar Cooper Jr. (Ankle) Questionable for Sunday's Game",
+      "categories": [
+        "Injury Report",
+        "News",
+        "Latest Headlines"
+      ],
+      "published_at": "2026-11-13T21:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0037740",
+          "name": "Garrett Wilson",
+          "team": "NYJ",
+          "position": "WR"
+        },
+        {
+          "id": "00-0041511",
+          "name": "Omar Cooper",
+          "team": "NYJ",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "8694fdafe8536d3220f2",
+      "headline": "Final Vikings at Packers Injury Report for Week 10 of 2026",
+      "url": "https://www.vikings.com/news/packers-injury-report-week-10-2026-nfl-season",
+      "source_id": "news_official_min",
+      "source": "Minnesota Vikings (official)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "",
+      "categories": [
+        "Injury Report",
+        "News - Injury Report",
+        "News - Team",
+        "News - Index",
+        "vikings-at-packers-2026-reg-10",
+        "Minnesota Vikings at Green Bay Packers (2026-REG-10)"
+      ],
+      "published_at": "2026-11-13T21:00:00+00:00",
+      "players": []
+    },
     {
       "id": "169a1f8f9b12ea9eb3f8",
       "headline": "Browns Hit With Major Injury News Ahead of Week 10 Showdown With Texans",
@@ -848,22 +1326,6 @@
         "2026-reg-week10"
       ],
       "published_at": "2026-11-13T19:24:51+00:00",
-      "players": []
-    },
-    {
-      "id": "72b64143054cf80401a8",
-      "headline": "Buffalo Bills injury report vs. Jets | Week 10",
-      "url": "https://www.buffalobills.com/news/buffalo-bills-injury-report-vs-jets-week-10",
-      "source_id": "news_official_buf",
-      "source": "Buffalo Bills (official)",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "Joe Brady said one player will be doubtful and three more will be questionable for Sunday's game at the Jets.",
-      "categories": [
-        "INJURY REPORT"
-      ],
-      "published_at": "2026-11-13T18:58:10+00:00",
       "players": []
     },
     {
@@ -1480,25 +1942,6 @@
       ]
     },
     {
-      "id": "e68096a10f5de2a573f3",
-      "headline": "Raiders-Seahawks Week 10 Injury Report",
-      "url": "https://www.raiders.com/news/raiders-seahawks-week-10-injury-report",
-      "source_id": "news_official_lv",
-      "source": "Las Vegas Raiders (official)",
-      "teams": [
-        "LV"
-      ],
-      "feed_description": "Take a look at the Raiders' injury report as the team prepares to face the Seattle Seahawks.",
-      "categories": [
-        "Home Centerpiece",
-        "Home Latest Stories",
-        "News - Injury Report",
-        "Seattle Seahawks at Las Vegas Raiders (2026-REG-10)"
-      ],
-      "published_at": "2026-11-13T00:45:00+00:00",
-      "players": []
-    },
-    {
       "id": "a0bd6df23d931133536d",
       "headline": "Chargers Injury Report: 9 players sit out 1st practice of Week 10",
       "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/67022/chargers-ravens-injury-report-daiyan-henley-david-njoku",
@@ -1548,27 +1991,6 @@
           "position": "TE"
         }
       ]
-    },
-    {
-      "id": "2f0f6a61900c44cca529",
-      "headline": "Week 10 Injury Report: Seahawks at Raiders",
-      "url": "https://www.seahawks.com/news/week-10-injury-report-seahawks-at-raiders",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Official practice reports and injury designations going into the Seattle Seahawks' Week 10 game at Las Vegas.",
-      "categories": [
-        "News: Injury Report",
-        "category/News:",
-        "News: National Feature",
-        "Seattle Seahawks at Las Vegas Raiders (2026-REG-10)",
-        "Homepage Hero",
-        "Homepage Top Headlines"
-      ],
-      "published_at": "2026-11-13T00:19:00+00:00",
-      "players": []
     },
     {
       "id": "e9dae9cc9c43a4543fff",
@@ -1768,27 +2190,6 @@
           "position": "RB"
         }
       ]
-    },
-    {
-      "id": "8694fdafe8536d3220f2",
-      "headline": "Updated Vikings at Packers Injury Report for Week 10 of 2026",
-      "url": "https://www.vikings.com/news/packers-injury-report-week-10-2026-nfl-season",
-      "source_id": "news_official_min",
-      "source": "Minnesota Vikings (official)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "",
-      "categories": [
-        "Injury Report",
-        "News - Injury Report",
-        "News - Team",
-        "News - Index",
-        "vikings-at-packers-2026-reg-10",
-        "Minnesota Vikings at Green Bay Packers (2026-REG-10)"
-      ],
-      "published_at": "2026-11-12T23:00:00+00:00",
-      "players": []
     },
     {
       "id": "1e94dabaa57342ad88f6",
@@ -3490,415 +3891,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "376dafdd89e6a3edde43",
-      "headline": "Indianapolis Colts Injury Report: Week 10 Wednesday",
-      "url": "https://www.stampedeblue.com/indianapolis-colts-injuries/129954/indianapolis-colts-injury-report-week-10-wednesday",
-      "source_id": "news_sbn_ind",
-      "source": "Stampede Blue (SB Nation)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "The Indianapolis Colts released their Wednesday injury\u2019s report ahead of Week 10 of the NFL season against the Miami Dolphins. Linebackers Jaylon Carlies (neck) and Akeem Davis-Gaither (knee) both missed practice today. Carlies left Sundays game early and was replaced by rookie Bryce Boettcher, Davis-Gaithers missed the game all together and led to CJ Allen [\u2026]",
-      "categories": [
-        "Indianapolis Colts Injuries",
-        "Indianapolis Colts News"
-      ],
-      "published_at": "2026-11-11T21:54:53+00:00",
-      "players": []
-    },
-    {
-      "id": "18a06954a503a90cd65e",
-      "headline": "Saints Wednesday Injury Report: 2026 Week 10 vs. Carolina Panthers",
-      "url": "https://www.neworleanssaints.com/news/injury-report-carolina-panthers-vs-new-orleans-saints-2026-nfl-week-10-wednesday",
-      "source_id": "news_official_no",
-      "source": "New Orleans Saints (official)",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "10 Saints listed on Wednesday's Saints Injury Report for Week 10 against the Panthers",
-      "categories": [
-        "Saints Injury Report",
-        "Latest News",
-        "Gameday",
-        "2026-reg-week10"
-      ],
-      "published_at": "2026-11-11T21:47:36+00:00",
-      "players": []
-    },
-    {
-      "id": "d5a83a8fb9b23156aef5",
-      "headline": "Chiefs-Falcons Week 10 Wednesday injury report: Xavier Worthy practices",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-injuries/216131/chiefs-falcons-week-10-wednesday-injury-report-xavier-worthy-practices",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Each practice day this season, the Kansas City Chiefs release an official injury report ahead of the next game. In Week 10, the Chiefs play the Atlanta Falcons on Sunday afternoon. Here is the Chiefs\u2019 first official injury report of the week, courtesy of the team\u2019s official website: Chiefs Falcons",
-      "categories": [
-        "Kansas City Chiefs Injuries",
-        "Kansas City Chiefs News"
-      ],
-      "published_at": "2026-11-11T21:45:00+00:00",
-      "players": [
-        {
-          "id": "00-0039894",
-          "name": "Xavier Worthy",
-          "team": "KC",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "7577553186b4ec1333d4",
-      "headline": "NY Giants have only one player on their injury report for game vs. Commanders",
-      "url": "https://www.bigblueview.com/new-york-giants-injuries/179637/ny-giants-have-only-one-player-on-their-injury-report-for-game-vs-commanders",
-      "source_id": "news_sbn_nyg",
-      "source": "Big Blue View (SB Nation)",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "Linebacker Malik Harrison, questionable with a groin injury, is the only member of the New York Giants carrying an injury designation heading into Thursday\u2019s game with the Washington Commanders. Quarterback J.J. McCarthy (hip), and running back Cam Skattebo (hamstring) will play as the 5-2-1 Giants seek to solidify their NFC East lead. It will be [\u2026]",
-      "categories": [
-        "New York Giants injuries"
-      ],
-      "published_at": "2026-11-11T21:32:39+00:00",
-      "players": [
-        {
-          "id": "00-0040715",
-          "name": "Cam Skattebo",
-          "team": "NYG",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "2f79a0c48d52efdf6ceb",
-      "headline": "First Injury Report of Week 10: Dolphins Offense Could Be Even More Short-Handed Against Indianapolis",
-      "url": "https://www.si.com/nfl/dolphins/onsi/first-injury-report-of-week-10-dolphins-offense-could-be-even-more-short-handed-against-indianapolis-01m767ah3sqn",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "The Miami Dolphins had two players miss their first practice ahead of their game against the Colts",
-      "categories": [],
-      "published_at": "2026-11-11T21:31:05+00:00",
-      "players": []
-    },
-    {
-      "id": "c5e7555c0a08a460a2e9",
-      "headline": "Commanders vs. Giants Wednesday injury report: Treylon Burks will play",
-      "url": "https://www.hogshaven.com/washington-commanders-injuries/454779/commanders-giants-wednesday-injury-report-treylon-burks-lucas-patrick-colson-yankoff",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Commanders receiver Treylon Burks didn\u2019t practice on Wednesday, the last day of prep before Thursday night\u2019s showdown with the New York Giants. That\u2019s not the negative development that it sounds like. That became clear on the official injury report, where Burks was not given a designation. He will play this key upcoming contest, a welcome [\u2026]",
-      "categories": [
-        "Washington Commanders Injuries"
-      ],
-      "published_at": "2026-11-11T21:26:16+00:00",
-      "players": [
-        {
-          "id": "00-0037742",
-          "name": "Treylon Burks",
-          "team": "WAS",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "3198dff56e958296f13b",
-      "headline": "Josh Downs has a new jersey number with the Kansas City Chiefs, and it feels like a good sign of what\u2019s to come",
-      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-josh-downs-assigned-jersey-number-12-jared-wiley-albert-wilson-gehrig-dieter/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Josh Downs has a new jersey number with the Kansas City Chiefs, and wide receivers who wear it tend to have success with QB Patrick Mahomes.",
-      "categories": [
-        "Kansas City Chiefs News",
-        "Albert Wilson",
-        "Gehrig Dieter",
-        "Jared Wiley",
-        "Josh Downs",
-        "Kansas City Chiefs",
-        "Mecole Hardman"
-      ],
-      "published_at": "2026-11-11T21:22:49+00:00",
-      "players": [
-        {
-          "id": "00-0033873",
-          "name": "Patrick Mahomes",
-          "team": "KC",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "75f80ff27da09223e923",
-      "headline": "Packers-Vikings Injury Report | Nov. 11, 2026",
-      "url": "https://www.packers.com/news/packers-vikings-injury-report-nov-11-2026",
-      "source_id": "news_official_gb",
-      "source": "Green Bay Packers (official)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "",
-      "categories": [
-        "News: Injury Report",
-        "News: National Feature",
-        "Homepage CP",
-        "News: All News",
-        "Minnesota Vikings at Green Bay Packers (2026-REG-10)"
-      ],
-      "published_at": "2026-11-11T21:20:00+00:00",
-      "players": []
-    },
-    {
-      "id": "04a110f8ff74be99dfdf",
-      "headline": "Cowboys injuries: George Pickens, Joey Porter Jr. updated injury status",
-      "url": "https://www.bloggingtheboys.com/dallas-cowboys-injuries/226247/george-pickens-joey-porter-donovan-ezeiruaku-injury-status",
-      "source_id": "news_sbn_dal",
-      "source": "Blogging The Boys (SB Nation)",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "The Dallas Cowboys managed to get in the win column after a close call against the Indianapolis Colts, keeping themselves alive in the chase for the NFC East Crown. On Sunday, they take on the San Francisco 49ers who have had their number and beaten the Cowboys in the last four meetings including two games [\u2026]",
-      "categories": [
-        "Dallas Cowboys Injuries"
-      ],
-      "published_at": "2026-11-11T21:17:31+00:00",
-      "players": [
-        {
-          "id": "00-0037247",
-          "name": "George Pickens",
-          "team": "DAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "643c7cb95c8d63de3f34",
-      "headline": "Michael Wilson Prognosis Good For 2027 Return",
-      "url": "https://www.azcardinals.com/news/michael-wilson-prognosis-good-for-2027-return",
-      "source_id": "news_official_ari",
-      "source": "Arizona Cardinals (official)",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "Minshew to have surgery on right elbow",
-      "categories": [
-        "Darren's Blog - V2",
-        "Featured Articles",
-        "Mega Feed",
-        "Home Page - News Headlines",
-        "Red Sea Member HQ Content",
-        "Darren Urban",
-        "Michael Wilson",
-        "Gardner Minshew"
-      ],
-      "published_at": "2026-11-11T21:17:22+00:00",
-      "players": [
-        {
-          "id": "00-0038559",
-          "name": "Michael Wilson",
-          "team": "ARI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "bbd91df2e92fccaf14e1",
-      "headline": "49ers injury updates: Nate Hobbs returns to practice",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/165616/49ers-injury-updates-nate-hobbs-returns-to-practice",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The San Francisco 49ers injury report is out for Wednesday. The following players won\u2019t practice: WR Mike Evans (Achilles)CB Renardo Green (back)CB Deommodore Lenoir (foot) These players will be limited: WR Deebo Samuel (hamstring)CB Siran Neal (knee/foot)CB Upton Stout (shoulder/neck)DT CJ West (limited) The team officially opened the practice window for West to return from [\u2026]",
-      "categories": [
-        "San Francisco 49ers Injuries"
-      ],
-      "published_at": "2026-11-11T21:16:06+00:00",
-      "players": [
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "5f79093b80cfe3b1f158",
-      "headline": "Jets Practice Notebook | WRs Garrett Wilson and Omar Cooper Jr. Limited",
-      "url": "https://www.newyorkjets.com/news/garrett-wilson-omar-cooper-jr-limited-jets-practice-wednesday-bills-week-11-11-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Musings on a Late Bye Week, NFL Trade Deadline and a Win-Win Trade",
-      "categories": [
-        "Latest Headlines",
-        "News",
-        "Eric Allen"
-      ],
-      "published_at": "2026-11-11T21:10:00+00:00",
-      "players": [
-        {
-          "id": "00-0037740",
-          "name": "Garrett Wilson",
-          "team": "NYJ",
-          "position": "WR"
-        },
-        {
-          "id": "00-0041511",
-          "name": "Omar Cooper",
-          "team": "NYJ",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "1f2820da438b05c95bb6",
-      "headline": "Rams won\u2019t put Puka Nacua on IR, but return timeline is unclear",
-      "url": "https://www.turfshowtimes.com/los-angeles-rams-news/154906/rams-puka-nacua-mcvay-ir-injury",
-      "source_id": "news_sbn_lar",
-      "source": "Turf Show Times (SB Nation)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Los Angeles Rams will not put Puka Nacua on injury reserve with his knee injury according to head coach Sean McVay, but that does not mean that the receiver will miss fewer than four games. ESPN\u2019s Sarah Barshop reports that the decision to keep Nacua on the 53-man roster is due to \u201csemantics\u201d and [\u2026]",
-      "categories": [
-        "Los Angeles Rams Injuries",
-        "Los Angeles Rams News"
-      ],
-      "published_at": "2026-11-11T21:06:48+00:00",
-      "players": [
-        {
-          "id": "00-0039075",
-          "name": "Puka Nacua",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "911e620b698c10f5386e",
-      "headline": "Patriots sign rookie tight end Tanner Arkin to practice squad",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/143958/patriots-sign-tanner-arkin-practice-squad",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "After 48 hours away, Tanner Arkin has made his way back to the New England Patriots. The organization officially signed the rookie tight end to the practice squad on Wednesday. He cleared waivers the afternoon prior. Arkin, 23, had been let go from the 53-man roster on the heels of last weekend\u2019s 45-27 loss to [\u2026]",
-      "categories": [
-        "New England Patriots News",
-        "New England Patriots Roster"
-      ],
-      "published_at": "2026-11-11T21:05:06+00:00",
-      "players": [
-        {
-          "id": "00-0041314",
-          "name": "Tanner Arkin",
-          "team": "NE",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "1e4af2439f0b3a45bd15",
-      "headline": "Lions vs. Patriots practice report: Nov. 11",
-      "url": "https://www.detroitlions.com/news/lions-vs-patriots-practice-report-nov-11-goff-branch-reed-stbrown",
-      "source_id": "news_official_det",
-      "source": "Detroit Lions (official)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Lions vs. Patriots practice report for Wednesday, November 11.",
-      "categories": [
-        "NEWS - Practice Report",
-        "Homepage - Centerpiece Package"
-      ],
-      "published_at": "2026-11-11T21:00:02+00:00",
-      "players": []
-    },
-    {
-      "id": "cbc1a4e1d04688f53c7b",
-      "headline": "Patriots Sign TE Tanner Arkin to the Practice Squad",
-      "url": "https://www.patriots.com/news/patriots-sign-te-tanner-arkin-to-the-practice-squad",
-      "source_id": "news_official_ne",
-      "source": "New England Patriots (official)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The Patriots announced today that they have signed rookie TE Tanner Arkin to the practice squad.",
-      "categories": [
-        "Transactions",
-        "hp-article",
-        "hp-featured"
-      ],
-      "published_at": "2026-11-11T21:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0041314",
-          "name": "Tanner Arkin",
-          "team": "NE",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "6099e3b956e76143ed79",
-      "headline": "Jets Injury Report | Week 10 vs. Bills - Wednesday",
-      "url": "https://www.newyorkjets.com/news/jets-injury-report-week-10-vs-bills-wednesday-11-11-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "WR Garrett Wilson (Concussion) Returns to Practice in a Limited Capacity",
-      "categories": [
-        "Injury Report",
-        "News",
-        "Latest Headlines"
-      ],
-      "published_at": "2026-11-11T21:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0037740",
-          "name": "Garrett Wilson",
-          "team": "NYJ",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "8d01b691d86aa1012d37",
-      "headline": "Practice Notebook: DE Arden Key returns to practice after IR stint",
-      "url": "https://www.colts.com/news/practice-notebook-de-arden-key-returns-after-ir-stint",
-      "source_id": "news_official_ind",
-      "source": "Indianapolis Colts (official)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "Key (hamstring) was placed on IR in October.",
-      "categories": [
-        "Practice Notebook",
-        "Featured",
-        "Featured News"
-      ],
-      "published_at": "2026-11-11T20:49:02+00:00",
-      "players": []
     }
   ]
 }
