@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T01:01:06.649382+00:00",
+  "updated_at": "2026-11-14T03:00:46.339894+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-14T01:00:57+00:00",
+      "latest_entry_at": "2026-11-14T02:50:39+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-14T00:50:15+00:00",
+      "latest_entry_at": "2026-11-14T01:19:20+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-13T23:38:36+00:00",
+      "latest_entry_at": "2026-11-14T01:47:54+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-13T22:05:00+00:00",
+      "latest_entry_at": "2026-11-14T02:30:00+00:00",
       "stale": false
     },
     {
@@ -252,7 +252,7 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 9,
+      "eligible": 8,
       "error": "",
       "latest_entry_at": "2026-11-14T00:10:46+00:00",
       "stale": false
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-14T01:00:57+00:00",
+      "latest_entry_at": "2026-11-14T02:50:39+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-14T00:50:15+00:00",
+      "latest_entry_at": "2026-11-14T01:19:20+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-13T21:11:44+00:00",
+      "latest_entry_at": "2026-11-13T12:15:19+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T19:00:00+00:00",
+      "latest_entry_at": "2026-11-13T00:09:09+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-13T22:08:49+00:00",
+      "latest_entry_at": "2026-11-13T14:48:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T19:59:31+00:00",
+      "latest_entry_at": "2026-11-13T21:28:28+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T18:00:00+00:00",
+      "latest_entry_at": "2026-11-13T16:54:16+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T23:59:58+00:00",
+      "latest_entry_at": "2026-11-13T17:39:22+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,20 @@
     }
   ],
   "items": [
+    {
+      "id": "a5a0c3855307d6623d40",
+      "headline": "Raiders' Friday Injury Report Filled With Positives Entering Seahawks Matchup",
+      "url": "https://www.si.com/nfl/raiders/onsi/las-vegas-friday-injury-report-filled-with-positives-entering-seahawks-matchup",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LV"
+      ],
+      "feed_description": "The Las Vegas Raiders are good to go on the injury front. They hope it will lead to positive results against the Seattle Seahawks in Week 10.",
+      "categories": [],
+      "published_at": "2026-11-14T01:39:01+00:00",
+      "players": []
+    },
     {
       "id": "211bfb39c3538012a56d",
       "headline": "Bengals unveil promising final injury report for Week 10 showdown vs. Steelers with the best news yet to come",
@@ -3855,33 +3869,6 @@
       ],
       "published_at": "2026-11-11T22:33:00+00:00",
       "players": []
-    },
-    {
-      "id": "e97056201efc74147d67",
-      "headline": "Rams Make Surprising Puka Nacua Injury Decision as Sean McVay Provides Update on Davante Adams Return",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-puka-nacua-injured-reserve-decision-davante-adams-return",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Rams made a surprising decision to keep Puka Nacua off injured reserve as Sean McVay provided an updated timeline for Davante Adams' return.",
-      "categories": [],
-      "published_at": "2026-11-11T22:29:50+00:00",
-      "players": [
-        {
-          "id": "00-0031381",
-          "name": "Davante Adams",
-          "team": "LAR",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039075",
-          "name": "Puka Nacua",
-          "team": "LAR",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
