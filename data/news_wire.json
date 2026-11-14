@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T11:00:57.362822+00:00",
+  "updated_at": "2026-11-14T13:00:50.945542+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-14T10:04:00+00:00",
+      "latest_entry_at": "2026-11-14T12:41:00+00:00",
       "stale": false
     },
     {
@@ -28,9 +28,9 @@
     {
       "source_id": "atoz_sports_easton_freeze",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-14T07:24:24+00:00",
+      "latest_entry_at": "2026-11-14T12:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-14T10:00:00+00:00",
+      "latest_entry_at": "2026-11-14T12:50:18+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-13T19:10:27+00:00",
+      "latest_entry_at": "2026-11-14T12:00:26+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-14T10:04:00+00:00",
+      "latest_entry_at": "2026-11-14T12:41:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-14T07:24:24+00:00",
+      "latest_entry_at": "2026-11-14T12:00:00+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T22:35:33+00:00",
+      "latest_entry_at": "2026-11-14T13:00:00+00:00",
       "stale": false
     },
     {
@@ -324,9 +324,9 @@
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T19:00:00+00:00",
+      "latest_entry_at": "2026-11-14T12:00:00+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-13T11:00:00+00:00",
+      "latest_entry_at": "2026-11-14T12:00:00+00:00",
       "stale": false
     },
     {
@@ -428,9 +428,9 @@
     {
       "source_id": "news_sbn_dal",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-13T23:30:00+00:00",
+      "latest_entry_at": "2026-11-14T12:00:00+00:00",
       "stale": false
     },
     {
@@ -468,9 +468,9 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T18:00:00+00:00",
+      "latest_entry_at": "2026-11-14T12:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-14T01:14:40+00:00",
+      "latest_entry_at": "2026-11-14T11:15:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T18:40:19+00:00",
+      "latest_entry_at": "2026-11-14T11:00:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,71 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T22:24:23+00:00",
+      "latest_entry_at": "2026-11-14T04:04:30+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "5e76e0bc790cc2d0d0be",
+      "headline": "Vikings' Grim Week 10 Injury Report Will Likely Force Trio Into Bigger Roles vs. Packers",
+      "url": "https://www.si.com/nfl/vikings/onsi/vikings-grim-week-10-injury-report-force-trio-bigger-roles-packers-01m7btnpz4yg",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "The Vikings will need three support cast members to step up vs. the Packers as their Week 10 injury report leaves little to be excited about.",
+      "categories": [],
+      "published_at": "2026-11-14T12:00:05+00:00",
+      "players": []
+    },
+    {
+      "id": "dda2d4faad3081b1c33b",
+      "headline": "New York Jets News: Garrett Wilson set to return for Week 10 clash with Buffalo Bills",
+      "url": "https://www.ganggreennation.com/new-york-jets-news/98501/new-york-jets-garrett-wilson-set-to-return-for-week-10-clash-with-buffalo-bills",
+      "source_id": "news_sbn_nyj",
+      "source": "Gang Green Nation (SB Nation)",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "The Jets are one day away from taking the field for the first of two games against the AFC East rival Buffalo Bills. The team got some good news on Friday as Garrett Wilson cleared the concussion protocol and is on track to return to the lineup after missing the Week 9 loss against the [\u2026]",
+      "categories": [
+        "New York Jets News"
+      ],
+      "published_at": "2026-11-14T12:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0037740",
+          "name": "Garrett Wilson",
+          "team": "NYJ",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "5693bd26796e2bb4b9a1",
+      "headline": "Cowboys news: George Pickens declares he\u2019ll play vs. 49ers",
+      "url": "https://www.bloggingtheboys.com/dallas-cowboys-news/226543/george-pickens-play-49ers-caleb-downs-jaishawn-barham",
+      "source_id": "news_sbn_dal",
+      "source": "Blogging The Boys (SB Nation)",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "All signs are pointing to George Pickens being on the field Sunday versus the San Francisco 49ers after missing last week\u2019s game versus the Indianapolis Colts. Rookie Caleb Downs, who is steadily improving, will have to be a huge factor in Week 10. Jaishawn Barham will likely get more snaps on the edge as his [\u2026]",
+      "categories": [
+        "Dallas Cowboys News"
+      ],
+      "published_at": "2026-11-14T12:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0037247",
+          "name": "George Pickens",
+          "team": "DAL",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "8442717be86f23bbbb58",
       "headline": "Falcons vs. Chiefs injury report: James Pearce Jr. questionable to play on Sunday",
@@ -3801,71 +3861,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "90780f8df78c51e46d8e",
-      "headline": "Detroit Lions QB Jared Goff Surprisingly Lands on Week 10 Injury Report",
-      "url": "https://www.si.com/nfl/lions/onsi/detroit-lions-jared-goff-surprisingly-lands-week-10-injury-report-2026",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Detroit Lions conducted a walkthrough on Wednesday ahead of Patriots game.",
-      "categories": [],
-      "published_at": "2026-11-11T22:46:46+00:00",
-      "players": [
-        {
-          "id": "00-0033106",
-          "name": "Jared Goff",
-          "team": "DET",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "315132f3f6dcdcaedd63",
-      "headline": "Commanders-Giants Final Injury Report: Lucas Patrick Out, Treylon Burks Expected Back Despite Missed Practice",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-giants-final-injury-report-week-10",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Lucas Patrick is out, Nick Allegretti starts at center, and Treylon Burks is expected back despite missing practice. Giants LB Malik Harrison is questionable.",
-      "categories": [],
-      "published_at": "2026-11-11T22:46:13+00:00",
-      "players": [
-        {
-          "id": "00-0037742",
-          "name": "Treylon Burks",
-          "team": "WAS",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "7f6501f482bc8281ca5f",
-      "headline": "Kansas City Chiefs\u2019 first injury report for Week 10 vs. the Atlanta Falcons includes a few pleasant surprises",
-      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-first-injury-report-week-10-falcons/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs' first injury report ahead of Week 10 vs. the Atlanta Falcons looks a lot better than you might expect after Week 9's game against the New York Jets.",
-      "categories": [
-        "Kansas City Chiefs News",
-        "Chiefs Injuries",
-        "Kansas City Chiefs",
-        "Mansoor Delane",
-        "Omarr Norman-Lott",
-        "Patrick Mahomes",
-        "Peter Woods",
-        "Xavier Worthy"
-      ],
-      "published_at": "2026-11-11T22:34:53+00:00",
-      "players": []
     }
   ]
 }
