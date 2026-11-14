@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T20:56:52.779730+00:00",
+  "updated_at": "2026-11-14T21:00:52.940468+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-14T18:13:15+00:00",
+      "latest_entry_at": "2026-11-14T20:39:39+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-13T19:54:54+00:00",
+      "latest_entry_at": "2026-11-14T20:58:11+00:00",
       "stale": false
     },
     {
@@ -68,9 +68,9 @@
     {
       "source_id": "news_official_buf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T21:05:00+00:00",
+      "latest_entry_at": "2026-11-14T20:57:04+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-14T12:15:00+00:00",
+      "latest_entry_at": "2026-11-14T20:55:24+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-14T20:04:00+00:00",
+      "latest_entry_at": "2026-11-14T18:02:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-14T20:00:00+00:00",
+      "latest_entry_at": "2026-11-14T18:00:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-14T19:10:54+00:00",
+      "latest_entry_at": "2026-11-14T15:32:20+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-14T20:00:00+00:00",
+      "latest_entry_at": "2026-11-14T17:33:06+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,29 @@
     }
   ],
   "items": [
+    {
+      "id": "53e74f3e62e459514a97",
+      "headline": "DB Jordan Hancock activated and QB Shane Buechele elevated, DB Te'Cory Couch released | Week 10",
+      "url": "https://www.buffalobills.com/news/db-jordan-hancock-activated-and-qb-shane-buechele-elevated-db-te-cory-couch-released-week-10",
+      "source_id": "news_official_buf",
+      "source": "Buffalo Bills (official)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Bills made three roster moves ahead of Sunday's game against the Jets",
+      "categories": [
+        "TRANSACTIONS"
+      ],
+      "published_at": "2026-11-14T20:57:04+00:00",
+      "players": [
+        {
+          "id": "00-0036679",
+          "name": "Shane Buechele",
+          "team": "BUF",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "1f4d9b0569631ad571c1",
       "headline": "Ravens update QB Lamar Jackson\u2019s status after successful thumb surgery",
@@ -3849,27 +3872,6 @@
       "categories": [],
       "published_at": "2026-11-12T01:22:14+00:00",
       "players": []
-    },
-    {
-      "id": "eed8d300b5f6ee6c9c44",
-      "headline": "Dalton Kincaid, Spencer Brown Fighting New Injuries After Bills' Primetime Week 9 Win",
-      "url": "https://www.si.com/nfl/bills/onsi/injuries-dalton-kincaid-spencer-brown-new-issues-after-bills-primetime-week-9-win",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "The Buffalo Bills' offense has two new issues to monitor in the injury department heading into a Week 10 road game against the New York Jets.",
-      "categories": [],
-      "published_at": "2026-11-12T01:03:45+00:00",
-      "players": [
-        {
-          "id": "00-0038933",
-          "name": "Dalton Kincaid",
-          "team": "BUF",
-          "position": "TE"
-        }
-      ]
     }
   ]
 }
