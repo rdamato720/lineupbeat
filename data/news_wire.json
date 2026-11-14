@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T03:00:46.339894+00:00",
+  "updated_at": "2026-11-14T03:14:46.789546+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-14T02:50:39+00:00",
+      "latest_entry_at": "2026-11-14T03:14:35+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-14T02:50:39+00:00",
+      "latest_entry_at": "2026-11-14T03:14:35+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T15:50:59+00:00",
+      "latest_entry_at": "2026-11-14T01:00:00+00:00",
       "stale": false
     },
     {
@@ -348,9 +348,9 @@
     {
       "source_id": "news_sbn_cle",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T12:15:19+00:00",
+      "latest_entry_at": "2026-11-13T21:45:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T23:30:00+00:00",
+      "latest_entry_at": "2026-11-14T02:06:51+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T00:09:09+00:00",
+      "latest_entry_at": "2026-11-13T19:00:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-13T14:48:00+00:00",
+      "latest_entry_at": "2026-11-13T22:08:49+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-13T19:00:00+00:00",
+      "latest_entry_at": "2026-11-14T02:08:29+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T16:54:16+00:00",
+      "latest_entry_at": "2026-11-13T18:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T22:14:45+00:00",
+      "latest_entry_at": "2026-11-14T01:14:40+00:00",
       "stale": false
     },
     {
@@ -486,15 +486,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-13T23:25:04+00:00",
+      "latest_entry_at": "2026-11-14T01:39:15+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T23:13:11+00:00",
+      "latest_entry_at": "2026-11-14T02:23:15+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-13T16:00:00+00:00",
+      "latest_entry_at": "2026-11-14T01:56:59+00:00",
       "stale": false
     },
     {
@@ -540,9 +540,9 @@
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-13T17:39:22+00:00",
+      "latest_entry_at": "2026-11-13T23:59:58+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,22 @@
     }
   ],
   "items": [
+    {
+      "id": "8442717be86f23bbbb58",
+      "headline": "Falcons vs. Chiefs injury report: James Pearce Jr. questionable to play on Sunday",
+      "url": "https://www.thefalcoholic.com/atlanta-falcons-injuries/98375/falcons-vs-chiefs-injury-report-james-pearce-jr-questionable-to-play-on-sunday",
+      "source_id": "news_sbn_atl",
+      "source": "The Falcoholic (SB Nation)",
+      "teams": [
+        "ATL"
+      ],
+      "feed_description": "Greetings, Falcoholics! Friday is upon us as the Atlanta Falcons and Kansas City Chiefs held their final practices of the week. We have been monitoring the health of both teams all week, and we now know who is likely to play and won\u2019t play this Sunday. Let\u2019s take a look at the injury reports! Falcons [\u2026]",
+      "categories": [
+        "Atlanta Falcons injuries"
+      ],
+      "published_at": "2026-11-14T02:23:15+00:00",
+      "players": []
+    },
     {
       "id": "a5a0c3855307d6623d40",
       "headline": "Raiders' Friday Injury Report Filled With Positives Entering Seahawks Matchup",
@@ -1135,7 +1151,7 @@
     },
     {
       "id": "2c028125d26d5190e39e",
-      "headline": "Browns, Texans Week 10 injuries: 2 big players Out for HOU; big names Questionable",
+      "headline": "Browns, Texans Week 10 injuries: 3 big players Out for HOU; big names Questionable",
       "url": "https://www.dawgsbynature.com/cleveland-browns-news/137974/browns-texans-week-10-injuries-denzel-boston-will-anderson-marvin-harrison-danielle-hunter",
       "source_id": "news_sbn_cle",
       "source": "Dawgs By Nature (SB Nation)",
@@ -3849,25 +3865,6 @@
         "Xavier Worthy"
       ],
       "published_at": "2026-11-11T22:34:53+00:00",
-      "players": []
-    },
-    {
-      "id": "4989fe5405f03954abdb",
-      "headline": "Week 10 Injury Report | Texans at Browns",
-      "url": "https://www.houstontexans.com/news/week-10-injury-report-texans-at-browns",
-      "source_id": "news_official_hou",
-      "source": "Houston Texans (official)",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "Week 10 injury updates presented by Shariff Injury Lawyers for the Houston Texans at Cleveland Browns game.",
-      "categories": [
-        "Homepage CP",
-        "Gameday",
-        "2026 REG10 - Browns",
-        "Houston Texans at Cleveland Browns (2026-REG-10)"
-      ],
-      "published_at": "2026-11-11T22:33:00+00:00",
       "players": []
     }
   ]
