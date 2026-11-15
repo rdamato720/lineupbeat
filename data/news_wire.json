@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T15:00:54.122968+00:00",
+  "updated_at": "2026-11-15T15:39:14.265108+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-15T15:00:04+00:00",
+      "latest_entry_at": "2026-11-15T15:29:06+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-15T14:50:57+00:00",
+      "latest_entry_at": "2026-11-15T15:13:46+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-15T13:26:57+00:00",
+      "latest_entry_at": "2026-11-15T14:54:18+00:00",
       "stale": false
     },
     {
@@ -278,23 +278,23 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-14T21:51:19+00:00",
+      "latest_entry_at": "2026-11-15T15:08:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-15T15:00:04+00:00",
+      "latest_entry_at": "2026-11-15T15:29:06+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-15T14:50:57+00:00",
+      "latest_entry_at": "2026-11-15T15:13:46+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-15T14:59:22+00:00",
+      "latest_entry_at": "2026-11-15T15:33:16+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-15T12:00:00+00:00",
+      "latest_entry_at": "2026-11-15T15:28:27+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-13T23:24:09+00:00",
+      "latest_entry_at": "2026-11-15T15:09:21+00:00",
       "stale": false
     },
     {
@@ -492,9 +492,9 @@
     {
       "source_id": "news_sbn_atl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-15T13:00:00+00:00",
+      "latest_entry_at": "2026-11-15T15:32:50+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-15T14:55:17+00:00",
+      "latest_entry_at": "2026-11-15T15:23:08+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,103 @@
     }
   ],
   "items": [
+    {
+      "id": "4c61bc374b0f8ac1bc05",
+      "headline": "Jets' Mixed Week 10 Injury Report Still Sparks Optimism Heading Into Bills Matchup",
+      "url": "https://www.si.com/nfl/jets/onsi/jets-mixed-week-10-injury-report-sparks-optimism-bills-matchup-01m7b4jjvqmm",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "It's safe to say that the Jets' Week 10 injury report is a mixed bag; however, head coach Aaron Glenn & Co. are confident that they're on the right track.",
+      "categories": [],
+      "published_at": "2026-11-15T15:24:12+00:00",
+      "players": []
+    },
+    {
+      "id": "f173addd1afbcd9abf32",
+      "headline": "Drake Maye Leaves Patriots Game Early With Ankle Injury: What We Know Right Now",
+      "url": "https://www.si.com/nfl/patriots/onsi/drake-maye-leaves-patriots-game-early-with-ankle-injury-what-we-know-right-now",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots quarterback is questionable to return.",
+      "categories": [],
+      "published_at": "2026-11-15T15:18:39+00:00",
+      "players": [
+        {
+          "id": "00-0039851",
+          "name": "Drake Maye",
+          "team": "NE",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "6d2dc5b4f01747739f31",
+      "headline": "Drake Maye Injury Update: Will the Patriots\u2019 star quarterback return against the Lions?",
+      "url": "https://atozsports.com/nfl/new-england-patriots-news/drake-maye-injury-update-lions/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots came into the Week 10 matchup against the Detroit Lions with some solid momentum on the injury side of things thanks to A.J. Brown\u2019s return and Rhamondre Stevenson\u2019s availablity. That quickly dissipated, however, once Drake Maye suffered and ankle injury on the first drive of the game. Drake Maye completed three [\u2026]",
+      "categories": [
+        "New England Patriots News",
+        "Drake Maye",
+        "Drake Maye Injury Update",
+        "Patriots-Lions"
+      ],
+      "published_at": "2026-11-15T15:13:46+00:00",
+      "players": [
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
+        },
+        {
+          "id": "00-0036875",
+          "name": "Rhamondre Stevenson",
+          "team": "NE",
+          "position": "RB"
+        },
+        {
+          "id": "00-0039851",
+          "name": "Drake Maye",
+          "team": "NE",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "be0d41230d3549cf12fb",
+      "headline": "Chargers Injury Report: Kayode Awosika, David Njoku questionable vs. Ravens",
+      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/67050/chargers-injury-report-kayode-awosika-david-njoku-ladd-mcconkey",
+      "source_id": "news_sbn_lac",
+      "source": "Bolts From The Blue (SB Nation)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "It looks like reinforcements are finally on their way, albeit quite a bit later than initially expected. Offensive guard Kayode Awosika, tight end David Njoku, offensive guard/tackle, and linebacker Denzel Perryman are all listed as questionable for Monday night\u2019s game. The latter three have all yet to be activated off of injured reserve, however. Defensive [\u2026]",
+      "categories": [
+        "Chargers Injury Reports",
+        "Los Angeles Chargers Injuries"
+      ],
+      "published_at": "2026-11-15T15:09:21+00:00",
+      "players": [
+        {
+          "id": "00-0033885",
+          "name": "David Njoku",
+          "team": "LAC",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "2e520d250e32d4a34782",
       "headline": "Saints vs. Panthers: What the Numbers Reveal About Sunday's NFC South Battle",
@@ -3901,95 +3998,6 @@
       ],
       "published_at": "2026-11-12T21:57:20+00:00",
       "players": []
-    },
-    {
-      "id": "67383071aec79af839bc",
-      "headline": "Packers-Vikings Injury Report | Nov. 12, 2026",
-      "url": "https://www.packers.com/news/packers-vikings-injury-report-nov-12-2026",
-      "source_id": "news_official_gb",
-      "source": "Green Bay Packers (official)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "",
-      "categories": [
-        "News: Injury Report",
-        "News: National Feature",
-        "Homepage CP",
-        "News: All News",
-        "Minnesota Vikings at Green Bay Packers (2026-REG-10)"
-      ],
-      "published_at": "2026-11-12T21:56:56+00:00",
-      "players": []
-    },
-    {
-      "id": "5658c0b10ee62b750282",
-      "headline": "Bills vs. Jets injury report: Spencer Brown misses practice",
-      "url": "https://www.buffalorumblings.com/buffalo-bills-injuries/145185/bills-vs-jets-injury-report-spencer-brown-misses-practice",
-      "source_id": "news_sbn_buf",
-      "source": "Buffalo Rumblings (SB Nation)",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "Well, Day Two is Day One this week. Thursday was the first full practice for the Buffalo Bills who are facing the New York Jets on Sunday. Yesterday\u2019s walkthrough practice let us know what injuries the Buffalo training staff is managing this week. Today gave us a better idea of who is a candidate for [\u2026]",
-      "categories": [
-        "Buffalo Bills Injuries"
-      ],
-      "published_at": "2026-11-12T21:48:41+00:00",
-      "players": []
-    },
-    {
-      "id": "9ac020505e6ff6994f5f",
-      "headline": "Chiefs-Falcons Week 10 Thursday injury report: Jaylon Moore misses 2nd day",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-injuries/216203/chiefs-falcons-week-10-thursday-injury-report-jaylon-moore-misses-2nd-day",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Each practice day this season, the Kansas City Chiefs release an official injury report ahead of the next game. In Week 10, the Chiefs play the Atlanta Falcons on Sunday afternoon. Here is the Chiefs\u2019 second official injury report of the week, courtesy of the team\u2019s official website: Chiefs The following players were full participants in [\u2026]",
-      "categories": [
-        "Kansas City Chiefs Injuries",
-        "Kansas City Chiefs News"
-      ],
-      "published_at": "2026-11-12T21:45:00+00:00",
-      "players": []
-    },
-    {
-      "id": "032838dad158e170abba",
-      "headline": "Patriots vs. Lions Thursday injury report: Rhamondre Stevenson, A.J. Brown among 11 limited",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/144040/patriots-vs-lions-thursday-injury-report-rhamondre-stevenson-a-j-brown-limited",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots held a walkthrough at the FC Bayern Munich training ground upon arriving in Germany. There were no non-participants left for it on Thursday after head coach Mike Vrabel\u2019s side ruled out running back TreVeyon Henderson, offensive lineman Ben Brown and cornerback Carlton Davis III in the hours leading up to the [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-11-12T21:41:57+00:00",
-      "players": [
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
-          "position": "WR"
-        },
-        {
-          "id": "00-0036875",
-          "name": "Rhamondre Stevenson",
-          "team": "NE",
-          "position": "RB"
-        },
-        {
-          "id": "00-0040734",
-          "name": "TreVeyon Henderson",
-          "team": "NE",
-          "position": "RB"
-        }
-      ]
     }
   ]
 }
