@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T17:00:51.063487+00:00",
+  "updated_at": "2026-11-16T17:27:32.401067+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T16:52:25+00:00",
+      "latest_entry_at": "2026-11-16T17:02:31+00:00",
       "stale": false
     },
     {
@@ -28,9 +28,9 @@
     {
       "source_id": "atoz_sports_easton_freeze",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T17:00:02+00:00",
+      "latest_entry_at": "2026-11-16T17:21:26+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-15T19:45:00+00:00",
+      "latest_entry_at": "2026-11-16T16:00:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-16T16:52:25+00:00",
+      "latest_entry_at": "2026-11-16T17:02:31+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T17:00:02+00:00",
+      "latest_entry_at": "2026-11-16T17:21:26+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T15:11:05+00:00",
+      "latest_entry_at": "2026-11-16T13:53:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T16:31:46+00:00",
+      "latest_entry_at": "2026-11-16T05:35:43+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-16T16:15:00+00:00",
+      "latest_entry_at": "2026-11-16T15:00:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-16T16:26:00+00:00",
+      "latest_entry_at": "2026-11-16T15:00:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T16:28:03+00:00",
+      "latest_entry_at": "2026-11-16T16:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,54 @@
     }
   ],
   "items": [
+    {
+      "id": "aeba66bcf50f1667e83b",
+      "headline": "Titans\u2019 league-crushing no-huddle rate defines Robert Saleh\u2019s confession of a Cam Ward philosophy change, and the numbers are astonishing",
+      "url": "https://atozsports.com/nfl/tennessee-titans-news/titans-league-crushing-no-huddle-rate-defines-robert-salehs-confession-cam-ward-philosophy-change-astonishing/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "The Titans ran no huddle on roughly half their snaps against Jacksonville while most of the NFL sits in single digits. I asked someone around the league what that really says about Cam Ward.",
+      "categories": [
+        "NFL",
+        "Tennessee Titans News",
+        "American Football",
+        "Cam Ward",
+        "Robert Saleh"
+      ],
+      "published_at": "2026-11-16T17:09:22+00:00",
+      "players": [
+        {
+          "id": "00-0040676",
+          "name": "Cam Ward",
+          "team": "TEN",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "ca168ec536101e06e8a7",
+      "headline": "Calvin Ridley\u2019s Week 10 Snap Count Makes Titans Not Trading Him Even More Confusing",
+      "url": "https://www.si.com/nfl/titans/onsi/calvin-ridley-s-week-10-snap-count-makes-titans-not-trading-him-even-more-confusing-01m7j7nn499j",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "The Titans held on to Calvin Ridley at the trade deadline... just to barely play him?",
+      "categories": [],
+      "published_at": "2026-11-16T17:00:01+00:00",
+      "players": [
+        {
+          "id": "00-0034837",
+          "name": "Calvin Ridley",
+          "team": "TEN",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "3ca01fb7ce637c3aefbf",
       "headline": "Panthers\u2019 snap counts vs. Saints in Week 10 reveal defensive changes under Todd Wash and a concerning trend for Xavier Legette",
@@ -4109,57 +4157,6 @@
           "name": "Drew Lock",
           "team": "SEA",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "5e5a9dee943cc7d9577c",
-      "headline": "Vikings-Packers Final Injury Report",
-      "url": "https://www.dailynorseman.com/minnesota-vikings-injuries/101520/vikings-packers-final-injury-report",
-      "source_id": "news_sbn_min",
-      "source": "Daily Norseman (SB Nation)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Minnesota Vikings and Green Bay Packers released their final injury reports, along with injury designations, in advance of their matchup on Sunday at Lambeau Field. Here they are: Minnesota Vikings Green Bay Packers Injury Report Terms and Glossary Injury designation definitions: Probable = the league defines a Probable injury designation as a 75% or [\u2026]",
-      "categories": [
-        "Minnesota Vikings Injuries"
-      ],
-      "published_at": "2026-11-13T22:46:19+00:00",
-      "players": []
-    },
-    {
-      "id": "5df26594afbe9c782199",
-      "headline": "Injury Report, Week 10 at Cardinals: Steve Avila and Terrance Ferguson ruled out; Trent McDuffie and Kam Curl questionable",
-      "url": "https://www.therams.com/news/rams-injury-report-week-10-2026-at-cardinals-trent-mcduffie-steve-avila",
-      "source_id": "news_official_lar",
-      "source": "Los Angeles Rams (official)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The final injury report ahead of Sunday's Week 10 regular season game between the Rams and the Cardinals at State Farm Stadium.",
-      "categories": [
-        "Injury Report - Cedars Sinai",
-        "Football",
-        "Los Angeles Rams at Arizona Cardinals (2026-REG-10)",
-        "Matthew Stafford",
-        "Davis Allen",
-        "Colby Parkinson",
-        "Joe Cardona",
-        "Myles Garrett",
-        "Steve Avila",
-        "Trent McDuffie",
-        "Kamren Curl",
-        "Terrance Ferguson",
-        "Tyler Higbee"
-      ],
-      "published_at": "2026-11-13T22:39:40+00:00",
-      "players": [
-        {
-          "id": "00-0040737",
-          "name": "Terrance Ferguson",
-          "team": "LAR",
-          "position": "TE"
         }
       ]
     }
