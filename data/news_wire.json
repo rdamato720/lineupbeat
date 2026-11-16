@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-16T03:00:48.309818+00:00",
+  "updated_at": "2026-11-16T05:01:04.700726+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T01:36:24+00:00",
+      "latest_entry_at": "2026-11-16T03:14:19+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T02:54:38+00:00",
+      "latest_entry_at": "2026-11-16T04:54:58+00:00",
       "stale": false
     },
     {
@@ -28,9 +28,9 @@
     {
       "source_id": "atoz_sports_easton_freeze",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T02:25:55+00:00",
+      "latest_entry_at": "2026-11-16T04:42:44+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T01:55:57+00:00",
+      "latest_entry_at": "2026-11-16T04:17:55+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-16T02:15:36+00:00",
+      "latest_entry_at": "2026-11-16T02:15:00+00:00",
       "stale": false
     },
     {
@@ -94,7 +94,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-16T00:00:32+00:00",
+      "latest_entry_at": "2026-11-16T04:25:37+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-15T22:42:34+00:00",
+      "latest_entry_at": "2026-11-16T04:20:19+00:00",
       "stale": false
     },
     {
@@ -150,7 +150,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T02:51:21+00:00",
+      "latest_entry_at": "2026-11-16T04:34:29+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-15T23:58:00+00:00",
+      "latest_entry_at": "2026-11-16T04:25:56+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-11-16T02:02:04+00:00",
+      "latest_entry_at": "2026-11-16T04:31:53+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-15T19:55:01+00:00",
+      "latest_entry_at": "2026-11-16T03:00:00+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T02:54:38+00:00",
+      "latest_entry_at": "2026-11-16T04:54:58+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-16T02:25:55+00:00",
+      "latest_entry_at": "2026-11-16T04:42:44+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T00:53:14+00:00",
+      "latest_entry_at": "2026-11-16T04:11:13+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-15T21:27:27+00:00",
+      "latest_entry_at": "2026-11-16T02:15:42+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T01:19:57+00:00",
+      "latest_entry_at": "2026-11-15T22:15:49+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T02:51:33+00:00",
+      "latest_entry_at": "2026-11-16T01:15:00+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-15T17:55:00+00:00",
+      "latest_entry_at": "2026-11-16T03:04:57+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-15T22:47:43+00:00",
+      "latest_entry_at": "2026-11-16T04:14:08+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T00:46:15+00:00",
+      "latest_entry_at": "2026-11-16T04:33:06+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-16T03:00:00+00:00",
+      "latest_entry_at": "2026-11-16T04:12:50+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-15T21:48:24+00:00",
+      "latest_entry_at": "2026-11-16T01:36:24+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-15T15:09:21+00:00",
+      "latest_entry_at": "2026-11-16T01:42:42+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T02:15:00+00:00",
+      "latest_entry_at": "2026-11-16T03:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-15T16:00:00+00:00",
+      "latest_entry_at": "2026-11-16T02:03:45+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-15T19:51:22+00:00",
+      "latest_entry_at": "2026-11-16T00:47:07+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T02:59:42+00:00",
+      "latest_entry_at": "2026-11-16T03:35:30+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-15T20:05:00+00:00",
+      "latest_entry_at": "2026-11-15T23:59:28+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T01:30:00+00:00",
+      "latest_entry_at": "2026-11-16T02:30:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,86 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-16T01:18:34+00:00",
+      "latest_entry_at": "2026-11-16T03:11:16+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "07bec061b55a7f795e9f",
+      "headline": "Titans finally got this right at wide receiver in loss to Jags, but Carnell Tate\u2019s return raises one major fear",
+      "url": "https://atozsports.com/nfl/tennessee-titans-news/titans-finally-got-right-wide-receiver-loss-jags-carnell-tate-return-raises-one-major-fear/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Elic Ayomanor and Chimere Dike played nearly every snap in Week 10, while Calvin Ridley barely saw the field. Tennessee deserves credit for the shift, but the real test comes when the full receiver room is healthy.",
+      "categories": [
+        "NFL",
+        "Tennessee Titans News",
+        "American Football",
+        "Calvin Ridley",
+        "Carnell Tate",
+        "Chimere Dike",
+        "Elic Ayomanor"
+      ],
+      "published_at": "2026-11-16T03:40:49+00:00",
+      "players": [
+        {
+          "id": "00-0034837",
+          "name": "Calvin Ridley",
+          "team": "TEN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040170",
+          "name": "Elic Ayomanor",
+          "team": "TEN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040705",
+          "name": "Chimere Dike",
+          "team": "TEN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0041438",
+          "name": "Carnell Tate",
+          "team": "TEN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "738d8b5d10f13473da4e",
+      "headline": "Tory Horton Makes 'Tremendous' Special Teams Play To Help Seahawks Secure Win In Las Vegas",
+      "url": "https://www.seahawks.com/news/tory-horton-makes-tremendous-special-teams-play-to-help-seahawks-secure-win-in-las-vegas",
+      "source_id": "news_official_sea",
+      "source": "Seattle Seahawks (official)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Seahawks receiver and returner Tory Horton made a \u201cgreat smart play\u201d during a kickoff in the fourth quarter to help Seattle lock in a 21-13 win.",
+      "categories": [
+        "category/News:",
+        "News: National Feature",
+        "Seattle Seahawks at Las Vegas Raiders (2026-REG-10)",
+        "Homepage Hero",
+        "Homepage Top Headlines",
+        "Tory Horton"
+      ],
+      "published_at": "2026-11-16T03:05:12+00:00",
+      "players": [
+        {
+          "id": "00-0040648",
+          "name": "Tory Horton",
+          "team": "SEA",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "1f75a513d46e6a77b512",
       "headline": "Matthew Stafford, Rams offense spread the wealth in win over Cardinals",
@@ -952,7 +1027,7 @@
     },
     {
       "id": "20839d8c1b340e0d5b80",
-      "headline": "Brock Bowers injures ankle",
+      "headline": "Brock Bowers is ruled out of game with ankle injury",
       "url": "https://www.silverandblackpride.com/las-vegas-raiders-news/146285/raiders-news-brock-bowers-injures-ankle",
       "source_id": "news_sbn_lv",
       "source": "Silver And Black Pride (SB Nation)",
@@ -4028,48 +4103,6 @@
       ],
       "published_at": "2026-11-13T21:30:00+00:00",
       "players": []
-    },
-    {
-      "id": "c0d126da6d2262901683",
-      "headline": "Injury Report: Week 10 Dolphins at Colts",
-      "url": "https://www.miamidolphins.com/news/injury-report-week-10-dolphins-at-colts",
-      "source_id": "news_official_mia",
-      "source": "Miami Dolphins (official)",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "Check out the official Week 10 injury report for the Miami Dolphins.",
-      "categories": [
-        "Content - Feature",
-        "Written Content - Latest Stories",
-        "Miami Dolphins at Indianapolis Colts (2026-REG-10)"
-      ],
-      "published_at": "2026-11-13T21:15:39+00:00",
-      "players": []
-    },
-    {
-      "id": "2c028125d26d5190e39e",
-      "headline": "Browns, Texans Week 10 injuries: 3 big players Out for HOU; big names Questionable",
-      "url": "https://www.dawgsbynature.com/cleveland-browns-news/137974/browns-texans-week-10-injuries-denzel-boston-will-anderson-marvin-harrison-danielle-hunter",
-      "source_id": "news_sbn_cle",
-      "source": "Dawgs By Nature (SB Nation)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "Given the physicality of NFL football, no one should be surprised when injury reports have big names, lots of names, and additions even during practice weeks. All of that happened in the ramp-up to the Week 10 matchup between the Cleveland Browns and Houston Texans. The week started with Browns superstar WR Denzel Boston missing [\u2026]",
-      "categories": [
-        "Cleveland Browns Injuries",
-        "Cleveland Browns News"
-      ],
-      "published_at": "2026-11-13T21:11:44+00:00",
-      "players": [
-        {
-          "id": "00-0041037",
-          "name": "Denzel Boston",
-          "team": "CLE",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
