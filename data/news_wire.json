@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T01:00:56.337233+00:00",
+  "updated_at": "2026-11-17T01:04:53.430525+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T01:00:01+00:00",
+      "latest_entry_at": "2026-11-17T01:04:13+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-17T01:00:01+00:00",
+      "latest_entry_at": "2026-11-17T01:04:13+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T17:37:08+00:00",
+      "latest_entry_at": "2026-11-16T20:34:30+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-13T14:05:00+00:00",
+      "latest_entry_at": "2026-11-16T14:00:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T23:03:27+00:00",
+      "latest_entry_at": "2026-11-16T22:04:08+00:00",
       "stale": false
     },
     {
@@ -366,15 +366,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T13:55:00+00:00",
+      "latest_entry_at": "2026-11-16T12:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-16T20:05:03+00:00",
+      "latest_entry_at": "2026-11-16T19:00:30+00:00",
       "stale": false
     },
     {
@@ -414,15 +414,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-16T22:00:43+00:00",
+      "latest_entry_at": "2026-11-16T22:39:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-17T01:00:00+00:00",
+      "latest_entry_at": "2026-11-16T23:53:11+00:00",
       "stale": false
     },
     {
@@ -430,15 +430,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T01:00:00+00:00",
+      "latest_entry_at": "2026-11-16T23:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T20:43:20+00:00",
+      "latest_entry_at": "2026-11-16T23:02:41+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T20:12:15+00:00",
+      "latest_entry_at": "2026-11-16T22:46:33+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-17T00:48:34+00:00",
+      "latest_entry_at": "2026-11-16T22:37:29+00:00",
       "stale": false
     },
     {
@@ -548,9 +548,9 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-16T17:29:12+00:00",
+      "latest_entry_at": "2026-11-17T00:45:00+00:00",
       "stale": false
     }
   ],
@@ -819,6 +819,30 @@
           "name": "Deshaun Watson",
           "team": "CLE",
           "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "5288041025f2d5a63b5f",
+      "headline": "NY Giants cut struggling kick returner, sign another shaky one",
+      "url": "https://www.bigblueview.com/new-york-giants-roster/180246/charlie-jones-nikko-reed-cut-xavier-gipson-tavierre-thomas-signed",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "The New York Giants cut wide receiver and kickoff/punt returner Charlie Jones on Monday amidst a flurry of roster moves. They also cut defensive back Nikko Reed. Added to the roster were defensive back Tavierre Thomas and wide receiver return man Xavier Gipson. Jones signed with the Giants when he was cut by the Cincinnati [\u2026]",
+      "categories": [
+        "New York Giants News",
+        "New York Giants roster"
+      ],
+      "published_at": "2026-11-16T23:02:41+00:00",
+      "players": [
+        {
+          "id": "00-0038496",
+          "name": "Xavier Gipson",
+          "team": "NYG",
+          "position": "WR"
         }
       ]
     },
@@ -4197,27 +4221,6 @@
           "name": "Lamar Jackson",
           "team": "BAL",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "a80b4eec3ba1bfd8b6da",
-      "headline": "Commanders\u2019 Ben Sinnott Had a Career Night on Fewer Snaps. Will the Targets Keep Coming?",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-ben-sinnott-giants-targets",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Ben Sinnott caught all four of his targets for 42 yards and a touchdown against the Giants. Will the Commanders keep throwing his way?",
-      "categories": [],
-      "published_at": "2026-11-14T19:42:46+00:00",
-      "players": [
-        {
-          "id": "00-0039912",
-          "name": "Ben Sinnott",
-          "team": "WAS",
-          "position": "TE"
         }
       ]
     }
