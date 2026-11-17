@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-17T03:00:43.261304+00:00",
+  "updated_at": "2026-11-17T05:00:59.342654+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T00:44:12+00:00",
+      "latest_entry_at": "2026-11-17T04:42:56+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T02:51:49+00:00",
+      "latest_entry_at": "2026-11-17T04:53:07+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T00:30:24+00:00",
+      "latest_entry_at": "2026-11-17T03:30:00+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-16T23:57:29+00:00",
+      "latest_entry_at": "2026-11-17T04:36:30+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-17T00:00:30+00:00",
+      "latest_entry_at": "2026-11-16T23:33:26+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-16T23:45:00+00:00",
+      "latest_entry_at": "2026-11-17T04:30:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T02:51:49+00:00",
+      "latest_entry_at": "2026-11-17T04:53:07+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T13:00:00+00:00",
+      "latest_entry_at": "2026-11-17T00:15:00+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T00:15:00+00:00",
+      "latest_entry_at": "2026-11-17T05:00:11+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T23:03:27+00:00",
+      "latest_entry_at": "2026-11-17T01:00:00+00:00",
       "stale": false
     },
     {
@@ -388,9 +388,9 @@
     {
       "source_id": "news_sbn_ten",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-16T12:00:00+00:00",
+      "latest_entry_at": "2026-11-16T19:55:09+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T22:46:33+00:00",
+      "latest_entry_at": "2026-11-16T20:12:15+00:00",
       "stale": false
     },
     {
@@ -470,15 +470,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T15:30:23+00:00",
+      "latest_entry_at": "2026-11-16T23:19:54+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T20:08:37+00:00",
+      "latest_entry_at": "2026-11-17T04:34:05+00:00",
       "stale": false
     },
     {
@@ -510,7 +510,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-16T20:46:52+00:00",
+      "latest_entry_at": "2026-11-16T14:30:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T01:25:43+00:00",
+      "latest_entry_at": "2026-11-17T03:06:45+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,37 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-16T18:52:44+00:00",
+      "latest_entry_at": "2026-11-17T00:45:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "dcc7742bc568255112f4",
+      "headline": "Packers WR clears waivers, set up for practice squad return",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/89776/packers-wr-clears-waivers-set-up-for-practice-squad-return",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "On Saturday, the Green Bay Packers waived receiver Coleman Owen from the 53-man roster \u2014 in part to make room for the addition of receiver Skyy Moore, who was coming off the injured reserve. Owen, who also returned kicks and punts, directly replaced Moore when Moore went down with an ankle injury. Now, Owen has [\u2026]",
+      "categories": [
+        "Green Bay Packers News",
+        "Green Bay Packers roster"
+      ],
+      "published_at": "2026-11-17T04:34:05+00:00",
+      "players": [
+        {
+          "id": "00-0038090",
+          "name": "Skyy Moore",
+          "team": "GB",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "65727f3f8ca86c9dc536",
       "headline": "Texans vs. Colts First Injury Report: Who's at Risk of Missing TNF",
@@ -891,30 +915,6 @@
           "id": "00-0039894",
           "name": "Xavier Worthy",
           "team": "KC",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "dcc7742bc568255112f4",
-      "headline": "Packers WR clears waivers, set up for practice squad return",
-      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/89776/packers-wr-clears-waivers-set-up-for-practice-squad-return",
-      "source_id": "news_sbn_gb",
-      "source": "Acme Packing Company (SB Nation)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "On Saturday, the Green Bay Packers waived receiver Coleman Owen from the 53-man roster \u2014 in part to make room for the addition of receiver Skyy Moore, who was coming off the injured reserve. Owen, who also returned kicks and punts, directly replaced Moore when Moore went down with an ankle injury. Now, Owen has [\u2026]",
-      "categories": [
-        "Green Bay Packers News",
-        "Green Bay Packers roster"
-      ],
-      "published_at": "2026-11-16T22:37:29+00:00",
-      "players": [
-        {
-          "id": "00-0038090",
-          "name": "Skyy Moore",
-          "team": "GB",
           "position": "WR"
         }
       ]
