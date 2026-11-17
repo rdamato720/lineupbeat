@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-17T21:01:22.438122+00:00",
+  "updated_at": "2026-11-17T23:01:21.495413+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T18:43:32+00:00",
+      "latest_entry_at": "2026-11-17T20:24:17+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T21:01:01+00:00",
+      "latest_entry_at": "2026-11-17T23:00:01+00:00",
       "stale": false
     },
     {
@@ -28,9 +28,9 @@
     {
       "source_id": "atoz_sports_easton_freeze",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T20:56:17+00:00",
+      "latest_entry_at": "2026-11-17T22:12:29+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T20:31:43+00:00",
+      "latest_entry_at": "2026-11-17T22:09:33+00:00",
       "stale": false
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-17T17:29:03+00:00",
+      "latest_entry_at": "2026-11-17T21:45:48+00:00",
       "stale": false
     },
     {
@@ -60,17 +60,17 @@
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-17T20:04:47+00:00",
+      "latest_entry_at": "2026-11-17T22:08:53+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_buf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-16T16:08:23+00:00",
+      "latest_entry_at": "2026-11-17T22:42:07+00:00",
       "stale": false
     },
     {
@@ -78,15 +78,15 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-17T20:43:31+00:00",
+      "latest_entry_at": "2026-11-17T21:20:02+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_chi",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T16:00:00+00:00",
+      "latest_entry_at": "2026-11-17T22:22:23+00:00",
       "stale": false
     },
     {
@@ -100,9 +100,9 @@
     {
       "source_id": "news_official_cle",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-17T18:40:59+00:00",
+      "latest_entry_at": "2026-11-17T21:26:08+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-17T15:08:21+00:00",
+      "latest_entry_at": "2026-11-17T22:06:40+00:00",
       "stale": false
     },
     {
@@ -140,9 +140,9 @@
     {
       "source_id": "news_official_ind",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-17T19:32:41+00:00",
+      "latest_entry_at": "2026-11-17T21:19:13+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-17T18:22:06+00:00",
+      "latest_entry_at": "2026-11-17T22:30:08+00:00",
       "stale": false
     },
     {
@@ -190,7 +190,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-17T20:06:04+00:00",
+      "latest_entry_at": "2026-11-17T20:59:10+00:00",
       "stale": false
     },
     {
@@ -198,7 +198,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T17:50:16+00:00",
+      "latest_entry_at": "2026-11-17T22:51:33+00:00",
       "stale": false
     },
     {
@@ -238,15 +238,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T14:08:21+00:00",
+      "latest_entry_at": "2026-11-17T21:10:13+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_pit",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T19:05:00+00:00",
+      "latest_entry_at": "2026-11-17T22:00:00+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-17T19:45:39+00:00",
+      "latest_entry_at": "2026-11-17T22:36:55+00:00",
       "stale": false
     },
     {
@@ -278,7 +278,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-17T17:42:25+00:00",
+      "latest_entry_at": "2026-11-17T21:06:34+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T21:01:01+00:00",
+      "latest_entry_at": "2026-11-17T23:00:01+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T20:56:17+00:00",
+      "latest_entry_at": "2026-11-17T22:12:29+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T17:00:00+00:00",
+      "latest_entry_at": "2026-11-17T21:30:52+00:00",
       "stale": false
     },
     {
@@ -310,15 +310,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T20:37:38+00:00",
+      "latest_entry_at": "2026-11-17T22:06:26+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-17T19:27:21+00:00",
+      "latest_entry_at": "2026-11-17T23:00:21+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T19:30:00+00:00",
+      "latest_entry_at": "2026-11-17T22:19:52+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T12:30:00+00:00",
+      "latest_entry_at": "2026-11-16T20:05:03+00:00",
       "stale": false
     },
     {
@@ -388,9 +388,9 @@
     {
       "source_id": "news_sbn_ten",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-17T19:47:28+00:00",
+      "latest_entry_at": "2026-11-17T21:27:43+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-17T20:03:00+00:00",
+      "latest_entry_at": "2026-11-17T22:44:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T20:31:34+00:00",
+      "latest_entry_at": "2026-11-17T22:00:00+00:00",
       "stale": false
     },
     {
@@ -438,15 +438,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T20:03:56+00:00",
+      "latest_entry_at": "2026-11-17T21:40:26+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T20:27:58+00:00",
+      "latest_entry_at": "2026-11-17T21:38:49+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T14:50:12+00:00",
+      "latest_entry_at": "2026-11-17T21:29:55+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T17:00:00+00:00",
+      "latest_entry_at": "2026-11-17T20:56:21+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-17T18:56:46+00:00",
+      "latest_entry_at": "2026-11-17T22:22:09+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T17:14:19+00:00",
+      "latest_entry_at": "2026-11-17T21:44:33+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T20:01:00+00:00",
+      "latest_entry_at": "2026-11-17T21:30:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,183 @@
     }
   ],
   "items": [
+    {
+      "id": "ae9868f43760d1dd7b44",
+      "headline": "Texans vs. Colts Injury Report: Latest on Danielle Hunter, Marvin Harrison Jr.",
+      "url": "https://www.si.com/nfl/texans/onsi/texans-vs-colts-injury-report-latest-on-danielle-hunter-marvin-harrison-jr",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "The Houston Texans and Indianapolis Colts dropped their second injury reports on a short week.",
+      "categories": [],
+      "published_at": "2026-11-17T22:58:27+00:00",
+      "players": []
+    },
+    {
+      "id": "be1afbc6fecf37f2636e",
+      "headline": "Bears receiver Luther Burden III clears concussion protocol",
+      "url": "https://www.chicagobears.com/news/bears-receiver-luther-burden-iii-clears-concussion-protocol",
+      "source_id": "news_official_chi",
+      "source": "Chicago Bears (official)",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Coach Ben Johnson revealed before practice Tuesday that receiver Luther Burden III has cleared concussion protocol. The second-year pro sustained a concussion on a helmet-to-helmet hit late in the Bears\u2019 27-24 win over the Buccaneers Nov. 8 at Soldier Field.",
+      "categories": [
+        "Luther Burden III"
+      ],
+      "published_at": "2026-11-17T22:22:23+00:00",
+      "players": [
+        {
+          "id": "00-0040735",
+          "name": "Luther Burden III",
+          "team": "CHI",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "ce1b0f396c7a9a9e15ef",
+      "headline": "Wan\u2019Dale Robinson injury sends Titans WR room into full youth movement, and Xavier Restrepo\u2019s promotion sets up an uncomfortable storyline",
+      "url": "https://atozsports.com/nfl/tennessee-titans-news/wandale-robinson-injury-titans-wr-room-youth-movement-xavier-restrepo-promotion-uncomfortable-storyline/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Xavier Restrepo is back on the Titans' active roster with Wan'Dale Robinson sidelined. The timing could make the next month a lot more awkward for Tennessee than fans realize.",
+      "categories": [
+        "NFL",
+        "Tennessee Titans News",
+        "American Football",
+        "Injured Reserve",
+        "Signed",
+        "Wan'Dale Robinson",
+        "Xavier Restrepo"
+      ],
+      "published_at": "2026-11-17T21:42:08+00:00",
+      "players": [
+        {
+          "id": "00-0038117",
+          "name": "Wan'Dale Robinson",
+          "team": "TEN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040522",
+          "name": "Xavier Restrepo",
+          "team": "TEN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "b0ebdaa3b99b7b9e10f1",
+      "headline": "Titans place Wan\u2019Dale Robinson on IR; Promote Xavier Restrepo to roster",
+      "url": "https://www.musiccitymiracles.com/tennessee-titans-injuries/67946/titans-place-wandale-robinson-on-ir-promote-xavier-restrepo-to-roster",
+      "source_id": "news_sbn_ten",
+      "source": "Music City Miracles (SB Nation)",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Ian Rapoport is reporting that the Tennessee Titans have placed wide receiver Wan\u2019Dale Robinson on injured reserve and promoted wide receiver Xavier Restrepo to the active roster: It has been a disappointing first season in Tennessee for Robinson. He came to Tennessee following back-to-back 90+ catch seasons with the New York Giants. It seemed like [\u2026]",
+      "categories": [
+        "Tennessee Titans Injuries",
+        "Tennessee Titans News",
+        "Tennessee Titans Roster"
+      ],
+      "published_at": "2026-11-17T21:27:43+00:00",
+      "players": [
+        {
+          "id": "00-0038117",
+          "name": "Wan'Dale Robinson",
+          "team": "TEN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040522",
+          "name": "Xavier Restrepo",
+          "team": "TEN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "4cea568fd4143ab12d46",
+      "headline": "Browns claim DE Jamree Kromah",
+      "url": "https://www.clevelandbrowns.com/news/browns-claim-de-jamree-kromah",
+      "source_id": "news_official_cle",
+      "source": "Cleveland Browns (official)",
+      "teams": [
+        "CLE"
+      ],
+      "feed_description": "TE Carsen Ryan waived in corresponding move",
+      "categories": [
+        "Transactions",
+        "adpartner=transactions",
+        "featured"
+      ],
+      "published_at": "2026-11-17T21:26:08+00:00",
+      "players": [
+        {
+          "id": "00-0041131",
+          "name": "Carsen Ryan",
+          "team": "CLE",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "9910c2addd73647e1c7d",
+      "headline": "Practice Notebook: Both Colts starting tackles, cornerbacks listed as DNP for second consecutive day ahead of Week 11 game vs. Texans",
+      "url": "https://www.colts.com/news/practice-notebook-both-colts-starting-tackles-cornerbacks-listed-as-dnp-for-second-consecutive-day-ahead-of-week-11-game-vs-texans",
+      "source_id": "news_official_ind",
+      "source": "Indianapolis Colts (official)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Colts will release their final practice report for Week 11 on Wednesday.",
+      "categories": [
+        "Practice Notebook",
+        "Featured",
+        "Featured News"
+      ],
+      "published_at": "2026-11-17T21:19:13+00:00",
+      "players": []
+    },
+    {
+      "id": "f5b054f84332ae058ef0",
+      "headline": "Titans Promote WR Xavier Restrepo to 53-Man Roster, Place WR Wan'Dale Robinson on Injured Reserve",
+      "url": "https://www.tennesseetitans.com/news/titans-promote-wr-xavier-restrepo-to-53-man-roster-place-wr-wan-dale-robinson-on-injured-reserveroster-moves",
+      "source_id": "news_official_ten",
+      "source": "Tennessee Titans (official)",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Restrepo caught three passes for 31 yards on Sunday against the Jaguars after being a gameday elevation.",
+      "categories": [
+        "Articles: Roster Moves",
+        "Team/Football News",
+        "homepage-centerpiece"
+      ],
+      "published_at": "2026-11-17T21:06:34+00:00",
+      "players": [
+        {
+          "id": "00-0038117",
+          "name": "Wan'Dale Robinson",
+          "team": "TEN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040522",
+          "name": "Xavier Restrepo",
+          "team": "TEN",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "49c75d77d1e18e6b3e28",
       "headline": "Weighing the Pros and Cons of Browns Signing Deshaun Watson to Contract Extension",
@@ -1172,6 +1349,27 @@
           "position": "WR"
         }
       ]
+    },
+    {
+      "id": "2bf13afa4a07f024a8ff",
+      "headline": "Chargers vs. Ravens Injury Report: McConkey Out, Njoku Among 5 Questionable in Week 10",
+      "url": "https://www.chargers.com/news/chargers-vs-ravens-injury-report-ladd-mcconkey-daiyan-henley-2026",
+      "source_id": "news_official_lac",
+      "source": "Los Angeles Chargers (official)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "Take a look at the Chargers Injury Report ahead of Week 10 against the Ravens",
+      "categories": [
+        "Articles: Injury Report",
+        "Homepage: CP",
+        "Homepage: Headlines",
+        "App: Homepage",
+        "Los Angeles Chargers at Baltimore Ravens (2026-REG-10)",
+        "2026-REG-10-EDITORIAL"
+      ],
+      "published_at": "2026-11-16T22:25:00+00:00",
+      "players": []
     },
     {
       "id": "9bd7b14be5eab0e2861b",
@@ -2769,27 +2967,6 @@
       ]
     },
     {
-      "id": "2bf13afa4a07f024a8ff",
-      "headline": "Chargers vs. Ravens Injury Report: McConkey Out, Njoku Among 5 Questionable in Week 10",
-      "url": "https://www.chargers.com/news/chargers-vs-ravens-injury-report-ladd-mcconkey-daiyan-henley-2026",
-      "source_id": "news_official_lac",
-      "source": "Los Angeles Chargers (official)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "Take a look at the Chargers Injury Report ahead of Week 10 against the Ravens",
-      "categories": [
-        "Articles: Injury Report",
-        "Homepage: CP",
-        "Homepage: Headlines",
-        "App: Homepage",
-        "Los Angeles Chargers at Baltimore Ravens (2026-REG-10)",
-        "2026-REG-10-EDITORIAL"
-      ],
-      "published_at": "2026-11-15T19:45:00+00:00",
-      "players": []
-    },
-    {
       "id": "f0370327f336e8529f84",
       "headline": "Seahawks vs. Raiders inactives: Emanuel Wilson a healthy scratch",
       "url": "https://www.fieldgulls.com/seattle-seahawks-injury-report/179994/seahawks-vs-raiders-nfl-week-10-inactives-emanuel-wilson-healthy-scratch",
@@ -4000,162 +4177,6 @@
           "id": "00-0037247",
           "name": "George Pickens",
           "team": "DAL",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "fb25589d5b98796dfc01",
-      "headline": "Arizona Cardinals fans are excited to see Carson Beck in action",
-      "url": "https://www.revengeofthebirds.com/nfl-reacts-survey/96931/arizona-cardinals-fans-are-excited-to-see-carson-beck-in-action",
-      "source_id": "news_sbn_ari",
-      "source": "Revenge of the Birds (SB Nation)",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "Welcome to SB Nation Reacts, a survey of fans across the NFL. Throughout the year we ask questions of the most plugged-in Cardinals fans and fans across the country. The Arizona Cardinals are starting Carson Beck against the Los Angeles Rams, with Myles Garrett back in tow, coming off a three sack game, with Elijah [\u2026]",
-      "categories": [
-        "Arizona Cardinals News"
-      ],
-      "published_at": "2026-11-15T12:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0041561",
-          "name": "Carson Beck",
-          "team": "ARI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "138aeaf420699f8308fc",
-      "headline": "Titans' Overloaded Injury Report May Put an Upset Over Jaguars on Ice in Week 10",
-      "url": "https://www.si.com/nfl/titans/onsi/titans-overloaded-injury-report-may-put-an-upset-over-jaguars-on-ice-in-week-10-01m7e3cry7yk",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "The Titans are playing spoiler in their Week 10 matchup, but Tennessee's upset odds fall with every player that's relegated to the sideline.",
-      "categories": [],
-      "published_at": "2026-11-15T01:00:00+00:00",
-      "players": []
-    },
-    {
-      "id": "519a0b8a4810d8f20604",
-      "headline": "Why Did Bills Elevate QB Shane Buechele in Week 10? Is Josh Allen Okay to Face Jets?",
-      "url": "https://www.si.com/nfl/bills/onsi/transactions-week-10-why-did-bills-elevate-qb-shane-buechele-is-josh-allen-okay-to-face-jets",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "The Buffalo Bills have called up their emergency third quarterback on the eve of their November 15 road test against the New York Jets.",
-      "categories": [],
-      "published_at": "2026-11-15T00:39:08+00:00",
-      "players": [
-        {
-          "id": "00-0034857",
-          "name": "Josh Allen",
-          "team": "BUF",
-          "position": "QB"
-        },
-        {
-          "id": "00-0036679",
-          "name": "Shane Buechele",
-          "team": "BUF",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "8b64059fa86a81abecff",
-      "headline": "Saints Activate Travis Etienne Jr. From Injured Reserve Ahead of Panthers Game",
-      "url": "https://www.si.com/nfl/saints/onsi/saints-activate-travis-etienne-jr-from-injured-reserve-ahead-of-panthers-game-01m7e8wesvm3",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NO"
-      ],
-      "feed_description": "Saints running back Travis Etienne Jr. is set to return from injured reserve against the Panthers. New Orleans also placed Christen Miller on IR and made additional roster moves.",
-      "categories": [],
-      "published_at": "2026-11-15T00:35:05+00:00",
-      "players": [
-        {
-          "id": "00-0036973",
-          "name": "Travis Etienne",
-          "team": "NO",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "be8787fcb5c294c6997a",
-      "headline": "NFL adds insult to injury to Bears rookie for illegal act against the Buccaneers, and he\u2019s not the only Chicago player the league cracked down on",
-      "url": "https://atozsports.com/nfl/chicago-bears-news/bears-zavion-thomas-nfl-fines-austin-booker-ben-johnson/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Chicago Bears rookie wide receiver Zavion Thomas was fined by the NFL for striking Tampa Bay Buccaneers cornerback Jacob Parrish, as if he hasn't already been punished enough.",
-      "categories": [
-        "Chicago Bears News",
-        "NFL",
-        "Austin Booker",
-        "NFL Fines",
-        "Zavion Thomas"
-      ],
-      "published_at": "2026-11-14T22:09:57+00:00",
-      "players": [
-        {
-          "id": "00-0041051",
-          "name": "Zavion Thomas",
-          "team": "CHI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "39f2511bba4fd31b1ade",
-      "headline": "Elijah Higgins Extension Screams 1 Big Thing for Cardinals",
-      "url": "https://www.si.com/nfl/cardinals/onsi/elijah-higgins-extension-screams-1-big-thing-arizona-cardinals",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "The Arizona Cardinals keep their tight end room intact.",
-      "categories": [],
-      "published_at": "2026-11-14T22:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039041",
-          "name": "Elijah Higgins",
-          "team": "ARI",
-          "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "d4b712b9fac52d5e624d",
-      "headline": "Michael Pittman Jr. says he feels healthy enough to return",
-      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-news/177870/michael-pittman-jr-says-he-feels-healthy-enough-to-return",
-      "source_id": "news_sbn_pit",
-      "source": "Behind the Steel Curtain (SB Nation)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "The Pittsburgh Steelers made no trades ahead of Tuesday\u2019s NFL trade deadline, despite a clear need at wide receiver. Although the Steelers were interested in Tennessee\u2019s Calvin Ridley and Jacksonville\u2019s Brian Thomas Jr., a trade never materialized. While the receiver room has a bleak outlook right now, one of the Steelers\u2019 highest paid receivers seems [\u2026]",
-      "categories": [
-        "Pittsburgh Steelers News"
-      ],
-      "published_at": "2026-11-14T21:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0036252",
-          "name": "Michael Pittman",
-          "team": "PIT",
           "position": "WR"
         }
       ]
