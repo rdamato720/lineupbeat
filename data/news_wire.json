@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T01:04:53.430525+00:00",
+  "updated_at": "2026-11-17T03:00:43.261304+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T01:04:13+00:00",
+      "latest_entry_at": "2026-11-17T02:51:49+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T00:57:48+00:00",
+      "latest_entry_at": "2026-11-17T02:59:58+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-16T23:43:00+00:00",
+      "latest_entry_at": "2026-11-17T01:45:00+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-16T23:34:28+00:00",
+      "latest_entry_at": "2026-11-17T01:04:04+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-17T01:04:13+00:00",
+      "latest_entry_at": "2026-11-17T02:51:49+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-17T00:57:48+00:00",
+      "latest_entry_at": "2026-11-17T02:59:58+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T00:15:00+00:00",
+      "latest_entry_at": "2026-11-16T13:00:00+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T22:04:08+00:00",
+      "latest_entry_at": "2026-11-16T23:03:27+00:00",
       "stale": false
     },
     {
@@ -366,15 +366,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T12:00:00+00:00",
+      "latest_entry_at": "2026-11-16T13:55:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T19:00:30+00:00",
+      "latest_entry_at": "2026-11-16T20:05:03+00:00",
       "stale": false
     },
     {
@@ -388,9 +388,9 @@
     {
       "source_id": "news_sbn_ten",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-16T19:55:09+00:00",
+      "latest_entry_at": "2026-11-16T12:00:00+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-16T23:53:11+00:00",
+      "latest_entry_at": "2026-11-17T01:00:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T23:30:00+00:00",
+      "latest_entry_at": "2026-11-17T01:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T23:19:54+00:00",
+      "latest_entry_at": "2026-11-16T15:30:23+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-16T22:37:29+00:00",
+      "latest_entry_at": "2026-11-16T20:08:37+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-16T23:32:46+00:00",
+      "latest_entry_at": "2026-11-17T01:25:43+00:00",
       "stale": false
     },
     {
@@ -548,13 +548,27 @@
     {
       "source_id": "news_sbn_sea",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-17T00:45:00+00:00",
+      "latest_entry_at": "2026-11-16T18:52:44+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "65727f3f8ca86c9dc536",
+      "headline": "Texans vs. Colts First Injury Report: Who's at Risk of Missing TNF",
+      "url": "https://www.si.com/nfl/texans/onsi/texans-vs-colts-first-injury-report-who-s-at-risk-of-missing-tnf",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "HOU"
+      ],
+      "feed_description": "The Houston Texans have released their first of three injury reports for Week 11.",
+      "categories": [],
+      "published_at": "2026-11-17T01:38:57+00:00",
+      "players": []
+    },
     {
       "id": "80e4ecdc4391b2bb6d62",
       "headline": "Geno Smith Injury Makes Drafting a QB an Even Bigger Jets Priority in 2027",
@@ -646,7 +660,7 @@
         "2026 Week 10 News",
         "Los Angeles Chargers at Baltimore Ravens (2026-REG-10)",
         "inline-news",
-        "Homepage Centerpiece"
+        "Homepage Latest Headlines"
       ],
       "published_at": "2026-11-16T23:57:29+00:00",
       "players": []
@@ -4202,27 +4216,6 @@
       ],
       "published_at": "2026-11-14T20:31:00+00:00",
       "players": []
-    },
-    {
-      "id": "ca217278edf5a9b735aa",
-      "headline": "Ravens Coach Jesse Minter Continues Bizarre Handling Of Lamar Jackson's Status",
-      "url": "https://www.si.com/nfl/ravens/onsi/ravens-coach-jesse-minter-continues-bizarre-handling-of-lamar-jackson-s-status-01m7dsr26gs3",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BAL"
-      ],
-      "feed_description": "The rookie coach offered some quasi-specifics on the MVP's return but refuses to address some critical details",
-      "categories": [],
-      "published_at": "2026-11-14T20:23:19+00:00",
-      "players": [
-        {
-          "id": "00-0034796",
-          "name": "Lamar Jackson",
-          "team": "BAL",
-          "position": "QB"
-        }
-      ]
     }
   ]
 }
