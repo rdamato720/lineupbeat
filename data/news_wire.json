@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T05:01:02.640709+00:00",
+  "updated_at": "2026-11-18T09:09:52.695702+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-18T04:55:17+00:00",
+      "latest_entry_at": "2026-11-18T08:25:02+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-18T04:19:42+00:00",
+      "latest_entry_at": "2026-11-18T05:27:07+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-18T04:55:17+00:00",
+      "latest_entry_at": "2026-11-18T08:25:02+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-18T04:19:42+00:00",
+      "latest_entry_at": "2026-11-18T05:27:07+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-18T02:34:28+00:00",
+      "latest_entry_at": "2026-11-18T08:24:18+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-17T22:00:00+00:00",
+      "latest_entry_at": "2026-11-17T23:30:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-17T23:45:00+00:00",
+      "latest_entry_at": "2026-11-18T01:49:51+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-18T03:07:48+00:00",
+      "latest_entry_at": "2026-11-18T07:29:25+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,23 @@
     }
   ],
   "items": [
+    {
+      "id": "3d9541535cbdd922c318",
+      "headline": "Indianapolis Colts Injury Report: Week 11 Thursday Night Football",
+      "url": "https://www.stampedeblue.com/indianapolis-colts-injuries/130189/indianapolis-colts-injury-report-week-11-thursday-night-football",
+      "source_id": "news_sbn_ind",
+      "source": "Stampede Blue (SB Nation)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Indianapolis Colts released their Wednesday injury report ahead of their week 11 Thursday night football game against the Houston Texans. The Colts did not practice yesterday but instead conducted a walkthrough. The team decided to conduct another walk through for its Tuesday practice. Cornerback Sauce Gardner (calf) missed both walkthrough so far this week. [\u2026]",
+      "categories": [
+        "Indianapolis Colts Injuries",
+        "Indianapolis Colts News"
+      ],
+      "published_at": "2026-11-18T08:24:18+00:00",
+      "players": []
+    },
     {
       "id": "c264c9cdd4231ea8a8c4",
       "headline": "Breaking Down Titans\u2019 Injuries in Week 11: Xavier Restrepo In, Wan\u2019Dale Robinson Out vs. Cowboys",
@@ -4160,30 +4177,6 @@
           "name": "Patrick Mahomes",
           "team": "KC",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "f90b9b7e238c68ff3b6a",
-      "headline": "Browns vs. Texans injuries: Will Anderson, Denzel Boston Week 10 updates from Sunday AM",
-      "url": "https://www.dawgsbynature.com/cleveland-browns-news/138115/browns-vs-texans-injuries-will-anderson-denzel-boston-week-10-updates",
-      "source_id": "news_sbn_cle",
-      "source": "Dawgs By Nature (SB Nation)",
-      "teams": [
-        "CLE"
-      ],
-      "feed_description": "When the Houston Texans show up to the shores of Lake Erie to face the Cleveland Browns, the story of the game is likely to be who will not be playing. While the Browns hope to break the NFL\u2019s longest drought by having a four-game winning streak, the Texans are hoping to keep their slim [\u2026]",
-      "categories": [
-        "Cleveland Browns Injuries",
-        "Cleveland Browns News"
-      ],
-      "published_at": "2026-11-15T12:54:27+00:00",
-      "players": [
-        {
-          "id": "00-0041037",
-          "name": "Denzel Boston",
-          "team": "CLE",
-          "position": "WR"
         }
       ]
     }
