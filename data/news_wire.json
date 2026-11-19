@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T07:57:19.155536+00:00",
+  "updated_at": "2026-11-19T11:00:57.834322+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-19T07:23:26+00:00",
+      "latest_entry_at": "2026-11-19T10:00:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-19T03:42:29+00:00",
+      "latest_entry_at": "2026-11-19T11:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-19T03:58:19+00:00",
+      "latest_entry_at": "2026-11-19T10:00:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-19T07:23:26+00:00",
+      "latest_entry_at": "2026-11-19T10:00:00+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-19T03:42:29+00:00",
+      "latest_entry_at": "2026-11-19T11:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-18T12:45:00+00:00",
+      "latest_entry_at": "2026-11-19T03:26:54+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-18T23:23:52+00:00",
+      "latest_entry_at": "2026-11-19T00:55:27+00:00",
       "stale": false
     },
     {
@@ -460,9 +460,9 @@
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-18T22:44:39+00:00",
+      "latest_entry_at": "2026-11-19T11:00:00+00:00",
       "stale": false
     },
     {
@@ -500,9 +500,9 @@
     {
       "source_id": "news_sbn_car",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-18T15:00:00+00:00",
+      "latest_entry_at": "2026-11-19T04:30:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,39 @@
     }
   ],
   "items": [
+    {
+      "id": "e8e76476dab5a2501ca3",
+      "headline": "Chicago Bears News: Bears presented interesting injury report Wednesday",
+      "url": "https://www.windycitygridiron.com/chicago-bears-news/127870/chicago-bears-news-bears-presented-interesting-injury-report-wednesday",
+      "source_id": "news_sbn_chi",
+      "source": "Windy City Gridiron (SB Nation)",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Kyler Gordon missed practic Wednesday, a feat made even harder by the fact that the Bears didn\u2019t practice on Wednesday. Jeffery Simmons was listed as \u201cLimited\u201d with a knee.Kyler Gordon missed practic Wednesday, a feat made even harder by the fact that the Bears didn\u2019t practice on Wednesday. Jeffery Simmons was listed as \u201cLimited\u201d with [\u2026]",
+      "categories": [
+        "Chicago Bears News"
+      ],
+      "published_at": "2026-11-19T11:00:00+00:00",
+      "players": []
+    },
+    {
+      "id": "b15553dad2956e4edff0",
+      "headline": "Panthers injury report shows more help on the way for the defense",
+      "url": "https://www.catscratchreader.com/carolina-panthers-news/62422/panthers-injury-report-shows-more-help-on-the-way-for-the-defense",
+      "source_id": "news_sbn_car",
+      "source": "Cat Scratch Reader (SB Nation)",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "The Carolina Panthers are coming off a key win over NFC South rival New Orleans Saints. That puts them in the drivers seat for the NFC South title, and they get a chance to add some cushion to that when they host the floundering Baltimore Ravens on Sunday. The defense looks like they\u2019ll be getting [\u2026]",
+      "categories": [
+        "Carolina Panthers Injuries",
+        "Carolina Panthers News"
+      ],
+      "published_at": "2026-11-19T04:30:00+00:00",
+      "players": []
+    },
     {
       "id": "74e6832d3b1287fb9068",
       "headline": "Eagles Injury Report: DeVonta Smith and Dontayvion Wicks return to practice",
@@ -4001,81 +4034,6 @@
           "name": "Drake Maye",
           "team": "NE",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "07bec061b55a7f795e9f",
-      "headline": "Titans finally got this right at wide receiver in loss to Jags, but Carnell Tate\u2019s return raises one major fear",
-      "url": "https://atozsports.com/nfl/tennessee-titans-news/titans-finally-got-right-wide-receiver-loss-jags-carnell-tate-return-raises-one-major-fear/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "Elic Ayomanor and Chimere Dike played nearly every snap in Week 10, while Calvin Ridley barely saw the field. Tennessee deserves credit for the shift, but the real test comes when the full receiver room is healthy.",
-      "categories": [
-        "NFL",
-        "Tennessee Titans News",
-        "American Football",
-        "Calvin Ridley",
-        "Carnell Tate",
-        "Chimere Dike",
-        "Elic Ayomanor"
-      ],
-      "published_at": "2026-11-16T03:40:49+00:00",
-      "players": [
-        {
-          "id": "00-0034837",
-          "name": "Calvin Ridley",
-          "team": "TEN",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040170",
-          "name": "Elic Ayomanor",
-          "team": "TEN",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040705",
-          "name": "Chimere Dike",
-          "team": "TEN",
-          "position": "WR"
-        },
-        {
-          "id": "00-0041438",
-          "name": "Carnell Tate",
-          "team": "TEN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "738d8b5d10f13473da4e",
-      "headline": "Tory Horton Makes 'Tremendous' Special Teams Play To Help Seahawks Secure Win In Las Vegas",
-      "url": "https://www.seahawks.com/news/tory-horton-makes-tremendous-special-teams-play-to-help-seahawks-secure-win-in-las-vegas",
-      "source_id": "news_official_sea",
-      "source": "Seattle Seahawks (official)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Seahawks receiver and returner Tory Horton made a \u201cgreat smart play\u201d during a kickoff in the fourth quarter to help Seattle lock in a 21-13 win.",
-      "categories": [
-        "category/News:",
-        "News: National Feature",
-        "Seattle Seahawks at Las Vegas Raiders (2026-REG-10)",
-        "Homepage Hero",
-        "Homepage Top Headlines",
-        "Tory Horton"
-      ],
-      "published_at": "2026-11-16T03:05:12+00:00",
-      "players": [
-        {
-          "id": "00-0040648",
-          "name": "Tory Horton",
-          "team": "SEA",
-          "position": "WR"
         }
       ]
     }
