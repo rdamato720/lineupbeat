@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-19T03:00:58.315186+00:00",
+  "updated_at": "2026-11-19T05:00:55.748594+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-18T23:59:43+00:00",
+      "latest_entry_at": "2026-11-19T04:19:57+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-19T02:41:02+00:00",
+      "latest_entry_at": "2026-11-19T04:59:18+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-19T01:12:51+00:00",
+      "latest_entry_at": "2026-11-19T03:42:29+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-19T00:24:48+00:00",
+      "latest_entry_at": "2026-11-19T03:58:19+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-19T02:41:02+00:00",
+      "latest_entry_at": "2026-11-19T04:59:18+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-19T01:12:51+00:00",
+      "latest_entry_at": "2026-11-19T03:42:29+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-19T02:32:16+00:00",
+      "latest_entry_at": "2026-11-18T23:44:57+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-18T23:30:00+00:00",
+      "latest_entry_at": "2026-11-18T21:55:28+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-19T00:53:37+00:00",
+      "latest_entry_at": "2026-11-18T21:44:00+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-19T00:18:34+00:00",
+      "latest_entry_at": "2026-11-18T12:00:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,35 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-18T23:58:27+00:00",
+      "latest_entry_at": "2026-11-18T18:29:05+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "b5e526482a12103dd48d",
+      "headline": "Vikings Injury Report: Minnesota gets healthier, while San Francisco has a pressing concern",
+      "url": "https://atozsports.com/nfl/minnesota-vikings-news/vikings-49ers-injury-report-mike-evans-tj-hockenson-jordan-addison-jauan-jennings/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "Each team has different issues on the injury report, as the Minnesota Vikings are slowly getting healthier.",
+      "categories": [
+        "Minnesota Vikings News",
+        "NFL",
+        "Jauan Jennings",
+        "Jordan Addison",
+        "Mike evans",
+        "Minnesota Vikings",
+        "San Francisco 49ers",
+        "T.J. Hockenson",
+        "Vikings Injury Report"
+      ],
+      "published_at": "2026-11-19T03:42:29+00:00",
+      "players": []
+    },
     {
       "id": "97b285094fa47f1e464f",
       "headline": "Jordan Addison to Avoid IR; Vikings Make Several Other Moves",
@@ -597,6 +621,29 @@
           "name": "Tony Pollard",
           "team": "TEN",
           "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "3c1551a874860ce94dfd",
+      "headline": "Newly extended Elijah Higgins is \u2018made of the right stuff\u2019",
+      "url": "https://arizonasports.com/nfl/arizona-cardinals/newly-extended-elijah-higgins-is-made-of-the-right-stuff",
+      "source_id": "arizona_sports_tyler_drake",
+      "source": "Arizona Sports",
+      "teams": [
+        "ARI"
+      ],
+      "feed_description": "Arizona Cardinals tight end Elijah Higgins' path to a three-year contract extension and carved out role in the offense was not like the rest.",
+      "categories": [
+        "Arizona Cardinals"
+      ],
+      "published_at": "2026-11-19T01:24:42+00:00",
+      "players": [
+        {
+          "id": "00-0039041",
+          "name": "Elijah Higgins",
+          "team": "ARI",
+          "position": "TE"
         }
       ]
     },
@@ -4025,58 +4072,6 @@
           "id": "00-0026498",
           "name": "Matthew Stafford",
           "team": "LAR",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "719d9524928fc3f605a3",
-      "headline": "Seahawks 'Not Sure' About Injury Severity to Abe Lucas, George Holani",
-      "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-not-sure-about-injury-abe-lucas-george-holani",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "The Seahawks lost two more key players in their Week 10 win over the Las Vegas Raiders.",
-      "categories": [],
-      "published_at": "2026-11-16T01:00:58+00:00",
-      "players": [
-        {
-          "id": "00-0039299",
-          "name": "George Holani",
-          "team": "SEA",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "43a3f2f0db4accd9c29b",
-      "headline": "9 winners and 2 losers from Seattle Seahawks\u2019 win over Raiders as Drew Lock makes undeniable case to remain starting quarterback",
-      "url": "https://atozsports.com/nfl/seattle-seahawks-news/winners-and-losers-from-seattle-seahawks-win-over-raiders-drew-lock-makes-undeniable-case-to-remain-starting-quarterback/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Seattle secured its second consecutive victory behind another impressive quarterback performance, but the biggest takeaway could complicate an important decision moving forward.",
-      "categories": [
-        "Seattle Seahawks News",
-        "American Football",
-        "drew lock",
-        "Jaxon Smith-Njigba",
-        "Mike Macdonald",
-        "Seahawks News",
-        "Seattle Seahawks",
-        "Wildcat",
-        "Zach Charbonnet"
-      ],
-      "published_at": "2026-11-16T00:35:18+00:00",
-      "players": [
-        {
-          "id": "00-0035704",
-          "name": "Drew Lock",
-          "team": "SEA",
           "position": "QB"
         }
       ]
