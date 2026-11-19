@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T01:00:45.862131+00:00",
+  "updated_at": "2026-11-19T03:00:58.315186+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-19T00:54:02+00:00",
+      "latest_entry_at": "2026-11-19T02:41:02+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-19T00:51:58+00:00",
+      "latest_entry_at": "2026-11-19T01:12:51+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-19T00:25:21+00:00",
+      "latest_entry_at": "2026-11-19T01:34:09+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-19T00:54:02+00:00",
+      "latest_entry_at": "2026-11-19T02:41:02+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-19T00:51:58+00:00",
+      "latest_entry_at": "2026-11-19T01:12:51+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-18T15:53:33+00:00",
+      "latest_entry_at": "2026-11-19T01:00:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-18T23:44:57+00:00",
+      "latest_entry_at": "2026-11-19T02:32:16+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-18T22:36:33+00:00",
+      "latest_entry_at": "2026-11-18T23:31:34+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-18T23:23:52+00:00",
+      "latest_entry_at": "2026-11-19T00:55:27+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-18T21:44:00+00:00",
+      "latest_entry_at": "2026-11-19T00:53:37+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-18T16:57:38+00:00",
+      "latest_entry_at": "2026-11-19T02:50:41+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-18T22:44:39+00:00",
+      "latest_entry_at": "2026-11-19T01:34:17+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-19T00:00:00+00:00",
+      "latest_entry_at": "2026-11-19T02:39:56+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,75 @@
     }
   ],
   "items": [
+    {
+      "id": "97b285094fa47f1e464f",
+      "headline": "Jordan Addison to Avoid IR; Vikings Make Several Other Moves",
+      "url": "https://www.dailynorseman.com/minnesota-vikings-roster/101817/jordan-addison-to-avoid-ir-minnesota-vikings-roster-moves",
+      "source_id": "news_sbn_min",
+      "source": "Daily Norseman (SB Nation)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "The Minnesota Vikings made a handful of roster moves on Wednesday, and also got some very positive news about one of their best wide receivers. Jordan Addison had surgery to correct the thumb injury we mentioned on Monday, and it turns out that he will not be going on short-term injured reserve after all. That [\u2026]",
+      "categories": [
+        "Minnesota Vikings News",
+        "Minnesota Vikings Roster"
+      ],
+      "published_at": "2026-11-19T02:39:56+00:00",
+      "players": [
+        {
+          "id": "00-0038994",
+          "name": "Jordan Addison",
+          "team": "MIN",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "080dd0c13f36d72ff53e",
+      "headline": "Why All Signs Point to Tony Pollard\u2019s Revenge Game vs. Cowboys Leading to a Titans Win",
+      "url": "https://www.si.com/nfl/titans/onsi/why-all-signs-point-to-tony-pollard-s-revenge-game-vs-cowboys-leading-to-a-titans-win-01m7qw4zej1p",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "Why All Signs Point to Tony Pollard\u2019s Revenge Game vs. Cowboys Leading to a Titans Win",
+      "categories": [],
+      "published_at": "2026-11-19T02:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0035261",
+          "name": "Tony Pollard",
+          "team": "TEN",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "ae5c51717afe5883018f",
+      "headline": "Chargers-Jets Injury Report: Ladd McConkey returns to practice",
+      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/67196/chargers-jets-injury-report-ladd-mcconkey-charlie-kolar",
+      "source_id": "news_sbn_lac",
+      "source": "Bolts From The Blue (SB Nation)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "After backs spasms kept sidelined for the past two games, wide receiver Ladd McConkey returned to practice on Wednesday but participated in a limited fashion. He was one of five players who logged limited practices, joining cornerback Donte Jackson (groin), defensive lineman Justin Eboigbe (ankle), offensive lineman Trey Pipkins (knee), and safety Kendall Williamson (calf). [\u2026]",
+      "categories": [
+        "Chargers Injury Reports",
+        "Los Angeles Chargers Injuries"
+      ],
+      "published_at": "2026-11-19T00:55:27+00:00",
+      "players": [
+        {
+          "id": "00-0039915",
+          "name": "Ladd McConkey",
+          "team": "LAC",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "1381c4d87a667e2224a5",
       "headline": "Broncos' Injury Report Delivers Triple Dose of Good News",
@@ -4008,80 +4077,6 @@
           "id": "00-0035704",
           "name": "Drew Lock",
           "team": "SEA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "ece9bca64a790e955575",
-      "headline": "Emmett Johnson proves a lot to Chiefs in 100-rushing yard game",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-news/216557/emmett-johnson-proves-a-lot-chiefs-100-rushing-yard-game",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "When news broke on Friday that the Kansas City Chiefs\u2019 starting running back Kenneth Walker (groin) would be questionable for Sunday, there was some concern about the sudden injury and its affect on this game, a potentially tricky road spot. However, many in Chiefs Kingdom \u2014 including a passionate faction in Lincoln, Nebraska \u2014 turned [\u2026]",
-      "categories": [
-        "Kansas City Chiefs News",
-        "Kansas City Chiefs Roster"
-      ],
-      "published_at": "2026-11-16T00:04:28+00:00",
-      "players": [
-        {
-          "id": "00-0041013",
-          "name": "Emmett Johnson",
-          "team": "KC",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "bca349b595ac9cc4849a",
-      "headline": "Bengals-Steelers Inactives: Four Cincinnati Players Out for Week 10 Against Steelers",
-      "url": "https://www.bengals.com/news/bengals-steelers-inactives-week-10-2026-sunday-night-football",
-      "source_id": "news_official_cin",
-      "source": "Cincinnati Bengals (official)",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "The Bengals announced four inactive players for their Week 10 game against the Falcons. See Cincinnati and Pittsburgh's full inactive list.",
-      "categories": [
-        "latest news",
-        "centerpiece",
-        "Injury Report",
-        "Pittsburgh Steelers at Cincinnati Bengals (2026-REG-10)"
-      ],
-      "published_at": "2026-11-16T00:00:32+00:00",
-      "players": []
-    },
-    {
-      "id": "89fc164b5a53f1733509",
-      "headline": "Jets-Bills Game Recap | Green & White Suffer 31-12 Defeat to Buffalo Bills",
-      "url": "https://www.newyorkjets.com/news/jets-bills-game-recap-11-15-2026",
-      "source_id": "news_official_nyj",
-      "source": "New York Jets (official)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Rookie QB Cade Klubnik Makes Professional Debut in Second Half, Relieving Injured Geno Smith",
-      "categories": [
-        "Game Recap",
-        "Latest Headlines",
-        "News"
-      ],
-      "published_at": "2026-11-16T00:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0030565",
-          "name": "Geno Smith",
-          "team": "NYJ",
-          "position": "QB"
-        },
-        {
-          "id": "00-0041056",
-          "name": "Cade Klubnik",
-          "team": "NYJ",
           "position": "QB"
         }
       ]
