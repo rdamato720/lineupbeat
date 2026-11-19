@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-19T05:00:55.748594+00:00",
+  "updated_at": "2026-11-19T07:57:19.155536+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-19T04:19:57+00:00",
+      "latest_entry_at": "2026-11-19T05:37:57+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-19T04:59:18+00:00",
+      "latest_entry_at": "2026-11-19T07:23:26+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-18T21:00:20+00:00",
+      "latest_entry_at": "2026-11-19T13:00:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-19T04:59:18+00:00",
+      "latest_entry_at": "2026-11-19T07:23:26+00:00",
       "stale": false
     },
     {
@@ -334,7 +334,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-18T14:00:00+00:00",
+      "latest_entry_at": "2026-11-19T04:00:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-18T23:44:57+00:00",
+      "latest_entry_at": "2026-11-19T02:32:16+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-19T00:55:27+00:00",
+      "latest_entry_at": "2026-11-18T23:23:52+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-18T21:55:28+00:00",
+      "latest_entry_at": "2026-11-18T23:30:00+00:00",
       "stale": false
     },
     {
@@ -438,15 +438,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-18T21:44:00+00:00",
+      "latest_entry_at": "2026-11-19T00:53:37+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-19T02:50:41+00:00",
+      "latest_entry_at": "2026-11-19T04:06:58+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-19T01:34:17+00:00",
+      "latest_entry_at": "2026-11-18T22:44:39+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-18T12:00:00+00:00",
+      "latest_entry_at": "2026-11-19T00:18:34+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,40 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-18T18:29:05+00:00",
+      "latest_entry_at": "2026-11-18T23:58:27+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "74e6832d3b1287fb9068",
+      "headline": "Eagles Injury Report: DeVonta Smith and Dontayvion Wicks return to practice",
+      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/190653/eagles-injury-report-devonta-smith-and-dontayvion-wicks-return-to-practice",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Philadelphia Eagles issued their first official injury report of the week on Wednesday in advance of their Week 11 game against the Pittsburgh Steelers. The Eagles listed one player under DID NOT PARTICIPATE: Zack Baun. Baun is dealing with a back injury. Not a good development for the Eagles\u2019 defense if he can\u2019t suit [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries"
+      ],
+      "published_at": "2026-11-19T04:06:58+00:00",
+      "players": [
+        {
+          "id": "00-0036912",
+          "name": "DeVonta Smith",
+          "team": "PHI",
+          "position": "WR"
+        },
+        {
+          "id": "00-0038393",
+          "name": "Dontayvion Wicks",
+          "team": "PHI",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "b5e526482a12103dd48d",
       "headline": "Vikings Injury Report: Minnesota gets healthier, while San Francisco has a pressing concern",
@@ -4047,32 +4076,6 @@
           "name": "Tory Horton",
           "team": "SEA",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "1f75a513d46e6a77b512",
-      "headline": "Matthew Stafford, Rams offense spread the wealth in win over Cardinals",
-      "url": "https://www.therams.com/news/matthew-stafford-rams-offense-spreads-the-wealth-in-win-over-cardinals",
-      "source_id": "news_official_lar",
-      "source": "Los Angeles Rams (official)",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "With multiple injuries to top targets in the passing game, quarterback Matthew Stafford connected with nine pass catchers to record 249 yards and three touchdowns in the Rams' win over the Cardinals.",
-      "categories": [
-        "Football",
-        "Player Features",
-        "Los Angeles Rams at Arizona Cardinals (2026-REG-10)",
-        "Matthew Stafford"
-      ],
-      "published_at": "2026-11-16T02:20:00+00:00",
-      "players": [
-        {
-          "id": "00-0026498",
-          "name": "Matthew Stafford",
-          "team": "LAR",
-          "position": "QB"
         }
       ]
     }
