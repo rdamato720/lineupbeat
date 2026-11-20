@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-20T03:00:44.409605+00:00",
+  "updated_at": "2026-11-20T05:00:55.716058+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-19T23:59:08+00:00",
+      "latest_entry_at": "2026-11-20T03:14:08+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-20T02:52:50+00:00",
+      "latest_entry_at": "2026-11-20T05:00:10+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-20T02:01:24+00:00",
+      "latest_entry_at": "2026-11-20T03:01:08+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-19T23:45:44+00:00",
+      "latest_entry_at": "2026-11-20T04:06:10+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-20T02:52:50+00:00",
+      "latest_entry_at": "2026-11-20T05:00:10+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T02:01:24+00:00",
+      "latest_entry_at": "2026-11-20T03:01:08+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-20T00:00:00+00:00",
+      "latest_entry_at": "2026-11-20T04:10:47+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T01:10:00+00:00",
+      "latest_entry_at": "2026-11-20T04:30:22+00:00",
       "stale": false
     },
     {
@@ -516,9 +516,9 @@
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-19T21:18:00+00:00",
+      "latest_entry_at": "2026-11-20T03:20:01+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T02:00:00+00:00",
+      "latest_entry_at": "2026-11-20T03:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,50 @@
     }
   ],
   "items": [
+    {
+      "id": "9b0dff1f215d2b03605c",
+      "headline": "Buccaneers at Lions: Thursday injury report for Week 11",
+      "url": "https://www.bucsnation.com/tampa-bay-buccaneers-injuries/69872/buccaneers-lions-thursday-injury-report-nfl-week-11-baker-mayfield",
+      "source_id": "news_sbn_tb",
+      "source": "Bucs Nation (SB Nation)",
+      "teams": [
+        "TB"
+      ],
+      "feed_description": "The Tampa Bay Buccaneers received some encouraging news Thursday as they continued preparations for their Week 11 matchup against the Detroit Lions. After missing Wednesday\u2019s practice, quarterback Baker Mayfield (foot/right thumb) returned to the practice field Thursday as a limited participant. It\u2019s a positive development for the veteran quarterback, whose availability for Sunday has been [\u2026]",
+      "categories": [
+        "Tampa Bay Buccaneers Injuries"
+      ],
+      "published_at": "2026-11-20T03:20:01+00:00",
+      "players": [
+        {
+          "id": "00-0034855",
+          "name": "Baker Mayfield",
+          "team": "TB",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "f7f4074c255f76281b9a",
+      "headline": "Rams Midweek Report: Injured Reserve Decisions, NFL's Strong Message to Puka Nacua, and More",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-midweek-report-injured-reserve-decisions-puka-nacua-nfl-suspension",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Rams face critical injured reserve decisions as the NFL sends a strong warning to Puka Nacua. Plus, roster concerns and playoff predictions.",
+      "categories": [],
+      "published_at": "2026-11-20T02:57:28+00:00",
+      "players": [
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "26b6a6ec5c969136bf56",
       "headline": "Eagles Injury Report: DeVonta Smith on track to play against Steelers",
@@ -3864,41 +3908,6 @@
           "position": "WR"
         }
       ]
-    },
-    {
-      "id": "c258dc577facf0e251a4",
-      "headline": "Commanders Open Door for Jacory Croskey-Merritt to Play Against Bengals",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-bill-croskey-merritt-practice-window",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Commanders opened Jacory Croskey-Merritt\u2019s 21-day practice window. He needs to be activated from injured reserve to face the Bengals Monday night.",
-      "categories": [],
-      "published_at": "2026-11-17T23:20:01+00:00",
-      "players": [
-        {
-          "id": "00-0040242",
-          "name": "Jacory Croskey-Merritt",
-          "team": "WAS",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "ae9868f43760d1dd7b44",
-      "headline": "Texans vs. Colts Injury Report: Latest on Danielle Hunter, Marvin Harrison Jr.",
-      "url": "https://www.si.com/nfl/texans/onsi/texans-vs-colts-injury-report-latest-on-danielle-hunter-marvin-harrison-jr",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "HOU"
-      ],
-      "feed_description": "The Houston Texans and Indianapolis Colts dropped their second injury reports on a short week.",
-      "categories": [],
-      "published_at": "2026-11-17T22:58:27+00:00",
-      "players": []
     }
   ]
 }
