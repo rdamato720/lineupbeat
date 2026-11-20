@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T07:14:20.305562+00:00",
+  "updated_at": "2026-11-20T11:01:08.793937+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-20T06:53:17+00:00",
+      "latest_entry_at": "2026-11-20T11:00:04+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-20T03:01:08+00:00",
+      "latest_entry_at": "2026-11-20T11:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-19T23:22:47+00:00",
+      "latest_entry_at": "2026-11-20T10:00:00+00:00",
       "stale": false
     },
     {
@@ -142,7 +142,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-20T05:25:03+00:00",
+      "latest_entry_at": "2026-11-20T10:00:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-20T06:53:17+00:00",
+      "latest_entry_at": "2026-11-20T11:00:04+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T03:01:08+00:00",
+      "latest_entry_at": "2026-11-20T11:00:00+00:00",
       "stale": false
     },
     {
@@ -452,9 +452,9 @@
     {
       "source_id": "news_sbn_was",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-19T21:16:03+00:00",
+      "latest_entry_at": "2026-11-20T10:00:00+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-19T23:29:28+00:00",
+      "latest_entry_at": "2026-11-20T07:29:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-19T23:37:02+00:00",
+      "latest_entry_at": "2026-11-20T10:04:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,33 @@
     }
   ],
   "items": [
+    {
+      "id": "29801cefe1f4f6408b66",
+      "headline": "Jacksonville Jaguars just got some terrible news days before their Week 11 game, while the New York Giants gained an advantage",
+      "url": "https://atozsports.com/nfl/jacksonville-jaguars-news/terrible-news-new-york-giants-injury-report-bhayshul-tuten-downgraded-did-not-participate-practice/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "JAX"
+      ],
+      "feed_description": "The Jacksonville Jaguars are in a tough spot after running back Bhayshul Tuten was downgraded on Thursday on the injury report.",
+      "categories": [
+        "Jacksonville Jaguars News",
+        "NFL",
+        "Bhayshul Tuten",
+        "injury report",
+        "Liam Coen"
+      ],
+      "published_at": "2026-11-20T11:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040719",
+          "name": "Bhayshul Tuten",
+          "team": "JAX",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "9b0dff1f215d2b03605c",
       "headline": "Buccaneers at Lions: Thursday injury report for Week 11",
@@ -3881,33 +3908,6 @@
       ],
       "published_at": "2026-11-18T08:24:18+00:00",
       "players": []
-    },
-    {
-      "id": "c264c9cdd4231ea8a8c4",
-      "headline": "Breaking Down Titans\u2019 Injuries in Week 11: Xavier Restrepo In, Wan\u2019Dale Robinson Out vs. Cowboys",
-      "url": "https://www.si.com/nfl/titans/onsi/breaking-down-titans-injuries-in-week-11-xavier-restrepo-in-wan-dale-robinson-out-vs-cowboys",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "Breaking down the Titans' injuries heading into Week 11 as one fan-favorite WR makes another appearance, marking the potential beginning of a trend.",
-      "categories": [],
-      "published_at": "2026-11-18T03:53:54+00:00",
-      "players": [
-        {
-          "id": "00-0038117",
-          "name": "Wan'Dale Robinson",
-          "team": "TEN",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040522",
-          "name": "Xavier Restrepo",
-          "team": "TEN",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
