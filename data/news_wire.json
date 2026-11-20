@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T01:00:51.873015+00:00",
+  "updated_at": "2026-11-20T03:00:44.409605+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-20T00:46:47+00:00",
+      "latest_entry_at": "2026-11-20T02:52:50+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-20T00:42:26+00:00",
+      "latest_entry_at": "2026-11-20T02:01:24+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-19T23:16:00+00:00",
+      "latest_entry_at": "2026-11-20T00:30:00+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-19T23:03:00+00:00",
+      "latest_entry_at": "2026-11-20T02:30:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-20T00:46:47+00:00",
+      "latest_entry_at": "2026-11-20T02:52:50+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-20T00:42:26+00:00",
+      "latest_entry_at": "2026-11-20T02:01:24+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-19T17:49:44+00:00",
+      "latest_entry_at": "2026-11-20T01:10:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T00:45:00+00:00",
+      "latest_entry_at": "2026-11-20T02:51:45+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-19T21:15:00+00:00",
+      "latest_entry_at": "2026-11-20T01:11:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-19T23:00:00+00:00",
+      "latest_entry_at": "2026-11-19T23:52:07+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 0,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-19T18:30:00+00:00",
+      "latest_entry_at": "2026-11-20T02:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,52 @@
     }
   ],
   "items": [
+    {
+      "id": "26b6a6ec5c969136bf56",
+      "headline": "Eagles Injury Report: DeVonta Smith on track to play against Steelers",
+      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/190736/eagles-injury-report-devonta-smith-on-track-to-play-against-steelers",
+      "source_id": "news_sbn_phi",
+      "source": "Bleeding Green Nation (SB Nation)",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "The Philadelphia Eagles issued their second official injury report of the week on Thursday in advance of their Week 11 game against the Pittsburgh Steelers. The Eagles listed one player under DID NOT PARTICIPATE: Zack Baun and Smael Mondon. Baun missed practice for the second day in a row. He\u2019s tracking to miss Sunday\u2019s game. [\u2026]",
+      "categories": [
+        "Philadelphia Eagles injuries"
+      ],
+      "published_at": "2026-11-20T02:51:45+00:00",
+      "players": [
+        {
+          "id": "00-0036912",
+          "name": "DeVonta Smith",
+          "team": "PHI",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "627b5ae060c57047e988",
+      "headline": "Kyren Williams has message for Rams and other teams about GTA VI",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-news/155416/rams-kyren-williams-gta-vi-espn",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Kyren Williams made it clear that he does not want the massive release of Grand Theft Auto VI to be a distraction to the Los Angeles Rams as they prepare for perhaps their biggest game of the year against the Green Bay Packers in Week 12, and go from there. Williams was asked on ESPN [\u2026]",
+      "categories": [
+        "Los Angeles Rams News"
+      ],
+      "published_at": "2026-11-20T00:59:00+00:00",
+      "players": [
+        {
+          "id": "00-0037840",
+          "name": "Kyren Williams",
+          "team": "LAR",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "deff0f085163ba47ae13",
       "headline": "Quick Hits | Jonathan Allen Returns With An Old Move And A New Team That Could Be His Best Yet; Ja'Marr Chase Stacks Another New Number: Nine",
@@ -3853,64 +3899,6 @@
       "categories": [],
       "published_at": "2026-11-17T22:58:27+00:00",
       "players": []
-    },
-    {
-      "id": "be1afbc6fecf37f2636e",
-      "headline": "Bears receiver Luther Burden III clears concussion protocol",
-      "url": "https://www.chicagobears.com/news/bears-receiver-luther-burden-iii-clears-concussion-protocol",
-      "source_id": "news_official_chi",
-      "source": "Chicago Bears (official)",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "Coach Ben Johnson revealed before practice Tuesday that receiver Luther Burden III has cleared concussion protocol. The second-year pro sustained a concussion on a helmet-to-helmet hit late in the Bears\u2019 27-24 win over the Buccaneers Nov. 8 at Soldier Field.",
-      "categories": [
-        "Luther Burden III"
-      ],
-      "published_at": "2026-11-17T22:22:23+00:00",
-      "players": [
-        {
-          "id": "00-0040735",
-          "name": "Luther Burden III",
-          "team": "CHI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "ce1b0f396c7a9a9e15ef",
-      "headline": "Wan\u2019Dale Robinson injury sends Titans WR room into full youth movement, and Xavier Restrepo\u2019s promotion sets up an uncomfortable storyline",
-      "url": "https://atozsports.com/nfl/tennessee-titans-news/wandale-robinson-injury-titans-wr-room-youth-movement-xavier-restrepo-promotion-uncomfortable-storyline/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "Xavier Restrepo is back on the Titans' active roster with Wan'Dale Robinson sidelined. The timing could make the next month a lot more awkward for Tennessee than fans realize.",
-      "categories": [
-        "NFL",
-        "Tennessee Titans News",
-        "American Football",
-        "Injured Reserve",
-        "Signed",
-        "Wan'Dale Robinson",
-        "Xavier Restrepo"
-      ],
-      "published_at": "2026-11-17T21:42:08+00:00",
-      "players": [
-        {
-          "id": "00-0038117",
-          "name": "Wan'Dale Robinson",
-          "team": "TEN",
-          "position": "WR"
-        },
-        {
-          "id": "00-0040522",
-          "name": "Xavier Restrepo",
-          "team": "TEN",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
