@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T22:40:16.015808+00:00",
+  "updated_at": "2026-11-20T23:01:00.155982+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-20T22:35:32+00:00",
+      "latest_entry_at": "2026-11-20T22:49:23+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-20T21:41:56+00:00",
+      "latest_entry_at": "2026-11-20T22:27:21+00:00",
       "stale": false
     },
     {
@@ -252,7 +252,7 @@
     {
       "source_id": "news_official_sea",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
       "latest_entry_at": "2026-11-18T20:35:43+00:00",
       "stale": false
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 8,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-20T22:35:32+00:00",
+      "latest_entry_at": "2026-11-20T22:49:23+00:00",
       "stale": false
     },
     {
@@ -316,17 +316,17 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-20T12:00:00+00:00",
+      "latest_entry_at": "2026-11-20T19:29:50+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-20T13:00:00+00:00",
+      "latest_entry_at": "2026-11-20T21:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-20T14:45:00+00:00",
+      "latest_entry_at": "2026-11-20T12:15:00+00:00",
       "stale": false
     },
     {
@@ -356,9 +356,9 @@
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 4,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-20T22:32:08+00:00",
+      "latest_entry_at": "2026-11-20T22:30:00+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T17:36:45+00:00",
+      "latest_entry_at": "2026-11-20T14:30:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T21:13:22+00:00",
+      "latest_entry_at": "2026-11-20T23:00:00+00:00",
       "stale": false
     },
     {
@@ -502,31 +502,31 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-20T15:00:00+00:00",
+      "latest_entry_at": "2026-11-20T23:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T17:00:00+00:00",
+      "latest_entry_at": "2026-11-20T22:43:39+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_tb",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-20T03:20:01+00:00",
+      "latest_entry_at": "2026-11-20T12:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ari",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-20T16:47:15+00:00",
+      "latest_entry_at": "2026-11-19T23:00:20+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T17:30:00+00:00",
+      "latest_entry_at": "2026-11-20T22:18:37+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,23 @@
     }
   ],
   "items": [
+    {
+      "id": "7320d14cc82012f40642",
+      "headline": "Final Saints vs. Bears Injury Report: 4 players ruled out",
+      "url": "https://www.canalstreetchronicles.com/new-orleans-saints-injuries/118079/final-saints-vs-bears-injury-report-players-ruled-out-nfl-week-11",
+      "source_id": "news_sbn_no",
+      "source": "Canal Street Chronicles (SB Nation)",
+      "teams": [
+        "NO"
+      ],
+      "feed_description": "The New Orleans Saints have wrapped up their 3rd and final practice ahead of their Week 11 matchup at the Chicago Bears at Soldier Field. So, where do things stand following today\u2019s workout? Let\u2019s take a look at who is listed as questionable and who was ruled out for Sunday\u2019s game. New Orleans Saints: Questionable: [\u2026]",
+      "categories": [
+        "New Orleans Saints Injuries",
+        "New Orleans Saints News"
+      ],
+      "published_at": "2026-11-20T22:43:39+00:00",
+      "players": []
+    },
     {
       "id": "53c2b2bca130fe77931b",
       "headline": "Latest Raiders Injury Report Holds Both Good and Bad News",
@@ -927,7 +944,7 @@
     },
     {
       "id": "94c603bdc96766c591ab",
-      "headline": "Commanders vs. Bengals Friday injury report: Treylon Burks didn\u2019t work",
+      "headline": "Commanders vs. Bengals Friday injury report: Treylon Burks held out of practice",
       "url": "https://www.hogshaven.com/washington-commanders-injuries/456350/commanders-bengals-injury-report-treylon-burks-rachaad-white-bill-croskey-merritt",
       "source_id": "news_sbn_was",
       "source": "Hogs Haven (SB Nation)",
@@ -1431,6 +1448,29 @@
       ]
     },
     {
+      "id": "34dc24bf6c522ce0124c",
+      "headline": "Drake Maye injury: Everything we know about the Patriots QB\u2019s status",
+      "url": "https://www.patspulpit.com/new-england-patriots-injuries/144491/drake-maye-injury-update-patriots-vs-lions",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "Their Week 10 game against the Detroit Lions was the worst-case scenario for the New England Patriots. Not only were they blown out with a final score of 35-10 to drop to 5-5 on the season, they also lost their starting quarterback to an injury: Drake Maye exited the game in the first quarter due [\u2026]",
+      "categories": [
+        "New England Patriots Injuries"
+      ],
+      "published_at": "2026-11-20T19:29:50+00:00",
+      "players": [
+        {
+          "id": "00-0039851",
+          "name": "Drake Maye",
+          "team": "NE",
+          "position": "QB"
+        }
+      ]
+    },
+    {
       "id": "2c0b51e8a4d04a792c8e",
       "headline": "Drake Maye injury update: Patriots QB\u2019s diagnosis revealed",
       "url": "https://www.patspulpit.com/new-england-patriots-injuries/144869/drake-maye-injury-update-diagnosis-patriots-qb-fractured-fibula",
@@ -1929,29 +1969,6 @@
           "id": "00-0034855",
           "name": "Baker Mayfield",
           "team": "TB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "34dc24bf6c522ce0124c",
-      "headline": "Drake Maye injury: Everything we know about the Patriots QB\u2019s status",
-      "url": "https://www.patspulpit.com/new-england-patriots-injuries/144491/drake-maye-injury-update-patriots-vs-lions",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "Their Week 10 game against the Detroit Lions was the worst-case scenario for the New England Patriots. Not only were they blown out with a final score of 35-10 to drop to 5-5 on the season, they also lost their starting quarterback to an injury: Drake Maye exited the game in the first quarter due [\u2026]",
-      "categories": [
-        "New England Patriots Injuries"
-      ],
-      "published_at": "2026-11-20T11:10:01+00:00",
-      "players": [
-        {
-          "id": "00-0039851",
-          "name": "Drake Maye",
-          "team": "NE",
           "position": "QB"
         }
       ]
@@ -3894,22 +3911,6 @@
       "feed_description": "The Arizona Cardinals and Kansas City Chiefs revealed a loaded injury report.",
       "categories": [],
       "published_at": "2026-11-18T23:48:35+00:00",
-      "players": []
-    },
-    {
-      "id": "70c235f197d8b4170b50",
-      "headline": "Vikings-49ers First Injury Report",
-      "url": "https://www.dailynorseman.com/minnesota-vikings-injuries/101797/vikings-49ers-first-injury-report",
-      "source_id": "news_sbn_min",
-      "source": "Daily Norseman (SB Nation)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Minnesota Vikings and San Francisco 49ers released their first injury reports in advance of their matchup on Sunday night at the Azteca in Mexico City. The 49ers held a walk-through in their temporary location in Colorado, while the Vikings held a regular practice. Minnesota Vikings San Francisco 49ers Injury Report Terms and Glossary Injury [\u2026]",
-      "categories": [
-        "Minnesota Vikings Injuries"
-      ],
-      "published_at": "2026-11-18T23:45:53+00:00",
       "players": []
     }
   ]
