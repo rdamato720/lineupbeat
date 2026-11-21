@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T11:00:53.582223+00:00",
+  "updated_at": "2026-11-21T11:48:20.323759+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-21T11:00:04+00:00",
+      "latest_entry_at": "2026-11-21T11:26:42+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T11:00:04+00:00",
+      "latest_entry_at": "2026-11-21T11:26:42+00:00",
       "stale": false
     },
     {
@@ -436,9 +436,9 @@
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T21:19:04+00:00",
+      "latest_entry_at": "2026-11-21T11:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-20T15:30:00+00:00",
+      "latest_entry_at": "2026-11-20T20:33:12+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T21:39:19+00:00",
+      "latest_entry_at": "2026-11-20T23:23:34+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,27 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-20T20:35:54+00:00",
+      "latest_entry_at": "2026-11-20T17:25:40+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "4a100a5dbf8d39115173",
+      "headline": "NY Giants news: Clean injury report, \u2018baby DJ Reader,\u2019 more",
+      "url": "https://www.bigblueview.com/new-york-giants-news/180668/clean-injury-report-baby-dj-reader-more",
+      "source_id": "news_sbn_nyg",
+      "source": "Big Blue View (SB Nation)",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Good morning, New York Giants fans! Here are the stories you need to as the Giants look to bounce back as they host the Jacksonville Jaguars tomorrow. Giants\u2019 schedule ramps up in difficulty with Sunday\u2019s game against Jaguars | The Athletic The upcoming stretch of games will reveal whether the Giants are for real or [\u2026]",
+      "categories": [
+        "New York Giants News"
+      ],
+      "published_at": "2026-11-21T11:00:00+00:00",
+      "players": []
+    },
     {
       "id": "2f6ab58eddb8f7e44e09",
       "headline": "Marvin Mims Jr. Makes Revealing Admission About Broncos Extension Talks",
@@ -3909,27 +3925,6 @@
           "name": "Jordan Addison",
           "team": "MIN",
           "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "080dd0c13f36d72ff53e",
-      "headline": "Why All Signs Point to Tony Pollard\u2019s Revenge Game vs. Cowboys Leading to a Titans Win",
-      "url": "https://www.si.com/nfl/titans/onsi/why-all-signs-point-to-tony-pollard-s-revenge-game-vs-cowboys-leading-to-a-titans-win-01m7qw4zej1p",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "Why All Signs Point to Tony Pollard\u2019s Revenge Game vs. Cowboys Leading to a Titans Win",
-      "categories": [],
-      "published_at": "2026-11-19T02:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0035261",
-          "name": "Tony Pollard",
-          "team": "TEN",
-          "position": "RB"
         }
       ]
     }
