@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T11:48:20.323759+00:00",
+  "updated_at": "2026-11-21T13:00:53.995022+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-21T11:26:42+00:00",
+      "latest_entry_at": "2026-11-21T13:00:28+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-21T00:46:40+00:00",
+      "latest_entry_at": "2026-11-21T12:02:13+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-21T10:00:00+00:00",
+      "latest_entry_at": "2026-11-21T12:16:13+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-20T20:30:04+00:00",
+      "latest_entry_at": "2026-11-21T12:00:04+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-21T11:26:42+00:00",
+      "latest_entry_at": "2026-11-21T13:00:28+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-21T00:46:40+00:00",
+      "latest_entry_at": "2026-11-21T12:02:13+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-20T23:21:00+00:00",
+      "latest_entry_at": "2026-11-18T22:46:00+00:00",
       "stale": false
     },
     {
@@ -436,9 +436,9 @@
     {
       "source_id": "news_sbn_nyg",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T11:00:00+00:00",
+      "latest_entry_at": "2026-11-20T21:19:04+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T23:00:00+00:00",
+      "latest_entry_at": "2026-11-21T11:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T01:00:00+00:00",
+      "latest_entry_at": "2026-11-21T13:00:00+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-20T23:00:00+00:00",
+      "latest_entry_at": "2026-11-20T15:00:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T23:23:34+00:00",
+      "latest_entry_at": "2026-11-20T16:47:15+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,116 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-20T17:25:40+00:00",
+      "latest_entry_at": "2026-11-20T20:35:54+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "434a9c141dff3894f34f",
+      "headline": "Giants Mailbag: Possible Cap Casualties, Return-Man Worries and O-Line Questions",
+      "url": "https://www.si.com/nfl/giants/onsi/giants-mailbag-cap-casualties-gipson-offensive-line-01m7t3hhns5y",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "NYG"
+      ],
+      "feed_description": "Readers ask which contracts could go in the offseason, how much confidence to have in Xavier Gipson and why the offensive line has been less consistent.",
+      "categories": [],
+      "published_at": "2026-11-21T13:00:03+00:00",
+      "players": [
+        {
+          "id": "00-0038496",
+          "name": "Xavier Gipson",
+          "team": "NYG",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "43e0ef502d4d12434275",
+      "headline": "Commanders News: Jayden Daniels Could Lose Two More Weapons Before Bengals Game | Burgundy Roundup",
+      "url": "https://www.si.com/nfl/commanders/onsi/commanders-burks-white-bengals",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "WAS"
+      ],
+      "feed_description": "Commanders injury updates on Treylon Burks and Rachaad White, plus David Blough\u2019s run-game concerns and Daronte Jones\u2019 plan for Joe Burrow.",
+      "categories": [],
+      "published_at": "2026-11-21T12:52:58+00:00",
+      "players": [
+        {
+          "id": "00-0037256",
+          "name": "Rachaad White",
+          "team": "WAS",
+          "position": "RB"
+        },
+        {
+          "id": "00-0037742",
+          "name": "Treylon Burks",
+          "team": "WAS",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039910",
+          "name": "Jayden Daniels",
+          "team": "WAS",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "e6f42acd907b3559fb15",
+      "headline": "Chicago Bears and New Orleans Saints: Who Wins and Why for Week 11",
+      "url": "https://www.si.com/nfl/bears/onsi/chicago-bears-and-new-orleans-saints-who-wins-and-why-for-week-11",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "A comparison of the positional groups in Sunday's game between the Bears and Saints with a final prediction on the outcome as Kyle Monangai returns for Chicago.",
+      "categories": [],
+      "published_at": "2026-11-21T12:08:19+00:00",
+      "players": [
+        {
+          "id": "00-0040236",
+          "name": "Kyle Monangai",
+          "team": "CHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "63c87f9f02988c99ff63",
+      "headline": "Daniel Jones\u2019 Release Exposes the Colts\u2019 Dysfunction, and Indianapolis Has Much Bigger Problems to Solve",
+      "url": "https://atozsports.com/nfl/indianapolis-colts-news/indianapolis-colts-daniel-jones-release-exposes-dysfunction-bigger-problems-to-solve-shane-steichen/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Indianapolis Colts just moved on from Daniel Jones, but why now? There are a lot of unanswered questions to evaluate for this franchise.",
+      "categories": [
+        "Indianapolis Colts News",
+        "NFL",
+        "American Football",
+        "Anthony Richardson",
+        "chris ballard",
+        "Daniel Jones",
+        "Indianapolis Colts",
+        "Shane Steichen"
+      ],
+      "published_at": "2026-11-21T12:02:13+00:00",
+      "players": [
+        {
+          "id": "00-0035710",
+          "name": "Daniel Jones",
+          "team": "IND",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "4a100a5dbf8d39115173",
       "headline": "NY Giants news: Clean injury report, \u2018baby DJ Reader,\u2019 more",
@@ -3833,100 +3938,6 @@
       ],
       "published_at": "2026-11-19T11:00:00+00:00",
       "players": []
-    },
-    {
-      "id": "b15553dad2956e4edff0",
-      "headline": "Panthers injury report shows more help on the way for the defense",
-      "url": "https://www.catscratchreader.com/carolina-panthers-news/62422/panthers-injury-report-shows-more-help-on-the-way-for-the-defense",
-      "source_id": "news_sbn_car",
-      "source": "Cat Scratch Reader (SB Nation)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Carolina Panthers are coming off a key win over NFC South rival New Orleans Saints. That puts them in the drivers seat for the NFC South title, and they get a chance to add some cushion to that when they host the floundering Baltimore Ravens on Sunday. The defense looks like they\u2019ll be getting [\u2026]",
-      "categories": [
-        "Carolina Panthers Injuries",
-        "Carolina Panthers News"
-      ],
-      "published_at": "2026-11-19T04:30:00+00:00",
-      "players": []
-    },
-    {
-      "id": "74e6832d3b1287fb9068",
-      "headline": "Eagles Injury Report: DeVonta Smith and Dontayvion Wicks return to practice",
-      "url": "https://www.bleedinggreennation.com/philadelphia-eagles-injuries/190653/eagles-injury-report-devonta-smith-and-dontayvion-wicks-return-to-practice",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Philadelphia Eagles issued their first official injury report of the week on Wednesday in advance of their Week 11 game against the Pittsburgh Steelers. The Eagles listed one player under DID NOT PARTICIPATE: Zack Baun. Baun is dealing with a back injury. Not a good development for the Eagles\u2019 defense if he can\u2019t suit [\u2026]",
-      "categories": [
-        "Philadelphia Eagles injuries"
-      ],
-      "published_at": "2026-11-19T04:06:58+00:00",
-      "players": [
-        {
-          "id": "00-0036912",
-          "name": "DeVonta Smith",
-          "team": "PHI",
-          "position": "WR"
-        },
-        {
-          "id": "00-0038393",
-          "name": "Dontayvion Wicks",
-          "team": "PHI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "b5e526482a12103dd48d",
-      "headline": "Vikings Injury Report: Minnesota gets healthier, while San Francisco has a pressing concern",
-      "url": "https://atozsports.com/nfl/minnesota-vikings-news/vikings-49ers-injury-report-mike-evans-tj-hockenson-jordan-addison-jauan-jennings/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "Each team has different issues on the injury report, as the Minnesota Vikings are slowly getting healthier.",
-      "categories": [
-        "Minnesota Vikings News",
-        "NFL",
-        "Jauan Jennings",
-        "Jordan Addison",
-        "Mike evans",
-        "Minnesota Vikings",
-        "San Francisco 49ers",
-        "T.J. Hockenson",
-        "Vikings Injury Report"
-      ],
-      "published_at": "2026-11-19T03:42:29+00:00",
-      "players": []
-    },
-    {
-      "id": "97b285094fa47f1e464f",
-      "headline": "Jordan Addison to Avoid IR; Vikings Make Several Other Moves",
-      "url": "https://www.dailynorseman.com/minnesota-vikings-roster/101817/jordan-addison-to-avoid-ir-minnesota-vikings-roster-moves",
-      "source_id": "news_sbn_min",
-      "source": "Daily Norseman (SB Nation)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Minnesota Vikings made a handful of roster moves on Wednesday, and also got some very positive news about one of their best wide receivers. Jordan Addison had surgery to correct the thumb injury we mentioned on Monday, and it turns out that he will not be going on short-term injured reserve after all. That [\u2026]",
-      "categories": [
-        "Minnesota Vikings News",
-        "Minnesota Vikings Roster"
-      ],
-      "published_at": "2026-11-19T02:39:56+00:00",
-      "players": [
-        {
-          "id": "00-0038994",
-          "name": "Jordan Addison",
-          "team": "MIN",
-          "position": "WR"
-        }
-      ]
     }
   ]
 }
