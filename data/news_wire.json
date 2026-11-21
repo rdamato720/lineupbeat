@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T03:29:57.183172+00:00",
+  "updated_at": "2026-11-21T05:00:51.579739+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-21T03:22:15+00:00",
+      "latest_entry_at": "2026-11-21T04:44:12+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-21T01:37:25+00:00",
+      "latest_entry_at": "2026-11-21T03:40:06+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-20T22:15:00+00:00",
+      "latest_entry_at": "2026-11-21T03:43:37+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-21T03:22:15+00:00",
+      "latest_entry_at": "2026-11-21T04:44:12+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T01:00:00+00:00",
+      "latest_entry_at": "2026-11-20T23:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,27 @@
     }
   ],
   "items": [
+    {
+      "id": "2f6ab58eddb8f7e44e09",
+      "headline": "Marvin Mims Jr. Makes Revealing Admission About Broncos Extension Talks",
+      "url": "https://www.si.com/nfl/broncos/onsi/marvin-mims-jr-makes-revealing-admission-about-broncos-extension-talks",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "An update on where things currently stand between Marvin Mims Jr. and the Broncos on an extension.",
+      "categories": [],
+      "published_at": "2026-11-21T03:29:55+00:00",
+      "players": [
+        {
+          "id": "00-0038976",
+          "name": "Marvin Mims Jr.",
+          "team": "DEN",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "44bf2a46191a4163bf39",
       "headline": "Sean McVay has at least one positive injury update",
@@ -3909,30 +3930,6 @@
           "name": "Tony Pollard",
           "team": "TEN",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "3c1551a874860ce94dfd",
-      "headline": "Newly extended Elijah Higgins is \u2018made of the right stuff\u2019",
-      "url": "https://arizonasports.com/nfl/arizona-cardinals/newly-extended-elijah-higgins-is-made-of-the-right-stuff",
-      "source_id": "arizona_sports_tyler_drake",
-      "source": "Arizona Sports",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "Arizona Cardinals tight end Elijah Higgins' path to a three-year contract extension and carved out role in the offense was not like the rest.",
-      "categories": [
-        "Arizona Cardinals",
-        "Newsletters for RSS"
-      ],
-      "published_at": "2026-11-19T01:24:42+00:00",
-      "players": [
-        {
-          "id": "00-0039041",
-          "name": "Elijah Higgins",
-          "team": "ARI",
-          "position": "TE"
         }
       ]
     }
