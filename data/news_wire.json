@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T03:00:56.063451+00:00",
+  "updated_at": "2026-11-21T03:29:57.183172+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-21T02:36:32+00:00",
+      "latest_entry_at": "2026-11-21T03:22:15+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T02:36:32+00:00",
+      "latest_entry_at": "2026-11-21T03:22:15+00:00",
       "stale": false
     },
     {
@@ -484,9 +484,9 @@
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-20T23:44:51+00:00",
+      "latest_entry_at": "2026-11-21T02:50:19+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-21T02:08:57+00:00",
+      "latest_entry_at": "2026-11-21T03:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,29 @@
     }
   ],
   "items": [
+    {
+      "id": "44bf2a46191a4163bf39",
+      "headline": "Sean McVay has at least one positive injury update",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/155641/rams-injury-updates-mcvay-kobie-turner",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "While Puka Nacua\u2019s potentially season-ending surgery and possible ending of his tenure with the Los Angeles Rams has dominated the headlines, there is at least one silver lining from Sean McVay\u2019s injury updates this week. Defensive tackle Kobie Turner is likely set to return following the bye in an all-important NFC clash against the Green [\u2026]",
+      "categories": [
+        "Los Angeles Rams Injuries"
+      ],
+      "published_at": "2026-11-21T03:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "db9e468fcd2fe696fcd6",
       "headline": "Eagles-Steelers Final Injury Report: DeVonta Smith will play, Dontayvion Wicks OUT",
@@ -3910,30 +3933,6 @@
           "name": "Elijah Higgins",
           "team": "ARI",
           "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "ae5c51717afe5883018f",
-      "headline": "Chargers-Jets Injury Report: Ladd McConkey returns to practice",
-      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/67196/chargers-jets-injury-report-ladd-mcconkey-charlie-kolar",
-      "source_id": "news_sbn_lac",
-      "source": "Bolts From The Blue (SB Nation)",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "After backs spasms kept sidelined for the past two games, wide receiver Ladd McConkey returned to practice on Wednesday but participated in a limited fashion. He was one of five players who logged limited practices, joining cornerback Donte Jackson (groin), defensive lineman Justin Eboigbe (ankle), offensive lineman Trey Pipkins (knee), and safety Kendall Williamson (calf). [\u2026]",
-      "categories": [
-        "Chargers Injury Reports",
-        "Los Angeles Chargers Injuries"
-      ],
-      "published_at": "2026-11-19T00:55:27+00:00",
-      "players": [
-        {
-          "id": "00-0039915",
-          "name": "Ladd McConkey",
-          "team": "LAC",
-          "position": "WR"
         }
       ]
     }
