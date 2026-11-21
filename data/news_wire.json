@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T19:00:58.060991+00:00",
+  "updated_at": "2026-11-21T19:15:01.578386+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T19:00:37+00:00",
+      "latest_entry_at": "2026-11-21T19:10:32+00:00",
       "stale": false
     },
     {
@@ -148,9 +148,9 @@
     {
       "source_id": "news_official_jax",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T14:00:10+00:00",
+      "latest_entry_at": "2026-11-21T19:00:11+00:00",
       "stale": false
     },
     {
@@ -180,7 +180,7 @@
     {
       "source_id": "news_official_lv",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
       "latest_entry_at": "2026-11-21T18:00:08+00:00",
       "stale": false
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-21T19:00:37+00:00",
+      "latest_entry_at": "2026-11-21T19:10:32+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-21T16:30:00+00:00",
+      "latest_entry_at": "2026-11-21T18:29:09+00:00",
       "stale": false
     },
     {
@@ -356,9 +356,9 @@
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-21T15:30:00+00:00",
+      "latest_entry_at": "2026-11-21T18:44:43+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T13:00:00+00:00",
+      "latest_entry_at": "2026-11-20T16:10:23+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-20T19:40:16+00:00",
+      "latest_entry_at": "2026-11-21T17:35:00+00:00",
       "stale": false
     },
     {
@@ -404,9 +404,9 @@
     {
       "source_id": "news_sbn_kc",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-21T16:00:00+00:00",
+      "latest_entry_at": "2026-11-21T15:00:00+00:00",
       "stale": false
     },
     {
@@ -414,7 +414,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T15:06:00+00:00",
+      "latest_entry_at": "2026-11-21T17:06:00+00:00",
       "stale": false
     },
     {
@@ -422,7 +422,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T17:00:00+00:00",
+      "latest_entry_at": "2026-11-21T14:00:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-21T02:36:54+00:00",
+      "latest_entry_at": "2026-11-21T17:07:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-21T15:45:00+00:00",
+      "latest_entry_at": "2026-11-21T11:00:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T18:00:00+00:00",
+      "latest_entry_at": "2026-11-21T19:00:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,45 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-21T17:00:00+00:00",
+      "latest_entry_at": "2026-11-21T15:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "aec7bf517cc89699338c",
+      "headline": "Hugely Positive Packers Injury Report From First Practice of Rams Week",
+      "url": "https://www.si.com/nfl/packers/onsi/hugely-positive-packers-injury-report-from-first-practice-of-rams-week",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The Green Bay Packers returned to practice after their make-believe bye week on Saturday.",
+      "categories": [],
+      "published_at": "2026-11-21T19:05:17+00:00",
+      "players": []
+    },
+    {
+      "id": "aeb86d51623d62b108e7",
+      "headline": "Jaguars Injury Report Update: Striggow Out for Week 11 vs. Giants",
+      "url": "https://www.jaguars.com/news/jaguars-injury-report-update-striggow-out-for-week-11-vs-giants",
+      "source_id": "news_official_jax",
+      "source": "Jacksonville Jaguars (official)",
+      "teams": [
+        "JAX"
+      ],
+      "feed_description": "",
+      "categories": [
+        "News - Press Release",
+        "Front Page Headline",
+        "News - Jaguars News",
+        "Jacksonville Jaguars at New York Giants (2026-REG-11)",
+        "Danny Striggow"
+      ],
+      "published_at": "2026-11-21T19:00:11+00:00",
+      "players": []
+    },
     {
       "id": "aeb4408fb6a17b12add3",
       "headline": "One Elite Stat Could Answer the $50 Million Question Around Bryce Young",
@@ -3873,53 +3907,6 @@
           "name": "Kyle Monangai",
           "team": "CHI",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "af54001385067b45d588",
-      "headline": "49ers injury news: Christian Kirk underwent meniscus surgery",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-injuries/165974/49ers-injury-news-christian-kirk-underwent-meniscus-surgery",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "In a surprise to nobody, it\u2019s been a brutal year for the San Francisco 49ers on the injury front. They signed veteran wide receiver Christian Kirk this past offseason to add speed and stretch the field both vertically and horizontally. Kirk strained his calf during the first training camp practice. Kyle Shanahan confirmed Kirk suffered [\u2026]",
-      "categories": [
-        "San Francisco 49ers Injuries"
-      ],
-      "published_at": "2026-11-19T16:01:00+00:00",
-      "players": [
-        {
-          "id": "00-0034775",
-          "name": "Christian Kirk",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "daa392aa3a3bc0652886",
-      "headline": "Andy Reid defends Xavier Worthy\u2019s lack of production",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-news/216909/andy-reid-defends-xavier-worthys-lack-production",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "There was a lot to like about the Kansas City Chiefs\u2019 offense immediately after trading for wide receiver Josh Downs. The 35-13 beatdown against the Atlanta Falcons in Week 10 showcased Downs and other receivers stepping up. However, it was a quiet day for the receiver with the most snaps: Xavier Worthy. He recorded no [\u2026]",
-      "categories": [
-        "Kansas City Chiefs News",
-        "Kansas City Chiefs Roster"
-      ],
-      "published_at": "2026-11-19T16:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0039894",
-          "name": "Xavier Worthy",
-          "team": "KC",
-          "position": "WR"
         }
       ]
     }
