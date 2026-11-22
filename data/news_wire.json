@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-22T05:00:50.832323+00:00",
+  "updated_at": "2026-11-22T06:46:10.052643+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-22T03:34:26+00:00",
+      "latest_entry_at": "2026-11-22T05:29:27+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-22T04:56:16+00:00",
+      "latest_entry_at": "2026-11-22T06:32:14+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-22T04:56:16+00:00",
+      "latest_entry_at": "2026-11-22T06:32:14+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-20T20:23:04+00:00",
+      "latest_entry_at": "2026-11-21T21:53:10+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T15:00:00+00:00",
+      "latest_entry_at": "2026-11-22T01:00:00+00:00",
       "stale": false
     },
     {
@@ -324,9 +324,9 @@
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-20T12:00:00+00:00",
+      "latest_entry_at": "2026-11-21T18:00:00+00:00",
       "stale": false
     },
     {
@@ -350,15 +350,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-21T17:06:58+00:00",
+      "latest_entry_at": "2026-11-22T04:30:22+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T20:12:49+00:00",
+      "latest_entry_at": "2026-11-21T22:30:00+00:00",
       "stale": false
     },
     {
@@ -388,9 +388,9 @@
     {
       "source_id": "news_sbn_ten",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-22T02:27:00+00:00",
+      "latest_entry_at": "2026-11-22T04:17:18+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-21T12:00:00+00:00",
+      "latest_entry_at": "2026-11-22T00:00:00+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-21T21:19:57+00:00",
+      "latest_entry_at": "2026-11-22T06:23:00+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-21T20:30:00+00:00",
+      "latest_entry_at": "2026-11-22T06:33:12+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-21T14:00:00+00:00",
+      "latest_entry_at": "2026-11-21T21:34:16+00:00",
       "stale": false
     },
     {
@@ -502,15 +502,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T11:45:14+00:00",
+      "latest_entry_at": "2026-11-21T15:04:40+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-21T13:00:00+00:00",
+      "latest_entry_at": "2026-11-21T21:50:45+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,36 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-20T20:35:54+00:00",
+      "latest_entry_at": "2026-11-21T19:46:17+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "5069a55b0c3d3d5ffca3",
+      "headline": "Titans place Tyjae Spears on injured reserve",
+      "url": "https://www.musiccitymiracles.com/tennessee-titans-injuries/68004/titans-place-tyjae-spears-on-injured-reserve",
+      "source_id": "news_sbn_ten",
+      "source": "Music City Miracles (SB Nation)",
+      "teams": [
+        "TEN"
+      ],
+      "feed_description": "The Tennessee Titans placed running back Tyjae Spears on injured reserve with a knee injury on Saturday. We might have seen the last of Spears in a Titans uniform. There were high hopes for what Spears could bring to the offense when he was selected as a third-round pick in the 2023 NFL Draft. Unfortunately, [\u2026]",
+      "categories": [
+        "Tennessee Titans Injuries",
+        "Tennessee Titans News",
+        "Tennessee Titans Roster"
+      ],
+      "published_at": "2026-11-22T04:17:18+00:00",
+      "players": [
+        {
+          "id": "00-0039032",
+          "name": "Tyjae Spears",
+          "team": "TEN",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "137fa6d3bc7b596a6267",
       "headline": "Is Banged-Up TE Dalton Kincaid Available for Bills vs. Dolphins in Week 11?",
@@ -3907,23 +3932,6 @@
         "Detroit Lions News"
       ],
       "published_at": "2026-11-19T21:27:22+00:00",
-      "players": []
-    },
-    {
-      "id": "3b58423e1469e62d3fb2",
-      "headline": "Lions vs. Buccaneers practice report: Nov. 19",
-      "url": "https://www.detroitlions.com/news/lions-vs-buccaneers-practice-report-nov-19-reed-joseph-rakestraw",
-      "source_id": "news_official_det",
-      "source": "Detroit Lions (official)",
-      "teams": [
-        "DET"
-      ],
-      "feed_description": "Lions vs. Buccaneers practice report for Thursday, November 19.",
-      "categories": [
-        "NEWS - Practice Report",
-        "Homepage - Centerpiece Package"
-      ],
-      "published_at": "2026-11-19T21:23:57+00:00",
       "players": []
     }
   ]
