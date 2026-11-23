@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-22T23:00:56.822918+00:00",
+  "updated_at": "2026-11-23T01:01:00.965419+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-22T21:57:34+00:00",
+      "latest_entry_at": "2026-11-22T23:59:48+00:00",
       "stale": false
     },
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-22T23:00:28+00:00",
+      "latest_entry_at": "2026-11-23T01:00:01+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-22T22:23:30+00:00",
+      "latest_entry_at": "2026-11-23T00:49:01+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-22T22:24:13+00:00",
+      "latest_entry_at": "2026-11-22T23:55:27+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-22T16:30:13+00:00",
+      "latest_entry_at": "2026-11-22T23:49:21+00:00",
       "stale": false
     },
     {
@@ -70,15 +70,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-22T21:26:15+00:00",
+      "latest_entry_at": "2026-11-22T23:52:32+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_car",
       "ok": true,
-      "eligible": 6,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-22T21:18:38+00:00",
+      "latest_entry_at": "2026-11-23T00:38:42+00:00",
       "stale": false
     },
     {
@@ -92,7 +92,7 @@
     {
       "source_id": "news_official_cin",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
       "latest_entry_at": "2026-11-21T23:23:20+00:00",
       "stale": false
@@ -116,9 +116,9 @@
     {
       "source_id": "news_official_det",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-22T21:38:30+00:00",
+      "latest_entry_at": "2026-11-23T00:02:59+00:00",
       "stale": false
     },
     {
@@ -166,7 +166,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-22T19:50:00+00:00",
+      "latest_entry_at": "2026-11-22T23:45:00+00:00",
       "stale": false
     },
     {
@@ -196,9 +196,9 @@
     {
       "source_id": "news_official_min",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-20T23:00:00+00:00",
+      "latest_entry_at": "2026-11-22T23:52:00+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-22T21:25:00+00:00",
+      "latest_entry_at": "2026-11-23T00:40:00+00:00",
       "stale": false
     },
     {
@@ -230,7 +230,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-22T19:35:00+00:00",
+      "latest_entry_at": "2026-11-23T03:00:00+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-22T22:56:00+00:00",
+      "latest_entry_at": "2026-11-22T23:00:00+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-22T22:00:00+00:00",
+      "latest_entry_at": "2026-11-22T23:45:28+00:00",
       "stale": false
     },
     {
@@ -260,9 +260,9 @@
     {
       "source_id": "news_official_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-22T01:18:00+00:00",
+      "latest_entry_at": "2026-11-22T23:50:10+00:00",
       "stale": false
     },
     {
@@ -276,33 +276,33 @@
     {
       "source_id": "news_official_ten",
       "ok": true,
-      "eligible": 6,
+      "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-22T21:03:37+00:00",
+      "latest_entry_at": "2026-11-22T23:32:23+00:00",
       "stale": false
     },
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-22T23:00:28+00:00",
+      "latest_entry_at": "2026-11-23T01:00:01+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-22T22:23:30+00:00",
+      "latest_entry_at": "2026-11-23T00:49:01+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_buf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-22T21:53:24+00:00",
+      "latest_entry_at": "2026-11-22T22:37:13+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-22T19:47:34+00:00",
+      "latest_entry_at": "2026-11-22T21:17:44+00:00",
       "stale": false
     },
     {
@@ -366,7 +366,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-22T16:00:00+00:00",
+      "latest_entry_at": "2026-11-23T00:35:37+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-22T13:40:44+00:00",
+      "latest_entry_at": "2026-11-22T20:47:21+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-22T22:42:15+00:00",
+      "latest_entry_at": "2026-11-22T23:29:46+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-22T22:45:00+00:00",
+      "latest_entry_at": "2026-11-22T23:30:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-22T22:15:00+00:00",
+      "latest_entry_at": "2026-11-23T01:00:00+00:00",
       "stale": false
     },
     {
@@ -438,15 +438,15 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-22T22:42:55+00:00",
+      "latest_entry_at": "2026-11-23T00:09:40+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-22T21:16:01+00:00",
+      "latest_entry_at": "2026-11-22T22:43:33+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-22T19:36:56+00:00",
+      "latest_entry_at": "2026-11-22T23:00:00+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-22T21:38:41+00:00",
+      "latest_entry_at": "2026-11-23T00:30:00+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-22T21:38:21+00:00",
+      "latest_entry_at": "2026-11-22T17:53:33+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-21T20:28:56+00:00",
+      "latest_entry_at": "2026-11-22T14:28:37+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,202 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-22T21:12:43+00:00",
+      "latest_entry_at": "2026-11-23T00:30:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "248164110120d7c3e026",
+      "headline": "San Francisco 49ers get major Mike Evans injury update ahead of Sunday Night Football matchup against Vikings",
+      "url": "https://atozsports.com/nfl/san-francisco-49ers-news/san-francisco-49ers-get-major-mike-evans-injury-update-ahead-of-sunday-night-football-matchup-against-vikings/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "The 49ers are getting a major offensive weapon back after a month-long absence, giving Brock Purdy a much-needed boost against Minnesota's dominant defense.",
+      "categories": [
+        "San Francisco 49ers News",
+        "49ers News",
+        "American Football",
+        "Brock Purdy",
+        "Mike evans",
+        "San Francisco 49ers",
+        "sports",
+        "Wildcat"
+      ],
+      "published_at": "2026-11-23T00:46:02+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        },
+        {
+          "id": "00-0037834",
+          "name": "Brock Purdy",
+          "team": "SF",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "616713056c81783578ab",
+      "headline": "Justin Herbert Injury Revealed: Chargers QB Enters Concussion Protocol After Loss",
+      "url": "https://www.si.com/nfl/chargers/onsi/justin-herbert-injury-revealed-chargers-concussion-protocol",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "After the Los Angeles Chargers' loss to the New York Jets, QB Justin Herbert is reportedly in concussion protocol.",
+      "categories": [],
+      "published_at": "2026-11-23T00:31:35+00:00",
+      "players": [
+        {
+          "id": "00-0036355",
+          "name": "Justin Herbert",
+          "team": "LAC",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "30110eb520c05e28588b",
+      "headline": "Chuba Hubbard does it again, and gets a little help",
+      "url": "https://www.panthers.com/news/chuba-hubbard-does-it-again-and-gets-a-little-help-trevor-etienne",
+      "source_id": "news_official_car",
+      "source": "Carolina Panthers (official)",
+      "teams": [
+        "CAR"
+      ],
+      "feed_description": "The team captain and workhorse running back had his second straight two-touchdown day, scored a key two-point conversion, and helped the Panthers build a two-game lead in the NFC South. And he got a little breather along the way.",
+      "categories": [
+        "Latest News",
+        "App News",
+        "Gameday",
+        "Baltimore Ravens at Carolina Panthers (2026-REG-11)"
+      ],
+      "published_at": "2026-11-23T00:26:45+00:00",
+      "players": [
+        {
+          "id": "00-0036555",
+          "name": "Chuba Hubbard",
+          "team": "CAR",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "5120ab61a69ffc29f6f3",
+      "headline": "Packers-Rams Sunday Injury Report: Key Stafford Stopper Says He\u2019s \u2018All Good\u2019",
+      "url": "https://www.si.com/nfl/packers/onsi/packers-rams-sunday-injury-report-key-stafford-stopper-says-hes-all-good",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "The Packers and Rams held their second practices of the week on Sunday and turned in their first injury report before their Wednesday showdown.",
+      "categories": [],
+      "published_at": "2026-11-23T00:23:53+00:00",
+      "players": []
+    },
+    {
+      "id": "3276ef225a5c1f932fe1",
+      "headline": "Ben Johnson Not Impressed With Bears' Running Game in Kyle Monangai's Return",
+      "url": "https://www.si.com/nfl/bears/onsi/ben-johnson-not-impressed-with-bears-running-game-in-kyle-monangai-s-return",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Bears coach Ben Johnson wants more from Chicago's ground game after a 21\u201313 win over the Saints, even with RB Kyle Monangai back in the lineup.",
+      "categories": [],
+      "published_at": "2026-11-23T00:15:00+00:00",
+      "players": [
+        {
+          "id": "00-0040236",
+          "name": "Kyle Monangai",
+          "team": "CHI",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "476ec1e934fcade35280",
+      "headline": "Vikings vs. 49ers Inactives for Week 11 of 2026",
+      "url": "https://www.vikings.com/news/inactives-49ers-sunday-night-football-mexico-2026",
+      "source_id": "news_official_min",
+      "source": "Minnesota Vikings (official)",
+      "teams": [
+        "MIN"
+      ],
+      "feed_description": "",
+      "categories": [
+        "Inactives",
+        "News - Team",
+        "News - Index",
+        "vikings-at-49ers-2026-reg-11",
+        "Minnesota Vikings at San Francisco 49ers (2026-REG-11)"
+      ],
+      "published_at": "2026-11-22T23:52:00+00:00",
+      "players": []
+    },
+    {
+      "id": "be044092e25433301f0d",
+      "headline": "Mike Evans Active, Dre Greenlaw OUT vs. Vikings; Inactives Week 11 #MINvsSF",
+      "url": "https://www.49ers.com/news/mike-evans-active-dre-greenlaw-out-vs-vikings-inactives-week-11-minvssf",
+      "source_id": "news_official_sf",
+      "source": "San Francisco 49ers (official)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Take a look at players who have been ruled out for the San Francisco 49ers Week 11 matchup against the Minnesota Vikings in Mexico.",
+      "categories": [
+        "Inactives",
+        "Latest App",
+        "English",
+        "English Articles",
+        "News",
+        "Sutter Health",
+        "Brooke Evans",
+        "mexico 2026",
+        "Mexico 2026 News",
+        "Minnesota Vikings at San Francisco 49ers (2026-REG-11)"
+      ],
+      "published_at": "2026-11-22T23:50:10+00:00",
+      "players": [
+        {
+          "id": "00-0031408",
+          "name": "Mike Evans",
+          "team": "SF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "e5a62a1cdfb5edec3cfb",
+      "headline": "Zavion Thomas' Breakout Game Could be Launching Pad for Bears Rookie",
+      "url": "https://www.si.com/nfl/bears/onsi/zavion-thomas-breakout-game-could-be-launching-pad-for-bears-rookie",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Zavion Thomas finally enjoyed his coming-out party in Chicago's Week 11 win over the Saints. Here's why it will be a sign of things to come for the rookie WR.",
+      "categories": [],
+      "published_at": "2026-11-22T23:20:00+00:00",
+      "players": [
+        {
+          "id": "00-0041051",
+          "name": "Zavion Thomas",
+          "team": "CHI",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "a4af3bc7d35667406579",
       "headline": "Dak Prescott Injury Concerns Surface With Hand Issue At Post-Game Press Conference",
@@ -3692,192 +3883,6 @@
           "name": "Terrance Ferguson",
           "team": "LAR",
           "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "2f550aea98496e2f1674",
-      "headline": "Buffalo Bills injury report vs. Dolphins | Week 11",
-      "url": "https://www.buffalobills.com/news/buffalo-bills-injury-report-vs-dolphins-week-11",
-      "source_id": "news_official_buf",
-      "source": "Buffalo Bills (official)",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "Joe Brady ruled out two players, listed one player as doubtful and three others as questionable for Sunday's game against the Dolphins.",
-      "categories": [
-        "INJURY REPORT"
-      ],
-      "published_at": "2026-11-20T18:36:48+00:00",
-      "players": []
-    },
-    {
-      "id": "4cd62385e009dd40e806",
-      "headline": "Carson Beck's Latest Injury Raises Big-Picture Questions for Cardinals",
-      "url": "https://www.si.com/nfl/cardinals/onsi/carson-beck-latest-injury-raises-big-picture-questions-arizona-cardinals",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "The Arizona Cardinals have to evaluate their rookie quarterback.",
-      "categories": [],
-      "published_at": "2026-11-20T18:36:32+00:00",
-      "players": [
-        {
-          "id": "00-0041561",
-          "name": "Carson Beck",
-          "team": "ARI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "516054a2560d22ea36a4",
-      "headline": "Three takeaways from Friday, including Mike Jackson ready to roll",
-      "url": "https://www.panthers.com/news/three-takeaways-from-friday-including-mike-jackson-ready-to-roll",
-      "source_id": "news_official_car",
-      "source": "Carolina Panthers (official)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The veteran corner is set to return from IR Sunday against the Ravens. Plus more from Friday, including the status of the tight ends, and how they're weighing when to bring back Jonathon Brooks.",
-      "categories": [
-        "Latest News",
-        "App News"
-      ],
-      "published_at": "2026-11-20T18:18:54+00:00",
-      "players": [
-        {
-          "id": "00-0039344",
-          "name": "Jonathon Brooks",
-          "team": "CAR",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "3da1783cf370f5f93a61",
-      "headline": "BREAKING: Indianapolis Colts Cut Starting Quarterback Daniel Jones",
-      "url": "https://www.stampedeblue.com/indianapolis-colts-news/130306/breaking-indianapolis-colts-cut-starting-quarterback-daniel-jones",
-      "source_id": "news_sbn_ind",
-      "source": "Stampede Blue (SB Nation)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "This is not April Fools day and yes the Colts have officially announced this move: Daniel Jones\u2019 play this season has been less than inspiring, having posted more than half a season of, frankly, replacement level play. Last night against the Houston Texans Jones went 12 for 27 (44%) for 144 yards 0 touchdowns and [\u2026]",
-      "categories": [
-        "Indianapolis Colts News"
-      ],
-      "published_at": "2026-11-20T18:14:11+00:00",
-      "players": [
-        {
-          "id": "00-0035710",
-          "name": "Daniel Jones",
-          "team": "IND",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "95bdbf54fcbbd18bcc25",
-      "headline": "Colts to start Anthony Richardson Sr. at quarterback, release Daniel Jones",
-      "url": "https://www.colts.com/news/colts-to-start-anthony-richardson-sr-at-quarterback-release-daniel-jones",
-      "source_id": "news_official_ind",
-      "source": "Indianapolis Colts (official)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "Head coach Shane Steichen made the announcement Friday.",
-      "categories": [
-        "Football",
-        "Featured",
-        "Featured News",
-        "Anthony Richardson",
-        "Daniel Jones"
-      ],
-      "published_at": "2026-11-20T18:05:14+00:00",
-      "players": [
-        {
-          "id": "00-0035710",
-          "name": "Daniel Jones",
-          "team": "IND",
-          "position": "QB"
-        },
-        {
-          "id": "00-0039164",
-          "name": "Anthony Richardson",
-          "team": "IND",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "1ba551975095c1f1869c",
-      "headline": "Cardinals QB Carson Beck Suffers Alarming Injury Setback",
-      "url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-qb-carson-beck-suffers-alarming-injury-setback",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "Things have gone from bad to worse for Carson Beck.",
-      "categories": [],
-      "published_at": "2026-11-20T17:54:10+00:00",
-      "players": [
-        {
-          "id": "00-0041561",
-          "name": "Carson Beck",
-          "team": "ARI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "d94d95db35d52ff1c4e1",
-      "headline": "Week 11 Friday Injury Report: Two ruled out for Ravens game",
-      "url": "https://www.panthers.com/news/week-11-friday-injury-report-two-ruled-out-for-ravens-game-bobby-okereke-isaiah-simmons",
-      "source_id": "news_official_car",
-      "source": "Carolina Panthers (official)",
-      "teams": [
-        "CAR"
-      ],
-      "feed_description": "The Panthers will be without linebacker Bobby Okereke again this week, along with veteran special teamer Isaiah Simmons. They have a number of players listed as questionable.",
-      "categories": [
-        "Injury Reports",
-        "Latest News",
-        "App News",
-        "Carolina Panthers at New Orleans Saints (2026-REG-10)"
-      ],
-      "published_at": "2026-11-20T17:24:59+00:00",
-      "players": []
-    },
-    {
-      "id": "1877ae6087ce62349272",
-      "headline": "Steelers news: The Steelers have a DK Metcalf problem",
-      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-news/178206/steelers-news-the-steelers-have-a-dk-metcalf-problem",
-      "source_id": "news_sbn_pit",
-      "source": "Behind the Steel Curtain (SB Nation)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "The Pittsburgh Steelers moved on from disgruntled wide receiver George Pickens with a trade to the Dallas Cowboys two seasons ago. The front office answered by adding former Seahawks receiver D.K. Metcalf to the room with Aaron Rodgers as the quarterback. After signing him to a lucrative extension, Metcalf has been inconsistent, to say the [\u2026]",
-      "categories": [
-        "Pittsburgh Steelers News"
-      ],
-      "published_at": "2026-11-20T16:56:14+00:00",
-      "players": [
-        {
-          "id": "00-0023459",
-          "name": "Aaron Rodgers",
-          "team": "PIT",
-          "position": "QB"
-        },
-        {
-          "id": "00-0035640",
-          "name": "DK Metcalf",
-          "team": "PIT",
-          "position": "WR"
         }
       ]
     }
