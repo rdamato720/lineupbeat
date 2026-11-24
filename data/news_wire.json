@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T21:00:57.160034+00:00",
+  "updated_at": "2026-11-24T23:00:57.207768+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -12,9 +12,9 @@
     {
       "source_id": "packers_on_si_bill_huber",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T21:00:04+00:00",
+      "latest_entry_at": "2026-11-24T23:00:02+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T20:58:47+00:00",
+      "latest_entry_at": "2026-11-24T22:52:11+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T20:16:19+00:00",
+      "latest_entry_at": "2026-11-24T22:03:48+00:00",
       "stale": false
     },
     {
@@ -54,15 +54,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T15:56:24+00:00",
+      "latest_entry_at": "2026-11-24T20:59:25+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_bal",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-24T17:03:11+00:00",
+      "latest_entry_at": "2026-11-24T21:00:10+00:00",
       "stale": false
     },
     {
@@ -78,13 +78,13 @@
       "ok": true,
       "eligible": 8,
       "error": "",
-      "latest_entry_at": "2026-11-24T17:59:15+00:00",
+      "latest_entry_at": "2026-11-24T21:39:59+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_chi",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
       "latest_entry_at": "2026-11-24T13:04:00+00:00",
       "stale": false
@@ -94,13 +94,13 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-24T19:01:25+00:00",
+      "latest_entry_at": "2026-11-24T21:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_cle",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
       "latest_entry_at": "2026-11-24T20:44:18+00:00",
       "stale": false
@@ -108,17 +108,17 @@
     {
       "source_id": "news_official_den",
       "ok": true,
-      "eligible": 5,
+      "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-24T19:00:15+00:00",
+      "latest_entry_at": "2026-11-24T22:54:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_det",
       "ok": true,
-      "eligible": 3,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-24T15:30:00+00:00",
+      "latest_entry_at": "2026-11-24T22:22:00+00:00",
       "stale": false
     },
     {
@@ -140,7 +140,7 @@
     {
       "source_id": "news_official_ind",
       "ok": true,
-      "eligible": 4,
+      "eligible": 3,
       "error": "",
       "latest_entry_at": "2026-11-24T20:27:31+00:00",
       "stale": false
@@ -158,7 +158,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-24T06:19:20+00:00",
+      "latest_entry_at": "2026-11-24T21:19:00+00:00",
       "stale": false
     },
     {
@@ -172,9 +172,9 @@
     {
       "source_id": "news_official_lar",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-24T19:30:00+00:00",
+      "latest_entry_at": "2026-11-24T21:04:05+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-24T20:00:10+00:00",
+      "latest_entry_at": "2026-11-24T22:20:29+00:00",
       "stale": false
     },
     {
@@ -198,7 +198,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T19:28:01+00:00",
+      "latest_entry_at": "2026-11-24T22:37:14+00:00",
       "stale": false
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-24T20:00:00+00:00",
+      "latest_entry_at": "2026-11-24T21:00:00+00:00",
       "stale": false
     },
     {
@@ -230,7 +230,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T19:02:15+00:00",
+      "latest_entry_at": "2026-11-24T21:47:00+00:00",
       "stale": false
     },
     {
@@ -238,15 +238,15 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-24T19:00:00+00:00",
+      "latest_entry_at": "2026-11-24T21:08:08+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_pit",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T19:30:00+00:00",
+      "latest_entry_at": "2026-11-24T22:15:15+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-24T20:40:33+00:00",
+      "latest_entry_at": "2026-11-24T21:16:45+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 6,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-24T21:00:04+00:00",
+      "latest_entry_at": "2026-11-24T23:00:02+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-24T20:58:47+00:00",
+      "latest_entry_at": "2026-11-24T22:52:11+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T17:00:00+00:00",
+      "latest_entry_at": "2026-11-24T20:38:54+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T13:12:23+00:00",
+      "latest_entry_at": "2026-11-24T15:00:00+00:00",
       "stale": false
     },
     {
@@ -332,9 +332,9 @@
     {
       "source_id": "news_sbn_bal",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-23T21:27:38+00:00",
+      "latest_entry_at": "2026-11-24T20:04:44+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T17:00:00+00:00",
+      "latest_entry_at": "2026-11-24T13:00:00+00:00",
       "stale": false
     },
     {
@@ -350,15 +350,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T16:20:31+00:00",
+      "latest_entry_at": "2026-11-24T20:19:57+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T19:22:43+00:00",
+      "latest_entry_at": "2026-11-24T21:30:59+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-24T18:37:35+00:00",
+      "latest_entry_at": "2026-11-24T20:57:35+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T14:57:08+00:00",
+      "latest_entry_at": "2026-11-23T18:30:00+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T19:57:31+00:00",
+      "latest_entry_at": "2026-11-24T21:59:50+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T18:00:00+00:00",
+      "latest_entry_at": "2026-11-24T16:00:00+00:00",
       "stale": false
     },
     {
@@ -454,23 +454,23 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T18:27:48+00:00",
+      "latest_entry_at": "2026-11-24T22:04:10+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_chi",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-24T17:41:02+00:00",
+      "latest_entry_at": "2026-11-24T22:00:17+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-24T19:35:02+00:00",
+      "latest_entry_at": "2026-11-24T22:21:13+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T14:02:08+00:00",
+      "latest_entry_at": "2026-11-24T19:53:01+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T19:22:58+00:00",
+      "latest_entry_at": "2026-11-24T21:39:12+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T15:00:00+00:00",
+      "latest_entry_at": "2026-11-24T19:59:41+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T19:43:44+00:00",
+      "latest_entry_at": "2026-11-24T20:44:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T20:30:00+00:00",
+      "latest_entry_at": "2026-11-24T22:11:13+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,350 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T16:00:00+00:00",
+      "latest_entry_at": "2026-11-24T21:03:32+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "e0ef3fe4cc40ffcbb1d7",
+      "headline": "Injury Report: S Brandon Jones estimated as full practice participant ahead of Week 12 game vs. Steelers",
+      "url": "https://www.denverbroncos.com/news/injuryreport/injury-report-s-brandon-jones-estimated-as-full-practice-participant-ahead-of-week-12-game-vs-steelers",
+      "source_id": "news_official_den",
+      "source": "Denver Broncos (official)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "In addition to Jones, wide receiver Pat Bryant (ankle), safety JL Skinner (shoulder), running back Tyler Badie (thumb) and tight end Caleb Lohner (foot) were listed as full participants.",
+      "categories": [
+        "Top Stories",
+        "Aric DiLalla",
+        "Injury Report",
+        "Denver Broncos at Pittsburgh Steelers (2026-REG-12)"
+      ],
+      "published_at": "2026-11-24T22:43:04+00:00",
+      "players": [
+        {
+          "id": "00-0037085",
+          "name": "Tyler Badie",
+          "team": "DEN",
+          "position": "RB"
+        },
+        {
+          "id": "00-0040134",
+          "name": "Pat Bryant",
+          "team": "DEN",
+          "position": "WR"
+        },
+        {
+          "id": "00-0040240",
+          "name": "Caleb Lohner",
+          "team": "DEN",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "691588801536b643f29f",
+      "headline": "Bears Tuesday Injury Report: Status Quo for Kyler Gordon, 1 DB Added & Ruled Out",
+      "url": "https://www.si.com/nfl/bears/onsi/bears-tuesday-injury-report-status-quo-kyler-gordon-db-added-ruled-out",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "The Chicago Bears' Tuesday injury report had bad news for Kyler Gordon and two others, but good news for left tackle Theo Benedet.",
+      "categories": [],
+      "published_at": "2026-11-24T22:31:48+00:00",
+      "players": []
+    },
+    {
+      "id": "edd2f022e3f45a25f4f7",
+      "headline": "Kansas City Chiefs\u2019 second injury report for Week 12 vs. Buffalo Bills sees improvements, but things are still uncertain for 2 starters",
+      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-second-injury-report-week-12-bills-tuesday/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "The Kansas City Chiefs released their second injury report for their Week 12 game against the Buffalo Bills on Thanksgiving. Kenneth Walker watch continues...",
+      "categories": [
+        "Kansas City Chiefs News",
+        "Chiefs Injuries",
+        "Kansas City Chiefs",
+        "Mansoor Delane",
+        "NFL Roster Builder",
+        "Omarr Norman-Lott",
+        "Patrick Mahomes",
+        "Peter Woods",
+        "Xavier Worthy"
+      ],
+      "published_at": "2026-11-24T22:30:39+00:00",
+      "players": []
+    },
+    {
+      "id": "0522833d19f85918b281",
+      "headline": "Broncos designate RB Tyler Badie for return from IR",
+      "url": "https://www.denverbroncos.com/news/broncos-designate-rb-tyler-badie-for-return-from-ir",
+      "source_id": "news_official_den",
+      "source": "Denver Broncos (official)",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "Badie has recorded 89 scrimmage yards and averaged 7.4 yards per touch in five appearances this season.",
+      "categories": [
+        "Transactions",
+        "Tyler Badie",
+        "Susanna Weir",
+        "Top Stories"
+      ],
+      "published_at": "2026-11-24T22:22:14+00:00",
+      "players": [
+        {
+          "id": "00-0037085",
+          "name": "Tyler Badie",
+          "team": "DEN",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "9a0e7f7816025c34d9f2",
+      "headline": "Lions, Bears Week 12 injury report: Sam LaPorta, Chuck Clark upgraded on Tuesday",
+      "url": "https://www.prideofdetroit.com/detroit-lions-injuries/182466/lions-bears-week-12-injury-report-sam-laporta-chuck-clark-upgraded-on-tuesday",
+      "source_id": "news_sbn_det",
+      "source": "Pride Of Detroit (SB Nation)",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "The Detroit Lions (8-2) and Chicago Bears (8-2) will square off in this year\u2019s Thanksgiving Day battle, and for the second straight day, the Lions and Bears have opted for walkthrough practices. A walkthrough practice means that all participation levels are estimates from the coaching staff based on how the player would have participated in [\u2026]",
+      "categories": [
+        "Detroit Lions Injuries",
+        "Detroit Lions News"
+      ],
+      "published_at": "2026-11-24T22:21:13+00:00",
+      "players": [
+        {
+          "id": "00-0039065",
+          "name": "Sam LaPorta",
+          "team": "DET",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "d04839ffaf00c90c0946",
+      "headline": "Lions vs. Bears practice report: Nov. 24",
+      "url": "https://www.detroitlions.com/news/lions-vs-bears-practice-report-nov-24",
+      "source_id": "news_official_det",
+      "source": "Detroit Lions (official)",
+      "teams": [
+        "DET"
+      ],
+      "feed_description": "Lions vs. Bears practice report for Tuesday, November 24.",
+      "categories": [
+        "NEWS - Practice Report",
+        "Homepage - Centerpiece Package"
+      ],
+      "published_at": "2026-11-24T22:06:59+00:00",
+      "players": []
+    },
+    {
+      "id": "beae77c68fd86c64f179",
+      "headline": "Cowboys Tuesday Injury Report: 1 Starter Among 2 Upgraded, 3 Players Not Practicing",
+      "url": "https://www.si.com/nfl/cowboys/onsi/cowboys-tuesday-injury-report-starter-upgraded-players-not-practicing",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "The Dallas Cowboys put out their Tuesday injury report ahead of the Week 12 game against the Philadelphia Eagles and it had a mix of good and bad news.",
+      "categories": [],
+      "published_at": "2026-11-24T21:45:56+00:00",
+      "players": []
+    },
+    {
+      "id": "3aa0d0d963d81c346681",
+      "headline": "Week 12 Injury Report (Broncos)",
+      "url": "https://www.steelers.com/news/week-12-injury-report-broncos-x3630",
+      "source_id": "news_official_pit",
+      "source": "Pittsburgh Steelers (official)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "A look at player injuries and practice participation for Week 12",
+      "categories": [
+        "Injury Report",
+        "UPMC",
+        "Featured",
+        "Sights and Sounds",
+        "Denver Broncos at Pittsburgh Steelers (2026-REG-12)"
+      ],
+      "published_at": "2026-11-24T21:39:00+00:00",
+      "players": []
+    },
+    {
+      "id": "21752252721364a30e1e",
+      "headline": "Steelers sign familiar face at WR",
+      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-roster/178453/steelers-sign-familiar-face-at-wr-brandon-smith-depth-chart-broncos-week-12-roster-news",
+      "source_id": "news_sbn_pit",
+      "source": "Behind the Steel Curtain (SB Nation)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "The Steelers have signed wide receiver Brandon Smith to the practice squad, the team announced Tuesday. Smith has already appeared in five games for the Steelers this season. He started the year on the practice squad and was elevated the maximum of three times before he was signed to the active roster, appearing in two [\u2026]",
+      "categories": [
+        "Pittsburgh Steelers News",
+        "Pittsburgh Steelers Roster"
+      ],
+      "published_at": "2026-11-24T21:20:37+00:00",
+      "players": [
+        {
+          "id": "00-0036775",
+          "name": "Brandon Smith",
+          "team": "PIT",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "6a3fb7c2df96dfd6ce01",
+      "headline": "Week 12 Injury Report | Chiefs vs Bills",
+      "url": "https://www.chiefs.com/news/week-12-injury-report-chiefs-vs-bills-2026",
+      "source_id": "news_official_kc",
+      "source": "Kansas City Chiefs (official)",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "Injuries for the Chiefs Week 12 matchup against the Buffalo Bills",
+      "categories": [
+        "Injury Report",
+        "all-content",
+        "Kansas City Chiefs at Buffalo Bills (2026-REG-12)"
+      ],
+      "published_at": "2026-11-24T21:19:00+00:00",
+      "players": []
+    },
+    {
+      "id": "74f94abba9bf9b911a76",
+      "headline": "Bills lose quarterback in unexpected fashion, and it\u2019s not the first time it happens",
+      "url": "https://atozsports.com/nfl/buffalo-bills-news/colts-sign-shane-buechele-practice-squad/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Indianapolis Colts signed Shane Buechele from the Bills' practice squad to their active roster after cutting Daniel Jones.",
+      "categories": [
+        "Buffalo Bills News",
+        "NFL",
+        "American Football",
+        "Practice Squad",
+        "Quarterback Market",
+        "Shane Buechele",
+        "Wildcat"
+      ],
+      "published_at": "2026-11-24T21:07:59+00:00",
+      "players": [
+        {
+          "id": "00-0036679",
+          "name": "Shane Buechele",
+          "team": "BUF",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "238cf9f44577a40f9eeb",
+      "headline": "Injury Report, Week 12 vs. Packers: Steve Avila, Terrance Ferguson and Coleman Shelton ruled out; no designation for Kobie Turner",
+      "url": "https://www.therams.com/news/rams-injury-report-week-12-2026-vs-packers-steve-avila-terrance-ferguson-coleman-shelton-kobie-turner",
+      "source_id": "news_official_lar",
+      "source": "Los Angeles Rams (official)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The final injury report heading into Wednesday night's game between the Rams and the Packers at SoFi Stadium.",
+      "categories": [
+        "Injury Report - Cedars Sinai",
+        "Football",
+        "Green Bay Packers at Los Angeles Rams (2026-REG-12)",
+        "Matthew Stafford",
+        "Davis Allen",
+        "Trent McDuffie",
+        "Colby Parkinson",
+        "Nate Landman",
+        "Justin Dedich",
+        "Kobie Turner",
+        "Joe Cardona",
+        "Myles Garrett",
+        "Kyren Williams",
+        "Steve Avila",
+        "Kamren Curl",
+        "Coleman Shelton",
+        "Terrance Ferguson"
+      ],
+      "published_at": "2026-11-24T21:03:16+00:00",
+      "players": [
+        {
+          "id": "00-0040737",
+          "name": "Terrance Ferguson",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "af6061ef00f973f09568",
+      "headline": "Ravens Waive LaJohntay Wester and Kedon Slovis",
+      "url": "https://www.baltimoreravens.com/news/ravens-waive-lajohntay-wester-kedon-slovis-returner-quarterback",
+      "source_id": "news_official_bal",
+      "source": "Baltimore Ravens (official)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Ravens have parted ways with WR/RS LaJohntay Wester following two muffed punts against Carolina.",
+      "categories": [
+        "Transactions",
+        "General",
+        "What Mink Thinks",
+        "LaJohntay Wester",
+        "Kedon Slovis",
+        "inline-news",
+        "Homepage Centerpiece"
+      ],
+      "published_at": "2026-11-24T21:00:10+00:00",
+      "players": [
+        {
+          "id": "00-0040075",
+          "name": "LaJohntay Wester",
+          "team": "BAL",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "91b2b812ec11625318c9",
+      "headline": "ESPN hints at potentially massive contract extension for Caleb Williams",
+      "url": "https://www.windycitygridiron.com/chicago-bears-salary-cap/128239/espn-hints-at-potentially-massive-contract-extension-for-caleb-williams-chicago-bears",
+      "source_id": "news_sbn_chi",
+      "source": "Windy City Gridiron (SB Nation)",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Chicago Bears quarterback Caleb Williams could be about to rewrite the contract record books this coming offseason. At this point, it goes without saying that the third-year signal-caller will get a monster bag as Chicago\u2019s franchise quarterback when he becomes eligible for a contract extension this coming spring. ESPN\u2019s Courtney Cronin suggested as much in [\u2026]",
+      "categories": [
+        "Chicago Bears Salary Cap"
+      ],
+      "published_at": "2026-11-24T21:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "2b9fb8b4d727bc3ecf73",
       "headline": "Bryce Young Thrived Under Pressure, a Good Sign for Panthers Next Week",
@@ -598,6 +937,29 @@
       ]
     },
     {
+      "id": "4b7519fb33b27fa94624",
+      "headline": "Colts sign Shane Buechele and Wanya Morris in flurry of roster moves, place Caden Curry on IR",
+      "url": "https://www.stampedeblue.com/indianapolis-colts-news/130408/colts-sign-shane-buechele-and-wanya-morris-in-flurry-of-roster-moves-place-caden-curry-on-ir",
+      "source_id": "news_sbn_ind",
+      "source": "Stampede Blue (SB Nation)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "The Indianapolis Colts made a series of roster moves Tuesday, signing quarterback Shane Buechele from the Buffalo Bills\u2019 practice squad, promoting defensive end Carl Lawson to the 53-man roster and placing rookie defensive end Caden Curry on injured reserve. The organization also waived offensive tackle Charlie Heck while adding tight end Sean McKeon and defensive [\u2026]",
+      "categories": [
+        "Indianapolis Colts News"
+      ],
+      "published_at": "2026-11-24T20:57:35+00:00",
+      "players": [
+        {
+          "id": "00-0036032",
+          "name": "Sean McKeon",
+          "team": "IND",
+          "position": "TE"
+        }
+      ]
+    },
+    {
       "id": "41230bc81c5754a70fdf",
       "headline": "Hunter Henry Has Plenty of Confidence in Patriots Teammate This Week",
       "url": "https://www.si.com/nfl/patriots/onsi/hunter-henry-has-plenty-of-confidence-in-patriots-teammate-this-week-tommy-devito",
@@ -635,6 +997,30 @@
           "id": "00-0039067",
           "name": "Rashee Rice",
           "team": "KC",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "85efc69a8322c6360c25",
+      "headline": "Ravens cut WR LaJohntay Wester after 2 muffed punts in Carolina",
+      "url": "https://www.baltimorebeatdown.com/baltimore-ravens-news/88186/ravens-cut-wr-lajohntay-wester-after-2-fumbled-punts-in-carolina",
+      "source_id": "news_sbn_bal",
+      "source": "Baltimore Beatdown (SB Nation)",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Baltimore Ravens are waiving second-year wide receiver/returner LaJohntay Wester after two muffed punts in Sunday\u2019s loss to the Carolina Panthers, per Jeff Zrebiec of The Athletic. Wester, 24, let his first punt return go into the end zone for a touchback on Sunday, but could not handle the second and third balls from Sam [\u2026]",
+      "categories": [
+        "Baltimore Ravens News",
+        "Baltimore Ravens Roster"
+      ],
+      "published_at": "2026-11-24T20:04:44+00:00",
+      "players": [
+        {
+          "id": "00-0040075",
+          "name": "LaJohntay Wester",
+          "team": "BAL",
           "position": "WR"
         }
       ]
@@ -1457,24 +1843,6 @@
         "Kansas City Chiefs News"
       ],
       "published_at": "2026-11-23T22:30:00+00:00",
-      "players": []
-    },
-    {
-      "id": "6a3fb7c2df96dfd6ce01",
-      "headline": "Week 12 Injury Report | Chiefs vs Bills",
-      "url": "https://www.chiefs.com/news/week-12-injury-report-chiefs-vs-bills-2026",
-      "source_id": "news_official_kc",
-      "source": "Kansas City Chiefs (official)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "Injuries for the Chiefs Week 12 matchup against the Buffalo Bills",
-      "categories": [
-        "Injury Report",
-        "all-content",
-        "Kansas City Chiefs at Buffalo Bills (2026-REG-12)"
-      ],
-      "published_at": "2026-11-23T22:14:00+00:00",
       "players": []
     },
     {
@@ -3549,360 +3917,6 @@
           "name": "Dalton Kincaid",
           "team": "BUF",
           "position": "TE"
-        }
-      ]
-    },
-    {
-      "id": "753ce7790e545d9cd7b1",
-      "headline": "3 Matchups That Will Decide Titans Duel vs. Cowboys: All Eyes on Carnell Tate in Likely Return",
-      "url": "https://www.si.com/nfl/titans/onsi/3-matchups-that-will-decide-titans-duel-vs-cowboys-all-eyes-on-carnell-tate-in-likely-return-01m7zvmhfe8r",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "TEN"
-      ],
-      "feed_description": "Here are three matchup that will decide the Titans' matchup with the Cowboys, headlined by a rookie receiver who carries the weight off the offense in his expected comeback.",
-      "categories": [],
-      "published_at": "2026-11-22T00:00:01+00:00",
-      "players": [
-        {
-          "id": "00-0041438",
-          "name": "Carnell Tate",
-          "team": "TEN",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "dbeeedde7b0c3d7703f7",
-      "headline": "What Jets Are Saying About Geno Smith and Week 11 Injury Report vs. Chargers",
-      "url": "https://www.si.com/nfl/jets/onsi/what-jets-are-saying-about-geno-smith-week-11-injury-report-vs-chargers-01m7xxrpzegx",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "Another week, another lengthy injury report for the New York Jets. Here's how things look for Week 11.",
-      "categories": [],
-      "published_at": "2026-11-22T00:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0030565",
-          "name": "Geno Smith",
-          "team": "NYJ",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "b912175baf82e0dfc47c",
-      "headline": "Commanders-Bengals Final Injury Report: Lucas Patrick Named Starter, Backfield Still Unsettled",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-bengals-final-injury-report-week-11",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Lucas Patrick is questionable despite being named the starter. Bill still needs to be activated; White missed practice, and Robertson's ankle remains a concern.",
-      "categories": [],
-      "published_at": "2026-11-21T22:25:53+00:00",
-      "players": []
-    },
-    {
-      "id": "3931afb16aff8d30ae60",
-      "headline": "Eagles make a bunch of roster moves, including two starters to IR",
-      "url": "https://www.phillyvoice.com/eagles-make-bunch-roster-moves-including-two-starters-ir-zack-baun-dontayvion-wicks/",
-      "source_id": "phillyvoice_jimmy_kempski",
-      "source": "PhillyVoice",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "LB Zack Baun and WR Dontayvion Wicks were both put on injured reserve.",
-      "categories": [
-        "Sports",
-        "Eagles",
-        "NFL",
-        "Philadelphia",
-        "Dontayvion Wicks",
-        "Zack Baun"
-      ],
-      "published_at": "2026-11-21T21:37:23+00:00",
-      "players": [
-        {
-          "id": "00-0038393",
-          "name": "Dontayvion Wicks",
-          "team": "PHI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "9e10d57ef2bca7de404a",
-      "headline": "Packers re-sign RB Pierre Strong Jr.",
-      "url": "https://www.acmepackingcompany.com/green-bay-packers-news/89979/packers-re-sign-rb-pierre-strong-jr",
-      "source_id": "news_sbn_gb",
-      "source": "Acme Packing Company (SB Nation)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "The Green Bay Packers, as expected, have re-signed running back Pierre Strong Jr. to the practice squad on Saturday after no team claimed him on waivers. Strong, who started the season on the practice squad, was elevated to the active roster while the team was dealing with injuries and Josh Jacobs\u2019 stint on the exempt [\u2026]",
-      "categories": [
-        "Green Bay Packers News",
-        "Green Bay Packers roster"
-      ],
-      "published_at": "2026-11-21T21:34:16+00:00",
-      "players": [
-        {
-          "id": "00-0035700",
-          "name": "Josh Jacobs",
-          "team": "GB",
-          "position": "RB"
-        },
-        {
-          "id": "00-0038098",
-          "name": "Pierre Strong",
-          "team": "GB",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "5ed539c585d708ae3759",
-      "headline": "Eagles roster news includes Dontayvion Wicks and Zack Baun to injured reserve",
-      "url": "https://www.bleedinggreennation.com/news/190910/eagles-roster-news-includes-dontayvion-wicks-and-zack-baun-to-injured-reserve",
-      "source_id": "news_sbn_phi",
-      "source": "Bleeding Green Nation (SB Nation)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The Philadelphia Eagles officially announced five roster moves ahead of the team\u2019s Week 11 home game against the Pittsburgh Steelers. Here\u2019s an overview: Note: teams are permitted to temporarily elevate up to two practice squad players per game. A player can be elevated up to three times in the regular season and an unlimited number [\u2026]",
-      "categories": [
-        "Philadelphia Eagles News"
-      ],
-      "published_at": "2026-11-21T21:19:57+00:00",
-      "players": [
-        {
-          "id": "00-0038393",
-          "name": "Dontayvion Wicks",
-          "team": "PHI",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "4920996b5e1194c3c92f",
-      "headline": "Commanders vs. Bengals injury report: Four key players questionable",
-      "url": "https://www.hogshaven.com/washington-commanders-injuries/456444/commanders-bengals-injury-report-treylon-burks-rachaad-white-amik-robertson-croskey-merritt",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Commanders, on their official injury report released Saturday afternoon, listed four starters as questionable to play the Cincinnati Bengals on Monday night. Center Lucas Patrick (concussion), cornerback Amik Robertson (ankle) and running backs Rachaad White (heel) and Bill Croskey-Merritt (groin) are the questionable players, though not all questionable designations are equal in this instance. [\u2026]",
-      "categories": [
-        "Washington Commanders Injuries"
-      ],
-      "published_at": "2026-11-21T21:15:19+00:00",
-      "players": [
-        {
-          "id": "00-0037256",
-          "name": "Rachaad White",
-          "team": "WAS",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "c8d9d3188273ec6347f3",
-      "headline": "Week 11 Injury Report | Bengals at Commanders",
-      "url": "https://www.bengals.com/news/bengals-commanders-week-11-2026-injury-report-monday-night-football",
-      "source_id": "news_official_cin",
-      "source": "Cincinnati Bengals (official)",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "Take a look at the injury reports of the Cincinnati Bengals and the Washington Commanders leading into Week 11 of the 2026 season.",
-      "categories": [
-        "latest news",
-        "centerpiece",
-        "Injury Report",
-        "latest stories",
-        "Cincinnati Bengals at Washington Commanders (2026-REG-11)"
-      ],
-      "published_at": "2026-11-21T21:15:00+00:00",
-      "players": []
-    },
-    {
-      "id": "16c41f821bfbc266f88c",
-      "headline": "Eagles activate RB Will Shipley, place LB Zack Baun and WR Dontayvion Wicks on Injured Reserve",
-      "url": "https://www.philadelphiaeagles.com/news/eagles-activate-will-shipley-place-zack-baun-dontayvion-wicks-on-injured-reserve",
-      "source_id": "news_official_phi",
-      "source": "Philadelphia Eagles (official)",
-      "teams": [
-        "PHI"
-      ],
-      "feed_description": "The team also elevated defensive tackle Gabe Hall and linebacker Anfernee Orji from the practice squad for the Steelers game.",
-      "categories": [
-        "All News-archived",
-        "NFL.com Feature",
-        "Team Roster Content",
-        "2026 Week 11 vs. Steelers",
-        "Will Shipley",
-        "Anfernee Orji",
-        "Gabe Hall"
-      ],
-      "published_at": "2026-11-21T21:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0038393",
-          "name": "Dontayvion Wicks",
-          "team": "PHI",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039746",
-          "name": "Will Shipley",
-          "team": "PHI",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "09fd7ac9474b893c7f18",
-      "headline": "Packers announce roster moves | Nov. 21, 2026",
-      "url": "https://www.packers.com/news/packers-announce-roster-moves-nov-21-2026",
-      "source_id": "news_official_gb",
-      "source": "Green Bay Packers (official)",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Green Bay signs RB Pierre Strong Jr. to the practice squad, releases EDGE D.J. Johnson",
-      "categories": [
-        "News: Press Releases",
-        "News: All News",
-        "News: National Feature",
-        "News: Transactions",
-        "Homepage CP"
-      ],
-      "published_at": "2026-11-21T21:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0038098",
-          "name": "Pierre Strong",
-          "team": "GB",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "7b28f1a16c954a097817",
-      "headline": "Packers Re-Sign Running Back as Part of Practice Squad Moves",
-      "url": "https://www.si.com/nfl/packers/onsi/packers-re-sign-running-back-as-part-of-practice-squad-moves",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "GB"
-      ],
-      "feed_description": "Pierre Strong is back, a move that necessitated another move to the practice squad.",
-      "categories": [],
-      "published_at": "2026-11-21T20:36:02+00:00",
-      "players": [
-        {
-          "id": "00-0038098",
-          "name": "Pierre Strong",
-          "team": "GB",
-          "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "6d1920d83b5b9ed37cd6",
-      "headline": "Steelers activate WR Roman Wilson ahead of Eagles matchup",
-      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-roster/178287/steelers-activate-wr-roman-wilson-ahead-of-eagles-matchup-nfl-week-11-injury-roster-news-practice-squad",
-      "source_id": "news_sbn_pit",
-      "source": "Behind the Steel Curtain (SB Nation)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "The Steelers are getting one of their top wide receivers back ahead of Week 11\u2019s matchup against the Philadelphia Eagles. Pittsburgh announced Saturday that wide receiver Roman Wilson has been activated to the 53-man roster ahead of Sunday\u2019s game. In addition, the team announced the signing of edge rusher K.J. Henry from the practice squad [\u2026]",
-      "categories": [
-        "Pittsburgh Steelers News",
-        "Pittsburgh Steelers Roster"
-      ],
-      "published_at": "2026-11-21T20:12:49+00:00",
-      "players": [
-        {
-          "id": "00-0039739",
-          "name": "Roman Wilson",
-          "team": "PIT",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "152929215a7182e56d01",
-      "headline": "Mike Evans expected to play vs. Vikings after being listed questionable",
-      "url": "https://www.ninersnation.com/san-francisco-49ers-news/166094/san-francisco-49ers-news-mike-evans-expected-play-minnesota-vikings-questionable-injury-report-week-11",
-      "source_id": "news_sbn_sf",
-      "source": "Niners Nation (SB Nation)",
-      "teams": [
-        "SF"
-      ],
-      "feed_description": "The San Francisco 49ers should have star wide receiver Mike Evans back for Sunday night against the Minnesota Vikings in Week 11, getting their top pass-catcher back after missing the last three games with an Achilles injury. NFL Network\u2019s Mike Garafolo revealed that Evans is set to play, while sharing a link to a video [\u2026]",
-      "categories": [
-        "San Francisco 49ers News"
-      ],
-      "published_at": "2026-11-21T19:56:09+00:00",
-      "players": [
-        {
-          "id": "00-0031408",
-          "name": "Mike Evans",
-          "team": "SF",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "2123e9f37c1e7d77275a",
-      "headline": "Steelers Get Roman Wilson Back Before Eagles Game",
-      "url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-get-roman-wilson-back-eagles-game",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "Pittsburgh Steelers wide receiver Roman Wilson's activation from the IR marks the 25-year-old's official return to the lineup.",
-      "categories": [],
-      "published_at": "2026-11-21T19:40:46+00:00",
-      "players": [
-        {
-          "id": "00-0039739",
-          "name": "Roman Wilson",
-          "team": "PIT",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "371491dc32005b2352ee",
-      "headline": "Carson Beck ruled out of 1st road start with back spasms",
-      "url": "https://arizonasports.com/nfl/arizona-cardinals/carson-beck-ruled-out-1st-road-start-with-back-spasms",
-      "source_id": "arizona_sports_tyler_drake",
-      "source": "Arizona Sports",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "With Carson Beck ruled out against the Chiefs, the Cardinals will turn to veteran signal caller Josh Johnson.",
-      "categories": [
-        "Arizona Cardinals"
-      ],
-      "published_at": "2026-11-21T19:37:56+00:00",
-      "players": [
-        {
-          "id": "00-0041561",
-          "name": "Carson Beck",
-          "team": "ARI",
-          "position": "QB"
         }
       ]
     }
