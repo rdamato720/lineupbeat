@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-24T13:01:05.067646+00:00",
+  "updated_at": "2026-11-24T15:00:50.938973+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T07:32:02+00:00",
+      "latest_entry_at": "2026-11-24T13:55:14+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T13:00:24+00:00",
+      "latest_entry_at": "2026-11-24T14:55:31+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T13:00:51+00:00",
+      "latest_entry_at": "2026-11-24T14:56:55+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T12:22:58+00:00",
+      "latest_entry_at": "2026-11-24T14:04:38+00:00",
       "stale": false
     },
     {
@@ -54,7 +54,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-23T16:58:19+00:00",
+      "latest_entry_at": "2026-11-24T14:17:02+00:00",
       "stale": false
     },
     {
@@ -62,7 +62,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-23T23:56:41+00:00",
+      "latest_entry_at": "2026-11-24T14:38:32+00:00",
       "stale": false
     },
     {
@@ -70,7 +70,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-23T21:30:31+00:00",
+      "latest_entry_at": "2026-11-24T13:00:16+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-23T22:05:39+00:00",
+      "latest_entry_at": "2026-11-24T13:04:00+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-23T23:58:00+00:00",
+      "latest_entry_at": "2026-11-24T15:00:00+00:00",
       "stale": false
     },
     {
@@ -222,15 +222,15 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-23T20:53:00+00:00",
+      "latest_entry_at": "2026-11-24T14:05:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_official_nyj",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-23T18:30:00+00:00",
+      "latest_entry_at": "2026-11-24T14:42:27+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-24T02:35:53+00:00",
+      "latest_entry_at": "2026-11-24T14:00:05+00:00",
       "stale": false
     },
     {
@@ -270,7 +270,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-23T20:32:33+00:00",
+      "latest_entry_at": "2026-11-24T14:56:39+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-24T13:00:24+00:00",
+      "latest_entry_at": "2026-11-24T14:55:31+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T13:00:51+00:00",
+      "latest_entry_at": "2026-11-24T14:56:55+00:00",
       "stale": false
     },
     {
@@ -302,23 +302,23 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T04:50:08+00:00",
+      "latest_entry_at": "2026-11-24T14:30:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_mia",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-21T15:00:00+00:00",
+      "latest_entry_at": "2026-11-24T13:12:23+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 5,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-23T22:22:46+00:00",
+      "latest_entry_at": "2026-11-24T14:00:00+00:00",
       "stale": false
     },
     {
@@ -342,7 +342,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T12:00:00+00:00",
+      "latest_entry_at": "2026-11-24T13:00:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-23T20:07:39+00:00",
+      "latest_entry_at": "2026-11-24T11:00:00+00:00",
       "stale": false
     },
     {
@@ -374,7 +374,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-23T22:09:39+00:00",
+      "latest_entry_at": "2026-11-24T12:30:00+00:00",
       "stale": false
     },
     {
@@ -382,7 +382,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T04:33:25+00:00",
+      "latest_entry_at": "2026-11-24T14:04:00+00:00",
       "stale": false
     },
     {
@@ -390,7 +390,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-23T18:30:00+00:00",
+      "latest_entry_at": "2026-11-24T14:57:08+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T11:00:00+00:00",
+      "latest_entry_at": "2026-11-24T14:00:00+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T11:00:00+00:00",
+      "latest_entry_at": "2026-11-24T13:00:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T12:00:00+00:00",
+      "latest_entry_at": "2026-11-24T14:00:00+00:00",
       "stale": false
     },
     {
@@ -438,7 +438,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-23T23:18:29+00:00",
+      "latest_entry_at": "2026-11-24T12:47:55+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T00:45:00+00:00",
+      "latest_entry_at": "2026-11-24T14:56:47+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T07:16:10+00:00",
+      "latest_entry_at": "2026-11-24T14:05:23+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T11:00:00+00:00",
+      "latest_entry_at": "2026-11-24T06:03:44+00:00",
       "stale": false
     },
     {
@@ -470,15 +470,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T00:46:49+00:00",
+      "latest_entry_at": "2026-11-24T14:00:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-23T23:16:22+00:00",
+      "latest_entry_at": "2026-11-24T14:00:00+00:00",
       "stale": false
     },
     {
@@ -508,9 +508,9 @@
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-23T23:35:00+00:00",
+      "latest_entry_at": "2026-11-24T14:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-24T03:23:47+00:00",
+      "latest_entry_at": "2026-11-24T13:02:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T09:57:00+00:00",
+      "latest_entry_at": "2026-11-24T14:30:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,74 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T00:02:56+00:00",
+      "latest_entry_at": "2026-11-24T14:00:00+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "2229b11d5a567ed39e8e",
+      "headline": "Bills' Week 12 Injury Report: DJ Moore Not Included, Three Starters Added",
+      "url": "https://www.si.com/nfl/bills/onsi/injury-report-week-12-bills-dj-moore-not-included-three-starters-added-chiefs",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "Despite not practicing on Monday, the Buffalo Bills issued their first official injury report heading into the Thanksgiving night matchup against the Kansas City Chiefs.",
+      "categories": [],
+      "published_at": "2026-11-24T14:14:23+00:00",
+      "players": [
+        {
+          "id": "00-0034827",
+          "name": "DJ Moore",
+          "team": "BUF",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "5e10471db0f528a5b1ba",
+      "headline": "Steelers Have Max Hurleman Decision to Make",
+      "url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-max-hurleman-decision-make",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "The Pittsburgh Steelers may need to create three roster spots. How they do it is a mystery.",
+      "categories": [],
+      "published_at": "2026-11-24T14:00:02+00:00",
+      "players": [
+        {
+          "id": "00-0040618",
+          "name": "Max Hurleman",
+          "team": "PIT",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "6f8ea7463131f42fffa1",
+      "headline": "Jake Ferguson, Tyler Goodson Injury Updates Trending in Right Direction",
+      "url": "https://www.si.com/nfl/cowboys/onsi/jake-ferguson-tyler-goodson-injury-updates-trending-right-direction",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DAL"
+      ],
+      "feed_description": "Two key members of the Dallas Cowboys offense are making progress toward a return to the field.",
+      "categories": [],
+      "published_at": "2026-11-24T13:45:00+00:00",
+      "players": [
+        {
+          "id": "00-0038041",
+          "name": "Jake Ferguson",
+          "team": "DAL",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "197744c98c5d38ecfd42",
       "headline": "Joe Brady Subtly Targets Four Players Who Could Help Bills During Playoff Push",
@@ -622,6 +685,36 @@
           "id": "00-0041056",
           "name": "Cade Klubnik",
           "team": "NYJ",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "f954cba7d087c0624b32",
+      "headline": "Behren Morton embracing elevation to Patriots\u2019 No. 2 quarterback",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/145097/behren-morton-backup-quarterback-tommy-devito",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "Behren Morton\u2019s first NFL season has mostly taken place in the shadows so far. The seventh-round rookie has served as the the New England Patriots\u2019 third-string quarterback throughout the season, seeing no game action and only dressing as an emergency option on game day. That is bound to change. With starter Drake Maye expected to [\u2026]",
+      "categories": [
+        "New England Patriots First Read",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-11-24T11:15:19+00:00",
+      "players": [
+        {
+          "id": "00-0039851",
+          "name": "Drake Maye",
+          "team": "NE",
+          "position": "QB"
+        },
+        {
+          "id": "00-0041123",
+          "name": "Behren Morton",
+          "team": "NE",
           "position": "QB"
         }
       ]
@@ -3796,98 +3889,6 @@
       "categories": [],
       "published_at": "2026-11-21T14:00:04+00:00",
       "players": []
-    },
-    {
-      "id": "b3d5d2a366af23e3f33d",
-      "headline": "Miami Dolphins news: Week 11 injury report includes Aaron Brewer update",
-      "url": "https://www.thephinsider.com/miami-dolphins-news/125139/miami-dolphins-news-week-11-injury-report-includes-aaron-brewer-update",
-      "source_id": "news_sbn_mia",
-      "source": "The Phinsider (SB Nation)",
-      "teams": [
-        "MIA"
-      ],
-      "feed_description": "The Miami Dolphins will be without punter Bradley Pinoin on Sunday as they face the Buffalo Bills. Pinion has a right groin injury and missed practice all week before being ruled out on Friday\u2019s injury report. Miami signed punter Jack Browning to the practice squad this week and is expected to elevate him to the [\u2026]",
-      "categories": [
-        "Miami Dolphins News",
-        "The Splash Zone"
-      ],
-      "published_at": "2026-11-21T13:19:13+00:00",
-      "players": []
-    },
-    {
-      "id": "434a9c141dff3894f34f",
-      "headline": "Giants Mailbag: Possible Cap Casualties, Return-Man Worries and O-Line Questions",
-      "url": "https://www.si.com/nfl/giants/onsi/giants-mailbag-cap-casualties-gipson-offensive-line-01m7t3hhns5y",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NYG"
-      ],
-      "feed_description": "Readers ask which contracts could go in the offseason, how much confidence to have in Xavier Gipson and why the offensive line has been less consistent.",
-      "categories": [],
-      "published_at": "2026-11-21T13:00:03+00:00",
-      "players": [
-        {
-          "id": "00-0038496",
-          "name": "Xavier Gipson",
-          "team": "NYG",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "43e0ef502d4d12434275",
-      "headline": "Commanders News: Jayden Daniels Could Lose Two More Weapons Before Bengals Game | Burgundy Roundup",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-burks-white-bengals",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Commanders injury updates on Treylon Burks and Rachaad White, plus David Blough\u2019s run-game concerns and Daronte Jones\u2019 plan for Joe Burrow.",
-      "categories": [],
-      "published_at": "2026-11-21T12:52:58+00:00",
-      "players": [
-        {
-          "id": "00-0037256",
-          "name": "Rachaad White",
-          "team": "WAS",
-          "position": "RB"
-        },
-        {
-          "id": "00-0037742",
-          "name": "Treylon Burks",
-          "team": "WAS",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039910",
-          "name": "Jayden Daniels",
-          "team": "WAS",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "e6f42acd907b3559fb15",
-      "headline": "Chicago Bears and New Orleans Saints: Who Wins and Why for Week 11",
-      "url": "https://www.si.com/nfl/bears/onsi/chicago-bears-and-new-orleans-saints-who-wins-and-why-for-week-11",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "A comparison of the positional groups in Sunday's game between the Bears and Saints with a final prediction on the outcome as Kyle Monangai returns for Chicago.",
-      "categories": [],
-      "published_at": "2026-11-21T12:08:19+00:00",
-      "players": [
-        {
-          "id": "00-0040236",
-          "name": "Kyle Monangai",
-          "team": "CHI",
-          "position": "RB"
-        }
-      ]
     }
   ]
 }
