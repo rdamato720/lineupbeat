@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T01:00:56.258062+00:00",
+  "updated_at": "2026-11-25T01:36:42.723007+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-25T00:45:22+00:00",
+      "latest_entry_at": "2026-11-25T01:36:37+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-25T00:31:16+00:00",
+      "latest_entry_at": "2026-11-25T01:08:36+00:00",
       "stale": false
     },
     {
@@ -110,7 +110,7 @@
       "ok": true,
       "eligible": 7,
       "error": "",
-      "latest_entry_at": "2026-11-24T22:54:00+00:00",
+      "latest_entry_at": "2026-11-25T01:09:34+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-24T23:34:49+00:00",
+      "latest_entry_at": "2026-11-25T01:14:26+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-25T00:45:22+00:00",
+      "latest_entry_at": "2026-11-25T01:36:37+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-25T00:31:16+00:00",
+      "latest_entry_at": "2026-11-25T01:08:36+00:00",
       "stale": false
     },
     {
@@ -444,9 +444,9 @@
     {
       "source_id": "news_sbn_phi",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T23:16:02+00:00",
+      "latest_entry_at": "2026-11-24T21:21:16+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-24T23:30:00+00:00",
+      "latest_entry_at": "2026-11-25T01:00:00+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T21:39:12+00:00",
+      "latest_entry_at": "2026-11-24T19:22:58+00:00",
       "stale": false
     },
     {
@@ -532,9 +532,9 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T22:29:28+00:00",
+      "latest_entry_at": "2026-11-24T20:44:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,33 @@
     }
   ],
   "items": [
+    {
+      "id": "62ca77c1ef155bc26a3c",
+      "headline": "Rams Have Let Confidence Turn Into Arrogance at Wide Receiver",
+      "url": "https://www.si.com/nfl/rams/onsi/rams-wide-receiver-depth-overconfidence-sean-mcvay",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "Despite injuries to Puka Nacua and Davante Adams, the Los Angeles Rams continue to ignore their need at wide receiver. Has confidence turned into arrogance?",
+      "categories": [],
+      "published_at": "2026-11-25T01:21:36+00:00",
+      "players": [
+        {
+          "id": "00-0031381",
+          "name": "Davante Adams",
+          "team": "LAR",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039075",
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "a0cd79a88351ae78a4eb",
       "headline": "Jayden Daniels sends Commanders a clear message about his long-term future with clutch performance against Bengals",
@@ -3876,29 +3903,6 @@
           "id": "00-0039075",
           "name": "Puka Nacua",
           "team": "LAR",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "87dc4812197996de11f4",
-      "headline": "Jets elevate veteran wide receiver ahead of Chargers game",
-      "url": "https://www.ganggreennation.com/new-york-jets-news/98780/jets-elevate-veteran-wide-receiver-ahead-of-chargers-game",
-      "source_id": "news_sbn_nyj",
-      "source": "Gang Green Nation (SB Nation)",
-      "teams": [
-        "NYJ"
-      ],
-      "feed_description": "The New York Jets activated veteran wide receiver Sterling Shepard from the practice squad ahead of their game against the Los Angeles Chargers. Rookie receiver Omar Cooper Jr. is out for today\u2019s game with an ankle injury, leaving the Jets short at wide receiver. Sterling Shepard is a 33 year old, 5\u2019 10\u201d, 195 pound [\u2026]",
-      "categories": [
-        "New York Jets News"
-      ],
-      "published_at": "2026-11-22T15:37:45+00:00",
-      "players": [
-        {
-          "id": "00-0041511",
-          "name": "Omar Cooper",
-          "team": "NYJ",
           "position": "WR"
         }
       ]
