@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T05:00:53.257139+00:00",
+  "updated_at": "2026-11-25T10:30:05.533131+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-25T04:38:17+00:00",
+      "latest_entry_at": "2026-11-25T09:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-25T02:07:43+00:00",
+      "latest_entry_at": "2026-11-25T10:00:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-25T04:38:17+00:00",
+      "latest_entry_at": "2026-11-25T09:00:00+00:00",
       "stale": false
     },
     {
@@ -316,9 +316,9 @@
     {
       "source_id": "news_sbn_ne",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-24T18:29:34+00:00",
+      "latest_entry_at": "2026-11-25T10:00:00+00:00",
       "stale": false
     },
     {
@@ -356,9 +356,9 @@
     {
       "source_id": "news_sbn_pit",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-25T03:58:04+00:00",
+      "latest_entry_at": "2026-11-25T04:23:40+00:00",
       "stale": false
     },
     {
@@ -372,9 +372,9 @@
     {
       "source_id": "news_sbn_ind",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-24T20:57:35+00:00",
+      "latest_entry_at": "2026-11-25T03:19:56+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T23:02:49+00:00",
+      "latest_entry_at": "2026-11-25T10:00:00+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-25T00:39:43+00:00",
+      "latest_entry_at": "2026-11-25T07:08:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-24T23:40:54+00:00",
+      "latest_entry_at": "2026-11-25T10:00:00+00:00",
       "stale": false
     },
     {
@@ -550,11 +550,64 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T21:03:32+00:00",
+      "latest_entry_at": "2026-11-25T05:23:50+00:00",
       "stale": false
     }
   ],
   "items": [
+    {
+      "id": "39e47b1bccfecc7876ab",
+      "headline": "Patriots practice update: 2 new absentees before Chargers game",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/145154/patriots-practice-update-2-new-absentees-chargers-game",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots were back on the practice fields on Tuesday for their second practice leading up to their Week 12 game against the Los Angeles Chargers. Like the previous day, the team of head coach. Mike Vrabel did not enjoy perfect attendance. For a second straight session, quarterback Drake Maye (fibula fracture), wide [\u2026]",
+      "categories": [
+        "New England Patriots Injuries",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-11-25T09:31:52+00:00",
+      "players": [
+        {
+          "id": "00-0039851",
+          "name": "Drake Maye",
+          "team": "NE",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "4f2bd374ec22cc632a28",
+      "headline": "Steelers bench Aaron Rodgers, name Mason Rudolph starting QB vs. Broncos",
+      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-news/178499/steelers-bench-aaron-rodgers-name-mason-rudolph-starting-qb-vs-broncos",
+      "source_id": "news_sbn_pit",
+      "source": "Behind the Steel Curtain (SB Nation)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "The Pittsburgh Steelers have named Mason Rudolph the starting quarterback vs. the Denver Broncos in their Week 12 game on Black Friday, the team announced in a statement Tuesday night. The Steelers\u2019 passing game took a massive step backward over the last two weeks, with Aaron Rodgers\u2019 play actively hurting the offense. In that span, [\u2026]",
+      "categories": [
+        "Pittsburgh Steelers News"
+      ],
+      "published_at": "2026-11-25T04:23:40+00:00",
+      "players": [
+        {
+          "id": "00-0023459",
+          "name": "Aaron Rodgers",
+          "team": "PIT",
+          "position": "QB"
+        },
+        {
+          "id": "00-0034771",
+          "name": "Mason Rudolph",
+          "team": "PIT",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "2142924d4bd72b58b93d",
       "headline": "Steelers Bench Aaron Rodgers, Name Mason Rudolph Starting QB",
@@ -599,6 +652,35 @@
           "id": "00-0034869",
           "name": "Sam Darnold",
           "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "6979d41e830844c31b30",
+      "headline": "Colts coaches weigh in on Anthony Richardson\u2019s abrupt return to the starting lineup",
+      "url": "https://www.stampedeblue.com/indianapolis-colts-news/130419/colts-coaches-weigh-in-on-anthony-richardsons-abrupt-return-to-the-starting-lineup",
+      "source_id": "news_sbn_ind",
+      "source": "Stampede Blue (SB Nation)",
+      "teams": [
+        "IND"
+      ],
+      "feed_description": "After the surprising release of starting quarterback Daniel Jones, Indianapolis Colts quarterback Anthony Richardson Sr. now receives one last opportunity to prove he\u2019s a viable QB1 for the franchise going forward. As long as he can stay healthy, he projects to start these dismantled 3-8 Colts\u2019 final six games down the stretch of the 2026 [\u2026]",
+      "categories": [
+        "Indianapolis Colts News"
+      ],
+      "published_at": "2026-11-25T03:19:56+00:00",
+      "players": [
+        {
+          "id": "00-0035710",
+          "name": "Daniel Jones",
+          "team": "IND",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039164",
+          "name": "Anthony Richardson",
+          "team": "IND",
           "position": "QB"
         }
       ]
@@ -3844,68 +3926,6 @@
           "id": "00-0034855",
           "name": "Baker Mayfield",
           "team": "TB",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "cfac8df75cdc3b9c1919",
-      "headline": "Is Ladd McConkey Playing Today? Jets vs. Chargers Updates for Week 11",
-      "url": "https://www.si.com/nfl/chargers/onsi/ladd-mcconkey-playing-today-jets-chargers-updates-week-11",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAC"
-      ],
-      "feed_description": "Ladd McConkey injury and overall fantasy football analysis for Jets vs. Chargers.",
-      "categories": [],
-      "published_at": "2026-11-22T16:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0039915",
-          "name": "Ladd McConkey",
-          "team": "LAC",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "60889fe4d61f23cb66fd",
-      "headline": "Steelers inactives for Week 11 vs. Eagles",
-      "url": "https://www.steelers.com/news/steelers-inactives-for-week-11-vs-eagles",
-      "source_id": "news_official_pit",
-      "source": "Pittsburgh Steelers (official)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "Find out who won't play today as the Steelers take on the Eagles at Lincoln Financial Field",
-      "categories": [
-        "Inactives",
-        "UPMC",
-        "Featured",
-        "Sights and Sounds",
-        "Pittsburgh Steelers at Philadelphia Eagles (2026-REG-11)"
-      ],
-      "published_at": "2026-11-22T16:30:00+00:00",
-      "players": []
-    },
-    {
-      "id": "6057e369f586bf14b35f",
-      "headline": "Drake Maye's Initial Injury Timeline Gives Patriots Reason for Optimism",
-      "url": "https://www.si.com/nfl/patriots/onsi/drake-maye-s-initial-injury-timeline-gives-patriots-reason-for-optimism",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots quarterback could realistically return this season.",
-      "categories": [],
-      "published_at": "2026-11-22T16:16:26+00:00",
-      "players": [
-        {
-          "id": "00-0039851",
-          "name": "Drake Maye",
-          "team": "NE",
           "position": "QB"
         }
       ]
