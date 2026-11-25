@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T03:00:56.186144+00:00",
+  "updated_at": "2026-11-25T05:00:53.257139+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-25T02:47:09+00:00",
+      "latest_entry_at": "2026-11-25T04:38:17+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-25T02:43:53+00:00",
+      "latest_entry_at": "2026-11-25T04:49:17+00:00",
       "stale": false
     },
     {
@@ -182,7 +182,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-25T00:00:00+00:00",
+      "latest_entry_at": "2026-11-25T03:59:04+00:00",
       "stale": false
     },
     {
@@ -212,9 +212,9 @@
     {
       "source_id": "news_official_no",
       "ok": true,
-      "eligible": 2,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T17:12:04+00:00",
+      "latest_entry_at": "2026-11-25T03:31:01+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T23:04:44+00:00",
+      "latest_entry_at": "2026-11-25T04:10:00+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-25T02:47:09+00:00",
+      "latest_entry_at": "2026-11-25T04:38:17+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-25T02:43:53+00:00",
+      "latest_entry_at": "2026-11-25T04:49:17+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-25T00:04:30+00:00",
+      "latest_entry_at": "2026-11-25T03:58:04+00:00",
       "stale": false
     },
     {
@@ -398,7 +398,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-25T00:11:57+00:00",
+      "latest_entry_at": "2026-11-25T04:33:12+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-25T02:00:00+00:00",
+      "latest_entry_at": "2026-11-25T03:35:42+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-24T20:27:11+00:00",
+      "latest_entry_at": "2026-11-24T20:49:45+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,54 @@
     }
   ],
   "items": [
+    {
+      "id": "2142924d4bd72b58b93d",
+      "headline": "Steelers Bench Aaron Rodgers, Name Mason Rudolph Starting QB",
+      "url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-bench-aaron-rodgers-mason-rudolph-starting-quarterback",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "The Pittsburgh Steelers announced a stunning decision at quarterback, benching Aaron Rodgers while naming Mason Rudolph the starter in Week 12 against the Denver Broncos.",
+      "categories": [],
+      "published_at": "2026-11-25T04:21:56+00:00",
+      "players": [
+        {
+          "id": "00-0023459",
+          "name": "Aaron Rodgers",
+          "team": "PIT",
+          "position": "QB"
+        },
+        {
+          "id": "00-0034771",
+          "name": "Mason Rudolph",
+          "team": "PIT",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "74ded5da6eb6cf91e352",
+      "headline": "Sam Darnold Injury Update Has Seahawks Keeping 49ers in the Dark",
+      "url": "https://www.si.com/nfl/seahawks/onsi/sam-darnold-injury-update-has-seahawks-keeping-49ers-in-the-dark",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks are getting ready for their Week 12 matchup against the San Francisco 49ers.",
+      "categories": [],
+      "published_at": "2026-11-25T03:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "62ca77c1ef155bc26a3c",
       "headline": "Rams Have Let Confidence Turn Into Arrogance at Wide Receiver",
@@ -3859,51 +3907,6 @@
           "name": "Drake Maye",
           "team": "NE",
           "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "d44bfb0258f2b0c4c645",
-      "headline": "Should the Cardinals bring in Daniel Jones with Carson Beck injured?",
-      "url": "https://arizonasports.com/nfl/arizona-cardinals/should-the-cardinals-bring-in-daniel-jones-with-carson-beck-injured",
-      "source_id": "arizona_sports_tyler_drake",
-      "source": "Arizona Sports",
-      "teams": [
-        "ARI"
-      ],
-      "feed_description": "The Arizona Cardinals are on a short list of teams that could reportedly look into signing Daniel Jones once he clears waivers on Monday.",
-      "categories": [
-        "Arizona Cardinals",
-        "Newsletters for RSS"
-      ],
-      "published_at": "2026-11-22T16:02:15+00:00",
-      "players": [
-        {
-          "id": "00-0041561",
-          "name": "Carson Beck",
-          "team": "ARI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "d7cc4b68fcd394227d07",
-      "headline": "Rams Sunday Morning Notebook: Puka Nacua Controversy, Kobie Turner's Return From Injury, and More",
-      "url": "https://www.si.com/nfl/rams/onsi/rams-puka-nacua-controversy-kobie-turner-return",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "LAR"
-      ],
-      "feed_description": "The Rams face more questions surrounding Puka Nacua's season-ending surgery, while Kobie Turner and Justin Dedich prepare to return against the Packers.",
-      "categories": [],
-      "published_at": "2026-11-22T15:47:11+00:00",
-      "players": [
-        {
-          "id": "00-0039075",
-          "name": "Puka Nacua",
-          "team": "LAR",
-          "position": "WR"
         }
       ]
     }
