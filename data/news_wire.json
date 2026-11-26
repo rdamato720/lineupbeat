@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-26T05:00:55.311898+00:00",
+  "updated_at": "2026-11-26T11:01:01.395481+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-26T01:15:57+00:00",
+      "latest_entry_at": "2026-11-26T04:08:36+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-26T05:00:00+00:00",
+      "latest_entry_at": "2026-11-26T10:03:19+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-26T04:30:42+00:00",
+      "latest_entry_at": "2026-11-26T11:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-26T00:42:52+00:00",
+      "latest_entry_at": "2026-11-26T10:00:00+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-26T04:00:00+00:00",
+      "latest_entry_at": "2026-11-26T06:35:00+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-26T04:32:04+00:00",
+      "latest_entry_at": "2026-11-26T07:27:52+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-25T21:00:20+00:00",
+      "latest_entry_at": "2026-11-26T05:30:00+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-26T05:00:00+00:00",
+      "latest_entry_at": "2026-11-26T10:03:19+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-26T04:30:42+00:00",
+      "latest_entry_at": "2026-11-26T11:00:00+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-26T00:30:00+00:00",
+      "latest_entry_at": "2026-11-26T07:31:38+00:00",
       "stale": false
     },
     {
@@ -462,7 +462,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-26T01:14:10+00:00",
+      "latest_entry_at": "2026-11-26T06:00:00+00:00",
       "stale": false
     },
     {
@@ -476,9 +476,9 @@
     {
       "source_id": "news_sbn_gb",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-26T04:43:15+00:00",
+      "latest_entry_at": "2026-11-26T05:13:43+00:00",
       "stale": false
     },
     {
@@ -532,17 +532,17 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-26T00:30:00+00:00",
+      "latest_entry_at": "2026-11-26T07:26:11+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-26T01:01:00+00:00",
+      "latest_entry_at": "2026-11-26T10:13:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,54 @@
     }
   ],
   "items": [
+    {
+      "id": "d22ca4702e8d09629e27",
+      "headline": "49ers News: Thankful for this team",
+      "url": "https://www.ninersnation.com/san-francisco-49ers-news/166319/49ers-news-thanksgiving-brock-purdy-mac-jones-nick-bosa",
+      "source_id": "news_sbn_sf",
+      "source": "Niners Nation (SB Nation)",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "49ers QB Brock Purdy has ankle injury, sits out practice Wednesday\u201cA review of the game showed that Purdy had his foot and ankles spatted (athletic taped wrapped over a player\u2019s sock and cleat over the ankle to add extra support) for the final two quarters.\u201d 49ers activate veteran cornerback from the IR; Brandin Cook joins [\u2026]",
+      "categories": [
+        "Golden Nuggets: San Francisco 49ers daily news roundup",
+        "San Francisco 49ers News"
+      ],
+      "published_at": "2026-11-26T10:13:00+00:00",
+      "players": [
+        {
+          "id": "00-0037834",
+          "name": "Brock Purdy",
+          "team": "SF",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "7c4d2acac212c0db8d46",
+      "headline": "Packers Snap Counts: Micah Parsons played less than 40 percent of snaps",
+      "url": "https://www.acmepackingcompany.com/green-bay-packers-roster/90194/packers-snap-counts-micah-parsons-played-less-than-40-percent-of-snaps",
+      "source_id": "news_sbn_gb",
+      "source": "Acme Packing Company (SB Nation)",
+      "teams": [
+        "GB"
+      ],
+      "feed_description": "Micah Parsons made his 2026 debut tonight, and he was certainly on a pitch count. Let\u2019s take a look at every player who saw action (or didn\u2019t) in the Green Bay Packers\u2019 26-13 loss to the Los Angeles Rams tonight. As a reminder, the scratches today were running back Josh Jacobs (finger), linebacker Ziare Franklin [\u2026]",
+      "categories": [
+        "Green Bay Packers depth chart",
+        "Green Bay Packers roster"
+      ],
+      "published_at": "2026-11-26T05:13:43+00:00",
+      "players": [
+        {
+          "id": "00-0035700",
+          "name": "Josh Jacobs",
+          "team": "GB",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "70c79478d2408fe6ca8e",
       "headline": "Bills' Final Week 12 Injury Report: Dalton Kincaid One of Four Starters Questionable vs. Chiefs",
@@ -3831,41 +3879,6 @@
       "feed_description": "Packers star Micah Parsons has been cleared to play against the Rams, the decision coming 49 weeks after he suffered a season-ending knee injury.",
       "categories": [],
       "published_at": "2026-11-23T23:52:46+00:00",
-      "players": []
-    },
-    {
-      "id": "0699c4978c8454937935",
-      "headline": "Washington Commanders vs. Cincinnati Bengals inactives in NFL Week 11",
-      "url": "https://www.hogshaven.com/washington-commanders-injuries/456074/washington-commanders-vs-cincinnati-bengals-inactives-in-nfl-week-11",
-      "source_id": "news_sbn_was",
-      "source": "Hogs Haven (SB Nation)",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "The Washington Commanders released their final injury report for Monday night\u2019s game against the Bengals on Saturday and then made several roster moves earlier in today ahead of the game. The Commanders didn\u2019t elevate anyone from the practice squad for tonight\u2019s game. Instead they activated RB Bill Croskey-Merritt from injured reserve. He had missed the [\u2026]",
-      "categories": [
-        "Washington Commanders Injuries"
-      ],
-      "published_at": "2026-11-23T23:47:53+00:00",
-      "players": []
-    },
-    {
-      "id": "6025e0bdff106d3f5a3e",
-      "headline": "Bengals-Commanders Inactives: Five Cincinnati Players Out for Week 11 Against Commanders",
-      "url": "https://www.bengals.com/news/bengals-commanders-inactives-week-11-2026-monday-night-football",
-      "source_id": "news_official_cin",
-      "source": "Cincinnati Bengals (official)",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "The Bengals announced five inactive players for their Week 11 game against the Commanders. See Cincinnati and Washington's full inactive list.",
-      "categories": [
-        "latest news",
-        "centerpiece",
-        "Injury Report",
-        "Cincinnati Bengals at Washington Commanders (2026-REG-11)"
-      ],
-      "published_at": "2026-11-23T23:45:09+00:00",
       "players": []
     }
   ]
