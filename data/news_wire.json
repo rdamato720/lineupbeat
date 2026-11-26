@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-26T03:00:39.316292+00:00",
+  "updated_at": "2026-11-26T05:00:55.311898+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-26T00:25:07+00:00",
+      "latest_entry_at": "2026-11-26T01:15:57+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-26T02:45:49+00:00",
+      "latest_entry_at": "2026-11-26T05:00:00+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-26T01:51:14+00:00",
+      "latest_entry_at": "2026-11-26T04:30:42+00:00",
       "stale": false
     },
     {
@@ -126,7 +126,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-26T05:00:00+00:00",
+      "latest_entry_at": "2026-11-26T04:00:00+00:00",
       "stale": false
     },
     {
@@ -174,7 +174,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-25T23:54:59+00:00",
+      "latest_entry_at": "2026-11-26T04:32:04+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-26T02:45:49+00:00",
+      "latest_entry_at": "2026-11-26T05:00:00+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-26T01:51:14+00:00",
+      "latest_entry_at": "2026-11-26T04:30:42+00:00",
       "stale": false
     },
     {
@@ -310,7 +310,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-25T20:00:00+00:00",
+      "latest_entry_at": "2026-11-26T00:00:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-26T02:00:00+00:00",
+      "latest_entry_at": "2026-11-26T03:00:00+00:00",
       "stale": false
     },
     {
@@ -478,15 +478,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-26T02:53:38+00:00",
+      "latest_entry_at": "2026-11-26T04:43:15+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_min",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-25T21:44:10+00:00",
+      "latest_entry_at": "2026-11-26T02:14:54+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-25T19:52:44+00:00",
+      "latest_entry_at": "2026-11-26T01:01:00+00:00",
       "stale": false
     },
     {
@@ -550,15 +550,81 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-26T02:19:59+00:00",
+      "latest_entry_at": "2026-11-26T04:30:52+00:00",
       "stale": false
     }
   ],
   "items": [
     {
+      "id": "70c79478d2408fe6ca8e",
+      "headline": "Bills' Final Week 12 Injury Report: Dalton Kincaid One of Four Starters Questionable vs. Chiefs",
+      "url": "https://www.si.com/nfl/bills/onsi/injury-report-week-12-bills-final-dalton-kincaid-one-of-four-starters-questionable-vs-chiefs",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills could be without as many as four starters when they host the Kansas City Chiefs on November 26 in Orchard Park.",
+      "categories": [],
+      "published_at": "2026-11-26T04:00:39+00:00",
+      "players": [
+        {
+          "id": "00-0038933",
+          "name": "Dalton Kincaid",
+          "team": "BUF",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "1b59558fbaa691710bff",
+      "headline": "Ravens Waive Struggling Return Specialist LaJohntay Wester After Final Straw",
+      "url": "https://www.si.com/nfl/ravens/onsi/ravens-waive-struggling-return-specialist-lajohntay-wester-after-final-straw-01m89zt0bjcr",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "BAL"
+      ],
+      "feed_description": "The Baltimore Ravens moved on from the underwhelming second-year pro after a pair of costly mistakes committed in their most recent loss.",
+      "categories": [],
+      "published_at": "2026-11-26T03:11:51+00:00",
+      "players": [
+        {
+          "id": "00-0040075",
+          "name": "LaJohntay Wester",
+          "team": "BAL",
+          "position": "WR"
+        }
+      ]
+    },
+    {
       "id": "3320e768c633c199381e",
       "headline": "Seahawks-49ers Wednesday injury report: Sam Darnold practices in full",
       "url": "https://www.fieldgulls.com/seattle-seahawks-news/180756/seahawks-49ers-wednesday-injury-report-sam-darnold-practices-full",
+      "source_id": "news_sbn_sea",
+      "source": "Field Gulls (SB Nation)",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "Coming off two consecutive wins and their bye, there\u2019s plenty working in favor of the Seattle Seahawks as they head into a pivotal matchup against the NFC-leading San Francisco 49ers on Sunday, but Wednesday\u2019s injury report wasn\u2019t exactly promising. Seahawks Nov. 25 practice report Did not participate: Limited participant: Full participant With the status of [\u2026]",
+      "categories": [
+        "Seattle Seahawks Injuries",
+        "Seattle Seahawks News"
+      ],
+      "published_at": "2026-11-26T02:19:59+00:00",
+      "players": [
+        {
+          "id": "00-0034869",
+          "name": "Sam Darnold",
+          "team": "SEA",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "1427d4b2e24abbc9d2db",
+      "headline": "Seahawks-49ers Wednesday injury report: Sam Darnold practices in full",
+      "url": "https://www.fieldgulls.com/seattle-seahawks-news/180756/seahawks-49ers-wednesday-injury-report-sam-darnold-practices-in-full",
       "source_id": "news_sbn_sea",
       "source": "Field Gulls (SB Nation)",
       "teams": [
@@ -3801,73 +3867,6 @@
       ],
       "published_at": "2026-11-23T23:45:09+00:00",
       "players": []
-    },
-    {
-      "id": "c67f66f1d57da4ea9e72",
-      "headline": "Kansas City Chiefs\u2019 first injury report for Week 12 vs. Buffalo Bills isn\u2019t good news for 2 starters, but puts another on track to return",
-      "url": "https://atozsports.com/nfl/kansas-city-chiefs-news/chiefs-first-injury-report-week-12-bills/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs released their first injury report for their Week 12 game against the Buffalo Bills on Thanksgiving. It looks like two offensive starters could miss the game.",
-      "categories": [
-        "Kansas City Chiefs News",
-        "Chiefs Injuries",
-        "Kansas City Chiefs",
-        "Mansoor Delane",
-        "Omarr Norman-Lott",
-        "Patrick Mahomes",
-        "Peter Woods",
-        "Xavier Worthy"
-      ],
-      "published_at": "2026-11-23T23:38:41+00:00",
-      "players": []
-    },
-    {
-      "id": "d181941586946624015d",
-      "headline": "Commanders vs. Bengals Live Updates: Score, Highlights, Inactives for Monday Night Football",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-vs-bengals-live-updates-score-highlights-mnf-week-11",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Follow Commanders vs. Bengals live updates, official inactives, score, highlights, and injury news as Jayden Daniels faces Joe Burrow on Monday Night Football.",
-      "categories": [],
-      "published_at": "2026-11-23T23:33:48+00:00",
-      "players": [
-        {
-          "id": "00-0039910",
-          "name": "Jayden Daniels",
-          "team": "WAS",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "178c2258ba5b440e527c",
-      "headline": "Cowboys injuries: Dak Prescott (hand) full participant Monday",
-      "url": "https://www.bloggingtheboys.com/dallas-cowboys-injuries/227931/dak-prescott-hand-full-participant-dee-winters-knee",
-      "source_id": "news_sbn_dal",
-      "source": "Blogging The Boys (SB Nation)",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "Food, family, and of course, football. The Dallas Cowboys play on Thanksgiving Day this year 59th time in their history, and for just third time will play the Philadelphia Eagles on the holiday. This game carries extra intrigue as Joe Milton is coming back to Dallas to face his former team. Milton led the Eagles [\u2026]",
-      "categories": [
-        "Dallas Cowboys Injuries"
-      ],
-      "published_at": "2026-11-23T23:05:13+00:00",
-      "players": [
-        {
-          "id": "00-0033077",
-          "name": "Dak Prescott",
-          "team": "DAL",
-          "position": "QB"
-        }
-      ]
     }
   ]
 }
