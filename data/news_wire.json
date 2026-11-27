@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T05:00:52.083618+00:00",
+  "updated_at": "2026-11-27T11:00:57.822425+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T04:45:10+00:00",
+      "latest_entry_at": "2026-11-27T11:00:02+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T04:43:46+00:00",
+      "latest_entry_at": "2026-11-27T11:00:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T04:25:01+00:00",
+      "latest_entry_at": "2026-11-27T10:00:00+00:00",
       "stale": false
     },
     {
@@ -68,9 +68,9 @@
     {
       "source_id": "news_official_buf",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-27T00:30:00+00:00",
+      "latest_entry_at": "2026-11-27T06:59:40+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-27T04:15:00+00:00",
+      "latest_entry_at": "2026-11-27T06:00:32+00:00",
       "stale": false
     },
     {
@@ -284,17 +284,17 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 5,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-27T04:45:10+00:00",
+      "latest_entry_at": "2026-11-27T11:00:02+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-27T04:43:46+00:00",
+      "latest_entry_at": "2026-11-27T11:00:00+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-27T04:36:45+00:00",
+      "latest_entry_at": "2026-11-27T05:48:06+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-27T04:45:00+00:00",
+      "latest_entry_at": "2026-11-27T05:45:00+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-27T00:54:06+00:00",
+      "latest_entry_at": "2026-11-27T05:57:49+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-27T00:27:51+00:00",
+      "latest_entry_at": "2026-11-27T06:40:00+00:00",
       "stale": false
     },
     {
@@ -542,7 +542,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-26T22:18:46+00:00",
+      "latest_entry_at": "2026-11-27T10:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,103 @@
     }
   ],
   "items": [
+    {
+      "id": "4d23ec0de37ee375a5e1",
+      "headline": "Chiefs Sound Off on Controversial Reversal of Rashee Rice Catch vs. Bills",
+      "url": "https://www.si.com/nfl/chiefs/onsi/chiefs-sound-off-controversial-reversal-rashee-rice-catch-vs-bills",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "While the Chiefs had bigger problems than WR Rashee Rice's catch being overturned on Thanksgiving, KC still thinks the third-down call was questionable at best.",
+      "categories": [],
+      "published_at": "2026-11-27T05:54:10+00:00",
+      "players": [
+        {
+          "id": "00-0039067",
+          "name": "Rashee Rice",
+          "team": "KC",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "4c2ae9ea13e947f58910",
+      "headline": "4 winners and 2 losers from the Buffalo Bills\u2019 walkoff victory on Thanksgiving: James Cook carries the offense in bad weather",
+      "url": "https://atozsports.com/nfl/buffalo-bills-news/winners-losers-bills-chiefs-josh-allen-james-cook-joe-brady-tyler-bass/",
+      "source_id": "news_atoz_nfl",
+      "source": "A to Z Sports",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "The Buffalo Bills outlasted the Kansas City Chiefs in a soggy Thanksgiving night slugfest, and the game produced four winners and two losers, including a pair of names that almost never land on the wrong side.",
+      "categories": [
+        "Buffalo Bills News",
+        "NFL",
+        "American Football",
+        "Bills News",
+        "James Cook",
+        "Josh Allen",
+        "Wildcat"
+      ],
+      "published_at": "2026-11-27T05:21:29+00:00",
+      "players": [
+        {
+          "id": "00-0037248",
+          "name": "James Cook",
+          "team": "BUF",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "8969f321e841ce1734d9",
+      "headline": "Bills 13, Chiefs 10 | Final Score, recap + highlights",
+      "url": "https://www.buffalobills.com/news/bills-13-chiefs-10-final-score-recap-highlights",
+      "source_id": "news_official_buf",
+      "source": "Buffalo Bills (official)",
+      "teams": [
+        "BUF"
+      ],
+      "feed_description": "James Cook III has 32 carries for 117 yards and a touchdown on the ground. Cook\u2019s total was the most rushing yards any player has had against Kansas City this season,",
+      "categories": [
+        "GAME RECAP"
+      ],
+      "published_at": "2026-11-27T05:08:18+00:00",
+      "players": [
+        {
+          "id": "00-0037248",
+          "name": "James Cook",
+          "team": "BUF",
+          "position": "RB"
+        }
+      ]
+    },
+    {
+      "id": "52a088543cf2ec1f0d6f",
+      "headline": "Andy Reid gives 2 injury updates after loss to Bills",
+      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-news/217754/andy-reid-gives-2-injury-updates-after-loss-to-bills",
+      "source_id": "news_sbn_kc",
+      "source": "Arrowhead Pride (SB Nation)",
+      "teams": [
+        "KC"
+      ],
+      "feed_description": "The Kansas City Chiefs only officially ruled one player out of Thursday\u2019s sloppy 13-10 loss to the Buffalo Bills. Wide receiver Jalen Royals left the game with an ankle injury in the second half. The second-year pro was quickly ruled out. Then, in the fourth quarter, right guard Trey Smith was seen heading into the [\u2026]",
+      "categories": [
+        "Kansas City Chiefs Injuries",
+        "Kansas City Chiefs News"
+      ],
+      "published_at": "2026-11-27T05:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0040646",
+          "name": "Jalen Royals",
+          "team": "KC",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "04b6aa9b98ab1cde0849",
       "headline": "The Iceman Returns With Late Bears Rally and Winning TD to Rome Odunze",
@@ -3719,98 +3816,6 @@
       ],
       "published_at": "2026-11-25T15:00:00+00:00",
       "players": []
-    },
-    {
-      "id": "289d8b3aab5b0a39b3ee",
-      "headline": "Josh Downs and Cyrus Allen providing a boost to Chiefs\u2019 wide receiver corps",
-      "url": "https://www.arrowheadpride.com/kansas-city-chiefs-news/217574/josh-downs-cyrus-allen-providing-a-boost-chiefs-wide-receiver-corps",
-      "source_id": "news_sbn_kc",
-      "source": "Arrowhead Pride (SB Nation)",
-      "teams": [
-        "KC"
-      ],
-      "feed_description": "The Kansas City Chiefs landed wideout Josh Downs in a deal with the Indianapolis Colts just before the NFL\u2019s November 10 trade deadline expired. The move quickly paid dividends. In two games with his new team \u2014 while seeing only 28 total offensive snaps \u2014 Downs has racked up eight catches from quarterback Patrick Mahomes [\u2026]",
-      "categories": [
-        "Kansas City Chiefs News",
-        "Kansas City Chiefs Roster"
-      ],
-      "published_at": "2026-11-25T14:00:00+00:00",
-      "players": [
-        {
-          "id": "00-0033873",
-          "name": "Patrick Mahomes",
-          "team": "KC",
-          "position": "QB"
-        },
-        {
-          "id": "00-0040890",
-          "name": "Cyrus Allen",
-          "team": "KC",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "d70501fc926e66c22bbb",
-      "headline": "Bills' Updated Injury Report (Chiefs Week): Greg Rousseau, Two More Starters Upgraded",
-      "url": "https://www.si.com/nfl/bills/onsi/injury-report-week-12-bills-update-greg-rousseau-two-more-starters-upgraded",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "BUF"
-      ],
-      "feed_description": "Three injured Buffalo Bills' starters took steps toward becoming available for the Thanksgiving night primetime affair against the Kansas City Chiefs on NBC.",
-      "categories": [],
-      "published_at": "2026-11-25T13:45:25+00:00",
-      "players": []
-    },
-    {
-      "id": "1beb42584311558de0d6",
-      "headline": "Commanders News: Two Rookies, One Award, but Jayden Daniels Needs Better Snaps | Burgundy Roundup",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-rookies-daniels-center-snaps",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Antonio Williams and Drew Stevens earned Rookie of the Week nods after Washington\u2019s win. Dan Quinn also wants cleaner snaps for Jayden Daniels before Arizona.",
-      "categories": [],
-      "published_at": "2026-11-25T12:25:37+00:00",
-      "players": [
-        {
-          "id": "00-0039910",
-          "name": "Jayden Daniels",
-          "team": "WAS",
-          "position": "QB"
-        },
-        {
-          "id": "00-0041040",
-          "name": "Antonio Williams",
-          "team": "WAS",
-          "position": "WR"
-        }
-      ]
-    },
-    {
-      "id": "7b90e9fbb89f9c0dd434",
-      "headline": "Worst Quarterbacks To Ever Start Thanksgiving Game For Dallas Cowboys",
-      "url": "https://www.si.com/nfl/cowboys/onsi/worst-quarterbacks-ever-start-thanksgiving-game-dallas-cowboys",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "DAL"
-      ],
-      "feed_description": "Dak Prescott could be in for a huge day on Thursday for the Dallas Cowboys, but not every starter has been great on Thanksgiving Day.",
-      "categories": [],
-      "published_at": "2026-11-25T12:00:05+00:00",
-      "players": [
-        {
-          "id": "00-0033077",
-          "name": "Dak Prescott",
-          "team": "DAL",
-          "position": "QB"
-        }
-      ]
     }
   ]
 }
