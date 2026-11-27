@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T03:00:56.145586+00:00",
+  "updated_at": "2026-11-27T04:15:21.275414+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T02:53:56+00:00",
+      "latest_entry_at": "2026-11-27T03:40:12+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T02:30:19+00:00",
+      "latest_entry_at": "2026-11-27T03:28:03+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T02:20:46+00:00",
+      "latest_entry_at": "2026-11-27T03:08:45+00:00",
       "stale": false
     },
     {
@@ -284,9 +284,9 @@
     {
       "source_id": "news_si_nfl",
       "ok": true,
-      "eligible": 4,
+      "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-27T02:53:56+00:00",
+      "latest_entry_at": "2026-11-27T03:40:12+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T02:30:19+00:00",
+      "latest_entry_at": "2026-11-27T03:28:03+00:00",
       "stale": false
     },
     {
@@ -302,7 +302,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-27T00:00:00+00:00",
+      "latest_entry_at": "2026-11-27T03:53:11+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-26T23:01:23+00:00",
+      "latest_entry_at": "2026-11-27T03:28:30+00:00",
       "stale": false
     },
     {
@@ -380,9 +380,9 @@
     {
       "source_id": "news_sbn_jax",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-25T16:25:34+00:00",
+      "latest_entry_at": "2026-11-26T22:17:29+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T02:15:00+00:00",
+      "latest_entry_at": "2026-11-27T03:15:00+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-27T02:03:05+00:00",
+      "latest_entry_at": "2026-11-27T03:08:42+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,77 @@
     }
   ],
   "items": [
+    {
+      "id": "04b6aa9b98ab1cde0849",
+      "headline": "The Iceman Returns With Late Bears Rally and Winning TD to Rome Odunze",
+      "url": "https://www.si.com/nfl/bears/onsi/the-iceman-returns-with-late-bears-rally-and-winning-td-to-rome-odunze",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "Caleb Williams caps a 345-yard passing day with the game-winning, 68-yard drive and a TD pass after a day of double-digit Chicago deficits against the Lions.",
+      "categories": [],
+      "published_at": "2026-11-27T03:30:00+00:00",
+      "players": [
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        },
+        {
+          "id": "00-0039919",
+          "name": "Rome Odunze",
+          "team": "CHI",
+          "position": "WR"
+        }
+      ]
+    },
+    {
+      "id": "d51c2972e4499a7a2e9e",
+      "headline": "Mike Tomlin calls Steelers a \u2018dumpster fire\u2019 after Aaron Rodgers release",
+      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-news/178671/mike-tomlin-calls-steelers-a-dumpster-fire-after-aaron-rodgers-release",
+      "source_id": "news_sbn_pit",
+      "source": "Behind the Steel Curtain (SB Nation)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "The Pittsburgh Steelers have been in the headlines for all of the wrong reasons this week ahead of their Black Friday showdown with the Denver Broncos. Late Tuesday night, Aaron Rodgers was benched, which led to him going on the Pat McAfee Show and going scorched earth, making some wild accusations against Steelers head coach [\u2026]",
+      "categories": [
+        "Pittsburgh Steelers News"
+      ],
+      "published_at": "2026-11-27T03:28:30+00:00",
+      "players": [
+        {
+          "id": "00-0023459",
+          "name": "Aaron Rodgers",
+          "team": "PIT",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "9b6ce51ae512aac3b7c4",
+      "headline": "Broncos Address J.K. Dobbins Fallout With 11th-Hour Roster Moves",
+      "url": "https://www.si.com/nfl/broncos/onsi/broncos-address-j-k-dobbins-fallout-with-11th-hour-roster-moves",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "DEN"
+      ],
+      "feed_description": "The J.K. Dobbins suspension created a ripple effect ahead of the Broncos' Black Friday game against the Steelers.",
+      "categories": [],
+      "published_at": "2026-11-27T03:19:39+00:00",
+      "players": [
+        {
+          "id": "00-0036158",
+          "name": "J.K. Dobbins",
+          "team": "DEN",
+          "position": "RB"
+        }
+      ]
+    },
     {
       "id": "4cc9c905f4a86a988edb",
       "headline": "Bears Exhaling on Caleb Williams Scare, Bracing for Colston Loveland Injury News",
@@ -3737,80 +3808,6 @@
           "id": "00-0033077",
           "name": "Dak Prescott",
           "team": "DAL",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "9b378947aad3352af93b",
-      "headline": "Caleb Williams Attempts to Regain His Touch on a National Stage",
-      "url": "https://www.si.com/nfl/bears/onsi/caleb-williams-attempts-to-regain-his-touch-on-a-national-stage-01m87yf41pkj",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CHI"
-      ],
-      "feed_description": "After his strong start following a hamstring injury, Caleb Williams is slipping at the worst possible time, as Detroit looms in a Thanksgiving showdown.",
-      "categories": [],
-      "published_at": "2026-11-25T12:00:02+00:00",
-      "players": [
-        {
-          "id": "00-0039918",
-          "name": "Caleb Williams",
-          "team": "CHI",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "39e47b1bccfecc7876ab",
-      "headline": "Patriots practice update: 2 new absentees before Chargers game",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/145154/patriots-practice-update-2-new-absentees-chargers-game",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots were back on the practice fields on Tuesday for their second practice leading up to their Week 12 game against the Los Angeles Chargers. Like the previous day, the team of head coach. Mike Vrabel did not enjoy perfect attendance. For a second straight session, quarterback Drake Maye (fibula fracture), wide [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-11-25T09:31:52+00:00",
-      "players": [
-        {
-          "id": "00-0039851",
-          "name": "Drake Maye",
-          "team": "NE",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "4f2bd374ec22cc632a28",
-      "headline": "Steelers bench Aaron Rodgers, name Mason Rudolph starting QB vs. Broncos",
-      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-news/178499/steelers-bench-aaron-rodgers-name-mason-rudolph-starting-qb-vs-broncos",
-      "source_id": "news_sbn_pit",
-      "source": "Behind the Steel Curtain (SB Nation)",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "The Pittsburgh Steelers have named Mason Rudolph the starting quarterback vs. the Denver Broncos in their Week 12 game on Black Friday, the team announced in a statement Tuesday night. The Steelers\u2019 passing game took a massive step backward over the last two weeks, with Aaron Rodgers\u2019 play actively hurting the offense. In that span, [\u2026]",
-      "categories": [
-        "Pittsburgh Steelers News"
-      ],
-      "published_at": "2026-11-25T04:23:40+00:00",
-      "players": [
-        {
-          "id": "00-0023459",
-          "name": "Aaron Rodgers",
-          "team": "PIT",
-          "position": "QB"
-        },
-        {
-          "id": "00-0034771",
-          "name": "Mason Rudolph",
-          "team": "PIT",
           "position": "QB"
         }
       ]
