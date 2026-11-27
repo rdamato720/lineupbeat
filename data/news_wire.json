@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T22:42:30.543313+00:00",
+  "updated_at": "2026-11-27T23:00:48.997604+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T22:35:14+00:00",
+      "latest_entry_at": "2026-11-27T23:00:13+00:00",
       "stale": false
     },
     {
@@ -78,7 +78,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-27T20:30:28+00:00",
+      "latest_entry_at": "2026-11-27T22:42:22+00:00",
       "stale": false
     },
     {
@@ -244,9 +244,9 @@
     {
       "source_id": "news_official_pit",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-27T22:24:29+00:00",
+      "latest_entry_at": "2026-11-27T22:53:30+00:00",
       "stale": false
     },
     {
@@ -254,7 +254,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-27T21:01:49+00:00",
+      "latest_entry_at": "2026-11-27T22:47:38+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-27T19:00:26+00:00",
+      "latest_entry_at": "2026-11-27T22:42:28+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 6,
       "error": "",
-      "latest_entry_at": "2026-11-27T22:35:14+00:00",
+      "latest_entry_at": "2026-11-27T23:00:13+00:00",
       "stale": false
     },
     {
@@ -318,7 +318,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-27T19:45:56+00:00",
+      "latest_entry_at": "2026-11-27T22:25:19+00:00",
       "stale": false
     },
     {
@@ -390,15 +390,15 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T14:30:00+00:00",
+      "latest_entry_at": "2026-11-27T22:21:27+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-27T21:38:32+00:00",
+      "latest_entry_at": "2026-11-27T22:38:43+00:00",
       "stale": false
     },
     {
@@ -406,7 +406,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-27T17:30:00+00:00",
+      "latest_entry_at": "2026-11-27T22:15:00+00:00",
       "stale": false
     },
     {
@@ -420,9 +420,9 @@
     {
       "source_id": "news_sbn_lac",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-27T19:58:13+00:00",
+      "latest_entry_at": "2026-11-27T22:42:16+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T21:32:37+00:00",
+      "latest_entry_at": "2026-11-27T22:37:08+00:00",
       "stale": false
     },
     {
@@ -502,7 +502,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T15:00:00+00:00",
+      "latest_entry_at": "2026-11-27T22:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,65 @@
     }
   ],
   "items": [
+    {
+      "id": "9127665d3727ac595519",
+      "headline": "Seahawks Final Injury Report, Lawrence, Cross, Reed, Purdy, More",
+      "url": "https://www.si.com/nfl/seahawks/onsi/seahawks-final-injury-report-lawrence-cross-reed-purdy-more",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SEA"
+      ],
+      "feed_description": "The Seattle Seahawks and San Francisco 49ers have revealed game statuses before Sunday\u2019s game in Santa Clara, answering most of our questions.",
+      "categories": [],
+      "published_at": "2026-11-27T22:46:04+00:00",
+      "players": []
+    },
+    {
+      "id": "879a3961c1a36de8d4de",
+      "headline": "49ers are Making the Right Call Sitting Brock Purdy Against Seattle",
+      "url": "https://www.si.com/nfl/49ers/onsi/49ers-making-right-call-sitting-brock-purdy-against-seattle",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "SF"
+      ],
+      "feed_description": "Brock Purdy will be inactive when the San Francisco 49ers take on the Seattle Seahawks in Week 12, as he nurses an ankle sprain.",
+      "categories": [],
+      "published_at": "2026-11-27T22:45:34+00:00",
+      "players": [
+        {
+          "id": "00-0037834",
+          "name": "Brock Purdy",
+          "team": "SF",
+          "position": "QB"
+        }
+      ]
+    },
+    {
+      "id": "b09d037708aa4016866a",
+      "headline": "Chargers Injury Report: Justin Herbert ruled out vs. Patriots",
+      "url": "https://www.boltsfromtheblue.com/los-angeles-chargers-injuries/67371/chargers-injury-report-justin-herbert-ruled-out-patriots-daiyan-henley",
+      "source_id": "news_sbn_lac",
+      "source": "Bolts From The Blue (SB Nation)",
+      "teams": [
+        "LAC"
+      ],
+      "feed_description": "The Chargers will be without starting quarterback Justin Herbert as the team officially ruled out him out with a concussion on their final injury report of Week 12. This will be Herbert\u2019s first game missed due to an injury since 2023 where he missed the final four games of the season. In his place, second-year [\u2026]",
+      "categories": [
+        "Chargers Injury Reports",
+        "Los Angeles Chargers Injuries"
+      ],
+      "published_at": "2026-11-27T22:42:16+00:00",
+      "players": [
+        {
+          "id": "00-0036355",
+          "name": "Justin Herbert",
+          "team": "LAC",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "de984b7a7d76bdc6bb43",
       "headline": "Commanders-Cardinals Final Injury Report: Amik Robertson\u2019s Ankle Tests Washington\u2019s Cornerback Depth Again",
@@ -619,6 +678,36 @@
       ],
       "published_at": "2026-11-27T22:26:00+00:00",
       "players": []
+    },
+    {
+      "id": "222f9317fdac76816543",
+      "headline": "Patriots vs. Chargers Friday injury report: Four ruled out, Christian Barmore questionable",
+      "url": "https://www.patspulpit.com/new-england-patriots-news/145393/patriots-vs-chargers-friday-injury-report-drake-maye-aj-brown-carlton-davis-out-christian-barmore-questionable",
+      "source_id": "news_sbn_ne",
+      "source": "Pats Pulpit (SB Nation)",
+      "teams": [
+        "NE"
+      ],
+      "feed_description": "The New England Patriots will officially be without four against the Los Angeles Chargers. Quarterback Drake Maye, wide receiver A.J. Brown and cornerback Carlton Davis III have been ruled out ahead of the matchup at SoFi Stadium, as head coach Mike Vrabel confirmed during his final press conference of the week. Due to a fractured [\u2026]",
+      "categories": [
+        "New England Patriots Injuries",
+        "New England Patriots News"
+      ],
+      "published_at": "2026-11-27T22:25:19+00:00",
+      "players": [
+        {
+          "id": "00-0035676",
+          "name": "A.J. Brown",
+          "team": "NE",
+          "position": "WR"
+        },
+        {
+          "id": "00-0039851",
+          "name": "Drake Maye",
+          "team": "NE",
+          "position": "QB"
+        }
+      ]
     },
     {
       "id": "2daeb793c61c5e8d5f6c",
@@ -934,7 +1023,7 @@
       "teams": [
         "WAS"
       ],
-      "feed_description": "The Commanders have ruled starting cornerback Amik Robertson out of Sunday\u2019s game against the Arizona Cardinals, the team announced Friday on their official injury report. The veteran has been dealing with an ankle injury that also forced him out of Monday\u2019s game against the Bengals. Head coach Dan Quinn said that Robertson has been diligently [\u2026]",
+      "feed_description": "The Commanders have ruled starting cornerback Amik Robertson out of Sunday\u2019s game against the Arizona Cardinals the team announced Friday on their official injury report. The veteran has been dealing with an ankle injury that also forced him out of Monday night\u2019s game against the Bengals. Head coach Dan Quinn said that Robertson has been [\u2026]",
       "categories": [
         "Washington Commanders Injuries"
       ],
@@ -1246,36 +1335,6 @@
           "id": "00-0039164",
           "name": "Anthony Richardson",
           "team": "IND",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "222f9317fdac76816543",
-      "headline": "Patriots vs. Chargers Friday injury report: Four ruled out, Christian Barmore questionable",
-      "url": "https://www.patspulpit.com/new-england-patriots-news/145393/patriots-vs-chargers-friday-injury-report-drake-maye-aj-brown-carlton-davis-out-christian-barmore-questionable",
-      "source_id": "news_sbn_ne",
-      "source": "Pats Pulpit (SB Nation)",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots will officially be without four against the Los Angeles Chargers. Quarterback Drake Maye, wide receiver A.J. Brown and cornerback Carlton Davis III have been ruled out ahead of the matchup at SoFi Stadium, as head coach Mike Vrabel confirmed during his final press conference of the week. Due to a fractured [\u2026]",
-      "categories": [
-        "New England Patriots Injuries",
-        "New England Patriots News"
-      ],
-      "published_at": "2026-11-27T19:45:56+00:00",
-      "players": [
-        {
-          "id": "00-0035676",
-          "name": "A.J. Brown",
-          "team": "NE",
-          "position": "WR"
-        },
-        {
-          "id": "00-0039851",
-          "name": "Drake Maye",
-          "team": "NE",
           "position": "QB"
         }
       ]
@@ -3861,71 +3920,6 @@
           "name": "Josh Jacobs",
           "team": "GB",
           "position": "RB"
-        }
-      ]
-    },
-    {
-      "id": "ed21bdb5345bdff28621",
-      "headline": "Patriots Week 12 Injury Report: Potential Battle of the Backup QBs",
-      "url": "https://www.si.com/nfl/patriots/onsi/patriots-week-12-injury-report-potential-battle-of-the-backup-qbs",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "NE"
-      ],
-      "feed_description": "The New England Patriots and Los Angeles Chargers announced their initial injury reports for Sunday's game.",
-      "categories": [],
-      "published_at": "2026-11-25T23:43:57+00:00",
-      "players": []
-    },
-    {
-      "id": "10815bed92a29073018a",
-      "headline": "Sources back up Aaron Rodgers\u2019 bombshell claims about Mike McCarthy as Steelers\u2019 scorched-earth breakup gets even uglier",
-      "url": "https://atozsports.com/nfl/pittsburgh-steelers-news/sources-confirm-aaron-rodgers-claims-about-mike-mccarthy-omar-khan-art-rooney/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "The Pittsburgh Steelers released Aaron Rodgers shortly after his explosive appearance on The Pat McAfee Show. A to Z Sports spoke with sources about how this happened, who is in trouble, and what comes next.",
-      "categories": [
-        "NFL",
-        "Pittsburgh Steelers News",
-        "Aaron Rodgers",
-        "American Football",
-        "Mike McCarthy",
-        "Omar Khan",
-        "Pittsburgh Steelers",
-        "Steelers News"
-      ],
-      "published_at": "2026-11-25T23:40:47+00:00",
-      "players": [
-        {
-          "id": "00-0023459",
-          "name": "Aaron Rodgers",
-          "team": "PIT",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "2815af5eaf10ff0261b8",
-      "headline": "'It Depends' - Joe Burrow Dives Into Bengals Run Game Struggles as Cincinnati Prepares For New Orleans",
-      "url": "https://www.si.com/nfl/bengals/onsi/it-depends-joe-burrow-dives-into-bengals-run-game-struggles-as-cincinnati-prepares-for-new-orleans-saints-01m89bq8d1za",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "CIN"
-      ],
-      "feed_description": "Sign Up For Our DAILY Newsletter for More Free Coverage of the Cincinnati Bengals Delivered to You Directly For more Bengals coverage, subscribe to our YouTube",
-      "categories": [],
-      "published_at": "2026-11-25T23:16:24+00:00",
-      "players": [
-        {
-          "id": "00-0036442",
-          "name": "Joe Burrow",
-          "team": "CIN",
-          "position": "QB"
         }
       ]
     }
