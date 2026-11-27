@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-27T01:00:43.818865+00:00",
+  "updated_at": "2026-11-27T03:00:56.145586+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-26T21:45:04+00:00",
+      "latest_entry_at": "2026-11-27T00:29:57+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T00:51:59+00:00",
+      "latest_entry_at": "2026-11-27T02:53:56+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T00:10:07+00:00",
+      "latest_entry_at": "2026-11-27T02:30:19+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T00:12:50+00:00",
+      "latest_entry_at": "2026-11-27T02:20:46+00:00",
       "stale": false
     },
     {
@@ -86,7 +86,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-26T21:59:00+00:00",
+      "latest_entry_at": "2026-11-27T01:30:00+00:00",
       "stale": false
     },
     {
@@ -238,7 +238,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-27T00:56:00+00:00",
+      "latest_entry_at": "2026-11-27T02:23:00+00:00",
       "stale": false
     },
     {
@@ -262,7 +262,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-26T15:07:19+00:00",
+      "latest_entry_at": "2026-11-27T02:49:50+00:00",
       "stale": false
     },
     {
@@ -286,15 +286,15 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-27T00:51:59+00:00",
+      "latest_entry_at": "2026-11-27T02:53:56+00:00",
       "stale": false
     },
     {
       "source_id": "news_atoz_nfl",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T00:10:07+00:00",
+      "latest_entry_at": "2026-11-27T02:30:19+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 5,
       "error": "",
-      "latest_entry_at": "2026-11-26T19:35:24+00:00",
+      "latest_entry_at": "2026-11-26T23:01:23+00:00",
       "stale": false
     },
     {
@@ -380,9 +380,9 @@
     {
       "source_id": "news_sbn_jax",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-26T22:17:29+00:00",
+      "latest_entry_at": "2026-11-25T16:25:34+00:00",
       "stale": false
     },
     {
@@ -396,9 +396,9 @@
     {
       "source_id": "news_sbn_den",
       "ok": true,
-      "eligible": 1,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-26T17:35:06+00:00",
+      "latest_entry_at": "2026-11-27T01:00:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-26T21:15:00+00:00",
+      "latest_entry_at": "2026-11-27T02:15:00+00:00",
       "stale": false
     },
     {
@@ -446,7 +446,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-27T00:36:14+00:00",
+      "latest_entry_at": "2026-11-27T02:03:05+00:00",
       "stale": false
     },
     {
@@ -470,7 +470,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-26T22:30:00+00:00",
+      "latest_entry_at": "2026-11-26T23:15:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,54 @@
     }
   ],
   "items": [
+    {
+      "id": "4cc9c905f4a86a988edb",
+      "headline": "Bears Exhaling on Caleb Williams Scare, Bracing for Colston Loveland Injury News",
+      "url": "https://www.si.com/nfl/bears/onsi/bears-exhaling-on-caleb-williams-scare-bracing-for-colston-loveland-injury-news",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "CHI"
+      ],
+      "feed_description": "After a thrilling Thanksgiving win over Detroit, Chicago appears optimistic about Caleb Williams' postgame X-ray while awaiting news on Colston Loveland.",
+      "categories": [],
+      "published_at": "2026-11-27T02:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0039918",
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "position": "QB"
+        },
+        {
+          "id": "00-0040126",
+          "name": "Colston Loveland",
+          "team": "CHI",
+          "position": "TE"
+        }
+      ]
+    },
+    {
+      "id": "61ae1aabba09e018acc9",
+      "headline": "Dallas Goedert Injury Adds Uncertainty to His Eagles Future After Week 12 Comeback Win",
+      "url": "https://www.si.com/nfl/eagles/onsi/dallas-goedert-injury-adds-uncertainty-to-his-eagles-future-after-week-12-comeback-win-01m8d59jdxpc",
+      "source_id": "news_si_nfl",
+      "source": "Sports Illustrated",
+      "teams": [
+        "PHI"
+      ],
+      "feed_description": "Dalals Goedert left Week 12's win to the Cowboys with a shoulder injury and didn't return. As a result, his future with the Eagles seems murkier than ever.",
+      "categories": [],
+      "published_at": "2026-11-27T01:49:56+00:00",
+      "players": [
+        {
+          "id": "00-0034351",
+          "name": "Dallas Goedert",
+          "team": "PHI",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "80325c5e3b022eefa990",
       "headline": "Bills Declare Dalton Kincaid Ready to Go, Scratch Top Cornerback vs. Chiefs",
@@ -754,6 +802,30 @@
       ],
       "published_at": "2026-11-26T23:03:00+00:00",
       "players": []
+    },
+    {
+      "id": "bd9d6b1cf8f2ef6dee6d",
+      "headline": "Steelers place WR Ben Skowronek on IR",
+      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-injuries/178653/steelers-place-wr-ben-skowronek-on-ir",
+      "source_id": "news_sbn_pit",
+      "source": "Behind the Steel Curtain (SB Nation)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "The Pittsburgh Steelers are set to welcome AFC West-leading Denver Broncos to town for a pivotal Black Friday matchup. Pittsburgh will do so without one of their leaders on special teams in Ben Skowronek. Nick Farabuagh of Penn Live reported on Thursday that the Steelers have placed the receiver and special teams ace on injured [\u2026]",
+      "categories": [
+        "Pittsburgh Steelers Injuries",
+        "Pittsburgh Steelers News"
+      ],
+      "published_at": "2026-11-26T23:01:23+00:00",
+      "players": [
+        {
+          "id": "00-0036862",
+          "name": "Ben Skowronek",
+          "team": "PIT",
+          "position": "WR"
+        }
+      ]
     },
     {
       "id": "a6805268600ced6a0f40",
@@ -3739,83 +3811,6 @@
           "id": "00-0034771",
           "name": "Mason Rudolph",
           "team": "PIT",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "2142924d4bd72b58b93d",
-      "headline": "Steelers Bench Aaron Rodgers, Name Mason Rudolph Starting QB",
-      "url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-bench-aaron-rodgers-mason-rudolph-starting-quarterback",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "PIT"
-      ],
-      "feed_description": "The Pittsburgh Steelers announced a stunning decision at quarterback, benching Aaron Rodgers while naming Mason Rudolph the starter in Week 12 against the Denver Broncos.",
-      "categories": [],
-      "published_at": "2026-11-25T04:21:56+00:00",
-      "players": [
-        {
-          "id": "00-0023459",
-          "name": "Aaron Rodgers",
-          "team": "PIT",
-          "position": "QB"
-        },
-        {
-          "id": "00-0034771",
-          "name": "Mason Rudolph",
-          "team": "PIT",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "74ded5da6eb6cf91e352",
-      "headline": "Sam Darnold Injury Update Has Seahawks Keeping 49ers in the Dark",
-      "url": "https://www.si.com/nfl/seahawks/onsi/sam-darnold-injury-update-has-seahawks-keeping-49ers-in-the-dark",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "The Seattle Seahawks are getting ready for their Week 12 matchup against the San Francisco 49ers.",
-      "categories": [],
-      "published_at": "2026-11-25T03:30:00+00:00",
-      "players": [
-        {
-          "id": "00-0034869",
-          "name": "Sam Darnold",
-          "team": "SEA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "6979d41e830844c31b30",
-      "headline": "Colts coaches weigh in on Anthony Richardson\u2019s abrupt return to the starting lineup",
-      "url": "https://www.stampedeblue.com/indianapolis-colts-news/130419/colts-coaches-weigh-in-on-anthony-richardsons-abrupt-return-to-the-starting-lineup",
-      "source_id": "news_sbn_ind",
-      "source": "Stampede Blue (SB Nation)",
-      "teams": [
-        "IND"
-      ],
-      "feed_description": "After the surprising release of starting quarterback Daniel Jones, Indianapolis Colts quarterback Anthony Richardson Sr. now receives one last opportunity to prove he\u2019s a viable QB1 for the franchise going forward. As long as he can stay healthy, he projects to start these dismantled 3-8 Colts\u2019 final six games down the stretch of the 2026 [\u2026]",
-      "categories": [
-        "Indianapolis Colts News"
-      ],
-      "published_at": "2026-11-25T03:19:56+00:00",
-      "players": [
-        {
-          "id": "00-0035710",
-          "name": "Daniel Jones",
-          "team": "IND",
-          "position": "QB"
-        },
-        {
-          "id": "00-0039164",
-          "name": "Anthony Richardson",
-          "team": "IND",
           "position": "QB"
         }
       ]
