@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-28T03:00:40.143308+00:00",
+  "updated_at": "2026-11-28T04:15:17.474467+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T00:51:03+00:00",
+      "latest_entry_at": "2026-11-28T04:00:14+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T02:50:41+00:00",
+      "latest_entry_at": "2026-11-28T03:56:01+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T00:59:59+00:00",
+      "latest_entry_at": "2026-11-28T03:26:54+00:00",
       "stale": false
     },
     {
@@ -68,9 +68,9 @@
     {
       "source_id": "news_official_buf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-27T17:01:02+00:00",
+      "latest_entry_at": "2026-11-28T03:48:26+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T02:50:41+00:00",
+      "latest_entry_at": "2026-11-28T03:56:01+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T02:35:05+00:00",
+      "latest_entry_at": "2026-11-28T03:41:38+00:00",
       "stale": false
     },
     {
@@ -358,7 +358,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-27T23:49:22+00:00",
+      "latest_entry_at": "2026-11-28T01:27:01+00:00",
       "stale": false
     },
     {
@@ -454,7 +454,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-27T21:04:51+00:00",
+      "latest_entry_at": "2026-11-28T03:00:00+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-28T00:54:09+00:00",
+      "latest_entry_at": "2026-11-27T19:25:10+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,29 @@
     }
   ],
   "items": [
+    {
+      "id": "4beafaba3eea71f67b69",
+      "headline": "Steelers credit T.J. Watt, Cam Heyward for leadership amidst adverse week",
+      "url": "https://www.behindthesteelcurtain.com/pittsburgh-steelers-news/178712/steelers-credit-t-j-watt-cam-heyward-for-leadership-amidst-adverse-week",
+      "source_id": "news_sbn_pit",
+      "source": "Behind the Steel Curtain (SB Nation)",
+      "teams": [
+        "PIT"
+      ],
+      "feed_description": "The Pittsburgh Steelers responded to a very adverse week by dominating the Denver Broncos 27-5 to get to 7-4 and remain unbeaten at home in 2026. It was a trying week for the Steelers, who released quarterback Aaron Rodgers after he demanded to take over play-calling duties. Rodgers then went on The Pat McAfee Show [\u2026]",
+      "categories": [
+        "Pittsburgh Steelers News"
+      ],
+      "published_at": "2026-11-28T01:27:01+00:00",
+      "players": [
+        {
+          "id": "00-0023459",
+          "name": "Aaron Rodgers",
+          "team": "PIT",
+          "position": "QB"
+        }
+      ]
+    },
     {
       "id": "3a79d24cb280e1c10b3c",
       "headline": "Seahawks-49ers injury designations: Jarran Reed out, but Leonard Williams returns",
@@ -3951,20 +3974,6 @@
         "Vikings Injury Report"
       ],
       "published_at": "2026-11-26T01:51:14+00:00",
-      "players": []
-    },
-    {
-      "id": "b6916d02fc7bc5e2bba5",
-      "headline": "Commanders-Cardinals Injury Report: Amik Robertson\u2019s Ankle Revives Washington\u2019s Cornerback Question",
-      "url": "https://www.si.com/nfl/commanders/onsi/commanders-cardinals-wednesday-injury-report-week-12",
-      "source_id": "news_si_nfl",
-      "source": "Sports Illustrated",
-      "teams": [
-        "WAS"
-      ],
-      "feed_description": "Amik Robertson\u2019s ankle puts Washington\u2019s cornerback rotation back in focus. See how the secondary handled his absence and who else is on the Week 12 report.",
-      "categories": [],
-      "published_at": "2026-11-26T01:34:10+00:00",
       "players": []
     }
   ]
