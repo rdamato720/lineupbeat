@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-28T05:00:47.571244+00:00",
+  "updated_at": "2026-11-28T11:00:41.617696+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T04:00:14+00:00",
+      "latest_entry_at": "2026-11-28T06:01:01+00:00",
       "stale": false
     },
     {
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T04:50:00+00:00",
+      "latest_entry_at": "2026-11-28T10:06:00+00:00",
       "stale": false
     },
     {
@@ -38,7 +38,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T03:26:54+00:00",
+      "latest_entry_at": "2026-11-28T10:00:00+00:00",
       "stale": false
     },
     {
@@ -246,7 +246,7 @@
       "ok": true,
       "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-28T01:45:15+00:00",
+      "latest_entry_at": "2026-11-28T06:30:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T04:50:00+00:00",
+      "latest_entry_at": "2026-11-28T10:06:00+00:00",
       "stale": false
     },
     {
@@ -324,9 +324,9 @@
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T18:00:00+00:00",
+      "latest_entry_at": "2026-11-28T06:45:31+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T02:35:05+00:00",
+      "latest_entry_at": "2026-11-28T03:41:38+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-28T00:54:09+00:00",
+      "latest_entry_at": "2026-11-28T04:53:39+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-28T03:32:54+00:00",
+      "latest_entry_at": "2026-11-28T05:44:46+00:00",
       "stale": false
     },
     {
@@ -508,9 +508,9 @@
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 2,
+      "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-27T17:00:00+00:00",
+      "latest_entry_at": "2026-11-27T20:19:31+00:00",
       "stale": false
     },
     {
@@ -532,17 +532,17 @@
     {
       "source_id": "news_sbn_lar",
       "ok": true,
-      "eligible": 1,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-28T05:00:25+00:00",
+      "latest_entry_at": "2026-11-28T05:45:00+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_sf",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-27T22:43:19+00:00",
+      "latest_entry_at": "2026-11-28T10:30:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,35 @@
     }
   ],
   "items": [
+    {
+      "id": "a0c5e0c339f825a73596",
+      "headline": "Rams sign tight end from 49ers practice squad",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-news/156227/rams-sign-jack-stoll-tight-end-49ers-practice-squad",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Los Angeles Rams are turning to a familiar NFC West rival for help at tight end. Following unfortunate injury news involving Davis Allen and Tyler Higbee, Los Angeles has signed veteran tight end Jack Stoll off the San Francisco 49ers\u2019 practice squad, according to NFL Network\u2019s Mike Garafolo. The move comes at an important [\u2026]",
+      "categories": [
+        "Los Angeles Rams News"
+      ],
+      "published_at": "2026-11-28T05:45:00+00:00",
+      "players": [
+        {
+          "id": "00-0033110",
+          "name": "Tyler Higbee",
+          "team": "LAR",
+          "position": "TE"
+        },
+        {
+          "id": "00-0039074",
+          "name": "Davis Allen",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "a99a9f49486bf812216f",
       "headline": "Rams suffer FOUR more offensive injuries",
@@ -3965,22 +3994,6 @@
           "position": "QB"
         }
       ]
-    },
-    {
-      "id": "fa328de18d8d492c5ec0",
-      "headline": "Vikings-Falcons First Injury Report",
-      "url": "https://www.dailynorseman.com/minnesota-vikings-injuries/102092/vikings-falcons-first-injury-report",
-      "source_id": "news_sbn_min",
-      "source": "Daily Norseman (SB Nation)",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "The Minnesota Vikings and Atlanta Falcons released their first injury reports in advance of their matchup on Sunday at U.S. Bank Stadium. Here they are: Minnesota Vikings Atlanta Falcons Injury Report Terms and Glossary Injury designation definitions: Probable = the league defines a Probable injury designation as a 75% or greater chance of playing. Historically, [\u2026]",
-      "categories": [
-        "Minnesota Vikings Injuries"
-      ],
-      "published_at": "2026-11-26T02:14:54+00:00",
-      "players": []
     }
   ]
 }
