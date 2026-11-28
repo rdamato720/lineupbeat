@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T11:00:41.617696+00:00",
+  "updated_at": "2026-11-28T13:00:51.962082+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T10:06:00+00:00",
+      "latest_entry_at": "2026-11-28T13:00:03+00:00",
       "stale": false
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T00:21:20+00:00",
+      "latest_entry_at": "2026-11-28T12:00:00+00:00",
       "stale": false
     },
     {
@@ -118,7 +118,7 @@
       "ok": true,
       "eligible": 4,
       "error": "",
-      "latest_entry_at": "2026-11-27T12:00:26+00:00",
+      "latest_entry_at": "2026-11-28T12:00:34+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T10:06:00+00:00",
+      "latest_entry_at": "2026-11-28T13:00:03+00:00",
       "stale": false
     },
     {
@@ -294,7 +294,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-28T00:21:20+00:00",
+      "latest_entry_at": "2026-11-28T12:00:00+00:00",
       "stale": false
     },
     {
@@ -318,15 +318,15 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-28T00:54:17+00:00",
+      "latest_entry_at": "2026-11-28T11:00:59+00:00",
       "stale": false
     },
     {
       "source_id": "news_sbn_nyj",
       "ok": true,
-      "eligible": 0,
+      "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-28T06:45:31+00:00",
+      "latest_entry_at": "2026-11-28T12:00:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T03:41:38+00:00",
+      "latest_entry_at": "2026-11-28T11:30:00+00:00",
       "stale": false
     },
     {
@@ -430,7 +430,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-27T22:30:00+00:00",
+      "latest_entry_at": "2026-11-28T12:00:00+00:00",
       "stale": false
     },
     {
@@ -468,9 +468,9 @@
     {
       "source_id": "news_sbn_det",
       "ok": true,
-      "eligible": 1,
+      "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T00:04:34+00:00",
+      "latest_entry_at": "2026-11-28T12:54:13+00:00",
       "stale": false
     },
     {
@@ -494,7 +494,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-28T01:00:00+00:00",
+      "latest_entry_at": "2026-11-28T13:00:00+00:00",
       "stale": false
     },
     {
@@ -526,7 +526,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-27T18:29:54+00:00",
+      "latest_entry_at": "2026-11-28T12:00:00+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,29 @@
     }
   ],
   "items": [
+    {
+      "id": "4252f8f89b43174f1bd9",
+      "headline": "New York Jets News: Omar Cooper ruled out in Week 12 vs. Dolphins",
+      "url": "https://www.ganggreennation.com/new-york-jets-news/98973/new-york-jets-news-omar-cooper-ruled-out-in-week-12-vs-dolphins",
+      "source_id": "news_sbn_nyj",
+      "source": "Gang Green Nation (SB Nation)",
+      "teams": [
+        "NYJ"
+      ],
+      "feed_description": "Happy Saturday, Jets fans! We are one day away from the Jets taking the field in Miami for a game against the Dolphins. It is a golden opportunity for this team to get on its first winning streak of the season as it heads into the bye. The Jets will be looking to avenge a [\u2026]",
+      "categories": [
+        "New York Jets News"
+      ],
+      "published_at": "2026-11-28T12:00:00+00:00",
+      "players": [
+        {
+          "id": "00-0041511",
+          "name": "Omar Cooper",
+          "team": "NYJ",
+          "position": "WR"
+        }
+      ]
+    },
     {
       "id": "a0c5e0c339f825a73596",
       "headline": "Rams sign tight end from 49ers practice squad",
@@ -3951,30 +3974,6 @@
       "id": "3320e768c633c199381e",
       "headline": "Seahawks-49ers Wednesday injury report: Sam Darnold practices in full",
       "url": "https://www.fieldgulls.com/seattle-seahawks-news/180756/seahawks-49ers-wednesday-injury-report-sam-darnold-practices-full",
-      "source_id": "news_sbn_sea",
-      "source": "Field Gulls (SB Nation)",
-      "teams": [
-        "SEA"
-      ],
-      "feed_description": "Coming off two consecutive wins and their bye, there\u2019s plenty working in favor of the Seattle Seahawks as they head into a pivotal matchup against the NFC-leading San Francisco 49ers on Sunday, but Wednesday\u2019s injury report wasn\u2019t exactly promising. Seahawks Nov. 25 practice report Did not participate: Limited participant: Full participant With the status of [\u2026]",
-      "categories": [
-        "Seattle Seahawks Injuries",
-        "Seattle Seahawks News"
-      ],
-      "published_at": "2026-11-26T02:19:59+00:00",
-      "players": [
-        {
-          "id": "00-0034869",
-          "name": "Sam Darnold",
-          "team": "SEA",
-          "position": "QB"
-        }
-      ]
-    },
-    {
-      "id": "1427d4b2e24abbc9d2db",
-      "headline": "Seahawks-49ers Wednesday injury report: Sam Darnold practices in full",
-      "url": "https://www.fieldgulls.com/seattle-seahawks-news/180756/seahawks-49ers-wednesday-injury-report-sam-darnold-practices-in-full",
       "source_id": "news_sbn_sea",
       "source": "Field Gulls (SB Nation)",
       "teams": [
