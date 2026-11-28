@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T04:15:17.474467+00:00",
+  "updated_at": "2026-11-28T05:00:47.571244+00:00",
   "sources": [
     {
       "source_id": "arizona_sports_tyler_drake",
@@ -14,7 +14,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T03:56:01+00:00",
+      "latest_entry_at": "2026-11-28T04:50:00+00:00",
       "stale": false
     },
     {
@@ -286,7 +286,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T03:56:01+00:00",
+      "latest_entry_at": "2026-11-28T04:50:00+00:00",
       "stale": false
     },
     {
@@ -350,7 +350,7 @@
       "ok": true,
       "eligible": 0,
       "error": "",
-      "latest_entry_at": "2026-11-28T03:41:38+00:00",
+      "latest_entry_at": "2026-11-28T02:35:05+00:00",
       "stale": false
     },
     {
@@ -478,7 +478,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-27T19:25:10+00:00",
+      "latest_entry_at": "2026-11-28T00:54:09+00:00",
       "stale": false
     },
     {
@@ -486,7 +486,7 @@
       "ok": true,
       "eligible": 3,
       "error": "",
-      "latest_entry_at": "2026-11-27T23:47:34+00:00",
+      "latest_entry_at": "2026-11-28T03:32:54+00:00",
       "stale": false
     },
     {
@@ -508,9 +508,9 @@
     {
       "source_id": "news_sbn_no",
       "ok": true,
-      "eligible": 3,
+      "eligible": 2,
       "error": "",
-      "latest_entry_at": "2026-11-27T20:19:31+00:00",
+      "latest_entry_at": "2026-11-27T17:00:00+00:00",
       "stale": false
     },
     {
@@ -534,7 +534,7 @@
       "ok": true,
       "eligible": 1,
       "error": "",
-      "latest_entry_at": "2026-11-28T01:15:00+00:00",
+      "latest_entry_at": "2026-11-28T05:00:25+00:00",
       "stale": false
     },
     {
@@ -555,6 +555,35 @@
     }
   ],
   "items": [
+    {
+      "id": "a99a9f49486bf812216f",
+      "headline": "Rams suffer FOUR more offensive injuries",
+      "url": "https://www.turfshowtimes.com/los-angeles-rams-injuries/156094/rams-week-12-injuries-davis-allen",
+      "source_id": "news_sbn_lar",
+      "source": "Turf Show Times (SB Nation)",
+      "teams": [
+        "LAR"
+      ],
+      "feed_description": "The Los Angeles Rams continue to deal with an increasingly crowded injury report, and the latest wave of injuries has created even more concerns for the offense. Four additional players have been bitten by the injury bug, including tight ends Davis Allen and Tyler Higbee, offensive lineman Warren McClendon, and fullback Bill Murray. The injuries [\u2026]",
+      "categories": [
+        "Los Angeles Rams Injuries"
+      ],
+      "published_at": "2026-11-28T05:00:25+00:00",
+      "players": [
+        {
+          "id": "00-0033110",
+          "name": "Tyler Higbee",
+          "team": "LAR",
+          "position": "TE"
+        },
+        {
+          "id": "00-0039074",
+          "name": "Davis Allen",
+          "team": "LAR",
+          "position": "TE"
+        }
+      ]
+    },
     {
       "id": "4beafaba3eea71f67b69",
       "headline": "Steelers credit T.J. Watt, Cam Heyward for leadership amidst adverse week",
@@ -3951,29 +3980,6 @@
         "Minnesota Vikings Injuries"
       ],
       "published_at": "2026-11-26T02:14:54+00:00",
-      "players": []
-    },
-    {
-      "id": "e523380662fea13defeb",
-      "headline": "Vikings Injury Report: Major development on offense could make things interesting",
-      "url": "https://atozsports.com/nfl/minnesota-vikings-news/vikings-falcons-injury-report-christian-darrisaw-kyler-murray-jalen-redmond-jordan-addison/",
-      "source_id": "news_atoz_nfl",
-      "source": "A to Z Sports",
-      "teams": [
-        "MIN"
-      ],
-      "feed_description": "Sunday's loss to the San Francisco 49ers didn't just hurt the Minnesota Vikings' record; it impacted the roster's overall health.",
-      "categories": [
-        "Minnesota Vikings News",
-        "NFL",
-        "Christian Darrisaw",
-        "Jalen Redmond",
-        "Jordan Addison",
-        "Kyler Murray",
-        "Minnesota Vikings",
-        "Vikings Injury Report"
-      ],
-      "published_at": "2026-11-26T01:51:14+00:00",
       "players": []
     }
   ]
